@@ -14,14 +14,14 @@ Font
 
 **Inherited By:** :ref:`FontFile<class_FontFile>`, :ref:`FontVariation<class_FontVariation>`, :ref:`SystemFont<class_SystemFont>`
 
-Base class for fonts and font variations.
+Abstract base class for fonts and font variations.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-Font is the abstract base class for font, so it shouldn't be used directly. Other types of fonts inherit from it.
+Abstract base class for different font types. It has methods for drawing text and font character introspection.
 
 .. rst-class:: classref-reftable-group
 

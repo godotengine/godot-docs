@@ -14,7 +14,7 @@ SkeletonModification2D
 
 **Inherited By:** :ref:`SkeletonModification2DCCDIK<class_SkeletonModification2DCCDIK>`, :ref:`SkeletonModification2DFABRIK<class_SkeletonModification2DFABRIK>`, :ref:`SkeletonModification2DJiggle<class_SkeletonModification2DJiggle>`, :ref:`SkeletonModification2DLookAt<class_SkeletonModification2DLookAt>`, :ref:`SkeletonModification2DPhysicalBones<class_SkeletonModification2DPhysicalBones>`, :ref:`SkeletonModification2DStackHolder<class_SkeletonModification2DStackHolder>`, :ref:`SkeletonModification2DTwoBoneIK<class_SkeletonModification2DTwoBoneIK>`
 
-A resource that operates on :ref:`Bone2D<class_Bone2D>` nodes in a :ref:`Skeleton2D<class_Skeleton2D>`.
+Base class for resources that operate on :ref:`Bone2D<class_Bone2D>`\ s in a :ref:`Skeleton2D<class_Skeleton2D>`.
 
 .. rst-class:: classref-introduction-group
 

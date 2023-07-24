@@ -12,14 +12,14 @@ StyleBoxTexture
 
 **Inherits:** :ref:`StyleBox<class_StyleBox>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-Texture-based nine-patch :ref:`StyleBox<class_StyleBox>`.
+A texture-based nine-patch :ref:`StyleBox<class_StyleBox>`.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-Texture-based nine-patch :ref:`StyleBox<class_StyleBox>`, in a way similar to :ref:`NinePatchRect<class_NinePatchRect>`. This stylebox performs a 3×3 scaling of a texture, where only the center cell is fully stretched. This makes it possible to design bordered styles regardless of the stylebox's size.
+A texture-based nine-patch :ref:`StyleBox<class_StyleBox>`, in a way similar to :ref:`NinePatchRect<class_NinePatchRect>`. This stylebox performs a 3×3 scaling of a texture, where only the center cell is fully stretched. This makes it possible to design bordered styles regardless of the stylebox's size.
 
 .. rst-class:: classref-reftable-group
 

@@ -12,14 +12,14 @@ AnimationNodeStateMachine
 
 **Inherits:** :ref:`AnimationRootNode<class_AnimationRootNode>` **<** :ref:`AnimationNode<class_AnimationNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-State machine for control of animations.
+A state machine with multiple :ref:`AnimationRootNode<class_AnimationRootNode>`\ s, used by :ref:`AnimationTree<class_AnimationTree>`.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-Contains multiple nodes representing animation states, connected in a graph. Node transitions can be configured to happen automatically or via code, using a shortest-path algorithm. Retrieve the :ref:`AnimationNodeStateMachinePlayback<class_AnimationNodeStateMachinePlayback>` object from the :ref:`AnimationTree<class_AnimationTree>` node to control it programmatically.
+Contains multiple :ref:`AnimationRootNode<class_AnimationRootNode>`\ s representing animation states, connected in a graph. Node transitions can be configured to happen automatically or via code, using a shortest-path algorithm. Retrieve the :ref:`AnimationNodeStateMachinePlayback<class_AnimationNodeStateMachinePlayback>` object from the :ref:`AnimationTree<class_AnimationTree>` node to control it programmatically.
 
 \ **Example:**\ 
 
@@ -43,7 +43,7 @@ Contains multiple nodes representing animation states, connected in a graph. Nod
 Tutorials
 ---------
 
-- :doc:`AnimationTree <../tutorials/animation/animation_tree>`
+- :doc:`Using AnimationTree <../tutorials/animation/animation_tree>`
 
 .. rst-class:: classref-reftable-group
 

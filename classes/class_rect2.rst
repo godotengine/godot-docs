@@ -10,7 +10,7 @@
 Rect2
 =====
 
-2D axis-aligned bounding box using floating point coordinates.
+A 2D axis-aligned bounding box using floating-point coordinates.
 
 .. rst-class:: classref-introduction-group
 

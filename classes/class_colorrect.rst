@@ -12,14 +12,14 @@ ColorRect
 
 **Inherits:** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-Colored rectangle.
+A control that displays a solid color rectangle.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-Displays a rectangle filled with a solid :ref:`color<class_ColorRect_property_color>`. If you need to display the border alone, consider using :ref:`ReferenceRect<class_ReferenceRect>` instead.
+Displays a rectangle filled with a solid :ref:`color<class_ColorRect_property_color>`. If you need to display the border alone, consider using a :ref:`Panel<class_Panel>` instead.
 
 .. rst-class:: classref-introduction-group
 
@@ -60,20 +60,7 @@ Property Descriptions
 - void **set_color** **(** :ref:`Color<class_Color>` value **)**
 - :ref:`Color<class_Color>` **get_color** **(** **)**
 
-The fill color.
-
-
-.. tabs::
-
- .. code-tab:: gdscript
-
-    $ColorRect.color = Color(1, 0, 0, 1) # Set ColorRect's color to red.
-
- .. code-tab:: csharp
-
-    GetNode<ColorRect>("ColorRect").Color = new Color(1, 0, 0, 1); // Set ColorRect's color to red.
-
-
+The fill color of the rectangle.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

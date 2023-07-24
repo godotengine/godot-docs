@@ -12,7 +12,7 @@ Semaphore
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-A synchronization semaphore.
+A synchronization mechanism used to control access to a shared resource by :ref:`Thread<class_Thread>`\ s.
 
 .. rst-class:: classref-introduction-group
 
@@ -27,6 +27,8 @@ Tutorials
 ---------
 
 - :doc:`Using multiple threads <../tutorials/performance/using_multiple_threads>`
+
+- :doc:`Thread-safe APIs <../tutorials/performance/thread_safe_apis>`
 
 .. rst-class:: classref-reftable-group
 

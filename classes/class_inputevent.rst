@@ -14,21 +14,21 @@ InputEvent
 
 **Inherited By:** :ref:`InputEventAction<class_InputEventAction>`, :ref:`InputEventFromWindow<class_InputEventFromWindow>`, :ref:`InputEventJoypadButton<class_InputEventJoypadButton>`, :ref:`InputEventJoypadMotion<class_InputEventJoypadMotion>`, :ref:`InputEventMIDI<class_InputEventMIDI>`, :ref:`InputEventShortcut<class_InputEventShortcut>`
 
-Generic input event.
+Abstract base class for input events.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-Base class of all sort of input event. See :ref:`Node._input<class_Node_method__input>`.
+Abstract base class of all types of input events. See :ref:`Node._input<class_Node_method__input>`.
 
 .. rst-class:: classref-introduction-group
 
 Tutorials
 ---------
 
-- :doc:`InputEvent <../tutorials/inputs/inputevent>`
+- :doc:`Using InputEvent <../tutorials/inputs/inputevent>`
 
 - :doc:`Viewport and canvas transforms <../tutorials/2d/2d_transforms>`
 

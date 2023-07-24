@@ -12,14 +12,14 @@ HSeparator
 
 **Inherits:** :ref:`Separator<class_Separator>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-Horizontal separator.
+A horizontal line used for separating other controls.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-Horizontal separator. See :ref:`Separator<class_Separator>`. Even though it looks horizontal, it is used to separate objects vertically.
+A horizontal separator used for separating other controls that are arranged **vertically**. **HSeparator** is purely visual and normally drawn as a :ref:`StyleBoxLine<class_StyleBoxLine>`.
 
 .. rst-class:: classref-reftable-group
 

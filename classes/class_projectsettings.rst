@@ -12,14 +12,14 @@ ProjectSettings
 
 **Inherits:** :ref:`Object<class_Object>`
 
-Contains global variables accessible from everywhere.
+Stores globally-accessible variables.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-Contains global variables accessible from everywhere. Use :ref:`get_setting<class_ProjectSettings_method_get_setting>`, :ref:`set_setting<class_ProjectSettings_method_set_setting>` or :ref:`has_setting<class_ProjectSettings_method_has_setting>` to access them. Variables stored in ``project.godot`` are also loaded into ProjectSettings, making this object very useful for reading custom game configuration options.
+Stores variables that can be accessed from everywhere. Use :ref:`get_setting<class_ProjectSettings_method_get_setting>`, :ref:`set_setting<class_ProjectSettings_method_set_setting>` or :ref:`has_setting<class_ProjectSettings_method_has_setting>` to access them. Variables stored in ``project.godot`` are also loaded into **ProjectSettings**, making this object very useful for reading custom game configuration options.
 
 When naming a Project Settings property, use the full path to the setting including the category. For example, ``"application/config/name"`` for the project name. Category and property names can be viewed in the Project Settings dialog.
 
@@ -3315,9 +3315,13 @@ On desktop platforms, overrides the game's initial window width. See also :ref:`
 
 :ref:`String<class_String>` **display/window/stretch/mode** = ``"disabled"``
 
-.. container:: contribute
+Defines how the base size is stretched to fit the resolution of the window or screen.
 
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+\ **"disabled"**: No stretching happens. One unit in the scene corresponds to one pixel on the screen. In this mode, :ref:`display/window/stretch/aspect<class_ProjectSettings_property_display/window/stretch/aspect>` has no effect. Recommended for non-game applications.
+
+\ **"canvas_items"**: The base size specified in width and height in the project settings is stretched to cover the whole screen (taking :ref:`display/window/stretch/aspect<class_ProjectSettings_property_display/window/stretch/aspect>` into account). This means that everything is rendered directly at the target resolution. 3D is unaffected, while in 2D, there is no longer a 1:1 correspondence between sprite pixels and screen pixels, which may result in scaling artifacts. Recommended for most games that don't use a pixel art aesthetic, although it is possible to use this stretch mode for pixel art games too (especially in 3D).
+
+\ **"viewport"**: The size of the root :ref:`Viewport<class_Viewport>` is set precisely to the base size specified in the Project Settings' Display section. The scene is rendered to this viewport first. Finally, this viewport is scaled to fit the screen (taking :ref:`display/window/stretch/aspect<class_ProjectSettings_property_display/window/stretch/aspect>` into account). Recommended for games that use a pixel art aesthetic.
 
 .. rst-class:: classref-item-separator
 
@@ -9781,7 +9785,7 @@ If ``true``, the texture importer will import lossless textures using the PNG fo
 
 :ref:`bool<class_bool>` **rendering/textures/vram_compression/import_etc2_astc**
 
-If ``true``, the texture importer will import VRAM-compressed textures using the Ericsson Texture Compression 2 algorithm for lower quality textures and normalmaps and Adaptable Scalable Texture Compression algorithm for high quality textures (in 4x4 block size).
+If ``true``, the texture importer will import VRAM-compressed textures using the Ericsson Texture Compression 2 algorithm for lower quality textures and normal maps and Adaptable Scalable Texture Compression algorithm for high quality textures (in 4x4 block size).
 
 \ **Note:** Changing this setting does *not* impact textures that were already imported before. To make this setting apply to textures that were already imported, exit the editor, remove the ``.godot/imported/`` folder located inside the project folder then restart the editor (see :ref:`application/config/use_hidden_project_data_directory<class_ProjectSettings_property_application/config/use_hidden_project_data_directory>`).
 
@@ -10027,11 +10031,11 @@ void **add_property_info** **(** :ref:`Dictionary<class_Dictionary>` hint **)**
 
 Adds a custom property info to a property. The dictionary must contain:
 
-- ``name``: :ref:`String<class_String>` (the property's name)
+- ``"name"``: :ref:`String<class_String>` (the property's name)
 
-- ``type``: :ref:`int<class_int>` (see :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>`)
+- ``"type"``: :ref:`int<class_int>` (see :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>`)
 
-- optionally ``hint``: :ref:`int<class_int>` (see :ref:`PropertyHint<enum_@GlobalScope_PropertyHint>`) and ``hint_string``: :ref:`String<class_String>`\ 
+- optionally ``"hint"``: :ref:`int<class_int>` (see :ref:`PropertyHint<enum_@GlobalScope_PropertyHint>`) and ``"hint_string"``: :ref:`String<class_String>`\ 
 
 \ **Example:**\ 
 

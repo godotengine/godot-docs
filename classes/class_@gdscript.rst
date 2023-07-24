@@ -10,7 +10,7 @@
 @GDScript
 =========
 
-Built-in GDScript functions.
+Built-in GDScript constants, functions, and annotations.
 
 .. rst-class:: classref-introduction-group
 
@@ -109,7 +109,7 @@ Positive floating-point infinity. This is the result of floating-point division 
 
 **NAN** = ``nan``
 
-"Not a Number", an invalid floating-point value. :ref:`NAN<class_@GDScript_constant_NAN>` has special properties, including that it is not equal to itself (``NAN == NAN`` returns ``false``). It is output by some invalid operations, such as dividing floating-point ``0.0`` by ``0.0``.
+"Not a Number", an invalid floating-point value. :ref:`NAN<class_@GDScript_constant_NAN>` has special properties, including that ``!=`` always returns ``true``, while other comparison operators always return ``false``. This is true even when comparing with itself (``NAN == NAN`` returns ``false`` and ``NAN != NAN`` returns ``true``). It is returned by some invalid operations, such as dividing floating-point ``0.0`` by ``0.0``.
 
 \ **Warning:** "Not a Number" is only a concept with floating-point numbers, and has no equivalent for integers. Dividing an integer ``0`` by ``0`` will not result in :ref:`NAN<class_@GDScript_constant_NAN>` and will result in a run-time error instead.
 

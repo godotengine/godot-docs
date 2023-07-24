@@ -250,7 +250,13 @@ The :ref:`CameraAttributes<class_CameraAttributes>` to use for this camera.
 - void **set_cull_mask** **(** :ref:`int<class_int>` value **)**
 - :ref:`int<class_int>` **get_cull_mask** **(** **)**
 
-The culling mask that describes which 3D render layers are rendered by this camera.
+The culling mask that describes which :ref:`VisualInstance3D.layers<class_VisualInstance3D_property_layers>` are rendered by this camera. By default, all 20 user-visible layers are rendered.
+
+\ **Note:** Since the :ref:`cull_mask<class_Camera3D_property_cull_mask>` allows for 32 layers to be stored in total, there are an additional 12 layers that are only used internally by the engine and aren't exposed in the editor. Setting :ref:`cull_mask<class_Camera3D_property_cull_mask>` using a script allows you to toggle those reserved layers, which can be useful for editor plugins.
+
+To adjust :ref:`cull_mask<class_Camera3D_property_cull_mask>` more easily using a script, use :ref:`get_cull_mask_value<class_Camera3D_method_get_cull_mask_value>` and :ref:`set_cull_mask_value<class_Camera3D_method_set_cull_mask_value>`.
+
+\ **Note:** :ref:`VoxelGI<class_VoxelGI>`, SDFGI and :ref:`LightmapGI<class_LightmapGI>` will always take all layers into account to determine what contributes to global illumination. If this is an issue, set :ref:`GeometryInstance3D.gi_mode<class_GeometryInstance3D_property_gi_mode>` to :ref:`GeometryInstance3D.GI_MODE_DISABLED<class_GeometryInstance3D_constant_GI_MODE_DISABLED>` for meshes and :ref:`Light3D.light_bake_mode<class_Light3D_property_light_bake_mode>` to :ref:`Light3D.BAKE_DISABLED<class_Light3D_constant_BAKE_DISABLED>` for lights to exclude them from global illumination.
 
 .. rst-class:: classref-item-separator
 
@@ -320,7 +326,7 @@ The :ref:`Environment<class_Environment>` to use for this camera.
 - void **set_far** **(** :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_far** **(** **)**
 
-The distance to the far culling boundary for this camera relative to its local Z axis.
+The distance to the far culling boundary for this camera relative to its local Z axis. Higher values allow the camera to see further away, while decreasing :ref:`far<class_Camera3D_property_far>` can improve performance if it results in objects being partially or fully culled.
 
 .. rst-class:: classref-item-separator
 
@@ -417,7 +423,7 @@ The axis to lock during :ref:`fov<class_Camera3D_property_fov>`/:ref:`size<class
 - void **set_near** **(** :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_near** **(** **)**
 
-The distance to the near culling boundary for this camera relative to its local Z axis.
+The distance to the near culling boundary for this camera relative to its local Z axis. Lower values allow the camera to see objects more up close to its origin, at the cost of lower precision across the *entire* range. Values lower than the default can lead to increased Z-fighting.
 
 .. rst-class:: classref-item-separator
 

@@ -19,7 +19,7 @@ A modified version of :ref:`FileDialog<class_FileDialog>` used by the editor.
 Description
 -----------
 
-**EditorFileDialog** is an enhanced version of :ref:`FileDialog<class_FileDialog>` available only to editor plugins. Additional features include list of favorited/recent files and ability to see files as thumbnails grid instead of list.
+**EditorFileDialog** is an enhanced version of :ref:`FileDialog<class_FileDialog>` available only to editor plugins. Additional features include list of favorited/recent files and the ability to see files as thumbnails grid instead of list.
 
 .. rst-class:: classref-reftable-group
 

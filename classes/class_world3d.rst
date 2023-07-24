@@ -12,14 +12,14 @@ World3D
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-Class that has everything pertaining to a world.
+A resource that holds all components of a 3D world, such as a visual scenario and a physics space.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-Class that has everything pertaining to a world. A physics space, a visual scenario and a sound space. Node3D nodes register their resources into the current world.
+Class that has everything pertaining to a world: A physics space, a visual scenario, and a sound space. 3D nodes register their resources into the current 3D world.
 
 .. rst-class:: classref-introduction-group
 

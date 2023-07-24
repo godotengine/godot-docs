@@ -12,7 +12,7 @@ FontFile
 
 **Inherits:** :ref:`Font<class_Font>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-Font source data and prerendered glyph cache, imported from dynamic or bitmap font.
+Holds font source data and prerendered glyph cache, imported from a dynamic or a bitmap font.
 
 .. rst-class:: classref-introduction-group
 
@@ -35,9 +35,9 @@ Supported font formats:
 
 \ **Note:** A character is a symbol that represents an item (letter, digit etc.) in an abstract way.
 
-\ **Note:** A glyph is a bitmap or shape used to draw one or more characters in a context-dependent manner. Glyph indices are bound to the specific font data source.
+\ **Note:** A glyph is a bitmap or a shape used to draw one or more characters in a context-dependent manner. Glyph indices are bound to the specific font data source.
 
-\ **Note:** If a none of the font data sources contain glyphs for a character used in a string, the character in question will be replaced with a box displaying its hexadecimal code.
+\ **Note:** If none of the font data sources contain glyphs for a character used in a string, the character in question will be replaced with a box displaying its hexadecimal code.
 
 
 .. tabs::

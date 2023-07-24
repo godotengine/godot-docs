@@ -12,20 +12,20 @@ AnimationPlayer
 
 **Inherits:** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-Player of :ref:`Animation<class_Animation>` resources.
+A node used for animation playback.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-An animation player is used for general-purpose playback of :ref:`Animation<class_Animation>` resources. It contains a dictionary of :ref:`AnimationLibrary<class_AnimationLibrary>` resources and custom blend times between animation transitions.
+An animation player is used for general-purpose playback of animations. It contains a dictionary of :ref:`AnimationLibrary<class_AnimationLibrary>` resources and custom blend times between animation transitions.
 
 Some methods and properties use a single key to reference an animation directly. These keys are formatted as the key for the library, followed by a forward slash, then the key for the animation within the library, for example ``"movement/run"``. If the library's key is an empty string (known as the default library), the forward slash is omitted, being the same key used by the library.
 
-\ **AnimationPlayer** is more suited than :ref:`Tween<class_Tween>` for animations where you know the final values in advance. For example, fading a screen in and out is more easily done with an **AnimationPlayer** node thanks to the animation tools provided by the editor. That particular example can also be implemented with a :ref:`Tween<class_Tween>`, but it requires doing everything by code.
+\ **AnimationPlayer** is better-suited than :ref:`Tween<class_Tween>` for more complex animations, for example ones with non-trivial timings. It can also be used over :ref:`Tween<class_Tween>` if the animation track editor is more convenient than doing it in code.
 
-Updating the target properties of animations occurs at process time.
+Updating the target properties of animations occurs at the process frame.
 
 .. rst-class:: classref-introduction-group
 
@@ -675,6 +675,8 @@ Returns the :ref:`Animation<class_Animation>` with the key ``name``. If the anim
 :ref:`AnimationLibrary<class_AnimationLibrary>` **get_animation_library** **(** :ref:`StringName<class_StringName>` name **)** |const|
 
 Returns the first :ref:`AnimationLibrary<class_AnimationLibrary>` with key ``name`` or ``null`` if not found.
+
+To get the **AnimationPlayer**'s global animation library, use ``get_animation_library("")``.
 
 .. rst-class:: classref-item-separator
 

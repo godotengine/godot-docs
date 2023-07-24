@@ -61,9 +61,11 @@ Property Descriptions
 - void **set_mirroring** **(** :ref:`Vector2<class_Vector2>` value **)**
 - :ref:`Vector2<class_Vector2>` **get_mirroring** **(** **)**
 
-The ParallaxLayer's :ref:`Texture2D<class_Texture2D>` mirroring. Useful for creating an infinite scrolling background. If an axis is set to ``0``, the :ref:`Texture2D<class_Texture2D>` will not be mirrored.
+The ParallaxLayer's :ref:`Texture2D<class_Texture2D>` repeating. Useful for creating an infinite scrolling background. If an axis is set to ``0``, the :ref:`Texture2D<class_Texture2D>` will not be repeated.
 
-If the length of the viewport axis is bigger than twice the mirrored axis size, it will not repeat infinitely, as the parallax layer only draws 2 instances of the texture at any one time.
+If the length of the viewport axis is bigger than twice the repeated axis size, it will not repeat infinitely, as the parallax layer only draws 2 instances of the texture at any given time.
+
+\ **Note:** Despite its name, the texture will not be mirrored, it will simply be repeated.
 
 .. rst-class:: classref-item-separator
 

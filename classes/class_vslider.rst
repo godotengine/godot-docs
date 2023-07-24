@@ -12,16 +12,14 @@ VSlider
 
 **Inherits:** :ref:`Slider<class_Slider>` **<** :ref:`Range<class_Range>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-Vertical slider.
+A vertical slider that goes from bottom (min) to top (max).
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-Vertical slider. See :ref:`Slider<class_Slider>`. This one goes from bottom (min) to top (max).
-
-\ **Note:** The :ref:`Range.changed<class_Range_signal_changed>` and :ref:`Range.value_changed<class_Range_signal_value_changed>` signals are part of the :ref:`Range<class_Range>` class which this class inherits from.
+A vertical slider, used to adjust a value by moving a grabber along a vertical axis. It is a :ref:`Range<class_Range>`-based control and goes from bottom (min) to top (max). Note that this direction is the opposite of :ref:`VScrollBar<class_VScrollBar>`'s.
 
 .. rst-class:: classref-reftable-group
 

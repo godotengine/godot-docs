@@ -12,14 +12,21 @@ InputEventPanGesture
 
 **Inherits:** :ref:`InputEventGesture<class_InputEventGesture>` **<** :ref:`InputEventWithModifiers<class_InputEventWithModifiers>` **<** :ref:`InputEventFromWindow<class_InputEventFromWindow>` **<** :ref:`InputEvent<class_InputEvent>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-:ref:`InputEvent<class_InputEvent>` that represents a panning touch gesture.
+Represents a panning touch gesture.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-Pan gesture is performed when the user swipes the touch screen with two fingers. It's typically used for panning/scrolling.
+Stores information about pan gestures. A pan gesture is performed when the user swipes the touch screen with two fingers. It's typically used for panning/scrolling.
+
+.. rst-class:: classref-introduction-group
+
+Tutorials
+---------
+
+- :doc:`Using InputEvent <../tutorials/inputs/inputevent>`
 
 .. rst-class:: classref-reftable-group
 

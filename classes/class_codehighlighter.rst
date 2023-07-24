@@ -12,14 +12,14 @@ CodeHighlighter
 
 **Inherits:** :ref:`SyntaxHighlighter<class_SyntaxHighlighter>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-A syntax highlighter for code.
+A syntax highlighter intended for code.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-A syntax highlighter for code.
+By adjusting various properties of this resource, you can change the colors of strings, comments, numbers, and other text patterns inside a :ref:`TextEdit<class_TextEdit>` control.
 
 .. rst-class:: classref-reftable-group
 

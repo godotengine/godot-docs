@@ -12,7 +12,7 @@ RandomNumberGenerator
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-A class for generating pseudo-random numbers.
+Provides methods for generating pseudo-random numbers.
 
 .. rst-class:: classref-introduction-group
 
@@ -21,7 +21,7 @@ Description
 
 RandomNumberGenerator is a class for generating pseudo-random numbers. It currently uses `PCG32 <https://www.pcg-random.org/>`__.
 
-\ **Note:** The underlying algorithm is an implementation detail. As a result, it should not be depended upon for reproducible random streams across Godot versions.
+\ **Note:** The underlying algorithm is an implementation detail and should not be depended upon.
 
 To generate a random float number (within a given range) based on a time-dependant seed:
 
@@ -30,8 +30,6 @@ To generate a random float number (within a given range) based on a time-dependa
     var rng = RandomNumberGenerator.new()
     func _ready():
         var my_random_number = rng.randf_range(-10.0, 10.0)
-
-\ **Note:** The default values of :ref:`seed<class_RandomNumberGenerator_property_seed>` and :ref:`state<class_RandomNumberGenerator_property_state>` properties are pseudo-random, and change when calling :ref:`randomize<class_RandomNumberGenerator_method_randomize>`. The ``0`` value documented here is a placeholder, and not the actual default seed.
 
 .. rst-class:: classref-introduction-group
 
@@ -102,6 +100,8 @@ Initializes the random number generator state based on the given seed value. A g
 
 \ **Note:** Setting this property produces a side effect of changing the internal :ref:`state<class_RandomNumberGenerator_property_state>`, so make sure to initialize the seed *before* modifying the :ref:`state<class_RandomNumberGenerator_property_state>`:
 
+\ **Note:** The default value of this property is pseudo-random, and changes when calling :ref:`randomize<class_RandomNumberGenerator_method_randomize>`. The ``0`` value documented here is a placeholder, and not the actual default seed.
+
 ::
 
     var rng = RandomNumberGenerator.new()
@@ -135,6 +135,8 @@ The current state of the random number generator. Save and restore this property
     print(rng.randf()) # Prints the same value as in previous.
 
 \ **Note:** Do not set state to arbitrary values, since the random number generator requires the state to have certain qualities to behave properly. It should only be set to values that came from the state property itself. To initialize the random number generator with arbitrary input, use :ref:`seed<class_RandomNumberGenerator_property_seed>` instead.
+
+\ **Note:** The default value of this property is pseudo-random, and changes when calling :ref:`randomize<class_RandomNumberGenerator_method_randomize>`. The ``0`` value documented here is a placeholder, and not the actual default seed.
 
 .. rst-class:: classref-section-separator
 

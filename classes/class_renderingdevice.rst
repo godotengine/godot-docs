@@ -3681,7 +3681,7 @@ enum **InitialAction**:
 
 :ref:`InitialAction<enum_RenderingDevice_InitialAction>` **INITIAL_ACTION_CLEAR** = ``0``
 
-
+Start rendering and clear the whole framebuffer.
 
 .. _class_RenderingDevice_constant_INITIAL_ACTION_CLEAR_REGION:
 
@@ -3689,7 +3689,7 @@ enum **InitialAction**:
 
 :ref:`InitialAction<enum_RenderingDevice_InitialAction>` **INITIAL_ACTION_CLEAR_REGION** = ``1``
 
-
+Start rendering and clear the framebuffer in the specified region.
 
 .. _class_RenderingDevice_constant_INITIAL_ACTION_CLEAR_REGION_CONTINUE:
 
@@ -3697,7 +3697,7 @@ enum **InitialAction**:
 
 :ref:`InitialAction<enum_RenderingDevice_InitialAction>` **INITIAL_ACTION_CLEAR_REGION_CONTINUE** = ``2``
 
-
+Continue rendering and clear the framebuffer in the specified region. Framebuffer must have been left in :ref:`FINAL_ACTION_CONTINUE<class_RenderingDevice_constant_FINAL_ACTION_CONTINUE>` state as the final action previously.
 
 .. _class_RenderingDevice_constant_INITIAL_ACTION_KEEP:
 
@@ -3705,7 +3705,7 @@ enum **InitialAction**:
 
 :ref:`InitialAction<enum_RenderingDevice_InitialAction>` **INITIAL_ACTION_KEEP** = ``3``
 
-
+Start rendering, but keep attached color texture contents. If the framebuffer was previously used to read in a shader, this will automatically insert a layout transition.
 
 .. _class_RenderingDevice_constant_INITIAL_ACTION_DROP:
 
@@ -3713,7 +3713,7 @@ enum **InitialAction**:
 
 :ref:`InitialAction<enum_RenderingDevice_InitialAction>` **INITIAL_ACTION_DROP** = ``4``
 
-
+Start rendering, ignore what is there; write above it. In general, this is the fastest option when you will be writing every single pixel and you don't need a clear color.
 
 .. _class_RenderingDevice_constant_INITIAL_ACTION_CONTINUE:
 
@@ -3721,7 +3721,7 @@ enum **InitialAction**:
 
 :ref:`InitialAction<enum_RenderingDevice_InitialAction>` **INITIAL_ACTION_CONTINUE** = ``5``
 
-
+Continue rendering. Framebuffer must have been left in :ref:`FINAL_ACTION_CONTINUE<class_RenderingDevice_constant_FINAL_ACTION_CONTINUE>` state as the final action previously.
 
 .. _class_RenderingDevice_constant_INITIAL_ACTION_MAX:
 

@@ -14,14 +14,14 @@ TextServerExtension
 
 **Inherited By:** :ref:`TextServerAdvanced<class_TextServerAdvanced>`, :ref:`TextServerDummy<class_TextServerDummy>`, :ref:`TextServerFallback<class_TextServerFallback>`
 
-Base class for TextServer custom implementations (plugins).
+Base class for custom :ref:`TextServer<class_TextServer>` implementations (plugins).
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-External TextServer implementations should inherit from this class.
+External :ref:`TextServer<class_TextServer>` implementations should inherit from this class.
 
 .. rst-class:: classref-reftable-group
 

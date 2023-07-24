@@ -12,14 +12,14 @@ StreamPeerGZIP
 
 **Inherits:** :ref:`StreamPeer<class_StreamPeer>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-Stream peer handling GZIP and deflate compression/decompresison.
+A stream peer that handles GZIP and deflate compression/decompression.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-This class allows to compress or decompress data using GZIP/deflate in a streaming fashion. This is particularly useful when compressing or decompressing files that has to be sent through the network without having to allocate them all in memory.
+This class allows to compress or decompress data using GZIP/deflate in a streaming fashion. This is particularly useful when compressing or decompressing files that have to be sent through the network without needing to allocate them all in memory.
 
 After starting the stream via :ref:`start_compression<class_StreamPeerGZIP_method_start_compression>` (or :ref:`start_decompression<class_StreamPeerGZIP_method_start_decompression>`), calling :ref:`StreamPeer.put_partial_data<class_StreamPeer_method_put_partial_data>` on this stream will compress (or decompress) the data, writing it to the internal buffer. Calling :ref:`StreamPeer.get_available_bytes<class_StreamPeer_method_get_available_bytes>` will return the pending bytes in the internal buffer, and :ref:`StreamPeer.get_partial_data<class_StreamPeer_method_get_partial_data>` will retrieve the compressed (or decompressed) bytes from it. When the stream is over, you must call :ref:`finish<class_StreamPeerGZIP_method_finish>` to ensure the internal buffer is properly flushed (make sure to call :ref:`StreamPeer.get_available_bytes<class_StreamPeer_method_get_available_bytes>` on last time to check if more data needs to be read after that).
 

@@ -10,20 +10,20 @@
 StringName
 ==========
 
-An optimized string type for unique names.
+A built-in type for unique strings.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-**StringName**\ s are immutable strings designed for general-purpose representation of unique names (also called "string interning"). **StringName** ensures that only one instance of a given name exists (so two **StringName**\ s with the same value are the same object). Comparing them is much faster than with regular :ref:`String<class_String>`\ s, because only the pointers are compared, not the whole strings.
+**StringName**\ s are immutable strings designed for general-purpose representation of unique names (also called "string interning"). Two **StringName**\ s with the same value are the same object. Comparing them is extremely fast compared to regular :ref:`String<class_String>`\ s.
 
 You will usually just pass a :ref:`String<class_String>` to methods expecting a **StringName** and it will be automatically converted, but you may occasionally want to construct a **StringName** ahead of time with the **StringName** constructor or, in GDScript, the literal syntax ``&"example"``.
 
-See also :ref:`NodePath<class_NodePath>`, which is a similar concept specifically designed to store pre-parsed node paths.
+See also :ref:`NodePath<class_NodePath>`, which is a similar concept specifically designed to store pre-parsed scene tree paths.
 
-Some string methods have corresponding variations. Variations suffixed with ``n`` (:ref:`countn<class_StringName_method_countn>`, :ref:`findn<class_StringName_method_findn>`, :ref:`replacen<class_StringName_method_replacen>`, etc.) are **case-insensitive** (they make no distinction between uppercase and lowercase letters). Method variations prefixed with ``r`` (:ref:`rfind<class_StringName_method_rfind>`, :ref:`rsplit<class_StringName_method_rsplit>`, etc.) are reversed, and start from the end of the string, instead of the beginning.
+All of :ref:`String<class_String>`'s methods are available in this class too. They convert the **StringName** into a string, and they also return a string. This is highly inefficient and should only be used if the string is desired.
 
 \ **Note:** In a boolean context, a **StringName** will evaluate to ``false`` if it is empty (``StringName("")``). Otherwise, a **StringName** will always evaluate to ``true``.
 
@@ -1886,7 +1886,7 @@ Appends ``right`` at the end of this **StringName**, returning a :ref:`String<cl
 
 :ref:`bool<class_bool>` **operator <** **(** :ref:`StringName<class_StringName>` right **)**
 
-Returns ``true`` if the left :ref:`String<class_String>` comes before ``right`` in `Unicode order <https://en.wikipedia.org/wiki/List_of_Unicode_characters>`__, which roughly matches the alphabetical order. Useful for sorting.
+Returns ``true`` if the left **StringName**'s pointer comes before ``right``. Note that this will not match their `Unicode order <https://en.wikipedia.org/wiki/List_of_Unicode_characters>`__.
 
 .. rst-class:: classref-item-separator
 
@@ -1898,7 +1898,7 @@ Returns ``true`` if the left :ref:`String<class_String>` comes before ``right`` 
 
 :ref:`bool<class_bool>` **operator <=** **(** :ref:`StringName<class_StringName>` right **)**
 
-Returns ``true`` if the left :ref:`String<class_String>` comes before ``right`` in `Unicode order <https://en.wikipedia.org/wiki/List_of_Unicode_characters>`__, which roughly matches the alphabetical order, or if both are equal.
+Returns ``true`` if the left **StringName**'s pointer comes before ``right`` or if they are the same. Note that this will not match their `Unicode order <https://en.wikipedia.org/wiki/List_of_Unicode_characters>`__.
 
 .. rst-class:: classref-item-separator
 
@@ -1934,7 +1934,7 @@ Returns ``true`` if the **StringName** and ``right`` refer to the same name. Com
 
 :ref:`bool<class_bool>` **operator >** **(** :ref:`StringName<class_StringName>` right **)**
 
-Returns ``true`` if the left **StringName** comes after ``right`` in `Unicode order <https://en.wikipedia.org/wiki/List_of_Unicode_characters>`__, which roughly matches the alphabetical order. Useful for sorting.
+Returns ``true`` if the left **StringName**'s pointer comes after ``right``. Note that this will not match their `Unicode order <https://en.wikipedia.org/wiki/List_of_Unicode_characters>`__.
 
 .. rst-class:: classref-item-separator
 
@@ -1946,7 +1946,7 @@ Returns ``true`` if the left **StringName** comes after ``right`` in `Unicode or
 
 :ref:`bool<class_bool>` **operator >=** **(** :ref:`StringName<class_StringName>` right **)**
 
-Returns ``true`` if the left **StringName** comes after ``right`` in `Unicode order <https://en.wikipedia.org/wiki/List_of_Unicode_characters>`__, which roughly matches the alphabetical order, or if both are equal.
+Returns ``true`` if the left **StringName**'s pointer comes after ``right`` or if they are the same. Note that this will not match their `Unicode order <https://en.wikipedia.org/wiki/List_of_Unicode_characters>`__.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

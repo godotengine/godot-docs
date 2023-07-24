@@ -12,16 +12,18 @@ CheckBox
 
 **Inherits:** :ref:`Button<class_Button>` **<** :ref:`BaseButton<class_BaseButton>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-Binary choice user interface widget. See also :ref:`CheckButton<class_CheckButton>`.
+A button that represents a binary choice.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-A checkbox allows the user to make a binary choice (choosing only one of two possible options). It's similar to :ref:`CheckButton<class_CheckButton>` in functionality, but it has a different appearance. To follow established UX patterns, it's recommended to use CheckBox when toggling it has **no** immediate effect on something. For example, it could be used when toggling it will only do something once a confirmation button is pressed.
+**CheckBox** allows the user to choose one of only two possible options. It's similar to :ref:`CheckButton<class_CheckButton>` in functionality, but it has a different appearance. To follow established UX patterns, it's recommended to use **CheckBox** when toggling it has **no** immediate effect on something. For example, it could be used when toggling it will only do something once a confirmation button is pressed.
 
 See also :ref:`BaseButton<class_BaseButton>` which contains common properties and methods associated with this node.
+
+When :ref:`BaseButton.button_group<class_BaseButton_property_button_group>` specifies a :ref:`ButtonGroup<class_ButtonGroup>`, **CheckBox** changes its appearance to that of a radio button and uses the various ``radio_*`` theme properties.
 
 .. rst-class:: classref-reftable-group
 

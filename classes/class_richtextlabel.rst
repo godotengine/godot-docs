@@ -12,22 +12,22 @@ RichTextLabel
 
 **Inherits:** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-Label that displays rich text.
+A control for displaying text that can contain different font styles, images, and basic formatting.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-Rich text can contain custom text, fonts, images and some basic formatting. The label manages these as an internal tag stack. It also adapts itself to given width/heights.
+A control for displaying text that can contain custom fonts, images, and basic formatting. **RichTextLabel** manages these as an internal tag stack. It also adapts itself to given width/heights.
 
 \ **Note:** Assignments to :ref:`text<class_RichTextLabel_property_text>` clear the tag stack and reconstruct it from the property's contents. Any edits made to :ref:`text<class_RichTextLabel_property_text>` will erase previous edits made from other manual sources such as :ref:`append_text<class_RichTextLabel_method_append_text>` and the ``push_*`` / :ref:`pop<class_RichTextLabel_method_pop>` methods.
 
 \ **Note:** RichTextLabel doesn't support entangled BBCode tags. For example, instead of using ``[b]bold[i]bold italic[/b]italic[/i]``, use ``[b]bold[i]bold italic[/i][/b][i]italic[/i]``.
 
-\ **Note:** ``push_*/pop`` functions won't affect BBCode.
+\ **Note:** ``push_*/pop_*`` functions won't affect BBCode.
 
-\ **Note:** Unlike :ref:`Label<class_Label>`, RichTextLabel doesn't have a *property* to horizontally align text to the center. Instead, enable :ref:`bbcode_enabled<class_RichTextLabel_property_bbcode_enabled>` and surround the text in a ``[center]`` tag as follows: ``[center]Example[/center]``. There is currently no built-in way to vertically align text either, but this can be emulated by relying on anchors/containers and the :ref:`fit_content<class_RichTextLabel_property_fit_content>` property.
+\ **Note:** Unlike :ref:`Label<class_Label>`, **RichTextLabel** doesn't have a *property* to horizontally align text to the center. Instead, enable :ref:`bbcode_enabled<class_RichTextLabel_property_bbcode_enabled>` and surround the text in a ``[center]`` tag as follows: ``[center]Example[/center]``. There is currently no built-in way to vertically align text either, but this can be emulated by relying on anchors/containers and the :ref:`fit_content<class_RichTextLabel_property_fit_content>` property.
 
 .. rst-class:: classref-introduction-group
 

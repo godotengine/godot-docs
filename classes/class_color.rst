@@ -10,18 +10,18 @@
 Color
 =====
 
-Color built-in type, in RGBA format.
+A color represented in RGBA format.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-A color represented in RGBA format by red (:ref:`r<class_Color_property_r>`), green (:ref:`g<class_Color_property_g>`), blue (:ref:`b<class_Color_property_b>`), and alpha (:ref:`a<class_Color_property_a>`) components. Each component is a 16-bit floating-point value, usually ranging from 0 to 1. Some properties (such as :ref:`CanvasItem.modulate<class_CanvasItem_property_modulate>`) may support values greater than 1, for overbright or High Dynamic Range colors. If you want to supply values in a range of 0 to 255, you should use :ref:`@GDScript.Color8<class_@GDScript_method_Color8>`.
+A color represented in RGBA format by a red (:ref:`r<class_Color_property_r>`), green (:ref:`g<class_Color_property_g>`), blue (:ref:`b<class_Color_property_b>`), and alpha (:ref:`a<class_Color_property_a>`) component. Each component is a 16-bit floating-point value, usually ranging from ``0.0`` to ``1.0``. Some properties (such as :ref:`CanvasItem.modulate<class_CanvasItem_property_modulate>`) may support values greater than ``1.0``, for overbright or HDR (High Dynamic Range) colors.
 
-Colors can also be created by name from a set of standardized colors, through the :ref:`String<class_String>` constructor, :ref:`from_string<class_Color_method_from_string>`, or by directly fetching the color constants documented here. The standardized color set is based on the `X11 color names <https://en.wikipedia.org/wiki/X11_color_names>`__, with the addition of :ref:`TRANSPARENT<class_Color_constant_TRANSPARENT>`.
+Colors can be created in various ways: By the various **Color** constructors, by static methods such as :ref:`from_hsv<class_Color_method_from_hsv>`, and by using a name from the set of standardized colors based on `X11 color names <https://en.wikipedia.org/wiki/X11_color_names>`__ with the addition of :ref:`TRANSPARENT<class_Color_constant_TRANSPARENT>`. GDScript also provides :ref:`@GDScript.Color8<class_@GDScript_method_Color8>`, which uses integers from ``0`` to ``255`` and doesn't support overbright colors.
 
-\ **Note:** In a boolean context, a Color will evaluate to ``false`` if it's equal to ``Color(0, 0, 0, 1)`` (opaque black). Otherwise, a Color will always evaluate to ``true``.
+\ **Note:** In a boolean context, a Color will evaluate to ``false`` if it is equal to ``Color(0, 0, 0, 1)`` (opaque black). Otherwise, a Color will always evaluate to ``true``.
 
 \ `Color constants cheatsheet <https://raw.githubusercontent.com/godotengine/godot-docs/master/img/color_constants.png>`__
 
@@ -1791,9 +1791,9 @@ Returns the light intensity of the color, as a value between 0.0 and 1.0 (inclus
 
 :ref:`Color<class_Color>` **hex** **(** :ref:`int<class_int>` hex **)** |static|
 
-Returns the **Color** associated with the provided ``hex`` integer in 32-bit RGBA format (8 bits per channel, alpha channel first).
+Returns the **Color** associated with the provided ``hex`` integer in 32-bit RGBA format (8 bits per channel).
 
-In GDScript and C#, the :ref:`int<class_int>` is best visualized with hexadecimal notation (``"0x"`` prefix).
+In GDScript and C#, the :ref:`int<class_int>` is best visualized with hexadecimal notation (``"0x"`` prefix, making it ``"0xRRGGBBAA"``).
 
 
 .. tabs::
@@ -1822,9 +1822,9 @@ In GDScript and C#, the :ref:`int<class_int>` is best visualized with hexadecima
 
 :ref:`Color<class_Color>` **hex64** **(** :ref:`int<class_int>` hex **)** |static|
 
-Returns the **Color** associated with the provided ``hex`` integer in 64-bit RGBA format (16 bits per channel, alpha channel first).
+Returns the **Color** associated with the provided ``hex`` integer in 64-bit RGBA format (16 bits per channel).
 
-In GDScript and C#, the :ref:`int<class_int>` is best visualized with hexadecimal notation (``"0x"`` prefix).
+In GDScript and C#, the :ref:`int<class_int>` is best visualized with hexadecimal notation (``"0x"`` prefix, making it ``"0xRRRRGGGGBBBBAAAA"``).
 
 .. rst-class:: classref-item-separator
 

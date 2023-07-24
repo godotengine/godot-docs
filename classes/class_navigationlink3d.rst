@@ -149,7 +149,7 @@ The distance the link will search is controlled by :ref:`NavigationServer3D.map_
 - void **set_enter_cost** **(** :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_enter_cost** **(** **)**
 
-When pathfinding enters this link from another regions navigation mesh the ``enter_cost`` value is added to the path distance for determining the shortest path.
+When pathfinding enters this link from another regions navigation mesh the :ref:`enter_cost<class_NavigationLink3D_property_enter_cost>` value is added to the path distance for determining the shortest path.
 
 .. rst-class:: classref-item-separator
 
@@ -204,7 +204,7 @@ The distance the link will search is controlled by :ref:`NavigationServer3D.map_
 - void **set_travel_cost** **(** :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_travel_cost** **(** **)**
 
-When pathfinding moves along the link the traveled distance is multiplied with ``travel_cost`` for determining the shortest path.
+When pathfinding moves along the link the traveled distance is multiplied with :ref:`travel_cost<class_NavigationLink3D_property_travel_cost>` for determining the shortest path.
 
 .. rst-class:: classref-section-separator
 

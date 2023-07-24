@@ -27,7 +27,7 @@ JavaScriptObject is used to interact with JavaScript objects retrieved or create
 
     extends Node
     
-    var _my_js_callback = JavaScriptBridge.create_callback(self, "myCallback") # This reference must be kept
+    var _my_js_callback = JavaScriptBridge.create_callback(myCallback) # This reference must be kept
     var console = JavaScriptBridge.get_interface("console")
     
     func _init():

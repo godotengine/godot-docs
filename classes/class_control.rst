@@ -14,7 +14,7 @@ Control
 
 **Inherited By:** :ref:`BaseButton<class_BaseButton>`, :ref:`ColorRect<class_ColorRect>`, :ref:`Container<class_Container>`, :ref:`GraphEdit<class_GraphEdit>`, :ref:`ItemList<class_ItemList>`, :ref:`Label<class_Label>`, :ref:`LineEdit<class_LineEdit>`, :ref:`MenuBar<class_MenuBar>`, :ref:`NinePatchRect<class_NinePatchRect>`, :ref:`Panel<class_Panel>`, :ref:`Range<class_Range>`, :ref:`ReferenceRect<class_ReferenceRect>`, :ref:`RichTextLabel<class_RichTextLabel>`, :ref:`Separator<class_Separator>`, :ref:`TabBar<class_TabBar>`, :ref:`TextEdit<class_TextEdit>`, :ref:`TextureRect<class_TextureRect>`, :ref:`Tree<class_Tree>`, :ref:`VideoStreamPlayer<class_VideoStreamPlayer>`
 
-All user interface nodes inherit from Control. A control's anchors and offsets adapt its position and size relative to its parent.
+Base class for all GUI controls. Adapts its position and size based on its parent control.
 
 .. rst-class:: classref-introduction-group
 
@@ -1741,7 +1741,7 @@ The size of the node's bounding rectangle, in the node's coordinate system. :ref
 - void **set_h_size_flags** **(** :ref:`SizeFlags<enum_Control_SizeFlags>` value **)**
 - :ref:`SizeFlags<enum_Control_SizeFlags>` **get_h_size_flags** **(** **)**
 
-Tells the parent :ref:`Container<class_Container>` nodes how they should resize and place the node on the X axis. Use one of the :ref:`SizeFlags<enum_Control_SizeFlags>` constants to change the flags. See the constants to learn what each does.
+Tells the parent :ref:`Container<class_Container>` nodes how they should resize and place the node on the X axis. Use a combination of the :ref:`SizeFlags<enum_Control_SizeFlags>` constants to change the flags. See the constants to learn what each does.
 
 .. rst-class:: classref-item-separator
 
@@ -1775,7 +1775,7 @@ If the node and at least one of its neighbors uses the :ref:`SIZE_EXPAND<class_C
 - void **set_v_size_flags** **(** :ref:`SizeFlags<enum_Control_SizeFlags>` value **)**
 - :ref:`SizeFlags<enum_Control_SizeFlags>` **get_v_size_flags** **(** **)**
 
-Tells the parent :ref:`Container<class_Container>` nodes how they should resize and place the node on the Y axis. Use one of the :ref:`SizeFlags<enum_Control_SizeFlags>` constants to change the flags. See the constants to learn what each does.
+Tells the parent :ref:`Container<class_Container>` nodes how they should resize and place the node on the Y axis. Use a combination of the :ref:`SizeFlags<enum_Control_SizeFlags>` constants to change the flags. See the constants to learn what each does.
 
 .. rst-class:: classref-item-separator
 
@@ -1896,7 +1896,7 @@ This method should only be used to test the data. Process the data in :ref:`_dro
     {
         // Check position if it is relevant to you
         // Otherwise, just check data
-        return data.VariantType == Variant.Type.Dictionary && data.AsGodotDictionary().Contains("expected");
+        return data.VariantType == Variant.Type.Dictionary && data.AsGodotDictionary().ContainsKey("expected");
     }
 
 
@@ -1928,7 +1928,7 @@ Godot calls this method to pass you the ``data`` from a control's :ref:`_get_dra
 
     public override bool _CanDropData(Vector2 atPosition, Variant data)
     {
-        return data.VariantType == Variant.Type.Dictionary && dict.AsGodotDictionary().Contains("color");
+        return data.VariantType == Variant.Type.Dictionary && dict.AsGodotDictionary().ContainsKey("color");
     }
     
     public override void _DropData(Vector2 atPosition, Variant data)

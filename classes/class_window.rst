@@ -14,7 +14,7 @@ Window
 
 **Inherited By:** :ref:`AcceptDialog<class_AcceptDialog>`, :ref:`Popup<class_Popup>`
 
-Base class for all windows.
+Base class for all windows, dialogs, and popups.
 
 .. rst-class:: classref-introduction-group
 
@@ -23,7 +23,7 @@ Description
 
 A node that creates a window. The window can either be a native system window or embedded inside another **Window** (see :ref:`Viewport.gui_embed_subwindows<class_Viewport_property_gui_embed_subwindows>`).
 
-At runtime, **Window**\ s will not close automatically when requested. You need to handle it manually using :ref:`close_requested<class_Window_signal_close_requested>` (this applies both to clicking close button and clicking outside popup).
+At runtime, **Window**\ s will not close automatically when requested. You need to handle it manually using the :ref:`close_requested<class_Window_signal_close_requested>` signal (this applies both to pressing the close button and clicking outside of a popup).
 
 .. rst-class:: classref-reftable-group
 
@@ -1923,9 +1923,7 @@ Moves the **Window** on top of other windows and focuses it.
 
 void **popup** **(** :ref:`Rect2i<class_Rect2i>` rect=Rect2i(0, 0, 0, 0) **)**
 
-Shows the **Window** and makes it transient (see :ref:`transient<class_Window_property_transient>`). If ``rect`` is provided, it will be set as the **Window**'s size.
-
-Fails if called on the main window.
+Shows the **Window** and makes it transient (see :ref:`transient<class_Window_property_transient>`). If ``rect`` is provided, it will be set as the **Window**'s size. Fails if called on the main window.
 
 .. rst-class:: classref-item-separator
 
@@ -1937,9 +1935,7 @@ Fails if called on the main window.
 
 void **popup_centered** **(** :ref:`Vector2i<class_Vector2i>` minsize=Vector2i(0, 0) **)**
 
-Popups the **Window** at the center of the current screen, with optionally given minimum size.
-
-If the **Window** is embedded, it will be centered in the parent :ref:`Viewport<class_Viewport>` instead.
+Popups the **Window** at the center of the current screen, with optionally given minimum size. If the **Window** is embedded, it will be centered in the parent :ref:`Viewport<class_Viewport>` instead.
 
 \ **Note:** Calling it with the default value of ``minsize`` is equivalent to calling it with :ref:`size<class_Window_property_size>`.
 
@@ -1953,9 +1949,7 @@ If the **Window** is embedded, it will be centered in the parent :ref:`Viewport<
 
 void **popup_centered_clamped** **(** :ref:`Vector2i<class_Vector2i>` minsize=Vector2i(0, 0), :ref:`float<class_float>` fallback_ratio=0.75 **)**
 
-Popups the **Window** centered inside its parent **Window**.
-
-\ ``fallback_ratio`` determines the maximum size of the **Window**, in relation to its parent.
+Popups the **Window** centered inside its parent **Window**. ``fallback_ratio`` determines the maximum size of the **Window**, in relation to its parent.
 
 \ **Note:** Calling it with the default value of ``minsize`` is equivalent to calling it with :ref:`size<class_Window_property_size>`.
 
@@ -1981,9 +1975,7 @@ Popups the **Window** centered inside its parent **Window** and sets its size as
 
 void **popup_on_parent** **(** :ref:`Rect2i<class_Rect2i>` parent_rect **)**
 
-Popups the **Window** with a position shifted by parent **Window**'s position.
-
-If the **Window** is embedded, has the same effect as :ref:`popup<class_Window_method_popup>`.
+Popups the **Window** with a position shifted by parent **Window**'s position. If the **Window** is embedded, has the same effect as :ref:`popup<class_Window_method_popup>`.
 
 .. rst-class:: classref-item-separator
 

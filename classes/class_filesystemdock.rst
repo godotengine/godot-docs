@@ -12,7 +12,7 @@ FileSystemDock
 
 **Inherits:** :ref:`VBoxContainer<class_VBoxContainer>` **<** :ref:`BoxContainer<class_BoxContainer>` **<** :ref:`Container<class_Container>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-Editor dock for managing files in the project.
+Godot editor's dock for managing files in the project.
 
 .. rst-class:: classref-introduction-group
 
@@ -21,7 +21,7 @@ Description
 
 This class is available only in :ref:`EditorPlugin<class_EditorPlugin>`\ s and can't be instantiated. You can access it using :ref:`EditorInterface.get_file_system_dock<class_EditorInterface_method_get_file_system_dock>`.
 
-While FileSystemDock doesn't expose any methods for file manipulation, you can listen for various file-related signals.
+While **FileSystemDock** doesn't expose any methods for file manipulation, it can listen for various file-related signals.
 
 .. rst-class:: classref-reftable-group
 

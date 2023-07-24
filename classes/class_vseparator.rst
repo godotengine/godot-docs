@@ -12,14 +12,14 @@ VSeparator
 
 **Inherits:** :ref:`Separator<class_Separator>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-Vertical version of :ref:`Separator<class_Separator>`.
+A vertical line used for separating other controls.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-Vertical version of :ref:`Separator<class_Separator>`. Even though it looks vertical, it is used to separate objects horizontally.
+A vertical separator used for separating other controls that are arranged **horizontally**. **VSeparator** is purely visual and normally drawn as a :ref:`StyleBoxLine<class_StyleBoxLine>`.
 
 .. rst-class:: classref-reftable-group
 

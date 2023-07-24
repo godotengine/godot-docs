@@ -12,18 +12,16 @@ ResourceUID
 
 **Inherits:** :ref:`Object<class_Object>`
 
-Singleton for managing a cache of resource UIDs within a project.
+A singleton that manages the unique identifiers of all resources within a project.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-Resources can not only be referenced using their resource paths ``res://``, but alternatively through a unique identifier specified via ``uid://``.
+Resource UIDs (Unique IDentifiers) allow the engine to keep references between resources intact, even if files can renamed or moved. They can be accessed with ``uid://``.
 
-Using UIDs allows for the engine to keep references between resources intact, even if the files get renamed or moved.
-
-This singleton is responsible for keeping track of all registered resource UIDs of a project, generating new UIDs and converting between the string and integer representation.
+\ **ResourceUID** keeps track of all registered resource UIDs in a project, generates new UIDs, and converts between their string and integer representations.
 
 .. rst-class:: classref-reftable-group
 

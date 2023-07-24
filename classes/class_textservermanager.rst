@@ -12,14 +12,14 @@ TextServerManager
 
 **Inherits:** :ref:`Object<class_Object>`
 
-Manager for the font and complex text layout servers.
+A singleton for managing :ref:`TextServer<class_TextServer>` implementations.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-**TextServerManager** is the API backend for loading, enumeration and switching :ref:`TextServer<class_TextServer>`\ s.
+**TextServerManager** is the API backend for loading, enumerating, and switching :ref:`TextServer<class_TextServer>`\ s.
 
 \ **Note:** Switching text server at runtime is possible, but will invalidate all fonts and text buffers. Make sure to unload all controls, fonts, and themes before doing so.
 
@@ -93,7 +93,7 @@ Method Descriptions
 
 void **add_interface** **(** :ref:`TextServer<class_TextServer>` interface **)**
 
-Registers an :ref:`TextServer<class_TextServer>` interface.
+Registers a :ref:`TextServer<class_TextServer>` interface.
 
 .. rst-class:: classref-item-separator
 
@@ -105,7 +105,7 @@ Registers an :ref:`TextServer<class_TextServer>` interface.
 
 :ref:`TextServer<class_TextServer>` **find_interface** **(** :ref:`String<class_String>` name **)** |const|
 
-Finds an interface by its name.
+Finds an interface by its ``name``.
 
 .. rst-class:: classref-item-separator
 
@@ -141,7 +141,7 @@ Returns the number of interfaces currently registered.
 
 :ref:`Dictionary[]<class_Dictionary>` **get_interfaces** **(** **)** |const|
 
-Returns a list of available interfaces the index and name of each interface.
+Returns a list of available interfaces, with the index and name of each interface.
 
 .. rst-class:: classref-item-separator
 
@@ -165,7 +165,7 @@ Returns the primary :ref:`TextServer<class_TextServer>` interface currently in u
 
 void **remove_interface** **(** :ref:`TextServer<class_TextServer>` interface **)**
 
-Removes interface. All fonts and shaped text caches should be freed before removing interface.
+Removes an interface. All fonts and shaped text caches should be freed before removing an interface.
 
 .. rst-class:: classref-item-separator
 

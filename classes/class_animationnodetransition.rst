@@ -12,7 +12,7 @@ AnimationNodeTransition
 
 **Inherits:** :ref:`AnimationNodeSync<class_AnimationNodeSync>` **<** :ref:`AnimationNode<class_AnimationNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-A generic animation transition node for :ref:`AnimationTree<class_AnimationTree>`.
+A transition within an :ref:`AnimationTree<class_AnimationTree>` connecting two :ref:`AnimationNode<class_AnimationNode>`\ s.
 
 .. rst-class:: classref-introduction-group
 
@@ -63,7 +63,7 @@ After setting the request and changing the animation playback, the transition no
 Tutorials
 ---------
 
-- :doc:`AnimationTree <../tutorials/animation/animation_tree>`
+- :doc:`Using AnimationTree <../tutorials/animation/animation_tree>`
 
 - `3D Platformer Demo <https://godotengine.org/asset-library/asset/125>`__
 

@@ -12,21 +12,21 @@ AnimationNodeAnimation
 
 **Inherits:** :ref:`AnimationRootNode<class_AnimationRootNode>` **<** :ref:`AnimationNode<class_AnimationNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-Input animation to use in an :ref:`AnimationNodeBlendTree<class_AnimationNodeBlendTree>`.
+An input animation for an :ref:`AnimationNodeBlendTree<class_AnimationNodeBlendTree>`.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-A resource to add to an :ref:`AnimationNodeBlendTree<class_AnimationNodeBlendTree>`. Only features one output set using the :ref:`animation<class_AnimationNodeAnimation_property_animation>` property. Use it as an input for :ref:`AnimationNode<class_AnimationNode>` that blend animations together.
+A resource to add to an :ref:`AnimationNodeBlendTree<class_AnimationNodeBlendTree>`. Only has one output port using the :ref:`animation<class_AnimationNodeAnimation_property_animation>` property. Used as an input for :ref:`AnimationNode<class_AnimationNode>`\ s that blend animations together.
 
 .. rst-class:: classref-introduction-group
 
 Tutorials
 ---------
 
-- :doc:`AnimationTree <../tutorials/animation/animation_tree>`
+- :doc:`Using AnimationTree <../tutorials/animation/animation_tree>`
 
 - `3D Platformer Demo <https://godotengine.org/asset-library/asset/125>`__
 
