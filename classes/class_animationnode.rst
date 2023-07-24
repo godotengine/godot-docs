@@ -14,7 +14,7 @@ AnimationNode
 
 **Inherited By:** :ref:`AnimationNodeOutput<class_AnimationNodeOutput>`, :ref:`AnimationNodeSync<class_AnimationNodeSync>`, :ref:`AnimationNodeTimeScale<class_AnimationNodeTimeScale>`, :ref:`AnimationNodeTimeSeek<class_AnimationNodeTimeSeek>`, :ref:`AnimationRootNode<class_AnimationRootNode>`
 
-Base resource for :ref:`AnimationTree<class_AnimationTree>` nodes.
+Base class for :ref:`AnimationTree<class_AnimationTree>` nodes. Not related to scene nodes.
 
 .. rst-class:: classref-introduction-group
 
@@ -30,7 +30,7 @@ Inherit this when creating nodes mainly for use in :ref:`AnimationNodeBlendTree<
 Tutorials
 ---------
 
-- :doc:`AnimationTree <../tutorials/animation/animation_tree>`
+- :doc:`Using AnimationTree <../tutorials/animation/animation_tree>`
 
 .. rst-class:: classref-reftable-group
 

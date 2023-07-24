@@ -10,16 +10,18 @@
 Vector4i
 ========
 
-Vector used for 4D math using integer coordinates.
+A 4D vector using integer coordinates.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-4-element structure that can be used to represent 4D grid coordinates or sets of integers.
+A 4-element structure that can be used to represent 4D grid coordinates or any other quadruplet of integers.
 
 It uses integer coordinates and is therefore preferable to :ref:`Vector4<class_Vector4>` when exact precision is required. Note that the values are limited to 32 bits, and unlike :ref:`Vector4<class_Vector4>` this cannot be configured with an engine build option. Use :ref:`int<class_int>` or :ref:`PackedInt64Array<class_PackedInt64Array>` if 64-bit values are needed.
+
+\ **Note:** In a boolean context, a Vector4i will evaluate to ``false`` if it's equal to ``Vector4i(0, 0, 0, 0)``. Otherwise, a Vector3i will always evaluate to ``true``.
 
 .. rst-class:: classref-reftable-group
 

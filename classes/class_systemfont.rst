@@ -12,9 +12,7 @@ SystemFont
 
 **Inherits:** :ref:`Font<class_Font>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-Font loaded from a system font.
-
-\ **Note:** This class is implemented on iOS, Linux, macOS and Windows, on other platforms it will fallback to default theme font.
+A font loaded from a system font. Falls back to a default theme font if not implemented on the host OS.
 
 .. rst-class:: classref-introduction-group
 
@@ -28,6 +26,8 @@ It will attempt to match font style, but it's not guaranteed.
 The returned font might be part of a font collection or be a variable font with OpenType "weight", "width" and/or "italic" features set.
 
 You can create :ref:`FontVariation<class_FontVariation>` of the system font for fine control over its features.
+
+\ **Note:** This class is implemented on iOS, Linux, macOS and Windows, on other platforms it will fallback to default theme font.
 
 .. rst-class:: classref-reftable-group
 

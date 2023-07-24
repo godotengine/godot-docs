@@ -12,14 +12,21 @@ InputEventMagnifyGesture
 
 **Inherits:** :ref:`InputEventGesture<class_InputEventGesture>` **<** :ref:`InputEventWithModifiers<class_InputEventWithModifiers>` **<** :ref:`InputEventFromWindow<class_InputEventFromWindow>` **<** :ref:`InputEvent<class_InputEvent>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-:ref:`InputEvent<class_InputEvent>` that represents a magnifying touch gesture.
+Represents a magnifying touch gesture.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-Magnify gesture is performed when the user pinches the touch screen. It's typically used for zooming.
+Stores the factor of a magnifying touch gesture. This is usually performed when the user pinches the touch screen and used for zooming in/out.
+
+.. rst-class:: classref-introduction-group
+
+Tutorials
+---------
+
+- :doc:`Using InputEvent <../tutorials/inputs/inputevent>`
 
 .. rst-class:: classref-reftable-group
 
@@ -53,7 +60,7 @@ Property Descriptions
 - void **set_factor** **(** :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_factor** **(** **)**
 
-The amount (or delta) of the event. This value is higher the faster the gesture is performed.
+The amount (or delta) of the event. This value is closer to ``1.0`` the slower the gesture is performed.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

@@ -12,7 +12,7 @@ AnimationNodeStateMachinePlayback
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-Playback control for :ref:`AnimationNodeStateMachine<class_AnimationNodeStateMachine>`.
+Provides playback control for an :ref:`AnimationNodeStateMachine<class_AnimationNodeStateMachine>`.
 
 .. rst-class:: classref-introduction-group
 
@@ -33,7 +33,7 @@ Allows control of :ref:`AnimationTree<class_AnimationTree>` state machines creat
 
  .. code-tab:: csharp
 
-    var stateMachine = GetNode<AnimationTree>("AnimationTree").Get("parameters/playback") as AnimationNodeStateMachinePlayback;
+    var stateMachine = GetNode<AnimationTree>("AnimationTree").Get("parameters/playback").As<AnimationNodeStateMachinePlayback>();
     stateMachine.Travel("some_state");
 
 
@@ -43,7 +43,7 @@ Allows control of :ref:`AnimationTree<class_AnimationTree>` state machines creat
 Tutorials
 ---------
 
-- :doc:`AnimationTree <../tutorials/animation/animation_tree>`
+- :doc:`Using AnimationTree <../tutorials/animation/animation_tree>`
 
 .. rst-class:: classref-reftable-group
 

@@ -10,7 +10,7 @@
 String
 ======
 
-Built-in string Variant type.
+A built-in type for strings.
 
 .. rst-class:: classref-introduction-group
 
@@ -1713,11 +1713,11 @@ Converts the string representing a decimal number into a :ref:`float<class_float
 
 ::
 
-    var a = "12.35".to_float() # a is 12.35
-    var b = "1.2.3".to_float() # b is 1.2
-    var c = "12xy3".to_float() # c is 12.0
-    var d = "1e3".to_float()   # d is 1000.0
-    var e = "Hello!".to_int()  # e is 0.0
+    var a = "12.35".to_float()  # a is 12.35
+    var b = "1.2.3".to_float()  # b is 1.2
+    var c = "12xy3".to_float()  # c is 12.0
+    var d = "1e3".to_float()    # d is 1000.0
+    var e = "Hello!".to_float() # e is 0.0
 
 .. rst-class:: classref-item-separator
 

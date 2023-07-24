@@ -12,14 +12,14 @@ Geometry2D
 
 **Inherits:** :ref:`Object<class_Object>`
 
-Helper node to calculate generic geometry operations in 2D space.
+Provides methods for some common 2D geometric operations.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-Geometry2D provides users with a set of helper functions to create geometric shapes, compute intersections between shapes, and process various other geometric operations.
+Provides a set of helper functions to create geometric shapes, compute intersections between shapes, and process various other geometric operations in 2D.
 
 .. rst-class:: classref-reftable-group
 

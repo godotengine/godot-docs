@@ -38,7 +38,7 @@ In computer programming, a Variant class is a class that is designed to store a 
     var boo = "Boo is a string!";
     var ref = new RefCounted(); // var is especially useful when used together with a constructor.
     
-    // Godot also provides a Variant type that works like an union of all the Variant-compatible types.
+    // Godot also provides a Variant type that works like a union of all the Variant-compatible types.
     Variant fooVar = 2; // fooVar is dynamically an integer (stored as a `long` in the Variant type).
     fooVar = "Now fooVar is a string!";
     fooVar = new RefCounted(); // fooVar is a GodotObject.

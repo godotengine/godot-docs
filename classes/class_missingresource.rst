@@ -12,7 +12,7 @@ MissingResource
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-This is an internal editor class intended for keeping data of resources of unknown type.
+An internal editor class intended for keeping the data of unrecognized resources.
 
 .. rst-class:: classref-introduction-group
 
@@ -55,9 +55,7 @@ Property Descriptions
 - void **set_original_class** **(** :ref:`String<class_String>` value **)**
 - :ref:`String<class_String>` **get_original_class** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Returns the name of the class this resource was originally.
 
 .. rst-class:: classref-item-separator
 

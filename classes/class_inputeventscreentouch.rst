@@ -12,23 +12,21 @@ InputEventScreenTouch
 
 **Inherits:** :ref:`InputEventFromWindow<class_InputEventFromWindow>` **<** :ref:`InputEvent<class_InputEvent>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-Input event type for screen touch events.
-
-(only available on mobile devices)
+Represents a screen touch event.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-Stores multi-touch press/release information. Supports touch press, touch release and :ref:`index<class_InputEventScreenTouch_property_index>` for multi-touch count and order.
+Stores information about multi-touch press/release input events. Supports touch press, touch release and :ref:`index<class_InputEventScreenTouch_property_index>` for multi-touch count and order.
 
 .. rst-class:: classref-introduction-group
 
 Tutorials
 ---------
 
-- :doc:`InputEvent <../tutorials/inputs/inputevent>`
+- :doc:`Using InputEvent <../tutorials/inputs/inputevent>`
 
 .. rst-class:: classref-reftable-group
 

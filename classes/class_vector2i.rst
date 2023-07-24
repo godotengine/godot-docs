@@ -10,14 +10,14 @@
 Vector2i
 ========
 
-Vector used for 2D math using integer coordinates.
+A 2D vector using integer coordinates.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-2-element structure that can be used to represent positions in 2D space or any other pair of numeric values.
+A 2-element structure that can be used to represent 2D grid coordinates or any other pair of integers.
 
 It uses integer coordinates and is therefore preferable to :ref:`Vector2<class_Vector2>` when exact precision is required. Note that the values are limited to 32 bits, and unlike :ref:`Vector2<class_Vector2>` this cannot be configured with an engine build option. Use :ref:`int<class_int>` or :ref:`PackedInt64Array<class_PackedInt64Array>` if 64-bit values are needed.
 

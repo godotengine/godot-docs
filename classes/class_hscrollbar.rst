@@ -12,14 +12,14 @@ HScrollBar
 
 **Inherits:** :ref:`ScrollBar<class_ScrollBar>` **<** :ref:`Range<class_Range>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-Horizontal scroll bar.
+A horizontal scrollbar that goes from left (min) to right (max).
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-Horizontal version of :ref:`ScrollBar<class_ScrollBar>`, which goes from left (min) to right (max).
+A horizontal scrollbar, typically used to navigate through content that extends beyond the visible width of a control. It is a :ref:`Range<class_Range>`-based control and goes from left (min) to right (max).
 
 .. rst-class:: classref-reftable-group
 

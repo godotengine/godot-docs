@@ -14,14 +14,14 @@ Popup
 
 **Inherited By:** :ref:`PopupMenu<class_PopupMenu>`, :ref:`PopupPanel<class_PopupPanel>`
 
-Popup is a base window container for popup-like subwindows.
+Base class for contextual windows and panels with fixed position.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-Popup is a base window container for popup-like subwindows. It's a modal by default (see :ref:`Window.popup_window<class_Window_property_popup_window>`) and has helpers for custom popup behavior.
+**Popup** is a base class for contextual windows and panels with fixed position. It's a modal by default (see :ref:`Window.popup_window<class_Window_property_popup_window>`) and provides methods for implementing custom popup behavior.
 
 .. rst-class:: classref-reftable-group
 

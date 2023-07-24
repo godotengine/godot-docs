@@ -12,14 +12,14 @@ EditorProperty
 
 **Inherits:** :ref:`Container<class_Container>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-Custom control to edit properties for adding into the inspector.
+Custom control for editing properties that can be added to the :ref:`EditorInspector<class_EditorInspector>`.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-This control allows property editing for one or multiple properties into :ref:`EditorInspector<class_EditorInspector>`. It is added via :ref:`EditorInspectorPlugin<class_EditorInspectorPlugin>`.
+A custom control for editing properties that can be added to the :ref:`EditorInspector<class_EditorInspector>`. It is added via :ref:`EditorInspectorPlugin<class_EditorInspectorPlugin>`.
 
 .. rst-class:: classref-reftable-group
 

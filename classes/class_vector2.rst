@@ -10,14 +10,14 @@
 Vector2
 =======
 
-Vector used for 2D math using floating point coordinates.
+A 2D vector using floating point coordinates.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-2-element structure that can be used to represent positions in 2D space or any other pair of numeric values.
+A 2-element structure that can be used to represent 2D coordinates or any other pair of numeric values.
 
 It uses floating-point coordinates. By default, these floating-point values use 32-bit precision, unlike :ref:`float<class_float>` which is always 64-bit. If double precision is needed, compile the engine with the option ``precision=double``.
 
@@ -939,6 +939,8 @@ Returns ``true`` if the vectors are not equal.
 
 \ **Note:** Due to floating-point precision errors, consider using :ref:`is_equal_approx<class_Vector2_method_is_equal_approx>` instead, which is more reliable.
 
+\ **Note:** Vectors with :ref:`@GDScript.NAN<class_@GDScript_constant_NAN>` elements don't behave the same as other vectors. Therefore, the results from this operator may not be accurate if NaNs are included.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -1075,6 +1077,8 @@ Divides each component of the **Vector2** by the given :ref:`int<class_int>`.
 
 Compares two **Vector2** vectors by first checking if the X value of the left vector is less than the X value of the ``right`` vector. If the X values are exactly equal, then it repeats this check with the Y values of the two vectors. This operator is useful for sorting vectors.
 
+\ **Note:** Vectors with :ref:`@GDScript.NAN<class_@GDScript_constant_NAN>` elements don't behave the same as other vectors. Therefore, the results from this operator may not be accurate if NaNs are included.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -1086,6 +1090,8 @@ Compares two **Vector2** vectors by first checking if the X value of the left ve
 :ref:`bool<class_bool>` **operator <=** **(** :ref:`Vector2<class_Vector2>` right **)**
 
 Compares two **Vector2** vectors by first checking if the X value of the left vector is less than or equal to the X value of the ``right`` vector. If the X values are exactly equal, then it repeats this check with the Y values of the two vectors. This operator is useful for sorting vectors.
+
+\ **Note:** Vectors with :ref:`@GDScript.NAN<class_@GDScript_constant_NAN>` elements don't behave the same as other vectors. Therefore, the results from this operator may not be accurate if NaNs are included.
 
 .. rst-class:: classref-item-separator
 
@@ -1101,6 +1107,8 @@ Returns ``true`` if the vectors are exactly equal.
 
 \ **Note:** Due to floating-point precision errors, consider using :ref:`is_equal_approx<class_Vector2_method_is_equal_approx>` instead, which is more reliable.
 
+\ **Note:** Vectors with :ref:`@GDScript.NAN<class_@GDScript_constant_NAN>` elements don't behave the same as other vectors. Therefore, the results from this operator may not be accurate if NaNs are included.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -1113,6 +1121,8 @@ Returns ``true`` if the vectors are exactly equal.
 
 Compares two **Vector2** vectors by first checking if the X value of the left vector is greater than the X value of the ``right`` vector. If the X values are exactly equal, then it repeats this check with the Y values of the two vectors. This operator is useful for sorting vectors.
 
+\ **Note:** Vectors with :ref:`@GDScript.NAN<class_@GDScript_constant_NAN>` elements don't behave the same as other vectors. Therefore, the results from this operator may not be accurate if NaNs are included.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -1124,6 +1134,8 @@ Compares two **Vector2** vectors by first checking if the X value of the left ve
 :ref:`bool<class_bool>` **operator >=** **(** :ref:`Vector2<class_Vector2>` right **)**
 
 Compares two **Vector2** vectors by first checking if the X value of the left vector is greater than or equal to the X value of the ``right`` vector. If the X values are exactly equal, then it repeats this check with the Y values of the two vectors. This operator is useful for sorting vectors.
+
+\ **Note:** Vectors with :ref:`@GDScript.NAN<class_@GDScript_constant_NAN>` elements don't behave the same as other vectors. Therefore, the results from this operator may not be accurate if NaNs are included.
 
 .. rst-class:: classref-item-separator
 

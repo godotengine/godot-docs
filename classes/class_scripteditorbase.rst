@@ -19,7 +19,7 @@ Base editor for editing scripts in the :ref:`ScriptEditor<class_ScriptEditor>`.
 Description
 -----------
 
-Base editor for editing scripts in the :ref:`ScriptEditor<class_ScriptEditor>`, this does not include documentation items.
+Base editor for editing scripts in the :ref:`ScriptEditor<class_ScriptEditor>`. This does not include documentation items.
 
 .. rst-class:: classref-reftable-group
 

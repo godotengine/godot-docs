@@ -12,14 +12,14 @@ Animation
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-Contains data used to animate everything in the engine.
+Holds data that can be used to animate anything in the engine.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-An Animation resource contains data used to animate everything in the engine. Animations are divided into tracks, and each track must be linked to a node. The state of that node can be changed through time, by adding timed keys (events) to the track.
+This resource holds data that can be used to animate anything in the engine. Animations are divided into tracks and each track must be linked to a node. The state of that node can be changed through time, by adding timed keys (events) to the track.
 
 
 .. tabs::

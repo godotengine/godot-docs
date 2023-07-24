@@ -12,14 +12,14 @@ DirAccess
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-Type used to handle the filesystem.
+Provides methods for managing directories and their content.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-Directory type. It is used to manage directories and their content (not restricted to the project folder).
+This class is used to manage directories and their content, even outside of the project folder.
 
 \ **DirAccess** can't be instantiated directly. Instead it is created with a static method that takes a path for which it will be opened.
 
@@ -417,7 +417,7 @@ Returns a :ref:`PackedStringArray<class_PackedStringArray>` containing filenames
 
 Affected by :ref:`include_hidden<class_DirAccess_property_include_hidden>`.
 
-\ **Note:** When used on a ``res://`` path in an exported project, only the files actually included in the PCK at the given folder level are returned. In practice, this means that since imported resources are stored in a top-level ``.godot/`` folder, only paths to ``*.gd`` and ``*.import`` files are returned (plus a few files such as ``project.godot`` or ``project.binary[code] and the project icon). In an exported project, the list of returned files will also vary depending on whether [member ProjectSettings.editor/export/convert_text_resources_to_binary] is [code]true``.
+\ **Note:** When used on a ``res://`` path in an exported project, only the files actually included in the PCK at the given folder level are returned. In practice, this means that since imported resources are stored in a top-level ``.godot/`` folder, only paths to ``*.gd`` and ``*.import`` files are returned (plus a few files such as ``project.godot`` or ``project.binary`` and the project icon). In an exported project, the list of returned files will also vary depending on whether :ref:`ProjectSettings.editor/export/convert_text_resources_to_binary<class_ProjectSettings_property_editor/export/convert_text_resources_to_binary>` is ``true``.
 
 .. rst-class:: classref-item-separator
 

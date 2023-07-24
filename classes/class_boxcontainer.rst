@@ -14,21 +14,21 @@ BoxContainer
 
 **Inherited By:** :ref:`HBoxContainer<class_HBoxContainer>`, :ref:`VBoxContainer<class_VBoxContainer>`
 
-Base class for box containers.
+A container that arranges its child controls horizontally or vertically.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-Arranges child :ref:`Control<class_Control>` nodes vertically or horizontally, and rearranges them automatically when their minimum size changes.
+A container that arranges its child controls horizontally or vertically, rearranging them automatically when their minimum size changes.
 
 .. rst-class:: classref-introduction-group
 
 Tutorials
 ---------
 
-- :doc:`GUI containers <../tutorials/ui/gui_containers>`
+- :doc:`Using Containers <../tutorials/ui/gui_containers>`
 
 .. rst-class:: classref-reftable-group
 

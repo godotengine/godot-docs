@@ -12,12 +12,14 @@ PhysicalBone3D
 
 **Inherits:** :ref:`PhysicsBody3D<class_PhysicsBody3D>` **<** :ref:`CollisionObject3D<class_CollisionObject3D>` **<** :ref:`Node3D<class_Node3D>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
+A physics body used to make bones in a :ref:`Skeleton3D<class_Skeleton3D>` react to physics.
+
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-**Warning:** With a non-uniform scale this node will probably not function as expected. Please make sure to keep its scale uniform (i.e. the same on all axes), and change the size(s) of its collision shape(s) instead.
+The **PhysicalBone3D** node is a physics body that can be used to make bones in a :ref:`Skeleton3D<class_Skeleton3D>` react to physics.
 
 .. rst-class:: classref-reftable-group
 

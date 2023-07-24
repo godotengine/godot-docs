@@ -12,14 +12,16 @@ SubViewport
 
 **Inherits:** :ref:`Viewport<class_Viewport>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-Creates a sub-view into the screen.
+An interface to a game world that doesn't create a window or draw to the screen directly.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-**SubViewport** is a :ref:`Viewport<class_Viewport>` that isn't a :ref:`Window<class_Window>`, i.e. it doesn't draw anything by itself. To display something, **SubViewport**'s :ref:`size<class_SubViewport_property_size>` must be non-zero and it should be either put inside a :ref:`SubViewportContainer<class_SubViewportContainer>` or assigned to a :ref:`ViewportTexture<class_ViewportTexture>`.
+**SubViewport** Isolates a rectangular region of a scene to be displayed independently. This can be used, for example, to display UI in 3D space.
+
+\ **Note:** **SubViewport** is a :ref:`Viewport<class_Viewport>` that isn't a :ref:`Window<class_Window>`, i.e. it doesn't draw anything by itself. To display anything, **SubViewport** must have a non-zero size and be either put inside a :ref:`SubViewportContainer<class_SubViewportContainer>` or assigned to a :ref:`ViewportTexture<class_ViewportTexture>`.
 
 .. rst-class:: classref-introduction-group
 

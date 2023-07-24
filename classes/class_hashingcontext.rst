@@ -12,14 +12,14 @@ HashingContext
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-Context to compute cryptographic hashes over multiple iterations.
+Provides functionality for computing cryptographic hashes chunk by chunk.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-The HashingContext class provides an interface for computing cryptographic hashes over multiple iterations. This is useful for example when computing hashes of big files (so you don't have to load them all in memory), network streams, and data streams in general (so you don't have to hold buffers).
+The HashingContext class provides an interface for computing cryptographic hashes over multiple iterations. Useful for computing hashes of big files (so you don't have to load them all in memory), network streams, and data streams in general (so you don't have to hold buffers).
 
 The :ref:`HashType<enum_HashingContext_HashType>` enum shows the supported hashing algorithms.
 

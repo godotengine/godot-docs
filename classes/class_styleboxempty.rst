@@ -12,14 +12,14 @@ StyleBoxEmpty
 
 **Inherits:** :ref:`StyleBox<class_StyleBox>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-Empty stylebox (does not display anything).
+An empty :ref:`StyleBox<class_StyleBox>` (does not display anything).
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-Empty stylebox (really does not display anything).
+An empty :ref:`StyleBox<class_StyleBox>` that can be used to display nothing instead of the default style (e.g. it can "disable" ``focus`` styles).
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

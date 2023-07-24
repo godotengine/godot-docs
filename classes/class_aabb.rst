@@ -10,7 +10,7 @@
 AABB
 ====
 
-Axis-Aligned Bounding Box.
+A 3D axis-aligned bounding box.
 
 .. rst-class:: classref-introduction-group
 

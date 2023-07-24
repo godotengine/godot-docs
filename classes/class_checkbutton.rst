@@ -12,14 +12,14 @@ CheckButton
 
 **Inherits:** :ref:`Button<class_Button>` **<** :ref:`BaseButton<class_BaseButton>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-Checkable button. See also :ref:`CheckBox<class_CheckBox>`.
+A button that represents a binary choice.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-CheckButton is a toggle button displayed as a check field. It's similar to :ref:`CheckBox<class_CheckBox>` in functionality, but it has a different appearance. To follow established UX patterns, it's recommended to use CheckButton when toggling it has an **immediate** effect on something. For example, it could be used if toggling it enables/disables a setting without requiring the user to press a confirmation button.
+**CheckButton** is a toggle button displayed as a check field. It's similar to :ref:`CheckBox<class_CheckBox>` in functionality, but it has a different appearance. To follow established UX patterns, it's recommended to use **CheckButton** when toggling it has an **immediate** effect on something. For example, it can be used when pressing it shows or hides advanced settings, without asking the user to confirm this action.
 
 See also :ref:`BaseButton<class_BaseButton>` which contains common properties and methods associated with this node.
 

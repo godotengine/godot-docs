@@ -12,14 +12,14 @@ TranslationServer
 
 **Inherits:** :ref:`Object<class_Object>`
 
-Server that manages all translations.
+The server responsible for language translations.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-Server that manages all translations. Translations can be set to it and removed from it.
+The server that manages all language translations. Translations can be added to or removed from it.
 
 .. rst-class:: classref-introduction-group
 
@@ -155,7 +155,7 @@ Clears the server from all translations.
 
 :ref:`int<class_int>` **compare_locales** **(** :ref:`String<class_String>` locale_a, :ref:`String<class_String>` locale_b **)** |const|
 
-Compares two locales and return similarity score between ``0``\ (no match) and ``10``\ (full match).
+Compares two locales and returns a similarity score between ``0`` (no match) and ``10`` (full match).
 
 .. rst-class:: classref-item-separator
 
@@ -167,7 +167,7 @@ Compares two locales and return similarity score between ``0``\ (no match) and `
 
 :ref:`PackedStringArray<class_PackedStringArray>` **get_all_countries** **(** **)** |const|
 
-Returns array of known country codes.
+Returns an array of known country codes.
 
 .. rst-class:: classref-item-separator
 
@@ -191,7 +191,7 @@ Returns array of known language codes.
 
 :ref:`PackedStringArray<class_PackedStringArray>` **get_all_scripts** **(** **)** |const|
 
-Returns array of known script codes.
+Returns an array of known script codes.
 
 .. rst-class:: classref-item-separator
 
@@ -203,7 +203,7 @@ Returns array of known script codes.
 
 :ref:`String<class_String>` **get_country_name** **(** :ref:`String<class_String>` country **)** |const|
 
-Returns readable country name for the ``country`` code.
+Returns a readable country name for the ``country`` code.
 
 .. rst-class:: classref-item-separator
 
@@ -215,7 +215,7 @@ Returns readable country name for the ``country`` code.
 
 :ref:`String<class_String>` **get_language_name** **(** :ref:`String<class_String>` language **)** |const|
 
-Returns readable language name for the ``language`` code.
+Returns a readable language name for the ``language`` code.
 
 .. rst-class:: classref-item-separator
 
@@ -265,7 +265,7 @@ Returns a locale's language and its variant (e.g. ``"en_US"`` would return ``"En
 
 :ref:`String<class_String>` **get_script_name** **(** :ref:`String<class_String>` script **)** |const|
 
-Returns readable script name for the ``script`` code.
+Returns a readable script name for the ``script`` code.
 
 .. rst-class:: classref-item-separator
 
@@ -355,7 +355,7 @@ If translations have been loaded beforehand for the new locale, they will be app
 
 :ref:`String<class_String>` **standardize_locale** **(** :ref:`String<class_String>` locale **)** |const|
 
-Returns ``locale`` string standardized to match known locales (e.g. ``en-US`` would be matched to ``en_US``).
+Returns a ``locale`` string standardized to match known locales (e.g. ``en-US`` would be matched to ``en_US``).
 
 .. rst-class:: classref-item-separator
 

@@ -12,16 +12,16 @@ CodeEdit
 
 **Inherits:** :ref:`TextEdit<class_TextEdit>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-Multiline text control intended for editing code.
+A multiline text editor designed for editing code.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-CodeEdit is a specialized :ref:`TextEdit<class_TextEdit>` designed for editing plain text code files. It contains a bunch of features commonly found in code editors such as line numbers, line folding, code completion, indent management and string / comment management.
+CodeEdit is a specialized :ref:`TextEdit<class_TextEdit>` designed for editing plain text code files. It has many features commonly found in code editors such as line numbers, line folding, code completion, indent management, and string/comment management.
 
-\ **Note:** By default **CodeEdit** always use left-to-right text direction to correctly display source code.
+\ **Note:** Regardless of locale, **CodeEdit** will by default always use left-to-right text direction to correctly display source code.
 
 .. rst-class:: classref-reftable-group
 

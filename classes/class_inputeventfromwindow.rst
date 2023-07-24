@@ -14,7 +14,7 @@ InputEventFromWindow
 
 **Inherited By:** :ref:`InputEventScreenDrag<class_InputEventScreenDrag>`, :ref:`InputEventScreenTouch<class_InputEventScreenTouch>`, :ref:`InputEventWithModifiers<class_InputEventWithModifiers>`
 
-Base class for :ref:`Viewport<class_Viewport>`-based input events.
+Abstract base class for :ref:`Viewport<class_Viewport>`-based input events.
 
 .. rst-class:: classref-introduction-group
 

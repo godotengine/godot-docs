@@ -12,14 +12,14 @@ OS
 
 **Inherits:** :ref:`Object<class_Object>`
 
-Operating System functions.
+Provides access to common operating system functionalities.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-Operating System functions. **OS** wraps the most common functionality to communicate with the host operating system, such as the video driver, delays, environment variables, execution of binaries, command line, etc.
+This class wraps the most common functionalities for communicating with the host operating system, such as the video driver, delays, environment variables, execution of binaries, command line, etc.
 
 \ **Note:** In Godot 4, **OS** functions related to window management were moved to the :ref:`DisplayServer<class_DisplayServer>` singleton.
 

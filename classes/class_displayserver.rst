@@ -12,14 +12,14 @@ DisplayServer
 
 **Inherits:** :ref:`Object<class_Object>`
 
-Singleton for window management functions.
+A server interface for low-level window management.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-**DisplayServer** handles everything related to window management. This is separated from :ref:`OS<class_OS>` as a single operating system may support multiple display servers.
+**DisplayServer** handles everything related to window management. It is separated from :ref:`OS<class_OS>` as a single operating system may support multiple display servers.
 
 \ **Headless mode:** Starting the engine with the ``--headless`` :doc:`command line argument <../tutorials/editor/command_line_tutorial>` disables all rendering and window management functions. Most functions from **DisplayServer** will return dummy values in this case.
 
@@ -744,7 +744,7 @@ I-beam cursor shape. This is used by default when hovering a control that accept
 
 :ref:`CursorShape<enum_DisplayServer_CursorShape>` **CURSOR_POINTING_HAND** = ``2``
 
-Pointing hand cursor shape. This is used by default when hovering a :ref:`LinkButton<class_LinkButton>` or an URL tag in a :ref:`RichTextLabel<class_RichTextLabel>`.
+Pointing hand cursor shape. This is used by default when hovering a :ref:`LinkButton<class_LinkButton>` or a URL tag in a :ref:`RichTextLabel<class_RichTextLabel>`.
 
 .. _class_DisplayServer_constant_CURSOR_CROSS:
 

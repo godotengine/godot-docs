@@ -12,25 +12,25 @@ AnimationNodeBlendSpace2D
 
 **Inherits:** :ref:`AnimationRootNode<class_AnimationRootNode>` **<** :ref:`AnimationNode<class_AnimationNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-Blends linearly between three :ref:`AnimationNode<class_AnimationNode>` of any type placed in a 2D space.
+A set of :ref:`AnimationRootNode<class_AnimationRootNode>`\ s placed on 2D coordinates, crossfading between the three adjacent ones. Used by :ref:`AnimationTree<class_AnimationTree>`.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-A resource to add to an :ref:`AnimationNodeBlendTree<class_AnimationNodeBlendTree>`.
+A resource used by :ref:`AnimationNodeBlendTree<class_AnimationNodeBlendTree>`.
 
-This node allows you to blend linearly between three animations using a :ref:`Vector2<class_Vector2>` weight.
+\ :ref:`AnimationNodeBlendSpace1D<class_AnimationNodeBlendSpace1D>` represents a virtual 2D space on which :ref:`AnimationRootNode<class_AnimationRootNode>`\ s are placed. Outputs the linear blend of the three adjacent animations using a :ref:`Vector2<class_Vector2>` weight. Adjacent in this context means the three :ref:`AnimationRootNode<class_AnimationRootNode>`\ s making up the triangle that contains the current value.
 
-You can add vertices to the blend space with :ref:`add_blend_point<class_AnimationNodeBlendSpace2D_method_add_blend_point>` and automatically triangulate it by setting :ref:`auto_triangles<class_AnimationNodeBlendSpace2D_property_auto_triangles>` to ``true``. Otherwise, use :ref:`add_triangle<class_AnimationNodeBlendSpace2D_method_add_triangle>` and :ref:`remove_triangle<class_AnimationNodeBlendSpace2D_method_remove_triangle>` to create up the blend space by hand.
+You can add vertices to the blend space with :ref:`add_blend_point<class_AnimationNodeBlendSpace2D_method_add_blend_point>` and automatically triangulate it by setting :ref:`auto_triangles<class_AnimationNodeBlendSpace2D_property_auto_triangles>` to ``true``. Otherwise, use :ref:`add_triangle<class_AnimationNodeBlendSpace2D_method_add_triangle>` and :ref:`remove_triangle<class_AnimationNodeBlendSpace2D_method_remove_triangle>` to triangulate the blend space by hand.
 
 .. rst-class:: classref-introduction-group
 
 Tutorials
 ---------
 
-- :doc:`AnimationTree <../tutorials/animation/animation_tree>`
+- :doc:`Using AnimationTree <../tutorials/animation/animation_tree>`
 
 - `Third Person Shooter Demo <https://godotengine.org/asset-library/asset/678>`__
 

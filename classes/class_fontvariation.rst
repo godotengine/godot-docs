@@ -12,14 +12,14 @@ FontVariation
 
 **Inherits:** :ref:`Font<class_Font>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-Variation of the :ref:`Font<class_Font>`.
+A variation of a font with additional settings.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-OpenType variations, simulated bold / slant, and additional font settings like OpenType features and extra spacing.
+Provides OpenType variations, simulated bold / slant, and additional font settings like OpenType features and extra spacing.
 
 To use simulated bold font variant:
 

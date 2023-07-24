@@ -12,14 +12,14 @@ TabBar
 
 **Inherits:** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-Tab bar control.
+A control that provides a horizontal bar with tabs.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-Simple tabs control, similar to :ref:`TabContainer<class_TabContainer>` but is only in charge of drawing tabs, not interacting with children.
+A control that provides a horizontal bar with tabs. Similar to :ref:`TabContainer<class_TabContainer>` but is only in charge of drawing tabs, not interacting with children.
 
 .. rst-class:: classref-reftable-group
 

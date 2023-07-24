@@ -12,7 +12,7 @@ MissingNode
 
 **Inherits:** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-This is an internal editor class intended for keeping data of nodes of unknown type.
+An internal editor class intended for keeping the data of unrecognized nodes.
 
 .. rst-class:: classref-introduction-group
 
@@ -55,9 +55,7 @@ Property Descriptions
 - void **set_original_class** **(** :ref:`String<class_String>` value **)**
 - :ref:`String<class_String>` **get_original_class** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Returns the name of the type this node was originally.
 
 .. rst-class:: classref-item-separator
 

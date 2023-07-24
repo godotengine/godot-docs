@@ -329,6 +329,8 @@ Properties
    +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`       | :ref:`interface/touchscreen/increase_scrollbar_touch_area<class_EditorSettings_property_interface/touchscreen/increase_scrollbar_touch_area>`                                       |
    +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`     | :ref:`interface/touchscreen/scale_gizmo_handles<class_EditorSettings_property_interface/touchscreen/scale_gizmo_handles>`                                                           |
+   +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`   | :ref:`network/debug/remote_host<class_EditorSettings_property_network/debug/remote_host>`                                                                                           |
    +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`         | :ref:`network/debug/remote_port<class_EditorSettings_property_network/debug/remote_port>`                                                                                           |
@@ -2326,6 +2328,20 @@ If ``true``, enable two finger pan and scale gestures on touchscreen devices.
 If ``true``, increases the scrollbar touch area to improve usability on touchscreen devices.
 
 \ **Note:** Defaults to ``true`` on touchscreen devices.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSettings_property_interface/touchscreen/scale_gizmo_handles:
+
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **interface/touchscreen/scale_gizmo_handles**
+
+Specify the multiplier to apply to the scale for the editor gizmo handles to improve usability on touchscreen devices.
+
+\ **Note:** Defaults to ``1`` on non-touchscreen devices.
 
 .. rst-class:: classref-item-separator
 

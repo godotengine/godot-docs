@@ -14,14 +14,14 @@ AcceptDialog
 
 **Inherited By:** :ref:`ConfirmationDialog<class_ConfirmationDialog>`
 
-Base dialog for user notification.
+A base dialog used for user notification.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-This dialog is useful for small notifications to the user about an event. It can only be accepted or closed, with the same result.
+The default use of **AcceptDialog** is to allow it to only be accepted or closed, with the same result. However, the :ref:`confirmed<class_AcceptDialog_signal_confirmed>` and :ref:`canceled<class_AcceptDialog_signal_canceled>` signals allow to make the two actions different, and the :ref:`add_button<class_AcceptDialog_method_add_button>` method allows to add custom buttons and actions.
 
 .. rst-class:: classref-reftable-group
 

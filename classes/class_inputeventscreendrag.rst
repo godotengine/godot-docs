@@ -12,21 +12,21 @@ InputEventScreenDrag
 
 **Inherits:** :ref:`InputEventFromWindow<class_InputEventFromWindow>` **<** :ref:`InputEvent<class_InputEvent>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-Input event type for screen drag events. Only available on mobile devices.
+Represents a screen drag event.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-Contains screen drag information. See :ref:`Node._input<class_Node_method__input>`.
+Stores information about screen drag events. See :ref:`Node._input<class_Node_method__input>`.
 
 .. rst-class:: classref-introduction-group
 
 Tutorials
 ---------
 
-- :doc:`InputEvent <../tutorials/inputs/inputevent>`
+- :doc:`Using InputEvent <../tutorials/inputs/inputevent>`
 
 .. rst-class:: classref-reftable-group
 

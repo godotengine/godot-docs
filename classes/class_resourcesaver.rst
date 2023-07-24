@@ -12,16 +12,16 @@ ResourceSaver
 
 **Inherits:** :ref:`Object<class_Object>`
 
-Singleton for saving Godot-specific resource types.
+A singleton for saving :ref:`Resource<class_Resource>`\ s to the filesystem.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-Singleton for saving Godot-specific resource types to the filesystem.
+A singleton for saving resource types to the filesystem.
 
-It uses the many :ref:`ResourceFormatSaver<class_ResourceFormatSaver>` classes registered in the engine (either built-in or from a plugin) to save engine-specific resource data to text-based (e.g. ``.tres`` or ``.tscn``) or binary files (e.g. ``.res`` or ``.scn``).
+It uses the many :ref:`ResourceFormatSaver<class_ResourceFormatSaver>` classes registered in the engine (either built-in or from a plugin) to save resource data to text-based (e.g. ``.tres`` or ``.tscn``) or binary files (e.g. ``.res`` or ``.scn``).
 
 .. rst-class:: classref-reftable-group
 

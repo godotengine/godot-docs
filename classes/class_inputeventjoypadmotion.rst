@@ -12,21 +12,21 @@ InputEventJoypadMotion
 
 **Inherits:** :ref:`InputEvent<class_InputEvent>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-Input event type for gamepad joysticks and other motions. For buttons, see ``InputEventJoypadButton``.
+Represents axis motions (such as joystick or analog triggers) from a gamepad.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-Stores information about joystick motions. One **InputEventJoypadMotion** represents one axis at a time.
+Stores information about joystick motions. One **InputEventJoypadMotion** represents one axis at a time. For gamepad buttons, see :ref:`InputEventJoypadButton<class_InputEventJoypadButton>`.
 
 .. rst-class:: classref-introduction-group
 
 Tutorials
 ---------
 
-- :doc:`InputEvent <../tutorials/inputs/inputevent>`
+- :doc:`Using InputEvent <../tutorials/inputs/inputevent>`
 
 .. rst-class:: classref-reftable-group
 

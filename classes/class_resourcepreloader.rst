@@ -12,7 +12,7 @@ ResourcePreloader
 
 **Inherits:** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-Preloads a list of resources inside a scene.
+A node used to preload sub-resources inside a scene.
 
 .. rst-class:: classref-introduction-group
 

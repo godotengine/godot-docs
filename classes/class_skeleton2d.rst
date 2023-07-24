@@ -12,16 +12,16 @@ Skeleton2D
 
 **Inherits:** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-Skeleton for 2D characters and animated objects.
+The parent of a hierarchy of :ref:`Bone2D<class_Bone2D>`\ s, used to create a 2D skeletal animation.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-Skeleton2D parents a hierarchy of :ref:`Bone2D<class_Bone2D>` objects. It is a requirement of :ref:`Bone2D<class_Bone2D>`. Skeleton2D holds a reference to the rest pose of its children and acts as a single point of access to its bones.
+**Skeleton2D** parents a hierarchy of :ref:`Bone2D<class_Bone2D>` nodes. It holds a reference to each :ref:`Bone2D<class_Bone2D>`'s rest pose and acts as a single point of access to its bones.
 
-To setup different types of inverse kinematics for the given Skeleton2D, a :ref:`SkeletonModificationStack2D<class_SkeletonModificationStack2D>` should be created. They can be applied by creating the desired number of modifications, which can be done by increasing :ref:`SkeletonModificationStack2D.modification_count<class_SkeletonModificationStack2D_property_modification_count>`.
+To set up different types of inverse kinematics for the given Skeleton2D, a :ref:`SkeletonModificationStack2D<class_SkeletonModificationStack2D>` should be created. The inverse kinematics be applied by increasing :ref:`SkeletonModificationStack2D.modification_count<class_SkeletonModificationStack2D_property_modification_count>` and creating the desired number of modifications.
 
 .. rst-class:: classref-introduction-group
 

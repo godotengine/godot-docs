@@ -70,7 +70,7 @@ Method Descriptions
 
 Add a new peer to the mesh with the given ``peer_id``. The :ref:`WebRTCPeerConnection<class_WebRTCPeerConnection>` must be in state :ref:`WebRTCPeerConnection.STATE_NEW<class_WebRTCPeerConnection_constant_STATE_NEW>`.
 
-Three channels will be created for reliable, unreliable, and ordered transport. The value of ``unreliable_lifetime`` will be passed to the ``maxPacketLifetime`` option when creating unreliable and ordered channels (see :ref:`WebRTCPeerConnection.create_data_channel<class_WebRTCPeerConnection_method_create_data_channel>`).
+Three channels will be created for reliable, unreliable, and ordered transport. The value of ``unreliable_lifetime`` will be passed to the ``"maxPacketLifetime"`` option when creating unreliable and ordered channels (see :ref:`WebRTCPeerConnection.create_data_channel<class_WebRTCPeerConnection_method_create_data_channel>`).
 
 .. rst-class:: classref-item-separator
 
@@ -122,7 +122,7 @@ You can optionally specify a ``channels_config`` array of :ref:`TransferMode<enu
 
 :ref:`Dictionary<class_Dictionary>` **get_peer** **(** :ref:`int<class_int>` peer_id **)**
 
-Returns a dictionary representation of the peer with given ``peer_id`` with three keys. ``connection`` containing the :ref:`WebRTCPeerConnection<class_WebRTCPeerConnection>` to this peer, ``channels`` an array of three :ref:`WebRTCDataChannel<class_WebRTCDataChannel>`, and ``connected`` a boolean representing if the peer connection is currently connected (all three channels are open).
+Returns a dictionary representation of the peer with given ``peer_id`` with three keys. ``"connection"`` containing the :ref:`WebRTCPeerConnection<class_WebRTCPeerConnection>` to this peer, ``"channels"`` an array of three :ref:`WebRTCDataChannel<class_WebRTCDataChannel>`, and ``"connected"`` a boolean representing if the peer connection is currently connected (all three channels are open).
 
 .. rst-class:: classref-item-separator
 

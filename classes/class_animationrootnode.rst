@@ -14,7 +14,21 @@ AnimationRootNode
 
 **Inherited By:** :ref:`AnimationNodeAnimation<class_AnimationNodeAnimation>`, :ref:`AnimationNodeBlendSpace1D<class_AnimationNodeBlendSpace1D>`, :ref:`AnimationNodeBlendSpace2D<class_AnimationNodeBlendSpace2D>`, :ref:`AnimationNodeBlendTree<class_AnimationNodeBlendTree>`, :ref:`AnimationNodeStateMachine<class_AnimationNodeStateMachine>`
 
-The :ref:`AnimationNode<class_AnimationNode>` which can be set as the root of an :ref:`AnimationTree<class_AnimationTree>`.
+Base class for :ref:`AnimationNode<class_AnimationNode>`\ s that hold one or multiple composite animations. Usually used for :ref:`AnimationTree.tree_root<class_AnimationTree_property_tree_root>`.
+
+.. rst-class:: classref-introduction-group
+
+Description
+-----------
+
+**AnimationRootNode** is a base class for :ref:`AnimationNode<class_AnimationNode>`\ s that hold a complete animation. A complete animation refers to the output of an :ref:`AnimationNodeOutput<class_AnimationNodeOutput>` in an :ref:`AnimationNodeBlendTree<class_AnimationNodeBlendTree>` or the output of another **AnimationRootNode**. Used for :ref:`AnimationTree.tree_root<class_AnimationTree_property_tree_root>` or in other **AnimationRootNode**\ s.
+
+.. rst-class:: classref-introduction-group
+
+Tutorials
+---------
+
+- :doc:`Using AnimationTree <../tutorials/animation/animation_tree>`
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

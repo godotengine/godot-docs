@@ -12,16 +12,14 @@ BoneAttachment3D
 
 **Inherits:** :ref:`Node3D<class_Node3D>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-A node that will attach to a bone.
+А node that dynamically copies or overrides the 3D transform of a bone in its parent :ref:`Skeleton3D<class_Skeleton3D>`.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-This node will allow you to select a bone for this node to attach to. The BoneAttachment3D node can copy the transform of the select bone, or can override the transform of the selected bone.
-
-The BoneAttachment3D node must either be a child of a :ref:`Skeleton3D<class_Skeleton3D>` node or be given an external :ref:`Skeleton3D<class_Skeleton3D>` to use in order to function properly.
+This node selects a bone in a :ref:`Skeleton3D<class_Skeleton3D>` and attaches to it. This means that the **BoneAttachment3D** node will either dynamically copy or override the 3D transform of the selected bone.
 
 .. rst-class:: classref-reftable-group
 

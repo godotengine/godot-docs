@@ -12,14 +12,14 @@ BoneMap
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-Bone map for retargeting.
+Describes a mapping of bone names for retargeting :ref:`Skeleton3D<class_Skeleton3D>` into common names defined by a :ref:`SkeletonProfile<class_SkeletonProfile>`.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-This class contains a hashmap that uses a list of bone names in :ref:`SkeletonProfile<class_SkeletonProfile>` as key names.
+This class contains a dictionary that uses a list of bone names in :ref:`SkeletonProfile<class_SkeletonProfile>` as key names.
 
 By assigning the actual :ref:`Skeleton3D<class_Skeleton3D>` bone name as the key value, it maps the :ref:`Skeleton3D<class_Skeleton3D>` to the :ref:`SkeletonProfile<class_SkeletonProfile>`.
 

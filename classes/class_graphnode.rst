@@ -12,22 +12,20 @@ GraphNode
 
 **Inherits:** :ref:`Container<class_Container>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-GraphNode is a :ref:`Container<class_Container>` control that represents a single data unit in a :ref:`GraphEdit<class_GraphEdit>` graph. You can customize the number, type, and color of left- and right-side connection ports.
+A container with connection ports, representing a node in a :ref:`GraphEdit<class_GraphEdit>`.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-**Note:** Please be aware that this node will undergo extensive refactoring in a future 4.x version involving compatibility-breaking API changes.
+**GraphNode** allows to create nodes for a :ref:`GraphEdit<class_GraphEdit>` graph with customizable content based on its child controls. **GraphNode** is derived from :ref:`Container<class_Container>` and it is responsible for placing its children on screen. This works similar to :ref:`VBoxContainer<class_VBoxContainer>`. Children, in turn, provide **GraphNode** with so-called slots, each of which can have a connection port on either side.
 
-GraphNode allows to create nodes for a :ref:`GraphEdit<class_GraphEdit>` graph with customizable content based on its child :ref:`Control<class_Control>`\ s. GraphNode is a :ref:`Container<class_Container>` and is responsible for placing its children on screen. This works similar to :ref:`VBoxContainer<class_VBoxContainer>`. Children, in turn, provide GraphNode with so-called slots, each of which can have a connection port on either side. This is similar to how :ref:`TabContainer<class_TabContainer>` uses children to create the tabs.
-
-Each GraphNode slot is defined by its index and can provide the node with up to two ports: one on the left, and one on the right. By convention the left port is also referred to as the input port and the right port is referred to as the output port. Each port can be enabled and configured individually, using different type and color. The type is an arbitrary value that you can define using your own considerations. The parent :ref:`GraphEdit<class_GraphEdit>` will receive this information on each connect and disconnect request.
+Each **GraphNode** slot is defined by its index and can provide the node with up to two ports: one on the left, and one on the right. By convention the left port is also referred to as the **input port** and the right port is referred to as the **output port**. Each port can be enabled and configured individually, using different type and color. The type is an arbitrary value that you can define using your own considerations. The parent :ref:`GraphEdit<class_GraphEdit>` will receive this information on each connect and disconnect request.
 
 Slots can be configured in the Inspector dock once you add at least one child :ref:`Control<class_Control>`. The properties are grouped by each slot's index in the "Slot" section.
 
-\ **Note:** While GraphNode is set up using slots and slot indices, connections are made between the ports which are enabled. Because of that :ref:`GraphEdit<class_GraphEdit>` uses port's index and not slot's index. You can use :ref:`get_connection_input_slot<class_GraphNode_method_get_connection_input_slot>` and :ref:`get_connection_output_slot<class_GraphNode_method_get_connection_output_slot>` to get the slot index from the port index.
+\ **Note:** While GraphNode is set up using slots and slot indices, connections are made between the ports which are enabled. Because of that, :ref:`GraphEdit<class_GraphEdit>` uses the port's index and not the slot's index. You can use :ref:`get_connection_input_slot<class_GraphNode_method_get_connection_input_slot>` and :ref:`get_connection_output_slot<class_GraphNode_method_get_connection_output_slot>` to get the slot index from the port index.
 
 .. rst-class:: classref-reftable-group
 

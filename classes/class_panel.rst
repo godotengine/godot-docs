@@ -12,14 +12,14 @@ Panel
 
 **Inherits:** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-Provides an opaque background for :ref:`Control<class_Control>` children.
+A GUI control that displays a :ref:`StyleBox<class_StyleBox>`.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-Panel is a :ref:`Control<class_Control>` that displays an opaque background. It's commonly used as a parent and container for other types of :ref:`Control<class_Control>` nodes.
+**Panel** is a GUI control that displays a :ref:`StyleBox<class_StyleBox>`. See also :ref:`PanelContainer<class_PanelContainer>`.
 
 .. rst-class:: classref-introduction-group
 
@@ -59,7 +59,7 @@ Theme Property Descriptions
 
 :ref:`StyleBox<class_StyleBox>` **panel**
 
-The style of this **Panel**.
+The :ref:`StyleBox<class_StyleBox>` of this control.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

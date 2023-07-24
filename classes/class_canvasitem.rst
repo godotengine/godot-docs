@@ -14,24 +14,20 @@ CanvasItem
 
 **Inherited By:** :ref:`Control<class_Control>`, :ref:`Node2D<class_Node2D>`
 
-Base class of anything 2D.
+Abstract base class for everything in 2D space.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-Base class of anything 2D. Canvas items are laid out in a tree; children inherit and extend their parent's transform. **CanvasItem** is extended by :ref:`Control<class_Control>` for anything GUI-related, and by :ref:`Node2D<class_Node2D>` for anything related to the 2D engine.
+Abstract base class for everything in 2D space. Canvas items are laid out in a tree; children inherit and extend their parent's transform. **CanvasItem** is extended by :ref:`Control<class_Control>` for GUI-related nodes, and by :ref:`Node2D<class_Node2D>` for 2D game objects.
 
-Any **CanvasItem** can draw. For this, :ref:`queue_redraw<class_CanvasItem_method_queue_redraw>` is called by the engine, then :ref:`NOTIFICATION_DRAW<class_CanvasItem_constant_NOTIFICATION_DRAW>` will be received on idle time to request redraw. Because of this, canvas items don't need to be redrawn on every frame, improving the performance significantly. Several functions for drawing on the **CanvasItem** are provided (see ``draw_*`` functions). However, they can only be used inside :ref:`_draw<class_CanvasItem_method__draw>`, its corresponding :ref:`Object._notification<class_Object_method__notification>` or methods connected to the :ref:`draw<class_CanvasItem_signal_draw>` signal.
+Any **CanvasItem** can draw. For this, :ref:`queue_redraw<class_CanvasItem_method_queue_redraw>` is called by the engine, then :ref:`NOTIFICATION_DRAW<class_CanvasItem_constant_NOTIFICATION_DRAW>` will be received on idle time to request a redraw. Because of this, canvas items don't need to be redrawn on every frame, improving the performance significantly. Several functions for drawing on the **CanvasItem** are provided (see ``draw_*`` functions). However, they can only be used inside :ref:`_draw<class_CanvasItem_method__draw>`, its corresponding :ref:`Object._notification<class_Object_method__notification>` or methods connected to the :ref:`draw<class_CanvasItem_signal_draw>` signal.
 
-Canvas items are drawn in tree order. By default, children are on top of their parents so a root **CanvasItem** will be drawn behind everything. This behavior can be changed on a per-item basis.
+Canvas items are drawn in tree order. By default, children are on top of their parents, so a root **CanvasItem** will be drawn behind everything. This behavior can be changed on a per-item basis.
 
-A **CanvasItem** can also be hidden, which will also hide its children. It provides many ways to change parameters such as modulation (for itself and its children) and self modulation (only for itself), as well as its blend mode.
-
-Ultimately, a transform notification can be requested, which will notify the node that its global position changed in case the parent tree changed.
-
-\ **Note:** Unless otherwise specified, all methods that have angle parameters must have angles specified as *radians*. To convert degrees to radians, use :ref:`@GlobalScope.deg_to_rad<class_@GlobalScope_method_deg_to_rad>`.
+A **CanvasItem** can be hidden, which will also hide its children. By adjusting various other properties of a **CanvasItem**, you can also modulate its color (via :ref:`modulate<class_CanvasItem_property_modulate>` or :ref:`self_modulate<class_CanvasItem_property_self_modulate>`), change its Z-index, blend mode, and more.
 
 .. rst-class:: classref-introduction-group
 

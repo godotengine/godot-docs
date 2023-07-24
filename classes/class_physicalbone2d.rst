@@ -12,18 +12,18 @@ PhysicalBone2D
 
 **Inherits:** :ref:`RigidBody2D<class_RigidBody2D>` **<** :ref:`PhysicsBody2D<class_PhysicsBody2D>` **<** :ref:`CollisionObject2D<class_CollisionObject2D>` **<** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-A 2D node that can be used for physically aware bones in 2D.
+A :ref:`RigidBody2D<class_RigidBody2D>`-derived node used to make :ref:`Bone2D<class_Bone2D>`\ s in a :ref:`Skeleton2D<class_Skeleton2D>` react to physics.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-The ``PhysicalBone2D`` node is a :ref:`RigidBody2D<class_RigidBody2D>`-based node that can be used to make :ref:`Bone2D<class_Bone2D>` nodes in a :ref:`Skeleton2D<class_Skeleton2D>` react to physics. This node is very similar to the :ref:`PhysicalBone3D<class_PhysicalBone3D>` node, just for 2D instead of 3D.
+The **PhysicalBone2D** node is a :ref:`RigidBody2D<class_RigidBody2D>`-based node that can be used to make :ref:`Bone2D<class_Bone2D>`\ s in a :ref:`Skeleton2D<class_Skeleton2D>` react to physics.
 
-\ **Note:** To have the Bone2D nodes visually follow the ``PhysicalBone2D`` node, use a :ref:`SkeletonModification2DPhysicalBones<class_SkeletonModification2DPhysicalBones>` modification on the :ref:`Skeleton2D<class_Skeleton2D>` node with the :ref:`Bone2D<class_Bone2D>` nodes.
+\ **Note:** To make the :ref:`Bone2D<class_Bone2D>`\ s visually follow the **PhysicalBone2D** node, use a :ref:`SkeletonModification2DPhysicalBones<class_SkeletonModification2DPhysicalBones>` modification on the :ref:`Skeleton2D<class_Skeleton2D>` parent.
 
-\ **Note:** The PhysicalBone2D node does not automatically create a :ref:`Joint2D<class_Joint2D>` node to keep ``PhysicalBone2D`` nodes together. You will need to create these manually. For most cases, you want to use a :ref:`PinJoint2D<class_PinJoint2D>` node. The ``PhysicalBone2D`` node can automatically configure the :ref:`Joint2D<class_Joint2D>` node once it's been created as a child node.
+\ **Note:** The **PhysicalBone2D** node does not automatically create a :ref:`Joint2D<class_Joint2D>` node to keep **PhysicalBone2D** nodes together. They must be created manually. For most cases, you want to use a :ref:`PinJoint2D<class_PinJoint2D>` node. The **PhysicalBone2D** node will automatically configure the :ref:`Joint2D<class_Joint2D>` node once it's been added as a child node.
 
 .. rst-class:: classref-reftable-group
 
@@ -79,7 +79,7 @@ Property Descriptions
 - void **set_auto_configure_joint** **(** :ref:`bool<class_bool>` value **)**
 - :ref:`bool<class_bool>` **get_auto_configure_joint** **(** **)**
 
-If ``true``, the ``PhysicalBone2D`` node will automatically configure the first :ref:`Joint2D<class_Joint2D>` child node. The automatic configuration is limited to setting up the node properties and positioning the :ref:`Joint2D<class_Joint2D>`.
+If ``true``, the **PhysicalBone2D** will automatically configure the first :ref:`Joint2D<class_Joint2D>` child node. The automatic configuration is limited to setting up the node properties and positioning the :ref:`Joint2D<class_Joint2D>`.
 
 .. rst-class:: classref-item-separator
 
@@ -96,7 +96,7 @@ If ``true``, the ``PhysicalBone2D`` node will automatically configure the first 
 - void **set_bone2d_index** **(** :ref:`int<class_int>` value **)**
 - :ref:`int<class_int>` **get_bone2d_index** **(** **)**
 
-The index of the :ref:`Bone2D<class_Bone2D>` node that this ``PhysicalBone2D`` node is supposed to be simulating.
+The index of the :ref:`Bone2D<class_Bone2D>` that this **PhysicalBone2D** should simulate.
 
 .. rst-class:: classref-item-separator
 
@@ -113,7 +113,7 @@ The index of the :ref:`Bone2D<class_Bone2D>` node that this ``PhysicalBone2D`` n
 - void **set_bone2d_nodepath** **(** :ref:`NodePath<class_NodePath>` value **)**
 - :ref:`NodePath<class_NodePath>` **get_bone2d_nodepath** **(** **)**
 
-The :ref:`NodePath<class_NodePath>` to the :ref:`Bone2D<class_Bone2D>` node that this ``PhysicalBone2D`` node is supposed to be simulating.
+The :ref:`NodePath<class_NodePath>` to the :ref:`Bone2D<class_Bone2D>` that this **PhysicalBone2D** isshould simulate.
 
 .. rst-class:: classref-item-separator
 
@@ -130,7 +130,7 @@ The :ref:`NodePath<class_NodePath>` to the :ref:`Bone2D<class_Bone2D>` node that
 - void **set_follow_bone_when_simulating** **(** :ref:`bool<class_bool>` value **)**
 - :ref:`bool<class_bool>` **get_follow_bone_when_simulating** **(** **)**
 
-If ``true``, the ``PhysicalBone2D`` will keep the transform of the bone it is bound to when simulating physics.
+If ``true``, the **PhysicalBone2D** will keep the transform of the bone it is bound to when simulating physics.
 
 .. rst-class:: classref-item-separator
 
@@ -147,9 +147,9 @@ If ``true``, the ``PhysicalBone2D`` will keep the transform of the bone it is bo
 - void **set_simulate_physics** **(** :ref:`bool<class_bool>` value **)**
 - :ref:`bool<class_bool>` **get_simulate_physics** **(** **)**
 
-If ``true``, the ``PhysicalBone2D`` will start simulating using physics. If ``false``, the ``PhysicalBone2D`` will follow the transform of the :ref:`Bone2D<class_Bone2D>` node.
+If ``true``, the **PhysicalBone2D** will start simulating using physics. If ``false``, the **PhysicalBone2D** will follow the transform of the :ref:`Bone2D<class_Bone2D>` node.
 
-\ **Note:** To have the Bone2D nodes visually follow the ``PhysicalBone2D`` node, use a :ref:`SkeletonModification2DPhysicalBones<class_SkeletonModification2DPhysicalBones>` modification on the :ref:`Skeleton2D<class_Skeleton2D>` node with the :ref:`Bone2D<class_Bone2D>` nodes.
+\ **Note:** To have the :ref:`Bone2D<class_Bone2D>`\ s visually follow the **PhysicalBone2D**, use a :ref:`SkeletonModification2DPhysicalBones<class_SkeletonModification2DPhysicalBones>` modification on the :ref:`Skeleton2D<class_Skeleton2D>` node with the :ref:`Bone2D<class_Bone2D>` nodes.
 
 .. rst-class:: classref-section-separator
 
@@ -166,7 +166,7 @@ Method Descriptions
 
 :ref:`Joint2D<class_Joint2D>` **get_joint** **(** **)** |const|
 
-Returns the first :ref:`Joint2D<class_Joint2D>` child node, if one exists. This is mainly a helper function to make it easier to get the :ref:`Joint2D<class_Joint2D>` that the ``PhysicalBone2D`` is autoconfiguring.
+Returns the first :ref:`Joint2D<class_Joint2D>` child node, if one exists. This is mainly a helper function to make it easier to get the :ref:`Joint2D<class_Joint2D>` that the **PhysicalBone2D** is autoconfiguring.
 
 .. rst-class:: classref-item-separator
 
@@ -178,7 +178,7 @@ Returns the first :ref:`Joint2D<class_Joint2D>` child node, if one exists. This 
 
 :ref:`bool<class_bool>` **is_simulating_physics** **(** **)** |const|
 
-Returns a boolean that indicates whether the ``PhysicalBone2D`` node is running and simulating using the Godot 2D physics engine. When ``true``, the PhysicalBone2D node is using physics.
+Returns a boolean that indicates whether the **PhysicalBone2D** is running and simulating using the Godot 2D physics engine. When ``true``, the PhysicalBone2D node is using physics.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

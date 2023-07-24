@@ -21,14 +21,14 @@ Base input event type for mouse events.
 Description
 -----------
 
-Stores general mouse events information.
+Stores general information about mouse events.
 
 .. rst-class:: classref-introduction-group
 
 Tutorials
 ---------
 
-- :doc:`InputEvent <../tutorials/inputs/inputevent>`
+- :doc:`Using InputEvent <../tutorials/inputs/inputevent>`
 
 .. rst-class:: classref-reftable-group
 

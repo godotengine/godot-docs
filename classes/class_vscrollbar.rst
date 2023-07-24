@@ -12,14 +12,14 @@ VScrollBar
 
 **Inherits:** :ref:`ScrollBar<class_ScrollBar>` **<** :ref:`Range<class_Range>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-Vertical scroll bar.
+A vertical scrollbar that goes from top (min) to bottom (max).
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-Vertical version of :ref:`ScrollBar<class_ScrollBar>`, which goes from top (min) to bottom (max).
+A vertical scrollbar, typically used to navigate through content that extends beyond the visible height of a control. It is a :ref:`Range<class_Range>`-based control and goes from top (min) to bottom (max). Note that this direction is the opposite of :ref:`VSlider<class_VSlider>`'s.
 
 .. rst-class:: classref-reftable-group
 

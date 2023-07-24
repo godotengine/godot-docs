@@ -12,14 +12,14 @@ Geometry3D
 
 **Inherits:** :ref:`Object<class_Object>`
 
-Helper node to calculate generic geometry operations in 3D space.
+Provides methods for some common 3D geometric operations.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-Geometry3D provides users with a set of helper functions to create geometric shapes, compute intersections between shapes, and process various other geometric operations.
+Provides a set of helper functions to create geometric shapes, compute intersections between shapes, and process various other geometric operations in 3D.
 
 .. rst-class:: classref-reftable-group
 

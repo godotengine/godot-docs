@@ -12,16 +12,18 @@ TreeItem
 
 **Inherits:** :ref:`Object<class_Object>`
 
-Control for a single item inside a :ref:`Tree<class_Tree>`.
+An internal control for a single item inside :ref:`Tree<class_Tree>`.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-Control for a single item inside a :ref:`Tree<class_Tree>`. May have child **TreeItem**\ s and be styled as well as contain buttons.
+A single item of a :ref:`Tree<class_Tree>` control. It can contain other **TreeItem**\ s as children, which allows it to create a hierarchy. It can also contain text and buttons. **TreeItem** is not a :ref:`Node<class_Node>`, it is internal to the :ref:`Tree<class_Tree>`.
 
-You can remove a **TreeItem** by using :ref:`Object.free<class_Object_method_free>`.
+To create a **TreeItem**, use :ref:`Tree.create_item<class_Tree_method_create_item>` or :ref:`create_child<class_TreeItem_method_create_child>`. To remove a **TreeItem**, use :ref:`Object.free<class_Object_method_free>`.
+
+\ **Note:** The ID values used for buttons are 32-bit, unlike :ref:`int<class_int>` which is always 64-bit. They go from ``-2147483648`` to ``2147483647``.
 
 .. rst-class:: classref-reftable-group
 

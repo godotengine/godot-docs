@@ -12,14 +12,14 @@ ResourceLoader
 
 **Inherits:** :ref:`Object<class_Object>`
 
-Singleton used to load resource files.
+A singleton for loading resource files.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-Singleton used to load resource files from the filesystem.
+A singleton used to load resource files from the filesystem.
 
 It uses the many :ref:`ResourceFormatLoader<class_ResourceFormatLoader>` classes registered in the engine (either built-in or from a plugin) to load files into memory and convert them to a format that can be used by the engine.
 

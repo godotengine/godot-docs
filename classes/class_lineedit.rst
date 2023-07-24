@@ -12,16 +12,14 @@ LineEdit
 
 **Inherits:** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-Control that provides single-line string editing.
+An input field for single-line text.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-LineEdit provides a single-line string editor, used for text fields.
-
-It features many built-in shortcuts which will always be available (:kbd:`Ctrl` here maps to :kbd:`Cmd` on macOS):
+**LineEdit** provides an input field for editing a single line of text. It features many built-in shortcuts that are always available (:kbd:`Ctrl` here maps to :kbd:`Cmd` on macOS):
 
 - :kbd:`Ctrl + C`: Copy
 
@@ -45,21 +43,21 @@ It features many built-in shortcuts which will always be available (:kbd:`Ctrl` 
 
 On macOS, some extra keyboard shortcuts are available:
 
-- :kbd:`Ctrl + F`: Same as :kbd:`Right Arrow`, move the caret one character right
+- :kbd:`Cmd + F`: Same as :kbd:`Right Arrow`, move the caret one character right
 
-- :kbd:`Ctrl + B`: Same as :kbd:`Left Arrow`, move the caret one character left
+- :kbd:`Cmd + B`: Same as :kbd:`Left Arrow`, move the caret one character left
 
-- :kbd:`Ctrl + P`: Same as :kbd:`Up Arrow`, move the caret to the previous line
+- :kbd:`Cmd + P`: Same as :kbd:`Up Arrow`, move the caret to the previous line
 
-- :kbd:`Ctrl + N`: Same as :kbd:`Down Arrow`, move the caret to the next line
+- :kbd:`Cmd + N`: Same as :kbd:`Down Arrow`, move the caret to the next line
 
-- :kbd:`Ctrl + D`: Same as :kbd:`Delete`, delete the character on the right side of caret
+- :kbd:`Cmd + D`: Same as :kbd:`Delete`, delete the character on the right side of caret
 
-- :kbd:`Ctrl + H`: Same as :kbd:`Backspace`, delete the character on the left side of the caret
+- :kbd:`Cmd + H`: Same as :kbd:`Backspace`, delete the character on the left side of the caret
 
-- :kbd:`Ctrl + A`: Same as :kbd:`Home`, move the caret to the beginning of the line
+- :kbd:`Cmd + A`: Same as :kbd:`Home`, move the caret to the beginning of the line
 
-- :kbd:`Ctrl + E`: Same as :kbd:`End`, move the caret to the end of the line
+- :kbd:`Cmd + E`: Same as :kbd:`End`, move the caret to the end of the line
 
 - :kbd:`Cmd + Left Arrow`: Same as :kbd:`Home`, move the caret to the beginning of the line
 
@@ -727,7 +725,7 @@ Allow moving caret, selecting and removing the individual composite character co
 - void **set_clear_button_enabled** **(** :ref:`bool<class_bool>` value **)**
 - :ref:`bool<class_bool>` **is_clear_button_enabled** **(** **)**
 
-If ``true``, the **LineEdit** will show a clear button if ``text`` is not empty, which can be used to clear the text quickly.
+If ``true``, the **LineEdit** will show a clear button if :ref:`text<class_LineEdit_property_text>` is not empty, which can be used to clear the text quickly.
 
 .. rst-class:: classref-item-separator
 
@@ -1572,7 +1570,7 @@ Texture for the clear button. See :ref:`clear_button_enabled<class_LineEdit_prop
 
 :ref:`StyleBox<class_StyleBox>` **focus**
 
-Background used when **LineEdit** has GUI focus. The ``focus`` :ref:`StyleBox<class_StyleBox>` is displayed *over* the base :ref:`StyleBox<class_StyleBox>`, so a partially transparent :ref:`StyleBox<class_StyleBox>` should be used to ensure the base :ref:`StyleBox<class_StyleBox>` remains visible. A :ref:`StyleBox<class_StyleBox>` that represents an outline or an underline works well for this purpose. To disable the focus visual effect, assign a :ref:`StyleBoxEmpty<class_StyleBoxEmpty>` resource. Note that disabling the focus visual effect will harm keyboard/controller navigation usability, so this is not recommended for accessibility reasons.
+Background used when **LineEdit** has GUI focus. The :ref:`focus<class_LineEdit_theme_style_focus>` :ref:`StyleBox<class_StyleBox>` is displayed *over* the base :ref:`StyleBox<class_StyleBox>`, so a partially transparent :ref:`StyleBox<class_StyleBox>` should be used to ensure the base :ref:`StyleBox<class_StyleBox>` remains visible. A :ref:`StyleBox<class_StyleBox>` that represents an outline or an underline works well for this purpose. To disable the focus visual effect, assign a :ref:`StyleBoxEmpty<class_StyleBoxEmpty>` resource. Note that disabling the focus visual effect will harm keyboard/controller navigation usability, so this is not recommended for accessibility reasons.
 
 .. rst-class:: classref-item-separator
 

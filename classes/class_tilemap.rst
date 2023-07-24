@@ -251,7 +251,7 @@ The TileMap's quadrant size. Optimizes drawing by batching, using chunks of this
 
 If enabled, the TileMap will see its collisions synced to the physics tick and change its collision type from static to kinematic. This is required to create TileMap-based moving platform.
 
-\ **Note:** Enabling ``collision_animatable`` may have a small performance impact, only do it if the TileMap is moving and has colliding tiles.
+\ **Note:** Enabling :ref:`collision_animatable<class_TileMap_property_collision_animatable>` may have a small performance impact, only do it if the TileMap is moving and has colliding tiles.
 
 .. rst-class:: classref-item-separator
 
@@ -763,7 +763,7 @@ Update all the cells in the ``cells`` coordinates array so that they use the giv
 
 If ``ignore_empty_terrains`` is true, empty terrains will be ignored when trying to find the best fitting tile for the given terrain constraints.
 
-\ **Note:** To work correctly, ``set_cells_terrain_connect`` requires the TileMap's TileSet to have terrains set up with all required terrain combinations. Otherwise, it may produce unexpected results.
+\ **Note:** To work correctly, this method requires the TileMap's TileSet to have terrains set up with all required terrain combinations. Otherwise, it may produce unexpected results.
 
 .. rst-class:: classref-item-separator
 
@@ -779,7 +779,7 @@ Update all the cells in the ``path`` coordinates array so that they use the give
 
 If ``ignore_empty_terrains`` is true, empty terrains will be ignored when trying to find the best fitting tile for the given terrain constraints.
 
-\ **Note:** To work correctly, ``set_cells_terrain_path`` requires the TileMap's TileSet to have terrains set up with all required terrain combinations. Otherwise, it may produce unexpected results.
+\ **Note:** To work correctly, this method requires the TileMap's TileSet to have terrains set up with all required terrain combinations. Otherwise, it may produce unexpected results.
 
 .. rst-class:: classref-item-separator
 

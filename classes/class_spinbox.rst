@@ -12,14 +12,14 @@ SpinBox
 
 **Inherits:** :ref:`Range<class_Range>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-Numerical input text field.
+An input field for numbers.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-SpinBox is a numerical input text field. It allows entering integers and floats.
+**SpinBox** is a numerical input text field. It allows entering integers and floating point numbers.
 
 \ **Example:**\ 
 

@@ -12,18 +12,18 @@ UndoRedo
 
 **Inherits:** :ref:`Object<class_Object>`
 
-General-purpose helper to manage undo/redo operations.
+Provides a high-level interface for implementing undo and redo operations.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-UndoRedo works by registering methods and property changes inside "actions".
+UndoRedo works by registering methods and property changes inside "actions". You can create an action, then provide ways to do and undo this action using function calls and property changes, then commit the action.
 
-Common behavior is to create an action, then add do/undo calls to functions or property changes, then committing the action.
+When an action is committed, all of the ``do_*`` methods will run. If the :ref:`undo<class_UndoRedo_method_undo>` method is used, the ``undo_*`` methods will run. If the :ref:`redo<class_UndoRedo_method_redo>` method is used, once again, all of the ``do_*`` methods will run.
 
-Here's an example on how to add an UndoRedo action:
+Here's an example on how to add an action:
 
 
 .. tabs::
@@ -81,7 +81,7 @@ Here's an example on how to add an UndoRedo action:
 
 \ :ref:`create_action<class_UndoRedo_method_create_action>`, :ref:`add_do_method<class_UndoRedo_method_add_do_method>`, :ref:`add_undo_method<class_UndoRedo_method_add_undo_method>`, :ref:`add_do_property<class_UndoRedo_method_add_do_property>`, :ref:`add_undo_property<class_UndoRedo_method_add_undo_property>`, and :ref:`commit_action<class_UndoRedo_method_commit_action>` should be called one after the other, like in the example. Not doing so could lead to crashes.
 
-If you don't need to register a method, you can leave :ref:`add_do_method<class_UndoRedo_method_add_do_method>` and :ref:`add_undo_method<class_UndoRedo_method_add_undo_method>` out; the same goes for properties. You can also register more than one method/property.
+If you don't need to register a method, you can leave :ref:`add_do_method<class_UndoRedo_method_add_do_method>` and :ref:`add_undo_method<class_UndoRedo_method_add_undo_method>` out; the same goes for properties. You can also register more than one method/property in the order they should run.
 
 If you are making an :ref:`EditorPlugin<class_EditorPlugin>` and want to integrate into the editor's undo history, use :ref:`EditorUndoRedoManager<class_EditorUndoRedoManager>` instead.
 

@@ -12,7 +12,7 @@ Mutex
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-A synchronization mutex (mutual exclusion).
+A binary :ref:`Semaphore<class_Semaphore>` for synchronization of multiple :ref:`Thread<class_Thread>`\ s.
 
 .. rst-class:: classref-introduction-group
 
@@ -27,6 +27,8 @@ Tutorials
 ---------
 
 - :doc:`Using multiple threads <../tutorials/performance/using_multiple_threads>`
+
+- :doc:`Thread-safe APIs <../tutorials/performance/thread_safe_apis>`
 
 .. rst-class:: classref-reftable-group
 
@@ -75,7 +77,7 @@ Locks this **Mutex**, blocks until it is unlocked by the current owner.
 
 Tries locking this **Mutex**, but does not block. Returns ``true`` on success, ``false`` otherwise.
 
-\ **Note:** This function returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` if the thread already has ownership of the mutex.
+\ **Note:** This function returns ``true`` if the thread already has ownership of the mutex.
 
 .. rst-class:: classref-item-separator
 

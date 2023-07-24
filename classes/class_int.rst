@@ -10,7 +10,7 @@
 int
 ===
 
-Built-in integer Variant type.
+A built-in type for integers.
 
 .. rst-class:: classref-introduction-group
 

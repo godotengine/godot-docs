@@ -12,7 +12,7 @@ Time
 
 **Inherits:** :ref:`Object<class_Object>`
 
-Time singleton for working with time.
+A singleton for working with time data.
 
 .. rst-class:: classref-introduction-group
 
