@@ -168,12 +168,12 @@ automatically when the container is resized.
 It has multiple stretch modes, providing options for adjusting the child controls' sizes concerning the container: 
 "fill," "width control height," "height control width," and "cover."
 
-   .. image:: img/containers_aspectratio.png
+   .. image:: img/containers_aspectratio.webp
 
 useful when you have a container that needs to be dynamic and responsive to different screen sizes, 
 and you want the child elements to scale proportionally without losing their intended shapes.
 
-   .. image:: img/containers_aspectratio_drag.gif
+   .. image:: img/containers_aspectratio_drag.webp
 
 FlowContainer
 ^^^^^^^^^^^^^^
@@ -183,11 +183,11 @@ FlowContainer is a container that arranges its child controls either horizontall
 and when the available space runs out, it wraps the children to the next line or column, similar to how text wraps in a book. 
 
 
-   .. image:: img/containers_hflow.png
+   .. image:: img/containers_hflow.webp
 
 useful for creating flexible layouts where the child controls adjust automatically to the available space without overlapping.
 
-   .. image:: img/containers_hflow_drag.gif
+   .. image:: img/containers_hflow_drag.webp
 
 CenterContainer
 ^^^^^^^^^^^^^^^^^^^^
@@ -196,9 +196,9 @@ CenterContainer is a container that automatically keeps all of its child control
 It ensures that the child controls are always aligned to the center, making it easier to create centered layouts without manual positioning.
 (via :ref:`CenterContainer <class_CenterContainer>`).
 
-   .. image:: img/containers_center.png
+   .. image:: img/containers_center.webp
 
-   .. image:: img/containers_center_drag.gif
+   .. image:: img/containers_center_drag.webp
 
 SubViewportContainer
 ^^^^^^^^^^^^^^^^^^^^
