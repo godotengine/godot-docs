@@ -23,7 +23,7 @@ Every particle system you create in Godot consists of two main parts: particles 
 Particles
 ~~~~~~~~~
 
-A partice is the visible part of a particle system. It's what you see on the screen when a particle
+A particle is the visible part of a particle system. It's what you see on the screen when a particle
 system is active: The tiny specks of dust, the flames of a fire, the glowing orbs of a magical
 effect. You can have anywhere between a couple hundred and tens of thousands of particles in a
 single system. You can randomize a particle's size, its speed and movement direction, and change its
