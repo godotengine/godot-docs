@@ -111,12 +111,6 @@ When the debugger breaks on a breakpoint, a green triangle arrow is visible in
 the script editor's gutter. This arrow indicates the line of code the debugger
 broke on.
 
-.. warning::
-
-    Breakpoints won't break on code if it's
-    :ref:`running in a thread <doc_using_multiple_threads>`.
-    This is a current limitation of the GDScript debugger.
-
 Debug project settings
 ----------------------
 
