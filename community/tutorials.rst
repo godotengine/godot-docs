@@ -32,6 +32,7 @@ Video tutorials
 - `KidsCanCode <https://www.youtube.com/channel/UCNaPQ5uLX5iIEHUCLmfAgKg/playlists>`__ (2D and 3D, GDScript).
 - `Mister Taft Creates <https://www.youtube.com/playlist?list=PL4vbr3u7UKWqwQlvwvgNcgDL1p_3hcNn2>`_ (2D, GDScript).
 - `Miziziziz <https://www.youtube.com/playlist?list=PLmugv6_kd0qNyt0WHVnac1f5IFzG-7grN>`_ (2D and 3D, GDScript).
+- `Martin Donald <https://www.youtube.com/@MartinDonald>`_ (3D, Shaders).
 - `P1X / Krzysztof Jankowski <https://www.youtube.com/playlist?list=PLvDk7UKhld4xGPovdB4IFtAHYMYjx_-3K>`_ (3D).
 - `Pigdev <https://www.youtube.com/playlist?list=PLPMN4vCRFdordS3E-3zi0Hdh7pAsbWQ6a>`_ (2D, GDScript).
 - `Steincodes <https://www.youtube.com/c/steincodes/playlists>`__ (2D, GDScript).
