@@ -1,5 +1,3 @@
-:article_outdated: True
-
 .. _doc_using_tilemaps:
 
 Using TileMaps

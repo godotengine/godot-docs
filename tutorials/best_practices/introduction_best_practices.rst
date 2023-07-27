@@ -1,5 +1,3 @@
-:article_outdated: True
-
 .. _doc_introduction_best_practices:
 
 Introduction

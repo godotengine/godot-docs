@@ -103,6 +103,8 @@ Properties
    +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Color<class_Color>`     | :ref:`editors/2d/smart_snapping_line_color<class_EditorSettings_property_editors/2d/smart_snapping_line_color>`                                                                     |
    +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`editors/2d/use_integer_zoom_by_default<class_EditorSettings_property_editors/2d/use_integer_zoom_by_default>`                                                                 |
+   +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Color<class_Color>`     | :ref:`editors/2d/viewport_border_color<class_EditorSettings_property_editors/2d/viewport_border_color>`                                                                             |
    +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`     | :ref:`editors/3d/default_fov<class_EditorSettings_property_editors/3d/default_fov>`                                                                                                 |
@@ -456,6 +458,8 @@ Properties
    | :ref:`bool<class_bool>`       | :ref:`text_editor/completion/auto_brace_complete<class_EditorSettings_property_text_editor/completion/auto_brace_complete>`                                                         |
    +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`     | :ref:`text_editor/completion/code_complete_delay<class_EditorSettings_property_text_editor/completion/code_complete_delay>`                                                         |
+   +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`text_editor/completion/code_complete_enabled<class_EditorSettings_property_text_editor/completion/code_complete_enabled>`                                                     |
    +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`       | :ref:`text_editor/completion/complete_file_paths<class_EditorSettings_property_text_editor/completion/complete_file_paths>`                                                         |
    +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -902,6 +906,18 @@ The guides color to use in the 2D editor. Guides can be created by dragging the 
 :ref:`Color<class_Color>` **editors/2d/smart_snapping_line_color**
 
 The color to use when drawing smart snapping lines in the 2D editor. The smart snapping lines will automatically display when moving 2D nodes if smart snapping is enabled in the Snapping Options menu at the top of the 2D editor viewport.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSettings_property_editors/2d/use_integer_zoom_by_default:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **editors/2d/use_integer_zoom_by_default**
+
+If ``true``, the 2D editor will snap to integer zoom values while not holding the :kbd:`Alt` key and powers of two while holding it. If ``false``, this behavior is swapped.
 
 .. rst-class:: classref-item-separator
 
@@ -3138,6 +3154,18 @@ If ``true``, automatically completes braces when making use of code completion.
 :ref:`float<class_float>` **text_editor/completion/code_complete_delay**
 
 The delay in seconds after which autocompletion suggestions should be displayed when the user stops typing.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSettings_property_text_editor/completion/code_complete_enabled:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **text_editor/completion/code_complete_enabled**
+
+If ``true``, code completion will be triggered automatically after :ref:`text_editor/completion/code_complete_delay<class_EditorSettings_property_text_editor/completion/code_complete_delay>`. If ``false``, you can still trigger completion manually by pressing :kbd:`Ctrl + Space` (:kbd:`Cmd + Space` on macOS).
 
 .. rst-class:: classref-item-separator
 

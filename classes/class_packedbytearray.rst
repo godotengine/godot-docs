@@ -21,6 +21,10 @@ An array specifically designed to hold bytes. Packs data tightly, so it saves me
 
 \ **PackedByteArray** also provides methods to encode/decode various types to/from bytes. The way values are encoded is an implementation detail and shouldn't be relied upon when interacting with external apps.
 
+.. note::
+
+	There are notable differences when using this API with C#. See :ref:`doc_c_sharp_differences` for more information.
+
 .. rst-class:: classref-reftable-group
 
 Constructors
@@ -745,7 +749,7 @@ Returns ``true`` if the array contains ``value``.
 
 :ref:`bool<class_bool>` **has_encoded_var** **(** :ref:`int<class_int>` byte_offset, :ref:`bool<class_bool>` allow_objects=false **)** |const|
 
-Returns ``true`` if a valid :ref:`Variant<class_Variant>` value can be decoded at the ``byte_offset``. Returns ``false`` othewrise or when the value is :ref:`Object<class_Object>`-derived and ``allow_objects`` is ``false``.
+Returns ``true`` if a valid :ref:`Variant<class_Variant>` value can be decoded at the ``byte_offset``. Returns ``false`` otherwise or when the value is :ref:`Object<class_Object>`-derived and ``allow_objects`` is ``false``.
 
 .. rst-class:: classref-item-separator
 

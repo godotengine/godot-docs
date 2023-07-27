@@ -15,6 +15,11 @@ This requires support for `WebAssembly
 `SharedArrayBuffer <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer>`_
 in the user's browser.
 
+.. attention::
+
+    Projects written in C# using Godot 4 currently cannot be exported to the
+    web. To use C# on web platforms, use Godot 3 instead.
+
 .. important:: Use the browser-integrated developer console, usually opened
                with :kbd:`F12`, to view **debug information** like JavaScript,
                engine, and WebGL errors.

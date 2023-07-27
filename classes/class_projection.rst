@@ -23,6 +23,10 @@ For purely linear transformations (translation, rotation, and scale), it is reco
 
 Used internally as :ref:`Camera3D<class_Camera3D>`'s projection matrix.
 
+.. note::
+
+	There are notable differences when using this API with C#. See :ref:`doc_c_sharp_differences` for more information.
+
 .. rst-class:: classref-reftable-group
 
 Properties

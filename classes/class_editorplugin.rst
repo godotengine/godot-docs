@@ -69,6 +69,8 @@ Methods
    +-----------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Dictionary<class_Dictionary>`                       | :ref:`_get_state<class_EditorPlugin_method__get_state>` **(** **)** |virtual| |const|                                                                                                                                                                 |
    +-----------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                               | :ref:`_get_unsaved_status<class_EditorPlugin_method__get_unsaved_status>` **(** :ref:`String<class_String>` for_scene **)** |virtual| |const|                                                                                                         |
+   +-----------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                      | :ref:`_get_window_layout<class_EditorPlugin_method__get_window_layout>` **(** :ref:`ConfigFile<class_ConfigFile>` configuration **)** |virtual|                                                                                                       |
    +-----------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                   | :ref:`_handles<class_EditorPlugin_method__handles>` **(** :ref:`Object<class_Object>` object **)** |virtual| |const|                                                                                                                                  |
@@ -120,6 +122,8 @@ Methods
    | :ref:`EditorInterface<class_EditorInterface>`             | :ref:`get_editor_interface<class_EditorPlugin_method_get_editor_interface>` **(** **)**                                                                                                                                                               |
    +-----------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`PopupMenu<class_PopupMenu>`                         | :ref:`get_export_as_menu<class_EditorPlugin_method_get_export_as_menu>` **(** **)**                                                                                                                                                                   |
+   +-----------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                               | :ref:`get_plugin_version<class_EditorPlugin_method_get_plugin_version>` **(** **)** |const|                                                                                                                                                           |
    +-----------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`ScriptCreateDialog<class_ScriptCreateDialog>`       | :ref:`get_script_create_dialog<class_EditorPlugin_method_get_script_create_dialog>` **(** **)**                                                                                                                                                       |
    +-----------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -882,6 +886,44 @@ Use :ref:`_set_state<class_EditorPlugin_method__set_state>` to restore your save
 
 ----
 
+.. _class_EditorPlugin_method__get_unsaved_status:
+
+.. rst-class:: classref-method
+
+:ref:`String<class_String>` **_get_unsaved_status** **(** :ref:`String<class_String>` for_scene **)** |virtual| |const|
+
+Override this method to provide a custom message that lists unsaved changes. The editor will call this method when exiting or when closing a scene, and display the returned string in a confirmation dialog. Return empty string if the plugin has no unsaved changes.
+
+When closing a scene, ``for_scene`` is the path to the scene being closed. You can use it to handle built-in resources in that scene.
+
+If the user confirms saving, :ref:`_save_external_data<class_EditorPlugin_method__save_external_data>` will be called, before closing the editor.
+
+::
+
+    func _get_unsaved_status(for_scene):
+        if not unsaved:
+            return ""
+    
+        if for_scene.is_empty():
+            return "Save changes in MyCustomPlugin before closing?"
+        else:
+            return "Scene %s has changes from MyCustomPlugin. Save before closing?" % for_scene.get_file()
+    
+    func _save_external_data():
+        unsaved = false
+
+If the plugin has no scene-specific changes, you can ignore the calls when closing scenes:
+
+::
+
+    func _get_unsaved_status(for_scene):
+        if not for_scene.is_empty():
+            return ""
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_EditorPlugin_method__get_window_layout:
 
 .. rst-class:: classref-method
@@ -1292,6 +1334,18 @@ Returns the :ref:`EditorInterface<class_EditorInterface>` singleton. It provides
 :ref:`PopupMenu<class_PopupMenu>` **get_export_as_menu** **(** **)**
 
 Returns the :ref:`PopupMenu<class_PopupMenu>` under **Scene > Export As...**.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorPlugin_method_get_plugin_version:
+
+.. rst-class:: classref-method
+
+:ref:`String<class_String>` **get_plugin_version** **(** **)** |const|
+
+Provide the version of the plugin declared in the ``plugin.cfg`` config file.
 
 .. rst-class:: classref-item-separator
 

@@ -25,6 +25,10 @@ Negative values for :ref:`size<class_AABB_property_size>` are not supported and 
 
 \ **Note:** Unlike :ref:`Rect2<class_Rect2>`, **AABB** does not have a variant that uses integer coordinates.
 
+.. note::
+
+	There are notable differences when using this API with C#. See :ref:`doc_c_sharp_differences` for more information.
+
 .. rst-class:: classref-introduction-group
 
 Tutorials

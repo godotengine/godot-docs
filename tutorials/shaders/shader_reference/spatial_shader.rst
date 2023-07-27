@@ -441,7 +441,10 @@ If you want the lights to add together, add the light contribution to ``DIFFUSE_
 +-----------------------------------+----------------------------------------------------+
 | in vec3 **LIGHT**                 | Light Vector, in view space.                       |
 +-----------------------------------+----------------------------------------------------+
-| in vec3 **LIGHT_COLOR**           | Color of light multiplied by energy.               |
+| in vec3 **LIGHT_COLOR**           | Color of light multiplied by ``energy * PI``.      |
+|                                   | The ``PI`` multiplication is present because       |
+|                                   | physically-based lighting models include a         |
+|                                   | division by ``PI``.                                |
 +-----------------------------------+----------------------------------------------------+
 | in float **SPECULAR_AMOUNT**      | 2.0 * ``light_specular`` property for              |
 |                                   | ``OmniLight3D`` and ``SpotLight3D``.               |

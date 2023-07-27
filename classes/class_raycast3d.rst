@@ -59,6 +59,8 @@ Properties
    +-------------------------------+------------------------------------------------------------------------------------+-----------------------+
    | :ref:`bool<class_bool>`       | :ref:`exclude_parent<class_RayCast3D_property_exclude_parent>`                     | ``true``              |
    +-------------------------------+------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`bool<class_bool>`       | :ref:`hit_back_faces<class_RayCast3D_property_hit_back_faces>`                     | ``true``              |
+   +-------------------------------+------------------------------------------------------------------------------------+-----------------------+
    | :ref:`bool<class_bool>`       | :ref:`hit_from_inside<class_RayCast3D_property_hit_from_inside>`                   | ``false``             |
    +-------------------------------+------------------------------------------------------------------------------------+-----------------------+
    | :ref:`Vector3<class_Vector3>` | :ref:`target_position<class_RayCast3D_property_target_position>`                   | ``Vector3(0, -1, 0)`` |
@@ -227,6 +229,23 @@ If ``true``, collisions will be reported.
 - :ref:`bool<class_bool>` **get_exclude_parent_body** **(** **)**
 
 If ``true``, collisions will be ignored for this RayCast3D's immediate parent.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_RayCast3D_property_hit_back_faces:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **hit_back_faces** = ``true``
+
+.. rst-class:: classref-property-setget
+
+- void **set_hit_back_faces** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_hit_back_faces_enabled** **(** **)**
+
+If ``true``, the ray will hit back faces with concave polygon shapes with back face enabled or heightmap shapes.
 
 .. rst-class:: classref-item-separator
 

@@ -24,7 +24,8 @@ Godot can import the following image formats:
 - Truevision Targa (``.tga``)
 - SVG (``.svg``, ``.svgz``)
   - SVGs are rasterized using `ThorVG <https://www.thorvg.org/>`__
-  when importing them. Support is limited; complex vectors may not render correctly.
+  when importing them. `Support is limited <https://www.thorvg.org/about#:~:text=among%20the%20svg%20tiny%20specs%2C%20yet%20unsupported%20features%20in%20the%20thorvg%20are%20the%20following>`__;
+  complex vectors may not render correctly.
   You can check whether ThorVG can render a certain vector correctly using its
   `web-based viewer <https://www.thorvg.org/viewer>`__.
   For complex vectors, rendering them to PNGs using `Inkscape <https://inkscape.org/>`__
@@ -97,11 +98,6 @@ It is possible to choose other types of imported resources in the Import dock:
 - **TextureAtlas:** Import the image as an *atlas* of different textures. Can be
   used to reduce memory usage for animated 2D sprites. Only supported in 2D due
   to missing support in built-in 3D shaders.
-
-.. note::
-
-    For technical reasons, the editor must be restarted after changing an import
-    type in the Import dock.
 
 Detect 3D
 ^^^^^^^^^

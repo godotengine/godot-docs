@@ -15,7 +15,7 @@ Passthrough extension
 ---------------------
 
 OpenXR has a vendor extension for passthrough submitted by Meta.
-Currently this extension is only supported on Quest but may be adopted by other headsets in the future.
+Currently this extension is only supported on Quest and PICO but may be adopted by other headsets in the future.
 
 :ref:`XRInterface <class_xrinterface>` has entry points for passthrough so different interfaces can implement this feature.
 For :ref:`OpenXRInterface <class_openxrinterface>` the meta passthrough extension is implemented here.
@@ -24,9 +24,12 @@ In code you can call ``is_passthrough_supported`` to check if this extension is 
 If so you can simply enable passthrough by calling ``start_passthrough``.
 You can call ``stop_passthrough`` to disable passthrough.
 
-This will automatically set the main viewports ``transparent_bg`` property to true.
-It will also result in the camera image being displayed as the background.
-This will result in the background settings in the environment being ignored and alpha being applied.
+You do need to make sure the background is transparent.
+You need to enable the ``transparent_bg`` property on the viewport.
+Some background environment settings will still fill the background with an opaque color,
+you can use a ``custom color`` with a color that has alpha set to 0.
+
+The OpenXR runtime will display the camera image as the background.
 
 .. note::
 
@@ -35,7 +38,7 @@ This will result in the background settings in the environment being ignored and
 .. warning::
 
   After passthrough is enabled it is possible to change settings that will break passthrough.
-  Be sure not to change the ``transparent_bg`` setting or the environment blend mode.
+  Be sure not to disable the ``transparent_bg`` setting or change the environment blend mode.
   This will result in the camera image no longer being visible but you still incur the overhead.
 
   Always use ``stop_passthrough`` if you wish to turn off passthrough.
@@ -59,7 +62,7 @@ We need to check if ``XR_ENV_BLEND_MODE_ALPHA_BLEND`` is present in this list.
 If so we can tell OpenXR to expect an image that can be alpha blended with a background.
 To do this, we simply call ``set_environment_blend_mode(xr_interface.XR_ENV_BLEND_MODE_ALPHA_BLEND)``.
 
-We must also set ``transparent_bg`` to true to ensure we submit the right image.
+We must also set ``transparent_bg`` to true and adjust the environment to ensure we submit the right image.
 
 Putting it together
 -------------------
@@ -71,13 +74,14 @@ Putting the above together we can use the following code as a base:
   func enable_passthrough() -> bool:
     var xr_interface: XRInterface = XRServer.primary_interface
     if xr_interface and xr_interface.is_passthrough_supported():
-      return xr_interface.start_passthrough()
+      if !xr_interface.start_passthrough():
+        return false
     else:
       var modes = xr_interface.get_supported_environment_blend_modes()
       if xr_interface.XR_ENV_BLEND_MODE_ALPHA_BLEND in modes:
         xr_interface.set_environment_blend_mode(xr_interface.XR_ENV_BLEND_MODE_ALPHA_BLEND)
-        return true
       else:
         return false
 
-
+    get_viewport().transparent_bg = true
+    return true

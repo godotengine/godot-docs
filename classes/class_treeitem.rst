@@ -184,6 +184,8 @@ Methods
    +-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                              | :ref:`set_button_disabled<class_TreeItem_method_set_button_disabled>` **(** :ref:`int<class_int>` column, :ref:`int<class_int>` button_index, :ref:`bool<class_bool>` disabled **)**                                                                     |
    +-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                                              | :ref:`set_button_tooltip_text<class_TreeItem_method_set_button_tooltip_text>` **(** :ref:`int<class_int>` column, :ref:`int<class_int>` button_index, :ref:`String<class_String>` tooltip **)**                                                          |
+   +-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                              | :ref:`set_cell_mode<class_TreeItem_method_set_cell_mode>` **(** :ref:`int<class_int>` column, :ref:`TreeCellMode<enum_TreeItem_TreeCellMode>` mode **)**                                                                                                 |
    +-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                              | :ref:`set_checked<class_TreeItem_method_set_checked>` **(** :ref:`int<class_int>` column, :ref:`bool<class_bool>` checked **)**                                                                                                                          |
@@ -1197,6 +1199,18 @@ Sets the given column's button color at index ``button_index`` to ``color``.
 void **set_button_disabled** **(** :ref:`int<class_int>` column, :ref:`int<class_int>` button_index, :ref:`bool<class_bool>` disabled **)**
 
 If ``true``, disables the button at index ``button_index`` in the given ``column``.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_TreeItem_method_set_button_tooltip_text:
+
+.. rst-class:: classref-method
+
+void **set_button_tooltip_text** **(** :ref:`int<class_int>` column, :ref:`int<class_int>` button_index, :ref:`String<class_String>` tooltip **)**
+
+Sets the tooltip text for the button at index ``button_index`` in the given ``column``.
 
 .. rst-class:: classref-item-separator
 

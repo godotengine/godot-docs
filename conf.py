@@ -181,8 +181,8 @@ html_context = {
     "godot_title_prefix": "" if on_rtd else "(DEV) ",
     # Set this to `True` when in the `latest` branch to clearly indicate to the reader
     # that they are not reading the `stable` documentation.
-    "godot_is_latest": False,
-    "godot_version": "4.1",
+    "godot_is_latest": True,
+    "godot_version": "4.2",
     # Enables a banner that displays the up-to-date status of each article.
     "godot_show_article_status": True,
 }

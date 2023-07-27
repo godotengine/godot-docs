@@ -1,5 +1,3 @@
-:article_outdated: True
-
 .. _doc_scene_organization:
 
 Scene organization
@@ -52,7 +50,7 @@ To do this, one must expose data and then rely on a parent context to
 initialize it:
 
 1. Connect to a signal. Extremely safe, but should be used only to "respond" to
-   behavior, not start it. Note that signal names are usually past-tense verbs
+   behavior, not start it. By convention, signal names are usually past-tense verbs
    like "entered", "skill_activated", or "item_collected".
 
    .. tabs::
@@ -106,10 +104,10 @@ initialize it:
      .. code-tab:: csharp
 
        // Parent
-       GetNode("Child").Set("FuncProperty", GD.FuncRef(ObjectWithMethod, "MethodOnTheObject"));
+       GetNode("Child").Set("FuncProperty", Callable.From(ObjectWithMethod.MethodOnTheObject));
 
        // Child
-       FuncProperty.CallFunc(); // Call parent-defined method (can come from anywhere).
+       FuncProperty.Call(); // Call parent-defined method (can come from anywhere).
 
 4. Initialize a Node or other Object reference.
 
@@ -219,9 +217,9 @@ in another context without any extra changes to its API.
 
   To avoid creating and maintaining such documentation, one converts the
   dependent node ("child" above) into a tool script that implements
-  ``_get_configuration_warning()``.
-  Returning a non-empty string from it will make the Scene dock generate a
-  warning icon with the string as a tooltip by the node. This is the same icon
+  ``_get_configuration_warnings()``.
+  Returning a non-empty PackedStringArray from it will make the Scene dock generate a
+  warning icon with the string(s) as a tooltip by the node. This is the same icon
   that appears for nodes such as the
   :ref:`Area2D <class_Area2D>` node when it has no child
   :ref:`CollisionShape2D <class_CollisionShape2D>` nodes defined. The editor

@@ -1,12 +1,10 @@
-:article_outdated: True
-
 .. _doc_cpu_optimization:
 
 CPU optimization
 ================
 
 Measuring performance
-=====================
+---------------------
 
 We have to know where the "bottlenecks" are to know how to speed up our program.
 Bottlenecks are the slowest parts of the program that limit the rate that
@@ -18,7 +16,7 @@ lead to small performance improvements.
 For the CPU, the easiest way to identify bottlenecks is to use a profiler.
 
 CPU profilers
-=============
+-------------
 
 Profilers run alongside your program and take timing measurements to work out
 what proportion of time is spent in each function.
@@ -31,7 +29,7 @@ slow down your project significantly.
 After profiling, you can look back at the results for a frame.
 
 .. figure:: img/godot_profiler.png
-.. figure:: img/godot_profiler.png
+   :align: center
    :alt: Screenshot of the Godot profiler
 
    Results of a profile of one of the demo projects.
@@ -51,24 +49,13 @@ For more info about using Godot's built-in profiler, see
 :ref:`doc_debugger_panel`.
 
 External profilers
-~~~~~~~~~~~~~~~~~~
+------------------
 
 Although the Godot IDE profiler is very convenient and useful, sometimes you
 need more power, and the ability to profile the Godot engine source code itself.
 
-You can use a number of third party profilers to do this including
-`Valgrind <https://www.valgrind.org/>`__,
-`VerySleepy <http://www.codersnotes.com/sleepy/>`__,
-`HotSpot <https://github.com/KDAB/hotspot>`__,
-`Visual Studio <https://visualstudio.microsoft.com/>`__ and
-`Intel VTune <https://software.intel.com/content/www/us/en/develop/tools/vtune-profiler.html>`__.
-
-.. note:: You will need to compile Godot from source to use a third-party profiler.
-          This is required to obtain debugging symbols. You can also use a debug
-          build, however, note that the results of profiling a debug build will
-          be different to a release build, because debug builds are less
-          optimized. Bottlenecks are often in a different place in debug builds,
-          so you should profile release builds whenever possible.
+You can :ref:`use a number of third-party C++ profilers <doc_using_cpp_profilers>`
+to do this.
 
 .. figure:: img/valgrind.png
    :alt: Screenshot of Callgrind
@@ -81,7 +68,7 @@ itself, excluding child functions (Self), the number of times the function is
 called, the function name, and the file or module.
 
 In this example, we can see nearly all time is spent under the
-`Main::iteration()` function. This is the master function in the Godot source
+``Main::iteration()`` function. This is the master function in the Godot source
 code that is called repeatedly. It causes frames to be drawn, physics ticks to
 be simulated, and nodes and scripts to be updated. A large proportion of the
 time is spent in the functions to render a canvas (66%), because this example
@@ -98,7 +85,7 @@ batching, which greatly speeds up 2D rendering by reducing bottlenecks in this
 area.
 
 Manually timing functions
-=========================
+-------------------------
 
 Another handy technique, especially once you have identified the bottleneck
 using a profiler, is to manually time the function or area under test.
@@ -126,7 +113,7 @@ time them as you go. This will give you crucial feedback as to whether the
 optimization is working (or not).
 
 Caches
-======
+------
 
 CPU caches are something else to be particularly aware of, especially when
 comparing timing results of two different versions of a function. The results
@@ -159,7 +146,7 @@ rendering and physics. Still, you should be especially aware of caching when
 writing GDExtensions.
 
 Languages
-=========
+---------
 
 Godot supports a number of different languages, and it is worth bearing in mind
 that there are trade-offs involved. Some languages are designed for ease of use
@@ -170,7 +157,7 @@ language you choose. If your project is making a lot of calculations in its own
 code, consider moving those calculations to a faster language.
 
 GDScript
-~~~~~~~~
+^^^^^^^^
 
 :ref:`GDScript <toc-learn-scripting-gdscript>` is designed to be easy to use and iterate,
 and is ideal for making many types of games. However, in this language, ease of
@@ -179,7 +166,7 @@ calculations, consider moving some of your project to one of the other
 languages.
 
 C#
-~~
+^^
 
 :ref:`C# <toc-learn-scripting-C#>` is popular and has first-class support in Godot. It
 offers a good compromise between speed and ease of use. Beware of possible
@@ -188,13 +175,13 @@ common approach to workaround issues with garbage collection is to use *object
 pooling*, which is outside the scope of this guide.
 
 Other languages
-~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^
 
 Third parties provide support for several other languages, including `Rust
 <https://github.com/godot-rust/gdext>`_.
 
 C++
-~~~
+^^^
 
 Godot is written in C++. Using C++ will usually result in the fastest code.
 However, on a practical level, it is the most difficult to deploy to end users'
@@ -203,7 +190,7 @@ GDExtensions and
 :ref:`custom modules <doc_custom_modules_in_cpp>`.
 
 Threads
-=======
+-------
 
 Consider using threads when making a lot of calculations that can run in
 parallel to each other. Modern CPUs have multiple cores, each one capable of
@@ -215,18 +202,16 @@ CPU core operates independently, they can end up trying to access the same
 memory at the same time. One thread can be reading to a variable while another
 is writing: this is called a *race condition*. Before you use threads, make sure
 you understand the dangers and how to try and prevent these race conditions.
-
-Threads can also make debugging considerably more difficult. The GDScript
-debugger doesn't support setting up breakpoints in threads yet.
+Threads can make debugging considerably more difficult.
 
 For more information on threads, see :ref:`doc_using_multiple_threads`.
 
 SceneTree
-=========
+---------
 
 Although Nodes are an incredibly powerful and versatile concept, be aware that
-every node has a cost. Built-in functions such as `_process()` and
-`_physics_process()` propagate through the tree. This housekeeping can reduce
+every node has a cost. Built-in functions such as ``_process()`` and
+``_physics_process()`` propagate through the tree. This housekeeping can reduce
 performance when you have a very large numbers of nodes (how many exactly
 depends on the target platform and can range from thousands to tens of
 thousands so ensure that you profile performance on all target platforms
@@ -247,7 +232,7 @@ You can avoid the SceneTree altogether by using Server APIs. For more
 information, see :ref:`doc_using_servers`.
 
 Physics
-=======
+-------
 
 In some situations, physics can end up becoming a bottleneck. This is
 particularly the case with complex worlds and large numbers of physics objects.

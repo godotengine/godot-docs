@@ -68,6 +68,10 @@ Arrays can be concatenated using the ``+`` operator:
 
 \ **Note:** Erasing elements while iterating over arrays is **not** supported and will result in unpredictable behavior.
 
+.. note::
+
+	There are notable differences when using this API with C#. See :ref:`doc_c_sharp_differences` for more information.
+
 .. rst-class:: classref-reftable-group
 
 Constructors
@@ -1110,6 +1114,8 @@ If either ``begin`` or ``end`` are negative, they will be relative to the end of
 If specified, ``step`` is the relative index between source elements. It can be negative, then ``begin`` must be higher than ``end``. For example, ``[0, 1, 2, 3, 4, 5].slice(5, 1, -2)`` returns ``[5, 3]``.
 
 If ``deep`` is true, each element will be copied by value rather than by reference.
+
+\ **Note:** To include the first element when ``step`` is negative, use ``arr.slice(begin, -arr.size() - 1, step)`` (i.e. ``[0, 1, 2].slice(1, -4, -1)`` returns ``[1, 0]``).
 
 .. rst-class:: classref-item-separator
 

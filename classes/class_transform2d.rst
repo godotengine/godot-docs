@@ -21,6 +21,10 @@ A 2×3 matrix (2 rows, 3 columns) used for 2D linear transformations. It can rep
 
 For more information, read the "Matrices and transforms" documentation article.
 
+.. note::
+
+	There are notable differences when using this API with C#. See :ref:`doc_c_sharp_differences` for more information.
+
 .. rst-class:: classref-introduction-group
 
 Tutorials

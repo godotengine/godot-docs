@@ -3214,6 +3214,10 @@ Draws the shadow atlas that stores shadows from :ref:`OmniLight3D<class_OmniLigh
 
 Draws the shadow atlas that stores shadows from :ref:`DirectionalLight3D<class_DirectionalLight3D>`\ s in the upper left quadrant of the :ref:`Viewport<class_Viewport>`.
 
+The slice of the camera frustum related to the shadow map cascade is superimposed to visualize coverage. The color of each slice matches the colors used for :ref:`VIEWPORT_DEBUG_DRAW_PSSM_SPLITS<class_RenderingServer_constant_VIEWPORT_DEBUG_DRAW_PSSM_SPLITS>`. When shadow cascades are blended the overlap is taken into account when drawing the frustum slices.
+
+The last cascade shows all frustum slices to illustrate the coverage of all slices.
+
 .. _class_RenderingServer_constant_VIEWPORT_DEBUG_DRAW_SCENE_LUMINANCE:
 
 .. rst-class:: classref-enumeration-constant

@@ -107,7 +107,9 @@ Importing ``.blend`` files directly within Godot
 
 .. note::
 
-    This functionality requires Blender 3.0 or later.
+    This functionality requires Blender 3.0 or later. For best results, we
+    recommend using Blender 3.5 or later, as it includes many fixes to the glTF
+    exporter.
 
 From Godot 4.0 onwards, the editor can directly import ``.blend`` files by
 calling `Blender <https://www.blender.org/>`__'s glTF export functionality in a
@@ -122,8 +124,8 @@ To use ``.blend`` import, you must install Blender before opening the Godot
 editor (if opening a project that already contains ``.blend`` files). If you
 keep Blender installed at its default location, Godot should be able to detect
 its path automatically. If this isn't the case, configure the path to the
-Blender executable in the Editor Settings (**Filesystem > Import > Blender >
-Blender 3 Path**).
+directory containing the Blender executable in the Editor Settings
+(**Filesystem > Import > Blender > Blender 3 Path**).
 
 If you keep ``.blend`` files within your project folder but don't want them to
 be imported by Godot, disable **Filesystem > Import > Blender > Enabled** in the
@@ -229,6 +231,18 @@ object transform in the 3D modeling software before exporting the scene.
     It is important that the mesh is not deformed by bones when exporting. Make sure
     that the skeleton is reset to its T-pose or default rest pose before exporting
     with your favorite 3D editor.
+
+Lighting considerations
+-----------------------
+
+While it's possible to import lights from a 3D scene using the glTF, ``.blend``
+or Collada formats, it's generally advised to design the scene's lighting in the
+Godot editor after importing the scene.
+
+This allows you to get a more accurate feel for the final result, as different
+engines will render lights in a different manner. This also avoids any issues
+with lights appearing excessively strong or faint as a result of the import
+process.
 
 Import workflows
 ----------------

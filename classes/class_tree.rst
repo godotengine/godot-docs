@@ -219,6 +219,14 @@ Theme Properties
    +-----------------------------------+------------------------------------------------------------------------------------------+-----------------------------------+
    | :ref:`int<class_int>`             | :ref:`icon_max_width<class_Tree_theme_constant_icon_max_width>`                          | ``0``                             |
    +-----------------------------------+------------------------------------------------------------------------------------------+-----------------------------------+
+   | :ref:`int<class_int>`             | :ref:`inner_item_margin_bottom<class_Tree_theme_constant_inner_item_margin_bottom>`      | ``0``                             |
+   +-----------------------------------+------------------------------------------------------------------------------------------+-----------------------------------+
+   | :ref:`int<class_int>`             | :ref:`inner_item_margin_left<class_Tree_theme_constant_inner_item_margin_left>`          | ``0``                             |
+   +-----------------------------------+------------------------------------------------------------------------------------------+-----------------------------------+
+   | :ref:`int<class_int>`             | :ref:`inner_item_margin_right<class_Tree_theme_constant_inner_item_margin_right>`        | ``0``                             |
+   +-----------------------------------+------------------------------------------------------------------------------------------+-----------------------------------+
+   | :ref:`int<class_int>`             | :ref:`inner_item_margin_top<class_Tree_theme_constant_inner_item_margin_top>`            | ``0``                             |
+   +-----------------------------------+------------------------------------------------------------------------------------------+-----------------------------------+
    | :ref:`int<class_int>`             | :ref:`item_margin<class_Tree_theme_constant_item_margin>`                                | ``16``                            |
    +-----------------------------------+------------------------------------------------------------------------------------------+-----------------------------------+
    | :ref:`int<class_int>`             | :ref:`outline_size<class_Tree_theme_constant_outline_size>`                              | ``0``                             |
@@ -1473,6 +1481,54 @@ The horizontal space between item cells. This is also used as the margin at the 
 :ref:`int<class_int>` **icon_max_width** = ``0``
 
 The maximum allowed width of the icon in item's cells. This limit is applied on top of the default size of the icon, but before the value set with :ref:`TreeItem.set_icon_max_width<class_TreeItem_method_set_icon_max_width>`. The height is adjusted according to the icon's ratio.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Tree_theme_constant_inner_item_margin_bottom:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`int<class_int>` **inner_item_margin_bottom** = ``0``
+
+The inner bottom margin of an item.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Tree_theme_constant_inner_item_margin_left:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`int<class_int>` **inner_item_margin_left** = ``0``
+
+The inner left margin of an item.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Tree_theme_constant_inner_item_margin_right:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`int<class_int>` **inner_item_margin_right** = ``0``
+
+The inner right margin of an item.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Tree_theme_constant_inner_item_margin_top:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`int<class_int>` **inner_item_margin_top** = ``0``
+
+The inner top margin of an item.
 
 .. rst-class:: classref-item-separator
 

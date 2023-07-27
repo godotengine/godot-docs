@@ -23,6 +23,10 @@ It uses integer coordinates. If you need floating-point coordinates, use :ref:`R
 
 Negative values for :ref:`size<class_Rect2i_property_size>` are not supported and will not work for most methods. Use :ref:`abs<class_Rect2i_method_abs>` to get a Rect2i with a positive size.
 
+.. note::
+
+	There are notable differences when using this API with C#. See :ref:`doc_c_sharp_differences` for more information.
+
 .. rst-class:: classref-introduction-group
 
 Tutorials

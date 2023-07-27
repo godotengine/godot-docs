@@ -503,7 +503,7 @@ Removes a collision exception so the shape does report collisions with the speci
 
 void **resource_changed** **(** :ref:`Resource<class_Resource>` resource **)**
 
-This method is used internally to update the debug gizmo in the editor. Any code placed in this function will be called whenever the :ref:`shape<class_ShapeCast3D_property_shape>` resource is modified.
+*Obsoleted.* Use :ref:`Resource.changed<class_Resource_signal_changed>` instead.
 
 .. rst-class:: classref-item-separator
 

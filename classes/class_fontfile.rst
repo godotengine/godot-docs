@@ -747,7 +747,7 @@ Returns embolden strength, if is not equal to zero, emboldens the font outlines.
 
 :ref:`int<class_int>` **get_face_index** **(** :ref:`int<class_int>` cache_index **)** |const|
 
-Recturns an active face index in the TrueType / OpenType collection.
+Returns an active face index in the TrueType / OpenType collection.
 
 .. rst-class:: classref-item-separator
 

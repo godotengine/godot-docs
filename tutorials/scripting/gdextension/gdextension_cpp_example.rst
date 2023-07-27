@@ -33,12 +33,23 @@ Note that this repository has different branches for different versions
 of Godot. GDExtensions will not work in older versions of Godot (only Godot 4 and up) and vice versa, so make sure you download the correct branch.
 
 .. note::
-
     To use `GDExtension <https://godotengine.org/article/introducing-gd-extensions>`__
-    you need to use the ``4.0`` branch of godot-cpp,
-    which is only compatible with Godot 4.0 and being used here as an example.
-    The ``master`` branch is the development branch and is being updated
-    regularly to work with godot's ``master`` branch.
+    you need to use the godot-cpp branch that matches the version of Godot that you are
+    targeting. For example, if you're targeting Godot 4.1, use the ``4.1`` branch,
+    which is what is shown through out this tutorial.
+
+    The ``master`` branch is the development branch which is updated regularly
+    to work with Godot's ``master`` branch.
+
+.. warning::
+    Our long-term goal is that GDExtensions targeting an earlier version of Godot will work
+    in later minor versions, but not vice-versa. For example, a GDExtension targeting Godot 4.2
+    should work just fine in Godot 4.3, but one targeting Godot 4.3 won't work in Godot 4.2.
+
+    However, GDExtension is currently *experimental*, which means that we may break compatibility
+    in order to fix major bugs or include critical features. For example, GDExtensions created
+    for Godot 4.0 aren't compatible with Godot 4.1
+    (see :ref:`updating_your_gdextension_for_godot_4_1`).
 
 If you are versioning your project using Git, it is recommended to add it as
 a Git submodule:
@@ -48,7 +59,7 @@ a Git submodule:
     mkdir gdextension_cpp_example
     cd gdextension_cpp_example
     git init
-    git submodule add -b 4.0 https://github.com/godotengine/godot-cpp
+    git submodule add -b 4.1 https://github.com/godotengine/godot-cpp
     cd godot-cpp
     git submodule update --init
 
@@ -58,7 +69,7 @@ Alternatively, you can also clone it to the project folder:
 
     mkdir gdextension_cpp_example
     cd gdextension_cpp_example
-    git clone -b 4.0 https://github.com/godotengine/godot-cpp
+    git clone -b 4.1 https://github.com/godotengine/godot-cpp
 
 .. note::
 
@@ -98,7 +109,7 @@ below.
 To generate and compile the bindings, use this command (replacing ``<platform>``
 with ``windows``, ``linux`` or ``macos`` depending on your OS):
 
-To speed up compilation, add `-jN` at the end of the SCons command line where `N`
+To speed up compilation, add ``-jN`` at the end of the SCons command line where ``N``
 is the number of CPU threads you have on your system. The example below uses 4 threads.
 
 .. code-block:: none
@@ -286,9 +297,9 @@ initialize them, but you might have to set up more things depending on your
 needs. We call the function ``register_class`` for each of our classes in our library.
 
 The important function is the third function called ``example_library_init``.
-We first call a function in our bindings library that creates an initilization object.
+We first call a function in our bindings library that creates an initialization object.
 This object registrates the initialization and termination functions of the GDExtension.
-Furthermore, it sets the level of initilization (core, servers, scene, editor, level).
+Furthermore, it sets the level of initialization (core, servers, scene, editor, level).
 
 At last, we need the header file for the ``register_types.cpp`` named
 ``register_types.h``.
@@ -420,6 +431,22 @@ We're going to assign the Godot logo to this node as our texture, disable the
 We're finally ready to run the project:
 
 .. image:: img/gdextension_cpp_animated.gif
+
+Custom editor icon
+------------------
+By default, Godot uses the node icon in the scene dock for GDExtension nodes. The custom icon can be
+added via the ``gdextension`` file. The node's icon is set by reference to its name and resource path
+of an SVG file.
+
+For example:
+
+.. code-block:: none
+
+    [Icon]
+    GDExample = "res://icons/GDExample.svg"
+
+The path should point to a 16 by 16 pixel SVG image. Read the guide for :ref:`creating icons <doc_editor_icons>`
+for more information.
 
 Adding properties
 -----------------

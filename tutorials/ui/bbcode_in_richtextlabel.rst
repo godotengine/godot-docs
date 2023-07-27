@@ -55,6 +55,11 @@ multiple options (separated by spaces within the opening tag). The closing tag
 delimits the end of the formatted part. In some cases, both the closing tag and
 the content can be omitted.
 
+Unlike BBCode in HTML, leading/trailing whitespace is not removed by a
+RichTextLabel upon display. Duplicate spaces are also displayed as-is in the
+final output. This means that when displaying a code block in a RichTextLabel,
+you don't need to use a preformatted text tag.
+
 .. code-block:: none
 
   [tag]content[/tag]
@@ -301,7 +306,7 @@ Reference
     - | ``[hint={tooltip text displayed on hover}]{text}[/hint]``
 
   * - | **img**
-      | Inserts an image from the ``{path}`` (can be any valid image resource).
+      | Inserts an image from the ``{path}`` (can be any valid :ref:`class_Texture2D` resource).
       | If ``{width}`` is provided, the image will try to fit that width maintaining
         the aspect ratio.
       | If both ``{width}`` and ``{height}`` are provided, the image will be scaled
@@ -399,8 +404,11 @@ Reference
   * - | **ul**
       | Adds an unordered list. List ``{items}`` must be provided by putting one item per
         line of text.
+      | The bullet point can be customized using the ``{bullet}`` parameter,
+        see :ref:`doc_bbcode_in_richtextlabel_unordered_list_bullet`.
 
-    - ``[ul]{items}[/ul]``
+    - | ``[ul]{items}[/ul]``
+      | ``[ul bullet={bullet}]{items}[/ul]``
 
   * - | **ol**
       | Adds an ordered (numbered) list of the given ``{type}`` (see :ref:`doc_bbcode_in_richtextlabel_list_types`).
@@ -410,14 +418,21 @@ Reference
 
   * - | **lb**, **rb**
       | Adds ``[`` and ``]`` respectively. Allows escaping BBCode markup.
+      | These are self-closing tags, which means you do not need to close them
+        (and there is no ``[/lb]`` or ``[/rb]`` closing tag).
 
     - | ``[lb]b[rb]text[lb]/b[rb]`` will display as ``[b]text[/b]``.
 
-  * - | Several Unicode control character can be added using their own tags.
+  * - | Several Unicode control characters can be added using their own self-closing tags.
+      | This can result in easier maintenance compared to pasting those
+      | control characters directly in the text.
 
-    - | ``[lrm]``, ``[rlm]``, ``[lre]``, ``[rle]``, ``[lro]``, ``[rlo]``,
-        ``[pdf]``, ``[alm]``, ``[lri]``, ``[rli]``, ``[fsi]``, ``[pdi]``,
-        ``[zwj]``, ``[zwnj]``, ``[wj]``
+    - | ``[lrm]`` (left-to-right mark), ``[rlm]`` (right-to-left mark), ``[lre]`` (left-to-right embedding),
+      | ``[rle]`` (right-to-left embedding), ``[lro]`` (left-to-right override), ``[rlo]`` (right-to-left override),
+      | ``[pdf]`` (pop directional formatting), ``[alm]`` (Arabic letter mark), ``[lri]`` (left-to-right isolate),
+      | ``[rli]`` (right-to-left isolate), ``[fsi]`` (first strong isolate), ``[pdi]`` (pop directional isolate),
+      | ``[zwj]`` (zero-width joiner), ``[zwnj]`` (zero-width non-joiner), ``[wj]`` (word joiner),
+      | ``[shy]`` (soft hyphen)
 
 .. note::
 
@@ -553,7 +568,7 @@ Image options
   | `Default` | Inherit                                    |
   +-----------+--------------------------------------------+
 
-  Region rect of the image.
+  Region rect of the image. This can be used to display a single image from a spritesheet.
 
 .. _doc_bbcode_in_richtextlabel_image_alignment:
 
@@ -618,7 +633,6 @@ the built-in :ref:`class_Color` class. Named classes can be specified in a numbe
 styles using different casings: ``DARK_RED``, ``DarkRed``, and ``darkred`` will give
 the same exact result.
 
-
 .. _doc_bbcode_in_richtextlabel_hex_colors:
 
 Hexadecimal color codes
@@ -633,7 +647,6 @@ e.g. ``[color=#ffffff88]translucent white[/color]``. Note that the alpha channel
 is the **last** component of the color code, not the first one. Short RGBA
 color codes such as ``#6f28`` (equivalent to ``#66ff2288``) are supported as well.
 
-
 .. _doc_bbcode_in_richtextlabel_cell_options:
 
 Cell options
@@ -647,8 +660,8 @@ Cell options
   | `Default` | 1                                          |
   +-----------+--------------------------------------------+
 
-  Cell expansion ration, which cell will try to expand to proportionally to other
-  cells and their expansion ratios.
+  Cell expansion ratio. This defines which cells will try to expand to
+  proportionally to other cells and their expansion ratios.
 
 - **border**
 
@@ -668,8 +681,23 @@ Cell options
   | `Default` | Inherit                                    |
   +-----------+--------------------------------------------+
 
-  Cell background color. For alternating odd/even row backgrounds
+  Cell background color. For alternating odd/even row backgrounds,
   you can use ``bg=odd_color,even_color``.
+
+.. _doc_bbcode_in_richtextlabel_unordered_list_bullet:
+
+Unordered list bullet
+~~~~~~~~~~~~~~~~~~~~~
+
+By default, the ``[ul]`` tag uses the ``U+2022`` "Bullet" Unicode glyph as the
+bullet character. This behavior is similar to web browsers. The bullet character
+can be customized using ``[ul bullet={bullet}]``. If provided, this ``{bullet}``
+parameter must be a *single* character with no enclosing quotes (for example,
+``[bullet=*]``). Additional characters are ignored. The bullet character's
+width does not affect the list's formatting.
+
+See `Bullet (typography) on Wikipedia <https://en.wikipedia.org/wiki/Bullet_(typography)>`__
+for a list of common bullet characters that you can paste directly in the ``bullet`` parameter.
 
 .. _doc_bbcode_in_richtextlabel_list_types:
 
@@ -833,7 +861,7 @@ object, which holds a few variables to control how the associated glyph is rende
   effect. You can use :ref:`get() <class_Dictionary_method_get>` with an optional default value
   to retrieve each parameter, if specified by the user. For example ``[custom_fx spread=0.5
   color=#FFFF00]test[/custom_fx]`` would have a float ``spread`` and Color ``color``
-  parameters in its ` `env`` Dictionary. See below for more usage examples.
+  parameters in its ``env`` Dictionary. See below for more usage examples.
 
 The last thing to note about this function is that it is necessary to return a boolean
 ``true`` value to verify that the effect processed correctly. This way, if there's a problem

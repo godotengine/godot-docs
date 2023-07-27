@@ -112,6 +112,25 @@ Methods
 
 .. rst-class:: classref-descriptions-group
 
+Signals
+-------
+
+.. _class_GPUParticles2D_signal_finished:
+
+.. rst-class:: classref-signal
+
+**finished** **(** **)**
+
+Emitted when all active particles have finished processing. When :ref:`one_shot<class_GPUParticles2D_property_one_shot>` is disabled, particles will process continuously, so this is never emitted.
+
+\ **Note:** Due to the particles being computed on the GPU there might be a delay before the signal gets emitted.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
+
 Enumerations
 ------------
 
@@ -594,6 +613,8 @@ Method Descriptions
 :ref:`Rect2<class_Rect2>` **capture_rect** **(** **)** |const|
 
 Returns a rectangle containing the positions of all existing particles.
+
+\ **Note:** When using threaded rendering this method synchronizes the rendering thread. Calling it often may have a negative impact on performance.
 
 .. rst-class:: classref-item-separator
 

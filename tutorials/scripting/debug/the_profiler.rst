@@ -127,13 +127,13 @@ needs optimization. Is it your math or the way you access other pieces of data
 to do the math with? Is it the `for` loop? The `if` statements?
 
 You can narrow down the measurement by manually counting ticks as the code runs
-with some temporary functions. The two functions are part of the `OS` class
+with some temporary functions. The two functions are part of the `Time` class
 object. They are `get_ticks_msec` and `get_ticks_usec`. The first measures in
 milliseconds (1,000 per second), and the second measures in microseconds
 (1,000,000 per second).
 
-Either one returns the amount of time since the game started in their respective
-time frame. This comes directly from the operating system rather than Godot.
+Either one returns the amount of time since the game engine started in their respective
+time frame.
 
 If you wrap a piece of code with a start and end count of microseconds, the
 difference between the two is the amount of time it took to run that piece of
@@ -143,16 +143,16 @@ code.
  .. code-tab:: gdscript GDScript
 
     # Measuring the time it takes for worker_function() to run
-    var start = OS.get_ticks_usec()
+    var start = Time.get_ticks_usec()
     worker_function()
-    var end = OS.get_ticks_usec()
+    var end = Time.get_ticks_usec()
     var worker_time = (end-start)/1000000.0
 
     # Measuring the time spent running a calculation over each element of an array
-    start = OS.get_ticks_usec()
+    start = Time.get_ticks_usec()
     for calc in calculations:
         result = pow(2, calc.power) * calc.product
-    end = OS.get_ticks_usec()
+    end = Time.get_ticks_usec()
     var loop_time = (end-start)/1000000.0
 
     print("Worker time: %s\nLoop time: %s" % [worker_time, loop_time])

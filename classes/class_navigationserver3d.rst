@@ -1493,6 +1493,8 @@ void **region_bake_navigation_mesh** **(** :ref:`NavigationMesh<class_Navigation
 
 Bakes the ``navigation_mesh`` with bake source geometry collected starting from the ``root_node``.
 
+\ *Deprecated.* This function is deprecated due to core threading changes. To upgrade existing code, first create a :ref:`NavigationMeshSourceGeometryData3D<class_NavigationMeshSourceGeometryData3D>` resource. Use this resource with :ref:`parse_source_geometry_data<class_NavigationServer3D_method_parse_source_geometry_data>` to parse the SceneTree for nodes that should contribute to the navigation mesh baking. The SceneTree parsing needs to happen on the main thread. After the parsing is finished use the resource with :ref:`bake_from_source_geometry_data<class_NavigationServer3D_method_bake_from_source_geometry_data>` to bake a navigation mesh.
+
 .. rst-class:: classref-item-separator
 
 ----

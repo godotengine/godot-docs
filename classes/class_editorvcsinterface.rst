@@ -565,7 +565,7 @@ Helper function to create a :ref:`Dictionary<class_Dictionary>` used by editor t
 
 void **popup_error** **(** :ref:`String<class_String>` msg **)**
 
-Pops up an error message in the edior which is shown as coming from the underlying VCS. Use this to show VCS specific error messages.
+Pops up an error message in the editor which is shown as coming from the underlying VCS. Use this to show VCS specific error messages.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

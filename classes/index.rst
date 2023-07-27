@@ -830,6 +830,21 @@ Other objects
     class_resourceformatloader
     class_resourceformatsaver
     class_resourceimporter
+    class_resourceimporterbitmap
+    class_resourceimporterbmfont
+    class_resourceimportercsvtranslation
+    class_resourceimporterdynamicfont
+    class_resourceimporterimage
+    class_resourceimporterimagefont
+    class_resourceimporterlayeredtexture
+    class_resourceimportermp3
+    class_resourceimporterobj
+    class_resourceimporteroggvorbis
+    class_resourceimporterscene
+    class_resourceimportershaderfile
+    class_resourceimportertexture
+    class_resourceimportertextureatlas
+    class_resourceimporterwav
     class_resourceloader
     class_resourcesaver
     class_resourceuid

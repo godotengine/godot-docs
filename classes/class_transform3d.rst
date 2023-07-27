@@ -21,6 +21,10 @@ A 3×4 matrix (3 rows, 4 columns) used for 3D linear transformations. It can rep
 
 For more information, read the "Matrices and transforms" documentation article.
 
+.. note::
+
+	There are notable differences when using this API with C#. See :ref:`doc_c_sharp_differences` for more information.
+
 .. rst-class:: classref-introduction-group
 
 Tutorials

@@ -23,6 +23,10 @@ Some string methods have corresponding variations. Variations suffixed with ``n`
 
 \ **Note:** In a boolean context, a string will evaluate to ``false`` if it is empty (``""``). Otherwise, a string will always evaluate to ``true``. The ``not`` operator cannot be used. Instead, :ref:`is_empty<class_String_method_is_empty>` should be used to check for empty strings.
 
+.. note::
+
+	There are notable differences when using this API with C#. See :ref:`doc_c_sharp_differences` for more information.
+
 .. rst-class:: classref-introduction-group
 
 Tutorials

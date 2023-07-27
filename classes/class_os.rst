@@ -149,6 +149,8 @@ Methods
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`is_restart_on_exit_set<class_OS_method_is_restart_on_exit_set>` **(** **)** |const|                                                                                                                                                                                                                                                                                |
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`is_sandboxed<class_OS_method_is_sandboxed>` **(** **)** |const|                                                                                                                                                                                                                                                                                                    |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`is_stdout_verbose<class_OS_method_is_stdout_verbose>` **(** **)** |const|                                                                                                                                                                                                                                                                                          |
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`is_userfs_persistent<class_OS_method_is_userfs_persistent>` **(** **)** |const|                                                                                                                                                                                                                                                                                    |
@@ -164,6 +166,8 @@ Methods
    | :ref:`bool<class_bool>`                           | :ref:`request_permission<class_OS_method_request_permission>` **(** :ref:`String<class_String>` name **)**                                                                                                                                                                                                                                                               |
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`request_permissions<class_OS_method_request_permissions>` **(** **)**                                                                                                                                                                                                                                                                                              |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                              | :ref:`revoke_granted_permissions<class_OS_method_revoke_granted_permissions>` **(** **)**                                                                                                                                                                                                                                                                                |
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                              | :ref:`set_environment<class_OS_method_set_environment>` **(** :ref:`String<class_String>` variable, :ref:`String<class_String>` value **)** |const|                                                                                                                                                                                                                      |
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -734,9 +738,9 @@ Returns the path to the current engine executable.
 
 :ref:`PackedStringArray<class_PackedStringArray>` **get_granted_permissions** **(** **)** |const|
 
-With this function, you can get the list of dangerous permissions that have been granted to the Android application.
+On Android devices: With this function, you can get the list of dangerous permissions that have been granted.
 
-\ **Note:** This method is implemented only on Android.
+On macOS (sandboxed applications only): This function returns the list of user selected folders accessible to the application. Use native file dialog to request folder access permission.
 
 .. rst-class:: classref-item-separator
 
@@ -1246,6 +1250,20 @@ Returns ``true`` if the project will automatically restart when it exits for any
 
 ----
 
+.. _class_OS_method_is_sandboxed:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **is_sandboxed** **(** **)** |const|
+
+Returns ``true`` if application is running in the sandbox.
+
+\ **Note:** This method is implemented on macOS.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_OS_method_is_stdout_verbose:
 
 .. rst-class:: classref-method
@@ -1366,6 +1384,18 @@ At the moment this function is only used by ``AudioDriverOpenSL`` to request per
 With this function, you can request dangerous permissions since normal permissions are automatically granted at install time in Android applications.
 
 \ **Note:** This method is implemented only on Android.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_OS_method_revoke_granted_permissions:
+
+.. rst-class:: classref-method
+
+void **revoke_granted_permissions** **(** **)**
+
+On macOS (sandboxed applications only), this function clears list of user selected folders accessible to the application.
 
 .. rst-class:: classref-item-separator
 

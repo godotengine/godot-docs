@@ -524,7 +524,7 @@ Emitted when a gutter is removed.
 
 Emitted immediately when the text changes.
 
-When text is added ``from_line`` will be less then ``to_line``. On a remove ``to_line`` will be less then ``from_line``.
+When text is added ``from_line`` will be less than ``to_line``. On a remove ``to_line`` will be less than ``from_line``.
 
 .. rst-class:: classref-item-separator
 

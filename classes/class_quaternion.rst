@@ -23,6 +23,10 @@ Quaternions can be parametrized using both an axis-angle pair or Euler angles. D
 
 \ **Note:** Quaternions need to be normalized before being used for rotation.
 
+.. note::
+
+	There are notable differences when using this API with C#. See :ref:`doc_c_sharp_differences` for more information.
+
 .. rst-class:: classref-introduction-group
 
 Tutorials
