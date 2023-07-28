@@ -432,6 +432,7 @@ table to find its new name.
 - ParticleProcessMaterial's ``set_flag()`` is now ``set_particle_flag()``.
 - ResourceFormatLoader's ``get_dependencies()`` is now ``_get_dependencies()``
   (note the leading underscore, which denotes a virtual method).
+- SceneTree's ``change_scene()`` is now ``change_scene_to_file()``.
 - Shortcut's ``is_valid()`` is now ``has_valid_event()``.
 - TileMap's ``world_to_map()`` is now ``local_to_map()``.
 - TileMap's ``map_to_world()`` is now ``map_to_local()``.
