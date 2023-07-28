@@ -273,5 +273,5 @@ compatibility-breaking changes of this kind.
       optional parameter), a GDExtension compatibility method must be created.
       This ensures that existing GDExtensions continue to work across patch and
       minor releases, so that users don't have to recompile them.
-      See `pull request #76446 <https://github.com/godotengine/godot/pull/76446>`
+      See `pull request #76446 <https://github.com/godotengine/godot/pull/76446>`_
       for more information.
