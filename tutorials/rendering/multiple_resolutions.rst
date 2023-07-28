@@ -289,7 +289,7 @@ Desktop game
 **Non-pixel art:**
 
 - Set the base window width to ``1920`` and window height to ``1080``. If you have a
-  display smaller than 1920×1080, set **Test Width** and **Test Height** to
+  display smaller than 1920×1080, set **Window Width Override** and **Window Height Override** to
   lower values to make the window smaller when the project starts.
 - Alternatively, if you're targeting high-end devices primarily, set the base
   window width to ``3840`` and window height to ``2160``.
