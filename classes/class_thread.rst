@@ -21,8 +21,6 @@ Description
 
 A unit of execution in a process. Can run methods on :ref:`Object<class_Object>`\ s simultaneously. The use of synchronization via :ref:`Mutex<class_Mutex>` or :ref:`Semaphore<class_Semaphore>` is advised if working with shared objects.
 
-\ **Note:** Breakpoints won't break on code if it's running in a thread. This is a current limitation of the GDScript debugger.
-
 \ **Warning:**\ 
 
 To ensure proper cleanup without crashes or deadlocks, when a **Thread**'s reference count reaches zero and it is therefore destroyed, the following conditions must be met:

@@ -21,6 +21,8 @@ Description
 
 A material that uses a custom :ref:`Shader<class_Shader>` program to render either items to screen or process particles. You can create multiple materials for the same shader but configure different values for the uniforms defined in the shader.
 
+\ **Note:** For performance reasons the :ref:`Resource.changed<class_Resource_signal_changed>` signal is only emitted when the :ref:`Resource.resource_name<class_Resource_property_resource_name>` is changed. Only in editor, is also emitted for :ref:`shader<class_ShaderMaterial_property_shader>` changes.
+
 .. rst-class:: classref-introduction-group
 
 Tutorials

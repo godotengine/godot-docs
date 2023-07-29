@@ -57,7 +57,7 @@ Properties
    +---------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+-------------------------------------+
    | :ref:`float<class_float>`                                           | :ref:`edge_max_error<class_NavigationMesh_property_edge_max_error>`                                     | ``1.3``                             |
    +---------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`float<class_float>`                                           | :ref:`edge_max_length<class_NavigationMesh_property_edge_max_length>`                                   | ``12.0``                            |
+   | :ref:`float<class_float>`                                           | :ref:`edge_max_length<class_NavigationMesh_property_edge_max_length>`                                   | ``0.0``                             |
    +---------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+-------------------------------------+
    | :ref:`AABB<class_AABB>`                                             | :ref:`filter_baking_aabb<class_NavigationMesh_property_filter_baking_aabb>`                             | ``AABB(0, 0, 0, 0, 0, 0)``          |
    +---------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+-------------------------------------+
@@ -96,6 +96,8 @@ Methods
 
    +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                | :ref:`add_polygon<class_NavigationMesh_method_add_polygon>` **(** :ref:`PackedInt32Array<class_PackedInt32Array>` polygon **)**                                     |
+   +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                                | :ref:`clear<class_NavigationMesh_method_clear>` **(** **)**                                                                                                         |
    +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                | :ref:`clear_polygons<class_NavigationMesh_method_clear_polygons>` **(** **)**                                                                                       |
    +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -417,14 +419,14 @@ The maximum distance a simplified contour's border edges should deviate the orig
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **edge_max_length** = ``12.0``
+:ref:`float<class_float>` **edge_max_length** = ``0.0``
 
 .. rst-class:: classref-property-setget
 
 - void **set_edge_max_length** **(** :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_edge_max_length** **(** **)**
 
-The maximum allowed length for contour edges along the border of the mesh.
+The maximum allowed length for contour edges along the border of the mesh. A value of ``0.0`` disables this feature.
 
 \ **Note:** While baking, this value will be rounded up to the nearest multiple of :ref:`cell_size<class_NavigationMesh_property_cell_size>`.
 
@@ -673,6 +675,18 @@ Method Descriptions
 void **add_polygon** **(** :ref:`PackedInt32Array<class_PackedInt32Array>` polygon **)**
 
 Adds a polygon using the indices of the vertices you get when calling :ref:`get_vertices<class_NavigationMesh_method_get_vertices>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_NavigationMesh_method_clear:
+
+.. rst-class:: classref-method
+
+void **clear** **(** **)**
+
+Clears the internal arrays for vertices and polygon indices.
 
 .. rst-class:: classref-item-separator
 

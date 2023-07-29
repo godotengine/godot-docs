@@ -12,9 +12,25 @@ ResourceImporterMP3
 
 **Inherits:** :ref:`ResourceImporter<class_ResourceImporter>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-.. container:: contribute
+Imports a MP3 audio file for playback.
 
-	There is currently no description for this class. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+.. rst-class:: classref-introduction-group
+
+Description
+-----------
+
+MP3 is a lossy audio format, with worse audio quality compared to :ref:`ResourceImporterOggVorbis<class_ResourceImporterOggVorbis>` at a given bitrate.
+
+In most cases, it's recommended to use Ogg Vorbis over MP3. However, if you're using a MP3 sound source with no higher quality source available, then it's recommended to use the MP3 file directly to avoid double lossy compression.
+
+MP3 requires more CPU to decode than :ref:`ResourceImporterWAV<class_ResourceImporterWAV>`. If you need to play a lot of simultaneous sounds, it's recommended to use WAV for those sounds instead, especially if targeting low-end devices.
+
+.. rst-class:: classref-introduction-group
+
+Tutorials
+---------
+
+- :doc:`Importing audio samples <../tutorials/assets_pipeline/importing_audio_samples>`
 
 .. rst-class:: classref-reftable-group
 
@@ -51,9 +67,9 @@ Property Descriptions
 
 :ref:`int<class_int>` **bar_beats** = ``4``
 
-.. container:: contribute
+The number of bars within a single beat in the audio track. This is only relevant for music that wishes to make use of interactive music functionality (not implemented yet), not sound effects.
 
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+A more convenient editor for :ref:`bar_beats<class_ResourceImporterMP3_property_bar_beats>` is provided in the **Advanced Import Settings** dialog, as it lets you preview your changes without having to reimport the audio.
 
 .. rst-class:: classref-item-separator
 
@@ -65,9 +81,9 @@ Property Descriptions
 
 :ref:`int<class_int>` **beat_count** = ``0``
 
-.. container:: contribute
+The beat count of the audio track. This is only relevant for music that wishes to make use of interactive music functionality (not implemented yet), not sound effects.
 
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+A more convenient editor for :ref:`beat_count<class_ResourceImporterMP3_property_beat_count>` is provided in the **Advanced Import Settings** dialog, as it lets you preview your changes without having to reimport the audio.
 
 .. rst-class:: classref-item-separator
 
@@ -79,9 +95,9 @@ Property Descriptions
 
 :ref:`float<class_float>` **bpm** = ``0``
 
-.. container:: contribute
+The Beats Per Minute of the audio track. This should match the BPM measure that was used to compose the track. This is only relevant for music that wishes to make use of interactive music functionality (not implemented yet), not sound effects.
 
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+A more convenient editor for :ref:`bpm<class_ResourceImporterMP3_property_bpm>` is provided in the **Advanced Import Settings** dialog, as it lets you preview your changes without having to reimport the audio.
 
 .. rst-class:: classref-item-separator
 
@@ -93,7 +109,9 @@ Property Descriptions
 
 :ref:`bool<class_bool>` **loop** = ``false``
 
-If ``true``, the audio will play again from the specified :ref:`loop_offset<class_ResourceImporterMP3_property_loop_offset>` once it is done playing. Useful for ambient sounds and background music.
+If enabled, the audio will begin playing at the beginning after playback ends by reaching the end of the audio.
+
+\ **Note:** In :ref:`AudioStreamPlayer<class_AudioStreamPlayer>`, the :ref:`AudioStreamPlayer.finished<class_AudioStreamPlayer_signal_finished>` signal won't be emitted for looping audio when it reaches the end of the audio file, as the audio will keep playing indefinitely.
 
 .. rst-class:: classref-item-separator
 
@@ -105,9 +123,11 @@ If ``true``, the audio will play again from the specified :ref:`loop_offset<clas
 
 :ref:`float<class_float>` **loop_offset** = ``0``
 
-.. container:: contribute
+Determines where audio will start to loop after playback reaches the end of the audio. This can be used to only loop a part of the audio file, which is useful for some ambient sounds or music. The value is determined in seconds relative to the beginning of the audio. A value of ``0.0`` will loop the entire audio file.
 
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Only has an effect if :ref:`loop<class_ResourceImporterMP3_property_loop>` is ``true``.
+
+A more convenient editor for :ref:`loop_offset<class_ResourceImporterMP3_property_loop_offset>` is provided in the **Advanced Import Settings** dialog, as it lets you preview your changes without having to reimport the audio.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

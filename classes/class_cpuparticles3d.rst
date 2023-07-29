@@ -1050,7 +1050,7 @@ The sphere's radius if :ref:`EmissionShape<enum_CPUParticles3D_EmissionShape>` i
 - void **set_emitting** **(** :ref:`bool<class_bool>` value **)**
 - :ref:`bool<class_bool>` **is_emitting** **(** **)**
 
-If ``true``, particles are being emitted.
+If ``true``, particles are being emitted. :ref:`emitting<class_CPUParticles3D_property_emitting>` can be used to start and stop particles from emitting. However, if :ref:`one_shot<class_CPUParticles3D_property_one_shot>` is ``true`` setting :ref:`emitting<class_CPUParticles3D_property_emitting>` to ``true`` will not restart the emission cycle until after all active particles finish processing. You can use the :ref:`finished<class_CPUParticles3D_signal_finished>` signal to be notified once all active particles finish processing.
 
 .. rst-class:: classref-item-separator
 

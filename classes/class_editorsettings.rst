@@ -91,11 +91,11 @@ Properties
    +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Color<class_Color>`     | :ref:`editors/2d/bone_outline_color<class_EditorSettings_property_editors/2d/bone_outline_color>`                                                                                   |
    +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`         | :ref:`editors/2d/bone_outline_size<class_EditorSettings_property_editors/2d/bone_outline_size>`                                                                                     |
+   | :ref:`float<class_float>`     | :ref:`editors/2d/bone_outline_size<class_EditorSettings_property_editors/2d/bone_outline_size>`                                                                                     |
    +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Color<class_Color>`     | :ref:`editors/2d/bone_selected_color<class_EditorSettings_property_editors/2d/bone_selected_color>`                                                                                 |
    +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`         | :ref:`editors/2d/bone_width<class_EditorSettings_property_editors/2d/bone_width>`                                                                                                   |
+   | :ref:`float<class_float>`     | :ref:`editors/2d/bone_width<class_EditorSettings_property_editors/2d/bone_width>`                                                                                                   |
    +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Color<class_Color>`     | :ref:`editors/2d/grid_color<class_EditorSettings_property_editors/2d/grid_color>`                                                                                                   |
    +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -182,8 +182,6 @@ Properties
    | :ref:`Color<class_Color>`     | :ref:`editors/3d_gizmos/gizmo_colors/shape<class_EditorSettings_property_editors/3d_gizmos/gizmo_colors/shape>`                                                                     |
    +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`       | :ref:`editors/animation/autorename_animation_tracks<class_EditorSettings_property_editors/animation/autorename_animation_tracks>`                                                   |
-   +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`       | :ref:`editors/animation/confirm_insert_track<class_EditorSettings_property_editors/animation/confirm_insert_track>`                                                                 |
    +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`       | :ref:`editors/animation/default_create_bezier_tracks<class_EditorSettings_property_editors/animation/default_create_bezier_tracks>`                                                 |
    +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -843,9 +841,11 @@ The outline color to use for non-selected bones in the 2D skeleton editor. See a
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **editors/2d/bone_outline_size**
+:ref:`float<class_float>` **editors/2d/bone_outline_size**
 
 The outline size in the 2D skeleton editor (in pixels). See also :ref:`editors/2d/bone_width<class_EditorSettings_property_editors/2d/bone_width>`.
+
+\ **Note:** Changes to this value only apply after modifying a :ref:`Bone2D<class_Bone2D>` node in any way, or closing and reopening the scene.
 
 .. rst-class:: classref-item-separator
 
@@ -867,9 +867,11 @@ The color to use for selected bones in the 2D skeleton editor. See also :ref:`ed
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **editors/2d/bone_width**
+:ref:`float<class_float>` **editors/2d/bone_width**
 
 The bone width in the 2D skeleton editor (in pixels). See also :ref:`editors/2d/bone_outline_size<class_EditorSettings_property_editors/2d/bone_outline_size>`.
+
+\ **Note:** Changes to this value only apply after modifying a :ref:`Bone2D<class_Bone2D>` node in any way, or closing and reopening the scene.
 
 .. rst-class:: classref-item-separator
 
@@ -1420,18 +1422,6 @@ The 3D editor gizmo color for :ref:`CollisionShape3D<class_CollisionShape3D>`\ s
 :ref:`bool<class_bool>` **editors/animation/autorename_animation_tracks**
 
 If ``true``, automatically updates animation tracks' target paths when renaming or reparenting nodes in the Scene tree dock.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_EditorSettings_property_editors/animation/confirm_insert_track:
-
-.. rst-class:: classref-property
-
-:ref:`bool<class_bool>` **editors/animation/confirm_insert_track**
-
-If ``true``, display a confirmation dialog when adding a new track to an animation by pressing the "key" icon next to a property.
 
 .. rst-class:: classref-item-separator
 

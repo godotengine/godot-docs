@@ -888,7 +888,7 @@ enum **MouseFilter**:
 
 :ref:`MouseFilter<enum_Control_MouseFilter>` **MOUSE_FILTER_STOP** = ``0``
 
-The control will receive mouse button input events through :ref:`_gui_input<class_Control_method__gui_input>` if clicked on. And the control will receive the :ref:`mouse_entered<class_Control_signal_mouse_entered>` and :ref:`mouse_exited<class_Control_signal_mouse_exited>` signals. These events are automatically marked as handled, and they will not propagate further to other controls. This also results in blocking signals in other controls.
+The control will receive mouse movement input events and mouse button input events if clicked on through :ref:`_gui_input<class_Control_method__gui_input>`. And the control will receive the :ref:`mouse_entered<class_Control_signal_mouse_entered>` and :ref:`mouse_exited<class_Control_signal_mouse_exited>` signals. These events are automatically marked as handled, and they will not propagate further to other controls. This also results in blocking signals in other controls.
 
 .. _class_Control_constant_MOUSE_FILTER_PASS:
 
@@ -896,7 +896,7 @@ The control will receive mouse button input events through :ref:`_gui_input<clas
 
 :ref:`MouseFilter<enum_Control_MouseFilter>` **MOUSE_FILTER_PASS** = ``1``
 
-The control will receive mouse button input events through :ref:`_gui_input<class_Control_method__gui_input>` if clicked on. And the control will receive the :ref:`mouse_entered<class_Control_signal_mouse_entered>` and :ref:`mouse_exited<class_Control_signal_mouse_exited>` signals. If this control does not handle the event, the parent control (if any) will be considered, and so on until there is no more parent control to potentially handle it. This also allows signals to fire in other controls. If no control handled it, the event will be passed to :ref:`Node._unhandled_input<class_Node_method__unhandled_input>` for further processing.
+The control will receive mouse movement input events and mouse button input events if clicked on through :ref:`_gui_input<class_Control_method__gui_input>`. And the control will receive the :ref:`mouse_entered<class_Control_signal_mouse_entered>` and :ref:`mouse_exited<class_Control_signal_mouse_exited>` signals. If this control does not handle the event, the parent control (if any) will be considered, and so on until there is no more parent control to potentially handle it. This also allows signals to fire in other controls. If no control handled it, the event will be passed to :ref:`Node._shortcut_input<class_Node_method__shortcut_input>` for further processing.
 
 .. _class_Control_constant_MOUSE_FILTER_IGNORE:
 
@@ -904,7 +904,7 @@ The control will receive mouse button input events through :ref:`_gui_input<clas
 
 :ref:`MouseFilter<enum_Control_MouseFilter>` **MOUSE_FILTER_IGNORE** = ``2``
 
-The control will not receive mouse button input events through :ref:`_gui_input<class_Control_method__gui_input>`. The control will also not receive the :ref:`mouse_entered<class_Control_signal_mouse_entered>` nor :ref:`mouse_exited<class_Control_signal_mouse_exited>` signals. This will not block other controls from receiving these events or firing the signals. Ignored events will not be handled automatically.
+The control will not receive mouse movement input events and mouse button input events if clicked on through :ref:`_gui_input<class_Control_method__gui_input>`. The control will also not receive the :ref:`mouse_entered<class_Control_signal_mouse_entered>` nor :ref:`mouse_exited<class_Control_signal_mouse_exited>` signals. This will not block other controls from receiving these events or firing the signals. Ignored events will not be handled automatically.
 
 .. rst-class:: classref-item-separator
 

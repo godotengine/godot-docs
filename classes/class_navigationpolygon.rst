@@ -105,6 +105,8 @@ Methods
    +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                | :ref:`add_polygon<class_NavigationPolygon_method_add_polygon>` **(** :ref:`PackedInt32Array<class_PackedInt32Array>` polygon **)**                                                    |
    +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                                | :ref:`clear<class_NavigationPolygon_method_clear>` **(** **)**                                                                                                                        |
+   +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                | :ref:`clear_outlines<class_NavigationPolygon_method_clear_outlines>` **(** **)**                                                                                                      |
    +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                | :ref:`clear_polygons<class_NavigationPolygon_method_clear_polygons>` **(** **)**                                                                                                      |
@@ -192,6 +194,18 @@ Adds a :ref:`PackedVector2Array<class_PackedVector2Array>` that contains the ver
 void **add_polygon** **(** :ref:`PackedInt32Array<class_PackedInt32Array>` polygon **)**
 
 Adds a polygon using the indices of the vertices you get when calling :ref:`get_vertices<class_NavigationPolygon_method_get_vertices>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_NavigationPolygon_method_clear:
+
+.. rst-class:: classref-method
+
+void **clear** **(** **)**
+
+Clears the internal arrays for vertices and polygon indices.
 
 .. rst-class:: classref-item-separator
 

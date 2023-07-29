@@ -19,7 +19,7 @@ A server interface for low-level 3D navigation access.
 Description
 -----------
 
-NavigationServer2D is the server that handles navigation maps, regions and agents. It does not handle A\* navigation from :ref:`AStar3D<class_AStar3D>`.
+NavigationServer3D is the server that handles navigation maps, regions and agents. It does not handle A\* navigation from :ref:`AStar3D<class_AStar3D>`.
 
 Maps are made up of regions, which are made of navigation meshes. Together, they define the navigable areas in the 3D world.
 
@@ -113,6 +113,8 @@ Methods
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`RID<class_RID>`                               | :ref:`link_create<class_NavigationServer3D_method_link_create>` **(** **)**                                                                                                                                                                                                                                                                                             |
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                             | :ref:`link_get_enabled<class_NavigationServer3D_method_link_get_enabled>` **(** :ref:`RID<class_RID>` link **)** |const|                                                                                                                                                                                                                                                |
+   +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Vector3<class_Vector3>`                       | :ref:`link_get_end_position<class_NavigationServer3D_method_link_get_end_position>` **(** :ref:`RID<class_RID>` link **)** |const|                                                                                                                                                                                                                                      |
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                           | :ref:`link_get_enter_cost<class_NavigationServer3D_method_link_get_enter_cost>` **(** :ref:`RID<class_RID>` link **)** |const|                                                                                                                                                                                                                                          |
@@ -130,6 +132,8 @@ Methods
    | :ref:`bool<class_bool>`                             | :ref:`link_is_bidirectional<class_NavigationServer3D_method_link_is_bidirectional>` **(** :ref:`RID<class_RID>` link **)** |const|                                                                                                                                                                                                                                      |
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                | :ref:`link_set_bidirectional<class_NavigationServer3D_method_link_set_bidirectional>` **(** :ref:`RID<class_RID>` link, :ref:`bool<class_bool>` bidirectional **)**                                                                                                                                                                                                     |
+   +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                                | :ref:`link_set_enabled<class_NavigationServer3D_method_link_set_enabled>` **(** :ref:`RID<class_RID>` link, :ref:`bool<class_bool>` enabled **)**                                                                                                                                                                                                                       |
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                | :ref:`link_set_end_position<class_NavigationServer3D_method_link_set_end_position>` **(** :ref:`RID<class_RID>` link, :ref:`Vector3<class_Vector3>` position **)**                                                                                                                                                                                                      |
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -239,6 +243,8 @@ Methods
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                               | :ref:`region_get_connections_count<class_NavigationServer3D_method_region_get_connections_count>` **(** :ref:`RID<class_RID>` region **)** |const|                                                                                                                                                                                                                      |
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                             | :ref:`region_get_enabled<class_NavigationServer3D_method_region_get_enabled>` **(** :ref:`RID<class_RID>` region **)** |const|                                                                                                                                                                                                                                          |
+   +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                           | :ref:`region_get_enter_cost<class_NavigationServer3D_method_region_get_enter_cost>` **(** :ref:`RID<class_RID>` region **)** |const|                                                                                                                                                                                                                                    |
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`RID<class_RID>`                               | :ref:`region_get_map<class_NavigationServer3D_method_region_get_map>` **(** :ref:`RID<class_RID>` region **)** |const|                                                                                                                                                                                                                                                  |
@@ -252,6 +258,8 @@ Methods
    | :ref:`bool<class_bool>`                             | :ref:`region_get_use_edge_connections<class_NavigationServer3D_method_region_get_use_edge_connections>` **(** :ref:`RID<class_RID>` region **)** |const|                                                                                                                                                                                                                |
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                             | :ref:`region_owns_point<class_NavigationServer3D_method_region_owns_point>` **(** :ref:`RID<class_RID>` region, :ref:`Vector3<class_Vector3>` point **)** |const|                                                                                                                                                                                                       |
+   +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                                | :ref:`region_set_enabled<class_NavigationServer3D_method_region_set_enabled>` **(** :ref:`RID<class_RID>` region, :ref:`bool<class_bool>` enabled **)**                                                                                                                                                                                                                 |
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                | :ref:`region_set_enter_cost<class_NavigationServer3D_method_region_set_enter_cost>` **(** :ref:`RID<class_RID>` region, :ref:`float<class_float>` enter_cost **)**                                                                                                                                                                                                      |
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -779,6 +787,18 @@ Create a new link between two positions on a map.
 
 ----
 
+.. _class_NavigationServer3D_method_link_get_enabled:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **link_get_enabled** **(** :ref:`RID<class_RID>` link **)** |const|
+
+Returns ``true`` if the specified ``link`` is enabled.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_NavigationServer3D_method_link_get_end_position:
 
 .. rst-class:: classref-method
@@ -882,6 +902,18 @@ Returns whether this ``link`` can be travelled in both directions.
 void **link_set_bidirectional** **(** :ref:`RID<class_RID>` link, :ref:`bool<class_bool>` bidirectional **)**
 
 Sets whether this ``link`` can be travelled in both directions.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_NavigationServer3D_method_link_set_enabled:
+
+.. rst-class:: classref-method
+
+void **link_set_enabled** **(** :ref:`RID<class_RID>` link, :ref:`bool<class_bool>` enabled **)**
+
+If ``enabled`` is ``true`` the specified ``link`` will contribute to its current navigation map.
 
 .. rst-class:: classref-item-separator
 
@@ -1547,6 +1579,18 @@ Returns how many connections this ``region`` has with other regions in the map.
 
 ----
 
+.. _class_NavigationServer3D_method_region_get_enabled:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **region_get_enabled** **(** :ref:`RID<class_RID>` region **)** |const|
+
+Returns ``true`` if the specified ``region`` is enabled.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_NavigationServer3D_method_region_get_enter_cost:
 
 .. rst-class:: classref-method
@@ -1630,6 +1674,18 @@ Returns ``true`` if the provided ``point`` in world space is currently owned by 
 If multiple navigation meshes have positions at equal distance the navigation region whose polygons are processed first wins the ownership. Polygons are processed in the same order that navigation regions were registered on the NavigationServer.
 
 \ **Note:** If navigation meshes from different navigation regions overlap (which should be avoided in general) the result might not be what is expected.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_NavigationServer3D_method_region_set_enabled:
+
+.. rst-class:: classref-method
+
+void **region_set_enabled** **(** :ref:`RID<class_RID>` region, :ref:`bool<class_bool>` enabled **)**
+
+If ``enabled`` is ``true`` the specified ``region`` will contribute to its current navigation map.
 
 .. rst-class:: classref-item-separator
 
