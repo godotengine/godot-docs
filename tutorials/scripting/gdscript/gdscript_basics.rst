@@ -175,7 +175,7 @@ in case you want to take a look under the hood.
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 | class      | Defines an inner class. See `Classes`_.                                                                                                           |
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| class_name | Defines the script as a globally accessible class with the specified name.                                                                        |
+| class_name | Defines the script as a globally accessible class with the specified name. See `Registering named classes`_.                                      |
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 | extends    | Defines what class to extend with the current class.                                                                                              |
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -668,7 +668,7 @@ Engine built-in types
 
 :ref:`Color <class_Color>`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
-
+Registering named classes
 Color data type contains ``r``, ``g``, ``b``, and ``a`` fields. It can
 also be accessed as ``h``, ``s``, and ``v`` for hue/saturation/value.
 
