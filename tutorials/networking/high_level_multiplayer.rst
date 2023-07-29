@@ -115,7 +115,7 @@ Initializing as a server, listening on the given port, with a given maximum numb
 
     var peer = NetworkedMultiplayerENet.new()
     peer.create_server(SERVER_PORT, MAX_PLAYERS)
-    get_tree().network_peer = peer
+    get_multiplayer().set_multiplayer_peer(peer)
 
 Initializing as a client, connecting to a given IP and port:
 
@@ -123,25 +123,25 @@ Initializing as a client, connecting to a given IP and port:
 
     var peer = NetworkedMultiplayerENet.new()
     peer.create_client(SERVER_IP, SERVER_PORT)
-    get_tree().network_peer = peer
+    get_multiplayer().set_multiplayer_peer(peer)
 
 Get the previously set network peer:
 
 ::
 
-    get_tree().get_network_peer()
+    get_multiplayer().get_peers()
 
 Checking whether the tree is initialized as a server or client:
 
 ::
 
-    get_tree().is_network_server()
+    get_multiplayer().is_server()
 
 Terminating the networking feature:
 
 ::
 
-    get_tree().network_peer = null
+    get_multiplayer().set_multiplayer_peer(null)
 
 (Although it may make sense to send a message first to let the other peers know you're going away instead of letting the connection close or timeout, depending on your game.)
 
@@ -224,11 +224,11 @@ Let's get back to the lobby. Imagine that each player that connects to the serve
     # Connect all functions
 
     func _ready():
-        get_tree().network_peer_connected.connect(_player_connected)
-        get_tree().network_peer_disconnected.connect(_player_disconnected)
-        get_tree().connected_to_server.connect(_connected_ok)
-        get_tree().connection_failed.connect(_connected_fail)
-        get_tree().server_disconnected.connect(_server_disconnected)
+        get_multiplayer().peer_connected.connect(_player_connected)
+        get_multiplayer().peer_disconnected.connect(_player_disconnected)
+        get_multiplayer().connected_to_server.connect(_connected_ok)
+        get_multiplayer().connection_failed.connect(_connected_fail)
+        get_multiplayer().server_disconnected.connect(_server_disconnected)
 
     # Player info, associate ID to data
     var player_info = {}
@@ -308,7 +308,7 @@ every peer and RPC will work great! Here is an example:
 ::
 
     remote func pre_configure_game():
-        var selfPeerID = get_tree().get_network_unique_id()
+        var selfPeerID = get_multiplayer().get_unique_id()
 
         # Load world
         var world = load(which_level).instantiate()
@@ -328,7 +328,7 @@ every peer and RPC will work great! Here is an example:
             get_node("/root/world/players").add_child(player)
 
         # Tell server (remember, server is always ID=1) that this peer is done pre-configuring.
-        # The server can call get_tree().get_rpc_sender_id() to find out who said they were done.
+        # The server can call get_multiplayer().get_remote_sender_id() to find out who said they were done.
         rpc_id(1, "done_preconfiguring")
 
 
@@ -353,9 +353,9 @@ When the server gets the OK from all the peers, it can tell them to start, as fo
 
     var players_done = []
     remote func done_preconfiguring():
-        var who = get_tree().get_rpc_sender_id()
+        var who = get_multiplayer().get_remote_sender_id()
         # Here are some checks you can do, for example
-        assert(get_tree().is_network_server())
+        assert(get_multiplayer().is_server())
         assert(who in player_info) # Exists
         assert(not who in players_done) # Was not added yet
 
@@ -366,7 +366,7 @@ When the server gets the OK from all the peers, it can tell them to start, as fo
 
     remote func post_configure_game():
         # Only the server is allowed to tell a client to unpause
-        if 1 == get_tree().get_rpc_sender_id():
+        if 1 == get_multiplayer().get_remote_sender_id():
             get_tree().set_pause(false)
             # Game starts now!
 
