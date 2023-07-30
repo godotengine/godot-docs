@@ -26,6 +26,7 @@
 
  /* Default (light) theme colors */
  :root {
+    color-scheme: light dark;
     --body-color: #404040;
     --content-wrap-background-color: #efefef;
     --content-background-color: #fcfcfc;
