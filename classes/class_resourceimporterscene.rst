@@ -12,9 +12,25 @@ ResourceImporterScene
 
 **Inherits:** :ref:`ResourceImporter<class_ResourceImporter>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-.. container:: contribute
+Imports a glTF, FBX, Collada or Blender 3D scene.
 
-	There is currently no description for this class. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+.. rst-class:: classref-introduction-group
+
+Description
+-----------
+
+See also :ref:`ResourceImporterOBJ<class_ResourceImporterOBJ>`, which is used for OBJ models that can be imported as a standalone :ref:`Mesh<class_Mesh>` or a scene.
+
+Additional options (such as extracting individual meshes or materials to files) are available in the **Advanced Import Settings** dialog. This dialog can be accessed by double-clicking a 3D scene in the FileSystem dock or by selecting a 3D scene in the FileSystem dock, going to the Import dock and choosing **Advanced**.
+
+\ **Note:** **ResourceImporterScene** is *not* used for :ref:`PackedScene<class_PackedScene>`\ s, such as ``.tscn`` and ``.scn`` files.
+
+.. rst-class:: classref-introduction-group
+
+Tutorials
+---------
+
+- :doc:`Importing 3D scenes <../tutorials/assets_pipeline/importing_scenes>`
 
 .. rst-class:: classref-reftable-group
 
@@ -73,9 +89,7 @@ Property Descriptions
 
 :ref:`Dictionary<class_Dictionary>` **_subresources** = ``{}``
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Contains properties for the scene's subresources. This is an internal option which is not visible in the Import dock.
 
 .. rst-class:: classref-item-separator
 
@@ -87,9 +101,7 @@ Property Descriptions
 
 :ref:`float<class_float>` **animation/fps** = ``30``
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+The number of frames per second to use for baking animation curves to a series of points with linear interpolation. It's recommended to configure this value to match the value you're using as a baseline in your 3D modeling software. Higher values result in more precise animation with fast movement changes, at the cost of higher file sizes and memory usage. Thanks to interpolation, there is usually not much benefit in going above 30 FPS (as the animation will still appear smooth at higher rendering framerates).
 
 .. rst-class:: classref-item-separator
 
@@ -101,9 +113,7 @@ Property Descriptions
 
 :ref:`bool<class_bool>` **animation/import** = ``true``
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+If ``true``, import animations from the 3D scene.
 
 .. rst-class:: classref-item-separator
 
@@ -115,9 +125,7 @@ Property Descriptions
 
 :ref:`bool<class_bool>` **animation/remove_immutable_tracks** = ``true``
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+If ``true``, remove animation tracks that only contain default values. This can reduce output file size and memory usage with certain 3D scenes, depending on the contents of their animation tracks.
 
 .. rst-class:: classref-item-separator
 
@@ -129,9 +137,7 @@ Property Descriptions
 
 :ref:`bool<class_bool>` **animation/trimming** = ``false``
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+If ``true``, trim the beginning and end of animations if there are no keyframe changes. This can reduce output file size and memory usage with certain 3D scenes, depending on the contents of their animation tracks.
 
 .. rst-class:: classref-item-separator
 
@@ -143,9 +149,7 @@ Property Descriptions
 
 :ref:`String<class_String>` **import_script/path** = ``""``
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Path to an import script, which can run code after the import process has completed for custom processing. See `Using import scripts for automation <../tutorials/assets_pipeline/importing_scenes.html#doc-importing-3d-scenes-import-script>`__ for more information.
 
 .. rst-class:: classref-item-separator
 
@@ -157,9 +161,7 @@ Property Descriptions
 
 :ref:`bool<class_bool>` **meshes/create_shadow_meshes** = ``true``
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+If ``true``, enables the generation of shadow meshes on import. This optimizes shadow rendering without reducing quality by welding vertices together when possible. This in turn reduces the memory bandwidth required to render shadows. Shadow mesh generation currently doesn't support using a lower detail level than the source mesh (but shadow rendering will make use of LODs when relevant).
 
 .. rst-class:: classref-item-separator
 
@@ -171,9 +173,9 @@ Property Descriptions
 
 :ref:`bool<class_bool>` **meshes/ensure_tangents** = ``true``
 
-.. container:: contribute
+If ``true``, generate vertex tangents using `Mikktspace <http://www.mikktspace.com/>`__ if the input meshes don't have tangent data. When possible, it's recommended to let the 3D modeling software generate tangents on export instead on relying on this option. Tangents are required for correct display of normal and height maps, along with any material/shader features that require tangents.
 
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+If you don't need material features that require tangents, disabling this can reduce output file size and speed up importing if the source 3D file doesn't contain tangents.
 
 .. rst-class:: classref-item-separator
 
@@ -185,9 +187,7 @@ Property Descriptions
 
 :ref:`bool<class_bool>` **meshes/generate_lods** = ``true``
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+If ``true``, generates lower detail variants of the mesh which will be displayed in the distance to improve rendering performance. Not all meshes benefit from LOD, especially if they are never rendered from far away. Disabling this can reduce output file size and speed up importing. See `Mesh level of detail (LOD) <../tutorials/3d/mesh_lod.html#doc-mesh-lod>`__ for more information.
 
 .. rst-class:: classref-item-separator
 
@@ -199,9 +199,7 @@ Property Descriptions
 
 :ref:`int<class_int>` **meshes/light_baking** = ``1``
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Configures the meshes' :ref:`GeometryInstance3D.gi_mode<class_GeometryInstance3D_property_gi_mode>` in the 3D scene. If set to **Static Lightmaps**, sets the meshes' GI mode to Static and generates UV2 on import for :ref:`LightmapGI<class_LightmapGI>` baking.
 
 .. rst-class:: classref-item-separator
 
@@ -213,9 +211,9 @@ Property Descriptions
 
 :ref:`float<class_float>` **meshes/lightmap_texel_size** = ``0.2``
 
-.. container:: contribute
+Controls the size of each texel on the baked lightmap. A smaller value results in more precise lightmaps, at the cost of larger lightmap sizes and longer bake times.
 
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+\ **Note:** Only effective if :ref:`meshes/light_baking<class_ResourceImporterScene_property_meshes/light_baking>` is set to **Static Lightmaps**.
 
 .. rst-class:: classref-item-separator
 
@@ -227,9 +225,7 @@ Property Descriptions
 
 :ref:`bool<class_bool>` **nodes/apply_root_scale** = ``true``
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+If ``true``, :ref:`nodes/root_scale<class_ResourceImporterScene_property_nodes/root_scale>` will be applied on the meshes and animations directly, while keeping the root node's scale to the default ``(1, 1, 1)``. This means that if you add a child node later on within the imported scene, it won't be scaled. If disabled, :ref:`nodes/root_scale<class_ResourceImporterScene_property_nodes/root_scale>` will multiply the scale of the root node instead.
 
 .. rst-class:: classref-item-separator
 
@@ -241,9 +237,7 @@ Property Descriptions
 
 :ref:`String<class_String>` **nodes/root_name** = ``"Scene Root"``
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+The name of the root node in the imported scene. This is generally not noticeable when instancing the scene in the editor (or drag-and-dropping from the FileSystem dock), as the root node is renamed to match the filename in this case.
 
 .. rst-class:: classref-item-separator
 
@@ -255,9 +249,7 @@ Property Descriptions
 
 :ref:`float<class_float>` **nodes/root_scale** = ``1.0``
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+The scale of meshes and animations (if :ref:`nodes/apply_root_scale<class_ResourceImporterScene_property_nodes/apply_root_scale>` is ``true``), or the scale of the root node in the imported scene (if :ref:`nodes/apply_root_scale<class_ResourceImporterScene_property_nodes/apply_root_scale>` is ``false``).
 
 .. rst-class:: classref-item-separator
 
@@ -269,9 +261,7 @@ Property Descriptions
 
 :ref:`String<class_String>` **nodes/root_type** = ``"Node3D"``
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+The node type to use as a root node. Using node types that inherit from :ref:`Node3D<class_Node3D>` is recommended. Otherwise, you'll lose the ability to position the node directly in the 3D editor.
 
 .. rst-class:: classref-item-separator
 
@@ -283,9 +273,15 @@ Property Descriptions
 
 :ref:`bool<class_bool>` **skins/use_named_skins** = ``true``
 
-.. container:: contribute
+If checked, use named :ref:`Skin<class_Skin>`\ s for animation. The :ref:`MeshInstance3D<class_MeshInstance3D>` node contains 3 properties of relevance here: a skeleton :ref:`NodePath<class_NodePath>` pointing to the :ref:`Skeleton3D<class_Skeleton3D>` node (usually ``..``), a mesh, and a skin:
 
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+- The :ref:`Skeleton3D<class_Skeleton3D>` node contains a list of bones with names, their pose and rest, a name and a parent bone.
+
+- The mesh is all of the raw vertex data needed to display a mesh. In terms of the mesh, it knows how vertices are weight-painted and uses some internal numbering often imported from 3D modeling software.
+
+- The skin contains the information necessary to bind this mesh onto this Skeleton3D. For every one of the internal bone IDs chosen by the 3D modeling software, it contains two things. Firstly, a matrix known as the Bind Pose Matrix, Inverse Bind Matrix, or IBM for short. Secondly, the :ref:`Skin<class_Skin>` contains each bone's name (if :ref:`skins/use_named_skins<class_ResourceImporterScene_property_skins/use_named_skins>` is ``true``), or the bone's index within the :ref:`Skeleton3D<class_Skeleton3D>` list (if :ref:`skins/use_named_skins<class_ResourceImporterScene_property_skins/use_named_skins>` is ``false``).
+
+Together, this information is enough to tell Godot how to use the bone poses in the :ref:`Skeleton3D<class_Skeleton3D>` node to render the mesh from each :ref:`MeshInstance3D<class_MeshInstance3D>`. Note that each :ref:`MeshInstance3D<class_MeshInstance3D>` may share binds, as is common in models exported from Blender, or each :ref:`MeshInstance3D<class_MeshInstance3D>` may use a separate :ref:`Skin<class_Skin>` object, as is common in models exported from other tools such as Maya.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

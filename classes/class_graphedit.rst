@@ -58,11 +58,13 @@ Properties
    +----------------------------------------------------+--------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
    | :ref:`Vector2<class_Vector2>`                      | :ref:`scroll_offset<class_GraphEdit_property_scroll_offset>`                               | ``Vector2(0, 0)``                                                         |
    +----------------------------------------------------+--------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                            | :ref:`show_grid<class_GraphEdit_property_show_grid>`                                       | ``true``                                                                  |
+   +----------------------------------------------------+--------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                            | :ref:`show_zoom_label<class_GraphEdit_property_show_zoom_label>`                           | ``false``                                                                 |
    +----------------------------------------------------+--------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                              | :ref:`snap_distance<class_GraphEdit_property_snap_distance>`                               | ``20``                                                                    |
+   | :ref:`int<class_int>`                              | :ref:`snapping_distance<class_GraphEdit_property_snapping_distance>`                       | ``20``                                                                    |
    +----------------------------------------------------+--------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                            | :ref:`use_snap<class_GraphEdit_property_use_snap>`                                         | ``true``                                                                  |
+   | :ref:`bool<class_bool>`                            | :ref:`snapping_enabled<class_GraphEdit_property_snapping_enabled>`                         | ``true``                                                                  |
    +----------------------------------------------------+--------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
    | :ref:`float<class_float>`                          | :ref:`zoom<class_GraphEdit_property_zoom>`                                                 | ``1.0``                                                                   |
    +----------------------------------------------------+--------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
@@ -110,7 +112,7 @@ Methods
    +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Dictionary[]<class_Dictionary>`               | :ref:`get_connection_list<class_GraphEdit_method_get_connection_list>` **(** **)** |const|                                                                                                                                                                                              |
    +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`HBoxContainer<class_HBoxContainer>`           | :ref:`get_zoom_hbox<class_GraphEdit_method_get_zoom_hbox>` **(** **)**                                                                                                                                                                                                                  |
+   | :ref:`HBoxContainer<class_HBoxContainer>`           | :ref:`get_menu_hbox<class_GraphEdit_method_get_menu_hbox>` **(** **)**                                                                                                                                                                                                                  |
    +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                             | :ref:`is_node_connected<class_GraphEdit_method_is_node_connected>` **(** :ref:`StringName<class_StringName>` from_node, :ref:`int<class_int>` from_port, :ref:`StringName<class_StringName>` to_node, :ref:`int<class_int>` to_port **)**                                               |
    +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -150,19 +152,21 @@ Theme Properties
    +-----------------------------------+--------------------------------------------------------------------------------------------+--------------------------+
    | :ref:`int<class_int>`             | :ref:`port_hotzone_outer_extent<class_GraphEdit_theme_constant_port_hotzone_outer_extent>` | ``26``                   |
    +-----------------------------------+--------------------------------------------------------------------------------------------+--------------------------+
+   | :ref:`Texture2D<class_Texture2D>` | :ref:`grid_toggle<class_GraphEdit_theme_icon_grid_toggle>`                                 |                          |
+   +-----------------------------------+--------------------------------------------------------------------------------------------+--------------------------+
    | :ref:`Texture2D<class_Texture2D>` | :ref:`layout<class_GraphEdit_theme_icon_layout>`                                           |                          |
    +-----------------------------------+--------------------------------------------------------------------------------------------+--------------------------+
-   | :ref:`Texture2D<class_Texture2D>` | :ref:`minimap<class_GraphEdit_theme_icon_minimap>`                                         |                          |
+   | :ref:`Texture2D<class_Texture2D>` | :ref:`minimap_toggle<class_GraphEdit_theme_icon_minimap_toggle>`                           |                          |
    +-----------------------------------+--------------------------------------------------------------------------------------------+--------------------------+
-   | :ref:`Texture2D<class_Texture2D>` | :ref:`minus<class_GraphEdit_theme_icon_minus>`                                             |                          |
+   | :ref:`Texture2D<class_Texture2D>` | :ref:`snapping_toggle<class_GraphEdit_theme_icon_snapping_toggle>`                         |                          |
    +-----------------------------------+--------------------------------------------------------------------------------------------+--------------------------+
-   | :ref:`Texture2D<class_Texture2D>` | :ref:`more<class_GraphEdit_theme_icon_more>`                                               |                          |
+   | :ref:`Texture2D<class_Texture2D>` | :ref:`zoom_in<class_GraphEdit_theme_icon_zoom_in>`                                         |                          |
    +-----------------------------------+--------------------------------------------------------------------------------------------+--------------------------+
-   | :ref:`Texture2D<class_Texture2D>` | :ref:`reset<class_GraphEdit_theme_icon_reset>`                                             |                          |
+   | :ref:`Texture2D<class_Texture2D>` | :ref:`zoom_out<class_GraphEdit_theme_icon_zoom_out>`                                       |                          |
    +-----------------------------------+--------------------------------------------------------------------------------------------+--------------------------+
-   | :ref:`Texture2D<class_Texture2D>` | :ref:`snap<class_GraphEdit_theme_icon_snap>`                                               |                          |
+   | :ref:`Texture2D<class_Texture2D>` | :ref:`zoom_reset<class_GraphEdit_theme_icon_zoom_reset>`                                   |                          |
    +-----------------------------------+--------------------------------------------------------------------------------------------+--------------------------+
-   | :ref:`StyleBox<class_StyleBox>`   | :ref:`bg<class_GraphEdit_theme_style_bg>`                                                  |                          |
+   | :ref:`StyleBox<class_StyleBox>`   | :ref:`panel<class_GraphEdit_theme_style_panel>`                                            |                          |
    +-----------------------------------+--------------------------------------------------------------------------------------------+--------------------------+
 
 .. rst-class:: classref-section-separator
@@ -565,10 +569,27 @@ If ``true``, enables disconnection of existing connections in the GraphEdit by d
 
 .. rst-class:: classref-property-setget
 
-- void **set_scroll_ofs** **(** :ref:`Vector2<class_Vector2>` value **)**
-- :ref:`Vector2<class_Vector2>` **get_scroll_ofs** **(** **)**
+- void **set_scroll_offset** **(** :ref:`Vector2<class_Vector2>` value **)**
+- :ref:`Vector2<class_Vector2>` **get_scroll_offset** **(** **)**
 
 The scroll offset.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_GraphEdit_property_show_grid:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **show_grid** = ``true``
+
+.. rst-class:: classref-property-setget
+
+- void **set_show_grid** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_showing_grid** **(** **)**
+
+If ``true``, the grid is visible.
 
 .. rst-class:: classref-item-separator
 
@@ -591,33 +612,33 @@ If ``true``, makes a label with the current zoom level visible. The zoom value i
 
 ----
 
-.. _class_GraphEdit_property_snap_distance:
+.. _class_GraphEdit_property_snapping_distance:
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **snap_distance** = ``20``
+:ref:`int<class_int>` **snapping_distance** = ``20``
 
 .. rst-class:: classref-property-setget
 
-- void **set_snap** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_snap** **(** **)**
+- void **set_snapping_distance** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_snapping_distance** **(** **)**
 
-The snapping distance in pixels.
+The snapping distance in pixels, also determines the grid line distance.
 
 .. rst-class:: classref-item-separator
 
 ----
 
-.. _class_GraphEdit_property_use_snap:
+.. _class_GraphEdit_property_snapping_enabled:
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **use_snap** = ``true``
+:ref:`bool<class_bool>` **snapping_enabled** = ``true``
 
 .. rst-class:: classref-property-setget
 
-- void **set_use_snap** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_using_snap** **(** **)**
+- void **set_snapping_enabled** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_snapping_enabled** **(** **)**
 
 If ``true``, enables snapping.
 
@@ -917,11 +938,11 @@ Returns an Array containing the list of connections. A connection consists in a 
 
 ----
 
-.. _class_GraphEdit_method_get_zoom_hbox:
+.. _class_GraphEdit_method_get_menu_hbox:
 
 .. rst-class:: classref-method
 
-:ref:`HBoxContainer<class_HBoxContainer>` **get_zoom_hbox** **(** **)**
+:ref:`HBoxContainer<class_HBoxContainer>` **get_menu_hbox** **(** **)**
 
 Gets the :ref:`HBoxContainer<class_HBoxContainer>` that contains the zooming and grid snap controls in the top left of the graph. You can use this method to reposition the toolbar or to add your own custom controls to it.
 
@@ -1110,51 +1131,59 @@ The horizontal range within which a port can be grabbed (outer side).
 
 ----
 
+.. _class_GraphEdit_theme_icon_grid_toggle:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`Texture2D<class_Texture2D>` **grid_toggle**
+
+The icon for the grid toggle button.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_GraphEdit_theme_icon_layout:
 
 .. rst-class:: classref-themeproperty
 
 :ref:`Texture2D<class_Texture2D>` **layout**
 
-.. container:: contribute
-
-	There is currently no description for this theme property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+The icon for the layout button for auto-arranging the graph.
 
 .. rst-class:: classref-item-separator
 
 ----
 
-.. _class_GraphEdit_theme_icon_minimap:
+.. _class_GraphEdit_theme_icon_minimap_toggle:
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Texture2D<class_Texture2D>` **minimap**
+:ref:`Texture2D<class_Texture2D>` **minimap_toggle**
 
-.. container:: contribute
-
-	There is currently no description for this theme property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+The icon for the minimap toggle button.
 
 .. rst-class:: classref-item-separator
 
 ----
 
-.. _class_GraphEdit_theme_icon_minus:
+.. _class_GraphEdit_theme_icon_snapping_toggle:
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Texture2D<class_Texture2D>` **minus**
+:ref:`Texture2D<class_Texture2D>` **snapping_toggle**
 
-The icon for the zoom out button.
+The icon for the snapping toggle button.
 
 .. rst-class:: classref-item-separator
 
 ----
 
-.. _class_GraphEdit_theme_icon_more:
+.. _class_GraphEdit_theme_icon_zoom_in:
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Texture2D<class_Texture2D>` **more**
+:ref:`Texture2D<class_Texture2D>` **zoom_in**
 
 The icon for the zoom in button.
 
@@ -1162,11 +1191,23 @@ The icon for the zoom in button.
 
 ----
 
-.. _class_GraphEdit_theme_icon_reset:
+.. _class_GraphEdit_theme_icon_zoom_out:
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Texture2D<class_Texture2D>` **reset**
+:ref:`Texture2D<class_Texture2D>` **zoom_out**
+
+The icon for the zoom out button.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_GraphEdit_theme_icon_zoom_reset:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`Texture2D<class_Texture2D>` **zoom_reset**
 
 The icon for the zoom reset button.
 
@@ -1174,23 +1215,11 @@ The icon for the zoom reset button.
 
 ----
 
-.. _class_GraphEdit_theme_icon_snap:
+.. _class_GraphEdit_theme_style_panel:
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Texture2D<class_Texture2D>` **snap**
-
-The icon for the snap toggle button.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_GraphEdit_theme_style_bg:
-
-.. rst-class:: classref-themeproperty
-
-:ref:`StyleBox<class_StyleBox>` **bg**
+:ref:`StyleBox<class_StyleBox>` **panel**
 
 The background drawn under the grid.
 

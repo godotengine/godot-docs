@@ -654,6 +654,8 @@ void **pause** **(** **)**
 
 Pauses the tweening. The animation can be resumed by using :ref:`play<class_Tween_method_play>`.
 
+\ **Note:** If a Tween is paused and not bound to any node, it will exist indefinitely until manually started or invalidated. If you lose a reference to such Tween, you can retrieve it using :ref:`SceneTree.get_processed_tweens<class_SceneTree_method_get_processed_tweens>`.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -773,6 +775,8 @@ If not specified, the default value is :ref:`TRANS_LINEAR<class_Tween_constant_T
 void **stop** **(** **)**
 
 Stops the tweening and resets the **Tween** to its initial state. This will not remove any appended :ref:`Tweener<class_Tweener>`\ s.
+
+\ **Note:** If a Tween is stopped and not bound to any node, it will exist indefinitely until manually started or invalidated. If you lose a reference to such Tween, you can retrieve it using :ref:`SceneTree.get_processed_tweens<class_SceneTree_method_get_processed_tweens>`.
 
 .. rst-class:: classref-item-separator
 

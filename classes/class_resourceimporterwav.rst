@@ -12,9 +12,21 @@ ResourceImporterWAV
 
 **Inherits:** :ref:`ResourceImporter<class_ResourceImporter>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-.. container:: contribute
+Imports a WAV audio file for playback.
 
-	There is currently no description for this class. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+.. rst-class:: classref-introduction-group
+
+Description
+-----------
+
+WAV is an uncompressed format, which can provide higher quality compared to Ogg Vorbis and MP3. It also has the lowest CPU cost to decode. This means high numbers of WAV sounds can be played at the same time, even on low-end deviceS.
+
+.. rst-class:: classref-introduction-group
+
+Tutorials
+---------
+
+- :doc:`Importing audio samples <../tutorials/assets_pipeline/importing_audio_samples>`
 
 .. rst-class:: classref-reftable-group
 
@@ -61,9 +73,11 @@ Property Descriptions
 
 :ref:`int<class_int>` **compress/mode** = ``0``
 
-.. container:: contribute
+The compression mode to use on import.
 
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+\ **Disabled:** Imports audio data without any compression. This results in the highest possible quality.
+
+\ **RAM (Ima-ADPCM):** Performs fast lossy compression on import. Low CPU cost, but quality is noticeably decreased compared to Ogg Vorbis or even MP3.
 
 .. rst-class:: classref-item-separator
 
@@ -75,9 +89,7 @@ Property Descriptions
 
 :ref:`int<class_int>` **edit/loop_begin** = ``0``
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+The begin loop point to use when :ref:`edit/loop_mode<class_ResourceImporterWAV_property_edit/loop_mode>` is **Forward**, **Ping-Pong** or **Backward**. This is set in seconds after the beginning of the audio file.
 
 .. rst-class:: classref-item-separator
 
@@ -89,9 +101,7 @@ Property Descriptions
 
 :ref:`int<class_int>` **edit/loop_end** = ``-1``
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+The end loop point to use when :ref:`edit/loop_mode<class_ResourceImporterWAV_property_edit/loop_mode>` is **Forward**, **Ping-Pong** or **Backward**. This is set in seconds after the beginning of the audio file. A value of ``-1`` uses the end of the audio file as the end loop point.
 
 .. rst-class:: classref-item-separator
 
@@ -103,9 +113,17 @@ Property Descriptions
 
 :ref:`int<class_int>` **edit/loop_mode** = ``0``
 
-.. container:: contribute
+Controls how audio should loop. This is automatically read from the WAV metadata on import.
 
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+\ **Disabled:** Don't loop audio, even if metadata indicates the file should be played back looping.
+
+\ **Forward:** Standard audio looping.
+
+\ **Ping-Pong:** Play audio forward until it's done playing, then play it backward and repeat. This is similar to mirrored texture repeat, but for audio.
+
+\ **Backward:** Play audio in reverse and loop back to the end when done playing.
+
+\ **Note:** In :ref:`AudioStreamPlayer<class_AudioStreamPlayer>`, the :ref:`AudioStreamPlayer.finished<class_AudioStreamPlayer_signal_finished>` signal won't be emitted for looping audio when it reaches the end of the audio file, as the audio will keep playing indefinitely.
 
 .. rst-class:: classref-item-separator
 
@@ -117,9 +135,7 @@ Property Descriptions
 
 :ref:`bool<class_bool>` **edit/normalize** = ``false``
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+If ``true``, normalize the audio volume so that its peak volume is equal to 0 dB. When enabled, normalization will make audio sound louder depending on its original peak volume.
 
 .. rst-class:: classref-item-separator
 
@@ -131,9 +147,7 @@ Property Descriptions
 
 :ref:`bool<class_bool>` **edit/trim** = ``false``
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+If ``true``, automatically trim the beginning and end of the audio if it's lower than -50 dB after normalization (see :ref:`edit/normalize<class_ResourceImporterWAV_property_edit/normalize>`). This prevents having files with silence at the beginning or end, which increases their size unnecessarily and adds latency to the moment they are played back. A fade-in/fade-out period of 500 samples is also used during trimming to avoid audible pops.
 
 .. rst-class:: classref-item-separator
 
@@ -145,9 +159,9 @@ Property Descriptions
 
 :ref:`bool<class_bool>` **force/8_bit** = ``false``
 
-.. container:: contribute
+If ``true``, forces the imported audio to use 8-bit quantization if the source file is 16-bit or higher.
 
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Enabling this is generally not recommended, as 8-bit quantization decreases audio quality significantly. If you need smaller file sizes, consider using Ogg Vorbis or MP3 audio instead.
 
 .. rst-class:: classref-item-separator
 
@@ -159,9 +173,9 @@ Property Descriptions
 
 :ref:`bool<class_bool>` **force/max_rate** = ``false``
 
-.. container:: contribute
+If set to a value greater than ``0``, forces the audio's sample rate to be reduced to a value lower than or equal to the value specified in :ref:`force/max_rate_hz<class_ResourceImporterWAV_property_force/max_rate_hz>`.
 
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+This can decrease file size noticeably on certain sounds, without impacting quality depending on the actual sound's contents. See `Best practices <../tutorials/assets_pipeline/importing_audio_samples.html#doc-importing-audio-samples-best-practices>`__ for more information.
 
 .. rst-class:: classref-item-separator
 
@@ -173,9 +187,7 @@ Property Descriptions
 
 :ref:`float<class_float>` **force/max_rate_hz** = ``44100``
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+The frequency to limit the imported audio sample to (in Hz). Only effective if :ref:`force/max_rate<class_ResourceImporterWAV_property_force/max_rate>` is ``true``.
 
 .. rst-class:: classref-item-separator
 
@@ -187,9 +199,7 @@ Property Descriptions
 
 :ref:`bool<class_bool>` **force/mono** = ``false``
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+If ``true``, forces the imported audio to be mono if the source file is stereo. This decreases the file size by 50% by merging the two channels into one.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

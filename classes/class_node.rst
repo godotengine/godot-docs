@@ -2486,9 +2486,9 @@ Sets the editable children state of ``node`` relative to this node. This method 
 
 void **set_multiplayer_authority** **(** :ref:`int<class_int>` id, :ref:`bool<class_bool>` recursive=true **)**
 
-Sets the node's multiplayer authority to the peer with the given peer ID. The multiplayer authority is the peer that has authority over the node on the network. Useful in conjunction with :ref:`rpc_config<class_Node_method_rpc_config>` and the :ref:`MultiplayerAPI<class_MultiplayerAPI>`. Inherited from the parent node by default, which ultimately defaults to peer ID 1 (the server). If ``recursive``, the given peer is recursively set as the authority for all children of this node.
+Sets the node's multiplayer authority to the peer with the given peer ID. The multiplayer authority is the peer that has authority over the node on the network. Useful in conjunction with :ref:`rpc_config<class_Node_method_rpc_config>` and the :ref:`MultiplayerAPI<class_MultiplayerAPI>`. Defaults to peer ID 1 (the server). If ``recursive``, the given peer is recursively set as the authority for all children of this node.
 
-\ **Warning:** This does **not** automatically replicate the new authority to other peers. It is developer's responsibility to do so. You can propagate the information about the new authority using :ref:`MultiplayerSpawner.spawn_function<class_MultiplayerSpawner_property_spawn_function>`, an RPC, or using a :ref:`MultiplayerSynchronizer<class_MultiplayerSynchronizer>`.
+\ **Warning:** This does **not** automatically replicate the new authority to other peers. It is developer's responsibility to do so. You can propagate the information about the new authority using :ref:`MultiplayerSpawner.spawn_function<class_MultiplayerSpawner_property_spawn_function>`, an RPC, or using a :ref:`MultiplayerSynchronizer<class_MultiplayerSynchronizer>`. Also, the parent's authority does **not** propagate to newly added children.
 
 .. rst-class:: classref-item-separator
 

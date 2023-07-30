@@ -2474,7 +2474,7 @@ Specifies the channel of the :ref:`metallic_texture<class_BaseMaterial3D_propert
 - void **set_msdf_outline_size** **(** :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_msdf_outline_size** **(** **)**
 
-The width of the shape outine.
+The width of the shape outline.
 
 .. rst-class:: classref-item-separator
 

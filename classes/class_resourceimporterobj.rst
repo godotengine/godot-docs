@@ -12,9 +12,23 @@ ResourceImporterOBJ
 
 **Inherits:** :ref:`ResourceImporter<class_ResourceImporter>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-.. container:: contribute
+Imports an OBJ 3D model as a standalone :ref:`Mesh<class_Mesh>` or scene.
 
-	There is currently no description for this class. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+.. rst-class:: classref-introduction-group
+
+Description
+-----------
+
+Unlike :ref:`ResourceImporterScene<class_ResourceImporterScene>`, **ResourceImporterOBJ** will import a single :ref:`Mesh<class_Mesh>` resource by default instead of importing a :ref:`PackedScene<class_PackedScene>`. This makes it easier to use the :ref:`Mesh<class_Mesh>` resource in nodes that expect direct :ref:`Mesh<class_Mesh>` resources, such as :ref:`GridMap<class_GridMap>`, :ref:`GPUParticles3D<class_GPUParticles3D>` or :ref:`CPUParticles3D<class_CPUParticles3D>`. Note that it is still possible to save mesh resources from 3D scenes using the **Advanced Import Settings** dialog, regardless of the source format.
+
+See also :ref:`ResourceImporterScene<class_ResourceImporterScene>`, which is used for more advanced 3D formats such as glTF.
+
+.. rst-class:: classref-introduction-group
+
+Tutorials
+---------
+
+- :doc:`Importing 3D scenes <../tutorials/assets_pipeline/importing_scenes>`
 
 .. rst-class:: classref-reftable-group
 
@@ -49,9 +63,9 @@ Property Descriptions
 
 :ref:`bool<class_bool>` **generate_tangents** = ``true``
 
-.. container:: contribute
+If ``true``, generate vertex tangents using `Mikktspace <http://www.mikktspace.com/>`__ if the source mesh doesn't have tangent data. When possible, it's recommended to let the 3D modeling software generate tangents on export instead on relying on this option. Tangents are required for correct display of normal and height maps, along with any material/shader features that require tangents.
 
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+If you don't need material features that require tangents, disabling this can reduce output file size and speed up importing if the source 3D file doesn't contain tangents.
 
 .. rst-class:: classref-item-separator
 
@@ -63,9 +77,7 @@ Property Descriptions
 
 :ref:`Vector3<class_Vector3>` **offset_mesh** = ``Vector3(0, 0, 0)``
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Offsets the mesh's data by the specified value. This can be used to work around misaligned meshes without having to modify the source file.
 
 .. rst-class:: classref-item-separator
 
@@ -77,9 +89,7 @@ Property Descriptions
 
 :ref:`bool<class_bool>` **optimize_mesh** = ``true``
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Unused parameter. This currently has no effect.
 
 .. rst-class:: classref-item-separator
 
@@ -91,9 +101,7 @@ Property Descriptions
 
 :ref:`Vector3<class_Vector3>` **scale_mesh** = ``Vector3(1, 1, 1)``
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Scales the mesh's data by the specified value. This can be used to work around misscaled meshes without having to modify the source file.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

@@ -58,6 +58,8 @@ Methods
    +-----------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                               | :ref:`get_current_directory<class_EditorInterface_method_get_current_directory>` **(** **)** |const|                                                                                                                                                   |
    +-----------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                               | :ref:`get_current_feature_profile<class_EditorInterface_method_get_current_feature_profile>` **(** **)** |const|                                                                                                                                       |
+   +-----------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                               | :ref:`get_current_path<class_EditorInterface_method_get_current_path>` **(** **)** |const|                                                                                                                                                             |
    +-----------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Node<class_Node>`                                   | :ref:`get_edited_scene_root<class_EditorInterface_method_get_edited_scene_root>` **(** **)** |const|                                                                                                                                                   |
@@ -118,11 +120,15 @@ Methods
    +-----------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                      | :ref:`restart_editor<class_EditorInterface_method_restart_editor>` **(** :ref:`bool<class_bool>` save=true **)**                                                                                                                                       |
    +-----------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                                      | :ref:`save_all_scenes<class_EditorInterface_method_save_all_scenes>` **(** **)**                                                                                                                                                                       |
+   +-----------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Error<enum_@GlobalScope_Error>`                     | :ref:`save_scene<class_EditorInterface_method_save_scene>` **(** **)**                                                                                                                                                                                 |
    +-----------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                      | :ref:`save_scene_as<class_EditorInterface_method_save_scene_as>` **(** :ref:`String<class_String>` path, :ref:`bool<class_bool>` with_preview=true **)**                                                                                               |
    +-----------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                      | :ref:`select_file<class_EditorInterface_method_select_file>` **(** :ref:`String<class_String>` file **)**                                                                                                                                              |
+   +-----------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                                      | :ref:`set_current_feature_profile<class_EditorInterface_method_set_current_feature_profile>` **(** :ref:`String<class_String>` profile_name **)**                                                                                                      |
    +-----------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                      | :ref:`set_main_screen_editor<class_EditorInterface_method_set_main_screen_editor>` **(** :ref:`String<class_String>` name **)**                                                                                                                        |
    +-----------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -250,6 +256,22 @@ Returns the editor's :ref:`EditorCommandPalette<class_EditorCommandPalette>` ins
 :ref:`String<class_String>` **get_current_directory** **(** **)** |const|
 
 Returns the current directory being viewed in the :ref:`FileSystemDock<class_FileSystemDock>`. If a file is selected, its base directory will be returned using :ref:`String.get_base_dir<class_String_method_get_base_dir>` instead.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorInterface_method_get_current_feature_profile:
+
+.. rst-class:: classref-method
+
+:ref:`String<class_String>` **get_current_feature_profile** **(** **)** |const|
+
+Returns the name of the currently activated feature profile. If the default profile is currently active, an empty string is returned instead.
+
+In order to get a reference to the :ref:`EditorFeatureProfile<class_EditorFeatureProfile>`, you must load the feature profile using :ref:`EditorFeatureProfile.load_from_file<class_EditorFeatureProfile_method_load_from_file>`.
+
+\ **Note:** Feature profiles created via the user interface are loaded from the ``feature_profiles`` directory, as a file with the ``.profile`` extension. The editor configuration folder can be found by using :ref:`EditorPaths.get_config_dir<class_EditorPaths_method_get_config_dir>`.
 
 .. rst-class:: classref-item-separator
 
@@ -633,13 +655,25 @@ Restarts the editor. This closes the editor and then opens the same project. If 
 
 ----
 
+.. _class_EditorInterface_method_save_all_scenes:
+
+.. rst-class:: classref-method
+
+void **save_all_scenes** **(** **)**
+
+Saves all opened scenes in the editor.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_EditorInterface_method_save_scene:
 
 .. rst-class:: classref-method
 
 :ref:`Error<enum_@GlobalScope_Error>` **save_scene** **(** **)**
 
-Saves the scene. Returns either :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` or :ref:`@GlobalScope.ERR_CANT_CREATE<class_@GlobalScope_constant_ERR_CANT_CREATE>`.
+Saves the currently active scene. Returns either :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` or :ref:`@GlobalScope.ERR_CANT_CREATE<class_@GlobalScope_constant_ERR_CANT_CREATE>`.
 
 .. rst-class:: classref-item-separator
 
@@ -651,7 +685,7 @@ Saves the scene. Returns either :ref:`@GlobalScope.OK<class_@GlobalScope_constan
 
 void **save_scene_as** **(** :ref:`String<class_String>` path, :ref:`bool<class_bool>` with_preview=true **)**
 
-Saves the scene as a file at ``path``.
+Saves the currently active scene as a file at ``path``.
 
 .. rst-class:: classref-item-separator
 
@@ -664,6 +698,22 @@ Saves the scene as a file at ``path``.
 void **select_file** **(** :ref:`String<class_String>` file **)**
 
 Selects the file, with the path provided by ``file``, in the FileSystem dock.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorInterface_method_set_current_feature_profile:
+
+.. rst-class:: classref-method
+
+void **set_current_feature_profile** **(** :ref:`String<class_String>` profile_name **)**
+
+Selects and activates the specified feature profile with the given ``profile_name``. Set ``profile_name`` to an empty string to reset to the default feature profile.
+
+A feature profile can be created programmatically using the :ref:`EditorFeatureProfile<class_EditorFeatureProfile>` class.
+
+\ **Note:** The feature profile that gets activated must be located in the ``feature_profiles`` directory, as a file with the ``.profile`` extension. If a profile could not be found, an error occurs. The editor configuration folder can be found by using :ref:`EditorPaths.get_config_dir<class_EditorPaths_method_get_config_dir>`.
 
 .. rst-class:: classref-item-separator
 

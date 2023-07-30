@@ -38,7 +38,7 @@ To use **AStarGrid2D**, you only need to set the :ref:`region<class_AStarGrid2D_
  .. code-tab:: csharp
 
     AStarGrid2D astarGrid = new AStarGrid2D();
-    astarGrid.Size = new Vector2I(32, 32);
+    astarGrid.Region = new Rect2I(0, 0, 32, 32);
     astarGrid.CellSize = new Vector2I(16, 16);
     astarGrid.Update();
     GD.Print(astarGrid.GetIdPath(Vector2I.Zero, new Vector2I(3, 4))); // prints (0, 0), (1, 1), (2, 2), (3, 3), (3, 4)

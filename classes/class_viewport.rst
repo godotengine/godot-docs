@@ -2020,9 +2020,9 @@ Calling this method will propagate calls to child nodes for following methods in
 
 - :ref:`Node._shortcut_input<class_Node_method__shortcut_input>`\ 
 
-- :ref:`Node._unhandled_input<class_Node_method__unhandled_input>`\ 
-
 - :ref:`Node._unhandled_key_input<class_Node_method__unhandled_key_input>`\ 
+
+- :ref:`Node._unhandled_input<class_Node_method__unhandled_input>`\ 
 
 If an earlier method marks the input as handled via :ref:`set_input_as_handled<class_Viewport_method_set_input_as_handled>`, any later method in this list will not be called.
 
@@ -2060,9 +2060,9 @@ Calling this method will propagate calls to child nodes for following methods in
 
 - :ref:`Node._shortcut_input<class_Node_method__shortcut_input>`\ 
 
-- :ref:`Node._unhandled_input<class_Node_method__unhandled_input>`\ 
-
 - :ref:`Node._unhandled_key_input<class_Node_method__unhandled_key_input>`\ 
+
+- :ref:`Node._unhandled_input<class_Node_method__unhandled_input>`\ 
 
 If an earlier method marks the input as handled via :ref:`set_input_as_handled<class_Viewport_method_set_input_as_handled>`, any later method in this list will not be called.
 

@@ -21,7 +21,7 @@ Description
 
 A node that provides a thickened polygon shape (a prism) to a :ref:`CollisionObject2D<class_CollisionObject2D>` parent and allows to edit it. The polygon can be concave or convex. This can give a detection shape to an :ref:`Area2D<class_Area2D>` or turn :ref:`PhysicsBody2D<class_PhysicsBody2D>` into a solid object.
 
-\ **Warning:** A non-uniformly scaled :ref:`CollisionShape3D<class_CollisionShape3D>` will likely not behave as expected. Make sure to keep its scale the same on all axes and adjust its shape resource instead.
+\ **Warning:** A non-uniformly scaled :ref:`CollisionShape2D<class_CollisionShape2D>` will likely not behave as expected. Make sure to keep its scale the same on all axes and adjust its shape resource instead.
 
 .. rst-class:: classref-reftable-group
 

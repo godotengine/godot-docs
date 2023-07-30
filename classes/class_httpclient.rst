@@ -890,6 +890,8 @@ Returns the response's body length.
 
 \ **Note:** Some Web servers may not send a body length. In this case, the value returned will be ``-1``. If using chunked transfer encoding, the body length will also be ``-1``.
 
+\ **Note:** This function always returns ``-1`` on the Web platform due to browsers limitations.
+
 .. rst-class:: classref-item-separator
 
 ----
