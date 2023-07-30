@@ -1,5 +1,3 @@
-:article_outdated: True
-
 .. _doc_high_level_multiplayer:
 
 High-level multiplayer
@@ -103,47 +101,42 @@ for full IPv6 support.
 Initializing the network
 ------------------------
 
-The object that controls networking in Godot is the same one that controls everything tree-related: :ref:`SceneTree <class_SceneTree>`.
+High level networking in Godot is managed by the :ref:`SceneTree <class_SceneTree>`.
 
-To initialize high-level networking, the SceneTree must be provided a NetworkedMultiplayerPeer object.
+Each node has a ``multiplayer`` property, which is a reference to the ``MultiplayerAPI`` instance configured for it
+by the scene tree. Initially, every node is configured with the same default ``MultiplayerAPI`` object.
 
-To create that object, it first has to be initialized as a server or client.
-
-Initializing as a server, listening on the given port, with a given maximum number of peers:
-
-::
-
-    var peer = NetworkedMultiplayerENet.new()
-    peer.create_server(SERVER_PORT, MAX_PLAYERS)
-    get_tree().network_peer = peer
-
-Initializing as a client, connecting to a given IP and port:
+It is possible to create a new ``MultiplayerAPI`` object and assign it to a ``NodePath`` in the the scene tree,
+which will override ``multiplayer`` for the node at that path and all of its descendants.
+This allows sibling nodes to be configured with different peers, which makes it possible to run a server
+and a client simultaneously in one instance of Godot.
 
 ::
 
-    var peer = NetworkedMultiplayerENet.new()
-    peer.create_client(SERVER_IP, SERVER_PORT)
-    get_tree().network_peer = peer
+    # By default, these expressions are interchangeable.
+    multiplayer # Get the MultiplayerAPI object configured for this node.
+    get_tree().get_multiplayer() # Get the default MultiplayerAPI object.
 
-Get the previously set network peer:
-
-::
-
-    get_tree().get_network_peer()
-
-Checking whether the tree is initialized as a server or client:
+To initialize networking, a ``MultiplayerPeer`` object must be created, initialized as a server or client,
+and passed to the ``MultiplayerAPI``.
 
 ::
 
-    get_tree().is_network_server()
+    # Create client.
+    var peer = ENetMultiplayerPeer.new()
+    peer.create_client(IP_ADDRESS, PORT)
+    multiplayer.multiplayer_peer = peer
 
-Terminating the networking feature:
+    # Create server.
+    var peer = ENetMultiplayerPeer.new()
+    peer.create_server(PORT, MAX_CLIENTS)
+    multiplayer.multiplayer_peer = peer
+
+To terminate networking:
 
 ::
 
-    get_tree().network_peer = null
-
-(Although it may make sense to send a message first to let the other peers know you're going away instead of letting the connection close or timeout, depending on your game.)
+    multiplayer.multiplayer_peer = null
 
 .. warning::
 
@@ -155,336 +148,240 @@ Terminating the networking feature:
 Managing connections
 --------------------
 
-Some games accept connections at any time, others during the lobby phase. Godot can be requested to no longer accept
-connections at any point (see ``set_refuse_new_network_connections(bool)`` and related methods on :ref:`SceneTree <class_SceneTree>`). To manage who connects, Godot provides the following signals in SceneTree:
+Every peer is assigned a unique ID. The server's ID is always 1, and clients are assigned a random positive integer.
 
-Server and Clients:
+Responding to connections or disconnections is possible by connecting to ``MultiplayerAPI``'s signals:
 
-- ``network_peer_connected(int id)``
-- ``network_peer_disconnected(int id)``
+- ``peer_connected(id: int)`` This signal is emitted with the newly connected peer's ID on each other peer, and on the new peer multiple times, once with each other peer's ID.
+- ``peer_disconnected(id: int)`` This signal is emitted on every remaining peer when one disconnects.
 
-The above signals are called on every peer connected to the server (including on the server) when a new peer connects or disconnects.
-Clients will connect with a unique ID greater than 1, while network peer ID 1 is always the server.
-Anything below 1 should be handled as invalid.
-You can retrieve the ID for the local system via ``SceneTree.get_network_unique_id()``.
-These IDs will be useful mostly for lobby management and should generally be stored, as they identify connected peers and thus players. You can also use IDs to send messages only to certain peers.
+The rest are only emitted on clients:
 
-Clients:
+- ``connected_to_server()``
+- ``connection_failed()``
+- ``server_disconnected()``
 
-- ``connected_to_server``
-- ``connection_failed``
-- ``server_disconnected``
-
-Again, all these functions are mainly useful for lobby management or for adding/removing players on the fly.
-For these tasks, the server clearly has to work as a server and you have to perform tasks manually such as sending a newly connected
-player information about other already connected players (e.g. their names, stats, etc).
-
-Lobbies can be implemented any way you want, but the most common way is to use a node with the same name across scenes in all peers.
-Generally, an autoloaded node/singleton is a great fit for this, to always have access to, e.g. "/root/lobby".
-
-RPC
----
-
-To communicate between peers, the easiest way is to use RPCs (remote procedure calls). This is implemented as a set of functions
-in :ref:`Node <class_Node>`:
-
-- ``rpc("function_name", <optional_args>)``
-- ``rpc_id(<peer_id>,"function_name", <optional_args>)``
-- ``rpc_unreliable("function_name", <optional_args>)``
-- ``rpc_unreliable_id(<peer_id>, "function_name", <optional_args>)``
-
-Synchronizing member variables is also possible:
-
-- ``rset("variable", value)``
-- ``rset_id(<peer_id>, "variable", value)``
-- ``rset_unreliable("variable", value)``
-- ``rset_unreliable_id(<peer_id>, "variable", value)``
-
-Functions can be called in two fashions:
-
-- Reliable: when the function call arrives, an acknowledgement will be sent back; if the acknowledgement isn't received after a certain amount of time, the function call will be re-transmitted.
-- Unreliable: the function call is sent only once, without checking to see if it arrived or not, but also without any extra overhead.
-
-In most cases, reliable is desired. Unreliable is mostly useful when synchronizing object positions (sync must happen constantly,
-and if a packet is lost, it's not that bad because a new one will eventually arrive and it would likely be outdated because the object moved further in the meantime, even if it was resent reliably).
-
-There is also the ``get_rpc_sender_id`` function in ``SceneTree``, which can be used to check which peer (or peer ID) sent an RPC.
-
-Back to lobby
--------------
-
-Let's get back to the lobby. Imagine that each player that connects to the server will tell everyone about it.
+To get the unique ID of the associated peer:
 
 ::
 
-    # Typical lobby implementation; imagine this being in /root/lobby.
+    multiplayer.get_unique_id()
+
+To check whether the peer is server or client:
+
+::
+
+    multiplayer.is_server()
+
+Remote procedure calls
+----------------------
+
+Remote procedure calls, or RPCs, are functions that can be called on other peers. To create one, use the ``@rpc`` annotation
+before a function definition. To call an RPC, use ``Callable``'s method ``rpc()`` to call in every peer, or ``rpc_id()`` to
+call in a specific peer.
+
+::
+
+    func _ready():
+        if multiplayer.is_server():
+            print_once_per_client.rpc()
+
+    @rpc
+    func print_once_per_client():
+        print("I will be printed to the console once per each connected client.")
+
+RPCs will not serialize objects or callables.
+
+For a remote call to be successful, the sending and receiving node need to have the same ``NodePath``, which means they
+must have the same name. When using ``add_child()`` for nodes which are expected to use RPCs, set the argument
+``force_readable_name`` to ``true``.
+
+The annotation can take a number of arguments, which have default values. ``@rpc`` is equivalent to:
+
+::
+
+    @rpc("authority", "call_remote", "unreliable", 0)
+
+The parameters and their functions are as follows:
+
+``mode``:
+
+- ``"authority"``: Only the multiplayer authority (the server) can call remotely.
+- ``"any_peer"``: Clients are allowed to call remotely. Useful for transferring user input.
+
+``sync``:
+
+- ``"call_remote"``: The function will not be called on the local peer.
+- ``"call_local"``: The function can be called on the local peer. Useful when the server is also a player.
+
+``transfer_mode``:
+
+- ``"unreliable"`` Packets are not acknowledged, can be lost, and can arrive at any order.
+- ``"unreliable_ordered"`` Packets are received in the order they were sent in. This is achieved by ignoring packets that arrive later if another that was sent after them has already been received. Can cause packet loss if used incorrectly.
+- ``"reliable"`` Resend attempts are sent until packets are acknowledged, and their order is preserved. Has a significant performance penalty.
+
+``transfer_channel`` is the channel index.
+
+The first 3 can be passed in any order, but ``transfer_channel`` must always be last.
+
+The function ``multiplayer.get_remote_sender_id()`` can be used to get the unique id of an rpc sender, when used within the function called by rpc.
+
+::
+
+    func _on_some_input(): # Connected to some input.
+        transfer_some_input.rpc_id(1) # Send the input only to the server.
+
+
+    @rpc("any_peer", "call_local", "reliable") # Call local is required if the server is also a player.
+    func transfer_some_input():
+        var sender_id = multiplayer.get_remote_sender_id() # The server knows who sent the input.
+        # Process the input and affect game logic.
+
+Channels
+--------
+Modern networking protocols support channels, which are separate connections within the connection. This allows for multiple
+streams of packets that do not interfere with each other.
+
+For example, game chat related messages and some of the core gameplay messages should all be sent reliably, but a gameplay
+message should not wait for a chat message to be acknowledged. This can be achieved by using different channels.
+
+Channels are also useful when used with the unreliable ordered transfer mode. Sending packets of variable size with this transfer mode can
+cause packet loss, since packets which are slower to arrive are ignored. Separating them into multiple streams of homogeneous packets
+by using channels allows ordered transfer with little packet loss, and without the latency penalty caused by reliable mode.
+
+The default channel with index 0 is actually three different channels - one for each tansfer mode.
+
+Example lobby implementation
+----------------------------
+
+This is an example lobby that can handle peers joining and leaving, notify UI scenes through signals, and start the game after all clients
+have loaded the game scene.
+
+::
 
     extends Node
 
-    # Connect all functions
+    # Autoload named Lobby
+
+    # These signals can be connected to by a UI lobby scene or the game scene.
+    signal player_connected(peer_id, player_info)
+    signal player_disconnected(peer_id)
+    signal server_disconnected
+
+    const PORT = 7000
+    const DEFAULT_SERVER_IP = "127.0.0.1" # IPv4 localhost
+    const MAX_CONNECTIONS = 20
+
+    # This will contain player info for every player, with the keys being each player's unique IDs.
+    var players = {}
+
+    # This is the local player info. This should be modified locally before the connection is made.
+    # It will be passed to every other peer.
+    # For example, the value of "name" can be set to something the player entered in a UI scene.
+    var player_info = {"name": "Name"}
+
+    var players_loaded = 0
+
+
 
     func _ready():
-        get_tree().network_peer_connected.connect(_player_connected)
-        get_tree().network_peer_disconnected.connect(_player_disconnected)
-        get_tree().connected_to_server.connect(_connected_ok)
-        get_tree().connection_failed.connect(_connected_fail)
-        get_tree().server_disconnected.connect(_server_disconnected)
-
-    # Player info, associate ID to data
-    var player_info = {}
-    # Info we send to other players
-    var my_info = { name = "Johnson Magenta", favorite_color = Color8(255, 0, 255) }
-
-    func _player_connected(id):
-        # Called on both clients and server when a peer connects. Send my info to it.
-        rpc_id(id, "register_player", my_info)
-
-    func _player_disconnected(id):
-        player_info.erase(id) # Erase player from info.
-
-    func _connected_ok():
-        pass # Only called on clients, not server. Will go unused; not useful here.
-
-    func _server_disconnected():
-        pass # Server kicked us; show error and abort.
-
-    func _connected_fail():
-        pass # Could not even connect to server; abort.
-
-    remote func register_player(info):
-        # Get the id of the RPC sender.
-        var id = get_tree().get_rpc_sender_id()
-        # Store the info
-        player_info[id] = info
-
-        # Call function to update lobby UI here
-
-You might have already noticed something different, which is the usage of the ``remote`` keyword on the ``register_player`` function:
-
-::
-
-    remote func register_player(info):
-
-This keyword has two main uses. The first is to let Godot know that this function can be called from RPC. If no keywords are added,
-Godot will block any attempts to call functions for security. This makes security work a lot easier (so a client can't call a function
-to delete a file on another client's system).
-
-The second use is to specify how the function will be called via RPC. There are four different keywords:
-
-- ``remote``
-- ``remotesync``
-- ``master``
-- ``puppet``
-
-The ``remote`` keyword means that the ``rpc()`` call will go via network and execute remotely.
-
-The ``remotesync`` keyword means that the ``rpc()`` call will go via network and execute remotely, but will also execute locally (do a normal function call).
-
-The others will be explained further down.
-Note that you could also use the ``get_rpc_sender_id`` function on ``SceneTree`` to check which peer actually made the RPC call to ``register_player``.
-
-With this, lobby management should be more or less explained. Once you have your game going, you will most likely want to add some
-extra security to make sure clients don't do anything funny (just validate the info they send from time to time, or before
-game start). For the sake of simplicity and because each game will share different information, this is not shown here.
-
-Starting the game
------------------
-
-Once enough players have gathered in the lobby, the server should probably start the game. This is nothing
-special in itself, but we'll explain a few nice tricks that can be done at this point to make your life much easier.
-
-Player scenes
-^^^^^^^^^^^^^
-
-In most games, each player will likely have its own scene. Remember that this is a multiplayer game, so in every peer
-you need to instance **one scene for each player connected to it**. For a 4 player game, each peer needs to instance 4 player nodes.
-
-So, how to name such nodes? In Godot, nodes need to have a unique name. It must also be relatively easy for a player to tell which
-node represents each player ID.
-
-The solution is to simply name the *root nodes of the instanced player scenes as their network ID*. This way, they will be the same in
-every peer and RPC will work great! Here is an example:
-
-::
-
-    remote func pre_configure_game():
-        var selfPeerID = get_tree().get_network_unique_id()
-
-        # Load world
-        var world = load(which_level).instantiate()
-        get_node("/root").add_child(world)
-
-        # Load my player
-        var my_player = preload("res://player.tscn").instantiate()
-        my_player.set_name(str(selfPeerID))
-        my_player.set_multiplayer_authority(selfPeerID) # Will be explained later
-        get_node("/root/world/players").add_child(my_player)
-
-        # Load other players
-        for p in player_info:
-            var player = preload("res://player.tscn").instantiate()
-            player.set_name(str(p))
-            player.set_multiplayer_authority(p) # Will be explained later
-            get_node("/root/world/players").add_child(player)
-
-        # Tell server (remember, server is always ID=1) that this peer is done pre-configuring.
-        # The server can call get_tree().get_rpc_sender_id() to find out who said they were done.
-        rpc_id(1, "done_preconfiguring")
+        multiplayer.peer_connected.connect(_on_player_connected)
+        multiplayer.peer_disconnected.connect(_on_player_disconnected)
+        multiplayer.connected_to_server.connect(_on_connected_ok)
+        multiplayer.connection_failed.connect(_on_connected_fail)
+        multiplayer.server_disconnected.connect(_on_server_disconnected)
 
 
-.. note:: Depending on when you execute pre_configure_game(), you may need to change any calls to ``add_child()``
-          to be deferred via ``call_deferred()``, as the SceneTree is locked while the scene is being created (e.g. when ``_ready()`` is being called).
+    func join_game(address = ""):
+        if address == "":
+            address = DEFAULT_SERVER_IP
+        var peer = ENetMultiplayerPeer.new()
+        var error = peer.create_client(address, PORT)
+        if error:
+            return error
+        multiplayer.multiplayer_peer = peer
 
-Synchronizing game start
-^^^^^^^^^^^^^^^^^^^^^^^^
 
-Setting up players might take different amounts of time for every peer due to lag, different hardware, or other reasons.
-To make sure the game will actually start when everyone is ready, pausing the game until all players are ready can be useful:
+    func create_game():
+        var peer = ENetMultiplayerPeer.new()
+        var error = peer.create_server(PORT, MAX_CONNECTIONS)
+        if error:
+            return error
+        multiplayer.multiplayer_peer = peer
+
+        players[1] = player_info
+        player_connected.emit(1, player_info)
+
+
+    func remove_multiplayer_peer():
+        multiplayer.multiplayer_peer = null
+
+
+    # When the server decides to start the game from a UI scene, do Lobby.load_game.rpc(filepath)
+    @rpc("call_local", "reliable")
+    func load_game(game_scene_path):
+        get_tree().change_scene_to_file(game_scene_path)
+
+
+    # Every peer will call this when they have loaded the game scene.
+    @rpc("any_peer", "call_local", "reliable")
+    func player_loaded():
+        if multiplayer.is_server():
+            players_loaded += 1
+            if players_loaded == players.size():
+                $/root/Game.start_game()
+                players_loaded = 0
+
+
+    # When a peer connects, send them my player info.
+    # This allows transfer of all desired data for each player, not only the unique ID.
+    func _on_player_connected(id):
+        _register_player.rpc_id(id, player_info)
+
+
+    @rpc("any_peer", "reliable")
+    func _register_player(new_player_info):
+        var new_player_id = multiplayer.get_remote_sender_id()
+        players[new_player_id] = new_player_info
+        player_connected.emit(new_player_id, new_player_info)
+
+
+    func _on_player_disconnected(id):
+        player_info.erase(id)
+        player_disconnected.emit(id)
+
+
+    func _on_connected_ok():
+        var peer_id = multiplayer.get_unique_id()
+        players[peer_id] = player_info
+        player_connected.emit(peer_id, player_info)
+
+
+    func _on_connected_fail():
+        multiplayer.multiplayer_peer = null
+
+
+    func _on_server_disconnected():
+        multiplayer.multiplayer_peer = null
+        server_disconnected.emit()
+
+The game scene's root node should be named Game. In the script attached to it:
 
 ::
 
-    remote func pre_configure_game():
-        get_tree().set_pause(true) # Pre-pause
-        # The rest is the same as in the code in the previous section (look above)
-
-When the server gets the OK from all the peers, it can tell them to start, as for example:
-
-::
-
-    var players_done = []
-    remote func done_preconfiguring():
-        var who = get_tree().get_rpc_sender_id()
-        # Here are some checks you can do, for example
-        assert(get_tree().is_network_server())
-        assert(who in player_info) # Exists
-        assert(not who in players_done) # Was not added yet
-
-        players_done.append(who)
-
-        if players_done.size() == player_info.size():
-            rpc("post_configure_game")
-
-    remote func post_configure_game():
-        # Only the server is allowed to tell a client to unpause
-        if 1 == get_tree().get_rpc_sender_id():
-            get_tree().set_pause(false)
-            # Game starts now!
-
-Synchronizing the game
-----------------------
-
-In most games, the goal of multiplayer networking is that the game runs synchronized on all the peers playing it.
-Besides supplying an RPC and remote member variable set implementation, Godot adds the concept of network masters.
-
-Network master
-^^^^^^^^^^^^^^
-
-The network master of a node is the peer that has the ultimate authority over it.
-
-When not explicitly set, the network master is inherited from the parent node, which if not changed, is always going to be the server (ID 1). Thus the server has authority over all nodes by default.
-
-The network master can be set
-with the function :ref:``Node.set_multiplayer_authority(id, recursive)`` (recursive is ``true`` by default and means the network master is recursively set on all child nodes of the node as well).
-
-Checking that a specific node instance on a peer is the network master for this node for all connected peers is done by calling ``Node.is_network_master()``. This will return ``true`` when executed on the server and ``false`` on all client peers.
-
-If you have paid attention to the previous example, it's possible you noticed that each peer was set to have network master authority for their own player (Node) instead of the server:
-
-::
-
-        [...]
-        # Load my player
-        var my_player = preload("res://player.tscn").instantiate()
-        my_player.set_name(str(selfPeerID))
-        my_player.set_multiplayer_authority(selfPeerID) # The player belongs to this peer; it has the authority.
-        get_node("/root/world/players").add_child(my_player)
-
-        # Load other players
-        for p in player_info:
-            var player = preload("res://player.tscn").instantiate()
-            player.set_name(str(p))
-            player.set_multiplayer_authority(p) # Each other connected peer has authority over their own player.
-            get_node("/root/world/players").add_child(player)
-        [...]
+    extends Node3D # Or Node2D.
 
 
-Each time this piece of code is executed on each peer, the peer makes itself master on the node it controls, and all other nodes remain as puppets with the server being their network master.
 
-To clarify, here is an example of how this looks in the
-`bomber demo <https://github.com/godotengine/godot-demo-projects/tree/master/networking/multiplayer_bomber>`_:
+    func _ready():
+        # Preconfigure game.
 
-.. image:: img/nmms.png
+        Lobby.player_loaded.rpc_id(1) # Tell the server that this peer has loaded.
 
 
-Master and puppet keywords
-^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-.. FIXME: Clarify the equivalents to the GDScript keywords in C#.
-
-The real advantage of this model is when used with the ``master``/``puppet`` keywords in GDScript (or their equivalent in C#).
-Similarly to the ``remote`` keyword, functions can also be tagged with them:
-
-Example bomb code:
-
-::
-
-    for p in bodies_in_area:
-        if p.has_method("exploded"):
-            p.rpc("exploded", bomb_owner)
-
-Example player code:
-
-::
-
-    puppet func stun():
-        stunned = true
-
-    master func exploded(by_who):
-        if stunned:
-            return # Already stunned
-
-        rpc("stun")
-
-        # Stun this player instance for myself as well; could instead have used
-        # the remotesync keyword above (in place of puppet) to achieve this.
-        stun()
-
-In the above example, a bomb explodes somewhere (likely managed by whoever is the master of this bomb-node, e.g. the host).
-The bomb knows the bodies (player nodes) in the area, so it checks that they contain an ``exploded`` method before calling it.
-
-Recall that each peer has a complete set of instances of player nodes, one instance for each peer (including itself and the host).
-Each peer has set itself as the master of the instance corresponding to itself, and it has set a different peer as the master for
-each of the other instances.
-
-Now, going back to the call to the ``exploded`` method, the bomb on the host has called it remotely on all bodies in the area
-that have the method. However, this method is in a player node and has a ``master`` keyword.
-
-The ``master`` keyword on the ``exploded`` method in the player node means two things for how this call is made.
-Firstly, from the perspective of the calling peer (the host), the calling peer will only attempt to remotely call the
-method on the peer that it has set as the network master of the player node in question.
-Secondly, from the perspective of the peer the host is sending the call to, the peer will only accept the call if it
-set itself as the network master of the player node with the method being called (which has the ``master`` keyword).
-This works well as long as all peers agree on who is the master of what.
-
-The above setup means that only the peer who owns the affected body will be responsible for telling all the other peers that its body
-was stunned, after being remotely instructed to do so by the host's bomb.
-The owning peer therefore (still in the ``exploded`` method) tells all the other peers that its player node was stunned.
-The peer does this by remotely calling the ``stun`` method on all instances of that player node (on the other peers).
-Because the ``stun`` method has the ``puppet`` keyword, only peers who did not set themselves as the network master of the node will
-call it (in other words, those peers are set as puppets for that node by virtue of not being the network master of it).
-
-The result of this call to ``stun`` is to make the player look stunned on the screen of all the peers, including the current
-network master peer (due to the local call to ``stun`` after ``rpc("stun")``).
-
-The master of the bomb (the host) repeats the above steps for each of the bodies in the area, such that all the instances of
-any player in the bomb area get stunned on the screens of all the peers.
-
-Note that you could also send the ``stun()`` message only to a specific player by using ``rpc_id(<id>, "exploded", bomb_owner)``.
-This may not make much sense for an area-of-effect case like the bomb, but might in other cases, like single target damage.
-
-::
-
-    rpc_id(TARGET_PEER_ID, "stun") # Only stun the target peer
+    # Called only on the server.
+    func start_game():
+        # All peers are ready to receive RPCs in this scene.
 
 Exporting for dedicated servers
 -------------------------------
@@ -499,12 +396,3 @@ a dedicated server with no GPU available. See
     server. You'll have to modify them so the server isn't considered to be a
     player. You'll also have to modify the game starting mechanism so that the
     first player who joins can start the game.
-
-.. note::
-
-    The bomberman example here is largely for illustrational purposes, and does not
-    do anything on the host-side to handle the case where a peer uses a custom client
-    to cheat by for example refusing to stun itself. In the current implementation
-    such cheating is perfectly possible because each client is the network master of
-    its own player, and the network master of a player is the one which decides whether
-    to call the I-was-stunned method (``stun``) on all of the other peers and itself.
