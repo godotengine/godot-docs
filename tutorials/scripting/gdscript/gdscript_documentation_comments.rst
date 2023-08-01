@@ -19,29 +19,31 @@ suggested format for script documentation can be divided into three parts.
 
 - A brief description of the script.
 - Detailed description.
-- Tutorials.
+- Tutorials and deprecated/experimental marks.
 
 To separate these from each other, the documentation comments use special tags.
-The tag must be at the beginning of a line (ignoring preceding white space) and must
-have the format ``@``, followed by the keyword, and finishing with a colon.
+The tag must be at the beginning of a line (ignoring preceding white space)
+and must have the format ``@``, followed by the keyword.
 
 Tags
 ~~~~
 
 +-------------------+--------------------------------------------------------+
-| Brief description | No tag and lives at the very beginning of              |
+| Brief description | No tag. Lives at the very beginning of                 |
 |                   | the documentation section.                             |
 +-------------------+--------------------------------------------------------+
-| Description       | Use one blank line to separate the description from    |
-|                   | the brief.                                             |
+| Description       | No tag. Use one blank line to separate the description |
+|                   | from the brief.                                        |
 +-------------------+--------------------------------------------------------+
 | Tutorial          | | ``@tutorial:``                                       |
 |                   | | ``@tutorial(The Title Here):``                       |
 +-------------------+--------------------------------------------------------+
+| Deprecated        | ``@deprecated``                                        |
++-------------------+--------------------------------------------------------+
+| Experimental      | ``@experimental``                                      |
++-------------------+--------------------------------------------------------+
 
-For example:
-
-::
+For example::
 
     extends Node2D
     ## A brief description of the class's role and functionality.
@@ -51,6 +53,7 @@ For example:
     ##
     ## @tutorial:            https://the/tutorial1/url.com
     ## @tutorial(Tutorial2): https://the/tutorial2/url.com
+    ## @experimental
 
 .. warning::
 
@@ -66,16 +69,6 @@ For example:
 Documenting script members
 --------------------------
 
-Documentation of a script member must immediately precede the member or its
-annotations if it has any. The exception to this is enum values whose description should
-be on the same line as the enum for readability.
-The description can have more than one line but every line must start
-with the double hash symbol ``##`` to be considered as part of the documentation.
-The script documentation will update in the editor help window every time the
-script is updated. If any member variable or function name starts with an
-underscore, it will be treated as private. It will not appear in the documentation and
-will be ignored in the help window.
-
 Members that are applicable for documentation:
 
 - Inner class
@@ -86,8 +79,48 @@ Members that are applicable for documentation:
 - Enum
 - Enum value
 
-Example
--------
+Documentation of a script member must immediately precede the member or its annotations
+if it has any. The description can have more than one line but every line must start with
+the double hash symbol ``##`` to be considered as part of the documentation.
+
+Tags
+~~~~
+
++--------------+-------------------+
+| Description  | No tag.           |
++--------------+-------------------+
+| Deprecated   | ``@deprecated``   |
++--------------+-------------------+
+| Experimental | ``@experimental`` |
++--------------+-------------------+
+
+For example::
+
+    ## The description of the variable.
+    ## @deprecated
+    var my_var
+
+Variables, constants, signals, and enum values support inline documentation comments.
+Note that inline comments do not support tags.
+
+::
+
+    var my_var ## My variable.
+    const MY_CONST = 1 ## My constant.
+    signal my_signal ## My signal.
+    enum Direction {
+        UP = 0, ## Direction up.
+        DOWN = 1, ## Direction down.
+        LEFT = 2, ## Direction left.
+        RIGHT = 3, ## Direction right.
+    }
+
+The script documentation will update in the editor help window every time the script is updated.
+If any member variable or function name starts with an underscore, it will be treated as private.
+It will not appear in the documentation and will be ignored in the help window.
+
+Complete script example
+-----------------------
 
 ::
 
@@ -99,6 +132,7 @@ Example
     ##
     ## @tutorial:            https://the/tutorial1/url.com
     ## @tutorial(Tutorial2): https://the/tutorial2/url.com
+    ## @experimental
 
     ## The description of a constant.
     const GRAVITY = 9.8
@@ -106,13 +140,16 @@ Example
     ## The description of a signal.
     signal my_signal
 
-    ## This is a description of the below enums. Note below that
-    ## the enum values are documented on the same line as the enum.
+    ## This is a description of the below enum.
     enum Direction {
-        UP    = 0,  ## Direction up.
-        DOWN  = 1,  ## Direction down.
-        LEFT  = 2,  ## Direction left.
-        RIGHT = 3,  ## Direction right.
+        ## Direction up.
+        UP = 0,
+        ## Direction down.
+        DOWN = 1,
+        ## Direction left.
+        LEFT = 2,
+        ## Direction right.
+        RIGHT = 3,
     }
 
     ## The description of a constant.
@@ -149,6 +186,7 @@ Example
     ## immediately precede the class definition.
     ##
     ## @tutorial: https://the/tutorial/url.com
+    ## @experimental
     class Inner:
 
         ## Inner class variable v4.
@@ -158,6 +196,24 @@ Example
         ## Inner class function fn.
         func fn(): pass
 
+``@deprecated`` and ``@experimental`` tags
+------------------------------------------
+
+You can mark a class or any of its members as deprecated or experimental.
+This will add the corresponding indicator in the built-in documentation viewer.
+This can be especially useful for plugin and library creators.
+
+.. image:: img/deprecated_and_experimental_marks.webp
+
+- **Deprecated** marks a non-recommended API that is subject to removal or incompatible change
+  in a future major release. Usually the API is kept for backwards compatibility.
+- **Experimental** marks a new unstable API that may be changed or removed in the current
+  major branch. Using this API is not recommended in production code.
+
+.. note::
+
+    While technically you can use both ``@deprecated`` and ``@experimental`` tags on the same
+    class/member, this is not recommended as it is against common conventions.
 
 BBCode and class reference
 --------------------------
