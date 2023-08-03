@@ -1065,7 +1065,7 @@ Restore the plugin GUI layout and data saved by :ref:`_get_window_layout<class_E
 
 void **add_autoload_singleton** **(** :ref:`String<class_String>` name, :ref:`String<class_String>` path **)**
 
-Adds a script at ``path`` to the Autoload list as ``name``.
+Adds a scene or script file at ``path`` to the Autoload list as ``name``.
 
 .. rst-class:: classref-item-separator
 
