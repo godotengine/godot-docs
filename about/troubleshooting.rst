@@ -85,6 +85,23 @@ the system console. Godot cannot override this system-specific behavior.
 To solve this, select the system console window and press Enter to leave
 selection mode.
 
+The Godot editor's macOS dock icon gets duplicated every time it is manually moved
+----------------------------------------------------------------------------------
+
+If you open the Godot editor and manually change the position of the dock icon,
+then restart the editor, you will get a duplicate dock icon all the way to the
+right of the dock.
+
+This is due to a design limitation of the macOS dock. The only known way to
+resolve this would be to merge the project manager and editor into a single
+process, which means the project manager would no longer spawn a separate
+process when starting the editor. While using a single process instance would
+bring several benefits, it isn't planned to be done in the near future due to
+the complexity of the task.
+
+To avoid this issue, keep the Godot editor's dock icon at its default location
+as created by macOS.
+
 Some text such as "NO DC" appears in the top-left corner of the Project Manager and editor window
 -------------------------------------------------------------------------------------------------
 
