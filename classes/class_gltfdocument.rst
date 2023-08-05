@@ -12,12 +12,27 @@ GLTFDocument
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
+Class for importing and exporting glTF files in and out of Godot.
+
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-Append a glTF2 3d format from a file, buffer or scene and then write to the filesystem, buffer or scene.
+GLTFDocument supports reading data from a glTF file, buffer, or Godot scene. This data can then be written to the filesystem, buffer, or used to create a Godot scene.
+
+All of the data in a GLTF scene is stored in the :ref:`GLTFState<class_GLTFState>` class. GLTFDocument processes state objects, but does not contain any scene data itself.
+
+GLTFDocument can be extended with arbitrary functionality by extending the :ref:`GLTFDocumentExtension<class_GLTFDocumentExtension>` class and registering it with GLTFDocument via :ref:`register_gltf_document_extension<class_GLTFDocument_method_register_gltf_document_extension>`. This allows for custom data to be imported and exported.
+
+.. rst-class:: classref-introduction-group
+
+Tutorials
+---------
+
+- `glTF 'What the duck?' guide <https://www.khronos.org/files/gltf20-reference-guide.pdf>`__
+
+- `Khronos glTF specification <https://registry.khronos.org/glTF/>`__
 
 .. rst-class:: classref-reftable-group
 

@@ -100,6 +100,8 @@ Methods
    :widths: auto
 
    +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector2<class_Vector2>`                       | :ref:`_get_contents_minimum_size<class_Window_method__get_contents_minimum_size>` **(** **)** |virtual| |const|                                                                                                                                    |
+   +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                | :ref:`add_theme_color_override<class_Window_method_add_theme_color_override>` **(** :ref:`StringName<class_StringName>` name, :ref:`Color<class_Color>` color **)**                                                                                |
    +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                | :ref:`add_theme_constant_override<class_Window_method_add_theme_constant_override>` **(** :ref:`StringName<class_StringName>` name, :ref:`int<class_int>` constant **)**                                                                           |
@@ -392,7 +394,7 @@ Emitted when a go back request is sent (e.g. pressing the "Back" button on Andro
 
 **mouse_entered** **(** **)**
 
-Emitted when the mouse cursor enters the **Window**'s area, regardless if it's currently focused or not.
+Emitted when the mouse cursor enters the **Window**'s visible area, that is not occluded behind other :ref:`Control<class_Control>`\ s or windows, provided its :ref:`Viewport.gui_disable_input<class_Viewport_property_gui_disable_input>` is ``false`` and regardless if it's currently focused or not.
 
 .. rst-class:: classref-item-separator
 
@@ -404,7 +406,7 @@ Emitted when the mouse cursor enters the **Window**'s area, regardless if it's c
 
 **mouse_exited** **(** **)**
 
-Emitted when the mouse cursor exits the **Window**'s area (including when it's hovered over another window on top of this one).
+Emitted when the mouse cursor leaves the **Window**'s visible area, that is not occluded behind other :ref:`Control<class_Control>`\ s or windows, provided its :ref:`Viewport.gui_disable_input<class_Viewport_property_gui_disable_input>` is ``false`` and regardless if it's currently focused or not.
 
 .. rst-class:: classref-item-separator
 
@@ -1171,8 +1173,6 @@ Passing an empty array will disable passthrough support (all mouse events will b
 
 If ``true``, the **Window** will be considered a popup. Popups are sub-windows that don't show as separate windows in system's window manager's window list and will send close request when anything is clicked outside of them (unless :ref:`exclusive<class_Window_property_exclusive>` is enabled).
 
-\ **Note:** This property only works with native windows.
-
 .. rst-class:: classref-item-separator
 
 ----
@@ -1383,6 +1383,18 @@ If ``false``, you need to call :ref:`child_controls_changed<class_Window_method_
 Method Descriptions
 -------------------
 
+.. _class_Window_method__get_contents_minimum_size:
+
+.. rst-class:: classref-method
+
+:ref:`Vector2<class_Vector2>` **_get_contents_minimum_size** **(** **)** |virtual| |const|
+
+Virtual method to be implemented by the user. Overrides the value returned by :ref:`get_contents_minimum_size<class_Window_method_get_contents_minimum_size>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_Window_method_add_theme_color_override:
 
 .. rst-class:: classref-method
@@ -1522,6 +1534,8 @@ Ends a bulk theme override update. See :ref:`begin_bulk_theme_override<class_Win
 :ref:`Vector2<class_Vector2>` **get_contents_minimum_size** **(** **)** |const|
 
 Returns the combined minimum size from the child :ref:`Control<class_Control>` nodes of the window. Use :ref:`child_controls_changed<class_Window_method_child_controls_changed>` to update it when children nodes have changed.
+
+The value returned by this method can be overridden with :ref:`_get_contents_minimum_size<class_Window_method__get_contents_minimum_size>`.
 
 .. rst-class:: classref-item-separator
 

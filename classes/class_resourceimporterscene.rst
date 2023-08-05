@@ -40,39 +40,39 @@ Properties
 .. table::
    :widths: auto
 
-   +-------------------------------------+------------------------------------------------------------------------------------------------------------------+------------------+
-   | :ref:`Dictionary<class_Dictionary>` | :ref:`_subresources<class_ResourceImporterScene_property__subresources>`                                         | ``{}``           |
-   +-------------------------------------+------------------------------------------------------------------------------------------------------------------+------------------+
-   | :ref:`float<class_float>`           | :ref:`animation/fps<class_ResourceImporterScene_property_animation/fps>`                                         | ``30``           |
-   +-------------------------------------+------------------------------------------------------------------------------------------------------------------+------------------+
-   | :ref:`bool<class_bool>`             | :ref:`animation/import<class_ResourceImporterScene_property_animation/import>`                                   | ``true``         |
-   +-------------------------------------+------------------------------------------------------------------------------------------------------------------+------------------+
-   | :ref:`bool<class_bool>`             | :ref:`animation/remove_immutable_tracks<class_ResourceImporterScene_property_animation/remove_immutable_tracks>` | ``true``         |
-   +-------------------------------------+------------------------------------------------------------------------------------------------------------------+------------------+
-   | :ref:`bool<class_bool>`             | :ref:`animation/trimming<class_ResourceImporterScene_property_animation/trimming>`                               | ``false``        |
-   +-------------------------------------+------------------------------------------------------------------------------------------------------------------+------------------+
-   | :ref:`String<class_String>`         | :ref:`import_script/path<class_ResourceImporterScene_property_import_script/path>`                               | ``""``           |
-   +-------------------------------------+------------------------------------------------------------------------------------------------------------------+------------------+
-   | :ref:`bool<class_bool>`             | :ref:`meshes/create_shadow_meshes<class_ResourceImporterScene_property_meshes/create_shadow_meshes>`             | ``true``         |
-   +-------------------------------------+------------------------------------------------------------------------------------------------------------------+------------------+
-   | :ref:`bool<class_bool>`             | :ref:`meshes/ensure_tangents<class_ResourceImporterScene_property_meshes/ensure_tangents>`                       | ``true``         |
-   +-------------------------------------+------------------------------------------------------------------------------------------------------------------+------------------+
-   | :ref:`bool<class_bool>`             | :ref:`meshes/generate_lods<class_ResourceImporterScene_property_meshes/generate_lods>`                           | ``true``         |
-   +-------------------------------------+------------------------------------------------------------------------------------------------------------------+------------------+
-   | :ref:`int<class_int>`               | :ref:`meshes/light_baking<class_ResourceImporterScene_property_meshes/light_baking>`                             | ``1``            |
-   +-------------------------------------+------------------------------------------------------------------------------------------------------------------+------------------+
-   | :ref:`float<class_float>`           | :ref:`meshes/lightmap_texel_size<class_ResourceImporterScene_property_meshes/lightmap_texel_size>`               | ``0.2``          |
-   +-------------------------------------+------------------------------------------------------------------------------------------------------------------+------------------+
-   | :ref:`bool<class_bool>`             | :ref:`nodes/apply_root_scale<class_ResourceImporterScene_property_nodes/apply_root_scale>`                       | ``true``         |
-   +-------------------------------------+------------------------------------------------------------------------------------------------------------------+------------------+
-   | :ref:`String<class_String>`         | :ref:`nodes/root_name<class_ResourceImporterScene_property_nodes/root_name>`                                     | ``"Scene Root"`` |
-   +-------------------------------------+------------------------------------------------------------------------------------------------------------------+------------------+
-   | :ref:`float<class_float>`           | :ref:`nodes/root_scale<class_ResourceImporterScene_property_nodes/root_scale>`                                   | ``1.0``          |
-   +-------------------------------------+------------------------------------------------------------------------------------------------------------------+------------------+
-   | :ref:`String<class_String>`         | :ref:`nodes/root_type<class_ResourceImporterScene_property_nodes/root_type>`                                     | ``"Node3D"``     |
-   +-------------------------------------+------------------------------------------------------------------------------------------------------------------+------------------+
-   | :ref:`bool<class_bool>`             | :ref:`skins/use_named_skins<class_ResourceImporterScene_property_skins/use_named_skins>`                         | ``true``         |
-   +-------------------------------------+------------------------------------------------------------------------------------------------------------------+------------------+
+   +-------------------------------------+------------------------------------------------------------------------------------------------------------------+-----------+
+   | :ref:`Dictionary<class_Dictionary>` | :ref:`_subresources<class_ResourceImporterScene_property__subresources>`                                         | ``{}``    |
+   +-------------------------------------+------------------------------------------------------------------------------------------------------------------+-----------+
+   | :ref:`float<class_float>`           | :ref:`animation/fps<class_ResourceImporterScene_property_animation/fps>`                                         | ``30``    |
+   +-------------------------------------+------------------------------------------------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`             | :ref:`animation/import<class_ResourceImporterScene_property_animation/import>`                                   | ``true``  |
+   +-------------------------------------+------------------------------------------------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`             | :ref:`animation/remove_immutable_tracks<class_ResourceImporterScene_property_animation/remove_immutable_tracks>` | ``true``  |
+   +-------------------------------------+------------------------------------------------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`             | :ref:`animation/trimming<class_ResourceImporterScene_property_animation/trimming>`                               | ``false`` |
+   +-------------------------------------+------------------------------------------------------------------------------------------------------------------+-----------+
+   | :ref:`String<class_String>`         | :ref:`import_script/path<class_ResourceImporterScene_property_import_script/path>`                               | ``""``    |
+   +-------------------------------------+------------------------------------------------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`             | :ref:`meshes/create_shadow_meshes<class_ResourceImporterScene_property_meshes/create_shadow_meshes>`             | ``true``  |
+   +-------------------------------------+------------------------------------------------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`             | :ref:`meshes/ensure_tangents<class_ResourceImporterScene_property_meshes/ensure_tangents>`                       | ``true``  |
+   +-------------------------------------+------------------------------------------------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`             | :ref:`meshes/generate_lods<class_ResourceImporterScene_property_meshes/generate_lods>`                           | ``true``  |
+   +-------------------------------------+------------------------------------------------------------------------------------------------------------------+-----------+
+   | :ref:`int<class_int>`               | :ref:`meshes/light_baking<class_ResourceImporterScene_property_meshes/light_baking>`                             | ``1``     |
+   +-------------------------------------+------------------------------------------------------------------------------------------------------------------+-----------+
+   | :ref:`float<class_float>`           | :ref:`meshes/lightmap_texel_size<class_ResourceImporterScene_property_meshes/lightmap_texel_size>`               | ``0.2``   |
+   +-------------------------------------+------------------------------------------------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`             | :ref:`nodes/apply_root_scale<class_ResourceImporterScene_property_nodes/apply_root_scale>`                       | ``true``  |
+   +-------------------------------------+------------------------------------------------------------------------------------------------------------------+-----------+
+   | :ref:`String<class_String>`         | :ref:`nodes/root_name<class_ResourceImporterScene_property_nodes/root_name>`                                     | ``""``    |
+   +-------------------------------------+------------------------------------------------------------------------------------------------------------------+-----------+
+   | :ref:`float<class_float>`           | :ref:`nodes/root_scale<class_ResourceImporterScene_property_nodes/root_scale>`                                   | ``1.0``   |
+   +-------------------------------------+------------------------------------------------------------------------------------------------------------------+-----------+
+   | :ref:`String<class_String>`         | :ref:`nodes/root_type<class_ResourceImporterScene_property_nodes/root_type>`                                     | ``""``    |
+   +-------------------------------------+------------------------------------------------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`             | :ref:`skins/use_named_skins<class_ResourceImporterScene_property_skins/use_named_skins>`                         | ``true``  |
+   +-------------------------------------+------------------------------------------------------------------------------------------------------------------+-----------+
 
 .. rst-class:: classref-section-separator
 
@@ -225,7 +225,7 @@ Controls the size of each texel on the baked lightmap. A smaller value results i
 
 :ref:`bool<class_bool>` **nodes/apply_root_scale** = ``true``
 
-If ``true``, :ref:`nodes/root_scale<class_ResourceImporterScene_property_nodes/root_scale>` will be applied on the meshes and animations directly, while keeping the root node's scale to the default ``(1, 1, 1)``. This means that if you add a child node later on within the imported scene, it won't be scaled. If disabled, :ref:`nodes/root_scale<class_ResourceImporterScene_property_nodes/root_scale>` will multiply the scale of the root node instead.
+If ``true``, :ref:`nodes/root_scale<class_ResourceImporterScene_property_nodes/root_scale>` will be applied to the descendant nodes, meshes, animations, bones, etc. This means that if you add a child node later on within the imported scene, it won't be scaled. If ``false``, :ref:`nodes/root_scale<class_ResourceImporterScene_property_nodes/root_scale>` will multiply the scale of the root node instead.
 
 .. rst-class:: classref-item-separator
 
@@ -235,9 +235,9 @@ If ``true``, :ref:`nodes/root_scale<class_ResourceImporterScene_property_nodes/r
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **nodes/root_name** = ``"Scene Root"``
+:ref:`String<class_String>` **nodes/root_name** = ``""``
 
-The name of the root node in the imported scene. This is generally not noticeable when instancing the scene in the editor (or drag-and-dropping from the FileSystem dock), as the root node is renamed to match the filename in this case.
+Override for the root node name. If empty, the root node will use what the scene specifies, or the file name if the scene does not specify a root name.
 
 .. rst-class:: classref-item-separator
 
@@ -249,7 +249,7 @@ The name of the root node in the imported scene. This is generally not noticeabl
 
 :ref:`float<class_float>` **nodes/root_scale** = ``1.0``
 
-The scale of meshes and animations (if :ref:`nodes/apply_root_scale<class_ResourceImporterScene_property_nodes/apply_root_scale>` is ``true``), or the scale of the root node in the imported scene (if :ref:`nodes/apply_root_scale<class_ResourceImporterScene_property_nodes/apply_root_scale>` is ``false``).
+The uniform scale to use for the scene root. The default value of ``1.0`` will not perform any rescaling. See :ref:`nodes/apply_root_scale<class_ResourceImporterScene_property_nodes/apply_root_scale>` for details of how this scale is applied.
 
 .. rst-class:: classref-item-separator
 
@@ -259,9 +259,9 @@ The scale of meshes and animations (if :ref:`nodes/apply_root_scale<class_Resour
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **nodes/root_type** = ``"Node3D"``
+:ref:`String<class_String>` **nodes/root_type** = ``""``
 
-The node type to use as a root node. Using node types that inherit from :ref:`Node3D<class_Node3D>` is recommended. Otherwise, you'll lose the ability to position the node directly in the 3D editor.
+Override for the root node type. If empty, the root node will use what the scene specifies, or :ref:`Node3D<class_Node3D>` if the scene does not specify a root type. Using a node type that inherits from :ref:`Node3D<class_Node3D>` is recommended. Otherwise, you'll lose the ability to position the node directly in the 3D editor.
 
 .. rst-class:: classref-item-separator
 

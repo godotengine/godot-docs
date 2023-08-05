@@ -277,7 +277,7 @@ For more information see `Gradle documentation on dependency management <https:/
 
 Virtual method to be overridden by the user. This is called to retrieve the local paths of the Android libraries archive (AAR) files provided by this plugin.
 
-\ **Note:** Relative paths \*\*must\*\* be relative to Godot's ``res://addons/`` directory. For example, an AAR file located under ``res://addons/hello_world_plugin/HelloWorld.release.aar`` can be returned as an absolute path using ``res://addons/hello_world_plugin/HelloWorld.release.aar`` or a relative path using ``hello_world_plugin/HelloWorld.release.aar``.
+\ **Note:** Relative paths **must** be relative to Godot's ``res://addons/`` directory. For example, an AAR file located under ``res://addons/hello_world_plugin/HelloWorld.release.aar`` can be returned as an absolute path using ``res://addons/hello_world_plugin/HelloWorld.release.aar`` or a relative path using ``hello_world_plugin/HelloWorld.release.aar``.
 
 \ **Note:** Only supported on Android and requires :ref:`EditorExportPlatformAndroid.gradle_build/use_gradle_build<class_EditorExportPlatformAndroid_property_gradle_build/use_gradle_build>` to be enabled.
 
