@@ -402,7 +402,7 @@ Becomes:
 
 ::
 
-    for i in range(10, 0, -1):
+    for i in range(9, -1, -1): # start(1st arg) is inclusive, end(2nd arg) is exclusive
         pass
 
 While
