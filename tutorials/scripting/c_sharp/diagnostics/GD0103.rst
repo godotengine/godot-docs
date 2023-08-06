@@ -1,0 +1,55 @@
+GD0103: The exported member is read-only
+========================================
+
+====================================  ======================================
+                                      Value
+====================================  ======================================
+**Rule ID**                           GD0103
+**Category**                          Usage
+**Fix is breaking or non-breaking**   Non-breaking
+**Enabled by default**                Yes
+====================================  ======================================
+
+Cause
+-----
+
+A read-only member is annotated with the ``[Export]`` attribute. Read-only members
+can't be exported.
+
+Rule description
+----------------
+
+Godot doesn't allow exporting read-only members.
+
+.. code-block:: csharp
+
+    // Read-only fields can't be exported.
+    [Export]
+    public readonly int invalidField;
+
+    // This field can be exported because it's not declared 'readonly'.
+    [Export]
+    public int validField;
+
+    // Read-only properties can't be exported.
+    [Export]
+    public int InvalidProperty { get; }
+
+    // This property can be exported because it has both a getter and a setter.
+    [Export]
+    public int ValidProperty { get; set; }
+
+How to fix violations
+---------------------
+
+To fix a violation of this rule for fields, remove the ``readonly`` keyword or
+remove the ``[Export]`` attribute.
+
+To fix a violation of this rule for properties, make sure the property declares
+both a getter and a setter, or remove the ``[Export]`` attribute.
+
+When to suppress warnings
+-------------------------
+
+Do not suppress a warning from this rule. Read-only members can't be exported so
+they will be ignored by Godot, resulting in runtime errors.
