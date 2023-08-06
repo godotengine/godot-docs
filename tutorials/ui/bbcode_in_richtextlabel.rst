@@ -754,7 +754,7 @@ Tornado
 
 .. image:: img/bbcode_in_richtextlabel_effect_tornado.webp
 
-Tornao makes the text move around in a circle. Its tag format is
+Tornado makes the text move around in a circle. Its tag format is
 ``[tornado radius=10.0 freq=1.0 connected=1]{text}[/tornado]``.
 
 ``radius`` is the radius of the circle that controls the offset, ``freq`` is how
