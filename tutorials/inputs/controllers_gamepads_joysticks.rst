@@ -242,18 +242,12 @@ with the following script and use it to check all your inputs:
                 focused = true
 
 
-    func input_is_action_pressed(action: StringName) -> bool:
-        if focused:
-            return Input.is_action_pressed(action)
-
-        return false
+    func is_input_action_pressed(action: StringName) -> bool:
+        return focused and Input.is_action_pressed(action)
 
 
-    func event_is_action_pressed(event: InputEvent, action: StringName) -> bool:
-        if focused:
-            return Input.is_action_pressed(action)
-
-        return false
+    func is_input_event_action_pressed(event: InputEvent, action: StringName) -> bool:
+        return focused and event.is_action_pressed(action)
 
 Then, instead of using ``Input.is_action_pressed(action)``, use
 ``Focus.input_is_action_pressed(action)`` where ``action`` is the name of
