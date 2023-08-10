@@ -3,7 +3,7 @@
 Upgrading from Godot 4.0 to Godot 4.1
 =====================================
 
-For most games and apps made with 4.0 it should be relatively safe to migrate to 4.1.
+For most games and apps made with 4.0, it should be relatively safe to migrate to 4.1.
 This page intends to cover everything you need to pay attention to when migrating
 your project.
 
@@ -14,7 +14,8 @@ If you are migrating from 4.0 to 4.1, the breaking changes listed here might
 affect you. Changes are grouped by areas/systems.
 
 .. warning::
-    The GDExtension API completely breaks compatibility in 4.1 so it's not included
+
+    The GDExtension API completely breaks compatibility in 4.1, so it's not included
     in the table below. See the :ref:`updating_your_gdextension_for_godot_4_1` section
     for more information.
 
