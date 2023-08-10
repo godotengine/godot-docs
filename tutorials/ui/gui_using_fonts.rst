@@ -740,7 +740,7 @@ To avoid stuttering issues related to font rendering, it is possible to
 *prerender* certain glyphs. This can be done for all glyphs you intend to use
 (for optimal results), or only for common glyphs that are most likely to appear
 during gameplay (to reduce file size). Glyphs that aren't pre-rendered will be
-rasterizd on-the-fly as usual.
+rasterized on-the-fly as usual.
 
 .. note::
 
