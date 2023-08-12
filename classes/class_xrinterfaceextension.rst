@@ -286,7 +286,7 @@ Returns a :ref:`PackedStringArray<class_PackedStringArray>` with tracker names c
 
 :ref:`Dictionary<class_Dictionary>` **_get_system_info** **(** **)** |virtual| |const|
 
-Returns a :ref:`Dictionary<class_Dictionary>` with system informationr elated to this interface.
+Returns a :ref:`Dictionary<class_Dictionary>` with system information related to this interface.
 
 .. rst-class:: classref-item-separator
 

@@ -488,7 +488,7 @@ Returns the names of all audio output devices detected on the system.
 
 :ref:`float<class_float>` **get_output_latency** **(** **)** |const|
 
-Returns the audio driver's output latency.
+Returns the audio driver's output latency. This can be expensive, it is not recommended to call this every frame.
 
 .. rst-class:: classref-item-separator
 

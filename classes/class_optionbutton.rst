@@ -142,7 +142,7 @@ Theme Properties
    +-----------------------------------+------------------------------------------------------------------------------------------+-------------------------------------+
    | :ref:`int<class_int>`             | :ref:`arrow_margin<class_OptionButton_theme_constant_arrow_margin>`                      | ``4``                               |
    +-----------------------------------+------------------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`int<class_int>`             | :ref:`h_separation<class_OptionButton_theme_constant_h_separation>`                      | ``2``                               |
+   | :ref:`int<class_int>`             | :ref:`h_separation<class_OptionButton_theme_constant_h_separation>`                      | ``4``                               |
    +-----------------------------------+------------------------------------------------------------------------------------------+-------------------------------------+
    | :ref:`int<class_int>`             | :ref:`modulate_arrow<class_OptionButton_theme_constant_modulate_arrow>`                  | ``0``                               |
    +-----------------------------------+------------------------------------------------------------------------------------------+-------------------------------------+
@@ -712,7 +712,7 @@ The horizontal space between the arrow icon and the right edge of the button.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`int<class_int>` **h_separation** = ``2``
+:ref:`int<class_int>` **h_separation** = ``4``
 
 The horizontal space between **OptionButton**'s icon and text. Negative values will be treated as ``0`` when used.
 

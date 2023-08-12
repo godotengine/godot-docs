@@ -960,7 +960,7 @@ Allows an application to act as an AccountAuthenticator for the AccountManager.
 
 :ref:`bool<class_bool>` **permissions/battery_stats**
 
-Allows an application to collect battery statistics. Sett `BATTERY_STATS <https://developer.android.com/reference/android/Manifest.permission#BATTERY_STATS>`__.
+Allows an application to collect battery statistics. See `BATTERY_STATS <https://developer.android.com/reference/android/Manifest.permission#BATTERY_STATS>`__.
 
 .. rst-class:: classref-item-separator
 
@@ -2670,7 +2670,7 @@ If ``true``, allows the application to participate in the backup and restore inf
 
 :ref:`int<class_int>` **version/code**
 
-Machine-readable application version.
+Machine-readable application version. This must be incremented for every new release pushed to the Play Store.
 
 .. rst-class:: classref-item-separator
 
@@ -2682,7 +2682,7 @@ Machine-readable application version.
 
 :ref:`String<class_String>` **version/name**
 
-Application version visible to the user.
+Application version visible to the user. Falls back to :ref:`ProjectSettings.application/config/version<class_ProjectSettings_property_application/config/version>` if left empty.
 
 .. rst-class:: classref-item-separator
 

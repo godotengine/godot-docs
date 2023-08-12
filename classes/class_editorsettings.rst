@@ -30,7 +30,7 @@ Accessing the settings can be done using the following methods, such as:
 
  .. code-tab:: gdscript
 
-    var settings = get_editor_interface().get_editor_settings()
+    var settings = EditorInterface.get_editor_settings()
     # `settings.set("some/property", 10)` also works as this class overrides `_set()` internally.
     settings.set_setting("some/property", 10)
     # `settings.get("some/property")` also works as this class overrides `_get()` internally.
@@ -39,7 +39,7 @@ Accessing the settings can be done using the following methods, such as:
 
  .. code-tab:: csharp
 
-    EditorSettings settings = GetEditorInterface().GetEditorSettings();
+    EditorSettings settings = EditorInterface.Singleton.GetEditorSettings();
     // `settings.set("some/property", value)` also works as this class overrides `_set()` internally.
     settings.SetSetting("some/property", Value);
     // `settings.get("some/property", value)` also works as this class overrides `_get()` internally.

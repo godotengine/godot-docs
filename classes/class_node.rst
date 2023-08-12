@@ -889,7 +889,7 @@ Notification received from the OS when the screen's DPI has been changed. Only i
 
 **NOTIFICATION_VP_MOUSE_ENTER** = ``1010``
 
-Notification received when the mouse enters the viewport.
+Notification received when the mouse cursor enters the :ref:`Viewport<class_Viewport>`'s visible area, that is not occluded behind other :ref:`Control<class_Control>`\ s or :ref:`Window<class_Window>`\ s, provided its :ref:`Viewport.gui_disable_input<class_Viewport_property_gui_disable_input>` is ``false`` and regardless if it's currently focused or not.
 
 .. _class_Node_constant_NOTIFICATION_VP_MOUSE_EXIT:
 
@@ -897,7 +897,7 @@ Notification received when the mouse enters the viewport.
 
 **NOTIFICATION_VP_MOUSE_EXIT** = ``1011``
 
-Notification received when the mouse leaves the viewport.
+Notification received when the mouse cursor leaves the :ref:`Viewport<class_Viewport>`'s visible area, that is not occluded behind other :ref:`Control<class_Control>`\ s or :ref:`Window<class_Window>`\ s, provided its :ref:`Viewport.gui_disable_input<class_Viewport_property_gui_disable_input>` is ``false`` and regardless if it's currently focused or not.
 
 .. _class_Node_constant_NOTIFICATION_OS_MEMORY_WARNING:
 

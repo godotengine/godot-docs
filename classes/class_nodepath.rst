@@ -239,13 +239,13 @@ Returns all subnames concatenated with a colon character (``:``) as separator, i
 
  .. code-tab:: gdscript
 
-    var nodepath = NodePath("Path2D/PathFollow2D/Sprite2D:texture:load_path")
-    print(nodepath.get_concatenated_subnames()) # texture:load_path
+    var node_path = NodePath("Path2D/PathFollow2D/Sprite2D:texture:load_path")
+    print(node_path.get_concatenated_subnames()) # texture:load_path
 
  .. code-tab:: csharp
 
-    var nodepath = new NodePath("Path2D/PathFollow2D/Sprite2D:texture:load_path");
-    GD.Print(nodepath.GetConcatenatedSubnames()); // texture:load_path
+    var nodePath = new NodePath("Path2D/PathFollow2D/Sprite2D:texture:load_path");
+    GD.Print(nodePath.GetConcatenatedSubnames()); // texture:load_path
 
 
 
