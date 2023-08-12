@@ -291,7 +291,7 @@ Property Descriptions
 - void **set_basis** **(** :ref:`Basis<class_Basis>` value **)**
 - :ref:`Basis<class_Basis>` **get_basis** **(** **)**
 
-Direct access to the 3x3 basis of the :ref:`Transform3D<class_Transform3D>` property.
+Direct access to the 3x3 basis of the :ref:`transform<class_Node3D_property_transform>` property.
 
 .. rst-class:: classref-item-separator
 

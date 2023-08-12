@@ -21,7 +21,7 @@ Description
 
 This object manages all 3D rendering buffers for the rendering device based renderers. An instance of this object is created for every viewport that has 3D rendering enabled.
 
-All buffers are organised in **contexts**. The default context is called **render_buffers** and can contain amongst others the color buffer, depth buffer, velocity buffers, VRS density map and MSAA variants of these buffers.
+All buffers are organized in **contexts**. The default context is called **render_buffers** and can contain amongst others the color buffer, depth buffer, velocity buffers, VRS density map and MSAA variants of these buffers.
 
 Buffers are only guaranteed to exist during rendering of the viewport.
 
@@ -258,7 +258,7 @@ Returns the texture size of a given slice of a cached texture.
 
 :ref:`bool<class_bool>` **get_use_taa** **(** **)** |const|
 
-Returns **true** if TAA is enabled.
+Returns ``true`` if TAA is enabled.
 
 .. rst-class:: classref-item-separator
 
@@ -306,7 +306,7 @@ Returns the view count for the associated viewport.
 
 :ref:`bool<class_bool>` **has_texture** **(** :ref:`StringName<class_StringName>` context, :ref:`StringName<class_StringName>` name **)** |const|
 
-Returns **true** if a cached texture exists for this name.
+Returns ``true`` if a cached texture exists for this name.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

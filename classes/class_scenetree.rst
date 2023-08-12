@@ -307,7 +307,9 @@ For mobile platforms, see :ref:`quit_on_go_back<class_SceneTree_property_quit_on
 - void **set_current_scene** **(** :ref:`Node<class_Node>` value **)**
 - :ref:`Node<class_Node>` **get_current_scene** **(** **)**
 
-The current scene.
+Returns the root node of the currently running scene, regardless of its structure.
+
+\ **Warning:** Setting this directly might not work as expected, and will *not* add or remove any nodes from the tree, consider using :ref:`change_scene_to_file<class_SceneTree_method_change_scene_to_file>` or :ref:`change_scene_to_packed<class_SceneTree_method_change_scene_to_packed>` instead.
 
 .. rst-class:: classref-item-separator
 

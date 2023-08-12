@@ -240,9 +240,7 @@ Defines the behavior in physics when :ref:`Node.process_mode<class_Node_property
 - void **set_linear_stiffness** **(** :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_linear_stiffness** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Higher values will result in a stiffer body, while lower values will increase the body's ability to bend. The value can be between ``0.0`` and ``1.0`` (inclusive).
 
 .. rst-class:: classref-item-separator
 
