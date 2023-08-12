@@ -91,7 +91,7 @@ Click on it and drag it towards the center of the view.
 Play the game by pressing :kbd:`F5` (:kbd:`Cmd + B` on macOS). You should see it fall.
 
 Now, we want to create more instances of the Ball node. With the ball still
-selected, press :kbd:`Ctrl-D` (:kbd:`Cmd-D` on macOS) to call the duplicate
+selected, press :kbd:`Ctrl + D` (:kbd:`Cmd + D` on macOS) to call the duplicate
 command. Click and drag to move the new ball to a different location.
 
 .. image:: img/instancing_ball_duplicated.png
