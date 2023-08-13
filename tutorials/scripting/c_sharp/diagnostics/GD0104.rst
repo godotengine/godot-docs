@@ -1,0 +1,46 @@
+GD0104: The exported property is write-only
+===========================================
+
+====================================  ======================================
+                                      Value
+====================================  ======================================
+**Rule ID**                           GD0104
+**Category**                          Usage
+**Fix is breaking or non-breaking**   Non-breaking
+**Enabled by default**                Yes
+====================================  ======================================
+
+Cause
+-----
+
+A write-only property is annotated with the ``[Export]`` attribute. Write-only properties
+can't be exported.
+
+Rule description
+----------------
+
+Godot doesn't allow exporting write-only properties.
+
+.. code-block:: csharp
+
+    private int _backingField;
+
+    // Write-only properties can't be exported.
+    [Export]
+    public int InvalidProperty { set => _backingField = value; }
+
+    // This property can be exported because it has both a getter and a setter.
+    [Export]
+    public int ValidProperty { get; set; }
+
+How to fix violations
+---------------------
+
+To fix a violation of this rule, make sure the property declares
+both a getter and a setter, or remove the ``[Export]`` attribute.
+
+When to suppress warnings
+-------------------------
+
+Do not suppress a warning from this rule. Write-only members can't be exported so
+they will be ignored by Godot, resulting in runtime errors.
