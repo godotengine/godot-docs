@@ -40,7 +40,7 @@ nodes.
 
 .. image:: img/key_concepts_character_nodes.webp
 
-It is made of a ``CharacterBody2D`` node named "Character", a ``Sprite2D``, a
+It is made of a ``CharacterBody2D`` node named "Player", a ``Sprite2D``, a
 ``Camera2D``, and a ``CollisionShape2D``.
 
 .. note:: The node names end with "2D" because this is a 2D scene. Their 3D
