@@ -26,7 +26,8 @@ the Player scene.
 
 In the :ref:`RigidBody2D <class_RigidBody2D>` properties, set ``Gravity Scale``
 to ``0``, so the mob will not fall downward. In addition, under the
-:ref:`CollisionObject2D <class_CollisionObject2D>` section, uncheck the ``1`` inside the ``Mask`` property.
+:ref:`CanvasItem <class_CanvasItem>` section of the
+:ref:`CollisionShape2D <class_CollisionShape2D>` node, uncheck the ``1`` inside the ``Light Mask`` property.
 This will ensure the mobs do not collide with each other.
 
 .. image:: img/set_collision_mask.webp
