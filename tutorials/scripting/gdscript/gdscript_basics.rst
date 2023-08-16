@@ -728,15 +728,22 @@ native or user class, or enum. Nested array types (like ``Array[Array[int]]``) a
     Arrays are passed by reference, so the array element type is also an attribute of the in-memory
     structure referenced by a variable in runtime. The static type of a variable restricts the structures
     that it can reference to. Therefore, you **cannot** assign an array with a different element type,
-    even if the type is a subtype of the required type::
+    even if the type is a subtype of the required type.
+
+    If you want to *convert* a typed array, you can create a new array and use the
+    :ref:`Array.assign() <class_Array_method_assign>` method::
 
         var a: Array[Node2D] = [Node2D.new()]
 
-        # OK. You can add the value to the array because `Node2D` extends `Node`.
+        # (OK) You can add the value to the array because `Node2D` extends `Node`.
         var b: Array[Node] = [a[0]]
 
-        # Error. You cannot assign an `Array[Node2D]` to an `Array[Node]` variable.
+        # (Error) You cannot assign an `Array[Node2D]` to an `Array[Node]` variable.
         b = a
+
+        # (OK) But you can use the `assign()` method instead. Unlike the `=` operator,
+        # the `assign()` method copies the contents of the array, not the reference.
+        b.assign(a)
 
     The only exception was made for the ``Array`` (``Array[Variant]``) type, for user convenience
     and compatibility with old code. However, operations on untyped arrays are considered unsafe.
