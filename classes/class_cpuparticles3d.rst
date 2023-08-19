@@ -12,7 +12,7 @@ CPUParticles3D
 
 **Inherits:** :ref:`GeometryInstance3D<class_GeometryInstance3D>` **<** :ref:`VisualInstance3D<class_VisualInstance3D>` **<** :ref:`Node3D<class_Node3D>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-CPU-based 3D particle emitter.
+A CPU-based 3D particle emitter.
 
 .. rst-class:: classref-introduction-group
 

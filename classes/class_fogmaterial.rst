@@ -12,7 +12,7 @@ FogMaterial
 
 **Inherits:** :ref:`Material<class_Material>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-:ref:`Material<class_Material>` used with a :ref:`FogVolume<class_FogVolume>` to draw things with the volumetric fog effect.
+A material that controls how volumetric fog is rendered, to be assigned to a :ref:`FogVolume<class_FogVolume>`.
 
 .. rst-class:: classref-introduction-group
 

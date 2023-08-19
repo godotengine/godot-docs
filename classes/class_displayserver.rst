@@ -1576,7 +1576,11 @@ Callbacks have the following arguments: ``bool status, PackedStringArray selecte
 
 \ **Note:** This method is implemented if the display server has the ``FEATURE_NATIVE_DIALOG`` feature.
 
-\ **Note:** This method is implemented on Windows and macOS.
+\ **Note:** This method is implemented on Linux, Windows and macOS.
+
+\ **Note:** ``current_directory`` might be ignored.
+
+\ **Note:** On Linux, ``show_hidden`` is ignored.
 
 \ **Note:** On macOS, native file dialogs have no title.
 

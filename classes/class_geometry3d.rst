@@ -38,6 +38,8 @@ Methods
    +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`PackedVector3Array<class_PackedVector3Array>` | :ref:`clip_polygon<class_Geometry3D_method_clip_polygon>` **(** :ref:`PackedVector3Array<class_PackedVector3Array>` points, :ref:`Plane<class_Plane>` plane **)**                                                                                                           |
    +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PackedVector3Array<class_PackedVector3Array>` | :ref:`compute_convex_mesh_points<class_Geometry3D_method_compute_convex_mesh_points>` **(** :ref:`Plane[]<class_Plane>` planes **)**                                                                                                                                        |
+   +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Vector3<class_Vector3>`                       | :ref:`get_closest_point_to_segment<class_Geometry3D_method_get_closest_point_to_segment>` **(** :ref:`Vector3<class_Vector3>` point, :ref:`Vector3<class_Vector3>` s1, :ref:`Vector3<class_Vector3>` s2 **)**                                                               |
    +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Vector3<class_Vector3>`                       | :ref:`get_closest_point_to_segment_uncapped<class_Geometry3D_method_get_closest_point_to_segment_uncapped>` **(** :ref:`Vector3<class_Vector3>` point, :ref:`Vector3<class_Vector3>` s1, :ref:`Vector3<class_Vector3>` s2 **)**                                             |
@@ -109,6 +111,18 @@ Returns an array of :ref:`Plane<class_Plane>`\ s closely bounding a faceted cyli
 :ref:`PackedVector3Array<class_PackedVector3Array>` **clip_polygon** **(** :ref:`PackedVector3Array<class_PackedVector3Array>` points, :ref:`Plane<class_Plane>` plane **)**
 
 Clips the polygon defined by the points in ``points`` against the ``plane`` and returns the points of the clipped polygon.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Geometry3D_method_compute_convex_mesh_points:
+
+.. rst-class:: classref-method
+
+:ref:`PackedVector3Array<class_PackedVector3Array>` **compute_convex_mesh_points** **(** :ref:`Plane[]<class_Plane>` planes **)**
+
+Calculates and returns all the vertex points of a convex shape defined by an array of ``planes``.
 
 .. rst-class:: classref-item-separator
 

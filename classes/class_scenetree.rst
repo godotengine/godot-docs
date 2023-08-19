@@ -673,6 +673,8 @@ Returns an array of currently existing :ref:`Tween<class_Tween>`\ s in the **Sce
 
 Returns ``true`` if the given group exists.
 
+A group exists if any :ref:`Node<class_Node>` in the tree belongs to it (see :ref:`Node.add_to_group<class_Node_method_add_to_group>`). Groups without nodes are removed automatically.
+
 .. rst-class:: classref-item-separator
 
 ----

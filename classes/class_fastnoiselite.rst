@@ -21,7 +21,7 @@ Description
 
 This class generates noise using the FastNoiseLite library, which is a collection of several noise algorithms including Cellular, Perlin, Value, and more.
 
-Most generated noise values are in the range of ``[-1,1]``, however not always. Some of the cellular noise algorithms return results above ``1``.
+Most generated noise values are in the range of ``[-1, 1]``, but not always. Some of the cellular noise algorithms return results above ``1``.
 
 .. rst-class:: classref-reftable-group
 
@@ -34,7 +34,7 @@ Properties
    +------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+----------------------+
    | :ref:`CellularDistanceFunction<enum_FastNoiseLite_CellularDistanceFunction>` | :ref:`cellular_distance_function<class_FastNoiseLite_property_cellular_distance_function>`         | ``0``                |
    +------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+----------------------+
-   | :ref:`float<class_float>`                                                    | :ref:`cellular_jitter<class_FastNoiseLite_property_cellular_jitter>`                               | ``0.45``             |
+   | :ref:`float<class_float>`                                                    | :ref:`cellular_jitter<class_FastNoiseLite_property_cellular_jitter>`                               | ``1.0``              |
    +------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+----------------------+
    | :ref:`CellularReturnType<enum_FastNoiseLite_CellularReturnType>`             | :ref:`cellular_return_type<class_FastNoiseLite_property_cellular_return_type>`                     | ``1``                |
    +------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+----------------------+
@@ -388,7 +388,7 @@ Determines how the distance to the nearest/second-nearest point is computed. See
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **cellular_jitter** = ``0.45``
+:ref:`float<class_float>` **cellular_jitter** = ``1.0``
 
 .. rst-class:: classref-property-setget
 

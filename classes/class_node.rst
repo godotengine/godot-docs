@@ -813,9 +813,9 @@ Notification received right after the scene with the node is saved in the editor
 
 **NOTIFICATION_WM_MOUSE_ENTER** = ``1002``
 
-Notification received from the OS when the mouse enters the game window.
+Notification received when the mouse enters the window.
 
-Implemented on desktop and web platforms.
+Implemented for embedded windows and on desktop and web platforms.
 
 .. _class_Node_constant_NOTIFICATION_WM_MOUSE_EXIT:
 
@@ -823,9 +823,9 @@ Implemented on desktop and web platforms.
 
 **NOTIFICATION_WM_MOUSE_EXIT** = ``1003``
 
-Notification received from the OS when the mouse leaves the game window.
+Notification received when the mouse leaves the window.
 
-Implemented on desktop and web platforms.
+Implemented for embedded windows and on desktop and web platforms.
 
 .. _class_Node_constant_NOTIFICATION_WM_WINDOW_FOCUS_IN:
 

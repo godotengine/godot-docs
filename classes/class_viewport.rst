@@ -169,6 +169,8 @@ Methods
    +-----------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                                                       | :ref:`get_canvas_cull_mask_bit<class_Viewport_method_get_canvas_cull_mask_bit>` **(** :ref:`int<class_int>` layer **)** |const|                                                                                                                                        |
    +-----------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Window[]<class_Window>`                                                                 | :ref:`get_embedded_subwindows<class_Viewport_method_get_embedded_subwindows>` **(** **)** |const|                                                                                                                                                                      |
+   +-----------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Transform2D<class_Transform2D>`                                                         | :ref:`get_final_transform<class_Viewport_method_get_final_transform>` **(** **)** |const|                                                                                                                                                                              |
    +-----------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Vector2<class_Vector2>`                                                                 | :ref:`get_mouse_position<class_Viewport_method_get_mouse_position>` **(** **)** |const|                                                                                                                                                                                |
@@ -1834,6 +1836,20 @@ Returns the currently active 3D camera.
 :ref:`bool<class_bool>` **get_canvas_cull_mask_bit** **(** :ref:`int<class_int>` layer **)** |const|
 
 Returns an individual bit on the rendering layer mask.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Viewport_method_get_embedded_subwindows:
+
+.. rst-class:: classref-method
+
+:ref:`Window[]<class_Window>` **get_embedded_subwindows** **(** **)** |const|
+
+Returns a list of the visible embedded :ref:`Window<class_Window>`\ s inside the viewport.
+
+\ **Note:** :ref:`Window<class_Window>`\ s inside other viewports will not be listed.
 
 .. rst-class:: classref-item-separator
 

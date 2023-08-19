@@ -12,7 +12,7 @@ Cubemap
 
 **Inherits:** :ref:`ImageTextureLayered<class_ImageTextureLayered>` **<** :ref:`TextureLayered<class_TextureLayered>` **<** :ref:`Texture<class_Texture>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-6-sided texture typically used in 3D rendering.
+Six square textures representing the faces of a cube. Commonly used as a skybox.
 
 .. rst-class:: classref-introduction-group
 

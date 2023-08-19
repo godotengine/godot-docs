@@ -14,14 +14,14 @@ Material
 
 **Inherited By:** :ref:`BaseMaterial3D<class_BaseMaterial3D>`, :ref:`CanvasItemMaterial<class_CanvasItemMaterial>`, :ref:`FogMaterial<class_FogMaterial>`, :ref:`PanoramaSkyMaterial<class_PanoramaSkyMaterial>`, :ref:`ParticleProcessMaterial<class_ParticleProcessMaterial>`, :ref:`PhysicalSkyMaterial<class_PhysicalSkyMaterial>`, :ref:`PlaceholderMaterial<class_PlaceholderMaterial>`, :ref:`ProceduralSkyMaterial<class_ProceduralSkyMaterial>`, :ref:`ShaderMaterial<class_ShaderMaterial>`
 
-Abstract base :ref:`Resource<class_Resource>` for coloring and shading geometry.
+Abstract base class for applying visual properties to an object, such as color and roughness.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-Material is a base :ref:`Resource<class_Resource>` used for coloring and shading geometry. All materials inherit from it and almost all :ref:`VisualInstance3D<class_VisualInstance3D>` derived nodes carry a Material. A few flags and parameters are shared between all material types and are configured here.
+**Material** is a base resource used for coloring and shading geometry. All materials inherit from it and almost all :ref:`VisualInstance3D<class_VisualInstance3D>` derived nodes carry a **Material**. A few flags and parameters are shared between all material types and are configured here.
 
 .. rst-class:: classref-introduction-group
 

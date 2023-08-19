@@ -102,6 +102,8 @@ Methods
    +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                              | :ref:`select<class_OptionButton_method_select>` **(** :ref:`int<class_int>` idx **)**                                                                                               |
    +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                              | :ref:`set_disable_shortcuts<class_OptionButton_method_set_disable_shortcuts>` **(** :ref:`bool<class_bool>` disabled **)**                                                          |
+   +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                              | :ref:`set_item_disabled<class_OptionButton_method_set_item_disabled>` **(** :ref:`int<class_int>` idx, :ref:`bool<class_bool>` disabled **)**                                       |
    +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                              | :ref:`set_item_icon<class_OptionButton_method_set_item_icon>` **(** :ref:`int<class_int>` idx, :ref:`Texture2D<class_Texture2D>` texture **)**                                      |
@@ -516,6 +518,18 @@ void **select** **(** :ref:`int<class_int>` idx **)**
 Selects an item by index and makes it the current item. This will work even if the item is disabled.
 
 Passing ``-1`` as the index deselects any currently selected item.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_OptionButton_method_set_disable_shortcuts:
+
+.. rst-class:: classref-method
+
+void **set_disable_shortcuts** **(** :ref:`bool<class_bool>` disabled **)**
+
+If ``true``, shortcuts are disabled and cannot be used to trigger the button.
 
 .. rst-class:: classref-item-separator
 

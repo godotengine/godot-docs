@@ -12,7 +12,7 @@ FogVolume
 
 **Inherits:** :ref:`VisualInstance3D<class_VisualInstance3D>` **<** :ref:`Node3D<class_Node3D>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-A node used to add local fog with the volumetric fog effect.
+A region that contributes to the default volumetric fog from the world environment.
 
 .. rst-class:: classref-introduction-group
 

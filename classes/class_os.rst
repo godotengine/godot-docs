@@ -1258,7 +1258,7 @@ Returns ``true`` if the project will automatically restart when it exits for any
 
 Returns ``true`` if application is running in the sandbox.
 
-\ **Note:** This method is implemented on macOS.
+\ **Note:** This method is implemented on macOS and Linux.
 
 .. rst-class:: classref-item-separator
 

@@ -12,7 +12,7 @@ PhysicalSkyMaterial
 
 **Inherits:** :ref:`Material<class_Material>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-:ref:`Sky<class_Sky>` :ref:`Material<class_Material>` used for a physically based sky.
+A material that defines a sky for a :ref:`Sky<class_Sky>` resource by a set of physical properties.
 
 .. rst-class:: classref-introduction-group
 

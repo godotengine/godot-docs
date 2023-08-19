@@ -92,6 +92,8 @@ Properties
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`package/show_in_android_tv<class_EditorExportPlatformAndroid_property_package/show_in_android_tv>`                                         |
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`package/show_in_app_library<class_EditorExportPlatformAndroid_property_package/show_in_app_library>`                                       |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`package/signed<class_EditorExportPlatformAndroid_property_package/signed>`                                                                 |
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                       | :ref:`package/unique_name<class_EditorExportPlatformAndroid_property_package/unique_name>`                                                       |
@@ -793,6 +795,20 @@ If ``true``, the user will be able to set this app as the system launcher in And
 :ref:`bool<class_bool>` **package/show_in_android_tv**
 
 If ``true``, this app will show in Android TV launcher UI.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformAndroid_property_package/show_in_app_library:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **package/show_in_app_library**
+
+If ``true``, this app will show in the device's app library.
+
+\ **Note:** This is ``true`` by default.
 
 .. rst-class:: classref-item-separator
 

@@ -261,6 +261,8 @@ Theme Properties
    +-----------------------------------+------------------------------------------------------------------------------------------+-----------------------------------+
    | :ref:`int<class_int>`             | :ref:`font_size<class_Tree_theme_font_size_font_size>`                                   |                                   |
    +-----------------------------------+------------------------------------------------------------------------------------------+-----------------------------------+
+   | :ref:`int<class_int>`             | :ref:`title_button_font_size<class_Tree_theme_font_size_title_button_font_size>`         |                                   |
+   +-----------------------------------+------------------------------------------------------------------------------------------+-----------------------------------+
    | :ref:`Texture2D<class_Texture2D>` | :ref:`arrow<class_Tree_theme_icon_arrow>`                                                |                                   |
    +-----------------------------------+------------------------------------------------------------------------------------------+-----------------------------------+
    | :ref:`Texture2D<class_Texture2D>` | :ref:`arrow_collapsed<class_Tree_theme_icon_arrow_collapsed>`                            |                                   |
@@ -1735,6 +1737,18 @@ The vertical padding inside each item, i.e. the distance between the item's cont
 :ref:`int<class_int>` **font_size**
 
 Font size of the item's text.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Tree_theme_font_size_title_button_font_size:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`int<class_int>` **title_button_font_size**
+
+Font size of the title button's text.
 
 .. rst-class:: classref-item-separator
 

@@ -12,14 +12,16 @@ GPUParticlesAttractorBox3D
 
 **Inherits:** :ref:`GPUParticlesAttractor3D<class_GPUParticlesAttractor3D>` **<** :ref:`VisualInstance3D<class_VisualInstance3D>` **<** :ref:`Node3D<class_Node3D>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-Box-shaped 3D particle attractor affecting :ref:`GPUParticles3D<class_GPUParticles3D>` nodes.
+A box-shaped attractor that influences particles from :ref:`GPUParticles3D<class_GPUParticles3D>` nodes.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-Box-shaped 3D particle attractor affecting :ref:`GPUParticles3D<class_GPUParticles3D>` nodes.
+A box-shaped attractor that influences particles from :ref:`GPUParticles3D<class_GPUParticles3D>` nodes. Can be used to attract particles towards its origin, or to push them away from its origin.
+
+Particle attractors work in real-time and can be moved, rotated and scaled during gameplay. Unlike collision shapes, non-uniform scaling of attractors is also supported.
 
 \ **Note:** Particle attractors only affect :ref:`GPUParticles3D<class_GPUParticles3D>`, not :ref:`CPUParticles3D<class_CPUParticles3D>`.
 

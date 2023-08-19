@@ -191,6 +191,8 @@ Methods
    +-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                         | :ref:`replacen<class_String_method_replacen>` **(** :ref:`String<class_String>` what, :ref:`String<class_String>` forwhat **)** |const|                                            |
    +-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                         | :ref:`reverse<class_String_method_reverse>` **(** **)** |const|                                                                                                                    |
+   +-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                               | :ref:`rfind<class_String_method_rfind>` **(** :ref:`String<class_String>` what, :ref:`int<class_int>` from=-1 **)** |const|                                                        |
    +-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                               | :ref:`rfindn<class_String_method_rfindn>` **(** :ref:`String<class_String>` what, :ref:`int<class_int>` from=-1 **)** |const|                                                      |
@@ -1457,6 +1459,18 @@ Replaces all occurrences of ``what`` inside the string with the given ``forwhat`
 :ref:`String<class_String>` **replacen** **(** :ref:`String<class_String>` what, :ref:`String<class_String>` forwhat **)** |const|
 
 Replaces all **case-insensitive** occurrences of ``what`` inside the string with the given ``forwhat``.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_String_method_reverse:
+
+.. rst-class:: classref-method
+
+:ref:`String<class_String>` **reverse** **(** **)** |const|
+
+Returns the copy of this string in reverse order.
 
 .. rst-class:: classref-item-separator
 
