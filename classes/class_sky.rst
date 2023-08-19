@@ -12,14 +12,14 @@ Sky
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-Background that uses a :ref:`Material<class_Material>` to draw a sky.
+Defines a 3D environment's background by using a :ref:`Material<class_Material>`.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-The **Sky** class uses a :ref:`Material<class_Material>` to draw the background and update the reflection/radiance cubemaps.
+The **Sky** class uses a :ref:`Material<class_Material>` to render a 3D environment's background and the light it emits by updating the reflection/radiance cubemaps.
 
 .. rst-class:: classref-reftable-group
 

@@ -41,6 +41,8 @@ Properties
    +-------------------------------+--------------------------------------------------------------------------+--------------------------------------+
    | :ref:`String<class_String>`   | :ref:`body_type<class_GLTFPhysicsBody_property_body_type>`               | ``"static"``                         |
    +-------------------------------+--------------------------------------------------------------------------+--------------------------------------+
+   | :ref:`Vector3<class_Vector3>` | :ref:`center_of_mass<class_GLTFPhysicsBody_property_center_of_mass>`     | ``Vector3(0, 0, 0)``                 |
+   +-------------------------------+--------------------------------------------------------------------------+--------------------------------------+
    | :ref:`Basis<class_Basis>`     | :ref:`inertia_tensor<class_GLTFPhysicsBody_property_inertia_tensor>`     | ``Basis(0, 0, 0, 0, 0, 0, 0, 0, 0)`` |
    +-------------------------------+--------------------------------------------------------------------------+--------------------------------------+
    | :ref:`Vector3<class_Vector3>` | :ref:`linear_velocity<class_GLTFPhysicsBody_property_linear_velocity>`   | ``Vector3(0, 0, 0)``                 |
@@ -103,7 +105,24 @@ The angular velocity of the physics body, in radians per second. This is only us
 - void **set_body_type** **(** :ref:`String<class_String>` value **)**
 - :ref:`String<class_String>` **get_body_type** **(** **)**
 
-The type of the body. Valid values are "static", "kinematic", "character", "rigid", "vehicle", and "trigger".
+The type of the body. When importing, this controls what type of :ref:`CollisionObject3D<class_CollisionObject3D>` node Godot should generate. Valid values are "static", "kinematic", "character", "rigid", "vehicle", and "trigger".
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_GLTFPhysicsBody_property_center_of_mass:
+
+.. rst-class:: classref-property
+
+:ref:`Vector3<class_Vector3>` **center_of_mass** = ``Vector3(0, 0, 0)``
+
+.. rst-class:: classref-property-setget
+
+- void **set_center_of_mass** **(** :ref:`Vector3<class_Vector3>` value **)**
+- :ref:`Vector3<class_Vector3>` **get_center_of_mass** **(** **)**
+
+The center of mass of the body, in meters. This is in local space relative to the body. By default, the center of the mass is the body's origin.
 
 .. rst-class:: classref-item-separator
 

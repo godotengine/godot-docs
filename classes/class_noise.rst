@@ -23,7 +23,7 @@ Description
 
 This class defines the interface for noise generation libraries to inherit from.
 
-A default get_seamless_noise() implementation is provided for libraries that do not provide seamless noise. This function requests a larger image from get_image(), reverses the quadrants of the image, then uses the strips of extra width to blend over the seams.
+A default :ref:`get_seamless_image<class_Noise_method_get_seamless_image>` implementation is provided for libraries that do not provide seamless noise. This function requests a larger image from the :ref:`get_image<class_Noise_method_get_image>` method, reverses the quadrants of the image, then uses the strips of extra width to blend over the seams.
 
 Inheriting noise classes can optionally override this function to provide a more optimal algorithm.
 

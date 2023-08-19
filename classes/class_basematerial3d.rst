@@ -14,21 +14,21 @@ BaseMaterial3D
 
 **Inherited By:** :ref:`ORMMaterial3D<class_ORMMaterial3D>`, :ref:`StandardMaterial3D<class_StandardMaterial3D>`
 
-Default 3D rendering material.
+Abstract base class for defining the 3D rendering properties of meshes.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-This provides a default material with a wide variety of rendering features and properties without the need to write shader code. See the tutorial below for details.
+This class serves as a default material with a wide variety of rendering features and properties without the need to write shader code. See the tutorial below for details.
 
 .. rst-class:: classref-introduction-group
 
 Tutorials
 ---------
 
-- :doc:`Standard Material 3D <../tutorials/3d/standard_material_3d>`
+- :doc:`Standard Material 3D and ORM Material 3D <../tutorials/3d/standard_material_3d>`
 
 .. rst-class:: classref-reftable-group
 

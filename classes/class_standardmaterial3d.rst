@@ -12,7 +12,7 @@ StandardMaterial3D
 
 **Inherits:** :ref:`BaseMaterial3D<class_BaseMaterial3D>` **<** :ref:`Material<class_Material>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-Physically based rendering (PBR) material that can be applied to 3D objects.
+A PBR (Physically Based Rendering) material to be used on 3D objects.
 
 .. rst-class:: classref-introduction-group
 

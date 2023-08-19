@@ -12,20 +12,20 @@ PlaceholderCubemapArray
 
 **Inherits:** :ref:`PlaceholderTextureLayered<class_PlaceholderTextureLayered>` **<** :ref:`TextureLayered<class_TextureLayered>` **<** :ref:`Texture<class_Texture>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-Placeholder class for a cubemap texture array.
+A :ref:`CubemapArray<class_CubemapArray>` without image data.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-This class is used when loading a project that uses a :ref:`CubemapArray<class_CubemapArray>` subclass in 2 conditions:
+This class replaces a :ref:`CubemapArray<class_CubemapArray>` or a :ref:`CubemapArray<class_CubemapArray>`-derived class in 2 conditions:
 
-- When running the project exported in dedicated server mode, only the texture's dimensions are kept (as they may be relied upon for gameplay purposes or positioning of other elements). This allows reducing the exported PCK's size significantly.
+- In dedicated server mode, where the image data shouldn't affect game logic. This allows reducing the exported PCK's size significantly.
 
-- When this subclass is missing due to using a different engine version or build (e.g. modules disabled).
+- When the :ref:`CubemapArray<class_CubemapArray>`-derived class is missing, for example when using a different engine version.
 
-\ **Note:** This is not intended to be used as an actual texture for rendering. It is not guaranteed to work like one in shaders or materials (for example when calculating UV).
+\ **Note:** This class is not intended for rendering or for use in shaders. Operations like calculating UV are not guaranteed to work.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

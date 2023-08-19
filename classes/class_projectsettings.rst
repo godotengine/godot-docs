@@ -1121,6 +1121,10 @@ Properties
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`navigation/avoidance/thread_model/avoidance_use_multiple_threads<class_ProjectSettings_property_navigation/avoidance/thread_model/avoidance_use_multiple_threads>`                                   | ``true``                                                                                         |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`navigation/baking/thread_model/baking_use_high_priority_threads<class_ProjectSettings_property_navigation/baking/thread_model/baking_use_high_priority_threads>`                                     | ``true``                                                                                         |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`navigation/baking/thread_model/baking_use_multiple_threads<class_ProjectSettings_property_navigation/baking/thread_model/baking_use_multiple_threads>`                                               | ``true``                                                                                         |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`network/limits/debugger/max_chars_per_second<class_ProjectSettings_property_network/limits/debugger/max_chars_per_second>`                                                                           | ``32768``                                                                                        |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`network/limits/debugger/max_errors_per_second<class_ProjectSettings_property_network/limits/debugger/max_errors_per_second>`                                                                         | ``400``                                                                                          |
@@ -1820,7 +1824,7 @@ If ``false``, a non-hidden directory (``godot``) will be used instead.
 
 :ref:`String<class_String>` **application/config/version** = ``""``
 
-The project's human-readable version identifier. This should always be set to a non-empty string, as some exporters rely on this value being defined.
+The project's human-readable version identifier. This is used by exporters if the version identifier isn't overridden there. If :ref:`application/config/version<class_ProjectSettings_property_application/config/version>` is an empty string and the version identifier isn't overridden in an exporter, the exporter will use ``1.0.0`` as a version identifier.
 
 .. rst-class:: classref-item-separator
 
@@ -1992,6 +1996,8 @@ If :ref:`display/window/vsync/vsync_mode<class_ProjectSettings_property_display/
 
 See also :ref:`physics/common/physics_ticks_per_second<class_ProjectSettings_property_physics/common/physics_ticks_per_second>`.
 
+This setting can be overridden using the ``--max-fps <fps;>`` command line argument (including with a value of ``0`` for unlimited framerate).
+
 \ **Note:** This property is only read when the project starts. To change the rendering FPS cap at runtime, set :ref:`Engine.max_fps<class_Engine_property_max_fps>` instead.
 
 .. rst-class:: classref-item-separator
@@ -2098,7 +2104,9 @@ Specifies the preferred output latency in milliseconds for audio. Lower values w
 
 Audio output latency may be constrained by the host operating system and audio hardware drivers. If the host can not provide the specified audio output latency then Godot will attempt to use the nearest latency allowed by the host. As such you should always use :ref:`AudioServer.get_output_latency<class_AudioServer_method_get_output_latency>` to determine the actual audio output latency.
 
-\ **Note:** This setting is ignored on all versions of Windows prior to Windows 10.
+Audio output latency can be overridden using the ``--audio-output-latency <ms>`` command line argument.
+
+\ **Note:** This setting is ignored on Android, and on all versions of Windows prior to Windows 10.
 
 .. rst-class:: classref-item-separator
 
@@ -8343,6 +8351,30 @@ If enabled and avoidance calculations use multiple threads the threads run with 
 :ref:`bool<class_bool>` **navigation/avoidance/thread_model/avoidance_use_multiple_threads** = ``true``
 
 If enabled the avoidance calculations use multiple threads.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_navigation/baking/thread_model/baking_use_high_priority_threads:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **navigation/baking/thread_model/baking_use_high_priority_threads** = ``true``
+
+If enabled and async navmesh baking uses multiple threads the threads run with high priority.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_navigation/baking/thread_model/baking_use_multiple_threads:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **navigation/baking/thread_model/baking_use_multiple_threads** = ``true``
+
+If enabled the async navmesh baking uses multiple threads.
 
 .. rst-class:: classref-item-separator
 
