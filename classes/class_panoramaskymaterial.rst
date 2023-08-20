@@ -12,14 +12,14 @@ PanoramaSkyMaterial
 
 **Inherits:** :ref:`Material<class_Material>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-A :ref:`Material<class_Material>` used with :ref:`Sky<class_Sky>` to draw a background texture.
+A material that provides a special texture to a :ref:`Sky<class_Sky>`, usually an HDR panorama.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-A resource referenced in a :ref:`Sky<class_Sky>` that is used to draw a background. The Panorama sky material functions similar to skyboxes in other engines, except it uses an equirectangular sky map instead of a cubemap.
+A resource referenced in a :ref:`Sky<class_Sky>` that is used to draw a background. **PanoramaSkyMaterial** functions similar to skyboxes in other engines, except it uses an equirectangular sky map instead of a :ref:`Cubemap<class_Cubemap>`.
 
 Using an HDR panorama is strongly recommended for accurate, high-quality reflections. Godot supports the Radiance HDR (``.hdr``) and OpenEXR (``.exr``) image formats for this purpose.
 

@@ -51,6 +51,8 @@ Properties
    +---------------------------------------------------------------+-------------------------------------------------------------------------------------+
    | :ref:`DisplayServer<class_DisplayServer>`                     | :ref:`DisplayServer<class_@GlobalScope_property_DisplayServer>`                     |
    +---------------------------------------------------------------+-------------------------------------------------------------------------------------+
+   | :ref:`EditorInterface<class_EditorInterface>`                 | :ref:`EditorInterface<class_@GlobalScope_property_EditorInterface>`                 |
+   +---------------------------------------------------------------+-------------------------------------------------------------------------------------+
    | :ref:`Engine<class_Engine>`                                   | :ref:`Engine<class_@GlobalScope_property_Engine>`                                   |
    +---------------------------------------------------------------+-------------------------------------------------------------------------------------+
    | :ref:`EngineDebugger<class_EngineDebugger>`                   | :ref:`EngineDebugger<class_@GlobalScope_property_EngineDebugger>`                   |
@@ -4725,6 +4727,20 @@ The :ref:`DisplayServer<class_DisplayServer>` singleton.
 
 ----
 
+.. _class_@GlobalScope_property_EditorInterface:
+
+.. rst-class:: classref-property
+
+:ref:`EditorInterface<class_EditorInterface>` **EditorInterface**
+
+The :ref:`EditorInterface<class_EditorInterface>` singleton.
+
+\ **Note:** Only available in editor builds.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_@GlobalScope_property_Engine:
 
 .. rst-class:: classref-property
@@ -5598,9 +5614,9 @@ Returns a human-readable name for the given :ref:`Error<enum_@GlobalScope_Error>
 
 :ref:`float<class_float>` **exp** **(** :ref:`float<class_float>` x **)**
 
-The natural exponential function. It raises the mathematical constant **e** to the power of ``x`` and returns it.
+The natural exponential function. It raises the mathematical constant *e* to the power of ``x`` and returns it.
 
-\ **e** has an approximate value of 2.71828, and can be obtained with ``exp(1)``.
+\ *e* has an approximate value of 2.71828, and can be obtained with ``exp(1)``.
 
 For exponents to other bases use the method :ref:`pow<class_@GlobalScope_method_pow>`.
 
@@ -6158,9 +6174,7 @@ Use a negative ``delta`` value to move away.
 
 :ref:`int<class_int>` **nearest_po2** **(** :ref:`int<class_int>` value **)**
 
-Returns the nearest equal or larger power of 2 for the integer ``value``.
-
-In other words, returns the smallest value ``a`` where ``a = pow(2, n)`` such that ``value <= a`` for some non-negative integer ``n``.
+Returns the smallest integer power of 2 that is greater than or equal to ``value``.
 
 ::
 
@@ -6171,7 +6185,7 @@ In other words, returns the smallest value ``a`` where ``a = pow(2, n)`` such th
     nearest_po2(0)  # Returns 0 (this may not be expected)
     nearest_po2(-1) # Returns 0 (this may not be expected)
 
-\ **Warning:** Due to the way it is implemented, this function returns ``0`` rather than ``1`` for negative values of ``value`` (in reality, 1 is the smallest integer power of 2).
+\ **Warning:** Due to its implementation, this method returns ``0`` rather than ``1`` for values less than or equal to ``0``, with an exception for ``value`` being the smallest negative 64-bit integer (``-9223372036854775808``) in which case the ``value`` is returned unchanged.
 
 .. rst-class:: classref-item-separator
 

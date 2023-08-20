@@ -12,18 +12,14 @@ ParticleProcessMaterial
 
 **Inherits:** :ref:`Material<class_Material>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-Particle properties for :ref:`GPUParticles3D<class_GPUParticles3D>` and :ref:`GPUParticles2D<class_GPUParticles2D>` nodes.
+Holds a particle configuration for :ref:`GPUParticles2D<class_GPUParticles2D>` or :ref:`GPUParticles3D<class_GPUParticles3D>` nodes.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-ParticleProcessMaterial defines particle properties and behavior. It is used in the ``process_material`` of :ref:`GPUParticles3D<class_GPUParticles3D>` and :ref:`GPUParticles2D<class_GPUParticles2D>` emitter nodes.
-
-Some of this material's properties are applied to each particle when emitted, while others can have a :ref:`CurveTexture<class_CurveTexture>` applied to vary values over the lifetime of the particle.
-
-Particle animation is available only in :ref:`GPUParticles2D<class_GPUParticles2D>`. To use it, attach a :ref:`CanvasItemMaterial<class_CanvasItemMaterial>`, with :ref:`CanvasItemMaterial.particles_animation<class_CanvasItemMaterial_property_particles_animation>` enabled, to the particles node.
+**ParticleProcessMaterial** defines particle properties and behavior. It is used in the ``process_material`` of the :ref:`GPUParticles2D<class_GPUParticles2D>` and :ref:`GPUParticles3D<class_GPUParticles3D>` nodes. Some of this material's properties are applied to each particle when emitted, while others can have a :ref:`CurveTexture<class_CurveTexture>` or a :ref:`GradientTexture1D<class_GradientTexture1D>` applied to vary numerical or color values over the lifetime of the particle.
 
 .. rst-class:: classref-reftable-group
 

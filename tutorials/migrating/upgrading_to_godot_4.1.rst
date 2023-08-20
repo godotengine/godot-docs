@@ -3,7 +3,7 @@
 Upgrading from Godot 4.0 to Godot 4.1
 =====================================
 
-For most games and apps made with 4.0 it should be relatively safe to migrate to 4.1.
+For most games and apps made with 4.0, it should be relatively safe to migrate to 4.1.
 This page intends to cover everything you need to pay attention to when migrating
 your project.
 
@@ -14,7 +14,8 @@ If you are migrating from 4.0 to 4.1, the breaking changes listed here might
 affect you. Changes are grouped by areas/systems.
 
 .. warning::
-    The GDExtension API completely breaks compatibility in 4.1 so it's not included
+
+    The GDExtension API completely breaks compatibility in 4.1, so it's not included
     in the table below. See the :ref:`updating_your_gdextension_for_godot_4_1` section
     for more information.
 
@@ -202,6 +203,8 @@ Change                                                                          
 **SubViewportContainer**
 When input events should reach SubViewports and their children, ``SubViewportContainer.mouse_filter`` now needs to be ``MOUSE_FILTER_STOP`` or ``MOUSE_FILTER_PASS``. See `GH-79271`_ for details.  `GH-57894`_
 Multiple layered ``SubViewportContainer`` nodes, that should all receive mouse input events, now need to be replaced by ``Area2D`` nodes. See `GH-79128`_ for details.                              `GH-57894`_
+**Viewport**
+``Viewport`` nodes, that have Physics Picking enabled, now automatically set InputEvents as handled. See `GH-79897`_ for workarounds.                                                               `GH-77595`_
 ==================================================================================================================================================================================================  ===========
 
 
@@ -228,9 +231,11 @@ Multiple layered ``SubViewportContainer`` nodes, that should all receive mouse i
 .. _GH-76688: https://github.com/godotengine/godot/pull/76688
 .. _GH-76794: https://github.com/godotengine/godot/pull/76794
 .. _GH-77143: https://github.com/godotengine/godot/pull/77143
+.. _GH-77595: https://github.com/godotengine/godot/pull/77595
 .. _GH-78237: https://github.com/godotengine/godot/pull/78237
 .. _GH-79128: https://github.com/godotengine/godot/issues/79128
 .. _GH-79271: https://github.com/godotengine/godot/issues/79271
+.. _GH-79897: https://github.com/godotengine/godot/issues/79897
 
 .. _updating_your_gdextension_for_godot_4_1:
 

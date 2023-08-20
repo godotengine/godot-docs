@@ -522,8 +522,14 @@ Resources
     class_texture
     class_texture2d
     class_texture2darray
+    class_texture2darrayrd
+    class_texture2drd
     class_texture3d
+    class_texture3drd
+    class_texturecubemaparrayrd
+    class_texturecubemaprd
     class_texturelayered
+    class_texturelayeredrd
     class_theme
     class_tilemappattern
     class_tileset
@@ -597,7 +603,9 @@ Resources
     class_visualshadernoderandomrange
     class_visualshadernoderemap
     class_visualshadernoderesizablebase
+    class_visualshadernoderotationbyaxis
     class_visualshadernodesample3d
+    class_visualshadernodescreennormalworldspace
     class_visualshadernodescreenuvtosdf
     class_visualshadernodesdfraymarch
     class_visualshadernodesdftoscreenuv
@@ -644,6 +652,7 @@ Resources
     class_visualshadernodevectorlen
     class_visualshadernodevectorop
     class_visualshadernodevectorrefract
+    class_visualshadernodeworldpositionfromdepth
     class_voxelgidata
     class_world2d
     class_world3d
@@ -769,6 +778,8 @@ Other objects
     class_node3dgizmo
     class_offlinemultiplayerpeer
     class_oggpacketsequenceplayback
+    class_openxrapiextension
+    class_openxrextensionwrapperextension
     class_openxrinterface
     class_os
     class_packeddatacontainerref
@@ -826,6 +837,10 @@ Other objects
     class_regexmatch
     class_renderingdevice
     class_renderingserver
+    class_renderscenebuffers
+    class_renderscenebuffersconfiguration
+    class_renderscenebuffersextension
+    class_renderscenebuffersrd
     class_resource
     class_resourceformatloader
     class_resourceformatsaver

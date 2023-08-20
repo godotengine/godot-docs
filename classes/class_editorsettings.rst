@@ -30,7 +30,7 @@ Accessing the settings can be done using the following methods, such as:
 
  .. code-tab:: gdscript
 
-    var settings = get_editor_interface().get_editor_settings()
+    var settings = EditorInterface.get_editor_settings()
     # `settings.set("some/property", 10)` also works as this class overrides `_set()` internally.
     settings.set_setting("some/property", 10)
     # `settings.get("some/property")` also works as this class overrides `_get()` internally.
@@ -39,7 +39,7 @@ Accessing the settings can be done using the following methods, such as:
 
  .. code-tab:: csharp
 
-    EditorSettings settings = GetEditorInterface().GetEditorSettings();
+    EditorSettings settings = EditorInterface.Singleton.GetEditorSettings();
     // `settings.set("some/property", value)` also works as this class overrides `_set()` internally.
     settings.SetSetting("some/property", Value);
     // `settings.get("some/property", value)` also works as this class overrides `_get()` internally.
@@ -91,11 +91,11 @@ Properties
    +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Color<class_Color>`     | :ref:`editors/2d/bone_outline_color<class_EditorSettings_property_editors/2d/bone_outline_color>`                                                                                   |
    +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`         | :ref:`editors/2d/bone_outline_size<class_EditorSettings_property_editors/2d/bone_outline_size>`                                                                                     |
+   | :ref:`float<class_float>`     | :ref:`editors/2d/bone_outline_size<class_EditorSettings_property_editors/2d/bone_outline_size>`                                                                                     |
    +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Color<class_Color>`     | :ref:`editors/2d/bone_selected_color<class_EditorSettings_property_editors/2d/bone_selected_color>`                                                                                 |
    +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`         | :ref:`editors/2d/bone_width<class_EditorSettings_property_editors/2d/bone_width>`                                                                                                   |
+   | :ref:`float<class_float>`     | :ref:`editors/2d/bone_width<class_EditorSettings_property_editors/2d/bone_width>`                                                                                                   |
    +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Color<class_Color>`     | :ref:`editors/2d/grid_color<class_EditorSettings_property_editors/2d/grid_color>`                                                                                                   |
    +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -183,8 +183,6 @@ Properties
    +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`       | :ref:`editors/animation/autorename_animation_tracks<class_EditorSettings_property_editors/animation/autorename_animation_tracks>`                                                   |
    +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`       | :ref:`editors/animation/confirm_insert_track<class_EditorSettings_property_editors/animation/confirm_insert_track>`                                                                 |
-   +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`       | :ref:`editors/animation/default_create_bezier_tracks<class_EditorSettings_property_editors/animation/default_create_bezier_tracks>`                                                 |
    +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`       | :ref:`editors/animation/default_create_reset_tracks<class_EditorSettings_property_editors/animation/default_create_reset_tracks>`                                                   |
@@ -240,6 +238,14 @@ Properties
    | :ref:`bool<class_bool>`       | :ref:`filesystem/file_dialog/show_hidden_files<class_EditorSettings_property_filesystem/file_dialog/show_hidden_files>`                                                             |
    +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`         | :ref:`filesystem/file_dialog/thumbnail_size<class_EditorSettings_property_filesystem/file_dialog/thumbnail_size>`                                                                   |
+   +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`   | :ref:`filesystem/import/blender/blender3_path<class_EditorSettings_property_filesystem/import/blender/blender3_path>`                                                               |
+   +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`         | :ref:`filesystem/import/blender/rpc_port<class_EditorSettings_property_filesystem/import/blender/rpc_port>`                                                                         |
+   +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`     | :ref:`filesystem/import/blender/rpc_server_uptime<class_EditorSettings_property_filesystem/import/blender/rpc_server_uptime>`                                                       |
+   +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`   | :ref:`filesystem/import/fbx/fbx2gltf_path<class_EditorSettings_property_filesystem/import/fbx/fbx2gltf_path>`                                                                       |
    +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`       | :ref:`filesystem/on_save/compress_binary_resources<class_EditorSettings_property_filesystem/on_save/compress_binary_resources>`                                                     |
    +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -843,9 +849,11 @@ The outline color to use for non-selected bones in the 2D skeleton editor. See a
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **editors/2d/bone_outline_size**
+:ref:`float<class_float>` **editors/2d/bone_outline_size**
 
 The outline size in the 2D skeleton editor (in pixels). See also :ref:`editors/2d/bone_width<class_EditorSettings_property_editors/2d/bone_width>`.
+
+\ **Note:** Changes to this value only apply after modifying a :ref:`Bone2D<class_Bone2D>` node in any way, or closing and reopening the scene.
 
 .. rst-class:: classref-item-separator
 
@@ -867,9 +875,11 @@ The color to use for selected bones in the 2D skeleton editor. See also :ref:`ed
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **editors/2d/bone_width**
+:ref:`float<class_float>` **editors/2d/bone_width**
 
 The bone width in the 2D skeleton editor (in pixels). See also :ref:`editors/2d/bone_outline_size<class_EditorSettings_property_editors/2d/bone_outline_size>`.
+
+\ **Note:** Changes to this value only apply after modifying a :ref:`Bone2D<class_Bone2D>` node in any way, or closing and reopening the scene.
 
 .. rst-class:: classref-item-separator
 
@@ -1425,18 +1435,6 @@ If ``true``, automatically updates animation tracks' target paths when renaming 
 
 ----
 
-.. _class_EditorSettings_property_editors/animation/confirm_insert_track:
-
-.. rst-class:: classref-property
-
-:ref:`bool<class_bool>` **editors/animation/confirm_insert_track**
-
-If ``true``, display a confirmation dialog when adding a new track to an animation by pressing the "key" icon next to a property.
-
-.. rst-class:: classref-item-separator
-
-----
-
 .. _class_EditorSettings_property_editors/animation/default_create_bezier_tracks:
 
 .. rst-class:: classref-property
@@ -1776,6 +1774,62 @@ If ``true``, display hidden files in the editor's file dialogs. Files that have 
 :ref:`int<class_int>` **filesystem/file_dialog/thumbnail_size**
 
 The thumbnail size to use in the editor's file dialogs (in pixels). See also :ref:`docks/filesystem/thumbnail_size<class_EditorSettings_property_docks/filesystem/thumbnail_size>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSettings_property_filesystem/import/blender/blender3_path:
+
+.. rst-class:: classref-property
+
+:ref:`String<class_String>` **filesystem/import/blender/blender3_path**
+
+The path to the directory containing the Blender executable used for converting the Blender 3D scene files ``.blend`` to glTF 2.0 format during import. Blender 3.0 or later is required.
+
+To enable this feature for your specific project, use :ref:`ProjectSettings.filesystem/import/blender/enabled<class_ProjectSettings_property_filesystem/import/blender/enabled>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSettings_property_filesystem/import/blender/rpc_port:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **filesystem/import/blender/rpc_port**
+
+The port number used for Remote Procedure Call (RPC) communication with Godot's created process of the blender executable.
+
+Setting this to 0 effectively disables communication with Godot and the blender process, making performance slower.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSettings_property_filesystem/import/blender/rpc_server_uptime:
+
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **filesystem/import/blender/rpc_server_uptime**
+
+The maximum idle uptime (in seconds) of the Blender process.
+
+This prevents Godot from having to create a new process for each import within the given seconds.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSettings_property_filesystem/import/fbx/fbx2gltf_path:
+
+.. rst-class:: classref-property
+
+:ref:`String<class_String>` **filesystem/import/fbx/fbx2gltf_path**
+
+The path to the FBX2glTF executable used for converting Autodesk FBX 3D scene files ``.fbx`` to glTF 2.0 format during import.
+
+To enable this feature for your specific project, use :ref:`ProjectSettings.filesystem/import/fbx/enabled<class_ProjectSettings_property_filesystem/import/fbx/enabled>`.
 
 .. rst-class:: classref-item-separator
 

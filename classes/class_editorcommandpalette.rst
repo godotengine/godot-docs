@@ -28,14 +28,14 @@ Command key names use slash delimiters to distinguish sections, for example: ``"
 
  .. code-tab:: gdscript
 
-    var command_palette = get_editor_interface().get_command_palette()
+    var command_palette = EditorInterface.get_command_palette()
     # external_command is a function that will be called with the command is executed.
     var command_callable = Callable(self, "external_command").bind(arguments)
     command_palette.add_command("command", "test/command",command_callable)
 
  .. code-tab:: csharp
 
-    EditorCommandPalette commandPalette = GetEditorInterface().GetCommandPalette();
+    EditorCommandPalette commandPalette = EditorInterface.Singleton.GetCommandPalette();
     // ExternalCommand is a function that will be called with the command is executed.
     Callable commandCallable = new Callable(this, MethodName.ExternalCommand);
     commandPalette.AddCommand("command", "test/command", commandCallable)

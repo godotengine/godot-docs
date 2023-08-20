@@ -830,7 +830,7 @@ Ideally, the plugin icon should be white with a transparent background and 16x16
         # You can use a custom icon:
         return preload("res://addons/my_plugin/my_plugin_icon.svg")
         # Or use a built-in icon:
-        return get_editor_interface().get_base_control().get_theme_icon("Node", "EditorIcons")
+        return EditorInterface.get_base_control().get_theme_icon("Node", "EditorIcons")
 
  .. code-tab:: csharp
 
@@ -839,7 +839,7 @@ Ideally, the plugin icon should be white with a transparent background and 16x16
         // You can use a custom icon:
         return ResourceLoader.Load<Texture2D>("res://addons/my_plugin/my_plugin_icon.svg");
         // Or use a built-in icon:
-        return GetEditorInterface().GetBaseControl().GetThemeIcon("Node", "EditorIcons");
+        return EditorInterface.Singleton.GetBaseControl().GetThemeIcon("Node", "EditorIcons");
     }
 
 
@@ -952,6 +952,8 @@ Use :ref:`_set_window_layout<class_EditorPlugin_method__set_window_layout>` to r
 
 Implement this function if your plugin edits a specific type of object (Resource or Node). If you return ``true``, then you will get the functions :ref:`_edit<class_EditorPlugin_method__edit>` and :ref:`_make_visible<class_EditorPlugin_method__make_visible>` called when the editor requests them. If you have declared the methods :ref:`_forward_canvas_gui_input<class_EditorPlugin_method__forward_canvas_gui_input>` and :ref:`_forward_3d_gui_input<class_EditorPlugin_method__forward_3d_gui_input>` these will be called too.
 
+\ **Note:** Each plugin should handle only one type of objects at a time. If a plugin handes more types of objects and they are edited at the same time, it will result in errors.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -974,7 +976,7 @@ Use :ref:`_get_plugin_name<class_EditorPlugin_method__get_plugin_name>` and :ref
     
     func _enter_tree():
         plugin_control = preload("my_plugin_control.tscn").instantiate()
-        get_editor_interface().get_editor_main_screen().add_child(plugin_control)
+        EditorInterface.get_editor_main_screen().add_child(plugin_control)
         plugin_control.hide()
     
     func _has_main_screen():
@@ -987,7 +989,7 @@ Use :ref:`_get_plugin_name<class_EditorPlugin_method__get_plugin_name>` and :ref
         return "My Super Cool Plugin 3000"
     
     func _get_plugin_icon():
-        return get_editor_interface().get_base_control().get_theme_icon("Node", "EditorIcons")
+        return EditorInterface.get_base_control().get_theme_icon("Node", "EditorIcons")
 
 .. rst-class:: classref-item-separator
 
@@ -1321,7 +1323,9 @@ The callback should have 4 arguments: :ref:`Object<class_Object>` ``undo_redo``,
 
 :ref:`EditorInterface<class_EditorInterface>` **get_editor_interface** **(** **)**
 
-Returns the :ref:`EditorInterface<class_EditorInterface>` singleton. It provides access to some parts of the editor GUI as well as various inner states and tools.
+Returns the :ref:`EditorInterface<class_EditorInterface>` singleton instance.
+
+\ *Deprecated.* :ref:`EditorInterface<class_EditorInterface>` is a global singleton and can be accessed directly by its name.
 
 .. rst-class:: classref-item-separator
 

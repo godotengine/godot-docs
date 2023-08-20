@@ -12,9 +12,23 @@ ResourceImporterImageFont
 
 **Inherits:** :ref:`ResourceImporter<class_ResourceImporter>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-.. container:: contribute
+Imports a fixed-width bitmap font where all glyphs have the same width and height.
 
-	There is currently no description for this class. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+.. rst-class:: classref-introduction-group
+
+Description
+-----------
+
+This image-based workflow can be easier to use than :ref:`ResourceImporterBMFont<class_ResourceImporterBMFont>`, but it requires all glyphs to have the same width and height. This makes **ResourceImporterImageFont** most suited to fixed-width fonts.
+
+See also :ref:`ResourceImporterDynamicFont<class_ResourceImporterDynamicFont>`.
+
+.. rst-class:: classref-introduction-group
+
+Tutorials
+---------
+
+- `Bitmap fonts - Using fonts <../tutorials/ui/gui_using_fonts.html#bitmap-fonts>`__
 
 .. rst-class:: classref-reftable-group
 
@@ -55,9 +69,7 @@ Property Descriptions
 
 :ref:`Rect2i<class_Rect2i>` **character_margin** = ``Rect2i(0, 0, 0, 0)``
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Margin applied around every imported glyph. If your font image contains guides (in the form of lines between glyphs) or if spacing between characters appears incorrect, try adjusting :ref:`character_margin<class_ResourceImporterImageFont_property_character_margin>`.
 
 .. rst-class:: classref-item-separator
 
@@ -69,9 +81,11 @@ Property Descriptions
 
 :ref:`PackedStringArray<class_PackedStringArray>` **character_ranges** = ``PackedStringArray()``
 
-.. container:: contribute
+The character ranges to import from the font image. This is an array that maps each position on the image (in tile coordinates, not pixels). The font atlas is traversed from left to right and top to bottom. Characters can be specified with decimal numbers (127), hexadecimal numbers (``0x007f``) or between single quotes (``'~'``). Ranges can be specified with a hyphen between characters.
 
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+For instance, ``0-127`` (or ``0x0000-0x007f``) denotes the full ASCII range. As another example, ``' '-'~'`` is equivalent to ``32-127`` and denotes the range of printable (visible) ASCII characters.
+
+Make sure :ref:`character_ranges<class_ResourceImporterImageFont_property_character_ranges>` doesn't exceed the number of :ref:`columns<class_ResourceImporterImageFont_property_columns>` \* :ref:`rows<class_ResourceImporterImageFont_property_rows>` defined. Otherwise, the font will fail to import.
 
 .. rst-class:: classref-item-separator
 
@@ -83,9 +97,7 @@ Property Descriptions
 
 :ref:`int<class_int>` **columns** = ``1``
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Number of columns in the font image. See also :ref:`rows<class_ResourceImporterImageFont_property_rows>`.
 
 .. rst-class:: classref-item-separator
 
@@ -97,9 +109,7 @@ Property Descriptions
 
 :ref:`bool<class_bool>` **compress** = ``true``
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+If ``true``, uses lossless compression for the resulting font.
 
 .. rst-class:: classref-item-separator
 
@@ -111,9 +121,7 @@ Property Descriptions
 
 :ref:`Array<class_Array>` **fallbacks** = ``[]``
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+List of font fallbacks to use if a glyph isn't found in this bitmap font. Fonts at the beginning of the array are attempted first.
 
 .. rst-class:: classref-item-separator
 
@@ -125,9 +133,7 @@ Property Descriptions
 
 :ref:`Rect2i<class_Rect2i>` **image_margin** = ``Rect2i(0, 0, 0, 0)``
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Margin to cut on the sides of the entire image. This can be used to cut parts of the image that contain attribution information or similar.
 
 .. rst-class:: classref-item-separator
 
@@ -139,9 +145,7 @@ Property Descriptions
 
 :ref:`int<class_int>` **rows** = ``1``
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Number of rows in the font image. See also :ref:`columns<class_ResourceImporterImageFont_property_columns>`.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

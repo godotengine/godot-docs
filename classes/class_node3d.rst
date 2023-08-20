@@ -49,6 +49,8 @@ Properties
    +-------------------------------------------------------+-------------------------------------------------------------------------------+-----------------------------------------------------+
    | :ref:`Basis<class_Basis>`                             | :ref:`basis<class_Node3D_property_basis>`                                     |                                                     |
    +-------------------------------------------------------+-------------------------------------------------------------------------------+-----------------------------------------------------+
+   | :ref:`Basis<class_Basis>`                             | :ref:`global_basis<class_Node3D_property_global_basis>`                       |                                                     |
+   +-------------------------------------------------------+-------------------------------------------------------------------------------+-----------------------------------------------------+
    | :ref:`Vector3<class_Vector3>`                         | :ref:`global_position<class_Node3D_property_global_position>`                 |                                                     |
    +-------------------------------------------------------+-------------------------------------------------------------------------------+-----------------------------------------------------+
    | :ref:`Vector3<class_Vector3>`                         | :ref:`global_rotation<class_Node3D_property_global_rotation>`                 |                                                     |
@@ -291,7 +293,24 @@ Property Descriptions
 - void **set_basis** **(** :ref:`Basis<class_Basis>` value **)**
 - :ref:`Basis<class_Basis>` **get_basis** **(** **)**
 
-Direct access to the 3x3 basis of the :ref:`Transform3D<class_Transform3D>` property.
+Direct access to the 3x3 basis of the :ref:`transform<class_Node3D_property_transform>` property.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Node3D_property_global_basis:
+
+.. rst-class:: classref-property
+
+:ref:`Basis<class_Basis>` **global_basis**
+
+.. rst-class:: classref-property-setget
+
+- void **set_global_basis** **(** :ref:`Basis<class_Basis>` value **)**
+- :ref:`Basis<class_Basis>` **get_global_basis** **(** **)**
+
+Global basis of this node. This is equivalent to ``global_transform.basis``.
 
 .. rst-class:: classref-item-separator
 

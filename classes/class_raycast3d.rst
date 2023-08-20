@@ -89,6 +89,8 @@ Methods
    +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`         | :ref:`get_collider_shape<class_RayCast3D_method_get_collider_shape>` **(** **)** |const|                                                                       |
    +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`         | :ref:`get_collision_face_index<class_RayCast3D_method_get_collision_face_index>` **(** **)** |const|                                                           |
+   +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`       | :ref:`get_collision_mask_value<class_RayCast3D_method_get_collision_mask_value>` **(** :ref:`int<class_int>` layer_number **)** |const|                        |
    +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Vector3<class_Vector3>` | :ref:`get_collision_normal<class_RayCast3D_method_get_collision_normal>` **(** **)** |const|                                                                   |
@@ -371,6 +373,18 @@ Returns the :ref:`RID<class_RID>` of the first object that the ray intersects, o
 :ref:`int<class_int>` **get_collider_shape** **(** **)** |const|
 
 Returns the shape ID of the first object that the ray intersects, or ``0`` if no object is intersecting the ray (i.e. :ref:`is_colliding<class_RayCast3D_method_is_colliding>` returns ``false``).
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_RayCast3D_method_get_collision_face_index:
+
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **get_collision_face_index** **(** **)** |const|
+
+Returns the collision object's face index at the collision point, or ``-1`` if the shape intersecting the ray is not a :ref:`ConcavePolygonShape3D<class_ConcavePolygonShape3D>`.
 
 .. rst-class:: classref-item-separator
 

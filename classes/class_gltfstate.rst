@@ -23,6 +23,13 @@ Contains all nodes and resources of a GLTF file. This is used by :ref:`GLTFDocum
 
 GLTFState can be populated by :ref:`GLTFDocument<class_GLTFDocument>` reading a file or by converting a Godot scene. Then the data can either be used to create a Godot scene or save to a GLTF file. The code that converts to/from a Godot scene can be intercepted at arbitrary points by :ref:`GLTFDocumentExtension<class_GLTFDocumentExtension>` classes. This allows for custom data to be stored in the GLTF file or for custom data to be converted to/from Godot nodes.
 
+.. rst-class:: classref-introduction-group
+
+Tutorials
+---------
+
+- `GLTF asset header schema <https://github.com/KhronosGroup/glTF/blob/main/specification/2.0/schema/asset.schema.json">`__
+
 .. rst-class:: classref-reftable-group
 
 Properties
@@ -36,7 +43,11 @@ Properties
    +-------------------------------------------------+----------------------------------------------------------------------------+------------------------+
    | :ref:`PackedByteArray[]<class_PackedByteArray>` | :ref:`buffers<class_GLTFState_property_buffers>`                           | ``[]``                 |
    +-------------------------------------------------+----------------------------------------------------------------------------+------------------------+
+   | :ref:`String<class_String>`                     | :ref:`copyright<class_GLTFState_property_copyright>`                       | ``""``                 |
+   +-------------------------------------------------+----------------------------------------------------------------------------+------------------------+
    | :ref:`bool<class_bool>`                         | :ref:`create_animations<class_GLTFState_property_create_animations>`       | ``true``               |
+   +-------------------------------------------------+----------------------------------------------------------------------------+------------------------+
+   | :ref:`String<class_String>`                     | :ref:`filename<class_GLTFState_property_filename>`                         | ``""``                 |
    +-------------------------------------------------+----------------------------------------------------------------------------+------------------------+
    | :ref:`PackedByteArray<class_PackedByteArray>`   | :ref:`glb_data<class_GLTFState_property_glb_data>`                         | ``PackedByteArray()``  |
    +-------------------------------------------------+----------------------------------------------------------------------------+------------------------+
@@ -202,9 +213,7 @@ Property Descriptions
 - void **set_base_path** **(** :ref:`String<class_String>` value **)**
 - :ref:`String<class_String>` **get_base_path** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+The folder path associated with this GLTF data. This is used to find other files the GLTF file references, like images or binary buffers. This will be set during import when appending from a file, and will be set during export when writing to a file.
 
 .. rst-class:: classref-item-separator
 
@@ -229,6 +238,23 @@ Property Descriptions
 
 ----
 
+.. _class_GLTFState_property_copyright:
+
+.. rst-class:: classref-property
+
+:ref:`String<class_String>` **copyright** = ``""``
+
+.. rst-class:: classref-property-setget
+
+- void **set_copyright** **(** :ref:`String<class_String>` value **)**
+- :ref:`String<class_String>` **get_copyright** **(** **)**
+
+The copyright string in the asset header of the GLTF file. This is set during import if present and export if non-empty. See the GLTF asset header documentation for more information.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_GLTFState_property_create_animations:
 
 .. rst-class:: classref-property
@@ -243,6 +269,23 @@ Property Descriptions
 .. container:: contribute
 
 	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_GLTFState_property_filename:
+
+.. rst-class:: classref-property
+
+:ref:`String<class_String>` **filename** = ``""``
+
+.. rst-class:: classref-property-setget
+
+- void **set_filename** **(** :ref:`String<class_String>` value **)**
+- :ref:`String<class_String>` **get_filename** **(** **)**
+
+The file name associated with this GLTF data. If it ends with ``.gltf``, this is text-based GLTF, otherwise this is binary GLB. This will be set during import when appending from a file, and will be set during export when writing to a file. If writing to a buffer, this will be an empty string.
 
 .. rst-class:: classref-item-separator
 

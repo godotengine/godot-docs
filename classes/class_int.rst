@@ -758,7 +758,7 @@ This is useful for storing binary flags in a variable.
 
 :ref:`int<class_int>` **operator ~** **(** **)**
 
-Performs the bitwise ``NOT`` operation on the **int**. Due to `2's complement <https://en.wikipedia.org/wiki/Two%27s_complement/>`__, it's effectively equal to ``-(int + 1)``.
+Performs the bitwise ``NOT`` operation on the **int**. Due to `2's complement <https://en.wikipedia.org/wiki/Two%27s_complement>`__, it's effectively equal to ``-(int + 1)``.
 
 ::
 

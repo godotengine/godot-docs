@@ -136,7 +136,7 @@ Theme Properties
    +---------------------------------+------------------------------------------------------------------------------------+-------------------------------------+
    | :ref:`Color<class_Color>`       | :ref:`icon_pressed_color<class_Button_theme_color_icon_pressed_color>`             | ``Color(1, 1, 1, 1)``               |
    +---------------------------------+------------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`int<class_int>`           | :ref:`h_separation<class_Button_theme_constant_h_separation>`                      | ``2``                               |
+   | :ref:`int<class_int>`           | :ref:`h_separation<class_Button_theme_constant_h_separation>`                      | ``4``                               |
    +---------------------------------+------------------------------------------------------------------------------------+-------------------------------------+
    | :ref:`int<class_int>`           | :ref:`icon_max_width<class_Button_theme_constant_icon_max_width>`                  | ``0``                               |
    +---------------------------------+------------------------------------------------------------------------------------+-------------------------------------+
@@ -520,7 +520,7 @@ Icon modulate :ref:`Color<class_Color>` used when the **Button** is being presse
 
 .. rst-class:: classref-themeproperty
 
-:ref:`int<class_int>` **h_separation** = ``2``
+:ref:`int<class_int>` **h_separation** = ``4``
 
 The horizontal space between **Button**'s icon and text. Negative values will be treated as ``0`` when used.
 

@@ -161,6 +161,10 @@ Intersects a ray in a given space. Ray position and other parameters are defined
 
 \ ``position``: The intersection point.
 
+\ ``face_index``: The face index at the intersection point.
+
+\ **Note:** Returns a valid number only if the intersected shape is a :ref:`ConcavePolygonShape3D<class_ConcavePolygonShape3D>`. Otherwise, ``-1`` is returned.
+
 \ ``rid``: The intersecting object's :ref:`RID<class_RID>`.
 
 \ ``shape``: The shape index of the colliding shape.

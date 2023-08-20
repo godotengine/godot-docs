@@ -44,7 +44,11 @@ Methods
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Error<enum_@GlobalScope_Error>`             | :ref:`_export_preflight<class_GLTFDocumentExtension_method__export_preflight>` **(** :ref:`GLTFState<class_GLTFState>` state, :ref:`Node<class_Node>` root **)** |virtual|                                                                                                         |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>`             | :ref:`_export_preserialize<class_GLTFDocumentExtension_method__export_preserialize>` **(** :ref:`GLTFState<class_GLTFState>` state **)** |virtual|                                                                                                                                 |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Node3D<class_Node3D>`                       | :ref:`_generate_scene_node<class_GLTFDocumentExtension_method__generate_scene_node>` **(** :ref:`GLTFState<class_GLTFState>` state, :ref:`GLTFNode<class_GLTFNode>` gltf_node, :ref:`Node<class_Node>` scene_parent **)** |virtual|                                                |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                       | :ref:`_get_image_file_extension<class_GLTFDocumentExtension_method__get_image_file_extension>` **(** **)** |virtual|                                                                                                                                                               |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`_get_supported_extensions<class_GLTFDocumentExtension_method__get_supported_extensions>` **(** **)** |virtual|                                                                                                                                                               |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -78,7 +82,7 @@ Method Descriptions
 
 void **_convert_scene_node** **(** :ref:`GLTFState<class_GLTFState>` state, :ref:`GLTFNode<class_GLTFNode>` gltf_node, :ref:`Node<class_Node>` scene_node **)** |virtual|
 
-Part of the export process. This method is run after :ref:`_export_preflight<class_GLTFDocumentExtension_method__export_preflight>` and before :ref:`_export_node<class_GLTFDocumentExtension_method__export_node>`.
+Part of the export process. This method is run after :ref:`_export_preflight<class_GLTFDocumentExtension_method__export_preflight>` and before :ref:`_export_preserialize<class_GLTFDocumentExtension_method__export_preserialize>`.
 
 Runs when converting the data from a Godot scene node. This method can be used to process the Godot scene node data into a format that can be used by :ref:`_export_node<class_GLTFDocumentExtension_method__export_node>`.
 
@@ -92,7 +96,7 @@ Runs when converting the data from a Godot scene node. This method can be used t
 
 :ref:`Error<enum_@GlobalScope_Error>` **_export_node** **(** :ref:`GLTFState<class_GLTFState>` state, :ref:`GLTFNode<class_GLTFNode>` gltf_node, :ref:`Dictionary<class_Dictionary>` json, :ref:`Node<class_Node>` node **)** |virtual|
 
-Part of the export process. This method is run after :ref:`_convert_scene_node<class_GLTFDocumentExtension_method__convert_scene_node>` and before :ref:`_export_post<class_GLTFDocumentExtension_method__export_post>`.
+Part of the export process. This method is run after :ref:`_export_preserialize<class_GLTFDocumentExtension_method__export_preserialize>` and before :ref:`_export_post<class_GLTFDocumentExtension_method__export_post>`.
 
 This method can be used to modify the final JSON of each node.
 
@@ -128,6 +132,20 @@ The return value is used to determine if this **GLTFDocumentExtension** instance
 
 ----
 
+.. _class_GLTFDocumentExtension_method__export_preserialize:
+
+.. rst-class:: classref-method
+
+:ref:`Error<enum_@GlobalScope_Error>` **_export_preserialize** **(** :ref:`GLTFState<class_GLTFState>` state **)** |virtual|
+
+Part of the export process. This method is run after :ref:`_convert_scene_node<class_GLTFDocumentExtension_method__convert_scene_node>` and before :ref:`_export_node<class_GLTFDocumentExtension_method__export_node>`.
+
+This method can be used to alter the state before performing serialization. It runs every time when generating a buffer with :ref:`GLTFDocument.generate_buffer<class_GLTFDocument_method_generate_buffer>` or writing to the file system with :ref:`GLTFDocument.write_to_filesystem<class_GLTFDocument_method_write_to_filesystem>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_GLTFDocumentExtension_method__generate_scene_node:
 
 .. rst-class:: classref-method
@@ -137,6 +155,18 @@ The return value is used to determine if this **GLTFDocumentExtension** instance
 Part of the import process. This method is run after :ref:`_parse_node_extensions<class_GLTFDocumentExtension_method__parse_node_extensions>` and before :ref:`_import_post_parse<class_GLTFDocumentExtension_method__import_post_parse>`.
 
 Runs when generating a Godot scene node from a GLTFNode. The returned node will be added to the scene tree. Multiple nodes can be generated in this step if they are added as a child of the returned node.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_GLTFDocumentExtension_method__get_image_file_extension:
+
+.. rst-class:: classref-method
+
+:ref:`String<class_String>` **_get_image_file_extension** **(** **)** |virtual|
+
+Returns the file extension to use for saving image data into, for example, ``".png"``. If defined, when this extension is used to handle images, and the images are saved to a separate file, the image bytes will be copied to a file with this extension. If this is set, there should be a :ref:`ResourceImporter<class_ResourceImporter>` class able to import the file. If not defined or empty, Godot will save the image into a PNG file.
 
 .. rst-class:: classref-item-separator
 

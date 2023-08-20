@@ -101,7 +101,7 @@ State of the :kbd:`Alt` modifier.
 - void **set_command_or_control_autoremap** **(** :ref:`bool<class_bool>` value **)**
 - :ref:`bool<class_bool>` **is_command_or_control_autoremap** **(** **)**
 
-Automatically use :kbd:`Meta` (:kbd:`Command`) on macOS and :kbd:`Ctrl` on other platforms. If ``true``, :ref:`ctrl_pressed<class_InputEventWithModifiers_property_ctrl_pressed>` and :ref:`meta_pressed<class_InputEventWithModifiers_property_meta_pressed>` cannot be set.
+Automatically use :kbd:`Meta` (:kbd:`Cmd`) on macOS and :kbd:`Ctrl` on other platforms. If ``true``, :ref:`ctrl_pressed<class_InputEventWithModifiers_property_ctrl_pressed>` and :ref:`meta_pressed<class_InputEventWithModifiers_property_meta_pressed>` cannot be set.
 
 .. rst-class:: classref-item-separator
 
@@ -181,7 +181,7 @@ Returns the keycode combination of modifier keys.
 
 :ref:`bool<class_bool>` **is_command_or_control_pressed** **(** **)** |const|
 
-On macOS, returns ``true`` if :kbd:`Meta` (:kbd:`Command`) is pressed.
+On macOS, returns ``true`` if :kbd:`Meta` (:kbd:`Cmd`) is pressed.
 
 On other platforms, returns ``true`` if :kbd:`Ctrl` is pressed.
 

@@ -38,11 +38,15 @@ Methods
    +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`PackedVector3Array<class_PackedVector3Array>` | :ref:`clip_polygon<class_Geometry3D_method_clip_polygon>` **(** :ref:`PackedVector3Array<class_PackedVector3Array>` points, :ref:`Plane<class_Plane>` plane **)**                                                                                                           |
    +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PackedVector3Array<class_PackedVector3Array>` | :ref:`compute_convex_mesh_points<class_Geometry3D_method_compute_convex_mesh_points>` **(** :ref:`Plane[]<class_Plane>` planes **)**                                                                                                                                        |
+   +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Vector3<class_Vector3>`                       | :ref:`get_closest_point_to_segment<class_Geometry3D_method_get_closest_point_to_segment>` **(** :ref:`Vector3<class_Vector3>` point, :ref:`Vector3<class_Vector3>` s1, :ref:`Vector3<class_Vector3>` s2 **)**                                                               |
    +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Vector3<class_Vector3>`                       | :ref:`get_closest_point_to_segment_uncapped<class_Geometry3D_method_get_closest_point_to_segment_uncapped>` **(** :ref:`Vector3<class_Vector3>` point, :ref:`Vector3<class_Vector3>` s1, :ref:`Vector3<class_Vector3>` s2 **)**                                             |
    +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`PackedVector3Array<class_PackedVector3Array>` | :ref:`get_closest_points_between_segments<class_Geometry3D_method_get_closest_points_between_segments>` **(** :ref:`Vector3<class_Vector3>` p1, :ref:`Vector3<class_Vector3>` p2, :ref:`Vector3<class_Vector3>` q1, :ref:`Vector3<class_Vector3>` q2 **)**                  |
+   +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector3<class_Vector3>`                       | :ref:`get_triangle_barycentric_coords<class_Geometry3D_method_get_triangle_barycentric_coords>` **(** :ref:`Vector3<class_Vector3>` point, :ref:`Vector3<class_Vector3>` a, :ref:`Vector3<class_Vector3>` b, :ref:`Vector3<class_Vector3>` c **)**                          |
    +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Variant<class_Variant>`                       | :ref:`ray_intersects_triangle<class_Geometry3D_method_ray_intersects_triangle>` **(** :ref:`Vector3<class_Vector3>` from, :ref:`Vector3<class_Vector3>` dir, :ref:`Vector3<class_Vector3>` a, :ref:`Vector3<class_Vector3>` b, :ref:`Vector3<class_Vector3>` c **)**        |
    +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -112,6 +116,18 @@ Clips the polygon defined by the points in ``points`` against the ``plane`` and 
 
 ----
 
+.. _class_Geometry3D_method_compute_convex_mesh_points:
+
+.. rst-class:: classref-method
+
+:ref:`PackedVector3Array<class_PackedVector3Array>` **compute_convex_mesh_points** **(** :ref:`Plane[]<class_Plane>` planes **)**
+
+Calculates and returns all the vertex points of a convex shape defined by an array of ``planes``.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_Geometry3D_method_get_closest_point_to_segment:
 
 .. rst-class:: classref-method
@@ -143,6 +159,20 @@ Returns the 3D point on the 3D line defined by (``s1``, ``s2``) that is closest 
 :ref:`PackedVector3Array<class_PackedVector3Array>` **get_closest_points_between_segments** **(** :ref:`Vector3<class_Vector3>` p1, :ref:`Vector3<class_Vector3>` p2, :ref:`Vector3<class_Vector3>` q1, :ref:`Vector3<class_Vector3>` q2 **)**
 
 Given the two 3D segments (``p1``, ``p2``) and (``q1``, ``q2``), finds those two points on the two segments that are closest to each other. Returns a :ref:`PackedVector3Array<class_PackedVector3Array>` that contains this point on (``p1``, ``p2``) as well the accompanying point on (``q1``, ``q2``).
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Geometry3D_method_get_triangle_barycentric_coords:
+
+.. rst-class:: classref-method
+
+:ref:`Vector3<class_Vector3>` **get_triangle_barycentric_coords** **(** :ref:`Vector3<class_Vector3>` point, :ref:`Vector3<class_Vector3>` a, :ref:`Vector3<class_Vector3>` b, :ref:`Vector3<class_Vector3>` c **)**
+
+Returns a :ref:`Vector3<class_Vector3>` containing weights based on how close a 3D position (``point``) is to a triangle's different vertices (``a``, ``b`` and ``c``). This is useful for interpolating between the data of different vertices in a triangle. One example use case is using this to smoothly rotate over a mesh instead of relying solely on face normals.
+
+\ `Here is a more detailed explanation of barycentric coordinates. <https://en.wikipedia.org/wiki/Barycentric_coordinate_system>`__
 
 .. rst-class:: classref-item-separator
 

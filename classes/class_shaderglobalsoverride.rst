@@ -12,7 +12,7 @@ ShaderGlobalsOverride
 
 **Inherits:** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-Overrides global shader parameters' values in a specific scene.
+A node used to override global shader parameters' values in a scene.
 
 .. rst-class:: classref-introduction-group
 
@@ -24,6 +24,13 @@ Similar to how a :ref:`WorldEnvironment<class_WorldEnvironment>` node can be use
 \ **Note:** Only one **ShaderGlobalsOverride** can be used per scene. If there is more than one **ShaderGlobalsOverride** node in the scene tree, only the first node (in tree order) will be taken into account.
 
 \ **Note:** All **ShaderGlobalsOverride** nodes are made part of a ``"shader_overrides_group"`` group when they are added to the scene tree. The currently active **ShaderGlobalsOverride** node also has a ``"shader_overrides_group_active"`` group added to it. You can use this to check which **ShaderGlobalsOverride** node is currently active.
+
+.. rst-class:: classref-introduction-group
+
+Tutorials
+---------
+
+- :doc:`Shading language <../tutorials/shaders/shader_reference/shading_language>`
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

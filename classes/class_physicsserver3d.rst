@@ -21,7 +21,7 @@ A server interface for low-level 3D physics access.
 Description
 -----------
 
-PhysicsServer2D is the server responsible for all 2D physics. It can directly create and manipulate all physics objects:
+PhysicsServer3D is the server responsible for all 3D physics. It can directly create and manipulate all physics objects:
 
 - A *space* is a self-contained world for a physics simulation. It contains bodies, areas, and joints. Its state can be queried for collision and intersection information, and several parameters of the simulation can be modified.
 

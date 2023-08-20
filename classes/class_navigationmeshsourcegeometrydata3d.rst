@@ -136,7 +136,7 @@ Returns the parsed source geometry data vertices array.
 
 :ref:`bool<class_bool>` **has_data** **(** **)**
 
-Returns **true** when parsed source geometry data exists.
+Returns ``true`` when parsed source geometry data exists.
 
 .. rst-class:: classref-item-separator
 

@@ -85,6 +85,8 @@ Methods
    +-------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                                             | :ref:`get_joy_guid<class_Input_method_get_joy_guid>` **(** :ref:`int<class_int>` device **)** |const|                                                                                                                                                                                                        |
    +-------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Dictionary<class_Dictionary>`                                     | :ref:`get_joy_info<class_Input_method_get_joy_info>` **(** :ref:`int<class_int>` device **)** |const|                                                                                                                                                                                                        |
+   +-------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                                             | :ref:`get_joy_name<class_Input_method_get_joy_name>` **(** :ref:`int<class_int>` device **)**                                                                                                                                                                                                                |
    +-------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                                               | :ref:`get_joy_vibration_duration<class_Input_method_get_joy_vibration_duration>` **(** :ref:`int<class_int>` device **)**                                                                                                                                                                                    |
@@ -603,6 +605,32 @@ Returns the current value of the joypad axis at given index (see :ref:`JoyAxis<e
 :ref:`String<class_String>` **get_joy_guid** **(** :ref:`int<class_int>` device **)** |const|
 
 Returns a SDL2-compatible device GUID on platforms that use gamepad remapping, e.g. ``030000004c050000c405000000010000``. Returns ``"Default Gamepad"`` otherwise. Godot uses the `SDL2 game controller database <https://github.com/gabomdq/SDL_GameControllerDB>`__ to determine gamepad names and mappings based on this GUID.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Input_method_get_joy_info:
+
+.. rst-class:: classref-method
+
+:ref:`Dictionary<class_Dictionary>` **get_joy_info** **(** :ref:`int<class_int>` device **)** |const|
+
+Returns a dictionary with extra platform-specific information about the device, e.g. the raw gamepad name from the OS or the Steam Input index.
+
+On Windows the dictionary contains the following fields:
+
+\ ``xinput_index``: The index of the controller in the XInput system.
+
+On Linux:
+
+\ ``raw_name``: The name of the controller as it came from the OS, before getting renamed by the godot controller database.
+
+\ ``vendor_id``: The USB vendor ID of the device.
+
+\ ``product_id``: The USB product ID of the device.
+
+\ ``steam_input_index``: The Steam Input gamepad index, if the device is not a Steam Input device this key won't be present.
 
 .. rst-class:: classref-item-separator
 

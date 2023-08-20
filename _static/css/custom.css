@@ -95,6 +95,7 @@
     --highlight-comment-color: #408090;
     --highlight-keyword-color: #007020;
     --highlight-keyword2-color: #902000;
+    --highlight-control-flow-keyword-color: #902060;
     --highlight-number-color: #208050;
     --highlight-decorator-color: #4070a0;
     --highlight-type-color: #007020;
@@ -223,6 +224,7 @@
         --highlight-comment-color: rgba(204, 206, 211, 0.5);
         --highlight-keyword-color: #ff7085;
         --highlight-keyword2-color: #42ffc2;
+        --highlight-control-flow-keyword-color: #ff8ccc;
         --highlight-number-color: #a1ffe0;
         --highlight-decorator-color: #ffb373;
         --highlight-type-color: #8effda;
@@ -875,6 +877,10 @@ code,
 .highlight .kt /* Keyword.Type */,
 .highlight .ow /* Operator.Word */ {
     color: var(--highlight-keyword-color);
+}
+
+.highlight .k-ControlFlow /* Keyword.ControlFlow */ {
+    color: var(--highlight-control-flow-keyword-color);
 }
 
 .highlight .ch /* Comment.Hashbang */,

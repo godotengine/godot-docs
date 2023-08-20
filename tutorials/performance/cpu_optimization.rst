@@ -202,9 +202,7 @@ CPU core operates independently, they can end up trying to access the same
 memory at the same time. One thread can be reading to a variable while another
 is writing: this is called a *race condition*. Before you use threads, make sure
 you understand the dangers and how to try and prevent these race conditions.
-
-Threads can also make debugging considerably more difficult. The GDScript
-debugger doesn't support setting up breakpoints in threads yet.
+Threads can make debugging considerably more difficult.
 
 For more information on threads, see :ref:`doc_using_multiple_threads`.
 

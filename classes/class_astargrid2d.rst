@@ -38,7 +38,7 @@ To use **AStarGrid2D**, you only need to set the :ref:`region<class_AStarGrid2D_
  .. code-tab:: csharp
 
     AStarGrid2D astarGrid = new AStarGrid2D();
-    astarGrid.Size = new Vector2I(32, 32);
+    astarGrid.Region = new Rect2I(0, 0, 32, 32);
     astarGrid.CellSize = new Vector2I(16, 16);
     astarGrid.Update();
     GD.Print(astarGrid.GetIdPath(Vector2I.Zero, new Vector2I(3, 4))); // prints (0, 0), (1, 1), (2, 2), (3, 3), (3, 4)
@@ -88,6 +88,10 @@ Methods
    | :ref:`float<class_float>`                           | :ref:`_estimate_cost<class_AStarGrid2D_method__estimate_cost>` **(** :ref:`Vector2i<class_Vector2i>` from_id, :ref:`Vector2i<class_Vector2i>` to_id **)** |virtual| |const| |
    +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                | :ref:`clear<class_AStarGrid2D_method_clear>` **(** **)**                                                                                                                    |
+   +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                                | :ref:`fill_solid_region<class_AStarGrid2D_method_fill_solid_region>` **(** :ref:`Rect2i<class_Rect2i>` region, :ref:`bool<class_bool>` solid=true **)**                     |
+   +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                                | :ref:`fill_weight_scale_region<class_AStarGrid2D_method_fill_weight_scale_region>` **(** :ref:`Rect2i<class_Rect2i>` region, :ref:`float<class_float>` weight_scale **)**   |
    +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Vector2i[]<class_Vector2i>`                   | :ref:`get_id_path<class_AStarGrid2D_method_get_id_path>` **(** :ref:`Vector2i<class_Vector2i>` from_id, :ref:`Vector2i<class_Vector2i>` to_id **)**                         |
    +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -435,6 +439,34 @@ Note that this function is hidden in the default ``AStarGrid2D`` class.
 void **clear** **(** **)**
 
 Clears the grid and sets the :ref:`region<class_AStarGrid2D_property_region>` to ``Rect2i(0, 0, 0, 0)``.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_AStarGrid2D_method_fill_solid_region:
+
+.. rst-class:: classref-method
+
+void **fill_solid_region** **(** :ref:`Rect2i<class_Rect2i>` region, :ref:`bool<class_bool>` solid=true **)**
+
+Fills the given ``region`` on the grid with the specified value for the solid flag.
+
+\ **Note:** Calling :ref:`update<class_AStarGrid2D_method_update>` is not needed after the call of this function.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_AStarGrid2D_method_fill_weight_scale_region:
+
+.. rst-class:: classref-method
+
+void **fill_weight_scale_region** **(** :ref:`Rect2i<class_Rect2i>` region, :ref:`float<class_float>` weight_scale **)**
+
+Fills the given ``region`` on the grid with the specified value for the weight scale.
+
+\ **Note:** Calling :ref:`update<class_AStarGrid2D_method_update>` is not needed after the call of this function.
 
 .. rst-class:: classref-item-separator
 

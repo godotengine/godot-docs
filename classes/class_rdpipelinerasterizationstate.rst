@@ -219,7 +219,7 @@ The winding order to use to determine which face of a triangle is considered its
 - void **set_line_width** **(** :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_line_width** **(** **)**
 
-THe line width to use when drawing lines (in pixels). Thick lines may not be supported on all hardware.
+The line width to use when drawing lines (in pixels). Thick lines may not be supported on all hardware.
 
 .. rst-class:: classref-item-separator
 

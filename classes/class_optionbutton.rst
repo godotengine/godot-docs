@@ -102,6 +102,8 @@ Methods
    +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                              | :ref:`select<class_OptionButton_method_select>` **(** :ref:`int<class_int>` idx **)**                                                                                               |
    +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                              | :ref:`set_disable_shortcuts<class_OptionButton_method_set_disable_shortcuts>` **(** :ref:`bool<class_bool>` disabled **)**                                                          |
+   +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                              | :ref:`set_item_disabled<class_OptionButton_method_set_item_disabled>` **(** :ref:`int<class_int>` idx, :ref:`bool<class_bool>` disabled **)**                                       |
    +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                              | :ref:`set_item_icon<class_OptionButton_method_set_item_icon>` **(** :ref:`int<class_int>` idx, :ref:`Texture2D<class_Texture2D>` texture **)**                                      |
@@ -142,7 +144,7 @@ Theme Properties
    +-----------------------------------+------------------------------------------------------------------------------------------+-------------------------------------+
    | :ref:`int<class_int>`             | :ref:`arrow_margin<class_OptionButton_theme_constant_arrow_margin>`                      | ``4``                               |
    +-----------------------------------+------------------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`int<class_int>`             | :ref:`h_separation<class_OptionButton_theme_constant_h_separation>`                      | ``2``                               |
+   | :ref:`int<class_int>`             | :ref:`h_separation<class_OptionButton_theme_constant_h_separation>`                      | ``4``                               |
    +-----------------------------------+------------------------------------------------------------------------------------------+-------------------------------------+
    | :ref:`int<class_int>`             | :ref:`modulate_arrow<class_OptionButton_theme_constant_modulate_arrow>`                  | ``0``                               |
    +-----------------------------------+------------------------------------------------------------------------------------------+-------------------------------------+
@@ -521,6 +523,18 @@ Passing ``-1`` as the index deselects any currently selected item.
 
 ----
 
+.. _class_OptionButton_method_set_disable_shortcuts:
+
+.. rst-class:: classref-method
+
+void **set_disable_shortcuts** **(** :ref:`bool<class_bool>` disabled **)**
+
+If ``true``, shortcuts are disabled and cannot be used to trigger the button.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_OptionButton_method_set_item_disabled:
 
 .. rst-class:: classref-method
@@ -712,7 +726,7 @@ The horizontal space between the arrow icon and the right edge of the button.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`int<class_int>` **h_separation** = ``2``
+:ref:`int<class_int>` **h_separation** = ``4``
 
 The horizontal space between **OptionButton**'s icon and text. Negative values will be treated as ``0`` when used.
 

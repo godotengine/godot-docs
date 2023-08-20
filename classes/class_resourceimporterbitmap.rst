@@ -12,9 +12,21 @@ ResourceImporterBitMap
 
 **Inherits:** :ref:`ResourceImporter<class_ResourceImporter>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-.. container:: contribute
+Imports a :ref:`BitMap<class_BitMap>` resource (2D array of boolean values).
 
-	There is currently no description for this class. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+.. rst-class:: classref-introduction-group
+
+Description
+-----------
+
+:ref:`BitMap<class_BitMap>` resources are typically used as click masks in :ref:`TextureButton<class_TextureButton>` and :ref:`TouchScreenButton<class_TouchScreenButton>`.
+
+.. rst-class:: classref-introduction-group
+
+Tutorials
+---------
+
+- :doc:`Importing images <../tutorials/assets_pipeline/importing_images>`
 
 .. rst-class:: classref-reftable-group
 
@@ -45,9 +57,11 @@ Property Descriptions
 
 :ref:`int<class_int>` **create_from** = ``0``
 
-.. container:: contribute
+The data source to use for generating the bitmap.
 
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+\ **Black & White:** Pixels whose HSV value is greater than the :ref:`threshold<class_ResourceImporterBitMap_property_threshold>` will be considered as "enabled" (bit is ``true``). If the pixel is lower than or equal to the threshold, it will be considered as "disabled" (bit is ``false``).
+
+\ **Alpha:** Pixels whose alpha value is greater than the :ref:`threshold<class_ResourceImporterBitMap_property_threshold>` will be considered as "enabled" (bit is ``true``). If the pixel is lower than or equal to the threshold, it will be considered as "disabled" (bit is ``false``).
 
 .. rst-class:: classref-item-separator
 
@@ -59,9 +73,7 @@ Property Descriptions
 
 :ref:`float<class_float>` **threshold** = ``0.5``
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+The threshold to use to determine which bits should be considered enabled or disabled. See also :ref:`create_from<class_ResourceImporterBitMap_property_create_from>`.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
