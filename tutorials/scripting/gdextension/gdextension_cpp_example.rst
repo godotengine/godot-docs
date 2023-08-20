@@ -442,7 +442,7 @@ For example:
 
 .. code-block:: none
 
-    [Icon]
+    [icons]
     GDExample = "res://icons/GDExample.svg"
 
 The path should point to a 16 by 16 pixel SVG image. Read the guide for :ref:`creating icons <doc_editor_icons>`
