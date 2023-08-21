@@ -232,9 +232,11 @@ The function ``multiplayer.get_remote_sender_id()`` can be used to get the uniqu
         transfer_some_input.rpc_id(1) # Send the input only to the server.
 
 
-    @rpc("any_peer", "call_local", "reliable") # Call local is required if the server is also a player.
+    # Call local is required if the server is also a player.
+    @rpc("any_peer", "call_local", "reliable")
     func transfer_some_input():
-        var sender_id = multiplayer.get_remote_sender_id() # The server knows who sent the input.
+        # The server knows who sent the input.
+        var sender_id = multiplayer.get_remote_sender_id()
         # Process the input and affect game logic.
 
 Channels
@@ -272,12 +274,14 @@ have loaded the game scene.
     const DEFAULT_SERVER_IP = "127.0.0.1" # IPv4 localhost
     const MAX_CONNECTIONS = 20
 
-    # This will contain player info for every player, with the keys being each player's unique IDs.
+    # This will contain player info for every player,
+    # with the keys being each player's unique IDs.
     var players = {}
 
-    # This is the local player info. This should be modified locally before the connection is made.
-    # It will be passed to every other peer.
-    # For example, the value of "name" can be set to something the player entered in a UI scene.
+    # This is the local player info. This should be modified locally
+    # before the connection is made. It will be passed to every other peer.
+    # For example, the value of "name" can be set to something the player
+    # entered in a UI scene.
     var player_info = {"name": "Name"}
 
     var players_loaded = 0
@@ -293,7 +297,7 @@ have loaded the game scene.
 
 
     func join_game(address = ""):
-        if address == "":
+        if address.is_empty():
             address = DEFAULT_SERVER_IP
         var peer = ENetMultiplayerPeer.new()
         var error = peer.create_client(address, PORT)
@@ -317,7 +321,8 @@ have loaded the game scene.
         multiplayer.multiplayer_peer = null
 
 
-    # When the server decides to start the game from a UI scene, do Lobby.load_game.rpc(filepath)
+    # When the server decides to start the game from a UI scene,
+    # do Lobby.load_game.rpc(filepath)
     @rpc("call_local", "reliable")
     func load_game(game_scene_path):
         get_tree().change_scene_to_file(game_scene_path)
@@ -347,7 +352,7 @@ have loaded the game scene.
 
 
     func _on_player_disconnected(id):
-        player_info.erase(id)
+        players.erase(id)
         player_disconnected.emit(id)
 
 
@@ -363,6 +368,7 @@ have loaded the game scene.
 
     func _on_server_disconnected():
         multiplayer.multiplayer_peer = null
+        players.clear()
         server_disconnected.emit()
 
 The game scene's root node should be named Game. In the script attached to it:
