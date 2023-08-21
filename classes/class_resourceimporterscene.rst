@@ -30,7 +30,7 @@ Additional options (such as extracting individual meshes or materials to files) 
 Tutorials
 ---------
 
-- :doc:`Importing 3D scenes <../tutorials/assets_pipeline/importing_scenes>`
+- :doc:`Importing 3D scenes <../tutorials/assets_pipeline/importing_3d_scenes/index>`
 
 .. rst-class:: classref-reftable-group
 
@@ -149,7 +149,7 @@ If ``true``, trim the beginning and end of animations if there are no keyframe c
 
 :ref:`String<class_String>` **import_script/path** = ``""``
 
-Path to an import script, which can run code after the import process has completed for custom processing. See `Using import scripts for automation <../tutorials/assets_pipeline/importing_scenes.html#doc-importing-3d-scenes-import-script>`__ for more information.
+Path to an import script, which can run code after the import process has completed for custom processing. See `Using import scripts for automation <../tutorials/assets_pipeline/importing_3d_scenes/import_configuration.html#using-import-scripts-for-automation>`__ for more information.
 
 .. rst-class:: classref-item-separator
 

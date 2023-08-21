@@ -28,7 +28,7 @@ See also :ref:`ResourceImporterScene<class_ResourceImporterScene>`, which is use
 Tutorials
 ---------
 
-- :doc:`Importing 3D scenes <../tutorials/assets_pipeline/importing_scenes>`
+- :doc:`Importing 3D scenes <../tutorials/assets_pipeline/importing_3d_scenes/index>`
 
 .. rst-class:: classref-reftable-group
 
