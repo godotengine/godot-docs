@@ -15,10 +15,6 @@ or write code like you always did!
 Static types can be used on variables, constants, functions, parameters,
 and return types.
 
-.. note::
-
-    Typed GDScript is available since Godot 3.1.
-
 A brief look at static typing
 -----------------------------
 
@@ -271,6 +267,18 @@ Nested array types are not supported.
     var s: String = scores[0]
     scores[0] = "lots"
 
+Since Godot 4.2, you can also specify a type for the loop variable in a ``for`` loop.
+For instance, you can write:
+
+::
+
+    var names = ["John", "Marta", "Samantha", "Jimmy"]
+    for name: String in names:
+        pass
+
+The array will remain untyped, but the ``name`` variable within the ``for`` loop
+will always be of String type.
+
 Typed or dynamic: stick to one style
 ------------------------------------
 
@@ -350,33 +358,22 @@ Warning system
     Documentation about the GDScript warning system has been moved to
     :ref:`doc_gdscript_warning_system`.
 
-Cases where you can't specify types
------------------------------------
+A case where you can't specify types
+------------------------------------
 
-To wrap up this introduction, let's cover a few cases where you can't
-use type hints. All the examples below **will trigger errors**.
+To wrap up this introduction, let's mention a case where you can't
+use type hints. This will trigger a **syntax error**.
 
-You can't specify the type of individual members in an array. This will
-give you an error:
+You can't specify the type of individual members in an array:
 
 ::
 
     var enemies: Array = [$Goblin: Enemy, $Zombie: Enemy]
 
-You can't force the assignment of types in a ``for`` loop, as each
-element the ``for`` keyword loops over already has a different type. So you
-**cannot** write:
-
-::
-
-    var names = ["John", "Marta", "Samantha", "Jimmy"]
-    for name: String in names:
-        pass
-
 Summary
 -------
 
-Typed GDScript is a powerful tool. Available as of version 3.1 of Godot, it
-helps you write more structured code, avoid common errors, and
-create scalable systems. In the future, static types will also bring you
-a nice performance boost thanks to upcoming compiler optimizations.
+Typed GDScript is a powerful tool. It helps you write more structured code,
+avoid common errors, and create scalable systems. In the future, static types
+will also bring you a nice performance boost thanks to upcoming compiler
+optimizations.
