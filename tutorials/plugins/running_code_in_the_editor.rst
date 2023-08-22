@@ -114,7 +114,7 @@ Here is how a ``_process()`` function might look for you:
 .. note::
 
     Extending a ``@tool`` script does not automatically make the extending script
-    a ``@tool``. Ommitting ``@tool`` from the extending script will disable tool
+    a ``@tool``. Omitting ``@tool`` from the extending script will disable tool
     behavior from the super class. Therefore the extending script should also
     specify the ``@tool`` annotation.
 
