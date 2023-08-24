@@ -102,7 +102,7 @@ This example will show you how to create a WebSocket server that listens for rem
         # was correctly notified by the remote peer before closing the socket.
         print("Client %d disconnected % [id])
 
-    #handle msg
+    # Handle message.
     func _handlemsg():
     	for key in dict:
     		var peer = dict[key]
