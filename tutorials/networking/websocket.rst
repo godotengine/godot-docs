@@ -62,7 +62,7 @@ This example will show you how to create a WebSocket connection to a remote serv
     		var code = _client.get_close_code()
     		var reason = _client.get_close_reason()
     		print("WebSocket closed with code: %d, reason %s." % [code, reason])
-    		set_process(false) #  stop _process
+    		set_process(false) # Stop processing.
 
 
 Minimal server example
