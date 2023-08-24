@@ -100,7 +100,7 @@ This example will show you how to create a WebSocket server that listens for rem
         # This is called when a client disconnects, "id" will be the one of the
         # disconnecting client, "was_clean" will tell you if the disconnection
         # was correctly notified by the remote peer before closing the socket.
-        print("Client %d disconnected % [id])
+        print("Client %d disconnected." % [id])
 
     # Handle message.
     func _handlemsg():
