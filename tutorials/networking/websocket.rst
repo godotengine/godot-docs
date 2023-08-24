@@ -43,7 +43,7 @@ This example will show you how to create a WebSocket connection to a remote serv
 
     func _ready():
         # Initiate connection to the given URL.
-        # remote ip addr and port
+        # Remote address and port.
         var err = _client.connect_to_url("wss://addr:port")
         if err != OK:
             print("Unable to connect")
