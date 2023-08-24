@@ -51,16 +51,16 @@ This example will show you how to create a WebSocket connection to a remote serv
 
     func _process(delta):
         _client.poll()
-        var state = socket.get_ready_state()
+        var state = _client.get_ready_state()
     	if state == WebSocketPeer.STATE_OPEN:
-    		while socket.get_available_packet_count():
-    			print("data packet：", socket.get_packet())
+    		while _client.get_available_packet_count():
+    			print("Data packet: ", _client.get_packet())
     	elif state == WebSocketPeer.STATE_CLOSING:
-    		# closing
+    		# Closing.
     		pass
     	elif state == WebSocketPeer.STATE_CLOSED:
-    		var code = socket.get_close_code()
-    		var reason = socket.get_close_reason()
+    		var code = _client.get_close_code()
+    		var reason = _client.get_close_reason()
     		print("WebSocket close,code：%d,reason %s." % [code, reason])
     		set_process(false) #  stop _process
 
