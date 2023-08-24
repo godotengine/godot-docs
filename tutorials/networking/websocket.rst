@@ -108,7 +108,7 @@ This example will show you how to create a WebSocket server that listens for rem
     		var peer = dict[key]
     		peer.poll()
     		var state = peer.get_ready_state()
-    		if state == WebSocketPeer.STATE_OPEN:#If the connection is closed too quickly,data cannot be read
+    		if state == WebSocketPeer.STATE_OPEN: # If the connection is closed too quickly, data cannot be read.
     			while peer.get_available_packet_count():
     				print("Packet: ", peer.get_packet())
     
