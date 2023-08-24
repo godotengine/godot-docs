@@ -110,7 +110,7 @@ This example will show you how to create a WebSocket server that listens for rem
     		var state = peer.get_ready_state()
     		if state == WebSocketPeer.STATE_OPEN:#If the connection is closed too quickly,data cannot be read
     			while peer.get_available_packet_count():
-    				print("packet：", peer.get_packet())
+    				print("Packet: ", peer.get_packet())
     
     func _process(delta):
         # Call this in _process or _physics_process.
