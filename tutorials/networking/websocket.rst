@@ -94,7 +94,7 @@ This example will show you how to create a WebSocket server that listens for rem
 
     func _connected(id):
         # This is called when a new peer connects, "id" will be the assigned peer id,
-        print("Client %d connected % [id])
+        print("Client %d connected." % [id])
 
     func _disconnected(id):
         # This is called when a client disconnects, "id" will be the one of the
