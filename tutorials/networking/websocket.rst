@@ -104,7 +104,7 @@ This example will show you how to create a WebSocket server that listens for rem
 
     #handle msg
     func _handlemsg():
-    	for key in dict :
+    	for key in dict:
     		var peer = dict[key]
     		peer.poll()
     		var state = peer.get_ready_state()
