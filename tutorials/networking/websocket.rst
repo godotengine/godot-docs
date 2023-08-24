@@ -61,7 +61,7 @@ This example will show you how to create a WebSocket connection to a remote serv
     	elif state == WebSocketPeer.STATE_CLOSED:
     		var code = _client.get_close_code()
     		var reason = _client.get_close_reason()
-    		print("WebSocket close,code：%d,reason %s." % [code, reason])
+    		print("WebSocket closed with code: %d, reason %s." % [code, reason])
     		set_process(false) #  stop _process
 
 
