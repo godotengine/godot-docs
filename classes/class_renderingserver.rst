@@ -1588,7 +1588,7 @@ Flag used to mark that the array contains 2D vertices.
 
 :ref:`ArrayFormat<enum_RenderingServer_ArrayFormat>` **ARRAY_FLAG_USE_8_BONE_WEIGHTS** = ``134217728``
 
-Flag used to mark that the array uses 8 bone weighs instead of 4.
+Flag used to mark that the array uses 8 bone weights instead of 4.
 
 .. _class_RenderingServer_constant_ARRAY_FLAG_USES_EMPTY_VERTEX_ARRAY:
 

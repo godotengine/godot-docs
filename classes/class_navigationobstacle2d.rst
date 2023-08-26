@@ -111,7 +111,7 @@ If ``true`` the obstacle affects avoidance using agents.
 - void **set_avoidance_layers** **(** :ref:`int<class_int>` value **)**
 - :ref:`int<class_int>` **get_avoidance_layers** **(** **)**
 
-A bitfield determining the avoidance layers for this obstacle. Agent's with a matching bit on the their avoidance mask will avoid this obstacle.
+A bitfield determining the avoidance layers for this obstacle. Agents with a matching bit on the their avoidance mask will avoid this obstacle.
 
 .. rst-class:: classref-item-separator
 

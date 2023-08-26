@@ -23,6 +23,13 @@ CPU-based 3D particle node used to create a variety of particle systems and effe
 
 See also :ref:`GPUParticles3D<class_GPUParticles3D>`, which provides the same functionality with hardware acceleration, but may not run on older devices.
 
+.. rst-class:: classref-introduction-group
+
+Tutorials
+---------
+
+- :doc:`Particle systems (3D) <../tutorials/3d/particles/index>`
+
 .. rst-class:: classref-reftable-group
 
 Properties

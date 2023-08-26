@@ -730,7 +730,7 @@ Returns an MD5 String representing the file at the given path or an empty :ref:`
 
 :ref:`int<class_int>` **get_modified_time** **(** :ref:`String<class_String>` file **)** |static|
 
-Returns the last time the ``file`` was modified in Unix timestamp format or returns a :ref:`String<class_String>` "ERROR IN ``file``". This Unix timestamp can be converted to another format using the :ref:`Time<class_Time>` singleton.
+Returns the last time the ``file`` was modified in Unix timestamp format, or ``0`` on error. This Unix timestamp can be converted to another format using the :ref:`Time<class_Time>` singleton.
 
 .. rst-class:: classref-item-separator
 

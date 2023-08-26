@@ -30,7 +30,7 @@ Ogg Vorbis requires more CPU to decode than :ref:`ResourceImporterWAV<class_Reso
 Tutorials
 ---------
 
-- `Importing audio samples <https://docs.godotengine.org/en/latest/tutorials/assets_pipeline/importing_audio_samples.html>`__
+- :doc:`Importing audio samples <../tutorials/assets_pipeline/importing_audio_samples>`
 
 .. rst-class:: classref-reftable-group
 

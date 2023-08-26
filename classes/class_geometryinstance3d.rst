@@ -23,6 +23,13 @@ Description
 
 Base node for geometry-based visual instances. Shares some common functionality like visibility and custom materials.
 
+.. rst-class:: classref-introduction-group
+
+Tutorials
+---------
+
+- :doc:`Visibility ranges (HLOD) <../tutorials/3d/visibility_ranges>`
+
 .. rst-class:: classref-reftable-group
 
 Properties

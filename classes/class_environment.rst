@@ -36,7 +36,7 @@ Tutorials
 
 - :doc:`Environment and post-processing <../tutorials/3d/environment_and_post_processing>`
 
-- :doc:`Light transport in game engines <../tutorials/3d/high_dynamic_range>`
+- :doc:`High dynamic range lighting <../tutorials/3d/high_dynamic_range>`
 
 - `3D Material Testers Demo <https://godotengine.org/asset-library/asset/123>`__
 

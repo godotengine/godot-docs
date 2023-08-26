@@ -1676,7 +1676,7 @@ The right margin of the scrollbars. When negative, uses :ref:`panel<class_Tree_t
 
 :ref:`int<class_int>` **scrollbar_margin_top** = ``-1``
 
-The right margin of the vertical scrollbar. When negative, uses :ref:`panel<class_Tree_theme_style_panel>` top margin.
+The top margin of the vertical scrollbar. When negative, uses :ref:`panel<class_Tree_theme_style_panel>` top margin.
 
 .. rst-class:: classref-item-separator
 

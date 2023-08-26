@@ -1883,7 +1883,7 @@ Returns ``true`` if ``color`` is a valid HTML hexadecimal color string. The stri
     Color.html_is_valid("55AAFF")    # Returns true
     Color.html_is_valid("#F2C")      # Returns true
     
-    Color.html_is_valid("#AABBC)     # Returns false
+    Color.html_is_valid("#AABBC")    # Returns false
     Color.html_is_valid("#55aaFF5")  # Returns false
 
  .. code-tab:: csharp

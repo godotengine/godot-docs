@@ -52,6 +52,8 @@ Tutorials
 
 - :doc:`Control node gallery <../tutorials/ui/control_node_gallery>`
 
+- :doc:`Multiple resolutions <../tutorials/rendering/multiple_resolutions>`
+
 - `All GUI Demos <https://github.com/godotengine/godot-demo-projects/tree/master/gui>`__
 
 .. rst-class:: classref-reftable-group

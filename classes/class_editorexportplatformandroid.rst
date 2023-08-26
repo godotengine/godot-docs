@@ -23,6 +23,8 @@ Tutorials
 
 - :doc:`Custom builds for Android <../tutorials/export/android_custom_build>`
 
+- :doc:`Android plugins documentation index <../tutorials/platform/index>`
+
 .. rst-class:: classref-reftable-group
 
 Properties

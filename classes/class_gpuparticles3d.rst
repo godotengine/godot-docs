@@ -28,6 +28,8 @@ Use the ``process_material`` property to add a :ref:`ParticleProcessMaterial<cla
 Tutorials
 ---------
 
+- :doc:`Particle systems (3D) <../tutorials/3d/particles/index>`
+
 - :doc:`Controlling thousands of fish with Particles <../tutorials/performance/vertex_animation/controlling_thousands_of_fish>`
 
 - `Third Person Shooter Demo <https://godotengine.org/asset-library/asset/678>`__
@@ -104,6 +106,8 @@ Methods
 
    +-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`AABB<class_AABB>` | :ref:`capture_aabb<class_GPUParticles3D_method_capture_aabb>` **(** **)** |const|                                                                                                                                                                               |
+   +-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                    | :ref:`convert_from_particles<class_GPUParticles3D_method_convert_from_particles>` **(** :ref:`Node<class_Node>` particles **)**                                                                                                                                 |
    +-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                    | :ref:`emit_particle<class_GPUParticles3D_method_emit_particle>` **(** :ref:`Transform3D<class_Transform3D>` xform, :ref:`Vector3<class_Vector3>` velocity, :ref:`Color<class_Color>` color, :ref:`Color<class_Color>` custom, :ref:`int<class_int>` flags **)** |
    +-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -766,6 +770,18 @@ Method Descriptions
 :ref:`AABB<class_AABB>` **capture_aabb** **(** **)** |const|
 
 Returns the axis-aligned bounding box that contains all the particles that are active in the current frame.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_GPUParticles3D_method_convert_from_particles:
+
+.. rst-class:: classref-method
+
+void **convert_from_particles** **(** :ref:`Node<class_Node>` particles **)**
+
+Sets this node's properties to match a given :ref:`CPUParticles3D<class_CPUParticles3D>` node.
 
 .. rst-class:: classref-item-separator
 
