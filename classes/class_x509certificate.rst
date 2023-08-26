@@ -23,6 +23,13 @@ The X509Certificate class represents an X509 certificate. Certificates can be lo
 
 They can be used as the server certificate in :ref:`StreamPeerTLS.accept_stream<class_StreamPeerTLS_method_accept_stream>` (along with the proper :ref:`CryptoKey<class_CryptoKey>`), and to specify the only certificate that should be accepted when connecting to a TLS server via :ref:`StreamPeerTLS.connect_to_stream<class_StreamPeerTLS_method_connect_to_stream>`.
 
+.. rst-class:: classref-introduction-group
+
+Tutorials
+---------
+
+- :doc:`SSL certificates <../tutorials/networking/ssl_certificates>`
+
 .. rst-class:: classref-reftable-group
 
 Methods

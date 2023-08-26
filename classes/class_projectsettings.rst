@@ -195,6 +195,8 @@ Properties
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`debug/gdscript/warnings/redundant_await<class_ProjectSettings_property_debug/gdscript/warnings/redundant_await>`                                                                                     | ``1``                                                                                            |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`debug/gdscript/warnings/redundant_for_variable_type<class_ProjectSettings_property_debug/gdscript/warnings/redundant_for_variable_type>`                                                             | ``1``                                                                                            |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`debug/gdscript/warnings/redundant_static_unload<class_ProjectSettings_property_debug/gdscript/warnings/redundant_static_unload>`                                                                     | ``1``                                                                                            |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`debug/gdscript/warnings/renamed_in_godot_4_hint<class_ProjectSettings_property_debug/gdscript/warnings/renamed_in_godot_4_hint>`                                                                     | ``1``                                                                                            |
@@ -2545,6 +2547,18 @@ When set to ``warn`` or ``error``, produces a warning or an error respectively w
 :ref:`int<class_int>` **debug/gdscript/warnings/redundant_await** = ``1``
 
 When set to ``warn`` or ``error``, produces a warning or an error respectively when a function that is not a coroutine is called with await.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_debug/gdscript/warnings/redundant_for_variable_type:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **debug/gdscript/warnings/redundant_for_variable_type** = ``1``
+
+When set to ``warn`` or ``error``, produces a warning or an error respectively when a ``for`` variable type specifier is a supertype of the inferred type.
 
 .. rst-class:: classref-item-separator
 
@@ -11089,8 +11103,8 @@ Adds a custom property info to a property. The dictionary must contain:
     var propertyInfo = new Godot.Collections.Dictionary
     {
         {"name", "category/propertyName"},
-        {"type", Variant.Type.Int},
-        {"hint", PropertyHint.Enum},
+        {"type", (int)Variant.Type.Int},
+        {"hint", (int)PropertyHint.Enum},
         {"hint_string", "one,two,three"},
     };
     

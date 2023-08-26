@@ -1083,7 +1083,7 @@ The grid division bias to use in the 3D editor. Negative values will cause small
 
 :ref:`int<class_int>` **editors/3d/grid_division_level_max**
 
-The largest grid division to use in the 3D editor. Together with :ref:`editors/3d/primary_grid_steps<class_EditorSettings_property_editors/3d/primary_grid_steps>`, this determines how large the grid divisions can be. The grid divisions will not be able to get larger than ``primary_grid_steps ^ grid_division_level_max`` units. By default, when :ref:`editors/3d/primary_grid_steps<class_EditorSettings_property_editors/3d/primary_grid_steps>` is ``8``, this means grid divisions cannot get larger than ``64`` uints each (so primary grid lines are ``512`` uints apart), no matter how far away the camera is from the grid.
+The largest grid division to use in the 3D editor. Together with :ref:`editors/3d/primary_grid_steps<class_EditorSettings_property_editors/3d/primary_grid_steps>`, this determines how large the grid divisions can be. The grid divisions will not be able to get larger than ``primary_grid_steps ^ grid_division_level_max`` units. By default, when :ref:`editors/3d/primary_grid_steps<class_EditorSettings_property_editors/3d/primary_grid_steps>` is ``8``, this means grid divisions cannot get larger than ``64`` units each (so primary grid lines are ``512`` units apart), no matter how far away the camera is from the grid.
 
 .. rst-class:: classref-item-separator
 

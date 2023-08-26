@@ -34,7 +34,7 @@ On startup, Godot creates a global **RenderingDevice** which can be retrieved us
 Tutorials
 ---------
 
-- `Using compute shaders <https://docs.godotengine.org/en/latest/tutorials/shaders/compute_shaders.html>`__
+- :doc:`Using compute shaders <../tutorials/shaders/compute_shaders>`
 
 .. rst-class:: classref-reftable-group
 

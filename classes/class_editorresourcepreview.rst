@@ -19,7 +19,7 @@ A node used to generate previews of resources or files.
 Description
 -----------
 
-This node is used to generate previews for resources of files.
+This node is used to generate previews for resources or files.
 
 \ **Note:** This class shouldn't be instantiated directly. Instead, access the singleton using :ref:`EditorInterface.get_resource_previewer<class_EditorInterface_method_get_resource_previewer>`.
 

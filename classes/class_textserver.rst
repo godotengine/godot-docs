@@ -1761,7 +1761,7 @@ Returns outline contours of the glyph as a ``Dictionary`` with the following con
 
 :ref:`int<class_int>` **font_get_glyph_index** **(** :ref:`RID<class_RID>` font_rid, :ref:`int<class_int>` size, :ref:`int<class_int>` char, :ref:`int<class_int>` variation_selector **)** |const|
 
-Returns the glyph index of a ``char``, optionally modified by the ``variation_selector``.  See :ref:`font_get_char_from_glyph_index<class_TextServer_method_font_get_char_from_glyph_index>`.
+Returns the glyph index of a ``char``, optionally modified by the ``variation_selector``. See :ref:`font_get_char_from_glyph_index<class_TextServer_method_font_get_char_from_glyph_index>`.
 
 .. rst-class:: classref-item-separator
 
@@ -3603,7 +3603,7 @@ Breaks text into words and returns array of character ranges. Use ``grapheme_fla
 
 :ref:`bool<class_bool>` **shaped_text_has_visible_chars** **(** :ref:`RID<class_RID>` shaped **)** |const|
 
-Returns ``true``, if text buffer contents any visible characters.
+Returns ``true`` if text buffer contains any visible characters.
 
 .. rst-class:: classref-item-separator
 

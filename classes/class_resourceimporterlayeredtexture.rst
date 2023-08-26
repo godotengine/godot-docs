@@ -147,7 +147,7 @@ The compression mode to use. Each compression mode provides a different tradeoff
 
 \ **Basis Universal:** Reduced quality, low memory usage, lowest size on disk, slow import. Only use for textures in 3D scenes, not for 2D elements.
 
-See `Compress mode <https://docs.godotengine.org/en/latest/tutorials/assets_pipeline/importing_images.html#compress-mode>`__ in the manual for more details.
+See `Compress mode <../tutorials/assets_pipeline/importing_images.html#compress-mode>`__ in the manual for more details.
 
 .. rst-class:: classref-item-separator
 

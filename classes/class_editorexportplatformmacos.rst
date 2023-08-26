@@ -790,7 +790,7 @@ If enabled, a wrapper that can be used to run the application with console outpu
 
 :ref:`bool<class_bool>` **display/high_res**
 
-If ``true``, the application is rendered at native display resolution, otherwise it is always rendered at loHPI resolution and upscaled by OS when required.
+If ``true``, the application is rendered at native display resolution, otherwise it is always rendered at loDPI resolution and upscaled by OS when required.
 
 .. rst-class:: classref-item-separator
 

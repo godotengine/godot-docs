@@ -32,6 +32,8 @@ Tutorials
 
 - :doc:`3D lights and shadows <../tutorials/3d/lights_and_shadows>`
 
+- :doc:`Faking global illumination <../tutorials/3d/global_illumination/faking_global_illumination>`
+
 - `Third Person Shooter Demo <https://godotengine.org/asset-library/asset/678>`__
 
 .. rst-class:: classref-reftable-group

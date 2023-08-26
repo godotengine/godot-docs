@@ -27,6 +27,13 @@ The default settings are intended for use in an outdoor environment, tips for se
 
 \ **Note:** Depth of field blur is only supported in the Forward+ and Mobile rendering methods, not Compatibility.
 
+.. rst-class:: classref-introduction-group
+
+Tutorials
+---------
+
+- :doc:`Physical light and camera units <../tutorials/3d/physical_light_and_camera_units>`
+
 .. rst-class:: classref-reftable-group
 
 Properties

@@ -36,7 +36,7 @@ Comma-separated values are a plain text table storage format. The format's simpl
 Tutorials
 ---------
 
-- `Importing translations <https://docs.godotengine.org/en/latest/tutorials/assets_pipeline/importing_translations.html>`__
+- :doc:`Importing translations <../tutorials/assets_pipeline/importing_translations>`
 
 .. rst-class:: classref-reftable-group
 

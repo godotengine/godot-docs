@@ -25,6 +25,13 @@ Performance of **FogVolume**\ s is directly related to their relative size on th
 
 \ **Note:** **FogVolume**\ s only have a visible effect if :ref:`Environment.volumetric_fog_enabled<class_Environment_property_volumetric_fog_enabled>` is ``true``. If you don't want fog to be globally visible (but only within **FogVolume** nodes), set :ref:`Environment.volumetric_fog_density<class_Environment_property_volumetric_fog_density>` to ``0.0``.
 
+.. rst-class:: classref-introduction-group
+
+Tutorials
+---------
+
+- :doc:`Volumetric fog and fog volumes <../tutorials/3d/volumetric_fog>`
+
 .. rst-class:: classref-reftable-group
 
 Properties

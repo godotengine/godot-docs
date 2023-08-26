@@ -21,6 +21,8 @@ Tutorials
 
 - :doc:`Exporting for the Web <../tutorials/export/exporting_for_web>`
 
+- :doc:`Web documentation index <../tutorials/platform/web/index>`
+
 .. rst-class:: classref-reftable-group
 
 Properties

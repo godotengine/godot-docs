@@ -1300,6 +1300,8 @@ If ``true``, the viewport will use a unique copy of the :ref:`World3D<class_Worl
 
 If ``true``, the objects rendered by viewport become subjects of mouse picking process.
 
+\ **Note:** The number of simultaneously pickable objects is limited to 64 and they are selected in a non-deterministic order, which can be different in each picking process.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -1318,6 +1320,8 @@ If ``true``, the objects rendered by viewport become subjects of mouse picking p
 If ``true``, objects receive mouse picking events sorted primarily by their :ref:`CanvasItem.z_index<class_CanvasItem_property_z_index>` and secondarily by their position in the scene tree. If ``false``, the order is undetermined.
 
 \ **Note:** This setting is disabled by default because of its potential expensive computational cost.
+
+\ **Note:** Sorting happens after selecting the pickable objects. Because of the limitation of 64 simultaneously pickable objects, it is not guaranteed that the object with the highest :ref:`CanvasItem.z_index<class_CanvasItem_property_z_index>` receives the picking event.
 
 .. rst-class:: classref-item-separator
 

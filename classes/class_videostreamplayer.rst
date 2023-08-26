@@ -27,6 +27,13 @@ Supported video formats are `Ogg Theora <https://www.theora.org/>`__ (``.ogv``, 
 
 \ **Warning:** On Web, video playback *will* perform poorly due to missing architecture-specific assembly optimizations.
 
+.. rst-class:: classref-introduction-group
+
+Tutorials
+---------
+
+- :doc:`Playing videos <../tutorials/animation/playing_videos>`
+
 .. rst-class:: classref-reftable-group
 
 Properties

@@ -28,6 +28,8 @@ When used directly in an :ref:`AudioStreamPlayer<class_AudioStreamPlayer>` node,
 Tutorials
 ---------
 
+- :doc:`Recording with microphone <../tutorials/audio/recording_with_microphone>`
+
 - `Audio Mic Record Demo <https://github.com/godotengine/godot-demo-projects/tree/master/audio/mic_record>`__
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`

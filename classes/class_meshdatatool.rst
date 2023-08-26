@@ -72,6 +72,13 @@ See also :ref:`ArrayMesh<class_ArrayMesh>`, :ref:`ImmediateMesh<class_ImmediateM
 
 \ **Note:** Godot uses clockwise `winding order <https://learnopengl.com/Advanced-OpenGL/Face-culling>`__ for front faces of triangle primitive modes.
 
+.. rst-class:: classref-introduction-group
+
+Tutorials
+---------
+
+- :doc:`Using the MeshDataTool <../tutorials/3d/procedural_geometry/meshdatatool>`
+
 .. rst-class:: classref-reftable-group
 
 Methods

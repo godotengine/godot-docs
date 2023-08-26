@@ -567,7 +567,7 @@ void **erase** **(** :ref:`Variant<class_Variant>` value **)**
 
 Removes the first occurrence of a value from the array. If the value does not exist in the array, nothing happens. To remove an element by index, use :ref:`remove_at<class_Array_method_remove_at>` instead.
 
-\ **Note:** This method acts in-place and doesn't return a value.
+\ **Note:** This method acts in-place and doesn't return a modified array.
 
 \ **Note:** On large arrays, this method will be slower if the removed element is close to the beginning of the array (index 0). This is because all elements placed after the removed element have to be reindexed.
 
@@ -770,9 +770,9 @@ Returns a hashed 32-bit integer value representing the array and its contents.
 
 :ref:`int<class_int>` **insert** **(** :ref:`int<class_int>` position, :ref:`Variant<class_Variant>` value **)**
 
-Inserts a new element at a given position in the array. The position must be valid, or at the end of the array (``pos == size()``).
+Inserts a new element at a given position in the array. The position must be valid, or at the end of the array (``pos == size()``). Returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` on success, or one of the other :ref:`Error<enum_@GlobalScope_Error>` values if the operation failed.
 
-\ **Note:** This method acts in-place and doesn't return a value.
+\ **Note:** This method acts in-place and doesn't return a modified array.
 
 \ **Note:** On large arrays, this method will be slower if the inserted element is close to the beginning of the array (index 0). This is because all elements placed after the newly inserted element have to be reindexed.
 
@@ -909,7 +909,7 @@ See also :ref:`max<class_Array_method_max>` for an example of using a custom com
 
 :ref:`Variant<class_Variant>` **pick_random** **(** **)** |const|
 
-Returns a random value from the target array.
+Returns a random value from the target array. Prints an error and returns ``null`` if the array is empty.
 
 
 .. tabs::
@@ -1029,7 +1029,7 @@ void **remove_at** **(** :ref:`int<class_int>` position **)**
 
 Removes an element from the array by index. If the index does not exist in the array, nothing happens. To remove an element by searching for its value, use :ref:`erase<class_Array_method_erase>` instead.
 
-\ **Note:** This method acts in-place and doesn't return a value.
+\ **Note:** This method acts in-place and doesn't return a modified array.
 
 \ **Note:** On large arrays, this method will be slower if the removed element is close to the beginning of the array (index 0). This is because all elements placed after the removed element have to be reindexed.
 
@@ -1045,7 +1045,9 @@ Removes an element from the array by index. If the index does not exist in the a
 
 :ref:`int<class_int>` **resize** **(** :ref:`int<class_int>` size **)**
 
-Resizes the array to contain a different number of elements. If the array size is smaller, elements are cleared, if bigger, new elements are ``null``.
+Resizes the array to contain a different number of elements. If the array size is smaller, elements are cleared, if bigger, new elements are ``null``. Returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` on success, or one of the other :ref:`Error<enum_@GlobalScope_Error>` values if the operation failed.
+
+\ **Note:** This method acts in-place and doesn't return a modified array.
 
 .. rst-class:: classref-item-separator
 
