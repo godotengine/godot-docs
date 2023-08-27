@@ -244,7 +244,7 @@ With this code, if no collisions occurred on a given frame, the loop won't run.
            var collision = get_slide_collision(index)
 
            # If the collision is with ground
-           if (collision.get_collider() == null):
+           if collision.get_collider() == null:
                continue
 
            # If the collider is with a mob
