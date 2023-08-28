@@ -111,6 +111,11 @@ Importing ``.blend`` files directly within Godot
     recommend using Blender 3.5 or later, as it includes many fixes to the glTF
     exporter.
 
+    It is **strongly** recommended to use an official Blender release downloaded
+    from blender.org, as opposed to a Linux distribution package or Flatpak.
+    This avoids any issues related to packaging, such as different library
+    versions that can cause incompatibilities or sandboxing restrictions.
+
 From Godot 4.0 onwards, the editor can directly import ``.blend`` files by
 calling `Blender <https://www.blender.org/>`__'s glTF export functionality in a
 transparent manner.
