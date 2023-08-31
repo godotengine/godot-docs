@@ -2174,4 +2174,4 @@ assertion error occurs.
 You can optionally pass a custom error message to be shown if the assertion
 fails::
 
-    assert(enemy_power < 256, "Enemy is too powerful!")
+    assert(enemy_power > 256, "Enemy is too powerful!")
