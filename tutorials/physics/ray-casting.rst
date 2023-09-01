@@ -156,6 +156,7 @@ with Area3D, the boolean parameter ``collide_with_areas`` must be set to ``true`
 
 .. tabs::
  .. code-tab:: gdscript GDScript
+
         const RAY_LENGTH = 1000
         
         func _physics_process(delta):
