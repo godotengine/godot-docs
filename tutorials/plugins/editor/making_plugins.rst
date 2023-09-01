@@ -432,7 +432,8 @@ an autoload.
 
 Use the following code to register a singleton from an editor plugin:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     @tool
     extends EditorPlugin
@@ -448,3 +449,27 @@ Use the following code to register a singleton from an editor plugin:
 
     func _exit_tree():
         remove_autoload_singleton(AUTOLOAD_NAME)
+
+ .. code-tab:: csharp
+
+    #if TOOLS
+    using Godot;
+
+    [Tool]
+    public partial class MyEditorPlugin : EditorPlugin
+    {
+        // Replace this value with a PascalCase autoload name.
+        private const string AutoloadName = "SomeAutoload";
+
+        public override void _EnterTree()
+        {
+            // The autoload can be a scene or script file.
+            AddAutoloadSingleton(AutoloadName, "res://addons/MyAddon/SomeAutoload.tscn");
+        }
+
+        public override void _ExitTree()
+        {
+            RemoveAutoloadSingleton(AutoloadName);
+        }
+    }
+    #endif
