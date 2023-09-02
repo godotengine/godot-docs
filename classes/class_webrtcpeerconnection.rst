@@ -23,7 +23,7 @@ Description
 
 A WebRTC connection between the local computer and a remote peer. Provides an interface to connect, maintain and monitor the connection.
 
-Setting up a WebRTC connection between two peers from now on) may not seem a trivial task, but it can be broken down into 3 main steps:
+Setting up a WebRTC connection between two peers may not seem a trivial task, but it can be broken down into 3 main steps:
 
 - The peer that wants to initiate the connection (``A`` from now on) creates an offer and send it to the other peer (``B`` from now on).
 

@@ -14,14 +14,51 @@ XMLParser
 
 Provides a low-level interface for creating parsers for XML files.
 
-Low-level class for creating parsers for `XML <https://en.wikipedia.org/wiki/XML>`__ files.
-
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
 Provides a low-level interface for creating parsers for `XML <https://en.wikipedia.org/wiki/XML>`__ files. This class can serve as base to make custom XML parsers.
+
+To parse XML, you must open a file with the :ref:`open<class_XMLParser_method_open>` method or a buffer with the :ref:`open_buffer<class_XMLParser_method_open_buffer>` method. Then, the :ref:`read<class_XMLParser_method_read>` method must be called to parse the next nodes. Most of the methods take into consideration the currently parsed node.
+
+Here is an example of using **XMLParser** to parse a SVG file (which is based on XML), printing each element and its attributes as a dictionary:
+
+
+.. tabs::
+
+ .. code-tab:: gdscript
+
+    var parser = XMLParser.new()
+    parser.open("path/to/file.svg")
+    while parser.read() != ERR_FILE_EOF:
+        if parser.get_node_type() == XMLParser.NODE_ELEMENT:
+            var node_name = parser.get_node_name()
+            var attributes_dict = {}
+            for idx in range(parser.get_attribute_count()):
+                attributes_dict[parser.get_attribute_name(idx)] = parser.get_attribute_value(idx)
+            print("The ", node_name, " element has the following attributes: ", attributes_dict)
+
+ .. code-tab:: csharp
+
+    var parser = new XmlParser();
+    parser.Open("path/to/file.svg");
+    while (parser.Read() != Error.FileEof)
+    {
+        if (parser.GetNodeType() == XmlParser.NodeType.Element)
+        {
+            var nodeName = parser.GetNodeName();
+            var attributesDict = new Godot.Collections.Dictionary();
+            for (int idx = 0; idx < parser.GetAttributeCount(); idx++)
+            {
+                attributesDict[parser.GetAttributeName(idx)] = parser.GetAttributeValue(idx);
+            }
+            GD.Print($"The {nodeName} element has the following attributes: {attributesDict}");
+        }
+    }
+
+
 
 .. rst-class:: classref-reftable-group
 
@@ -96,7 +133,7 @@ There's no node (no file or buffer opened).
 
 :ref:`NodeType<enum_XMLParser_NodeType>` **NODE_ELEMENT** = ``1``
 
-Element (tag).
+An element node type, also known as a tag, e.g. ``<title>``.
 
 .. _class_XMLParser_constant_NODE_ELEMENT_END:
 
@@ -104,7 +141,7 @@ Element (tag).
 
 :ref:`NodeType<enum_XMLParser_NodeType>` **NODE_ELEMENT_END** = ``2``
 
-End of element.
+An end of element node type, e.g. ``</title>``.
 
 .. _class_XMLParser_constant_NODE_TEXT:
 
@@ -112,7 +149,7 @@ End of element.
 
 :ref:`NodeType<enum_XMLParser_NodeType>` **NODE_TEXT** = ``3``
 
-Text node.
+A text node type, i.e. text that is not inside an element. This includes whitespace.
 
 .. _class_XMLParser_constant_NODE_COMMENT:
 
@@ -120,7 +157,7 @@ Text node.
 
 :ref:`NodeType<enum_XMLParser_NodeType>` **NODE_COMMENT** = ``4``
 
-Comment node.
+A comment node type, e.g. ``<!--A comment-->``.
 
 .. _class_XMLParser_constant_NODE_CDATA:
 
@@ -128,7 +165,7 @@ Comment node.
 
 :ref:`NodeType<enum_XMLParser_NodeType>` **NODE_CDATA** = ``5``
 
-CDATA content.
+A node type for CDATA (Character Data) sections, e.g. ``<![CDATA[CDATA section]]>``.
 
 .. _class_XMLParser_constant_NODE_UNKNOWN:
 
@@ -136,7 +173,7 @@ CDATA content.
 
 :ref:`NodeType<enum_XMLParser_NodeType>` **NODE_UNKNOWN** = ``6``
 
-Unknown node.
+An unknown node type.
 
 .. rst-class:: classref-section-separator
 
@@ -153,7 +190,9 @@ Method Descriptions
 
 :ref:`int<class_int>` **get_attribute_count** **(** **)** |const|
 
-Gets the number of attributes in the current element.
+Returns the number of attributes in the currently parsed element.
+
+\ **Note:** If this method is used while the currently parsed node is not :ref:`NODE_ELEMENT<class_XMLParser_constant_NODE_ELEMENT>` or :ref:`NODE_ELEMENT_END<class_XMLParser_constant_NODE_ELEMENT_END>`, this count will not be updated and will still reflect the last element.
 
 .. rst-class:: classref-item-separator
 
@@ -165,7 +204,7 @@ Gets the number of attributes in the current element.
 
 :ref:`String<class_String>` **get_attribute_name** **(** :ref:`int<class_int>` idx **)** |const|
 
-Gets the name of the attribute specified by the ``idx`` index.
+Returns the name of an attribute of the currently parsed element, specified by the ``idx`` index.
 
 .. rst-class:: classref-item-separator
 
@@ -177,7 +216,7 @@ Gets the name of the attribute specified by the ``idx`` index.
 
 :ref:`String<class_String>` **get_attribute_value** **(** :ref:`int<class_int>` idx **)** |const|
 
-Gets the value of the attribute specified by the ``idx`` index.
+Returns the value of an attribute of the currently parsed element, specified by the ``idx`` index.
 
 .. rst-class:: classref-item-separator
 
@@ -189,7 +228,7 @@ Gets the value of the attribute specified by the ``idx`` index.
 
 :ref:`int<class_int>` **get_current_line** **(** **)** |const|
 
-Gets the current line in the parsed file, counting from 0.
+Returns the current line in the parsed file, counting from 0.
 
 .. rst-class:: classref-item-separator
 
@@ -201,7 +240,7 @@ Gets the current line in the parsed file, counting from 0.
 
 :ref:`String<class_String>` **get_named_attribute_value** **(** :ref:`String<class_String>` name **)** |const|
 
-Gets the value of a certain attribute of the current element by ``name``. This will raise an error if the element has no such attribute.
+Returns the value of an attribute of the currently parsed element, specified by its ``name``. This method will raise an error if the element has no such attribute.
 
 .. rst-class:: classref-item-separator
 
@@ -213,7 +252,7 @@ Gets the value of a certain attribute of the current element by ``name``. This w
 
 :ref:`String<class_String>` **get_named_attribute_value_safe** **(** :ref:`String<class_String>` name **)** |const|
 
-Gets the value of a certain attribute of the current element by ``name``. This will return an empty :ref:`String<class_String>` if the attribute is not found.
+Returns the value of an attribute of the currently parsed element, specified by its ``name``. This method will return an empty string if the element has no such attribute.
 
 .. rst-class:: classref-item-separator
 
@@ -225,7 +264,7 @@ Gets the value of a certain attribute of the current element by ``name``. This w
 
 :ref:`String<class_String>` **get_node_data** **(** **)** |const|
 
-Gets the contents of a text node. This will raise an error in any other type of node.
+Returns the contents of a text node. This method will raise an error if the current parsed node is of any other type.
 
 .. rst-class:: classref-item-separator
 
@@ -237,7 +276,7 @@ Gets the contents of a text node. This will raise an error in any other type of 
 
 :ref:`String<class_String>` **get_node_name** **(** **)** |const|
 
-Gets the name of the current element node. This will raise an error if the current node type is neither :ref:`NODE_ELEMENT<class_XMLParser_constant_NODE_ELEMENT>` nor :ref:`NODE_ELEMENT_END<class_XMLParser_constant_NODE_ELEMENT_END>`.
+Returns the name of an element node. This method will raise an error if the currently parsed node is not of :ref:`NODE_ELEMENT<class_XMLParser_constant_NODE_ELEMENT>` or :ref:`NODE_ELEMENT_END<class_XMLParser_constant_NODE_ELEMENT_END>` type.
 
 .. rst-class:: classref-item-separator
 
@@ -249,7 +288,7 @@ Gets the name of the current element node. This will raise an error if the curre
 
 :ref:`int<class_int>` **get_node_offset** **(** **)** |const|
 
-Gets the byte offset of the current node since the beginning of the file or buffer.
+Returns the byte offset of the currently parsed node since the beginning of the file or buffer. This is usually equivalent to the number of characters before the read position.
 
 .. rst-class:: classref-item-separator
 
@@ -261,7 +300,7 @@ Gets the byte offset of the current node since the beginning of the file or buff
 
 :ref:`NodeType<enum_XMLParser_NodeType>` **get_node_type** **(** **)**
 
-Gets the type of the current node. Compare with :ref:`NodeType<enum_XMLParser_NodeType>` constants.
+Returns the type of the current node. Compare with :ref:`NodeType<enum_XMLParser_NodeType>` constants.
 
 .. rst-class:: classref-item-separator
 
@@ -273,7 +312,7 @@ Gets the type of the current node. Compare with :ref:`NodeType<enum_XMLParser_No
 
 :ref:`bool<class_bool>` **has_attribute** **(** :ref:`String<class_String>` name **)** |const|
 
-Check whether the current element has a certain attribute.
+Returns ``true`` if the currently parsed element has an attribute with the ``name``.
 
 .. rst-class:: classref-item-separator
 
@@ -285,7 +324,7 @@ Check whether the current element has a certain attribute.
 
 :ref:`bool<class_bool>` **is_empty** **(** **)** |const|
 
-Check whether the current element is empty (this only works for completely empty tags, e.g. ``<element />``).
+Returns ``true`` if the currently parsed element is empty, e.g. ``<element />``.
 
 .. rst-class:: classref-item-separator
 
@@ -297,7 +336,7 @@ Check whether the current element is empty (this only works for completely empty
 
 :ref:`Error<enum_@GlobalScope_Error>` **open** **(** :ref:`String<class_String>` file **)**
 
-Opens an XML ``file`` for parsing. This returns an error code.
+Opens an XML ``file`` for parsing. This method returns an error code.
 
 .. rst-class:: classref-item-separator
 
@@ -309,7 +348,7 @@ Opens an XML ``file`` for parsing. This returns an error code.
 
 :ref:`Error<enum_@GlobalScope_Error>` **open_buffer** **(** :ref:`PackedByteArray<class_PackedByteArray>` buffer **)**
 
-Opens an XML raw ``buffer`` for parsing. This returns an error code.
+Opens an XML raw ``buffer`` for parsing. This method returns an error code.
 
 .. rst-class:: classref-item-separator
 
@@ -321,7 +360,7 @@ Opens an XML raw ``buffer`` for parsing. This returns an error code.
 
 :ref:`Error<enum_@GlobalScope_Error>` **read** **(** **)**
 
-Reads the next node of the file. This returns an error code.
+Parses the next node in the file. This method returns an error code.
 
 .. rst-class:: classref-item-separator
 
@@ -333,7 +372,7 @@ Reads the next node of the file. This returns an error code.
 
 :ref:`Error<enum_@GlobalScope_Error>` **seek** **(** :ref:`int<class_int>` position **)**
 
-Moves the buffer cursor to a certain offset (since the beginning) and read the next node there. This returns an error code.
+Moves the buffer cursor to a certain offset (since the beginning) and reads the next node there. This method returns an error code.
 
 .. rst-class:: classref-item-separator
 
@@ -345,7 +384,7 @@ Moves the buffer cursor to a certain offset (since the beginning) and read the n
 
 void **skip_section** **(** **)**
 
-Skips the current section. If the node contains other elements, they will be ignored and the cursor will go to the closing of the current element.
+Skips the current section. If the currently parsed node contains more inner nodes, they will be ignored and the cursor will go to the closing of the current element.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

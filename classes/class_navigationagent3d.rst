@@ -286,7 +286,7 @@ If ``true`` the agent is registered for an RVO avoidance callback on the :ref:`N
 - void **set_avoidance_layers** **(** :ref:`int<class_int>` value **)**
 - :ref:`int<class_int>` **get_avoidance_layers** **(** **)**
 
-A bitfield determining the avoidance layers for this NavigationAgent. Other agent's with a matching bit on the :ref:`avoidance_mask<class_NavigationAgent3D_property_avoidance_mask>` will avoid this agent.
+A bitfield determining the avoidance layers for this NavigationAgent. Other agents with a matching bit on the :ref:`avoidance_mask<class_NavigationAgent3D_property_avoidance_mask>` will avoid this agent.
 
 .. rst-class:: classref-item-separator
 
@@ -611,7 +611,7 @@ Does not affect normal pathfinding. To change an actor's pathfinding radius bake
 - void **set_target_desired_distance** **(** :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_target_desired_distance** **(** **)**
 
-The distance threshold before the final target point is considered to be reached. This allows agents to not have to hit the point of the final target exactly, but only to reach its general. If this value is set too low, the NavigationAgent will be stuck in a repath loop because it will constantly overshoot or undershoot the distance to the final target point on each physics frame update.
+The distance threshold before the final target point is considered to be reached. This allows agents to not have to hit the point of the final target exactly, but only to reach its general area. If this value is set too low, the NavigationAgent will be stuck in a repath loop because it will constantly overshoot or undershoot the distance to the final target point on each physics frame update.
 
 .. rst-class:: classref-item-separator
 

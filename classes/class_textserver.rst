@@ -120,6 +120,8 @@ Methods
    +-----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Vector2i[]<class_Vector2i>`                               | :ref:`font_get_size_cache_list<class_TextServer_method_font_get_size_cache_list>` **(** :ref:`RID<class_RID>` font_rid **)** |const|                                                                                                                                                                                                                                   |
    +-----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                                           | :ref:`font_get_spacing<class_TextServer_method_font_get_spacing>` **(** :ref:`RID<class_RID>` font_rid, :ref:`SpacingType<enum_TextServer_SpacingType>` spacing **)** |const|                                                                                                                                                                                          |
+   +-----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                                           | :ref:`font_get_stretch<class_TextServer_method_font_get_stretch>` **(** :ref:`RID<class_RID>` font_rid **)** |const|                                                                                                                                                                                                                                                   |
    +-----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |bitfield|\<:ref:`FontStyle<enum_TextServer_FontStyle>`\>       | :ref:`font_get_style<class_TextServer_method_font_get_style>` **(** :ref:`RID<class_RID>` font_rid **)** |const|                                                                                                                                                                                                                                                       |
@@ -227,6 +229,8 @@ Methods
    | void                                                            | :ref:`font_set_scale<class_TextServer_method_font_set_scale>` **(** :ref:`RID<class_RID>` font_rid, :ref:`int<class_int>` size, :ref:`float<class_float>` scale **)**                                                                                                                                                                                                  |
    +-----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                            | :ref:`font_set_script_support_override<class_TextServer_method_font_set_script_support_override>` **(** :ref:`RID<class_RID>` font_rid, :ref:`String<class_String>` script, :ref:`bool<class_bool>` supported **)**                                                                                                                                                    |
+   +-----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                                            | :ref:`font_set_spacing<class_TextServer_method_font_set_spacing>` **(** :ref:`RID<class_RID>` font_rid, :ref:`SpacingType<enum_TextServer_SpacingType>` spacing, :ref:`int<class_int>` value **)**                                                                                                                                                                     |
    +-----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                            | :ref:`font_set_stretch<class_TextServer_method_font_set_stretch>` **(** :ref:`RID<class_RID>` font_rid, :ref:`int<class_int>` weight **)**                                                                                                                                                                                                                             |
    +-----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -2035,6 +2039,18 @@ Returns list of the font sizes in the cache. Each size is ``Vector2i`` with font
 
 ----
 
+.. _class_TextServer_method_font_get_spacing:
+
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **font_get_spacing** **(** :ref:`RID<class_RID>` font_rid, :ref:`SpacingType<enum_TextServer_SpacingType>` spacing **)** |const|
+
+Returns the spacing for ``spacing`` (see :ref:`SpacingType<enum_TextServer_SpacingType>`) in pixels (not relative to the font size).
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_TextServer_method_font_get_stretch:
 
 .. rst-class:: classref-method
@@ -2688,6 +2704,18 @@ Sets scaling factor of the color bitmap font.
 void **font_set_script_support_override** **(** :ref:`RID<class_RID>` font_rid, :ref:`String<class_String>` script, :ref:`bool<class_bool>` supported **)**
 
 Adds override for :ref:`font_is_script_supported<class_TextServer_method_font_is_script_supported>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_TextServer_method_font_set_spacing:
+
+.. rst-class:: classref-method
+
+void **font_set_spacing** **(** :ref:`RID<class_RID>` font_rid, :ref:`SpacingType<enum_TextServer_SpacingType>` spacing, :ref:`int<class_int>` value **)**
+
+Sets the spacing for ``spacing`` (see :ref:`SpacingType<enum_TextServer_SpacingType>`) to ``value`` in pixels (not relative to the font size).
 
 .. rst-class:: classref-item-separator
 
