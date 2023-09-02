@@ -101,7 +101,7 @@ Property Descriptions
 
 The bottom margin for the contents of this style box. Increasing this value reduces the space available to the contents from the bottom.
 
-If this value is negative, it is ignored and a child-specific margin is used instead. For example for :ref:`StyleBoxFlat<class_StyleBoxFlat>` the border thickness (if any) is used instead.
+If this value is negative, it is ignored and a child-specific margin is used instead. For example, for :ref:`StyleBoxFlat<class_StyleBoxFlat>`, the border thickness (if any) is used instead.
 
 It is up to the code using this style box to decide what these contents are: for example, a :ref:`Button<class_Button>` respects this content margin for the textual contents of the button.
 

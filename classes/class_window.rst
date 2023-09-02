@@ -192,6 +192,8 @@ Methods
    +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                             | :ref:`is_using_font_oversampling<class_Window_method_is_using_font_oversampling>` **(** **)** |const|                                                                                                                                              |
    +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                                | :ref:`move_to_center<class_Window_method_move_to_center>` **(** **)**                                                                                                                                                                              |
+   +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                | :ref:`move_to_foreground<class_Window_method_move_to_foreground>` **(** **)**                                                                                                                                                                      |
    +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                | :ref:`popup<class_Window_method_popup>` **(** :ref:`Rect2i<class_Rect2i>` rect=Rect2i(0, 0, 0, 0) **)**                                                                                                                                            |
@@ -2019,6 +2021,18 @@ Returns ``true`` if the window can be maximized (the maximize button is enabled)
 :ref:`bool<class_bool>` **is_using_font_oversampling** **(** **)** |const|
 
 Returns ``true`` if font oversampling is enabled. See :ref:`set_use_font_oversampling<class_Window_method_set_use_font_oversampling>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Window_method_move_to_center:
+
+.. rst-class:: classref-method
+
+void **move_to_center** **(** **)**
+
+Centers a native window on the current screen and an embedded window on its embedder :ref:`Viewport<class_Viewport>`.
 
 .. rst-class:: classref-item-separator
 

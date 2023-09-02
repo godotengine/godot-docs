@@ -58,6 +58,8 @@ Methods
    :widths: auto
 
    +---------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                                                | :ref:`clear_tiles_outside_texture<class_TileSetAtlasSource_method_clear_tiles_outside_texture>` **(** **)**                                                                                                                                                                                                                                                                          |
+   +---------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                                               | :ref:`create_alternative_tile<class_TileSetAtlasSource_method_create_alternative_tile>` **(** :ref:`Vector2i<class_Vector2i>` atlas_coords, :ref:`int<class_int>` alternative_id_override=-1 **)**                                                                                                                                                                                   |
    +---------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                                | :ref:`create_tile<class_TileSetAtlasSource_method_create_tile>` **(** :ref:`Vector2i<class_Vector2i>` atlas_coords, :ref:`Vector2i<class_Vector2i>` size=Vector2i(1, 1) **)**                                                                                                                                                                                                        |
@@ -95,6 +97,8 @@ Methods
    | :ref:`PackedVector2Array<class_PackedVector2Array>`                 | :ref:`get_tiles_to_be_removed_on_change<class_TileSetAtlasSource_method_get_tiles_to_be_removed_on_change>` **(** :ref:`Texture2D<class_Texture2D>` texture, :ref:`Vector2i<class_Vector2i>` margins, :ref:`Vector2i<class_Vector2i>` separation, :ref:`Vector2i<class_Vector2i>` texture_region_size **)**                                                                          |
    +---------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                             | :ref:`has_room_for_tile<class_TileSetAtlasSource_method_has_room_for_tile>` **(** :ref:`Vector2i<class_Vector2i>` atlas_coords, :ref:`Vector2i<class_Vector2i>` size, :ref:`int<class_int>` animation_columns, :ref:`Vector2i<class_Vector2i>` animation_separation, :ref:`int<class_int>` frames_count, :ref:`Vector2i<class_Vector2i>` ignored_tile=Vector2i(-1, -1) **)** |const| |
+   +---------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                             | :ref:`has_tiles_outside_texture<class_TileSetAtlasSource_method_has_tiles_outside_texture>` **(** **)** |const|                                                                                                                                                                                                                                                                      |
    +---------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                                | :ref:`move_tile_in_atlas<class_TileSetAtlasSource_method_move_tile_in_atlas>` **(** :ref:`Vector2i<class_Vector2i>` atlas_coords, :ref:`Vector2i<class_Vector2i>` new_atlas_coords=Vector2i(-1, -1), :ref:`Vector2i<class_Vector2i>` new_size=Vector2i(-1, -1) **)**                                                                                                                 |
    +---------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -256,6 +260,18 @@ Disabling this setting might lead a small performance improvement, as generating
 
 Method Descriptions
 -------------------
+
+.. _class_TileSetAtlasSource_method_clear_tiles_outside_texture:
+
+.. rst-class:: classref-method
+
+void **clear_tiles_outside_texture** **(** **)**
+
+Removes all tiles that don't fit the available texture area. This method iterates over all the source's tiles, so it's advised to use :ref:`has_tiles_outside_texture<class_TileSetAtlasSource_method_has_tiles_outside_texture>` beforehand.
+
+.. rst-class:: classref-item-separator
+
+----
 
 .. _class_TileSetAtlasSource_method_create_alternative_tile:
 
@@ -484,6 +500,18 @@ Returns an array of tiles coordinates ID that will be automatically removed when
 :ref:`bool<class_bool>` **has_room_for_tile** **(** :ref:`Vector2i<class_Vector2i>` atlas_coords, :ref:`Vector2i<class_Vector2i>` size, :ref:`int<class_int>` animation_columns, :ref:`Vector2i<class_Vector2i>` animation_separation, :ref:`int<class_int>` frames_count, :ref:`Vector2i<class_Vector2i>` ignored_tile=Vector2i(-1, -1) **)** |const|
 
 Returns whether there is enough room in an atlas to create/modify a tile with the given properties. If ``ignored_tile`` is provided, act as is the given tile was not present in the atlas. This may be used when you want to modify a tile's properties.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_TileSetAtlasSource_method_has_tiles_outside_texture:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **has_tiles_outside_texture** **(** **)** |const|
+
+Checks if the source has any tiles that don't fit the texture area (either partially or completely).
 
 .. rst-class:: classref-item-separator
 

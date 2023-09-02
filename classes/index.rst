@@ -780,6 +780,7 @@ Other objects
     class_oggpacketsequenceplayback
     class_openxrapiextension
     class_openxrextensionwrapperextension
+    class_openxrinteractionprofilemetadata
     class_openxrinterface
     class_os
     class_packeddatacontainerref

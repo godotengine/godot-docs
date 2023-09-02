@@ -587,6 +587,8 @@ The timer will be automatically freed after its time elapses.
 
 Creates and returns a new :ref:`Tween<class_Tween>`. The Tween will start automatically on the next process frame or physics frame (depending on :ref:`TweenProcessMode<enum_Tween_TweenProcessMode>`).
 
+\ **Note:** When creating a :ref:`Tween<class_Tween>` using this method, the :ref:`Tween<class_Tween>` will not be tied to the :ref:`Node<class_Node>` that called it. It will continue to animate even if the :ref:`Node<class_Node>` is freed, but it will automatically finish if there's nothing left to animate. If you want the :ref:`Tween<class_Tween>` to be automatically killed when the :ref:`Node<class_Node>` is freed, use :ref:`Node.create_tween<class_Node_method_create_tween>` or :ref:`Tween.bind_node<class_Tween_method_bind_node>`.
+
 .. rst-class:: classref-item-separator
 
 ----

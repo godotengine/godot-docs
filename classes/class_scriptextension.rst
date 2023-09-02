@@ -31,6 +31,8 @@ Methods
    +---------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Script<class_Script>`                 | :ref:`_get_base_script<class_ScriptExtension_method__get_base_script>` **(** **)** |virtual| |const|                                                                    |
    +---------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                 | :ref:`_get_class_icon_path<class_ScriptExtension_method__get_class_icon_path>` **(** **)** |virtual| |const|                                                            |
+   +---------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Dictionary<class_Dictionary>`         | :ref:`_get_constants<class_ScriptExtension_method__get_constants>` **(** **)** |virtual| |const|                                                                        |
    +---------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Dictionary[]<class_Dictionary>`       | :ref:`_get_documentation<class_ScriptExtension_method__get_documentation>` **(** **)** |virtual| |const|                                                                |
@@ -132,6 +134,20 @@ Method Descriptions
 .. rst-class:: classref-method
 
 :ref:`Script<class_Script>` **_get_base_script** **(** **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ScriptExtension_method__get_class_icon_path:
+
+.. rst-class:: classref-method
+
+:ref:`String<class_String>` **_get_class_icon_path** **(** **)** |virtual| |const|
 
 .. container:: contribute
 

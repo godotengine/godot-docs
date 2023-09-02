@@ -625,7 +625,7 @@ See also :ref:`@GlobalScope.PROPERTY_USAGE_SUBGROUP<class_@GlobalScope_constant_
 
 **@icon** **(** :ref:`String<class_String>` icon_path **)**
 
-Add a custom icon to the current script. The script must be registered as a global class using the ``class_name`` keyword for this to have a visible effect. The icon specified at ``icon_path`` is displayed in the Scene dock for every node of that class, as well as in various editor dialogs.
+Add a custom icon to the current script. The icon specified at ``icon_path`` is displayed in the Scene dock for every node of that class, as well as in various editor dialogs.
 
 ::
 
