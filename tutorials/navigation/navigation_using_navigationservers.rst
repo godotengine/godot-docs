@@ -135,7 +135,7 @@ Afterwards the function waits for the next physics_frame before continuing with 
 
         # create a procedural navigation mesh for the region
         var new_navigation_mesh: NavigationMesh = NavigationMesh.new()
-        var vertices: PackedVector3Array = PoolVector3Array([
+        var vertices: PackedVector3Array = PackedVector3Array([
             Vector3(0,0,0),
             Vector3(9.0,0,0),
             Vector3(0,0,9.0)
