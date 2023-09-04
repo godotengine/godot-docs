@@ -42,6 +42,11 @@ Now go to the ``Plugins`` tab and enable the plugin.
 
 .. image:: img/godot_xr_tools_enable.webp
 
+Make sure you have reenable plugin if you have issues.
+Optionally plugin will add Autoload, but if you have errors just add this `UserSettings` in Autoload manually:
+
+.. image:: https://user-images.githubusercontent.com/35545041/265538187-84b7f39f-5d57-4b50-b8cc-cafe8e50c90f.png
+
 Basic hands
 -----------
 
