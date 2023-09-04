@@ -235,7 +235,7 @@ New pages since version 3.1
 Project workflow
 ^^^^^^^^^^^^^^^^
 
-- :ref:`doc_android_custom_build`
+- :ref:`doc_android_gradle_build`
 
 2D
 ^^
