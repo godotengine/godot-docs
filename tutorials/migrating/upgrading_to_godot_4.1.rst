@@ -267,6 +267,6 @@ You also need to add an extra ``compatibility_minimum`` line to your ``.gdextens
   [configuration]
 
   entry_symbol = "example_library_init"
-  compatibility_minimum = 4.1
+  compatibility_minimum = "4.1"
 
 This lets Godot know that your GDExtension has been updated and is safe to load in Godot 4.1.
