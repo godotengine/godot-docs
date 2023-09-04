@@ -58,7 +58,7 @@ To continue with the example, use the following values:
  .. code-tab:: ini C#
 
     Plugin Name: My Custom Node
-    Subfolder: my_custom_node
+    Subfolder: MyCustomNode
     Description: A custom node made to extend the Godot Engine.
     Author: Your Name Here
     Version: 1.0.0
@@ -246,8 +246,8 @@ dialog. For that, change the ``custom_node.gd`` script to the following:
         {
             // Initialization of the plugin goes here.
             // Add the new type with a name, a parent type, a script and an icon.
-            var script = GD.Load<Script>("res://addons/my_custom_node/MyButton.cs");
-            var texture = GD.Load<Texture2D>("res://addons/my_custom_node/icon.png");
+            var script = GD.Load<Script>("res://addons/MyCustomNode/MyButton.cs");
+            var texture = GD.Load<Texture2D>("res://addons/MyCustomNode/Icon.png");
             AddCustomType("MyButton", "Button", script, texture);
         }
 
@@ -367,21 +367,21 @@ The script could look like this:
     [Tool]
     public partial class CustomDock : EditorPlugin
     {
-        Control dock;
+        private Control _dock;
 
         public override void _EnterTree()
         {
-            dock = (Control)GD.Load<PackedScene>("addons/my_custom_dock/my_dock.tscn").Instantiate();
-            AddControlToDock(DockSlot.LeftUl, dock);
+            _dock = GD.Load<PackedScene>("res://addons/MyCustomDock/MyDock.tscn").Instantiate<Control>();
+            AddControlToDock(DockSlot.LeftUl, _dock);
         }
 
         public override void _ExitTree()
         {
             // Clean-up of the plugin goes here.
             // Remove the dock.
-            RemoveControlFromDocks(dock);
+            RemoveControlFromDocks(_dock);
             // Erase the control from the memory.
-            dock.Free();
+            _dock.Free();
         }
     }
     #endif
