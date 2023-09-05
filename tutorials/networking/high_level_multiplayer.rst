@@ -237,6 +237,12 @@ The function ``multiplayer.get_remote_sender_id()`` can be used to get the uniqu
         var sender_id = multiplayer.get_remote_sender_id() # The server knows who sent the input.
         # Process the input and affect game logic.
 
+.. warning :: If a function is annotated ``@rpc`` exists on client side, then it must exists on the server side (and vice-versa), as explained on [this post](https://github.com/godotengine/godot/issues/57869#issuecomment-1034215138). 
+              If not, then the script might not run as intended, and raise rpc checksum errors.
+
+
+
+
 Channels
 --------
 Modern networking protocols support channels, which are separate connections within the connection. This allows for multiple
