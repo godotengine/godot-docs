@@ -58,7 +58,7 @@ access.
     @export var script_type: Script
 
     # Must configure from the editor, defaults to null.
-    export var const_script: Script:
+    @export var const_script: Script:
         set(value):
             if Engine.is_editor_hint():
                 const_script = value

@@ -532,6 +532,10 @@ break backwards compatibility due to different default behavior.
 
 The most notable examples of this are:
 
+- Lifecycle functions such as ``_ready()`` and ``_process()`` no longer
+  implicitly call parent classes' functions that have the same name. Instead,
+  you must use ``super()`` at the top of a lifecycle function in the child class
+  so that the parent class function is called first.
 - Both :ref:`class_String` and :ref:`class_StringName` are now exposed to
   GDScript. This allows for greater optimization, as StringName is specifically
   designed to be used for "constant" strings that are created once and reused

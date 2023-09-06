@@ -147,6 +147,18 @@ Signals
 
 Emitted when :ref:`cell_size<class_GridMap_property_cell_size>` changes.
 
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_GridMap_signal_changed:
+
+.. rst-class:: classref-signal
+
+**changed** **(** **)**
+
+Emitted when the :ref:`MeshLibrary<class_MeshLibrary>` of this GridMap changes.
+
 .. rst-class:: classref-section-separator
 
 ----

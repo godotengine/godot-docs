@@ -12,14 +12,18 @@ Line2D
 
 **Inherits:** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-A 2D line.
+A 2D polyline that can optionally be textured.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-A line through several points in 2D space.
+This node draws a 2D polyline, i.e. a shape consisting of several points connected by segments. **Line2D** is not a mathematical polyline, i.e. the segments are not infinitely thin. It is intended for rendering and it can be colored and optionally textured.
+
+\ **Warning:** Certain configurations may be impossible to draw nicely, such as very sharp angles. In these situations, the node uses fallback drawing logic to look decent.
+
+\ **Note:** **Line2D** is drawn using a 2D mesh.
 
 .. rst-class:: classref-introduction-group
 
@@ -109,7 +113,7 @@ enum **LineJointMode**:
 
 :ref:`LineJointMode<enum_Line2D_LineJointMode>` **LINE_JOINT_SHARP** = ``0``
 
-The line's joints will be pointy. If ``sharp_limit`` is greater than the rotation of a joint, it becomes a bevel joint instead.
+Makes the polyline's joints pointy, connecting the sides of the two segments by extending them until they intersect. If the rotation of a joint is too big (based on :ref:`sharp_limit<class_Line2D_property_sharp_limit>`), the joint falls back to :ref:`LINE_JOINT_BEVEL<class_Line2D_constant_LINE_JOINT_BEVEL>` to prevent very long miters.
 
 .. _class_Line2D_constant_LINE_JOINT_BEVEL:
 
@@ -117,7 +121,7 @@ The line's joints will be pointy. If ``sharp_limit`` is greater than the rotatio
 
 :ref:`LineJointMode<enum_Line2D_LineJointMode>` **LINE_JOINT_BEVEL** = ``1``
 
-The line's joints will be bevelled/chamfered.
+Makes the polyline's joints bevelled/chamfered, connecting the sides of the two segments with a simple line.
 
 .. _class_Line2D_constant_LINE_JOINT_ROUND:
 
@@ -125,7 +129,7 @@ The line's joints will be bevelled/chamfered.
 
 :ref:`LineJointMode<enum_Line2D_LineJointMode>` **LINE_JOINT_ROUND** = ``2``
 
-The line's joints will be rounded.
+Makes the polyline's joints rounded, connecting the sides of the two segments with an arc. The detail of this arc depends on :ref:`round_precision<class_Line2D_property_round_precision>`.
 
 .. rst-class:: classref-item-separator
 
@@ -143,7 +147,7 @@ enum **LineCapMode**:
 
 :ref:`LineCapMode<enum_Line2D_LineCapMode>` **LINE_CAP_NONE** = ``0``
 
-Don't draw a line cap.
+Draws no line cap.
 
 .. _class_Line2D_constant_LINE_CAP_BOX:
 
@@ -151,7 +155,7 @@ Don't draw a line cap.
 
 :ref:`LineCapMode<enum_Line2D_LineCapMode>` **LINE_CAP_BOX** = ``1``
 
-Draws the line cap as a box.
+Draws the line cap as a box, slightly extending the first/last segment.
 
 .. _class_Line2D_constant_LINE_CAP_ROUND:
 
@@ -159,7 +163,7 @@ Draws the line cap as a box.
 
 :ref:`LineCapMode<enum_Line2D_LineCapMode>` **LINE_CAP_ROUND** = ``2``
 
-Draws the line cap as a circle.
+Draws the line cap as a semicircle attached to the first/last segment.
 
 .. rst-class:: classref-item-separator
 
@@ -177,7 +181,7 @@ enum **LineTextureMode**:
 
 :ref:`LineTextureMode<enum_Line2D_LineTextureMode>` **LINE_TEXTURE_NONE** = ``0``
 
-Takes the left pixels of the texture and renders it over the whole line.
+Takes the left pixels of the texture and renders them over the whole polyline.
 
 .. _class_Line2D_constant_LINE_TEXTURE_TILE:
 
@@ -185,7 +189,7 @@ Takes the left pixels of the texture and renders it over the whole line.
 
 :ref:`LineTextureMode<enum_Line2D_LineTextureMode>` **LINE_TEXTURE_TILE** = ``1``
 
-Tiles the texture over the line. :ref:`CanvasItem.texture_repeat<class_CanvasItem_property_texture_repeat>` of the **Line2D** node must be :ref:`CanvasItem.TEXTURE_REPEAT_ENABLED<class_CanvasItem_constant_TEXTURE_REPEAT_ENABLED>` or :ref:`CanvasItem.TEXTURE_REPEAT_MIRROR<class_CanvasItem_constant_TEXTURE_REPEAT_MIRROR>` for it to work properly.
+Tiles the texture over the polyline. :ref:`CanvasItem.texture_repeat<class_CanvasItem_property_texture_repeat>` of the **Line2D** node must be :ref:`CanvasItem.TEXTURE_REPEAT_ENABLED<class_CanvasItem_constant_TEXTURE_REPEAT_ENABLED>` or :ref:`CanvasItem.TEXTURE_REPEAT_MIRROR<class_CanvasItem_constant_TEXTURE_REPEAT_MIRROR>` for it to work properly.
 
 .. _class_Line2D_constant_LINE_TEXTURE_STRETCH:
 
@@ -193,7 +197,7 @@ Tiles the texture over the line. :ref:`CanvasItem.texture_repeat<class_CanvasIte
 
 :ref:`LineTextureMode<enum_Line2D_LineTextureMode>` **LINE_TEXTURE_STRETCH** = ``2``
 
-Stretches the texture across the line. :ref:`CanvasItem.texture_repeat<class_CanvasItem_property_texture_repeat>` of the **Line2D** node must be :ref:`CanvasItem.TEXTURE_REPEAT_DISABLED<class_CanvasItem_constant_TEXTURE_REPEAT_DISABLED>` for best results.
+Stretches the texture across the polyline. :ref:`CanvasItem.texture_repeat<class_CanvasItem_property_texture_repeat>` of the **Line2D** node must be :ref:`CanvasItem.TEXTURE_REPEAT_DISABLED<class_CanvasItem_constant_TEXTURE_REPEAT_DISABLED>` for best results.
 
 .. rst-class:: classref-section-separator
 
@@ -215,9 +219,9 @@ Property Descriptions
 - void **set_antialiased** **(** :ref:`bool<class_bool>` value **)**
 - :ref:`bool<class_bool>` **get_antialiased** **(** **)**
 
-If ``true``, the line's border will be anti-aliased.
+If ``true``, the polyline's border will be anti-aliased.
 
-\ **Note:** Line2D is not accelerated by batching when being anti-aliased.
+\ **Note:** **Line2D** is not accelerated by batching when being anti-aliased.
 
 .. rst-class:: classref-item-separator
 
@@ -234,7 +238,7 @@ If ``true``, the line's border will be anti-aliased.
 - void **set_begin_cap_mode** **(** :ref:`LineCapMode<enum_Line2D_LineCapMode>` value **)**
 - :ref:`LineCapMode<enum_Line2D_LineCapMode>` **get_begin_cap_mode** **(** **)**
 
-Controls the style of the line's first point. Use :ref:`LineCapMode<enum_Line2D_LineCapMode>` constants.
+The style of the beginning of the polyline. Use :ref:`LineCapMode<enum_Line2D_LineCapMode>` constants.
 
 .. rst-class:: classref-item-separator
 
@@ -251,7 +255,7 @@ Controls the style of the line's first point. Use :ref:`LineCapMode<enum_Line2D_
 - void **set_default_color** **(** :ref:`Color<class_Color>` value **)**
 - :ref:`Color<class_Color>` **get_default_color** **(** **)**
 
-The line's color. Will not be used if a gradient is set.
+The color of the polyline. Will not be used if a gradient is set.
 
 .. rst-class:: classref-item-separator
 
@@ -268,7 +272,7 @@ The line's color. Will not be used if a gradient is set.
 - void **set_end_cap_mode** **(** :ref:`LineCapMode<enum_Line2D_LineCapMode>` value **)**
 - :ref:`LineCapMode<enum_Line2D_LineCapMode>` **get_end_cap_mode** **(** **)**
 
-Controls the style of the line's last point. Use :ref:`LineCapMode<enum_Line2D_LineCapMode>` constants.
+The style of the end of the polyline. Use :ref:`LineCapMode<enum_Line2D_LineCapMode>` constants.
 
 .. rst-class:: classref-item-separator
 
@@ -302,7 +306,7 @@ The gradient is drawn through the whole line from start to finish. The default c
 - void **set_joint_mode** **(** :ref:`LineJointMode<enum_Line2D_LineJointMode>` value **)**
 - :ref:`LineJointMode<enum_Line2D_LineJointMode>` **get_joint_mode** **(** **)**
 
-The style for the points between the start and the end.
+The style of the connections between segments of the polyline. Use :ref:`LineJointMode<enum_Line2D_LineJointMode>` constants.
 
 .. rst-class:: classref-item-separator
 
@@ -319,7 +323,7 @@ The style for the points between the start and the end.
 - void **set_points** **(** :ref:`PackedVector2Array<class_PackedVector2Array>` value **)**
 - :ref:`PackedVector2Array<class_PackedVector2Array>` **get_points** **(** **)**
 
-The points that form the lines. The line is drawn between every point set in this array. Points are interpreted as local vectors.
+The points of the polyline, interpreted in local 2D coordinates. Segments are drawn between the adjacent points in this array.
 
 .. rst-class:: classref-item-separator
 
@@ -336,9 +340,7 @@ The points that form the lines. The line is drawn between every point set in thi
 - void **set_round_precision** **(** :ref:`int<class_int>` value **)**
 - :ref:`int<class_int>` **get_round_precision** **(** **)**
 
-The smoothness of the rounded joints and caps. Higher values result in smoother corners, but are more demanding to render and update. This is only used if a cap or joint is set as round.
-
-\ **Note:** The default value is tuned for lines with the default :ref:`width<class_Line2D_property_width>`. For thin lines, this value should be reduced to a number between ``2`` and ``4`` to improve performance.
+The smoothness used for rounded joints and caps. Higher values result in smoother corners, but are more demanding to render and update.
 
 .. rst-class:: classref-item-separator
 
@@ -355,7 +357,7 @@ The smoothness of the rounded joints and caps. Higher values result in smoother 
 - void **set_sharp_limit** **(** :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_sharp_limit** **(** **)**
 
-The direction difference in radians between vector points. This value is only used if :ref:`joint_mode<class_Line2D_property_joint_mode>` is set to :ref:`LINE_JOINT_SHARP<class_Line2D_constant_LINE_JOINT_SHARP>`.
+Determines the miter limit of the polyline. Normally, when :ref:`joint_mode<class_Line2D_property_joint_mode>` is set to :ref:`LINE_JOINT_SHARP<class_Line2D_constant_LINE_JOINT_SHARP>`, sharp angles fall back to using the logic of :ref:`LINE_JOINT_BEVEL<class_Line2D_constant_LINE_JOINT_BEVEL>` joints to prevent very long miters. Higher values of this property mean that the fallback to a bevel joint will happen at sharper angles.
 
 .. rst-class:: classref-item-separator
 
@@ -372,7 +374,7 @@ The direction difference in radians between vector points. This value is only us
 - void **set_texture** **(** :ref:`Texture2D<class_Texture2D>` value **)**
 - :ref:`Texture2D<class_Texture2D>` **get_texture** **(** **)**
 
-The texture used for the line's texture. Uses ``texture_mode`` for drawing style.
+The texture used for the polyline. Uses ``texture_mode`` for drawing style.
 
 .. rst-class:: classref-item-separator
 
@@ -389,7 +391,7 @@ The texture used for the line's texture. Uses ``texture_mode`` for drawing style
 - void **set_texture_mode** **(** :ref:`LineTextureMode<enum_Line2D_LineTextureMode>` value **)**
 - :ref:`LineTextureMode<enum_Line2D_LineTextureMode>` **get_texture_mode** **(** **)**
 
-The style to render the ``texture`` on the line. Use :ref:`LineTextureMode<enum_Line2D_LineTextureMode>` constants.
+The style to render the :ref:`texture<class_Line2D_property_texture>` of the polyline. Use :ref:`LineTextureMode<enum_Line2D_LineTextureMode>` constants.
 
 .. rst-class:: classref-item-separator
 
@@ -406,7 +408,7 @@ The style to render the ``texture`` on the line. Use :ref:`LineTextureMode<enum_
 - void **set_width** **(** :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_width** **(** **)**
 
-The line's width.
+The polyline's width
 
 .. rst-class:: classref-item-separator
 
@@ -423,7 +425,7 @@ The line's width.
 - void **set_curve** **(** :ref:`Curve<class_Curve>` value **)**
 - :ref:`Curve<class_Curve>` **get_curve** **(** **)**
 
-The line's width varies with the curve. The original width is simply multiply by the value of the Curve.
+The polyline's width curve. The width of the polyline over its length will be equivalent to the value of the width curve over its domain.
 
 .. rst-class:: classref-section-separator
 
@@ -440,9 +442,9 @@ Method Descriptions
 
 void **add_point** **(** :ref:`Vector2<class_Vector2>` position, :ref:`int<class_int>` index=-1 **)**
 
-Adds a point with the specified ``position`` relative to the line's own position. Appends the new point at the end of the point list.
+Adds a point with the specified ``position`` relative to the polyline's own position. If no ``index`` is provided, the new point will be added to the end of the points array.
 
-If ``index`` is given, the new point is inserted before the existing point identified by index ``index``. Every existing point starting from ``index`` is shifted further down the list of points. The index must be greater than or equal to ``0`` and must not exceed the number of existing points in the line. See :ref:`get_point_count<class_Line2D_method_get_point_count>`.
+If ``index`` is given, the new point is inserted before the existing point identified by index ``index``. The indices of the points after the new point get increased by 1. The provided ``index`` must not exceed the number of existing points in the polyline. See :ref:`get_point_count<class_Line2D_method_get_point_count>`.
 
 .. rst-class:: classref-item-separator
 
@@ -454,7 +456,7 @@ If ``index`` is given, the new point is inserted before the existing point ident
 
 void **clear_points** **(** **)**
 
-Removes all points from the line.
+Removes all points from the polyline, making it empty.
 
 .. rst-class:: classref-item-separator
 
@@ -466,7 +468,7 @@ Removes all points from the line.
 
 :ref:`int<class_int>` **get_point_count** **(** **)** |const|
 
-Returns the number of points in the line.
+Returns the number of points in the polyline.
 
 .. rst-class:: classref-item-separator
 
@@ -490,7 +492,7 @@ Returns the position of the point at index ``index``.
 
 void **remove_point** **(** :ref:`int<class_int>` index **)**
 
-Removes the point at index ``index`` from the line.
+Removes the point at index ``index`` from the polyline.
 
 .. rst-class:: classref-item-separator
 
@@ -502,7 +504,7 @@ Removes the point at index ``index`` from the line.
 
 void **set_point_position** **(** :ref:`int<class_int>` index, :ref:`Vector2<class_Vector2>` position **)**
 
-Overwrites the position of the point at index ``index`` with the supplied ``position``.
+Overwrites the position of the point at the given ``index`` with the supplied ``position``.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

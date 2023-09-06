@@ -21,6 +21,8 @@ Tutorials
 
 - :doc:`Exporting for iOS <../tutorials/export/exporting_for_ios>`
 
+- :doc:`iOS plugins documentation index <../tutorials/platform/ios/index>`
+
 .. rst-class:: classref-reftable-group
 
 Properties

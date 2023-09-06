@@ -34,7 +34,7 @@ Description
 Tutorials
 ---------
 
-- :doc:`VoxelGI <../tutorials/3d/global_illumination/using_voxel_gi>`
+- :doc:`Using Voxel global illumination <../tutorials/3d/global_illumination/using_voxel_gi>`
 
 - `Third Person Shooter Demo <https://godotengine.org/asset-library/asset/678>`__
 

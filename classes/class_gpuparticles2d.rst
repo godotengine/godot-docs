@@ -12,7 +12,7 @@ GPUParticles2D
 
 **Inherits:** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-2D particle emitter.
+A 2D particle emitter.
 
 .. rst-class:: classref-introduction-group
 
@@ -23,7 +23,7 @@ Description
 
 Use the :ref:`process_material<class_GPUParticles2D_property_process_material>` property to add a :ref:`ParticleProcessMaterial<class_ParticleProcessMaterial>` to configure particle appearance and behavior. Alternatively, you can add a :ref:`ShaderMaterial<class_ShaderMaterial>` which will be applied to all particles.
 
-2D particles can optionally collide with :ref:`LightOccluder2D<class_LightOccluder2D>` nodes (note: they don't collide with :ref:`PhysicsBody2D<class_PhysicsBody2D>` nodes).
+2D particles can optionally collide with :ref:`LightOccluder2D<class_LightOccluder2D>`, but they don't collide with :ref:`PhysicsBody2D<class_PhysicsBody2D>` nodes.
 
 .. rst-class:: classref-introduction-group
 
@@ -100,6 +100,8 @@ Methods
 
    +---------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Rect2<class_Rect2>` | :ref:`capture_rect<class_GPUParticles2D_method_capture_rect>` **(** **)** |const|                                                                                                                                                                               |
+   +---------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                      | :ref:`convert_from_particles<class_GPUParticles2D_method_convert_from_particles>` **(** :ref:`Node<class_Node>` particles **)**                                                                                                                                 |
    +---------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                      | :ref:`emit_particle<class_GPUParticles2D_method_emit_particle>` **(** :ref:`Transform2D<class_Transform2D>` xform, :ref:`Vector2<class_Vector2>` velocity, :ref:`Color<class_Color>` color, :ref:`Color<class_Color>` custom, :ref:`int<class_int>` flags **)** |
    +---------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -615,6 +617,18 @@ Method Descriptions
 Returns a rectangle containing the positions of all existing particles.
 
 \ **Note:** When using threaded rendering this method synchronizes the rendering thread. Calling it often may have a negative impact on performance.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_GPUParticles2D_method_convert_from_particles:
+
+.. rst-class:: classref-method
+
+void **convert_from_particles** **(** :ref:`Node<class_Node>` particles **)**
+
+Sets this node's properties to match a given :ref:`CPUParticles2D<class_CPUParticles2D>` node.
 
 .. rst-class:: classref-item-separator
 

@@ -12,14 +12,14 @@ Gradient
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-A color interpolator resource which can be used to generate colors between user-defined color points.
+A color transition.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-Given a set of colors, this resource will interpolate them in order. This means that if you have color 1, color 2 and color 3, the gradient will interpolate from color 1 to color 2 and from color 2 to color 3. The gradient will initially have 2 colors (black and white), one (black) at gradient lower offset 0 and the other (white) at the gradient higher offset 1.
+This resource describes a color transition by defining a set of colored points and how to interpolate between them.
 
 See also :ref:`Curve<class_Curve>` which supports more complex easing methods, but does not support colors.
 
@@ -236,7 +236,7 @@ Method Descriptions
 
 void **add_point** **(** :ref:`float<class_float>` offset, :ref:`Color<class_Color>` color **)**
 
-Adds the specified color to the end of the gradient, with the specified offset.
+Adds the specified color to the gradient, with the specified offset.
 
 .. rst-class:: classref-item-separator
 
@@ -284,7 +284,7 @@ Returns the number of colors in the gradient.
 
 void **remove_point** **(** :ref:`int<class_int>` point **)**
 
-Removes the color at the index ``point``.
+Removes the color at index ``point``.
 
 .. rst-class:: classref-item-separator
 

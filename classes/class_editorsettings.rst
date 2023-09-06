@@ -239,6 +239,14 @@ Properties
    +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`         | :ref:`filesystem/file_dialog/thumbnail_size<class_EditorSettings_property_filesystem/file_dialog/thumbnail_size>`                                                                   |
    +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`   | :ref:`filesystem/import/blender/blender3_path<class_EditorSettings_property_filesystem/import/blender/blender3_path>`                                                               |
+   +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`         | :ref:`filesystem/import/blender/rpc_port<class_EditorSettings_property_filesystem/import/blender/rpc_port>`                                                                         |
+   +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`     | :ref:`filesystem/import/blender/rpc_server_uptime<class_EditorSettings_property_filesystem/import/blender/rpc_server_uptime>`                                                       |
+   +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`   | :ref:`filesystem/import/fbx/fbx2gltf_path<class_EditorSettings_property_filesystem/import/fbx/fbx2gltf_path>`                                                                       |
+   +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`       | :ref:`filesystem/on_save/compress_binary_resources<class_EditorSettings_property_filesystem/on_save/compress_binary_resources>`                                                     |
    +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`       | :ref:`filesystem/on_save/safe_save_on_backup_then_rename<class_EditorSettings_property_filesystem/on_save/safe_save_on_backup_then_rename>`                                         |
@@ -1075,7 +1083,7 @@ The grid division bias to use in the 3D editor. Negative values will cause small
 
 :ref:`int<class_int>` **editors/3d/grid_division_level_max**
 
-The largest grid division to use in the 3D editor. Together with :ref:`editors/3d/primary_grid_steps<class_EditorSettings_property_editors/3d/primary_grid_steps>`, this determines how large the grid divisions can be. The grid divisions will not be able to get larger than ``primary_grid_steps ^ grid_division_level_max`` units. By default, when :ref:`editors/3d/primary_grid_steps<class_EditorSettings_property_editors/3d/primary_grid_steps>` is ``8``, this means grid divisions cannot get larger than ``64`` uints each (so primary grid lines are ``512`` uints apart), no matter how far away the camera is from the grid.
+The largest grid division to use in the 3D editor. Together with :ref:`editors/3d/primary_grid_steps<class_EditorSettings_property_editors/3d/primary_grid_steps>`, this determines how large the grid divisions can be. The grid divisions will not be able to get larger than ``primary_grid_steps ^ grid_division_level_max`` units. By default, when :ref:`editors/3d/primary_grid_steps<class_EditorSettings_property_editors/3d/primary_grid_steps>` is ``8``, this means grid divisions cannot get larger than ``64`` units each (so primary grid lines are ``512`` units apart), no matter how far away the camera is from the grid.
 
 .. rst-class:: classref-item-separator
 
@@ -1766,6 +1774,62 @@ If ``true``, display hidden files in the editor's file dialogs. Files that have 
 :ref:`int<class_int>` **filesystem/file_dialog/thumbnail_size**
 
 The thumbnail size to use in the editor's file dialogs (in pixels). See also :ref:`docks/filesystem/thumbnail_size<class_EditorSettings_property_docks/filesystem/thumbnail_size>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSettings_property_filesystem/import/blender/blender3_path:
+
+.. rst-class:: classref-property
+
+:ref:`String<class_String>` **filesystem/import/blender/blender3_path**
+
+The path to the directory containing the Blender executable used for converting the Blender 3D scene files ``.blend`` to glTF 2.0 format during import. Blender 3.0 or later is required.
+
+To enable this feature for your specific project, use :ref:`ProjectSettings.filesystem/import/blender/enabled<class_ProjectSettings_property_filesystem/import/blender/enabled>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSettings_property_filesystem/import/blender/rpc_port:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **filesystem/import/blender/rpc_port**
+
+The port number used for Remote Procedure Call (RPC) communication with Godot's created process of the blender executable.
+
+Setting this to 0 effectively disables communication with Godot and the blender process, making performance slower.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSettings_property_filesystem/import/blender/rpc_server_uptime:
+
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **filesystem/import/blender/rpc_server_uptime**
+
+The maximum idle uptime (in seconds) of the Blender process.
+
+This prevents Godot from having to create a new process for each import within the given seconds.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSettings_property_filesystem/import/fbx/fbx2gltf_path:
+
+.. rst-class:: classref-property
+
+:ref:`String<class_String>` **filesystem/import/fbx/fbx2gltf_path**
+
+The path to the FBX2glTF executable used for converting Autodesk FBX 3D scene files ``.fbx`` to glTF 2.0 format during import.
+
+To enable this feature for your specific project, use :ref:`ProjectSettings.filesystem/import/fbx/enabled<class_ProjectSettings_property_filesystem/import/fbx/enabled>`.
 
 .. rst-class:: classref-item-separator
 

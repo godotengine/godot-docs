@@ -203,6 +203,8 @@ Emitted when user changes the workspace (**2D**, **3D**, **Script**, **AssetLib*
 
 Emitted when any project setting has changed.
 
+\ *Deprecated.* Use :ref:`ProjectSettings.settings_changed<class_ProjectSettings_signal_settings_changed>` instead.
+
 .. rst-class:: classref-item-separator
 
 ----

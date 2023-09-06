@@ -5,7 +5,7 @@ Deploying to Android
 
 Setup
 ------------
-Most mobile headsets run on Android and OpenXR support is making its way to these platforms.
+Most standalone headsets run on Android and OpenXR support is making its way to these platforms.
 
 Before following the OpenXR-specific instructions here, you'll need to first setup your system to export to Android in general, including:
 
@@ -35,12 +35,20 @@ You can read more about custom builds here: :ref:`doc_android_custom_build`.
 
 Installing the loader plugins
 -----------------------------
+
+.. warning::
+    The Android plugin structure has been restructured in Godot 4.2, if you've previously installed the loader plugin you need to delete it from the `android/plugins` folder.
+    The loader plugin available in the asset library is still the old one, it will be updated to the new one after 4.2 is released.
+
 The loaders can be downloaded from the asset library, search for OpenXR Loaders and install the plugin:
 
 .. image:: img/openxr_loader_asset_lib.webp
 
-You will find the installed files inside the **android** folder.
-There is a subfolder called **plugins** containing the new files.
+You will find the installed files inside the **addons** folder.
+
+Alternatively you can manually install the loader plugin by downloading the v2.x version of the plugin `from the release page here <https://github.com/GodotVR/godot_openxr_loaders/releases>`__.
+
+You will need to copy the `assets/addons/godotopenxr` folder from the zip file into your projects `assets/addons` folder.
 
 You can find the main repository of the loader plugin `here <https://github.com/GodotVR/godot_openxr_loaders>`__.
 
@@ -58,13 +66,12 @@ If the loader plugins were installed correctly you should find entries for the d
 
 .. image:: img/android_meta_quest.webp
 
+Also change the **XR Mode** to **OpenXR**.
 
-Scroll further down the list until you find the **XR Features** section.
-Change the **XR Mode** to **OpenXR**.
+Scroll to the bottom of the list and you'll find additional XR feature sections, currently only **Meta XR Features** is available.
 The hand tracking and passthrough settings here currently only work for the Meta Quest and you will need to select the appropriate settings if you wish to use these features.
 
 .. image:: img/xr_export_features.webp
-
 
 Now you can repeat the same process for the other devices.
 

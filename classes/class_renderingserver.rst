@@ -1588,7 +1588,7 @@ Flag used to mark that the array contains 2D vertices.
 
 :ref:`ArrayFormat<enum_RenderingServer_ArrayFormat>` **ARRAY_FLAG_USE_8_BONE_WEIGHTS** = ``134217728``
 
-Flag used to mark that the array uses 8 bone weighs instead of 4.
+Flag used to mark that the array uses 8 bone weights instead of 4.
 
 .. _class_RenderingServer_constant_ARRAY_FLAG_USES_EMPTY_VERTEX_ARRAY:
 
@@ -7317,6 +7317,8 @@ Returns the version of the graphics video adapter *currently in use* (e.g. "1.2.
 Returns the name of the video adapter (e.g. "GeForce GTX 1080/PCIe/SSE2").
 
 \ **Note:** When running a headless or server binary, this function returns an empty string.
+
+\ **Note:** On the web platform, some browsers such as Firefox may report a different, fixed GPU name such as "GeForce GTX 980" (regardless of the user's actual GPU model). This is done to make fingerprinting more difficult.
 
 .. rst-class:: classref-item-separator
 

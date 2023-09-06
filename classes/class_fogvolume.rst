@@ -12,7 +12,7 @@ FogVolume
 
 **Inherits:** :ref:`VisualInstance3D<class_VisualInstance3D>` **<** :ref:`Node3D<class_Node3D>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-A node used to add local fog with the volumetric fog effect.
+A region that contributes to the default volumetric fog from the world environment.
 
 .. rst-class:: classref-introduction-group
 
@@ -24,6 +24,13 @@ Description
 Performance of **FogVolume**\ s is directly related to their relative size on the screen and the complexity of their attached :ref:`FogMaterial<class_FogMaterial>`. It is best to keep **FogVolume**\ s relatively small and simple where possible.
 
 \ **Note:** **FogVolume**\ s only have a visible effect if :ref:`Environment.volumetric_fog_enabled<class_Environment_property_volumetric_fog_enabled>` is ``true``. If you don't want fog to be globally visible (but only within **FogVolume** nodes), set :ref:`Environment.volumetric_fog_density<class_Environment_property_volumetric_fog_density>` to ``0.0``.
+
+.. rst-class:: classref-introduction-group
+
+Tutorials
+---------
+
+- :doc:`Volumetric fog and fog volumes <../tutorials/3d/volumetric_fog>`
 
 .. rst-class:: classref-reftable-group
 

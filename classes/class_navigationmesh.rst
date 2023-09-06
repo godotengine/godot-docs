@@ -26,9 +26,9 @@ A navigation mesh is a collection of polygons that define which areas of an envi
 Tutorials
 ---------
 
-- `3D Navmesh Demo <https://godotengine.org/asset-library/asset/124>`__
-
 - :doc:`Using NavigationMeshes <../tutorials/navigation/navigation_using_navigationmeshes>`
+
+- `3D Navmesh Demo <https://godotengine.org/asset-library/asset/124>`__
 
 .. rst-class:: classref-reftable-group
 

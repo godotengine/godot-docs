@@ -12,7 +12,7 @@ CompressedCubemap
 
 **Inherits:** :ref:`CompressedTextureLayered<class_CompressedTextureLayered>` **<** :ref:`TextureLayered<class_TextureLayered>` **<** :ref:`Texture<class_Texture>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-6-sided texture typically used in 3D rendering, optionally compressed.
+An optionally compressed :ref:`Cubemap<class_Cubemap>`.
 
 .. rst-class:: classref-introduction-group
 

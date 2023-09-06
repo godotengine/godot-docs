@@ -14,7 +14,7 @@ GPUParticlesAttractor3D
 
 **Inherited By:** :ref:`GPUParticlesAttractorBox3D<class_GPUParticlesAttractorBox3D>`, :ref:`GPUParticlesAttractorSphere3D<class_GPUParticlesAttractorSphere3D>`, :ref:`GPUParticlesAttractorVectorField3D<class_GPUParticlesAttractorVectorField3D>`
 
-Abstract class for 3D particle attractors affecting :ref:`GPUParticles3D<class_GPUParticles3D>` nodes.
+Abstract base class for 3D particle attractors.
 
 .. rst-class:: classref-introduction-group
 
@@ -124,7 +124,7 @@ Adjusts how directional the attractor is. At ``0.0``, the attractor is not direc
 - void **set_strength** **(** :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_strength** **(** **)**
 
-If :ref:`strength<class_GPUParticlesAttractor3D_property_strength>` is negative, particles will be pushed in the reverse direction. Particles will be pushed *away* from the attractor's  origin if :ref:`directionality<class_GPUParticlesAttractor3D_property_directionality>` is ``0.0``, or towards local +Z if :ref:`directionality<class_GPUParticlesAttractor3D_property_directionality>` is greater than ``0.0``.
+Adjusts the strength of the attractor. If :ref:`strength<class_GPUParticlesAttractor3D_property_strength>` is negative, particles will be pushed in the opposite direction. Particles will be pushed *away* from the attractor's origin if :ref:`directionality<class_GPUParticlesAttractor3D_property_directionality>` is ``0.0``, or towards local +Z if :ref:`directionality<class_GPUParticlesAttractor3D_property_directionality>` is greater than ``0.0``.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

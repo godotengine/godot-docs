@@ -126,7 +126,7 @@ Property Descriptions
 - void **set_collide_with_areas** **(** :ref:`bool<class_bool>` value **)**
 - :ref:`bool<class_bool>` **is_collide_with_areas_enabled** **(** **)**
 
-If ``true``, collision with :ref:`Area3D<class_Area3D>`\ s will be reported.
+If ``true``, collisions with :ref:`Area3D<class_Area3D>`\ s will be reported.
 
 .. rst-class:: classref-item-separator
 
@@ -143,7 +143,7 @@ If ``true``, collision with :ref:`Area3D<class_Area3D>`\ s will be reported.
 - void **set_collide_with_bodies** **(** :ref:`bool<class_bool>` value **)**
 - :ref:`bool<class_bool>` **is_collide_with_bodies_enabled** **(** **)**
 
-If ``true``, collision with :ref:`PhysicsBody3D<class_PhysicsBody3D>`\ s will be reported.
+If ``true``, collisions with :ref:`PhysicsBody3D<class_PhysicsBody3D>`\ s will be reported.
 
 .. rst-class:: classref-item-separator
 
@@ -334,7 +334,7 @@ Removes all collision exceptions for this ray.
 
 void **force_raycast_update** **(** **)**
 
-Updates the collision information for the ray. Use this method to update the collision information immediately instead of waiting for the next ``_physics_process`` call, for example if the ray or its parent has changed state.
+Updates the collision information for the ray immediately, without waiting for the next ``_physics_process`` call. Use this method, for example, when the ray or its parent has changed state.
 
 \ **Note:** :ref:`enabled<class_RayCast3D_property_enabled>` does not need to be ``true`` for this to work.
 

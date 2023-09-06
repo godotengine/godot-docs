@@ -12,7 +12,7 @@ GPUParticles3D
 
 **Inherits:** :ref:`GeometryInstance3D<class_GeometryInstance3D>` **<** :ref:`VisualInstance3D<class_VisualInstance3D>` **<** :ref:`Node3D<class_Node3D>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-3D particle emitter.
+A 3D particle emitter.
 
 .. rst-class:: classref-introduction-group
 
@@ -27,6 +27,8 @@ Use the ``process_material`` property to add a :ref:`ParticleProcessMaterial<cla
 
 Tutorials
 ---------
+
+- :doc:`Particle systems (3D) <../tutorials/3d/particles/index>`
 
 - :doc:`Controlling thousands of fish with Particles <../tutorials/performance/vertex_animation/controlling_thousands_of_fish>`
 
@@ -104,6 +106,8 @@ Methods
 
    +-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`AABB<class_AABB>` | :ref:`capture_aabb<class_GPUParticles3D_method_capture_aabb>` **(** **)** |const|                                                                                                                                                                               |
+   +-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                    | :ref:`convert_from_particles<class_GPUParticles3D_method_convert_from_particles>` **(** :ref:`Node<class_Node>` particles **)**                                                                                                                                 |
    +-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                    | :ref:`emit_particle<class_GPUParticles3D_method_emit_particle>` **(** :ref:`Transform3D<class_Transform3D>` xform, :ref:`Vector3<class_Vector3>` velocity, :ref:`Color<class_Color>` color, :ref:`Color<class_Color>` custom, :ref:`int<class_int>` flags **)** |
    +-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -346,6 +350,8 @@ Number of particles to emit.
 - :ref:`DrawOrder<enum_GPUParticles3D_DrawOrder>` **get_draw_order** **(** **)**
 
 Particle draw order. Uses :ref:`DrawOrder<enum_GPUParticles3D_DrawOrder>` values.
+
+\ **Note:** :ref:`DRAW_ORDER_INDEX<class_GPUParticles3D_constant_DRAW_ORDER_INDEX>` is the only option that supports motion vectors for effects like TAA. It is suggested to use this draw order if the particles are opaque to fix ghosting artifacts.
 
 .. rst-class:: classref-item-separator
 
@@ -766,6 +772,18 @@ Method Descriptions
 :ref:`AABB<class_AABB>` **capture_aabb** **(** **)** |const|
 
 Returns the axis-aligned bounding box that contains all the particles that are active in the current frame.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_GPUParticles3D_method_convert_from_particles:
+
+.. rst-class:: classref-method
+
+void **convert_from_particles** **(** :ref:`Node<class_Node>` particles **)**
+
+Sets this node's properties to match a given :ref:`CPUParticles3D<class_CPUParticles3D>` node.
 
 .. rst-class:: classref-item-separator
 

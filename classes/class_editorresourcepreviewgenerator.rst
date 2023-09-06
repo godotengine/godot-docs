@@ -76,7 +76,7 @@ Returning an empty texture is an OK way to fail and let another generator take c
 
 Care must be taken because this function is always called from a thread (not the main thread).
 
-\ ``metadata`` dictionary can modified to store file-specific metadata that can be used in :ref:`EditorResourceTooltipPlugin._make_tooltip_for_path<class_EditorResourceTooltipPlugin_method__make_tooltip_for_path>` (like image size, sample length etc.).
+\ ``metadata`` dictionary can be modified to store file-specific metadata that can be used in :ref:`EditorResourceTooltipPlugin._make_tooltip_for_path<class_EditorResourceTooltipPlugin_method__make_tooltip_for_path>` (like image size, sample length etc.).
 
 .. rst-class:: classref-item-separator
 
@@ -94,7 +94,7 @@ Returning an empty texture is an OK way to fail and let another generator take c
 
 Care must be taken because this function is always called from a thread (not the main thread).
 
-\ ``metadata`` dictionary can modified to store file-specific metadata that can be used in :ref:`EditorResourceTooltipPlugin._make_tooltip_for_path<class_EditorResourceTooltipPlugin_method__make_tooltip_for_path>` (like image size, sample length etc.).
+\ ``metadata`` dictionary can be modified to store file-specific metadata that can be used in :ref:`EditorResourceTooltipPlugin._make_tooltip_for_path<class_EditorResourceTooltipPlugin_method__make_tooltip_for_path>` (like image size, sample length etc.).
 
 .. rst-class:: classref-item-separator
 

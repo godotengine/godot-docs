@@ -23,11 +23,7 @@ Description
 
 See also :ref:`BaseButton<class_BaseButton>` which contains common properties and methods associated with this node.
 
-\ **Note:** Properties :ref:`Button.text<class_Button_property_text>` and :ref:`Button.icon<class_Button_property_icon>` are automatically set based on the selected item. They shouldn't be changed manually.
-
 \ **Note:** The ID values used for items are limited to 32 bits, not full 64 bits of :ref:`int<class_int>`. This has a range of ``-2^32`` to ``2^32 - 1``, i.e. ``-2147483648`` to ``2147483647``.
-
-\ **Note:** The ID values used for items are 32-bit, unlike :ref:`int<class_int>` which is always 64-bit. They go from ``-2147483648`` to ``2147483647``.
 
 \ **Note:** The :ref:`Button.text<class_Button_property_text>` and :ref:`Button.icon<class_Button_property_icon>` properties are set automatically based on the selected item. They shouldn't be changed manually.
 
@@ -101,6 +97,8 @@ Methods
    | void                              | :ref:`remove_item<class_OptionButton_method_remove_item>` **(** :ref:`int<class_int>` idx **)**                                                                                     |
    +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                              | :ref:`select<class_OptionButton_method_select>` **(** :ref:`int<class_int>` idx **)**                                                                                               |
+   +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                              | :ref:`set_disable_shortcuts<class_OptionButton_method_set_disable_shortcuts>` **(** :ref:`bool<class_bool>` disabled **)**                                                          |
    +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                              | :ref:`set_item_disabled<class_OptionButton_method_set_item_disabled>` **(** :ref:`int<class_int>` idx, :ref:`bool<class_bool>` disabled **)**                                       |
    +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -516,6 +514,18 @@ void **select** **(** :ref:`int<class_int>` idx **)**
 Selects an item by index and makes it the current item. This will work even if the item is disabled.
 
 Passing ``-1`` as the index deselects any currently selected item.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_OptionButton_method_set_disable_shortcuts:
+
+.. rst-class:: classref-method
+
+void **set_disable_shortcuts** **(** :ref:`bool<class_bool>` disabled **)**
+
+If ``true``, shortcuts are disabled and cannot be used to trigger the button.
 
 .. rst-class:: classref-item-separator
 

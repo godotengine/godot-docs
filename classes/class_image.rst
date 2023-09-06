@@ -133,11 +133,11 @@ Methods
    +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Error<enum_@GlobalScope_Error>`         | :ref:`load_bmp_from_buffer<class_Image_method_load_bmp_from_buffer>` **(** :ref:`PackedByteArray<class_PackedByteArray>` buffer **)**                                                                                                                                         |
    +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Error<enum_@GlobalScope_Error>`         | :ref:`load_dds_from_buffer<class_Image_method_load_dds_from_buffer>` **(** :ref:`PackedByteArray<class_PackedByteArray>` buffer **)**                                                                                                                                         |
-   +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Image<class_Image>`                     | :ref:`load_from_file<class_Image_method_load_from_file>` **(** :ref:`String<class_String>` path **)** |static|                                                                                                                                                                |
    +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Error<enum_@GlobalScope_Error>`         | :ref:`load_jpg_from_buffer<class_Image_method_load_jpg_from_buffer>` **(** :ref:`PackedByteArray<class_PackedByteArray>` buffer **)**                                                                                                                                         |
+   +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>`         | :ref:`load_ktx_from_buffer<class_Image_method_load_ktx_from_buffer>` **(** :ref:`PackedByteArray<class_PackedByteArray>` buffer **)**                                                                                                                                         |
    +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Error<enum_@GlobalScope_Error>`         | :ref:`load_png_from_buffer<class_Image_method_load_png_from_buffer>` **(** :ref:`PackedByteArray<class_PackedByteArray>` buffer **)**                                                                                                                                         |
    +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1368,18 +1368,6 @@ Loads an image from the binary contents of a BMP file.
 
 ----
 
-.. _class_Image_method_load_dds_from_buffer:
-
-.. rst-class:: classref-method
-
-:ref:`Error<enum_@GlobalScope_Error>` **load_dds_from_buffer** **(** :ref:`PackedByteArray<class_PackedByteArray>` buffer **)**
-
-Loads an image from the binary contents of a DDS file.
-
-.. rst-class:: classref-item-separator
-
-----
-
 .. _class_Image_method_load_from_file:
 
 .. rst-class:: classref-method
@@ -1399,6 +1387,18 @@ Creates a new **Image** and loads data from the specified file.
 :ref:`Error<enum_@GlobalScope_Error>` **load_jpg_from_buffer** **(** :ref:`PackedByteArray<class_PackedByteArray>` buffer **)**
 
 Loads an image from the binary contents of a JPEG file.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Image_method_load_ktx_from_buffer:
+
+.. rst-class:: classref-method
+
+:ref:`Error<enum_@GlobalScope_Error>` **load_ktx_from_buffer** **(** :ref:`PackedByteArray<class_PackedByteArray>` buffer **)**
+
+Loads an image from the binary contents of a KTX file.
 
 .. rst-class:: classref-item-separator
 
