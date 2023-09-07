@@ -23,7 +23,7 @@ Attributes are added before each vertex is added:
 
 When finished generating your geometry with the :ref:`SurfaceTool <class_surfacetool>`
 call ``commit()`` to finish generating the mesh. If an :ref:`ArrayMesh <class_ArrayMesh>` is passed
-to ``commit()`` then it appends a new surface to the end of the ArrayMesh. While if nothing is passed
+to ``commit()`` then it appends a new surface to the end of the ArrayMesh. If nothing is passed
 in, ``commit()`` returns an ArrayMesh.
 
 .. tabs::
