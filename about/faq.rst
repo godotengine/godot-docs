@@ -47,7 +47,7 @@ Which platforms are supported by Godot?
 
 **For exporting your games:**
 
-* Windows (and UWP)
+* Windows
 * macOS
 * Linux, \*BSD
 * Android
@@ -67,6 +67,13 @@ about :ref:`doc_consoles`.
 
 For more on this, see the sections on :ref:`exporting <toc-learn-workflow-export>`
 and :ref:`compiling Godot yourself <toc-devel-compiling>`.
+
+.. note::
+
+    Godot 3 also had support for Universal Windows Platform (UWP). This platform
+    port was removed in Godot 4 due to lack of maintenance, and it being
+    deprecated by Microsoft. It is still available in the current stable release
+    of Godot 3 for interested users.
 
 Which programming languages are supported in Godot?
 ---------------------------------------------------

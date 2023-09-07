@@ -50,8 +50,6 @@ Here is a list of most feature tags in Godot. Keep in mind they are **case-sensi
 +-----------------+----------------------------------------------------------+
 | **ios**         | Running on iOS (but not within a Web browser)            |
 +-----------------+----------------------------------------------------------+
-| **uwp**         | Running on UWP (but not within a Web browser)            |
-+-----------------+----------------------------------------------------------+
 | **windows**     | Running on Windows                                       |
 +-----------------+----------------------------------------------------------+
 | **linuxbsd**    | Running on Linux or \*BSD                                |

@@ -47,7 +47,6 @@ The official platform ports can be used as a reference when creating a custom pl
 - `Linux/\*BSD <https://github.com/godotengine/godot/tree/master/platform/linuxbsd>`__
 - `Android <https://github.com/godotengine/godot/tree/master/platform/android>`__
 - `iOS <https://github.com/godotengine/godot/tree/master/platform/ios>`__
-- `UWP <https://github.com/godotengine/godot/tree/master/platform/uwp>`__ *(not currently working)*
 - `Web <https://github.com/godotengine/godot/tree/master/platform/web>`__
 
 While platform code is usually self-contained, there are exceptions to this

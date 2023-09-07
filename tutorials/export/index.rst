@@ -13,7 +13,6 @@ Export
    running_on_macos
    exporting_for_windows
    changing_application_icon_for_windows
-   exporting_for_uwp
    exporting_for_ios
    exporting_for_android
    android_gradle_build

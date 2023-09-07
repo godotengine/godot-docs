@@ -103,7 +103,7 @@ Output log
 
 Printing the licensing text using the :ref:`print() <class_@GlobalScope_method_print>`
 function may be enough on platforms where a global output log is readable.
-This is the case on desktop platforms, Android and HTML5 (but not iOS and UWP).
+This is the case on desktop platforms, Android and HTML5 (but not iOS).
 
 Accompanying file
 ^^^^^^^^^^^^^^^^^
