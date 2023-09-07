@@ -65,26 +65,26 @@ This is not very useful in real life, but will give you a good overview of how a
 
     func _ready():
         # Connect P1 session created to itself to set local description
-        p1.connect("session_description_created", p1, "set_local_description")
+        p1.session_description_created.connect( p1.set_local_description )
         # Connect P1 session and ICE created to p2 set remote description and candidates
-        p1.connect("session_description_created", p2, "set_remote_description")
-        p1.connect("ice_candidate_created", p2, "add_ice_candidate")
+        p1.session_description_created.connect( p2.set_remote_description )
+        p1.ice_candidate_created.connect( p2.add_ice_candidate )
 
         # Same for P2
-        p2.connect("session_description_created", p2, "set_local_description")
-        p2.connect("session_description_created", p1, "set_remote_description")
-        p2.connect("ice_candidate_created", p1, "add_ice_candidate")
+        p2.session_description_created.connect( p2.set_local_description )
+        p2.session_description_created.connect( p1.set_remote_description )
+        p2.ice_candidate_created.connect( p1.add_ice_candidate )
 
         # Let P1 create the offer
         p1.create_offer()
 
         # Wait a second and send message from P1
-        yield(get_tree().create_timer(1), "timeout")
-        ch1.put_packet("Hi from P1".to_utf8())
+        await get_tree().create_timer(1).timeout
+        ch1.put_packet("Hi from P1".to_utf8_buffer())
 
         # Wait a second and send message from P2
-        yield(get_tree().create_timer(1), "timeout")
-        ch2.put_packet("Hi from P2".to_utf8())
+        await get_tree().create_timer(1).timeout
+        ch2.put_packet("Hi from P2".to_utf8_buffer())
 
     func _process(_delta):
         # Poll connections
@@ -197,12 +197,13 @@ Then you can use it like this:
         var p2 = Chat.new()
         add_child(p1)
         add_child(p2)
-        yield(get_tree().create_timer(1), "timeout")
+        await get_tree().create_timer(1).timeout
         p1.send_message("Hi from %s" % p1.get_path())
 
         # Wait a second and send message from P2
-        yield(get_tree().create_timer(1), "timeout")
+        await get_tree().create_timer(1).timeout
         p2.send_message("Hi from %s" % p2.get_path())
+
 
 This will print something similar to this:
 
