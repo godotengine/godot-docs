@@ -4284,7 +4284,7 @@ If ``true``, snaps :ref:`Control<class_Control>` node vertices to the nearest pi
 
 :ref:`bool<class_bool>` **gui/common/swap_cancel_ok**
 
-If ``true``, swaps **Cancel** and **OK** buttons in dialogs on Windows and UWP to follow interface conventions. :ref:`DisplayServer.get_swap_cancel_ok<class_DisplayServer_method_get_swap_cancel_ok>` can be used to query whether buttons are swapped at run-time.
+If ``true``, swaps **Cancel** and **OK** buttons in dialogs on Windows to follow interface conventions. :ref:`DisplayServer.get_swap_cancel_ok<class_DisplayServer_method_get_swap_cancel_ok>` can be used to query whether buttons are swapped at run-time.
 
 \ **Note:** This doesn't affect native dialogs such as the ones spawned by :ref:`DisplayServer.dialog_show<class_DisplayServer_method_dialog_show>`.
 

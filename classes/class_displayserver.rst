@@ -1712,7 +1712,7 @@ Returns index of the screen which contains specified rectangle.
 
 :ref:`bool<class_bool>` **get_swap_cancel_ok** **(** **)**
 
-Returns ``true`` if positions of **OK** and **Cancel** buttons are swapped in dialogs. This is enabled by default on Windows and UWP to follow interface conventions, and be toggled by changing :ref:`ProjectSettings.gui/common/swap_cancel_ok<class_ProjectSettings_property_gui/common/swap_cancel_ok>`.
+Returns ``true`` if positions of **OK** and **Cancel** buttons are swapped in dialogs. This is enabled by default on Windows to follow interface conventions, and be toggled by changing :ref:`ProjectSettings.gui/common/swap_cancel_ok<class_ProjectSettings_property_gui/common/swap_cancel_ok>`.
 
 \ **Note:** This doesn't affect native dialogs such as the ones spawned by :ref:`dialog_show<class_DisplayServer_method_dialog_show>`.
 

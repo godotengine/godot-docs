@@ -377,7 +377,7 @@ Returns the material assigned to the :ref:`Mesh<class_Mesh>`.
 
 :ref:`Vector3<class_Vector3>` **get_vertex** **(** :ref:`int<class_int>` idx **)** |const|
 
-Returns the vertex at given index.
+Returns the position of the given vertex.
 
 .. rst-class:: classref-item-separator
 
