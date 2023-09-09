@@ -124,8 +124,15 @@ and SubViewports.
 
 .. image:: img/input_event_scene_flow.png
 
-This order doesn't apply to :ref:`Control._gui_input() <class_Control_method__gui_input>`, which uses
-a different method based on event location or focused Control.
+.. note::
+
+   This order doesn't apply to :ref:`Control._gui_input() <class_Control_method__gui_input>`, which uses
+   a different method based on event location or focused Control. GUI **mouse** events also travel 
+   up the scene tree, subject to the :ref:`Control.mouse_filter <class_Control_property_mouse_filter>`
+   restrictions described above. However, since these events target specific Controls, only direct ancestors of 
+   the targeted Control node receive the event. GUI **keyboard and joypad** events *do not* travel
+   up the scene tree, and can only be handled by the Control that received them. Otherwise, they will be
+   propagated as non-GUI events through :ref:`Node._unhandled_input() <class_Node_method__unhandled_input>`.
 
 Since Viewports don't send events to other :ref:`SubViewports <class_SubViewport>`, one of the following
 methods has to be used:
@@ -134,9 +141,6 @@ methods has to be used:
    sends events to its child :ref:`SubViewports <class_SubViewport>` after
    :ref:`Node._input() <class_Node_method__input>` or :ref:`Control._gui_input() <class_Control_method__gui_input>`.
 2. Implement event propagation based on the individual requirements.
-
-GUI events also travel up the scene tree but, since these events target
-specific Controls, only direct ancestors of the targeted Control node receive the event.
 
 In accordance with Godot's node-based design, this enables
 specialized child nodes to handle and consume particular events, while
