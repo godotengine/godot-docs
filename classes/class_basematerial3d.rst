@@ -111,6 +111,8 @@ Properties
    +-----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------+-----------------------+
    | :ref:`bool<class_bool>`                                         | :ref:`disable_ambient_light<class_BaseMaterial3D_property_disable_ambient_light>`                                 | ``false``             |
    +-----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`bool<class_bool>`                                         | :ref:`disable_fog<class_BaseMaterial3D_property_disable_fog>`                                                     | ``false``             |
+   +-----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------+-----------------------+
    | :ref:`bool<class_bool>`                                         | :ref:`disable_receive_shadows<class_BaseMaterial3D_property_disable_receive_shadows>`                             | ``false``             |
    +-----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------+-----------------------+
    | :ref:`float<class_float>`                                       | :ref:`distance_fade_max_distance<class_BaseMaterial3D_property_distance_fade_max_distance>`                       | ``10.0``              |
@@ -1093,11 +1095,19 @@ Enables parts of the shader required for :ref:`GPUParticles3D<class_GPUParticles
 
 Enables multichannel signed distance field rendering shader.
 
+.. _class_BaseMaterial3D_constant_FLAG_DISABLE_FOG:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Flags<enum_BaseMaterial3D_Flags>` **FLAG_DISABLE_FOG** = ``21``
+
+Disables receiving depth-based or volumetric fog.
+
 .. _class_BaseMaterial3D_constant_FLAG_MAX:
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`Flags<enum_BaseMaterial3D_Flags>` **FLAG_MAX** = ``21``
+:ref:`Flags<enum_BaseMaterial3D_Flags>` **FLAG_MAX** = ``22``
 
 Represents the size of the :ref:`Flags<enum_BaseMaterial3D_Flags>` enum.
 
@@ -1977,6 +1987,23 @@ The algorithm used for diffuse light scattering. See :ref:`DiffuseMode<enum_Base
 - :ref:`bool<class_bool>` **get_flag** **(** :ref:`Flags<enum_BaseMaterial3D_Flags>` flag **)** |const|
 
 If ``true``, the object receives no ambient light.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_BaseMaterial3D_property_disable_fog:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **disable_fog** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_flag** **(** :ref:`Flags<enum_BaseMaterial3D_Flags>` flag, :ref:`bool<class_bool>` enable **)**
+- :ref:`bool<class_bool>` **get_flag** **(** :ref:`Flags<enum_BaseMaterial3D_Flags>` flag **)** |const|
+
+If ``true``, the object will not be affected by fog (neither volumetric nor depth fog). This is useful for unshaded or transparent materials (e.g. particles), which without this setting will be affected even if fully transparent.
 
 .. rst-class:: classref-item-separator
 

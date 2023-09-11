@@ -21,6 +21,10 @@ Description
 
 Node for 2D tile-based maps. Tilemaps use a :ref:`TileSet<class_TileSet>` which contain a list of tiles which are used to create grid-based maps. A TileMap may have several layers, layouting tiles on top of each other.
 
+For performance reasons, all TileMap updates are batched at the end of a frame. Notably, this means that scene tiles from a :ref:`TileSetScenesCollectionSource<class_TileSetScenesCollectionSource>` may be initialized after their parent.
+
+To force an update earlier on, call :ref:`update_internals<class_TileMap_method_update_internals>`.
+
 .. rst-class:: classref-introduction-group
 
 Tutorials
@@ -49,13 +53,13 @@ Properties
    :widths: auto
 
    +----------------------------------------------------+--------------------------------------------------------------------------------------+-----------+
-   | :ref:`int<class_int>`                              | :ref:`cell_quadrant_size<class_TileMap_property_cell_quadrant_size>`                 | ``16``    |
-   +----------------------------------------------------+--------------------------------------------------------------------------------------+-----------+
    | :ref:`bool<class_bool>`                            | :ref:`collision_animatable<class_TileMap_property_collision_animatable>`             | ``false`` |
    +----------------------------------------------------+--------------------------------------------------------------------------------------+-----------+
    | :ref:`VisibilityMode<enum_TileMap_VisibilityMode>` | :ref:`collision_visibility_mode<class_TileMap_property_collision_visibility_mode>`   | ``0``     |
    +----------------------------------------------------+--------------------------------------------------------------------------------------+-----------+
    | :ref:`VisibilityMode<enum_TileMap_VisibilityMode>` | :ref:`navigation_visibility_mode<class_TileMap_property_navigation_visibility_mode>` | ``0``     |
+   +----------------------------------------------------+--------------------------------------------------------------------------------------+-----------+
+   | :ref:`int<class_int>`                              | :ref:`rendering_quadrant_size<class_TileMap_property_rendering_quadrant_size>`       | ``16``    |
    +----------------------------------------------------+--------------------------------------------------------------------------------------+-----------+
    | :ref:`TileSet<class_TileSet>`                      | :ref:`tile_set<class_TileMap_property_tile_set>`                                     |           |
    +----------------------------------------------------+--------------------------------------------------------------------------------------+-----------+
@@ -135,6 +139,8 @@ Methods
    +---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                        | :ref:`move_layer<class_TileMap_method_move_layer>` **(** :ref:`int<class_int>` layer, :ref:`int<class_int>` to_position **)**                                                                                                                                                           |
    +---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                        | :ref:`notify_runtime_tile_data_update<class_TileMap_method_notify_runtime_tile_data_update>` **(** :ref:`int<class_int>` layer=-1 **)**                                                                                                                                                 |
+   +---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                        | :ref:`remove_layer<class_TileMap_method_remove_layer>` **(** :ref:`int<class_int>` layer **)**                                                                                                                                                                                          |
    +---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                        | :ref:`set_cell<class_TileMap_method_set_cell>` **(** :ref:`int<class_int>` layer, :ref:`Vector2i<class_Vector2i>` coords, :ref:`int<class_int>` source_id=-1, :ref:`Vector2i<class_Vector2i>` atlas_coords=Vector2i(-1, -1), :ref:`int<class_int>` alternative_tile=0 **)**             |
@@ -160,6 +166,8 @@ Methods
    | void                                        | :ref:`set_navigation_map<class_TileMap_method_set_navigation_map>` **(** :ref:`int<class_int>` layer, :ref:`RID<class_RID>` map **)**                                                                                                                                                   |
    +---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                        | :ref:`set_pattern<class_TileMap_method_set_pattern>` **(** :ref:`int<class_int>` layer, :ref:`Vector2i<class_Vector2i>` position, :ref:`TileMapPattern<class_TileMapPattern>` pattern **)**                                                                                             |
+   +---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                        | :ref:`update_internals<class_TileMap_method_update_internals>` **(** **)**                                                                                                                                                                                                              |
    +---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
@@ -227,23 +235,6 @@ Always show.
 Property Descriptions
 ---------------------
 
-.. _class_TileMap_property_cell_quadrant_size:
-
-.. rst-class:: classref-property
-
-:ref:`int<class_int>` **cell_quadrant_size** = ``16``
-
-.. rst-class:: classref-property-setget
-
-- void **set_quadrant_size** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_quadrant_size** **(** **)**
-
-The TileMap's quadrant size. Optimizes drawing by batching, using chunks of this size.
-
-.. rst-class:: classref-item-separator
-
-----
-
 .. _class_TileMap_property_collision_animatable:
 
 .. rst-class:: classref-property
@@ -297,6 +288,23 @@ Show or hide the TileMap's navigation meshes. If set to :ref:`VISIBILITY_MODE_DE
 
 ----
 
+.. _class_TileMap_property_rendering_quadrant_size:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **rendering_quadrant_size** = ``16``
+
+.. rst-class:: classref-property-setget
+
+- void **set_rendering_quadrant_size** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_rendering_quadrant_size** **(** **)**
+
+The TileMap's quadrant size. Optimizes drawing by batching, using chunks of this size.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_TileMap_property_tile_set:
 
 .. rst-class:: classref-property
@@ -331,7 +339,7 @@ This method is only called if :ref:`_use_tile_data_runtime_update<class_TileMap_
 
 \ **Warning:** The ``tile_data`` object's sub-resources are the same as the one in the TileSet. Modifying them might impact the whole TileSet. Instead, make sure to duplicate those resources.
 
-\ **Note:** If the properties of ``tile_data`` object should change over time, use :ref:`force_update<class_TileMap_method_force_update>` to trigger a TileMap update.
+\ **Note:** If the properties of ``tile_data`` object should change over time, use :ref:`notify_runtime_tile_data_update<class_TileMap_method_notify_runtime_tile_data_update>` to notify the TileMap it needs an update.
 
 .. rst-class:: classref-item-separator
 
@@ -346,6 +354,8 @@ This method is only called if :ref:`_use_tile_data_runtime_update<class_TileMap_
 Should return ``true`` if the tile at coordinates ``coords`` on layer ``layer`` requires a runtime update.
 
 \ **Warning:** Make sure this function only return ``true`` when needed. Any tile processed at runtime without a need for it will imply a significant performance penalty.
+
+\ **Note:** If the result of this function should changed, use :ref:`notify_runtime_tile_data_update<class_TileMap_method_notify_runtime_tile_data_update>` to notify the TileMap it needs an update.
 
 .. rst-class:: classref-item-separator
 
@@ -421,11 +431,7 @@ Clears cells that do not exist in the tileset.
 
 void **force_update** **(** :ref:`int<class_int>` layer=-1 **)**
 
-Triggers an update of the TileMap. If ``layer`` is provided and is positive, only updates the given layer.
-
-\ **Note:** The TileMap node updates automatically when one of its properties is modified. A manual update is only needed if runtime modifications (implemented in :ref:`_tile_data_runtime_update<class_TileMap_method__tile_data_runtime_update>`) need to be applied.
-
-\ **Warning:** Updating the TileMap is computationally expensive and may impact performance. Try to limit the number of updates and the tiles they impact (by placing frequently updated tiles in a dedicated layer for example).
+*Deprecated.* See :ref:`notify_runtime_tile_data_update<class_TileMap_method_notify_runtime_tile_data_update>` and :ref:`update_internals<class_TileMap_method_update_internals>`.
 
 .. rst-class:: classref-item-separator
 
@@ -783,6 +789,24 @@ Moves the layer at index ``layer`` to the given position ``to_position`` in the 
 
 ----
 
+.. _class_TileMap_method_notify_runtime_tile_data_update:
+
+.. rst-class:: classref-method
+
+void **notify_runtime_tile_data_update** **(** :ref:`int<class_int>` layer=-1 **)**
+
+Notifies the TileMap node that calls to :ref:`_use_tile_data_runtime_update<class_TileMap_method__use_tile_data_runtime_update>` or :ref:`_tile_data_runtime_update<class_TileMap_method__tile_data_runtime_update>` will lead to different results. This will thus trigger a TileMap update.
+
+If ``layer`` is provided, only notifies changes for the given layer. Providing the ``layer`` argument (when applicable) is usually preferred for performance reasons.
+
+\ **Warning:** Updating the TileMap is computationally expensive and may impact performance. Try to limit the number of calls to this function to avoid unnecessary update.
+
+\ **Note:** This does not trigger a direct update of the TileMap, the update will be done at the end of the frame as usual (unless you call :ref:`update_internals<class_TileMap_method_update_internals>`).
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_TileMap_method_remove_layer:
 
 .. rst-class:: classref-method
@@ -980,6 +1004,22 @@ void **set_pattern** **(** :ref:`int<class_int>` layer, :ref:`Vector2i<class_Vec
 Paste the given :ref:`TileMapPattern<class_TileMapPattern>` at the given ``position`` and ``layer`` in the tile map.
 
 If ``layer`` is negative, the layers are accessed from the last one.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_TileMap_method_update_internals:
+
+.. rst-class:: classref-method
+
+void **update_internals** **(** **)**
+
+Triggers a direct update of the TileMap. Usually, calling this function is not needed, as TileMap node updates automatically when one of its properties or cells is modified.
+
+However, for performance reasons, those updates are batched and delayed to the end of the frame. Calling this function will force the TileMap to update right away instead.
+
+\ **Warning:** Updating the TileMap is computationally expensive and may impact performance. Try to limit the number of updates and how many tiles they impact.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

@@ -467,6 +467,8 @@ Properties
    +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`       | :ref:`text_editor/completion/code_complete_enabled<class_EditorSettings_property_text_editor/completion/code_complete_enabled>`                                                     |
    +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`text_editor/completion/colorize_suggestions<class_EditorSettings_property_text_editor/completion/colorize_suggestions>`                                                       |
+   +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`       | :ref:`text_editor/completion/complete_file_paths<class_EditorSettings_property_text_editor/completion/complete_file_paths>`                                                         |
    +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`     | :ref:`text_editor/completion/idle_parse_delay<class_EditorSettings_property_text_editor/completion/idle_parse_delay>`                                                               |
@@ -3220,6 +3222,18 @@ The delay in seconds after which autocompletion suggestions should be displayed 
 :ref:`bool<class_bool>` **text_editor/completion/code_complete_enabled**
 
 If ``true``, code completion will be triggered automatically after :ref:`text_editor/completion/code_complete_delay<class_EditorSettings_property_text_editor/completion/code_complete_delay>`. If ``false``, you can still trigger completion manually by pressing :kbd:`Ctrl + Space` (:kbd:`Cmd + Space` on macOS).
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSettings_property_text_editor/completion/colorize_suggestions:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **text_editor/completion/colorize_suggestions**
+
+If ``true`` enables the coloring for some items in the autocompletion suggestions, like vector components.
 
 .. rst-class:: classref-item-separator
 
