@@ -359,7 +359,7 @@ loaded for each platform and the entry function for the module. It is called ``g
     [configuration]
 
     entry_symbol = "example_library_init"
-    compatibility_minimum = 4.1
+    compatibility_minimum = "4.1"
 
     [libraries]
 
