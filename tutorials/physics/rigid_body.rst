@@ -37,10 +37,10 @@ Here is a custom ``look_at()`` method that will work reliably with rigid bodies:
     extends RigidBody3D
 
     func look_follow(state, current_transform, target_position):
-        var up_dir = Vector3(0, 1, 0)
-        var cur_dir = current_transform.basis * Vector3(0, 0, 1)
+        var up_dir = Vector3.UP
+        var cur_dir = current_transform.basis.z
         var target_dir = current_transform.origin.direction_to(target_position)
-        var rotation_angle = acos(cur_dir.x) - acos(target_dir.x)
+        var rotation_angle = cur_dir.signed_angle_to(target_dir, up_dir)
 
         state.angular_velocity = up_dir * (rotation_angle / state.step)
 
@@ -56,10 +56,10 @@ Here is a custom ``look_at()`` method that will work reliably with rigid bodies:
     {
         private void LookFollow(PhysicsDirectBodyState state, Transform3D currentTransform, Vector3 targetPosition)
         {
-            var upDir = new Vector3(0, 1, 0);
-            var curDir = currentTransform.Basis * new Vector3(0, 0, 1);
+            var upDir = new Vector3.UP;
+            var curDir = currentTransform.Basis.z;
             var targetDir = currentTransform.Origin.DirectionTo(targetPosition);
-            var rotationAngle = Mathf.Acos(curDir.X) - Mathf.Acos(targetDir.X);
+            var rotationAngle = curDir.signed_angle_to(targetDir, up_Dir);
 
             state.SetAngularVelocity(upDir * (rotationAngle / state.GetStep()));
         }
