@@ -79,6 +79,7 @@ Following is the list of providers:
   Switch, Xbox One, Playstation 4 & Playstation 5 porting and publishing of Godot games.
 - `Tuanisapps <https://www.tuanisapps.com/>`_ offers
   Switch porting and publishing of Godot games.
+- `SneakyBox <https://sneakybox.biz/>`_ offers porting services for PlayStation 4, PlayStation 5, Xbox One, Xbox Series X|S, Nintendo Switch, various PC platforms and mobile.
 
 
 If your company offers porting, or porting *and* publishing services for Godot games,
