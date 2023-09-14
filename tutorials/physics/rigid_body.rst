@@ -56,7 +56,7 @@ Here is a custom ``look_at()`` method that will work reliably with rigid bodies:
     {
         private void LookFollow(PhysicsDirectBodyState state, Transform3D currentTransform, Vector3 targetPosition)
         {
-            var upDir = new Vector3.UP;
+            var upDir = Vector3.Up;
             var curDir = currentTransform.Basis.Z;
             var targetDir = currentTransform.Origin.DirectionTo(targetPosition);
             var rotationAngle = curDir.SignedAngleTo(targetDir, upDir);
