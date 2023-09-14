@@ -105,7 +105,7 @@ Emitted when the resource changes, usually when one of its properties is modifie
 
 **setup_local_to_scene_requested** **(** **)**
 
-Emitted when :ref:`setup_local_to_scene<class_Resource_method_setup_local_to_scene>` is called, usually by a newly duplicated resource with :ref:`resource_local_to_scene<class_Resource_property_resource_local_to_scene>` set to ``true``. Custom behavior can be defined by connecting this signal.
+Emitted by the newly duplicated resource with :ref:`resource_local_to_scene<class_Resource_property_resource_local_to_scene>` set to ``true``, when the scene is instantiated. Custom behavior can be defined by connecting this signal.
 
 .. rst-class:: classref-section-separator
 
@@ -261,20 +261,6 @@ void **setup_local_to_scene** **(** **)**
 Emits the :ref:`setup_local_to_scene_requested<class_Resource_signal_setup_local_to_scene_requested>` signal. If :ref:`resource_local_to_scene<class_Resource_property_resource_local_to_scene>` is set to ``true``, this method is called from :ref:`PackedScene.instantiate<class_PackedScene_method_instantiate>` by the newly duplicated resource within the scene instance.
 
 For most resources, this method performs no logic of its own. Custom behavior can be defined by connecting :ref:`setup_local_to_scene_requested<class_Resource_signal_setup_local_to_scene_requested>` from a script, **not** by overriding this method.
-
-\ **Example:** Assign a random value to ``health`` for every duplicated Resource from an instantiated scene, excluding the original.
-
-::
-
-    extends Resource
-    
-    var health = 0
-    
-    func _init():
-        setup_local_to_scene_requested.connect(randomize_health)
-    
-    func randomize_health():
-        health = randi_range(10, 40)
 
 .. rst-class:: classref-item-separator
 

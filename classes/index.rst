@@ -116,6 +116,7 @@ Nodes
     class_gpuparticlescollisionsdf3d
     class_gpuparticlescollisionsphere3d
     class_graphedit
+    class_graphelement
     class_graphnode
     class_gridcontainer
     class_gridmap

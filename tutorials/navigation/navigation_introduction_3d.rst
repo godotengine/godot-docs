@@ -153,11 +153,7 @@ a NavigationAgent3D for path movement.
         var current_agent_position: Vector3 = global_position
         var next_path_position: Vector3 = navigation_agent.get_next_path_position()
 
-        var new_velocity: Vector3 = next_path_position - current_agent_position
-        new_velocity = new_velocity.normalized()
-        new_velocity = new_velocity * movement_speed
-
-        velocity = new_velocity
+        velocity = current_agent_position.direction_to(next_path_position) * movement_speed
         move_and_slide()
 
  .. code-tab:: csharp C#
@@ -204,11 +200,7 @@ a NavigationAgent3D for path movement.
             Vector3 currentAgentPosition = GlobalTransform.Origin;
             Vector3 nextPathPosition = _navigationAgent.GetNextPathPosition();
 
-            Vector3 newVelocity = (nextPathPosition - currentAgentPosition).Normalized();
-            newVelocity *= _movementSpeed;
-
-            Velocity = newVelocity;
-
+            Velocity = currentAgentPosition.DirectionTo(nextPathPosition) * _movementSpeed;
             MoveAndSlide();
         }
 

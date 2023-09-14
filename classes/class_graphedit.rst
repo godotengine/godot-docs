@@ -190,6 +190,18 @@ Emitted at the beginning of a GraphNode movement.
 
 ----
 
+.. _class_GraphEdit_signal_close_nodes_request:
+
+.. rst-class:: classref-signal
+
+**close_nodes_request** **(** :ref:`StringName[]<class_StringName>` nodes **)**
+
+Emitted when attempting to remove a GraphNode from the GraphEdit. Provides a list of node names to be removed (all selected nodes, excluding nodes without closing button).
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_GraphEdit_signal_connection_drag_ended:
 
 .. rst-class:: classref-signal
@@ -257,18 +269,6 @@ Emitted when user drags a connection from an output port into the empty space of
 **copy_nodes_request** **(** **)**
 
 Emitted when the user presses :kbd:`Ctrl + C`.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_GraphEdit_signal_delete_nodes_request:
-
-.. rst-class:: classref-signal
-
-**delete_nodes_request** **(** :ref:`StringName[]<class_StringName>` nodes **)**
-
-Emitted when a GraphNode is attempted to be removed from the GraphEdit. Provides a list of node names to be removed (all selected nodes, excluding nodes without closing button).
 
 .. rst-class:: classref-item-separator
 
@@ -739,7 +739,7 @@ Virtual method which can be overridden to customize how connections are drawn.
 
 Returns whether the ``mouse_position`` is in the input hot zone.
 
-By default, a hot zone is a :ref:`Rect2<class_Rect2>` positioned such that its center is at ``in_node``.\ :ref:`GraphNode.get_connection_input_position<class_GraphNode_method_get_connection_input_position>`\ (``in_port``) (For output's case, call :ref:`GraphNode.get_connection_output_position<class_GraphNode_method_get_connection_output_position>` instead). The hot zone's width is twice the Theme Property ``port_grab_distance_horizontal``, and its height is twice the ``port_grab_distance_vertical``.
+By default, a hot zone is a :ref:`Rect2<class_Rect2>` positioned such that its center is at ``in_node``.\ :ref:`GraphNode.get_input_port_position<class_GraphNode_method_get_input_port_position>`\ (``in_port``) (For output's case, call :ref:`GraphNode.get_output_port_position<class_GraphNode_method_get_output_port_position>` instead). The hot zone's width is twice the Theme Property ``port_grab_distance_horizontal``, and its height is twice the ``port_grab_distance_vertical``.
 
 Below is a sample code to help get started:
 
@@ -747,7 +747,7 @@ Below is a sample code to help get started:
 
     func _is_in_input_hotzone(in_node, in_port, mouse_position):
         var port_size: Vector2 = Vector2(get_theme_constant("port_grab_distance_horizontal"), get_theme_constant("port_grab_distance_vertical"))
-        var port_pos: Vector2 = in_node.get_position() + in_node.get_connection_input_position(in_port) - port_size / 2
+        var port_pos: Vector2 = in_node.get_position() + in_node.get_input_port_position(in_port) - port_size / 2
         var rect = Rect2(port_pos, port_size)
     
         return rect.has_point(mouse_position)
@@ -770,7 +770,7 @@ Below is a sample code to help get started:
 
     func _is_in_output_hotzone(in_node, in_port, mouse_position):
         var port_size: Vector2 = Vector2(get_theme_constant("port_grab_distance_horizontal"), get_theme_constant("port_grab_distance_vertical"))
-        var port_pos: Vector2 = in_node.get_position() + in_node.get_connection_output_position(in_port) - port_size / 2
+        var port_pos: Vector2 = in_node.get_position() + in_node.get_output_port_position(in_port) - port_size / 2
         var rect = Rect2(port_pos, port_size)
     
         return rect.has_point(mouse_position)

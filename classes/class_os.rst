@@ -852,7 +852,7 @@ Returns the model name of the current device.
 
 Returns the name of the host OS.
 
-On Windows, this is ``"Windows"`` or ``"UWP"`` if exported on Universal Windows Platform.
+On Windows, this is ``"Windows"``.
 
 On macOS, this is ``"macOS"``.
 
@@ -874,7 +874,7 @@ On the web, this is ``"Web"``.
  .. code-tab:: gdscript
 
     match OS.get_name():
-        "Windows", "UWP":
+        "Windows":
             print("Windows")
         "macOS":
             print("macOS")
@@ -892,7 +892,6 @@ On the web, this is ``"Web"``.
     switch (OS.GetName())
     {
         case "Windows":
-        case "UWP":
             GD.Print("Windows");
             break;
         case "macOS":
@@ -956,7 +955,7 @@ Returns the number of *logical* CPU cores available on the host machine. On CPUs
 
 Returns the name of the CPU model on the host machine (e.g. "Intel(R) Core(TM) i7-6700K CPU @ 4.00GHz").
 
-\ **Note:** This method is only implemented on Windows, macOS, Linux and iOS. On Android, Web and UWP, :ref:`get_processor_name<class_OS_method_get_processor_name>` returns an empty string.
+\ **Note:** This method is only implemented on Windows, macOS, Linux and iOS. On Android and Web, :ref:`get_processor_name<class_OS_method_get_processor_name>` returns an empty string.
 
 .. rst-class:: classref-item-separator
 
@@ -1090,7 +1089,7 @@ Returns a string that is unique to the device.
 
 \ **Note:** This string may change without notice if the user reinstalls/upgrades their operating system or changes their hardware. This means it should generally not be used to encrypt persistent data as the data saved before an unexpected ID change would become inaccessible. The returned string may also be falsified using external programs, so do not rely on the string returned by :ref:`get_unique_id<class_OS_method_get_unique_id>` for security purposes.
 
-\ **Note:** Returns an empty string on Web and UWP, as this method isn't implemented on those platforms yet.
+\ **Note:** Returns an empty string on Web, as this method isn't implemented on this platform yet.
 
 .. rst-class:: classref-item-separator
 
@@ -1135,8 +1134,6 @@ For Windows, the major and minor version are returned, as well as the build numb
 For rolling distributions, such as Arch Linux, an empty string is returned.
 
 For macOS and iOS, the major and minor version are returned, as well as the patch number.
-
-For UWP, the device family version is returned.
 
 For Android, the SDK version and the incremental build number are returned. If it's a custom ROM, it attempts to return its version instead.
 

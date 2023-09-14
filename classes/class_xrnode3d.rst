@@ -68,6 +68,23 @@ Methods
 
 .. rst-class:: classref-descriptions-group
 
+Signals
+-------
+
+.. _class_XRNode3D_signal_tracking_changed:
+
+.. rst-class:: classref-signal
+
+**tracking_changed** **(** :ref:`bool<class_bool>` tracking **)**
+
+Emitted when the :ref:`tracker<class_XRNode3D_property_tracker>` starts or stops receiving updated tracking data for the :ref:`pose<class_XRNode3D_property_pose>` being tracked. The ``tracking`` argument indicates whether the tracker is getting updated tracking data.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
+
 Property Descriptions
 ---------------------
 

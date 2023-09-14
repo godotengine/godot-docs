@@ -202,6 +202,11 @@ Disable Ambient Light
 Makes the object not receive any kind of ambient lighting that would
 otherwise light it.
 
+Disable Fog
+~~~~~~~~~~~
+
+Makes the object unaffected by depth-based or volumetric fog. This is useful for particles or other additively blended materials that would otherwise show the shape of the mesh (even in places where it would be invisible without the fog).
+
 Vertex Color
 ------------
 

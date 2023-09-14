@@ -359,7 +359,7 @@ loaded for each platform and the entry function for the module. It is called ``g
     [configuration]
 
     entry_symbol = "example_library_init"
-    compatibility_minimum = 4.1
+    compatibility_minimum = "4.1"
 
     [libraries]
 
@@ -442,8 +442,9 @@ For example:
 
 .. code-block:: none
 
-    [Icon]
-    GDExample = "res://icons/GDExample.svg"
+    [icons]
+
+    GDExample = "res://icons/gd_example.svg"
 
 The path should point to a 16 by 16 pixel SVG image. Read the guide for :ref:`creating icons <doc_editor_icons>`
 for more information.

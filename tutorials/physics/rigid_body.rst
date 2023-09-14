@@ -39,7 +39,7 @@ Here is a custom ``look_at()`` method that will work reliably with rigid bodies:
     func look_follow(state, current_transform, target_position):
         var up_dir = Vector3(0, 1, 0)
         var cur_dir = current_transform.basis * Vector3(0, 0, 1)
-        var target_dir = (target_position - current_transform.origin).normalized()
+        var target_dir = current_transform.origin.direction_to(target_position)
         var rotation_angle = acos(cur_dir.x) - acos(target_dir.x)
 
         state.angular_velocity = up_dir * (rotation_angle / state.step)
@@ -58,7 +58,7 @@ Here is a custom ``look_at()`` method that will work reliably with rigid bodies:
         {
             var upDir = new Vector3(0, 1, 0);
             var curDir = currentTransform.Basis * new Vector3(0, 0, 1);
-            var targetDir = (targetPosition - currentTransform.Origin).Normalized();
+            var targetDir = currentTransform.Origin.DirectionTo(targetPosition);
             var rotationAngle = Mathf.Acos(curDir.X) - Mathf.Acos(targetDir.X);
 
             state.SetAngularVelocity(upDir * (rotationAngle / state.GetStep()));

@@ -202,8 +202,7 @@ This script adds basic navigation movement to a Node3D with a NavigationAgent3D 
 
         movement_delta = movement_speed * delta
         var next_path_position: Vector3 = navigation_agent.get_next_path_position()
-        var current_agent_position: Vector3 = global_position
-        var new_velocity: Vector3 = (next_path_position - current_agent_position).normalized() * movement_delta
+        var new_velocity: Vector3 = global_position.direction_to(next_path_position) * movement_delta
         if navigation_agent.avoidance_enabled:
             navigation_agent.set_velocity(new_velocity)
         else:
@@ -236,8 +235,7 @@ This script adds basic navigation movement to a CharacterBody3D with a Navigatio
             return
 
         var next_path_position: Vector3 = navigation_agent.get_next_path_position()
-        var current_agent_position: Vector3 = global_position
-        var new_velocity: Vector3 = (next_path_position - current_agent_position).normalized() * movement_speed
+        var new_velocity: Vector3 = global_position.direction_to(next_path_position) * movement_speed
         if navigation_agent.avoidance_enabled:
             navigation_agent.set_velocity(new_velocity)
         else:
@@ -271,8 +269,7 @@ This script adds basic navigation movement to a RigidBody3D with a NavigationAge
             return
 
         var next_path_position: Vector3 = navigation_agent.get_next_path_position()
-        var current_agent_position: Vector3 = global_position
-        var new_velocity: Vector3 = (next_path_position - current_agent_position).normalized() * movement_speed
+        var new_velocity: Vector3 = global_position.direction_to(next_path_position) * movement_speed
         if navigation_agent.avoidance_enabled:
             navigation_agent.set_velocity(new_velocity)
         else:

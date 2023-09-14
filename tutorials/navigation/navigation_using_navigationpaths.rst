@@ -121,6 +121,6 @@ the default navigation map by setting the target position with ``set_movement_ta
 
         current_path_point = current_path[current_path_index]
 
-        var new_velocity: Vector3 = (current_path_point - global_transform.origin).normalized() * movement_delta
+        var new_velocity: Vector3 = global_transform.origin.direction_to(current_path_point) * movement_delta
 
         global_transform.origin = global_transform.origin.move_toward(global_transform.origin + new_velocity, movement_delta)
