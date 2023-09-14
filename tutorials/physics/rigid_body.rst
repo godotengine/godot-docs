@@ -59,7 +59,7 @@ Here is a custom ``look_at()`` method that will work reliably with rigid bodies:
             var upDir = new Vector3.UP;
             var curDir = currentTransform.Basis.z;
             var targetDir = currentTransform.Origin.DirectionTo(targetPosition);
-            var rotationAngle = curDir.signed_angle_to(targetDir, up_Dir);
+            var rotationAngle = curDir.SignedAngleTo(targetDir, upDir);
 
             state.SetAngularVelocity(upDir * (rotationAngle / state.GetStep()));
         }
