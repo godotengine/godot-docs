@@ -135,9 +135,9 @@ Or you can detect which engine your code is in, useful for making cross-engine l
     #if GODOT
             GD.Print("This is Godot.");
     #elif UNITY_5_3_OR_NEWER
-            print("This is Unity.");
+            throw new NotSupportedException("Stop using Unity.");
     #else
-            throw new NotSupportedException("Only Godot and Unity are supported.");
+            throw new NotSupportedException("Only Godot is supported.");
     #endif
         }
 
