@@ -493,9 +493,7 @@ Returns the pose transform of the specified bone.
 
 :ref:`Vector3<class_Vector3>` **get_bone_pose_position** **(** :ref:`int<class_int>` bone_idx **)** |const|
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Returns the pose position of the bone at ``bone_idx``.  The returned position is in the local coordinate space of the skeleton.
 
 .. rst-class:: classref-item-separator
 
@@ -507,9 +505,7 @@ Returns the pose transform of the specified bone.
 
 :ref:`Quaternion<class_Quaternion>` **get_bone_pose_rotation** **(** :ref:`int<class_int>` bone_idx **)** |const|
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Returns the pose rotation of the bone at ``bone_idx``
 
 .. rst-class:: classref-item-separator
 
@@ -521,9 +517,7 @@ Returns the pose transform of the specified bone.
 
 :ref:`Vector3<class_Vector3>` **get_bone_pose_scale** **(** :ref:`int<class_int>` bone_idx **)** |const|
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Returns the pose scale of the bone ``bone_idx``.
 
 .. rst-class:: classref-item-separator
 
@@ -745,9 +739,7 @@ Sets the bone index ``parent_idx`` as the parent of the bone at ``bone_idx``. If
 
 void **set_bone_pose_position** **(** :ref:`int<class_int>` bone_idx, :ref:`Vector3<class_Vector3>` position **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Sets the pose position of the bone at ``bone_idx``.  The ``position`` must be in the local coordinate space of the skeleton.
 
 .. rst-class:: classref-item-separator
 
@@ -759,9 +751,7 @@ void **set_bone_pose_position** **(** :ref:`int<class_int>` bone_idx, :ref:`Vect
 
 void **set_bone_pose_rotation** **(** :ref:`int<class_int>` bone_idx, :ref:`Quaternion<class_Quaternion>` rotation **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Sets the pose rotation of the bone at ``bone_idx``.  The ``rotation`` quaternion is with respect to the specificed bone's transform.
 
 .. rst-class:: classref-item-separator
 
@@ -773,9 +763,7 @@ void **set_bone_pose_rotation** **(** :ref:`int<class_int>` bone_idx, :ref:`Quat
 
 void **set_bone_pose_scale** **(** :ref:`int<class_int>` bone_idx, :ref:`Vector3<class_Vector3>` scale **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Sets the pose scale of the bone at ``bone_idx``.
 
 .. rst-class:: classref-item-separator
 
