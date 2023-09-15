@@ -37,10 +37,33 @@ All audio is automatically imported with the ``Loop`` setting disabled.
 If you want the music to loop seamlessly, click on the Stream file arrow,
 select ``Make Unique``, then click on the Stream file and check the ``Loop`` box. 
 
-To play the music, add ``$Music.play()`` in the ``new_game()``
-function and ``$Music.stop()`` in the ``game_over()`` function.
+To play the music during the game, add the following code to the ``new_game()``
+function:
 
-Finally, add ``$DeathSound.play()`` in the ``game_over()`` function.
+.. tabs::
+ .. code-tab:: gdscript GDScript
+
+    $Music.play()
+
+ .. code-tab:: csharp
+
+    GetNode<AudioStreamPlayer2D>("Music").Play();
+
+To play the death sound and stop the music on game over, add the following
+code to the ``game_over()`` function:
+
+.. tabs::
+ .. code-tab:: gdscript GDScript
+
+    $Music.stop()
+    $DeathSound.play()
+
+ .. code-tab:: csharp
+
+    GetNode<AudioStreamPlayer2D>("Music").Stop();
+    GetNode<AudioStreamPlayer2D>("DeathSound").Play();
+
+You've now finished adding sound to the game.
 
 Keyboard shortcut
 ~~~~~~~~~~~~~~~~~
