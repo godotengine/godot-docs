@@ -338,7 +338,7 @@ Note that a new instance must be added to the scene using ``add_child()``.
         // obviously Mob and PathFollow2D, since they appear later on the line.
 
         // Create a new instance of the Mob scene.
-        Mob mob = MobScene.Instantiate<Mob>();
+        Mob monster = MobScene.Instantiate<Mob>();
 
         // Choose a random location on Path2D.
         var mobSpawnLocation = GetNode<PathFollow2D>("MobPath/MobSpawnLocation");
@@ -348,18 +348,18 @@ Note that a new instance must be added to the scene using ``add_child()``.
         float direction = mobSpawnLocation.Rotation + Mathf.Pi / 2;
 
         // Set the mob's position to a random location.
-        mob.Position = mobSpawnLocation.Position;
+        monster.Position = mobSpawnLocation.Position;
 
         // Add some randomness to the direction.
         direction += (float)GD.RandRange(-Mathf.Pi / 4, Mathf.Pi / 4);
-        mob.Rotation = direction;
+        monster.Rotation = direction;
 
         // Choose the velocity.
         var velocity = new Vector2((float)GD.RandRange(150.0, 250.0), 0);
-        mob.LinearVelocity = velocity.Rotated(direction);
+        monster.LinearVelocity = velocity.Rotated(direction);
 
         // Spawn the mob by adding it to the Main scene.
-        AddChild(mob);
+        AddChild(monster);
     }
 
  .. code-tab:: cpp
