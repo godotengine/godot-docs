@@ -40,13 +40,15 @@ Properties
 .. table::
    :widths: auto
 
-   +----------------------------------------------------+--------------------------------------------------------------------------------------------------+-----------+
-   | :ref:`bool<class_bool>`                            | :ref:`ar_is_anchor_detection_enabled<class_XRInterface_property_ar_is_anchor_detection_enabled>` | ``false`` |
-   +----------------------------------------------------+--------------------------------------------------------------------------------------------------+-----------+
-   | :ref:`bool<class_bool>`                            | :ref:`interface_is_primary<class_XRInterface_property_interface_is_primary>`                     | ``false`` |
-   +----------------------------------------------------+--------------------------------------------------------------------------------------------------+-----------+
-   | :ref:`PlayAreaMode<enum_XRInterface_PlayAreaMode>` | :ref:`xr_play_area_mode<class_XRInterface_property_xr_play_area_mode>`                           | ``0``     |
-   +----------------------------------------------------+--------------------------------------------------------------------------------------------------+-----------+
+   +--------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`                                            | :ref:`ar_is_anchor_detection_enabled<class_XRInterface_property_ar_is_anchor_detection_enabled>` | ``false`` |
+   +--------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+-----------+
+   | :ref:`EnvironmentBlendMode<enum_XRInterface_EnvironmentBlendMode>` | :ref:`environment_blend_mode<class_XRInterface_property_environment_blend_mode>`                 | ``0``     |
+   +--------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`                                            | :ref:`interface_is_primary<class_XRInterface_property_interface_is_primary>`                     | ``false`` |
+   +--------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+-----------+
+   | :ref:`PlayAreaMode<enum_XRInterface_PlayAreaMode>`                 | :ref:`xr_play_area_mode<class_XRInterface_property_xr_play_area_mode>`                           | ``0``     |
+   +--------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+-----------+
 
 .. rst-class:: classref-reftable-group
 
@@ -345,6 +347,23 @@ Property Descriptions
 - :ref:`bool<class_bool>` **get_anchor_detection_is_enabled** **(** **)**
 
 On an AR interface, ``true`` if anchor detection is enabled.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_XRInterface_property_environment_blend_mode:
+
+.. rst-class:: classref-property
+
+:ref:`EnvironmentBlendMode<enum_XRInterface_EnvironmentBlendMode>` **environment_blend_mode** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- :ref:`bool<class_bool>` **set_environment_blend_mode** **(** :ref:`EnvironmentBlendMode<enum_XRInterface_EnvironmentBlendMode>` mode **)**
+- :ref:`EnvironmentBlendMode<enum_XRInterface_EnvironmentBlendMode>` **get_environment_blend_mode** **(** **)**
+
+Specify how XR should blend in the environment. This is specific to certain AR and passthrough devices where camera images are blended in by the XR compositor.
 
 .. rst-class:: classref-item-separator
 

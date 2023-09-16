@@ -331,6 +331,8 @@ Methods
    +-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                       | :ref:`tanh<class_@GlobalScope_method_tanh>` **(** :ref:`float<class_float>` x **)**                                                                                                                                                                                                                                                                                            |
    +-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Variant<class_Variant>`                   | :ref:`type_convert<class_@GlobalScope_method_type_convert>` **(** :ref:`Variant<class_Variant>` variant, :ref:`int<class_int>` type **)**                                                                                                                                                                                                                                      |
+   +-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                           | :ref:`typeof<class_@GlobalScope_method_typeof>` **(** :ref:`Variant<class_Variant>` variable **)**                                                                                                                                                                                                                                                                             |
    +-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`PackedByteArray<class_PackedByteArray>`   | :ref:`var_to_bytes<class_@GlobalScope_method_var_to_bytes>` **(** :ref:`Variant<class_Variant>` variable **)**                                                                                                                                                                                                                                                                 |
@@ -6874,13 +6876,16 @@ Sets the seed for the random number generator to ``base``. Setting the seed manu
 
 :ref:`Variant<class_Variant>` **sign** **(** :ref:`Variant<class_Variant>` x **)**
 
-Returns the same type of :ref:`Variant<class_Variant>` as ``x``, with ``-1`` for negative values, ``1`` for positive values, and ``0`` for zeros. Supported types: :ref:`int<class_int>`, :ref:`float<class_float>`, :ref:`Vector2<class_Vector2>`, :ref:`Vector2i<class_Vector2i>`, :ref:`Vector3<class_Vector3>`, :ref:`Vector3i<class_Vector3i>`, :ref:`Vector4<class_Vector4>`, :ref:`Vector4i<class_Vector4i>`.
+Returns the same type of :ref:`Variant<class_Variant>` as ``x``, with ``-1`` for negative values, ``1`` for positive values, and ``0`` for zeros. For ``nan`` values it returns 0.
+
+Supported types: :ref:`int<class_int>`, :ref:`float<class_float>`, :ref:`Vector2<class_Vector2>`, :ref:`Vector2i<class_Vector2i>`, :ref:`Vector3<class_Vector3>`, :ref:`Vector3i<class_Vector3i>`, :ref:`Vector4<class_Vector4>`, :ref:`Vector4i<class_Vector4i>`.
 
 ::
 
     sign(-6.0) # Returns -1
     sign(0.0)  # Returns 0
     sign(6.0)  # Returns 1
+    sign(NAN)  # Returns 0
     
     sign(Vector3(-6.0, 0.0, 6.0)) # Returns (-1, 0, 1)
 
@@ -6896,13 +6901,14 @@ Returns the same type of :ref:`Variant<class_Variant>` as ``x``, with ``-1`` for
 
 :ref:`float<class_float>` **signf** **(** :ref:`float<class_float>` x **)**
 
-Returns ``-1.0`` if ``x`` is negative, ``1.0`` if ``x`` is positive, and ``0.0`` if ``x`` is zero.
+Returns ``-1.0`` if ``x`` is negative, ``1.0`` if ``x`` is positive, and ``0.0`` if ``x`` is zero. For ``nan`` values of ``x`` it returns 0.0.
 
 ::
 
     signf(-6.5) # Returns -1.0
     signf(0.0)  # Returns 0.0
     signf(6.5)  # Returns 1.0
+    signf(NAN)  # Returns 0.0
 
 .. rst-class:: classref-item-separator
 
@@ -7164,6 +7170,30 @@ Returns the hyperbolic tangent of ``x``.
 
     var a = log(2.0) # Returns 0.693147
     tanh(a)          # Returns 0.6
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_@GlobalScope_method_type_convert:
+
+.. rst-class:: classref-method
+
+:ref:`Variant<class_Variant>` **type_convert** **(** :ref:`Variant<class_Variant>` variant, :ref:`int<class_int>` type **)**
+
+Converts the given ``variant`` to the given ``type``, using the :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` values. This method is generous with how it handles types, it can automatically convert between array types, convert numeric :ref:`String<class_String>`\ s to :ref:`int<class_int>`, and converting most things to :ref:`String<class_String>`.
+
+If the type conversion cannot be done, this method will return the default value for that type, for example converting :ref:`Rect2<class_Rect2>` to :ref:`Vector2<class_Vector2>` will always return ``Vector2.ZERO``. This method will never show error messages as long as ``type`` is a valid Variant type.
+
+The returned value is a :ref:`Variant<class_Variant>`, but the data inside and the :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` will be the same as the requested type.
+
+::
+
+    type_convert("Hi!", TYPE_INT) # Returns 0
+    type_convert("123", TYPE_INT) # Returns 123
+    type_convert(123.4, TYPE_INT) # Returns 123
+    type_convert(5, TYPE_VECTOR2) # Returns (0, 0)
+    type_convert("Hi!", TYPE_NIL) # Returns null
 
 .. rst-class:: classref-item-separator
 
