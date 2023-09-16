@@ -84,7 +84,7 @@ implementing a Timer-timeout loop is another option.
             print("This block runs every 0.5 seconds")
         )
 
-  .. code-tab:: csharp
+ .. code-tab:: csharp
 
     using Godot;
 
