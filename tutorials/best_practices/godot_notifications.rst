@@ -90,10 +90,9 @@ implementing a Timer-timeout loop is another option.
 
     public partial class MyNode : Node
     {
-
         // Allows for recurring operations that don't trigger script logic
         // every frame (or even every fixed frame).
-        public void _Process(double delta)
+        public void _Ready(double delta)
         {
             var timer = new Timer();
             timer.Autostart = true;
@@ -101,7 +100,6 @@ implementing a Timer-timeout loop is another option.
             AddChild(timer);
             timer.Timeout += () => GD.Print("This block runs every 0.5 seconds");
         }
-
     }
 
 Use ``_physics_process()`` when one needs a framerate-independent delta time
