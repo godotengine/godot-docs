@@ -65,7 +65,7 @@ There are several methods of measuring performance, including:
   `RivaTuner Statistics Server <https://www.guru3d.com/files-details/rtss-rivatuner-statistics-server-download.html>`__
   (Windows) or `MangoHud <https://github.com/flightlessmango/MangoHud>`__
   (Linux) can also be useful here.
-- Using an unofficial `debug menu add-on <https://github.com/godot-extended-libraries/godot-debug-menu>`.
+- Using an unofficial `debug menu add-on <https://github.com/godot-extended-libraries/godot-debug-menu>`__.
 
 Be very aware that the relative performance of different areas can vary on
 different hardware. It's often a good idea to measure timings on more than one
