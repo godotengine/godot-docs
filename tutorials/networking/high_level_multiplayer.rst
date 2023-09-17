@@ -201,7 +201,7 @@ must have the same name. When using ``add_child()`` for nodes which are expected
     If a function is annotated rpc on the client script (resp. server script), then this function must also be declared on the server script (resp. client script), and both
     must have the same signature, even if this function is not currently used.
 
-    If these conditions are not fulfilled, the script may raise an error or cause unwanted behaviour. See further explanation and troubleshoot on [this post](https://github.com/godotengine/godot/issues/57869#issuecomment-1034215138).
+    If these conditions are not fulfilled, the script may raise an error or cause unwanted behavior. See further explanation and troubleshoot on [this post](https://github.com/godotengine/godot/issues/57869#issuecomment-1034215138).
 
 The annotation can take a number of arguments, which have default values. ``@rpc`` is equivalent to:
 
