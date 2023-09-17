@@ -92,7 +92,7 @@ implementing a Timer-timeout loop is another option.
     {
         // Allows for recurring operations that don't trigger script logic
         // every frame (or even every fixed frame).
-        public void _Ready(double delta)
+        public void _Ready()
         {
             var timer = new Timer();
             timer.Autostart = true;
