@@ -255,6 +255,14 @@ Lightmap baking failed as the resulting image couldn't be saved or imported by G
 
 The user aborted the lightmap baking operation (typically by clicking the **Cancel** button in the progress dialog).
 
+.. _class_LightmapGI_constant_BAKE_ERROR_TEXTURE_SIZE_TOO_SMALL:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`BakeError<enum_LightmapGI_BakeError>` **BAKE_ERROR_TEXTURE_SIZE_TOO_SMALL** = ``9``
+
+Lightmap baking failed as the maximum texture size is too small to fit some of the meshes marked for baking.
+
 .. rst-class:: classref-item-separator
 
 ----

@@ -60,6 +60,8 @@ Methods
    :widths: auto
 
    +--------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                          | :ref:`activate_item_by_event<class_PopupMenu_method_activate_item_by_event>` **(** :ref:`InputEvent<class_InputEvent>` event, :ref:`bool<class_bool>` for_global_only=false **)**                                                                                               |
+   +--------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                             | :ref:`add_check_item<class_PopupMenu_method_add_check_item>` **(** :ref:`String<class_String>` label, :ref:`int<class_int>` id=-1, :ref:`Key<enum_@GlobalScope_Key>` accel=0 **)**                                                                                              |
    +--------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                             | :ref:`add_check_shortcut<class_PopupMenu_method_add_check_shortcut>` **(** :ref:`Shortcut<class_Shortcut>` shortcut, :ref:`int<class_int>` id=-1, :ref:`bool<class_bool>` global=false **)**                                                                                    |
@@ -435,6 +437,22 @@ Sets the delay time in seconds for the submenu item to popup on mouse hovering. 
 
 Method Descriptions
 -------------------
+
+.. _class_PopupMenu_method_activate_item_by_event:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **activate_item_by_event** **(** :ref:`InputEvent<class_InputEvent>` event, :ref:`bool<class_bool>` for_global_only=false **)**
+
+Checks the provided ``event`` against the **PopupMenu**'s shortcuts and accelerators, and activates the first item with matching events. If ``for_global_only`` is ``true``, only shortcuts and accelerators with ``global`` set to ``true`` will be called.
+
+Returns ``true`` if an item was successfully activated.
+
+\ **Note:** Certain :ref:`Control<class_Control>`\ s, such as :ref:`MenuButton<class_MenuButton>`, will call this method automatically.
+
+.. rst-class:: classref-item-separator
+
+----
 
 .. _class_PopupMenu_method_add_check_item:
 

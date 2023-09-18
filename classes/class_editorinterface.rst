@@ -86,6 +86,8 @@ Methods
    +-----------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`EditorSettings<class_EditorSettings>`               | :ref:`get_editor_settings<class_EditorInterface_method_get_editor_settings>` **(** **)** |const|                                                                                                                                                       |
    +-----------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Theme<class_Theme>`                                 | :ref:`get_editor_theme<class_EditorInterface_method_get_editor_theme>` **(** **)** |const|                                                                                                                                                             |
+   +-----------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`FileSystemDock<class_FileSystemDock>`               | :ref:`get_file_system_dock<class_EditorInterface_method_get_file_system_dock>` **(** **)** |const|                                                                                                                                                     |
    +-----------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`EditorInspector<class_EditorInspector>`             | :ref:`get_inspector<class_EditorInterface_method_get_inspector>` **(** **)** |const|                                                                                                                                                                   |
@@ -362,6 +364,20 @@ Returns the actual scale of the editor UI (``1.0`` being 100% scale). This can b
 :ref:`EditorSettings<class_EditorSettings>` **get_editor_settings** **(** **)** |const|
 
 Returns the editor's :ref:`EditorSettings<class_EditorSettings>` instance.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorInterface_method_get_editor_theme:
+
+.. rst-class:: classref-method
+
+:ref:`Theme<class_Theme>` **get_editor_theme** **(** **)** |const|
+
+Returns the editor's :ref:`Theme<class_Theme>`.
+
+\ **Note:** When creating custom editor UI, prefer accessing theme items directly from your GUI nodes using the ``get_theme_*`` methods.
 
 .. rst-class:: classref-item-separator
 

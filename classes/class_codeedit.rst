@@ -118,6 +118,8 @@ Methods
    +-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                            | :ref:`convert_indent<class_CodeEdit_method_convert_indent>` **(** :ref:`int<class_int>` from_line=-1, :ref:`int<class_int>` to_line=-1 **)**                                                                                                                                                                                                                                                                                       |
    +-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                            | :ref:`create_code_region<class_CodeEdit_method_create_code_region>` **(** **)**                                                                                                                                                                                                                                                                                                                                                    |
+   +-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                            | :ref:`do_indent<class_CodeEdit_method_do_indent>` **(** **)**                                                                                                                                                                                                                                                                                                                                                                      |
    +-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                            | :ref:`fold_all_lines<class_CodeEdit_method_fold_all_lines>` **(** **)**                                                                                                                                                                                                                                                                                                                                                            |
@@ -135,6 +137,10 @@ Methods
    | :ref:`Dictionary[]<class_Dictionary>`           | :ref:`get_code_completion_options<class_CodeEdit_method_get_code_completion_options>` **(** **)** |const|                                                                                                                                                                                                                                                                                                                          |
    +-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                           | :ref:`get_code_completion_selected_index<class_CodeEdit_method_get_code_completion_selected_index>` **(** **)** |const|                                                                                                                                                                                                                                                                                                            |
+   +-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                     | :ref:`get_code_region_end_tag<class_CodeEdit_method_get_code_region_end_tag>` **(** **)** |const|                                                                                                                                                                                                                                                                                                                                  |
+   +-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                     | :ref:`get_code_region_start_tag<class_CodeEdit_method_get_code_region_start_tag>` **(** **)** |const|                                                                                                                                                                                                                                                                                                                              |
    +-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                     | :ref:`get_delimiter_end_key<class_CodeEdit_method_get_delimiter_end_key>` **(** :ref:`int<class_int>` delimiter_index **)** |const|                                                                                                                                                                                                                                                                                                |
    +-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -172,6 +178,10 @@ Methods
    +-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                         | :ref:`is_line_breakpointed<class_CodeEdit_method_is_line_breakpointed>` **(** :ref:`int<class_int>` line **)** |const|                                                                                                                                                                                                                                                                                                             |
    +-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                         | :ref:`is_line_code_region_end<class_CodeEdit_method_is_line_code_region_end>` **(** :ref:`int<class_int>` line **)** |const|                                                                                                                                                                                                                                                                                                       |
+   +-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                         | :ref:`is_line_code_region_start<class_CodeEdit_method_is_line_code_region_start>` **(** :ref:`int<class_int>` line **)** |const|                                                                                                                                                                                                                                                                                                   |
+   +-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                         | :ref:`is_line_executing<class_CodeEdit_method_is_line_executing>` **(** :ref:`int<class_int>` line **)** |const|                                                                                                                                                                                                                                                                                                                   |
    +-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                         | :ref:`is_line_folded<class_CodeEdit_method_is_line_folded>` **(** :ref:`int<class_int>` line **)** |const|                                                                                                                                                                                                                                                                                                                         |
@@ -187,6 +197,8 @@ Methods
    | void                                            | :ref:`set_code_hint<class_CodeEdit_method_set_code_hint>` **(** :ref:`String<class_String>` code_hint **)**                                                                                                                                                                                                                                                                                                                        |
    +-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                            | :ref:`set_code_hint_draw_below<class_CodeEdit_method_set_code_hint_draw_below>` **(** :ref:`bool<class_bool>` draw_below **)**                                                                                                                                                                                                                                                                                                     |
+   +-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                            | :ref:`set_code_region_tags<class_CodeEdit_method_set_code_region_tags>` **(** :ref:`String<class_String>` start="region", :ref:`String<class_String>` end="endregion" **)**                                                                                                                                                                                                                                                        |
    +-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                            | :ref:`set_line_as_bookmarked<class_CodeEdit_method_set_line_as_bookmarked>` **(** :ref:`int<class_int>` line, :ref:`bool<class_bool>` bookmarked **)**                                                                                                                                                                                                                                                                             |
    +-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -246,6 +258,8 @@ Theme Properties
    +-----------------------------------+----------------------------------------------------------------------------------------------------+-------------------------------------+
    | :ref:`Color<class_Color>`         | :ref:`executing_line_color<class_CodeEdit_theme_color_executing_line_color>`                       | ``Color(0.98, 0.89, 0.27, 1)``      |
    +-----------------------------------+----------------------------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`Color<class_Color>`         | :ref:`folded_code_region_color<class_CodeEdit_theme_color_folded_code_region_color>`               | ``Color(0.68, 0.46, 0.77, 0.2)``    |
+   +-----------------------------------+----------------------------------------------------------------------------------------------------+-------------------------------------+
    | :ref:`Color<class_Color>`         | :ref:`font_color<class_CodeEdit_theme_color_font_color>`                                           | ``Color(0.875, 0.875, 0.875, 1)``   |
    +-----------------------------------+----------------------------------------------------------------------------------------------------+-------------------------------------+
    | :ref:`Color<class_Color>`         | :ref:`font_outline_color<class_CodeEdit_theme_color_font_outline_color>`                           | ``Color(1, 1, 1, 1)``               |
@@ -288,9 +302,13 @@ Theme Properties
    +-----------------------------------+----------------------------------------------------------------------------------------------------+-------------------------------------+
    | :ref:`Texture2D<class_Texture2D>` | :ref:`can_fold<class_CodeEdit_theme_icon_can_fold>`                                                |                                     |
    +-----------------------------------+----------------------------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`Texture2D<class_Texture2D>` | :ref:`can_fold_code_region<class_CodeEdit_theme_icon_can_fold_code_region>`                        |                                     |
+   +-----------------------------------+----------------------------------------------------------------------------------------------------+-------------------------------------+
    | :ref:`Texture2D<class_Texture2D>` | :ref:`executing_line<class_CodeEdit_theme_icon_executing_line>`                                    |                                     |
    +-----------------------------------+----------------------------------------------------------------------------------------------------+-------------------------------------+
    | :ref:`Texture2D<class_Texture2D>` | :ref:`folded<class_CodeEdit_theme_icon_folded>`                                                    |                                     |
+   +-----------------------------------+----------------------------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`Texture2D<class_Texture2D>` | :ref:`folded_code_region<class_CodeEdit_theme_icon_folded_code_region>`                            |                                     |
    +-----------------------------------+----------------------------------------------------------------------------------------------------+-------------------------------------+
    | :ref:`Texture2D<class_Texture2D>` | :ref:`folded_eol_icon<class_CodeEdit_theme_icon_folded_eol_icon>`                                  |                                     |
    +-----------------------------------+----------------------------------------------------------------------------------------------------+-------------------------------------+
@@ -1061,6 +1079,24 @@ Values of ``-1`` convert the entire text.
 
 ----
 
+.. _class_CodeEdit_method_create_code_region:
+
+.. rst-class:: classref-method
+
+void **create_code_region** **(** **)**
+
+Creates a new code region with the selection. At least one single line comment delimiter have to be defined (see :ref:`add_comment_delimiter<class_CodeEdit_method_add_comment_delimiter>`).
+
+A code region is a part of code that is highlighted when folded and can help organize your script.
+
+Code region start and end tags can be customized (see :ref:`set_code_region_tags<class_CodeEdit_method_set_code_region_tags>`).
+
+Code regions are delimited using start and end tags (respectively ``region`` and ``endregion`` by default) preceded by one line comment delimiter. (eg. ``#region`` and ``#endregion``)
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_CodeEdit_method_do_indent:
 
 .. rst-class:: classref-method
@@ -1176,6 +1212,30 @@ Gets all completion options, see :ref:`get_code_completion_option<class_CodeEdit
 :ref:`int<class_int>` **get_code_completion_selected_index** **(** **)** |const|
 
 Gets the index of the current selected completion option.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_CodeEdit_method_get_code_region_end_tag:
+
+.. rst-class:: classref-method
+
+:ref:`String<class_String>` **get_code_region_end_tag** **(** **)** |const|
+
+Returns the code region end tag (without comment delimiter).
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_CodeEdit_method_get_code_region_start_tag:
+
+.. rst-class:: classref-method
+
+:ref:`String<class_String>` **get_code_region_start_tag** **(** **)** |const|
+
+Returns the code region start tag (without comment delimiter).
 
 .. rst-class:: classref-item-separator
 
@@ -1397,6 +1457,30 @@ Returns whether the line at the specified index is breakpointed or not.
 
 ----
 
+.. _class_CodeEdit_method_is_line_code_region_end:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **is_line_code_region_end** **(** :ref:`int<class_int>` line **)** |const|
+
+Returns whether the line at the specified index is a code region end.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_CodeEdit_method_is_line_code_region_start:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **is_line_code_region_start** **(** :ref:`int<class_int>` line **)** |const|
+
+Returns whether the line at the specified index is a code region start.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_CodeEdit_method_is_line_executing:
 
 .. rst-class:: classref-method
@@ -1488,6 +1572,18 @@ Sets the code hint text. Pass an empty string to clear.
 void **set_code_hint_draw_below** **(** :ref:`bool<class_bool>` draw_below **)**
 
 Sets if the code hint should draw below the text.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_CodeEdit_method_set_code_region_tags:
+
+.. rst-class:: classref-method
+
+void **set_code_region_tags** **(** :ref:`String<class_String>` start="region", :ref:`String<class_String>` end="endregion" **)**
+
+Sets the code region start and end tags (without comment delimiter).
 
 .. rst-class:: classref-item-separator
 
@@ -1788,6 +1884,18 @@ Background :ref:`Color<class_Color>` of the line containing the caret.
 
 ----
 
+.. _class_CodeEdit_theme_color_folded_code_region_color:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`Color<class_Color>` **folded_code_region_color** = ``Color(0.68, 0.46, 0.77, 0.2)``
+
+:ref:`Color<class_Color>` of background line highlight for folded code region.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_CodeEdit_theme_color_font_color:
 
 .. rst-class:: classref-themeproperty
@@ -2042,6 +2150,18 @@ Sets a custom :ref:`Texture2D<class_Texture2D>` to draw in the line folding gutt
 
 ----
 
+.. _class_CodeEdit_theme_icon_can_fold_code_region:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`Texture2D<class_Texture2D>` **can_fold_code_region**
+
+Sets a custom :ref:`Texture2D<class_Texture2D>` to draw in the line folding gutter when a code region can be folded.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_CodeEdit_theme_icon_executing_line:
 
 .. rst-class:: classref-themeproperty
@@ -2061,6 +2181,18 @@ Icon to draw in the executing gutter for executing lines.
 :ref:`Texture2D<class_Texture2D>` **folded**
 
 Sets a custom :ref:`Texture2D<class_Texture2D>` to draw in the line folding gutter when a line is folded and can be unfolded.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_CodeEdit_theme_icon_folded_code_region:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`Texture2D<class_Texture2D>` **folded_code_region**
+
+Sets a custom :ref:`Texture2D<class_Texture2D>` to draw in the line folding gutter when a code region is folded and can be unfolded.
 
 .. rst-class:: classref-item-separator
 

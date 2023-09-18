@@ -834,7 +834,7 @@ Ideally, the plugin icon should be white with a transparent background and 16x16
         # You can use a custom icon:
         return preload("res://addons/my_plugin/my_plugin_icon.svg")
         # Or use a built-in icon:
-        return EditorInterface.get_base_control().get_theme_icon("Node", "EditorIcons")
+        return EditorInterface.get_editor_theme().get_icon("Node", "EditorIcons")
 
  .. code-tab:: csharp
 
@@ -843,7 +843,7 @@ Ideally, the plugin icon should be white with a transparent background and 16x16
         // You can use a custom icon:
         return ResourceLoader.Load<Texture2D>("res://addons/my_plugin/my_plugin_icon.svg");
         // Or use a built-in icon:
-        return EditorInterface.Singleton.GetBaseControl().GetThemeIcon("Node", "EditorIcons");
+        return EditorInterface.Singleton.GetEditorTheme().GetIcon("Node", "EditorIcons");
     }
 
 
@@ -993,7 +993,7 @@ Use :ref:`_get_plugin_name<class_EditorPlugin_method__get_plugin_name>` and :ref
         return "My Super Cool Plugin 3000"
     
     func _get_plugin_icon():
-        return EditorInterface.get_base_control().get_theme_icon("Node", "EditorIcons")
+        return EditorInterface.get_editor_theme().get_icon("Node", "EditorIcons")
 
 .. rst-class:: classref-item-separator
 

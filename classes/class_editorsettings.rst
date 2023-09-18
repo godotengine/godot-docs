@@ -531,6 +531,8 @@ Properties
    +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Color<class_Color>`     | :ref:`text_editor/theme/highlighting/executing_line_color<class_EditorSettings_property_text_editor/theme/highlighting/executing_line_color>`                                       |
    +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Color<class_Color>`     | :ref:`text_editor/theme/highlighting/folded_code_region_color<class_EditorSettings_property_text_editor/theme/highlighting/folded_code_region_color>`                               |
+   +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Color<class_Color>`     | :ref:`text_editor/theme/highlighting/function_color<class_EditorSettings_property_text_editor/theme/highlighting/function_color>`                                                   |
    +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Color<class_Color>`     | :ref:`text_editor/theme/highlighting/keyword_color<class_EditorSettings_property_text_editor/theme/highlighting/keyword_color>`                                                     |
@@ -3616,6 +3618,18 @@ The script editor's engine type color (:ref:`Vector2<class_Vector2>`, :ref:`Vect
 :ref:`Color<class_Color>` **text_editor/theme/highlighting/executing_line_color**
 
 The script editor's color for the debugger's executing line icon (displayed in the gutter).
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSettings_property_text_editor/theme/highlighting/folded_code_region_color:
+
+.. rst-class:: classref-property
+
+:ref:`Color<class_Color>` **text_editor/theme/highlighting/folded_code_region_color**
+
+The script editor's background line highlighting color for folded code region.
 
 .. rst-class:: classref-item-separator
 
