@@ -123,7 +123,7 @@ In Visual Studio Code:
 To configure a project for debugging, you need a ``tasks.json`` and ``launch.json`` file in
 the ``.vscode`` folder with the necessary configuration. An example configuration can be
 found `here <https://github.com/godotengine/godot-csharp-vscode/issues/43#issuecomment-1258321229>`__ .
-In the ``tasks.json`` file, make sure the ``program`` parameter points to your Godot executable, either by
+In the ``launch.json`` file, make sure the ``program`` parameter in the relevant configuration points to your Godot executable, either by
 changing it to the path of the executable or by defining a ``GODOT4`` environment variable that points to the
 executable. Now, when you start the debugger in Visual Studio Code, your Godot project will run.
 
