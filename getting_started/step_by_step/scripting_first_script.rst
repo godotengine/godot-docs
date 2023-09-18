@@ -143,10 +143,10 @@ Add the following code to your script:
 
  .. code-tab:: csharp C#
 
-    public MySprite2D()
-    {
-        GD.Print("Hello, world!");
-    }
+	public void _ready()
+	{
+		GD.Print("Hello, world!");
+	}
 
 
 Let's break it down. The ``func`` keyword defines a new function named
