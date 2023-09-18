@@ -84,6 +84,24 @@ implementing a Timer-timeout loop is another option.
             print("This block runs every 0.5 seconds")
         )
 
+ .. code-tab:: csharp
+
+    using Godot;
+
+    public partial class MyNode : Node
+    {
+        // Allows for recurring operations that don't trigger script logic
+        // every frame (or even every fixed frame).
+        public override void _Ready()
+        {
+            var timer = new Timer();
+            timer.Autostart = true;
+            timer.WaitTime = 0.5;
+            AddChild(timer);
+            timer.Timeout += () => GD.Print("This block runs every 0.5 seconds");
+        }
+    }
+
 Use ``_physics_process()`` when one needs a framerate-independent delta time
 between frames. If code needs consistent updates over time, regardless
 of how fast or slow time advances, this is the right place.
