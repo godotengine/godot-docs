@@ -71,7 +71,7 @@ Manager.
 
 To create an ``.app`` bundle like in the official builds, you need to use the
 template located in ``misc/dist/macos_tools.app``. Typically, for an optimized
-editor binary built with ``target=release_debug``::
+editor binary built with ``dev_build=yes``::
 
     cp -r misc/dist/macos_tools.app ./Godot.app
     mkdir -p Godot.app/Contents/MacOS
