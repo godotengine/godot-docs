@@ -53,7 +53,8 @@ or :kbd:`Cmd + S` on macOS.
 Sprite animation
 ~~~~~~~~~~~~~~~~
 
-Click on the ``Player`` node and add (:kbd:`Ctrl + A`) a child node :ref:`AnimatedSprite2D
+Click on the ``Player`` node and add (:kbd:`Ctrl + A` on Windows/Linux or
+:kbd:`Cmd + A` on macOS) a child node :ref:`AnimatedSprite2D
 <class_AnimatedSprite2D>`. The ``AnimatedSprite2D`` will handle the
 appearance and animations for our player. Notice that there is a warning symbol
 next to the node. An ``AnimatedSprite2D`` requires a :ref:`SpriteFrames
