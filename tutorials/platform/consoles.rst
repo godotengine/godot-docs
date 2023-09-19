@@ -82,6 +82,4 @@ Following is the list of providers:
 
 
 If your company offers porting, or porting *and* publishing services for Godot games,
-feel free to
-`open an issue or pull request <https://github.com/godotengine/godot-docs>`_
-to add your company to the list above.
+please `contact the Godot Foundation <https://godot.foundation/>`_ to add your company to the list above.
