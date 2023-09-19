@@ -75,7 +75,7 @@ Following is the list of providers:
   Switch porting of Godot games.
 - `mazette! games <https://mazette.games/>`_ offers
   Switch, Xbox One and Xbox Series X/S porting and publishing of Godot games.
-- `Olde Sküül <https://oldeskuul.com/>` offers
+- `Olde Sküül <https://oldeskuul.com/>`_ offers
   Switch, Xbox One, Playstation 4 & Playstation 5 porting and publishing of Godot games.
 - `Tuanisapps <https://www.tuanisapps.com/>`_ offers
   Switch porting and publishing of Godot games.
