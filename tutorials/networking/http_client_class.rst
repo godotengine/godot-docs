@@ -54,7 +54,7 @@ It will connect and fetch a website.
             if not OS.has_feature("web"):
                 OS.delay_msec(500)
             else:
-                yield(Engine.get_main_loop(), "idle_frame")
+                await process_frame
 
         assert(http.get_status() == HTTPClient.STATUS_CONNECTED) # Check if the connection was made successfully.
 
@@ -74,7 +74,7 @@ It will connect and fetch a website.
             if OS.has_feature("web"):
                 # Synchronous HTTP requests are not supported on the web,
                 # so wait for the next main loop iteration.
-                yield(Engine.get_main_loop(), "idle_frame")
+                await process_frame
             else:
                 OS.delay_msec(500)
 
@@ -113,7 +113,7 @@ It will connect and fetch a website.
                         # Got nothing, wait for buffers to fill a bit.
                         OS.delay_usec(1000)
                     else:
-                        yield(Engine.get_main_loop(), "idle_frame")
+                        await process_frame
                 else:
                     rb = rb + chunk # Append to read buffer.
             # Done!
