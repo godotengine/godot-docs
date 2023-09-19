@@ -77,7 +77,6 @@ click on **Editor → Editor Settings** and scroll down to
 external editor of choice. Godot currently supports the following
 external editors:
 
-- Visual Studio 2019
 - Visual Studio 2022
 - Visual Studio Code
 - MonoDevelop
@@ -149,16 +148,6 @@ While installing Visual Studio, select this workload:
 In Godot's **Editor → Editor Settings** menu:
 
 - Set **Dotnet** -> **Editor** -> **External Editor** to **Visual Studio**.
-
-Next, you can download the Godot Visual Studio extension from github
-`here <https://github.com/godotengine/godot-csharp-visualstudio/releases>`__.
-Double click on the downloaded file and follow the installation process.
-
-.. note:: The option to debug your game in Visual Studio may not appear after
-          installing the extension. To enable debugging, there is a
-          `workaround for Visual Studio 2019 <https://github.com/godotengine/godot-csharp-visualstudio/issues/10#issuecomment-720153256>`__.
-          There is
-          `a separate issue about this problem in Visual Studio 2022 <https://github.com/godotengine/godot-csharp-visualstudio/issues/28>`__.
 
 .. note:: If you see an error like "Unable to find package Godot.NET.Sdk",
           your NuGet configuration may be incorrect and need to be fixed.
