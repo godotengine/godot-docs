@@ -16,6 +16,8 @@ VisibilityNotifier
 
 Detects approximately when the node is visible on screen.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -25,96 +27,140 @@ If you want nodes to be disabled automatically when they exit the screen, use :r
 
 \ **Note:** VisibilityNotifier uses an approximate heuristic for performance reasons. It doesn't take walls and other occlusion into account (unless you are using :ref:`Portal<class_Portal>`\ s). The heuristic is an implementation detail and may change in future versions. If you need precise visibility checking, use another method such as adding an :ref:`Area<class_Area>` node as a child of a :ref:`Camera<class_Camera>` node and/or :ref:`Vector3.dot<class_Vector3_method_dot>`.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+---------------------------+---------------------------------------------------------------------+---------------------------------+
-| :ref:`AABB<class_AABB>`   | :ref:`aabb<class_VisibilityNotifier_property_aabb>`                 | ``AABB( -1, -1, -1, 2, 2, 2 )`` |
-+---------------------------+---------------------------------------------------------------------+---------------------------------+
-| :ref:`float<class_float>` | :ref:`max_distance<class_VisibilityNotifier_property_max_distance>` | ``0.0``                         |
-+---------------------------+---------------------------------------------------------------------+---------------------------------+
+.. table::
+   :widths: auto
+
+   +---------------------------+---------------------------------------------------------------------+---------------------------------+
+   | :ref:`AABB<class_AABB>`   | :ref:`aabb<class_VisibilityNotifier_property_aabb>`                 | ``AABB( -1, -1, -1, 2, 2, 2 )`` |
+   +---------------------------+---------------------------------------------------------------------+---------------------------------+
+   | :ref:`float<class_float>` | :ref:`max_distance<class_VisibilityNotifier_property_max_distance>` | ``0.0``                         |
+   +---------------------------+---------------------------------------------------------------------+---------------------------------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+-------------------------+---------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`is_on_screen<class_VisibilityNotifier_method_is_on_screen>` **(** **)** |const| |
-+-------------------------+---------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------+---------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | :ref:`is_on_screen<class_VisibilityNotifier_method_is_on_screen>` **(** **)** |const| |
+   +-------------------------+---------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Signals
 -------
 
 .. _class_VisibilityNotifier_signal_camera_entered:
 
-- **camera_entered** **(** :ref:`Camera<class_Camera>` camera **)**
+.. rst-class:: classref-signal
+
+**camera_entered** **(** :ref:`Camera<class_Camera>` camera **)**
 
 Emitted when the VisibilityNotifier enters a :ref:`Camera<class_Camera>`'s view.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_VisibilityNotifier_signal_camera_exited:
 
-- **camera_exited** **(** :ref:`Camera<class_Camera>` camera **)**
+.. rst-class:: classref-signal
+
+**camera_exited** **(** :ref:`Camera<class_Camera>` camera **)**
 
 Emitted when the VisibilityNotifier exits a :ref:`Camera<class_Camera>`'s view.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_VisibilityNotifier_signal_screen_entered:
 
-- **screen_entered** **(** **)**
+.. rst-class:: classref-signal
+
+**screen_entered** **(** **)**
 
 Emitted when the VisibilityNotifier enters the screen.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_VisibilityNotifier_signal_screen_exited:
 
-- **screen_exited** **(** **)**
+.. rst-class:: classref-signal
+
+**screen_exited** **(** **)**
 
 Emitted when the VisibilityNotifier exits the screen.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_VisibilityNotifier_property_aabb:
 
-- :ref:`AABB<class_AABB>` **aabb**
+.. rst-class:: classref-property
 
-+-----------+---------------------------------+
-| *Default* | ``AABB( -1, -1, -1, 2, 2, 2 )`` |
-+-----------+---------------------------------+
-| *Setter*  | set_aabb(value)                 |
-+-----------+---------------------------------+
-| *Getter*  | get_aabb()                      |
-+-----------+---------------------------------+
+:ref:`AABB<class_AABB>` **aabb** = ``AABB( -1, -1, -1, 2, 2, 2 )``
+
+.. rst-class:: classref-property-setget
+
+- void **set_aabb** **(** :ref:`AABB<class_AABB>` value **)**
+- :ref:`AABB<class_AABB>` **get_aabb** **(** **)**
 
 The VisibilityNotifier's bounding box.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_VisibilityNotifier_property_max_distance:
 
-- :ref:`float<class_float>` **max_distance**
+.. rst-class:: classref-property
 
-+-----------+-------------------------+
-| *Default* | ``0.0``                 |
-+-----------+-------------------------+
-| *Setter*  | set_max_distance(value) |
-+-----------+-------------------------+
-| *Getter*  | get_max_distance()      |
-+-----------+-------------------------+
+:ref:`float<class_float>` **max_distance** = ``0.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_max_distance** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_max_distance** **(** **)**
 
 In addition to checking whether a node is on screen or within a :ref:`Camera<class_Camera>`'s view, VisibilityNotifier can also optionally check whether a node is within a specified maximum distance when using a :ref:`Camera<class_Camera>` with perspective projection. This is useful for throttling the performance requirements of nodes that are far away.
 
 \ **Note:** This feature will be disabled if set to 0.0.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_VisibilityNotifier_method_is_on_screen:
 
-- :ref:`bool<class_bool>` **is_on_screen** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **is_on_screen** **(** **)** |const|
 
 If ``true``, the bounding box is on the screen.
 
@@ -123,3 +169,4 @@ If ``true``, the bounding box is on the screen.
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

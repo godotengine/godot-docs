@@ -14,10 +14,14 @@ TranslationServer
 
 Server that manages all translations.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 Server that manages all translations. Translations can be set to it and removed from it.
+
+.. rst-class:: classref-introduction-group
 
 Tutorials
 ---------
@@ -26,96 +30,138 @@ Tutorials
 
 - :doc:`../tutorials/i18n/locales`
 
+.. rst-class:: classref-reftable-group
+
 Methods
 -------
 
-+-----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-| void                        | :ref:`add_translation<class_TranslationServer_method_add_translation>` **(** :ref:`Translation<class_Translation>` translation **)**       |
-+-----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-| void                        | :ref:`clear<class_TranslationServer_method_clear>` **(** **)**                                                                             |
-+-----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`   | :ref:`get_loaded_locales<class_TranslationServer_method_get_loaded_locales>` **(** **)** |const|                                           |
-+-----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>` | :ref:`get_locale<class_TranslationServer_method_get_locale>` **(** **)** |const|                                                           |
-+-----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>` | :ref:`get_locale_name<class_TranslationServer_method_get_locale_name>` **(** :ref:`String<class_String>` locale **)** |const|              |
-+-----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-| void                        | :ref:`remove_translation<class_TranslationServer_method_remove_translation>` **(** :ref:`Translation<class_Translation>` translation **)** |
-+-----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-| void                        | :ref:`set_locale<class_TranslationServer_method_set_locale>` **(** :ref:`String<class_String>` locale **)**                                |
-+-----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>` | :ref:`translate<class_TranslationServer_method_translate>` **(** :ref:`String<class_String>` message **)** |const|                         |
-+-----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                        | :ref:`add_translation<class_TranslationServer_method_add_translation>` **(** :ref:`Translation<class_Translation>` translation **)**       |
+   +-----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                        | :ref:`clear<class_TranslationServer_method_clear>` **(** **)**                                                                             |
+   +-----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Array<class_Array>`   | :ref:`get_loaded_locales<class_TranslationServer_method_get_loaded_locales>` **(** **)** |const|                                           |
+   +-----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>` | :ref:`get_locale<class_TranslationServer_method_get_locale>` **(** **)** |const|                                                           |
+   +-----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>` | :ref:`get_locale_name<class_TranslationServer_method_get_locale_name>` **(** :ref:`String<class_String>` locale **)** |const|              |
+   +-----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                        | :ref:`remove_translation<class_TranslationServer_method_remove_translation>` **(** :ref:`Translation<class_Translation>` translation **)** |
+   +-----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                        | :ref:`set_locale<class_TranslationServer_method_set_locale>` **(** :ref:`String<class_String>` locale **)**                                |
+   +-----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>` | :ref:`translate<class_TranslationServer_method_translate>` **(** :ref:`String<class_String>` message **)** |const|                         |
+   +-----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_TranslationServer_method_add_translation:
 
-- void **add_translation** **(** :ref:`Translation<class_Translation>` translation **)**
+.. rst-class:: classref-method
+
+void **add_translation** **(** :ref:`Translation<class_Translation>` translation **)**
 
 Adds a :ref:`Translation<class_Translation>` resource.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_TranslationServer_method_clear:
 
-- void **clear** **(** **)**
+.. rst-class:: classref-method
+
+void **clear** **(** **)**
 
 Clears the server from all translations.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_TranslationServer_method_get_loaded_locales:
 
-- :ref:`Array<class_Array>` **get_loaded_locales** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`Array<class_Array>` **get_loaded_locales** **(** **)** |const|
 
 Returns an array of all loaded locales of the project.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_TranslationServer_method_get_locale:
 
-- :ref:`String<class_String>` **get_locale** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`String<class_String>` **get_locale** **(** **)** |const|
 
 Returns the current locale of the project.
 
 See also :ref:`OS.get_locale<class_OS_method_get_locale>` and :ref:`OS.get_locale_language<class_OS_method_get_locale_language>` to query the locale of the user system.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_TranslationServer_method_get_locale_name:
 
-- :ref:`String<class_String>` **get_locale_name** **(** :ref:`String<class_String>` locale **)** |const|
+.. rst-class:: classref-method
+
+:ref:`String<class_String>` **get_locale_name** **(** :ref:`String<class_String>` locale **)** |const|
 
 Returns a locale's language and its variant (e.g. ``"en_US"`` would return ``"English (United States)"``).
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_TranslationServer_method_remove_translation:
 
-- void **remove_translation** **(** :ref:`Translation<class_Translation>` translation **)**
+.. rst-class:: classref-method
+
+void **remove_translation** **(** :ref:`Translation<class_Translation>` translation **)**
 
 Removes the given translation from the server.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_TranslationServer_method_set_locale:
 
-- void **set_locale** **(** :ref:`String<class_String>` locale **)**
+.. rst-class:: classref-method
+
+void **set_locale** **(** :ref:`String<class_String>` locale **)**
 
 Sets the locale of the project. The ``locale`` string will be standardized to match known locales (e.g. ``en-US`` would be matched to ``en_US``).
 
 If translations have been loaded beforehand for the new locale, they will be applied.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_TranslationServer_method_translate:
 
-- :ref:`String<class_String>` **translate** **(** :ref:`String<class_String>` message **)** |const|
+.. rst-class:: classref-method
+
+:ref:`String<class_String>` **translate** **(** :ref:`String<class_String>` message **)** |const|
 
 Returns the current locale's translation for the given message (key).
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

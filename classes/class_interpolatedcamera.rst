@@ -14,6 +14,8 @@ InterpolatedCamera
 
 *Deprecated.* Camera which moves toward another node.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -21,115 +23,158 @@ Description
 
 If it is not :ref:`enabled<class_InterpolatedCamera_property_enabled>` or does not have a valid target set, InterpolatedCamera acts like a normal Camera.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+---------------------------------------------------------------------------------------------+---------------------------------------------------------------------+------------------+
-| :ref:`bool<class_bool>`                                                                     | :ref:`enabled<class_InterpolatedCamera_property_enabled>`           | ``false``        |
-+---------------------------------------------------------------------------------------------+---------------------------------------------------------------------+------------------+
-| :ref:`InterpolatedCameraProcessMode<enum_InterpolatedCamera_InterpolatedCameraProcessMode>` | :ref:`process_mode<class_InterpolatedCamera_property_process_mode>` | ``1``            |
-+---------------------------------------------------------------------------------------------+---------------------------------------------------------------------+------------------+
-| :ref:`float<class_float>`                                                                   | :ref:`speed<class_InterpolatedCamera_property_speed>`               | ``1.0``          |
-+---------------------------------------------------------------------------------------------+---------------------------------------------------------------------+------------------+
-| :ref:`NodePath<class_NodePath>`                                                             | :ref:`target<class_InterpolatedCamera_property_target>`             | ``NodePath("")`` |
-+---------------------------------------------------------------------------------------------+---------------------------------------------------------------------+------------------+
+.. table::
+   :widths: auto
+
+   +---------------------------------------------------------------------------------------------+---------------------------------------------------------------------+------------------+
+   | :ref:`bool<class_bool>`                                                                     | :ref:`enabled<class_InterpolatedCamera_property_enabled>`           | ``false``        |
+   +---------------------------------------------------------------------------------------------+---------------------------------------------------------------------+------------------+
+   | :ref:`InterpolatedCameraProcessMode<enum_InterpolatedCamera_InterpolatedCameraProcessMode>` | :ref:`process_mode<class_InterpolatedCamera_property_process_mode>` | ``1``            |
+   +---------------------------------------------------------------------------------------------+---------------------------------------------------------------------+------------------+
+   | :ref:`float<class_float>`                                                                   | :ref:`speed<class_InterpolatedCamera_property_speed>`               | ``1.0``          |
+   +---------------------------------------------------------------------------------------------+---------------------------------------------------------------------+------------------+
+   | :ref:`NodePath<class_NodePath>`                                                             | :ref:`target<class_InterpolatedCamera_property_target>`             | ``NodePath("")`` |
+   +---------------------------------------------------------------------------------------------+---------------------------------------------------------------------+------------------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+------+--------------------------------------------------------------------------------------------------------------+
-| void | :ref:`set_target<class_InterpolatedCamera_method_set_target>` **(** :ref:`Object<class_Object>` target **)** |
-+------+--------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +------+--------------------------------------------------------------------------------------------------------------+
+   | void | :ref:`set_target<class_InterpolatedCamera_method_set_target>` **(** :ref:`Object<class_Object>` target **)** |
+   +------+--------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Enumerations
 ------------
 
 .. _enum_InterpolatedCamera_InterpolatedCameraProcessMode:
 
-.. _class_InterpolatedCamera_constant_INTERPOLATED_CAMERA_PROCESS_PHYSICS:
-
-.. _class_InterpolatedCamera_constant_INTERPOLATED_CAMERA_PROCESS_IDLE:
+.. rst-class:: classref-enumeration
 
 enum **InterpolatedCameraProcessMode**:
 
-- **INTERPOLATED_CAMERA_PROCESS_PHYSICS** = **0** --- The camera updates with the ``_physics_process`` callback.
+.. _class_InterpolatedCamera_constant_INTERPOLATED_CAMERA_PROCESS_PHYSICS:
 
-- **INTERPOLATED_CAMERA_PROCESS_IDLE** = **1** --- The camera updates with the ``_process`` callback.
+.. rst-class:: classref-enumeration-constant
+
+:ref:`InterpolatedCameraProcessMode<enum_InterpolatedCamera_InterpolatedCameraProcessMode>` **INTERPOLATED_CAMERA_PROCESS_PHYSICS** = ``0``
+
+The camera updates with the ``_physics_process`` callback.
+
+.. _class_InterpolatedCamera_constant_INTERPOLATED_CAMERA_PROCESS_IDLE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`InterpolatedCameraProcessMode<enum_InterpolatedCamera_InterpolatedCameraProcessMode>` **INTERPOLATED_CAMERA_PROCESS_IDLE** = ``1``
+
+The camera updates with the ``_process`` callback.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_InterpolatedCamera_property_enabled:
 
-- :ref:`bool<class_bool>` **enabled**
+.. rst-class:: classref-property
 
-+-----------+----------------------------------+
-| *Default* | ``false``                        |
-+-----------+----------------------------------+
-| *Setter*  | set_interpolation_enabled(value) |
-+-----------+----------------------------------+
-| *Getter*  | is_interpolation_enabled()       |
-+-----------+----------------------------------+
+:ref:`bool<class_bool>` **enabled** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_interpolation_enabled** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_interpolation_enabled** **(** **)**
 
 If ``true``, and a target is set, the camera will move automatically.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_InterpolatedCamera_property_process_mode:
 
-- :ref:`InterpolatedCameraProcessMode<enum_InterpolatedCamera_InterpolatedCameraProcessMode>` **process_mode**
+.. rst-class:: classref-property
 
-+-----------+-------------------------+
-| *Default* | ``1``                   |
-+-----------+-------------------------+
-| *Setter*  | set_process_mode(value) |
-+-----------+-------------------------+
-| *Getter*  | get_process_mode()      |
-+-----------+-------------------------+
+:ref:`InterpolatedCameraProcessMode<enum_InterpolatedCamera_InterpolatedCameraProcessMode>` **process_mode** = ``1``
+
+.. rst-class:: classref-property-setget
+
+- void **set_process_mode** **(** :ref:`InterpolatedCameraProcessMode<enum_InterpolatedCamera_InterpolatedCameraProcessMode>` value **)**
+- :ref:`InterpolatedCameraProcessMode<enum_InterpolatedCamera_InterpolatedCameraProcessMode>` **get_process_mode** **(** **)**
 
 The camera's process callback. See :ref:`InterpolatedCameraProcessMode<enum_InterpolatedCamera_InterpolatedCameraProcessMode>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_InterpolatedCamera_property_speed:
 
-- :ref:`float<class_float>` **speed**
+.. rst-class:: classref-property
 
-+-----------+------------------+
-| *Default* | ``1.0``          |
-+-----------+------------------+
-| *Setter*  | set_speed(value) |
-+-----------+------------------+
-| *Getter*  | get_speed()      |
-+-----------+------------------+
+:ref:`float<class_float>` **speed** = ``1.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_speed** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_speed** **(** **)**
 
 How quickly the camera moves toward its target. Higher values will result in tighter camera motion.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_InterpolatedCamera_property_target:
 
-- :ref:`NodePath<class_NodePath>` **target**
+.. rst-class:: classref-property
 
-+-----------+------------------------+
-| *Default* | ``NodePath("")``       |
-+-----------+------------------------+
-| *Setter*  | set_target_path(value) |
-+-----------+------------------------+
-| *Getter*  | get_target_path()      |
-+-----------+------------------------+
+:ref:`NodePath<class_NodePath>` **target** = ``NodePath("")``
+
+.. rst-class:: classref-property-setget
+
+- void **set_target_path** **(** :ref:`NodePath<class_NodePath>` value **)**
+- :ref:`NodePath<class_NodePath>` **get_target_path** **(** **)**
 
 The target's :ref:`NodePath<class_NodePath>`.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_InterpolatedCamera_method_set_target:
 
-- void **set_target** **(** :ref:`Object<class_Object>` target **)**
+.. rst-class:: classref-method
+
+void **set_target** **(** :ref:`Object<class_Object>` target **)**
 
 Sets the node to move toward and orient with.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

@@ -14,91 +14,107 @@ PlaneMesh
 
 Class representing a planar :ref:`PrimitiveMesh<class_PrimitiveMesh>`.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 Class representing a planar :ref:`PrimitiveMesh<class_PrimitiveMesh>`. This flat mesh does not have a thickness. By default, this mesh is aligned on the X and Z axes; this default rotation isn't suited for use with billboarded materials. For billboarded materials, use :ref:`QuadMesh<class_QuadMesh>` instead.
 
-\ **Note:** When using a large textured ``PlaneMesh`` (e.g. as a floor), you may stumble upon UV jittering issues depending on the camera angle. To solve this, increase :ref:`subdivide_depth<class_PlaneMesh_property_subdivide_depth>` and :ref:`subdivide_width<class_PlaneMesh_property_subdivide_width>` until you no longer notice UV jittering.
+\ **Note:** When using a large textured **PlaneMesh** (e.g. as a floor), you may stumble upon UV jittering issues depending on the camera angle. To solve this, increase :ref:`subdivide_depth<class_PlaneMesh_property_subdivide_depth>` and :ref:`subdivide_width<class_PlaneMesh_property_subdivide_width>` until you no longer notice UV jittering.
+
+.. rst-class:: classref-reftable-group
 
 Properties
 ----------
 
-+-------------------------------+------------------------------------------------------------------+------------------------+
-| :ref:`Vector3<class_Vector3>` | :ref:`center_offset<class_PlaneMesh_property_center_offset>`     | ``Vector3( 0, 0, 0 )`` |
-+-------------------------------+------------------------------------------------------------------+------------------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`size<class_PlaneMesh_property_size>`                       | ``Vector2( 2, 2 )``    |
-+-------------------------------+------------------------------------------------------------------+------------------------+
-| :ref:`int<class_int>`         | :ref:`subdivide_depth<class_PlaneMesh_property_subdivide_depth>` | ``0``                  |
-+-------------------------------+------------------------------------------------------------------+------------------------+
-| :ref:`int<class_int>`         | :ref:`subdivide_width<class_PlaneMesh_property_subdivide_width>` | ``0``                  |
-+-------------------------------+------------------------------------------------------------------+------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------------+------------------------------------------------------------------+------------------------+
+   | :ref:`Vector3<class_Vector3>` | :ref:`center_offset<class_PlaneMesh_property_center_offset>`     | ``Vector3( 0, 0, 0 )`` |
+   +-------------------------------+------------------------------------------------------------------+------------------------+
+   | :ref:`Vector2<class_Vector2>` | :ref:`size<class_PlaneMesh_property_size>`                       | ``Vector2( 2, 2 )``    |
+   +-------------------------------+------------------------------------------------------------------+------------------------+
+   | :ref:`int<class_int>`         | :ref:`subdivide_depth<class_PlaneMesh_property_subdivide_depth>` | ``0``                  |
+   +-------------------------------+------------------------------------------------------------------+------------------------+
+   | :ref:`int<class_int>`         | :ref:`subdivide_width<class_PlaneMesh_property_subdivide_width>` | ``0``                  |
+   +-------------------------------+------------------------------------------------------------------+------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_PlaneMesh_property_center_offset:
 
-- :ref:`Vector3<class_Vector3>` **center_offset**
+.. rst-class:: classref-property
 
-+-----------+--------------------------+
-| *Default* | ``Vector3( 0, 0, 0 )``   |
-+-----------+--------------------------+
-| *Setter*  | set_center_offset(value) |
-+-----------+--------------------------+
-| *Getter*  | get_center_offset()      |
-+-----------+--------------------------+
+:ref:`Vector3<class_Vector3>` **center_offset** = ``Vector3( 0, 0, 0 )``
+
+.. rst-class:: classref-property-setget
+
+- void **set_center_offset** **(** :ref:`Vector3<class_Vector3>` value **)**
+- :ref:`Vector3<class_Vector3>` **get_center_offset** **(** **)**
 
 Offset from the origin of the generated plane. Useful for particles.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_PlaneMesh_property_size:
 
-- :ref:`Vector2<class_Vector2>` **size**
+.. rst-class:: classref-property
 
-+-----------+---------------------+
-| *Default* | ``Vector2( 2, 2 )`` |
-+-----------+---------------------+
-| *Setter*  | set_size(value)     |
-+-----------+---------------------+
-| *Getter*  | get_size()          |
-+-----------+---------------------+
+:ref:`Vector2<class_Vector2>` **size** = ``Vector2( 2, 2 )``
+
+.. rst-class:: classref-property-setget
+
+- void **set_size** **(** :ref:`Vector2<class_Vector2>` value **)**
+- :ref:`Vector2<class_Vector2>` **get_size** **(** **)**
 
 Size of the generated plane.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_PlaneMesh_property_subdivide_depth:
 
-- :ref:`int<class_int>` **subdivide_depth**
+.. rst-class:: classref-property
 
-+-----------+----------------------------+
-| *Default* | ``0``                      |
-+-----------+----------------------------+
-| *Setter*  | set_subdivide_depth(value) |
-+-----------+----------------------------+
-| *Getter*  | get_subdivide_depth()      |
-+-----------+----------------------------+
+:ref:`int<class_int>` **subdivide_depth** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_subdivide_depth** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_subdivide_depth** **(** **)**
 
 Number of subdivision along the Z axis.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_PlaneMesh_property_subdivide_width:
 
-- :ref:`int<class_int>` **subdivide_width**
+.. rst-class:: classref-property
 
-+-----------+----------------------------+
-| *Default* | ``0``                      |
-+-----------+----------------------------+
-| *Setter*  | set_subdivide_width(value) |
-+-----------+----------------------------+
-| *Getter*  | get_subdivide_width()      |
-+-----------+----------------------------+
+:ref:`int<class_int>` **subdivide_width** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_subdivide_width** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_subdivide_width** **(** **)**
 
 Number of subdivision along the X axis.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

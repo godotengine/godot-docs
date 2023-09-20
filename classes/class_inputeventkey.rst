@@ -14,146 +14,182 @@ InputEventKey
 
 Input event type for keyboard events.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 Stores key presses on the keyboard. Supports key presses, key releases and :ref:`echo<class_InputEventKey_property_echo>` events.
+
+.. rst-class:: classref-introduction-group
 
 Tutorials
 ---------
 
 - :doc:`../tutorials/inputs/inputevent`
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-------------------------+--------------------------------------------------------------------------+-----------+
-| :ref:`bool<class_bool>` | :ref:`echo<class_InputEventKey_property_echo>`                           | ``false`` |
-+-------------------------+--------------------------------------------------------------------------+-----------+
-| :ref:`int<class_int>`   | :ref:`physical_scancode<class_InputEventKey_property_physical_scancode>` | ``0``     |
-+-------------------------+--------------------------------------------------------------------------+-----------+
-| :ref:`bool<class_bool>` | :ref:`pressed<class_InputEventKey_property_pressed>`                     | ``false`` |
-+-------------------------+--------------------------------------------------------------------------+-----------+
-| :ref:`int<class_int>`   | :ref:`scancode<class_InputEventKey_property_scancode>`                   | ``0``     |
-+-------------------------+--------------------------------------------------------------------------+-----------+
-| :ref:`int<class_int>`   | :ref:`unicode<class_InputEventKey_property_unicode>`                     | ``0``     |
-+-------------------------+--------------------------------------------------------------------------+-----------+
+.. table::
+   :widths: auto
+
+   +-------------------------+--------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>` | :ref:`echo<class_InputEventKey_property_echo>`                           | ``false`` |
+   +-------------------------+--------------------------------------------------------------------------+-----------+
+   | :ref:`int<class_int>`   | :ref:`physical_scancode<class_InputEventKey_property_physical_scancode>` | ``0``     |
+   +-------------------------+--------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>` | :ref:`pressed<class_InputEventKey_property_pressed>`                     | ``false`` |
+   +-------------------------+--------------------------------------------------------------------------+-----------+
+   | :ref:`int<class_int>`   | :ref:`scancode<class_InputEventKey_property_scancode>`                   | ``0``     |
+   +-------------------------+--------------------------------------------------------------------------+-----------+
+   | :ref:`int<class_int>`   | :ref:`unicode<class_InputEventKey_property_unicode>`                     | ``0``     |
+   +-------------------------+--------------------------------------------------------------------------+-----------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+-----------------------+----------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>` | :ref:`get_physical_scancode_with_modifiers<class_InputEventKey_method_get_physical_scancode_with_modifiers>` **(** **)** |const| |
-+-----------------------+----------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>` | :ref:`get_scancode_with_modifiers<class_InputEventKey_method_get_scancode_with_modifiers>` **(** **)** |const|                   |
-+-----------------------+----------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-----------------------+----------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>` | :ref:`get_physical_scancode_with_modifiers<class_InputEventKey_method_get_physical_scancode_with_modifiers>` **(** **)** |const| |
+   +-----------------------+----------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>` | :ref:`get_scancode_with_modifiers<class_InputEventKey_method_get_scancode_with_modifiers>` **(** **)** |const|                   |
+   +-----------------------+----------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_InputEventKey_property_echo:
 
-- :ref:`bool<class_bool>` **echo**
+.. rst-class:: classref-property
 
-+-----------+-----------------+
-| *Default* | ``false``       |
-+-----------+-----------------+
-| *Setter*  | set_echo(value) |
-+-----------+-----------------+
-| *Getter*  | is_echo()       |
-+-----------+-----------------+
+:ref:`bool<class_bool>` **echo** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_echo** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_echo** **(** **)**
 
 If ``true``, the key was already pressed before this event. It means the user is holding the key down.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_InputEventKey_property_physical_scancode:
 
-- :ref:`int<class_int>` **physical_scancode**
+.. rst-class:: classref-property
 
-+-----------+------------------------------+
-| *Default* | ``0``                        |
-+-----------+------------------------------+
-| *Setter*  | set_physical_scancode(value) |
-+-----------+------------------------------+
-| *Getter*  | get_physical_scancode()      |
-+-----------+------------------------------+
+:ref:`int<class_int>` **physical_scancode** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_physical_scancode** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_physical_scancode** **(** **)**
 
 Key physical scancode, which corresponds to one of the :ref:`KeyList<enum_@GlobalScope_KeyList>` constants. Represent the physical location of a key on the 101/102-key US QWERTY keyboard.
 
-To get a human-readable representation of the ``InputEventKey``, use ``OS.get_scancode_string(event.physical_scancode)`` where ``event`` is the ``InputEventKey``.
+To get a human-readable representation of the **InputEventKey**, use ``OS.get_scancode_string(event.physical_scancode)`` where ``event`` is the **InputEventKey**.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_InputEventKey_property_pressed:
 
-- :ref:`bool<class_bool>` **pressed**
+.. rst-class:: classref-property
 
-+-----------+--------------------+
-| *Default* | ``false``          |
-+-----------+--------------------+
-| *Setter*  | set_pressed(value) |
-+-----------+--------------------+
-| *Getter*  | is_pressed()       |
-+-----------+--------------------+
+:ref:`bool<class_bool>` **pressed** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_pressed** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_pressed** **(** **)**
 
 If ``true``, the key's state is pressed. If ``false``, the key's state is released.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_InputEventKey_property_scancode:
 
-- :ref:`int<class_int>` **scancode**
+.. rst-class:: classref-property
 
-+-----------+---------------------+
-| *Default* | ``0``               |
-+-----------+---------------------+
-| *Setter*  | set_scancode(value) |
-+-----------+---------------------+
-| *Getter*  | get_scancode()      |
-+-----------+---------------------+
+:ref:`int<class_int>` **scancode** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_scancode** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_scancode** **(** **)**
 
 The key scancode, which corresponds to one of the :ref:`KeyList<enum_@GlobalScope_KeyList>` constants. Represent key in the current keyboard layout.
 
-To get a human-readable representation of the ``InputEventKey``, use ``OS.get_scancode_string(event.scancode)`` where ``event`` is the ``InputEventKey``.
+To get a human-readable representation of the **InputEventKey**, use ``OS.get_scancode_string(event.scancode)`` where ``event`` is the **InputEventKey**.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_InputEventKey_property_unicode:
 
-- :ref:`int<class_int>` **unicode**
+.. rst-class:: classref-property
 
-+-----------+--------------------+
-| *Default* | ``0``              |
-+-----------+--------------------+
-| *Setter*  | set_unicode(value) |
-+-----------+--------------------+
-| *Getter*  | get_unicode()      |
-+-----------+--------------------+
+:ref:`int<class_int>` **unicode** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_unicode** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_unicode** **(** **)**
 
 The key Unicode identifier (when relevant). Unicode identifiers for the composite characters and complex scripts may not be available unless IME input mode is active. See :ref:`OS.set_ime_active<class_OS_method_set_ime_active>` for more information.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_InputEventKey_method_get_physical_scancode_with_modifiers:
 
-- :ref:`int<class_int>` **get_physical_scancode_with_modifiers** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **get_physical_scancode_with_modifiers** **(** **)** |const|
 
 Returns the physical scancode combined with modifier keys such as ``Shift`` or ``Alt``. See also :ref:`InputEventWithModifiers<class_InputEventWithModifiers>`.
 
-To get a human-readable representation of the ``InputEventKey`` with modifiers, use ``OS.get_scancode_string(event.get_physical_scancode_with_modifiers())`` where ``event`` is the ``InputEventKey``.
+To get a human-readable representation of the **InputEventKey** with modifiers, use ``OS.get_scancode_string(event.get_physical_scancode_with_modifiers())`` where ``event`` is the **InputEventKey**.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_InputEventKey_method_get_scancode_with_modifiers:
 
-- :ref:`int<class_int>` **get_scancode_with_modifiers** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **get_scancode_with_modifiers** **(** **)** |const|
 
 Returns the scancode combined with modifier keys such as ``Shift`` or ``Alt``. See also :ref:`InputEventWithModifiers<class_InputEventWithModifiers>`.
 
-To get a human-readable representation of the ``InputEventKey`` with modifiers, use ``OS.get_scancode_string(event.get_scancode_with_modifiers())`` where ``event`` is the ``InputEventKey``.
+To get a human-readable representation of the **InputEventKey** with modifiers, use ``OS.get_scancode_string(event.get_scancode_with_modifiers())`` where ``event`` is the **InputEventKey**.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

@@ -16,90 +16,140 @@ VisualShaderNodeTextureUniform
 
 Performs a uniform texture lookup within the visual shader graph.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 Performs a lookup operation on the texture provided as a uniform for the shader.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+-------+
-| :ref:`ColorDefault<enum_VisualShaderNodeTextureUniform_ColorDefault>` | :ref:`color_default<class_VisualShaderNodeTextureUniform_property_color_default>` | ``0`` |
-+-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+-------+
-| :ref:`TextureType<enum_VisualShaderNodeTextureUniform_TextureType>`   | :ref:`texture_type<class_VisualShaderNodeTextureUniform_property_texture_type>`   | ``0`` |
-+-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+-------+
+.. table::
+   :widths: auto
+
+   +-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+-------+
+   | :ref:`ColorDefault<enum_VisualShaderNodeTextureUniform_ColorDefault>` | :ref:`color_default<class_VisualShaderNodeTextureUniform_property_color_default>` | ``0`` |
+   +-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+-------+
+   | :ref:`TextureType<enum_VisualShaderNodeTextureUniform_TextureType>`   | :ref:`texture_type<class_VisualShaderNodeTextureUniform_property_texture_type>`   | ``0`` |
+   +-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+-------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Enumerations
 ------------
 
 .. _enum_VisualShaderNodeTextureUniform_TextureType:
 
-.. _class_VisualShaderNodeTextureUniform_constant_TYPE_DATA:
-
-.. _class_VisualShaderNodeTextureUniform_constant_TYPE_COLOR:
-
-.. _class_VisualShaderNodeTextureUniform_constant_TYPE_NORMALMAP:
-
-.. _class_VisualShaderNodeTextureUniform_constant_TYPE_ANISO:
+.. rst-class:: classref-enumeration
 
 enum **TextureType**:
 
-- **TYPE_DATA** = **0** --- No hints are added to the uniform declaration.
+.. _class_VisualShaderNodeTextureUniform_constant_TYPE_DATA:
 
-- **TYPE_COLOR** = **1** --- Adds ``hint_albedo`` as hint to the uniform declaration for proper sRGB to linear conversion.
+.. rst-class:: classref-enumeration-constant
 
-- **TYPE_NORMALMAP** = **2** --- Adds ``hint_normal`` as hint to the uniform declaration, which internally converts the texture for proper usage as normal map.
+:ref:`TextureType<enum_VisualShaderNodeTextureUniform_TextureType>` **TYPE_DATA** = ``0``
 
-- **TYPE_ANISO** = **3** --- Adds ``hint_aniso`` as hint to the uniform declaration to use for a flowmap.
+No hints are added to the uniform declaration.
+
+.. _class_VisualShaderNodeTextureUniform_constant_TYPE_COLOR:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`TextureType<enum_VisualShaderNodeTextureUniform_TextureType>` **TYPE_COLOR** = ``1``
+
+Adds ``hint_albedo`` as hint to the uniform declaration for proper sRGB to linear conversion.
+
+.. _class_VisualShaderNodeTextureUniform_constant_TYPE_NORMALMAP:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`TextureType<enum_VisualShaderNodeTextureUniform_TextureType>` **TYPE_NORMALMAP** = ``2``
+
+Adds ``hint_normal`` as hint to the uniform declaration, which internally converts the texture for proper usage as normal map.
+
+.. _class_VisualShaderNodeTextureUniform_constant_TYPE_ANISO:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`TextureType<enum_VisualShaderNodeTextureUniform_TextureType>` **TYPE_ANISO** = ``3``
+
+Adds ``hint_aniso`` as hint to the uniform declaration to use for a flowmap.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _enum_VisualShaderNodeTextureUniform_ColorDefault:
 
-.. _class_VisualShaderNodeTextureUniform_constant_COLOR_DEFAULT_WHITE:
-
-.. _class_VisualShaderNodeTextureUniform_constant_COLOR_DEFAULT_BLACK:
+.. rst-class:: classref-enumeration
 
 enum **ColorDefault**:
 
-- **COLOR_DEFAULT_WHITE** = **0** --- Defaults to white color.
+.. _class_VisualShaderNodeTextureUniform_constant_COLOR_DEFAULT_WHITE:
 
-- **COLOR_DEFAULT_BLACK** = **1** --- Defaults to black color.
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ColorDefault<enum_VisualShaderNodeTextureUniform_ColorDefault>` **COLOR_DEFAULT_WHITE** = ``0``
+
+Defaults to white color.
+
+.. _class_VisualShaderNodeTextureUniform_constant_COLOR_DEFAULT_BLACK:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ColorDefault<enum_VisualShaderNodeTextureUniform_ColorDefault>` **COLOR_DEFAULT_BLACK** = ``1``
+
+Defaults to black color.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_VisualShaderNodeTextureUniform_property_color_default:
 
-- :ref:`ColorDefault<enum_VisualShaderNodeTextureUniform_ColorDefault>` **color_default**
+.. rst-class:: classref-property
 
-+-----------+--------------------------+
-| *Default* | ``0``                    |
-+-----------+--------------------------+
-| *Setter*  | set_color_default(value) |
-+-----------+--------------------------+
-| *Getter*  | get_color_default()      |
-+-----------+--------------------------+
+:ref:`ColorDefault<enum_VisualShaderNodeTextureUniform_ColorDefault>` **color_default** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_color_default** **(** :ref:`ColorDefault<enum_VisualShaderNodeTextureUniform_ColorDefault>` value **)**
+- :ref:`ColorDefault<enum_VisualShaderNodeTextureUniform_ColorDefault>` **get_color_default** **(** **)**
 
 Sets the default color if no texture is assigned to the uniform.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_VisualShaderNodeTextureUniform_property_texture_type:
 
-- :ref:`TextureType<enum_VisualShaderNodeTextureUniform_TextureType>` **texture_type**
+.. rst-class:: classref-property
 
-+-----------+-------------------------+
-| *Default* | ``0``                   |
-+-----------+-------------------------+
-| *Setter*  | set_texture_type(value) |
-+-----------+-------------------------+
-| *Getter*  | get_texture_type()      |
-+-----------+-------------------------+
+:ref:`TextureType<enum_VisualShaderNodeTextureUniform_TextureType>` **texture_type** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_texture_type** **(** :ref:`TextureType<enum_VisualShaderNodeTextureUniform_TextureType>` value **)**
+- :ref:`TextureType<enum_VisualShaderNodeTextureUniform_TextureType>` **get_texture_type** **(** **)**
 
 Defines the type of data provided by the source texture. See :ref:`TextureType<enum_VisualShaderNodeTextureUniform_TextureType>` for options.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

@@ -14,6 +14,8 @@ VisualScriptClassConstant
 
 Gets a constant from a given class.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -27,48 +29,60 @@ none
 
 - Data (variant): ``value``
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-----------------------------+----------------------------------------------------------------------+--------------+
-| :ref:`String<class_String>` | :ref:`base_type<class_VisualScriptClassConstant_property_base_type>` | ``"Object"`` |
-+-----------------------------+----------------------------------------------------------------------+--------------+
-| :ref:`String<class_String>` | :ref:`constant<class_VisualScriptClassConstant_property_constant>`   | ``""``       |
-+-----------------------------+----------------------------------------------------------------------+--------------+
+.. table::
+   :widths: auto
+
+   +-----------------------------+----------------------------------------------------------------------+--------------+
+   | :ref:`String<class_String>` | :ref:`base_type<class_VisualScriptClassConstant_property_base_type>` | ``"Object"`` |
+   +-----------------------------+----------------------------------------------------------------------+--------------+
+   | :ref:`String<class_String>` | :ref:`constant<class_VisualScriptClassConstant_property_constant>`   | ``""``       |
+   +-----------------------------+----------------------------------------------------------------------+--------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_VisualScriptClassConstant_property_base_type:
 
-- :ref:`String<class_String>` **base_type**
+.. rst-class:: classref-property
 
-+-----------+----------------------+
-| *Default* | ``"Object"``         |
-+-----------+----------------------+
-| *Setter*  | set_base_type(value) |
-+-----------+----------------------+
-| *Getter*  | get_base_type()      |
-+-----------+----------------------+
+:ref:`String<class_String>` **base_type** = ``"Object"``
+
+.. rst-class:: classref-property-setget
+
+- void **set_base_type** **(** :ref:`String<class_String>` value **)**
+- :ref:`String<class_String>` **get_base_type** **(** **)**
 
 The constant's parent class.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_VisualScriptClassConstant_property_constant:
 
-- :ref:`String<class_String>` **constant**
+.. rst-class:: classref-property
 
-+-----------+---------------------------+
-| *Default* | ``""``                    |
-+-----------+---------------------------+
-| *Setter*  | set_class_constant(value) |
-+-----------+---------------------------+
-| *Getter*  | get_class_constant()      |
-+-----------+---------------------------+
+:ref:`String<class_String>` **constant** = ``""``
+
+.. rst-class:: classref-property-setget
+
+- void **set_class_constant** **(** :ref:`String<class_String>` value **)**
+- :ref:`String<class_String>` **get_class_constant** **(** **)**
 
 The constant to return. See the given class for its available constants.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

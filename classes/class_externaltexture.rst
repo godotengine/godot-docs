@@ -14,6 +14,8 @@ ExternalTexture
 
 Enable OpenGL ES external texture extension.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -21,48 +23,72 @@ Enable support for the OpenGL ES external texture extension as defined by `OES_E
 
 \ **Note:** This is only supported for Android platforms.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-------------------------------+--------------------------------------------------+-------------------------------------------------------------------+
-| :ref:`int<class_int>`         | flags                                            | ``2048`` (overrides :ref:`Texture<class_Texture_property_flags>`) |
-+-------------------------------+--------------------------------------------------+-------------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`size<class_ExternalTexture_property_size>` | ``Vector2( 1, 1 )``                                               |
-+-------------------------------+--------------------------------------------------+-------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------------+--------------------------------------------------+-------------------------------------------------------------------+
+   | :ref:`int<class_int>`         | flags                                            | ``2048`` (overrides :ref:`Texture<class_Texture_property_flags>`) |
+   +-------------------------------+--------------------------------------------------+-------------------------------------------------------------------+
+   | :ref:`Vector2<class_Vector2>` | :ref:`size<class_ExternalTexture_property_size>` | ``Vector2( 1, 1 )``                                               |
+   +-------------------------------+--------------------------------------------------+-------------------------------------------------------------------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+-----------------------+--------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>` | :ref:`get_external_texture_id<class_ExternalTexture_method_get_external_texture_id>` **(** **)** |
-+-----------------------+--------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-----------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>` | :ref:`get_external_texture_id<class_ExternalTexture_method_get_external_texture_id>` **(** **)** |
+   +-----------------------+--------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_ExternalTexture_property_size:
 
-- :ref:`Vector2<class_Vector2>` **size**
+.. rst-class:: classref-property
 
-+-----------+---------------------+
-| *Default* | ``Vector2( 1, 1 )`` |
-+-----------+---------------------+
-| *Setter*  | set_size(value)     |
-+-----------+---------------------+
-| *Getter*  | get_size()          |
-+-----------+---------------------+
+:ref:`Vector2<class_Vector2>` **size** = ``Vector2( 1, 1 )``
+
+.. rst-class:: classref-property-setget
+
+- void **set_size** **(** :ref:`Vector2<class_Vector2>` value **)**
+- :ref:`Vector2<class_Vector2>` **get_size** **(** **)**
 
 External texture size.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_ExternalTexture_method_get_external_texture_id:
 
-- :ref:`int<class_int>` **get_external_texture_id** **(** **)**
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **get_external_texture_id** **(** **)**
 
 Returns the external texture name.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

@@ -12,89 +12,193 @@ FileSystemDock
 
 **Inherits:** :ref:`VBoxContainer<class_VBoxContainer>` **<** :ref:`BoxContainer<class_BoxContainer>` **<** :ref:`Container<class_Container>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
+.. container:: contribute
 
+	There is currently no description for this class. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`can_drop_data_fw<class_FileSystemDock_method_can_drop_data_fw>` **(** :ref:`Vector2<class_Vector2>` point, :ref:`Variant<class_Variant>` data, :ref:`Control<class_Control>` from **)** |const| |
-+-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                          | :ref:`drop_data_fw<class_FileSystemDock_method_drop_data_fw>` **(** :ref:`Vector2<class_Vector2>` point, :ref:`Variant<class_Variant>` data, :ref:`Control<class_Control>` from **)**                 |
-+-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>` | :ref:`get_drag_data_fw<class_FileSystemDock_method_get_drag_data_fw>` **(** :ref:`Vector2<class_Vector2>` point, :ref:`Control<class_Control>` from **)**                                             |
-+-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                          | :ref:`navigate_to_path<class_FileSystemDock_method_navigate_to_path>` **(** :ref:`String<class_String>` path **)**                                                                                    |
-+-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`can_drop_data_fw<class_FileSystemDock_method_can_drop_data_fw>` **(** :ref:`Vector2<class_Vector2>` point, :ref:`Variant<class_Variant>` data, :ref:`Control<class_Control>` from **)** |const| |
+   +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                          | :ref:`drop_data_fw<class_FileSystemDock_method_drop_data_fw>` **(** :ref:`Vector2<class_Vector2>` point, :ref:`Variant<class_Variant>` data, :ref:`Control<class_Control>` from **)**                 |
+   +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Variant<class_Variant>` | :ref:`get_drag_data_fw<class_FileSystemDock_method_get_drag_data_fw>` **(** :ref:`Vector2<class_Vector2>` point, :ref:`Control<class_Control>` from **)**                                             |
+   +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                          | :ref:`navigate_to_path<class_FileSystemDock_method_navigate_to_path>` **(** :ref:`String<class_String>` path **)**                                                                                    |
+   +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Signals
 -------
 
 .. _class_FileSystemDock_signal_display_mode_changed:
 
-- **display_mode_changed** **(** **)**
+.. rst-class:: classref-signal
+
+**display_mode_changed** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this signal. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_FileSystemDock_signal_file_removed:
 
-- **file_removed** **(** :ref:`String<class_String>` file **)**
+.. rst-class:: classref-signal
+
+**file_removed** **(** :ref:`String<class_String>` file **)**
+
+.. container:: contribute
+
+	There is currently no description for this signal. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_FileSystemDock_signal_files_moved:
 
-- **files_moved** **(** :ref:`String<class_String>` old_file, :ref:`String<class_String>` new_file **)**
+.. rst-class:: classref-signal
+
+**files_moved** **(** :ref:`String<class_String>` old_file, :ref:`String<class_String>` new_file **)**
+
+.. container:: contribute
+
+	There is currently no description for this signal. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_FileSystemDock_signal_folder_moved:
 
-- **folder_moved** **(** :ref:`String<class_String>` old_folder, :ref:`String<class_String>` new_file **)**
+.. rst-class:: classref-signal
+
+**folder_moved** **(** :ref:`String<class_String>` old_folder, :ref:`String<class_String>` new_file **)**
+
+.. container:: contribute
+
+	There is currently no description for this signal. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_FileSystemDock_signal_folder_removed:
 
-- **folder_removed** **(** :ref:`String<class_String>` folder **)**
+.. rst-class:: classref-signal
+
+**folder_removed** **(** :ref:`String<class_String>` folder **)**
+
+.. container:: contribute
+
+	There is currently no description for this signal. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_FileSystemDock_signal_inherit:
 
-- **inherit** **(** :ref:`String<class_String>` file **)**
+.. rst-class:: classref-signal
+
+**inherit** **(** :ref:`String<class_String>` file **)**
+
+.. container:: contribute
+
+	There is currently no description for this signal. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_FileSystemDock_signal_instance:
 
-- **instance** **(** :ref:`PoolStringArray<class_PoolStringArray>` files **)**
+.. rst-class:: classref-signal
+
+**instance** **(** :ref:`PoolStringArray<class_PoolStringArray>` files **)**
+
+.. container:: contribute
+
+	There is currently no description for this signal. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_FileSystemDock_method_can_drop_data_fw:
 
-- :ref:`bool<class_bool>` **can_drop_data_fw** **(** :ref:`Vector2<class_Vector2>` point, :ref:`Variant<class_Variant>` data, :ref:`Control<class_Control>` from **)** |const|
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **can_drop_data_fw** **(** :ref:`Vector2<class_Vector2>` point, :ref:`Variant<class_Variant>` data, :ref:`Control<class_Control>` from **)** |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_FileSystemDock_method_drop_data_fw:
 
-- void **drop_data_fw** **(** :ref:`Vector2<class_Vector2>` point, :ref:`Variant<class_Variant>` data, :ref:`Control<class_Control>` from **)**
+.. rst-class:: classref-method
+
+void **drop_data_fw** **(** :ref:`Vector2<class_Vector2>` point, :ref:`Variant<class_Variant>` data, :ref:`Control<class_Control>` from **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_FileSystemDock_method_get_drag_data_fw:
 
-- :ref:`Variant<class_Variant>` **get_drag_data_fw** **(** :ref:`Vector2<class_Vector2>` point, :ref:`Control<class_Control>` from **)**
+.. rst-class:: classref-method
+
+:ref:`Variant<class_Variant>` **get_drag_data_fw** **(** :ref:`Vector2<class_Vector2>` point, :ref:`Control<class_Control>` from **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_FileSystemDock_method_navigate_to_path:
 
-- void **navigate_to_path** **(** :ref:`String<class_String>` path **)**
+.. rst-class:: classref-method
+
+void **navigate_to_path** **(** :ref:`String<class_String>` path **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

@@ -14,6 +14,8 @@ EditorScriptPicker
 
 Godot editor's control for selecting the ``script`` property of a :ref:`Node<class_Node>`.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -21,28 +23,41 @@ Similar to :ref:`EditorResourcePicker<class_EditorResourcePicker>` this :ref:`Co
 
 \ **Note:** You must set the :ref:`script_owner<class_EditorScriptPicker_property_script_owner>` for the custom context menu items to work.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-------------------------+---------------------------------------------------------------------+
-| :ref:`Node<class_Node>` | :ref:`script_owner<class_EditorScriptPicker_property_script_owner>` |
-+-------------------------+---------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------+---------------------------------------------------------------------+
+   | :ref:`Node<class_Node>` | :ref:`script_owner<class_EditorScriptPicker_property_script_owner>` |
+   +-------------------------+---------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_EditorScriptPicker_property_script_owner:
 
-- :ref:`Node<class_Node>` **script_owner**
+.. rst-class:: classref-property
 
-+----------+-------------------------+
-| *Setter* | set_script_owner(value) |
-+----------+-------------------------+
-| *Getter* | get_script_owner()      |
-+----------+-------------------------+
+:ref:`Node<class_Node>` **script_owner**
+
+.. rst-class:: classref-property-setget
+
+- void **set_script_owner** **(** :ref:`Node<class_Node>` value **)**
+- :ref:`Node<class_Node>` **get_script_owner** **(** **)**
 
 The owner :ref:`Node<class_Node>` of the script property that holds the edited resource.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

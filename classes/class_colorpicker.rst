@@ -14,347 +14,450 @@ ColorPicker
 
 Color picker control.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 Displays a color picker widget. Useful for selecting a color from an RGB/RGBA colorspace.
 
-\ **Note:** This control is the color picker widget itself. You can use a :ref:`ColorPickerButton<class_ColorPickerButton>` instead if you need a button that brings up a ``ColorPicker`` in a pop-up.
+\ **Note:** This control is the color picker widget itself. You can use a :ref:`ColorPickerButton<class_ColorPickerButton>` instead if you need a button that brings up a **ColorPicker** in a pop-up.
+
+.. rst-class:: classref-introduction-group
 
 Tutorials
 ---------
 
 - `Tween Demo <https://godotengine.org/asset-library/asset/146>`__
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+---------------------------+--------------------------------------------------------------------+-------------------------+
-| :ref:`Color<class_Color>` | :ref:`color<class_ColorPicker_property_color>`                     | ``Color( 1, 1, 1, 1 )`` |
-+---------------------------+--------------------------------------------------------------------+-------------------------+
-| :ref:`bool<class_bool>`   | :ref:`deferred_mode<class_ColorPicker_property_deferred_mode>`     | ``false``               |
-+---------------------------+--------------------------------------------------------------------+-------------------------+
-| :ref:`bool<class_bool>`   | :ref:`edit_alpha<class_ColorPicker_property_edit_alpha>`           | ``true``                |
-+---------------------------+--------------------------------------------------------------------+-------------------------+
-| :ref:`bool<class_bool>`   | :ref:`hsv_mode<class_ColorPicker_property_hsv_mode>`               | ``false``               |
-+---------------------------+--------------------------------------------------------------------+-------------------------+
-| :ref:`bool<class_bool>`   | :ref:`presets_enabled<class_ColorPicker_property_presets_enabled>` | ``true``                |
-+---------------------------+--------------------------------------------------------------------+-------------------------+
-| :ref:`bool<class_bool>`   | :ref:`presets_visible<class_ColorPicker_property_presets_visible>` | ``true``                |
-+---------------------------+--------------------------------------------------------------------+-------------------------+
-| :ref:`bool<class_bool>`   | :ref:`raw_mode<class_ColorPicker_property_raw_mode>`               | ``false``               |
-+---------------------------+--------------------------------------------------------------------+-------------------------+
+.. table::
+   :widths: auto
+
+   +---------------------------+--------------------------------------------------------------------+-------------------------+
+   | :ref:`Color<class_Color>` | :ref:`color<class_ColorPicker_property_color>`                     | ``Color( 1, 1, 1, 1 )`` |
+   +---------------------------+--------------------------------------------------------------------+-------------------------+
+   | :ref:`bool<class_bool>`   | :ref:`deferred_mode<class_ColorPicker_property_deferred_mode>`     | ``false``               |
+   +---------------------------+--------------------------------------------------------------------+-------------------------+
+   | :ref:`bool<class_bool>`   | :ref:`edit_alpha<class_ColorPicker_property_edit_alpha>`           | ``true``                |
+   +---------------------------+--------------------------------------------------------------------+-------------------------+
+   | :ref:`bool<class_bool>`   | :ref:`hsv_mode<class_ColorPicker_property_hsv_mode>`               | ``false``               |
+   +---------------------------+--------------------------------------------------------------------+-------------------------+
+   | :ref:`bool<class_bool>`   | :ref:`presets_enabled<class_ColorPicker_property_presets_enabled>` | ``true``                |
+   +---------------------------+--------------------------------------------------------------------+-------------------------+
+   | :ref:`bool<class_bool>`   | :ref:`presets_visible<class_ColorPicker_property_presets_visible>` | ``true``                |
+   +---------------------------+--------------------------------------------------------------------+-------------------------+
+   | :ref:`bool<class_bool>`   | :ref:`raw_mode<class_ColorPicker_property_raw_mode>`               | ``false``               |
+   +---------------------------+--------------------------------------------------------------------+-------------------------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+---------------------------------------------+--------------------------------------------------------------------------------------------------------+
-| void                                        | :ref:`add_preset<class_ColorPicker_method_add_preset>` **(** :ref:`Color<class_Color>` color **)**     |
-+---------------------------------------------+--------------------------------------------------------------------------------------------------------+
-| void                                        | :ref:`erase_preset<class_ColorPicker_method_erase_preset>` **(** :ref:`Color<class_Color>` color **)** |
-+---------------------------------------------+--------------------------------------------------------------------------------------------------------+
-| :ref:`PoolColorArray<class_PoolColorArray>` | :ref:`get_presets<class_ColorPicker_method_get_presets>` **(** **)** |const|                           |
-+---------------------------------------------+--------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +---------------------------------------------+--------------------------------------------------------------------------------------------------------+
+   | void                                        | :ref:`add_preset<class_ColorPicker_method_add_preset>` **(** :ref:`Color<class_Color>` color **)**     |
+   +---------------------------------------------+--------------------------------------------------------------------------------------------------------+
+   | void                                        | :ref:`erase_preset<class_ColorPicker_method_erase_preset>` **(** :ref:`Color<class_Color>` color **)** |
+   +---------------------------------------------+--------------------------------------------------------------------------------------------------------+
+   | :ref:`PoolColorArray<class_PoolColorArray>` | :ref:`get_presets<class_ColorPicker_method_get_presets>` **(** **)** |const|                           |
+   +---------------------------------------------+--------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-reftable-group
 
 Theme Properties
 ----------------
 
-+-------------------------------+--------------------------------------------------------------------------------+---------+
-| :ref:`int<class_int>`         | :ref:`h_width<class_ColorPicker_theme_constant_h_width>`                       | ``30``  |
-+-------------------------------+--------------------------------------------------------------------------------+---------+
-| :ref:`int<class_int>`         | :ref:`label_width<class_ColorPicker_theme_constant_label_width>`               | ``10``  |
-+-------------------------------+--------------------------------------------------------------------------------+---------+
-| :ref:`int<class_int>`         | :ref:`margin<class_ColorPicker_theme_constant_margin>`                         | ``4``   |
-+-------------------------------+--------------------------------------------------------------------------------+---------+
-| :ref:`int<class_int>`         | :ref:`sv_height<class_ColorPicker_theme_constant_sv_height>`                   | ``256`` |
-+-------------------------------+--------------------------------------------------------------------------------+---------+
-| :ref:`int<class_int>`         | :ref:`sv_width<class_ColorPicker_theme_constant_sv_width>`                     | ``256`` |
-+-------------------------------+--------------------------------------------------------------------------------+---------+
-| :ref:`Texture<class_Texture>` | :ref:`add_preset<class_ColorPicker_theme_icon_add_preset>`                     |         |
-+-------------------------------+--------------------------------------------------------------------------------+---------+
-| :ref:`Texture<class_Texture>` | :ref:`color_hue<class_ColorPicker_theme_icon_color_hue>`                       |         |
-+-------------------------------+--------------------------------------------------------------------------------+---------+
-| :ref:`Texture<class_Texture>` | :ref:`color_sample<class_ColorPicker_theme_icon_color_sample>`                 |         |
-+-------------------------------+--------------------------------------------------------------------------------+---------+
-| :ref:`Texture<class_Texture>` | :ref:`overbright_indicator<class_ColorPicker_theme_icon_overbright_indicator>` |         |
-+-------------------------------+--------------------------------------------------------------------------------+---------+
-| :ref:`Texture<class_Texture>` | :ref:`preset_bg<class_ColorPicker_theme_icon_preset_bg>`                       |         |
-+-------------------------------+--------------------------------------------------------------------------------+---------+
-| :ref:`Texture<class_Texture>` | :ref:`screen_picker<class_ColorPicker_theme_icon_screen_picker>`               |         |
-+-------------------------------+--------------------------------------------------------------------------------+---------+
+.. table::
+   :widths: auto
+
+   +-------------------------------+--------------------------------------------------------------------------------+---------+
+   | :ref:`int<class_int>`         | :ref:`h_width<class_ColorPicker_theme_constant_h_width>`                       | ``30``  |
+   +-------------------------------+--------------------------------------------------------------------------------+---------+
+   | :ref:`int<class_int>`         | :ref:`label_width<class_ColorPicker_theme_constant_label_width>`               | ``10``  |
+   +-------------------------------+--------------------------------------------------------------------------------+---------+
+   | :ref:`int<class_int>`         | :ref:`margin<class_ColorPicker_theme_constant_margin>`                         | ``4``   |
+   +-------------------------------+--------------------------------------------------------------------------------+---------+
+   | :ref:`int<class_int>`         | :ref:`sv_height<class_ColorPicker_theme_constant_sv_height>`                   | ``256`` |
+   +-------------------------------+--------------------------------------------------------------------------------+---------+
+   | :ref:`int<class_int>`         | :ref:`sv_width<class_ColorPicker_theme_constant_sv_width>`                     | ``256`` |
+   +-------------------------------+--------------------------------------------------------------------------------+---------+
+   | :ref:`Texture<class_Texture>` | :ref:`add_preset<class_ColorPicker_theme_icon_add_preset>`                     |         |
+   +-------------------------------+--------------------------------------------------------------------------------+---------+
+   | :ref:`Texture<class_Texture>` | :ref:`color_hue<class_ColorPicker_theme_icon_color_hue>`                       |         |
+   +-------------------------------+--------------------------------------------------------------------------------+---------+
+   | :ref:`Texture<class_Texture>` | :ref:`color_sample<class_ColorPicker_theme_icon_color_sample>`                 |         |
+   +-------------------------------+--------------------------------------------------------------------------------+---------+
+   | :ref:`Texture<class_Texture>` | :ref:`overbright_indicator<class_ColorPicker_theme_icon_overbright_indicator>` |         |
+   +-------------------------------+--------------------------------------------------------------------------------+---------+
+   | :ref:`Texture<class_Texture>` | :ref:`preset_bg<class_ColorPicker_theme_icon_preset_bg>`                       |         |
+   +-------------------------------+--------------------------------------------------------------------------------+---------+
+   | :ref:`Texture<class_Texture>` | :ref:`screen_picker<class_ColorPicker_theme_icon_screen_picker>`               |         |
+   +-------------------------------+--------------------------------------------------------------------------------+---------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Signals
 -------
 
 .. _class_ColorPicker_signal_color_changed:
 
-- **color_changed** **(** :ref:`Color<class_Color>` color **)**
+.. rst-class:: classref-signal
+
+**color_changed** **(** :ref:`Color<class_Color>` color **)**
 
 Emitted when the color is changed.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_ColorPicker_signal_preset_added:
 
-- **preset_added** **(** :ref:`Color<class_Color>` color **)**
+.. rst-class:: classref-signal
+
+**preset_added** **(** :ref:`Color<class_Color>` color **)**
 
 Emitted when a preset is added.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_ColorPicker_signal_preset_removed:
 
-- **preset_removed** **(** :ref:`Color<class_Color>` color **)**
+.. rst-class:: classref-signal
+
+**preset_removed** **(** :ref:`Color<class_Color>` color **)**
 
 Emitted when a preset is removed.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_ColorPicker_property_color:
 
-- :ref:`Color<class_Color>` **color**
+.. rst-class:: classref-property
 
-+-----------+-------------------------+
-| *Default* | ``Color( 1, 1, 1, 1 )`` |
-+-----------+-------------------------+
-| *Setter*  | set_pick_color(value)   |
-+-----------+-------------------------+
-| *Getter*  | get_pick_color()        |
-+-----------+-------------------------+
+:ref:`Color<class_Color>` **color** = ``Color( 1, 1, 1, 1 )``
+
+.. rst-class:: classref-property-setget
+
+- void **set_pick_color** **(** :ref:`Color<class_Color>` value **)**
+- :ref:`Color<class_Color>` **get_pick_color** **(** **)**
 
 The currently selected color.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_ColorPicker_property_deferred_mode:
 
-- :ref:`bool<class_bool>` **deferred_mode**
+.. rst-class:: classref-property
 
-+-----------+--------------------------+
-| *Default* | ``false``                |
-+-----------+--------------------------+
-| *Setter*  | set_deferred_mode(value) |
-+-----------+--------------------------+
-| *Getter*  | is_deferred_mode()       |
-+-----------+--------------------------+
+:ref:`bool<class_bool>` **deferred_mode** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_deferred_mode** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_deferred_mode** **(** **)**
 
 If ``true``, the color will apply only after the user releases the mouse button, otherwise it will apply immediately even in mouse motion event (which can cause performance issues).
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_ColorPicker_property_edit_alpha:
 
-- :ref:`bool<class_bool>` **edit_alpha**
+.. rst-class:: classref-property
 
-+-----------+-----------------------+
-| *Default* | ``true``              |
-+-----------+-----------------------+
-| *Setter*  | set_edit_alpha(value) |
-+-----------+-----------------------+
-| *Getter*  | is_editing_alpha()    |
-+-----------+-----------------------+
+:ref:`bool<class_bool>` **edit_alpha** = ``true``
+
+.. rst-class:: classref-property-setget
+
+- void **set_edit_alpha** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_editing_alpha** **(** **)**
 
 If ``true``, shows an alpha channel slider (opacity).
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_ColorPicker_property_hsv_mode:
 
-- :ref:`bool<class_bool>` **hsv_mode**
+.. rst-class:: classref-property
 
-+-----------+---------------------+
-| *Default* | ``false``           |
-+-----------+---------------------+
-| *Setter*  | set_hsv_mode(value) |
-+-----------+---------------------+
-| *Getter*  | is_hsv_mode()       |
-+-----------+---------------------+
+:ref:`bool<class_bool>` **hsv_mode** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_hsv_mode** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_hsv_mode** **(** **)**
 
 If ``true``, allows editing the color with Hue/Saturation/Value sliders.
 
 \ **Note:** Cannot be enabled if raw mode is on.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_ColorPicker_property_presets_enabled:
 
-- :ref:`bool<class_bool>` **presets_enabled**
+.. rst-class:: classref-property
 
-+-----------+----------------------------+
-| *Default* | ``true``                   |
-+-----------+----------------------------+
-| *Setter*  | set_presets_enabled(value) |
-+-----------+----------------------------+
-| *Getter*  | are_presets_enabled()      |
-+-----------+----------------------------+
+:ref:`bool<class_bool>` **presets_enabled** = ``true``
+
+.. rst-class:: classref-property-setget
+
+- void **set_presets_enabled** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **are_presets_enabled** **(** **)**
 
 If ``true``, the "add preset" button is enabled.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_ColorPicker_property_presets_visible:
 
-- :ref:`bool<class_bool>` **presets_visible**
+.. rst-class:: classref-property
 
-+-----------+----------------------------+
-| *Default* | ``true``                   |
-+-----------+----------------------------+
-| *Setter*  | set_presets_visible(value) |
-+-----------+----------------------------+
-| *Getter*  | are_presets_visible()      |
-+-----------+----------------------------+
+:ref:`bool<class_bool>` **presets_visible** = ``true``
+
+.. rst-class:: classref-property-setget
+
+- void **set_presets_visible** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **are_presets_visible** **(** **)**
 
 If ``true``, saved color presets are visible.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_ColorPicker_property_raw_mode:
 
-- :ref:`bool<class_bool>` **raw_mode**
+.. rst-class:: classref-property
 
-+-----------+---------------------+
-| *Default* | ``false``           |
-+-----------+---------------------+
-| *Setter*  | set_raw_mode(value) |
-+-----------+---------------------+
-| *Getter*  | is_raw_mode()       |
-+-----------+---------------------+
+:ref:`bool<class_bool>` **raw_mode** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_raw_mode** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_raw_mode** **(** **)**
 
 If ``true``, allows the color R, G, B component values to go beyond 1.0, which can be used for certain special operations that require it (like tinting without darkening or rendering sprites in HDR).
 
 \ **Note:** Cannot be enabled if HSV mode is on.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_ColorPicker_method_add_preset:
 
-- void **add_preset** **(** :ref:`Color<class_Color>` color **)**
+.. rst-class:: classref-method
+
+void **add_preset** **(** :ref:`Color<class_Color>` color **)**
 
 Adds the given color to a list of color presets. The presets are displayed in the color picker and the user will be able to select them.
 
 \ **Note:** The presets list is only for *this* color picker.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_ColorPicker_method_erase_preset:
 
-- void **erase_preset** **(** :ref:`Color<class_Color>` color **)**
+.. rst-class:: classref-method
+
+void **erase_preset** **(** :ref:`Color<class_Color>` color **)**
 
 Removes the given color from the list of color presets of this color picker.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_ColorPicker_method_get_presets:
 
-- :ref:`PoolColorArray<class_PoolColorArray>` **get_presets** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`PoolColorArray<class_PoolColorArray>` **get_presets** **(** **)** |const|
 
 Returns the list of colors in the presets of the color picker.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Theme Property Descriptions
 ---------------------------
 
 .. _class_ColorPicker_theme_constant_h_width:
 
-- :ref:`int<class_int>` **h_width**
+.. rst-class:: classref-themeproperty
 
-+-----------+--------+
-| *Default* | ``30`` |
-+-----------+--------+
+:ref:`int<class_int>` **h_width** = ``30``
 
 The width of the hue selection slider.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_ColorPicker_theme_constant_label_width:
 
-- :ref:`int<class_int>` **label_width**
+.. rst-class:: classref-themeproperty
 
-+-----------+--------+
-| *Default* | ``10`` |
-+-----------+--------+
+:ref:`int<class_int>` **label_width** = ``10``
+
+.. container:: contribute
+
+	There is currently no description for this theme property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_ColorPicker_theme_constant_margin:
 
-- :ref:`int<class_int>` **margin**
+.. rst-class:: classref-themeproperty
 
-+-----------+-------+
-| *Default* | ``4`` |
-+-----------+-------+
+:ref:`int<class_int>` **margin** = ``4``
 
-The margin around the ``ColorPicker``.
+The margin around the **ColorPicker**.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_ColorPicker_theme_constant_sv_height:
 
-- :ref:`int<class_int>` **sv_height**
+.. rst-class:: classref-themeproperty
 
-+-----------+---------+
-| *Default* | ``256`` |
-+-----------+---------+
+:ref:`int<class_int>` **sv_height** = ``256``
 
 The height of the saturation-value selection box.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_ColorPicker_theme_constant_sv_width:
 
-- :ref:`int<class_int>` **sv_width**
+.. rst-class:: classref-themeproperty
 
-+-----------+---------+
-| *Default* | ``256`` |
-+-----------+---------+
+:ref:`int<class_int>` **sv_width** = ``256``
 
 The width of the saturation-value selection box.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_ColorPicker_theme_icon_add_preset:
 
-- :ref:`Texture<class_Texture>` **add_preset**
+.. rst-class:: classref-themeproperty
+
+:ref:`Texture<class_Texture>` **add_preset**
 
 The icon for the "Add Preset" button.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_ColorPicker_theme_icon_color_hue:
 
-- :ref:`Texture<class_Texture>` **color_hue**
+.. rst-class:: classref-themeproperty
+
+:ref:`Texture<class_Texture>` **color_hue**
 
 Custom texture for the hue selection slider on the right.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_ColorPicker_theme_icon_color_sample:
 
-- :ref:`Texture<class_Texture>` **color_sample**
+.. rst-class:: classref-themeproperty
+
+:ref:`Texture<class_Texture>` **color_sample**
+
+.. container:: contribute
+
+	There is currently no description for this theme property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_ColorPicker_theme_icon_overbright_indicator:
 
-- :ref:`Texture<class_Texture>` **overbright_indicator**
+.. rst-class:: classref-themeproperty
+
+:ref:`Texture<class_Texture>` **overbright_indicator**
 
 The indicator used to signalize that the color value is outside the 0-1 range.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_ColorPicker_theme_icon_preset_bg:
 
-- :ref:`Texture<class_Texture>` **preset_bg**
+.. rst-class:: classref-themeproperty
+
+:ref:`Texture<class_Texture>` **preset_bg**
+
+.. container:: contribute
+
+	There is currently no description for this theme property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_ColorPicker_theme_icon_screen_picker:
 
-- :ref:`Texture<class_Texture>` **screen_picker**
+.. rst-class:: classref-themeproperty
+
+:ref:`Texture<class_Texture>` **screen_picker**
 
 The icon for the screen color picker button.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

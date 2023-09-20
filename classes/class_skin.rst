@@ -12,94 +12,186 @@ Skin
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
+.. container:: contribute
 
+	There is currently no description for this class. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-| void                              | :ref:`add_bind<class_Skin_method_add_bind>` **(** :ref:`int<class_int>` bone, :ref:`Transform<class_Transform>` pose **)**                 |
-+-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-| void                              | :ref:`clear_binds<class_Skin_method_clear_binds>` **(** **)**                                                                              |
-+-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`             | :ref:`get_bind_bone<class_Skin_method_get_bind_bone>` **(** :ref:`int<class_int>` bind_index **)** |const|                                 |
-+-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`             | :ref:`get_bind_count<class_Skin_method_get_bind_count>` **(** **)** |const|                                                                |
-+-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`       | :ref:`get_bind_name<class_Skin_method_get_bind_name>` **(** :ref:`int<class_int>` bind_index **)** |const|                                 |
-+-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Transform<class_Transform>` | :ref:`get_bind_pose<class_Skin_method_get_bind_pose>` **(** :ref:`int<class_int>` bind_index **)** |const|                                 |
-+-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-| void                              | :ref:`set_bind_bone<class_Skin_method_set_bind_bone>` **(** :ref:`int<class_int>` bind_index, :ref:`int<class_int>` bone **)**             |
-+-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-| void                              | :ref:`set_bind_count<class_Skin_method_set_bind_count>` **(** :ref:`int<class_int>` bind_count **)**                                       |
-+-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-| void                              | :ref:`set_bind_name<class_Skin_method_set_bind_name>` **(** :ref:`int<class_int>` bind_index, :ref:`String<class_String>` name **)**       |
-+-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-| void                              | :ref:`set_bind_pose<class_Skin_method_set_bind_pose>` **(** :ref:`int<class_int>` bind_index, :ref:`Transform<class_Transform>` pose **)** |
-+-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                              | :ref:`add_bind<class_Skin_method_add_bind>` **(** :ref:`int<class_int>` bone, :ref:`Transform<class_Transform>` pose **)**                 |
+   +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                              | :ref:`clear_binds<class_Skin_method_clear_binds>` **(** **)**                                                                              |
+   +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`             | :ref:`get_bind_bone<class_Skin_method_get_bind_bone>` **(** :ref:`int<class_int>` bind_index **)** |const|                                 |
+   +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`             | :ref:`get_bind_count<class_Skin_method_get_bind_count>` **(** **)** |const|                                                                |
+   +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`       | :ref:`get_bind_name<class_Skin_method_get_bind_name>` **(** :ref:`int<class_int>` bind_index **)** |const|                                 |
+   +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Transform<class_Transform>` | :ref:`get_bind_pose<class_Skin_method_get_bind_pose>` **(** :ref:`int<class_int>` bind_index **)** |const|                                 |
+   +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                              | :ref:`set_bind_bone<class_Skin_method_set_bind_bone>` **(** :ref:`int<class_int>` bind_index, :ref:`int<class_int>` bone **)**             |
+   +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                              | :ref:`set_bind_count<class_Skin_method_set_bind_count>` **(** :ref:`int<class_int>` bind_count **)**                                       |
+   +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                              | :ref:`set_bind_name<class_Skin_method_set_bind_name>` **(** :ref:`int<class_int>` bind_index, :ref:`String<class_String>` name **)**       |
+   +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                              | :ref:`set_bind_pose<class_Skin_method_set_bind_pose>` **(** :ref:`int<class_int>` bind_index, :ref:`Transform<class_Transform>` pose **)** |
+   +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_Skin_method_add_bind:
 
-- void **add_bind** **(** :ref:`int<class_int>` bone, :ref:`Transform<class_Transform>` pose **)**
+.. rst-class:: classref-method
+
+void **add_bind** **(** :ref:`int<class_int>` bone, :ref:`Transform<class_Transform>` pose **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Skin_method_clear_binds:
 
-- void **clear_binds** **(** **)**
+.. rst-class:: classref-method
+
+void **clear_binds** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Skin_method_get_bind_bone:
 
-- :ref:`int<class_int>` **get_bind_bone** **(** :ref:`int<class_int>` bind_index **)** |const|
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **get_bind_bone** **(** :ref:`int<class_int>` bind_index **)** |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Skin_method_get_bind_count:
 
-- :ref:`int<class_int>` **get_bind_count** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **get_bind_count** **(** **)** |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Skin_method_get_bind_name:
 
-- :ref:`String<class_String>` **get_bind_name** **(** :ref:`int<class_int>` bind_index **)** |const|
+.. rst-class:: classref-method
+
+:ref:`String<class_String>` **get_bind_name** **(** :ref:`int<class_int>` bind_index **)** |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Skin_method_get_bind_pose:
 
-- :ref:`Transform<class_Transform>` **get_bind_pose** **(** :ref:`int<class_int>` bind_index **)** |const|
+.. rst-class:: classref-method
+
+:ref:`Transform<class_Transform>` **get_bind_pose** **(** :ref:`int<class_int>` bind_index **)** |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Skin_method_set_bind_bone:
 
-- void **set_bind_bone** **(** :ref:`int<class_int>` bind_index, :ref:`int<class_int>` bone **)**
+.. rst-class:: classref-method
+
+void **set_bind_bone** **(** :ref:`int<class_int>` bind_index, :ref:`int<class_int>` bone **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Skin_method_set_bind_count:
 
-- void **set_bind_count** **(** :ref:`int<class_int>` bind_count **)**
+.. rst-class:: classref-method
+
+void **set_bind_count** **(** :ref:`int<class_int>` bind_count **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Skin_method_set_bind_name:
 
-- void **set_bind_name** **(** :ref:`int<class_int>` bind_index, :ref:`String<class_String>` name **)**
+.. rst-class:: classref-method
+
+void **set_bind_name** **(** :ref:`int<class_int>` bind_index, :ref:`String<class_String>` name **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Skin_method_set_bind_pose:
 
-- void **set_bind_pose** **(** :ref:`int<class_int>` bind_index, :ref:`Transform<class_Transform>` pose **)**
+.. rst-class:: classref-method
+
+void **set_bind_pose** **(** :ref:`int<class_int>` bind_index, :ref:`Transform<class_Transform>` pose **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

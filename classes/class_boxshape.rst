@@ -14,10 +14,14 @@ BoxShape
 
 Box shape resource.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 3D box shape that can be a child of a :ref:`PhysicsBody<class_PhysicsBody>` or :ref:`Area<class_Area>`.
+
+.. rst-class:: classref-introduction-group
 
 Tutorials
 ---------
@@ -28,30 +32,41 @@ Tutorials
 
 - `3D Platformer Demo <https://godotengine.org/asset-library/asset/125>`__
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-------------------------------+-------------------------------------------------+------------------------+
-| :ref:`Vector3<class_Vector3>` | :ref:`extents<class_BoxShape_property_extents>` | ``Vector3( 1, 1, 1 )`` |
-+-------------------------------+-------------------------------------------------+------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------------+-------------------------------------------------+------------------------+
+   | :ref:`Vector3<class_Vector3>` | :ref:`extents<class_BoxShape_property_extents>` | ``Vector3( 1, 1, 1 )`` |
+   +-------------------------------+-------------------------------------------------+------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_BoxShape_property_extents:
 
-- :ref:`Vector3<class_Vector3>` **extents**
+.. rst-class:: classref-property
 
-+-----------+------------------------+
-| *Default* | ``Vector3( 1, 1, 1 )`` |
-+-----------+------------------------+
-| *Setter*  | set_extents(value)     |
-+-----------+------------------------+
-| *Getter*  | get_extents()          |
-+-----------+------------------------+
+:ref:`Vector3<class_Vector3>` **extents** = ``Vector3( 1, 1, 1 )``
+
+.. rst-class:: classref-property-setget
+
+- void **set_extents** **(** :ref:`Vector3<class_Vector3>` value **)**
+- :ref:`Vector3<class_Vector3>` **get_extents** **(** **)**
 
 The box's half extents. The width, height and depth of this shape is twice the half extents.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

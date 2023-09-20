@@ -14,43 +14,74 @@ GDScriptFunctionState
 
 State of a function call after yielding.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 Calling :ref:`@GDScript.yield<class_@GDScript_method_yield>` within a function will cause that function to yield and return its current state as an object of this type. The yielded function call can then be resumed later by calling :ref:`resume<class_GDScriptFunctionState_method_resume>` on this state object.
 
+.. rst-class:: classref-reftable-group
+
 Methods
 -------
 
-+-------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`is_valid<class_GDScriptFunctionState_method_is_valid>` **(** :ref:`bool<class_bool>` extended_check=false **)** |const| |
-+-------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>` | :ref:`resume<class_GDScriptFunctionState_method_resume>` **(** :ref:`Variant<class_Variant>` arg=null **)**                   |
-+-------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`is_valid<class_GDScriptFunctionState_method_is_valid>` **(** :ref:`bool<class_bool>` extended_check=false **)** |const| |
+   +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Variant<class_Variant>` | :ref:`resume<class_GDScriptFunctionState_method_resume>` **(** :ref:`Variant<class_Variant>` arg=null **)**                   |
+   +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Signals
 -------
 
 .. _class_GDScriptFunctionState_signal_completed:
 
-- **completed** **(** :ref:`Variant<class_Variant>` result **)**
+.. rst-class:: classref-signal
+
+**completed** **(** :ref:`Variant<class_Variant>` result **)**
+
+.. container:: contribute
+
+	There is currently no description for this signal. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_GDScriptFunctionState_method_is_valid:
 
-- :ref:`bool<class_bool>` **is_valid** **(** :ref:`bool<class_bool>` extended_check=false **)** |const|
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **is_valid** **(** :ref:`bool<class_bool>` extended_check=false **)** |const|
 
 Check whether the function call may be resumed. This is not the case if the function state was already resumed.
 
 If ``extended_check`` is enabled, it also checks if the associated script and object still exist. The extended check is done in debug mode as part of :ref:`resume<class_GDScriptFunctionState_method_resume>`, but you can use this if you know you may be trying to resume without knowing for sure the object and/or script have survived up to that point.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_GDScriptFunctionState_method_resume:
 
-- :ref:`Variant<class_Variant>` **resume** **(** :ref:`Variant<class_Variant>` arg=null **)**
+.. rst-class:: classref-method
+
+:ref:`Variant<class_Variant>` **resume** **(** :ref:`Variant<class_Variant>` arg=null **)**
 
 Resume execution of the yielded function call.
 
@@ -61,3 +92,4 @@ This function returns what the resumed function call returns, possibly another f
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

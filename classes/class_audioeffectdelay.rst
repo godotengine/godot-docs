@@ -16,251 +16,276 @@ Adds a delay audio effect to an audio bus. Plays input signal back after a perio
 
 Two tap delay and feedback options.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 Plays input signal back after a period of time. The delayed signal may be played back multiple times to create the sound of a repeating, decaying echo. Delay effects range from a subtle echo effect to a pronounced blending of previous sounds with new sounds.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+---------------------------+-----------------------------------------------------------------------------+-------------+
-| :ref:`float<class_float>` | :ref:`dry<class_AudioEffectDelay_property_dry>`                             | ``1.0``     |
-+---------------------------+-----------------------------------------------------------------------------+-------------+
-| :ref:`bool<class_bool>`   | :ref:`feedback/active<class_AudioEffectDelay_property_feedback/active>`     | ``false``   |
-+---------------------------+-----------------------------------------------------------------------------+-------------+
-| :ref:`float<class_float>` | :ref:`feedback/delay_ms<class_AudioEffectDelay_property_feedback/delay_ms>` | ``340.0``   |
-+---------------------------+-----------------------------------------------------------------------------+-------------+
-| :ref:`float<class_float>` | :ref:`feedback/level_db<class_AudioEffectDelay_property_feedback/level_db>` | ``-6.0``    |
-+---------------------------+-----------------------------------------------------------------------------+-------------+
-| :ref:`float<class_float>` | :ref:`feedback/lowpass<class_AudioEffectDelay_property_feedback/lowpass>`   | ``16000.0`` |
-+---------------------------+-----------------------------------------------------------------------------+-------------+
-| :ref:`bool<class_bool>`   | :ref:`tap1/active<class_AudioEffectDelay_property_tap1/active>`             | ``true``    |
-+---------------------------+-----------------------------------------------------------------------------+-------------+
-| :ref:`float<class_float>` | :ref:`tap1/delay_ms<class_AudioEffectDelay_property_tap1/delay_ms>`         | ``250.0``   |
-+---------------------------+-----------------------------------------------------------------------------+-------------+
-| :ref:`float<class_float>` | :ref:`tap1/level_db<class_AudioEffectDelay_property_tap1/level_db>`         | ``-6.0``    |
-+---------------------------+-----------------------------------------------------------------------------+-------------+
-| :ref:`float<class_float>` | :ref:`tap1/pan<class_AudioEffectDelay_property_tap1/pan>`                   | ``0.2``     |
-+---------------------------+-----------------------------------------------------------------------------+-------------+
-| :ref:`bool<class_bool>`   | :ref:`tap2/active<class_AudioEffectDelay_property_tap2/active>`             | ``true``    |
-+---------------------------+-----------------------------------------------------------------------------+-------------+
-| :ref:`float<class_float>` | :ref:`tap2/delay_ms<class_AudioEffectDelay_property_tap2/delay_ms>`         | ``500.0``   |
-+---------------------------+-----------------------------------------------------------------------------+-------------+
-| :ref:`float<class_float>` | :ref:`tap2/level_db<class_AudioEffectDelay_property_tap2/level_db>`         | ``-12.0``   |
-+---------------------------+-----------------------------------------------------------------------------+-------------+
-| :ref:`float<class_float>` | :ref:`tap2/pan<class_AudioEffectDelay_property_tap2/pan>`                   | ``-0.4``    |
-+---------------------------+-----------------------------------------------------------------------------+-------------+
+.. table::
+   :widths: auto
+
+   +---------------------------+-----------------------------------------------------------------------------+-------------+
+   | :ref:`float<class_float>` | :ref:`dry<class_AudioEffectDelay_property_dry>`                             | ``1.0``     |
+   +---------------------------+-----------------------------------------------------------------------------+-------------+
+   | :ref:`bool<class_bool>`   | :ref:`feedback/active<class_AudioEffectDelay_property_feedback/active>`     | ``false``   |
+   +---------------------------+-----------------------------------------------------------------------------+-------------+
+   | :ref:`float<class_float>` | :ref:`feedback/delay_ms<class_AudioEffectDelay_property_feedback/delay_ms>` | ``340.0``   |
+   +---------------------------+-----------------------------------------------------------------------------+-------------+
+   | :ref:`float<class_float>` | :ref:`feedback/level_db<class_AudioEffectDelay_property_feedback/level_db>` | ``-6.0``    |
+   +---------------------------+-----------------------------------------------------------------------------+-------------+
+   | :ref:`float<class_float>` | :ref:`feedback/lowpass<class_AudioEffectDelay_property_feedback/lowpass>`   | ``16000.0`` |
+   +---------------------------+-----------------------------------------------------------------------------+-------------+
+   | :ref:`bool<class_bool>`   | :ref:`tap1/active<class_AudioEffectDelay_property_tap1/active>`             | ``true``    |
+   +---------------------------+-----------------------------------------------------------------------------+-------------+
+   | :ref:`float<class_float>` | :ref:`tap1/delay_ms<class_AudioEffectDelay_property_tap1/delay_ms>`         | ``250.0``   |
+   +---------------------------+-----------------------------------------------------------------------------+-------------+
+   | :ref:`float<class_float>` | :ref:`tap1/level_db<class_AudioEffectDelay_property_tap1/level_db>`         | ``-6.0``    |
+   +---------------------------+-----------------------------------------------------------------------------+-------------+
+   | :ref:`float<class_float>` | :ref:`tap1/pan<class_AudioEffectDelay_property_tap1/pan>`                   | ``0.2``     |
+   +---------------------------+-----------------------------------------------------------------------------+-------------+
+   | :ref:`bool<class_bool>`   | :ref:`tap2/active<class_AudioEffectDelay_property_tap2/active>`             | ``true``    |
+   +---------------------------+-----------------------------------------------------------------------------+-------------+
+   | :ref:`float<class_float>` | :ref:`tap2/delay_ms<class_AudioEffectDelay_property_tap2/delay_ms>`         | ``500.0``   |
+   +---------------------------+-----------------------------------------------------------------------------+-------------+
+   | :ref:`float<class_float>` | :ref:`tap2/level_db<class_AudioEffectDelay_property_tap2/level_db>`         | ``-12.0``   |
+   +---------------------------+-----------------------------------------------------------------------------+-------------+
+   | :ref:`float<class_float>` | :ref:`tap2/pan<class_AudioEffectDelay_property_tap2/pan>`                   | ``-0.4``    |
+   +---------------------------+-----------------------------------------------------------------------------+-------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_AudioEffectDelay_property_dry:
 
-- :ref:`float<class_float>` **dry**
+.. rst-class:: classref-property
 
-+-----------+----------------+
-| *Default* | ``1.0``        |
-+-----------+----------------+
-| *Setter*  | set_dry(value) |
-+-----------+----------------+
-| *Getter*  | get_dry()      |
-+-----------+----------------+
+:ref:`float<class_float>` **dry** = ``1.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_dry** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_dry** **(** **)**
 
 Output percent of original sound. At 0, only delayed sounds are output. Value can range from 0 to 1.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AudioEffectDelay_property_feedback/active:
 
-- :ref:`bool<class_bool>` **feedback/active**
+.. rst-class:: classref-property
 
-+-----------+----------------------------+
-| *Default* | ``false``                  |
-+-----------+----------------------------+
-| *Setter*  | set_feedback_active(value) |
-+-----------+----------------------------+
-| *Getter*  | is_feedback_active()       |
-+-----------+----------------------------+
+:ref:`bool<class_bool>` **feedback/active** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_feedback_active** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_feedback_active** **(** **)**
 
 If ``true``, feedback is enabled.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AudioEffectDelay_property_feedback/delay_ms:
 
-- :ref:`float<class_float>` **feedback/delay_ms**
+.. rst-class:: classref-property
 
-+-----------+------------------------------+
-| *Default* | ``340.0``                    |
-+-----------+------------------------------+
-| *Setter*  | set_feedback_delay_ms(value) |
-+-----------+------------------------------+
-| *Getter*  | get_feedback_delay_ms()      |
-+-----------+------------------------------+
+:ref:`float<class_float>` **feedback/delay_ms** = ``340.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_feedback_delay_ms** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_feedback_delay_ms** **(** **)**
 
 Feedback delay time in milliseconds.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AudioEffectDelay_property_feedback/level_db:
 
-- :ref:`float<class_float>` **feedback/level_db**
+.. rst-class:: classref-property
 
-+-----------+------------------------------+
-| *Default* | ``-6.0``                     |
-+-----------+------------------------------+
-| *Setter*  | set_feedback_level_db(value) |
-+-----------+------------------------------+
-| *Getter*  | get_feedback_level_db()      |
-+-----------+------------------------------+
+:ref:`float<class_float>` **feedback/level_db** = ``-6.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_feedback_level_db** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_feedback_level_db** **(** **)**
 
 Sound level for ``tap1``.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AudioEffectDelay_property_feedback/lowpass:
 
-- :ref:`float<class_float>` **feedback/lowpass**
+.. rst-class:: classref-property
 
-+-----------+-----------------------------+
-| *Default* | ``16000.0``                 |
-+-----------+-----------------------------+
-| *Setter*  | set_feedback_lowpass(value) |
-+-----------+-----------------------------+
-| *Getter*  | get_feedback_lowpass()      |
-+-----------+-----------------------------+
+:ref:`float<class_float>` **feedback/lowpass** = ``16000.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_feedback_lowpass** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_feedback_lowpass** **(** **)**
 
 Low-pass filter for feedback, in Hz. Frequencies below this value are filtered out of the source signal.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AudioEffectDelay_property_tap1/active:
 
-- :ref:`bool<class_bool>` **tap1/active**
+.. rst-class:: classref-property
 
-+-----------+------------------------+
-| *Default* | ``true``               |
-+-----------+------------------------+
-| *Setter*  | set_tap1_active(value) |
-+-----------+------------------------+
-| *Getter*  | is_tap1_active()       |
-+-----------+------------------------+
+:ref:`bool<class_bool>` **tap1/active** = ``true``
+
+.. rst-class:: classref-property-setget
+
+- void **set_tap1_active** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_tap1_active** **(** **)**
 
 If ``true``, ``tap1`` will be enabled.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AudioEffectDelay_property_tap1/delay_ms:
 
-- :ref:`float<class_float>` **tap1/delay_ms**
+.. rst-class:: classref-property
 
-+-----------+--------------------------+
-| *Default* | ``250.0``                |
-+-----------+--------------------------+
-| *Setter*  | set_tap1_delay_ms(value) |
-+-----------+--------------------------+
-| *Getter*  | get_tap1_delay_ms()      |
-+-----------+--------------------------+
+:ref:`float<class_float>` **tap1/delay_ms** = ``250.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_tap1_delay_ms** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_tap1_delay_ms** **(** **)**
 
 ``tap1`` delay time in milliseconds.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AudioEffectDelay_property_tap1/level_db:
 
-- :ref:`float<class_float>` **tap1/level_db**
+.. rst-class:: classref-property
 
-+-----------+--------------------------+
-| *Default* | ``-6.0``                 |
-+-----------+--------------------------+
-| *Setter*  | set_tap1_level_db(value) |
-+-----------+--------------------------+
-| *Getter*  | get_tap1_level_db()      |
-+-----------+--------------------------+
+:ref:`float<class_float>` **tap1/level_db** = ``-6.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_tap1_level_db** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_tap1_level_db** **(** **)**
 
 Sound level for ``tap1``.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AudioEffectDelay_property_tap1/pan:
 
-- :ref:`float<class_float>` **tap1/pan**
+.. rst-class:: classref-property
 
-+-----------+---------------------+
-| *Default* | ``0.2``             |
-+-----------+---------------------+
-| *Setter*  | set_tap1_pan(value) |
-+-----------+---------------------+
-| *Getter*  | get_tap1_pan()      |
-+-----------+---------------------+
+:ref:`float<class_float>` **tap1/pan** = ``0.2``
+
+.. rst-class:: classref-property-setget
+
+- void **set_tap1_pan** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_tap1_pan** **(** **)**
 
 Pan position for ``tap1``. Value can range from -1 (fully left) to 1 (fully right).
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AudioEffectDelay_property_tap2/active:
 
-- :ref:`bool<class_bool>` **tap2/active**
+.. rst-class:: classref-property
 
-+-----------+------------------------+
-| *Default* | ``true``               |
-+-----------+------------------------+
-| *Setter*  | set_tap2_active(value) |
-+-----------+------------------------+
-| *Getter*  | is_tap2_active()       |
-+-----------+------------------------+
+:ref:`bool<class_bool>` **tap2/active** = ``true``
+
+.. rst-class:: classref-property-setget
+
+- void **set_tap2_active** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_tap2_active** **(** **)**
 
 If ``true``, ``tap2`` will be enabled.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AudioEffectDelay_property_tap2/delay_ms:
 
-- :ref:`float<class_float>` **tap2/delay_ms**
+.. rst-class:: classref-property
 
-+-----------+--------------------------+
-| *Default* | ``500.0``                |
-+-----------+--------------------------+
-| *Setter*  | set_tap2_delay_ms(value) |
-+-----------+--------------------------+
-| *Getter*  | get_tap2_delay_ms()      |
-+-----------+--------------------------+
+:ref:`float<class_float>` **tap2/delay_ms** = ``500.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_tap2_delay_ms** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_tap2_delay_ms** **(** **)**
 
 **Tap2** delay time in milliseconds.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AudioEffectDelay_property_tap2/level_db:
 
-- :ref:`float<class_float>` **tap2/level_db**
+.. rst-class:: classref-property
 
-+-----------+--------------------------+
-| *Default* | ``-12.0``                |
-+-----------+--------------------------+
-| *Setter*  | set_tap2_level_db(value) |
-+-----------+--------------------------+
-| *Getter*  | get_tap2_level_db()      |
-+-----------+--------------------------+
+:ref:`float<class_float>` **tap2/level_db** = ``-12.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_tap2_level_db** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_tap2_level_db** **(** **)**
 
 Sound level for ``tap2``.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AudioEffectDelay_property_tap2/pan:
 
-- :ref:`float<class_float>` **tap2/pan**
+.. rst-class:: classref-property
 
-+-----------+---------------------+
-| *Default* | ``-0.4``            |
-+-----------+---------------------+
-| *Setter*  | set_tap2_pan(value) |
-+-----------+---------------------+
-| *Getter*  | get_tap2_pan()      |
-+-----------+---------------------+
+:ref:`float<class_float>` **tap2/pan** = ``-0.4``
+
+.. rst-class:: classref-property-setget
+
+- void **set_tap2_pan** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_tap2_pan** **(** **)**
 
 Pan position for ``tap2``. Value can range from -1 (fully left) to 1 (fully right).
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

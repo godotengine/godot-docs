@@ -14,16 +14,18 @@ SceneTreeTween
 
 Lightweight object used for general-purpose animation via script, using :ref:`Tweener<class_Tweener>`\ s.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
-``SceneTreeTween`` is a tween managed by the scene tree. As opposed to :ref:`Tween<class_Tween>`, it does not require the instantiation of a node.
+**SceneTreeTween** is a tween managed by the scene tree. As opposed to :ref:`Tween<class_Tween>`, it does not require the instantiation of a node.
 
-\ ``SceneTreeTween``\ s are more light-weight than :ref:`AnimationPlayer<class_AnimationPlayer>`, so they are very much suited for simple animations or general tasks that don't require visual tweaking provided by the editor. They can be used in a fire-and-forget manner for some logic that normally would be done by code. You can e.g. make something shoot periodically by using a looped :ref:`CallbackTweener<class_CallbackTweener>` with a delay.
+\ **SceneTreeTween**\ s are more light-weight than :ref:`AnimationPlayer<class_AnimationPlayer>`, so they are very much suited for simple animations or general tasks that don't require visual tweaking provided by the editor. They can be used in a fire-and-forget manner for some logic that normally would be done by code. You can e.g. make something shoot periodically by using a looped :ref:`CallbackTweener<class_CallbackTweener>` with a delay.
 
-A ``SceneTreeTween`` can be created by using either :ref:`SceneTree.create_tween<class_SceneTree_method_create_tween>` or :ref:`Node.create_tween<class_Node_method_create_tween>`. ``SceneTreeTween``\ s created manually (i.e. by using ``Tween.new()``) are invalid. They can't be used for tweening values, but you can do manual interpolation with :ref:`interpolate_value<class_SceneTreeTween_method_interpolate_value>`.
+A **SceneTreeTween** can be created by using either :ref:`SceneTree.create_tween<class_SceneTree_method_create_tween>` or :ref:`Node.create_tween<class_Node_method_create_tween>`. **SceneTreeTween**\ s created manually (i.e. by using ``Tween.new()``) are invalid. They can't be used for tweening values, but you can do manual interpolation with :ref:`interpolate_value<class_SceneTreeTween_method_interpolate_value>`.
 
-A tween animation is created by adding :ref:`Tweener<class_Tweener>`\ s to the ``SceneTreeTween`` object, using :ref:`tween_property<class_SceneTreeTween_method_tween_property>`, :ref:`tween_interval<class_SceneTreeTween_method_tween_interval>`, :ref:`tween_callback<class_SceneTreeTween_method_tween_callback>` or :ref:`tween_method<class_SceneTreeTween_method_tween_method>`:
+A tween animation is created by adding :ref:`Tweener<class_Tweener>`\ s to the **SceneTreeTween** object, using :ref:`tween_property<class_SceneTreeTween_method_tween_property>`, :ref:`tween_interval<class_SceneTreeTween_method_tween_interval>`, :ref:`tween_callback<class_SceneTreeTween_method_tween_callback>` or :ref:`tween_method<class_SceneTreeTween_method_tween_method>`:
 
 ::
 
@@ -43,7 +45,7 @@ When a :ref:`Tweener<class_Tweener>` is created with one of the ``tween_*`` meth
     tween.tween_property($Sprite, "scale", Vector2(), 1).set_trans(Tween.TRANS_BOUNCE)
     tween.tween_callback($Sprite, "queue_free")
 
-Most of the ``SceneTreeTween`` methods can be chained this way too. In the following example the ``SceneTreeTween`` is bound to the running script's node and a default transition is set for its :ref:`Tweener<class_Tweener>`\ s:
+Most of the **SceneTreeTween** methods can be chained this way too. In the following example the **SceneTreeTween** is bound to the running script's node and a default transition is set for its :ref:`Tweener<class_Tweener>`\ s:
 
 ::
 
@@ -52,7 +54,7 @@ Most of the ``SceneTreeTween`` methods can be chained this way too. In the follo
     tween.tween_property($Sprite, "scale", Vector2(), 1)
     tween.tween_callback($Sprite, "queue_free")
 
-Another interesting use for ``SceneTreeTween``\ s is animating arbitrary sets of objects:
+Another interesting use for **SceneTreeTween**\ s is animating arbitrary sets of objects:
 
 ::
 
@@ -62,7 +64,7 @@ Another interesting use for ``SceneTreeTween``\ s is animating arbitrary sets of
 
 In the example above, all children of a node are moved one after another to position (0, 0).
 
-You should avoid using more than one ``SceneTreeTween`` per object's property. If two or more tweens animate one property at the same time, the last one created will take priority and assign the final value. If you want to interrupt and restart an animation, consider assigning the ``SceneTreeTween`` to a variable:
+You should avoid using more than one **SceneTreeTween** per object's property. If two or more tweens animate one property at the same time, the last one created will take priority and assign the final value. If you want to interrupt and restart an animation, consider assigning the **SceneTreeTween** to a variable:
 
 ::
 
@@ -74,125 +76,178 @@ You should avoid using more than one ``SceneTreeTween`` per object's property. I
 
 Some :ref:`Tweener<class_Tweener>`\ s use transitions and eases. The first accepts a :ref:`TransitionType<enum_Tween_TransitionType>` constant, and refers to the way the timing of the animation is handled (see `easings.net <https://easings.net/>`__ for some examples). The second accepts an :ref:`EaseType<enum_Tween_EaseType>` constant, and controls where the ``trans_type`` is applied to the interpolation (in the beginning, the end, or both). If you don't know which transition and easing to pick, you can try different :ref:`TransitionType<enum_Tween_TransitionType>` constants with :ref:`Tween.EASE_IN_OUT<class_Tween_constant_EASE_IN_OUT>`, and use the one that looks best.
 
-\ `Tween easing and transition types cheatsheet <https://raw.githubusercontent.com/godotengine/godot-docs/master/img/tween_cheatsheet.png>`__\ 
+\ `Tween easing and transition types cheatsheet <https://raw.githubusercontent.com/godotengine/godot-docs/3.5/img/tween_cheatsheet.png>`__\ 
 
-\ **Note:** All ``SceneTreeTween``\ s will automatically start by default. To prevent a ``SceneTreeTween`` from autostarting, you can call :ref:`stop<class_SceneTreeTween_method_stop>` immediately after it is created.
+\ **Note:** All **SceneTreeTween**\ s will automatically start by default. To prevent a **SceneTreeTween** from autostarting, you can call :ref:`stop<class_SceneTreeTween_method_stop>` immediately after it is created.
 
-\ **Note:** ``SceneTreeTween``\ s are processing after all of nodes in the current frame, i.e. after :ref:`Node._process<class_Node_method__process>` or :ref:`Node._physics_process<class_Node_method__physics_process>` (depending on :ref:`TweenProcessMode<enum_Tween_TweenProcessMode>`).
+\ **Note:** **SceneTreeTween**\ s are processing after all of nodes in the current frame, i.e. after :ref:`Node._process<class_Node_method__process>` or :ref:`Node._physics_process<class_Node_method__physics_process>` (depending on :ref:`TweenProcessMode<enum_Tween_TweenProcessMode>`).
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`SceneTreeTween<class_SceneTreeTween>`   | :ref:`bind_node<class_SceneTreeTween_method_bind_node>` **(** :ref:`Node<class_Node>` node **)**                                                                                                                                                                                                                                                                            |
-+-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`SceneTreeTween<class_SceneTreeTween>`   | :ref:`chain<class_SceneTreeTween_method_chain>` **(** **)**                                                                                                                                                                                                                                                                                                                 |
-+-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                       | :ref:`custom_step<class_SceneTreeTween_method_custom_step>` **(** :ref:`float<class_float>` delta **)**                                                                                                                                                                                                                                                                     |
-+-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                     | :ref:`get_total_elapsed_time<class_SceneTreeTween_method_get_total_elapsed_time>` **(** **)** |const|                                                                                                                                                                                                                                                                       |
-+-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>`                 | :ref:`interpolate_value<class_SceneTreeTween_method_interpolate_value>` **(** :ref:`Variant<class_Variant>` initial_value, :ref:`Variant<class_Variant>` delta_value, :ref:`float<class_float>` elapsed_time, :ref:`float<class_float>` duration, :ref:`TransitionType<enum_Tween_TransitionType>` trans_type, :ref:`EaseType<enum_Tween_EaseType>` ease_type **)** |const| |
-+-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                       | :ref:`is_running<class_SceneTreeTween_method_is_running>` **(** **)** |const|                                                                                                                                                                                                                                                                                               |
-+-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                       | :ref:`is_valid<class_SceneTreeTween_method_is_valid>` **(** **)** |const|                                                                                                                                                                                                                                                                                                   |
-+-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                          | :ref:`kill<class_SceneTreeTween_method_kill>` **(** **)**                                                                                                                                                                                                                                                                                                                   |
-+-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`SceneTreeTween<class_SceneTreeTween>`   | :ref:`parallel<class_SceneTreeTween_method_parallel>` **(** **)**                                                                                                                                                                                                                                                                                                           |
-+-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                          | :ref:`pause<class_SceneTreeTween_method_pause>` **(** **)**                                                                                                                                                                                                                                                                                                                 |
-+-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                          | :ref:`play<class_SceneTreeTween_method_play>` **(** **)**                                                                                                                                                                                                                                                                                                                   |
-+-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`SceneTreeTween<class_SceneTreeTween>`   | :ref:`set_ease<class_SceneTreeTween_method_set_ease>` **(** :ref:`EaseType<enum_Tween_EaseType>` ease **)**                                                                                                                                                                                                                                                                 |
-+-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`SceneTreeTween<class_SceneTreeTween>`   | :ref:`set_loops<class_SceneTreeTween_method_set_loops>` **(** :ref:`int<class_int>` loops=0 **)**                                                                                                                                                                                                                                                                           |
-+-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`SceneTreeTween<class_SceneTreeTween>`   | :ref:`set_parallel<class_SceneTreeTween_method_set_parallel>` **(** :ref:`bool<class_bool>` parallel=true **)**                                                                                                                                                                                                                                                             |
-+-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`SceneTreeTween<class_SceneTreeTween>`   | :ref:`set_pause_mode<class_SceneTreeTween_method_set_pause_mode>` **(** :ref:`TweenPauseMode<enum_SceneTreeTween_TweenPauseMode>` mode **)**                                                                                                                                                                                                                                |
-+-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`SceneTreeTween<class_SceneTreeTween>`   | :ref:`set_process_mode<class_SceneTreeTween_method_set_process_mode>` **(** :ref:`TweenProcessMode<enum_Tween_TweenProcessMode>` mode **)**                                                                                                                                                                                                                                 |
-+-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`SceneTreeTween<class_SceneTreeTween>`   | :ref:`set_speed_scale<class_SceneTreeTween_method_set_speed_scale>` **(** :ref:`float<class_float>` speed **)**                                                                                                                                                                                                                                                             |
-+-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`SceneTreeTween<class_SceneTreeTween>`   | :ref:`set_trans<class_SceneTreeTween_method_set_trans>` **(** :ref:`TransitionType<enum_Tween_TransitionType>` trans **)**                                                                                                                                                                                                                                                  |
-+-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                          | :ref:`stop<class_SceneTreeTween_method_stop>` **(** **)**                                                                                                                                                                                                                                                                                                                   |
-+-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`CallbackTweener<class_CallbackTweener>` | :ref:`tween_callback<class_SceneTreeTween_method_tween_callback>` **(** :ref:`Object<class_Object>` object, :ref:`String<class_String>` method, :ref:`Array<class_Array>` binds=[  ] **)**                                                                                                                                                                                  |
-+-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`IntervalTweener<class_IntervalTweener>` | :ref:`tween_interval<class_SceneTreeTween_method_tween_interval>` **(** :ref:`float<class_float>` time **)**                                                                                                                                                                                                                                                                |
-+-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`MethodTweener<class_MethodTweener>`     | :ref:`tween_method<class_SceneTreeTween_method_tween_method>` **(** :ref:`Object<class_Object>` object, :ref:`String<class_String>` method, :ref:`Variant<class_Variant>` from, :ref:`Variant<class_Variant>` to, :ref:`float<class_float>` duration, :ref:`Array<class_Array>` binds=[  ] **)**                                                                            |
-+-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PropertyTweener<class_PropertyTweener>` | :ref:`tween_property<class_SceneTreeTween_method_tween_property>` **(** :ref:`Object<class_Object>` object, :ref:`NodePath<class_NodePath>` property, :ref:`Variant<class_Variant>` final_val, :ref:`float<class_float>` duration **)**                                                                                                                                     |
-+-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`SceneTreeTween<class_SceneTreeTween>`   | :ref:`bind_node<class_SceneTreeTween_method_bind_node>` **(** :ref:`Node<class_Node>` node **)**                                                                                                                                                                                                                                                                            |
+   +-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`SceneTreeTween<class_SceneTreeTween>`   | :ref:`chain<class_SceneTreeTween_method_chain>` **(** **)**                                                                                                                                                                                                                                                                                                                 |
+   +-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                       | :ref:`custom_step<class_SceneTreeTween_method_custom_step>` **(** :ref:`float<class_float>` delta **)**                                                                                                                                                                                                                                                                     |
+   +-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`                     | :ref:`get_total_elapsed_time<class_SceneTreeTween_method_get_total_elapsed_time>` **(** **)** |const|                                                                                                                                                                                                                                                                       |
+   +-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Variant<class_Variant>`                 | :ref:`interpolate_value<class_SceneTreeTween_method_interpolate_value>` **(** :ref:`Variant<class_Variant>` initial_value, :ref:`Variant<class_Variant>` delta_value, :ref:`float<class_float>` elapsed_time, :ref:`float<class_float>` duration, :ref:`TransitionType<enum_Tween_TransitionType>` trans_type, :ref:`EaseType<enum_Tween_EaseType>` ease_type **)** |const| |
+   +-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                       | :ref:`is_running<class_SceneTreeTween_method_is_running>` **(** **)** |const|                                                                                                                                                                                                                                                                                               |
+   +-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                       | :ref:`is_valid<class_SceneTreeTween_method_is_valid>` **(** **)** |const|                                                                                                                                                                                                                                                                                                   |
+   +-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                          | :ref:`kill<class_SceneTreeTween_method_kill>` **(** **)**                                                                                                                                                                                                                                                                                                                   |
+   +-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`SceneTreeTween<class_SceneTreeTween>`   | :ref:`parallel<class_SceneTreeTween_method_parallel>` **(** **)**                                                                                                                                                                                                                                                                                                           |
+   +-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                          | :ref:`pause<class_SceneTreeTween_method_pause>` **(** **)**                                                                                                                                                                                                                                                                                                                 |
+   +-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                          | :ref:`play<class_SceneTreeTween_method_play>` **(** **)**                                                                                                                                                                                                                                                                                                                   |
+   +-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`SceneTreeTween<class_SceneTreeTween>`   | :ref:`set_ease<class_SceneTreeTween_method_set_ease>` **(** :ref:`EaseType<enum_Tween_EaseType>` ease **)**                                                                                                                                                                                                                                                                 |
+   +-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`SceneTreeTween<class_SceneTreeTween>`   | :ref:`set_loops<class_SceneTreeTween_method_set_loops>` **(** :ref:`int<class_int>` loops=0 **)**                                                                                                                                                                                                                                                                           |
+   +-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`SceneTreeTween<class_SceneTreeTween>`   | :ref:`set_parallel<class_SceneTreeTween_method_set_parallel>` **(** :ref:`bool<class_bool>` parallel=true **)**                                                                                                                                                                                                                                                             |
+   +-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`SceneTreeTween<class_SceneTreeTween>`   | :ref:`set_pause_mode<class_SceneTreeTween_method_set_pause_mode>` **(** :ref:`TweenPauseMode<enum_SceneTreeTween_TweenPauseMode>` mode **)**                                                                                                                                                                                                                                |
+   +-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`SceneTreeTween<class_SceneTreeTween>`   | :ref:`set_process_mode<class_SceneTreeTween_method_set_process_mode>` **(** :ref:`TweenProcessMode<enum_Tween_TweenProcessMode>` mode **)**                                                                                                                                                                                                                                 |
+   +-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`SceneTreeTween<class_SceneTreeTween>`   | :ref:`set_speed_scale<class_SceneTreeTween_method_set_speed_scale>` **(** :ref:`float<class_float>` speed **)**                                                                                                                                                                                                                                                             |
+   +-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`SceneTreeTween<class_SceneTreeTween>`   | :ref:`set_trans<class_SceneTreeTween_method_set_trans>` **(** :ref:`TransitionType<enum_Tween_TransitionType>` trans **)**                                                                                                                                                                                                                                                  |
+   +-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                          | :ref:`stop<class_SceneTreeTween_method_stop>` **(** **)**                                                                                                                                                                                                                                                                                                                   |
+   +-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`CallbackTweener<class_CallbackTweener>` | :ref:`tween_callback<class_SceneTreeTween_method_tween_callback>` **(** :ref:`Object<class_Object>` object, :ref:`String<class_String>` method, :ref:`Array<class_Array>` binds=[  ] **)**                                                                                                                                                                                  |
+   +-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`IntervalTweener<class_IntervalTweener>` | :ref:`tween_interval<class_SceneTreeTween_method_tween_interval>` **(** :ref:`float<class_float>` time **)**                                                                                                                                                                                                                                                                |
+   +-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`MethodTweener<class_MethodTweener>`     | :ref:`tween_method<class_SceneTreeTween_method_tween_method>` **(** :ref:`Object<class_Object>` object, :ref:`String<class_String>` method, :ref:`Variant<class_Variant>` from, :ref:`Variant<class_Variant>` to, :ref:`float<class_float>` duration, :ref:`Array<class_Array>` binds=[  ] **)**                                                                            |
+   +-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PropertyTweener<class_PropertyTweener>` | :ref:`tween_property<class_SceneTreeTween_method_tween_property>` **(** :ref:`Object<class_Object>` object, :ref:`NodePath<class_NodePath>` property, :ref:`Variant<class_Variant>` final_val, :ref:`float<class_float>` duration **)**                                                                                                                                     |
+   +-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Signals
 -------
 
 .. _class_SceneTreeTween_signal_finished:
 
-- **finished** **(** **)**
+.. rst-class:: classref-signal
 
-Emitted when the ``SceneTreeTween`` has finished all tweening. Never emitted when the ``SceneTreeTween`` is set to infinite looping (see :ref:`set_loops<class_SceneTreeTween_method_set_loops>`).
+**finished** **(** **)**
 
-\ **Note:** The ``SceneTreeTween`` is removed (invalidated) in the next processing frame after this signal is emitted. Calling :ref:`stop<class_SceneTreeTween_method_stop>` inside the signal callback will prevent the ``SceneTreeTween`` from being removed.
+Emitted when the **SceneTreeTween** has finished all tweening. Never emitted when the **SceneTreeTween** is set to infinite looping (see :ref:`set_loops<class_SceneTreeTween_method_set_loops>`).
+
+\ **Note:** The **SceneTreeTween** is removed (invalidated) in the next processing frame after this signal is emitted. Calling :ref:`stop<class_SceneTreeTween_method_stop>` inside the signal callback will prevent the **SceneTreeTween** from being removed.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_SceneTreeTween_signal_loop_finished:
 
-- **loop_finished** **(** :ref:`int<class_int>` loop_count **)**
+.. rst-class:: classref-signal
+
+**loop_finished** **(** :ref:`int<class_int>` loop_count **)**
 
 Emitted when a full loop is complete (see :ref:`set_loops<class_SceneTreeTween_method_set_loops>`), providing the loop index. This signal is not emitted after the final loop, use :ref:`finished<class_SceneTreeTween_signal_finished>` instead for this case.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_SceneTreeTween_signal_step_finished:
 
-- **step_finished** **(** :ref:`int<class_int>` idx **)**
+.. rst-class:: classref-signal
 
-Emitted when one step of the ``SceneTreeTween`` is complete, providing the step index. One step is either a single :ref:`Tweener<class_Tweener>` or a group of :ref:`Tweener<class_Tweener>`\ s running in parallel.
+**step_finished** **(** :ref:`int<class_int>` idx **)**
+
+Emitted when one step of the **SceneTreeTween** is complete, providing the step index. One step is either a single :ref:`Tweener<class_Tweener>` or a group of :ref:`Tweener<class_Tweener>`\ s running in parallel.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Enumerations
 ------------
 
 .. _enum_SceneTreeTween_TweenPauseMode:
 
-.. _class_SceneTreeTween_constant_TWEEN_PAUSE_BOUND:
-
-.. _class_SceneTreeTween_constant_TWEEN_PAUSE_STOP:
-
-.. _class_SceneTreeTween_constant_TWEEN_PAUSE_PROCESS:
+.. rst-class:: classref-enumeration
 
 enum **TweenPauseMode**:
 
-- **TWEEN_PAUSE_BOUND** = **0** --- If the ``SceneTreeTween`` has a bound node, it will process when that node can process (see :ref:`Node.pause_mode<class_Node_property_pause_mode>`). Otherwise it's the same as :ref:`TWEEN_PAUSE_STOP<class_SceneTreeTween_constant_TWEEN_PAUSE_STOP>`.
+.. _class_SceneTreeTween_constant_TWEEN_PAUSE_BOUND:
 
-- **TWEEN_PAUSE_STOP** = **1** --- If :ref:`SceneTree<class_SceneTree>` is paused, the ``SceneTreeTween`` will also pause.
+.. rst-class:: classref-enumeration-constant
 
-- **TWEEN_PAUSE_PROCESS** = **2** --- The ``SceneTreeTween`` will process regardless of whether :ref:`SceneTree<class_SceneTree>` is paused.
+:ref:`TweenPauseMode<enum_SceneTreeTween_TweenPauseMode>` **TWEEN_PAUSE_BOUND** = ``0``
+
+If the **SceneTreeTween** has a bound node, it will process when that node can process (see :ref:`Node.pause_mode<class_Node_property_pause_mode>`). Otherwise it's the same as :ref:`TWEEN_PAUSE_STOP<class_SceneTreeTween_constant_TWEEN_PAUSE_STOP>`.
+
+.. _class_SceneTreeTween_constant_TWEEN_PAUSE_STOP:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`TweenPauseMode<enum_SceneTreeTween_TweenPauseMode>` **TWEEN_PAUSE_STOP** = ``1``
+
+If :ref:`SceneTree<class_SceneTree>` is paused, the **SceneTreeTween** will also pause.
+
+.. _class_SceneTreeTween_constant_TWEEN_PAUSE_PROCESS:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`TweenPauseMode<enum_SceneTreeTween_TweenPauseMode>` **TWEEN_PAUSE_PROCESS** = ``2``
+
+The **SceneTreeTween** will process regardless of whether :ref:`SceneTree<class_SceneTree>` is paused.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_SceneTreeTween_method_bind_node:
 
-- :ref:`SceneTreeTween<class_SceneTreeTween>` **bind_node** **(** :ref:`Node<class_Node>` node **)**
+.. rst-class:: classref-method
 
-Binds this ``SceneTreeTween`` with the given ``node``. ``SceneTreeTween``\ s are processed directly by the :ref:`SceneTree<class_SceneTree>`, so they run independently of the animated nodes. When you bind a :ref:`Node<class_Node>` with the ``SceneTreeTween``, the ``SceneTreeTween`` will halt the animation when the object is not inside tree and the ``SceneTreeTween`` will be automatically killed when the bound object is freed. Also :ref:`TWEEN_PAUSE_BOUND<class_SceneTreeTween_constant_TWEEN_PAUSE_BOUND>` will make the pausing behavior dependent on the bound node.
+:ref:`SceneTreeTween<class_SceneTreeTween>` **bind_node** **(** :ref:`Node<class_Node>` node **)**
 
-For a shorter way to create and bind a ``SceneTreeTween``, you can use :ref:`Node.create_tween<class_Node_method_create_tween>`.
+Binds this **SceneTreeTween** with the given ``node``. **SceneTreeTween**\ s are processed directly by the :ref:`SceneTree<class_SceneTree>`, so they run independently of the animated nodes. When you bind a :ref:`Node<class_Node>` with the **SceneTreeTween**, the **SceneTreeTween** will halt the animation when the object is not inside tree and the **SceneTreeTween** will be automatically killed when the bound object is freed. Also :ref:`TWEEN_PAUSE_BOUND<class_SceneTreeTween_constant_TWEEN_PAUSE_BOUND>` will make the pausing behavior dependent on the bound node.
+
+For a shorter way to create and bind a **SceneTreeTween**, you can use :ref:`Node.create_tween<class_Node_method_create_tween>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_SceneTreeTween_method_chain:
 
-- :ref:`SceneTreeTween<class_SceneTreeTween>` **chain** **(** **)**
+.. rst-class:: classref-method
+
+:ref:`SceneTreeTween<class_SceneTreeTween>` **chain** **(** **)**
 
 Used to chain two :ref:`Tweener<class_Tweener>`\ s after :ref:`set_parallel<class_SceneTreeTween_method_set_parallel>` is called with ``true``.
 
@@ -203,35 +258,47 @@ Used to chain two :ref:`Tweener<class_Tweener>`\ s after :ref:`set_parallel<clas
     tween.tween_property(...) # Will run parallelly with above.
     tween.chain().tween_property(...) # Will run after two above are finished.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_SceneTreeTween_method_custom_step:
 
-- :ref:`bool<class_bool>` **custom_step** **(** :ref:`float<class_float>` delta **)**
+.. rst-class:: classref-method
 
-Processes the ``SceneTreeTween`` by the given ``delta`` value, in seconds. This is mostly useful for manual control when the ``SceneTreeTween`` is paused. It can also be used to end the ``SceneTreeTween`` animation immediately, by setting ``delta`` longer than the whole duration of the ``SceneTreeTween`` animation.
+:ref:`bool<class_bool>` **custom_step** **(** :ref:`float<class_float>` delta **)**
 
-Returns ``true`` if the ``SceneTreeTween`` still has :ref:`Tweener<class_Tweener>`\ s that haven't finished.
+Processes the **SceneTreeTween** by the given ``delta`` value, in seconds. This is mostly useful for manual control when the **SceneTreeTween** is paused. It can also be used to end the **SceneTreeTween** animation immediately, by setting ``delta`` longer than the whole duration of the **SceneTreeTween** animation.
 
-\ **Note:** The ``SceneTreeTween`` will become invalid in the next processing frame after its animation finishes. Calling :ref:`stop<class_SceneTreeTween_method_stop>` after performing :ref:`custom_step<class_SceneTreeTween_method_custom_step>` instead keeps and resets the ``SceneTreeTween``.
+Returns ``true`` if the **SceneTreeTween** still has :ref:`Tweener<class_Tweener>`\ s that haven't finished.
+
+\ **Note:** The **SceneTreeTween** will become invalid in the next processing frame after its animation finishes. Calling :ref:`stop<class_SceneTreeTween_method_stop>` after performing :ref:`custom_step<class_SceneTreeTween_method_custom_step>` instead keeps and resets the **SceneTreeTween**.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_SceneTreeTween_method_get_total_elapsed_time:
 
-- :ref:`float<class_float>` **get_total_elapsed_time** **(** **)** |const|
+.. rst-class:: classref-method
 
-Returns the total time in seconds the ``SceneTreeTween`` has been animating (i.e. the time since it started, not counting pauses etc.). The time is affected by :ref:`set_speed_scale<class_SceneTreeTween_method_set_speed_scale>`, and :ref:`stop<class_SceneTreeTween_method_stop>` will reset it to ``0``.
+:ref:`float<class_float>` **get_total_elapsed_time** **(** **)** |const|
 
-\ **Note:** As it results from accumulating frame deltas, the time returned after the ``SceneTreeTween`` has finished animating will be slightly greater than the actual ``SceneTreeTween`` duration.
+Returns the total time in seconds the **SceneTreeTween** has been animating (i.e. the time since it started, not counting pauses etc.). The time is affected by :ref:`set_speed_scale<class_SceneTreeTween_method_set_speed_scale>`, and :ref:`stop<class_SceneTreeTween_method_stop>` will reset it to ``0``.
+
+\ **Note:** As it results from accumulating frame deltas, the time returned after the **SceneTreeTween** has finished animating will be slightly greater than the actual **SceneTreeTween** duration.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_SceneTreeTween_method_interpolate_value:
 
-- :ref:`Variant<class_Variant>` **interpolate_value** **(** :ref:`Variant<class_Variant>` initial_value, :ref:`Variant<class_Variant>` delta_value, :ref:`float<class_float>` elapsed_time, :ref:`float<class_float>` duration, :ref:`TransitionType<enum_Tween_TransitionType>` trans_type, :ref:`EaseType<enum_Tween_EaseType>` ease_type **)** |const|
+.. rst-class:: classref-method
 
-This method can be used for manual interpolation of a value, when you don't want ``SceneTreeTween`` to do animating for you. It's similar to :ref:`@GDScript.lerp<class_@GDScript_method_lerp>`, but with support for custom transition and easing.
+:ref:`Variant<class_Variant>` **interpolate_value** **(** :ref:`Variant<class_Variant>` initial_value, :ref:`Variant<class_Variant>` delta_value, :ref:`float<class_float>` elapsed_time, :ref:`float<class_float>` duration, :ref:`TransitionType<enum_Tween_TransitionType>` trans_type, :ref:`EaseType<enum_Tween_EaseType>` ease_type **)** |const|
+
+This method can be used for manual interpolation of a value, when you don't want **SceneTreeTween** to do animating for you. It's similar to :ref:`@GDScript.lerp<class_@GDScript_method_lerp>`, but with support for custom transition and easing.
 
 \ ``initial_value`` is the starting value of the interpolation.
 
@@ -243,35 +310,51 @@ This method can be used for manual interpolation of a value, when you don't want
 
 \ **Note:** If ``duration`` is equal to ``0``, the method will always return the final value, regardless of ``elapsed_time`` provided.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_SceneTreeTween_method_is_running:
 
-- :ref:`bool<class_bool>` **is_running** **(** **)** |const|
+.. rst-class:: classref-method
 
-Returns whether the ``SceneTreeTween`` is currently running, i.e. it wasn't paused and it's not finished.
+:ref:`bool<class_bool>` **is_running** **(** **)** |const|
+
+Returns whether the **SceneTreeTween** is currently running, i.e. it wasn't paused and it's not finished.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_SceneTreeTween_method_is_valid:
 
-- :ref:`bool<class_bool>` **is_valid** **(** **)** |const|
+.. rst-class:: classref-method
 
-Returns whether the ``SceneTreeTween`` is valid. A valid ``SceneTreeTween`` is a ``SceneTreeTween`` contained by the scene tree (i.e. the array from :ref:`SceneTree.get_processed_tweens<class_SceneTree_method_get_processed_tweens>` will contain this ``SceneTreeTween``). A ``SceneTreeTween`` might become invalid when it has finished tweening, is killed, or when created with ``SceneTreeTween.new()``. Invalid ``SceneTreeTween``\ s can't have :ref:`Tweener<class_Tweener>`\ s appended. You can however still use :ref:`interpolate_value<class_SceneTreeTween_method_interpolate_value>`.
+:ref:`bool<class_bool>` **is_valid** **(** **)** |const|
+
+Returns whether the **SceneTreeTween** is valid. A valid **SceneTreeTween** is a **SceneTreeTween** contained by the scene tree (i.e. the array from :ref:`SceneTree.get_processed_tweens<class_SceneTree_method_get_processed_tweens>` will contain this **SceneTreeTween**). A **SceneTreeTween** might become invalid when it has finished tweening, is killed, or when created with ``SceneTreeTween.new()``. Invalid **SceneTreeTween**\ s can't have :ref:`Tweener<class_Tweener>`\ s appended. You can however still use :ref:`interpolate_value<class_SceneTreeTween_method_interpolate_value>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_SceneTreeTween_method_kill:
 
-- void **kill** **(** **)**
+.. rst-class:: classref-method
 
-Aborts all tweening operations and invalidates the ``SceneTreeTween``.
+void **kill** **(** **)**
+
+Aborts all tweening operations and invalidates the **SceneTreeTween**.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_SceneTreeTween_method_parallel:
 
-- :ref:`SceneTreeTween<class_SceneTreeTween>` **parallel** **(** **)**
+.. rst-class:: classref-method
+
+:ref:`SceneTreeTween<class_SceneTreeTween>` **parallel** **(** **)**
 
 Makes the next :ref:`Tweener<class_Tweener>` run parallelly to the previous one. Example:
 
@@ -284,101 +367,145 @@ Makes the next :ref:`Tweener<class_Tweener>` run parallelly to the previous one.
 
 All :ref:`Tweener<class_Tweener>`\ s in the example will run at the same time.
 
-You can make the ``SceneTreeTween`` parallel by default by using :ref:`set_parallel<class_SceneTreeTween_method_set_parallel>`.
+You can make the **SceneTreeTween** parallel by default by using :ref:`set_parallel<class_SceneTreeTween_method_set_parallel>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_SceneTreeTween_method_pause:
 
-- void **pause** **(** **)**
+.. rst-class:: classref-method
+
+void **pause** **(** **)**
 
 Pauses the tweening. The animation can be resumed by using :ref:`play<class_SceneTreeTween_method_play>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_SceneTreeTween_method_play:
 
-- void **play** **(** **)**
+.. rst-class:: classref-method
 
-Resumes a paused or stopped ``SceneTreeTween``.
+void **play** **(** **)**
+
+Resumes a paused or stopped **SceneTreeTween**.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_SceneTreeTween_method_set_ease:
 
-- :ref:`SceneTreeTween<class_SceneTreeTween>` **set_ease** **(** :ref:`EaseType<enum_Tween_EaseType>` ease **)**
+.. rst-class:: classref-method
 
-Sets the default ease type for :ref:`PropertyTweener<class_PropertyTweener>`\ s and :ref:`MethodTweener<class_MethodTweener>`\ s animated by this ``SceneTreeTween``.
+:ref:`SceneTreeTween<class_SceneTreeTween>` **set_ease** **(** :ref:`EaseType<enum_Tween_EaseType>` ease **)**
+
+Sets the default ease type for :ref:`PropertyTweener<class_PropertyTweener>`\ s and :ref:`MethodTweener<class_MethodTweener>`\ s animated by this **SceneTreeTween**.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_SceneTreeTween_method_set_loops:
 
-- :ref:`SceneTreeTween<class_SceneTreeTween>` **set_loops** **(** :ref:`int<class_int>` loops=0 **)**
+.. rst-class:: classref-method
+
+:ref:`SceneTreeTween<class_SceneTreeTween>` **set_loops** **(** :ref:`int<class_int>` loops=0 **)**
 
 Sets the number of times the tweening sequence will be repeated, i.e. ``set_loops(2)`` will run the animation twice.
 
-Calling this method without arguments will make the ``SceneTreeTween`` run infinitely, until either it is killed with :ref:`kill<class_SceneTreeTween_method_kill>`, the ``SceneTreeTween``'s bound node is freed, or all the animated objects have been freed (which makes further animation impossible).
+Calling this method without arguments will make the **SceneTreeTween** run infinitely, until either it is killed with :ref:`kill<class_SceneTreeTween_method_kill>`, the **SceneTreeTween**'s bound node is freed, or all the animated objects have been freed (which makes further animation impossible).
 
-\ **Warning:** Make sure to always add some duration/delay when using infinite loops. To prevent the game freezing, 0-duration looped animations (e.g. a single :ref:`CallbackTweener<class_CallbackTweener>` with no delay) are stopped after a small number of loops, which may produce unexpected results. If a ``SceneTreeTween``'s lifetime depends on some node, always use :ref:`bind_node<class_SceneTreeTween_method_bind_node>`.
+\ **Warning:** Make sure to always add some duration/delay when using infinite loops. To prevent the game freezing, 0-duration looped animations (e.g. a single :ref:`CallbackTweener<class_CallbackTweener>` with no delay) are stopped after a small number of loops, which may produce unexpected results. If a **SceneTreeTween**'s lifetime depends on some node, always use :ref:`bind_node<class_SceneTreeTween_method_bind_node>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_SceneTreeTween_method_set_parallel:
 
-- :ref:`SceneTreeTween<class_SceneTreeTween>` **set_parallel** **(** :ref:`bool<class_bool>` parallel=true **)**
+.. rst-class:: classref-method
+
+:ref:`SceneTreeTween<class_SceneTreeTween>` **set_parallel** **(** :ref:`bool<class_bool>` parallel=true **)**
 
 If ``parallel`` is ``true``, the :ref:`Tweener<class_Tweener>`\ s appended after this method will by default run simultaneously, as opposed to sequentially.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_SceneTreeTween_method_set_pause_mode:
 
-- :ref:`SceneTreeTween<class_SceneTreeTween>` **set_pause_mode** **(** :ref:`TweenPauseMode<enum_SceneTreeTween_TweenPauseMode>` mode **)**
+.. rst-class:: classref-method
 
-Determines the behavior of the ``SceneTreeTween`` when the :ref:`SceneTree<class_SceneTree>` is paused. Check :ref:`TweenPauseMode<enum_SceneTreeTween_TweenPauseMode>` for options.
+:ref:`SceneTreeTween<class_SceneTreeTween>` **set_pause_mode** **(** :ref:`TweenPauseMode<enum_SceneTreeTween_TweenPauseMode>` mode **)**
+
+Determines the behavior of the **SceneTreeTween** when the :ref:`SceneTree<class_SceneTree>` is paused. Check :ref:`TweenPauseMode<enum_SceneTreeTween_TweenPauseMode>` for options.
 
 Default value is :ref:`TWEEN_PAUSE_BOUND<class_SceneTreeTween_constant_TWEEN_PAUSE_BOUND>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_SceneTreeTween_method_set_process_mode:
 
-- :ref:`SceneTreeTween<class_SceneTreeTween>` **set_process_mode** **(** :ref:`TweenProcessMode<enum_Tween_TweenProcessMode>` mode **)**
+.. rst-class:: classref-method
 
-Determines whether the ``SceneTreeTween`` should run during idle frame (see :ref:`Node._process<class_Node_method__process>`) or physics frame (see :ref:`Node._physics_process<class_Node_method__physics_process>`.
+:ref:`SceneTreeTween<class_SceneTreeTween>` **set_process_mode** **(** :ref:`TweenProcessMode<enum_Tween_TweenProcessMode>` mode **)**
+
+Determines whether the **SceneTreeTween** should run during idle frame (see :ref:`Node._process<class_Node_method__process>`) or physics frame (see :ref:`Node._physics_process<class_Node_method__physics_process>`.
 
 Default value is :ref:`Tween.TWEEN_PROCESS_IDLE<class_Tween_constant_TWEEN_PROCESS_IDLE>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_SceneTreeTween_method_set_speed_scale:
 
-- :ref:`SceneTreeTween<class_SceneTreeTween>` **set_speed_scale** **(** :ref:`float<class_float>` speed **)**
+.. rst-class:: classref-method
+
+:ref:`SceneTreeTween<class_SceneTreeTween>` **set_speed_scale** **(** :ref:`float<class_float>` speed **)**
 
 Scales the speed of tweening. This affects all :ref:`Tweener<class_Tweener>`\ s and their delays.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_SceneTreeTween_method_set_trans:
 
-- :ref:`SceneTreeTween<class_SceneTreeTween>` **set_trans** **(** :ref:`TransitionType<enum_Tween_TransitionType>` trans **)**
+.. rst-class:: classref-method
 
-Sets the default transition type for :ref:`PropertyTweener<class_PropertyTweener>`\ s and :ref:`MethodTweener<class_MethodTweener>`\ s animated by this ``SceneTreeTween``.
+:ref:`SceneTreeTween<class_SceneTreeTween>` **set_trans** **(** :ref:`TransitionType<enum_Tween_TransitionType>` trans **)**
+
+Sets the default transition type for :ref:`PropertyTweener<class_PropertyTweener>`\ s and :ref:`MethodTweener<class_MethodTweener>`\ s animated by this **SceneTreeTween**.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_SceneTreeTween_method_stop:
 
-- void **stop** **(** **)**
+.. rst-class:: classref-method
 
-Stops the tweening and resets the ``SceneTreeTween`` to its initial state. This will not remove any appended :ref:`Tweener<class_Tweener>`\ s.
+void **stop** **(** **)**
+
+Stops the tweening and resets the **SceneTreeTween** to its initial state. This will not remove any appended :ref:`Tweener<class_Tweener>`\ s.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_SceneTreeTween_method_tween_callback:
 
-- :ref:`CallbackTweener<class_CallbackTweener>` **tween_callback** **(** :ref:`Object<class_Object>` object, :ref:`String<class_String>` method, :ref:`Array<class_Array>` binds=[  ] **)**
+.. rst-class:: classref-method
+
+:ref:`CallbackTweener<class_CallbackTweener>` **tween_callback** **(** :ref:`Object<class_Object>` object, :ref:`String<class_String>` method, :ref:`Array<class_Array>` binds=[  ] **)**
 
 Creates and appends a :ref:`CallbackTweener<class_CallbackTweener>`. This method can be used to call an arbitrary method in any object. Use ``binds`` to bind additional arguments for the call.
 
@@ -397,13 +524,17 @@ Example: turning a sprite red and then blue, with 2 second delay.
     tween.tween_callback($Sprite, "set_modulate", [Color.red]).set_delay(2)
     tween.tween_callback($Sprite, "set_modulate", [Color.blue]).set_delay(2)
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_SceneTreeTween_method_tween_interval:
 
-- :ref:`IntervalTweener<class_IntervalTweener>` **tween_interval** **(** :ref:`float<class_float>` time **)**
+.. rst-class:: classref-method
 
-Creates and appends an :ref:`IntervalTweener<class_IntervalTweener>`. This method can be used to create delays in the tween animation, as an alternative to using the delay in other :ref:`Tweener<class_Tweener>`\ s, or when there's no animation (in which case the ``SceneTreeTween`` acts as a timer). ``time`` is the length of the interval, in seconds.
+:ref:`IntervalTweener<class_IntervalTweener>` **tween_interval** **(** :ref:`float<class_float>` time **)**
+
+Creates and appends an :ref:`IntervalTweener<class_IntervalTweener>`. This method can be used to create delays in the tween animation, as an alternative to using the delay in other :ref:`Tweener<class_Tweener>`\ s, or when there's no animation (in which case the **SceneTreeTween** acts as a timer). ``time`` is the length of the interval, in seconds.
 
 Example: creating an interval in code execution.
 
@@ -425,11 +556,15 @@ Example: creating an object that moves back and forth and jumps every few second
     tween.tween_callback(self, "jump")
     tween.tween_interval(2)
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_SceneTreeTween_method_tween_method:
 
-- :ref:`MethodTweener<class_MethodTweener>` **tween_method** **(** :ref:`Object<class_Object>` object, :ref:`String<class_String>` method, :ref:`Variant<class_Variant>` from, :ref:`Variant<class_Variant>` to, :ref:`float<class_float>` duration, :ref:`Array<class_Array>` binds=[  ] **)**
+.. rst-class:: classref-method
+
+:ref:`MethodTweener<class_MethodTweener>` **tween_method** **(** :ref:`Object<class_Object>` object, :ref:`String<class_String>` method, :ref:`Variant<class_Variant>` from, :ref:`Variant<class_Variant>` to, :ref:`float<class_float>` duration, :ref:`Array<class_Array>` binds=[  ] **)**
 
 Creates and appends a :ref:`MethodTweener<class_MethodTweener>`. This method is similar to a combination of :ref:`tween_callback<class_SceneTreeTween_method_tween_callback>` and :ref:`tween_property<class_SceneTreeTween_method_tween_property>`. It calls a method over time with a tweened value provided as an argument. The value is tweened between ``from`` and ``to`` over the time specified by ``duration``, in seconds. Use ``binds`` to bind additional arguments for the call. You can use :ref:`MethodTweener.set_ease<class_MethodTweener_method_set_ease>` and :ref:`MethodTweener.set_trans<class_MethodTweener_method_set_trans>` to tweak the easing and transition of the value or :ref:`MethodTweener.set_delay<class_MethodTweener_method_set_delay>` to delay the tweening.
 
@@ -451,11 +586,15 @@ Example: setting a text of a :ref:`Label<class_Label>`, using an intermediate me
     func set_label_text(value: int):
         $Label.text = "Counting " + str(value)
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_SceneTreeTween_method_tween_property:
 
-- :ref:`PropertyTweener<class_PropertyTweener>` **tween_property** **(** :ref:`Object<class_Object>` object, :ref:`NodePath<class_NodePath>` property, :ref:`Variant<class_Variant>` final_val, :ref:`float<class_float>` duration **)**
+.. rst-class:: classref-method
+
+:ref:`PropertyTweener<class_PropertyTweener>` **tween_property** **(** :ref:`Object<class_Object>` object, :ref:`NodePath<class_NodePath>` property, :ref:`Variant<class_Variant>` final_val, :ref:`float<class_float>` duration **)**
 
 Creates and appends a :ref:`PropertyTweener<class_PropertyTweener>`. This method tweens a ``property`` of an ``object`` between an initial value and ``final_val`` in a span of time equal to ``duration``, in seconds. The initial value by default is the property's value at the time the tweening of the :ref:`PropertyTweener<class_PropertyTweener>` starts. For example:
 
@@ -480,3 +619,4 @@ Example: moving object twice from the same position, with different transition t
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

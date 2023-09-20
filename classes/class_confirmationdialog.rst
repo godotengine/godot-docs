@@ -16,6 +16,8 @@ ConfirmationDialog
 
 Dialog for confirmation of actions.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -27,28 +29,46 @@ To get cancel action, you can use:
 
     get_cancel().connect("pressed", self, "cancelled").
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-------------------------------+---------------+---------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>` | rect_min_size | ``Vector2( 200, 70 )`` (overrides :ref:`Control<class_Control_property_rect_min_size>`)           |
-+-------------------------------+---------------+---------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`   | window_title  | ``"Please Confirm..."`` (overrides :ref:`WindowDialog<class_WindowDialog_property_window_title>`) |
-+-------------------------------+---------------+---------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------------+---------------+---------------------------------------------------------------------------------------------------+
+   | :ref:`Vector2<class_Vector2>` | rect_min_size | ``Vector2( 200, 70 )`` (overrides :ref:`Control<class_Control_property_rect_min_size>`)           |
+   +-------------------------------+---------------+---------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`   | window_title  | ``"Please Confirm..."`` (overrides :ref:`WindowDialog<class_WindowDialog_property_window_title>`) |
+   +-------------------------------+---------------+---------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+-----------------------------+---------------------------------------------------------------------------+
-| :ref:`Button<class_Button>` | :ref:`get_cancel<class_ConfirmationDialog_method_get_cancel>` **(** **)** |
-+-----------------------------+---------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-----------------------------+---------------------------------------------------------------------------+
+   | :ref:`Button<class_Button>` | :ref:`get_cancel<class_ConfirmationDialog_method_get_cancel>` **(** **)** |
+   +-----------------------------+---------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_ConfirmationDialog_method_get_cancel:
 
-- :ref:`Button<class_Button>` **get_cancel** **(** **)**
+.. rst-class:: classref-method
+
+:ref:`Button<class_Button>` **get_cancel** **(** **)**
 
 Returns the cancel button.
 
@@ -57,3 +77,4 @@ Returns the cancel button.
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

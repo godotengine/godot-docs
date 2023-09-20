@@ -16,30 +16,41 @@ InputEventGesture
 
 Base class for touch control gestures.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-------------------------------+------------------------------------------------------------+---------------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`position<class_InputEventGesture_property_position>` | ``Vector2( 0, 0 )`` |
-+-------------------------------+------------------------------------------------------------+---------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------------+------------------------------------------------------------+---------------------+
+   | :ref:`Vector2<class_Vector2>` | :ref:`position<class_InputEventGesture_property_position>` | ``Vector2( 0, 0 )`` |
+   +-------------------------------+------------------------------------------------------------+---------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_InputEventGesture_property_position:
 
-- :ref:`Vector2<class_Vector2>` **position**
+.. rst-class:: classref-property
 
-+-----------+---------------------+
-| *Default* | ``Vector2( 0, 0 )`` |
-+-----------+---------------------+
-| *Setter*  | set_position(value) |
-+-----------+---------------------+
-| *Getter*  | get_position()      |
-+-----------+---------------------+
+:ref:`Vector2<class_Vector2>` **position** = ``Vector2( 0, 0 )``
+
+.. rst-class:: classref-property-setget
+
+- void **set_position** **(** :ref:`Vector2<class_Vector2>` value **)**
+- :ref:`Vector2<class_Vector2>` **get_position** **(** **)**
 
 The local gesture position relative to the :ref:`Viewport<class_Viewport>`. If used in :ref:`Control._gui_input<class_Control_method__gui_input>`, the position is relative to the current :ref:`Control<class_Control>` that received this gesture.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

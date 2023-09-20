@@ -16,6 +16,8 @@ Texture
 
 Texture for 2D and 3D.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -23,165 +25,257 @@ A texture works by registering an image in the video hardware, which then can be
 
 Textures are often created by loading them from a file. See :ref:`@GDScript.load<class_@GDScript_method_load>`.
 
-\ ``Texture`` is a base for other resources. It cannot be used directly.
+\ **Texture** is a base for other resources. It cannot be used directly.
 
 \ **Note:** The maximum texture size is 16384×16384 pixels due to graphics hardware limitations. Larger textures may fail to import.
+
+.. rst-class:: classref-reftable-group
 
 Properties
 ----------
 
-+-----------------------+--------------------------------------------+-------+
-| :ref:`int<class_int>` | :ref:`flags<class_Texture_property_flags>` | ``4`` |
-+-----------------------+--------------------------------------------+-------+
+.. table::
+   :widths: auto
+
+   +-----------------------+--------------------------------------------+-------+
+   | :ref:`int<class_int>` | :ref:`flags<class_Texture_property_flags>` | ``4`` |
+   +-----------------------+--------------------------------------------+-------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+-------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                          | :ref:`draw<class_Texture_method_draw>` **(** :ref:`RID<class_RID>` canvas_item, :ref:`Vector2<class_Vector2>` position, :ref:`Color<class_Color>` modulate=Color( 1, 1, 1, 1 ), :ref:`bool<class_bool>` transpose=false, :ref:`Texture<class_Texture>` normal_map=null **)** |const|                                                                                           |
-+-------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                          | :ref:`draw_rect<class_Texture_method_draw_rect>` **(** :ref:`RID<class_RID>` canvas_item, :ref:`Rect2<class_Rect2>` rect, :ref:`bool<class_bool>` tile, :ref:`Color<class_Color>` modulate=Color( 1, 1, 1, 1 ), :ref:`bool<class_bool>` transpose=false, :ref:`Texture<class_Texture>` normal_map=null **)** |const|                                                           |
-+-------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                          | :ref:`draw_rect_region<class_Texture_method_draw_rect_region>` **(** :ref:`RID<class_RID>` canvas_item, :ref:`Rect2<class_Rect2>` rect, :ref:`Rect2<class_Rect2>` src_rect, :ref:`Color<class_Color>` modulate=Color( 1, 1, 1, 1 ), :ref:`bool<class_bool>` transpose=false, :ref:`Texture<class_Texture>` normal_map=null, :ref:`bool<class_bool>` clip_uv=true **)** |const| |
-+-------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Image<class_Image>`     | :ref:`get_data<class_Texture_method_get_data>` **(** **)** |const|                                                                                                                                                                                                                                                                                                             |
-+-------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`         | :ref:`get_height<class_Texture_method_get_height>` **(** **)** |const|                                                                                                                                                                                                                                                                                                         |
-+-------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`get_size<class_Texture_method_get_size>` **(** **)** |const|                                                                                                                                                                                                                                                                                                             |
-+-------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`         | :ref:`get_width<class_Texture_method_get_width>` **(** **)** |const|                                                                                                                                                                                                                                                                                                           |
-+-------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`has_alpha<class_Texture_method_has_alpha>` **(** **)** |const|                                                                                                                                                                                                                                                                                                           |
-+-------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                          | :ref:`draw<class_Texture_method_draw>` **(** :ref:`RID<class_RID>` canvas_item, :ref:`Vector2<class_Vector2>` position, :ref:`Color<class_Color>` modulate=Color( 1, 1, 1, 1 ), :ref:`bool<class_bool>` transpose=false, :ref:`Texture<class_Texture>` normal_map=null **)** |const|                                                                                           |
+   +-------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                          | :ref:`draw_rect<class_Texture_method_draw_rect>` **(** :ref:`RID<class_RID>` canvas_item, :ref:`Rect2<class_Rect2>` rect, :ref:`bool<class_bool>` tile, :ref:`Color<class_Color>` modulate=Color( 1, 1, 1, 1 ), :ref:`bool<class_bool>` transpose=false, :ref:`Texture<class_Texture>` normal_map=null **)** |const|                                                           |
+   +-------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                          | :ref:`draw_rect_region<class_Texture_method_draw_rect_region>` **(** :ref:`RID<class_RID>` canvas_item, :ref:`Rect2<class_Rect2>` rect, :ref:`Rect2<class_Rect2>` src_rect, :ref:`Color<class_Color>` modulate=Color( 1, 1, 1, 1 ), :ref:`bool<class_bool>` transpose=false, :ref:`Texture<class_Texture>` normal_map=null, :ref:`bool<class_bool>` clip_uv=true **)** |const| |
+   +-------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Image<class_Image>`     | :ref:`get_data<class_Texture_method_get_data>` **(** **)** |const|                                                                                                                                                                                                                                                                                                             |
+   +-------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`         | :ref:`get_height<class_Texture_method_get_height>` **(** **)** |const|                                                                                                                                                                                                                                                                                                         |
+   +-------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector2<class_Vector2>` | :ref:`get_size<class_Texture_method_get_size>` **(** **)** |const|                                                                                                                                                                                                                                                                                                             |
+   +-------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`         | :ref:`get_width<class_Texture_method_get_width>` **(** **)** |const|                                                                                                                                                                                                                                                                                                           |
+   +-------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`has_alpha<class_Texture_method_has_alpha>` **(** **)** |const|                                                                                                                                                                                                                                                                                                           |
+   +-------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Enumerations
 ------------
 
 .. _enum_Texture_Flags:
 
-.. _class_Texture_constant_FLAGS_DEFAULT:
-
-.. _class_Texture_constant_FLAG_MIPMAPS:
-
-.. _class_Texture_constant_FLAG_REPEAT:
-
-.. _class_Texture_constant_FLAG_FILTER:
-
-.. _class_Texture_constant_FLAG_ANISOTROPIC_FILTER:
-
-.. _class_Texture_constant_FLAG_CONVERT_TO_LINEAR:
-
-.. _class_Texture_constant_FLAG_MIRRORED_REPEAT:
-
-.. _class_Texture_constant_FLAG_VIDEO_SURFACE:
+.. rst-class:: classref-enumeration
 
 enum **Flags**:
 
-- **FLAGS_DEFAULT** = **7** --- Default flags. :ref:`FLAG_MIPMAPS<class_Texture_constant_FLAG_MIPMAPS>`, :ref:`FLAG_REPEAT<class_Texture_constant_FLAG_REPEAT>` and :ref:`FLAG_FILTER<class_Texture_constant_FLAG_FILTER>` are enabled.
+.. _class_Texture_constant_FLAGS_DEFAULT:
 
-- **FLAG_MIPMAPS** = **1** --- Generates mipmaps, which are smaller versions of the same texture to use when zoomed out, keeping the aspect ratio.
+.. rst-class:: classref-enumeration-constant
 
-- **FLAG_REPEAT** = **2** --- Repeats the texture (instead of clamp to edge).
+:ref:`Flags<enum_Texture_Flags>` **FLAGS_DEFAULT** = ``7``
+
+Default flags. :ref:`FLAG_MIPMAPS<class_Texture_constant_FLAG_MIPMAPS>`, :ref:`FLAG_REPEAT<class_Texture_constant_FLAG_REPEAT>` and :ref:`FLAG_FILTER<class_Texture_constant_FLAG_FILTER>` are enabled.
+
+.. _class_Texture_constant_FLAG_MIPMAPS:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Flags<enum_Texture_Flags>` **FLAG_MIPMAPS** = ``1``
+
+Generates mipmaps, which are smaller versions of the same texture to use when zoomed out, keeping the aspect ratio.
+
+.. _class_Texture_constant_FLAG_REPEAT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Flags<enum_Texture_Flags>` **FLAG_REPEAT** = ``2``
+
+Repeats the texture (instead of clamp to edge).
 
 \ **Note:** Ignored when using an :ref:`AtlasTexture<class_AtlasTexture>` as these don't support repetition.
 
-- **FLAG_FILTER** = **4** --- Uses a magnifying filter, to enable smooth zooming in of the texture.
+.. _class_Texture_constant_FLAG_FILTER:
 
-- **FLAG_ANISOTROPIC_FILTER** = **8** --- Uses anisotropic mipmap filtering. Generates smaller versions of the same texture with different aspect ratios.
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Flags<enum_Texture_Flags>` **FLAG_FILTER** = ``4``
+
+Uses a magnifying filter, to enable smooth zooming in of the texture.
+
+.. _class_Texture_constant_FLAG_ANISOTROPIC_FILTER:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Flags<enum_Texture_Flags>` **FLAG_ANISOTROPIC_FILTER** = ``8``
+
+Uses anisotropic mipmap filtering. Generates smaller versions of the same texture with different aspect ratios.
 
 This results in better-looking textures when viewed from oblique angles.
 
-- **FLAG_CONVERT_TO_LINEAR** = **16** --- Converts the texture to the sRGB color space.
+.. _class_Texture_constant_FLAG_CONVERT_TO_LINEAR:
 
-- **FLAG_MIRRORED_REPEAT** = **32** --- Repeats the texture with alternate sections mirrored.
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Flags<enum_Texture_Flags>` **FLAG_CONVERT_TO_LINEAR** = ``16``
+
+Converts the texture to the sRGB color space.
+
+.. _class_Texture_constant_FLAG_MIRRORED_REPEAT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Flags<enum_Texture_Flags>` **FLAG_MIRRORED_REPEAT** = ``32``
+
+Repeats the texture with alternate sections mirrored.
 
 \ **Note:** Ignored when using an :ref:`AtlasTexture<class_AtlasTexture>` as these don't support repetition.
 
-- **FLAG_VIDEO_SURFACE** = **2048** --- Texture is a video surface.
+.. _class_Texture_constant_FLAG_VIDEO_SURFACE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Flags<enum_Texture_Flags>` **FLAG_VIDEO_SURFACE** = ``2048``
+
+Texture is a video surface.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_Texture_property_flags:
 
-- :ref:`int<class_int>` **flags**
+.. rst-class:: classref-property
 
-+-----------+------------------+
-| *Default* | ``4``            |
-+-----------+------------------+
-| *Setter*  | set_flags(value) |
-+-----------+------------------+
-| *Getter*  | get_flags()      |
-+-----------+------------------+
+:ref:`int<class_int>` **flags** = ``4``
 
-The texture's :ref:`Flags<enum_Texture_Flags>`. :ref:`Flags<enum_Texture_Flags>` are used to set various properties of the ``Texture``.
+.. rst-class:: classref-property-setget
+
+- void **set_flags** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_flags** **(** **)**
+
+The texture's :ref:`Flags<enum_Texture_Flags>`. :ref:`Flags<enum_Texture_Flags>` are used to set various properties of the **Texture**.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_Texture_method_draw:
 
-- void **draw** **(** :ref:`RID<class_RID>` canvas_item, :ref:`Vector2<class_Vector2>` position, :ref:`Color<class_Color>` modulate=Color( 1, 1, 1, 1 ), :ref:`bool<class_bool>` transpose=false, :ref:`Texture<class_Texture>` normal_map=null **)** |const|
+.. rst-class:: classref-method
 
-Draws the texture using a :ref:`CanvasItem<class_CanvasItem>` with the :ref:`VisualServer<class_VisualServer>` API at the specified ``position``. Equivalent to :ref:`VisualServer.canvas_item_add_texture_rect<class_VisualServer_method_canvas_item_add_texture_rect>` with a rect at ``position`` and the size of this ``Texture``.
+void **draw** **(** :ref:`RID<class_RID>` canvas_item, :ref:`Vector2<class_Vector2>` position, :ref:`Color<class_Color>` modulate=Color( 1, 1, 1, 1 ), :ref:`bool<class_bool>` transpose=false, :ref:`Texture<class_Texture>` normal_map=null **)** |const|
+
+Draws the texture using a :ref:`CanvasItem<class_CanvasItem>` with the :ref:`VisualServer<class_VisualServer>` API at the specified ``position``. Equivalent to :ref:`VisualServer.canvas_item_add_texture_rect<class_VisualServer_method_canvas_item_add_texture_rect>` with a rect at ``position`` and the size of this **Texture**.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Texture_method_draw_rect:
 
-- void **draw_rect** **(** :ref:`RID<class_RID>` canvas_item, :ref:`Rect2<class_Rect2>` rect, :ref:`bool<class_bool>` tile, :ref:`Color<class_Color>` modulate=Color( 1, 1, 1, 1 ), :ref:`bool<class_bool>` transpose=false, :ref:`Texture<class_Texture>` normal_map=null **)** |const|
+.. rst-class:: classref-method
+
+void **draw_rect** **(** :ref:`RID<class_RID>` canvas_item, :ref:`Rect2<class_Rect2>` rect, :ref:`bool<class_bool>` tile, :ref:`Color<class_Color>` modulate=Color( 1, 1, 1, 1 ), :ref:`bool<class_bool>` transpose=false, :ref:`Texture<class_Texture>` normal_map=null **)** |const|
 
 Draws the texture using a :ref:`CanvasItem<class_CanvasItem>` with the :ref:`VisualServer<class_VisualServer>` API. Equivalent to :ref:`VisualServer.canvas_item_add_texture_rect<class_VisualServer_method_canvas_item_add_texture_rect>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Texture_method_draw_rect_region:
 
-- void **draw_rect_region** **(** :ref:`RID<class_RID>` canvas_item, :ref:`Rect2<class_Rect2>` rect, :ref:`Rect2<class_Rect2>` src_rect, :ref:`Color<class_Color>` modulate=Color( 1, 1, 1, 1 ), :ref:`bool<class_bool>` transpose=false, :ref:`Texture<class_Texture>` normal_map=null, :ref:`bool<class_bool>` clip_uv=true **)** |const|
+.. rst-class:: classref-method
+
+void **draw_rect_region** **(** :ref:`RID<class_RID>` canvas_item, :ref:`Rect2<class_Rect2>` rect, :ref:`Rect2<class_Rect2>` src_rect, :ref:`Color<class_Color>` modulate=Color( 1, 1, 1, 1 ), :ref:`bool<class_bool>` transpose=false, :ref:`Texture<class_Texture>` normal_map=null, :ref:`bool<class_bool>` clip_uv=true **)** |const|
 
 Draws a part of the texture using a :ref:`CanvasItem<class_CanvasItem>` with the :ref:`VisualServer<class_VisualServer>` API. Equivalent to :ref:`VisualServer.canvas_item_add_texture_rect_region<class_VisualServer_method_canvas_item_add_texture_rect_region>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Texture_method_get_data:
 
-- :ref:`Image<class_Image>` **get_data** **(** **)** |const|
+.. rst-class:: classref-method
 
-Returns an :ref:`Image<class_Image>` that is a copy of data from this ``Texture``. :ref:`Image<class_Image>`\ s can be accessed and manipulated directly.
+:ref:`Image<class_Image>` **get_data** **(** **)** |const|
+
+Returns an :ref:`Image<class_Image>` that is a copy of data from this **Texture**. :ref:`Image<class_Image>`\ s can be accessed and manipulated directly.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Texture_method_get_height:
 
-- :ref:`int<class_int>` **get_height** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **get_height** **(** **)** |const|
 
 Returns the texture height.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Texture_method_get_size:
 
-- :ref:`Vector2<class_Vector2>` **get_size** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`Vector2<class_Vector2>` **get_size** **(** **)** |const|
 
 Returns the texture size.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Texture_method_get_width:
 
-- :ref:`int<class_int>` **get_width** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **get_width** **(** **)** |const|
 
 Returns the texture width.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Texture_method_has_alpha:
 
-- :ref:`bool<class_bool>` **has_alpha** **(** **)** |const|
+.. rst-class:: classref-method
 
-Returns ``true`` if this ``Texture`` has an alpha channel.
+:ref:`bool<class_bool>` **has_alpha** **(** **)** |const|
+
+Returns ``true`` if this **Texture** has an alpha channel.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

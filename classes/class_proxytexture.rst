@@ -12,30 +12,49 @@ ProxyTexture
 
 **Inherits:** :ref:`Texture<class_Texture>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
+.. container:: contribute
 
+	There is currently no description for this class. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-reftable-group
 
 Properties
 ----------
 
-+-------------------------------+-----------------------------------------------+----------------------------------------------------------------+
-| :ref:`Texture<class_Texture>` | :ref:`base<class_ProxyTexture_property_base>` |                                                                |
-+-------------------------------+-----------------------------------------------+----------------------------------------------------------------+
-| :ref:`int<class_int>`         | flags                                         | ``0`` (overrides :ref:`Texture<class_Texture_property_flags>`) |
-+-------------------------------+-----------------------------------------------+----------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------------+-----------------------------------------------+----------------------------------------------------------------+
+   | :ref:`Texture<class_Texture>` | :ref:`base<class_ProxyTexture_property_base>` |                                                                |
+   +-------------------------------+-----------------------------------------------+----------------------------------------------------------------+
+   | :ref:`int<class_int>`         | flags                                         | ``0`` (overrides :ref:`Texture<class_Texture_property_flags>`) |
+   +-------------------------------+-----------------------------------------------+----------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_ProxyTexture_property_base:
 
-- :ref:`Texture<class_Texture>` **base**
+.. rst-class:: classref-property
 
-+----------+-----------------+
-| *Setter* | set_base(value) |
-+----------+-----------------+
-| *Getter* | get_base()      |
-+----------+-----------------+
+:ref:`Texture<class_Texture>` **base**
+
+.. rst-class:: classref-property-setget
+
+- void **set_base** **(** :ref:`Texture<class_Texture>` value **)**
+- :ref:`Texture<class_Texture>` **get_base** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

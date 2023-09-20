@@ -14,6 +14,8 @@ WebXRInterface
 
 AR/VR interface using WebXR.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -23,7 +25,7 @@ As such, this interface is only available when running in an HTML5 export.
 
 WebXR supports a wide range of devices, from the very capable (like Valve Index, HTC Vive, Oculus Rift and Quest) down to the much less capable (like Google Cardboard, Oculus Go, GearVR, or plain smartphones).
 
-Since WebXR is based on Javascript, it makes extensive use of callbacks, which means that ``WebXRInterface`` is forced to use signals, where other AR/VR interfaces would instead use functions that return a result immediately. This makes ``WebXRInterface`` quite a bit more complicated to initialize than other AR/VR interfaces.
+Since WebXR is based on Javascript, it makes extensive use of callbacks, which means that **WebXRInterface** is forced to use signals, where other AR/VR interfaces would instead use functions that return a result immediately. This makes **WebXRInterface** quite a bit more complicated to initialize than other AR/VR interfaces.
 
 Here's the minimum code required to start an immersive VR session:
 
@@ -116,49 +118,69 @@ There are several ways to handle "controller" input:
 
 You can use one or all of these methods to allow your game or app to support a wider or narrower set of devices and input methods, or to allow more advanced interactions with more advanced devices.
 
+.. rst-class:: classref-introduction-group
+
 Tutorials
 ---------
 
 - `How to make a VR game for WebXR with Godot <https://www.snopekgames.com/blog/2020/how-make-vr-game-webxr-godot>`__
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-------------------------------------------------+-------------------------------------------------------------------------------------------------------+
-| :ref:`PoolVector3Array<class_PoolVector3Array>` | :ref:`bounds_geometry<class_WebXRInterface_property_bounds_geometry>`                                 |
-+-------------------------------------------------+-------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`                     | :ref:`optional_features<class_WebXRInterface_property_optional_features>`                             |
-+-------------------------------------------------+-------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`                     | :ref:`reference_space_type<class_WebXRInterface_property_reference_space_type>`                       |
-+-------------------------------------------------+-------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`                     | :ref:`requested_reference_space_types<class_WebXRInterface_property_requested_reference_space_types>` |
-+-------------------------------------------------+-------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`                     | :ref:`required_features<class_WebXRInterface_property_required_features>`                             |
-+-------------------------------------------------+-------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`                     | :ref:`session_mode<class_WebXRInterface_property_session_mode>`                                       |
-+-------------------------------------------------+-------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`                     | :ref:`visibility_state<class_WebXRInterface_property_visibility_state>`                               |
-+-------------------------------------------------+-------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                         | :ref:`xr_standard_mapping<class_WebXRInterface_property_xr_standard_mapping>`                         |
-+-------------------------------------------------+-------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------------------------------+-------------------------------------------------------------------------------------------------------+
+   | :ref:`PoolVector3Array<class_PoolVector3Array>` | :ref:`bounds_geometry<class_WebXRInterface_property_bounds_geometry>`                                 |
+   +-------------------------------------------------+-------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                     | :ref:`optional_features<class_WebXRInterface_property_optional_features>`                             |
+   +-------------------------------------------------+-------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                     | :ref:`reference_space_type<class_WebXRInterface_property_reference_space_type>`                       |
+   +-------------------------------------------------+-------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                     | :ref:`requested_reference_space_types<class_WebXRInterface_property_requested_reference_space_types>` |
+   +-------------------------------------------------+-------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                     | :ref:`required_features<class_WebXRInterface_property_required_features>`                             |
+   +-------------------------------------------------+-------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                     | :ref:`session_mode<class_WebXRInterface_property_session_mode>`                                       |
+   +-------------------------------------------------+-------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                     | :ref:`visibility_state<class_WebXRInterface_property_visibility_state>`                               |
+   +-------------------------------------------------+-------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                         | :ref:`xr_standard_mapping<class_WebXRInterface_property_xr_standard_mapping>`                         |
+   +-------------------------------------------------+-------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+-----------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`ARVRPositionalTracker<class_ARVRPositionalTracker>` | :ref:`get_controller<class_WebXRInterface_method_get_controller>` **(** :ref:`int<class_int>` controller_id **)** |const|                                 |
-+-----------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`TargetRayMode<enum_WebXRInterface_TargetRayMode>`   | :ref:`get_controller_target_ray_mode<class_WebXRInterface_method_get_controller_target_ray_mode>` **(** :ref:`int<class_int>` controller_id **)** |const| |
-+-----------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                      | :ref:`is_session_supported<class_WebXRInterface_method_is_session_supported>` **(** :ref:`String<class_String>` session_mode **)**                        |
-+-----------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-----------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`ARVRPositionalTracker<class_ARVRPositionalTracker>` | :ref:`get_controller<class_WebXRInterface_method_get_controller>` **(** :ref:`int<class_int>` controller_id **)** |const|                                 |
+   +-----------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`TargetRayMode<enum_WebXRInterface_TargetRayMode>`   | :ref:`get_controller_target_ray_mode<class_WebXRInterface_method_get_controller_target_ray_mode>` **(** :ref:`int<class_int>` controller_id **)** |const| |
+   +-----------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                                      | :ref:`is_session_supported<class_WebXRInterface_method_is_session_supported>` **(** :ref:`String<class_String>` session_mode **)**                        |
+   +-----------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Signals
 -------
 
 .. _class_WebXRInterface_signal_reference_space_reset:
 
-- **reference_space_reset** **(** **)**
+.. rst-class:: classref-signal
+
+**reference_space_reset** **(** **)**
 
 Emitted to indicate that the reference space has been reset or reconfigured.
 
@@ -166,145 +188,221 @@ When (or whether) this is emitted depends on the user's browser or device, but m
 
 See `WebXR's XRReferenceSpace reset event <https://developer.mozilla.org/en-US/docs/Web/API/XRReferenceSpace/reset_event>`__ for more information.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_WebXRInterface_signal_select:
 
-- **select** **(** :ref:`int<class_int>` controller_id **)**
+.. rst-class:: classref-signal
+
+**select** **(** :ref:`int<class_int>` controller_id **)**
 
 Emitted after one of the "controllers" has finished its "primary action".
 
 Use :ref:`get_controller<class_WebXRInterface_method_get_controller>` to get more information about the controller.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_WebXRInterface_signal_selectend:
 
-- **selectend** **(** :ref:`int<class_int>` controller_id **)**
+.. rst-class:: classref-signal
+
+**selectend** **(** :ref:`int<class_int>` controller_id **)**
 
 Emitted when one of the "controllers" has finished its "primary action".
 
 Use :ref:`get_controller<class_WebXRInterface_method_get_controller>` to get more information about the controller.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_WebXRInterface_signal_selectstart:
 
-- **selectstart** **(** :ref:`int<class_int>` controller_id **)**
+.. rst-class:: classref-signal
+
+**selectstart** **(** :ref:`int<class_int>` controller_id **)**
 
 Emitted when one of the "controllers" has started its "primary action".
 
 Use :ref:`get_controller<class_WebXRInterface_method_get_controller>` to get more information about the controller.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_WebXRInterface_signal_session_ended:
 
-- **session_ended** **(** **)**
+.. rst-class:: classref-signal
+
+**session_ended** **(** **)**
 
 Emitted when the user ends the WebXR session (which can be done using UI from the browser or device).
 
 At this point, you should do ``get_viewport().arvr = false`` to instruct Godot to resume rendering to the screen.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_WebXRInterface_signal_session_failed:
 
-- **session_failed** **(** :ref:`String<class_String>` message **)**
+.. rst-class:: classref-signal
+
+**session_failed** **(** :ref:`String<class_String>` message **)**
 
 Emitted by :ref:`ARVRInterface.initialize<class_ARVRInterface_method_initialize>` if the session fails to start.
 
 \ ``message`` may optionally contain an error message from WebXR, or an empty string if no message is available.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_WebXRInterface_signal_session_started:
 
-- **session_started** **(** **)**
+.. rst-class:: classref-signal
+
+**session_started** **(** **)**
 
 Emitted by :ref:`ARVRInterface.initialize<class_ARVRInterface_method_initialize>` if the session is successfully started.
 
 At this point, it's safe to do ``get_viewport().arvr = true`` to instruct Godot to start rendering to the AR/VR device.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_WebXRInterface_signal_session_supported:
 
-- **session_supported** **(** :ref:`String<class_String>` session_mode, :ref:`bool<class_bool>` supported **)**
+.. rst-class:: classref-signal
+
+**session_supported** **(** :ref:`String<class_String>` session_mode, :ref:`bool<class_bool>` supported **)**
 
 Emitted by :ref:`is_session_supported<class_WebXRInterface_method_is_session_supported>` to indicate if the given ``session_mode`` is supported or not.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_WebXRInterface_signal_squeeze:
 
-- **squeeze** **(** :ref:`int<class_int>` controller_id **)**
+.. rst-class:: classref-signal
+
+**squeeze** **(** :ref:`int<class_int>` controller_id **)**
 
 Emitted after one of the "controllers" has finished its "primary squeeze action".
 
 Use :ref:`get_controller<class_WebXRInterface_method_get_controller>` to get more information about the controller.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_WebXRInterface_signal_squeezeend:
 
-- **squeezeend** **(** :ref:`int<class_int>` controller_id **)**
+.. rst-class:: classref-signal
+
+**squeezeend** **(** :ref:`int<class_int>` controller_id **)**
 
 Emitted when one of the "controllers" has finished its "primary squeeze action".
 
 Use :ref:`get_controller<class_WebXRInterface_method_get_controller>` to get more information about the controller.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_WebXRInterface_signal_squeezestart:
 
-- **squeezestart** **(** :ref:`int<class_int>` controller_id **)**
+.. rst-class:: classref-signal
+
+**squeezestart** **(** :ref:`int<class_int>` controller_id **)**
 
 Emitted when one of the "controllers" has started its "primary squeeze action".
 
 Use :ref:`get_controller<class_WebXRInterface_method_get_controller>` to get more information about the controller.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_WebXRInterface_signal_visibility_state_changed:
 
-- **visibility_state_changed** **(** **)**
+.. rst-class:: classref-signal
+
+**visibility_state_changed** **(** **)**
 
 Emitted when :ref:`visibility_state<class_WebXRInterface_property_visibility_state>` has changed.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Enumerations
 ------------
 
 .. _enum_WebXRInterface_TargetRayMode:
 
-.. _class_WebXRInterface_constant_TARGET_RAY_MODE_UNKNOWN:
-
-.. _class_WebXRInterface_constant_TARGET_RAY_MODE_GAZE:
-
-.. _class_WebXRInterface_constant_TARGET_RAY_MODE_TRACKED_POINTER:
-
-.. _class_WebXRInterface_constant_TARGET_RAY_MODE_SCREEN:
+.. rst-class:: classref-enumeration
 
 enum **TargetRayMode**:
 
-- **TARGET_RAY_MODE_UNKNOWN** = **0** --- We don't know the target ray mode.
+.. _class_WebXRInterface_constant_TARGET_RAY_MODE_UNKNOWN:
 
-- **TARGET_RAY_MODE_GAZE** = **1** --- Target ray originates at the viewer's eyes and points in the direction they are looking.
+.. rst-class:: classref-enumeration-constant
 
-- **TARGET_RAY_MODE_TRACKED_POINTER** = **2** --- Target ray from a handheld pointer, most likely a VR touch controller.
+:ref:`TargetRayMode<enum_WebXRInterface_TargetRayMode>` **TARGET_RAY_MODE_UNKNOWN** = ``0``
 
-- **TARGET_RAY_MODE_SCREEN** = **3** --- Target ray from touch screen, mouse or other tactile input device.
+We don't know the target ray mode.
+
+.. _class_WebXRInterface_constant_TARGET_RAY_MODE_GAZE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`TargetRayMode<enum_WebXRInterface_TargetRayMode>` **TARGET_RAY_MODE_GAZE** = ``1``
+
+Target ray originates at the viewer's eyes and points in the direction they are looking.
+
+.. _class_WebXRInterface_constant_TARGET_RAY_MODE_TRACKED_POINTER:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`TargetRayMode<enum_WebXRInterface_TargetRayMode>` **TARGET_RAY_MODE_TRACKED_POINTER** = ``2``
+
+Target ray from a handheld pointer, most likely a VR touch controller.
+
+.. _class_WebXRInterface_constant_TARGET_RAY_MODE_SCREEN:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`TargetRayMode<enum_WebXRInterface_TargetRayMode>` **TARGET_RAY_MODE_SCREEN** = ``3``
+
+Target ray from touch screen, mouse or other tactile input device.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_WebXRInterface_property_bounds_geometry:
 
-- :ref:`PoolVector3Array<class_PoolVector3Array>` **bounds_geometry**
+.. rst-class:: classref-property
 
-+----------+-----------------------+
-| *Getter* | get_bounds_geometry() |
-+----------+-----------------------+
+:ref:`PoolVector3Array<class_PoolVector3Array>` **bounds_geometry**
+
+.. rst-class:: classref-property-setget
+
+- :ref:`PoolVector3Array<class_PoolVector3Array>` **get_bounds_geometry** **(** **)**
 
 The vertices of a polygon which defines the boundaries of the user's play area.
 
@@ -312,17 +410,20 @@ This will only be available if :ref:`reference_space_type<class_WebXRInterface_p
 
 The :ref:`reference_space_reset<class_WebXRInterface_signal_reference_space_reset>` signal may indicate when this changes.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_WebXRInterface_property_optional_features:
 
-- :ref:`String<class_String>` **optional_features**
+.. rst-class:: classref-property
 
-+----------+------------------------------+
-| *Setter* | set_optional_features(value) |
-+----------+------------------------------+
-| *Getter* | get_optional_features()      |
-+----------+------------------------------+
+:ref:`String<class_String>` **optional_features**
+
+.. rst-class:: classref-property-setget
+
+- void **set_optional_features** **(** :ref:`String<class_String>` value **)**
+- :ref:`String<class_String>` **get_optional_features** **(** **)**
 
 A comma-seperated list of optional features used by :ref:`ARVRInterface.initialize<class_ARVRInterface_method_initialize>` when setting up the WebXR session.
 
@@ -332,31 +433,38 @@ This doesn't have any effect on the interface when already initialized.
 
 Possible values come from `WebXR's XRReferenceSpaceType <https://developer.mozilla.org/en-US/docs/Web/API/XRReferenceSpaceType>`__. If you want to use a particular reference space type, it must be listed in either :ref:`required_features<class_WebXRInterface_property_required_features>` or :ref:`optional_features<class_WebXRInterface_property_optional_features>`.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_WebXRInterface_property_reference_space_type:
 
-- :ref:`String<class_String>` **reference_space_type**
+.. rst-class:: classref-property
 
-+----------+----------------------------+
-| *Getter* | get_reference_space_type() |
-+----------+----------------------------+
+:ref:`String<class_String>` **reference_space_type**
+
+.. rst-class:: classref-property-setget
+
+- :ref:`String<class_String>` **get_reference_space_type** **(** **)**
 
 The reference space type (from the list of requested types set in the :ref:`requested_reference_space_types<class_WebXRInterface_property_requested_reference_space_types>` property), that was ultimately used by :ref:`ARVRInterface.initialize<class_ARVRInterface_method_initialize>` when setting up the WebXR session.
 
 Possible values come from `WebXR's XRReferenceSpaceType <https://developer.mozilla.org/en-US/docs/Web/API/XRReferenceSpaceType>`__. If you want to use a particular reference space type, it must be listed in either :ref:`required_features<class_WebXRInterface_property_required_features>` or :ref:`optional_features<class_WebXRInterface_property_optional_features>`.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_WebXRInterface_property_requested_reference_space_types:
 
-- :ref:`String<class_String>` **requested_reference_space_types**
+.. rst-class:: classref-property
 
-+----------+--------------------------------------------+
-| *Setter* | set_requested_reference_space_types(value) |
-+----------+--------------------------------------------+
-| *Getter* | get_requested_reference_space_types()      |
-+----------+--------------------------------------------+
+:ref:`String<class_String>` **requested_reference_space_types**
+
+.. rst-class:: classref-property-setget
+
+- void **set_requested_reference_space_types** **(** :ref:`String<class_String>` value **)**
+- :ref:`String<class_String>` **get_requested_reference_space_types** **(** **)**
 
 A comma-seperated list of reference space types used by :ref:`ARVRInterface.initialize<class_ARVRInterface_method_initialize>` when setting up the WebXR session.
 
@@ -366,17 +474,20 @@ This doesn't have any effect on the interface when already initialized.
 
 Possible values come from `WebXR's XRReferenceSpaceType <https://developer.mozilla.org/en-US/docs/Web/API/XRReferenceSpaceType>`__. If you want to use a particular reference space type, it must be listed in either :ref:`required_features<class_WebXRInterface_property_required_features>` or :ref:`optional_features<class_WebXRInterface_property_optional_features>`.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_WebXRInterface_property_required_features:
 
-- :ref:`String<class_String>` **required_features**
+.. rst-class:: classref-property
 
-+----------+------------------------------+
-| *Setter* | set_required_features(value) |
-+----------+------------------------------+
-| *Getter* | get_required_features()      |
-+----------+------------------------------+
+:ref:`String<class_String>` **required_features**
+
+.. rst-class:: classref-property-setget
+
+- void **set_required_features** **(** :ref:`String<class_String>` value **)**
+- :ref:`String<class_String>` **get_required_features** **(** **)**
 
 A comma-seperated list of required features used by :ref:`ARVRInterface.initialize<class_ARVRInterface_method_initialize>` when setting up the WebXR session.
 
@@ -386,17 +497,20 @@ This doesn't have any effect on the interface when already initialized.
 
 Possible values come from `WebXR's XRReferenceSpaceType <https://developer.mozilla.org/en-US/docs/Web/API/XRReferenceSpaceType>`__. If you want to use a particular reference space type, it must be listed in either :ref:`required_features<class_WebXRInterface_property_required_features>` or :ref:`optional_features<class_WebXRInterface_property_optional_features>`.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_WebXRInterface_property_session_mode:
 
-- :ref:`String<class_String>` **session_mode**
+.. rst-class:: classref-property
 
-+----------+-------------------------+
-| *Setter* | set_session_mode(value) |
-+----------+-------------------------+
-| *Getter* | get_session_mode()      |
-+----------+-------------------------+
+:ref:`String<class_String>` **session_mode**
+
+.. rst-class:: classref-property-setget
+
+- void **set_session_mode** **(** :ref:`String<class_String>` value **)**
+- :ref:`String<class_String>` **get_session_mode** **(** **)**
 
 The session mode used by :ref:`ARVRInterface.initialize<class_ARVRInterface_method_initialize>` when setting up the WebXR session.
 
@@ -404,42 +518,57 @@ This doesn't have any effect on the interface when already initialized.
 
 Possible values come from `WebXR's XRSessionMode <https://developer.mozilla.org/en-US/docs/Web/API/XRSessionMode>`__, including: ``"immersive-vr"``, ``"immersive-ar"``, and ``"inline"``.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_WebXRInterface_property_visibility_state:
 
-- :ref:`String<class_String>` **visibility_state**
+.. rst-class:: classref-property
 
-+----------+------------------------+
-| *Getter* | get_visibility_state() |
-+----------+------------------------+
+:ref:`String<class_String>` **visibility_state**
+
+.. rst-class:: classref-property-setget
+
+- :ref:`String<class_String>` **get_visibility_state** **(** **)**
 
 Indicates if the WebXR session's imagery is visible to the user.
 
 Possible values come from `WebXR's XRVisibilityState <https://developer.mozilla.org/en-US/docs/Web/API/XRVisibilityState>`__, including ``"hidden"``, ``"visible"``, and ``"visible-blurred"``.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_WebXRInterface_property_xr_standard_mapping:
 
-- :ref:`bool<class_bool>` **xr_standard_mapping**
+.. rst-class:: classref-property
 
-+----------+--------------------------------+
-| *Setter* | set_xr_standard_mapping(value) |
-+----------+--------------------------------+
-| *Getter* | get_xr_standard_mapping()      |
-+----------+--------------------------------+
+:ref:`bool<class_bool>` **xr_standard_mapping**
+
+.. rst-class:: classref-property-setget
+
+- void **set_xr_standard_mapping** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **get_xr_standard_mapping** **(** **)**
 
 If set to true, the button and axes ids will be converted to match the standard ids used by other AR/VR interfaces, when possible.
 
 Otherwise, the ids will be passed through unaltered from WebXR.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_WebXRInterface_method_get_controller:
 
-- :ref:`ARVRPositionalTracker<class_ARVRPositionalTracker>` **get_controller** **(** :ref:`int<class_int>` controller_id **)** |const|
+.. rst-class:: classref-method
+
+:ref:`ARVRPositionalTracker<class_ARVRPositionalTracker>` **get_controller** **(** :ref:`int<class_int>` controller_id **)** |const|
 
 Gets an :ref:`ARVRPositionalTracker<class_ARVRPositionalTracker>` for the given ``controller_id``.
 
@@ -459,21 +588,29 @@ Use this method to get information about the controller that triggered one of th
 
 - :ref:`squeezestart<class_WebXRInterface_signal_squeezestart>`
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_WebXRInterface_method_get_controller_target_ray_mode:
 
-- :ref:`TargetRayMode<enum_WebXRInterface_TargetRayMode>` **get_controller_target_ray_mode** **(** :ref:`int<class_int>` controller_id **)** |const|
+.. rst-class:: classref-method
+
+:ref:`TargetRayMode<enum_WebXRInterface_TargetRayMode>` **get_controller_target_ray_mode** **(** :ref:`int<class_int>` controller_id **)** |const|
 
 Returns the target ray mode for the given ``controller_id``.
 
 This can help interpret the input coming from that controller. See `XRInputSource.targetRayMode <https://developer.mozilla.org/en-US/docs/Web/API/XRInputSource/targetRayMode>`__ for more information.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_WebXRInterface_method_is_session_supported:
 
-- void **is_session_supported** **(** :ref:`String<class_String>` session_mode **)**
+.. rst-class:: classref-method
+
+void **is_session_supported** **(** :ref:`String<class_String>` session_mode **)**
 
 Checks if the given ``session_mode`` is supported by the user's browser.
 
@@ -484,3 +621,4 @@ This method returns nothing, instead it emits the :ref:`session_supported<class_
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

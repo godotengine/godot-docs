@@ -14,6 +14,8 @@ VisualScriptSequence
 
 Executes a series of Sequence ports.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -31,30 +33,41 @@ Steps through a series of one or more output Sequence ports. The ``current`` dat
 
 - Data (int): ``current``
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-----------------------+---------------------------------------------------------+-------+
-| :ref:`int<class_int>` | :ref:`steps<class_VisualScriptSequence_property_steps>` | ``1`` |
-+-----------------------+---------------------------------------------------------+-------+
+.. table::
+   :widths: auto
+
+   +-----------------------+---------------------------------------------------------+-------+
+   | :ref:`int<class_int>` | :ref:`steps<class_VisualScriptSequence_property_steps>` | ``1`` |
+   +-----------------------+---------------------------------------------------------+-------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_VisualScriptSequence_property_steps:
 
-- :ref:`int<class_int>` **steps**
+.. rst-class:: classref-property
 
-+-----------+------------------+
-| *Default* | ``1``            |
-+-----------+------------------+
-| *Setter*  | set_steps(value) |
-+-----------+------------------+
-| *Getter*  | get_steps()      |
-+-----------+------------------+
+:ref:`int<class_int>` **steps** = ``1``
+
+.. rst-class:: classref-property-setget
+
+- void **set_steps** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_steps** **(** **)**
 
 The number of steps in the sequence.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

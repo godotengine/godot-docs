@@ -16,112 +16,131 @@ InputEventWithModifiers
 
 Base class for keys events with modifiers.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 Contains keys events information with modifiers support like ``Shift`` or ``Alt``. See :ref:`Node._input<class_Node_method__input>`.
+
+.. rst-class:: classref-introduction-group
 
 Tutorials
 ---------
 
 - :doc:`../tutorials/inputs/inputevent`
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-------------------------+----------------------------------------------------------------+-----------+
-| :ref:`bool<class_bool>` | :ref:`alt<class_InputEventWithModifiers_property_alt>`         | ``false`` |
-+-------------------------+----------------------------------------------------------------+-----------+
-| :ref:`bool<class_bool>` | :ref:`command<class_InputEventWithModifiers_property_command>` | ``false`` |
-+-------------------------+----------------------------------------------------------------+-----------+
-| :ref:`bool<class_bool>` | :ref:`control<class_InputEventWithModifiers_property_control>` | ``false`` |
-+-------------------------+----------------------------------------------------------------+-----------+
-| :ref:`bool<class_bool>` | :ref:`meta<class_InputEventWithModifiers_property_meta>`       | ``false`` |
-+-------------------------+----------------------------------------------------------------+-----------+
-| :ref:`bool<class_bool>` | :ref:`shift<class_InputEventWithModifiers_property_shift>`     | ``false`` |
-+-------------------------+----------------------------------------------------------------+-----------+
+.. table::
+   :widths: auto
+
+   +-------------------------+----------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>` | :ref:`alt<class_InputEventWithModifiers_property_alt>`         | ``false`` |
+   +-------------------------+----------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>` | :ref:`command<class_InputEventWithModifiers_property_command>` | ``false`` |
+   +-------------------------+----------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>` | :ref:`control<class_InputEventWithModifiers_property_control>` | ``false`` |
+   +-------------------------+----------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>` | :ref:`meta<class_InputEventWithModifiers_property_meta>`       | ``false`` |
+   +-------------------------+----------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>` | :ref:`shift<class_InputEventWithModifiers_property_shift>`     | ``false`` |
+   +-------------------------+----------------------------------------------------------------+-----------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_InputEventWithModifiers_property_alt:
 
-- :ref:`bool<class_bool>` **alt**
+.. rst-class:: classref-property
 
-+-----------+----------------+
-| *Default* | ``false``      |
-+-----------+----------------+
-| *Setter*  | set_alt(value) |
-+-----------+----------------+
-| *Getter*  | get_alt()      |
-+-----------+----------------+
+:ref:`bool<class_bool>` **alt** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_alt** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **get_alt** **(** **)**
 
 State of the ``Alt`` modifier.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_InputEventWithModifiers_property_command:
 
-- :ref:`bool<class_bool>` **command**
+.. rst-class:: classref-property
 
-+-----------+--------------------+
-| *Default* | ``false``          |
-+-----------+--------------------+
-| *Setter*  | set_command(value) |
-+-----------+--------------------+
-| *Getter*  | get_command()      |
-+-----------+--------------------+
+:ref:`bool<class_bool>` **command** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_command** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **get_command** **(** **)**
 
 State of the ``Command`` modifier.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_InputEventWithModifiers_property_control:
 
-- :ref:`bool<class_bool>` **control**
+.. rst-class:: classref-property
 
-+-----------+--------------------+
-| *Default* | ``false``          |
-+-----------+--------------------+
-| *Setter*  | set_control(value) |
-+-----------+--------------------+
-| *Getter*  | get_control()      |
-+-----------+--------------------+
+:ref:`bool<class_bool>` **control** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_control** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **get_control** **(** **)**
 
 State of the ``Ctrl`` modifier.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_InputEventWithModifiers_property_meta:
 
-- :ref:`bool<class_bool>` **meta**
+.. rst-class:: classref-property
 
-+-----------+--------------------+
-| *Default* | ``false``          |
-+-----------+--------------------+
-| *Setter*  | set_metakey(value) |
-+-----------+--------------------+
-| *Getter*  | get_metakey()      |
-+-----------+--------------------+
+:ref:`bool<class_bool>` **meta** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_metakey** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **get_metakey** **(** **)**
 
 State of the ``Meta`` modifier.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_InputEventWithModifiers_property_shift:
 
-- :ref:`bool<class_bool>` **shift**
+.. rst-class:: classref-property
 
-+-----------+------------------+
-| *Default* | ``false``        |
-+-----------+------------------+
-| *Setter*  | set_shift(value) |
-+-----------+------------------+
-| *Getter*  | get_shift()      |
-+-----------+------------------+
+:ref:`bool<class_bool>` **shift** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_shift** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **get_shift** **(** **)**
 
 State of the ``Shift`` modifier.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

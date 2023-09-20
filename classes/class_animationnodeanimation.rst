@@ -14,10 +14,14 @@ AnimationNodeAnimation
 
 Input animation to use in an :ref:`AnimationNodeBlendTree<class_AnimationNodeBlendTree>`.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 A resource to add to an :ref:`AnimationNodeBlendTree<class_AnimationNodeBlendTree>`. Only features one output set using the :ref:`animation<class_AnimationNodeAnimation_property_animation>` property. Use it as an input for :ref:`AnimationNode<class_AnimationNode>` that blend animations together.
+
+.. rst-class:: classref-introduction-group
 
 Tutorials
 ---------
@@ -28,30 +32,41 @@ Tutorials
 
 - `Third Person Shooter Demo <https://godotengine.org/asset-library/asset/678>`__
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-----------------------------+-------------------------------------------------------------------+--------+
-| :ref:`String<class_String>` | :ref:`animation<class_AnimationNodeAnimation_property_animation>` | ``""`` |
-+-----------------------------+-------------------------------------------------------------------+--------+
+.. table::
+   :widths: auto
+
+   +-----------------------------+-------------------------------------------------------------------+--------+
+   | :ref:`String<class_String>` | :ref:`animation<class_AnimationNodeAnimation_property_animation>` | ``""`` |
+   +-----------------------------+-------------------------------------------------------------------+--------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_AnimationNodeAnimation_property_animation:
 
-- :ref:`String<class_String>` **animation**
+.. rst-class:: classref-property
 
-+-----------+----------------------+
-| *Default* | ``""``               |
-+-----------+----------------------+
-| *Setter*  | set_animation(value) |
-+-----------+----------------------+
-| *Getter*  | get_animation()      |
-+-----------+----------------------+
+:ref:`String<class_String>` **animation** = ``""``
+
+.. rst-class:: classref-property-setget
+
+- void **set_animation** **(** :ref:`String<class_String>` value **)**
+- :ref:`String<class_String>` **get_animation** **(** **)**
 
 Animation to use as an output. It is one of the animations provided by :ref:`AnimationTree.anim_player<class_AnimationTree_property_anim_player>`.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

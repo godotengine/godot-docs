@@ -16,6 +16,8 @@ WebRTCPeerConnection
 
 Interface to a WebRTC peer connection.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -31,111 +33,180 @@ Setting up a WebRTC connection between two peers from now on) may not seem a tri
 
 After these steps, the connection should become connected. Keep on reading or look into the tutorial for more information.
 
+.. rst-class:: classref-reftable-group
+
 Methods
 -------
 
-+-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>`                             | :ref:`add_ice_candidate<class_WebRTCPeerConnection_method_add_ice_candidate>` **(** :ref:`String<class_String>` media, :ref:`int<class_int>` index, :ref:`String<class_String>` name **)** |
-+-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                              | :ref:`close<class_WebRTCPeerConnection_method_close>` **(** **)**                                                                                                                          |
-+-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`WebRTCDataChannel<class_WebRTCDataChannel>`                 | :ref:`create_data_channel<class_WebRTCPeerConnection_method_create_data_channel>` **(** :ref:`String<class_String>` label, :ref:`Dictionary<class_Dictionary>` options={ } **)**           |
-+-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>`                             | :ref:`create_offer<class_WebRTCPeerConnection_method_create_offer>` **(** **)**                                                                                                            |
-+-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`ConnectionState<enum_WebRTCPeerConnection_ConnectionState>` | :ref:`get_connection_state<class_WebRTCPeerConnection_method_get_connection_state>` **(** **)** |const|                                                                                    |
-+-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>`                             | :ref:`initialize<class_WebRTCPeerConnection_method_initialize>` **(** :ref:`Dictionary<class_Dictionary>` configuration={ } **)**                                                          |
-+-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>`                             | :ref:`poll<class_WebRTCPeerConnection_method_poll>` **(** **)**                                                                                                                            |
-+-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>`                             | :ref:`set_local_description<class_WebRTCPeerConnection_method_set_local_description>` **(** :ref:`String<class_String>` type, :ref:`String<class_String>` sdp **)**                        |
-+-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>`                             | :ref:`set_remote_description<class_WebRTCPeerConnection_method_set_remote_description>` **(** :ref:`String<class_String>` type, :ref:`String<class_String>` sdp **)**                      |
-+-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>`                             | :ref:`add_ice_candidate<class_WebRTCPeerConnection_method_add_ice_candidate>` **(** :ref:`String<class_String>` media, :ref:`int<class_int>` index, :ref:`String<class_String>` name **)** |
+   +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                                              | :ref:`close<class_WebRTCPeerConnection_method_close>` **(** **)**                                                                                                                          |
+   +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`WebRTCDataChannel<class_WebRTCDataChannel>`                 | :ref:`create_data_channel<class_WebRTCPeerConnection_method_create_data_channel>` **(** :ref:`String<class_String>` label, :ref:`Dictionary<class_Dictionary>` options={ } **)**           |
+   +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>`                             | :ref:`create_offer<class_WebRTCPeerConnection_method_create_offer>` **(** **)**                                                                                                            |
+   +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`ConnectionState<enum_WebRTCPeerConnection_ConnectionState>` | :ref:`get_connection_state<class_WebRTCPeerConnection_method_get_connection_state>` **(** **)** |const|                                                                                    |
+   +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>`                             | :ref:`initialize<class_WebRTCPeerConnection_method_initialize>` **(** :ref:`Dictionary<class_Dictionary>` configuration={ } **)**                                                          |
+   +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>`                             | :ref:`poll<class_WebRTCPeerConnection_method_poll>` **(** **)**                                                                                                                            |
+   +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>`                             | :ref:`set_local_description<class_WebRTCPeerConnection_method_set_local_description>` **(** :ref:`String<class_String>` type, :ref:`String<class_String>` sdp **)**                        |
+   +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>`                             | :ref:`set_remote_description<class_WebRTCPeerConnection_method_set_remote_description>` **(** :ref:`String<class_String>` type, :ref:`String<class_String>` sdp **)**                      |
+   +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Signals
 -------
 
 .. _class_WebRTCPeerConnection_signal_data_channel_received:
 
-- **data_channel_received** **(** :ref:`Object<class_Object>` channel **)**
+.. rst-class:: classref-signal
+
+**data_channel_received** **(** :ref:`Object<class_Object>` channel **)**
 
 Emitted when a new in-band channel is received, i.e. when the channel was created with ``negotiated: false`` (default).
 
 The object will be an instance of :ref:`WebRTCDataChannel<class_WebRTCDataChannel>`. You must keep a reference of it or it will be closed automatically. See :ref:`create_data_channel<class_WebRTCPeerConnection_method_create_data_channel>`.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_WebRTCPeerConnection_signal_ice_candidate_created:
 
-- **ice_candidate_created** **(** :ref:`String<class_String>` media, :ref:`int<class_int>` index, :ref:`String<class_String>` name **)**
+.. rst-class:: classref-signal
+
+**ice_candidate_created** **(** :ref:`String<class_String>` media, :ref:`int<class_int>` index, :ref:`String<class_String>` name **)**
 
 Emitted when a new ICE candidate has been created. The three parameters are meant to be passed to the remote peer over the signaling server.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_WebRTCPeerConnection_signal_session_description_created:
 
-- **session_description_created** **(** :ref:`String<class_String>` type, :ref:`String<class_String>` sdp **)**
+.. rst-class:: classref-signal
+
+**session_description_created** **(** :ref:`String<class_String>` type, :ref:`String<class_String>` sdp **)**
 
 Emitted after a successful call to :ref:`create_offer<class_WebRTCPeerConnection_method_create_offer>` or :ref:`set_remote_description<class_WebRTCPeerConnection_method_set_remote_description>` (when it generates an answer). The parameters are meant to be passed to :ref:`set_local_description<class_WebRTCPeerConnection_method_set_local_description>` on this object, and sent to the remote peer over the signaling server.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Enumerations
 ------------
 
 .. _enum_WebRTCPeerConnection_ConnectionState:
 
-.. _class_WebRTCPeerConnection_constant_STATE_NEW:
-
-.. _class_WebRTCPeerConnection_constant_STATE_CONNECTING:
-
-.. _class_WebRTCPeerConnection_constant_STATE_CONNECTED:
-
-.. _class_WebRTCPeerConnection_constant_STATE_DISCONNECTED:
-
-.. _class_WebRTCPeerConnection_constant_STATE_FAILED:
-
-.. _class_WebRTCPeerConnection_constant_STATE_CLOSED:
+.. rst-class:: classref-enumeration
 
 enum **ConnectionState**:
 
-- **STATE_NEW** = **0** --- The connection is new, data channels and an offer can be created in this state.
+.. _class_WebRTCPeerConnection_constant_STATE_NEW:
 
-- **STATE_CONNECTING** = **1** --- The peer is connecting, ICE is in progress, none of the transports has failed.
+.. rst-class:: classref-enumeration-constant
 
-- **STATE_CONNECTED** = **2** --- The peer is connected, all ICE transports are connected.
+:ref:`ConnectionState<enum_WebRTCPeerConnection_ConnectionState>` **STATE_NEW** = ``0``
 
-- **STATE_DISCONNECTED** = **3** --- At least one ICE transport is disconnected.
+The connection is new, data channels and an offer can be created in this state.
 
-- **STATE_FAILED** = **4** --- One or more of the ICE transports failed.
+.. _class_WebRTCPeerConnection_constant_STATE_CONNECTING:
 
-- **STATE_CLOSED** = **5** --- The peer connection is closed (after calling :ref:`close<class_WebRTCPeerConnection_method_close>` for example).
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ConnectionState<enum_WebRTCPeerConnection_ConnectionState>` **STATE_CONNECTING** = ``1``
+
+The peer is connecting, ICE is in progress, none of the transports has failed.
+
+.. _class_WebRTCPeerConnection_constant_STATE_CONNECTED:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ConnectionState<enum_WebRTCPeerConnection_ConnectionState>` **STATE_CONNECTED** = ``2``
+
+The peer is connected, all ICE transports are connected.
+
+.. _class_WebRTCPeerConnection_constant_STATE_DISCONNECTED:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ConnectionState<enum_WebRTCPeerConnection_ConnectionState>` **STATE_DISCONNECTED** = ``3``
+
+At least one ICE transport is disconnected.
+
+.. _class_WebRTCPeerConnection_constant_STATE_FAILED:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ConnectionState<enum_WebRTCPeerConnection_ConnectionState>` **STATE_FAILED** = ``4``
+
+One or more of the ICE transports failed.
+
+.. _class_WebRTCPeerConnection_constant_STATE_CLOSED:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ConnectionState<enum_WebRTCPeerConnection_ConnectionState>` **STATE_CLOSED** = ``5``
+
+The peer connection is closed (after calling :ref:`close<class_WebRTCPeerConnection_method_close>` for example).
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_WebRTCPeerConnection_method_add_ice_candidate:
 
-- :ref:`Error<enum_@GlobalScope_Error>` **add_ice_candidate** **(** :ref:`String<class_String>` media, :ref:`int<class_int>` index, :ref:`String<class_String>` name **)**
+.. rst-class:: classref-method
+
+:ref:`Error<enum_@GlobalScope_Error>` **add_ice_candidate** **(** :ref:`String<class_String>` media, :ref:`int<class_int>` index, :ref:`String<class_String>` name **)**
 
 Add an ice candidate generated by a remote peer (and received over the signaling server). See :ref:`ice_candidate_created<class_WebRTCPeerConnection_signal_ice_candidate_created>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_WebRTCPeerConnection_method_close:
 
-- void **close** **(** **)**
+.. rst-class:: classref-method
+
+void **close** **(** **)**
 
 Close the peer connection and all data channels associated with it.
 
 \ **Note:** You cannot reuse this object for a new connection unless you call :ref:`initialize<class_WebRTCPeerConnection_method_initialize>`.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_WebRTCPeerConnection_method_create_data_channel:
 
-- :ref:`WebRTCDataChannel<class_WebRTCDataChannel>` **create_data_channel** **(** :ref:`String<class_String>` label, :ref:`Dictionary<class_Dictionary>` options={ } **)**
+.. rst-class:: classref-method
+
+:ref:`WebRTCDataChannel<class_WebRTCDataChannel>` **create_data_channel** **(** :ref:`String<class_String>` label, :ref:`Dictionary<class_Dictionary>` options={ } **)**
 
 Returns a new :ref:`WebRTCDataChannel<class_WebRTCDataChannel>` (or ``null`` on failure) with given ``label`` and optionally configured via the ``options`` dictionary. This method can only be called when the connection is in state :ref:`STATE_NEW<class_WebRTCPeerConnection_constant_STATE_NEW>`.
 
@@ -159,29 +230,41 @@ Valid ``options`` are:
 
 \ **Note:** You must keep a reference to channels created this way, or it will be closed.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_WebRTCPeerConnection_method_create_offer:
 
-- :ref:`Error<enum_@GlobalScope_Error>` **create_offer** **(** **)**
+.. rst-class:: classref-method
+
+:ref:`Error<enum_@GlobalScope_Error>` **create_offer** **(** **)**
 
 Creates a new SDP offer to start a WebRTC connection with a remote peer. At least one :ref:`WebRTCDataChannel<class_WebRTCDataChannel>` must have been created before calling this method.
 
 If this functions returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>`, :ref:`session_description_created<class_WebRTCPeerConnection_signal_session_description_created>` will be called when the session is ready to be sent.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_WebRTCPeerConnection_method_get_connection_state:
 
-- :ref:`ConnectionState<enum_WebRTCPeerConnection_ConnectionState>` **get_connection_state** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`ConnectionState<enum_WebRTCPeerConnection_ConnectionState>` **get_connection_state** **(** **)** |const|
 
 Returns the connection state. See :ref:`ConnectionState<enum_WebRTCPeerConnection_ConnectionState>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_WebRTCPeerConnection_method_initialize:
 
-- :ref:`Error<enum_@GlobalScope_Error>` **initialize** **(** :ref:`Dictionary<class_Dictionary>` configuration={ } **)**
+.. rst-class:: classref-method
+
+:ref:`Error<enum_@GlobalScope_Error>` **initialize** **(** :ref:`Dictionary<class_Dictionary>` configuration={ } **)**
 
 Re-initialize this peer connection, closing any previously active connection, and going back to state :ref:`STATE_NEW<class_WebRTCPeerConnection_constant_STATE_NEW>`. A dictionary of ``options`` can be passed to configure the peer connection.
 
@@ -202,29 +285,41 @@ Valid ``options`` are:
         ]
     }
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_WebRTCPeerConnection_method_poll:
 
-- :ref:`Error<enum_@GlobalScope_Error>` **poll** **(** **)**
+.. rst-class:: classref-method
+
+:ref:`Error<enum_@GlobalScope_Error>` **poll** **(** **)**
 
 Call this method frequently (e.g. in :ref:`Node._process<class_Node_method__process>` or :ref:`Node._physics_process<class_Node_method__physics_process>`) to properly receive signals.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_WebRTCPeerConnection_method_set_local_description:
 
-- :ref:`Error<enum_@GlobalScope_Error>` **set_local_description** **(** :ref:`String<class_String>` type, :ref:`String<class_String>` sdp **)**
+.. rst-class:: classref-method
+
+:ref:`Error<enum_@GlobalScope_Error>` **set_local_description** **(** :ref:`String<class_String>` type, :ref:`String<class_String>` sdp **)**
 
 Sets the SDP description of the local peer. This should be called in response to :ref:`session_description_created<class_WebRTCPeerConnection_signal_session_description_created>`.
 
 After calling this function the peer will start emitting :ref:`ice_candidate_created<class_WebRTCPeerConnection_signal_ice_candidate_created>` (unless an :ref:`Error<enum_@GlobalScope_Error>` different from :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` is returned).
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_WebRTCPeerConnection_method_set_remote_description:
 
-- :ref:`Error<enum_@GlobalScope_Error>` **set_remote_description** **(** :ref:`String<class_String>` type, :ref:`String<class_String>` sdp **)**
+.. rst-class:: classref-method
+
+:ref:`Error<enum_@GlobalScope_Error>` **set_remote_description** **(** :ref:`String<class_String>` type, :ref:`String<class_String>` sdp **)**
 
 Sets the SDP description of the remote peer. This should be called with the values generated by a remote peer and received over the signaling server.
 
@@ -235,3 +330,4 @@ If ``type`` is ``answer`` the peer will start emitting :ref:`ice_candidate_creat
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

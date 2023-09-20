@@ -14,35 +14,48 @@ VisualScriptEngineSingleton
 
 A Visual Script node returning a singleton from :ref:`@GlobalScope<class_@GlobalScope>`.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 A Visual Script node returning a singleton from :ref:`@GlobalScope<class_@GlobalScope>`.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-----------------------------+----------------------------------------------------------------------+--------+
-| :ref:`String<class_String>` | :ref:`constant<class_VisualScriptEngineSingleton_property_constant>` | ``""`` |
-+-----------------------------+----------------------------------------------------------------------+--------+
+.. table::
+   :widths: auto
+
+   +-----------------------------+----------------------------------------------------------------------+--------+
+   | :ref:`String<class_String>` | :ref:`constant<class_VisualScriptEngineSingleton_property_constant>` | ``""`` |
+   +-----------------------------+----------------------------------------------------------------------+--------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_VisualScriptEngineSingleton_property_constant:
 
-- :ref:`String<class_String>` **constant**
+.. rst-class:: classref-property
 
-+-----------+----------------------+
-| *Default* | ``""``               |
-+-----------+----------------------+
-| *Setter*  | set_singleton(value) |
-+-----------+----------------------+
-| *Getter*  | get_singleton()      |
-+-----------+----------------------+
+:ref:`String<class_String>` **constant** = ``""``
+
+.. rst-class:: classref-property-setget
+
+- void **set_singleton** **(** :ref:`String<class_String>` value **)**
+- :ref:`String<class_String>` **get_singleton** **(** **)**
 
 The singleton's name.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

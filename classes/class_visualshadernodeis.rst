@@ -14,50 +14,79 @@ VisualShaderNodeIs
 
 A boolean comparison operator to be used within the visual shader graph.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 Returns the boolean result of the comparison between ``INF`` or ``NaN`` and a scalar parameter.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+---------------------------------------------------+-------------------------------------------------------------+-------+
-| :ref:`Function<enum_VisualShaderNodeIs_Function>` | :ref:`function<class_VisualShaderNodeIs_property_function>` | ``0`` |
-+---------------------------------------------------+-------------------------------------------------------------+-------+
+.. table::
+   :widths: auto
+
+   +---------------------------------------------------+-------------------------------------------------------------+-------+
+   | :ref:`Function<enum_VisualShaderNodeIs_Function>` | :ref:`function<class_VisualShaderNodeIs_property_function>` | ``0`` |
+   +---------------------------------------------------+-------------------------------------------------------------+-------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Enumerations
 ------------
 
 .. _enum_VisualShaderNodeIs_Function:
 
-.. _class_VisualShaderNodeIs_constant_FUNC_IS_INF:
-
-.. _class_VisualShaderNodeIs_constant_FUNC_IS_NAN:
+.. rst-class:: classref-enumeration
 
 enum **Function**:
 
-- **FUNC_IS_INF** = **0** --- Comparison with ``INF`` (Infinity).
+.. _class_VisualShaderNodeIs_constant_FUNC_IS_INF:
 
-- **FUNC_IS_NAN** = **1** --- Comparison with ``NaN`` (Not a Number; denotes invalid numeric results, e.g. division by zero).
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Function<enum_VisualShaderNodeIs_Function>` **FUNC_IS_INF** = ``0``
+
+Comparison with ``INF`` (Infinity).
+
+.. _class_VisualShaderNodeIs_constant_FUNC_IS_NAN:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Function<enum_VisualShaderNodeIs_Function>` **FUNC_IS_NAN** = ``1``
+
+Comparison with ``NaN`` (Not a Number; denotes invalid numeric results, e.g. division by zero).
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_VisualShaderNodeIs_property_function:
 
-- :ref:`Function<enum_VisualShaderNodeIs_Function>` **function**
+.. rst-class:: classref-property
 
-+-----------+---------------------+
-| *Default* | ``0``               |
-+-----------+---------------------+
-| *Setter*  | set_function(value) |
-+-----------+---------------------+
-| *Getter*  | get_function()      |
-+-----------+---------------------+
+:ref:`Function<enum_VisualShaderNodeIs_Function>` **function** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_function** **(** :ref:`Function<enum_VisualShaderNodeIs_Function>` value **)**
+- :ref:`Function<enum_VisualShaderNodeIs_Function>` **get_function** **(** **)**
 
 The comparison function. See :ref:`Function<enum_VisualShaderNodeIs_Function>` for options.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

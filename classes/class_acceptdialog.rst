@@ -16,115 +16,154 @@ AcceptDialog
 
 Base dialog for user notification.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 This dialog is useful for small notifications to the user about an event. It can only be accepted or closed, with the same result.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-----------------------------+-------------------------------------------------------------------------+----------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`     | :ref:`dialog_autowrap<class_AcceptDialog_property_dialog_autowrap>`     | ``false``                                                                              |
-+-----------------------------+-------------------------------------------------------------------------+----------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`     | :ref:`dialog_hide_on_ok<class_AcceptDialog_property_dialog_hide_on_ok>` | ``true``                                                                               |
-+-----------------------------+-------------------------------------------------------------------------+----------------------------------------------------------------------------------------+
-| :ref:`String<class_String>` | :ref:`dialog_text<class_AcceptDialog_property_dialog_text>`             | ``""``                                                                                 |
-+-----------------------------+-------------------------------------------------------------------------+----------------------------------------------------------------------------------------+
-| :ref:`String<class_String>` | window_title                                                            | ``"Alert!"`` (overrides :ref:`WindowDialog<class_WindowDialog_property_window_title>`) |
-+-----------------------------+-------------------------------------------------------------------------+----------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-----------------------------+-------------------------------------------------------------------------+----------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`     | :ref:`dialog_autowrap<class_AcceptDialog_property_dialog_autowrap>`     | ``false``                                                                              |
+   +-----------------------------+-------------------------------------------------------------------------+----------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`     | :ref:`dialog_hide_on_ok<class_AcceptDialog_property_dialog_hide_on_ok>` | ``true``                                                                               |
+   +-----------------------------+-------------------------------------------------------------------------+----------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>` | :ref:`dialog_text<class_AcceptDialog_property_dialog_text>`             | ``""``                                                                                 |
+   +-----------------------------+-------------------------------------------------------------------------+----------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>` | window_title                                                            | ``"Alert!"`` (overrides :ref:`WindowDialog<class_WindowDialog_property_window_title>`) |
+   +-----------------------------+-------------------------------------------------------------------------+----------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+-----------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Button<class_Button>` | :ref:`add_button<class_AcceptDialog_method_add_button>` **(** :ref:`String<class_String>` text, :ref:`bool<class_bool>` right=false, :ref:`String<class_String>` action="" **)** |
-+-----------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Button<class_Button>` | :ref:`add_cancel<class_AcceptDialog_method_add_cancel>` **(** :ref:`String<class_String>` name **)**                                                                             |
-+-----------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Label<class_Label>`   | :ref:`get_label<class_AcceptDialog_method_get_label>` **(** **)**                                                                                                                |
-+-----------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Button<class_Button>` | :ref:`get_ok<class_AcceptDialog_method_get_ok>` **(** **)**                                                                                                                      |
-+-----------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                        | :ref:`register_text_enter<class_AcceptDialog_method_register_text_enter>` **(** :ref:`Node<class_Node>` line_edit **)**                                                          |
-+-----------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                        | :ref:`remove_button<class_AcceptDialog_method_remove_button>` **(** :ref:`Control<class_Control>` button **)**                                                                   |
-+-----------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-----------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Button<class_Button>` | :ref:`add_button<class_AcceptDialog_method_add_button>` **(** :ref:`String<class_String>` text, :ref:`bool<class_bool>` right=false, :ref:`String<class_String>` action="" **)** |
+   +-----------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Button<class_Button>` | :ref:`add_cancel<class_AcceptDialog_method_add_cancel>` **(** :ref:`String<class_String>` name **)**                                                                             |
+   +-----------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Label<class_Label>`   | :ref:`get_label<class_AcceptDialog_method_get_label>` **(** **)**                                                                                                                |
+   +-----------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Button<class_Button>` | :ref:`get_ok<class_AcceptDialog_method_get_ok>` **(** **)**                                                                                                                      |
+   +-----------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                        | :ref:`register_text_enter<class_AcceptDialog_method_register_text_enter>` **(** :ref:`Node<class_Node>` line_edit **)**                                                          |
+   +-----------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                        | :ref:`remove_button<class_AcceptDialog_method_remove_button>` **(** :ref:`Control<class_Control>` button **)**                                                                   |
+   +-----------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Signals
 -------
 
 .. _class_AcceptDialog_signal_confirmed:
 
-- **confirmed** **(** **)**
+.. rst-class:: classref-signal
+
+**confirmed** **(** **)**
 
 Emitted when the dialog is accepted, i.e. the OK button is pressed.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AcceptDialog_signal_custom_action:
 
-- **custom_action** **(** :ref:`String<class_String>` action **)**
+.. rst-class:: classref-signal
+
+**custom_action** **(** :ref:`String<class_String>` action **)**
 
 Emitted when a custom button is pressed. See :ref:`add_button<class_AcceptDialog_method_add_button>`.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_AcceptDialog_property_dialog_autowrap:
 
-- :ref:`bool<class_bool>` **dialog_autowrap**
+.. rst-class:: classref-property
 
-+-----------+---------------------+
-| *Default* | ``false``           |
-+-----------+---------------------+
-| *Setter*  | set_autowrap(value) |
-+-----------+---------------------+
-| *Getter*  | has_autowrap()      |
-+-----------+---------------------+
+:ref:`bool<class_bool>` **dialog_autowrap** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_autowrap** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **has_autowrap** **(** **)**
 
 Sets autowrapping for the text in the dialog.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AcceptDialog_property_dialog_hide_on_ok:
 
-- :ref:`bool<class_bool>` **dialog_hide_on_ok**
+.. rst-class:: classref-property
 
-+-----------+-----------------------+
-| *Default* | ``true``              |
-+-----------+-----------------------+
-| *Setter*  | set_hide_on_ok(value) |
-+-----------+-----------------------+
-| *Getter*  | get_hide_on_ok()      |
-+-----------+-----------------------+
+:ref:`bool<class_bool>` **dialog_hide_on_ok** = ``true``
+
+.. rst-class:: classref-property-setget
+
+- void **set_hide_on_ok** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **get_hide_on_ok** **(** **)**
 
 If ``true``, the dialog is hidden when the OK button is pressed. You can set it to ``false`` if you want to do e.g. input validation when receiving the :ref:`confirmed<class_AcceptDialog_signal_confirmed>` signal, and handle hiding the dialog in your own logic.
 
 \ **Note:** Some nodes derived from this class can have a different default value, and potentially their own built-in logic overriding this setting. For example :ref:`FileDialog<class_FileDialog>` defaults to ``false``, and has its own input validation code that is called when you press OK, which eventually hides the dialog if the input is valid. As such, this property can't be used in :ref:`FileDialog<class_FileDialog>` to disable hiding the dialog when pressing OK.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_AcceptDialog_property_dialog_text:
 
-- :ref:`String<class_String>` **dialog_text**
+.. rst-class:: classref-property
 
-+-----------+-----------------+
-| *Default* | ``""``          |
-+-----------+-----------------+
-| *Setter*  | set_text(value) |
-+-----------+-----------------+
-| *Getter*  | get_text()      |
-+-----------+-----------------+
+:ref:`String<class_String>` **dialog_text** = ``""``
+
+.. rst-class:: classref-property-setget
+
+- void **set_text** **(** :ref:`String<class_String>` value **)**
+- :ref:`String<class_String>` **get_text** **(** **)**
 
 The text displayed by the dialog.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_AcceptDialog_method_add_button:
 
-- :ref:`Button<class_Button>` **add_button** **(** :ref:`String<class_String>` text, :ref:`bool<class_bool>` right=false, :ref:`String<class_String>` action="" **)**
+.. rst-class:: classref-method
+
+:ref:`Button<class_Button>` **add_button** **(** :ref:`String<class_String>` text, :ref:`bool<class_bool>` right=false, :ref:`String<class_String>` action="" **)**
 
 Adds a button with label ``text`` and a custom ``action`` to the dialog and returns the created button. ``action`` will be passed to the :ref:`custom_action<class_AcceptDialog_signal_custom_action>` signal when pressed.
 
@@ -132,52 +171,73 @@ If ``true``, ``right`` will place the button to the right of any sibling buttons
 
 You can use :ref:`remove_button<class_AcceptDialog_method_remove_button>` method to remove a button created with this method from the dialog.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_AcceptDialog_method_add_cancel:
 
-- :ref:`Button<class_Button>` **add_cancel** **(** :ref:`String<class_String>` name **)**
+.. rst-class:: classref-method
+
+:ref:`Button<class_Button>` **add_cancel** **(** :ref:`String<class_String>` name **)**
 
 Adds a button with label ``name`` and a cancel action to the dialog and returns the created button.
 
 You can use :ref:`remove_button<class_AcceptDialog_method_remove_button>` method to remove a button created with this method from the dialog.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_AcceptDialog_method_get_label:
 
-- :ref:`Label<class_Label>` **get_label** **(** **)**
+.. rst-class:: classref-method
+
+:ref:`Label<class_Label>` **get_label** **(** **)**
 
 Returns the label used for built-in text.
 
 \ **Warning:** This is a required internal node, removing and freeing it may cause a crash. If you wish to hide it or any of its children, use their :ref:`CanvasItem.visible<class_CanvasItem_property_visible>` property.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_AcceptDialog_method_get_ok:
 
-- :ref:`Button<class_Button>` **get_ok** **(** **)**
+.. rst-class:: classref-method
+
+:ref:`Button<class_Button>` **get_ok** **(** **)**
 
 Returns the OK :ref:`Button<class_Button>` instance.
 
 \ **Warning:** This is a required internal node, removing and freeing it may cause a crash. If you wish to hide it or any of its children, use their :ref:`CanvasItem.visible<class_CanvasItem_property_visible>` property.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_AcceptDialog_method_register_text_enter:
 
-- void **register_text_enter** **(** :ref:`Node<class_Node>` line_edit **)**
+.. rst-class:: classref-method
+
+void **register_text_enter** **(** :ref:`Node<class_Node>` line_edit **)**
 
 Registers a :ref:`LineEdit<class_LineEdit>` in the dialog. When the enter key is pressed, the dialog will be accepted.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AcceptDialog_method_remove_button:
 
-- void **remove_button** **(** :ref:`Control<class_Control>` button **)**
+.. rst-class:: classref-method
+
+void **remove_button** **(** :ref:`Control<class_Control>` button **)**
 
 Removes the ``button`` from the dialog. Does NOT free the ``button``. The ``button`` must be a :ref:`Button<class_Button>` added with :ref:`add_button<class_AcceptDialog_method_add_button>` or :ref:`add_cancel<class_AcceptDialog_method_add_cancel>` method. After removal, pressing the ``button`` will no longer emit this dialog's :ref:`custom_action<class_AcceptDialog_signal_custom_action>` signal or cancel this dialog.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

@@ -14,12 +14,14 @@ TextureArray
 
 Array of textures stored in a single primitive.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
-``TextureArray``\ s store an array of :ref:`Image<class_Image>`\ s in a single :ref:`Texture<class_Texture>` primitive. Each layer of the texture array has its own mipmap chain. This makes it is a good alternative to texture atlases. See also :ref:`Texture3D<class_Texture3D>`.
+**TextureArray**\ s store an array of :ref:`Image<class_Image>`\ s in a single :ref:`Texture<class_Texture>` primitive. Each layer of the texture array has its own mipmap chain. This makes it is a good alternative to texture atlases. See also :ref:`Texture3D<class_Texture3D>`.
 
-\ ``TextureArray``\ s must be displayed using shaders. After importing your file as a ``TextureArray`` and setting the appropriate Horizontal and Vertical Slices, display it by setting it as a uniform to a shader, for example (2D):
+\ **TextureArray**\ s must be displayed using shaders. After importing your file as a **TextureArray** and setting the appropriate Horizontal and Vertical Slices, display it by setting it as a uniform to a shader, for example (2D):
 
 ::
 
@@ -47,24 +49,38 @@ Set the integer uniform "index" to show a particular part of the texture as defi
         ALBEDO = texture(tex, vec3(UV.x, UV.y, float(index)));
     }
 
-\ **Note:** ``TextureArray``\ s can only be sampled in shaders in the GLES3 backend. In GLES2, their data can be accessed via scripting, but there is no way to render them in a hardware-accelerated manner.
+\ **Note:** **TextureArray**\ s can only be sampled in shaders in the GLES3 backend. In GLES2, their data can be accessed via scripting, but there is no way to render them in a hardware-accelerated manner.
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void | :ref:`create<class_TextureArray_method_create>` **(** :ref:`int<class_int>` width, :ref:`int<class_int>` height, :ref:`int<class_int>` depth, :ref:`Format<enum_Image_Format>` format, :ref:`int<class_int>` flags=7 **)** |
-+------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void | :ref:`create<class_TextureArray_method_create>` **(** :ref:`int<class_int>` width, :ref:`int<class_int>` height, :ref:`int<class_int>` depth, :ref:`Format<enum_Image_Format>` format, :ref:`int<class_int>` flags=7 **)** |
+   +------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_TextureArray_method_create:
 
-- void **create** **(** :ref:`int<class_int>` width, :ref:`int<class_int>` height, :ref:`int<class_int>` depth, :ref:`Format<enum_Image_Format>` format, :ref:`int<class_int>` flags=7 **)**
+.. rst-class:: classref-method
+
+void **create** **(** :ref:`int<class_int>` width, :ref:`int<class_int>` height, :ref:`int<class_int>` depth, :ref:`Format<enum_Image_Format>` format, :ref:`int<class_int>` flags=7 **)**
 
 Creates the TextureArray with specified ``width``, ``height``, and ``depth``. See :ref:`Format<enum_Image_Format>` for ``format`` options. See :ref:`Flags<enum_TextureLayered_Flags>` enumerator for ``flags`` options.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

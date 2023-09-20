@@ -12,78 +12,154 @@ PolygonPathFinder
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
+.. container:: contribute
 
+	There is currently no description for this class. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolVector2Array<class_PoolVector2Array>` | :ref:`find_path<class_PolygonPathFinder_method_find_path>` **(** :ref:`Vector2<class_Vector2>` from, :ref:`Vector2<class_Vector2>` to **)**                                |
-+-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Rect2<class_Rect2>`                       | :ref:`get_bounds<class_PolygonPathFinder_method_get_bounds>` **(** **)** |const|                                                                                           |
-+-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>`                   | :ref:`get_closest_point<class_PolygonPathFinder_method_get_closest_point>` **(** :ref:`Vector2<class_Vector2>` point **)** |const|                                         |
-+-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolVector2Array<class_PoolVector2Array>` | :ref:`get_intersections<class_PolygonPathFinder_method_get_intersections>` **(** :ref:`Vector2<class_Vector2>` from, :ref:`Vector2<class_Vector2>` to **)** |const|        |
-+-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                       | :ref:`get_point_penalty<class_PolygonPathFinder_method_get_point_penalty>` **(** :ref:`int<class_int>` idx **)** |const|                                                   |
-+-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                         | :ref:`is_point_inside<class_PolygonPathFinder_method_is_point_inside>` **(** :ref:`Vector2<class_Vector2>` point **)** |const|                                             |
-+-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                            | :ref:`set_point_penalty<class_PolygonPathFinder_method_set_point_penalty>` **(** :ref:`int<class_int>` idx, :ref:`float<class_float>` penalty **)**                        |
-+-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                            | :ref:`setup<class_PolygonPathFinder_method_setup>` **(** :ref:`PoolVector2Array<class_PoolVector2Array>` points, :ref:`PoolIntArray<class_PoolIntArray>` connections **)** |
-+-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PoolVector2Array<class_PoolVector2Array>` | :ref:`find_path<class_PolygonPathFinder_method_find_path>` **(** :ref:`Vector2<class_Vector2>` from, :ref:`Vector2<class_Vector2>` to **)**                                |
+   +-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Rect2<class_Rect2>`                       | :ref:`get_bounds<class_PolygonPathFinder_method_get_bounds>` **(** **)** |const|                                                                                           |
+   +-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector2<class_Vector2>`                   | :ref:`get_closest_point<class_PolygonPathFinder_method_get_closest_point>` **(** :ref:`Vector2<class_Vector2>` point **)** |const|                                         |
+   +-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PoolVector2Array<class_PoolVector2Array>` | :ref:`get_intersections<class_PolygonPathFinder_method_get_intersections>` **(** :ref:`Vector2<class_Vector2>` from, :ref:`Vector2<class_Vector2>` to **)** |const|        |
+   +-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`                       | :ref:`get_point_penalty<class_PolygonPathFinder_method_get_point_penalty>` **(** :ref:`int<class_int>` idx **)** |const|                                                   |
+   +-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                         | :ref:`is_point_inside<class_PolygonPathFinder_method_is_point_inside>` **(** :ref:`Vector2<class_Vector2>` point **)** |const|                                             |
+   +-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                            | :ref:`set_point_penalty<class_PolygonPathFinder_method_set_point_penalty>` **(** :ref:`int<class_int>` idx, :ref:`float<class_float>` penalty **)**                        |
+   +-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                            | :ref:`setup<class_PolygonPathFinder_method_setup>` **(** :ref:`PoolVector2Array<class_PoolVector2Array>` points, :ref:`PoolIntArray<class_PoolIntArray>` connections **)** |
+   +-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_PolygonPathFinder_method_find_path:
 
-- :ref:`PoolVector2Array<class_PoolVector2Array>` **find_path** **(** :ref:`Vector2<class_Vector2>` from, :ref:`Vector2<class_Vector2>` to **)**
+.. rst-class:: classref-method
+
+:ref:`PoolVector2Array<class_PoolVector2Array>` **find_path** **(** :ref:`Vector2<class_Vector2>` from, :ref:`Vector2<class_Vector2>` to **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_PolygonPathFinder_method_get_bounds:
 
-- :ref:`Rect2<class_Rect2>` **get_bounds** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`Rect2<class_Rect2>` **get_bounds** **(** **)** |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_PolygonPathFinder_method_get_closest_point:
 
-- :ref:`Vector2<class_Vector2>` **get_closest_point** **(** :ref:`Vector2<class_Vector2>` point **)** |const|
+.. rst-class:: classref-method
+
+:ref:`Vector2<class_Vector2>` **get_closest_point** **(** :ref:`Vector2<class_Vector2>` point **)** |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_PolygonPathFinder_method_get_intersections:
 
-- :ref:`PoolVector2Array<class_PoolVector2Array>` **get_intersections** **(** :ref:`Vector2<class_Vector2>` from, :ref:`Vector2<class_Vector2>` to **)** |const|
+.. rst-class:: classref-method
+
+:ref:`PoolVector2Array<class_PoolVector2Array>` **get_intersections** **(** :ref:`Vector2<class_Vector2>` from, :ref:`Vector2<class_Vector2>` to **)** |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_PolygonPathFinder_method_get_point_penalty:
 
-- :ref:`float<class_float>` **get_point_penalty** **(** :ref:`int<class_int>` idx **)** |const|
+.. rst-class:: classref-method
+
+:ref:`float<class_float>` **get_point_penalty** **(** :ref:`int<class_int>` idx **)** |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_PolygonPathFinder_method_is_point_inside:
 
-- :ref:`bool<class_bool>` **is_point_inside** **(** :ref:`Vector2<class_Vector2>` point **)** |const|
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **is_point_inside** **(** :ref:`Vector2<class_Vector2>` point **)** |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_PolygonPathFinder_method_set_point_penalty:
 
-- void **set_point_penalty** **(** :ref:`int<class_int>` idx, :ref:`float<class_float>` penalty **)**
+.. rst-class:: classref-method
+
+void **set_point_penalty** **(** :ref:`int<class_int>` idx, :ref:`float<class_float>` penalty **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_PolygonPathFinder_method_setup:
 
-- void **setup** **(** :ref:`PoolVector2Array<class_PoolVector2Array>` points, :ref:`PoolIntArray<class_PoolIntArray>` connections **)**
+.. rst-class:: classref-method
+
+void **setup** **(** :ref:`PoolVector2Array<class_PoolVector2Array>` points, :ref:`PoolIntArray<class_PoolIntArray>` connections **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

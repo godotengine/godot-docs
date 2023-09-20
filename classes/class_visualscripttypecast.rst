@@ -14,53 +14,67 @@ VisualScriptTypeCast
 
 A Visual Script node that casts the given value to another type.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
-``VisualScriptTypeCast`` will perform a type conversion to an :ref:`Object<class_Object>`-derived type.
+**VisualScriptTypeCast** will perform a type conversion to an :ref:`Object<class_Object>`-derived type.
+
+.. rst-class:: classref-reftable-group
 
 Properties
 ----------
 
-+-----------------------------+---------------------------------------------------------------------+--------------+
-| :ref:`String<class_String>` | :ref:`base_script<class_VisualScriptTypeCast_property_base_script>` | ``""``       |
-+-----------------------------+---------------------------------------------------------------------+--------------+
-| :ref:`String<class_String>` | :ref:`base_type<class_VisualScriptTypeCast_property_base_type>`     | ``"Object"`` |
-+-----------------------------+---------------------------------------------------------------------+--------------+
+.. table::
+   :widths: auto
+
+   +-----------------------------+---------------------------------------------------------------------+--------------+
+   | :ref:`String<class_String>` | :ref:`base_script<class_VisualScriptTypeCast_property_base_script>` | ``""``       |
+   +-----------------------------+---------------------------------------------------------------------+--------------+
+   | :ref:`String<class_String>` | :ref:`base_type<class_VisualScriptTypeCast_property_base_type>`     | ``"Object"`` |
+   +-----------------------------+---------------------------------------------------------------------+--------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_VisualScriptTypeCast_property_base_script:
 
-- :ref:`String<class_String>` **base_script**
+.. rst-class:: classref-property
 
-+-----------+------------------------+
-| *Default* | ``""``                 |
-+-----------+------------------------+
-| *Setter*  | set_base_script(value) |
-+-----------+------------------------+
-| *Getter*  | get_base_script()      |
-+-----------+------------------------+
+:ref:`String<class_String>` **base_script** = ``""``
+
+.. rst-class:: classref-property-setget
+
+- void **set_base_script** **(** :ref:`String<class_String>` value **)**
+- :ref:`String<class_String>` **get_base_script** **(** **)**
 
 The target script class to be converted to. If none, only the :ref:`base_type<class_VisualScriptTypeCast_property_base_type>` will be used.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_VisualScriptTypeCast_property_base_type:
 
-- :ref:`String<class_String>` **base_type**
+.. rst-class:: classref-property
 
-+-----------+----------------------+
-| *Default* | ``"Object"``         |
-+-----------+----------------------+
-| *Setter*  | set_base_type(value) |
-+-----------+----------------------+
-| *Getter*  | get_base_type()      |
-+-----------+----------------------+
+:ref:`String<class_String>` **base_type** = ``"Object"``
+
+.. rst-class:: classref-property-setget
+
+- void **set_base_type** **(** :ref:`String<class_String>` value **)**
+- :ref:`String<class_String>` **get_base_type** **(** **)**
 
 The target type to be converted to.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

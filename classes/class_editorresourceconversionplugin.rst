@@ -12,30 +12,58 @@ EditorResourceConversionPlugin
 
 **Inherits:** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
+.. container:: contribute
 
+	There is currently no description for this class. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+---------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Resource<class_Resource>` | :ref:`_convert<class_EditorResourceConversionPlugin_method__convert>` **(** :ref:`Resource<class_Resource>` resource **)** |virtual| |
-+---------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`     | :ref:`_converts_to<class_EditorResourceConversionPlugin_method__converts_to>` **(** **)** |virtual|                                  |
-+---------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +---------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Resource<class_Resource>` | :ref:`_convert<class_EditorResourceConversionPlugin_method__convert>` **(** :ref:`Resource<class_Resource>` resource **)** |virtual| |
+   +---------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`     | :ref:`_converts_to<class_EditorResourceConversionPlugin_method__converts_to>` **(** **)** |virtual|                                  |
+   +---------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_EditorResourceConversionPlugin_method__convert:
 
-- :ref:`Resource<class_Resource>` **_convert** **(** :ref:`Resource<class_Resource>` resource **)** |virtual|
+.. rst-class:: classref-method
+
+:ref:`Resource<class_Resource>` **_convert** **(** :ref:`Resource<class_Resource>` resource **)** |virtual|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorResourceConversionPlugin_method__converts_to:
 
-- :ref:`String<class_String>` **_converts_to** **(** **)** |virtual|
+.. rst-class:: classref-method
+
+:ref:`String<class_String>` **_converts_to** **(** **)** |virtual|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

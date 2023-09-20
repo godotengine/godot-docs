@@ -14,173 +14,214 @@ ToolButton
 
 Flat button helper class.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
-This is a helper class to generate a flat :ref:`Button<class_Button>` (see :ref:`Button.flat<class_Button_property_flat>`), creating a ``ToolButton`` is equivalent to:
+This is a helper class to generate a flat :ref:`Button<class_Button>` (see :ref:`Button.flat<class_Button_property_flat>`), creating a **ToolButton** is equivalent to:
 
 ::
 
     var btn = Button.new()
     btn.flat = true
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-------------------------+------+----------------------------------------------------------------+
-| :ref:`bool<class_bool>` | flat | ``true`` (overrides :ref:`Button<class_Button_property_flat>`) |
-+-------------------------+------+----------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------+------+----------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | flat | ``true`` (overrides :ref:`Button<class_Button_property_flat>`) |
+   +-------------------------+------+----------------------------------------------------------------+
+
+.. rst-class:: classref-reftable-group
 
 Theme Properties
 ----------------
 
-+---------------------------------+------------------------------------------------------------------------------+----------------------------------+
-| :ref:`Color<class_Color>`       | :ref:`font_color<class_ToolButton_theme_color_font_color>`                   | ``Color( 0.88, 0.88, 0.88, 1 )`` |
-+---------------------------------+------------------------------------------------------------------------------+----------------------------------+
-| :ref:`Color<class_Color>`       | :ref:`font_color_disabled<class_ToolButton_theme_color_font_color_disabled>` | ``Color( 0.9, 0.95, 1, 0.3 )``   |
-+---------------------------------+------------------------------------------------------------------------------+----------------------------------+
-| :ref:`Color<class_Color>`       | :ref:`font_color_focus<class_ToolButton_theme_color_font_color_focus>`       | ``Color( 0.94, 0.94, 0.94, 1 )`` |
-+---------------------------------+------------------------------------------------------------------------------+----------------------------------+
-| :ref:`Color<class_Color>`       | :ref:`font_color_hover<class_ToolButton_theme_color_font_color_hover>`       | ``Color( 0.94, 0.94, 0.94, 1 )`` |
-+---------------------------------+------------------------------------------------------------------------------+----------------------------------+
-| :ref:`Color<class_Color>`       | :ref:`font_color_pressed<class_ToolButton_theme_color_font_color_pressed>`   | ``Color( 1, 1, 1, 1 )``          |
-+---------------------------------+------------------------------------------------------------------------------+----------------------------------+
-| :ref:`int<class_int>`           | :ref:`hseparation<class_ToolButton_theme_constant_hseparation>`              | ``3``                            |
-+---------------------------------+------------------------------------------------------------------------------+----------------------------------+
-| :ref:`Font<class_Font>`         | :ref:`font<class_ToolButton_theme_font_font>`                                |                                  |
-+---------------------------------+------------------------------------------------------------------------------+----------------------------------+
-| :ref:`StyleBox<class_StyleBox>` | :ref:`disabled<class_ToolButton_theme_style_disabled>`                       |                                  |
-+---------------------------------+------------------------------------------------------------------------------+----------------------------------+
-| :ref:`StyleBox<class_StyleBox>` | :ref:`focus<class_ToolButton_theme_style_focus>`                             |                                  |
-+---------------------------------+------------------------------------------------------------------------------+----------------------------------+
-| :ref:`StyleBox<class_StyleBox>` | :ref:`hover<class_ToolButton_theme_style_hover>`                             |                                  |
-+---------------------------------+------------------------------------------------------------------------------+----------------------------------+
-| :ref:`StyleBox<class_StyleBox>` | :ref:`normal<class_ToolButton_theme_style_normal>`                           |                                  |
-+---------------------------------+------------------------------------------------------------------------------+----------------------------------+
-| :ref:`StyleBox<class_StyleBox>` | :ref:`pressed<class_ToolButton_theme_style_pressed>`                         |                                  |
-+---------------------------------+------------------------------------------------------------------------------+----------------------------------+
+.. table::
+   :widths: auto
+
+   +---------------------------------+------------------------------------------------------------------------------+----------------------------------+
+   | :ref:`Color<class_Color>`       | :ref:`font_color<class_ToolButton_theme_color_font_color>`                   | ``Color( 0.88, 0.88, 0.88, 1 )`` |
+   +---------------------------------+------------------------------------------------------------------------------+----------------------------------+
+   | :ref:`Color<class_Color>`       | :ref:`font_color_disabled<class_ToolButton_theme_color_font_color_disabled>` | ``Color( 0.9, 0.95, 1, 0.3 )``   |
+   +---------------------------------+------------------------------------------------------------------------------+----------------------------------+
+   | :ref:`Color<class_Color>`       | :ref:`font_color_focus<class_ToolButton_theme_color_font_color_focus>`       | ``Color( 0.94, 0.94, 0.94, 1 )`` |
+   +---------------------------------+------------------------------------------------------------------------------+----------------------------------+
+   | :ref:`Color<class_Color>`       | :ref:`font_color_hover<class_ToolButton_theme_color_font_color_hover>`       | ``Color( 0.94, 0.94, 0.94, 1 )`` |
+   +---------------------------------+------------------------------------------------------------------------------+----------------------------------+
+   | :ref:`Color<class_Color>`       | :ref:`font_color_pressed<class_ToolButton_theme_color_font_color_pressed>`   | ``Color( 1, 1, 1, 1 )``          |
+   +---------------------------------+------------------------------------------------------------------------------+----------------------------------+
+   | :ref:`int<class_int>`           | :ref:`hseparation<class_ToolButton_theme_constant_hseparation>`              | ``3``                            |
+   +---------------------------------+------------------------------------------------------------------------------+----------------------------------+
+   | :ref:`Font<class_Font>`         | :ref:`font<class_ToolButton_theme_font_font>`                                |                                  |
+   +---------------------------------+------------------------------------------------------------------------------+----------------------------------+
+   | :ref:`StyleBox<class_StyleBox>` | :ref:`disabled<class_ToolButton_theme_style_disabled>`                       |                                  |
+   +---------------------------------+------------------------------------------------------------------------------+----------------------------------+
+   | :ref:`StyleBox<class_StyleBox>` | :ref:`focus<class_ToolButton_theme_style_focus>`                             |                                  |
+   +---------------------------------+------------------------------------------------------------------------------+----------------------------------+
+   | :ref:`StyleBox<class_StyleBox>` | :ref:`hover<class_ToolButton_theme_style_hover>`                             |                                  |
+   +---------------------------------+------------------------------------------------------------------------------+----------------------------------+
+   | :ref:`StyleBox<class_StyleBox>` | :ref:`normal<class_ToolButton_theme_style_normal>`                           |                                  |
+   +---------------------------------+------------------------------------------------------------------------------+----------------------------------+
+   | :ref:`StyleBox<class_StyleBox>` | :ref:`pressed<class_ToolButton_theme_style_pressed>`                         |                                  |
+   +---------------------------------+------------------------------------------------------------------------------+----------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Theme Property Descriptions
 ---------------------------
 
 .. _class_ToolButton_theme_color_font_color:
 
-- :ref:`Color<class_Color>` **font_color**
+.. rst-class:: classref-themeproperty
 
-+-----------+----------------------------------+
-| *Default* | ``Color( 0.88, 0.88, 0.88, 1 )`` |
-+-----------+----------------------------------+
+:ref:`Color<class_Color>` **font_color** = ``Color( 0.88, 0.88, 0.88, 1 )``
 
-Default text :ref:`Color<class_Color>` of the ``ToolButton``.
+Default text :ref:`Color<class_Color>` of the **ToolButton**.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_ToolButton_theme_color_font_color_disabled:
 
-- :ref:`Color<class_Color>` **font_color_disabled**
+.. rst-class:: classref-themeproperty
 
-+-----------+--------------------------------+
-| *Default* | ``Color( 0.9, 0.95, 1, 0.3 )`` |
-+-----------+--------------------------------+
+:ref:`Color<class_Color>` **font_color_disabled** = ``Color( 0.9, 0.95, 1, 0.3 )``
 
-Text :ref:`Color<class_Color>` used when the ``ToolButton`` is disabled.
+Text :ref:`Color<class_Color>` used when the **ToolButton** is disabled.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_ToolButton_theme_color_font_color_focus:
 
-- :ref:`Color<class_Color>` **font_color_focus**
+.. rst-class:: classref-themeproperty
 
-+-----------+----------------------------------+
-| *Default* | ``Color( 0.94, 0.94, 0.94, 1 )`` |
-+-----------+----------------------------------+
+:ref:`Color<class_Color>` **font_color_focus** = ``Color( 0.94, 0.94, 0.94, 1 )``
 
-Text :ref:`Color<class_Color>` used when the ``ToolButton`` is focused. Only replaces the normal text color of the button. Disabled, hovered, and pressed states take precedence over this color.
+Text :ref:`Color<class_Color>` used when the **ToolButton** is focused. Only replaces the normal text color of the button. Disabled, hovered, and pressed states take precedence over this color.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_ToolButton_theme_color_font_color_hover:
 
-- :ref:`Color<class_Color>` **font_color_hover**
+.. rst-class:: classref-themeproperty
 
-+-----------+----------------------------------+
-| *Default* | ``Color( 0.94, 0.94, 0.94, 1 )`` |
-+-----------+----------------------------------+
+:ref:`Color<class_Color>` **font_color_hover** = ``Color( 0.94, 0.94, 0.94, 1 )``
 
-Text :ref:`Color<class_Color>` used when the ``ToolButton`` is being hovered.
+Text :ref:`Color<class_Color>` used when the **ToolButton** is being hovered.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_ToolButton_theme_color_font_color_pressed:
 
-- :ref:`Color<class_Color>` **font_color_pressed**
+.. rst-class:: classref-themeproperty
 
-+-----------+-------------------------+
-| *Default* | ``Color( 1, 1, 1, 1 )`` |
-+-----------+-------------------------+
+:ref:`Color<class_Color>` **font_color_pressed** = ``Color( 1, 1, 1, 1 )``
 
-Text :ref:`Color<class_Color>` used when the ``ToolButton`` is being pressed.
+Text :ref:`Color<class_Color>` used when the **ToolButton** is being pressed.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_ToolButton_theme_constant_hseparation:
 
-- :ref:`int<class_int>` **hseparation**
+.. rst-class:: classref-themeproperty
 
-+-----------+-------+
-| *Default* | ``3`` |
-+-----------+-------+
+:ref:`int<class_int>` **hseparation** = ``3``
 
-The horizontal space between ``ToolButton``'s icon and text.
+The horizontal space between **ToolButton**'s icon and text.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_ToolButton_theme_font_font:
 
-- :ref:`Font<class_Font>` **font**
+.. rst-class:: classref-themeproperty
 
-:ref:`Font<class_Font>` of the ``ToolButton``'s text.
+:ref:`Font<class_Font>` **font**
+
+:ref:`Font<class_Font>` of the **ToolButton**'s text.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_ToolButton_theme_style_disabled:
 
-- :ref:`StyleBox<class_StyleBox>` **disabled**
+.. rst-class:: classref-themeproperty
 
-:ref:`StyleBox<class_StyleBox>` used when the ``ToolButton`` is disabled.
+:ref:`StyleBox<class_StyleBox>` **disabled**
+
+:ref:`StyleBox<class_StyleBox>` used when the **ToolButton** is disabled.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_ToolButton_theme_style_focus:
 
-- :ref:`StyleBox<class_StyleBox>` **focus**
+.. rst-class:: classref-themeproperty
 
-:ref:`StyleBox<class_StyleBox>` used when the ``ToolButton`` is focused. It is displayed over the current :ref:`StyleBox<class_StyleBox>`, so using :ref:`StyleBoxEmpty<class_StyleBoxEmpty>` will just disable the focus visual effect.
+:ref:`StyleBox<class_StyleBox>` **focus**
+
+:ref:`StyleBox<class_StyleBox>` used when the **ToolButton** is focused. It is displayed over the current :ref:`StyleBox<class_StyleBox>`, so using :ref:`StyleBoxEmpty<class_StyleBoxEmpty>` will just disable the focus visual effect.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_ToolButton_theme_style_hover:
 
-- :ref:`StyleBox<class_StyleBox>` **hover**
+.. rst-class:: classref-themeproperty
 
-:ref:`StyleBox<class_StyleBox>` used when the ``ToolButton`` is being hovered.
+:ref:`StyleBox<class_StyleBox>` **hover**
+
+:ref:`StyleBox<class_StyleBox>` used when the **ToolButton** is being hovered.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_ToolButton_theme_style_normal:
 
-- :ref:`StyleBox<class_StyleBox>` **normal**
+.. rst-class:: classref-themeproperty
 
-Default :ref:`StyleBox<class_StyleBox>` for the ``ToolButton``.
+:ref:`StyleBox<class_StyleBox>` **normal**
+
+Default :ref:`StyleBox<class_StyleBox>` for the **ToolButton**.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_ToolButton_theme_style_pressed:
 
-- :ref:`StyleBox<class_StyleBox>` **pressed**
+.. rst-class:: classref-themeproperty
 
-:ref:`StyleBox<class_StyleBox>` used when the ``ToolButton`` is being pressed.
+:ref:`StyleBox<class_StyleBox>` **pressed**
+
+:ref:`StyleBox<class_StyleBox>` used when the **ToolButton** is being pressed.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

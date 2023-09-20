@@ -16,70 +16,109 @@ PhysicsBody2D
 
 Base class for all objects affected by physics in 2D space.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 PhysicsBody2D is an abstract base class for implementing a physics body. All \*Body2D types inherit from it.
+
+.. rst-class:: classref-introduction-group
 
 Tutorials
 ---------
 
 - :doc:`../tutorials/physics/physics_introduction`
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-------------------------+----------------------------------------------------+-------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | input_pickable                                     | ``false`` (overrides :ref:`CollisionObject2D<class_CollisionObject2D_property_input_pickable>`) |
-+-------------------------+----------------------------------------------------+-------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`   | :ref:`layers<class_PhysicsBody2D_property_layers>` |                                                                                                 |
-+-------------------------+----------------------------------------------------+-------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------+----------------------------------------------------+-------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | input_pickable                                     | ``false`` (overrides :ref:`CollisionObject2D<class_CollisionObject2D_property_input_pickable>`) |
+   +-------------------------+----------------------------------------------------+-------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`   | :ref:`layers<class_PhysicsBody2D_property_layers>` |                                                                                                 |
+   +-------------------------+----------------------------------------------------+-------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+---------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| void                      | :ref:`add_collision_exception_with<class_PhysicsBody2D_method_add_collision_exception_with>` **(** :ref:`Node<class_Node>` body **)**       |
-+---------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>` | :ref:`get_collision_exceptions<class_PhysicsBody2D_method_get_collision_exceptions>` **(** **)**                                            |
-+---------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| void                      | :ref:`remove_collision_exception_with<class_PhysicsBody2D_method_remove_collision_exception_with>` **(** :ref:`Node<class_Node>` body **)** |
-+---------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +---------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                      | :ref:`add_collision_exception_with<class_PhysicsBody2D_method_add_collision_exception_with>` **(** :ref:`Node<class_Node>` body **)**       |
+   +---------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Array<class_Array>` | :ref:`get_collision_exceptions<class_PhysicsBody2D_method_get_collision_exceptions>` **(** **)**                                            |
+   +---------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                      | :ref:`remove_collision_exception_with<class_PhysicsBody2D_method_remove_collision_exception_with>` **(** :ref:`Node<class_Node>` body **)** |
+   +---------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_PhysicsBody2D_property_layers:
 
-- :ref:`int<class_int>` **layers**
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **layers**
 
 Both collision_layer and collision_mask. Returns collision_layer when accessed. Updates collision_layer and collision_mask when modified.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_PhysicsBody2D_method_add_collision_exception_with:
 
-- void **add_collision_exception_with** **(** :ref:`Node<class_Node>` body **)**
+.. rst-class:: classref-method
+
+void **add_collision_exception_with** **(** :ref:`Node<class_Node>` body **)**
 
 Adds a body to the list of bodies that this body can't collide with.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_PhysicsBody2D_method_get_collision_exceptions:
 
-- :ref:`Array<class_Array>` **get_collision_exceptions** **(** **)**
+.. rst-class:: classref-method
+
+:ref:`Array<class_Array>` **get_collision_exceptions** **(** **)**
 
 Returns an array of nodes that were added as collision exceptions for this body.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_PhysicsBody2D_method_remove_collision_exception_with:
 
-- void **remove_collision_exception_with** **(** :ref:`Node<class_Node>` body **)**
+.. rst-class:: classref-method
+
+void **remove_collision_exception_with** **(** :ref:`Node<class_Node>` body **)**
 
 Removes a body from the list of bodies that this body can't collide with.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

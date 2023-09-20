@@ -16,158 +16,240 @@ TextureLayered
 
 Base class for 3D texture types.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 Base class for :ref:`Texture3D<class_Texture3D>` and :ref:`TextureArray<class_TextureArray>`. Cannot be used directly, but contains all the functions necessary for accessing and using :ref:`Texture3D<class_Texture3D>` and :ref:`TextureArray<class_TextureArray>`. Data is set on a per-layer basis. For :ref:`Texture3D<class_Texture3D>`\ s, the layer specifies the depth or Z-index, they can be treated as a bunch of 2D slices. Similarly, for :ref:`TextureArray<class_TextureArray>`\ s, the layer specifies the array layer.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-------------------------------------+---------------------------------------------------+--------------------------------------------------------------------------------+
-| :ref:`Dictionary<class_Dictionary>` | :ref:`data<class_TextureLayered_property_data>`   | ``{"depth": 0,"flags": 7,"format": 37,"height": 0,"layers": [  ],"width": 0}`` |
-+-------------------------------------+---------------------------------------------------+--------------------------------------------------------------------------------+
-| :ref:`int<class_int>`               | :ref:`flags<class_TextureLayered_property_flags>` | ``7``                                                                          |
-+-------------------------------------+---------------------------------------------------+--------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------------------+---------------------------------------------------+--------------------------------------------------------------------------------+
+   | :ref:`Dictionary<class_Dictionary>` | :ref:`data<class_TextureLayered_property_data>`   | ``{"depth": 0,"flags": 7,"format": 37,"height": 0,"layers": [  ],"width": 0}`` |
+   +-------------------------------------+---------------------------------------------------+--------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`               | :ref:`flags<class_TextureLayered_property_flags>` | ``7``                                                                          |
+   +-------------------------------------+---------------------------------------------------+--------------------------------------------------------------------------------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`            | :ref:`get_depth<class_TextureLayered_method_get_depth>` **(** **)** |const|                                                                                                                                                                    |
-+----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Format<enum_Image_Format>` | :ref:`get_format<class_TextureLayered_method_get_format>` **(** **)** |const|                                                                                                                                                                  |
-+----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`            | :ref:`get_height<class_TextureLayered_method_get_height>` **(** **)** |const|                                                                                                                                                                  |
-+----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Image<class_Image>`        | :ref:`get_layer_data<class_TextureLayered_method_get_layer_data>` **(** :ref:`int<class_int>` layer **)** |const|                                                                                                                              |
-+----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`            | :ref:`get_width<class_TextureLayered_method_get_width>` **(** **)** |const|                                                                                                                                                                    |
-+----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`set_data_partial<class_TextureLayered_method_set_data_partial>` **(** :ref:`Image<class_Image>` image, :ref:`int<class_int>` x_offset, :ref:`int<class_int>` y_offset, :ref:`int<class_int>` layer, :ref:`int<class_int>` mipmap=0 **)** |
-+----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`set_layer_data<class_TextureLayered_method_set_layer_data>` **(** :ref:`Image<class_Image>` image, :ref:`int<class_int>` layer **)**                                                                                                     |
-+----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`            | :ref:`get_depth<class_TextureLayered_method_get_depth>` **(** **)** |const|                                                                                                                                                                    |
+   +----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Format<enum_Image_Format>` | :ref:`get_format<class_TextureLayered_method_get_format>` **(** **)** |const|                                                                                                                                                                  |
+   +----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`            | :ref:`get_height<class_TextureLayered_method_get_height>` **(** **)** |const|                                                                                                                                                                  |
+   +----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Image<class_Image>`        | :ref:`get_layer_data<class_TextureLayered_method_get_layer_data>` **(** :ref:`int<class_int>` layer **)** |const|                                                                                                                              |
+   +----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`            | :ref:`get_width<class_TextureLayered_method_get_width>` **(** **)** |const|                                                                                                                                                                    |
+   +----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                             | :ref:`set_data_partial<class_TextureLayered_method_set_data_partial>` **(** :ref:`Image<class_Image>` image, :ref:`int<class_int>` x_offset, :ref:`int<class_int>` y_offset, :ref:`int<class_int>` layer, :ref:`int<class_int>` mipmap=0 **)** |
+   +----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                             | :ref:`set_layer_data<class_TextureLayered_method_set_layer_data>` **(** :ref:`Image<class_Image>` image, :ref:`int<class_int>` layer **)**                                                                                                     |
+   +----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Enumerations
 ------------
 
 .. _enum_TextureLayered_Flags:
 
-.. _class_TextureLayered_constant_FLAGS_DEFAULT_TEXTURE_ARRAY:
-
-.. _class_TextureLayered_constant_FLAGS_DEFAULT_TEXTURE_3D:
-
-.. _class_TextureLayered_constant_FLAG_MIPMAPS:
-
-.. _class_TextureLayered_constant_FLAG_REPEAT:
-
-.. _class_TextureLayered_constant_FLAG_FILTER:
-
-.. _class_TextureLayered_constant_FLAG_ANISOTROPIC_FILTER:
+.. rst-class:: classref-enumeration
 
 enum **Flags**:
 
-- **FLAGS_DEFAULT_TEXTURE_ARRAY** = **7** --- Default flags for :ref:`TextureArray<class_TextureArray>`. :ref:`FLAG_MIPMAPS<class_TextureLayered_constant_FLAG_MIPMAPS>`, :ref:`FLAG_REPEAT<class_TextureLayered_constant_FLAG_REPEAT>` and :ref:`FLAG_FILTER<class_TextureLayered_constant_FLAG_FILTER>` are enabled.
+.. _class_TextureLayered_constant_FLAGS_DEFAULT_TEXTURE_ARRAY:
 
-- **FLAGS_DEFAULT_TEXTURE_3D** = **4** --- Default flags for :ref:`Texture3D<class_Texture3D>`. :ref:`FLAG_FILTER<class_TextureLayered_constant_FLAG_FILTER>` is enabled.
+.. rst-class:: classref-enumeration-constant
 
-- **FLAG_MIPMAPS** = **1** --- Texture will generate mipmaps on creation.
+:ref:`Flags<enum_TextureLayered_Flags>` **FLAGS_DEFAULT_TEXTURE_ARRAY** = ``7``
 
-- **FLAG_REPEAT** = **2** --- Texture will repeat when UV used is outside the 0-1 range.
+Default flags for :ref:`TextureArray<class_TextureArray>`. :ref:`FLAG_MIPMAPS<class_TextureLayered_constant_FLAG_MIPMAPS>`, :ref:`FLAG_REPEAT<class_TextureLayered_constant_FLAG_REPEAT>` and :ref:`FLAG_FILTER<class_TextureLayered_constant_FLAG_FILTER>` are enabled.
 
-- **FLAG_FILTER** = **4** --- Use filtering when reading from texture. Filtering smooths out pixels. Turning filtering off is slightly faster and more appropriate when you need access to individual pixels.
+.. _class_TextureLayered_constant_FLAGS_DEFAULT_TEXTURE_3D:
 
-- **FLAG_ANISOTROPIC_FILTER** = **8** --- Uses anisotropic mipmap filtering. Generates smaller versions of the same texture with different aspect ratios.
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Flags<enum_TextureLayered_Flags>` **FLAGS_DEFAULT_TEXTURE_3D** = ``4``
+
+Default flags for :ref:`Texture3D<class_Texture3D>`. :ref:`FLAG_FILTER<class_TextureLayered_constant_FLAG_FILTER>` is enabled.
+
+.. _class_TextureLayered_constant_FLAG_MIPMAPS:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Flags<enum_TextureLayered_Flags>` **FLAG_MIPMAPS** = ``1``
+
+Texture will generate mipmaps on creation.
+
+.. _class_TextureLayered_constant_FLAG_REPEAT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Flags<enum_TextureLayered_Flags>` **FLAG_REPEAT** = ``2``
+
+Texture will repeat when UV used is outside the 0-1 range.
+
+.. _class_TextureLayered_constant_FLAG_FILTER:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Flags<enum_TextureLayered_Flags>` **FLAG_FILTER** = ``4``
+
+Use filtering when reading from texture. Filtering smooths out pixels. Turning filtering off is slightly faster and more appropriate when you need access to individual pixels.
+
+.. _class_TextureLayered_constant_FLAG_ANISOTROPIC_FILTER:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Flags<enum_TextureLayered_Flags>` **FLAG_ANISOTROPIC_FILTER** = ``8``
+
+Uses anisotropic mipmap filtering. Generates smaller versions of the same texture with different aspect ratios.
 
 This results in better-looking textures when viewed from oblique angles.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_TextureLayered_property_data:
 
-- :ref:`Dictionary<class_Dictionary>` **data**
+.. rst-class:: classref-property
 
-+-----------+--------------------------------------------------------------------------------+
-| *Default* | ``{"depth": 0,"flags": 7,"format": 37,"height": 0,"layers": [  ],"width": 0}`` |
-+-----------+--------------------------------------------------------------------------------+
+:ref:`Dictionary<class_Dictionary>` **data** = ``{"depth": 0,"flags": 7,"format": 37,"height": 0,"layers": [  ],"width": 0}``
 
 Returns a dictionary with all the data used by this texture.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_TextureLayered_property_flags:
 
-- :ref:`int<class_int>` **flags**
+.. rst-class:: classref-property
 
-+-----------+------------------+
-| *Default* | ``7``            |
-+-----------+------------------+
-| *Setter*  | set_flags(value) |
-+-----------+------------------+
-| *Getter*  | get_flags()      |
-+-----------+------------------+
+:ref:`int<class_int>` **flags** = ``7``
+
+.. rst-class:: classref-property-setget
+
+- void **set_flags** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_flags** **(** **)**
 
 Specifies which :ref:`Flags<enum_TextureLayered_Flags>` apply to this texture.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_TextureLayered_method_get_depth:
 
-- :ref:`int<class_int>` **get_depth** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **get_depth** **(** **)** |const|
 
 Returns the depth of the texture. Depth is the 3rd dimension (typically Z-axis).
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_TextureLayered_method_get_format:
 
-- :ref:`Format<enum_Image_Format>` **get_format** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`Format<enum_Image_Format>` **get_format** **(** **)** |const|
 
 Returns the current format being used by this texture. See :ref:`Format<enum_Image_Format>` for details.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_TextureLayered_method_get_height:
 
-- :ref:`int<class_int>` **get_height** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **get_height** **(** **)** |const|
 
 Returns the height of the texture. Height is typically represented by the Y-axis.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_TextureLayered_method_get_layer_data:
 
-- :ref:`Image<class_Image>` **get_layer_data** **(** :ref:`int<class_int>` layer **)** |const|
+.. rst-class:: classref-method
+
+:ref:`Image<class_Image>` **get_layer_data** **(** :ref:`int<class_int>` layer **)** |const|
 
 Returns an :ref:`Image<class_Image>` resource with the data from specified ``layer``.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_TextureLayered_method_get_width:
 
-- :ref:`int<class_int>` **get_width** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **get_width** **(** **)** |const|
 
 Returns the width of the texture. Width is typically represented by the X-axis.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_TextureLayered_method_set_data_partial:
 
-- void **set_data_partial** **(** :ref:`Image<class_Image>` image, :ref:`int<class_int>` x_offset, :ref:`int<class_int>` y_offset, :ref:`int<class_int>` layer, :ref:`int<class_int>` mipmap=0 **)**
+.. rst-class:: classref-method
+
+void **set_data_partial** **(** :ref:`Image<class_Image>` image, :ref:`int<class_int>` x_offset, :ref:`int<class_int>` y_offset, :ref:`int<class_int>` layer, :ref:`int<class_int>` mipmap=0 **)**
 
 Partially sets the data for a specified ``layer`` by overwriting using the data of the specified ``image``. ``x_offset`` and ``y_offset`` determine where the :ref:`Image<class_Image>` is "stamped" over the texture. The ``image`` must fit within the texture.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_TextureLayered_method_set_layer_data:
 
-- void **set_layer_data** **(** :ref:`Image<class_Image>` image, :ref:`int<class_int>` layer **)**
+.. rst-class:: classref-method
+
+void **set_layer_data** **(** :ref:`Image<class_Image>` image, :ref:`int<class_int>` layer **)**
 
 Sets the data for the specified layer. Data takes the form of a 2-dimensional :ref:`Image<class_Image>` resource.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

@@ -14,10 +14,14 @@ GDNativeLibrary
 
 An external library containing functions or script classes to use in Godot.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 A GDNative library can implement :ref:`NativeScript<class_NativeScript>`\ s, global functions to call with the :ref:`GDNative<class_GDNative>` class, or low-level engine extensions through interfaces such as :ref:`ARVRInterfaceGDNative<class_ARVRInterfaceGDNative>`. The library must be compiled for each platform and architecture that the project will run on.
+
+.. rst-class:: classref-introduction-group
 
 Tutorials
 ---------
@@ -26,134 +30,168 @@ Tutorials
 
 - :doc:`../tutorials/scripting/gdnative/gdnative_cpp_example`
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-------------------------------------+--------------------------------------------------------------------+--------------+
-| :ref:`ConfigFile<class_ConfigFile>` | :ref:`config_file<class_GDNativeLibrary_property_config_file>`     |              |
-+-------------------------------------+--------------------------------------------------------------------+--------------+
-| :ref:`bool<class_bool>`             | :ref:`load_once<class_GDNativeLibrary_property_load_once>`         | ``true``     |
-+-------------------------------------+--------------------------------------------------------------------+--------------+
-| :ref:`bool<class_bool>`             | :ref:`reloadable<class_GDNativeLibrary_property_reloadable>`       | ``true``     |
-+-------------------------------------+--------------------------------------------------------------------+--------------+
-| :ref:`bool<class_bool>`             | :ref:`singleton<class_GDNativeLibrary_property_singleton>`         | ``false``    |
-+-------------------------------------+--------------------------------------------------------------------+--------------+
-| :ref:`String<class_String>`         | :ref:`symbol_prefix<class_GDNativeLibrary_property_symbol_prefix>` | ``"godot_"`` |
-+-------------------------------------+--------------------------------------------------------------------+--------------+
+.. table::
+   :widths: auto
+
+   +-------------------------------------+--------------------------------------------------------------------+--------------+
+   | :ref:`ConfigFile<class_ConfigFile>` | :ref:`config_file<class_GDNativeLibrary_property_config_file>`     |              |
+   +-------------------------------------+--------------------------------------------------------------------+--------------+
+   | :ref:`bool<class_bool>`             | :ref:`load_once<class_GDNativeLibrary_property_load_once>`         | ``true``     |
+   +-------------------------------------+--------------------------------------------------------------------+--------------+
+   | :ref:`bool<class_bool>`             | :ref:`reloadable<class_GDNativeLibrary_property_reloadable>`       | ``true``     |
+   +-------------------------------------+--------------------------------------------------------------------+--------------+
+   | :ref:`bool<class_bool>`             | :ref:`singleton<class_GDNativeLibrary_property_singleton>`         | ``false``    |
+   +-------------------------------------+--------------------------------------------------------------------+--------------+
+   | :ref:`String<class_String>`         | :ref:`symbol_prefix<class_GDNativeLibrary_property_symbol_prefix>` | ``"godot_"`` |
+   +-------------------------------------+--------------------------------------------------------------------+--------------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+-----------------------------------------------+------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolStringArray<class_PoolStringArray>` | :ref:`get_current_dependencies<class_GDNativeLibrary_method_get_current_dependencies>` **(** **)** |const| |
-+-----------------------------------------------+------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`                   | :ref:`get_current_library_path<class_GDNativeLibrary_method_get_current_library_path>` **(** **)** |const| |
-+-----------------------------------------------+------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-----------------------------------------------+------------------------------------------------------------------------------------------------------------+
+   | :ref:`PoolStringArray<class_PoolStringArray>` | :ref:`get_current_dependencies<class_GDNativeLibrary_method_get_current_dependencies>` **(** **)** |const| |
+   +-----------------------------------------------+------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                   | :ref:`get_current_library_path<class_GDNativeLibrary_method_get_current_library_path>` **(** **)** |const| |
+   +-----------------------------------------------+------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_GDNativeLibrary_property_config_file:
 
-- :ref:`ConfigFile<class_ConfigFile>` **config_file**
+.. rst-class:: classref-property
 
-+----------+------------------------+
-| *Setter* | set_config_file(value) |
-+----------+------------------------+
-| *Getter* | get_config_file()      |
-+----------+------------------------+
+:ref:`ConfigFile<class_ConfigFile>` **config_file**
+
+.. rst-class:: classref-property-setget
+
+- void **set_config_file** **(** :ref:`ConfigFile<class_ConfigFile>` value **)**
+- :ref:`ConfigFile<class_ConfigFile>` **get_config_file** **(** **)**
 
 This resource in INI-style :ref:`ConfigFile<class_ConfigFile>` format, as in ``.gdnlib`` files.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_GDNativeLibrary_property_load_once:
 
-- :ref:`bool<class_bool>` **load_once**
+.. rst-class:: classref-property
 
-+-----------+----------------------+
-| *Default* | ``true``             |
-+-----------+----------------------+
-| *Setter*  | set_load_once(value) |
-+-----------+----------------------+
-| *Getter*  | should_load_once()   |
-+-----------+----------------------+
+:ref:`bool<class_bool>` **load_once** = ``true``
+
+.. rst-class:: classref-property-setget
+
+- void **set_load_once** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **should_load_once** **(** **)**
 
 If ``true``, Godot loads only one copy of the library and each script that references the library will share static data like static or global variables.
 
 If ``false``, Godot loads a separate copy of the library into memory for each script that references it.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_GDNativeLibrary_property_reloadable:
 
-- :ref:`bool<class_bool>` **reloadable**
+.. rst-class:: classref-property
 
-+-----------+-----------------------+
-| *Default* | ``true``              |
-+-----------+-----------------------+
-| *Setter*  | set_reloadable(value) |
-+-----------+-----------------------+
-| *Getter*  | is_reloadable()       |
-+-----------+-----------------------+
+:ref:`bool<class_bool>` **reloadable** = ``true``
+
+.. rst-class:: classref-property-setget
+
+- void **set_reloadable** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_reloadable** **(** **)**
 
 If ``true``, the editor will temporarily unload the library whenever the user switches away from the editor window, allowing the user to recompile the library without restarting Godot.
 
 \ **Note:** If the library defines tool scripts that run inside the editor, ``reloadable`` must be ``false``. Otherwise, the editor will attempt to unload the tool scripts while they're in use and crash.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_GDNativeLibrary_property_singleton:
 
-- :ref:`bool<class_bool>` **singleton**
+.. rst-class:: classref-property
 
-+-----------+----------------------+
-| *Default* | ``false``            |
-+-----------+----------------------+
-| *Setter*  | set_singleton(value) |
-+-----------+----------------------+
-| *Getter*  | is_singleton()       |
-+-----------+----------------------+
+:ref:`bool<class_bool>` **singleton** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_singleton** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_singleton** **(** **)**
 
 If ``true``, Godot loads the library at startup rather than the first time a script uses the library, calling ``{prefix}gdnative_singleton`` after initializing the library (where ``{prefix}`` is the value of :ref:`symbol_prefix<class_GDNativeLibrary_property_symbol_prefix>`). The library remains loaded as long as Godot is running.
 
 \ **Note:** A singleton library cannot be :ref:`reloadable<class_GDNativeLibrary_property_reloadable>`.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_GDNativeLibrary_property_symbol_prefix:
 
-- :ref:`String<class_String>` **symbol_prefix**
+.. rst-class:: classref-property
 
-+-----------+--------------------------+
-| *Default* | ``"godot_"``             |
-+-----------+--------------------------+
-| *Setter*  | set_symbol_prefix(value) |
-+-----------+--------------------------+
-| *Getter*  | get_symbol_prefix()      |
-+-----------+--------------------------+
+:ref:`String<class_String>` **symbol_prefix** = ``"godot_"``
+
+.. rst-class:: classref-property-setget
+
+- void **set_symbol_prefix** **(** :ref:`String<class_String>` value **)**
+- :ref:`String<class_String>` **get_symbol_prefix** **(** **)**
 
 The prefix this library's entry point functions begin with. For example, a GDNativeLibrary would declare its ``gdnative_init`` function as ``godot_gdnative_init`` by default.
 
 On platforms that require statically linking libraries (currently only iOS), each library must have a different ``symbol_prefix``.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_GDNativeLibrary_method_get_current_dependencies:
 
-- :ref:`PoolStringArray<class_PoolStringArray>` **get_current_dependencies** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`PoolStringArray<class_PoolStringArray>` **get_current_dependencies** **(** **)** |const|
 
 Returns paths to all dependency libraries for the current platform and architecture.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_GDNativeLibrary_method_get_current_library_path:
 
-- :ref:`String<class_String>` **get_current_library_path** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`String<class_String>` **get_current_library_path** **(** **)** |const|
 
 Returns the path to the dynamic library file for the current platform and architecture.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

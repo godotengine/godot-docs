@@ -14,35 +14,48 @@ VisualScriptGlobalConstant
 
 A Visual Script node returning a constant from :ref:`@GlobalScope<class_@GlobalScope>`.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 A Visual Script node returning a constant from :ref:`@GlobalScope<class_@GlobalScope>`.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-----------------------+---------------------------------------------------------------------+-------+
-| :ref:`int<class_int>` | :ref:`constant<class_VisualScriptGlobalConstant_property_constant>` | ``0`` |
-+-----------------------+---------------------------------------------------------------------+-------+
+.. table::
+   :widths: auto
+
+   +-----------------------+---------------------------------------------------------------------+-------+
+   | :ref:`int<class_int>` | :ref:`constant<class_VisualScriptGlobalConstant_property_constant>` | ``0`` |
+   +-----------------------+---------------------------------------------------------------------+-------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_VisualScriptGlobalConstant_property_constant:
 
-- :ref:`int<class_int>` **constant**
+.. rst-class:: classref-property
 
-+-----------+----------------------------+
-| *Default* | ``0``                      |
-+-----------+----------------------------+
-| *Setter*  | set_global_constant(value) |
-+-----------+----------------------------+
-| *Getter*  | get_global_constant()      |
-+-----------+----------------------------+
+:ref:`int<class_int>` **constant** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_global_constant** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_global_constant** **(** **)**
 
 The constant to be used.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

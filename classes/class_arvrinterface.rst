@@ -16,6 +16,8 @@ ARVRInterface
 
 Base class for an AR/VR interface implementation.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -23,209 +25,324 @@ This class needs to be implemented to make an AR or VR platform available to God
 
 Interfaces should be written in such a way that simply enabling them will give us a working setup. You can query the available interfaces through :ref:`ARVRServer<class_ARVRServer>`.
 
+.. rst-class:: classref-introduction-group
+
 Tutorials
 ---------
 
 - :doc:`../tutorials/vr/index`
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-------------------------+----------------------------------------------------------------------------------------------------+-----------+
-| :ref:`bool<class_bool>` | :ref:`ar_is_anchor_detection_enabled<class_ARVRInterface_property_ar_is_anchor_detection_enabled>` | ``false`` |
-+-------------------------+----------------------------------------------------------------------------------------------------+-----------+
-| :ref:`bool<class_bool>` | :ref:`interface_is_initialized<class_ARVRInterface_property_interface_is_initialized>`             | ``false`` |
-+-------------------------+----------------------------------------------------------------------------------------------------+-----------+
-| :ref:`bool<class_bool>` | :ref:`interface_is_primary<class_ARVRInterface_property_interface_is_primary>`                     | ``false`` |
-+-------------------------+----------------------------------------------------------------------------------------------------+-----------+
+.. table::
+   :widths: auto
+
+   +-------------------------+----------------------------------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>` | :ref:`ar_is_anchor_detection_enabled<class_ARVRInterface_property_ar_is_anchor_detection_enabled>` | ``false`` |
+   +-------------------------+----------------------------------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>` | :ref:`interface_is_initialized<class_ARVRInterface_property_interface_is_initialized>`             | ``false`` |
+   +-------------------------+----------------------------------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>` | :ref:`interface_is_primary<class_ARVRInterface_property_interface_is_primary>`                     | ``false`` |
+   +-------------------------+----------------------------------------------------------------------------------------------------+-----------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+------------------------------------------------------------+------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                                      | :ref:`get_camera_feed_id<class_ARVRInterface_method_get_camera_feed_id>` **(** **)**           |
-+------------------------------------------------------------+------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                                      | :ref:`get_capabilities<class_ARVRInterface_method_get_capabilities>` **(** **)** |const|       |
-+------------------------------------------------------------+------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`                                | :ref:`get_name<class_ARVRInterface_method_get_name>` **(** **)** |const|                       |
-+------------------------------------------------------------+------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>`                              | :ref:`get_render_targetsize<class_ARVRInterface_method_get_render_targetsize>` **(** **)**     |
-+------------------------------------------------------------+------------------------------------------------------------------------------------------------+
-| :ref:`Tracking_status<enum_ARVRInterface_Tracking_status>` | :ref:`get_tracking_status<class_ARVRInterface_method_get_tracking_status>` **(** **)** |const| |
-+------------------------------------------------------------+------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                                    | :ref:`initialize<class_ARVRInterface_method_initialize>` **(** **)**                           |
-+------------------------------------------------------------+------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                                    | :ref:`is_stereo<class_ARVRInterface_method_is_stereo>` **(** **)**                             |
-+------------------------------------------------------------+------------------------------------------------------------------------------------------------+
-| void                                                       | :ref:`uninitialize<class_ARVRInterface_method_uninitialize>` **(** **)**                       |
-+------------------------------------------------------------+------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +------------------------------------------------------------+------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                                      | :ref:`get_camera_feed_id<class_ARVRInterface_method_get_camera_feed_id>` **(** **)**           |
+   +------------------------------------------------------------+------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                                      | :ref:`get_capabilities<class_ARVRInterface_method_get_capabilities>` **(** **)** |const|       |
+   +------------------------------------------------------------+------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                                | :ref:`get_name<class_ARVRInterface_method_get_name>` **(** **)** |const|                       |
+   +------------------------------------------------------------+------------------------------------------------------------------------------------------------+
+   | :ref:`Vector2<class_Vector2>`                              | :ref:`get_render_targetsize<class_ARVRInterface_method_get_render_targetsize>` **(** **)**     |
+   +------------------------------------------------------------+------------------------------------------------------------------------------------------------+
+   | :ref:`Tracking_status<enum_ARVRInterface_Tracking_status>` | :ref:`get_tracking_status<class_ARVRInterface_method_get_tracking_status>` **(** **)** |const| |
+   +------------------------------------------------------------+------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                    | :ref:`initialize<class_ARVRInterface_method_initialize>` **(** **)**                           |
+   +------------------------------------------------------------+------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                    | :ref:`is_stereo<class_ARVRInterface_method_is_stereo>` **(** **)**                             |
+   +------------------------------------------------------------+------------------------------------------------------------------------------------------------+
+   | void                                                       | :ref:`uninitialize<class_ARVRInterface_method_uninitialize>` **(** **)**                       |
+   +------------------------------------------------------------+------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Enumerations
 ------------
 
 .. _enum_ARVRInterface_Capabilities:
 
-.. _class_ARVRInterface_constant_ARVR_NONE:
-
-.. _class_ARVRInterface_constant_ARVR_MONO:
-
-.. _class_ARVRInterface_constant_ARVR_STEREO:
-
-.. _class_ARVRInterface_constant_ARVR_AR:
-
-.. _class_ARVRInterface_constant_ARVR_EXTERNAL:
+.. rst-class:: classref-enumeration
 
 enum **Capabilities**:
 
-- **ARVR_NONE** = **0** --- No ARVR capabilities.
+.. _class_ARVRInterface_constant_ARVR_NONE:
 
-- **ARVR_MONO** = **1** --- This interface can work with normal rendering output (non-HMD based AR).
+.. rst-class:: classref-enumeration-constant
 
-- **ARVR_STEREO** = **2** --- This interface supports stereoscopic rendering.
+:ref:`Capabilities<enum_ARVRInterface_Capabilities>` **ARVR_NONE** = ``0``
 
-- **ARVR_AR** = **4** --- This interface supports AR (video background and real world tracking).
+No ARVR capabilities.
 
-- **ARVR_EXTERNAL** = **8** --- This interface outputs to an external device. If the main viewport is used, the on screen output is an unmodified buffer of either the left or right eye (stretched if the viewport size is not changed to the same aspect ratio of :ref:`get_render_targetsize<class_ARVRInterface_method_get_render_targetsize>`). Using a separate viewport node frees up the main viewport for other purposes.
+.. _class_ARVRInterface_constant_ARVR_MONO:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Capabilities<enum_ARVRInterface_Capabilities>` **ARVR_MONO** = ``1``
+
+This interface can work with normal rendering output (non-HMD based AR).
+
+.. _class_ARVRInterface_constant_ARVR_STEREO:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Capabilities<enum_ARVRInterface_Capabilities>` **ARVR_STEREO** = ``2``
+
+This interface supports stereoscopic rendering.
+
+.. _class_ARVRInterface_constant_ARVR_AR:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Capabilities<enum_ARVRInterface_Capabilities>` **ARVR_AR** = ``4``
+
+This interface supports AR (video background and real world tracking).
+
+.. _class_ARVRInterface_constant_ARVR_EXTERNAL:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Capabilities<enum_ARVRInterface_Capabilities>` **ARVR_EXTERNAL** = ``8``
+
+This interface outputs to an external device. If the main viewport is used, the on screen output is an unmodified buffer of either the left or right eye (stretched if the viewport size is not changed to the same aspect ratio of :ref:`get_render_targetsize<class_ARVRInterface_method_get_render_targetsize>`). Using a separate viewport node frees up the main viewport for other purposes.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _enum_ARVRInterface_Eyes:
 
-.. _class_ARVRInterface_constant_EYE_MONO:
-
-.. _class_ARVRInterface_constant_EYE_LEFT:
-
-.. _class_ARVRInterface_constant_EYE_RIGHT:
+.. rst-class:: classref-enumeration
 
 enum **Eyes**:
 
-- **EYE_MONO** = **0** --- Mono output, this is mostly used internally when retrieving positioning information for our camera node or when stereo scopic rendering is not supported.
+.. _class_ARVRInterface_constant_EYE_MONO:
 
-- **EYE_LEFT** = **1** --- Left eye output, this is mostly used internally when rendering the image for the left eye and obtaining positioning and projection information.
+.. rst-class:: classref-enumeration-constant
 
-- **EYE_RIGHT** = **2** --- Right eye output, this is mostly used internally when rendering the image for the right eye and obtaining positioning and projection information.
+:ref:`Eyes<enum_ARVRInterface_Eyes>` **EYE_MONO** = ``0``
+
+Mono output, this is mostly used internally when retrieving positioning information for our camera node or when stereo scopic rendering is not supported.
+
+.. _class_ARVRInterface_constant_EYE_LEFT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Eyes<enum_ARVRInterface_Eyes>` **EYE_LEFT** = ``1``
+
+Left eye output, this is mostly used internally when rendering the image for the left eye and obtaining positioning and projection information.
+
+.. _class_ARVRInterface_constant_EYE_RIGHT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Eyes<enum_ARVRInterface_Eyes>` **EYE_RIGHT** = ``2``
+
+Right eye output, this is mostly used internally when rendering the image for the right eye and obtaining positioning and projection information.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _enum_ARVRInterface_Tracking_status:
 
-.. _class_ARVRInterface_constant_ARVR_NORMAL_TRACKING:
-
-.. _class_ARVRInterface_constant_ARVR_EXCESSIVE_MOTION:
-
-.. _class_ARVRInterface_constant_ARVR_INSUFFICIENT_FEATURES:
-
-.. _class_ARVRInterface_constant_ARVR_UNKNOWN_TRACKING:
-
-.. _class_ARVRInterface_constant_ARVR_NOT_TRACKING:
+.. rst-class:: classref-enumeration
 
 enum **Tracking_status**:
 
-- **ARVR_NORMAL_TRACKING** = **0** --- Tracking is behaving as expected.
+.. _class_ARVRInterface_constant_ARVR_NORMAL_TRACKING:
 
-- **ARVR_EXCESSIVE_MOTION** = **1** --- Tracking is hindered by excessive motion (the player is moving faster than tracking can keep up).
+.. rst-class:: classref-enumeration-constant
 
-- **ARVR_INSUFFICIENT_FEATURES** = **2** --- Tracking is hindered by insufficient features, it's too dark (for camera-based tracking), player is blocked, etc.
+:ref:`Tracking_status<enum_ARVRInterface_Tracking_status>` **ARVR_NORMAL_TRACKING** = ``0``
 
-- **ARVR_UNKNOWN_TRACKING** = **3** --- We don't know the status of the tracking or this interface does not provide feedback.
+Tracking is behaving as expected.
 
-- **ARVR_NOT_TRACKING** = **4** --- Tracking is not functional (camera not plugged in or obscured, lighthouses turned off, etc.).
+.. _class_ARVRInterface_constant_ARVR_EXCESSIVE_MOTION:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Tracking_status<enum_ARVRInterface_Tracking_status>` **ARVR_EXCESSIVE_MOTION** = ``1``
+
+Tracking is hindered by excessive motion (the player is moving faster than tracking can keep up).
+
+.. _class_ARVRInterface_constant_ARVR_INSUFFICIENT_FEATURES:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Tracking_status<enum_ARVRInterface_Tracking_status>` **ARVR_INSUFFICIENT_FEATURES** = ``2``
+
+Tracking is hindered by insufficient features, it's too dark (for camera-based tracking), player is blocked, etc.
+
+.. _class_ARVRInterface_constant_ARVR_UNKNOWN_TRACKING:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Tracking_status<enum_ARVRInterface_Tracking_status>` **ARVR_UNKNOWN_TRACKING** = ``3``
+
+We don't know the status of the tracking or this interface does not provide feedback.
+
+.. _class_ARVRInterface_constant_ARVR_NOT_TRACKING:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Tracking_status<enum_ARVRInterface_Tracking_status>` **ARVR_NOT_TRACKING** = ``4``
+
+Tracking is not functional (camera not plugged in or obscured, lighthouses turned off, etc.).
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_ARVRInterface_property_ar_is_anchor_detection_enabled:
 
-- :ref:`bool<class_bool>` **ar_is_anchor_detection_enabled**
+.. rst-class:: classref-property
 
-+-----------+----------------------------------------+
-| *Default* | ``false``                              |
-+-----------+----------------------------------------+
-| *Setter*  | set_anchor_detection_is_enabled(value) |
-+-----------+----------------------------------------+
-| *Getter*  | get_anchor_detection_is_enabled()      |
-+-----------+----------------------------------------+
+:ref:`bool<class_bool>` **ar_is_anchor_detection_enabled** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_anchor_detection_is_enabled** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **get_anchor_detection_is_enabled** **(** **)**
 
 On an AR interface, ``true`` if anchor detection is enabled.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_ARVRInterface_property_interface_is_initialized:
 
-- :ref:`bool<class_bool>` **interface_is_initialized**
+.. rst-class:: classref-property
 
-+-----------+---------------------------+
-| *Default* | ``false``                 |
-+-----------+---------------------------+
-| *Setter*  | set_is_initialized(value) |
-+-----------+---------------------------+
-| *Getter*  | is_initialized()          |
-+-----------+---------------------------+
+:ref:`bool<class_bool>` **interface_is_initialized** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_is_initialized** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_initialized** **(** **)**
 
 ``true`` if this interface been initialized.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_ARVRInterface_property_interface_is_primary:
 
-- :ref:`bool<class_bool>` **interface_is_primary**
+.. rst-class:: classref-property
 
-+-----------+-----------------------+
-| *Default* | ``false``             |
-+-----------+-----------------------+
-| *Setter*  | set_is_primary(value) |
-+-----------+-----------------------+
-| *Getter*  | is_primary()          |
-+-----------+-----------------------+
+:ref:`bool<class_bool>` **interface_is_primary** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_is_primary** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_primary** **(** **)**
 
 ``true`` if this is the primary interface.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_ARVRInterface_method_get_camera_feed_id:
 
-- :ref:`int<class_int>` **get_camera_feed_id** **(** **)**
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **get_camera_feed_id** **(** **)**
 
 If this is an AR interface that requires displaying a camera feed as the background, this method returns the feed ID in the :ref:`CameraServer<class_CameraServer>` for this interface.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_ARVRInterface_method_get_capabilities:
 
-- :ref:`int<class_int>` **get_capabilities** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **get_capabilities** **(** **)** |const|
 
 Returns a combination of :ref:`Capabilities<enum_ARVRInterface_Capabilities>` flags providing information about the capabilities of this interface.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_ARVRInterface_method_get_name:
 
-- :ref:`String<class_String>` **get_name** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`String<class_String>` **get_name** **(** **)** |const|
 
 Returns the name of this interface (OpenVR, OpenHMD, ARKit, etc).
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_ARVRInterface_method_get_render_targetsize:
 
-- :ref:`Vector2<class_Vector2>` **get_render_targetsize** **(** **)**
+.. rst-class:: classref-method
+
+:ref:`Vector2<class_Vector2>` **get_render_targetsize** **(** **)**
 
 Returns the resolution at which we should render our intermediate results before things like lens distortion are applied by the VR platform.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_ARVRInterface_method_get_tracking_status:
 
-- :ref:`Tracking_status<enum_ARVRInterface_Tracking_status>` **get_tracking_status** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`Tracking_status<enum_ARVRInterface_Tracking_status>` **get_tracking_status** **(** **)** |const|
 
 If supported, returns the status of our tracking. This will allow you to provide feedback to the user whether there are issues with positional tracking.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_ARVRInterface_method_initialize:
 
-- :ref:`bool<class_bool>` **initialize** **(** **)**
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **initialize** **(** **)**
 
 Call this to initialize this interface. The first interface that is initialized is identified as the primary interface and it will be used for rendering output.
 
@@ -237,22 +354,31 @@ If you do this for a platform that handles its own output (such as OpenVR) Godot
 
 While currently not used, you can activate additional interfaces. You may wish to do this if you want to track controllers from other platforms. However, at this point in time only one interface can render to an HMD.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_ARVRInterface_method_is_stereo:
 
-- :ref:`bool<class_bool>` **is_stereo** **(** **)**
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **is_stereo** **(** **)**
 
 Returns ``true`` if the current output of this interface is in stereo.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_ARVRInterface_method_uninitialize:
 
-- void **uninitialize** **(** **)**
+.. rst-class:: classref-method
+
+void **uninitialize** **(** **)**
 
 Turns the interface off.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

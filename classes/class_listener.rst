@@ -14,59 +14,87 @@ Listener
 
 Overrides the location sounds are heard from.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 Once added to the scene tree and enabled using :ref:`make_current<class_Listener_method_make_current>`, this node will override the location sounds are heard from. This can be used to listen from a location different from the :ref:`Camera<class_Camera>`.
 
+.. rst-class:: classref-reftable-group
+
 Methods
 -------
 
-+-----------------------------------+-------------------------------------------------------------------------------------------------+
-| void                              | :ref:`clear_current<class_Listener_method_clear_current>` **(** **)**                           |
-+-----------------------------------+-------------------------------------------------------------------------------------------------+
-| :ref:`Transform<class_Transform>` | :ref:`get_listener_transform<class_Listener_method_get_listener_transform>` **(** **)** |const| |
-+-----------------------------------+-------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`           | :ref:`is_current<class_Listener_method_is_current>` **(** **)** |const|                         |
-+-----------------------------------+-------------------------------------------------------------------------------------------------+
-| void                              | :ref:`make_current<class_Listener_method_make_current>` **(** **)**                             |
-+-----------------------------------+-------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-----------------------------------+-------------------------------------------------------------------------------------------------+
+   | void                              | :ref:`clear_current<class_Listener_method_clear_current>` **(** **)**                           |
+   +-----------------------------------+-------------------------------------------------------------------------------------------------+
+   | :ref:`Transform<class_Transform>` | :ref:`get_listener_transform<class_Listener_method_get_listener_transform>` **(** **)** |const| |
+   +-----------------------------------+-------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`           | :ref:`is_current<class_Listener_method_is_current>` **(** **)** |const|                         |
+   +-----------------------------------+-------------------------------------------------------------------------------------------------+
+   | void                              | :ref:`make_current<class_Listener_method_make_current>` **(** **)**                             |
+   +-----------------------------------+-------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_Listener_method_clear_current:
 
-- void **clear_current** **(** **)**
+.. rst-class:: classref-method
+
+void **clear_current** **(** **)**
 
 Disables the listener to use the current camera's listener instead.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Listener_method_get_listener_transform:
 
-- :ref:`Transform<class_Transform>` **get_listener_transform** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`Transform<class_Transform>` **get_listener_transform** **(** **)** |const|
 
 Returns the listener's global orthonormalized :ref:`Transform<class_Transform>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Listener_method_is_current:
 
-- :ref:`bool<class_bool>` **is_current** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **is_current** **(** **)** |const|
 
 Returns ``true`` if the listener was made current using :ref:`make_current<class_Listener_method_make_current>`, ``false`` otherwise.
 
 \ **Note:** There may be more than one Listener marked as "current" in the scene tree, but only the one that was made current last will be used.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_Listener_method_make_current:
 
-- void **make_current** **(** **)**
+.. rst-class:: classref-method
+
+void **make_current** **(** **)**
 
 Enables the listener. This will override the current camera's listener.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

@@ -14,6 +14,8 @@ AESContext
 
 Interface to low level AES encryption features.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -51,78 +53,131 @@ This class provides access to AES encryption/decryption of raw data. Both AES-EC
         # Check CBC
         assert(decrypted == data.to_utf8())
 
+.. rst-class:: classref-reftable-group
+
 Methods
 -------
 
-+-------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                      | :ref:`finish<class_AESContext_method_finish>` **(** **)**                                                                                                                                                     |
-+-------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolByteArray<class_PoolByteArray>` | :ref:`get_iv_state<class_AESContext_method_get_iv_state>` **(** **)**                                                                                                                                         |
-+-------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>`     | :ref:`start<class_AESContext_method_start>` **(** :ref:`Mode<enum_AESContext_Mode>` mode, :ref:`PoolByteArray<class_PoolByteArray>` key, :ref:`PoolByteArray<class_PoolByteArray>` iv=PoolByteArray(  ) **)** |
-+-------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolByteArray<class_PoolByteArray>` | :ref:`update<class_AESContext_method_update>` **(** :ref:`PoolByteArray<class_PoolByteArray>` src **)**                                                                                                       |
-+-------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                      | :ref:`finish<class_AESContext_method_finish>` **(** **)**                                                                                                                                                     |
+   +-------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PoolByteArray<class_PoolByteArray>` | :ref:`get_iv_state<class_AESContext_method_get_iv_state>` **(** **)**                                                                                                                                         |
+   +-------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>`     | :ref:`start<class_AESContext_method_start>` **(** :ref:`Mode<enum_AESContext_Mode>` mode, :ref:`PoolByteArray<class_PoolByteArray>` key, :ref:`PoolByteArray<class_PoolByteArray>` iv=PoolByteArray(  ) **)** |
+   +-------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PoolByteArray<class_PoolByteArray>` | :ref:`update<class_AESContext_method_update>` **(** :ref:`PoolByteArray<class_PoolByteArray>` src **)**                                                                                                       |
+   +-------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Enumerations
 ------------
 
 .. _enum_AESContext_Mode:
 
-.. _class_AESContext_constant_MODE_ECB_ENCRYPT:
-
-.. _class_AESContext_constant_MODE_ECB_DECRYPT:
-
-.. _class_AESContext_constant_MODE_CBC_ENCRYPT:
-
-.. _class_AESContext_constant_MODE_CBC_DECRYPT:
-
-.. _class_AESContext_constant_MODE_MAX:
+.. rst-class:: classref-enumeration
 
 enum **Mode**:
 
-- **MODE_ECB_ENCRYPT** = **0** --- AES electronic codebook encryption mode.
+.. _class_AESContext_constant_MODE_ECB_ENCRYPT:
 
-- **MODE_ECB_DECRYPT** = **1** --- AES electronic codebook decryption mode.
+.. rst-class:: classref-enumeration-constant
 
-- **MODE_CBC_ENCRYPT** = **2** --- AES cipher blocker chaining encryption mode.
+:ref:`Mode<enum_AESContext_Mode>` **MODE_ECB_ENCRYPT** = ``0``
 
-- **MODE_CBC_DECRYPT** = **3** --- AES cipher blocker chaining decryption mode.
+AES electronic codebook encryption mode.
 
-- **MODE_MAX** = **4** --- Maximum value for the mode enum.
+.. _class_AESContext_constant_MODE_ECB_DECRYPT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Mode<enum_AESContext_Mode>` **MODE_ECB_DECRYPT** = ``1``
+
+AES electronic codebook decryption mode.
+
+.. _class_AESContext_constant_MODE_CBC_ENCRYPT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Mode<enum_AESContext_Mode>` **MODE_CBC_ENCRYPT** = ``2``
+
+AES cipher blocker chaining encryption mode.
+
+.. _class_AESContext_constant_MODE_CBC_DECRYPT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Mode<enum_AESContext_Mode>` **MODE_CBC_DECRYPT** = ``3``
+
+AES cipher blocker chaining decryption mode.
+
+.. _class_AESContext_constant_MODE_MAX:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Mode<enum_AESContext_Mode>` **MODE_MAX** = ``4``
+
+Maximum value for the mode enum.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_AESContext_method_finish:
 
-- void **finish** **(** **)**
+.. rst-class:: classref-method
+
+void **finish** **(** **)**
 
 Close this AES context so it can be started again. See :ref:`start<class_AESContext_method_start>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AESContext_method_get_iv_state:
 
-- :ref:`PoolByteArray<class_PoolByteArray>` **get_iv_state** **(** **)**
+.. rst-class:: classref-method
+
+:ref:`PoolByteArray<class_PoolByteArray>` **get_iv_state** **(** **)**
 
 Get the current IV state for this context (IV gets updated when calling :ref:`update<class_AESContext_method_update>`). You normally don't need this function.
 
 \ **Note:** This function only makes sense when the context is started with :ref:`MODE_CBC_ENCRYPT<class_AESContext_constant_MODE_CBC_ENCRYPT>` or :ref:`MODE_CBC_DECRYPT<class_AESContext_constant_MODE_CBC_DECRYPT>`.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_AESContext_method_start:
 
-- :ref:`Error<enum_@GlobalScope_Error>` **start** **(** :ref:`Mode<enum_AESContext_Mode>` mode, :ref:`PoolByteArray<class_PoolByteArray>` key, :ref:`PoolByteArray<class_PoolByteArray>` iv=PoolByteArray(  ) **)**
+.. rst-class:: classref-method
+
+:ref:`Error<enum_@GlobalScope_Error>` **start** **(** :ref:`Mode<enum_AESContext_Mode>` mode, :ref:`PoolByteArray<class_PoolByteArray>` key, :ref:`PoolByteArray<class_PoolByteArray>` iv=PoolByteArray(  ) **)**
 
 Start the AES context in the given ``mode``. A ``key`` of either 16 or 32 bytes must always be provided, while an ``iv`` (initialization vector) of exactly 16 bytes, is only needed when ``mode`` is either :ref:`MODE_CBC_ENCRYPT<class_AESContext_constant_MODE_CBC_ENCRYPT>` or :ref:`MODE_CBC_DECRYPT<class_AESContext_constant_MODE_CBC_DECRYPT>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AESContext_method_update:
 
-- :ref:`PoolByteArray<class_PoolByteArray>` **update** **(** :ref:`PoolByteArray<class_PoolByteArray>` src **)**
+.. rst-class:: classref-method
+
+:ref:`PoolByteArray<class_PoolByteArray>` **update** **(** :ref:`PoolByteArray<class_PoolByteArray>` src **)**
 
 Run the desired operation for this AES context. Will return a :ref:`PoolByteArray<class_PoolByteArray>` containing the result of encrypting (or decrypting) the given ``src``. See :ref:`start<class_AESContext_method_start>` for mode of operation.
 
@@ -131,3 +186,4 @@ Run the desired operation for this AES context. Will return a :ref:`PoolByteArra
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

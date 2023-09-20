@@ -12,58 +12,110 @@ GDNative
 
 **Inherits:** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
+.. container:: contribute
 
+	There is currently no description for this class. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-reftable-group
 
 Properties
 ----------
 
-+-----------------------------------------------+-------------------------------------------------+
-| :ref:`GDNativeLibrary<class_GDNativeLibrary>` | :ref:`library<class_GDNative_property_library>` |
-+-----------------------------------------------+-------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-----------------------------------------------+-------------------------------------------------+
+   | :ref:`GDNativeLibrary<class_GDNativeLibrary>` | :ref:`library<class_GDNative_property_library>` |
+   +-----------------------------------------------+-------------------------------------------------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>` | :ref:`call_native<class_GDNative_method_call_native>` **(** :ref:`String<class_String>` calling_type, :ref:`String<class_String>` procedure_name, :ref:`Array<class_Array>` arguments **)** |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`initialize<class_GDNative_method_initialize>` **(** **)**                                                                                                                             |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`terminate<class_GDNative_method_terminate>` **(** **)**                                                                                                                               |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Variant<class_Variant>` | :ref:`call_native<class_GDNative_method_call_native>` **(** :ref:`String<class_String>` calling_type, :ref:`String<class_String>` procedure_name, :ref:`Array<class_Array>` arguments **)** |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`initialize<class_GDNative_method_initialize>` **(** **)**                                                                                                                             |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`terminate<class_GDNative_method_terminate>` **(** **)**                                                                                                                               |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_GDNative_property_library:
 
-- :ref:`GDNativeLibrary<class_GDNativeLibrary>` **library**
+.. rst-class:: classref-property
 
-+----------+--------------------+
-| *Setter* | set_library(value) |
-+----------+--------------------+
-| *Getter* | get_library()      |
-+----------+--------------------+
+:ref:`GDNativeLibrary<class_GDNativeLibrary>` **library**
+
+.. rst-class:: classref-property-setget
+
+- void **set_library** **(** :ref:`GDNativeLibrary<class_GDNativeLibrary>` value **)**
+- :ref:`GDNativeLibrary<class_GDNativeLibrary>` **get_library** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_GDNative_method_call_native:
 
-- :ref:`Variant<class_Variant>` **call_native** **(** :ref:`String<class_String>` calling_type, :ref:`String<class_String>` procedure_name, :ref:`Array<class_Array>` arguments **)**
+.. rst-class:: classref-method
+
+:ref:`Variant<class_Variant>` **call_native** **(** :ref:`String<class_String>` calling_type, :ref:`String<class_String>` procedure_name, :ref:`Array<class_Array>` arguments **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_GDNative_method_initialize:
 
-- :ref:`bool<class_bool>` **initialize** **(** **)**
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **initialize** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_GDNative_method_terminate:
 
-- :ref:`bool<class_bool>` **terminate** **(** **)**
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **terminate** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

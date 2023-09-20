@@ -12,48 +12,89 @@ PackedDataContainer
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
+.. container:: contribute
 
+	There is currently no description for this class. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-reftable-group
 
 Properties
 ----------
 
-+-------------------------------------------+--------------------------------------------------------------+-----------------------+
-| :ref:`PoolByteArray<class_PoolByteArray>` | :ref:`__data__<class_PackedDataContainer_property___data__>` | ``PoolByteArray(  )`` |
-+-------------------------------------------+--------------------------------------------------------------+-----------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------------------------+--------------------------------------------------------------+-----------------------+
+   | :ref:`PoolByteArray<class_PoolByteArray>` | :ref:`__data__<class_PackedDataContainer_property___data__>` | ``PoolByteArray(  )`` |
+   +-------------------------------------------+--------------------------------------------------------------+-----------------------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+---------------------------------------+----------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`pack<class_PackedDataContainer_method_pack>` **(** :ref:`Variant<class_Variant>` value **)** |
-+---------------------------------------+----------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                 | :ref:`size<class_PackedDataContainer_method_size>` **(** **)** |const|                             |
-+---------------------------------------+----------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +---------------------------------------+----------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>` | :ref:`pack<class_PackedDataContainer_method_pack>` **(** :ref:`Variant<class_Variant>` value **)** |
+   +---------------------------------------+----------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                 | :ref:`size<class_PackedDataContainer_method_size>` **(** **)** |const|                             |
+   +---------------------------------------+----------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_PackedDataContainer_property___data__:
 
-- :ref:`PoolByteArray<class_PoolByteArray>` **__data__**
+.. rst-class:: classref-property
 
-+-----------+-----------------------+
-| *Default* | ``PoolByteArray(  )`` |
-+-----------+-----------------------+
+:ref:`PoolByteArray<class_PoolByteArray>` **__data__** = ``PoolByteArray(  )``
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_PackedDataContainer_method_pack:
 
-- :ref:`Error<enum_@GlobalScope_Error>` **pack** **(** :ref:`Variant<class_Variant>` value **)**
+.. rst-class:: classref-method
+
+:ref:`Error<enum_@GlobalScope_Error>` **pack** **(** :ref:`Variant<class_Variant>` value **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_PackedDataContainer_method_size:
 
-- :ref:`int<class_int>` **size** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **size** **(** **)** |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

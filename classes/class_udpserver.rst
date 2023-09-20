@@ -14,6 +14,8 @@ UDPServer
 
 Helper class to implement a UDP server.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -69,96 +71,140 @@ Below a small example of how it can be used:
             print("Connected: %s" % udp.get_packet().get_string_from_utf8())
             connected = true
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-----------------------+----------------------------------------------------------------------------------+--------+
-| :ref:`int<class_int>` | :ref:`max_pending_connections<class_UDPServer_property_max_pending_connections>` | ``16`` |
-+-----------------------+----------------------------------------------------------------------------------+--------+
+.. table::
+   :widths: auto
+
+   +-----------------------+----------------------------------------------------------------------------------+--------+
+   | :ref:`int<class_int>` | :ref:`max_pending_connections<class_UDPServer_property_max_pending_connections>` | ``16`` |
+   +-----------------------+----------------------------------------------------------------------------------+--------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+-------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                   | :ref:`is_connection_available<class_UDPServer_method_is_connection_available>` **(** **)** |const|                                |
-+-------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                   | :ref:`is_listening<class_UDPServer_method_is_listening>` **(** **)** |const|                                                      |
-+-------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>`     | :ref:`listen<class_UDPServer_method_listen>` **(** :ref:`int<class_int>` port, :ref:`String<class_String>` bind_address="*" **)** |
-+-------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>`     | :ref:`poll<class_UDPServer_method_poll>` **(** **)**                                                                              |
-+-------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
-| void                                      | :ref:`stop<class_UDPServer_method_stop>` **(** **)**                                                                              |
-+-------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PacketPeerUDP<class_PacketPeerUDP>` | :ref:`take_connection<class_UDPServer_method_take_connection>` **(** **)**                                                        |
-+-------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                   | :ref:`is_connection_available<class_UDPServer_method_is_connection_available>` **(** **)** |const|                                |
+   +-------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                   | :ref:`is_listening<class_UDPServer_method_is_listening>` **(** **)** |const|                                                      |
+   +-------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>`     | :ref:`listen<class_UDPServer_method_listen>` **(** :ref:`int<class_int>` port, :ref:`String<class_String>` bind_address="*" **)** |
+   +-------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>`     | :ref:`poll<class_UDPServer_method_poll>` **(** **)**                                                                              |
+   +-------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
+   | void                                      | :ref:`stop<class_UDPServer_method_stop>` **(** **)**                                                                              |
+   +-------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PacketPeerUDP<class_PacketPeerUDP>` | :ref:`take_connection<class_UDPServer_method_take_connection>` **(** **)**                                                        |
+   +-------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_UDPServer_property_max_pending_connections:
 
-- :ref:`int<class_int>` **max_pending_connections**
+.. rst-class:: classref-property
 
-+-----------+------------------------------------+
-| *Default* | ``16``                             |
-+-----------+------------------------------------+
-| *Setter*  | set_max_pending_connections(value) |
-+-----------+------------------------------------+
-| *Getter*  | get_max_pending_connections()      |
-+-----------+------------------------------------+
+:ref:`int<class_int>` **max_pending_connections** = ``16``
+
+.. rst-class:: classref-property-setget
+
+- void **set_max_pending_connections** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_max_pending_connections** **(** **)**
 
 Define the maximum number of pending connections, during :ref:`poll<class_UDPServer_method_poll>`, any new pending connection exceeding that value will be automatically dropped. Setting this value to ``0`` effectively prevents any new pending connection to be accepted (e.g. when all your players have connected).
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_UDPServer_method_is_connection_available:
 
-- :ref:`bool<class_bool>` **is_connection_available** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **is_connection_available** **(** **)** |const|
 
 Returns ``true`` if a packet with a new address/port combination was received on the socket.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_UDPServer_method_is_listening:
 
-- :ref:`bool<class_bool>` **is_listening** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **is_listening** **(** **)** |const|
 
 Returns ``true`` if the socket is open and listening on a port.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_UDPServer_method_listen:
 
-- :ref:`Error<enum_@GlobalScope_Error>` **listen** **(** :ref:`int<class_int>` port, :ref:`String<class_String>` bind_address="*" **)**
+.. rst-class:: classref-method
+
+:ref:`Error<enum_@GlobalScope_Error>` **listen** **(** :ref:`int<class_int>` port, :ref:`String<class_String>` bind_address="*" **)**
 
 Starts the server by opening a UDP socket listening on the given port. You can optionally specify a ``bind_address`` to only listen for packets sent to that address. See also :ref:`PacketPeerUDP.listen<class_PacketPeerUDP_method_listen>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_UDPServer_method_poll:
 
-- :ref:`Error<enum_@GlobalScope_Error>` **poll** **(** **)**
+.. rst-class:: classref-method
+
+:ref:`Error<enum_@GlobalScope_Error>` **poll** **(** **)**
 
 Call this method at regular intervals (e.g. inside :ref:`Node._process<class_Node_method__process>`) to process new packets. And packet from known address/port pair will be delivered to the appropriate :ref:`PacketPeerUDP<class_PacketPeerUDP>`, any packet received from an unknown address/port pair will be added as a pending connection (see :ref:`is_connection_available<class_UDPServer_method_is_connection_available>`, :ref:`take_connection<class_UDPServer_method_take_connection>`). The maximum number of pending connection is defined via :ref:`max_pending_connections<class_UDPServer_property_max_pending_connections>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_UDPServer_method_stop:
 
-- void **stop** **(** **)**
+.. rst-class:: classref-method
+
+void **stop** **(** **)**
 
 Stops the server, closing the UDP socket if open. Will close all connected :ref:`PacketPeerUDP<class_PacketPeerUDP>` accepted via :ref:`take_connection<class_UDPServer_method_take_connection>` (remote peers will not be notified).
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_UDPServer_method_take_connection:
 
-- :ref:`PacketPeerUDP<class_PacketPeerUDP>` **take_connection** **(** **)**
+.. rst-class:: classref-method
+
+:ref:`PacketPeerUDP<class_PacketPeerUDP>` **take_connection** **(** **)**
 
 Returns the first pending connection (connected to the appropriate address/port). Will return ``null`` if no new connection is available. See also :ref:`is_connection_available<class_UDPServer_method_is_connection_available>`, :ref:`PacketPeerUDP.connect_to_host<class_PacketPeerUDP_method_connect_to_host>`.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

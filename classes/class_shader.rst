@@ -16,10 +16,14 @@ Shader
 
 A custom shader program.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 This class allows you to define a custom shader program that can be used by a :ref:`ShaderMaterial<class_ShaderMaterial>`. Shaders allow you to write your own custom behavior for rendering objects or updating particle information. For a detailed explanation and usage, please see the tutorials linked below.
+
+.. rst-class:: classref-introduction-group
 
 Tutorials
 ---------
@@ -28,116 +32,172 @@ Tutorials
 
 - :doc:`../tutorials/shaders/introduction_to_shaders`
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-----------------------------+-------------------------------------------------------------+--------+
-| :ref:`String<class_String>` | :ref:`code<class_Shader_property_code>`                     | ``""`` |
-+-----------------------------+-------------------------------------------------------------+--------+
-| :ref:`String<class_String>` | :ref:`custom_defines<class_Shader_property_custom_defines>` | ``""`` |
-+-----------------------------+-------------------------------------------------------------+--------+
+.. table::
+   :widths: auto
+
+   +-----------------------------+-------------------------------------------------------------+--------+
+   | :ref:`String<class_String>` | :ref:`code<class_Shader_property_code>`                     | ``""`` |
+   +-----------------------------+-------------------------------------------------------------+--------+
+   | :ref:`String<class_String>` | :ref:`custom_defines<class_Shader_property_custom_defines>` | ``""`` |
+   +-----------------------------+-------------------------------------------------------------+--------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Texture<class_Texture>` | :ref:`get_default_texture_param<class_Shader_method_get_default_texture_param>` **(** :ref:`String<class_String>` param **)** |const|                                |
-+-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Mode<enum_Shader_Mode>` | :ref:`get_mode<class_Shader_method_get_mode>` **(** **)** |const|                                                                                                    |
-+-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`has_param<class_Shader_method_has_param>` **(** :ref:`String<class_String>` name **)** |const|                                                                 |
-+-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                          | :ref:`set_default_texture_param<class_Shader_method_set_default_texture_param>` **(** :ref:`String<class_String>` param, :ref:`Texture<class_Texture>` texture **)** |
-+-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Texture<class_Texture>` | :ref:`get_default_texture_param<class_Shader_method_get_default_texture_param>` **(** :ref:`String<class_String>` param **)** |const|                                |
+   +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Mode<enum_Shader_Mode>` | :ref:`get_mode<class_Shader_method_get_mode>` **(** **)** |const|                                                                                                    |
+   +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`has_param<class_Shader_method_has_param>` **(** :ref:`String<class_String>` name **)** |const|                                                                 |
+   +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                          | :ref:`set_default_texture_param<class_Shader_method_set_default_texture_param>` **(** :ref:`String<class_String>` param, :ref:`Texture<class_Texture>` texture **)** |
+   +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Enumerations
 ------------
 
 .. _enum_Shader_Mode:
 
-.. _class_Shader_constant_MODE_SPATIAL:
-
-.. _class_Shader_constant_MODE_CANVAS_ITEM:
-
-.. _class_Shader_constant_MODE_PARTICLES:
+.. rst-class:: classref-enumeration
 
 enum **Mode**:
 
-- **MODE_SPATIAL** = **0** --- Mode used to draw all 3D objects.
+.. _class_Shader_constant_MODE_SPATIAL:
 
-- **MODE_CANVAS_ITEM** = **1** --- Mode used to draw all 2D objects.
+.. rst-class:: classref-enumeration-constant
 
-- **MODE_PARTICLES** = **2** --- Mode used to calculate particle information on a per-particle basis. Not used for drawing.
+:ref:`Mode<enum_Shader_Mode>` **MODE_SPATIAL** = ``0``
+
+Mode used to draw all 3D objects.
+
+.. _class_Shader_constant_MODE_CANVAS_ITEM:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Mode<enum_Shader_Mode>` **MODE_CANVAS_ITEM** = ``1``
+
+Mode used to draw all 2D objects.
+
+.. _class_Shader_constant_MODE_PARTICLES:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Mode<enum_Shader_Mode>` **MODE_PARTICLES** = ``2``
+
+Mode used to calculate particle information on a per-particle basis. Not used for drawing.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_Shader_property_code:
 
-- :ref:`String<class_String>` **code**
+.. rst-class:: classref-property
 
-+-----------+-----------------+
-| *Default* | ``""``          |
-+-----------+-----------------+
-| *Setter*  | set_code(value) |
-+-----------+-----------------+
-| *Getter*  | get_code()      |
-+-----------+-----------------+
+:ref:`String<class_String>` **code** = ``""``
+
+.. rst-class:: classref-property-setget
+
+- void **set_code** **(** :ref:`String<class_String>` value **)**
+- :ref:`String<class_String>` **get_code** **(** **)**
 
 Returns the shader's code as the user has written it, not the full generated code used internally.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Shader_property_custom_defines:
 
-- :ref:`String<class_String>` **custom_defines**
+.. rst-class:: classref-property
 
-+-----------+---------------------------+
-| *Default* | ``""``                    |
-+-----------+---------------------------+
-| *Setter*  | set_custom_defines(value) |
-+-----------+---------------------------+
-| *Getter*  | get_custom_defines()      |
-+-----------+---------------------------+
+:ref:`String<class_String>` **custom_defines** = ``""``
+
+.. rst-class:: classref-property-setget
+
+- void **set_custom_defines** **(** :ref:`String<class_String>` value **)**
+- :ref:`String<class_String>` **get_custom_defines** **(** **)**
 
 Returns the shader's custom defines. Custom defines can be used in Godot to add GLSL preprocessor directives (e.g: extensions) required for the shader logic.
 
 \ **Note:** Custom defines are not validated by the Godot shader parser, so care should be taken when using them.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_Shader_method_get_default_texture_param:
 
-- :ref:`Texture<class_Texture>` **get_default_texture_param** **(** :ref:`String<class_String>` param **)** |const|
+.. rst-class:: classref-method
+
+:ref:`Texture<class_Texture>` **get_default_texture_param** **(** :ref:`String<class_String>` param **)** |const|
 
 Returns the texture that is set as default for the specified parameter.
 
 \ **Note:** ``param`` must match the name of the uniform in the code exactly.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_Shader_method_get_mode:
 
-- :ref:`Mode<enum_Shader_Mode>` **get_mode** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`Mode<enum_Shader_Mode>` **get_mode** **(** **)** |const|
 
 Returns the shader mode for the shader, either :ref:`MODE_CANVAS_ITEM<class_Shader_constant_MODE_CANVAS_ITEM>`, :ref:`MODE_SPATIAL<class_Shader_constant_MODE_SPATIAL>` or :ref:`MODE_PARTICLES<class_Shader_constant_MODE_PARTICLES>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Shader_method_has_param:
 
-- :ref:`bool<class_bool>` **has_param** **(** :ref:`String<class_String>` name **)** |const|
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **has_param** **(** :ref:`String<class_String>` name **)** |const|
 
 Returns ``true`` if the shader has this param defined as a uniform in its code.
 
 \ **Note:** ``param`` must match the name of the uniform in the code exactly.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_Shader_method_set_default_texture_param:
 
-- void **set_default_texture_param** **(** :ref:`String<class_String>` param, :ref:`Texture<class_Texture>` texture **)**
+.. rst-class:: classref-method
+
+void **set_default_texture_param** **(** :ref:`String<class_String>` param, :ref:`Texture<class_Texture>` texture **)**
 
 Sets the default texture to be used with a texture uniform. The default is used if a texture is not set in the :ref:`ShaderMaterial<class_ShaderMaterial>`.
 
@@ -146,3 +206,4 @@ Sets the default texture to be used with a texture uniform. The default is used 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

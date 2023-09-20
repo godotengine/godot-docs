@@ -14,6 +14,8 @@ ViewportContainer
 
 Control for holding :ref:`Viewport<class_Viewport>`\ s.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -21,45 +23,56 @@ A :ref:`Container<class_Container>` node that holds a :ref:`Viewport<class_Viewp
 
 \ **Note:** Changing a ViewportContainer's :ref:`Control.rect_scale<class_Control_property_rect_scale>` will cause its contents to appear distorted. To change its visual size without causing distortion, adjust the node's margins instead (if it's not already in a container).
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-------------------------+------------------------------------------------------------------------+-----------+
-| :ref:`bool<class_bool>` | :ref:`stretch<class_ViewportContainer_property_stretch>`               | ``false`` |
-+-------------------------+------------------------------------------------------------------------+-----------+
-| :ref:`int<class_int>`   | :ref:`stretch_shrink<class_ViewportContainer_property_stretch_shrink>` | ``1``     |
-+-------------------------+------------------------------------------------------------------------+-----------+
+.. table::
+   :widths: auto
+
+   +-------------------------+------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>` | :ref:`stretch<class_ViewportContainer_property_stretch>`               | ``false`` |
+   +-------------------------+------------------------------------------------------------------------+-----------+
+   | :ref:`int<class_int>`   | :ref:`stretch_shrink<class_ViewportContainer_property_stretch_shrink>` | ``1``     |
+   +-------------------------+------------------------------------------------------------------------+-----------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_ViewportContainer_property_stretch:
 
-- :ref:`bool<class_bool>` **stretch**
+.. rst-class:: classref-property
 
-+-----------+----------------------+
-| *Default* | ``false``            |
-+-----------+----------------------+
-| *Setter*  | set_stretch(value)   |
-+-----------+----------------------+
-| *Getter*  | is_stretch_enabled() |
-+-----------+----------------------+
+:ref:`bool<class_bool>` **stretch** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_stretch** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_stretch_enabled** **(** **)**
 
 If ``true``, the viewport will be scaled to the control's size.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_ViewportContainer_property_stretch_shrink:
 
-- :ref:`int<class_int>` **stretch_shrink**
+.. rst-class:: classref-property
 
-+-----------+---------------------------+
-| *Default* | ``1``                     |
-+-----------+---------------------------+
-| *Setter*  | set_stretch_shrink(value) |
-+-----------+---------------------------+
-| *Getter*  | get_stretch_shrink()      |
-+-----------+---------------------------+
+:ref:`int<class_int>` **stretch_shrink** = ``1``
+
+.. rst-class:: classref-property-setget
+
+- void **set_stretch_shrink** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_stretch_shrink** **(** **)**
 
 Divides the viewport's effective resolution by this value while preserving its scale. This can be used to speed up rendering.
 
@@ -70,3 +83,4 @@ For example, a 1280×720 viewport with :ref:`stretch_shrink<class_ViewportContai
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

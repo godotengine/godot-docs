@@ -12,6 +12,8 @@ Quat
 
 Quaternion.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -21,6 +23,8 @@ It is similar to Basis, which implements matrix representation of rotations, and
 
 Due to its compactness and the way it is stored in memory, certain operations (obtaining axis-angle and performing SLERP, in particular) are more efficient and robust against floating-point errors.
 
+.. rst-class:: classref-introduction-group
+
 Tutorials
 ---------
 
@@ -28,277 +32,382 @@ Tutorials
 
 - `Third Person Shooter Demo <https://godotengine.org/asset-library/asset/678>`__
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+---------------------------+---------------------------------+---------+
-| :ref:`float<class_float>` | :ref:`w<class_Quat_property_w>` | ``1.0`` |
-+---------------------------+---------------------------------+---------+
-| :ref:`float<class_float>` | :ref:`x<class_Quat_property_x>` | ``0.0`` |
-+---------------------------+---------------------------------+---------+
-| :ref:`float<class_float>` | :ref:`y<class_Quat_property_y>` | ``0.0`` |
-+---------------------------+---------------------------------+---------+
-| :ref:`float<class_float>` | :ref:`z<class_Quat_property_z>` | ``0.0`` |
-+---------------------------+---------------------------------+---------+
+.. table::
+   :widths: auto
+
+   +---------------------------+---------------------------------+---------+
+   | :ref:`float<class_float>` | :ref:`w<class_Quat_property_w>` | ``1.0`` |
+   +---------------------------+---------------------------------+---------+
+   | :ref:`float<class_float>` | :ref:`x<class_Quat_property_x>` | ``0.0`` |
+   +---------------------------+---------------------------------+---------+
+   | :ref:`float<class_float>` | :ref:`y<class_Quat_property_y>` | ``0.0`` |
+   +---------------------------+---------------------------------+---------+
+   | :ref:`float<class_float>` | :ref:`z<class_Quat_property_z>` | ``0.0`` |
+   +---------------------------+---------------------------------+---------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Quat<class_Quat>`       | :ref:`Quat<class_Quat_method_Quat>` **(** :ref:`Basis<class_Basis>` from **)**                                                                                                           |
-+-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Quat<class_Quat>`       | :ref:`Quat<class_Quat_method_Quat>` **(** :ref:`Vector3<class_Vector3>` euler **)**                                                                                                      |
-+-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Quat<class_Quat>`       | :ref:`Quat<class_Quat_method_Quat>` **(** :ref:`Vector3<class_Vector3>` axis, :ref:`float<class_float>` angle **)**                                                                      |
-+-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Quat<class_Quat>`       | :ref:`Quat<class_Quat_method_Quat>` **(** :ref:`float<class_float>` x, :ref:`float<class_float>` y, :ref:`float<class_float>` z, :ref:`float<class_float>` w **)**                       |
-+-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`     | :ref:`angle_to<class_Quat_method_angle_to>` **(** :ref:`Quat<class_Quat>` to **)**                                                                                                       |
-+-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Quat<class_Quat>`       | :ref:`cubic_slerp<class_Quat_method_cubic_slerp>` **(** :ref:`Quat<class_Quat>` b, :ref:`Quat<class_Quat>` pre_a, :ref:`Quat<class_Quat>` post_b, :ref:`float<class_float>` weight **)** |
-+-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`     | :ref:`dot<class_Quat_method_dot>` **(** :ref:`Quat<class_Quat>` b **)**                                                                                                                  |
-+-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector3<class_Vector3>` | :ref:`get_euler<class_Quat_method_get_euler>` **(** **)**                                                                                                                                |
-+-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Quat<class_Quat>`       | :ref:`inverse<class_Quat_method_inverse>` **(** **)**                                                                                                                                    |
-+-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`is_equal_approx<class_Quat_method_is_equal_approx>` **(** :ref:`Quat<class_Quat>` quat **)**                                                                                       |
-+-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`is_normalized<class_Quat_method_is_normalized>` **(** **)**                                                                                                                        |
-+-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`     | :ref:`length<class_Quat_method_length>` **(** **)**                                                                                                                                      |
-+-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`     | :ref:`length_squared<class_Quat_method_length_squared>` **(** **)**                                                                                                                      |
-+-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Quat<class_Quat>`       | :ref:`normalized<class_Quat_method_normalized>` **(** **)**                                                                                                                              |
-+-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                          | :ref:`set_axis_angle<class_Quat_method_set_axis_angle>` **(** :ref:`Vector3<class_Vector3>` axis, :ref:`float<class_float>` angle **)**                                                  |
-+-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                          | :ref:`set_euler<class_Quat_method_set_euler>` **(** :ref:`Vector3<class_Vector3>` euler **)**                                                                                            |
-+-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Quat<class_Quat>`       | :ref:`slerp<class_Quat_method_slerp>` **(** :ref:`Quat<class_Quat>` to, :ref:`float<class_float>` weight **)**                                                                           |
-+-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Quat<class_Quat>`       | :ref:`slerpni<class_Quat_method_slerpni>` **(** :ref:`Quat<class_Quat>` to, :ref:`float<class_float>` weight **)**                                                                       |
-+-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector3<class_Vector3>` | :ref:`xform<class_Quat_method_xform>` **(** :ref:`Vector3<class_Vector3>` v **)**                                                                                                        |
-+-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Quat<class_Quat>`       | :ref:`Quat<class_Quat_method_Quat>` **(** :ref:`Basis<class_Basis>` from **)**                                                                                                           |
+   +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Quat<class_Quat>`       | :ref:`Quat<class_Quat_method_Quat>` **(** :ref:`Vector3<class_Vector3>` euler **)**                                                                                                      |
+   +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Quat<class_Quat>`       | :ref:`Quat<class_Quat_method_Quat>` **(** :ref:`Vector3<class_Vector3>` axis, :ref:`float<class_float>` angle **)**                                                                      |
+   +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Quat<class_Quat>`       | :ref:`Quat<class_Quat_method_Quat>` **(** :ref:`float<class_float>` x, :ref:`float<class_float>` y, :ref:`float<class_float>` z, :ref:`float<class_float>` w **)**                       |
+   +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`     | :ref:`angle_to<class_Quat_method_angle_to>` **(** :ref:`Quat<class_Quat>` to **)**                                                                                                       |
+   +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Quat<class_Quat>`       | :ref:`cubic_slerp<class_Quat_method_cubic_slerp>` **(** :ref:`Quat<class_Quat>` b, :ref:`Quat<class_Quat>` pre_a, :ref:`Quat<class_Quat>` post_b, :ref:`float<class_float>` weight **)** |
+   +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`     | :ref:`dot<class_Quat_method_dot>` **(** :ref:`Quat<class_Quat>` b **)**                                                                                                                  |
+   +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector3<class_Vector3>` | :ref:`get_euler<class_Quat_method_get_euler>` **(** **)**                                                                                                                                |
+   +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Quat<class_Quat>`       | :ref:`inverse<class_Quat_method_inverse>` **(** **)**                                                                                                                                    |
+   +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`is_equal_approx<class_Quat_method_is_equal_approx>` **(** :ref:`Quat<class_Quat>` quat **)**                                                                                       |
+   +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`is_normalized<class_Quat_method_is_normalized>` **(** **)**                                                                                                                        |
+   +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`     | :ref:`length<class_Quat_method_length>` **(** **)**                                                                                                                                      |
+   +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`     | :ref:`length_squared<class_Quat_method_length_squared>` **(** **)**                                                                                                                      |
+   +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Quat<class_Quat>`       | :ref:`normalized<class_Quat_method_normalized>` **(** **)**                                                                                                                              |
+   +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                          | :ref:`set_axis_angle<class_Quat_method_set_axis_angle>` **(** :ref:`Vector3<class_Vector3>` axis, :ref:`float<class_float>` angle **)**                                                  |
+   +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                          | :ref:`set_euler<class_Quat_method_set_euler>` **(** :ref:`Vector3<class_Vector3>` euler **)**                                                                                            |
+   +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Quat<class_Quat>`       | :ref:`slerp<class_Quat_method_slerp>` **(** :ref:`Quat<class_Quat>` to, :ref:`float<class_float>` weight **)**                                                                           |
+   +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Quat<class_Quat>`       | :ref:`slerpni<class_Quat_method_slerpni>` **(** :ref:`Quat<class_Quat>` to, :ref:`float<class_float>` weight **)**                                                                       |
+   +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector3<class_Vector3>` | :ref:`xform<class_Quat_method_xform>` **(** :ref:`Vector3<class_Vector3>` v **)**                                                                                                        |
+   +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Constants
 ---------
 
 .. _class_Quat_constant_IDENTITY:
 
-- **IDENTITY** = **Quat( 0, 0, 0, 1 )** --- The identity quaternion, representing no rotation. Equivalent to an identity :ref:`Basis<class_Basis>` matrix. If a vector is transformed by an identity quaternion, it will not change.
+.. rst-class:: classref-constant
+
+**IDENTITY** = ``Quat( 0, 0, 0, 1 )``
+
+The identity quaternion, representing no rotation. Equivalent to an identity :ref:`Basis<class_Basis>` matrix. If a vector is transformed by an identity quaternion, it will not change.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_Quat_property_w:
 
-- :ref:`float<class_float>` **w**
+.. rst-class:: classref-property
 
-+-----------+---------+
-| *Default* | ``1.0`` |
-+-----------+---------+
+:ref:`float<class_float>` **w** = ``1.0``
 
 W component of the quaternion (real part).
 
 Quaternion components should usually not be manipulated directly.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_Quat_property_x:
 
-- :ref:`float<class_float>` **x**
+.. rst-class:: classref-property
 
-+-----------+---------+
-| *Default* | ``0.0`` |
-+-----------+---------+
+:ref:`float<class_float>` **x** = ``0.0``
 
 X component of the quaternion (imaginary ``i`` axis part).
 
 Quaternion components should usually not be manipulated directly.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_Quat_property_y:
 
-- :ref:`float<class_float>` **y**
+.. rst-class:: classref-property
 
-+-----------+---------+
-| *Default* | ``0.0`` |
-+-----------+---------+
+:ref:`float<class_float>` **y** = ``0.0``
 
 Y component of the quaternion (imaginary ``j`` axis part).
 
 Quaternion components should usually not be manipulated directly.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_Quat_property_z:
 
-- :ref:`float<class_float>` **z**
+.. rst-class:: classref-property
 
-+-----------+---------+
-| *Default* | ``0.0`` |
-+-----------+---------+
+:ref:`float<class_float>` **z** = ``0.0``
 
 Z component of the quaternion (imaginary ``k`` axis part).
 
 Quaternion components should usually not be manipulated directly.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_Quat_method_Quat:
 
-- :ref:`Quat<class_Quat>` **Quat** **(** :ref:`Basis<class_Basis>` from **)**
+.. rst-class:: classref-method
+
+:ref:`Quat<class_Quat>` **Quat** **(** :ref:`Basis<class_Basis>` from **)**
 
 Constructs a quaternion from the given :ref:`Basis<class_Basis>`.
 
+.. rst-class:: classref-item-separator
+
 ----
 
-- :ref:`Quat<class_Quat>` **Quat** **(** :ref:`Vector3<class_Vector3>` euler **)**
+.. rst-class:: classref-method
+
+:ref:`Quat<class_Quat>` **Quat** **(** :ref:`Vector3<class_Vector3>` euler **)**
 
 Constructs a quaternion that will perform a rotation specified by Euler angles (in the YXZ convention: when decomposing, first Z, then X, and Y last), given in the vector format as (X angle, Y angle, Z angle).
 
+.. rst-class:: classref-item-separator
+
 ----
 
-- :ref:`Quat<class_Quat>` **Quat** **(** :ref:`Vector3<class_Vector3>` axis, :ref:`float<class_float>` angle **)**
+.. rst-class:: classref-method
+
+:ref:`Quat<class_Quat>` **Quat** **(** :ref:`Vector3<class_Vector3>` axis, :ref:`float<class_float>` angle **)**
 
 Constructs a quaternion that will rotate around the given axis by the specified angle. The axis must be a normalized vector.
 
+.. rst-class:: classref-item-separator
+
 ----
 
-- :ref:`Quat<class_Quat>` **Quat** **(** :ref:`float<class_float>` x, :ref:`float<class_float>` y, :ref:`float<class_float>` z, :ref:`float<class_float>` w **)**
+.. rst-class:: classref-method
+
+:ref:`Quat<class_Quat>` **Quat** **(** :ref:`float<class_float>` x, :ref:`float<class_float>` y, :ref:`float<class_float>` z, :ref:`float<class_float>` w **)**
 
 Constructs a quaternion defined by the given values.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Quat_method_angle_to:
 
-- :ref:`float<class_float>` **angle_to** **(** :ref:`Quat<class_Quat>` to **)**
+.. rst-class:: classref-method
+
+:ref:`float<class_float>` **angle_to** **(** :ref:`Quat<class_Quat>` to **)**
 
 Returns the angle between this quaternion and ``to``. This is the magnitude of the angle you would need to rotate by to get from one to the other.
 
 \ **Note:** This method has an abnormally high amount of floating-point error, so methods such as :ref:`@GDScript.is_zero_approx<class_@GDScript_method_is_zero_approx>` will not work reliably.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_Quat_method_cubic_slerp:
 
-- :ref:`Quat<class_Quat>` **cubic_slerp** **(** :ref:`Quat<class_Quat>` b, :ref:`Quat<class_Quat>` pre_a, :ref:`Quat<class_Quat>` post_b, :ref:`float<class_float>` weight **)**
+.. rst-class:: classref-method
+
+:ref:`Quat<class_Quat>` **cubic_slerp** **(** :ref:`Quat<class_Quat>` b, :ref:`Quat<class_Quat>` pre_a, :ref:`Quat<class_Quat>` post_b, :ref:`float<class_float>` weight **)**
 
 Performs a cubic spherical interpolation between quaternions ``pre_a``, this vector, ``b``, and ``post_b``, by the given amount ``weight``.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Quat_method_dot:
 
-- :ref:`float<class_float>` **dot** **(** :ref:`Quat<class_Quat>` b **)**
+.. rst-class:: classref-method
+
+:ref:`float<class_float>` **dot** **(** :ref:`Quat<class_Quat>` b **)**
 
 Returns the dot product of two quaternions.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Quat_method_get_euler:
 
-- :ref:`Vector3<class_Vector3>` **get_euler** **(** **)**
+.. rst-class:: classref-method
+
+:ref:`Vector3<class_Vector3>` **get_euler** **(** **)**
 
 Returns Euler angles (in the YXZ convention: when decomposing, first Z, then X, and Y last) corresponding to the rotation represented by the unit quaternion. Returned vector contains the rotation angles in the format (X angle, Y angle, Z angle).
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Quat_method_inverse:
 
-- :ref:`Quat<class_Quat>` **inverse** **(** **)**
+.. rst-class:: classref-method
+
+:ref:`Quat<class_Quat>` **inverse** **(** **)**
 
 Returns the inverse of the quaternion.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Quat_method_is_equal_approx:
 
-- :ref:`bool<class_bool>` **is_equal_approx** **(** :ref:`Quat<class_Quat>` quat **)**
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **is_equal_approx** **(** :ref:`Quat<class_Quat>` quat **)**
 
 Returns ``true`` if this quaternion and ``quat`` are approximately equal, by running :ref:`@GDScript.is_equal_approx<class_@GDScript_method_is_equal_approx>` on each component.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Quat_method_is_normalized:
 
-- :ref:`bool<class_bool>` **is_normalized** **(** **)**
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **is_normalized** **(** **)**
 
 Returns whether the quaternion is normalized or not.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Quat_method_length:
 
-- :ref:`float<class_float>` **length** **(** **)**
+.. rst-class:: classref-method
+
+:ref:`float<class_float>` **length** **(** **)**
 
 Returns the length of the quaternion.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Quat_method_length_squared:
 
-- :ref:`float<class_float>` **length_squared** **(** **)**
+.. rst-class:: classref-method
+
+:ref:`float<class_float>` **length_squared** **(** **)**
 
 Returns the length of the quaternion, squared.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Quat_method_normalized:
 
-- :ref:`Quat<class_Quat>` **normalized** **(** **)**
+.. rst-class:: classref-method
+
+:ref:`Quat<class_Quat>` **normalized** **(** **)**
 
 Returns a copy of the quaternion, normalized to unit length.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Quat_method_set_axis_angle:
 
-- void **set_axis_angle** **(** :ref:`Vector3<class_Vector3>` axis, :ref:`float<class_float>` angle **)**
+.. rst-class:: classref-method
+
+void **set_axis_angle** **(** :ref:`Vector3<class_Vector3>` axis, :ref:`float<class_float>` angle **)**
 
 Sets the quaternion to a rotation which rotates around axis by the specified angle, in radians. The axis must be a normalized vector.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Quat_method_set_euler:
 
-- void **set_euler** **(** :ref:`Vector3<class_Vector3>` euler **)**
+.. rst-class:: classref-method
+
+void **set_euler** **(** :ref:`Vector3<class_Vector3>` euler **)**
 
 Sets the quaternion to a rotation specified by Euler angles (in the YXZ convention: when decomposing, first Z, then X, and Y last), given in the vector format as (X angle, Y angle, Z angle).
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Quat_method_slerp:
 
-- :ref:`Quat<class_Quat>` **slerp** **(** :ref:`Quat<class_Quat>` to, :ref:`float<class_float>` weight **)**
+.. rst-class:: classref-method
+
+:ref:`Quat<class_Quat>` **slerp** **(** :ref:`Quat<class_Quat>` to, :ref:`float<class_float>` weight **)**
 
 Returns the result of the spherical linear interpolation between this quaternion and ``to`` by amount ``weight``.
 
 \ **Note:** Both quaternions must be normalized.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_Quat_method_slerpni:
 
-- :ref:`Quat<class_Quat>` **slerpni** **(** :ref:`Quat<class_Quat>` to, :ref:`float<class_float>` weight **)**
+.. rst-class:: classref-method
+
+:ref:`Quat<class_Quat>` **slerpni** **(** :ref:`Quat<class_Quat>` to, :ref:`float<class_float>` weight **)**
 
 Returns the result of the spherical linear interpolation between this quaternion and ``to`` by amount ``weight``, but without checking if the rotation path is not bigger than 90 degrees.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Quat_method_xform:
 
-- :ref:`Vector3<class_Vector3>` **xform** **(** :ref:`Vector3<class_Vector3>` v **)**
+.. rst-class:: classref-method
+
+:ref:`Vector3<class_Vector3>` **xform** **(** :ref:`Vector3<class_Vector3>` v **)**
 
 Returns a vector transformed (multiplied) by this quaternion.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

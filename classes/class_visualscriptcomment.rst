@@ -14,6 +14,8 @@ VisualScriptComment
 
 A Visual Script node used to annotate the script.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -21,66 +23,79 @@ A Visual Script node used to display annotations in the script, so that code may
 
 Comment nodes can be resized so they encompass a group of nodes.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-------------------------------+--------------------------------------------------------------------+-------------------------+
-| :ref:`String<class_String>`   | :ref:`description<class_VisualScriptComment_property_description>` | ``""``                  |
-+-------------------------------+--------------------------------------------------------------------+-------------------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`size<class_VisualScriptComment_property_size>`               | ``Vector2( 150, 150 )`` |
-+-------------------------------+--------------------------------------------------------------------+-------------------------+
-| :ref:`String<class_String>`   | :ref:`title<class_VisualScriptComment_property_title>`             | ``"Comment"``           |
-+-------------------------------+--------------------------------------------------------------------+-------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------------+--------------------------------------------------------------------+-------------------------+
+   | :ref:`String<class_String>`   | :ref:`description<class_VisualScriptComment_property_description>` | ``""``                  |
+   +-------------------------------+--------------------------------------------------------------------+-------------------------+
+   | :ref:`Vector2<class_Vector2>` | :ref:`size<class_VisualScriptComment_property_size>`               | ``Vector2( 150, 150 )`` |
+   +-------------------------------+--------------------------------------------------------------------+-------------------------+
+   | :ref:`String<class_String>`   | :ref:`title<class_VisualScriptComment_property_title>`             | ``"Comment"``           |
+   +-------------------------------+--------------------------------------------------------------------+-------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_VisualScriptComment_property_description:
 
-- :ref:`String<class_String>` **description**
+.. rst-class:: classref-property
 
-+-----------+------------------------+
-| *Default* | ``""``                 |
-+-----------+------------------------+
-| *Setter*  | set_description(value) |
-+-----------+------------------------+
-| *Getter*  | get_description()      |
-+-----------+------------------------+
+:ref:`String<class_String>` **description** = ``""``
+
+.. rst-class:: classref-property-setget
+
+- void **set_description** **(** :ref:`String<class_String>` value **)**
+- :ref:`String<class_String>` **get_description** **(** **)**
 
 The text inside the comment node.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_VisualScriptComment_property_size:
 
-- :ref:`Vector2<class_Vector2>` **size**
+.. rst-class:: classref-property
 
-+-----------+-------------------------+
-| *Default* | ``Vector2( 150, 150 )`` |
-+-----------+-------------------------+
-| *Setter*  | set_size(value)         |
-+-----------+-------------------------+
-| *Getter*  | get_size()              |
-+-----------+-------------------------+
+:ref:`Vector2<class_Vector2>` **size** = ``Vector2( 150, 150 )``
+
+.. rst-class:: classref-property-setget
+
+- void **set_size** **(** :ref:`Vector2<class_Vector2>` value **)**
+- :ref:`Vector2<class_Vector2>` **get_size** **(** **)**
 
 The comment node's size (in pixels).
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_VisualScriptComment_property_title:
 
-- :ref:`String<class_String>` **title**
+.. rst-class:: classref-property
 
-+-----------+------------------+
-| *Default* | ``"Comment"``    |
-+-----------+------------------+
-| *Setter*  | set_title(value) |
-+-----------+------------------+
-| *Getter*  | get_title()      |
-+-----------+------------------+
+:ref:`String<class_String>` **title** = ``"Comment"``
+
+.. rst-class:: classref-property-setget
+
+- void **set_title** **(** :ref:`String<class_String>` value **)**
+- :ref:`String<class_String>` **get_title** **(** **)**
 
 The comment node's title.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

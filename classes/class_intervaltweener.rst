@@ -14,13 +14,16 @@ IntervalTweener
 
 Creates an idle interval in a :ref:`SceneTreeTween<class_SceneTreeTween>` animation.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
-``IntervalTweener`` is used to make delays in a tweening sequence. See :ref:`SceneTreeTween.tween_interval<class_SceneTreeTween_method_tween_interval>` for more usage information.
+**IntervalTweener** is used to make delays in a tweening sequence. See :ref:`SceneTreeTween.tween_interval<class_SceneTreeTween_method_tween_interval>` for more usage information.
 
-\ **Note:** :ref:`SceneTreeTween.tween_interval<class_SceneTreeTween_method_tween_interval>` is the only correct way to create ``IntervalTweener``. Any ``IntervalTweener`` created manually will not function correctly.
+\ **Note:** :ref:`SceneTreeTween.tween_interval<class_SceneTreeTween_method_tween_interval>` is the only correct way to create **IntervalTweener**. Any **IntervalTweener** created manually will not function correctly.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

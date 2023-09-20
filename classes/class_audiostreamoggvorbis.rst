@@ -14,71 +14,86 @@ AudioStreamOGGVorbis
 
 OGG Vorbis audio stream driver.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 OGG Vorbis audio stream driver.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-------------------------------------------+---------------------------------------------------------------------+-----------------------+
-| :ref:`PoolByteArray<class_PoolByteArray>` | :ref:`data<class_AudioStreamOGGVorbis_property_data>`               | ``PoolByteArray(  )`` |
-+-------------------------------------------+---------------------------------------------------------------------+-----------------------+
-| :ref:`bool<class_bool>`                   | :ref:`loop<class_AudioStreamOGGVorbis_property_loop>`               | ``false``             |
-+-------------------------------------------+---------------------------------------------------------------------+-----------------------+
-| :ref:`float<class_float>`                 | :ref:`loop_offset<class_AudioStreamOGGVorbis_property_loop_offset>` | ``0.0``               |
-+-------------------------------------------+---------------------------------------------------------------------+-----------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------------------------+---------------------------------------------------------------------+-----------------------+
+   | :ref:`PoolByteArray<class_PoolByteArray>` | :ref:`data<class_AudioStreamOGGVorbis_property_data>`               | ``PoolByteArray(  )`` |
+   +-------------------------------------------+---------------------------------------------------------------------+-----------------------+
+   | :ref:`bool<class_bool>`                   | :ref:`loop<class_AudioStreamOGGVorbis_property_loop>`               | ``false``             |
+   +-------------------------------------------+---------------------------------------------------------------------+-----------------------+
+   | :ref:`float<class_float>`                 | :ref:`loop_offset<class_AudioStreamOGGVorbis_property_loop_offset>` | ``0.0``               |
+   +-------------------------------------------+---------------------------------------------------------------------+-----------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_AudioStreamOGGVorbis_property_data:
 
-- :ref:`PoolByteArray<class_PoolByteArray>` **data**
+.. rst-class:: classref-property
 
-+-----------+-----------------------+
-| *Default* | ``PoolByteArray(  )`` |
-+-----------+-----------------------+
-| *Setter*  | set_data(value)       |
-+-----------+-----------------------+
-| *Getter*  | get_data()            |
-+-----------+-----------------------+
+:ref:`PoolByteArray<class_PoolByteArray>` **data** = ``PoolByteArray(  )``
+
+.. rst-class:: classref-property-setget
+
+- void **set_data** **(** :ref:`PoolByteArray<class_PoolByteArray>` value **)**
+- :ref:`PoolByteArray<class_PoolByteArray>` **get_data** **(** **)**
 
 Contains the audio data in bytes.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AudioStreamOGGVorbis_property_loop:
 
-- :ref:`bool<class_bool>` **loop**
+.. rst-class:: classref-property
 
-+-----------+-----------------+
-| *Default* | ``false``       |
-+-----------+-----------------+
-| *Setter*  | set_loop(value) |
-+-----------+-----------------+
-| *Getter*  | has_loop()      |
-+-----------+-----------------+
+:ref:`bool<class_bool>` **loop** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_loop** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **has_loop** **(** **)**
 
 If ``true``, the stream will automatically loop when it reaches the end.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AudioStreamOGGVorbis_property_loop_offset:
 
-- :ref:`float<class_float>` **loop_offset**
+.. rst-class:: classref-property
 
-+-----------+------------------------+
-| *Default* | ``0.0``                |
-+-----------+------------------------+
-| *Setter*  | set_loop_offset(value) |
-+-----------+------------------------+
-| *Getter*  | get_loop_offset()      |
-+-----------+------------------------+
+:ref:`float<class_float>` **loop_offset** = ``0.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_loop_offset** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_loop_offset** **(** **)**
 
 Time in seconds at which the stream starts after being looped.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

@@ -12,129 +12,191 @@ NativeScript
 
 **Inherits:** :ref:`Script<class_Script>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
+.. container:: contribute
 
+	There is currently no description for this class. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-reftable-group
 
 Properties
 ----------
 
-+-----------------------------------------------+-----------------------------------------------------------------------------------+--------+
-| :ref:`String<class_String>`                   | :ref:`class_name<class_NativeScript_property_class_name>`                         | ``""`` |
-+-----------------------------------------------+-----------------------------------------------------------------------------------+--------+
-| :ref:`GDNativeLibrary<class_GDNativeLibrary>` | :ref:`library<class_NativeScript_property_library>`                               |        |
-+-----------------------------------------------+-----------------------------------------------------------------------------------+--------+
-| :ref:`String<class_String>`                   | :ref:`script_class_icon_path<class_NativeScript_property_script_class_icon_path>` | ``""`` |
-+-----------------------------------------------+-----------------------------------------------------------------------------------+--------+
-| :ref:`String<class_String>`                   | :ref:`script_class_name<class_NativeScript_property_script_class_name>`           | ``""`` |
-+-----------------------------------------------+-----------------------------------------------------------------------------------+--------+
+.. table::
+   :widths: auto
+
+   +-----------------------------------------------+-----------------------------------------------------------------------------------+--------+
+   | :ref:`String<class_String>`                   | :ref:`class_name<class_NativeScript_property_class_name>`                         | ``""`` |
+   +-----------------------------------------------+-----------------------------------------------------------------------------------+--------+
+   | :ref:`GDNativeLibrary<class_GDNativeLibrary>` | :ref:`library<class_NativeScript_property_library>`                               |        |
+   +-----------------------------------------------+-----------------------------------------------------------------------------------+--------+
+   | :ref:`String<class_String>`                   | :ref:`script_class_icon_path<class_NativeScript_property_script_class_icon_path>` | ``""`` |
+   +-----------------------------------------------+-----------------------------------------------------------------------------------+--------+
+   | :ref:`String<class_String>`                   | :ref:`script_class_name<class_NativeScript_property_script_class_name>`           | ``""`` |
+   +-----------------------------------------------+-----------------------------------------------------------------------------------+--------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`   | :ref:`get_class_documentation<class_NativeScript_method_get_class_documentation>` **(** **)** |const|                                           |
-+-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`   | :ref:`get_method_documentation<class_NativeScript_method_get_method_documentation>` **(** :ref:`String<class_String>` method **)** |const|      |
-+-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`   | :ref:`get_property_documentation<class_NativeScript_method_get_property_documentation>` **(** :ref:`String<class_String>` path **)** |const|    |
-+-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`   | :ref:`get_signal_documentation<class_NativeScript_method_get_signal_documentation>` **(** :ref:`String<class_String>` signal_name **)** |const| |
-+-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>` | :ref:`new<class_NativeScript_method_new>` **(** ... **)** |vararg|                                                                              |
-+-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`   | :ref:`get_class_documentation<class_NativeScript_method_get_class_documentation>` **(** **)** |const|                                           |
+   +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`   | :ref:`get_method_documentation<class_NativeScript_method_get_method_documentation>` **(** :ref:`String<class_String>` method **)** |const|      |
+   +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`   | :ref:`get_property_documentation<class_NativeScript_method_get_property_documentation>` **(** :ref:`String<class_String>` path **)** |const|    |
+   +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`   | :ref:`get_signal_documentation<class_NativeScript_method_get_signal_documentation>` **(** :ref:`String<class_String>` signal_name **)** |const| |
+   +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Variant<class_Variant>` | :ref:`new<class_NativeScript_method_new>` **(** ... **)** |vararg|                                                                              |
+   +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_NativeScript_property_class_name:
 
-- :ref:`String<class_String>` **class_name**
+.. rst-class:: classref-property
 
-+-----------+-----------------------+
-| *Default* | ``""``                |
-+-----------+-----------------------+
-| *Setter*  | set_class_name(value) |
-+-----------+-----------------------+
-| *Getter*  | get_class_name()      |
-+-----------+-----------------------+
+:ref:`String<class_String>` **class_name** = ``""``
+
+.. rst-class:: classref-property-setget
+
+- void **set_class_name** **(** :ref:`String<class_String>` value **)**
+- :ref:`String<class_String>` **get_class_name** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_NativeScript_property_library:
 
-- :ref:`GDNativeLibrary<class_GDNativeLibrary>` **library**
+.. rst-class:: classref-property
 
-+----------+--------------------+
-| *Setter* | set_library(value) |
-+----------+--------------------+
-| *Getter* | get_library()      |
-+----------+--------------------+
+:ref:`GDNativeLibrary<class_GDNativeLibrary>` **library**
+
+.. rst-class:: classref-property-setget
+
+- void **set_library** **(** :ref:`GDNativeLibrary<class_GDNativeLibrary>` value **)**
+- :ref:`GDNativeLibrary<class_GDNativeLibrary>` **get_library** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_NativeScript_property_script_class_icon_path:
 
-- :ref:`String<class_String>` **script_class_icon_path**
+.. rst-class:: classref-property
 
-+-----------+-----------------------------------+
-| *Default* | ``""``                            |
-+-----------+-----------------------------------+
-| *Setter*  | set_script_class_icon_path(value) |
-+-----------+-----------------------------------+
-| *Getter*  | get_script_class_icon_path()      |
-+-----------+-----------------------------------+
+:ref:`String<class_String>` **script_class_icon_path** = ``""``
+
+.. rst-class:: classref-property-setget
+
+- void **set_script_class_icon_path** **(** :ref:`String<class_String>` value **)**
+- :ref:`String<class_String>` **get_script_class_icon_path** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_NativeScript_property_script_class_name:
 
-- :ref:`String<class_String>` **script_class_name**
+.. rst-class:: classref-property
 
-+-----------+------------------------------+
-| *Default* | ``""``                       |
-+-----------+------------------------------+
-| *Setter*  | set_script_class_name(value) |
-+-----------+------------------------------+
-| *Getter*  | get_script_class_name()      |
-+-----------+------------------------------+
+:ref:`String<class_String>` **script_class_name** = ``""``
+
+.. rst-class:: classref-property-setget
+
+- void **set_script_class_name** **(** :ref:`String<class_String>` value **)**
+- :ref:`String<class_String>` **get_script_class_name** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_NativeScript_method_get_class_documentation:
 
-- :ref:`String<class_String>` **get_class_documentation** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`String<class_String>` **get_class_documentation** **(** **)** |const|
 
 Returns the documentation string that was previously set with ``godot_nativescript_set_class_documentation``.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_NativeScript_method_get_method_documentation:
 
-- :ref:`String<class_String>` **get_method_documentation** **(** :ref:`String<class_String>` method **)** |const|
+.. rst-class:: classref-method
+
+:ref:`String<class_String>` **get_method_documentation** **(** :ref:`String<class_String>` method **)** |const|
 
 Returns the documentation string that was previously set with ``godot_nativescript_set_method_documentation``.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_NativeScript_method_get_property_documentation:
 
-- :ref:`String<class_String>` **get_property_documentation** **(** :ref:`String<class_String>` path **)** |const|
+.. rst-class:: classref-method
+
+:ref:`String<class_String>` **get_property_documentation** **(** :ref:`String<class_String>` path **)** |const|
 
 Returns the documentation string that was previously set with ``godot_nativescript_set_property_documentation``.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_NativeScript_method_get_signal_documentation:
 
-- :ref:`String<class_String>` **get_signal_documentation** **(** :ref:`String<class_String>` signal_name **)** |const|
+.. rst-class:: classref-method
+
+:ref:`String<class_String>` **get_signal_documentation** **(** :ref:`String<class_String>` signal_name **)** |const|
 
 Returns the documentation string that was previously set with ``godot_nativescript_set_signal_documentation``.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_NativeScript_method_new:
 
-- :ref:`Variant<class_Variant>` **new** **(** ... **)** |vararg|
+.. rst-class:: classref-method
+
+:ref:`Variant<class_Variant>` **new** **(** ... **)** |vararg|
 
 Constructs a new object of the base type with a script of this type already attached.
 
@@ -143,3 +205,4 @@ Constructs a new object of the base type with a script of this type already atta
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

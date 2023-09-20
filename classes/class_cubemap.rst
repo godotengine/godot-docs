@@ -14,188 +14,296 @@ CubeMap
 
 A CubeMap is a 6-sided 3D texture.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 A 6-sided 3D texture typically used for faking reflections. It can be used to make an object look as if it's reflecting its surroundings. This usually delivers much better performance than other reflection methods.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+--------------------------------------+----------------------------------------------------------------------------+---------+
-| :ref:`int<class_int>`                | :ref:`flags<class_CubeMap_property_flags>`                                 | ``7``   |
-+--------------------------------------+----------------------------------------------------------------------------+---------+
-| :ref:`float<class_float>`            | :ref:`lossy_storage_quality<class_CubeMap_property_lossy_storage_quality>` | ``0.7`` |
-+--------------------------------------+----------------------------------------------------------------------------+---------+
-| :ref:`Storage<enum_CubeMap_Storage>` | :ref:`storage_mode<class_CubeMap_property_storage_mode>`                   | ``0``   |
-+--------------------------------------+----------------------------------------------------------------------------+---------+
+.. table::
+   :widths: auto
+
+   +--------------------------------------+----------------------------------------------------------------------------+---------+
+   | :ref:`int<class_int>`                | :ref:`flags<class_CubeMap_property_flags>`                                 | ``7``   |
+   +--------------------------------------+----------------------------------------------------------------------------+---------+
+   | :ref:`float<class_float>`            | :ref:`lossy_storage_quality<class_CubeMap_property_lossy_storage_quality>` | ``0.7`` |
+   +--------------------------------------+----------------------------------------------------------------------------+---------+
+   | :ref:`Storage<enum_CubeMap_Storage>` | :ref:`storage_mode<class_CubeMap_property_storage_mode>`                   | ``0``   |
+   +--------------------------------------+----------------------------------------------------------------------------+---------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+---------------------------+---------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`     | :ref:`get_height<class_CubeMap_method_get_height>` **(** **)** |const|                                                          |
-+---------------------------+---------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Image<class_Image>` | :ref:`get_side<class_CubeMap_method_get_side>` **(** :ref:`Side<enum_CubeMap_Side>` side **)** |const|                          |
-+---------------------------+---------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`     | :ref:`get_width<class_CubeMap_method_get_width>` **(** **)** |const|                                                            |
-+---------------------------+---------------------------------------------------------------------------------------------------------------------------------+
-| void                      | :ref:`set_side<class_CubeMap_method_set_side>` **(** :ref:`Side<enum_CubeMap_Side>` side, :ref:`Image<class_Image>` image **)** |
-+---------------------------+---------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +---------------------------+---------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`     | :ref:`get_height<class_CubeMap_method_get_height>` **(** **)** |const|                                                          |
+   +---------------------------+---------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Image<class_Image>` | :ref:`get_side<class_CubeMap_method_get_side>` **(** :ref:`Side<enum_CubeMap_Side>` side **)** |const|                          |
+   +---------------------------+---------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`     | :ref:`get_width<class_CubeMap_method_get_width>` **(** **)** |const|                                                            |
+   +---------------------------+---------------------------------------------------------------------------------------------------------------------------------+
+   | void                      | :ref:`set_side<class_CubeMap_method_set_side>` **(** :ref:`Side<enum_CubeMap_Side>` side, :ref:`Image<class_Image>` image **)** |
+   +---------------------------+---------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Enumerations
 ------------
 
 .. _enum_CubeMap_Storage:
 
-.. _class_CubeMap_constant_STORAGE_RAW:
-
-.. _class_CubeMap_constant_STORAGE_COMPRESS_LOSSY:
-
-.. _class_CubeMap_constant_STORAGE_COMPRESS_LOSSLESS:
+.. rst-class:: classref-enumeration
 
 enum **Storage**:
 
-- **STORAGE_RAW** = **0** --- Store the ``CubeMap`` without any compression.
+.. _class_CubeMap_constant_STORAGE_RAW:
 
-- **STORAGE_COMPRESS_LOSSY** = **1** --- Store the ``CubeMap`` with strong compression that reduces image quality.
+.. rst-class:: classref-enumeration-constant
 
-- **STORAGE_COMPRESS_LOSSLESS** = **2** --- Store the ``CubeMap`` with moderate compression that doesn't reduce image quality.
+:ref:`Storage<enum_CubeMap_Storage>` **STORAGE_RAW** = ``0``
+
+Store the **CubeMap** without any compression.
+
+.. _class_CubeMap_constant_STORAGE_COMPRESS_LOSSY:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Storage<enum_CubeMap_Storage>` **STORAGE_COMPRESS_LOSSY** = ``1``
+
+Store the **CubeMap** with strong compression that reduces image quality.
+
+.. _class_CubeMap_constant_STORAGE_COMPRESS_LOSSLESS:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Storage<enum_CubeMap_Storage>` **STORAGE_COMPRESS_LOSSLESS** = ``2``
+
+Store the **CubeMap** with moderate compression that doesn't reduce image quality.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _enum_CubeMap_Side:
 
-.. _class_CubeMap_constant_SIDE_LEFT:
-
-.. _class_CubeMap_constant_SIDE_RIGHT:
-
-.. _class_CubeMap_constant_SIDE_BOTTOM:
-
-.. _class_CubeMap_constant_SIDE_TOP:
-
-.. _class_CubeMap_constant_SIDE_FRONT:
-
-.. _class_CubeMap_constant_SIDE_BACK:
+.. rst-class:: classref-enumeration
 
 enum **Side**:
 
-- **SIDE_LEFT** = **0** --- Identifier for the left face of the ``CubeMap``.
+.. _class_CubeMap_constant_SIDE_LEFT:
 
-- **SIDE_RIGHT** = **1** --- Identifier for the right face of the ``CubeMap``.
+.. rst-class:: classref-enumeration-constant
 
-- **SIDE_BOTTOM** = **2** --- Identifier for the bottom face of the ``CubeMap``.
+:ref:`Side<enum_CubeMap_Side>` **SIDE_LEFT** = ``0``
 
-- **SIDE_TOP** = **3** --- Identifier for the top face of the ``CubeMap``.
+Identifier for the left face of the **CubeMap**.
 
-- **SIDE_FRONT** = **4** --- Identifier for the front face of the ``CubeMap``.
+.. _class_CubeMap_constant_SIDE_RIGHT:
 
-- **SIDE_BACK** = **5** --- Identifier for the back face of the ``CubeMap``.
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Side<enum_CubeMap_Side>` **SIDE_RIGHT** = ``1``
+
+Identifier for the right face of the **CubeMap**.
+
+.. _class_CubeMap_constant_SIDE_BOTTOM:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Side<enum_CubeMap_Side>` **SIDE_BOTTOM** = ``2``
+
+Identifier for the bottom face of the **CubeMap**.
+
+.. _class_CubeMap_constant_SIDE_TOP:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Side<enum_CubeMap_Side>` **SIDE_TOP** = ``3``
+
+Identifier for the top face of the **CubeMap**.
+
+.. _class_CubeMap_constant_SIDE_FRONT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Side<enum_CubeMap_Side>` **SIDE_FRONT** = ``4``
+
+Identifier for the front face of the **CubeMap**.
+
+.. _class_CubeMap_constant_SIDE_BACK:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Side<enum_CubeMap_Side>` **SIDE_BACK** = ``5``
+
+Identifier for the back face of the **CubeMap**.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _enum_CubeMap_Flags:
 
-.. _class_CubeMap_constant_FLAG_MIPMAPS:
-
-.. _class_CubeMap_constant_FLAG_REPEAT:
-
-.. _class_CubeMap_constant_FLAG_FILTER:
-
-.. _class_CubeMap_constant_FLAGS_DEFAULT:
+.. rst-class:: classref-enumeration
 
 enum **Flags**:
 
-- **FLAG_MIPMAPS** = **1** --- Generate mipmaps, to enable smooth zooming out of the texture.
+.. _class_CubeMap_constant_FLAG_MIPMAPS:
 
-- **FLAG_REPEAT** = **2** --- Repeat (instead of clamp to edge).
+.. rst-class:: classref-enumeration-constant
 
-- **FLAG_FILTER** = **4** --- Turn on magnifying filter, to enable smooth zooming in of the texture.
+:ref:`Flags<enum_CubeMap_Flags>` **FLAG_MIPMAPS** = ``1``
 
-- **FLAGS_DEFAULT** = **7** --- Default flags. Generate mipmaps, repeat, and filter are enabled.
+Generate mipmaps, to enable smooth zooming out of the texture.
+
+.. _class_CubeMap_constant_FLAG_REPEAT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Flags<enum_CubeMap_Flags>` **FLAG_REPEAT** = ``2``
+
+Repeat (instead of clamp to edge).
+
+.. _class_CubeMap_constant_FLAG_FILTER:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Flags<enum_CubeMap_Flags>` **FLAG_FILTER** = ``4``
+
+Turn on magnifying filter, to enable smooth zooming in of the texture.
+
+.. _class_CubeMap_constant_FLAGS_DEFAULT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Flags<enum_CubeMap_Flags>` **FLAGS_DEFAULT** = ``7``
+
+Default flags. Generate mipmaps, repeat, and filter are enabled.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_CubeMap_property_flags:
 
-- :ref:`int<class_int>` **flags**
+.. rst-class:: classref-property
 
-+-----------+------------------+
-| *Default* | ``7``            |
-+-----------+------------------+
-| *Setter*  | set_flags(value) |
-+-----------+------------------+
-| *Getter*  | get_flags()      |
-+-----------+------------------+
+:ref:`int<class_int>` **flags** = ``7``
 
-The render flags for the ``CubeMap``. See the :ref:`Flags<enum_CubeMap_Flags>` constants for details.
+.. rst-class:: classref-property-setget
+
+- void **set_flags** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_flags** **(** **)**
+
+The render flags for the **CubeMap**. See the :ref:`Flags<enum_CubeMap_Flags>` constants for details.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_CubeMap_property_lossy_storage_quality:
 
-- :ref:`float<class_float>` **lossy_storage_quality**
+.. rst-class:: classref-property
 
-+-----------+----------------------------------+
-| *Default* | ``0.7``                          |
-+-----------+----------------------------------+
-| *Setter*  | set_lossy_storage_quality(value) |
-+-----------+----------------------------------+
-| *Getter*  | get_lossy_storage_quality()      |
-+-----------+----------------------------------+
+:ref:`float<class_float>` **lossy_storage_quality** = ``0.7``
 
-The lossy storage quality of the ``CubeMap`` if the storage mode is set to :ref:`STORAGE_COMPRESS_LOSSY<class_CubeMap_constant_STORAGE_COMPRESS_LOSSY>`.
+.. rst-class:: classref-property-setget
+
+- void **set_lossy_storage_quality** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_lossy_storage_quality** **(** **)**
+
+The lossy storage quality of the **CubeMap** if the storage mode is set to :ref:`STORAGE_COMPRESS_LOSSY<class_CubeMap_constant_STORAGE_COMPRESS_LOSSY>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_CubeMap_property_storage_mode:
 
-- :ref:`Storage<enum_CubeMap_Storage>` **storage_mode**
+.. rst-class:: classref-property
 
-+-----------+--------------------+
-| *Default* | ``0``              |
-+-----------+--------------------+
-| *Setter*  | set_storage(value) |
-+-----------+--------------------+
-| *Getter*  | get_storage()      |
-+-----------+--------------------+
+:ref:`Storage<enum_CubeMap_Storage>` **storage_mode** = ``0``
 
-The ``CubeMap``'s storage mode. See :ref:`Storage<enum_CubeMap_Storage>` constants.
+.. rst-class:: classref-property-setget
+
+- void **set_storage** **(** :ref:`Storage<enum_CubeMap_Storage>` value **)**
+- :ref:`Storage<enum_CubeMap_Storage>` **get_storage** **(** **)**
+
+The **CubeMap**'s storage mode. See :ref:`Storage<enum_CubeMap_Storage>` constants.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_CubeMap_method_get_height:
 
-- :ref:`int<class_int>` **get_height** **(** **)** |const|
+.. rst-class:: classref-method
 
-Returns the ``CubeMap``'s height.
+:ref:`int<class_int>` **get_height** **(** **)** |const|
+
+Returns the **CubeMap**'s height.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_CubeMap_method_get_side:
 
-- :ref:`Image<class_Image>` **get_side** **(** :ref:`Side<enum_CubeMap_Side>` side **)** |const|
+.. rst-class:: classref-method
 
-Returns an :ref:`Image<class_Image>` for a side of the ``CubeMap`` using one of the :ref:`Side<enum_CubeMap_Side>` constants.
+:ref:`Image<class_Image>` **get_side** **(** :ref:`Side<enum_CubeMap_Side>` side **)** |const|
+
+Returns an :ref:`Image<class_Image>` for a side of the **CubeMap** using one of the :ref:`Side<enum_CubeMap_Side>` constants.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_CubeMap_method_get_width:
 
-- :ref:`int<class_int>` **get_width** **(** **)** |const|
+.. rst-class:: classref-method
 
-Returns the ``CubeMap``'s width.
+:ref:`int<class_int>` **get_width** **(** **)** |const|
+
+Returns the **CubeMap**'s width.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_CubeMap_method_set_side:
 
-- void **set_side** **(** :ref:`Side<enum_CubeMap_Side>` side, :ref:`Image<class_Image>` image **)**
+.. rst-class:: classref-method
 
-Sets an :ref:`Image<class_Image>` for a side of the ``CubeMap`` using one of the :ref:`Side<enum_CubeMap_Side>` constants.
+void **set_side** **(** :ref:`Side<enum_CubeMap_Side>` side, :ref:`Image<class_Image>` image **)**
+
+Sets an :ref:`Image<class_Image>` for a side of the **CubeMap** using one of the :ref:`Side<enum_CubeMap_Side>` constants.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

@@ -14,104 +14,128 @@ SoftBody
 
 A soft mesh physics body.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 A deformable physics body. Used to create elastic or deformable objects such as cloth, rubber, or other flexible materials.
 
-\ **Note:** There are many known bugs in ``SoftBody``. Therefore, it's not recommended to use them for things that can affect gameplay (such as a player character made entirely out of soft bodies).
+\ **Note:** There are many known bugs in **SoftBody**. Therefore, it's not recommended to use them for things that can affect gameplay (such as a player character made entirely out of soft bodies).
+
+.. rst-class:: classref-introduction-group
 
 Tutorials
 ---------
 
 - :doc:`../tutorials/physics/soft_body`
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+---------------------------------+-------------------------------------------------------------------------------------+------------------+
-| :ref:`float<class_float>`       | :ref:`areaAngular_stiffness<class_SoftBody_property_areaAngular_stiffness>`         | ``0.5``          |
-+---------------------------------+-------------------------------------------------------------------------------------+------------------+
-| :ref:`int<class_int>`           | :ref:`collision_layer<class_SoftBody_property_collision_layer>`                     | ``1``            |
-+---------------------------------+-------------------------------------------------------------------------------------+------------------+
-| :ref:`int<class_int>`           | :ref:`collision_mask<class_SoftBody_property_collision_mask>`                       | ``1``            |
-+---------------------------------+-------------------------------------------------------------------------------------+------------------+
-| :ref:`float<class_float>`       | :ref:`damping_coefficient<class_SoftBody_property_damping_coefficient>`             | ``0.01``         |
-+---------------------------------+-------------------------------------------------------------------------------------+------------------+
-| :ref:`float<class_float>`       | :ref:`drag_coefficient<class_SoftBody_property_drag_coefficient>`                   | ``0.0``          |
-+---------------------------------+-------------------------------------------------------------------------------------+------------------+
-| :ref:`float<class_float>`       | :ref:`linear_stiffness<class_SoftBody_property_linear_stiffness>`                   | ``0.5``          |
-+---------------------------------+-------------------------------------------------------------------------------------+------------------+
-| :ref:`NodePath<class_NodePath>` | :ref:`parent_collision_ignore<class_SoftBody_property_parent_collision_ignore>`     | ``NodePath("")`` |
-+---------------------------------+-------------------------------------------------------------------------------------+------------------+
-| :ref:`bool<class_bool>`         | :ref:`physics_enabled<class_SoftBody_property_physics_enabled>`                     | ``true``         |
-+---------------------------------+-------------------------------------------------------------------------------------+------------------+
-| :ref:`float<class_float>`       | :ref:`pose_matching_coefficient<class_SoftBody_property_pose_matching_coefficient>` | ``0.0``          |
-+---------------------------------+-------------------------------------------------------------------------------------+------------------+
-| :ref:`float<class_float>`       | :ref:`pressure_coefficient<class_SoftBody_property_pressure_coefficient>`           | ``0.0``          |
-+---------------------------------+-------------------------------------------------------------------------------------+------------------+
-| :ref:`bool<class_bool>`         | :ref:`ray_pickable<class_SoftBody_property_ray_pickable>`                           | ``true``         |
-+---------------------------------+-------------------------------------------------------------------------------------+------------------+
-| :ref:`int<class_int>`           | :ref:`simulation_precision<class_SoftBody_property_simulation_precision>`           | ``5``            |
-+---------------------------------+-------------------------------------------------------------------------------------+------------------+
-| :ref:`float<class_float>`       | :ref:`total_mass<class_SoftBody_property_total_mass>`                               | ``1.0``          |
-+---------------------------------+-------------------------------------------------------------------------------------+------------------+
-| :ref:`float<class_float>`       | :ref:`volume_stiffness<class_SoftBody_property_volume_stiffness>`                   | ``0.5``          |
-+---------------------------------+-------------------------------------------------------------------------------------+------------------+
+.. table::
+   :widths: auto
+
+   +---------------------------------+-------------------------------------------------------------------------------------+------------------+
+   | :ref:`float<class_float>`       | :ref:`areaAngular_stiffness<class_SoftBody_property_areaAngular_stiffness>`         | ``0.5``          |
+   +---------------------------------+-------------------------------------------------------------------------------------+------------------+
+   | :ref:`int<class_int>`           | :ref:`collision_layer<class_SoftBody_property_collision_layer>`                     | ``1``            |
+   +---------------------------------+-------------------------------------------------------------------------------------+------------------+
+   | :ref:`int<class_int>`           | :ref:`collision_mask<class_SoftBody_property_collision_mask>`                       | ``1``            |
+   +---------------------------------+-------------------------------------------------------------------------------------+------------------+
+   | :ref:`float<class_float>`       | :ref:`damping_coefficient<class_SoftBody_property_damping_coefficient>`             | ``0.01``         |
+   +---------------------------------+-------------------------------------------------------------------------------------+------------------+
+   | :ref:`float<class_float>`       | :ref:`drag_coefficient<class_SoftBody_property_drag_coefficient>`                   | ``0.0``          |
+   +---------------------------------+-------------------------------------------------------------------------------------+------------------+
+   | :ref:`float<class_float>`       | :ref:`linear_stiffness<class_SoftBody_property_linear_stiffness>`                   | ``0.5``          |
+   +---------------------------------+-------------------------------------------------------------------------------------+------------------+
+   | :ref:`NodePath<class_NodePath>` | :ref:`parent_collision_ignore<class_SoftBody_property_parent_collision_ignore>`     | ``NodePath("")`` |
+   +---------------------------------+-------------------------------------------------------------------------------------+------------------+
+   | :ref:`bool<class_bool>`         | :ref:`physics_enabled<class_SoftBody_property_physics_enabled>`                     | ``true``         |
+   +---------------------------------+-------------------------------------------------------------------------------------+------------------+
+   | :ref:`float<class_float>`       | :ref:`pose_matching_coefficient<class_SoftBody_property_pose_matching_coefficient>` | ``0.0``          |
+   +---------------------------------+-------------------------------------------------------------------------------------+------------------+
+   | :ref:`float<class_float>`       | :ref:`pressure_coefficient<class_SoftBody_property_pressure_coefficient>`           | ``0.0``          |
+   +---------------------------------+-------------------------------------------------------------------------------------+------------------+
+   | :ref:`bool<class_bool>`         | :ref:`ray_pickable<class_SoftBody_property_ray_pickable>`                           | ``true``         |
+   +---------------------------------+-------------------------------------------------------------------------------------+------------------+
+   | :ref:`int<class_int>`           | :ref:`simulation_precision<class_SoftBody_property_simulation_precision>`           | ``5``            |
+   +---------------------------------+-------------------------------------------------------------------------------------+------------------+
+   | :ref:`float<class_float>`       | :ref:`total_mass<class_SoftBody_property_total_mass>`                               | ``1.0``          |
+   +---------------------------------+-------------------------------------------------------------------------------------+------------------+
+   | :ref:`float<class_float>`       | :ref:`volume_stiffness<class_SoftBody_property_volume_stiffness>`                   | ``0.5``          |
+   +---------------------------------+-------------------------------------------------------------------------------------+------------------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                          | :ref:`add_collision_exception_with<class_SoftBody_method_add_collision_exception_with>` **(** :ref:`Node<class_Node>` body **)**                                                                            |
-+-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`     | :ref:`get_collision_exceptions<class_SoftBody_method_get_collision_exceptions>` **(** **)**                                                                                                                 |
-+-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`get_collision_layer_bit<class_SoftBody_method_get_collision_layer_bit>` **(** :ref:`int<class_int>` bit **)** |const|                                                                                 |
-+-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`get_collision_mask_bit<class_SoftBody_method_get_collision_mask_bit>` **(** :ref:`int<class_int>` bit **)** |const|                                                                                   |
-+-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector3<class_Vector3>` | :ref:`get_point_transform<class_SoftBody_method_get_point_transform>` **(** :ref:`int<class_int>` point_index **)**                                                                                         |
-+-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`is_point_pinned<class_SoftBody_method_is_point_pinned>` **(** :ref:`int<class_int>` point_index **)** |const|                                                                                         |
-+-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                          | :ref:`remove_collision_exception_with<class_SoftBody_method_remove_collision_exception_with>` **(** :ref:`Node<class_Node>` body **)**                                                                      |
-+-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                          | :ref:`set_collision_layer_bit<class_SoftBody_method_set_collision_layer_bit>` **(** :ref:`int<class_int>` bit, :ref:`bool<class_bool>` value **)**                                                          |
-+-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                          | :ref:`set_collision_mask_bit<class_SoftBody_method_set_collision_mask_bit>` **(** :ref:`int<class_int>` bit, :ref:`bool<class_bool>` value **)**                                                            |
-+-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                          | :ref:`set_point_pinned<class_SoftBody_method_set_point_pinned>` **(** :ref:`int<class_int>` point_index, :ref:`bool<class_bool>` pinned, :ref:`NodePath<class_NodePath>` attachment_path=NodePath("") **)** |
-+-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                          | :ref:`add_collision_exception_with<class_SoftBody_method_add_collision_exception_with>` **(** :ref:`Node<class_Node>` body **)**                                                                            |
+   +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Array<class_Array>`     | :ref:`get_collision_exceptions<class_SoftBody_method_get_collision_exceptions>` **(** **)**                                                                                                                 |
+   +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`get_collision_layer_bit<class_SoftBody_method_get_collision_layer_bit>` **(** :ref:`int<class_int>` bit **)** |const|                                                                                 |
+   +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`get_collision_mask_bit<class_SoftBody_method_get_collision_mask_bit>` **(** :ref:`int<class_int>` bit **)** |const|                                                                                   |
+   +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector3<class_Vector3>` | :ref:`get_point_transform<class_SoftBody_method_get_point_transform>` **(** :ref:`int<class_int>` point_index **)**                                                                                         |
+   +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`is_point_pinned<class_SoftBody_method_is_point_pinned>` **(** :ref:`int<class_int>` point_index **)** |const|                                                                                         |
+   +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                          | :ref:`remove_collision_exception_with<class_SoftBody_method_remove_collision_exception_with>` **(** :ref:`Node<class_Node>` body **)**                                                                      |
+   +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                          | :ref:`set_collision_layer_bit<class_SoftBody_method_set_collision_layer_bit>` **(** :ref:`int<class_int>` bit, :ref:`bool<class_bool>` value **)**                                                          |
+   +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                          | :ref:`set_collision_mask_bit<class_SoftBody_method_set_collision_mask_bit>` **(** :ref:`int<class_int>` bit, :ref:`bool<class_bool>` value **)**                                                            |
+   +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                          | :ref:`set_point_pinned<class_SoftBody_method_set_point_pinned>` **(** :ref:`int<class_int>` point_index, :ref:`bool<class_bool>` pinned, :ref:`NodePath<class_NodePath>` attachment_path=NodePath("") **)** |
+   +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_SoftBody_property_areaAngular_stiffness:
 
-- :ref:`float<class_float>` **areaAngular_stiffness**
+.. rst-class:: classref-property
 
-+-----------+----------------------------------+
-| *Default* | ``0.5``                          |
-+-----------+----------------------------------+
-| *Setter*  | set_areaAngular_stiffness(value) |
-+-----------+----------------------------------+
-| *Getter*  | get_areaAngular_stiffness()      |
-+-----------+----------------------------------+
+:ref:`float<class_float>` **areaAngular_stiffness** = ``0.5``
+
+.. rst-class:: classref-property-setget
+
+- void **set_areaAngular_stiffness** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_areaAngular_stiffness** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_SoftBody_property_collision_layer:
 
-- :ref:`int<class_int>` **collision_layer**
+.. rst-class:: classref-property
 
-+-----------+----------------------------+
-| *Default* | ``1``                      |
-+-----------+----------------------------+
-| *Setter*  | set_collision_layer(value) |
-+-----------+----------------------------+
-| *Getter*  | get_collision_layer()      |
-+-----------+----------------------------+
+:ref:`int<class_int>` **collision_layer** = ``1``
+
+.. rst-class:: classref-property-setget
+
+- void **set_collision_layer** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_collision_layer** **(** **)**
 
 The physics layers this SoftBody is in.
 
@@ -119,267 +143,348 @@ Collidable objects can exist in any of 32 different layers. These layers work li
 
 A contact is detected if object A is in any of the layers that object B scans, or object B is in any layer scanned by object A. See `Collision layers and masks <../tutorials/physics/physics_introduction.html#collision-layers-and-masks>`__ in the documentation for more information.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_SoftBody_property_collision_mask:
 
-- :ref:`int<class_int>` **collision_mask**
+.. rst-class:: classref-property
 
-+-----------+---------------------------+
-| *Default* | ``1``                     |
-+-----------+---------------------------+
-| *Setter*  | set_collision_mask(value) |
-+-----------+---------------------------+
-| *Getter*  | get_collision_mask()      |
-+-----------+---------------------------+
+:ref:`int<class_int>` **collision_mask** = ``1``
+
+.. rst-class:: classref-property-setget
+
+- void **set_collision_mask** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_collision_mask** **(** **)**
 
 The physics layers this SoftBody scans for collisions. See `Collision layers and masks <../tutorials/physics/physics_introduction.html#collision-layers-and-masks>`__ in the documentation for more information.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_SoftBody_property_damping_coefficient:
 
-- :ref:`float<class_float>` **damping_coefficient**
+.. rst-class:: classref-property
 
-+-----------+--------------------------------+
-| *Default* | ``0.01``                       |
-+-----------+--------------------------------+
-| *Setter*  | set_damping_coefficient(value) |
-+-----------+--------------------------------+
-| *Getter*  | get_damping_coefficient()      |
-+-----------+--------------------------------+
+:ref:`float<class_float>` **damping_coefficient** = ``0.01``
+
+.. rst-class:: classref-property-setget
+
+- void **set_damping_coefficient** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_damping_coefficient** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_SoftBody_property_drag_coefficient:
 
-- :ref:`float<class_float>` **drag_coefficient**
+.. rst-class:: classref-property
 
-+-----------+-----------------------------+
-| *Default* | ``0.0``                     |
-+-----------+-----------------------------+
-| *Setter*  | set_drag_coefficient(value) |
-+-----------+-----------------------------+
-| *Getter*  | get_drag_coefficient()      |
-+-----------+-----------------------------+
+:ref:`float<class_float>` **drag_coefficient** = ``0.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_drag_coefficient** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_drag_coefficient** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_SoftBody_property_linear_stiffness:
 
-- :ref:`float<class_float>` **linear_stiffness**
+.. rst-class:: classref-property
 
-+-----------+-----------------------------+
-| *Default* | ``0.5``                     |
-+-----------+-----------------------------+
-| *Setter*  | set_linear_stiffness(value) |
-+-----------+-----------------------------+
-| *Getter*  | get_linear_stiffness()      |
-+-----------+-----------------------------+
+:ref:`float<class_float>` **linear_stiffness** = ``0.5``
+
+.. rst-class:: classref-property-setget
+
+- void **set_linear_stiffness** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_linear_stiffness** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_SoftBody_property_parent_collision_ignore:
 
-- :ref:`NodePath<class_NodePath>` **parent_collision_ignore**
+.. rst-class:: classref-property
 
-+-----------+------------------------------------+
-| *Default* | ``NodePath("")``                   |
-+-----------+------------------------------------+
-| *Setter*  | set_parent_collision_ignore(value) |
-+-----------+------------------------------------+
-| *Getter*  | get_parent_collision_ignore()      |
-+-----------+------------------------------------+
+:ref:`NodePath<class_NodePath>` **parent_collision_ignore** = ``NodePath("")``
+
+.. rst-class:: classref-property-setget
+
+- void **set_parent_collision_ignore** **(** :ref:`NodePath<class_NodePath>` value **)**
+- :ref:`NodePath<class_NodePath>` **get_parent_collision_ignore** **(** **)**
 
 :ref:`NodePath<class_NodePath>` to a :ref:`CollisionObject<class_CollisionObject>` this SoftBody should avoid clipping.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_SoftBody_property_physics_enabled:
 
-- :ref:`bool<class_bool>` **physics_enabled**
+.. rst-class:: classref-property
 
-+-----------+----------------------------+
-| *Default* | ``true``                   |
-+-----------+----------------------------+
-| *Setter*  | set_physics_enabled(value) |
-+-----------+----------------------------+
-| *Getter*  | is_physics_enabled()       |
-+-----------+----------------------------+
+:ref:`bool<class_bool>` **physics_enabled** = ``true``
 
-If ``true``, the ``SoftBody`` is simulated in physics. Can be set to ``false`` to pause the physics simulation.
+.. rst-class:: classref-property-setget
+
+- void **set_physics_enabled** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_physics_enabled** **(** **)**
+
+If ``true``, the **SoftBody** is simulated in physics. Can be set to ``false`` to pause the physics simulation.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_SoftBody_property_pose_matching_coefficient:
 
-- :ref:`float<class_float>` **pose_matching_coefficient**
+.. rst-class:: classref-property
 
-+-----------+--------------------------------------+
-| *Default* | ``0.0``                              |
-+-----------+--------------------------------------+
-| *Setter*  | set_pose_matching_coefficient(value) |
-+-----------+--------------------------------------+
-| *Getter*  | get_pose_matching_coefficient()      |
-+-----------+--------------------------------------+
+:ref:`float<class_float>` **pose_matching_coefficient** = ``0.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_pose_matching_coefficient** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_pose_matching_coefficient** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_SoftBody_property_pressure_coefficient:
 
-- :ref:`float<class_float>` **pressure_coefficient**
+.. rst-class:: classref-property
 
-+-----------+---------------------------------+
-| *Default* | ``0.0``                         |
-+-----------+---------------------------------+
-| *Setter*  | set_pressure_coefficient(value) |
-+-----------+---------------------------------+
-| *Getter*  | get_pressure_coefficient()      |
-+-----------+---------------------------------+
+:ref:`float<class_float>` **pressure_coefficient** = ``0.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_pressure_coefficient** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_pressure_coefficient** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_SoftBody_property_ray_pickable:
 
-- :ref:`bool<class_bool>` **ray_pickable**
+.. rst-class:: classref-property
 
-+-----------+-------------------------+
-| *Default* | ``true``                |
-+-----------+-------------------------+
-| *Setter*  | set_ray_pickable(value) |
-+-----------+-------------------------+
-| *Getter*  | is_ray_pickable()       |
-+-----------+-------------------------+
+:ref:`bool<class_bool>` **ray_pickable** = ``true``
 
-If ``true``, the ``SoftBody`` will respond to :ref:`RayCast<class_RayCast>`\ s.
+.. rst-class:: classref-property-setget
+
+- void **set_ray_pickable** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_ray_pickable** **(** **)**
+
+If ``true``, the **SoftBody** will respond to :ref:`RayCast<class_RayCast>`\ s.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_SoftBody_property_simulation_precision:
 
-- :ref:`int<class_int>` **simulation_precision**
+.. rst-class:: classref-property
 
-+-----------+---------------------------------+
-| *Default* | ``5``                           |
-+-----------+---------------------------------+
-| *Setter*  | set_simulation_precision(value) |
-+-----------+---------------------------------+
-| *Getter*  | get_simulation_precision()      |
-+-----------+---------------------------------+
+:ref:`int<class_int>` **simulation_precision** = ``5``
+
+.. rst-class:: classref-property-setget
+
+- void **set_simulation_precision** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_simulation_precision** **(** **)**
 
 Increasing this value will improve the resulting simulation, but can affect performance. Use with care.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_SoftBody_property_total_mass:
 
-- :ref:`float<class_float>` **total_mass**
+.. rst-class:: classref-property
 
-+-----------+-----------------------+
-| *Default* | ``1.0``               |
-+-----------+-----------------------+
-| *Setter*  | set_total_mass(value) |
-+-----------+-----------------------+
-| *Getter*  | get_total_mass()      |
-+-----------+-----------------------+
+:ref:`float<class_float>` **total_mass** = ``1.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_total_mass** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_total_mass** **(** **)**
 
 The SoftBody's mass.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_SoftBody_property_volume_stiffness:
 
-- :ref:`float<class_float>` **volume_stiffness**
+.. rst-class:: classref-property
 
-+-----------+-----------------------------+
-| *Default* | ``0.5``                     |
-+-----------+-----------------------------+
-| *Setter*  | set_volume_stiffness(value) |
-+-----------+-----------------------------+
-| *Getter*  | get_volume_stiffness()      |
-+-----------+-----------------------------+
+:ref:`float<class_float>` **volume_stiffness** = ``0.5``
+
+.. rst-class:: classref-property-setget
+
+- void **set_volume_stiffness** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_volume_stiffness** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_SoftBody_method_add_collision_exception_with:
 
-- void **add_collision_exception_with** **(** :ref:`Node<class_Node>` body **)**
+.. rst-class:: classref-method
+
+void **add_collision_exception_with** **(** :ref:`Node<class_Node>` body **)**
 
 Adds a body to the list of bodies that this body can't collide with.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_SoftBody_method_get_collision_exceptions:
 
-- :ref:`Array<class_Array>` **get_collision_exceptions** **(** **)**
+.. rst-class:: classref-method
+
+:ref:`Array<class_Array>` **get_collision_exceptions** **(** **)**
 
 Returns an array of nodes that were added as collision exceptions for this body.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_SoftBody_method_get_collision_layer_bit:
 
-- :ref:`bool<class_bool>` **get_collision_layer_bit** **(** :ref:`int<class_int>` bit **)** |const|
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **get_collision_layer_bit** **(** :ref:`int<class_int>` bit **)** |const|
 
 Returns an individual bit on the collision mask.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_SoftBody_method_get_collision_mask_bit:
 
-- :ref:`bool<class_bool>` **get_collision_mask_bit** **(** :ref:`int<class_int>` bit **)** |const|
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **get_collision_mask_bit** **(** :ref:`int<class_int>` bit **)** |const|
 
 Returns an individual bit on the collision mask.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_SoftBody_method_get_point_transform:
 
-- :ref:`Vector3<class_Vector3>` **get_point_transform** **(** :ref:`int<class_int>` point_index **)**
+.. rst-class:: classref-method
+
+:ref:`Vector3<class_Vector3>` **get_point_transform** **(** :ref:`int<class_int>` point_index **)**
 
 Returns local translation of a vertex in the surface array.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_SoftBody_method_is_point_pinned:
 
-- :ref:`bool<class_bool>` **is_point_pinned** **(** :ref:`int<class_int>` point_index **)** |const|
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **is_point_pinned** **(** :ref:`int<class_int>` point_index **)** |const|
 
 Returns ``true`` if vertex is set to pinned.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_SoftBody_method_remove_collision_exception_with:
 
-- void **remove_collision_exception_with** **(** :ref:`Node<class_Node>` body **)**
+.. rst-class:: classref-method
+
+void **remove_collision_exception_with** **(** :ref:`Node<class_Node>` body **)**
 
 Removes a body from the list of bodies that this body can't collide with.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_SoftBody_method_set_collision_layer_bit:
 
-- void **set_collision_layer_bit** **(** :ref:`int<class_int>` bit, :ref:`bool<class_bool>` value **)**
+.. rst-class:: classref-method
+
+void **set_collision_layer_bit** **(** :ref:`int<class_int>` bit, :ref:`bool<class_bool>` value **)**
 
 Sets individual bits on the layer mask. Use this if you only need to change one layer's value.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_SoftBody_method_set_collision_mask_bit:
 
-- void **set_collision_mask_bit** **(** :ref:`int<class_int>` bit, :ref:`bool<class_bool>` value **)**
+.. rst-class:: classref-method
+
+void **set_collision_mask_bit** **(** :ref:`int<class_int>` bit, :ref:`bool<class_bool>` value **)**
 
 Sets individual bits on the collision mask. Use this if you only need to change one layer's value.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_SoftBody_method_set_point_pinned:
 
-- void **set_point_pinned** **(** :ref:`int<class_int>` point_index, :ref:`bool<class_bool>` pinned, :ref:`NodePath<class_NodePath>` attachment_path=NodePath("") **)**
+.. rst-class:: classref-method
+
+void **set_point_pinned** **(** :ref:`int<class_int>` point_index, :ref:`bool<class_bool>` pinned, :ref:`NodePath<class_NodePath>` attachment_path=NodePath("") **)**
 
 Sets the pinned state of a surface vertex. When set to ``true``, the optional ``attachment_path`` can define a :ref:`Spatial<class_Spatial>` the pinned vertex will be attached to.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

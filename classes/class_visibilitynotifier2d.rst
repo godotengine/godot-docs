@@ -16,6 +16,8 @@ VisibilityNotifier2D
 
 Detects approximately when the node is visible on screen.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -25,81 +27,126 @@ If you want nodes to be disabled automatically when they exit the screen, use :r
 
 \ **Note:** For performance reasons, VisibilityNotifier2D uses an approximate heuristic with precision determined by :ref:`ProjectSettings.world/2d/cell_size<class_ProjectSettings_property_world/2d/cell_size>`. If you need precise visibility checking, use another method such as adding an :ref:`Area2D<class_Area2D>` node as a child of a :ref:`Camera2D<class_Camera2D>` node.
 
+.. rst-class:: classref-introduction-group
+
 Tutorials
 ---------
 
 - `2D Dodge The Creeps Demo <https://godotengine.org/asset-library/asset/515>`__
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+---------------------------+-------------------------------------------------------+-------------------------------+
-| :ref:`Rect2<class_Rect2>` | :ref:`rect<class_VisibilityNotifier2D_property_rect>` | ``Rect2( -10, -10, 20, 20 )`` |
-+---------------------------+-------------------------------------------------------+-------------------------------+
+.. table::
+   :widths: auto
+
+   +---------------------------+-------------------------------------------------------+-------------------------------+
+   | :ref:`Rect2<class_Rect2>` | :ref:`rect<class_VisibilityNotifier2D_property_rect>` | ``Rect2( -10, -10, 20, 20 )`` |
+   +---------------------------+-------------------------------------------------------+-------------------------------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+-------------------------+-----------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`is_on_screen<class_VisibilityNotifier2D_method_is_on_screen>` **(** **)** |const| |
-+-------------------------+-----------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------+-----------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | :ref:`is_on_screen<class_VisibilityNotifier2D_method_is_on_screen>` **(** **)** |const| |
+   +-------------------------+-----------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Signals
 -------
 
 .. _class_VisibilityNotifier2D_signal_screen_entered:
 
-- **screen_entered** **(** **)**
+.. rst-class:: classref-signal
+
+**screen_entered** **(** **)**
 
 Emitted when the VisibilityNotifier2D enters the screen.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_VisibilityNotifier2D_signal_screen_exited:
 
-- **screen_exited** **(** **)**
+.. rst-class:: classref-signal
+
+**screen_exited** **(** **)**
 
 Emitted when the VisibilityNotifier2D exits the screen.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_VisibilityNotifier2D_signal_viewport_entered:
 
-- **viewport_entered** **(** :ref:`Viewport<class_Viewport>` viewport **)**
+.. rst-class:: classref-signal
+
+**viewport_entered** **(** :ref:`Viewport<class_Viewport>` viewport **)**
 
 Emitted when the VisibilityNotifier2D enters a :ref:`Viewport<class_Viewport>`'s view.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_VisibilityNotifier2D_signal_viewport_exited:
 
-- **viewport_exited** **(** :ref:`Viewport<class_Viewport>` viewport **)**
+.. rst-class:: classref-signal
+
+**viewport_exited** **(** :ref:`Viewport<class_Viewport>` viewport **)**
 
 Emitted when the VisibilityNotifier2D exits a :ref:`Viewport<class_Viewport>`'s view.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_VisibilityNotifier2D_property_rect:
 
-- :ref:`Rect2<class_Rect2>` **rect**
+.. rst-class:: classref-property
 
-+-----------+-------------------------------+
-| *Default* | ``Rect2( -10, -10, 20, 20 )`` |
-+-----------+-------------------------------+
-| *Setter*  | set_rect(value)               |
-+-----------+-------------------------------+
-| *Getter*  | get_rect()                    |
-+-----------+-------------------------------+
+:ref:`Rect2<class_Rect2>` **rect** = ``Rect2( -10, -10, 20, 20 )``
+
+.. rst-class:: classref-property-setget
+
+- void **set_rect** **(** :ref:`Rect2<class_Rect2>` value **)**
+- :ref:`Rect2<class_Rect2>` **get_rect** **(** **)**
 
 The VisibilityNotifier2D's bounding rectangle.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_VisibilityNotifier2D_method_is_on_screen:
 
-- :ref:`bool<class_bool>` **is_on_screen** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **is_on_screen** **(** **)** |const|
 
 If ``true``, the bounding rectangle is on the screen.
 
@@ -108,3 +155,4 @@ If ``true``, the bounding rectangle is on the screen.
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

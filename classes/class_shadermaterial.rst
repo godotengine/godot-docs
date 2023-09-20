@@ -14,83 +14,124 @@ ShaderMaterial
 
 A material that uses a custom :ref:`Shader<class_Shader>` program.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 A material that uses a custom :ref:`Shader<class_Shader>` program to render either items to screen or process particles. You can create multiple materials for the same shader but configure different values for the uniforms defined in the shader.
 
-\ **Note:** Due to a renderer limitation, emissive ``ShaderMaterial``\ s cannot emit light when used in a :ref:`GIProbe<class_GIProbe>`. Only emissive :ref:`SpatialMaterial<class_SpatialMaterial>`\ s can emit light in a :ref:`GIProbe<class_GIProbe>`.
+\ **Note:** Due to a renderer limitation, emissive **ShaderMaterial**\ s cannot emit light when used in a :ref:`GIProbe<class_GIProbe>`. Only emissive :ref:`SpatialMaterial<class_SpatialMaterial>`\ s can emit light in a :ref:`GIProbe<class_GIProbe>`.
+
+.. rst-class:: classref-introduction-group
 
 Tutorials
 ---------
 
 - :doc:`../tutorials/shaders/index`
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-----------------------------+-----------------------------------------------------+
-| :ref:`Shader<class_Shader>` | :ref:`shader<class_ShaderMaterial_property_shader>` |
-+-----------------------------+-----------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-----------------------------+-----------------------------------------------------+
+   | :ref:`Shader<class_Shader>` | :ref:`shader<class_ShaderMaterial_property_shader>` |
+   +-----------------------------+-----------------------------------------------------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>` | :ref:`get_shader_param<class_ShaderMaterial_method_get_shader_param>` **(** :ref:`String<class_String>` param **)** |const|                              |
-+-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`property_can_revert<class_ShaderMaterial_method_property_can_revert>` **(** :ref:`String<class_String>` name **)**                                 |
-+-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>` | :ref:`property_get_revert<class_ShaderMaterial_method_property_get_revert>` **(** :ref:`String<class_String>` name **)**                                 |
-+-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                          | :ref:`set_shader_param<class_ShaderMaterial_method_set_shader_param>` **(** :ref:`String<class_String>` param, :ref:`Variant<class_Variant>` value **)** |
-+-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Variant<class_Variant>` | :ref:`get_shader_param<class_ShaderMaterial_method_get_shader_param>` **(** :ref:`String<class_String>` param **)** |const|                              |
+   +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`property_can_revert<class_ShaderMaterial_method_property_can_revert>` **(** :ref:`String<class_String>` name **)**                                 |
+   +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Variant<class_Variant>` | :ref:`property_get_revert<class_ShaderMaterial_method_property_get_revert>` **(** :ref:`String<class_String>` name **)**                                 |
+   +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                          | :ref:`set_shader_param<class_ShaderMaterial_method_set_shader_param>` **(** :ref:`String<class_String>` param, :ref:`Variant<class_Variant>` value **)** |
+   +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_ShaderMaterial_property_shader:
 
-- :ref:`Shader<class_Shader>` **shader**
+.. rst-class:: classref-property
 
-+----------+-------------------+
-| *Setter* | set_shader(value) |
-+----------+-------------------+
-| *Getter* | get_shader()      |
-+----------+-------------------+
+:ref:`Shader<class_Shader>` **shader**
+
+.. rst-class:: classref-property-setget
+
+- void **set_shader** **(** :ref:`Shader<class_Shader>` value **)**
+- :ref:`Shader<class_Shader>` **get_shader** **(** **)**
 
 The :ref:`Shader<class_Shader>` program used to render this material.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_ShaderMaterial_method_get_shader_param:
 
-- :ref:`Variant<class_Variant>` **get_shader_param** **(** :ref:`String<class_String>` param **)** |const|
+.. rst-class:: classref-method
+
+:ref:`Variant<class_Variant>` **get_shader_param** **(** :ref:`String<class_String>` param **)** |const|
 
 Returns the current value set for this material of a uniform in the shader.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_ShaderMaterial_method_property_can_revert:
 
-- :ref:`bool<class_bool>` **property_can_revert** **(** :ref:`String<class_String>` name **)**
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **property_can_revert** **(** :ref:`String<class_String>` name **)**
 
 Returns ``true`` if the property identified by ``name`` can be reverted to a default value.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_ShaderMaterial_method_property_get_revert:
 
-- :ref:`Variant<class_Variant>` **property_get_revert** **(** :ref:`String<class_String>` name **)**
+.. rst-class:: classref-method
+
+:ref:`Variant<class_Variant>` **property_get_revert** **(** :ref:`String<class_String>` name **)**
 
 Returns the default value of the material property with given ``name``.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_ShaderMaterial_method_set_shader_param:
 
-- void **set_shader_param** **(** :ref:`String<class_String>` param, :ref:`Variant<class_Variant>` value **)**
+.. rst-class:: classref-method
+
+void **set_shader_param** **(** :ref:`String<class_String>` param, :ref:`Variant<class_Variant>` value **)**
 
 Changes the value set for this material of a uniform in the shader.
 
@@ -99,3 +140,4 @@ Changes the value set for this material of a uniform in the shader.
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

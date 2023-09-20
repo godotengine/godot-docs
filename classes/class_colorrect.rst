@@ -14,37 +14,51 @@ ColorRect
 
 Colored rectangle.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 Displays a rectangle filled with a solid :ref:`color<class_ColorRect_property_color>`. If you need to display the border alone, consider using :ref:`ReferenceRect<class_ReferenceRect>` instead.
+
+.. rst-class:: classref-introduction-group
 
 Tutorials
 ---------
 
 - `2D Dodge The Creeps Demo <https://godotengine.org/asset-library/asset/515>`__
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+---------------------------+----------------------------------------------+-------------------------+
-| :ref:`Color<class_Color>` | :ref:`color<class_ColorRect_property_color>` | ``Color( 1, 1, 1, 1 )`` |
-+---------------------------+----------------------------------------------+-------------------------+
+.. table::
+   :widths: auto
+
+   +---------------------------+----------------------------------------------+-------------------------+
+   | :ref:`Color<class_Color>` | :ref:`color<class_ColorRect_property_color>` | ``Color( 1, 1, 1, 1 )`` |
+   +---------------------------+----------------------------------------------+-------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_ColorRect_property_color:
 
-- :ref:`Color<class_Color>` **color**
+.. rst-class:: classref-property
 
-+-----------+-------------------------+
-| *Default* | ``Color( 1, 1, 1, 1 )`` |
-+-----------+-------------------------+
-| *Setter*  | set_frame_color(value)  |
-+-----------+-------------------------+
-| *Getter*  | get_frame_color()       |
-+-----------+-------------------------+
+:ref:`Color<class_Color>` **color** = ``Color( 1, 1, 1, 1 )``
+
+.. rst-class:: classref-property-setget
+
+- void **set_frame_color** **(** :ref:`Color<class_Color>` value **)**
+- :ref:`Color<class_Color>` **get_frame_color** **(** **)**
 
 The fill color.
 
@@ -55,3 +69,4 @@ The fill color.
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

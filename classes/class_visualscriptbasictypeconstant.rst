@@ -14,51 +14,67 @@ VisualScriptBasicTypeConstant
 
 A Visual Script node representing a constant from the base types.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 A Visual Script node representing a constant from base types, such as :ref:`Vector3.AXIS_X<class_Vector3_constant_AXIS_X>`.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-----------------------------------------------------+----------------------------------------------------------------------------+-------+
-| :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` | :ref:`basic_type<class_VisualScriptBasicTypeConstant_property_basic_type>` | ``0`` |
-+-----------------------------------------------------+----------------------------------------------------------------------------+-------+
-| :ref:`String<class_String>`                         | :ref:`constant<class_VisualScriptBasicTypeConstant_property_constant>`     |       |
-+-----------------------------------------------------+----------------------------------------------------------------------------+-------+
+.. table::
+   :widths: auto
+
+   +-----------------------------------------------------+----------------------------------------------------------------------------+-------+
+   | :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` | :ref:`basic_type<class_VisualScriptBasicTypeConstant_property_basic_type>` | ``0`` |
+   +-----------------------------------------------------+----------------------------------------------------------------------------+-------+
+   | :ref:`String<class_String>`                         | :ref:`constant<class_VisualScriptBasicTypeConstant_property_constant>`     |       |
+   +-----------------------------------------------------+----------------------------------------------------------------------------+-------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_VisualScriptBasicTypeConstant_property_basic_type:
 
-- :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` **basic_type**
+.. rst-class:: classref-property
 
-+-----------+-----------------------+
-| *Default* | ``0``                 |
-+-----------+-----------------------+
-| *Setter*  | set_basic_type(value) |
-+-----------+-----------------------+
-| *Getter*  | get_basic_type()      |
-+-----------+-----------------------+
+:ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` **basic_type** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_basic_type** **(** :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` value **)**
+- :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` **get_basic_type** **(** **)**
 
 The type to get the constant from.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_VisualScriptBasicTypeConstant_property_constant:
 
-- :ref:`String<class_String>` **constant**
+.. rst-class:: classref-property
 
-+----------+--------------------------------+
-| *Setter* | set_basic_type_constant(value) |
-+----------+--------------------------------+
-| *Getter* | get_basic_type_constant()      |
-+----------+--------------------------------+
+:ref:`String<class_String>` **constant**
+
+.. rst-class:: classref-property-setget
+
+- void **set_basic_type_constant** **(** :ref:`String<class_String>` value **)**
+- :ref:`String<class_String>` **get_basic_type_constant** **(** **)**
 
 The name of the constant to return.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

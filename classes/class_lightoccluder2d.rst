@@ -14,56 +14,74 @@ LightOccluder2D
 
 Occludes light cast by a Light2D, casting shadows.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 Occludes light cast by a Light2D, casting shadows. The LightOccluder2D must be provided with an :ref:`OccluderPolygon2D<class_OccluderPolygon2D>` in order for the shadow to be computed.
+
+.. rst-class:: classref-introduction-group
 
 Tutorials
 ---------
 
 - :doc:`../tutorials/2d/2d_lights_and_shadows`
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+---------------------------------------------------+--------------------------------------------------------------+-------+
-| :ref:`int<class_int>`                             | :ref:`light_mask<class_LightOccluder2D_property_light_mask>` | ``1`` |
-+---------------------------------------------------+--------------------------------------------------------------+-------+
-| :ref:`OccluderPolygon2D<class_OccluderPolygon2D>` | :ref:`occluder<class_LightOccluder2D_property_occluder>`     |       |
-+---------------------------------------------------+--------------------------------------------------------------+-------+
+.. table::
+   :widths: auto
+
+   +---------------------------------------------------+--------------------------------------------------------------+-------+
+   | :ref:`int<class_int>`                             | :ref:`light_mask<class_LightOccluder2D_property_light_mask>` | ``1`` |
+   +---------------------------------------------------+--------------------------------------------------------------+-------+
+   | :ref:`OccluderPolygon2D<class_OccluderPolygon2D>` | :ref:`occluder<class_LightOccluder2D_property_occluder>`     |       |
+   +---------------------------------------------------+--------------------------------------------------------------+-------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_LightOccluder2D_property_light_mask:
 
-- :ref:`int<class_int>` **light_mask**
+.. rst-class:: classref-property
 
-+-----------+--------------------------------+
-| *Default* | ``1``                          |
-+-----------+--------------------------------+
-| *Setter*  | set_occluder_light_mask(value) |
-+-----------+--------------------------------+
-| *Getter*  | get_occluder_light_mask()      |
-+-----------+--------------------------------+
+:ref:`int<class_int>` **light_mask** = ``1``
+
+.. rst-class:: classref-property-setget
+
+- void **set_occluder_light_mask** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_occluder_light_mask** **(** **)**
 
 The LightOccluder2D's light mask. The LightOccluder2D will cast shadows only from Light2D(s) that have the same light mask(s).
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_LightOccluder2D_property_occluder:
 
-- :ref:`OccluderPolygon2D<class_OccluderPolygon2D>` **occluder**
+.. rst-class:: classref-property
 
-+----------+-----------------------------+
-| *Setter* | set_occluder_polygon(value) |
-+----------+-----------------------------+
-| *Getter* | get_occluder_polygon()      |
-+----------+-----------------------------+
+:ref:`OccluderPolygon2D<class_OccluderPolygon2D>` **occluder**
+
+.. rst-class:: classref-property-setget
+
+- void **set_occluder_polygon** **(** :ref:`OccluderPolygon2D<class_OccluderPolygon2D>` value **)**
+- :ref:`OccluderPolygon2D<class_OccluderPolygon2D>` **get_occluder_polygon** **(** **)**
 
 The :ref:`OccluderPolygon2D<class_OccluderPolygon2D>` used to compute the shadow.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

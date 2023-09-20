@@ -14,6 +14,8 @@ AudioEffectRecord
 
 Audio effect used for recording the sound from an audio bus.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -23,6 +25,8 @@ Can be used (with an :ref:`AudioStreamMicrophone<class_AudioStreamMicrophone>`) 
 
 It sets and gets the format in which the audio file will be recorded (8-bit, 16-bit, or compressed). It checks whether or not the recording is active, and if it is, records the sound. It then returns the recorded sample.
 
+.. rst-class:: classref-introduction-group
+
 Tutorials
 ---------
 
@@ -30,66 +34,98 @@ Tutorials
 
 - `Audio Mic Record Demo <https://godotengine.org/asset-library/asset/527>`__
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+----------------------------------------------+--------------------------------------------------------+-------+
-| :ref:`Format<enum_AudioStreamSample_Format>` | :ref:`format<class_AudioEffectRecord_property_format>` | ``1`` |
-+----------------------------------------------+--------------------------------------------------------+-------+
+.. table::
+   :widths: auto
+
+   +----------------------------------------------+--------------------------------------------------------+-------+
+   | :ref:`Format<enum_AudioStreamSample_Format>` | :ref:`format<class_AudioEffectRecord_property_format>` | ``1`` |
+   +----------------------------------------------+--------------------------------------------------------+-------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+---------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`AudioStreamSample<class_AudioStreamSample>` | :ref:`get_recording<class_AudioEffectRecord_method_get_recording>` **(** **)** |const|                                      |
-+---------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                           | :ref:`is_recording_active<class_AudioEffectRecord_method_is_recording_active>` **(** **)** |const|                          |
-+---------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| void                                              | :ref:`set_recording_active<class_AudioEffectRecord_method_set_recording_active>` **(** :ref:`bool<class_bool>` record **)** |
-+---------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +---------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`AudioStreamSample<class_AudioStreamSample>` | :ref:`get_recording<class_AudioEffectRecord_method_get_recording>` **(** **)** |const|                                      |
+   +---------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`is_recording_active<class_AudioEffectRecord_method_is_recording_active>` **(** **)** |const|                          |
+   +---------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+   | void                                              | :ref:`set_recording_active<class_AudioEffectRecord_method_set_recording_active>` **(** :ref:`bool<class_bool>` record **)** |
+   +---------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_AudioEffectRecord_property_format:
 
-- :ref:`Format<enum_AudioStreamSample_Format>` **format**
+.. rst-class:: classref-property
 
-+-----------+-------------------+
-| *Default* | ``1``             |
-+-----------+-------------------+
-| *Setter*  | set_format(value) |
-+-----------+-------------------+
-| *Getter*  | get_format()      |
-+-----------+-------------------+
+:ref:`Format<enum_AudioStreamSample_Format>` **format** = ``1``
+
+.. rst-class:: classref-property-setget
+
+- void **set_format** **(** :ref:`Format<enum_AudioStreamSample_Format>` value **)**
+- :ref:`Format<enum_AudioStreamSample_Format>` **get_format** **(** **)**
 
 Specifies the format in which the sample will be recorded. See :ref:`Format<enum_AudioStreamSample_Format>` for available formats.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_AudioEffectRecord_method_get_recording:
 
-- :ref:`AudioStreamSample<class_AudioStreamSample>` **get_recording** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`AudioStreamSample<class_AudioStreamSample>` **get_recording** **(** **)** |const|
 
 Returns the recorded sample.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AudioEffectRecord_method_is_recording_active:
 
-- :ref:`bool<class_bool>` **is_recording_active** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **is_recording_active** **(** **)** |const|
 
 Returns whether the recording is active or not.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AudioEffectRecord_method_set_recording_active:
 
-- void **set_recording_active** **(** :ref:`bool<class_bool>` record **)**
+.. rst-class:: classref-method
+
+void **set_recording_active** **(** :ref:`bool<class_bool>` record **)**
 
 If ``true``, the sound will be recorded. Note that restarting the recording will remove the previously recorded sample.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

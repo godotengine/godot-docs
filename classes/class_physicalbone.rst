@@ -12,227 +12,371 @@ PhysicalBone
 
 **Inherits:** :ref:`PhysicsBody<class_PhysicsBody>` **<** :ref:`CollisionObject<class_CollisionObject>` **<** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
+.. rst-class:: classref-introduction-group
 
+Description
+-----------
+
+**Warning:** With a non-uniform scale this node will probably not function as expected. Please make sure to keep its scale uniform (i.e. the same on all axes), and change the size(s) of its collision shape(s) instead.
+
+.. rst-class:: classref-reftable-group
 
 Properties
 ----------
 
-+-----------------------------------------------+-----------------------------------------------------------------+-----------------------------------------------------+
-| :ref:`Transform<class_Transform>`             | :ref:`body_offset<class_PhysicalBone_property_body_offset>`     | ``Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )`` |
-+-----------------------------------------------+-----------------------------------------------------------------+-----------------------------------------------------+
-| :ref:`float<class_float>`                     | :ref:`bounce<class_PhysicalBone_property_bounce>`               | ``0.0``                                             |
-+-----------------------------------------------+-----------------------------------------------------------------+-----------------------------------------------------+
-| :ref:`float<class_float>`                     | :ref:`friction<class_PhysicalBone_property_friction>`           | ``1.0``                                             |
-+-----------------------------------------------+-----------------------------------------------------------------+-----------------------------------------------------+
-| :ref:`float<class_float>`                     | :ref:`gravity_scale<class_PhysicalBone_property_gravity_scale>` | ``1.0``                                             |
-+-----------------------------------------------+-----------------------------------------------------------------+-----------------------------------------------------+
-| :ref:`Transform<class_Transform>`             | :ref:`joint_offset<class_PhysicalBone_property_joint_offset>`   | ``Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )`` |
-+-----------------------------------------------+-----------------------------------------------------------------+-----------------------------------------------------+
-| :ref:`JointType<enum_PhysicalBone_JointType>` | :ref:`joint_type<class_PhysicalBone_property_joint_type>`       | ``0``                                               |
-+-----------------------------------------------+-----------------------------------------------------------------+-----------------------------------------------------+
-| :ref:`float<class_float>`                     | :ref:`mass<class_PhysicalBone_property_mass>`                   | ``1.0``                                             |
-+-----------------------------------------------+-----------------------------------------------------------------+-----------------------------------------------------+
-| :ref:`float<class_float>`                     | :ref:`weight<class_PhysicalBone_property_weight>`               | ``9.8``                                             |
-+-----------------------------------------------+-----------------------------------------------------------------+-----------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-----------------------------------------------+-----------------------------------------------------------------+-----------------------------------------------------+
+   | :ref:`Transform<class_Transform>`             | :ref:`body_offset<class_PhysicalBone_property_body_offset>`     | ``Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )`` |
+   +-----------------------------------------------+-----------------------------------------------------------------+-----------------------------------------------------+
+   | :ref:`float<class_float>`                     | :ref:`bounce<class_PhysicalBone_property_bounce>`               | ``0.0``                                             |
+   +-----------------------------------------------+-----------------------------------------------------------------+-----------------------------------------------------+
+   | :ref:`float<class_float>`                     | :ref:`friction<class_PhysicalBone_property_friction>`           | ``1.0``                                             |
+   +-----------------------------------------------+-----------------------------------------------------------------+-----------------------------------------------------+
+   | :ref:`float<class_float>`                     | :ref:`gravity_scale<class_PhysicalBone_property_gravity_scale>` | ``1.0``                                             |
+   +-----------------------------------------------+-----------------------------------------------------------------+-----------------------------------------------------+
+   | :ref:`Transform<class_Transform>`             | :ref:`joint_offset<class_PhysicalBone_property_joint_offset>`   | ``Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )`` |
+   +-----------------------------------------------+-----------------------------------------------------------------+-----------------------------------------------------+
+   | :ref:`JointType<enum_PhysicalBone_JointType>` | :ref:`joint_type<class_PhysicalBone_property_joint_type>`       | ``0``                                               |
+   +-----------------------------------------------+-----------------------------------------------------------------+-----------------------------------------------------+
+   | :ref:`float<class_float>`                     | :ref:`mass<class_PhysicalBone_property_mass>`                   | ``1.0``                                             |
+   +-----------------------------------------------+-----------------------------------------------------------------+-----------------------------------------------------+
+   | :ref:`float<class_float>`                     | :ref:`weight<class_PhysicalBone_property_weight>`               | ``9.8``                                             |
+   +-----------------------------------------------+-----------------------------------------------------------------+-----------------------------------------------------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+-------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                    | :ref:`apply_central_impulse<class_PhysicalBone_method_apply_central_impulse>` **(** :ref:`Vector3<class_Vector3>` impulse **)**                         |
-+-------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                    | :ref:`apply_impulse<class_PhysicalBone_method_apply_impulse>` **(** :ref:`Vector3<class_Vector3>` position, :ref:`Vector3<class_Vector3>` impulse **)** |
-+-------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`   | :ref:`get_bone_id<class_PhysicalBone_method_get_bone_id>` **(** **)** |const|                                                                           |
-+-------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`get_simulate_physics<class_PhysicalBone_method_get_simulate_physics>` **(** **)**                                                                 |
-+-------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`is_simulating_physics<class_PhysicalBone_method_is_simulating_physics>` **(** **)**                                                               |
-+-------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`is_static_body<class_PhysicalBone_method_is_static_body>` **(** **)**                                                                             |
-+-------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                    | :ref:`apply_central_impulse<class_PhysicalBone_method_apply_central_impulse>` **(** :ref:`Vector3<class_Vector3>` impulse **)**                         |
+   +-------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                    | :ref:`apply_impulse<class_PhysicalBone_method_apply_impulse>` **(** :ref:`Vector3<class_Vector3>` position, :ref:`Vector3<class_Vector3>` impulse **)** |
+   +-------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`   | :ref:`get_bone_id<class_PhysicalBone_method_get_bone_id>` **(** **)** |const|                                                                           |
+   +-------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | :ref:`get_simulate_physics<class_PhysicalBone_method_get_simulate_physics>` **(** **)**                                                                 |
+   +-------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | :ref:`is_simulating_physics<class_PhysicalBone_method_is_simulating_physics>` **(** **)**                                                               |
+   +-------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | :ref:`is_static_body<class_PhysicalBone_method_is_static_body>` **(** **)**                                                                             |
+   +-------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Enumerations
 ------------
 
 .. _enum_PhysicalBone_JointType:
 
-.. _class_PhysicalBone_constant_JOINT_TYPE_NONE:
-
-.. _class_PhysicalBone_constant_JOINT_TYPE_PIN:
-
-.. _class_PhysicalBone_constant_JOINT_TYPE_CONE:
-
-.. _class_PhysicalBone_constant_JOINT_TYPE_HINGE:
-
-.. _class_PhysicalBone_constant_JOINT_TYPE_SLIDER:
-
-.. _class_PhysicalBone_constant_JOINT_TYPE_6DOF:
+.. rst-class:: classref-enumeration
 
 enum **JointType**:
 
-- **JOINT_TYPE_NONE** = **0**
+.. _class_PhysicalBone_constant_JOINT_TYPE_NONE:
 
-- **JOINT_TYPE_PIN** = **1**
+.. rst-class:: classref-enumeration-constant
 
-- **JOINT_TYPE_CONE** = **2**
+:ref:`JointType<enum_PhysicalBone_JointType>` **JOINT_TYPE_NONE** = ``0``
 
-- **JOINT_TYPE_HINGE** = **3**
 
-- **JOINT_TYPE_SLIDER** = **4**
 
-- **JOINT_TYPE_6DOF** = **5**
+.. _class_PhysicalBone_constant_JOINT_TYPE_PIN:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`JointType<enum_PhysicalBone_JointType>` **JOINT_TYPE_PIN** = ``1``
+
+
+
+.. _class_PhysicalBone_constant_JOINT_TYPE_CONE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`JointType<enum_PhysicalBone_JointType>` **JOINT_TYPE_CONE** = ``2``
+
+
+
+.. _class_PhysicalBone_constant_JOINT_TYPE_HINGE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`JointType<enum_PhysicalBone_JointType>` **JOINT_TYPE_HINGE** = ``3``
+
+
+
+.. _class_PhysicalBone_constant_JOINT_TYPE_SLIDER:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`JointType<enum_PhysicalBone_JointType>` **JOINT_TYPE_SLIDER** = ``4``
+
+
+
+.. _class_PhysicalBone_constant_JOINT_TYPE_6DOF:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`JointType<enum_PhysicalBone_JointType>` **JOINT_TYPE_6DOF** = ``5``
+
+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_PhysicalBone_property_body_offset:
 
-- :ref:`Transform<class_Transform>` **body_offset**
+.. rst-class:: classref-property
 
-+-----------+-----------------------------------------------------+
-| *Default* | ``Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )`` |
-+-----------+-----------------------------------------------------+
-| *Setter*  | set_body_offset(value)                              |
-+-----------+-----------------------------------------------------+
-| *Getter*  | get_body_offset()                                   |
-+-----------+-----------------------------------------------------+
+:ref:`Transform<class_Transform>` **body_offset** = ``Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )``
+
+.. rst-class:: classref-property-setget
+
+- void **set_body_offset** **(** :ref:`Transform<class_Transform>` value **)**
+- :ref:`Transform<class_Transform>` **get_body_offset** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_PhysicalBone_property_bounce:
 
-- :ref:`float<class_float>` **bounce**
+.. rst-class:: classref-property
 
-+-----------+-------------------+
-| *Default* | ``0.0``           |
-+-----------+-------------------+
-| *Setter*  | set_bounce(value) |
-+-----------+-------------------+
-| *Getter*  | get_bounce()      |
-+-----------+-------------------+
+:ref:`float<class_float>` **bounce** = ``0.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_bounce** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_bounce** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_PhysicalBone_property_friction:
 
-- :ref:`float<class_float>` **friction**
+.. rst-class:: classref-property
 
-+-----------+---------------------+
-| *Default* | ``1.0``             |
-+-----------+---------------------+
-| *Setter*  | set_friction(value) |
-+-----------+---------------------+
-| *Getter*  | get_friction()      |
-+-----------+---------------------+
+:ref:`float<class_float>` **friction** = ``1.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_friction** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_friction** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_PhysicalBone_property_gravity_scale:
 
-- :ref:`float<class_float>` **gravity_scale**
+.. rst-class:: classref-property
 
-+-----------+--------------------------+
-| *Default* | ``1.0``                  |
-+-----------+--------------------------+
-| *Setter*  | set_gravity_scale(value) |
-+-----------+--------------------------+
-| *Getter*  | get_gravity_scale()      |
-+-----------+--------------------------+
+:ref:`float<class_float>` **gravity_scale** = ``1.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_gravity_scale** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_gravity_scale** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_PhysicalBone_property_joint_offset:
 
-- :ref:`Transform<class_Transform>` **joint_offset**
+.. rst-class:: classref-property
 
-+-----------+-----------------------------------------------------+
-| *Default* | ``Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )`` |
-+-----------+-----------------------------------------------------+
-| *Setter*  | set_joint_offset(value)                             |
-+-----------+-----------------------------------------------------+
-| *Getter*  | get_joint_offset()                                  |
-+-----------+-----------------------------------------------------+
+:ref:`Transform<class_Transform>` **joint_offset** = ``Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )``
+
+.. rst-class:: classref-property-setget
+
+- void **set_joint_offset** **(** :ref:`Transform<class_Transform>` value **)**
+- :ref:`Transform<class_Transform>` **get_joint_offset** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_PhysicalBone_property_joint_type:
 
-- :ref:`JointType<enum_PhysicalBone_JointType>` **joint_type**
+.. rst-class:: classref-property
 
-+-----------+-----------------------+
-| *Default* | ``0``                 |
-+-----------+-----------------------+
-| *Setter*  | set_joint_type(value) |
-+-----------+-----------------------+
-| *Getter*  | get_joint_type()      |
-+-----------+-----------------------+
+:ref:`JointType<enum_PhysicalBone_JointType>` **joint_type** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_joint_type** **(** :ref:`JointType<enum_PhysicalBone_JointType>` value **)**
+- :ref:`JointType<enum_PhysicalBone_JointType>` **get_joint_type** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_PhysicalBone_property_mass:
 
-- :ref:`float<class_float>` **mass**
+.. rst-class:: classref-property
 
-+-----------+-----------------+
-| *Default* | ``1.0``         |
-+-----------+-----------------+
-| *Setter*  | set_mass(value) |
-+-----------+-----------------+
-| *Getter*  | get_mass()      |
-+-----------+-----------------+
+:ref:`float<class_float>` **mass** = ``1.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_mass** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_mass** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_PhysicalBone_property_weight:
 
-- :ref:`float<class_float>` **weight**
+.. rst-class:: classref-property
 
-+-----------+-------------------+
-| *Default* | ``9.8``           |
-+-----------+-------------------+
-| *Setter*  | set_weight(value) |
-+-----------+-------------------+
-| *Getter*  | get_weight()      |
-+-----------+-------------------+
+:ref:`float<class_float>` **weight** = ``9.8``
+
+.. rst-class:: classref-property-setget
+
+- void **set_weight** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_weight** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_PhysicalBone_method_apply_central_impulse:
 
-- void **apply_central_impulse** **(** :ref:`Vector3<class_Vector3>` impulse **)**
+.. rst-class:: classref-method
+
+void **apply_central_impulse** **(** :ref:`Vector3<class_Vector3>` impulse **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_PhysicalBone_method_apply_impulse:
 
-- void **apply_impulse** **(** :ref:`Vector3<class_Vector3>` position, :ref:`Vector3<class_Vector3>` impulse **)**
+.. rst-class:: classref-method
+
+void **apply_impulse** **(** :ref:`Vector3<class_Vector3>` position, :ref:`Vector3<class_Vector3>` impulse **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_PhysicalBone_method_get_bone_id:
 
-- :ref:`int<class_int>` **get_bone_id** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **get_bone_id** **(** **)** |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_PhysicalBone_method_get_simulate_physics:
 
-- :ref:`bool<class_bool>` **get_simulate_physics** **(** **)**
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **get_simulate_physics** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_PhysicalBone_method_is_simulating_physics:
 
-- :ref:`bool<class_bool>` **is_simulating_physics** **(** **)**
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **is_simulating_physics** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_PhysicalBone_method_is_static_body:
 
-- :ref:`bool<class_bool>` **is_static_body** **(** **)**
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **is_static_body** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

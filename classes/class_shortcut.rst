@@ -14,6 +14,8 @@ ShortCut
 
 A shortcut for binding input.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -21,66 +23,100 @@ A shortcut for binding input.
 
 Shortcuts are commonly used for interacting with a :ref:`Control<class_Control>` element from a :ref:`InputEvent<class_InputEvent>`.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-------------------------------------+---------------------------------------------------+
-| :ref:`InputEvent<class_InputEvent>` | :ref:`shortcut<class_ShortCut_property_shortcut>` |
-+-------------------------------------+---------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------------------+---------------------------------------------------+
+   | :ref:`InputEvent<class_InputEvent>` | :ref:`shortcut<class_ShortCut_property_shortcut>` |
+   +-------------------------------------+---------------------------------------------------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+-----------------------------+---------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>` | :ref:`get_as_text<class_ShortCut_method_get_as_text>` **(** **)** |const|                                           |
-+-----------------------------+---------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`     | :ref:`is_shortcut<class_ShortCut_method_is_shortcut>` **(** :ref:`InputEvent<class_InputEvent>` event **)** |const| |
-+-----------------------------+---------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`     | :ref:`is_valid<class_ShortCut_method_is_valid>` **(** **)** |const|                                                 |
-+-----------------------------+---------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-----------------------------+---------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>` | :ref:`get_as_text<class_ShortCut_method_get_as_text>` **(** **)** |const|                                           |
+   +-----------------------------+---------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`     | :ref:`is_shortcut<class_ShortCut_method_is_shortcut>` **(** :ref:`InputEvent<class_InputEvent>` event **)** |const| |
+   +-----------------------------+---------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`     | :ref:`is_valid<class_ShortCut_method_is_valid>` **(** **)** |const|                                                 |
+   +-----------------------------+---------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_ShortCut_property_shortcut:
 
-- :ref:`InputEvent<class_InputEvent>` **shortcut**
+.. rst-class:: classref-property
 
-+----------+---------------------+
-| *Setter* | set_shortcut(value) |
-+----------+---------------------+
-| *Getter* | get_shortcut()      |
-+----------+---------------------+
+:ref:`InputEvent<class_InputEvent>` **shortcut**
+
+.. rst-class:: classref-property-setget
+
+- void **set_shortcut** **(** :ref:`InputEvent<class_InputEvent>` value **)**
+- :ref:`InputEvent<class_InputEvent>` **get_shortcut** **(** **)**
 
 The shortcut's :ref:`InputEvent<class_InputEvent>`.
 
 Generally the :ref:`InputEvent<class_InputEvent>` is a keyboard key, though it can be any :ref:`InputEvent<class_InputEvent>`.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_ShortCut_method_get_as_text:
 
-- :ref:`String<class_String>` **get_as_text** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`String<class_String>` **get_as_text** **(** **)** |const|
 
 Returns the shortcut's :ref:`InputEvent<class_InputEvent>` as a :ref:`String<class_String>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_ShortCut_method_is_shortcut:
 
-- :ref:`bool<class_bool>` **is_shortcut** **(** :ref:`InputEvent<class_InputEvent>` event **)** |const|
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **is_shortcut** **(** :ref:`InputEvent<class_InputEvent>` event **)** |const|
 
 Returns ``true`` if the shortcut's :ref:`InputEvent<class_InputEvent>` equals ``event``.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_ShortCut_method_is_valid:
 
-- :ref:`bool<class_bool>` **is_valid** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **is_valid** **(** **)** |const|
 
 If ``true``, this shortcut is valid.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

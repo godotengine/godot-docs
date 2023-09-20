@@ -14,6 +14,8 @@ CubeMesh
 
 Generate an axis-aligned cuboid :ref:`PrimitiveMesh<class_PrimitiveMesh>`.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -21,86 +23,100 @@ Generate an axis-aligned cuboid :ref:`PrimitiveMesh<class_PrimitiveMesh>`.
 
 The cube's UV layout is arranged in a 3×2 layout that allows texturing each face individually. To apply the same texture on all faces, change the material's UV property to ``Vector3(3, 2, 1)``.
 
-\ **Note:** When using a large textured ``CubeMesh`` (e.g. as a floor), you may stumble upon UV jittering issues depending on the camera angle. To solve this, increase :ref:`subdivide_depth<class_CubeMesh_property_subdivide_depth>`, :ref:`subdivide_height<class_CubeMesh_property_subdivide_height>` and :ref:`subdivide_width<class_CubeMesh_property_subdivide_width>` until you no longer notice UV jittering.
+\ **Note:** When using a large textured **CubeMesh** (e.g. as a floor), you may stumble upon UV jittering issues depending on the camera angle. To solve this, increase :ref:`subdivide_depth<class_CubeMesh_property_subdivide_depth>`, :ref:`subdivide_height<class_CubeMesh_property_subdivide_height>` and :ref:`subdivide_width<class_CubeMesh_property_subdivide_width>` until you no longer notice UV jittering.
+
+.. rst-class:: classref-reftable-group
 
 Properties
 ----------
 
-+-------------------------------+-------------------------------------------------------------------+------------------------+
-| :ref:`Vector3<class_Vector3>` | :ref:`size<class_CubeMesh_property_size>`                         | ``Vector3( 2, 2, 2 )`` |
-+-------------------------------+-------------------------------------------------------------------+------------------------+
-| :ref:`int<class_int>`         | :ref:`subdivide_depth<class_CubeMesh_property_subdivide_depth>`   | ``0``                  |
-+-------------------------------+-------------------------------------------------------------------+------------------------+
-| :ref:`int<class_int>`         | :ref:`subdivide_height<class_CubeMesh_property_subdivide_height>` | ``0``                  |
-+-------------------------------+-------------------------------------------------------------------+------------------------+
-| :ref:`int<class_int>`         | :ref:`subdivide_width<class_CubeMesh_property_subdivide_width>`   | ``0``                  |
-+-------------------------------+-------------------------------------------------------------------+------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------------+-------------------------------------------------------------------+------------------------+
+   | :ref:`Vector3<class_Vector3>` | :ref:`size<class_CubeMesh_property_size>`                         | ``Vector3( 2, 2, 2 )`` |
+   +-------------------------------+-------------------------------------------------------------------+------------------------+
+   | :ref:`int<class_int>`         | :ref:`subdivide_depth<class_CubeMesh_property_subdivide_depth>`   | ``0``                  |
+   +-------------------------------+-------------------------------------------------------------------+------------------------+
+   | :ref:`int<class_int>`         | :ref:`subdivide_height<class_CubeMesh_property_subdivide_height>` | ``0``                  |
+   +-------------------------------+-------------------------------------------------------------------+------------------------+
+   | :ref:`int<class_int>`         | :ref:`subdivide_width<class_CubeMesh_property_subdivide_width>`   | ``0``                  |
+   +-------------------------------+-------------------------------------------------------------------+------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_CubeMesh_property_size:
 
-- :ref:`Vector3<class_Vector3>` **size**
+.. rst-class:: classref-property
 
-+-----------+------------------------+
-| *Default* | ``Vector3( 2, 2, 2 )`` |
-+-----------+------------------------+
-| *Setter*  | set_size(value)        |
-+-----------+------------------------+
-| *Getter*  | get_size()             |
-+-----------+------------------------+
+:ref:`Vector3<class_Vector3>` **size** = ``Vector3( 2, 2, 2 )``
+
+.. rst-class:: classref-property-setget
+
+- void **set_size** **(** :ref:`Vector3<class_Vector3>` value **)**
+- :ref:`Vector3<class_Vector3>` **get_size** **(** **)**
 
 Size of the cuboid mesh.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_CubeMesh_property_subdivide_depth:
 
-- :ref:`int<class_int>` **subdivide_depth**
+.. rst-class:: classref-property
 
-+-----------+----------------------------+
-| *Default* | ``0``                      |
-+-----------+----------------------------+
-| *Setter*  | set_subdivide_depth(value) |
-+-----------+----------------------------+
-| *Getter*  | get_subdivide_depth()      |
-+-----------+----------------------------+
+:ref:`int<class_int>` **subdivide_depth** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_subdivide_depth** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_subdivide_depth** **(** **)**
 
 Number of extra edge loops inserted along the Z axis.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_CubeMesh_property_subdivide_height:
 
-- :ref:`int<class_int>` **subdivide_height**
+.. rst-class:: classref-property
 
-+-----------+-----------------------------+
-| *Default* | ``0``                       |
-+-----------+-----------------------------+
-| *Setter*  | set_subdivide_height(value) |
-+-----------+-----------------------------+
-| *Getter*  | get_subdivide_height()      |
-+-----------+-----------------------------+
+:ref:`int<class_int>` **subdivide_height** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_subdivide_height** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_subdivide_height** **(** **)**
 
 Number of extra edge loops inserted along the Y axis.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_CubeMesh_property_subdivide_width:
 
-- :ref:`int<class_int>` **subdivide_width**
+.. rst-class:: classref-property
 
-+-----------+----------------------------+
-| *Default* | ``0``                      |
-+-----------+----------------------------+
-| *Setter*  | set_subdivide_width(value) |
-+-----------+----------------------------+
-| *Getter*  | get_subdivide_width()      |
-+-----------+----------------------------+
+:ref:`int<class_int>` **subdivide_width** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_subdivide_width** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_subdivide_width** **(** **)**
 
 Number of extra edge loops inserted along the X axis.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

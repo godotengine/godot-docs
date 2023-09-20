@@ -14,150 +14,179 @@ Sprite3D
 
 2D sprite node in a 3D world.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 A node that displays a 2D texture in a 3D environment. The texture displayed can be a region from a larger atlas texture, or a frame from a sprite sheet animation.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-------------------------------+---------------------------------------------------------------+-------------------------+
-| :ref:`int<class_int>`         | :ref:`frame<class_Sprite3D_property_frame>`                   | ``0``                   |
-+-------------------------------+---------------------------------------------------------------+-------------------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`frame_coords<class_Sprite3D_property_frame_coords>`     | ``Vector2( 0, 0 )``     |
-+-------------------------------+---------------------------------------------------------------+-------------------------+
-| :ref:`int<class_int>`         | :ref:`hframes<class_Sprite3D_property_hframes>`               | ``1``                   |
-+-------------------------------+---------------------------------------------------------------+-------------------------+
-| :ref:`bool<class_bool>`       | :ref:`region_enabled<class_Sprite3D_property_region_enabled>` | ``false``               |
-+-------------------------------+---------------------------------------------------------------+-------------------------+
-| :ref:`Rect2<class_Rect2>`     | :ref:`region_rect<class_Sprite3D_property_region_rect>`       | ``Rect2( 0, 0, 0, 0 )`` |
-+-------------------------------+---------------------------------------------------------------+-------------------------+
-| :ref:`Texture<class_Texture>` | :ref:`texture<class_Sprite3D_property_texture>`               |                         |
-+-------------------------------+---------------------------------------------------------------+-------------------------+
-| :ref:`int<class_int>`         | :ref:`vframes<class_Sprite3D_property_vframes>`               | ``1``                   |
-+-------------------------------+---------------------------------------------------------------+-------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------------+---------------------------------------------------------------+-------------------------+
+   | :ref:`int<class_int>`         | :ref:`frame<class_Sprite3D_property_frame>`                   | ``0``                   |
+   +-------------------------------+---------------------------------------------------------------+-------------------------+
+   | :ref:`Vector2<class_Vector2>` | :ref:`frame_coords<class_Sprite3D_property_frame_coords>`     | ``Vector2( 0, 0 )``     |
+   +-------------------------------+---------------------------------------------------------------+-------------------------+
+   | :ref:`int<class_int>`         | :ref:`hframes<class_Sprite3D_property_hframes>`               | ``1``                   |
+   +-------------------------------+---------------------------------------------------------------+-------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`region_enabled<class_Sprite3D_property_region_enabled>` | ``false``               |
+   +-------------------------------+---------------------------------------------------------------+-------------------------+
+   | :ref:`Rect2<class_Rect2>`     | :ref:`region_rect<class_Sprite3D_property_region_rect>`       | ``Rect2( 0, 0, 0, 0 )`` |
+   +-------------------------------+---------------------------------------------------------------+-------------------------+
+   | :ref:`Texture<class_Texture>` | :ref:`texture<class_Sprite3D_property_texture>`               |                         |
+   +-------------------------------+---------------------------------------------------------------+-------------------------+
+   | :ref:`int<class_int>`         | :ref:`vframes<class_Sprite3D_property_vframes>`               | ``1``                   |
+   +-------------------------------+---------------------------------------------------------------+-------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Signals
 -------
 
 .. _class_Sprite3D_signal_frame_changed:
 
-- **frame_changed** **(** **)**
+.. rst-class:: classref-signal
+
+**frame_changed** **(** **)**
 
 Emitted when the :ref:`frame<class_Sprite3D_property_frame>` changes.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_Sprite3D_property_frame:
 
-- :ref:`int<class_int>` **frame**
+.. rst-class:: classref-property
 
-+-----------+------------------+
-| *Default* | ``0``            |
-+-----------+------------------+
-| *Setter*  | set_frame(value) |
-+-----------+------------------+
-| *Getter*  | get_frame()      |
-+-----------+------------------+
+:ref:`int<class_int>` **frame** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_frame** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_frame** **(** **)**
 
 Current frame to display from sprite sheet. :ref:`hframes<class_Sprite3D_property_hframes>` or :ref:`vframes<class_Sprite3D_property_vframes>` must be greater than 1.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Sprite3D_property_frame_coords:
 
-- :ref:`Vector2<class_Vector2>` **frame_coords**
+.. rst-class:: classref-property
 
-+-----------+-------------------------+
-| *Default* | ``Vector2( 0, 0 )``     |
-+-----------+-------------------------+
-| *Setter*  | set_frame_coords(value) |
-+-----------+-------------------------+
-| *Getter*  | get_frame_coords()      |
-+-----------+-------------------------+
+:ref:`Vector2<class_Vector2>` **frame_coords** = ``Vector2( 0, 0 )``
+
+.. rst-class:: classref-property-setget
+
+- void **set_frame_coords** **(** :ref:`Vector2<class_Vector2>` value **)**
+- :ref:`Vector2<class_Vector2>` **get_frame_coords** **(** **)**
 
 Coordinates of the frame to display from sprite sheet. This is as an alias for the :ref:`frame<class_Sprite3D_property_frame>` property. :ref:`hframes<class_Sprite3D_property_hframes>` or :ref:`vframes<class_Sprite3D_property_vframes>` must be greater than 1.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Sprite3D_property_hframes:
 
-- :ref:`int<class_int>` **hframes**
+.. rst-class:: classref-property
 
-+-----------+--------------------+
-| *Default* | ``1``              |
-+-----------+--------------------+
-| *Setter*  | set_hframes(value) |
-+-----------+--------------------+
-| *Getter*  | get_hframes()      |
-+-----------+--------------------+
+:ref:`int<class_int>` **hframes** = ``1``
+
+.. rst-class:: classref-property-setget
+
+- void **set_hframes** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_hframes** **(** **)**
 
 The number of columns in the sprite sheet.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Sprite3D_property_region_enabled:
 
-- :ref:`bool<class_bool>` **region_enabled**
+.. rst-class:: classref-property
 
-+-----------+-------------------+
-| *Default* | ``false``         |
-+-----------+-------------------+
-| *Setter*  | set_region(value) |
-+-----------+-------------------+
-| *Getter*  | is_region()       |
-+-----------+-------------------+
+:ref:`bool<class_bool>` **region_enabled** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_region** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_region** **(** **)**
 
 If ``true``, texture will be cut from a larger atlas texture. See :ref:`region_rect<class_Sprite3D_property_region_rect>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Sprite3D_property_region_rect:
 
-- :ref:`Rect2<class_Rect2>` **region_rect**
+.. rst-class:: classref-property
 
-+-----------+-------------------------+
-| *Default* | ``Rect2( 0, 0, 0, 0 )`` |
-+-----------+-------------------------+
-| *Setter*  | set_region_rect(value)  |
-+-----------+-------------------------+
-| *Getter*  | get_region_rect()       |
-+-----------+-------------------------+
+:ref:`Rect2<class_Rect2>` **region_rect** = ``Rect2( 0, 0, 0, 0 )``
+
+.. rst-class:: classref-property-setget
+
+- void **set_region_rect** **(** :ref:`Rect2<class_Rect2>` value **)**
+- :ref:`Rect2<class_Rect2>` **get_region_rect** **(** **)**
 
 The region of the atlas texture to display. :ref:`region_enabled<class_Sprite3D_property_region_enabled>` must be ``true``.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Sprite3D_property_texture:
 
-- :ref:`Texture<class_Texture>` **texture**
+.. rst-class:: classref-property
 
-+----------+--------------------+
-| *Setter* | set_texture(value) |
-+----------+--------------------+
-| *Getter* | get_texture()      |
-+----------+--------------------+
+:ref:`Texture<class_Texture>` **texture**
+
+.. rst-class:: classref-property-setget
+
+- void **set_texture** **(** :ref:`Texture<class_Texture>` value **)**
+- :ref:`Texture<class_Texture>` **get_texture** **(** **)**
 
 :ref:`Texture<class_Texture>` object to draw. If :ref:`GeometryInstance.material_override<class_GeometryInstance_property_material_override>` is used, this will be overridden. The size information is still used.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Sprite3D_property_vframes:
 
-- :ref:`int<class_int>` **vframes**
+.. rst-class:: classref-property
 
-+-----------+--------------------+
-| *Default* | ``1``              |
-+-----------+--------------------+
-| *Setter*  | set_vframes(value) |
-+-----------+--------------------+
-| *Getter*  | get_vframes()      |
-+-----------+--------------------+
+:ref:`int<class_int>` **vframes** = ``1``
+
+.. rst-class:: classref-property-setget
+
+- void **set_vframes** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_vframes** **(** **)**
 
 The number of rows in the sprite sheet.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

@@ -14,6 +14,8 @@ NoiseTexture
 
 :ref:`OpenSimplexNoise<class_OpenSimplexNoise>` filled texture.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -29,140 +31,159 @@ The class uses :ref:`Thread<class_Thread>`\ s to generate the texture data inter
     yield(texture, "changed")
     var image = texture.get_data()
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-------------------------------------------------+-----------------------------------------------------------------+----------------------------------------------------------------+
-| :ref:`bool<class_bool>`                         | :ref:`as_normalmap<class_NoiseTexture_property_as_normalmap>`   | ``false``                                                      |
-+-------------------------------------------------+-----------------------------------------------------------------+----------------------------------------------------------------+
-| :ref:`float<class_float>`                       | :ref:`bump_strength<class_NoiseTexture_property_bump_strength>` | ``8.0``                                                        |
-+-------------------------------------------------+-----------------------------------------------------------------+----------------------------------------------------------------+
-| :ref:`int<class_int>`                           | flags                                                           | ``7`` (overrides :ref:`Texture<class_Texture_property_flags>`) |
-+-------------------------------------------------+-----------------------------------------------------------------+----------------------------------------------------------------+
-| :ref:`int<class_int>`                           | :ref:`height<class_NoiseTexture_property_height>`               | ``512``                                                        |
-+-------------------------------------------------+-----------------------------------------------------------------+----------------------------------------------------------------+
-| :ref:`OpenSimplexNoise<class_OpenSimplexNoise>` | :ref:`noise<class_NoiseTexture_property_noise>`                 |                                                                |
-+-------------------------------------------------+-----------------------------------------------------------------+----------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>`                   | :ref:`noise_offset<class_NoiseTexture_property_noise_offset>`   | ``Vector2( 0, 0 )``                                            |
-+-------------------------------------------------+-----------------------------------------------------------------+----------------------------------------------------------------+
-| :ref:`bool<class_bool>`                         | :ref:`seamless<class_NoiseTexture_property_seamless>`           | ``false``                                                      |
-+-------------------------------------------------+-----------------------------------------------------------------+----------------------------------------------------------------+
-| :ref:`int<class_int>`                           | :ref:`width<class_NoiseTexture_property_width>`                 | ``512``                                                        |
-+-------------------------------------------------+-----------------------------------------------------------------+----------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------------------------------+-----------------------------------------------------------------+----------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                         | :ref:`as_normalmap<class_NoiseTexture_property_as_normalmap>`   | ``false``                                                      |
+   +-------------------------------------------------+-----------------------------------------------------------------+----------------------------------------------------------------+
+   | :ref:`float<class_float>`                       | :ref:`bump_strength<class_NoiseTexture_property_bump_strength>` | ``8.0``                                                        |
+   +-------------------------------------------------+-----------------------------------------------------------------+----------------------------------------------------------------+
+   | :ref:`int<class_int>`                           | flags                                                           | ``7`` (overrides :ref:`Texture<class_Texture_property_flags>`) |
+   +-------------------------------------------------+-----------------------------------------------------------------+----------------------------------------------------------------+
+   | :ref:`int<class_int>`                           | :ref:`height<class_NoiseTexture_property_height>`               | ``512``                                                        |
+   +-------------------------------------------------+-----------------------------------------------------------------+----------------------------------------------------------------+
+   | :ref:`OpenSimplexNoise<class_OpenSimplexNoise>` | :ref:`noise<class_NoiseTexture_property_noise>`                 |                                                                |
+   +-------------------------------------------------+-----------------------------------------------------------------+----------------------------------------------------------------+
+   | :ref:`Vector2<class_Vector2>`                   | :ref:`noise_offset<class_NoiseTexture_property_noise_offset>`   | ``Vector2( 0, 0 )``                                            |
+   +-------------------------------------------------+-----------------------------------------------------------------+----------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                         | :ref:`seamless<class_NoiseTexture_property_seamless>`           | ``false``                                                      |
+   +-------------------------------------------------+-----------------------------------------------------------------+----------------------------------------------------------------+
+   | :ref:`int<class_int>`                           | :ref:`width<class_NoiseTexture_property_width>`                 | ``512``                                                        |
+   +-------------------------------------------------+-----------------------------------------------------------------+----------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_NoiseTexture_property_as_normalmap:
 
-- :ref:`bool<class_bool>` **as_normalmap**
+.. rst-class:: classref-property
 
-+-----------+-------------------------+
-| *Default* | ``false``               |
-+-----------+-------------------------+
-| *Setter*  | set_as_normalmap(value) |
-+-----------+-------------------------+
-| *Getter*  | is_normalmap()          |
-+-----------+-------------------------+
+:ref:`bool<class_bool>` **as_normalmap** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_as_normalmap** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_normalmap** **(** **)**
 
 If ``true``, the resulting texture contains a normal map created from the original noise interpreted as a bump map.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_NoiseTexture_property_bump_strength:
 
-- :ref:`float<class_float>` **bump_strength**
+.. rst-class:: classref-property
 
-+-----------+--------------------------+
-| *Default* | ``8.0``                  |
-+-----------+--------------------------+
-| *Setter*  | set_bump_strength(value) |
-+-----------+--------------------------+
-| *Getter*  | get_bump_strength()      |
-+-----------+--------------------------+
+:ref:`float<class_float>` **bump_strength** = ``8.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_bump_strength** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_bump_strength** **(** **)**
 
 Strength of the bump maps used in this texture. A higher value will make the bump maps appear larger while a lower value will make them appear softer.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_NoiseTexture_property_height:
 
-- :ref:`int<class_int>` **height**
+.. rst-class:: classref-property
 
-+-----------+-------------------+
-| *Default* | ``512``           |
-+-----------+-------------------+
-| *Setter*  | set_height(value) |
-+-----------+-------------------+
-| *Getter*  | get_height()      |
-+-----------+-------------------+
+:ref:`int<class_int>` **height** = ``512``
+
+.. rst-class:: classref-property-setget
+
+- void **set_height** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_height** **(** **)**
 
 Height of the generated texture.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_NoiseTexture_property_noise:
 
-- :ref:`OpenSimplexNoise<class_OpenSimplexNoise>` **noise**
+.. rst-class:: classref-property
 
-+----------+------------------+
-| *Setter* | set_noise(value) |
-+----------+------------------+
-| *Getter* | get_noise()      |
-+----------+------------------+
+:ref:`OpenSimplexNoise<class_OpenSimplexNoise>` **noise**
+
+.. rst-class:: classref-property-setget
+
+- void **set_noise** **(** :ref:`OpenSimplexNoise<class_OpenSimplexNoise>` value **)**
+- :ref:`OpenSimplexNoise<class_OpenSimplexNoise>` **get_noise** **(** **)**
 
 The :ref:`OpenSimplexNoise<class_OpenSimplexNoise>` instance used to generate the noise.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_NoiseTexture_property_noise_offset:
 
-- :ref:`Vector2<class_Vector2>` **noise_offset**
+.. rst-class:: classref-property
 
-+-----------+-------------------------+
-| *Default* | ``Vector2( 0, 0 )``     |
-+-----------+-------------------------+
-| *Setter*  | set_noise_offset(value) |
-+-----------+-------------------------+
-| *Getter*  | get_noise_offset()      |
-+-----------+-------------------------+
+:ref:`Vector2<class_Vector2>` **noise_offset** = ``Vector2( 0, 0 )``
+
+.. rst-class:: classref-property-setget
+
+- void **set_noise_offset** **(** :ref:`Vector2<class_Vector2>` value **)**
+- :ref:`Vector2<class_Vector2>` **get_noise_offset** **(** **)**
 
 An offset used to specify the noise space coordinate of the top left corner of the generated noise. This value is ignored if :ref:`seamless<class_NoiseTexture_property_seamless>` is enabled.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_NoiseTexture_property_seamless:
 
-- :ref:`bool<class_bool>` **seamless**
+.. rst-class:: classref-property
 
-+-----------+---------------------+
-| *Default* | ``false``           |
-+-----------+---------------------+
-| *Setter*  | set_seamless(value) |
-+-----------+---------------------+
-| *Getter*  | get_seamless()      |
-+-----------+---------------------+
+:ref:`bool<class_bool>` **seamless** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_seamless** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **get_seamless** **(** **)**
 
 Whether the texture can be tiled without visible seams or not. Seamless textures take longer to generate.
 
 \ **Note:** Seamless noise has a lower contrast compared to non-seamless noise. This is due to the way noise uses higher dimensions for generating seamless noise.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_NoiseTexture_property_width:
 
-- :ref:`int<class_int>` **width**
+.. rst-class:: classref-property
 
-+-----------+------------------+
-| *Default* | ``512``          |
-+-----------+------------------+
-| *Setter*  | set_width(value) |
-+-----------+------------------+
-| *Getter*  | get_width()      |
-+-----------+------------------+
+:ref:`int<class_int>` **width** = ``512``
+
+.. rst-class:: classref-property-setget
+
+- void **set_width** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_width** **(** **)**
 
 Width of the generated texture.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

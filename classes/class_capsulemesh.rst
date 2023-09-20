@@ -14,91 +14,107 @@ CapsuleMesh
 
 Class representing a capsule-shaped :ref:`PrimitiveMesh<class_PrimitiveMesh>`.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 Class representing a capsule-shaped :ref:`PrimitiveMesh<class_PrimitiveMesh>`.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+---------------------------+--------------------------------------------------------------------+---------+
-| :ref:`float<class_float>` | :ref:`mid_height<class_CapsuleMesh_property_mid_height>`           | ``1.0`` |
-+---------------------------+--------------------------------------------------------------------+---------+
-| :ref:`int<class_int>`     | :ref:`radial_segments<class_CapsuleMesh_property_radial_segments>` | ``64``  |
-+---------------------------+--------------------------------------------------------------------+---------+
-| :ref:`float<class_float>` | :ref:`radius<class_CapsuleMesh_property_radius>`                   | ``1.0`` |
-+---------------------------+--------------------------------------------------------------------+---------+
-| :ref:`int<class_int>`     | :ref:`rings<class_CapsuleMesh_property_rings>`                     | ``8``   |
-+---------------------------+--------------------------------------------------------------------+---------+
+.. table::
+   :widths: auto
+
+   +---------------------------+--------------------------------------------------------------------+---------+
+   | :ref:`float<class_float>` | :ref:`mid_height<class_CapsuleMesh_property_mid_height>`           | ``1.0`` |
+   +---------------------------+--------------------------------------------------------------------+---------+
+   | :ref:`int<class_int>`     | :ref:`radial_segments<class_CapsuleMesh_property_radial_segments>` | ``64``  |
+   +---------------------------+--------------------------------------------------------------------+---------+
+   | :ref:`float<class_float>` | :ref:`radius<class_CapsuleMesh_property_radius>`                   | ``1.0`` |
+   +---------------------------+--------------------------------------------------------------------+---------+
+   | :ref:`int<class_int>`     | :ref:`rings<class_CapsuleMesh_property_rings>`                     | ``8``   |
+   +---------------------------+--------------------------------------------------------------------+---------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_CapsuleMesh_property_mid_height:
 
-- :ref:`float<class_float>` **mid_height**
+.. rst-class:: classref-property
 
-+-----------+-----------------------+
-| *Default* | ``1.0``               |
-+-----------+-----------------------+
-| *Setter*  | set_mid_height(value) |
-+-----------+-----------------------+
-| *Getter*  | get_mid_height()      |
-+-----------+-----------------------+
+:ref:`float<class_float>` **mid_height** = ``1.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_mid_height** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_mid_height** **(** **)**
 
 Height of the middle cylindrical part of the capsule (without the hemispherical ends).
 
 \ **Note:** The capsule's total height is equal to :ref:`mid_height<class_CapsuleMesh_property_mid_height>` + 2 \* :ref:`radius<class_CapsuleMesh_property_radius>`.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_CapsuleMesh_property_radial_segments:
 
-- :ref:`int<class_int>` **radial_segments**
+.. rst-class:: classref-property
 
-+-----------+----------------------------+
-| *Default* | ``64``                     |
-+-----------+----------------------------+
-| *Setter*  | set_radial_segments(value) |
-+-----------+----------------------------+
-| *Getter*  | get_radial_segments()      |
-+-----------+----------------------------+
+:ref:`int<class_int>` **radial_segments** = ``64``
+
+.. rst-class:: classref-property-setget
+
+- void **set_radial_segments** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_radial_segments** **(** **)**
 
 Number of radial segments on the capsule mesh.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_CapsuleMesh_property_radius:
 
-- :ref:`float<class_float>` **radius**
+.. rst-class:: classref-property
 
-+-----------+-------------------+
-| *Default* | ``1.0``           |
-+-----------+-------------------+
-| *Setter*  | set_radius(value) |
-+-----------+-------------------+
-| *Getter*  | get_radius()      |
-+-----------+-------------------+
+:ref:`float<class_float>` **radius** = ``1.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_radius** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_radius** **(** **)**
 
 Radius of the capsule mesh.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_CapsuleMesh_property_rings:
 
-- :ref:`int<class_int>` **rings**
+.. rst-class:: classref-property
 
-+-----------+------------------+
-| *Default* | ``8``            |
-+-----------+------------------+
-| *Setter*  | set_rings(value) |
-+-----------+------------------+
-| *Getter*  | get_rings()      |
-+-----------+------------------+
+:ref:`int<class_int>` **rings** = ``8``
+
+.. rst-class:: classref-property-setget
+
+- void **set_rings** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_rings** **(** **)**
 
 Number of rings along the height of the capsule.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

@@ -14,58 +14,95 @@ VisualShaderNodeTransformVecMult
 
 Multiplies a :ref:`Transform<class_Transform>` and a :ref:`Vector3<class_Vector3>` within the visual shader graph.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 A multiplication operation on a transform (4x4 matrix) and a vector, with support for different multiplication operators.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-----------------------------------------------------------------+---------------------------------------------------------------------------+-------+
-| :ref:`Operator<enum_VisualShaderNodeTransformVecMult_Operator>` | :ref:`operator<class_VisualShaderNodeTransformVecMult_property_operator>` | ``0`` |
-+-----------------------------------------------------------------+---------------------------------------------------------------------------+-------+
+.. table::
+   :widths: auto
+
+   +-----------------------------------------------------------------+---------------------------------------------------------------------------+-------+
+   | :ref:`Operator<enum_VisualShaderNodeTransformVecMult_Operator>` | :ref:`operator<class_VisualShaderNodeTransformVecMult_property_operator>` | ``0`` |
+   +-----------------------------------------------------------------+---------------------------------------------------------------------------+-------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Enumerations
 ------------
 
 .. _enum_VisualShaderNodeTransformVecMult_Operator:
 
-.. _class_VisualShaderNodeTransformVecMult_constant_OP_AxB:
-
-.. _class_VisualShaderNodeTransformVecMult_constant_OP_BxA:
-
-.. _class_VisualShaderNodeTransformVecMult_constant_OP_3x3_AxB:
-
-.. _class_VisualShaderNodeTransformVecMult_constant_OP_3x3_BxA:
+.. rst-class:: classref-enumeration
 
 enum **Operator**:
 
-- **OP_AxB** = **0** --- Multiplies transform ``a`` by the vector ``b``.
+.. _class_VisualShaderNodeTransformVecMult_constant_OP_AxB:
 
-- **OP_BxA** = **1** --- Multiplies vector ``b`` by the transform ``a``.
+.. rst-class:: classref-enumeration-constant
 
-- **OP_3x3_AxB** = **2** --- Multiplies transform ``a`` by the vector ``b``, skipping the last row and column of the transform.
+:ref:`Operator<enum_VisualShaderNodeTransformVecMult_Operator>` **OP_AxB** = ``0``
 
-- **OP_3x3_BxA** = **3** --- Multiplies vector ``b`` by the transform ``a``, skipping the last row and column of the transform.
+Multiplies transform ``a`` by the vector ``b``.
+
+.. _class_VisualShaderNodeTransformVecMult_constant_OP_BxA:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Operator<enum_VisualShaderNodeTransformVecMult_Operator>` **OP_BxA** = ``1``
+
+Multiplies vector ``b`` by the transform ``a``.
+
+.. _class_VisualShaderNodeTransformVecMult_constant_OP_3x3_AxB:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Operator<enum_VisualShaderNodeTransformVecMult_Operator>` **OP_3x3_AxB** = ``2``
+
+Multiplies transform ``a`` by the vector ``b``, skipping the last row and column of the transform.
+
+.. _class_VisualShaderNodeTransformVecMult_constant_OP_3x3_BxA:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Operator<enum_VisualShaderNodeTransformVecMult_Operator>` **OP_3x3_BxA** = ``3``
+
+Multiplies vector ``b`` by the transform ``a``, skipping the last row and column of the transform.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_VisualShaderNodeTransformVecMult_property_operator:
 
-- :ref:`Operator<enum_VisualShaderNodeTransformVecMult_Operator>` **operator**
+.. rst-class:: classref-property
 
-+-----------+---------------------+
-| *Default* | ``0``               |
-+-----------+---------------------+
-| *Setter*  | set_operator(value) |
-+-----------+---------------------+
-| *Getter*  | get_operator()      |
-+-----------+---------------------+
+:ref:`Operator<enum_VisualShaderNodeTransformVecMult_Operator>` **operator** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_operator** **(** :ref:`Operator<enum_VisualShaderNodeTransformVecMult_Operator>` value **)**
+- :ref:`Operator<enum_VisualShaderNodeTransformVecMult_Operator>` **get_operator** **(** **)**
 
 The multiplication type to be performed. See :ref:`Operator<enum_VisualShaderNodeTransformVecMult_Operator>` for options.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

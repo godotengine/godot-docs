@@ -12,170 +12,261 @@ BakedLightmapData
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
+.. container:: contribute
 
+	There is currently no description for this class. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-reftable-group
 
 Properties
 ----------
 
-+-------------------------------------------+------------------------------------------------------------------------------------+-----------------------------------------------------+
-| :ref:`AABB<class_AABB>`                   | :ref:`bounds<class_BakedLightmapData_property_bounds>`                             | ``AABB( 0, 0, 0, 0, 0, 0 )``                        |
-+-------------------------------------------+------------------------------------------------------------------------------------+-----------------------------------------------------+
-| :ref:`Transform<class_Transform>`         | :ref:`cell_space_transform<class_BakedLightmapData_property_cell_space_transform>` | ``Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )`` |
-+-------------------------------------------+------------------------------------------------------------------------------------+-----------------------------------------------------+
-| :ref:`int<class_int>`                     | :ref:`cell_subdiv<class_BakedLightmapData_property_cell_subdiv>`                   | ``1``                                               |
-+-------------------------------------------+------------------------------------------------------------------------------------+-----------------------------------------------------+
-| :ref:`float<class_float>`                 | :ref:`energy<class_BakedLightmapData_property_energy>`                             | ``1.0``                                             |
-+-------------------------------------------+------------------------------------------------------------------------------------+-----------------------------------------------------+
-| :ref:`bool<class_bool>`                   | :ref:`interior<class_BakedLightmapData_property_interior>`                         | ``false``                                           |
-+-------------------------------------------+------------------------------------------------------------------------------------+-----------------------------------------------------+
-| :ref:`PoolByteArray<class_PoolByteArray>` | :ref:`octree<class_BakedLightmapData_property_octree>`                             | ``PoolByteArray(  )``                               |
-+-------------------------------------------+------------------------------------------------------------------------------------+-----------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------------------------+------------------------------------------------------------------------------------+-----------------------------------------------------+
+   | :ref:`AABB<class_AABB>`                   | :ref:`bounds<class_BakedLightmapData_property_bounds>`                             | ``AABB( 0, 0, 0, 0, 0, 0 )``                        |
+   +-------------------------------------------+------------------------------------------------------------------------------------+-----------------------------------------------------+
+   | :ref:`Transform<class_Transform>`         | :ref:`cell_space_transform<class_BakedLightmapData_property_cell_space_transform>` | ``Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )`` |
+   +-------------------------------------------+------------------------------------------------------------------------------------+-----------------------------------------------------+
+   | :ref:`int<class_int>`                     | :ref:`cell_subdiv<class_BakedLightmapData_property_cell_subdiv>`                   | ``1``                                               |
+   +-------------------------------------------+------------------------------------------------------------------------------------+-----------------------------------------------------+
+   | :ref:`float<class_float>`                 | :ref:`energy<class_BakedLightmapData_property_energy>`                             | ``1.0``                                             |
+   +-------------------------------------------+------------------------------------------------------------------------------------+-----------------------------------------------------+
+   | :ref:`bool<class_bool>`                   | :ref:`interior<class_BakedLightmapData_property_interior>`                         | ``false``                                           |
+   +-------------------------------------------+------------------------------------------------------------------------------------+-----------------------------------------------------+
+   | :ref:`PoolByteArray<class_PoolByteArray>` | :ref:`octree<class_BakedLightmapData_property_octree>`                             | ``PoolByteArray(  )``                               |
+   +-------------------------------------------+------------------------------------------------------------------------------------+-----------------------------------------------------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                            | :ref:`add_user<class_BakedLightmapData_method_add_user>` **(** :ref:`NodePath<class_NodePath>` path, :ref:`Resource<class_Resource>` lightmap, :ref:`int<class_int>` lightmap_slice, :ref:`Rect2<class_Rect2>` lightmap_uv_rect, :ref:`int<class_int>` instance **)** |
-+---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                            | :ref:`clear_data<class_BakedLightmapData_method_clear_data>` **(** **)**                                                                                                                                                                                              |
-+---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                            | :ref:`clear_users<class_BakedLightmapData_method_clear_users>` **(** **)**                                                                                                                                                                                            |
-+---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`           | :ref:`get_user_count<class_BakedLightmapData_method_get_user_count>` **(** **)** |const|                                                                                                                                                                              |
-+---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Resource<class_Resource>` | :ref:`get_user_lightmap<class_BakedLightmapData_method_get_user_lightmap>` **(** :ref:`int<class_int>` user_idx **)** |const|                                                                                                                                         |
-+---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`NodePath<class_NodePath>` | :ref:`get_user_path<class_BakedLightmapData_method_get_user_path>` **(** :ref:`int<class_int>` user_idx **)** |const|                                                                                                                                                 |
-+---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                            | :ref:`add_user<class_BakedLightmapData_method_add_user>` **(** :ref:`NodePath<class_NodePath>` path, :ref:`Resource<class_Resource>` lightmap, :ref:`int<class_int>` lightmap_slice, :ref:`Rect2<class_Rect2>` lightmap_uv_rect, :ref:`int<class_int>` instance **)** |
+   +---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                            | :ref:`clear_data<class_BakedLightmapData_method_clear_data>` **(** **)**                                                                                                                                                                                              |
+   +---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                            | :ref:`clear_users<class_BakedLightmapData_method_clear_users>` **(** **)**                                                                                                                                                                                            |
+   +---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`           | :ref:`get_user_count<class_BakedLightmapData_method_get_user_count>` **(** **)** |const|                                                                                                                                                                              |
+   +---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Resource<class_Resource>` | :ref:`get_user_lightmap<class_BakedLightmapData_method_get_user_lightmap>` **(** :ref:`int<class_int>` user_idx **)** |const|                                                                                                                                         |
+   +---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`NodePath<class_NodePath>` | :ref:`get_user_path<class_BakedLightmapData_method_get_user_path>` **(** :ref:`int<class_int>` user_idx **)** |const|                                                                                                                                                 |
+   +---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_BakedLightmapData_property_bounds:
 
-- :ref:`AABB<class_AABB>` **bounds**
+.. rst-class:: classref-property
 
-+-----------+------------------------------+
-| *Default* | ``AABB( 0, 0, 0, 0, 0, 0 )`` |
-+-----------+------------------------------+
-| *Setter*  | set_bounds(value)            |
-+-----------+------------------------------+
-| *Getter*  | get_bounds()                 |
-+-----------+------------------------------+
+:ref:`AABB<class_AABB>` **bounds** = ``AABB( 0, 0, 0, 0, 0, 0 )``
+
+.. rst-class:: classref-property-setget
+
+- void **set_bounds** **(** :ref:`AABB<class_AABB>` value **)**
+- :ref:`AABB<class_AABB>` **get_bounds** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_BakedLightmapData_property_cell_space_transform:
 
-- :ref:`Transform<class_Transform>` **cell_space_transform**
+.. rst-class:: classref-property
 
-+-----------+-----------------------------------------------------+
-| *Default* | ``Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )`` |
-+-----------+-----------------------------------------------------+
-| *Setter*  | set_cell_space_transform(value)                     |
-+-----------+-----------------------------------------------------+
-| *Getter*  | get_cell_space_transform()                          |
-+-----------+-----------------------------------------------------+
+:ref:`Transform<class_Transform>` **cell_space_transform** = ``Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )``
+
+.. rst-class:: classref-property-setget
+
+- void **set_cell_space_transform** **(** :ref:`Transform<class_Transform>` value **)**
+- :ref:`Transform<class_Transform>` **get_cell_space_transform** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_BakedLightmapData_property_cell_subdiv:
 
-- :ref:`int<class_int>` **cell_subdiv**
+.. rst-class:: classref-property
 
-+-----------+------------------------+
-| *Default* | ``1``                  |
-+-----------+------------------------+
-| *Setter*  | set_cell_subdiv(value) |
-+-----------+------------------------+
-| *Getter*  | get_cell_subdiv()      |
-+-----------+------------------------+
+:ref:`int<class_int>` **cell_subdiv** = ``1``
+
+.. rst-class:: classref-property-setget
+
+- void **set_cell_subdiv** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_cell_subdiv** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_BakedLightmapData_property_energy:
 
-- :ref:`float<class_float>` **energy**
+.. rst-class:: classref-property
 
-+-----------+-------------------+
-| *Default* | ``1.0``           |
-+-----------+-------------------+
-| *Setter*  | set_energy(value) |
-+-----------+-------------------+
-| *Getter*  | get_energy()      |
-+-----------+-------------------+
+:ref:`float<class_float>` **energy** = ``1.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_energy** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_energy** **(** **)**
 
 Global energy multiplier for baked and dynamic capture objects. This can be changed at run-time without having to bake lightmaps again.
 
 To adjust only the energy of indirect lighting (without affecting direct lighting or emissive materials), adjust :ref:`BakedLightmap.bounce_indirect_energy<class_BakedLightmap_property_bounce_indirect_energy>` and bake lightmaps again.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_BakedLightmapData_property_interior:
 
-- :ref:`bool<class_bool>` **interior**
+.. rst-class:: classref-property
 
-+-----------+---------------------+
-| *Default* | ``false``           |
-+-----------+---------------------+
-| *Setter*  | set_interior(value) |
-+-----------+---------------------+
-| *Getter*  | is_interior()       |
-+-----------+---------------------+
+:ref:`bool<class_bool>` **interior** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_interior** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_interior** **(** **)**
 
 Controls whether dynamic capture objects receive environment lighting or not.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_BakedLightmapData_property_octree:
 
-- :ref:`PoolByteArray<class_PoolByteArray>` **octree**
+.. rst-class:: classref-property
 
-+-----------+-----------------------+
-| *Default* | ``PoolByteArray(  )`` |
-+-----------+-----------------------+
-| *Setter*  | set_octree(value)     |
-+-----------+-----------------------+
-| *Getter*  | get_octree()          |
-+-----------+-----------------------+
+:ref:`PoolByteArray<class_PoolByteArray>` **octree** = ``PoolByteArray(  )``
+
+.. rst-class:: classref-property-setget
+
+- void **set_octree** **(** :ref:`PoolByteArray<class_PoolByteArray>` value **)**
+- :ref:`PoolByteArray<class_PoolByteArray>` **get_octree** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_BakedLightmapData_method_add_user:
 
-- void **add_user** **(** :ref:`NodePath<class_NodePath>` path, :ref:`Resource<class_Resource>` lightmap, :ref:`int<class_int>` lightmap_slice, :ref:`Rect2<class_Rect2>` lightmap_uv_rect, :ref:`int<class_int>` instance **)**
+.. rst-class:: classref-method
+
+void **add_user** **(** :ref:`NodePath<class_NodePath>` path, :ref:`Resource<class_Resource>` lightmap, :ref:`int<class_int>` lightmap_slice, :ref:`Rect2<class_Rect2>` lightmap_uv_rect, :ref:`int<class_int>` instance **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_BakedLightmapData_method_clear_data:
 
-- void **clear_data** **(** **)**
+.. rst-class:: classref-method
+
+void **clear_data** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_BakedLightmapData_method_clear_users:
 
-- void **clear_users** **(** **)**
+.. rst-class:: classref-method
+
+void **clear_users** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_BakedLightmapData_method_get_user_count:
 
-- :ref:`int<class_int>` **get_user_count** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **get_user_count** **(** **)** |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_BakedLightmapData_method_get_user_lightmap:
 
-- :ref:`Resource<class_Resource>` **get_user_lightmap** **(** :ref:`int<class_int>` user_idx **)** |const|
+.. rst-class:: classref-method
+
+:ref:`Resource<class_Resource>` **get_user_lightmap** **(** :ref:`int<class_int>` user_idx **)** |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_BakedLightmapData_method_get_user_path:
 
-- :ref:`NodePath<class_NodePath>` **get_user_path** **(** :ref:`int<class_int>` user_idx **)** |const|
+.. rst-class:: classref-method
+
+:ref:`NodePath<class_NodePath>` **get_user_path** **(** :ref:`int<class_int>` user_idx **)** |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

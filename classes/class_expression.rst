@@ -14,6 +14,8 @@ Expression
 
 A class that stores an expression you can execute.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -39,51 +41,76 @@ In the following example we use a :ref:`LineEdit<class_LineEdit>` node to write 
         if not expression.has_execute_failed():
             $LineEdit.text = str(result)
 
+.. rst-class:: classref-reftable-group
+
 Methods
 -------
 
-+---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>`         | :ref:`execute<class_Expression_method_execute>` **(** :ref:`Array<class_Array>` inputs=[  ], :ref:`Object<class_Object>` base_instance=null, :ref:`bool<class_bool>` show_error=true **)** |
-+---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`           | :ref:`get_error_text<class_Expression_method_get_error_text>` **(** **)** |const|                                                                                                          |
-+---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`               | :ref:`has_execute_failed<class_Expression_method_has_execute_failed>` **(** **)** |const|                                                                                                  |
-+---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`parse<class_Expression_method_parse>` **(** :ref:`String<class_String>` expression, :ref:`PoolStringArray<class_PoolStringArray>` input_names=PoolStringArray(  ) **)**              |
-+---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Variant<class_Variant>`         | :ref:`execute<class_Expression_method_execute>` **(** :ref:`Array<class_Array>` inputs=[  ], :ref:`Object<class_Object>` base_instance=null, :ref:`bool<class_bool>` show_error=true **)** |
+   +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`           | :ref:`get_error_text<class_Expression_method_get_error_text>` **(** **)** |const|                                                                                                          |
+   +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`               | :ref:`has_execute_failed<class_Expression_method_has_execute_failed>` **(** **)** |const|                                                                                                  |
+   +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>` | :ref:`parse<class_Expression_method_parse>` **(** :ref:`String<class_String>` expression, :ref:`PoolStringArray<class_PoolStringArray>` input_names=PoolStringArray(  ) **)**              |
+   +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_Expression_method_execute:
 
-- :ref:`Variant<class_Variant>` **execute** **(** :ref:`Array<class_Array>` inputs=[  ], :ref:`Object<class_Object>` base_instance=null, :ref:`bool<class_bool>` show_error=true **)**
+.. rst-class:: classref-method
+
+:ref:`Variant<class_Variant>` **execute** **(** :ref:`Array<class_Array>` inputs=[  ], :ref:`Object<class_Object>` base_instance=null, :ref:`bool<class_bool>` show_error=true **)**
 
 Executes the expression that was previously parsed by :ref:`parse<class_Expression_method_parse>` and returns the result. Before you use the returned object, you should check if the method failed by calling :ref:`has_execute_failed<class_Expression_method_has_execute_failed>`.
 
 If you defined input variables in :ref:`parse<class_Expression_method_parse>`, you can specify their values in the inputs array, in the same order.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_Expression_method_get_error_text:
 
-- :ref:`String<class_String>` **get_error_text** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`String<class_String>` **get_error_text** **(** **)** |const|
 
 Returns the error text if :ref:`parse<class_Expression_method_parse>` has failed.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Expression_method_has_execute_failed:
 
-- :ref:`bool<class_bool>` **has_execute_failed** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **has_execute_failed** **(** **)** |const|
 
 Returns ``true`` if :ref:`execute<class_Expression_method_execute>` has failed.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Expression_method_parse:
 
-- :ref:`Error<enum_@GlobalScope_Error>` **parse** **(** :ref:`String<class_String>` expression, :ref:`PoolStringArray<class_PoolStringArray>` input_names=PoolStringArray(  ) **)**
+.. rst-class:: classref-method
+
+:ref:`Error<enum_@GlobalScope_Error>` **parse** **(** :ref:`String<class_String>` expression, :ref:`PoolStringArray<class_PoolStringArray>` input_names=PoolStringArray(  ) **)**
 
 Parses the expression and returns an :ref:`Error<enum_@GlobalScope_Error>` code.
 
@@ -92,3 +119,4 @@ You can optionally specify names of variables that may appear in the expression 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

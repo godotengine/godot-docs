@@ -14,6 +14,8 @@ VisualScriptVariableGet
 
 Gets a variable's value.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -27,30 +29,41 @@ none
 
 - Data (variant): ``value``
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-----------------------------+------------------------------------------------------------------+--------+
-| :ref:`String<class_String>` | :ref:`var_name<class_VisualScriptVariableGet_property_var_name>` | ``""`` |
-+-----------------------------+------------------------------------------------------------------+--------+
+.. table::
+   :widths: auto
+
+   +-----------------------------+------------------------------------------------------------------+--------+
+   | :ref:`String<class_String>` | :ref:`var_name<class_VisualScriptVariableGet_property_var_name>` | ``""`` |
+   +-----------------------------+------------------------------------------------------------------+--------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_VisualScriptVariableGet_property_var_name:
 
-- :ref:`String<class_String>` **var_name**
+.. rst-class:: classref-property
 
-+-----------+---------------------+
-| *Default* | ``""``              |
-+-----------+---------------------+
-| *Setter*  | set_variable(value) |
-+-----------+---------------------+
-| *Getter*  | get_variable()      |
-+-----------+---------------------+
+:ref:`String<class_String>` **var_name** = ``""``
+
+.. rst-class:: classref-property-setget
+
+- void **set_variable** **(** :ref:`String<class_String>` value **)**
+- :ref:`String<class_String>` **get_variable** **(** **)**
 
 The variable's name.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

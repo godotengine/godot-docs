@@ -14,6 +14,8 @@ VisualScriptBuiltinFunc
 
 A Visual Script node used to call built-in functions.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -21,320 +23,615 @@ A built-in function used inside a :ref:`VisualScript<class_VisualScript>`. It is
 
 See also :ref:`@GDScript<class_@GDScript>`, for the same functions in the GDScript language.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+--------------------------------------------------------------+------------------------------------------------------------------+-------+
-| :ref:`BuiltinFunc<enum_VisualScriptBuiltinFunc_BuiltinFunc>` | :ref:`function<class_VisualScriptBuiltinFunc_property_function>` | ``0`` |
-+--------------------------------------------------------------+------------------------------------------------------------------+-------+
+.. table::
+   :widths: auto
+
+   +--------------------------------------------------------------+------------------------------------------------------------------+-------+
+   | :ref:`BuiltinFunc<enum_VisualScriptBuiltinFunc_BuiltinFunc>` | :ref:`function<class_VisualScriptBuiltinFunc_property_function>` | ``0`` |
+   +--------------------------------------------------------------+------------------------------------------------------------------+-------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Enumerations
 ------------
 
 .. _enum_VisualScriptBuiltinFunc_BuiltinFunc:
 
-.. _class_VisualScriptBuiltinFunc_constant_MATH_SIN:
-
-.. _class_VisualScriptBuiltinFunc_constant_MATH_COS:
-
-.. _class_VisualScriptBuiltinFunc_constant_MATH_TAN:
-
-.. _class_VisualScriptBuiltinFunc_constant_MATH_SINH:
-
-.. _class_VisualScriptBuiltinFunc_constant_MATH_COSH:
-
-.. _class_VisualScriptBuiltinFunc_constant_MATH_TANH:
-
-.. _class_VisualScriptBuiltinFunc_constant_MATH_ASIN:
-
-.. _class_VisualScriptBuiltinFunc_constant_MATH_ACOS:
-
-.. _class_VisualScriptBuiltinFunc_constant_MATH_ATAN:
-
-.. _class_VisualScriptBuiltinFunc_constant_MATH_ATAN2:
-
-.. _class_VisualScriptBuiltinFunc_constant_MATH_SQRT:
-
-.. _class_VisualScriptBuiltinFunc_constant_MATH_FMOD:
-
-.. _class_VisualScriptBuiltinFunc_constant_MATH_FPOSMOD:
-
-.. _class_VisualScriptBuiltinFunc_constant_MATH_FLOOR:
-
-.. _class_VisualScriptBuiltinFunc_constant_MATH_CEIL:
-
-.. _class_VisualScriptBuiltinFunc_constant_MATH_ROUND:
-
-.. _class_VisualScriptBuiltinFunc_constant_MATH_ABS:
-
-.. _class_VisualScriptBuiltinFunc_constant_MATH_SIGN:
-
-.. _class_VisualScriptBuiltinFunc_constant_MATH_POW:
-
-.. _class_VisualScriptBuiltinFunc_constant_MATH_LOG:
-
-.. _class_VisualScriptBuiltinFunc_constant_MATH_EXP:
-
-.. _class_VisualScriptBuiltinFunc_constant_MATH_ISNAN:
-
-.. _class_VisualScriptBuiltinFunc_constant_MATH_ISINF:
-
-.. _class_VisualScriptBuiltinFunc_constant_MATH_EASE:
-
-.. _class_VisualScriptBuiltinFunc_constant_MATH_DECIMALS:
-
-.. _class_VisualScriptBuiltinFunc_constant_MATH_STEPIFY:
-
-.. _class_VisualScriptBuiltinFunc_constant_MATH_LERP:
-
-.. _class_VisualScriptBuiltinFunc_constant_MATH_INVERSE_LERP:
-
-.. _class_VisualScriptBuiltinFunc_constant_MATH_RANGE_LERP:
-
-.. _class_VisualScriptBuiltinFunc_constant_MATH_MOVE_TOWARD:
-
-.. _class_VisualScriptBuiltinFunc_constant_MATH_DECTIME:
-
-.. _class_VisualScriptBuiltinFunc_constant_MATH_RANDOMIZE:
-
-.. _class_VisualScriptBuiltinFunc_constant_MATH_RAND:
-
-.. _class_VisualScriptBuiltinFunc_constant_MATH_RANDF:
-
-.. _class_VisualScriptBuiltinFunc_constant_MATH_RANDOM:
-
-.. _class_VisualScriptBuiltinFunc_constant_MATH_SEED:
-
-.. _class_VisualScriptBuiltinFunc_constant_MATH_RANDSEED:
-
-.. _class_VisualScriptBuiltinFunc_constant_MATH_DEG2RAD:
-
-.. _class_VisualScriptBuiltinFunc_constant_MATH_RAD2DEG:
-
-.. _class_VisualScriptBuiltinFunc_constant_MATH_LINEAR2DB:
-
-.. _class_VisualScriptBuiltinFunc_constant_MATH_DB2LINEAR:
-
-.. _class_VisualScriptBuiltinFunc_constant_MATH_POLAR2CARTESIAN:
-
-.. _class_VisualScriptBuiltinFunc_constant_MATH_CARTESIAN2POLAR:
-
-.. _class_VisualScriptBuiltinFunc_constant_MATH_WRAP:
-
-.. _class_VisualScriptBuiltinFunc_constant_MATH_WRAPF:
-
-.. _class_VisualScriptBuiltinFunc_constant_LOGIC_MAX:
-
-.. _class_VisualScriptBuiltinFunc_constant_LOGIC_MIN:
-
-.. _class_VisualScriptBuiltinFunc_constant_LOGIC_CLAMP:
-
-.. _class_VisualScriptBuiltinFunc_constant_LOGIC_NEAREST_PO2:
-
-.. _class_VisualScriptBuiltinFunc_constant_OBJ_WEAKREF:
-
-.. _class_VisualScriptBuiltinFunc_constant_FUNC_FUNCREF:
-
-.. _class_VisualScriptBuiltinFunc_constant_TYPE_CONVERT:
-
-.. _class_VisualScriptBuiltinFunc_constant_TYPE_OF:
-
-.. _class_VisualScriptBuiltinFunc_constant_TYPE_EXISTS:
-
-.. _class_VisualScriptBuiltinFunc_constant_TEXT_CHAR:
-
-.. _class_VisualScriptBuiltinFunc_constant_TEXT_STR:
-
-.. _class_VisualScriptBuiltinFunc_constant_TEXT_PRINT:
-
-.. _class_VisualScriptBuiltinFunc_constant_TEXT_PRINTERR:
-
-.. _class_VisualScriptBuiltinFunc_constant_TEXT_PRINTRAW:
-
-.. _class_VisualScriptBuiltinFunc_constant_VAR_TO_STR:
-
-.. _class_VisualScriptBuiltinFunc_constant_STR_TO_VAR:
-
-.. _class_VisualScriptBuiltinFunc_constant_VAR_TO_BYTES:
-
-.. _class_VisualScriptBuiltinFunc_constant_BYTES_TO_VAR:
-
-.. _class_VisualScriptBuiltinFunc_constant_COLORN:
-
-.. _class_VisualScriptBuiltinFunc_constant_MATH_SMOOTHSTEP:
-
-.. _class_VisualScriptBuiltinFunc_constant_MATH_POSMOD:
-
-.. _class_VisualScriptBuiltinFunc_constant_MATH_LERP_ANGLE:
-
-.. _class_VisualScriptBuiltinFunc_constant_TEXT_ORD:
-
-.. _class_VisualScriptBuiltinFunc_constant_FUNC_MAX:
+.. rst-class:: classref-enumeration
 
 enum **BuiltinFunc**:
 
-- **MATH_SIN** = **0** --- Return the sine of the input.
+.. _class_VisualScriptBuiltinFunc_constant_MATH_SIN:
 
-- **MATH_COS** = **1** --- Return the cosine of the input.
+.. rst-class:: classref-enumeration-constant
 
-- **MATH_TAN** = **2** --- Return the tangent of the input.
+:ref:`BuiltinFunc<enum_VisualScriptBuiltinFunc_BuiltinFunc>` **MATH_SIN** = ``0``
 
-- **MATH_SINH** = **3** --- Return the hyperbolic sine of the input.
+Return the sine of the input.
 
-- **MATH_COSH** = **4** --- Return the hyperbolic cosine of the input.
+.. _class_VisualScriptBuiltinFunc_constant_MATH_COS:
 
-- **MATH_TANH** = **5** --- Return the hyperbolic tangent of the input.
+.. rst-class:: classref-enumeration-constant
 
-- **MATH_ASIN** = **6** --- Return the arc sine of the input.
+:ref:`BuiltinFunc<enum_VisualScriptBuiltinFunc_BuiltinFunc>` **MATH_COS** = ``1``
 
-- **MATH_ACOS** = **7** --- Return the arc cosine of the input.
+Return the cosine of the input.
 
-- **MATH_ATAN** = **8** --- Return the arc tangent of the input.
+.. _class_VisualScriptBuiltinFunc_constant_MATH_TAN:
 
-- **MATH_ATAN2** = **9** --- Return the arc tangent of the input, using the signs of both parameters to determine the exact angle.
+.. rst-class:: classref-enumeration-constant
 
-- **MATH_SQRT** = **10** --- Return the square root of the input.
+:ref:`BuiltinFunc<enum_VisualScriptBuiltinFunc_BuiltinFunc>` **MATH_TAN** = ``2``
 
-- **MATH_FMOD** = **11** --- Return the remainder of one input divided by the other, using floating-point numbers.
+Return the tangent of the input.
 
-- **MATH_FPOSMOD** = **12** --- Return the positive remainder of one input divided by the other, using floating-point numbers.
+.. _class_VisualScriptBuiltinFunc_constant_MATH_SINH:
 
-- **MATH_FLOOR** = **13** --- Return the input rounded down.
+.. rst-class:: classref-enumeration-constant
 
-- **MATH_CEIL** = **14** --- Return the input rounded up.
+:ref:`BuiltinFunc<enum_VisualScriptBuiltinFunc_BuiltinFunc>` **MATH_SINH** = ``3``
 
-- **MATH_ROUND** = **15** --- Return the input rounded to the nearest integer.
+Return the hyperbolic sine of the input.
 
-- **MATH_ABS** = **16** --- Return the absolute value of the input.
+.. _class_VisualScriptBuiltinFunc_constant_MATH_COSH:
 
-- **MATH_SIGN** = **17** --- Return the sign of the input, turning it into 1, -1, or 0. Useful to determine if the input is positive or negative.
+.. rst-class:: classref-enumeration-constant
 
-- **MATH_POW** = **18** --- Return the input raised to a given power.
+:ref:`BuiltinFunc<enum_VisualScriptBuiltinFunc_BuiltinFunc>` **MATH_COSH** = ``4``
 
-- **MATH_LOG** = **19** --- Return the natural logarithm of the input. Note that this is not the typical base-10 logarithm function calculators use.
+Return the hyperbolic cosine of the input.
 
-- **MATH_EXP** = **20** --- Return the mathematical constant **e** raised to the specified power of the input. **e** has an approximate value of 2.71828.
+.. _class_VisualScriptBuiltinFunc_constant_MATH_TANH:
 
-- **MATH_ISNAN** = **21** --- Return whether the input is NaN (Not a Number) or not. NaN is usually produced by dividing 0 by 0, though other ways exist.
+.. rst-class:: classref-enumeration-constant
 
-- **MATH_ISINF** = **22** --- Return whether the input is an infinite floating-point number or not. Infinity is usually produced by dividing a number by 0, though other ways exist.
+:ref:`BuiltinFunc<enum_VisualScriptBuiltinFunc_BuiltinFunc>` **MATH_TANH** = ``5``
 
-- **MATH_EASE** = **23** --- Easing function, based on exponent. 0 is constant, 1 is linear, 0 to 1 is ease-in, 1+ is ease out. Negative values are in-out/out in.
+Return the hyperbolic tangent of the input.
 
-- **MATH_DECIMALS** = **24** --- Return the number of digit places after the decimal that the first non-zero digit occurs.
+.. _class_VisualScriptBuiltinFunc_constant_MATH_ASIN:
 
-- **MATH_STEPIFY** = **25** --- Return the input snapped to a given step.
+.. rst-class:: classref-enumeration-constant
 
-- **MATH_LERP** = **26** --- Return a number linearly interpolated between the first two inputs, based on the third input. Uses the formula ``a + (a - b) * t``.
+:ref:`BuiltinFunc<enum_VisualScriptBuiltinFunc_BuiltinFunc>` **MATH_ASIN** = ``6``
 
-- **MATH_INVERSE_LERP** = **27**
+Return the arc sine of the input.
 
-- **MATH_RANGE_LERP** = **28**
+.. _class_VisualScriptBuiltinFunc_constant_MATH_ACOS:
 
-- **MATH_MOVE_TOWARD** = **29** --- Moves the number toward a value, based on the third input.
+.. rst-class:: classref-enumeration-constant
 
-- **MATH_DECTIME** = **30** --- Return the result of ``value`` decreased by ``step`` \* ``amount``.
+:ref:`BuiltinFunc<enum_VisualScriptBuiltinFunc_BuiltinFunc>` **MATH_ACOS** = ``7``
 
-- **MATH_RANDOMIZE** = **31** --- Randomize the seed (or the internal state) of the random number generator. Current implementation reseeds using a number based on time.
+Return the arc cosine of the input.
 
-- **MATH_RAND** = **32** --- Return a random 32 bits integer value. To obtain a random value between 0 to N (where N is smaller than 2^32 - 1), you can use it with the remainder function.
+.. _class_VisualScriptBuiltinFunc_constant_MATH_ATAN:
 
-- **MATH_RANDF** = **33** --- Return a random floating-point value between 0 and 1. To obtain a random value between 0 to N, you can use it with multiplication.
+.. rst-class:: classref-enumeration-constant
 
-- **MATH_RANDOM** = **34** --- Return a random floating-point value between the two inputs.
+:ref:`BuiltinFunc<enum_VisualScriptBuiltinFunc_BuiltinFunc>` **MATH_ATAN** = ``8``
 
-- **MATH_SEED** = **35** --- Set the seed for the random number generator.
+Return the arc tangent of the input.
 
-- **MATH_RANDSEED** = **36** --- Return a random value from the given seed, along with the new seed.
+.. _class_VisualScriptBuiltinFunc_constant_MATH_ATAN2:
 
-- **MATH_DEG2RAD** = **37** --- Convert the input from degrees to radians.
+.. rst-class:: classref-enumeration-constant
 
-- **MATH_RAD2DEG** = **38** --- Convert the input from radians to degrees.
+:ref:`BuiltinFunc<enum_VisualScriptBuiltinFunc_BuiltinFunc>` **MATH_ATAN2** = ``9``
 
-- **MATH_LINEAR2DB** = **39** --- Convert the input from linear volume to decibel volume.
+Return the arc tangent of the input, using the signs of both parameters to determine the exact angle.
 
-- **MATH_DB2LINEAR** = **40** --- Convert the input from decibel volume to linear volume.
+.. _class_VisualScriptBuiltinFunc_constant_MATH_SQRT:
 
-- **MATH_POLAR2CARTESIAN** = **41** --- Converts a 2D point expressed in the polar coordinate system (a distance from the origin ``r`` and an angle ``th``) to the cartesian coordinate system (X and Y axis).
+.. rst-class:: classref-enumeration-constant
 
-- **MATH_CARTESIAN2POLAR** = **42** --- Converts a 2D point expressed in the cartesian coordinate system (X and Y axis) to the polar coordinate system (a distance from the origin and an angle).
+:ref:`BuiltinFunc<enum_VisualScriptBuiltinFunc_BuiltinFunc>` **MATH_SQRT** = ``10``
 
-- **MATH_WRAP** = **43**
+Return the square root of the input.
 
-- **MATH_WRAPF** = **44**
+.. _class_VisualScriptBuiltinFunc_constant_MATH_FMOD:
 
-- **LOGIC_MAX** = **45** --- Return the greater of the two numbers, also known as their maximum.
+.. rst-class:: classref-enumeration-constant
 
-- **LOGIC_MIN** = **46** --- Return the lesser of the two numbers, also known as their minimum.
+:ref:`BuiltinFunc<enum_VisualScriptBuiltinFunc_BuiltinFunc>` **MATH_FMOD** = ``11``
 
-- **LOGIC_CLAMP** = **47** --- Return the input clamped inside the given range, ensuring the result is never outside it. Equivalent to ``min(max(input, range_low), range_high)``.
+Return the remainder of one input divided by the other, using floating-point numbers.
 
-- **LOGIC_NEAREST_PO2** = **48** --- Return the nearest power of 2 to the input.
+.. _class_VisualScriptBuiltinFunc_constant_MATH_FPOSMOD:
 
-- **OBJ_WEAKREF** = **49** --- Create a :ref:`WeakRef<class_WeakRef>` from the input.
+.. rst-class:: classref-enumeration-constant
 
-- **FUNC_FUNCREF** = **50** --- Create a :ref:`FuncRef<class_FuncRef>` from the input.
+:ref:`BuiltinFunc<enum_VisualScriptBuiltinFunc_BuiltinFunc>` **MATH_FPOSMOD** = ``12``
 
-- **TYPE_CONVERT** = **51** --- Convert between types.
+Return the positive remainder of one input divided by the other, using floating-point numbers.
 
-- **TYPE_OF** = **52** --- Return the type of the input as an integer. Check :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` for the integers that might be returned.
+.. _class_VisualScriptBuiltinFunc_constant_MATH_FLOOR:
 
-- **TYPE_EXISTS** = **53** --- Checks if a type is registered in the :ref:`ClassDB<class_ClassDB>`.
+.. rst-class:: classref-enumeration-constant
 
-- **TEXT_CHAR** = **54** --- Return a character with the given ascii value.
+:ref:`BuiltinFunc<enum_VisualScriptBuiltinFunc_BuiltinFunc>` **MATH_FLOOR** = ``13``
 
-- **TEXT_STR** = **55** --- Convert the input to a string.
+Return the input rounded down.
 
-- **TEXT_PRINT** = **56** --- Print the given string to the output window.
+.. _class_VisualScriptBuiltinFunc_constant_MATH_CEIL:
 
-- **TEXT_PRINTERR** = **57** --- Print the given string to the standard error output.
+.. rst-class:: classref-enumeration-constant
 
-- **TEXT_PRINTRAW** = **58** --- Print the given string to the standard output, without adding a newline.
+:ref:`BuiltinFunc<enum_VisualScriptBuiltinFunc_BuiltinFunc>` **MATH_CEIL** = ``14``
 
-- **VAR_TO_STR** = **59** --- Serialize a :ref:`Variant<class_Variant>` to a string.
+Return the input rounded up.
 
-- **STR_TO_VAR** = **60** --- Deserialize a :ref:`Variant<class_Variant>` from a string serialized using :ref:`VAR_TO_STR<class_VisualScriptBuiltinFunc_constant_VAR_TO_STR>`.
+.. _class_VisualScriptBuiltinFunc_constant_MATH_ROUND:
 
-- **VAR_TO_BYTES** = **61** --- Serialize a :ref:`Variant<class_Variant>` to a :ref:`PoolByteArray<class_PoolByteArray>`.
+.. rst-class:: classref-enumeration-constant
 
-- **BYTES_TO_VAR** = **62** --- Deserialize a :ref:`Variant<class_Variant>` from a :ref:`PoolByteArray<class_PoolByteArray>` serialized using :ref:`VAR_TO_BYTES<class_VisualScriptBuiltinFunc_constant_VAR_TO_BYTES>`.
+:ref:`BuiltinFunc<enum_VisualScriptBuiltinFunc_BuiltinFunc>` **MATH_ROUND** = ``15``
 
-- **COLORN** = **63** --- Return the :ref:`Color<class_Color>` with the given name and alpha ranging from 0 to 1.
+Return the input rounded to the nearest integer.
+
+.. _class_VisualScriptBuiltinFunc_constant_MATH_ABS:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`BuiltinFunc<enum_VisualScriptBuiltinFunc_BuiltinFunc>` **MATH_ABS** = ``16``
+
+Return the absolute value of the input.
+
+.. _class_VisualScriptBuiltinFunc_constant_MATH_SIGN:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`BuiltinFunc<enum_VisualScriptBuiltinFunc_BuiltinFunc>` **MATH_SIGN** = ``17``
+
+Return the sign of the input, turning it into 1, -1, or 0. Useful to determine if the input is positive or negative.
+
+.. _class_VisualScriptBuiltinFunc_constant_MATH_POW:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`BuiltinFunc<enum_VisualScriptBuiltinFunc_BuiltinFunc>` **MATH_POW** = ``18``
+
+Return the input raised to a given power.
+
+.. _class_VisualScriptBuiltinFunc_constant_MATH_LOG:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`BuiltinFunc<enum_VisualScriptBuiltinFunc_BuiltinFunc>` **MATH_LOG** = ``19``
+
+Return the natural logarithm of the input. Note that this is not the typical base-10 logarithm function calculators use.
+
+.. _class_VisualScriptBuiltinFunc_constant_MATH_EXP:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`BuiltinFunc<enum_VisualScriptBuiltinFunc_BuiltinFunc>` **MATH_EXP** = ``20``
+
+Return the mathematical constant **e** raised to the specified power of the input. **e** has an approximate value of 2.71828.
+
+.. _class_VisualScriptBuiltinFunc_constant_MATH_ISNAN:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`BuiltinFunc<enum_VisualScriptBuiltinFunc_BuiltinFunc>` **MATH_ISNAN** = ``21``
+
+Return whether the input is NaN (Not a Number) or not. NaN is usually produced by dividing 0 by 0, though other ways exist.
+
+.. _class_VisualScriptBuiltinFunc_constant_MATH_ISINF:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`BuiltinFunc<enum_VisualScriptBuiltinFunc_BuiltinFunc>` **MATH_ISINF** = ``22``
+
+Return whether the input is an infinite floating-point number or not. Infinity is usually produced by dividing a number by 0, though other ways exist.
+
+.. _class_VisualScriptBuiltinFunc_constant_MATH_EASE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`BuiltinFunc<enum_VisualScriptBuiltinFunc_BuiltinFunc>` **MATH_EASE** = ``23``
+
+Easing function, based on exponent. 0 is constant, 1 is linear, 0 to 1 is ease-in, 1+ is ease out. Negative values are in-out/out in.
+
+.. _class_VisualScriptBuiltinFunc_constant_MATH_DECIMALS:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`BuiltinFunc<enum_VisualScriptBuiltinFunc_BuiltinFunc>` **MATH_DECIMALS** = ``24``
+
+Return the number of digit places after the decimal that the first non-zero digit occurs.
+
+.. _class_VisualScriptBuiltinFunc_constant_MATH_STEPIFY:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`BuiltinFunc<enum_VisualScriptBuiltinFunc_BuiltinFunc>` **MATH_STEPIFY** = ``25``
+
+Return the input snapped to a given step.
+
+.. _class_VisualScriptBuiltinFunc_constant_MATH_LERP:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`BuiltinFunc<enum_VisualScriptBuiltinFunc_BuiltinFunc>` **MATH_LERP** = ``26``
+
+Return a number linearly interpolated between the first two inputs, based on the third input. Uses the formula ``a + (a - b) * t``.
+
+.. _class_VisualScriptBuiltinFunc_constant_MATH_INVERSE_LERP:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`BuiltinFunc<enum_VisualScriptBuiltinFunc_BuiltinFunc>` **MATH_INVERSE_LERP** = ``27``
+
+
+
+.. _class_VisualScriptBuiltinFunc_constant_MATH_RANGE_LERP:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`BuiltinFunc<enum_VisualScriptBuiltinFunc_BuiltinFunc>` **MATH_RANGE_LERP** = ``28``
+
+
+
+.. _class_VisualScriptBuiltinFunc_constant_MATH_MOVE_TOWARD:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`BuiltinFunc<enum_VisualScriptBuiltinFunc_BuiltinFunc>` **MATH_MOVE_TOWARD** = ``29``
+
+Moves the number toward a value, based on the third input.
+
+.. _class_VisualScriptBuiltinFunc_constant_MATH_DECTIME:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`BuiltinFunc<enum_VisualScriptBuiltinFunc_BuiltinFunc>` **MATH_DECTIME** = ``30``
+
+Return the result of ``value`` decreased by ``step`` \* ``amount``.
+
+.. _class_VisualScriptBuiltinFunc_constant_MATH_RANDOMIZE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`BuiltinFunc<enum_VisualScriptBuiltinFunc_BuiltinFunc>` **MATH_RANDOMIZE** = ``31``
+
+Randomize the seed (or the internal state) of the random number generator. Current implementation reseeds using a number based on time.
+
+.. _class_VisualScriptBuiltinFunc_constant_MATH_RAND:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`BuiltinFunc<enum_VisualScriptBuiltinFunc_BuiltinFunc>` **MATH_RAND** = ``32``
+
+Return a random 32 bits integer value. To obtain a random value between 0 to N (where N is smaller than 2^32 - 1), you can use it with the remainder function.
+
+.. _class_VisualScriptBuiltinFunc_constant_MATH_RANDF:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`BuiltinFunc<enum_VisualScriptBuiltinFunc_BuiltinFunc>` **MATH_RANDF** = ``33``
+
+Return a random floating-point value between 0 and 1. To obtain a random value between 0 to N, you can use it with multiplication.
+
+.. _class_VisualScriptBuiltinFunc_constant_MATH_RANDOM:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`BuiltinFunc<enum_VisualScriptBuiltinFunc_BuiltinFunc>` **MATH_RANDOM** = ``34``
+
+Return a random floating-point value between the two inputs.
+
+.. _class_VisualScriptBuiltinFunc_constant_MATH_SEED:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`BuiltinFunc<enum_VisualScriptBuiltinFunc_BuiltinFunc>` **MATH_SEED** = ``35``
+
+Set the seed for the random number generator.
+
+.. _class_VisualScriptBuiltinFunc_constant_MATH_RANDSEED:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`BuiltinFunc<enum_VisualScriptBuiltinFunc_BuiltinFunc>` **MATH_RANDSEED** = ``36``
+
+Return a random value from the given seed, along with the new seed.
+
+.. _class_VisualScriptBuiltinFunc_constant_MATH_DEG2RAD:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`BuiltinFunc<enum_VisualScriptBuiltinFunc_BuiltinFunc>` **MATH_DEG2RAD** = ``37``
+
+Convert the input from degrees to radians.
+
+.. _class_VisualScriptBuiltinFunc_constant_MATH_RAD2DEG:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`BuiltinFunc<enum_VisualScriptBuiltinFunc_BuiltinFunc>` **MATH_RAD2DEG** = ``38``
+
+Convert the input from radians to degrees.
+
+.. _class_VisualScriptBuiltinFunc_constant_MATH_LINEAR2DB:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`BuiltinFunc<enum_VisualScriptBuiltinFunc_BuiltinFunc>` **MATH_LINEAR2DB** = ``39``
+
+Convert the input from linear volume to decibel volume.
+
+.. _class_VisualScriptBuiltinFunc_constant_MATH_DB2LINEAR:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`BuiltinFunc<enum_VisualScriptBuiltinFunc_BuiltinFunc>` **MATH_DB2LINEAR** = ``40``
+
+Convert the input from decibel volume to linear volume.
+
+.. _class_VisualScriptBuiltinFunc_constant_MATH_POLAR2CARTESIAN:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`BuiltinFunc<enum_VisualScriptBuiltinFunc_BuiltinFunc>` **MATH_POLAR2CARTESIAN** = ``41``
+
+Converts a 2D point expressed in the polar coordinate system (a distance from the origin ``r`` and an angle ``th``) to the cartesian coordinate system (X and Y axis).
+
+.. _class_VisualScriptBuiltinFunc_constant_MATH_CARTESIAN2POLAR:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`BuiltinFunc<enum_VisualScriptBuiltinFunc_BuiltinFunc>` **MATH_CARTESIAN2POLAR** = ``42``
+
+Converts a 2D point expressed in the cartesian coordinate system (X and Y axis) to the polar coordinate system (a distance from the origin and an angle).
+
+.. _class_VisualScriptBuiltinFunc_constant_MATH_WRAP:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`BuiltinFunc<enum_VisualScriptBuiltinFunc_BuiltinFunc>` **MATH_WRAP** = ``43``
+
+
+
+.. _class_VisualScriptBuiltinFunc_constant_MATH_WRAPF:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`BuiltinFunc<enum_VisualScriptBuiltinFunc_BuiltinFunc>` **MATH_WRAPF** = ``44``
+
+
+
+.. _class_VisualScriptBuiltinFunc_constant_LOGIC_MAX:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`BuiltinFunc<enum_VisualScriptBuiltinFunc_BuiltinFunc>` **LOGIC_MAX** = ``45``
+
+Return the greater of the two numbers, also known as their maximum.
+
+.. _class_VisualScriptBuiltinFunc_constant_LOGIC_MIN:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`BuiltinFunc<enum_VisualScriptBuiltinFunc_BuiltinFunc>` **LOGIC_MIN** = ``46``
+
+Return the lesser of the two numbers, also known as their minimum.
+
+.. _class_VisualScriptBuiltinFunc_constant_LOGIC_CLAMP:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`BuiltinFunc<enum_VisualScriptBuiltinFunc_BuiltinFunc>` **LOGIC_CLAMP** = ``47``
+
+Return the input clamped inside the given range, ensuring the result is never outside it. Equivalent to ``min(max(input, range_low), range_high)``.
+
+.. _class_VisualScriptBuiltinFunc_constant_LOGIC_NEAREST_PO2:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`BuiltinFunc<enum_VisualScriptBuiltinFunc_BuiltinFunc>` **LOGIC_NEAREST_PO2** = ``48``
+
+Return the nearest power of 2 to the input.
+
+.. _class_VisualScriptBuiltinFunc_constant_OBJ_WEAKREF:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`BuiltinFunc<enum_VisualScriptBuiltinFunc_BuiltinFunc>` **OBJ_WEAKREF** = ``49``
+
+Create a :ref:`WeakRef<class_WeakRef>` from the input.
+
+.. _class_VisualScriptBuiltinFunc_constant_FUNC_FUNCREF:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`BuiltinFunc<enum_VisualScriptBuiltinFunc_BuiltinFunc>` **FUNC_FUNCREF** = ``50``
+
+Create a :ref:`FuncRef<class_FuncRef>` from the input.
+
+.. _class_VisualScriptBuiltinFunc_constant_TYPE_CONVERT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`BuiltinFunc<enum_VisualScriptBuiltinFunc_BuiltinFunc>` **TYPE_CONVERT** = ``51``
+
+Convert between types.
+
+.. _class_VisualScriptBuiltinFunc_constant_TYPE_OF:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`BuiltinFunc<enum_VisualScriptBuiltinFunc_BuiltinFunc>` **TYPE_OF** = ``52``
+
+Return the type of the input as an integer. Check :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` for the integers that might be returned.
+
+.. _class_VisualScriptBuiltinFunc_constant_TYPE_EXISTS:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`BuiltinFunc<enum_VisualScriptBuiltinFunc_BuiltinFunc>` **TYPE_EXISTS** = ``53``
+
+Checks if a type is registered in the :ref:`ClassDB<class_ClassDB>`.
+
+.. _class_VisualScriptBuiltinFunc_constant_TEXT_CHAR:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`BuiltinFunc<enum_VisualScriptBuiltinFunc_BuiltinFunc>` **TEXT_CHAR** = ``54``
+
+Return a character with the given ascii value.
+
+.. _class_VisualScriptBuiltinFunc_constant_TEXT_STR:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`BuiltinFunc<enum_VisualScriptBuiltinFunc_BuiltinFunc>` **TEXT_STR** = ``55``
+
+Convert the input to a string.
+
+.. _class_VisualScriptBuiltinFunc_constant_TEXT_PRINT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`BuiltinFunc<enum_VisualScriptBuiltinFunc_BuiltinFunc>` **TEXT_PRINT** = ``56``
+
+Print the given string to the output window.
+
+.. _class_VisualScriptBuiltinFunc_constant_TEXT_PRINTERR:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`BuiltinFunc<enum_VisualScriptBuiltinFunc_BuiltinFunc>` **TEXT_PRINTERR** = ``57``
+
+Print the given string to the standard error output.
+
+.. _class_VisualScriptBuiltinFunc_constant_TEXT_PRINTRAW:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`BuiltinFunc<enum_VisualScriptBuiltinFunc_BuiltinFunc>` **TEXT_PRINTRAW** = ``58``
+
+Print the given string to the standard output, without adding a newline.
+
+.. _class_VisualScriptBuiltinFunc_constant_VAR_TO_STR:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`BuiltinFunc<enum_VisualScriptBuiltinFunc_BuiltinFunc>` **VAR_TO_STR** = ``59``
+
+Serialize a :ref:`Variant<class_Variant>` to a string.
+
+.. _class_VisualScriptBuiltinFunc_constant_STR_TO_VAR:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`BuiltinFunc<enum_VisualScriptBuiltinFunc_BuiltinFunc>` **STR_TO_VAR** = ``60``
+
+Deserialize a :ref:`Variant<class_Variant>` from a string serialized using :ref:`VAR_TO_STR<class_VisualScriptBuiltinFunc_constant_VAR_TO_STR>`.
+
+.. _class_VisualScriptBuiltinFunc_constant_VAR_TO_BYTES:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`BuiltinFunc<enum_VisualScriptBuiltinFunc_BuiltinFunc>` **VAR_TO_BYTES** = ``61``
+
+Serialize a :ref:`Variant<class_Variant>` to a :ref:`PoolByteArray<class_PoolByteArray>`.
+
+.. _class_VisualScriptBuiltinFunc_constant_BYTES_TO_VAR:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`BuiltinFunc<enum_VisualScriptBuiltinFunc_BuiltinFunc>` **BYTES_TO_VAR** = ``62``
+
+Deserialize a :ref:`Variant<class_Variant>` from a :ref:`PoolByteArray<class_PoolByteArray>` serialized using :ref:`VAR_TO_BYTES<class_VisualScriptBuiltinFunc_constant_VAR_TO_BYTES>`.
+
+.. _class_VisualScriptBuiltinFunc_constant_COLORN:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`BuiltinFunc<enum_VisualScriptBuiltinFunc_BuiltinFunc>` **COLORN** = ``63``
+
+Return the :ref:`Color<class_Color>` with the given name and alpha ranging from 0 to 1.
 
 \ **Note:** Names are defined in ``color_names.inc``.
 
-- **MATH_SMOOTHSTEP** = **64** --- Return a number smoothly interpolated between the first two inputs, based on the third input. Similar to :ref:`MATH_LERP<class_VisualScriptBuiltinFunc_constant_MATH_LERP>`, but interpolates faster at the beginning and slower at the end. Using Hermite interpolation formula:
+.. _class_VisualScriptBuiltinFunc_constant_MATH_SMOOTHSTEP:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`BuiltinFunc<enum_VisualScriptBuiltinFunc_BuiltinFunc>` **MATH_SMOOTHSTEP** = ``64``
+
+Return a number smoothly interpolated between the first two inputs, based on the third input. Similar to :ref:`MATH_LERP<class_VisualScriptBuiltinFunc_constant_MATH_LERP>`, but interpolates faster at the beginning and slower at the end. Using Hermite interpolation formula:
 
 ::
 
     var t = clamp((weight - from) / (to - from), 0.0, 1.0)
     return t * t * (3.0 - 2.0 * t)
 
-- **MATH_POSMOD** = **65**
+.. _class_VisualScriptBuiltinFunc_constant_MATH_POSMOD:
 
-- **MATH_LERP_ANGLE** = **66**
+.. rst-class:: classref-enumeration-constant
 
-- **TEXT_ORD** = **67**
+:ref:`BuiltinFunc<enum_VisualScriptBuiltinFunc_BuiltinFunc>` **MATH_POSMOD** = ``65``
 
-- **FUNC_MAX** = **68** --- Represents the size of the :ref:`BuiltinFunc<enum_VisualScriptBuiltinFunc_BuiltinFunc>` enum.
+
+
+.. _class_VisualScriptBuiltinFunc_constant_MATH_LERP_ANGLE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`BuiltinFunc<enum_VisualScriptBuiltinFunc_BuiltinFunc>` **MATH_LERP_ANGLE** = ``66``
+
+
+
+.. _class_VisualScriptBuiltinFunc_constant_TEXT_ORD:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`BuiltinFunc<enum_VisualScriptBuiltinFunc_BuiltinFunc>` **TEXT_ORD** = ``67``
+
+
+
+.. _class_VisualScriptBuiltinFunc_constant_FUNC_MAX:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`BuiltinFunc<enum_VisualScriptBuiltinFunc_BuiltinFunc>` **FUNC_MAX** = ``68``
+
+Represents the size of the :ref:`BuiltinFunc<enum_VisualScriptBuiltinFunc_BuiltinFunc>` enum.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_VisualScriptBuiltinFunc_property_function:
 
-- :ref:`BuiltinFunc<enum_VisualScriptBuiltinFunc_BuiltinFunc>` **function**
+.. rst-class:: classref-property
 
-+-----------+-----------------+
-| *Default* | ``0``           |
-+-----------+-----------------+
-| *Setter*  | set_func(value) |
-+-----------+-----------------+
-| *Getter*  | get_func()      |
-+-----------+-----------------+
+:ref:`BuiltinFunc<enum_VisualScriptBuiltinFunc_BuiltinFunc>` **function** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_func** **(** :ref:`BuiltinFunc<enum_VisualScriptBuiltinFunc_BuiltinFunc>` value **)**
+- :ref:`BuiltinFunc<enum_VisualScriptBuiltinFunc_BuiltinFunc>` **get_func** **(** **)**
 
 The function to be executed.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

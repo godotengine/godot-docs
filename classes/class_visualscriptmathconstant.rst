@@ -14,6 +14,8 @@ VisualScriptMathConstant
 
 Commonly used mathematical constants.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -27,73 +29,128 @@ none
 
 - Data (variant): ``get``
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-----------------------------------------------------------------+-------------------------------------------------------------------+-------+
-| :ref:`MathConstant<enum_VisualScriptMathConstant_MathConstant>` | :ref:`constant<class_VisualScriptMathConstant_property_constant>` | ``0`` |
-+-----------------------------------------------------------------+-------------------------------------------------------------------+-------+
+.. table::
+   :widths: auto
+
+   +-----------------------------------------------------------------+-------------------------------------------------------------------+-------+
+   | :ref:`MathConstant<enum_VisualScriptMathConstant_MathConstant>` | :ref:`constant<class_VisualScriptMathConstant_property_constant>` | ``0`` |
+   +-----------------------------------------------------------------+-------------------------------------------------------------------+-------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Enumerations
 ------------
 
 .. _enum_VisualScriptMathConstant_MathConstant:
 
-.. _class_VisualScriptMathConstant_constant_MATH_CONSTANT_ONE:
-
-.. _class_VisualScriptMathConstant_constant_MATH_CONSTANT_PI:
-
-.. _class_VisualScriptMathConstant_constant_MATH_CONSTANT_HALF_PI:
-
-.. _class_VisualScriptMathConstant_constant_MATH_CONSTANT_TAU:
-
-.. _class_VisualScriptMathConstant_constant_MATH_CONSTANT_E:
-
-.. _class_VisualScriptMathConstant_constant_MATH_CONSTANT_SQRT2:
-
-.. _class_VisualScriptMathConstant_constant_MATH_CONSTANT_INF:
-
-.. _class_VisualScriptMathConstant_constant_MATH_CONSTANT_NAN:
-
-.. _class_VisualScriptMathConstant_constant_MATH_CONSTANT_MAX:
+.. rst-class:: classref-enumeration
 
 enum **MathConstant**:
 
-- **MATH_CONSTANT_ONE** = **0** --- Unity: ``1``.
+.. _class_VisualScriptMathConstant_constant_MATH_CONSTANT_ONE:
 
-- **MATH_CONSTANT_PI** = **1** --- Pi: ``3.141593``.
+.. rst-class:: classref-enumeration-constant
 
-- **MATH_CONSTANT_HALF_PI** = **2** --- Pi divided by two: ``1.570796``.
+:ref:`MathConstant<enum_VisualScriptMathConstant_MathConstant>` **MATH_CONSTANT_ONE** = ``0``
 
-- **MATH_CONSTANT_TAU** = **3** --- Tau: ``6.283185``.
+Unity: ``1``.
 
-- **MATH_CONSTANT_E** = **4** --- Mathematical constant ``e``, the natural log base: ``2.718282``.
+.. _class_VisualScriptMathConstant_constant_MATH_CONSTANT_PI:
 
-- **MATH_CONSTANT_SQRT2** = **5** --- Square root of two: ``1.414214``.
+.. rst-class:: classref-enumeration-constant
 
-- **MATH_CONSTANT_INF** = **6** --- Infinity: ``inf``.
+:ref:`MathConstant<enum_VisualScriptMathConstant_MathConstant>` **MATH_CONSTANT_PI** = ``1``
 
-- **MATH_CONSTANT_NAN** = **7** --- Not a number: ``nan``.
+Pi: ``3.141593``.
 
-- **MATH_CONSTANT_MAX** = **8** --- Represents the size of the :ref:`MathConstant<enum_VisualScriptMathConstant_MathConstant>` enum.
+.. _class_VisualScriptMathConstant_constant_MATH_CONSTANT_HALF_PI:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`MathConstant<enum_VisualScriptMathConstant_MathConstant>` **MATH_CONSTANT_HALF_PI** = ``2``
+
+Pi divided by two: ``1.570796``.
+
+.. _class_VisualScriptMathConstant_constant_MATH_CONSTANT_TAU:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`MathConstant<enum_VisualScriptMathConstant_MathConstant>` **MATH_CONSTANT_TAU** = ``3``
+
+Tau: ``6.283185``.
+
+.. _class_VisualScriptMathConstant_constant_MATH_CONSTANT_E:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`MathConstant<enum_VisualScriptMathConstant_MathConstant>` **MATH_CONSTANT_E** = ``4``
+
+Mathematical constant ``e``, the natural log base: ``2.718282``.
+
+.. _class_VisualScriptMathConstant_constant_MATH_CONSTANT_SQRT2:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`MathConstant<enum_VisualScriptMathConstant_MathConstant>` **MATH_CONSTANT_SQRT2** = ``5``
+
+Square root of two: ``1.414214``.
+
+.. _class_VisualScriptMathConstant_constant_MATH_CONSTANT_INF:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`MathConstant<enum_VisualScriptMathConstant_MathConstant>` **MATH_CONSTANT_INF** = ``6``
+
+Infinity: ``inf``.
+
+.. _class_VisualScriptMathConstant_constant_MATH_CONSTANT_NAN:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`MathConstant<enum_VisualScriptMathConstant_MathConstant>` **MATH_CONSTANT_NAN** = ``7``
+
+Not a number: ``nan``.
+
+.. _class_VisualScriptMathConstant_constant_MATH_CONSTANT_MAX:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`MathConstant<enum_VisualScriptMathConstant_MathConstant>` **MATH_CONSTANT_MAX** = ``8``
+
+Represents the size of the :ref:`MathConstant<enum_VisualScriptMathConstant_MathConstant>` enum.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_VisualScriptMathConstant_property_constant:
 
-- :ref:`MathConstant<enum_VisualScriptMathConstant_MathConstant>` **constant**
+.. rst-class:: classref-property
 
-+-----------+--------------------------+
-| *Default* | ``0``                    |
-+-----------+--------------------------+
-| *Setter*  | set_math_constant(value) |
-+-----------+--------------------------+
-| *Getter*  | get_math_constant()      |
-+-----------+--------------------------+
+:ref:`MathConstant<enum_VisualScriptMathConstant_MathConstant>` **constant** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_math_constant** **(** :ref:`MathConstant<enum_VisualScriptMathConstant_MathConstant>` value **)**
+- :ref:`MathConstant<enum_VisualScriptMathConstant_MathConstant>` **get_math_constant** **(** **)**
 
 The math constant.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

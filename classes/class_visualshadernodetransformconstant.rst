@@ -14,35 +14,48 @@ VisualShaderNodeTransformConstant
 
 A :ref:`Transform<class_Transform>` constant for use within the visual shader graph.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 A constant :ref:`Transform<class_Transform>`, which can be used as an input node.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-----------------------------------+----------------------------------------------------------------------------+-----------------------------------------------------+
-| :ref:`Transform<class_Transform>` | :ref:`constant<class_VisualShaderNodeTransformConstant_property_constant>` | ``Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )`` |
-+-----------------------------------+----------------------------------------------------------------------------+-----------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-----------------------------------+----------------------------------------------------------------------------+-----------------------------------------------------+
+   | :ref:`Transform<class_Transform>` | :ref:`constant<class_VisualShaderNodeTransformConstant_property_constant>` | ``Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )`` |
+   +-----------------------------------+----------------------------------------------------------------------------+-----------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_VisualShaderNodeTransformConstant_property_constant:
 
-- :ref:`Transform<class_Transform>` **constant**
+.. rst-class:: classref-property
 
-+-----------+-----------------------------------------------------+
-| *Default* | ``Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )`` |
-+-----------+-----------------------------------------------------+
-| *Setter*  | set_constant(value)                                 |
-+-----------+-----------------------------------------------------+
-| *Getter*  | get_constant()                                      |
-+-----------+-----------------------------------------------------+
+:ref:`Transform<class_Transform>` **constant** = ``Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )``
+
+.. rst-class:: classref-property-setget
+
+- void **set_constant** **(** :ref:`Transform<class_Transform>` value **)**
+- :ref:`Transform<class_Transform>` **get_constant** **(** **)**
 
 A :ref:`Transform<class_Transform>` constant which represents the state of this node.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

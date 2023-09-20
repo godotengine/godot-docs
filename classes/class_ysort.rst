@@ -14,6 +14,8 @@ YSort
 
 Sort all child nodes based on their Y positions.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -21,30 +23,41 @@ Sort all child nodes based on their Y positions. The child node must inherit fro
 
 Nesting of YSort nodes is possible. Children YSort nodes will be sorted in the same space as the parent YSort, allowing to better organize a scene or divide it in multiple ones, yet keep the unique sorting.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-------------------------+--------------------------------------------------------+----------+
-| :ref:`bool<class_bool>` | :ref:`sort_enabled<class_YSort_property_sort_enabled>` | ``true`` |
-+-------------------------+--------------------------------------------------------+----------+
+.. table::
+   :widths: auto
+
+   +-------------------------+--------------------------------------------------------+----------+
+   | :ref:`bool<class_bool>` | :ref:`sort_enabled<class_YSort_property_sort_enabled>` | ``true`` |
+   +-------------------------+--------------------------------------------------------+----------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_YSort_property_sort_enabled:
 
-- :ref:`bool<class_bool>` **sort_enabled**
+.. rst-class:: classref-property
 
-+-----------+-------------------------+
-| *Default* | ``true``                |
-+-----------+-------------------------+
-| *Setter*  | set_sort_enabled(value) |
-+-----------+-------------------------+
-| *Getter*  | is_sort_enabled()       |
-+-----------+-------------------------+
+:ref:`bool<class_bool>` **sort_enabled** = ``true``
+
+.. rst-class:: classref-property-setget
+
+- void **set_sort_enabled** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_sort_enabled** **(** **)**
 
 If ``true``, child nodes are sorted, otherwise sorting is disabled.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

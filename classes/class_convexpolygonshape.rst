@@ -14,40 +14,55 @@ ConvexPolygonShape
 
 Convex polygon shape for 3D physics.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 Convex polygon shape resource, which can be added to a :ref:`PhysicsBody<class_PhysicsBody>` or area.
+
+.. rst-class:: classref-introduction-group
 
 Tutorials
 ---------
 
 - `3D Physics Tests Demo <https://godotengine.org/asset-library/asset/675>`__
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-------------------------------------------------+---------------------------------------------------------+--------------------------+
-| :ref:`PoolVector3Array<class_PoolVector3Array>` | :ref:`points<class_ConvexPolygonShape_property_points>` | ``PoolVector3Array(  )`` |
-+-------------------------------------------------+---------------------------------------------------------+--------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------------------------------+---------------------------------------------------------+--------------------------+
+   | :ref:`PoolVector3Array<class_PoolVector3Array>` | :ref:`points<class_ConvexPolygonShape_property_points>` | ``PoolVector3Array(  )`` |
+   +-------------------------------------------------+---------------------------------------------------------+--------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_ConvexPolygonShape_property_points:
 
-- :ref:`PoolVector3Array<class_PoolVector3Array>` **points**
+.. rst-class:: classref-property
 
-+-----------+--------------------------+
-| *Default* | ``PoolVector3Array(  )`` |
-+-----------+--------------------------+
-| *Setter*  | set_points(value)        |
-+-----------+--------------------------+
-| *Getter*  | get_points()             |
-+-----------+--------------------------+
+:ref:`PoolVector3Array<class_PoolVector3Array>` **points** = ``PoolVector3Array(  )``
+
+.. rst-class:: classref-property-setget
+
+- void **set_points** **(** :ref:`PoolVector3Array<class_PoolVector3Array>` value **)**
+- :ref:`PoolVector3Array<class_PoolVector3Array>` **get_points** **(** **)**
 
 The list of 3D points forming the convex polygon shape.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

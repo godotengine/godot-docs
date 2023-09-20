@@ -14,6 +14,8 @@ VisualScriptReturn
 
 Exits a function and returns an optional value.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -29,48 +31,60 @@ Ends the execution of a function and returns control to the calling function. Op
 
 none
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-----------------------------------------------------+-------------------------------------------------------------------------+-----------+
-| :ref:`bool<class_bool>`                             | :ref:`return_enabled<class_VisualScriptReturn_property_return_enabled>` | ``false`` |
-+-----------------------------------------------------+-------------------------------------------------------------------------+-----------+
-| :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` | :ref:`return_type<class_VisualScriptReturn_property_return_type>`       | ``0``     |
-+-----------------------------------------------------+-------------------------------------------------------------------------+-----------+
+.. table::
+   :widths: auto
+
+   +-----------------------------------------------------+-------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`                             | :ref:`return_enabled<class_VisualScriptReturn_property_return_enabled>` | ``false`` |
+   +-----------------------------------------------------+-------------------------------------------------------------------------+-----------+
+   | :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` | :ref:`return_type<class_VisualScriptReturn_property_return_type>`       | ``0``     |
+   +-----------------------------------------------------+-------------------------------------------------------------------------+-----------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_VisualScriptReturn_property_return_enabled:
 
-- :ref:`bool<class_bool>` **return_enabled**
+.. rst-class:: classref-property
 
-+-----------+--------------------------------+
-| *Default* | ``false``                      |
-+-----------+--------------------------------+
-| *Setter*  | set_enable_return_value(value) |
-+-----------+--------------------------------+
-| *Getter*  | is_return_value_enabled()      |
-+-----------+--------------------------------+
+:ref:`bool<class_bool>` **return_enabled** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_enable_return_value** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_return_value_enabled** **(** **)**
 
 If ``true``, the ``return`` input port is available.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_VisualScriptReturn_property_return_type:
 
-- :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` **return_type**
+.. rst-class:: classref-property
 
-+-----------+------------------------+
-| *Default* | ``0``                  |
-+-----------+------------------------+
-| *Setter*  | set_return_type(value) |
-+-----------+------------------------+
-| *Getter*  | get_return_type()      |
-+-----------+------------------------+
+:ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` **return_type** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_return_type** **(** :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` value **)**
+- :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` **get_return_type** **(** **)**
 
 The return value's data type.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

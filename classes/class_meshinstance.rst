@@ -16,10 +16,14 @@ MeshInstance
 
 Node that instances meshes into a scenario.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 MeshInstance is a node that takes a :ref:`Mesh<class_Mesh>` resource and adds it to the current scenario by creating an instance of it. This is the class most often used to get 3D geometry rendered and can be used to instance a single :ref:`Mesh<class_Mesh>` in many places. This allows reusing geometry, which can save on resources. When a :ref:`Mesh<class_Mesh>` has to be instanced more than thousands of times at close proximity, consider using a :ref:`MultiMesh<class_MultiMesh>` in a :ref:`MultiMeshInstance<class_MultiMeshInstance>` instead.
+
+.. rst-class:: classref-introduction-group
 
 Tutorials
 ---------
@@ -32,113 +36,143 @@ Tutorials
 
 - `Third Person Shooter Demo <https://godotengine.org/asset-library/asset/678>`__
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+---------------------------------+-------------------------------------------------------------------------------------------------------------+--------------------+
-| :ref:`Mesh<class_Mesh>`         | :ref:`mesh<class_MeshInstance_property_mesh>`                                                               |                    |
-+---------------------------------+-------------------------------------------------------------------------------------------------------------+--------------------+
-| :ref:`NodePath<class_NodePath>` | :ref:`skeleton<class_MeshInstance_property_skeleton>`                                                       | ``NodePath("..")`` |
-+---------------------------------+-------------------------------------------------------------------------------------------------------------+--------------------+
-| :ref:`Skin<class_Skin>`         | :ref:`skin<class_MeshInstance_property_skin>`                                                               |                    |
-+---------------------------------+-------------------------------------------------------------------------------------------------------------+--------------------+
-| :ref:`bool<class_bool>`         | :ref:`software_skinning_transform_normals<class_MeshInstance_property_software_skinning_transform_normals>` | ``true``           |
-+---------------------------------+-------------------------------------------------------------------------------------------------------------+--------------------+
+.. table::
+   :widths: auto
+
+   +---------------------------------+-------------------------------------------------------------------------------------------------------------+--------------------+
+   | :ref:`Mesh<class_Mesh>`         | :ref:`mesh<class_MeshInstance_property_mesh>`                                                               |                    |
+   +---------------------------------+-------------------------------------------------------------------------------------------------------------+--------------------+
+   | :ref:`NodePath<class_NodePath>` | :ref:`skeleton<class_MeshInstance_property_skeleton>`                                                       | ``NodePath("..")`` |
+   +---------------------------------+-------------------------------------------------------------------------------------------------------------+--------------------+
+   | :ref:`Skin<class_Skin>`         | :ref:`skin<class_MeshInstance_property_skin>`                                                               |                    |
+   +---------------------------------+-------------------------------------------------------------------------------------------------------------+--------------------+
+   | :ref:`bool<class_bool>`         | :ref:`software_skinning_transform_normals<class_MeshInstance_property_software_skinning_transform_normals>` | ``true``           |
+   +---------------------------------+-------------------------------------------------------------------------------------------------------------+--------------------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                            | :ref:`create_convex_collision<class_MeshInstance_method_create_convex_collision>` **(** :ref:`bool<class_bool>` clean=true, :ref:`bool<class_bool>` simplify=false **)**                                                |
-+---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                            | :ref:`create_debug_tangents<class_MeshInstance_method_create_debug_tangents>` **(** **)**                                                                                                                               |
-+---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                            | :ref:`create_multiple_convex_collisions<class_MeshInstance_method_create_multiple_convex_collisions>` **(** **)**                                                                                                       |
-+---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                            | :ref:`create_trimesh_collision<class_MeshInstance_method_create_trimesh_collision>` **(** **)**                                                                                                                         |
-+---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Material<class_Material>` | :ref:`get_active_material<class_MeshInstance_method_get_active_material>` **(** :ref:`int<class_int>` surface **)** |const|                                                                                             |
-+---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Material<class_Material>` | :ref:`get_surface_material<class_MeshInstance_method_get_surface_material>` **(** :ref:`int<class_int>` surface **)** |const|                                                                                           |
-+---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`           | :ref:`get_surface_material_count<class_MeshInstance_method_get_surface_material_count>` **(** **)** |const|                                                                                                             |
-+---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`         | :ref:`is_mergeable_with<class_MeshInstance_method_is_mergeable_with>` **(** :ref:`Node<class_Node>` other_mesh_instance **)** |const|                                                                                   |
-+---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`         | :ref:`merge_meshes<class_MeshInstance_method_merge_meshes>` **(** :ref:`Array<class_Array>` mesh_instances=[  ], :ref:`bool<class_bool>` use_global_space=false, :ref:`bool<class_bool>` check_compatibility=true **)** |
-+---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                            | :ref:`set_surface_material<class_MeshInstance_method_set_surface_material>` **(** :ref:`int<class_int>` surface, :ref:`Material<class_Material>` material **)**                                                         |
-+---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                            | :ref:`create_convex_collision<class_MeshInstance_method_create_convex_collision>` **(** :ref:`bool<class_bool>` clean=true, :ref:`bool<class_bool>` simplify=false **)**                                                |
+   +---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                            | :ref:`create_debug_tangents<class_MeshInstance_method_create_debug_tangents>` **(** **)**                                                                                                                               |
+   +---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                            | :ref:`create_multiple_convex_collisions<class_MeshInstance_method_create_multiple_convex_collisions>` **(** **)**                                                                                                       |
+   +---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                            | :ref:`create_trimesh_collision<class_MeshInstance_method_create_trimesh_collision>` **(** **)**                                                                                                                         |
+   +---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Material<class_Material>` | :ref:`get_active_material<class_MeshInstance_method_get_active_material>` **(** :ref:`int<class_int>` surface **)** |const|                                                                                             |
+   +---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Material<class_Material>` | :ref:`get_surface_material<class_MeshInstance_method_get_surface_material>` **(** :ref:`int<class_int>` surface **)** |const|                                                                                           |
+   +---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`           | :ref:`get_surface_material_count<class_MeshInstance_method_get_surface_material_count>` **(** **)** |const|                                                                                                             |
+   +---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`         | :ref:`is_mergeable_with<class_MeshInstance_method_is_mergeable_with>` **(** :ref:`Node<class_Node>` other_mesh_instance **)** |const|                                                                                   |
+   +---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`         | :ref:`merge_meshes<class_MeshInstance_method_merge_meshes>` **(** :ref:`Array<class_Array>` mesh_instances=[  ], :ref:`bool<class_bool>` use_global_space=false, :ref:`bool<class_bool>` check_compatibility=true **)** |
+   +---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                            | :ref:`set_surface_material<class_MeshInstance_method_set_surface_material>` **(** :ref:`int<class_int>` surface, :ref:`Material<class_Material>` material **)**                                                         |
+   +---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_MeshInstance_property_mesh:
 
-- :ref:`Mesh<class_Mesh>` **mesh**
+.. rst-class:: classref-property
 
-+----------+-----------------+
-| *Setter* | set_mesh(value) |
-+----------+-----------------+
-| *Getter* | get_mesh()      |
-+----------+-----------------+
+:ref:`Mesh<class_Mesh>` **mesh**
+
+.. rst-class:: classref-property-setget
+
+- void **set_mesh** **(** :ref:`Mesh<class_Mesh>` value **)**
+- :ref:`Mesh<class_Mesh>` **get_mesh** **(** **)**
 
 The :ref:`Mesh<class_Mesh>` resource for the instance.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_MeshInstance_property_skeleton:
 
-- :ref:`NodePath<class_NodePath>` **skeleton**
+.. rst-class:: classref-property
 
-+-----------+--------------------------+
-| *Default* | ``NodePath("..")``       |
-+-----------+--------------------------+
-| *Setter*  | set_skeleton_path(value) |
-+-----------+--------------------------+
-| *Getter*  | get_skeleton_path()      |
-+-----------+--------------------------+
+:ref:`NodePath<class_NodePath>` **skeleton** = ``NodePath("..")``
+
+.. rst-class:: classref-property-setget
+
+- void **set_skeleton_path** **(** :ref:`NodePath<class_NodePath>` value **)**
+- :ref:`NodePath<class_NodePath>` **get_skeleton_path** **(** **)**
 
 :ref:`NodePath<class_NodePath>` to the :ref:`Skeleton<class_Skeleton>` associated with the instance.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_MeshInstance_property_skin:
 
-- :ref:`Skin<class_Skin>` **skin**
+.. rst-class:: classref-property
 
-+----------+-----------------+
-| *Setter* | set_skin(value) |
-+----------+-----------------+
-| *Getter* | get_skin()      |
-+----------+-----------------+
+:ref:`Skin<class_Skin>` **skin**
+
+.. rst-class:: classref-property-setget
+
+- void **set_skin** **(** :ref:`Skin<class_Skin>` value **)**
+- :ref:`Skin<class_Skin>` **get_skin** **(** **)**
 
 Sets the skin to be used by this instance.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_MeshInstance_property_software_skinning_transform_normals:
 
-- :ref:`bool<class_bool>` **software_skinning_transform_normals**
+.. rst-class:: classref-property
 
-+-----------+--------------------------------------------------+
-| *Default* | ``true``                                         |
-+-----------+--------------------------------------------------+
-| *Setter*  | set_software_skinning_transform_normals(value)   |
-+-----------+--------------------------------------------------+
-| *Getter*  | is_software_skinning_transform_normals_enabled() |
-+-----------+--------------------------------------------------+
+:ref:`bool<class_bool>` **software_skinning_transform_normals** = ``true``
+
+.. rst-class:: classref-property-setget
+
+- void **set_software_skinning_transform_normals** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_software_skinning_transform_normals_enabled** **(** **)**
 
 If ``true``, normals are transformed when software skinning is used. Set to ``false`` when normals are not needed for better performance.
 
 See :ref:`ProjectSettings.rendering/quality/skinning/software_skinning_fallback<class_ProjectSettings_property_rendering/quality/skinning/software_skinning_fallback>` for details about how software skinning is enabled.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_MeshInstance_method_create_convex_collision:
 
-- void **create_convex_collision** **(** :ref:`bool<class_bool>` clean=true, :ref:`bool<class_bool>` simplify=false **)**
+.. rst-class:: classref-method
+
+void **create_convex_collision** **(** :ref:`bool<class_bool>` clean=true, :ref:`bool<class_bool>` simplify=false **)**
 
 This helper creates a :ref:`StaticBody<class_StaticBody>` child node with a :ref:`ConvexPolygonShape<class_ConvexPolygonShape>` collision shape calculated from the mesh geometry. It's mainly used for testing.
 
@@ -146,92 +180,129 @@ If ``clean`` is ``true`` (default), duplicate and interior vertices are removed 
 
 If ``simplify`` is ``true``, the geometry can be further simplified to reduce the amount of vertices. Disabled by default.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_MeshInstance_method_create_debug_tangents:
 
-- void **create_debug_tangents** **(** **)**
+.. rst-class:: classref-method
 
-This helper creates a ``MeshInstance`` child node with gizmos at every vertex calculated from the mesh geometry. It's mainly used for testing.
+void **create_debug_tangents** **(** **)**
+
+This helper creates a **MeshInstance** child node with gizmos at every vertex calculated from the mesh geometry. It's mainly used for testing.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_MeshInstance_method_create_multiple_convex_collisions:
 
-- void **create_multiple_convex_collisions** **(** **)**
+.. rst-class:: classref-method
+
+void **create_multiple_convex_collisions** **(** **)**
 
 This helper creates a :ref:`StaticBody<class_StaticBody>` child node with multiple :ref:`ConvexPolygonShape<class_ConvexPolygonShape>` collision shapes calculated from the mesh geometry via convex decomposition. It's mainly used for testing.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_MeshInstance_method_create_trimesh_collision:
 
-- void **create_trimesh_collision** **(** **)**
+.. rst-class:: classref-method
+
+void **create_trimesh_collision** **(** **)**
 
 This helper creates a :ref:`StaticBody<class_StaticBody>` child node with a :ref:`ConcavePolygonShape<class_ConcavePolygonShape>` collision shape calculated from the mesh geometry. It's mainly used for testing.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_MeshInstance_method_get_active_material:
 
-- :ref:`Material<class_Material>` **get_active_material** **(** :ref:`int<class_int>` surface **)** |const|
+.. rst-class:: classref-method
 
-Returns the :ref:`Material<class_Material>` that will be used by the :ref:`Mesh<class_Mesh>` when drawing. This can return the :ref:`GeometryInstance.material_override<class_GeometryInstance_property_material_override>`, the surface override :ref:`Material<class_Material>` defined in this ``MeshInstance``, or the surface :ref:`Material<class_Material>` defined in the :ref:`Mesh<class_Mesh>`. For example, if :ref:`GeometryInstance.material_override<class_GeometryInstance_property_material_override>` is used, all surfaces will return the override material.
+:ref:`Material<class_Material>` **get_active_material** **(** :ref:`int<class_int>` surface **)** |const|
+
+Returns the :ref:`Material<class_Material>` that will be used by the :ref:`Mesh<class_Mesh>` when drawing. This can return the :ref:`GeometryInstance.material_override<class_GeometryInstance_property_material_override>`, the surface override :ref:`Material<class_Material>` defined in this **MeshInstance**, or the surface :ref:`Material<class_Material>` defined in the :ref:`Mesh<class_Mesh>`. For example, if :ref:`GeometryInstance.material_override<class_GeometryInstance_property_material_override>` is used, all surfaces will return the override material.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_MeshInstance_method_get_surface_material:
 
-- :ref:`Material<class_Material>` **get_surface_material** **(** :ref:`int<class_int>` surface **)** |const|
+.. rst-class:: classref-method
+
+:ref:`Material<class_Material>` **get_surface_material** **(** :ref:`int<class_int>` surface **)** |const|
 
 Returns the override :ref:`Material<class_Material>` for a surface of the :ref:`Mesh<class_Mesh>` resource.
 
-\ **Note:** This function only returns *override* materials associated with this ``MeshInstance``. Consider using :ref:`get_active_material<class_MeshInstance_method_get_active_material>` or :ref:`Mesh.surface_get_material<class_Mesh_method_surface_get_material>` to get materials associated with the :ref:`Mesh<class_Mesh>` resource.
+\ **Note:** This function only returns *override* materials associated with this **MeshInstance**. Consider using :ref:`get_active_material<class_MeshInstance_method_get_active_material>` or :ref:`Mesh.surface_get_material<class_Mesh_method_surface_get_material>` to get materials associated with the :ref:`Mesh<class_Mesh>` resource.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_MeshInstance_method_get_surface_material_count:
 
-- :ref:`int<class_int>` **get_surface_material_count** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **get_surface_material_count** **(** **)** |const|
 
 Returns the number of surface override materials.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_MeshInstance_method_is_mergeable_with:
 
-- :ref:`bool<class_bool>` **is_mergeable_with** **(** :ref:`Node<class_Node>` other_mesh_instance **)** |const|
+.. rst-class:: classref-method
 
-Returns ``true`` if this ``MeshInstance`` can be merged with the specified ``other_mesh_instance``, using the :ref:`merge_meshes<class_MeshInstance_method_merge_meshes>` function.
+:ref:`bool<class_bool>` **is_mergeable_with** **(** :ref:`Node<class_Node>` other_mesh_instance **)** |const|
 
-In order to be mergeable, properties of the ``MeshInstance`` must match, and each surface must match, in terms of material, attributes and vertex format.
+Returns ``true`` if this **MeshInstance** can be merged with the specified ``other_mesh_instance``, using the :ref:`merge_meshes<class_MeshInstance_method_merge_meshes>` function.
+
+In order to be mergeable, properties of the **MeshInstance** must match, and each surface must match, in terms of material, attributes and vertex format.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_MeshInstance_method_merge_meshes:
 
-- :ref:`bool<class_bool>` **merge_meshes** **(** :ref:`Array<class_Array>` mesh_instances=[  ], :ref:`bool<class_bool>` use_global_space=false, :ref:`bool<class_bool>` check_compatibility=true **)**
+.. rst-class:: classref-method
 
-This function can merge together the data from several source ``MeshInstance``\ s into a single destination ``MeshInstance`` (the MeshInstance the function is called from). This is primarily useful for improving performance by reducing the number of drawcalls and :ref:`Node<class_Node>`\ s.
+:ref:`bool<class_bool>` **merge_meshes** **(** :ref:`Array<class_Array>` mesh_instances=[  ], :ref:`bool<class_bool>` use_global_space=false, :ref:`bool<class_bool>` check_compatibility=true **)**
+
+This function can merge together the data from several source **MeshInstance**\ s into a single destination **MeshInstance** (the MeshInstance the function is called from). This is primarily useful for improving performance by reducing the number of drawcalls and :ref:`Node<class_Node>`\ s.
 
 Merging should only be attempted for simple meshes that do not contain animation.
 
-The final vertices can either be returned in global space, or in local space relative to the destination ``MeshInstance`` global transform (the destination Node must be inside the :ref:`SceneTree<class_SceneTree>` for local space to work).
+The final vertices can either be returned in global space, or in local space relative to the destination **MeshInstance** global transform (the destination Node must be inside the :ref:`SceneTree<class_SceneTree>` for local space to work).
 
-The function will make a final check for compatibility between the ``MeshInstance``\ s by default, this should always be used unless you have previously checked for compatibility using :ref:`is_mergeable_with<class_MeshInstance_method_is_mergeable_with>`. If the compatibility check is omitted and the meshes are merged, you may see rendering errors.
+The function will make a final check for compatibility between the **MeshInstance**\ s by default, this should always be used unless you have previously checked for compatibility using :ref:`is_mergeable_with<class_MeshInstance_method_is_mergeable_with>`. If the compatibility check is omitted and the meshes are merged, you may see rendering errors.
 
 \ **Note:** The requirements for similarity between meshes are quite stringent. They can be checked using the :ref:`is_mergeable_with<class_MeshInstance_method_is_mergeable_with>` function prior to calling :ref:`merge_meshes<class_MeshInstance_method_merge_meshes>`.
 
-Also note that any initial data in the destination ``MeshInstance`` data will be discarded.
+Also note that any initial data in the destination **MeshInstance** data will be discarded.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_MeshInstance_method_set_surface_material:
 
-- void **set_surface_material** **(** :ref:`int<class_int>` surface, :ref:`Material<class_Material>` material **)**
+.. rst-class:: classref-method
 
-Sets the override :ref:`Material<class_Material>` for the specified surface of the :ref:`Mesh<class_Mesh>` resource. This material is associated with this ``MeshInstance`` rather than with the :ref:`Mesh<class_Mesh>` resource.
+void **set_surface_material** **(** :ref:`int<class_int>` surface, :ref:`Material<class_Material>` material **)**
+
+Sets the override :ref:`Material<class_Material>` for the specified surface of the :ref:`Mesh<class_Mesh>` resource. This material is associated with this **MeshInstance** rather than with the :ref:`Mesh<class_Mesh>` resource.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

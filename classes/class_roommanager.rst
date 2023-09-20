@@ -14,88 +14,125 @@ RoomManager
 
 The RoomManager node is used to control the portal culling system.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
-In order to utilize the portal occlusion culling system, you must build your level using :ref:`Room<class_Room>`\ s and :ref:`Portal<class_Portal>`\ s. Before these can be used at runtime, they must undergo a short conversion process to build the ``room graph``, runtime data needed for portal culling. The ``room graph`` is controlled by the ``RoomManager`` node, and the ``RoomManager`` also contains settings that are common throughout the portal system.
+In order to utilize the portal occlusion culling system, you must build your level using :ref:`Room<class_Room>`\ s and :ref:`Portal<class_Portal>`\ s. Before these can be used at runtime, they must undergo a short conversion process to build the ``room graph``, runtime data needed for portal culling. The ``room graph`` is controlled by the **RoomManager** node, and the **RoomManager** also contains settings that are common throughout the portal system.
+
+.. rst-class:: classref-reftable-group
 
 Properties
 ----------
 
-+------------------------------------------+----------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                  | :ref:`active<class_RoomManager_property_active>`                                       | ``true``                                                                |
-+------------------------------------------+----------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                  | :ref:`debug_sprawl<class_RoomManager_property_debug_sprawl>`                           | ``false``                                                               |
-+------------------------------------------+----------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
-| :ref:`float<class_float>`                | :ref:`default_portal_margin<class_RoomManager_property_default_portal_margin>`         | ``1.0``                                                                 |
-+------------------------------------------+----------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                  | :ref:`gameplay_monitor<class_RoomManager_property_gameplay_monitor>`                   | ``false``                                                               |
-+------------------------------------------+----------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                  | :ref:`merge_meshes<class_RoomManager_property_merge_meshes>`                           | ``false``                                                               |
-+------------------------------------------+----------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
-| :ref:`int<class_int>`                    | :ref:`overlap_warning_threshold<class_RoomManager_property_overlap_warning_threshold>` | ``1``                                                                   |
-+------------------------------------------+----------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
-| :ref:`int<class_int>`                    | :ref:`portal_depth_limit<class_RoomManager_property_portal_depth_limit>`               | ``16``                                                                  |
-+------------------------------------------+----------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
-| :ref:`NodePath<class_NodePath>`          | :ref:`preview_camera<class_RoomManager_property_preview_camera>`                       | ``NodePath("")``                                                        |
-+------------------------------------------+----------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
-| :ref:`int<class_int>`                    | process_priority                                                                       | ``10000`` (overrides :ref:`Node<class_Node_property_process_priority>`) |
-+------------------------------------------+----------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
-| :ref:`PVSMode<enum_RoomManager_PVSMode>` | :ref:`pvs_mode<class_RoomManager_property_pvs_mode>`                                   | ``1``                                                                   |
-+------------------------------------------+----------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
-| :ref:`float<class_float>`                | :ref:`roaming_expansion_margin<class_RoomManager_property_roaming_expansion_margin>`   | ``1.0``                                                                 |
-+------------------------------------------+----------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
-| :ref:`float<class_float>`                | :ref:`room_simplify<class_RoomManager_property_room_simplify>`                         | ``0.5``                                                                 |
-+------------------------------------------+----------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
-| :ref:`NodePath<class_NodePath>`          | :ref:`roomlist<class_RoomManager_property_roomlist>`                                   | ``NodePath("")``                                                        |
-+------------------------------------------+----------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                  | :ref:`show_margins<class_RoomManager_property_show_margins>`                           | ``true``                                                                |
-+------------------------------------------+----------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                  | :ref:`use_secondary_pvs<class_RoomManager_property_use_secondary_pvs>`                 | ``false``                                                               |
-+------------------------------------------+----------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +------------------------------------------+----------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                  | :ref:`active<class_RoomManager_property_active>`                                       | ``true``                                                                |
+   +------------------------------------------+----------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                  | :ref:`debug_sprawl<class_RoomManager_property_debug_sprawl>`                           | ``false``                                                               |
+   +------------------------------------------+----------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
+   | :ref:`float<class_float>`                | :ref:`default_portal_margin<class_RoomManager_property_default_portal_margin>`         | ``1.0``                                                                 |
+   +------------------------------------------+----------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                  | :ref:`gameplay_monitor<class_RoomManager_property_gameplay_monitor>`                   | ``false``                                                               |
+   +------------------------------------------+----------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                  | :ref:`merge_meshes<class_RoomManager_property_merge_meshes>`                           | ``false``                                                               |
+   +------------------------------------------+----------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                    | :ref:`overlap_warning_threshold<class_RoomManager_property_overlap_warning_threshold>` | ``1``                                                                   |
+   +------------------------------------------+----------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                    | :ref:`portal_depth_limit<class_RoomManager_property_portal_depth_limit>`               | ``16``                                                                  |
+   +------------------------------------------+----------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
+   | :ref:`NodePath<class_NodePath>`          | :ref:`preview_camera<class_RoomManager_property_preview_camera>`                       | ``NodePath("")``                                                        |
+   +------------------------------------------+----------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                    | process_priority                                                                       | ``10000`` (overrides :ref:`Node<class_Node_property_process_priority>`) |
+   +------------------------------------------+----------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
+   | :ref:`PVSMode<enum_RoomManager_PVSMode>` | :ref:`pvs_mode<class_RoomManager_property_pvs_mode>`                                   | ``1``                                                                   |
+   +------------------------------------------+----------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
+   | :ref:`float<class_float>`                | :ref:`roaming_expansion_margin<class_RoomManager_property_roaming_expansion_margin>`   | ``1.0``                                                                 |
+   +------------------------------------------+----------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
+   | :ref:`float<class_float>`                | :ref:`room_simplify<class_RoomManager_property_room_simplify>`                         | ``0.5``                                                                 |
+   +------------------------------------------+----------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
+   | :ref:`NodePath<class_NodePath>`          | :ref:`roomlist<class_RoomManager_property_roomlist>`                                   | ``NodePath("")``                                                        |
+   +------------------------------------------+----------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                  | :ref:`show_margins<class_RoomManager_property_show_margins>`                           | ``true``                                                                |
+   +------------------------------------------+----------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                  | :ref:`use_secondary_pvs<class_RoomManager_property_use_secondary_pvs>`                 | ``false``                                                               |
+   +------------------------------------------+----------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+------+--------------------------------------------------------------------------+
-| void | :ref:`rooms_clear<class_RoomManager_method_rooms_clear>` **(** **)**     |
-+------+--------------------------------------------------------------------------+
-| void | :ref:`rooms_convert<class_RoomManager_method_rooms_convert>` **(** **)** |
-+------+--------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +------+--------------------------------------------------------------------------+
+   | void | :ref:`rooms_clear<class_RoomManager_method_rooms_clear>` **(** **)**     |
+   +------+--------------------------------------------------------------------------+
+   | void | :ref:`rooms_convert<class_RoomManager_method_rooms_convert>` **(** **)** |
+   +------+--------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Enumerations
 ------------
 
 .. _enum_RoomManager_PVSMode:
 
-.. _class_RoomManager_constant_PVS_MODE_DISABLED:
-
-.. _class_RoomManager_constant_PVS_MODE_PARTIAL:
-
-.. _class_RoomManager_constant_PVS_MODE_FULL:
+.. rst-class:: classref-enumeration
 
 enum **PVSMode**:
 
-- **PVS_MODE_DISABLED** = **0** --- Use only :ref:`Portal<class_Portal>`\ s at runtime to determine visibility. PVS will not be generated at :ref:`Room<class_Room>`\ s conversion, and gameplay notifications cannot be used.
+.. _class_RoomManager_constant_PVS_MODE_DISABLED:
 
-- **PVS_MODE_PARTIAL** = **1** --- Use a combination of PVS and :ref:`Portal<class_Portal>`\ s to determine visibility (this is usually fastest and most accurate).
+.. rst-class:: classref-enumeration-constant
 
-- **PVS_MODE_FULL** = **2** --- Use only the PVS (potentially visible set) of :ref:`Room<class_Room>`\ s to determine visibility.
+:ref:`PVSMode<enum_RoomManager_PVSMode>` **PVS_MODE_DISABLED** = ``0``
+
+Use only :ref:`Portal<class_Portal>`\ s at runtime to determine visibility. PVS will not be generated at :ref:`Room<class_Room>`\ s conversion, and gameplay notifications cannot be used.
+
+.. _class_RoomManager_constant_PVS_MODE_PARTIAL:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`PVSMode<enum_RoomManager_PVSMode>` **PVS_MODE_PARTIAL** = ``1``
+
+Use a combination of PVS and :ref:`Portal<class_Portal>`\ s to determine visibility (this is usually fastest and most accurate).
+
+.. _class_RoomManager_constant_PVS_MODE_FULL:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`PVSMode<enum_RoomManager_PVSMode>` **PVS_MODE_FULL** = ``2``
+
+Use only the PVS (potentially visible set) of :ref:`Room<class_Room>`\ s to determine visibility.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_RoomManager_property_active:
 
-- :ref:`bool<class_bool>` **active**
+.. rst-class:: classref-property
 
-+-----------+-------------------------+
-| *Default* | ``true``                |
-+-----------+-------------------------+
-| *Setter*  | rooms_set_active(value) |
-+-----------+-------------------------+
-| *Getter*  | rooms_get_active()      |
-+-----------+-------------------------+
+:ref:`bool<class_bool>` **active** = ``true``
+
+.. rst-class:: classref-property-setget
+
+- void **rooms_set_active** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **rooms_get_active** **(** **)**
 
 Switches the portal culling system on and off.
 
@@ -105,55 +142,58 @@ Switching to ``active`` will have no effect when the ``room graph`` is unloaded 
 
 \ **Note:** For efficiency, the portal system is designed to work with only the core visual object types. In particular, only nodes derived from :ref:`VisualInstance<class_VisualInstance>` are expected to show when the system is active.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_RoomManager_property_debug_sprawl:
 
-- :ref:`bool<class_bool>` **debug_sprawl**
+.. rst-class:: classref-property
 
-+-----------+-------------------------+
-| *Default* | ``false``               |
-+-----------+-------------------------+
-| *Setter*  | set_debug_sprawl(value) |
-+-----------+-------------------------+
-| *Getter*  | get_debug_sprawl()      |
-+-----------+-------------------------+
+:ref:`bool<class_bool>` **debug_sprawl** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_debug_sprawl** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **get_debug_sprawl** **(** **)**
 
 Large objects can 'sprawl' over (be present in) more than one room. It can be useful to visualize which objects are sprawling outside the current room.
 
 Toggling this setting turns this debug view on and off.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_RoomManager_property_default_portal_margin:
 
-- :ref:`float<class_float>` **default_portal_margin**
+.. rst-class:: classref-property
 
-+-----------+----------------------------------+
-| *Default* | ``1.0``                          |
-+-----------+----------------------------------+
-| *Setter*  | set_default_portal_margin(value) |
-+-----------+----------------------------------+
-| *Getter*  | get_default_portal_margin()      |
-+-----------+----------------------------------+
+:ref:`float<class_float>` **default_portal_margin** = ``1.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_default_portal_margin** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_default_portal_margin** **(** **)**
 
 Usually we don't want objects that only **just** cross a boundary into an adjacent :ref:`Room<class_Room>` to sprawl into that room. To prevent this, each :ref:`Portal<class_Portal>` has an extra margin, or tolerance zone where objects can enter without sprawling to a neighbouring room.
 
 In most cases you can set this here for all portals. It is possible to override the margin for each portal.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_RoomManager_property_gameplay_monitor:
 
-- :ref:`bool<class_bool>` **gameplay_monitor**
+.. rst-class:: classref-property
 
-+-----------+-------------------------------------+
-| *Default* | ``false``                           |
-+-----------+-------------------------------------+
-| *Setter*  | set_gameplay_monitor_enabled(value) |
-+-----------+-------------------------------------+
-| *Getter*  | get_gameplay_monitor_enabled()      |
-+-----------+-------------------------------------+
+:ref:`bool<class_bool>` **gameplay_monitor** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_gameplay_monitor_enabled** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **get_gameplay_monitor_enabled** **(** **)**
 
 When using a partial or full PVS, the gameplay monitor allows you to receive callbacks when roaming objects or rooms enter or exit the **gameplay area**. The gameplay area is defined as either the primary, or secondary PVS.
 
@@ -167,105 +207,111 @@ You can either choose to receive callbacks as notifications through the ``_notif
 
 Signals: ``"gameplay_entered"``, ``"gameplay_exited"``
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_RoomManager_property_merge_meshes:
 
-- :ref:`bool<class_bool>` **merge_meshes**
+.. rst-class:: classref-property
 
-+-----------+-------------------------+
-| *Default* | ``false``               |
-+-----------+-------------------------+
-| *Setter*  | set_merge_meshes(value) |
-+-----------+-------------------------+
-| *Getter*  | get_merge_meshes()      |
-+-----------+-------------------------+
+:ref:`bool<class_bool>` **merge_meshes** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_merge_meshes** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **get_merge_meshes** **(** **)**
 
 If enabled, the system will attempt to merge similar meshes (particularly in terms of materials) within :ref:`Room<class_Room>`\ s during conversion. This can significantly reduce the number of drawcalls and state changes required during rendering, albeit at a cost of reduced culling granularity.
 
 \ **Note:** This operates at runtime during the conversion process, and will only operate on exported or running projects, in order to prevent accidental alteration to the scene and loss of data.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_RoomManager_property_overlap_warning_threshold:
 
-- :ref:`int<class_int>` **overlap_warning_threshold**
+.. rst-class:: classref-property
 
-+-----------+--------------------------------------+
-| *Default* | ``1``                                |
-+-----------+--------------------------------------+
-| *Setter*  | set_overlap_warning_threshold(value) |
-+-----------+--------------------------------------+
-| *Getter*  | get_overlap_warning_threshold()      |
-+-----------+--------------------------------------+
+:ref:`int<class_int>` **overlap_warning_threshold** = ``1``
+
+.. rst-class:: classref-property-setget
+
+- void **set_overlap_warning_threshold** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_overlap_warning_threshold** **(** **)**
 
 When converting rooms, the editor will warn you if overlap is detected between rooms. Overlap can interfere with determining the room that cameras and objects are within. A small amount can be acceptable, depending on your level. Here you can alter the threshold at which the editor warning appears. There are no other side effects.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_RoomManager_property_portal_depth_limit:
 
-- :ref:`int<class_int>` **portal_depth_limit**
+.. rst-class:: classref-property
 
-+-----------+-------------------------------+
-| *Default* | ``16``                        |
-+-----------+-------------------------------+
-| *Setter*  | set_portal_depth_limit(value) |
-+-----------+-------------------------------+
-| *Getter*  | get_portal_depth_limit()      |
-+-----------+-------------------------------+
+:ref:`int<class_int>` **portal_depth_limit** = ``16``
+
+.. rst-class:: classref-property-setget
+
+- void **set_portal_depth_limit** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_portal_depth_limit** **(** **)**
 
 Portal rendering is recursive - each time a portal is seen through an earlier portal there is some cost. For this reason, and to prevent the possibility of infinite loops, this setting provides a hard limit on the recursion depth.
 
 \ **Note:** This value is unused when using ``Full`` PVS mode.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_RoomManager_property_preview_camera:
 
-- :ref:`NodePath<class_NodePath>` **preview_camera**
+.. rst-class:: classref-property
 
-+-----------+--------------------------------+
-| *Default* | ``NodePath("")``               |
-+-----------+--------------------------------+
-| *Setter*  | set_preview_camera_path(value) |
-+-----------+--------------------------------+
-| *Getter*  | get_preview_camera_path()      |
-+-----------+--------------------------------+
+:ref:`NodePath<class_NodePath>` **preview_camera** = ``NodePath("")``
+
+.. rst-class:: classref-property-setget
+
+- void **set_preview_camera_path** **(** :ref:`NodePath<class_NodePath>` value **)**
+- :ref:`NodePath<class_NodePath>` **get_preview_camera_path** **(** **)**
 
 Portal culling normally operates using the current :ref:`Camera<class_Camera>` / :ref:`Camera<class_Camera>`\ s, however for debugging purposes within the editor, you can use this setting to override this behavior and force it to use a particular camera to get a better idea of what the occlusion culling is doing.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_RoomManager_property_pvs_mode:
 
-- :ref:`PVSMode<enum_RoomManager_PVSMode>` **pvs_mode**
+.. rst-class:: classref-property
 
-+-----------+---------------------+
-| *Default* | ``1``               |
-+-----------+---------------------+
-| *Setter*  | set_pvs_mode(value) |
-+-----------+---------------------+
-| *Getter*  | get_pvs_mode()      |
-+-----------+---------------------+
+:ref:`PVSMode<enum_RoomManager_PVSMode>` **pvs_mode** = ``1``
+
+.. rst-class:: classref-property-setget
+
+- void **set_pvs_mode** **(** :ref:`PVSMode<enum_RoomManager_PVSMode>` value **)**
+- :ref:`PVSMode<enum_RoomManager_PVSMode>` **get_pvs_mode** **(** **)**
 
 Optionally during conversion the potentially visible set (PVS) of rooms that are potentially visible from each room can be calculated. This can be used either to aid in dynamic portal culling, or to totally replace portal culling.
 
 In ``Full`` PVS Mode, all objects within the potentially visible rooms will be frustum culled, and rendered if they are within the view frustum.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_RoomManager_property_roaming_expansion_margin:
 
-- :ref:`float<class_float>` **roaming_expansion_margin**
+.. rst-class:: classref-property
 
-+-----------+-------------------------------------+
-| *Default* | ``1.0``                             |
-+-----------+-------------------------------------+
-| *Setter*  | set_roaming_expansion_margin(value) |
-+-----------+-------------------------------------+
-| *Getter*  | get_roaming_expansion_margin()      |
-+-----------+-------------------------------------+
+:ref:`float<class_float>` **roaming_expansion_margin** = ``1.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_roaming_expansion_margin** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_roaming_expansion_margin** **(** **)**
 
 In order to reduce processing for roaming objects, an expansion is applied to their AABB as they move. This expanded volume is used to calculate which rooms the roaming object is within. If the object's exact AABB is still within this expanded volume on the next move, there is no need to reprocess the object, which can save considerable CPU.
 
@@ -273,19 +319,20 @@ The downside is that if the expansion is too much, the object may end up unexpec
 
 In order to balance roaming performance against culling accuracy, this expansion margin can be customized by the user. It will typically depend on your room and object sizes, and movement speeds. The default value should work reasonably in most circumstances.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_RoomManager_property_room_simplify:
 
-- :ref:`float<class_float>` **room_simplify**
+.. rst-class:: classref-property
 
-+-----------+--------------------------+
-| *Default* | ``0.5``                  |
-+-----------+--------------------------+
-| *Setter*  | set_room_simplify(value) |
-+-----------+--------------------------+
-| *Getter*  | get_room_simplify()      |
-+-----------+--------------------------+
+:ref:`float<class_float>` **room_simplify** = ``0.5``
+
+.. rst-class:: classref-property-setget
+
+- void **set_room_simplify** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_room_simplify** **(** **)**
 
 During the conversion process, the geometry of objects within :ref:`Room<class_Room>`\ s, or a custom specified manual bound, are used to generate a **convex hull bound**.
 
@@ -297,70 +344,85 @@ The value set here is the default for all rooms, but individual rooms can overri
 
 The room convex hulls are shown as a wireframe in the editor.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_RoomManager_property_roomlist:
 
-- :ref:`NodePath<class_NodePath>` **roomlist**
+.. rst-class:: classref-property
 
-+-----------+--------------------------+
-| *Default* | ``NodePath("")``         |
-+-----------+--------------------------+
-| *Setter*  | set_roomlist_path(value) |
-+-----------+--------------------------+
-| *Getter*  | get_roomlist_path()      |
-+-----------+--------------------------+
+:ref:`NodePath<class_NodePath>` **roomlist** = ``NodePath("")``
 
-For the :ref:`Room<class_Room>` conversion process to succeed, you must point the ``RoomManager`` to the parent :ref:`Node<class_Node>` of your :ref:`Room<class_Room>`\ s and :ref:`RoomGroup<class_RoomGroup>`\ s, which we refer to as the ``roomlist`` (the roomlist is not a special node type, it is normally just a :ref:`Spatial<class_Spatial>`).
+.. rst-class:: classref-property-setget
+
+- void **set_roomlist_path** **(** :ref:`NodePath<class_NodePath>` value **)**
+- :ref:`NodePath<class_NodePath>` **get_roomlist_path** **(** **)**
+
+For the :ref:`Room<class_Room>` conversion process to succeed, you must point the **RoomManager** to the parent :ref:`Node<class_Node>` of your :ref:`Room<class_Room>`\ s and :ref:`RoomGroup<class_RoomGroup>`\ s, which we refer to as the ``roomlist`` (the roomlist is not a special node type, it is normally just a :ref:`Spatial<class_Spatial>`).
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_RoomManager_property_show_margins:
 
-- :ref:`bool<class_bool>` **show_margins**
+.. rst-class:: classref-property
 
-+-----------+-------------------------+
-| *Default* | ``true``                |
-+-----------+-------------------------+
-| *Setter*  | set_show_margins(value) |
-+-----------+-------------------------+
-| *Getter*  | get_show_margins()      |
-+-----------+-------------------------+
+:ref:`bool<class_bool>` **show_margins** = ``true``
+
+.. rst-class:: classref-property-setget
+
+- void **set_show_margins** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **get_show_margins** **(** **)**
 
 Shows the :ref:`Portal<class_Portal>` margins when the portal gizmo is used in the editor.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_RoomManager_property_use_secondary_pvs:
 
-- :ref:`bool<class_bool>` **use_secondary_pvs**
+.. rst-class:: classref-property
 
-+-----------+------------------------------+
-| *Default* | ``false``                    |
-+-----------+------------------------------+
-| *Setter*  | set_use_secondary_pvs(value) |
-+-----------+------------------------------+
-| *Getter*  | get_use_secondary_pvs()      |
-+-----------+------------------------------+
+:ref:`bool<class_bool>` **use_secondary_pvs** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_use_secondary_pvs** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **get_use_secondary_pvs** **(** **)**
 
 When receiving gameplay callbacks when objects enter and exit gameplay, the **gameplay area** can be defined by either the primary PVS (potentially visible set) of :ref:`Room<class_Room>`\ s, or the secondary PVS (the primary PVS and their neighbouring :ref:`Room<class_Room>`\ s).
 
 Sometimes using the larger gameplay area of the secondary PVS may be preferable.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_RoomManager_method_rooms_clear:
 
-- void **rooms_clear** **(** **)**
+.. rst-class:: classref-method
+
+void **rooms_clear** **(** **)**
 
 This function clears all converted data from the **room graph**. Use this before unloading a level, when transitioning from level to level, or returning to a main menu.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_RoomManager_method_rooms_convert:
 
-- void **rooms_convert** **(** **)**
+.. rst-class:: classref-method
+
+void **rooms_convert** **(** **)**
 
 This is the most important function in the whole portal culling system. Without it, the system cannot function.
 
@@ -391,3 +453,4 @@ It is recommended that you only place objects in rooms that are desired to stay 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

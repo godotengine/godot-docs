@@ -14,35 +14,48 @@ CircleShape2D
 
 Circular shape for 2D collisions.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 Circular shape for 2D collisions. This shape is useful for modeling balls or small characters and its collision detection with everything else is very fast.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+---------------------------+----------------------------------------------------+----------+
-| :ref:`float<class_float>` | :ref:`radius<class_CircleShape2D_property_radius>` | ``10.0`` |
-+---------------------------+----------------------------------------------------+----------+
+.. table::
+   :widths: auto
+
+   +---------------------------+----------------------------------------------------+----------+
+   | :ref:`float<class_float>` | :ref:`radius<class_CircleShape2D_property_radius>` | ``10.0`` |
+   +---------------------------+----------------------------------------------------+----------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_CircleShape2D_property_radius:
 
-- :ref:`float<class_float>` **radius**
+.. rst-class:: classref-property
 
-+-----------+-------------------+
-| *Default* | ``10.0``          |
-+-----------+-------------------+
-| *Setter*  | set_radius(value) |
-+-----------+-------------------+
-| *Getter*  | get_radius()      |
-+-----------+-------------------+
+:ref:`float<class_float>` **radius** = ``10.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_radius** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_radius** **(** **)**
 
 The circle's radius.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

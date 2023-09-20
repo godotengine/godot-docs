@@ -14,6 +14,8 @@ KinematicCollision
 
 Collision data for :ref:`KinematicBody<class_KinematicBody>` collisions.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -21,210 +23,267 @@ Contains collision data for :ref:`KinematicBody<class_KinematicBody>` collisions
 
 This object contains information about the collision, including the colliding object, the remaining motion, and the collision position. This information can be used to calculate a collision response.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-------------------------------+-------------------------------------------------------------------------------------+------------------------+
-| :ref:`Object<class_Object>`   | :ref:`collider<class_KinematicCollision_property_collider>`                         |                        |
-+-------------------------------+-------------------------------------------------------------------------------------+------------------------+
-| :ref:`int<class_int>`         | :ref:`collider_id<class_KinematicCollision_property_collider_id>`                   | ``0``                  |
-+-------------------------------+-------------------------------------------------------------------------------------+------------------------+
-| :ref:`Variant<class_Variant>` | :ref:`collider_metadata<class_KinematicCollision_property_collider_metadata>`       |                        |
-+-------------------------------+-------------------------------------------------------------------------------------+------------------------+
-| :ref:`RID<class_RID>`         | :ref:`collider_rid<class_KinematicCollision_property_collider_rid>`                 |                        |
-+-------------------------------+-------------------------------------------------------------------------------------+------------------------+
-| :ref:`Object<class_Object>`   | :ref:`collider_shape<class_KinematicCollision_property_collider_shape>`             |                        |
-+-------------------------------+-------------------------------------------------------------------------------------+------------------------+
-| :ref:`int<class_int>`         | :ref:`collider_shape_index<class_KinematicCollision_property_collider_shape_index>` | ``0``                  |
-+-------------------------------+-------------------------------------------------------------------------------------+------------------------+
-| :ref:`Vector3<class_Vector3>` | :ref:`collider_velocity<class_KinematicCollision_property_collider_velocity>`       | ``Vector3( 0, 0, 0 )`` |
-+-------------------------------+-------------------------------------------------------------------------------------+------------------------+
-| :ref:`Object<class_Object>`   | :ref:`local_shape<class_KinematicCollision_property_local_shape>`                   |                        |
-+-------------------------------+-------------------------------------------------------------------------------------+------------------------+
-| :ref:`Vector3<class_Vector3>` | :ref:`normal<class_KinematicCollision_property_normal>`                             | ``Vector3( 0, 0, 0 )`` |
-+-------------------------------+-------------------------------------------------------------------------------------+------------------------+
-| :ref:`Vector3<class_Vector3>` | :ref:`position<class_KinematicCollision_property_position>`                         | ``Vector3( 0, 0, 0 )`` |
-+-------------------------------+-------------------------------------------------------------------------------------+------------------------+
-| :ref:`Vector3<class_Vector3>` | :ref:`remainder<class_KinematicCollision_property_remainder>`                       | ``Vector3( 0, 0, 0 )`` |
-+-------------------------------+-------------------------------------------------------------------------------------+------------------------+
-| :ref:`Vector3<class_Vector3>` | :ref:`travel<class_KinematicCollision_property_travel>`                             | ``Vector3( 0, 0, 0 )`` |
-+-------------------------------+-------------------------------------------------------------------------------------+------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------------+-------------------------------------------------------------------------------------+------------------------+
+   | :ref:`Object<class_Object>`   | :ref:`collider<class_KinematicCollision_property_collider>`                         |                        |
+   +-------------------------------+-------------------------------------------------------------------------------------+------------------------+
+   | :ref:`int<class_int>`         | :ref:`collider_id<class_KinematicCollision_property_collider_id>`                   | ``0``                  |
+   +-------------------------------+-------------------------------------------------------------------------------------+------------------------+
+   | :ref:`Variant<class_Variant>` | :ref:`collider_metadata<class_KinematicCollision_property_collider_metadata>`       |                        |
+   +-------------------------------+-------------------------------------------------------------------------------------+------------------------+
+   | :ref:`RID<class_RID>`         | :ref:`collider_rid<class_KinematicCollision_property_collider_rid>`                 |                        |
+   +-------------------------------+-------------------------------------------------------------------------------------+------------------------+
+   | :ref:`Object<class_Object>`   | :ref:`collider_shape<class_KinematicCollision_property_collider_shape>`             |                        |
+   +-------------------------------+-------------------------------------------------------------------------------------+------------------------+
+   | :ref:`int<class_int>`         | :ref:`collider_shape_index<class_KinematicCollision_property_collider_shape_index>` | ``0``                  |
+   +-------------------------------+-------------------------------------------------------------------------------------+------------------------+
+   | :ref:`Vector3<class_Vector3>` | :ref:`collider_velocity<class_KinematicCollision_property_collider_velocity>`       | ``Vector3( 0, 0, 0 )`` |
+   +-------------------------------+-------------------------------------------------------------------------------------+------------------------+
+   | :ref:`Object<class_Object>`   | :ref:`local_shape<class_KinematicCollision_property_local_shape>`                   |                        |
+   +-------------------------------+-------------------------------------------------------------------------------------+------------------------+
+   | :ref:`Vector3<class_Vector3>` | :ref:`normal<class_KinematicCollision_property_normal>`                             | ``Vector3( 0, 0, 0 )`` |
+   +-------------------------------+-------------------------------------------------------------------------------------+------------------------+
+   | :ref:`Vector3<class_Vector3>` | :ref:`position<class_KinematicCollision_property_position>`                         | ``Vector3( 0, 0, 0 )`` |
+   +-------------------------------+-------------------------------------------------------------------------------------+------------------------+
+   | :ref:`Vector3<class_Vector3>` | :ref:`remainder<class_KinematicCollision_property_remainder>`                       | ``Vector3( 0, 0, 0 )`` |
+   +-------------------------------+-------------------------------------------------------------------------------------+------------------------+
+   | :ref:`Vector3<class_Vector3>` | :ref:`travel<class_KinematicCollision_property_travel>`                             | ``Vector3( 0, 0, 0 )`` |
+   +-------------------------------+-------------------------------------------------------------------------------------+------------------------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+---------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`get_angle<class_KinematicCollision_method_get_angle>` **(** :ref:`Vector3<class_Vector3>` up_direction=Vector3( 0, 1, 0 ) **)** |const| |
-+---------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +---------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>` | :ref:`get_angle<class_KinematicCollision_method_get_angle>` **(** :ref:`Vector3<class_Vector3>` up_direction=Vector3( 0, 1, 0 ) **)** |const| |
+   +---------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_KinematicCollision_property_collider:
 
-- :ref:`Object<class_Object>` **collider**
+.. rst-class:: classref-property
 
-+----------+----------------+
-| *Getter* | get_collider() |
-+----------+----------------+
+:ref:`Object<class_Object>` **collider**
+
+.. rst-class:: classref-property-setget
+
+- :ref:`Object<class_Object>` **get_collider** **(** **)**
 
 The colliding body.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_KinematicCollision_property_collider_id:
 
-- :ref:`int<class_int>` **collider_id**
+.. rst-class:: classref-property
 
-+-----------+-------------------+
-| *Default* | ``0``             |
-+-----------+-------------------+
-| *Getter*  | get_collider_id() |
-+-----------+-------------------+
+:ref:`int<class_int>` **collider_id** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- :ref:`int<class_int>` **get_collider_id** **(** **)**
 
 The colliding body's unique instance ID. See :ref:`Object.get_instance_id<class_Object_method_get_instance_id>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_KinematicCollision_property_collider_metadata:
 
-- :ref:`Variant<class_Variant>` **collider_metadata**
+.. rst-class:: classref-property
 
-+----------+-------------------------+
-| *Getter* | get_collider_metadata() |
-+----------+-------------------------+
+:ref:`Variant<class_Variant>` **collider_metadata**
+
+.. rst-class:: classref-property-setget
+
+- :ref:`Variant<class_Variant>` **get_collider_metadata** **(** **)**
 
 The colliding body's metadata. See :ref:`Object<class_Object>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_KinematicCollision_property_collider_rid:
 
-- :ref:`RID<class_RID>` **collider_rid**
+.. rst-class:: classref-property
 
-+----------+--------------------+
-| *Getter* | get_collider_rid() |
-+----------+--------------------+
+:ref:`RID<class_RID>` **collider_rid**
+
+.. rst-class:: classref-property-setget
+
+- :ref:`RID<class_RID>` **get_collider_rid** **(** **)**
 
 The colliding body's :ref:`RID<class_RID>` used by the :ref:`PhysicsServer<class_PhysicsServer>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_KinematicCollision_property_collider_shape:
 
-- :ref:`Object<class_Object>` **collider_shape**
+.. rst-class:: classref-property
 
-+----------+----------------------+
-| *Getter* | get_collider_shape() |
-+----------+----------------------+
+:ref:`Object<class_Object>` **collider_shape**
+
+.. rst-class:: classref-property-setget
+
+- :ref:`Object<class_Object>` **get_collider_shape** **(** **)**
 
 The colliding body's shape.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_KinematicCollision_property_collider_shape_index:
 
-- :ref:`int<class_int>` **collider_shape_index**
+.. rst-class:: classref-property
 
-+-----------+----------------------------+
-| *Default* | ``0``                      |
-+-----------+----------------------------+
-| *Getter*  | get_collider_shape_index() |
-+-----------+----------------------------+
+:ref:`int<class_int>` **collider_shape_index** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- :ref:`int<class_int>` **get_collider_shape_index** **(** **)**
 
 The colliding shape's index. See :ref:`CollisionObject<class_CollisionObject>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_KinematicCollision_property_collider_velocity:
 
-- :ref:`Vector3<class_Vector3>` **collider_velocity**
+.. rst-class:: classref-property
 
-+-----------+-------------------------+
-| *Default* | ``Vector3( 0, 0, 0 )``  |
-+-----------+-------------------------+
-| *Getter*  | get_collider_velocity() |
-+-----------+-------------------------+
+:ref:`Vector3<class_Vector3>` **collider_velocity** = ``Vector3( 0, 0, 0 )``
+
+.. rst-class:: classref-property-setget
+
+- :ref:`Vector3<class_Vector3>` **get_collider_velocity** **(** **)**
 
 The colliding object's velocity.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_KinematicCollision_property_local_shape:
 
-- :ref:`Object<class_Object>` **local_shape**
+.. rst-class:: classref-property
 
-+----------+-------------------+
-| *Getter* | get_local_shape() |
-+----------+-------------------+
+:ref:`Object<class_Object>` **local_shape**
+
+.. rst-class:: classref-property-setget
+
+- :ref:`Object<class_Object>` **get_local_shape** **(** **)**
 
 The moving object's colliding shape.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_KinematicCollision_property_normal:
 
-- :ref:`Vector3<class_Vector3>` **normal**
+.. rst-class:: classref-property
 
-+-----------+------------------------+
-| *Default* | ``Vector3( 0, 0, 0 )`` |
-+-----------+------------------------+
-| *Getter*  | get_normal()           |
-+-----------+------------------------+
+:ref:`Vector3<class_Vector3>` **normal** = ``Vector3( 0, 0, 0 )``
+
+.. rst-class:: classref-property-setget
+
+- :ref:`Vector3<class_Vector3>` **get_normal** **(** **)**
 
 The colliding body's shape's normal at the point of collision.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_KinematicCollision_property_position:
 
-- :ref:`Vector3<class_Vector3>` **position**
+.. rst-class:: classref-property
 
-+-----------+------------------------+
-| *Default* | ``Vector3( 0, 0, 0 )`` |
-+-----------+------------------------+
-| *Getter*  | get_position()         |
-+-----------+------------------------+
+:ref:`Vector3<class_Vector3>` **position** = ``Vector3( 0, 0, 0 )``
+
+.. rst-class:: classref-property-setget
+
+- :ref:`Vector3<class_Vector3>` **get_position** **(** **)**
 
 The point of collision, in global coordinates.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_KinematicCollision_property_remainder:
 
-- :ref:`Vector3<class_Vector3>` **remainder**
+.. rst-class:: classref-property
 
-+-----------+------------------------+
-| *Default* | ``Vector3( 0, 0, 0 )`` |
-+-----------+------------------------+
-| *Getter*  | get_remainder()        |
-+-----------+------------------------+
+:ref:`Vector3<class_Vector3>` **remainder** = ``Vector3( 0, 0, 0 )``
+
+.. rst-class:: classref-property-setget
+
+- :ref:`Vector3<class_Vector3>` **get_remainder** **(** **)**
 
 The moving object's remaining movement vector.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_KinematicCollision_property_travel:
 
-- :ref:`Vector3<class_Vector3>` **travel**
+.. rst-class:: classref-property
 
-+-----------+------------------------+
-| *Default* | ``Vector3( 0, 0, 0 )`` |
-+-----------+------------------------+
-| *Getter*  | get_travel()           |
-+-----------+------------------------+
+:ref:`Vector3<class_Vector3>` **travel** = ``Vector3( 0, 0, 0 )``
+
+.. rst-class:: classref-property-setget
+
+- :ref:`Vector3<class_Vector3>` **get_travel** **(** **)**
 
 The distance the moving object traveled before collision.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_KinematicCollision_method_get_angle:
 
-- :ref:`float<class_float>` **get_angle** **(** :ref:`Vector3<class_Vector3>` up_direction=Vector3( 0, 1, 0 ) **)** |const|
+.. rst-class:: classref-method
+
+:ref:`float<class_float>` **get_angle** **(** :ref:`Vector3<class_Vector3>` up_direction=Vector3( 0, 1, 0 ) **)** |const|
 
 The collision angle according to ``up_direction``, which is ``Vector3.UP`` by default. This value is always positive.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

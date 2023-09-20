@@ -14,93 +14,111 @@ AtlasTexture
 
 Crops out one part of a texture, such as a texture from a texture atlas.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 :ref:`Texture<class_Texture>` resource that crops out one part of the :ref:`atlas<class_AtlasTexture_property_atlas>` texture, defined by :ref:`region<class_AtlasTexture_property_region>`. The main use case is cropping out textures from a texture atlas, which is a big texture file that packs multiple smaller textures. Consists of a :ref:`Texture<class_Texture>` for the :ref:`atlas<class_AtlasTexture_property_atlas>`, a :ref:`region<class_AtlasTexture_property_region>` that defines the area of :ref:`atlas<class_AtlasTexture_property_atlas>` to use, and a :ref:`margin<class_AtlasTexture_property_margin>` that defines the border width.
 
-\ ``AtlasTexture`` cannot be used in an :ref:`AnimatedTexture<class_AnimatedTexture>`, cannot be tiled in nodes such as :ref:`TextureRect<class_TextureRect>`, and does not work properly if used inside of other ``AtlasTexture`` resources. Multiple ``AtlasTexture`` resources can be used to crop multiple textures from the atlas. Using a texture atlas helps to optimize video memory costs and render calls compared to using multiple small files.
+\ **AtlasTexture** cannot be used in an :ref:`AnimatedTexture<class_AnimatedTexture>`, cannot be tiled in nodes such as :ref:`TextureRect<class_TextureRect>`, and does not work properly if used inside of other **AtlasTexture** resources. Multiple **AtlasTexture** resources can be used to crop multiple textures from the atlas. Using a texture atlas helps to optimize video memory costs and render calls compared to using multiple small files.
 
 \ **Note:** AtlasTextures don't support repetition. The :ref:`Texture.FLAG_REPEAT<class_Texture_constant_FLAG_REPEAT>` and :ref:`Texture.FLAG_MIRRORED_REPEAT<class_Texture_constant_FLAG_MIRRORED_REPEAT>` flags are ignored when using an AtlasTexture.
+
+.. rst-class:: classref-reftable-group
 
 Properties
 ----------
 
-+-------------------------------+-------------------------------------------------------------+----------------------------------------------------------------+
-| :ref:`Texture<class_Texture>` | :ref:`atlas<class_AtlasTexture_property_atlas>`             |                                                                |
-+-------------------------------+-------------------------------------------------------------+----------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`filter_clip<class_AtlasTexture_property_filter_clip>` | ``false``                                                      |
-+-------------------------------+-------------------------------------------------------------+----------------------------------------------------------------+
-| :ref:`int<class_int>`         | flags                                                       | ``0`` (overrides :ref:`Texture<class_Texture_property_flags>`) |
-+-------------------------------+-------------------------------------------------------------+----------------------------------------------------------------+
-| :ref:`Rect2<class_Rect2>`     | :ref:`margin<class_AtlasTexture_property_margin>`           | ``Rect2( 0, 0, 0, 0 )``                                        |
-+-------------------------------+-------------------------------------------------------------+----------------------------------------------------------------+
-| :ref:`Rect2<class_Rect2>`     | :ref:`region<class_AtlasTexture_property_region>`           | ``Rect2( 0, 0, 0, 0 )``                                        |
-+-------------------------------+-------------------------------------------------------------+----------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------------+-------------------------------------------------------------+----------------------------------------------------------------+
+   | :ref:`Texture<class_Texture>` | :ref:`atlas<class_AtlasTexture_property_atlas>`             |                                                                |
+   +-------------------------------+-------------------------------------------------------------+----------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`filter_clip<class_AtlasTexture_property_filter_clip>` | ``false``                                                      |
+   +-------------------------------+-------------------------------------------------------------+----------------------------------------------------------------+
+   | :ref:`int<class_int>`         | flags                                                       | ``0`` (overrides :ref:`Texture<class_Texture_property_flags>`) |
+   +-------------------------------+-------------------------------------------------------------+----------------------------------------------------------------+
+   | :ref:`Rect2<class_Rect2>`     | :ref:`margin<class_AtlasTexture_property_margin>`           | ``Rect2( 0, 0, 0, 0 )``                                        |
+   +-------------------------------+-------------------------------------------------------------+----------------------------------------------------------------+
+   | :ref:`Rect2<class_Rect2>`     | :ref:`region<class_AtlasTexture_property_region>`           | ``Rect2( 0, 0, 0, 0 )``                                        |
+   +-------------------------------+-------------------------------------------------------------+----------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_AtlasTexture_property_atlas:
 
-- :ref:`Texture<class_Texture>` **atlas**
+.. rst-class:: classref-property
 
-+----------+------------------+
-| *Setter* | set_atlas(value) |
-+----------+------------------+
-| *Getter* | get_atlas()      |
-+----------+------------------+
+:ref:`Texture<class_Texture>` **atlas**
+
+.. rst-class:: classref-property-setget
+
+- void **set_atlas** **(** :ref:`Texture<class_Texture>` value **)**
+- :ref:`Texture<class_Texture>` **get_atlas** **(** **)**
 
 The texture that contains the atlas. Can be any :ref:`Texture<class_Texture>` subtype.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AtlasTexture_property_filter_clip:
 
-- :ref:`bool<class_bool>` **filter_clip**
+.. rst-class:: classref-property
 
-+-----------+------------------------+
-| *Default* | ``false``              |
-+-----------+------------------------+
-| *Setter*  | set_filter_clip(value) |
-+-----------+------------------------+
-| *Getter*  | has_filter_clip()      |
-+-----------+------------------------+
+:ref:`bool<class_bool>` **filter_clip** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_filter_clip** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **has_filter_clip** **(** **)**
 
 If ``true``, clips the area outside of the region to avoid bleeding of the surrounding texture pixels.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AtlasTexture_property_margin:
 
-- :ref:`Rect2<class_Rect2>` **margin**
+.. rst-class:: classref-property
 
-+-----------+-------------------------+
-| *Default* | ``Rect2( 0, 0, 0, 0 )`` |
-+-----------+-------------------------+
-| *Setter*  | set_margin(value)       |
-+-----------+-------------------------+
-| *Getter*  | get_margin()            |
-+-----------+-------------------------+
+:ref:`Rect2<class_Rect2>` **margin** = ``Rect2( 0, 0, 0, 0 )``
+
+.. rst-class:: classref-property-setget
+
+- void **set_margin** **(** :ref:`Rect2<class_Rect2>` value **)**
+- :ref:`Rect2<class_Rect2>` **get_margin** **(** **)**
 
 The margin around the region. The :ref:`Rect2<class_Rect2>`'s :ref:`Rect2.size<class_Rect2_property_size>` parameter ("w" and "h" in the editor) resizes the texture so it fits within the margin.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AtlasTexture_property_region:
 
-- :ref:`Rect2<class_Rect2>` **region**
+.. rst-class:: classref-property
 
-+-----------+-------------------------+
-| *Default* | ``Rect2( 0, 0, 0, 0 )`` |
-+-----------+-------------------------+
-| *Setter*  | set_region(value)       |
-+-----------+-------------------------+
-| *Getter*  | get_region()            |
-+-----------+-------------------------+
+:ref:`Rect2<class_Rect2>` **region** = ``Rect2( 0, 0, 0, 0 )``
+
+.. rst-class:: classref-property-setget
+
+- void **set_region** **(** :ref:`Rect2<class_Rect2>` value **)**
+- :ref:`Rect2<class_Rect2>` **get_region** **(** **)**
 
 The AtlasTexture's used region.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

@@ -14,71 +14,86 @@ HeightMapShape
 
 Height map shape for 3D physics.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 Height map shape resource, which can be added to a :ref:`PhysicsBody<class_PhysicsBody>` or :ref:`Area<class_Area>`.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-------------------------------------------+-----------------------------------------------------------+---------------------------------+
-| :ref:`PoolRealArray<class_PoolRealArray>` | :ref:`map_data<class_HeightMapShape_property_map_data>`   | ``PoolRealArray( 0, 0, 0, 0 )`` |
-+-------------------------------------------+-----------------------------------------------------------+---------------------------------+
-| :ref:`int<class_int>`                     | :ref:`map_depth<class_HeightMapShape_property_map_depth>` | ``2``                           |
-+-------------------------------------------+-----------------------------------------------------------+---------------------------------+
-| :ref:`int<class_int>`                     | :ref:`map_width<class_HeightMapShape_property_map_width>` | ``2``                           |
-+-------------------------------------------+-----------------------------------------------------------+---------------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------------------------+-----------------------------------------------------------+---------------------------------+
+   | :ref:`PoolRealArray<class_PoolRealArray>` | :ref:`map_data<class_HeightMapShape_property_map_data>`   | ``PoolRealArray( 0, 0, 0, 0 )`` |
+   +-------------------------------------------+-----------------------------------------------------------+---------------------------------+
+   | :ref:`int<class_int>`                     | :ref:`map_depth<class_HeightMapShape_property_map_depth>` | ``2``                           |
+   +-------------------------------------------+-----------------------------------------------------------+---------------------------------+
+   | :ref:`int<class_int>`                     | :ref:`map_width<class_HeightMapShape_property_map_width>` | ``2``                           |
+   +-------------------------------------------+-----------------------------------------------------------+---------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_HeightMapShape_property_map_data:
 
-- :ref:`PoolRealArray<class_PoolRealArray>` **map_data**
+.. rst-class:: classref-property
 
-+-----------+---------------------------------+
-| *Default* | ``PoolRealArray( 0, 0, 0, 0 )`` |
-+-----------+---------------------------------+
-| *Setter*  | set_map_data(value)             |
-+-----------+---------------------------------+
-| *Getter*  | get_map_data()                  |
-+-----------+---------------------------------+
+:ref:`PoolRealArray<class_PoolRealArray>` **map_data** = ``PoolRealArray( 0, 0, 0, 0 )``
+
+.. rst-class:: classref-property-setget
+
+- void **set_map_data** **(** :ref:`PoolRealArray<class_PoolRealArray>` value **)**
+- :ref:`PoolRealArray<class_PoolRealArray>` **get_map_data** **(** **)**
 
 Height map data, pool array must be of :ref:`map_width<class_HeightMapShape_property_map_width>` \* :ref:`map_depth<class_HeightMapShape_property_map_depth>` size.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_HeightMapShape_property_map_depth:
 
-- :ref:`int<class_int>` **map_depth**
+.. rst-class:: classref-property
 
-+-----------+----------------------+
-| *Default* | ``2``                |
-+-----------+----------------------+
-| *Setter*  | set_map_depth(value) |
-+-----------+----------------------+
-| *Getter*  | get_map_depth()      |
-+-----------+----------------------+
+:ref:`int<class_int>` **map_depth** = ``2``
+
+.. rst-class:: classref-property-setget
+
+- void **set_map_depth** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_map_depth** **(** **)**
 
 Number of vertices in the depth of the height map. Changing this will resize the :ref:`map_data<class_HeightMapShape_property_map_data>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_HeightMapShape_property_map_width:
 
-- :ref:`int<class_int>` **map_width**
+.. rst-class:: classref-property
 
-+-----------+----------------------+
-| *Default* | ``2``                |
-+-----------+----------------------+
-| *Setter*  | set_map_width(value) |
-+-----------+----------------------+
-| *Getter*  | get_map_width()      |
-+-----------+----------------------+
+:ref:`int<class_int>` **map_width** = ``2``
+
+.. rst-class:: classref-property-setget
+
+- void **set_map_width** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_map_width** **(** **)**
 
 Number of vertices in the width of the height map. Changing this will resize the :ref:`map_data<class_HeightMapShape_property_map_data>`.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

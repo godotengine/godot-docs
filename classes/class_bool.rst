@@ -12,6 +12,8 @@ bool
 
 Boolean built-in type.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -55,35 +57,56 @@ The following code will set ``can_shoot`` to ``false`` and start a timer. This w
     func _on_CoolDownTimer_timeout():
         can_shoot = true
 
+.. rst-class:: classref-reftable-group
+
 Methods
 -------
 
-+-------------------------+----------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`bool<class_bool_method_bool>` **(** :ref:`int<class_int>` from **)**       |
-+-------------------------+----------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`bool<class_bool_method_bool>` **(** :ref:`float<class_float>` from **)**   |
-+-------------------------+----------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`bool<class_bool_method_bool>` **(** :ref:`String<class_String>` from **)** |
-+-------------------------+----------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------+----------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | :ref:`bool<class_bool_method_bool>` **(** :ref:`int<class_int>` from **)**       |
+   +-------------------------+----------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | :ref:`bool<class_bool_method_bool>` **(** :ref:`float<class_float>` from **)**   |
+   +-------------------------+----------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | :ref:`bool<class_bool_method_bool>` **(** :ref:`String<class_String>` from **)** |
+   +-------------------------+----------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_bool_method_bool:
 
-- :ref:`bool<class_bool>` **bool** **(** :ref:`int<class_int>` from **)**
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **bool** **(** :ref:`int<class_int>` from **)**
 
 Cast an :ref:`int<class_int>` value to a boolean value, this method will return ``false`` if ``0`` is passed in, and ``true`` for all other ints.
 
+.. rst-class:: classref-item-separator
+
 ----
 
-- :ref:`bool<class_bool>` **bool** **(** :ref:`float<class_float>` from **)**
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **bool** **(** :ref:`float<class_float>` from **)**
 
 Cast a :ref:`float<class_float>` value to a boolean value, this method will return ``false`` if ``0.0`` is passed in, and ``true`` for all other floats.
 
+.. rst-class:: classref-item-separator
+
 ----
 
-- :ref:`bool<class_bool>` **bool** **(** :ref:`String<class_String>` from **)**
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **bool** **(** :ref:`String<class_String>` from **)**
 
 Cast a :ref:`String<class_String>` value to a boolean value, this method will return ``false`` if ``""`` is passed in, and ``true`` for all non-empty strings.
 
@@ -92,3 +115,4 @@ Examples: ``bool("False")`` returns ``true``, ``bool("")`` returns ``false``.
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

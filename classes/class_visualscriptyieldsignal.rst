@@ -14,106 +14,144 @@ VisualScriptYieldSignal
 
 A Visual Script node yielding for a signal.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
-``VisualScriptYieldSignal`` will pause the function execution until the provided signal is emitted.
+**VisualScriptYieldSignal** will pause the function execution until the provided signal is emitted.
+
+.. rst-class:: classref-reftable-group
 
 Properties
 ----------
 
-+--------------------------------------------------------+--------------------------------------------------------------------+--------------+
-| :ref:`String<class_String>`                            | :ref:`base_type<class_VisualScriptYieldSignal_property_base_type>` | ``"Object"`` |
-+--------------------------------------------------------+--------------------------------------------------------------------+--------------+
-| :ref:`CallMode<enum_VisualScriptYieldSignal_CallMode>` | :ref:`call_mode<class_VisualScriptYieldSignal_property_call_mode>` | ``0``        |
-+--------------------------------------------------------+--------------------------------------------------------------------+--------------+
-| :ref:`NodePath<class_NodePath>`                        | :ref:`node_path<class_VisualScriptYieldSignal_property_node_path>` |              |
-+--------------------------------------------------------+--------------------------------------------------------------------+--------------+
-| :ref:`String<class_String>`                            | :ref:`signal<class_VisualScriptYieldSignal_property_signal>`       | ``""``       |
-+--------------------------------------------------------+--------------------------------------------------------------------+--------------+
+.. table::
+   :widths: auto
+
+   +--------------------------------------------------------+--------------------------------------------------------------------+--------------+
+   | :ref:`String<class_String>`                            | :ref:`base_type<class_VisualScriptYieldSignal_property_base_type>` | ``"Object"`` |
+   +--------------------------------------------------------+--------------------------------------------------------------------+--------------+
+   | :ref:`CallMode<enum_VisualScriptYieldSignal_CallMode>` | :ref:`call_mode<class_VisualScriptYieldSignal_property_call_mode>` | ``0``        |
+   +--------------------------------------------------------+--------------------------------------------------------------------+--------------+
+   | :ref:`NodePath<class_NodePath>`                        | :ref:`node_path<class_VisualScriptYieldSignal_property_node_path>` |              |
+   +--------------------------------------------------------+--------------------------------------------------------------------+--------------+
+   | :ref:`String<class_String>`                            | :ref:`signal<class_VisualScriptYieldSignal_property_signal>`       | ``""``       |
+   +--------------------------------------------------------+--------------------------------------------------------------------+--------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Enumerations
 ------------
 
 .. _enum_VisualScriptYieldSignal_CallMode:
 
-.. _class_VisualScriptYieldSignal_constant_CALL_MODE_SELF:
-
-.. _class_VisualScriptYieldSignal_constant_CALL_MODE_NODE_PATH:
-
-.. _class_VisualScriptYieldSignal_constant_CALL_MODE_INSTANCE:
+.. rst-class:: classref-enumeration
 
 enum **CallMode**:
 
-- **CALL_MODE_SELF** = **0** --- A signal from this :ref:`Object<class_Object>` will be used.
+.. _class_VisualScriptYieldSignal_constant_CALL_MODE_SELF:
 
-- **CALL_MODE_NODE_PATH** = **1** --- A signal from the given :ref:`Node<class_Node>` in the scene tree will be used.
+.. rst-class:: classref-enumeration-constant
 
-- **CALL_MODE_INSTANCE** = **2** --- A signal from an instanced node with the given type will be used.
+:ref:`CallMode<enum_VisualScriptYieldSignal_CallMode>` **CALL_MODE_SELF** = ``0``
+
+A signal from this :ref:`Object<class_Object>` will be used.
+
+.. _class_VisualScriptYieldSignal_constant_CALL_MODE_NODE_PATH:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`CallMode<enum_VisualScriptYieldSignal_CallMode>` **CALL_MODE_NODE_PATH** = ``1``
+
+A signal from the given :ref:`Node<class_Node>` in the scene tree will be used.
+
+.. _class_VisualScriptYieldSignal_constant_CALL_MODE_INSTANCE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`CallMode<enum_VisualScriptYieldSignal_CallMode>` **CALL_MODE_INSTANCE** = ``2``
+
+A signal from an instanced node with the given type will be used.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_VisualScriptYieldSignal_property_base_type:
 
-- :ref:`String<class_String>` **base_type**
+.. rst-class:: classref-property
 
-+-----------+----------------------+
-| *Default* | ``"Object"``         |
-+-----------+----------------------+
-| *Setter*  | set_base_type(value) |
-+-----------+----------------------+
-| *Getter*  | get_base_type()      |
-+-----------+----------------------+
+:ref:`String<class_String>` **base_type** = ``"Object"``
+
+.. rst-class:: classref-property-setget
+
+- void **set_base_type** **(** :ref:`String<class_String>` value **)**
+- :ref:`String<class_String>` **get_base_type** **(** **)**
 
 The base type to be used when :ref:`call_mode<class_VisualScriptYieldSignal_property_call_mode>` is set to :ref:`CALL_MODE_INSTANCE<class_VisualScriptYieldSignal_constant_CALL_MODE_INSTANCE>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_VisualScriptYieldSignal_property_call_mode:
 
-- :ref:`CallMode<enum_VisualScriptYieldSignal_CallMode>` **call_mode**
+.. rst-class:: classref-property
 
-+-----------+----------------------+
-| *Default* | ``0``                |
-+-----------+----------------------+
-| *Setter*  | set_call_mode(value) |
-+-----------+----------------------+
-| *Getter*  | get_call_mode()      |
-+-----------+----------------------+
+:ref:`CallMode<enum_VisualScriptYieldSignal_CallMode>` **call_mode** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_call_mode** **(** :ref:`CallMode<enum_VisualScriptYieldSignal_CallMode>` value **)**
+- :ref:`CallMode<enum_VisualScriptYieldSignal_CallMode>` **get_call_mode** **(** **)**
 
 ``call_mode`` determines the target object to wait for the signal emission. See :ref:`CallMode<enum_VisualScriptYieldSignal_CallMode>` for options.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_VisualScriptYieldSignal_property_node_path:
 
-- :ref:`NodePath<class_NodePath>` **node_path**
+.. rst-class:: classref-property
 
-+----------+----------------------+
-| *Setter* | set_base_path(value) |
-+----------+----------------------+
-| *Getter* | get_base_path()      |
-+----------+----------------------+
+:ref:`NodePath<class_NodePath>` **node_path**
+
+.. rst-class:: classref-property-setget
+
+- void **set_base_path** **(** :ref:`NodePath<class_NodePath>` value **)**
+- :ref:`NodePath<class_NodePath>` **get_base_path** **(** **)**
 
 The node path to use when :ref:`call_mode<class_VisualScriptYieldSignal_property_call_mode>` is set to :ref:`CALL_MODE_NODE_PATH<class_VisualScriptYieldSignal_constant_CALL_MODE_NODE_PATH>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_VisualScriptYieldSignal_property_signal:
 
-- :ref:`String<class_String>` **signal**
+.. rst-class:: classref-property
 
-+-----------+-------------------+
-| *Default* | ``""``            |
-+-----------+-------------------+
-| *Setter*  | set_signal(value) |
-+-----------+-------------------+
-| *Getter*  | get_signal()      |
-+-----------+-------------------+
+:ref:`String<class_String>` **signal** = ``""``
+
+.. rst-class:: classref-property-setget
+
+- void **set_signal** **(** :ref:`String<class_String>` value **)**
+- :ref:`String<class_String>` **get_signal** **(** **)**
 
 The signal name to be waited for.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

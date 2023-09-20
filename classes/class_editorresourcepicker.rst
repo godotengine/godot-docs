@@ -16,6 +16,8 @@ EditorResourcePicker
 
 Godot editor's control for selecting :ref:`Resource<class_Resource>` type properties.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -23,171 +25,248 @@ This :ref:`Control<class_Control>` node is used in the editor's Inspector dock t
 
 \ **Note:** This :ref:`Control<class_Control>` does not include any editor for the resource, as editing is controlled by the Inspector dock itself or sub-Inspectors.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+---------------------------------+-----------------------------------------------------------------------------+-----------+
-| :ref:`String<class_String>`     | :ref:`base_type<class_EditorResourcePicker_property_base_type>`             | ``""``    |
-+---------------------------------+-----------------------------------------------------------------------------+-----------+
-| :ref:`bool<class_bool>`         | :ref:`editable<class_EditorResourcePicker_property_editable>`               | ``true``  |
-+---------------------------------+-----------------------------------------------------------------------------+-----------+
-| :ref:`Resource<class_Resource>` | :ref:`edited_resource<class_EditorResourcePicker_property_edited_resource>` |           |
-+---------------------------------+-----------------------------------------------------------------------------+-----------+
-| :ref:`bool<class_bool>`         | :ref:`toggle_mode<class_EditorResourcePicker_property_toggle_mode>`         | ``false`` |
-+---------------------------------+-----------------------------------------------------------------------------+-----------+
+.. table::
+   :widths: auto
+
+   +---------------------------------+-----------------------------------------------------------------------------+-----------+
+   | :ref:`String<class_String>`     | :ref:`base_type<class_EditorResourcePicker_property_base_type>`             | ``""``    |
+   +---------------------------------+-----------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`         | :ref:`editable<class_EditorResourcePicker_property_editable>`               | ``true``  |
+   +---------------------------------+-----------------------------------------------------------------------------+-----------+
+   | :ref:`Resource<class_Resource>` | :ref:`edited_resource<class_EditorResourcePicker_property_edited_resource>` |           |
+   +---------------------------------+-----------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`         | :ref:`toggle_mode<class_EditorResourcePicker_property_toggle_mode>`         | ``false`` |
+   +---------------------------------+-----------------------------------------------------------------------------+-----------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                       | :ref:`can_drop_data_fw<class_EditorResourcePicker_method_can_drop_data_fw>` **(** :ref:`Vector2<class_Vector2>` position, :ref:`Variant<class_Variant>` data, :ref:`Control<class_Control>` from **)** |const| |
-+-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                          | :ref:`drop_data_fw<class_EditorResourcePicker_method_drop_data_fw>` **(** :ref:`Vector2<class_Vector2>` position, :ref:`Variant<class_Variant>` data, :ref:`Control<class_Control>` from **)**                 |
-+-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolStringArray<class_PoolStringArray>` | :ref:`get_allowed_types<class_EditorResourcePicker_method_get_allowed_types>` **(** **)** |const|                                                                                                              |
-+-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>`                 | :ref:`get_drag_data_fw<class_EditorResourcePicker_method_get_drag_data_fw>` **(** :ref:`Vector2<class_Vector2>` position, :ref:`Control<class_Control>` from **)**                                             |
-+-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                       | :ref:`handle_menu_selected<class_EditorResourcePicker_method_handle_menu_selected>` **(** :ref:`int<class_int>` id **)** |virtual|                                                                             |
-+-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                          | :ref:`set_create_options<class_EditorResourcePicker_method_set_create_options>` **(** :ref:`Object<class_Object>` menu_node **)** |virtual|                                                                    |
-+-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                          | :ref:`set_toggle_pressed<class_EditorResourcePicker_method_set_toggle_pressed>` **(** :ref:`bool<class_bool>` pressed **)**                                                                                    |
-+-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                       | :ref:`can_drop_data_fw<class_EditorResourcePicker_method_can_drop_data_fw>` **(** :ref:`Vector2<class_Vector2>` position, :ref:`Variant<class_Variant>` data, :ref:`Control<class_Control>` from **)** |const| |
+   +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                          | :ref:`drop_data_fw<class_EditorResourcePicker_method_drop_data_fw>` **(** :ref:`Vector2<class_Vector2>` position, :ref:`Variant<class_Variant>` data, :ref:`Control<class_Control>` from **)**                 |
+   +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PoolStringArray<class_PoolStringArray>` | :ref:`get_allowed_types<class_EditorResourcePicker_method_get_allowed_types>` **(** **)** |const|                                                                                                              |
+   +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Variant<class_Variant>`                 | :ref:`get_drag_data_fw<class_EditorResourcePicker_method_get_drag_data_fw>` **(** :ref:`Vector2<class_Vector2>` position, :ref:`Control<class_Control>` from **)**                                             |
+   +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                       | :ref:`handle_menu_selected<class_EditorResourcePicker_method_handle_menu_selected>` **(** :ref:`int<class_int>` id **)** |virtual|                                                                             |
+   +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                          | :ref:`set_create_options<class_EditorResourcePicker_method_set_create_options>` **(** :ref:`Object<class_Object>` menu_node **)** |virtual|                                                                    |
+   +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                          | :ref:`set_toggle_pressed<class_EditorResourcePicker_method_set_toggle_pressed>` **(** :ref:`bool<class_bool>` pressed **)**                                                                                    |
+   +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Signals
 -------
 
 .. _class_EditorResourcePicker_signal_resource_changed:
 
-- **resource_changed** **(** :ref:`Resource<class_Resource>` resource **)**
+.. rst-class:: classref-signal
+
+**resource_changed** **(** :ref:`Resource<class_Resource>` resource **)**
 
 Emitted when the value of the edited resource was changed.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorResourcePicker_signal_resource_selected:
 
-- **resource_selected** **(** :ref:`Resource<class_Resource>` resource, :ref:`bool<class_bool>` edit **)**
+.. rst-class:: classref-signal
+
+**resource_selected** **(** :ref:`Resource<class_Resource>` resource, :ref:`bool<class_bool>` edit **)**
 
 Emitted when the resource value was set and user clicked to edit it. When ``edit`` is ``true``, the signal was caused by the context menu "Edit" option.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_EditorResourcePicker_property_base_type:
 
-- :ref:`String<class_String>` **base_type**
+.. rst-class:: classref-property
 
-+-----------+----------------------+
-| *Default* | ``""``               |
-+-----------+----------------------+
-| *Setter*  | set_base_type(value) |
-+-----------+----------------------+
-| *Getter*  | get_base_type()      |
-+-----------+----------------------+
+:ref:`String<class_String>` **base_type** = ``""``
+
+.. rst-class:: classref-property-setget
+
+- void **set_base_type** **(** :ref:`String<class_String>` value **)**
+- :ref:`String<class_String>` **get_base_type** **(** **)**
 
 The base type of allowed resource types. Can be a comma-separated list of several options.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorResourcePicker_property_editable:
 
-- :ref:`bool<class_bool>` **editable**
+.. rst-class:: classref-property
 
-+-----------+---------------------+
-| *Default* | ``true``            |
-+-----------+---------------------+
-| *Setter*  | set_editable(value) |
-+-----------+---------------------+
-| *Getter*  | is_editable()       |
-+-----------+---------------------+
+:ref:`bool<class_bool>` **editable** = ``true``
+
+.. rst-class:: classref-property-setget
+
+- void **set_editable** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_editable** **(** **)**
 
 If ``true``, the value can be selected and edited.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorResourcePicker_property_edited_resource:
 
-- :ref:`Resource<class_Resource>` **edited_resource**
+.. rst-class:: classref-property
 
-+----------+----------------------------+
-| *Setter* | set_edited_resource(value) |
-+----------+----------------------------+
-| *Getter* | get_edited_resource()      |
-+----------+----------------------------+
+:ref:`Resource<class_Resource>` **edited_resource**
+
+.. rst-class:: classref-property-setget
+
+- void **set_edited_resource** **(** :ref:`Resource<class_Resource>` value **)**
+- :ref:`Resource<class_Resource>` **get_edited_resource** **(** **)**
 
 The edited resource value.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorResourcePicker_property_toggle_mode:
 
-- :ref:`bool<class_bool>` **toggle_mode**
+.. rst-class:: classref-property
 
-+-----------+------------------------+
-| *Default* | ``false``              |
-+-----------+------------------------+
-| *Setter*  | set_toggle_mode(value) |
-+-----------+------------------------+
-| *Getter*  | is_toggle_mode()       |
-+-----------+------------------------+
+:ref:`bool<class_bool>` **toggle_mode** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_toggle_mode** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_toggle_mode** **(** **)**
 
 If ``true``, the main button with the resource preview works in the toggle mode. Use :ref:`set_toggle_pressed<class_EditorResourcePicker_method_set_toggle_pressed>` to manually set the state.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_EditorResourcePicker_method_can_drop_data_fw:
 
-- :ref:`bool<class_bool>` **can_drop_data_fw** **(** :ref:`Vector2<class_Vector2>` position, :ref:`Variant<class_Variant>` data, :ref:`Control<class_Control>` from **)** |const|
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **can_drop_data_fw** **(** :ref:`Vector2<class_Vector2>` position, :ref:`Variant<class_Variant>` data, :ref:`Control<class_Control>` from **)** |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorResourcePicker_method_drop_data_fw:
 
-- void **drop_data_fw** **(** :ref:`Vector2<class_Vector2>` position, :ref:`Variant<class_Variant>` data, :ref:`Control<class_Control>` from **)**
+.. rst-class:: classref-method
+
+void **drop_data_fw** **(** :ref:`Vector2<class_Vector2>` position, :ref:`Variant<class_Variant>` data, :ref:`Control<class_Control>` from **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorResourcePicker_method_get_allowed_types:
 
-- :ref:`PoolStringArray<class_PoolStringArray>` **get_allowed_types** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`PoolStringArray<class_PoolStringArray>` **get_allowed_types** **(** **)** |const|
 
 Returns a list of all allowed types and subtypes corresponding to the :ref:`base_type<class_EditorResourcePicker_property_base_type>`. If the :ref:`base_type<class_EditorResourcePicker_property_base_type>` is empty, an empty list is returned.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorResourcePicker_method_get_drag_data_fw:
 
-- :ref:`Variant<class_Variant>` **get_drag_data_fw** **(** :ref:`Vector2<class_Vector2>` position, :ref:`Control<class_Control>` from **)**
+.. rst-class:: classref-method
+
+:ref:`Variant<class_Variant>` **get_drag_data_fw** **(** :ref:`Vector2<class_Vector2>` position, :ref:`Control<class_Control>` from **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorResourcePicker_method_handle_menu_selected:
 
-- :ref:`bool<class_bool>` **handle_menu_selected** **(** :ref:`int<class_int>` id **)** |virtual|
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **handle_menu_selected** **(** :ref:`int<class_int>` id **)** |virtual|
 
 This virtual method can be implemented to handle context menu items not handled by default. See :ref:`set_create_options<class_EditorResourcePicker_method_set_create_options>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorResourcePicker_method_set_create_options:
 
-- void **set_create_options** **(** :ref:`Object<class_Object>` menu_node **)** |virtual|
+.. rst-class:: classref-method
 
-This virtual method is called when updating the context menu of ``EditorResourcePicker``. Implement this method to override the "New ..." items with your own options. ``menu_node`` is a reference to the :ref:`PopupMenu<class_PopupMenu>` node.
+void **set_create_options** **(** :ref:`Object<class_Object>` menu_node **)** |virtual|
+
+This virtual method is called when updating the context menu of **EditorResourcePicker**. Implement this method to override the "New ..." items with your own options. ``menu_node`` is a reference to the :ref:`PopupMenu<class_PopupMenu>` node.
 
 \ **Note:** Implement :ref:`handle_menu_selected<class_EditorResourcePicker_method_handle_menu_selected>` to handle these custom items.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorResourcePicker_method_set_toggle_pressed:
 
-- void **set_toggle_pressed** **(** :ref:`bool<class_bool>` pressed **)**
+.. rst-class:: classref-method
+
+void **set_toggle_pressed** **(** :ref:`bool<class_bool>` pressed **)**
 
 Sets the toggle mode state for the main button. Works only if :ref:`toggle_mode<class_EditorResourcePicker_property_toggle_mode>` is set to ``true``.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

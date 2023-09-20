@@ -14,6 +14,8 @@ VisualScriptOperator
 
 A Visual Script node that performs an operation on two values.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -27,48 +29,60 @@ Description
 
 - Data (variant): ``result``
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-------------------------------------------------------------+---------------------------------------------------------------+-------+
-| :ref:`Variant.Operator<enum_@GlobalScope_Variant.Operator>` | :ref:`operator<class_VisualScriptOperator_property_operator>` | ``6`` |
-+-------------------------------------------------------------+---------------------------------------------------------------+-------+
-| :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>`         | :ref:`type<class_VisualScriptOperator_property_type>`         | ``0`` |
-+-------------------------------------------------------------+---------------------------------------------------------------+-------+
+.. table::
+   :widths: auto
+
+   +-------------------------------------------------------------+---------------------------------------------------------------+-------+
+   | :ref:`Variant.Operator<enum_@GlobalScope_Variant.Operator>` | :ref:`operator<class_VisualScriptOperator_property_operator>` | ``6`` |
+   +-------------------------------------------------------------+---------------------------------------------------------------+-------+
+   | :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>`         | :ref:`type<class_VisualScriptOperator_property_type>`         | ``0`` |
+   +-------------------------------------------------------------+---------------------------------------------------------------+-------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_VisualScriptOperator_property_operator:
 
-- :ref:`Variant.Operator<enum_@GlobalScope_Variant.Operator>` **operator**
+.. rst-class:: classref-property
 
-+-----------+---------------------+
-| *Default* | ``6``               |
-+-----------+---------------------+
-| *Setter*  | set_operator(value) |
-+-----------+---------------------+
-| *Getter*  | get_operator()      |
-+-----------+---------------------+
+:ref:`Variant.Operator<enum_@GlobalScope_Variant.Operator>` **operator** = ``6``
+
+.. rst-class:: classref-property-setget
+
+- void **set_operator** **(** :ref:`Variant.Operator<enum_@GlobalScope_Variant.Operator>` value **)**
+- :ref:`Variant.Operator<enum_@GlobalScope_Variant.Operator>` **get_operator** **(** **)**
 
 The operation to be performed. See :ref:`Variant.Operator<enum_@GlobalScope_Variant.Operator>` for available options.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_VisualScriptOperator_property_type:
 
-- :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` **type**
+.. rst-class:: classref-property
 
-+-----------+------------------+
-| *Default* | ``0``            |
-+-----------+------------------+
-| *Setter*  | set_typed(value) |
-+-----------+------------------+
-| *Getter*  | get_typed()      |
-+-----------+------------------+
+:ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` **type** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_typed** **(** :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` value **)**
+- :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` **get_typed** **(** **)**
 
 The type of the values for this operation. See :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` for available options.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

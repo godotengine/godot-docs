@@ -12,178 +12,284 @@ GLTFSkin
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
+.. container:: contribute
 
+	There is currently no description for this class. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-reftable-group
 
 Properties
 ----------
 
-+-----------------------------------------+-----------------------------------------------------------------+----------------------+
-| :ref:`Skin<class_Skin>`                 | :ref:`godot_skin<class_GLTFSkin_property_godot_skin>`           |                      |
-+-----------------------------------------+-----------------------------------------------------------------+----------------------+
-| :ref:`PoolIntArray<class_PoolIntArray>` | :ref:`joints<class_GLTFSkin_property_joints>`                   | ``PoolIntArray(  )`` |
-+-----------------------------------------+-----------------------------------------------------------------+----------------------+
-| :ref:`PoolIntArray<class_PoolIntArray>` | :ref:`joints_original<class_GLTFSkin_property_joints_original>` | ``PoolIntArray(  )`` |
-+-----------------------------------------+-----------------------------------------------------------------+----------------------+
-| :ref:`PoolIntArray<class_PoolIntArray>` | :ref:`non_joints<class_GLTFSkin_property_non_joints>`           | ``PoolIntArray(  )`` |
-+-----------------------------------------+-----------------------------------------------------------------+----------------------+
-| :ref:`PoolIntArray<class_PoolIntArray>` | :ref:`roots<class_GLTFSkin_property_roots>`                     | ``PoolIntArray(  )`` |
-+-----------------------------------------+-----------------------------------------------------------------+----------------------+
-| :ref:`int<class_int>`                   | :ref:`skeleton<class_GLTFSkin_property_skeleton>`               | ``-1``               |
-+-----------------------------------------+-----------------------------------------------------------------+----------------------+
-| :ref:`int<class_int>`                   | :ref:`skin_root<class_GLTFSkin_property_skin_root>`             | ``-1``               |
-+-----------------------------------------+-----------------------------------------------------------------+----------------------+
+.. table::
+   :widths: auto
+
+   +-----------------------------------------+-----------------------------------------------------------------+----------------------+
+   | :ref:`Skin<class_Skin>`                 | :ref:`godot_skin<class_GLTFSkin_property_godot_skin>`           |                      |
+   +-----------------------------------------+-----------------------------------------------------------------+----------------------+
+   | :ref:`PoolIntArray<class_PoolIntArray>` | :ref:`joints<class_GLTFSkin_property_joints>`                   | ``PoolIntArray(  )`` |
+   +-----------------------------------------+-----------------------------------------------------------------+----------------------+
+   | :ref:`PoolIntArray<class_PoolIntArray>` | :ref:`joints_original<class_GLTFSkin_property_joints_original>` | ``PoolIntArray(  )`` |
+   +-----------------------------------------+-----------------------------------------------------------------+----------------------+
+   | :ref:`PoolIntArray<class_PoolIntArray>` | :ref:`non_joints<class_GLTFSkin_property_non_joints>`           | ``PoolIntArray(  )`` |
+   +-----------------------------------------+-----------------------------------------------------------------+----------------------+
+   | :ref:`PoolIntArray<class_PoolIntArray>` | :ref:`roots<class_GLTFSkin_property_roots>`                     | ``PoolIntArray(  )`` |
+   +-----------------------------------------+-----------------------------------------------------------------+----------------------+
+   | :ref:`int<class_int>`                   | :ref:`skeleton<class_GLTFSkin_property_skeleton>`               | ``-1``               |
+   +-----------------------------------------+-----------------------------------------------------------------+----------------------+
+   | :ref:`int<class_int>`                   | :ref:`skin_root<class_GLTFSkin_property_skin_root>`             | ``-1``               |
+   +-----------------------------------------+-----------------------------------------------------------------+----------------------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+-------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`           | :ref:`get_inverse_binds<class_GLTFSkin_method_get_inverse_binds>` **(** **)**                                                               |
-+-------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Dictionary<class_Dictionary>` | :ref:`get_joint_i_to_bone_i<class_GLTFSkin_method_get_joint_i_to_bone_i>` **(** **)**                                                       |
-+-------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Dictionary<class_Dictionary>` | :ref:`get_joint_i_to_name<class_GLTFSkin_method_get_joint_i_to_name>` **(** **)**                                                           |
-+-------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                | :ref:`set_inverse_binds<class_GLTFSkin_method_set_inverse_binds>` **(** :ref:`Array<class_Array>` inverse_binds **)**                       |
-+-------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                | :ref:`set_joint_i_to_bone_i<class_GLTFSkin_method_set_joint_i_to_bone_i>` **(** :ref:`Dictionary<class_Dictionary>` joint_i_to_bone_i **)** |
-+-------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                | :ref:`set_joint_i_to_name<class_GLTFSkin_method_set_joint_i_to_name>` **(** :ref:`Dictionary<class_Dictionary>` joint_i_to_name **)**       |
-+-------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Array<class_Array>`           | :ref:`get_inverse_binds<class_GLTFSkin_method_get_inverse_binds>` **(** **)**                                                               |
+   +-------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Dictionary<class_Dictionary>` | :ref:`get_joint_i_to_bone_i<class_GLTFSkin_method_get_joint_i_to_bone_i>` **(** **)**                                                       |
+   +-------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Dictionary<class_Dictionary>` | :ref:`get_joint_i_to_name<class_GLTFSkin_method_get_joint_i_to_name>` **(** **)**                                                           |
+   +-------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                | :ref:`set_inverse_binds<class_GLTFSkin_method_set_inverse_binds>` **(** :ref:`Array<class_Array>` inverse_binds **)**                       |
+   +-------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                | :ref:`set_joint_i_to_bone_i<class_GLTFSkin_method_set_joint_i_to_bone_i>` **(** :ref:`Dictionary<class_Dictionary>` joint_i_to_bone_i **)** |
+   +-------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                | :ref:`set_joint_i_to_name<class_GLTFSkin_method_set_joint_i_to_name>` **(** :ref:`Dictionary<class_Dictionary>` joint_i_to_name **)**       |
+   +-------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_GLTFSkin_property_godot_skin:
 
-- :ref:`Skin<class_Skin>` **godot_skin**
+.. rst-class:: classref-property
 
-+----------+-----------------------+
-| *Setter* | set_godot_skin(value) |
-+----------+-----------------------+
-| *Getter* | get_godot_skin()      |
-+----------+-----------------------+
+:ref:`Skin<class_Skin>` **godot_skin**
+
+.. rst-class:: classref-property-setget
+
+- void **set_godot_skin** **(** :ref:`Skin<class_Skin>` value **)**
+- :ref:`Skin<class_Skin>` **get_godot_skin** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_GLTFSkin_property_joints:
 
-- :ref:`PoolIntArray<class_PoolIntArray>` **joints**
+.. rst-class:: classref-property
 
-+-----------+----------------------+
-| *Default* | ``PoolIntArray(  )`` |
-+-----------+----------------------+
-| *Setter*  | set_joints(value)    |
-+-----------+----------------------+
-| *Getter*  | get_joints()         |
-+-----------+----------------------+
+:ref:`PoolIntArray<class_PoolIntArray>` **joints** = ``PoolIntArray(  )``
+
+.. rst-class:: classref-property-setget
+
+- void **set_joints** **(** :ref:`PoolIntArray<class_PoolIntArray>` value **)**
+- :ref:`PoolIntArray<class_PoolIntArray>` **get_joints** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_GLTFSkin_property_joints_original:
 
-- :ref:`PoolIntArray<class_PoolIntArray>` **joints_original**
+.. rst-class:: classref-property
 
-+-----------+----------------------------+
-| *Default* | ``PoolIntArray(  )``       |
-+-----------+----------------------------+
-| *Setter*  | set_joints_original(value) |
-+-----------+----------------------------+
-| *Getter*  | get_joints_original()      |
-+-----------+----------------------------+
+:ref:`PoolIntArray<class_PoolIntArray>` **joints_original** = ``PoolIntArray(  )``
+
+.. rst-class:: classref-property-setget
+
+- void **set_joints_original** **(** :ref:`PoolIntArray<class_PoolIntArray>` value **)**
+- :ref:`PoolIntArray<class_PoolIntArray>` **get_joints_original** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_GLTFSkin_property_non_joints:
 
-- :ref:`PoolIntArray<class_PoolIntArray>` **non_joints**
+.. rst-class:: classref-property
 
-+-----------+-----------------------+
-| *Default* | ``PoolIntArray(  )``  |
-+-----------+-----------------------+
-| *Setter*  | set_non_joints(value) |
-+-----------+-----------------------+
-| *Getter*  | get_non_joints()      |
-+-----------+-----------------------+
+:ref:`PoolIntArray<class_PoolIntArray>` **non_joints** = ``PoolIntArray(  )``
+
+.. rst-class:: classref-property-setget
+
+- void **set_non_joints** **(** :ref:`PoolIntArray<class_PoolIntArray>` value **)**
+- :ref:`PoolIntArray<class_PoolIntArray>` **get_non_joints** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_GLTFSkin_property_roots:
 
-- :ref:`PoolIntArray<class_PoolIntArray>` **roots**
+.. rst-class:: classref-property
 
-+-----------+----------------------+
-| *Default* | ``PoolIntArray(  )`` |
-+-----------+----------------------+
-| *Setter*  | set_roots(value)     |
-+-----------+----------------------+
-| *Getter*  | get_roots()          |
-+-----------+----------------------+
+:ref:`PoolIntArray<class_PoolIntArray>` **roots** = ``PoolIntArray(  )``
+
+.. rst-class:: classref-property-setget
+
+- void **set_roots** **(** :ref:`PoolIntArray<class_PoolIntArray>` value **)**
+- :ref:`PoolIntArray<class_PoolIntArray>` **get_roots** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_GLTFSkin_property_skeleton:
 
-- :ref:`int<class_int>` **skeleton**
+.. rst-class:: classref-property
 
-+-----------+---------------------+
-| *Default* | ``-1``              |
-+-----------+---------------------+
-| *Setter*  | set_skeleton(value) |
-+-----------+---------------------+
-| *Getter*  | get_skeleton()      |
-+-----------+---------------------+
+:ref:`int<class_int>` **skeleton** = ``-1``
+
+.. rst-class:: classref-property-setget
+
+- void **set_skeleton** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_skeleton** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_GLTFSkin_property_skin_root:
 
-- :ref:`int<class_int>` **skin_root**
+.. rst-class:: classref-property
 
-+-----------+----------------------+
-| *Default* | ``-1``               |
-+-----------+----------------------+
-| *Setter*  | set_skin_root(value) |
-+-----------+----------------------+
-| *Getter*  | get_skin_root()      |
-+-----------+----------------------+
+:ref:`int<class_int>` **skin_root** = ``-1``
+
+.. rst-class:: classref-property-setget
+
+- void **set_skin_root** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_skin_root** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_GLTFSkin_method_get_inverse_binds:
 
-- :ref:`Array<class_Array>` **get_inverse_binds** **(** **)**
+.. rst-class:: classref-method
+
+:ref:`Array<class_Array>` **get_inverse_binds** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_GLTFSkin_method_get_joint_i_to_bone_i:
 
-- :ref:`Dictionary<class_Dictionary>` **get_joint_i_to_bone_i** **(** **)**
+.. rst-class:: classref-method
+
+:ref:`Dictionary<class_Dictionary>` **get_joint_i_to_bone_i** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_GLTFSkin_method_get_joint_i_to_name:
 
-- :ref:`Dictionary<class_Dictionary>` **get_joint_i_to_name** **(** **)**
+.. rst-class:: classref-method
+
+:ref:`Dictionary<class_Dictionary>` **get_joint_i_to_name** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_GLTFSkin_method_set_inverse_binds:
 
-- void **set_inverse_binds** **(** :ref:`Array<class_Array>` inverse_binds **)**
+.. rst-class:: classref-method
+
+void **set_inverse_binds** **(** :ref:`Array<class_Array>` inverse_binds **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_GLTFSkin_method_set_joint_i_to_bone_i:
 
-- void **set_joint_i_to_bone_i** **(** :ref:`Dictionary<class_Dictionary>` joint_i_to_bone_i **)**
+.. rst-class:: classref-method
+
+void **set_joint_i_to_bone_i** **(** :ref:`Dictionary<class_Dictionary>` joint_i_to_bone_i **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_GLTFSkin_method_set_joint_i_to_name:
 
-- void **set_joint_i_to_name** **(** :ref:`Dictionary<class_Dictionary>` joint_i_to_name **)**
+.. rst-class:: classref-method
+
+void **set_joint_i_to_name** **(** :ref:`Dictionary<class_Dictionary>` joint_i_to_name **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

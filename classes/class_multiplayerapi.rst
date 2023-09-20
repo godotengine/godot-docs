@@ -14,6 +14,8 @@ MultiplayerAPI
 
 High-level multiplayer API.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -25,266 +27,397 @@ It is possible to override the MultiplayerAPI instance used by specific Nodes by
 
 \ **Note:** The high-level multiplayer API protocol is an implementation detail and isn't meant to be used by non-Godot servers. It may change without notice.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+-----------+
-| :ref:`bool<class_bool>`                                         | :ref:`allow_object_decoding<class_MultiplayerAPI_property_allow_object_decoding>`                   | ``false`` |
-+-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+-----------+
-| :ref:`NetworkedMultiplayerPeer<class_NetworkedMultiplayerPeer>` | :ref:`network_peer<class_MultiplayerAPI_property_network_peer>`                                     |           |
-+-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+-----------+
-| :ref:`bool<class_bool>`                                         | :ref:`refuse_new_network_connections<class_MultiplayerAPI_property_refuse_new_network_connections>` | ``false`` |
-+-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+-----------+
-| :ref:`Node<class_Node>`                                         | :ref:`root_node<class_MultiplayerAPI_property_root_node>`                                           |           |
-+-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+-----------+
+.. table::
+   :widths: auto
+
+   +-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`                                         | :ref:`allow_object_decoding<class_MultiplayerAPI_property_allow_object_decoding>`                   | ``false`` |
+   +-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+-----------+
+   | :ref:`NetworkedMultiplayerPeer<class_NetworkedMultiplayerPeer>` | :ref:`network_peer<class_MultiplayerAPI_property_network_peer>`                                     |           |
+   +-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`                                         | :ref:`refuse_new_network_connections<class_MultiplayerAPI_property_refuse_new_network_connections>` | ``false`` |
+   +-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+-----------+
+   | :ref:`Node<class_Node>`                                         | :ref:`root_node<class_MultiplayerAPI_property_root_node>`                                           |           |
+   +-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+-----------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+-----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                    | :ref:`clear<class_MultiplayerAPI_method_clear>` **(** **)**                                                                                                                                                               |
-+-----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolIntArray<class_PoolIntArray>` | :ref:`get_network_connected_peers<class_MultiplayerAPI_method_get_network_connected_peers>` **(** **)** |const|                                                                                                           |
-+-----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                   | :ref:`get_network_unique_id<class_MultiplayerAPI_method_get_network_unique_id>` **(** **)** |const|                                                                                                                       |
-+-----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                   | :ref:`get_rpc_sender_id<class_MultiplayerAPI_method_get_rpc_sender_id>` **(** **)** |const|                                                                                                                               |
-+-----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                 | :ref:`has_network_peer<class_MultiplayerAPI_method_has_network_peer>` **(** **)** |const|                                                                                                                                 |
-+-----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                 | :ref:`is_network_server<class_MultiplayerAPI_method_is_network_server>` **(** **)** |const|                                                                                                                               |
-+-----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                    | :ref:`poll<class_MultiplayerAPI_method_poll>` **(** **)**                                                                                                                                                                 |
-+-----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>`   | :ref:`send_bytes<class_MultiplayerAPI_method_send_bytes>` **(** :ref:`PoolByteArray<class_PoolByteArray>` bytes, :ref:`int<class_int>` id=0, :ref:`TransferMode<enum_NetworkedMultiplayerPeer_TransferMode>` mode=2 **)** |
-+-----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                    | :ref:`clear<class_MultiplayerAPI_method_clear>` **(** **)**                                                                                                                                                               |
+   +-----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PoolIntArray<class_PoolIntArray>` | :ref:`get_network_connected_peers<class_MultiplayerAPI_method_get_network_connected_peers>` **(** **)** |const|                                                                                                           |
+   +-----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                   | :ref:`get_network_unique_id<class_MultiplayerAPI_method_get_network_unique_id>` **(** **)** |const|                                                                                                                       |
+   +-----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                   | :ref:`get_rpc_sender_id<class_MultiplayerAPI_method_get_rpc_sender_id>` **(** **)** |const|                                                                                                                               |
+   +-----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                 | :ref:`has_network_peer<class_MultiplayerAPI_method_has_network_peer>` **(** **)** |const|                                                                                                                                 |
+   +-----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                 | :ref:`is_network_server<class_MultiplayerAPI_method_is_network_server>` **(** **)** |const|                                                                                                                               |
+   +-----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                    | :ref:`poll<class_MultiplayerAPI_method_poll>` **(** **)**                                                                                                                                                                 |
+   +-----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>`   | :ref:`send_bytes<class_MultiplayerAPI_method_send_bytes>` **(** :ref:`PoolByteArray<class_PoolByteArray>` bytes, :ref:`int<class_int>` id=0, :ref:`TransferMode<enum_NetworkedMultiplayerPeer_TransferMode>` mode=2 **)** |
+   +-----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Signals
 -------
 
 .. _class_MultiplayerAPI_signal_connected_to_server:
 
-- **connected_to_server** **(** **)**
+.. rst-class:: classref-signal
+
+**connected_to_server** **(** **)**
 
 Emitted when this MultiplayerAPI's :ref:`network_peer<class_MultiplayerAPI_property_network_peer>` successfully connected to a server. Only emitted on clients.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_MultiplayerAPI_signal_connection_failed:
 
-- **connection_failed** **(** **)**
+.. rst-class:: classref-signal
+
+**connection_failed** **(** **)**
 
 Emitted when this MultiplayerAPI's :ref:`network_peer<class_MultiplayerAPI_property_network_peer>` fails to establish a connection to a server. Only emitted on clients.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_MultiplayerAPI_signal_network_peer_connected:
 
-- **network_peer_connected** **(** :ref:`int<class_int>` id **)**
+.. rst-class:: classref-signal
+
+**network_peer_connected** **(** :ref:`int<class_int>` id **)**
 
 Emitted when this MultiplayerAPI's :ref:`network_peer<class_MultiplayerAPI_property_network_peer>` connects with a new peer. ID is the peer ID of the new peer. Clients get notified when other clients connect to the same server. Upon connecting to a server, a client also receives this signal for the server (with ID being 1).
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_MultiplayerAPI_signal_network_peer_disconnected:
 
-- **network_peer_disconnected** **(** :ref:`int<class_int>` id **)**
+.. rst-class:: classref-signal
+
+**network_peer_disconnected** **(** :ref:`int<class_int>` id **)**
 
 Emitted when this MultiplayerAPI's :ref:`network_peer<class_MultiplayerAPI_property_network_peer>` disconnects from a peer. Clients get notified when other clients disconnect from the same server.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_MultiplayerAPI_signal_network_peer_packet:
 
-- **network_peer_packet** **(** :ref:`int<class_int>` id, :ref:`PoolByteArray<class_PoolByteArray>` packet **)**
+.. rst-class:: classref-signal
+
+**network_peer_packet** **(** :ref:`int<class_int>` id, :ref:`PoolByteArray<class_PoolByteArray>` packet **)**
 
 Emitted when this MultiplayerAPI's :ref:`network_peer<class_MultiplayerAPI_property_network_peer>` receive a ``packet`` with custom data (see :ref:`send_bytes<class_MultiplayerAPI_method_send_bytes>`). ID is the peer ID of the peer that sent the packet.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_MultiplayerAPI_signal_server_disconnected:
 
-- **server_disconnected** **(** **)**
+.. rst-class:: classref-signal
+
+**server_disconnected** **(** **)**
 
 Emitted when this MultiplayerAPI's :ref:`network_peer<class_MultiplayerAPI_property_network_peer>` disconnects from server. Only emitted on clients.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Enumerations
 ------------
 
 .. _enum_MultiplayerAPI_RPCMode:
 
-.. _class_MultiplayerAPI_constant_RPC_MODE_DISABLED:
-
-.. _class_MultiplayerAPI_constant_RPC_MODE_REMOTE:
-
-.. _class_MultiplayerAPI_constant_RPC_MODE_MASTER:
-
-.. _class_MultiplayerAPI_constant_RPC_MODE_PUPPET:
-
-.. _class_MultiplayerAPI_constant_RPC_MODE_SLAVE:
-
-.. _class_MultiplayerAPI_constant_RPC_MODE_REMOTESYNC:
-
-.. _class_MultiplayerAPI_constant_RPC_MODE_SYNC:
-
-.. _class_MultiplayerAPI_constant_RPC_MODE_MASTERSYNC:
-
-.. _class_MultiplayerAPI_constant_RPC_MODE_PUPPETSYNC:
+.. rst-class:: classref-enumeration
 
 enum **RPCMode**:
 
-- **RPC_MODE_DISABLED** = **0** --- Used with :ref:`Node.rpc_config<class_Node_method_rpc_config>` or :ref:`Node.rset_config<class_Node_method_rset_config>` to disable a method or property for all RPC calls, making it unavailable. Default for all methods.
+.. _class_MultiplayerAPI_constant_RPC_MODE_DISABLED:
 
-- **RPC_MODE_REMOTE** = **1** --- Used with :ref:`Node.rpc_config<class_Node_method_rpc_config>` or :ref:`Node.rset_config<class_Node_method_rset_config>` to set a method to be called or a property to be changed only on the remote end, not locally. Analogous to the ``remote`` keyword. Calls and property changes are accepted from all remote peers, no matter if they are node's master or puppets.
+.. rst-class:: classref-enumeration-constant
 
-- **RPC_MODE_MASTER** = **2** --- Used with :ref:`Node.rpc_config<class_Node_method_rpc_config>` or :ref:`Node.rset_config<class_Node_method_rset_config>` to set a method to be called or a property to be changed only on the network master for this node. Analogous to the ``master`` keyword. Only accepts calls or property changes from the node's network puppets, see :ref:`Node.set_network_master<class_Node_method_set_network_master>`.
+:ref:`RPCMode<enum_MultiplayerAPI_RPCMode>` **RPC_MODE_DISABLED** = ``0``
 
-- **RPC_MODE_PUPPET** = **3** --- Used with :ref:`Node.rpc_config<class_Node_method_rpc_config>` or :ref:`Node.rset_config<class_Node_method_rset_config>` to set a method to be called or a property to be changed only on puppets for this node. Analogous to the ``puppet`` keyword. Only accepts calls or property changes from the node's network master, see :ref:`Node.set_network_master<class_Node_method_set_network_master>`.
+Used with :ref:`Node.rpc_config<class_Node_method_rpc_config>` or :ref:`Node.rset_config<class_Node_method_rset_config>` to disable a method or property for all RPC calls, making it unavailable. Default for all methods.
 
-- **RPC_MODE_SLAVE** = **3** --- *Deprecated.* Use :ref:`RPC_MODE_PUPPET<class_MultiplayerAPI_constant_RPC_MODE_PUPPET>` instead. Analogous to the ``slave`` keyword.
+.. _class_MultiplayerAPI_constant_RPC_MODE_REMOTE:
 
-- **RPC_MODE_REMOTESYNC** = **4** --- Behave like :ref:`RPC_MODE_REMOTE<class_MultiplayerAPI_constant_RPC_MODE_REMOTE>` but also make the call or property change locally. Analogous to the ``remotesync`` keyword.
+.. rst-class:: classref-enumeration-constant
 
-- **RPC_MODE_SYNC** = **4** --- *Deprecated.* Use :ref:`RPC_MODE_REMOTESYNC<class_MultiplayerAPI_constant_RPC_MODE_REMOTESYNC>` instead. Analogous to the ``sync`` keyword.
+:ref:`RPCMode<enum_MultiplayerAPI_RPCMode>` **RPC_MODE_REMOTE** = ``1``
 
-- **RPC_MODE_MASTERSYNC** = **5** --- Behave like :ref:`RPC_MODE_MASTER<class_MultiplayerAPI_constant_RPC_MODE_MASTER>` but also make the call or property change locally. Analogous to the ``mastersync`` keyword.
+Used with :ref:`Node.rpc_config<class_Node_method_rpc_config>` or :ref:`Node.rset_config<class_Node_method_rset_config>` to set a method to be called or a property to be changed only on the remote end, not locally. Analogous to the ``remote`` keyword. Calls and property changes are accepted from all remote peers, no matter if they are node's master or puppets.
 
-- **RPC_MODE_PUPPETSYNC** = **6** --- Behave like :ref:`RPC_MODE_PUPPET<class_MultiplayerAPI_constant_RPC_MODE_PUPPET>` but also make the call or property change locally. Analogous to the ``puppetsync`` keyword.
+.. _class_MultiplayerAPI_constant_RPC_MODE_MASTER:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`RPCMode<enum_MultiplayerAPI_RPCMode>` **RPC_MODE_MASTER** = ``2``
+
+Used with :ref:`Node.rpc_config<class_Node_method_rpc_config>` or :ref:`Node.rset_config<class_Node_method_rset_config>` to set a method to be called or a property to be changed only on the network master for this node. Analogous to the ``master`` keyword. Only accepts calls or property changes from the node's network puppets, see :ref:`Node.set_network_master<class_Node_method_set_network_master>`.
+
+.. _class_MultiplayerAPI_constant_RPC_MODE_PUPPET:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`RPCMode<enum_MultiplayerAPI_RPCMode>` **RPC_MODE_PUPPET** = ``3``
+
+Used with :ref:`Node.rpc_config<class_Node_method_rpc_config>` or :ref:`Node.rset_config<class_Node_method_rset_config>` to set a method to be called or a property to be changed only on puppets for this node. Analogous to the ``puppet`` keyword. Only accepts calls or property changes from the node's network master, see :ref:`Node.set_network_master<class_Node_method_set_network_master>`.
+
+.. _class_MultiplayerAPI_constant_RPC_MODE_SLAVE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`RPCMode<enum_MultiplayerAPI_RPCMode>` **RPC_MODE_SLAVE** = ``3``
+
+*Deprecated.* Use :ref:`RPC_MODE_PUPPET<class_MultiplayerAPI_constant_RPC_MODE_PUPPET>` instead. Analogous to the ``slave`` keyword.
+
+.. _class_MultiplayerAPI_constant_RPC_MODE_REMOTESYNC:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`RPCMode<enum_MultiplayerAPI_RPCMode>` **RPC_MODE_REMOTESYNC** = ``4``
+
+Behave like :ref:`RPC_MODE_REMOTE<class_MultiplayerAPI_constant_RPC_MODE_REMOTE>` but also make the call or property change locally. Analogous to the ``remotesync`` keyword.
+
+.. _class_MultiplayerAPI_constant_RPC_MODE_SYNC:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`RPCMode<enum_MultiplayerAPI_RPCMode>` **RPC_MODE_SYNC** = ``4``
+
+*Deprecated.* Use :ref:`RPC_MODE_REMOTESYNC<class_MultiplayerAPI_constant_RPC_MODE_REMOTESYNC>` instead. Analogous to the ``sync`` keyword.
+
+.. _class_MultiplayerAPI_constant_RPC_MODE_MASTERSYNC:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`RPCMode<enum_MultiplayerAPI_RPCMode>` **RPC_MODE_MASTERSYNC** = ``5``
+
+Behave like :ref:`RPC_MODE_MASTER<class_MultiplayerAPI_constant_RPC_MODE_MASTER>` but also make the call or property change locally. Analogous to the ``mastersync`` keyword.
+
+.. _class_MultiplayerAPI_constant_RPC_MODE_PUPPETSYNC:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`RPCMode<enum_MultiplayerAPI_RPCMode>` **RPC_MODE_PUPPETSYNC** = ``6``
+
+Behave like :ref:`RPC_MODE_PUPPET<class_MultiplayerAPI_constant_RPC_MODE_PUPPET>` but also make the call or property change locally. Analogous to the ``puppetsync`` keyword.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_MultiplayerAPI_property_allow_object_decoding:
 
-- :ref:`bool<class_bool>` **allow_object_decoding**
+.. rst-class:: classref-property
 
-+-----------+----------------------------------+
-| *Default* | ``false``                        |
-+-----------+----------------------------------+
-| *Setter*  | set_allow_object_decoding(value) |
-+-----------+----------------------------------+
-| *Getter*  | is_object_decoding_allowed()     |
-+-----------+----------------------------------+
+:ref:`bool<class_bool>` **allow_object_decoding** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_allow_object_decoding** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_object_decoding_allowed** **(** **)**
 
 If ``true`` (or if the :ref:`network_peer<class_MultiplayerAPI_property_network_peer>` has :ref:`PacketPeer.allow_object_decoding<class_PacketPeer_property_allow_object_decoding>` set to ``true``), the MultiplayerAPI will allow encoding and decoding of object during RPCs/RSETs.
 
 \ **Warning:** Deserialized objects can contain code which gets executed. Do not use this option if the serialized object comes from untrusted sources to avoid potential security threats such as remote code execution.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_MultiplayerAPI_property_network_peer:
 
-- :ref:`NetworkedMultiplayerPeer<class_NetworkedMultiplayerPeer>` **network_peer**
+.. rst-class:: classref-property
 
-+----------+-------------------------+
-| *Setter* | set_network_peer(value) |
-+----------+-------------------------+
-| *Getter* | get_network_peer()      |
-+----------+-------------------------+
+:ref:`NetworkedMultiplayerPeer<class_NetworkedMultiplayerPeer>` **network_peer**
+
+.. rst-class:: classref-property-setget
+
+- void **set_network_peer** **(** :ref:`NetworkedMultiplayerPeer<class_NetworkedMultiplayerPeer>` value **)**
+- :ref:`NetworkedMultiplayerPeer<class_NetworkedMultiplayerPeer>` **get_network_peer** **(** **)**
 
 The peer object to handle the RPC system (effectively enabling networking when set). Depending on the peer itself, the MultiplayerAPI will become a network server (check with :ref:`is_network_server<class_MultiplayerAPI_method_is_network_server>`) and will set root node's network mode to master, or it will become a regular peer with root node set to puppet. All child nodes are set to inherit the network mode by default. Handling of networking-related events (connection, disconnection, new clients) is done by connecting to MultiplayerAPI's signals.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_MultiplayerAPI_property_refuse_new_network_connections:
 
-- :ref:`bool<class_bool>` **refuse_new_network_connections**
+.. rst-class:: classref-property
 
-+-----------+-------------------------------------------+
-| *Default* | ``false``                                 |
-+-----------+-------------------------------------------+
-| *Setter*  | set_refuse_new_network_connections(value) |
-+-----------+-------------------------------------------+
-| *Getter*  | is_refusing_new_network_connections()     |
-+-----------+-------------------------------------------+
+:ref:`bool<class_bool>` **refuse_new_network_connections** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_refuse_new_network_connections** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_refusing_new_network_connections** **(** **)**
 
 If ``true``, the MultiplayerAPI's :ref:`network_peer<class_MultiplayerAPI_property_network_peer>` refuses new incoming connections.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_MultiplayerAPI_property_root_node:
 
-- :ref:`Node<class_Node>` **root_node**
+.. rst-class:: classref-property
 
-+----------+----------------------+
-| *Setter* | set_root_node(value) |
-+----------+----------------------+
-| *Getter* | get_root_node()      |
-+----------+----------------------+
+:ref:`Node<class_Node>` **root_node**
+
+.. rst-class:: classref-property-setget
+
+- void **set_root_node** **(** :ref:`Node<class_Node>` value **)**
+- :ref:`Node<class_Node>` **get_root_node** **(** **)**
 
 The root node to use for RPCs. Instead of an absolute path, a relative path will be used to find the node upon which the RPC should be executed.
 
 This effectively allows to have different branches of the scene tree to be managed by different MultiplayerAPI, allowing for example to run both client and server in the same scene.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_MultiplayerAPI_method_clear:
 
-- void **clear** **(** **)**
+.. rst-class:: classref-method
+
+void **clear** **(** **)**
 
 Clears the current MultiplayerAPI network state (you shouldn't call this unless you know what you are doing).
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_MultiplayerAPI_method_get_network_connected_peers:
 
-- :ref:`PoolIntArray<class_PoolIntArray>` **get_network_connected_peers** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`PoolIntArray<class_PoolIntArray>` **get_network_connected_peers** **(** **)** |const|
 
 Returns the peer IDs of all connected peers of this MultiplayerAPI's :ref:`network_peer<class_MultiplayerAPI_property_network_peer>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_MultiplayerAPI_method_get_network_unique_id:
 
-- :ref:`int<class_int>` **get_network_unique_id** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **get_network_unique_id** **(** **)** |const|
 
 Returns the unique peer ID of this MultiplayerAPI's :ref:`network_peer<class_MultiplayerAPI_property_network_peer>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_MultiplayerAPI_method_get_rpc_sender_id:
 
-- :ref:`int<class_int>` **get_rpc_sender_id** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **get_rpc_sender_id** **(** **)** |const|
 
 Returns the sender's peer ID for the RPC currently being executed.
 
 \ **Note:** If not inside an RPC this method will return 0.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_MultiplayerAPI_method_has_network_peer:
 
-- :ref:`bool<class_bool>` **has_network_peer** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **has_network_peer** **(** **)** |const|
 
 Returns ``true`` if there is a :ref:`network_peer<class_MultiplayerAPI_property_network_peer>` set.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_MultiplayerAPI_method_is_network_server:
 
-- :ref:`bool<class_bool>` **is_network_server** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **is_network_server** **(** **)** |const|
 
 Returns ``true`` if this MultiplayerAPI's :ref:`network_peer<class_MultiplayerAPI_property_network_peer>` is in server mode (listening for connections).
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_MultiplayerAPI_method_poll:
 
-- void **poll** **(** **)**
+.. rst-class:: classref-method
+
+void **poll** **(** **)**
 
 Method used for polling the MultiplayerAPI. You only need to worry about this if you are using :ref:`Node.custom_multiplayer<class_Node_property_custom_multiplayer>` override or you set :ref:`SceneTree.multiplayer_poll<class_SceneTree_property_multiplayer_poll>` to ``false``. By default, :ref:`SceneTree<class_SceneTree>` will poll its MultiplayerAPI for you.
 
 \ **Note:** This method results in RPCs and RSETs being called, so they will be executed in the same context of this function (e.g. ``_process``, ``physics``, :ref:`Thread<class_Thread>`).
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_MultiplayerAPI_method_send_bytes:
 
-- :ref:`Error<enum_@GlobalScope_Error>` **send_bytes** **(** :ref:`PoolByteArray<class_PoolByteArray>` bytes, :ref:`int<class_int>` id=0, :ref:`TransferMode<enum_NetworkedMultiplayerPeer_TransferMode>` mode=2 **)**
+.. rst-class:: classref-method
+
+:ref:`Error<enum_@GlobalScope_Error>` **send_bytes** **(** :ref:`PoolByteArray<class_PoolByteArray>` bytes, :ref:`int<class_int>` id=0, :ref:`TransferMode<enum_NetworkedMultiplayerPeer_TransferMode>` mode=2 **)**
 
 Sends the given raw ``bytes`` to a specific peer identified by ``id`` (see :ref:`NetworkedMultiplayerPeer.set_target_peer<class_NetworkedMultiplayerPeer_method_set_target_peer>`). Default ID is ``0``, i.e. broadcast to all peers.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

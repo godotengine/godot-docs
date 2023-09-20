@@ -14,6 +14,8 @@ NavigationPolygonInstance
 
 A region of the 2D navigation map.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -31,116 +33,146 @@ The pathfinding cost of entering this region from another region can be controll
 
 The pathfinding cost of traveling distances inside this region can be controlled with the :ref:`travel_cost<class_NavigationPolygonInstance_property_travel_cost>` multiplier.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+---------------------------------------------------+--------------------------------------------------------------------------------------+----------+
-| :ref:`bool<class_bool>`                           | :ref:`enabled<class_NavigationPolygonInstance_property_enabled>`                     | ``true`` |
-+---------------------------------------------------+--------------------------------------------------------------------------------------+----------+
-| :ref:`float<class_float>`                         | :ref:`enter_cost<class_NavigationPolygonInstance_property_enter_cost>`               | ``0.0``  |
-+---------------------------------------------------+--------------------------------------------------------------------------------------+----------+
-| :ref:`int<class_int>`                             | :ref:`navigation_layers<class_NavigationPolygonInstance_property_navigation_layers>` | ``1``    |
-+---------------------------------------------------+--------------------------------------------------------------------------------------+----------+
-| :ref:`NavigationPolygon<class_NavigationPolygon>` | :ref:`navpoly<class_NavigationPolygonInstance_property_navpoly>`                     |          |
-+---------------------------------------------------+--------------------------------------------------------------------------------------+----------+
-| :ref:`float<class_float>`                         | :ref:`travel_cost<class_NavigationPolygonInstance_property_travel_cost>`             | ``1.0``  |
-+---------------------------------------------------+--------------------------------------------------------------------------------------+----------+
+.. table::
+   :widths: auto
+
+   +---------------------------------------------------+--------------------------------------------------------------------------------------+----------+
+   | :ref:`bool<class_bool>`                           | :ref:`enabled<class_NavigationPolygonInstance_property_enabled>`                     | ``true`` |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------+----------+
+   | :ref:`float<class_float>`                         | :ref:`enter_cost<class_NavigationPolygonInstance_property_enter_cost>`               | ``0.0``  |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------+----------+
+   | :ref:`int<class_int>`                             | :ref:`navigation_layers<class_NavigationPolygonInstance_property_navigation_layers>` | ``1``    |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------+----------+
+   | :ref:`NavigationPolygon<class_NavigationPolygon>` | :ref:`navpoly<class_NavigationPolygonInstance_property_navpoly>`                     |          |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------+----------+
+   | :ref:`float<class_float>`                         | :ref:`travel_cost<class_NavigationPolygonInstance_property_travel_cost>`             | ``1.0``  |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------+----------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+-----------------------+--------------------------------------------------------------------------------------------------+
-| :ref:`RID<class_RID>` | :ref:`get_region_rid<class_NavigationPolygonInstance_method_get_region_rid>` **(** **)** |const| |
-+-----------------------+--------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-----------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`RID<class_RID>` | :ref:`get_region_rid<class_NavigationPolygonInstance_method_get_region_rid>` **(** **)** |const| |
+   +-----------------------+--------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_NavigationPolygonInstance_property_enabled:
 
-- :ref:`bool<class_bool>` **enabled**
+.. rst-class:: classref-property
 
-+-----------+--------------------+
-| *Default* | ``true``           |
-+-----------+--------------------+
-| *Setter*  | set_enabled(value) |
-+-----------+--------------------+
-| *Getter*  | is_enabled()       |
-+-----------+--------------------+
+:ref:`bool<class_bool>` **enabled** = ``true``
 
-Determines if the ``NavigationPolygonInstance`` is enabled or disabled.
+.. rst-class:: classref-property-setget
+
+- void **set_enabled** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_enabled** **(** **)**
+
+Determines if the **NavigationPolygonInstance** is enabled or disabled.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_NavigationPolygonInstance_property_enter_cost:
 
-- :ref:`float<class_float>` **enter_cost**
+.. rst-class:: classref-property
 
-+-----------+-----------------------+
-| *Default* | ``0.0``               |
-+-----------+-----------------------+
-| *Setter*  | set_enter_cost(value) |
-+-----------+-----------------------+
-| *Getter*  | get_enter_cost()      |
-+-----------+-----------------------+
+:ref:`float<class_float>` **enter_cost** = ``0.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_enter_cost** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_enter_cost** **(** **)**
 
 When pathfinding enters this region's navmesh from another regions navmesh the ``enter_cost`` value is added to the path distance for determining the shortest path.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_NavigationPolygonInstance_property_navigation_layers:
 
-- :ref:`int<class_int>` **navigation_layers**
+.. rst-class:: classref-property
 
-+-----------+------------------------------+
-| *Default* | ``1``                        |
-+-----------+------------------------------+
-| *Setter*  | set_navigation_layers(value) |
-+-----------+------------------------------+
-| *Getter*  | get_navigation_layers()      |
-+-----------+------------------------------+
+:ref:`int<class_int>` **navigation_layers** = ``1``
+
+.. rst-class:: classref-property-setget
+
+- void **set_navigation_layers** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_navigation_layers** **(** **)**
 
 A bitfield determining all navigation map layers the :ref:`NavigationPolygon<class_NavigationPolygon>` belongs to. On path requests with :ref:`Navigation2DServer.map_get_path<class_Navigation2DServer_method_map_get_path>` navmeshes without matching layers will be ignored and the navigation map will only proximity merge different navmeshes with matching layers.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_NavigationPolygonInstance_property_navpoly:
 
-- :ref:`NavigationPolygon<class_NavigationPolygon>` **navpoly**
+.. rst-class:: classref-property
 
-+----------+-------------------------------+
-| *Setter* | set_navigation_polygon(value) |
-+----------+-------------------------------+
-| *Getter* | get_navigation_polygon()      |
-+----------+-------------------------------+
+:ref:`NavigationPolygon<class_NavigationPolygon>` **navpoly**
+
+.. rst-class:: classref-property-setget
+
+- void **set_navigation_polygon** **(** :ref:`NavigationPolygon<class_NavigationPolygon>` value **)**
+- :ref:`NavigationPolygon<class_NavigationPolygon>` **get_navigation_polygon** **(** **)**
 
 The :ref:`NavigationPolygon<class_NavigationPolygon>` resource to use.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_NavigationPolygonInstance_property_travel_cost:
 
-- :ref:`float<class_float>` **travel_cost**
+.. rst-class:: classref-property
 
-+-----------+------------------------+
-| *Default* | ``1.0``                |
-+-----------+------------------------+
-| *Setter*  | set_travel_cost(value) |
-+-----------+------------------------+
-| *Getter*  | get_travel_cost()      |
-+-----------+------------------------+
+:ref:`float<class_float>` **travel_cost** = ``1.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_travel_cost** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_travel_cost** **(** **)**
 
 When pathfinding moves inside this region's navmesh the traveled distances are multiplied with ``travel_cost`` for determining the shortest path.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_NavigationPolygonInstance_method_get_region_rid:
 
-- :ref:`RID<class_RID>` **get_region_rid** **(** **)** |const|
+.. rst-class:: classref-method
 
-Returns the :ref:`RID<class_RID>` of this region on the :ref:`Navigation2DServer<class_Navigation2DServer>`. Combined with :ref:`Navigation2DServer.map_get_closest_point_owner<class_Navigation2DServer_method_map_get_closest_point_owner>` can be used to identify the ``NavigationPolygonInstance`` closest to a point on the merged navigation map.
+:ref:`RID<class_RID>` **get_region_rid** **(** **)** |const|
+
+Returns the :ref:`RID<class_RID>` of this region on the :ref:`Navigation2DServer<class_Navigation2DServer>`. Combined with :ref:`Navigation2DServer.map_get_closest_point_owner<class_Navigation2DServer_method_map_get_closest_point_owner>` can be used to identify the **NavigationPolygonInstance** closest to a point on the merged navigation map.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

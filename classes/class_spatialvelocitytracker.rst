@@ -12,60 +12,110 @@ SpatialVelocityTracker
 
 **Inherits:** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
+.. container:: contribute
 
+	There is currently no description for this class. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-reftable-group
 
 Properties
 ----------
 
-+-------------------------+-------------------------------------------------------------------------------------+-----------+
-| :ref:`bool<class_bool>` | :ref:`track_physics_step<class_SpatialVelocityTracker_property_track_physics_step>` | ``false`` |
-+-------------------------+-------------------------------------------------------------------------------------+-----------+
+.. table::
+   :widths: auto
+
+   +-------------------------+-------------------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>` | :ref:`track_physics_step<class_SpatialVelocityTracker_property_track_physics_step>` | ``false`` |
+   +-------------------------+-------------------------------------------------------------------------------------+-----------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+-------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector3<class_Vector3>` | :ref:`get_tracked_linear_velocity<class_SpatialVelocityTracker_method_get_tracked_linear_velocity>` **(** **)** |const|        |
-+-------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
-| void                          | :ref:`reset<class_SpatialVelocityTracker_method_reset>` **(** :ref:`Vector3<class_Vector3>` position **)**                     |
-+-------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
-| void                          | :ref:`update_position<class_SpatialVelocityTracker_method_update_position>` **(** :ref:`Vector3<class_Vector3>` position **)** |
-+-------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector3<class_Vector3>` | :ref:`get_tracked_linear_velocity<class_SpatialVelocityTracker_method_get_tracked_linear_velocity>` **(** **)** |const|        |
+   +-------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+   | void                          | :ref:`reset<class_SpatialVelocityTracker_method_reset>` **(** :ref:`Vector3<class_Vector3>` position **)**                     |
+   +-------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+   | void                          | :ref:`update_position<class_SpatialVelocityTracker_method_update_position>` **(** :ref:`Vector3<class_Vector3>` position **)** |
+   +-------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_SpatialVelocityTracker_property_track_physics_step:
 
-- :ref:`bool<class_bool>` **track_physics_step**
+.. rst-class:: classref-property
 
-+-----------+-------------------------------+
-| *Default* | ``false``                     |
-+-----------+-------------------------------+
-| *Setter*  | set_track_physics_step(value) |
-+-----------+-------------------------------+
-| *Getter*  | is_tracking_physics_step()    |
-+-----------+-------------------------------+
+:ref:`bool<class_bool>` **track_physics_step** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_track_physics_step** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_tracking_physics_step** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_SpatialVelocityTracker_method_get_tracked_linear_velocity:
 
-- :ref:`Vector3<class_Vector3>` **get_tracked_linear_velocity** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`Vector3<class_Vector3>` **get_tracked_linear_velocity** **(** **)** |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_SpatialVelocityTracker_method_reset:
 
-- void **reset** **(** :ref:`Vector3<class_Vector3>` position **)**
+.. rst-class:: classref-method
+
+void **reset** **(** :ref:`Vector3<class_Vector3>` position **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_SpatialVelocityTracker_method_update_position:
 
-- void **update_position** **(** :ref:`Vector3<class_Vector3>` position **)**
+.. rst-class:: classref-method
+
+void **update_position** **(** :ref:`Vector3<class_Vector3>` position **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

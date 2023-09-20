@@ -16,45 +16,72 @@ WebSocketMultiplayerPeer
 
 Base class for WebSocket server and client.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 Base class for WebSocket server and client, allowing them to be used as network peer for the :ref:`MultiplayerAPI<class_MultiplayerAPI>`.
 
+.. rst-class:: classref-reftable-group
+
 Methods
 -------
 
-+-------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`WebSocketPeer<class_WebSocketPeer>` | :ref:`get_peer<class_WebSocketMultiplayerPeer_method_get_peer>` **(** :ref:`int<class_int>` peer_id **)** |const|                                                                                                                                            |
-+-------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>`     | :ref:`set_buffers<class_WebSocketMultiplayerPeer_method_set_buffers>` **(** :ref:`int<class_int>` input_buffer_size_kb, :ref:`int<class_int>` input_max_packets, :ref:`int<class_int>` output_buffer_size_kb, :ref:`int<class_int>` output_max_packets **)** |
-+-------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`WebSocketPeer<class_WebSocketPeer>` | :ref:`get_peer<class_WebSocketMultiplayerPeer_method_get_peer>` **(** :ref:`int<class_int>` peer_id **)** |const|                                                                                                                                            |
+   +-------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>`     | :ref:`set_buffers<class_WebSocketMultiplayerPeer_method_set_buffers>` **(** :ref:`int<class_int>` input_buffer_size_kb, :ref:`int<class_int>` input_max_packets, :ref:`int<class_int>` output_buffer_size_kb, :ref:`int<class_int>` output_max_packets **)** |
+   +-------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Signals
 -------
 
 .. _class_WebSocketMultiplayerPeer_signal_peer_packet:
 
-- **peer_packet** **(** :ref:`int<class_int>` peer_source **)**
+.. rst-class:: classref-signal
+
+**peer_packet** **(** :ref:`int<class_int>` peer_source **)**
 
 Emitted when a packet is received from a peer.
 
 \ **Note:** This signal is only emitted when the client or server is configured to use Godot multiplayer API.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_WebSocketMultiplayerPeer_method_get_peer:
 
-- :ref:`WebSocketPeer<class_WebSocketPeer>` **get_peer** **(** :ref:`int<class_int>` peer_id **)** |const|
+.. rst-class:: classref-method
+
+:ref:`WebSocketPeer<class_WebSocketPeer>` **get_peer** **(** :ref:`int<class_int>` peer_id **)** |const|
 
 Returns the :ref:`WebSocketPeer<class_WebSocketPeer>` associated to the given ``peer_id``.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_WebSocketMultiplayerPeer_method_set_buffers:
 
-- :ref:`Error<enum_@GlobalScope_Error>` **set_buffers** **(** :ref:`int<class_int>` input_buffer_size_kb, :ref:`int<class_int>` input_max_packets, :ref:`int<class_int>` output_buffer_size_kb, :ref:`int<class_int>` output_max_packets **)**
+.. rst-class:: classref-method
+
+:ref:`Error<enum_@GlobalScope_Error>` **set_buffers** **(** :ref:`int<class_int>` input_buffer_size_kb, :ref:`int<class_int>` input_max_packets, :ref:`int<class_int>` output_buffer_size_kb, :ref:`int<class_int>` output_max_packets **)**
 
 Configures the buffer sizes for this WebSocket peer. Default values can be specified in the Project Settings under ``network/limits``. For server, values are meant per connected peer.
 
@@ -67,3 +94,4 @@ Buffer sizes are expressed in KiB, so ``4 = 2^12 = 4096 bytes``. All parameters 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

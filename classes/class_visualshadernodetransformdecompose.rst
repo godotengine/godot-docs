@@ -14,6 +14,8 @@ VisualShaderNodeTransformDecompose
 
 Decomposes a :ref:`Transform<class_Transform>` into four :ref:`Vector3<class_Vector3>`\ s within the visual shader graph.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -22,3 +24,4 @@ Takes a 4x4 transform matrix and decomposes it into four ``vec3`` values, one fr
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

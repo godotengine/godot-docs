@@ -14,6 +14,8 @@ GDScript
 
 A script implemented in the GDScript programming language.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -21,34 +23,53 @@ A script implemented in the GDScript programming language. The script extends th
 
 \ :ref:`new<class_GDScript_method_new>` creates a new instance of the script. :ref:`Object.set_script<class_Object_method_set_script>` extends an existing object, if that object's class matches one of the script's base classes.
 
+.. rst-class:: classref-introduction-group
+
 Tutorials
 ---------
 
 - :doc:`../tutorials/scripting/gdscript/index`
 
+.. rst-class:: classref-reftable-group
+
 Methods
 -------
 
-+-------------------------------------------+-------------------------------------------------------------------------------------+
-| :ref:`PoolByteArray<class_PoolByteArray>` | :ref:`get_as_byte_code<class_GDScript_method_get_as_byte_code>` **(** **)** |const| |
-+-------------------------------------------+-------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>`             | :ref:`new<class_GDScript_method_new>` **(** ... **)** |vararg|                      |
-+-------------------------------------------+-------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------------------------+-------------------------------------------------------------------------------------+
+   | :ref:`PoolByteArray<class_PoolByteArray>` | :ref:`get_as_byte_code<class_GDScript_method_get_as_byte_code>` **(** **)** |const| |
+   +-------------------------------------------+-------------------------------------------------------------------------------------+
+   | :ref:`Variant<class_Variant>`             | :ref:`new<class_GDScript_method_new>` **(** ... **)** |vararg|                      |
+   +-------------------------------------------+-------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_GDScript_method_get_as_byte_code:
 
-- :ref:`PoolByteArray<class_PoolByteArray>` **get_as_byte_code** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`PoolByteArray<class_PoolByteArray>` **get_as_byte_code** **(** **)** |const|
 
 Returns byte code for the script source code.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_GDScript_method_new:
 
-- :ref:`Variant<class_Variant>` **new** **(** ... **)** |vararg|
+.. rst-class:: classref-method
+
+:ref:`Variant<class_Variant>` **new** **(** ... **)** |vararg|
 
 Returns a new instance of the script.
 
@@ -63,3 +84,4 @@ For example:
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

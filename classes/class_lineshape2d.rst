@@ -14,53 +14,67 @@ LineShape2D
 
 Line shape for 2D collisions.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 Line shape for 2D collisions. It works like a 2D plane and will not allow any physics body to go to the negative side. Not recommended for rigid bodies, and usually not recommended for static bodies either because it forces checks against it on every frame.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-------------------------------+--------------------------------------------------+----------------------+
-| :ref:`float<class_float>`     | :ref:`d<class_LineShape2D_property_d>`           | ``0.0``              |
-+-------------------------------+--------------------------------------------------+----------------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`normal<class_LineShape2D_property_normal>` | ``Vector2( 0, -1 )`` |
-+-------------------------------+--------------------------------------------------+----------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------------+--------------------------------------------------+----------------------+
+   | :ref:`float<class_float>`     | :ref:`d<class_LineShape2D_property_d>`           | ``0.0``              |
+   +-------------------------------+--------------------------------------------------+----------------------+
+   | :ref:`Vector2<class_Vector2>` | :ref:`normal<class_LineShape2D_property_normal>` | ``Vector2( 0, -1 )`` |
+   +-------------------------------+--------------------------------------------------+----------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_LineShape2D_property_d:
 
-- :ref:`float<class_float>` **d**
+.. rst-class:: classref-property
 
-+-----------+--------------+
-| *Default* | ``0.0``      |
-+-----------+--------------+
-| *Setter*  | set_d(value) |
-+-----------+--------------+
-| *Getter*  | get_d()      |
-+-----------+--------------+
+:ref:`float<class_float>` **d** = ``0.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_d** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_d** **(** **)**
 
 The line's distance from the origin.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_LineShape2D_property_normal:
 
-- :ref:`Vector2<class_Vector2>` **normal**
+.. rst-class:: classref-property
 
-+-----------+----------------------+
-| *Default* | ``Vector2( 0, -1 )`` |
-+-----------+----------------------+
-| *Setter*  | set_normal(value)    |
-+-----------+----------------------+
-| *Getter*  | get_normal()         |
-+-----------+----------------------+
+:ref:`Vector2<class_Vector2>` **normal** = ``Vector2( 0, -1 )``
+
+.. rst-class:: classref-property-setget
+
+- void **set_normal** **(** :ref:`Vector2<class_Vector2>` value **)**
+- :ref:`Vector2<class_Vector2>` **get_normal** **(** **)**
 
 The line's normal.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

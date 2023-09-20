@@ -14,10 +14,14 @@ AnimationNodeTransition
 
 A generic animation transition node for :ref:`AnimationTree<class_AnimationTree>`.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 Simple state machine for cases which don't require a more advanced :ref:`AnimationNodeStateMachine<class_AnimationNodeStateMachine>`. Animations can be connected to the inputs and transition times can be specified.
+
+.. rst-class:: classref-introduction-group
 
 Tutorials
 ---------
@@ -28,86 +32,139 @@ Tutorials
 
 - `Third Person Shooter Demo <https://godotengine.org/asset-library/asset/678>`__
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+---------------------------+------------------------------------------------------------------------+---------+
-| :ref:`int<class_int>`     | :ref:`input_count<class_AnimationNodeTransition_property_input_count>` | ``0``   |
-+---------------------------+------------------------------------------------------------------------+---------+
-| :ref:`float<class_float>` | :ref:`xfade_time<class_AnimationNodeTransition_property_xfade_time>`   | ``0.0`` |
-+---------------------------+------------------------------------------------------------------------+---------+
+.. table::
+   :widths: auto
+
+   +---------------------------+------------------------------------------------------------------------+---------+
+   | :ref:`int<class_int>`     | :ref:`input_count<class_AnimationNodeTransition_property_input_count>` | ``0``   |
+   +---------------------------+------------------------------------------------------------------------+---------+
+   | :ref:`float<class_float>` | :ref:`xfade_time<class_AnimationNodeTransition_property_xfade_time>`   | ``0.0`` |
+   +---------------------------+------------------------------------------------------------------------+---------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+-----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>` | :ref:`get_input_caption<class_AnimationNodeTransition_method_get_input_caption>` **(** :ref:`int<class_int>` input **)** |const|                                         |
-+-----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`     | :ref:`is_input_set_as_auto_advance<class_AnimationNodeTransition_method_is_input_set_as_auto_advance>` **(** :ref:`int<class_int>` input **)** |const|                   |
-+-----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                        | :ref:`set_input_as_auto_advance<class_AnimationNodeTransition_method_set_input_as_auto_advance>` **(** :ref:`int<class_int>` input, :ref:`bool<class_bool>` enable **)** |
-+-----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                        | :ref:`set_input_caption<class_AnimationNodeTransition_method_set_input_caption>` **(** :ref:`int<class_int>` input, :ref:`String<class_String>` caption **)**            |
-+-----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>` | :ref:`get_input_caption<class_AnimationNodeTransition_method_get_input_caption>` **(** :ref:`int<class_int>` input **)** |const|                                         |
+   +-----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`     | :ref:`is_input_set_as_auto_advance<class_AnimationNodeTransition_method_is_input_set_as_auto_advance>` **(** :ref:`int<class_int>` input **)** |const|                   |
+   +-----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                        | :ref:`set_input_as_auto_advance<class_AnimationNodeTransition_method_set_input_as_auto_advance>` **(** :ref:`int<class_int>` input, :ref:`bool<class_bool>` enable **)** |
+   +-----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                        | :ref:`set_input_caption<class_AnimationNodeTransition_method_set_input_caption>` **(** :ref:`int<class_int>` input, :ref:`String<class_String>` caption **)**            |
+   +-----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_AnimationNodeTransition_property_input_count:
 
-- :ref:`int<class_int>` **input_count**
+.. rst-class:: classref-property
 
-+-----------+---------------------------+
-| *Default* | ``0``                     |
-+-----------+---------------------------+
-| *Setter*  | set_enabled_inputs(value) |
-+-----------+---------------------------+
-| *Getter*  | get_enabled_inputs()      |
-+-----------+---------------------------+
+:ref:`int<class_int>` **input_count** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_enabled_inputs** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_enabled_inputs** **(** **)**
 
 The number of available input ports for this node.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AnimationNodeTransition_property_xfade_time:
 
-- :ref:`float<class_float>` **xfade_time**
+.. rst-class:: classref-property
 
-+-----------+----------------------------+
-| *Default* | ``0.0``                    |
-+-----------+----------------------------+
-| *Setter*  | set_cross_fade_time(value) |
-+-----------+----------------------------+
-| *Getter*  | get_cross_fade_time()      |
-+-----------+----------------------------+
+:ref:`float<class_float>` **xfade_time** = ``0.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_cross_fade_time** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_cross_fade_time** **(** **)**
 
 Cross-fading time (in seconds) between each animation connected to the inputs.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_AnimationNodeTransition_method_get_input_caption:
 
-- :ref:`String<class_String>` **get_input_caption** **(** :ref:`int<class_int>` input **)** |const|
+.. rst-class:: classref-method
+
+:ref:`String<class_String>` **get_input_caption** **(** :ref:`int<class_int>` input **)** |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AnimationNodeTransition_method_is_input_set_as_auto_advance:
 
-- :ref:`bool<class_bool>` **is_input_set_as_auto_advance** **(** :ref:`int<class_int>` input **)** |const|
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **is_input_set_as_auto_advance** **(** :ref:`int<class_int>` input **)** |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AnimationNodeTransition_method_set_input_as_auto_advance:
 
-- void **set_input_as_auto_advance** **(** :ref:`int<class_int>` input, :ref:`bool<class_bool>` enable **)**
+.. rst-class:: classref-method
+
+void **set_input_as_auto_advance** **(** :ref:`int<class_int>` input, :ref:`bool<class_bool>` enable **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AnimationNodeTransition_method_set_input_caption:
 
-- void **set_input_caption** **(** :ref:`int<class_int>` input, :ref:`String<class_String>` caption **)**
+.. rst-class:: classref-method
+
+void **set_input_caption** **(** :ref:`int<class_int>` input, :ref:`String<class_String>` caption **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

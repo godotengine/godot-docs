@@ -12,50 +12,89 @@ PackedSceneGLTF
 
 **Inherits:** :ref:`PackedScene<class_PackedScene>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-
+.. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-**Note:** This class is only compiled in editor builds. Run-time glTF loading and saving is *not* available in exported projects. References to ``PackedSceneGLTF`` within a script will cause an error in an exported project.
+**Note:** This class is only compiled in editor builds. Run-time glTF loading and saving is *not* available in exported projects. References to **PackedSceneGLTF** within a script will cause an error in an exported project.
+
+.. rst-class:: classref-reftable-group
 
 Properties
 ----------
 
-+-------------------------------------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Dictionary<class_Dictionary>` | _bundled | ``{"conn_count": 0,"conns": PoolIntArray(  ),"editable_instances": [  ],"names": PoolStringArray(  ),"node_count": 0,"node_paths": [  ],"nodes": PoolIntArray(  ),"variants": [  ],"version": 2}`` (overrides :ref:`PackedScene<class_PackedScene_property__bundled>`) |
-+-------------------------------------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------------------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Dictionary<class_Dictionary>` | _bundled | ``{"conn_count": 0,"conns": PoolIntArray(  ),"editable_instances": [  ],"names": PoolStringArray(  ),"node_count": 0,"node_paths": [  ],"nodes": PoolIntArray(  ),"variants": [  ],"version": 2}`` (overrides :ref:`PackedScene<class_PackedScene_property__bundled>`) |
+   +-------------------------------------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`export_gltf<class_PackedSceneGLTF_method_export_gltf>` **(** :ref:`Node<class_Node>` node, :ref:`String<class_String>` path, :ref:`int<class_int>` flags=0, :ref:`float<class_float>` bake_fps=1000.0 **)**                                                                           |
-+---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Node<class_Node>`               | :ref:`import_gltf_scene<class_PackedSceneGLTF_method_import_gltf_scene>` **(** :ref:`String<class_String>` path, :ref:`int<class_int>` flags=0, :ref:`float<class_float>` bake_fps=1000.0, :ref:`int<class_int>` compress_flags=2194432, :ref:`GLTFState<class_GLTFState>` state=null **)** |
-+---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                  | :ref:`pack_gltf<class_PackedSceneGLTF_method_pack_gltf>` **(** :ref:`String<class_String>` path, :ref:`int<class_int>` flags=0, :ref:`float<class_float>` bake_fps=1000.0, :ref:`int<class_int>` compress_flags=2194432, :ref:`GLTFState<class_GLTFState>` state=null **)**                 |
-+---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>` | :ref:`export_gltf<class_PackedSceneGLTF_method_export_gltf>` **(** :ref:`Node<class_Node>` node, :ref:`String<class_String>` path, :ref:`int<class_int>` flags=0, :ref:`float<class_float>` bake_fps=1000.0 **)**                                                                           |
+   +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Node<class_Node>`               | :ref:`import_gltf_scene<class_PackedSceneGLTF_method_import_gltf_scene>` **(** :ref:`String<class_String>` path, :ref:`int<class_int>` flags=0, :ref:`float<class_float>` bake_fps=1000.0, :ref:`int<class_int>` compress_flags=2194432, :ref:`GLTFState<class_GLTFState>` state=null **)** |
+   +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                  | :ref:`pack_gltf<class_PackedSceneGLTF_method_pack_gltf>` **(** :ref:`String<class_String>` path, :ref:`int<class_int>` flags=0, :ref:`float<class_float>` bake_fps=1000.0, :ref:`int<class_int>` compress_flags=2194432, :ref:`GLTFState<class_GLTFState>` state=null **)**                 |
+   +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_PackedSceneGLTF_method_export_gltf:
 
-- :ref:`Error<enum_@GlobalScope_Error>` **export_gltf** **(** :ref:`Node<class_Node>` node, :ref:`String<class_String>` path, :ref:`int<class_int>` flags=0, :ref:`float<class_float>` bake_fps=1000.0 **)**
+.. rst-class:: classref-method
+
+:ref:`Error<enum_@GlobalScope_Error>` **export_gltf** **(** :ref:`Node<class_Node>` node, :ref:`String<class_String>` path, :ref:`int<class_int>` flags=0, :ref:`float<class_float>` bake_fps=1000.0 **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_PackedSceneGLTF_method_import_gltf_scene:
 
-- :ref:`Node<class_Node>` **import_gltf_scene** **(** :ref:`String<class_String>` path, :ref:`int<class_int>` flags=0, :ref:`float<class_float>` bake_fps=1000.0, :ref:`int<class_int>` compress_flags=2194432, :ref:`GLTFState<class_GLTFState>` state=null **)**
+.. rst-class:: classref-method
+
+:ref:`Node<class_Node>` **import_gltf_scene** **(** :ref:`String<class_String>` path, :ref:`int<class_int>` flags=0, :ref:`float<class_float>` bake_fps=1000.0, :ref:`int<class_int>` compress_flags=2194432, :ref:`GLTFState<class_GLTFState>` state=null **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_PackedSceneGLTF_method_pack_gltf:
 
-- void **pack_gltf** **(** :ref:`String<class_String>` path, :ref:`int<class_int>` flags=0, :ref:`float<class_float>` bake_fps=1000.0, :ref:`int<class_int>` compress_flags=2194432, :ref:`GLTFState<class_GLTFState>` state=null **)**
+.. rst-class:: classref-method
+
+void **pack_gltf** **(** :ref:`String<class_String>` path, :ref:`int<class_int>` flags=0, :ref:`float<class_float>` bake_fps=1000.0, :ref:`int<class_int>` compress_flags=2194432, :ref:`GLTFState<class_GLTFState>` state=null **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

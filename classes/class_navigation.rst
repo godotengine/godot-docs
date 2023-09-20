@@ -14,191 +14,251 @@ Navigation
 
 Mesh-based navigation and pathfinding node.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
-*Deprecated.* ``Navigation`` node and :ref:`get_simple_path<class_Navigation_method_get_simple_path>` are deprecated and will be removed in a future version. Use :ref:`NavigationServer.map_get_path<class_NavigationServer_method_map_get_path>` instead.
+*Deprecated.* **Navigation** node and :ref:`get_simple_path<class_Navigation_method_get_simple_path>` are deprecated and will be removed in a future version. Use :ref:`NavigationServer.map_get_path<class_NavigationServer_method_map_get_path>` instead.
 
 Provides navigation and pathfinding within a collection of :ref:`NavigationMesh<class_NavigationMesh>`\ es. By default, these will be automatically collected from child :ref:`NavigationMeshInstance<class_NavigationMeshInstance>` nodes. In addition to basic pathfinding, this class also assists with aligning navigation agents with the meshes they are navigating on.
+
+.. rst-class:: classref-introduction-group
 
 Tutorials
 ---------
 
 - `3D Navmesh Demo <https://godotengine.org/asset-library/asset/124>`__
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-------------------------------+---------------------------------------------------------------------------------+------------------------+
-| :ref:`float<class_float>`     | :ref:`cell_height<class_Navigation_property_cell_height>`                       | ``0.25``               |
-+-------------------------------+---------------------------------------------------------------------------------+------------------------+
-| :ref:`float<class_float>`     | :ref:`cell_size<class_Navigation_property_cell_size>`                           | ``0.25``               |
-+-------------------------------+---------------------------------------------------------------------------------+------------------------+
-| :ref:`float<class_float>`     | :ref:`edge_connection_margin<class_Navigation_property_edge_connection_margin>` | ``0.25``               |
-+-------------------------------+---------------------------------------------------------------------------------+------------------------+
-| :ref:`int<class_int>`         | :ref:`navigation_layers<class_Navigation_property_navigation_layers>`           | ``1``                  |
-+-------------------------------+---------------------------------------------------------------------------------+------------------------+
-| :ref:`Vector3<class_Vector3>` | :ref:`up_vector<class_Navigation_property_up_vector>`                           | ``Vector3( 0, 1, 0 )`` |
-+-------------------------------+---------------------------------------------------------------------------------+------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------------+---------------------------------------------------------------------------------+------------------------+
+   | :ref:`float<class_float>`     | :ref:`cell_height<class_Navigation_property_cell_height>`                       | ``0.25``               |
+   +-------------------------------+---------------------------------------------------------------------------------+------------------------+
+   | :ref:`float<class_float>`     | :ref:`cell_size<class_Navigation_property_cell_size>`                           | ``0.25``               |
+   +-------------------------------+---------------------------------------------------------------------------------+------------------------+
+   | :ref:`float<class_float>`     | :ref:`edge_connection_margin<class_Navigation_property_edge_connection_margin>` | ``0.25``               |
+   +-------------------------------+---------------------------------------------------------------------------------+------------------------+
+   | :ref:`int<class_int>`         | :ref:`navigation_layers<class_Navigation_property_navigation_layers>`           | ``1``                  |
+   +-------------------------------+---------------------------------------------------------------------------------+------------------------+
+   | :ref:`Vector3<class_Vector3>` | :ref:`up_vector<class_Navigation_property_up_vector>`                           | ``Vector3( 0, 1, 0 )`` |
+   +-------------------------------+---------------------------------------------------------------------------------+------------------------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector3<class_Vector3>`                   | :ref:`get_closest_point<class_Navigation_method_get_closest_point>` **(** :ref:`Vector3<class_Vector3>` to_point **)** |const|                                                                                                    |
-+-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector3<class_Vector3>`                   | :ref:`get_closest_point_normal<class_Navigation_method_get_closest_point_normal>` **(** :ref:`Vector3<class_Vector3>` to_point **)** |const|                                                                                      |
-+-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`RID<class_RID>`                           | :ref:`get_closest_point_owner<class_Navigation_method_get_closest_point_owner>` **(** :ref:`Vector3<class_Vector3>` to_point **)** |const|                                                                                        |
-+-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector3<class_Vector3>`                   | :ref:`get_closest_point_to_segment<class_Navigation_method_get_closest_point_to_segment>` **(** :ref:`Vector3<class_Vector3>` start, :ref:`Vector3<class_Vector3>` end, :ref:`bool<class_bool>` use_collision=false **)** |const| |
-+-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`RID<class_RID>`                           | :ref:`get_rid<class_Navigation_method_get_rid>` **(** **)** |const|                                                                                                                                                               |
-+-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolVector3Array<class_PoolVector3Array>` | :ref:`get_simple_path<class_Navigation_method_get_simple_path>` **(** :ref:`Vector3<class_Vector3>` start, :ref:`Vector3<class_Vector3>` end, :ref:`bool<class_bool>` optimize=true **)** |const|                                 |
-+-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector3<class_Vector3>`                   | :ref:`get_closest_point<class_Navigation_method_get_closest_point>` **(** :ref:`Vector3<class_Vector3>` to_point **)** |const|                                                                                                    |
+   +-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector3<class_Vector3>`                   | :ref:`get_closest_point_normal<class_Navigation_method_get_closest_point_normal>` **(** :ref:`Vector3<class_Vector3>` to_point **)** |const|                                                                                      |
+   +-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`RID<class_RID>`                           | :ref:`get_closest_point_owner<class_Navigation_method_get_closest_point_owner>` **(** :ref:`Vector3<class_Vector3>` to_point **)** |const|                                                                                        |
+   +-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector3<class_Vector3>`                   | :ref:`get_closest_point_to_segment<class_Navigation_method_get_closest_point_to_segment>` **(** :ref:`Vector3<class_Vector3>` start, :ref:`Vector3<class_Vector3>` end, :ref:`bool<class_bool>` use_collision=false **)** |const| |
+   +-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`RID<class_RID>`                           | :ref:`get_rid<class_Navigation_method_get_rid>` **(** **)** |const|                                                                                                                                                               |
+   +-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PoolVector3Array<class_PoolVector3Array>` | :ref:`get_simple_path<class_Navigation_method_get_simple_path>` **(** :ref:`Vector3<class_Vector3>` start, :ref:`Vector3<class_Vector3>` end, :ref:`bool<class_bool>` optimize=true **)** |const|                                 |
+   +-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Signals
 -------
 
 .. _class_Navigation_signal_map_changed:
 
-- **map_changed** **(** :ref:`RID<class_RID>` map **)**
+.. rst-class:: classref-signal
+
+**map_changed** **(** :ref:`RID<class_RID>` map **)**
 
 Emitted when a navigation map is updated, when a region moves or is modified.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_Navigation_property_cell_height:
 
-- :ref:`float<class_float>` **cell_height**
+.. rst-class:: classref-property
 
-+-----------+------------------------+
-| *Default* | ``0.25``               |
-+-----------+------------------------+
-| *Setter*  | set_cell_height(value) |
-+-----------+------------------------+
-| *Getter*  | get_cell_height()      |
-+-----------+------------------------+
+:ref:`float<class_float>` **cell_height** = ``0.25``
+
+.. rst-class:: classref-property-setget
+
+- void **set_cell_height** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_cell_height** **(** **)**
 
 The cell height to use for fields.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Navigation_property_cell_size:
 
-- :ref:`float<class_float>` **cell_size**
+.. rst-class:: classref-property
 
-+-----------+----------------------+
-| *Default* | ``0.25``             |
-+-----------+----------------------+
-| *Setter*  | set_cell_size(value) |
-+-----------+----------------------+
-| *Getter*  | get_cell_size()      |
-+-----------+----------------------+
+:ref:`float<class_float>` **cell_size** = ``0.25``
+
+.. rst-class:: classref-property-setget
+
+- void **set_cell_size** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_cell_size** **(** **)**
 
 The XZ plane cell size to use for fields.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Navigation_property_edge_connection_margin:
 
-- :ref:`float<class_float>` **edge_connection_margin**
+.. rst-class:: classref-property
 
-+-----------+-----------------------------------+
-| *Default* | ``0.25``                          |
-+-----------+-----------------------------------+
-| *Setter*  | set_edge_connection_margin(value) |
-+-----------+-----------------------------------+
-| *Getter*  | get_edge_connection_margin()      |
-+-----------+-----------------------------------+
+:ref:`float<class_float>` **edge_connection_margin** = ``0.25``
+
+.. rst-class:: classref-property-setget
+
+- void **set_edge_connection_margin** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_edge_connection_margin** **(** **)**
 
 This value is used to detect the near edges to connect compatible regions.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Navigation_property_navigation_layers:
 
-- :ref:`int<class_int>` **navigation_layers**
+.. rst-class:: classref-property
 
-+-----------+------------------------------+
-| *Default* | ``1``                        |
-+-----------+------------------------------+
-| *Setter*  | set_navigation_layers(value) |
-+-----------+------------------------------+
-| *Getter*  | get_navigation_layers()      |
-+-----------+------------------------------+
+:ref:`int<class_int>` **navigation_layers** = ``1``
+
+.. rst-class:: classref-property-setget
+
+- void **set_navigation_layers** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_navigation_layers** **(** **)**
 
 A bitfield determining all navigation map layers the navigation can use on a :ref:`get_simple_path<class_Navigation_method_get_simple_path>` path query.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Navigation_property_up_vector:
 
-- :ref:`Vector3<class_Vector3>` **up_vector**
+.. rst-class:: classref-property
 
-+-----------+------------------------+
-| *Default* | ``Vector3( 0, 1, 0 )`` |
-+-----------+------------------------+
-| *Setter*  | set_up_vector(value)   |
-+-----------+------------------------+
-| *Getter*  | get_up_vector()        |
-+-----------+------------------------+
+:ref:`Vector3<class_Vector3>` **up_vector** = ``Vector3( 0, 1, 0 )``
+
+.. rst-class:: classref-property-setget
+
+- void **set_up_vector** **(** :ref:`Vector3<class_Vector3>` value **)**
+- :ref:`Vector3<class_Vector3>` **get_up_vector** **(** **)**
 
 Defines which direction is up. By default, this is ``(0, 1, 0)``, which is the world's "up" direction.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_Navigation_method_get_closest_point:
 
-- :ref:`Vector3<class_Vector3>` **get_closest_point** **(** :ref:`Vector3<class_Vector3>` to_point **)** |const|
+.. rst-class:: classref-method
+
+:ref:`Vector3<class_Vector3>` **get_closest_point** **(** :ref:`Vector3<class_Vector3>` to_point **)** |const|
 
 Returns the navigation point closest to the point given. Points are in local coordinate space.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Navigation_method_get_closest_point_normal:
 
-- :ref:`Vector3<class_Vector3>` **get_closest_point_normal** **(** :ref:`Vector3<class_Vector3>` to_point **)** |const|
+.. rst-class:: classref-method
+
+:ref:`Vector3<class_Vector3>` **get_closest_point_normal** **(** :ref:`Vector3<class_Vector3>` to_point **)** |const|
 
 Returns the surface normal at the navigation point closest to the point given. Useful for rotating a navigation agent according to the navigation mesh it moves on.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Navigation_method_get_closest_point_owner:
 
-- :ref:`RID<class_RID>` **get_closest_point_owner** **(** :ref:`Vector3<class_Vector3>` to_point **)** |const|
+.. rst-class:: classref-method
+
+:ref:`RID<class_RID>` **get_closest_point_owner** **(** :ref:`Vector3<class_Vector3>` to_point **)** |const|
 
 Returns the owner of the :ref:`NavigationMesh<class_NavigationMesh>` which contains the navigation point closest to the point given. This is usually a :ref:`NavigationMeshInstance<class_NavigationMeshInstance>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Navigation_method_get_closest_point_to_segment:
 
-- :ref:`Vector3<class_Vector3>` **get_closest_point_to_segment** **(** :ref:`Vector3<class_Vector3>` start, :ref:`Vector3<class_Vector3>` end, :ref:`bool<class_bool>` use_collision=false **)** |const|
+.. rst-class:: classref-method
+
+:ref:`Vector3<class_Vector3>` **get_closest_point_to_segment** **(** :ref:`Vector3<class_Vector3>` start, :ref:`Vector3<class_Vector3>` end, :ref:`bool<class_bool>` use_collision=false **)** |const|
 
 Returns the navigation point closest to the given line segment. When enabling ``use_collision``, only considers intersection points between segment and navigation meshes. If multiple intersection points are found, the one closest to the segment start point is returned.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Navigation_method_get_rid:
 
-- :ref:`RID<class_RID>` **get_rid** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`RID<class_RID>` **get_rid** **(** **)** |const|
 
 Returns the :ref:`RID<class_RID>` of the navigation map on the :ref:`NavigationServer<class_NavigationServer>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Navigation_method_get_simple_path:
 
-- :ref:`PoolVector3Array<class_PoolVector3Array>` **get_simple_path** **(** :ref:`Vector3<class_Vector3>` start, :ref:`Vector3<class_Vector3>` end, :ref:`bool<class_bool>` optimize=true **)** |const|
+.. rst-class:: classref-method
 
-*Deprecated.* ``Navigation`` node and :ref:`get_simple_path<class_Navigation_method_get_simple_path>` are deprecated and will be removed in a future version. Use :ref:`NavigationServer.map_get_path<class_NavigationServer_method_map_get_path>` instead.
+:ref:`PoolVector3Array<class_PoolVector3Array>` **get_simple_path** **(** :ref:`Vector3<class_Vector3>` start, :ref:`Vector3<class_Vector3>` end, :ref:`bool<class_bool>` optimize=true **)** |const|
+
+*Deprecated.* **Navigation** node and :ref:`get_simple_path<class_Navigation_method_get_simple_path>` are deprecated and will be removed in a future version. Use :ref:`NavigationServer.map_get_path<class_NavigationServer_method_map_get_path>` instead.
 
 Returns the path between two given points. Points are in local coordinate space. If ``optimize`` is ``true`` (the default), the agent properties associated with each :ref:`NavigationMesh<class_NavigationMesh>` (radius, height, etc.) are considered in the path calculation, otherwise they are ignored.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

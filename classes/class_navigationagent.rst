@@ -14,438 +14,555 @@ NavigationAgent
 
 3D agent used in navigation for collision avoidance.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
-3D agent that is used in navigation to reach a location while avoiding static and dynamic obstacles. The dynamic obstacles are avoided using RVO (Reciprocal Velocity Obstacles) collision avoidance. The agent needs navigation data to work correctly. By default this node will register to the default :ref:`World<class_World>` navigation map. If this node is a child of a :ref:`Navigation<class_Navigation>` node it will register to the navigation map of the navigation node or the function :ref:`set_navigation<class_NavigationAgent_method_set_navigation>` can be used to set the navigation node directly. ``NavigationAgent`` is physics safe.
+3D agent that is used in navigation to reach a location while avoiding static and dynamic obstacles. The dynamic obstacles are avoided using RVO (Reciprocal Velocity Obstacles) collision avoidance. The agent needs navigation data to work correctly. By default this node will register to the default :ref:`World<class_World>` navigation map. If this node is a child of a :ref:`Navigation<class_Navigation>` node it will register to the navigation map of the navigation node or the function :ref:`set_navigation<class_NavigationAgent_method_set_navigation>` can be used to set the navigation node directly. **NavigationAgent** is physics safe.
 
 \ **Note:** After :ref:`set_target_location<class_NavigationAgent_method_set_target_location>` is used it is required to use the :ref:`get_next_location<class_NavigationAgent_method_get_next_location>` function once every physics frame to update the internal path logic of the NavigationAgent. The returned vector position from this function should be used as the next movement position for the agent's parent Node.
 
 \ **Note:** By default, the expensive calculations for avoidance are done in a thread. In HTML5 exports without thread support, they will be done on the main thread, which can lead to performance issues.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+---------------------------+----------------------------------------------------------------------------------------+-----------+
-| :ref:`float<class_float>` | :ref:`agent_height_offset<class_NavigationAgent_property_agent_height_offset>`         | ``0.0``   |
-+---------------------------+----------------------------------------------------------------------------------------+-----------+
-| :ref:`bool<class_bool>`   | :ref:`avoidance_enabled<class_NavigationAgent_property_avoidance_enabled>`             | ``false`` |
-+---------------------------+----------------------------------------------------------------------------------------+-----------+
-| :ref:`bool<class_bool>`   | :ref:`ignore_y<class_NavigationAgent_property_ignore_y>`                               | ``true``  |
-+---------------------------+----------------------------------------------------------------------------------------+-----------+
-| :ref:`int<class_int>`     | :ref:`max_neighbors<class_NavigationAgent_property_max_neighbors>`                     | ``10``    |
-+---------------------------+----------------------------------------------------------------------------------------+-----------+
-| :ref:`float<class_float>` | :ref:`max_speed<class_NavigationAgent_property_max_speed>`                             | ``10.0``  |
-+---------------------------+----------------------------------------------------------------------------------------+-----------+
-| :ref:`int<class_int>`     | :ref:`navigation_layers<class_NavigationAgent_property_navigation_layers>`             | ``1``     |
-+---------------------------+----------------------------------------------------------------------------------------+-----------+
-| :ref:`float<class_float>` | :ref:`neighbor_dist<class_NavigationAgent_property_neighbor_dist>`                     | ``50.0``  |
-+---------------------------+----------------------------------------------------------------------------------------+-----------+
-| :ref:`float<class_float>` | :ref:`path_desired_distance<class_NavigationAgent_property_path_desired_distance>`     | ``1.0``   |
-+---------------------------+----------------------------------------------------------------------------------------+-----------+
-| :ref:`float<class_float>` | :ref:`path_max_distance<class_NavigationAgent_property_path_max_distance>`             | ``3.0``   |
-+---------------------------+----------------------------------------------------------------------------------------+-----------+
-| :ref:`float<class_float>` | :ref:`radius<class_NavigationAgent_property_radius>`                                   | ``1.0``   |
-+---------------------------+----------------------------------------------------------------------------------------+-----------+
-| :ref:`float<class_float>` | :ref:`target_desired_distance<class_NavigationAgent_property_target_desired_distance>` | ``1.0``   |
-+---------------------------+----------------------------------------------------------------------------------------+-----------+
-| :ref:`float<class_float>` | :ref:`time_horizon<class_NavigationAgent_property_time_horizon>`                       | ``5.0``   |
-+---------------------------+----------------------------------------------------------------------------------------+-----------+
+.. table::
+   :widths: auto
+
+   +---------------------------+----------------------------------------------------------------------------------------+-----------+
+   | :ref:`float<class_float>` | :ref:`agent_height_offset<class_NavigationAgent_property_agent_height_offset>`         | ``0.0``   |
+   +---------------------------+----------------------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`   | :ref:`avoidance_enabled<class_NavigationAgent_property_avoidance_enabled>`             | ``false`` |
+   +---------------------------+----------------------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`   | :ref:`ignore_y<class_NavigationAgent_property_ignore_y>`                               | ``true``  |
+   +---------------------------+----------------------------------------------------------------------------------------+-----------+
+   | :ref:`int<class_int>`     | :ref:`max_neighbors<class_NavigationAgent_property_max_neighbors>`                     | ``10``    |
+   +---------------------------+----------------------------------------------------------------------------------------+-----------+
+   | :ref:`float<class_float>` | :ref:`max_speed<class_NavigationAgent_property_max_speed>`                             | ``10.0``  |
+   +---------------------------+----------------------------------------------------------------------------------------+-----------+
+   | :ref:`int<class_int>`     | :ref:`navigation_layers<class_NavigationAgent_property_navigation_layers>`             | ``1``     |
+   +---------------------------+----------------------------------------------------------------------------------------+-----------+
+   | :ref:`float<class_float>` | :ref:`neighbor_dist<class_NavigationAgent_property_neighbor_dist>`                     | ``50.0``  |
+   +---------------------------+----------------------------------------------------------------------------------------+-----------+
+   | :ref:`float<class_float>` | :ref:`path_desired_distance<class_NavigationAgent_property_path_desired_distance>`     | ``1.0``   |
+   +---------------------------+----------------------------------------------------------------------------------------+-----------+
+   | :ref:`float<class_float>` | :ref:`path_max_distance<class_NavigationAgent_property_path_max_distance>`             | ``3.0``   |
+   +---------------------------+----------------------------------------------------------------------------------------+-----------+
+   | :ref:`float<class_float>` | :ref:`radius<class_NavigationAgent_property_radius>`                                   | ``1.0``   |
+   +---------------------------+----------------------------------------------------------------------------------------+-----------+
+   | :ref:`float<class_float>` | :ref:`target_desired_distance<class_NavigationAgent_property_target_desired_distance>` | ``1.0``   |
+   +---------------------------+----------------------------------------------------------------------------------------+-----------+
+   | :ref:`float<class_float>` | :ref:`time_horizon<class_NavigationAgent_property_time_horizon>`                       | ``5.0``   |
+   +---------------------------+----------------------------------------------------------------------------------------+-----------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                       | :ref:`distance_to_target<class_NavigationAgent_method_distance_to_target>` **(** **)** |const|                                  |
-+-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector3<class_Vector3>`                   | :ref:`get_final_location<class_NavigationAgent_method_get_final_location>` **(** **)**                                          |
-+-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolVector3Array<class_PoolVector3Array>` | :ref:`get_nav_path<class_NavigationAgent_method_get_nav_path>` **(** **)** |const|                                              |
-+-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                           | :ref:`get_nav_path_index<class_NavigationAgent_method_get_nav_path_index>` **(** **)** |const|                                  |
-+-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Node<class_Node>`                         | :ref:`get_navigation<class_NavigationAgent_method_get_navigation>` **(** **)** |const|                                          |
-+-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`RID<class_RID>`                           | :ref:`get_navigation_map<class_NavigationAgent_method_get_navigation_map>` **(** **)** |const|                                  |
-+-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector3<class_Vector3>`                   | :ref:`get_next_location<class_NavigationAgent_method_get_next_location>` **(** **)**                                            |
-+-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`RID<class_RID>`                           | :ref:`get_rid<class_NavigationAgent_method_get_rid>` **(** **)** |const|                                                        |
-+-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector3<class_Vector3>`                   | :ref:`get_target_location<class_NavigationAgent_method_get_target_location>` **(** **)** |const|                                |
-+-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                         | :ref:`is_navigation_finished<class_NavigationAgent_method_is_navigation_finished>` **(** **)**                                  |
-+-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                         | :ref:`is_target_reachable<class_NavigationAgent_method_is_target_reachable>` **(** **)**                                        |
-+-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                         | :ref:`is_target_reached<class_NavigationAgent_method_is_target_reached>` **(** **)** |const|                                    |
-+-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
-| void                                            | :ref:`set_navigation<class_NavigationAgent_method_set_navigation>` **(** :ref:`Node<class_Node>` navigation **)**               |
-+-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
-| void                                            | :ref:`set_navigation_map<class_NavigationAgent_method_set_navigation_map>` **(** :ref:`RID<class_RID>` navigation_map **)**     |
-+-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
-| void                                            | :ref:`set_target_location<class_NavigationAgent_method_set_target_location>` **(** :ref:`Vector3<class_Vector3>` location **)** |
-+-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
-| void                                            | :ref:`set_velocity<class_NavigationAgent_method_set_velocity>` **(** :ref:`Vector3<class_Vector3>` velocity **)**               |
-+-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`                       | :ref:`distance_to_target<class_NavigationAgent_method_distance_to_target>` **(** **)** |const|                                  |
+   +-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector3<class_Vector3>`                   | :ref:`get_final_location<class_NavigationAgent_method_get_final_location>` **(** **)**                                          |
+   +-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PoolVector3Array<class_PoolVector3Array>` | :ref:`get_nav_path<class_NavigationAgent_method_get_nav_path>` **(** **)** |const|                                              |
+   +-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                           | :ref:`get_nav_path_index<class_NavigationAgent_method_get_nav_path_index>` **(** **)** |const|                                  |
+   +-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Node<class_Node>`                         | :ref:`get_navigation<class_NavigationAgent_method_get_navigation>` **(** **)** |const|                                          |
+   +-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`RID<class_RID>`                           | :ref:`get_navigation_map<class_NavigationAgent_method_get_navigation_map>` **(** **)** |const|                                  |
+   +-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector3<class_Vector3>`                   | :ref:`get_next_location<class_NavigationAgent_method_get_next_location>` **(** **)**                                            |
+   +-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`RID<class_RID>`                           | :ref:`get_rid<class_NavigationAgent_method_get_rid>` **(** **)** |const|                                                        |
+   +-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector3<class_Vector3>`                   | :ref:`get_target_location<class_NavigationAgent_method_get_target_location>` **(** **)** |const|                                |
+   +-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                         | :ref:`is_navigation_finished<class_NavigationAgent_method_is_navigation_finished>` **(** **)**                                  |
+   +-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                         | :ref:`is_target_reachable<class_NavigationAgent_method_is_target_reachable>` **(** **)**                                        |
+   +-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                         | :ref:`is_target_reached<class_NavigationAgent_method_is_target_reached>` **(** **)** |const|                                    |
+   +-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
+   | void                                            | :ref:`set_navigation<class_NavigationAgent_method_set_navigation>` **(** :ref:`Node<class_Node>` navigation **)**               |
+   +-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
+   | void                                            | :ref:`set_navigation_map<class_NavigationAgent_method_set_navigation_map>` **(** :ref:`RID<class_RID>` navigation_map **)**     |
+   +-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
+   | void                                            | :ref:`set_target_location<class_NavigationAgent_method_set_target_location>` **(** :ref:`Vector3<class_Vector3>` location **)** |
+   +-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
+   | void                                            | :ref:`set_velocity<class_NavigationAgent_method_set_velocity>` **(** :ref:`Vector3<class_Vector3>` velocity **)**               |
+   +-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Signals
 -------
 
 .. _class_NavigationAgent_signal_navigation_finished:
 
-- **navigation_finished** **(** **)**
+.. rst-class:: classref-signal
+
+**navigation_finished** **(** **)**
 
 Notifies when the final location is reached.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_NavigationAgent_signal_path_changed:
 
-- **path_changed** **(** **)**
+.. rst-class:: classref-signal
+
+**path_changed** **(** **)**
 
 Notifies when the navigation path changes. This can be triggered by the navigation system or by the user changing the path.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_NavigationAgent_signal_target_reached:
 
-- **target_reached** **(** **)**
+.. rst-class:: classref-signal
+
+**target_reached** **(** **)**
 
 Notifies when the player-defined target, set with :ref:`set_target_location<class_NavigationAgent_method_set_target_location>`, is reached.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_NavigationAgent_signal_velocity_computed:
 
-- **velocity_computed** **(** :ref:`Vector3<class_Vector3>` safe_velocity **)**
+.. rst-class:: classref-signal
+
+**velocity_computed** **(** :ref:`Vector3<class_Vector3>` safe_velocity **)**
 
 Notifies when the collision avoidance velocity is calculated after a call to :ref:`set_velocity<class_NavigationAgent_method_set_velocity>`. Only emitted when :ref:`avoidance_enabled<class_NavigationAgent_property_avoidance_enabled>` is true.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_NavigationAgent_property_agent_height_offset:
 
-- :ref:`float<class_float>` **agent_height_offset**
+.. rst-class:: classref-property
 
-+-----------+--------------------------------+
-| *Default* | ``0.0``                        |
-+-----------+--------------------------------+
-| *Setter*  | set_agent_height_offset(value) |
-+-----------+--------------------------------+
-| *Getter*  | get_agent_height_offset()      |
-+-----------+--------------------------------+
+:ref:`float<class_float>` **agent_height_offset** = ``0.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_agent_height_offset** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_agent_height_offset** **(** **)**
 
 The NavigationAgent height offset is subtracted from the y-axis value of any vector path position for this NavigationAgent. The NavigationAgent height offset does not change or influence the navigation mesh or pathfinding query result. Additional navigation maps that use regions with navigation meshes that the developer baked with appropriate agent radius or height values are required to support different-sized agents.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_NavigationAgent_property_avoidance_enabled:
 
-- :ref:`bool<class_bool>` **avoidance_enabled**
+.. rst-class:: classref-property
 
-+-----------+------------------------------+
-| *Default* | ``false``                    |
-+-----------+------------------------------+
-| *Setter*  | set_avoidance_enabled(value) |
-+-----------+------------------------------+
-| *Getter*  | get_avoidance_enabled()      |
-+-----------+------------------------------+
+:ref:`bool<class_bool>` **avoidance_enabled** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_avoidance_enabled** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **get_avoidance_enabled** **(** **)**
 
 If ``true`` the agent is registered for an RVO avoidance callback on the :ref:`NavigationServer<class_NavigationServer>`. When :ref:`set_velocity<class_NavigationAgent_method_set_velocity>` is used and the processing is completed a ``safe_velocity`` Vector3 is received with a signal connection to :ref:`velocity_computed<class_NavigationAgent_signal_velocity_computed>`. Avoidance processing with many registered agents has a significant performance cost and should only be enabled on agents that currently require it.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_NavigationAgent_property_ignore_y:
 
-- :ref:`bool<class_bool>` **ignore_y**
+.. rst-class:: classref-property
 
-+-----------+---------------------+
-| *Default* | ``true``            |
-+-----------+---------------------+
-| *Setter*  | set_ignore_y(value) |
-+-----------+---------------------+
-| *Getter*  | get_ignore_y()      |
-+-----------+---------------------+
+:ref:`bool<class_bool>` **ignore_y** = ``true``
+
+.. rst-class:: classref-property-setget
+
+- void **set_ignore_y** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **get_ignore_y** **(** **)**
 
 Ignores collisions on the Y axis. Must be ``true`` to move on a horizontal plane.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_NavigationAgent_property_max_neighbors:
 
-- :ref:`int<class_int>` **max_neighbors**
+.. rst-class:: classref-property
 
-+-----------+--------------------------+
-| *Default* | ``10``                   |
-+-----------+--------------------------+
-| *Setter*  | set_max_neighbors(value) |
-+-----------+--------------------------+
-| *Getter*  | get_max_neighbors()      |
-+-----------+--------------------------+
+:ref:`int<class_int>` **max_neighbors** = ``10``
+
+.. rst-class:: classref-property-setget
+
+- void **set_max_neighbors** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_max_neighbors** **(** **)**
 
 The maximum number of neighbors for the agent to consider.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_NavigationAgent_property_max_speed:
 
-- :ref:`float<class_float>` **max_speed**
+.. rst-class:: classref-property
 
-+-----------+----------------------+
-| *Default* | ``10.0``             |
-+-----------+----------------------+
-| *Setter*  | set_max_speed(value) |
-+-----------+----------------------+
-| *Getter*  | get_max_speed()      |
-+-----------+----------------------+
+:ref:`float<class_float>` **max_speed** = ``10.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_max_speed** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_max_speed** **(** **)**
 
 The maximum speed that an agent can move.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_NavigationAgent_property_navigation_layers:
 
-- :ref:`int<class_int>` **navigation_layers**
+.. rst-class:: classref-property
 
-+-----------+------------------------------+
-| *Default* | ``1``                        |
-+-----------+------------------------------+
-| *Setter*  | set_navigation_layers(value) |
-+-----------+------------------------------+
-| *Getter*  | get_navigation_layers()      |
-+-----------+------------------------------+
+:ref:`int<class_int>` **navigation_layers** = ``1``
 
-A bitfield determining all navigation map layers the ``NavigationAgent`` belongs to. On path requests the agent will ignore navmeshes without at least one matching layer.
+.. rst-class:: classref-property-setget
+
+- void **set_navigation_layers** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_navigation_layers** **(** **)**
+
+A bitfield determining all navigation map layers the **NavigationAgent** belongs to. On path requests the agent will ignore navmeshes without at least one matching layer.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_NavigationAgent_property_neighbor_dist:
 
-- :ref:`float<class_float>` **neighbor_dist**
+.. rst-class:: classref-property
 
-+-----------+--------------------------+
-| *Default* | ``50.0``                 |
-+-----------+--------------------------+
-| *Setter*  | set_neighbor_dist(value) |
-+-----------+--------------------------+
-| *Getter*  | get_neighbor_dist()      |
-+-----------+--------------------------+
+:ref:`float<class_float>` **neighbor_dist** = ``50.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_neighbor_dist** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_neighbor_dist** **(** **)**
 
 The distance to search for other agents.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_NavigationAgent_property_path_desired_distance:
 
-- :ref:`float<class_float>` **path_desired_distance**
+.. rst-class:: classref-property
 
-+-----------+----------------------------------+
-| *Default* | ``1.0``                          |
-+-----------+----------------------------------+
-| *Setter*  | set_path_desired_distance(value) |
-+-----------+----------------------------------+
-| *Getter*  | get_path_desired_distance()      |
-+-----------+----------------------------------+
+:ref:`float<class_float>` **path_desired_distance** = ``1.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_path_desired_distance** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_path_desired_distance** **(** **)**
 
 The distance threshold before a path point is considered to be reached. This will allow an agent to not have to hit a path point on the path exactly, but in the area. If this value is set to high the NavigationAgent will skip points on the path which can lead to leaving the navigation mesh. If this value is set to low the NavigationAgent will be stuck in a repath loop cause it will constantly overshoot or undershoot the distance to the next point on each physics frame update.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_NavigationAgent_property_path_max_distance:
 
-- :ref:`float<class_float>` **path_max_distance**
+.. rst-class:: classref-property
 
-+-----------+------------------------------+
-| *Default* | ``3.0``                      |
-+-----------+------------------------------+
-| *Setter*  | set_path_max_distance(value) |
-+-----------+------------------------------+
-| *Getter*  | get_path_max_distance()      |
-+-----------+------------------------------+
+:ref:`float<class_float>` **path_max_distance** = ``3.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_path_max_distance** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_path_max_distance** **(** **)**
 
 The maximum distance the agent is allowed away from the ideal path to the final location. This can happen due to trying to avoid collisions. When the maximum distance is exceeded, it recalculates the ideal path.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_NavigationAgent_property_radius:
 
-- :ref:`float<class_float>` **radius**
+.. rst-class:: classref-property
 
-+-----------+-------------------+
-| *Default* | ``1.0``           |
-+-----------+-------------------+
-| *Setter*  | set_radius(value) |
-+-----------+-------------------+
-| *Getter*  | get_radius()      |
-+-----------+-------------------+
+:ref:`float<class_float>` **radius** = ``1.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_radius** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_radius** **(** **)**
 
 The radius of the avoidance agent. This is the "body" of the avoidance agent and not the avoidance maneuver starting radius (which is controlled by :ref:`neighbor_dist<class_NavigationAgent_property_neighbor_dist>`).
 
 Does not affect normal pathfinding. To change an actor's pathfinding radius bake :ref:`NavigationMesh<class_NavigationMesh>` resources with a different :ref:`NavigationMesh.agent_radius<class_NavigationMesh_property_agent_radius>` property and use different navigation maps for each actor size.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_NavigationAgent_property_target_desired_distance:
 
-- :ref:`float<class_float>` **target_desired_distance**
+.. rst-class:: classref-property
 
-+-----------+------------------------------------+
-| *Default* | ``1.0``                            |
-+-----------+------------------------------------+
-| *Setter*  | set_target_desired_distance(value) |
-+-----------+------------------------------------+
-| *Getter*  | get_target_desired_distance()      |
-+-----------+------------------------------------+
+:ref:`float<class_float>` **target_desired_distance** = ``1.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_target_desired_distance** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_target_desired_distance** **(** **)**
 
 The distance threshold before the final target point is considered to be reached. This will allow an agent to not have to hit the point of the final target exactly, but only the area. If this value is set to low the NavigationAgent will be stuck in a repath loop cause it will constantly overshoot or undershoot the distance to the final target point on each physics frame update.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_NavigationAgent_property_time_horizon:
 
-- :ref:`float<class_float>` **time_horizon**
+.. rst-class:: classref-property
 
-+-----------+-------------------------+
-| *Default* | ``5.0``                 |
-+-----------+-------------------------+
-| *Setter*  | set_time_horizon(value) |
-+-----------+-------------------------+
-| *Getter*  | get_time_horizon()      |
-+-----------+-------------------------+
+:ref:`float<class_float>` **time_horizon** = ``5.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_time_horizon** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_time_horizon** **(** **)**
 
 The minimal amount of time for which this agent's velocities, that are computed with the collision avoidance algorithm, are safe with respect to other agents. The larger the number, the sooner the agent will respond to other agents, but the less freedom in choosing its velocities. Must be positive.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_NavigationAgent_method_distance_to_target:
 
-- :ref:`float<class_float>` **distance_to_target** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`float<class_float>` **distance_to_target** **(** **)** |const|
 
 Returns the distance to the target location, using the agent's global position. The user must set the target location with :ref:`set_target_location<class_NavigationAgent_method_set_target_location>` in order for this to be accurate.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_NavigationAgent_method_get_final_location:
 
-- :ref:`Vector3<class_Vector3>` **get_final_location** **(** **)**
+.. rst-class:: classref-method
+
+:ref:`Vector3<class_Vector3>` **get_final_location** **(** **)**
 
 Returns the reachable final location in global coordinates. This can change if the navigation path is altered in any way. Because of this, it would be best to check this each frame.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_NavigationAgent_method_get_nav_path:
 
-- :ref:`PoolVector3Array<class_PoolVector3Array>` **get_nav_path** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`PoolVector3Array<class_PoolVector3Array>` **get_nav_path** **(** **)** |const|
 
 Returns this agent's current path from start to finish in global coordinates. The path only updates when the target location is changed or the agent requires a repath. The path array is not intended to be used in direct path movement as the agent has its own internal path logic that would get corrupted by changing the path array manually. Use the intended :ref:`get_next_location<class_NavigationAgent_method_get_next_location>` once every physics frame to receive the next path point for the agents movement as this function also updates the internal path logic.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_NavigationAgent_method_get_nav_path_index:
 
-- :ref:`int<class_int>` **get_nav_path_index** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **get_nav_path_index** **(** **)** |const|
 
 Returns which index the agent is currently on in the navigation path's :ref:`PoolVector3Array<class_PoolVector3Array>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_NavigationAgent_method_get_navigation:
 
-- :ref:`Node<class_Node>` **get_navigation** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`Node<class_Node>` **get_navigation** **(** **)** |const|
 
 Returns the :ref:`Navigation<class_Navigation>` node that the agent is using for its navigation system.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_NavigationAgent_method_get_navigation_map:
 
-- :ref:`RID<class_RID>` **get_navigation_map** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`RID<class_RID>` **get_navigation_map** **(** **)** |const|
 
 Returns the :ref:`RID<class_RID>` of the navigation map for this NavigationAgent node. This function returns always the map set on the NavigationAgent node and not the map of the abstract agent on the NavigationServer. If the agent map is changed directly with the NavigationServer API the NavigationAgent node will not be aware of the map change. Use :ref:`set_navigation_map<class_NavigationAgent_method_set_navigation_map>` to change the navigation map for the NavigationAgent and also update the agent on the NavigationServer.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_NavigationAgent_method_get_next_location:
 
-- :ref:`Vector3<class_Vector3>` **get_next_location** **(** **)**
+.. rst-class:: classref-method
+
+:ref:`Vector3<class_Vector3>` **get_next_location** **(** **)**
 
 Returns the next location in global coordinates that can be moved to, making sure that there are no static objects in the way. If the agent does not have a navigation path, it will return the position of the agent's parent. The use of this function once every physics frame is required to update the internal path logic of the NavigationAgent.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_NavigationAgent_method_get_rid:
 
-- :ref:`RID<class_RID>` **get_rid** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`RID<class_RID>` **get_rid** **(** **)** |const|
 
 Returns the :ref:`RID<class_RID>` of this agent on the :ref:`NavigationServer<class_NavigationServer>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_NavigationAgent_method_get_target_location:
 
-- :ref:`Vector3<class_Vector3>` **get_target_location** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`Vector3<class_Vector3>` **get_target_location** **(** **)** |const|
 
 Returns the user-defined target location (set with :ref:`set_target_location<class_NavigationAgent_method_set_target_location>`).
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_NavigationAgent_method_is_navigation_finished:
 
-- :ref:`bool<class_bool>` **is_navigation_finished** **(** **)**
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **is_navigation_finished** **(** **)**
 
 Returns ``true`` if the navigation path's final location has been reached.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_NavigationAgent_method_is_target_reachable:
 
-- :ref:`bool<class_bool>` **is_target_reachable** **(** **)**
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **is_target_reachable** **(** **)**
 
 Returns ``true`` if the target location is reachable. The target location is set using :ref:`set_target_location<class_NavigationAgent_method_set_target_location>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_NavigationAgent_method_is_target_reached:
 
-- :ref:`bool<class_bool>` **is_target_reached** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **is_target_reached** **(** **)** |const|
 
 Returns ``true`` if the target location is reached. The target location is set using :ref:`set_target_location<class_NavigationAgent_method_set_target_location>`. It may not always be possible to reach the target location. It should always be possible to reach the final location though. See :ref:`get_final_location<class_NavigationAgent_method_get_final_location>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_NavigationAgent_method_set_navigation:
 
-- void **set_navigation** **(** :ref:`Node<class_Node>` navigation **)**
+.. rst-class:: classref-method
+
+void **set_navigation** **(** :ref:`Node<class_Node>` navigation **)**
 
 Sets the :ref:`Navigation<class_Navigation>` node used by the agent. Useful when you don't want to make the agent a child of a :ref:`Navigation<class_Navigation>` node.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_NavigationAgent_method_set_navigation_map:
 
-- void **set_navigation_map** **(** :ref:`RID<class_RID>` navigation_map **)**
+.. rst-class:: classref-method
+
+void **set_navigation_map** **(** :ref:`RID<class_RID>` navigation_map **)**
 
 Sets the :ref:`RID<class_RID>` of the navigation map this NavigationAgent node should use and also updates the ``agent`` on the NavigationServer.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_NavigationAgent_method_set_target_location:
 
-- void **set_target_location** **(** :ref:`Vector3<class_Vector3>` location **)**
+.. rst-class:: classref-method
+
+void **set_target_location** **(** :ref:`Vector3<class_Vector3>` location **)**
 
 Sets the user desired final location. This will clear the current navigation path.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_NavigationAgent_method_set_velocity:
 
-- void **set_velocity** **(** :ref:`Vector3<class_Vector3>` velocity **)**
+.. rst-class:: classref-method
+
+void **set_velocity** **(** :ref:`Vector3<class_Vector3>` velocity **)**
 
 Sends the passed in velocity to the collision avoidance algorithm. It will adjust the velocity to avoid collisions. Once the adjustment to the velocity is complete, it will emit the :ref:`velocity_computed<class_NavigationAgent_signal_velocity_computed>` signal.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

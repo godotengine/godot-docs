@@ -16,14 +16,16 @@ MainLoop
 
 Abstract base class for the game's main loop.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
-``MainLoop`` is the abstract base class for a Godot project's game loop. It is inherited by :ref:`SceneTree<class_SceneTree>`, which is the default game loop implementation used in Godot projects, though it is also possible to write and use one's own ``MainLoop`` subclass instead of the scene tree.
+**MainLoop** is the abstract base class for a Godot project's game loop. It is inherited by :ref:`SceneTree<class_SceneTree>`, which is the default game loop implementation used in Godot projects, though it is also possible to write and use one's own **MainLoop** subclass instead of the scene tree.
 
-Upon the application start, a ``MainLoop`` implementation must be provided to the OS; otherwise, the application will exit. This happens automatically (and a :ref:`SceneTree<class_SceneTree>` is created) unless a main :ref:`Script<class_Script>` is provided from the command line (with e.g. ``godot -s my_loop.gd``, which should then be a ``MainLoop`` implementation.
+Upon the application start, a **MainLoop** implementation must be provided to the OS; otherwise, the application will exit. This happens automatically (and a :ref:`SceneTree<class_SceneTree>` is created) unless a main :ref:`Script<class_Script>` is provided from the command line (with e.g. ``godot -s my_loop.gd``, which should then be a **MainLoop** implementation.
 
-Here is an example script implementing a simple ``MainLoop``:
+Here is an example script implementing a simple **MainLoop**:
 
 ::
 
@@ -58,250 +60,386 @@ Here is an example script implementing a simple ``MainLoop``:
         print("  End time: %s" % str(time_elapsed))
         print("  Keys typed: %s" % var2str(keys_typed))
 
+.. rst-class:: classref-reftable-group
+
 Methods
 -------
 
-+-------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                    | :ref:`_drop_files<class_MainLoop_method__drop_files>` **(** :ref:`PoolStringArray<class_PoolStringArray>` files, :ref:`int<class_int>` from_screen **)** |virtual| |
-+-------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                    | :ref:`_finalize<class_MainLoop_method__finalize>` **(** **)** |virtual|                                                                                            |
-+-------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                    | :ref:`_global_menu_action<class_MainLoop_method__global_menu_action>` **(** :ref:`Variant<class_Variant>` id, :ref:`Variant<class_Variant>` meta **)** |virtual|   |
-+-------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`_idle<class_MainLoop_method__idle>` **(** :ref:`float<class_float>` delta **)** |virtual|                                                                    |
-+-------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                    | :ref:`_initialize<class_MainLoop_method__initialize>` **(** **)** |virtual|                                                                                        |
-+-------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                    | :ref:`_input_event<class_MainLoop_method__input_event>` **(** :ref:`InputEvent<class_InputEvent>` event **)** |virtual|                                            |
-+-------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                    | :ref:`_input_text<class_MainLoop_method__input_text>` **(** :ref:`String<class_String>` text **)** |virtual|                                                       |
-+-------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`_iteration<class_MainLoop_method__iteration>` **(** :ref:`float<class_float>` delta **)** |virtual|                                                          |
-+-------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                    | :ref:`finish<class_MainLoop_method_finish>` **(** **)**                                                                                                            |
-+-------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`idle<class_MainLoop_method_idle>` **(** :ref:`float<class_float>` delta **)**                                                                                |
-+-------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                    | :ref:`init<class_MainLoop_method_init>` **(** **)**                                                                                                                |
-+-------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                    | :ref:`input_event<class_MainLoop_method_input_event>` **(** :ref:`InputEvent<class_InputEvent>` event **)**                                                        |
-+-------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                    | :ref:`input_text<class_MainLoop_method_input_text>` **(** :ref:`String<class_String>` text **)**                                                                   |
-+-------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`iteration<class_MainLoop_method_iteration>` **(** :ref:`float<class_float>` delta **)**                                                                      |
-+-------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                    | :ref:`_drop_files<class_MainLoop_method__drop_files>` **(** :ref:`PoolStringArray<class_PoolStringArray>` files, :ref:`int<class_int>` from_screen **)** |virtual| |
+   +-------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                    | :ref:`_finalize<class_MainLoop_method__finalize>` **(** **)** |virtual|                                                                                            |
+   +-------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                    | :ref:`_global_menu_action<class_MainLoop_method__global_menu_action>` **(** :ref:`Variant<class_Variant>` id, :ref:`Variant<class_Variant>` meta **)** |virtual|   |
+   +-------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | :ref:`_idle<class_MainLoop_method__idle>` **(** :ref:`float<class_float>` delta **)** |virtual|                                                                    |
+   +-------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                    | :ref:`_initialize<class_MainLoop_method__initialize>` **(** **)** |virtual|                                                                                        |
+   +-------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                    | :ref:`_input_event<class_MainLoop_method__input_event>` **(** :ref:`InputEvent<class_InputEvent>` event **)** |virtual|                                            |
+   +-------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                    | :ref:`_input_text<class_MainLoop_method__input_text>` **(** :ref:`String<class_String>` text **)** |virtual|                                                       |
+   +-------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | :ref:`_iteration<class_MainLoop_method__iteration>` **(** :ref:`float<class_float>` delta **)** |virtual|                                                          |
+   +-------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                    | :ref:`finish<class_MainLoop_method_finish>` **(** **)**                                                                                                            |
+   +-------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | :ref:`idle<class_MainLoop_method_idle>` **(** :ref:`float<class_float>` delta **)**                                                                                |
+   +-------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                    | :ref:`init<class_MainLoop_method_init>` **(** **)**                                                                                                                |
+   +-------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                    | :ref:`input_event<class_MainLoop_method_input_event>` **(** :ref:`InputEvent<class_InputEvent>` event **)**                                                        |
+   +-------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                    | :ref:`input_text<class_MainLoop_method_input_text>` **(** :ref:`String<class_String>` text **)**                                                                   |
+   +-------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | :ref:`iteration<class_MainLoop_method_iteration>` **(** :ref:`float<class_float>` delta **)**                                                                      |
+   +-------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Signals
 -------
 
 .. _class_MainLoop_signal_on_request_permissions_result:
 
-- **on_request_permissions_result** **(** :ref:`String<class_String>` permission, :ref:`bool<class_bool>` granted **)**
+.. rst-class:: classref-signal
+
+**on_request_permissions_result** **(** :ref:`String<class_String>` permission, :ref:`bool<class_bool>` granted **)**
 
 Emitted when a user responds to a permission request.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Constants
 ---------
 
 .. _class_MainLoop_constant_NOTIFICATION_WM_MOUSE_ENTER:
 
+.. rst-class:: classref-constant
+
+**NOTIFICATION_WM_MOUSE_ENTER** = ``1002``
+
+Notification received from the OS when the mouse enters the game window.
+
+Implemented on desktop and web platforms.
+
 .. _class_MainLoop_constant_NOTIFICATION_WM_MOUSE_EXIT:
+
+.. rst-class:: classref-constant
+
+**NOTIFICATION_WM_MOUSE_EXIT** = ``1003``
+
+Notification received from the OS when the mouse leaves the game window.
+
+Implemented on desktop and web platforms.
 
 .. _class_MainLoop_constant_NOTIFICATION_WM_FOCUS_IN:
 
+.. rst-class:: classref-constant
+
+**NOTIFICATION_WM_FOCUS_IN** = ``1004``
+
+Notification received from the OS when the game window is focused.
+
+Implemented on all platforms.
+
 .. _class_MainLoop_constant_NOTIFICATION_WM_FOCUS_OUT:
+
+.. rst-class:: classref-constant
+
+**NOTIFICATION_WM_FOCUS_OUT** = ``1005``
+
+Notification received from the OS when the game window is unfocused.
+
+Implemented on all platforms.
 
 .. _class_MainLoop_constant_NOTIFICATION_WM_QUIT_REQUEST:
 
-.. _class_MainLoop_constant_NOTIFICATION_WM_GO_BACK_REQUEST:
+.. rst-class:: classref-constant
 
-.. _class_MainLoop_constant_NOTIFICATION_WM_UNFOCUS_REQUEST:
+**NOTIFICATION_WM_QUIT_REQUEST** = ``1006``
 
-.. _class_MainLoop_constant_NOTIFICATION_OS_MEMORY_WARNING:
-
-.. _class_MainLoop_constant_NOTIFICATION_TRANSLATION_CHANGED:
-
-.. _class_MainLoop_constant_NOTIFICATION_WM_ABOUT:
-
-.. _class_MainLoop_constant_NOTIFICATION_CRASH:
-
-.. _class_MainLoop_constant_NOTIFICATION_OS_IME_UPDATE:
-
-.. _class_MainLoop_constant_NOTIFICATION_APP_RESUMED:
-
-.. _class_MainLoop_constant_NOTIFICATION_APP_PAUSED:
-
-- **NOTIFICATION_WM_MOUSE_ENTER** = **1002** --- Notification received from the OS when the mouse enters the game window.
-
-Implemented on desktop and web platforms.
-
-- **NOTIFICATION_WM_MOUSE_EXIT** = **1003** --- Notification received from the OS when the mouse leaves the game window.
-
-Implemented on desktop and web platforms.
-
-- **NOTIFICATION_WM_FOCUS_IN** = **1004** --- Notification received from the OS when the game window is focused.
-
-Implemented on all platforms.
-
-- **NOTIFICATION_WM_FOCUS_OUT** = **1005** --- Notification received from the OS when the game window is unfocused.
-
-Implemented on all platforms.
-
-- **NOTIFICATION_WM_QUIT_REQUEST** = **1006** --- Notification received from the OS when a quit request is sent (e.g. closing the window with a "Close" button or Alt+F4).
+Notification received from the OS when a quit request is sent (e.g. closing the window with a "Close" button or Alt+F4).
 
 Implemented on desktop platforms.
 
-- **NOTIFICATION_WM_GO_BACK_REQUEST** = **1007** --- Notification received from the OS when a go back request is sent (e.g. pressing the "Back" button on Android).
+.. _class_MainLoop_constant_NOTIFICATION_WM_GO_BACK_REQUEST:
+
+.. rst-class:: classref-constant
+
+**NOTIFICATION_WM_GO_BACK_REQUEST** = ``1007``
+
+Notification received from the OS when a go back request is sent (e.g. pressing the "Back" button on Android).
 
 Specific to the Android platform.
 
-- **NOTIFICATION_WM_UNFOCUS_REQUEST** = **1008** --- Notification received from the OS when an unfocus request is sent (e.g. another OS window wants to take the focus).
+.. _class_MainLoop_constant_NOTIFICATION_WM_UNFOCUS_REQUEST:
+
+.. rst-class:: classref-constant
+
+**NOTIFICATION_WM_UNFOCUS_REQUEST** = ``1008``
+
+Notification received from the OS when an unfocus request is sent (e.g. another OS window wants to take the focus).
 
 No supported platforms currently send this notification.
 
-- **NOTIFICATION_OS_MEMORY_WARNING** = **1009** --- Notification received from the OS when the application is exceeding its allocated memory.
+.. _class_MainLoop_constant_NOTIFICATION_OS_MEMORY_WARNING:
+
+.. rst-class:: classref-constant
+
+**NOTIFICATION_OS_MEMORY_WARNING** = ``1009``
+
+Notification received from the OS when the application is exceeding its allocated memory.
 
 Specific to the iOS platform.
 
-- **NOTIFICATION_TRANSLATION_CHANGED** = **1010** --- Notification received when translations may have changed. Can be triggered by the user changing the locale. Can be used to respond to language changes, for example to change the UI strings on the fly. Useful when working with the built-in translation support, like :ref:`Object.tr<class_Object_method_tr>`.
+.. _class_MainLoop_constant_NOTIFICATION_TRANSLATION_CHANGED:
 
-- **NOTIFICATION_WM_ABOUT** = **1011** --- Notification received from the OS when a request for "About" information is sent.
+.. rst-class:: classref-constant
+
+**NOTIFICATION_TRANSLATION_CHANGED** = ``1010``
+
+Notification received when translations may have changed. Can be triggered by the user changing the locale. Can be used to respond to language changes, for example to change the UI strings on the fly. Useful when working with the built-in translation support, like :ref:`Object.tr<class_Object_method_tr>`.
+
+.. _class_MainLoop_constant_NOTIFICATION_WM_ABOUT:
+
+.. rst-class:: classref-constant
+
+**NOTIFICATION_WM_ABOUT** = ``1011``
+
+Notification received from the OS when a request for "About" information is sent.
 
 Specific to the macOS platform.
 
-- **NOTIFICATION_CRASH** = **1012** --- Notification received from Godot's crash handler when the engine is about to crash.
+.. _class_MainLoop_constant_NOTIFICATION_CRASH:
+
+.. rst-class:: classref-constant
+
+**NOTIFICATION_CRASH** = ``1012``
+
+Notification received from Godot's crash handler when the engine is about to crash.
 
 Implemented on desktop platforms if the crash handler is enabled.
 
-- **NOTIFICATION_OS_IME_UPDATE** = **1013** --- Notification received from the OS when an update of the Input Method Engine occurs (e.g. change of IME cursor position or composition string).
+.. _class_MainLoop_constant_NOTIFICATION_OS_IME_UPDATE:
+
+.. rst-class:: classref-constant
+
+**NOTIFICATION_OS_IME_UPDATE** = ``1013``
+
+Notification received from the OS when an update of the Input Method Engine occurs (e.g. change of IME cursor position or composition string).
 
 Specific to the macOS platform.
 
-- **NOTIFICATION_APP_RESUMED** = **1014** --- Notification received from the OS when the app is resumed.
+.. _class_MainLoop_constant_NOTIFICATION_APP_RESUMED:
+
+.. rst-class:: classref-constant
+
+**NOTIFICATION_APP_RESUMED** = ``1014``
+
+Notification received from the OS when the app is resumed.
 
 Specific to the Android platform.
 
-- **NOTIFICATION_APP_PAUSED** = **1015** --- Notification received from the OS when the app is paused.
+.. _class_MainLoop_constant_NOTIFICATION_APP_PAUSED:
+
+.. rst-class:: classref-constant
+
+**NOTIFICATION_APP_PAUSED** = ``1015``
+
+Notification received from the OS when the app is paused.
 
 Specific to the Android platform.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_MainLoop_method__drop_files:
 
-- void **_drop_files** **(** :ref:`PoolStringArray<class_PoolStringArray>` files, :ref:`int<class_int>` from_screen **)** |virtual|
+.. rst-class:: classref-method
+
+void **_drop_files** **(** :ref:`PoolStringArray<class_PoolStringArray>` files, :ref:`int<class_int>` from_screen **)** |virtual|
 
 Called when files are dragged from the OS file manager and dropped in the game window. The arguments are a list of file paths and the identifier of the screen where the drag originated.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_MainLoop_method__finalize:
 
-- void **_finalize** **(** **)** |virtual|
+.. rst-class:: classref-method
+
+void **_finalize** **(** **)** |virtual|
 
 Called before the program exits.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_MainLoop_method__global_menu_action:
 
-- void **_global_menu_action** **(** :ref:`Variant<class_Variant>` id, :ref:`Variant<class_Variant>` meta **)** |virtual|
+.. rst-class:: classref-method
+
+void **_global_menu_action** **(** :ref:`Variant<class_Variant>` id, :ref:`Variant<class_Variant>` meta **)** |virtual|
 
 Called when the user performs an action in the system global menu (e.g. the Mac OS menu bar).
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_MainLoop_method__idle:
 
-- :ref:`bool<class_bool>` **_idle** **(** :ref:`float<class_float>` delta **)** |virtual|
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **_idle** **(** :ref:`float<class_float>` delta **)** |virtual|
 
 Called each idle frame with the time since the last idle frame as argument (in seconds). Equivalent to :ref:`Node._process<class_Node_method__process>`.
 
 If implemented, the method must return a boolean value. ``true`` ends the main loop, while ``false`` lets it proceed to the next frame.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_MainLoop_method__initialize:
 
-- void **_initialize** **(** **)** |virtual|
+.. rst-class:: classref-method
+
+void **_initialize** **(** **)** |virtual|
 
 Called once during initialization.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_MainLoop_method__input_event:
 
-- void **_input_event** **(** :ref:`InputEvent<class_InputEvent>` event **)** |virtual|
+.. rst-class:: classref-method
+
+void **_input_event** **(** :ref:`InputEvent<class_InputEvent>` event **)** |virtual|
 
 Called whenever an :ref:`InputEvent<class_InputEvent>` is received by the main loop.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_MainLoop_method__input_text:
 
-- void **_input_text** **(** :ref:`String<class_String>` text **)** |virtual|
+.. rst-class:: classref-method
+
+void **_input_text** **(** :ref:`String<class_String>` text **)** |virtual|
 
 Deprecated callback, does not do anything. Use :ref:`_input_event<class_MainLoop_method__input_event>` to parse text input. Will be removed in Godot 4.0.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_MainLoop_method__iteration:
 
-- :ref:`bool<class_bool>` **_iteration** **(** :ref:`float<class_float>` delta **)** |virtual|
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **_iteration** **(** :ref:`float<class_float>` delta **)** |virtual|
 
 Called each physics frame with the time since the last physics frame as argument (``delta``, in seconds). Equivalent to :ref:`Node._physics_process<class_Node_method__physics_process>`.
 
 If implemented, the method must return a boolean value. ``true`` ends the main loop, while ``false`` lets it proceed to the next frame.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_MainLoop_method_finish:
 
-- void **finish** **(** **)**
+.. rst-class:: classref-method
+
+void **finish** **(** **)**
 
 Should not be called manually, override :ref:`_finalize<class_MainLoop_method__finalize>` instead. Will be removed in Godot 4.0.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_MainLoop_method_idle:
 
-- :ref:`bool<class_bool>` **idle** **(** :ref:`float<class_float>` delta **)**
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **idle** **(** :ref:`float<class_float>` delta **)**
 
 Should not be called manually, override :ref:`_idle<class_MainLoop_method__idle>` instead. Will be removed in Godot 4.0.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_MainLoop_method_init:
 
-- void **init** **(** **)**
+.. rst-class:: classref-method
+
+void **init** **(** **)**
 
 Should not be called manually, override :ref:`_initialize<class_MainLoop_method__initialize>` instead. Will be removed in Godot 4.0.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_MainLoop_method_input_event:
 
-- void **input_event** **(** :ref:`InputEvent<class_InputEvent>` event **)**
+.. rst-class:: classref-method
+
+void **input_event** **(** :ref:`InputEvent<class_InputEvent>` event **)**
 
 Should not be called manually, override :ref:`_input_event<class_MainLoop_method__input_event>` instead. Will be removed in Godot 4.0.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_MainLoop_method_input_text:
 
-- void **input_text** **(** :ref:`String<class_String>` text **)**
+.. rst-class:: classref-method
+
+void **input_text** **(** :ref:`String<class_String>` text **)**
 
 Should not be called manually, override :ref:`_input_text<class_MainLoop_method__input_text>` instead. Will be removed in Godot 4.0.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_MainLoop_method_iteration:
 
-- :ref:`bool<class_bool>` **iteration** **(** :ref:`float<class_float>` delta **)**
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **iteration** **(** :ref:`float<class_float>` delta **)**
 
 Should not be called manually, override :ref:`_iteration<class_MainLoop_method__iteration>` instead. Will be removed in Godot 4.0.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

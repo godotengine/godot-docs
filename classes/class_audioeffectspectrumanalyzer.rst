@@ -14,12 +14,16 @@ AudioEffectSpectrumAnalyzer
 
 Audio effect that can be used for real-time audio visualizations.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 This audio effect does not affect sound output, but can be used for real-time audio visualizations.
 
 See also :ref:`AudioStreamGenerator<class_AudioStreamGenerator>` for procedurally generating sounds.
+
+.. rst-class:: classref-introduction-group
 
 Tutorials
 ---------
@@ -28,95 +32,144 @@ Tutorials
 
 - `Godot 3.2 will get new audio features <https://godotengine.org/article/godot-32-will-get-new-audio-features>`__
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+------------------------------------------------------------+--------------------------------------------------------------------------------+----------+
-| :ref:`float<class_float>`                                  | :ref:`buffer_length<class_AudioEffectSpectrumAnalyzer_property_buffer_length>` | ``2.0``  |
-+------------------------------------------------------------+--------------------------------------------------------------------------------+----------+
-| :ref:`FFT_Size<enum_AudioEffectSpectrumAnalyzer_FFT_Size>` | :ref:`fft_size<class_AudioEffectSpectrumAnalyzer_property_fft_size>`           | ``2``    |
-+------------------------------------------------------------+--------------------------------------------------------------------------------+----------+
-| :ref:`float<class_float>`                                  | :ref:`tap_back_pos<class_AudioEffectSpectrumAnalyzer_property_tap_back_pos>`   | ``0.01`` |
-+------------------------------------------------------------+--------------------------------------------------------------------------------+----------+
+.. table::
+   :widths: auto
+
+   +------------------------------------------------------------+--------------------------------------------------------------------------------+----------+
+   | :ref:`float<class_float>`                                  | :ref:`buffer_length<class_AudioEffectSpectrumAnalyzer_property_buffer_length>` | ``2.0``  |
+   +------------------------------------------------------------+--------------------------------------------------------------------------------+----------+
+   | :ref:`FFT_Size<enum_AudioEffectSpectrumAnalyzer_FFT_Size>` | :ref:`fft_size<class_AudioEffectSpectrumAnalyzer_property_fft_size>`           | ``2``    |
+   +------------------------------------------------------------+--------------------------------------------------------------------------------+----------+
+   | :ref:`float<class_float>`                                  | :ref:`tap_back_pos<class_AudioEffectSpectrumAnalyzer_property_tap_back_pos>`   | ``0.01`` |
+   +------------------------------------------------------------+--------------------------------------------------------------------------------+----------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Enumerations
 ------------
 
 .. _enum_AudioEffectSpectrumAnalyzer_FFT_Size:
 
-.. _class_AudioEffectSpectrumAnalyzer_constant_FFT_SIZE_256:
-
-.. _class_AudioEffectSpectrumAnalyzer_constant_FFT_SIZE_512:
-
-.. _class_AudioEffectSpectrumAnalyzer_constant_FFT_SIZE_1024:
-
-.. _class_AudioEffectSpectrumAnalyzer_constant_FFT_SIZE_2048:
-
-.. _class_AudioEffectSpectrumAnalyzer_constant_FFT_SIZE_4096:
-
-.. _class_AudioEffectSpectrumAnalyzer_constant_FFT_SIZE_MAX:
+.. rst-class:: classref-enumeration
 
 enum **FFT_Size**:
 
-- **FFT_SIZE_256** = **0** --- Use a buffer of 256 samples for the Fast Fourier transform. Lowest latency, but least stable over time.
+.. _class_AudioEffectSpectrumAnalyzer_constant_FFT_SIZE_256:
 
-- **FFT_SIZE_512** = **1** --- Use a buffer of 512 samples for the Fast Fourier transform. Low latency, but less stable over time.
+.. rst-class:: classref-enumeration-constant
 
-- **FFT_SIZE_1024** = **2** --- Use a buffer of 1024 samples for the Fast Fourier transform. This is a compromise between latency and stability over time.
+:ref:`FFT_Size<enum_AudioEffectSpectrumAnalyzer_FFT_Size>` **FFT_SIZE_256** = ``0``
 
-- **FFT_SIZE_2048** = **3** --- Use a buffer of 2048 samples for the Fast Fourier transform. High latency, but stable over time.
+Use a buffer of 256 samples for the Fast Fourier transform. Lowest latency, but least stable over time.
 
-- **FFT_SIZE_4096** = **4** --- Use a buffer of 4096 samples for the Fast Fourier transform. Highest latency, but most stable over time.
+.. _class_AudioEffectSpectrumAnalyzer_constant_FFT_SIZE_512:
 
-- **FFT_SIZE_MAX** = **5** --- Represents the size of the :ref:`FFT_Size<enum_AudioEffectSpectrumAnalyzer_FFT_Size>` enum.
+.. rst-class:: classref-enumeration-constant
+
+:ref:`FFT_Size<enum_AudioEffectSpectrumAnalyzer_FFT_Size>` **FFT_SIZE_512** = ``1``
+
+Use a buffer of 512 samples for the Fast Fourier transform. Low latency, but less stable over time.
+
+.. _class_AudioEffectSpectrumAnalyzer_constant_FFT_SIZE_1024:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`FFT_Size<enum_AudioEffectSpectrumAnalyzer_FFT_Size>` **FFT_SIZE_1024** = ``2``
+
+Use a buffer of 1024 samples for the Fast Fourier transform. This is a compromise between latency and stability over time.
+
+.. _class_AudioEffectSpectrumAnalyzer_constant_FFT_SIZE_2048:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`FFT_Size<enum_AudioEffectSpectrumAnalyzer_FFT_Size>` **FFT_SIZE_2048** = ``3``
+
+Use a buffer of 2048 samples for the Fast Fourier transform. High latency, but stable over time.
+
+.. _class_AudioEffectSpectrumAnalyzer_constant_FFT_SIZE_4096:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`FFT_Size<enum_AudioEffectSpectrumAnalyzer_FFT_Size>` **FFT_SIZE_4096** = ``4``
+
+Use a buffer of 4096 samples for the Fast Fourier transform. Highest latency, but most stable over time.
+
+.. _class_AudioEffectSpectrumAnalyzer_constant_FFT_SIZE_MAX:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`FFT_Size<enum_AudioEffectSpectrumAnalyzer_FFT_Size>` **FFT_SIZE_MAX** = ``5``
+
+Represents the size of the :ref:`FFT_Size<enum_AudioEffectSpectrumAnalyzer_FFT_Size>` enum.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_AudioEffectSpectrumAnalyzer_property_buffer_length:
 
-- :ref:`float<class_float>` **buffer_length**
+.. rst-class:: classref-property
 
-+-----------+--------------------------+
-| *Default* | ``2.0``                  |
-+-----------+--------------------------+
-| *Setter*  | set_buffer_length(value) |
-+-----------+--------------------------+
-| *Getter*  | get_buffer_length()      |
-+-----------+--------------------------+
+:ref:`float<class_float>` **buffer_length** = ``2.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_buffer_length** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_buffer_length** **(** **)**
 
 The length of the buffer to keep (in seconds). Higher values keep data around for longer, but require more memory.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AudioEffectSpectrumAnalyzer_property_fft_size:
 
-- :ref:`FFT_Size<enum_AudioEffectSpectrumAnalyzer_FFT_Size>` **fft_size**
+.. rst-class:: classref-property
 
-+-----------+---------------------+
-| *Default* | ``2``               |
-+-----------+---------------------+
-| *Setter*  | set_fft_size(value) |
-+-----------+---------------------+
-| *Getter*  | get_fft_size()      |
-+-----------+---------------------+
+:ref:`FFT_Size<enum_AudioEffectSpectrumAnalyzer_FFT_Size>` **fft_size** = ``2``
+
+.. rst-class:: classref-property-setget
+
+- void **set_fft_size** **(** :ref:`FFT_Size<enum_AudioEffectSpectrumAnalyzer_FFT_Size>` value **)**
+- :ref:`FFT_Size<enum_AudioEffectSpectrumAnalyzer_FFT_Size>` **get_fft_size** **(** **)**
 
 The size of the `Fast Fourier transform <https://en.wikipedia.org/wiki/Fast_Fourier_transform>`__ buffer. Higher values smooth out the spectrum analysis over time, but have greater latency. The effects of this higher latency are especially noticeable with sudden amplitude changes.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AudioEffectSpectrumAnalyzer_property_tap_back_pos:
 
-- :ref:`float<class_float>` **tap_back_pos**
+.. rst-class:: classref-property
 
-+-----------+-------------------------+
-| *Default* | ``0.01``                |
-+-----------+-------------------------+
-| *Setter*  | set_tap_back_pos(value) |
-+-----------+-------------------------+
-| *Getter*  | get_tap_back_pos()      |
-+-----------+-------------------------+
+:ref:`float<class_float>` **tap_back_pos** = ``0.01``
+
+.. rst-class:: classref-property-setget
+
+- void **set_tap_back_pos** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_tap_back_pos** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

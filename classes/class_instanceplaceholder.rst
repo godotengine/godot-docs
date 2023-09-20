@@ -14,6 +14,8 @@ InstancePlaceholder
 
 Placeholder for the root :ref:`Node<class_Node>` of a :ref:`PackedScene<class_PackedScene>`.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -21,56 +23,82 @@ Turning on the option **Load As Placeholder** for an instanced scene in the edit
 
 The InstancePlaceholder does not have a transform. This causes any child nodes to be positioned relatively to the Viewport from point (0,0), rather than their parent as displayed in the editor. Replacing the placeholder with a scene with a transform will transform children relatively to their parent again.
 
+.. rst-class:: classref-reftable-group
+
 Methods
 -------
 
-+-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Node<class_Node>`             | :ref:`create_instance<class_InstancePlaceholder_method_create_instance>` **(** :ref:`bool<class_bool>` replace=false, :ref:`PackedScene<class_PackedScene>` custom_scene=null **)** |
-+-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`         | :ref:`get_instance_path<class_InstancePlaceholder_method_get_instance_path>` **(** **)** |const|                                                                                    |
-+-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Dictionary<class_Dictionary>` | :ref:`get_stored_values<class_InstancePlaceholder_method_get_stored_values>` **(** :ref:`bool<class_bool>` with_order=false **)**                                                   |
-+-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                | :ref:`replace_by_instance<class_InstancePlaceholder_method_replace_by_instance>` **(** :ref:`PackedScene<class_PackedScene>` custom_scene=null **)**                                |
-+-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Node<class_Node>`             | :ref:`create_instance<class_InstancePlaceholder_method_create_instance>` **(** :ref:`bool<class_bool>` replace=false, :ref:`PackedScene<class_PackedScene>` custom_scene=null **)** |
+   +-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`         | :ref:`get_instance_path<class_InstancePlaceholder_method_get_instance_path>` **(** **)** |const|                                                                                    |
+   +-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Dictionary<class_Dictionary>` | :ref:`get_stored_values<class_InstancePlaceholder_method_get_stored_values>` **(** :ref:`bool<class_bool>` with_order=false **)**                                                   |
+   +-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                | :ref:`replace_by_instance<class_InstancePlaceholder_method_replace_by_instance>` **(** :ref:`PackedScene<class_PackedScene>` custom_scene=null **)**                                |
+   +-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_InstancePlaceholder_method_create_instance:
 
-- :ref:`Node<class_Node>` **create_instance** **(** :ref:`bool<class_bool>` replace=false, :ref:`PackedScene<class_PackedScene>` custom_scene=null **)**
+.. rst-class:: classref-method
 
-Call this method to actually load in the node. The created node will be placed as a sibling *above* the ``InstancePlaceholder`` in the scene tree. The :ref:`Node<class_Node>`'s reference is also returned for convenience.
+:ref:`Node<class_Node>` **create_instance** **(** :ref:`bool<class_bool>` replace=false, :ref:`PackedScene<class_PackedScene>` custom_scene=null **)**
+
+Call this method to actually load in the node. The created node will be placed as a sibling *above* the **InstancePlaceholder** in the scene tree. The :ref:`Node<class_Node>`'s reference is also returned for convenience.
 
 \ **Note:** :ref:`create_instance<class_InstancePlaceholder_method_create_instance>` is not thread-safe. Use :ref:`Object.call_deferred<class_Object_method_call_deferred>` if calling from a thread.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_InstancePlaceholder_method_get_instance_path:
 
-- :ref:`String<class_String>` **get_instance_path** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`String<class_String>` **get_instance_path** **(** **)** |const|
 
 Gets the path to the :ref:`PackedScene<class_PackedScene>` resource file that is loaded by default when calling :ref:`replace_by_instance<class_InstancePlaceholder_method_replace_by_instance>`. Not thread-safe. Use :ref:`Object.call_deferred<class_Object_method_call_deferred>` if calling from a thread.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_InstancePlaceholder_method_get_stored_values:
 
-- :ref:`Dictionary<class_Dictionary>` **get_stored_values** **(** :ref:`bool<class_bool>` with_order=false **)**
+.. rst-class:: classref-method
+
+:ref:`Dictionary<class_Dictionary>` **get_stored_values** **(** :ref:`bool<class_bool>` with_order=false **)**
 
 Returns the list of properties that will be applied to the node when :ref:`create_instance<class_InstancePlaceholder_method_create_instance>` is called.
 
 If ``with_order`` is ``true``, a key named ``.order`` (note the leading period) is added to the dictionary. This ``.order`` key is an :ref:`Array<class_Array>` of :ref:`String<class_String>` property names specifying the order in which properties will be applied (with index 0 being the first).
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_InstancePlaceholder_method_replace_by_instance:
 
-- void **replace_by_instance** **(** :ref:`PackedScene<class_PackedScene>` custom_scene=null **)**
+.. rst-class:: classref-method
+
+void **replace_by_instance** **(** :ref:`PackedScene<class_PackedScene>` custom_scene=null **)**
 
 Replaces this placeholder by the scene handed as an argument, or the original scene if no argument is given. As for all resources, the scene is loaded only if it's not loaded already. By manually loading the scene beforehand, delays caused by this function can be avoided.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

@@ -16,12 +16,16 @@ Resource
 
 Base class for all resources.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 Resource is the base class for all Godot-specific resource types, serving primarily as data containers. Since they inherit from :ref:`Reference<class_Reference>`, resources are reference-counted and freed when no longer in use. They are also cached once loaded from disk, so that any further attempts to load a resource from a given path will return the same reference (all this in contrast to a :ref:`Node<class_Node>`, which is not reference-counted and can be instanced from disk as many times as desired). Resources can be saved externally on disk or bundled into another object, such as a :ref:`Node<class_Node>` or another resource.
 
 \ **Note:** In C#, resources will not be freed instantly after they are no longer in use. Instead, garbage collection will run periodically and will free resources that are no longer in use. This means that unused resources will linger on for a while before being removed.
+
+.. rst-class:: classref-introduction-group
 
 Tutorials
 ---------
@@ -30,110 +34,147 @@ Tutorials
 
 - :doc:`When and how to avoid using nodes for everything <../tutorials/best_practices/node_alternatives>`
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-----------------------------+---------------------------------------------------------------------------------+-----------+
-| :ref:`bool<class_bool>`     | :ref:`resource_local_to_scene<class_Resource_property_resource_local_to_scene>` | ``false`` |
-+-----------------------------+---------------------------------------------------------------------------------+-----------+
-| :ref:`String<class_String>` | :ref:`resource_name<class_Resource_property_resource_name>`                     | ``""``    |
-+-----------------------------+---------------------------------------------------------------------------------+-----------+
-| :ref:`String<class_String>` | :ref:`resource_path<class_Resource_property_resource_path>`                     | ``""``    |
-+-----------------------------+---------------------------------------------------------------------------------+-----------+
+.. table::
+   :widths: auto
+
+   +-----------------------------+---------------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`     | :ref:`resource_local_to_scene<class_Resource_property_resource_local_to_scene>` | ``false`` |
+   +-----------------------------+---------------------------------------------------------------------------------+-----------+
+   | :ref:`String<class_String>` | :ref:`resource_name<class_Resource_property_resource_name>`                     | ``""``    |
+   +-----------------------------+---------------------------------------------------------------------------------+-----------+
+   | :ref:`String<class_String>` | :ref:`resource_path<class_Resource_property_resource_path>`                     | ``""``    |
+   +-----------------------------+---------------------------------------------------------------------------------+-----------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+---------------------------------+------------------------------------------------------------------------------------------------------------------+
-| void                            | :ref:`_setup_local_to_scene<class_Resource_method__setup_local_to_scene>` **(** **)** |virtual|                  |
-+---------------------------------+------------------------------------------------------------------------------------------------------------------+
-| :ref:`Resource<class_Resource>` | :ref:`duplicate<class_Resource_method_duplicate>` **(** :ref:`bool<class_bool>` subresources=false **)** |const| |
-+---------------------------------+------------------------------------------------------------------------------------------------------------------+
-| void                            | :ref:`emit_changed<class_Resource_method_emit_changed>` **(** **)**                                              |
-+---------------------------------+------------------------------------------------------------------------------------------------------------------+
-| :ref:`Node<class_Node>`         | :ref:`get_local_scene<class_Resource_method_get_local_scene>` **(** **)** |const|                                |
-+---------------------------------+------------------------------------------------------------------------------------------------------------------+
-| :ref:`RID<class_RID>`           | :ref:`get_rid<class_Resource_method_get_rid>` **(** **)** |const|                                                |
-+---------------------------------+------------------------------------------------------------------------------------------------------------------+
-| void                            | :ref:`setup_local_to_scene<class_Resource_method_setup_local_to_scene>` **(** **)**                              |
-+---------------------------------+------------------------------------------------------------------------------------------------------------------+
-| void                            | :ref:`take_over_path<class_Resource_method_take_over_path>` **(** :ref:`String<class_String>` path **)**         |
-+---------------------------------+------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +---------------------------------+------------------------------------------------------------------------------------------------------------------+
+   | void                            | :ref:`_setup_local_to_scene<class_Resource_method__setup_local_to_scene>` **(** **)** |virtual|                  |
+   +---------------------------------+------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Resource<class_Resource>` | :ref:`duplicate<class_Resource_method_duplicate>` **(** :ref:`bool<class_bool>` subresources=false **)** |const| |
+   +---------------------------------+------------------------------------------------------------------------------------------------------------------+
+   | void                            | :ref:`emit_changed<class_Resource_method_emit_changed>` **(** **)**                                              |
+   +---------------------------------+------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Node<class_Node>`         | :ref:`get_local_scene<class_Resource_method_get_local_scene>` **(** **)** |const|                                |
+   +---------------------------------+------------------------------------------------------------------------------------------------------------------+
+   | :ref:`RID<class_RID>`           | :ref:`get_rid<class_Resource_method_get_rid>` **(** **)** |const|                                                |
+   +---------------------------------+------------------------------------------------------------------------------------------------------------------+
+   | void                            | :ref:`setup_local_to_scene<class_Resource_method_setup_local_to_scene>` **(** **)**                              |
+   +---------------------------------+------------------------------------------------------------------------------------------------------------------+
+   | void                            | :ref:`take_over_path<class_Resource_method_take_over_path>` **(** :ref:`String<class_String>` path **)**         |
+   +---------------------------------+------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Signals
 -------
 
 .. _class_Resource_signal_changed:
 
-- **changed** **(** **)**
+.. rst-class:: classref-signal
+
+**changed** **(** **)**
 
 Emitted whenever the resource changes.
 
 \ **Note:** This signal is not emitted automatically for custom resources, which means that you need to create a setter and emit the signal yourself.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_Resource_property_resource_local_to_scene:
 
-- :ref:`bool<class_bool>` **resource_local_to_scene**
+.. rst-class:: classref-property
 
-+-----------+---------------------------+
-| *Default* | ``false``                 |
-+-----------+---------------------------+
-| *Setter*  | set_local_to_scene(value) |
-+-----------+---------------------------+
-| *Getter*  | is_local_to_scene()       |
-+-----------+---------------------------+
+:ref:`bool<class_bool>` **resource_local_to_scene** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_local_to_scene** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_local_to_scene** **(** **)**
 
 If ``true``, the resource will be made unique in each instance of its local scene. It can thus be modified in a scene instance without impacting other instances of that same scene.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Resource_property_resource_name:
 
-- :ref:`String<class_String>` **resource_name**
+.. rst-class:: classref-property
 
-+-----------+-----------------+
-| *Default* | ``""``          |
-+-----------+-----------------+
-| *Setter*  | set_name(value) |
-+-----------+-----------------+
-| *Getter*  | get_name()      |
-+-----------+-----------------+
+:ref:`String<class_String>` **resource_name** = ``""``
+
+.. rst-class:: classref-property-setget
+
+- void **set_name** **(** :ref:`String<class_String>` value **)**
+- :ref:`String<class_String>` **get_name** **(** **)**
 
 The name of the resource. This is an optional identifier. If :ref:`resource_name<class_Resource_property_resource_name>` is not empty, its value will be displayed to represent the current resource in the editor inspector. For built-in scripts, the :ref:`resource_name<class_Resource_property_resource_name>` will be displayed as the tab name in the script editor.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Resource_property_resource_path:
 
-- :ref:`String<class_String>` **resource_path**
+.. rst-class:: classref-property
 
-+-----------+-----------------+
-| *Default* | ``""``          |
-+-----------+-----------------+
-| *Setter*  | set_path(value) |
-+-----------+-----------------+
-| *Getter*  | get_path()      |
-+-----------+-----------------+
+:ref:`String<class_String>` **resource_path** = ``""``
+
+.. rst-class:: classref-property-setget
+
+- void **set_path** **(** :ref:`String<class_String>` value **)**
+- :ref:`String<class_String>` **get_path** **(** **)**
 
 The path to the resource. In case it has its own file, it will return its filepath. If it's tied to the scene, it will return the scene's path, followed by the resource's index.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_Resource_method__setup_local_to_scene:
 
-- void **_setup_local_to_scene** **(** **)** |virtual|
+.. rst-class:: classref-method
+
+void **_setup_local_to_scene** **(** **)** |virtual|
 
 Virtual function which can be overridden to customize the behavior value of :ref:`setup_local_to_scene<class_Resource_method_setup_local_to_scene>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Resource_method_duplicate:
 
-- :ref:`Resource<class_Resource>` **duplicate** **(** :ref:`bool<class_bool>` subresources=false **)** |const|
+.. rst-class:: classref-method
+
+:ref:`Resource<class_Resource>` **duplicate** **(** :ref:`bool<class_bool>` subresources=false **)** |const|
 
 Duplicates the resource, returning a new resource with the exported members copied. **Note:** To duplicate the resource the constructor is called without arguments. This method will error when the constructor doesn't have default values.
 
@@ -143,11 +184,15 @@ By default, sub-resources are shared between resource copies for efficiency. Thi
 
 \ **Note:** When duplicating a resource, only ``export``\ ed properties are copied. Other properties will be set to their default value in the new resource.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_Resource_method_emit_changed:
 
-- void **emit_changed** **(** **)**
+.. rst-class:: classref-method
+
+void **emit_changed** **(** **)**
 
 Emits the :ref:`changed<class_Resource_signal_changed>` signal.
 
@@ -161,40 +206,57 @@ The method is equivalent to:
 
 \ **Note:** This method is called automatically for built-in resources.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_Resource_method_get_local_scene:
 
-- :ref:`Node<class_Node>` **get_local_scene** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`Node<class_Node>` **get_local_scene** **(** **)** |const|
 
 If :ref:`resource_local_to_scene<class_Resource_property_resource_local_to_scene>` is enabled and the resource was loaded from a :ref:`PackedScene<class_PackedScene>` instantiation, returns the local scene where this resource's unique copy is in use. Otherwise, returns ``null``.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Resource_method_get_rid:
 
-- :ref:`RID<class_RID>` **get_rid** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`RID<class_RID>` **get_rid** **(** **)** |const|
 
 Returns the RID of the resource (or an empty RID). Many resources (such as :ref:`Texture<class_Texture>`, :ref:`Mesh<class_Mesh>`, etc) are high-level abstractions of resources stored in a server, so this function will return the original RID.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Resource_method_setup_local_to_scene:
 
-- void **setup_local_to_scene** **(** **)**
+.. rst-class:: classref-method
+
+void **setup_local_to_scene** **(** **)**
 
 This method is called when a resource with :ref:`resource_local_to_scene<class_Resource_property_resource_local_to_scene>` enabled is loaded from a :ref:`PackedScene<class_PackedScene>` instantiation. Its behavior can be customized by overriding :ref:`_setup_local_to_scene<class_Resource_method__setup_local_to_scene>` from script.
 
 For most resources, this method performs no base logic. :ref:`ViewportTexture<class_ViewportTexture>` performs custom logic to properly set the proxy texture and flags in the local viewport.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_Resource_method_take_over_path:
 
-- void **take_over_path** **(** :ref:`String<class_String>` path **)**
+.. rst-class:: classref-method
+
+void **take_over_path** **(** :ref:`String<class_String>` path **)**
 
 Sets the path of the resource, potentially overriding an existing cache entry for this path. This differs from setting :ref:`resource_path<class_Resource_property_resource_path>`, as the latter would error out if another resource was already cached for the given path.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

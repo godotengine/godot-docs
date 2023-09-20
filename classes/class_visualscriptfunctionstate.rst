@@ -14,47 +14,71 @@ VisualScriptFunctionState
 
 A Visual Script node representing a function state.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
-``VisualScriptFunctionState`` is returned from :ref:`VisualScriptYield<class_VisualScriptYield>` and can be used to resume a paused function call.
+**VisualScriptFunctionState** is returned from :ref:`VisualScriptYield<class_VisualScriptYield>` and can be used to resume a paused function call.
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                          | :ref:`connect_to_signal<class_VisualScriptFunctionState_method_connect_to_signal>` **(** :ref:`Object<class_Object>` obj, :ref:`String<class_String>` signals, :ref:`Array<class_Array>` args **)** |
-+-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`is_valid<class_VisualScriptFunctionState_method_is_valid>` **(** **)** |const|                                                                                                                |
-+-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>` | :ref:`resume<class_VisualScriptFunctionState_method_resume>` **(** :ref:`Array<class_Array>` args=null **)**                                                                                        |
-+-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                          | :ref:`connect_to_signal<class_VisualScriptFunctionState_method_connect_to_signal>` **(** :ref:`Object<class_Object>` obj, :ref:`String<class_String>` signals, :ref:`Array<class_Array>` args **)** |
+   +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`is_valid<class_VisualScriptFunctionState_method_is_valid>` **(** **)** |const|                                                                                                                |
+   +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Variant<class_Variant>` | :ref:`resume<class_VisualScriptFunctionState_method_resume>` **(** :ref:`Array<class_Array>` args=null **)**                                                                                        |
+   +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_VisualScriptFunctionState_method_connect_to_signal:
 
-- void **connect_to_signal** **(** :ref:`Object<class_Object>` obj, :ref:`String<class_String>` signals, :ref:`Array<class_Array>` args **)**
+.. rst-class:: classref-method
 
-Connects this ``VisualScriptFunctionState`` to a signal in the given object to automatically resume when it's emitted.
+void **connect_to_signal** **(** :ref:`Object<class_Object>` obj, :ref:`String<class_String>` signals, :ref:`Array<class_Array>` args **)**
+
+Connects this **VisualScriptFunctionState** to a signal in the given object to automatically resume when it's emitted.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_VisualScriptFunctionState_method_is_valid:
 
-- :ref:`bool<class_bool>` **is_valid** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **is_valid** **(** **)** |const|
 
 Returns whether the function state is valid.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_VisualScriptFunctionState_method_resume:
 
-- :ref:`Variant<class_Variant>` **resume** **(** :ref:`Array<class_Array>` args=null **)**
+.. rst-class:: classref-method
+
+:ref:`Variant<class_Variant>` **resume** **(** :ref:`Array<class_Array>` args=null **)**
 
 Resumes the function to run from the point it was yielded.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

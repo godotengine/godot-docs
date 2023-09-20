@@ -14,53 +14,89 @@ Occluder
 
 Allows :ref:`OccluderShape<class_OccluderShape>`\ s to be used for occlusion culling.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
-``Occluder``\ s that are placed within your scene will automatically cull objects that are hidden from view by the occluder. This can increase performance by decreasing the amount of objects drawn.
+**Occluder**\ s that are placed within your scene will automatically cull objects that are hidden from view by the occluder. This can increase performance by decreasing the amount of objects drawn.
 
-\ ``Occluder``\ s are totally dynamic, you can move them as you wish. This means you can for example, place occluders on a moving spaceship, and have it occlude objects as it flies past.
+\ **Occluder**\ s are totally dynamic, you can move them as you wish. This means you can for example, place occluders on a moving spaceship, and have it occlude objects as it flies past.
 
-You can place a large number of ``Occluder``\ s within a scene. As it would be counterproductive to cull against hundreds of occluders, the system will automatically choose a selection of these for active use during any given frame, based a screen space metric. Larger occluders are favored, as well as those close to the camera. Note that a small occluder close to the camera may be a better occluder in terms of screen space than a large occluder far in the distance.
+You can place a large number of **Occluder**\ s within a scene. As it would be counterproductive to cull against hundreds of occluders, the system will automatically choose a selection of these for active use during any given frame, based a screen space metric. Larger occluders are favored, as well as those close to the camera. Note that a small occluder close to the camera may be a better occluder in terms of screen space than a large occluder far in the distance.
 
-The type of occlusion primitive is determined by the :ref:`OccluderShape<class_OccluderShape>` that you add to the ``Occluder``. Some :ref:`OccluderShape<class_OccluderShape>`\ s may allow more than one primitive in a single, node, for greater efficiency.
+The type of occlusion primitive is determined by the :ref:`OccluderShape<class_OccluderShape>` that you add to the **Occluder**. Some :ref:`OccluderShape<class_OccluderShape>`\ s may allow more than one primitive in a single, node, for greater efficiency.
 
-Although ``Occluder``\ s work in general use, they also become even more powerful when used in conjunction with the portal system. Occluders are placed in rooms (based on their origin), and can block portals (and thus entire rooms) as well as objects from rendering.
+Although **Occluder**\ s work in general use, they also become even more powerful when used in conjunction with the portal system. Occluders are placed in rooms (based on their origin), and can block portals (and thus entire rooms) as well as objects from rendering.
+
+.. rst-class:: classref-reftable-group
 
 Properties
 ----------
 
-+-------------------------------------------+---------------------------------------------+
-| :ref:`OccluderShape<class_OccluderShape>` | :ref:`shape<class_Occluder_property_shape>` |
-+-------------------------------------------+---------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------------------------+---------------------------------------------+
+   | :ref:`OccluderShape<class_OccluderShape>` | :ref:`shape<class_Occluder_property_shape>` |
+   +-------------------------------------------+---------------------------------------------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+------+----------------------------------------------------------------------------------------------------------------------+
-| void | :ref:`resource_changed<class_Occluder_method_resource_changed>` **(** :ref:`Resource<class_Resource>` resource **)** |
-+------+----------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +------+----------------------------------------------------------------------------------------------------------------------+
+   | void | :ref:`resource_changed<class_Occluder_method_resource_changed>` **(** :ref:`Resource<class_Resource>` resource **)** |
+   +------+----------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_Occluder_property_shape:
 
-- :ref:`OccluderShape<class_OccluderShape>` **shape**
+.. rst-class:: classref-property
 
-+----------+------------------+
-| *Setter* | set_shape(value) |
-+----------+------------------+
-| *Getter* | get_shape()      |
-+----------+------------------+
+:ref:`OccluderShape<class_OccluderShape>` **shape**
+
+.. rst-class:: classref-property-setget
+
+- void **set_shape** **(** :ref:`OccluderShape<class_OccluderShape>` value **)**
+- :ref:`OccluderShape<class_OccluderShape>` **get_shape** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_Occluder_method_resource_changed:
 
-- void **resource_changed** **(** :ref:`Resource<class_Resource>` resource **)**
+.. rst-class:: classref-method
+
+void **resource_changed** **(** :ref:`Resource<class_Resource>` resource **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

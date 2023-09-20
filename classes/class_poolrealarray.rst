@@ -12,12 +12,14 @@ PoolRealArray
 
 A pooled array of real numbers (:ref:`float<class_float>`).
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 An array specifically designed to hold floating-point values. Optimized for memory usage, does not fragment the memory.
 
-\ **Note:** This type is passed by value and not by reference. This means that when *mutating* a class property of type ``PoolRealArray`` or mutating a ``PoolRealArray`` within an :ref:`Array<class_Array>` or :ref:`Dictionary<class_Dictionary>`, changes will be lost:
+\ **Note:** This type is passed by value and not by reference. This means that when *mutating* a class property of type **PoolRealArray** or mutating a **PoolRealArray** within an :ref:`Array<class_Array>` or :ref:`Dictionary<class_Dictionary>`, changes will be lost:
 
 ::
 
@@ -25,7 +27,7 @@ An array specifically designed to hold floating-point values. Optimized for memo
     array[0].push_back(12.34)
     print(array)  # [[]] (empty PoolRealArray within an Array)
 
-Instead, the entire ``PoolRealArray`` property must be *reassigned* with ``=`` for it to be changed:
+Instead, the entire **PoolRealArray** property must be *reassigned* with ``=`` for it to be changed:
 
 ::
 
@@ -35,188 +37,266 @@ Instead, the entire ``PoolRealArray`` property must be *reassigned* with ``=`` f
     array[0] = pool_array
     print(array)  # [[12.34]] (PoolRealArray with 1 element inside an Array)
 
-\ **Note:** Unlike primitive :ref:`float<class_float>`\ s which are 64-bit, numbers stored in ``PoolRealArray`` are 32-bit floats. This means values stored in ``PoolRealArray`` have lower precision compared to primitive :ref:`float<class_float>`\ s. If you need to store 64-bit floats in an array, use a generic :ref:`Array<class_Array>` with :ref:`float<class_float>` elements as these will still be 64-bit. However, using a generic :ref:`Array<class_Array>` to store :ref:`float<class_float>`\ s will use roughly 6 times more memory compared to a ``PoolRealArray``.
+\ **Note:** Unlike primitive :ref:`float<class_float>`\ s which are 64-bit, numbers stored in **PoolRealArray** are 32-bit floats. This means values stored in **PoolRealArray** have lower precision compared to primitive :ref:`float<class_float>`\ s. If you need to store 64-bit floats in an array, use a generic :ref:`Array<class_Array>` with :ref:`float<class_float>` elements as these will still be 64-bit. However, using a generic :ref:`Array<class_Array>` to store :ref:`float<class_float>`\ s will use roughly 6 times more memory compared to a **PoolRealArray**.
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+-------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolRealArray<class_PoolRealArray>` | :ref:`PoolRealArray<class_PoolRealArray_method_PoolRealArray>` **(** :ref:`Array<class_Array>` from **)**                 |
-+-------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| void                                      | :ref:`append<class_PoolRealArray_method_append>` **(** :ref:`float<class_float>` value **)**                              |
-+-------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| void                                      | :ref:`append_array<class_PoolRealArray_method_append_array>` **(** :ref:`PoolRealArray<class_PoolRealArray>` array **)**  |
-+-------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                     | :ref:`count<class_PoolRealArray_method_count>` **(** :ref:`float<class_float>` value **)**                                |
-+-------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                   | :ref:`empty<class_PoolRealArray_method_empty>` **(** **)**                                                                |
-+-------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| void                                      | :ref:`fill<class_PoolRealArray_method_fill>` **(** :ref:`float<class_float>` value **)**                                  |
-+-------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                     | :ref:`find<class_PoolRealArray_method_find>` **(** :ref:`float<class_float>` value, :ref:`int<class_int>` from=0 **)**    |
-+-------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                   | :ref:`has<class_PoolRealArray_method_has>` **(** :ref:`float<class_float>` value **)**                                    |
-+-------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                     | :ref:`insert<class_PoolRealArray_method_insert>` **(** :ref:`int<class_int>` idx, :ref:`float<class_float>` value **)**   |
-+-------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| void                                      | :ref:`invert<class_PoolRealArray_method_invert>` **(** **)**                                                              |
-+-------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| void                                      | :ref:`push_back<class_PoolRealArray_method_push_back>` **(** :ref:`float<class_float>` value **)**                        |
-+-------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| void                                      | :ref:`remove<class_PoolRealArray_method_remove>` **(** :ref:`int<class_int>` idx **)**                                    |
-+-------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| void                                      | :ref:`resize<class_PoolRealArray_method_resize>` **(** :ref:`int<class_int>` idx **)**                                    |
-+-------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                     | :ref:`rfind<class_PoolRealArray_method_rfind>` **(** :ref:`float<class_float>` value, :ref:`int<class_int>` from=-1 **)** |
-+-------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| void                                      | :ref:`set<class_PoolRealArray_method_set>` **(** :ref:`int<class_int>` idx, :ref:`float<class_float>` value **)**         |
-+-------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                     | :ref:`size<class_PoolRealArray_method_size>` **(** **)**                                                                  |
-+-------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| void                                      | :ref:`sort<class_PoolRealArray_method_sort>` **(** **)**                                                                  |
-+-------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PoolRealArray<class_PoolRealArray>` | :ref:`PoolRealArray<class_PoolRealArray_method_PoolRealArray>` **(** :ref:`Array<class_Array>` from **)**                 |
+   +-------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
+   | void                                      | :ref:`append<class_PoolRealArray_method_append>` **(** :ref:`float<class_float>` value **)**                              |
+   +-------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
+   | void                                      | :ref:`append_array<class_PoolRealArray_method_append_array>` **(** :ref:`PoolRealArray<class_PoolRealArray>` array **)**  |
+   +-------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                     | :ref:`count<class_PoolRealArray_method_count>` **(** :ref:`float<class_float>` value **)**                                |
+   +-------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                   | :ref:`empty<class_PoolRealArray_method_empty>` **(** **)**                                                                |
+   +-------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
+   | void                                      | :ref:`fill<class_PoolRealArray_method_fill>` **(** :ref:`float<class_float>` value **)**                                  |
+   +-------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                     | :ref:`find<class_PoolRealArray_method_find>` **(** :ref:`float<class_float>` value, :ref:`int<class_int>` from=0 **)**    |
+   +-------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                   | :ref:`has<class_PoolRealArray_method_has>` **(** :ref:`float<class_float>` value **)**                                    |
+   +-------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                     | :ref:`insert<class_PoolRealArray_method_insert>` **(** :ref:`int<class_int>` idx, :ref:`float<class_float>` value **)**   |
+   +-------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
+   | void                                      | :ref:`invert<class_PoolRealArray_method_invert>` **(** **)**                                                              |
+   +-------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
+   | void                                      | :ref:`push_back<class_PoolRealArray_method_push_back>` **(** :ref:`float<class_float>` value **)**                        |
+   +-------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
+   | void                                      | :ref:`remove<class_PoolRealArray_method_remove>` **(** :ref:`int<class_int>` idx **)**                                    |
+   +-------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
+   | void                                      | :ref:`resize<class_PoolRealArray_method_resize>` **(** :ref:`int<class_int>` idx **)**                                    |
+   +-------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                     | :ref:`rfind<class_PoolRealArray_method_rfind>` **(** :ref:`float<class_float>` value, :ref:`int<class_int>` from=-1 **)** |
+   +-------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
+   | void                                      | :ref:`set<class_PoolRealArray_method_set>` **(** :ref:`int<class_int>` idx, :ref:`float<class_float>` value **)**         |
+   +-------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                     | :ref:`size<class_PoolRealArray_method_size>` **(** **)**                                                                  |
+   +-------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
+   | void                                      | :ref:`sort<class_PoolRealArray_method_sort>` **(** **)**                                                                  |
+   +-------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_PoolRealArray_method_PoolRealArray:
 
-- :ref:`PoolRealArray<class_PoolRealArray>` **PoolRealArray** **(** :ref:`Array<class_Array>` from **)**
+.. rst-class:: classref-method
 
-Constructs a new ``PoolRealArray``. Optionally, you can pass in a generic :ref:`Array<class_Array>` that will be converted.
+:ref:`PoolRealArray<class_PoolRealArray>` **PoolRealArray** **(** :ref:`Array<class_Array>` from **)**
+
+Constructs a new **PoolRealArray**. Optionally, you can pass in a generic :ref:`Array<class_Array>` that will be converted.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_PoolRealArray_method_append:
 
-- void **append** **(** :ref:`float<class_float>` value **)**
+.. rst-class:: classref-method
+
+void **append** **(** :ref:`float<class_float>` value **)**
 
 Appends an element at the end of the array (alias of :ref:`push_back<class_PoolRealArray_method_push_back>`).
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_PoolRealArray_method_append_array:
 
-- void **append_array** **(** :ref:`PoolRealArray<class_PoolRealArray>` array **)**
+.. rst-class:: classref-method
 
-Appends a ``PoolRealArray`` at the end of this array.
+void **append_array** **(** :ref:`PoolRealArray<class_PoolRealArray>` array **)**
+
+Appends a **PoolRealArray** at the end of this array.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_PoolRealArray_method_count:
 
-- :ref:`int<class_int>` **count** **(** :ref:`float<class_float>` value **)**
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **count** **(** :ref:`float<class_float>` value **)**
 
 Returns the number of times an element is in the array.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_PoolRealArray_method_empty:
 
-- :ref:`bool<class_bool>` **empty** **(** **)**
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **empty** **(** **)**
 
 Returns ``true`` if the array is empty.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_PoolRealArray_method_fill:
 
-- void **fill** **(** :ref:`float<class_float>` value **)**
+.. rst-class:: classref-method
+
+void **fill** **(** :ref:`float<class_float>` value **)**
 
 Assigns the given value to all elements in the array. This can typically be used together with :ref:`resize<class_PoolRealArray_method_resize>` to create an array with a given size and initialized elements.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_PoolRealArray_method_find:
 
-- :ref:`int<class_int>` **find** **(** :ref:`float<class_float>` value, :ref:`int<class_int>` from=0 **)**
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **find** **(** :ref:`float<class_float>` value, :ref:`int<class_int>` from=0 **)**
 
 Searches the array for a value and returns its index or ``-1`` if not found. Optionally, the initial search index can be passed. Returns ``-1`` if ``from`` is out of bounds.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_PoolRealArray_method_has:
 
-- :ref:`bool<class_bool>` **has** **(** :ref:`float<class_float>` value **)**
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **has** **(** :ref:`float<class_float>` value **)**
 
 Returns ``true`` if the array contains the given value.
 
 \ **Note:** This is equivalent to using the ``in`` operator.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_PoolRealArray_method_insert:
 
-- :ref:`int<class_int>` **insert** **(** :ref:`int<class_int>` idx, :ref:`float<class_float>` value **)**
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **insert** **(** :ref:`int<class_int>` idx, :ref:`float<class_float>` value **)**
 
 Inserts a new element at a given position in the array. The position must be valid, or at the end of the array (``idx == size()``).
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_PoolRealArray_method_invert:
 
-- void **invert** **(** **)**
+.. rst-class:: classref-method
+
+void **invert** **(** **)**
 
 Reverses the order of the elements in the array.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_PoolRealArray_method_push_back:
 
-- void **push_back** **(** :ref:`float<class_float>` value **)**
+.. rst-class:: classref-method
+
+void **push_back** **(** :ref:`float<class_float>` value **)**
 
 Appends an element at the end of the array.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_PoolRealArray_method_remove:
 
-- void **remove** **(** :ref:`int<class_int>` idx **)**
+.. rst-class:: classref-method
+
+void **remove** **(** :ref:`int<class_int>` idx **)**
 
 Removes an element from the array by index.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_PoolRealArray_method_resize:
 
-- void **resize** **(** :ref:`int<class_int>` idx **)**
+.. rst-class:: classref-method
+
+void **resize** **(** :ref:`int<class_int>` idx **)**
 
 Sets the size of the array. If the array is grown, reserves elements at the end of the array. If the array is shrunk, truncates the array to the new size.
 
 \ **Note:** Added elements are not automatically initialized to 0 and will contain garbage, i.e. indeterminate values.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_PoolRealArray_method_rfind:
 
-- :ref:`int<class_int>` **rfind** **(** :ref:`float<class_float>` value, :ref:`int<class_int>` from=-1 **)**
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **rfind** **(** :ref:`float<class_float>` value, :ref:`int<class_int>` from=-1 **)**
 
 Searches the array in reverse order. Optionally, a start search index can be passed. If negative, the start index is considered relative to the end of the array. If the adjusted start index is out of bounds, this method searches from the end of the array.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_PoolRealArray_method_set:
 
-- void **set** **(** :ref:`int<class_int>` idx, :ref:`float<class_float>` value **)**
+.. rst-class:: classref-method
+
+void **set** **(** :ref:`int<class_int>` idx, :ref:`float<class_float>` value **)**
 
 Changes the float at the given index.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_PoolRealArray_method_size:
 
-- :ref:`int<class_int>` **size** **(** **)**
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **size** **(** **)**
 
 Returns the number of elements in the array.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_PoolRealArray_method_sort:
 
-- void **sort** **(** **)**
+.. rst-class:: classref-method
+
+void **sort** **(** **)**
 
 Sorts the elements of the array in ascending order.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

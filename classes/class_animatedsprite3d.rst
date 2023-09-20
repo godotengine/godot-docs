@@ -14,141 +14,193 @@ AnimatedSprite3D
 
 2D sprite node in 3D world, that can use multiple 2D textures for animation.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 Animations are created using a :ref:`SpriteFrames<class_SpriteFrames>` resource, which can be configured in the editor via the SpriteFrames panel.
+
+.. rst-class:: classref-introduction-group
 
 Tutorials
 ---------
 
 - :doc:`2D Sprite animation (also applies to 3D) <../tutorials/2d/2d_sprite_animation>`
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-----------------------------------------+-------------------------------------------------------------+---------------+
-| :ref:`String<class_String>`             | :ref:`animation<class_AnimatedSprite3D_property_animation>` | ``"default"`` |
-+-----------------------------------------+-------------------------------------------------------------+---------------+
-| :ref:`int<class_int>`                   | :ref:`frame<class_AnimatedSprite3D_property_frame>`         | ``0``         |
-+-----------------------------------------+-------------------------------------------------------------+---------------+
-| :ref:`SpriteFrames<class_SpriteFrames>` | :ref:`frames<class_AnimatedSprite3D_property_frames>`       |               |
-+-----------------------------------------+-------------------------------------------------------------+---------------+
-| :ref:`bool<class_bool>`                 | :ref:`playing<class_AnimatedSprite3D_property_playing>`     | ``false``     |
-+-----------------------------------------+-------------------------------------------------------------+---------------+
+.. table::
+   :widths: auto
+
+   +-----------------------------------------+-------------------------------------------------------------+---------------+
+   | :ref:`String<class_String>`             | :ref:`animation<class_AnimatedSprite3D_property_animation>` | ``"default"`` |
+   +-----------------------------------------+-------------------------------------------------------------+---------------+
+   | :ref:`int<class_int>`                   | :ref:`frame<class_AnimatedSprite3D_property_frame>`         | ``0``         |
+   +-----------------------------------------+-------------------------------------------------------------+---------------+
+   | :ref:`SpriteFrames<class_SpriteFrames>` | :ref:`frames<class_AnimatedSprite3D_property_frames>`       |               |
+   +-----------------------------------------+-------------------------------------------------------------+---------------+
+   | :ref:`bool<class_bool>`                 | :ref:`playing<class_AnimatedSprite3D_property_playing>`     | ``false``     |
+   +-----------------------------------------+-------------------------------------------------------------+---------------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+-------------------------+-------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`is_playing<class_AnimatedSprite3D_method_is_playing>` **(** **)** |const|                 |
-+-------------------------+-------------------------------------------------------------------------------------------------+
-| void                    | :ref:`play<class_AnimatedSprite3D_method_play>` **(** :ref:`String<class_String>` anim="" **)** |
-+-------------------------+-------------------------------------------------------------------------------------------------+
-| void                    | :ref:`stop<class_AnimatedSprite3D_method_stop>` **(** **)**                                     |
-+-------------------------+-------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------+-------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | :ref:`is_playing<class_AnimatedSprite3D_method_is_playing>` **(** **)** |const|                 |
+   +-------------------------+-------------------------------------------------------------------------------------------------+
+   | void                    | :ref:`play<class_AnimatedSprite3D_method_play>` **(** :ref:`String<class_String>` anim="" **)** |
+   +-------------------------+-------------------------------------------------------------------------------------------------+
+   | void                    | :ref:`stop<class_AnimatedSprite3D_method_stop>` **(** **)**                                     |
+   +-------------------------+-------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Signals
 -------
 
 .. _class_AnimatedSprite3D_signal_animation_finished:
 
-- **animation_finished** **(** **)**
+.. rst-class:: classref-signal
+
+**animation_finished** **(** **)**
 
 Emitted when the animation is finished (when it plays the last frame). If the animation is looping, this signal is emitted every time the last frame is drawn.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AnimatedSprite3D_signal_frame_changed:
 
-- **frame_changed** **(** **)**
+.. rst-class:: classref-signal
+
+**frame_changed** **(** **)**
 
 Emitted when :ref:`frame<class_AnimatedSprite3D_property_frame>` changed.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_AnimatedSprite3D_property_animation:
 
-- :ref:`String<class_String>` **animation**
+.. rst-class:: classref-property
 
-+-----------+----------------------+
-| *Default* | ``"default"``        |
-+-----------+----------------------+
-| *Setter*  | set_animation(value) |
-+-----------+----------------------+
-| *Getter*  | get_animation()      |
-+-----------+----------------------+
+:ref:`String<class_String>` **animation** = ``"default"``
+
+.. rst-class:: classref-property-setget
+
+- void **set_animation** **(** :ref:`String<class_String>` value **)**
+- :ref:`String<class_String>` **get_animation** **(** **)**
 
 The current animation from the ``frames`` resource. If this value changes, the ``frame`` counter is reset.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AnimatedSprite3D_property_frame:
 
-- :ref:`int<class_int>` **frame**
+.. rst-class:: classref-property
 
-+-----------+------------------+
-| *Default* | ``0``            |
-+-----------+------------------+
-| *Setter*  | set_frame(value) |
-+-----------+------------------+
-| *Getter*  | get_frame()      |
-+-----------+------------------+
+:ref:`int<class_int>` **frame** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_frame** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_frame** **(** **)**
 
 The displayed animation frame's index.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AnimatedSprite3D_property_frames:
 
-- :ref:`SpriteFrames<class_SpriteFrames>` **frames**
+.. rst-class:: classref-property
 
-+----------+--------------------------+
-| *Setter* | set_sprite_frames(value) |
-+----------+--------------------------+
-| *Getter* | get_sprite_frames()      |
-+----------+--------------------------+
+:ref:`SpriteFrames<class_SpriteFrames>` **frames**
+
+.. rst-class:: classref-property-setget
+
+- void **set_sprite_frames** **(** :ref:`SpriteFrames<class_SpriteFrames>` value **)**
+- :ref:`SpriteFrames<class_SpriteFrames>` **get_sprite_frames** **(** **)**
 
 The :ref:`SpriteFrames<class_SpriteFrames>` resource containing the animation(s).
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AnimatedSprite3D_property_playing:
 
-- :ref:`bool<class_bool>` **playing**
+.. rst-class:: classref-property
 
-+-----------+-----------+
-| *Default* | ``false`` |
-+-----------+-----------+
+:ref:`bool<class_bool>` **playing** = ``false``
 
 If ``true``, the :ref:`animation<class_AnimatedSprite3D_property_animation>` is currently playing.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_AnimatedSprite3D_method_is_playing:
 
-- :ref:`bool<class_bool>` **is_playing** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **is_playing** **(** **)** |const|
 
 Returns ``true`` if an animation is currently being played.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AnimatedSprite3D_method_play:
 
-- void **play** **(** :ref:`String<class_String>` anim="" **)**
+.. rst-class:: classref-method
+
+void **play** **(** :ref:`String<class_String>` anim="" **)**
 
 Plays the animation named ``anim``. If no ``anim`` is provided, the current animation is played.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AnimatedSprite3D_method_stop:
 
-- void **stop** **(** **)**
+.. rst-class:: classref-method
+
+void **stop** **(** **)**
 
 Stops the current animation (does not reset the frame counter).
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

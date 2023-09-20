@@ -12,13 +12,14 @@ GLTFDocument
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-
+.. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-**Note:** This class is only compiled in editor builds. Run-time glTF loading and saving is *not* available in exported projects. References to ``GLTFDocument`` within a script will cause an error in an exported project.
+**Note:** This class is only compiled in editor builds. Run-time glTF loading and saving is *not* available in exported projects. References to **GLTFDocument** within a script will cause an error in an exported project.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
