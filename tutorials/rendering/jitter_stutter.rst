@@ -109,7 +109,9 @@ manually disable compositing, which can improve performance (at the cost of
 tearing).
 
 There is no workaround for driver or compositor stuttering, other than reporting
-it as an issue to the driver or compositor developers.
+it as an issue to the driver or compositor developers. Stutter may be more
+present when playing in windowed mode as opposed to fullscreen, even with
+compositing disabled.
 
 `Feral GameMode <https://github.com/FeralInteractive/gamemode>`__ can be used
 to automatically apply optimizations (such as forcing the GPU performance profile)
