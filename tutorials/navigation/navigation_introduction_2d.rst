@@ -35,6 +35,8 @@ Godot provides the following objects and classes for 2D navigation:
             Reference to a specific navigation link that connects two navigation mesh positions over arbitrary distances.
         - NavAgent RID
             Reference to a specific avoidance agent with a radius value use solely in avoidance.
+        - NavObstacle RID
+            Reference to a specific avoidance obstacle used to affect and constrain avoidance velocities of agents.
 
 The following SceneTree Nodes are available as helpers to work with the NavigationServer2D API.
 
@@ -59,10 +61,8 @@ The following SceneTree Nodes are available as helpers to work with the Navigati
     for a Node2D inheriting parent Node.
 
 -  :ref:`NavigationObstacle2D<class_NavigationObstacle2D>` Node
-    A Node that acts as an agent with avoidance radius, to work it needs to be added under a Node2D
-    inheriting parent Node. Obstacles are intended as a last resort option for constantly moving objects
-    that cannot be re(baked) to a navigation mesh efficiently. This node also only works if RVO processing
-    is being used.
+    A Node that can be used to affect and constrain avoidance velocities of avoidance enabled agents.
+    This Node does NOT affect the pathfinding of agents which requires changing the navigation mesh instead.
 
 The 2D navigation meshes are defined with the following resources:
 
