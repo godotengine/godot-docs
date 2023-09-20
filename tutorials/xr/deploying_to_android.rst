@@ -33,8 +33,8 @@ This will create a folder called **android** inside of your project that contain
 
 You can read more about custom builds here: :ref:`doc_android_custom_build`.
 
-Installing the loader plugins
------------------------------
+Installing the loader plugin
+----------------------------
 
 .. warning::
     The Android plugin structure has been restructured in Godot 4.2, if you've previously installed the loader plugin you need to delete it from the `android/plugins` folder.
@@ -51,6 +51,16 @@ Alternatively you can manually install the loader plugin by downloading the v2.x
 You will need to copy the `assets/addons/godotopenxr` folder from the zip file into your projects `assets/addons` folder.
 
 You can find the main repository of the loader plugin `here <https://github.com/GodotVR/godot_openxr_loaders>`__.
+
+Enabling the loader plugin
+--------------------------
+
+The loader plugin needs to be enabled before the export settings become accessible.
+Open **Project** and select **Project Settings...**.
+Go to the **Plugins** tab.
+Enable the **GodotOpenXR** plugin.
+
+.. image:: img/xr_enable_loader_plugin.webp
 
 Creating the export presets
 ---------------------------
