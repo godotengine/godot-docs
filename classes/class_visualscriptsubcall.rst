@@ -14,27 +14,43 @@ VisualScriptSubCall
 
 Calls a method called ``_subcall`` in this object.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
-``VisualScriptSubCall`` will call method named ``_subcall`` in the current script. It will fail if the method doesn't exist or the provided arguments are wrong.
+**VisualScriptSubCall** will call method named ``_subcall`` in the current script. It will fail if the method doesn't exist or the provided arguments are wrong.
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+-------------------------------+--------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>` | :ref:`_subcall<class_VisualScriptSubCall_method__subcall>` **(** :ref:`Variant<class_Variant>` arguments **)** |virtual| |
-+-------------------------------+--------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------------+--------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Variant<class_Variant>` | :ref:`_subcall<class_VisualScriptSubCall_method__subcall>` **(** :ref:`Variant<class_Variant>` arguments **)** |virtual| |
+   +-------------------------------+--------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_VisualScriptSubCall_method__subcall:
 
-- :ref:`Variant<class_Variant>` **_subcall** **(** :ref:`Variant<class_Variant>` arguments **)** |virtual|
+.. rst-class:: classref-method
+
+:ref:`Variant<class_Variant>` **_subcall** **(** :ref:`Variant<class_Variant>` arguments **)** |virtual|
 
 Called by this node.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

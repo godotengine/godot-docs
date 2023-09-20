@@ -14,35 +14,48 @@ VisualShaderNodeVec3Constant
 
 A :ref:`Vector3<class_Vector3>` constant to be used within the visual shader graph.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 A constant :ref:`Vector3<class_Vector3>`, which can be used as an input node.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-------------------------------+-----------------------------------------------------------------------+------------------------+
-| :ref:`Vector3<class_Vector3>` | :ref:`constant<class_VisualShaderNodeVec3Constant_property_constant>` | ``Vector3( 0, 0, 0 )`` |
-+-------------------------------+-----------------------------------------------------------------------+------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------------+-----------------------------------------------------------------------+------------------------+
+   | :ref:`Vector3<class_Vector3>` | :ref:`constant<class_VisualShaderNodeVec3Constant_property_constant>` | ``Vector3( 0, 0, 0 )`` |
+   +-------------------------------+-----------------------------------------------------------------------+------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_VisualShaderNodeVec3Constant_property_constant:
 
-- :ref:`Vector3<class_Vector3>` **constant**
+.. rst-class:: classref-property
 
-+-----------+------------------------+
-| *Default* | ``Vector3( 0, 0, 0 )`` |
-+-----------+------------------------+
-| *Setter*  | set_constant(value)    |
-+-----------+------------------------+
-| *Getter*  | get_constant()         |
-+-----------+------------------------+
+:ref:`Vector3<class_Vector3>` **constant** = ``Vector3( 0, 0, 0 )``
+
+.. rst-class:: classref-property-setget
+
+- void **set_constant** **(** :ref:`Vector3<class_Vector3>` value **)**
+- :ref:`Vector3<class_Vector3>` **get_constant** **(** **)**
 
 A :ref:`Vector3<class_Vector3>` constant which represents the state of this node.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

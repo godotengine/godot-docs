@@ -14,6 +14,8 @@ VisualScriptLocalVarSet
 
 Changes a local variable's value.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -31,48 +33,60 @@ Changes a local variable's value to the given input. The new value is also provi
 
 - Data (variant): ``get``
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-----------------------------------------------------+------------------------------------------------------------------+-----------------+
-| :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` | :ref:`type<class_VisualScriptLocalVarSet_property_type>`         | ``0``           |
-+-----------------------------------------------------+------------------------------------------------------------------+-----------------+
-| :ref:`String<class_String>`                         | :ref:`var_name<class_VisualScriptLocalVarSet_property_var_name>` | ``"new_local"`` |
-+-----------------------------------------------------+------------------------------------------------------------------+-----------------+
+.. table::
+   :widths: auto
+
+   +-----------------------------------------------------+------------------------------------------------------------------+-----------------+
+   | :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` | :ref:`type<class_VisualScriptLocalVarSet_property_type>`         | ``0``           |
+   +-----------------------------------------------------+------------------------------------------------------------------+-----------------+
+   | :ref:`String<class_String>`                         | :ref:`var_name<class_VisualScriptLocalVarSet_property_var_name>` | ``"new_local"`` |
+   +-----------------------------------------------------+------------------------------------------------------------------+-----------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_VisualScriptLocalVarSet_property_type:
 
-- :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` **type**
+.. rst-class:: classref-property
 
-+-----------+---------------------+
-| *Default* | ``0``               |
-+-----------+---------------------+
-| *Setter*  | set_var_type(value) |
-+-----------+---------------------+
-| *Getter*  | get_var_type()      |
-+-----------+---------------------+
+:ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` **type** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_var_type** **(** :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` value **)**
+- :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` **get_var_type** **(** **)**
 
 The local variable's type.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_VisualScriptLocalVarSet_property_var_name:
 
-- :ref:`String<class_String>` **var_name**
+.. rst-class:: classref-property
 
-+-----------+---------------------+
-| *Default* | ``"new_local"``     |
-+-----------+---------------------+
-| *Setter*  | set_var_name(value) |
-+-----------+---------------------+
-| *Getter*  | get_var_name()      |
-+-----------+---------------------+
+:ref:`String<class_String>` **var_name** = ``"new_local"``
+
+.. rst-class:: classref-property-setget
+
+- void **set_var_name** **(** :ref:`String<class_String>` value **)**
+- :ref:`String<class_String>` **get_var_name** **(** **)**
 
 The local variable's name.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

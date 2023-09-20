@@ -14,6 +14,8 @@ PathFollow
 
 Point sampler for a :ref:`Path<class_Path>`.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -21,66 +23,104 @@ This node takes its parent :ref:`Path<class_Path>`, and returns the coordinates 
 
 It is useful for making other nodes follow a path, without coding the movement pattern. For that, the nodes must be children of this node. The descendant nodes will then move accordingly when setting an offset in this node.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+---------------------------------------------------+---------------------------------------------------------------+----------+
-| :ref:`bool<class_bool>`                           | :ref:`cubic_interp<class_PathFollow_property_cubic_interp>`   | ``true`` |
-+---------------------------------------------------+---------------------------------------------------------------+----------+
-| :ref:`float<class_float>`                         | :ref:`h_offset<class_PathFollow_property_h_offset>`           | ``0.0``  |
-+---------------------------------------------------+---------------------------------------------------------------+----------+
-| :ref:`bool<class_bool>`                           | :ref:`loop<class_PathFollow_property_loop>`                   | ``true`` |
-+---------------------------------------------------+---------------------------------------------------------------+----------+
-| :ref:`float<class_float>`                         | :ref:`offset<class_PathFollow_property_offset>`               | ``0.0``  |
-+---------------------------------------------------+---------------------------------------------------------------+----------+
-| :ref:`RotationMode<enum_PathFollow_RotationMode>` | :ref:`rotation_mode<class_PathFollow_property_rotation_mode>` | ``3``    |
-+---------------------------------------------------+---------------------------------------------------------------+----------+
-| :ref:`float<class_float>`                         | :ref:`unit_offset<class_PathFollow_property_unit_offset>`     | ``0.0``  |
-+---------------------------------------------------+---------------------------------------------------------------+----------+
-| :ref:`float<class_float>`                         | :ref:`v_offset<class_PathFollow_property_v_offset>`           | ``0.0``  |
-+---------------------------------------------------+---------------------------------------------------------------+----------+
+.. table::
+   :widths: auto
+
+   +---------------------------------------------------+---------------------------------------------------------------+----------+
+   | :ref:`bool<class_bool>`                           | :ref:`cubic_interp<class_PathFollow_property_cubic_interp>`   | ``true`` |
+   +---------------------------------------------------+---------------------------------------------------------------+----------+
+   | :ref:`float<class_float>`                         | :ref:`h_offset<class_PathFollow_property_h_offset>`           | ``0.0``  |
+   +---------------------------------------------------+---------------------------------------------------------------+----------+
+   | :ref:`bool<class_bool>`                           | :ref:`loop<class_PathFollow_property_loop>`                   | ``true`` |
+   +---------------------------------------------------+---------------------------------------------------------------+----------+
+   | :ref:`float<class_float>`                         | :ref:`offset<class_PathFollow_property_offset>`               | ``0.0``  |
+   +---------------------------------------------------+---------------------------------------------------------------+----------+
+   | :ref:`RotationMode<enum_PathFollow_RotationMode>` | :ref:`rotation_mode<class_PathFollow_property_rotation_mode>` | ``3``    |
+   +---------------------------------------------------+---------------------------------------------------------------+----------+
+   | :ref:`float<class_float>`                         | :ref:`unit_offset<class_PathFollow_property_unit_offset>`     | ``0.0``  |
+   +---------------------------------------------------+---------------------------------------------------------------+----------+
+   | :ref:`float<class_float>`                         | :ref:`v_offset<class_PathFollow_property_v_offset>`           | ``0.0``  |
+   +---------------------------------------------------+---------------------------------------------------------------+----------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Enumerations
 ------------
 
 .. _enum_PathFollow_RotationMode:
 
-.. _class_PathFollow_constant_ROTATION_NONE:
-
-.. _class_PathFollow_constant_ROTATION_Y:
-
-.. _class_PathFollow_constant_ROTATION_XY:
-
-.. _class_PathFollow_constant_ROTATION_XYZ:
-
-.. _class_PathFollow_constant_ROTATION_ORIENTED:
+.. rst-class:: classref-enumeration
 
 enum **RotationMode**:
 
-- **ROTATION_NONE** = **0** --- Forbids the PathFollow to rotate.
+.. _class_PathFollow_constant_ROTATION_NONE:
 
-- **ROTATION_Y** = **1** --- Allows the PathFollow to rotate in the Y axis only.
+.. rst-class:: classref-enumeration-constant
 
-- **ROTATION_XY** = **2** --- Allows the PathFollow to rotate in both the X, and Y axes.
+:ref:`RotationMode<enum_PathFollow_RotationMode>` **ROTATION_NONE** = ``0``
 
-- **ROTATION_XYZ** = **3** --- Allows the PathFollow to rotate in any axis.
+Forbids the PathFollow to rotate.
 
-- **ROTATION_ORIENTED** = **4** --- Uses the up vector information in a :ref:`Curve3D<class_Curve3D>` to enforce orientation. This rotation mode requires the :ref:`Path<class_Path>`'s :ref:`Curve3D.up_vector_enabled<class_Curve3D_property_up_vector_enabled>` property to be set to ``true``.
+.. _class_PathFollow_constant_ROTATION_Y:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`RotationMode<enum_PathFollow_RotationMode>` **ROTATION_Y** = ``1``
+
+Allows the PathFollow to rotate in the Y axis only.
+
+.. _class_PathFollow_constant_ROTATION_XY:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`RotationMode<enum_PathFollow_RotationMode>` **ROTATION_XY** = ``2``
+
+Allows the PathFollow to rotate in both the X, and Y axes.
+
+.. _class_PathFollow_constant_ROTATION_XYZ:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`RotationMode<enum_PathFollow_RotationMode>` **ROTATION_XYZ** = ``3``
+
+Allows the PathFollow to rotate in any axis.
+
+.. _class_PathFollow_constant_ROTATION_ORIENTED:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`RotationMode<enum_PathFollow_RotationMode>` **ROTATION_ORIENTED** = ``4``
+
+Uses the up vector information in a :ref:`Curve3D<class_Curve3D>` to enforce orientation. This rotation mode requires the :ref:`Path<class_Path>`'s :ref:`Curve3D.up_vector_enabled<class_Curve3D_property_up_vector_enabled>` property to be set to ``true``.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_PathFollow_property_cubic_interp:
 
-- :ref:`bool<class_bool>` **cubic_interp**
+.. rst-class:: classref-property
 
-+-----------+--------------------------------+
-| *Default* | ``true``                       |
-+-----------+--------------------------------+
-| *Setter*  | set_cubic_interpolation(value) |
-+-----------+--------------------------------+
-| *Getter*  | get_cubic_interpolation()      |
-+-----------+--------------------------------+
+:ref:`bool<class_bool>` **cubic_interp** = ``true``
+
+.. rst-class:: classref-property-setget
+
+- void **set_cubic_interpolation** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **get_cubic_interpolation** **(** **)**
 
 If ``true``, the position between two cached points is interpolated cubically, and linearly otherwise.
 
@@ -88,102 +128,109 @@ The points along the :ref:`Curve3D<class_Curve3D>` of the :ref:`Path<class_Path>
 
 There are two answers to this problem: either increase the number of cached points and increase memory consumption, or make a cubic interpolation between two points at the cost of (slightly) slower calculations.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_PathFollow_property_h_offset:
 
-- :ref:`float<class_float>` **h_offset**
+.. rst-class:: classref-property
 
-+-----------+---------------------+
-| *Default* | ``0.0``             |
-+-----------+---------------------+
-| *Setter*  | set_h_offset(value) |
-+-----------+---------------------+
-| *Getter*  | get_h_offset()      |
-+-----------+---------------------+
+:ref:`float<class_float>` **h_offset** = ``0.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_h_offset** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_h_offset** **(** **)**
 
 The node's offset along the curve.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_PathFollow_property_loop:
 
-- :ref:`bool<class_bool>` **loop**
+.. rst-class:: classref-property
 
-+-----------+-----------------+
-| *Default* | ``true``        |
-+-----------+-----------------+
-| *Setter*  | set_loop(value) |
-+-----------+-----------------+
-| *Getter*  | has_loop()      |
-+-----------+-----------------+
+:ref:`bool<class_bool>` **loop** = ``true``
+
+.. rst-class:: classref-property-setget
+
+- void **set_loop** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **has_loop** **(** **)**
 
 If ``true``, any offset outside the path's length will wrap around, instead of stopping at the ends. Use it for cyclic paths.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_PathFollow_property_offset:
 
-- :ref:`float<class_float>` **offset**
+.. rst-class:: classref-property
 
-+-----------+-------------------+
-| *Default* | ``0.0``           |
-+-----------+-------------------+
-| *Setter*  | set_offset(value) |
-+-----------+-------------------+
-| *Getter*  | get_offset()      |
-+-----------+-------------------+
+:ref:`float<class_float>` **offset** = ``0.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_offset** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_offset** **(** **)**
 
 The distance from the first vertex, measured in 3D units along the path. This sets this node's position to a point within the path.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_PathFollow_property_rotation_mode:
 
-- :ref:`RotationMode<enum_PathFollow_RotationMode>` **rotation_mode**
+.. rst-class:: classref-property
 
-+-----------+--------------------------+
-| *Default* | ``3``                    |
-+-----------+--------------------------+
-| *Setter*  | set_rotation_mode(value) |
-+-----------+--------------------------+
-| *Getter*  | get_rotation_mode()      |
-+-----------+--------------------------+
+:ref:`RotationMode<enum_PathFollow_RotationMode>` **rotation_mode** = ``3``
+
+.. rst-class:: classref-property-setget
+
+- void **set_rotation_mode** **(** :ref:`RotationMode<enum_PathFollow_RotationMode>` value **)**
+- :ref:`RotationMode<enum_PathFollow_RotationMode>` **get_rotation_mode** **(** **)**
 
 Allows or forbids rotation on one or more axes, depending on the :ref:`RotationMode<enum_PathFollow_RotationMode>` constants being used.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_PathFollow_property_unit_offset:
 
-- :ref:`float<class_float>` **unit_offset**
+.. rst-class:: classref-property
 
-+-----------+------------------------+
-| *Default* | ``0.0``                |
-+-----------+------------------------+
-| *Setter*  | set_unit_offset(value) |
-+-----------+------------------------+
-| *Getter*  | get_unit_offset()      |
-+-----------+------------------------+
+:ref:`float<class_float>` **unit_offset** = ``0.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_unit_offset** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_unit_offset** **(** **)**
 
 The distance from the first vertex, considering 0.0 as the first vertex and 1.0 as the last. This is just another way of expressing the offset within the path, as the offset supplied is multiplied internally by the path's length.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_PathFollow_property_v_offset:
 
-- :ref:`float<class_float>` **v_offset**
+.. rst-class:: classref-property
 
-+-----------+---------------------+
-| *Default* | ``0.0``             |
-+-----------+---------------------+
-| *Setter*  | set_v_offset(value) |
-+-----------+---------------------+
-| *Getter*  | get_v_offset()      |
-+-----------+---------------------+
+:ref:`float<class_float>` **v_offset** = ``0.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_v_offset** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_v_offset** **(** **)**
 
 The node's offset perpendicular to the curve.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

@@ -14,6 +14,8 @@ NavigationMeshInstance
 
 An instance of a :ref:`NavigationMesh<class_NavigationMesh>`.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -31,143 +33,189 @@ The cost of entering this region from another region can be controlled with the 
 
 The cost of traveling distances inside this region can be controlled with the :ref:`travel_cost<class_NavigationMeshInstance_property_travel_cost>` multiplier.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+---------------------------------------------+-----------------------------------------------------------------------------------+----------+
-| :ref:`bool<class_bool>`                     | :ref:`enabled<class_NavigationMeshInstance_property_enabled>`                     | ``true`` |
-+---------------------------------------------+-----------------------------------------------------------------------------------+----------+
-| :ref:`float<class_float>`                   | :ref:`enter_cost<class_NavigationMeshInstance_property_enter_cost>`               | ``0.0``  |
-+---------------------------------------------+-----------------------------------------------------------------------------------+----------+
-| :ref:`int<class_int>`                       | :ref:`navigation_layers<class_NavigationMeshInstance_property_navigation_layers>` | ``1``    |
-+---------------------------------------------+-----------------------------------------------------------------------------------+----------+
-| :ref:`NavigationMesh<class_NavigationMesh>` | :ref:`navmesh<class_NavigationMeshInstance_property_navmesh>`                     |          |
-+---------------------------------------------+-----------------------------------------------------------------------------------+----------+
-| :ref:`float<class_float>`                   | :ref:`travel_cost<class_NavigationMeshInstance_property_travel_cost>`             | ``1.0``  |
-+---------------------------------------------+-----------------------------------------------------------------------------------+----------+
+.. table::
+   :widths: auto
+
+   +---------------------------------------------+-----------------------------------------------------------------------------------+----------+
+   | :ref:`bool<class_bool>`                     | :ref:`enabled<class_NavigationMeshInstance_property_enabled>`                     | ``true`` |
+   +---------------------------------------------+-----------------------------------------------------------------------------------+----------+
+   | :ref:`float<class_float>`                   | :ref:`enter_cost<class_NavigationMeshInstance_property_enter_cost>`               | ``0.0``  |
+   +---------------------------------------------+-----------------------------------------------------------------------------------+----------+
+   | :ref:`int<class_int>`                       | :ref:`navigation_layers<class_NavigationMeshInstance_property_navigation_layers>` | ``1``    |
+   +---------------------------------------------+-----------------------------------------------------------------------------------+----------+
+   | :ref:`NavigationMesh<class_NavigationMesh>` | :ref:`navmesh<class_NavigationMeshInstance_property_navmesh>`                     |          |
+   +---------------------------------------------+-----------------------------------------------------------------------------------+----------+
+   | :ref:`float<class_float>`                   | :ref:`travel_cost<class_NavigationMeshInstance_property_travel_cost>`             | ``1.0``  |
+   +---------------------------------------------+-----------------------------------------------------------------------------------+----------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+-----------------------+------------------------------------------------------------------------------------------------------------------------------------------+
-| void                  | :ref:`bake_navigation_mesh<class_NavigationMeshInstance_method_bake_navigation_mesh>` **(** :ref:`bool<class_bool>` on_thread=true **)** |
-+-----------------------+------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`RID<class_RID>` | :ref:`get_region_rid<class_NavigationMeshInstance_method_get_region_rid>` **(** **)** |const|                                            |
-+-----------------------+------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-----------------------+------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                  | :ref:`bake_navigation_mesh<class_NavigationMeshInstance_method_bake_navigation_mesh>` **(** :ref:`bool<class_bool>` on_thread=true **)** |
+   +-----------------------+------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`RID<class_RID>` | :ref:`get_region_rid<class_NavigationMeshInstance_method_get_region_rid>` **(** **)** |const|                                            |
+   +-----------------------+------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Signals
 -------
 
 .. _class_NavigationMeshInstance_signal_bake_finished:
 
-- **bake_finished** **(** **)**
+.. rst-class:: classref-signal
+
+**bake_finished** **(** **)**
 
 Notifies when the navigation mesh bake operation is completed.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_NavigationMeshInstance_signal_navigation_mesh_changed:
 
-- **navigation_mesh_changed** **(** **)**
+.. rst-class:: classref-signal
+
+**navigation_mesh_changed** **(** **)**
 
 Notifies when the :ref:`NavigationMesh<class_NavigationMesh>` has changed.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_NavigationMeshInstance_property_enabled:
 
-- :ref:`bool<class_bool>` **enabled**
+.. rst-class:: classref-property
 
-+-----------+--------------------+
-| *Default* | ``true``           |
-+-----------+--------------------+
-| *Setter*  | set_enabled(value) |
-+-----------+--------------------+
-| *Getter*  | is_enabled()       |
-+-----------+--------------------+
+:ref:`bool<class_bool>` **enabled** = ``true``
 
-Determines if the ``NavigationMeshInstance`` is enabled or disabled.
+.. rst-class:: classref-property-setget
+
+- void **set_enabled** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_enabled** **(** **)**
+
+Determines if the **NavigationMeshInstance** is enabled or disabled.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_NavigationMeshInstance_property_enter_cost:
 
-- :ref:`float<class_float>` **enter_cost**
+.. rst-class:: classref-property
 
-+-----------+-----------------------+
-| *Default* | ``0.0``               |
-+-----------+-----------------------+
-| *Setter*  | set_enter_cost(value) |
-+-----------+-----------------------+
-| *Getter*  | get_enter_cost()      |
-+-----------+-----------------------+
+:ref:`float<class_float>` **enter_cost** = ``0.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_enter_cost** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_enter_cost** **(** **)**
 
 When pathfinding enters this region's navmesh from another regions navmesh the ``enter_cost`` value is added to the path distance for determining the shortest path.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_NavigationMeshInstance_property_navigation_layers:
 
-- :ref:`int<class_int>` **navigation_layers**
+.. rst-class:: classref-property
 
-+-----------+------------------------------+
-| *Default* | ``1``                        |
-+-----------+------------------------------+
-| *Setter*  | set_navigation_layers(value) |
-+-----------+------------------------------+
-| *Getter*  | get_navigation_layers()      |
-+-----------+------------------------------+
+:ref:`int<class_int>` **navigation_layers** = ``1``
+
+.. rst-class:: classref-property-setget
+
+- void **set_navigation_layers** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_navigation_layers** **(** **)**
 
 A bitfield determining all navigation map layers the :ref:`NavigationMesh<class_NavigationMesh>` belongs to. On path requests with :ref:`NavigationServer.map_get_path<class_NavigationServer_method_map_get_path>` navmeshes without matching layers will be ignored and the navigation map will only proximity merge different navmeshes with matching layers.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_NavigationMeshInstance_property_navmesh:
 
-- :ref:`NavigationMesh<class_NavigationMesh>` **navmesh**
+.. rst-class:: classref-property
 
-+----------+----------------------------+
-| *Setter* | set_navigation_mesh(value) |
-+----------+----------------------------+
-| *Getter* | get_navigation_mesh()      |
-+----------+----------------------------+
+:ref:`NavigationMesh<class_NavigationMesh>` **navmesh**
+
+.. rst-class:: classref-property-setget
+
+- void **set_navigation_mesh** **(** :ref:`NavigationMesh<class_NavigationMesh>` value **)**
+- :ref:`NavigationMesh<class_NavigationMesh>` **get_navigation_mesh** **(** **)**
 
 The :ref:`NavigationMesh<class_NavigationMesh>` resource to use.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_NavigationMeshInstance_property_travel_cost:
 
-- :ref:`float<class_float>` **travel_cost**
+.. rst-class:: classref-property
 
-+-----------+------------------------+
-| *Default* | ``1.0``                |
-+-----------+------------------------+
-| *Setter*  | set_travel_cost(value) |
-+-----------+------------------------+
-| *Getter*  | get_travel_cost()      |
-+-----------+------------------------+
+:ref:`float<class_float>` **travel_cost** = ``1.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_travel_cost** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_travel_cost** **(** **)**
 
 When pathfinding moves inside this region's navmesh the traveled distances are multiplied with ``travel_cost`` for determining the shortest path.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_NavigationMeshInstance_method_bake_navigation_mesh:
 
-- void **bake_navigation_mesh** **(** :ref:`bool<class_bool>` on_thread=true **)**
+.. rst-class:: classref-method
+
+void **bake_navigation_mesh** **(** :ref:`bool<class_bool>` on_thread=true **)**
 
 Bakes the :ref:`NavigationMesh<class_NavigationMesh>`. If ``on_thread`` is set to ``true`` (default), the baking is done on a separate thread. Baking on separate thread is useful because navigation baking is not a cheap operation. When it is completed, it automatically sets the new :ref:`NavigationMesh<class_NavigationMesh>`. Please note that baking on separate thread may be very slow if geometry is parsed from meshes as async access to each mesh involves heavy synchronization. Also, please note that baking on a separate thread is automatically disabled on operating systems that cannot use threads (such as HTML5 with threads disabled).
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_NavigationMeshInstance_method_get_region_rid:
 
-- :ref:`RID<class_RID>` **get_region_rid** **(** **)** |const|
+.. rst-class:: classref-method
 
-Returns the :ref:`RID<class_RID>` of this region on the :ref:`NavigationServer<class_NavigationServer>`. Combined with :ref:`NavigationServer.map_get_closest_point_owner<class_NavigationServer_method_map_get_closest_point_owner>` can be used to identify the ``NavigationMeshInstance`` closest to a point on the merged navigation map.
+:ref:`RID<class_RID>` **get_region_rid** **(** **)** |const|
+
+Returns the :ref:`RID<class_RID>` of this region on the :ref:`NavigationServer<class_NavigationServer>`. Combined with :ref:`NavigationServer.map_get_closest_point_owner<class_NavigationServer_method_map_get_closest_point_owner>` can be used to identify the **NavigationMeshInstance** closest to a point on the merged navigation map.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

@@ -14,286 +14,341 @@ Sprite
 
 General-purpose sprite node.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 A node that displays a 2D texture. The texture displayed can be a region from a larger atlas texture, or a frame from a sprite sheet animation.
+
+.. rst-class:: classref-introduction-group
 
 Tutorials
 ---------
 
 - `Instancing Demo <https://godotengine.org/asset-library/asset/148>`__
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-------------------------------+---------------------------------------------------------------------+-------------------------+
-| :ref:`bool<class_bool>`       | :ref:`centered<class_Sprite_property_centered>`                     | ``true``                |
-+-------------------------------+---------------------------------------------------------------------+-------------------------+
-| :ref:`bool<class_bool>`       | :ref:`flip_h<class_Sprite_property_flip_h>`                         | ``false``               |
-+-------------------------------+---------------------------------------------------------------------+-------------------------+
-| :ref:`bool<class_bool>`       | :ref:`flip_v<class_Sprite_property_flip_v>`                         | ``false``               |
-+-------------------------------+---------------------------------------------------------------------+-------------------------+
-| :ref:`int<class_int>`         | :ref:`frame<class_Sprite_property_frame>`                           | ``0``                   |
-+-------------------------------+---------------------------------------------------------------------+-------------------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`frame_coords<class_Sprite_property_frame_coords>`             | ``Vector2( 0, 0 )``     |
-+-------------------------------+---------------------------------------------------------------------+-------------------------+
-| :ref:`int<class_int>`         | :ref:`hframes<class_Sprite_property_hframes>`                       | ``1``                   |
-+-------------------------------+---------------------------------------------------------------------+-------------------------+
-| :ref:`Texture<class_Texture>` | :ref:`normal_map<class_Sprite_property_normal_map>`                 |                         |
-+-------------------------------+---------------------------------------------------------------------+-------------------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`offset<class_Sprite_property_offset>`                         | ``Vector2( 0, 0 )``     |
-+-------------------------------+---------------------------------------------------------------------+-------------------------+
-| :ref:`bool<class_bool>`       | :ref:`region_enabled<class_Sprite_property_region_enabled>`         | ``false``               |
-+-------------------------------+---------------------------------------------------------------------+-------------------------+
-| :ref:`bool<class_bool>`       | :ref:`region_filter_clip<class_Sprite_property_region_filter_clip>` | ``false``               |
-+-------------------------------+---------------------------------------------------------------------+-------------------------+
-| :ref:`Rect2<class_Rect2>`     | :ref:`region_rect<class_Sprite_property_region_rect>`               | ``Rect2( 0, 0, 0, 0 )`` |
-+-------------------------------+---------------------------------------------------------------------+-------------------------+
-| :ref:`Texture<class_Texture>` | :ref:`texture<class_Sprite_property_texture>`                       |                         |
-+-------------------------------+---------------------------------------------------------------------+-------------------------+
-| :ref:`int<class_int>`         | :ref:`vframes<class_Sprite_property_vframes>`                       | ``1``                   |
-+-------------------------------+---------------------------------------------------------------------+-------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------------+---------------------------------------------------------------------+-------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`centered<class_Sprite_property_centered>`                     | ``true``                |
+   +-------------------------------+---------------------------------------------------------------------+-------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`flip_h<class_Sprite_property_flip_h>`                         | ``false``               |
+   +-------------------------------+---------------------------------------------------------------------+-------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`flip_v<class_Sprite_property_flip_v>`                         | ``false``               |
+   +-------------------------------+---------------------------------------------------------------------+-------------------------+
+   | :ref:`int<class_int>`         | :ref:`frame<class_Sprite_property_frame>`                           | ``0``                   |
+   +-------------------------------+---------------------------------------------------------------------+-------------------------+
+   | :ref:`Vector2<class_Vector2>` | :ref:`frame_coords<class_Sprite_property_frame_coords>`             | ``Vector2( 0, 0 )``     |
+   +-------------------------------+---------------------------------------------------------------------+-------------------------+
+   | :ref:`int<class_int>`         | :ref:`hframes<class_Sprite_property_hframes>`                       | ``1``                   |
+   +-------------------------------+---------------------------------------------------------------------+-------------------------+
+   | :ref:`Texture<class_Texture>` | :ref:`normal_map<class_Sprite_property_normal_map>`                 |                         |
+   +-------------------------------+---------------------------------------------------------------------+-------------------------+
+   | :ref:`Vector2<class_Vector2>` | :ref:`offset<class_Sprite_property_offset>`                         | ``Vector2( 0, 0 )``     |
+   +-------------------------------+---------------------------------------------------------------------+-------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`region_enabled<class_Sprite_property_region_enabled>`         | ``false``               |
+   +-------------------------------+---------------------------------------------------------------------+-------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`region_filter_clip<class_Sprite_property_region_filter_clip>` | ``false``               |
+   +-------------------------------+---------------------------------------------------------------------+-------------------------+
+   | :ref:`Rect2<class_Rect2>`     | :ref:`region_rect<class_Sprite_property_region_rect>`               | ``Rect2( 0, 0, 0, 0 )`` |
+   +-------------------------------+---------------------------------------------------------------------+-------------------------+
+   | :ref:`Texture<class_Texture>` | :ref:`texture<class_Sprite_property_texture>`                       |                         |
+   +-------------------------------+---------------------------------------------------------------------+-------------------------+
+   | :ref:`int<class_int>`         | :ref:`vframes<class_Sprite_property_vframes>`                       | ``1``                   |
+   +-------------------------------+---------------------------------------------------------------------+-------------------------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+---------------------------+-------------------------------------------------------------------------------------------------------------------+
-| :ref:`Rect2<class_Rect2>` | :ref:`get_rect<class_Sprite_method_get_rect>` **(** **)** |const|                                                 |
-+---------------------------+-------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`   | :ref:`is_pixel_opaque<class_Sprite_method_is_pixel_opaque>` **(** :ref:`Vector2<class_Vector2>` pos **)** |const| |
-+---------------------------+-------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +---------------------------+-------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Rect2<class_Rect2>` | :ref:`get_rect<class_Sprite_method_get_rect>` **(** **)** |const|                                                 |
+   +---------------------------+-------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`   | :ref:`is_pixel_opaque<class_Sprite_method_is_pixel_opaque>` **(** :ref:`Vector2<class_Vector2>` pos **)** |const| |
+   +---------------------------+-------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Signals
 -------
 
 .. _class_Sprite_signal_frame_changed:
 
-- **frame_changed** **(** **)**
+.. rst-class:: classref-signal
+
+**frame_changed** **(** **)**
 
 Emitted when the :ref:`frame<class_Sprite_property_frame>` changes.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Sprite_signal_texture_changed:
 
-- **texture_changed** **(** **)**
+.. rst-class:: classref-signal
+
+**texture_changed** **(** **)**
 
 Emitted when the :ref:`texture<class_Sprite_property_texture>` changes.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_Sprite_property_centered:
 
-- :ref:`bool<class_bool>` **centered**
+.. rst-class:: classref-property
 
-+-----------+---------------------+
-| *Default* | ``true``            |
-+-----------+---------------------+
-| *Setter*  | set_centered(value) |
-+-----------+---------------------+
-| *Getter*  | is_centered()       |
-+-----------+---------------------+
+:ref:`bool<class_bool>` **centered** = ``true``
+
+.. rst-class:: classref-property-setget
+
+- void **set_centered** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_centered** **(** **)**
 
 If ``true``, texture is centered.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Sprite_property_flip_h:
 
-- :ref:`bool<class_bool>` **flip_h**
+.. rst-class:: classref-property
 
-+-----------+-------------------+
-| *Default* | ``false``         |
-+-----------+-------------------+
-| *Setter*  | set_flip_h(value) |
-+-----------+-------------------+
-| *Getter*  | is_flipped_h()    |
-+-----------+-------------------+
+:ref:`bool<class_bool>` **flip_h** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_flip_h** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_flipped_h** **(** **)**
 
 If ``true``, texture is flipped horizontally.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Sprite_property_flip_v:
 
-- :ref:`bool<class_bool>` **flip_v**
+.. rst-class:: classref-property
 
-+-----------+-------------------+
-| *Default* | ``false``         |
-+-----------+-------------------+
-| *Setter*  | set_flip_v(value) |
-+-----------+-------------------+
-| *Getter*  | is_flipped_v()    |
-+-----------+-------------------+
+:ref:`bool<class_bool>` **flip_v** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_flip_v** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_flipped_v** **(** **)**
 
 If ``true``, texture is flipped vertically.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Sprite_property_frame:
 
-- :ref:`int<class_int>` **frame**
+.. rst-class:: classref-property
 
-+-----------+------------------+
-| *Default* | ``0``            |
-+-----------+------------------+
-| *Setter*  | set_frame(value) |
-+-----------+------------------+
-| *Getter*  | get_frame()      |
-+-----------+------------------+
+:ref:`int<class_int>` **frame** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_frame** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_frame** **(** **)**
 
 Current frame to display from sprite sheet. :ref:`hframes<class_Sprite_property_hframes>` or :ref:`vframes<class_Sprite_property_vframes>` must be greater than 1.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Sprite_property_frame_coords:
 
-- :ref:`Vector2<class_Vector2>` **frame_coords**
+.. rst-class:: classref-property
 
-+-----------+-------------------------+
-| *Default* | ``Vector2( 0, 0 )``     |
-+-----------+-------------------------+
-| *Setter*  | set_frame_coords(value) |
-+-----------+-------------------------+
-| *Getter*  | get_frame_coords()      |
-+-----------+-------------------------+
+:ref:`Vector2<class_Vector2>` **frame_coords** = ``Vector2( 0, 0 )``
+
+.. rst-class:: classref-property-setget
+
+- void **set_frame_coords** **(** :ref:`Vector2<class_Vector2>` value **)**
+- :ref:`Vector2<class_Vector2>` **get_frame_coords** **(** **)**
 
 Coordinates of the frame to display from sprite sheet. This is as an alias for the :ref:`frame<class_Sprite_property_frame>` property. :ref:`hframes<class_Sprite_property_hframes>` or :ref:`vframes<class_Sprite_property_vframes>` must be greater than 1.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Sprite_property_hframes:
 
-- :ref:`int<class_int>` **hframes**
+.. rst-class:: classref-property
 
-+-----------+--------------------+
-| *Default* | ``1``              |
-+-----------+--------------------+
-| *Setter*  | set_hframes(value) |
-+-----------+--------------------+
-| *Getter*  | get_hframes()      |
-+-----------+--------------------+
+:ref:`int<class_int>` **hframes** = ``1``
+
+.. rst-class:: classref-property-setget
+
+- void **set_hframes** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_hframes** **(** **)**
 
 The number of columns in the sprite sheet.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Sprite_property_normal_map:
 
-- :ref:`Texture<class_Texture>` **normal_map**
+.. rst-class:: classref-property
 
-+----------+-----------------------+
-| *Setter* | set_normal_map(value) |
-+----------+-----------------------+
-| *Getter* | get_normal_map()      |
-+----------+-----------------------+
+:ref:`Texture<class_Texture>` **normal_map**
+
+.. rst-class:: classref-property-setget
+
+- void **set_normal_map** **(** :ref:`Texture<class_Texture>` value **)**
+- :ref:`Texture<class_Texture>` **get_normal_map** **(** **)**
 
 The normal map gives depth to the Sprite.
 
 \ **Note:** Godot expects the normal map to use X+, Y-, and Z+ coordinates. See `this page <http://wiki.polycount.com/wiki/Normal_Map_Technical_Details#Common_Swizzle_Coordinates>`__ for a comparison of normal map coordinates expected by popular engines.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_Sprite_property_offset:
 
-- :ref:`Vector2<class_Vector2>` **offset**
+.. rst-class:: classref-property
 
-+-----------+---------------------+
-| *Default* | ``Vector2( 0, 0 )`` |
-+-----------+---------------------+
-| *Setter*  | set_offset(value)   |
-+-----------+---------------------+
-| *Getter*  | get_offset()        |
-+-----------+---------------------+
+:ref:`Vector2<class_Vector2>` **offset** = ``Vector2( 0, 0 )``
+
+.. rst-class:: classref-property-setget
+
+- void **set_offset** **(** :ref:`Vector2<class_Vector2>` value **)**
+- :ref:`Vector2<class_Vector2>` **get_offset** **(** **)**
 
 The texture's drawing offset.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Sprite_property_region_enabled:
 
-- :ref:`bool<class_bool>` **region_enabled**
+.. rst-class:: classref-property
 
-+-----------+-------------------+
-| *Default* | ``false``         |
-+-----------+-------------------+
-| *Setter*  | set_region(value) |
-+-----------+-------------------+
-| *Getter*  | is_region()       |
-+-----------+-------------------+
+:ref:`bool<class_bool>` **region_enabled** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_region** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_region** **(** **)**
 
 If ``true``, texture is cut from a larger atlas texture. See :ref:`region_rect<class_Sprite_property_region_rect>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Sprite_property_region_filter_clip:
 
-- :ref:`bool<class_bool>` **region_filter_clip**
+.. rst-class:: classref-property
 
-+-----------+---------------------------------+
-| *Default* | ``false``                       |
-+-----------+---------------------------------+
-| *Setter*  | set_region_filter_clip(value)   |
-+-----------+---------------------------------+
-| *Getter*  | is_region_filter_clip_enabled() |
-+-----------+---------------------------------+
+:ref:`bool<class_bool>` **region_filter_clip** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_region_filter_clip** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_region_filter_clip_enabled** **(** **)**
 
 If ``true``, the outermost pixels get blurred out.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Sprite_property_region_rect:
 
-- :ref:`Rect2<class_Rect2>` **region_rect**
+.. rst-class:: classref-property
 
-+-----------+-------------------------+
-| *Default* | ``Rect2( 0, 0, 0, 0 )`` |
-+-----------+-------------------------+
-| *Setter*  | set_region_rect(value)  |
-+-----------+-------------------------+
-| *Getter*  | get_region_rect()       |
-+-----------+-------------------------+
+:ref:`Rect2<class_Rect2>` **region_rect** = ``Rect2( 0, 0, 0, 0 )``
+
+.. rst-class:: classref-property-setget
+
+- void **set_region_rect** **(** :ref:`Rect2<class_Rect2>` value **)**
+- :ref:`Rect2<class_Rect2>` **get_region_rect** **(** **)**
 
 The region of the atlas texture to display. :ref:`region_enabled<class_Sprite_property_region_enabled>` must be ``true``.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Sprite_property_texture:
 
-- :ref:`Texture<class_Texture>` **texture**
+.. rst-class:: classref-property
 
-+----------+--------------------+
-| *Setter* | set_texture(value) |
-+----------+--------------------+
-| *Getter* | get_texture()      |
-+----------+--------------------+
+:ref:`Texture<class_Texture>` **texture**
+
+.. rst-class:: classref-property-setget
+
+- void **set_texture** **(** :ref:`Texture<class_Texture>` value **)**
+- :ref:`Texture<class_Texture>` **get_texture** **(** **)**
 
 :ref:`Texture<class_Texture>` object to draw.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Sprite_property_vframes:
 
-- :ref:`int<class_int>` **vframes**
+.. rst-class:: classref-property
 
-+-----------+--------------------+
-| *Default* | ``1``              |
-+-----------+--------------------+
-| *Setter*  | set_vframes(value) |
-+-----------+--------------------+
-| *Getter*  | get_vframes()      |
-+-----------+--------------------+
+:ref:`int<class_int>` **vframes** = ``1``
+
+.. rst-class:: classref-property-setget
+
+- void **set_vframes** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_vframes** **(** **)**
 
 The number of rows in the sprite sheet.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_Sprite_method_get_rect:
 
-- :ref:`Rect2<class_Rect2>` **get_rect** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`Rect2<class_Rect2>` **get_rect** **(** **)** |const|
 
 Returns a :ref:`Rect2<class_Rect2>` representing the Sprite's boundary in local coordinates. Can be used to detect if the Sprite was clicked. Example:
 
@@ -304,11 +359,15 @@ Returns a :ref:`Rect2<class_Rect2>` representing the Sprite's boundary in local 
             if get_rect().has_point(to_local(event.position)):
                 print("A click!")
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_Sprite_method_is_pixel_opaque:
 
-- :ref:`bool<class_bool>` **is_pixel_opaque** **(** :ref:`Vector2<class_Vector2>` pos **)** |const|
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **is_pixel_opaque** **(** :ref:`Vector2<class_Vector2>` pos **)** |const|
 
 Returns ``true``, if the pixel at the given position is opaque and ``false`` in other case.
 
@@ -317,3 +376,4 @@ Returns ``true``, if the pixel at the given position is opaque and ``false`` in 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

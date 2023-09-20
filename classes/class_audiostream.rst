@@ -12,14 +12,18 @@ AudioStream
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Inherited By:** :ref:`AudioStreamGenerator<class_AudioStreamGenerator>`, :ref:`AudioStreamMP3<class_AudioStreamMP3>`, :ref:`AudioStreamMicrophone<class_AudioStreamMicrophone>`, :ref:`AudioStreamOGGVorbis<class_AudioStreamOGGVorbis>`, :ref:`AudioStreamRandomPitch<class_AudioStreamRandomPitch>`, :ref:`AudioStreamSample<class_AudioStreamSample>`
+**Inherited By:** :ref:`AudioStreamGenerator<class_AudioStreamGenerator>`, :ref:`AudioStreamMicrophone<class_AudioStreamMicrophone>`, :ref:`AudioStreamMP3<class_AudioStreamMP3>`, :ref:`AudioStreamOGGVorbis<class_AudioStreamOGGVorbis>`, :ref:`AudioStreamRandomPitch<class_AudioStreamRandomPitch>`, :ref:`AudioStreamSample<class_AudioStreamSample>`
 
 Base class for audio streams.
+
+.. rst-class:: classref-introduction-group
 
 Description
 -----------
 
 Base class for audio streams. Audio streams are used for sound effects and music playback, and support WAV (via :ref:`AudioStreamSample<class_AudioStreamSample>`) and OGG (via :ref:`AudioStreamOGGVorbis<class_AudioStreamOGGVorbis>`) file formats.
+
+.. rst-class:: classref-introduction-group
 
 Tutorials
 ---------
@@ -32,22 +36,36 @@ Tutorials
 
 - `Audio Spectrum Demo <https://godotengine.org/asset-library/asset/528>`__
 
+.. rst-class:: classref-reftable-group
+
 Methods
 -------
 
-+---------------------------+----------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`get_length<class_AudioStream_method_get_length>` **(** **)** |const| |
-+---------------------------+----------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +---------------------------+----------------------------------------------------------------------------+
+   | :ref:`float<class_float>` | :ref:`get_length<class_AudioStream_method_get_length>` **(** **)** |const| |
+   +---------------------------+----------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_AudioStream_method_get_length:
 
-- :ref:`float<class_float>` **get_length** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`float<class_float>` **get_length** **(** **)** |const|
 
 Returns the length of the audio stream in seconds.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

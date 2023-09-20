@@ -14,6 +14,8 @@ HMACContext
 
 Used to create an HMAC for a message using a key.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -66,42 +68,64 @@ And in C# we can use the following.
 
 \ **Note:** Not available in HTML5 exports.
 
+.. rst-class:: classref-reftable-group
+
 Methods
 -------
 
-+-------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolByteArray<class_PoolByteArray>` | :ref:`finish<class_HMACContext_method_finish>` **(** **)**                                                                                                      |
-+-------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>`     | :ref:`start<class_HMACContext_method_start>` **(** :ref:`HashType<enum_HashingContext_HashType>` hash_type, :ref:`PoolByteArray<class_PoolByteArray>` key **)** |
-+-------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>`     | :ref:`update<class_HMACContext_method_update>` **(** :ref:`PoolByteArray<class_PoolByteArray>` data **)**                                                       |
-+-------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PoolByteArray<class_PoolByteArray>` | :ref:`finish<class_HMACContext_method_finish>` **(** **)**                                                                                                      |
+   +-------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>`     | :ref:`start<class_HMACContext_method_start>` **(** :ref:`HashType<enum_HashingContext_HashType>` hash_type, :ref:`PoolByteArray<class_PoolByteArray>` key **)** |
+   +-------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>`     | :ref:`update<class_HMACContext_method_update>` **(** :ref:`PoolByteArray<class_PoolByteArray>` data **)**                                                       |
+   +-------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_HMACContext_method_finish:
 
-- :ref:`PoolByteArray<class_PoolByteArray>` **finish** **(** **)**
+.. rst-class:: classref-method
+
+:ref:`PoolByteArray<class_PoolByteArray>` **finish** **(** **)**
 
 Returns the resulting HMAC. If the HMAC failed, an empty :ref:`PoolByteArray<class_PoolByteArray>` is returned.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_HMACContext_method_start:
 
-- :ref:`Error<enum_@GlobalScope_Error>` **start** **(** :ref:`HashType<enum_HashingContext_HashType>` hash_type, :ref:`PoolByteArray<class_PoolByteArray>` key **)**
+.. rst-class:: classref-method
+
+:ref:`Error<enum_@GlobalScope_Error>` **start** **(** :ref:`HashType<enum_HashingContext_HashType>` hash_type, :ref:`PoolByteArray<class_PoolByteArray>` key **)**
 
 Initializes the HMACContext. This method cannot be called again on the same HMACContext until :ref:`finish<class_HMACContext_method_finish>` has been called.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_HMACContext_method_update:
 
-- :ref:`Error<enum_@GlobalScope_Error>` **update** **(** :ref:`PoolByteArray<class_PoolByteArray>` data **)**
+.. rst-class:: classref-method
+
+:ref:`Error<enum_@GlobalScope_Error>` **update** **(** :ref:`PoolByteArray<class_PoolByteArray>` data **)**
 
 Updates the message to be HMACed. This can be called multiple times before :ref:`finish<class_HMACContext_method_finish>` is called to append ``data`` to the message, but cannot be called until :ref:`start<class_HMACContext_method_start>` has been called.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

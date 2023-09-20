@@ -14,51 +14,67 @@ GradientTexture
 
 Gradient-filled texture.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 GradientTexture uses a :ref:`Gradient<class_Gradient>` to fill the texture data. The gradient will be filled from left to right using colors obtained from the gradient. This means the texture does not necessarily represent an exact copy of the gradient, but instead an interpolation of samples obtained from the gradient at fixed steps (see :ref:`width<class_GradientTexture_property_width>`). See also :ref:`GradientTexture2D<class_GradientTexture2D>` and :ref:`CurveTexture<class_CurveTexture>`.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+---------------------------------+----------------------------------------------------------+----------+
-| :ref:`Gradient<class_Gradient>` | :ref:`gradient<class_GradientTexture_property_gradient>` |          |
-+---------------------------------+----------------------------------------------------------+----------+
-| :ref:`int<class_int>`           | :ref:`width<class_GradientTexture_property_width>`       | ``2048`` |
-+---------------------------------+----------------------------------------------------------+----------+
+.. table::
+   :widths: auto
+
+   +---------------------------------+----------------------------------------------------------+----------+
+   | :ref:`Gradient<class_Gradient>` | :ref:`gradient<class_GradientTexture_property_gradient>` |          |
+   +---------------------------------+----------------------------------------------------------+----------+
+   | :ref:`int<class_int>`           | :ref:`width<class_GradientTexture_property_width>`       | ``2048`` |
+   +---------------------------------+----------------------------------------------------------+----------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_GradientTexture_property_gradient:
 
-- :ref:`Gradient<class_Gradient>` **gradient**
+.. rst-class:: classref-property
 
-+----------+---------------------+
-| *Setter* | set_gradient(value) |
-+----------+---------------------+
-| *Getter* | get_gradient()      |
-+----------+---------------------+
+:ref:`Gradient<class_Gradient>` **gradient**
+
+.. rst-class:: classref-property-setget
+
+- void **set_gradient** **(** :ref:`Gradient<class_Gradient>` value **)**
+- :ref:`Gradient<class_Gradient>` **get_gradient** **(** **)**
 
 The :ref:`Gradient<class_Gradient>` that will be used to fill the texture.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_GradientTexture_property_width:
 
-- :ref:`int<class_int>` **width**
+.. rst-class:: classref-property
 
-+-----------+------------------+
-| *Default* | ``2048``         |
-+-----------+------------------+
-| *Setter*  | set_width(value) |
-+-----------+------------------+
-| *Getter*  | get_width()      |
-+-----------+------------------+
+:ref:`int<class_int>` **width** = ``2048``
+
+.. rst-class:: classref-property-setget
+
+- void **set_width** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_width** **(** **)**
 
 The number of color samples that will be obtained from the :ref:`Gradient<class_Gradient>`.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

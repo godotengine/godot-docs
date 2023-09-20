@@ -14,34 +14,53 @@ JSON
 
 Helper class for parsing JSON data.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 Helper class for parsing JSON data. For usage example and other important hints, see :ref:`JSONParseResult<class_JSONParseResult>`.
 
+.. rst-class:: classref-reftable-group
+
 Methods
 -------
 
-+-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`JSONParseResult<class_JSONParseResult>` | :ref:`parse<class_JSON_method_parse>` **(** :ref:`String<class_String>` json **)**                                                                                    |
-+-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`                   | :ref:`print<class_JSON_method_print>` **(** :ref:`Variant<class_Variant>` value, :ref:`String<class_String>` indent="", :ref:`bool<class_bool>` sort_keys=false **)** |
-+-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`JSONParseResult<class_JSONParseResult>` | :ref:`parse<class_JSON_method_parse>` **(** :ref:`String<class_String>` json **)**                                                                                    |
+   +-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                   | :ref:`print<class_JSON_method_print>` **(** :ref:`Variant<class_Variant>` value, :ref:`String<class_String>` indent="", :ref:`bool<class_bool>` sort_keys=false **)** |
+   +-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_JSON_method_parse:
 
-- :ref:`JSONParseResult<class_JSONParseResult>` **parse** **(** :ref:`String<class_String>` json **)**
+.. rst-class:: classref-method
+
+:ref:`JSONParseResult<class_JSONParseResult>` **parse** **(** :ref:`String<class_String>` json **)**
 
 Parses a JSON-encoded string and returns a :ref:`JSONParseResult<class_JSONParseResult>` containing the result.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_JSON_method_print:
 
-- :ref:`String<class_String>` **print** **(** :ref:`Variant<class_Variant>` value, :ref:`String<class_String>` indent="", :ref:`bool<class_bool>` sort_keys=false **)**
+.. rst-class:: classref-method
+
+:ref:`String<class_String>` **print** **(** :ref:`Variant<class_Variant>` value, :ref:`String<class_String>` indent="", :ref:`bool<class_bool>` sort_keys=false **)**
 
 Converts a :ref:`Variant<class_Variant>` var to JSON text and returns the result. Useful for serializing data to store or send over the network.
 
@@ -91,3 +110,4 @@ The ``indent`` parameter controls if and how something is indented, the string u
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

@@ -14,6 +14,8 @@ TextMesh
 
 Generate an :ref:`PrimitiveMesh<class_PrimitiveMesh>` from the text.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -23,155 +25,194 @@ TextMesh can be generated only when using dynamic fonts with vector glyph contou
 
 The UV layout is arranged in 4 horizontal strips, top to bottom: 40% of the height for the front face, 40% for the back face, 10% for the outer edges and 10% for the inner edges.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-----------------------------------+---------------------------------------------------------------------------+-----------+
-| :ref:`float<class_float>`         | :ref:`curve_step<class_TextMesh_property_curve_step>`                     | ``0.5``   |
-+-----------------------------------+---------------------------------------------------------------------------+-----------+
-| :ref:`float<class_float>`         | :ref:`depth<class_TextMesh_property_depth>`                               | ``0.05``  |
-+-----------------------------------+---------------------------------------------------------------------------+-----------+
-| :ref:`Font<class_Font>`           | :ref:`font<class_TextMesh_property_font>`                                 |           |
-+-----------------------------------+---------------------------------------------------------------------------+-----------+
-| :ref:`Align<enum_TextMesh_Align>` | :ref:`horizontal_alignment<class_TextMesh_property_horizontal_alignment>` | ``1``     |
-+-----------------------------------+---------------------------------------------------------------------------+-----------+
-| :ref:`float<class_float>`         | :ref:`pixel_size<class_TextMesh_property_pixel_size>`                     | ``0.01``  |
-+-----------------------------------+---------------------------------------------------------------------------+-----------+
-| :ref:`String<class_String>`       | :ref:`text<class_TextMesh_property_text>`                                 | ``""``    |
-+-----------------------------------+---------------------------------------------------------------------------+-----------+
-| :ref:`bool<class_bool>`           | :ref:`uppercase<class_TextMesh_property_uppercase>`                       | ``false`` |
-+-----------------------------------+---------------------------------------------------------------------------+-----------+
+.. table::
+   :widths: auto
+
+   +-----------------------------------+---------------------------------------------------------------------------+-----------+
+   | :ref:`float<class_float>`         | :ref:`curve_step<class_TextMesh_property_curve_step>`                     | ``0.5``   |
+   +-----------------------------------+---------------------------------------------------------------------------+-----------+
+   | :ref:`float<class_float>`         | :ref:`depth<class_TextMesh_property_depth>`                               | ``0.05``  |
+   +-----------------------------------+---------------------------------------------------------------------------+-----------+
+   | :ref:`Font<class_Font>`           | :ref:`font<class_TextMesh_property_font>`                                 |           |
+   +-----------------------------------+---------------------------------------------------------------------------+-----------+
+   | :ref:`Align<enum_TextMesh_Align>` | :ref:`horizontal_alignment<class_TextMesh_property_horizontal_alignment>` | ``1``     |
+   +-----------------------------------+---------------------------------------------------------------------------+-----------+
+   | :ref:`float<class_float>`         | :ref:`pixel_size<class_TextMesh_property_pixel_size>`                     | ``0.01``  |
+   +-----------------------------------+---------------------------------------------------------------------------+-----------+
+   | :ref:`String<class_String>`       | :ref:`text<class_TextMesh_property_text>`                                 | ``""``    |
+   +-----------------------------------+---------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`           | :ref:`uppercase<class_TextMesh_property_uppercase>`                       | ``false`` |
+   +-----------------------------------+---------------------------------------------------------------------------+-----------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Enumerations
 ------------
 
 .. _enum_TextMesh_Align:
 
-.. _class_TextMesh_constant_ALIGN_LEFT:
-
-.. _class_TextMesh_constant_ALIGN_CENTER:
-
-.. _class_TextMesh_constant_ALIGN_RIGHT:
+.. rst-class:: classref-enumeration
 
 enum **Align**:
 
-- **ALIGN_LEFT** = **0** --- Align rows to the left (default).
+.. _class_TextMesh_constant_ALIGN_LEFT:
 
-- **ALIGN_CENTER** = **1** --- Align rows centered.
+.. rst-class:: classref-enumeration-constant
 
-- **ALIGN_RIGHT** = **2** --- Align rows to the right.
+:ref:`Align<enum_TextMesh_Align>` **ALIGN_LEFT** = ``0``
+
+Align rows to the left (default).
+
+.. _class_TextMesh_constant_ALIGN_CENTER:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Align<enum_TextMesh_Align>` **ALIGN_CENTER** = ``1``
+
+Align rows centered.
+
+.. _class_TextMesh_constant_ALIGN_RIGHT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Align<enum_TextMesh_Align>` **ALIGN_RIGHT** = ``2``
+
+Align rows to the right.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_TextMesh_property_curve_step:
 
-- :ref:`float<class_float>` **curve_step**
+.. rst-class:: classref-property
 
-+-----------+-----------------------+
-| *Default* | ``0.5``               |
-+-----------+-----------------------+
-| *Setter*  | set_curve_step(value) |
-+-----------+-----------------------+
-| *Getter*  | get_curve_step()      |
-+-----------+-----------------------+
+:ref:`float<class_float>` **curve_step** = ``0.5``
+
+.. rst-class:: classref-property-setget
+
+- void **set_curve_step** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_curve_step** **(** **)**
 
 Step (in pixels) used to approximate Bézier curves.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_TextMesh_property_depth:
 
-- :ref:`float<class_float>` **depth**
+.. rst-class:: classref-property
 
-+-----------+------------------+
-| *Default* | ``0.05``         |
-+-----------+------------------+
-| *Setter*  | set_depth(value) |
-+-----------+------------------+
-| *Getter*  | get_depth()      |
-+-----------+------------------+
+:ref:`float<class_float>` **depth** = ``0.05``
+
+.. rst-class:: classref-property-setget
+
+- void **set_depth** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_depth** **(** **)**
 
 Depths of the mesh, if set to ``0.0`` only front surface, is generated, and UV layout is changed to use full texture for the front face only.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_TextMesh_property_font:
 
-- :ref:`Font<class_Font>` **font**
+.. rst-class:: classref-property
 
-+----------+-----------------+
-| *Setter* | set_font(value) |
-+----------+-----------------+
-| *Getter* | get_font()      |
-+----------+-----------------+
+:ref:`Font<class_Font>` **font**
 
-:ref:`Font<class_Font>` used for the ``TextMesh``'s text.
+.. rst-class:: classref-property-setget
+
+- void **set_font** **(** :ref:`Font<class_Font>` value **)**
+- :ref:`Font<class_Font>` **get_font** **(** **)**
+
+:ref:`Font<class_Font>` used for the **TextMesh**'s text.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_TextMesh_property_horizontal_alignment:
 
-- :ref:`Align<enum_TextMesh_Align>` **horizontal_alignment**
+.. rst-class:: classref-property
 
-+-----------+---------------------------------+
-| *Default* | ``1``                           |
-+-----------+---------------------------------+
-| *Setter*  | set_horizontal_alignment(value) |
-+-----------+---------------------------------+
-| *Getter*  | get_horizontal_alignment()      |
-+-----------+---------------------------------+
+:ref:`Align<enum_TextMesh_Align>` **horizontal_alignment** = ``1``
+
+.. rst-class:: classref-property-setget
+
+- void **set_horizontal_alignment** **(** :ref:`Align<enum_TextMesh_Align>` value **)**
+- :ref:`Align<enum_TextMesh_Align>` **get_horizontal_alignment** **(** **)**
 
 Controls the text's horizontal alignment. Supports left, center and right. Set it to one of the :ref:`Align<enum_TextMesh_Align>` constants.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_TextMesh_property_pixel_size:
 
-- :ref:`float<class_float>` **pixel_size**
+.. rst-class:: classref-property
 
-+-----------+-----------------------+
-| *Default* | ``0.01``              |
-+-----------+-----------------------+
-| *Setter*  | set_pixel_size(value) |
-+-----------+-----------------------+
-| *Getter*  | get_pixel_size()      |
-+-----------+-----------------------+
+:ref:`float<class_float>` **pixel_size** = ``0.01``
+
+.. rst-class:: classref-property-setget
+
+- void **set_pixel_size** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_pixel_size** **(** **)**
 
 The size of one pixel's width on the text to scale it in 3D.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_TextMesh_property_text:
 
-- :ref:`String<class_String>` **text**
+.. rst-class:: classref-property
 
-+-----------+-----------------+
-| *Default* | ``""``          |
-+-----------+-----------------+
-| *Setter*  | set_text(value) |
-+-----------+-----------------+
-| *Getter*  | get_text()      |
-+-----------+-----------------+
+:ref:`String<class_String>` **text** = ``""``
+
+.. rst-class:: classref-property-setget
+
+- void **set_text** **(** :ref:`String<class_String>` value **)**
+- :ref:`String<class_String>` **get_text** **(** **)**
 
 The text to generate mesh from.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_TextMesh_property_uppercase:
 
-- :ref:`bool<class_bool>` **uppercase**
+.. rst-class:: classref-property
 
-+-----------+----------------------+
-| *Default* | ``false``            |
-+-----------+----------------------+
-| *Setter*  | set_uppercase(value) |
-+-----------+----------------------+
-| *Getter*  | is_uppercase()       |
-+-----------+----------------------+
+:ref:`bool<class_bool>` **uppercase** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_uppercase** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_uppercase** **(** **)**
 
 If ``true``, all the text displays as UPPERCASE.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

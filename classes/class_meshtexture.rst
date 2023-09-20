@@ -14,69 +14,88 @@ MeshTexture
 
 Simple texture that uses a mesh to draw itself.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 Simple texture that uses a mesh to draw itself. It's limited because flags can't be changed and region drawing is not supported.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-------------------------------+--------------------------------------------------------------+----------------------------------------------------------------+
-| :ref:`Texture<class_Texture>` | :ref:`base_texture<class_MeshTexture_property_base_texture>` |                                                                |
-+-------------------------------+--------------------------------------------------------------+----------------------------------------------------------------+
-| :ref:`int<class_int>`         | flags                                                        | ``0`` (overrides :ref:`Texture<class_Texture_property_flags>`) |
-+-------------------------------+--------------------------------------------------------------+----------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`image_size<class_MeshTexture_property_image_size>`     | ``Vector2( 0, 0 )``                                            |
-+-------------------------------+--------------------------------------------------------------+----------------------------------------------------------------+
-| :ref:`Mesh<class_Mesh>`       | :ref:`mesh<class_MeshTexture_property_mesh>`                 |                                                                |
-+-------------------------------+--------------------------------------------------------------+----------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------------+--------------------------------------------------------------+----------------------------------------------------------------+
+   | :ref:`Texture<class_Texture>` | :ref:`base_texture<class_MeshTexture_property_base_texture>` |                                                                |
+   +-------------------------------+--------------------------------------------------------------+----------------------------------------------------------------+
+   | :ref:`int<class_int>`         | flags                                                        | ``0`` (overrides :ref:`Texture<class_Texture_property_flags>`) |
+   +-------------------------------+--------------------------------------------------------------+----------------------------------------------------------------+
+   | :ref:`Vector2<class_Vector2>` | :ref:`image_size<class_MeshTexture_property_image_size>`     | ``Vector2( 0, 0 )``                                            |
+   +-------------------------------+--------------------------------------------------------------+----------------------------------------------------------------+
+   | :ref:`Mesh<class_Mesh>`       | :ref:`mesh<class_MeshTexture_property_mesh>`                 |                                                                |
+   +-------------------------------+--------------------------------------------------------------+----------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_MeshTexture_property_base_texture:
 
-- :ref:`Texture<class_Texture>` **base_texture**
+.. rst-class:: classref-property
 
-+----------+-------------------------+
-| *Setter* | set_base_texture(value) |
-+----------+-------------------------+
-| *Getter* | get_base_texture()      |
-+----------+-------------------------+
+:ref:`Texture<class_Texture>` **base_texture**
+
+.. rst-class:: classref-property-setget
+
+- void **set_base_texture** **(** :ref:`Texture<class_Texture>` value **)**
+- :ref:`Texture<class_Texture>` **get_base_texture** **(** **)**
 
 Sets the base texture that the Mesh will use to draw.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_MeshTexture_property_image_size:
 
-- :ref:`Vector2<class_Vector2>` **image_size**
+.. rst-class:: classref-property
 
-+-----------+-----------------------+
-| *Default* | ``Vector2( 0, 0 )``   |
-+-----------+-----------------------+
-| *Setter*  | set_image_size(value) |
-+-----------+-----------------------+
-| *Getter*  | get_image_size()      |
-+-----------+-----------------------+
+:ref:`Vector2<class_Vector2>` **image_size** = ``Vector2( 0, 0 )``
+
+.. rst-class:: classref-property-setget
+
+- void **set_image_size** **(** :ref:`Vector2<class_Vector2>` value **)**
+- :ref:`Vector2<class_Vector2>` **get_image_size** **(** **)**
 
 Sets the size of the image, needed for reference.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_MeshTexture_property_mesh:
 
-- :ref:`Mesh<class_Mesh>` **mesh**
+.. rst-class:: classref-property
 
-+----------+-----------------+
-| *Setter* | set_mesh(value) |
-+----------+-----------------+
-| *Getter* | get_mesh()      |
-+----------+-----------------+
+:ref:`Mesh<class_Mesh>` **mesh**
+
+.. rst-class:: classref-property-setget
+
+- void **set_mesh** **(** :ref:`Mesh<class_Mesh>` value **)**
+- :ref:`Mesh<class_Mesh>` **get_mesh** **(** **)**
 
 Sets the mesh used to draw. It must be a mesh using 2D vertices.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

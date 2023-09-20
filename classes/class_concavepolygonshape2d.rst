@@ -14,39 +14,52 @@ ConcavePolygonShape2D
 
 Concave polygon 2D shape resource for physics.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 Concave polygon 2D shape resource for physics. It is made out of segments and is optimal for complex polygonal concave collisions. However, it is not advised to use for :ref:`RigidBody2D<class_RigidBody2D>` nodes. A CollisionPolygon2D in convex decomposition mode (solids) or several convex objects are advised for that instead. Otherwise, a concave polygon 2D shape is better for static collisions.
 
-The main difference between a :ref:`ConvexPolygonShape2D<class_ConvexPolygonShape2D>` and a ``ConcavePolygonShape2D`` is that a concave polygon assumes it is concave and uses a more complex method of collision detection, and a convex one forces itself to be convex in order to speed up collision detection.
+The main difference between a :ref:`ConvexPolygonShape2D<class_ConvexPolygonShape2D>` and a **ConcavePolygonShape2D** is that a concave polygon assumes it is concave and uses a more complex method of collision detection, and a convex one forces itself to be convex in order to speed up collision detection.
 
-\ **Warning:** Using this shape for an :ref:`Area2D<class_Area2D>` (via a :ref:`CollisionShape2D<class_CollisionShape2D>` node) may give unexpected results: the area will only detect collisions with the segments in the ``ConcavePolygonShape2D`` (and not with any "inside" of the shape, for example).
+\ **Warning:** Using this shape for an :ref:`Area2D<class_Area2D>` (via a :ref:`CollisionShape2D<class_CollisionShape2D>` node) may give unexpected results: the area will only detect collisions with the segments in the **ConcavePolygonShape2D** (and not with any "inside" of the shape, for example).
+
+.. rst-class:: classref-reftable-group
 
 Properties
 ----------
 
-+-------------------------------------------------+----------------------------------------------------------------+--------------------------+
-| :ref:`PoolVector2Array<class_PoolVector2Array>` | :ref:`segments<class_ConcavePolygonShape2D_property_segments>` | ``PoolVector2Array(  )`` |
-+-------------------------------------------------+----------------------------------------------------------------+--------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------------------------------+----------------------------------------------------------------+--------------------------+
+   | :ref:`PoolVector2Array<class_PoolVector2Array>` | :ref:`segments<class_ConcavePolygonShape2D_property_segments>` | ``PoolVector2Array(  )`` |
+   +-------------------------------------------------+----------------------------------------------------------------+--------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_ConcavePolygonShape2D_property_segments:
 
-- :ref:`PoolVector2Array<class_PoolVector2Array>` **segments**
+.. rst-class:: classref-property
 
-+-----------+--------------------------+
-| *Default* | ``PoolVector2Array(  )`` |
-+-----------+--------------------------+
-| *Setter*  | set_segments(value)      |
-+-----------+--------------------------+
-| *Getter*  | get_segments()           |
-+-----------+--------------------------+
+:ref:`PoolVector2Array<class_PoolVector2Array>` **segments** = ``PoolVector2Array(  )``
 
-The array of points that make up the ``ConcavePolygonShape2D``'s line segments.
+.. rst-class:: classref-property-setget
+
+- void **set_segments** **(** :ref:`PoolVector2Array<class_PoolVector2Array>` value **)**
+- :ref:`PoolVector2Array<class_PoolVector2Array>` **get_segments** **(** **)**
+
+The array of points that make up the **ConcavePolygonShape2D**'s line segments.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

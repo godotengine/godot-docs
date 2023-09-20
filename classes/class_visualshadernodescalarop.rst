@@ -12,77 +12,142 @@ VisualShaderNodeScalarOp
 
 **Inherits:** :ref:`VisualShaderNode<class_VisualShaderNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
+.. container:: contribute
 
+	There is currently no description for this class. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-reftable-group
 
 Properties
 ----------
 
-+---------------------------------------------------------+-------------------------------------------------------------------+-------+
-| :ref:`Operator<enum_VisualShaderNodeScalarOp_Operator>` | :ref:`operator<class_VisualShaderNodeScalarOp_property_operator>` | ``0`` |
-+---------------------------------------------------------+-------------------------------------------------------------------+-------+
+.. table::
+   :widths: auto
+
+   +---------------------------------------------------------+-------------------------------------------------------------------+-------+
+   | :ref:`Operator<enum_VisualShaderNodeScalarOp_Operator>` | :ref:`operator<class_VisualShaderNodeScalarOp_property_operator>` | ``0`` |
+   +---------------------------------------------------------+-------------------------------------------------------------------+-------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Enumerations
 ------------
 
 .. _enum_VisualShaderNodeScalarOp_Operator:
 
-.. _class_VisualShaderNodeScalarOp_constant_OP_ADD:
-
-.. _class_VisualShaderNodeScalarOp_constant_OP_SUB:
-
-.. _class_VisualShaderNodeScalarOp_constant_OP_MUL:
-
-.. _class_VisualShaderNodeScalarOp_constant_OP_DIV:
-
-.. _class_VisualShaderNodeScalarOp_constant_OP_MOD:
-
-.. _class_VisualShaderNodeScalarOp_constant_OP_POW:
-
-.. _class_VisualShaderNodeScalarOp_constant_OP_MAX:
-
-.. _class_VisualShaderNodeScalarOp_constant_OP_MIN:
-
-.. _class_VisualShaderNodeScalarOp_constant_OP_ATAN2:
-
-.. _class_VisualShaderNodeScalarOp_constant_OP_STEP:
+.. rst-class:: classref-enumeration
 
 enum **Operator**:
 
-- **OP_ADD** = **0**
+.. _class_VisualShaderNodeScalarOp_constant_OP_ADD:
 
-- **OP_SUB** = **1**
+.. rst-class:: classref-enumeration-constant
 
-- **OP_MUL** = **2**
+:ref:`Operator<enum_VisualShaderNodeScalarOp_Operator>` **OP_ADD** = ``0``
 
-- **OP_DIV** = **3**
 
-- **OP_MOD** = **4**
 
-- **OP_POW** = **5**
+.. _class_VisualShaderNodeScalarOp_constant_OP_SUB:
 
-- **OP_MAX** = **6**
+.. rst-class:: classref-enumeration-constant
 
-- **OP_MIN** = **7**
+:ref:`Operator<enum_VisualShaderNodeScalarOp_Operator>` **OP_SUB** = ``1``
 
-- **OP_ATAN2** = **8**
 
-- **OP_STEP** = **9**
+
+.. _class_VisualShaderNodeScalarOp_constant_OP_MUL:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Operator<enum_VisualShaderNodeScalarOp_Operator>` **OP_MUL** = ``2``
+
+
+
+.. _class_VisualShaderNodeScalarOp_constant_OP_DIV:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Operator<enum_VisualShaderNodeScalarOp_Operator>` **OP_DIV** = ``3``
+
+
+
+.. _class_VisualShaderNodeScalarOp_constant_OP_MOD:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Operator<enum_VisualShaderNodeScalarOp_Operator>` **OP_MOD** = ``4``
+
+
+
+.. _class_VisualShaderNodeScalarOp_constant_OP_POW:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Operator<enum_VisualShaderNodeScalarOp_Operator>` **OP_POW** = ``5``
+
+
+
+.. _class_VisualShaderNodeScalarOp_constant_OP_MAX:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Operator<enum_VisualShaderNodeScalarOp_Operator>` **OP_MAX** = ``6``
+
+
+
+.. _class_VisualShaderNodeScalarOp_constant_OP_MIN:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Operator<enum_VisualShaderNodeScalarOp_Operator>` **OP_MIN** = ``7``
+
+
+
+.. _class_VisualShaderNodeScalarOp_constant_OP_ATAN2:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Operator<enum_VisualShaderNodeScalarOp_Operator>` **OP_ATAN2** = ``8``
+
+
+
+.. _class_VisualShaderNodeScalarOp_constant_OP_STEP:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Operator<enum_VisualShaderNodeScalarOp_Operator>` **OP_STEP** = ``9``
+
+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_VisualShaderNodeScalarOp_property_operator:
 
-- :ref:`Operator<enum_VisualShaderNodeScalarOp_Operator>` **operator**
+.. rst-class:: classref-property
 
-+-----------+---------------------+
-| *Default* | ``0``               |
-+-----------+---------------------+
-| *Setter*  | set_operator(value) |
-+-----------+---------------------+
-| *Getter*  | get_operator()      |
-+-----------+---------------------+
+:ref:`Operator<enum_VisualShaderNodeScalarOp_Operator>` **operator** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_operator** **(** :ref:`Operator<enum_VisualShaderNodeScalarOp_Operator>` value **)**
+- :ref:`Operator<enum_VisualShaderNodeScalarOp_Operator>` **get_operator** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

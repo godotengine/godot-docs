@@ -14,10 +14,14 @@ QuadMesh
 
 Class representing a square mesh.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 Class representing a square :ref:`PrimitiveMesh<class_PrimitiveMesh>`. This flat mesh does not have a thickness. By default, this mesh is aligned on the X and Y axes; this default rotation is more suited for use with billboarded materials. Unlike :ref:`PlaneMesh<class_PlaneMesh>`, this mesh doesn't provide subdivision options.
+
+.. rst-class:: classref-introduction-group
 
 Tutorials
 ---------
@@ -26,48 +30,60 @@ Tutorials
 
 - `2D in 3D Demo <https://godotengine.org/asset-library/asset/129>`__
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-------------------------------+-------------------------------------------------------------+------------------------+
-| :ref:`Vector3<class_Vector3>` | :ref:`center_offset<class_QuadMesh_property_center_offset>` | ``Vector3( 0, 0, 0 )`` |
-+-------------------------------+-------------------------------------------------------------+------------------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`size<class_QuadMesh_property_size>`                   | ``Vector2( 1, 1 )``    |
-+-------------------------------+-------------------------------------------------------------+------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------------+-------------------------------------------------------------+------------------------+
+   | :ref:`Vector3<class_Vector3>` | :ref:`center_offset<class_QuadMesh_property_center_offset>` | ``Vector3( 0, 0, 0 )`` |
+   +-------------------------------+-------------------------------------------------------------+------------------------+
+   | :ref:`Vector2<class_Vector2>` | :ref:`size<class_QuadMesh_property_size>`                   | ``Vector2( 1, 1 )``    |
+   +-------------------------------+-------------------------------------------------------------+------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_QuadMesh_property_center_offset:
 
-- :ref:`Vector3<class_Vector3>` **center_offset**
+.. rst-class:: classref-property
 
-+-----------+--------------------------+
-| *Default* | ``Vector3( 0, 0, 0 )``   |
-+-----------+--------------------------+
-| *Setter*  | set_center_offset(value) |
-+-----------+--------------------------+
-| *Getter*  | get_center_offset()      |
-+-----------+--------------------------+
+:ref:`Vector3<class_Vector3>` **center_offset** = ``Vector3( 0, 0, 0 )``
+
+.. rst-class:: classref-property-setget
+
+- void **set_center_offset** **(** :ref:`Vector3<class_Vector3>` value **)**
+- :ref:`Vector3<class_Vector3>` **get_center_offset** **(** **)**
 
 Offset of the generated Quad. Useful for particles.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_QuadMesh_property_size:
 
-- :ref:`Vector2<class_Vector2>` **size**
+.. rst-class:: classref-property
 
-+-----------+---------------------+
-| *Default* | ``Vector2( 1, 1 )`` |
-+-----------+---------------------+
-| *Setter*  | set_size(value)     |
-+-----------+---------------------+
-| *Getter*  | get_size()          |
-+-----------+---------------------+
+:ref:`Vector2<class_Vector2>` **size** = ``Vector2( 1, 1 )``
+
+.. rst-class:: classref-property-setget
+
+- void **set_size** **(** :ref:`Vector2<class_Vector2>` value **)**
+- :ref:`Vector2<class_Vector2>` **get_size** **(** **)**
 
 Size on the X and Y axes.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

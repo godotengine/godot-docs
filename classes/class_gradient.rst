@@ -14,6 +14,8 @@ Gradient
 
 A color interpolator resource which can be used to generate colors between user-defined color points.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -21,171 +23,245 @@ Given a set of colors, this resource will interpolate them in order. This means 
 
 See also :ref:`Curve<class_Curve>` which supports more complex easing methods, but does not support colors.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-----------------------------------------------------------+-----------------------------------------------------------------------+----------------------------------------------+
-| :ref:`PoolColorArray<class_PoolColorArray>`               | :ref:`colors<class_Gradient_property_colors>`                         | ``PoolColorArray( 0, 0, 0, 1, 1, 1, 1, 1 )`` |
-+-----------------------------------------------------------+-----------------------------------------------------------------------+----------------------------------------------+
-| :ref:`InterpolationMode<enum_Gradient_InterpolationMode>` | :ref:`interpolation_mode<class_Gradient_property_interpolation_mode>` | ``0``                                        |
-+-----------------------------------------------------------+-----------------------------------------------------------------------+----------------------------------------------+
-| :ref:`PoolRealArray<class_PoolRealArray>`                 | :ref:`offsets<class_Gradient_property_offsets>`                       | ``PoolRealArray( 0, 1 )``                    |
-+-----------------------------------------------------------+-----------------------------------------------------------------------+----------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-----------------------------------------------------------+-----------------------------------------------------------------------+----------------------------------------------+
+   | :ref:`PoolColorArray<class_PoolColorArray>`               | :ref:`colors<class_Gradient_property_colors>`                         | ``PoolColorArray( 0, 0, 0, 1, 1, 1, 1, 1 )`` |
+   +-----------------------------------------------------------+-----------------------------------------------------------------------+----------------------------------------------+
+   | :ref:`InterpolationMode<enum_Gradient_InterpolationMode>` | :ref:`interpolation_mode<class_Gradient_property_interpolation_mode>` | ``0``                                        |
+   +-----------------------------------------------------------+-----------------------------------------------------------------------+----------------------------------------------+
+   | :ref:`PoolRealArray<class_PoolRealArray>`                 | :ref:`offsets<class_Gradient_property_offsets>`                       | ``PoolRealArray( 0, 1 )``                    |
+   +-----------------------------------------------------------+-----------------------------------------------------------------------+----------------------------------------------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+---------------------------+---------------------------------------------------------------------------------------------------------------------------------+
-| void                      | :ref:`add_point<class_Gradient_method_add_point>` **(** :ref:`float<class_float>` offset, :ref:`Color<class_Color>` color **)** |
-+---------------------------+---------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_Color>` | :ref:`get_color<class_Gradient_method_get_color>` **(** :ref:`int<class_int>` point **)**                                       |
-+---------------------------+---------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`get_offset<class_Gradient_method_get_offset>` **(** :ref:`int<class_int>` point **)**                                     |
-+---------------------------+---------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`     | :ref:`get_point_count<class_Gradient_method_get_point_count>` **(** **)** |const|                                               |
-+---------------------------+---------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_Color>` | :ref:`interpolate<class_Gradient_method_interpolate>` **(** :ref:`float<class_float>` offset **)**                              |
-+---------------------------+---------------------------------------------------------------------------------------------------------------------------------+
-| void                      | :ref:`remove_point<class_Gradient_method_remove_point>` **(** :ref:`int<class_int>` point **)**                                 |
-+---------------------------+---------------------------------------------------------------------------------------------------------------------------------+
-| void                      | :ref:`set_color<class_Gradient_method_set_color>` **(** :ref:`int<class_int>` point, :ref:`Color<class_Color>` color **)**      |
-+---------------------------+---------------------------------------------------------------------------------------------------------------------------------+
-| void                      | :ref:`set_offset<class_Gradient_method_set_offset>` **(** :ref:`int<class_int>` point, :ref:`float<class_float>` offset **)**   |
-+---------------------------+---------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +---------------------------+---------------------------------------------------------------------------------------------------------------------------------+
+   | void                      | :ref:`add_point<class_Gradient_method_add_point>` **(** :ref:`float<class_float>` offset, :ref:`Color<class_Color>` color **)** |
+   +---------------------------+---------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Color<class_Color>` | :ref:`get_color<class_Gradient_method_get_color>` **(** :ref:`int<class_int>` point **)**                                       |
+   +---------------------------+---------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>` | :ref:`get_offset<class_Gradient_method_get_offset>` **(** :ref:`int<class_int>` point **)**                                     |
+   +---------------------------+---------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`     | :ref:`get_point_count<class_Gradient_method_get_point_count>` **(** **)** |const|                                               |
+   +---------------------------+---------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Color<class_Color>` | :ref:`interpolate<class_Gradient_method_interpolate>` **(** :ref:`float<class_float>` offset **)**                              |
+   +---------------------------+---------------------------------------------------------------------------------------------------------------------------------+
+   | void                      | :ref:`remove_point<class_Gradient_method_remove_point>` **(** :ref:`int<class_int>` point **)**                                 |
+   +---------------------------+---------------------------------------------------------------------------------------------------------------------------------+
+   | void                      | :ref:`set_color<class_Gradient_method_set_color>` **(** :ref:`int<class_int>` point, :ref:`Color<class_Color>` color **)**      |
+   +---------------------------+---------------------------------------------------------------------------------------------------------------------------------+
+   | void                      | :ref:`set_offset<class_Gradient_method_set_offset>` **(** :ref:`int<class_int>` point, :ref:`float<class_float>` offset **)**   |
+   +---------------------------+---------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Enumerations
 ------------
 
 .. _enum_Gradient_InterpolationMode:
 
-.. _class_Gradient_constant_GRADIENT_INTERPOLATE_LINEAR:
-
-.. _class_Gradient_constant_GRADIENT_INTERPOLATE_CONSTANT:
-
-.. _class_Gradient_constant_GRADIENT_INTERPOLATE_CUBIC:
+.. rst-class:: classref-enumeration
 
 enum **InterpolationMode**:
 
-- **GRADIENT_INTERPOLATE_LINEAR** = **0** --- Linear interpolation.
+.. _class_Gradient_constant_GRADIENT_INTERPOLATE_LINEAR:
 
-- **GRADIENT_INTERPOLATE_CONSTANT** = **1** --- Constant interpolation, color changes abruptly at each point and stays uniform between. This might cause visible aliasing when used for a gradient texture in some cases.
+.. rst-class:: classref-enumeration-constant
 
-- **GRADIENT_INTERPOLATE_CUBIC** = **2** --- Cubic interpolation.
+:ref:`InterpolationMode<enum_Gradient_InterpolationMode>` **GRADIENT_INTERPOLATE_LINEAR** = ``0``
+
+Linear interpolation.
+
+.. _class_Gradient_constant_GRADIENT_INTERPOLATE_CONSTANT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`InterpolationMode<enum_Gradient_InterpolationMode>` **GRADIENT_INTERPOLATE_CONSTANT** = ``1``
+
+Constant interpolation, color changes abruptly at each point and stays uniform between. This might cause visible aliasing when used for a gradient texture in some cases.
+
+.. _class_Gradient_constant_GRADIENT_INTERPOLATE_CUBIC:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`InterpolationMode<enum_Gradient_InterpolationMode>` **GRADIENT_INTERPOLATE_CUBIC** = ``2``
+
+Cubic interpolation.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_Gradient_property_colors:
 
-- :ref:`PoolColorArray<class_PoolColorArray>` **colors**
+.. rst-class:: classref-property
 
-+-----------+----------------------------------------------+
-| *Default* | ``PoolColorArray( 0, 0, 0, 1, 1, 1, 1, 1 )`` |
-+-----------+----------------------------------------------+
-| *Setter*  | set_colors(value)                            |
-+-----------+----------------------------------------------+
-| *Getter*  | get_colors()                                 |
-+-----------+----------------------------------------------+
+:ref:`PoolColorArray<class_PoolColorArray>` **colors** = ``PoolColorArray( 0, 0, 0, 1, 1, 1, 1, 1 )``
+
+.. rst-class:: classref-property-setget
+
+- void **set_colors** **(** :ref:`PoolColorArray<class_PoolColorArray>` value **)**
+- :ref:`PoolColorArray<class_PoolColorArray>` **get_colors** **(** **)**
 
 Gradient's colors returned as a :ref:`PoolColorArray<class_PoolColorArray>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Gradient_property_interpolation_mode:
 
-- :ref:`InterpolationMode<enum_Gradient_InterpolationMode>` **interpolation_mode**
+.. rst-class:: classref-property
 
-+-----------+-------------------------------+
-| *Default* | ``0``                         |
-+-----------+-------------------------------+
-| *Setter*  | set_interpolation_mode(value) |
-+-----------+-------------------------------+
-| *Getter*  | get_interpolation_mode()      |
-+-----------+-------------------------------+
+:ref:`InterpolationMode<enum_Gradient_InterpolationMode>` **interpolation_mode** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_interpolation_mode** **(** :ref:`InterpolationMode<enum_Gradient_InterpolationMode>` value **)**
+- :ref:`InterpolationMode<enum_Gradient_InterpolationMode>` **get_interpolation_mode** **(** **)**
 
 Defines how the colors between points of the gradient are interpolated. See :ref:`InterpolationMode<enum_Gradient_InterpolationMode>` for available modes.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Gradient_property_offsets:
 
-- :ref:`PoolRealArray<class_PoolRealArray>` **offsets**
+.. rst-class:: classref-property
 
-+-----------+---------------------------+
-| *Default* | ``PoolRealArray( 0, 1 )`` |
-+-----------+---------------------------+
-| *Setter*  | set_offsets(value)        |
-+-----------+---------------------------+
-| *Getter*  | get_offsets()             |
-+-----------+---------------------------+
+:ref:`PoolRealArray<class_PoolRealArray>` **offsets** = ``PoolRealArray( 0, 1 )``
+
+.. rst-class:: classref-property-setget
+
+- void **set_offsets** **(** :ref:`PoolRealArray<class_PoolRealArray>` value **)**
+- :ref:`PoolRealArray<class_PoolRealArray>` **get_offsets** **(** **)**
 
 Gradient's offsets returned as a :ref:`PoolRealArray<class_PoolRealArray>`.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_Gradient_method_add_point:
 
-- void **add_point** **(** :ref:`float<class_float>` offset, :ref:`Color<class_Color>` color **)**
+.. rst-class:: classref-method
+
+void **add_point** **(** :ref:`float<class_float>` offset, :ref:`Color<class_Color>` color **)**
 
 Adds the specified color to the end of the ramp, with the specified offset.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Gradient_method_get_color:
 
-- :ref:`Color<class_Color>` **get_color** **(** :ref:`int<class_int>` point **)**
+.. rst-class:: classref-method
+
+:ref:`Color<class_Color>` **get_color** **(** :ref:`int<class_int>` point **)**
 
 Returns the color of the ramp color at index ``point``.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Gradient_method_get_offset:
 
-- :ref:`float<class_float>` **get_offset** **(** :ref:`int<class_int>` point **)**
+.. rst-class:: classref-method
+
+:ref:`float<class_float>` **get_offset** **(** :ref:`int<class_int>` point **)**
 
 Returns the offset of the ramp color at index ``point``.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Gradient_method_get_point_count:
 
-- :ref:`int<class_int>` **get_point_count** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **get_point_count** **(** **)** |const|
 
 Returns the number of colors in the ramp.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Gradient_method_interpolate:
 
-- :ref:`Color<class_Color>` **interpolate** **(** :ref:`float<class_float>` offset **)**
+.. rst-class:: classref-method
+
+:ref:`Color<class_Color>` **interpolate** **(** :ref:`float<class_float>` offset **)**
 
 Returns the interpolated color specified by ``offset``.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Gradient_method_remove_point:
 
-- void **remove_point** **(** :ref:`int<class_int>` point **)**
+.. rst-class:: classref-method
+
+void **remove_point** **(** :ref:`int<class_int>` point **)**
 
 Removes the color at the index ``point``.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Gradient_method_set_color:
 
-- void **set_color** **(** :ref:`int<class_int>` point, :ref:`Color<class_Color>` color **)**
+.. rst-class:: classref-method
+
+void **set_color** **(** :ref:`int<class_int>` point, :ref:`Color<class_Color>` color **)**
 
 Sets the color of the ramp color at index ``point``.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Gradient_method_set_offset:
 
-- void **set_offset** **(** :ref:`int<class_int>` point, :ref:`float<class_float>` offset **)**
+.. rst-class:: classref-method
+
+void **set_offset** **(** :ref:`int<class_int>` point, :ref:`float<class_float>` offset **)**
 
 Sets the offset for the ramp color at index ``point``.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

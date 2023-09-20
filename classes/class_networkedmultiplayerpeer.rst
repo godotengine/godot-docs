@@ -16,12 +16,16 @@ NetworkedMultiplayerPeer
 
 A high-level network interface to simplify multiplayer interactions.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 Manages the connection to network peers. Assigns unique IDs to each client connected to the server. See also :ref:`MultiplayerAPI<class_MultiplayerAPI>`.
 
 \ **Note:** The high-level multiplayer API protocol is an implementation detail and isn't meant to be used by non-Godot servers. It may change without notice.
+
+.. rst-class:: classref-introduction-group
 
 Tutorials
 ---------
@@ -30,190 +34,304 @@ Tutorials
 
 - `WebRTC Signaling Demo <https://godotengine.org/asset-library/asset/537>`__
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------+-----------+
-| :ref:`bool<class_bool>`                                         | :ref:`refuse_new_connections<class_NetworkedMultiplayerPeer_property_refuse_new_connections>` | ``false`` |
-+-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------+-----------+
-| :ref:`TransferMode<enum_NetworkedMultiplayerPeer_TransferMode>` | :ref:`transfer_mode<class_NetworkedMultiplayerPeer_property_transfer_mode>`                   | ``2``     |
-+-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------+-----------+
+.. table::
+   :widths: auto
+
+   +-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`                                         | :ref:`refuse_new_connections<class_NetworkedMultiplayerPeer_property_refuse_new_connections>` | ``false`` |
+   +-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------+-----------+
+   | :ref:`TransferMode<enum_NetworkedMultiplayerPeer_TransferMode>` | :ref:`transfer_mode<class_NetworkedMultiplayerPeer_property_transfer_mode>`                   | ``2``     |
+   +-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------+-----------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+-------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
-| :ref:`ConnectionStatus<enum_NetworkedMultiplayerPeer_ConnectionStatus>` | :ref:`get_connection_status<class_NetworkedMultiplayerPeer_method_get_connection_status>` **(** **)** |const|      |
-+-------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                                                   | :ref:`get_packet_peer<class_NetworkedMultiplayerPeer_method_get_packet_peer>` **(** **)** |const|                  |
-+-------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                                                   | :ref:`get_unique_id<class_NetworkedMultiplayerPeer_method_get_unique_id>` **(** **)** |const|                      |
-+-------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
-| void                                                                    | :ref:`poll<class_NetworkedMultiplayerPeer_method_poll>` **(** **)**                                                |
-+-------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
-| void                                                                    | :ref:`set_target_peer<class_NetworkedMultiplayerPeer_method_set_target_peer>` **(** :ref:`int<class_int>` id **)** |
-+-------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
+   | :ref:`ConnectionStatus<enum_NetworkedMultiplayerPeer_ConnectionStatus>` | :ref:`get_connection_status<class_NetworkedMultiplayerPeer_method_get_connection_status>` **(** **)** |const|      |
+   +-------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                                                   | :ref:`get_packet_peer<class_NetworkedMultiplayerPeer_method_get_packet_peer>` **(** **)** |const|                  |
+   +-------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                                                   | :ref:`get_unique_id<class_NetworkedMultiplayerPeer_method_get_unique_id>` **(** **)** |const|                      |
+   +-------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
+   | void                                                                    | :ref:`poll<class_NetworkedMultiplayerPeer_method_poll>` **(** **)**                                                |
+   +-------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
+   | void                                                                    | :ref:`set_target_peer<class_NetworkedMultiplayerPeer_method_set_target_peer>` **(** :ref:`int<class_int>` id **)** |
+   +-------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Signals
 -------
 
 .. _class_NetworkedMultiplayerPeer_signal_connection_failed:
 
-- **connection_failed** **(** **)**
+.. rst-class:: classref-signal
+
+**connection_failed** **(** **)**
 
 Emitted when a connection attempt fails.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_NetworkedMultiplayerPeer_signal_connection_succeeded:
 
-- **connection_succeeded** **(** **)**
+.. rst-class:: classref-signal
+
+**connection_succeeded** **(** **)**
 
 Emitted when a connection attempt succeeds.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_NetworkedMultiplayerPeer_signal_peer_connected:
 
-- **peer_connected** **(** :ref:`int<class_int>` id **)**
+.. rst-class:: classref-signal
+
+**peer_connected** **(** :ref:`int<class_int>` id **)**
 
 Emitted by the server when a client connects.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_NetworkedMultiplayerPeer_signal_peer_disconnected:
 
-- **peer_disconnected** **(** :ref:`int<class_int>` id **)**
+.. rst-class:: classref-signal
+
+**peer_disconnected** **(** :ref:`int<class_int>` id **)**
 
 Emitted by the server when a client disconnects.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_NetworkedMultiplayerPeer_signal_server_disconnected:
 
-- **server_disconnected** **(** **)**
+.. rst-class:: classref-signal
+
+**server_disconnected** **(** **)**
 
 Emitted by clients when the server disconnects.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Enumerations
 ------------
 
 .. _enum_NetworkedMultiplayerPeer_TransferMode:
 
-.. _class_NetworkedMultiplayerPeer_constant_TRANSFER_MODE_UNRELIABLE:
-
-.. _class_NetworkedMultiplayerPeer_constant_TRANSFER_MODE_UNRELIABLE_ORDERED:
-
-.. _class_NetworkedMultiplayerPeer_constant_TRANSFER_MODE_RELIABLE:
+.. rst-class:: classref-enumeration
 
 enum **TransferMode**:
 
-- **TRANSFER_MODE_UNRELIABLE** = **0** --- Packets are not acknowledged, no resend attempts are made for lost packets. Packets may arrive in any order. Potentially faster than :ref:`TRANSFER_MODE_UNRELIABLE_ORDERED<class_NetworkedMultiplayerPeer_constant_TRANSFER_MODE_UNRELIABLE_ORDERED>`. Use for non-critical data, and always consider whether the order matters.
+.. _class_NetworkedMultiplayerPeer_constant_TRANSFER_MODE_UNRELIABLE:
 
-- **TRANSFER_MODE_UNRELIABLE_ORDERED** = **1** --- Packets are not acknowledged, no resend attempts are made for lost packets. Packets are received in the order they were sent in. Potentially faster than :ref:`TRANSFER_MODE_RELIABLE<class_NetworkedMultiplayerPeer_constant_TRANSFER_MODE_RELIABLE>`. Use for non-critical data or data that would be outdated if received late due to resend attempt(s) anyway, for example movement and positional data.
+.. rst-class:: classref-enumeration-constant
 
-- **TRANSFER_MODE_RELIABLE** = **2** --- Packets must be received and resend attempts should be made until the packets are acknowledged. Packets must be received in the order they were sent in. Most reliable transfer mode, but potentially the slowest due to the overhead. Use for critical data that must be transmitted and arrive in order, for example an ability being triggered or a chat message. Consider carefully if the information really is critical, and use sparingly.
+:ref:`TransferMode<enum_NetworkedMultiplayerPeer_TransferMode>` **TRANSFER_MODE_UNRELIABLE** = ``0``
+
+Packets are not acknowledged, no resend attempts are made for lost packets. Packets may arrive in any order. Potentially faster than :ref:`TRANSFER_MODE_UNRELIABLE_ORDERED<class_NetworkedMultiplayerPeer_constant_TRANSFER_MODE_UNRELIABLE_ORDERED>`. Use for non-critical data, and always consider whether the order matters.
+
+.. _class_NetworkedMultiplayerPeer_constant_TRANSFER_MODE_UNRELIABLE_ORDERED:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`TransferMode<enum_NetworkedMultiplayerPeer_TransferMode>` **TRANSFER_MODE_UNRELIABLE_ORDERED** = ``1``
+
+Packets are not acknowledged, no resend attempts are made for lost packets. Packets are received in the order they were sent in. Potentially faster than :ref:`TRANSFER_MODE_RELIABLE<class_NetworkedMultiplayerPeer_constant_TRANSFER_MODE_RELIABLE>`. Use for non-critical data or data that would be outdated if received late due to resend attempt(s) anyway, for example movement and positional data.
+
+.. _class_NetworkedMultiplayerPeer_constant_TRANSFER_MODE_RELIABLE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`TransferMode<enum_NetworkedMultiplayerPeer_TransferMode>` **TRANSFER_MODE_RELIABLE** = ``2``
+
+Packets must be received and resend attempts should be made until the packets are acknowledged. Packets must be received in the order they were sent in. Most reliable transfer mode, but potentially the slowest due to the overhead. Use for critical data that must be transmitted and arrive in order, for example an ability being triggered or a chat message. Consider carefully if the information really is critical, and use sparingly.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _enum_NetworkedMultiplayerPeer_ConnectionStatus:
 
-.. _class_NetworkedMultiplayerPeer_constant_CONNECTION_DISCONNECTED:
-
-.. _class_NetworkedMultiplayerPeer_constant_CONNECTION_CONNECTING:
-
-.. _class_NetworkedMultiplayerPeer_constant_CONNECTION_CONNECTED:
+.. rst-class:: classref-enumeration
 
 enum **ConnectionStatus**:
 
-- **CONNECTION_DISCONNECTED** = **0** --- The ongoing connection disconnected.
+.. _class_NetworkedMultiplayerPeer_constant_CONNECTION_DISCONNECTED:
 
-- **CONNECTION_CONNECTING** = **1** --- A connection attempt is ongoing.
+.. rst-class:: classref-enumeration-constant
 
-- **CONNECTION_CONNECTED** = **2** --- The connection attempt succeeded.
+:ref:`ConnectionStatus<enum_NetworkedMultiplayerPeer_ConnectionStatus>` **CONNECTION_DISCONNECTED** = ``0``
+
+The ongoing connection disconnected.
+
+.. _class_NetworkedMultiplayerPeer_constant_CONNECTION_CONNECTING:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ConnectionStatus<enum_NetworkedMultiplayerPeer_ConnectionStatus>` **CONNECTION_CONNECTING** = ``1``
+
+A connection attempt is ongoing.
+
+.. _class_NetworkedMultiplayerPeer_constant_CONNECTION_CONNECTED:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ConnectionStatus<enum_NetworkedMultiplayerPeer_ConnectionStatus>` **CONNECTION_CONNECTED** = ``2``
+
+The connection attempt succeeded.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Constants
 ---------
 
 .. _class_NetworkedMultiplayerPeer_constant_TARGET_PEER_BROADCAST:
 
+.. rst-class:: classref-constant
+
+**TARGET_PEER_BROADCAST** = ``0``
+
+Packets are sent to the server and then redistributed to other peers.
+
 .. _class_NetworkedMultiplayerPeer_constant_TARGET_PEER_SERVER:
 
-- **TARGET_PEER_BROADCAST** = **0** --- Packets are sent to the server and then redistributed to other peers.
+.. rst-class:: classref-constant
 
-- **TARGET_PEER_SERVER** = **1** --- Packets are sent to the server alone.
+**TARGET_PEER_SERVER** = ``1``
+
+Packets are sent to the server alone.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_NetworkedMultiplayerPeer_property_refuse_new_connections:
 
-- :ref:`bool<class_bool>` **refuse_new_connections**
+.. rst-class:: classref-property
 
-+-----------+-----------------------------------+
-| *Default* | ``false``                         |
-+-----------+-----------------------------------+
-| *Setter*  | set_refuse_new_connections(value) |
-+-----------+-----------------------------------+
-| *Getter*  | is_refusing_new_connections()     |
-+-----------+-----------------------------------+
+:ref:`bool<class_bool>` **refuse_new_connections** = ``false``
 
-If ``true``, this ``NetworkedMultiplayerPeer`` refuses new connections.
+.. rst-class:: classref-property-setget
+
+- void **set_refuse_new_connections** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_refusing_new_connections** **(** **)**
+
+If ``true``, this **NetworkedMultiplayerPeer** refuses new connections.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_NetworkedMultiplayerPeer_property_transfer_mode:
 
-- :ref:`TransferMode<enum_NetworkedMultiplayerPeer_TransferMode>` **transfer_mode**
+.. rst-class:: classref-property
 
-+-----------+--------------------------+
-| *Default* | ``2``                    |
-+-----------+--------------------------+
-| *Setter*  | set_transfer_mode(value) |
-+-----------+--------------------------+
-| *Getter*  | get_transfer_mode()      |
-+-----------+--------------------------+
+:ref:`TransferMode<enum_NetworkedMultiplayerPeer_TransferMode>` **transfer_mode** = ``2``
+
+.. rst-class:: classref-property-setget
+
+- void **set_transfer_mode** **(** :ref:`TransferMode<enum_NetworkedMultiplayerPeer_TransferMode>` value **)**
+- :ref:`TransferMode<enum_NetworkedMultiplayerPeer_TransferMode>` **get_transfer_mode** **(** **)**
 
 The manner in which to send packets to the ``target_peer``. See :ref:`TransferMode<enum_NetworkedMultiplayerPeer_TransferMode>`.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_NetworkedMultiplayerPeer_method_get_connection_status:
 
-- :ref:`ConnectionStatus<enum_NetworkedMultiplayerPeer_ConnectionStatus>` **get_connection_status** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`ConnectionStatus<enum_NetworkedMultiplayerPeer_ConnectionStatus>` **get_connection_status** **(** **)** |const|
 
 Returns the current state of the connection. See :ref:`ConnectionStatus<enum_NetworkedMultiplayerPeer_ConnectionStatus>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_NetworkedMultiplayerPeer_method_get_packet_peer:
 
-- :ref:`int<class_int>` **get_packet_peer** **(** **)** |const|
+.. rst-class:: classref-method
 
-Returns the ID of the ``NetworkedMultiplayerPeer`` who sent the most recent packet.
+:ref:`int<class_int>` **get_packet_peer** **(** **)** |const|
+
+Returns the ID of the **NetworkedMultiplayerPeer** who sent the most recent packet.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_NetworkedMultiplayerPeer_method_get_unique_id:
 
-- :ref:`int<class_int>` **get_unique_id** **(** **)** |const|
+.. rst-class:: classref-method
 
-Returns the ID of this ``NetworkedMultiplayerPeer``.
+:ref:`int<class_int>` **get_unique_id** **(** **)** |const|
+
+Returns the ID of this **NetworkedMultiplayerPeer**.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_NetworkedMultiplayerPeer_method_poll:
 
-- void **poll** **(** **)**
+.. rst-class:: classref-method
+
+void **poll** **(** **)**
 
 Waits up to 1 second to receive a new network event.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_NetworkedMultiplayerPeer_method_set_target_peer:
 
-- void **set_target_peer** **(** :ref:`int<class_int>` id **)**
+.. rst-class:: classref-method
+
+void **set_target_peer** **(** :ref:`int<class_int>` id **)**
 
 Sets the peer to which packets will be sent.
 
@@ -222,3 +340,4 @@ The ``id`` can be one of: :ref:`TARGET_PEER_BROADCAST<class_NetworkedMultiplayer
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

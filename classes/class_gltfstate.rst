@@ -12,417 +12,740 @@ GLTFState
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-
+.. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-**Note:** This class is only compiled in editor builds. Run-time glTF loading and saving is *not* available in exported projects. References to ``GLTFState`` within a script will cause an error in an exported project.
+**Note:** This class is only compiled in editor builds. Run-time glTF loading and saving is *not* available in exported projects. References to **GLTFState** within a script will cause an error in an exported project.
+
+.. rst-class:: classref-reftable-group
 
 Properties
 ----------
 
-+-------------------------------------------+----------------------------------------------------------------------------+-----------------------+
-| :ref:`Array<class_Array>`                 | :ref:`buffers<class_GLTFState_property_buffers>`                           | ``[  ]``              |
-+-------------------------------------------+----------------------------------------------------------------------------+-----------------------+
-| :ref:`PoolByteArray<class_PoolByteArray>` | :ref:`glb_data<class_GLTFState_property_glb_data>`                         | ``PoolByteArray(  )`` |
-+-------------------------------------------+----------------------------------------------------------------------------+-----------------------+
-| :ref:`Dictionary<class_Dictionary>`       | :ref:`json<class_GLTFState_property_json>`                                 | ``{}``                |
-+-------------------------------------------+----------------------------------------------------------------------------+-----------------------+
-| :ref:`int<class_int>`                     | :ref:`major_version<class_GLTFState_property_major_version>`               | ``0``                 |
-+-------------------------------------------+----------------------------------------------------------------------------+-----------------------+
-| :ref:`int<class_int>`                     | :ref:`minor_version<class_GLTFState_property_minor_version>`               | ``0``                 |
-+-------------------------------------------+----------------------------------------------------------------------------+-----------------------+
-| :ref:`Array<class_Array>`                 | :ref:`root_nodes<class_GLTFState_property_root_nodes>`                     | ``[  ]``              |
-+-------------------------------------------+----------------------------------------------------------------------------+-----------------------+
-| :ref:`String<class_String>`               | :ref:`scene_name<class_GLTFState_property_scene_name>`                     | ``""``                |
-+-------------------------------------------+----------------------------------------------------------------------------+-----------------------+
-| :ref:`bool<class_bool>`                   | :ref:`use_named_skin_binds<class_GLTFState_property_use_named_skin_binds>` | ``false``             |
-+-------------------------------------------+----------------------------------------------------------------------------+-----------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------------------------+----------------------------------------------------------------------------+-----------------------+
+   | :ref:`Array<class_Array>`                 | :ref:`buffers<class_GLTFState_property_buffers>`                           | ``[  ]``              |
+   +-------------------------------------------+----------------------------------------------------------------------------+-----------------------+
+   | :ref:`PoolByteArray<class_PoolByteArray>` | :ref:`glb_data<class_GLTFState_property_glb_data>`                         | ``PoolByteArray(  )`` |
+   +-------------------------------------------+----------------------------------------------------------------------------+-----------------------+
+   | :ref:`Dictionary<class_Dictionary>`       | :ref:`json<class_GLTFState_property_json>`                                 | ``{}``                |
+   +-------------------------------------------+----------------------------------------------------------------------------+-----------------------+
+   | :ref:`int<class_int>`                     | :ref:`major_version<class_GLTFState_property_major_version>`               | ``0``                 |
+   +-------------------------------------------+----------------------------------------------------------------------------+-----------------------+
+   | :ref:`int<class_int>`                     | :ref:`minor_version<class_GLTFState_property_minor_version>`               | ``0``                 |
+   +-------------------------------------------+----------------------------------------------------------------------------+-----------------------+
+   | :ref:`Array<class_Array>`                 | :ref:`root_nodes<class_GLTFState_property_root_nodes>`                     | ``[  ]``              |
+   +-------------------------------------------+----------------------------------------------------------------------------+-----------------------+
+   | :ref:`String<class_String>`               | :ref:`scene_name<class_GLTFState_property_scene_name>`                     | ``""``                |
+   +-------------------------------------------+----------------------------------------------------------------------------+-----------------------+
+   | :ref:`bool<class_bool>`                   | :ref:`use_named_skin_binds<class_GLTFState_property_use_named_skin_binds>` | ``false``             |
+   +-------------------------------------------+----------------------------------------------------------------------------+-----------------------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`                     | :ref:`get_accessors<class_GLTFState_method_get_accessors>` **(** **)**                                                                            |
-+-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`AnimationPlayer<class_AnimationPlayer>` | :ref:`get_animation_player<class_GLTFState_method_get_animation_player>` **(** :ref:`int<class_int>` idx **)**                                    |
-+-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                         | :ref:`get_animation_players_count<class_GLTFState_method_get_animation_players_count>` **(** :ref:`int<class_int>` idx **)**                      |
-+-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`                     | :ref:`get_animations<class_GLTFState_method_get_animations>` **(** **)**                                                                          |
-+-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`                     | :ref:`get_buffer_views<class_GLTFState_method_get_buffer_views>` **(** **)**                                                                      |
-+-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`                     | :ref:`get_cameras<class_GLTFState_method_get_cameras>` **(** **)**                                                                                |
-+-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`                     | :ref:`get_images<class_GLTFState_method_get_images>` **(** **)**                                                                                  |
-+-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`                     | :ref:`get_lights<class_GLTFState_method_get_lights>` **(** **)**                                                                                  |
-+-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`                     | :ref:`get_materials<class_GLTFState_method_get_materials>` **(** **)**                                                                            |
-+-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`                     | :ref:`get_meshes<class_GLTFState_method_get_meshes>` **(** **)**                                                                                  |
-+-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`                     | :ref:`get_nodes<class_GLTFState_method_get_nodes>` **(** **)**                                                                                    |
-+-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Node<class_Node>`                       | :ref:`get_scene_node<class_GLTFState_method_get_scene_node>` **(** :ref:`int<class_int>` idx **)**                                                |
-+-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Dictionary<class_Dictionary>`           | :ref:`get_skeleton_to_node<class_GLTFState_method_get_skeleton_to_node>` **(** **)**                                                              |
-+-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`                     | :ref:`get_skeletons<class_GLTFState_method_get_skeletons>` **(** **)**                                                                            |
-+-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`                     | :ref:`get_skins<class_GLTFState_method_get_skins>` **(** **)**                                                                                    |
-+-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`                     | :ref:`get_textures<class_GLTFState_method_get_textures>` **(** **)**                                                                              |
-+-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`                     | :ref:`get_unique_animation_names<class_GLTFState_method_get_unique_animation_names>` **(** **)**                                                  |
-+-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`                     | :ref:`get_unique_names<class_GLTFState_method_get_unique_names>` **(** **)**                                                                      |
-+-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                          | :ref:`set_accessors<class_GLTFState_method_set_accessors>` **(** :ref:`Array<class_Array>` accessors **)**                                        |
-+-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                          | :ref:`set_animations<class_GLTFState_method_set_animations>` **(** :ref:`Array<class_Array>` animations **)**                                     |
-+-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                          | :ref:`set_buffer_views<class_GLTFState_method_set_buffer_views>` **(** :ref:`Array<class_Array>` buffer_views **)**                               |
-+-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                          | :ref:`set_cameras<class_GLTFState_method_set_cameras>` **(** :ref:`Array<class_Array>` cameras **)**                                              |
-+-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                          | :ref:`set_images<class_GLTFState_method_set_images>` **(** :ref:`Array<class_Array>` images **)**                                                 |
-+-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                          | :ref:`set_lights<class_GLTFState_method_set_lights>` **(** :ref:`Array<class_Array>` lights **)**                                                 |
-+-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                          | :ref:`set_materials<class_GLTFState_method_set_materials>` **(** :ref:`Array<class_Array>` materials **)**                                        |
-+-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                          | :ref:`set_meshes<class_GLTFState_method_set_meshes>` **(** :ref:`Array<class_Array>` meshes **)**                                                 |
-+-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                          | :ref:`set_nodes<class_GLTFState_method_set_nodes>` **(** :ref:`Array<class_Array>` nodes **)**                                                    |
-+-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                          | :ref:`set_skeleton_to_node<class_GLTFState_method_set_skeleton_to_node>` **(** :ref:`Dictionary<class_Dictionary>` skeleton_to_node **)**         |
-+-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                          | :ref:`set_skeletons<class_GLTFState_method_set_skeletons>` **(** :ref:`Array<class_Array>` skeletons **)**                                        |
-+-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                          | :ref:`set_skins<class_GLTFState_method_set_skins>` **(** :ref:`Array<class_Array>` skins **)**                                                    |
-+-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                          | :ref:`set_textures<class_GLTFState_method_set_textures>` **(** :ref:`Array<class_Array>` textures **)**                                           |
-+-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                          | :ref:`set_unique_animation_names<class_GLTFState_method_set_unique_animation_names>` **(** :ref:`Array<class_Array>` unique_animation_names **)** |
-+-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                          | :ref:`set_unique_names<class_GLTFState_method_set_unique_names>` **(** :ref:`Array<class_Array>` unique_names **)**                               |
-+-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Array<class_Array>`                     | :ref:`get_accessors<class_GLTFState_method_get_accessors>` **(** **)**                                                                            |
+   +-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`AnimationPlayer<class_AnimationPlayer>` | :ref:`get_animation_player<class_GLTFState_method_get_animation_player>` **(** :ref:`int<class_int>` idx **)**                                    |
+   +-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                         | :ref:`get_animation_players_count<class_GLTFState_method_get_animation_players_count>` **(** :ref:`int<class_int>` idx **)**                      |
+   +-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Array<class_Array>`                     | :ref:`get_animations<class_GLTFState_method_get_animations>` **(** **)**                                                                          |
+   +-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Array<class_Array>`                     | :ref:`get_buffer_views<class_GLTFState_method_get_buffer_views>` **(** **)**                                                                      |
+   +-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Array<class_Array>`                     | :ref:`get_cameras<class_GLTFState_method_get_cameras>` **(** **)**                                                                                |
+   +-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Array<class_Array>`                     | :ref:`get_images<class_GLTFState_method_get_images>` **(** **)**                                                                                  |
+   +-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Array<class_Array>`                     | :ref:`get_lights<class_GLTFState_method_get_lights>` **(** **)**                                                                                  |
+   +-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Array<class_Array>`                     | :ref:`get_materials<class_GLTFState_method_get_materials>` **(** **)**                                                                            |
+   +-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Array<class_Array>`                     | :ref:`get_meshes<class_GLTFState_method_get_meshes>` **(** **)**                                                                                  |
+   +-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Array<class_Array>`                     | :ref:`get_nodes<class_GLTFState_method_get_nodes>` **(** **)**                                                                                    |
+   +-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Node<class_Node>`                       | :ref:`get_scene_node<class_GLTFState_method_get_scene_node>` **(** :ref:`int<class_int>` idx **)**                                                |
+   +-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Dictionary<class_Dictionary>`           | :ref:`get_skeleton_to_node<class_GLTFState_method_get_skeleton_to_node>` **(** **)**                                                              |
+   +-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Array<class_Array>`                     | :ref:`get_skeletons<class_GLTFState_method_get_skeletons>` **(** **)**                                                                            |
+   +-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Array<class_Array>`                     | :ref:`get_skins<class_GLTFState_method_get_skins>` **(** **)**                                                                                    |
+   +-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Array<class_Array>`                     | :ref:`get_textures<class_GLTFState_method_get_textures>` **(** **)**                                                                              |
+   +-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Array<class_Array>`                     | :ref:`get_unique_animation_names<class_GLTFState_method_get_unique_animation_names>` **(** **)**                                                  |
+   +-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Array<class_Array>`                     | :ref:`get_unique_names<class_GLTFState_method_get_unique_names>` **(** **)**                                                                      |
+   +-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                          | :ref:`set_accessors<class_GLTFState_method_set_accessors>` **(** :ref:`Array<class_Array>` accessors **)**                                        |
+   +-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                          | :ref:`set_animations<class_GLTFState_method_set_animations>` **(** :ref:`Array<class_Array>` animations **)**                                     |
+   +-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                          | :ref:`set_buffer_views<class_GLTFState_method_set_buffer_views>` **(** :ref:`Array<class_Array>` buffer_views **)**                               |
+   +-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                          | :ref:`set_cameras<class_GLTFState_method_set_cameras>` **(** :ref:`Array<class_Array>` cameras **)**                                              |
+   +-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                          | :ref:`set_images<class_GLTFState_method_set_images>` **(** :ref:`Array<class_Array>` images **)**                                                 |
+   +-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                          | :ref:`set_lights<class_GLTFState_method_set_lights>` **(** :ref:`Array<class_Array>` lights **)**                                                 |
+   +-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                          | :ref:`set_materials<class_GLTFState_method_set_materials>` **(** :ref:`Array<class_Array>` materials **)**                                        |
+   +-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                          | :ref:`set_meshes<class_GLTFState_method_set_meshes>` **(** :ref:`Array<class_Array>` meshes **)**                                                 |
+   +-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                          | :ref:`set_nodes<class_GLTFState_method_set_nodes>` **(** :ref:`Array<class_Array>` nodes **)**                                                    |
+   +-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                          | :ref:`set_skeleton_to_node<class_GLTFState_method_set_skeleton_to_node>` **(** :ref:`Dictionary<class_Dictionary>` skeleton_to_node **)**         |
+   +-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                          | :ref:`set_skeletons<class_GLTFState_method_set_skeletons>` **(** :ref:`Array<class_Array>` skeletons **)**                                        |
+   +-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                          | :ref:`set_skins<class_GLTFState_method_set_skins>` **(** :ref:`Array<class_Array>` skins **)**                                                    |
+   +-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                          | :ref:`set_textures<class_GLTFState_method_set_textures>` **(** :ref:`Array<class_Array>` textures **)**                                           |
+   +-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                          | :ref:`set_unique_animation_names<class_GLTFState_method_set_unique_animation_names>` **(** :ref:`Array<class_Array>` unique_animation_names **)** |
+   +-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                          | :ref:`set_unique_names<class_GLTFState_method_set_unique_names>` **(** :ref:`Array<class_Array>` unique_names **)**                               |
+   +-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_GLTFState_property_buffers:
 
-- :ref:`Array<class_Array>` **buffers**
+.. rst-class:: classref-property
 
-+-----------+--------------------+
-| *Default* | ``[  ]``           |
-+-----------+--------------------+
-| *Setter*  | set_buffers(value) |
-+-----------+--------------------+
-| *Getter*  | get_buffers()      |
-+-----------+--------------------+
+:ref:`Array<class_Array>` **buffers** = ``[  ]``
+
+.. rst-class:: classref-property-setget
+
+- void **set_buffers** **(** :ref:`Array<class_Array>` value **)**
+- :ref:`Array<class_Array>` **get_buffers** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_GLTFState_property_glb_data:
 
-- :ref:`PoolByteArray<class_PoolByteArray>` **glb_data**
+.. rst-class:: classref-property
 
-+-----------+-----------------------+
-| *Default* | ``PoolByteArray(  )`` |
-+-----------+-----------------------+
-| *Setter*  | set_glb_data(value)   |
-+-----------+-----------------------+
-| *Getter*  | get_glb_data()        |
-+-----------+-----------------------+
+:ref:`PoolByteArray<class_PoolByteArray>` **glb_data** = ``PoolByteArray(  )``
+
+.. rst-class:: classref-property-setget
+
+- void **set_glb_data** **(** :ref:`PoolByteArray<class_PoolByteArray>` value **)**
+- :ref:`PoolByteArray<class_PoolByteArray>` **get_glb_data** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_GLTFState_property_json:
 
-- :ref:`Dictionary<class_Dictionary>` **json**
+.. rst-class:: classref-property
 
-+-----------+-----------------+
-| *Default* | ``{}``          |
-+-----------+-----------------+
-| *Setter*  | set_json(value) |
-+-----------+-----------------+
-| *Getter*  | get_json()      |
-+-----------+-----------------+
+:ref:`Dictionary<class_Dictionary>` **json** = ``{}``
+
+.. rst-class:: classref-property-setget
+
+- void **set_json** **(** :ref:`Dictionary<class_Dictionary>` value **)**
+- :ref:`Dictionary<class_Dictionary>` **get_json** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_GLTFState_property_major_version:
 
-- :ref:`int<class_int>` **major_version**
+.. rst-class:: classref-property
 
-+-----------+--------------------------+
-| *Default* | ``0``                    |
-+-----------+--------------------------+
-| *Setter*  | set_major_version(value) |
-+-----------+--------------------------+
-| *Getter*  | get_major_version()      |
-+-----------+--------------------------+
+:ref:`int<class_int>` **major_version** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_major_version** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_major_version** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_GLTFState_property_minor_version:
 
-- :ref:`int<class_int>` **minor_version**
+.. rst-class:: classref-property
 
-+-----------+--------------------------+
-| *Default* | ``0``                    |
-+-----------+--------------------------+
-| *Setter*  | set_minor_version(value) |
-+-----------+--------------------------+
-| *Getter*  | get_minor_version()      |
-+-----------+--------------------------+
+:ref:`int<class_int>` **minor_version** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_minor_version** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_minor_version** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_GLTFState_property_root_nodes:
 
-- :ref:`Array<class_Array>` **root_nodes**
+.. rst-class:: classref-property
 
-+-----------+-----------------------+
-| *Default* | ``[  ]``              |
-+-----------+-----------------------+
-| *Setter*  | set_root_nodes(value) |
-+-----------+-----------------------+
-| *Getter*  | get_root_nodes()      |
-+-----------+-----------------------+
+:ref:`Array<class_Array>` **root_nodes** = ``[  ]``
+
+.. rst-class:: classref-property-setget
+
+- void **set_root_nodes** **(** :ref:`Array<class_Array>` value **)**
+- :ref:`Array<class_Array>` **get_root_nodes** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_GLTFState_property_scene_name:
 
-- :ref:`String<class_String>` **scene_name**
+.. rst-class:: classref-property
 
-+-----------+-----------------------+
-| *Default* | ``""``                |
-+-----------+-----------------------+
-| *Setter*  | set_scene_name(value) |
-+-----------+-----------------------+
-| *Getter*  | get_scene_name()      |
-+-----------+-----------------------+
+:ref:`String<class_String>` **scene_name** = ``""``
+
+.. rst-class:: classref-property-setget
+
+- void **set_scene_name** **(** :ref:`String<class_String>` value **)**
+- :ref:`String<class_String>` **get_scene_name** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_GLTFState_property_use_named_skin_binds:
 
-- :ref:`bool<class_bool>` **use_named_skin_binds**
+.. rst-class:: classref-property
 
-+-----------+---------------------------------+
-| *Default* | ``false``                       |
-+-----------+---------------------------------+
-| *Setter*  | set_use_named_skin_binds(value) |
-+-----------+---------------------------------+
-| *Getter*  | get_use_named_skin_binds()      |
-+-----------+---------------------------------+
+:ref:`bool<class_bool>` **use_named_skin_binds** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_use_named_skin_binds** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **get_use_named_skin_binds** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_GLTFState_method_get_accessors:
 
-- :ref:`Array<class_Array>` **get_accessors** **(** **)**
+.. rst-class:: classref-method
+
+:ref:`Array<class_Array>` **get_accessors** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_GLTFState_method_get_animation_player:
 
-- :ref:`AnimationPlayer<class_AnimationPlayer>` **get_animation_player** **(** :ref:`int<class_int>` idx **)**
+.. rst-class:: classref-method
+
+:ref:`AnimationPlayer<class_AnimationPlayer>` **get_animation_player** **(** :ref:`int<class_int>` idx **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_GLTFState_method_get_animation_players_count:
 
-- :ref:`int<class_int>` **get_animation_players_count** **(** :ref:`int<class_int>` idx **)**
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **get_animation_players_count** **(** :ref:`int<class_int>` idx **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_GLTFState_method_get_animations:
 
-- :ref:`Array<class_Array>` **get_animations** **(** **)**
+.. rst-class:: classref-method
+
+:ref:`Array<class_Array>` **get_animations** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_GLTFState_method_get_buffer_views:
 
-- :ref:`Array<class_Array>` **get_buffer_views** **(** **)**
+.. rst-class:: classref-method
+
+:ref:`Array<class_Array>` **get_buffer_views** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_GLTFState_method_get_cameras:
 
-- :ref:`Array<class_Array>` **get_cameras** **(** **)**
+.. rst-class:: classref-method
+
+:ref:`Array<class_Array>` **get_cameras** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_GLTFState_method_get_images:
 
-- :ref:`Array<class_Array>` **get_images** **(** **)**
+.. rst-class:: classref-method
+
+:ref:`Array<class_Array>` **get_images** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_GLTFState_method_get_lights:
 
-- :ref:`Array<class_Array>` **get_lights** **(** **)**
+.. rst-class:: classref-method
+
+:ref:`Array<class_Array>` **get_lights** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_GLTFState_method_get_materials:
 
-- :ref:`Array<class_Array>` **get_materials** **(** **)**
+.. rst-class:: classref-method
+
+:ref:`Array<class_Array>` **get_materials** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_GLTFState_method_get_meshes:
 
-- :ref:`Array<class_Array>` **get_meshes** **(** **)**
+.. rst-class:: classref-method
+
+:ref:`Array<class_Array>` **get_meshes** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_GLTFState_method_get_nodes:
 
-- :ref:`Array<class_Array>` **get_nodes** **(** **)**
+.. rst-class:: classref-method
+
+:ref:`Array<class_Array>` **get_nodes** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_GLTFState_method_get_scene_node:
 
-- :ref:`Node<class_Node>` **get_scene_node** **(** :ref:`int<class_int>` idx **)**
+.. rst-class:: classref-method
+
+:ref:`Node<class_Node>` **get_scene_node** **(** :ref:`int<class_int>` idx **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_GLTFState_method_get_skeleton_to_node:
 
-- :ref:`Dictionary<class_Dictionary>` **get_skeleton_to_node** **(** **)**
+.. rst-class:: classref-method
+
+:ref:`Dictionary<class_Dictionary>` **get_skeleton_to_node** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_GLTFState_method_get_skeletons:
 
-- :ref:`Array<class_Array>` **get_skeletons** **(** **)**
+.. rst-class:: classref-method
+
+:ref:`Array<class_Array>` **get_skeletons** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_GLTFState_method_get_skins:
 
-- :ref:`Array<class_Array>` **get_skins** **(** **)**
+.. rst-class:: classref-method
+
+:ref:`Array<class_Array>` **get_skins** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_GLTFState_method_get_textures:
 
-- :ref:`Array<class_Array>` **get_textures** **(** **)**
+.. rst-class:: classref-method
+
+:ref:`Array<class_Array>` **get_textures** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_GLTFState_method_get_unique_animation_names:
 
-- :ref:`Array<class_Array>` **get_unique_animation_names** **(** **)**
+.. rst-class:: classref-method
+
+:ref:`Array<class_Array>` **get_unique_animation_names** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_GLTFState_method_get_unique_names:
 
-- :ref:`Array<class_Array>` **get_unique_names** **(** **)**
+.. rst-class:: classref-method
+
+:ref:`Array<class_Array>` **get_unique_names** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_GLTFState_method_set_accessors:
 
-- void **set_accessors** **(** :ref:`Array<class_Array>` accessors **)**
+.. rst-class:: classref-method
+
+void **set_accessors** **(** :ref:`Array<class_Array>` accessors **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_GLTFState_method_set_animations:
 
-- void **set_animations** **(** :ref:`Array<class_Array>` animations **)**
+.. rst-class:: classref-method
+
+void **set_animations** **(** :ref:`Array<class_Array>` animations **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_GLTFState_method_set_buffer_views:
 
-- void **set_buffer_views** **(** :ref:`Array<class_Array>` buffer_views **)**
+.. rst-class:: classref-method
+
+void **set_buffer_views** **(** :ref:`Array<class_Array>` buffer_views **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_GLTFState_method_set_cameras:
 
-- void **set_cameras** **(** :ref:`Array<class_Array>` cameras **)**
+.. rst-class:: classref-method
+
+void **set_cameras** **(** :ref:`Array<class_Array>` cameras **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_GLTFState_method_set_images:
 
-- void **set_images** **(** :ref:`Array<class_Array>` images **)**
+.. rst-class:: classref-method
+
+void **set_images** **(** :ref:`Array<class_Array>` images **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_GLTFState_method_set_lights:
 
-- void **set_lights** **(** :ref:`Array<class_Array>` lights **)**
+.. rst-class:: classref-method
+
+void **set_lights** **(** :ref:`Array<class_Array>` lights **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_GLTFState_method_set_materials:
 
-- void **set_materials** **(** :ref:`Array<class_Array>` materials **)**
+.. rst-class:: classref-method
+
+void **set_materials** **(** :ref:`Array<class_Array>` materials **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_GLTFState_method_set_meshes:
 
-- void **set_meshes** **(** :ref:`Array<class_Array>` meshes **)**
+.. rst-class:: classref-method
+
+void **set_meshes** **(** :ref:`Array<class_Array>` meshes **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_GLTFState_method_set_nodes:
 
-- void **set_nodes** **(** :ref:`Array<class_Array>` nodes **)**
+.. rst-class:: classref-method
+
+void **set_nodes** **(** :ref:`Array<class_Array>` nodes **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_GLTFState_method_set_skeleton_to_node:
 
-- void **set_skeleton_to_node** **(** :ref:`Dictionary<class_Dictionary>` skeleton_to_node **)**
+.. rst-class:: classref-method
+
+void **set_skeleton_to_node** **(** :ref:`Dictionary<class_Dictionary>` skeleton_to_node **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_GLTFState_method_set_skeletons:
 
-- void **set_skeletons** **(** :ref:`Array<class_Array>` skeletons **)**
+.. rst-class:: classref-method
+
+void **set_skeletons** **(** :ref:`Array<class_Array>` skeletons **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_GLTFState_method_set_skins:
 
-- void **set_skins** **(** :ref:`Array<class_Array>` skins **)**
+.. rst-class:: classref-method
+
+void **set_skins** **(** :ref:`Array<class_Array>` skins **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_GLTFState_method_set_textures:
 
-- void **set_textures** **(** :ref:`Array<class_Array>` textures **)**
+.. rst-class:: classref-method
+
+void **set_textures** **(** :ref:`Array<class_Array>` textures **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_GLTFState_method_set_unique_animation_names:
 
-- void **set_unique_animation_names** **(** :ref:`Array<class_Array>` unique_animation_names **)**
+.. rst-class:: classref-method
+
+void **set_unique_animation_names** **(** :ref:`Array<class_Array>` unique_animation_names **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_GLTFState_method_set_unique_names:
 
-- void **set_unique_names** **(** :ref:`Array<class_Array>` unique_names **)**
+.. rst-class:: classref-method
+
+void **set_unique_names** **(** :ref:`Array<class_Array>` unique_names **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

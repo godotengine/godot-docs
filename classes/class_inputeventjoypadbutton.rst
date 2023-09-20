@@ -14,76 +14,93 @@ InputEventJoypadButton
 
 Input event for gamepad buttons.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 Input event type for gamepad buttons. For gamepad analog sticks and joysticks, see :ref:`InputEventJoypadMotion<class_InputEventJoypadMotion>`.
+
+.. rst-class:: classref-introduction-group
 
 Tutorials
 ---------
 
 - :doc:`../tutorials/inputs/inputevent`
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+---------------------------+-------------------------------------------------------------------------+-----------+
-| :ref:`int<class_int>`     | :ref:`button_index<class_InputEventJoypadButton_property_button_index>` | ``0``     |
-+---------------------------+-------------------------------------------------------------------------+-----------+
-| :ref:`bool<class_bool>`   | :ref:`pressed<class_InputEventJoypadButton_property_pressed>`           | ``false`` |
-+---------------------------+-------------------------------------------------------------------------+-----------+
-| :ref:`float<class_float>` | :ref:`pressure<class_InputEventJoypadButton_property_pressure>`         | ``0.0``   |
-+---------------------------+-------------------------------------------------------------------------+-----------+
+.. table::
+   :widths: auto
+
+   +---------------------------+-------------------------------------------------------------------------+-----------+
+   | :ref:`int<class_int>`     | :ref:`button_index<class_InputEventJoypadButton_property_button_index>` | ``0``     |
+   +---------------------------+-------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`   | :ref:`pressed<class_InputEventJoypadButton_property_pressed>`           | ``false`` |
+   +---------------------------+-------------------------------------------------------------------------+-----------+
+   | :ref:`float<class_float>` | :ref:`pressure<class_InputEventJoypadButton_property_pressure>`         | ``0.0``   |
+   +---------------------------+-------------------------------------------------------------------------+-----------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_InputEventJoypadButton_property_button_index:
 
-- :ref:`int<class_int>` **button_index**
+.. rst-class:: classref-property
 
-+-----------+-------------------------+
-| *Default* | ``0``                   |
-+-----------+-------------------------+
-| *Setter*  | set_button_index(value) |
-+-----------+-------------------------+
-| *Getter*  | get_button_index()      |
-+-----------+-------------------------+
+:ref:`int<class_int>` **button_index** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_button_index** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_button_index** **(** **)**
 
 Button identifier. One of the :ref:`JoystickList<enum_@GlobalScope_JoystickList>` button constants.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_InputEventJoypadButton_property_pressed:
 
-- :ref:`bool<class_bool>` **pressed**
+.. rst-class:: classref-property
 
-+-----------+--------------------+
-| *Default* | ``false``          |
-+-----------+--------------------+
-| *Setter*  | set_pressed(value) |
-+-----------+--------------------+
-| *Getter*  | is_pressed()       |
-+-----------+--------------------+
+:ref:`bool<class_bool>` **pressed** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_pressed** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_pressed** **(** **)**
 
 If ``true``, the button's state is pressed. If ``false``, the button's state is released.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_InputEventJoypadButton_property_pressure:
 
-- :ref:`float<class_float>` **pressure**
+.. rst-class:: classref-property
 
-+-----------+---------------------+
-| *Default* | ``0.0``             |
-+-----------+---------------------+
-| *Setter*  | set_pressure(value) |
-+-----------+---------------------+
-| *Getter*  | get_pressure()      |
-+-----------+---------------------+
+:ref:`float<class_float>` **pressure** = ``0.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_pressure** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_pressure** **(** **)**
 
 Represents the pressure the user puts on the button with their finger, if the controller supports it. Ranges from ``0`` to ``1``.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

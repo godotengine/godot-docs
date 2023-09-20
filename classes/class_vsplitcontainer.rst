@@ -14,68 +14,94 @@ VSplitContainer
 
 Vertical split container.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 Vertical split container. See :ref:`SplitContainer<class_SplitContainer>`. This goes from top to bottom.
+
+.. rst-class:: classref-introduction-group
 
 Tutorials
 ---------
 
 - :doc:`GUI containers <../tutorials/ui/gui_containers>`
 
+.. rst-class:: classref-reftable-group
+
 Theme Properties
 ----------------
 
-+---------------------------------+--------------------------------------------------------------------+--------+
-| :ref:`int<class_int>`           | :ref:`autohide<class_VSplitContainer_theme_constant_autohide>`     | ``1``  |
-+---------------------------------+--------------------------------------------------------------------+--------+
-| :ref:`int<class_int>`           | :ref:`separation<class_VSplitContainer_theme_constant_separation>` | ``12`` |
-+---------------------------------+--------------------------------------------------------------------+--------+
-| :ref:`Texture<class_Texture>`   | :ref:`grabber<class_VSplitContainer_theme_icon_grabber>`           |        |
-+---------------------------------+--------------------------------------------------------------------+--------+
-| :ref:`StyleBox<class_StyleBox>` | :ref:`bg<class_VSplitContainer_theme_style_bg>`                    |        |
-+---------------------------------+--------------------------------------------------------------------+--------+
+.. table::
+   :widths: auto
+
+   +---------------------------------+--------------------------------------------------------------------+--------+
+   | :ref:`int<class_int>`           | :ref:`autohide<class_VSplitContainer_theme_constant_autohide>`     | ``1``  |
+   +---------------------------------+--------------------------------------------------------------------+--------+
+   | :ref:`int<class_int>`           | :ref:`separation<class_VSplitContainer_theme_constant_separation>` | ``12`` |
+   +---------------------------------+--------------------------------------------------------------------+--------+
+   | :ref:`Texture<class_Texture>`   | :ref:`grabber<class_VSplitContainer_theme_icon_grabber>`           |        |
+   +---------------------------------+--------------------------------------------------------------------+--------+
+   | :ref:`StyleBox<class_StyleBox>` | :ref:`bg<class_VSplitContainer_theme_style_bg>`                    |        |
+   +---------------------------------+--------------------------------------------------------------------+--------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Theme Property Descriptions
 ---------------------------
 
 .. _class_VSplitContainer_theme_constant_autohide:
 
-- :ref:`int<class_int>` **autohide**
+.. rst-class:: classref-themeproperty
 
-+-----------+-------+
-| *Default* | ``1`` |
-+-----------+-------+
+:ref:`int<class_int>` **autohide** = ``1``
 
 Boolean value. If 1 (``true``), the grabber will hide automatically when it isn't under the cursor. If 0 (``false``), it's always visible.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_VSplitContainer_theme_constant_separation:
 
-- :ref:`int<class_int>` **separation**
+.. rst-class:: classref-themeproperty
 
-+-----------+--------+
-| *Default* | ``12`` |
-+-----------+--------+
+:ref:`int<class_int>` **separation** = ``12``
 
 The space between sides of the container.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_VSplitContainer_theme_icon_grabber:
 
-- :ref:`Texture<class_Texture>` **grabber**
+.. rst-class:: classref-themeproperty
+
+:ref:`Texture<class_Texture>` **grabber**
 
 The icon used for the grabber drawn in the middle area.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_VSplitContainer_theme_style_bg:
 
-- :ref:`StyleBox<class_StyleBox>` **bg**
+.. rst-class:: classref-themeproperty
+
+:ref:`StyleBox<class_StyleBox>` **bg**
+
+.. container:: contribute
+
+	There is currently no description for this theme property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

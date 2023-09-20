@@ -12,165 +12,318 @@ VisualShaderNodeScalarFunc
 
 **Inherits:** :ref:`VisualShaderNode<class_VisualShaderNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
+.. container:: contribute
 
+	There is currently no description for this class. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-reftable-group
 
 Properties
 ----------
 
-+-----------------------------------------------------------+---------------------------------------------------------------------+--------+
-| :ref:`Function<enum_VisualShaderNodeScalarFunc_Function>` | :ref:`function<class_VisualShaderNodeScalarFunc_property_function>` | ``13`` |
-+-----------------------------------------------------------+---------------------------------------------------------------------+--------+
+.. table::
+   :widths: auto
+
+   +-----------------------------------------------------------+---------------------------------------------------------------------+--------+
+   | :ref:`Function<enum_VisualShaderNodeScalarFunc_Function>` | :ref:`function<class_VisualShaderNodeScalarFunc_property_function>` | ``13`` |
+   +-----------------------------------------------------------+---------------------------------------------------------------------+--------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Enumerations
 ------------
 
 .. _enum_VisualShaderNodeScalarFunc_Function:
 
-.. _class_VisualShaderNodeScalarFunc_constant_FUNC_SIN:
-
-.. _class_VisualShaderNodeScalarFunc_constant_FUNC_COS:
-
-.. _class_VisualShaderNodeScalarFunc_constant_FUNC_TAN:
-
-.. _class_VisualShaderNodeScalarFunc_constant_FUNC_ASIN:
-
-.. _class_VisualShaderNodeScalarFunc_constant_FUNC_ACOS:
-
-.. _class_VisualShaderNodeScalarFunc_constant_FUNC_ATAN:
-
-.. _class_VisualShaderNodeScalarFunc_constant_FUNC_SINH:
-
-.. _class_VisualShaderNodeScalarFunc_constant_FUNC_COSH:
-
-.. _class_VisualShaderNodeScalarFunc_constant_FUNC_TANH:
-
-.. _class_VisualShaderNodeScalarFunc_constant_FUNC_LOG:
-
-.. _class_VisualShaderNodeScalarFunc_constant_FUNC_EXP:
-
-.. _class_VisualShaderNodeScalarFunc_constant_FUNC_SQRT:
-
-.. _class_VisualShaderNodeScalarFunc_constant_FUNC_ABS:
-
-.. _class_VisualShaderNodeScalarFunc_constant_FUNC_SIGN:
-
-.. _class_VisualShaderNodeScalarFunc_constant_FUNC_FLOOR:
-
-.. _class_VisualShaderNodeScalarFunc_constant_FUNC_ROUND:
-
-.. _class_VisualShaderNodeScalarFunc_constant_FUNC_CEIL:
-
-.. _class_VisualShaderNodeScalarFunc_constant_FUNC_FRAC:
-
-.. _class_VisualShaderNodeScalarFunc_constant_FUNC_SATURATE:
-
-.. _class_VisualShaderNodeScalarFunc_constant_FUNC_NEGATE:
-
-.. _class_VisualShaderNodeScalarFunc_constant_FUNC_ACOSH:
-
-.. _class_VisualShaderNodeScalarFunc_constant_FUNC_ASINH:
-
-.. _class_VisualShaderNodeScalarFunc_constant_FUNC_ATANH:
-
-.. _class_VisualShaderNodeScalarFunc_constant_FUNC_DEGREES:
-
-.. _class_VisualShaderNodeScalarFunc_constant_FUNC_EXP2:
-
-.. _class_VisualShaderNodeScalarFunc_constant_FUNC_INVERSE_SQRT:
-
-.. _class_VisualShaderNodeScalarFunc_constant_FUNC_LOG2:
-
-.. _class_VisualShaderNodeScalarFunc_constant_FUNC_RADIANS:
-
-.. _class_VisualShaderNodeScalarFunc_constant_FUNC_RECIPROCAL:
-
-.. _class_VisualShaderNodeScalarFunc_constant_FUNC_ROUNDEVEN:
-
-.. _class_VisualShaderNodeScalarFunc_constant_FUNC_TRUNC:
-
-.. _class_VisualShaderNodeScalarFunc_constant_FUNC_ONEMINUS:
+.. rst-class:: classref-enumeration
 
 enum **Function**:
 
-- **FUNC_SIN** = **0**
+.. _class_VisualShaderNodeScalarFunc_constant_FUNC_SIN:
 
-- **FUNC_COS** = **1**
+.. rst-class:: classref-enumeration-constant
 
-- **FUNC_TAN** = **2**
+:ref:`Function<enum_VisualShaderNodeScalarFunc_Function>` **FUNC_SIN** = ``0``
 
-- **FUNC_ASIN** = **3**
 
-- **FUNC_ACOS** = **4**
 
-- **FUNC_ATAN** = **5**
+.. _class_VisualShaderNodeScalarFunc_constant_FUNC_COS:
 
-- **FUNC_SINH** = **6**
+.. rst-class:: classref-enumeration-constant
 
-- **FUNC_COSH** = **7**
+:ref:`Function<enum_VisualShaderNodeScalarFunc_Function>` **FUNC_COS** = ``1``
 
-- **FUNC_TANH** = **8**
 
-- **FUNC_LOG** = **9**
 
-- **FUNC_EXP** = **10**
+.. _class_VisualShaderNodeScalarFunc_constant_FUNC_TAN:
 
-- **FUNC_SQRT** = **11**
+.. rst-class:: classref-enumeration-constant
 
-- **FUNC_ABS** = **12**
+:ref:`Function<enum_VisualShaderNodeScalarFunc_Function>` **FUNC_TAN** = ``2``
 
-- **FUNC_SIGN** = **13**
 
-- **FUNC_FLOOR** = **14**
 
-- **FUNC_ROUND** = **15**
+.. _class_VisualShaderNodeScalarFunc_constant_FUNC_ASIN:
 
-- **FUNC_CEIL** = **16**
+.. rst-class:: classref-enumeration-constant
 
-- **FUNC_FRAC** = **17**
+:ref:`Function<enum_VisualShaderNodeScalarFunc_Function>` **FUNC_ASIN** = ``3``
 
-- **FUNC_SATURATE** = **18**
 
-- **FUNC_NEGATE** = **19**
 
-- **FUNC_ACOSH** = **20**
+.. _class_VisualShaderNodeScalarFunc_constant_FUNC_ACOS:
 
-- **FUNC_ASINH** = **21**
+.. rst-class:: classref-enumeration-constant
 
-- **FUNC_ATANH** = **22**
+:ref:`Function<enum_VisualShaderNodeScalarFunc_Function>` **FUNC_ACOS** = ``4``
 
-- **FUNC_DEGREES** = **23**
 
-- **FUNC_EXP2** = **24**
 
-- **FUNC_INVERSE_SQRT** = **25**
+.. _class_VisualShaderNodeScalarFunc_constant_FUNC_ATAN:
 
-- **FUNC_LOG2** = **26**
+.. rst-class:: classref-enumeration-constant
 
-- **FUNC_RADIANS** = **27**
+:ref:`Function<enum_VisualShaderNodeScalarFunc_Function>` **FUNC_ATAN** = ``5``
 
-- **FUNC_RECIPROCAL** = **28**
 
-- **FUNC_ROUNDEVEN** = **29**
 
-- **FUNC_TRUNC** = **30**
+.. _class_VisualShaderNodeScalarFunc_constant_FUNC_SINH:
 
-- **FUNC_ONEMINUS** = **31**
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Function<enum_VisualShaderNodeScalarFunc_Function>` **FUNC_SINH** = ``6``
+
+
+
+.. _class_VisualShaderNodeScalarFunc_constant_FUNC_COSH:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Function<enum_VisualShaderNodeScalarFunc_Function>` **FUNC_COSH** = ``7``
+
+
+
+.. _class_VisualShaderNodeScalarFunc_constant_FUNC_TANH:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Function<enum_VisualShaderNodeScalarFunc_Function>` **FUNC_TANH** = ``8``
+
+
+
+.. _class_VisualShaderNodeScalarFunc_constant_FUNC_LOG:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Function<enum_VisualShaderNodeScalarFunc_Function>` **FUNC_LOG** = ``9``
+
+
+
+.. _class_VisualShaderNodeScalarFunc_constant_FUNC_EXP:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Function<enum_VisualShaderNodeScalarFunc_Function>` **FUNC_EXP** = ``10``
+
+
+
+.. _class_VisualShaderNodeScalarFunc_constant_FUNC_SQRT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Function<enum_VisualShaderNodeScalarFunc_Function>` **FUNC_SQRT** = ``11``
+
+
+
+.. _class_VisualShaderNodeScalarFunc_constant_FUNC_ABS:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Function<enum_VisualShaderNodeScalarFunc_Function>` **FUNC_ABS** = ``12``
+
+
+
+.. _class_VisualShaderNodeScalarFunc_constant_FUNC_SIGN:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Function<enum_VisualShaderNodeScalarFunc_Function>` **FUNC_SIGN** = ``13``
+
+
+
+.. _class_VisualShaderNodeScalarFunc_constant_FUNC_FLOOR:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Function<enum_VisualShaderNodeScalarFunc_Function>` **FUNC_FLOOR** = ``14``
+
+
+
+.. _class_VisualShaderNodeScalarFunc_constant_FUNC_ROUND:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Function<enum_VisualShaderNodeScalarFunc_Function>` **FUNC_ROUND** = ``15``
+
+
+
+.. _class_VisualShaderNodeScalarFunc_constant_FUNC_CEIL:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Function<enum_VisualShaderNodeScalarFunc_Function>` **FUNC_CEIL** = ``16``
+
+
+
+.. _class_VisualShaderNodeScalarFunc_constant_FUNC_FRAC:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Function<enum_VisualShaderNodeScalarFunc_Function>` **FUNC_FRAC** = ``17``
+
+
+
+.. _class_VisualShaderNodeScalarFunc_constant_FUNC_SATURATE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Function<enum_VisualShaderNodeScalarFunc_Function>` **FUNC_SATURATE** = ``18``
+
+
+
+.. _class_VisualShaderNodeScalarFunc_constant_FUNC_NEGATE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Function<enum_VisualShaderNodeScalarFunc_Function>` **FUNC_NEGATE** = ``19``
+
+
+
+.. _class_VisualShaderNodeScalarFunc_constant_FUNC_ACOSH:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Function<enum_VisualShaderNodeScalarFunc_Function>` **FUNC_ACOSH** = ``20``
+
+
+
+.. _class_VisualShaderNodeScalarFunc_constant_FUNC_ASINH:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Function<enum_VisualShaderNodeScalarFunc_Function>` **FUNC_ASINH** = ``21``
+
+
+
+.. _class_VisualShaderNodeScalarFunc_constant_FUNC_ATANH:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Function<enum_VisualShaderNodeScalarFunc_Function>` **FUNC_ATANH** = ``22``
+
+
+
+.. _class_VisualShaderNodeScalarFunc_constant_FUNC_DEGREES:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Function<enum_VisualShaderNodeScalarFunc_Function>` **FUNC_DEGREES** = ``23``
+
+
+
+.. _class_VisualShaderNodeScalarFunc_constant_FUNC_EXP2:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Function<enum_VisualShaderNodeScalarFunc_Function>` **FUNC_EXP2** = ``24``
+
+
+
+.. _class_VisualShaderNodeScalarFunc_constant_FUNC_INVERSE_SQRT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Function<enum_VisualShaderNodeScalarFunc_Function>` **FUNC_INVERSE_SQRT** = ``25``
+
+
+
+.. _class_VisualShaderNodeScalarFunc_constant_FUNC_LOG2:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Function<enum_VisualShaderNodeScalarFunc_Function>` **FUNC_LOG2** = ``26``
+
+
+
+.. _class_VisualShaderNodeScalarFunc_constant_FUNC_RADIANS:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Function<enum_VisualShaderNodeScalarFunc_Function>` **FUNC_RADIANS** = ``27``
+
+
+
+.. _class_VisualShaderNodeScalarFunc_constant_FUNC_RECIPROCAL:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Function<enum_VisualShaderNodeScalarFunc_Function>` **FUNC_RECIPROCAL** = ``28``
+
+
+
+.. _class_VisualShaderNodeScalarFunc_constant_FUNC_ROUNDEVEN:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Function<enum_VisualShaderNodeScalarFunc_Function>` **FUNC_ROUNDEVEN** = ``29``
+
+
+
+.. _class_VisualShaderNodeScalarFunc_constant_FUNC_TRUNC:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Function<enum_VisualShaderNodeScalarFunc_Function>` **FUNC_TRUNC** = ``30``
+
+
+
+.. _class_VisualShaderNodeScalarFunc_constant_FUNC_ONEMINUS:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Function<enum_VisualShaderNodeScalarFunc_Function>` **FUNC_ONEMINUS** = ``31``
+
+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_VisualShaderNodeScalarFunc_property_function:
 
-- :ref:`Function<enum_VisualShaderNodeScalarFunc_Function>` **function**
+.. rst-class:: classref-property
 
-+-----------+---------------------+
-| *Default* | ``13``              |
-+-----------+---------------------+
-| *Setter*  | set_function(value) |
-+-----------+---------------------+
-| *Getter*  | get_function()      |
-+-----------+---------------------+
+:ref:`Function<enum_VisualShaderNodeScalarFunc_Function>` **function** = ``13``
+
+.. rst-class:: classref-property-setget
+
+- void **set_function** **(** :ref:`Function<enum_VisualShaderNodeScalarFunc_Function>` value **)**
+- :ref:`Function<enum_VisualShaderNodeScalarFunc_Function>` **get_function** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

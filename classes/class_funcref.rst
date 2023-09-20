@@ -14,83 +14,121 @@ FuncRef
 
 Reference to a function in an object.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 In GDScript, functions are not *first-class objects*. This means it is impossible to store them directly as variables, return them from another function, or pass them as arguments.
 
-However, by creating a ``FuncRef`` using the :ref:`@GDScript.funcref<class_@GDScript_method_funcref>` function, a reference to a function in a given object can be created, passed around and called.
+However, by creating a **FuncRef** using the :ref:`@GDScript.funcref<class_@GDScript_method_funcref>` function, a reference to a function in a given object can be created, passed around and called.
+
+.. rst-class:: classref-reftable-group
 
 Properties
 ----------
 
-+-----------------------------+--------------------------------------------------+--------+
-| :ref:`String<class_String>` | :ref:`function<class_FuncRef_property_function>` | ``""`` |
-+-----------------------------+--------------------------------------------------+--------+
+.. table::
+   :widths: auto
+
+   +-----------------------------+--------------------------------------------------+--------+
+   | :ref:`String<class_String>` | :ref:`function<class_FuncRef_property_function>` | ``""`` |
+   +-----------------------------+--------------------------------------------------+--------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+-------------------------------+---------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>` | :ref:`call_func<class_FuncRef_method_call_func>` **(** ... **)** |vararg|                               |
-+-------------------------------+---------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>` | :ref:`call_funcv<class_FuncRef_method_call_funcv>` **(** :ref:`Array<class_Array>` arg_array **)**      |
-+-------------------------------+---------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`is_valid<class_FuncRef_method_is_valid>` **(** **)** |const|                                      |
-+-------------------------------+---------------------------------------------------------------------------------------------------------+
-| void                          | :ref:`set_instance<class_FuncRef_method_set_instance>` **(** :ref:`Object<class_Object>` instance **)** |
-+-------------------------------+---------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------------+---------------------------------------------------------------------------------------------------------+
+   | :ref:`Variant<class_Variant>` | :ref:`call_func<class_FuncRef_method_call_func>` **(** ... **)** |vararg|                               |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------+
+   | :ref:`Variant<class_Variant>` | :ref:`call_funcv<class_FuncRef_method_call_funcv>` **(** :ref:`Array<class_Array>` arg_array **)**      |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`is_valid<class_FuncRef_method_is_valid>` **(** **)** |const|                                      |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------+
+   | void                          | :ref:`set_instance<class_FuncRef_method_set_instance>` **(** :ref:`Object<class_Object>` instance **)** |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_FuncRef_property_function:
 
-- :ref:`String<class_String>` **function**
+.. rst-class:: classref-property
 
-+-----------+---------------------+
-| *Default* | ``""``              |
-+-----------+---------------------+
-| *Setter*  | set_function(value) |
-+-----------+---------------------+
-| *Getter*  | get_function()      |
-+-----------+---------------------+
+:ref:`String<class_String>` **function** = ``""``
+
+.. rst-class:: classref-property-setget
+
+- void **set_function** **(** :ref:`String<class_String>` value **)**
+- :ref:`String<class_String>` **get_function** **(** **)**
 
 The name of the referenced function.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_FuncRef_method_call_func:
 
-- :ref:`Variant<class_Variant>` **call_func** **(** ... **)** |vararg|
+.. rst-class:: classref-method
+
+:ref:`Variant<class_Variant>` **call_func** **(** ... **)** |vararg|
 
 Calls the referenced function previously set in :ref:`function<class_FuncRef_property_function>` or :ref:`@GDScript.funcref<class_@GDScript_method_funcref>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_FuncRef_method_call_funcv:
 
-- :ref:`Variant<class_Variant>` **call_funcv** **(** :ref:`Array<class_Array>` arg_array **)**
+.. rst-class:: classref-method
+
+:ref:`Variant<class_Variant>` **call_funcv** **(** :ref:`Array<class_Array>` arg_array **)**
 
 Calls the referenced function previously set in :ref:`function<class_FuncRef_property_function>` or :ref:`@GDScript.funcref<class_@GDScript_method_funcref>`. Contrarily to :ref:`call_func<class_FuncRef_method_call_func>`, this method does not support a variable number of arguments but expects all parameters to be passed via a single :ref:`Array<class_Array>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_FuncRef_method_is_valid:
 
-- :ref:`bool<class_bool>` **is_valid** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **is_valid** **(** **)** |const|
 
 Returns whether the object still exists and has the function assigned.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_FuncRef_method_set_instance:
 
-- void **set_instance** **(** :ref:`Object<class_Object>` instance **)**
+.. rst-class:: classref-method
+
+void **set_instance** **(** :ref:`Object<class_Object>` instance **)**
 
 The object containing the referenced function. This object must be of a type actually inheriting from :ref:`Object<class_Object>`, not a built-in type such as :ref:`int<class_int>`, :ref:`Vector2<class_Vector2>` or :ref:`Dictionary<class_Dictionary>`.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

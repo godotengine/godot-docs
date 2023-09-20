@@ -14,6 +14,8 @@ VisualScriptEmitSignal
 
 Emits a specified signal.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -27,30 +29,41 @@ Emits a specified signal when it is executed.
 
 - Sequence
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-----------------------------+-------------------------------------------------------------+--------+
-| :ref:`String<class_String>` | :ref:`signal<class_VisualScriptEmitSignal_property_signal>` | ``""`` |
-+-----------------------------+-------------------------------------------------------------+--------+
+.. table::
+   :widths: auto
+
+   +-----------------------------+-------------------------------------------------------------+--------+
+   | :ref:`String<class_String>` | :ref:`signal<class_VisualScriptEmitSignal_property_signal>` | ``""`` |
+   +-----------------------------+-------------------------------------------------------------+--------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_VisualScriptEmitSignal_property_signal:
 
-- :ref:`String<class_String>` **signal**
+.. rst-class:: classref-property
 
-+-----------+-------------------+
-| *Default* | ``""``            |
-+-----------+-------------------+
-| *Setter*  | set_signal(value) |
-+-----------+-------------------+
-| *Getter*  | get_signal()      |
-+-----------+-------------------+
+:ref:`String<class_String>` **signal** = ``""``
+
+.. rst-class:: classref-property-setget
+
+- void **set_signal** **(** :ref:`String<class_String>` value **)**
+- :ref:`String<class_String>` **get_signal** **(** **)**
 
 The signal to emit.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

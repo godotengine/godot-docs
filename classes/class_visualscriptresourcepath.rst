@@ -12,30 +12,47 @@ VisualScriptResourcePath
 
 **Inherits:** :ref:`VisualScriptNode<class_VisualScriptNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
+.. container:: contribute
 
+	There is currently no description for this class. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-reftable-group
 
 Properties
 ----------
 
-+-----------------------------+-----------------------------------------------------------+--------+
-| :ref:`String<class_String>` | :ref:`path<class_VisualScriptResourcePath_property_path>` | ``""`` |
-+-----------------------------+-----------------------------------------------------------+--------+
+.. table::
+   :widths: auto
+
+   +-----------------------------+-----------------------------------------------------------+--------+
+   | :ref:`String<class_String>` | :ref:`path<class_VisualScriptResourcePath_property_path>` | ``""`` |
+   +-----------------------------+-----------------------------------------------------------+--------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_VisualScriptResourcePath_property_path:
 
-- :ref:`String<class_String>` **path**
+.. rst-class:: classref-property
 
-+-----------+--------------------------+
-| *Default* | ``""``                   |
-+-----------+--------------------------+
-| *Setter*  | set_resource_path(value) |
-+-----------+--------------------------+
-| *Getter*  | get_resource_path()      |
-+-----------+--------------------------+
+:ref:`String<class_String>` **path** = ``""``
+
+.. rst-class:: classref-property-setget
+
+- void **set_resource_path** **(** :ref:`String<class_String>` value **)**
+- :ref:`String<class_String>` **get_resource_path** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

@@ -12,83 +12,113 @@ GLTFCamera
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-
+.. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-**Note:** This class is only compiled in editor builds. Run-time glTF loading and saving is *not* available in exported projects. References to ``GLTFCamera`` within a script will cause an error in an exported project.
+**Note:** This class is only compiled in editor builds. Run-time glTF loading and saving is *not* available in exported projects. References to **GLTFCamera** within a script will cause an error in an exported project.
+
+.. rst-class:: classref-reftable-group
 
 Properties
 ----------
 
-+---------------------------+-----------------------------------------------------------+------------+
-| :ref:`float<class_float>` | :ref:`fov_size<class_GLTFCamera_property_fov_size>`       | ``75.0``   |
-+---------------------------+-----------------------------------------------------------+------------+
-| :ref:`bool<class_bool>`   | :ref:`perspective<class_GLTFCamera_property_perspective>` | ``true``   |
-+---------------------------+-----------------------------------------------------------+------------+
-| :ref:`float<class_float>` | :ref:`zfar<class_GLTFCamera_property_zfar>`               | ``4000.0`` |
-+---------------------------+-----------------------------------------------------------+------------+
-| :ref:`float<class_float>` | :ref:`znear<class_GLTFCamera_property_znear>`             | ``0.05``   |
-+---------------------------+-----------------------------------------------------------+------------+
+.. table::
+   :widths: auto
+
+   +---------------------------+-----------------------------------------------------------+------------+
+   | :ref:`float<class_float>` | :ref:`fov_size<class_GLTFCamera_property_fov_size>`       | ``75.0``   |
+   +---------------------------+-----------------------------------------------------------+------------+
+   | :ref:`bool<class_bool>`   | :ref:`perspective<class_GLTFCamera_property_perspective>` | ``true``   |
+   +---------------------------+-----------------------------------------------------------+------------+
+   | :ref:`float<class_float>` | :ref:`zfar<class_GLTFCamera_property_zfar>`               | ``4000.0`` |
+   +---------------------------+-----------------------------------------------------------+------------+
+   | :ref:`float<class_float>` | :ref:`znear<class_GLTFCamera_property_znear>`             | ``0.05``   |
+   +---------------------------+-----------------------------------------------------------+------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_GLTFCamera_property_fov_size:
 
-- :ref:`float<class_float>` **fov_size**
+.. rst-class:: classref-property
 
-+-----------+---------------------+
-| *Default* | ``75.0``            |
-+-----------+---------------------+
-| *Setter*  | set_fov_size(value) |
-+-----------+---------------------+
-| *Getter*  | get_fov_size()      |
-+-----------+---------------------+
+:ref:`float<class_float>` **fov_size** = ``75.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_fov_size** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_fov_size** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_GLTFCamera_property_perspective:
 
-- :ref:`bool<class_bool>` **perspective**
+.. rst-class:: classref-property
 
-+-----------+------------------------+
-| *Default* | ``true``               |
-+-----------+------------------------+
-| *Setter*  | set_perspective(value) |
-+-----------+------------------------+
-| *Getter*  | get_perspective()      |
-+-----------+------------------------+
+:ref:`bool<class_bool>` **perspective** = ``true``
+
+.. rst-class:: classref-property-setget
+
+- void **set_perspective** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **get_perspective** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_GLTFCamera_property_zfar:
 
-- :ref:`float<class_float>` **zfar**
+.. rst-class:: classref-property
 
-+-----------+-----------------+
-| *Default* | ``4000.0``      |
-+-----------+-----------------+
-| *Setter*  | set_zfar(value) |
-+-----------+-----------------+
-| *Getter*  | get_zfar()      |
-+-----------+-----------------+
+:ref:`float<class_float>` **zfar** = ``4000.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_zfar** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_zfar** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_GLTFCamera_property_znear:
 
-- :ref:`float<class_float>` **znear**
+.. rst-class:: classref-property
 
-+-----------+------------------+
-| *Default* | ``0.05``         |
-+-----------+------------------+
-| *Setter*  | set_znear(value) |
-+-----------+------------------+
-| *Getter*  | get_znear()      |
-+-----------+------------------+
+:ref:`float<class_float>` **znear** = ``0.05``
+
+.. rst-class:: classref-property-setget
+
+- void **set_znear** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_znear** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

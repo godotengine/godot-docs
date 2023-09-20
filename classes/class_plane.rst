@@ -12,255 +12,352 @@ Plane
 
 Plane in hessian form.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 Plane represents a normalized plane equation. Basically, "normal" is the normal of the plane (a,b,c normalized), and "d" is the distance from the origin to the plane (in the direction of "normal"). "Over" or "Above" the plane is considered the side of the plane towards where the normal is pointing.
+
+.. rst-class:: classref-introduction-group
 
 Tutorials
 ---------
 
 - :doc:`../tutorials/math/index`
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-------------------------------+--------------------------------------------+------------------------+
-| :ref:`float<class_float>`     | :ref:`d<class_Plane_property_d>`           | ``0.0``                |
-+-------------------------------+--------------------------------------------+------------------------+
-| :ref:`Vector3<class_Vector3>` | :ref:`normal<class_Plane_property_normal>` | ``Vector3( 0, 0, 0 )`` |
-+-------------------------------+--------------------------------------------+------------------------+
-| :ref:`float<class_float>`     | :ref:`x<class_Plane_property_x>`           | ``0.0``                |
-+-------------------------------+--------------------------------------------+------------------------+
-| :ref:`float<class_float>`     | :ref:`y<class_Plane_property_y>`           | ``0.0``                |
-+-------------------------------+--------------------------------------------+------------------------+
-| :ref:`float<class_float>`     | :ref:`z<class_Plane_property_z>`           | ``0.0``                |
-+-------------------------------+--------------------------------------------+------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------------+--------------------------------------------+------------------------+
+   | :ref:`float<class_float>`     | :ref:`d<class_Plane_property_d>`           | ``0.0``                |
+   +-------------------------------+--------------------------------------------+------------------------+
+   | :ref:`Vector3<class_Vector3>` | :ref:`normal<class_Plane_property_normal>` | ``Vector3( 0, 0, 0 )`` |
+   +-------------------------------+--------------------------------------------+------------------------+
+   | :ref:`float<class_float>`     | :ref:`x<class_Plane_property_x>`           | ``0.0``                |
+   +-------------------------------+--------------------------------------------+------------------------+
+   | :ref:`float<class_float>`     | :ref:`y<class_Plane_property_y>`           | ``0.0``                |
+   +-------------------------------+--------------------------------------------+------------------------+
+   | :ref:`float<class_float>`     | :ref:`z<class_Plane_property_z>`           | ``0.0``                |
+   +-------------------------------+--------------------------------------------+------------------------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Plane<class_Plane>`     | :ref:`Plane<class_Plane_method_Plane>` **(** :ref:`float<class_float>` a, :ref:`float<class_float>` b, :ref:`float<class_float>` c, :ref:`float<class_float>` d **)** |
-+-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Plane<class_Plane>`     | :ref:`Plane<class_Plane_method_Plane>` **(** :ref:`Vector3<class_Vector3>` v1, :ref:`Vector3<class_Vector3>` v2, :ref:`Vector3<class_Vector3>` v3 **)**               |
-+-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Plane<class_Plane>`     | :ref:`Plane<class_Plane_method_Plane>` **(** :ref:`Vector3<class_Vector3>` normal, :ref:`float<class_float>` d **)**                                                  |
-+-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector3<class_Vector3>` | :ref:`center<class_Plane_method_center>` **(** **)**                                                                                                                  |
-+-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`     | :ref:`distance_to<class_Plane_method_distance_to>` **(** :ref:`Vector3<class_Vector3>` point **)**                                                                    |
-+-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector3<class_Vector3>` | :ref:`get_any_point<class_Plane_method_get_any_point>` **(** **)**                                                                                                    |
-+-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`has_point<class_Plane_method_has_point>` **(** :ref:`Vector3<class_Vector3>` point, :ref:`float<class_float>` epsilon=1e-05 **)**                               |
-+-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector3<class_Vector3>` | :ref:`intersect_3<class_Plane_method_intersect_3>` **(** :ref:`Plane<class_Plane>` b, :ref:`Plane<class_Plane>` c **)**                                               |
-+-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector3<class_Vector3>` | :ref:`intersects_ray<class_Plane_method_intersects_ray>` **(** :ref:`Vector3<class_Vector3>` from, :ref:`Vector3<class_Vector3>` dir **)**                            |
-+-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector3<class_Vector3>` | :ref:`intersects_segment<class_Plane_method_intersects_segment>` **(** :ref:`Vector3<class_Vector3>` begin, :ref:`Vector3<class_Vector3>` end **)**                   |
-+-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`is_equal_approx<class_Plane_method_is_equal_approx>` **(** :ref:`Plane<class_Plane>` plane **)**                                                                |
-+-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`is_point_over<class_Plane_method_is_point_over>` **(** :ref:`Vector3<class_Vector3>` point **)**                                                                |
-+-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Plane<class_Plane>`     | :ref:`normalized<class_Plane_method_normalized>` **(** **)**                                                                                                          |
-+-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector3<class_Vector3>` | :ref:`project<class_Plane_method_project>` **(** :ref:`Vector3<class_Vector3>` point **)**                                                                            |
-+-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Plane<class_Plane>`     | :ref:`Plane<class_Plane_method_Plane>` **(** :ref:`float<class_float>` a, :ref:`float<class_float>` b, :ref:`float<class_float>` c, :ref:`float<class_float>` d **)** |
+   +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Plane<class_Plane>`     | :ref:`Plane<class_Plane_method_Plane>` **(** :ref:`Vector3<class_Vector3>` v1, :ref:`Vector3<class_Vector3>` v2, :ref:`Vector3<class_Vector3>` v3 **)**               |
+   +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Plane<class_Plane>`     | :ref:`Plane<class_Plane_method_Plane>` **(** :ref:`Vector3<class_Vector3>` normal, :ref:`float<class_float>` d **)**                                                  |
+   +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector3<class_Vector3>` | :ref:`center<class_Plane_method_center>` **(** **)**                                                                                                                  |
+   +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`     | :ref:`distance_to<class_Plane_method_distance_to>` **(** :ref:`Vector3<class_Vector3>` point **)**                                                                    |
+   +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector3<class_Vector3>` | :ref:`get_any_point<class_Plane_method_get_any_point>` **(** **)**                                                                                                    |
+   +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`has_point<class_Plane_method_has_point>` **(** :ref:`Vector3<class_Vector3>` point, :ref:`float<class_float>` epsilon=1e-05 **)**                               |
+   +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector3<class_Vector3>` | :ref:`intersect_3<class_Plane_method_intersect_3>` **(** :ref:`Plane<class_Plane>` b, :ref:`Plane<class_Plane>` c **)**                                               |
+   +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector3<class_Vector3>` | :ref:`intersects_ray<class_Plane_method_intersects_ray>` **(** :ref:`Vector3<class_Vector3>` from, :ref:`Vector3<class_Vector3>` dir **)**                            |
+   +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector3<class_Vector3>` | :ref:`intersects_segment<class_Plane_method_intersects_segment>` **(** :ref:`Vector3<class_Vector3>` begin, :ref:`Vector3<class_Vector3>` end **)**                   |
+   +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`is_equal_approx<class_Plane_method_is_equal_approx>` **(** :ref:`Plane<class_Plane>` plane **)**                                                                |
+   +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`is_point_over<class_Plane_method_is_point_over>` **(** :ref:`Vector3<class_Vector3>` point **)**                                                                |
+   +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Plane<class_Plane>`     | :ref:`normalized<class_Plane_method_normalized>` **(** **)**                                                                                                          |
+   +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector3<class_Vector3>` | :ref:`project<class_Plane_method_project>` **(** :ref:`Vector3<class_Vector3>` point **)**                                                                            |
+   +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Constants
 ---------
 
 .. _class_Plane_constant_PLANE_YZ:
 
+.. rst-class:: classref-constant
+
+**PLANE_YZ** = ``Plane( 1, 0, 0, 0 )``
+
+A plane that extends in the Y and Z axes (normal vector points +X).
+
 .. _class_Plane_constant_PLANE_XZ:
+
+.. rst-class:: classref-constant
+
+**PLANE_XZ** = ``Plane( 0, 1, 0, 0 )``
+
+A plane that extends in the X and Z axes (normal vector points +Y).
 
 .. _class_Plane_constant_PLANE_XY:
 
-- **PLANE_YZ** = **Plane( 1, 0, 0, 0 )** --- A plane that extends in the Y and Z axes (normal vector points +X).
+.. rst-class:: classref-constant
 
-- **PLANE_XZ** = **Plane( 0, 1, 0, 0 )** --- A plane that extends in the X and Z axes (normal vector points +Y).
+**PLANE_XY** = ``Plane( 0, 0, 1, 0 )``
 
-- **PLANE_XY** = **Plane( 0, 0, 1, 0 )** --- A plane that extends in the X and Y axes (normal vector points +Z).
+A plane that extends in the X and Y axes (normal vector points +Z).
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_Plane_property_d:
 
-- :ref:`float<class_float>` **d**
+.. rst-class:: classref-property
 
-+-----------+---------+
-| *Default* | ``0.0`` |
-+-----------+---------+
+:ref:`float<class_float>` **d** = ``0.0``
 
 The distance from the origin to the plane, in the direction of :ref:`normal<class_Plane_property_normal>`. This value is typically non-negative.
 
 In the scalar equation of the plane ``ax + by + cz = d``, this is ``d``, while the ``(a, b, c)`` coordinates are represented by the :ref:`normal<class_Plane_property_normal>` property.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_Plane_property_normal:
 
-- :ref:`Vector3<class_Vector3>` **normal**
+.. rst-class:: classref-property
 
-+-----------+------------------------+
-| *Default* | ``Vector3( 0, 0, 0 )`` |
-+-----------+------------------------+
+:ref:`Vector3<class_Vector3>` **normal** = ``Vector3( 0, 0, 0 )``
 
 The normal of the plane, which must be normalized.
 
 In the scalar equation of the plane ``ax + by + cz = d``, this is the vector ``(a, b, c)``, where ``d`` is the :ref:`d<class_Plane_property_d>` property.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_Plane_property_x:
 
-- :ref:`float<class_float>` **x**
+.. rst-class:: classref-property
 
-+-----------+---------+
-| *Default* | ``0.0`` |
-+-----------+---------+
+:ref:`float<class_float>` **x** = ``0.0``
 
 The X component of the plane's :ref:`normal<class_Plane_property_normal>` vector.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Plane_property_y:
 
-- :ref:`float<class_float>` **y**
+.. rst-class:: classref-property
 
-+-----------+---------+
-| *Default* | ``0.0`` |
-+-----------+---------+
+:ref:`float<class_float>` **y** = ``0.0``
 
 The Y component of the plane's :ref:`normal<class_Plane_property_normal>` vector.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Plane_property_z:
 
-- :ref:`float<class_float>` **z**
+.. rst-class:: classref-property
 
-+-----------+---------+
-| *Default* | ``0.0`` |
-+-----------+---------+
+:ref:`float<class_float>` **z** = ``0.0``
 
 The Z component of the plane's :ref:`normal<class_Plane_property_normal>` vector.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_Plane_method_Plane:
 
-- :ref:`Plane<class_Plane>` **Plane** **(** :ref:`float<class_float>` a, :ref:`float<class_float>` b, :ref:`float<class_float>` c, :ref:`float<class_float>` d **)**
+.. rst-class:: classref-method
+
+:ref:`Plane<class_Plane>` **Plane** **(** :ref:`float<class_float>` a, :ref:`float<class_float>` b, :ref:`float<class_float>` c, :ref:`float<class_float>` d **)**
 
 Creates a plane from the four parameters. The three components of the resulting plane's :ref:`normal<class_Plane_property_normal>` are ``a``, ``b`` and ``c``, and the plane has a distance of ``d`` from the origin.
 
+.. rst-class:: classref-item-separator
+
 ----
 
-- :ref:`Plane<class_Plane>` **Plane** **(** :ref:`Vector3<class_Vector3>` v1, :ref:`Vector3<class_Vector3>` v2, :ref:`Vector3<class_Vector3>` v3 **)**
+.. rst-class:: classref-method
+
+:ref:`Plane<class_Plane>` **Plane** **(** :ref:`Vector3<class_Vector3>` v1, :ref:`Vector3<class_Vector3>` v2, :ref:`Vector3<class_Vector3>` v3 **)**
 
 Creates a plane from the three points, given in clockwise order.
 
+.. rst-class:: classref-item-separator
+
 ----
 
-- :ref:`Plane<class_Plane>` **Plane** **(** :ref:`Vector3<class_Vector3>` normal, :ref:`float<class_float>` d **)**
+.. rst-class:: classref-method
+
+:ref:`Plane<class_Plane>` **Plane** **(** :ref:`Vector3<class_Vector3>` normal, :ref:`float<class_float>` d **)**
 
 Creates a plane from the normal and the plane's distance to the origin.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Plane_method_center:
 
-- :ref:`Vector3<class_Vector3>` **center** **(** **)**
+.. rst-class:: classref-method
+
+:ref:`Vector3<class_Vector3>` **center** **(** **)**
 
 Returns the center of the plane.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Plane_method_distance_to:
 
-- :ref:`float<class_float>` **distance_to** **(** :ref:`Vector3<class_Vector3>` point **)**
+.. rst-class:: classref-method
+
+:ref:`float<class_float>` **distance_to** **(** :ref:`Vector3<class_Vector3>` point **)**
 
 Returns the shortest distance from the plane to the position ``point``.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Plane_method_get_any_point:
 
-- :ref:`Vector3<class_Vector3>` **get_any_point** **(** **)**
+.. rst-class:: classref-method
+
+:ref:`Vector3<class_Vector3>` **get_any_point** **(** **)**
 
 Returns the center of the plane.
 
 This method is deprecated, please use :ref:`center<class_Plane_method_center>` instead.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_Plane_method_has_point:
 
-- :ref:`bool<class_bool>` **has_point** **(** :ref:`Vector3<class_Vector3>` point, :ref:`float<class_float>` epsilon=1e-05 **)**
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **has_point** **(** :ref:`Vector3<class_Vector3>` point, :ref:`float<class_float>` epsilon=1e-05 **)**
 
 Returns ``true`` if ``point`` is inside the plane. Comparison uses a custom minimum ``epsilon`` threshold.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Plane_method_intersect_3:
 
-- :ref:`Vector3<class_Vector3>` **intersect_3** **(** :ref:`Plane<class_Plane>` b, :ref:`Plane<class_Plane>` c **)**
+.. rst-class:: classref-method
+
+:ref:`Vector3<class_Vector3>` **intersect_3** **(** :ref:`Plane<class_Plane>` b, :ref:`Plane<class_Plane>` c **)**
 
 Returns the intersection point of the three planes ``b``, ``c`` and this plane. If no intersection is found, ``null`` is returned.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Plane_method_intersects_ray:
 
-- :ref:`Vector3<class_Vector3>` **intersects_ray** **(** :ref:`Vector3<class_Vector3>` from, :ref:`Vector3<class_Vector3>` dir **)**
+.. rst-class:: classref-method
+
+:ref:`Vector3<class_Vector3>` **intersects_ray** **(** :ref:`Vector3<class_Vector3>` from, :ref:`Vector3<class_Vector3>` dir **)**
 
 Returns the intersection point of a ray consisting of the position ``from`` and the direction normal ``dir`` with this plane. If no intersection is found, ``null`` is returned.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Plane_method_intersects_segment:
 
-- :ref:`Vector3<class_Vector3>` **intersects_segment** **(** :ref:`Vector3<class_Vector3>` begin, :ref:`Vector3<class_Vector3>` end **)**
+.. rst-class:: classref-method
+
+:ref:`Vector3<class_Vector3>` **intersects_segment** **(** :ref:`Vector3<class_Vector3>` begin, :ref:`Vector3<class_Vector3>` end **)**
 
 Returns the intersection point of a segment from position ``begin`` to position ``end`` with this plane. If no intersection is found, ``null`` is returned.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Plane_method_is_equal_approx:
 
-- :ref:`bool<class_bool>` **is_equal_approx** **(** :ref:`Plane<class_Plane>` plane **)**
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **is_equal_approx** **(** :ref:`Plane<class_Plane>` plane **)**
 
 Returns ``true`` if this plane and ``plane`` are approximately equal, by running :ref:`@GDScript.is_equal_approx<class_@GDScript_method_is_equal_approx>` on each component.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Plane_method_is_point_over:
 
-- :ref:`bool<class_bool>` **is_point_over** **(** :ref:`Vector3<class_Vector3>` point **)**
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **is_point_over** **(** :ref:`Vector3<class_Vector3>` point **)**
 
 Returns ``true`` if ``point`` is located above the plane.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Plane_method_normalized:
 
-- :ref:`Plane<class_Plane>` **normalized** **(** **)**
+.. rst-class:: classref-method
+
+:ref:`Plane<class_Plane>` **normalized** **(** **)**
 
 Returns a copy of the plane, normalized.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Plane_method_project:
 
-- :ref:`Vector3<class_Vector3>` **project** **(** :ref:`Vector3<class_Vector3>` point **)**
+.. rst-class:: classref-method
+
+:ref:`Vector3<class_Vector3>` **project** **(** :ref:`Vector3<class_Vector3>` point **)**
 
 Returns the orthogonal projection of ``point`` into a point in the plane.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

@@ -12,6 +12,8 @@
 
 Global scope constants and variables.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -19,1769 +21,3262 @@ Global scope constants and variables. This is all that resides in the globals, c
 
 Singletons are also documented here, since they can be accessed from anywhere.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+---------------------------------------------------------------+-------------------------------------------------------------------------------------+
-| :ref:`ARVRServer<class_ARVRServer>`                           | :ref:`ARVRServer<class_@GlobalScope_property_ARVRServer>`                           |
-+---------------------------------------------------------------+-------------------------------------------------------------------------------------+
-| :ref:`AudioServer<class_AudioServer>`                         | :ref:`AudioServer<class_@GlobalScope_property_AudioServer>`                         |
-+---------------------------------------------------------------+-------------------------------------------------------------------------------------+
-| :ref:`CameraServer<class_CameraServer>`                       | :ref:`CameraServer<class_@GlobalScope_property_CameraServer>`                       |
-+---------------------------------------------------------------+-------------------------------------------------------------------------------------+
-| :ref:`ClassDB<class_ClassDB>`                                 | :ref:`ClassDB<class_@GlobalScope_property_ClassDB>`                                 |
-+---------------------------------------------------------------+-------------------------------------------------------------------------------------+
-| :ref:`Engine<class_Engine>`                                   | :ref:`Engine<class_@GlobalScope_property_Engine>`                                   |
-+---------------------------------------------------------------+-------------------------------------------------------------------------------------+
-| :ref:`Geometry<class_Geometry>`                               | :ref:`Geometry<class_@GlobalScope_property_Geometry>`                               |
-+---------------------------------------------------------------+-------------------------------------------------------------------------------------+
-| :ref:`IP<class_IP>`                                           | :ref:`IP<class_@GlobalScope_property_IP>`                                           |
-+---------------------------------------------------------------+-------------------------------------------------------------------------------------+
-| :ref:`Input<class_Input>`                                     | :ref:`Input<class_@GlobalScope_property_Input>`                                     |
-+---------------------------------------------------------------+-------------------------------------------------------------------------------------+
-| :ref:`InputMap<class_InputMap>`                               | :ref:`InputMap<class_@GlobalScope_property_InputMap>`                               |
-+---------------------------------------------------------------+-------------------------------------------------------------------------------------+
-| :ref:`JSON<class_JSON>`                                       | :ref:`JSON<class_@GlobalScope_property_JSON>`                                       |
-+---------------------------------------------------------------+-------------------------------------------------------------------------------------+
-| :ref:`JavaClassWrapper<class_JavaClassWrapper>`               | :ref:`JavaClassWrapper<class_@GlobalScope_property_JavaClassWrapper>`               |
-+---------------------------------------------------------------+-------------------------------------------------------------------------------------+
-| :ref:`JavaScript<class_JavaScript>`                           | :ref:`JavaScript<class_@GlobalScope_property_JavaScript>`                           |
-+---------------------------------------------------------------+-------------------------------------------------------------------------------------+
-| :ref:`Marshalls<class_Marshalls>`                             | :ref:`Marshalls<class_@GlobalScope_property_Marshalls>`                             |
-+---------------------------------------------------------------+-------------------------------------------------------------------------------------+
-| :ref:`Navigation2DServer<class_Navigation2DServer>`           | :ref:`Navigation2DServer<class_@GlobalScope_property_Navigation2DServer>`           |
-+---------------------------------------------------------------+-------------------------------------------------------------------------------------+
-| :ref:`NavigationMeshGenerator<class_NavigationMeshGenerator>` | :ref:`NavigationMeshGenerator<class_@GlobalScope_property_NavigationMeshGenerator>` |
-+---------------------------------------------------------------+-------------------------------------------------------------------------------------+
-| :ref:`NavigationServer<class_NavigationServer>`               | :ref:`NavigationServer<class_@GlobalScope_property_NavigationServer>`               |
-+---------------------------------------------------------------+-------------------------------------------------------------------------------------+
-| :ref:`OS<class_OS>`                                           | :ref:`OS<class_@GlobalScope_property_OS>`                                           |
-+---------------------------------------------------------------+-------------------------------------------------------------------------------------+
-| :ref:`Performance<class_Performance>`                         | :ref:`Performance<class_@GlobalScope_property_Performance>`                         |
-+---------------------------------------------------------------+-------------------------------------------------------------------------------------+
-| :ref:`Physics2DServer<class_Physics2DServer>`                 | :ref:`Physics2DServer<class_@GlobalScope_property_Physics2DServer>`                 |
-+---------------------------------------------------------------+-------------------------------------------------------------------------------------+
-| :ref:`PhysicsServer<class_PhysicsServer>`                     | :ref:`PhysicsServer<class_@GlobalScope_property_PhysicsServer>`                     |
-+---------------------------------------------------------------+-------------------------------------------------------------------------------------+
-| :ref:`ProjectSettings<class_ProjectSettings>`                 | :ref:`ProjectSettings<class_@GlobalScope_property_ProjectSettings>`                 |
-+---------------------------------------------------------------+-------------------------------------------------------------------------------------+
-| :ref:`ResourceLoader<class_ResourceLoader>`                   | :ref:`ResourceLoader<class_@GlobalScope_property_ResourceLoader>`                   |
-+---------------------------------------------------------------+-------------------------------------------------------------------------------------+
-| :ref:`ResourceSaver<class_ResourceSaver>`                     | :ref:`ResourceSaver<class_@GlobalScope_property_ResourceSaver>`                     |
-+---------------------------------------------------------------+-------------------------------------------------------------------------------------+
-| :ref:`Time<class_Time>`                                       | :ref:`Time<class_@GlobalScope_property_Time>`                                       |
-+---------------------------------------------------------------+-------------------------------------------------------------------------------------+
-| :ref:`TranslationServer<class_TranslationServer>`             | :ref:`TranslationServer<class_@GlobalScope_property_TranslationServer>`             |
-+---------------------------------------------------------------+-------------------------------------------------------------------------------------+
-| :ref:`VisualScriptEditor<class_VisualScriptEditor>`           | :ref:`VisualScriptEditor<class_@GlobalScope_property_VisualScriptEditor>`           |
-+---------------------------------------------------------------+-------------------------------------------------------------------------------------+
-| :ref:`VisualServer<class_VisualServer>`                       | :ref:`VisualServer<class_@GlobalScope_property_VisualServer>`                       |
-+---------------------------------------------------------------+-------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +---------------------------------------------------------------+-------------------------------------------------------------------------------------+
+   | :ref:`ARVRServer<class_ARVRServer>`                           | :ref:`ARVRServer<class_@GlobalScope_property_ARVRServer>`                           |
+   +---------------------------------------------------------------+-------------------------------------------------------------------------------------+
+   | :ref:`AudioServer<class_AudioServer>`                         | :ref:`AudioServer<class_@GlobalScope_property_AudioServer>`                         |
+   +---------------------------------------------------------------+-------------------------------------------------------------------------------------+
+   | :ref:`CameraServer<class_CameraServer>`                       | :ref:`CameraServer<class_@GlobalScope_property_CameraServer>`                       |
+   +---------------------------------------------------------------+-------------------------------------------------------------------------------------+
+   | :ref:`ClassDB<class_ClassDB>`                                 | :ref:`ClassDB<class_@GlobalScope_property_ClassDB>`                                 |
+   +---------------------------------------------------------------+-------------------------------------------------------------------------------------+
+   | :ref:`Engine<class_Engine>`                                   | :ref:`Engine<class_@GlobalScope_property_Engine>`                                   |
+   +---------------------------------------------------------------+-------------------------------------------------------------------------------------+
+   | :ref:`Geometry<class_Geometry>`                               | :ref:`Geometry<class_@GlobalScope_property_Geometry>`                               |
+   +---------------------------------------------------------------+-------------------------------------------------------------------------------------+
+   | :ref:`IP<class_IP>`                                           | :ref:`IP<class_@GlobalScope_property_IP>`                                           |
+   +---------------------------------------------------------------+-------------------------------------------------------------------------------------+
+   | :ref:`Input<class_Input>`                                     | :ref:`Input<class_@GlobalScope_property_Input>`                                     |
+   +---------------------------------------------------------------+-------------------------------------------------------------------------------------+
+   | :ref:`InputMap<class_InputMap>`                               | :ref:`InputMap<class_@GlobalScope_property_InputMap>`                               |
+   +---------------------------------------------------------------+-------------------------------------------------------------------------------------+
+   | :ref:`JSON<class_JSON>`                                       | :ref:`JSON<class_@GlobalScope_property_JSON>`                                       |
+   +---------------------------------------------------------------+-------------------------------------------------------------------------------------+
+   | :ref:`JavaClassWrapper<class_JavaClassWrapper>`               | :ref:`JavaClassWrapper<class_@GlobalScope_property_JavaClassWrapper>`               |
+   +---------------------------------------------------------------+-------------------------------------------------------------------------------------+
+   | :ref:`JavaScript<class_JavaScript>`                           | :ref:`JavaScript<class_@GlobalScope_property_JavaScript>`                           |
+   +---------------------------------------------------------------+-------------------------------------------------------------------------------------+
+   | :ref:`Marshalls<class_Marshalls>`                             | :ref:`Marshalls<class_@GlobalScope_property_Marshalls>`                             |
+   +---------------------------------------------------------------+-------------------------------------------------------------------------------------+
+   | :ref:`Navigation2DServer<class_Navigation2DServer>`           | :ref:`Navigation2DServer<class_@GlobalScope_property_Navigation2DServer>`           |
+   +---------------------------------------------------------------+-------------------------------------------------------------------------------------+
+   | :ref:`NavigationMeshGenerator<class_NavigationMeshGenerator>` | :ref:`NavigationMeshGenerator<class_@GlobalScope_property_NavigationMeshGenerator>` |
+   +---------------------------------------------------------------+-------------------------------------------------------------------------------------+
+   | :ref:`NavigationServer<class_NavigationServer>`               | :ref:`NavigationServer<class_@GlobalScope_property_NavigationServer>`               |
+   +---------------------------------------------------------------+-------------------------------------------------------------------------------------+
+   | :ref:`OS<class_OS>`                                           | :ref:`OS<class_@GlobalScope_property_OS>`                                           |
+   +---------------------------------------------------------------+-------------------------------------------------------------------------------------+
+   | :ref:`Performance<class_Performance>`                         | :ref:`Performance<class_@GlobalScope_property_Performance>`                         |
+   +---------------------------------------------------------------+-------------------------------------------------------------------------------------+
+   | :ref:`Physics2DServer<class_Physics2DServer>`                 | :ref:`Physics2DServer<class_@GlobalScope_property_Physics2DServer>`                 |
+   +---------------------------------------------------------------+-------------------------------------------------------------------------------------+
+   | :ref:`PhysicsServer<class_PhysicsServer>`                     | :ref:`PhysicsServer<class_@GlobalScope_property_PhysicsServer>`                     |
+   +---------------------------------------------------------------+-------------------------------------------------------------------------------------+
+   | :ref:`ProjectSettings<class_ProjectSettings>`                 | :ref:`ProjectSettings<class_@GlobalScope_property_ProjectSettings>`                 |
+   +---------------------------------------------------------------+-------------------------------------------------------------------------------------+
+   | :ref:`ResourceLoader<class_ResourceLoader>`                   | :ref:`ResourceLoader<class_@GlobalScope_property_ResourceLoader>`                   |
+   +---------------------------------------------------------------+-------------------------------------------------------------------------------------+
+   | :ref:`ResourceSaver<class_ResourceSaver>`                     | :ref:`ResourceSaver<class_@GlobalScope_property_ResourceSaver>`                     |
+   +---------------------------------------------------------------+-------------------------------------------------------------------------------------+
+   | :ref:`Time<class_Time>`                                       | :ref:`Time<class_@GlobalScope_property_Time>`                                       |
+   +---------------------------------------------------------------+-------------------------------------------------------------------------------------+
+   | :ref:`TranslationServer<class_TranslationServer>`             | :ref:`TranslationServer<class_@GlobalScope_property_TranslationServer>`             |
+   +---------------------------------------------------------------+-------------------------------------------------------------------------------------+
+   | :ref:`VisualScriptEditor<class_VisualScriptEditor>`           | :ref:`VisualScriptEditor<class_@GlobalScope_property_VisualScriptEditor>`           |
+   +---------------------------------------------------------------+-------------------------------------------------------------------------------------+
+   | :ref:`VisualServer<class_VisualServer>`                       | :ref:`VisualServer<class_@GlobalScope_property_VisualServer>`                       |
+   +---------------------------------------------------------------+-------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Enumerations
 ------------
 
 .. _enum_@GlobalScope_Margin:
 
-.. _class_@GlobalScope_constant_MARGIN_LEFT:
-
-.. _class_@GlobalScope_constant_MARGIN_TOP:
-
-.. _class_@GlobalScope_constant_MARGIN_RIGHT:
-
-.. _class_@GlobalScope_constant_MARGIN_BOTTOM:
+.. rst-class:: classref-enumeration
 
 enum **Margin**:
 
-- **MARGIN_LEFT** = **0** --- Left margin, usually used for :ref:`Control<class_Control>` or :ref:`StyleBox<class_StyleBox>`-derived classes.
+.. _class_@GlobalScope_constant_MARGIN_LEFT:
 
-- **MARGIN_TOP** = **1** --- Top margin, usually used for :ref:`Control<class_Control>` or :ref:`StyleBox<class_StyleBox>`-derived classes.
+.. rst-class:: classref-enumeration-constant
 
-- **MARGIN_RIGHT** = **2** --- Right margin, usually used for :ref:`Control<class_Control>` or :ref:`StyleBox<class_StyleBox>`-derived classes.
+:ref:`Margin<enum_@GlobalScope_Margin>` **MARGIN_LEFT** = ``0``
 
-- **MARGIN_BOTTOM** = **3** --- Bottom margin, usually used for :ref:`Control<class_Control>` or :ref:`StyleBox<class_StyleBox>`-derived classes.
+Left margin, usually used for :ref:`Control<class_Control>` or :ref:`StyleBox<class_StyleBox>`-derived classes.
+
+.. _class_@GlobalScope_constant_MARGIN_TOP:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Margin<enum_@GlobalScope_Margin>` **MARGIN_TOP** = ``1``
+
+Top margin, usually used for :ref:`Control<class_Control>` or :ref:`StyleBox<class_StyleBox>`-derived classes.
+
+.. _class_@GlobalScope_constant_MARGIN_RIGHT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Margin<enum_@GlobalScope_Margin>` **MARGIN_RIGHT** = ``2``
+
+Right margin, usually used for :ref:`Control<class_Control>` or :ref:`StyleBox<class_StyleBox>`-derived classes.
+
+.. _class_@GlobalScope_constant_MARGIN_BOTTOM:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Margin<enum_@GlobalScope_Margin>` **MARGIN_BOTTOM** = ``3``
+
+Bottom margin, usually used for :ref:`Control<class_Control>` or :ref:`StyleBox<class_StyleBox>`-derived classes.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _enum_@GlobalScope_Corner:
 
-.. _class_@GlobalScope_constant_CORNER_TOP_LEFT:
-
-.. _class_@GlobalScope_constant_CORNER_TOP_RIGHT:
-
-.. _class_@GlobalScope_constant_CORNER_BOTTOM_RIGHT:
-
-.. _class_@GlobalScope_constant_CORNER_BOTTOM_LEFT:
+.. rst-class:: classref-enumeration
 
 enum **Corner**:
 
-- **CORNER_TOP_LEFT** = **0** --- Top-left corner.
+.. _class_@GlobalScope_constant_CORNER_TOP_LEFT:
 
-- **CORNER_TOP_RIGHT** = **1** --- Top-right corner.
+.. rst-class:: classref-enumeration-constant
 
-- **CORNER_BOTTOM_RIGHT** = **2** --- Bottom-right corner.
+:ref:`Corner<enum_@GlobalScope_Corner>` **CORNER_TOP_LEFT** = ``0``
 
-- **CORNER_BOTTOM_LEFT** = **3** --- Bottom-left corner.
+Top-left corner.
+
+.. _class_@GlobalScope_constant_CORNER_TOP_RIGHT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Corner<enum_@GlobalScope_Corner>` **CORNER_TOP_RIGHT** = ``1``
+
+Top-right corner.
+
+.. _class_@GlobalScope_constant_CORNER_BOTTOM_RIGHT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Corner<enum_@GlobalScope_Corner>` **CORNER_BOTTOM_RIGHT** = ``2``
+
+Bottom-right corner.
+
+.. _class_@GlobalScope_constant_CORNER_BOTTOM_LEFT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Corner<enum_@GlobalScope_Corner>` **CORNER_BOTTOM_LEFT** = ``3``
+
+Bottom-left corner.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _enum_@GlobalScope_Orientation:
 
-.. _class_@GlobalScope_constant_VERTICAL:
-
-.. _class_@GlobalScope_constant_HORIZONTAL:
+.. rst-class:: classref-enumeration
 
 enum **Orientation**:
 
-- **VERTICAL** = **1** --- General vertical alignment, usually used for :ref:`Separator<class_Separator>`, :ref:`ScrollBar<class_ScrollBar>`, :ref:`Slider<class_Slider>`, etc.
+.. _class_@GlobalScope_constant_VERTICAL:
 
-- **HORIZONTAL** = **0** --- General horizontal alignment, usually used for :ref:`Separator<class_Separator>`, :ref:`ScrollBar<class_ScrollBar>`, :ref:`Slider<class_Slider>`, etc.
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Orientation<enum_@GlobalScope_Orientation>` **VERTICAL** = ``1``
+
+General vertical alignment, usually used for :ref:`Separator<class_Separator>`, :ref:`ScrollBar<class_ScrollBar>`, :ref:`Slider<class_Slider>`, etc.
+
+.. _class_@GlobalScope_constant_HORIZONTAL:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Orientation<enum_@GlobalScope_Orientation>` **HORIZONTAL** = ``0``
+
+General horizontal alignment, usually used for :ref:`Separator<class_Separator>`, :ref:`ScrollBar<class_ScrollBar>`, :ref:`Slider<class_Slider>`, etc.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _enum_@GlobalScope_HAlign:
 
-.. _class_@GlobalScope_constant_HALIGN_LEFT:
-
-.. _class_@GlobalScope_constant_HALIGN_CENTER:
-
-.. _class_@GlobalScope_constant_HALIGN_RIGHT:
+.. rst-class:: classref-enumeration
 
 enum **HAlign**:
 
-- **HALIGN_LEFT** = **0** --- Horizontal left alignment, usually for text-derived classes.
+.. _class_@GlobalScope_constant_HALIGN_LEFT:
 
-- **HALIGN_CENTER** = **1** --- Horizontal center alignment, usually for text-derived classes.
+.. rst-class:: classref-enumeration-constant
 
-- **HALIGN_RIGHT** = **2** --- Horizontal right alignment, usually for text-derived classes.
+:ref:`HAlign<enum_@GlobalScope_HAlign>` **HALIGN_LEFT** = ``0``
+
+Horizontal left alignment, usually for text-derived classes.
+
+.. _class_@GlobalScope_constant_HALIGN_CENTER:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`HAlign<enum_@GlobalScope_HAlign>` **HALIGN_CENTER** = ``1``
+
+Horizontal center alignment, usually for text-derived classes.
+
+.. _class_@GlobalScope_constant_HALIGN_RIGHT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`HAlign<enum_@GlobalScope_HAlign>` **HALIGN_RIGHT** = ``2``
+
+Horizontal right alignment, usually for text-derived classes.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _enum_@GlobalScope_VAlign:
 
-.. _class_@GlobalScope_constant_VALIGN_TOP:
-
-.. _class_@GlobalScope_constant_VALIGN_CENTER:
-
-.. _class_@GlobalScope_constant_VALIGN_BOTTOM:
+.. rst-class:: classref-enumeration
 
 enum **VAlign**:
 
-- **VALIGN_TOP** = **0** --- Vertical top alignment, usually for text-derived classes.
+.. _class_@GlobalScope_constant_VALIGN_TOP:
 
-- **VALIGN_CENTER** = **1** --- Vertical center alignment, usually for text-derived classes.
+.. rst-class:: classref-enumeration-constant
 
-- **VALIGN_BOTTOM** = **2** --- Vertical bottom alignment, usually for text-derived classes.
+:ref:`VAlign<enum_@GlobalScope_VAlign>` **VALIGN_TOP** = ``0``
+
+Vertical top alignment, usually for text-derived classes.
+
+.. _class_@GlobalScope_constant_VALIGN_CENTER:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`VAlign<enum_@GlobalScope_VAlign>` **VALIGN_CENTER** = ``1``
+
+Vertical center alignment, usually for text-derived classes.
+
+.. _class_@GlobalScope_constant_VALIGN_BOTTOM:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`VAlign<enum_@GlobalScope_VAlign>` **VALIGN_BOTTOM** = ``2``
+
+Vertical bottom alignment, usually for text-derived classes.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _enum_@GlobalScope_KeyList:
 
-.. _class_@GlobalScope_constant_KEY_ESCAPE:
-
-.. _class_@GlobalScope_constant_KEY_TAB:
-
-.. _class_@GlobalScope_constant_KEY_BACKTAB:
-
-.. _class_@GlobalScope_constant_KEY_BACKSPACE:
-
-.. _class_@GlobalScope_constant_KEY_ENTER:
-
-.. _class_@GlobalScope_constant_KEY_KP_ENTER:
-
-.. _class_@GlobalScope_constant_KEY_INSERT:
-
-.. _class_@GlobalScope_constant_KEY_DELETE:
-
-.. _class_@GlobalScope_constant_KEY_PAUSE:
-
-.. _class_@GlobalScope_constant_KEY_PRINT:
-
-.. _class_@GlobalScope_constant_KEY_SYSREQ:
-
-.. _class_@GlobalScope_constant_KEY_CLEAR:
-
-.. _class_@GlobalScope_constant_KEY_HOME:
-
-.. _class_@GlobalScope_constant_KEY_END:
-
-.. _class_@GlobalScope_constant_KEY_LEFT:
-
-.. _class_@GlobalScope_constant_KEY_UP:
-
-.. _class_@GlobalScope_constant_KEY_RIGHT:
-
-.. _class_@GlobalScope_constant_KEY_DOWN:
-
-.. _class_@GlobalScope_constant_KEY_PAGEUP:
-
-.. _class_@GlobalScope_constant_KEY_PAGEDOWN:
-
-.. _class_@GlobalScope_constant_KEY_SHIFT:
-
-.. _class_@GlobalScope_constant_KEY_CONTROL:
-
-.. _class_@GlobalScope_constant_KEY_META:
-
-.. _class_@GlobalScope_constant_KEY_ALT:
-
-.. _class_@GlobalScope_constant_KEY_CAPSLOCK:
-
-.. _class_@GlobalScope_constant_KEY_NUMLOCK:
-
-.. _class_@GlobalScope_constant_KEY_SCROLLLOCK:
-
-.. _class_@GlobalScope_constant_KEY_F1:
-
-.. _class_@GlobalScope_constant_KEY_F2:
-
-.. _class_@GlobalScope_constant_KEY_F3:
-
-.. _class_@GlobalScope_constant_KEY_F4:
-
-.. _class_@GlobalScope_constant_KEY_F5:
-
-.. _class_@GlobalScope_constant_KEY_F6:
-
-.. _class_@GlobalScope_constant_KEY_F7:
-
-.. _class_@GlobalScope_constant_KEY_F8:
-
-.. _class_@GlobalScope_constant_KEY_F9:
-
-.. _class_@GlobalScope_constant_KEY_F10:
-
-.. _class_@GlobalScope_constant_KEY_F11:
-
-.. _class_@GlobalScope_constant_KEY_F12:
-
-.. _class_@GlobalScope_constant_KEY_F13:
-
-.. _class_@GlobalScope_constant_KEY_F14:
-
-.. _class_@GlobalScope_constant_KEY_F15:
-
-.. _class_@GlobalScope_constant_KEY_F16:
-
-.. _class_@GlobalScope_constant_KEY_KP_MULTIPLY:
-
-.. _class_@GlobalScope_constant_KEY_KP_DIVIDE:
-
-.. _class_@GlobalScope_constant_KEY_KP_SUBTRACT:
-
-.. _class_@GlobalScope_constant_KEY_KP_PERIOD:
-
-.. _class_@GlobalScope_constant_KEY_KP_ADD:
-
-.. _class_@GlobalScope_constant_KEY_KP_0:
-
-.. _class_@GlobalScope_constant_KEY_KP_1:
-
-.. _class_@GlobalScope_constant_KEY_KP_2:
-
-.. _class_@GlobalScope_constant_KEY_KP_3:
-
-.. _class_@GlobalScope_constant_KEY_KP_4:
-
-.. _class_@GlobalScope_constant_KEY_KP_5:
-
-.. _class_@GlobalScope_constant_KEY_KP_6:
-
-.. _class_@GlobalScope_constant_KEY_KP_7:
-
-.. _class_@GlobalScope_constant_KEY_KP_8:
-
-.. _class_@GlobalScope_constant_KEY_KP_9:
-
-.. _class_@GlobalScope_constant_KEY_SUPER_L:
-
-.. _class_@GlobalScope_constant_KEY_SUPER_R:
-
-.. _class_@GlobalScope_constant_KEY_MENU:
-
-.. _class_@GlobalScope_constant_KEY_HYPER_L:
-
-.. _class_@GlobalScope_constant_KEY_HYPER_R:
-
-.. _class_@GlobalScope_constant_KEY_HELP:
-
-.. _class_@GlobalScope_constant_KEY_DIRECTION_L:
-
-.. _class_@GlobalScope_constant_KEY_DIRECTION_R:
-
-.. _class_@GlobalScope_constant_KEY_BACK:
-
-.. _class_@GlobalScope_constant_KEY_FORWARD:
-
-.. _class_@GlobalScope_constant_KEY_STOP:
-
-.. _class_@GlobalScope_constant_KEY_REFRESH:
-
-.. _class_@GlobalScope_constant_KEY_VOLUMEDOWN:
-
-.. _class_@GlobalScope_constant_KEY_VOLUMEMUTE:
-
-.. _class_@GlobalScope_constant_KEY_VOLUMEUP:
-
-.. _class_@GlobalScope_constant_KEY_BASSBOOST:
-
-.. _class_@GlobalScope_constant_KEY_BASSUP:
-
-.. _class_@GlobalScope_constant_KEY_BASSDOWN:
-
-.. _class_@GlobalScope_constant_KEY_TREBLEUP:
-
-.. _class_@GlobalScope_constant_KEY_TREBLEDOWN:
-
-.. _class_@GlobalScope_constant_KEY_MEDIAPLAY:
-
-.. _class_@GlobalScope_constant_KEY_MEDIASTOP:
-
-.. _class_@GlobalScope_constant_KEY_MEDIAPREVIOUS:
-
-.. _class_@GlobalScope_constant_KEY_MEDIANEXT:
-
-.. _class_@GlobalScope_constant_KEY_MEDIARECORD:
-
-.. _class_@GlobalScope_constant_KEY_HOMEPAGE:
-
-.. _class_@GlobalScope_constant_KEY_FAVORITES:
-
-.. _class_@GlobalScope_constant_KEY_SEARCH:
-
-.. _class_@GlobalScope_constant_KEY_STANDBY:
-
-.. _class_@GlobalScope_constant_KEY_OPENURL:
-
-.. _class_@GlobalScope_constant_KEY_LAUNCHMAIL:
-
-.. _class_@GlobalScope_constant_KEY_LAUNCHMEDIA:
-
-.. _class_@GlobalScope_constant_KEY_LAUNCH0:
-
-.. _class_@GlobalScope_constant_KEY_LAUNCH1:
-
-.. _class_@GlobalScope_constant_KEY_LAUNCH2:
-
-.. _class_@GlobalScope_constant_KEY_LAUNCH3:
-
-.. _class_@GlobalScope_constant_KEY_LAUNCH4:
-
-.. _class_@GlobalScope_constant_KEY_LAUNCH5:
-
-.. _class_@GlobalScope_constant_KEY_LAUNCH6:
-
-.. _class_@GlobalScope_constant_KEY_LAUNCH7:
-
-.. _class_@GlobalScope_constant_KEY_LAUNCH8:
-
-.. _class_@GlobalScope_constant_KEY_LAUNCH9:
-
-.. _class_@GlobalScope_constant_KEY_LAUNCHA:
-
-.. _class_@GlobalScope_constant_KEY_LAUNCHB:
-
-.. _class_@GlobalScope_constant_KEY_LAUNCHC:
-
-.. _class_@GlobalScope_constant_KEY_LAUNCHD:
-
-.. _class_@GlobalScope_constant_KEY_LAUNCHE:
-
-.. _class_@GlobalScope_constant_KEY_LAUNCHF:
-
-.. _class_@GlobalScope_constant_KEY_UNKNOWN:
-
-.. _class_@GlobalScope_constant_KEY_SPACE:
-
-.. _class_@GlobalScope_constant_KEY_EXCLAM:
-
-.. _class_@GlobalScope_constant_KEY_QUOTEDBL:
-
-.. _class_@GlobalScope_constant_KEY_NUMBERSIGN:
-
-.. _class_@GlobalScope_constant_KEY_DOLLAR:
-
-.. _class_@GlobalScope_constant_KEY_PERCENT:
-
-.. _class_@GlobalScope_constant_KEY_AMPERSAND:
-
-.. _class_@GlobalScope_constant_KEY_APOSTROPHE:
-
-.. _class_@GlobalScope_constant_KEY_PARENLEFT:
-
-.. _class_@GlobalScope_constant_KEY_PARENRIGHT:
-
-.. _class_@GlobalScope_constant_KEY_ASTERISK:
-
-.. _class_@GlobalScope_constant_KEY_PLUS:
-
-.. _class_@GlobalScope_constant_KEY_COMMA:
-
-.. _class_@GlobalScope_constant_KEY_MINUS:
-
-.. _class_@GlobalScope_constant_KEY_PERIOD:
-
-.. _class_@GlobalScope_constant_KEY_SLASH:
-
-.. _class_@GlobalScope_constant_KEY_0:
-
-.. _class_@GlobalScope_constant_KEY_1:
-
-.. _class_@GlobalScope_constant_KEY_2:
-
-.. _class_@GlobalScope_constant_KEY_3:
-
-.. _class_@GlobalScope_constant_KEY_4:
-
-.. _class_@GlobalScope_constant_KEY_5:
-
-.. _class_@GlobalScope_constant_KEY_6:
-
-.. _class_@GlobalScope_constant_KEY_7:
-
-.. _class_@GlobalScope_constant_KEY_8:
-
-.. _class_@GlobalScope_constant_KEY_9:
-
-.. _class_@GlobalScope_constant_KEY_COLON:
-
-.. _class_@GlobalScope_constant_KEY_SEMICOLON:
-
-.. _class_@GlobalScope_constant_KEY_LESS:
-
-.. _class_@GlobalScope_constant_KEY_EQUAL:
-
-.. _class_@GlobalScope_constant_KEY_GREATER:
-
-.. _class_@GlobalScope_constant_KEY_QUESTION:
-
-.. _class_@GlobalScope_constant_KEY_AT:
-
-.. _class_@GlobalScope_constant_KEY_A:
-
-.. _class_@GlobalScope_constant_KEY_B:
-
-.. _class_@GlobalScope_constant_KEY_C:
-
-.. _class_@GlobalScope_constant_KEY_D:
-
-.. _class_@GlobalScope_constant_KEY_E:
-
-.. _class_@GlobalScope_constant_KEY_F:
-
-.. _class_@GlobalScope_constant_KEY_G:
-
-.. _class_@GlobalScope_constant_KEY_H:
-
-.. _class_@GlobalScope_constant_KEY_I:
-
-.. _class_@GlobalScope_constant_KEY_J:
-
-.. _class_@GlobalScope_constant_KEY_K:
-
-.. _class_@GlobalScope_constant_KEY_L:
-
-.. _class_@GlobalScope_constant_KEY_M:
-
-.. _class_@GlobalScope_constant_KEY_N:
-
-.. _class_@GlobalScope_constant_KEY_O:
-
-.. _class_@GlobalScope_constant_KEY_P:
-
-.. _class_@GlobalScope_constant_KEY_Q:
-
-.. _class_@GlobalScope_constant_KEY_R:
-
-.. _class_@GlobalScope_constant_KEY_S:
-
-.. _class_@GlobalScope_constant_KEY_T:
-
-.. _class_@GlobalScope_constant_KEY_U:
-
-.. _class_@GlobalScope_constant_KEY_V:
-
-.. _class_@GlobalScope_constant_KEY_W:
-
-.. _class_@GlobalScope_constant_KEY_X:
-
-.. _class_@GlobalScope_constant_KEY_Y:
-
-.. _class_@GlobalScope_constant_KEY_Z:
-
-.. _class_@GlobalScope_constant_KEY_BRACKETLEFT:
-
-.. _class_@GlobalScope_constant_KEY_BACKSLASH:
-
-.. _class_@GlobalScope_constant_KEY_BRACKETRIGHT:
-
-.. _class_@GlobalScope_constant_KEY_ASCIICIRCUM:
-
-.. _class_@GlobalScope_constant_KEY_UNDERSCORE:
-
-.. _class_@GlobalScope_constant_KEY_QUOTELEFT:
-
-.. _class_@GlobalScope_constant_KEY_BRACELEFT:
-
-.. _class_@GlobalScope_constant_KEY_BAR:
-
-.. _class_@GlobalScope_constant_KEY_BRACERIGHT:
-
-.. _class_@GlobalScope_constant_KEY_ASCIITILDE:
-
-.. _class_@GlobalScope_constant_KEY_NOBREAKSPACE:
-
-.. _class_@GlobalScope_constant_KEY_EXCLAMDOWN:
-
-.. _class_@GlobalScope_constant_KEY_CENT:
-
-.. _class_@GlobalScope_constant_KEY_STERLING:
-
-.. _class_@GlobalScope_constant_KEY_CURRENCY:
-
-.. _class_@GlobalScope_constant_KEY_YEN:
-
-.. _class_@GlobalScope_constant_KEY_BROKENBAR:
-
-.. _class_@GlobalScope_constant_KEY_SECTION:
-
-.. _class_@GlobalScope_constant_KEY_DIAERESIS:
-
-.. _class_@GlobalScope_constant_KEY_COPYRIGHT:
-
-.. _class_@GlobalScope_constant_KEY_ORDFEMININE:
-
-.. _class_@GlobalScope_constant_KEY_GUILLEMOTLEFT:
-
-.. _class_@GlobalScope_constant_KEY_NOTSIGN:
-
-.. _class_@GlobalScope_constant_KEY_HYPHEN:
-
-.. _class_@GlobalScope_constant_KEY_REGISTERED:
-
-.. _class_@GlobalScope_constant_KEY_MACRON:
-
-.. _class_@GlobalScope_constant_KEY_DEGREE:
-
-.. _class_@GlobalScope_constant_KEY_PLUSMINUS:
-
-.. _class_@GlobalScope_constant_KEY_TWOSUPERIOR:
-
-.. _class_@GlobalScope_constant_KEY_THREESUPERIOR:
-
-.. _class_@GlobalScope_constant_KEY_ACUTE:
-
-.. _class_@GlobalScope_constant_KEY_MU:
-
-.. _class_@GlobalScope_constant_KEY_PARAGRAPH:
-
-.. _class_@GlobalScope_constant_KEY_PERIODCENTERED:
-
-.. _class_@GlobalScope_constant_KEY_CEDILLA:
-
-.. _class_@GlobalScope_constant_KEY_ONESUPERIOR:
-
-.. _class_@GlobalScope_constant_KEY_MASCULINE:
-
-.. _class_@GlobalScope_constant_KEY_GUILLEMOTRIGHT:
-
-.. _class_@GlobalScope_constant_KEY_ONEQUARTER:
-
-.. _class_@GlobalScope_constant_KEY_ONEHALF:
-
-.. _class_@GlobalScope_constant_KEY_THREEQUARTERS:
-
-.. _class_@GlobalScope_constant_KEY_QUESTIONDOWN:
-
-.. _class_@GlobalScope_constant_KEY_AGRAVE:
-
-.. _class_@GlobalScope_constant_KEY_AACUTE:
-
-.. _class_@GlobalScope_constant_KEY_ACIRCUMFLEX:
-
-.. _class_@GlobalScope_constant_KEY_ATILDE:
-
-.. _class_@GlobalScope_constant_KEY_ADIAERESIS:
-
-.. _class_@GlobalScope_constant_KEY_ARING:
-
-.. _class_@GlobalScope_constant_KEY_AE:
-
-.. _class_@GlobalScope_constant_KEY_CCEDILLA:
-
-.. _class_@GlobalScope_constant_KEY_EGRAVE:
-
-.. _class_@GlobalScope_constant_KEY_EACUTE:
-
-.. _class_@GlobalScope_constant_KEY_ECIRCUMFLEX:
-
-.. _class_@GlobalScope_constant_KEY_EDIAERESIS:
-
-.. _class_@GlobalScope_constant_KEY_IGRAVE:
-
-.. _class_@GlobalScope_constant_KEY_IACUTE:
-
-.. _class_@GlobalScope_constant_KEY_ICIRCUMFLEX:
-
-.. _class_@GlobalScope_constant_KEY_IDIAERESIS:
-
-.. _class_@GlobalScope_constant_KEY_ETH:
-
-.. _class_@GlobalScope_constant_KEY_NTILDE:
-
-.. _class_@GlobalScope_constant_KEY_OGRAVE:
-
-.. _class_@GlobalScope_constant_KEY_OACUTE:
-
-.. _class_@GlobalScope_constant_KEY_OCIRCUMFLEX:
-
-.. _class_@GlobalScope_constant_KEY_OTILDE:
-
-.. _class_@GlobalScope_constant_KEY_ODIAERESIS:
-
-.. _class_@GlobalScope_constant_KEY_MULTIPLY:
-
-.. _class_@GlobalScope_constant_KEY_OOBLIQUE:
-
-.. _class_@GlobalScope_constant_KEY_UGRAVE:
-
-.. _class_@GlobalScope_constant_KEY_UACUTE:
-
-.. _class_@GlobalScope_constant_KEY_UCIRCUMFLEX:
-
-.. _class_@GlobalScope_constant_KEY_UDIAERESIS:
-
-.. _class_@GlobalScope_constant_KEY_YACUTE:
-
-.. _class_@GlobalScope_constant_KEY_THORN:
-
-.. _class_@GlobalScope_constant_KEY_SSHARP:
-
-.. _class_@GlobalScope_constant_KEY_DIVISION:
-
-.. _class_@GlobalScope_constant_KEY_YDIAERESIS:
+.. rst-class:: classref-enumeration
 
 enum **KeyList**:
 
-- **KEY_ESCAPE** = **16777217** --- Escape key.
+.. _class_@GlobalScope_constant_KEY_ESCAPE:
 
-- **KEY_TAB** = **16777218** --- Tab key.
+.. rst-class:: classref-enumeration-constant
 
-- **KEY_BACKTAB** = **16777219** --- Shift+Tab key.
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_ESCAPE** = ``16777217``
 
-- **KEY_BACKSPACE** = **16777220** --- Backspace key.
+Escape key.
 
-- **KEY_ENTER** = **16777221** --- Return key (on the main keyboard).
+.. _class_@GlobalScope_constant_KEY_TAB:
 
-- **KEY_KP_ENTER** = **16777222** --- Enter key on the numeric keypad.
+.. rst-class:: classref-enumeration-constant
 
-- **KEY_INSERT** = **16777223** --- Insert key.
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_TAB** = ``16777218``
 
-- **KEY_DELETE** = **16777224** --- Delete key.
+Tab key.
 
-- **KEY_PAUSE** = **16777225** --- Pause key.
+.. _class_@GlobalScope_constant_KEY_BACKTAB:
 
-- **KEY_PRINT** = **16777226** --- Print Screen key.
+.. rst-class:: classref-enumeration-constant
 
-- **KEY_SYSREQ** = **16777227** --- System Request key.
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_BACKTAB** = ``16777219``
 
-- **KEY_CLEAR** = **16777228** --- Clear key.
+Shift+Tab key.
 
-- **KEY_HOME** = **16777229** --- Home key.
+.. _class_@GlobalScope_constant_KEY_BACKSPACE:
 
-- **KEY_END** = **16777230** --- End key.
+.. rst-class:: classref-enumeration-constant
 
-- **KEY_LEFT** = **16777231** --- Left arrow key.
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_BACKSPACE** = ``16777220``
 
-- **KEY_UP** = **16777232** --- Up arrow key.
+Backspace key.
 
-- **KEY_RIGHT** = **16777233** --- Right arrow key.
+.. _class_@GlobalScope_constant_KEY_ENTER:
 
-- **KEY_DOWN** = **16777234** --- Down arrow key.
+.. rst-class:: classref-enumeration-constant
 
-- **KEY_PAGEUP** = **16777235** --- Page Up key.
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_ENTER** = ``16777221``
 
-- **KEY_PAGEDOWN** = **16777236** --- Page Down key.
+Return key (on the main keyboard).
 
-- **KEY_SHIFT** = **16777237** --- Shift key.
+.. _class_@GlobalScope_constant_KEY_KP_ENTER:
 
-- **KEY_CONTROL** = **16777238** --- Control key.
+.. rst-class:: classref-enumeration-constant
 
-- **KEY_META** = **16777239** --- Meta key.
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_KP_ENTER** = ``16777222``
 
-- **KEY_ALT** = **16777240** --- Alt key.
+Enter key on the numeric keypad.
 
-- **KEY_CAPSLOCK** = **16777241** --- Caps Lock key.
+.. _class_@GlobalScope_constant_KEY_INSERT:
 
-- **KEY_NUMLOCK** = **16777242** --- Num Lock key.
+.. rst-class:: classref-enumeration-constant
 
-- **KEY_SCROLLLOCK** = **16777243** --- Scroll Lock key.
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_INSERT** = ``16777223``
 
-- **KEY_F1** = **16777244** --- F1 key.
+Insert key.
 
-- **KEY_F2** = **16777245** --- F2 key.
+.. _class_@GlobalScope_constant_KEY_DELETE:
 
-- **KEY_F3** = **16777246** --- F3 key.
+.. rst-class:: classref-enumeration-constant
 
-- **KEY_F4** = **16777247** --- F4 key.
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_DELETE** = ``16777224``
 
-- **KEY_F5** = **16777248** --- F5 key.
+Delete key.
 
-- **KEY_F6** = **16777249** --- F6 key.
+.. _class_@GlobalScope_constant_KEY_PAUSE:
 
-- **KEY_F7** = **16777250** --- F7 key.
+.. rst-class:: classref-enumeration-constant
 
-- **KEY_F8** = **16777251** --- F8 key.
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_PAUSE** = ``16777225``
 
-- **KEY_F9** = **16777252** --- F9 key.
+Pause key.
 
-- **KEY_F10** = **16777253** --- F10 key.
+.. _class_@GlobalScope_constant_KEY_PRINT:
 
-- **KEY_F11** = **16777254** --- F11 key.
+.. rst-class:: classref-enumeration-constant
 
-- **KEY_F12** = **16777255** --- F12 key.
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_PRINT** = ``16777226``
 
-- **KEY_F13** = **16777256** --- F13 key.
+Print Screen key.
 
-- **KEY_F14** = **16777257** --- F14 key.
+.. _class_@GlobalScope_constant_KEY_SYSREQ:
 
-- **KEY_F15** = **16777258** --- F15 key.
+.. rst-class:: classref-enumeration-constant
 
-- **KEY_F16** = **16777259** --- F16 key.
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_SYSREQ** = ``16777227``
 
-- **KEY_KP_MULTIPLY** = **16777345** --- Multiply (\*) key on the numeric keypad.
+System Request key.
 
-- **KEY_KP_DIVIDE** = **16777346** --- Divide (/) key on the numeric keypad.
+.. _class_@GlobalScope_constant_KEY_CLEAR:
 
-- **KEY_KP_SUBTRACT** = **16777347** --- Subtract (-) key on the numeric keypad.
+.. rst-class:: classref-enumeration-constant
 
-- **KEY_KP_PERIOD** = **16777348** --- Period (.) key on the numeric keypad.
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_CLEAR** = ``16777228``
 
-- **KEY_KP_ADD** = **16777349** --- Add (+) key on the numeric keypad.
+Clear key.
 
-- **KEY_KP_0** = **16777350** --- Number 0 on the numeric keypad.
+.. _class_@GlobalScope_constant_KEY_HOME:
 
-- **KEY_KP_1** = **16777351** --- Number 1 on the numeric keypad.
+.. rst-class:: classref-enumeration-constant
 
-- **KEY_KP_2** = **16777352** --- Number 2 on the numeric keypad.
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_HOME** = ``16777229``
 
-- **KEY_KP_3** = **16777353** --- Number 3 on the numeric keypad.
+Home key.
 
-- **KEY_KP_4** = **16777354** --- Number 4 on the numeric keypad.
+.. _class_@GlobalScope_constant_KEY_END:
 
-- **KEY_KP_5** = **16777355** --- Number 5 on the numeric keypad.
+.. rst-class:: classref-enumeration-constant
 
-- **KEY_KP_6** = **16777356** --- Number 6 on the numeric keypad.
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_END** = ``16777230``
 
-- **KEY_KP_7** = **16777357** --- Number 7 on the numeric keypad.
+End key.
 
-- **KEY_KP_8** = **16777358** --- Number 8 on the numeric keypad.
+.. _class_@GlobalScope_constant_KEY_LEFT:
 
-- **KEY_KP_9** = **16777359** --- Number 9 on the numeric keypad.
+.. rst-class:: classref-enumeration-constant
 
-- **KEY_SUPER_L** = **16777260** --- Left Super key (Windows key).
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_LEFT** = ``16777231``
 
-- **KEY_SUPER_R** = **16777261** --- Right Super key (Windows key).
+Left arrow key.
 
-- **KEY_MENU** = **16777262** --- Context menu key.
+.. _class_@GlobalScope_constant_KEY_UP:
 
-- **KEY_HYPER_L** = **16777263** --- Left Hyper key.
+.. rst-class:: classref-enumeration-constant
 
-- **KEY_HYPER_R** = **16777264** --- Right Hyper key.
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_UP** = ``16777232``
 
-- **KEY_HELP** = **16777265** --- Help key.
+Up arrow key.
 
-- **KEY_DIRECTION_L** = **16777266** --- Left Direction key.
+.. _class_@GlobalScope_constant_KEY_RIGHT:
 
-- **KEY_DIRECTION_R** = **16777267** --- Right Direction key.
+.. rst-class:: classref-enumeration-constant
 
-- **KEY_BACK** = **16777280** --- Media back key. Not to be confused with the Back button on an Android device.
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_RIGHT** = ``16777233``
 
-- **KEY_FORWARD** = **16777281** --- Media forward key.
+Right arrow key.
 
-- **KEY_STOP** = **16777282** --- Media stop key.
+.. _class_@GlobalScope_constant_KEY_DOWN:
 
-- **KEY_REFRESH** = **16777283** --- Media refresh key.
+.. rst-class:: classref-enumeration-constant
 
-- **KEY_VOLUMEDOWN** = **16777284** --- Volume down key.
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_DOWN** = ``16777234``
 
-- **KEY_VOLUMEMUTE** = **16777285** --- Mute volume key.
+Down arrow key.
 
-- **KEY_VOLUMEUP** = **16777286** --- Volume up key.
+.. _class_@GlobalScope_constant_KEY_PAGEUP:
 
-- **KEY_BASSBOOST** = **16777287** --- Bass Boost key.
+.. rst-class:: classref-enumeration-constant
 
-- **KEY_BASSUP** = **16777288** --- Bass up key.
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_PAGEUP** = ``16777235``
 
-- **KEY_BASSDOWN** = **16777289** --- Bass down key.
+Page Up key.
 
-- **KEY_TREBLEUP** = **16777290** --- Treble up key.
+.. _class_@GlobalScope_constant_KEY_PAGEDOWN:
 
-- **KEY_TREBLEDOWN** = **16777291** --- Treble down key.
+.. rst-class:: classref-enumeration-constant
 
-- **KEY_MEDIAPLAY** = **16777292** --- Media play key.
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_PAGEDOWN** = ``16777236``
 
-- **KEY_MEDIASTOP** = **16777293** --- Media stop key.
+Page Down key.
 
-- **KEY_MEDIAPREVIOUS** = **16777294** --- Previous song key.
+.. _class_@GlobalScope_constant_KEY_SHIFT:
 
-- **KEY_MEDIANEXT** = **16777295** --- Next song key.
+.. rst-class:: classref-enumeration-constant
 
-- **KEY_MEDIARECORD** = **16777296** --- Media record key.
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_SHIFT** = ``16777237``
 
-- **KEY_HOMEPAGE** = **16777297** --- Home page key.
+Shift key.
 
-- **KEY_FAVORITES** = **16777298** --- Favorites key.
+.. _class_@GlobalScope_constant_KEY_CONTROL:
 
-- **KEY_SEARCH** = **16777299** --- Search key.
+.. rst-class:: classref-enumeration-constant
 
-- **KEY_STANDBY** = **16777300** --- Standby key.
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_CONTROL** = ``16777238``
 
-- **KEY_OPENURL** = **16777301** --- Open URL / Launch Browser key.
+Control key.
 
-- **KEY_LAUNCHMAIL** = **16777302** --- Launch Mail key.
+.. _class_@GlobalScope_constant_KEY_META:
 
-- **KEY_LAUNCHMEDIA** = **16777303** --- Launch Media key.
+.. rst-class:: classref-enumeration-constant
 
-- **KEY_LAUNCH0** = **16777304** --- Launch Shortcut 0 key.
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_META** = ``16777239``
 
-- **KEY_LAUNCH1** = **16777305** --- Launch Shortcut 1 key.
+Meta key.
 
-- **KEY_LAUNCH2** = **16777306** --- Launch Shortcut 2 key.
+.. _class_@GlobalScope_constant_KEY_ALT:
 
-- **KEY_LAUNCH3** = **16777307** --- Launch Shortcut 3 key.
+.. rst-class:: classref-enumeration-constant
 
-- **KEY_LAUNCH4** = **16777308** --- Launch Shortcut 4 key.
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_ALT** = ``16777240``
 
-- **KEY_LAUNCH5** = **16777309** --- Launch Shortcut 5 key.
+Alt key.
 
-- **KEY_LAUNCH6** = **16777310** --- Launch Shortcut 6 key.
+.. _class_@GlobalScope_constant_KEY_CAPSLOCK:
 
-- **KEY_LAUNCH7** = **16777311** --- Launch Shortcut 7 key.
+.. rst-class:: classref-enumeration-constant
 
-- **KEY_LAUNCH8** = **16777312** --- Launch Shortcut 8 key.
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_CAPSLOCK** = ``16777241``
 
-- **KEY_LAUNCH9** = **16777313** --- Launch Shortcut 9 key.
+Caps Lock key.
 
-- **KEY_LAUNCHA** = **16777314** --- Launch Shortcut A key.
+.. _class_@GlobalScope_constant_KEY_NUMLOCK:
 
-- **KEY_LAUNCHB** = **16777315** --- Launch Shortcut B key.
+.. rst-class:: classref-enumeration-constant
 
-- **KEY_LAUNCHC** = **16777316** --- Launch Shortcut C key.
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_NUMLOCK** = ``16777242``
 
-- **KEY_LAUNCHD** = **16777317** --- Launch Shortcut D key.
+Num Lock key.
 
-- **KEY_LAUNCHE** = **16777318** --- Launch Shortcut E key.
+.. _class_@GlobalScope_constant_KEY_SCROLLLOCK:
 
-- **KEY_LAUNCHF** = **16777319** --- Launch Shortcut F key.
+.. rst-class:: classref-enumeration-constant
 
-- **KEY_UNKNOWN** = **33554431** --- Unknown key.
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_SCROLLLOCK** = ``16777243``
 
-- **KEY_SPACE** = **32** --- Space key.
+Scroll Lock key.
 
-- **KEY_EXCLAM** = **33** --- ! key.
+.. _class_@GlobalScope_constant_KEY_F1:
 
-- **KEY_QUOTEDBL** = **34** --- " key.
+.. rst-class:: classref-enumeration-constant
 
-- **KEY_NUMBERSIGN** = **35** --- # key.
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_F1** = ``16777244``
 
-- **KEY_DOLLAR** = **36** --- $ key.
+F1 key.
 
-- **KEY_PERCENT** = **37** --- % key.
+.. _class_@GlobalScope_constant_KEY_F2:
 
-- **KEY_AMPERSAND** = **38** --- & key.
+.. rst-class:: classref-enumeration-constant
 
-- **KEY_APOSTROPHE** = **39** --- ' key.
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_F2** = ``16777245``
 
-- **KEY_PARENLEFT** = **40** --- ( key.
+F2 key.
 
-- **KEY_PARENRIGHT** = **41** --- ) key.
+.. _class_@GlobalScope_constant_KEY_F3:
 
-- **KEY_ASTERISK** = **42** --- \* key.
+.. rst-class:: classref-enumeration-constant
 
-- **KEY_PLUS** = **43** --- + key.
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_F3** = ``16777246``
 
-- **KEY_COMMA** = **44** --- , key.
+F3 key.
 
-- **KEY_MINUS** = **45** --- - key.
+.. _class_@GlobalScope_constant_KEY_F4:
 
-- **KEY_PERIOD** = **46** --- . key.
+.. rst-class:: classref-enumeration-constant
 
-- **KEY_SLASH** = **47** --- / key.
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_F4** = ``16777247``
 
-- **KEY_0** = **48** --- Number 0.
+F4 key.
 
-- **KEY_1** = **49** --- Number 1.
+.. _class_@GlobalScope_constant_KEY_F5:
 
-- **KEY_2** = **50** --- Number 2.
+.. rst-class:: classref-enumeration-constant
 
-- **KEY_3** = **51** --- Number 3.
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_F5** = ``16777248``
 
-- **KEY_4** = **52** --- Number 4.
+F5 key.
 
-- **KEY_5** = **53** --- Number 5.
+.. _class_@GlobalScope_constant_KEY_F6:
 
-- **KEY_6** = **54** --- Number 6.
+.. rst-class:: classref-enumeration-constant
 
-- **KEY_7** = **55** --- Number 7.
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_F6** = ``16777249``
 
-- **KEY_8** = **56** --- Number 8.
+F6 key.
 
-- **KEY_9** = **57** --- Number 9.
+.. _class_@GlobalScope_constant_KEY_F7:
 
-- **KEY_COLON** = **58** --- : key.
+.. rst-class:: classref-enumeration-constant
 
-- **KEY_SEMICOLON** = **59** --- ; key.
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_F7** = ``16777250``
 
-- **KEY_LESS** = **60** --- < key.
+F7 key.
 
-- **KEY_EQUAL** = **61** --- = key.
+.. _class_@GlobalScope_constant_KEY_F8:
 
-- **KEY_GREATER** = **62** --- > key.
+.. rst-class:: classref-enumeration-constant
 
-- **KEY_QUESTION** = **63** --- ? key.
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_F8** = ``16777251``
 
-- **KEY_AT** = **64** --- @ key.
+F8 key.
 
-- **KEY_A** = **65** --- A key.
+.. _class_@GlobalScope_constant_KEY_F9:
 
-- **KEY_B** = **66** --- B key.
+.. rst-class:: classref-enumeration-constant
 
-- **KEY_C** = **67** --- C key.
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_F9** = ``16777252``
 
-- **KEY_D** = **68** --- D key.
+F9 key.
 
-- **KEY_E** = **69** --- E key.
+.. _class_@GlobalScope_constant_KEY_F10:
 
-- **KEY_F** = **70** --- F key.
+.. rst-class:: classref-enumeration-constant
 
-- **KEY_G** = **71** --- G key.
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_F10** = ``16777253``
 
-- **KEY_H** = **72** --- H key.
+F10 key.
 
-- **KEY_I** = **73** --- I key.
+.. _class_@GlobalScope_constant_KEY_F11:
 
-- **KEY_J** = **74** --- J key.
+.. rst-class:: classref-enumeration-constant
 
-- **KEY_K** = **75** --- K key.
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_F11** = ``16777254``
 
-- **KEY_L** = **76** --- L key.
+F11 key.
 
-- **KEY_M** = **77** --- M key.
+.. _class_@GlobalScope_constant_KEY_F12:
 
-- **KEY_N** = **78** --- N key.
+.. rst-class:: classref-enumeration-constant
 
-- **KEY_O** = **79** --- O key.
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_F12** = ``16777255``
 
-- **KEY_P** = **80** --- P key.
+F12 key.
 
-- **KEY_Q** = **81** --- Q key.
+.. _class_@GlobalScope_constant_KEY_F13:
 
-- **KEY_R** = **82** --- R key.
+.. rst-class:: classref-enumeration-constant
 
-- **KEY_S** = **83** --- S key.
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_F13** = ``16777256``
 
-- **KEY_T** = **84** --- T key.
+F13 key.
 
-- **KEY_U** = **85** --- U key.
+.. _class_@GlobalScope_constant_KEY_F14:
 
-- **KEY_V** = **86** --- V key.
+.. rst-class:: classref-enumeration-constant
 
-- **KEY_W** = **87** --- W key.
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_F14** = ``16777257``
 
-- **KEY_X** = **88** --- X key.
+F14 key.
 
-- **KEY_Y** = **89** --- Y key.
+.. _class_@GlobalScope_constant_KEY_F15:
 
-- **KEY_Z** = **90** --- Z key.
+.. rst-class:: classref-enumeration-constant
 
-- **KEY_BRACKETLEFT** = **91** --- [ key.
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_F15** = ``16777258``
 
-- **KEY_BACKSLASH** = **92** --- \\ key.
+F15 key.
 
-- **KEY_BRACKETRIGHT** = **93** --- ] key.
+.. _class_@GlobalScope_constant_KEY_F16:
 
-- **KEY_ASCIICIRCUM** = **94** --- ^ key.
+.. rst-class:: classref-enumeration-constant
 
-- **KEY_UNDERSCORE** = **95** --- \_ key.
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_F16** = ``16777259``
 
-- **KEY_QUOTELEFT** = **96** --- ` key.
+F16 key.
 
-- **KEY_BRACELEFT** = **123** --- { key.
+.. _class_@GlobalScope_constant_KEY_KP_MULTIPLY:
 
-- **KEY_BAR** = **124** --- | key.
+.. rst-class:: classref-enumeration-constant
 
-- **KEY_BRACERIGHT** = **125** --- } key.
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_KP_MULTIPLY** = ``16777345``
 
-- **KEY_ASCIITILDE** = **126** --- ~ key.
+Multiply (\*) key on the numeric keypad.
 
-- **KEY_NOBREAKSPACE** = **160** --- Non-breakable space key.
+.. _class_@GlobalScope_constant_KEY_KP_DIVIDE:
 
-- **KEY_EXCLAMDOWN** = **161** --- ¡ key.
+.. rst-class:: classref-enumeration-constant
 
-- **KEY_CENT** = **162** --- ¢ key.
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_KP_DIVIDE** = ``16777346``
 
-- **KEY_STERLING** = **163** --- £ key.
+Divide (/) key on the numeric keypad.
 
-- **KEY_CURRENCY** = **164** --- ¤ key.
+.. _class_@GlobalScope_constant_KEY_KP_SUBTRACT:
 
-- **KEY_YEN** = **165** --- ¥ key.
+.. rst-class:: classref-enumeration-constant
 
-- **KEY_BROKENBAR** = **166** --- ¦ key.
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_KP_SUBTRACT** = ``16777347``
 
-- **KEY_SECTION** = **167** --- § key.
+Subtract (-) key on the numeric keypad.
 
-- **KEY_DIAERESIS** = **168** --- ¨ key.
+.. _class_@GlobalScope_constant_KEY_KP_PERIOD:
 
-- **KEY_COPYRIGHT** = **169** --- © key.
+.. rst-class:: classref-enumeration-constant
 
-- **KEY_ORDFEMININE** = **170** --- ª key.
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_KP_PERIOD** = ``16777348``
 
-- **KEY_GUILLEMOTLEFT** = **171** --- « key.
+Period (.) key on the numeric keypad.
 
-- **KEY_NOTSIGN** = **172** --- ¬ key.
+.. _class_@GlobalScope_constant_KEY_KP_ADD:
 
-- **KEY_HYPHEN** = **173** --- Soft hyphen key.
+.. rst-class:: classref-enumeration-constant
 
-- **KEY_REGISTERED** = **174** --- ® key.
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_KP_ADD** = ``16777349``
 
-- **KEY_MACRON** = **175** --- ¯ key.
+Add (+) key on the numeric keypad.
 
-- **KEY_DEGREE** = **176** --- ° key.
+.. _class_@GlobalScope_constant_KEY_KP_0:
 
-- **KEY_PLUSMINUS** = **177** --- ± key.
+.. rst-class:: classref-enumeration-constant
 
-- **KEY_TWOSUPERIOR** = **178** --- ² key.
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_KP_0** = ``16777350``
 
-- **KEY_THREESUPERIOR** = **179** --- ³ key.
+Number 0 on the numeric keypad.
 
-- **KEY_ACUTE** = **180** --- ´ key.
+.. _class_@GlobalScope_constant_KEY_KP_1:
 
-- **KEY_MU** = **181** --- µ key.
+.. rst-class:: classref-enumeration-constant
 
-- **KEY_PARAGRAPH** = **182** --- ¶ key.
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_KP_1** = ``16777351``
 
-- **KEY_PERIODCENTERED** = **183** --- · key.
+Number 1 on the numeric keypad.
 
-- **KEY_CEDILLA** = **184** --- ¸ key.
+.. _class_@GlobalScope_constant_KEY_KP_2:
 
-- **KEY_ONESUPERIOR** = **185** --- ¹ key.
+.. rst-class:: classref-enumeration-constant
 
-- **KEY_MASCULINE** = **186** --- º key.
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_KP_2** = ``16777352``
 
-- **KEY_GUILLEMOTRIGHT** = **187** --- » key.
+Number 2 on the numeric keypad.
 
-- **KEY_ONEQUARTER** = **188** --- ¼ key.
+.. _class_@GlobalScope_constant_KEY_KP_3:
 
-- **KEY_ONEHALF** = **189** --- ½ key.
+.. rst-class:: classref-enumeration-constant
 
-- **KEY_THREEQUARTERS** = **190** --- ¾ key.
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_KP_3** = ``16777353``
 
-- **KEY_QUESTIONDOWN** = **191** --- ¿ key.
+Number 3 on the numeric keypad.
 
-- **KEY_AGRAVE** = **192** --- À key.
+.. _class_@GlobalScope_constant_KEY_KP_4:
 
-- **KEY_AACUTE** = **193** --- Á key.
+.. rst-class:: classref-enumeration-constant
 
-- **KEY_ACIRCUMFLEX** = **194** --- Â key.
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_KP_4** = ``16777354``
 
-- **KEY_ATILDE** = **195** --- Ã key.
+Number 4 on the numeric keypad.
 
-- **KEY_ADIAERESIS** = **196** --- Ä key.
+.. _class_@GlobalScope_constant_KEY_KP_5:
 
-- **KEY_ARING** = **197** --- Å key.
+.. rst-class:: classref-enumeration-constant
 
-- **KEY_AE** = **198** --- Æ key.
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_KP_5** = ``16777355``
 
-- **KEY_CCEDILLA** = **199** --- Ç key.
+Number 5 on the numeric keypad.
 
-- **KEY_EGRAVE** = **200** --- È key.
+.. _class_@GlobalScope_constant_KEY_KP_6:
 
-- **KEY_EACUTE** = **201** --- É key.
+.. rst-class:: classref-enumeration-constant
 
-- **KEY_ECIRCUMFLEX** = **202** --- Ê key.
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_KP_6** = ``16777356``
 
-- **KEY_EDIAERESIS** = **203** --- Ë key.
+Number 6 on the numeric keypad.
 
-- **KEY_IGRAVE** = **204** --- Ì key.
+.. _class_@GlobalScope_constant_KEY_KP_7:
 
-- **KEY_IACUTE** = **205** --- Í key.
+.. rst-class:: classref-enumeration-constant
 
-- **KEY_ICIRCUMFLEX** = **206** --- Î key.
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_KP_7** = ``16777357``
 
-- **KEY_IDIAERESIS** = **207** --- Ï key.
+Number 7 on the numeric keypad.
 
-- **KEY_ETH** = **208** --- Ð key.
+.. _class_@GlobalScope_constant_KEY_KP_8:
 
-- **KEY_NTILDE** = **209** --- Ñ key.
+.. rst-class:: classref-enumeration-constant
 
-- **KEY_OGRAVE** = **210** --- Ò key.
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_KP_8** = ``16777358``
 
-- **KEY_OACUTE** = **211** --- Ó key.
+Number 8 on the numeric keypad.
 
-- **KEY_OCIRCUMFLEX** = **212** --- Ô key.
+.. _class_@GlobalScope_constant_KEY_KP_9:
 
-- **KEY_OTILDE** = **213** --- Õ key.
+.. rst-class:: classref-enumeration-constant
 
-- **KEY_ODIAERESIS** = **214** --- Ö key.
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_KP_9** = ``16777359``
 
-- **KEY_MULTIPLY** = **215** --- × key.
+Number 9 on the numeric keypad.
 
-- **KEY_OOBLIQUE** = **216** --- Ø key.
+.. _class_@GlobalScope_constant_KEY_SUPER_L:
 
-- **KEY_UGRAVE** = **217** --- Ù key.
+.. rst-class:: classref-enumeration-constant
 
-- **KEY_UACUTE** = **218** --- Ú key.
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_SUPER_L** = ``16777260``
 
-- **KEY_UCIRCUMFLEX** = **219** --- Û key.
+Left Super key (Windows key).
 
-- **KEY_UDIAERESIS** = **220** --- Ü key.
+.. _class_@GlobalScope_constant_KEY_SUPER_R:
 
-- **KEY_YACUTE** = **221** --- Ý key.
+.. rst-class:: classref-enumeration-constant
 
-- **KEY_THORN** = **222** --- Þ key.
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_SUPER_R** = ``16777261``
 
-- **KEY_SSHARP** = **223** --- ß key.
+Right Super key (Windows key).
 
-- **KEY_DIVISION** = **247** --- ÷ key.
+.. _class_@GlobalScope_constant_KEY_MENU:
 
-- **KEY_YDIAERESIS** = **255** --- ÿ key.
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_MENU** = ``16777262``
+
+Context menu key.
+
+.. _class_@GlobalScope_constant_KEY_HYPER_L:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_HYPER_L** = ``16777263``
+
+Left Hyper key.
+
+.. _class_@GlobalScope_constant_KEY_HYPER_R:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_HYPER_R** = ``16777264``
+
+Right Hyper key.
+
+.. _class_@GlobalScope_constant_KEY_HELP:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_HELP** = ``16777265``
+
+Help key.
+
+.. _class_@GlobalScope_constant_KEY_DIRECTION_L:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_DIRECTION_L** = ``16777266``
+
+Left Direction key.
+
+.. _class_@GlobalScope_constant_KEY_DIRECTION_R:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_DIRECTION_R** = ``16777267``
+
+Right Direction key.
+
+.. _class_@GlobalScope_constant_KEY_BACK:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_BACK** = ``16777280``
+
+Media back key. Not to be confused with the Back button on an Android device.
+
+.. _class_@GlobalScope_constant_KEY_FORWARD:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_FORWARD** = ``16777281``
+
+Media forward key.
+
+.. _class_@GlobalScope_constant_KEY_STOP:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_STOP** = ``16777282``
+
+Media stop key.
+
+.. _class_@GlobalScope_constant_KEY_REFRESH:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_REFRESH** = ``16777283``
+
+Media refresh key.
+
+.. _class_@GlobalScope_constant_KEY_VOLUMEDOWN:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_VOLUMEDOWN** = ``16777284``
+
+Volume down key.
+
+.. _class_@GlobalScope_constant_KEY_VOLUMEMUTE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_VOLUMEMUTE** = ``16777285``
+
+Mute volume key.
+
+.. _class_@GlobalScope_constant_KEY_VOLUMEUP:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_VOLUMEUP** = ``16777286``
+
+Volume up key.
+
+.. _class_@GlobalScope_constant_KEY_BASSBOOST:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_BASSBOOST** = ``16777287``
+
+Bass Boost key.
+
+.. _class_@GlobalScope_constant_KEY_BASSUP:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_BASSUP** = ``16777288``
+
+Bass up key.
+
+.. _class_@GlobalScope_constant_KEY_BASSDOWN:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_BASSDOWN** = ``16777289``
+
+Bass down key.
+
+.. _class_@GlobalScope_constant_KEY_TREBLEUP:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_TREBLEUP** = ``16777290``
+
+Treble up key.
+
+.. _class_@GlobalScope_constant_KEY_TREBLEDOWN:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_TREBLEDOWN** = ``16777291``
+
+Treble down key.
+
+.. _class_@GlobalScope_constant_KEY_MEDIAPLAY:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_MEDIAPLAY** = ``16777292``
+
+Media play key.
+
+.. _class_@GlobalScope_constant_KEY_MEDIASTOP:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_MEDIASTOP** = ``16777293``
+
+Media stop key.
+
+.. _class_@GlobalScope_constant_KEY_MEDIAPREVIOUS:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_MEDIAPREVIOUS** = ``16777294``
+
+Previous song key.
+
+.. _class_@GlobalScope_constant_KEY_MEDIANEXT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_MEDIANEXT** = ``16777295``
+
+Next song key.
+
+.. _class_@GlobalScope_constant_KEY_MEDIARECORD:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_MEDIARECORD** = ``16777296``
+
+Media record key.
+
+.. _class_@GlobalScope_constant_KEY_HOMEPAGE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_HOMEPAGE** = ``16777297``
+
+Home page key.
+
+.. _class_@GlobalScope_constant_KEY_FAVORITES:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_FAVORITES** = ``16777298``
+
+Favorites key.
+
+.. _class_@GlobalScope_constant_KEY_SEARCH:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_SEARCH** = ``16777299``
+
+Search key.
+
+.. _class_@GlobalScope_constant_KEY_STANDBY:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_STANDBY** = ``16777300``
+
+Standby key.
+
+.. _class_@GlobalScope_constant_KEY_OPENURL:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_OPENURL** = ``16777301``
+
+Open URL / Launch Browser key.
+
+.. _class_@GlobalScope_constant_KEY_LAUNCHMAIL:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_LAUNCHMAIL** = ``16777302``
+
+Launch Mail key.
+
+.. _class_@GlobalScope_constant_KEY_LAUNCHMEDIA:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_LAUNCHMEDIA** = ``16777303``
+
+Launch Media key.
+
+.. _class_@GlobalScope_constant_KEY_LAUNCH0:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_LAUNCH0** = ``16777304``
+
+Launch Shortcut 0 key.
+
+.. _class_@GlobalScope_constant_KEY_LAUNCH1:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_LAUNCH1** = ``16777305``
+
+Launch Shortcut 1 key.
+
+.. _class_@GlobalScope_constant_KEY_LAUNCH2:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_LAUNCH2** = ``16777306``
+
+Launch Shortcut 2 key.
+
+.. _class_@GlobalScope_constant_KEY_LAUNCH3:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_LAUNCH3** = ``16777307``
+
+Launch Shortcut 3 key.
+
+.. _class_@GlobalScope_constant_KEY_LAUNCH4:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_LAUNCH4** = ``16777308``
+
+Launch Shortcut 4 key.
+
+.. _class_@GlobalScope_constant_KEY_LAUNCH5:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_LAUNCH5** = ``16777309``
+
+Launch Shortcut 5 key.
+
+.. _class_@GlobalScope_constant_KEY_LAUNCH6:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_LAUNCH6** = ``16777310``
+
+Launch Shortcut 6 key.
+
+.. _class_@GlobalScope_constant_KEY_LAUNCH7:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_LAUNCH7** = ``16777311``
+
+Launch Shortcut 7 key.
+
+.. _class_@GlobalScope_constant_KEY_LAUNCH8:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_LAUNCH8** = ``16777312``
+
+Launch Shortcut 8 key.
+
+.. _class_@GlobalScope_constant_KEY_LAUNCH9:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_LAUNCH9** = ``16777313``
+
+Launch Shortcut 9 key.
+
+.. _class_@GlobalScope_constant_KEY_LAUNCHA:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_LAUNCHA** = ``16777314``
+
+Launch Shortcut A key.
+
+.. _class_@GlobalScope_constant_KEY_LAUNCHB:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_LAUNCHB** = ``16777315``
+
+Launch Shortcut B key.
+
+.. _class_@GlobalScope_constant_KEY_LAUNCHC:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_LAUNCHC** = ``16777316``
+
+Launch Shortcut C key.
+
+.. _class_@GlobalScope_constant_KEY_LAUNCHD:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_LAUNCHD** = ``16777317``
+
+Launch Shortcut D key.
+
+.. _class_@GlobalScope_constant_KEY_LAUNCHE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_LAUNCHE** = ``16777318``
+
+Launch Shortcut E key.
+
+.. _class_@GlobalScope_constant_KEY_LAUNCHF:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_LAUNCHF** = ``16777319``
+
+Launch Shortcut F key.
+
+.. _class_@GlobalScope_constant_KEY_UNKNOWN:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_UNKNOWN** = ``33554431``
+
+Unknown key.
+
+.. _class_@GlobalScope_constant_KEY_SPACE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_SPACE** = ``32``
+
+Space key.
+
+.. _class_@GlobalScope_constant_KEY_EXCLAM:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_EXCLAM** = ``33``
+
+! key.
+
+.. _class_@GlobalScope_constant_KEY_QUOTEDBL:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_QUOTEDBL** = ``34``
+
+" key.
+
+.. _class_@GlobalScope_constant_KEY_NUMBERSIGN:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_NUMBERSIGN** = ``35``
+
+# key.
+
+.. _class_@GlobalScope_constant_KEY_DOLLAR:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_DOLLAR** = ``36``
+
+$ key.
+
+.. _class_@GlobalScope_constant_KEY_PERCENT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_PERCENT** = ``37``
+
+% key.
+
+.. _class_@GlobalScope_constant_KEY_AMPERSAND:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_AMPERSAND** = ``38``
+
+& key.
+
+.. _class_@GlobalScope_constant_KEY_APOSTROPHE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_APOSTROPHE** = ``39``
+
+' key.
+
+.. _class_@GlobalScope_constant_KEY_PARENLEFT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_PARENLEFT** = ``40``
+
+( key.
+
+.. _class_@GlobalScope_constant_KEY_PARENRIGHT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_PARENRIGHT** = ``41``
+
+) key.
+
+.. _class_@GlobalScope_constant_KEY_ASTERISK:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_ASTERISK** = ``42``
+
+\* key.
+
+.. _class_@GlobalScope_constant_KEY_PLUS:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_PLUS** = ``43``
+
++ key.
+
+.. _class_@GlobalScope_constant_KEY_COMMA:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_COMMA** = ``44``
+
+, key.
+
+.. _class_@GlobalScope_constant_KEY_MINUS:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_MINUS** = ``45``
+
+- key.
+
+.. _class_@GlobalScope_constant_KEY_PERIOD:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_PERIOD** = ``46``
+
+. key.
+
+.. _class_@GlobalScope_constant_KEY_SLASH:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_SLASH** = ``47``
+
+/ key.
+
+.. _class_@GlobalScope_constant_KEY_0:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_0** = ``48``
+
+Number 0.
+
+.. _class_@GlobalScope_constant_KEY_1:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_1** = ``49``
+
+Number 1.
+
+.. _class_@GlobalScope_constant_KEY_2:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_2** = ``50``
+
+Number 2.
+
+.. _class_@GlobalScope_constant_KEY_3:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_3** = ``51``
+
+Number 3.
+
+.. _class_@GlobalScope_constant_KEY_4:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_4** = ``52``
+
+Number 4.
+
+.. _class_@GlobalScope_constant_KEY_5:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_5** = ``53``
+
+Number 5.
+
+.. _class_@GlobalScope_constant_KEY_6:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_6** = ``54``
+
+Number 6.
+
+.. _class_@GlobalScope_constant_KEY_7:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_7** = ``55``
+
+Number 7.
+
+.. _class_@GlobalScope_constant_KEY_8:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_8** = ``56``
+
+Number 8.
+
+.. _class_@GlobalScope_constant_KEY_9:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_9** = ``57``
+
+Number 9.
+
+.. _class_@GlobalScope_constant_KEY_COLON:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_COLON** = ``58``
+
+: key.
+
+.. _class_@GlobalScope_constant_KEY_SEMICOLON:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_SEMICOLON** = ``59``
+
+; key.
+
+.. _class_@GlobalScope_constant_KEY_LESS:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_LESS** = ``60``
+
+< key.
+
+.. _class_@GlobalScope_constant_KEY_EQUAL:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_EQUAL** = ``61``
+
+= key.
+
+.. _class_@GlobalScope_constant_KEY_GREATER:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_GREATER** = ``62``
+
+> key.
+
+.. _class_@GlobalScope_constant_KEY_QUESTION:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_QUESTION** = ``63``
+
+? key.
+
+.. _class_@GlobalScope_constant_KEY_AT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_AT** = ``64``
+
+@ key.
+
+.. _class_@GlobalScope_constant_KEY_A:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_A** = ``65``
+
+A key.
+
+.. _class_@GlobalScope_constant_KEY_B:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_B** = ``66``
+
+B key.
+
+.. _class_@GlobalScope_constant_KEY_C:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_C** = ``67``
+
+C key.
+
+.. _class_@GlobalScope_constant_KEY_D:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_D** = ``68``
+
+D key.
+
+.. _class_@GlobalScope_constant_KEY_E:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_E** = ``69``
+
+E key.
+
+.. _class_@GlobalScope_constant_KEY_F:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_F** = ``70``
+
+F key.
+
+.. _class_@GlobalScope_constant_KEY_G:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_G** = ``71``
+
+G key.
+
+.. _class_@GlobalScope_constant_KEY_H:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_H** = ``72``
+
+H key.
+
+.. _class_@GlobalScope_constant_KEY_I:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_I** = ``73``
+
+I key.
+
+.. _class_@GlobalScope_constant_KEY_J:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_J** = ``74``
+
+J key.
+
+.. _class_@GlobalScope_constant_KEY_K:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_K** = ``75``
+
+K key.
+
+.. _class_@GlobalScope_constant_KEY_L:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_L** = ``76``
+
+L key.
+
+.. _class_@GlobalScope_constant_KEY_M:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_M** = ``77``
+
+M key.
+
+.. _class_@GlobalScope_constant_KEY_N:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_N** = ``78``
+
+N key.
+
+.. _class_@GlobalScope_constant_KEY_O:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_O** = ``79``
+
+O key.
+
+.. _class_@GlobalScope_constant_KEY_P:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_P** = ``80``
+
+P key.
+
+.. _class_@GlobalScope_constant_KEY_Q:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_Q** = ``81``
+
+Q key.
+
+.. _class_@GlobalScope_constant_KEY_R:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_R** = ``82``
+
+R key.
+
+.. _class_@GlobalScope_constant_KEY_S:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_S** = ``83``
+
+S key.
+
+.. _class_@GlobalScope_constant_KEY_T:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_T** = ``84``
+
+T key.
+
+.. _class_@GlobalScope_constant_KEY_U:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_U** = ``85``
+
+U key.
+
+.. _class_@GlobalScope_constant_KEY_V:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_V** = ``86``
+
+V key.
+
+.. _class_@GlobalScope_constant_KEY_W:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_W** = ``87``
+
+W key.
+
+.. _class_@GlobalScope_constant_KEY_X:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_X** = ``88``
+
+X key.
+
+.. _class_@GlobalScope_constant_KEY_Y:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_Y** = ``89``
+
+Y key.
+
+.. _class_@GlobalScope_constant_KEY_Z:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_Z** = ``90``
+
+Z key.
+
+.. _class_@GlobalScope_constant_KEY_BRACKETLEFT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_BRACKETLEFT** = ``91``
+
+[ key.
+
+.. _class_@GlobalScope_constant_KEY_BACKSLASH:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_BACKSLASH** = ``92``
+
+\\ key.
+
+.. _class_@GlobalScope_constant_KEY_BRACKETRIGHT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_BRACKETRIGHT** = ``93``
+
+] key.
+
+.. _class_@GlobalScope_constant_KEY_ASCIICIRCUM:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_ASCIICIRCUM** = ``94``
+
+^ key.
+
+.. _class_@GlobalScope_constant_KEY_UNDERSCORE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_UNDERSCORE** = ``95``
+
+\_ key.
+
+.. _class_@GlobalScope_constant_KEY_QUOTELEFT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_QUOTELEFT** = ``96``
+
+` key.
+
+.. _class_@GlobalScope_constant_KEY_BRACELEFT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_BRACELEFT** = ``123``
+
+{ key.
+
+.. _class_@GlobalScope_constant_KEY_BAR:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_BAR** = ``124``
+
+| key.
+
+.. _class_@GlobalScope_constant_KEY_BRACERIGHT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_BRACERIGHT** = ``125``
+
+} key.
+
+.. _class_@GlobalScope_constant_KEY_ASCIITILDE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_ASCIITILDE** = ``126``
+
+~ key.
+
+.. _class_@GlobalScope_constant_KEY_NOBREAKSPACE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_NOBREAKSPACE** = ``160``
+
+Non-breakable space key.
+
+.. _class_@GlobalScope_constant_KEY_EXCLAMDOWN:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_EXCLAMDOWN** = ``161``
+
+¡ key.
+
+.. _class_@GlobalScope_constant_KEY_CENT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_CENT** = ``162``
+
+¢ key.
+
+.. _class_@GlobalScope_constant_KEY_STERLING:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_STERLING** = ``163``
+
+£ key.
+
+.. _class_@GlobalScope_constant_KEY_CURRENCY:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_CURRENCY** = ``164``
+
+¤ key.
+
+.. _class_@GlobalScope_constant_KEY_YEN:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_YEN** = ``165``
+
+¥ key.
+
+.. _class_@GlobalScope_constant_KEY_BROKENBAR:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_BROKENBAR** = ``166``
+
+¦ key.
+
+.. _class_@GlobalScope_constant_KEY_SECTION:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_SECTION** = ``167``
+
+§ key.
+
+.. _class_@GlobalScope_constant_KEY_DIAERESIS:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_DIAERESIS** = ``168``
+
+¨ key.
+
+.. _class_@GlobalScope_constant_KEY_COPYRIGHT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_COPYRIGHT** = ``169``
+
+© key.
+
+.. _class_@GlobalScope_constant_KEY_ORDFEMININE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_ORDFEMININE** = ``170``
+
+ª key.
+
+.. _class_@GlobalScope_constant_KEY_GUILLEMOTLEFT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_GUILLEMOTLEFT** = ``171``
+
+« key.
+
+.. _class_@GlobalScope_constant_KEY_NOTSIGN:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_NOTSIGN** = ``172``
+
+¬ key.
+
+.. _class_@GlobalScope_constant_KEY_HYPHEN:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_HYPHEN** = ``173``
+
+Soft hyphen key.
+
+.. _class_@GlobalScope_constant_KEY_REGISTERED:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_REGISTERED** = ``174``
+
+® key.
+
+.. _class_@GlobalScope_constant_KEY_MACRON:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_MACRON** = ``175``
+
+¯ key.
+
+.. _class_@GlobalScope_constant_KEY_DEGREE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_DEGREE** = ``176``
+
+° key.
+
+.. _class_@GlobalScope_constant_KEY_PLUSMINUS:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_PLUSMINUS** = ``177``
+
+± key.
+
+.. _class_@GlobalScope_constant_KEY_TWOSUPERIOR:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_TWOSUPERIOR** = ``178``
+
+² key.
+
+.. _class_@GlobalScope_constant_KEY_THREESUPERIOR:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_THREESUPERIOR** = ``179``
+
+³ key.
+
+.. _class_@GlobalScope_constant_KEY_ACUTE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_ACUTE** = ``180``
+
+´ key.
+
+.. _class_@GlobalScope_constant_KEY_MU:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_MU** = ``181``
+
+µ key.
+
+.. _class_@GlobalScope_constant_KEY_PARAGRAPH:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_PARAGRAPH** = ``182``
+
+¶ key.
+
+.. _class_@GlobalScope_constant_KEY_PERIODCENTERED:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_PERIODCENTERED** = ``183``
+
+· key.
+
+.. _class_@GlobalScope_constant_KEY_CEDILLA:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_CEDILLA** = ``184``
+
+¸ key.
+
+.. _class_@GlobalScope_constant_KEY_ONESUPERIOR:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_ONESUPERIOR** = ``185``
+
+¹ key.
+
+.. _class_@GlobalScope_constant_KEY_MASCULINE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_MASCULINE** = ``186``
+
+º key.
+
+.. _class_@GlobalScope_constant_KEY_GUILLEMOTRIGHT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_GUILLEMOTRIGHT** = ``187``
+
+» key.
+
+.. _class_@GlobalScope_constant_KEY_ONEQUARTER:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_ONEQUARTER** = ``188``
+
+¼ key.
+
+.. _class_@GlobalScope_constant_KEY_ONEHALF:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_ONEHALF** = ``189``
+
+½ key.
+
+.. _class_@GlobalScope_constant_KEY_THREEQUARTERS:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_THREEQUARTERS** = ``190``
+
+¾ key.
+
+.. _class_@GlobalScope_constant_KEY_QUESTIONDOWN:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_QUESTIONDOWN** = ``191``
+
+¿ key.
+
+.. _class_@GlobalScope_constant_KEY_AGRAVE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_AGRAVE** = ``192``
+
+À key.
+
+.. _class_@GlobalScope_constant_KEY_AACUTE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_AACUTE** = ``193``
+
+Á key.
+
+.. _class_@GlobalScope_constant_KEY_ACIRCUMFLEX:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_ACIRCUMFLEX** = ``194``
+
+Â key.
+
+.. _class_@GlobalScope_constant_KEY_ATILDE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_ATILDE** = ``195``
+
+Ã key.
+
+.. _class_@GlobalScope_constant_KEY_ADIAERESIS:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_ADIAERESIS** = ``196``
+
+Ä key.
+
+.. _class_@GlobalScope_constant_KEY_ARING:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_ARING** = ``197``
+
+Å key.
+
+.. _class_@GlobalScope_constant_KEY_AE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_AE** = ``198``
+
+Æ key.
+
+.. _class_@GlobalScope_constant_KEY_CCEDILLA:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_CCEDILLA** = ``199``
+
+Ç key.
+
+.. _class_@GlobalScope_constant_KEY_EGRAVE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_EGRAVE** = ``200``
+
+È key.
+
+.. _class_@GlobalScope_constant_KEY_EACUTE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_EACUTE** = ``201``
+
+É key.
+
+.. _class_@GlobalScope_constant_KEY_ECIRCUMFLEX:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_ECIRCUMFLEX** = ``202``
+
+Ê key.
+
+.. _class_@GlobalScope_constant_KEY_EDIAERESIS:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_EDIAERESIS** = ``203``
+
+Ë key.
+
+.. _class_@GlobalScope_constant_KEY_IGRAVE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_IGRAVE** = ``204``
+
+Ì key.
+
+.. _class_@GlobalScope_constant_KEY_IACUTE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_IACUTE** = ``205``
+
+Í key.
+
+.. _class_@GlobalScope_constant_KEY_ICIRCUMFLEX:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_ICIRCUMFLEX** = ``206``
+
+Î key.
+
+.. _class_@GlobalScope_constant_KEY_IDIAERESIS:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_IDIAERESIS** = ``207``
+
+Ï key.
+
+.. _class_@GlobalScope_constant_KEY_ETH:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_ETH** = ``208``
+
+Ð key.
+
+.. _class_@GlobalScope_constant_KEY_NTILDE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_NTILDE** = ``209``
+
+Ñ key.
+
+.. _class_@GlobalScope_constant_KEY_OGRAVE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_OGRAVE** = ``210``
+
+Ò key.
+
+.. _class_@GlobalScope_constant_KEY_OACUTE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_OACUTE** = ``211``
+
+Ó key.
+
+.. _class_@GlobalScope_constant_KEY_OCIRCUMFLEX:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_OCIRCUMFLEX** = ``212``
+
+Ô key.
+
+.. _class_@GlobalScope_constant_KEY_OTILDE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_OTILDE** = ``213``
+
+Õ key.
+
+.. _class_@GlobalScope_constant_KEY_ODIAERESIS:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_ODIAERESIS** = ``214``
+
+Ö key.
+
+.. _class_@GlobalScope_constant_KEY_MULTIPLY:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_MULTIPLY** = ``215``
+
+× key.
+
+.. _class_@GlobalScope_constant_KEY_OOBLIQUE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_OOBLIQUE** = ``216``
+
+Ø key.
+
+.. _class_@GlobalScope_constant_KEY_UGRAVE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_UGRAVE** = ``217``
+
+Ù key.
+
+.. _class_@GlobalScope_constant_KEY_UACUTE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_UACUTE** = ``218``
+
+Ú key.
+
+.. _class_@GlobalScope_constant_KEY_UCIRCUMFLEX:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_UCIRCUMFLEX** = ``219``
+
+Û key.
+
+.. _class_@GlobalScope_constant_KEY_UDIAERESIS:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_UDIAERESIS** = ``220``
+
+Ü key.
+
+.. _class_@GlobalScope_constant_KEY_YACUTE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_YACUTE** = ``221``
+
+Ý key.
+
+.. _class_@GlobalScope_constant_KEY_THORN:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_THORN** = ``222``
+
+Þ key.
+
+.. _class_@GlobalScope_constant_KEY_SSHARP:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_SSHARP** = ``223``
+
+ß key.
+
+.. _class_@GlobalScope_constant_KEY_DIVISION:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_DIVISION** = ``247``
+
+÷ key.
+
+.. _class_@GlobalScope_constant_KEY_YDIAERESIS:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyList<enum_@GlobalScope_KeyList>` **KEY_YDIAERESIS** = ``255``
+
+ÿ key.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _enum_@GlobalScope_KeyModifierMask:
 
-.. _class_@GlobalScope_constant_KEY_CODE_MASK:
-
-.. _class_@GlobalScope_constant_KEY_MODIFIER_MASK:
-
-.. _class_@GlobalScope_constant_KEY_MASK_SHIFT:
-
-.. _class_@GlobalScope_constant_KEY_MASK_ALT:
-
-.. _class_@GlobalScope_constant_KEY_MASK_META:
-
-.. _class_@GlobalScope_constant_KEY_MASK_CTRL:
-
-.. _class_@GlobalScope_constant_KEY_MASK_CMD:
-
-.. _class_@GlobalScope_constant_KEY_MASK_KPAD:
-
-.. _class_@GlobalScope_constant_KEY_MASK_GROUP_SWITCH:
+.. rst-class:: classref-enumeration
 
 enum **KeyModifierMask**:
 
-- **KEY_CODE_MASK** = **33554431** --- Key Code mask.
+.. _class_@GlobalScope_constant_KEY_CODE_MASK:
 
-- **KEY_MODIFIER_MASK** = **-16777216** --- Modifier key mask.
+.. rst-class:: classref-enumeration-constant
 
-- **KEY_MASK_SHIFT** = **33554432** --- Shift key mask.
+:ref:`KeyModifierMask<enum_@GlobalScope_KeyModifierMask>` **KEY_CODE_MASK** = ``33554431``
 
-- **KEY_MASK_ALT** = **67108864** --- Alt key mask.
+Key Code mask.
 
-- **KEY_MASK_META** = **134217728** --- Meta key mask.
+.. _class_@GlobalScope_constant_KEY_MODIFIER_MASK:
 
-- **KEY_MASK_CTRL** = **268435456** --- Ctrl key mask.
+.. rst-class:: classref-enumeration-constant
 
-- **KEY_MASK_CMD** = **platform-dependent** --- Command key mask. On macOS, this is equivalent to :ref:`KEY_MASK_META<class_@GlobalScope_constant_KEY_MASK_META>`. On other platforms, this is equivalent to :ref:`KEY_MASK_CTRL<class_@GlobalScope_constant_KEY_MASK_CTRL>`. This mask should be preferred to :ref:`KEY_MASK_META<class_@GlobalScope_constant_KEY_MASK_META>` or :ref:`KEY_MASK_CTRL<class_@GlobalScope_constant_KEY_MASK_CTRL>` for system shortcuts as it handles all platforms correctly.
+:ref:`KeyModifierMask<enum_@GlobalScope_KeyModifierMask>` **KEY_MODIFIER_MASK** = ``-16777216``
 
-- **KEY_MASK_KPAD** = **536870912** --- Keypad key mask.
+Modifier key mask.
 
-- **KEY_MASK_GROUP_SWITCH** = **1073741824** --- Group Switch key mask.
+.. _class_@GlobalScope_constant_KEY_MASK_SHIFT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyModifierMask<enum_@GlobalScope_KeyModifierMask>` **KEY_MASK_SHIFT** = ``33554432``
+
+Shift key mask.
+
+.. _class_@GlobalScope_constant_KEY_MASK_ALT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyModifierMask<enum_@GlobalScope_KeyModifierMask>` **KEY_MASK_ALT** = ``67108864``
+
+Alt key mask.
+
+.. _class_@GlobalScope_constant_KEY_MASK_META:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyModifierMask<enum_@GlobalScope_KeyModifierMask>` **KEY_MASK_META** = ``134217728``
+
+Meta key mask.
+
+.. _class_@GlobalScope_constant_KEY_MASK_CTRL:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyModifierMask<enum_@GlobalScope_KeyModifierMask>` **KEY_MASK_CTRL** = ``268435456``
+
+Ctrl key mask.
+
+.. _class_@GlobalScope_constant_KEY_MASK_CMD:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyModifierMask<enum_@GlobalScope_KeyModifierMask>` **KEY_MASK_CMD** = ``platform-dependent``
+
+Command key mask. On macOS, this is equivalent to :ref:`KEY_MASK_META<class_@GlobalScope_constant_KEY_MASK_META>`. On other platforms, this is equivalent to :ref:`KEY_MASK_CTRL<class_@GlobalScope_constant_KEY_MASK_CTRL>`. This mask should be preferred to :ref:`KEY_MASK_META<class_@GlobalScope_constant_KEY_MASK_META>` or :ref:`KEY_MASK_CTRL<class_@GlobalScope_constant_KEY_MASK_CTRL>` for system shortcuts as it handles all platforms correctly.
+
+.. _class_@GlobalScope_constant_KEY_MASK_KPAD:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyModifierMask<enum_@GlobalScope_KeyModifierMask>` **KEY_MASK_KPAD** = ``536870912``
+
+Keypad key mask.
+
+.. _class_@GlobalScope_constant_KEY_MASK_GROUP_SWITCH:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeyModifierMask<enum_@GlobalScope_KeyModifierMask>` **KEY_MASK_GROUP_SWITCH** = ``1073741824``
+
+Group Switch key mask.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _enum_@GlobalScope_ButtonList:
 
-.. _class_@GlobalScope_constant_BUTTON_LEFT:
-
-.. _class_@GlobalScope_constant_BUTTON_RIGHT:
-
-.. _class_@GlobalScope_constant_BUTTON_MIDDLE:
-
-.. _class_@GlobalScope_constant_BUTTON_XBUTTON1:
-
-.. _class_@GlobalScope_constant_BUTTON_XBUTTON2:
-
-.. _class_@GlobalScope_constant_BUTTON_WHEEL_UP:
-
-.. _class_@GlobalScope_constant_BUTTON_WHEEL_DOWN:
-
-.. _class_@GlobalScope_constant_BUTTON_WHEEL_LEFT:
-
-.. _class_@GlobalScope_constant_BUTTON_WHEEL_RIGHT:
-
-.. _class_@GlobalScope_constant_BUTTON_MASK_LEFT:
-
-.. _class_@GlobalScope_constant_BUTTON_MASK_RIGHT:
-
-.. _class_@GlobalScope_constant_BUTTON_MASK_MIDDLE:
-
-.. _class_@GlobalScope_constant_BUTTON_MASK_XBUTTON1:
-
-.. _class_@GlobalScope_constant_BUTTON_MASK_XBUTTON2:
+.. rst-class:: classref-enumeration
 
 enum **ButtonList**:
 
-- **BUTTON_LEFT** = **1** --- Left mouse button.
+.. _class_@GlobalScope_constant_BUTTON_LEFT:
 
-- **BUTTON_RIGHT** = **2** --- Right mouse button.
+.. rst-class:: classref-enumeration-constant
 
-- **BUTTON_MIDDLE** = **3** --- Middle mouse button.
+:ref:`ButtonList<enum_@GlobalScope_ButtonList>` **BUTTON_LEFT** = ``1``
 
-- **BUTTON_XBUTTON1** = **8** --- Extra mouse button 1 (only present on some mice).
+Left mouse button.
 
-- **BUTTON_XBUTTON2** = **9** --- Extra mouse button 2 (only present on some mice).
+.. _class_@GlobalScope_constant_BUTTON_RIGHT:
 
-- **BUTTON_WHEEL_UP** = **4** --- Mouse wheel up.
+.. rst-class:: classref-enumeration-constant
 
-- **BUTTON_WHEEL_DOWN** = **5** --- Mouse wheel down.
+:ref:`ButtonList<enum_@GlobalScope_ButtonList>` **BUTTON_RIGHT** = ``2``
 
-- **BUTTON_WHEEL_LEFT** = **6** --- Mouse wheel left button (only present on some mice).
+Right mouse button.
 
-- **BUTTON_WHEEL_RIGHT** = **7** --- Mouse wheel right button (only present on some mice).
+.. _class_@GlobalScope_constant_BUTTON_MIDDLE:
 
-- **BUTTON_MASK_LEFT** = **1** --- Left mouse button mask.
+.. rst-class:: classref-enumeration-constant
 
-- **BUTTON_MASK_RIGHT** = **2** --- Right mouse button mask.
+:ref:`ButtonList<enum_@GlobalScope_ButtonList>` **BUTTON_MIDDLE** = ``3``
 
-- **BUTTON_MASK_MIDDLE** = **4** --- Middle mouse button mask.
+Middle mouse button.
 
-- **BUTTON_MASK_XBUTTON1** = **128** --- Extra mouse button 1 mask.
+.. _class_@GlobalScope_constant_BUTTON_XBUTTON1:
 
-- **BUTTON_MASK_XBUTTON2** = **256** --- Extra mouse button 2 mask.
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ButtonList<enum_@GlobalScope_ButtonList>` **BUTTON_XBUTTON1** = ``8``
+
+Extra mouse button 1 (only present on some mice).
+
+.. _class_@GlobalScope_constant_BUTTON_XBUTTON2:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ButtonList<enum_@GlobalScope_ButtonList>` **BUTTON_XBUTTON2** = ``9``
+
+Extra mouse button 2 (only present on some mice).
+
+.. _class_@GlobalScope_constant_BUTTON_WHEEL_UP:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ButtonList<enum_@GlobalScope_ButtonList>` **BUTTON_WHEEL_UP** = ``4``
+
+Mouse wheel up.
+
+.. _class_@GlobalScope_constant_BUTTON_WHEEL_DOWN:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ButtonList<enum_@GlobalScope_ButtonList>` **BUTTON_WHEEL_DOWN** = ``5``
+
+Mouse wheel down.
+
+.. _class_@GlobalScope_constant_BUTTON_WHEEL_LEFT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ButtonList<enum_@GlobalScope_ButtonList>` **BUTTON_WHEEL_LEFT** = ``6``
+
+Mouse wheel left button (only present on some mice).
+
+.. _class_@GlobalScope_constant_BUTTON_WHEEL_RIGHT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ButtonList<enum_@GlobalScope_ButtonList>` **BUTTON_WHEEL_RIGHT** = ``7``
+
+Mouse wheel right button (only present on some mice).
+
+.. _class_@GlobalScope_constant_BUTTON_MASK_LEFT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ButtonList<enum_@GlobalScope_ButtonList>` **BUTTON_MASK_LEFT** = ``1``
+
+Left mouse button mask.
+
+.. _class_@GlobalScope_constant_BUTTON_MASK_RIGHT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ButtonList<enum_@GlobalScope_ButtonList>` **BUTTON_MASK_RIGHT** = ``2``
+
+Right mouse button mask.
+
+.. _class_@GlobalScope_constant_BUTTON_MASK_MIDDLE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ButtonList<enum_@GlobalScope_ButtonList>` **BUTTON_MASK_MIDDLE** = ``4``
+
+Middle mouse button mask.
+
+.. _class_@GlobalScope_constant_BUTTON_MASK_XBUTTON1:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ButtonList<enum_@GlobalScope_ButtonList>` **BUTTON_MASK_XBUTTON1** = ``128``
+
+Extra mouse button 1 mask.
+
+.. _class_@GlobalScope_constant_BUTTON_MASK_XBUTTON2:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ButtonList<enum_@GlobalScope_ButtonList>` **BUTTON_MASK_XBUTTON2** = ``256``
+
+Extra mouse button 2 mask.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _enum_@GlobalScope_JoystickList:
 
-.. _class_@GlobalScope_constant_JOY_INVALID_OPTION:
-
-.. _class_@GlobalScope_constant_JOY_BUTTON_0:
-
-.. _class_@GlobalScope_constant_JOY_BUTTON_1:
-
-.. _class_@GlobalScope_constant_JOY_BUTTON_2:
-
-.. _class_@GlobalScope_constant_JOY_BUTTON_3:
-
-.. _class_@GlobalScope_constant_JOY_BUTTON_4:
-
-.. _class_@GlobalScope_constant_JOY_BUTTON_5:
-
-.. _class_@GlobalScope_constant_JOY_BUTTON_6:
-
-.. _class_@GlobalScope_constant_JOY_BUTTON_7:
-
-.. _class_@GlobalScope_constant_JOY_BUTTON_8:
-
-.. _class_@GlobalScope_constant_JOY_BUTTON_9:
-
-.. _class_@GlobalScope_constant_JOY_BUTTON_10:
-
-.. _class_@GlobalScope_constant_JOY_BUTTON_11:
-
-.. _class_@GlobalScope_constant_JOY_BUTTON_12:
-
-.. _class_@GlobalScope_constant_JOY_BUTTON_13:
-
-.. _class_@GlobalScope_constant_JOY_BUTTON_14:
-
-.. _class_@GlobalScope_constant_JOY_BUTTON_15:
-
-.. _class_@GlobalScope_constant_JOY_BUTTON_16:
-
-.. _class_@GlobalScope_constant_JOY_BUTTON_17:
-
-.. _class_@GlobalScope_constant_JOY_BUTTON_18:
-
-.. _class_@GlobalScope_constant_JOY_BUTTON_19:
-
-.. _class_@GlobalScope_constant_JOY_BUTTON_20:
-
-.. _class_@GlobalScope_constant_JOY_BUTTON_21:
-
-.. _class_@GlobalScope_constant_JOY_BUTTON_22:
-
-.. _class_@GlobalScope_constant_JOY_BUTTON_MAX:
-
-.. _class_@GlobalScope_constant_JOY_SONY_CIRCLE:
-
-.. _class_@GlobalScope_constant_JOY_SONY_X:
-
-.. _class_@GlobalScope_constant_JOY_SONY_SQUARE:
-
-.. _class_@GlobalScope_constant_JOY_SONY_TRIANGLE:
-
-.. _class_@GlobalScope_constant_JOY_XBOX_B:
-
-.. _class_@GlobalScope_constant_JOY_XBOX_A:
-
-.. _class_@GlobalScope_constant_JOY_XBOX_X:
-
-.. _class_@GlobalScope_constant_JOY_XBOX_Y:
-
-.. _class_@GlobalScope_constant_JOY_DS_A:
-
-.. _class_@GlobalScope_constant_JOY_DS_B:
-
-.. _class_@GlobalScope_constant_JOY_DS_X:
-
-.. _class_@GlobalScope_constant_JOY_DS_Y:
-
-.. _class_@GlobalScope_constant_JOY_VR_GRIP:
-
-.. _class_@GlobalScope_constant_JOY_VR_PAD:
-
-.. _class_@GlobalScope_constant_JOY_VR_TRIGGER:
-
-.. _class_@GlobalScope_constant_JOY_OCULUS_AX:
-
-.. _class_@GlobalScope_constant_JOY_OCULUS_BY:
-
-.. _class_@GlobalScope_constant_JOY_OCULUS_MENU:
-
-.. _class_@GlobalScope_constant_JOY_OPENVR_MENU:
-
-.. _class_@GlobalScope_constant_JOY_SELECT:
-
-.. _class_@GlobalScope_constant_JOY_START:
-
-.. _class_@GlobalScope_constant_JOY_DPAD_UP:
-
-.. _class_@GlobalScope_constant_JOY_DPAD_DOWN:
-
-.. _class_@GlobalScope_constant_JOY_DPAD_LEFT:
-
-.. _class_@GlobalScope_constant_JOY_DPAD_RIGHT:
-
-.. _class_@GlobalScope_constant_JOY_GUIDE:
-
-.. _class_@GlobalScope_constant_JOY_MISC1:
-
-.. _class_@GlobalScope_constant_JOY_PADDLE1:
-
-.. _class_@GlobalScope_constant_JOY_PADDLE2:
-
-.. _class_@GlobalScope_constant_JOY_PADDLE3:
-
-.. _class_@GlobalScope_constant_JOY_PADDLE4:
-
-.. _class_@GlobalScope_constant_JOY_TOUCHPAD:
-
-.. _class_@GlobalScope_constant_JOY_L:
-
-.. _class_@GlobalScope_constant_JOY_L2:
-
-.. _class_@GlobalScope_constant_JOY_L3:
-
-.. _class_@GlobalScope_constant_JOY_R:
-
-.. _class_@GlobalScope_constant_JOY_R2:
-
-.. _class_@GlobalScope_constant_JOY_R3:
-
-.. _class_@GlobalScope_constant_JOY_AXIS_0:
-
-.. _class_@GlobalScope_constant_JOY_AXIS_1:
-
-.. _class_@GlobalScope_constant_JOY_AXIS_2:
-
-.. _class_@GlobalScope_constant_JOY_AXIS_3:
-
-.. _class_@GlobalScope_constant_JOY_AXIS_4:
-
-.. _class_@GlobalScope_constant_JOY_AXIS_5:
-
-.. _class_@GlobalScope_constant_JOY_AXIS_6:
-
-.. _class_@GlobalScope_constant_JOY_AXIS_7:
-
-.. _class_@GlobalScope_constant_JOY_AXIS_8:
-
-.. _class_@GlobalScope_constant_JOY_AXIS_9:
-
-.. _class_@GlobalScope_constant_JOY_AXIS_MAX:
-
-.. _class_@GlobalScope_constant_JOY_ANALOG_LX:
-
-.. _class_@GlobalScope_constant_JOY_ANALOG_LY:
-
-.. _class_@GlobalScope_constant_JOY_ANALOG_RX:
-
-.. _class_@GlobalScope_constant_JOY_ANALOG_RY:
-
-.. _class_@GlobalScope_constant_JOY_ANALOG_L2:
-
-.. _class_@GlobalScope_constant_JOY_ANALOG_R2:
-
-.. _class_@GlobalScope_constant_JOY_VR_ANALOG_TRIGGER:
-
-.. _class_@GlobalScope_constant_JOY_VR_ANALOG_GRIP:
-
-.. _class_@GlobalScope_constant_JOY_OPENVR_TOUCHPADX:
-
-.. _class_@GlobalScope_constant_JOY_OPENVR_TOUCHPADY:
+.. rst-class:: classref-enumeration
 
 enum **JoystickList**:
 
-- **JOY_INVALID_OPTION** = **-1** --- Invalid button or axis.
+.. _class_@GlobalScope_constant_JOY_INVALID_OPTION:
 
-- **JOY_BUTTON_0** = **0** --- Gamepad button 0.
+.. rst-class:: classref-enumeration-constant
 
-- **JOY_BUTTON_1** = **1** --- Gamepad button 1.
+:ref:`JoystickList<enum_@GlobalScope_JoystickList>` **JOY_INVALID_OPTION** = ``-1``
 
-- **JOY_BUTTON_2** = **2** --- Gamepad button 2.
+Invalid button or axis.
 
-- **JOY_BUTTON_3** = **3** --- Gamepad button 3.
+.. _class_@GlobalScope_constant_JOY_BUTTON_0:
 
-- **JOY_BUTTON_4** = **4** --- Gamepad button 4.
+.. rst-class:: classref-enumeration-constant
 
-- **JOY_BUTTON_5** = **5** --- Gamepad button 5.
+:ref:`JoystickList<enum_@GlobalScope_JoystickList>` **JOY_BUTTON_0** = ``0``
 
-- **JOY_BUTTON_6** = **6** --- Gamepad button 6.
+Gamepad button 0.
 
-- **JOY_BUTTON_7** = **7** --- Gamepad button 7.
+.. _class_@GlobalScope_constant_JOY_BUTTON_1:
 
-- **JOY_BUTTON_8** = **8** --- Gamepad button 8.
+.. rst-class:: classref-enumeration-constant
 
-- **JOY_BUTTON_9** = **9** --- Gamepad button 9.
+:ref:`JoystickList<enum_@GlobalScope_JoystickList>` **JOY_BUTTON_1** = ``1``
 
-- **JOY_BUTTON_10** = **10** --- Gamepad button 10.
+Gamepad button 1.
 
-- **JOY_BUTTON_11** = **11** --- Gamepad button 11.
+.. _class_@GlobalScope_constant_JOY_BUTTON_2:
 
-- **JOY_BUTTON_12** = **12** --- Gamepad button 12.
+.. rst-class:: classref-enumeration-constant
 
-- **JOY_BUTTON_13** = **13** --- Gamepad button 13.
+:ref:`JoystickList<enum_@GlobalScope_JoystickList>` **JOY_BUTTON_2** = ``2``
 
-- **JOY_BUTTON_14** = **14** --- Gamepad button 14.
+Gamepad button 2.
 
-- **JOY_BUTTON_15** = **15** --- Gamepad button 15.
+.. _class_@GlobalScope_constant_JOY_BUTTON_3:
 
-- **JOY_BUTTON_16** = **16** --- Gamepad button 16.
+.. rst-class:: classref-enumeration-constant
 
-- **JOY_BUTTON_17** = **17** --- Gamepad button 17.
+:ref:`JoystickList<enum_@GlobalScope_JoystickList>` **JOY_BUTTON_3** = ``3``
 
-- **JOY_BUTTON_18** = **18** --- Gamepad button 18.
+Gamepad button 3.
 
-- **JOY_BUTTON_19** = **19** --- Gamepad button 19.
+.. _class_@GlobalScope_constant_JOY_BUTTON_4:
 
-- **JOY_BUTTON_20** = **20** --- Gamepad button 20.
+.. rst-class:: classref-enumeration-constant
 
-- **JOY_BUTTON_21** = **21** --- Gamepad button 21.
+:ref:`JoystickList<enum_@GlobalScope_JoystickList>` **JOY_BUTTON_4** = ``4``
 
-- **JOY_BUTTON_22** = **22** --- Gamepad button 22.
+Gamepad button 4.
 
-- **JOY_BUTTON_MAX** = **128** --- The maximum number of game controller buttons supported by the engine. The actual limit may be lower on specific platforms:
+.. _class_@GlobalScope_constant_JOY_BUTTON_5:
 
-	- Android: Up to 36 buttons.
+.. rst-class:: classref-enumeration-constant
 
-	- Linux: Up to 80 buttons.
+:ref:`JoystickList<enum_@GlobalScope_JoystickList>` **JOY_BUTTON_5** = ``5``
 
-	- Windows and macOS: Up to 128 buttons.
+Gamepad button 5.
 
-- **JOY_SONY_CIRCLE** = **1** --- DualShock circle button.
+.. _class_@GlobalScope_constant_JOY_BUTTON_6:
 
-- **JOY_SONY_X** = **0** --- DualShock X button.
+.. rst-class:: classref-enumeration-constant
 
-- **JOY_SONY_SQUARE** = **2** --- DualShock square button.
+:ref:`JoystickList<enum_@GlobalScope_JoystickList>` **JOY_BUTTON_6** = ``6``
 
-- **JOY_SONY_TRIANGLE** = **3** --- DualShock triangle button.
+Gamepad button 6.
 
-- **JOY_XBOX_B** = **1** --- Xbox controller B button.
+.. _class_@GlobalScope_constant_JOY_BUTTON_7:
 
-- **JOY_XBOX_A** = **0** --- Xbox controller A button.
+.. rst-class:: classref-enumeration-constant
 
-- **JOY_XBOX_X** = **2** --- Xbox controller X button.
+:ref:`JoystickList<enum_@GlobalScope_JoystickList>` **JOY_BUTTON_7** = ``7``
 
-- **JOY_XBOX_Y** = **3** --- Xbox controller Y button.
+Gamepad button 7.
 
-- **JOY_DS_A** = **1** --- Nintendo controller A button.
+.. _class_@GlobalScope_constant_JOY_BUTTON_8:
 
-- **JOY_DS_B** = **0** --- Nintendo controller B button.
+.. rst-class:: classref-enumeration-constant
 
-- **JOY_DS_X** = **3** --- Nintendo controller X button.
+:ref:`JoystickList<enum_@GlobalScope_JoystickList>` **JOY_BUTTON_8** = ``8``
 
-- **JOY_DS_Y** = **2** --- Nintendo controller Y button.
+Gamepad button 8.
 
-- **JOY_VR_GRIP** = **2** --- Grip (side) buttons on a VR controller.
+.. _class_@GlobalScope_constant_JOY_BUTTON_9:
 
-- **JOY_VR_PAD** = **14** --- Push down on the touchpad or main joystick on a VR controller.
+.. rst-class:: classref-enumeration-constant
 
-- **JOY_VR_TRIGGER** = **15** --- Trigger on a VR controller.
+:ref:`JoystickList<enum_@GlobalScope_JoystickList>` **JOY_BUTTON_9** = ``9``
 
-- **JOY_OCULUS_AX** = **7** --- A button on the right Oculus Touch controller, X button on the left controller (also when used in OpenVR).
+Gamepad button 9.
 
-- **JOY_OCULUS_BY** = **1** --- B button on the right Oculus Touch controller, Y button on the left controller (also when used in OpenVR).
+.. _class_@GlobalScope_constant_JOY_BUTTON_10:
 
-- **JOY_OCULUS_MENU** = **3** --- Menu button on either Oculus Touch controller.
+.. rst-class:: classref-enumeration-constant
 
-- **JOY_OPENVR_MENU** = **1** --- Menu button in OpenVR (Except when Oculus Touch controllers are used).
+:ref:`JoystickList<enum_@GlobalScope_JoystickList>` **JOY_BUTTON_10** = ``10``
 
-- **JOY_SELECT** = **10** --- Gamepad button Select.
+Gamepad button 10.
 
-- **JOY_START** = **11** --- Gamepad button Start.
+.. _class_@GlobalScope_constant_JOY_BUTTON_11:
 
-- **JOY_DPAD_UP** = **12** --- Gamepad DPad up.
+.. rst-class:: classref-enumeration-constant
 
-- **JOY_DPAD_DOWN** = **13** --- Gamepad DPad down.
+:ref:`JoystickList<enum_@GlobalScope_JoystickList>` **JOY_BUTTON_11** = ``11``
 
-- **JOY_DPAD_LEFT** = **14** --- Gamepad DPad left.
+Gamepad button 11.
 
-- **JOY_DPAD_RIGHT** = **15** --- Gamepad DPad right.
+.. _class_@GlobalScope_constant_JOY_BUTTON_12:
 
-- **JOY_GUIDE** = **16** --- Gamepad SDL guide button.
+.. rst-class:: classref-enumeration-constant
 
-- **JOY_MISC1** = **17** --- Gamepad SDL miscellaneous button.
+:ref:`JoystickList<enum_@GlobalScope_JoystickList>` **JOY_BUTTON_12** = ``12``
 
-- **JOY_PADDLE1** = **18** --- Gamepad SDL paddle 1 button.
+Gamepad button 12.
 
-- **JOY_PADDLE2** = **19** --- Gamepad SDL paddle 2 button.
+.. _class_@GlobalScope_constant_JOY_BUTTON_13:
 
-- **JOY_PADDLE3** = **20** --- Gamepad SDL paddle 3 button.
+.. rst-class:: classref-enumeration-constant
 
-- **JOY_PADDLE4** = **21** --- Gamepad SDL paddle 4 button.
+:ref:`JoystickList<enum_@GlobalScope_JoystickList>` **JOY_BUTTON_13** = ``13``
 
-- **JOY_TOUCHPAD** = **22** --- Gamepad SDL touchpad button.
+Gamepad button 13.
 
-- **JOY_L** = **4** --- Gamepad left Shoulder button.
+.. _class_@GlobalScope_constant_JOY_BUTTON_14:
 
-- **JOY_L2** = **6** --- Gamepad left trigger.
+.. rst-class:: classref-enumeration-constant
 
-- **JOY_L3** = **8** --- Gamepad left stick click.
+:ref:`JoystickList<enum_@GlobalScope_JoystickList>` **JOY_BUTTON_14** = ``14``
 
-- **JOY_R** = **5** --- Gamepad right Shoulder button.
+Gamepad button 14.
 
-- **JOY_R2** = **7** --- Gamepad right trigger.
+.. _class_@GlobalScope_constant_JOY_BUTTON_15:
 
-- **JOY_R3** = **9** --- Gamepad right stick click.
+.. rst-class:: classref-enumeration-constant
 
-- **JOY_AXIS_0** = **0** --- Gamepad left stick horizontal axis.
+:ref:`JoystickList<enum_@GlobalScope_JoystickList>` **JOY_BUTTON_15** = ``15``
 
-- **JOY_AXIS_1** = **1** --- Gamepad left stick vertical axis.
+Gamepad button 15.
 
-- **JOY_AXIS_2** = **2** --- Gamepad right stick horizontal axis.
+.. _class_@GlobalScope_constant_JOY_BUTTON_16:
 
-- **JOY_AXIS_3** = **3** --- Gamepad right stick vertical axis.
+.. rst-class:: classref-enumeration-constant
 
-- **JOY_AXIS_4** = **4** --- Generic gamepad axis 4.
+:ref:`JoystickList<enum_@GlobalScope_JoystickList>` **JOY_BUTTON_16** = ``16``
 
-- **JOY_AXIS_5** = **5** --- Generic gamepad axis 5.
+Gamepad button 16.
 
-- **JOY_AXIS_6** = **6** --- Gamepad left trigger analog axis.
+.. _class_@GlobalScope_constant_JOY_BUTTON_17:
 
-- **JOY_AXIS_7** = **7** --- Gamepad right trigger analog axis.
+.. rst-class:: classref-enumeration-constant
 
-- **JOY_AXIS_8** = **8** --- Generic gamepad axis 8.
+:ref:`JoystickList<enum_@GlobalScope_JoystickList>` **JOY_BUTTON_17** = ``17``
 
-- **JOY_AXIS_9** = **9** --- Generic gamepad axis 9.
+Gamepad button 17.
 
-- **JOY_AXIS_MAX** = **10** --- Represents the maximum number of joystick axes supported.
+.. _class_@GlobalScope_constant_JOY_BUTTON_18:
 
-- **JOY_ANALOG_LX** = **0** --- Gamepad left stick horizontal axis.
+.. rst-class:: classref-enumeration-constant
 
-- **JOY_ANALOG_LY** = **1** --- Gamepad left stick vertical axis.
+:ref:`JoystickList<enum_@GlobalScope_JoystickList>` **JOY_BUTTON_18** = ``18``
 
-- **JOY_ANALOG_RX** = **2** --- Gamepad right stick horizontal axis.
+Gamepad button 18.
 
-- **JOY_ANALOG_RY** = **3** --- Gamepad right stick vertical axis.
+.. _class_@GlobalScope_constant_JOY_BUTTON_19:
 
-- **JOY_ANALOG_L2** = **6** --- Gamepad left analog trigger.
+.. rst-class:: classref-enumeration-constant
 
-- **JOY_ANALOG_R2** = **7** --- Gamepad right analog trigger.
+:ref:`JoystickList<enum_@GlobalScope_JoystickList>` **JOY_BUTTON_19** = ``19``
 
-- **JOY_VR_ANALOG_TRIGGER** = **2** --- VR Controller analog trigger.
+Gamepad button 19.
 
-- **JOY_VR_ANALOG_GRIP** = **4** --- VR Controller analog grip (side buttons).
+.. _class_@GlobalScope_constant_JOY_BUTTON_20:
 
-- **JOY_OPENVR_TOUCHPADX** = **0** --- OpenVR touchpad X axis (Joystick axis on Oculus Touch and Windows MR controllers).
+.. rst-class:: classref-enumeration-constant
 
-- **JOY_OPENVR_TOUCHPADY** = **1** --- OpenVR touchpad Y axis (Joystick axis on Oculus Touch and Windows MR controllers).
+:ref:`JoystickList<enum_@GlobalScope_JoystickList>` **JOY_BUTTON_20** = ``20``
+
+Gamepad button 20.
+
+.. _class_@GlobalScope_constant_JOY_BUTTON_21:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`JoystickList<enum_@GlobalScope_JoystickList>` **JOY_BUTTON_21** = ``21``
+
+Gamepad button 21.
+
+.. _class_@GlobalScope_constant_JOY_BUTTON_22:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`JoystickList<enum_@GlobalScope_JoystickList>` **JOY_BUTTON_22** = ``22``
+
+Gamepad button 22.
+
+.. _class_@GlobalScope_constant_JOY_BUTTON_MAX:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`JoystickList<enum_@GlobalScope_JoystickList>` **JOY_BUTTON_MAX** = ``128``
+
+The maximum number of game controller buttons supported by the engine. The actual limit may be lower on specific platforms:
+
+- Android: Up to 36 buttons.
+
+- Linux: Up to 80 buttons.
+
+- Windows and macOS: Up to 128 buttons.
+
+.. _class_@GlobalScope_constant_JOY_SONY_CIRCLE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`JoystickList<enum_@GlobalScope_JoystickList>` **JOY_SONY_CIRCLE** = ``1``
+
+DualShock circle button.
+
+.. _class_@GlobalScope_constant_JOY_SONY_X:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`JoystickList<enum_@GlobalScope_JoystickList>` **JOY_SONY_X** = ``0``
+
+DualShock X button.
+
+.. _class_@GlobalScope_constant_JOY_SONY_SQUARE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`JoystickList<enum_@GlobalScope_JoystickList>` **JOY_SONY_SQUARE** = ``2``
+
+DualShock square button.
+
+.. _class_@GlobalScope_constant_JOY_SONY_TRIANGLE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`JoystickList<enum_@GlobalScope_JoystickList>` **JOY_SONY_TRIANGLE** = ``3``
+
+DualShock triangle button.
+
+.. _class_@GlobalScope_constant_JOY_XBOX_B:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`JoystickList<enum_@GlobalScope_JoystickList>` **JOY_XBOX_B** = ``1``
+
+Xbox controller B button.
+
+.. _class_@GlobalScope_constant_JOY_XBOX_A:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`JoystickList<enum_@GlobalScope_JoystickList>` **JOY_XBOX_A** = ``0``
+
+Xbox controller A button.
+
+.. _class_@GlobalScope_constant_JOY_XBOX_X:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`JoystickList<enum_@GlobalScope_JoystickList>` **JOY_XBOX_X** = ``2``
+
+Xbox controller X button.
+
+.. _class_@GlobalScope_constant_JOY_XBOX_Y:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`JoystickList<enum_@GlobalScope_JoystickList>` **JOY_XBOX_Y** = ``3``
+
+Xbox controller Y button.
+
+.. _class_@GlobalScope_constant_JOY_DS_A:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`JoystickList<enum_@GlobalScope_JoystickList>` **JOY_DS_A** = ``1``
+
+Nintendo controller A button.
+
+.. _class_@GlobalScope_constant_JOY_DS_B:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`JoystickList<enum_@GlobalScope_JoystickList>` **JOY_DS_B** = ``0``
+
+Nintendo controller B button.
+
+.. _class_@GlobalScope_constant_JOY_DS_X:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`JoystickList<enum_@GlobalScope_JoystickList>` **JOY_DS_X** = ``3``
+
+Nintendo controller X button.
+
+.. _class_@GlobalScope_constant_JOY_DS_Y:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`JoystickList<enum_@GlobalScope_JoystickList>` **JOY_DS_Y** = ``2``
+
+Nintendo controller Y button.
+
+.. _class_@GlobalScope_constant_JOY_VR_GRIP:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`JoystickList<enum_@GlobalScope_JoystickList>` **JOY_VR_GRIP** = ``2``
+
+Grip (side) buttons on a VR controller.
+
+.. _class_@GlobalScope_constant_JOY_VR_PAD:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`JoystickList<enum_@GlobalScope_JoystickList>` **JOY_VR_PAD** = ``14``
+
+Push down on the touchpad or main joystick on a VR controller.
+
+.. _class_@GlobalScope_constant_JOY_VR_TRIGGER:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`JoystickList<enum_@GlobalScope_JoystickList>` **JOY_VR_TRIGGER** = ``15``
+
+Trigger on a VR controller.
+
+.. _class_@GlobalScope_constant_JOY_OCULUS_AX:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`JoystickList<enum_@GlobalScope_JoystickList>` **JOY_OCULUS_AX** = ``7``
+
+A button on the right Oculus Touch controller, X button on the left controller (also when used in OpenVR).
+
+.. _class_@GlobalScope_constant_JOY_OCULUS_BY:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`JoystickList<enum_@GlobalScope_JoystickList>` **JOY_OCULUS_BY** = ``1``
+
+B button on the right Oculus Touch controller, Y button on the left controller (also when used in OpenVR).
+
+.. _class_@GlobalScope_constant_JOY_OCULUS_MENU:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`JoystickList<enum_@GlobalScope_JoystickList>` **JOY_OCULUS_MENU** = ``3``
+
+Menu button on either Oculus Touch controller.
+
+.. _class_@GlobalScope_constant_JOY_OPENVR_MENU:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`JoystickList<enum_@GlobalScope_JoystickList>` **JOY_OPENVR_MENU** = ``1``
+
+Menu button in OpenVR (Except when Oculus Touch controllers are used).
+
+.. _class_@GlobalScope_constant_JOY_SELECT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`JoystickList<enum_@GlobalScope_JoystickList>` **JOY_SELECT** = ``10``
+
+Gamepad button Select.
+
+.. _class_@GlobalScope_constant_JOY_START:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`JoystickList<enum_@GlobalScope_JoystickList>` **JOY_START** = ``11``
+
+Gamepad button Start.
+
+.. _class_@GlobalScope_constant_JOY_DPAD_UP:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`JoystickList<enum_@GlobalScope_JoystickList>` **JOY_DPAD_UP** = ``12``
+
+Gamepad DPad up.
+
+.. _class_@GlobalScope_constant_JOY_DPAD_DOWN:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`JoystickList<enum_@GlobalScope_JoystickList>` **JOY_DPAD_DOWN** = ``13``
+
+Gamepad DPad down.
+
+.. _class_@GlobalScope_constant_JOY_DPAD_LEFT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`JoystickList<enum_@GlobalScope_JoystickList>` **JOY_DPAD_LEFT** = ``14``
+
+Gamepad DPad left.
+
+.. _class_@GlobalScope_constant_JOY_DPAD_RIGHT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`JoystickList<enum_@GlobalScope_JoystickList>` **JOY_DPAD_RIGHT** = ``15``
+
+Gamepad DPad right.
+
+.. _class_@GlobalScope_constant_JOY_GUIDE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`JoystickList<enum_@GlobalScope_JoystickList>` **JOY_GUIDE** = ``16``
+
+Gamepad SDL guide button.
+
+.. _class_@GlobalScope_constant_JOY_MISC1:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`JoystickList<enum_@GlobalScope_JoystickList>` **JOY_MISC1** = ``17``
+
+Gamepad SDL miscellaneous button.
+
+.. _class_@GlobalScope_constant_JOY_PADDLE1:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`JoystickList<enum_@GlobalScope_JoystickList>` **JOY_PADDLE1** = ``18``
+
+Gamepad SDL paddle 1 button.
+
+.. _class_@GlobalScope_constant_JOY_PADDLE2:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`JoystickList<enum_@GlobalScope_JoystickList>` **JOY_PADDLE2** = ``19``
+
+Gamepad SDL paddle 2 button.
+
+.. _class_@GlobalScope_constant_JOY_PADDLE3:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`JoystickList<enum_@GlobalScope_JoystickList>` **JOY_PADDLE3** = ``20``
+
+Gamepad SDL paddle 3 button.
+
+.. _class_@GlobalScope_constant_JOY_PADDLE4:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`JoystickList<enum_@GlobalScope_JoystickList>` **JOY_PADDLE4** = ``21``
+
+Gamepad SDL paddle 4 button.
+
+.. _class_@GlobalScope_constant_JOY_TOUCHPAD:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`JoystickList<enum_@GlobalScope_JoystickList>` **JOY_TOUCHPAD** = ``22``
+
+Gamepad SDL touchpad button.
+
+.. _class_@GlobalScope_constant_JOY_L:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`JoystickList<enum_@GlobalScope_JoystickList>` **JOY_L** = ``4``
+
+Gamepad left Shoulder button.
+
+.. _class_@GlobalScope_constant_JOY_L2:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`JoystickList<enum_@GlobalScope_JoystickList>` **JOY_L2** = ``6``
+
+Gamepad left trigger.
+
+.. _class_@GlobalScope_constant_JOY_L3:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`JoystickList<enum_@GlobalScope_JoystickList>` **JOY_L3** = ``8``
+
+Gamepad left stick click.
+
+.. _class_@GlobalScope_constant_JOY_R:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`JoystickList<enum_@GlobalScope_JoystickList>` **JOY_R** = ``5``
+
+Gamepad right Shoulder button.
+
+.. _class_@GlobalScope_constant_JOY_R2:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`JoystickList<enum_@GlobalScope_JoystickList>` **JOY_R2** = ``7``
+
+Gamepad right trigger.
+
+.. _class_@GlobalScope_constant_JOY_R3:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`JoystickList<enum_@GlobalScope_JoystickList>` **JOY_R3** = ``9``
+
+Gamepad right stick click.
+
+.. _class_@GlobalScope_constant_JOY_AXIS_0:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`JoystickList<enum_@GlobalScope_JoystickList>` **JOY_AXIS_0** = ``0``
+
+Gamepad left stick horizontal axis.
+
+.. _class_@GlobalScope_constant_JOY_AXIS_1:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`JoystickList<enum_@GlobalScope_JoystickList>` **JOY_AXIS_1** = ``1``
+
+Gamepad left stick vertical axis.
+
+.. _class_@GlobalScope_constant_JOY_AXIS_2:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`JoystickList<enum_@GlobalScope_JoystickList>` **JOY_AXIS_2** = ``2``
+
+Gamepad right stick horizontal axis.
+
+.. _class_@GlobalScope_constant_JOY_AXIS_3:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`JoystickList<enum_@GlobalScope_JoystickList>` **JOY_AXIS_3** = ``3``
+
+Gamepad right stick vertical axis.
+
+.. _class_@GlobalScope_constant_JOY_AXIS_4:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`JoystickList<enum_@GlobalScope_JoystickList>` **JOY_AXIS_4** = ``4``
+
+Generic gamepad axis 4.
+
+.. _class_@GlobalScope_constant_JOY_AXIS_5:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`JoystickList<enum_@GlobalScope_JoystickList>` **JOY_AXIS_5** = ``5``
+
+Generic gamepad axis 5.
+
+.. _class_@GlobalScope_constant_JOY_AXIS_6:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`JoystickList<enum_@GlobalScope_JoystickList>` **JOY_AXIS_6** = ``6``
+
+Gamepad left trigger analog axis.
+
+.. _class_@GlobalScope_constant_JOY_AXIS_7:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`JoystickList<enum_@GlobalScope_JoystickList>` **JOY_AXIS_7** = ``7``
+
+Gamepad right trigger analog axis.
+
+.. _class_@GlobalScope_constant_JOY_AXIS_8:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`JoystickList<enum_@GlobalScope_JoystickList>` **JOY_AXIS_8** = ``8``
+
+Generic gamepad axis 8.
+
+.. _class_@GlobalScope_constant_JOY_AXIS_9:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`JoystickList<enum_@GlobalScope_JoystickList>` **JOY_AXIS_9** = ``9``
+
+Generic gamepad axis 9.
+
+.. _class_@GlobalScope_constant_JOY_AXIS_MAX:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`JoystickList<enum_@GlobalScope_JoystickList>` **JOY_AXIS_MAX** = ``10``
+
+Represents the maximum number of joystick axes supported.
+
+.. _class_@GlobalScope_constant_JOY_ANALOG_LX:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`JoystickList<enum_@GlobalScope_JoystickList>` **JOY_ANALOG_LX** = ``0``
+
+Gamepad left stick horizontal axis.
+
+.. _class_@GlobalScope_constant_JOY_ANALOG_LY:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`JoystickList<enum_@GlobalScope_JoystickList>` **JOY_ANALOG_LY** = ``1``
+
+Gamepad left stick vertical axis.
+
+.. _class_@GlobalScope_constant_JOY_ANALOG_RX:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`JoystickList<enum_@GlobalScope_JoystickList>` **JOY_ANALOG_RX** = ``2``
+
+Gamepad right stick horizontal axis.
+
+.. _class_@GlobalScope_constant_JOY_ANALOG_RY:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`JoystickList<enum_@GlobalScope_JoystickList>` **JOY_ANALOG_RY** = ``3``
+
+Gamepad right stick vertical axis.
+
+.. _class_@GlobalScope_constant_JOY_ANALOG_L2:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`JoystickList<enum_@GlobalScope_JoystickList>` **JOY_ANALOG_L2** = ``6``
+
+Gamepad left analog trigger.
+
+.. _class_@GlobalScope_constant_JOY_ANALOG_R2:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`JoystickList<enum_@GlobalScope_JoystickList>` **JOY_ANALOG_R2** = ``7``
+
+Gamepad right analog trigger.
+
+.. _class_@GlobalScope_constant_JOY_VR_ANALOG_TRIGGER:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`JoystickList<enum_@GlobalScope_JoystickList>` **JOY_VR_ANALOG_TRIGGER** = ``2``
+
+VR Controller analog trigger.
+
+.. _class_@GlobalScope_constant_JOY_VR_ANALOG_GRIP:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`JoystickList<enum_@GlobalScope_JoystickList>` **JOY_VR_ANALOG_GRIP** = ``4``
+
+VR Controller analog grip (side buttons).
+
+.. _class_@GlobalScope_constant_JOY_OPENVR_TOUCHPADX:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`JoystickList<enum_@GlobalScope_JoystickList>` **JOY_OPENVR_TOUCHPADX** = ``0``
+
+OpenVR touchpad X axis (Joystick axis on Oculus Touch and Windows MR controllers).
+
+.. _class_@GlobalScope_constant_JOY_OPENVR_TOUCHPADY:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`JoystickList<enum_@GlobalScope_JoystickList>` **JOY_OPENVR_TOUCHPADY** = ``1``
+
+OpenVR touchpad Y axis (Joystick axis on Oculus Touch and Windows MR controllers).
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _enum_@GlobalScope_MidiMessageList:
 
-.. _class_@GlobalScope_constant_MIDI_MESSAGE_NOTE_OFF:
-
-.. _class_@GlobalScope_constant_MIDI_MESSAGE_NOTE_ON:
-
-.. _class_@GlobalScope_constant_MIDI_MESSAGE_AFTERTOUCH:
-
-.. _class_@GlobalScope_constant_MIDI_MESSAGE_CONTROL_CHANGE:
-
-.. _class_@GlobalScope_constant_MIDI_MESSAGE_PROGRAM_CHANGE:
-
-.. _class_@GlobalScope_constant_MIDI_MESSAGE_CHANNEL_PRESSURE:
-
-.. _class_@GlobalScope_constant_MIDI_MESSAGE_PITCH_BEND:
-
-.. _class_@GlobalScope_constant_MIDI_MESSAGE_SYSTEM_EXCLUSIVE:
-
-.. _class_@GlobalScope_constant_MIDI_MESSAGE_QUARTER_FRAME:
-
-.. _class_@GlobalScope_constant_MIDI_MESSAGE_SONG_POSITION_POINTER:
-
-.. _class_@GlobalScope_constant_MIDI_MESSAGE_SONG_SELECT:
-
-.. _class_@GlobalScope_constant_MIDI_MESSAGE_TUNE_REQUEST:
-
-.. _class_@GlobalScope_constant_MIDI_MESSAGE_TIMING_CLOCK:
-
-.. _class_@GlobalScope_constant_MIDI_MESSAGE_START:
-
-.. _class_@GlobalScope_constant_MIDI_MESSAGE_CONTINUE:
-
-.. _class_@GlobalScope_constant_MIDI_MESSAGE_STOP:
-
-.. _class_@GlobalScope_constant_MIDI_MESSAGE_ACTIVE_SENSING:
-
-.. _class_@GlobalScope_constant_MIDI_MESSAGE_SYSTEM_RESET:
+.. rst-class:: classref-enumeration
 
 enum **MidiMessageList**:
 
-- **MIDI_MESSAGE_NOTE_OFF** = **8** --- MIDI note OFF message. See the documentation of :ref:`InputEventMIDI<class_InputEventMIDI>` for information of how to use MIDI inputs.
+.. _class_@GlobalScope_constant_MIDI_MESSAGE_NOTE_OFF:
 
-- **MIDI_MESSAGE_NOTE_ON** = **9** --- MIDI note ON message. See the documentation of :ref:`InputEventMIDI<class_InputEventMIDI>` for information of how to use MIDI inputs.
+.. rst-class:: classref-enumeration-constant
 
-- **MIDI_MESSAGE_AFTERTOUCH** = **10** --- MIDI aftertouch message. This message is most often sent by pressing down on the key after it "bottoms out".
+:ref:`MidiMessageList<enum_@GlobalScope_MidiMessageList>` **MIDI_MESSAGE_NOTE_OFF** = ``8``
 
-- **MIDI_MESSAGE_CONTROL_CHANGE** = **11** --- MIDI control change message. This message is sent when a controller value changes. Controllers include devices such as pedals and levers.
+MIDI note OFF message. See the documentation of :ref:`InputEventMIDI<class_InputEventMIDI>` for information of how to use MIDI inputs.
 
-- **MIDI_MESSAGE_PROGRAM_CHANGE** = **12** --- MIDI program change message. This message sent when the program patch number changes.
+.. _class_@GlobalScope_constant_MIDI_MESSAGE_NOTE_ON:
 
-- **MIDI_MESSAGE_CHANNEL_PRESSURE** = **13** --- MIDI channel pressure message. This message is most often sent by pressing down on the key after it "bottoms out". This message is different from polyphonic after-touch as it indicates the highest pressure across all keys.
+.. rst-class:: classref-enumeration-constant
 
-- **MIDI_MESSAGE_PITCH_BEND** = **14** --- MIDI pitch bend message. This message is sent to indicate a change in the pitch bender (wheel or lever, typically).
+:ref:`MidiMessageList<enum_@GlobalScope_MidiMessageList>` **MIDI_MESSAGE_NOTE_ON** = ``9``
 
-- **MIDI_MESSAGE_SYSTEM_EXCLUSIVE** = **240** --- MIDI system exclusive message. This has behavior exclusive to the device you're receiving input from. Getting this data is not implemented in Godot.
+MIDI note ON message. See the documentation of :ref:`InputEventMIDI<class_InputEventMIDI>` for information of how to use MIDI inputs.
 
-- **MIDI_MESSAGE_QUARTER_FRAME** = **241** --- MIDI quarter frame message. Contains timing information that is used to synchronize MIDI devices. Getting this data is not implemented in Godot.
+.. _class_@GlobalScope_constant_MIDI_MESSAGE_AFTERTOUCH:
 
-- **MIDI_MESSAGE_SONG_POSITION_POINTER** = **242** --- MIDI song position pointer message. Gives the number of 16th notes since the start of the song. Getting this data is not implemented in Godot.
+.. rst-class:: classref-enumeration-constant
 
-- **MIDI_MESSAGE_SONG_SELECT** = **243** --- MIDI song select message. Specifies which sequence or song is to be played. Getting this data is not implemented in Godot.
+:ref:`MidiMessageList<enum_@GlobalScope_MidiMessageList>` **MIDI_MESSAGE_AFTERTOUCH** = ``10``
 
-- **MIDI_MESSAGE_TUNE_REQUEST** = **246** --- MIDI tune request message. Upon receiving a tune request, all analog synthesizers should tune their oscillators.
+MIDI aftertouch message. This message is most often sent by pressing down on the key after it "bottoms out".
 
-- **MIDI_MESSAGE_TIMING_CLOCK** = **248** --- MIDI timing clock message. Sent 24 times per quarter note when synchronization is required.
+.. _class_@GlobalScope_constant_MIDI_MESSAGE_CONTROL_CHANGE:
 
-- **MIDI_MESSAGE_START** = **250** --- MIDI start message. Start the current sequence playing. This message will be followed with Timing Clocks.
+.. rst-class:: classref-enumeration-constant
 
-- **MIDI_MESSAGE_CONTINUE** = **251** --- MIDI continue message. Continue at the point the sequence was stopped.
+:ref:`MidiMessageList<enum_@GlobalScope_MidiMessageList>` **MIDI_MESSAGE_CONTROL_CHANGE** = ``11``
 
-- **MIDI_MESSAGE_STOP** = **252** --- MIDI stop message. Stop the current sequence.
+MIDI control change message. This message is sent when a controller value changes. Controllers include devices such as pedals and levers.
 
-- **MIDI_MESSAGE_ACTIVE_SENSING** = **254** --- MIDI active sensing message. This message is intended to be sent repeatedly to tell the receiver that a connection is alive.
+.. _class_@GlobalScope_constant_MIDI_MESSAGE_PROGRAM_CHANGE:
 
-- **MIDI_MESSAGE_SYSTEM_RESET** = **255** --- MIDI system reset message. Reset all receivers in the system to power-up status. It should not be sent on power-up itself.
+.. rst-class:: classref-enumeration-constant
+
+:ref:`MidiMessageList<enum_@GlobalScope_MidiMessageList>` **MIDI_MESSAGE_PROGRAM_CHANGE** = ``12``
+
+MIDI program change message. This message sent when the program patch number changes.
+
+.. _class_@GlobalScope_constant_MIDI_MESSAGE_CHANNEL_PRESSURE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`MidiMessageList<enum_@GlobalScope_MidiMessageList>` **MIDI_MESSAGE_CHANNEL_PRESSURE** = ``13``
+
+MIDI channel pressure message. This message is most often sent by pressing down on the key after it "bottoms out". This message is different from polyphonic after-touch as it indicates the highest pressure across all keys.
+
+.. _class_@GlobalScope_constant_MIDI_MESSAGE_PITCH_BEND:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`MidiMessageList<enum_@GlobalScope_MidiMessageList>` **MIDI_MESSAGE_PITCH_BEND** = ``14``
+
+MIDI pitch bend message. This message is sent to indicate a change in the pitch bender (wheel or lever, typically).
+
+.. _class_@GlobalScope_constant_MIDI_MESSAGE_SYSTEM_EXCLUSIVE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`MidiMessageList<enum_@GlobalScope_MidiMessageList>` **MIDI_MESSAGE_SYSTEM_EXCLUSIVE** = ``240``
+
+MIDI system exclusive message. This has behavior exclusive to the device you're receiving input from. Getting this data is not implemented in Godot.
+
+.. _class_@GlobalScope_constant_MIDI_MESSAGE_QUARTER_FRAME:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`MidiMessageList<enum_@GlobalScope_MidiMessageList>` **MIDI_MESSAGE_QUARTER_FRAME** = ``241``
+
+MIDI quarter frame message. Contains timing information that is used to synchronize MIDI devices. Getting this data is not implemented in Godot.
+
+.. _class_@GlobalScope_constant_MIDI_MESSAGE_SONG_POSITION_POINTER:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`MidiMessageList<enum_@GlobalScope_MidiMessageList>` **MIDI_MESSAGE_SONG_POSITION_POINTER** = ``242``
+
+MIDI song position pointer message. Gives the number of 16th notes since the start of the song. Getting this data is not implemented in Godot.
+
+.. _class_@GlobalScope_constant_MIDI_MESSAGE_SONG_SELECT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`MidiMessageList<enum_@GlobalScope_MidiMessageList>` **MIDI_MESSAGE_SONG_SELECT** = ``243``
+
+MIDI song select message. Specifies which sequence or song is to be played. Getting this data is not implemented in Godot.
+
+.. _class_@GlobalScope_constant_MIDI_MESSAGE_TUNE_REQUEST:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`MidiMessageList<enum_@GlobalScope_MidiMessageList>` **MIDI_MESSAGE_TUNE_REQUEST** = ``246``
+
+MIDI tune request message. Upon receiving a tune request, all analog synthesizers should tune their oscillators.
+
+.. _class_@GlobalScope_constant_MIDI_MESSAGE_TIMING_CLOCK:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`MidiMessageList<enum_@GlobalScope_MidiMessageList>` **MIDI_MESSAGE_TIMING_CLOCK** = ``248``
+
+MIDI timing clock message. Sent 24 times per quarter note when synchronization is required.
+
+.. _class_@GlobalScope_constant_MIDI_MESSAGE_START:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`MidiMessageList<enum_@GlobalScope_MidiMessageList>` **MIDI_MESSAGE_START** = ``250``
+
+MIDI start message. Start the current sequence playing. This message will be followed with Timing Clocks.
+
+.. _class_@GlobalScope_constant_MIDI_MESSAGE_CONTINUE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`MidiMessageList<enum_@GlobalScope_MidiMessageList>` **MIDI_MESSAGE_CONTINUE** = ``251``
+
+MIDI continue message. Continue at the point the sequence was stopped.
+
+.. _class_@GlobalScope_constant_MIDI_MESSAGE_STOP:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`MidiMessageList<enum_@GlobalScope_MidiMessageList>` **MIDI_MESSAGE_STOP** = ``252``
+
+MIDI stop message. Stop the current sequence.
+
+.. _class_@GlobalScope_constant_MIDI_MESSAGE_ACTIVE_SENSING:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`MidiMessageList<enum_@GlobalScope_MidiMessageList>` **MIDI_MESSAGE_ACTIVE_SENSING** = ``254``
+
+MIDI active sensing message. This message is intended to be sent repeatedly to tell the receiver that a connection is alive.
+
+.. _class_@GlobalScope_constant_MIDI_MESSAGE_SYSTEM_RESET:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`MidiMessageList<enum_@GlobalScope_MidiMessageList>` **MIDI_MESSAGE_SYSTEM_RESET** = ``255``
+
+MIDI system reset message. Reset all receivers in the system to power-up status. It should not be sent on power-up itself.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _enum_@GlobalScope_Error:
 
-.. _class_@GlobalScope_constant_OK:
-
-.. _class_@GlobalScope_constant_FAILED:
-
-.. _class_@GlobalScope_constant_ERR_UNAVAILABLE:
-
-.. _class_@GlobalScope_constant_ERR_UNCONFIGURED:
-
-.. _class_@GlobalScope_constant_ERR_UNAUTHORIZED:
-
-.. _class_@GlobalScope_constant_ERR_PARAMETER_RANGE_ERROR:
-
-.. _class_@GlobalScope_constant_ERR_OUT_OF_MEMORY:
-
-.. _class_@GlobalScope_constant_ERR_FILE_NOT_FOUND:
-
-.. _class_@GlobalScope_constant_ERR_FILE_BAD_DRIVE:
-
-.. _class_@GlobalScope_constant_ERR_FILE_BAD_PATH:
-
-.. _class_@GlobalScope_constant_ERR_FILE_NO_PERMISSION:
-
-.. _class_@GlobalScope_constant_ERR_FILE_ALREADY_IN_USE:
-
-.. _class_@GlobalScope_constant_ERR_FILE_CANT_OPEN:
-
-.. _class_@GlobalScope_constant_ERR_FILE_CANT_WRITE:
-
-.. _class_@GlobalScope_constant_ERR_FILE_CANT_READ:
-
-.. _class_@GlobalScope_constant_ERR_FILE_UNRECOGNIZED:
-
-.. _class_@GlobalScope_constant_ERR_FILE_CORRUPT:
-
-.. _class_@GlobalScope_constant_ERR_FILE_MISSING_DEPENDENCIES:
-
-.. _class_@GlobalScope_constant_ERR_FILE_EOF:
-
-.. _class_@GlobalScope_constant_ERR_CANT_OPEN:
-
-.. _class_@GlobalScope_constant_ERR_CANT_CREATE:
-
-.. _class_@GlobalScope_constant_ERR_QUERY_FAILED:
-
-.. _class_@GlobalScope_constant_ERR_ALREADY_IN_USE:
-
-.. _class_@GlobalScope_constant_ERR_LOCKED:
-
-.. _class_@GlobalScope_constant_ERR_TIMEOUT:
-
-.. _class_@GlobalScope_constant_ERR_CANT_CONNECT:
-
-.. _class_@GlobalScope_constant_ERR_CANT_RESOLVE:
-
-.. _class_@GlobalScope_constant_ERR_CONNECTION_ERROR:
-
-.. _class_@GlobalScope_constant_ERR_CANT_ACQUIRE_RESOURCE:
-
-.. _class_@GlobalScope_constant_ERR_CANT_FORK:
-
-.. _class_@GlobalScope_constant_ERR_INVALID_DATA:
-
-.. _class_@GlobalScope_constant_ERR_INVALID_PARAMETER:
-
-.. _class_@GlobalScope_constant_ERR_ALREADY_EXISTS:
-
-.. _class_@GlobalScope_constant_ERR_DOES_NOT_EXIST:
-
-.. _class_@GlobalScope_constant_ERR_DATABASE_CANT_READ:
-
-.. _class_@GlobalScope_constant_ERR_DATABASE_CANT_WRITE:
-
-.. _class_@GlobalScope_constant_ERR_COMPILATION_FAILED:
-
-.. _class_@GlobalScope_constant_ERR_METHOD_NOT_FOUND:
-
-.. _class_@GlobalScope_constant_ERR_LINK_FAILED:
-
-.. _class_@GlobalScope_constant_ERR_SCRIPT_FAILED:
-
-.. _class_@GlobalScope_constant_ERR_CYCLIC_LINK:
-
-.. _class_@GlobalScope_constant_ERR_INVALID_DECLARATION:
-
-.. _class_@GlobalScope_constant_ERR_DUPLICATE_SYMBOL:
-
-.. _class_@GlobalScope_constant_ERR_PARSE_ERROR:
-
-.. _class_@GlobalScope_constant_ERR_BUSY:
-
-.. _class_@GlobalScope_constant_ERR_SKIP:
-
-.. _class_@GlobalScope_constant_ERR_HELP:
-
-.. _class_@GlobalScope_constant_ERR_BUG:
-
-.. _class_@GlobalScope_constant_ERR_PRINTER_ON_FIRE:
+.. rst-class:: classref-enumeration
 
 enum **Error**:
 
-- **OK** = **0** --- Methods that return :ref:`Error<enum_@GlobalScope_Error>` return :ref:`OK<class_@GlobalScope_constant_OK>` when no error occurred. Note that many functions don't return an error code but will print error messages to standard output.
+.. _class_@GlobalScope_constant_OK:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Error<enum_@GlobalScope_Error>` **OK** = ``0``
+
+Methods that return :ref:`Error<enum_@GlobalScope_Error>` return :ref:`OK<class_@GlobalScope_constant_OK>` when no error occurred. Note that many functions don't return an error code but will print error messages to standard output.
 
 Since :ref:`OK<class_@GlobalScope_constant_OK>` has value 0, and all other failure codes are positive integers, it can also be used in boolean checks, e.g.:
 
@@ -1794,245 +3289,619 @@ Since :ref:`OK<class_@GlobalScope_constant_OK>` has value 0, and all other failu
     if err:
         print("Still failing!")
 
-- **FAILED** = **1** --- Generic error.
+.. _class_@GlobalScope_constant_FAILED:
 
-- **ERR_UNAVAILABLE** = **2** --- Unavailable error.
+.. rst-class:: classref-enumeration-constant
 
-- **ERR_UNCONFIGURED** = **3** --- Unconfigured error.
+:ref:`Error<enum_@GlobalScope_Error>` **FAILED** = ``1``
 
-- **ERR_UNAUTHORIZED** = **4** --- Unauthorized error.
+Generic error.
 
-- **ERR_PARAMETER_RANGE_ERROR** = **5** --- Parameter range error.
+.. _class_@GlobalScope_constant_ERR_UNAVAILABLE:
 
-- **ERR_OUT_OF_MEMORY** = **6** --- Out of memory (OOM) error.
+.. rst-class:: classref-enumeration-constant
 
-- **ERR_FILE_NOT_FOUND** = **7** --- File: Not found error.
+:ref:`Error<enum_@GlobalScope_Error>` **ERR_UNAVAILABLE** = ``2``
 
-- **ERR_FILE_BAD_DRIVE** = **8** --- File: Bad drive error.
+Unavailable error.
 
-- **ERR_FILE_BAD_PATH** = **9** --- File: Bad path error.
+.. _class_@GlobalScope_constant_ERR_UNCONFIGURED:
 
-- **ERR_FILE_NO_PERMISSION** = **10** --- File: No permission error.
+.. rst-class:: classref-enumeration-constant
 
-- **ERR_FILE_ALREADY_IN_USE** = **11** --- File: Already in use error.
+:ref:`Error<enum_@GlobalScope_Error>` **ERR_UNCONFIGURED** = ``3``
 
-- **ERR_FILE_CANT_OPEN** = **12** --- File: Can't open error.
+Unconfigured error.
 
-- **ERR_FILE_CANT_WRITE** = **13** --- File: Can't write error.
+.. _class_@GlobalScope_constant_ERR_UNAUTHORIZED:
 
-- **ERR_FILE_CANT_READ** = **14** --- File: Can't read error.
+.. rst-class:: classref-enumeration-constant
 
-- **ERR_FILE_UNRECOGNIZED** = **15** --- File: Unrecognized error.
+:ref:`Error<enum_@GlobalScope_Error>` **ERR_UNAUTHORIZED** = ``4``
 
-- **ERR_FILE_CORRUPT** = **16** --- File: Corrupt error.
+Unauthorized error.
 
-- **ERR_FILE_MISSING_DEPENDENCIES** = **17** --- File: Missing dependencies error.
+.. _class_@GlobalScope_constant_ERR_PARAMETER_RANGE_ERROR:
 
-- **ERR_FILE_EOF** = **18** --- File: End of file (EOF) error.
+.. rst-class:: classref-enumeration-constant
 
-- **ERR_CANT_OPEN** = **19** --- Can't open error.
+:ref:`Error<enum_@GlobalScope_Error>` **ERR_PARAMETER_RANGE_ERROR** = ``5``
 
-- **ERR_CANT_CREATE** = **20** --- Can't create error.
+Parameter range error.
 
-- **ERR_QUERY_FAILED** = **21** --- Query failed error.
+.. _class_@GlobalScope_constant_ERR_OUT_OF_MEMORY:
 
-- **ERR_ALREADY_IN_USE** = **22** --- Already in use error.
+.. rst-class:: classref-enumeration-constant
 
-- **ERR_LOCKED** = **23** --- Locked error.
+:ref:`Error<enum_@GlobalScope_Error>` **ERR_OUT_OF_MEMORY** = ``6``
 
-- **ERR_TIMEOUT** = **24** --- Timeout error.
+Out of memory (OOM) error.
 
-- **ERR_CANT_CONNECT** = **25** --- Can't connect error.
+.. _class_@GlobalScope_constant_ERR_FILE_NOT_FOUND:
 
-- **ERR_CANT_RESOLVE** = **26** --- Can't resolve error.
+.. rst-class:: classref-enumeration-constant
 
-- **ERR_CONNECTION_ERROR** = **27** --- Connection error.
+:ref:`Error<enum_@GlobalScope_Error>` **ERR_FILE_NOT_FOUND** = ``7``
 
-- **ERR_CANT_ACQUIRE_RESOURCE** = **28** --- Can't acquire resource error.
+File: Not found error.
 
-- **ERR_CANT_FORK** = **29** --- Can't fork process error.
+.. _class_@GlobalScope_constant_ERR_FILE_BAD_DRIVE:
 
-- **ERR_INVALID_DATA** = **30** --- Invalid data error.
+.. rst-class:: classref-enumeration-constant
 
-- **ERR_INVALID_PARAMETER** = **31** --- Invalid parameter error.
+:ref:`Error<enum_@GlobalScope_Error>` **ERR_FILE_BAD_DRIVE** = ``8``
 
-- **ERR_ALREADY_EXISTS** = **32** --- Already exists error.
+File: Bad drive error.
 
-- **ERR_DOES_NOT_EXIST** = **33** --- Does not exist error.
+.. _class_@GlobalScope_constant_ERR_FILE_BAD_PATH:
 
-- **ERR_DATABASE_CANT_READ** = **34** --- Database: Read error.
+.. rst-class:: classref-enumeration-constant
 
-- **ERR_DATABASE_CANT_WRITE** = **35** --- Database: Write error.
+:ref:`Error<enum_@GlobalScope_Error>` **ERR_FILE_BAD_PATH** = ``9``
 
-- **ERR_COMPILATION_FAILED** = **36** --- Compilation failed error.
+File: Bad path error.
 
-- **ERR_METHOD_NOT_FOUND** = **37** --- Method not found error.
+.. _class_@GlobalScope_constant_ERR_FILE_NO_PERMISSION:
 
-- **ERR_LINK_FAILED** = **38** --- Linking failed error.
+.. rst-class:: classref-enumeration-constant
 
-- **ERR_SCRIPT_FAILED** = **39** --- Script failed error.
+:ref:`Error<enum_@GlobalScope_Error>` **ERR_FILE_NO_PERMISSION** = ``10``
 
-- **ERR_CYCLIC_LINK** = **40** --- Cycling link (import cycle) error.
+File: No permission error.
 
-- **ERR_INVALID_DECLARATION** = **41** --- Invalid declaration error.
+.. _class_@GlobalScope_constant_ERR_FILE_ALREADY_IN_USE:
 
-- **ERR_DUPLICATE_SYMBOL** = **42** --- Duplicate symbol error.
+.. rst-class:: classref-enumeration-constant
 
-- **ERR_PARSE_ERROR** = **43** --- Parse error.
+:ref:`Error<enum_@GlobalScope_Error>` **ERR_FILE_ALREADY_IN_USE** = ``11``
 
-- **ERR_BUSY** = **44** --- Busy error.
+File: Already in use error.
 
-- **ERR_SKIP** = **45** --- Skip error.
+.. _class_@GlobalScope_constant_ERR_FILE_CANT_OPEN:
 
-- **ERR_HELP** = **46** --- Help error.
+.. rst-class:: classref-enumeration-constant
 
-- **ERR_BUG** = **47** --- Bug error.
+:ref:`Error<enum_@GlobalScope_Error>` **ERR_FILE_CANT_OPEN** = ``12``
 
-- **ERR_PRINTER_ON_FIRE** = **48** --- Printer on fire error. (This is an easter egg, no engine methods return this error code.)
+File: Can't open error.
+
+.. _class_@GlobalScope_constant_ERR_FILE_CANT_WRITE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Error<enum_@GlobalScope_Error>` **ERR_FILE_CANT_WRITE** = ``13``
+
+File: Can't write error.
+
+.. _class_@GlobalScope_constant_ERR_FILE_CANT_READ:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Error<enum_@GlobalScope_Error>` **ERR_FILE_CANT_READ** = ``14``
+
+File: Can't read error.
+
+.. _class_@GlobalScope_constant_ERR_FILE_UNRECOGNIZED:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Error<enum_@GlobalScope_Error>` **ERR_FILE_UNRECOGNIZED** = ``15``
+
+File: Unrecognized error.
+
+.. _class_@GlobalScope_constant_ERR_FILE_CORRUPT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Error<enum_@GlobalScope_Error>` **ERR_FILE_CORRUPT** = ``16``
+
+File: Corrupt error.
+
+.. _class_@GlobalScope_constant_ERR_FILE_MISSING_DEPENDENCIES:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Error<enum_@GlobalScope_Error>` **ERR_FILE_MISSING_DEPENDENCIES** = ``17``
+
+File: Missing dependencies error.
+
+.. _class_@GlobalScope_constant_ERR_FILE_EOF:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Error<enum_@GlobalScope_Error>` **ERR_FILE_EOF** = ``18``
+
+File: End of file (EOF) error.
+
+.. _class_@GlobalScope_constant_ERR_CANT_OPEN:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Error<enum_@GlobalScope_Error>` **ERR_CANT_OPEN** = ``19``
+
+Can't open error.
+
+.. _class_@GlobalScope_constant_ERR_CANT_CREATE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Error<enum_@GlobalScope_Error>` **ERR_CANT_CREATE** = ``20``
+
+Can't create error.
+
+.. _class_@GlobalScope_constant_ERR_QUERY_FAILED:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Error<enum_@GlobalScope_Error>` **ERR_QUERY_FAILED** = ``21``
+
+Query failed error.
+
+.. _class_@GlobalScope_constant_ERR_ALREADY_IN_USE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Error<enum_@GlobalScope_Error>` **ERR_ALREADY_IN_USE** = ``22``
+
+Already in use error.
+
+.. _class_@GlobalScope_constant_ERR_LOCKED:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Error<enum_@GlobalScope_Error>` **ERR_LOCKED** = ``23``
+
+Locked error.
+
+.. _class_@GlobalScope_constant_ERR_TIMEOUT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Error<enum_@GlobalScope_Error>` **ERR_TIMEOUT** = ``24``
+
+Timeout error.
+
+.. _class_@GlobalScope_constant_ERR_CANT_CONNECT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Error<enum_@GlobalScope_Error>` **ERR_CANT_CONNECT** = ``25``
+
+Can't connect error.
+
+.. _class_@GlobalScope_constant_ERR_CANT_RESOLVE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Error<enum_@GlobalScope_Error>` **ERR_CANT_RESOLVE** = ``26``
+
+Can't resolve error.
+
+.. _class_@GlobalScope_constant_ERR_CONNECTION_ERROR:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Error<enum_@GlobalScope_Error>` **ERR_CONNECTION_ERROR** = ``27``
+
+Connection error.
+
+.. _class_@GlobalScope_constant_ERR_CANT_ACQUIRE_RESOURCE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Error<enum_@GlobalScope_Error>` **ERR_CANT_ACQUIRE_RESOURCE** = ``28``
+
+Can't acquire resource error.
+
+.. _class_@GlobalScope_constant_ERR_CANT_FORK:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Error<enum_@GlobalScope_Error>` **ERR_CANT_FORK** = ``29``
+
+Can't fork process error.
+
+.. _class_@GlobalScope_constant_ERR_INVALID_DATA:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Error<enum_@GlobalScope_Error>` **ERR_INVALID_DATA** = ``30``
+
+Invalid data error.
+
+.. _class_@GlobalScope_constant_ERR_INVALID_PARAMETER:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Error<enum_@GlobalScope_Error>` **ERR_INVALID_PARAMETER** = ``31``
+
+Invalid parameter error.
+
+.. _class_@GlobalScope_constant_ERR_ALREADY_EXISTS:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Error<enum_@GlobalScope_Error>` **ERR_ALREADY_EXISTS** = ``32``
+
+Already exists error.
+
+.. _class_@GlobalScope_constant_ERR_DOES_NOT_EXIST:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Error<enum_@GlobalScope_Error>` **ERR_DOES_NOT_EXIST** = ``33``
+
+Does not exist error.
+
+.. _class_@GlobalScope_constant_ERR_DATABASE_CANT_READ:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Error<enum_@GlobalScope_Error>` **ERR_DATABASE_CANT_READ** = ``34``
+
+Database: Read error.
+
+.. _class_@GlobalScope_constant_ERR_DATABASE_CANT_WRITE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Error<enum_@GlobalScope_Error>` **ERR_DATABASE_CANT_WRITE** = ``35``
+
+Database: Write error.
+
+.. _class_@GlobalScope_constant_ERR_COMPILATION_FAILED:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Error<enum_@GlobalScope_Error>` **ERR_COMPILATION_FAILED** = ``36``
+
+Compilation failed error.
+
+.. _class_@GlobalScope_constant_ERR_METHOD_NOT_FOUND:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Error<enum_@GlobalScope_Error>` **ERR_METHOD_NOT_FOUND** = ``37``
+
+Method not found error.
+
+.. _class_@GlobalScope_constant_ERR_LINK_FAILED:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Error<enum_@GlobalScope_Error>` **ERR_LINK_FAILED** = ``38``
+
+Linking failed error.
+
+.. _class_@GlobalScope_constant_ERR_SCRIPT_FAILED:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Error<enum_@GlobalScope_Error>` **ERR_SCRIPT_FAILED** = ``39``
+
+Script failed error.
+
+.. _class_@GlobalScope_constant_ERR_CYCLIC_LINK:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Error<enum_@GlobalScope_Error>` **ERR_CYCLIC_LINK** = ``40``
+
+Cycling link (import cycle) error.
+
+.. _class_@GlobalScope_constant_ERR_INVALID_DECLARATION:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Error<enum_@GlobalScope_Error>` **ERR_INVALID_DECLARATION** = ``41``
+
+Invalid declaration error.
+
+.. _class_@GlobalScope_constant_ERR_DUPLICATE_SYMBOL:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Error<enum_@GlobalScope_Error>` **ERR_DUPLICATE_SYMBOL** = ``42``
+
+Duplicate symbol error.
+
+.. _class_@GlobalScope_constant_ERR_PARSE_ERROR:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Error<enum_@GlobalScope_Error>` **ERR_PARSE_ERROR** = ``43``
+
+Parse error.
+
+.. _class_@GlobalScope_constant_ERR_BUSY:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Error<enum_@GlobalScope_Error>` **ERR_BUSY** = ``44``
+
+Busy error.
+
+.. _class_@GlobalScope_constant_ERR_SKIP:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Error<enum_@GlobalScope_Error>` **ERR_SKIP** = ``45``
+
+Skip error.
+
+.. _class_@GlobalScope_constant_ERR_HELP:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Error<enum_@GlobalScope_Error>` **ERR_HELP** = ``46``
+
+Help error.
+
+.. _class_@GlobalScope_constant_ERR_BUG:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Error<enum_@GlobalScope_Error>` **ERR_BUG** = ``47``
+
+Bug error.
+
+.. _class_@GlobalScope_constant_ERR_PRINTER_ON_FIRE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Error<enum_@GlobalScope_Error>` **ERR_PRINTER_ON_FIRE** = ``48``
+
+Printer on fire error. (This is an easter egg, no engine methods return this error code.)
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _enum_@GlobalScope_PropertyHint:
 
-.. _class_@GlobalScope_constant_PROPERTY_HINT_NONE:
-
-.. _class_@GlobalScope_constant_PROPERTY_HINT_RANGE:
-
-.. _class_@GlobalScope_constant_PROPERTY_HINT_EXP_RANGE:
-
-.. _class_@GlobalScope_constant_PROPERTY_HINT_ENUM:
-
-.. _class_@GlobalScope_constant_PROPERTY_HINT_ENUM_SUGGESTION:
-
-.. _class_@GlobalScope_constant_PROPERTY_HINT_EXP_EASING:
-
-.. _class_@GlobalScope_constant_PROPERTY_HINT_LENGTH:
-
-.. _class_@GlobalScope_constant_PROPERTY_HINT_KEY_ACCEL:
-
-.. _class_@GlobalScope_constant_PROPERTY_HINT_FLAGS:
-
-.. _class_@GlobalScope_constant_PROPERTY_HINT_LAYERS_2D_RENDER:
-
-.. _class_@GlobalScope_constant_PROPERTY_HINT_LAYERS_2D_PHYSICS:
-
-.. _class_@GlobalScope_constant_PROPERTY_HINT_LAYERS_2D_NAVIGATION:
-
-.. _class_@GlobalScope_constant_PROPERTY_HINT_LAYERS_3D_RENDER:
-
-.. _class_@GlobalScope_constant_PROPERTY_HINT_LAYERS_3D_PHYSICS:
-
-.. _class_@GlobalScope_constant_PROPERTY_HINT_LAYERS_3D_NAVIGATION:
-
-.. _class_@GlobalScope_constant_PROPERTY_HINT_FILE:
-
-.. _class_@GlobalScope_constant_PROPERTY_HINT_DIR:
-
-.. _class_@GlobalScope_constant_PROPERTY_HINT_GLOBAL_FILE:
-
-.. _class_@GlobalScope_constant_PROPERTY_HINT_GLOBAL_DIR:
-
-.. _class_@GlobalScope_constant_PROPERTY_HINT_RESOURCE_TYPE:
-
-.. _class_@GlobalScope_constant_PROPERTY_HINT_MULTILINE_TEXT:
-
-.. _class_@GlobalScope_constant_PROPERTY_HINT_PLACEHOLDER_TEXT:
-
-.. _class_@GlobalScope_constant_PROPERTY_HINT_COLOR_NO_ALPHA:
-
-.. _class_@GlobalScope_constant_PROPERTY_HINT_IMAGE_COMPRESS_LOSSY:
-
-.. _class_@GlobalScope_constant_PROPERTY_HINT_IMAGE_COMPRESS_LOSSLESS:
-
-.. _class_@GlobalScope_constant_PROPERTY_HINT_OBJECT_ID:
-
-.. _class_@GlobalScope_constant_PROPERTY_HINT_TYPE_STRING:
-
-.. _class_@GlobalScope_constant_PROPERTY_HINT_NODE_PATH_TO_EDITED_NODE:
-
-.. _class_@GlobalScope_constant_PROPERTY_HINT_METHOD_OF_VARIANT_TYPE:
-
-.. _class_@GlobalScope_constant_PROPERTY_HINT_METHOD_OF_BASE_TYPE:
-
-.. _class_@GlobalScope_constant_PROPERTY_HINT_METHOD_OF_INSTANCE:
-
-.. _class_@GlobalScope_constant_PROPERTY_HINT_METHOD_OF_SCRIPT:
-
-.. _class_@GlobalScope_constant_PROPERTY_HINT_PROPERTY_OF_VARIANT_TYPE:
-
-.. _class_@GlobalScope_constant_PROPERTY_HINT_PROPERTY_OF_BASE_TYPE:
-
-.. _class_@GlobalScope_constant_PROPERTY_HINT_PROPERTY_OF_INSTANCE:
-
-.. _class_@GlobalScope_constant_PROPERTY_HINT_PROPERTY_OF_SCRIPT:
-
-.. _class_@GlobalScope_constant_PROPERTY_HINT_OBJECT_TOO_BIG:
-
-.. _class_@GlobalScope_constant_PROPERTY_HINT_NODE_PATH_VALID_TYPES:
-
-.. _class_@GlobalScope_constant_PROPERTY_HINT_SAVE_FILE:
-
-.. _class_@GlobalScope_constant_PROPERTY_HINT_MAX:
+.. rst-class:: classref-enumeration
 
 enum **PropertyHint**:
 
-- **PROPERTY_HINT_NONE** = **0** --- No hint for the edited property.
+.. _class_@GlobalScope_constant_PROPERTY_HINT_NONE:
 
-- **PROPERTY_HINT_RANGE** = **1** --- Hints that an integer or float property should be within a range specified via the hint string ``"min,max"`` or ``"min,max,step"``. The hint string can optionally include ``"or_greater"`` and/or ``"or_lesser"`` to allow manual input going respectively above the max or below the min values. Example: ``"-360,360,1,or_greater,or_lesser"``.
+.. rst-class:: classref-enumeration-constant
 
-- **PROPERTY_HINT_EXP_RANGE** = **2** --- Hints that a float property should be within an exponential range specified via the hint string ``"min,max"`` or ``"min,max,step"``. The hint string can optionally include ``"or_greater"`` and/or ``"or_lesser"`` to allow manual input going respectively above the max or below the min values. Example: ``"0.01,100,0.01,or_greater"``.
+:ref:`PropertyHint<enum_@GlobalScope_PropertyHint>` **PROPERTY_HINT_NONE** = ``0``
 
-- **PROPERTY_HINT_ENUM** = **3** --- Hints that an integer, float or string property is an enumerated value to pick in a list specified via a hint string.
+No hint for the edited property.
+
+.. _class_@GlobalScope_constant_PROPERTY_HINT_RANGE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`PropertyHint<enum_@GlobalScope_PropertyHint>` **PROPERTY_HINT_RANGE** = ``1``
+
+Hints that an integer or float property should be within a range specified via the hint string ``"min,max"`` or ``"min,max,step"``. The hint string can optionally include ``"or_greater"`` and/or ``"or_lesser"`` to allow manual input going respectively above the max or below the min values. Example: ``"-360,360,1,or_greater,or_lesser"``.
+
+.. _class_@GlobalScope_constant_PROPERTY_HINT_EXP_RANGE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`PropertyHint<enum_@GlobalScope_PropertyHint>` **PROPERTY_HINT_EXP_RANGE** = ``2``
+
+Hints that a float property should be within an exponential range specified via the hint string ``"min,max"`` or ``"min,max,step"``. The hint string can optionally include ``"or_greater"`` and/or ``"or_lesser"`` to allow manual input going respectively above the max or below the min values. Example: ``"0.01,100,0.01,or_greater"``.
+
+.. _class_@GlobalScope_constant_PROPERTY_HINT_ENUM:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`PropertyHint<enum_@GlobalScope_PropertyHint>` **PROPERTY_HINT_ENUM** = ``3``
+
+Hints that an integer, float or string property is an enumerated value to pick in a list specified via a hint string.
 
 The hint string is a comma separated list of names such as ``"Hello,Something,Else"``. For integer and float properties, the first name in the list has value 0, the next 1, and so on. Explicit values can also be specified by appending ``:integer`` to the name, e.g. ``"Zero,One,Three:3,Four,Six:6"``.
 
-- **PROPERTY_HINT_ENUM_SUGGESTION** = **39** --- Hints that a string property can be an enumerated value to pick in a list specified via a hint string such as ``"Hello,Something,Else"``.
+.. _class_@GlobalScope_constant_PROPERTY_HINT_ENUM_SUGGESTION:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`PropertyHint<enum_@GlobalScope_PropertyHint>` **PROPERTY_HINT_ENUM_SUGGESTION** = ``39``
+
+Hints that a string property can be an enumerated value to pick in a list specified via a hint string such as ``"Hello,Something,Else"``.
 
 Unlike :ref:`PROPERTY_HINT_ENUM<class_@GlobalScope_constant_PROPERTY_HINT_ENUM>` a property with this hint still accepts arbitrary values and can be empty. The list of values serves to suggest possible values.
 
-- **PROPERTY_HINT_EXP_EASING** = **4** --- Hints that a float property should be edited via an exponential easing function. The hint string can include ``"attenuation"`` to flip the curve horizontally and/or ``"inout"`` to also include in/out easing.
+.. _class_@GlobalScope_constant_PROPERTY_HINT_EXP_EASING:
 
-- **PROPERTY_HINT_LENGTH** = **5** --- Deprecated hint, unused.
+.. rst-class:: classref-enumeration-constant
 
-- **PROPERTY_HINT_KEY_ACCEL** = **7** --- Deprecated hint, unused.
+:ref:`PropertyHint<enum_@GlobalScope_PropertyHint>` **PROPERTY_HINT_EXP_EASING** = ``4``
 
-- **PROPERTY_HINT_FLAGS** = **8** --- Hints that an integer property is a bitmask with named bit flags. For example, to allow toggling bits 0, 1, 2 and 4, the hint could be something like ``"Bit0,Bit1,Bit2,,Bit4"``.
+Hints that a float property should be edited via an exponential easing function. The hint string can include ``"attenuation"`` to flip the curve horizontally and/or ``"inout"`` to also include in/out easing.
 
-- **PROPERTY_HINT_LAYERS_2D_RENDER** = **9** --- Hints that an integer property is a bitmask using the optionally named 2D render layers.
+.. _class_@GlobalScope_constant_PROPERTY_HINT_LENGTH:
 
-- **PROPERTY_HINT_LAYERS_2D_PHYSICS** = **10** --- Hints that an integer property is a bitmask using the optionally named 2D physics layers.
+.. rst-class:: classref-enumeration-constant
 
-- **PROPERTY_HINT_LAYERS_2D_NAVIGATION** = **11** --- Hints that an integer property is a bitmask using the optionally named 2D navigation layers.
+:ref:`PropertyHint<enum_@GlobalScope_PropertyHint>` **PROPERTY_HINT_LENGTH** = ``5``
 
-- **PROPERTY_HINT_LAYERS_3D_RENDER** = **12** --- Hints that an integer property is a bitmask using the optionally named 3D render layers.
+Deprecated hint, unused.
 
-- **PROPERTY_HINT_LAYERS_3D_PHYSICS** = **13** --- Hints that an integer property is a bitmask using the optionally named 3D physics layers.
+.. _class_@GlobalScope_constant_PROPERTY_HINT_KEY_ACCEL:
 
-- **PROPERTY_HINT_LAYERS_3D_NAVIGATION** = **14** --- Hints that an integer property is a bitmask using the optionally named 3D navigation layers.
+.. rst-class:: classref-enumeration-constant
 
-- **PROPERTY_HINT_FILE** = **15** --- Hints that a string property is a path to a file. Editing it will show a file dialog for picking the path. The hint string can be a set of filters with wildcards like ``"*.png,*.jpg"``.
+:ref:`PropertyHint<enum_@GlobalScope_PropertyHint>` **PROPERTY_HINT_KEY_ACCEL** = ``7``
 
-- **PROPERTY_HINT_DIR** = **16** --- Hints that a string property is a path to a directory. Editing it will show a file dialog for picking the path.
+Deprecated hint, unused.
 
-- **PROPERTY_HINT_GLOBAL_FILE** = **17** --- Hints that a string property is an absolute path to a file outside the project folder. Editing it will show a file dialog for picking the path. The hint string can be a set of filters with wildcards like ``"*.png,*.jpg"``.
+.. _class_@GlobalScope_constant_PROPERTY_HINT_FLAGS:
 
-- **PROPERTY_HINT_GLOBAL_DIR** = **18** --- Hints that a string property is an absolute path to a directory outside the project folder. Editing it will show a file dialog for picking the path.
+.. rst-class:: classref-enumeration-constant
 
-- **PROPERTY_HINT_RESOURCE_TYPE** = **19** --- Hints that a property is an instance of a :ref:`Resource<class_Resource>`-derived type, optionally specified via the hint string (e.g. ``"Texture"``). Editing it will show a popup menu of valid resource types to instantiate.
+:ref:`PropertyHint<enum_@GlobalScope_PropertyHint>` **PROPERTY_HINT_FLAGS** = ``8``
 
-- **PROPERTY_HINT_MULTILINE_TEXT** = **20** --- Hints that a string property is text with line breaks. Editing it will show a text input field where line breaks can be typed.
+Hints that an integer property is a bitmask with named bit flags. For example, to allow toggling bits 0, 1, 2 and 4, the hint could be something like ``"Bit0,Bit1,Bit2,,Bit4"``.
 
-- **PROPERTY_HINT_PLACEHOLDER_TEXT** = **21** --- Hints that a string property should have a placeholder text visible on its input field, whenever the property is empty. The hint string is the placeholder text to use.
+.. _class_@GlobalScope_constant_PROPERTY_HINT_LAYERS_2D_RENDER:
 
-- **PROPERTY_HINT_COLOR_NO_ALPHA** = **22** --- Hints that a color property should be edited without changing its alpha component, i.e. only R, G and B channels are edited.
+.. rst-class:: classref-enumeration-constant
 
-- **PROPERTY_HINT_IMAGE_COMPRESS_LOSSY** = **23** --- Hints that an image is compressed using lossy compression.
+:ref:`PropertyHint<enum_@GlobalScope_PropertyHint>` **PROPERTY_HINT_LAYERS_2D_RENDER** = ``9``
 
-- **PROPERTY_HINT_IMAGE_COMPRESS_LOSSLESS** = **24** --- Hints that an image is compressed using lossless compression.
+Hints that an integer property is a bitmask using the optionally named 2D render layers.
 
-- **PROPERTY_HINT_OBJECT_ID** = **25**
+.. _class_@GlobalScope_constant_PROPERTY_HINT_LAYERS_2D_PHYSICS:
 
-- **PROPERTY_HINT_TYPE_STRING** = **26** --- Hint that a property represents a particular type. If a property is :ref:`TYPE_STRING<class_@GlobalScope_constant_TYPE_STRING>`, allows to set a type from the create dialog. If you need to create an :ref:`Array<class_Array>` to contain elements of a specific type, the ``hint_string`` must encode nested types using ``":"`` and ``"/"`` for specifying :ref:`Resource<class_Resource>` types. For instance:
+.. rst-class:: classref-enumeration-constant
+
+:ref:`PropertyHint<enum_@GlobalScope_PropertyHint>` **PROPERTY_HINT_LAYERS_2D_PHYSICS** = ``10``
+
+Hints that an integer property is a bitmask using the optionally named 2D physics layers.
+
+.. _class_@GlobalScope_constant_PROPERTY_HINT_LAYERS_2D_NAVIGATION:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`PropertyHint<enum_@GlobalScope_PropertyHint>` **PROPERTY_HINT_LAYERS_2D_NAVIGATION** = ``11``
+
+Hints that an integer property is a bitmask using the optionally named 2D navigation layers.
+
+.. _class_@GlobalScope_constant_PROPERTY_HINT_LAYERS_3D_RENDER:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`PropertyHint<enum_@GlobalScope_PropertyHint>` **PROPERTY_HINT_LAYERS_3D_RENDER** = ``12``
+
+Hints that an integer property is a bitmask using the optionally named 3D render layers.
+
+.. _class_@GlobalScope_constant_PROPERTY_HINT_LAYERS_3D_PHYSICS:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`PropertyHint<enum_@GlobalScope_PropertyHint>` **PROPERTY_HINT_LAYERS_3D_PHYSICS** = ``13``
+
+Hints that an integer property is a bitmask using the optionally named 3D physics layers.
+
+.. _class_@GlobalScope_constant_PROPERTY_HINT_LAYERS_3D_NAVIGATION:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`PropertyHint<enum_@GlobalScope_PropertyHint>` **PROPERTY_HINT_LAYERS_3D_NAVIGATION** = ``14``
+
+Hints that an integer property is a bitmask using the optionally named 3D navigation layers.
+
+.. _class_@GlobalScope_constant_PROPERTY_HINT_FILE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`PropertyHint<enum_@GlobalScope_PropertyHint>` **PROPERTY_HINT_FILE** = ``15``
+
+Hints that a string property is a path to a file. Editing it will show a file dialog for picking the path. The hint string can be a set of filters with wildcards like ``"*.png,*.jpg"``.
+
+.. _class_@GlobalScope_constant_PROPERTY_HINT_DIR:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`PropertyHint<enum_@GlobalScope_PropertyHint>` **PROPERTY_HINT_DIR** = ``16``
+
+Hints that a string property is a path to a directory. Editing it will show a file dialog for picking the path.
+
+.. _class_@GlobalScope_constant_PROPERTY_HINT_GLOBAL_FILE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`PropertyHint<enum_@GlobalScope_PropertyHint>` **PROPERTY_HINT_GLOBAL_FILE** = ``17``
+
+Hints that a string property is an absolute path to a file outside the project folder. Editing it will show a file dialog for picking the path. The hint string can be a set of filters with wildcards like ``"*.png,*.jpg"``.
+
+.. _class_@GlobalScope_constant_PROPERTY_HINT_GLOBAL_DIR:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`PropertyHint<enum_@GlobalScope_PropertyHint>` **PROPERTY_HINT_GLOBAL_DIR** = ``18``
+
+Hints that a string property is an absolute path to a directory outside the project folder. Editing it will show a file dialog for picking the path.
+
+.. _class_@GlobalScope_constant_PROPERTY_HINT_RESOURCE_TYPE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`PropertyHint<enum_@GlobalScope_PropertyHint>` **PROPERTY_HINT_RESOURCE_TYPE** = ``19``
+
+Hints that a property is an instance of a :ref:`Resource<class_Resource>`-derived type, optionally specified via the hint string (e.g. ``"Texture"``). Editing it will show a popup menu of valid resource types to instantiate.
+
+.. _class_@GlobalScope_constant_PROPERTY_HINT_MULTILINE_TEXT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`PropertyHint<enum_@GlobalScope_PropertyHint>` **PROPERTY_HINT_MULTILINE_TEXT** = ``20``
+
+Hints that a string property is text with line breaks. Editing it will show a text input field where line breaks can be typed.
+
+.. _class_@GlobalScope_constant_PROPERTY_HINT_PLACEHOLDER_TEXT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`PropertyHint<enum_@GlobalScope_PropertyHint>` **PROPERTY_HINT_PLACEHOLDER_TEXT** = ``21``
+
+Hints that a string property should have a placeholder text visible on its input field, whenever the property is empty. The hint string is the placeholder text to use.
+
+.. _class_@GlobalScope_constant_PROPERTY_HINT_COLOR_NO_ALPHA:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`PropertyHint<enum_@GlobalScope_PropertyHint>` **PROPERTY_HINT_COLOR_NO_ALPHA** = ``22``
+
+Hints that a color property should be edited without changing its alpha component, i.e. only R, G and B channels are edited.
+
+.. _class_@GlobalScope_constant_PROPERTY_HINT_IMAGE_COMPRESS_LOSSY:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`PropertyHint<enum_@GlobalScope_PropertyHint>` **PROPERTY_HINT_IMAGE_COMPRESS_LOSSY** = ``23``
+
+Hints that an image is compressed using lossy compression.
+
+.. _class_@GlobalScope_constant_PROPERTY_HINT_IMAGE_COMPRESS_LOSSLESS:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`PropertyHint<enum_@GlobalScope_PropertyHint>` **PROPERTY_HINT_IMAGE_COMPRESS_LOSSLESS** = ``24``
+
+Hints that an image is compressed using lossless compression.
+
+.. _class_@GlobalScope_constant_PROPERTY_HINT_OBJECT_ID:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`PropertyHint<enum_@GlobalScope_PropertyHint>` **PROPERTY_HINT_OBJECT_ID** = ``25``
+
+
+
+.. _class_@GlobalScope_constant_PROPERTY_HINT_TYPE_STRING:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`PropertyHint<enum_@GlobalScope_PropertyHint>` **PROPERTY_HINT_TYPE_STRING** = ``26``
+
+Hint that a property represents a particular type. If a property is :ref:`TYPE_STRING<class_@GlobalScope_constant_TYPE_STRING>`, allows to set a type from the create dialog. If you need to create an :ref:`Array<class_Array>` to contain elements of a specific type, the ``hint_string`` must encode nested types using ``":"`` and ``"/"`` for specifying :ref:`Resource<class_Resource>` types. For instance:
 
 ::
 
@@ -2043,596 +3912,1125 @@ Unlike :ref:`PROPERTY_HINT_ENUM<class_@GlobalScope_constant_PROPERTY_HINT_ENUM>`
 
 \ **Note:** The final colon is required to specify for properly detecting built-in types.
 
-- **PROPERTY_HINT_NODE_PATH_TO_EDITED_NODE** = **27**
+.. _class_@GlobalScope_constant_PROPERTY_HINT_NODE_PATH_TO_EDITED_NODE:
 
-- **PROPERTY_HINT_METHOD_OF_VARIANT_TYPE** = **28**
+.. rst-class:: classref-enumeration-constant
 
-- **PROPERTY_HINT_METHOD_OF_BASE_TYPE** = **29**
+:ref:`PropertyHint<enum_@GlobalScope_PropertyHint>` **PROPERTY_HINT_NODE_PATH_TO_EDITED_NODE** = ``27``
 
-- **PROPERTY_HINT_METHOD_OF_INSTANCE** = **30**
 
-- **PROPERTY_HINT_METHOD_OF_SCRIPT** = **31**
 
-- **PROPERTY_HINT_PROPERTY_OF_VARIANT_TYPE** = **32**
+.. _class_@GlobalScope_constant_PROPERTY_HINT_METHOD_OF_VARIANT_TYPE:
 
-- **PROPERTY_HINT_PROPERTY_OF_BASE_TYPE** = **33**
+.. rst-class:: classref-enumeration-constant
 
-- **PROPERTY_HINT_PROPERTY_OF_INSTANCE** = **34**
+:ref:`PropertyHint<enum_@GlobalScope_PropertyHint>` **PROPERTY_HINT_METHOD_OF_VARIANT_TYPE** = ``28``
 
-- **PROPERTY_HINT_PROPERTY_OF_SCRIPT** = **35**
 
-- **PROPERTY_HINT_OBJECT_TOO_BIG** = **36**
 
-- **PROPERTY_HINT_NODE_PATH_VALID_TYPES** = **37**
+.. _class_@GlobalScope_constant_PROPERTY_HINT_METHOD_OF_BASE_TYPE:
 
-- **PROPERTY_HINT_SAVE_FILE** = **38**
+.. rst-class:: classref-enumeration-constant
 
-- **PROPERTY_HINT_MAX** = **40**
+:ref:`PropertyHint<enum_@GlobalScope_PropertyHint>` **PROPERTY_HINT_METHOD_OF_BASE_TYPE** = ``29``
+
+
+
+.. _class_@GlobalScope_constant_PROPERTY_HINT_METHOD_OF_INSTANCE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`PropertyHint<enum_@GlobalScope_PropertyHint>` **PROPERTY_HINT_METHOD_OF_INSTANCE** = ``30``
+
+
+
+.. _class_@GlobalScope_constant_PROPERTY_HINT_METHOD_OF_SCRIPT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`PropertyHint<enum_@GlobalScope_PropertyHint>` **PROPERTY_HINT_METHOD_OF_SCRIPT** = ``31``
+
+
+
+.. _class_@GlobalScope_constant_PROPERTY_HINT_PROPERTY_OF_VARIANT_TYPE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`PropertyHint<enum_@GlobalScope_PropertyHint>` **PROPERTY_HINT_PROPERTY_OF_VARIANT_TYPE** = ``32``
+
+
+
+.. _class_@GlobalScope_constant_PROPERTY_HINT_PROPERTY_OF_BASE_TYPE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`PropertyHint<enum_@GlobalScope_PropertyHint>` **PROPERTY_HINT_PROPERTY_OF_BASE_TYPE** = ``33``
+
+
+
+.. _class_@GlobalScope_constant_PROPERTY_HINT_PROPERTY_OF_INSTANCE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`PropertyHint<enum_@GlobalScope_PropertyHint>` **PROPERTY_HINT_PROPERTY_OF_INSTANCE** = ``34``
+
+
+
+.. _class_@GlobalScope_constant_PROPERTY_HINT_PROPERTY_OF_SCRIPT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`PropertyHint<enum_@GlobalScope_PropertyHint>` **PROPERTY_HINT_PROPERTY_OF_SCRIPT** = ``35``
+
+
+
+.. _class_@GlobalScope_constant_PROPERTY_HINT_OBJECT_TOO_BIG:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`PropertyHint<enum_@GlobalScope_PropertyHint>` **PROPERTY_HINT_OBJECT_TOO_BIG** = ``36``
+
+
+
+.. _class_@GlobalScope_constant_PROPERTY_HINT_NODE_PATH_VALID_TYPES:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`PropertyHint<enum_@GlobalScope_PropertyHint>` **PROPERTY_HINT_NODE_PATH_VALID_TYPES** = ``37``
+
+
+
+.. _class_@GlobalScope_constant_PROPERTY_HINT_SAVE_FILE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`PropertyHint<enum_@GlobalScope_PropertyHint>` **PROPERTY_HINT_SAVE_FILE** = ``38``
+
+
+
+.. _class_@GlobalScope_constant_PROPERTY_HINT_MAX:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`PropertyHint<enum_@GlobalScope_PropertyHint>` **PROPERTY_HINT_MAX** = ``40``
+
+
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _enum_@GlobalScope_PropertyUsageFlags:
 
-.. _class_@GlobalScope_constant_PROPERTY_USAGE_STORAGE:
-
-.. _class_@GlobalScope_constant_PROPERTY_USAGE_EDITOR:
-
-.. _class_@GlobalScope_constant_PROPERTY_USAGE_NETWORK:
-
-.. _class_@GlobalScope_constant_PROPERTY_USAGE_EDITOR_HELPER:
-
-.. _class_@GlobalScope_constant_PROPERTY_USAGE_CHECKABLE:
-
-.. _class_@GlobalScope_constant_PROPERTY_USAGE_CHECKED:
-
-.. _class_@GlobalScope_constant_PROPERTY_USAGE_INTERNATIONALIZED:
-
-.. _class_@GlobalScope_constant_PROPERTY_USAGE_GROUP:
-
-.. _class_@GlobalScope_constant_PROPERTY_USAGE_CATEGORY:
-
-.. _class_@GlobalScope_constant_PROPERTY_USAGE_NO_INSTANCE_STATE:
-
-.. _class_@GlobalScope_constant_PROPERTY_USAGE_RESTART_IF_CHANGED:
-
-.. _class_@GlobalScope_constant_PROPERTY_USAGE_SCRIPT_VARIABLE:
-
-.. _class_@GlobalScope_constant_PROPERTY_USAGE_DEFAULT:
-
-.. _class_@GlobalScope_constant_PROPERTY_USAGE_DEFAULT_INTL:
-
-.. _class_@GlobalScope_constant_PROPERTY_USAGE_NOEDITOR:
+.. rst-class:: classref-enumeration
 
 enum **PropertyUsageFlags**:
 
-- **PROPERTY_USAGE_STORAGE** = **1** --- The property is serialized and saved in the scene file (default).
+.. _class_@GlobalScope_constant_PROPERTY_USAGE_STORAGE:
 
-- **PROPERTY_USAGE_EDITOR** = **2** --- The property is shown in the editor inspector (default).
+.. rst-class:: classref-enumeration-constant
 
-- **PROPERTY_USAGE_NETWORK** = **4** --- Deprecated usage flag, unused.
+:ref:`PropertyUsageFlags<enum_@GlobalScope_PropertyUsageFlags>` **PROPERTY_USAGE_STORAGE** = ``1``
 
-- **PROPERTY_USAGE_EDITOR_HELPER** = **8** --- Deprecated usage flag, unused.
+The property is serialized and saved in the scene file (default).
 
-- **PROPERTY_USAGE_CHECKABLE** = **16** --- The property can be checked in the editor inspector.
+.. _class_@GlobalScope_constant_PROPERTY_USAGE_EDITOR:
 
-- **PROPERTY_USAGE_CHECKED** = **32** --- The property is checked in the editor inspector.
+.. rst-class:: classref-enumeration-constant
 
-- **PROPERTY_USAGE_INTERNATIONALIZED** = **64** --- The property is a translatable string.
+:ref:`PropertyUsageFlags<enum_@GlobalScope_PropertyUsageFlags>` **PROPERTY_USAGE_EDITOR** = ``2``
 
-- **PROPERTY_USAGE_GROUP** = **128** --- Used to group properties together in the editor. See :ref:`EditorInspector<class_EditorInspector>`.
+The property is shown in the editor inspector (default).
 
-- **PROPERTY_USAGE_CATEGORY** = **256** --- Used to categorize properties together in the editor.
+.. _class_@GlobalScope_constant_PROPERTY_USAGE_NETWORK:
 
-- **PROPERTY_USAGE_NO_INSTANCE_STATE** = **2048** --- The property does not save its state in :ref:`PackedScene<class_PackedScene>`.
+.. rst-class:: classref-enumeration-constant
 
-- **PROPERTY_USAGE_RESTART_IF_CHANGED** = **4096** --- Editing the property prompts the user for restarting the editor.
+:ref:`PropertyUsageFlags<enum_@GlobalScope_PropertyUsageFlags>` **PROPERTY_USAGE_NETWORK** = ``4``
 
-- **PROPERTY_USAGE_SCRIPT_VARIABLE** = **8192** --- The property is a script variable which should be serialized and saved in the scene file.
+Deprecated usage flag, unused.
 
-- **PROPERTY_USAGE_DEFAULT** = **7** --- Default usage (storage, editor and network).
+.. _class_@GlobalScope_constant_PROPERTY_USAGE_EDITOR_HELPER:
 
-- **PROPERTY_USAGE_DEFAULT_INTL** = **71** --- Default usage for translatable strings (storage, editor, network and internationalized).
+.. rst-class:: classref-enumeration-constant
 
-- **PROPERTY_USAGE_NOEDITOR** = **5** --- Default usage but without showing the property in the editor (storage, network).
+:ref:`PropertyUsageFlags<enum_@GlobalScope_PropertyUsageFlags>` **PROPERTY_USAGE_EDITOR_HELPER** = ``8``
+
+Deprecated usage flag, unused.
+
+.. _class_@GlobalScope_constant_PROPERTY_USAGE_CHECKABLE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`PropertyUsageFlags<enum_@GlobalScope_PropertyUsageFlags>` **PROPERTY_USAGE_CHECKABLE** = ``16``
+
+The property can be checked in the editor inspector.
+
+.. _class_@GlobalScope_constant_PROPERTY_USAGE_CHECKED:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`PropertyUsageFlags<enum_@GlobalScope_PropertyUsageFlags>` **PROPERTY_USAGE_CHECKED** = ``32``
+
+The property is checked in the editor inspector.
+
+.. _class_@GlobalScope_constant_PROPERTY_USAGE_INTERNATIONALIZED:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`PropertyUsageFlags<enum_@GlobalScope_PropertyUsageFlags>` **PROPERTY_USAGE_INTERNATIONALIZED** = ``64``
+
+The property is a translatable string.
+
+.. _class_@GlobalScope_constant_PROPERTY_USAGE_GROUP:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`PropertyUsageFlags<enum_@GlobalScope_PropertyUsageFlags>` **PROPERTY_USAGE_GROUP** = ``128``
+
+Used to group properties together in the editor. See :ref:`EditorInspector<class_EditorInspector>`.
+
+.. _class_@GlobalScope_constant_PROPERTY_USAGE_CATEGORY:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`PropertyUsageFlags<enum_@GlobalScope_PropertyUsageFlags>` **PROPERTY_USAGE_CATEGORY** = ``256``
+
+Used to categorize properties together in the editor.
+
+.. _class_@GlobalScope_constant_PROPERTY_USAGE_NO_INSTANCE_STATE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`PropertyUsageFlags<enum_@GlobalScope_PropertyUsageFlags>` **PROPERTY_USAGE_NO_INSTANCE_STATE** = ``2048``
+
+The property does not save its state in :ref:`PackedScene<class_PackedScene>`.
+
+.. _class_@GlobalScope_constant_PROPERTY_USAGE_RESTART_IF_CHANGED:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`PropertyUsageFlags<enum_@GlobalScope_PropertyUsageFlags>` **PROPERTY_USAGE_RESTART_IF_CHANGED** = ``4096``
+
+Editing the property prompts the user for restarting the editor.
+
+.. _class_@GlobalScope_constant_PROPERTY_USAGE_SCRIPT_VARIABLE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`PropertyUsageFlags<enum_@GlobalScope_PropertyUsageFlags>` **PROPERTY_USAGE_SCRIPT_VARIABLE** = ``8192``
+
+The property is a script variable which should be serialized and saved in the scene file.
+
+.. _class_@GlobalScope_constant_PROPERTY_USAGE_DEFAULT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`PropertyUsageFlags<enum_@GlobalScope_PropertyUsageFlags>` **PROPERTY_USAGE_DEFAULT** = ``7``
+
+Default usage (storage, editor and network).
+
+.. _class_@GlobalScope_constant_PROPERTY_USAGE_DEFAULT_INTL:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`PropertyUsageFlags<enum_@GlobalScope_PropertyUsageFlags>` **PROPERTY_USAGE_DEFAULT_INTL** = ``71``
+
+Default usage for translatable strings (storage, editor, network and internationalized).
+
+.. _class_@GlobalScope_constant_PROPERTY_USAGE_NOEDITOR:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`PropertyUsageFlags<enum_@GlobalScope_PropertyUsageFlags>` **PROPERTY_USAGE_NOEDITOR** = ``5``
+
+Default usage but without showing the property in the editor (storage, network).
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _enum_@GlobalScope_MethodFlags:
 
-.. _class_@GlobalScope_constant_METHOD_FLAG_NORMAL:
-
-.. _class_@GlobalScope_constant_METHOD_FLAG_EDITOR:
-
-.. _class_@GlobalScope_constant_METHOD_FLAG_NOSCRIPT:
-
-.. _class_@GlobalScope_constant_METHOD_FLAG_CONST:
-
-.. _class_@GlobalScope_constant_METHOD_FLAG_REVERSE:
-
-.. _class_@GlobalScope_constant_METHOD_FLAG_VIRTUAL:
-
-.. _class_@GlobalScope_constant_METHOD_FLAG_FROM_SCRIPT:
-
-.. _class_@GlobalScope_constant_METHOD_FLAG_VARARG:
-
-.. _class_@GlobalScope_constant_METHOD_FLAGS_DEFAULT:
+.. rst-class:: classref-enumeration
 
 enum **MethodFlags**:
 
-- **METHOD_FLAG_NORMAL** = **1** --- Flag for a normal method.
+.. _class_@GlobalScope_constant_METHOD_FLAG_NORMAL:
 
-- **METHOD_FLAG_EDITOR** = **2** --- Flag for an editor method.
+.. rst-class:: classref-enumeration-constant
 
-- **METHOD_FLAG_NOSCRIPT** = **4** --- Deprecated method flag, unused.
+:ref:`MethodFlags<enum_@GlobalScope_MethodFlags>` **METHOD_FLAG_NORMAL** = ``1``
 
-- **METHOD_FLAG_CONST** = **8** --- Flag for a constant method.
+Flag for a normal method.
 
-- **METHOD_FLAG_REVERSE** = **16** --- Deprecated method flag, unused.
+.. _class_@GlobalScope_constant_METHOD_FLAG_EDITOR:
 
-- **METHOD_FLAG_VIRTUAL** = **32** --- Flag for a virtual method.
+.. rst-class:: classref-enumeration-constant
 
-- **METHOD_FLAG_FROM_SCRIPT** = **64** --- Deprecated method flag, unused.
+:ref:`MethodFlags<enum_@GlobalScope_MethodFlags>` **METHOD_FLAG_EDITOR** = ``2``
 
-- **METHOD_FLAG_VARARG** = **128**
+Flag for an editor method.
 
-- **METHOD_FLAGS_DEFAULT** = **1** --- Default method flags.
+.. _class_@GlobalScope_constant_METHOD_FLAG_NOSCRIPT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`MethodFlags<enum_@GlobalScope_MethodFlags>` **METHOD_FLAG_NOSCRIPT** = ``4``
+
+Deprecated method flag, unused.
+
+.. _class_@GlobalScope_constant_METHOD_FLAG_CONST:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`MethodFlags<enum_@GlobalScope_MethodFlags>` **METHOD_FLAG_CONST** = ``8``
+
+Flag for a constant method.
+
+.. _class_@GlobalScope_constant_METHOD_FLAG_REVERSE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`MethodFlags<enum_@GlobalScope_MethodFlags>` **METHOD_FLAG_REVERSE** = ``16``
+
+Deprecated method flag, unused.
+
+.. _class_@GlobalScope_constant_METHOD_FLAG_VIRTUAL:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`MethodFlags<enum_@GlobalScope_MethodFlags>` **METHOD_FLAG_VIRTUAL** = ``32``
+
+Flag for a virtual method.
+
+.. _class_@GlobalScope_constant_METHOD_FLAG_FROM_SCRIPT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`MethodFlags<enum_@GlobalScope_MethodFlags>` **METHOD_FLAG_FROM_SCRIPT** = ``64``
+
+Deprecated method flag, unused.
+
+.. _class_@GlobalScope_constant_METHOD_FLAG_VARARG:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`MethodFlags<enum_@GlobalScope_MethodFlags>` **METHOD_FLAG_VARARG** = ``128``
+
+
+
+.. _class_@GlobalScope_constant_METHOD_FLAGS_DEFAULT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`MethodFlags<enum_@GlobalScope_MethodFlags>` **METHOD_FLAGS_DEFAULT** = ``1``
+
+Default method flags.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _enum_@GlobalScope_Variant.Type:
 
-.. _class_@GlobalScope_constant_TYPE_NIL:
-
-.. _class_@GlobalScope_constant_TYPE_BOOL:
-
-.. _class_@GlobalScope_constant_TYPE_INT:
-
-.. _class_@GlobalScope_constant_TYPE_REAL:
-
-.. _class_@GlobalScope_constant_TYPE_STRING:
-
-.. _class_@GlobalScope_constant_TYPE_VECTOR2:
-
-.. _class_@GlobalScope_constant_TYPE_RECT2:
-
-.. _class_@GlobalScope_constant_TYPE_VECTOR3:
-
-.. _class_@GlobalScope_constant_TYPE_TRANSFORM2D:
-
-.. _class_@GlobalScope_constant_TYPE_PLANE:
-
-.. _class_@GlobalScope_constant_TYPE_QUAT:
-
-.. _class_@GlobalScope_constant_TYPE_AABB:
-
-.. _class_@GlobalScope_constant_TYPE_BASIS:
-
-.. _class_@GlobalScope_constant_TYPE_TRANSFORM:
-
-.. _class_@GlobalScope_constant_TYPE_COLOR:
-
-.. _class_@GlobalScope_constant_TYPE_NODE_PATH:
-
-.. _class_@GlobalScope_constant_TYPE_RID:
-
-.. _class_@GlobalScope_constant_TYPE_OBJECT:
-
-.. _class_@GlobalScope_constant_TYPE_DICTIONARY:
-
-.. _class_@GlobalScope_constant_TYPE_ARRAY:
-
-.. _class_@GlobalScope_constant_TYPE_RAW_ARRAY:
-
-.. _class_@GlobalScope_constant_TYPE_INT_ARRAY:
-
-.. _class_@GlobalScope_constant_TYPE_REAL_ARRAY:
-
-.. _class_@GlobalScope_constant_TYPE_STRING_ARRAY:
-
-.. _class_@GlobalScope_constant_TYPE_VECTOR2_ARRAY:
-
-.. _class_@GlobalScope_constant_TYPE_VECTOR3_ARRAY:
-
-.. _class_@GlobalScope_constant_TYPE_COLOR_ARRAY:
-
-.. _class_@GlobalScope_constant_TYPE_MAX:
+.. rst-class:: classref-enumeration
 
 enum **Variant.Type**:
 
-- **TYPE_NIL** = **0** --- Variable is ``null``.
+.. _class_@GlobalScope_constant_TYPE_NIL:
 
-- **TYPE_BOOL** = **1** --- Variable is of type :ref:`bool<class_bool>`.
+.. rst-class:: classref-enumeration-constant
 
-- **TYPE_INT** = **2** --- Variable is of type :ref:`int<class_int>`.
+:ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` **TYPE_NIL** = ``0``
 
-- **TYPE_REAL** = **3** --- Variable is of type :ref:`float<class_float>` (real).
+Variable is ``null``.
 
-- **TYPE_STRING** = **4** --- Variable is of type :ref:`String<class_String>`.
+.. _class_@GlobalScope_constant_TYPE_BOOL:
 
-- **TYPE_VECTOR2** = **5** --- Variable is of type :ref:`Vector2<class_Vector2>`.
+.. rst-class:: classref-enumeration-constant
 
-- **TYPE_RECT2** = **6** --- Variable is of type :ref:`Rect2<class_Rect2>`.
+:ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` **TYPE_BOOL** = ``1``
 
-- **TYPE_VECTOR3** = **7** --- Variable is of type :ref:`Vector3<class_Vector3>`.
+Variable is of type :ref:`bool<class_bool>`.
 
-- **TYPE_TRANSFORM2D** = **8** --- Variable is of type :ref:`Transform2D<class_Transform2D>`.
+.. _class_@GlobalScope_constant_TYPE_INT:
 
-- **TYPE_PLANE** = **9** --- Variable is of type :ref:`Plane<class_Plane>`.
+.. rst-class:: classref-enumeration-constant
 
-- **TYPE_QUAT** = **10** --- Variable is of type :ref:`Quat<class_Quat>`.
+:ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` **TYPE_INT** = ``2``
 
-- **TYPE_AABB** = **11** --- Variable is of type :ref:`AABB<class_AABB>`.
+Variable is of type :ref:`int<class_int>`.
 
-- **TYPE_BASIS** = **12** --- Variable is of type :ref:`Basis<class_Basis>`.
+.. _class_@GlobalScope_constant_TYPE_REAL:
 
-- **TYPE_TRANSFORM** = **13** --- Variable is of type :ref:`Transform<class_Transform>`.
+.. rst-class:: classref-enumeration-constant
 
-- **TYPE_COLOR** = **14** --- Variable is of type :ref:`Color<class_Color>`.
+:ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` **TYPE_REAL** = ``3``
 
-- **TYPE_NODE_PATH** = **15** --- Variable is of type :ref:`NodePath<class_NodePath>`.
+Variable is of type :ref:`float<class_float>` (real).
 
-- **TYPE_RID** = **16** --- Variable is of type :ref:`RID<class_RID>`.
+.. _class_@GlobalScope_constant_TYPE_STRING:
 
-- **TYPE_OBJECT** = **17** --- Variable is of type :ref:`Object<class_Object>`.
+.. rst-class:: classref-enumeration-constant
 
-- **TYPE_DICTIONARY** = **18** --- Variable is of type :ref:`Dictionary<class_Dictionary>`.
+:ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` **TYPE_STRING** = ``4``
 
-- **TYPE_ARRAY** = **19** --- Variable is of type :ref:`Array<class_Array>`.
+Variable is of type :ref:`String<class_String>`.
 
-- **TYPE_RAW_ARRAY** = **20** --- Variable is of type :ref:`PoolByteArray<class_PoolByteArray>`.
+.. _class_@GlobalScope_constant_TYPE_VECTOR2:
 
-- **TYPE_INT_ARRAY** = **21** --- Variable is of type :ref:`PoolIntArray<class_PoolIntArray>`.
+.. rst-class:: classref-enumeration-constant
 
-- **TYPE_REAL_ARRAY** = **22** --- Variable is of type :ref:`PoolRealArray<class_PoolRealArray>`.
+:ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` **TYPE_VECTOR2** = ``5``
 
-- **TYPE_STRING_ARRAY** = **23** --- Variable is of type :ref:`PoolStringArray<class_PoolStringArray>`.
+Variable is of type :ref:`Vector2<class_Vector2>`.
 
-- **TYPE_VECTOR2_ARRAY** = **24** --- Variable is of type :ref:`PoolVector2Array<class_PoolVector2Array>`.
+.. _class_@GlobalScope_constant_TYPE_RECT2:
 
-- **TYPE_VECTOR3_ARRAY** = **25** --- Variable is of type :ref:`PoolVector3Array<class_PoolVector3Array>`.
+.. rst-class:: classref-enumeration-constant
 
-- **TYPE_COLOR_ARRAY** = **26** --- Variable is of type :ref:`PoolColorArray<class_PoolColorArray>`.
+:ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` **TYPE_RECT2** = ``6``
 
-- **TYPE_MAX** = **27** --- Represents the size of the :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` enum.
+Variable is of type :ref:`Rect2<class_Rect2>`.
+
+.. _class_@GlobalScope_constant_TYPE_VECTOR3:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` **TYPE_VECTOR3** = ``7``
+
+Variable is of type :ref:`Vector3<class_Vector3>`.
+
+.. _class_@GlobalScope_constant_TYPE_TRANSFORM2D:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` **TYPE_TRANSFORM2D** = ``8``
+
+Variable is of type :ref:`Transform2D<class_Transform2D>`.
+
+.. _class_@GlobalScope_constant_TYPE_PLANE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` **TYPE_PLANE** = ``9``
+
+Variable is of type :ref:`Plane<class_Plane>`.
+
+.. _class_@GlobalScope_constant_TYPE_QUAT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` **TYPE_QUAT** = ``10``
+
+Variable is of type :ref:`Quat<class_Quat>`.
+
+.. _class_@GlobalScope_constant_TYPE_AABB:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` **TYPE_AABB** = ``11``
+
+Variable is of type :ref:`AABB<class_AABB>`.
+
+.. _class_@GlobalScope_constant_TYPE_BASIS:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` **TYPE_BASIS** = ``12``
+
+Variable is of type :ref:`Basis<class_Basis>`.
+
+.. _class_@GlobalScope_constant_TYPE_TRANSFORM:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` **TYPE_TRANSFORM** = ``13``
+
+Variable is of type :ref:`Transform<class_Transform>`.
+
+.. _class_@GlobalScope_constant_TYPE_COLOR:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` **TYPE_COLOR** = ``14``
+
+Variable is of type :ref:`Color<class_Color>`.
+
+.. _class_@GlobalScope_constant_TYPE_NODE_PATH:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` **TYPE_NODE_PATH** = ``15``
+
+Variable is of type :ref:`NodePath<class_NodePath>`.
+
+.. _class_@GlobalScope_constant_TYPE_RID:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` **TYPE_RID** = ``16``
+
+Variable is of type :ref:`RID<class_RID>`.
+
+.. _class_@GlobalScope_constant_TYPE_OBJECT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` **TYPE_OBJECT** = ``17``
+
+Variable is of type :ref:`Object<class_Object>`.
+
+.. _class_@GlobalScope_constant_TYPE_DICTIONARY:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` **TYPE_DICTIONARY** = ``18``
+
+Variable is of type :ref:`Dictionary<class_Dictionary>`.
+
+.. _class_@GlobalScope_constant_TYPE_ARRAY:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` **TYPE_ARRAY** = ``19``
+
+Variable is of type :ref:`Array<class_Array>`.
+
+.. _class_@GlobalScope_constant_TYPE_RAW_ARRAY:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` **TYPE_RAW_ARRAY** = ``20``
+
+Variable is of type :ref:`PoolByteArray<class_PoolByteArray>`.
+
+.. _class_@GlobalScope_constant_TYPE_INT_ARRAY:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` **TYPE_INT_ARRAY** = ``21``
+
+Variable is of type :ref:`PoolIntArray<class_PoolIntArray>`.
+
+.. _class_@GlobalScope_constant_TYPE_REAL_ARRAY:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` **TYPE_REAL_ARRAY** = ``22``
+
+Variable is of type :ref:`PoolRealArray<class_PoolRealArray>`.
+
+.. _class_@GlobalScope_constant_TYPE_STRING_ARRAY:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` **TYPE_STRING_ARRAY** = ``23``
+
+Variable is of type :ref:`PoolStringArray<class_PoolStringArray>`.
+
+.. _class_@GlobalScope_constant_TYPE_VECTOR2_ARRAY:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` **TYPE_VECTOR2_ARRAY** = ``24``
+
+Variable is of type :ref:`PoolVector2Array<class_PoolVector2Array>`.
+
+.. _class_@GlobalScope_constant_TYPE_VECTOR3_ARRAY:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` **TYPE_VECTOR3_ARRAY** = ``25``
+
+Variable is of type :ref:`PoolVector3Array<class_PoolVector3Array>`.
+
+.. _class_@GlobalScope_constant_TYPE_COLOR_ARRAY:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` **TYPE_COLOR_ARRAY** = ``26``
+
+Variable is of type :ref:`PoolColorArray<class_PoolColorArray>`.
+
+.. _class_@GlobalScope_constant_TYPE_MAX:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` **TYPE_MAX** = ``27``
+
+Represents the size of the :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` enum.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _enum_@GlobalScope_Variant.Operator:
 
-.. _class_@GlobalScope_constant_OP_EQUAL:
-
-.. _class_@GlobalScope_constant_OP_NOT_EQUAL:
-
-.. _class_@GlobalScope_constant_OP_LESS:
-
-.. _class_@GlobalScope_constant_OP_LESS_EQUAL:
-
-.. _class_@GlobalScope_constant_OP_GREATER:
-
-.. _class_@GlobalScope_constant_OP_GREATER_EQUAL:
-
-.. _class_@GlobalScope_constant_OP_ADD:
-
-.. _class_@GlobalScope_constant_OP_SUBTRACT:
-
-.. _class_@GlobalScope_constant_OP_MULTIPLY:
-
-.. _class_@GlobalScope_constant_OP_DIVIDE:
-
-.. _class_@GlobalScope_constant_OP_NEGATE:
-
-.. _class_@GlobalScope_constant_OP_POSITIVE:
-
-.. _class_@GlobalScope_constant_OP_MODULE:
-
-.. _class_@GlobalScope_constant_OP_STRING_CONCAT:
-
-.. _class_@GlobalScope_constant_OP_SHIFT_LEFT:
-
-.. _class_@GlobalScope_constant_OP_SHIFT_RIGHT:
-
-.. _class_@GlobalScope_constant_OP_BIT_AND:
-
-.. _class_@GlobalScope_constant_OP_BIT_OR:
-
-.. _class_@GlobalScope_constant_OP_BIT_XOR:
-
-.. _class_@GlobalScope_constant_OP_BIT_NEGATE:
-
-.. _class_@GlobalScope_constant_OP_AND:
-
-.. _class_@GlobalScope_constant_OP_OR:
-
-.. _class_@GlobalScope_constant_OP_XOR:
-
-.. _class_@GlobalScope_constant_OP_NOT:
-
-.. _class_@GlobalScope_constant_OP_IN:
-
-.. _class_@GlobalScope_constant_OP_MAX:
+.. rst-class:: classref-enumeration
 
 enum **Variant.Operator**:
 
-- **OP_EQUAL** = **0** --- Equality operator (``==``).
+.. _class_@GlobalScope_constant_OP_EQUAL:
 
-- **OP_NOT_EQUAL** = **1** --- Inequality operator (``!=``).
+.. rst-class:: classref-enumeration-constant
 
-- **OP_LESS** = **2** --- Less than operator (``<``).
+:ref:`Variant.Operator<enum_@GlobalScope_Variant.Operator>` **OP_EQUAL** = ``0``
 
-- **OP_LESS_EQUAL** = **3** --- Less than or equal operator (``<=``).
+Equality operator (``==``).
 
-- **OP_GREATER** = **4** --- Greater than operator (``>``).
+.. _class_@GlobalScope_constant_OP_NOT_EQUAL:
 
-- **OP_GREATER_EQUAL** = **5** --- Greater than or equal operator (``>=``).
+.. rst-class:: classref-enumeration-constant
 
-- **OP_ADD** = **6** --- Addition operator (``+``).
+:ref:`Variant.Operator<enum_@GlobalScope_Variant.Operator>` **OP_NOT_EQUAL** = ``1``
 
-- **OP_SUBTRACT** = **7** --- Subtraction operator (``-``).
+Inequality operator (``!=``).
 
-- **OP_MULTIPLY** = **8** --- Multiplication operator (``*``).
+.. _class_@GlobalScope_constant_OP_LESS:
 
-- **OP_DIVIDE** = **9** --- Division operator (``/``).
+.. rst-class:: classref-enumeration-constant
 
-- **OP_NEGATE** = **10** --- Unary negation operator (``-``).
+:ref:`Variant.Operator<enum_@GlobalScope_Variant.Operator>` **OP_LESS** = ``2``
 
-- **OP_POSITIVE** = **11** --- Unary plus operator (``+``).
+Less than operator (``<``).
 
-- **OP_MODULE** = **12** --- Remainder/modulo operator (``%``).
+.. _class_@GlobalScope_constant_OP_LESS_EQUAL:
 
-- **OP_STRING_CONCAT** = **13** --- String concatenation operator (``+``).
+.. rst-class:: classref-enumeration-constant
 
-- **OP_SHIFT_LEFT** = **14** --- Left shift operator (``<<``).
+:ref:`Variant.Operator<enum_@GlobalScope_Variant.Operator>` **OP_LESS_EQUAL** = ``3``
 
-- **OP_SHIFT_RIGHT** = **15** --- Right shift operator (``>>``).
+Less than or equal operator (``<=``).
 
-- **OP_BIT_AND** = **16** --- Bitwise AND operator (``&``).
+.. _class_@GlobalScope_constant_OP_GREATER:
 
-- **OP_BIT_OR** = **17** --- Bitwise OR operator (``|``).
+.. rst-class:: classref-enumeration-constant
 
-- **OP_BIT_XOR** = **18** --- Bitwise XOR operator (``^``).
+:ref:`Variant.Operator<enum_@GlobalScope_Variant.Operator>` **OP_GREATER** = ``4``
 
-- **OP_BIT_NEGATE** = **19** --- Bitwise NOT operator (``~``).
+Greater than operator (``>``).
 
-- **OP_AND** = **20** --- Logical AND operator (``and`` or ``&&``).
+.. _class_@GlobalScope_constant_OP_GREATER_EQUAL:
 
-- **OP_OR** = **21** --- Logical OR operator (``or`` or ``||``).
+.. rst-class:: classref-enumeration-constant
 
-- **OP_XOR** = **22** --- Logical XOR operator (not implemented in GDScript).
+:ref:`Variant.Operator<enum_@GlobalScope_Variant.Operator>` **OP_GREATER_EQUAL** = ``5``
 
-- **OP_NOT** = **23** --- Logical NOT operator (``not`` or ``!``).
+Greater than or equal operator (``>=``).
 
-- **OP_IN** = **24** --- Logical IN operator (``in``).
+.. _class_@GlobalScope_constant_OP_ADD:
 
-- **OP_MAX** = **25** --- Represents the size of the :ref:`Variant.Operator<enum_@GlobalScope_Variant.Operator>` enum.
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Variant.Operator<enum_@GlobalScope_Variant.Operator>` **OP_ADD** = ``6``
+
+Addition operator (``+``).
+
+.. _class_@GlobalScope_constant_OP_SUBTRACT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Variant.Operator<enum_@GlobalScope_Variant.Operator>` **OP_SUBTRACT** = ``7``
+
+Subtraction operator (``-``).
+
+.. _class_@GlobalScope_constant_OP_MULTIPLY:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Variant.Operator<enum_@GlobalScope_Variant.Operator>` **OP_MULTIPLY** = ``8``
+
+Multiplication operator (``*``).
+
+.. _class_@GlobalScope_constant_OP_DIVIDE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Variant.Operator<enum_@GlobalScope_Variant.Operator>` **OP_DIVIDE** = ``9``
+
+Division operator (``/``).
+
+.. _class_@GlobalScope_constant_OP_NEGATE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Variant.Operator<enum_@GlobalScope_Variant.Operator>` **OP_NEGATE** = ``10``
+
+Unary negation operator (``-``).
+
+.. _class_@GlobalScope_constant_OP_POSITIVE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Variant.Operator<enum_@GlobalScope_Variant.Operator>` **OP_POSITIVE** = ``11``
+
+Unary plus operator (``+``).
+
+.. _class_@GlobalScope_constant_OP_MODULE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Variant.Operator<enum_@GlobalScope_Variant.Operator>` **OP_MODULE** = ``12``
+
+Remainder/modulo operator (``%``).
+
+.. _class_@GlobalScope_constant_OP_STRING_CONCAT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Variant.Operator<enum_@GlobalScope_Variant.Operator>` **OP_STRING_CONCAT** = ``13``
+
+String concatenation operator (``+``).
+
+.. _class_@GlobalScope_constant_OP_SHIFT_LEFT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Variant.Operator<enum_@GlobalScope_Variant.Operator>` **OP_SHIFT_LEFT** = ``14``
+
+Left shift operator (``<<``).
+
+.. _class_@GlobalScope_constant_OP_SHIFT_RIGHT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Variant.Operator<enum_@GlobalScope_Variant.Operator>` **OP_SHIFT_RIGHT** = ``15``
+
+Right shift operator (``>>``).
+
+.. _class_@GlobalScope_constant_OP_BIT_AND:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Variant.Operator<enum_@GlobalScope_Variant.Operator>` **OP_BIT_AND** = ``16``
+
+Bitwise AND operator (``&``).
+
+.. _class_@GlobalScope_constant_OP_BIT_OR:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Variant.Operator<enum_@GlobalScope_Variant.Operator>` **OP_BIT_OR** = ``17``
+
+Bitwise OR operator (``|``).
+
+.. _class_@GlobalScope_constant_OP_BIT_XOR:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Variant.Operator<enum_@GlobalScope_Variant.Operator>` **OP_BIT_XOR** = ``18``
+
+Bitwise XOR operator (``^``).
+
+.. _class_@GlobalScope_constant_OP_BIT_NEGATE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Variant.Operator<enum_@GlobalScope_Variant.Operator>` **OP_BIT_NEGATE** = ``19``
+
+Bitwise NOT operator (``~``).
+
+.. _class_@GlobalScope_constant_OP_AND:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Variant.Operator<enum_@GlobalScope_Variant.Operator>` **OP_AND** = ``20``
+
+Logical AND operator (``and`` or ``&&``).
+
+.. _class_@GlobalScope_constant_OP_OR:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Variant.Operator<enum_@GlobalScope_Variant.Operator>` **OP_OR** = ``21``
+
+Logical OR operator (``or`` or ``||``).
+
+.. _class_@GlobalScope_constant_OP_XOR:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Variant.Operator<enum_@GlobalScope_Variant.Operator>` **OP_XOR** = ``22``
+
+Logical XOR operator (not implemented in GDScript).
+
+.. _class_@GlobalScope_constant_OP_NOT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Variant.Operator<enum_@GlobalScope_Variant.Operator>` **OP_NOT** = ``23``
+
+Logical NOT operator (``not`` or ``!``).
+
+.. _class_@GlobalScope_constant_OP_IN:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Variant.Operator<enum_@GlobalScope_Variant.Operator>` **OP_IN** = ``24``
+
+Logical IN operator (``in``).
+
+.. _class_@GlobalScope_constant_OP_MAX:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Variant.Operator<enum_@GlobalScope_Variant.Operator>` **OP_MAX** = ``25``
+
+Represents the size of the :ref:`Variant.Operator<enum_@GlobalScope_Variant.Operator>` enum.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Constants
 ---------
 
 .. _class_@GlobalScope_constant_SPKEY:
 
-- **SPKEY** = **16777216** --- Scancodes with this bit applied are non-printable.
+.. rst-class:: classref-constant
+
+**SPKEY** = ``16777216``
+
+Scancodes with this bit applied are non-printable.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_@GlobalScope_property_ARVRServer:
 
-- :ref:`ARVRServer<class_ARVRServer>` **ARVRServer**
+.. rst-class:: classref-property
+
+:ref:`ARVRServer<class_ARVRServer>` **ARVRServer**
 
 The :ref:`ARVRServer<class_ARVRServer>` singleton.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_@GlobalScope_property_AudioServer:
 
-- :ref:`AudioServer<class_AudioServer>` **AudioServer**
+.. rst-class:: classref-property
+
+:ref:`AudioServer<class_AudioServer>` **AudioServer**
 
 The :ref:`AudioServer<class_AudioServer>` singleton.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_@GlobalScope_property_CameraServer:
 
-- :ref:`CameraServer<class_CameraServer>` **CameraServer**
+.. rst-class:: classref-property
+
+:ref:`CameraServer<class_CameraServer>` **CameraServer**
 
 The :ref:`CameraServer<class_CameraServer>` singleton.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_@GlobalScope_property_ClassDB:
 
-- :ref:`ClassDB<class_ClassDB>` **ClassDB**
+.. rst-class:: classref-property
+
+:ref:`ClassDB<class_ClassDB>` **ClassDB**
 
 The :ref:`ClassDB<class_ClassDB>` singleton.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_@GlobalScope_property_Engine:
 
-- :ref:`Engine<class_Engine>` **Engine**
+.. rst-class:: classref-property
+
+:ref:`Engine<class_Engine>` **Engine**
 
 The :ref:`Engine<class_Engine>` singleton.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_@GlobalScope_property_Geometry:
 
-- :ref:`Geometry<class_Geometry>` **Geometry**
+.. rst-class:: classref-property
+
+:ref:`Geometry<class_Geometry>` **Geometry**
 
 The :ref:`Geometry<class_Geometry>` singleton.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_@GlobalScope_property_IP:
 
-- :ref:`IP<class_IP>` **IP**
+.. rst-class:: classref-property
+
+:ref:`IP<class_IP>` **IP**
 
 The :ref:`IP<class_IP>` singleton.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_@GlobalScope_property_Input:
 
-- :ref:`Input<class_Input>` **Input**
+.. rst-class:: classref-property
+
+:ref:`Input<class_Input>` **Input**
 
 The :ref:`Input<class_Input>` singleton.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_@GlobalScope_property_InputMap:
 
-- :ref:`InputMap<class_InputMap>` **InputMap**
+.. rst-class:: classref-property
+
+:ref:`InputMap<class_InputMap>` **InputMap**
 
 The :ref:`InputMap<class_InputMap>` singleton.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_@GlobalScope_property_JSON:
 
-- :ref:`JSON<class_JSON>` **JSON**
+.. rst-class:: classref-property
+
+:ref:`JSON<class_JSON>` **JSON**
 
 The :ref:`JSON<class_JSON>` singleton.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_@GlobalScope_property_JavaClassWrapper:
 
-- :ref:`JavaClassWrapper<class_JavaClassWrapper>` **JavaClassWrapper**
+.. rst-class:: classref-property
+
+:ref:`JavaClassWrapper<class_JavaClassWrapper>` **JavaClassWrapper**
 
 The :ref:`JavaClassWrapper<class_JavaClassWrapper>` singleton.
 
 \ **Note:** Only implemented on Android.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_@GlobalScope_property_JavaScript:
 
-- :ref:`JavaScript<class_JavaScript>` **JavaScript**
+.. rst-class:: classref-property
+
+:ref:`JavaScript<class_JavaScript>` **JavaScript**
 
 The :ref:`JavaScript<class_JavaScript>` singleton.
 
 \ **Note:** Only implemented on HTML5.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_@GlobalScope_property_Marshalls:
 
-- :ref:`Marshalls<class_Marshalls>` **Marshalls**
+.. rst-class:: classref-property
+
+:ref:`Marshalls<class_Marshalls>` **Marshalls**
 
 The :ref:`Marshalls<class_Marshalls>` singleton.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_@GlobalScope_property_Navigation2DServer:
 
-- :ref:`Navigation2DServer<class_Navigation2DServer>` **Navigation2DServer**
+.. rst-class:: classref-property
+
+:ref:`Navigation2DServer<class_Navigation2DServer>` **Navigation2DServer**
 
 The :ref:`Navigation2DServer<class_Navigation2DServer>` singleton.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_@GlobalScope_property_NavigationMeshGenerator:
 
-- :ref:`NavigationMeshGenerator<class_NavigationMeshGenerator>` **NavigationMeshGenerator**
+.. rst-class:: classref-property
+
+:ref:`NavigationMeshGenerator<class_NavigationMeshGenerator>` **NavigationMeshGenerator**
 
 The :ref:`NavigationMeshGenerator<class_NavigationMeshGenerator>` singleton.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_@GlobalScope_property_NavigationServer:
 
-- :ref:`NavigationServer<class_NavigationServer>` **NavigationServer**
+.. rst-class:: classref-property
+
+:ref:`NavigationServer<class_NavigationServer>` **NavigationServer**
 
 The :ref:`NavigationServer<class_NavigationServer>` singleton.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_@GlobalScope_property_OS:
 
-- :ref:`OS<class_OS>` **OS**
+.. rst-class:: classref-property
+
+:ref:`OS<class_OS>` **OS**
 
 The :ref:`OS<class_OS>` singleton.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_@GlobalScope_property_Performance:
 
-- :ref:`Performance<class_Performance>` **Performance**
+.. rst-class:: classref-property
+
+:ref:`Performance<class_Performance>` **Performance**
 
 The :ref:`Performance<class_Performance>` singleton.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_@GlobalScope_property_Physics2DServer:
 
-- :ref:`Physics2DServer<class_Physics2DServer>` **Physics2DServer**
+.. rst-class:: classref-property
+
+:ref:`Physics2DServer<class_Physics2DServer>` **Physics2DServer**
 
 The :ref:`Physics2DServer<class_Physics2DServer>` singleton.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_@GlobalScope_property_PhysicsServer:
 
-- :ref:`PhysicsServer<class_PhysicsServer>` **PhysicsServer**
+.. rst-class:: classref-property
+
+:ref:`PhysicsServer<class_PhysicsServer>` **PhysicsServer**
 
 The :ref:`PhysicsServer<class_PhysicsServer>` singleton.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_@GlobalScope_property_ProjectSettings:
 
-- :ref:`ProjectSettings<class_ProjectSettings>` **ProjectSettings**
+.. rst-class:: classref-property
+
+:ref:`ProjectSettings<class_ProjectSettings>` **ProjectSettings**
 
 The :ref:`ProjectSettings<class_ProjectSettings>` singleton.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_@GlobalScope_property_ResourceLoader:
 
-- :ref:`ResourceLoader<class_ResourceLoader>` **ResourceLoader**
+.. rst-class:: classref-property
+
+:ref:`ResourceLoader<class_ResourceLoader>` **ResourceLoader**
 
 The :ref:`ResourceLoader<class_ResourceLoader>` singleton.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_@GlobalScope_property_ResourceSaver:
 
-- :ref:`ResourceSaver<class_ResourceSaver>` **ResourceSaver**
+.. rst-class:: classref-property
+
+:ref:`ResourceSaver<class_ResourceSaver>` **ResourceSaver**
 
 The :ref:`ResourceSaver<class_ResourceSaver>` singleton.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_@GlobalScope_property_Time:
 
-- :ref:`Time<class_Time>` **Time**
+.. rst-class:: classref-property
+
+:ref:`Time<class_Time>` **Time**
 
 The :ref:`Time<class_Time>` singleton.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_@GlobalScope_property_TranslationServer:
 
-- :ref:`TranslationServer<class_TranslationServer>` **TranslationServer**
+.. rst-class:: classref-property
+
+:ref:`TranslationServer<class_TranslationServer>` **TranslationServer**
 
 The :ref:`TranslationServer<class_TranslationServer>` singleton.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_@GlobalScope_property_VisualScriptEditor:
 
-- :ref:`VisualScriptEditor<class_VisualScriptEditor>` **VisualScriptEditor**
+.. rst-class:: classref-property
+
+:ref:`VisualScriptEditor<class_VisualScriptEditor>` **VisualScriptEditor**
 
 The :ref:`VisualScriptEditor<class_VisualScriptEditor>` singleton.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_@GlobalScope_property_VisualServer:
 
-- :ref:`VisualServer<class_VisualServer>` **VisualServer**
+.. rst-class:: classref-property
+
+:ref:`VisualServer<class_VisualServer>` **VisualServer**
 
 The :ref:`VisualServer<class_VisualServer>` singleton.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

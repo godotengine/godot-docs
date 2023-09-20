@@ -14,38 +14,50 @@ RoomGroup
 
 Groups :ref:`Room<class_Room>`\ s together to allow common functionality.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 Although :ref:`Room<class_Room>` behavior can be specified individually, sometimes it is faster and more convenient to write functionality for a group of rooms.
 
-\ ``RoomGroup``\ s should be placed as children of the **room list** (the parent :ref:`Node<class_Node>` of your :ref:`Room<class_Room>`\ s), and :ref:`Room<class_Room>`\ s should be placed in turn as children of a ``RoomGroup`` in order to assign them to the RoomGroup.
+\ **RoomGroup**\ s should be placed as children of the **room list** (the parent :ref:`Node<class_Node>` of your :ref:`Room<class_Room>`\ s), and :ref:`Room<class_Room>`\ s should be placed in turn as children of a **RoomGroup** in order to assign them to the RoomGroup.
 
-A ``RoomGroup`` can for example be used to specify :ref:`Room<class_Room>`\ s that are **outside**, and switch on or off a directional light, sky, or rain effect as the player enters / exits the area.
+A **RoomGroup** can for example be used to specify :ref:`Room<class_Room>`\ s that are **outside**, and switch on or off a directional light, sky, or rain effect as the player enters / exits the area.
 
-\ ``RoomGroup``\ s receive **gameplay callbacks** when the ``gameplay_monitor`` is switched on, as ``signal``\ s or ``notification``\ s as they enter and exit the **gameplay area** (see :ref:`RoomManager<class_RoomManager>` for details).
+\ **RoomGroup**\ s receive **gameplay callbacks** when the ``gameplay_monitor`` is switched on, as ``signal``\ s or ``notification``\ s as they enter and exit the **gameplay area** (see :ref:`RoomManager<class_RoomManager>` for details).
+
+.. rst-class:: classref-reftable-group
 
 Properties
 ----------
 
-+-----------------------+------------------------------------------------------------------------+-------+
-| :ref:`int<class_int>` | :ref:`roomgroup_priority<class_RoomGroup_property_roomgroup_priority>` | ``0`` |
-+-----------------------+------------------------------------------------------------------------+-------+
+.. table::
+   :widths: auto
+
+   +-----------------------+------------------------------------------------------------------------+-------+
+   | :ref:`int<class_int>` | :ref:`roomgroup_priority<class_RoomGroup_property_roomgroup_priority>` | ``0`` |
+   +-----------------------+------------------------------------------------------------------------+-------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_RoomGroup_property_roomgroup_priority:
 
-- :ref:`int<class_int>` **roomgroup_priority**
+.. rst-class:: classref-property
 
-+-----------+-------------------------------+
-| *Default* | ``0``                         |
-+-----------+-------------------------------+
-| *Setter*  | set_roomgroup_priority(value) |
-+-----------+-------------------------------+
-| *Getter*  | get_roomgroup_priority()      |
-+-----------+-------------------------------+
+:ref:`int<class_int>` **roomgroup_priority** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_roomgroup_priority** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_roomgroup_priority** **(** **)**
 
 This priority will be applied to :ref:`Room<class_Room>`\ s within the group. The :ref:`Room<class_Room>` priority allows the use of **internal rooms**, rooms *within* another room or rooms.
 
@@ -54,3 +66,4 @@ When the :ref:`Camera<class_Camera>` is within more than one room (regular and i
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

@@ -14,6 +14,8 @@ VisualScriptConstant
 
 Gets a contant's value.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -27,46 +29,60 @@ none
 
 - Data (variant): ``get``
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-----------------------------------------------------+---------------------------------------------------------+-------+
-| :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` | :ref:`type<class_VisualScriptConstant_property_type>`   | ``0`` |
-+-----------------------------------------------------+---------------------------------------------------------+-------+
-| :ref:`Variant<class_Variant>`                       | :ref:`value<class_VisualScriptConstant_property_value>` |       |
-+-----------------------------------------------------+---------------------------------------------------------+-------+
+.. table::
+   :widths: auto
+
+   +-----------------------------------------------------+---------------------------------------------------------+-------+
+   | :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` | :ref:`type<class_VisualScriptConstant_property_type>`   | ``0`` |
+   +-----------------------------------------------------+---------------------------------------------------------+-------+
+   | :ref:`Variant<class_Variant>`                       | :ref:`value<class_VisualScriptConstant_property_value>` |       |
+   +-----------------------------------------------------+---------------------------------------------------------+-------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_VisualScriptConstant_property_type:
 
-- :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` **type**
+.. rst-class:: classref-property
 
-+-----------+--------------------------+
-| *Default* | ``0``                    |
-+-----------+--------------------------+
-| *Setter*  | set_constant_type(value) |
-+-----------+--------------------------+
-| *Getter*  | get_constant_type()      |
-+-----------+--------------------------+
+:ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` **type** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_constant_type** **(** :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` value **)**
+- :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` **get_constant_type** **(** **)**
 
 The constant's type.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_VisualScriptConstant_property_value:
 
-- :ref:`Variant<class_Variant>` **value**
+.. rst-class:: classref-property
 
-+----------+---------------------------+
-| *Setter* | set_constant_value(value) |
-+----------+---------------------------+
-| *Getter* | get_constant_value()      |
-+----------+---------------------------+
+:ref:`Variant<class_Variant>` **value**
+
+.. rst-class:: classref-property-setget
+
+- void **set_constant_value** **(** :ref:`Variant<class_Variant>` value **)**
+- :ref:`Variant<class_Variant>` **get_constant_value** **(** **)**
 
 The constant's value.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

@@ -14,6 +14,8 @@ VisualScriptSelect
 
 Chooses between two input values.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -31,30 +33,41 @@ Chooses between two input values based on a Boolean condition.
 
 - Data (variant): ``out``
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-----------------------------------------------------+-----------------------------------------------------+-------+
-| :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` | :ref:`type<class_VisualScriptSelect_property_type>` | ``0`` |
-+-----------------------------------------------------+-----------------------------------------------------+-------+
+.. table::
+   :widths: auto
+
+   +-----------------------------------------------------+-----------------------------------------------------+-------+
+   | :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` | :ref:`type<class_VisualScriptSelect_property_type>` | ``0`` |
+   +-----------------------------------------------------+-----------------------------------------------------+-------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_VisualScriptSelect_property_type:
 
-- :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` **type**
+.. rst-class:: classref-property
 
-+-----------+------------------+
-| *Default* | ``0``            |
-+-----------+------------------+
-| *Setter*  | set_typed(value) |
-+-----------+------------------+
-| *Getter*  | get_typed()      |
-+-----------+------------------+
+:ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` **type** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_typed** **(** :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` value **)**
+- :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` **get_typed** **(** **)**
 
 The input variables' type.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

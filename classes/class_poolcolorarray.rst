@@ -12,12 +12,14 @@ PoolColorArray
 
 A pooled array of :ref:`Color<class_Color>`\ s.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 An array specifically designed to hold :ref:`Color<class_Color>`. Optimized for memory usage, does not fragment the memory.
 
-\ **Note:** This type is passed by value and not by reference. This means that when *mutating* a class property of type ``PoolColorArray`` or mutating a ``PoolColorArray`` within an :ref:`Array<class_Array>` or :ref:`Dictionary<class_Dictionary>`, changes will be lost:
+\ **Note:** This type is passed by value and not by reference. This means that when *mutating* a class property of type **PoolColorArray** or mutating a **PoolColorArray** within an :ref:`Array<class_Array>` or :ref:`Dictionary<class_Dictionary>`, changes will be lost:
 
 ::
 
@@ -25,7 +27,7 @@ An array specifically designed to hold :ref:`Color<class_Color>`. Optimized for 
     array[0].push_back(Color(0.1, 0.2, 0.3, 0.4))
     print(array)  # [[]] (empty PoolColorArray within an Array)
 
-Instead, the entire ``PoolColorArray`` property must be *reassigned* with ``=`` for it to be changed:
+Instead, the entire **PoolColorArray** property must be *reassigned* with ``=`` for it to be changed:
 
 ::
 
@@ -35,184 +37,262 @@ Instead, the entire ``PoolColorArray`` property must be *reassigned* with ``=`` 
     array[0] = pool_array
     print(array)  # [[(0.1, 0.2, 0.3, 0.4)]] (PoolColorArray with 1 element inside an Array)
 
+.. rst-class:: classref-reftable-group
+
 Methods
 -------
 
-+---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolColorArray<class_PoolColorArray>` | :ref:`PoolColorArray<class_PoolColorArray_method_PoolColorArray>` **(** :ref:`Array<class_Array>` from **)**                |
-+---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| void                                        | :ref:`append<class_PoolColorArray_method_append>` **(** :ref:`Color<class_Color>` color **)**                               |
-+---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| void                                        | :ref:`append_array<class_PoolColorArray_method_append_array>` **(** :ref:`PoolColorArray<class_PoolColorArray>` array **)** |
-+---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                       | :ref:`count<class_PoolColorArray_method_count>` **(** :ref:`Color<class_Color>` value **)**                                 |
-+---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                     | :ref:`empty<class_PoolColorArray_method_empty>` **(** **)**                                                                 |
-+---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| void                                        | :ref:`fill<class_PoolColorArray_method_fill>` **(** :ref:`Color<class_Color>` color **)**                                   |
-+---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                       | :ref:`find<class_PoolColorArray_method_find>` **(** :ref:`Color<class_Color>` value, :ref:`int<class_int>` from=0 **)**     |
-+---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                     | :ref:`has<class_PoolColorArray_method_has>` **(** :ref:`Color<class_Color>` value **)**                                     |
-+---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                       | :ref:`insert<class_PoolColorArray_method_insert>` **(** :ref:`int<class_int>` idx, :ref:`Color<class_Color>` color **)**    |
-+---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| void                                        | :ref:`invert<class_PoolColorArray_method_invert>` **(** **)**                                                               |
-+---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| void                                        | :ref:`push_back<class_PoolColorArray_method_push_back>` **(** :ref:`Color<class_Color>` color **)**                         |
-+---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| void                                        | :ref:`remove<class_PoolColorArray_method_remove>` **(** :ref:`int<class_int>` idx **)**                                     |
-+---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| void                                        | :ref:`resize<class_PoolColorArray_method_resize>` **(** :ref:`int<class_int>` idx **)**                                     |
-+---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                       | :ref:`rfind<class_PoolColorArray_method_rfind>` **(** :ref:`Color<class_Color>` value, :ref:`int<class_int>` from=-1 **)**  |
-+---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| void                                        | :ref:`set<class_PoolColorArray_method_set>` **(** :ref:`int<class_int>` idx, :ref:`Color<class_Color>` color **)**          |
-+---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                       | :ref:`size<class_PoolColorArray_method_size>` **(** **)**                                                                   |
-+---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| void                                        | :ref:`sort<class_PoolColorArray_method_sort>` **(** **)**                                                                   |
-+---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PoolColorArray<class_PoolColorArray>` | :ref:`PoolColorArray<class_PoolColorArray_method_PoolColorArray>` **(** :ref:`Array<class_Array>` from **)**                |
+   +---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+   | void                                        | :ref:`append<class_PoolColorArray_method_append>` **(** :ref:`Color<class_Color>` color **)**                               |
+   +---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+   | void                                        | :ref:`append_array<class_PoolColorArray_method_append_array>` **(** :ref:`PoolColorArray<class_PoolColorArray>` array **)** |
+   +---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                       | :ref:`count<class_PoolColorArray_method_count>` **(** :ref:`Color<class_Color>` value **)**                                 |
+   +---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                     | :ref:`empty<class_PoolColorArray_method_empty>` **(** **)**                                                                 |
+   +---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+   | void                                        | :ref:`fill<class_PoolColorArray_method_fill>` **(** :ref:`Color<class_Color>` color **)**                                   |
+   +---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                       | :ref:`find<class_PoolColorArray_method_find>` **(** :ref:`Color<class_Color>` value, :ref:`int<class_int>` from=0 **)**     |
+   +---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                     | :ref:`has<class_PoolColorArray_method_has>` **(** :ref:`Color<class_Color>` value **)**                                     |
+   +---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                       | :ref:`insert<class_PoolColorArray_method_insert>` **(** :ref:`int<class_int>` idx, :ref:`Color<class_Color>` color **)**    |
+   +---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+   | void                                        | :ref:`invert<class_PoolColorArray_method_invert>` **(** **)**                                                               |
+   +---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+   | void                                        | :ref:`push_back<class_PoolColorArray_method_push_back>` **(** :ref:`Color<class_Color>` color **)**                         |
+   +---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+   | void                                        | :ref:`remove<class_PoolColorArray_method_remove>` **(** :ref:`int<class_int>` idx **)**                                     |
+   +---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+   | void                                        | :ref:`resize<class_PoolColorArray_method_resize>` **(** :ref:`int<class_int>` idx **)**                                     |
+   +---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                       | :ref:`rfind<class_PoolColorArray_method_rfind>` **(** :ref:`Color<class_Color>` value, :ref:`int<class_int>` from=-1 **)**  |
+   +---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+   | void                                        | :ref:`set<class_PoolColorArray_method_set>` **(** :ref:`int<class_int>` idx, :ref:`Color<class_Color>` color **)**          |
+   +---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                       | :ref:`size<class_PoolColorArray_method_size>` **(** **)**                                                                   |
+   +---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+   | void                                        | :ref:`sort<class_PoolColorArray_method_sort>` **(** **)**                                                                   |
+   +---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_PoolColorArray_method_PoolColorArray:
 
-- :ref:`PoolColorArray<class_PoolColorArray>` **PoolColorArray** **(** :ref:`Array<class_Array>` from **)**
+.. rst-class:: classref-method
 
-Constructs a new ``PoolColorArray``. Optionally, you can pass in a generic :ref:`Array<class_Array>` that will be converted.
+:ref:`PoolColorArray<class_PoolColorArray>` **PoolColorArray** **(** :ref:`Array<class_Array>` from **)**
+
+Constructs a new **PoolColorArray**. Optionally, you can pass in a generic :ref:`Array<class_Array>` that will be converted.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_PoolColorArray_method_append:
 
-- void **append** **(** :ref:`Color<class_Color>` color **)**
+.. rst-class:: classref-method
+
+void **append** **(** :ref:`Color<class_Color>` color **)**
 
 Appends an element at the end of the array (alias of :ref:`push_back<class_PoolColorArray_method_push_back>`).
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_PoolColorArray_method_append_array:
 
-- void **append_array** **(** :ref:`PoolColorArray<class_PoolColorArray>` array **)**
+.. rst-class:: classref-method
 
-Appends a ``PoolColorArray`` at the end of this array.
+void **append_array** **(** :ref:`PoolColorArray<class_PoolColorArray>` array **)**
+
+Appends a **PoolColorArray** at the end of this array.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_PoolColorArray_method_count:
 
-- :ref:`int<class_int>` **count** **(** :ref:`Color<class_Color>` value **)**
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **count** **(** :ref:`Color<class_Color>` value **)**
 
 Returns the number of times an element is in the array.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_PoolColorArray_method_empty:
 
-- :ref:`bool<class_bool>` **empty** **(** **)**
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **empty** **(** **)**
 
 Returns ``true`` if the array is empty.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_PoolColorArray_method_fill:
 
-- void **fill** **(** :ref:`Color<class_Color>` color **)**
+.. rst-class:: classref-method
+
+void **fill** **(** :ref:`Color<class_Color>` color **)**
 
 Assigns the given value to all elements in the array. This can typically be used together with :ref:`resize<class_PoolColorArray_method_resize>` to create an array with a given size and initialized elements.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_PoolColorArray_method_find:
 
-- :ref:`int<class_int>` **find** **(** :ref:`Color<class_Color>` value, :ref:`int<class_int>` from=0 **)**
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **find** **(** :ref:`Color<class_Color>` value, :ref:`int<class_int>` from=0 **)**
 
 Searches the array for a value and returns its index or ``-1`` if not found. Optionally, the initial search index can be passed. Returns ``-1`` if ``from`` is out of bounds.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_PoolColorArray_method_has:
 
-- :ref:`bool<class_bool>` **has** **(** :ref:`Color<class_Color>` value **)**
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **has** **(** :ref:`Color<class_Color>` value **)**
 
 Returns ``true`` if the array contains the given value.
 
 \ **Note:** This is equivalent to using the ``in`` operator.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_PoolColorArray_method_insert:
 
-- :ref:`int<class_int>` **insert** **(** :ref:`int<class_int>` idx, :ref:`Color<class_Color>` color **)**
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **insert** **(** :ref:`int<class_int>` idx, :ref:`Color<class_Color>` color **)**
 
 Inserts a new element at a given position in the array. The position must be valid, or at the end of the array (``idx == size()``).
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_PoolColorArray_method_invert:
 
-- void **invert** **(** **)**
+.. rst-class:: classref-method
+
+void **invert** **(** **)**
 
 Reverses the order of the elements in the array.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_PoolColorArray_method_push_back:
 
-- void **push_back** **(** :ref:`Color<class_Color>` color **)**
+.. rst-class:: classref-method
+
+void **push_back** **(** :ref:`Color<class_Color>` color **)**
 
 Appends a value to the array.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_PoolColorArray_method_remove:
 
-- void **remove** **(** :ref:`int<class_int>` idx **)**
+.. rst-class:: classref-method
+
+void **remove** **(** :ref:`int<class_int>` idx **)**
 
 Removes an element from the array by index.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_PoolColorArray_method_resize:
 
-- void **resize** **(** :ref:`int<class_int>` idx **)**
+.. rst-class:: classref-method
+
+void **resize** **(** :ref:`int<class_int>` idx **)**
 
 Sets the size of the array. If the array is grown, reserves elements at the end of the array. If the array is shrunk, truncates the array to the new size.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_PoolColorArray_method_rfind:
 
-- :ref:`int<class_int>` **rfind** **(** :ref:`Color<class_Color>` value, :ref:`int<class_int>` from=-1 **)**
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **rfind** **(** :ref:`Color<class_Color>` value, :ref:`int<class_int>` from=-1 **)**
 
 Searches the array in reverse order. Optionally, a start search index can be passed. If negative, the start index is considered relative to the end of the array. If the adjusted start index is out of bounds, this method searches from the end of the array.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_PoolColorArray_method_set:
 
-- void **set** **(** :ref:`int<class_int>` idx, :ref:`Color<class_Color>` color **)**
+.. rst-class:: classref-method
+
+void **set** **(** :ref:`int<class_int>` idx, :ref:`Color<class_Color>` color **)**
 
 Changes the :ref:`Color<class_Color>` at the given index.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_PoolColorArray_method_size:
 
-- :ref:`int<class_int>` **size** **(** **)**
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **size** **(** **)**
 
 Returns the number of elements in the array.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_PoolColorArray_method_sort:
 
-- void **sort** **(** **)**
+.. rst-class:: classref-method
+
+void **sort** **(** **)**
 
 Sorts the elements of the array in ascending order.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

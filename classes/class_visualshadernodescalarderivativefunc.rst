@@ -14,54 +14,87 @@ VisualShaderNodeScalarDerivativeFunc
 
 Calculates a scalar derivative within the visual shader graph.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 This node is only available in ``Fragment`` and ``Light`` visual shaders.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+---------------------------------------------------------------------+-------------------------------------------------------------------------------+-------+
-| :ref:`Function<enum_VisualShaderNodeScalarDerivativeFunc_Function>` | :ref:`function<class_VisualShaderNodeScalarDerivativeFunc_property_function>` | ``0`` |
-+---------------------------------------------------------------------+-------------------------------------------------------------------------------+-------+
+.. table::
+   :widths: auto
+
+   +---------------------------------------------------------------------+-------------------------------------------------------------------------------+-------+
+   | :ref:`Function<enum_VisualShaderNodeScalarDerivativeFunc_Function>` | :ref:`function<class_VisualShaderNodeScalarDerivativeFunc_property_function>` | ``0`` |
+   +---------------------------------------------------------------------+-------------------------------------------------------------------------------+-------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Enumerations
 ------------
 
 .. _enum_VisualShaderNodeScalarDerivativeFunc_Function:
 
-.. _class_VisualShaderNodeScalarDerivativeFunc_constant_FUNC_SUM:
-
-.. _class_VisualShaderNodeScalarDerivativeFunc_constant_FUNC_X:
-
-.. _class_VisualShaderNodeScalarDerivativeFunc_constant_FUNC_Y:
+.. rst-class:: classref-enumeration
 
 enum **Function**:
 
-- **FUNC_SUM** = **0** --- Sum of absolute derivative in ``x`` and ``y``.
+.. _class_VisualShaderNodeScalarDerivativeFunc_constant_FUNC_SUM:
 
-- **FUNC_X** = **1** --- Derivative in ``x`` using local differencing.
+.. rst-class:: classref-enumeration-constant
 
-- **FUNC_Y** = **2** --- Derivative in ``y`` using local differencing.
+:ref:`Function<enum_VisualShaderNodeScalarDerivativeFunc_Function>` **FUNC_SUM** = ``0``
+
+Sum of absolute derivative in ``x`` and ``y``.
+
+.. _class_VisualShaderNodeScalarDerivativeFunc_constant_FUNC_X:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Function<enum_VisualShaderNodeScalarDerivativeFunc_Function>` **FUNC_X** = ``1``
+
+Derivative in ``x`` using local differencing.
+
+.. _class_VisualShaderNodeScalarDerivativeFunc_constant_FUNC_Y:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Function<enum_VisualShaderNodeScalarDerivativeFunc_Function>` **FUNC_Y** = ``2``
+
+Derivative in ``y`` using local differencing.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_VisualShaderNodeScalarDerivativeFunc_property_function:
 
-- :ref:`Function<enum_VisualShaderNodeScalarDerivativeFunc_Function>` **function**
+.. rst-class:: classref-property
 
-+-----------+---------------------+
-| *Default* | ``0``               |
-+-----------+---------------------+
-| *Setter*  | set_function(value) |
-+-----------+---------------------+
-| *Getter*  | get_function()      |
-+-----------+---------------------+
+:ref:`Function<enum_VisualShaderNodeScalarDerivativeFunc_Function>` **function** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_function** **(** :ref:`Function<enum_VisualShaderNodeScalarDerivativeFunc_Function>` value **)**
+- :ref:`Function<enum_VisualShaderNodeScalarDerivativeFunc_Function>` **get_function** **(** **)**
 
 The derivative type. See :ref:`Function<enum_VisualShaderNodeScalarDerivativeFunc_Function>` for options.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

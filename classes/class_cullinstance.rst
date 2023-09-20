@@ -16,6 +16,8 @@ CullInstance
 
 Parent of all nodes that can be culled by the Portal system.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -29,123 +31,165 @@ Provides common functionality to nodes that can be culled by the :ref:`Portal<cl
 
 Objects that are not ``Static`` or ``Dynamic`` can be freely created and deleted during the lifetime of the game level.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-------------------------------------------------+---------------------------------------------------------------------------+----------+
-| :ref:`bool<class_bool>`                         | :ref:`allow_merging<class_CullInstance_property_allow_merging>`           | ``true`` |
-+-------------------------------------------------+---------------------------------------------------------------------------+----------+
-| :ref:`int<class_int>`                           | :ref:`autoplace_priority<class_CullInstance_property_autoplace_priority>` | ``0``    |
-+-------------------------------------------------+---------------------------------------------------------------------------+----------+
-| :ref:`bool<class_bool>`                         | :ref:`include_in_bound<class_CullInstance_property_include_in_bound>`     | ``true`` |
-+-------------------------------------------------+---------------------------------------------------------------------------+----------+
-| :ref:`PortalMode<enum_CullInstance_PortalMode>` | :ref:`portal_mode<class_CullInstance_property_portal_mode>`               | ``0``    |
-+-------------------------------------------------+---------------------------------------------------------------------------+----------+
+.. table::
+   :widths: auto
+
+   +-------------------------------------------------+---------------------------------------------------------------------------+----------+
+   | :ref:`bool<class_bool>`                         | :ref:`allow_merging<class_CullInstance_property_allow_merging>`           | ``true`` |
+   +-------------------------------------------------+---------------------------------------------------------------------------+----------+
+   | :ref:`int<class_int>`                           | :ref:`autoplace_priority<class_CullInstance_property_autoplace_priority>` | ``0``    |
+   +-------------------------------------------------+---------------------------------------------------------------------------+----------+
+   | :ref:`bool<class_bool>`                         | :ref:`include_in_bound<class_CullInstance_property_include_in_bound>`     | ``true`` |
+   +-------------------------------------------------+---------------------------------------------------------------------------+----------+
+   | :ref:`PortalMode<enum_CullInstance_PortalMode>` | :ref:`portal_mode<class_CullInstance_property_portal_mode>`               | ``0``    |
+   +-------------------------------------------------+---------------------------------------------------------------------------+----------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Enumerations
 ------------
 
 .. _enum_CullInstance_PortalMode:
 
-.. _class_CullInstance_constant_PORTAL_MODE_STATIC:
-
-.. _class_CullInstance_constant_PORTAL_MODE_DYNAMIC:
-
-.. _class_CullInstance_constant_PORTAL_MODE_ROAMING:
-
-.. _class_CullInstance_constant_PORTAL_MODE_GLOBAL:
-
-.. _class_CullInstance_constant_PORTAL_MODE_IGNORE:
+.. rst-class:: classref-enumeration
 
 enum **PortalMode**:
 
-- **PORTAL_MODE_STATIC** = **0** --- Use for instances within :ref:`Room<class_Room>`\ s that will **not move** - e.g. walls, floors.
+.. _class_CullInstance_constant_PORTAL_MODE_STATIC:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`PortalMode<enum_CullInstance_PortalMode>` **PORTAL_MODE_STATIC** = ``0``
+
+Use for instances within :ref:`Room<class_Room>`\ s that will **not move** - e.g. walls, floors.
 
 \ **Note:** If you attempt to delete a ``PORTAL_MODE_STATIC`` instance while the room graph is loaded (converted), it will unload the room graph and deactivate portal culling. This is because the **room graph** data has been invalidated. You will need to reconvert the rooms using the :ref:`RoomManager<class_RoomManager>` to activate the system again.
 
-- **PORTAL_MODE_DYNAMIC** = **1** --- Use for instances within rooms that will move but **not change room** - e.g. moving platforms.
+.. _class_CullInstance_constant_PORTAL_MODE_DYNAMIC:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`PortalMode<enum_CullInstance_PortalMode>` **PORTAL_MODE_DYNAMIC** = ``1``
+
+Use for instances within rooms that will move but **not change room** - e.g. moving platforms.
 
 \ **Note:** If you attempt to delete a ``PORTAL_MODE_DYNAMIC`` instance while the room graph is loaded (converted), it will unload the room graph and deactivate portal culling. This is because the **room graph** data has been invalidated. You will need to reconvert the rooms using the :ref:`RoomManager<class_RoomManager>` to activate the system again.
 
-- **PORTAL_MODE_ROAMING** = **2** --- Use for instances that will move **between** :ref:`Room<class_Room>`\ s - e.g. players.
+.. _class_CullInstance_constant_PORTAL_MODE_ROAMING:
 
-- **PORTAL_MODE_GLOBAL** = **3** --- Use for instances that will be frustum culled only - e.g. first person weapon, debug.
+.. rst-class:: classref-enumeration-constant
 
-- **PORTAL_MODE_IGNORE** = **4** --- Use for instances that will not be shown at all - e.g. **manual room bounds** (specified by prefix *'Bound\_'*).
+:ref:`PortalMode<enum_CullInstance_PortalMode>` **PORTAL_MODE_ROAMING** = ``2``
+
+Use for instances that will move **between** :ref:`Room<class_Room>`\ s - e.g. players.
+
+.. _class_CullInstance_constant_PORTAL_MODE_GLOBAL:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`PortalMode<enum_CullInstance_PortalMode>` **PORTAL_MODE_GLOBAL** = ``3``
+
+Use for instances that will be frustum culled only - e.g. first person weapon, debug.
+
+.. _class_CullInstance_constant_PORTAL_MODE_IGNORE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`PortalMode<enum_CullInstance_PortalMode>` **PORTAL_MODE_IGNORE** = ``4``
+
+Use for instances that will not be shown at all - e.g. **manual room bounds** (specified by prefix *'Bound\_'*).
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_CullInstance_property_allow_merging:
 
-- :ref:`bool<class_bool>` **allow_merging**
+.. rst-class:: classref-property
 
-+-----------+--------------------------+
-| *Default* | ``true``                 |
-+-----------+--------------------------+
-| *Setter*  | set_allow_merging(value) |
-+-----------+--------------------------+
-| *Getter*  | get_allow_merging()      |
-+-----------+--------------------------+
+:ref:`bool<class_bool>` **allow_merging** = ``true``
+
+.. rst-class:: classref-property-setget
+
+- void **set_allow_merging** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **get_allow_merging** **(** **)**
 
 This allows fine control over the mesh merging feature in the :ref:`RoomManager<class_RoomManager>`.
 
 Setting this option to ``false`` can be used to prevent an instance being merged.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_CullInstance_property_autoplace_priority:
 
-- :ref:`int<class_int>` **autoplace_priority**
+.. rst-class:: classref-property
 
-+-----------+--------------------------------------+
-| *Default* | ``0``                                |
-+-----------+--------------------------------------+
-| *Setter*  | set_portal_autoplace_priority(value) |
-+-----------+--------------------------------------+
-| *Getter*  | get_portal_autoplace_priority()      |
-+-----------+--------------------------------------+
+:ref:`int<class_int>` **autoplace_priority** = ``0``
 
-When set to ``0``, ``CullInstance``\ s will be autoplaced in the :ref:`Room<class_Room>` with the highest priority.
+.. rst-class:: classref-property-setget
+
+- void **set_portal_autoplace_priority** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_portal_autoplace_priority** **(** **)**
+
+When set to ``0``, **CullInstance**\ s will be autoplaced in the :ref:`Room<class_Room>` with the highest priority.
 
 When set to a value other than ``0``, the system will attempt to autoplace in a :ref:`Room<class_Room>` with the ``autoplace_priority``, if it is present.
 
 This can be used to control autoplacement of building exteriors in an outer :ref:`RoomGroup<class_RoomGroup>`.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_CullInstance_property_include_in_bound:
 
-- :ref:`bool<class_bool>` **include_in_bound**
+.. rst-class:: classref-property
 
-+-----------+-----------------------------+
-| *Default* | ``true``                    |
-+-----------+-----------------------------+
-| *Setter*  | set_include_in_bound(value) |
-+-----------+-----------------------------+
-| *Getter*  | get_include_in_bound()      |
-+-----------+-----------------------------+
+:ref:`bool<class_bool>` **include_in_bound** = ``true``
+
+.. rst-class:: classref-property-setget
+
+- void **set_include_in_bound** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **get_include_in_bound** **(** **)**
 
 When a manual bound has not been explicitly specified for a :ref:`Room<class_Room>`, the convex hull bound will be estimated from the geometry of the objects within the room. This setting determines whether the geometry of an object is included in this estimate of the room bound.
 
 \ **Note:** This setting is only relevant when the object is set to ``PORTAL_MODE_STATIC`` or ``PORTAL_MODE_DYNAMIC``, and for :ref:`Portal<class_Portal>`\ s.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_CullInstance_property_portal_mode:
 
-- :ref:`PortalMode<enum_CullInstance_PortalMode>` **portal_mode**
+.. rst-class:: classref-property
 
-+-----------+------------------------+
-| *Default* | ``0``                  |
-+-----------+------------------------+
-| *Setter*  | set_portal_mode(value) |
-+-----------+------------------------+
-| *Getter*  | get_portal_mode()      |
-+-----------+------------------------+
+:ref:`PortalMode<enum_CullInstance_PortalMode>` **portal_mode** = ``0``
 
-When using :ref:`Room<class_Room>`\ s and :ref:`Portal<class_Portal>`\ s, this specifies how the ``CullInstance`` is processed in the system.
+.. rst-class:: classref-property-setget
+
+- void **set_portal_mode** **(** :ref:`PortalMode<enum_CullInstance_PortalMode>` value **)**
+- :ref:`PortalMode<enum_CullInstance_PortalMode>` **get_portal_mode** **(** **)**
+
+When using :ref:`Room<class_Room>`\ s and :ref:`Portal<class_Portal>`\ s, this specifies how the **CullInstance** is processed in the system.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

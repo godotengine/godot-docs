@@ -14,6 +14,8 @@ CSGCylinder
 
 A CSG Cylinder shape.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -21,123 +23,143 @@ This node allows you to create a cylinder (or cone) for use with the CSG system.
 
 \ **Note:** CSG nodes are intended to be used for level prototyping. Creating CSG nodes has a significant CPU cost compared to creating a :ref:`MeshInstance<class_MeshInstance>` with a :ref:`PrimitiveMesh<class_PrimitiveMesh>`. Moving a CSG node within another CSG node also has a significant CPU cost, so it should be avoided during gameplay.
 
+.. rst-class:: classref-introduction-group
+
 Tutorials
 ---------
 
 - :doc:`Prototyping levels with CSG <../tutorials/3d/csg_tools>`
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+---------------------------------+--------------------------------------------------------------+-----------+
-| :ref:`bool<class_bool>`         | :ref:`cone<class_CSGCylinder_property_cone>`                 | ``false`` |
-+---------------------------------+--------------------------------------------------------------+-----------+
-| :ref:`float<class_float>`       | :ref:`height<class_CSGCylinder_property_height>`             | ``1.0``   |
-+---------------------------------+--------------------------------------------------------------+-----------+
-| :ref:`Material<class_Material>` | :ref:`material<class_CSGCylinder_property_material>`         |           |
-+---------------------------------+--------------------------------------------------------------+-----------+
-| :ref:`float<class_float>`       | :ref:`radius<class_CSGCylinder_property_radius>`             | ``1.0``   |
-+---------------------------------+--------------------------------------------------------------+-----------+
-| :ref:`int<class_int>`           | :ref:`sides<class_CSGCylinder_property_sides>`               | ``8``     |
-+---------------------------------+--------------------------------------------------------------+-----------+
-| :ref:`bool<class_bool>`         | :ref:`smooth_faces<class_CSGCylinder_property_smooth_faces>` | ``true``  |
-+---------------------------------+--------------------------------------------------------------+-----------+
+.. table::
+   :widths: auto
+
+   +---------------------------------+--------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`         | :ref:`cone<class_CSGCylinder_property_cone>`                 | ``false`` |
+   +---------------------------------+--------------------------------------------------------------+-----------+
+   | :ref:`float<class_float>`       | :ref:`height<class_CSGCylinder_property_height>`             | ``1.0``   |
+   +---------------------------------+--------------------------------------------------------------+-----------+
+   | :ref:`Material<class_Material>` | :ref:`material<class_CSGCylinder_property_material>`         |           |
+   +---------------------------------+--------------------------------------------------------------+-----------+
+   | :ref:`float<class_float>`       | :ref:`radius<class_CSGCylinder_property_radius>`             | ``1.0``   |
+   +---------------------------------+--------------------------------------------------------------+-----------+
+   | :ref:`int<class_int>`           | :ref:`sides<class_CSGCylinder_property_sides>`               | ``8``     |
+   +---------------------------------+--------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`         | :ref:`smooth_faces<class_CSGCylinder_property_smooth_faces>` | ``true``  |
+   +---------------------------------+--------------------------------------------------------------+-----------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_CSGCylinder_property_cone:
 
-- :ref:`bool<class_bool>` **cone**
+.. rst-class:: classref-property
 
-+-----------+-----------------+
-| *Default* | ``false``       |
-+-----------+-----------------+
-| *Setter*  | set_cone(value) |
-+-----------+-----------------+
-| *Getter*  | is_cone()       |
-+-----------+-----------------+
+:ref:`bool<class_bool>` **cone** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_cone** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_cone** **(** **)**
 
 If ``true`` a cone is created, the :ref:`radius<class_CSGCylinder_property_radius>` will only apply to one side.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_CSGCylinder_property_height:
 
-- :ref:`float<class_float>` **height**
+.. rst-class:: classref-property
 
-+-----------+-------------------+
-| *Default* | ``1.0``           |
-+-----------+-------------------+
-| *Setter*  | set_height(value) |
-+-----------+-------------------+
-| *Getter*  | get_height()      |
-+-----------+-------------------+
+:ref:`float<class_float>` **height** = ``1.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_height** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_height** **(** **)**
 
 The height of the cylinder.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_CSGCylinder_property_material:
 
-- :ref:`Material<class_Material>` **material**
+.. rst-class:: classref-property
 
-+----------+---------------------+
-| *Setter* | set_material(value) |
-+----------+---------------------+
-| *Getter* | get_material()      |
-+----------+---------------------+
+:ref:`Material<class_Material>` **material**
+
+.. rst-class:: classref-property-setget
+
+- void **set_material** **(** :ref:`Material<class_Material>` value **)**
+- :ref:`Material<class_Material>` **get_material** **(** **)**
 
 The material used to render the cylinder.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_CSGCylinder_property_radius:
 
-- :ref:`float<class_float>` **radius**
+.. rst-class:: classref-property
 
-+-----------+-------------------+
-| *Default* | ``1.0``           |
-+-----------+-------------------+
-| *Setter*  | set_radius(value) |
-+-----------+-------------------+
-| *Getter*  | get_radius()      |
-+-----------+-------------------+
+:ref:`float<class_float>` **radius** = ``1.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_radius** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_radius** **(** **)**
 
 The radius of the cylinder.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_CSGCylinder_property_sides:
 
-- :ref:`int<class_int>` **sides**
+.. rst-class:: classref-property
 
-+-----------+------------------+
-| *Default* | ``8``            |
-+-----------+------------------+
-| *Setter*  | set_sides(value) |
-+-----------+------------------+
-| *Getter*  | get_sides()      |
-+-----------+------------------+
+:ref:`int<class_int>` **sides** = ``8``
+
+.. rst-class:: classref-property-setget
+
+- void **set_sides** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_sides** **(** **)**
 
 The number of sides of the cylinder, the higher this number the more detail there will be in the cylinder.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_CSGCylinder_property_smooth_faces:
 
-- :ref:`bool<class_bool>` **smooth_faces**
+.. rst-class:: classref-property
 
-+-----------+-------------------------+
-| *Default* | ``true``                |
-+-----------+-------------------------+
-| *Setter*  | set_smooth_faces(value) |
-+-----------+-------------------------+
-| *Getter*  | get_smooth_faces()      |
-+-----------+-------------------------+
+:ref:`bool<class_bool>` **smooth_faces** = ``true``
+
+.. rst-class:: classref-property-setget
+
+- void **set_smooth_faces** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **get_smooth_faces** **(** **)**
 
 If ``true`` the normals of the cylinder are set to give a smooth effect making the cylinder seem rounded. If ``false`` the cylinder will have a flat shaded look.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

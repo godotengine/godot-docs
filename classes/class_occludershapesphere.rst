@@ -14,6 +14,8 @@ OccluderShapeSphere
 
 Spherical occlusion primitive for use with the :ref:`Occluder<class_Occluder>` node.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -21,56 +23,84 @@ Description
 
 This shape can include multiple spheres. These can be created and deleted either in the Editor inspector or by calling ``set_spheres``. The sphere positions can be set by dragging the handle in the Editor viewport. The radius can be set with the smaller handle.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+---------------------------+------------------------------------------------------------+-----------------------------+
-| :ref:`Array<class_Array>` | :ref:`spheres<class_OccluderShapeSphere_property_spheres>` | ``[ Plane( 0, 0, 0, 1 ) ]`` |
-+---------------------------+------------------------------------------------------------+-----------------------------+
+.. table::
+   :widths: auto
+
+   +---------------------------+------------------------------------------------------------+-----------------------------+
+   | :ref:`Array<class_Array>` | :ref:`spheres<class_OccluderShapeSphere_property_spheres>` | ``[ Plane( 0, 0, 0, 1 ) ]`` |
+   +---------------------------+------------------------------------------------------------+-----------------------------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void | :ref:`set_sphere_position<class_OccluderShapeSphere_method_set_sphere_position>` **(** :ref:`int<class_int>` index, :ref:`Vector3<class_Vector3>` position **)** |
-+------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void | :ref:`set_sphere_radius<class_OccluderShapeSphere_method_set_sphere_radius>` **(** :ref:`int<class_int>` index, :ref:`float<class_float>` radius **)**           |
-+------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void | :ref:`set_sphere_position<class_OccluderShapeSphere_method_set_sphere_position>` **(** :ref:`int<class_int>` index, :ref:`Vector3<class_Vector3>` position **)** |
+   +------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void | :ref:`set_sphere_radius<class_OccluderShapeSphere_method_set_sphere_radius>` **(** :ref:`int<class_int>` index, :ref:`float<class_float>` radius **)**           |
+   +------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_OccluderShapeSphere_property_spheres:
 
-- :ref:`Array<class_Array>` **spheres**
+.. rst-class:: classref-property
 
-+-----------+-----------------------------+
-| *Default* | ``[ Plane( 0, 0, 0, 1 ) ]`` |
-+-----------+-----------------------------+
-| *Setter*  | set_spheres(value)          |
-+-----------+-----------------------------+
-| *Getter*  | get_spheres()               |
-+-----------+-----------------------------+
+:ref:`Array<class_Array>` **spheres** = ``[ Plane( 0, 0, 0, 1 ) ]``
+
+.. rst-class:: classref-property-setget
+
+- void **set_spheres** **(** :ref:`Array<class_Array>` value **)**
+- :ref:`Array<class_Array>` **get_spheres** **(** **)**
 
 The sphere data can be accessed as an array of :ref:`Plane<class_Plane>`\ s. The position of each sphere is stored in the ``normal``, and the radius is stored in the ``d`` value of the plane.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_OccluderShapeSphere_method_set_sphere_position:
 
-- void **set_sphere_position** **(** :ref:`int<class_int>` index, :ref:`Vector3<class_Vector3>` position **)**
+.. rst-class:: classref-method
+
+void **set_sphere_position** **(** :ref:`int<class_int>` index, :ref:`Vector3<class_Vector3>` position **)**
 
 Sets an individual sphere's position.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_OccluderShapeSphere_method_set_sphere_radius:
 
-- void **set_sphere_radius** **(** :ref:`int<class_int>` index, :ref:`float<class_float>` radius **)**
+.. rst-class:: classref-method
+
+void **set_sphere_radius** **(** :ref:`int<class_int>` index, :ref:`float<class_float>` radius **)**
 
 Sets an individual sphere's radius.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

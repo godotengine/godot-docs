@@ -14,11 +14,14 @@ VisualScriptFunction
 
 A Visual Script node representing a function.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
-``VisualScriptFunction`` represents a function header. It is the starting point for the function body and can be used to tweak the function's properties (e.g. RPC mode).
+**VisualScriptFunction** represents a function header. It is the starting point for the function body and can be used to tweak the function's properties (e.g. RPC mode).
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

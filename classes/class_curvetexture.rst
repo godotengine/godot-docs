@@ -14,51 +14,67 @@ CurveTexture
 
 A texture that shows a curve.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 Renders a given :ref:`Curve<class_Curve>` provided to it. Simplifies the task of drawing curves and/or saving them as image files.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+---------------------------+-------------------------------------------------+----------+
-| :ref:`Curve<class_Curve>` | :ref:`curve<class_CurveTexture_property_curve>` |          |
-+---------------------------+-------------------------------------------------+----------+
-| :ref:`int<class_int>`     | :ref:`width<class_CurveTexture_property_width>` | ``2048`` |
-+---------------------------+-------------------------------------------------+----------+
+.. table::
+   :widths: auto
+
+   +---------------------------+-------------------------------------------------+----------+
+   | :ref:`Curve<class_Curve>` | :ref:`curve<class_CurveTexture_property_curve>` |          |
+   +---------------------------+-------------------------------------------------+----------+
+   | :ref:`int<class_int>`     | :ref:`width<class_CurveTexture_property_width>` | ``2048`` |
+   +---------------------------+-------------------------------------------------+----------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_CurveTexture_property_curve:
 
-- :ref:`Curve<class_Curve>` **curve**
+.. rst-class:: classref-property
 
-+----------+------------------+
-| *Setter* | set_curve(value) |
-+----------+------------------+
-| *Getter* | get_curve()      |
-+----------+------------------+
+:ref:`Curve<class_Curve>` **curve**
+
+.. rst-class:: classref-property-setget
+
+- void **set_curve** **(** :ref:`Curve<class_Curve>` value **)**
+- :ref:`Curve<class_Curve>` **get_curve** **(** **)**
 
 The :ref:`Curve<class_Curve>` that is rendered onto the texture.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_CurveTexture_property_width:
 
-- :ref:`int<class_int>` **width**
+.. rst-class:: classref-property
 
-+-----------+------------------+
-| *Default* | ``2048``         |
-+-----------+------------------+
-| *Setter*  | set_width(value) |
-+-----------+------------------+
-| *Getter*  | get_width()      |
-+-----------+------------------+
+:ref:`int<class_int>` **width** = ``2048``
+
+.. rst-class:: classref-property-setget
+
+- void **set_width** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_width** **(** **)**
 
 The width of the texture (in pixels). Higher values make it possible to represent high-frequency data better (such as sudden direction changes), at the cost of increased generation time and memory usage.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

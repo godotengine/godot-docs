@@ -14,6 +14,8 @@ NetworkedMultiplayerCustom
 
 A :ref:`NetworkedMultiplayerPeer<class_NetworkedMultiplayerPeer>` implementation that can be controlled from a script.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -21,56 +23,85 @@ A :ref:`NetworkedMultiplayerPeer<class_NetworkedMultiplayerPeer>` implementation
 
 Its purpose is to allow adding a new backend for the high-Level multiplayer API without needing to use GDNative.
 
+.. rst-class:: classref-reftable-group
+
 Methods
 -------
 
-+------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void | :ref:`deliver_packet<class_NetworkedMultiplayerCustom_method_deliver_packet>` **(** :ref:`PoolByteArray<class_PoolByteArray>` buffer, :ref:`int<class_int>` from_peer_id **)**                    |
-+------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void | :ref:`initialize<class_NetworkedMultiplayerCustom_method_initialize>` **(** :ref:`int<class_int>` self_peer_id **)**                                                                              |
-+------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void | :ref:`set_connection_status<class_NetworkedMultiplayerCustom_method_set_connection_status>` **(** :ref:`ConnectionStatus<enum_NetworkedMultiplayerPeer_ConnectionStatus>` connection_status **)** |
-+------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void | :ref:`set_max_packet_size<class_NetworkedMultiplayerCustom_method_set_max_packet_size>` **(** :ref:`int<class_int>` max_packet_size **)**                                                         |
-+------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void | :ref:`deliver_packet<class_NetworkedMultiplayerCustom_method_deliver_packet>` **(** :ref:`PoolByteArray<class_PoolByteArray>` buffer, :ref:`int<class_int>` from_peer_id **)**                    |
+   +------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void | :ref:`initialize<class_NetworkedMultiplayerCustom_method_initialize>` **(** :ref:`int<class_int>` self_peer_id **)**                                                                              |
+   +------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void | :ref:`set_connection_status<class_NetworkedMultiplayerCustom_method_set_connection_status>` **(** :ref:`ConnectionStatus<enum_NetworkedMultiplayerPeer_ConnectionStatus>` connection_status **)** |
+   +------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void | :ref:`set_max_packet_size<class_NetworkedMultiplayerCustom_method_set_max_packet_size>` **(** :ref:`int<class_int>` max_packet_size **)**                                                         |
+   +------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Signals
 -------
 
 .. _class_NetworkedMultiplayerCustom_signal_packet_generated:
 
-- **packet_generated** **(** :ref:`int<class_int>` peer_id, :ref:`PoolByteArray<class_PoolByteArray>` buffer, :ref:`int<class_int>` transfer_mode **)**
+.. rst-class:: classref-signal
+
+**packet_generated** **(** :ref:`int<class_int>` peer_id, :ref:`PoolByteArray<class_PoolByteArray>` buffer, :ref:`int<class_int>` transfer_mode **)**
 
 Emitted when the local :ref:`MultiplayerAPI<class_MultiplayerAPI>` generates a packet.
 
 Your script should take this packet and send it to the requested peer over the network (which should call :ref:`deliver_packet<class_NetworkedMultiplayerCustom_method_deliver_packet>` with the data when it's received).
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_NetworkedMultiplayerCustom_method_deliver_packet:
 
-- void **deliver_packet** **(** :ref:`PoolByteArray<class_PoolByteArray>` buffer, :ref:`int<class_int>` from_peer_id **)**
+.. rst-class:: classref-method
+
+void **deliver_packet** **(** :ref:`PoolByteArray<class_PoolByteArray>` buffer, :ref:`int<class_int>` from_peer_id **)**
 
 Deliver a packet to the local :ref:`MultiplayerAPI<class_MultiplayerAPI>`.
 
 When your script receives a packet from other peers over the network (originating from the :ref:`packet_generated<class_NetworkedMultiplayerCustom_signal_packet_generated>` signal on the sending peer), passing it to this method will deliver it locally.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_NetworkedMultiplayerCustom_method_initialize:
 
-- void **initialize** **(** :ref:`int<class_int>` self_peer_id **)**
+.. rst-class:: classref-method
+
+void **initialize** **(** :ref:`int<class_int>` self_peer_id **)**
 
 Initialize the peer with the given ``peer_id`` (must be between 1 and 2147483647).
 
 Can only be called if the connection status is :ref:`NetworkedMultiplayerPeer.CONNECTION_CONNECTING<class_NetworkedMultiplayerPeer_constant_CONNECTION_CONNECTING>`. See :ref:`set_connection_status<class_NetworkedMultiplayerCustom_method_set_connection_status>`.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_NetworkedMultiplayerCustom_method_set_connection_status:
 
-- void **set_connection_status** **(** :ref:`ConnectionStatus<enum_NetworkedMultiplayerPeer_ConnectionStatus>` connection_status **)**
+.. rst-class:: classref-method
+
+void **set_connection_status** **(** :ref:`ConnectionStatus<enum_NetworkedMultiplayerPeer_ConnectionStatus>` connection_status **)**
 
 Set the state of the connection. See :ref:`ConnectionStatus<enum_NetworkedMultiplayerPeer_ConnectionStatus>`.
 
@@ -78,14 +109,19 @@ This will emit the :ref:`NetworkedMultiplayerPeer.connection_succeeded<class_Net
 
 You can only change to :ref:`NetworkedMultiplayerPeer.CONNECTION_CONNECTING<class_NetworkedMultiplayerPeer_constant_CONNECTION_CONNECTING>` from :ref:`NetworkedMultiplayerPeer.CONNECTION_DISCONNECTED<class_NetworkedMultiplayerPeer_constant_CONNECTION_DISCONNECTED>` and to :ref:`NetworkedMultiplayerPeer.CONNECTION_CONNECTED<class_NetworkedMultiplayerPeer_constant_CONNECTION_CONNECTED>` from :ref:`NetworkedMultiplayerPeer.CONNECTION_CONNECTING<class_NetworkedMultiplayerPeer_constant_CONNECTION_CONNECTING>`.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_NetworkedMultiplayerCustom_method_set_max_packet_size:
 
-- void **set_max_packet_size** **(** :ref:`int<class_int>` max_packet_size **)**
+.. rst-class:: classref-method
+
+void **set_max_packet_size** **(** :ref:`int<class_int>` max_packet_size **)**
 
 Set the max packet size that this peer can handle.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

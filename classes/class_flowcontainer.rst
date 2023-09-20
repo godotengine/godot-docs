@@ -16,6 +16,8 @@ FlowContainer
 
 Base class for flow containers.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -23,22 +25,36 @@ Arranges child :ref:`Control<class_Control>` nodes vertically or horizontally in
 
 A line is filled with :ref:`Control<class_Control>` nodes until no more fit on the same line, similar to text in an autowrapped label.
 
+.. rst-class:: classref-reftable-group
+
 Methods
 -------
 
-+-----------------------+--------------------------------------------------------------------------------------+
-| :ref:`int<class_int>` | :ref:`get_line_count<class_FlowContainer_method_get_line_count>` **(** **)** |const| |
-+-----------------------+--------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-----------------------+--------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>` | :ref:`get_line_count<class_FlowContainer_method_get_line_count>` **(** **)** |const| |
+   +-----------------------+--------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_FlowContainer_method_get_line_count:
 
-- :ref:`int<class_int>` **get_line_count** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **get_line_count** **(** **)** |const|
 
 Returns the current line count.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

@@ -14,53 +14,67 @@ SegmentShape2D
 
 Segment shape for 2D collisions.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 Segment shape for 2D collisions. Consists of two points, ``a`` and ``b``.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-------------------------------+-------------------------------------------+----------------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`a<class_SegmentShape2D_property_a>` | ``Vector2( 0, 0 )``  |
-+-------------------------------+-------------------------------------------+----------------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`b<class_SegmentShape2D_property_b>` | ``Vector2( 0, 10 )`` |
-+-------------------------------+-------------------------------------------+----------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------------+-------------------------------------------+----------------------+
+   | :ref:`Vector2<class_Vector2>` | :ref:`a<class_SegmentShape2D_property_a>` | ``Vector2( 0, 0 )``  |
+   +-------------------------------+-------------------------------------------+----------------------+
+   | :ref:`Vector2<class_Vector2>` | :ref:`b<class_SegmentShape2D_property_b>` | ``Vector2( 0, 10 )`` |
+   +-------------------------------+-------------------------------------------+----------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_SegmentShape2D_property_a:
 
-- :ref:`Vector2<class_Vector2>` **a**
+.. rst-class:: classref-property
 
-+-----------+---------------------+
-| *Default* | ``Vector2( 0, 0 )`` |
-+-----------+---------------------+
-| *Setter*  | set_a(value)        |
-+-----------+---------------------+
-| *Getter*  | get_a()             |
-+-----------+---------------------+
+:ref:`Vector2<class_Vector2>` **a** = ``Vector2( 0, 0 )``
+
+.. rst-class:: classref-property-setget
+
+- void **set_a** **(** :ref:`Vector2<class_Vector2>` value **)**
+- :ref:`Vector2<class_Vector2>` **get_a** **(** **)**
 
 The segment's first point position.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_SegmentShape2D_property_b:
 
-- :ref:`Vector2<class_Vector2>` **b**
+.. rst-class:: classref-property
 
-+-----------+----------------------+
-| *Default* | ``Vector2( 0, 10 )`` |
-+-----------+----------------------+
-| *Setter*  | set_b(value)         |
-+-----------+----------------------+
-| *Getter*  | get_b()              |
-+-----------+----------------------+
+:ref:`Vector2<class_Vector2>` **b** = ``Vector2( 0, 10 )``
+
+.. rst-class:: classref-property-setget
+
+- void **set_b** **(** :ref:`Vector2<class_Vector2>` value **)**
+- :ref:`Vector2<class_Vector2>` **get_b** **(** **)**
 
 The segment's second point position.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

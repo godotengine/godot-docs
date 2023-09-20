@@ -14,46 +14,68 @@ ConcavePolygonShape
 
 Concave polygon shape.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 Concave polygon shape resource, which can be set into a :ref:`PhysicsBody<class_PhysicsBody>` or area. This shape is created by feeding a list of triangles.
 
-\ **Note:** When used for collision, ``ConcavePolygonShape`` is intended to work with static :ref:`PhysicsBody<class_PhysicsBody>` nodes like :ref:`StaticBody<class_StaticBody>` and will not work with :ref:`KinematicBody<class_KinematicBody>` or :ref:`RigidBody<class_RigidBody>` with a mode other than Static.
+\ **Note:** When used for collision, **ConcavePolygonShape** is intended to work with static :ref:`PhysicsBody<class_PhysicsBody>` nodes like :ref:`StaticBody<class_StaticBody>` and will not work with :ref:`KinematicBody<class_KinematicBody>` or :ref:`RigidBody<class_RigidBody>` with a mode other than Static.
 
-\ **Warning:** Using this shape for an :ref:`Area<class_Area>` (via a :ref:`CollisionShape<class_CollisionShape>` node, created e.g. by using the *Create Trimesh Collision Sibling* option in the *Mesh* menu that appears when selecting a :ref:`MeshInstance<class_MeshInstance>` node) may give unexpected results: when using Godot Physics, the area will only detect collisions with the triangle faces in the ``ConcavePolygonShape`` (and not with any "inside" of the shape, for example), and when using Bullet Physics the area will not detect any collisions with the concave shape at all (this is a known bug).
+\ **Warning:** Using this shape for an :ref:`Area<class_Area>` (via a :ref:`CollisionShape<class_CollisionShape>` node, created e.g. by using the *Create Trimesh Collision Sibling* option in the *Mesh* menu that appears when selecting a :ref:`MeshInstance<class_MeshInstance>` node) may give unexpected results: when using Godot Physics, the area will only detect collisions with the triangle faces in the **ConcavePolygonShape** (and not with any "inside" of the shape, for example), and when using Bullet Physics the area will not detect any collisions with the concave shape at all (this is a known bug).
+
+.. rst-class:: classref-introduction-group
 
 Tutorials
 ---------
 
 - `3D Physics Tests Demo <https://godotengine.org/asset-library/asset/675>`__
 
+.. rst-class:: classref-reftable-group
+
 Methods
 -------
 
-+-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolVector3Array<class_PoolVector3Array>` | :ref:`get_faces<class_ConcavePolygonShape_method_get_faces>` **(** **)** |const|                                               |
-+-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
-| void                                            | :ref:`set_faces<class_ConcavePolygonShape_method_set_faces>` **(** :ref:`PoolVector3Array<class_PoolVector3Array>` faces **)** |
-+-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PoolVector3Array<class_PoolVector3Array>` | :ref:`get_faces<class_ConcavePolygonShape_method_get_faces>` **(** **)** |const|                                               |
+   +-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+   | void                                            | :ref:`set_faces<class_ConcavePolygonShape_method_set_faces>` **(** :ref:`PoolVector3Array<class_PoolVector3Array>` faces **)** |
+   +-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_ConcavePolygonShape_method_get_faces:
 
-- :ref:`PoolVector3Array<class_PoolVector3Array>` **get_faces** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`PoolVector3Array<class_PoolVector3Array>` **get_faces** **(** **)** |const|
 
 Returns the faces (an array of triangles).
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_ConcavePolygonShape_method_set_faces:
 
-- void **set_faces** **(** :ref:`PoolVector3Array<class_PoolVector3Array>` faces **)**
+.. rst-class:: classref-method
+
+void **set_faces** **(** :ref:`PoolVector3Array<class_PoolVector3Array>` faces **)**
 
 Sets the faces (an array of triangles).
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

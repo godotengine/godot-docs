@@ -14,12 +14,16 @@ MultiMeshInstance
 
 Node that instances a :ref:`MultiMesh<class_MultiMesh>`.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
-``MultiMeshInstance`` is a specialized node to instance :ref:`GeometryInstance<class_GeometryInstance>`\ s based on a :ref:`MultiMesh<class_MultiMesh>` resource.
+**MultiMeshInstance** is a specialized node to instance :ref:`GeometryInstance<class_GeometryInstance>`\ s based on a :ref:`MultiMesh<class_MultiMesh>` resource.
 
 This is useful to optimize the rendering of a high amount of instances of a given mesh (for example trees in a forest or grass strands).
+
+.. rst-class:: classref-introduction-group
 
 Tutorials
 ---------
@@ -30,28 +34,41 @@ Tutorials
 
 - :doc:`../tutorials/performance/using_multimesh`
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-----------------------------------+--------------------------------------------------------------+
-| :ref:`MultiMesh<class_MultiMesh>` | :ref:`multimesh<class_MultiMeshInstance_property_multimesh>` |
-+-----------------------------------+--------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-----------------------------------+--------------------------------------------------------------+
+   | :ref:`MultiMesh<class_MultiMesh>` | :ref:`multimesh<class_MultiMeshInstance_property_multimesh>` |
+   +-----------------------------------+--------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_MultiMeshInstance_property_multimesh:
 
-- :ref:`MultiMesh<class_MultiMesh>` **multimesh**
+.. rst-class:: classref-property
 
-+----------+----------------------+
-| *Setter* | set_multimesh(value) |
-+----------+----------------------+
-| *Getter* | get_multimesh()      |
-+----------+----------------------+
+:ref:`MultiMesh<class_MultiMesh>` **multimesh**
 
-The :ref:`MultiMesh<class_MultiMesh>` resource that will be used and shared among all instances of the ``MultiMeshInstance``.
+.. rst-class:: classref-property-setget
+
+- void **set_multimesh** **(** :ref:`MultiMesh<class_MultiMesh>` value **)**
+- :ref:`MultiMesh<class_MultiMesh>` **get_multimesh** **(** **)**
+
+The :ref:`MultiMesh<class_MultiMesh>` resource that will be used and shared among all instances of the **MultiMeshInstance**.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

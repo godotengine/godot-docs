@@ -14,56 +14,82 @@ Semaphore
 
 A synchronization semaphore.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 A synchronization semaphore which can be used to synchronize multiple :ref:`Thread<class_Thread>`\ s. Initialized to zero on creation. Be careful to avoid deadlocks. For a binary version, see :ref:`Mutex<class_Mutex>`.
+
+.. rst-class:: classref-introduction-group
 
 Tutorials
 ---------
 
 - :doc:`../tutorials/performance/threads/using_multiple_threads`
 
+.. rst-class:: classref-reftable-group
+
 Methods
 -------
 
-+---------------------------------------+--------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`post<class_Semaphore_method_post>` **(** **)**         |
-+---------------------------------------+--------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`try_wait<class_Semaphore_method_try_wait>` **(** **)** |
-+---------------------------------------+--------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`wait<class_Semaphore_method_wait>` **(** **)**         |
-+---------------------------------------+--------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +---------------------------------------+--------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>` | :ref:`post<class_Semaphore_method_post>` **(** **)**         |
+   +---------------------------------------+--------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>` | :ref:`try_wait<class_Semaphore_method_try_wait>` **(** **)** |
+   +---------------------------------------+--------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>` | :ref:`wait<class_Semaphore_method_wait>` **(** **)**         |
+   +---------------------------------------+--------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_Semaphore_method_post:
 
-- :ref:`Error<enum_@GlobalScope_Error>` **post** **(** **)**
+.. rst-class:: classref-method
 
-Lowers the ``Semaphore``, allowing one more thread in.
+:ref:`Error<enum_@GlobalScope_Error>` **post** **(** **)**
+
+Lowers the **Semaphore**, allowing one more thread in.
 
 \ **Note:** This method internals' can't possibly fail, but an error code is returned for backwards compatibility, which will always be :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Semaphore_method_try_wait:
 
-- :ref:`Error<enum_@GlobalScope_Error>` **try_wait** **(** **)**
+.. rst-class:: classref-method
+
+:ref:`Error<enum_@GlobalScope_Error>` **try_wait** **(** **)**
 
 Like :ref:`wait<class_Semaphore_method_wait>`, but won't block, so if the value is zero, fails immediately and returns :ref:`@GlobalScope.ERR_BUSY<class_@GlobalScope_constant_ERR_BUSY>`. If non-zero, it returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` to report success.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Semaphore_method_wait:
 
-- :ref:`Error<enum_@GlobalScope_Error>` **wait** **(** **)**
+.. rst-class:: classref-method
 
-Waits for the ``Semaphore``, if its value is zero, blocks until non-zero.
+:ref:`Error<enum_@GlobalScope_Error>` **wait** **(** **)**
+
+Waits for the **Semaphore**, if its value is zero, blocks until non-zero.
 
 \ **Note:** This method internals' can't possibly fail, but an error code is returned for backwards compatibility, which will always be :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>`.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

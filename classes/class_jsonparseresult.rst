@@ -14,82 +14,101 @@ JSONParseResult
 
 Data class wrapper for decoded JSON.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
-Returned by :ref:`JSON.parse<class_JSON_method_parse>`, ``JSONParseResult`` contains the decoded JSON or error information if the JSON source wasn't successfully parsed. You can check if the JSON source was successfully parsed with ``if json_result.error == OK``.
+Returned by :ref:`JSON.parse<class_JSON_method_parse>`, **JSONParseResult** contains the decoded JSON or error information if the JSON source wasn't successfully parsed. You can check if the JSON source was successfully parsed with ``if json_result.error == OK``.
+
+.. rst-class:: classref-reftable-group
 
 Properties
 ----------
 
-+---------------------------------------+------------------------------------------------------------------+--------+
-| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`error<class_JSONParseResult_property_error>`               |        |
-+---------------------------------------+------------------------------------------------------------------+--------+
-| :ref:`int<class_int>`                 | :ref:`error_line<class_JSONParseResult_property_error_line>`     | ``-1`` |
-+---------------------------------------+------------------------------------------------------------------+--------+
-| :ref:`String<class_String>`           | :ref:`error_string<class_JSONParseResult_property_error_string>` | ``""`` |
-+---------------------------------------+------------------------------------------------------------------+--------+
-| :ref:`Variant<class_Variant>`         | :ref:`result<class_JSONParseResult_property_result>`             |        |
-+---------------------------------------+------------------------------------------------------------------+--------+
+.. table::
+   :widths: auto
+
+   +---------------------------------------+------------------------------------------------------------------+--------+
+   | :ref:`Error<enum_@GlobalScope_Error>` | :ref:`error<class_JSONParseResult_property_error>`               |        |
+   +---------------------------------------+------------------------------------------------------------------+--------+
+   | :ref:`int<class_int>`                 | :ref:`error_line<class_JSONParseResult_property_error_line>`     | ``-1`` |
+   +---------------------------------------+------------------------------------------------------------------+--------+
+   | :ref:`String<class_String>`           | :ref:`error_string<class_JSONParseResult_property_error_string>` | ``""`` |
+   +---------------------------------------+------------------------------------------------------------------+--------+
+   | :ref:`Variant<class_Variant>`         | :ref:`result<class_JSONParseResult_property_result>`             |        |
+   +---------------------------------------+------------------------------------------------------------------+--------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_JSONParseResult_property_error:
 
-- :ref:`Error<enum_@GlobalScope_Error>` **error**
+.. rst-class:: classref-property
 
-+----------+------------------+
-| *Setter* | set_error(value) |
-+----------+------------------+
-| *Getter* | get_error()      |
-+----------+------------------+
+:ref:`Error<enum_@GlobalScope_Error>` **error**
+
+.. rst-class:: classref-property-setget
+
+- void **set_error** **(** :ref:`Error<enum_@GlobalScope_Error>` value **)**
+- :ref:`Error<enum_@GlobalScope_Error>` **get_error** **(** **)**
 
 The error type if the JSON source was not successfully parsed. See the :ref:`Error<enum_@GlobalScope_Error>` constants.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_JSONParseResult_property_error_line:
 
-- :ref:`int<class_int>` **error_line**
+.. rst-class:: classref-property
 
-+-----------+-----------------------+
-| *Default* | ``-1``                |
-+-----------+-----------------------+
-| *Setter*  | set_error_line(value) |
-+-----------+-----------------------+
-| *Getter*  | get_error_line()      |
-+-----------+-----------------------+
+:ref:`int<class_int>` **error_line** = ``-1``
+
+.. rst-class:: classref-property-setget
+
+- void **set_error_line** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_error_line** **(** **)**
 
 The line number where the error occurred if the JSON source was not successfully parsed.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_JSONParseResult_property_error_string:
 
-- :ref:`String<class_String>` **error_string**
+.. rst-class:: classref-property
 
-+-----------+-------------------------+
-| *Default* | ``""``                  |
-+-----------+-------------------------+
-| *Setter*  | set_error_string(value) |
-+-----------+-------------------------+
-| *Getter*  | get_error_string()      |
-+-----------+-------------------------+
+:ref:`String<class_String>` **error_string** = ``""``
+
+.. rst-class:: classref-property-setget
+
+- void **set_error_string** **(** :ref:`String<class_String>` value **)**
+- :ref:`String<class_String>` **get_error_string** **(** **)**
 
 The error message if the JSON source was not successfully parsed. See the :ref:`Error<enum_@GlobalScope_Error>` constants.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_JSONParseResult_property_result:
 
-- :ref:`Variant<class_Variant>` **result**
+.. rst-class:: classref-property
 
-+----------+-------------------+
-| *Setter* | set_result(value) |
-+----------+-------------------+
-| *Getter* | get_result()      |
-+----------+-------------------+
+:ref:`Variant<class_Variant>` **result**
+
+.. rst-class:: classref-property-setget
+
+- void **set_result** **(** :ref:`Variant<class_Variant>` value **)**
+- :ref:`Variant<class_Variant>` **get_result** **(** **)**
 
 A :ref:`Variant<class_Variant>` containing the parsed JSON. Use :ref:`@GDScript.typeof<class_@GDScript_method_typeof>` or the ``is`` keyword to check if it is what you expect. For example, if the JSON source starts with curly braces (``{}``), a :ref:`Dictionary<class_Dictionary>` will be returned. If the JSON source starts with brackets (``[]``), an :ref:`Array<class_Array>` will be returned.
 
@@ -108,3 +127,4 @@ A :ref:`Variant<class_Variant>` containing the parsed JSON. Use :ref:`@GDScript.
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

@@ -14,20 +14,24 @@ GIProbe
 
 Real-time global illumination (GI) probe.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
-``GIProbe``\ s are used to provide high-quality real-time indirect light to scenes. They precompute the effect of objects that emit light and the effect of static geometry to simulate the behavior of complex light in real-time. ``GIProbe``\ s need to be baked before using, however, once baked, dynamic objects will receive light from them. Further, lights can be fully dynamic or baked.
+**GIProbe**\ s are used to provide high-quality real-time indirect light to scenes. They precompute the effect of objects that emit light and the effect of static geometry to simulate the behavior of complex light in real-time. **GIProbe**\ s need to be baked before using, however, once baked, dynamic objects will receive light from them. Further, lights can be fully dynamic or baked.
 
-Having ``GIProbe``\ s in a scene can be expensive, the quality of the probe can be turned down in exchange for better performance in the :ref:`ProjectSettings<class_ProjectSettings>` using :ref:`ProjectSettings.rendering/quality/voxel_cone_tracing/high_quality<class_ProjectSettings_property_rendering/quality/voxel_cone_tracing/high_quality>`.
+Having **GIProbe**\ s in a scene can be expensive, the quality of the probe can be turned down in exchange for better performance in the :ref:`ProjectSettings<class_ProjectSettings>` using :ref:`ProjectSettings.rendering/quality/voxel_cone_tracing/high_quality<class_ProjectSettings_property_rendering/quality/voxel_cone_tracing/high_quality>`.
 
-\ **Procedural generation:** ``GIProbe`` can be baked in an exported project, which makes it suitable for procedurally generated or user-built levels as long as all the geometry is generated in advance.
+\ **Procedural generation:** **GIProbe** can be baked in an exported project, which makes it suitable for procedurally generated or user-built levels as long as all the geometry is generated in advance.
 
-\ **Performance:** ``GIProbe`` is relatively demanding on the GPU and is not suited to low-end hardware such as integrated graphics (consider :ref:`BakedLightmap<class_BakedLightmap>` instead). To provide a fallback for low-end hardware, consider adding an option to disable ``GIProbe`` in your project's options menus. A ``GIProbe`` node can be disabled by hiding it.
+\ **Performance:** **GIProbe** is relatively demanding on the GPU and is not suited to low-end hardware such as integrated graphics (consider :ref:`BakedLightmap<class_BakedLightmap>` instead). To provide a fallback for low-end hardware, consider adding an option to disable **GIProbe** in your project's options menus. A **GIProbe** node can be disabled by hiding it.
 
-\ **Note:** Meshes should have sufficiently thick walls to avoid light leaks (avoid one-sided walls). For interior levels, enclose your level geometry in a sufficiently large box and bridge the loops to close the mesh. To further prevent light leaks, you can also strategically place temporary :ref:`MeshInstance<class_MeshInstance>` nodes with :ref:`GeometryInstance.use_in_baked_light<class_GeometryInstance_property_use_in_baked_light>` enabled. These temporary nodes can then be hidden after baking the ``GIProbe`` node.
+\ **Note:** Meshes should have sufficiently thick walls to avoid light leaks (avoid one-sided walls). For interior levels, enclose your level geometry in a sufficiently large box and bridge the loops to close the mesh. To further prevent light leaks, you can also strategically place temporary :ref:`MeshInstance<class_MeshInstance>` nodes with :ref:`GeometryInstance.use_in_baked_light<class_GeometryInstance_property_use_in_baked_light>` enabled. These temporary nodes can then be hidden after baking the **GIProbe** node.
 
-\ **Note:** Due to a renderer limitation, emissive :ref:`ShaderMaterial<class_ShaderMaterial>`\ s cannot emit light when used in a ``GIProbe``. Only emissive :ref:`SpatialMaterial<class_SpatialMaterial>`\ s can emit light in a ``GIProbe``.
+\ **Note:** Due to a renderer limitation, emissive :ref:`ShaderMaterial<class_ShaderMaterial>`\ s cannot emit light when used in a **GIProbe**. Only emissive :ref:`SpatialMaterial<class_SpatialMaterial>`\ s can emit light in a **GIProbe**.
+
+.. rst-class:: classref-introduction-group
 
 Tutorials
 ---------
@@ -36,249 +40,316 @@ Tutorials
 
 - `Third Person Shooter Demo <https://godotengine.org/asset-library/asset/678>`__
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+---------------------------------------+------------------------------------------------------------+---------------------------+
-| :ref:`float<class_float>`             | :ref:`bias<class_GIProbe_property_bias>`                   | ``1.5``                   |
-+---------------------------------------+------------------------------------------------------------+---------------------------+
-| :ref:`bool<class_bool>`               | :ref:`compress<class_GIProbe_property_compress>`           | ``false``                 |
-+---------------------------------------+------------------------------------------------------------+---------------------------+
-| :ref:`GIProbeData<class_GIProbeData>` | :ref:`data<class_GIProbe_property_data>`                   |                           |
-+---------------------------------------+------------------------------------------------------------+---------------------------+
-| :ref:`int<class_int>`                 | :ref:`dynamic_range<class_GIProbe_property_dynamic_range>` | ``4``                     |
-+---------------------------------------+------------------------------------------------------------+---------------------------+
-| :ref:`float<class_float>`             | :ref:`energy<class_GIProbe_property_energy>`               | ``1.0``                   |
-+---------------------------------------+------------------------------------------------------------+---------------------------+
-| :ref:`Vector3<class_Vector3>`         | :ref:`extents<class_GIProbe_property_extents>`             | ``Vector3( 10, 10, 10 )`` |
-+---------------------------------------+------------------------------------------------------------+---------------------------+
-| :ref:`bool<class_bool>`               | :ref:`interior<class_GIProbe_property_interior>`           | ``false``                 |
-+---------------------------------------+------------------------------------------------------------+---------------------------+
-| :ref:`float<class_float>`             | :ref:`normal_bias<class_GIProbe_property_normal_bias>`     | ``0.0``                   |
-+---------------------------------------+------------------------------------------------------------+---------------------------+
-| :ref:`float<class_float>`             | :ref:`propagation<class_GIProbe_property_propagation>`     | ``0.7``                   |
-+---------------------------------------+------------------------------------------------------------+---------------------------+
-| :ref:`Subdiv<enum_GIProbe_Subdiv>`    | :ref:`subdiv<class_GIProbe_property_subdiv>`               | ``1``                     |
-+---------------------------------------+------------------------------------------------------------+---------------------------+
+.. table::
+   :widths: auto
+
+   +---------------------------------------+------------------------------------------------------------+---------------------------+
+   | :ref:`float<class_float>`             | :ref:`bias<class_GIProbe_property_bias>`                   | ``1.5``                   |
+   +---------------------------------------+------------------------------------------------------------+---------------------------+
+   | :ref:`bool<class_bool>`               | :ref:`compress<class_GIProbe_property_compress>`           | ``false``                 |
+   +---------------------------------------+------------------------------------------------------------+---------------------------+
+   | :ref:`GIProbeData<class_GIProbeData>` | :ref:`data<class_GIProbe_property_data>`                   |                           |
+   +---------------------------------------+------------------------------------------------------------+---------------------------+
+   | :ref:`int<class_int>`                 | :ref:`dynamic_range<class_GIProbe_property_dynamic_range>` | ``4``                     |
+   +---------------------------------------+------------------------------------------------------------+---------------------------+
+   | :ref:`float<class_float>`             | :ref:`energy<class_GIProbe_property_energy>`               | ``1.0``                   |
+   +---------------------------------------+------------------------------------------------------------+---------------------------+
+   | :ref:`Vector3<class_Vector3>`         | :ref:`extents<class_GIProbe_property_extents>`             | ``Vector3( 10, 10, 10 )`` |
+   +---------------------------------------+------------------------------------------------------------+---------------------------+
+   | :ref:`bool<class_bool>`               | :ref:`interior<class_GIProbe_property_interior>`           | ``false``                 |
+   +---------------------------------------+------------------------------------------------------------+---------------------------+
+   | :ref:`float<class_float>`             | :ref:`normal_bias<class_GIProbe_property_normal_bias>`     | ``0.0``                   |
+   +---------------------------------------+------------------------------------------------------------+---------------------------+
+   | :ref:`float<class_float>`             | :ref:`propagation<class_GIProbe_property_propagation>`     | ``0.7``                   |
+   +---------------------------------------+------------------------------------------------------------+---------------------------+
+   | :ref:`Subdiv<enum_GIProbe_Subdiv>`    | :ref:`subdiv<class_GIProbe_property_subdiv>`               | ``1``                     |
+   +---------------------------------------+------------------------------------------------------------+---------------------------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+------+----------------------------------------------------------------------------------------------------------------------------------------------+
-| void | :ref:`bake<class_GIProbe_method_bake>` **(** :ref:`Node<class_Node>` from_node=null, :ref:`bool<class_bool>` create_visual_debug=false **)** |
-+------+----------------------------------------------------------------------------------------------------------------------------------------------+
-| void | :ref:`debug_bake<class_GIProbe_method_debug_bake>` **(** **)**                                                                               |
-+------+----------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +------+----------------------------------------------------------------------------------------------------------------------------------------------+
+   | void | :ref:`bake<class_GIProbe_method_bake>` **(** :ref:`Node<class_Node>` from_node=null, :ref:`bool<class_bool>` create_visual_debug=false **)** |
+   +------+----------------------------------------------------------------------------------------------------------------------------------------------+
+   | void | :ref:`debug_bake<class_GIProbe_method_debug_bake>` **(** **)**                                                                               |
+   +------+----------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Enumerations
 ------------
 
 .. _enum_GIProbe_Subdiv:
 
-.. _class_GIProbe_constant_SUBDIV_64:
-
-.. _class_GIProbe_constant_SUBDIV_128:
-
-.. _class_GIProbe_constant_SUBDIV_256:
-
-.. _class_GIProbe_constant_SUBDIV_512:
-
-.. _class_GIProbe_constant_SUBDIV_MAX:
+.. rst-class:: classref-enumeration
 
 enum **Subdiv**:
 
-- **SUBDIV_64** = **0** --- Use 64 subdivisions. This is the lowest quality setting, but the fastest. Use it if you can, but especially use it on lower-end hardware.
+.. _class_GIProbe_constant_SUBDIV_64:
 
-- **SUBDIV_128** = **1** --- Use 128 subdivisions. This is the default quality setting.
+.. rst-class:: classref-enumeration-constant
 
-- **SUBDIV_256** = **2** --- Use 256 subdivisions.
+:ref:`Subdiv<enum_GIProbe_Subdiv>` **SUBDIV_64** = ``0``
 
-- **SUBDIV_512** = **3** --- Use 512 subdivisions. This is the highest quality setting, but the slowest. On lower-end hardware, this could cause the GPU to stall.
+Use 64 subdivisions. This is the lowest quality setting, but the fastest. Use it if you can, but especially use it on lower-end hardware.
 
-- **SUBDIV_MAX** = **4** --- Represents the size of the :ref:`Subdiv<enum_GIProbe_Subdiv>` enum.
+.. _class_GIProbe_constant_SUBDIV_128:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Subdiv<enum_GIProbe_Subdiv>` **SUBDIV_128** = ``1``
+
+Use 128 subdivisions. This is the default quality setting.
+
+.. _class_GIProbe_constant_SUBDIV_256:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Subdiv<enum_GIProbe_Subdiv>` **SUBDIV_256** = ``2``
+
+Use 256 subdivisions.
+
+.. _class_GIProbe_constant_SUBDIV_512:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Subdiv<enum_GIProbe_Subdiv>` **SUBDIV_512** = ``3``
+
+Use 512 subdivisions. This is the highest quality setting, but the slowest. On lower-end hardware, this could cause the GPU to stall.
+
+.. _class_GIProbe_constant_SUBDIV_MAX:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Subdiv<enum_GIProbe_Subdiv>` **SUBDIV_MAX** = ``4``
+
+Represents the size of the :ref:`Subdiv<enum_GIProbe_Subdiv>` enum.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_GIProbe_property_bias:
 
-- :ref:`float<class_float>` **bias**
+.. rst-class:: classref-property
 
-+-----------+-----------------+
-| *Default* | ``1.5``         |
-+-----------+-----------------+
-| *Setter*  | set_bias(value) |
-+-----------+-----------------+
-| *Getter*  | get_bias()      |
-+-----------+-----------------+
+:ref:`float<class_float>` **bias** = ``1.5``
 
-Offsets the lookup of the light contribution from the ``GIProbe``. This can be used to avoid self-shadowing, but may introduce light leaking at higher values. This and :ref:`normal_bias<class_GIProbe_property_normal_bias>` should be played around with to minimize self-shadowing and light leaking.
+.. rst-class:: classref-property-setget
+
+- void **set_bias** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_bias** **(** **)**
+
+Offsets the lookup of the light contribution from the **GIProbe**. This can be used to avoid self-shadowing, but may introduce light leaking at higher values. This and :ref:`normal_bias<class_GIProbe_property_normal_bias>` should be played around with to minimize self-shadowing and light leaking.
 
 \ **Note:** ``bias`` should usually be above 1.0 as that is the size of the voxels.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_GIProbe_property_compress:
 
-- :ref:`bool<class_bool>` **compress**
+.. rst-class:: classref-property
 
-+-----------+---------------------+
-| *Default* | ``false``           |
-+-----------+---------------------+
-| *Setter*  | set_compress(value) |
-+-----------+---------------------+
-| *Getter*  | is_compressed()     |
-+-----------+---------------------+
+:ref:`bool<class_bool>` **compress** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_compress** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_compressed** **(** **)**
 
 *Deprecated.* This property has been deprecated due to known bugs and no longer has any effect when enabled.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_GIProbe_property_data:
 
-- :ref:`GIProbeData<class_GIProbeData>` **data**
+.. rst-class:: classref-property
 
-+----------+-----------------------+
-| *Setter* | set_probe_data(value) |
-+----------+-----------------------+
-| *Getter* | get_probe_data()      |
-+----------+-----------------------+
+:ref:`GIProbeData<class_GIProbeData>` **data**
 
-The :ref:`GIProbeData<class_GIProbeData>` resource that holds the data for this ``GIProbe``.
+.. rst-class:: classref-property-setget
+
+- void **set_probe_data** **(** :ref:`GIProbeData<class_GIProbeData>` value **)**
+- :ref:`GIProbeData<class_GIProbeData>` **get_probe_data** **(** **)**
+
+The :ref:`GIProbeData<class_GIProbeData>` resource that holds the data for this **GIProbe**.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_GIProbe_property_dynamic_range:
 
-- :ref:`int<class_int>` **dynamic_range**
+.. rst-class:: classref-property
 
-+-----------+--------------------------+
-| *Default* | ``4``                    |
-+-----------+--------------------------+
-| *Setter*  | set_dynamic_range(value) |
-+-----------+--------------------------+
-| *Getter*  | get_dynamic_range()      |
-+-----------+--------------------------+
+:ref:`int<class_int>` **dynamic_range** = ``4``
 
-The maximum brightness that the ``GIProbe`` will recognize. Brightness will be scaled within this range.
+.. rst-class:: classref-property-setget
+
+- void **set_dynamic_range** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_dynamic_range** **(** **)**
+
+The maximum brightness that the **GIProbe** will recognize. Brightness will be scaled within this range.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_GIProbe_property_energy:
 
-- :ref:`float<class_float>` **energy**
+.. rst-class:: classref-property
 
-+-----------+-------------------+
-| *Default* | ``1.0``           |
-+-----------+-------------------+
-| *Setter*  | set_energy(value) |
-+-----------+-------------------+
-| *Getter*  | get_energy()      |
-+-----------+-------------------+
+:ref:`float<class_float>` **energy** = ``1.0``
 
-Energy multiplier. Makes the lighting contribution from the ``GIProbe`` brighter.
+.. rst-class:: classref-property-setget
+
+- void **set_energy** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_energy** **(** **)**
+
+Energy multiplier. Makes the lighting contribution from the **GIProbe** brighter.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_GIProbe_property_extents:
 
-- :ref:`Vector3<class_Vector3>` **extents**
+.. rst-class:: classref-property
 
-+-----------+---------------------------+
-| *Default* | ``Vector3( 10, 10, 10 )`` |
-+-----------+---------------------------+
-| *Setter*  | set_extents(value)        |
-+-----------+---------------------------+
-| *Getter*  | get_extents()             |
-+-----------+---------------------------+
+:ref:`Vector3<class_Vector3>` **extents** = ``Vector3( 10, 10, 10 )``
 
-The size of the area covered by the ``GIProbe``. If you make the extents larger without increasing the subdivisions with :ref:`subdiv<class_GIProbe_property_subdiv>`, the size of each cell will increase and result in lower detailed lighting.
+.. rst-class:: classref-property-setget
+
+- void **set_extents** **(** :ref:`Vector3<class_Vector3>` value **)**
+- :ref:`Vector3<class_Vector3>` **get_extents** **(** **)**
+
+The size of the area covered by the **GIProbe**. If you make the extents larger without increasing the subdivisions with :ref:`subdiv<class_GIProbe_property_subdiv>`, the size of each cell will increase and result in lower detailed lighting.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_GIProbe_property_interior:
 
-- :ref:`bool<class_bool>` **interior**
+.. rst-class:: classref-property
 
-+-----------+---------------------+
-| *Default* | ``false``           |
-+-----------+---------------------+
-| *Setter*  | set_interior(value) |
-+-----------+---------------------+
-| *Getter*  | is_interior()       |
-+-----------+---------------------+
+:ref:`bool<class_bool>` **interior** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_interior** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_interior** **(** **)**
 
 If ``true``, ignores the sky contribution when calculating lighting.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_GIProbe_property_normal_bias:
 
-- :ref:`float<class_float>` **normal_bias**
+.. rst-class:: classref-property
 
-+-----------+------------------------+
-| *Default* | ``0.0``                |
-+-----------+------------------------+
-| *Setter*  | set_normal_bias(value) |
-+-----------+------------------------+
-| *Getter*  | get_normal_bias()      |
-+-----------+------------------------+
+:ref:`float<class_float>` **normal_bias** = ``0.0``
 
-Offsets the lookup into the ``GIProbe`` based on the object's normal direction. Can be used to reduce some self-shadowing artifacts.
+.. rst-class:: classref-property-setget
+
+- void **set_normal_bias** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_normal_bias** **(** **)**
+
+Offsets the lookup into the **GIProbe** based on the object's normal direction. Can be used to reduce some self-shadowing artifacts.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_GIProbe_property_propagation:
 
-- :ref:`float<class_float>` **propagation**
+.. rst-class:: classref-property
 
-+-----------+------------------------+
-| *Default* | ``0.7``                |
-+-----------+------------------------+
-| *Setter*  | set_propagation(value) |
-+-----------+------------------------+
-| *Getter*  | get_propagation()      |
-+-----------+------------------------+
+:ref:`float<class_float>` **propagation** = ``0.7``
+
+.. rst-class:: classref-property-setget
+
+- void **set_propagation** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_propagation** **(** **)**
 
 How much light propagates through the probe internally. A higher value allows light to spread further.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_GIProbe_property_subdiv:
 
-- :ref:`Subdiv<enum_GIProbe_Subdiv>` **subdiv**
+.. rst-class:: classref-property
 
-+-----------+-------------------+
-| *Default* | ``1``             |
-+-----------+-------------------+
-| *Setter*  | set_subdiv(value) |
-+-----------+-------------------+
-| *Getter*  | get_subdiv()      |
-+-----------+-------------------+
+:ref:`Subdiv<enum_GIProbe_Subdiv>` **subdiv** = ``1``
 
-Number of times to subdivide the grid that the ``GIProbe`` operates on. A higher number results in finer detail and thus higher visual quality, while lower numbers result in better performance.
+.. rst-class:: classref-property-setget
+
+- void **set_subdiv** **(** :ref:`Subdiv<enum_GIProbe_Subdiv>` value **)**
+- :ref:`Subdiv<enum_GIProbe_Subdiv>` **get_subdiv** **(** **)**
+
+Number of times to subdivide the grid that the **GIProbe** operates on. A higher number results in finer detail and thus higher visual quality, while lower numbers result in better performance.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_GIProbe_method_bake:
 
-- void **bake** **(** :ref:`Node<class_Node>` from_node=null, :ref:`bool<class_bool>` create_visual_debug=false **)**
+.. rst-class:: classref-method
 
-Bakes the effect from all :ref:`GeometryInstance<class_GeometryInstance>`\ s marked with :ref:`GeometryInstance.use_in_baked_light<class_GeometryInstance_property_use_in_baked_light>` and :ref:`Light<class_Light>`\ s marked with either :ref:`Light.BAKE_INDIRECT<class_Light_constant_BAKE_INDIRECT>` or :ref:`Light.BAKE_ALL<class_Light_constant_BAKE_ALL>`. If ``create_visual_debug`` is ``true``, after baking the light, this will generate a :ref:`MultiMesh<class_MultiMesh>` that has a cube representing each solid cell with each cube colored to the cell's albedo color. This can be used to visualize the ``GIProbe``'s data and debug any issues that may be occurring.
+void **bake** **(** :ref:`Node<class_Node>` from_node=null, :ref:`bool<class_bool>` create_visual_debug=false **)**
 
-\ **Note:** :ref:`bake<class_GIProbe_method_bake>` works from the editor and in exported projects. This makes it suitable for procedurally generated or user-built levels. Baking a ``GIProbe`` generally takes from 5 to 20 seconds in most scenes. Reducing :ref:`subdiv<class_GIProbe_property_subdiv>` can speed up baking.
+Bakes the effect from all :ref:`GeometryInstance<class_GeometryInstance>`\ s marked with :ref:`GeometryInstance.use_in_baked_light<class_GeometryInstance_property_use_in_baked_light>` and :ref:`Light<class_Light>`\ s marked with either :ref:`Light.BAKE_INDIRECT<class_Light_constant_BAKE_INDIRECT>` or :ref:`Light.BAKE_ALL<class_Light_constant_BAKE_ALL>`. If ``create_visual_debug`` is ``true``, after baking the light, this will generate a :ref:`MultiMesh<class_MultiMesh>` that has a cube representing each solid cell with each cube colored to the cell's albedo color. This can be used to visualize the **GIProbe**'s data and debug any issues that may be occurring.
 
-\ **Note:** :ref:`GeometryInstance<class_GeometryInstance>`\ s and :ref:`Light<class_Light>`\ s must be fully ready before :ref:`bake<class_GIProbe_method_bake>` is called. If you are procedurally creating those and some meshes or lights are missing from your baked ``GIProbe``, use ``call_deferred("bake")`` instead of calling :ref:`bake<class_GIProbe_method_bake>` directly.
+\ **Note:** :ref:`bake<class_GIProbe_method_bake>` works from the editor and in exported projects. This makes it suitable for procedurally generated or user-built levels. Baking a **GIProbe** generally takes from 5 to 20 seconds in most scenes. Reducing :ref:`subdiv<class_GIProbe_property_subdiv>` can speed up baking.
+
+\ **Note:** :ref:`GeometryInstance<class_GeometryInstance>`\ s and :ref:`Light<class_Light>`\ s must be fully ready before :ref:`bake<class_GIProbe_method_bake>` is called. If you are procedurally creating those and some meshes or lights are missing from your baked **GIProbe**, use ``call_deferred("bake")`` instead of calling :ref:`bake<class_GIProbe_method_bake>` directly.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_GIProbe_method_debug_bake:
 
-- void **debug_bake** **(** **)**
+.. rst-class:: classref-method
+
+void **debug_bake** **(** **)**
 
 Calls :ref:`bake<class_GIProbe_method_bake>` with ``create_visual_debug`` enabled.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

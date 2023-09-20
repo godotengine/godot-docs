@@ -12,6 +12,8 @@ Basis
 
 3×3 matrix datatype.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -22,6 +24,8 @@ Contains 3 vector fields X, Y and Z as its columns, which are typically interpre
 Can also be accessed as array of 3D vectors. These vectors are normally orthogonal to each other, but are not necessarily normalized (due to scaling).
 
 For more information, read the "Matrices and transforms" documentation article.
+
+.. rst-class:: classref-introduction-group
 
 Tutorials
 ---------
@@ -40,290 +44,414 @@ Tutorials
 
 - `2.5D Demo <https://godotengine.org/asset-library/asset/583>`__
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-------------------------------+----------------------------------+------------------------+
-| :ref:`Vector3<class_Vector3>` | :ref:`x<class_Basis_property_x>` | ``Vector3( 1, 0, 0 )`` |
-+-------------------------------+----------------------------------+------------------------+
-| :ref:`Vector3<class_Vector3>` | :ref:`y<class_Basis_property_y>` | ``Vector3( 0, 1, 0 )`` |
-+-------------------------------+----------------------------------+------------------------+
-| :ref:`Vector3<class_Vector3>` | :ref:`z<class_Basis_property_z>` | ``Vector3( 0, 0, 1 )`` |
-+-------------------------------+----------------------------------+------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------------+----------------------------------+------------------------+
+   | :ref:`Vector3<class_Vector3>` | :ref:`x<class_Basis_property_x>` | ``Vector3( 1, 0, 0 )`` |
+   +-------------------------------+----------------------------------+------------------------+
+   | :ref:`Vector3<class_Vector3>` | :ref:`y<class_Basis_property_y>` | ``Vector3( 0, 1, 0 )`` |
+   +-------------------------------+----------------------------------+------------------------+
+   | :ref:`Vector3<class_Vector3>` | :ref:`z<class_Basis_property_z>` | ``Vector3( 0, 0, 1 )`` |
+   +-------------------------------+----------------------------------+------------------------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Basis<class_Basis>`     | :ref:`Basis<class_Basis_method_Basis>` **(** :ref:`Quat<class_Quat>` from **)**                                                                                     |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Basis<class_Basis>`     | :ref:`Basis<class_Basis_method_Basis>` **(** :ref:`Vector3<class_Vector3>` from **)**                                                                               |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Basis<class_Basis>`     | :ref:`Basis<class_Basis_method_Basis>` **(** :ref:`Vector3<class_Vector3>` axis, :ref:`float<class_float>` angle **)**                                              |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Basis<class_Basis>`     | :ref:`Basis<class_Basis_method_Basis>` **(** :ref:`Vector3<class_Vector3>` x_axis, :ref:`Vector3<class_Vector3>` y_axis, :ref:`Vector3<class_Vector3>` z_axis **)** |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`     | :ref:`determinant<class_Basis_method_determinant>` **(** **)**                                                                                                      |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector3<class_Vector3>` | :ref:`get_euler<class_Basis_method_get_euler>` **(** **)**                                                                                                          |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`         | :ref:`get_orthogonal_index<class_Basis_method_get_orthogonal_index>` **(** **)**                                                                                    |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Quat<class_Quat>`       | :ref:`get_rotation_quat<class_Basis_method_get_rotation_quat>` **(** **)**                                                                                          |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector3<class_Vector3>` | :ref:`get_scale<class_Basis_method_get_scale>` **(** **)**                                                                                                          |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Basis<class_Basis>`     | :ref:`inverse<class_Basis_method_inverse>` **(** **)**                                                                                                              |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`is_equal_approx<class_Basis_method_is_equal_approx>` **(** :ref:`Basis<class_Basis>` b, :ref:`float<class_float>` epsilon=1e-05 **)**                         |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Basis<class_Basis>`     | :ref:`orthonormalized<class_Basis_method_orthonormalized>` **(** **)**                                                                                              |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Basis<class_Basis>`     | :ref:`rotated<class_Basis_method_rotated>` **(** :ref:`Vector3<class_Vector3>` axis, :ref:`float<class_float>` angle **)**                                          |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Basis<class_Basis>`     | :ref:`scaled<class_Basis_method_scaled>` **(** :ref:`Vector3<class_Vector3>` scale **)**                                                                            |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Basis<class_Basis>`     | :ref:`slerp<class_Basis_method_slerp>` **(** :ref:`Basis<class_Basis>` to, :ref:`float<class_float>` weight **)**                                                   |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`     | :ref:`tdotx<class_Basis_method_tdotx>` **(** :ref:`Vector3<class_Vector3>` with **)**                                                                               |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`     | :ref:`tdoty<class_Basis_method_tdoty>` **(** :ref:`Vector3<class_Vector3>` with **)**                                                                               |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`     | :ref:`tdotz<class_Basis_method_tdotz>` **(** :ref:`Vector3<class_Vector3>` with **)**                                                                               |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Basis<class_Basis>`     | :ref:`transposed<class_Basis_method_transposed>` **(** **)**                                                                                                        |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector3<class_Vector3>` | :ref:`xform<class_Basis_method_xform>` **(** :ref:`Vector3<class_Vector3>` v **)**                                                                                  |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector3<class_Vector3>` | :ref:`xform_inv<class_Basis_method_xform_inv>` **(** :ref:`Vector3<class_Vector3>` v **)**                                                                          |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Basis<class_Basis>`     | :ref:`Basis<class_Basis_method_Basis>` **(** :ref:`Quat<class_Quat>` from **)**                                                                                     |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Basis<class_Basis>`     | :ref:`Basis<class_Basis_method_Basis>` **(** :ref:`Vector3<class_Vector3>` from **)**                                                                               |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Basis<class_Basis>`     | :ref:`Basis<class_Basis_method_Basis>` **(** :ref:`Vector3<class_Vector3>` axis, :ref:`float<class_float>` angle **)**                                              |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Basis<class_Basis>`     | :ref:`Basis<class_Basis_method_Basis>` **(** :ref:`Vector3<class_Vector3>` x_axis, :ref:`Vector3<class_Vector3>` y_axis, :ref:`Vector3<class_Vector3>` z_axis **)** |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`     | :ref:`determinant<class_Basis_method_determinant>` **(** **)**                                                                                                      |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector3<class_Vector3>` | :ref:`get_euler<class_Basis_method_get_euler>` **(** **)**                                                                                                          |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`         | :ref:`get_orthogonal_index<class_Basis_method_get_orthogonal_index>` **(** **)**                                                                                    |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Quat<class_Quat>`       | :ref:`get_rotation_quat<class_Basis_method_get_rotation_quat>` **(** **)**                                                                                          |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector3<class_Vector3>` | :ref:`get_scale<class_Basis_method_get_scale>` **(** **)**                                                                                                          |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Basis<class_Basis>`     | :ref:`inverse<class_Basis_method_inverse>` **(** **)**                                                                                                              |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`is_equal_approx<class_Basis_method_is_equal_approx>` **(** :ref:`Basis<class_Basis>` b, :ref:`float<class_float>` epsilon=1e-05 **)**                         |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Basis<class_Basis>`     | :ref:`orthonormalized<class_Basis_method_orthonormalized>` **(** **)**                                                                                              |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Basis<class_Basis>`     | :ref:`rotated<class_Basis_method_rotated>` **(** :ref:`Vector3<class_Vector3>` axis, :ref:`float<class_float>` angle **)**                                          |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Basis<class_Basis>`     | :ref:`scaled<class_Basis_method_scaled>` **(** :ref:`Vector3<class_Vector3>` scale **)**                                                                            |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Basis<class_Basis>`     | :ref:`slerp<class_Basis_method_slerp>` **(** :ref:`Basis<class_Basis>` to, :ref:`float<class_float>` weight **)**                                                   |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`     | :ref:`tdotx<class_Basis_method_tdotx>` **(** :ref:`Vector3<class_Vector3>` with **)**                                                                               |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`     | :ref:`tdoty<class_Basis_method_tdoty>` **(** :ref:`Vector3<class_Vector3>` with **)**                                                                               |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`     | :ref:`tdotz<class_Basis_method_tdotz>` **(** :ref:`Vector3<class_Vector3>` with **)**                                                                               |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Basis<class_Basis>`     | :ref:`transposed<class_Basis_method_transposed>` **(** **)**                                                                                                        |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector3<class_Vector3>` | :ref:`xform<class_Basis_method_xform>` **(** :ref:`Vector3<class_Vector3>` v **)**                                                                                  |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector3<class_Vector3>` | :ref:`xform_inv<class_Basis_method_xform_inv>` **(** :ref:`Vector3<class_Vector3>` v **)**                                                                          |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Constants
 ---------
 
 .. _class_Basis_constant_IDENTITY:
 
-.. _class_Basis_constant_FLIP_X:
+.. rst-class:: classref-constant
 
-.. _class_Basis_constant_FLIP_Y:
+**IDENTITY** = ``Basis( 1, 0, 0, 0, 1, 0, 0, 0, 1 )``
 
-.. _class_Basis_constant_FLIP_Z:
-
-- **IDENTITY** = **Basis( 1, 0, 0, 0, 1, 0, 0, 0, 1 )** --- The identity basis, with no rotation or scaling applied.
+The identity basis, with no rotation or scaling applied.
 
 This is identical to calling ``Basis()`` without any parameters. This constant can be used to make your code clearer, and for consistency with C#.
 
-- **FLIP_X** = **Basis( -1, 0, 0, 0, 1, 0, 0, 0, 1 )** --- The basis that will flip something along the X axis when used in a transformation.
+.. _class_Basis_constant_FLIP_X:
 
-- **FLIP_Y** = **Basis( 1, 0, 0, 0, -1, 0, 0, 0, 1 )** --- The basis that will flip something along the Y axis when used in a transformation.
+.. rst-class:: classref-constant
 
-- **FLIP_Z** = **Basis( 1, 0, 0, 0, 1, 0, 0, 0, -1 )** --- The basis that will flip something along the Z axis when used in a transformation.
+**FLIP_X** = ``Basis( -1, 0, 0, 0, 1, 0, 0, 0, 1 )``
+
+The basis that will flip something along the X axis when used in a transformation.
+
+.. _class_Basis_constant_FLIP_Y:
+
+.. rst-class:: classref-constant
+
+**FLIP_Y** = ``Basis( 1, 0, 0, 0, -1, 0, 0, 0, 1 )``
+
+The basis that will flip something along the Y axis when used in a transformation.
+
+.. _class_Basis_constant_FLIP_Z:
+
+.. rst-class:: classref-constant
+
+**FLIP_Z** = ``Basis( 1, 0, 0, 0, 1, 0, 0, 0, -1 )``
+
+The basis that will flip something along the Z axis when used in a transformation.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_Basis_property_x:
 
-- :ref:`Vector3<class_Vector3>` **x**
+.. rst-class:: classref-property
 
-+-----------+------------------------+
-| *Default* | ``Vector3( 1, 0, 0 )`` |
-+-----------+------------------------+
+:ref:`Vector3<class_Vector3>` **x** = ``Vector3( 1, 0, 0 )``
 
 The basis matrix's X vector (column 0). Equivalent to array index ``0``.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Basis_property_y:
 
-- :ref:`Vector3<class_Vector3>` **y**
+.. rst-class:: classref-property
 
-+-----------+------------------------+
-| *Default* | ``Vector3( 0, 1, 0 )`` |
-+-----------+------------------------+
+:ref:`Vector3<class_Vector3>` **y** = ``Vector3( 0, 1, 0 )``
 
 The basis matrix's Y vector (column 1). Equivalent to array index ``1``.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Basis_property_z:
 
-- :ref:`Vector3<class_Vector3>` **z**
+.. rst-class:: classref-property
 
-+-----------+------------------------+
-| *Default* | ``Vector3( 0, 0, 1 )`` |
-+-----------+------------------------+
+:ref:`Vector3<class_Vector3>` **z** = ``Vector3( 0, 0, 1 )``
 
 The basis matrix's Z vector (column 2). Equivalent to array index ``2``.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_Basis_method_Basis:
 
-- :ref:`Basis<class_Basis>` **Basis** **(** :ref:`Quat<class_Quat>` from **)**
+.. rst-class:: classref-method
+
+:ref:`Basis<class_Basis>` **Basis** **(** :ref:`Quat<class_Quat>` from **)**
 
 Constructs a pure rotation basis matrix from the given quaternion.
 
+.. rst-class:: classref-item-separator
+
 ----
 
-- :ref:`Basis<class_Basis>` **Basis** **(** :ref:`Vector3<class_Vector3>` from **)**
+.. rst-class:: classref-method
+
+:ref:`Basis<class_Basis>` **Basis** **(** :ref:`Vector3<class_Vector3>` from **)**
 
 Constructs a pure rotation basis matrix from the given Euler angles (in the YXZ convention: when \*composing\*, first Y, then X, and Z last), given in the vector format as (X angle, Y angle, Z angle).
 
 Consider using the :ref:`Quat<class_Quat>` constructor instead, which uses a quaternion instead of Euler angles.
 
+.. rst-class:: classref-item-separator
+
 ----
 
-- :ref:`Basis<class_Basis>` **Basis** **(** :ref:`Vector3<class_Vector3>` axis, :ref:`float<class_float>` angle **)**
+.. rst-class:: classref-method
+
+:ref:`Basis<class_Basis>` **Basis** **(** :ref:`Vector3<class_Vector3>` axis, :ref:`float<class_float>` angle **)**
 
 Constructs a pure rotation basis matrix, rotated around the given ``axis`` by ``angle`` (in radians). The axis must be a normalized vector.
 
+.. rst-class:: classref-item-separator
+
 ----
 
-- :ref:`Basis<class_Basis>` **Basis** **(** :ref:`Vector3<class_Vector3>` x_axis, :ref:`Vector3<class_Vector3>` y_axis, :ref:`Vector3<class_Vector3>` z_axis **)**
+.. rst-class:: classref-method
+
+:ref:`Basis<class_Basis>` **Basis** **(** :ref:`Vector3<class_Vector3>` x_axis, :ref:`Vector3<class_Vector3>` y_axis, :ref:`Vector3<class_Vector3>` z_axis **)**
 
 Constructs a basis matrix from 3 axis vectors (matrix columns).
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Basis_method_determinant:
 
-- :ref:`float<class_float>` **determinant** **(** **)**
+.. rst-class:: classref-method
+
+:ref:`float<class_float>` **determinant** **(** **)**
 
 Returns the determinant of the basis matrix. If the basis is uniformly scaled, its determinant is the square of the scale.
 
 A negative determinant means the basis has a negative scale. A zero determinant means the basis isn't invertible, and is usually considered invalid.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_Basis_method_get_euler:
 
-- :ref:`Vector3<class_Vector3>` **get_euler** **(** **)**
+.. rst-class:: classref-method
+
+:ref:`Vector3<class_Vector3>` **get_euler** **(** **)**
 
 Returns the basis's rotation in the form of Euler angles (in the YXZ convention: when decomposing, first Z, then X, and Y last). The returned vector contains the rotation angles in the format (X angle, Y angle, Z angle).
 
 Consider using the :ref:`get_rotation_quat<class_Basis_method_get_rotation_quat>` method instead, which returns a :ref:`Quat<class_Quat>` quaternion instead of Euler angles.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_Basis_method_get_orthogonal_index:
 
-- :ref:`int<class_int>` **get_orthogonal_index** **(** **)**
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **get_orthogonal_index** **(** **)**
 
 This function considers a discretization of rotations into 24 points on unit sphere, lying along the vectors (x,y,z) with each component being either -1, 0, or 1, and returns the index of the point best representing the orientation of the object. It is mainly used by the :ref:`GridMap<class_GridMap>` editor. For further details, refer to the Godot source code.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Basis_method_get_rotation_quat:
 
-- :ref:`Quat<class_Quat>` **get_rotation_quat** **(** **)**
+.. rst-class:: classref-method
+
+:ref:`Quat<class_Quat>` **get_rotation_quat** **(** **)**
 
 Returns the basis's rotation in the form of a quaternion. See :ref:`get_euler<class_Basis_method_get_euler>` if you need Euler angles, but keep in mind quaternions should generally be preferred to Euler angles.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Basis_method_get_scale:
 
-- :ref:`Vector3<class_Vector3>` **get_scale** **(** **)**
+.. rst-class:: classref-method
+
+:ref:`Vector3<class_Vector3>` **get_scale** **(** **)**
 
 Assuming that the matrix is the combination of a rotation and scaling, return the absolute value of scaling factors along each axis.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Basis_method_inverse:
 
-- :ref:`Basis<class_Basis>` **inverse** **(** **)**
+.. rst-class:: classref-method
+
+:ref:`Basis<class_Basis>` **inverse** **(** **)**
 
 Returns the inverse of the matrix.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Basis_method_is_equal_approx:
 
-- :ref:`bool<class_bool>` **is_equal_approx** **(** :ref:`Basis<class_Basis>` b, :ref:`float<class_float>` epsilon=1e-05 **)**
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **is_equal_approx** **(** :ref:`Basis<class_Basis>` b, :ref:`float<class_float>` epsilon=1e-05 **)**
 
 Returns ``true`` if this basis and ``b`` are approximately equal, by calling ``is_equal_approx`` on each component.
 
 \ **Note:** For complicated reasons, the epsilon argument is always discarded. Don't use the epsilon argument, it does nothing.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_Basis_method_orthonormalized:
 
-- :ref:`Basis<class_Basis>` **orthonormalized** **(** **)**
+.. rst-class:: classref-method
+
+:ref:`Basis<class_Basis>` **orthonormalized** **(** **)**
 
 Returns the orthonormalized version of the matrix (useful to call from time to time to avoid rounding error for orthogonal matrices). This performs a Gram-Schmidt orthonormalization on the basis of the matrix.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Basis_method_rotated:
 
-- :ref:`Basis<class_Basis>` **rotated** **(** :ref:`Vector3<class_Vector3>` axis, :ref:`float<class_float>` angle **)**
+.. rst-class:: classref-method
+
+:ref:`Basis<class_Basis>` **rotated** **(** :ref:`Vector3<class_Vector3>` axis, :ref:`float<class_float>` angle **)**
 
 Introduce an additional rotation around the given axis by ``angle`` (in radians). The axis must be a normalized vector.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Basis_method_scaled:
 
-- :ref:`Basis<class_Basis>` **scaled** **(** :ref:`Vector3<class_Vector3>` scale **)**
+.. rst-class:: classref-method
+
+:ref:`Basis<class_Basis>` **scaled** **(** :ref:`Vector3<class_Vector3>` scale **)**
 
 Introduce an additional scaling specified by the given 3D scaling factor.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Basis_method_slerp:
 
-- :ref:`Basis<class_Basis>` **slerp** **(** :ref:`Basis<class_Basis>` to, :ref:`float<class_float>` weight **)**
+.. rst-class:: classref-method
+
+:ref:`Basis<class_Basis>` **slerp** **(** :ref:`Basis<class_Basis>` to, :ref:`float<class_float>` weight **)**
 
 Assuming that the matrix is a proper rotation matrix, slerp performs a spherical-linear interpolation with another rotation matrix.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Basis_method_tdotx:
 
-- :ref:`float<class_float>` **tdotx** **(** :ref:`Vector3<class_Vector3>` with **)**
+.. rst-class:: classref-method
+
+:ref:`float<class_float>` **tdotx** **(** :ref:`Vector3<class_Vector3>` with **)**
 
 Transposed dot product with the X axis of the matrix.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Basis_method_tdoty:
 
-- :ref:`float<class_float>` **tdoty** **(** :ref:`Vector3<class_Vector3>` with **)**
+.. rst-class:: classref-method
+
+:ref:`float<class_float>` **tdoty** **(** :ref:`Vector3<class_Vector3>` with **)**
 
 Transposed dot product with the Y axis of the matrix.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Basis_method_tdotz:
 
-- :ref:`float<class_float>` **tdotz** **(** :ref:`Vector3<class_Vector3>` with **)**
+.. rst-class:: classref-method
+
+:ref:`float<class_float>` **tdotz** **(** :ref:`Vector3<class_Vector3>` with **)**
 
 Transposed dot product with the Z axis of the matrix.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Basis_method_transposed:
 
-- :ref:`Basis<class_Basis>` **transposed** **(** **)**
+.. rst-class:: classref-method
+
+:ref:`Basis<class_Basis>` **transposed** **(** **)**
 
 Returns the transposed version of the matrix.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Basis_method_xform:
 
-- :ref:`Vector3<class_Vector3>` **xform** **(** :ref:`Vector3<class_Vector3>` v **)**
+.. rst-class:: classref-method
+
+:ref:`Vector3<class_Vector3>` **xform** **(** :ref:`Vector3<class_Vector3>` v **)**
 
 Returns a vector transformed (multiplied) by the matrix.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Basis_method_xform_inv:
 
-- :ref:`Vector3<class_Vector3>` **xform_inv** **(** :ref:`Vector3<class_Vector3>` v **)**
+.. rst-class:: classref-method
+
+:ref:`Vector3<class_Vector3>` **xform_inv** **(** :ref:`Vector3<class_Vector3>` v **)**
 
 Returns a vector transformed (multiplied) by the transposed basis matrix.
 
@@ -332,3 +460,4 @@ Returns a vector transformed (multiplied) by the transposed basis matrix.
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

@@ -14,157 +14,191 @@ PhysicsShapeQueryParameters
 
 Parameters to be sent to a 3D shape physics query.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 This class contains the shape and other parameters for 3D intersection/collision queries.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-----------------------------------+--------------------------------------------------------------------------------------------+-----------------------------------------------------+
-| :ref:`bool<class_bool>`           | :ref:`collide_with_areas<class_PhysicsShapeQueryParameters_property_collide_with_areas>`   | ``false``                                           |
-+-----------------------------------+--------------------------------------------------------------------------------------------+-----------------------------------------------------+
-| :ref:`bool<class_bool>`           | :ref:`collide_with_bodies<class_PhysicsShapeQueryParameters_property_collide_with_bodies>` | ``true``                                            |
-+-----------------------------------+--------------------------------------------------------------------------------------------+-----------------------------------------------------+
-| :ref:`int<class_int>`             | :ref:`collision_mask<class_PhysicsShapeQueryParameters_property_collision_mask>`           | ``2147483647``                                      |
-+-----------------------------------+--------------------------------------------------------------------------------------------+-----------------------------------------------------+
-| :ref:`Array<class_Array>`         | :ref:`exclude<class_PhysicsShapeQueryParameters_property_exclude>`                         | ``[  ]``                                            |
-+-----------------------------------+--------------------------------------------------------------------------------------------+-----------------------------------------------------+
-| :ref:`float<class_float>`         | :ref:`margin<class_PhysicsShapeQueryParameters_property_margin>`                           | ``0.0``                                             |
-+-----------------------------------+--------------------------------------------------------------------------------------------+-----------------------------------------------------+
-| :ref:`RID<class_RID>`             | :ref:`shape_rid<class_PhysicsShapeQueryParameters_property_shape_rid>`                     |                                                     |
-+-----------------------------------+--------------------------------------------------------------------------------------------+-----------------------------------------------------+
-| :ref:`Transform<class_Transform>` | :ref:`transform<class_PhysicsShapeQueryParameters_property_transform>`                     | ``Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )`` |
-+-----------------------------------+--------------------------------------------------------------------------------------------+-----------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-----------------------------------+--------------------------------------------------------------------------------------------+-----------------------------------------------------+
+   | :ref:`bool<class_bool>`           | :ref:`collide_with_areas<class_PhysicsShapeQueryParameters_property_collide_with_areas>`   | ``false``                                           |
+   +-----------------------------------+--------------------------------------------------------------------------------------------+-----------------------------------------------------+
+   | :ref:`bool<class_bool>`           | :ref:`collide_with_bodies<class_PhysicsShapeQueryParameters_property_collide_with_bodies>` | ``true``                                            |
+   +-----------------------------------+--------------------------------------------------------------------------------------------+-----------------------------------------------------+
+   | :ref:`int<class_int>`             | :ref:`collision_mask<class_PhysicsShapeQueryParameters_property_collision_mask>`           | ``2147483647``                                      |
+   +-----------------------------------+--------------------------------------------------------------------------------------------+-----------------------------------------------------+
+   | :ref:`Array<class_Array>`         | :ref:`exclude<class_PhysicsShapeQueryParameters_property_exclude>`                         | ``[  ]``                                            |
+   +-----------------------------------+--------------------------------------------------------------------------------------------+-----------------------------------------------------+
+   | :ref:`float<class_float>`         | :ref:`margin<class_PhysicsShapeQueryParameters_property_margin>`                           | ``0.0``                                             |
+   +-----------------------------------+--------------------------------------------------------------------------------------------+-----------------------------------------------------+
+   | :ref:`RID<class_RID>`             | :ref:`shape_rid<class_PhysicsShapeQueryParameters_property_shape_rid>`                     |                                                     |
+   +-----------------------------------+--------------------------------------------------------------------------------------------+-----------------------------------------------------+
+   | :ref:`Transform<class_Transform>` | :ref:`transform<class_PhysicsShapeQueryParameters_property_transform>`                     | ``Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )`` |
+   +-----------------------------------+--------------------------------------------------------------------------------------------+-----------------------------------------------------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+------+------------------------------------------------------------------------------------------------------------------------+
-| void | :ref:`set_shape<class_PhysicsShapeQueryParameters_method_set_shape>` **(** :ref:`Resource<class_Resource>` shape **)** |
-+------+------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +------+------------------------------------------------------------------------------------------------------------------------+
+   | void | :ref:`set_shape<class_PhysicsShapeQueryParameters_method_set_shape>` **(** :ref:`Resource<class_Resource>` shape **)** |
+   +------+------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_PhysicsShapeQueryParameters_property_collide_with_areas:
 
-- :ref:`bool<class_bool>` **collide_with_areas**
+.. rst-class:: classref-property
 
-+-----------+---------------------------------+
-| *Default* | ``false``                       |
-+-----------+---------------------------------+
-| *Setter*  | set_collide_with_areas(value)   |
-+-----------+---------------------------------+
-| *Getter*  | is_collide_with_areas_enabled() |
-+-----------+---------------------------------+
+:ref:`bool<class_bool>` **collide_with_areas** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_collide_with_areas** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_collide_with_areas_enabled** **(** **)**
 
 If ``true``, the query will take :ref:`Area<class_Area>`\ s into account.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_PhysicsShapeQueryParameters_property_collide_with_bodies:
 
-- :ref:`bool<class_bool>` **collide_with_bodies**
+.. rst-class:: classref-property
 
-+-----------+----------------------------------+
-| *Default* | ``true``                         |
-+-----------+----------------------------------+
-| *Setter*  | set_collide_with_bodies(value)   |
-+-----------+----------------------------------+
-| *Getter*  | is_collide_with_bodies_enabled() |
-+-----------+----------------------------------+
+:ref:`bool<class_bool>` **collide_with_bodies** = ``true``
+
+.. rst-class:: classref-property-setget
+
+- void **set_collide_with_bodies** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_collide_with_bodies_enabled** **(** **)**
 
 If ``true``, the query will take :ref:`PhysicsBody<class_PhysicsBody>`\ s into account.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_PhysicsShapeQueryParameters_property_collision_mask:
 
-- :ref:`int<class_int>` **collision_mask**
+.. rst-class:: classref-property
 
-+-----------+---------------------------+
-| *Default* | ``2147483647``            |
-+-----------+---------------------------+
-| *Setter*  | set_collision_mask(value) |
-+-----------+---------------------------+
-| *Getter*  | get_collision_mask()      |
-+-----------+---------------------------+
+:ref:`int<class_int>` **collision_mask** = ``2147483647``
+
+.. rst-class:: classref-property-setget
+
+- void **set_collision_mask** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_collision_mask** **(** **)**
 
 The physics layer(s) the query will take into account (as a bitmask). See `Collision layers and masks <../tutorials/physics/physics_introduction.html#collision-layers-and-masks>`__ in the documentation for more information.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_PhysicsShapeQueryParameters_property_exclude:
 
-- :ref:`Array<class_Array>` **exclude**
+.. rst-class:: classref-property
 
-+-----------+--------------------+
-| *Default* | ``[  ]``           |
-+-----------+--------------------+
-| *Setter*  | set_exclude(value) |
-+-----------+--------------------+
-| *Getter*  | get_exclude()      |
-+-----------+--------------------+
+:ref:`Array<class_Array>` **exclude** = ``[  ]``
+
+.. rst-class:: classref-property-setget
+
+- void **set_exclude** **(** :ref:`Array<class_Array>` value **)**
+- :ref:`Array<class_Array>` **get_exclude** **(** **)**
 
 The list of objects or object :ref:`RID<class_RID>`\ s that will be excluded from collisions.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_PhysicsShapeQueryParameters_property_margin:
 
-- :ref:`float<class_float>` **margin**
+.. rst-class:: classref-property
 
-+-----------+-------------------+
-| *Default* | ``0.0``           |
-+-----------+-------------------+
-| *Setter*  | set_margin(value) |
-+-----------+-------------------+
-| *Getter*  | get_margin()      |
-+-----------+-------------------+
+:ref:`float<class_float>` **margin** = ``0.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_margin** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_margin** **(** **)**
 
 The collision margin for the shape.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_PhysicsShapeQueryParameters_property_shape_rid:
 
-- :ref:`RID<class_RID>` **shape_rid**
+.. rst-class:: classref-property
 
-+----------+----------------------+
-| *Setter* | set_shape_rid(value) |
-+----------+----------------------+
-| *Getter* | get_shape_rid()      |
-+----------+----------------------+
+:ref:`RID<class_RID>` **shape_rid**
+
+.. rst-class:: classref-property-setget
+
+- void **set_shape_rid** **(** :ref:`RID<class_RID>` value **)**
+- :ref:`RID<class_RID>` **get_shape_rid** **(** **)**
 
 The queried shape's :ref:`RID<class_RID>`. See also :ref:`set_shape<class_PhysicsShapeQueryParameters_method_set_shape>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_PhysicsShapeQueryParameters_property_transform:
 
-- :ref:`Transform<class_Transform>` **transform**
+.. rst-class:: classref-property
 
-+-----------+-----------------------------------------------------+
-| *Default* | ``Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )`` |
-+-----------+-----------------------------------------------------+
-| *Setter*  | set_transform(value)                                |
-+-----------+-----------------------------------------------------+
-| *Getter*  | get_transform()                                     |
-+-----------+-----------------------------------------------------+
+:ref:`Transform<class_Transform>` **transform** = ``Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )``
+
+.. rst-class:: classref-property-setget
+
+- void **set_transform** **(** :ref:`Transform<class_Transform>` value **)**
+- :ref:`Transform<class_Transform>` **get_transform** **(** **)**
 
 The queried shape's transform matrix.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_PhysicsShapeQueryParameters_method_set_shape:
 
-- void **set_shape** **(** :ref:`Resource<class_Resource>` shape **)**
+.. rst-class:: classref-method
+
+void **set_shape** **(** :ref:`Resource<class_Resource>` shape **)**
 
 Sets the :ref:`Shape<class_Shape>` that will be used for collision/intersection queries.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

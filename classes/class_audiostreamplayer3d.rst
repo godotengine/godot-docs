@@ -14,6 +14,8 @@ AudioStreamPlayer3D
 
 Plays positional sound in 3D space.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -23,481 +25,604 @@ By default, audio is heard from the camera position. This can be changed by addi
 
 See also :ref:`AudioStreamPlayer<class_AudioStreamPlayer>` to play a sound non-positionally.
 
-\ **Note:** Hiding an ``AudioStreamPlayer3D`` node does not disable its audio output. To temporarily disable an ``AudioStreamPlayer3D``'s audio output, set :ref:`unit_db<class_AudioStreamPlayer3D_property_unit_db>` to a very low value like ``-100`` (which isn't audible to human hearing).
+\ **Note:** Hiding an **AudioStreamPlayer3D** node does not disable its audio output. To temporarily disable an **AudioStreamPlayer3D**'s audio output, set :ref:`unit_db<class_AudioStreamPlayer3D_property_unit_db>` to a very low value like ``-100`` (which isn't audible to human hearing).
+
+.. rst-class:: classref-introduction-group
 
 Tutorials
 ---------
 
 - :doc:`../tutorials/audio/audio_streams`
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+--------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+--------------+
-| :ref:`int<class_int>`                                              | :ref:`area_mask<class_AudioStreamPlayer3D_property_area_mask>`                                                       | ``1``        |
-+--------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+--------------+
-| :ref:`float<class_float>`                                          | :ref:`attenuation_filter_cutoff_hz<class_AudioStreamPlayer3D_property_attenuation_filter_cutoff_hz>`                 | ``5000.0``   |
-+--------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+--------------+
-| :ref:`float<class_float>`                                          | :ref:`attenuation_filter_db<class_AudioStreamPlayer3D_property_attenuation_filter_db>`                               | ``-24.0``    |
-+--------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+--------------+
-| :ref:`AttenuationModel<enum_AudioStreamPlayer3D_AttenuationModel>` | :ref:`attenuation_model<class_AudioStreamPlayer3D_property_attenuation_model>`                                       | ``0``        |
-+--------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+--------------+
-| :ref:`bool<class_bool>`                                            | :ref:`autoplay<class_AudioStreamPlayer3D_property_autoplay>`                                                         | ``false``    |
-+--------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+--------------+
-| :ref:`String<class_String>`                                        | :ref:`bus<class_AudioStreamPlayer3D_property_bus>`                                                                   | ``"Master"`` |
-+--------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+--------------+
-| :ref:`DopplerTracking<enum_AudioStreamPlayer3D_DopplerTracking>`   | :ref:`doppler_tracking<class_AudioStreamPlayer3D_property_doppler_tracking>`                                         | ``0``        |
-+--------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+--------------+
-| :ref:`float<class_float>`                                          | :ref:`emission_angle_degrees<class_AudioStreamPlayer3D_property_emission_angle_degrees>`                             | ``45.0``     |
-+--------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+--------------+
-| :ref:`bool<class_bool>`                                            | :ref:`emission_angle_enabled<class_AudioStreamPlayer3D_property_emission_angle_enabled>`                             | ``false``    |
-+--------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+--------------+
-| :ref:`float<class_float>`                                          | :ref:`emission_angle_filter_attenuation_db<class_AudioStreamPlayer3D_property_emission_angle_filter_attenuation_db>` | ``-12.0``    |
-+--------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+--------------+
-| :ref:`float<class_float>`                                          | :ref:`max_db<class_AudioStreamPlayer3D_property_max_db>`                                                             | ``3.0``      |
-+--------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+--------------+
-| :ref:`float<class_float>`                                          | :ref:`max_distance<class_AudioStreamPlayer3D_property_max_distance>`                                                 | ``0.0``      |
-+--------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+--------------+
-| :ref:`OutOfRangeMode<enum_AudioStreamPlayer3D_OutOfRangeMode>`     | :ref:`out_of_range_mode<class_AudioStreamPlayer3D_property_out_of_range_mode>`                                       | ``0``        |
-+--------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+--------------+
-| :ref:`float<class_float>`                                          | :ref:`pitch_scale<class_AudioStreamPlayer3D_property_pitch_scale>`                                                   | ``1.0``      |
-+--------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+--------------+
-| :ref:`bool<class_bool>`                                            | :ref:`playing<class_AudioStreamPlayer3D_property_playing>`                                                           | ``false``    |
-+--------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+--------------+
-| :ref:`AudioStream<class_AudioStream>`                              | :ref:`stream<class_AudioStreamPlayer3D_property_stream>`                                                             |              |
-+--------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+--------------+
-| :ref:`bool<class_bool>`                                            | :ref:`stream_paused<class_AudioStreamPlayer3D_property_stream_paused>`                                               | ``false``    |
-+--------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+--------------+
-| :ref:`float<class_float>`                                          | :ref:`unit_db<class_AudioStreamPlayer3D_property_unit_db>`                                                           | ``0.0``      |
-+--------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+--------------+
-| :ref:`float<class_float>`                                          | :ref:`unit_size<class_AudioStreamPlayer3D_property_unit_size>`                                                       | ``1.0``      |
-+--------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+--------------+
+.. table::
+   :widths: auto
+
+   +--------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+--------------+
+   | :ref:`int<class_int>`                                              | :ref:`area_mask<class_AudioStreamPlayer3D_property_area_mask>`                                                       | ``1``        |
+   +--------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+--------------+
+   | :ref:`float<class_float>`                                          | :ref:`attenuation_filter_cutoff_hz<class_AudioStreamPlayer3D_property_attenuation_filter_cutoff_hz>`                 | ``5000.0``   |
+   +--------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+--------------+
+   | :ref:`float<class_float>`                                          | :ref:`attenuation_filter_db<class_AudioStreamPlayer3D_property_attenuation_filter_db>`                               | ``-24.0``    |
+   +--------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+--------------+
+   | :ref:`AttenuationModel<enum_AudioStreamPlayer3D_AttenuationModel>` | :ref:`attenuation_model<class_AudioStreamPlayer3D_property_attenuation_model>`                                       | ``0``        |
+   +--------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+--------------+
+   | :ref:`bool<class_bool>`                                            | :ref:`autoplay<class_AudioStreamPlayer3D_property_autoplay>`                                                         | ``false``    |
+   +--------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+--------------+
+   | :ref:`String<class_String>`                                        | :ref:`bus<class_AudioStreamPlayer3D_property_bus>`                                                                   | ``"Master"`` |
+   +--------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+--------------+
+   | :ref:`DopplerTracking<enum_AudioStreamPlayer3D_DopplerTracking>`   | :ref:`doppler_tracking<class_AudioStreamPlayer3D_property_doppler_tracking>`                                         | ``0``        |
+   +--------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+--------------+
+   | :ref:`float<class_float>`                                          | :ref:`emission_angle_degrees<class_AudioStreamPlayer3D_property_emission_angle_degrees>`                             | ``45.0``     |
+   +--------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+--------------+
+   | :ref:`bool<class_bool>`                                            | :ref:`emission_angle_enabled<class_AudioStreamPlayer3D_property_emission_angle_enabled>`                             | ``false``    |
+   +--------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+--------------+
+   | :ref:`float<class_float>`                                          | :ref:`emission_angle_filter_attenuation_db<class_AudioStreamPlayer3D_property_emission_angle_filter_attenuation_db>` | ``-12.0``    |
+   +--------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+--------------+
+   | :ref:`float<class_float>`                                          | :ref:`max_db<class_AudioStreamPlayer3D_property_max_db>`                                                             | ``3.0``      |
+   +--------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+--------------+
+   | :ref:`float<class_float>`                                          | :ref:`max_distance<class_AudioStreamPlayer3D_property_max_distance>`                                                 | ``0.0``      |
+   +--------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+--------------+
+   | :ref:`OutOfRangeMode<enum_AudioStreamPlayer3D_OutOfRangeMode>`     | :ref:`out_of_range_mode<class_AudioStreamPlayer3D_property_out_of_range_mode>`                                       | ``0``        |
+   +--------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+--------------+
+   | :ref:`float<class_float>`                                          | :ref:`pitch_scale<class_AudioStreamPlayer3D_property_pitch_scale>`                                                   | ``1.0``      |
+   +--------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+--------------+
+   | :ref:`bool<class_bool>`                                            | :ref:`playing<class_AudioStreamPlayer3D_property_playing>`                                                           | ``false``    |
+   +--------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+--------------+
+   | :ref:`AudioStream<class_AudioStream>`                              | :ref:`stream<class_AudioStreamPlayer3D_property_stream>`                                                             |              |
+   +--------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+--------------+
+   | :ref:`bool<class_bool>`                                            | :ref:`stream_paused<class_AudioStreamPlayer3D_property_stream_paused>`                                               | ``false``    |
+   +--------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+--------------+
+   | :ref:`float<class_float>`                                          | :ref:`unit_db<class_AudioStreamPlayer3D_property_unit_db>`                                                           | ``0.0``      |
+   +--------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+--------------+
+   | :ref:`float<class_float>`                                          | :ref:`unit_size<class_AudioStreamPlayer3D_property_unit_size>`                                                       | ``1.0``      |
+   +--------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+--------------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+-------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                             | :ref:`get_playback_position<class_AudioStreamPlayer3D_method_get_playback_position>` **(** **)**           |
-+-------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
-| :ref:`AudioStreamPlayback<class_AudioStreamPlayback>` | :ref:`get_stream_playback<class_AudioStreamPlayer3D_method_get_stream_playback>` **(** **)**               |
-+-------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
-| void                                                  | :ref:`play<class_AudioStreamPlayer3D_method_play>` **(** :ref:`float<class_float>` from_position=0.0 **)** |
-+-------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
-| void                                                  | :ref:`seek<class_AudioStreamPlayer3D_method_seek>` **(** :ref:`float<class_float>` to_position **)**       |
-+-------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
-| void                                                  | :ref:`stop<class_AudioStreamPlayer3D_method_stop>` **(** **)**                                             |
-+-------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`                             | :ref:`get_playback_position<class_AudioStreamPlayer3D_method_get_playback_position>` **(** **)**           |
+   +-------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
+   | :ref:`AudioStreamPlayback<class_AudioStreamPlayback>` | :ref:`get_stream_playback<class_AudioStreamPlayer3D_method_get_stream_playback>` **(** **)**               |
+   +-------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
+   | void                                                  | :ref:`play<class_AudioStreamPlayer3D_method_play>` **(** :ref:`float<class_float>` from_position=0.0 **)** |
+   +-------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
+   | void                                                  | :ref:`seek<class_AudioStreamPlayer3D_method_seek>` **(** :ref:`float<class_float>` to_position **)**       |
+   +-------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
+   | void                                                  | :ref:`stop<class_AudioStreamPlayer3D_method_stop>` **(** **)**                                             |
+   +-------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Signals
 -------
 
 .. _class_AudioStreamPlayer3D_signal_finished:
 
-- **finished** **(** **)**
+.. rst-class:: classref-signal
+
+**finished** **(** **)**
 
 Emitted when the audio stops playing.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Enumerations
 ------------
 
 .. _enum_AudioStreamPlayer3D_AttenuationModel:
 
-.. _class_AudioStreamPlayer3D_constant_ATTENUATION_INVERSE_DISTANCE:
-
-.. _class_AudioStreamPlayer3D_constant_ATTENUATION_INVERSE_SQUARE_DISTANCE:
-
-.. _class_AudioStreamPlayer3D_constant_ATTENUATION_LOGARITHMIC:
-
-.. _class_AudioStreamPlayer3D_constant_ATTENUATION_DISABLED:
+.. rst-class:: classref-enumeration
 
 enum **AttenuationModel**:
 
-- **ATTENUATION_INVERSE_DISTANCE** = **0** --- Linear dampening of loudness according to distance.
+.. _class_AudioStreamPlayer3D_constant_ATTENUATION_INVERSE_DISTANCE:
 
-- **ATTENUATION_INVERSE_SQUARE_DISTANCE** = **1** --- Squared dampening of loudness according to distance.
+.. rst-class:: classref-enumeration-constant
 
-- **ATTENUATION_LOGARITHMIC** = **2** --- Logarithmic dampening of loudness according to distance.
+:ref:`AttenuationModel<enum_AudioStreamPlayer3D_AttenuationModel>` **ATTENUATION_INVERSE_DISTANCE** = ``0``
 
-- **ATTENUATION_DISABLED** = **3** --- No dampening of loudness according to distance. The sound will still be heard positionally, unlike an :ref:`AudioStreamPlayer<class_AudioStreamPlayer>`. :ref:`ATTENUATION_DISABLED<class_AudioStreamPlayer3D_constant_ATTENUATION_DISABLED>` can be combined with a :ref:`max_distance<class_AudioStreamPlayer3D_property_max_distance>` value greater than ``0.0`` to achieve linear attenuation clamped to a sphere of a defined size.
+Linear dampening of loudness according to distance.
+
+.. _class_AudioStreamPlayer3D_constant_ATTENUATION_INVERSE_SQUARE_DISTANCE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`AttenuationModel<enum_AudioStreamPlayer3D_AttenuationModel>` **ATTENUATION_INVERSE_SQUARE_DISTANCE** = ``1``
+
+Squared dampening of loudness according to distance.
+
+.. _class_AudioStreamPlayer3D_constant_ATTENUATION_LOGARITHMIC:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`AttenuationModel<enum_AudioStreamPlayer3D_AttenuationModel>` **ATTENUATION_LOGARITHMIC** = ``2``
+
+Logarithmic dampening of loudness according to distance.
+
+.. _class_AudioStreamPlayer3D_constant_ATTENUATION_DISABLED:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`AttenuationModel<enum_AudioStreamPlayer3D_AttenuationModel>` **ATTENUATION_DISABLED** = ``3``
+
+No dampening of loudness according to distance. The sound will still be heard positionally, unlike an :ref:`AudioStreamPlayer<class_AudioStreamPlayer>`. :ref:`ATTENUATION_DISABLED<class_AudioStreamPlayer3D_constant_ATTENUATION_DISABLED>` can be combined with a :ref:`max_distance<class_AudioStreamPlayer3D_property_max_distance>` value greater than ``0.0`` to achieve linear attenuation clamped to a sphere of a defined size.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _enum_AudioStreamPlayer3D_OutOfRangeMode:
 
-.. _class_AudioStreamPlayer3D_constant_OUT_OF_RANGE_MIX:
-
-.. _class_AudioStreamPlayer3D_constant_OUT_OF_RANGE_PAUSE:
+.. rst-class:: classref-enumeration
 
 enum **OutOfRangeMode**:
 
-- **OUT_OF_RANGE_MIX** = **0** --- Mix this audio in, even when it's out of range. This increases CPU usage, but keeps the sound playing at the correct position if the camera leaves and enters the ``AudioStreamPlayer3D``'s :ref:`max_distance<class_AudioStreamPlayer3D_property_max_distance>` radius.
+.. _class_AudioStreamPlayer3D_constant_OUT_OF_RANGE_MIX:
 
-- **OUT_OF_RANGE_PAUSE** = **1** --- Pause this audio when it gets out of range. This decreases CPU usage, but will cause the sound to restart if the camera leaves and enters the ``AudioStreamPlayer3D``'s :ref:`max_distance<class_AudioStreamPlayer3D_property_max_distance>` radius.
+.. rst-class:: classref-enumeration-constant
+
+:ref:`OutOfRangeMode<enum_AudioStreamPlayer3D_OutOfRangeMode>` **OUT_OF_RANGE_MIX** = ``0``
+
+Mix this audio in, even when it's out of range. This increases CPU usage, but keeps the sound playing at the correct position if the camera leaves and enters the **AudioStreamPlayer3D**'s :ref:`max_distance<class_AudioStreamPlayer3D_property_max_distance>` radius.
+
+.. _class_AudioStreamPlayer3D_constant_OUT_OF_RANGE_PAUSE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`OutOfRangeMode<enum_AudioStreamPlayer3D_OutOfRangeMode>` **OUT_OF_RANGE_PAUSE** = ``1``
+
+Pause this audio when it gets out of range. This decreases CPU usage, but will cause the sound to restart if the camera leaves and enters the **AudioStreamPlayer3D**'s :ref:`max_distance<class_AudioStreamPlayer3D_property_max_distance>` radius.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _enum_AudioStreamPlayer3D_DopplerTracking:
 
-.. _class_AudioStreamPlayer3D_constant_DOPPLER_TRACKING_DISABLED:
-
-.. _class_AudioStreamPlayer3D_constant_DOPPLER_TRACKING_IDLE_STEP:
-
-.. _class_AudioStreamPlayer3D_constant_DOPPLER_TRACKING_PHYSICS_STEP:
+.. rst-class:: classref-enumeration
 
 enum **DopplerTracking**:
 
-- **DOPPLER_TRACKING_DISABLED** = **0** --- Disables doppler tracking.
+.. _class_AudioStreamPlayer3D_constant_DOPPLER_TRACKING_DISABLED:
 
-- **DOPPLER_TRACKING_IDLE_STEP** = **1** --- Executes doppler tracking in idle step (every rendered frame).
+.. rst-class:: classref-enumeration-constant
 
-- **DOPPLER_TRACKING_PHYSICS_STEP** = **2** --- Executes doppler tracking in physics step (every simulated physics frame).
+:ref:`DopplerTracking<enum_AudioStreamPlayer3D_DopplerTracking>` **DOPPLER_TRACKING_DISABLED** = ``0``
+
+Disables doppler tracking.
+
+.. _class_AudioStreamPlayer3D_constant_DOPPLER_TRACKING_IDLE_STEP:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`DopplerTracking<enum_AudioStreamPlayer3D_DopplerTracking>` **DOPPLER_TRACKING_IDLE_STEP** = ``1``
+
+Executes doppler tracking in idle step (every rendered frame).
+
+.. _class_AudioStreamPlayer3D_constant_DOPPLER_TRACKING_PHYSICS_STEP:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`DopplerTracking<enum_AudioStreamPlayer3D_DopplerTracking>` **DOPPLER_TRACKING_PHYSICS_STEP** = ``2``
+
+Executes doppler tracking in physics step (every simulated physics frame).
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_AudioStreamPlayer3D_property_area_mask:
 
-- :ref:`int<class_int>` **area_mask**
+.. rst-class:: classref-property
 
-+-----------+----------------------+
-| *Default* | ``1``                |
-+-----------+----------------------+
-| *Setter*  | set_area_mask(value) |
-+-----------+----------------------+
-| *Getter*  | get_area_mask()      |
-+-----------+----------------------+
+:ref:`int<class_int>` **area_mask** = ``1``
+
+.. rst-class:: classref-property-setget
+
+- void **set_area_mask** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_area_mask** **(** **)**
 
 Determines which :ref:`Area<class_Area>` layers affect the sound for reverb and audio bus effects. Areas can be used to redirect :ref:`AudioStream<class_AudioStream>`\ s so that they play in a certain audio bus. An example of how you might use this is making a "water" area so that sounds played in the water are redirected through an audio bus to make them sound like they are being played underwater.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AudioStreamPlayer3D_property_attenuation_filter_cutoff_hz:
 
-- :ref:`float<class_float>` **attenuation_filter_cutoff_hz**
+.. rst-class:: classref-property
 
-+-----------+-----------------------------------------+
-| *Default* | ``5000.0``                              |
-+-----------+-----------------------------------------+
-| *Setter*  | set_attenuation_filter_cutoff_hz(value) |
-+-----------+-----------------------------------------+
-| *Getter*  | get_attenuation_filter_cutoff_hz()      |
-+-----------+-----------------------------------------+
+:ref:`float<class_float>` **attenuation_filter_cutoff_hz** = ``5000.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_attenuation_filter_cutoff_hz** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_attenuation_filter_cutoff_hz** **(** **)**
 
 Dampens audio using a low-pass filter above this frequency, in Hz. To disable the dampening effect entirely, set this to ``20500`` as this frequency is above the human hearing limit.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AudioStreamPlayer3D_property_attenuation_filter_db:
 
-- :ref:`float<class_float>` **attenuation_filter_db**
+.. rst-class:: classref-property
 
-+-----------+----------------------------------+
-| *Default* | ``-24.0``                        |
-+-----------+----------------------------------+
-| *Setter*  | set_attenuation_filter_db(value) |
-+-----------+----------------------------------+
-| *Getter*  | get_attenuation_filter_db()      |
-+-----------+----------------------------------+
+:ref:`float<class_float>` **attenuation_filter_db** = ``-24.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_attenuation_filter_db** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_attenuation_filter_db** **(** **)**
 
 Amount how much the filter affects the loudness, in decibels.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AudioStreamPlayer3D_property_attenuation_model:
 
-- :ref:`AttenuationModel<enum_AudioStreamPlayer3D_AttenuationModel>` **attenuation_model**
+.. rst-class:: classref-property
 
-+-----------+------------------------------+
-| *Default* | ``0``                        |
-+-----------+------------------------------+
-| *Setter*  | set_attenuation_model(value) |
-+-----------+------------------------------+
-| *Getter*  | get_attenuation_model()      |
-+-----------+------------------------------+
+:ref:`AttenuationModel<enum_AudioStreamPlayer3D_AttenuationModel>` **attenuation_model** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_attenuation_model** **(** :ref:`AttenuationModel<enum_AudioStreamPlayer3D_AttenuationModel>` value **)**
+- :ref:`AttenuationModel<enum_AudioStreamPlayer3D_AttenuationModel>` **get_attenuation_model** **(** **)**
 
 Decides if audio should get quieter with distance linearly, quadratically, logarithmically, or not be affected by distance, effectively disabling attenuation.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AudioStreamPlayer3D_property_autoplay:
 
-- :ref:`bool<class_bool>` **autoplay**
+.. rst-class:: classref-property
 
-+-----------+-----------------------+
-| *Default* | ``false``             |
-+-----------+-----------------------+
-| *Setter*  | set_autoplay(value)   |
-+-----------+-----------------------+
-| *Getter*  | is_autoplay_enabled() |
-+-----------+-----------------------+
+:ref:`bool<class_bool>` **autoplay** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_autoplay** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_autoplay_enabled** **(** **)**
 
 If ``true``, audio plays when the AudioStreamPlayer3D node is added to scene tree.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AudioStreamPlayer3D_property_bus:
 
-- :ref:`String<class_String>` **bus**
+.. rst-class:: classref-property
 
-+-----------+----------------+
-| *Default* | ``"Master"``   |
-+-----------+----------------+
-| *Setter*  | set_bus(value) |
-+-----------+----------------+
-| *Getter*  | get_bus()      |
-+-----------+----------------+
+:ref:`String<class_String>` **bus** = ``"Master"``
+
+.. rst-class:: classref-property-setget
+
+- void **set_bus** **(** :ref:`String<class_String>` value **)**
+- :ref:`String<class_String>` **get_bus** **(** **)**
 
 The bus on which this audio is playing.
 
 \ **Note:** When setting this property, keep in mind that no validation is performed to see if the given name matches an existing bus. This is because audio bus layouts might be loaded after this property is set. If this given name can't be resolved at runtime, it will fall back to ``"Master"``.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_AudioStreamPlayer3D_property_doppler_tracking:
 
-- :ref:`DopplerTracking<enum_AudioStreamPlayer3D_DopplerTracking>` **doppler_tracking**
+.. rst-class:: classref-property
 
-+-----------+-----------------------------+
-| *Default* | ``0``                       |
-+-----------+-----------------------------+
-| *Setter*  | set_doppler_tracking(value) |
-+-----------+-----------------------------+
-| *Getter*  | get_doppler_tracking()      |
-+-----------+-----------------------------+
+:ref:`DopplerTracking<enum_AudioStreamPlayer3D_DopplerTracking>` **doppler_tracking** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_doppler_tracking** **(** :ref:`DopplerTracking<enum_AudioStreamPlayer3D_DopplerTracking>` value **)**
+- :ref:`DopplerTracking<enum_AudioStreamPlayer3D_DopplerTracking>` **get_doppler_tracking** **(** **)**
 
 Decides in which step the `Doppler effect <https://en.wikipedia.org/wiki/Doppler_effect>`__ should be calculated.
 
 \ **Note:** Only effective if the current :ref:`Camera<class_Camera>`'s :ref:`Camera.doppler_tracking<class_Camera_property_doppler_tracking>` property is set to a value other than :ref:`Camera.DOPPLER_TRACKING_DISABLED<class_Camera_constant_DOPPLER_TRACKING_DISABLED>`.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_AudioStreamPlayer3D_property_emission_angle_degrees:
 
-- :ref:`float<class_float>` **emission_angle_degrees**
+.. rst-class:: classref-property
 
-+-----------+---------------------------+
-| *Default* | ``45.0``                  |
-+-----------+---------------------------+
-| *Setter*  | set_emission_angle(value) |
-+-----------+---------------------------+
-| *Getter*  | get_emission_angle()      |
-+-----------+---------------------------+
+:ref:`float<class_float>` **emission_angle_degrees** = ``45.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_emission_angle** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_emission_angle** **(** **)**
 
 The angle in which the audio reaches cameras undampened.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AudioStreamPlayer3D_property_emission_angle_enabled:
 
-- :ref:`bool<class_bool>` **emission_angle_enabled**
+.. rst-class:: classref-property
 
-+-----------+-----------------------------------+
-| *Default* | ``false``                         |
-+-----------+-----------------------------------+
-| *Setter*  | set_emission_angle_enabled(value) |
-+-----------+-----------------------------------+
-| *Getter*  | is_emission_angle_enabled()       |
-+-----------+-----------------------------------+
+:ref:`bool<class_bool>` **emission_angle_enabled** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_emission_angle_enabled** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_emission_angle_enabled** **(** **)**
 
 If ``true``, the audio should be dampened according to the direction of the sound.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AudioStreamPlayer3D_property_emission_angle_filter_attenuation_db:
 
-- :ref:`float<class_float>` **emission_angle_filter_attenuation_db**
+.. rst-class:: classref-property
 
-+-----------+-------------------------------------------------+
-| *Default* | ``-12.0``                                       |
-+-----------+-------------------------------------------------+
-| *Setter*  | set_emission_angle_filter_attenuation_db(value) |
-+-----------+-------------------------------------------------+
-| *Getter*  | get_emission_angle_filter_attenuation_db()      |
-+-----------+-------------------------------------------------+
+:ref:`float<class_float>` **emission_angle_filter_attenuation_db** = ``-12.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_emission_angle_filter_attenuation_db** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_emission_angle_filter_attenuation_db** **(** **)**
 
 Dampens audio if camera is outside of :ref:`emission_angle_degrees<class_AudioStreamPlayer3D_property_emission_angle_degrees>` and :ref:`emission_angle_enabled<class_AudioStreamPlayer3D_property_emission_angle_enabled>` is set by this factor, in decibels.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AudioStreamPlayer3D_property_max_db:
 
-- :ref:`float<class_float>` **max_db**
+.. rst-class:: classref-property
 
-+-----------+-------------------+
-| *Default* | ``3.0``           |
-+-----------+-------------------+
-| *Setter*  | set_max_db(value) |
-+-----------+-------------------+
-| *Getter*  | get_max_db()      |
-+-----------+-------------------+
+:ref:`float<class_float>` **max_db** = ``3.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_max_db** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_max_db** **(** **)**
 
 Sets the absolute maximum of the soundlevel, in decibels.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AudioStreamPlayer3D_property_max_distance:
 
-- :ref:`float<class_float>` **max_distance**
+.. rst-class:: classref-property
 
-+-----------+-------------------------+
-| *Default* | ``0.0``                 |
-+-----------+-------------------------+
-| *Setter*  | set_max_distance(value) |
-+-----------+-------------------------+
-| *Getter*  | get_max_distance()      |
-+-----------+-------------------------+
+:ref:`float<class_float>` **max_distance** = ``0.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_max_distance** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_max_distance** **(** **)**
 
 Sets the distance from which the :ref:`out_of_range_mode<class_AudioStreamPlayer3D_property_out_of_range_mode>` takes effect. Has no effect if set to 0.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AudioStreamPlayer3D_property_out_of_range_mode:
 
-- :ref:`OutOfRangeMode<enum_AudioStreamPlayer3D_OutOfRangeMode>` **out_of_range_mode**
+.. rst-class:: classref-property
 
-+-----------+------------------------------+
-| *Default* | ``0``                        |
-+-----------+------------------------------+
-| *Setter*  | set_out_of_range_mode(value) |
-+-----------+------------------------------+
-| *Getter*  | get_out_of_range_mode()      |
-+-----------+------------------------------+
+:ref:`OutOfRangeMode<enum_AudioStreamPlayer3D_OutOfRangeMode>` **out_of_range_mode** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_out_of_range_mode** **(** :ref:`OutOfRangeMode<enum_AudioStreamPlayer3D_OutOfRangeMode>` value **)**
+- :ref:`OutOfRangeMode<enum_AudioStreamPlayer3D_OutOfRangeMode>` **get_out_of_range_mode** **(** **)**
 
 Decides if audio should pause when source is outside of :ref:`max_distance<class_AudioStreamPlayer3D_property_max_distance>` range.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AudioStreamPlayer3D_property_pitch_scale:
 
-- :ref:`float<class_float>` **pitch_scale**
+.. rst-class:: classref-property
 
-+-----------+------------------------+
-| *Default* | ``1.0``                |
-+-----------+------------------------+
-| *Setter*  | set_pitch_scale(value) |
-+-----------+------------------------+
-| *Getter*  | get_pitch_scale()      |
-+-----------+------------------------+
+:ref:`float<class_float>` **pitch_scale** = ``1.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_pitch_scale** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_pitch_scale** **(** **)**
 
 The pitch and the tempo of the audio, as a multiplier of the audio sample's sample rate.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AudioStreamPlayer3D_property_playing:
 
-- :ref:`bool<class_bool>` **playing**
+.. rst-class:: classref-property
 
-+-----------+--------------+
-| *Default* | ``false``    |
-+-----------+--------------+
-| *Getter*  | is_playing() |
-+-----------+--------------+
+:ref:`bool<class_bool>` **playing** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- :ref:`bool<class_bool>` **is_playing** **(** **)**
 
 If ``true``, audio is playing.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AudioStreamPlayer3D_property_stream:
 
-- :ref:`AudioStream<class_AudioStream>` **stream**
+.. rst-class:: classref-property
 
-+----------+-------------------+
-| *Setter* | set_stream(value) |
-+----------+-------------------+
-| *Getter* | get_stream()      |
-+----------+-------------------+
+:ref:`AudioStream<class_AudioStream>` **stream**
+
+.. rst-class:: classref-property-setget
+
+- void **set_stream** **(** :ref:`AudioStream<class_AudioStream>` value **)**
+- :ref:`AudioStream<class_AudioStream>` **get_stream** **(** **)**
 
 The :ref:`AudioStream<class_AudioStream>` resource to be played.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AudioStreamPlayer3D_property_stream_paused:
 
-- :ref:`bool<class_bool>` **stream_paused**
+.. rst-class:: classref-property
 
-+-----------+--------------------------+
-| *Default* | ``false``                |
-+-----------+--------------------------+
-| *Setter*  | set_stream_paused(value) |
-+-----------+--------------------------+
-| *Getter*  | get_stream_paused()      |
-+-----------+--------------------------+
+:ref:`bool<class_bool>` **stream_paused** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_stream_paused** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **get_stream_paused** **(** **)**
 
 If ``true``, the playback is paused. You can resume it by setting :ref:`stream_paused<class_AudioStreamPlayer3D_property_stream_paused>` to ``false``.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AudioStreamPlayer3D_property_unit_db:
 
-- :ref:`float<class_float>` **unit_db**
+.. rst-class:: classref-property
 
-+-----------+--------------------+
-| *Default* | ``0.0``            |
-+-----------+--------------------+
-| *Setter*  | set_unit_db(value) |
-+-----------+--------------------+
-| *Getter*  | get_unit_db()      |
-+-----------+--------------------+
+:ref:`float<class_float>` **unit_db** = ``0.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_unit_db** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_unit_db** **(** **)**
 
 The base sound level unaffected by dampening, in decibels.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AudioStreamPlayer3D_property_unit_size:
 
-- :ref:`float<class_float>` **unit_size**
+.. rst-class:: classref-property
 
-+-----------+----------------------+
-| *Default* | ``1.0``              |
-+-----------+----------------------+
-| *Setter*  | set_unit_size(value) |
-+-----------+----------------------+
-| *Getter*  | get_unit_size()      |
-+-----------+----------------------+
+:ref:`float<class_float>` **unit_size** = ``1.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_unit_size** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_unit_size** **(** **)**
 
 The factor for the attenuation effect. Higher values make the sound audible over a larger distance.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_AudioStreamPlayer3D_method_get_playback_position:
 
-- :ref:`float<class_float>` **get_playback_position** **(** **)**
+.. rst-class:: classref-method
+
+:ref:`float<class_float>` **get_playback_position** **(** **)**
 
 Returns the position in the :ref:`AudioStream<class_AudioStream>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AudioStreamPlayer3D_method_get_stream_playback:
 
-- :ref:`AudioStreamPlayback<class_AudioStreamPlayback>` **get_stream_playback** **(** **)**
+.. rst-class:: classref-method
 
-Returns the :ref:`AudioStreamPlayback<class_AudioStreamPlayback>` object associated with this ``AudioStreamPlayer3D``.
+:ref:`AudioStreamPlayback<class_AudioStreamPlayback>` **get_stream_playback** **(** **)**
+
+Returns the :ref:`AudioStreamPlayback<class_AudioStreamPlayback>` object associated with this **AudioStreamPlayer3D**.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AudioStreamPlayer3D_method_play:
 
-- void **play** **(** :ref:`float<class_float>` from_position=0.0 **)**
+.. rst-class:: classref-method
+
+void **play** **(** :ref:`float<class_float>` from_position=0.0 **)**
 
 Plays the audio from the given position ``from_position``, in seconds.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AudioStreamPlayer3D_method_seek:
 
-- void **seek** **(** :ref:`float<class_float>` to_position **)**
+.. rst-class:: classref-method
+
+void **seek** **(** :ref:`float<class_float>` to_position **)**
 
 Sets the position from which audio will be played, in seconds.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AudioStreamPlayer3D_method_stop:
 
-- void **stop** **(** **)**
+.. rst-class:: classref-method
+
+void **stop** **(** **)**
 
 Stops the audio.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

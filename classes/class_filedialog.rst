@@ -14,275 +14,378 @@ FileDialog
 
 Dialog for selecting files or directories in the filesystem.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 FileDialog is a preset dialog used to choose files and directories in the filesystem. It supports filter masks. The FileDialog automatically sets its window title according to the :ref:`mode<class_FileDialog_property_mode>`. If you want to use a custom title, disable this by setting :ref:`mode_overrides_title<class_FileDialog_property_mode_overrides_title>` to ``false``.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-----------------------------------------------+-----------------------------------------------------------------------------+---------------------------------------------------------------------------------------------+
-| :ref:`Access<enum_FileDialog_Access>`         | :ref:`access<class_FileDialog_property_access>`                             | ``0``                                                                                       |
-+-----------------------------------------------+-----------------------------------------------------------------------------+---------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`                   | :ref:`current_dir<class_FileDialog_property_current_dir>`                   |                                                                                             |
-+-----------------------------------------------+-----------------------------------------------------------------------------+---------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`                   | :ref:`current_file<class_FileDialog_property_current_file>`                 |                                                                                             |
-+-----------------------------------------------+-----------------------------------------------------------------------------+---------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`                   | :ref:`current_path<class_FileDialog_property_current_path>`                 |                                                                                             |
-+-----------------------------------------------+-----------------------------------------------------------------------------+---------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                       | dialog_hide_on_ok                                                           | ``false`` (overrides :ref:`AcceptDialog<class_AcceptDialog_property_dialog_hide_on_ok>`)    |
-+-----------------------------------------------+-----------------------------------------------------------------------------+---------------------------------------------------------------------------------------------+
-| :ref:`PoolStringArray<class_PoolStringArray>` | :ref:`filters<class_FileDialog_property_filters>`                           | ``PoolStringArray(  )``                                                                     |
-+-----------------------------------------------+-----------------------------------------------------------------------------+---------------------------------------------------------------------------------------------+
-| :ref:`Mode<enum_FileDialog_Mode>`             | :ref:`mode<class_FileDialog_property_mode>`                                 | ``4``                                                                                       |
-+-----------------------------------------------+-----------------------------------------------------------------------------+---------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                       | :ref:`mode_overrides_title<class_FileDialog_property_mode_overrides_title>` | ``true``                                                                                    |
-+-----------------------------------------------+-----------------------------------------------------------------------------+---------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                       | :ref:`show_hidden_files<class_FileDialog_property_show_hidden_files>`       | ``false``                                                                                   |
-+-----------------------------------------------+-----------------------------------------------------------------------------+---------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`                   | window_title                                                                | ``"Save a File"`` (overrides :ref:`WindowDialog<class_WindowDialog_property_window_title>`) |
-+-----------------------------------------------+-----------------------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-----------------------------------------------+-----------------------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+   | :ref:`Access<enum_FileDialog_Access>`         | :ref:`access<class_FileDialog_property_access>`                             | ``0``                                                                                       |
+   +-----------------------------------------------+-----------------------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                   | :ref:`current_dir<class_FileDialog_property_current_dir>`                   |                                                                                             |
+   +-----------------------------------------------+-----------------------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                   | :ref:`current_file<class_FileDialog_property_current_file>`                 |                                                                                             |
+   +-----------------------------------------------+-----------------------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                   | :ref:`current_path<class_FileDialog_property_current_path>`                 |                                                                                             |
+   +-----------------------------------------------+-----------------------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                       | dialog_hide_on_ok                                                           | ``false`` (overrides :ref:`AcceptDialog<class_AcceptDialog_property_dialog_hide_on_ok>`)    |
+   +-----------------------------------------------+-----------------------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+   | :ref:`PoolStringArray<class_PoolStringArray>` | :ref:`filters<class_FileDialog_property_filters>`                           | ``PoolStringArray(  )``                                                                     |
+   +-----------------------------------------------+-----------------------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+   | :ref:`Mode<enum_FileDialog_Mode>`             | :ref:`mode<class_FileDialog_property_mode>`                                 | ``4``                                                                                       |
+   +-----------------------------------------------+-----------------------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                       | :ref:`mode_overrides_title<class_FileDialog_property_mode_overrides_title>` | ``true``                                                                                    |
+   +-----------------------------------------------+-----------------------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                       | :ref:`show_hidden_files<class_FileDialog_property_show_hidden_files>`       | ``false``                                                                                   |
+   +-----------------------------------------------+-----------------------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                   | window_title                                                                | ``"Save a File"`` (overrides :ref:`WindowDialog<class_WindowDialog_property_window_title>`) |
+   +-----------------------------------------------+-----------------------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+-------------------------------------------+------------------------------------------------------------------------------------------------------+
-| void                                      | :ref:`add_filter<class_FileDialog_method_add_filter>` **(** :ref:`String<class_String>` filter **)** |
-+-------------------------------------------+------------------------------------------------------------------------------------------------------+
-| void                                      | :ref:`clear_filters<class_FileDialog_method_clear_filters>` **(** **)**                              |
-+-------------------------------------------+------------------------------------------------------------------------------------------------------+
-| void                                      | :ref:`deselect_items<class_FileDialog_method_deselect_items>` **(** **)**                            |
-+-------------------------------------------+------------------------------------------------------------------------------------------------------+
-| :ref:`LineEdit<class_LineEdit>`           | :ref:`get_line_edit<class_FileDialog_method_get_line_edit>` **(** **)**                              |
-+-------------------------------------------+------------------------------------------------------------------------------------------------------+
-| :ref:`VBoxContainer<class_VBoxContainer>` | :ref:`get_vbox<class_FileDialog_method_get_vbox>` **(** **)**                                        |
-+-------------------------------------------+------------------------------------------------------------------------------------------------------+
-| void                                      | :ref:`invalidate<class_FileDialog_method_invalidate>` **(** **)**                                    |
-+-------------------------------------------+------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------------------------+------------------------------------------------------------------------------------------------------+
+   | void                                      | :ref:`add_filter<class_FileDialog_method_add_filter>` **(** :ref:`String<class_String>` filter **)** |
+   +-------------------------------------------+------------------------------------------------------------------------------------------------------+
+   | void                                      | :ref:`clear_filters<class_FileDialog_method_clear_filters>` **(** **)**                              |
+   +-------------------------------------------+------------------------------------------------------------------------------------------------------+
+   | void                                      | :ref:`deselect_items<class_FileDialog_method_deselect_items>` **(** **)**                            |
+   +-------------------------------------------+------------------------------------------------------------------------------------------------------+
+   | :ref:`LineEdit<class_LineEdit>`           | :ref:`get_line_edit<class_FileDialog_method_get_line_edit>` **(** **)**                              |
+   +-------------------------------------------+------------------------------------------------------------------------------------------------------+
+   | :ref:`VBoxContainer<class_VBoxContainer>` | :ref:`get_vbox<class_FileDialog_method_get_vbox>` **(** **)**                                        |
+   +-------------------------------------------+------------------------------------------------------------------------------------------------------+
+   | void                                      | :ref:`invalidate<class_FileDialog_method_invalidate>` **(** **)**                                    |
+   +-------------------------------------------+------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-reftable-group
 
 Theme Properties
 ----------------
 
-+-------------------------------+--------------------------------------------------------------------------------+----------------------------+
-| :ref:`Color<class_Color>`     | :ref:`file_icon_modulate<class_FileDialog_theme_color_file_icon_modulate>`     | ``Color( 1, 1, 1, 1 )``    |
-+-------------------------------+--------------------------------------------------------------------------------+----------------------------+
-| :ref:`Color<class_Color>`     | :ref:`files_disabled<class_FileDialog_theme_color_files_disabled>`             | ``Color( 1, 1, 1, 0.25 )`` |
-+-------------------------------+--------------------------------------------------------------------------------+----------------------------+
-| :ref:`Color<class_Color>`     | :ref:`folder_icon_modulate<class_FileDialog_theme_color_folder_icon_modulate>` | ``Color( 1, 1, 1, 1 )``    |
-+-------------------------------+--------------------------------------------------------------------------------+----------------------------+
-| :ref:`Texture<class_Texture>` | :ref:`file<class_FileDialog_theme_icon_file>`                                  |                            |
-+-------------------------------+--------------------------------------------------------------------------------+----------------------------+
-| :ref:`Texture<class_Texture>` | :ref:`folder<class_FileDialog_theme_icon_folder>`                              |                            |
-+-------------------------------+--------------------------------------------------------------------------------+----------------------------+
-| :ref:`Texture<class_Texture>` | :ref:`parent_folder<class_FileDialog_theme_icon_parent_folder>`                |                            |
-+-------------------------------+--------------------------------------------------------------------------------+----------------------------+
-| :ref:`Texture<class_Texture>` | :ref:`reload<class_FileDialog_theme_icon_reload>`                              |                            |
-+-------------------------------+--------------------------------------------------------------------------------+----------------------------+
-| :ref:`Texture<class_Texture>` | :ref:`toggle_hidden<class_FileDialog_theme_icon_toggle_hidden>`                |                            |
-+-------------------------------+--------------------------------------------------------------------------------+----------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------------+--------------------------------------------------------------------------------+----------------------------+
+   | :ref:`Color<class_Color>`     | :ref:`file_icon_modulate<class_FileDialog_theme_color_file_icon_modulate>`     | ``Color( 1, 1, 1, 1 )``    |
+   +-------------------------------+--------------------------------------------------------------------------------+----------------------------+
+   | :ref:`Color<class_Color>`     | :ref:`files_disabled<class_FileDialog_theme_color_files_disabled>`             | ``Color( 1, 1, 1, 0.25 )`` |
+   +-------------------------------+--------------------------------------------------------------------------------+----------------------------+
+   | :ref:`Color<class_Color>`     | :ref:`folder_icon_modulate<class_FileDialog_theme_color_folder_icon_modulate>` | ``Color( 1, 1, 1, 1 )``    |
+   +-------------------------------+--------------------------------------------------------------------------------+----------------------------+
+   | :ref:`Texture<class_Texture>` | :ref:`file<class_FileDialog_theme_icon_file>`                                  |                            |
+   +-------------------------------+--------------------------------------------------------------------------------+----------------------------+
+   | :ref:`Texture<class_Texture>` | :ref:`folder<class_FileDialog_theme_icon_folder>`                              |                            |
+   +-------------------------------+--------------------------------------------------------------------------------+----------------------------+
+   | :ref:`Texture<class_Texture>` | :ref:`parent_folder<class_FileDialog_theme_icon_parent_folder>`                |                            |
+   +-------------------------------+--------------------------------------------------------------------------------+----------------------------+
+   | :ref:`Texture<class_Texture>` | :ref:`reload<class_FileDialog_theme_icon_reload>`                              |                            |
+   +-------------------------------+--------------------------------------------------------------------------------+----------------------------+
+   | :ref:`Texture<class_Texture>` | :ref:`toggle_hidden<class_FileDialog_theme_icon_toggle_hidden>`                |                            |
+   +-------------------------------+--------------------------------------------------------------------------------+----------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Signals
 -------
 
 .. _class_FileDialog_signal_dir_selected:
 
-- **dir_selected** **(** :ref:`String<class_String>` dir **)**
+.. rst-class:: classref-signal
+
+**dir_selected** **(** :ref:`String<class_String>` dir **)**
 
 Emitted when the user selects a directory.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_FileDialog_signal_file_selected:
 
-- **file_selected** **(** :ref:`String<class_String>` path **)**
+.. rst-class:: classref-signal
+
+**file_selected** **(** :ref:`String<class_String>` path **)**
 
 Emitted when the user selects a file by double-clicking it or pressing the **OK** button.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_FileDialog_signal_files_selected:
 
-- **files_selected** **(** :ref:`PoolStringArray<class_PoolStringArray>` paths **)**
+.. rst-class:: classref-signal
+
+**files_selected** **(** :ref:`PoolStringArray<class_PoolStringArray>` paths **)**
 
 Emitted when the user selects multiple files.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Enumerations
 ------------
 
 .. _enum_FileDialog_Mode:
 
-.. _class_FileDialog_constant_MODE_OPEN_FILE:
-
-.. _class_FileDialog_constant_MODE_OPEN_FILES:
-
-.. _class_FileDialog_constant_MODE_OPEN_DIR:
-
-.. _class_FileDialog_constant_MODE_OPEN_ANY:
-
-.. _class_FileDialog_constant_MODE_SAVE_FILE:
+.. rst-class:: classref-enumeration
 
 enum **Mode**:
 
-- **MODE_OPEN_FILE** = **0** --- The dialog allows selecting one, and only one file.
+.. _class_FileDialog_constant_MODE_OPEN_FILE:
 
-- **MODE_OPEN_FILES** = **1** --- The dialog allows selecting multiple files.
+.. rst-class:: classref-enumeration-constant
 
-- **MODE_OPEN_DIR** = **2** --- The dialog only allows selecting a directory, disallowing the selection of any file.
+:ref:`Mode<enum_FileDialog_Mode>` **MODE_OPEN_FILE** = ``0``
 
-- **MODE_OPEN_ANY** = **3** --- The dialog allows selecting one file or directory.
+The dialog allows selecting one, and only one file.
 
-- **MODE_SAVE_FILE** = **4** --- The dialog will warn when a file exists.
+.. _class_FileDialog_constant_MODE_OPEN_FILES:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Mode<enum_FileDialog_Mode>` **MODE_OPEN_FILES** = ``1``
+
+The dialog allows selecting multiple files.
+
+.. _class_FileDialog_constant_MODE_OPEN_DIR:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Mode<enum_FileDialog_Mode>` **MODE_OPEN_DIR** = ``2``
+
+The dialog only allows selecting a directory, disallowing the selection of any file.
+
+.. _class_FileDialog_constant_MODE_OPEN_ANY:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Mode<enum_FileDialog_Mode>` **MODE_OPEN_ANY** = ``3``
+
+The dialog allows selecting one file or directory.
+
+.. _class_FileDialog_constant_MODE_SAVE_FILE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Mode<enum_FileDialog_Mode>` **MODE_SAVE_FILE** = ``4``
+
+The dialog will warn when a file exists.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _enum_FileDialog_Access:
 
-.. _class_FileDialog_constant_ACCESS_RESOURCES:
-
-.. _class_FileDialog_constant_ACCESS_USERDATA:
-
-.. _class_FileDialog_constant_ACCESS_FILESYSTEM:
+.. rst-class:: classref-enumeration
 
 enum **Access**:
 
-- **ACCESS_RESOURCES** = **0** --- The dialog only allows accessing files under the :ref:`Resource<class_Resource>` path (``res://``).
+.. _class_FileDialog_constant_ACCESS_RESOURCES:
 
-- **ACCESS_USERDATA** = **1** --- The dialog only allows accessing files under user data path (``user://``).
+.. rst-class:: classref-enumeration-constant
 
-- **ACCESS_FILESYSTEM** = **2** --- The dialog allows accessing files on the whole file system.
+:ref:`Access<enum_FileDialog_Access>` **ACCESS_RESOURCES** = ``0``
+
+The dialog only allows accessing files under the :ref:`Resource<class_Resource>` path (``res://``).
+
+.. _class_FileDialog_constant_ACCESS_USERDATA:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Access<enum_FileDialog_Access>` **ACCESS_USERDATA** = ``1``
+
+The dialog only allows accessing files under user data path (``user://``).
+
+.. _class_FileDialog_constant_ACCESS_FILESYSTEM:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Access<enum_FileDialog_Access>` **ACCESS_FILESYSTEM** = ``2``
+
+The dialog allows accessing files on the whole file system.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_FileDialog_property_access:
 
-- :ref:`Access<enum_FileDialog_Access>` **access**
+.. rst-class:: classref-property
 
-+-----------+-------------------+
-| *Default* | ``0``             |
-+-----------+-------------------+
-| *Setter*  | set_access(value) |
-+-----------+-------------------+
-| *Getter*  | get_access()      |
-+-----------+-------------------+
+:ref:`Access<enum_FileDialog_Access>` **access** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_access** **(** :ref:`Access<enum_FileDialog_Access>` value **)**
+- :ref:`Access<enum_FileDialog_Access>` **get_access** **(** **)**
 
 The file system access scope. See enum ``Access`` constants.
 
 \ **Warning:** Currently, in sandboxed environments such as HTML5 builds or sandboxed macOS apps, FileDialog cannot access the host file system. See `godot-proposals#1123 <https://github.com/godotengine/godot-proposals/issues/1123>`__.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_FileDialog_property_current_dir:
 
-- :ref:`String<class_String>` **current_dir**
+.. rst-class:: classref-property
 
-+----------+------------------------+
-| *Setter* | set_current_dir(value) |
-+----------+------------------------+
-| *Getter* | get_current_dir()      |
-+----------+------------------------+
+:ref:`String<class_String>` **current_dir**
+
+.. rst-class:: classref-property-setget
+
+- void **set_current_dir** **(** :ref:`String<class_String>` value **)**
+- :ref:`String<class_String>` **get_current_dir** **(** **)**
 
 The current working directory of the file dialog.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_FileDialog_property_current_file:
 
-- :ref:`String<class_String>` **current_file**
+.. rst-class:: classref-property
 
-+----------+-------------------------+
-| *Setter* | set_current_file(value) |
-+----------+-------------------------+
-| *Getter* | get_current_file()      |
-+----------+-------------------------+
+:ref:`String<class_String>` **current_file**
+
+.. rst-class:: classref-property-setget
+
+- void **set_current_file** **(** :ref:`String<class_String>` value **)**
+- :ref:`String<class_String>` **get_current_file** **(** **)**
 
 The currently selected file of the file dialog.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_FileDialog_property_current_path:
 
-- :ref:`String<class_String>` **current_path**
+.. rst-class:: classref-property
 
-+----------+-------------------------+
-| *Setter* | set_current_path(value) |
-+----------+-------------------------+
-| *Getter* | get_current_path()      |
-+----------+-------------------------+
+:ref:`String<class_String>` **current_path**
+
+.. rst-class:: classref-property-setget
+
+- void **set_current_path** **(** :ref:`String<class_String>` value **)**
+- :ref:`String<class_String>` **get_current_path** **(** **)**
 
 The currently selected file path of the file dialog.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_FileDialog_property_filters:
 
-- :ref:`PoolStringArray<class_PoolStringArray>` **filters**
+.. rst-class:: classref-property
 
-+-----------+-------------------------+
-| *Default* | ``PoolStringArray(  )`` |
-+-----------+-------------------------+
-| *Setter*  | set_filters(value)      |
-+-----------+-------------------------+
-| *Getter*  | get_filters()           |
-+-----------+-------------------------+
+:ref:`PoolStringArray<class_PoolStringArray>` **filters** = ``PoolStringArray(  )``
+
+.. rst-class:: classref-property-setget
+
+- void **set_filters** **(** :ref:`PoolStringArray<class_PoolStringArray>` value **)**
+- :ref:`PoolStringArray<class_PoolStringArray>` **get_filters** **(** **)**
 
 The available file type filters. For example, this shows only ``.png`` and ``.gd`` files: ``set_filters(PoolStringArray(["*.png ; PNG Images","*.gd ; GDScript Files"]))``. Multiple file types can also be specified in a single filter. ``"*.png, *.jpg, *.jpeg ; Supported Images"`` will show both PNG and JPEG files when selected.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_FileDialog_property_mode:
 
-- :ref:`Mode<enum_FileDialog_Mode>` **mode**
+.. rst-class:: classref-property
 
-+-----------+-----------------+
-| *Default* | ``4``           |
-+-----------+-----------------+
-| *Setter*  | set_mode(value) |
-+-----------+-----------------+
-| *Getter*  | get_mode()      |
-+-----------+-----------------+
+:ref:`Mode<enum_FileDialog_Mode>` **mode** = ``4``
+
+.. rst-class:: classref-property-setget
+
+- void **set_mode** **(** :ref:`Mode<enum_FileDialog_Mode>` value **)**
+- :ref:`Mode<enum_FileDialog_Mode>` **get_mode** **(** **)**
 
 The dialog's open or save mode, which affects the selection behavior. See enum ``Mode`` constants.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_FileDialog_property_mode_overrides_title:
 
-- :ref:`bool<class_bool>` **mode_overrides_title**
+.. rst-class:: classref-property
 
-+-----------+---------------------------------+
-| *Default* | ``true``                        |
-+-----------+---------------------------------+
-| *Setter*  | set_mode_overrides_title(value) |
-+-----------+---------------------------------+
-| *Getter*  | is_mode_overriding_title()      |
-+-----------+---------------------------------+
+:ref:`bool<class_bool>` **mode_overrides_title** = ``true``
+
+.. rst-class:: classref-property-setget
+
+- void **set_mode_overrides_title** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_mode_overriding_title** **(** **)**
 
 If ``true``, changing the ``Mode`` property will set the window title accordingly (e.g. setting mode to :ref:`MODE_OPEN_FILE<class_FileDialog_constant_MODE_OPEN_FILE>` will change the window title to "Open a File").
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_FileDialog_property_show_hidden_files:
 
-- :ref:`bool<class_bool>` **show_hidden_files**
+.. rst-class:: classref-property
 
-+-----------+------------------------------+
-| *Default* | ``false``                    |
-+-----------+------------------------------+
-| *Setter*  | set_show_hidden_files(value) |
-+-----------+------------------------------+
-| *Getter*  | is_showing_hidden_files()    |
-+-----------+------------------------------+
+:ref:`bool<class_bool>` **show_hidden_files** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_show_hidden_files** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_showing_hidden_files** **(** **)**
 
 If ``true``, the dialog will show hidden files.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_FileDialog_method_add_filter:
 
-- void **add_filter** **(** :ref:`String<class_String>` filter **)**
+.. rst-class:: classref-method
+
+void **add_filter** **(** :ref:`String<class_String>` filter **)**
 
 Adds ``filter`` to the list of filters, which restricts what files can be picked.
 
@@ -290,127 +393,172 @@ A ``filter`` should be of the form ``"filename.extension ; Description"``, where
 
 Example filters: ``"*.png ; PNG Images"``, ``"project.godot ; Godot Project"``.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_FileDialog_method_clear_filters:
 
-- void **clear_filters** **(** **)**
+.. rst-class:: classref-method
+
+void **clear_filters** **(** **)**
 
 Clear all the added filters in the dialog.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_FileDialog_method_deselect_items:
 
-- void **deselect_items** **(** **)**
+.. rst-class:: classref-method
+
+void **deselect_items** **(** **)**
 
 Clear currently selected items in the dialog.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_FileDialog_method_get_line_edit:
 
-- :ref:`LineEdit<class_LineEdit>` **get_line_edit** **(** **)**
+.. rst-class:: classref-method
+
+:ref:`LineEdit<class_LineEdit>` **get_line_edit** **(** **)**
 
 Returns the LineEdit for the selected file.
 
 \ **Warning:** This is a required internal node, removing and freeing it may cause a crash. If you wish to hide it or any of its children, use their :ref:`CanvasItem.visible<class_CanvasItem_property_visible>` property.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_FileDialog_method_get_vbox:
 
-- :ref:`VBoxContainer<class_VBoxContainer>` **get_vbox** **(** **)**
+.. rst-class:: classref-method
+
+:ref:`VBoxContainer<class_VBoxContainer>` **get_vbox** **(** **)**
 
 Returns the vertical box container of the dialog, custom controls can be added to it.
 
 \ **Warning:** This is a required internal node, removing and freeing it may cause a crash. If you wish to hide it or any of its children, use their :ref:`CanvasItem.visible<class_CanvasItem_property_visible>` property.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_FileDialog_method_invalidate:
 
-- void **invalidate** **(** **)**
+.. rst-class:: classref-method
+
+void **invalidate** **(** **)**
 
 Invalidate and update the current dialog content list.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Theme Property Descriptions
 ---------------------------
 
 .. _class_FileDialog_theme_color_file_icon_modulate:
 
-- :ref:`Color<class_Color>` **file_icon_modulate**
+.. rst-class:: classref-themeproperty
 
-+-----------+-------------------------+
-| *Default* | ``Color( 1, 1, 1, 1 )`` |
-+-----------+-------------------------+
+:ref:`Color<class_Color>` **file_icon_modulate** = ``Color( 1, 1, 1, 1 )``
 
 The color modulation applied to the file icon.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_FileDialog_theme_color_files_disabled:
 
-- :ref:`Color<class_Color>` **files_disabled**
+.. rst-class:: classref-themeproperty
 
-+-----------+----------------------------+
-| *Default* | ``Color( 1, 1, 1, 0.25 )`` |
-+-----------+----------------------------+
+:ref:`Color<class_Color>` **files_disabled** = ``Color( 1, 1, 1, 0.25 )``
 
-The color tint for disabled files (when the ``FileDialog`` is used in open folder mode).
+The color tint for disabled files (when the **FileDialog** is used in open folder mode).
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_FileDialog_theme_color_folder_icon_modulate:
 
-- :ref:`Color<class_Color>` **folder_icon_modulate**
+.. rst-class:: classref-themeproperty
 
-+-----------+-------------------------+
-| *Default* | ``Color( 1, 1, 1, 1 )`` |
-+-----------+-------------------------+
+:ref:`Color<class_Color>` **folder_icon_modulate** = ``Color( 1, 1, 1, 1 )``
 
 The color modulation applied to the folder icon.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_FileDialog_theme_icon_file:
 
-- :ref:`Texture<class_Texture>` **file**
+.. rst-class:: classref-themeproperty
+
+:ref:`Texture<class_Texture>` **file**
 
 Custom icon for files.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_FileDialog_theme_icon_folder:
 
-- :ref:`Texture<class_Texture>` **folder**
+.. rst-class:: classref-themeproperty
+
+:ref:`Texture<class_Texture>` **folder**
 
 Custom icon for folders.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_FileDialog_theme_icon_parent_folder:
 
-- :ref:`Texture<class_Texture>` **parent_folder**
+.. rst-class:: classref-themeproperty
+
+:ref:`Texture<class_Texture>` **parent_folder**
 
 Custom icon for the parent folder arrow.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_FileDialog_theme_icon_reload:
 
-- :ref:`Texture<class_Texture>` **reload**
+.. rst-class:: classref-themeproperty
+
+:ref:`Texture<class_Texture>` **reload**
 
 Custom icon for the reload button.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_FileDialog_theme_icon_toggle_hidden:
 
-- :ref:`Texture<class_Texture>` **toggle_hidden**
+.. rst-class:: classref-themeproperty
+
+:ref:`Texture<class_Texture>` **toggle_hidden**
 
 Custom icon for the toggle hidden button.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

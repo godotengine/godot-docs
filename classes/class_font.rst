@@ -16,6 +16,8 @@ Font
 
 Internationalized font and text drawing support.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -27,98 +29,143 @@ Font contains a Unicode-compatible character set, as well as the ability to draw
 
 \ **Note:** Unicode characters after ``0xffff`` (such as most emoji) are *not* supported on Windows. They will display as unknown characters instead. This will be resolved in Godot 4.0.
 
+.. rst-class:: classref-reftable-group
+
 Methods
 -------
 
-+-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                | :ref:`draw<class_Font_method_draw>` **(** :ref:`RID<class_RID>` canvas_item, :ref:`Vector2<class_Vector2>` position, :ref:`String<class_String>` string, :ref:`Color<class_Color>` modulate=Color( 1, 1, 1, 1 ), :ref:`int<class_int>` clip_w=-1, :ref:`Color<class_Color>` outline_modulate=Color( 1, 1, 1, 1 ) **)** |const| |
-+-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`           | :ref:`draw_char<class_Font_method_draw_char>` **(** :ref:`RID<class_RID>` canvas_item, :ref:`Vector2<class_Vector2>` position, :ref:`int<class_int>` char, :ref:`int<class_int>` next=-1, :ref:`Color<class_Color>` modulate=Color( 1, 1, 1, 1 ), :ref:`bool<class_bool>` outline=false **)** |const|                          |
-+-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`           | :ref:`get_ascent<class_Font_method_get_ascent>` **(** **)** |const|                                                                                                                                                                                                                                                            |
-+-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Dictionary<class_Dictionary>` | :ref:`get_char_contours<class_Font_method_get_char_contours>` **(** :ref:`int<class_int>` char, :ref:`int<class_int>` next=0 **)** |const|                                                                                                                                                                                     |
-+-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>`       | :ref:`get_char_size<class_Font_method_get_char_size>` **(** :ref:`int<class_int>` char, :ref:`int<class_int>` next=0 **)** |const|                                                                                                                                                                                             |
-+-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`RID<class_RID>`               | :ref:`get_char_texture<class_Font_method_get_char_texture>` **(** :ref:`int<class_int>` char, :ref:`int<class_int>` next=0, :ref:`bool<class_bool>` outline=false **)** |const|                                                                                                                                                |
-+-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>`       | :ref:`get_char_texture_size<class_Font_method_get_char_texture_size>` **(** :ref:`int<class_int>` char, :ref:`int<class_int>` next=0, :ref:`bool<class_bool>` outline=false **)** |const|                                                                                                                                      |
-+-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>`       | :ref:`get_char_tx_offset<class_Font_method_get_char_tx_offset>` **(** :ref:`int<class_int>` char, :ref:`int<class_int>` next=0, :ref:`bool<class_bool>` outline=false **)** |const|                                                                                                                                            |
-+-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>`       | :ref:`get_char_tx_size<class_Font_method_get_char_tx_size>` **(** :ref:`int<class_int>` char, :ref:`int<class_int>` next=0, :ref:`bool<class_bool>` outline=false **)** |const|                                                                                                                                                |
-+-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Rect2<class_Rect2>`           | :ref:`get_char_tx_uv_rect<class_Font_method_get_char_tx_uv_rect>` **(** :ref:`int<class_int>` char, :ref:`int<class_int>` next=0, :ref:`bool<class_bool>` outline=false **)** |const|                                                                                                                                          |
-+-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`           | :ref:`get_descent<class_Font_method_get_descent>` **(** **)** |const|                                                                                                                                                                                                                                                          |
-+-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`           | :ref:`get_height<class_Font_method_get_height>` **(** **)** |const|                                                                                                                                                                                                                                                            |
-+-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>`       | :ref:`get_string_size<class_Font_method_get_string_size>` **(** :ref:`String<class_String>` string **)** |const|                                                                                                                                                                                                               |
-+-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>`       | :ref:`get_wordwrap_string_size<class_Font_method_get_wordwrap_string_size>` **(** :ref:`String<class_String>` string, :ref:`float<class_float>` width **)** |const|                                                                                                                                                            |
-+-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`             | :ref:`has_outline<class_Font_method_has_outline>` **(** **)** |const|                                                                                                                                                                                                                                                          |
-+-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`             | :ref:`is_distance_field_hint<class_Font_method_is_distance_field_hint>` **(** **)** |const|                                                                                                                                                                                                                                    |
-+-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                | :ref:`update_changes<class_Font_method_update_changes>` **(** **)**                                                                                                                                                                                                                                                            |
-+-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                | :ref:`draw<class_Font_method_draw>` **(** :ref:`RID<class_RID>` canvas_item, :ref:`Vector2<class_Vector2>` position, :ref:`String<class_String>` string, :ref:`Color<class_Color>` modulate=Color( 1, 1, 1, 1 ), :ref:`int<class_int>` clip_w=-1, :ref:`Color<class_Color>` outline_modulate=Color( 1, 1, 1, 1 ) **)** |const| |
+   +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`           | :ref:`draw_char<class_Font_method_draw_char>` **(** :ref:`RID<class_RID>` canvas_item, :ref:`Vector2<class_Vector2>` position, :ref:`int<class_int>` char, :ref:`int<class_int>` next=-1, :ref:`Color<class_Color>` modulate=Color( 1, 1, 1, 1 ), :ref:`bool<class_bool>` outline=false **)** |const|                          |
+   +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`           | :ref:`get_ascent<class_Font_method_get_ascent>` **(** **)** |const|                                                                                                                                                                                                                                                            |
+   +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Dictionary<class_Dictionary>` | :ref:`get_char_contours<class_Font_method_get_char_contours>` **(** :ref:`int<class_int>` char, :ref:`int<class_int>` next=0 **)** |const|                                                                                                                                                                                     |
+   +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector2<class_Vector2>`       | :ref:`get_char_size<class_Font_method_get_char_size>` **(** :ref:`int<class_int>` char, :ref:`int<class_int>` next=0 **)** |const|                                                                                                                                                                                             |
+   +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`RID<class_RID>`               | :ref:`get_char_texture<class_Font_method_get_char_texture>` **(** :ref:`int<class_int>` char, :ref:`int<class_int>` next=0, :ref:`bool<class_bool>` outline=false **)** |const|                                                                                                                                                |
+   +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector2<class_Vector2>`       | :ref:`get_char_texture_size<class_Font_method_get_char_texture_size>` **(** :ref:`int<class_int>` char, :ref:`int<class_int>` next=0, :ref:`bool<class_bool>` outline=false **)** |const|                                                                                                                                      |
+   +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector2<class_Vector2>`       | :ref:`get_char_tx_offset<class_Font_method_get_char_tx_offset>` **(** :ref:`int<class_int>` char, :ref:`int<class_int>` next=0, :ref:`bool<class_bool>` outline=false **)** |const|                                                                                                                                            |
+   +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector2<class_Vector2>`       | :ref:`get_char_tx_size<class_Font_method_get_char_tx_size>` **(** :ref:`int<class_int>` char, :ref:`int<class_int>` next=0, :ref:`bool<class_bool>` outline=false **)** |const|                                                                                                                                                |
+   +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Rect2<class_Rect2>`           | :ref:`get_char_tx_uv_rect<class_Font_method_get_char_tx_uv_rect>` **(** :ref:`int<class_int>` char, :ref:`int<class_int>` next=0, :ref:`bool<class_bool>` outline=false **)** |const|                                                                                                                                          |
+   +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`           | :ref:`get_descent<class_Font_method_get_descent>` **(** **)** |const|                                                                                                                                                                                                                                                          |
+   +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`           | :ref:`get_height<class_Font_method_get_height>` **(** **)** |const|                                                                                                                                                                                                                                                            |
+   +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector2<class_Vector2>`       | :ref:`get_string_size<class_Font_method_get_string_size>` **(** :ref:`String<class_String>` string **)** |const|                                                                                                                                                                                                               |
+   +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector2<class_Vector2>`       | :ref:`get_wordwrap_string_size<class_Font_method_get_wordwrap_string_size>` **(** :ref:`String<class_String>` string, :ref:`float<class_float>` width **)** |const|                                                                                                                                                            |
+   +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`             | :ref:`has_outline<class_Font_method_has_outline>` **(** **)** |const|                                                                                                                                                                                                                                                          |
+   +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`             | :ref:`is_distance_field_hint<class_Font_method_is_distance_field_hint>` **(** **)** |const|                                                                                                                                                                                                                                    |
+   +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                | :ref:`update_changes<class_Font_method_update_changes>` **(** **)**                                                                                                                                                                                                                                                            |
+   +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Enumerations
 ------------
 
 .. _enum_Font_ContourPointTag:
 
-.. _class_Font_constant_CONTOUR_CURVE_TAG_ON:
-
-.. _class_Font_constant_CONTOUR_CURVE_TAG_OFF_CONIC:
-
-.. _class_Font_constant_CONTOUR_CURVE_TAG_OFF_CUBIC:
+.. rst-class:: classref-enumeration
 
 enum **ContourPointTag**:
 
-- **CONTOUR_CURVE_TAG_ON** = **1** --- Contour point is on the curve.
+.. _class_Font_constant_CONTOUR_CURVE_TAG_ON:
 
-- **CONTOUR_CURVE_TAG_OFF_CONIC** = **0** --- Contour point isn't on the curve, but serves as a control point for a conic (quadratic) Bézier arc.
+.. rst-class:: classref-enumeration-constant
 
-- **CONTOUR_CURVE_TAG_OFF_CUBIC** = **2** --- Contour point isn't on the curve, but serves as a control point for a cubic Bézier arc.
+:ref:`ContourPointTag<enum_Font_ContourPointTag>` **CONTOUR_CURVE_TAG_ON** = ``1``
+
+Contour point is on the curve.
+
+.. _class_Font_constant_CONTOUR_CURVE_TAG_OFF_CONIC:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ContourPointTag<enum_Font_ContourPointTag>` **CONTOUR_CURVE_TAG_OFF_CONIC** = ``0``
+
+Contour point isn't on the curve, but serves as a control point for a conic (quadratic) Bézier arc.
+
+.. _class_Font_constant_CONTOUR_CURVE_TAG_OFF_CUBIC:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ContourPointTag<enum_Font_ContourPointTag>` **CONTOUR_CURVE_TAG_OFF_CUBIC** = ``2``
+
+Contour point isn't on the curve, but serves as a control point for a cubic Bézier arc.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_Font_method_draw:
 
-- void **draw** **(** :ref:`RID<class_RID>` canvas_item, :ref:`Vector2<class_Vector2>` position, :ref:`String<class_String>` string, :ref:`Color<class_Color>` modulate=Color( 1, 1, 1, 1 ), :ref:`int<class_int>` clip_w=-1, :ref:`Color<class_Color>` outline_modulate=Color( 1, 1, 1, 1 ) **)** |const|
+.. rst-class:: classref-method
+
+void **draw** **(** :ref:`RID<class_RID>` canvas_item, :ref:`Vector2<class_Vector2>` position, :ref:`String<class_String>` string, :ref:`Color<class_Color>` modulate=Color( 1, 1, 1, 1 ), :ref:`int<class_int>` clip_w=-1, :ref:`Color<class_Color>` outline_modulate=Color( 1, 1, 1, 1 ) **)** |const|
 
 Draw ``string`` into a canvas item using the font at a given position, with ``modulate`` color, and optionally clipping the width. ``position`` specifies the baseline, not the top. To draw from the top, *ascent* must be added to the Y axis.
 
 See also :ref:`CanvasItem.draw_string<class_CanvasItem_method_draw_string>`.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_Font_method_draw_char:
 
-- :ref:`float<class_float>` **draw_char** **(** :ref:`RID<class_RID>` canvas_item, :ref:`Vector2<class_Vector2>` position, :ref:`int<class_int>` char, :ref:`int<class_int>` next=-1, :ref:`Color<class_Color>` modulate=Color( 1, 1, 1, 1 ), :ref:`bool<class_bool>` outline=false **)** |const|
+.. rst-class:: classref-method
+
+:ref:`float<class_float>` **draw_char** **(** :ref:`RID<class_RID>` canvas_item, :ref:`Vector2<class_Vector2>` position, :ref:`int<class_int>` char, :ref:`int<class_int>` next=-1, :ref:`Color<class_Color>` modulate=Color( 1, 1, 1, 1 ), :ref:`bool<class_bool>` outline=false **)** |const|
 
 Draw character ``char`` into a canvas item using the font at a given position, with ``modulate`` color, and optionally kerning if ``next`` is passed. clipping the width. ``position`` specifies the baseline, not the top. To draw from the top, *ascent* must be added to the Y axis. The width used by the character is returned, making this function useful for drawing strings character by character.
 
 If ``outline`` is ``true``, the outline of the character is drawn instead of the character itself.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_Font_method_get_ascent:
 
-- :ref:`float<class_float>` **get_ascent** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`float<class_float>` **get_ascent** **(** **)** |const|
 
 Returns the font ascent (number of pixels above the baseline).
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Font_method_get_char_contours:
 
-- :ref:`Dictionary<class_Dictionary>` **get_char_contours** **(** :ref:`int<class_int>` char, :ref:`int<class_int>` next=0 **)** |const|
+.. rst-class:: classref-method
+
+:ref:`Dictionary<class_Dictionary>` **get_char_contours** **(** :ref:`int<class_int>` char, :ref:`int<class_int>` next=0 **)** |const|
 
 Returns outline contours of the glyph as a ``Dictionary`` with the following contents:
 
@@ -128,108 +175,165 @@ Returns outline contours of the glyph as a ``Dictionary`` with the following con
 
 \ ``orientation``    - :ref:`bool<class_bool>`, contour orientation. If ``true``, clockwise contours must be filled.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_Font_method_get_char_size:
 
-- :ref:`Vector2<class_Vector2>` **get_char_size** **(** :ref:`int<class_int>` char, :ref:`int<class_int>` next=0 **)** |const|
+.. rst-class:: classref-method
+
+:ref:`Vector2<class_Vector2>` **get_char_size** **(** :ref:`int<class_int>` char, :ref:`int<class_int>` next=0 **)** |const|
 
 Returns the size of a character, optionally taking kerning into account if the next character is provided. Note that the height returned is the font height (see :ref:`get_height<class_Font_method_get_height>`) and has no relation to the glyph height.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Font_method_get_char_texture:
 
-- :ref:`RID<class_RID>` **get_char_texture** **(** :ref:`int<class_int>` char, :ref:`int<class_int>` next=0, :ref:`bool<class_bool>` outline=false **)** |const|
+.. rst-class:: classref-method
+
+:ref:`RID<class_RID>` **get_char_texture** **(** :ref:`int<class_int>` char, :ref:`int<class_int>` next=0, :ref:`bool<class_bool>` outline=false **)** |const|
 
 Returns resource id of the cache texture containing the char.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Font_method_get_char_texture_size:
 
-- :ref:`Vector2<class_Vector2>` **get_char_texture_size** **(** :ref:`int<class_int>` char, :ref:`int<class_int>` next=0, :ref:`bool<class_bool>` outline=false **)** |const|
+.. rst-class:: classref-method
+
+:ref:`Vector2<class_Vector2>` **get_char_texture_size** **(** :ref:`int<class_int>` char, :ref:`int<class_int>` next=0, :ref:`bool<class_bool>` outline=false **)** |const|
 
 Returns size of the cache texture containing the char.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Font_method_get_char_tx_offset:
 
-- :ref:`Vector2<class_Vector2>` **get_char_tx_offset** **(** :ref:`int<class_int>` char, :ref:`int<class_int>` next=0, :ref:`bool<class_bool>` outline=false **)** |const|
+.. rst-class:: classref-method
+
+:ref:`Vector2<class_Vector2>` **get_char_tx_offset** **(** :ref:`int<class_int>` char, :ref:`int<class_int>` next=0, :ref:`bool<class_bool>` outline=false **)** |const|
 
 Returns char offset from the baseline.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Font_method_get_char_tx_size:
 
-- :ref:`Vector2<class_Vector2>` **get_char_tx_size** **(** :ref:`int<class_int>` char, :ref:`int<class_int>` next=0, :ref:`bool<class_bool>` outline=false **)** |const|
+.. rst-class:: classref-method
+
+:ref:`Vector2<class_Vector2>` **get_char_tx_size** **(** :ref:`int<class_int>` char, :ref:`int<class_int>` next=0, :ref:`bool<class_bool>` outline=false **)** |const|
 
 Returns size of the char.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Font_method_get_char_tx_uv_rect:
 
-- :ref:`Rect2<class_Rect2>` **get_char_tx_uv_rect** **(** :ref:`int<class_int>` char, :ref:`int<class_int>` next=0, :ref:`bool<class_bool>` outline=false **)** |const|
+.. rst-class:: classref-method
+
+:ref:`Rect2<class_Rect2>` **get_char_tx_uv_rect** **(** :ref:`int<class_int>` char, :ref:`int<class_int>` next=0, :ref:`bool<class_bool>` outline=false **)** |const|
 
 Returns rectangle in the cache texture containing the char.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Font_method_get_descent:
 
-- :ref:`float<class_float>` **get_descent** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`float<class_float>` **get_descent** **(** **)** |const|
 
 Returns the font descent (number of pixels below the baseline).
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Font_method_get_height:
 
-- :ref:`float<class_float>` **get_height** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`float<class_float>` **get_height** **(** **)** |const|
 
 Returns the total font height (ascent plus descent) in pixels.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Font_method_get_string_size:
 
-- :ref:`Vector2<class_Vector2>` **get_string_size** **(** :ref:`String<class_String>` string **)** |const|
+.. rst-class:: classref-method
+
+:ref:`Vector2<class_Vector2>` **get_string_size** **(** :ref:`String<class_String>` string **)** |const|
 
 Returns the size of a string, taking kerning and advance into account. Note that the height returned is the font height (see :ref:`get_height<class_Font_method_get_height>`) and has no relation to the string.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Font_method_get_wordwrap_string_size:
 
-- :ref:`Vector2<class_Vector2>` **get_wordwrap_string_size** **(** :ref:`String<class_String>` string, :ref:`float<class_float>` width **)** |const|
+.. rst-class:: classref-method
+
+:ref:`Vector2<class_Vector2>` **get_wordwrap_string_size** **(** :ref:`String<class_String>` string, :ref:`float<class_float>` width **)** |const|
 
 Returns the size that the string would have with word wrapping enabled with a fixed ``width``.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Font_method_has_outline:
 
-- :ref:`bool<class_bool>` **has_outline** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **has_outline** **(** **)** |const|
 
 Returns ``true`` if the font has an outline.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Font_method_is_distance_field_hint:
 
-- :ref:`bool<class_bool>` **is_distance_field_hint** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **is_distance_field_hint** **(** **)** |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Font_method_update_changes:
 
-- void **update_changes** **(** **)**
+.. rst-class:: classref-method
+
+void **update_changes** **(** **)**
 
 After editing a font (changing size, ascent, char rects, etc.). Call this function to propagate changes to controls that might use it.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

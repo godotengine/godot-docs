@@ -16,77 +16,125 @@ BoxContainer
 
 Base class for box containers.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 Arranges child controls vertically or horizontally, and rearranges the controls automatically when their minimum size changes.
+
+.. rst-class:: classref-introduction-group
 
 Tutorials
 ---------
 
 - :doc:`GUI containers <../tutorials/ui/gui_containers>`
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-----------------------------------------------+---------------------------------------------------------+-----------------------------------------------------------------------+
-| :ref:`AlignMode<enum_BoxContainer_AlignMode>` | :ref:`alignment<class_BoxContainer_property_alignment>` | ``0``                                                                 |
-+-----------------------------------------------+---------------------------------------------------------+-----------------------------------------------------------------------+
-| :ref:`MouseFilter<enum_Control_MouseFilter>`  | mouse_filter                                            | ``1`` (overrides :ref:`Control<class_Control_property_mouse_filter>`) |
-+-----------------------------------------------+---------------------------------------------------------+-----------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-----------------------------------------------+---------------------------------------------------------+-----------------------------------------------------------------------+
+   | :ref:`AlignMode<enum_BoxContainer_AlignMode>` | :ref:`alignment<class_BoxContainer_property_alignment>` | ``0``                                                                 |
+   +-----------------------------------------------+---------------------------------------------------------+-----------------------------------------------------------------------+
+   | :ref:`MouseFilter<enum_Control_MouseFilter>`  | mouse_filter                                            | ``1`` (overrides :ref:`Control<class_Control_property_mouse_filter>`) |
+   +-----------------------------------------------+---------------------------------------------------------+-----------------------------------------------------------------------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+------+---------------------------------------------------------------------------------------------------+
-| void | :ref:`add_spacer<class_BoxContainer_method_add_spacer>` **(** :ref:`bool<class_bool>` begin **)** |
-+------+---------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +------+---------------------------------------------------------------------------------------------------+
+   | void | :ref:`add_spacer<class_BoxContainer_method_add_spacer>` **(** :ref:`bool<class_bool>` begin **)** |
+   +------+---------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Enumerations
 ------------
 
 .. _enum_BoxContainer_AlignMode:
 
-.. _class_BoxContainer_constant_ALIGN_BEGIN:
-
-.. _class_BoxContainer_constant_ALIGN_CENTER:
-
-.. _class_BoxContainer_constant_ALIGN_END:
+.. rst-class:: classref-enumeration
 
 enum **AlignMode**:
 
-- **ALIGN_BEGIN** = **0** --- Aligns children with the beginning of the container.
+.. _class_BoxContainer_constant_ALIGN_BEGIN:
 
-- **ALIGN_CENTER** = **1** --- Aligns children with the center of the container.
+.. rst-class:: classref-enumeration-constant
 
-- **ALIGN_END** = **2** --- Aligns children with the end of the container.
+:ref:`AlignMode<enum_BoxContainer_AlignMode>` **ALIGN_BEGIN** = ``0``
+
+Aligns children with the beginning of the container.
+
+.. _class_BoxContainer_constant_ALIGN_CENTER:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`AlignMode<enum_BoxContainer_AlignMode>` **ALIGN_CENTER** = ``1``
+
+Aligns children with the center of the container.
+
+.. _class_BoxContainer_constant_ALIGN_END:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`AlignMode<enum_BoxContainer_AlignMode>` **ALIGN_END** = ``2``
+
+Aligns children with the end of the container.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_BoxContainer_property_alignment:
 
-- :ref:`AlignMode<enum_BoxContainer_AlignMode>` **alignment**
+.. rst-class:: classref-property
 
-+-----------+----------------------+
-| *Default* | ``0``                |
-+-----------+----------------------+
-| *Setter*  | set_alignment(value) |
-+-----------+----------------------+
-| *Getter*  | get_alignment()      |
-+-----------+----------------------+
+:ref:`AlignMode<enum_BoxContainer_AlignMode>` **alignment** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_alignment** **(** :ref:`AlignMode<enum_BoxContainer_AlignMode>` value **)**
+- :ref:`AlignMode<enum_BoxContainer_AlignMode>` **get_alignment** **(** **)**
 
 The alignment of the container's children (must be one of :ref:`ALIGN_BEGIN<class_BoxContainer_constant_ALIGN_BEGIN>`, :ref:`ALIGN_CENTER<class_BoxContainer_constant_ALIGN_CENTER>` or :ref:`ALIGN_END<class_BoxContainer_constant_ALIGN_END>`).
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_BoxContainer_method_add_spacer:
 
-- void **add_spacer** **(** :ref:`bool<class_bool>` begin **)**
+.. rst-class:: classref-method
+
+void **add_spacer** **(** :ref:`bool<class_bool>` begin **)**
 
 Adds a control to the box as a spacer. If ``true``, ``begin`` will insert the spacer control in front of other children.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

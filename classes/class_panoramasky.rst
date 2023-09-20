@@ -14,6 +14,8 @@ PanoramaSky
 
 A type of :ref:`Sky<class_Sky>` used to draw a background texture.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -23,28 +25,41 @@ Using an HDR panorama is strongly recommended for accurate, high-quality reflect
 
 You can use `this tool <https://danilw.github.io/GLSL-howto/cubemap_to_panorama_js/cubemap_to_panorama.html>`__ to convert a cube map to an equirectangular sky map.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-------------------------------+------------------------------------------------------+
-| :ref:`Texture<class_Texture>` | :ref:`panorama<class_PanoramaSky_property_panorama>` |
-+-------------------------------+------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------------+------------------------------------------------------+
+   | :ref:`Texture<class_Texture>` | :ref:`panorama<class_PanoramaSky_property_panorama>` |
+   +-------------------------------+------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_PanoramaSky_property_panorama:
 
-- :ref:`Texture<class_Texture>` **panorama**
+.. rst-class:: classref-property
 
-+----------+---------------------+
-| *Setter* | set_panorama(value) |
-+----------+---------------------+
-| *Getter* | get_panorama()      |
-+----------+---------------------+
+:ref:`Texture<class_Texture>` **panorama**
+
+.. rst-class:: classref-property-setget
+
+- void **set_panorama** **(** :ref:`Texture<class_Texture>` value **)**
+- :ref:`Texture<class_Texture>` **get_panorama** **(** **)**
 
 :ref:`Texture<class_Texture>` to be applied to the PanoramaSky.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

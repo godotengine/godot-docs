@@ -14,12 +14,14 @@ Directory
 
 Type used to handle the filesystem.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 Directory type. It is used to manage directories and their content (not restricted to the project folder).
 
-When creating a new ``Directory``, its default opened directory will be ``res://``. This may change in the future, so it is advised to always use :ref:`open<class_Directory_method_open>` to initialize your ``Directory`` where you want to operate, with explicit error checking.
+When creating a new **Directory**, its default opened directory will be ``res://``. This may change in the future, so it is advised to always use :ref:`open<class_Directory_method_open>` to initialize your **Directory** where you want to operate, with explicit error checking.
 
 \ **Note:** Many resources types are imported (e.g. textures or sound files), and their source asset will not be included in the exported game, as only the imported version is used. Use :ref:`ResourceLoader<class_ResourceLoader>` to access imported resources.
 
@@ -41,118 +43,161 @@ Here is an example on how to iterate through the files of a directory:
         else:
             print("An error occurred when trying to access the path.")
 
+.. rst-class:: classref-introduction-group
+
 Tutorials
 ---------
 
 - :doc:`../tutorials/scripting/filesystem`
 
+.. rst-class:: classref-reftable-group
+
 Methods
 -------
 
-+---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`change_dir<class_Directory_method_change_dir>` **(** :ref:`String<class_String>` todir **)**                                                                  |
-+---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`copy<class_Directory_method_copy>` **(** :ref:`String<class_String>` from, :ref:`String<class_String>` to **)**                                               |
-+---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`               | :ref:`current_is_dir<class_Directory_method_current_is_dir>` **(** **)** |const|                                                                                    |
-+---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`               | :ref:`dir_exists<class_Directory_method_dir_exists>` **(** :ref:`String<class_String>` path **)**                                                                   |
-+---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`               | :ref:`file_exists<class_Directory_method_file_exists>` **(** :ref:`String<class_String>` path **)**                                                                 |
-+---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`           | :ref:`get_current_dir<class_Directory_method_get_current_dir>` **(** **)**                                                                                          |
-+---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                 | :ref:`get_current_drive<class_Directory_method_get_current_drive>` **(** **)**                                                                                      |
-+---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`           | :ref:`get_drive<class_Directory_method_get_drive>` **(** :ref:`int<class_int>` idx **)**                                                                            |
-+---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                 | :ref:`get_drive_count<class_Directory_method_get_drive_count>` **(** **)**                                                                                          |
-+---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`           | :ref:`get_next<class_Directory_method_get_next>` **(** **)**                                                                                                        |
-+---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                 | :ref:`get_space_left<class_Directory_method_get_space_left>` **(** **)**                                                                                            |
-+---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`list_dir_begin<class_Directory_method_list_dir_begin>` **(** :ref:`bool<class_bool>` skip_navigational=false, :ref:`bool<class_bool>` skip_hidden=false **)** |
-+---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                  | :ref:`list_dir_end<class_Directory_method_list_dir_end>` **(** **)**                                                                                                |
-+---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`make_dir<class_Directory_method_make_dir>` **(** :ref:`String<class_String>` path **)**                                                                       |
-+---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`make_dir_recursive<class_Directory_method_make_dir_recursive>` **(** :ref:`String<class_String>` path **)**                                                   |
-+---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`open<class_Directory_method_open>` **(** :ref:`String<class_String>` path **)**                                                                               |
-+---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`remove<class_Directory_method_remove>` **(** :ref:`String<class_String>` path **)**                                                                           |
-+---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`rename<class_Directory_method_rename>` **(** :ref:`String<class_String>` from, :ref:`String<class_String>` to **)**                                           |
-+---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>` | :ref:`change_dir<class_Directory_method_change_dir>` **(** :ref:`String<class_String>` todir **)**                                                                  |
+   +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>` | :ref:`copy<class_Directory_method_copy>` **(** :ref:`String<class_String>` from, :ref:`String<class_String>` to **)**                                               |
+   +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`               | :ref:`current_is_dir<class_Directory_method_current_is_dir>` **(** **)** |const|                                                                                    |
+   +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`               | :ref:`dir_exists<class_Directory_method_dir_exists>` **(** :ref:`String<class_String>` path **)**                                                                   |
+   +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`               | :ref:`file_exists<class_Directory_method_file_exists>` **(** :ref:`String<class_String>` path **)**                                                                 |
+   +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`           | :ref:`get_current_dir<class_Directory_method_get_current_dir>` **(** **)**                                                                                          |
+   +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                 | :ref:`get_current_drive<class_Directory_method_get_current_drive>` **(** **)**                                                                                      |
+   +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`           | :ref:`get_drive<class_Directory_method_get_drive>` **(** :ref:`int<class_int>` idx **)**                                                                            |
+   +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                 | :ref:`get_drive_count<class_Directory_method_get_drive_count>` **(** **)**                                                                                          |
+   +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`           | :ref:`get_next<class_Directory_method_get_next>` **(** **)**                                                                                                        |
+   +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                 | :ref:`get_space_left<class_Directory_method_get_space_left>` **(** **)**                                                                                            |
+   +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>` | :ref:`list_dir_begin<class_Directory_method_list_dir_begin>` **(** :ref:`bool<class_bool>` skip_navigational=false, :ref:`bool<class_bool>` skip_hidden=false **)** |
+   +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                  | :ref:`list_dir_end<class_Directory_method_list_dir_end>` **(** **)**                                                                                                |
+   +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>` | :ref:`make_dir<class_Directory_method_make_dir>` **(** :ref:`String<class_String>` path **)**                                                                       |
+   +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>` | :ref:`make_dir_recursive<class_Directory_method_make_dir_recursive>` **(** :ref:`String<class_String>` path **)**                                                   |
+   +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>` | :ref:`open<class_Directory_method_open>` **(** :ref:`String<class_String>` path **)**                                                                               |
+   +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>` | :ref:`remove<class_Directory_method_remove>` **(** :ref:`String<class_String>` path **)**                                                                           |
+   +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>` | :ref:`rename<class_Directory_method_rename>` **(** :ref:`String<class_String>` from, :ref:`String<class_String>` to **)**                                           |
+   +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_Directory_method_change_dir:
 
-- :ref:`Error<enum_@GlobalScope_Error>` **change_dir** **(** :ref:`String<class_String>` todir **)**
+.. rst-class:: classref-method
+
+:ref:`Error<enum_@GlobalScope_Error>` **change_dir** **(** :ref:`String<class_String>` todir **)**
 
 Changes the currently opened directory to the one passed as an argument. The argument can be relative to the current directory (e.g. ``newdir`` or ``../newdir``), or an absolute path (e.g. ``/tmp/newdir`` or ``res://somedir/newdir``).
 
 Returns one of the :ref:`Error<enum_@GlobalScope_Error>` code constants (``OK`` on success).
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_Directory_method_copy:
 
-- :ref:`Error<enum_@GlobalScope_Error>` **copy** **(** :ref:`String<class_String>` from, :ref:`String<class_String>` to **)**
+.. rst-class:: classref-method
+
+:ref:`Error<enum_@GlobalScope_Error>` **copy** **(** :ref:`String<class_String>` from, :ref:`String<class_String>` to **)**
 
 Copies the ``from`` file to the ``to`` destination. Both arguments should be paths to files, either relative or absolute. If the destination file exists and is not access-protected, it will be overwritten.
 
 Returns one of the :ref:`Error<enum_@GlobalScope_Error>` code constants (``OK`` on success).
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_Directory_method_current_is_dir:
 
-- :ref:`bool<class_bool>` **current_is_dir** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **current_is_dir** **(** **)** |const|
 
 Returns whether the current item processed with the last :ref:`get_next<class_Directory_method_get_next>` call is a directory (``.`` and ``..`` are considered directories).
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Directory_method_dir_exists:
 
-- :ref:`bool<class_bool>` **dir_exists** **(** :ref:`String<class_String>` path **)**
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **dir_exists** **(** :ref:`String<class_String>` path **)**
 
 Returns whether the target directory exists. The argument can be relative to the current directory, or an absolute path.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Directory_method_file_exists:
 
-- :ref:`bool<class_bool>` **file_exists** **(** :ref:`String<class_String>` path **)**
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **file_exists** **(** :ref:`String<class_String>` path **)**
 
 Returns whether the target file exists. The argument can be relative to the current directory, or an absolute path.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Directory_method_get_current_dir:
 
-- :ref:`String<class_String>` **get_current_dir** **(** **)**
+.. rst-class:: classref-method
+
+:ref:`String<class_String>` **get_current_dir** **(** **)**
 
 Returns the absolute path to the currently opened directory (e.g. ``res://folder`` or ``C:\tmp\folder``).
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Directory_method_get_current_drive:
 
-- :ref:`int<class_int>` **get_current_drive** **(** **)**
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **get_current_drive** **(** **)**
 
 Returns the currently opened directory's drive index. See :ref:`get_drive<class_Directory_method_get_drive>` to convert returned index to the name of the drive.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Directory_method_get_drive:
 
-- :ref:`String<class_String>` **get_drive** **(** :ref:`int<class_int>` idx **)**
+.. rst-class:: classref-method
+
+:ref:`String<class_String>` **get_drive** **(** :ref:`int<class_int>` idx **)**
 
 On Windows, returns the name of the drive (partition) passed as an argument (e.g. ``C:``).
 
@@ -162,11 +207,15 @@ On Linux, returns the path to the mounted volume or GTK 3 bookmark passed as an 
 
 On other platforms, or if the requested drive does not exist, the method returns an empty String.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_Directory_method_get_drive_count:
 
-- :ref:`int<class_int>` **get_drive_count** **(** **)**
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **get_drive_count** **(** **)**
 
 On Windows, returns the number of drives (partitions) mounted on the current filesystem.
 
@@ -176,29 +225,41 @@ On Linux, returns the number of mounted volumes and GTK 3 bookmarks.
 
 On other platforms, the method returns 0.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_Directory_method_get_next:
 
-- :ref:`String<class_String>` **get_next** **(** **)**
+.. rst-class:: classref-method
+
+:ref:`String<class_String>` **get_next** **(** **)**
 
 Returns the next element (file or directory) in the current directory (including ``.`` and ``..``, unless ``skip_navigational`` was given to :ref:`list_dir_begin<class_Directory_method_list_dir_begin>`).
 
 The name of the file or directory is returned (and not its full path). Once the stream has been fully processed, the method returns an empty String and closes the stream automatically (i.e. :ref:`list_dir_end<class_Directory_method_list_dir_end>` would not be mandatory in such a case).
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_Directory_method_get_space_left:
 
-- :ref:`int<class_int>` **get_space_left** **(** **)**
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **get_space_left** **(** **)**
 
 On UNIX desktop systems, returns the available space on the current directory's disk. On other platforms, this information is not available and the method returns 0 or -1.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Directory_method_list_dir_begin:
 
-- :ref:`Error<enum_@GlobalScope_Error>` **list_dir_begin** **(** :ref:`bool<class_bool>` skip_navigational=false, :ref:`bool<class_bool>` skip_hidden=false **)**
+.. rst-class:: classref-method
+
+:ref:`Error<enum_@GlobalScope_Error>` **list_dir_begin** **(** :ref:`bool<class_bool>` skip_navigational=false, :ref:`bool<class_bool>` skip_hidden=false **)**
 
 Initializes the stream used to list all files and directories using the :ref:`get_next<class_Directory_method_get_next>` function, closing the currently opened stream if needed. Once the stream has been processed, it should typically be closed with :ref:`list_dir_end<class_Directory_method_list_dir_end>`.
 
@@ -206,49 +267,69 @@ If ``skip_navigational`` is ``true``, ``.`` and ``..`` are filtered out.
 
 If ``skip_hidden`` is ``true``, hidden files are filtered out.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_Directory_method_list_dir_end:
 
-- void **list_dir_end** **(** **)**
+.. rst-class:: classref-method
+
+void **list_dir_end** **(** **)**
 
 Closes the current stream opened with :ref:`list_dir_begin<class_Directory_method_list_dir_begin>` (whether it has been fully processed with :ref:`get_next<class_Directory_method_get_next>` does not matter).
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Directory_method_make_dir:
 
-- :ref:`Error<enum_@GlobalScope_Error>` **make_dir** **(** :ref:`String<class_String>` path **)**
+.. rst-class:: classref-method
+
+:ref:`Error<enum_@GlobalScope_Error>` **make_dir** **(** :ref:`String<class_String>` path **)**
 
 Creates a directory. The argument can be relative to the current directory, or an absolute path. The target directory should be placed in an already existing directory (to create the full path recursively, see :ref:`make_dir_recursive<class_Directory_method_make_dir_recursive>`).
 
 Returns one of the :ref:`Error<enum_@GlobalScope_Error>` code constants (``OK`` on success).
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_Directory_method_make_dir_recursive:
 
-- :ref:`Error<enum_@GlobalScope_Error>` **make_dir_recursive** **(** :ref:`String<class_String>` path **)**
+.. rst-class:: classref-method
+
+:ref:`Error<enum_@GlobalScope_Error>` **make_dir_recursive** **(** :ref:`String<class_String>` path **)**
 
 Creates a target directory and all necessary intermediate directories in its path, by calling :ref:`make_dir<class_Directory_method_make_dir>` recursively. The argument can be relative to the current directory, or an absolute path.
 
 Returns one of the :ref:`Error<enum_@GlobalScope_Error>` code constants (``OK`` on success).
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_Directory_method_open:
 
-- :ref:`Error<enum_@GlobalScope_Error>` **open** **(** :ref:`String<class_String>` path **)**
+.. rst-class:: classref-method
+
+:ref:`Error<enum_@GlobalScope_Error>` **open** **(** :ref:`String<class_String>` path **)**
 
 Opens an existing directory of the filesystem. The ``path`` argument can be within the project tree (``res://folder``), the user directory (``user://folder``) or an absolute path of the user filesystem (e.g. ``/tmp/folder`` or ``C:\tmp\folder``).
 
 Returns one of the :ref:`Error<enum_@GlobalScope_Error>` code constants (``OK`` on success).
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_Directory_method_remove:
 
-- :ref:`Error<enum_@GlobalScope_Error>` **remove** **(** :ref:`String<class_String>` path **)**
+.. rst-class:: classref-method
+
+:ref:`Error<enum_@GlobalScope_Error>` **remove** **(** :ref:`String<class_String>` path **)**
 
 Permanently deletes the target file or an empty directory. The argument can be relative to the current directory, or an absolute path. If the target directory is not empty, the operation will fail.
 
@@ -256,11 +337,15 @@ If you don't want to delete the file/directory permanently, use :ref:`OS.move_to
 
 Returns one of the :ref:`Error<enum_@GlobalScope_Error>` code constants (``OK`` on success).
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_Directory_method_rename:
 
-- :ref:`Error<enum_@GlobalScope_Error>` **rename** **(** :ref:`String<class_String>` from, :ref:`String<class_String>` to **)**
+.. rst-class:: classref-method
+
+:ref:`Error<enum_@GlobalScope_Error>` **rename** **(** :ref:`String<class_String>` from, :ref:`String<class_String>` to **)**
 
 Renames (move) the ``from`` file or directory to the ``to`` destination. Both arguments should be paths to files or directories, either relative or absolute. If the destination file or directory exists and is not access-protected, it will be overwritten.
 
@@ -269,3 +354,4 @@ Returns one of the :ref:`Error<enum_@GlobalScope_Error>` code constants (``OK`` 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

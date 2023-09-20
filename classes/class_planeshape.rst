@@ -14,35 +14,48 @@ PlaneShape
 
 Infinite plane shape for 3D collisions.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
-An infinite plane shape for 3D collisions. Note that the :ref:`Plane<class_Plane>`'s normal matters; anything "below" the plane will collide with it. If the ``PlaneShape`` is used in a :ref:`PhysicsBody<class_PhysicsBody>`, it will cause colliding objects placed "below" it to teleport "above" the plane.
+An infinite plane shape for 3D collisions. Note that the :ref:`Plane<class_Plane>`'s normal matters; anything "below" the plane will collide with it. If the **PlaneShape** is used in a :ref:`PhysicsBody<class_PhysicsBody>`, it will cause colliding objects placed "below" it to teleport "above" the plane.
+
+.. rst-class:: classref-reftable-group
 
 Properties
 ----------
 
-+---------------------------+-----------------------------------------------+-------------------------+
-| :ref:`Plane<class_Plane>` | :ref:`plane<class_PlaneShape_property_plane>` | ``Plane( 0, 1, 0, 0 )`` |
-+---------------------------+-----------------------------------------------+-------------------------+
+.. table::
+   :widths: auto
+
+   +---------------------------+-----------------------------------------------+-------------------------+
+   | :ref:`Plane<class_Plane>` | :ref:`plane<class_PlaneShape_property_plane>` | ``Plane( 0, 1, 0, 0 )`` |
+   +---------------------------+-----------------------------------------------+-------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_PlaneShape_property_plane:
 
-- :ref:`Plane<class_Plane>` **plane**
+.. rst-class:: classref-property
 
-+-----------+-------------------------+
-| *Default* | ``Plane( 0, 1, 0, 0 )`` |
-+-----------+-------------------------+
-| *Setter*  | set_plane(value)        |
-+-----------+-------------------------+
-| *Getter*  | get_plane()             |
-+-----------+-------------------------+
+:ref:`Plane<class_Plane>` **plane** = ``Plane( 0, 1, 0, 0 )``
 
-The :ref:`Plane<class_Plane>` used by the ``PlaneShape`` for collision.
+.. rst-class:: classref-property-setget
+
+- void **set_plane** **(** :ref:`Plane<class_Plane>` value **)**
+- :ref:`Plane<class_Plane>` **get_plane** **(** **)**
+
+The :ref:`Plane<class_Plane>` used by the **PlaneShape** for collision.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

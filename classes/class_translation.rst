@@ -16,10 +16,14 @@ Translation
 
 Language Translation.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 Translations are resources that can be loaded and unloaded on demand. They map a string to another string.
+
+.. rst-class:: classref-introduction-group
 
 Tutorials
 ---------
@@ -28,96 +32,140 @@ Tutorials
 
 - :doc:`../tutorials/i18n/locales`
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-----------------------------+--------------------------------------------------+----------+
-| :ref:`String<class_String>` | :ref:`locale<class_Translation_property_locale>` | ``"en"`` |
-+-----------------------------+--------------------------------------------------+----------+
+.. table::
+   :widths: auto
+
+   +-----------------------------+--------------------------------------------------+----------+
+   | :ref:`String<class_String>` | :ref:`locale<class_Translation_property_locale>` | ``"en"`` |
+   +-----------------------------+--------------------------------------------------+----------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`                   | :ref:`_get_message<class_Translation_method__get_message>` **(** :ref:`String<class_String>` src_message **)** |virtual|                                 |
-+-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                          | :ref:`add_message<class_Translation_method_add_message>` **(** :ref:`String<class_String>` src_message, :ref:`String<class_String>` xlated_message **)** |
-+-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                          | :ref:`erase_message<class_Translation_method_erase_message>` **(** :ref:`String<class_String>` src_message **)**                                         |
-+-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`                   | :ref:`get_message<class_Translation_method_get_message>` **(** :ref:`String<class_String>` src_message **)** |const|                                     |
-+-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                         | :ref:`get_message_count<class_Translation_method_get_message_count>` **(** **)** |const|                                                                 |
-+-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolStringArray<class_PoolStringArray>` | :ref:`get_message_list<class_Translation_method_get_message_list>` **(** **)** |const|                                                                   |
-+-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                   | :ref:`_get_message<class_Translation_method__get_message>` **(** :ref:`String<class_String>` src_message **)** |virtual|                                 |
+   +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                          | :ref:`add_message<class_Translation_method_add_message>` **(** :ref:`String<class_String>` src_message, :ref:`String<class_String>` xlated_message **)** |
+   +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                          | :ref:`erase_message<class_Translation_method_erase_message>` **(** :ref:`String<class_String>` src_message **)**                                         |
+   +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                   | :ref:`get_message<class_Translation_method_get_message>` **(** :ref:`String<class_String>` src_message **)** |const|                                     |
+   +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                         | :ref:`get_message_count<class_Translation_method_get_message_count>` **(** **)** |const|                                                                 |
+   +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PoolStringArray<class_PoolStringArray>` | :ref:`get_message_list<class_Translation_method_get_message_list>` **(** **)** |const|                                                                   |
+   +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_Translation_property_locale:
 
-- :ref:`String<class_String>` **locale**
+.. rst-class:: classref-property
 
-+-----------+-------------------+
-| *Default* | ``"en"``          |
-+-----------+-------------------+
-| *Setter*  | set_locale(value) |
-+-----------+-------------------+
-| *Getter*  | get_locale()      |
-+-----------+-------------------+
+:ref:`String<class_String>` **locale** = ``"en"``
+
+.. rst-class:: classref-property-setget
+
+- void **set_locale** **(** :ref:`String<class_String>` value **)**
+- :ref:`String<class_String>` **get_locale** **(** **)**
 
 The locale of the translation.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_Translation_method__get_message:
 
-- :ref:`String<class_String>` **_get_message** **(** :ref:`String<class_String>` src_message **)** |virtual|
+.. rst-class:: classref-method
+
+:ref:`String<class_String>` **_get_message** **(** :ref:`String<class_String>` src_message **)** |virtual|
 
 Virtual method to override :ref:`get_message<class_Translation_method_get_message>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Translation_method_add_message:
 
-- void **add_message** **(** :ref:`String<class_String>` src_message, :ref:`String<class_String>` xlated_message **)**
+.. rst-class:: classref-method
+
+void **add_message** **(** :ref:`String<class_String>` src_message, :ref:`String<class_String>` xlated_message **)**
 
 Adds a message if nonexistent, followed by its translation.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Translation_method_erase_message:
 
-- void **erase_message** **(** :ref:`String<class_String>` src_message **)**
+.. rst-class:: classref-method
+
+void **erase_message** **(** :ref:`String<class_String>` src_message **)**
 
 Erases a message.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Translation_method_get_message:
 
-- :ref:`String<class_String>` **get_message** **(** :ref:`String<class_String>` src_message **)** |const|
+.. rst-class:: classref-method
+
+:ref:`String<class_String>` **get_message** **(** :ref:`String<class_String>` src_message **)** |const|
 
 Returns a message's translation.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Translation_method_get_message_count:
 
-- :ref:`int<class_int>` **get_message_count** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **get_message_count** **(** **)** |const|
 
 Returns the number of existing messages.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Translation_method_get_message_list:
 
-- :ref:`PoolStringArray<class_PoolStringArray>` **get_message_list** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`PoolStringArray<class_PoolStringArray>` **get_message_list** **(** **)** |const|
 
 Returns all the messages (keys).
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

@@ -14,59 +14,97 @@ Skeleton2D
 
 Skeleton for 2D characters and animated objects.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 Skeleton2D parents a hierarchy of :ref:`Bone2D<class_Bone2D>` objects. It is a requirement of :ref:`Bone2D<class_Bone2D>`. Skeleton2D holds a reference to the rest pose of its children and acts as a single point of access to its bones.
+
+.. rst-class:: classref-introduction-group
 
 Tutorials
 ---------
 
 - :doc:`../tutorials/animation/2d_skeletons`
 
+.. rst-class:: classref-reftable-group
+
 Methods
 -------
 
-+-----------------------------+-----------------------------------------------------------------------------------------+
-| :ref:`Bone2D<class_Bone2D>` | :ref:`get_bone<class_Skeleton2D_method_get_bone>` **(** :ref:`int<class_int>` idx **)** |
-+-----------------------------+-----------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`       | :ref:`get_bone_count<class_Skeleton2D_method_get_bone_count>` **(** **)** |const|       |
-+-----------------------------+-----------------------------------------------------------------------------------------+
-| :ref:`RID<class_RID>`       | :ref:`get_skeleton<class_Skeleton2D_method_get_skeleton>` **(** **)** |const|           |
-+-----------------------------+-----------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-----------------------------+-----------------------------------------------------------------------------------------+
+   | :ref:`Bone2D<class_Bone2D>` | :ref:`get_bone<class_Skeleton2D_method_get_bone>` **(** :ref:`int<class_int>` idx **)** |
+   +-----------------------------+-----------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`       | :ref:`get_bone_count<class_Skeleton2D_method_get_bone_count>` **(** **)** |const|       |
+   +-----------------------------+-----------------------------------------------------------------------------------------+
+   | :ref:`RID<class_RID>`       | :ref:`get_skeleton<class_Skeleton2D_method_get_skeleton>` **(** **)** |const|           |
+   +-----------------------------+-----------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Signals
 -------
 
 .. _class_Skeleton2D_signal_bone_setup_changed:
 
-- **bone_setup_changed** **(** **)**
+.. rst-class:: classref-signal
+
+**bone_setup_changed** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this signal. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_Skeleton2D_method_get_bone:
 
-- :ref:`Bone2D<class_Bone2D>` **get_bone** **(** :ref:`int<class_int>` idx **)**
+.. rst-class:: classref-method
+
+:ref:`Bone2D<class_Bone2D>` **get_bone** **(** :ref:`int<class_int>` idx **)**
 
 Returns a :ref:`Bone2D<class_Bone2D>` from the node hierarchy parented by Skeleton2D. The object to return is identified by the parameter ``idx``. Bones are indexed by descending the node hierarchy from top to bottom, adding the children of each branch before moving to the next sibling.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Skeleton2D_method_get_bone_count:
 
-- :ref:`int<class_int>` **get_bone_count** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **get_bone_count** **(** **)** |const|
 
 Returns the number of :ref:`Bone2D<class_Bone2D>` nodes in the node hierarchy parented by Skeleton2D.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Skeleton2D_method_get_skeleton:
 
-- :ref:`RID<class_RID>` **get_skeleton** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`RID<class_RID>` **get_skeleton** **(** **)** |const|
 
 Returns the :ref:`RID<class_RID>` of a Skeleton2D instance.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

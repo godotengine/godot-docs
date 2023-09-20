@@ -14,6 +14,8 @@ VisualScriptSceneNode
 
 Node reference.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -27,30 +29,41 @@ none
 
 - Data: ``node`` (obj)
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+---------------------------------+------------------------------------------------------------------+-------------------+
-| :ref:`NodePath<class_NodePath>` | :ref:`node_path<class_VisualScriptSceneNode_property_node_path>` | ``NodePath(".")`` |
-+---------------------------------+------------------------------------------------------------------+-------------------+
+.. table::
+   :widths: auto
+
+   +---------------------------------+------------------------------------------------------------------+-------------------+
+   | :ref:`NodePath<class_NodePath>` | :ref:`node_path<class_VisualScriptSceneNode_property_node_path>` | ``NodePath(".")`` |
+   +---------------------------------+------------------------------------------------------------------+-------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_VisualScriptSceneNode_property_node_path:
 
-- :ref:`NodePath<class_NodePath>` **node_path**
+.. rst-class:: classref-property
 
-+-----------+----------------------+
-| *Default* | ``NodePath(".")``    |
-+-----------+----------------------+
-| *Setter*  | set_node_path(value) |
-+-----------+----------------------+
-| *Getter*  | get_node_path()      |
-+-----------+----------------------+
+:ref:`NodePath<class_NodePath>` **node_path** = ``NodePath(".")``
+
+.. rst-class:: classref-property-setget
+
+- void **set_node_path** **(** :ref:`NodePath<class_NodePath>` value **)**
+- :ref:`NodePath<class_NodePath>` **get_node_path** **(** **)**
 
 The node's path in the scene tree.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

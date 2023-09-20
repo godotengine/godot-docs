@@ -14,50 +14,79 @@ VisualShaderNodeTransformFunc
 
 Computes a :ref:`Transform<class_Transform>` function within the visual shader graph.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 Computes an inverse or transpose function on the provided :ref:`Transform<class_Transform>`.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+--------------------------------------------------------------+------------------------------------------------------------------------+-------+
-| :ref:`Function<enum_VisualShaderNodeTransformFunc_Function>` | :ref:`function<class_VisualShaderNodeTransformFunc_property_function>` | ``0`` |
-+--------------------------------------------------------------+------------------------------------------------------------------------+-------+
+.. table::
+   :widths: auto
+
+   +--------------------------------------------------------------+------------------------------------------------------------------------+-------+
+   | :ref:`Function<enum_VisualShaderNodeTransformFunc_Function>` | :ref:`function<class_VisualShaderNodeTransformFunc_property_function>` | ``0`` |
+   +--------------------------------------------------------------+------------------------------------------------------------------------+-------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Enumerations
 ------------
 
 .. _enum_VisualShaderNodeTransformFunc_Function:
 
-.. _class_VisualShaderNodeTransformFunc_constant_FUNC_INVERSE:
-
-.. _class_VisualShaderNodeTransformFunc_constant_FUNC_TRANSPOSE:
+.. rst-class:: classref-enumeration
 
 enum **Function**:
 
-- **FUNC_INVERSE** = **0** --- Perform the inverse operation on the :ref:`Transform<class_Transform>` matrix.
+.. _class_VisualShaderNodeTransformFunc_constant_FUNC_INVERSE:
 
-- **FUNC_TRANSPOSE** = **1** --- Perform the transpose operation on the :ref:`Transform<class_Transform>` matrix.
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Function<enum_VisualShaderNodeTransformFunc_Function>` **FUNC_INVERSE** = ``0``
+
+Perform the inverse operation on the :ref:`Transform<class_Transform>` matrix.
+
+.. _class_VisualShaderNodeTransformFunc_constant_FUNC_TRANSPOSE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Function<enum_VisualShaderNodeTransformFunc_Function>` **FUNC_TRANSPOSE** = ``1``
+
+Perform the transpose operation on the :ref:`Transform<class_Transform>` matrix.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_VisualShaderNodeTransformFunc_property_function:
 
-- :ref:`Function<enum_VisualShaderNodeTransformFunc_Function>` **function**
+.. rst-class:: classref-property
 
-+-----------+---------------------+
-| *Default* | ``0``               |
-+-----------+---------------------+
-| *Setter*  | set_function(value) |
-+-----------+---------------------+
-| *Getter*  | get_function()      |
-+-----------+---------------------+
+:ref:`Function<enum_VisualShaderNodeTransformFunc_Function>` **function** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_function** **(** :ref:`Function<enum_VisualShaderNodeTransformFunc_Function>` value **)**
+- :ref:`Function<enum_VisualShaderNodeTransformFunc_Function>` **get_function** **(** **)**
 
 The function to be computed. See :ref:`Function<enum_VisualShaderNodeTransformFunc_Function>` for options.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

@@ -12,14 +12,18 @@ float
 
 Float built-in type.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
-The ``float`` built-in type is a 64-bit double-precision floating-point number, equivalent to ``double`` in C++. This type has 14 reliable decimal digits of precision. The ``float`` type can be stored in :ref:`Variant<class_Variant>`, which is the generic type used by the engine. The maximum value of ``float`` is approximately ``1.79769e308``, and the minimum is approximately ``-1.79769e308``.
+The **float** built-in type is a 64-bit double-precision floating-point number, equivalent to ``double`` in C++. This type has 14 reliable decimal digits of precision. The **float** type can be stored in :ref:`Variant<class_Variant>`, which is the generic type used by the engine. The maximum value of **float** is approximately ``1.79769e308``, and the minimum is approximately ``-1.79769e308``.
 
 Most methods and properties in the engine use 32-bit single-precision floating-point numbers instead, equivalent to ``float`` in C++, which have 6 reliable decimal digits of precision. For data structures such as :ref:`Vector2<class_Vector2>` and :ref:`Vector3<class_Vector3>`, Godot uses 32-bit floating-point numbers.
 
-Math done using the ``float`` type is not guaranteed to be exact or deterministic, and will often result in small errors. You should usually use the :ref:`@GDScript.is_equal_approx<class_@GDScript_method_is_equal_approx>` and :ref:`@GDScript.is_zero_approx<class_@GDScript_method_is_zero_approx>` methods instead of ``==`` to compare ``float`` values for equality.
+Math done using the **float** type is not guaranteed to be exact or deterministic, and will often result in small errors. You should usually use the :ref:`@GDScript.is_equal_approx<class_@GDScript_method_is_equal_approx>` and :ref:`@GDScript.is_zero_approx<class_@GDScript_method_is_zero_approx>` methods instead of ``==`` to compare **float** values for equality.
+
+.. rst-class:: classref-introduction-group
 
 Tutorials
 ---------
@@ -28,38 +32,60 @@ Tutorials
 
 - `Wikipedia: Single-precision floating-point format <https://en.wikipedia.org/wiki/Single-precision_floating-point_format>`__
 
+.. rst-class:: classref-reftable-group
+
 Methods
 -------
 
-+---------------------------+-------------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`float<class_float_method_float>` **(** :ref:`bool<class_bool>` from **)**     |
-+---------------------------+-------------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`float<class_float_method_float>` **(** :ref:`int<class_int>` from **)**       |
-+---------------------------+-------------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`float<class_float_method_float>` **(** :ref:`String<class_String>` from **)** |
-+---------------------------+-------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +---------------------------+-------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>` | :ref:`float<class_float_method_float>` **(** :ref:`bool<class_bool>` from **)**     |
+   +---------------------------+-------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>` | :ref:`float<class_float_method_float>` **(** :ref:`int<class_int>` from **)**       |
+   +---------------------------+-------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>` | :ref:`float<class_float_method_float>` **(** :ref:`String<class_String>` from **)** |
+   +---------------------------+-------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_float_method_float:
 
-- :ref:`float<class_float>` **float** **(** :ref:`bool<class_bool>` from **)**
+.. rst-class:: classref-method
+
+:ref:`float<class_float>` **float** **(** :ref:`bool<class_bool>` from **)**
 
 Cast a :ref:`bool<class_bool>` value to a floating-point value, ``float(true)`` will be equal to 1.0 and ``float(false)`` will be equal to 0.0.
 
+.. rst-class:: classref-item-separator
+
 ----
 
-- :ref:`float<class_float>` **float** **(** :ref:`int<class_int>` from **)**
+.. rst-class:: classref-method
+
+:ref:`float<class_float>` **float** **(** :ref:`int<class_int>` from **)**
 
 Cast an :ref:`int<class_int>` value to a floating-point value, ``float(1)`` will be equal to 1.0.
 
+.. rst-class:: classref-item-separator
+
 ----
 
-- :ref:`float<class_float>` **float** **(** :ref:`String<class_String>` from **)**
+.. rst-class:: classref-method
+
+:ref:`float<class_float>` **float** **(** :ref:`String<class_String>` from **)**
 
 Cast a :ref:`String<class_String>` value to a floating-point value. This method accepts float value strings like ``"1.23"`` and exponential notation strings for its parameter so calling ``float("1e3")`` will return 1000.0 and calling ``float("1e-3")`` will return 0.001. Calling this method with an invalid float string will return 0. This method stops parsing at the first invalid character and will return the parsed result so far, so calling ``float("1a3")`` will return 1 while calling ``float("1e3a2")`` will return 1000.0.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

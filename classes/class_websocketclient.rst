@@ -14,6 +14,8 @@ WebSocketClient
 
 A WebSocket client implementation.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -25,110 +27,162 @@ After starting the client (:ref:`connect_to_url<class_WebSocketClient_method_con
 
 You will receive appropriate signals when connecting, disconnecting, or when new data is available.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-----------------------------------------------+----------------------------------------------------------------------------------------+
-| :ref:`X509Certificate<class_X509Certificate>` | :ref:`trusted_ssl_certificate<class_WebSocketClient_property_trusted_ssl_certificate>` |
-+-----------------------------------------------+----------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                       | :ref:`verify_ssl<class_WebSocketClient_property_verify_ssl>`                           |
-+-----------------------------------------------+----------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-----------------------------------------------+----------------------------------------------------------------------------------------+
+   | :ref:`X509Certificate<class_X509Certificate>` | :ref:`trusted_ssl_certificate<class_WebSocketClient_property_trusted_ssl_certificate>` |
+   +-----------------------------------------------+----------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                       | :ref:`verify_ssl<class_WebSocketClient_property_verify_ssl>`                           |
+   +-----------------------------------------------+----------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`connect_to_url<class_WebSocketClient_method_connect_to_url>` **(** :ref:`String<class_String>` url, :ref:`PoolStringArray<class_PoolStringArray>` protocols=PoolStringArray(  ), :ref:`bool<class_bool>` gd_mp_api=false, :ref:`PoolStringArray<class_PoolStringArray>` custom_headers=PoolStringArray(  ) **)** |
-+---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                  | :ref:`disconnect_from_host<class_WebSocketClient_method_disconnect_from_host>` **(** :ref:`int<class_int>` code=1000, :ref:`String<class_String>` reason="" **)**                                                                                                                                                      |
-+---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`           | :ref:`get_connected_host<class_WebSocketClient_method_get_connected_host>` **(** **)** |const|                                                                                                                                                                                                                         |
-+---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                 | :ref:`get_connected_port<class_WebSocketClient_method_get_connected_port>` **(** **)** |const|                                                                                                                                                                                                                         |
-+---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>` | :ref:`connect_to_url<class_WebSocketClient_method_connect_to_url>` **(** :ref:`String<class_String>` url, :ref:`PoolStringArray<class_PoolStringArray>` protocols=PoolStringArray(  ), :ref:`bool<class_bool>` gd_mp_api=false, :ref:`PoolStringArray<class_PoolStringArray>` custom_headers=PoolStringArray(  ) **)** |
+   +---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                  | :ref:`disconnect_from_host<class_WebSocketClient_method_disconnect_from_host>` **(** :ref:`int<class_int>` code=1000, :ref:`String<class_String>` reason="" **)**                                                                                                                                                      |
+   +---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`           | :ref:`get_connected_host<class_WebSocketClient_method_get_connected_host>` **(** **)** |const|                                                                                                                                                                                                                         |
+   +---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                 | :ref:`get_connected_port<class_WebSocketClient_method_get_connected_port>` **(** **)** |const|                                                                                                                                                                                                                         |
+   +---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Signals
 -------
 
 .. _class_WebSocketClient_signal_connection_closed:
 
-- **connection_closed** **(** :ref:`bool<class_bool>` was_clean_close **)**
+.. rst-class:: classref-signal
+
+**connection_closed** **(** :ref:`bool<class_bool>` was_clean_close **)**
 
 Emitted when the connection to the server is closed. ``was_clean_close`` will be ``true`` if the connection was shutdown cleanly.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_WebSocketClient_signal_connection_error:
 
-- **connection_error** **(** **)**
+.. rst-class:: classref-signal
+
+**connection_error** **(** **)**
 
 Emitted when the connection to the server fails.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_WebSocketClient_signal_connection_established:
 
-- **connection_established** **(** :ref:`String<class_String>` protocol **)**
+.. rst-class:: classref-signal
+
+**connection_established** **(** :ref:`String<class_String>` protocol **)**
 
 Emitted when a connection with the server is established, ``protocol`` will contain the sub-protocol agreed with the server.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_WebSocketClient_signal_data_received:
 
-- **data_received** **(** **)**
+.. rst-class:: classref-signal
+
+**data_received** **(** **)**
 
 Emitted when a WebSocket message is received.
 
 \ **Note:** This signal is *not* emitted when used as high-level multiplayer peer.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_WebSocketClient_signal_server_close_request:
 
-- **server_close_request** **(** :ref:`int<class_int>` code, :ref:`String<class_String>` reason **)**
+.. rst-class:: classref-signal
+
+**server_close_request** **(** :ref:`int<class_int>` code, :ref:`String<class_String>` reason **)**
 
 Emitted when the server requests a clean close. You should keep polling until you get a :ref:`connection_closed<class_WebSocketClient_signal_connection_closed>` signal to achieve the clean close. See :ref:`WebSocketPeer.close<class_WebSocketPeer_method_close>` for more details.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_WebSocketClient_property_trusted_ssl_certificate:
 
-- :ref:`X509Certificate<class_X509Certificate>` **trusted_ssl_certificate**
+.. rst-class:: classref-property
 
-+----------+------------------------------------+
-| *Setter* | set_trusted_ssl_certificate(value) |
-+----------+------------------------------------+
-| *Getter* | get_trusted_ssl_certificate()      |
-+----------+------------------------------------+
+:ref:`X509Certificate<class_X509Certificate>` **trusted_ssl_certificate**
+
+.. rst-class:: classref-property-setget
+
+- void **set_trusted_ssl_certificate** **(** :ref:`X509Certificate<class_X509Certificate>` value **)**
+- :ref:`X509Certificate<class_X509Certificate>` **get_trusted_ssl_certificate** **(** **)**
 
 If specified, this :ref:`X509Certificate<class_X509Certificate>` will be the only one accepted when connecting to an SSL host. Any other certificate provided by the server will be regarded as invalid.
 
 \ **Note:** Specifying a custom ``trusted_ssl_certificate`` is not supported in HTML5 exports due to browsers restrictions.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_WebSocketClient_property_verify_ssl:
 
-- :ref:`bool<class_bool>` **verify_ssl**
+.. rst-class:: classref-property
 
-+----------+-------------------------------+
-| *Setter* | set_verify_ssl_enabled(value) |
-+----------+-------------------------------+
-| *Getter* | is_verify_ssl_enabled()       |
-+----------+-------------------------------+
+:ref:`bool<class_bool>` **verify_ssl**
+
+.. rst-class:: classref-property-setget
+
+- void **set_verify_ssl_enabled** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_verify_ssl_enabled** **(** **)**
 
 If ``true``, SSL certificate verification is enabled.
 
 \ **Note:** You must specify the certificates to be used in the Project Settings for it to work when exported.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_WebSocketClient_method_connect_to_url:
 
-- :ref:`Error<enum_@GlobalScope_Error>` **connect_to_url** **(** :ref:`String<class_String>` url, :ref:`PoolStringArray<class_PoolStringArray>` protocols=PoolStringArray(  ), :ref:`bool<class_bool>` gd_mp_api=false, :ref:`PoolStringArray<class_PoolStringArray>` custom_headers=PoolStringArray(  ) **)**
+.. rst-class:: classref-method
+
+:ref:`Error<enum_@GlobalScope_Error>` **connect_to_url** **(** :ref:`String<class_String>` url, :ref:`PoolStringArray<class_PoolStringArray>` protocols=PoolStringArray(  ), :ref:`bool<class_bool>` gd_mp_api=false, :ref:`PoolStringArray<class_PoolStringArray>` custom_headers=PoolStringArray(  ) **)**
 
 Connects to the given URL requesting one of the given ``protocols`` as sub-protocol. If the list empty (default), no sub-protocol will be requested.
 
@@ -142,30 +196,43 @@ You can optionally pass a list of ``custom_headers`` to be added to the handshak
 
 \ **Note:** Specifying ``custom_headers`` is not supported in HTML5 exports due to browsers restrictions.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_WebSocketClient_method_disconnect_from_host:
 
-- void **disconnect_from_host** **(** :ref:`int<class_int>` code=1000, :ref:`String<class_String>` reason="" **)**
+.. rst-class:: classref-method
+
+void **disconnect_from_host** **(** :ref:`int<class_int>` code=1000, :ref:`String<class_String>` reason="" **)**
 
 Disconnects this client from the connected host. See :ref:`WebSocketPeer.close<class_WebSocketPeer_method_close>` for more information.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_WebSocketClient_method_get_connected_host:
 
-- :ref:`String<class_String>` **get_connected_host** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`String<class_String>` **get_connected_host** **(** **)** |const|
 
 Return the IP address of the currently connected host.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_WebSocketClient_method_get_connected_port:
 
-- :ref:`int<class_int>` **get_connected_port** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **get_connected_port** **(** **)** |const|
 
 Return the IP port of the currently connected host.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

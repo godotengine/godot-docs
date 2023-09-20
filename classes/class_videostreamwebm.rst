@@ -14,6 +14,8 @@ VideoStreamWebm
 
 :ref:`VideoStream<class_VideoStream>` resource for WebM videos.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -21,34 +23,52 @@ Description
 
 \ **Note:** Alpha channel (also known as transparency) is not supported. The video will always appear to have a black background, even if it originally contains an alpha channel.
 
-\ **Note:** There are known bugs and performance issues with WebM video playback in Godot. If you run into problems, try using the Ogg Theora format instead: :ref:`VideoStreamTheora<class_VideoStreamTheora>`
+\ **Note:** Not supported on iOS, or when compiled for RISC-V, and there are known bugs and performance issues with WebM video playback in Godot. If you run into problems, try using the Ogg Theora format instead: :ref:`VideoStreamTheora<class_VideoStreamTheora>`
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+-----------------------------+-----------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>` | :ref:`get_file<class_VideoStreamWebm_method_get_file>` **(** **)**                                  |
-+-----------------------------+-----------------------------------------------------------------------------------------------------+
-| void                        | :ref:`set_file<class_VideoStreamWebm_method_set_file>` **(** :ref:`String<class_String>` file **)** |
-+-----------------------------+-----------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-----------------------------+-----------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>` | :ref:`get_file<class_VideoStreamWebm_method_get_file>` **(** **)**                                  |
+   +-----------------------------+-----------------------------------------------------------------------------------------------------+
+   | void                        | :ref:`set_file<class_VideoStreamWebm_method_set_file>` **(** :ref:`String<class_String>` file **)** |
+   +-----------------------------+-----------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_VideoStreamWebm_method_get_file:
 
-- :ref:`String<class_String>` **get_file** **(** **)**
+.. rst-class:: classref-method
 
-Returns the WebM video file handled by this ``VideoStreamWebm``.
+:ref:`String<class_String>` **get_file** **(** **)**
+
+Returns the WebM video file handled by this **VideoStreamWebm**.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_VideoStreamWebm_method_set_file:
 
-- void **set_file** **(** :ref:`String<class_String>` file **)**
+.. rst-class:: classref-method
 
-Sets the WebM video file that this ``VideoStreamWebm`` resource handles. The ``file`` name should have the ``.webm`` extension.
+void **set_file** **(** :ref:`String<class_String>` file **)**
+
+Sets the WebM video file that this **VideoStreamWebm** resource handles. The ``file`` name should have the ``.webm`` extension.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

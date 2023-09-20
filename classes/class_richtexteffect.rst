@@ -14,19 +14,23 @@ RichTextEffect
 
 A custom effect for use with :ref:`RichTextLabel<class_RichTextLabel>`.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 A custom effect for use with :ref:`RichTextLabel<class_RichTextLabel>`.
 
-\ **Note:** For a ``RichTextEffect`` to be usable, a BBCode tag must be defined as a member variable called ``bbcode`` in the script.
+\ **Note:** For a **RichTextEffect** to be usable, a BBCode tag must be defined as a member variable called ``bbcode`` in the script.
 
 ::
 
     # The RichTextEffect will be usable like this: `[example]Some text[/example]`
     var bbcode = "example"
 
-\ **Note:** As soon as a :ref:`RichTextLabel<class_RichTextLabel>` contains at least one ``RichTextEffect``, it will continuously process the effect unless the project is paused. This may impact battery life negatively.
+\ **Note:** As soon as a :ref:`RichTextLabel<class_RichTextLabel>` contains at least one **RichTextEffect**, it will continuously process the effect unless the project is paused. This may impact battery life negatively.
+
+.. rst-class:: classref-introduction-group
 
 Tutorials
 ---------
@@ -35,22 +39,36 @@ Tutorials
 
 - `https://github.com/Eoin-ONeill-Yokai/Godot-Rich-Text-Effect-Test-Project <https://github.com/Eoin-ONeill-Yokai/Godot-Rich-Text-Effect-Test-Project>`__
 
+.. rst-class:: classref-reftable-group
+
 Methods
 -------
 
-+-------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`_process_custom_fx<class_RichTextEffect_method__process_custom_fx>` **(** :ref:`CharFXTransform<class_CharFXTransform>` char_fx **)** |virtual| |
-+-------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | :ref:`_process_custom_fx<class_RichTextEffect_method__process_custom_fx>` **(** :ref:`CharFXTransform<class_CharFXTransform>` char_fx **)** |virtual| |
+   +-------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_RichTextEffect_method__process_custom_fx:
 
-- :ref:`bool<class_bool>` **_process_custom_fx** **(** :ref:`CharFXTransform<class_CharFXTransform>` char_fx **)** |virtual|
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **_process_custom_fx** **(** :ref:`CharFXTransform<class_CharFXTransform>` char_fx **)** |virtual|
 
 Override this method to modify properties in ``char_fx``. The method must return ``true`` if the character could be transformed successfully. If the method returns ``false``, it will skip transformation to avoid displaying broken text.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

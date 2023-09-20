@@ -14,51 +14,75 @@ Listener2D
 
 Overrides the location sounds are heard from.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
-Once added to the scene tree and enabled using :ref:`make_current<class_Listener2D_method_make_current>`, this node will override the location sounds are heard from. Only one ``Listener2D`` can be current. Using :ref:`make_current<class_Listener2D_method_make_current>` will disable the previous ``Listener2D``.
+Once added to the scene tree and enabled using :ref:`make_current<class_Listener2D_method_make_current>`, this node will override the location sounds are heard from. Only one **Listener2D** can be current. Using :ref:`make_current<class_Listener2D_method_make_current>` will disable the previous **Listener2D**.
 
-If there is no active ``Listener2D`` in the current :ref:`Viewport<class_Viewport>`, center of the screen will be used as a hearing point for the audio. ``Listener2D`` needs to be inside :ref:`SceneTree<class_SceneTree>` to function.
+If there is no active **Listener2D** in the current :ref:`Viewport<class_Viewport>`, center of the screen will be used as a hearing point for the audio. **Listener2D** needs to be inside :ref:`SceneTree<class_SceneTree>` to function.
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+-------------------------+---------------------------------------------------------------------------+
-| void                    | :ref:`clear_current<class_Listener2D_method_clear_current>` **(** **)**   |
-+-------------------------+---------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`is_current<class_Listener2D_method_is_current>` **(** **)** |const| |
-+-------------------------+---------------------------------------------------------------------------+
-| void                    | :ref:`make_current<class_Listener2D_method_make_current>` **(** **)**     |
-+-------------------------+---------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------+---------------------------------------------------------------------------+
+   | void                    | :ref:`clear_current<class_Listener2D_method_clear_current>` **(** **)**   |
+   +-------------------------+---------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | :ref:`is_current<class_Listener2D_method_is_current>` **(** **)** |const| |
+   +-------------------------+---------------------------------------------------------------------------+
+   | void                    | :ref:`make_current<class_Listener2D_method_make_current>` **(** **)**     |
+   +-------------------------+---------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_Listener2D_method_clear_current:
 
-- void **clear_current** **(** **)**
+.. rst-class:: classref-method
 
-Disables the ``Listener2D``. If it's not set as current, this method will have no effect.
+void **clear_current** **(** **)**
+
+Disables the **Listener2D**. If it's not set as current, this method will have no effect.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Listener2D_method_is_current:
 
-- :ref:`bool<class_bool>` **is_current** **(** **)** |const|
+.. rst-class:: classref-method
 
-Returns ``true`` if this ``Listener2D`` is currently active.
+:ref:`bool<class_bool>` **is_current** **(** **)** |const|
+
+Returns ``true`` if this **Listener2D** is currently active.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Listener2D_method_make_current:
 
-- void **make_current** **(** **)**
+.. rst-class:: classref-method
 
-Makes the ``Listener2D`` active, setting it as the hearing point for the sounds. If there is already another active ``Listener2D``, it will be disabled.
+void **make_current** **(** **)**
 
-This method will have no effect if the ``Listener2D`` is not added to :ref:`SceneTree<class_SceneTree>`.
+Makes the **Listener2D** active, setting it as the hearing point for the sounds. If there is already another active **Listener2D**, it will be disabled.
+
+This method will have no effect if the **Listener2D** is not added to :ref:`SceneTree<class_SceneTree>`.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

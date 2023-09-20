@@ -14,6 +14,8 @@ InputEventMIDI
 
 Input event for MIDI inputs.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -25,6 +27,8 @@ To receive input events from MIDI devices, you need to call :ref:`OS.open_midi_i
 
 Note that Godot does not currently support MIDI output, so there is no way to emit MIDI signals from Godot. Only MIDI input works.
 
+.. rst-class:: classref-introduction-group
+
 Tutorials
 ---------
 
@@ -34,105 +38,119 @@ Tutorials
 
 - `Wikipedia Piano Key Frequencies List <https://en.wikipedia.org/wiki/Piano_key_frequencies#List>`__
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-----------------------+---------------------------------------------------------------------------+-------+
-| :ref:`int<class_int>` | :ref:`channel<class_InputEventMIDI_property_channel>`                     | ``0`` |
-+-----------------------+---------------------------------------------------------------------------+-------+
-| :ref:`int<class_int>` | :ref:`controller_number<class_InputEventMIDI_property_controller_number>` | ``0`` |
-+-----------------------+---------------------------------------------------------------------------+-------+
-| :ref:`int<class_int>` | :ref:`controller_value<class_InputEventMIDI_property_controller_value>`   | ``0`` |
-+-----------------------+---------------------------------------------------------------------------+-------+
-| :ref:`int<class_int>` | :ref:`instrument<class_InputEventMIDI_property_instrument>`               | ``0`` |
-+-----------------------+---------------------------------------------------------------------------+-------+
-| :ref:`int<class_int>` | :ref:`message<class_InputEventMIDI_property_message>`                     | ``0`` |
-+-----------------------+---------------------------------------------------------------------------+-------+
-| :ref:`int<class_int>` | :ref:`pitch<class_InputEventMIDI_property_pitch>`                         | ``0`` |
-+-----------------------+---------------------------------------------------------------------------+-------+
-| :ref:`int<class_int>` | :ref:`pressure<class_InputEventMIDI_property_pressure>`                   | ``0`` |
-+-----------------------+---------------------------------------------------------------------------+-------+
-| :ref:`int<class_int>` | :ref:`velocity<class_InputEventMIDI_property_velocity>`                   | ``0`` |
-+-----------------------+---------------------------------------------------------------------------+-------+
+.. table::
+   :widths: auto
+
+   +-----------------------+---------------------------------------------------------------------------+-------+
+   | :ref:`int<class_int>` | :ref:`channel<class_InputEventMIDI_property_channel>`                     | ``0`` |
+   +-----------------------+---------------------------------------------------------------------------+-------+
+   | :ref:`int<class_int>` | :ref:`controller_number<class_InputEventMIDI_property_controller_number>` | ``0`` |
+   +-----------------------+---------------------------------------------------------------------------+-------+
+   | :ref:`int<class_int>` | :ref:`controller_value<class_InputEventMIDI_property_controller_value>`   | ``0`` |
+   +-----------------------+---------------------------------------------------------------------------+-------+
+   | :ref:`int<class_int>` | :ref:`instrument<class_InputEventMIDI_property_instrument>`               | ``0`` |
+   +-----------------------+---------------------------------------------------------------------------+-------+
+   | :ref:`int<class_int>` | :ref:`message<class_InputEventMIDI_property_message>`                     | ``0`` |
+   +-----------------------+---------------------------------------------------------------------------+-------+
+   | :ref:`int<class_int>` | :ref:`pitch<class_InputEventMIDI_property_pitch>`                         | ``0`` |
+   +-----------------------+---------------------------------------------------------------------------+-------+
+   | :ref:`int<class_int>` | :ref:`pressure<class_InputEventMIDI_property_pressure>`                   | ``0`` |
+   +-----------------------+---------------------------------------------------------------------------+-------+
+   | :ref:`int<class_int>` | :ref:`velocity<class_InputEventMIDI_property_velocity>`                   | ``0`` |
+   +-----------------------+---------------------------------------------------------------------------+-------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_InputEventMIDI_property_channel:
 
-- :ref:`int<class_int>` **channel**
+.. rst-class:: classref-property
 
-+-----------+--------------------+
-| *Default* | ``0``              |
-+-----------+--------------------+
-| *Setter*  | set_channel(value) |
-+-----------+--------------------+
-| *Getter*  | get_channel()      |
-+-----------+--------------------+
+:ref:`int<class_int>` **channel** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_channel** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_channel** **(** **)**
 
 The MIDI channel of this input event. There are 16 channels, so this value ranges from 0 to 15. MIDI channel 9 is reserved for the use with percussion instruments, the rest of the channels are for non-percussion instruments.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_InputEventMIDI_property_controller_number:
 
-- :ref:`int<class_int>` **controller_number**
+.. rst-class:: classref-property
 
-+-----------+------------------------------+
-| *Default* | ``0``                        |
-+-----------+------------------------------+
-| *Setter*  | set_controller_number(value) |
-+-----------+------------------------------+
-| *Getter*  | get_controller_number()      |
-+-----------+------------------------------+
+:ref:`int<class_int>` **controller_number** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_controller_number** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_controller_number** **(** **)**
 
 If the message is ``MIDI_MESSAGE_CONTROL_CHANGE``, this indicates the controller number, otherwise this is zero. Controllers include devices such as pedals and levers.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_InputEventMIDI_property_controller_value:
 
-- :ref:`int<class_int>` **controller_value**
+.. rst-class:: classref-property
 
-+-----------+-----------------------------+
-| *Default* | ``0``                       |
-+-----------+-----------------------------+
-| *Setter*  | set_controller_value(value) |
-+-----------+-----------------------------+
-| *Getter*  | get_controller_value()      |
-+-----------+-----------------------------+
+:ref:`int<class_int>` **controller_value** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_controller_value** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_controller_value** **(** **)**
 
 If the message is ``MIDI_MESSAGE_CONTROL_CHANGE``, this indicates the controller value, otherwise this is zero. Controllers include devices such as pedals and levers.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_InputEventMIDI_property_instrument:
 
-- :ref:`int<class_int>` **instrument**
+.. rst-class:: classref-property
 
-+-----------+-----------------------+
-| *Default* | ``0``                 |
-+-----------+-----------------------+
-| *Setter*  | set_instrument(value) |
-+-----------+-----------------------+
-| *Getter*  | get_instrument()      |
-+-----------+-----------------------+
+:ref:`int<class_int>` **instrument** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_instrument** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_instrument** **(** **)**
 
 The instrument of this input event. This value ranges from 0 to 127. Refer to the instrument list on the General MIDI wikipedia article to see a list of instruments, except that this value is 0-index, so subtract one from every number on that chart. A standard piano will have an instrument number of 0.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_InputEventMIDI_property_message:
 
-- :ref:`int<class_int>` **message**
+.. rst-class:: classref-property
 
-+-----------+--------------------+
-| *Default* | ``0``              |
-+-----------+--------------------+
-| *Setter*  | set_message(value) |
-+-----------+--------------------+
-| *Getter*  | get_message()      |
-+-----------+--------------------+
+:ref:`int<class_int>` **message** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_message** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_message** **(** **)**
 
 Returns a value indicating the type of message for this MIDI signal. This is a member of the :ref:`MidiMessageList<enum_@GlobalScope_MidiMessageList>` enum.
 
@@ -142,54 +160,58 @@ Notes will return ``MIDI_MESSAGE_NOTE_ON`` when activated, but they might not al
 
 For more information, see the MIDI message status byte list chart linked above.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_InputEventMIDI_property_pitch:
 
-- :ref:`int<class_int>` **pitch**
+.. rst-class:: classref-property
 
-+-----------+------------------+
-| *Default* | ``0``            |
-+-----------+------------------+
-| *Setter*  | set_pitch(value) |
-+-----------+------------------+
-| *Getter*  | get_pitch()      |
-+-----------+------------------+
+:ref:`int<class_int>` **pitch** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_pitch** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_pitch** **(** **)**
 
 The pitch index number of this MIDI signal. This value ranges from 0 to 127. On a piano, middle C is 60, and A440 is 69, see the "MIDI note" column of the piano key frequency chart on Wikipedia for more information.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_InputEventMIDI_property_pressure:
 
-- :ref:`int<class_int>` **pressure**
+.. rst-class:: classref-property
 
-+-----------+---------------------+
-| *Default* | ``0``               |
-+-----------+---------------------+
-| *Setter*  | set_pressure(value) |
-+-----------+---------------------+
-| *Getter*  | get_pressure()      |
-+-----------+---------------------+
+:ref:`int<class_int>` **pressure** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_pressure** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_pressure** **(** **)**
 
 The pressure of the MIDI signal. This value ranges from 0 to 127. For many devices, this value is always zero.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_InputEventMIDI_property_velocity:
 
-- :ref:`int<class_int>` **velocity**
+.. rst-class:: classref-property
 
-+-----------+---------------------+
-| *Default* | ``0``               |
-+-----------+---------------------+
-| *Setter*  | set_velocity(value) |
-+-----------+---------------------+
-| *Getter*  | get_velocity()      |
-+-----------+---------------------+
+:ref:`int<class_int>` **velocity** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_velocity** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_velocity** **(** **)**
 
 The velocity of the MIDI signal. This value ranges from 0 to 127. For a piano, this corresponds to how quickly the key was pressed, and is rarely above about 110 in practice.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

@@ -14,6 +14,8 @@ AnimationNodeBlendTree
 
 :ref:`AnimationTree<class_AnimationTree>` node resource that contains many blend type nodes.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -21,158 +23,246 @@ This node may contain a sub-tree of any other blend type nodes, such as :ref:`An
 
 An :ref:`AnimationNodeOutput<class_AnimationNodeOutput>` node named ``output`` is created by default.
 
+.. rst-class:: classref-introduction-group
+
 Tutorials
 ---------
 
 - :doc:`../tutorials/animation/animation_tree`
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-------------------------------+-------------------------------------------------------------------------+---------------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`graph_offset<class_AnimationNodeBlendTree_property_graph_offset>` | ``Vector2( 0, 0 )`` |
-+-------------------------------+-------------------------------------------------------------------------+---------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------------+-------------------------------------------------------------------------+---------------------+
+   | :ref:`Vector2<class_Vector2>` | :ref:`graph_offset<class_AnimationNodeBlendTree_property_graph_offset>` | ``Vector2( 0, 0 )`` |
+   +-------------------------------+-------------------------------------------------------------------------+---------------------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+-------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                      | :ref:`add_node<class_AnimationNodeBlendTree_method_add_node>` **(** :ref:`String<class_String>` name, :ref:`AnimationNode<class_AnimationNode>` node, :ref:`Vector2<class_Vector2>` position=Vector2( 0, 0 ) **)** |
-+-------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                      | :ref:`connect_node<class_AnimationNodeBlendTree_method_connect_node>` **(** :ref:`String<class_String>` input_node, :ref:`int<class_int>` input_index, :ref:`String<class_String>` output_node **)**               |
-+-------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                      | :ref:`disconnect_node<class_AnimationNodeBlendTree_method_disconnect_node>` **(** :ref:`String<class_String>` input_node, :ref:`int<class_int>` input_index **)**                                                  |
-+-------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`AnimationNode<class_AnimationNode>` | :ref:`get_node<class_AnimationNodeBlendTree_method_get_node>` **(** :ref:`String<class_String>` name **)** |const|                                                                                                 |
-+-------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>`             | :ref:`get_node_position<class_AnimationNodeBlendTree_method_get_node_position>` **(** :ref:`String<class_String>` name **)** |const|                                                                               |
-+-------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                   | :ref:`has_node<class_AnimationNodeBlendTree_method_has_node>` **(** :ref:`String<class_String>` name **)** |const|                                                                                                 |
-+-------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                      | :ref:`remove_node<class_AnimationNodeBlendTree_method_remove_node>` **(** :ref:`String<class_String>` name **)**                                                                                                   |
-+-------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                      | :ref:`rename_node<class_AnimationNodeBlendTree_method_rename_node>` **(** :ref:`String<class_String>` name, :ref:`String<class_String>` new_name **)**                                                             |
-+-------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                      | :ref:`set_node_position<class_AnimationNodeBlendTree_method_set_node_position>` **(** :ref:`String<class_String>` name, :ref:`Vector2<class_Vector2>` position **)**                                               |
-+-------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                      | :ref:`add_node<class_AnimationNodeBlendTree_method_add_node>` **(** :ref:`String<class_String>` name, :ref:`AnimationNode<class_AnimationNode>` node, :ref:`Vector2<class_Vector2>` position=Vector2( 0, 0 ) **)** |
+   +-------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                      | :ref:`connect_node<class_AnimationNodeBlendTree_method_connect_node>` **(** :ref:`String<class_String>` input_node, :ref:`int<class_int>` input_index, :ref:`String<class_String>` output_node **)**               |
+   +-------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                      | :ref:`disconnect_node<class_AnimationNodeBlendTree_method_disconnect_node>` **(** :ref:`String<class_String>` input_node, :ref:`int<class_int>` input_index **)**                                                  |
+   +-------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`AnimationNode<class_AnimationNode>` | :ref:`get_node<class_AnimationNodeBlendTree_method_get_node>` **(** :ref:`String<class_String>` name **)** |const|                                                                                                 |
+   +-------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector2<class_Vector2>`             | :ref:`get_node_position<class_AnimationNodeBlendTree_method_get_node_position>` **(** :ref:`String<class_String>` name **)** |const|                                                                               |
+   +-------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                   | :ref:`has_node<class_AnimationNodeBlendTree_method_has_node>` **(** :ref:`String<class_String>` name **)** |const|                                                                                                 |
+   +-------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                      | :ref:`remove_node<class_AnimationNodeBlendTree_method_remove_node>` **(** :ref:`String<class_String>` name **)**                                                                                                   |
+   +-------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                      | :ref:`rename_node<class_AnimationNodeBlendTree_method_rename_node>` **(** :ref:`String<class_String>` name, :ref:`String<class_String>` new_name **)**                                                             |
+   +-------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                      | :ref:`set_node_position<class_AnimationNodeBlendTree_method_set_node_position>` **(** :ref:`String<class_String>` name, :ref:`Vector2<class_Vector2>` position **)**                                               |
+   +-------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Constants
 ---------
 
 .. _class_AnimationNodeBlendTree_constant_CONNECTION_OK:
 
+.. rst-class:: classref-constant
+
+**CONNECTION_OK** = ``0``
+
+The connection was successful.
+
 .. _class_AnimationNodeBlendTree_constant_CONNECTION_ERROR_NO_INPUT:
+
+.. rst-class:: classref-constant
+
+**CONNECTION_ERROR_NO_INPUT** = ``1``
+
+The input node is ``null``.
 
 .. _class_AnimationNodeBlendTree_constant_CONNECTION_ERROR_NO_INPUT_INDEX:
 
+.. rst-class:: classref-constant
+
+**CONNECTION_ERROR_NO_INPUT_INDEX** = ``2``
+
+The specified input port is out of range.
+
 .. _class_AnimationNodeBlendTree_constant_CONNECTION_ERROR_NO_OUTPUT:
+
+.. rst-class:: classref-constant
+
+**CONNECTION_ERROR_NO_OUTPUT** = ``3``
+
+The output node is ``null``.
 
 .. _class_AnimationNodeBlendTree_constant_CONNECTION_ERROR_SAME_NODE:
 
+.. rst-class:: classref-constant
+
+**CONNECTION_ERROR_SAME_NODE** = ``4``
+
+Input and output nodes are the same.
+
 .. _class_AnimationNodeBlendTree_constant_CONNECTION_ERROR_CONNECTION_EXISTS:
 
-- **CONNECTION_OK** = **0** --- The connection was successful.
+.. rst-class:: classref-constant
 
-- **CONNECTION_ERROR_NO_INPUT** = **1** --- The input node is ``null``.
+**CONNECTION_ERROR_CONNECTION_EXISTS** = ``5``
 
-- **CONNECTION_ERROR_NO_INPUT_INDEX** = **2** --- The specified input port is out of range.
+The specified connection already exists.
 
-- **CONNECTION_ERROR_NO_OUTPUT** = **3** --- The output node is ``null``.
+.. rst-class:: classref-section-separator
 
-- **CONNECTION_ERROR_SAME_NODE** = **4** --- Input and output nodes are the same.
+----
 
-- **CONNECTION_ERROR_CONNECTION_EXISTS** = **5** --- The specified connection already exists.
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_AnimationNodeBlendTree_property_graph_offset:
 
-- :ref:`Vector2<class_Vector2>` **graph_offset**
+.. rst-class:: classref-property
 
-+-----------+-------------------------+
-| *Default* | ``Vector2( 0, 0 )``     |
-+-----------+-------------------------+
-| *Setter*  | set_graph_offset(value) |
-+-----------+-------------------------+
-| *Getter*  | get_graph_offset()      |
-+-----------+-------------------------+
+:ref:`Vector2<class_Vector2>` **graph_offset** = ``Vector2( 0, 0 )``
+
+.. rst-class:: classref-property-setget
+
+- void **set_graph_offset** **(** :ref:`Vector2<class_Vector2>` value **)**
+- :ref:`Vector2<class_Vector2>` **get_graph_offset** **(** **)**
 
 The global offset of all sub-nodes.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_AnimationNodeBlendTree_method_add_node:
 
-- void **add_node** **(** :ref:`String<class_String>` name, :ref:`AnimationNode<class_AnimationNode>` node, :ref:`Vector2<class_Vector2>` position=Vector2( 0, 0 ) **)**
+.. rst-class:: classref-method
+
+void **add_node** **(** :ref:`String<class_String>` name, :ref:`AnimationNode<class_AnimationNode>` node, :ref:`Vector2<class_Vector2>` position=Vector2( 0, 0 ) **)**
 
 Adds an :ref:`AnimationNode<class_AnimationNode>` at the given ``position``. The ``name`` is used to identify the created sub-node later.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AnimationNodeBlendTree_method_connect_node:
 
-- void **connect_node** **(** :ref:`String<class_String>` input_node, :ref:`int<class_int>` input_index, :ref:`String<class_String>` output_node **)**
+.. rst-class:: classref-method
+
+void **connect_node** **(** :ref:`String<class_String>` input_node, :ref:`int<class_int>` input_index, :ref:`String<class_String>` output_node **)**
 
 Connects the output of an :ref:`AnimationNode<class_AnimationNode>` as input for another :ref:`AnimationNode<class_AnimationNode>`, at the input port specified by ``input_index``.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AnimationNodeBlendTree_method_disconnect_node:
 
-- void **disconnect_node** **(** :ref:`String<class_String>` input_node, :ref:`int<class_int>` input_index **)**
+.. rst-class:: classref-method
+
+void **disconnect_node** **(** :ref:`String<class_String>` input_node, :ref:`int<class_int>` input_index **)**
 
 Disconnects the node connected to the specified input.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AnimationNodeBlendTree_method_get_node:
 
-- :ref:`AnimationNode<class_AnimationNode>` **get_node** **(** :ref:`String<class_String>` name **)** |const|
+.. rst-class:: classref-method
+
+:ref:`AnimationNode<class_AnimationNode>` **get_node** **(** :ref:`String<class_String>` name **)** |const|
 
 Returns the sub-node with the specified ``name``.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AnimationNodeBlendTree_method_get_node_position:
 
-- :ref:`Vector2<class_Vector2>` **get_node_position** **(** :ref:`String<class_String>` name **)** |const|
+.. rst-class:: classref-method
+
+:ref:`Vector2<class_Vector2>` **get_node_position** **(** :ref:`String<class_String>` name **)** |const|
 
 Returns the position of the sub-node with the specified ``name``.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AnimationNodeBlendTree_method_has_node:
 
-- :ref:`bool<class_bool>` **has_node** **(** :ref:`String<class_String>` name **)** |const|
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **has_node** **(** :ref:`String<class_String>` name **)** |const|
 
 Returns ``true`` if a sub-node with specified ``name`` exists.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AnimationNodeBlendTree_method_remove_node:
 
-- void **remove_node** **(** :ref:`String<class_String>` name **)**
+.. rst-class:: classref-method
+
+void **remove_node** **(** :ref:`String<class_String>` name **)**
 
 Removes a sub-node.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AnimationNodeBlendTree_method_rename_node:
 
-- void **rename_node** **(** :ref:`String<class_String>` name, :ref:`String<class_String>` new_name **)**
+.. rst-class:: classref-method
+
+void **rename_node** **(** :ref:`String<class_String>` name, :ref:`String<class_String>` new_name **)**
 
 Changes the name of a sub-node.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AnimationNodeBlendTree_method_set_node_position:
 
-- void **set_node_position** **(** :ref:`String<class_String>` name, :ref:`Vector2<class_Vector2>` position **)**
+.. rst-class:: classref-method
+
+void **set_node_position** **(** :ref:`String<class_String>` name, :ref:`Vector2<class_Vector2>` position **)**
 
 Modifies the position of a sub-node.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

@@ -16,60 +16,100 @@ Container
 
 Base node for containers.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
-Base node for containers. A ``Container`` contains other controls and automatically arranges them in a certain way.
+Base node for containers. A **Container** contains other controls and automatically arranges them in a certain way.
 
 A Control can inherit this to create custom container classes.
+
+.. rst-class:: classref-introduction-group
 
 Tutorials
 ---------
 
 - :doc:`GUI containers <../tutorials/ui/gui_containers>`
 
+.. rst-class:: classref-reftable-group
+
 Methods
 -------
 
-+------+----------------------------------------------------------------------------------------------------------------------------------------------------+
-| void | :ref:`fit_child_in_rect<class_Container_method_fit_child_in_rect>` **(** :ref:`Control<class_Control>` child, :ref:`Rect2<class_Rect2>` rect **)** |
-+------+----------------------------------------------------------------------------------------------------------------------------------------------------+
-| void | :ref:`queue_sort<class_Container_method_queue_sort>` **(** **)**                                                                                   |
-+------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void | :ref:`fit_child_in_rect<class_Container_method_fit_child_in_rect>` **(** :ref:`Control<class_Control>` child, :ref:`Rect2<class_Rect2>` rect **)** |
+   +------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void | :ref:`queue_sort<class_Container_method_queue_sort>` **(** **)**                                                                                   |
+   +------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Signals
 -------
 
 .. _class_Container_signal_sort_children:
 
-- **sort_children** **(** **)**
+.. rst-class:: classref-signal
+
+**sort_children** **(** **)**
 
 Emitted when sorting the children is needed.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Constants
 ---------
 
 .. _class_Container_constant_NOTIFICATION_SORT_CHILDREN:
 
-- **NOTIFICATION_SORT_CHILDREN** = **50** --- Notification for when sorting the children, it must be obeyed immediately.
+.. rst-class:: classref-constant
+
+**NOTIFICATION_SORT_CHILDREN** = ``50``
+
+Notification for when sorting the children, it must be obeyed immediately.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_Container_method_fit_child_in_rect:
 
-- void **fit_child_in_rect** **(** :ref:`Control<class_Control>` child, :ref:`Rect2<class_Rect2>` rect **)**
+.. rst-class:: classref-method
+
+void **fit_child_in_rect** **(** :ref:`Control<class_Control>` child, :ref:`Rect2<class_Rect2>` rect **)**
 
 Fit a child control in a given rect. This is mainly a helper for creating custom container classes.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Container_method_queue_sort:
 
-- void **queue_sort** **(** **)**
+.. rst-class:: classref-method
+
+void **queue_sort** **(** **)**
 
 Queue resort of the contained children. This is called automatically anyway, but can be called upon request.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

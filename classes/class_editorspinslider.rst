@@ -14,85 +14,113 @@ EditorSpinSlider
 
 Godot editor's control for editing numeric values.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 This :ref:`Control<class_Control>` node is used in the editor's Inspector dock to allow editing of numeric values. Can be used with :ref:`EditorInspectorPlugin<class_EditorInspectorPlugin>` to recreate the same behavior.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+------------------------------------------+-----------------------------------------------------------------+---------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                  | :ref:`flat<class_EditorSpinSlider_property_flat>`               | ``false``                                                           |
-+------------------------------------------+-----------------------------------------------------------------+---------------------------------------------------------------------+
-| :ref:`FocusMode<enum_Control_FocusMode>` | focus_mode                                                      | ``2`` (overrides :ref:`Control<class_Control_property_focus_mode>`) |
-+------------------------------------------+-----------------------------------------------------------------+---------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                  | :ref:`hide_slider<class_EditorSpinSlider_property_hide_slider>` | ``false``                                                           |
-+------------------------------------------+-----------------------------------------------------------------+---------------------------------------------------------------------+
-| :ref:`String<class_String>`              | :ref:`label<class_EditorSpinSlider_property_label>`             | ``""``                                                              |
-+------------------------------------------+-----------------------------------------------------------------+---------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                  | :ref:`read_only<class_EditorSpinSlider_property_read_only>`     | ``false``                                                           |
-+------------------------------------------+-----------------------------------------------------------------+---------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +------------------------------------------+-----------------------------------------------------------------+---------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                  | :ref:`flat<class_EditorSpinSlider_property_flat>`               | ``false``                                                           |
+   +------------------------------------------+-----------------------------------------------------------------+---------------------------------------------------------------------+
+   | :ref:`FocusMode<enum_Control_FocusMode>` | focus_mode                                                      | ``2`` (overrides :ref:`Control<class_Control_property_focus_mode>`) |
+   +------------------------------------------+-----------------------------------------------------------------+---------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                  | :ref:`hide_slider<class_EditorSpinSlider_property_hide_slider>` | ``false``                                                           |
+   +------------------------------------------+-----------------------------------------------------------------+---------------------------------------------------------------------+
+   | :ref:`String<class_String>`              | :ref:`label<class_EditorSpinSlider_property_label>`             | ``""``                                                              |
+   +------------------------------------------+-----------------------------------------------------------------+---------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                  | :ref:`read_only<class_EditorSpinSlider_property_read_only>`     | ``false``                                                           |
+   +------------------------------------------+-----------------------------------------------------------------+---------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_EditorSpinSlider_property_flat:
 
-- :ref:`bool<class_bool>` **flat**
+.. rst-class:: classref-property
 
-+-----------+-----------------+
-| *Default* | ``false``       |
-+-----------+-----------------+
-| *Setter*  | set_flat(value) |
-+-----------+-----------------+
-| *Getter*  | is_flat()       |
-+-----------+-----------------+
+:ref:`bool<class_bool>` **flat** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_flat** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_flat** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSpinSlider_property_hide_slider:
 
-- :ref:`bool<class_bool>` **hide_slider**
+.. rst-class:: classref-property
 
-+-----------+------------------------+
-| *Default* | ``false``              |
-+-----------+------------------------+
-| *Setter*  | set_hide_slider(value) |
-+-----------+------------------------+
-| *Getter*  | is_hiding_slider()     |
-+-----------+------------------------+
+:ref:`bool<class_bool>` **hide_slider** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_hide_slider** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_hiding_slider** **(** **)**
 
 If ``true``, the slider is hidden.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSpinSlider_property_label:
 
-- :ref:`String<class_String>` **label**
+.. rst-class:: classref-property
 
-+-----------+------------------+
-| *Default* | ``""``           |
-+-----------+------------------+
-| *Setter*  | set_label(value) |
-+-----------+------------------+
-| *Getter*  | get_label()      |
-+-----------+------------------+
+:ref:`String<class_String>` **label** = ``""``
+
+.. rst-class:: classref-property-setget
+
+- void **set_label** **(** :ref:`String<class_String>` value **)**
+- :ref:`String<class_String>` **get_label** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSpinSlider_property_read_only:
 
-- :ref:`bool<class_bool>` **read_only**
+.. rst-class:: classref-property
 
-+-----------+----------------------+
-| *Default* | ``false``            |
-+-----------+----------------------+
-| *Setter*  | set_read_only(value) |
-+-----------+----------------------+
-| *Getter*  | is_read_only()       |
-+-----------+----------------------+
+:ref:`bool<class_bool>` **read_only** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_read_only** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_read_only** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

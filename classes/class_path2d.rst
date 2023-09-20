@@ -14,6 +14,8 @@ Path2D
 
 Contains a :ref:`Curve2D<class_Curve2D>` path for :ref:`PathFollow2D<class_PathFollow2D>` nodes to follow.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -21,30 +23,43 @@ Can have :ref:`PathFollow2D<class_PathFollow2D>` child nodes moving along the :r
 
 \ **Note:** The path is considered as relative to the moved nodes (children of :ref:`PathFollow2D<class_PathFollow2D>`). As such, the curve should usually start with a zero vector (``(0, 0)``).
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-------------------------------+-------------------------------------------+------------------------------------------------------------------------------------------------------+
-| :ref:`Curve2D<class_Curve2D>` | :ref:`curve<class_Path2D_property_curve>` |                                                                                                      |
-+-------------------------------+-------------------------------------------+------------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_Color>`     | self_modulate                             | ``Color( 0.5, 0.6, 1, 0.7 )`` (overrides :ref:`CanvasItem<class_CanvasItem_property_self_modulate>`) |
-+-------------------------------+-------------------------------------------+------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------------+-------------------------------------------+------------------------------------------------------------------------------------------------------+
+   | :ref:`Curve2D<class_Curve2D>` | :ref:`curve<class_Path2D_property_curve>` |                                                                                                      |
+   +-------------------------------+-------------------------------------------+------------------------------------------------------------------------------------------------------+
+   | :ref:`Color<class_Color>`     | self_modulate                             | ``Color( 0.5, 0.6, 1, 0.7 )`` (overrides :ref:`CanvasItem<class_CanvasItem_property_self_modulate>`) |
+   +-------------------------------+-------------------------------------------+------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_Path2D_property_curve:
 
-- :ref:`Curve2D<class_Curve2D>` **curve**
+.. rst-class:: classref-property
 
-+----------+------------------+
-| *Setter* | set_curve(value) |
-+----------+------------------+
-| *Getter* | get_curve()      |
-+----------+------------------+
+:ref:`Curve2D<class_Curve2D>` **curve**
+
+.. rst-class:: classref-property-setget
+
+- void **set_curve** **(** :ref:`Curve2D<class_Curve2D>` value **)**
+- :ref:`Curve2D<class_Curve2D>` **get_curve** **(** **)**
 
 A :ref:`Curve2D<class_Curve2D>` describing the path.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

@@ -14,53 +14,67 @@ CapsuleShape2D
 
 Capsule shape for 2D collisions.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 Capsule shape for 2D collisions.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+---------------------------+-----------------------------------------------------+----------+
-| :ref:`float<class_float>` | :ref:`height<class_CapsuleShape2D_property_height>` | ``20.0`` |
-+---------------------------+-----------------------------------------------------+----------+
-| :ref:`float<class_float>` | :ref:`radius<class_CapsuleShape2D_property_radius>` | ``10.0`` |
-+---------------------------+-----------------------------------------------------+----------+
+.. table::
+   :widths: auto
+
+   +---------------------------+-----------------------------------------------------+----------+
+   | :ref:`float<class_float>` | :ref:`height<class_CapsuleShape2D_property_height>` | ``20.0`` |
+   +---------------------------+-----------------------------------------------------+----------+
+   | :ref:`float<class_float>` | :ref:`radius<class_CapsuleShape2D_property_radius>` | ``10.0`` |
+   +---------------------------+-----------------------------------------------------+----------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_CapsuleShape2D_property_height:
 
-- :ref:`float<class_float>` **height**
+.. rst-class:: classref-property
 
-+-----------+-------------------+
-| *Default* | ``20.0``          |
-+-----------+-------------------+
-| *Setter*  | set_height(value) |
-+-----------+-------------------+
-| *Getter*  | get_height()      |
-+-----------+-------------------+
+:ref:`float<class_float>` **height** = ``20.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_height** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_height** **(** **)**
 
 The capsule's height.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_CapsuleShape2D_property_radius:
 
-- :ref:`float<class_float>` **radius**
+.. rst-class:: classref-property
 
-+-----------+-------------------+
-| *Default* | ``10.0``          |
-+-----------+-------------------+
-| *Setter*  | set_radius(value) |
-+-----------+-------------------+
-| *Getter*  | get_radius()      |
-+-----------+-------------------+
+:ref:`float<class_float>` **radius** = ``10.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_radius** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_radius** **(** **)**
 
 The capsule's radius.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

@@ -14,78 +14,108 @@ World2D
 
 Class that has everything pertaining to a 2D world.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 Class that has everything pertaining to a 2D world. A physics space, a visual scenario, a navigation map and a sound space. 2D nodes register their resources into the current 2D world.
+
+.. rst-class:: classref-introduction-group
 
 Tutorials
 ---------
 
 - :doc:`../tutorials/physics/ray-casting`
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-------------------------------------------------------------------+----------------------------------------------------------------------+
-| :ref:`RID<class_RID>`                                             | :ref:`canvas<class_World2D_property_canvas>`                         |
-+-------------------------------------------------------------------+----------------------------------------------------------------------+
-| :ref:`Physics2DDirectSpaceState<class_Physics2DDirectSpaceState>` | :ref:`direct_space_state<class_World2D_property_direct_space_state>` |
-+-------------------------------------------------------------------+----------------------------------------------------------------------+
-| :ref:`RID<class_RID>`                                             | :ref:`navigation_map<class_World2D_property_navigation_map>`         |
-+-------------------------------------------------------------------+----------------------------------------------------------------------+
-| :ref:`RID<class_RID>`                                             | :ref:`space<class_World2D_property_space>`                           |
-+-------------------------------------------------------------------+----------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------------------------------------------------+----------------------------------------------------------------------+
+   | :ref:`RID<class_RID>`                                             | :ref:`canvas<class_World2D_property_canvas>`                         |
+   +-------------------------------------------------------------------+----------------------------------------------------------------------+
+   | :ref:`Physics2DDirectSpaceState<class_Physics2DDirectSpaceState>` | :ref:`direct_space_state<class_World2D_property_direct_space_state>` |
+   +-------------------------------------------------------------------+----------------------------------------------------------------------+
+   | :ref:`RID<class_RID>`                                             | :ref:`navigation_map<class_World2D_property_navigation_map>`         |
+   +-------------------------------------------------------------------+----------------------------------------------------------------------+
+   | :ref:`RID<class_RID>`                                             | :ref:`space<class_World2D_property_space>`                           |
+   +-------------------------------------------------------------------+----------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_World2D_property_canvas:
 
-- :ref:`RID<class_RID>` **canvas**
+.. rst-class:: classref-property
 
-+----------+--------------+
-| *Getter* | get_canvas() |
-+----------+--------------+
+:ref:`RID<class_RID>` **canvas**
+
+.. rst-class:: classref-property-setget
+
+- :ref:`RID<class_RID>` **get_canvas** **(** **)**
 
 The :ref:`RID<class_RID>` of this world's canvas resource. Used by the :ref:`VisualServer<class_VisualServer>` for 2D drawing.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_World2D_property_direct_space_state:
 
-- :ref:`Physics2DDirectSpaceState<class_Physics2DDirectSpaceState>` **direct_space_state**
+.. rst-class:: classref-property
 
-+----------+--------------------------+
-| *Getter* | get_direct_space_state() |
-+----------+--------------------------+
+:ref:`Physics2DDirectSpaceState<class_Physics2DDirectSpaceState>` **direct_space_state**
+
+.. rst-class:: classref-property-setget
+
+- :ref:`Physics2DDirectSpaceState<class_Physics2DDirectSpaceState>` **get_direct_space_state** **(** **)**
 
 Direct access to the world's physics 2D space state. Used for querying current and potential collisions. When using multi-threaded physics, access is limited to ``_physics_process(delta)`` in the main thread.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_World2D_property_navigation_map:
 
-- :ref:`RID<class_RID>` **navigation_map**
+.. rst-class:: classref-property
 
-+----------+----------------------+
-| *Getter* | get_navigation_map() |
-+----------+----------------------+
+:ref:`RID<class_RID>` **navigation_map**
+
+.. rst-class:: classref-property-setget
+
+- :ref:`RID<class_RID>` **get_navigation_map** **(** **)**
 
 The :ref:`RID<class_RID>` of this world's navigation map. Used by the :ref:`Navigation2DServer<class_Navigation2DServer>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_World2D_property_space:
 
-- :ref:`RID<class_RID>` **space**
+.. rst-class:: classref-property
 
-+----------+-------------+
-| *Getter* | get_space() |
-+----------+-------------+
+:ref:`RID<class_RID>` **space**
+
+.. rst-class:: classref-property-setget
+
+- :ref:`RID<class_RID>` **get_space** **(** **)**
 
 The :ref:`RID<class_RID>` of this world's physics space resource. Used by the :ref:`Physics2DServer<class_Physics2DServer>` for 2D physics, treating it as both a space and an area.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

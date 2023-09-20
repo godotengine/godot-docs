@@ -14,76 +14,114 @@ VisualScriptInputAction
 
 A Visual Script node returning a state of an action.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
-``VisualScriptInputAction`` can be used to check if an action is pressed or released.
+**VisualScriptInputAction** can be used to check if an action is pressed or released.
+
+.. rst-class:: classref-reftable-group
 
 Properties
 ----------
 
-+------------------------------------------------+--------------------------------------------------------------+--------+
-| :ref:`String<class_String>`                    | :ref:`action<class_VisualScriptInputAction_property_action>` | ``""`` |
-+------------------------------------------------+--------------------------------------------------------------+--------+
-| :ref:`Mode<enum_VisualScriptInputAction_Mode>` | :ref:`mode<class_VisualScriptInputAction_property_mode>`     | ``0``  |
-+------------------------------------------------+--------------------------------------------------------------+--------+
+.. table::
+   :widths: auto
+
+   +------------------------------------------------+--------------------------------------------------------------+--------+
+   | :ref:`String<class_String>`                    | :ref:`action<class_VisualScriptInputAction_property_action>` | ``""`` |
+   +------------------------------------------------+--------------------------------------------------------------+--------+
+   | :ref:`Mode<enum_VisualScriptInputAction_Mode>` | :ref:`mode<class_VisualScriptInputAction_property_mode>`     | ``0``  |
+   +------------------------------------------------+--------------------------------------------------------------+--------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Enumerations
 ------------
 
 .. _enum_VisualScriptInputAction_Mode:
 
-.. _class_VisualScriptInputAction_constant_MODE_PRESSED:
-
-.. _class_VisualScriptInputAction_constant_MODE_RELEASED:
-
-.. _class_VisualScriptInputAction_constant_MODE_JUST_PRESSED:
-
-.. _class_VisualScriptInputAction_constant_MODE_JUST_RELEASED:
+.. rst-class:: classref-enumeration
 
 enum **Mode**:
 
-- **MODE_PRESSED** = **0** --- ``True`` if action is pressed.
+.. _class_VisualScriptInputAction_constant_MODE_PRESSED:
 
-- **MODE_RELEASED** = **1** --- ``True`` if action is released (i.e. not pressed).
+.. rst-class:: classref-enumeration-constant
 
-- **MODE_JUST_PRESSED** = **2** --- ``True`` on the frame the action was pressed.
+:ref:`Mode<enum_VisualScriptInputAction_Mode>` **MODE_PRESSED** = ``0``
 
-- **MODE_JUST_RELEASED** = **3** --- ``True`` on the frame the action was released.
+``True`` if action is pressed.
+
+.. _class_VisualScriptInputAction_constant_MODE_RELEASED:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Mode<enum_VisualScriptInputAction_Mode>` **MODE_RELEASED** = ``1``
+
+``True`` if action is released (i.e. not pressed).
+
+.. _class_VisualScriptInputAction_constant_MODE_JUST_PRESSED:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Mode<enum_VisualScriptInputAction_Mode>` **MODE_JUST_PRESSED** = ``2``
+
+``True`` on the frame the action was pressed.
+
+.. _class_VisualScriptInputAction_constant_MODE_JUST_RELEASED:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Mode<enum_VisualScriptInputAction_Mode>` **MODE_JUST_RELEASED** = ``3``
+
+``True`` on the frame the action was released.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_VisualScriptInputAction_property_action:
 
-- :ref:`String<class_String>` **action**
+.. rst-class:: classref-property
 
-+-----------+------------------------+
-| *Default* | ``""``                 |
-+-----------+------------------------+
-| *Setter*  | set_action_name(value) |
-+-----------+------------------------+
-| *Getter*  | get_action_name()      |
-+-----------+------------------------+
+:ref:`String<class_String>` **action** = ``""``
+
+.. rst-class:: classref-property-setget
+
+- void **set_action_name** **(** :ref:`String<class_String>` value **)**
+- :ref:`String<class_String>` **get_action_name** **(** **)**
 
 Name of the action.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_VisualScriptInputAction_property_mode:
 
-- :ref:`Mode<enum_VisualScriptInputAction_Mode>` **mode**
+.. rst-class:: classref-property
 
-+-----------+------------------------+
-| *Default* | ``0``                  |
-+-----------+------------------------+
-| *Setter*  | set_action_mode(value) |
-+-----------+------------------------+
-| *Getter*  | get_action_mode()      |
-+-----------+------------------------+
+:ref:`Mode<enum_VisualScriptInputAction_Mode>` **mode** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_action_mode** **(** :ref:`Mode<enum_VisualScriptInputAction_Mode>` value **)**
+- :ref:`Mode<enum_VisualScriptInputAction_Mode>` **get_action_mode** **(** **)**
 
 State of the action to check. See :ref:`Mode<enum_VisualScriptInputAction_Mode>` for options.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

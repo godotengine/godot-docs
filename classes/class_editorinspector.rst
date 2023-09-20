@@ -14,98 +14,150 @@ EditorInspector
 
 A control used to edit properties of an object.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
-This is the control that implements property editing in the editor's Settings dialogs, the Inspector dock, etc. To get the ``EditorInspector`` used in the editor's Inspector dock, use :ref:`EditorInterface.get_inspector<class_EditorInterface_method_get_inspector>`.
+This is the control that implements property editing in the editor's Settings dialogs, the Inspector dock, etc. To get the **EditorInspector** used in the editor's Inspector dock, use :ref:`EditorInterface.get_inspector<class_EditorInterface_method_get_inspector>`.
 
-\ ``EditorInspector`` will show properties in the same order as the array returned by :ref:`Object.get_property_list<class_Object_method_get_property_list>`.
+\ **EditorInspector** will show properties in the same order as the array returned by :ref:`Object.get_property_list<class_Object_method_get_property_list>`.
 
-If a property's name is path-like (i.e. if it contains forward slashes), ``EditorInspector`` will create nested sections for "directories" along the path. For example, if a property is named ``highlighting/gdscript/node_path_color``, it will be shown as "Node Path Color" inside the "GDScript" section nested inside the "Highlighting" section.
+If a property's name is path-like (i.e. if it contains forward slashes), **EditorInspector** will create nested sections for "directories" along the path. For example, if a property is named ``highlighting/gdscript/node_path_color``, it will be shown as "Node Path Color" inside the "GDScript" section nested inside the "Highlighting" section.
 
-If a property has :ref:`@GlobalScope.PROPERTY_USAGE_GROUP<class_@GlobalScope_constant_PROPERTY_USAGE_GROUP>` usage, it will group subsequent properties whose name starts with the property's hint string. The group ends when a property does not start with that hint string or when a new group starts. An empty group name effectively ends the current group. ``EditorInspector`` will create a top-level section for each group. For example, if a property with group usage is named ``Collide With`` and its hint string is ``collide_with_``, a subsequent ``collide_with_area`` property will be shown as "Area" inside the "Collide With" section.
+If a property has :ref:`@GlobalScope.PROPERTY_USAGE_GROUP<class_@GlobalScope_constant_PROPERTY_USAGE_GROUP>` usage, it will group subsequent properties whose name starts with the property's hint string. The group ends when a property does not start with that hint string or when a new group starts. An empty group name effectively ends the current group. **EditorInspector** will create a top-level section for each group. For example, if a property with group usage is named ``Collide With`` and its hint string is ``collide_with_``, a subsequent ``collide_with_area`` property will be shown as "Area" inside the "Collide With" section.
 
-\ **Note:** Unlike sections created from path-like property names, ``EditorInspector`` won't capitalize the name for sections created from groups. So properties with group usage usually use capitalized names instead of snake_cased names.
+\ **Note:** Unlike sections created from path-like property names, **EditorInspector** won't capitalize the name for sections created from groups. So properties with group usage usually use capitalized names instead of snake_cased names.
+
+.. rst-class:: classref-reftable-group
 
 Properties
 ----------
 
-+-------------------------+---------------------------+--------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | scroll_horizontal_enabled | ``false`` (overrides :ref:`ScrollContainer<class_ScrollContainer_property_scroll_horizontal_enabled>`) |
-+-------------------------+---------------------------+--------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------+---------------------------+--------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | scroll_horizontal_enabled | ``false`` (overrides :ref:`ScrollContainer<class_ScrollContainer_property_scroll_horizontal_enabled>`) |
+   +-------------------------+---------------------------+--------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+------+------------------------------------------------------------------+
-| void | :ref:`refresh<class_EditorInspector_method_refresh>` **(** **)** |
-+------+------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +------+------------------------------------------------------------------+
+   | void | :ref:`refresh<class_EditorInspector_method_refresh>` **(** **)** |
+   +------+------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Signals
 -------
 
 .. _class_EditorInspector_signal_object_id_selected:
 
-- **object_id_selected** **(** :ref:`int<class_int>` id **)**
+.. rst-class:: classref-signal
+
+**object_id_selected** **(** :ref:`int<class_int>` id **)**
 
 Emitted when the Edit button of an :ref:`Object<class_Object>` has been pressed in the inspector. This is mainly used in the remote scene tree inspector.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorInspector_signal_property_edited:
 
-- **property_edited** **(** :ref:`String<class_String>` property **)**
+.. rst-class:: classref-signal
+
+**property_edited** **(** :ref:`String<class_String>` property **)**
 
 Emitted when a property is edited in the inspector.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorInspector_signal_property_keyed:
 
-- **property_keyed** **(** :ref:`String<class_String>` property **)**
+.. rst-class:: classref-signal
+
+**property_keyed** **(** :ref:`String<class_String>` property **)**
 
 Emitted when a property is keyed in the inspector. Properties can be keyed by clicking the "key" icon next to a property when the Animation panel is toggled.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorInspector_signal_property_selected:
 
-- **property_selected** **(** :ref:`String<class_String>` property **)**
+.. rst-class:: classref-signal
+
+**property_selected** **(** :ref:`String<class_String>` property **)**
 
 Emitted when a property is selected in the inspector.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorInspector_signal_property_toggled:
 
-- **property_toggled** **(** :ref:`String<class_String>` property, :ref:`bool<class_bool>` checked **)**
+.. rst-class:: classref-signal
+
+**property_toggled** **(** :ref:`String<class_String>` property, :ref:`bool<class_bool>` checked **)**
 
 Emitted when a boolean property is toggled in the inspector.
 
 \ **Note:** This signal is never emitted if the internal ``autoclear`` property enabled. Since this property is always enabled in the editor inspector, this signal is never emitted by the editor itself.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_EditorInspector_signal_resource_selected:
 
-- **resource_selected** **(** :ref:`Object<class_Object>` res, :ref:`String<class_String>` prop **)**
+.. rst-class:: classref-signal
+
+**resource_selected** **(** :ref:`Object<class_Object>` res, :ref:`String<class_String>` prop **)**
 
 Emitted when a resource is selected in the inspector.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorInspector_signal_restart_requested:
 
-- **restart_requested** **(** **)**
+.. rst-class:: classref-signal
+
+**restart_requested** **(** **)**
 
 Emitted when a property that requires a restart to be applied is edited in the inspector. This is only used in the Project Settings and Editor Settings.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_EditorInspector_method_refresh:
 
-- void **refresh** **(** **)**
+.. rst-class:: classref-method
+
+void **refresh** **(** **)**
 
 Refreshes the inspector.
 
@@ -114,3 +166,4 @@ Refreshes the inspector.
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

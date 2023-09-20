@@ -14,6 +14,8 @@ GridContainer
 
 Grid container used to arrange Control-derived children in a grid like layout.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -23,6 +25,8 @@ Notice that grid layout will preserve the columns and rows for every size of the
 
 \ **Note:** GridContainer only works with child nodes inheriting from Control. It won't rearrange child nodes inheriting from Node2D.
 
+.. rst-class:: classref-introduction-group
+
 Tutorials
 ---------
 
@@ -30,66 +34,86 @@ Tutorials
 
 - `OS Test Demo <https://godotengine.org/asset-library/asset/677>`__
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+----------------------------------------------+------------------------------------------------------+-----------------------------------------------------------------------+
-| :ref:`int<class_int>`                        | :ref:`columns<class_GridContainer_property_columns>` | ``1``                                                                 |
-+----------------------------------------------+------------------------------------------------------+-----------------------------------------------------------------------+
-| :ref:`MouseFilter<enum_Control_MouseFilter>` | mouse_filter                                         | ``1`` (overrides :ref:`Control<class_Control_property_mouse_filter>`) |
-+----------------------------------------------+------------------------------------------------------+-----------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +----------------------------------------------+------------------------------------------------------+-----------------------------------------------------------------------+
+   | :ref:`int<class_int>`                        | :ref:`columns<class_GridContainer_property_columns>` | ``1``                                                                 |
+   +----------------------------------------------+------------------------------------------------------+-----------------------------------------------------------------------+
+   | :ref:`MouseFilter<enum_Control_MouseFilter>` | mouse_filter                                         | ``1`` (overrides :ref:`Control<class_Control_property_mouse_filter>`) |
+   +----------------------------------------------+------------------------------------------------------+-----------------------------------------------------------------------+
+
+.. rst-class:: classref-reftable-group
 
 Theme Properties
 ----------------
 
-+-----------------------+--------------------------------------------------------------------+-------+
-| :ref:`int<class_int>` | :ref:`hseparation<class_GridContainer_theme_constant_hseparation>` | ``4`` |
-+-----------------------+--------------------------------------------------------------------+-------+
-| :ref:`int<class_int>` | :ref:`vseparation<class_GridContainer_theme_constant_vseparation>` | ``4`` |
-+-----------------------+--------------------------------------------------------------------+-------+
+.. table::
+   :widths: auto
+
+   +-----------------------+--------------------------------------------------------------------+-------+
+   | :ref:`int<class_int>` | :ref:`hseparation<class_GridContainer_theme_constant_hseparation>` | ``4`` |
+   +-----------------------+--------------------------------------------------------------------+-------+
+   | :ref:`int<class_int>` | :ref:`vseparation<class_GridContainer_theme_constant_vseparation>` | ``4`` |
+   +-----------------------+--------------------------------------------------------------------+-------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_GridContainer_property_columns:
 
-- :ref:`int<class_int>` **columns**
+.. rst-class:: classref-property
 
-+-----------+--------------------+
-| *Default* | ``1``              |
-+-----------+--------------------+
-| *Setter*  | set_columns(value) |
-+-----------+--------------------+
-| *Getter*  | get_columns()      |
-+-----------+--------------------+
+:ref:`int<class_int>` **columns** = ``1``
 
-The number of columns in the ``GridContainer``. If modified, ``GridContainer`` reorders its Control-derived children to accommodate the new layout.
+.. rst-class:: classref-property-setget
+
+- void **set_columns** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_columns** **(** **)**
+
+The number of columns in the **GridContainer**. If modified, **GridContainer** reorders its Control-derived children to accommodate the new layout.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Theme Property Descriptions
 ---------------------------
 
 .. _class_GridContainer_theme_constant_hseparation:
 
-- :ref:`int<class_int>` **hseparation**
+.. rst-class:: classref-themeproperty
 
-+-----------+-------+
-| *Default* | ``4`` |
-+-----------+-------+
+:ref:`int<class_int>` **hseparation** = ``4``
 
 The horizontal separation of children nodes.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_GridContainer_theme_constant_vseparation:
 
-- :ref:`int<class_int>` **vseparation**
+.. rst-class:: classref-themeproperty
 
-+-----------+-------+
-| *Default* | ``4`` |
-+-----------+-------+
+:ref:`int<class_int>` **vseparation** = ``4``
 
 The vertical separation of children nodes.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

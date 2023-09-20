@@ -14,537 +14,683 @@ BakedLightmap
 
 Prerendered indirect light map for a scene.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 Baked lightmaps are an alternative workflow for adding indirect (or baked) lighting to a scene. Unlike the :ref:`GIProbe<class_GIProbe>` approach, baked lightmaps work fine on low-end PCs and mobile devices as they consume almost no resources in run-time.
 
-\ **Procedural generation:** Lightmap baking functionality is only available in the editor. This means ``BakedLightmap`` is not suited to procedurally generated or user-built levels. For procedurally generated or user-built levels, use :ref:`GIProbe<class_GIProbe>` instead.
+\ **Procedural generation:** Lightmap baking functionality is only available in the editor. This means **BakedLightmap** is not suited to procedurally generated or user-built levels. For procedurally generated or user-built levels, use :ref:`GIProbe<class_GIProbe>` instead.
 
 \ **Note:** Due to how lightmaps work, most properties only have a visible effect once lightmaps are baked again.
+
+.. rst-class:: classref-introduction-group
 
 Tutorials
 ---------
 
 - :doc:`../tutorials/3d/baked_lightmaps`
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+---------------------------+
-| :ref:`bool<class_bool>`                                    | :ref:`atlas_generate<class_BakedLightmap_property_atlas_generate>`                                                   | ``true``                  |
-+------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+---------------------------+
-| :ref:`int<class_int>`                                      | :ref:`atlas_max_size<class_BakedLightmap_property_atlas_max_size>`                                                   | ``4096``                  |
-+------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+---------------------------+
-| :ref:`float<class_float>`                                  | :ref:`bias<class_BakedLightmap_property_bias>`                                                                       | ``0.005``                 |
-+------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+---------------------------+
-| :ref:`float<class_float>`                                  | :ref:`bounce_indirect_energy<class_BakedLightmap_property_bounce_indirect_energy>`                                   | ``1.0``                   |
-+------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+---------------------------+
-| :ref:`int<class_int>`                                      | :ref:`bounces<class_BakedLightmap_property_bounces>`                                                                 | ``3``                     |
-+------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+---------------------------+
-| :ref:`float<class_float>`                                  | :ref:`capture_cell_size<class_BakedLightmap_property_capture_cell_size>`                                             | ``0.5``                   |
-+------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+---------------------------+
-| :ref:`bool<class_bool>`                                    | :ref:`capture_enabled<class_BakedLightmap_property_capture_enabled>`                                                 | ``true``                  |
-+------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+---------------------------+
-| :ref:`float<class_float>`                                  | :ref:`capture_propagation<class_BakedLightmap_property_capture_propagation>`                                         | ``1.0``                   |
-+------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+---------------------------+
-| :ref:`BakeQuality<enum_BakedLightmap_BakeQuality>`         | :ref:`capture_quality<class_BakedLightmap_property_capture_quality>`                                                 | ``1``                     |
-+------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+---------------------------+
-| :ref:`float<class_float>`                                  | :ref:`default_texels_per_unit<class_BakedLightmap_property_default_texels_per_unit>`                                 | ``16.0``                  |
-+------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+---------------------------+
-| :ref:`Color<class_Color>`                                  | :ref:`environment_custom_color<class_BakedLightmap_property_environment_custom_color>`                               |                           |
-+------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+---------------------------+
-| :ref:`float<class_float>`                                  | :ref:`environment_custom_energy<class_BakedLightmap_property_environment_custom_energy>`                             |                           |
-+------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+---------------------------+
-| :ref:`Sky<class_Sky>`                                      | :ref:`environment_custom_sky<class_BakedLightmap_property_environment_custom_sky>`                                   |                           |
-+------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+---------------------------+
-| :ref:`Vector3<class_Vector3>`                              | :ref:`environment_custom_sky_rotation_degrees<class_BakedLightmap_property_environment_custom_sky_rotation_degrees>` |                           |
-+------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+---------------------------+
-| :ref:`Color<class_Color>`                                  | :ref:`environment_min_light<class_BakedLightmap_property_environment_min_light>`                                     | ``Color( 0, 0, 0, 1 )``   |
-+------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+---------------------------+
-| :ref:`EnvironmentMode<enum_BakedLightmap_EnvironmentMode>` | :ref:`environment_mode<class_BakedLightmap_property_environment_mode>`                                               | ``0``                     |
-+------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+---------------------------+
-| :ref:`Vector3<class_Vector3>`                              | :ref:`extents<class_BakedLightmap_property_extents>`                                                                 | ``Vector3( 10, 10, 10 )`` |
-+------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+---------------------------+
-| :ref:`String<class_String>`                                | :ref:`image_path<class_BakedLightmap_property_image_path>`                                                           |                           |
-+------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+---------------------------+
-| :ref:`BakedLightmapData<class_BakedLightmapData>`          | :ref:`light_data<class_BakedLightmap_property_light_data>`                                                           |                           |
-+------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+---------------------------+
-| :ref:`BakeQuality<enum_BakedLightmap_BakeQuality>`         | :ref:`quality<class_BakedLightmap_property_quality>`                                                                 | ``1``                     |
-+------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+---------------------------+
-| :ref:`bool<class_bool>`                                    | :ref:`use_color<class_BakedLightmap_property_use_color>`                                                             | ``true``                  |
-+------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+---------------------------+
-| :ref:`bool<class_bool>`                                    | :ref:`use_denoiser<class_BakedLightmap_property_use_denoiser>`                                                       | ``true``                  |
-+------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+---------------------------+
-| :ref:`bool<class_bool>`                                    | :ref:`use_hdr<class_BakedLightmap_property_use_hdr>`                                                                 | ``true``                  |
-+------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+---------------------------+
+.. table::
+   :widths: auto
+
+   +------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+---------------------------+
+   | :ref:`bool<class_bool>`                                    | :ref:`atlas_generate<class_BakedLightmap_property_atlas_generate>`                                                   | ``true``                  |
+   +------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+---------------------------+
+   | :ref:`int<class_int>`                                      | :ref:`atlas_max_size<class_BakedLightmap_property_atlas_max_size>`                                                   | ``4096``                  |
+   +------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+---------------------------+
+   | :ref:`float<class_float>`                                  | :ref:`bias<class_BakedLightmap_property_bias>`                                                                       | ``0.005``                 |
+   +------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+---------------------------+
+   | :ref:`float<class_float>`                                  | :ref:`bounce_indirect_energy<class_BakedLightmap_property_bounce_indirect_energy>`                                   | ``1.0``                   |
+   +------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+---------------------------+
+   | :ref:`int<class_int>`                                      | :ref:`bounces<class_BakedLightmap_property_bounces>`                                                                 | ``3``                     |
+   +------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+---------------------------+
+   | :ref:`float<class_float>`                                  | :ref:`capture_cell_size<class_BakedLightmap_property_capture_cell_size>`                                             | ``0.5``                   |
+   +------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+---------------------------+
+   | :ref:`bool<class_bool>`                                    | :ref:`capture_enabled<class_BakedLightmap_property_capture_enabled>`                                                 | ``true``                  |
+   +------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+---------------------------+
+   | :ref:`float<class_float>`                                  | :ref:`capture_propagation<class_BakedLightmap_property_capture_propagation>`                                         | ``1.0``                   |
+   +------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+---------------------------+
+   | :ref:`BakeQuality<enum_BakedLightmap_BakeQuality>`         | :ref:`capture_quality<class_BakedLightmap_property_capture_quality>`                                                 | ``1``                     |
+   +------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+---------------------------+
+   | :ref:`float<class_float>`                                  | :ref:`default_texels_per_unit<class_BakedLightmap_property_default_texels_per_unit>`                                 | ``16.0``                  |
+   +------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+---------------------------+
+   | :ref:`Color<class_Color>`                                  | :ref:`environment_custom_color<class_BakedLightmap_property_environment_custom_color>`                               |                           |
+   +------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+---------------------------+
+   | :ref:`float<class_float>`                                  | :ref:`environment_custom_energy<class_BakedLightmap_property_environment_custom_energy>`                             |                           |
+   +------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+---------------------------+
+   | :ref:`Sky<class_Sky>`                                      | :ref:`environment_custom_sky<class_BakedLightmap_property_environment_custom_sky>`                                   |                           |
+   +------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+---------------------------+
+   | :ref:`Vector3<class_Vector3>`                              | :ref:`environment_custom_sky_rotation_degrees<class_BakedLightmap_property_environment_custom_sky_rotation_degrees>` |                           |
+   +------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+---------------------------+
+   | :ref:`Color<class_Color>`                                  | :ref:`environment_min_light<class_BakedLightmap_property_environment_min_light>`                                     | ``Color( 0, 0, 0, 1 )``   |
+   +------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+---------------------------+
+   | :ref:`EnvironmentMode<enum_BakedLightmap_EnvironmentMode>` | :ref:`environment_mode<class_BakedLightmap_property_environment_mode>`                                               | ``0``                     |
+   +------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+---------------------------+
+   | :ref:`Vector3<class_Vector3>`                              | :ref:`extents<class_BakedLightmap_property_extents>`                                                                 | ``Vector3( 10, 10, 10 )`` |
+   +------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+---------------------------+
+   | :ref:`String<class_String>`                                | :ref:`image_path<class_BakedLightmap_property_image_path>`                                                           |                           |
+   +------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+---------------------------+
+   | :ref:`BakedLightmapData<class_BakedLightmapData>`          | :ref:`light_data<class_BakedLightmap_property_light_data>`                                                           |                           |
+   +------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+---------------------------+
+   | :ref:`BakeQuality<enum_BakedLightmap_BakeQuality>`         | :ref:`quality<class_BakedLightmap_property_quality>`                                                                 | ``1``                     |
+   +------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+---------------------------+
+   | :ref:`bool<class_bool>`                                    | :ref:`use_color<class_BakedLightmap_property_use_color>`                                                             | ``true``                  |
+   +------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+---------------------------+
+   | :ref:`bool<class_bool>`                                    | :ref:`use_denoiser<class_BakedLightmap_property_use_denoiser>`                                                       | ``true``                  |
+   +------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+---------------------------+
+   | :ref:`bool<class_bool>`                                    | :ref:`use_hdr<class_BakedLightmap_property_use_hdr>`                                                                 | ``true``                  |
+   +------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------+---------------------------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`BakeError<enum_BakedLightmap_BakeError>` | :ref:`bake<class_BakedLightmap_method_bake>` **(** :ref:`Node<class_Node>` from_node=null, :ref:`String<class_String>` data_save_path="" **)** |
-+------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`BakeError<enum_BakedLightmap_BakeError>` | :ref:`bake<class_BakedLightmap_method_bake>` **(** :ref:`Node<class_Node>` from_node=null, :ref:`String<class_String>` data_save_path="" **)** |
+   +------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Enumerations
 ------------
 
 .. _enum_BakedLightmap_BakeQuality:
 
-.. _class_BakedLightmap_constant_BAKE_QUALITY_LOW:
-
-.. _class_BakedLightmap_constant_BAKE_QUALITY_MEDIUM:
-
-.. _class_BakedLightmap_constant_BAKE_QUALITY_HIGH:
-
-.. _class_BakedLightmap_constant_BAKE_QUALITY_ULTRA:
+.. rst-class:: classref-enumeration
 
 enum **BakeQuality**:
 
-- **BAKE_QUALITY_LOW** = **0** --- The lowest bake quality mode. Fastest to calculate.
+.. _class_BakedLightmap_constant_BAKE_QUALITY_LOW:
 
-- **BAKE_QUALITY_MEDIUM** = **1** --- The default bake quality mode.
+.. rst-class:: classref-enumeration-constant
 
-- **BAKE_QUALITY_HIGH** = **2** --- A higher bake quality mode. Takes longer to calculate.
+:ref:`BakeQuality<enum_BakedLightmap_BakeQuality>` **BAKE_QUALITY_LOW** = ``0``
 
-- **BAKE_QUALITY_ULTRA** = **3** --- The highest bake quality mode. Takes the longest to calculate.
+The lowest bake quality mode. Fastest to calculate.
+
+.. _class_BakedLightmap_constant_BAKE_QUALITY_MEDIUM:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`BakeQuality<enum_BakedLightmap_BakeQuality>` **BAKE_QUALITY_MEDIUM** = ``1``
+
+The default bake quality mode.
+
+.. _class_BakedLightmap_constant_BAKE_QUALITY_HIGH:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`BakeQuality<enum_BakedLightmap_BakeQuality>` **BAKE_QUALITY_HIGH** = ``2``
+
+A higher bake quality mode. Takes longer to calculate.
+
+.. _class_BakedLightmap_constant_BAKE_QUALITY_ULTRA:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`BakeQuality<enum_BakedLightmap_BakeQuality>` **BAKE_QUALITY_ULTRA** = ``3``
+
+The highest bake quality mode. Takes the longest to calculate.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _enum_BakedLightmap_BakeError:
 
-.. _class_BakedLightmap_constant_BAKE_ERROR_OK:
-
-.. _class_BakedLightmap_constant_BAKE_ERROR_NO_SAVE_PATH:
-
-.. _class_BakedLightmap_constant_BAKE_ERROR_NO_MESHES:
-
-.. _class_BakedLightmap_constant_BAKE_ERROR_CANT_CREATE_IMAGE:
-
-.. _class_BakedLightmap_constant_BAKE_ERROR_LIGHTMAP_SIZE:
-
-.. _class_BakedLightmap_constant_BAKE_ERROR_INVALID_MESH:
-
-.. _class_BakedLightmap_constant_BAKE_ERROR_USER_ABORTED:
-
-.. _class_BakedLightmap_constant_BAKE_ERROR_NO_LIGHTMAPPER:
-
-.. _class_BakedLightmap_constant_BAKE_ERROR_NO_ROOT:
+.. rst-class:: classref-enumeration
 
 enum **BakeError**:
 
-- **BAKE_ERROR_OK** = **0** --- Baking was successful.
+.. _class_BakedLightmap_constant_BAKE_ERROR_OK:
 
-- **BAKE_ERROR_NO_SAVE_PATH** = **1** --- Returns if no viable save path is found. This can happen where an :ref:`image_path<class_BakedLightmap_property_image_path>` is not specified or when the save location is invalid.
+.. rst-class:: classref-enumeration-constant
 
-- **BAKE_ERROR_NO_MESHES** = **2** --- Currently unused.
+:ref:`BakeError<enum_BakedLightmap_BakeError>` **BAKE_ERROR_OK** = ``0``
 
-- **BAKE_ERROR_CANT_CREATE_IMAGE** = **3** --- Returns when the baker cannot save per-mesh textures to file.
+Baking was successful.
 
-- **BAKE_ERROR_LIGHTMAP_SIZE** = **4** --- The size of the generated lightmaps is too large.
+.. _class_BakedLightmap_constant_BAKE_ERROR_NO_SAVE_PATH:
 
-- **BAKE_ERROR_INVALID_MESH** = **5** --- Some mesh contains UV2 values outside the ``[0,1]`` range.
+.. rst-class:: classref-enumeration-constant
 
-- **BAKE_ERROR_USER_ABORTED** = **6** --- Returns if user cancels baking.
+:ref:`BakeError<enum_BakedLightmap_BakeError>` **BAKE_ERROR_NO_SAVE_PATH** = ``1``
 
-- **BAKE_ERROR_NO_LIGHTMAPPER** = **7** --- Returns if lightmapper can't be created. Unless you are using a custom lightmapper, please report this as bug.
+Returns if no viable save path is found. This can happen where an :ref:`image_path<class_BakedLightmap_property_image_path>` is not specified or when the save location is invalid.
 
-- **BAKE_ERROR_NO_ROOT** = **8** --- There is no root node to start baking from. Either provide ``from_node`` argument or attach this node to a parent that should be used as root.
+.. _class_BakedLightmap_constant_BAKE_ERROR_NO_MESHES:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`BakeError<enum_BakedLightmap_BakeError>` **BAKE_ERROR_NO_MESHES** = ``2``
+
+Currently unused.
+
+.. _class_BakedLightmap_constant_BAKE_ERROR_CANT_CREATE_IMAGE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`BakeError<enum_BakedLightmap_BakeError>` **BAKE_ERROR_CANT_CREATE_IMAGE** = ``3``
+
+Returns when the baker cannot save per-mesh textures to file.
+
+.. _class_BakedLightmap_constant_BAKE_ERROR_LIGHTMAP_SIZE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`BakeError<enum_BakedLightmap_BakeError>` **BAKE_ERROR_LIGHTMAP_SIZE** = ``4``
+
+The size of the generated lightmaps is too large.
+
+.. _class_BakedLightmap_constant_BAKE_ERROR_INVALID_MESH:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`BakeError<enum_BakedLightmap_BakeError>` **BAKE_ERROR_INVALID_MESH** = ``5``
+
+Some mesh contains UV2 values outside the ``[0,1]`` range.
+
+.. _class_BakedLightmap_constant_BAKE_ERROR_USER_ABORTED:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`BakeError<enum_BakedLightmap_BakeError>` **BAKE_ERROR_USER_ABORTED** = ``6``
+
+Returns if user cancels baking.
+
+.. _class_BakedLightmap_constant_BAKE_ERROR_NO_LIGHTMAPPER:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`BakeError<enum_BakedLightmap_BakeError>` **BAKE_ERROR_NO_LIGHTMAPPER** = ``7``
+
+Returns if lightmapper can't be created. Unless you are using a custom lightmapper, please report this as bug.
+
+.. _class_BakedLightmap_constant_BAKE_ERROR_NO_ROOT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`BakeError<enum_BakedLightmap_BakeError>` **BAKE_ERROR_NO_ROOT** = ``8``
+
+There is no root node to start baking from. Either provide ``from_node`` argument or attach this node to a parent that should be used as root.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _enum_BakedLightmap_EnvironmentMode:
 
-.. _class_BakedLightmap_constant_ENVIRONMENT_MODE_DISABLED:
-
-.. _class_BakedLightmap_constant_ENVIRONMENT_MODE_SCENE:
-
-.. _class_BakedLightmap_constant_ENVIRONMENT_MODE_CUSTOM_SKY:
-
-.. _class_BakedLightmap_constant_ENVIRONMENT_MODE_CUSTOM_COLOR:
+.. rst-class:: classref-enumeration
 
 enum **EnvironmentMode**:
 
-- **ENVIRONMENT_MODE_DISABLED** = **0** --- No environment is used during baking.
+.. _class_BakedLightmap_constant_ENVIRONMENT_MODE_DISABLED:
 
-- **ENVIRONMENT_MODE_SCENE** = **1** --- The baked environment is automatically picked from the current scene.
+.. rst-class:: classref-enumeration-constant
 
-- **ENVIRONMENT_MODE_CUSTOM_SKY** = **2** --- A custom sky is used as environment during baking.
+:ref:`EnvironmentMode<enum_BakedLightmap_EnvironmentMode>` **ENVIRONMENT_MODE_DISABLED** = ``0``
 
-- **ENVIRONMENT_MODE_CUSTOM_COLOR** = **3** --- A custom solid color is used as environment during baking.
+No environment is used during baking.
+
+.. _class_BakedLightmap_constant_ENVIRONMENT_MODE_SCENE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`EnvironmentMode<enum_BakedLightmap_EnvironmentMode>` **ENVIRONMENT_MODE_SCENE** = ``1``
+
+The baked environment is automatically picked from the current scene.
+
+.. _class_BakedLightmap_constant_ENVIRONMENT_MODE_CUSTOM_SKY:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`EnvironmentMode<enum_BakedLightmap_EnvironmentMode>` **ENVIRONMENT_MODE_CUSTOM_SKY** = ``2``
+
+A custom sky is used as environment during baking.
+
+.. _class_BakedLightmap_constant_ENVIRONMENT_MODE_CUSTOM_COLOR:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`EnvironmentMode<enum_BakedLightmap_EnvironmentMode>` **ENVIRONMENT_MODE_CUSTOM_COLOR** = ``3``
+
+A custom solid color is used as environment during baking.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_BakedLightmap_property_atlas_generate:
 
-- :ref:`bool<class_bool>` **atlas_generate**
+.. rst-class:: classref-property
 
-+-----------+-----------------------------+
-| *Default* | ``true``                    |
-+-----------+-----------------------------+
-| *Setter*  | set_generate_atlas(value)   |
-+-----------+-----------------------------+
-| *Getter*  | is_generate_atlas_enabled() |
-+-----------+-----------------------------+
+:ref:`bool<class_bool>` **atlas_generate** = ``true``
+
+.. rst-class:: classref-property-setget
+
+- void **set_generate_atlas** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_generate_atlas_enabled** **(** **)**
 
 If ``true``, the lightmapper will merge the textures for all meshes into one or several large layered textures. If ``false``, every mesh will get its own lightmap texture, which is less efficient.
 
 \ **Note:** Atlas lightmap rendering is only supported in GLES3, *not* GLES2. Non-atlas lightmap rendering is supported by both GLES3 and GLES2. If :ref:`ProjectSettings.rendering/quality/driver/fallback_to_gles2<class_ProjectSettings_property_rendering/quality/driver/fallback_to_gles2>` is ``true``, consider baking lightmaps with :ref:`atlas_generate<class_BakedLightmap_property_atlas_generate>` set to ``false`` so that the resulting lightmap is visible in both GLES3 and GLES2.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_BakedLightmap_property_atlas_max_size:
 
-- :ref:`int<class_int>` **atlas_max_size**
+.. rst-class:: classref-property
 
-+-----------+---------------------------+
-| *Default* | ``4096``                  |
-+-----------+---------------------------+
-| *Setter*  | set_max_atlas_size(value) |
-+-----------+---------------------------+
-| *Getter*  | get_max_atlas_size()      |
-+-----------+---------------------------+
+:ref:`int<class_int>` **atlas_max_size** = ``4096``
+
+.. rst-class:: classref-property-setget
+
+- void **set_max_atlas_size** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_max_atlas_size** **(** **)**
 
 Maximum size of each lightmap layer, only used when :ref:`atlas_generate<class_BakedLightmap_property_atlas_generate>` is enabled.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_BakedLightmap_property_bias:
 
-- :ref:`float<class_float>` **bias**
+.. rst-class:: classref-property
 
-+-----------+-----------------+
-| *Default* | ``0.005``       |
-+-----------+-----------------+
-| *Setter*  | set_bias(value) |
-+-----------+-----------------+
-| *Getter*  | get_bias()      |
-+-----------+-----------------+
+:ref:`float<class_float>` **bias** = ``0.005``
+
+.. rst-class:: classref-property-setget
+
+- void **set_bias** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_bias** **(** **)**
 
 Raycasting bias used during baking to avoid floating point precision issues.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_BakedLightmap_property_bounce_indirect_energy:
 
-- :ref:`float<class_float>` **bounce_indirect_energy**
+.. rst-class:: classref-property
 
-+-----------+-----------------------------------+
-| *Default* | ``1.0``                           |
-+-----------+-----------------------------------+
-| *Setter*  | set_bounce_indirect_energy(value) |
-+-----------+-----------------------------------+
-| *Getter*  | get_bounce_indirect_energy()      |
-+-----------+-----------------------------------+
+:ref:`float<class_float>` **bounce_indirect_energy** = ``1.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_bounce_indirect_energy** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_bounce_indirect_energy** **(** **)**
 
 The energy multiplier for each bounce. Higher values will make indirect lighting brighter. A value of ``1.0`` represents physically accurate behavior, but higher values can be used to make indirect lighting propagate more visibly when using a low number of bounces. This can be used to speed up bake times by lowering the number of :ref:`bounces<class_BakedLightmap_property_bounces>` then increasing :ref:`bounce_indirect_energy<class_BakedLightmap_property_bounce_indirect_energy>`. Unlike :ref:`BakedLightmapData.energy<class_BakedLightmapData_property_energy>`, this property does not affect direct lighting emitted by light nodes, emissive materials and the environment.
 
 \ **Note:** :ref:`bounce_indirect_energy<class_BakedLightmap_property_bounce_indirect_energy>` only has an effect if :ref:`bounces<class_BakedLightmap_property_bounces>` is set to a value greater than or equal to ``1``.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_BakedLightmap_property_bounces:
 
-- :ref:`int<class_int>` **bounces**
+.. rst-class:: classref-property
 
-+-----------+--------------------+
-| *Default* | ``3``              |
-+-----------+--------------------+
-| *Setter*  | set_bounces(value) |
-+-----------+--------------------+
-| *Getter*  | get_bounces()      |
-+-----------+--------------------+
+:ref:`int<class_int>` **bounces** = ``3``
+
+.. rst-class:: classref-property-setget
+
+- void **set_bounces** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_bounces** **(** **)**
 
 Number of light bounces that are taken into account during baking. See also :ref:`bounce_indirect_energy<class_BakedLightmap_property_bounce_indirect_energy>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_BakedLightmap_property_capture_cell_size:
 
-- :ref:`float<class_float>` **capture_cell_size**
+.. rst-class:: classref-property
 
-+-----------+------------------------------+
-| *Default* | ``0.5``                      |
-+-----------+------------------------------+
-| *Setter*  | set_capture_cell_size(value) |
-+-----------+------------------------------+
-| *Getter*  | get_capture_cell_size()      |
-+-----------+------------------------------+
+:ref:`float<class_float>` **capture_cell_size** = ``0.5``
+
+.. rst-class:: classref-property-setget
+
+- void **set_capture_cell_size** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_capture_cell_size** **(** **)**
 
 Grid size used for real-time capture information on dynamic objects.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_BakedLightmap_property_capture_enabled:
 
-- :ref:`bool<class_bool>` **capture_enabled**
+.. rst-class:: classref-property
 
-+-----------+----------------------------+
-| *Default* | ``true``                   |
-+-----------+----------------------------+
-| *Setter*  | set_capture_enabled(value) |
-+-----------+----------------------------+
-| *Getter*  | get_capture_enabled()      |
-+-----------+----------------------------+
+:ref:`bool<class_bool>` **capture_enabled** = ``true``
+
+.. rst-class:: classref-property-setget
+
+- void **set_capture_enabled** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **get_capture_enabled** **(** **)**
 
 When enabled, an octree containing the scene's lighting information will be computed. This octree will then be used to light dynamic objects in the scene.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_BakedLightmap_property_capture_propagation:
 
-- :ref:`float<class_float>` **capture_propagation**
+.. rst-class:: classref-property
 
-+-----------+--------------------------------+
-| *Default* | ``1.0``                        |
-+-----------+--------------------------------+
-| *Setter*  | set_capture_propagation(value) |
-+-----------+--------------------------------+
-| *Getter*  | get_capture_propagation()      |
-+-----------+--------------------------------+
+:ref:`float<class_float>` **capture_propagation** = ``1.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_capture_propagation** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_capture_propagation** **(** **)**
 
 Bias value to reduce the amount of light propagation in the captured octree.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_BakedLightmap_property_capture_quality:
 
-- :ref:`BakeQuality<enum_BakedLightmap_BakeQuality>` **capture_quality**
+.. rst-class:: classref-property
 
-+-----------+----------------------------+
-| *Default* | ``1``                      |
-+-----------+----------------------------+
-| *Setter*  | set_capture_quality(value) |
-+-----------+----------------------------+
-| *Getter*  | get_capture_quality()      |
-+-----------+----------------------------+
+:ref:`BakeQuality<enum_BakedLightmap_BakeQuality>` **capture_quality** = ``1``
+
+.. rst-class:: classref-property-setget
+
+- void **set_capture_quality** **(** :ref:`BakeQuality<enum_BakedLightmap_BakeQuality>` value **)**
+- :ref:`BakeQuality<enum_BakedLightmap_BakeQuality>` **get_capture_quality** **(** **)**
 
 Bake quality of the capture data.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_BakedLightmap_property_default_texels_per_unit:
 
-- :ref:`float<class_float>` **default_texels_per_unit**
+.. rst-class:: classref-property
 
-+-----------+------------------------------------+
-| *Default* | ``16.0``                           |
-+-----------+------------------------------------+
-| *Setter*  | set_default_texels_per_unit(value) |
-+-----------+------------------------------------+
-| *Getter*  | get_default_texels_per_unit()      |
-+-----------+------------------------------------+
+:ref:`float<class_float>` **default_texels_per_unit** = ``16.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_default_texels_per_unit** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_default_texels_per_unit** **(** **)**
 
 If a baked mesh doesn't have a UV2 size hint, this value will be used to roughly compute a suitable lightmap size.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_BakedLightmap_property_environment_custom_color:
 
-- :ref:`Color<class_Color>` **environment_custom_color**
+.. rst-class:: classref-property
 
-+----------+-------------------------------------+
-| *Setter* | set_environment_custom_color(value) |
-+----------+-------------------------------------+
-| *Getter* | get_environment_custom_color()      |
-+----------+-------------------------------------+
+:ref:`Color<class_Color>` **environment_custom_color**
+
+.. rst-class:: classref-property-setget
+
+- void **set_environment_custom_color** **(** :ref:`Color<class_Color>` value **)**
+- :ref:`Color<class_Color>` **get_environment_custom_color** **(** **)**
 
 The environment color when :ref:`environment_mode<class_BakedLightmap_property_environment_mode>` is set to :ref:`ENVIRONMENT_MODE_CUSTOM_COLOR<class_BakedLightmap_constant_ENVIRONMENT_MODE_CUSTOM_COLOR>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_BakedLightmap_property_environment_custom_energy:
 
-- :ref:`float<class_float>` **environment_custom_energy**
+.. rst-class:: classref-property
 
-+----------+--------------------------------------+
-| *Setter* | set_environment_custom_energy(value) |
-+----------+--------------------------------------+
-| *Getter* | get_environment_custom_energy()      |
-+----------+--------------------------------------+
+:ref:`float<class_float>` **environment_custom_energy**
+
+.. rst-class:: classref-property-setget
+
+- void **set_environment_custom_energy** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_environment_custom_energy** **(** **)**
 
 The energy scaling factor when when :ref:`environment_mode<class_BakedLightmap_property_environment_mode>` is set to :ref:`ENVIRONMENT_MODE_CUSTOM_COLOR<class_BakedLightmap_constant_ENVIRONMENT_MODE_CUSTOM_COLOR>` or :ref:`ENVIRONMENT_MODE_CUSTOM_SKY<class_BakedLightmap_constant_ENVIRONMENT_MODE_CUSTOM_SKY>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_BakedLightmap_property_environment_custom_sky:
 
-- :ref:`Sky<class_Sky>` **environment_custom_sky**
+.. rst-class:: classref-property
 
-+----------+-----------------------------------+
-| *Setter* | set_environment_custom_sky(value) |
-+----------+-----------------------------------+
-| *Getter* | get_environment_custom_sky()      |
-+----------+-----------------------------------+
+:ref:`Sky<class_Sky>` **environment_custom_sky**
+
+.. rst-class:: classref-property-setget
+
+- void **set_environment_custom_sky** **(** :ref:`Sky<class_Sky>` value **)**
+- :ref:`Sky<class_Sky>` **get_environment_custom_sky** **(** **)**
 
 The :ref:`Sky<class_Sky>` resource to use when :ref:`environment_mode<class_BakedLightmap_property_environment_mode>` is set o :ref:`ENVIRONMENT_MODE_CUSTOM_SKY<class_BakedLightmap_constant_ENVIRONMENT_MODE_CUSTOM_SKY>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_BakedLightmap_property_environment_custom_sky_rotation_degrees:
 
-- :ref:`Vector3<class_Vector3>` **environment_custom_sky_rotation_degrees**
+.. rst-class:: classref-property
 
-+----------+----------------------------------------------------+
-| *Setter* | set_environment_custom_sky_rotation_degrees(value) |
-+----------+----------------------------------------------------+
-| *Getter* | get_environment_custom_sky_rotation_degrees()      |
-+----------+----------------------------------------------------+
+:ref:`Vector3<class_Vector3>` **environment_custom_sky_rotation_degrees**
+
+.. rst-class:: classref-property-setget
+
+- void **set_environment_custom_sky_rotation_degrees** **(** :ref:`Vector3<class_Vector3>` value **)**
+- :ref:`Vector3<class_Vector3>` **get_environment_custom_sky_rotation_degrees** **(** **)**
 
 The rotation of the baked custom sky.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_BakedLightmap_property_environment_min_light:
 
-- :ref:`Color<class_Color>` **environment_min_light**
+.. rst-class:: classref-property
 
-+-----------+----------------------------------+
-| *Default* | ``Color( 0, 0, 0, 1 )``          |
-+-----------+----------------------------------+
-| *Setter*  | set_environment_min_light(value) |
-+-----------+----------------------------------+
-| *Getter*  | get_environment_min_light()      |
-+-----------+----------------------------------+
+:ref:`Color<class_Color>` **environment_min_light** = ``Color( 0, 0, 0, 1 )``
+
+.. rst-class:: classref-property-setget
+
+- void **set_environment_min_light** **(** :ref:`Color<class_Color>` value **)**
+- :ref:`Color<class_Color>` **get_environment_min_light** **(** **)**
 
 Minimum ambient light for all the lightmap texels. This doesn't take into account any occlusion from the scene's geometry, it simply ensures a minimum amount of light on all the lightmap texels. Can be used for artistic control on shadow color.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_BakedLightmap_property_environment_mode:
 
-- :ref:`EnvironmentMode<enum_BakedLightmap_EnvironmentMode>` **environment_mode**
+.. rst-class:: classref-property
 
-+-----------+-----------------------------+
-| *Default* | ``0``                       |
-+-----------+-----------------------------+
-| *Setter*  | set_environment_mode(value) |
-+-----------+-----------------------------+
-| *Getter*  | get_environment_mode()      |
-+-----------+-----------------------------+
+:ref:`EnvironmentMode<enum_BakedLightmap_EnvironmentMode>` **environment_mode** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_environment_mode** **(** :ref:`EnvironmentMode<enum_BakedLightmap_EnvironmentMode>` value **)**
+- :ref:`EnvironmentMode<enum_BakedLightmap_EnvironmentMode>` **get_environment_mode** **(** **)**
 
 Decides which environment to use during baking.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_BakedLightmap_property_extents:
 
-- :ref:`Vector3<class_Vector3>` **extents**
+.. rst-class:: classref-property
 
-+-----------+---------------------------+
-| *Default* | ``Vector3( 10, 10, 10 )`` |
-+-----------+---------------------------+
-| *Setter*  | set_extents(value)        |
-+-----------+---------------------------+
-| *Getter*  | get_extents()             |
-+-----------+---------------------------+
+:ref:`Vector3<class_Vector3>` **extents** = ``Vector3( 10, 10, 10 )``
+
+.. rst-class:: classref-property-setget
+
+- void **set_extents** **(** :ref:`Vector3<class_Vector3>` value **)**
+- :ref:`Vector3<class_Vector3>` **get_extents** **(** **)**
 
 Size of the baked lightmap. Only meshes inside this region will be included in the baked lightmap, also used as the bounds of the captured region for dynamic lighting.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_BakedLightmap_property_image_path:
 
-- :ref:`String<class_String>` **image_path**
+.. rst-class:: classref-property
 
-+----------+-----------------------+
-| *Setter* | set_image_path(value) |
-+----------+-----------------------+
-| *Getter* | get_image_path()      |
-+----------+-----------------------+
+:ref:`String<class_String>` **image_path**
+
+.. rst-class:: classref-property-setget
+
+- void **set_image_path** **(** :ref:`String<class_String>` value **)**
+- :ref:`String<class_String>` **get_image_path** **(** **)**
 
 Deprecated, in previous versions it determined the location where lightmaps were be saved.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_BakedLightmap_property_light_data:
 
-- :ref:`BakedLightmapData<class_BakedLightmapData>` **light_data**
+.. rst-class:: classref-property
 
-+----------+-----------------------+
-| *Setter* | set_light_data(value) |
-+----------+-----------------------+
-| *Getter* | get_light_data()      |
-+----------+-----------------------+
+:ref:`BakedLightmapData<class_BakedLightmapData>` **light_data**
+
+.. rst-class:: classref-property-setget
+
+- void **set_light_data** **(** :ref:`BakedLightmapData<class_BakedLightmapData>` value **)**
+- :ref:`BakedLightmapData<class_BakedLightmapData>` **get_light_data** **(** **)**
 
 The calculated light data.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_BakedLightmap_property_quality:
 
-- :ref:`BakeQuality<enum_BakedLightmap_BakeQuality>` **quality**
+.. rst-class:: classref-property
 
-+-----------+-------------------------+
-| *Default* | ``1``                   |
-+-----------+-------------------------+
-| *Setter*  | set_bake_quality(value) |
-+-----------+-------------------------+
-| *Getter*  | get_bake_quality()      |
-+-----------+-------------------------+
+:ref:`BakeQuality<enum_BakedLightmap_BakeQuality>` **quality** = ``1``
+
+.. rst-class:: classref-property-setget
+
+- void **set_bake_quality** **(** :ref:`BakeQuality<enum_BakedLightmap_BakeQuality>` value **)**
+- :ref:`BakeQuality<enum_BakedLightmap_BakeQuality>` **get_bake_quality** **(** **)**
 
 Determines the amount of samples per texel used in indirect light baking. The amount of samples for each quality level can be configured in the project settings.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_BakedLightmap_property_use_color:
 
-- :ref:`bool<class_bool>` **use_color**
+.. rst-class:: classref-property
 
-+-----------+----------------------+
-| *Default* | ``true``             |
-+-----------+----------------------+
-| *Setter*  | set_use_color(value) |
-+-----------+----------------------+
-| *Getter*  | is_using_color()     |
-+-----------+----------------------+
+:ref:`bool<class_bool>` **use_color** = ``true``
+
+.. rst-class:: classref-property-setget
+
+- void **set_use_color** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_using_color** **(** **)**
 
 Store full color values in the lightmap textures. When disabled, lightmap textures will store a single brightness channel. Can be disabled to reduce disk usage if the scene contains only white lights or you don't mind losing color information in indirect lighting.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_BakedLightmap_property_use_denoiser:
 
-- :ref:`bool<class_bool>` **use_denoiser**
+.. rst-class:: classref-property
 
-+-----------+-------------------------+
-| *Default* | ``true``                |
-+-----------+-------------------------+
-| *Setter*  | set_use_denoiser(value) |
-+-----------+-------------------------+
-| *Getter*  | is_using_denoiser()     |
-+-----------+-------------------------+
+:ref:`bool<class_bool>` **use_denoiser** = ``true``
+
+.. rst-class:: classref-property-setget
+
+- void **set_use_denoiser** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_using_denoiser** **(** **)**
 
 When enabled, a lightmap denoiser will be used to reduce the noise inherent to Monte Carlo based global illumination.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_BakedLightmap_property_use_hdr:
 
-- :ref:`bool<class_bool>` **use_hdr**
+.. rst-class:: classref-property
 
-+-----------+--------------------+
-| *Default* | ``true``           |
-+-----------+--------------------+
-| *Setter*  | set_use_hdr(value) |
-+-----------+--------------------+
-| *Getter*  | is_using_hdr()     |
-+-----------+--------------------+
+:ref:`bool<class_bool>` **use_hdr** = ``true``
+
+.. rst-class:: classref-property-setget
+
+- void **set_use_hdr** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_using_hdr** **(** **)**
 
 If ``true``, stores the lightmap textures in a high dynamic range format (EXR). If ``false``, stores the lightmap texture in a low dynamic range PNG image. This can be set to ``false`` to reduce disk usage, but light values over 1.0 will be clamped and you may see banding caused by the reduced precision.
 
 \ **Note:** Setting :ref:`use_hdr<class_BakedLightmap_property_use_hdr>` to ``true`` will decrease lightmap banding even when using the GLES2 backend or if :ref:`ProjectSettings.rendering/quality/depth/hdr<class_ProjectSettings_property_rendering/quality/depth/hdr>` is ``false``.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_BakedLightmap_method_bake:
 
-- :ref:`BakeError<enum_BakedLightmap_BakeError>` **bake** **(** :ref:`Node<class_Node>` from_node=null, :ref:`String<class_String>` data_save_path="" **)**
+.. rst-class:: classref-method
+
+:ref:`BakeError<enum_BakedLightmap_BakeError>` **bake** **(** :ref:`Node<class_Node>` from_node=null, :ref:`String<class_String>` data_save_path="" **)**
 
 Bakes the lightmap, scanning from the given ``from_node`` root and saves the resulting :ref:`BakedLightmapData<class_BakedLightmapData>` in ``data_save_path``. If no root node is provided, parent of this node will be used as root instead. If no save path is provided it will try to match the path from the current :ref:`light_data<class_BakedLightmap_property_light_data>`.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

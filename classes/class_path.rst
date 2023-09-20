@@ -14,6 +14,8 @@ Path
 
 Contains a :ref:`Curve3D<class_Curve3D>` path for :ref:`PathFollow<class_PathFollow>` nodes to follow.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -21,37 +23,58 @@ Can have :ref:`PathFollow<class_PathFollow>` child nodes moving along the :ref:`
 
 Note that the path is considered as relative to the moved nodes (children of :ref:`PathFollow<class_PathFollow>`). As such, the curve should usually start with a zero vector ``(0, 0, 0)``.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-------------------------------+-----------------------------------------+
-| :ref:`Curve3D<class_Curve3D>` | :ref:`curve<class_Path_property_curve>` |
-+-------------------------------+-----------------------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------------+-----------------------------------------+
+   | :ref:`Curve3D<class_Curve3D>` | :ref:`curve<class_Path_property_curve>` |
+   +-------------------------------+-----------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Signals
 -------
 
 .. _class_Path_signal_curve_changed:
 
-- **curve_changed** **(** **)**
+.. rst-class:: classref-signal
+
+**curve_changed** **(** **)**
 
 Emitted when the :ref:`curve<class_Path_property_curve>` changes.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_Path_property_curve:
 
-- :ref:`Curve3D<class_Curve3D>` **curve**
+.. rst-class:: classref-property
 
-+----------+------------------+
-| *Setter* | set_curve(value) |
-+----------+------------------+
-| *Getter* | get_curve()      |
-+----------+------------------+
+:ref:`Curve3D<class_Curve3D>` **curve**
+
+.. rst-class:: classref-property-setget
+
+- void **set_curve** **(** :ref:`Curve3D<class_Curve3D>` value **)**
+- :ref:`Curve3D<class_Curve3D>` **get_curve** **(** **)**
 
 A :ref:`Curve3D<class_Curve3D>` describing the path.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
