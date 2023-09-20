@@ -512,15 +512,15 @@ Enables billboard mode for drawing materials. This controls how the object
 faces the camera:
 
 * **Disabled:** Billboard mode is disabled.
-* **Enabled:** Billboard mode is enabled, the object's -Z axis will always
-  face the camera.
-* **Y-Billboard:** The object's X axis will always be aligned with the camera.
-* **Particles:** Most suited for particle systems, because it allows
-  specifying animation options.
+* **Enabled:** Billboard mode is enabled. The object's -Z axis will always
+  face the camera's viewing plane.
+* **Y-Billboard:** The object's X axis will always be aligned with the camera's viewing plane.
+* **Particle Billboard:** Most suited for particle systems, because it allows
+  specifying :ref:`flipbook animation <doc_process_material_properties_animation>`.
 
 .. image:: img/spatial_material9.png
 
-The above options are only enabled for Particle Billboard.
+The **Particles Anim** section is only visible when the billboard mode is **Particle Billboard**.
 
 Billboard Keep Scale
 ~~~~~~~~~~~~~~~~~~~~

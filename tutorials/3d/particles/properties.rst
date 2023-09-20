@@ -33,12 +33,12 @@ is measured in seconds. A lot of particle properties can be set to change over t
 lifetime and blend smoothly from one value to another.
 
 ``Lifetime`` and ``Amount`` are related. They determine the particle system's emission rate.
-Whenever you want to know how many particles are spawned per second, this is the formular you
+Whenever you want to know how many particles are spawned per second, this is the formula you
 would use:
 
 .. math::
 
-   particlesPerSecond = \frac{Amount}{Lifetime}
+   Particles per second = \frac{Amount}{Lifetime}
 
 Example: Emitting 32 particles with a lifetime of 4 seconds each would mean the system emits
 8 particles per second.
