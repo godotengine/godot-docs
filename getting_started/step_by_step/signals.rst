@@ -418,6 +418,17 @@ reaches 0.
 
     var health = 10
 
+ .. code-tab:: csharp C#
+    using Godot;
+
+    public partial class MyNode2D : Node2D
+    {
+        [Signal]
+        public delegate void HealthDepleted();
+
+        private int _health = 10;
+    }
+
 .. note:: As signals represent events that just occurred, we generally use an
           action verb in the past tense in their names.
 
@@ -438,14 +449,14 @@ To emit a signal in your scripts, call ``emit_signal()``.
 
  .. code-tab:: csharp C#
 
-    using Godot;
-
-    public partial class MyNode2D : Node2D
+    public void TakeDamage(int amount)
     {
-        [Signal]
-        public delegate void HealthDepleted();
+        _health -= amount;
 
-        private int _health = 10;
+        if (_health <= 0)
+        {
+            EmitSignal(nameof(HealthDepleted));
+        }
     }
 
 A signal can optionally declare one or more arguments. Specify the argument
@@ -457,6 +468,18 @@ names between parentheses:
     extends Node
 
     signal health_changed(old_value, new_value)
+
+ .. code-tab:: csharp C#
+
+    using Godot;
+
+    public partial class MyNode : Node
+    {
+        [Signal]
+        public delegate void HealthChanged(int oldValue, int newValue);
+
+        private int _health = 10;
+    }
 
 .. note::
 
@@ -480,13 +503,13 @@ To emit values along with the signal, add them as extra arguments to the
 
     public void TakeDamage(int amount)
     {
+        int oldHealth = _health;
         _health -= amount;
-
-        if (_health <= 0)
-        {
-            EmitSignal(nameof(HealthDepleted));
-        }
+        EmitSignal(nameof(HealthChanged), oldHealth, _health);
     }
+
+
+
 Summary
 -------
 
