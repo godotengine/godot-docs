@@ -304,7 +304,7 @@ We can now connect the Timer to the Sprite in the ``_ready()`` function.
     public override void _Ready()
     {
         var timer = GetNode<Timer>("Timer");
-        timer.Connect("Timeout", this, nameof(OnTimerTimeout));
+        timer.Connect("timeout", this, nameof(OnTimerTimeout));
     }
 
 The line reads like so: we connect the Timer's "timeout" signal to the node to
@@ -377,7 +377,7 @@ Here is the complete ``Sprite.gd`` file for reference.
         public override void _Ready()
         {
             var timer = GetNode<Timer>("Timer");
-            timer.Connect("Timeout", this, nameof(OnTimerTimeout));
+            timer.Connect("timeout", this, nameof(OnTimerTimeout));
         }
 
         public override void _Process(float delta)
