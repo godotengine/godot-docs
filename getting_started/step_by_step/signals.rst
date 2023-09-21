@@ -176,7 +176,7 @@ following code, which we saw two lessons ago:
 
  .. code-tab:: csharp C#
 
-    public override void _Process(double delta)
+    public override void _Process(float delta)
     {
         Rotation += _angularSpeed * (float)delta;
         var velocity = Vector2.Up.Rotated(Rotation) * _speed;
@@ -212,7 +212,7 @@ Your complete ``Sprite.gd`` code should look like the following.
         private float _speed = 400;
         private float _angularSpeed = Mathf.Pi;
 
-        public override void _Process(double delta)
+        public override void _Process(float delta)
         {
             Rotation += _angularSpeed * (float)delta;
             var velocity = Vector2.Up.Rotated(Rotation) * _speed;
@@ -380,7 +380,7 @@ Here is the complete ``Sprite.gd`` file for reference.
             timer.Connect("Timeout", this, nameof(OnTimerTimeout));
         }
 
-        public override void _Process(double delta)
+        public override void _Process(float delta)
         {
             Rotation += _angularSpeed * (float)delta;
             var velocity = Vector2.Up.Rotated(Rotation) * _speed;
