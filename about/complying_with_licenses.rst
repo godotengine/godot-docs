@@ -8,7 +8,7 @@ What are licenses?
 
 Godot is created and distributed under the `MIT License <https://opensource.org/licenses/MIT>`_.
 It doesn't have a sole owner either, as every contributor that submits code to
-the project does it under this same license and keeps ownership of the
+the project does it under this same license and keeps ownership of their
 contribution.
 
 The license is the legal requirement for you (or your company) to use and
@@ -24,7 +24,7 @@ with the original one.
 
 .. warning::
 
-    In your project's credits screen, remember to also list third-party notices
+    Alongside the Godot license text, remember to also list third-party notices
     for assets you're using, such as textures, models, sounds, music and fonts.
 
     Free assets in particular often come with licenses that require attribution.
@@ -58,31 +58,9 @@ This text reads as follows:
 Inclusion
 ---------
 
-The license does not specify how it has to be included, so anything is valid as
+The license does not specify how it has to be included, as
 long as it can be displayed under some condition. These are the most common
-approaches (only need to implement one of them, not all).
-
-.. tip::
-
-    Godot provides several methods to get license information in the Engine
-    singleton. This allows you to source the license information directly from
-    the engine binary, which prevents the information from becoming outdated if
-    you update engine versions.
-
-    For the engine itself:
-
-    - :ref:`Engine.get_license_text<class_Engine_method_get_license_text>`
-
-    For third-party components used by the engine:
-
-    - :ref:`Engine.get_license_info<class_Engine_method_get_license_info>`
-    - :ref:`Engine.get_copyright_info<class_Engine_method_get_copyright_info>`
-
-    For miscellaneous engine contributor information. You don't have to include
-    these ones in your project, but they're listed here for reference:
-
-    - :ref:`Engine.get_author_info<class_Engine_method_get_author_info>`
-    - :ref:`Engine.get_donor_info<class_Engine_method_get_donor_info>`
+approaches (you only need to implement one of them, not all).
 
 Credits screen
 ^^^^^^^^^^^^^^
@@ -101,7 +79,7 @@ or **Open Source Licenses**.
 Output log
 ^^^^^^^^^^
 
-Printing the licensing text using the :ref:`print() <class_@GlobalScope_method_print>`
+Printing the license text using the :ref:`print() <class_@GlobalScope_method_print>`
 function may be enough on platforms where a global output log is readable.
 This is the case on desktop platforms, Android and HTML5 (but not iOS and UWP).
 
@@ -109,12 +87,12 @@ Accompanying file
 ^^^^^^^^^^^^^^^^^
 
 If the game is distributed on desktop platforms, a file containing the license
-can be added to the software that is installed to the user PC.
+text can be added to the software that is installed to the user PC.
 
 Printed manual
 ^^^^^^^^^^^^^^
 
-If the game includes printed manuals, license text can be included there.
+If the game includes a printed manual, the license text can be included there.
 
 Link to the license
 ^^^^^^^^^^^^^^^^^^^
@@ -123,15 +101,36 @@ The Godot Engine developers consider that a link to ``godotengine.org/license``
 in your game documentation or credits would be an acceptable way to satisfy
 the license terms.
 
+.. tip::
+
+    Godot provides several methods to get license information in the Engine
+    singleton. This allows you to source the license information directly from
+    the engine binary, which prevents the information from becoming outdated if
+    you update engine versions.
+
+    For the engine itself:
+
+    - :ref:`Engine.get_license_text<class_Engine_method_get_license_text>`
+
+    For third-party components used by the engine:
+
+    - :ref:`Engine.get_license_info<class_Engine_method_get_license_info>`
+    - :ref:`Engine.get_copyright_info<class_Engine_method_get_copyright_info>`
+
 Third-party licenses
 --------------------
 
 Godot itself contains software written by
 `third parties <https://github.com/godotengine/godot/blob/master/COPYRIGHT.txt>`_.
 Most of it does not require license inclusion, but some do.
-Make sure to do it if these are compiled in your Godot export template. If
-you're using the official export templates, all libraries are enabled. This
+Make sure to do it if these are compiled in your Godot export template.
+
+If you're using the official export templates, all libraries are enabled. This
 means you need to provide attribution for all the libraries listed below.
+
+If you exported your project using a
+:ref:`custom build with specific modules disabled <doc_optimizing_for_size>`,
+you don't need to list the disabled modules' licenses in your exported project.
 
 Here's a list of libraries requiring attribution:
 
@@ -185,9 +184,3 @@ The Apache license needs to be complied to by including the following text:
     WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
     See the License for the specific language governing permissions and
     limitations under the License.
-
-.. note::
-
-    If you exported your project using a
-    :ref:`custom build with specific modules disabled <doc_optimizing_for_size>`,
-    you don't need to list the disabled modules' licenses in your exported project.
