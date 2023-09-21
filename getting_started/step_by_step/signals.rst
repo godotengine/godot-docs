@@ -443,7 +443,7 @@ To emit a signal in your scripts, call ``emit_signal()``.
     public partial class MyNode2D : Node2D
     {
         [Signal]
-        public delegate void HealthDepletedEventHandler();
+        public delegate void HealthDepleted();
 
         private int _health = 10;
     }
@@ -484,7 +484,7 @@ To emit values along with the signal, add them as extra arguments to the
 
         if (_health <= 0)
         {
-            EmitSignal(nameof(HealthDepletedEventHandler));
+            EmitSignal(nameof(HealthDepleted));
         }
     }
 Summary
