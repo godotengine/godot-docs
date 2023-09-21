@@ -66,7 +66,9 @@ Finally, click the Import & Edit button.
 
 The project contains two packed scenes: ``main.tscn``, containing walls against
 which the ball collides, and ``ball.tscn``. The Main scene should open
-automatically.
+automatically. If you're seeing an empty 3D scene instead of the main scene, click the 2D button at the top of the screen.
+
+.. image:: img/instancing_2d_scene_select.webp
 
 .. image:: img/instancing_main_scene.png
 
