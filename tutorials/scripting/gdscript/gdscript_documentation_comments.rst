@@ -100,20 +100,24 @@ For example::
     ## @deprecated
     var my_var
 
-Variables, constants, signals, and enum values support inline documentation comments.
-Note that inline comments do not support tags.
+Alternatively, you can use inline documentation comments::
 
-::
+    enum MyEnum { ## My enum.
+        VALUE_A = 0, ## Value A.
+        VALUE_B = 1, ## Value B.
+    }
+
+    const MY_CONST = 1 ## My constant.
 
     var my_var ## My variable.
-    const MY_CONST = 1 ## My constant.
+
     signal my_signal ## My signal.
-    enum Direction {
-        UP = 0, ## Direction up.
-        DOWN = 1, ## Direction down.
-        LEFT = 2, ## Direction left.
-        RIGHT = 3, ## Direction right.
-    }
+
+    func my_func(): ## My func.
+        pass
+
+    class MyClass: ## My class.
+        pass
 
 The script documentation will update in the editor help window every time the script is updated.
 If any member variable or function name starts with an underscore, it will be treated as private.
