@@ -18,7 +18,7 @@ Click Scene -> New Scene from the top menu and add the following nodes:
 - :ref:`RigidBody2D <class_RigidBody2D>` (named ``Mob``)
 
    - :ref:`AnimatedSprite2D <class_AnimatedSprite2D>`
-   - :ref:`CollisionShape2D <class_CollisionShape2D>`
+   - :ref:`CollisionObject2D <class_CollisionObject2D>`
    - :ref:`VisibleOnScreenNotifier2D <class_VisibleOnScreenNotifier2D>`
 
 Don't forget to set the children so they can't be selected, like you did with
