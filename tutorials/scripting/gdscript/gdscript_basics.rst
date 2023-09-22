@@ -340,29 +340,33 @@ The following is the list of supported operators and their precedence.
 Literals
 ~~~~~~~~
 
-+--------------------------+-------------------------------------------+
-| **Literal**              | **Type**                                  |
-+--------------------------+-------------------------------------------+
-| ``45``                   | Base 10 integer                           |
-+--------------------------+-------------------------------------------+
-| ``0x8f51``               | Base 16 (hexadecimal) integer             |
-+--------------------------+-------------------------------------------+
-| ``0b101010``             | Base 2 (binary) integer                   |
-+--------------------------+-------------------------------------------+
-| ``3.14``, ``58.1e-10``   | Floating-point number (real)              |
-+--------------------------+-------------------------------------------+
-| ``"Hello"``, ``'Hi'``    | Strings                                   |
-+--------------------------+-------------------------------------------+
-| ``"""Hello"""``          | Multiline string                          |
-+--------------------------+-------------------------------------------+
-| ``&"name"``              | :ref:`StringName <class_StringName>`      |
-+--------------------------+-------------------------------------------+
-| ``^"Node/Label"``        | :ref:`NodePath <class_NodePath>`          |
-+--------------------------+-------------------------------------------+
-| ``$NodePath``            | Shorthand for ``get_node("NodePath")``    |
-+--------------------------+-------------------------------------------+
-| ``%UniqueNode``          | Shorthand for ``get_node("%UniqueNode")`` |
-+--------------------------+-------------------------------------------+
++---------------------------------+-------------------------------------------+
+| **Literal**                     | **Type**                                  |
++---------------------------------+-------------------------------------------+
+| ``45``                          | Base 10 integer                           |
++---------------------------------+-------------------------------------------+
+| ``0x8f51``                      | Base 16 (hexadecimal) integer             |
++---------------------------------+-------------------------------------------+
+| ``0b101010``                    | Base 2 (binary) integer                   |
++---------------------------------+-------------------------------------------+
+| ``3.14``, ``58.1e-10``          | Floating-point number (real)              |
++---------------------------------+-------------------------------------------+
+| ``"Hello"``, ``'Hi'``           | Regular strings                           |
++---------------------------------+-------------------------------------------+
+| ``"""Hello"""``, ``'''Hi'''``   | Triple-quoted regular strings             |
++---------------------------------+-------------------------------------------+
+| ``r"Hello"``, ``r'Hi'``         | Raw strings                               |
++---------------------------------+-------------------------------------------+
+| ``r"""Hello"""``, ``r'''Hi'''`` | Triple-quoted raw strings                 |
++---------------------------------+-------------------------------------------+
+| ``&"name"``                     | :ref:`StringName <class_StringName>`      |
++---------------------------------+-------------------------------------------+
+| ``^"Node/Label"``               | :ref:`NodePath <class_NodePath>`          |
++---------------------------------+-------------------------------------------+
+| ``$NodePath``                   | Shorthand for ``get_node("NodePath")``    |
++---------------------------------+-------------------------------------------+
+| ``%UniqueNode``                 | Shorthand for ``get_node("%UniqueNode")`` |
++---------------------------------+-------------------------------------------+
 
 Integers and floats can have their numbers separated with ``_`` to make them more readable.
 The following ways to write numbers are all valid::
@@ -371,6 +375,63 @@ The following ways to write numbers are all valid::
     3.141_592_7  # Equal to 3.1415927.
     0x8080_0000_ffff  # Equal to 0x80800000ffff.
     0b11_00_11_00  # Equal to 0b11001100.
+
+**Regular string literals** can contain the following escape sequences:
+
++---------------------+---------------------------------+
+| **Escape sequence** | **Expands to**                  |
++---------------------+---------------------------------+
+| ``\n``              | Newline (line feed)             |
++---------------------+---------------------------------+
+| ``\t``              | Horizontal tab character        |
++---------------------+---------------------------------+
+| ``\r``              | Carriage return                 |
++---------------------+---------------------------------+
+| ``\a``              | Alert (beep/bell)               |
++---------------------+---------------------------------+
+| ``\b``              | Backspace                       |
++---------------------+---------------------------------+
+| ``\f``              | Formfeed page break             |
++---------------------+---------------------------------+
+| ``\v``              | Vertical tab character          |
++---------------------+---------------------------------+
+| ``\"``              | Double quote                    |
++---------------------+---------------------------------+
+| ``\'``              | Single quote                    |
++---------------------+---------------------------------+
+| ``\\``              | Backslash                       |
++---------------------+---------------------------------+
+| ``\uXXXX``          | UTF-16 Unicode codepoint        |
+|                     | ``XXXX``                        |
+|                     | (hexadecimal, case-insensitive) |
++---------------------+---------------------------------+
+| ``\UXXXXXX``        | UTF-32 Unicode codepoint        |
+|                     | ``XXXXXX``                      |
+|                     | (hexadecimal, case-insensitive) |
++---------------------+---------------------------------+
+
+There are two ways to represent an escaped Unicode character above ``0xFFFF``:
+
+- as a `UTF-16 surrogate pair <https://en.wikipedia.org/wiki/UTF-16#Code_points_from_U+010000_to_U+10FFFF>`_ ``\uXXXX\uXXXX``.
+- as a single UTF-32 codepoint ``\UXXXXXX``.
+
+Also, using ``\`` followed by a newline inside a string will allow you to continue it in the next line,
+without inserting a newline character in the string itself.
+
+A string enclosed in quotes of one type (for example ``"``) can contain quotes of another type
+(for example ``'``) without escaping. Triple-quoted strings allow you to avoid escaping up to
+two consecutive quotes of the same type (unless they are adjacent to the string edges).
+
+**Raw string literals** always encode the string as it appears in the source code.
+This is especially useful for regular expressions. Raw strings do not process escape sequences,
+but you can "escape" a quote or backslash (they replace themselves).
+
+::
+
+    print("\tchar=\"\\t\"")  # Prints `    char="\t"`.
+    print(r"\tchar=\"\\t\"") # Prints `\tchar=\"\\t\"`.
+
+GDScript also supports :ref:`format strings <doc_gdscript_printf>`.
 
 Annotations
 ~~~~~~~~~~~
@@ -535,49 +596,6 @@ Note: Currently, data structures such as ``Vector2``, ``Vector3``, and
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 A sequence of characters in `Unicode format <https://en.wikipedia.org/wiki/Unicode>`_.
-String literals can contain the following escape sequences:
-
-+---------------------+---------------------------------+
-| **Escape sequence** | **Expands to**                  |
-+---------------------+---------------------------------+
-| ``\n``              | Newline (line feed)             |
-+---------------------+---------------------------------+
-| ``\t``              | Horizontal tab character        |
-+---------------------+---------------------------------+
-| ``\r``              | Carriage return                 |
-+---------------------+---------------------------------+
-| ``\a``              | Alert (beep/bell)               |
-+---------------------+---------------------------------+
-| ``\b``              | Backspace                       |
-+---------------------+---------------------------------+
-| ``\f``              | Formfeed page break             |
-+---------------------+---------------------------------+
-| ``\v``              | Vertical tab character          |
-+---------------------+---------------------------------+
-| ``\"``              | Double quote                    |
-+---------------------+---------------------------------+
-| ``\'``              | Single quote                    |
-+---------------------+---------------------------------+
-| ``\\``              | Backslash                       |
-+---------------------+---------------------------------+
-| ``\uXXXX``          | UTF-16 Unicode codepoint        |
-|                     | ``XXXX``                        |
-|                     | (hexadecimal, case-insensitive) |
-+---------------------+---------------------------------+
-| ``\UXXXXXX``        | UTF-32 Unicode codepoint        |
-|                     | ``XXXXXX``                      |
-|                     | (hexadecimal, case-insensitive) |
-+---------------------+---------------------------------+
-
-There are two ways to represent an escaped Unicode character above 0xFFFF:
-
-- as a `UTF-16 surrogate pair <https://en.wikipedia.org/wiki/UTF-16#Code_points_from_U+010000_to_U+10FFFF>`_ ``\uXXXX\uXXXX``.
-- as a single UTF-32 codepoint ``\UXXXXXX``.
-
-Also, using ``\`` followed by a newline inside a string will allow you to continue it in the next line, without
-inserting a newline character in the string itself.
-
-GDScript also supports :ref:`format strings <doc_gdscript_printf>`.
 
 :ref:`StringName <class_StringName>`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
