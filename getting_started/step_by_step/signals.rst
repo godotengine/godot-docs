@@ -178,9 +178,9 @@ following code, which we saw two lessons ago:
 
     public override void _Process(float delta)
     {
-        Rotation += _angularSpeed * (float)delta;
+        Rotation += _angularSpeed * delta;
         var velocity = Vector2.Up.Rotated(Rotation) * _speed;
-        Position += velocity * (float)delta;
+        Position += velocity * delta;
     }
 
 Your complete ``Sprite.gd`` code should look like the following.
@@ -382,9 +382,9 @@ Here is the complete ``Sprite.gd`` file for reference.
 
         public override void _Process(float delta)
         {
-            Rotation += _angularSpeed * (float)delta;
+            Rotation += _angularSpeed * delta;
             var velocity = Vector2.Up.Rotated(Rotation) * _speed;
-            Position += velocity * (float)delta;
+            Position += velocity * delta;
         }
 
         private void OnButtonPressed()
