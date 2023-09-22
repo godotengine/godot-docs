@@ -119,12 +119,13 @@ There is more to instances. With this feature, you can:
           corresponding packed scene.
 
 Let's try this. Open ``ball.tscn`` and select the Ball node. In the Inspector on
-the right, click on the PhysicsMaterial property to expand it.
+the right, click on the PhysicsMaterial property and select Edit from the menu.
 
 .. image:: img/instancing_physics_material_expand.webp
 
-Set its Bounce property to ``0.5`` by clicking on the number field, typing ``0.5``,
-and pressing :kbd:`Enter`.
+The inspector will change to show properties for the PhysicsMaterial. Set its
+Bounce property to ``0.5`` by clicking on the number field, typing ``0.5``, and
+pressing :kbd:`Enter`.
 
 .. image:: img/instancing_property_bounce_updated.webp
 
