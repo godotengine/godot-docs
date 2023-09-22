@@ -256,7 +256,7 @@ Let's code the mob spawning logic. We're going to:
         // And give it a random offset.
         mobSpawnLocation.ProgressRatio = GD.Randf();
 
-        Vector3 playerPosition = GetNode<Player>("Player").Position;
+        Vector3 playerPosition = GetNode<CharacterBody3D>("Player").Position;
         mob.Initialize(mobSpawnLocation.Position, playerPosition);
 
         // Spawn the mob by adding it to the Main scene.
@@ -315,7 +315,7 @@ Here is the complete ``main.gd`` script so far, for reference.
             // And give it a random offset.
             mobSpawnLocation.ProgressRatio = GD.Randf();
 
-            Vector3 playerPosition = GetNode<Player>("Player").Position;
+            Vector3 playerPosition = GetNode<CharacterBody3D>("Player").Position;
             mob.Initialize(mobSpawnLocation.Position, playerPosition);
 
             // Spawn the mob by adding it to the Main scene.
