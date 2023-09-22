@@ -72,7 +72,7 @@ Physics, and Audio, before reaching Script functions, where your code appears.
 
 If you click on the graph, you change which frame's information appears on the
 left. In the top right, there is also a frame counter where you can manually
-adjust the frame you are looking at more granularly.
+adjust the frame you are looking at more granular.
 
 Scope of measurement and measurement windows
 ++++++++++++++++++++++++++++++++++++++++++++

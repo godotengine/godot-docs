@@ -263,7 +263,7 @@ lower than ``(1, 1)``.
 After selecting a font in the FileSystem dock, you can enable the **Mipmaps** in
 the Import dock to improve downscaled font rendering appearance.
 
-Mipmaps can be enabled on MSDF fonts as well. This can improve font rencering
+Mipmaps can be enabled on MSDF fonts as well. This can improve font rendering
 quality a little at smaller-than-default sizes, but MSDF fonts are already
 resistant to graininess out of the box.
 
@@ -576,7 +576,7 @@ Support for OpenType features highly depends on the font used. Some fonts don't
 support any OpenType features, while other fonts can support dozens of
 toggleable features.
 
-There are 2 ways to use OpenType font featutres:
+There are 2 ways to use OpenType font features:
 
 **Globally on a font file**
 
@@ -830,7 +830,7 @@ be prerendered, which is less efficient in terms of file size.
 
 To use existing text as a baseline for prerendering, go to the **Glyphs from the
 Character Map** sub-tab of the Advanced Import Settings dialog, then
-*dobule-click* character sets to be enabled on the right:
+*double-click* character sets to be enabled on the right:
 
 .. figure:: img/using_fonts_advanced_import_settings_prerender_character_map.webp
    :align: center
