@@ -304,6 +304,8 @@ of new properties show up that control the movement speed, noise pattern and ove
 on the particle system. You can find a detailed explanation of these in the section on
 :ref:`particle turbulence <doc_3d_particles_turbulence>`.
 
+.. _doc_process_material_properties_animation:
+
 Animation
 ~~~~~~~~~
 
@@ -313,7 +315,7 @@ The ``Min``, ``Max``, and ``Curve`` values work `as described above <#process-ma
 
 An animated sprite sheet is a texture that contains several smaller images aligned on a grid.
 The images are shown one after the other so fast that they combine to play a short
-animation, like a flip book. You can use them for animated particles like smoke or fire.
+animation, like a flipbook. You can use them for animated particles like smoke or fire.
 These are the steps to create an animated particle system:
 
 .. figure:: img/particle_sprite.webp
@@ -349,11 +351,11 @@ this:
 
 .. note::
 
-   At an animation speed of ``1.0`` the animation will reach the last image
+   At an animation speed of ``1.0``, the animation will reach the last image
    in the sequence just as the particle's lifetime ends.
 
    .. math::
-      Animation\ FPS = \frac{Lifetime}{Number\ Of\ Images}
+      Animation\ FPS = \frac{Number\ of\ images}{Lifetime}
 
 If your sprite sheet contains
 64 (8x8) images and the particle's lifetime is set to ``1 second``, the animation
@@ -367,6 +369,12 @@ to reach an acceptable framerate.
    :alt: Animated particles lifetimes
 
    The same particle system at different lifetimes: 1 second (left), 2 seconds (middle), 8 seconds (right)
+
+Note that the GPUParticles3D node's **Fixed FPS** also affects animation
+playback. For smooth animation playback, it's recommended to set it to 0 so that
+the particle is simulated on every rendered frame. If this is not an option for
+your use case, set **Fixed FPS** to be equal to the effective framerate used by
+the flipbook animation (see above for the formula).
 
 .. _doc_process_material_properties_subemitter:
 
