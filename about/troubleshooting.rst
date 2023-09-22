@@ -74,6 +74,13 @@ peripherals' drivers to their latest version. If the bug persists, you need to
 disconnect the specific peripheral before opening the editor. You can then
 connect the peripheral again.
 
+Firewall software such as Portmaster may also cause the debug port to be
+blocked. This causes the project to take a long time to start, while being
+unable to use debugging features in the editor (such as viewing ``print()``
+output). You can work this around by changing the debug port used by the project
+in the Editor Settings (**Network > Debug > Remote Port**). The default is
+``6007``; try another value that is greater than ``1024``, such as ``7007``.
+
 The Godot editor appears frozen after clicking the system console
 -----------------------------------------------------------------
 
