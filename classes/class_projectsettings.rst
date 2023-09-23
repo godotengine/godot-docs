@@ -133,6 +133,8 @@ Properties
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`audio/video/video_delay_compensation_ms<class_ProjectSettings_property_audio/video/video_delay_compensation_ms>`                                                                                     | ``0``                                                                                            |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`collada/use_ambient<class_ProjectSettings_property_collada/use_ambient>`                                                                                                                             | ``false``                                                                                        |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`compression/formats/gzip/compression_level<class_ProjectSettings_property_compression/formats/gzip/compression_level>`                                                                               | ``-1``                                                                                           |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`compression/formats/zlib/compression_level<class_ProjectSettings_property_compression/formats/zlib/compression_level>`                                                                               | ``-1``                                                                                           |
@@ -2179,6 +2181,18 @@ If ``true``, text-to-speech support is enabled, see :ref:`DisplayServer.tts_get_
 :ref:`int<class_int>` **audio/video/video_delay_compensation_ms** = ``0``
 
 Setting to hardcode audio delay when playing video. Best to leave this untouched unless you know what you are doing.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_collada/use_ambient:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **collada/use_ambient** = ``false``
+
+If ``true``, ambient lights will be imported from COLLADA models as :ref:`DirectionalLight3D<class_DirectionalLight3D>`. If ``false``, ambient lights will be ignored.
 
 .. rst-class:: classref-item-separator
 
@@ -8750,12 +8764,12 @@ The default gravity strength in 3D (in meters per second squared).
  .. code-tab:: gdscript
 
     # Set the default gravity strength to 9.8.
-    PhysicsServer3D.area_set_param(get_viewport().find_world().space, PhysicsServer3D.AREA_PARAM_GRAVITY, 9.8)
+    PhysicsServer3D.area_set_param(get_viewport().find_world_3d().space, PhysicsServer3D.AREA_PARAM_GRAVITY, 9.8)
 
  .. code-tab:: csharp
 
     // Set the default gravity strength to 9.8.
-    PhysicsServer3D.AreaSetParam(GetViewport().FindWorld().Space, PhysicsServer3D.AreaParameter.Gravity, 9.8);
+    PhysicsServer3D.AreaSetParam(GetViewport().FindWorld3D().Space, PhysicsServer3D.AreaParameter.Gravity, 9.8);
 
 
 
@@ -8779,12 +8793,12 @@ The default gravity direction in 3D.
  .. code-tab:: gdscript
 
     # Set the default gravity direction to `Vector3(0, -1, 0)`.
-    PhysicsServer3D.area_set_param(get_viewport().find_world().get_space(), PhysicsServer3D.AREA_PARAM_GRAVITY_VECTOR, Vector3.DOWN)
+    PhysicsServer3D.area_set_param(get_viewport().find_world_3d().space, PhysicsServer3D.AREA_PARAM_GRAVITY_VECTOR, Vector3.DOWN)
 
  .. code-tab:: csharp
 
     // Set the default gravity direction to `Vector3(0, -1, 0)`.
-    PhysicsServer3D.AreaSetParam(GetViewport().FindWorld().Space, PhysicsServer3D.AreaParameter.GravityVector, Vector3.Down)
+    PhysicsServer3D.AreaSetParam(GetViewport().FindWorld3D().Space, PhysicsServer3D.AreaParameter.GravityVector, Vector3.Down)
 
 
 
@@ -10245,6 +10259,8 @@ The number of occlusion rays traced per CPU thread. Higher values will result in
 If ``true``, :ref:`OccluderInstance3D<class_OccluderInstance3D>` nodes will be usable for occlusion culling in 3D in the root viewport. In custom viewports, :ref:`Viewport.use_occlusion_culling<class_Viewport_property_use_occlusion_culling>` must be set to ``true`` instead.
 
 \ **Note:** Enabling occlusion culling has a cost on the CPU. Only enable occlusion culling if you actually plan to use it. Large open scenes with few or no objects blocking the view will generally not benefit much from occlusion culling. Large open scenes generally benefit more from mesh LOD and visibility ranges (:ref:`GeometryInstance3D.visibility_range_begin<class_GeometryInstance3D_property_visibility_range_begin>` and :ref:`GeometryInstance3D.visibility_range_end<class_GeometryInstance3D_property_visibility_range_end>`) compared to occlusion culling.
+
+\ **Note:** Due to memory constraints, occlusion culling is not supported by default in Web export templates. It can be enabled by compiling custom Web export templates with ``module_raycast_enabled=yes``.
 
 .. rst-class:: classref-item-separator
 

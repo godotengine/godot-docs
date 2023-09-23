@@ -1282,11 +1282,11 @@ Window view:
 
 OpenGL context (only with the GL Compatibility renderer):
 
-- Windows: ``HGLRC`` for the window.
+- Windows: ``HGLRC`` for the window (native GL), or ``EGLContext`` for the window (ANGLE).
 
 - Linux: ``GLXContext*`` for the window.
 
-- macOS: ``NSOpenGLContext*`` for the window.
+- macOS: ``NSOpenGLContext*`` for the window (native GL), or ``EGLContext`` for the window (ANGLE).
 
 - Android: ``EGLContext`` for the window.
 

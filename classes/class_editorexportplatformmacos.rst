@@ -40,6 +40,8 @@ Properties
    +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Dictionary<class_Dictionary>`               | :ref:`application/copyright_localized<class_EditorExportPlatformMacOS_property_application/copyright_localized>`                                               |
    +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`application/export_angle<class_EditorExportPlatformMacOS_property_application/export_angle>`                                                             |
+   +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                       | :ref:`application/icon<class_EditorExportPlatformMacOS_property_application/icon>`                                                                             |
    +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`application/icon_interpolation<class_EditorExportPlatformMacOS_property_application/icon_interpolation>`                                                 |
@@ -263,6 +265,18 @@ Copyright notice for the bundle visible to the user (in English).
 :ref:`Dictionary<class_Dictionary>` **application/copyright_localized**
 
 Copyright notice for the bundle visible to the user (localized).
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformMacOS_property_application/export_angle:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **application/export_angle**
+
+If set to ``1``, ANGLE libraries are exported with the exported application. If set to ``0``, ANGLE libraries are exported only if :ref:`ProjectSettings.rendering/gl_compatibility/driver<class_ProjectSettings_property_rendering/gl_compatibility/driver>` is set to ``"opengl3_angle"``.
 
 .. rst-class:: classref-item-separator
 

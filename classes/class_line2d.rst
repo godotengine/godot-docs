@@ -47,6 +47,8 @@ Properties
    +-----------------------------------------------------+---------------------------------------------------------------+--------------------------+
    | :ref:`LineCapMode<enum_Line2D_LineCapMode>`         | :ref:`begin_cap_mode<class_Line2D_property_begin_cap_mode>`   | ``0``                    |
    +-----------------------------------------------------+---------------------------------------------------------------+--------------------------+
+   | :ref:`bool<class_bool>`                             | :ref:`closed<class_Line2D_property_closed>`                   | ``false``                |
+   +-----------------------------------------------------+---------------------------------------------------------------+--------------------------+
    | :ref:`Color<class_Color>`                           | :ref:`default_color<class_Line2D_property_default_color>`     | ``Color(1, 1, 1, 1)``    |
    +-----------------------------------------------------+---------------------------------------------------------------+--------------------------+
    | :ref:`LineCapMode<enum_Line2D_LineCapMode>`         | :ref:`end_cap_mode<class_Line2D_property_end_cap_mode>`       | ``0``                    |
@@ -238,7 +240,28 @@ If ``true``, the polyline's border will be anti-aliased.
 - void **set_begin_cap_mode** **(** :ref:`LineCapMode<enum_Line2D_LineCapMode>` value **)**
 - :ref:`LineCapMode<enum_Line2D_LineCapMode>` **get_begin_cap_mode** **(** **)**
 
-The style of the beginning of the polyline. Use :ref:`LineCapMode<enum_Line2D_LineCapMode>` constants.
+The style of the beginning of the polyline, if :ref:`closed<class_Line2D_property_closed>` is ``false``. Use :ref:`LineCapMode<enum_Line2D_LineCapMode>` constants.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Line2D_property_closed:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **closed** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_closed** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_closed** **(** **)**
+
+If ``true`` and the polyline has more than 2 points, the last point and the first one will be connected by a segment.
+
+\ **Note:** The shape of the closing segment is not guaranteed to be seamless if a :ref:`width_curve<class_Line2D_property_width_curve>` is provided.
+
+\ **Note:** The joint between the closing segment and the first segment is drawn first and it samples the :ref:`gradient<class_Line2D_property_gradient>` and the :ref:`width_curve<class_Line2D_property_width_curve>` at the beginning. This is an implementation detail that might change in a future version.
 
 .. rst-class:: classref-item-separator
 
@@ -272,7 +295,7 @@ The color of the polyline. Will not be used if a gradient is set.
 - void **set_end_cap_mode** **(** :ref:`LineCapMode<enum_Line2D_LineCapMode>` value **)**
 - :ref:`LineCapMode<enum_Line2D_LineCapMode>` **get_end_cap_mode** **(** **)**
 
-The style of the end of the polyline. Use :ref:`LineCapMode<enum_Line2D_LineCapMode>` constants.
+The style of the end of the polyline, if :ref:`closed<class_Line2D_property_closed>` is ``false``. Use :ref:`LineCapMode<enum_Line2D_LineCapMode>` constants.
 
 .. rst-class:: classref-item-separator
 
@@ -289,7 +312,7 @@ The style of the end of the polyline. Use :ref:`LineCapMode<enum_Line2D_LineCapM
 - void **set_gradient** **(** :ref:`Gradient<class_Gradient>` value **)**
 - :ref:`Gradient<class_Gradient>` **get_gradient** **(** **)**
 
-The gradient is drawn through the whole line from start to finish. The default color will not be used if a gradient is set.
+The gradient is drawn through the whole line from start to finish. The :ref:`default_color<class_Line2D_property_default_color>` will not be used if this property is set.
 
 .. rst-class:: classref-item-separator
 
@@ -408,7 +431,7 @@ The style to render the :ref:`texture<class_Line2D_property_texture>` of the pol
 - void **set_width** **(** :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_width** **(** **)**
 
-The polyline's width
+The polyline's width.
 
 .. rst-class:: classref-item-separator
 
