@@ -279,7 +279,6 @@ of its original size with gzip compression.
     be used. Instead, you should use an established web server such as Apache or
     nginx.
 
-
 .. _doc_javascript_eval:
 
 Calling JavaScript from script
