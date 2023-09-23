@@ -71,7 +71,7 @@ same statement:
         // Code to execute when in game.
     }
 
-Pieces of code do not have either of the 2 conditions above will run both
+Pieces of code that do not have either of the 2 conditions above will run both
 in-editor and in-game.
 
 Here is how a ``_process()`` function might look for you:
