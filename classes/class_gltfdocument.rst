@@ -21,7 +21,7 @@ Description
 
 GLTFDocument supports reading data from a glTF file, buffer, or Godot scene. This data can then be written to the filesystem, buffer, or used to create a Godot scene.
 
-All of the data in a GLTF scene is stored in the :ref:`GLTFState<class_GLTFState>` class. GLTFDocument processes state objects, but does not contain any scene data itself.
+All of the data in a GLTF scene is stored in the :ref:`GLTFState<class_GLTFState>` class. GLTFDocument processes state objects, but does not contain any scene data itself. GLTFDocument has member variables to store export configuration settings such as the image format, but is otherwise stateless. Multiple scenes can be processed with the same settings using the same GLTFDocument object and different :ref:`GLTFState<class_GLTFState>` objects.
 
 GLTFDocument can be extended with arbitrary functionality by extending the :ref:`GLTFDocumentExtension<class_GLTFDocumentExtension>` class and registering it with GLTFDocument via :ref:`register_gltf_document_extension<class_GLTFDocument_method_register_gltf_document_extension>`. This allows for custom data to be imported and exported.
 
@@ -33,6 +33,20 @@ Tutorials
 - `glTF 'What the duck?' guide <https://www.khronos.org/files/gltf20-reference-guide.pdf>`__
 
 - `Khronos glTF specification <https://registry.khronos.org/glTF/>`__
+
+.. rst-class:: classref-reftable-group
+
+Properties
+----------
+
+.. table::
+   :widths: auto
+
+   +-----------------------------+-----------------------------------------------------------------+-----------+
+   | :ref:`String<class_String>` | :ref:`image_format<class_GLTFDocument_property_image_format>`   | ``"PNG"`` |
+   +-----------------------------+-----------------------------------------------------------------+-----------+
+   | :ref:`float<class_float>`   | :ref:`lossy_quality<class_GLTFDocument_property_lossy_quality>` | ``0.75``  |
+   +-----------------------------+-----------------------------------------------------------------+-----------+
 
 .. rst-class:: classref-reftable-group
 
@@ -59,6 +73,47 @@ Methods
    +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Error<enum_@GlobalScope_Error>`         | :ref:`write_to_filesystem<class_GLTFDocument_method_write_to_filesystem>` **(** :ref:`GLTFState<class_GLTFState>` state, :ref:`String<class_String>` path **)**                                                                                          |
    +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
+
+Property Descriptions
+---------------------
+
+.. _class_GLTFDocument_property_image_format:
+
+.. rst-class:: classref-property
+
+:ref:`String<class_String>` **image_format** = ``"PNG"``
+
+.. rst-class:: classref-property-setget
+
+- void **set_image_format** **(** :ref:`String<class_String>` value **)**
+- :ref:`String<class_String>` **get_image_format** **(** **)**
+
+The user-friendly name of the export image format. This is used when exporting the GLTF file, including writing to a file and writing to a byte array.
+
+By default, Godot allows the following options: "None", "PNG", "JPEG", "Lossless WebP", and "Lossy WebP". Support for more image formats can be added in :ref:`GLTFDocumentExtension<class_GLTFDocumentExtension>` classes.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_GLTFDocument_property_lossy_quality:
+
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **lossy_quality** = ``0.75``
+
+.. rst-class:: classref-property-setget
+
+- void **set_lossy_quality** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_lossy_quality** **(** **)**
+
+If :ref:`image_format<class_GLTFDocument_property_image_format>` is a lossy image format, this determines the lossy quality of the image. On a range of ``0.0`` to ``1.0``, where ``0.0`` is the lowest quality and ``1.0`` is the highest quality. A lossy quality of ``1.0`` is not the same as lossless.
 
 .. rst-class:: classref-section-separator
 

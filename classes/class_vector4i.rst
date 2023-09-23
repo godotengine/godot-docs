@@ -190,6 +190,22 @@ Zero vector, a vector with all components set to ``0``.
 
 One vector, a vector with all components set to ``1``.
 
+.. _class_Vector4i_constant_MIN:
+
+.. rst-class:: classref-constant
+
+**MIN** = ``Vector4i(-2147483648, -2147483648, -2147483648, -2147483648)``
+
+Min vector, a vector with all components equal to ``INT32_MIN``. Can be used as a negative integer equivalent of :ref:`Vector4.INF<class_Vector4_constant_INF>`.
+
+.. _class_Vector4i_constant_MAX:
+
+.. rst-class:: classref-constant
+
+**MAX** = ``Vector4i(2147483647, 2147483647, 2147483647, 2147483647)``
+
+Max vector, a vector with all components equal to ``INT32_MAX``. Can be used as an integer equivalent of :ref:`Vector4.INF<class_Vector4_constant_INF>`.
+
 .. rst-class:: classref-section-separator
 
 ----

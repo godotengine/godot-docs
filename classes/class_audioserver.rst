@@ -155,7 +155,19 @@ Signals
 
 **bus_layout_changed** **(** **)**
 
-Emitted when the :ref:`AudioBusLayout<class_AudioBusLayout>` changes.
+Emitted when an audio bus is added, deleted, or moved.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_AudioServer_signal_bus_renamed:
+
+.. rst-class:: classref-signal
+
+**bus_renamed** **(** :ref:`int<class_int>` bus_index, :ref:`StringName<class_StringName>` old_name, :ref:`StringName<class_StringName>` new_name **)**
+
+Emitted when the audio bus at ``bus_index`` is renamed from ``old_name`` to ``new_name``.
 
 .. rst-class:: classref-section-separator
 

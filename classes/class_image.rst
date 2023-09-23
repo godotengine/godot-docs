@@ -107,6 +107,8 @@ Methods
    +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                         | :ref:`get_height<class_Image_method_get_height>` **(** **)** |const|                                                                                                                                                                                                          |
    +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                         | :ref:`get_mipmap_count<class_Image_method_get_mipmap_count>` **(** **)** |const|                                                                                                                                                                                              |
+   +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                         | :ref:`get_mipmap_offset<class_Image_method_get_mipmap_offset>` **(** :ref:`int<class_int>` mipmap **)** |const|                                                                                                                                                               |
    +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Color<class_Color>`                     | :ref:`get_pixel<class_Image_method_get_pixel>` **(** :ref:`int<class_int>` x, :ref:`int<class_int>` y **)** |const|                                                                                                                                                           |
@@ -1160,7 +1162,9 @@ Flips the image vertically.
 
 :ref:`Error<enum_@GlobalScope_Error>` **generate_mipmaps** **(** :ref:`bool<class_bool>` renormalize=false **)**
 
-Generates mipmaps for the image. Mipmaps are precalculated lower-resolution copies of the image that are automatically used if the image needs to be scaled down when rendered. They help improve image quality and performance when rendering. This method returns an error if the image is compressed, in a custom format, or if the image's width/height is ``0``.
+Generates mipmaps for the image. Mipmaps are precalculated lower-resolution copies of the image that are automatically used if the image needs to be scaled down when rendered. They help improve image quality and performance when rendering. This method returns an error if the image is compressed, in a custom format, or if the image's width/height is ``0``. Enabling ``renormalize`` when generating mipmaps for normal textures will make sure all resulting vector values are normalized.
+
+It is possible to check if the image has mipmaps by calling :ref:`has_mipmaps<class_Image_method_has_mipmaps>` or :ref:`get_mipmap_count<class_Image_method_get_mipmap_count>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1197,6 +1201,18 @@ Returns the image's format. See :ref:`Format<enum_Image_Format>` constants.
 :ref:`int<class_int>` **get_height** **(** **)** |const|
 
 Returns the image's height.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Image_method_get_mipmap_count:
+
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **get_mipmap_count** **(** **)** |const|
+
+Returns the number of mipmap levels or 0 if the image has no mipmaps. The largest main level image is not counted as a mipmap level by this method, so if you want to include it you can add 1 to this count.
 
 .. rst-class:: classref-item-separator
 
