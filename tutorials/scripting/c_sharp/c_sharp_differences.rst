@@ -342,6 +342,29 @@ Example:
 
     Input.Singleton.JoyConnectionChanged += Input_JoyConnectionChanged;
 
+Float
+-----
+
+Some engine functions return or have as input parameters values of the built-in
+:ref:`float <class_float>` type. This type is a 64-bit double-precision floating-point
+number, equivalent to ``double`` in C# (`System.Double` for .NET).
+
+This can cause confusion when working with C# scripts because the functions will appear
+on documentation as using or returning a Godot's ``float``, but that will require an 8-byte
+C# ``double`` or a conversion to or from another type, such as a 4-byte C# ``float``.
+
+Example:
+
+:ref:`Node._process() <class_Node_method__process>` virtual method receives as an argument
+the ``delta`` time since the last frame, in seconds. This is a built-in :ref:`float <class_float>`
+type, but on C# you should work with the following method signature:
+
+.. code-block:: csharp
+
+    public override void _Process(double delta)
+    {
+    }
+
 String
 ------
 
