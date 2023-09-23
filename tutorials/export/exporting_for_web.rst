@@ -255,26 +255,30 @@ of its original size with gzip compression.
 
 .. tip::
 
-    The following repository includes a `Sample node.js web server to host a Godot 4 game's web build locally <https://github.com/liana-p/godot4-web-local-testing-example>`__.
-    The example server can successfully serve a Godot 4 web build locally. The repository contains instructions on how to use it for local testing of games.
-    Simply copy the `export` folder to a Godot project, set up the Godot project to export the game to `export/public/index.html`, then run the server in `export` with the following commands:
+    The Godot repository includes a
+    `Python script to host a local web server <https://raw.githubusercontent.com/godotengine/godot/master/platform/web/serve.py>`__.
+    This script is intended for testing the web editor, but it can also be used to test exported projects.
+
+    Save the linked script to a file called ``serve.py``, move this file to the
+    folder containing the exported project's ``index.html``, then run the
+    following command in a command prompt within the same folder:
 
     ::
-        # You need to have node.js installed to run this.
-        # npm install is only needed the first time
-        npm install
-        # Run the server
-        npm start
 
-    This will serve the contents of the `export/public` folder which can be accessed at `http://localhost:3000` in a web browser.
+        # You may need to replace `python` with `python3` on some platforms.
+        python serve.py --root .
 
     On Windows, you can open a command prompt in the current folder by holding
     :kbd:`Shift` and right-clicking on empty space in Windows Explorer, then
     choosing **Open PowerShell window here**.
 
-    Note that for production use cases, this node.js-based web server should not
+    This will serve the contents of the current folder and open the default web
+    browser automatically.
+
+    Note that for production use cases, this Python-based web server should not
     be used. Instead, you should use an established web server such as Apache or
     nginx.
+
 
 .. _doc_javascript_eval:
 
