@@ -525,7 +525,7 @@ accesses:
             _child.MyMethod();
         }
 
-        public void PrintMe() {
+        public void PrintMe()
         {
             GD.Print(Name);
         }
