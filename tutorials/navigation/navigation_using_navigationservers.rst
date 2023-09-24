@@ -79,16 +79,16 @@ pathfinding and the NavigationServer2D facilitates the conversions.
 When a guide uses just NavigationServer without the 2D or 3D suffix it usually works for both servers
 by exchange Vector2(x, y) with Vector3(x, 0.0, z) or reverse.
 
-Technically it is possible to use the tools for creating navigationmesh for the other
-dimension, e..g. baking 2D navigationmesh with the 3D NavigationMesh when using
-flat 3D source geometry or creating 3D flat navigationmesh with the
-polygon outline drawtools of NavigationRegion2D and NavigationPolygons.
+Technically it is possible to use the tools for creating navigation meshes in one dimension for the other
+dimension, e.g. baking a 2D navigation mesh with the 3D NavigationMesh when using
+flat 3D source geometry or creating 3D flat navigation meshes with the
+polygon outline draw tools of NavigationRegion2D and NavigationPolygons.
 
 Any RID created with the NavigationServer2D API works on the NavigationServer3D API
 as well and both 2D and 3D avoidance agents can exist on the same map.
 
 .. note::
-    Regions created in 2D and 3D will merge their navigationmeshes when placed on the same map and merge conditions apply.
+    Regions created in 2D and 3D will merge their navigation meshes when placed on the same map and merge conditions apply.
     The NavigationServer does not discriminate between NavigationRegion2D and NavigationRegion3D nodes as both are regions on the server.
     By default those nodes register on different navigation maps so this merge can only happen when maps are changed manually e.g. with scripts.
 
