@@ -1310,7 +1310,7 @@ is used, it can be scalar or vector.
 | vec4 **textureGrad** (samplerCubeArray s, vec3 p, vec3 dPdx,                |                                                                     |
 | vec3 dPdy)                                                                  |                                                                     |
 +-----------------------------------------------------------------------------+---------------------------------------------------------------------+
-| gvec4_type **textureProjGrad** (gsampler2D s, vec3 p, vec2 dPdx, vec2 dPdy) | Performs a texture read with projection/LOD and with explicit        |
+| gvec4_type **textureProjGrad** (gsampler2D s, vec3 p, vec2 dPdx, vec2 dPdy) | Performs a texture read with projection/LOD and with explicit       |
 |                                                                             | gradients.                                                          |
 | gvec4_type **textureProjGrad** (gsampler2D s, vec4 p, vec2 dPdx, vec2 dPdy) |                                                                     |
 |                                                                             |                                                                     |
