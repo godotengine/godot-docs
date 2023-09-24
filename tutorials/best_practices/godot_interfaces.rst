@@ -504,7 +504,7 @@ accesses:
             Child.MyMethod();
         }
 
-        public void PrintMe() {
+        public void PrintMe()
         {
             GD.Print(GetClass());
         }
