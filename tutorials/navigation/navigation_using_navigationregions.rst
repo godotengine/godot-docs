@@ -4,7 +4,7 @@ Using NavigationRegions
 =======================
 
 NavigationRegions are the visual Node representation of a ``region`` of the navigation ``map`` on the NavigationServer.
-Each NavigationRegion node holds a resource for the navigationmesh data.
+Each NavigationRegion node holds a resource for the navigation mesh data.
 
 Both 2D and 3D version are available as :ref:`NavigationRegion2D<class_NavigationRegion2D>`
 and :ref:`NavigationRegion3D<class_NavigationRegion3D>` respectively.
@@ -13,16 +13,16 @@ Individual NavigationRegions upload their 2D NavigationPolygon or 3D NavigationM
 The NavigationServer map turns this information into a combined navigation map for pathfinding.
 
 To create a navigation region using the SceneTree add a ``NavigationRegion2D`` or ``NavigationRegion3D`` node to the scene.
-All regions require a navigationmesh resource to function. See :ref:`doc_navigation_using_navigationmeshes` to learn how to create and apply navigationmeshes.
+All regions require a navigation mesh resource to function. See :ref:`doc_navigation_using_navigationmeshes` to learn how to create and apply navigation meshes.
 
 NavigationRegions will automatically push ``global_transform`` changes to the region on the NavigationServer which makes them suitable for moving platforms.
-The NavigationServer will attempt to connect navmeshes of individual regions when they are close enough. For more detail see :ref:`doc_navigation_connecting_navmesh`.
+The NavigationServer will attempt to connect the navigation meshes of individual regions when they are close enough. For more details see :ref:`doc_navigation_connecting_navmesh`.
 To connect NavigationRegions over arbitrary distances see :ref:`doc_navigation_using_navigationlinks` to learn how to create and use ``NavigationLinks``.
 
 .. warning::
 
     While changing the transform of a NavigationRegion node does update the region position on the
-    NavigationServer changing the scale does not. A navigationmesh resource has no scale and needs
+    NavigationServer, changing the scale does not. A navigation mesh resource has no scale and needs
     to be fully updated when source geometry changes scale.
 
 Regions can be enabled / disabled and if disabled will not contribute to future pathfinding queries.
