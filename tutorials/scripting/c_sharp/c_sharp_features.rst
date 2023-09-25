@@ -141,8 +141,8 @@ Or you can detect which engine your code is in, useful for making cross-engine l
     #endif
         }
 
-Or you can write scripts that target multiple Godot versions and can take
-advantage that are only available on some of those versions:
+Or you can write scripts that target multiple Godot versions and take
+advantage of features that are only available on some of those versions:
 
 .. code-block:: csharp
 
@@ -176,7 +176,7 @@ Full list of defines
 * ``GODOTX``, ``GODOTX_Y``, ``GODOTX_Y_Z``, ``GODOTx_OR_GREATER``,
   ``GODOTX_y_OR_GREATER``, and ``GODOTX_Y_z_OR_GREATER``, where ``X``, ``Y``,
   and ``Z`` are replaced by the current major, minor and patch version of Godot.
-  ``x``, ``y``, and ``z`` are replaced by 0 to to the current version for that
+  ``x``, ``y``, and ``z`` are replaced by all values from 0 to the current version number for that
   component.
 
   .. note::
