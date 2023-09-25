@@ -197,7 +197,7 @@ When is the next release out?
 While Godot contributors aren't working under any deadlines, we strive to
 publish minor releases relatively frequently.
 
-In particular, after the very length release cycle for 4.0, we are pivoting to
+In particular, after the very lengthy release cycle for 4.0, we are pivoting to
 a faster paced development workflow, with the 4.1 release expected within late
 Q2 / early Q3 2023.
 
