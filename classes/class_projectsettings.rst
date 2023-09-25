@@ -5214,7 +5214,7 @@ Default map up vector for 3D navigation maps. See :ref:`NavigationServer.map_set
 
 :ref:`int<class_int>` **network/limits/debugger_stdout/max_chars_per_second** = ``2048``
 
-Maximum amount of characters allowed to send as output from the debugger. Over this value, content is dropped. This helps not to stall the debugger connection.
+Maximum amount of characters allowed to send as output from the debugger. Over this value, content is dropped with the message ``"output overflow, print less text!"``. This helps not to stall the debugger connection.
 
 .. rst-class:: classref-item-separator
 
