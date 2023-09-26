@@ -436,9 +436,6 @@ When creating a non-game application, make sure to enable
 :ref:`low-processor mode <class_ProjectSettings_property_application/run/low_processor_mode>`
 in the Project Settings to decrease CPU and GPU usage.
 
-That said, we wouldn't recommend using Godot to create a *mobile* application
-since low-processor mode isn't supported on mobile platforms yet.
-
 Check out `Material Maker <https://github.com/RodZill4/material-maker>`__ and
 `Pixelorama <https://github.com/Orama-Interactive/Pixelorama>`__ for examples of
 open source applications made with Godot.
