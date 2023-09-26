@@ -447,8 +447,9 @@ textures, as the texture detail will help make the dithering pattern less notice
 
 However, in projects with less detailed textures, the shadow dithering pattern
 may be more visible. To hide this pattern, you can either enable
-:ref:`doc_3d_antialiasing_taa`, :ref:`doc_3d_antialiasing_fxaa`, or increase the
-shadow filter quality to **Soft Medium** or higher.
+:ref:`doc_3d_antialiasing_taa`, :ref:`doc_3d_antialiasing_fsr2`,
+:ref:`doc_3d_antialiasing_fxaa`, or increase the shadow filter quality to
+**Soft Medium** or higher.
 
 The **Soft Very Low** setting will automatically decrease shadow blur to make
 artifacts from the low sample count less visible. Conversely, the **Soft High**

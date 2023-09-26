@@ -362,6 +362,8 @@ Rendering
 **Anti-aliasing:**
 
 - Temporal :ref:`antialiasing <doc_3d_antialiasing>` (TAA).
+- AMD FidelityFX Super Resolution 2.2 :ref:`antialiasing <doc_3d_antialiasing>` (FSR2),
+  which can be used at native resolution as a form of high-quality temporal antialiasing.
 - Multi-sample antialiasing (MSAA), for both :ref:`doc_2d_antialiasing` and :ref:`doc_3d_antialiasing`.
 - Fast approximate antialiasing (FXAA).
 - Super-sample antialiasing (SSAA) using bilinear 3D scaling and a 3D resolution scale above 1.0.
@@ -372,8 +374,8 @@ Rendering
 - Support for :ref:`rendering 3D at a lower resolution <doc_resolution_scaling>`
   while keeping 2D rendering at the original scale. This can be used to improve
   performance on low-end systems or improve visuals on high-end systems.
-- Resolution scaling uses bilinear filtering or AMD FidelityFX Super Resolution
-  1.0 (FSR).
+- Resolution scaling uses bilinear filtering, AMD FidelityFX Super Resolution
+  1.0 (FSR1) or AMD FidelityFX Super Resolution 2.2 (FSR2).
 - Texture mipmap LOD bias is adjusted automatically to improve quality at lower
   resolution scales. It can also be modified with a manual offset.
 
