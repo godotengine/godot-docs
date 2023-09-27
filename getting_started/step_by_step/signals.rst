@@ -152,6 +152,13 @@ the ``not`` keyword to invert the value.
     func _on_Button_pressed():
         set_process(not is_processing())
 
+ .. code-tab:: csharp C#
+
+    private void OnButtonPressed()
+    {
+        SetProcess(!IsProcessing());
+    }
+
 This function will toggle processing and, in turn, the icon's motion on and off
 upon pressing the button.
 
@@ -166,6 +173,15 @@ following code, which we saw two lessons ago:
         rotation += angular_speed * delta
         var velocity = Vector2.UP.rotated(rotation) * speed
         position += velocity * delta
+
+ .. code-tab:: csharp C#
+
+    public override void _Process(float delta)
+    {
+        Rotation += _angularSpeed * delta;
+        var velocity = Vector2.Up.Rotated(Rotation) * _speed;
+        Position += velocity * delta;
+    }
 
 Your complete ``Sprite.gd`` code should look like the following.
 
@@ -186,6 +202,28 @@ Your complete ``Sprite.gd`` code should look like the following.
 
     func _on_Button_pressed():
         set_process(not is_processing())
+
+ .. code-tab:: csharp C#
+
+    using Godot;
+
+    public partial class MySprite2D : Sprite2D
+    {
+        private float _speed = 400;
+        private float _angularSpeed = Mathf.Pi;
+
+        public override void _Process(float delta)
+        {
+            Rotation += _angularSpeed * (float)delta;
+            var velocity = Vector2.Up.Rotated(Rotation) * _speed;
+            Position += velocity * (float)delta;
+        }
+
+        private void OnButtonPressed()
+        {
+            SetProcess(!IsProcessing());
+        }
+    }
 
 Run the scene now and click the button to see the sprite start and stop.
 
@@ -239,6 +277,13 @@ in a variable.
     func _ready():
         var timer = get_node("Timer")
 
+ .. code-tab:: csharp C#
+
+    public override void _Ready()
+    {
+        var timer = GetNode<Timer>("Timer");
+    }
+
 The function ``get_node()`` looks at the Sprite's children and gets nodes by
 their name. For example, if you renamed the Timer node to "BlinkingTimer" in the
 editor, you would have to change the call to ``get_node("BlinkingTimer")``.
@@ -254,6 +299,14 @@ We can now connect the Timer to the Sprite in the ``_ready()`` function.
         var timer = get_node("Timer")
         timer.connect("timeout", self, "_on_Timer_timeout")
 
+ .. code-tab:: csharp C#
+
+    public override void _Ready()
+    {
+        var timer = GetNode<Timer>("Timer");
+        timer.Connect("timeout", this, nameof(OnTimerTimeout));
+    }
+
 The line reads like so: we connect the Timer's "timeout" signal to the node to
 which the script is attached (``self``). When the Timer emits "timeout", we want
 to call the function "_on_Timer_timeout", that we need to define. Let's add it
@@ -264,6 +317,13 @@ at the bottom of our script and use it to toggle our sprite's visibility.
 
     func _on_Timer_timeout():
         visible = not visible
+
+ .. code-tab:: csharp C#
+
+    private void OnTimerTimeout()
+    {
+        Visible = !Visible;
+    }
 
 The ``visible`` property is a boolean that controls the visibility of our node.
 The line ``visible = not visible`` toggles the value. If ``visible`` is
@@ -305,6 +365,39 @@ Here is the complete ``Sprite.gd`` file for reference.
     func _on_Timer_timeout():
         visible = not visible
 
+ .. code-tab:: csharp C#
+
+    using Godot;
+
+    public partial class MySprite2D : Sprite2D
+    {
+        private float _speed = 400;
+        private float _angularSpeed = Mathf.Pi;
+
+        public override void _Ready()
+        {
+            var timer = GetNode<Timer>("Timer");
+            timer.Connect("timeout", this, nameof(OnTimerTimeout));
+        }
+
+        public override void _Process(float delta)
+        {
+            Rotation += _angularSpeed * delta;
+            var velocity = Vector2.Up.Rotated(Rotation) * _speed;
+            Position += velocity * delta;
+        }
+
+        private void OnButtonPressed()
+        {
+            SetProcess(!IsProcessing());
+        }
+
+        private void OnTimerTimeout()
+        {
+            Visible = !Visible;
+        }
+    }
+
 Custom signals
 --------------
 
@@ -325,6 +418,17 @@ reaches 0.
 
     var health = 10
 
+ .. code-tab:: csharp C#
+    using Godot;
+
+    public partial class MyNode2D : Node2D
+    {
+        [Signal]
+        public delegate void HealthDepleted();
+
+        private int _health = 10;
+    }
+
 .. note:: As signals represent events that just occurred, we generally use an
           action verb in the past tense in their names.
 
@@ -343,6 +447,18 @@ To emit a signal in your scripts, call ``emit_signal()``.
         if health <= 0:
             emit_signal("health_depleted")
 
+ .. code-tab:: csharp C#
+
+    public void TakeDamage(int amount)
+    {
+        _health -= amount;
+
+        if (_health <= 0)
+        {
+            EmitSignal(nameof(HealthDepleted));
+        }
+    }
+
 A signal can optionally declare one or more arguments. Specify the argument
 names between parentheses:
 
@@ -352,6 +468,18 @@ names between parentheses:
     extends Node
 
     signal health_changed(old_value, new_value)
+
+ .. code-tab:: csharp C#
+
+    using Godot;
+
+    public partial class MyNode : Node
+    {
+        [Signal]
+        public delegate void HealthChanged(int oldValue, int newValue);
+
+        private int _health = 10;
+    }
 
 .. note::
 
@@ -370,6 +498,17 @@ To emit values along with the signal, add them as extra arguments to the
         var old_health = health
         health -= amount
         emit_signal("health_changed", old_health, health)
+
+ .. code-tab:: csharp C#
+
+    public void TakeDamage(int amount)
+    {
+        int oldHealth = _health;
+        _health -= amount;
+        EmitSignal(nameof(HealthChanged), oldHealth, _health);
+    }
+
+
 
 Summary
 -------
