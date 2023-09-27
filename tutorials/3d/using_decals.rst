@@ -229,6 +229,15 @@ decals cannot use custom shaders. However, custom shaders on the projected
 surfaces are able to read the information that is overridden by decals on top of
 them, such as roughness and metallic.
 
+When using the Forward+ renderer, Godot uses a *clustering* approach for
+decal rendering. As many decals as desired can be added (as long as
+performance allows). However, there's still a default limit of 512 *clustered
+elements* that can be present in the current camera view. A clustered element is
+an omni light, a spot light, a :ref:`decal <doc_using_decals>` or a
+:ref:`reflection probe <doc_reflection_probes>`. This limit can be increased by
+adjusting the **Rendering > Limits > Cluster Builder > Max Clustered Elements**
+advanced project setting.
+
 When using the Forward Mobile backend, only 8 decals can be applied on each
 individual Mesh *resource*. If there are more decals affecting a single mesh,
 not all of them will be rendered on the mesh.
