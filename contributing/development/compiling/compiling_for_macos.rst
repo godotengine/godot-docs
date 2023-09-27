@@ -57,7 +57,7 @@ To compile for Apple Silicon (ARM64) powered Macs, use::
 
 To support both architectures in a single "Universal 2" binary, run the above two commands and then use ``lipo`` to bundle them together::
 
-    lipo -create bin/godot.macos.tools.x86_64 bin/godot.macos.tools.arm64 -output bin/godot.macos.tools.universal
+    lipo -create bin/godot.macos.editor.x86_64 bin/godot.macos.editor.arm64 -output bin/godot.macos.editor.universal
 
 If all goes well, the resulting binary executable will be placed in the
 ``bin/`` subdirectory. This executable file contains the whole engine and
@@ -75,7 +75,7 @@ editor binary built with ``target=release_debug``::
 
     cp -r misc/dist/macos_tools.app ./Godot.app
     mkdir -p Godot.app/Contents/MacOS
-    cp bin/godot.macos.tools.universal Godot.app/Contents/MacOS/Godot
+    cp bin/godot.macos.editor.universal Godot.app/Contents/MacOS/Godot
     chmod +x Godot.app/Contents/MacOS/Godot
     codesign --force --timestamp --options=runtime --entitlements misc/dist/macos/editor.entitlements -s - Godot.app
 
