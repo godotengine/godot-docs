@@ -202,9 +202,7 @@ To remove from the current selection, hold :kbd:`Ctrl` then select a tile.
 The selection can then be used in any other painting mode to quickly create copies
 of an already-placed pattern.
 
-While in Selection mode, you can't place new tiles, but you can still erase
-tiles by right-clicking after making a selection. The whole selection will be erased,
-regardless of where you click in the selection.
+You can remove the selected tiles from the TileMap by pressing :kbd:`Del`.
 
 You can toggle this mode temporarily while in Paint mode by holding :kbd:`Ctrl`
 then performing a selection.
