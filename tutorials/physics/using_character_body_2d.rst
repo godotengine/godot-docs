@@ -511,7 +511,7 @@ Here's the code for the player body:
                 velocity.Y = _jumpSpeed;
 
             // Get the input direction.
-            Vector2 direction = Input.GetAxis("ui_left", "ui_right");
+            float direction = Input.GetAxis("ui_left", "ui_right");
             velocity.X = direction * _speed;
 
             Velocity = velocity;
