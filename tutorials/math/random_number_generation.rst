@@ -152,6 +152,11 @@ and ``to``:
     # Prints a random floating-point number between -4 and 6.5.
     print(randf_range(-4, 6.5))
 
+ .. code-tab:: csharp
+
+    // Prints a random floating-point number between -4 and 6.5.
+    GD.Print(GD.RandRange(-4.0, 6.5));
+
 :ref:`RandomNumberGenerator.randi_range()
 <class_RandomNumberGenerator_method_randi_range>` takes two arguments ``from``
 and ``to``, and returns a random integer between ``from`` and ``to``:
@@ -315,6 +320,29 @@ We can apply similar logic from arrays to dictionaries as well:
         # The same metal may be selected multiple times in succession.
         return random_metal
 
+ .. code-tab:: csharp
+
+    private var metals = new Godot.Collections.Dictionary
+    {
+        {"copper", new Godot.Collections.Dictionary{{"quantity", 50}, {"price", 50}}},
+        {"silver", new Godot.Collections.Dictionary{{"quantity", 20}, {"price", 150}}},
+        {"gold", new Godot.Collections.Dictionary{{"quantity", 3}, {"price", 500}}}
+    };
+
+    public override void _Ready()
+    {
+        GD.Randomize();
+        for (int i = 0; i < 20; i++)
+        {
+            GD.Print(GetMetal());
+        }
+    }
+
+    public Godot.Collections.Dictionary GetMetal()
+    {
+        var randomMetal = metals.Values()[GD.Randi() % metals.Length];
+    }
+
 .. _doc_random_number_generation_weighted_random_probability:
 
 Weighted random probability
@@ -392,7 +420,10 @@ could get the same fruit three or more times in a row.
 
 You can accomplish this using the *shuffle bag* pattern. It works by removing an
 element from the array after choosing it. After multiple selections, the array
-ends up empty. When that happens, you reinitialize it to its default value::
+ends up empty. When that happens, you reinitialize it to its default value:
+
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     var _fruits = ["apple", "orange", "pear", "banana"]
     # A copy of the fruits array so we can restore the original value into `fruits`.
@@ -409,7 +440,7 @@ ends up empty. When that happens, you reinitialize it to its default value::
 
 
     func get_fruit():
-        if _fruits.empty():
+        if _fruits.is_empty():
             # Fill the fruits array again and shuffle it.
             _fruits = _fruits_full.duplicate()
             _fruits.shuffle()
@@ -417,8 +448,45 @@ ends up empty. When that happens, you reinitialize it to its default value::
         # Get a random fruit, since we shuffled the array,
         # and remove it from the `_fruits` array.
         var random_fruit = _fruits.pop_front()
-        # Prints "apple", "orange", "pear", or "banana" every time the code runs.
+        # Returns "apple", "orange", "pear", or "banana" every time the code runs, removing it from the array.
+        # When all fruit are removed, it refills the array.
         return random_fruit
+
+ .. code-tab:: csharp
+
+    private var _fruits = new Godot.Collections.Array{ "apple", "orange", "pear", "banana" };
+    // A copy of the fruits array so we can restore the original value into `fruits`.
+    private Godot.Collections.Array _fruitsFull;
+
+    public override void _Ready()
+    {
+        GD.Randomize();
+        _fruitsFull = _fruits.Duplicate();
+        _fruits.Shuffle();
+
+        for (int i = 0; i < 100; i++)
+        {
+            GD.Print(GetFruit());
+        }
+    }
+
+    public string GetFruit()
+    {
+        if(_fruits.Length == 0)
+        {
+            // Fill the fruits array again and shuffle it.
+            _fruits = _fruitsFull.Duplicate();
+            _fruits.Shuffle();
+        }
+
+        // Get a random fruit, since we shuffled the array,
+        var randomFruit = _fruits[0];
+        // and remove it from the `_fruits` array.
+        _fruits.RemoveAt(0);
+        // Returns "apple", "orange", "pear", or "banana" every time the code runs, removing it from the array.
+        // When all fruit are removed, it refills the array.
+        return randomFruit;
+    }
 
 When running the above code, there is a chance to get the same fruit twice in a
 row. Once we picked a fruit, it will no longer be a possible return value unless
