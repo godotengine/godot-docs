@@ -47,14 +47,29 @@ General syntax
 Defines the identifier after that directive as a macro, and replaces all
 successive occurrences of it with the replacement code given in the shader.
 Replacement is performed on a "whole words" basis, which means no replacement is
-performed if the string is part of another string (without any spaces separating
-it).
+performed if the string is part of another string (without any spaces or
+operators separating it).
 
 Defines with replacements may also have one or more *arguments*, which can then
 be passed when referencing the define (similar to a function call).
 
 If the replacement code is not defined, the identifier may only be used with
 ``#ifdef`` or ``#ifndef`` directives.
+
+If the *concatenation* symbol (``##``) is present in the replacement code then
+it will be removed upon macro insertion, together with any space surrounding
+it, and join the surrounding words and arguments into a new token.
+
+.. code-block:: glsl
+
+    uniform sampler2D material0;
+
+    #define SAMPLE(N) vec4 tex##N = texture(material##N, UV)
+
+    void fragment() {
+        SAMPLE(0);
+        ALBEDO = tex0.rgb;
+    }
 
 Compared to constants (``const CONSTANT = value;``), ``#define`` can be used
 anywhere within the shader (including in uniform hints).
