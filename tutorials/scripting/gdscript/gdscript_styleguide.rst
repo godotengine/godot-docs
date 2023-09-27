@@ -43,7 +43,7 @@ Here is a complete class example based on these guidelines:
         set = set_is_active
 
     @onready var _state = initial_state:
-        get = set_state
+        set = set_state
     @onready var _state_name = _state.name
 
 
