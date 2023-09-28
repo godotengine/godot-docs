@@ -54,6 +54,7 @@ Here is an example script implementing a simple **MainLoop**:
 
     using Godot;
     
+    [GlobalClass]
     public partial class CustomMainLoop : MainLoop
     {
         private double _timeElapsed = 0;
