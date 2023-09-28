@@ -164,6 +164,8 @@ Part of the import process. This method is run after :ref:`_import_post_parse<cl
 
 Runs when generating a Godot scene node from a GLTFNode. The returned node will be added to the scene tree. Multiple nodes can be generated in this step if they are added as a child of the returned node.
 
+\ **Note:** The ``scene_parent`` parameter may be null if this is the single root node.
+
 .. rst-class:: classref-item-separator
 
 ----

@@ -44,6 +44,23 @@ Methods
 
 .. rst-class:: classref-descriptions-group
 
+Signals
+-------
+
+.. _class_GDExtensionManager_signal_extensions_reloaded:
+
+.. rst-class:: classref-signal
+
+**extensions_reloaded** **(** **)**
+
+Emitted after the editor has automatically reloaded any extensions.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
+
 Enumerations
 ------------
 

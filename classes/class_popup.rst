@@ -45,6 +45,18 @@ Properties
    | :ref:`bool<class_bool>` | wrap_controls | ``true`` (overrides :ref:`Window<class_Window_property_wrap_controls>`) |
    +-------------------------+---------------+-------------------------------------------------------------------------+
 
+.. rst-class:: classref-reftable-group
+
+Theme Properties
+----------------
+
+.. table::
+   :widths: auto
+
+   +---------------------------------+---------------------------------------------+
+   | :ref:`StyleBox<class_StyleBox>` | :ref:`panel<class_Popup_theme_style_panel>` |
+   +---------------------------------+---------------------------------------------+
+
 .. rst-class:: classref-section-separator
 
 ----
@@ -61,6 +73,23 @@ Signals
 **popup_hide** **(** **)**
 
 Emitted when the popup is hidden.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
+
+Theme Property Descriptions
+---------------------------
+
+.. _class_Popup_theme_style_panel:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`StyleBox<class_StyleBox>` **panel**
+
+Default :ref:`StyleBox<class_StyleBox>` for the **Popup**.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

@@ -38,11 +38,15 @@ Properties
 .. table::
    :widths: auto
 
-   +---------------------------+----------------------------------------------------------------------------------------------------+---------+
-   | :ref:`float<class_float>` | :ref:`display_refresh_rate<class_OpenXRInterface_property_display_refresh_rate>`                   | ``0.0`` |
-   +---------------------------+----------------------------------------------------------------------------------------------------+---------+
-   | :ref:`float<class_float>` | :ref:`render_target_size_multiplier<class_OpenXRInterface_property_render_target_size_multiplier>` | ``1.0`` |
-   +---------------------------+----------------------------------------------------------------------------------------------------+---------+
+   +---------------------------+----------------------------------------------------------------------------------------------------+-----------+
+   | :ref:`float<class_float>` | :ref:`display_refresh_rate<class_OpenXRInterface_property_display_refresh_rate>`                   | ``0.0``   |
+   +---------------------------+----------------------------------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`   | :ref:`foveation_dynamic<class_OpenXRInterface_property_foveation_dynamic>`                         | ``false`` |
+   +---------------------------+----------------------------------------------------------------------------------------------------+-----------+
+   | :ref:`int<class_int>`     | :ref:`foveation_level<class_OpenXRInterface_property_foveation_level>`                             | ``0``     |
+   +---------------------------+----------------------------------------------------------------------------------------------------+-----------+
+   | :ref:`float<class_float>` | :ref:`render_target_size_multiplier<class_OpenXRInterface_property_render_target_size_multiplier>` | ``1.0``   |
+   +---------------------------+----------------------------------------------------------------------------------------------------+-----------+
 
 .. rst-class:: classref-reftable-group
 
@@ -70,6 +74,8 @@ Methods
    | :ref:`HandMotionRange<enum_OpenXRInterface_HandMotionRange>` | :ref:`get_motion_range<class_OpenXRInterface_method_get_motion_range>` **(** :ref:`Hand<enum_OpenXRInterface_Hand>` hand **)** |const|                                                                                         |
    +--------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                      | :ref:`is_action_set_active<class_OpenXRInterface_method_is_action_set_active>` **(** :ref:`String<class_String>` name **)** |const|                                                                                            |
+   +--------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                      | :ref:`is_foveation_supported<class_OpenXRInterface_method_is_foveation_supported>` **(** **)** |const|                                                                                                                         |
    +--------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                         | :ref:`set_action_set_active<class_OpenXRInterface_method_set_action_set_active>` **(** :ref:`String<class_String>` name, :ref:`bool<class_bool>` active **)**                                                                  |
    +--------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -466,6 +472,40 @@ The display refresh rate for the current HMD. Only functional if this feature is
 
 ----
 
+.. _class_OpenXRInterface_property_foveation_dynamic:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **foveation_dynamic** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_foveation_dynamic** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **get_foveation_dynamic** **(** **)**
+
+Enable dynamic foveation adjustment, the interface must be initialised before this is accessible. If enabled foveation will automatically adjusted between low and :ref:`foveation_level<class_OpenXRInterface_property_foveation_level>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_OpenXRInterface_property_foveation_level:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **foveation_level** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_foveation_level** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_foveation_level** **(** **)**
+
+Set foveation level from 0 (off) to 3 (high), the interface must be initialised before this is accessible.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_OpenXRInterface_property_render_target_size_multiplier:
 
 .. rst-class:: classref-property
@@ -591,6 +631,20 @@ If handtracking is enabled and motion range is supported, gets the currently con
 :ref:`bool<class_bool>` **is_action_set_active** **(** :ref:`String<class_String>` name **)** |const|
 
 Returns ``true`` if the given action set is active.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_OpenXRInterface_method_is_foveation_supported:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **is_foveation_supported** **(** **)** |const|
+
+Returns ``true`` if OpenXRs foveation extension is supported, the interface must be initialised before this returns a valid value.
+
+\ **Note:** This feature is only available on the compatibility renderer and currently only available on some stand alone headsets. For Vulkan set :ref:`Viewport.vrs_mode<class_Viewport_property_vrs_mode>` to ``VRS_XR`` on desktop.
 
 .. rst-class:: classref-item-separator
 

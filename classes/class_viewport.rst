@@ -350,11 +350,19 @@ Use bilinear scaling for the viewport's 3D buffer. The amount of scaling can be 
 
 Use AMD FidelityFX Super Resolution 1.0 upscaling for the viewport's 3D buffer. The amount of scaling can be set using :ref:`scaling_3d_scale<class_Viewport_property_scaling_3d_scale>`. Values less than ``1.0`` will be result in the viewport being upscaled using FSR. Values greater than ``1.0`` are not supported and bilinear downsampling will be used instead. A value of ``1.0`` disables scaling.
 
+.. _class_Viewport_constant_SCALING_3D_MODE_FSR2:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Scaling3DMode<enum_Viewport_Scaling3DMode>` **SCALING_3D_MODE_FSR2** = ``2``
+
+Use AMD FidelityFX Super Resolution 2.2 upscaling for the viewport's 3D buffer. The amount of scaling can be set using :ref:`scaling_3d_scale<class_Viewport_property_scaling_3d_scale>`. Values less than ``1.0`` will be result in the viewport being upscaled using FSR2. Values greater than ``1.0`` are not supported and bilinear downsampling will be used instead. A value of ``1.0`` will use FSR2 at native resolution as a TAA solution.
+
 .. _class_Viewport_constant_SCALING_3D_MODE_MAX:
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`Scaling3DMode<enum_Viewport_Scaling3DMode>` **SCALING_3D_MODE_MAX** = ``2``
+:ref:`Scaling3DMode<enum_Viewport_Scaling3DMode>` **SCALING_3D_MODE_MAX** = ``3``
 
 Represents the size of the :ref:`Scaling3DMode<enum_Viewport_Scaling3DMode>` enum.
 
@@ -735,6 +743,14 @@ Draws the decal atlas used by :ref:`Decal<class_Decal>`\ s and light projector t
 :ref:`DebugDraw<enum_Viewport_DebugDraw>` **DEBUG_DRAW_MOTION_VECTORS** = ``25``
 
 
+
+.. _class_Viewport_constant_DEBUG_DRAW_INTERNAL_BUFFER:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`DebugDraw<enum_Viewport_DebugDraw>` **DEBUG_DRAW_INTERNAL_BUFFER** = ``26``
+
+Draws the internal resolution buffer of the scene before post-processing is applied.
 
 .. rst-class:: classref-item-separator
 

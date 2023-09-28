@@ -64,6 +64,8 @@ Methods
    +-------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                      | :ref:`add_filter<class_EditorFileDialog_method_add_filter>` **(** :ref:`String<class_String>` filter, :ref:`String<class_String>` description="" **)** |
    +-------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                      | :ref:`add_side_menu<class_EditorFileDialog_method_add_side_menu>` **(** :ref:`Control<class_Control>` menu, :ref:`String<class_String>` title="" **)** |
+   +-------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                      | :ref:`clear_filters<class_EditorFileDialog_method_clear_filters>` **(** **)**                                                                          |
    +-------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`LineEdit<class_LineEdit>`           | :ref:`get_line_edit<class_EditorFileDialog_method_get_line_edit>` **(** **)**                                                                          |
@@ -407,6 +409,18 @@ Adds a comma-delimited file name ``filter`` option to the **EditorFileDialog** w
 A ``filter`` should be of the form ``"filename.extension"``, where filename and extension can be ``*`` to match any string. Filters starting with ``.`` (i.e. empty filenames) are not allowed.
 
 For example, a ``filter`` of ``"*.tscn, *.scn"`` and a ``description`` of ``"Scenes"`` results in filter text "Scenes (\*.tscn, \*.scn)".
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorFileDialog_method_add_side_menu:
+
+.. rst-class:: classref-method
+
+void **add_side_menu** **(** :ref:`Control<class_Control>` menu, :ref:`String<class_String>` title="" **)**
+
+Adds the given ``menu`` to the side of the file dialog with the given ``title`` text on top. Only one side menu is allowed.
 
 .. rst-class:: classref-item-separator
 

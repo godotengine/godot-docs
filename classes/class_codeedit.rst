@@ -122,6 +122,8 @@ Methods
    +-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                            | :ref:`do_indent<class_CodeEdit_method_do_indent>` **(** **)**                                                                                                                                                                                                                                                                                                                                                                      |
    +-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                            | :ref:`duplicate_lines<class_CodeEdit_method_duplicate_lines>` **(** **)**                                                                                                                                                                                                                                                                                                                                                          |
+   +-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                            | :ref:`fold_all_lines<class_CodeEdit_method_fold_all_lines>` **(** **)**                                                                                                                                                                                                                                                                                                                                                            |
    +-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                            | :ref:`fold_line<class_CodeEdit_method_fold_line>` **(** :ref:`int<class_int>` line **)**                                                                                                                                                                                                                                                                                                                                           |
@@ -227,103 +229,57 @@ Theme Properties
 .. table::
    :widths: auto
 
-   +-----------------------------------+----------------------------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`Color<class_Color>`         | :ref:`background_color<class_CodeEdit_theme_color_background_color>`                               | ``Color(0, 0, 0, 0)``               |
-   +-----------------------------------+----------------------------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`Color<class_Color>`         | :ref:`bookmark_color<class_CodeEdit_theme_color_bookmark_color>`                                   | ``Color(0.5, 0.64, 1, 0.8)``        |
-   +-----------------------------------+----------------------------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`Color<class_Color>`         | :ref:`brace_mismatch_color<class_CodeEdit_theme_color_brace_mismatch_color>`                       | ``Color(1, 0.2, 0.2, 1)``           |
-   +-----------------------------------+----------------------------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`Color<class_Color>`         | :ref:`breakpoint_color<class_CodeEdit_theme_color_breakpoint_color>`                               | ``Color(0.9, 0.29, 0.3, 1)``        |
-   +-----------------------------------+----------------------------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`Color<class_Color>`         | :ref:`caret_background_color<class_CodeEdit_theme_color_caret_background_color>`                   | ``Color(0, 0, 0, 1)``               |
-   +-----------------------------------+----------------------------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`Color<class_Color>`         | :ref:`caret_color<class_CodeEdit_theme_color_caret_color>`                                         | ``Color(0.875, 0.875, 0.875, 1)``   |
-   +-----------------------------------+----------------------------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`Color<class_Color>`         | :ref:`code_folding_color<class_CodeEdit_theme_color_code_folding_color>`                           | ``Color(0.8, 0.8, 0.8, 0.8)``       |
-   +-----------------------------------+----------------------------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`Color<class_Color>`         | :ref:`completion_background_color<class_CodeEdit_theme_color_completion_background_color>`         | ``Color(0.17, 0.16, 0.2, 1)``       |
-   +-----------------------------------+----------------------------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`Color<class_Color>`         | :ref:`completion_existing_color<class_CodeEdit_theme_color_completion_existing_color>`             | ``Color(0.87, 0.87, 0.87, 0.13)``   |
-   +-----------------------------------+----------------------------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`Color<class_Color>`         | :ref:`completion_font_color<class_CodeEdit_theme_color_completion_font_color>`                     | ``Color(0.67, 0.67, 0.67, 1)``      |
-   +-----------------------------------+----------------------------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`Color<class_Color>`         | :ref:`completion_scroll_color<class_CodeEdit_theme_color_completion_scroll_color>`                 | ``Color(1, 1, 1, 0.29)``            |
-   +-----------------------------------+----------------------------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`Color<class_Color>`         | :ref:`completion_scroll_hovered_color<class_CodeEdit_theme_color_completion_scroll_hovered_color>` | ``Color(1, 1, 1, 0.4)``             |
-   +-----------------------------------+----------------------------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`Color<class_Color>`         | :ref:`completion_selected_color<class_CodeEdit_theme_color_completion_selected_color>`             | ``Color(0.26, 0.26, 0.27, 1)``      |
-   +-----------------------------------+----------------------------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`Color<class_Color>`         | :ref:`current_line_color<class_CodeEdit_theme_color_current_line_color>`                           | ``Color(0.25, 0.25, 0.26, 0.8)``    |
-   +-----------------------------------+----------------------------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`Color<class_Color>`         | :ref:`executing_line_color<class_CodeEdit_theme_color_executing_line_color>`                       | ``Color(0.98, 0.89, 0.27, 1)``      |
-   +-----------------------------------+----------------------------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`Color<class_Color>`         | :ref:`folded_code_region_color<class_CodeEdit_theme_color_folded_code_region_color>`               | ``Color(0.68, 0.46, 0.77, 0.2)``    |
-   +-----------------------------------+----------------------------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`Color<class_Color>`         | :ref:`font_color<class_CodeEdit_theme_color_font_color>`                                           | ``Color(0.875, 0.875, 0.875, 1)``   |
-   +-----------------------------------+----------------------------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`Color<class_Color>`         | :ref:`font_outline_color<class_CodeEdit_theme_color_font_outline_color>`                           | ``Color(1, 1, 1, 1)``               |
-   +-----------------------------------+----------------------------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`Color<class_Color>`         | :ref:`font_placeholder_color<class_CodeEdit_theme_color_font_placeholder_color>`                   | ``Color(0.875, 0.875, 0.875, 0.6)`` |
-   +-----------------------------------+----------------------------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`Color<class_Color>`         | :ref:`font_readonly_color<class_CodeEdit_theme_color_font_readonly_color>`                         | ``Color(0.875, 0.875, 0.875, 0.5)`` |
-   +-----------------------------------+----------------------------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`Color<class_Color>`         | :ref:`font_selected_color<class_CodeEdit_theme_color_font_selected_color>`                         | ``Color(0, 0, 0, 0)``               |
-   +-----------------------------------+----------------------------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`Color<class_Color>`         | :ref:`line_length_guideline_color<class_CodeEdit_theme_color_line_length_guideline_color>`         | ``Color(0.3, 0.5, 0.8, 0.1)``       |
-   +-----------------------------------+----------------------------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`Color<class_Color>`         | :ref:`line_number_color<class_CodeEdit_theme_color_line_number_color>`                             | ``Color(0.67, 0.67, 0.67, 0.4)``    |
-   +-----------------------------------+----------------------------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`Color<class_Color>`         | :ref:`search_result_border_color<class_CodeEdit_theme_color_search_result_border_color>`           | ``Color(0.3, 0.3, 0.3, 0.4)``       |
-   +-----------------------------------+----------------------------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`Color<class_Color>`         | :ref:`search_result_color<class_CodeEdit_theme_color_search_result_color>`                         | ``Color(0.3, 0.3, 0.3, 1)``         |
-   +-----------------------------------+----------------------------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`Color<class_Color>`         | :ref:`selection_color<class_CodeEdit_theme_color_selection_color>`                                 | ``Color(0.5, 0.5, 0.5, 1)``         |
-   +-----------------------------------+----------------------------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`Color<class_Color>`         | :ref:`word_highlighted_color<class_CodeEdit_theme_color_word_highlighted_color>`                   | ``Color(0.8, 0.9, 0.9, 0.15)``      |
-   +-----------------------------------+----------------------------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`int<class_int>`             | :ref:`completion_lines<class_CodeEdit_theme_constant_completion_lines>`                            | ``7``                               |
-   +-----------------------------------+----------------------------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`int<class_int>`             | :ref:`completion_max_width<class_CodeEdit_theme_constant_completion_max_width>`                    | ``50``                              |
-   +-----------------------------------+----------------------------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`int<class_int>`             | :ref:`completion_scroll_width<class_CodeEdit_theme_constant_completion_scroll_width>`              | ``6``                               |
-   +-----------------------------------+----------------------------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`int<class_int>`             | :ref:`line_spacing<class_CodeEdit_theme_constant_line_spacing>`                                    | ``4``                               |
-   +-----------------------------------+----------------------------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`int<class_int>`             | :ref:`outline_size<class_CodeEdit_theme_constant_outline_size>`                                    | ``0``                               |
-   +-----------------------------------+----------------------------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`Font<class_Font>`           | :ref:`font<class_CodeEdit_theme_font_font>`                                                        |                                     |
-   +-----------------------------------+----------------------------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`int<class_int>`             | :ref:`font_size<class_CodeEdit_theme_font_size_font_size>`                                         |                                     |
-   +-----------------------------------+----------------------------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`Texture2D<class_Texture2D>` | :ref:`bookmark<class_CodeEdit_theme_icon_bookmark>`                                                |                                     |
-   +-----------------------------------+----------------------------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`Texture2D<class_Texture2D>` | :ref:`breakpoint<class_CodeEdit_theme_icon_breakpoint>`                                            |                                     |
-   +-----------------------------------+----------------------------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`Texture2D<class_Texture2D>` | :ref:`can_fold<class_CodeEdit_theme_icon_can_fold>`                                                |                                     |
-   +-----------------------------------+----------------------------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`Texture2D<class_Texture2D>` | :ref:`can_fold_code_region<class_CodeEdit_theme_icon_can_fold_code_region>`                        |                                     |
-   +-----------------------------------+----------------------------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`Texture2D<class_Texture2D>` | :ref:`executing_line<class_CodeEdit_theme_icon_executing_line>`                                    |                                     |
-   +-----------------------------------+----------------------------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`Texture2D<class_Texture2D>` | :ref:`folded<class_CodeEdit_theme_icon_folded>`                                                    |                                     |
-   +-----------------------------------+----------------------------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`Texture2D<class_Texture2D>` | :ref:`folded_code_region<class_CodeEdit_theme_icon_folded_code_region>`                            |                                     |
-   +-----------------------------------+----------------------------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`Texture2D<class_Texture2D>` | :ref:`folded_eol_icon<class_CodeEdit_theme_icon_folded_eol_icon>`                                  |                                     |
-   +-----------------------------------+----------------------------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`Texture2D<class_Texture2D>` | :ref:`space<class_CodeEdit_theme_icon_space>`                                                      |                                     |
-   +-----------------------------------+----------------------------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`Texture2D<class_Texture2D>` | :ref:`tab<class_CodeEdit_theme_icon_tab>`                                                          |                                     |
-   +-----------------------------------+----------------------------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`StyleBox<class_StyleBox>`   | :ref:`completion<class_CodeEdit_theme_style_completion>`                                           |                                     |
-   +-----------------------------------+----------------------------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`StyleBox<class_StyleBox>`   | :ref:`focus<class_CodeEdit_theme_style_focus>`                                                     |                                     |
-   +-----------------------------------+----------------------------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`StyleBox<class_StyleBox>`   | :ref:`normal<class_CodeEdit_theme_style_normal>`                                                   |                                     |
-   +-----------------------------------+----------------------------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`StyleBox<class_StyleBox>`   | :ref:`read_only<class_CodeEdit_theme_style_read_only>`                                             |                                     |
-   +-----------------------------------+----------------------------------------------------------------------------------------------------+-------------------------------------+
+   +-----------------------------------+----------------------------------------------------------------------------------------------------+-----------------------------------+
+   | :ref:`Color<class_Color>`         | :ref:`bookmark_color<class_CodeEdit_theme_color_bookmark_color>`                                   | ``Color(0.5, 0.64, 1, 0.8)``      |
+   +-----------------------------------+----------------------------------------------------------------------------------------------------+-----------------------------------+
+   | :ref:`Color<class_Color>`         | :ref:`brace_mismatch_color<class_CodeEdit_theme_color_brace_mismatch_color>`                       | ``Color(1, 0.2, 0.2, 1)``         |
+   +-----------------------------------+----------------------------------------------------------------------------------------------------+-----------------------------------+
+   | :ref:`Color<class_Color>`         | :ref:`breakpoint_color<class_CodeEdit_theme_color_breakpoint_color>`                               | ``Color(0.9, 0.29, 0.3, 1)``      |
+   +-----------------------------------+----------------------------------------------------------------------------------------------------+-----------------------------------+
+   | :ref:`Color<class_Color>`         | :ref:`code_folding_color<class_CodeEdit_theme_color_code_folding_color>`                           | ``Color(0.8, 0.8, 0.8, 0.8)``     |
+   +-----------------------------------+----------------------------------------------------------------------------------------------------+-----------------------------------+
+   | :ref:`Color<class_Color>`         | :ref:`completion_background_color<class_CodeEdit_theme_color_completion_background_color>`         | ``Color(0.17, 0.16, 0.2, 1)``     |
+   +-----------------------------------+----------------------------------------------------------------------------------------------------+-----------------------------------+
+   | :ref:`Color<class_Color>`         | :ref:`completion_existing_color<class_CodeEdit_theme_color_completion_existing_color>`             | ``Color(0.87, 0.87, 0.87, 0.13)`` |
+   +-----------------------------------+----------------------------------------------------------------------------------------------------+-----------------------------------+
+   | :ref:`Color<class_Color>`         | :ref:`completion_scroll_color<class_CodeEdit_theme_color_completion_scroll_color>`                 | ``Color(1, 1, 1, 0.29)``          |
+   +-----------------------------------+----------------------------------------------------------------------------------------------------+-----------------------------------+
+   | :ref:`Color<class_Color>`         | :ref:`completion_scroll_hovered_color<class_CodeEdit_theme_color_completion_scroll_hovered_color>` | ``Color(1, 1, 1, 0.4)``           |
+   +-----------------------------------+----------------------------------------------------------------------------------------------------+-----------------------------------+
+   | :ref:`Color<class_Color>`         | :ref:`completion_selected_color<class_CodeEdit_theme_color_completion_selected_color>`             | ``Color(0.26, 0.26, 0.27, 1)``    |
+   +-----------------------------------+----------------------------------------------------------------------------------------------------+-----------------------------------+
+   | :ref:`Color<class_Color>`         | :ref:`executing_line_color<class_CodeEdit_theme_color_executing_line_color>`                       | ``Color(0.98, 0.89, 0.27, 1)``    |
+   +-----------------------------------+----------------------------------------------------------------------------------------------------+-----------------------------------+
+   | :ref:`Color<class_Color>`         | :ref:`folded_code_region_color<class_CodeEdit_theme_color_folded_code_region_color>`               | ``Color(0.68, 0.46, 0.77, 0.2)``  |
+   +-----------------------------------+----------------------------------------------------------------------------------------------------+-----------------------------------+
+   | :ref:`Color<class_Color>`         | :ref:`line_length_guideline_color<class_CodeEdit_theme_color_line_length_guideline_color>`         | ``Color(0.3, 0.5, 0.8, 0.1)``     |
+   +-----------------------------------+----------------------------------------------------------------------------------------------------+-----------------------------------+
+   | :ref:`Color<class_Color>`         | :ref:`line_number_color<class_CodeEdit_theme_color_line_number_color>`                             | ``Color(0.67, 0.67, 0.67, 0.4)``  |
+   +-----------------------------------+----------------------------------------------------------------------------------------------------+-----------------------------------+
+   | :ref:`int<class_int>`             | :ref:`completion_lines<class_CodeEdit_theme_constant_completion_lines>`                            | ``7``                             |
+   +-----------------------------------+----------------------------------------------------------------------------------------------------+-----------------------------------+
+   | :ref:`int<class_int>`             | :ref:`completion_max_width<class_CodeEdit_theme_constant_completion_max_width>`                    | ``50``                            |
+   +-----------------------------------+----------------------------------------------------------------------------------------------------+-----------------------------------+
+   | :ref:`int<class_int>`             | :ref:`completion_scroll_width<class_CodeEdit_theme_constant_completion_scroll_width>`              | ``6``                             |
+   +-----------------------------------+----------------------------------------------------------------------------------------------------+-----------------------------------+
+   | :ref:`Texture2D<class_Texture2D>` | :ref:`bookmark<class_CodeEdit_theme_icon_bookmark>`                                                |                                   |
+   +-----------------------------------+----------------------------------------------------------------------------------------------------+-----------------------------------+
+   | :ref:`Texture2D<class_Texture2D>` | :ref:`breakpoint<class_CodeEdit_theme_icon_breakpoint>`                                            |                                   |
+   +-----------------------------------+----------------------------------------------------------------------------------------------------+-----------------------------------+
+   | :ref:`Texture2D<class_Texture2D>` | :ref:`can_fold<class_CodeEdit_theme_icon_can_fold>`                                                |                                   |
+   +-----------------------------------+----------------------------------------------------------------------------------------------------+-----------------------------------+
+   | :ref:`Texture2D<class_Texture2D>` | :ref:`can_fold_code_region<class_CodeEdit_theme_icon_can_fold_code_region>`                        |                                   |
+   +-----------------------------------+----------------------------------------------------------------------------------------------------+-----------------------------------+
+   | :ref:`Texture2D<class_Texture2D>` | :ref:`executing_line<class_CodeEdit_theme_icon_executing_line>`                                    |                                   |
+   +-----------------------------------+----------------------------------------------------------------------------------------------------+-----------------------------------+
+   | :ref:`Texture2D<class_Texture2D>` | :ref:`folded<class_CodeEdit_theme_icon_folded>`                                                    |                                   |
+   +-----------------------------------+----------------------------------------------------------------------------------------------------+-----------------------------------+
+   | :ref:`Texture2D<class_Texture2D>` | :ref:`folded_code_region<class_CodeEdit_theme_icon_folded_code_region>`                            |                                   |
+   +-----------------------------------+----------------------------------------------------------------------------------------------------+-----------------------------------+
+   | :ref:`Texture2D<class_Texture2D>` | :ref:`folded_eol_icon<class_CodeEdit_theme_icon_folded_eol_icon>`                                  |                                   |
+   +-----------------------------------+----------------------------------------------------------------------------------------------------+-----------------------------------+
+   | :ref:`StyleBox<class_StyleBox>`   | :ref:`completion<class_CodeEdit_theme_style_completion>`                                           |                                   |
+   +-----------------------------------+----------------------------------------------------------------------------------------------------+-----------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -1109,6 +1065,18 @@ Perform an indent as if the user activated the "ui_text_indent" action.
 
 ----
 
+.. _class_CodeEdit_method_duplicate_lines:
+
+.. rst-class:: classref-method
+
+void **duplicate_lines** **(** **)**
+
+Duplicates all lines currently selected with any caret. Duplicates the entire line beneath the current one no matter where the caret is within the line.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_CodeEdit_method_fold_all_lines:
 
 .. rst-class:: classref-method
@@ -1704,18 +1672,6 @@ Submits all completion options added with :ref:`add_code_completion_option<class
 Theme Property Descriptions
 ---------------------------
 
-.. _class_CodeEdit_theme_color_background_color:
-
-.. rst-class:: classref-themeproperty
-
-:ref:`Color<class_Color>` **background_color** = ``Color(0, 0, 0, 0)``
-
-Sets the background :ref:`Color<class_Color>`.
-
-.. rst-class:: classref-item-separator
-
-----
-
 .. _class_CodeEdit_theme_color_bookmark_color:
 
 .. rst-class:: classref-themeproperty
@@ -1747,30 +1703,6 @@ Sets the background :ref:`Color<class_Color>`.
 :ref:`Color<class_Color>` **breakpoint_color** = ``Color(0.9, 0.29, 0.3, 1)``
 
 :ref:`Color<class_Color>` of the breakpoint icon for bookmarked lines.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_CodeEdit_theme_color_caret_background_color:
-
-.. rst-class:: classref-themeproperty
-
-:ref:`Color<class_Color>` **caret_background_color** = ``Color(0, 0, 0, 1)``
-
-:ref:`Color<class_Color>` of the text behind the caret when block caret is enabled.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_CodeEdit_theme_color_caret_color:
-
-.. rst-class:: classref-themeproperty
-
-:ref:`Color<class_Color>` **caret_color** = ``Color(0.875, 0.875, 0.875, 1)``
-
-:ref:`Color<class_Color>` of the caret.
 
 .. rst-class:: classref-item-separator
 
@@ -1812,18 +1744,6 @@ Background highlight :ref:`Color<class_Color>` for matching text in code complet
 
 ----
 
-.. _class_CodeEdit_theme_color_completion_font_color:
-
-.. rst-class:: classref-themeproperty
-
-:ref:`Color<class_Color>` **completion_font_color** = ``Color(0.67, 0.67, 0.67, 1)``
-
-Font :ref:`Color<class_Color>` for the code completion popup.
-
-.. rst-class:: classref-item-separator
-
-----
-
 .. _class_CodeEdit_theme_color_completion_scroll_color:
 
 .. rst-class:: classref-themeproperty
@@ -1860,18 +1780,6 @@ Background highlight :ref:`Color<class_Color>` for the current selected option i
 
 ----
 
-.. _class_CodeEdit_theme_color_current_line_color:
-
-.. rst-class:: classref-themeproperty
-
-:ref:`Color<class_Color>` **current_line_color** = ``Color(0.25, 0.25, 0.26, 0.8)``
-
-Background :ref:`Color<class_Color>` of the line containing the caret.
-
-.. rst-class:: classref-item-separator
-
-----
-
 .. _class_CodeEdit_theme_color_executing_line_color:
 
 .. rst-class:: classref-themeproperty
@@ -1896,66 +1804,6 @@ Background :ref:`Color<class_Color>` of the line containing the caret.
 
 ----
 
-.. _class_CodeEdit_theme_color_font_color:
-
-.. rst-class:: classref-themeproperty
-
-:ref:`Color<class_Color>` **font_color** = ``Color(0.875, 0.875, 0.875, 1)``
-
-Sets the font :ref:`Color<class_Color>`.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_CodeEdit_theme_color_font_outline_color:
-
-.. rst-class:: classref-themeproperty
-
-:ref:`Color<class_Color>` **font_outline_color** = ``Color(1, 1, 1, 1)``
-
-The tint of text outline of the **CodeEdit**.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_CodeEdit_theme_color_font_placeholder_color:
-
-.. rst-class:: classref-themeproperty
-
-:ref:`Color<class_Color>` **font_placeholder_color** = ``Color(0.875, 0.875, 0.875, 0.6)``
-
-Font color for :ref:`TextEdit.placeholder_text<class_TextEdit_property_placeholder_text>`.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_CodeEdit_theme_color_font_readonly_color:
-
-.. rst-class:: classref-themeproperty
-
-:ref:`Color<class_Color>` **font_readonly_color** = ``Color(0.875, 0.875, 0.875, 0.5)``
-
-Sets the font :ref:`Color<class_Color>` when :ref:`TextEdit.editable<class_TextEdit_property_editable>` is disabled.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_CodeEdit_theme_color_font_selected_color:
-
-.. rst-class:: classref-themeproperty
-
-:ref:`Color<class_Color>` **font_selected_color** = ``Color(0, 0, 0, 0)``
-
-Sets the :ref:`Color<class_Color>` of the selected text. If equal to ``Color(0, 0, 0, 0)``, it will be ignored.
-
-.. rst-class:: classref-item-separator
-
-----
-
 .. _class_CodeEdit_theme_color_line_length_guideline_color:
 
 .. rst-class:: classref-themeproperty
@@ -1975,54 +1823,6 @@ Sets the :ref:`Color<class_Color>` of the selected text. If equal to ``Color(0, 
 :ref:`Color<class_Color>` **line_number_color** = ``Color(0.67, 0.67, 0.67, 0.4)``
 
 Sets the :ref:`Color<class_Color>` of line numbers.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_CodeEdit_theme_color_search_result_border_color:
-
-.. rst-class:: classref-themeproperty
-
-:ref:`Color<class_Color>` **search_result_border_color** = ``Color(0.3, 0.3, 0.3, 0.4)``
-
-:ref:`Color<class_Color>` of the border around text that matches the search query.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_CodeEdit_theme_color_search_result_color:
-
-.. rst-class:: classref-themeproperty
-
-:ref:`Color<class_Color>` **search_result_color** = ``Color(0.3, 0.3, 0.3, 1)``
-
-:ref:`Color<class_Color>` behind the text that matches the search query.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_CodeEdit_theme_color_selection_color:
-
-.. rst-class:: classref-themeproperty
-
-:ref:`Color<class_Color>` **selection_color** = ``Color(0.5, 0.5, 0.5, 1)``
-
-Sets the highlight :ref:`Color<class_Color>` of text selections.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_CodeEdit_theme_color_word_highlighted_color:
-
-.. rst-class:: classref-themeproperty
-
-:ref:`Color<class_Color>` **word_highlighted_color** = ``Color(0.8, 0.9, 0.9, 0.15)``
-
-Sets the highlight :ref:`Color<class_Color>` of multiple occurrences. :ref:`TextEdit.highlight_all_occurrences<class_TextEdit_property_highlight_all_occurrences>` has to be enabled.
 
 .. rst-class:: classref-item-separator
 
@@ -2059,56 +1859,6 @@ Max width of options in the code completion popup. Options longer then this will
 :ref:`int<class_int>` **completion_scroll_width** = ``6``
 
 Width of the scrollbar in the code completion popup.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_CodeEdit_theme_constant_line_spacing:
-
-.. rst-class:: classref-themeproperty
-
-:ref:`int<class_int>` **line_spacing** = ``4``
-
-Sets the spacing between the lines.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_CodeEdit_theme_constant_outline_size:
-
-.. rst-class:: classref-themeproperty
-
-:ref:`int<class_int>` **outline_size** = ``0``
-
-The size of the text outline.
-
-\ **Note:** If using a font with :ref:`FontFile.multichannel_signed_distance_field<class_FontFile_property_multichannel_signed_distance_field>` enabled, its :ref:`FontFile.msdf_pixel_range<class_FontFile_property_msdf_pixel_range>` must be set to at least *twice* the value of :ref:`outline_size<class_CodeEdit_theme_constant_outline_size>` for outline rendering to look correct. Otherwise, the outline may appear to be cut off earlier than intended.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_CodeEdit_theme_font_font:
-
-.. rst-class:: classref-themeproperty
-
-:ref:`Font<class_Font>` **font**
-
-Sets the default :ref:`Font<class_Font>`.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_CodeEdit_theme_font_size_font_size:
-
-.. rst-class:: classref-themeproperty
-
-:ref:`int<class_int>` **font_size**
-
-Sets default font size.
 
 .. rst-class:: classref-item-separator
 
@@ -2210,30 +1960,6 @@ Sets a custom :ref:`Texture2D<class_Texture2D>` to draw at the end of a folded l
 
 ----
 
-.. _class_CodeEdit_theme_icon_space:
-
-.. rst-class:: classref-themeproperty
-
-:ref:`Texture2D<class_Texture2D>` **space**
-
-Sets a custom :ref:`Texture2D<class_Texture2D>` for space text characters.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_CodeEdit_theme_icon_tab:
-
-.. rst-class:: classref-themeproperty
-
-:ref:`Texture2D<class_Texture2D>` **tab**
-
-Sets a custom :ref:`Texture2D<class_Texture2D>` for tab text characters.
-
-.. rst-class:: classref-item-separator
-
-----
-
 .. _class_CodeEdit_theme_style_completion:
 
 .. rst-class:: classref-themeproperty
@@ -2241,42 +1967,6 @@ Sets a custom :ref:`Texture2D<class_Texture2D>` for tab text characters.
 :ref:`StyleBox<class_StyleBox>` **completion**
 
 :ref:`StyleBox<class_StyleBox>` for the code completion popup.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_CodeEdit_theme_style_focus:
-
-.. rst-class:: classref-themeproperty
-
-:ref:`StyleBox<class_StyleBox>` **focus**
-
-Sets the :ref:`StyleBox<class_StyleBox>` when in focus. The ``focus`` :ref:`StyleBox<class_StyleBox>` is displayed *over* the base :ref:`StyleBox<class_StyleBox>`, so a partially transparent :ref:`StyleBox<class_StyleBox>` should be used to ensure the base :ref:`StyleBox<class_StyleBox>` remains visible. A :ref:`StyleBox<class_StyleBox>` that represents an outline or an underline works well for this purpose. To disable the focus visual effect, assign a :ref:`StyleBoxEmpty<class_StyleBoxEmpty>` resource. Note that disabling the focus visual effect will harm keyboard/controller navigation usability, so this is not recommended for accessibility reasons.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_CodeEdit_theme_style_normal:
-
-.. rst-class:: classref-themeproperty
-
-:ref:`StyleBox<class_StyleBox>` **normal**
-
-Sets the :ref:`StyleBox<class_StyleBox>`.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_CodeEdit_theme_style_read_only:
-
-.. rst-class:: classref-themeproperty
-
-:ref:`StyleBox<class_StyleBox>` **read_only**
-
-Sets the :ref:`StyleBox<class_StyleBox>` when :ref:`TextEdit.editable<class_TextEdit_property_editable>` is disabled.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

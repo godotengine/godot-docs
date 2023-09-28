@@ -126,8 +126,6 @@ Theme Properties
    +-----------------------------------+-------------------------------------------------------------------------+-----------------------------------+
    | :ref:`Texture2D<class_Texture2D>` | :ref:`port<class_GraphNode_theme_icon_port>`                            |                                   |
    +-----------------------------------+-------------------------------------------------------------------------+-----------------------------------+
-   | :ref:`Texture2D<class_Texture2D>` | :ref:`resizer<class_GraphNode_theme_icon_resizer>`                      |                                   |
-   +-----------------------------------+-------------------------------------------------------------------------+-----------------------------------+
    | :ref:`StyleBox<class_StyleBox>`   | :ref:`panel<class_GraphNode_theme_style_panel>`                         |                                   |
    +-----------------------------------+-------------------------------------------------------------------------+-----------------------------------+
    | :ref:`StyleBox<class_StyleBox>`   | :ref:`panel_selected<class_GraphNode_theme_style_panel_selected>`       |                                   |
@@ -597,18 +595,6 @@ The vertical distance between ports.
 :ref:`Texture2D<class_Texture2D>` **port**
 
 The icon used for representing ports.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_GraphNode_theme_icon_resizer:
-
-.. rst-class:: classref-themeproperty
-
-:ref:`Texture2D<class_Texture2D>` **resizer**
-
-The icon used for the resizer, visible when :ref:`GraphElement.resizable<class_GraphElement_property_resizable>` is enabled.
 
 .. rst-class:: classref-item-separator
 

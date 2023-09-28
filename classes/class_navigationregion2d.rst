@@ -75,6 +75,8 @@ Methods
    :widths: auto
 
    +-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                    | :ref:`bake_navigation_polygon<class_NavigationRegion2D_method_bake_navigation_polygon>` **(** :ref:`bool<class_bool>` on_thread=true **)**                                  |
+   +-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>` | :ref:`get_avoidance_layer_value<class_NavigationRegion2D_method_get_avoidance_layer_value>` **(** :ref:`int<class_int>` layer_number **)** |const|                          |
    +-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>` | :ref:`get_navigation_layer_value<class_NavigationRegion2D_method_get_navigation_layer_value>` **(** :ref:`int<class_int>` layer_number **)** |const|                        |
@@ -89,6 +91,35 @@ Methods
    +-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                    | :ref:`set_navigation_map<class_NavigationRegion2D_method_set_navigation_map>` **(** :ref:`RID<class_RID>` navigation_map **)**                                              |
    +-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
+
+Signals
+-------
+
+.. _class_NavigationRegion2D_signal_bake_finished:
+
+.. rst-class:: classref-signal
+
+**bake_finished** **(** **)**
+
+Emitted when a navigation polygon bake operation is completed.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_NavigationRegion2D_signal_navigation_polygon_changed:
+
+.. rst-class:: classref-signal
+
+**navigation_polygon_changed** **(** **)**
+
+Emitted when the used navigation polygon is replaced or changes to the internals of the current navigation polygon are committed.
 
 .. rst-class:: classref-section-separator
 
@@ -241,6 +272,18 @@ If enabled the navigation region will use edge connections to connect with other
 
 Method Descriptions
 -------------------
+
+.. _class_NavigationRegion2D_method_bake_navigation_polygon:
+
+.. rst-class:: classref-method
+
+void **bake_navigation_polygon** **(** :ref:`bool<class_bool>` on_thread=true **)**
+
+Bakes the :ref:`NavigationPolygon<class_NavigationPolygon>`. If ``on_thread`` is set to ``true`` (default), the baking is done on a separate thread.
+
+.. rst-class:: classref-item-separator
+
+----
 
 .. _class_NavigationRegion2D_method_get_avoidance_layer_value:
 

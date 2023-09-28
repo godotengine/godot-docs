@@ -45,6 +45,34 @@ Properties
    | :ref:`bool<class_bool>`                  | :ref:`ticks_on_borders<class_Slider_property_ticks_on_borders>` | ``false``                                                           |
    +------------------------------------------+-----------------------------------------------------------------+---------------------------------------------------------------------+
 
+.. rst-class:: classref-reftable-group
+
+Theme Properties
+----------------
+
+.. table::
+   :widths: auto
+
+   +-----------------------------------+--------------------------------------------------------------------------------+-------+
+   | :ref:`int<class_int>`             | :ref:`center_grabber<class_Slider_theme_constant_center_grabber>`              | ``0`` |
+   +-----------------------------------+--------------------------------------------------------------------------------+-------+
+   | :ref:`int<class_int>`             | :ref:`grabber_offset<class_Slider_theme_constant_grabber_offset>`              | ``0`` |
+   +-----------------------------------+--------------------------------------------------------------------------------+-------+
+   | :ref:`Texture2D<class_Texture2D>` | :ref:`grabber<class_Slider_theme_icon_grabber>`                                |       |
+   +-----------------------------------+--------------------------------------------------------------------------------+-------+
+   | :ref:`Texture2D<class_Texture2D>` | :ref:`grabber_disabled<class_Slider_theme_icon_grabber_disabled>`              |       |
+   +-----------------------------------+--------------------------------------------------------------------------------+-------+
+   | :ref:`Texture2D<class_Texture2D>` | :ref:`grabber_highlight<class_Slider_theme_icon_grabber_highlight>`            |       |
+   +-----------------------------------+--------------------------------------------------------------------------------+-------+
+   | :ref:`Texture2D<class_Texture2D>` | :ref:`tick<class_Slider_theme_icon_tick>`                                      |       |
+   +-----------------------------------+--------------------------------------------------------------------------------+-------+
+   | :ref:`StyleBox<class_StyleBox>`   | :ref:`grabber_area<class_Slider_theme_style_grabber_area>`                     |       |
+   +-----------------------------------+--------------------------------------------------------------------------------+-------+
+   | :ref:`StyleBox<class_StyleBox>`   | :ref:`grabber_area_highlight<class_Slider_theme_style_grabber_area_highlight>` |       |
+   +-----------------------------------+--------------------------------------------------------------------------------+-------+
+   | :ref:`StyleBox<class_StyleBox>`   | :ref:`slider<class_Slider_theme_style_slider>`                                 |       |
+   +-----------------------------------+--------------------------------------------------------------------------------+-------+
+
 .. rst-class:: classref-section-separator
 
 ----
@@ -146,6 +174,119 @@ Number of ticks displayed on the slider, including border ticks. Ticks are unifo
 - :ref:`bool<class_bool>` **get_ticks_on_borders** **(** **)**
 
 If ``true``, the slider will display ticks for minimum and maximum values.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
+
+Theme Property Descriptions
+---------------------------
+
+.. _class_Slider_theme_constant_center_grabber:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`int<class_int>` **center_grabber** = ``0``
+
+Boolean constant. If ``1``, the grabber texture size will be ignored and it will fit within slider's bounds based only on its center position.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Slider_theme_constant_grabber_offset:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`int<class_int>` **grabber_offset** = ``0``
+
+Vertical/horizontal offset of the grabber.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Slider_theme_icon_grabber:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`Texture2D<class_Texture2D>` **grabber**
+
+The texture for the grabber (the draggable element).
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Slider_theme_icon_grabber_disabled:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`Texture2D<class_Texture2D>` **grabber_disabled**
+
+The texture for the grabber when it's disabled.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Slider_theme_icon_grabber_highlight:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`Texture2D<class_Texture2D>` **grabber_highlight**
+
+The texture for the grabber when it's focused.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Slider_theme_icon_tick:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`Texture2D<class_Texture2D>` **tick**
+
+The texture for the ticks, visible when :ref:`tick_count<class_Slider_property_tick_count>` is greater than 0.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Slider_theme_style_grabber_area:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`StyleBox<class_StyleBox>` **grabber_area**
+
+The background of the area to the left/bottom of the grabber.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Slider_theme_style_grabber_area_highlight:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`StyleBox<class_StyleBox>` **grabber_area_highlight**
+
+The background of the area to the left/bottom of the grabber that displays when it's being hovered or focused.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Slider_theme_style_slider:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`StyleBox<class_StyleBox>` **slider**
+
+The background for the whole slider. Determines the height/width of the ``grabber_area``.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

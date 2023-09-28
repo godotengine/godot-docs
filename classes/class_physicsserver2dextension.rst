@@ -256,7 +256,11 @@ Methods
    +-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                              | :ref:`_joint_set_param<class_PhysicsServer2DExtension_method__joint_set_param>` **(** :ref:`RID<class_RID>` joint, :ref:`JointParam<enum_PhysicsServer2D_JointParam>` param, :ref:`float<class_float>` value **)** |virtual|                                                                                                                                                                                         |
    +-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                           | :ref:`_pin_joint_get_flag<class_PhysicsServer2DExtension_method__pin_joint_get_flag>` **(** :ref:`RID<class_RID>` joint, :ref:`PinJointFlag<enum_PhysicsServer2D_PinJointFlag>` flag **)** |virtual| |const|                                                                                                                                                                                                         |
+   +-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                                         | :ref:`_pin_joint_get_param<class_PhysicsServer2DExtension_method__pin_joint_get_param>` **(** :ref:`RID<class_RID>` joint, :ref:`PinJointParam<enum_PhysicsServer2D_PinJointParam>` param **)** |virtual| |const|                                                                                                                                                                                                    |
+   +-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                                              | :ref:`_pin_joint_set_flag<class_PhysicsServer2DExtension_method__pin_joint_set_flag>` **(** :ref:`RID<class_RID>` joint, :ref:`PinJointFlag<enum_PhysicsServer2D_PinJointFlag>` flag, :ref:`bool<class_bool>` enabled **)** |virtual|                                                                                                                                                                                |
    +-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                              | :ref:`_pin_joint_set_param<class_PhysicsServer2DExtension_method__pin_joint_set_param>` **(** :ref:`RID<class_RID>` joint, :ref:`PinJointParam<enum_PhysicsServer2D_PinJointParam>` param, :ref:`float<class_float>` value **)** |virtual|                                                                                                                                                                           |
    +-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1886,11 +1890,39 @@ void **_joint_set_param** **(** :ref:`RID<class_RID>` joint, :ref:`JointParam<en
 
 ----
 
+.. _class_PhysicsServer2DExtension_method__pin_joint_get_flag:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **_pin_joint_get_flag** **(** :ref:`RID<class_RID>` joint, :ref:`PinJointFlag<enum_PhysicsServer2D_PinJointFlag>` flag **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_PhysicsServer2DExtension_method__pin_joint_get_param:
 
 .. rst-class:: classref-method
 
 :ref:`float<class_float>` **_pin_joint_get_param** **(** :ref:`RID<class_RID>` joint, :ref:`PinJointParam<enum_PhysicsServer2D_PinJointParam>` param **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_PhysicsServer2DExtension_method__pin_joint_set_flag:
+
+.. rst-class:: classref-method
+
+void **_pin_joint_set_flag** **(** :ref:`RID<class_RID>` joint, :ref:`PinJointFlag<enum_PhysicsServer2D_PinJointFlag>` flag, :ref:`bool<class_bool>` enabled **)** |virtual|
 
 .. container:: contribute
 

@@ -64,6 +64,8 @@ Methods
    +-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Vector2i<class_Vector2i>`               | :ref:`get_texture_slice_size<class_RenderSceneBuffersRD_method_get_texture_slice_size>` **(** :ref:`StringName<class_StringName>` context, :ref:`StringName<class_StringName>` name, :ref:`int<class_int>` mipmap **)**                                                                                                                                                                                                                                                                    |
    +-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`RID<class_RID>`                         | :ref:`get_texture_slice_view<class_RenderSceneBuffersRD_method_get_texture_slice_view>` **(** :ref:`StringName<class_StringName>` context, :ref:`StringName<class_StringName>` name, :ref:`int<class_int>` layer, :ref:`int<class_int>` mipmap, :ref:`int<class_int>` layers, :ref:`int<class_int>` mipmaps, :ref:`RDTextureView<class_RDTextureView>` view **)**                                                                                                                          |
+   +-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                       | :ref:`get_use_taa<class_RenderSceneBuffersRD_method_get_use_taa>` **(** **)** |const|                                                                                                                                                                                                                                                                                                                                                                                                      |
    +-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`RID<class_RID>`                         | :ref:`get_velocity_layer<class_RenderSceneBuffersRD_method_get_velocity_layer>` **(** :ref:`int<class_int>` layer **)**                                                                                                                                                                                                                                                                                                                                                                    |
@@ -247,6 +249,18 @@ Returns a specific slice (layer or mipmap) for a cached texture.
 :ref:`Vector2i<class_Vector2i>` **get_texture_slice_size** **(** :ref:`StringName<class_StringName>` context, :ref:`StringName<class_StringName>` name, :ref:`int<class_int>` mipmap **)**
 
 Returns the texture size of a given slice of a cached texture.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_RenderSceneBuffersRD_method_get_texture_slice_view:
+
+.. rst-class:: classref-method
+
+:ref:`RID<class_RID>` **get_texture_slice_view** **(** :ref:`StringName<class_StringName>` context, :ref:`StringName<class_StringName>` name, :ref:`int<class_int>` layer, :ref:`int<class_int>` mipmap, :ref:`int<class_int>` layers, :ref:`int<class_int>` mipmaps, :ref:`RDTextureView<class_RDTextureView>` view **)**
+
+Returns a specific view of a slice (layer or mipmap) for a cached texture.
 
 .. rst-class:: classref-item-separator
 

@@ -75,6 +75,8 @@ Methods
    +---------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                     | :ref:`_instance_has<class_ScriptExtension_method__instance_has>` **(** :ref:`Object<class_Object>` object **)** |virtual| |const|                                       |
    +---------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                     | :ref:`_is_abstract<class_ScriptExtension_method__is_abstract>` **(** **)** |virtual| |const|                                                                            |
+   +---------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                     | :ref:`_is_placeholder_fallback_enabled<class_ScriptExtension_method__is_placeholder_fallback_enabled>` **(** **)** |virtual| |const|                                    |
    +---------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                     | :ref:`_is_tool<class_ScriptExtension_method__is_tool>` **(** **)** |virtual| |const|                                                                                    |
@@ -446,6 +448,18 @@ void* **_instance_create** **(** :ref:`Object<class_Object>` for_object **)** |v
 .. container:: contribute
 
 	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ScriptExtension_method__is_abstract:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **_is_abstract** **(** **)** |virtual| |const|
+
+Returns ``true`` if the script is an abstract script. An abstract script does not have a constructor and cannot be instantiated.
 
 .. rst-class:: classref-item-separator
 

@@ -29,9 +29,19 @@ Properties
 .. table::
    :widths: auto
 
-   +---------------------------+-----------------------------------------------------+---------+
-   | :ref:`float<class_float>` | :ref:`softness<class_PinJoint2D_property_softness>` | ``0.0`` |
-   +---------------------------+-----------------------------------------------------+---------+
+   +---------------------------+-------------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`   | :ref:`angular_limit_enabled<class_PinJoint2D_property_angular_limit_enabled>` | ``false`` |
+   +---------------------------+-------------------------------------------------------------------------------+-----------+
+   | :ref:`float<class_float>` | :ref:`angular_limit_lower<class_PinJoint2D_property_angular_limit_lower>`     | ``0.0``   |
+   +---------------------------+-------------------------------------------------------------------------------+-----------+
+   | :ref:`float<class_float>` | :ref:`angular_limit_upper<class_PinJoint2D_property_angular_limit_upper>`     | ``0.0``   |
+   +---------------------------+-------------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`   | :ref:`motor_enabled<class_PinJoint2D_property_motor_enabled>`                 | ``false`` |
+   +---------------------------+-------------------------------------------------------------------------------+-----------+
+   | :ref:`float<class_float>` | :ref:`motor_target_velocity<class_PinJoint2D_property_motor_target_velocity>` | ``0.0``   |
+   +---------------------------+-------------------------------------------------------------------------------+-----------+
+   | :ref:`float<class_float>` | :ref:`softness<class_PinJoint2D_property_softness>`                           | ``0.0``   |
+   +---------------------------+-------------------------------------------------------------------------------+-----------+
 
 .. rst-class:: classref-section-separator
 
@@ -41,6 +51,91 @@ Properties
 
 Property Descriptions
 ---------------------
+
+.. _class_PinJoint2D_property_angular_limit_enabled:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **angular_limit_enabled** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_angular_limit_enabled** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_angular_limit_enabled** **(** **)**
+
+If ``true``, the pin maximum and minimum rotation, defined by :ref:`angular_limit_lower<class_PinJoint2D_property_angular_limit_lower>` and :ref:`angular_limit_upper<class_PinJoint2D_property_angular_limit_upper>` are applied.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_PinJoint2D_property_angular_limit_lower:
+
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **angular_limit_lower** = ``0.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_angular_limit_lower** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_angular_limit_lower** **(** **)**
+
+The minimum rotation. Only active if :ref:`angular_limit_enabled<class_PinJoint2D_property_angular_limit_enabled>` is ``true``.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_PinJoint2D_property_angular_limit_upper:
+
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **angular_limit_upper** = ``0.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_angular_limit_upper** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_angular_limit_upper** **(** **)**
+
+The maximum rotation. Only active if :ref:`angular_limit_enabled<class_PinJoint2D_property_angular_limit_enabled>` is ``true``.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_PinJoint2D_property_motor_enabled:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **motor_enabled** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_motor_enabled** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_motor_enabled** **(** **)**
+
+When activated, a motor turns the pin.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_PinJoint2D_property_motor_target_velocity:
+
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **motor_target_velocity** = ``0.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_motor_target_velocity** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_motor_target_velocity** **(** **)**
+
+Target speed for the motor. In radians per second.
+
+.. rst-class:: classref-item-separator
+
+----
 
 .. _class_PinJoint2D_property_softness:
 

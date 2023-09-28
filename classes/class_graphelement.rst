@@ -43,6 +43,18 @@ Properties
    | :ref:`bool<class_bool>`       | :ref:`selected<class_GraphElement_property_selected>`               | ``false``         |
    +-------------------------------+---------------------------------------------------------------------+-------------------+
 
+.. rst-class:: classref-reftable-group
+
+Theme Properties
+----------------
+
+.. table::
+   :widths: auto
+
+   +-----------------------------------+-------------------------------------------------------+
+   | :ref:`Texture2D<class_Texture2D>` | :ref:`resizer<class_GraphElement_theme_icon_resizer>` |
+   +-----------------------------------+-------------------------------------------------------+
+
 .. rst-class:: classref-section-separator
 
 ----
@@ -223,6 +235,23 @@ If ``true``, the user can select the GraphElement.
 - :ref:`bool<class_bool>` **is_selected** **(** **)**
 
 If ``true``, the GraphElement is selected.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
+
+Theme Property Descriptions
+---------------------------
+
+.. _class_GraphElement_theme_icon_resizer:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`Texture2D<class_Texture2D>` **resizer**
+
+The icon used for the resizer, visible when :ref:`resizable<class_GraphElement_property_resizable>` is enabled.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

@@ -246,7 +246,11 @@ Methods
    +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                              | :ref:`joint_set_param<class_PhysicsServer2D_method_joint_set_param>` **(** :ref:`RID<class_RID>` joint, :ref:`JointParam<enum_PhysicsServer2D_JointParam>` param, :ref:`float<class_float>` value **)**                                                                                                            |
    +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                           | :ref:`pin_joint_get_flag<class_PhysicsServer2D_method_pin_joint_get_flag>` **(** :ref:`RID<class_RID>` joint, :ref:`PinJointFlag<enum_PhysicsServer2D_PinJointFlag>` flag **)** |const|                                                                                                                            |
+   +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                                         | :ref:`pin_joint_get_param<class_PhysicsServer2D_method_pin_joint_get_param>` **(** :ref:`RID<class_RID>` joint, :ref:`PinJointParam<enum_PhysicsServer2D_PinJointParam>` param **)** |const|                                                                                                                       |
+   +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                                              | :ref:`pin_joint_set_flag<class_PhysicsServer2D_method_pin_joint_set_flag>` **(** :ref:`RID<class_RID>` joint, :ref:`PinJointFlag<enum_PhysicsServer2D_PinJointFlag>` flag, :ref:`bool<class_bool>` enabled **)**                                                                                                   |
    +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                              | :ref:`pin_joint_set_param<class_PhysicsServer2D_method_pin_joint_set_param>` **(** :ref:`RID<class_RID>` joint, :ref:`PinJointParam<enum_PhysicsServer2D_PinJointParam>` param, :ref:`float<class_float>` value **)**                                                                                              |
    +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -909,6 +913,56 @@ enum **PinJointParam**:
 :ref:`PinJointParam<enum_PhysicsServer2D_PinJointParam>` **PIN_JOINT_SOFTNESS** = ``0``
 
 Constant to set/get a how much the bond of the pin joint can flex. The default value of this parameter is ``0.0``.
+
+.. _class_PhysicsServer2D_constant_PIN_JOINT_LIMIT_UPPER:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`PinJointParam<enum_PhysicsServer2D_PinJointParam>` **PIN_JOINT_LIMIT_UPPER** = ``1``
+
+The maximum rotation around the pin.
+
+.. _class_PhysicsServer2D_constant_PIN_JOINT_LIMIT_LOWER:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`PinJointParam<enum_PhysicsServer2D_PinJointParam>` **PIN_JOINT_LIMIT_LOWER** = ``2``
+
+The minimum rotation around the pin.
+
+.. _class_PhysicsServer2D_constant_PIN_JOINT_MOTOR_TARGET_VELOCITY:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`PinJointParam<enum_PhysicsServer2D_PinJointParam>` **PIN_JOINT_MOTOR_TARGET_VELOCITY** = ``3``
+
+Target speed for the motor. In radians per second.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _enum_PhysicsServer2D_PinJointFlag:
+
+.. rst-class:: classref-enumeration
+
+enum **PinJointFlag**:
+
+.. _class_PhysicsServer2D_constant_PIN_JOINT_FLAG_ANGULAR_LIMIT_ENABLED:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`PinJointFlag<enum_PhysicsServer2D_PinJointFlag>` **PIN_JOINT_FLAG_ANGULAR_LIMIT_ENABLED** = ``0``
+
+If ``true``, the pin has a maximum and a minimum rotation.
+
+.. _class_PhysicsServer2D_constant_PIN_JOINT_FLAG_MOTOR_ENABLED:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`PinJointFlag<enum_PhysicsServer2D_PinJointFlag>` **PIN_JOINT_FLAG_MOTOR_ENABLED** = ``1``
+
+If ``true``, a motor turns the pin.
 
 .. rst-class:: classref-item-separator
 
@@ -2317,6 +2371,18 @@ Sets the value of the given joint parameter. See :ref:`JointParam<enum_PhysicsSe
 
 ----
 
+.. _class_PhysicsServer2D_method_pin_joint_get_flag:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **pin_joint_get_flag** **(** :ref:`RID<class_RID>` joint, :ref:`PinJointFlag<enum_PhysicsServer2D_PinJointFlag>` flag **)** |const|
+
+Gets a pin joint flag (see :ref:`PinJointFlag<enum_PhysicsServer2D_PinJointFlag>` constants).
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_PhysicsServer2D_method_pin_joint_get_param:
 
 .. rst-class:: classref-method
@@ -2324,6 +2390,18 @@ Sets the value of the given joint parameter. See :ref:`JointParam<enum_PhysicsSe
 :ref:`float<class_float>` **pin_joint_get_param** **(** :ref:`RID<class_RID>` joint, :ref:`PinJointParam<enum_PhysicsServer2D_PinJointParam>` param **)** |const|
 
 Returns the value of a pin joint parameter. See :ref:`PinJointParam<enum_PhysicsServer2D_PinJointParam>` for a list of available parameters.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_PhysicsServer2D_method_pin_joint_set_flag:
+
+.. rst-class:: classref-method
+
+void **pin_joint_set_flag** **(** :ref:`RID<class_RID>` joint, :ref:`PinJointFlag<enum_PhysicsServer2D_PinJointFlag>` flag, :ref:`bool<class_bool>` enabled **)**
+
+Sets a pin joint flag (see :ref:`PinJointFlag<enum_PhysicsServer2D_PinJointFlag>` constants).
 
 .. rst-class:: classref-item-separator
 

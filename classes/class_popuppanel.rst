@@ -21,35 +21,6 @@ Description
 
 A popup with a configurable panel background. Any child controls added to this node will be stretched to fit the panel's size (similar to how :ref:`PanelContainer<class_PanelContainer>` works). If you are making windows, see :ref:`Window<class_Window>`.
 
-.. rst-class:: classref-reftable-group
-
-Theme Properties
-----------------
-
-.. table::
-   :widths: auto
-
-   +---------------------------------+--------------------------------------------------+
-   | :ref:`StyleBox<class_StyleBox>` | :ref:`panel<class_PopupPanel_theme_style_panel>` |
-   +---------------------------------+--------------------------------------------------+
-
-.. rst-class:: classref-section-separator
-
-----
-
-.. rst-class:: classref-descriptions-group
-
-Theme Property Descriptions
----------------------------
-
-.. _class_PopupPanel_theme_style_panel:
-
-.. rst-class:: classref-themeproperty
-
-:ref:`StyleBox<class_StyleBox>` **panel**
-
-The background panel style of this **PopupPanel**.
-
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
