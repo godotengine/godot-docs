@@ -122,6 +122,12 @@ specifier. Apart from ``s``, these require certain types of parameters.
 +-------+---------------------------------------------------------------------+
 | ``f`` | A **decimal real** number. Expects an integral or real number.      |
 +-------+---------------------------------------------------------------------+
+| ``v`` | A **vector**. Expects any float or int-based vector object (        |
+|       | ``Vector2``, ``Vector3``, ``Vector4``, ``Vector2i``, ``Vector3i`` or|
+|       | ``Vector4i``). Will display the vector coordinates in parentheses,  |
+|       | formatting each coordinate as if it was an ``%f``, and using the    |
+|       | same modifiers.                                                     |
++-------+---------------------------------------------------------------------+
 
 
 Placeholder modifiers
@@ -138,8 +144,8 @@ conditions.
 |         | The leading ``0`` is ignored if ``-`` is present.                 |
 |         | When used after ``.``, see ``.``.                                 |
 +---------+-------------------------------------------------------------------+
-| ``.``   | Before ``f``, set **precision** to 0 decimal places. Can be       |
-|         | followed up with numbers to change. Padded with zeroes.           |
+| ``.``   | Before ``f`` or ``v``, set **precision** to 0 decimal places. Can |
+|         | be followed up with numbers to change. Padded with zeroes.        |
 +---------+-------------------------------------------------------------------+
 | ``-``   | **Pad to the right** rather than the left.                        |
 +---------+-------------------------------------------------------------------+
