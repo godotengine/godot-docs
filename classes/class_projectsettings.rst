@@ -181,6 +181,8 @@ Properties
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`debug/gdscript/warnings/inference_on_variant<class_ProjectSettings_property_debug/gdscript/warnings/inference_on_variant>`                                                                           | ``2``                                                                                            |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`debug/gdscript/warnings/inferred_declaration<class_ProjectSettings_property_debug/gdscript/warnings/inferred_declaration>`                                                                           | ``0``                                                                                            |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`debug/gdscript/warnings/int_as_enum_without_cast<class_ProjectSettings_property_debug/gdscript/warnings/int_as_enum_without_cast>`                                                                   | ``1``                                                                                            |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`debug/gdscript/warnings/int_as_enum_without_match<class_ProjectSettings_property_debug/gdscript/warnings/int_as_enum_without_match>`                                                                 | ``1``                                                                                            |
@@ -1521,6 +1523,10 @@ Properties
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`xr/openxr/form_factor<class_ProjectSettings_property_xr/openxr/form_factor>`                                                                                                                         | ``"0"``                                                                                          |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`xr/openxr/foveation_dynamic<class_ProjectSettings_property_xr/openxr/foveation_dynamic>`                                                                                                             | ``false``                                                                                        |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`xr/openxr/foveation_level<class_ProjectSettings_property_xr/openxr/foveation_level>`                                                                                                                 | ``"0"``                                                                                          |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`xr/openxr/reference_space<class_ProjectSettings_property_xr/openxr/reference_space>`                                                                                                                 | ``"1"``                                                                                          |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`xr/openxr/startup_alert<class_ProjectSettings_property_xr/openxr/startup_alert>`                                                                                                                     | ``true``                                                                                         |
@@ -2469,6 +2475,20 @@ When set to ``warn`` or ``error``, produces a warning or an error respectively w
 :ref:`int<class_int>` **debug/gdscript/warnings/inference_on_variant** = ``2``
 
 When set to ``warn`` or ``error``, produces a warning or an error respectively when a static inferred type uses a :ref:`Variant<class_Variant>` as initial value, which makes the static type to also be Variant.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_debug/gdscript/warnings/inferred_declaration:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **debug/gdscript/warnings/inferred_declaration** = ``0``
+
+When set to ``warn`` or ``error``, produces a warning or an error respectively when a variable, constant, or parameter has an implicitly inferred static type.
+
+\ **Note:** This warning is recommended *in addition* to :ref:`debug/gdscript/warnings/untyped_declaration<class_ProjectSettings_property_debug/gdscript/warnings/untyped_declaration>` if you want to always specify the type explicitly. Having ``INFERRED_DECLARATION`` warning level higher than ``UNTYPED_DECLARATION`` warning level makes little sense and is not recommended.
 
 .. rst-class:: classref-item-separator
 
@@ -11026,6 +11046,30 @@ Specify how OpenXR should blend in the environment. This is specific to certain 
 :ref:`int<class_int>` **xr/openxr/form_factor** = ``"0"``
 
 Specify whether OpenXR should be configured for an HMD or a hand held device.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_xr/openxr/foveation_dynamic:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **xr/openxr/foveation_dynamic** = ``false``
+
+If true and foveation is supported, will automatically adjust foveation level based on framerate up to the level set on ``xr/openxr/foveation_level``.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_xr/openxr/foveation_level:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **xr/openxr/foveation_level** = ``"0"``
+
+Applied foveation level if supported: 0 = off, 1 = low, 2 = medium, 3 = high.
 
 .. rst-class:: classref-item-separator
 

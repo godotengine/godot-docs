@@ -92,7 +92,7 @@ Methods
    +--------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                             | :ref:`add_submenu_item<class_PopupMenu_method_add_submenu_item>` **(** :ref:`String<class_String>` label, :ref:`String<class_String>` submenu, :ref:`int<class_int>` id=-1 **)**                                                                                                |
    +--------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                             | :ref:`clear<class_PopupMenu_method_clear>` **(** **)**                                                                                                                                                                                                                          |
+   | void                                             | :ref:`clear<class_PopupMenu_method_clear>` **(** :ref:`bool<class_bool>` free_submenus=false **)**                                                                                                                                                                              |
    +--------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                            | :ref:`get_focused_item<class_PopupMenu_method_get_focused_item>` **(** **)** |const|                                                                                                                                                                                            |
    +--------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -259,10 +259,6 @@ Theme Properties
    | :ref:`StyleBox<class_StyleBox>`   | :ref:`labeled_separator_left<class_PopupMenu_theme_style_labeled_separator_left>`             |                                   |
    +-----------------------------------+-----------------------------------------------------------------------------------------------+-----------------------------------+
    | :ref:`StyleBox<class_StyleBox>`   | :ref:`labeled_separator_right<class_PopupMenu_theme_style_labeled_separator_right>`           |                                   |
-   +-----------------------------------+-----------------------------------------------------------------------------------------------+-----------------------------------+
-   | :ref:`StyleBox<class_StyleBox>`   | :ref:`panel<class_PopupMenu_theme_style_panel>`                                               |                                   |
-   +-----------------------------------+-----------------------------------------------------------------------------------------------+-----------------------------------+
-   | :ref:`StyleBox<class_StyleBox>`   | :ref:`panel_disabled<class_PopupMenu_theme_style_panel_disabled>`                             |                                   |
    +-----------------------------------+-----------------------------------------------------------------------------------------------+-----------------------------------+
    | :ref:`StyleBox<class_StyleBox>`   | :ref:`separator<class_PopupMenu_theme_style_separator>`                                       |                                   |
    +-----------------------------------+-----------------------------------------------------------------------------------------------+-----------------------------------+
@@ -684,9 +680,9 @@ An ``id`` can optionally be provided. If no ``id`` is provided, one will be crea
 
 .. rst-class:: classref-method
 
-void **clear** **(** **)**
+void **clear** **(** :ref:`bool<class_bool>` free_submenus=false **)**
 
-Removes all items from the **PopupMenu**.
+Removes all items from the **PopupMenu**. If ``free_submenus`` is ``true``, the submenu nodes are automatically freed.
 
 .. rst-class:: classref-item-separator
 
@@ -1644,30 +1640,6 @@ Font size of the menu items.
 :ref:`StyleBox<class_StyleBox>` **labeled_separator_right**
 
 :ref:`StyleBox<class_StyleBox>` for the right side of labeled separator. See :ref:`add_separator<class_PopupMenu_method_add_separator>`.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_PopupMenu_theme_style_panel:
-
-.. rst-class:: classref-themeproperty
-
-:ref:`StyleBox<class_StyleBox>` **panel**
-
-Default :ref:`StyleBox<class_StyleBox>` of the **PopupMenu** items.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_PopupMenu_theme_style_panel_disabled:
-
-.. rst-class:: classref-themeproperty
-
-:ref:`StyleBox<class_StyleBox>` **panel_disabled**
-
-:ref:`StyleBox<class_StyleBox>` used when the **PopupMenu** item is disabled.
 
 .. rst-class:: classref-item-separator
 

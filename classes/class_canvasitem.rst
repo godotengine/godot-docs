@@ -25,7 +25,7 @@ Abstract base class for everything in 2D space. Canvas items are laid out in a t
 
 Any **CanvasItem** can draw. For this, :ref:`queue_redraw<class_CanvasItem_method_queue_redraw>` is called by the engine, then :ref:`NOTIFICATION_DRAW<class_CanvasItem_constant_NOTIFICATION_DRAW>` will be received on idle time to request a redraw. Because of this, canvas items don't need to be redrawn on every frame, improving the performance significantly. Several functions for drawing on the **CanvasItem** are provided (see ``draw_*`` functions). However, they can only be used inside :ref:`_draw<class_CanvasItem_method__draw>`, its corresponding :ref:`Object._notification<class_Object_method__notification>` or methods connected to the :ref:`draw<class_CanvasItem_signal_draw>` signal.
 
-Canvas items are drawn in tree order. By default, children are on top of their parents, so a root **CanvasItem** will be drawn behind everything. This behavior can be changed on a per-item basis.
+Canvas items are drawn in tree order on their canvas layer. By default, children are on top of their parents, so a root **CanvasItem** will be drawn behind everything. This behavior can be changed on a per-item basis.
 
 A **CanvasItem** can be hidden, which will also hide its children. By adjusting various other properties of a **CanvasItem**, you can also modulate its color (via :ref:`modulate<class_CanvasItem_property_modulate>` or :ref:`self_modulate<class_CanvasItem_property_self_modulate>`), change its Z-index, blend mode, and more.
 

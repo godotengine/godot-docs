@@ -562,7 +562,7 @@ Theme Property Descriptions
 
 :ref:`int<class_int>` **center_slider_grabbers** = ``1``
 
-Overrides the :ref:`HSlider.center_grabber<class_HSlider_theme_constant_center_grabber>` theme property of the sliders.
+Overrides the :ref:`Slider.center_grabber<class_Slider_theme_constant_center_grabber>` theme property of the sliders.
 
 .. rst-class:: classref-item-separator
 

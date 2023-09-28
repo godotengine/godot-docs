@@ -2702,11 +2702,19 @@ Use bilinear scaling for the viewport's 3D buffer. The amount of scaling can be 
 
 Use AMD FidelityFX Super Resolution 1.0 upscaling for the viewport's 3D buffer. The amount of scaling can be set using :ref:`Viewport.scaling_3d_scale<class_Viewport_property_scaling_3d_scale>`. Values less than ``1.0`` will be result in the viewport being upscaled using FSR. Values greater than ``1.0`` are not supported and bilinear downsampling will be used instead. A value of ``1.0`` disables scaling.
 
+.. _class_RenderingServer_constant_VIEWPORT_SCALING_3D_MODE_FSR2:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ViewportScaling3DMode<enum_RenderingServer_ViewportScaling3DMode>` **VIEWPORT_SCALING_3D_MODE_FSR2** = ``2``
+
+Use AMD FidelityFX Super Resolution 2.2 upscaling for the viewport's 3D buffer. The amount of scaling can be set using :ref:`Viewport.scaling_3d_scale<class_Viewport_property_scaling_3d_scale>`. Values less than ``1.0`` will be result in the viewport being upscaled using FSR2. Values greater than ``1.0`` are not supported and bilinear downsampling will be used instead. A value of ``1.0`` will use FSR2 at native resolution as a TAA solution.
+
 .. _class_RenderingServer_constant_VIEWPORT_SCALING_3D_MODE_MAX:
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`ViewportScaling3DMode<enum_RenderingServer_ViewportScaling3DMode>` **VIEWPORT_SCALING_3D_MODE_MAX** = ``2``
+:ref:`ViewportScaling3DMode<enum_RenderingServer_ViewportScaling3DMode>` **VIEWPORT_SCALING_3D_MODE_MAX** = ``3``
 
 Represents the size of the :ref:`ViewportScaling3DMode<enum_RenderingServer_ViewportScaling3DMode>` enum.
 
@@ -3345,6 +3353,14 @@ Draws the occlusion culling buffer. This low-resolution occlusion culling buffer
 :ref:`ViewportDebugDraw<enum_RenderingServer_ViewportDebugDraw>` **VIEWPORT_DEBUG_DRAW_MOTION_VECTORS** = ``25``
 
 Draws the motion vectors buffer. This is used by temporal antialiasing to correct for motion that occurs during gameplay.
+
+.. _class_RenderingServer_constant_VIEWPORT_DEBUG_DRAW_INTERNAL_BUFFER:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ViewportDebugDraw<enum_RenderingServer_ViewportDebugDraw>` **VIEWPORT_DEBUG_DRAW_INTERNAL_BUFFER** = ``26``
+
+Internal buffer is drawn instead of regular scene so you can see the per-pixel output that will be used by post-processing effects.
 
 .. rst-class:: classref-item-separator
 

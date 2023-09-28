@@ -38,31 +38,33 @@ Properties
 .. table::
    :widths: auto
 
-   +-------------------------------------+----------------------------------------------------------------------+-----------------------+
-   | :ref:`Color<class_Color>`           | :ref:`color<class_CharFXTransform_property_color>`                   | ``Color(0, 0, 0, 1)`` |
-   +-------------------------------------+----------------------------------------------------------------------+-----------------------+
-   | :ref:`float<class_float>`           | :ref:`elapsed_time<class_CharFXTransform_property_elapsed_time>`     | ``0.0``               |
-   +-------------------------------------+----------------------------------------------------------------------+-----------------------+
-   | :ref:`Dictionary<class_Dictionary>` | :ref:`env<class_CharFXTransform_property_env>`                       | ``{}``                |
-   +-------------------------------------+----------------------------------------------------------------------+-----------------------+
-   | :ref:`RID<class_RID>`               | :ref:`font<class_CharFXTransform_property_font>`                     | ``RID()``             |
-   +-------------------------------------+----------------------------------------------------------------------+-----------------------+
-   | :ref:`int<class_int>`               | :ref:`glyph_count<class_CharFXTransform_property_glyph_count>`       | ``0``                 |
-   +-------------------------------------+----------------------------------------------------------------------+-----------------------+
-   | :ref:`int<class_int>`               | :ref:`glyph_flags<class_CharFXTransform_property_glyph_flags>`       | ``0``                 |
-   +-------------------------------------+----------------------------------------------------------------------+-----------------------+
-   | :ref:`int<class_int>`               | :ref:`glyph_index<class_CharFXTransform_property_glyph_index>`       | ``0``                 |
-   +-------------------------------------+----------------------------------------------------------------------+-----------------------+
-   | :ref:`Vector2<class_Vector2>`       | :ref:`offset<class_CharFXTransform_property_offset>`                 | ``Vector2(0, 0)``     |
-   +-------------------------------------+----------------------------------------------------------------------+-----------------------+
-   | :ref:`bool<class_bool>`             | :ref:`outline<class_CharFXTransform_property_outline>`               | ``false``             |
-   +-------------------------------------+----------------------------------------------------------------------+-----------------------+
-   | :ref:`Vector2i<class_Vector2i>`     | :ref:`range<class_CharFXTransform_property_range>`                   | ``Vector2i(0, 0)``    |
-   +-------------------------------------+----------------------------------------------------------------------+-----------------------+
-   | :ref:`int<class_int>`               | :ref:`relative_index<class_CharFXTransform_property_relative_index>` | ``0``                 |
-   +-------------------------------------+----------------------------------------------------------------------+-----------------------+
-   | :ref:`bool<class_bool>`             | :ref:`visible<class_CharFXTransform_property_visible>`               | ``true``              |
-   +-------------------------------------+----------------------------------------------------------------------+-----------------------+
+   +---------------------------------------+----------------------------------------------------------------------+-----------------------------------+
+   | :ref:`Color<class_Color>`             | :ref:`color<class_CharFXTransform_property_color>`                   | ``Color(0, 0, 0, 1)``             |
+   +---------------------------------------+----------------------------------------------------------------------+-----------------------------------+
+   | :ref:`float<class_float>`             | :ref:`elapsed_time<class_CharFXTransform_property_elapsed_time>`     | ``0.0``                           |
+   +---------------------------------------+----------------------------------------------------------------------+-----------------------------------+
+   | :ref:`Dictionary<class_Dictionary>`   | :ref:`env<class_CharFXTransform_property_env>`                       | ``{}``                            |
+   +---------------------------------------+----------------------------------------------------------------------+-----------------------------------+
+   | :ref:`RID<class_RID>`                 | :ref:`font<class_CharFXTransform_property_font>`                     | ``RID()``                         |
+   +---------------------------------------+----------------------------------------------------------------------+-----------------------------------+
+   | :ref:`int<class_int>`                 | :ref:`glyph_count<class_CharFXTransform_property_glyph_count>`       | ``0``                             |
+   +---------------------------------------+----------------------------------------------------------------------+-----------------------------------+
+   | :ref:`int<class_int>`                 | :ref:`glyph_flags<class_CharFXTransform_property_glyph_flags>`       | ``0``                             |
+   +---------------------------------------+----------------------------------------------------------------------+-----------------------------------+
+   | :ref:`int<class_int>`                 | :ref:`glyph_index<class_CharFXTransform_property_glyph_index>`       | ``0``                             |
+   +---------------------------------------+----------------------------------------------------------------------+-----------------------------------+
+   | :ref:`Vector2<class_Vector2>`         | :ref:`offset<class_CharFXTransform_property_offset>`                 | ``Vector2(0, 0)``                 |
+   +---------------------------------------+----------------------------------------------------------------------+-----------------------------------+
+   | :ref:`bool<class_bool>`               | :ref:`outline<class_CharFXTransform_property_outline>`               | ``false``                         |
+   +---------------------------------------+----------------------------------------------------------------------+-----------------------------------+
+   | :ref:`Vector2i<class_Vector2i>`       | :ref:`range<class_CharFXTransform_property_range>`                   | ``Vector2i(0, 0)``                |
+   +---------------------------------------+----------------------------------------------------------------------+-----------------------------------+
+   | :ref:`int<class_int>`                 | :ref:`relative_index<class_CharFXTransform_property_relative_index>` | ``0``                             |
+   +---------------------------------------+----------------------------------------------------------------------+-----------------------------------+
+   | :ref:`Transform2D<class_Transform2D>` | :ref:`transform<class_CharFXTransform_property_transform>`           | ``Transform2D(1, 0, 0, 1, 0, 0)`` |
+   +---------------------------------------+----------------------------------------------------------------------+-----------------------------------+
+   | :ref:`bool<class_bool>`               | :ref:`visible<class_CharFXTransform_property_visible>`               | ``true``                          |
+   +---------------------------------------+----------------------------------------------------------------------+-----------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -263,6 +265,23 @@ Absolute character range in the string, corresponding to the glyph. Setting this
 - :ref:`int<class_int>` **get_relative_index** **(** **)**
 
 The character offset of the glyph, relative to the current :ref:`RichTextEffect<class_RichTextEffect>` custom block. Setting this property won't affect drawing.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_CharFXTransform_property_transform:
+
+.. rst-class:: classref-property
+
+:ref:`Transform2D<class_Transform2D>` **transform** = ``Transform2D(1, 0, 0, 1, 0, 0)``
+
+.. rst-class:: classref-property-setget
+
+- void **set_transform** **(** :ref:`Transform2D<class_Transform2D>` value **)**
+- :ref:`Transform2D<class_Transform2D>` **get_transform** **(** **)**
+
+The current transform of the current glyph. It can be overridden (for example, by driving the position and rotation from a curve). You can also alter the existing value to apply transforms on top of other effects.
 
 .. rst-class:: classref-item-separator
 

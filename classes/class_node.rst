@@ -1033,6 +1033,8 @@ Add a custom description to a node. It will be displayed in a tooltip when hover
 
 The :ref:`MultiplayerAPI<class_MultiplayerAPI>` instance associated with this node. See :ref:`SceneTree.get_multiplayer<class_SceneTree_method_get_multiplayer>`.
 
+\ **Note:** Renaming the node, or moving it in the tree, will not move the :ref:`MultiplayerAPI<class_MultiplayerAPI>` to the new path, you will have to update this manually.
+
 .. rst-class:: classref-item-separator
 
 ----

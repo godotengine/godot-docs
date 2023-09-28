@@ -677,7 +677,7 @@ Searches the array for a value and returns its index or ``-1`` if not found. Opt
 
 :ref:`String<class_String>` **get_string_from_ascii** **(** **)** |const|
 
-Converts ASCII/Latin-1 encoded array to :ref:`String<class_String>`. Fast alternative to :ref:`get_string_from_utf8<class_PackedByteArray_method_get_string_from_utf8>` if the content is ASCII/Latin-1 only. Unlike the UTF-8 function this function maps every byte to a character in the array. Multibyte sequences will not be interpreted correctly. For parsing user input always use :ref:`get_string_from_utf8<class_PackedByteArray_method_get_string_from_utf8>`.
+Converts ASCII/Latin-1 encoded array to :ref:`String<class_String>`. Fast alternative to :ref:`get_string_from_utf8<class_PackedByteArray_method_get_string_from_utf8>` if the content is ASCII/Latin-1 only. Unlike the UTF-8 function this function maps every byte to a character in the array. Multibyte sequences will not be interpreted correctly. For parsing user input always use :ref:`get_string_from_utf8<class_PackedByteArray_method_get_string_from_utf8>`. This is the inverse of :ref:`String.to_ascii_buffer<class_String_method_to_ascii_buffer>`.
 
 .. rst-class:: classref-item-separator
 
@@ -689,7 +689,7 @@ Converts ASCII/Latin-1 encoded array to :ref:`String<class_String>`. Fast altern
 
 :ref:`String<class_String>` **get_string_from_utf8** **(** **)** |const|
 
-Converts UTF-8 encoded array to :ref:`String<class_String>`. Slower than :ref:`get_string_from_ascii<class_PackedByteArray_method_get_string_from_ascii>` but supports UTF-8 encoded data. Use this function if you are unsure about the source of the data. For user input this function should always be preferred. Returns empty string if source array is not valid UTF-8 string.
+Converts UTF-8 encoded array to :ref:`String<class_String>`. Slower than :ref:`get_string_from_ascii<class_PackedByteArray_method_get_string_from_ascii>` but supports UTF-8 encoded data. Use this function if you are unsure about the source of the data. For user input this function should always be preferred. Returns empty string if source array is not valid UTF-8 string. This is the inverse of :ref:`String.to_utf8_buffer<class_String_method_to_utf8_buffer>`.
 
 .. rst-class:: classref-item-separator
 
@@ -701,7 +701,7 @@ Converts UTF-8 encoded array to :ref:`String<class_String>`. Slower than :ref:`g
 
 :ref:`String<class_String>` **get_string_from_utf16** **(** **)** |const|
 
-Converts UTF-16 encoded array to :ref:`String<class_String>`. If the BOM is missing, system endianness is assumed. Returns empty string if source array is not valid UTF-16 string.
+Converts UTF-16 encoded array to :ref:`String<class_String>`. If the BOM is missing, system endianness is assumed. Returns empty string if source array is not valid UTF-16 string. This is the inverse of :ref:`String.to_utf16_buffer<class_String_method_to_utf16_buffer>`.
 
 .. rst-class:: classref-item-separator
 
@@ -713,7 +713,7 @@ Converts UTF-16 encoded array to :ref:`String<class_String>`. If the BOM is miss
 
 :ref:`String<class_String>` **get_string_from_utf32** **(** **)** |const|
 
-Converts UTF-32 encoded array to :ref:`String<class_String>`. System endianness is assumed. Returns empty string if source array is not valid UTF-32 string.
+Converts UTF-32 encoded array to :ref:`String<class_String>`. System endianness is assumed. Returns empty string if source array is not valid UTF-32 string. This is the inverse of :ref:`String.to_utf32_buffer<class_String_method_to_utf32_buffer>`.
 
 .. rst-class:: classref-item-separator
 
@@ -725,7 +725,7 @@ Converts UTF-32 encoded array to :ref:`String<class_String>`. System endianness 
 
 :ref:`String<class_String>` **get_string_from_wchar** **(** **)** |const|
 
-Converts wide character (``wchar_t``, UTF-16 on Windows, UTF-32 on other platforms) encoded array to :ref:`String<class_String>`. Returns empty string if source array is not valid wide string.
+Converts wide character (``wchar_t``, UTF-16 on Windows, UTF-32 on other platforms) encoded array to :ref:`String<class_String>`. Returns empty string if source array is not valid wide string. This is the inverse of :ref:`String.to_wchar_buffer<class_String_method_to_wchar_buffer>`.
 
 .. rst-class:: classref-item-separator
 

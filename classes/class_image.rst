@@ -313,7 +313,7 @@ OpenGL texture format ``GL_RGBA32F`` where there are four components, each a 32-
 
 :ref:`Format<enum_Image_Format>` **FORMAT_RH** = ``12``
 
-OpenGL texture format ``GL_R32F`` where there's one component, a 16-bit "half-precision" floating-point value.
+OpenGL texture format ``GL_R16F`` where there's one component, a 16-bit "half-precision" floating-point value.
 
 .. _class_Image_constant_FORMAT_RGH:
 
@@ -321,7 +321,7 @@ OpenGL texture format ``GL_R32F`` where there's one component, a 16-bit "half-pr
 
 :ref:`Format<enum_Image_Format>` **FORMAT_RGH** = ``13``
 
-OpenGL texture format ``GL_RG32F`` where there are two components, each a 16-bit "half-precision" floating-point value.
+OpenGL texture format ``GL_RG16F`` where there are two components, each a 16-bit "half-precision" floating-point value.
 
 .. _class_Image_constant_FORMAT_RGBH:
 
@@ -329,7 +329,7 @@ OpenGL texture format ``GL_RG32F`` where there are two components, each a 16-bit
 
 :ref:`Format<enum_Image_Format>` **FORMAT_RGBH** = ``14``
 
-OpenGL texture format ``GL_RGB32F`` where there are three components, each a 16-bit "half-precision" floating-point value.
+OpenGL texture format ``GL_RGB16F`` where there are three components, each a 16-bit "half-precision" floating-point value.
 
 .. _class_Image_constant_FORMAT_RGBAH:
 
@@ -337,7 +337,7 @@ OpenGL texture format ``GL_RGB32F`` where there are three components, each a 16-
 
 :ref:`Format<enum_Image_Format>` **FORMAT_RGBAH** = ``15``
 
-OpenGL texture format ``GL_RGBA32F`` where there are four components, each a 16-bit "half-precision" floating-point value.
+OpenGL texture format ``GL_RGBA16F`` where there are four components, each a 16-bit "half-precision" floating-point value.
 
 .. _class_Image_constant_FORMAT_RGBE9995:
 

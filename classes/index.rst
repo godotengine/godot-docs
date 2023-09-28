@@ -438,6 +438,7 @@ Resources
     class_missingresource
     class_multimesh
     class_navigationmesh
+    class_navigationmeshsourcegeometrydata2d
     class_navigationmeshsourcegeometrydata3d
     class_navigationpolygon
     class_noise

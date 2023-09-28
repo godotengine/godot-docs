@@ -49,6 +49,8 @@ Properties
    +-------------------------------------------------+-----------------------------------------------------------------------------------------------+-----------+
    | :ref:`AlignmentMode<enum_TabBar_AlignmentMode>` | :ref:`tab_alignment<class_TabContainer_property_tab_alignment>`                               | ``0``     |
    +-------------------------------------------------+-----------------------------------------------------------------------------------------------+-----------+
+   | :ref:`FocusMode<enum_Control_FocusMode>`        | :ref:`tab_focus_mode<class_TabContainer_property_tab_focus_mode>`                             | ``2``     |
+   +-------------------------------------------------+-----------------------------------------------------------------------------------------------+-----------+
    | :ref:`int<class_int>`                           | :ref:`tabs_rearrange_group<class_TabContainer_property_tabs_rearrange_group>`                 | ``-1``    |
    +-------------------------------------------------+-----------------------------------------------------------------------------------------------+-----------+
    | :ref:`bool<class_bool>`                         | :ref:`tabs_visible<class_TabContainer_property_tabs_visible>`                                 | ``true``  |
@@ -71,6 +73,8 @@ Methods
    +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`             | :ref:`get_previous_tab<class_TabContainer_method_get_previous_tab>` **(** **)** |const|                                                                     |
    +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`TabBar<class_TabBar>`       | :ref:`get_tab_bar<class_TabContainer_method_get_tab_bar>` **(** **)** |const|                                                                               |
+   +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Texture2D<class_Texture2D>` | :ref:`get_tab_button_icon<class_TabContainer_method_get_tab_button_icon>` **(** :ref:`int<class_int>` tab_idx **)** |const|                                 |
    +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Control<class_Control>`     | :ref:`get_tab_control<class_TabContainer_method_get_tab_control>` **(** :ref:`int<class_int>` tab_idx **)** |const|                                         |
@@ -90,6 +94,10 @@ Methods
    | :ref:`bool<class_bool>`           | :ref:`is_tab_disabled<class_TabContainer_method_is_tab_disabled>` **(** :ref:`int<class_int>` tab_idx **)** |const|                                         |
    +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`           | :ref:`is_tab_hidden<class_TabContainer_method_is_tab_hidden>` **(** :ref:`int<class_int>` tab_idx **)** |const|                                             |
+   +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`           | :ref:`select_next_available<class_TabContainer_method_select_next_available>` **(** **)**                                                                   |
+   +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`           | :ref:`select_previous_available<class_TabContainer_method_select_previous_available>` **(** **)**                                                           |
    +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                              | :ref:`set_popup<class_TabContainer_method_set_popup>` **(** :ref:`Node<class_Node>` popup **)**                                                             |
    +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -156,6 +164,8 @@ Theme Properties
    | :ref:`StyleBox<class_StyleBox>`   | :ref:`panel<class_TabContainer_theme_style_panel>`                                 |                                     |
    +-----------------------------------+------------------------------------------------------------------------------------+-------------------------------------+
    | :ref:`StyleBox<class_StyleBox>`   | :ref:`tab_disabled<class_TabContainer_theme_style_tab_disabled>`                   |                                     |
+   +-----------------------------------+------------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`StyleBox<class_StyleBox>`   | :ref:`tab_focus<class_TabContainer_theme_style_tab_focus>`                         |                                     |
    +-----------------------------------+------------------------------------------------------------------------------------+-------------------------------------+
    | :ref:`StyleBox<class_StyleBox>`   | :ref:`tab_hovered<class_TabContainer_theme_style_tab_hovered>`                     |                                     |
    +-----------------------------------+------------------------------------------------------------------------------------+-------------------------------------+
@@ -349,6 +359,23 @@ Sets the position at which tabs will be placed. See :ref:`AlignmentMode<enum_Tab
 
 ----
 
+.. _class_TabContainer_property_tab_focus_mode:
+
+.. rst-class:: classref-property
+
+:ref:`FocusMode<enum_Control_FocusMode>` **tab_focus_mode** = ``2``
+
+.. rst-class:: classref-property-setget
+
+- void **set_tab_focus_mode** **(** :ref:`FocusMode<enum_Control_FocusMode>` value **)**
+- :ref:`FocusMode<enum_Control_FocusMode>` **get_tab_focus_mode** **(** **)**
+
+The focus access mode for the internal :ref:`TabBar<class_TabBar>` node.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_TabContainer_property_tabs_rearrange_group:
 
 .. rst-class:: classref-property
@@ -440,6 +467,20 @@ Returns the :ref:`Popup<class_Popup>` node instance if one has been set already 
 :ref:`int<class_int>` **get_previous_tab** **(** **)** |const|
 
 Returns the previously active tab index.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_TabContainer_method_get_tab_bar:
+
+.. rst-class:: classref-method
+
+:ref:`TabBar<class_TabBar>` **get_tab_bar** **(** **)** |const|
+
+Returns the :ref:`TabBar<class_TabBar>` contained in this container.
+
+\ **Warning:** This is a required internal node, removing and freeing it or editing its tabs may cause a crash. If you wish to edit the tabs, use the methods provided in **TabContainer**.
 
 .. rst-class:: classref-item-separator
 
@@ -560,6 +601,30 @@ Returns ``true`` if the tab at index ``tab_idx`` is disabled.
 :ref:`bool<class_bool>` **is_tab_hidden** **(** :ref:`int<class_int>` tab_idx **)** |const|
 
 Returns ``true`` if the tab at index ``tab_idx`` is hidden.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_TabContainer_method_select_next_available:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **select_next_available** **(** **)**
+
+Selects the first available tab with greater index than the currently selected. Returns ``true`` if tab selection changed.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_TabContainer_method_select_previous_available:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **select_previous_available** **(** **)**
+
+Selects the first available tab with lower index than the currently selected. Returns ``true`` if tab selection changed.
 
 .. rst-class:: classref-item-separator
 
@@ -910,6 +975,18 @@ The style of disabled tabs.
 
 ----
 
+.. _class_TabContainer_theme_style_tab_focus:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`StyleBox<class_StyleBox>` **tab_focus**
+
+:ref:`StyleBox<class_StyleBox>` used when the :ref:`TabBar<class_TabBar>` is focused. The :ref:`tab_focus<class_TabContainer_theme_style_tab_focus>` :ref:`StyleBox<class_StyleBox>` is displayed *over* the base :ref:`StyleBox<class_StyleBox>` of the selected tab, so a partially transparent :ref:`StyleBox<class_StyleBox>` should be used to ensure the base :ref:`StyleBox<class_StyleBox>` remains visible. A :ref:`StyleBox<class_StyleBox>` that represents an outline or an underline works well for this purpose. To disable the focus visual effect, assign a :ref:`StyleBoxEmpty<class_StyleBoxEmpty>` resource. Note that disabling the focus visual effect will harm keyboard/controller navigation usability, so this is not recommended for accessibility reasons.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_TabContainer_theme_style_tab_hovered:
 
 .. rst-class:: classref-themeproperty
@@ -917,6 +994,8 @@ The style of disabled tabs.
 :ref:`StyleBox<class_StyleBox>` **tab_hovered**
 
 The style of the currently hovered tab.
+
+\ **Note:** This style will be drawn with the same width as :ref:`tab_unselected<class_TabContainer_theme_style_tab_unselected>` at minimum.
 
 .. rst-class:: classref-item-separator
 

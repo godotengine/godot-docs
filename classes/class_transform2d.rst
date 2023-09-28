@@ -103,6 +103,8 @@ Methods
    +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Transform2D<class_Transform2D>` | :ref:`inverse<class_Transform2D_method_inverse>` **(** **)** |const|                                                                                                 |
    +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`               | :ref:`is_conformal<class_Transform2D_method_is_conformal>` **(** **)** |const|                                                                                       |
+   +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`               | :ref:`is_equal_approx<class_Transform2D_method_is_equal_approx>` **(** :ref:`Transform2D<class_Transform2D>` xform **)** |const|                                     |
    +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`               | :ref:`is_finite<class_Transform2D_method_is_finite>` **(** **)** |const|                                                                                             |
@@ -413,6 +415,18 @@ Returns a transform interpolated between this transform and another by a given `
 :ref:`Transform2D<class_Transform2D>` **inverse** **(** **)** |const|
 
 Returns the inverse of the transform, under the assumption that the transformation is composed of rotation and translation (no scaling, use :ref:`affine_inverse<class_Transform2D_method_affine_inverse>` for transforms with scaling).
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Transform2D_method_is_conformal:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **is_conformal** **(** **)** |const|
+
+Returns ``true`` if the transform's basis is conformal, meaning it preserves angles and distance ratios, and may only be composed of rotation and uniform scale. Returns ``false`` if the transform's basis has non-uniform scale or shear/skew. This can be used to validate if the transform is non-distorted, which is important for physics and other use cases.
 
 .. rst-class:: classref-item-separator
 

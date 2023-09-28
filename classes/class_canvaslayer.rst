@@ -178,6 +178,8 @@ Scales the layer when using :ref:`follow_viewport_enabled<class_CanvasLayer_prop
 
 Layer index for draw order. Lower values are drawn behind higher values.
 
+\ **Note:** If multiple CanvasLayers have the same layer index, :ref:`CanvasItem<class_CanvasItem>` children of one CanvasLayer are drawn behind the :ref:`CanvasItem<class_CanvasItem>` children of the other CanvasLayer. Which CanvasLayer is drawn in front is non-deterministic.
+
 .. rst-class:: classref-item-separator
 
 ----

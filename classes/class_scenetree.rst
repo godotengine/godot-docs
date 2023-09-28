@@ -623,9 +623,7 @@ Returns the current frame number, i.e. the total frame count since the applicati
 
 :ref:`MultiplayerAPI<class_MultiplayerAPI>` **get_multiplayer** **(** :ref:`NodePath<class_NodePath>` for_path=NodePath("") **)** |const|
 
-Return the :ref:`MultiplayerAPI<class_MultiplayerAPI>` configured for the given path, or the default one if ``for_path`` is empty.
-
-\ **Note:** Only one :ref:`MultiplayerAPI<class_MultiplayerAPI>` may be configured for any subpath. If one is configured for ``"/root/Foo"`` then calling this for ``"/root/Foo/Bar"`` will return the one configured for ``"/root/Foo"``, regardless if one is configured for that path.
+Searches for the :ref:`MultiplayerAPI<class_MultiplayerAPI>` configured for the given path, if one does not exist it searches the parent paths until one is found. If the path is empty, or none is found, the default one is returned. See :ref:`set_multiplayer<class_SceneTree_method_set_multiplayer>`.
 
 .. rst-class:: classref-item-separator
 
@@ -789,7 +787,7 @@ void **set_multiplayer** **(** :ref:`MultiplayerAPI<class_MultiplayerAPI>` multi
 
 Sets a custom :ref:`MultiplayerAPI<class_MultiplayerAPI>` with the given ``root_path`` (controlling also the relative subpaths), or override the default one if ``root_path`` is empty.
 
-\ **Note:** Only one :ref:`MultiplayerAPI<class_MultiplayerAPI>` may be configured for any subpath. If one is configured for ``"/root/Foo"`` setting one for ``"/root/Foo/Bar"`` will be ignored. See :ref:`get_multiplayer<class_SceneTree_method_get_multiplayer>`.
+\ **Note:** No :ref:`MultiplayerAPI<class_MultiplayerAPI>` must be configured for the subpath containing ``root_path``, nested custom multiplayers are not allowed. I.e. if one is configured for ``"/root/Foo"`` setting one for ``"/root/Foo/Bar"`` will cause an error.
 
 .. rst-class:: classref-item-separator
 
