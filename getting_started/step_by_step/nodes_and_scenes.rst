@@ -143,7 +143,7 @@ top-right of the screen or press :kbd:`F6` (:kbd:`Cmd + R` on macOS).
 .. image:: img/nodes_and_scenes_09_play_scene_button.webp
 
 A popup invites you to save the scene, which is required to run it.
-Click the Save button in the file browser to save it as "label.tscn".
+Click the Save button in the file browser to save it as ``label.tscn``.
 
 .. image:: img/nodes_and_scenes_10_save_scene_as.webp
 
