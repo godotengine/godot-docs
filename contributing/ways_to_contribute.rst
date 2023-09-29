@@ -77,7 +77,7 @@ Contributing code changes upstream has two big advantages:
 
 -  The whole community will benefit from your work, and other contributors will
    behave the same way, contributing code that will be beneficial to you. At
-   the time of this writing, more than 1000 developers have contributed code
+   the time of this writing, over 2,000 developers have contributed code
    changes to the engine!
 
 To ensure good collaboration and overall quality, the Godot developers
