@@ -176,6 +176,7 @@ class GDScriptLexer(RegexLexer):
                         "match",
                         "pass",
                         "return",
+                        "when",
                         "while",
                     ),
                     suffix=r"\b",
