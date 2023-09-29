@@ -82,6 +82,7 @@ The bindings below are developed and maintained by the community:
 .. Please keep languages sorted in alphabetical order.
 
 - `Rust <https://github.com/godot-rust/gdextension>`__
+- `Swift <https://github.com/migueldeicaza/SwiftGodot>`__
 
 .. note::
 
