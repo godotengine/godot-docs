@@ -347,7 +347,7 @@ have loaded the game scene.
 
 
     func _on_player_disconnected(id):
-        player_info.erase(id)
+        players.erase(id)
         player_disconnected.emit(id)
 
 
