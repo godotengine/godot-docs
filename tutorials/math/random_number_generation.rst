@@ -472,7 +472,7 @@ ends up empty. When that happens, you reinitialize it to its default value:
 
     public string GetFruit()
     {
-        if(_fruits.Length == 0)
+        if(_fruits.Count == 0)
         {
             // Fill the fruits array again and shuffle it.
             _fruits = _fruitsFull.Duplicate();
