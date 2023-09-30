@@ -32,6 +32,7 @@ Nodes
     class_animatablebody3d
     class_animatedsprite2d
     class_animatedsprite3d
+    class_animationmixer
     class_animationplayer
     class_animationtree
     class_area2d

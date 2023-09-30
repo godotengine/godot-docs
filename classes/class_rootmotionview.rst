@@ -12,14 +12,14 @@ RootMotionView
 
 **Inherits:** :ref:`VisualInstance3D<class_VisualInstance3D>` **<** :ref:`Node3D<class_Node3D>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-Editor-only helper for setting up root motion in :ref:`AnimationTree<class_AnimationTree>`.
+Editor-only helper for setting up root motion in :ref:`AnimationMixer<class_AnimationMixer>`.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-*Root motion* refers to an animation technique where a mesh's skeleton is used to give impulse to a character. When working with 3D animations, a popular technique is for animators to use the root skeleton bone to give motion to the rest of the skeleton. This allows animating characters in a way where steps actually match the floor below. It also allows precise interaction with objects during cinematics. See also :ref:`AnimationTree<class_AnimationTree>`.
+*Root motion* refers to an animation technique where a mesh's skeleton is used to give impulse to a character. When working with 3D animations, a popular technique is for animators to use the root skeleton bone to give motion to the rest of the skeleton. This allows animating characters in a way where steps actually match the floor below. It also allows precise interaction with objects during cinematics. See also :ref:`AnimationMixer<class_AnimationMixer>`.
 
 \ **Note:** **RootMotionView** is only visible in the editor. It will be hidden automatically in the running project.
 
@@ -70,7 +70,7 @@ Property Descriptions
 - void **set_animation_path** **(** :ref:`NodePath<class_NodePath>` value **)**
 - :ref:`NodePath<class_NodePath>` **get_animation_path** **(** **)**
 
-Path to an :ref:`AnimationTree<class_AnimationTree>` node to use as a basis for root motion.
+Path to an :ref:`AnimationMixer<class_AnimationMixer>` node to use as a basis for root motion.
 
 .. rst-class:: classref-item-separator
 
