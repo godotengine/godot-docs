@@ -50,8 +50,18 @@ Download and install the Android SDK.
 
 .. note::
 
-    If you are using Linux,
-    **do not use an Android SDK provided by your distribution's repositories as it will often be outdated**.
+If you are using Linux,
+    **do not use an Android SDK provided by your distribution's repositories as it will often be outdated**
+    Instead of the previous steps (both Install OpenJDK and download Android SDK), just apply the command " sudo apt update && sudo apt install android-sdk "
+    The location of Android SDK on Linux can be any of the following:
+
+    /home/AccountName/Android/Sdk 
+
+    /usr/lib/android-sdk 
+
+    /Library/Android/sdk/ 
+
+    /Users/[USER]/Library/Android/sdk 
 
 
 Create a debug.keystore
