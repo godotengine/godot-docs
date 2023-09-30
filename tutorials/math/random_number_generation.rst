@@ -300,7 +300,7 @@ We can apply similar logic from arrays to dictionaries as well:
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    var metals = {
+    var _metals = {
         "copper": {"quantity": 50, "price": 50},
         "silver": {"quantity": 20, "price": 150},
         "gold": {"quantity": 3, "price": 500},
@@ -315,14 +315,14 @@ We can apply similar logic from arrays to dictionaries as well:
 
 
     func get_metal():
-        var random_metal = metals.values()[randi() % metals.size()]
+        var random_metal = _metals.values()[randi() % metals.size()]
         # Returns a random metal value dictionary every time the code runs.
         # The same metal may be selected multiple times in succession.
         return random_metal
 
  .. code-tab:: csharp
 
-    private var metals = new Godot.Collections.Dictionary
+    private Godot.Collections.Dictionary _metals = new Godot.Collections.Dictionary
     {
         {"copper", new Godot.Collections.Dictionary{{"quantity", 50}, {"price", 50}}},
         {"silver", new Godot.Collections.Dictionary{{"quantity", 20}, {"price", 150}}},
@@ -340,7 +340,10 @@ We can apply similar logic from arrays to dictionaries as well:
 
     public Godot.Collections.Dictionary GetMetal()
     {
-        var randomMetal = metals.Values()[GD.Randi() % metals.Length];
+        var randomMetal = _metals.KeyValuePair(GD.Randi() % metals.Count);
+        // Returns a random metal value dictionary every time the code runs.
+        // The same metal may be selected multiple times in succession.
+        return randomMetal;
     }
 
 .. _doc_random_number_generation_weighted_random_probability:
@@ -454,7 +457,7 @@ ends up empty. When that happens, you reinitialize it to its default value:
 
  .. code-tab:: csharp
 
-    private var _fruits = new Godot.Collections.Array{ "apple", "orange", "pear", "banana" };
+    private Godot.Collections.Array _fruits = new Godot.Collections.Array{ "apple", "orange", "pear", "banana" };
     // A copy of the fruits array so we can restore the original value into `fruits`.
     private Godot.Collections.Array _fruitsFull;
 
@@ -485,7 +488,7 @@ ends up empty. When that happens, you reinitialize it to its default value:
         _fruits.RemoveAt(0);
         // Returns "apple", "orange", "pear", or "banana" every time the code runs, removing it from the array.
         // When all fruit are removed, it refills the array.
-        return randomFruit;
+        return randomFruit.AsString();
     }
 
 When running the above code, there is a chance to get the same fruit twice in a
