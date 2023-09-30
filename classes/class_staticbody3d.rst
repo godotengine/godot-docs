@@ -21,7 +21,7 @@ A 3D physics body that can't be moved by external forces. When moved manually, i
 Description
 -----------
 
-A static 3D physics body. It can't be moved by external forces or contacts, but can be moved manually by other means such as code, :ref:`AnimationPlayer<class_AnimationPlayer>`\ s (with :ref:`AnimationPlayer.playback_process_mode<class_AnimationPlayer_property_playback_process_mode>` set to :ref:`AnimationPlayer.ANIMATION_PROCESS_PHYSICS<class_AnimationPlayer_constant_ANIMATION_PROCESS_PHYSICS>`), and :ref:`RemoteTransform3D<class_RemoteTransform3D>`.
+A static 3D physics body. It can't be moved by external forces or contacts, but can be moved manually by other means such as code, :ref:`AnimationMixer<class_AnimationMixer>`\ s (with :ref:`AnimationMixer.callback_mode_process<class_AnimationMixer_property_callback_mode_process>` set to :ref:`AnimationMixer.ANIMATION_CALLBACK_MODE_PROCESS_PHYSICS<class_AnimationMixer_constant_ANIMATION_CALLBACK_MODE_PROCESS_PHYSICS>`), and :ref:`RemoteTransform3D<class_RemoteTransform3D>`.
 
 When **StaticBody3D** is moved, it is teleported to its new position without affecting other physics bodies in its path. If this is not desired, use :ref:`AnimatableBody3D<class_AnimatableBody3D>` instead.
 
