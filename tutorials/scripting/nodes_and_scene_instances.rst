@@ -9,6 +9,10 @@ instantiate scenes from code.
 Getting nodes
 -------------
 
+Lets say you have a scene tree like this, and you want to get a reference to the Sprite2D to access them in your script.
+
+.. image:: img/nodes_and_scene_instances_export_assign.webp
+
 In the game development industry, especially in larger projects, maintainability is key. Relying on the ``Node.get_node(path)`` method can lead to brittle project structures, as it's tied to hard-coded node paths which can easily break with renaming or scene restructuring. Since Godot 4.0, it's recommended to reference your nodes by using the following in your code:
 
 .. tabs::
