@@ -51,7 +51,7 @@ if you want to debug the editor, you need to configure the debugger first.
 
 ::
 
-  --e --path <path to the Godot project>
+  -e --path <path to the Godot project>
 
 This will tell the executable to debug the specified project without using the project manager.
 Use the root path to the project folder, not ``project.godot`` file path.
