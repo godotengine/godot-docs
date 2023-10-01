@@ -10,6 +10,7 @@ Getting nodes
 -------------
 
 Since Godot 4.0, it is recommended to reference your nodes by using the following in your code:
+
 .. tabs::
  .. code-tab:: gdscript GDScript
 
