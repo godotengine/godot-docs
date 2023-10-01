@@ -24,7 +24,7 @@ Sound effects
 ~~~~~~~~~~~~~
 
 Sound and music can be the single most effective way to add appeal to the game
-experience. In your game assets folder, you have two sound files: "House In a
+experience. In your game's **art** folder, you have two sound files: "House In a
 Forest Loop.ogg" for background music, and "gameover.wav" for when the player
 loses.
 
