@@ -9,7 +9,7 @@ instantiate scenes from code.
 Getting nodes
 -------------
 
-Lets say you have a scene tree like this, and you want to get a reference to the Sprite2D to access it in your script.
+Let's say you have a scene tree like this, and you want to get a reference to the Sprite2D to access it in your script.
 
 .. image:: img/nodes_and_scene_instances_player_scene_example.webp
 
