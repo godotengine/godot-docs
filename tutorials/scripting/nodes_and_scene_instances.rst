@@ -6,115 +6,18 @@ Nodes and scene instances
 This guide explains how to get nodes, create nodes, add them as a child, and
 instantiate scenes from code.
 
-Getting nodes (simple approach)
--------------------------------
+Getting nodes
+-------------
 
-You can get a reference to a node by calling the :ref:`Node.get_node()
-<class_Node_method_get_node>` method. For this to work, the child node must be
-present in the scene tree. Getting it in the parent node's ``_ready()`` function
-guarantees that.
-
-If, for example,  you have a scene tree like this, and you want to get a reference to the
-Sprite2D and Camera2D nodes to access them in your script.
-
-.. image:: img/nodes_and_scene_instances_player_scene_example.webp
-
-To do so, you can use the following code.
-
+Since Godot 4.0, it is recommended to reference your nodes by using the following in your code:
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    var sprite2d
-    var camera2d
-
-    func _ready():
-        sprite2d = get_node("Sprite2D")
-        camera2d = get_node("Camera2D")
+    @export var node: Node
 
  .. code-tab:: csharp
 
-    private Sprite2D _sprite2D;
-    private Camera2D _camera2D;
-
-    public override void _Ready()
-    {
-        base._Ready();
-
-        _sprite2D = GetNode<Sprite2D>("Sprite2D");
-        _camera2D = GetNode<Camera2D>("Camera2D");
-    }
-
-Note that you get nodes using their name, not their type. Above, "Sprite2D" and
-"Camera2D" are the nodes' names in the scene.
-
-.. image:: img/nodes_and_scene_instances_sprite_node.webp
-
-If you rename the Sprite2D node as Skin in the Scene dock, you have to change the
-line that gets the node to ``get_node("Skin")`` in the script.
-
-.. image:: img/nodes_and_scene_instances_sprite_node_renamed.webp
-
-Getting Nodes (recommended approach)
-------------------------------------
-Using the ``get_node()`` method to access nodes might seem straightforward at first, but it can lead to brittle project structures, especially as your game or application scales up. The main reason is that ``get_node()`` relies on specific paths, and if you change a node's location or name, these paths break. Imagine having to update these references every time you restructure your scene or rename scripts — it quickly becomes a tedious and error-prone task. A more versatile and scalable approach is to utilize the ``@export`` annotation. This allows you to link to nodes directly from the Godot editor's Inspector, providing a more resilient and adaptable structure, especially beneficial for larger projects
-
-Node paths
-----------
-
-When getting a reference to a node, you're not limited to getting a direct child. The ``get_node()`` function
-supports paths, a bit like when working with a file browser. Add a slash to
-separate nodes.
-
-Take the following example scene, with the script attached to the UserInterface
-node.
-
-.. image:: img/nodes_and_scene_instances_ui_scene_example.webp
-
-To get the AnimationPlayer node, you would use the following code.
-
-.. tabs::
- .. code-tab:: gdscript GDScript
-
-    var animation_player
-
-    func _ready():
-        animation_player = get_node("ShieldBar/AnimationPlayer")
-
- .. code-tab:: csharp
-
-    private AnimationPlayer _animationPlayer;
-
-    public override void _Ready()
-    {
-        base._Ready();
-
-        _animationPlayer = GetNode<AnimationPlayer>("ShieldBar/AnimationPlayer");
-    }
-
-.. note:: As with file paths, you can use ".." to get a parent node. The best
-          practice is to avoid doing that though not to break encapsulation.
-          You can also start the path with a forward
-          slash to make it absolute, in which case your topmost node would be
-          "/root", the application's predefined root viewport.
-
-Syntactic sugar
-~~~~~~~~~~~~~~~
-
-You can use two shorthands to shorten your code in GDScript. Firstly, putting the
-``@onready`` annotation before a member variable makes it initialize right before
-the ``_ready()`` callback.
-
-.. code-block:: gdscript
-
-    @onready var sprite2d = get_node("Sprite2D")
-
-There is also a short notation for ``get_node()``: the dollar sign, "$". You
-place it before the name or path of the node you want to get.
-
-.. code-block:: gdscript
-
-    @onready var sprite2d = $Sprite2D
-    @onready var animation_player = $ShieldBar/AnimationPlayer
+    [Export] public Node node;
 
 Creating nodes
 --------------
