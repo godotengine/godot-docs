@@ -9,7 +9,7 @@ instantiate scenes from code.
 Getting nodes
 -------------
 
-In the game development industry, especially in larger projects, maintainability is key. Relying on the ``Node.get_node(path)`` method can lead to brittle structures, as it's tied to hard-coded node paths which can easily break with any scene restructuring. Since Godot 4.0, it's recommended to reference your nodes by using the following in your code:
+In the game development industry, especially in larger projects, maintainability is key. Relying on the ``Node.get_node(path)`` method can lead to brittle project structures, as it's tied to hard-coded node paths which can easily break with any scene restructuring. Since Godot 4.0, it's recommended to reference your nodes by using the following in your code:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
