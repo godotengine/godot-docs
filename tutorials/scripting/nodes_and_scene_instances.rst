@@ -22,7 +22,7 @@ In the game development industry, especially in larger projects, maintainability
 
 Once you've done this, simply drag and drop your Sprite2D node onto the corresponding "Assign..." field in the Inspector:
 
-.. image:: img/nodes_and_scene_instances_remote_tree_with_sprite.webp
+.. image:: img/nodes_and_scene_instances_export_assign.webp
 
 Creating nodes
 --------------
