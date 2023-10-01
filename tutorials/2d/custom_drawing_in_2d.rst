@@ -69,13 +69,12 @@ redrawn if modified:
 
     extends Node2D
 
-    export (Texture) var texture setget _set_texture
-
-    func _set_texture(value):
-        # If the texture variable is modified externally,
-        # this callback is called.
-        texture = value  # Texture was changed.
-        queue_redraw()  # Trigger a redraw of the node.
+    @export var texture: Texture:
+        set(value):
+            # If the texture variable is modified externally,
+            # this callback is called.
+            texture = value  # Texture was changed.
+            queue_redraw()  # Trigger a redraw of the node.
 
     func _draw():
         draw_texture(texture, Vector2())
