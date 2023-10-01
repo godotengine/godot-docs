@@ -14,11 +14,15 @@ In the game development industry, especially in larger projects, maintainability
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    @export var node: Node
+    @export var player_sprite: Sprite2D
 
  .. code-tab:: csharp
 
-    [Export] public Node node;
+    [Export] public Sprite2D player_sprite;
+
+Once you've done this, simply drag and drop your Sprite2D node onto the corresponding "Assign..." field in the Inspector:
+
+.. image:: img/nodes_and_scene_instances_remote_tree_with_sprite.webp
 
 Creating nodes
 --------------
