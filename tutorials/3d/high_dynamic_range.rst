@@ -8,7 +8,7 @@ High dynamic range lighting
 Introduction
 ------------
 
-Normally, an artist does all the 3D modelling, then all the texturing, looks at
+Normally, an artist does all the 3D modeling, then all the texturing, looks at
 their awesome looking model in the 3D modeling software and says "looks
 fantastic, ready for integration!" then goes into the game, lighting is setup
 and the game runs.
