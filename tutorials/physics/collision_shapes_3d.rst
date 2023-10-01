@@ -106,18 +106,6 @@ editor exposes two options:
 - **Create Trimesh Collision Sibling** creates a CollisionShape node with a
   concave shape matching the mesh's geometry.
 
-.. note::
-
-    Suppose you need to make a RigidBody *slide* on a concave collision shape.
-    In that case, you may notice that sometimes, the RigidBody will bump
-    upwards. To solve this, open **Project > Project Settings** and enable
-    **Physics > 3d > Smooth Trimesh Collision**.
-
-    Once you've enabled smooth trimesh collision, make sure the concave shape is
-    the only shape of your StaticBody and that it's located at its origin
-    without any rotation. This way, the RigidBody should slide perfectly on the
-    StaticBody.
-
 .. seealso::
 
     See :ref:`doc_importing_3d_scenes` for information on how to export models
