@@ -200,5 +200,5 @@ Assign the same vertex shader from above and everything should look exactly the 
 
 The one drawback to using an ArrayMesh over using a QuadMesh is that the ArrayMesh
 is not visible in the editor because the triangle is not constructed until the scene
-is run. To get around that, construct a single triangle Mesh in a modelling program
+is run. To get around that, construct a single triangle Mesh in a modeling program
 and use that in the MeshInstance3D instead.
