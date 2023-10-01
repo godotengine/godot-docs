@@ -6,8 +6,8 @@ Nodes and scene instances
 This guide explains how to get nodes, create nodes, add them as a child, and
 instantiate scenes from code.
 
-Getting nodes
--------------
+Getting nodes (simple approach)
+-------------------------------
 
 You can get a reference to a node by calling the :ref:`Node.get_node()
 <class_Node_method_get_node>` method. For this to work, the child node must be
@@ -53,6 +53,10 @@ If you rename the Sprite2D node as Skin in the Scene dock, you have to change th
 line that gets the node to ``get_node("Skin")`` in the script.
 
 .. image:: img/nodes_and_scene_instances_sprite_node_renamed.webp
+
+Getting Nodes (recommended approach)
+------------------------------------
+Using the ``get_node()`` method to access nodes might seem straightforward at first, but it can lead to brittle project structures, especially as your game or application scales up. The main reason is that ``get_node()`` relies on specific paths, and if you change a node's location or name, these paths break. Imagine having to update these references every time you restructure your scene or rename scripts — it quickly becomes a tedious and error-prone task. A more versatile and scalable approach is to utilize the ``@export`` annotation. This allows you to link to nodes directly from the Godot editor's Inspector, providing a more resilient and adaptable structure, especially beneficial for larger projects
 
 Node paths
 ----------
