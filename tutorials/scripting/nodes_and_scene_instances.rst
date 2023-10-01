@@ -9,7 +9,7 @@ instantiate scenes from code.
 Getting nodes
 -------------
 
-Since Godot 4.0, it is recommended to reference your nodes by using the following in your code:
+Relying on the get_node() method to access nodes can introduce vulnerabilities into your project's structure. This method depends on specific node paths, and any change to a node's position or name can disrupt these paths, leading to brittle and unstable setups. Since Godot 4.0, it is recommended to reference your nodes by using the following in your code:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
