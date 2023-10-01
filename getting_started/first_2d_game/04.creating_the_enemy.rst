@@ -48,7 +48,7 @@ Like the player images, these mob images need to be scaled down. Set the
 ``AnimatedSprite2D``'s ``Scale`` property to ``(0.75, 0.75)``.
 
 As in the ``Player`` scene, add a ``CapsuleShape2D`` for the collision. To align
-the shape with the image, you'll need to set the ``Rotation Degrees`` property
+the shape with the image, you'll need to set the ``Rotation`` property
 to ``90`` (under "Transform" in the Inspector).
 
 Save the scene.
