@@ -39,13 +39,6 @@ in the user's browser.
              Browsers also require that the web page is served with specific
              `cross-origin isolation headers <https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cross-Origin-Embedder-Policy>`__.
 
-.. note::
-
-    If you use Linux, due to
-    `poor Firefox WebGL performance <https://bugzilla.mozilla.org/show_bug.cgi?id=1010527>`__,
-    it's recommended to play the exported project using a Chromium-based browser
-    instead of Firefox.
-
 WebGL version
 -------------
 
