@@ -20,7 +20,7 @@ In the game development industry, especially in larger projects, maintainability
 
     [Export] public Sprite2D player_sprite;
 
-Once you've done this, simply drag and drop your Sprite2D node onto the corresponding "Assign..." field in the Inspector:
+Once you've done this, simply drag and drop your node (Sprite2D in this example) onto the corresponding "Assign..." field in the Inspector:
 
 .. image:: img/nodes_and_scene_instances_export_assign.webp
 
