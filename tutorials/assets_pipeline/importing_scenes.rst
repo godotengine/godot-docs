@@ -766,10 +766,10 @@ after exporting:
 - Adding collision detection to objects.
 - Setting objects as navigation meshes.
 - Deleting nodes that are not used in the game engine (like specific lights used
-  for modelling).
+  for modeling).
 
 To simplify this workflow, Godot offers several suffixes that can be added to
-the names of the objects in your 3D modelling software. When imported, Godot
+the names of the objects in your 3D modeling software. When imported, Godot
 will detect suffixes in object names and will perform actions automatically.
 
 .. warning::

@@ -211,7 +211,7 @@ Vertex Color
 ------------
 
 This setting allows choosing what is done by default to vertex colors that come
-from your 3D modelling application. By default, they are ignored.
+from your 3D modeling application. By default, they are ignored.
 
 .. image:: img/spatial_material4.png
 
