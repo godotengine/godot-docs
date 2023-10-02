@@ -1788,6 +1788,8 @@ when the class is loaded, after the static variables have been initialized::
 
 A static constructor cannot take arguments and must not return any value.
 
+.. _doc_gdscript_basics_inner_classes:
+
 Inner classes
 ^^^^^^^^^^^^^
 
