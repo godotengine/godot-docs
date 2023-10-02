@@ -211,7 +211,7 @@ We also need to process what happens when the player loses. The code below will 
 
  .. code-tab:: csharp
 
-    async public void ShowGameOver()
+    async public Task ShowGameOver()
     {
         ShowMessage("Game Over");
 
@@ -242,6 +242,9 @@ We also need to process what happens when the player loses. The code below will 
         _message_label->show();
         _start_message_timer->start();
     }
+.. warning::
+
+    If you are using C# you need to add ``using System.Threading.Tasks;`` at the top of you script.
 
 This function is called when the player loses. It will show "Game Over" for 2
 seconds, then return to the title screen and, after a brief pause, show the
