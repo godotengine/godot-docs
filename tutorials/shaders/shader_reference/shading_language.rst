@@ -757,7 +757,7 @@ used, and how the editor should allow users to modify it.
 
     uniform vec4 color : source_color;
     uniform float amount : hint_range(0, 1);
-    uniform vec4 other_color : source_color = vec4(1.0);
+    uniform vec4 other_color : source_color = vec4(1.0); // Default values go after the hint.
     uniform sampler2D image : source_color;
 
 It's important to understand that textures that are supplied as color require
@@ -898,6 +898,8 @@ Uniforms can also be assigned default values:
 
     uniform vec4 some_vector = vec4(0.0);
     uniform vec4 some_color : source_color = vec4(1.0);
+
+Note that when adding a default value and a hint, the default value goes after the hint.
 
 If you need to make multiple uniforms to be grouped in the specific category of an inspector, you can use a `group_uniform` keyword like:
 
