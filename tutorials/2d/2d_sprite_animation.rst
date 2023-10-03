@@ -100,7 +100,7 @@ released.
     		_animatedSprite = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
     	}
     
-    	public override void _PhysicsProcess(double _delta)
+    	public override void _Process(double _delta)
     	{
     		if (Input.IsActionPressed("ui_right"))
     		{
