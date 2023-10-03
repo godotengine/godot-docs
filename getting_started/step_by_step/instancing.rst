@@ -1,4 +1,4 @@
-:article_outdated: True
+:article_outdated: False
 
 .. _doc_instancing:
 
