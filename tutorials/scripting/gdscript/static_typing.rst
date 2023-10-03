@@ -370,6 +370,50 @@ You can't specify the type of individual members in an array:
 
     var enemies: Array = [$Goblin: Enemy, $Zombie: Enemy]
 
+Enforce static typing in a project
+----------------------------------
+
+By setting ``debug/gdscript/warnings/untyped_declaration`` to ``Warn`` or
+``Error``, you can receive a warning or error respectively when the analyzer
+can't infer the type. For example,
+
+::
+
+    extends Node
+
+    var untyped = 23 # untyped_declaration warning emitted.
+    var typed: int = 23 # no warning emitted.
+    var inferred := 23 # inferred as int, no warning
+
+    func _ready(): # untyped_declaration warning emitted.
+        pass
+
+    func _process(delta: float) -> void: # no warning emitted.
+        for i in range(4): # no warning, i has an inferred type of int.
+            print(i)
+
+Additionally, by setting ``debug/gdscript/warnings/inferred_declaration`` to
+``Warn`` or ``Error``, you can receive a warning if a declaration is of an
+inferred type, i.e. ``:=``. It is recommended to only use this warning along
+with ``debug/gdscript/warnings/untyped_declaration`` as using the warning
+alone will only warn when the type is inferred, not undeclared.
+
+::
+
+    extends Node
+
+    var untyped = 23 # untyped_declaration warning emitted.
+    var typed: int = 23 # no warning emitted.
+    var inferred := 23 # inferred_declaration warning emitted.
+
+    func _ready(): # untyped_declaration warning emitted.
+        pass
+
+    func _process(delta: float) -> void: # no warning emitted.
+        for i in range(4): # inferred_declaration warning emitted.
+            print(i)
+
+
 Summary
 -------
 
