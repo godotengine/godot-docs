@@ -6,17 +6,6 @@ C# basics
 Introduction
 ------------
 
-.. warning::
-
-    .NET support has been heavily modified between Godot 3 and 4. As such, you
-    may still run into some issues, or find spots where the documentation could
-    be improved.
-
-    Please report issues with C# in Godot on the
-    `engine GitHub page <https://github.com/godotengine/godot/issues>`_,
-    and any documentation issues on the
-    `documentation GitHub page <https://github.com/godotengine/godot-docs/issues>`_.
-
 This page provides a brief introduction to C#, both what it is and
 how to use it in Godot. Afterwards, you may want to look at
 :ref:`how to use specific features <doc_c_sharp_features>`, read about the
@@ -29,9 +18,10 @@ it is implemented with .NET 6.0.
 
 .. attention::
 
-    Projects written in C# using Godot 4.x currently cannot be exported to
-    Android, iOS and web platforms. To use C# on those platforms, use Godot 3
-    instead.
+    Projects written in C# using Godot 4 currently cannot be exported to iOS
+    and web platforms. To use C# on those platforms, consider Godot 3 instead.
+    Android platform support is available as of Godot 4.2, but is experimental
+    and :ref:`some limitations apply <doc_c_sharp_platforms>`.
 
 .. note::
 
