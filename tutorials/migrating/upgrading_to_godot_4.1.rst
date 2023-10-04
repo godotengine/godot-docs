@@ -253,7 +253,7 @@ This means that GDExtensions made for Godot 4.0 will need to be recompiled for G
 
 In Godot 4.0, your "entry_symbol" function looks something like this:
 
-.. code-block:: C++
+.. code-block:: cpp
 
   GDExtensionBool GDE_EXPORT example_library_init(const GDExtensionInterface *p_interface, const GDExtensionClassLibraryPtr p_library, GDExtensionInitialization *r_initialization) {
       godot::GDExtensionBinding::InitObject init_obj(p_interface, p_library, r_initialization);
@@ -267,7 +267,7 @@ In Godot 4.0, your "entry_symbol" function looks something like this:
 
 However, for Godot 4.1, it should look like:
 
-.. code-block:: C++
+.. code-block:: cpp
 
   GDExtensionBool GDE_EXPORT example_library_init(GDExtensionInterfaceGetProcAddress p_get_proc_address, const GDExtensionClassLibraryPtr p_library, GDExtensionInitialization *r_initialization) {
       godot::GDExtensionBinding::InitObject init_obj(p_get_proc_address, p_library, r_initialization);
