@@ -847,6 +847,7 @@ code,
 
 .highlight {
     background-color: var(--highlight-background-color);
+    tab-size: 4;
 }
 
 /* Emphasized lines */
