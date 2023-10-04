@@ -344,6 +344,8 @@ with the RG color format to reduce memory usage, with only the red and green
 channels preserved. This only has an effect on textures with the **VRAM Compressed**
 or **Basis Universal** compression modes.
 
+.. _doc_importing_images_mipmaps:
+
 Mipmaps > Generate
 ^^^^^^^^^^^^^^^^^^
 
