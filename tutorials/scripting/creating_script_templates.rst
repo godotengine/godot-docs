@@ -140,7 +140,7 @@ the file with the ``meta-default: true`` header.
 
 Only one template can be set as default at the same time for the same node type.
 
-The ``Default`` templates for basic Nodes, for both GDScript and C#, are shown here so you can
+The ``Default`` templates for basic Nodes, for both GDScript with type hints and C#, are shown here so you can
 use these as the base for creating other templates:
 
 .. tabs::
