@@ -1439,13 +1439,12 @@ It's the equivalent of the ``switch`` statement found in many other languages, b
 
 Basic syntax::
 
-    match (expression):
-        [pattern](s):
-            [block]
-        [pattern](s):
-            [block]
-        [pattern](s):
-            [block]
+    match <expression>:
+        <pattern(s)>:
+            <block>
+        <pattern(s)> when <guard expression>:
+            <block>
+        <...>
 
 .. warning::
 
@@ -1579,6 +1578,32 @@ There are 6 pattern types:
                 print("It's 1 - 3")
             "Sword", "Splash potion", "Fist":
                 print("Yep, you've taken damage")
+
+**Pattern guards**:
+
+Only one branch can be executed per ``match``. Once a branch is chosen, the rest are not checked.
+If you want to use the same pattern for multiple branches or to prevent choosing a branch with too general pattern,
+you can specify a guard expression after the list of patterns with the ``when`` keyword::
+
+    match point:
+        [0, 0]:
+            print("Origin")
+        [_, 0]:
+            print("Point on X-axis")
+        [0, _]:
+            print("Point on Y-axis")
+        [var x, var y] when y == x:
+            print("Point on line y = x")
+        [var x, var y] when y == -x:
+            print("Point on line y = -x")
+        [var x, var y]:
+            print("Point (%s, %s)" % [x, y])
+
+- If there is no matching pattern for the current branch, the guard expression
+  is **not** evaluated and the patterns of the next branch are checked.
+- If a matching pattern is found, the guard expression is evaluated.
+  - If it's true, then the body of the branch is executed and ``match`` ends.
+  - If it's false, then the patterns of the next branch are checked.
 
 Classes
 ~~~~~~~
