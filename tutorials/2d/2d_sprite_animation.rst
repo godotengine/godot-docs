@@ -90,8 +90,7 @@ released.
 
     using Godot;
 
-    // Change Player to your node CharacterBody2D node name
-    public partial class Player : CharacterBody2D
+    public partial class MyCharacterBody2D : CharacterBody2D
     {
     	private AnimatedSprite2D _animatedSprite;
     
