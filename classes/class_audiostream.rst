@@ -21,7 +21,7 @@ Base class for audio streams.
 Description
 -----------
 
-Base class for audio streams. Audio streams are used for sound effects and music playback, and support WAV (via :ref:`AudioStreamWAV<class_AudioStreamWAV>`) and Ogg (via :ref:`AudioStreamOggVorbis<class_AudioStreamOggVorbis>`) file formats.
+Base class for audio streams. Audio streams are used for sound effects and music playback, supporting WAV (via :ref:AudioStreamWAV<class_AudioStreamWAV>) and Ogg Vorbis (via :ref:AudioStreamOggVorbis<class_AudioStreamOggVorbis>) file formats.
 
 .. rst-class:: classref-introduction-group
 
