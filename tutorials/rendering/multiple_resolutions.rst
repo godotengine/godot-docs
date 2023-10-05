@@ -434,8 +434,9 @@ Reducing aliasing on downsampling
 If the game has a very high base resolution (e.g. 3840×2160), aliasing might
 appear when downsampling to something considerably lower like 1280×720.
 
-To resolve this, you can enable mipmaps on all your 2D textures. However, enabling mipmaps
-will increase memory usage which may be problematic on low-end mobile devices.
+To resolve this, you can :ref:`enable mipmaps <doc_importing_images_mipmaps>` on
+all your 2D textures. However, enabling mipmaps will increase memory usage which
+can be an issue on low-end mobile devices.
 
 Handling aspect ratios
 ----------------------
