@@ -341,7 +341,11 @@ Literals
 ~~~~~~~~
 
 +---------------------------------+-------------------------------------------+
-| **Literal**                     | **Type**                                  |
+| **Example(s)**                  | **Description**                           |
++---------------------------------+-------------------------------------------+
+| ``null``                        | Null value                                |
++---------------------------------+-------------------------------------------+
+| ``false``, ``true``             | Boolean values                            |
 +---------------------------------+-------------------------------------------+
 | ``45``                          | Base 10 integer                           |
 +---------------------------------+-------------------------------------------+
@@ -362,6 +366,12 @@ Literals
 | ``&"name"``                     | :ref:`StringName <class_StringName>`      |
 +---------------------------------+-------------------------------------------+
 | ``^"Node/Label"``               | :ref:`NodePath <class_NodePath>`          |
++---------------------------------+-------------------------------------------+
+
+There are also two constructs that look like literals, but actually are not:
+
++---------------------------------+-------------------------------------------+
+| **Example**                     | **Description**                           |
 +---------------------------------+-------------------------------------------+
 | ``$NodePath``                   | Shorthand for ``get_node("NodePath")``    |
 +---------------------------------+-------------------------------------------+
@@ -1437,7 +1447,15 @@ match
 A ``match`` statement is used to branch execution of a program.
 It's the equivalent of the ``switch`` statement found in many other languages, but offers some additional features.
 
-Basic syntax::
+.. warning::
+
+    ``match`` is more type strict than the ``==`` operator. For example ``1`` will **not** match ``1.0``. The only exception is ``String`` vs ``StringName`` matching:
+    for example, the String ``"hello"`` is considered equal to the StringName ``&"hello"``.
+
+Basic syntax
+""""""""""""
+
+::
 
     match <expression>:
         <pattern(s)>:
@@ -1446,19 +1464,16 @@ Basic syntax::
             <block>
         <...>
 
-.. warning::
-
-    ``match`` is more type strict than the ``==`` operator. For example ``1`` will **not** match ``1.0``. The only exception is ``String`` vs ``StringName`` matching:
-    for example, the String ``"hello"`` is considered equal to the StringName ``&"hello"``.
-
-**Crash-course for people who are familiar with switch statements**:
+Crash-course for people who are familiar with switch statements
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 1. Replace ``switch`` with ``match``.
 2. Remove ``case``.
 3. Remove any ``break``\ s.
 4. Change ``default`` to a single underscore.
 
-**Control flow**:
+Control flow
+""""""""""""
 
 The patterns are matched from top to bottom.
 If a pattern matches, the first corresponding block will be executed. After that, the execution continues below the ``match`` statement.
@@ -1467,10 +1482,10 @@ If a pattern matches, the first corresponding block will be executed. After that
 
     The special ``continue`` behavior in ``match`` supported in 3.x was removed in Godot 4.0.
 
-There are 6 pattern types:
+The following pattern types are available:
 
-- Constant pattern
-    Constant primitives, like numbers and strings::
+- Literal pattern
+    Matches a `literal <Literals_>`_::
 
         match x:
             1:
@@ -1480,9 +1495,8 @@ There are 6 pattern types:
             "test":
                 print("Oh snap! It's a string!")
 
-
-- Variable pattern
-    Matches the contents of a variable/enum::
+- Expression pattern
+    Matches a constant expression, an identifier, or an attribute access (``A.B``)::
 
         match typeof(x):
             TYPE_FLOAT:
@@ -1491,7 +1505,6 @@ There are 6 pattern types:
                 print("text")
             TYPE_ARRAY:
                 print("array")
-
 
 - Wildcard pattern
     This pattern matches everything. It's written as a single underscore.
@@ -1506,7 +1519,6 @@ There are 6 pattern types:
             _:
                 print("It's not 1 or 2. I don't care to be honest.")
 
-
 - Binding pattern
     A binding pattern introduces a new variable. Like the wildcard pattern, it matches everything - and also gives that value a name.
     It's especially useful in array and dictionary patterns::
@@ -1518,7 +1530,6 @@ There are 6 pattern types:
                 print("It's one times two!")
             var new_var:
                 print("It's not 1 or 2, it's ", new_var)
-
 
 - Array pattern
     Matches an array. Every single element of the array pattern is a pattern itself, so you can nest them.
@@ -1579,7 +1590,8 @@ There are 6 pattern types:
             "Sword", "Splash potion", "Fist":
                 print("Yep, you've taken damage")
 
-**Pattern guards**:
+Pattern guards
+""""""""""""""
 
 Only one branch can be executed per ``match``. Once a branch is chosen, the rest are not checked.
 If you want to use the same pattern for multiple branches or to prevent choosing a branch with too general pattern,
@@ -1602,6 +1614,7 @@ you can specify a guard expression after the list of patterns with the ``when`` 
 - If there is no matching pattern for the current branch, the guard expression
   is **not** evaluated and the patterns of the next branch are checked.
 - If a matching pattern is found, the guard expression is evaluated.
+
   - If it's true, then the body of the branch is executed and ``match`` ends.
   - If it's false, then the patterns of the next branch are checked.
 
