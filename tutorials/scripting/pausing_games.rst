@@ -89,47 +89,50 @@ paused physics will **NOT** work for it by default. As stated earlier this is
 because the physics servers are turned off. The physics servers can be made
 active while the game is paused by using their ``set_active`` methods.
 
-Pause Menu Example
+Pause menu example
 ------------------
 
-Here is an example of a pause menu. Create a popup or panel with controls
-inside, and set its pause mode to "When Paused" then hide it. By setting the
-root of the pause popup to "When Paused", all children and grandchildren will
-inherit that state. This way, this branch of the scene tree will continue
-working when paused.
+Start by creating a button that will be used to pause the game.
 
-Finally, make it so when a pause button is pressed (any button will do),
-enable the pause and show the pause screen.
+Create a menu containing a close button, set the **Process Mode** of the menu's root node
+to **When Paused**, then hide the menu. Since the process mode is set to **When Paused**
+on the root node, all its children and grandchildren will inherit that process mode.
+This way, all the nodes in the menu will start processing when the game is paused.
+
+Attach a script to the menu's root node, connect the pause button created earlier to a new method in
+the script, and inside that method pause the game and show the pause menu.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
 
     func _on_pause_button_pressed():
         get_tree().paused = true
-        $pause_popup.show()
+        show()
 
  .. code-tab:: csharp
 
-    public void _on_pause_button_pressed()
+    private void OnPauseButtonPressed()
     {
         GetTree().Paused = true;
-        GetNode<Control>("pause_popup").Show();
+        Show();
     }
 
-To unpause, do the opposite when the pause screen is
-closed:
+Finally, connect the menu's close button to a new method in the script. Inside that method,
+unpause the game and hide the pause menu.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    func _on_pause_popup_close_pressed():
-        $pause_popup.hide()
+    func _on_close_button_pressed():
+        hide()
         get_tree().paused = false
 
  .. code-tab:: csharp
 
-    public void _on_pause_popup_close_pressed()
+    private void OnCloseButtonPressed()
     {
-        GetNode<Control>("pause_popup").Hide();
+        Hide();
         GetTree().Paused = false;
     }
+
+You should now have a working pause menu.
