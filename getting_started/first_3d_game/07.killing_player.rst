@@ -384,7 +384,7 @@ Finally, the longest script, ``Player.gd``:
             var collision = get_slide_collision(index)
 
             # If the collision is with ground
-            if (collision.get_collider() == null):
+            if collision.get_collider() == null:
                 continue
 
             # If the collider is with a mob
