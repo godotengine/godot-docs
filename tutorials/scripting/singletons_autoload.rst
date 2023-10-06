@@ -262,7 +262,7 @@ Finally, we need to fill the empty callback functions in the two scenes:
     private void OnButtonPressed()
     {
         var global = GetNode<Global>("/root/Global");
-        global.GotoScene("res://scene_2.tscn");
+        global.GotoScene("res://Scene2.tscn");
     }
 
 and
@@ -282,7 +282,7 @@ and
     private void OnButtonPressed()
     {
         var global = GetNode<Global>("/root/Global");
-        global.GotoScene("res://scene_1.tscn");
+        global.GotoScene("res://Scene1.tscn");
     }
 
 Run the project and test that you can switch between scenes by pressing
