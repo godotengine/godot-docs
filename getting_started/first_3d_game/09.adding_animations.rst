@@ -95,7 +95,7 @@ Two tracks appear in the editor with a diamond icon representing each keyframe.
 |image11|
 
 You can click and drag on the diamonds to move them in time. Move the
-position key to ``0.2`` seconds and the rotation key to ``0.1`` seconds.
+position key to ``0.3`` seconds and the rotation key to ``0.1`` seconds.
 
 |image12|
 
@@ -108,7 +108,7 @@ In the *Inspector*, set the *Position*'s *Y* axis to ``0.65`` meters and the *Ro
 
 |image13|
 
-Create a keyframe for both properties
+Create a keyframe for both properties by right clicking on the track and choose *Insert Key*
 
 .. image:: img/09.adding_animations/second_keys_both.webp
 
@@ -275,7 +275,8 @@ following line.
 
    func initialize(start_position, player_position):
        #...
-       $AnimationPlayer.speed_scale = random_speed / min_speed
+       
+       $AnimationPlayer.speed_scale = float(random_speed) / min_speed
 
  .. code-tab:: csharp
 
@@ -284,6 +285,15 @@ following line.
         // ...
         GetNode<AnimationPlayer>("AnimationPlayer").SpeedScale = randomSpeed / MinSpeed;
     }
+    
+.. note::
+
+    If you divide two integers, you always get an integer. If at least one of 
+    them is a floating-point number, you will get a floating-point value. 
+
+Since we want the `speed_scale` to be a floating-point value, we need to turn either 
+`random_speed` or `min_speed` to floating-point number by using `float()`.
+
 
 And with that, you finished coding your first complete 3D game.
 
