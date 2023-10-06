@@ -8544,7 +8544,7 @@ Suggested values are in the range ``0`` to ``30``. At value ``0`` objects will k
 
 During each physics tick, Godot will multiply the angular velocity of RigidBodies by ``1.0 - combined_damp / physics_ticks_per_second``, where ``combined_damp`` is the sum of the angular damp of the body and this value, or the area's value the body is in if the body defaults to combine damp values. (see :ref:`DampMode<enum_RigidBody2D_DampMode>`)
 
-.. warning:: Godot's damping calculations are simulation tick rate dependent. Changing your physics tick rate may significantly change the outcomes and feel of your simulation. This is true for the entire range of values greater than``0``, but is more pronounced for higher factors.
+.. warning:: Godot's damping calculations are simulation tick rate dependent. Changing your physics tick rate may significantly change the outcomes and feel of your simulation. This is true for the entire range of values greater than 0, but is more pronounced for higher factors.
 
 .. rst-class:: classref-item-separator
 
@@ -8622,7 +8622,7 @@ Suggested values are in the range ``0`` to ``30``. At value ``0`` objects will k
 
 During each physics tick, Godot will multiply the linear velocity of RigidBodies by ``1.0 - combined_damp / physics_ticks_per_second``, where ``combined_damp`` is the sum of the linear damp of the body and this value, or the area's value the body is in if the body defaults to combine damp values. (see :ref:`DampMode<enum_RigidBody2D_DampMode>`)
 
-.. warning:: Godot's damping calculations are simulation tick rate dependent. Changing your physics tick rate may significantly change the outcomes and feel of your simulation. This is true for the entire range of values greater than``0``, but is more pronounced for higher factors.
+.. warning:: Godot's damping calculations are simulation tick rate dependent. Changing your physics tick rate may significantly change the outcomes and feel of your simulation. This is true for the entire range of values greater than 0, but is more pronounced for higher factors.
 
 .. rst-class:: classref-item-separator
 
@@ -8780,7 +8780,7 @@ Suggested values are in the range ``0`` to ``30``. At value ``0`` objects will k
 
 During each physics tick, Godot will multiply the angular velocity of RigidBodies by ``1.0 - combined_damp / physics_ticks_per_second``, where ``combined_damp`` is the sum of the angular damp of the body and this value, or the area's value the body is in if the body defaults to combine damp values. (see :ref:`DampMode<enum_RigidBody3D_DampMode>`)
 
-.. warning:: Godot's damping calculations are simulation tick rate dependent. Changing your physics tick rate may significantly change the outcomes and feel of your simulation. This is true for the entire range of values greater than``0``, but is more pronounced for higher factors.
+.. warning:: Godot's damping calculations are simulation tick rate dependent. Changing your physics tick rate may significantly change the outcomes and feel of your simulation. This is true for the entire range of values greater than 0, but is more pronounced for higher factors.
 
 \ **Note:** Good values are in the range ``0`` to ``1``. At value ``0`` objects will keep moving with the same velocity. Values greater than ``1`` will aim to reduce the velocity to ``0`` in less than a second e.g. a value of ``2`` will aim to reduce the velocity to ``0`` in half a second. A value equal to or greater than the physics frame rate (:ref:`physics/common/physics_ticks_per_second<class_ProjectSettings_property_physics/common/physics_ticks_per_second>`, ``60`` by default) will bring the object to a stop in one iteration.
 
@@ -8860,7 +8860,7 @@ Suggested values are in the range ``0`` to ``30``. At value ``0`` objects will k
 
 During each physics tick, Godot will multiply the linear velocity of RigidBodies by ``1.0 - combined_damp / physics_ticks_per_second``, where ``combined_damp`` is the sum of the linear damp of the body and this value, or the area's value the body is in if the body defaults to combine damp values. (see :ref:`DampMode<enum_RigidBody3D_DampMode>`)
 
-.. warning:: Godot's damping calculations are simulation tick rate dependent. Changing your physics tick rate may significantly change the outcomes and feel of your simulation. This is true for the entire range of values greater than``0``, but is more pronounced for higher factors.
+.. warning:: Godot's damping calculations are simulation tick rate dependent. Changing your physics tick rate may significantly change the outcomes and feel of your simulation. This is true for the entire range of values greater than 0, but is more pronounced for higher factors.
 
 .. rst-class:: classref-item-separator
 
