@@ -39,7 +39,7 @@ Godot provides the following objects and classes for 3D navigation:
         - NavObstacle RID
             Reference to a specific avoidance obstacle used to affect and constrain the avoidance velocity of agents.
 
-The following SceneTree Nodes are available as helpers to work with the NavigationServer3D API.
+The following scene tree nodes are available as helpers to work with the NavigationServer3D API.
 
 - :ref:`NavigationRegion3D<class_NavigationRegion3D>` Node
     A Node that holds a Navigation Mesh resource that defines a navigation mesh for the NavigationServer3D.

@@ -12,7 +12,7 @@ and :ref:`NavigationRegion3D<class_NavigationRegion3D>` respectively.
 Individual NavigationRegions upload their 2D NavigationPolygon or 3D NavigationMesh resource data to the NavigationServer.
 The NavigationServer map turns this information into a combined navigation map for pathfinding.
 
-To create a navigation region using the SceneTree add a ``NavigationRegion2D`` or ``NavigationRegion3D`` node to the scene.
+To create a navigation region using the scene tree add a ``NavigationRegion2D`` or ``NavigationRegion3D`` node to the scene.
 All regions require a navigation mesh resource to function. See :ref:`doc_navigation_using_navigationmeshes` to learn how to create and apply navigation meshes.
 
 NavigationRegions will automatically push ``global_transform`` changes to the region on the NavigationServer which makes them suitable for moving platforms.
