@@ -291,6 +291,19 @@ $(document).ready(() => {
     }
   }
 
+  // Change indentation from spaces to tabs for codeblocks.
+  const codeBlocks = document.querySelectorAll('.rst-content div[class^="highlight"] pre');
+  for (const codeBlock of codeBlocks) {
+    const classList = codeBlock.parentNode.parentNode.classList;
+    if (!classList.contains('highlight-gdscript') && !classList.contains('highlight-cpp')) {
+      // Only change indentation for GDScript and C++.
+      continue;
+    }
+    let html = codeBlock.innerHTML;
+    html = html.replace(/(?<=^(<span class="w">)?( {4})*)( {4})/gm, '\t');
+    codeBlock.innerHTML = html;
+  }
+
   // See `godot_is_latest` in conf.py
   const isLatest = document.querySelector('meta[name=doc_is_latest]').content.toLowerCase() === 'true';
   if (isLatest) {
