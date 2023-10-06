@@ -87,7 +87,7 @@ Custom meshes
 ~~~~~~~~~~~~~
 
 Any mesh can be used for :ref:`CSGMesh3D <class_CSGMesh3D>`; the mesh can be
-modelled in other software and imported into Godot. Multiple materials are
+modeled in other software and imported into Godot. Multiple materials are
 supported. There are some restrictions for geometry:
 
 - it must be closed,
