@@ -126,9 +126,9 @@ Target
 Target controls if the editor is contained and debug flags are used.
 All builds are optimized. Each mode means:
 
--  **editor**: Build with editor, optimized, with debugging code (defines: ``TOOLS_ENABLED``, ``DEBUG_ENABLED``, ``-O2``/``/O2``)
--  **template_debug**: Build with C++ debugging symbols (defines: ``DEBUG_ENABLED``, ``-O2``/``/O2``)
--  **template_release**: Build without symbols (defines: ``-O3``/``/O2``)
+-  ``target=editor``: Build with editor, optimized, with debugging code (defines: ``TOOLS_ENABLED``, ``DEBUG_ENABLED``, ``-O2``/``/O2``)
+-  ``target=template_debug``: Build with C++ debugging symbols (defines: ``DEBUG_ENABLED``, ``-O2``/``/O2``)
+-  ``target=template_release``: Build without symbols (defines: ``-O3``/``/O2``)
 
 The editor is enabled by default in all PC targets (Linux, Windows, macOS),
 disabled for everything else. Disabling the editor produces a binary that can
