@@ -36,6 +36,8 @@ Methods
    +-----------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`RID<class_RID>`                                           | :ref:`_create_font<class_TextServerExtension_method__create_font>` **(** **)** |virtual|                                                                                                                                                                                                                                                                                   |
    +-----------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`RID<class_RID>`                                           | :ref:`_create_font_linked_variation<class_TextServerExtension_method__create_font_linked_variation>` **(** :ref:`RID<class_RID>` font_rid **)** |virtual|                                                                                                                                                                                                                  |
+   +-----------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`RID<class_RID>`                                           | :ref:`_create_shaped_text<class_TextServerExtension_method__create_shaped_text>` **(** :ref:`Direction<enum_TextServer_Direction>` direction, :ref:`Orientation<enum_TextServer_Orientation>` orientation **)** |virtual|                                                                                                                                                  |
    +-----------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                            | :ref:`_draw_hex_code_box<class_TextServerExtension_method__draw_hex_code_box>` **(** :ref:`RID<class_RID>` canvas, :ref:`int<class_int>` size, :ref:`Vector2<class_Vector2>` pos, :ref:`int<class_int>` index, :ref:`Color<class_Color>` color **)** |virtual| |const|                                                                                                     |
@@ -467,6 +469,20 @@ void **_cleanup** **(** **)** |virtual|
 .. rst-class:: classref-method
 
 :ref:`RID<class_RID>` **_create_font** **(** **)** |virtual|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_TextServerExtension_method__create_font_linked_variation:
+
+.. rst-class:: classref-method
+
+:ref:`RID<class_RID>` **_create_font_linked_variation** **(** :ref:`RID<class_RID>` font_rid **)** |virtual|
 
 .. container:: contribute
 

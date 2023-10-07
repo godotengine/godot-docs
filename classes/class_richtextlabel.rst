@@ -854,7 +854,7 @@ The number of spaces associated with a single tab length. Does not affect ``\t``
 
 The label's text in BBCode format. Is not representative of manual modifications to the internal tag stack. Erases changes made by other methods when edited.
 
-\ **Note:** If :ref:`bbcode_enabled<class_RichTextLabel_property_bbcode_enabled>` is ``true``, it is unadvised to use the ``+=`` operator with ``text`` (e.g. ``text += "some string"``) as it replaces the whole text and can cause slowdowns. It will also erase all BBCode that was added to stack using ``push_*`` methods. Use :ref:`append_text<class_RichTextLabel_method_append_text>` for adding text instead, unless you absolutely need to close a tag that was opened in an earlier method call.
+\ **Note:** If :ref:`bbcode_enabled<class_RichTextLabel_property_bbcode_enabled>` is ``true``, it is unadvised to use the ``+=`` operator with :ref:`text<class_RichTextLabel_property_text>` (e.g. ``text += "some string"``) as it replaces the whole text and can cause slowdowns. It will also erase all BBCode that was added to stack using ``push_*`` methods. Use :ref:`append_text<class_RichTextLabel_method_append_text>` for adding text instead, unless you absolutely need to close a tag that was opened in an earlier method call.
 
 .. rst-class:: classref-item-separator
 
@@ -2198,7 +2198,7 @@ The default text font size.
 
 :ref:`StyleBox<class_StyleBox>` **focus**
 
-The background used when the **RichTextLabel** is focused. The ``focus`` :ref:`StyleBox<class_StyleBox>` is displayed *over* the base :ref:`StyleBox<class_StyleBox>`, so a partially transparent :ref:`StyleBox<class_StyleBox>` should be used to ensure the base :ref:`StyleBox<class_StyleBox>` remains visible. A :ref:`StyleBox<class_StyleBox>` that represents an outline or an underline works well for this purpose. To disable the focus visual effect, assign a :ref:`StyleBoxEmpty<class_StyleBoxEmpty>` resource. Note that disabling the focus visual effect will harm keyboard/controller navigation usability, so this is not recommended for accessibility reasons.
+The background used when the **RichTextLabel** is focused. The :ref:`focus<class_RichTextLabel_theme_style_focus>` :ref:`StyleBox<class_StyleBox>` is displayed *over* the base :ref:`StyleBox<class_StyleBox>`, so a partially transparent :ref:`StyleBox<class_StyleBox>` should be used to ensure the base :ref:`StyleBox<class_StyleBox>` remains visible. A :ref:`StyleBox<class_StyleBox>` that represents an outline or an underline works well for this purpose. To disable the focus visual effect, assign a :ref:`StyleBoxEmpty<class_StyleBoxEmpty>` resource. Note that disabling the focus visual effect will harm keyboard/controller navigation usability, so this is not recommended for accessibility reasons.
 
 .. rst-class:: classref-item-separator
 

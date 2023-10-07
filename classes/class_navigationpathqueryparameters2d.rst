@@ -171,7 +171,7 @@ Property Descriptions
 - void **set_map** **(** :ref:`RID<class_RID>` value **)**
 - :ref:`RID<class_RID>` **get_map** **(** **)**
 
-The navigation ``map`` :ref:`RID<class_RID>` used in the path query.
+The navigation map :ref:`RID<class_RID>` used in the path query.
 
 .. rst-class:: classref-item-separator
 

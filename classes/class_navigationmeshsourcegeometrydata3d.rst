@@ -64,7 +64,7 @@ Method Descriptions
 
 void **add_faces** **(** :ref:`PackedVector3Array<class_PackedVector3Array>` faces, :ref:`Transform3D<class_Transform3D>` xform **)**
 
-Adds an array of vertex positions to the geometry data for navigation mesh baking to form triangulated faces. For each face the array must have three vertex positions in clockwise winding order. Since :ref:`NavigationMesh<class_NavigationMesh>` resource have no transform all vertex positions need to be offset by the node's transform using the ``xform`` parameter.
+Adds an array of vertex positions to the geometry data for navigation mesh baking to form triangulated faces. For each face the array must have three vertex positions in clockwise winding order. Since :ref:`NavigationMesh<class_NavigationMesh>` resources have no transform, all vertex positions need to be offset by the node's transform using ``xform``.
 
 .. rst-class:: classref-item-separator
 
@@ -76,7 +76,7 @@ Adds an array of vertex positions to the geometry data for navigation mesh bakin
 
 void **add_mesh** **(** :ref:`Mesh<class_Mesh>` mesh, :ref:`Transform3D<class_Transform3D>` xform **)**
 
-Adds the geometry data of a :ref:`Mesh<class_Mesh>` resource to the navigation mesh baking data. The mesh must have valid triangulated mesh data to be considered. Since :ref:`NavigationMesh<class_NavigationMesh>` resource have no transform all vertex positions need to be offset by the node's transform using the ``xform`` parameter.
+Adds the geometry data of a :ref:`Mesh<class_Mesh>` resource to the navigation mesh baking data. The mesh must have valid triangulated mesh data to be considered. Since :ref:`NavigationMesh<class_NavigationMesh>` resources have no transform, all vertex positions need to be offset by the node's transform using ``xform``.
 
 .. rst-class:: classref-item-separator
 
@@ -88,7 +88,7 @@ Adds the geometry data of a :ref:`Mesh<class_Mesh>` resource to the navigation m
 
 void **add_mesh_array** **(** :ref:`Array<class_Array>` mesh_array, :ref:`Transform3D<class_Transform3D>` xform **)**
 
-Adds an :ref:`Array<class_Array>` the size of :ref:`Mesh.ARRAY_MAX<class_Mesh_constant_ARRAY_MAX>` and with vertices at index :ref:`Mesh.ARRAY_VERTEX<class_Mesh_constant_ARRAY_VERTEX>` and indices at index :ref:`Mesh.ARRAY_INDEX<class_Mesh_constant_ARRAY_INDEX>` to the navigation mesh baking data. The array must have valid triangulated mesh data to be considered. Since :ref:`NavigationMesh<class_NavigationMesh>` resource have no transform all vertex positions need to be offset by the node's transform using the ``xform`` parameter.
+Adds an :ref:`Array<class_Array>` the size of :ref:`Mesh.ARRAY_MAX<class_Mesh_constant_ARRAY_MAX>` and with vertices at index :ref:`Mesh.ARRAY_VERTEX<class_Mesh_constant_ARRAY_VERTEX>` and indices at index :ref:`Mesh.ARRAY_INDEX<class_Mesh_constant_ARRAY_INDEX>` to the navigation mesh baking data. The array must have valid triangulated mesh data to be considered. Since :ref:`NavigationMesh<class_NavigationMesh>` resources have no transform, all vertex positions need to be offset by the node's transform using ``xform``.
 
 .. rst-class:: classref-item-separator
 

@@ -970,7 +970,7 @@ Changes the file reading/writing cursor to the specified position (in bytes from
 
 :ref:`Error<enum_@GlobalScope_Error>` **set_hidden_attribute** **(** :ref:`String<class_String>` file, :ref:`bool<class_bool>` hidden **)** |static|
 
-Sets file ``hidden`` attribute.
+Sets file **hidden** attribute.
 
 \ **Note:** This method is implemented on iOS, BSD, macOS, and Windows.
 
@@ -984,7 +984,7 @@ Sets file ``hidden`` attribute.
 
 :ref:`Error<enum_@GlobalScope_Error>` **set_read_only_attribute** **(** :ref:`String<class_String>` file, :ref:`bool<class_bool>` ro **)** |static|
 
-Sets file ``read only`` attribute.
+Sets file **read only** attribute.
 
 \ **Note:** This method is implemented on iOS, BSD, macOS, and Windows.
 

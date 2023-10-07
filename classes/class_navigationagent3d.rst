@@ -628,7 +628,7 @@ The distance threshold before the final target point is considered to be reached
 - void **set_target_position** **(** :ref:`Vector3<class_Vector3>` value **)**
 - :ref:`Vector3<class_Vector3>` **get_target_position** **(** **)**
 
-If set a new navigation path from the current agent position to the :ref:`target_position<class_NavigationAgent3D_property_target_position>` is requested from the NavigationServer.
+If set, a new navigation path from the current agent position to the :ref:`target_position<class_NavigationAgent3D_property_target_position>` is requested from the NavigationServer.
 
 .. rst-class:: classref-item-separator
 

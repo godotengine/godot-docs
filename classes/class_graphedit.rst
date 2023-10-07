@@ -21,7 +21,7 @@ Description
 
 **GraphEdit** provides tools for creation, manipulation, and display of various graphs. Its main purpose in the engine is to power the visual programming systems, such as visual shaders, but it is also available for use in user projects.
 
-\ **GraphEdit** by itself is only an empty container, representing an infinite grid where :ref:`GraphNode<class_GraphNode>`\ s can be placed. Each :ref:`GraphNode<class_GraphNode>` represents a node in the graph, a single unit of data in the connected scheme. **GraphEdit**, in turn, helps to control various interactions with nodes and between nodes. When the user attempts to connect, disconnect, or close a :ref:`GraphNode<class_GraphNode>`, a signal is emitted in the **GraphEdit**, but no action is taken by default. It is the responsibility of the programmer utilizing this control to implement the necessary logic to determine how each request should be handled.
+\ **GraphEdit** by itself is only an empty container, representing an infinite grid where :ref:`GraphNode<class_GraphNode>`\ s can be placed. Each :ref:`GraphNode<class_GraphNode>` represents a node in the graph, a single unit of data in the connected scheme. **GraphEdit**, in turn, helps to control various interactions with nodes and between nodes. When the user attempts to connect, disconnect, or delete a :ref:`GraphNode<class_GraphNode>`, a signal is emitted in the **GraphEdit**, but no action is taken by default. It is the responsibility of the programmer utilizing this control to implement the necessary logic to determine how each request should be handled.
 
 \ **Performance:** It is greatly advised to enable low-processor usage mode (see :ref:`OS.low_processor_usage_mode<class_OS_property_low_processor_usage_mode>`) when using GraphEdits.
 
@@ -33,8 +33,6 @@ Properties
 .. table::
    :widths: auto
 
-   +----------------------------------------------------+--------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                            | :ref:`arrange_nodes_button_hidden<class_GraphEdit_property_arrange_nodes_button_hidden>`   | ``false``                                                                 |
    +----------------------------------------------------+--------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                            | clip_contents                                                                              | ``true`` (overrides :ref:`Control<class_Control_property_clip_contents>`) |
    +----------------------------------------------------+--------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
@@ -58,7 +56,17 @@ Properties
    +----------------------------------------------------+--------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
    | :ref:`Vector2<class_Vector2>`                      | :ref:`scroll_offset<class_GraphEdit_property_scroll_offset>`                               | ``Vector2(0, 0)``                                                         |
    +----------------------------------------------------+--------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                            | :ref:`show_arrange_button<class_GraphEdit_property_show_arrange_button>`                   | ``true``                                                                  |
+   +----------------------------------------------------+--------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                            | :ref:`show_grid<class_GraphEdit_property_show_grid>`                                       | ``true``                                                                  |
+   +----------------------------------------------------+--------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                            | :ref:`show_grid_buttons<class_GraphEdit_property_show_grid_buttons>`                       | ``true``                                                                  |
+   +----------------------------------------------------+--------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                            | :ref:`show_menu<class_GraphEdit_property_show_menu>`                                       | ``true``                                                                  |
+   +----------------------------------------------------+--------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                            | :ref:`show_minimap_button<class_GraphEdit_property_show_minimap_button>`                   | ``true``                                                                  |
+   +----------------------------------------------------+--------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                            | :ref:`show_zoom_buttons<class_GraphEdit_property_show_zoom_buttons>`                       | ``true``                                                                  |
    +----------------------------------------------------+--------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                            | :ref:`show_zoom_label<class_GraphEdit_property_show_zoom_label>`                           | ``false``                                                                 |
    +----------------------------------------------------+--------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
@@ -166,6 +174,8 @@ Theme Properties
    +-----------------------------------+--------------------------------------------------------------------------------------------+--------------------------+
    | :ref:`Texture2D<class_Texture2D>` | :ref:`zoom_reset<class_GraphEdit_theme_icon_zoom_reset>`                                   |                          |
    +-----------------------------------+--------------------------------------------------------------------------------------------+--------------------------+
+   | :ref:`StyleBox<class_StyleBox>`   | :ref:`menu_panel<class_GraphEdit_theme_style_menu_panel>`                                  |                          |
+   +-----------------------------------+--------------------------------------------------------------------------------------------+--------------------------+
    | :ref:`StyleBox<class_StyleBox>`   | :ref:`panel<class_GraphEdit_theme_style_panel>`                                            |                          |
    +-----------------------------------+--------------------------------------------------------------------------------------------+--------------------------+
 
@@ -185,18 +195,6 @@ Signals
 **begin_node_move** **(** **)**
 
 Emitted at the beginning of a GraphNode movement.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_GraphEdit_signal_close_nodes_request:
-
-.. rst-class:: classref-signal
-
-**close_nodes_request** **(** :ref:`StringName[]<class_StringName>` nodes **)**
-
-Emitted when attempting to remove a GraphNode from the GraphEdit. Provides a list of node names to be removed (all selected nodes, excluding nodes without closing button).
 
 .. rst-class:: classref-item-separator
 
@@ -269,6 +267,18 @@ Emitted when user drags a connection from an output port into the empty space of
 **copy_nodes_request** **(** **)**
 
 Emitted when the user presses :kbd:`Ctrl + C`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_GraphEdit_signal_delete_nodes_request:
+
+.. rst-class:: classref-signal
+
+**delete_nodes_request** **(** :ref:`StringName[]<class_StringName>` nodes **)**
+
+Emitted when attempting to remove a GraphNode from the GraphEdit. Provides a list of node names to be removed (all selected nodes, excluding nodes without closing button).
 
 .. rst-class:: classref-item-separator
 
@@ -407,23 +417,6 @@ enum **PanningScheme**:
 
 Property Descriptions
 ---------------------
-
-.. _class_GraphEdit_property_arrange_nodes_button_hidden:
-
-.. rst-class:: classref-property
-
-:ref:`bool<class_bool>` **arrange_nodes_button_hidden** = ``false``
-
-.. rst-class:: classref-property-setget
-
-- void **set_arrange_nodes_button_hidden** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_arrange_nodes_button_hidden** **(** **)**
-
-If ``true``, the Arrange Nodes button is hidden.
-
-.. rst-class:: classref-item-separator
-
-----
 
 .. _class_GraphEdit_property_connection_lines_antialiased:
 
@@ -578,6 +571,23 @@ The scroll offset.
 
 ----
 
+.. _class_GraphEdit_property_show_arrange_button:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **show_arrange_button** = ``true``
+
+.. rst-class:: classref-property-setget
+
+- void **set_show_arrange_button** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_showing_arrange_button** **(** **)**
+
+If ``true``, the button to automatically arrange graph nodes is visible.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_GraphEdit_property_show_grid:
 
 .. rst-class:: classref-property
@@ -595,6 +605,74 @@ If ``true``, the grid is visible.
 
 ----
 
+.. _class_GraphEdit_property_show_grid_buttons:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **show_grid_buttons** = ``true``
+
+.. rst-class:: classref-property-setget
+
+- void **set_show_grid_buttons** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_showing_grid_buttons** **(** **)**
+
+If ``true``, buttons that allow to configure grid and snapping options are visible.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_GraphEdit_property_show_menu:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **show_menu** = ``true``
+
+.. rst-class:: classref-property-setget
+
+- void **set_show_menu** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_showing_menu** **(** **)**
+
+If ``true``, the menu toolbar is visible.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_GraphEdit_property_show_minimap_button:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **show_minimap_button** = ``true``
+
+.. rst-class:: classref-property-setget
+
+- void **set_show_minimap_button** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_showing_minimap_button** **(** **)**
+
+If ``true``, the button to toggle the minimap is visible.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_GraphEdit_property_show_zoom_buttons:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **show_zoom_buttons** = ``true``
+
+.. rst-class:: classref-property-setget
+
+- void **set_show_zoom_buttons** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_showing_zoom_buttons** **(** **)**
+
+If ``true``, buttons that allow to change and reset the zoom level are visible.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_GraphEdit_property_show_zoom_label:
 
 .. rst-class:: classref-property
@@ -606,7 +684,7 @@ If ``true``, the grid is visible.
 - void **set_show_zoom_label** **(** :ref:`bool<class_bool>` value **)**
 - :ref:`bool<class_bool>` **is_showing_zoom_label** **(** **)**
 
-If ``true``, makes a label with the current zoom level visible. The zoom value is displayed in percents.
+If ``true``, the label with the current zoom level is visible. The zoom level is displayed in percents.
 
 .. rst-class:: classref-item-separator
 
@@ -1210,6 +1288,20 @@ The icon for the zoom out button.
 :ref:`Texture2D<class_Texture2D>` **zoom_reset**
 
 The icon for the zoom reset button.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_GraphEdit_theme_style_menu_panel:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`StyleBox<class_StyleBox>` **menu_panel**
+
+.. container:: contribute
+
+	There is currently no description for this theme property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 .. rst-class:: classref-item-separator
 

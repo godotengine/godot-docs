@@ -202,7 +202,7 @@ Boolean constant. If ``1``, the grabber texture size will be ignored and it will
 
 :ref:`int<class_int>` **grabber_offset** = ``0``
 
-Vertical/horizontal offset of the grabber.
+Vertical or horizontal offset of the grabber.
 
 .. rst-class:: classref-item-separator
 
@@ -262,7 +262,7 @@ The texture for the ticks, visible when :ref:`tick_count<class_Slider_property_t
 
 :ref:`StyleBox<class_StyleBox>` **grabber_area**
 
-The background of the area to the left/bottom of the grabber.
+The background of the area to the left or bottom of the grabber.
 
 .. rst-class:: classref-item-separator
 
@@ -274,7 +274,7 @@ The background of the area to the left/bottom of the grabber.
 
 :ref:`StyleBox<class_StyleBox>` **grabber_area_highlight**
 
-The background of the area to the left/bottom of the grabber that displays when it's being hovered or focused.
+The background of the area to the left or bottom of the grabber that displays when it's being hovered or focused.
 
 .. rst-class:: classref-item-separator
 
@@ -286,7 +286,7 @@ The background of the area to the left/bottom of the grabber that displays when 
 
 :ref:`StyleBox<class_StyleBox>` **slider**
 
-The background for the whole slider. Determines the height/width of the ``grabber_area``.
+The background for the whole slider. Affects the height or width of the :ref:`grabber_area<class_Slider_theme_style_grabber_area>`.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

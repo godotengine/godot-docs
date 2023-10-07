@@ -88,6 +88,10 @@ Methods
    +-----------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Theme<class_Theme>`                                 | :ref:`get_editor_theme<class_EditorInterface_method_get_editor_theme>` **(** **)** |const|                                                                                                                                                             |
    +-----------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`SubViewport<class_SubViewport>`                     | :ref:`get_editor_viewport_2d<class_EditorInterface_method_get_editor_viewport_2d>` **(** **)** |const|                                                                                                                                                 |
+   +-----------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`SubViewport<class_SubViewport>`                     | :ref:`get_editor_viewport_3d<class_EditorInterface_method_get_editor_viewport_3d>` **(** :ref:`int<class_int>` idx=0 **)** |const|                                                                                                                     |
+   +-----------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`FileSystemDock<class_FileSystemDock>`               | :ref:`get_file_system_dock<class_EditorInterface_method_get_file_system_dock>` **(** **)** |const|                                                                                                                                                     |
    +-----------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`EditorInspector<class_EditorInspector>`             | :ref:`get_inspector<class_EditorInterface_method_get_inspector>` **(** **)** |const|                                                                                                                                                                   |
@@ -378,6 +382,30 @@ Returns the editor's :ref:`EditorSettings<class_EditorSettings>` instance.
 Returns the editor's :ref:`Theme<class_Theme>`.
 
 \ **Note:** When creating custom editor UI, prefer accessing theme items directly from your GUI nodes using the ``get_theme_*`` methods.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorInterface_method_get_editor_viewport_2d:
+
+.. rst-class:: classref-method
+
+:ref:`SubViewport<class_SubViewport>` **get_editor_viewport_2d** **(** **)** |const|
+
+Returns the 2D editor :ref:`SubViewport<class_SubViewport>`. It does not have a camera. Instead, the view transforms are done directly and can be accessed with :ref:`Viewport.global_canvas_transform<class_Viewport_property_global_canvas_transform>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorInterface_method_get_editor_viewport_3d:
+
+.. rst-class:: classref-method
+
+:ref:`SubViewport<class_SubViewport>` **get_editor_viewport_3d** **(** :ref:`int<class_int>` idx=0 **)** |const|
+
+Returns the specified 3D editor :ref:`SubViewport<class_SubViewport>`, from ``0`` to ``3``. The viewport can be used to access the active editor cameras with :ref:`Viewport.get_camera_3d<class_Viewport_method_get_camera_3d>`.
 
 .. rst-class:: classref-item-separator
 
@@ -755,7 +783,7 @@ A feature profile can be created programmatically using the :ref:`EditorFeatureP
 
 void **set_main_screen_editor** **(** :ref:`String<class_String>` name **)**
 
-Sets the editor's current main screen to the one specified in ``name``. ``name`` must match the text of the tab in question exactly (``2D``, ``3D``, ``Script``, ``AssetLib``).
+Sets the editor's current main screen to the one specified in ``name``. ``name`` must match the title of the tab in question exactly (e.g. ``2D``, ``3D``, ``Script``, or ``AssetLib`` for default tabs).
 
 .. rst-class:: classref-item-separator
 

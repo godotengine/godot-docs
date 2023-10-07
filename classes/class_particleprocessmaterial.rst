@@ -1006,7 +1006,7 @@ Unit vector specifying the particles' emission direction.
 - void **set_emission_box_extents** **(** :ref:`Vector3<class_Vector3>` value **)**
 - :ref:`Vector3<class_Vector3>` **get_emission_box_extents** **(** **)**
 
-The box's extents if ``emission_shape`` is set to :ref:`EMISSION_SHAPE_BOX<class_ParticleProcessMaterial_constant_EMISSION_SHAPE_BOX>`.
+The box's extents if :ref:`emission_shape<class_ParticleProcessMaterial_property_emission_shape>` is set to :ref:`EMISSION_SHAPE_BOX<class_ParticleProcessMaterial_constant_EMISSION_SHAPE_BOX>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1059,7 +1059,7 @@ Particle velocity and rotation will be set by sampling this texture at the same 
 - void **set_emission_point_count** **(** :ref:`int<class_int>` value **)**
 - :ref:`int<class_int>` **get_emission_point_count** **(** **)**
 
-The number of emission points if ``emission_shape`` is set to :ref:`EMISSION_SHAPE_POINTS<class_ParticleProcessMaterial_constant_EMISSION_SHAPE_POINTS>` or :ref:`EMISSION_SHAPE_DIRECTED_POINTS<class_ParticleProcessMaterial_constant_EMISSION_SHAPE_DIRECTED_POINTS>`.
+The number of emission points if :ref:`emission_shape<class_ParticleProcessMaterial_property_emission_shape>` is set to :ref:`EMISSION_SHAPE_POINTS<class_ParticleProcessMaterial_constant_EMISSION_SHAPE_POINTS>` or :ref:`EMISSION_SHAPE_DIRECTED_POINTS<class_ParticleProcessMaterial_constant_EMISSION_SHAPE_DIRECTED_POINTS>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1178,7 +1178,7 @@ Particles will be emitted inside this region. Use :ref:`EmissionShape<enum_Parti
 - void **set_emission_sphere_radius** **(** :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_emission_sphere_radius** **(** **)**
 
-The sphere's radius if ``emission_shape`` is set to :ref:`EMISSION_SHAPE_SPHERE<class_ParticleProcessMaterial_constant_EMISSION_SHAPE_SPHERE>`.
+The sphere's radius if :ref:`emission_shape<class_ParticleProcessMaterial_property_emission_shape>` is set to :ref:`EMISSION_SHAPE_SPHERE<class_ParticleProcessMaterial_constant_EMISSION_SHAPE_SPHERE>`.
 
 .. rst-class:: classref-item-separator
 

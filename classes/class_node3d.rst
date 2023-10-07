@@ -21,7 +21,7 @@ Most basic 3D game object, parent of all 3D-related nodes.
 Description
 -----------
 
-Most basic 3D game object, with a :ref:`Transform3D<class_Transform3D>` and visibility settings. All other 3D game objects inherit from Node3D. Use **Node3D** as a parent node to move, scale, rotate and show/hide children in a 3D project.
+Most basic 3D game object, with a :ref:`Transform3D<class_Transform3D>` and visibility settings. All other 3D game objects inherit from **Node3D**. Use **Node3D** as a parent node to move, scale, rotate and show/hide children in a 3D project.
 
 Affine operations (rotate, scale, translate) happen in parent's local coordinate system, unless the **Node3D** object is set as top-level. Affine operations in this coordinate system correspond to direct affine operations on the **Node3D**'s transform. The word local below refers to this coordinate system. The coordinate system that is attached to the **Node3D** object itself is referred to as object-local coordinate system.
 
@@ -235,7 +235,7 @@ Constants
 
 **NOTIFICATION_TRANSFORM_CHANGED** = ``2000``
 
-Node3D nodes receives this notification when their global transform changes. This means that either the current or a parent node changed its transform.
+**Node3D** nodes receive this notification when their global transform changes. This means that either the current or a parent node changed its transform.
 
 In order for :ref:`NOTIFICATION_TRANSFORM_CHANGED<class_Node3D_constant_NOTIFICATION_TRANSFORM_CHANGED>` to work, users first need to ask for it, with :ref:`set_notify_transform<class_Node3D_method_set_notify_transform>`. The notification is also sent if the node is in the editor context and it has at least one valid gizmo.
 
@@ -245,7 +245,7 @@ In order for :ref:`NOTIFICATION_TRANSFORM_CHANGED<class_Node3D_constant_NOTIFICA
 
 **NOTIFICATION_ENTER_WORLD** = ``41``
 
-Node3D nodes receives this notification when they are registered to new :ref:`World3D<class_World3D>` resource.
+**Node3D** nodes receive this notification when they are registered to new :ref:`World3D<class_World3D>` resource.
 
 .. _class_Node3D_constant_NOTIFICATION_EXIT_WORLD:
 
@@ -253,7 +253,7 @@ Node3D nodes receives this notification when they are registered to new :ref:`Wo
 
 **NOTIFICATION_EXIT_WORLD** = ``42``
 
-Node3D nodes receives this notification when they are unregistered from current :ref:`World3D<class_World3D>` resource.
+**Node3D** nodes receive this notification when they are unregistered from current :ref:`World3D<class_World3D>` resource.
 
 .. _class_Node3D_constant_NOTIFICATION_VISIBILITY_CHANGED:
 
@@ -261,7 +261,7 @@ Node3D nodes receives this notification when they are unregistered from current 
 
 **NOTIFICATION_VISIBILITY_CHANGED** = ``43``
 
-Node3D nodes receives this notification when their visibility changes.
+**Node3D** nodes receive this notification when their visibility changes.
 
 .. _class_Node3D_constant_NOTIFICATION_LOCAL_TRANSFORM_CHANGED:
 
@@ -269,7 +269,7 @@ Node3D nodes receives this notification when their visibility changes.
 
 **NOTIFICATION_LOCAL_TRANSFORM_CHANGED** = ``44``
 
-Node3D nodes receives this notification when their local transform changes. This is not received when the transform of a parent node is changed.
+**Node3D** nodes receive this notification when their local transform changes. This is not received when the transform of a parent node is changed.
 
 In order for :ref:`NOTIFICATION_LOCAL_TRANSFORM_CHANGED<class_Node3D_constant_NOTIFICATION_LOCAL_TRANSFORM_CHANGED>` to work, users first need to ask for it, with :ref:`set_notify_local_transform<class_Node3D_method_set_notify_local_transform>`.
 
@@ -592,7 +592,9 @@ Method Descriptions
 
 void **add_gizmo** **(** :ref:`Node3DGizmo<class_Node3DGizmo>` gizmo **)**
 
-Attach a gizmo to this ``Node3D``.
+Attach an editor gizmo to this **Node3D**.
+
+\ **Note:** The gizmo object would typically be an instance of :ref:`EditorNode3DGizmo<class_EditorNode3DGizmo>`, but the argument type is kept generic to avoid creating a dependency on editor classes in **Node3D**.
 
 .. rst-class:: classref-item-separator
 
@@ -604,7 +606,7 @@ Attach a gizmo to this ``Node3D``.
 
 void **clear_gizmos** **(** **)**
 
-Clear all gizmos attached to this ``Node3D``.
+Clear all gizmos attached to this **Node3D**.
 
 .. rst-class:: classref-item-separator
 
@@ -640,7 +642,7 @@ Forces the transform to update. Transform changes in physics are not instant for
 
 :ref:`Node3DGizmo[]<class_Node3DGizmo>` **get_gizmos** **(** **)** |const|
 
-Returns all the gizmos attached to this ``Node3D``.
+Returns all the gizmos attached to this **Node3D**.
 
 .. rst-class:: classref-item-separator
 
@@ -950,6 +952,8 @@ void **set_subgizmo_selection** **(** :ref:`Node3DGizmo<class_Node3DGizmo>` gizm
 
 Set subgizmo selection for this node in the editor.
 
+\ **Note:** The gizmo object would typically be an instance of :ref:`EditorNode3DGizmo<class_EditorNode3DGizmo>`, but the argument type is kept generic to avoid creating a dependency on editor classes in **Node3D**.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -1022,7 +1026,7 @@ Changes the node's position by the given offset :ref:`Vector3<class_Vector3>` in
 
 void **update_gizmos** **(** **)**
 
-Updates all the :ref:`Node3DGizmo<class_Node3DGizmo>`\ s attached to this node.
+Updates all the **Node3D** gizmos attached to this node.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

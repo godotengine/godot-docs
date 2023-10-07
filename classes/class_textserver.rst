@@ -34,6 +34,8 @@ Methods
    +-----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`RID<class_RID>`                                           | :ref:`create_font<class_TextServer_method_create_font>` **(** **)**                                                                                                                                                                                                                                                                                                    |
    +-----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`RID<class_RID>`                                           | :ref:`create_font_linked_variation<class_TextServer_method_create_font_linked_variation>` **(** :ref:`RID<class_RID>` font_rid **)**                                                                                                                                                                                                                                   |
+   +-----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`RID<class_RID>`                                           | :ref:`create_shaped_text<class_TextServer_method_create_shaped_text>` **(** :ref:`Direction<enum_TextServer_Direction>` direction=0, :ref:`Orientation<enum_TextServer_Orientation>` orientation=0 **)**                                                                                                                                                               |
    +-----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                            | :ref:`draw_hex_code_box<class_TextServer_method_draw_hex_code_box>` **(** :ref:`RID<class_RID>` canvas, :ref:`int<class_int>` size, :ref:`Vector2<class_Vector2>` pos, :ref:`int<class_int>` index, :ref:`Color<class_Color>` color **)** |const|                                                                                                                      |
@@ -1454,9 +1456,7 @@ BiDi override for email.
 
 :ref:`StructuredTextParser<enum_TextServer_StructuredTextParser>` **STRUCTURED_TEXT_LIST** = ``4``
 
-BiDi override for lists.
-
-Structured text options: list separator ``String``.
+BiDi override for lists. Structured text options: list separator :ref:`String<class_String>`.
 
 .. _class_TextServer_constant_STRUCTURED_TEXT_GDSCRIPT:
 
@@ -1490,6 +1490,18 @@ Method Descriptions
 :ref:`RID<class_RID>` **create_font** **(** **)**
 
 Creates a new, empty font cache entry resource. To free the resulting resource, use the :ref:`free_rid<class_TextServer_method_free_rid>` method.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_TextServer_method_create_font_linked_variation:
+
+.. rst-class:: classref-method
+
+:ref:`RID<class_RID>` **create_font_linked_variation** **(** :ref:`RID<class_RID>` font_rid **)**
+
+Creates a new variation existing font which is reusing the same glyph cache and font data. To free the resulting resource, use the :ref:`free_rid<class_TextServer_method_free_rid>` method.
 
 .. rst-class:: classref-item-separator
 
@@ -1747,7 +1759,7 @@ Returns glyph advance (offset of the next glyph).
 
 :ref:`Dictionary<class_Dictionary>` **font_get_glyph_contours** **(** :ref:`RID<class_RID>` font, :ref:`int<class_int>` size, :ref:`int<class_int>` index **)** |const|
 
-Returns outline contours of the glyph as a ``Dictionary`` with the following contents:
+Returns outline contours of the glyph as a :ref:`Dictionary<class_Dictionary>` with the following contents:
 
 \ ``points``         - :ref:`PackedVector3Array<class_PackedVector3Array>`, containing outline points. ``x`` and ``y`` are point coordinates. ``z`` is the type of the point, using the :ref:`ContourPointTag<enum_TextServer_ContourPointTag>` values.
 
@@ -2033,7 +2045,7 @@ Returns list of script support overrides.
 
 :ref:`Vector2i[]<class_Vector2i>` **font_get_size_cache_list** **(** :ref:`RID<class_RID>` font_rid **)** |const|
 
-Returns list of the font sizes in the cache. Each size is ``Vector2i`` with font size and outline size.
+Returns list of the font sizes in the cache. Each size is :ref:`Vector2i<class_Vector2i>` with font size and outline size.
 
 .. rst-class:: classref-item-separator
 

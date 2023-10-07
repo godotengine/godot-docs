@@ -438,7 +438,7 @@ Returns ``true`` if the transform's basis is conformal, meaning it preserves ang
 
 :ref:`bool<class_bool>` **is_equal_approx** **(** :ref:`Transform2D<class_Transform2D>` xform **)** |const|
 
-Returns ``true`` if this transform and ``xform`` are approximately equal, by calling ``is_equal_approx`` on each component.
+Returns ``true`` if this transform and ``xform`` are approximately equal, by running :ref:`@GlobalScope.is_equal_approx<class_@GlobalScope_method_is_equal_approx>` on each component.
 
 .. rst-class:: classref-item-separator
 

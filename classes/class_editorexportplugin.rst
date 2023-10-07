@@ -471,9 +471,9 @@ void **add_ios_embedded_framework** **(** :ref:`String<class_String>` path **)**
 
 Adds a dynamic library (\*.dylib, \*.framework) to Linking Phase in iOS's Xcode project and embeds it into resulting binary.
 
-\ **Note:** For static libraries (\*.a) works in same way as ``add_ios_framework``.
+\ **Note:** For static libraries (\*.a) works in same way as :ref:`add_ios_framework<class_EditorExportPlugin_method_add_ios_framework>`.
 
-This method should not be used for System libraries as they are already present on the device.
+\ **Note:** This method should not be used for System libraries as they are already present on the device.
 
 .. rst-class:: classref-item-separator
 

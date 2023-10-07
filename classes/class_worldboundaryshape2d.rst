@@ -74,7 +74,7 @@ In the scalar equation of the line ``ax + by = d``, this is ``d``, while the ``(
 - void **set_normal** **(** :ref:`Vector2<class_Vector2>` value **)**
 - :ref:`Vector2<class_Vector2>` **get_normal** **(** **)**
 
-The line's normal, typically a unit vector. Its direction indicates the non-colliding half-plane. Can be of any length but zero. Defaults to ``Vector2.UP``.
+The line's normal, typically a unit vector. Its direction indicates the non-colliding half-plane. Can be of any length but zero. Defaults to :ref:`Vector2.UP<class_Vector2_constant_UP>`.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

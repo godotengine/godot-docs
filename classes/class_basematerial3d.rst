@@ -2039,7 +2039,7 @@ If ``true``, the object receives no shadow that would otherwise be cast onto it.
 
 Distance at which the object appears fully opaque.
 
-\ **Note:** If ``distance_fade_max_distance`` is less than ``distance_fade_min_distance``, the behavior will be reversed. The object will start to fade away at ``distance_fade_max_distance`` and will fully disappear once it reaches ``distance_fade_min_distance``.
+\ **Note:** If :ref:`distance_fade_max_distance<class_BaseMaterial3D_property_distance_fade_max_distance>` is less than :ref:`distance_fade_min_distance<class_BaseMaterial3D_property_distance_fade_min_distance>`, the behavior will be reversed. The object will start to fade away at :ref:`distance_fade_max_distance<class_BaseMaterial3D_property_distance_fade_max_distance>` and will fully disappear once it reaches :ref:`distance_fade_min_distance<class_BaseMaterial3D_property_distance_fade_min_distance>`.
 
 .. rst-class:: classref-item-separator
 
@@ -2058,7 +2058,7 @@ Distance at which the object appears fully opaque.
 
 Distance at which the object starts to become visible. If the object is less than this distance away, it will be invisible.
 
-\ **Note:** If ``distance_fade_min_distance`` is greater than ``distance_fade_max_distance``, the behavior will be reversed. The object will start to fade away at ``distance_fade_max_distance`` and will fully disappear once it reaches ``distance_fade_min_distance``.
+\ **Note:** If :ref:`distance_fade_min_distance<class_BaseMaterial3D_property_distance_fade_min_distance>` is greater than :ref:`distance_fade_max_distance<class_BaseMaterial3D_property_distance_fade_max_distance>`, the behavior will be reversed. The object will start to fade away at :ref:`distance_fade_max_distance<class_BaseMaterial3D_property_distance_fade_max_distance>` and will fully disappear once it reaches :ref:`distance_fade_min_distance<class_BaseMaterial3D_property_distance_fade_min_distance>`.
 
 .. rst-class:: classref-item-separator
 

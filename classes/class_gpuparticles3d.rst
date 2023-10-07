@@ -21,7 +21,7 @@ Description
 
 3D particle node used to create a variety of particle systems and effects. **GPUParticles3D** features an emitter that generates some number of particles at a given rate.
 
-Use the ``process_material`` property to add a :ref:`ParticleProcessMaterial<class_ParticleProcessMaterial>` to configure particle appearance and behavior. Alternatively, you can add a :ref:`ShaderMaterial<class_ShaderMaterial>` which will be applied to all particles.
+Use :ref:`process_material<class_GPUParticles3D_property_process_material>` to add a :ref:`ParticleProcessMaterial<class_ParticleProcessMaterial>` to configure particle appearance and behavior. Alternatively, you can add a :ref:`ShaderMaterial<class_ShaderMaterial>` which will be applied to all particles.
 
 .. rst-class:: classref-introduction-group
 
@@ -591,7 +591,7 @@ If ``true``, particles use the parent node's coordinate space (known as local co
 - void **set_one_shot** **(** :ref:`bool<class_bool>` value **)**
 - :ref:`bool<class_bool>` **get_one_shot** **(** **)**
 
-If ``true``, only ``amount`` particles will be emitted.
+If ``true``, only the number of particles equal to :ref:`amount<class_GPUParticles3D_property_amount>` will be emitted.
 
 .. rst-class:: classref-item-separator
 

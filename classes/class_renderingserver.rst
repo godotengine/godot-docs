@@ -569,6 +569,8 @@ Methods
    +----------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                                                            | :ref:`mesh_surface_get_format_attribute_stride<class_RenderingServer_method_mesh_surface_get_format_attribute_stride>` **(** |bitfield|\<:ref:`ArrayFormat<enum_RenderingServer_ArrayFormat>`\> format, :ref:`int<class_int>` vertex_count **)** |const|                                                                                                                                                                                                                                                                                                                                                                                                                           |
    +----------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                                                            | :ref:`mesh_surface_get_format_normal_tangent_stride<class_RenderingServer_method_mesh_surface_get_format_normal_tangent_stride>` **(** |bitfield|\<:ref:`ArrayFormat<enum_RenderingServer_ArrayFormat>`\> format, :ref:`int<class_int>` vertex_count **)** |const|                                                                                                                                                                                                                                                                                                                                                                                                                 |
+   +----------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                                                            | :ref:`mesh_surface_get_format_offset<class_RenderingServer_method_mesh_surface_get_format_offset>` **(** |bitfield|\<:ref:`ArrayFormat<enum_RenderingServer_ArrayFormat>`\> format, :ref:`int<class_int>` vertex_count, :ref:`int<class_int>` array_index **)** |const|                                                                                                                                                                                                                                                                                                                                                                                                            |
    +----------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                                                            | :ref:`mesh_surface_get_format_skin_stride<class_RenderingServer_method_mesh_surface_get_format_skin_stride>` **(** |bitfield|\<:ref:`ArrayFormat<enum_RenderingServer_ArrayFormat>`\> format, :ref:`int<class_int>` vertex_count **)** |const|                                                                                                                                                                                                                                                                                                                                                                                                                                     |
@@ -1596,7 +1598,63 @@ Flag used to mark that the array uses 8 bone weights instead of 4.
 
 :ref:`ArrayFormat<enum_RenderingServer_ArrayFormat>` **ARRAY_FLAG_USES_EMPTY_VERTEX_ARRAY** = ``268435456``
 
+Flag used to mark that the mesh does not have a vertex array and instead will infer vertex positions in the shader using indices and other information.
 
+.. _class_RenderingServer_constant_ARRAY_FLAG_COMPRESS_ATTRIBUTES:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ArrayFormat<enum_RenderingServer_ArrayFormat>` **ARRAY_FLAG_COMPRESS_ATTRIBUTES** = ``536870912``
+
+Flag used to mark that a mesh is using compressed attributes (vertices, normals, tangents, uvs). When this form of compression is enabled, vertex positions will be packed into into an RGBA16UNORM attribute and scaled in the vertex shader. The normal and tangent will be packed into a RG16UNORM representing an axis, and an 16 bit float stored in the A-channel of the vertex. UVs will use 16-bit normalized floats instead of full 32 bit signed floats. When using this compression mode you must either use vertices, normals, and tangents or only vertices. You cannot use normals without tangents. Importers will automatically enable this compression if they can.
+
+.. _class_RenderingServer_constant_ARRAY_FLAG_FORMAT_VERSION_BASE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ArrayFormat<enum_RenderingServer_ArrayFormat>` **ARRAY_FLAG_FORMAT_VERSION_BASE** = ``35``
+
+Flag used to mark the start of the bits used to store the mesh version.
+
+.. _class_RenderingServer_constant_ARRAY_FLAG_FORMAT_VERSION_SHIFT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ArrayFormat<enum_RenderingServer_ArrayFormat>` **ARRAY_FLAG_FORMAT_VERSION_SHIFT** = ``35``
+
+Flag used to shift a mesh format int to bring the version into the lowest digits.
+
+.. _class_RenderingServer_constant_ARRAY_FLAG_FORMAT_VERSION_1:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ArrayFormat<enum_RenderingServer_ArrayFormat>` **ARRAY_FLAG_FORMAT_VERSION_1** = ``0``
+
+Flag used to record the format used by prior mesh versions before the introduction of a version.
+
+.. _class_RenderingServer_constant_ARRAY_FLAG_FORMAT_VERSION_2:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ArrayFormat<enum_RenderingServer_ArrayFormat>` **ARRAY_FLAG_FORMAT_VERSION_2** = ``34359738368``
+
+Flag used to record the second iteration of the mesh version flag. The primary difference between this and :ref:`ARRAY_FLAG_FORMAT_VERSION_1<class_RenderingServer_constant_ARRAY_FLAG_FORMAT_VERSION_1>` is that this version supports :ref:`ARRAY_FLAG_COMPRESS_ATTRIBUTES<class_RenderingServer_constant_ARRAY_FLAG_COMPRESS_ATTRIBUTES>` and in this version vertex positions are de-interleaved from normals and tangents.
+
+.. _class_RenderingServer_constant_ARRAY_FLAG_FORMAT_CURRENT_VERSION:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ArrayFormat<enum_RenderingServer_ArrayFormat>` **ARRAY_FLAG_FORMAT_CURRENT_VERSION** = ``34359738368``
+
+Flag used to record the current version that the engine expects. Currently this is the same as :ref:`ARRAY_FLAG_FORMAT_VERSION_2<class_RenderingServer_constant_ARRAY_FLAG_FORMAT_VERSION_2>`.
+
+.. _class_RenderingServer_constant_ARRAY_FLAG_FORMAT_VERSION_MASK:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ArrayFormat<enum_RenderingServer_ArrayFormat>` **ARRAY_FLAG_FORMAT_VERSION_MASK** = ``255``
+
+Flag used to isolate the bits used for mesh version after using :ref:`ARRAY_FLAG_FORMAT_VERSION_SHIFT<class_RenderingServer_constant_ARRAY_FLAG_FORMAT_VERSION_SHIFT>` to shift them into place.
 
 .. rst-class:: classref-item-separator
 
@@ -8544,9 +8602,19 @@ Returns a mesh's surface's arrays for blend shapes.
 
 :ref:`int<class_int>` **mesh_surface_get_format_attribute_stride** **(** |bitfield|\<:ref:`ArrayFormat<enum_RenderingServer_ArrayFormat>`\> format, :ref:`int<class_int>` vertex_count **)** |const|
 
-.. container:: contribute
+Returns the stride of the attribute buffer for a mesh with given ``format``.
 
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_RenderingServer_method_mesh_surface_get_format_normal_tangent_stride:
+
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **mesh_surface_get_format_normal_tangent_stride** **(** |bitfield|\<:ref:`ArrayFormat<enum_RenderingServer_ArrayFormat>`\> format, :ref:`int<class_int>` vertex_count **)** |const|
+
+Returns the stride of the combined normals and tangents for a mesh with given ``format``. Note importantly that, while normals and tangents are in the vertex buffer with vertices, they are only interleaved with each other and so have a different stride than vertex positions.
 
 .. rst-class:: classref-item-separator
 
@@ -8558,9 +8626,7 @@ Returns a mesh's surface's arrays for blend shapes.
 
 :ref:`int<class_int>` **mesh_surface_get_format_offset** **(** |bitfield|\<:ref:`ArrayFormat<enum_RenderingServer_ArrayFormat>`\> format, :ref:`int<class_int>` vertex_count, :ref:`int<class_int>` array_index **)** |const|
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Returns the offset of a given attribute by ``array_index`` in the start of its respective buffer.
 
 .. rst-class:: classref-item-separator
 
@@ -8572,9 +8638,7 @@ Returns a mesh's surface's arrays for blend shapes.
 
 :ref:`int<class_int>` **mesh_surface_get_format_skin_stride** **(** |bitfield|\<:ref:`ArrayFormat<enum_RenderingServer_ArrayFormat>`\> format, :ref:`int<class_int>` vertex_count **)** |const|
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Returns the stride of the skin buffer for a mesh with given ``format``.
 
 .. rst-class:: classref-item-separator
 
@@ -8586,9 +8650,7 @@ Returns a mesh's surface's arrays for blend shapes.
 
 :ref:`int<class_int>` **mesh_surface_get_format_vertex_stride** **(** |bitfield|\<:ref:`ArrayFormat<enum_RenderingServer_ArrayFormat>`\> format, :ref:`int<class_int>` vertex_count **)** |const|
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Returns the stride of the vertex positions for a mesh with given ``format``. Note importantly that vertex positions are stored consecutively and are not interleaved with the other attributes in the vertex buffer (normals and tangents).
 
 .. rst-class:: classref-item-separator
 

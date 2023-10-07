@@ -68,7 +68,7 @@ void **update_layer** **(** :ref:`Image<class_Image>` image, :ref:`int<class_int
 
 Replaces the existing :ref:`Image<class_Image>` data at the given ``layer`` with this new image.
 
-The given :ref:`Image<class_Image>` must have the same width, height, image format and mipmapping setting (a ``bool`` value) as the rest of the referenced images.
+The given :ref:`Image<class_Image>` must have the same width, height, image format, and mipmapping flag as the rest of the referenced images.
 
 If the image format is unsupported, it will be decompressed and converted to a similar and supported :ref:`Format<enum_Image_Format>`.
 

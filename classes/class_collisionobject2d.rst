@@ -334,7 +334,7 @@ Method Descriptions
 
 void **_input_event** **(** :ref:`Viewport<class_Viewport>` viewport, :ref:`InputEvent<class_InputEvent>` event, :ref:`int<class_int>` shape_idx **)** |virtual|
 
-Accepts unhandled :ref:`InputEvent<class_InputEvent>`\ s. ``shape_idx`` is the child index of the clicked :ref:`Shape2D<class_Shape2D>`. Connect to the ``input_event`` signal to easily pick up these events.
+Accepts unhandled :ref:`InputEvent<class_InputEvent>`\ s. ``shape_idx`` is the child index of the clicked :ref:`Shape2D<class_Shape2D>`. Connect to :ref:`input_event<class_CollisionObject2D_signal_input_event>` to easily pick up these events.
 
 \ **Note:** :ref:`_input_event<class_CollisionObject2D_method__input_event>` requires :ref:`input_pickable<class_CollisionObject2D_property_input_pickable>` to be ``true`` and at least one :ref:`collision_layer<class_CollisionObject2D_property_collision_layer>` bit to be set.
 
