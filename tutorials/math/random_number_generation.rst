@@ -322,7 +322,7 @@ We can apply similar logic from arrays to dictionaries as well:
 
  .. code-tab:: csharp
 
-    private Godot.Collections.Dictionary _metals = new Godot.Collections.Dictionary
+    private Godot.Collections.Dictionary<string, Godot.Collections.Dictionary<string, int>> _metals = new()
     {
         {"copper", new Godot.Collections.Dictionary{{"quantity", 50}, {"price", 50}}},
         {"silver", new Godot.Collections.Dictionary{{"quantity", 20}, {"price", 150}}},
@@ -457,7 +457,7 @@ ends up empty. When that happens, you reinitialize it to its default value:
 
  .. code-tab:: csharp
 
-    private Godot.Collections.Array _fruits = new Godot.Collections.Array{ "apple", "orange", "pear", "banana" };
+    private Godot.Collections.Array<string> _fruits = new() { "apple", "orange", "pear", "banana" };
     // A copy of the fruits array so we can restore the original value into `fruits`.
     private Godot.Collections.Array _fruitsFull;
 
