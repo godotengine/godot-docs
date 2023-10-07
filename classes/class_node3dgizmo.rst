@@ -14,9 +14,16 @@ Node3DGizmo
 
 **Inherited By:** :ref:`EditorNode3DGizmo<class_EditorNode3DGizmo>`
 
-.. container:: contribute
+Abstract class to expose editor gizmos for :ref:`Node3D<class_Node3D>`.
 
-	There is currently no description for this class. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+.. rst-class:: classref-introduction-group
+
+Description
+-----------
+
+This abstract class helps connect the :ref:`Node3D<class_Node3D>` scene with the editor-specific :ref:`EditorNode3DGizmo<class_EditorNode3DGizmo>` class.
+
+\ **Node3DGizmo** by itself has no exposed API, refer to :ref:`Node3D.add_gizmo<class_Node3D_method_add_gizmo>` and pass it an :ref:`EditorNode3DGizmo<class_EditorNode3DGizmo>` instance.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

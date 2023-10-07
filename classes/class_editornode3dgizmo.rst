@@ -12,14 +12,14 @@ EditorNode3DGizmo
 
 **Inherits:** :ref:`Node3DGizmo<class_Node3DGizmo>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-Gizmo for editing Node3D objects.
+Gizmo for editing :ref:`Node3D<class_Node3D>` objects.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-Gizmo that is used for providing custom visualization and editing (handles and subgizmos) for Node3D objects. Can be overridden to create custom gizmos, but for simple gizmos creating a :ref:`EditorNode3DGizmoPlugin<class_EditorNode3DGizmoPlugin>` is usually recommended.
+Gizmo that is used for providing custom visualization and editing (handles and subgizmos) for :ref:`Node3D<class_Node3D>` objects. Can be overridden to create custom gizmos, but for simple gizmos creating a :ref:`EditorNode3DGizmoPlugin<class_EditorNode3DGizmoPlugin>` is usually recommended.
 
 .. rst-class:: classref-reftable-group
 
@@ -204,7 +204,7 @@ The ``secondary`` argument is ``true`` when the edited handle is secondary (see 
 
 void **_set_subgizmo_transform** **(** :ref:`int<class_int>` id, :ref:`Transform3D<class_Transform3D>` transform **)** |virtual|
 
-Override this method to update the node properties during subgizmo editing (see :ref:`_subgizmos_intersect_ray<class_EditorNode3DGizmo_method__subgizmos_intersect_ray>` and :ref:`_subgizmos_intersect_frustum<class_EditorNode3DGizmo_method__subgizmos_intersect_frustum>`). The ``transform`` is given in the Node3D's local coordinate system.
+Override this method to update the node properties during subgizmo editing (see :ref:`_subgizmos_intersect_ray<class_EditorNode3DGizmo_method__subgizmos_intersect_ray>` and :ref:`_subgizmos_intersect_frustum<class_EditorNode3DGizmo_method__subgizmos_intersect_frustum>`). The ``transform`` is given in the :ref:`Node3D<class_Node3D>`'s local coordinate system.
 
 .. rst-class:: classref-item-separator
 
@@ -216,7 +216,7 @@ Override this method to update the node properties during subgizmo editing (see 
 
 :ref:`PackedInt32Array<class_PackedInt32Array>` **_subgizmos_intersect_frustum** **(** :ref:`Camera3D<class_Camera3D>` camera, :ref:`Plane[]<class_Plane>` frustum **)** |virtual| |const|
 
-Override this method to allow selecting subgizmos using mouse drag box selection. Given a ``camera`` and a ``frustum``, this method should return which subgizmos are contained within the frustum. The ``frustum`` argument consists of an ``Array`` with all the ``Plane``\ s that make up the selection frustum. The returned value should contain a list of unique subgizmo identifiers, which can have any non-negative value and will be used in other virtual methods like :ref:`_get_subgizmo_transform<class_EditorNode3DGizmo_method__get_subgizmo_transform>` or :ref:`_commit_subgizmos<class_EditorNode3DGizmo_method__commit_subgizmos>`.
+Override this method to allow selecting subgizmos using mouse drag box selection. Given a ``camera`` and a ``frustum``, this method should return which subgizmos are contained within the frustum. The ``frustum`` argument consists of an array with all the :ref:`Plane<class_Plane>`\ s that make up the selection frustum. The returned value should contain a list of unique subgizmo identifiers, which can have any non-negative value and will be used in other virtual methods like :ref:`_get_subgizmo_transform<class_EditorNode3DGizmo_method__get_subgizmo_transform>` or :ref:`_commit_subgizmos<class_EditorNode3DGizmo_method__commit_subgizmos>`.
 
 .. rst-class:: classref-item-separator
 
@@ -264,7 +264,7 @@ Adds collision triangles to the gizmo for picking. A :ref:`TriangleMesh<class_Tr
 
 void **add_handles** **(** :ref:`PackedVector3Array<class_PackedVector3Array>` handles, :ref:`Material<class_Material>` material, :ref:`PackedInt32Array<class_PackedInt32Array>` ids, :ref:`bool<class_bool>` billboard=false, :ref:`bool<class_bool>` secondary=false **)**
 
-Adds a list of handles (points) which can be used to edit the properties of the gizmo's Node3D. The ``ids`` argument can be used to specify a custom identifier for each handle, if an empty ``Array`` is passed, the ids will be assigned automatically from the ``handles`` argument order.
+Adds a list of handles (points) which can be used to edit the properties of the gizmo's :ref:`Node3D<class_Node3D>`. The ``ids`` argument can be used to specify a custom identifier for each handle, if an empty array is passed, the ids will be assigned automatically from the ``handles`` argument order.
 
 The ``secondary`` argument marks the added handles as secondary, meaning they will normally have lower selection priority than regular handles. When the user is holding the shift key secondary handles will switch to have higher priority than regular handles. This change in priority can be used to place multiple handles at the same point while still giving the user control on their selection.
 

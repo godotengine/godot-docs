@@ -173,7 +173,7 @@ Constants
 
 The identity basis, with no rotation or scaling applied.
 
-This is identical to calling ``Basis()`` without any parameters. This constant can be used to make your code clearer, and for consistency with C#.
+This is identical to creating :ref:`Basis<class_Basis_constructor_Basis>` without any parameters. This constant can be used to make your code clearer, and for consistency with C#.
 
 .. _class_Basis_constant_FLIP_X:
 

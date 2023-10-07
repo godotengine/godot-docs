@@ -1263,7 +1263,7 @@ Returns the local transform matrix of the shape with the given index in the area
 
 :ref:`RID<class_RID>` **area_get_space** **(** :ref:`RID<class_RID>` area **)** |const|
 
-Returns the :ref:`RID<class_RID>` of the space assigned to the area. Returns ``RID()`` if no space is assigned.
+Returns the :ref:`RID<class_RID>` of the space assigned to the area. Returns an empty :ref:`RID<class_RID>` if no space is assigned.
 
 .. rst-class:: classref-item-separator
 
@@ -1839,7 +1839,7 @@ Returns the local transform matrix of the shape with the given index in the area
 
 :ref:`RID<class_RID>` **body_get_space** **(** :ref:`RID<class_RID>` body **)** |const|
 
-Returns the :ref:`RID<class_RID>` of the space assigned to the body. Returns ``RID()`` if no space is assigned.
+Returns the :ref:`RID<class_RID>` of the space assigned to the body. Returns an empty :ref:`RID<class_RID>` if no space is assigned.
 
 .. rst-class:: classref-item-separator
 
@@ -2353,7 +2353,7 @@ Makes the joint a groove joint.
 
 void **joint_make_pin** **(** :ref:`RID<class_RID>` joint, :ref:`Vector2<class_Vector2>` anchor, :ref:`RID<class_RID>` body_a, :ref:`RID<class_RID>` body_b=RID() **)**
 
-Makes the joint a pin joint. If ``body_b`` is ``RID()``, then ``body_a`` is pinned to the point ``anchor`` (given in global coordinates); otherwise, ``body_a`` is pinned to ``body_b`` at the point ``anchor`` (given in global coordinates). To set the parameters which are specific to the pin joint, see :ref:`pin_joint_set_param<class_PhysicsServer2D_method_pin_joint_set_param>`.
+Makes the joint a pin joint. If ``body_b`` is an empty :ref:`RID<class_RID>`, then ``body_a`` is pinned to the point ``anchor`` (given in global coordinates); otherwise, ``body_a`` is pinned to ``body_b`` at the point ``anchor`` (given in global coordinates). To set the parameters which are specific to the pin joint, see :ref:`pin_joint_set_param<class_PhysicsServer2D_method_pin_joint_set_param>`.
 
 .. rst-class:: classref-item-separator
 
@@ -2499,19 +2499,19 @@ void **shape_set_data** **(** :ref:`RID<class_RID>` shape, :ref:`Variant<class_V
 
 Sets the shape data that defines the configuration of the shape. The ``data`` to be passed depends on the shape's type (see :ref:`shape_get_type<class_PhysicsServer2D_method_shape_get_type>`):
 
-- :ref:`SHAPE_WORLD_BOUNDARY<class_PhysicsServer2D_constant_SHAPE_WORLD_BOUNDARY>`: an array of length two containing a :ref:`Vector2<class_Vector2>` ``normal`` direction and a ``float`` distance ``d``,
+- :ref:`SHAPE_WORLD_BOUNDARY<class_PhysicsServer2D_constant_SHAPE_WORLD_BOUNDARY>`: an array of length two containing a :ref:`Vector2<class_Vector2>` ``normal`` direction and a :ref:`float<class_float>` distance ``d``,
 
-- :ref:`SHAPE_SEPARATION_RAY<class_PhysicsServer2D_constant_SHAPE_SEPARATION_RAY>`: a dictionary containing the key ``length`` with a ``float`` value and the key ``slide_on_slope`` with a ``bool`` value,
+- :ref:`SHAPE_SEPARATION_RAY<class_PhysicsServer2D_constant_SHAPE_SEPARATION_RAY>`: a dictionary containing the key ``length`` with a :ref:`float<class_float>` value and the key ``slide_on_slope`` with a :ref:`bool<class_bool>` value,
 
 - :ref:`SHAPE_SEGMENT<class_PhysicsServer2D_constant_SHAPE_SEGMENT>`: a :ref:`Rect2<class_Rect2>` ``rect`` containing the first point of the segment in ``rect.position`` and the second point of the segment in ``rect.size``,
 
-- :ref:`SHAPE_CIRCLE<class_PhysicsServer2D_constant_SHAPE_CIRCLE>`: a ``float`` ``radius``,
+- :ref:`SHAPE_CIRCLE<class_PhysicsServer2D_constant_SHAPE_CIRCLE>`: a :ref:`float<class_float>` ``radius``,
 
 - :ref:`SHAPE_RECTANGLE<class_PhysicsServer2D_constant_SHAPE_RECTANGLE>`: a :ref:`Vector2<class_Vector2>` ``half_extents``,
 
-- :ref:`SHAPE_CAPSULE<class_PhysicsServer2D_constant_SHAPE_CAPSULE>`: an array of length two (or a :ref:`Vector2<class_Vector2>`) containing a ``float`` ``height`` and a ``float`` ``radius``,
+- :ref:`SHAPE_CAPSULE<class_PhysicsServer2D_constant_SHAPE_CAPSULE>`: an array of length two (or a :ref:`Vector2<class_Vector2>`) containing a :ref:`float<class_float>` ``height`` and a :ref:`float<class_float>` ``radius``,
 
-- :ref:`SHAPE_CONVEX_POLYGON<class_PhysicsServer2D_constant_SHAPE_CONVEX_POLYGON>`: either a :ref:`PackedVector2Array<class_PackedVector2Array>` of points defining a convex polygon in counterclockwise order (the clockwise outward normal of each segment formed by consecutive points is calculated internally), or a :ref:`PackedFloat32Array<class_PackedFloat32Array>` of length divisible by four so that every 4-tuple of ``float``\ s contains the coordinates of a point followed by the coordinates of the clockwise outward normal vector to the segment between the current point and the next point,
+- :ref:`SHAPE_CONVEX_POLYGON<class_PhysicsServer2D_constant_SHAPE_CONVEX_POLYGON>`: either a :ref:`PackedVector2Array<class_PackedVector2Array>` of points defining a convex polygon in counterclockwise order (the clockwise outward normal of each segment formed by consecutive points is calculated internally), or a :ref:`PackedFloat32Array<class_PackedFloat32Array>` of length divisible by four so that every 4-tuple of :ref:`float<class_float>`\ s contains the coordinates of a point followed by the coordinates of the clockwise outward normal vector to the segment between the current point and the next point,
 
 - :ref:`SHAPE_CONCAVE_POLYGON<class_PhysicsServer2D_constant_SHAPE_CONCAVE_POLYGON>`: a :ref:`PackedVector2Array<class_PackedVector2Array>` of length divisible by two (each pair of points forms one segment).
 

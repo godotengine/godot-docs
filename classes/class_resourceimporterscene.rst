@@ -57,6 +57,8 @@ Properties
    +-------------------------------------+------------------------------------------------------------------------------------------------------------------+-----------+
    | :ref:`bool<class_bool>`             | :ref:`meshes/ensure_tangents<class_ResourceImporterScene_property_meshes/ensure_tangents>`                       | ``true``  |
    +-------------------------------------+------------------------------------------------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`             | :ref:`meshes/force_disable_compression<class_ResourceImporterScene_property_meshes/force_disable_compression>`   | ``false`` |
+   +-------------------------------------+------------------------------------------------------------------------------------------------------------------+-----------+
    | :ref:`bool<class_bool>`             | :ref:`meshes/generate_lods<class_ResourceImporterScene_property_meshes/generate_lods>`                           | ``true``  |
    +-------------------------------------+------------------------------------------------------------------------------------------------------------------+-----------+
    | :ref:`int<class_int>`               | :ref:`meshes/light_baking<class_ResourceImporterScene_property_meshes/light_baking>`                             | ``1``     |
@@ -176,6 +178,18 @@ If ``true``, enables the generation of shadow meshes on import. This optimizes s
 If ``true``, generate vertex tangents using `Mikktspace <http://www.mikktspace.com/>`__ if the input meshes don't have tangent data. When possible, it's recommended to let the 3D modeling software generate tangents on export instead on relying on this option. Tangents are required for correct display of normal and height maps, along with any material/shader features that require tangents.
 
 If you don't need material features that require tangents, disabling this can reduce output file size and speed up importing if the source 3D file doesn't contain tangents.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ResourceImporterScene_property_meshes/force_disable_compression:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **meshes/force_disable_compression** = ``false``
+
+If ``true``, mesh compression will not be used. Consider enabling if you notice blocky artifacts in your mesh normals or UVs, or if you have meshes that are larger than a few thousand meters in each direction.
 
 .. rst-class:: classref-item-separator
 

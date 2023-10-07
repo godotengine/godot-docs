@@ -64,13 +64,13 @@ Theme Properties
 Signals
 -------
 
-.. _class_GraphElement_signal_close_request:
+.. _class_GraphElement_signal_delete_request:
 
 .. rst-class:: classref-signal
 
-**close_request** **(** **)**
+**delete_request** **(** **)**
 
-Emitted when closing the GraphElement is requested.
+Emitted when removing the GraphElement is requested.
 
 .. rst-class:: classref-item-separator
 

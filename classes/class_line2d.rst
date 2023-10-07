@@ -397,7 +397,7 @@ Determines the miter limit of the polyline. Normally, when :ref:`joint_mode<clas
 - void **set_texture** **(** :ref:`Texture2D<class_Texture2D>` value **)**
 - :ref:`Texture2D<class_Texture2D>` **get_texture** **(** **)**
 
-The texture used for the polyline. Uses ``texture_mode`` for drawing style.
+The texture used for the polyline. Uses :ref:`texture_mode<class_Line2D_property_texture_mode>` for drawing style.
 
 .. rst-class:: classref-item-separator
 

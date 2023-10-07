@@ -173,6 +173,10 @@ Methods
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`SceneTree<class_SceneTree>`                 | :ref:`get_tree<class_Node_method_get_tree>` **(** **)** |const|                                                                                                                                                                |
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                       | :ref:`get_tree_string<class_Node_method_get_tree_string>` **(** **)**                                                                                                                                                          |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                       | :ref:`get_tree_string_pretty<class_Node_method_get_tree_string_pretty>` **(** **)**                                                                                                                                            |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Viewport<class_Viewport>`                   | :ref:`get_viewport<class_Node_method_get_viewport>` **(** **)** |const|                                                                                                                                                        |
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Window<class_Window>`                       | :ref:`get_window<class_Node_method_get_window>` **(** **)** |const|                                                                                                                                                            |
@@ -1351,7 +1355,7 @@ Corresponds to the :ref:`NOTIFICATION_READY<class_Node_constant_NOTIFICATION_REA
 
 Usually used for initialization. For even earlier initialization, :ref:`Object._init<class_Object_method__init>` may be used. See also :ref:`_enter_tree<class_Node_method__enter_tree>`.
 
-\ **Note:** :ref:`_ready<class_Node_method__ready>` may be called only once for each node. After removing a node from the scene tree and adding it again, ``_ready`` will not be called a second time. This can be bypassed by requesting another call with :ref:`request_ready<class_Node_method_request_ready>`, which may be called anywhere before adding the node again.
+\ **Note:** :ref:`_ready<class_Node_method__ready>` may be called only once for each node. After removing a node from the scene tree and adding it again, :ref:`_ready<class_Node_method__ready>` will not be called a second time. This can be bypassed by requesting another call with :ref:`request_ready<class_Node_method_request_ready>`, which may be called anywhere before adding the node again.
 
 .. rst-class:: classref-item-separator
 
@@ -1945,6 +1949,52 @@ Returns the :ref:`SceneTree<class_SceneTree>` that contains this node.
 
 ----
 
+.. _class_Node_method_get_tree_string:
+
+.. rst-class:: classref-method
+
+:ref:`String<class_String>` **get_tree_string** **(** **)**
+
+Returns the tree as a :ref:`String<class_String>`. Used mainly for debugging purposes. This version displays the path relative to the current node, and is good for copy/pasting into the :ref:`get_node<class_Node_method_get_node>` function. It also can be used in game UI/UX.
+
+\ **Example output:**\ 
+
+::
+
+    TheGame
+    TheGame/Menu
+    TheGame/Menu/Label
+    TheGame/Menu/Camera2D
+    TheGame/SplashScreen
+    TheGame/SplashScreen/Camera2D
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Node_method_get_tree_string_pretty:
+
+.. rst-class:: classref-method
+
+:ref:`String<class_String>` **get_tree_string_pretty** **(** **)**
+
+Similar to :ref:`get_tree_string<class_Node_method_get_tree_string>`, this returns the tree as a :ref:`String<class_String>`. This version displays a more graphical representation similar to what is displayed in the Scene Dock. It is useful for inspecting larger trees.
+
+\ **Example output:**\ 
+
+::
+
+     ┖╴TheGame
+        ┠╴Menu
+        ┃  ┠╴Label
+        ┃  ┖╴Camera2D
+        ┖╴SplashScreen
+           ┖╴Camera2D
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_Node_method_get_viewport:
 
 .. rst-class:: classref-method
@@ -2389,7 +2439,7 @@ If ``keep_groups`` is ``true``, the ``node`` is added to the same groups that th
 
 void **request_ready** **(** **)**
 
-Requests that ``_ready`` be called again. Note that the method won't be called immediately, but is scheduled for when the node is added to the scene tree again (see :ref:`_ready<class_Node_method__ready>`). ``_ready`` is called only for the node which requested it, which means that you need to request ready for each child if you want them to call ``_ready`` too (in which case, ``_ready`` will be called in the same order as it would normally).
+Requests that :ref:`_ready<class_Node_method__ready>` be called again. Note that the method won't be called immediately, but is scheduled for when the node is added to the scene tree again. :ref:`_ready<class_Node_method__ready>` is called only for the node which requested it, which means that you need to request ready for each child if you want them to call :ref:`_ready<class_Node_method__ready>` too (in which case, :ref:`_ready<class_Node_method__ready>` will be called in the same order as it would normally).
 
 .. rst-class:: classref-item-separator
 

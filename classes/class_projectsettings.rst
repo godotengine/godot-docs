@@ -1311,6 +1311,10 @@ Properties
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                       | :ref:`rendering/gl_compatibility/driver.windows<class_ProjectSettings_property_rendering/gl_compatibility/driver.windows>`                                                                                 | ``"opengl3"``                                                                                    |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`rendering/gl_compatibility/fallback_to_angle<class_ProjectSettings_property_rendering/gl_compatibility/fallback_to_angle>`                                                                           | ``true``                                                                                         |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`Array<class_Array>`                         | :ref:`rendering/gl_compatibility/force_angle_on_devices<class_ProjectSettings_property_rendering/gl_compatibility/force_angle_on_devices>`                                                                 | ``[]``                                                                                           |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`rendering/gl_compatibility/item_buffer_size<class_ProjectSettings_property_rendering/gl_compatibility/item_buffer_size>`                                                                             | ``16384``                                                                                        |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`rendering/gl_compatibility/nvidia_disable_threaded_optimization<class_ProjectSettings_property_rendering/gl_compatibility/nvidia_disable_threaded_optimization>`                                     | ``true``                                                                                         |
@@ -1520,6 +1524,10 @@ Properties
    | :ref:`bool<class_bool>`                           | :ref:`xr/openxr/enabled<class_ProjectSettings_property_xr/openxr/enabled>`                                                                                                                                 | ``false``                                                                                        |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`xr/openxr/environment_blend_mode<class_ProjectSettings_property_xr/openxr/environment_blend_mode>`                                                                                                   | ``"0"``                                                                                          |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`xr/openxr/extensions/eye_gaze_interaction<class_ProjectSettings_property_xr/openxr/extensions/eye_gaze_interaction>`                                                                                 | ``false``                                                                                        |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`xr/openxr/extensions/hand_tracking<class_ProjectSettings_property_xr/openxr/extensions/hand_tracking>`                                                                                               | ``true``                                                                                         |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`xr/openxr/form_factor<class_ProjectSettings_property_xr/openxr/form_factor>`                                                                                                                         | ``"0"``                                                                                          |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
@@ -9656,6 +9664,32 @@ Windows override for :ref:`rendering/gl_compatibility/driver<class_ProjectSettin
 
 ----
 
+.. _class_ProjectSettings_property_rendering/gl_compatibility/fallback_to_angle:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **rendering/gl_compatibility/fallback_to_angle** = ``true``
+
+If ``true``, the compatibility renderer will fall back to ANGLE if native OpenGL is not supported or the device is listed in :ref:`rendering/gl_compatibility/force_angle_on_devices<class_ProjectSettings_property_rendering/gl_compatibility/force_angle_on_devices>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_rendering/gl_compatibility/force_angle_on_devices:
+
+.. rst-class:: classref-property
+
+:ref:`Array<class_Array>` **rendering/gl_compatibility/force_angle_on_devices** = ``[]``
+
+An :ref:`Array<class_Array>` of devices which should always use the ANGLE renderer.
+
+Each entry is a :ref:`Dictionary<class_Dictionary>` with the following keys: ``vendor`` and ``name``. ``name`` can be set to ``*`` to add all devices with the specified ``vendor``.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_ProjectSettings_property_rendering/gl_compatibility/item_buffer_size:
 
 .. rst-class:: classref-property
@@ -11039,6 +11073,30 @@ Specify how OpenXR should blend in the environment. This is specific to certain 
 
 ----
 
+.. _class_ProjectSettings_property_xr/openxr/extensions/eye_gaze_interaction:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **xr/openxr/extensions/eye_gaze_interaction** = ``false``
+
+Specify whether to enable eye tracking for this project. Depending on the platform, additional export configuration may be needed.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_xr/openxr/extensions/hand_tracking:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **xr/openxr/extensions/hand_tracking** = ``true``
+
+If true we enable the hand tracking extension if available.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_ProjectSettings_property_xr/openxr/form_factor:
 
 .. rst-class:: classref-property
@@ -11057,7 +11115,7 @@ Specify whether OpenXR should be configured for an HMD or a hand held device.
 
 :ref:`bool<class_bool>` **xr/openxr/foveation_dynamic** = ``false``
 
-If true and foveation is supported, will automatically adjust foveation level based on framerate up to the level set on ``xr/openxr/foveation_level``.
+If true and foveation is supported, will automatically adjust foveation level based on framerate up to the level set on :ref:`xr/openxr/foveation_level<class_ProjectSettings_property_xr/openxr/foveation_level>`.
 
 .. rst-class:: classref-item-separator
 

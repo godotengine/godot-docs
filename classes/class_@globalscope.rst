@@ -137,6 +137,8 @@ Methods
    +-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                       | :ref:`acosh<class_@GlobalScope_method_acosh>` **(** :ref:`float<class_float>` x **)**                                                                                                                                                                                                                                                                                          |
    +-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`                       | :ref:`angle_difference<class_@GlobalScope_method_angle_difference>` **(** :ref:`float<class_float>` from, :ref:`float<class_float>` to **)**                                                                                                                                                                                                                                   |
+   +-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                       | :ref:`asin<class_@GlobalScope_method_asin>` **(** :ref:`float<class_float>` x **)**                                                                                                                                                                                                                                                                                            |
    +-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                       | :ref:`asinh<class_@GlobalScope_method_asinh>` **(** :ref:`float<class_float>` x **)**                                                                                                                                                                                                                                                                                          |
@@ -293,6 +295,8 @@ Methods
    +-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`RID<class_RID>`                           | :ref:`rid_from_int64<class_@GlobalScope_method_rid_from_int64>` **(** :ref:`int<class_int>` base **)**                                                                                                                                                                                                                                                                         |
    +-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`                       | :ref:`rotate_toward<class_@GlobalScope_method_rotate_toward>` **(** :ref:`float<class_float>` from, :ref:`float<class_float>` to, :ref:`float<class_float>` delta **)**                                                                                                                                                                                                        |
+   +-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Variant<class_Variant>`                   | :ref:`round<class_@GlobalScope_method_round>` **(** :ref:`Variant<class_Variant>` x **)**                                                                                                                                                                                                                                                                                      |
    +-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                       | :ref:`roundf<class_@GlobalScope_method_roundf>` **(** :ref:`float<class_float>` x **)**                                                                                                                                                                                                                                                                                        |
@@ -332,6 +336,8 @@ Methods
    | :ref:`float<class_float>`                       | :ref:`tanh<class_@GlobalScope_method_tanh>` **(** :ref:`float<class_float>` x **)**                                                                                                                                                                                                                                                                                            |
    +-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Variant<class_Variant>`                   | :ref:`type_convert<class_@GlobalScope_method_type_convert>` **(** :ref:`Variant<class_Variant>` variant, :ref:`int<class_int>` type **)**                                                                                                                                                                                                                                      |
+   +-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                     | :ref:`type_string<class_@GlobalScope_method_type_string>` **(** :ref:`int<class_int>` type **)**                                                                                                                                                                                                                                                                               |
    +-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                           | :ref:`typeof<class_@GlobalScope_method_typeof>` **(** :ref:`Variant<class_Variant>` variable **)**                                                                                                                                                                                                                                                                             |
    +-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -5246,6 +5252,18 @@ Returns the hyperbolic arc (also called inverse) cosine of ``x``, returning a va
 
 ----
 
+.. _class_@GlobalScope_method_angle_difference:
+
+.. rst-class:: classref-method
+
+:ref:`float<class_float>` **angle_difference** **(** :ref:`float<class_float>` from, :ref:`float<class_float>` to **)**
+
+Returns the difference between the two angles, in the range of ``[-PI, +PI]``. When ``from`` and ``to`` are opposite, returns ``-PI`` if ``from`` is smaller than ``to``, or ``PI`` otherwise.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_@GlobalScope_method_asin:
 
 .. rst-class:: classref-method
@@ -5581,7 +5599,7 @@ Cubic interpolates between two rotation values with shortest path by the factor 
 
 Cubic interpolates between two rotation values with shortest path by the factor defined in ``weight`` with ``pre`` and ``post`` values. See also :ref:`lerp_angle<class_@GlobalScope_method_lerp_angle>`.
 
-It can perform smoother interpolation than ``cubic_interpolate()`` by the time values.
+It can perform smoother interpolation than :ref:`cubic_interpolate<class_@GlobalScope_method_cubic_interpolate>` by the time values.
 
 .. rst-class:: classref-item-separator
 
@@ -6785,6 +6803,22 @@ Creates a RID from a ``base``. This is used mainly from native extensions to bui
 
 ----
 
+.. _class_@GlobalScope_method_rotate_toward:
+
+.. rst-class:: classref-method
+
+:ref:`float<class_float>` **rotate_toward** **(** :ref:`float<class_float>` from, :ref:`float<class_float>` to, :ref:`float<class_float>` delta **)**
+
+Rotates ``from`` toward ``to`` by the ``delta`` amount. Will not go past ``to``.
+
+Similar to :ref:`move_toward<class_@GlobalScope_method_move_toward>`, but interpolates correctly when the angles wrap around :ref:`@GDScript.TAU<class_@GDScript_constant_TAU>`.
+
+If ``delta`` is negative, this function will rotate away from ``to``, toward the opposite angle, and will not go past the opposite angle.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_@GlobalScope_method_round:
 
 .. rst-class:: classref-method
@@ -7183,7 +7217,7 @@ Returns the hyperbolic tangent of ``x``.
 
 Converts the given ``variant`` to the given ``type``, using the :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` values. This method is generous with how it handles types, it can automatically convert between array types, convert numeric :ref:`String<class_String>`\ s to :ref:`int<class_int>`, and converting most things to :ref:`String<class_String>`.
 
-If the type conversion cannot be done, this method will return the default value for that type, for example converting :ref:`Rect2<class_Rect2>` to :ref:`Vector2<class_Vector2>` will always return ``Vector2.ZERO``. This method will never show error messages as long as ``type`` is a valid Variant type.
+If the type conversion cannot be done, this method will return the default value for that type, for example converting :ref:`Rect2<class_Rect2>` to :ref:`Vector2<class_Vector2>` will always return :ref:`Vector2.ZERO<class_Vector2_constant_ZERO>`. This method will never show error messages as long as ``type`` is a valid Variant type.
 
 The returned value is a :ref:`Variant<class_Variant>`, but the data inside and the :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` will be the same as the requested type.
 
@@ -7194,6 +7228,26 @@ The returned value is a :ref:`Variant<class_Variant>`, but the data inside and t
     type_convert(123.4, TYPE_INT) # Returns 123
     type_convert(5, TYPE_VECTOR2) # Returns (0, 0)
     type_convert("Hi!", TYPE_NIL) # Returns null
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_@GlobalScope_method_type_string:
+
+.. rst-class:: classref-method
+
+:ref:`String<class_String>` **type_string** **(** :ref:`int<class_int>` type **)**
+
+Returns a human-readable name of the given ``type``, using the :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` values.
+
+::
+
+    print(TYPE_INT) # Prints 2.
+    print(type_string(TYPE_INT)) # Prints "int".
+    print(type_string(TYPE_STRING)) # Prints "String".
+
+See also :ref:`typeof<class_@GlobalScope_method_typeof>`.
 
 .. rst-class:: classref-item-separator
 
@@ -7216,6 +7270,8 @@ Returns the internal type of the given ``variable``, using the :ref:`Variant.Typ
         print(result[0]) # Prints a
     else:
         print("Unexpected result")
+
+See also :ref:`type_string<class_@GlobalScope_method_type_string>`.
 
 .. rst-class:: classref-item-separator
 
@@ -7349,7 +7405,7 @@ Wraps the float ``value`` between ``min`` and ``max``. Can be used for creating 
 
 \ **Note:** If ``min`` is ``0``, this is equivalent to :ref:`fposmod<class_@GlobalScope_method_fposmod>`, so prefer using that instead.
 
-\ ``wrapf`` is more flexible than using the :ref:`fposmod<class_@GlobalScope_method_fposmod>` approach by giving the user control over the minimum value.
+\ :ref:`wrapf<class_@GlobalScope_method_wrapf>` is more flexible than using the :ref:`fposmod<class_@GlobalScope_method_fposmod>` approach by giving the user control over the minimum value.
 
 .. rst-class:: classref-item-separator
 

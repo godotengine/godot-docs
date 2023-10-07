@@ -46,7 +46,7 @@ Can be used to save a node to a file. When saving, the node as well as all the n
 
 
 
-\ **Example of saving a node with different owners:** The following example creates 3 objects: :ref:`Node2D<class_Node2D>` (``node``), :ref:`RigidBody2D<class_RigidBody2D>` (``body``) and :ref:`CollisionObject2D<class_CollisionObject2D>` (``collision``). ``collision`` is a child of ``body`` which is a child of ``node``. Only ``body`` is owned by ``node`` and ``pack`` will therefore only save those two nodes, but not ``collision``.
+\ **Example of saving a node with different owners:** The following example creates 3 objects: :ref:`Node2D<class_Node2D>` (``node``), :ref:`RigidBody2D<class_RigidBody2D>` (``body``) and :ref:`CollisionObject2D<class_CollisionObject2D>` (``collision``). ``collision`` is a child of ``body`` which is a child of ``node``. Only ``body`` is owned by ``node`` and :ref:`pack<class_PackedScene_method_pack>` will therefore only save those two nodes, but not ``collision``.
 
 
 .. tabs::
@@ -237,7 +237,7 @@ Returns ``true`` if the scene file has nodes.
 
 :ref:`SceneState<class_SceneState>` **get_state** **(** **)** |const|
 
-Returns the ``SceneState`` representing the scene file contents.
+Returns the :ref:`SceneState<class_SceneState>` representing the scene file contents.
 
 .. rst-class:: classref-item-separator
 

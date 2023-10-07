@@ -237,6 +237,8 @@ Changes the currently opened directory to the one passed as an argument. The arg
 
 Returns one of the :ref:`Error<enum_@GlobalScope_Error>` code constants (:ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` on success).
 
+\ **Note:** The new directory must be within the same scope, e.g. when you had opened a directory inside ``res://``, you can't change it to ``user://`` directory. If you need to open a directory in another access scope, use :ref:`open<class_DirAccess_method_open>` to create a new instance instead.
+
 .. rst-class:: classref-item-separator
 
 ----

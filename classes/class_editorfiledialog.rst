@@ -458,7 +458,7 @@ Returns the LineEdit for the selected file.
 
 :ref:`VBoxContainer<class_VBoxContainer>` **get_vbox** **(** **)**
 
-Returns the ``VBoxContainer`` used to display the file system.
+Returns the :ref:`VBoxContainer<class_VBoxContainer>` used to display the file system.
 
 \ **Warning:** This is a required internal node, removing and freeing it may cause a crash. If you wish to hide it or any of its children, use their :ref:`CanvasItem.visible<class_CanvasItem_property_visible>` property.
 

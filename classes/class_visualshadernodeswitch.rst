@@ -19,7 +19,7 @@ A selector function for use within the visual shader graph.
 Description
 -----------
 
-Returns an associated value of the ``op_type`` type if the provided boolean value is ``true`` or ``false``.
+Returns an associated value of the :ref:`op_type<class_VisualShaderNodeSwitch_property_op_type>` type if the provided boolean value is ``true`` or ``false``.
 
 .. rst-class:: classref-reftable-group
 
