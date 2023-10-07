@@ -36,7 +36,7 @@ for example:
            print("Mouse Motion at: ", event.position)
 
        # Print the size of the viewport.
-       print("Viewport Resolution is: ", get_viewport().get_visible_rect())
+       print("Viewport Resolution is: ", get_viewport().get_visible_rect().size)
 
  .. code-tab:: csharp
 
@@ -49,7 +49,7 @@ for example:
             GD.Print("Mouse Motion at: ", eventMouseMotion.Position);
 
         // Print the size of the viewport.
-        GD.Print("Viewport Resolution is: ", GetViewportRect().GetVisibleRect());
+        GD.Print("Viewport Resolution is: ", GetViewport().GetVisibleRect().Size);
     }
 
 Alternatively, it's possible to ask the viewport for the mouse position:
