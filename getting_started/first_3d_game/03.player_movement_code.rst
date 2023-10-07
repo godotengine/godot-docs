@@ -441,6 +441,21 @@ the ground should fill the background.
 
 Test your scene and you should be able to move in all 8 directions and not glitch through the floor!
 
+.. note::
+
+    If you want your camera behind your CharacterBody3D (you don't want the player 
+    facing the camera), and you want your Character to rotate in the direction of 
+    movement, you can change the GD Player Script *Pivot* code to 
+    subtract the direction instead of add it. This is because in 4.1 Godot rotated 
+    the 3DCharacterBody 180. So, your Pivot line would be:
+
+    .. tabs::
+     .. code-tab:: gdscript GDScript
+
+        extends CharacterBody3D
+            #...
+            $Pivot.look_at(position - direction, Vector3.UP) 
+
 Ultimately, we have both player movement and the view in place. Next, we will
 work on the monsters.
 
