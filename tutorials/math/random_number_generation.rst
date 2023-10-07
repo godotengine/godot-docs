@@ -322,7 +322,7 @@ We can apply similar logic from arrays to dictionaries as well:
 
     public Godot.Collections.Dictionary GetMetal()
     {
-        var randomMetal = _metals.KeyValuePair(GD.Randi() % metals.Count);
+        var (_, randomMetal) = _metals.ElementAt(GD.Randi() % metals.Count);
         // Returns a random metal value dictionary every time the code runs.
         // The same metal may be selected multiple times in succession.
         return randomMetal;
