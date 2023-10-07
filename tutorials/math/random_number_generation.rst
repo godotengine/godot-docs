@@ -131,16 +131,12 @@ varying by the deviation (1.0 by default):
  .. code-tab:: gdscript GDScript
 
     # Prints a random floating-point number from a normal distribution with a mean 0.0 and deviation 1.0.
-    var random = RandomNumberGenerator.new()
-    random.randomize()
-    print(random.randfn())
+    print(randfn(0.0, 1.0))
 
  .. code-tab:: csharp
 
     // Prints a normally distributed floating-point number between 0.0 and 1.0.
-    var random = new RandomNumberGenerator();
-    random.Randomize();
-    GD.Print(random.Randfn());
+    GD.Print(GD.Randfn(0.0, 1.0));
 
 :ref:`randf_range() <class_@GlobalScope_method_randf_range>` takes two arguments
 ``from`` and ``to``, and returns a random floating-point number between ``from``
@@ -165,15 +161,12 @@ and ``to``, and returns a random integer between ``from`` and ``to``:
  .. code-tab:: gdscript GDScript
 
     # Prints a random integer between -10 and 10.
-    var random = RandomNumberGenerator.new()
-    random.randomize()
-    print(random.randi_range(-10, 10))
+    print(randi_range(-10, 10))
 
  .. code-tab:: csharp
 
     // Prints a random integer number between -10 and 10.
-    random.Randomize();
-    GD.Print(random.RandiRange(-10, 10));
+    GD.Print(GD.RandRange(-10, 10));
 
 Get a random array element
 --------------------------
@@ -186,8 +179,6 @@ We can use random integer generation to get a random element from an array:
     var _fruits = ["apple", "orange", "pear", "banana"]
 
     func _ready():
-        randomize()
-
         for i in range(100):
             # Pick 100 fruits randomly.
             print(get_fruit())
@@ -205,8 +196,6 @@ We can use random integer generation to get a random element from an array:
 
     public override void _Ready()
     {
-        GD.Randomize();
-
         for (int i = 0; i < 100; i++)
         {
             // Pick 100 fruits randomly.
@@ -233,8 +222,6 @@ more logic to this method:
 
 
     func _ready():
-        randomize()
-
         # Pick 100 fruits randomly.
         for i in range(100):
             print(get_fruit())
@@ -262,8 +249,6 @@ more logic to this method:
 
     public override void _Ready()
     {
-        GD.Randomize();
-
         for (int i = 0; i < 100; i++)
         {
             // Pick 100 fruits randomly.
@@ -308,8 +293,6 @@ We can apply similar logic from arrays to dictionaries as well:
 
 
     func _ready():
-        randomize()
-
         for i in range(20):
             print(get_metal())
 
@@ -331,7 +314,6 @@ We can apply similar logic from arrays to dictionaries as well:
 
     public override void _Ready()
     {
-        GD.Randomize();
         for (int i = 0; i < 20; i++)
         {
             GD.Print(GetMetal());
@@ -359,8 +341,6 @@ floating-point number between 0.0 and 1.0. We can use this to create a
  .. code-tab:: gdscript GDScript
 
     func _ready():
-        randomize()
-
         for i in range(100):
             print(get_item_rarity())
 
@@ -382,8 +362,6 @@ floating-point number between 0.0 and 1.0. We can use this to create a
 
     public override void _Ready()
     {
-        GD.Randomize();
-
         for (int i = 0; i < 100; i++)
         {
             GD.Print(GetItemRarity());
@@ -434,7 +412,6 @@ ends up empty. When that happens, you reinitialize it to its default value:
 
 
     func _ready():
-        randomize()
         _fruits_full = _fruits.duplicate()
         _fruits.shuffle()
 
@@ -463,7 +440,6 @@ ends up empty. When that happens, you reinitialize it to its default value:
 
     public override void _Ready()
     {
-        GD.Randomize();
         _fruitsFull = _fruits.Duplicate();
         _fruits.Shuffle();
 
@@ -514,7 +490,6 @@ terrain. Godot provides :ref:`class_fastnoiselite` for this, which supports
     var _noise = FastNoiseLite.new()
 
     func _ready():
-        randomize()
         # Configure the FastNoiseLite instance.
         _noise.noise_type = FastNoiseLite.NoiseType.TYPE_SIMPLEX_SMOOTH
         _noise.seed = randi()
@@ -532,7 +507,6 @@ terrain. Godot provides :ref:`class_fastnoiselite` for this, which supports
 
     public override void _Ready()
     {
-        GD.Randomize();
         // Configure the FastNoiseLite instance.
         _noise.NoiseType = NoiseTypeEnum.SimplexSmooth;
         _noise.Seed = (int)GD.Randi();
