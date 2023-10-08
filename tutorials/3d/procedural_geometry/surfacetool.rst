@@ -79,7 +79,7 @@ Code creates a triangle with indices
 
     st.Begin(Mesh.PrimitiveType.Triangles);
 
-    // Prepare attributes for add_vertex.
+    // Prepare attributes for AddVertex.
     st.SetNormal(new Vector3(0, 0, 1));
     st.SetUV(new Vector2(0, 0));
     // Call last for each vertex, adds the above attributes.
