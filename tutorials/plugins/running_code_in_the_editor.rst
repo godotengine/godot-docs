@@ -111,6 +111,13 @@ Here is how a ``_process()`` function might look for you:
     case, when we remove the script, the node will keep its rotation. Be careful
     to avoid making unwanted modifications.
 
+.. note::
+
+    Extending a ``@tool`` script does not automatically make the extending script
+    a ``@tool``. Omitting ``@tool`` from the extending script will disable tool
+    behavior from the super class. Therefore the extending script should also
+    specify the ``@tool`` annotation.
+
 Try it out
 -----------
 
