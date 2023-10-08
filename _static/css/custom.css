@@ -799,7 +799,7 @@ html.writer-html5 .rst-content .wy-table-responsive > table td > p code.literal 
 code,
 .rst-content tt,
 .rst-content code {
-    font-size: 14px;
+    font-size: .875em;
     font-family: var(--monospace-font-family);
     background-color: var(--code-background-color);
     border: none;
