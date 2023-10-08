@@ -119,7 +119,7 @@ to remove duplicate vertices.
  .. code-tab:: csharp
 
     // Creates a quad from four corner vertices.
-    // Add_index does not need to be called before add_vertex.
+    // AddIndex does not need to be called before AddVertex.
     st.AddIndex(0);
     st.AddIndex(1);
     st.AddIndex(2);
