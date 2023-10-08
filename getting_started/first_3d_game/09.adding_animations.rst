@@ -260,8 +260,10 @@ For example, both the ``Mob`` and the ``Player`` scenes have a ``Pivot`` and a
 ``Character`` node, so we can reuse animations between them.
 
 Open the *Player* scene, select the AnimationPlayer node and open the "float"
-animation. Next, click on **Animation > Copy**. Then open ``mob.tscn``,
-create an AnimationPlayer child node and select it. Click **Animation > Paste**
+animation. Next, click on **Edit > Copy Tracks** and check "Character.position"
+and "Character.rotation".  Click the "Copy" button.  Then open ``mob.tscn``,
+create an AnimationPlayer child node and select it.  As we did for ``Player``, click on
+*Animation -> New* and name the animation "float".  Now click **Edit > Paste Tracks** 
 and make sure that the button with an "A+" icon (Autoplay on Load) and the
 looping arrows (Animation looping) are also turned on in the animation editor
 in the bottom panel. That's it; all monsters will now play the float animation.
