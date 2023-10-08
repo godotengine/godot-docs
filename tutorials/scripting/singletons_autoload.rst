@@ -191,7 +191,7 @@ current scene and replace it with the requested one.
 
 
     func _deferred_goto_scene(path):
-        # It is now safe to remove the current scene
+        # It is now safe to remove the current scene.
         current_scene.free()
 
         # Load the new scene.
@@ -224,11 +224,11 @@ current scene and replace it with the requested one.
 
     public void DeferredGotoScene(string path)
     {
-        // It is now safe to remove the current scene
+        // It is now safe to remove the current scene.
         CurrentScene.Free();
 
         // Load a new scene.
-        var nextScene = (PackedScene)GD.Load(path);
+        var nextScene = GD.Load<PackedScene>(path);
 
         // Instance the new scene.
         CurrentScene = nextScene.Instantiate();
