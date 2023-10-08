@@ -184,7 +184,7 @@ instantiation:
 
     func _init():
         # "three" is an "init assignment value".
-        # These DO trigger the setter
+        # Trigger the setter
         test = "three"
 
   .. code-tab:: csharp
