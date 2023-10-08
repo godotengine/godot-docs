@@ -39,7 +39,7 @@ Godot provides the following objects and classes for 2D navigation:
         - NavObstacle RID
             Reference to a specific avoidance obstacle used to affect and constrain the avoidance velocity of agents.
 
-The following SceneTree Nodes are available as helpers to work with the NavigationServer2D API.
+The following scene tree nodes are available as helpers to work with the NavigationServer2D API.
 
 - :ref:`NavigationRegion2D<class_NavigationRegion2D>` Node
     A Node that holds a NavigationPolygon resource that defines a navigation mesh for the NavigationServer2D.
