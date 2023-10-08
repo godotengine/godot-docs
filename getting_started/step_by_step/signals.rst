@@ -239,7 +239,7 @@ Let's use a different node here. Godot has a :ref:`Timer <class_Timer>` node
 that's useful to implement skill cooldown times, weapon reloading, and more.
 
 Head back to the 2D workspace. You can either click the "2D" text at the top of
-the window or press :kbd:`Ctrl + F1` (:kbd:`Alt + 1` on macOS).
+the window or press :kbd:`Ctrl + F1` (:kbd:`Ctrl + Cmd + 1` on macOS).
 
 In the Scene dock, right-click on the Sprite2D node and add a new child node.
 Search for Timer and add the corresponding node. Your scene should now look like
