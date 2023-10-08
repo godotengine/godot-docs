@@ -104,7 +104,7 @@ to remove duplicate vertices.
  .. code-tab:: gdscript GDScript
 
     # Creates a quad from four corner vertices.
-    # Add_index does not need to be called before add_vertex.
+    # add_index does not need to be called before add_vertex.
     st.add_index(0)
     st.add_index(1)
     st.add_index(2)
