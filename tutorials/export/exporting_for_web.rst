@@ -227,6 +227,15 @@ The ``.pck`` file is binary, usually delivered with the MIME-type
              other than :mimetype:`application/wasm` can prevent some start-up
              optimizations.
 
+.. tip::
+    Godot 4 web exports use the `SharedArrayBuffer <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer>`__, and require the following CORS headers to be set when serving the files:
+
+    ::
+        Cross-Origin-Opener-Policy: same-origin
+        Cross-Origin-Embedder-Policy: require-corp
+
+
+
 Delivering the files with server-side compression is recommended especially for
 the ``.pck`` and ``.wasm`` files, which are usually large in size.
 The WebAssembly module compresses particularly well, down to around a quarter
