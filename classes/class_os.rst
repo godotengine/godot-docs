@@ -900,7 +900,7 @@ On the web, this is ``"Web"``.
         case "Linux":
         case "FreeBSD":
         case "NetBSD":
-        case "OpenBSD"
+        case "OpenBSD":
         case "BSD":
             GD.Print("Linux/BSD");
             break;
