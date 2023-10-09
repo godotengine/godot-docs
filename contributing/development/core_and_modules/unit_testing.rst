@@ -55,6 +55,12 @@ arguments for doctest.
     detected, so you should strive to fix all warnings before opening a pull
     request.
 
+.. note::
+
+    If you are using a 64-bit compiler architecture, ``<godot_binary>`` will 
+    be your 64-bit binary and the same applies to 32-bit compiler architecture. 
+    So make sure you run the correct binary in order to run the tests.
+
 Filtering tests
 ~~~~~~~~~~~~~~~
 
