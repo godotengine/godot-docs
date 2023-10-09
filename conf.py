@@ -199,14 +199,14 @@ html_extra_path = ["robots.txt"]
 html_css_files = [
     'css/algolia.css',
     'https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css',
-    "css/custom.css?10", # Increment the number at the end when the file changes to bust the cache.
+    "css/custom.css",
 ]
 
 if not on_rtd:
     html_css_files.append("css/dev.css")
 
 html_js_files = [
-    "js/custom.js?6", # Increment the number at the end when the file changes to bust the cache.
+    "js/custom.js",
     ('https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js', {'defer': 'defer'}),
     ('js/algolia.js', {'defer': 'defer'})
 ]
