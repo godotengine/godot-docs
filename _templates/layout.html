@@ -6,12 +6,12 @@
 {% endblock -%}
 
 {% block extrahead -%}
-<meta name="doc_version" content="{{ version }}">
-<meta name="doc_is_latest" content="{{ godot_is_latest }}">
+<meta name="doc_version" content="{{ version }}" />
+<meta name="doc_is_latest" content="{{ godot_is_latest }}" />
 {% endblock -%}
 
 {% block linktags -%}
-  <meta name="theme-color" content="#3d8fcc">
+  <meta name="theme-color" content="#3d8fcc" />
   {% if godot_inject_language_links -%}
   {% for alternate_lang in godot_docs_supported_languages -%}
   {# Convert to ISO 639-1 format, e.g. zh_CN -> zh-cn -#}
@@ -66,7 +66,6 @@
   {% endif %}
 
   {% block body %}{% endblock %}
-</div>
 {%- if self.comments()|trim %}
   <div class="articleComments">
     {%- block comments %}{% endblock %}
