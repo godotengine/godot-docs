@@ -234,7 +234,7 @@ It is possible to override text and control layout direction by using the follow
 
 -  ``text_direction``, sets the base text direction. When set to "auto", direction depends on the first strong directional character in the text according to the Unicode Bidirectional Algorithm,
 -  ``language``, overrides current project locale.
--  ``structured_text_bidi_override property`` and ``_structured_text_parser callback``, enables special handling for structured text.
+-  ``structured_text_bidi_override`` property and ``_structured_text_parser`` callback, enables special handling for structured text.
 -  ``layout_direction``, overrides control mirroring.
 
 .. image:: img/ui_mirror.png
