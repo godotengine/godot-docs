@@ -41,7 +41,7 @@ given velocity:
 
     public partial class Bullet : Area2D
     {
-        public Vector2 Velocity { get; set; } = Vector2(1.0, 0.0);
+        public Vector2 Velocity { get; set; } = Vector2.Right;
 
         public override void _PhysicsProcess(double delta)
         {
