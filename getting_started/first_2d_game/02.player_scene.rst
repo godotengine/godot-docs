@@ -83,9 +83,9 @@ heading.
 
 Finally, add a :ref:`CollisionShape2D <class_CollisionShape2D>` as a child of
 ``Player``. This will determine the player's "hitbox", or the bounds of its
-collision area. For this character, a ``CapsuleShape2D`` node gives the best
+collision area. For this character, a ``CollisionShape2D`` node gives the best
 fit, so next to "Shape" in the Inspector, click "[empty]" -> "New
-CapsuleShape2D". Using the two size handles, resize the shape to cover the
+CollisionShape2D". Using the two size handles, resize the shape to cover the
 sprite:
 
 .. image:: img/player_coll_shape.webp
