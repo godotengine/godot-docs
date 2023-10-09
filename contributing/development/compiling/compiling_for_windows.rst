@@ -148,7 +148,11 @@ your CPU architecture, but this can be overridden using ``arch=x86_64`` or
 This executable file contains the whole engine and runs without any
 dependencies. Running it will bring up the Project Manager.
 
-.. note:: If you are compiling Godot for production use, then you can
+.. note:: If you want the ability to debug Godot, include the SCons option
+          ``dev_build=yes``. Refer to :ref:`doc_introduction_to_the_buildsystem`
+          for more details.
+
+          If you are compiling Godot for production use, then you can
           make the final executable smaller and faster by adding the
           SCons option ``target=template_release``.
 
