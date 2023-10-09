@@ -29,29 +29,31 @@ Properties
 .. table::
    :widths: auto
 
-   +-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+-----------+
-   | :ref:`bool<class_bool>`                                               | :ref:`clip_tabs<class_TabBar_property_clip_tabs>`                                 | ``true``  |
-   +-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+-----------+
-   | :ref:`int<class_int>`                                                 | :ref:`current_tab<class_TabBar_property_current_tab>`                             | ``0``     |
-   +-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+-----------+
-   | :ref:`bool<class_bool>`                                               | :ref:`drag_to_rearrange_enabled<class_TabBar_property_drag_to_rearrange_enabled>` | ``false`` |
-   +-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+-----------+
-   | :ref:`int<class_int>`                                                 | :ref:`max_tab_width<class_TabBar_property_max_tab_width>`                         | ``0``     |
-   +-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+-----------+
-   | :ref:`bool<class_bool>`                                               | :ref:`scroll_to_selected<class_TabBar_property_scroll_to_selected>`               | ``true``  |
-   +-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+-----------+
-   | :ref:`bool<class_bool>`                                               | :ref:`scrolling_enabled<class_TabBar_property_scrolling_enabled>`                 | ``true``  |
-   +-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+-----------+
-   | :ref:`bool<class_bool>`                                               | :ref:`select_with_rmb<class_TabBar_property_select_with_rmb>`                     | ``false`` |
-   +-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+-----------+
-   | :ref:`AlignmentMode<enum_TabBar_AlignmentMode>`                       | :ref:`tab_alignment<class_TabBar_property_tab_alignment>`                         | ``0``     |
-   +-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+-----------+
-   | :ref:`CloseButtonDisplayPolicy<enum_TabBar_CloseButtonDisplayPolicy>` | :ref:`tab_close_display_policy<class_TabBar_property_tab_close_display_policy>`   | ``0``     |
-   +-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+-----------+
-   | :ref:`int<class_int>`                                                 | :ref:`tab_count<class_TabBar_property_tab_count>`                                 | ``0``     |
-   +-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+-----------+
-   | :ref:`int<class_int>`                                                 | :ref:`tabs_rearrange_group<class_TabBar_property_tabs_rearrange_group>`           | ``-1``    |
-   +-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+-----------+
+   +-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+---------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                               | :ref:`clip_tabs<class_TabBar_property_clip_tabs>`                                 | ``true``                                                            |
+   +-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+---------------------------------------------------------------------+
+   | :ref:`int<class_int>`                                                 | :ref:`current_tab<class_TabBar_property_current_tab>`                             | ``0``                                                               |
+   +-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+---------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                               | :ref:`drag_to_rearrange_enabled<class_TabBar_property_drag_to_rearrange_enabled>` | ``false``                                                           |
+   +-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+---------------------------------------------------------------------+
+   | :ref:`FocusMode<enum_Control_FocusMode>`                              | focus_mode                                                                        | ``2`` (overrides :ref:`Control<class_Control_property_focus_mode>`) |
+   +-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+---------------------------------------------------------------------+
+   | :ref:`int<class_int>`                                                 | :ref:`max_tab_width<class_TabBar_property_max_tab_width>`                         | ``0``                                                               |
+   +-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+---------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                               | :ref:`scroll_to_selected<class_TabBar_property_scroll_to_selected>`               | ``true``                                                            |
+   +-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+---------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                               | :ref:`scrolling_enabled<class_TabBar_property_scrolling_enabled>`                 | ``true``                                                            |
+   +-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+---------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                               | :ref:`select_with_rmb<class_TabBar_property_select_with_rmb>`                     | ``false``                                                           |
+   +-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+---------------------------------------------------------------------+
+   | :ref:`AlignmentMode<enum_TabBar_AlignmentMode>`                       | :ref:`tab_alignment<class_TabBar_property_tab_alignment>`                         | ``0``                                                               |
+   +-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+---------------------------------------------------------------------+
+   | :ref:`CloseButtonDisplayPolicy<enum_TabBar_CloseButtonDisplayPolicy>` | :ref:`tab_close_display_policy<class_TabBar_property_tab_close_display_policy>`   | ``0``                                                               |
+   +-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+---------------------------------------------------------------------+
+   | :ref:`int<class_int>`                                                 | :ref:`tab_count<class_TabBar_property_tab_count>`                                 | ``0``                                                               |
+   +-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+---------------------------------------------------------------------+
+   | :ref:`int<class_int>`                                                 | :ref:`tabs_rearrange_group<class_TabBar_property_tabs_rearrange_group>`           | ``-1``                                                              |
+   +-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+---------------------------------------------------------------------+
 
 .. rst-class:: classref-reftable-group
 
@@ -99,6 +101,10 @@ Methods
    | void                                             | :ref:`move_tab<class_TabBar_method_move_tab>` **(** :ref:`int<class_int>` from, :ref:`int<class_int>` to **)**                                                                  |
    +--------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                             | :ref:`remove_tab<class_TabBar_method_remove_tab>` **(** :ref:`int<class_int>` tab_idx **)**                                                                                     |
+   +--------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                          | :ref:`select_next_available<class_TabBar_method_select_next_available>` **(** **)**                                                                                             |
+   +--------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                          | :ref:`select_previous_available<class_TabBar_method_select_previous_available>` **(** **)**                                                                                     |
    +--------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                             | :ref:`set_tab_button_icon<class_TabBar_method_set_tab_button_icon>` **(** :ref:`int<class_int>` tab_idx, :ref:`Texture2D<class_Texture2D>` icon **)**                           |
    +--------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -167,6 +173,8 @@ Theme Properties
    | :ref:`StyleBox<class_StyleBox>`   | :ref:`button_pressed<class_TabBar_theme_style_button_pressed>`               |                                     |
    +-----------------------------------+------------------------------------------------------------------------------+-------------------------------------+
    | :ref:`StyleBox<class_StyleBox>`   | :ref:`tab_disabled<class_TabBar_theme_style_tab_disabled>`                   |                                     |
+   +-----------------------------------+------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`StyleBox<class_StyleBox>`   | :ref:`tab_focus<class_TabBar_theme_style_tab_focus>`                         |                                     |
    +-----------------------------------+------------------------------------------------------------------------------+-------------------------------------+
    | :ref:`StyleBox<class_StyleBox>`   | :ref:`tab_hovered<class_TabBar_theme_style_tab_hovered>`                     |                                     |
    +-----------------------------------+------------------------------------------------------------------------------+-------------------------------------+
@@ -811,6 +819,30 @@ Removes the tab at index ``tab_idx``.
 
 ----
 
+.. _class_TabBar_method_select_next_available:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **select_next_available** **(** **)**
+
+Selects the first available tab with greater index than the currently selected. Returns ``true`` if tab selection changed.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_TabBar_method_select_previous_available:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **select_previous_available** **(** **)**
+
+Selects the first available tab with lower index than the currently selected. Returns ``true`` if tab selection changed.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_TabBar_method_set_tab_button_icon:
 
 .. rst-class:: classref-method
@@ -1166,6 +1198,18 @@ The style of disabled tabs.
 
 ----
 
+.. _class_TabBar_theme_style_tab_focus:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`StyleBox<class_StyleBox>` **tab_focus**
+
+:ref:`StyleBox<class_StyleBox>` used when the **TabBar** is focused. The :ref:`tab_focus<class_TabBar_theme_style_tab_focus>` :ref:`StyleBox<class_StyleBox>` is displayed *over* the base :ref:`StyleBox<class_StyleBox>` of the selected tab, so a partially transparent :ref:`StyleBox<class_StyleBox>` should be used to ensure the base :ref:`StyleBox<class_StyleBox>` remains visible. A :ref:`StyleBox<class_StyleBox>` that represents an outline or an underline works well for this purpose. To disable the focus visual effect, assign a :ref:`StyleBoxEmpty<class_StyleBoxEmpty>` resource. Note that disabling the focus visual effect will harm keyboard/controller navigation usability, so this is not recommended for accessibility reasons.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_TabBar_theme_style_tab_hovered:
 
 .. rst-class:: classref-themeproperty
@@ -1173,6 +1217,8 @@ The style of disabled tabs.
 :ref:`StyleBox<class_StyleBox>` **tab_hovered**
 
 The style of the currently hovered tab. Does not apply to the selected tab.
+
+\ **Note:** This style will be drawn with the same width as :ref:`tab_unselected<class_TabBar_theme_style_tab_unselected>` at minimum.
 
 .. rst-class:: classref-item-separator
 

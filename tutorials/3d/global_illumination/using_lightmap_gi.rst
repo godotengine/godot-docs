@@ -242,10 +242,14 @@ The modes are:
 Disabled
 ^^^^^^^^
 
-The light is ignored when baking lightmaps. Keep in mind hiding a light will have
-no effect for baking, so this must be used instead of hiding the Light node.
+The light is ignored when baking lightmaps. This is the mode to use for dynamic
+lighting effects such as explosions and weapon effects.
 
-This is the mode to use for dynamic lighting effects such as explosions and weapon effects.
+.. warning::
+
+    Hiding a light has no effect on the resulting lightmap bake. This means
+    you must use the Disabled bake mode instead of hiding the Light node by
+    disabling its **Visible** property.
 
 Dynamic
 ^^^^^^^

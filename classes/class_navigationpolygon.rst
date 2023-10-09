@@ -12,60 +12,60 @@ NavigationPolygon
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-A navigation polygon that defines traversable areas and obstacles.
+A 2D navigation mesh that describes a traversable surface for pathfinding.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-There are two ways to create polygons. Either by using the :ref:`add_outline<class_NavigationPolygon_method_add_outline>` method, or using the :ref:`add_polygon<class_NavigationPolygon_method_add_polygon>` method.
+A navigation mesh can be created either by baking it with the help of the :ref:`NavigationServer2D<class_NavigationServer2D>`, or by adding vertices and convex polygon indices arrays manually.
 
-Using :ref:`add_outline<class_NavigationPolygon_method_add_outline>`:
-
-
-.. tabs::
-
- .. code-tab:: gdscript
-
-    var polygon = NavigationPolygon.new()
-    var outline = PackedVector2Array([Vector2(0, 0), Vector2(0, 50), Vector2(50, 50), Vector2(50, 0)])
-    polygon.add_outline(outline)
-    polygon.make_polygons_from_outlines()
-    $NavigationRegion2D.navigation_polygon = polygon
-
- .. code-tab:: csharp
-
-    var polygon = new NavigationPolygon();
-    var outline = new Vector2[] { new Vector2(0, 0), new Vector2(0, 50), new Vector2(50, 50), new Vector2(50, 0) };
-    polygon.AddOutline(outline);
-    polygon.MakePolygonsFromOutlines();
-    GetNode<NavigationRegion2D>("NavigationRegion2D").NavigationPolygon = polygon;
-
-
-
-Using :ref:`add_polygon<class_NavigationPolygon_method_add_polygon>` and indices of the vertices array.
+To bake a navigation mesh at least one outline needs to be added that defines the outer bounds of the baked area.
 
 
 .. tabs::
 
  .. code-tab:: gdscript
 
-    var polygon = NavigationPolygon.new()
-    var vertices = PackedVector2Array([Vector2(0, 0), Vector2(0, 50), Vector2(50, 50), Vector2(50, 0)])
-    polygon.vertices = vertices
-    var indices = PackedInt32Array([0, 1, 2, 3])
-    polygon.add_polygon(indices)
-    $NavigationRegion2D.navigation_polygon = polygon
+    var new_navigation_mesh = NavigationPolygon.new()
+    var bounding_outline = PackedVector2Array([Vector2(0, 0), Vector2(0, 50), Vector2(50, 50), Vector2(50, 0)])
+    new_navigation_mesh.add_outline(bounding_outline)
+    NavigationServer2D.bake_from_source_geometry_data(new_navigation_mesh, NavigationMeshSourceGeometryData2D.new());
+    $NavigationRegion2D.navigation_polygon = new_navigation_mesh
 
  .. code-tab:: csharp
 
-    var polygon = new NavigationPolygon();
-    var vertices = new Vector2[] { new Vector2(0, 0), new Vector2(0, 50), new Vector2(50, 50), new Vector2(50, 0) };
-    polygon.Vertices = vertices;
-    var indices = new int[] { 0, 1, 2, 3 };
-    polygon.AddPolygon(indices);
-    GetNode<NavigationRegion2D>("NavigationRegion2D").NavigationPolygon = polygon;
+    var newNavigationMesh = new NavigationPolygon();
+    var boundingOutline = new Vector2[] { new Vector2(0, 0), new Vector2(0, 50), new Vector2(50, 50), new Vector2(50, 0) };
+    newNavigationMesh.AddOutline(boundingOutline);
+    NavigationServer2D.BakeFromSourceGeometryData(newNavigationMesh, new NavigationMeshSourceGeometryData2D());
+    GetNode<NavigationRegion2D>("NavigationRegion2D").NavigationPolygon = newNavigationMesh;
+
+
+
+Adding vertices and polygon indices manually.
+
+
+.. tabs::
+
+ .. code-tab:: gdscript
+
+    var new_navigation_mesh = NavigationPolygon.new()
+    var new_vertices = PackedVector2Array([Vector2(0, 0), Vector2(0, 50), Vector2(50, 50), Vector2(50, 0)])
+    new_navigation_mesh.vertices = new_vertices
+    var new_polygon_indices = PackedInt32Array([0, 1, 2, 3])
+    new_navigation_mesh.add_polygon(new_polygon_indices)
+    $NavigationRegion2D.navigation_polygon = new_navigation_mesh
+
+ .. code-tab:: csharp
+
+    var newNavigationMesh = new NavigationPolygon();
+    var newVertices = new Vector2[] { new Vector2(0, 0), new Vector2(0, 50), new Vector2(50, 50), new Vector2(50, 0) };
+    newNavigationMesh.Vertices = newVertices;
+    var newPolygonIndices = new int[] { 0, 1, 2, 3 };
+    newNavigationMesh.AddPolygon(newPolygonIndices);
+    GetNode<NavigationRegion2D>("NavigationRegion2D").NavigationPolygon = newNavigationMesh;
 
 
 
@@ -86,9 +86,19 @@ Properties
 .. table::
    :widths: auto
 
-   +---------------------------+--------------------------------------------------------------+---------+
-   | :ref:`float<class_float>` | :ref:`cell_size<class_NavigationPolygon_property_cell_size>` | ``1.0`` |
-   +---------------------------+--------------------------------------------------------------+---------+
+   +----------------------------------------------------------------------+------------------------------------------------------------------------------------------------+-------------------------------------------------+
+   | :ref:`float<class_float>`                                            | :ref:`agent_radius<class_NavigationPolygon_property_agent_radius>`                             | ``10.0``                                        |
+   +----------------------------------------------------------------------+------------------------------------------------------------------------------------------------+-------------------------------------------------+
+   | :ref:`float<class_float>`                                            | :ref:`cell_size<class_NavigationPolygon_property_cell_size>`                                   | ``1.0``                                         |
+   +----------------------------------------------------------------------+------------------------------------------------------------------------------------------------+-------------------------------------------------+
+   | :ref:`int<class_int>`                                                | :ref:`parsed_collision_mask<class_NavigationPolygon_property_parsed_collision_mask>`           | ``4294967295``                                  |
+   +----------------------------------------------------------------------+------------------------------------------------------------------------------------------------+-------------------------------------------------+
+   | :ref:`ParsedGeometryType<enum_NavigationPolygon_ParsedGeometryType>` | :ref:`parsed_geometry_type<class_NavigationPolygon_property_parsed_geometry_type>`             | ``2``                                           |
+   +----------------------------------------------------------------------+------------------------------------------------------------------------------------------------+-------------------------------------------------+
+   | :ref:`StringName<class_StringName>`                                  | :ref:`source_geometry_group_name<class_NavigationPolygon_property_source_geometry_group_name>` | ``&"navigation_polygon_source_geometry_group"`` |
+   +----------------------------------------------------------------------+------------------------------------------------------------------------------------------------+-------------------------------------------------+
+   | :ref:`SourceGeometryMode<enum_NavigationPolygon_SourceGeometryMode>` | :ref:`source_geometry_mode<class_NavigationPolygon_property_source_geometry_mode>`             | ``0``                                           |
+   +----------------------------------------------------------------------+------------------------------------------------------------------------------------------------+-------------------------------------------------+
 
 .. rst-class:: classref-reftable-group
 
@@ -117,6 +127,8 @@ Methods
    +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                               | :ref:`get_outline_count<class_NavigationPolygon_method_get_outline_count>` **(** **)** |const|                                                                                        |
    +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                             | :ref:`get_parsed_collision_mask_value<class_NavigationPolygon_method_get_parsed_collision_mask_value>` **(** :ref:`int<class_int>` layer_number **)** |const|                         |
+   +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`PackedInt32Array<class_PackedInt32Array>`     | :ref:`get_polygon<class_NavigationPolygon_method_get_polygon>` **(** :ref:`int<class_int>` idx **)**                                                                                  |
    +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                               | :ref:`get_polygon_count<class_NavigationPolygon_method_get_polygon_count>` **(** **)** |const|                                                                                        |
@@ -129,6 +141,8 @@ Methods
    +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                | :ref:`set_outline<class_NavigationPolygon_method_set_outline>` **(** :ref:`int<class_int>` idx, :ref:`PackedVector2Array<class_PackedVector2Array>` outline **)**                     |
    +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                                | :ref:`set_parsed_collision_mask_value<class_NavigationPolygon_method_set_parsed_collision_mask_value>` **(** :ref:`int<class_int>` layer_number, :ref:`bool<class_bool>` value **)**  |
+   +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                | :ref:`set_vertices<class_NavigationPolygon_method_set_vertices>` **(** :ref:`PackedVector2Array<class_PackedVector2Array>` vertices **)**                                             |
    +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
@@ -138,8 +152,116 @@ Methods
 
 .. rst-class:: classref-descriptions-group
 
+Enumerations
+------------
+
+.. _enum_NavigationPolygon_ParsedGeometryType:
+
+.. rst-class:: classref-enumeration
+
+enum **ParsedGeometryType**:
+
+.. _class_NavigationPolygon_constant_PARSED_GEOMETRY_MESH_INSTANCES:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ParsedGeometryType<enum_NavigationPolygon_ParsedGeometryType>` **PARSED_GEOMETRY_MESH_INSTANCES** = ``0``
+
+Parses mesh instances as obstruction geometry. This includes :ref:`Polygon2D<class_Polygon2D>`, :ref:`MeshInstance2D<class_MeshInstance2D>`, :ref:`MultiMeshInstance2D<class_MultiMeshInstance2D>`, and :ref:`TileMap<class_TileMap>` nodes.
+
+Meshes are only parsed when they use a 2D vertices surface format.
+
+.. _class_NavigationPolygon_constant_PARSED_GEOMETRY_STATIC_COLLIDERS:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ParsedGeometryType<enum_NavigationPolygon_ParsedGeometryType>` **PARSED_GEOMETRY_STATIC_COLLIDERS** = ``1``
+
+Parses :ref:`StaticBody2D<class_StaticBody2D>` and :ref:`TileMap<class_TileMap>` colliders as obstruction geometry. The collider should be in any of the layers specified by :ref:`parsed_collision_mask<class_NavigationPolygon_property_parsed_collision_mask>`.
+
+.. _class_NavigationPolygon_constant_PARSED_GEOMETRY_BOTH:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ParsedGeometryType<enum_NavigationPolygon_ParsedGeometryType>` **PARSED_GEOMETRY_BOTH** = ``2``
+
+Both :ref:`PARSED_GEOMETRY_MESH_INSTANCES<class_NavigationPolygon_constant_PARSED_GEOMETRY_MESH_INSTANCES>` and :ref:`PARSED_GEOMETRY_STATIC_COLLIDERS<class_NavigationPolygon_constant_PARSED_GEOMETRY_STATIC_COLLIDERS>`.
+
+.. _class_NavigationPolygon_constant_PARSED_GEOMETRY_MAX:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ParsedGeometryType<enum_NavigationPolygon_ParsedGeometryType>` **PARSED_GEOMETRY_MAX** = ``3``
+
+Represents the size of the :ref:`ParsedGeometryType<enum_NavigationPolygon_ParsedGeometryType>` enum.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _enum_NavigationPolygon_SourceGeometryMode:
+
+.. rst-class:: classref-enumeration
+
+enum **SourceGeometryMode**:
+
+.. _class_NavigationPolygon_constant_SOURCE_GEOMETRY_ROOT_NODE_CHILDREN:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`SourceGeometryMode<enum_NavigationPolygon_SourceGeometryMode>` **SOURCE_GEOMETRY_ROOT_NODE_CHILDREN** = ``0``
+
+Scans the child nodes of the root node recursively for geometry.
+
+.. _class_NavigationPolygon_constant_SOURCE_GEOMETRY_GROUPS_WITH_CHILDREN:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`SourceGeometryMode<enum_NavigationPolygon_SourceGeometryMode>` **SOURCE_GEOMETRY_GROUPS_WITH_CHILDREN** = ``1``
+
+Scans nodes in a group and their child nodes recursively for geometry. The group is specified by :ref:`source_geometry_group_name<class_NavigationPolygon_property_source_geometry_group_name>`.
+
+.. _class_NavigationPolygon_constant_SOURCE_GEOMETRY_GROUPS_EXPLICIT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`SourceGeometryMode<enum_NavigationPolygon_SourceGeometryMode>` **SOURCE_GEOMETRY_GROUPS_EXPLICIT** = ``2``
+
+Uses nodes in a group for geometry. The group is specified by :ref:`source_geometry_group_name<class_NavigationPolygon_property_source_geometry_group_name>`.
+
+.. _class_NavigationPolygon_constant_SOURCE_GEOMETRY_MAX:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`SourceGeometryMode<enum_NavigationPolygon_SourceGeometryMode>` **SOURCE_GEOMETRY_MAX** = ``3``
+
+Represents the size of the :ref:`SourceGeometryMode<enum_NavigationPolygon_SourceGeometryMode>` enum.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
+
 Property Descriptions
 ---------------------
+
+.. _class_NavigationPolygon_property_agent_radius:
+
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **agent_radius** = ``10.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_agent_radius** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_agent_radius** **(** **)**
+
+The distance to erode/shrink the walkable surface when baking the navigation mesh.
+
+.. rst-class:: classref-item-separator
+
+----
 
 .. _class_NavigationPolygon_property_cell_size:
 
@@ -153,6 +275,78 @@ Property Descriptions
 - :ref:`float<class_float>` **get_cell_size** **(** **)**
 
 The cell size used to rasterize the navigation mesh vertices. Must match with the cell size on the navigation map.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_NavigationPolygon_property_parsed_collision_mask:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **parsed_collision_mask** = ``4294967295``
+
+.. rst-class:: classref-property-setget
+
+- void **set_parsed_collision_mask** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_parsed_collision_mask** **(** **)**
+
+The physics layers to scan for static colliders.
+
+Only used when :ref:`parsed_geometry_type<class_NavigationPolygon_property_parsed_geometry_type>` is :ref:`PARSED_GEOMETRY_STATIC_COLLIDERS<class_NavigationPolygon_constant_PARSED_GEOMETRY_STATIC_COLLIDERS>` or :ref:`PARSED_GEOMETRY_BOTH<class_NavigationPolygon_constant_PARSED_GEOMETRY_BOTH>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_NavigationPolygon_property_parsed_geometry_type:
+
+.. rst-class:: classref-property
+
+:ref:`ParsedGeometryType<enum_NavigationPolygon_ParsedGeometryType>` **parsed_geometry_type** = ``2``
+
+.. rst-class:: classref-property-setget
+
+- void **set_parsed_geometry_type** **(** :ref:`ParsedGeometryType<enum_NavigationPolygon_ParsedGeometryType>` value **)**
+- :ref:`ParsedGeometryType<enum_NavigationPolygon_ParsedGeometryType>` **get_parsed_geometry_type** **(** **)**
+
+Determines which type of nodes will be parsed as geometry. See :ref:`ParsedGeometryType<enum_NavigationPolygon_ParsedGeometryType>` for possible values.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_NavigationPolygon_property_source_geometry_group_name:
+
+.. rst-class:: classref-property
+
+:ref:`StringName<class_StringName>` **source_geometry_group_name** = ``&"navigation_polygon_source_geometry_group"``
+
+.. rst-class:: classref-property-setget
+
+- void **set_source_geometry_group_name** **(** :ref:`StringName<class_StringName>` value **)**
+- :ref:`StringName<class_StringName>` **get_source_geometry_group_name** **(** **)**
+
+The group name of nodes that should be parsed for baking source geometry.
+
+Only used when :ref:`source_geometry_mode<class_NavigationPolygon_property_source_geometry_mode>` is :ref:`SOURCE_GEOMETRY_GROUPS_WITH_CHILDREN<class_NavigationPolygon_constant_SOURCE_GEOMETRY_GROUPS_WITH_CHILDREN>` or :ref:`SOURCE_GEOMETRY_GROUPS_EXPLICIT<class_NavigationPolygon_constant_SOURCE_GEOMETRY_GROUPS_EXPLICIT>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_NavigationPolygon_property_source_geometry_mode:
+
+.. rst-class:: classref-property
+
+:ref:`SourceGeometryMode<enum_NavigationPolygon_SourceGeometryMode>` **source_geometry_mode** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_source_geometry_mode** **(** :ref:`SourceGeometryMode<enum_NavigationPolygon_SourceGeometryMode>` value **)**
+- :ref:`SourceGeometryMode<enum_NavigationPolygon_SourceGeometryMode>` **get_source_geometry_mode** **(** **)**
+
+The source of the geometry used when baking. See :ref:`SourceGeometryMode<enum_NavigationPolygon_SourceGeometryMode>` for possible values.
 
 .. rst-class:: classref-section-separator
 
@@ -169,7 +363,7 @@ Method Descriptions
 
 void **add_outline** **(** :ref:`PackedVector2Array<class_PackedVector2Array>` outline **)**
 
-Appends a :ref:`PackedVector2Array<class_PackedVector2Array>` that contains the vertices of an outline to the internal array that contains all the outlines. You have to call :ref:`make_polygons_from_outlines<class_NavigationPolygon_method_make_polygons_from_outlines>` in order for this array to be converted to polygons that the engine will use.
+Appends a :ref:`PackedVector2Array<class_PackedVector2Array>` that contains the vertices of an outline to the internal array that contains all the outlines.
 
 .. rst-class:: classref-item-separator
 
@@ -181,7 +375,7 @@ Appends a :ref:`PackedVector2Array<class_PackedVector2Array>` that contains the 
 
 void **add_outline_at_index** **(** :ref:`PackedVector2Array<class_PackedVector2Array>` outline, :ref:`int<class_int>` index **)**
 
-Adds a :ref:`PackedVector2Array<class_PackedVector2Array>` that contains the vertices of an outline to the internal array that contains all the outlines at a fixed position. You have to call :ref:`make_polygons_from_outlines<class_NavigationPolygon_method_make_polygons_from_outlines>` in order for this array to be converted to polygons that the engine will use.
+Adds a :ref:`PackedVector2Array<class_PackedVector2Array>` that contains the vertices of an outline to the internal array that contains all the outlines at a fixed position.
 
 .. rst-class:: classref-item-separator
 
@@ -271,6 +465,18 @@ Returns the number of outlines that were created in the editor or by script.
 
 ----
 
+.. _class_NavigationPolygon_method_get_parsed_collision_mask_value:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **get_parsed_collision_mask_value** **(** :ref:`int<class_int>` layer_number **)** |const|
+
+Returns whether or not the specified layer of the :ref:`parsed_collision_mask<class_NavigationPolygon_property_parsed_collision_mask>` is enabled, given a ``layer_number`` between 1 and 32.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_NavigationPolygon_method_get_polygon:
 
 .. rst-class:: classref-method
@@ -315,6 +521,8 @@ void **make_polygons_from_outlines** **(** **)**
 
 Creates polygons from the outlines added in the editor or by script.
 
+\ *Deprecated.* This function is deprecated, and might be removed in a future release. Use :ref:`NavigationServer2D.parse_source_geometry_data<class_NavigationServer2D_method_parse_source_geometry_data>` and :ref:`NavigationServer2D.bake_from_source_geometry_data<class_NavigationServer2D_method_bake_from_source_geometry_data>` instead.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -338,6 +546,18 @@ Removes an outline created in the editor or by script. You have to call :ref:`ma
 void **set_outline** **(** :ref:`int<class_int>` idx, :ref:`PackedVector2Array<class_PackedVector2Array>` outline **)**
 
 Changes an outline created in the editor or by script. You have to call :ref:`make_polygons_from_outlines<class_NavigationPolygon_method_make_polygons_from_outlines>` for the polygons to update.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_NavigationPolygon_method_set_parsed_collision_mask_value:
+
+.. rst-class:: classref-method
+
+void **set_parsed_collision_mask_value** **(** :ref:`int<class_int>` layer_number, :ref:`bool<class_bool>` value **)**
+
+Based on ``value``, enables or disables the specified layer in the :ref:`parsed_collision_mask<class_NavigationPolygon_property_parsed_collision_mask>`, given a ``layer_number`` between 1 and 32.
 
 .. rst-class:: classref-item-separator
 

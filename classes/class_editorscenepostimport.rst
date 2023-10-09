@@ -80,7 +80,7 @@ The :ref:`_post_import<class_EditorScenePostImport_method__post_import>` callbac
 Tutorials
 ---------
 
-- `Importing 3D scenes: Custom script <../tutorials/assets_pipeline/importing_scenes.html#custom-script>`__
+- `Importing 3D scenes: Configuration: Using import scripts for automation <../tutorials/assets_pipeline/importing_3d_scenes/import_configuration.html#using-import-scripts-for-automation>`__
 
 .. rst-class:: classref-reftable-group
 

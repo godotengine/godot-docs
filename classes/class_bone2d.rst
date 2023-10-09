@@ -166,7 +166,7 @@ Returns the length of the bone in the **Bone2D** node.
 
 :ref:`Transform2D<class_Transform2D>` **get_skeleton_rest** **(** **)** |const|
 
-Returns the node's :ref:`rest<class_Bone2D_property_rest>` ``Transform2D`` if it doesn't have a parent, or its rest pose relative to its parent.
+Returns the node's :ref:`rest<class_Bone2D_property_rest>` :ref:`Transform2D<class_Transform2D>` if it doesn't have a parent, or its rest pose relative to its parent.
 
 .. rst-class:: classref-item-separator
 

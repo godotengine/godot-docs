@@ -101,7 +101,9 @@ Signals
 
 **scroll_ended** **(** **)**
 
-Emitted when scrolling stops.
+Emitted when scrolling stops when dragging the scrollable area *with a touch event*. This signal is *not* emitted when scrolling by dragging the scrollbar, scrolling with the mouse wheel or scrolling with keyboard/gamepad events.
+
+\ **Note:** This signal is only emitted on Android or iOS, or on desktop/web platforms when :ref:`ProjectSettings.input_devices/pointing/emulate_touch_from_mouse<class_ProjectSettings_property_input_devices/pointing/emulate_touch_from_mouse>` is enabled.
 
 .. rst-class:: classref-item-separator
 
@@ -113,7 +115,9 @@ Emitted when scrolling stops.
 
 **scroll_started** **(** **)**
 
-Emitted when scrolling is started.
+Emitted when scrolling starts when dragging the scrollable area w\ *ith a touch event*. This signal is *not* emitted when scrolling by dragging the scrollbar, scrolling with the mouse wheel or scrolling with keyboard/gamepad events.
+
+\ **Note:** This signal is only emitted on Android or iOS, or on desktop/web platforms when :ref:`ProjectSettings.input_devices/pointing/emulate_touch_from_mouse<class_ProjectSettings_property_input_devices/pointing/emulate_touch_from_mouse>` is enabled.
 
 .. rst-class:: classref-section-separator
 
@@ -233,7 +237,7 @@ Deadzone for touch scrolling. Lower deadzone makes the scrolling more sensitive.
 - void **set_h_scroll** **(** :ref:`int<class_int>` value **)**
 - :ref:`int<class_int>` **get_h_scroll** **(** **)**
 
-The current horizontal scroll value. 
+The current horizontal scroll value.
 
 \ **Note:** If you are setting this value in the :ref:`Node._ready<class_Node_method__ready>` function or earlier, it needs to be wrapped with :ref:`Object.set_deferred<class_Object_method_set_deferred>`, since scroll bar's :ref:`Range.max_value<class_Range_property_max_value>` is not initialized yet.
 

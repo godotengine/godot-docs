@@ -48,6 +48,18 @@ Properties
    | :ref:`int<class_int>`           | :ref:`solver_priority<class_Joint3D_property_solver_priority>`                           | ``1``            |
    +---------------------------------+------------------------------------------------------------------------------------------+------------------+
 
+.. rst-class:: classref-reftable-group
+
+Methods
+-------
+
+.. table::
+   :widths: auto
+
+   +-----------------------+------------------------------------------------------------------+
+   | :ref:`RID<class_RID>` | :ref:`get_rid<class_Joint3D_method_get_rid>` **(** **)** |const| |
+   +-----------------------+------------------------------------------------------------------+
+
 .. rst-class:: classref-section-separator
 
 ----
@@ -120,6 +132,23 @@ The node attached to the second side (B) of the joint.
 - :ref:`int<class_int>` **get_solver_priority** **(** **)**
 
 The priority used to define which solver is executed first for multiple joints. The lower the value, the higher the priority.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
+
+Method Descriptions
+-------------------
+
+.. _class_Joint3D_method_get_rid:
+
+.. rst-class:: classref-method
+
+:ref:`RID<class_RID>` **get_rid** **(** **)** |const|
+
+Returns the joint's :ref:`RID<class_RID>`.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

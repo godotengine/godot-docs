@@ -32,35 +32,6 @@ Tutorials
 
 - `3D Voxel Demo <https://godotengine.org/asset-library/asset/676>`__
 
-.. rst-class:: classref-reftable-group
-
-Theme Properties
-----------------
-
-.. table::
-   :widths: auto
-
-   +-----------------------+------------------------------------------------------------------+-------+
-   | :ref:`int<class_int>` | :ref:`separation<class_VBoxContainer_theme_constant_separation>` | ``4`` |
-   +-----------------------+------------------------------------------------------------------+-------+
-
-.. rst-class:: classref-section-separator
-
-----
-
-.. rst-class:: classref-descriptions-group
-
-Theme Property Descriptions
----------------------------
-
-.. _class_VBoxContainer_theme_constant_separation:
-
-.. rst-class:: classref-themeproperty
-
-:ref:`int<class_int>` **separation** = ``4``
-
-The vertical space between the **VBoxContainer**'s elements.
-
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

@@ -130,10 +130,37 @@ Mark the following property as exported (editable in the Inspector dock and save
 
 ::
 
+    extends Node
+    
+    enum Direction {LEFT, RIGHT, UP, DOWN}
+    
+    # Built-in types.
     @export var string = ""
     @export var int_number = 5
     @export var float_number: float = 5
+    
+    # Enums.
+    @export var type: Variant.Type
+    @export var format: Image.Format
+    @export var direction: Direction
+    
+    # Resources.
     @export var image: Image
+    @export var custom_resource: CustomResource
+    
+    # Nodes.
+    @export var node: Node
+    @export var custom_node: CustomNode
+    
+    # Typed arrays.
+    @export var int_array: Array[int]
+    @export var direction_array: Array[Direction]
+    @export var image_array: Array[Image]
+    @export var node_array: Array[Node]
+
+\ **Note:** Custom resources and nodes must be registered as global classes using ``class_name``.
+
+\ **Note:** Node export is only supported in :ref:`Node<class_Node>`-derived classes and has a number of other limitations.
 
 .. rst-class:: classref-item-separator
 
@@ -572,7 +599,7 @@ Export an :ref:`int<class_int>` or :ref:`float<class_float>` property as a range
 
 If hints ``"or_greater"`` and ``"or_less"`` are provided, the editor widget will not cap the value at range boundaries. The ``"exp"`` hint will make the edited values on range to change exponentially. The ``"hide_slider"`` hint will hide the slider element of the editor widget.
 
-Hints also allow to indicate the units for the edited value. Using ``"radians"`` you can specify that the actual value is in radians, but should be displayed in degrees in the Inspector dock. ``"degrees"`` allows to add a degree sign as a unit suffix. Finally, a custom suffix can be provided using ``"suffix:unit"``, where "unit" can be any string.
+Hints also allow to indicate the units for the edited value. Using ``"radians_as_degrees"`` you can specify that the actual value is in radians, but should be displayed in degrees in the Inspector dock (the range values are also in degrees). ``"degrees"`` allows to add a degree sign as a unit suffix (the value is unchanged). Finally, a custom suffix can be provided using ``"suffix:unit"``, where "unit" can be any string.
 
 See also :ref:`@GlobalScope.PROPERTY_HINT_RANGE<class_@GlobalScope_constant_PROPERTY_HINT_RANGE>`.
 
@@ -585,7 +612,7 @@ See also :ref:`@GlobalScope.PROPERTY_HINT_RANGE<class_@GlobalScope_constant_PROP
     @export_range(0, 100, 1, "or_greater") var power_percent
     @export_range(0, 100, 1, "or_greater", "or_less") var health_delta
     
-    @export_range(-3.14, 3.14, 0.001, "radians") var angle_radians
+    @export_range(-180, 180, 0.001, "radians_as_degrees") var angle_radians
     @export_range(0, 360, 1, "degrees") var angle_degrees
     @export_range(-8, 8, 2, "suffix:px") var target_offset
 
@@ -633,9 +660,9 @@ Add a custom icon to the current script. The icon specified at ``icon_path`` is 
 
 \ **Note:** Only the script can have a custom icon. Inner classes are not supported.
 
-\ **Note:** As annotations describe their subject, the ``@icon`` annotation must be placed before the class definition and inheritance.
+\ **Note:** As annotations describe their subject, the :ref:`@icon<class_@GDScript_annotation_@icon>` annotation must be placed before the class definition and inheritance.
 
-\ **Note:** Unlike other annotations, the argument of the ``@icon`` annotation must be a string literal (constant expressions are not supported).
+\ **Note:** Unlike other annotations, the argument of the :ref:`@icon<class_@GDScript_annotation_@icon>` annotation must be a string literal (constant expressions are not supported).
 
 .. rst-class:: classref-item-separator
 
@@ -715,7 +742,7 @@ Mark the current script as a tool script, allowing it to be loaded and executed 
     @tool
     extends Node
 
-\ **Note:** As annotations describe their subject, the ``@tool`` annotation must be placed before the class definition and inheritance.
+\ **Note:** As annotations describe their subject, the :ref:`@tool<class_@GDScript_annotation_@tool>` annotation must be placed before the class definition and inheritance.
 
 .. rst-class:: classref-item-separator
 
@@ -814,6 +841,8 @@ Returns a single character (as a :ref:`String<class_String>`) of the given Unico
 .. rst-class:: classref-method
 
 :ref:`Variant<class_Variant>` **convert** **(** :ref:`Variant<class_Variant>` what, :ref:`int<class_int>` type **)**
+
+*Deprecated.* Use :ref:`@GlobalScope.type_convert<class_@GlobalScope_method_type_convert>` instead.
 
 Converts ``what`` to ``type`` in the best way possible. The ``type`` uses the :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` values.
 

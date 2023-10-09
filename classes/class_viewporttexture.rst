@@ -23,7 +23,7 @@ Provides the content of a :ref:`Viewport<class_Viewport>` as a dynamic :ref:`Tex
 
 To create a **ViewportTexture** in code, use the :ref:`Viewport.get_texture<class_Viewport_method_get_texture>` method on the target viewport.
 
-\ **Note:** When local to scene, this texture uses :ref:`Resource.setup_local_to_scene<class_Resource_method_setup_local_to_scene>` to set the proxy texture and flags in the local viewport. Local to scene **ViewportTexture**\ s will return incorrect data until the scene root is ready (see :ref:`Node.ready<class_Node_signal_ready>`).
+\ **Note:** A **ViewportTexture** is always local to its scene (see :ref:`Resource.resource_local_to_scene<class_Resource_property_resource_local_to_scene>`). If the scene root is not ready, it may return incorrect data (see :ref:`Node.ready<class_Node_signal_ready>`).
 
 .. rst-class:: classref-introduction-group
 

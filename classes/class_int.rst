@@ -38,7 +38,7 @@ Likewise, :ref:`float<class_float>`\ s can be automatically converted into **int
  .. code-tab:: csharp
 
     int x = 1; // x is 1
-    x = 4.2; // x is 4, because 4.2 gets truncated
+    x = (int)4.2; // x is 4, because 4.2 gets truncated
     // We use long below, because GDScript's int is 64-bit while C#'s int is 32-bit.
     long maxLong = 9223372036854775807; // Biggest value a long can store
     maxLong++; // maxLong is now -9223372036854775808, because it wrapped around.
@@ -49,13 +49,24 @@ Likewise, :ref:`float<class_float>`\ s can be automatically converted into **int
 
 
 
-In GDScript, you can use the ``0b`` literal for binary representation, the ``0x`` literal for hexadecimal representation, and the ``_`` symbol to separate long numbers and improve readability.
+You can use the ``0b`` literal for binary representation, the ``0x`` literal for hexadecimal representation, and the ``_`` symbol to separate long numbers and improve readability.
 
-::
+
+.. tabs::
+
+ .. code-tab:: gdscript
 
     var x = 0b1001 # x is 9
     var y = 0xF5 # y is 245
     var z = 10_000_000 # z is 10000000
+
+ .. code-tab:: csharp
+
+    int x = 0b1001; // x is 9
+    int y = 0xF5; // y is 245
+    int z = 10_000_000; // z is 10000000
+
+
 
 .. rst-class:: classref-reftable-group
 

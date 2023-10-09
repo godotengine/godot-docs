@@ -84,6 +84,8 @@ Render modes
 +-------------------------------+------------------------------------------------------------------------------------------------------+
 | **alpha_to_coverage_and_one** | Alpha antialiasing mode, see `here <https://github.com/godotengine/godot/pull/40364>`_ for more.     |
 +-------------------------------+------------------------------------------------------------------------------------------------------+
+| **fog_disabled**              | Disable receiving depth-based or volumetric fog. Useful for blend_add materials like particles.      |
++-------------------------------+------------------------------------------------------------------------------------------------------+
 
 Built-ins
 ^^^^^^^^^
@@ -399,7 +401,7 @@ Below is an example of a custom light function using a Lambertian lighting model
 .. code-block:: glsl
 
     void light() {
-        DIFFUSE_LIGHT += clamp(dot(NORMAL, LIGHT), 0.0, 1.0) * ATTENUATION * ALBEDO;
+        DIFFUSE_LIGHT += clamp(dot(NORMAL, LIGHT), 0.0, 1.0) * ATTENUATION * LIGHT_COLOR;
     }
 
 If you want the lights to add together, add the light contribution to ``DIFFUSE_LIGHT`` using ``+=``, rather than overwriting it.

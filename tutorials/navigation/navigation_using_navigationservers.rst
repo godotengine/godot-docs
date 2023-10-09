@@ -16,7 +16,7 @@ Communicating with the NavigationServer
 To work with the NavigationServer means to prepare parameters for a ``query`` that can be send to the NavigationServer for updates or requesting data.
 
 To reference the internal NavigationServer objects like maps, regions and agents RIDs are used as identification numbers.
-Every navigation related node in the SceneTree has a function that returns the RID for this node.
+Every navigation related node in the scene tree has a function that returns the RID for this node.
 
 Threading and Synchronization
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -39,7 +39,7 @@ Synchronization for the NavigationServer happens in the middle of the physics fr
 
 .. note::
     The important takeaway is that most NavigationServer changes take effect after the next physics frame and not immediately.
-    This includes all changes made by navigation related nodes in the SceneTree or through scripts.
+    This includes all changes made by navigation related nodes in the scene tree or through scripts.
 
 The following functions will be executed in the synchronization phase only:
 
@@ -79,16 +79,16 @@ pathfinding and the NavigationServer2D facilitates the conversions.
 When a guide uses just NavigationServer without the 2D or 3D suffix it usually works for both servers
 by exchange Vector2(x, y) with Vector3(x, 0.0, z) or reverse.
 
-Technically it is possible to use the tools for creating navigationmesh for the other
-dimension, e..g. baking 2D navigationmesh with the 3D NavigationMesh when using
-flat 3D source geometry or creating 3D flat navigationmesh with the
-polygon outline drawtools of NavigationRegion2D and NavigationPolygons.
+Technically it is possible to use the tools for creating navigation meshes in one dimension for the other
+dimension, e.g. baking a 2D navigation mesh with the 3D NavigationMesh when using
+flat 3D source geometry or creating 3D flat navigation meshes with the
+polygon outline draw tools of NavigationRegion2D and NavigationPolygons.
 
 Any RID created with the NavigationServer2D API works on the NavigationServer3D API
 as well and both 2D and 3D avoidance agents can exist on the same map.
 
 .. note::
-    Regions created in 2D and 3D will merge their navigationmeshes when placed on the same map and merge conditions apply.
+    Regions created in 2D and 3D will merge their navigation meshes when placed on the same map and merge conditions apply.
     The NavigationServer does not discriminate between NavigationRegion2D and NavigationRegion3D nodes as both are regions on the server.
     By default those nodes register on different navigation maps so this merge can only happen when maps are changed manually e.g. with scripts.
 
@@ -103,7 +103,7 @@ Waiting for synchronization
 At the start of the game, a new scene or procedural navigation changes any path query to a NavigationServer will return empty or wrong.
 
 The navigation map is still empty or not updated at this point.
-All nodes from the SceneTree need to first upload their navigation related data to the NavigationServer.
+All nodes from the scene tree need to first upload their navigation related data to the NavigationServer.
 Each added or changed map, region or agent need to be registered with the NavigationServer.
 Afterward the NavigationServer requires a ``physics_frame`` for synchronization to update the maps, regions and agents.
 
@@ -117,7 +117,7 @@ Afterwards the function waits for the next physics_frame before continuing with 
     extends Node3D
 
     func _ready():
-        # use call deferred to make sure the entire SceneTree Nodes are setup
+        # use call deferred to make sure the entire scene tree nodes are setup
         # else await / yield on 'physics_frame' in a _ready() might get stuck
         call_deferred("custom_setup")
 

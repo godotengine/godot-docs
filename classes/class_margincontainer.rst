@@ -86,7 +86,7 @@ Theme Property Descriptions
 
 :ref:`int<class_int>` **margin_bottom** = ``0``
 
-All direct children of **MarginContainer** will have a bottom margin of ``margin_bottom`` pixels.
+Offsets towards the inside direct children of the container by this amount of pixels from the bottom.
 
 .. rst-class:: classref-item-separator
 
@@ -98,7 +98,7 @@ All direct children of **MarginContainer** will have a bottom margin of ``margin
 
 :ref:`int<class_int>` **margin_left** = ``0``
 
-All direct children of **MarginContainer** will have a left margin of ``margin_left`` pixels.
+Offsets towards the inside direct children of the container by this amount of pixels from the left.
 
 .. rst-class:: classref-item-separator
 
@@ -110,7 +110,7 @@ All direct children of **MarginContainer** will have a left margin of ``margin_l
 
 :ref:`int<class_int>` **margin_right** = ``0``
 
-All direct children of **MarginContainer** will have a right margin of ``margin_right`` pixels.
+Offsets towards the inside direct children of the container by this amount of pixels from the right.
 
 .. rst-class:: classref-item-separator
 
@@ -122,7 +122,7 @@ All direct children of **MarginContainer** will have a right margin of ``margin_
 
 :ref:`int<class_int>` **margin_top** = ``0``
 
-All direct children of **MarginContainer** will have a top margin of ``margin_top`` pixels.
+Offsets towards the inside direct children of the container by this amount of pixels from the top.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

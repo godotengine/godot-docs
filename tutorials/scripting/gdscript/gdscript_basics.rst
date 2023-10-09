@@ -173,9 +173,9 @@ in case you want to take a look under the hood.
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 | return     | Returns a value from a function.                                                                                                                  |
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| class      | Defines a class.                                                                                                                                  |
+| class      | Defines an inner class. See `Inner classes`_.                                                                                                     |
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| class_name | Defines the script as a globally accessible class with the specified name.                                                                        |
+| class_name | Defines the script as a globally accessible class with the specified name. See `Registering named classes`_.                                      |
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 | extends    | Defines what class to extend with the current class.                                                                                              |
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -340,29 +340,43 @@ The following is the list of supported operators and their precedence.
 Literals
 ~~~~~~~~
 
-+--------------------------+-------------------------------------------+
-| **Literal**              | **Type**                                  |
-+--------------------------+-------------------------------------------+
-| ``45``                   | Base 10 integer                           |
-+--------------------------+-------------------------------------------+
-| ``0x8f51``               | Base 16 (hexadecimal) integer             |
-+--------------------------+-------------------------------------------+
-| ``0b101010``             | Base 2 (binary) integer                   |
-+--------------------------+-------------------------------------------+
-| ``3.14``, ``58.1e-10``   | Floating-point number (real)              |
-+--------------------------+-------------------------------------------+
-| ``"Hello"``, ``'Hi'``    | Strings                                   |
-+--------------------------+-------------------------------------------+
-| ``"""Hello"""``          | Multiline string                          |
-+--------------------------+-------------------------------------------+
-| ``&"name"``              | :ref:`StringName <class_StringName>`      |
-+--------------------------+-------------------------------------------+
-| ``^"Node/Label"``        | :ref:`NodePath <class_NodePath>`          |
-+--------------------------+-------------------------------------------+
-| ``$NodePath``            | Shorthand for ``get_node("NodePath")``    |
-+--------------------------+-------------------------------------------+
-| ``%UniqueNode``          | Shorthand for ``get_node("%UniqueNode")`` |
-+--------------------------+-------------------------------------------+
++---------------------------------+-------------------------------------------+
+| **Example(s)**                  | **Description**                           |
++---------------------------------+-------------------------------------------+
+| ``null``                        | Null value                                |
++---------------------------------+-------------------------------------------+
+| ``false``, ``true``             | Boolean values                            |
++---------------------------------+-------------------------------------------+
+| ``45``                          | Base 10 integer                           |
++---------------------------------+-------------------------------------------+
+| ``0x8f51``                      | Base 16 (hexadecimal) integer             |
++---------------------------------+-------------------------------------------+
+| ``0b101010``                    | Base 2 (binary) integer                   |
++---------------------------------+-------------------------------------------+
+| ``3.14``, ``58.1e-10``          | Floating-point number (real)              |
++---------------------------------+-------------------------------------------+
+| ``"Hello"``, ``'Hi'``           | Regular strings                           |
++---------------------------------+-------------------------------------------+
+| ``"""Hello"""``, ``'''Hi'''``   | Triple-quoted regular strings             |
++---------------------------------+-------------------------------------------+
+| ``r"Hello"``, ``r'Hi'``         | Raw strings                               |
++---------------------------------+-------------------------------------------+
+| ``r"""Hello"""``, ``r'''Hi'''`` | Triple-quoted raw strings                 |
++---------------------------------+-------------------------------------------+
+| ``&"name"``                     | :ref:`StringName <class_StringName>`      |
++---------------------------------+-------------------------------------------+
+| ``^"Node/Label"``               | :ref:`NodePath <class_NodePath>`          |
++---------------------------------+-------------------------------------------+
+
+There are also two constructs that look like literals, but actually are not:
+
++---------------------------------+-------------------------------------------+
+| **Example**                     | **Description**                           |
++---------------------------------+-------------------------------------------+
+| ``$NodePath``                   | Shorthand for ``get_node("NodePath")``    |
++---------------------------------+-------------------------------------------+
+| ``%UniqueNode``                 | Shorthand for ``get_node("%UniqueNode")`` |
++---------------------------------+-------------------------------------------+
 
 Integers and floats can have their numbers separated with ``_`` to make them more readable.
 The following ways to write numbers are all valid::
@@ -371,6 +385,63 @@ The following ways to write numbers are all valid::
     3.141_592_7  # Equal to 3.1415927.
     0x8080_0000_ffff  # Equal to 0x80800000ffff.
     0b11_00_11_00  # Equal to 0b11001100.
+
+**Regular string literals** can contain the following escape sequences:
+
++---------------------+---------------------------------+
+| **Escape sequence** | **Expands to**                  |
++---------------------+---------------------------------+
+| ``\n``              | Newline (line feed)             |
++---------------------+---------------------------------+
+| ``\t``              | Horizontal tab character        |
++---------------------+---------------------------------+
+| ``\r``              | Carriage return                 |
++---------------------+---------------------------------+
+| ``\a``              | Alert (beep/bell)               |
++---------------------+---------------------------------+
+| ``\b``              | Backspace                       |
++---------------------+---------------------------------+
+| ``\f``              | Formfeed page break             |
++---------------------+---------------------------------+
+| ``\v``              | Vertical tab character          |
++---------------------+---------------------------------+
+| ``\"``              | Double quote                    |
++---------------------+---------------------------------+
+| ``\'``              | Single quote                    |
++---------------------+---------------------------------+
+| ``\\``              | Backslash                       |
++---------------------+---------------------------------+
+| ``\uXXXX``          | UTF-16 Unicode codepoint        |
+|                     | ``XXXX``                        |
+|                     | (hexadecimal, case-insensitive) |
++---------------------+---------------------------------+
+| ``\UXXXXXX``        | UTF-32 Unicode codepoint        |
+|                     | ``XXXXXX``                      |
+|                     | (hexadecimal, case-insensitive) |
++---------------------+---------------------------------+
+
+There are two ways to represent an escaped Unicode character above ``0xFFFF``:
+
+- as a `UTF-16 surrogate pair <https://en.wikipedia.org/wiki/UTF-16#Code_points_from_U+010000_to_U+10FFFF>`_ ``\uXXXX\uXXXX``.
+- as a single UTF-32 codepoint ``\UXXXXXX``.
+
+Also, using ``\`` followed by a newline inside a string will allow you to continue it in the next line,
+without inserting a newline character in the string itself.
+
+A string enclosed in quotes of one type (for example ``"``) can contain quotes of another type
+(for example ``'``) without escaping. Triple-quoted strings allow you to avoid escaping up to
+two consecutive quotes of the same type (unless they are adjacent to the string edges).
+
+**Raw string literals** always encode the string as it appears in the source code.
+This is especially useful for regular expressions. Raw strings do not process escape sequences,
+but you can "escape" a quote or backslash (they replace themselves).
+
+::
+
+    print("\tchar=\"\\t\"")  # Prints `    char="\t"`.
+    print(r"\tchar=\"\\t\"") # Prints `\tchar=\"\\t\"`.
+
+GDScript also supports :ref:`format strings <doc_gdscript_printf>`.
 
 Annotations
 ~~~~~~~~~~~
@@ -535,49 +606,6 @@ Note: Currently, data structures such as ``Vector2``, ``Vector3``, and
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 A sequence of characters in `Unicode format <https://en.wikipedia.org/wiki/Unicode>`_.
-String literals can contain the following escape sequences:
-
-+---------------------+---------------------------------+
-| **Escape sequence** | **Expands to**                  |
-+---------------------+---------------------------------+
-| ``\n``              | Newline (line feed)             |
-+---------------------+---------------------------------+
-| ``\t``              | Horizontal tab character        |
-+---------------------+---------------------------------+
-| ``\r``              | Carriage return                 |
-+---------------------+---------------------------------+
-| ``\a``              | Alert (beep/bell)               |
-+---------------------+---------------------------------+
-| ``\b``              | Backspace                       |
-+---------------------+---------------------------------+
-| ``\f``              | Formfeed page break             |
-+---------------------+---------------------------------+
-| ``\v``              | Vertical tab character          |
-+---------------------+---------------------------------+
-| ``\"``              | Double quote                    |
-+---------------------+---------------------------------+
-| ``\'``              | Single quote                    |
-+---------------------+---------------------------------+
-| ``\\``              | Backslash                       |
-+---------------------+---------------------------------+
-| ``\uXXXX``          | UTF-16 Unicode codepoint        |
-|                     | ``XXXX``                        |
-|                     | (hexadecimal, case-insensitive) |
-+---------------------+---------------------------------+
-| ``\UXXXXXX``        | UTF-32 Unicode codepoint        |
-|                     | ``XXXXXX``                      |
-|                     | (hexadecimal, case-insensitive) |
-+---------------------+---------------------------------+
-
-There are two ways to represent an escaped Unicode character above 0xFFFF:
-
-- as a `UTF-16 surrogate pair <https://en.wikipedia.org/wiki/UTF-16#Code_points_from_U+010000_to_U+10FFFF>`_ ``\uXXXX\uXXXX``.
-- as a single UTF-32 codepoint ``\UXXXXXX``.
-
-Also, using ``\`` followed by a newline inside a string will allow you to continue it in the next line, without
-inserting a newline character in the string itself.
-
-GDScript also supports :ref:`format strings <doc_gdscript_printf>`.
 
 :ref:`StringName <class_StringName>`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -728,15 +756,22 @@ native or user class, or enum. Nested array types (like ``Array[Array[int]]``) a
     Arrays are passed by reference, so the array element type is also an attribute of the in-memory
     structure referenced by a variable in runtime. The static type of a variable restricts the structures
     that it can reference to. Therefore, you **cannot** assign an array with a different element type,
-    even if the type is a subtype of the required type::
+    even if the type is a subtype of the required type.
+
+    If you want to *convert* a typed array, you can create a new array and use the
+    :ref:`Array.assign() <class_Array_method_assign>` method::
 
         var a: Array[Node2D] = [Node2D.new()]
 
-        # OK. You can add the value to the array because `Node2D` extends `Node`.
+        # (OK) You can add the value to the array because `Node2D` extends `Node`.
         var b: Array[Node] = [a[0]]
 
-        # Error. You cannot assign an `Array[Node2D]` to an `Array[Node]` variable.
+        # (Error) You cannot assign an `Array[Node2D]` to an `Array[Node]` variable.
         b = a
+
+        # (OK) But you can use the `assign()` method instead. Unlike the `=` operator,
+        # the `assign()` method copies the contents of the array, not the reference.
+        b.assign(a)
 
     The only exception was made for the ``Array`` (``Array[Variant]``) type, for user convenience
     and compatibility with old code. However, operations on untyped arrays are considered unsafe.
@@ -1412,29 +1447,33 @@ match
 A ``match`` statement is used to branch execution of a program.
 It's the equivalent of the ``switch`` statement found in many other languages, but offers some additional features.
 
-Basic syntax::
-
-    match (expression):
-        [pattern](s):
-            [block]
-        [pattern](s):
-            [block]
-        [pattern](s):
-            [block]
-
 .. warning::
 
     ``match`` is more type strict than the ``==`` operator. For example ``1`` will **not** match ``1.0``. The only exception is ``String`` vs ``StringName`` matching:
     for example, the String ``"hello"`` is considered equal to the StringName ``&"hello"``.
 
-**Crash-course for people who are familiar with switch statements**:
+Basic syntax
+""""""""""""
+
+::
+
+    match <expression>:
+        <pattern(s)>:
+            <block>
+        <pattern(s)> when <guard expression>:
+            <block>
+        <...>
+
+Crash-course for people who are familiar with switch statements
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 1. Replace ``switch`` with ``match``.
 2. Remove ``case``.
 3. Remove any ``break``\ s.
 4. Change ``default`` to a single underscore.
 
-**Control flow**:
+Control flow
+""""""""""""
 
 The patterns are matched from top to bottom.
 If a pattern matches, the first corresponding block will be executed. After that, the execution continues below the ``match`` statement.
@@ -1443,10 +1482,10 @@ If a pattern matches, the first corresponding block will be executed. After that
 
     The special ``continue`` behavior in ``match`` supported in 3.x was removed in Godot 4.0.
 
-There are 6 pattern types:
+The following pattern types are available:
 
-- Constant pattern
-    Constant primitives, like numbers and strings::
+- Literal pattern
+    Matches a `literal <Literals_>`_::
 
         match x:
             1:
@@ -1456,9 +1495,8 @@ There are 6 pattern types:
             "test":
                 print("Oh snap! It's a string!")
 
-
-- Variable pattern
-    Matches the contents of a variable/enum::
+- Expression pattern
+    Matches a constant expression, an identifier, or an attribute access (``A.B``)::
 
         match typeof(x):
             TYPE_FLOAT:
@@ -1467,7 +1505,6 @@ There are 6 pattern types:
                 print("text")
             TYPE_ARRAY:
                 print("array")
-
 
 - Wildcard pattern
     This pattern matches everything. It's written as a single underscore.
@@ -1482,7 +1519,6 @@ There are 6 pattern types:
             _:
                 print("It's not 1 or 2. I don't care to be honest.")
 
-
 - Binding pattern
     A binding pattern introduces a new variable. Like the wildcard pattern, it matches everything - and also gives that value a name.
     It's especially useful in array and dictionary patterns::
@@ -1494,7 +1530,6 @@ There are 6 pattern types:
                 print("It's one times two!")
             var new_var:
                 print("It's not 1 or 2, it's ", new_var)
-
 
 - Array pattern
     Matches an array. Every single element of the array pattern is a pattern itself, so you can nest them.
@@ -1554,6 +1589,34 @@ There are 6 pattern types:
                 print("It's 1 - 3")
             "Sword", "Splash potion", "Fist":
                 print("Yep, you've taken damage")
+
+Pattern guards
+""""""""""""""
+
+Only one branch can be executed per ``match``. Once a branch is chosen, the rest are not checked.
+If you want to use the same pattern for multiple branches or to prevent choosing a branch with too general pattern,
+you can specify a guard expression after the list of patterns with the ``when`` keyword::
+
+    match point:
+        [0, 0]:
+            print("Origin")
+        [_, 0]:
+            print("Point on X-axis")
+        [0, _]:
+            print("Point on Y-axis")
+        [var x, var y] when y == x:
+            print("Point on line y = x")
+        [var x, var y] when y == -x:
+            print("Point on line y = -x")
+        [var x, var y]:
+            print("Point (%s, %s)" % [x, y])
+
+- If there is no matching pattern for the current branch, the guard expression
+  is **not** evaluated and the patterns of the next branch are checked.
+- If a matching pattern is found, the guard expression is evaluated.
+
+  - If it's true, then the body of the branch is executed and ``match`` ends.
+  - If it's false, then the patterns of the next branch are checked.
 
 Classes
 ~~~~~~~
@@ -1762,6 +1825,8 @@ when the class is loaded, after the static variables have been initialized::
         my_static_var = 2
 
 A static constructor cannot take arguments and must not return any value.
+
+.. _doc_gdscript_basics_inner_classes:
 
 Inner classes
 ^^^^^^^^^^^^^

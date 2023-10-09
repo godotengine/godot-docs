@@ -193,6 +193,8 @@ Methods
    +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Control<class_Control>`                | :ref:`find_prev_valid_focus<class_Control_method_find_prev_valid_focus>` **(** **)** |const|                                                                                                                                                                       |
    +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Control<class_Control>`                | :ref:`find_valid_focus_neighbor<class_Control_method_find_valid_focus_neighbor>` **(** :ref:`Side<enum_@GlobalScope_Side>` side **)** |const|                                                                                                                      |
+   +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                         | :ref:`force_drag<class_Control_method_force_drag>` **(** :ref:`Variant<class_Variant>` data, :ref:`Control<class_Control>` preview **)**                                                                                                                           |
    +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                    | :ref:`get_anchor<class_Control_method_get_anchor>` **(** :ref:`Side<enum_@GlobalScope_Side>` side **)** |const|                                                                                                                                                    |
@@ -2366,6 +2368,20 @@ Finds the previous (above in the tree) **Control** that can receive the focus.
 
 ----
 
+.. _class_Control_method_find_valid_focus_neighbor:
+
+.. rst-class:: classref-method
+
+:ref:`Control<class_Control>` **find_valid_focus_neighbor** **(** :ref:`Side<enum_@GlobalScope_Side>` side **)** |const|
+
+Finds the next **Control** that can receive the focus on the specified :ref:`Side<enum_@GlobalScope_Side>`.
+
+\ **Note:** This is different from :ref:`get_focus_neighbor<class_Control_method_get_focus_neighbor>`, which returns the path of a specified focus neighbor.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_Control_method_force_drag:
 
 .. rst-class:: classref-method
@@ -2447,6 +2463,8 @@ Returns :ref:`offset_right<class_Control_property_offset_right>` and :ref:`offse
 :ref:`NodePath<class_NodePath>` **get_focus_neighbor** **(** :ref:`Side<enum_@GlobalScope_Side>` side **)** |const|
 
 Returns the focus neighbor for the specified :ref:`Side<enum_@GlobalScope_Side>`. A getter method for :ref:`focus_neighbor_bottom<class_Control_property_focus_neighbor_bottom>`, :ref:`focus_neighbor_left<class_Control_property_focus_neighbor_left>`, :ref:`focus_neighbor_right<class_Control_property_focus_neighbor_right>` and :ref:`focus_neighbor_top<class_Control_property_focus_neighbor_top>`.
+
+\ **Note:** To find the next **Control** on the specific :ref:`Side<enum_@GlobalScope_Side>`, even if a neighbor is not assigned, use :ref:`find_valid_focus_neighbor<class_Control_method_find_valid_focus_neighbor>`.
 
 .. rst-class:: classref-item-separator
 

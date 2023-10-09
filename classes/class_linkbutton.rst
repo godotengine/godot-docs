@@ -59,27 +59,31 @@ Theme Properties
 .. table::
    :widths: auto
 
-   +---------------------------------+-----------------------------------------------------------------------------+-----------------------------------+
-   | :ref:`Color<class_Color>`       | :ref:`font_color<class_LinkButton_theme_color_font_color>`                  | ``Color(0.875, 0.875, 0.875, 1)`` |
-   +---------------------------------+-----------------------------------------------------------------------------+-----------------------------------+
-   | :ref:`Color<class_Color>`       | :ref:`font_focus_color<class_LinkButton_theme_color_font_focus_color>`      | ``Color(0.95, 0.95, 0.95, 1)``    |
-   +---------------------------------+-----------------------------------------------------------------------------+-----------------------------------+
-   | :ref:`Color<class_Color>`       | :ref:`font_hover_color<class_LinkButton_theme_color_font_hover_color>`      | ``Color(0.95, 0.95, 0.95, 1)``    |
-   +---------------------------------+-----------------------------------------------------------------------------+-----------------------------------+
-   | :ref:`Color<class_Color>`       | :ref:`font_outline_color<class_LinkButton_theme_color_font_outline_color>`  | ``Color(1, 1, 1, 1)``             |
-   +---------------------------------+-----------------------------------------------------------------------------+-----------------------------------+
-   | :ref:`Color<class_Color>`       | :ref:`font_pressed_color<class_LinkButton_theme_color_font_pressed_color>`  | ``Color(1, 1, 1, 1)``             |
-   +---------------------------------+-----------------------------------------------------------------------------+-----------------------------------+
-   | :ref:`int<class_int>`           | :ref:`outline_size<class_LinkButton_theme_constant_outline_size>`           | ``0``                             |
-   +---------------------------------+-----------------------------------------------------------------------------+-----------------------------------+
-   | :ref:`int<class_int>`           | :ref:`underline_spacing<class_LinkButton_theme_constant_underline_spacing>` | ``2``                             |
-   +---------------------------------+-----------------------------------------------------------------------------+-----------------------------------+
-   | :ref:`Font<class_Font>`         | :ref:`font<class_LinkButton_theme_font_font>`                               |                                   |
-   +---------------------------------+-----------------------------------------------------------------------------+-----------------------------------+
-   | :ref:`int<class_int>`           | :ref:`font_size<class_LinkButton_theme_font_size_font_size>`                |                                   |
-   +---------------------------------+-----------------------------------------------------------------------------+-----------------------------------+
-   | :ref:`StyleBox<class_StyleBox>` | :ref:`focus<class_LinkButton_theme_style_focus>`                            |                                   |
-   +---------------------------------+-----------------------------------------------------------------------------+-----------------------------------+
+   +---------------------------------+----------------------------------------------------------------------------------------+-----------------------------------+
+   | :ref:`Color<class_Color>`       | :ref:`font_color<class_LinkButton_theme_color_font_color>`                             | ``Color(0.875, 0.875, 0.875, 1)`` |
+   +---------------------------------+----------------------------------------------------------------------------------------+-----------------------------------+
+   | :ref:`Color<class_Color>`       | :ref:`font_disabled_color<class_LinkButton_theme_color_font_disabled_color>`           | ``Color(0, 0, 0, 1)``             |
+   +---------------------------------+----------------------------------------------------------------------------------------+-----------------------------------+
+   | :ref:`Color<class_Color>`       | :ref:`font_focus_color<class_LinkButton_theme_color_font_focus_color>`                 | ``Color(0.95, 0.95, 0.95, 1)``    |
+   +---------------------------------+----------------------------------------------------------------------------------------+-----------------------------------+
+   | :ref:`Color<class_Color>`       | :ref:`font_hover_color<class_LinkButton_theme_color_font_hover_color>`                 | ``Color(0.95, 0.95, 0.95, 1)``    |
+   +---------------------------------+----------------------------------------------------------------------------------------+-----------------------------------+
+   | :ref:`Color<class_Color>`       | :ref:`font_hover_pressed_color<class_LinkButton_theme_color_font_hover_pressed_color>` | ``Color(0, 0, 0, 1)``             |
+   +---------------------------------+----------------------------------------------------------------------------------------+-----------------------------------+
+   | :ref:`Color<class_Color>`       | :ref:`font_outline_color<class_LinkButton_theme_color_font_outline_color>`             | ``Color(1, 1, 1, 1)``             |
+   +---------------------------------+----------------------------------------------------------------------------------------+-----------------------------------+
+   | :ref:`Color<class_Color>`       | :ref:`font_pressed_color<class_LinkButton_theme_color_font_pressed_color>`             | ``Color(1, 1, 1, 1)``             |
+   +---------------------------------+----------------------------------------------------------------------------------------+-----------------------------------+
+   | :ref:`int<class_int>`           | :ref:`outline_size<class_LinkButton_theme_constant_outline_size>`                      | ``0``                             |
+   +---------------------------------+----------------------------------------------------------------------------------------+-----------------------------------+
+   | :ref:`int<class_int>`           | :ref:`underline_spacing<class_LinkButton_theme_constant_underline_spacing>`            | ``2``                             |
+   +---------------------------------+----------------------------------------------------------------------------------------+-----------------------------------+
+   | :ref:`Font<class_Font>`         | :ref:`font<class_LinkButton_theme_font_font>`                                          |                                   |
+   +---------------------------------+----------------------------------------------------------------------------------------+-----------------------------------+
+   | :ref:`int<class_int>`           | :ref:`font_size<class_LinkButton_theme_font_size_font_size>`                           |                                   |
+   +---------------------------------+----------------------------------------------------------------------------------------+-----------------------------------+
+   | :ref:`StyleBox<class_StyleBox>` | :ref:`focus<class_LinkButton_theme_style_focus>`                                       |                                   |
+   +---------------------------------+----------------------------------------------------------------------------------------+-----------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -284,6 +288,18 @@ Default text :ref:`Color<class_Color>` of the **LinkButton**.
 
 ----
 
+.. _class_LinkButton_theme_color_font_disabled_color:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`Color<class_Color>` **font_disabled_color** = ``Color(0, 0, 0, 1)``
+
+Text :ref:`Color<class_Color>` used when the **LinkButton** is disabled.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_LinkButton_theme_color_font_focus_color:
 
 .. rst-class:: classref-themeproperty
@@ -303,6 +319,18 @@ Text :ref:`Color<class_Color>` used when the **LinkButton** is focused. Only rep
 :ref:`Color<class_Color>` **font_hover_color** = ``Color(0.95, 0.95, 0.95, 1)``
 
 Text :ref:`Color<class_Color>` used when the **LinkButton** is being hovered.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_LinkButton_theme_color_font_hover_pressed_color:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`Color<class_Color>` **font_hover_pressed_color** = ``Color(0, 0, 0, 1)``
+
+Text :ref:`Color<class_Color>` used when the **LinkButton** is being hovered and pressed.
 
 .. rst-class:: classref-item-separator
 
@@ -388,7 +416,7 @@ Font size of the **LinkButton**'s text.
 
 :ref:`StyleBox<class_StyleBox>` **focus**
 
-:ref:`StyleBox<class_StyleBox>` used when the **LinkButton** is focused. The ``focus`` :ref:`StyleBox<class_StyleBox>` is displayed *over* the base :ref:`StyleBox<class_StyleBox>`, so a partially transparent :ref:`StyleBox<class_StyleBox>` should be used to ensure the base :ref:`StyleBox<class_StyleBox>` remains visible. A :ref:`StyleBox<class_StyleBox>` that represents an outline or an underline works well for this purpose. To disable the focus visual effect, assign a :ref:`StyleBoxEmpty<class_StyleBoxEmpty>` resource. Note that disabling the focus visual effect will harm keyboard/controller navigation usability, so this is not recommended for accessibility reasons.
+:ref:`StyleBox<class_StyleBox>` used when the **LinkButton** is focused. The :ref:`focus<class_LinkButton_theme_style_focus>` :ref:`StyleBox<class_StyleBox>` is displayed *over* the base :ref:`StyleBox<class_StyleBox>`, so a partially transparent :ref:`StyleBox<class_StyleBox>` should be used to ensure the base :ref:`StyleBox<class_StyleBox>` remains visible. A :ref:`StyleBox<class_StyleBox>` that represents an outline or an underline works well for this purpose. To disable the focus visual effect, assign a :ref:`StyleBoxEmpty<class_StyleBoxEmpty>` resource. Note that disabling the focus visual effect will harm keyboard/controller navigation usability, so this is not recommended for accessibility reasons.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

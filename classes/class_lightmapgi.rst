@@ -53,6 +53,8 @@ Properties
    +---------------------------------------------------------+---------------------------------------------------------------------------------------+------------+
    | :ref:`CameraAttributes<class_CameraAttributes>`         | :ref:`camera_attributes<class_LightmapGI_property_camera_attributes>`                 |            |
    +---------------------------------------------------------+---------------------------------------------------------------------------------------+------------+
+   | :ref:`float<class_float>`                               | :ref:`denoiser_strength<class_LightmapGI_property_denoiser_strength>`                 | ``0.1``    |
+   +---------------------------------------------------------+---------------------------------------------------------------------------------------+------------+
    | :ref:`bool<class_bool>`                                 | :ref:`directional<class_LightmapGI_property_directional>`                             | ``false``  |
    +---------------------------------------------------------+---------------------------------------------------------------------------------------+------------+
    | :ref:`Color<class_Color>`                               | :ref:`environment_custom_color<class_LightmapGI_property_environment_custom_color>`   |            |
@@ -255,6 +257,14 @@ Lightmap baking failed as the resulting image couldn't be saved or imported by G
 
 The user aborted the lightmap baking operation (typically by clicking the **Cancel** button in the progress dialog).
 
+.. _class_LightmapGI_constant_BAKE_ERROR_TEXTURE_SIZE_TOO_SMALL:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`BakeError<enum_LightmapGI_BakeError>` **BAKE_ERROR_TEXTURE_SIZE_TOO_SMALL** = ``9``
+
+Lightmap baking failed as the maximum texture size is too small to fit some of the meshes marked for baking.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -354,6 +364,23 @@ Number of light bounces that are taken into account during baking. Higher values
 - :ref:`CameraAttributes<class_CameraAttributes>` **get_camera_attributes** **(** **)**
 
 The :ref:`CameraAttributes<class_CameraAttributes>` resource that specifies exposure levels to bake at. Auto-exposure and non exposure properties will be ignored. Exposure settings should be used to reduce the dynamic range present when baking. If exposure is too high, the **LightmapGI** will have banding artifacts or may have over-exposure artifacts.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_LightmapGI_property_denoiser_strength:
+
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **denoiser_strength** = ``0.1``
+
+.. rst-class:: classref-property-setget
+
+- void **set_denoiser_strength** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_denoiser_strength** **(** **)**
+
+The strength of denoising step applied to the generated lightmaps. Only effective if :ref:`use_denoiser<class_LightmapGI_property_use_denoiser>` is ``true``.
 
 .. rst-class:: classref-item-separator
 
@@ -548,9 +575,7 @@ To further speed up bake times, decrease :ref:`bounces<class_LightmapGI_property
 - void **set_use_denoiser** **(** :ref:`bool<class_bool>` value **)**
 - :ref:`bool<class_bool>` **is_using_denoiser** **(** **)**
 
-If ``true``, uses a CPU-based denoising algorithm on the generated lightmap. This eliminates most noise within the generated lightmap at the cost of longer bake times. File sizes are generally not impacted significantly by the use of a denoiser, although lossless compression may do a better job at compressing a denoised image.
-
-\ **Note:** The built-in denoiser (OpenImageDenoise) may crash when denoising lightmaps in large scenes. If you encounter a crash at the end of lightmap baking, try disabling :ref:`use_denoiser<class_LightmapGI_property_use_denoiser>`.
+If ``true``, uses a GPU-based denoising algorithm on the generated lightmap. This eliminates most noise within the generated lightmap at the cost of longer bake times. File sizes are generally not impacted significantly by the use of a denoiser, although lossless compression may do a better job at compressing a denoised image.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

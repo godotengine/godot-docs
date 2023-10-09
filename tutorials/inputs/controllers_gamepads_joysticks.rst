@@ -251,7 +251,7 @@ with the following script and use it to check all your inputs:
 
     func event_is_action_pressed(event: InputEvent, action: StringName) -> bool:
         if focused:
-            return Input.is_action_pressed(action)
+            return event.is_action_pressed(action)
 
         return false
 

@@ -71,7 +71,7 @@ same statement:
         // Code to execute when in game.
     }
 
-Pieces of code do not have either of the 2 conditions above will run both
+Pieces of code that do not have either of the 2 conditions above will run both
 in-editor and in-game.
 
 Here is how a ``_process()`` function might look for you:
@@ -110,6 +110,13 @@ Here is how a ``_process()`` function might look for you:
     Modifications in the editor are permanent. For example, in the following
     case, when we remove the script, the node will keep its rotation. Be careful
     to avoid making unwanted modifications.
+
+.. note::
+
+    Extending a ``@tool`` script does not automatically make the extending script
+    a ``@tool``. Omitting ``@tool`` from the extending script will disable tool
+    behavior from the super class. Therefore the extending script should also
+    specify the ``@tool`` annotation.
 
 Try it out
 -----------

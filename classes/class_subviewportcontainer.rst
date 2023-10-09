@@ -41,6 +41,18 @@ Properties
    | :ref:`int<class_int>`                    | :ref:`stretch_shrink<class_SubViewportContainer_property_stretch_shrink>` | ``1``                                                               |
    +------------------------------------------+---------------------------------------------------------------------------+---------------------------------------------------------------------+
 
+.. rst-class:: classref-reftable-group
+
+Methods
+-------
+
+.. table::
+   :widths: auto
+
+   +-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | :ref:`_propagate_input_event<class_SubViewportContainer_method__propagate_input_event>` **(** :ref:`InputEvent<class_InputEvent>` event **)** |virtual| |const| |
+   +-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 .. rst-class:: classref-section-separator
 
 ----
@@ -85,6 +97,23 @@ Divides the sub-viewport's effective resolution by this value while preserving i
 For example, a 1280×720 sub-viewport with :ref:`stretch_shrink<class_SubViewportContainer_property_stretch_shrink>` set to ``2`` will be rendered at 640×360 while occupying the same size in the container.
 
 \ **Note:** :ref:`stretch<class_SubViewportContainer_property_stretch>` must be ``true`` for this property to work.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
+
+Method Descriptions
+-------------------
+
+.. _class_SubViewportContainer_method__propagate_input_event:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **_propagate_input_event** **(** :ref:`InputEvent<class_InputEvent>` event **)** |virtual| |const|
+
+Virtual method to be implemented by the user. If it returns ``true``, the ``event`` is propagated to :ref:`SubViewport<class_SubViewport>` children. Propagation doesn't happen if it returns ``false``. If the function is not implemented, all events are propagated to SubViewports.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

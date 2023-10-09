@@ -396,7 +396,7 @@ Returns the scalar length of the shortest axis of the **AABB**.
 
 :ref:`Vector3<class_Vector3>` **get_support** **(** :ref:`Vector3<class_Vector3>` dir **)** |const|
 
-Returns the support point in a given direction. This is useful for collision detection algorithms.
+Returns the vertex of the AABB that's the farthest in a given direction. This point is commonly known as the support point in collision detection algorithms.
 
 .. rst-class:: classref-item-separator
 

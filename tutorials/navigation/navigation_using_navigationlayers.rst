@@ -10,7 +10,7 @@ NavigationLayers can be named in the ``ProjectSettings`` the same as PhysicsLaye
 
 .. image:: img/navigationlayers_naming.png
 
-If two regions have not a single compatible layer they will not be merged by the NavigationServer. See :ref:`doc_navigation_connecting_navmesh` for more information on merging navmesh.
+If two regions have not a single compatible layer they will not be merged by the NavigationServer. See :ref:`doc_navigation_connecting_navmesh` for more information on merging navigation meshes.
 
 If a region has not a single compatible navigation layer with the ``navigation_layers`` parameter of a path query this regions navigation mesh will be skipped in pathfinding.
 See :ref:`doc_navigation_using_navigationpaths` for more information on querying the NavigationServer for paths.

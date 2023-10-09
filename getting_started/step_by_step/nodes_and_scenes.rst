@@ -31,7 +31,7 @@ The last characteristic is important. **Together, nodes form a tree**, which is 
 feature to organize projects. Since different nodes have different functions,
 combining them produces more complex behavior. As we saw before, you can build a
 playable character the camera follows using a :ref:`CharacterBody2D <class_CharacterBody2D>`
-node named "Character", a :ref:`Sprite2D <class_Sprite2D>` node,
+node, a :ref:`Sprite2D <class_Sprite2D>` node,
 a :ref:`Camera2D <class_Camera2D>` node, and a :ref:`CollisionShape2D <class_CollisionShape2D>` node.
 
 .. image:: img/nodes_and_scenes_character_nodes.webp
@@ -143,7 +143,7 @@ top-right of the screen or press :kbd:`F6` (:kbd:`Cmd + R` on macOS).
 .. image:: img/nodes_and_scenes_09_play_scene_button.webp
 
 A popup invites you to save the scene, which is required to run it.
-Click the Save button in the file browser to save it as "label.tscn".
+Click the Save button in the file browser to save it as ``label.tscn``.
 
 .. image:: img/nodes_and_scenes_10_save_scene_as.webp
 

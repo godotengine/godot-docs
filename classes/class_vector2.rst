@@ -548,7 +548,7 @@ Performs a cubic interpolation between this vector and ``b`` using ``pre_a`` and
 
 Performs a cubic interpolation between this vector and ``b`` using ``pre_a`` and ``post_b`` as handles, and returns the result at position ``weight``. ``weight`` is on the range of 0.0 to 1.0, representing the amount of interpolation.
 
-It can perform smoother interpolation than ``cubic_interpolate()`` by the time values.
+It can perform smoother interpolation than :ref:`cubic_interpolate<class_Vector2_method_cubic_interpolate>` by the time values.
 
 .. rst-class:: classref-item-separator
 

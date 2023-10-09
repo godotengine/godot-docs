@@ -191,7 +191,7 @@ current scene and replace it with the requested one.
 
 
     func _deferred_goto_scene(path):
-        # It is now safe to remove the current scene
+        # It is now safe to remove the current scene.
         current_scene.free()
 
         # Load the new scene.
@@ -224,11 +224,11 @@ current scene and replace it with the requested one.
 
     public void DeferredGotoScene(string path)
     {
-        // It is now safe to remove the current scene
+        // It is now safe to remove the current scene.
         CurrentScene.Free();
 
         // Load a new scene.
-        var nextScene = (PackedScene)GD.Load(path);
+        var nextScene = GD.Load<PackedScene>(path);
 
         // Instance the new scene.
         CurrentScene = nextScene.Instantiate();
@@ -262,7 +262,7 @@ Finally, we need to fill the empty callback functions in the two scenes:
     private void OnButtonPressed()
     {
         var global = GetNode<Global>("/root/Global");
-        global.GotoScene("res://scene_2.tscn");
+        global.GotoScene("res://Scene2.tscn");
     }
 
 and
@@ -282,7 +282,7 @@ and
     private void OnButtonPressed()
     {
         var global = GetNode<Global>("/root/Global");
-        global.GotoScene("res://scene_1.tscn");
+        global.GotoScene("res://Scene1.tscn");
     }
 
 Run the project and test that you can switch between scenes by pressing

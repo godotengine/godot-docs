@@ -75,6 +75,8 @@ Theme Properties
    +-----------------------------------+-------------------------------------------------------------------------------------------+--------+
    | :ref:`int<class_int>`             | :ref:`separation<class_SplitContainer_theme_constant_separation>`                         | ``12`` |
    +-----------------------------------+-------------------------------------------------------------------------------------------+--------+
+   | :ref:`Texture2D<class_Texture2D>` | :ref:`grabber<class_SplitContainer_theme_icon_grabber>`                                   |        |
+   +-----------------------------------+-------------------------------------------------------------------------------------------+--------+
    | :ref:`Texture2D<class_Texture2D>` | :ref:`h_grabber<class_SplitContainer_theme_icon_h_grabber>`                               |        |
    +-----------------------------------+-------------------------------------------------------------------------------------------+--------+
    | :ref:`Texture2D<class_Texture2D>` | :ref:`v_grabber<class_SplitContainer_theme_icon_v_grabber>`                               |        |
@@ -268,6 +270,18 @@ The minimum thickness of the area users can click on to grab the splitting line.
 :ref:`int<class_int>` **separation** = ``12``
 
 The space between sides of the container.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_SplitContainer_theme_icon_grabber:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`Texture2D<class_Texture2D>` **grabber**
+
+The icon used for the grabber drawn in the middle area.
 
 .. rst-class:: classref-item-separator
 

@@ -166,6 +166,46 @@ Represents the size of the :ref:`TileAnimationMode<enum_TileSetAtlasSource_TileA
 
 .. rst-class:: classref-descriptions-group
 
+Constants
+---------
+
+.. _class_TileSetAtlasSource_constant_TRANSFORM_FLIP_H:
+
+.. rst-class:: classref-constant
+
+**TRANSFORM_FLIP_H** = ``4096``
+
+Represents cell's horizontal flip flag. Should be used directly with :ref:`TileMap<class_TileMap>` to flip placed tiles by altering their alternative IDs.
+
+::
+
+    var alternate_id = $TileMap.get_cell_alternative_tile(0, Vector2i(2, 2))
+    if not alternate_id & TileSetAtlasSource.TRANSFORM_FLIP_H:
+        # If tile is not already flipped, flip it.
+        $TileMap.set_cell(0, Vector2i(2, 2), source_id, atlas_coords, alternate_id | TileSetAtlasSource.TRANSFORM_FLIP_H)
+
+.. _class_TileSetAtlasSource_constant_TRANSFORM_FLIP_V:
+
+.. rst-class:: classref-constant
+
+**TRANSFORM_FLIP_V** = ``8192``
+
+Represents cell's vertical flip flag. See :ref:`TRANSFORM_FLIP_H<class_TileSetAtlasSource_constant_TRANSFORM_FLIP_H>` for usage.
+
+.. _class_TileSetAtlasSource_constant_TRANSFORM_TRANSPOSE:
+
+.. rst-class:: classref-constant
+
+**TRANSFORM_TRANSPOSE** = ``16384``
+
+Represents cell's transposed flag. See :ref:`TRANSFORM_FLIP_H<class_TileSetAtlasSource_constant_TRANSFORM_FLIP_H>` for usage.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
+
 Property Descriptions
 ---------------------
 
@@ -305,7 +345,7 @@ Creates a new tile at coordinates ``atlas_coords`` with the given ``size``.
 
 :ref:`Vector2i<class_Vector2i>` **get_atlas_grid_size** **(** **)** |const|
 
-Returns the atlas grid size, which depends on how many tiles can fit in the texture. It thus depends on the Texture's size, the atlas ``margins`` the tiles' ``texture_region_size``.
+Returns the atlas grid size, which depends on how many tiles can fit in the texture. It thus depends on the :ref:`texture<class_TileSetAtlasSource_property_texture>`'s size, the atlas :ref:`margins<class_TileSetAtlasSource_property_margins>`, and the tiles' :ref:`texture_region_size<class_TileSetAtlasSource_property_texture_region_size>`.
 
 .. rst-class:: classref-item-separator
 

@@ -63,7 +63,8 @@ be drawn at once.
 +-------------------------------+-------------------------------------------------------------------------------------------------+
 | in vec3 **UVW**               | 3-dimensional uv, used to map a 3D texture to the current :ref:`FogVolume <class_FogVolume>`.   |
 +-------------------------------+-------------------------------------------------------------------------------------------------+
-| in vec3 **EXTENTS**           | Color value of corresponding pixel from half resolution pass. Uses linear filter.               |
+| in vec3 **SIZE**              | Size of the current :ref:`FogVolume <class_FogVolume>` when its                                 |
+|                               | :ref:`shape<class_FogVolume_property_shape>` has a size.                                        |
 +-------------------------------+-------------------------------------------------------------------------------------------------+
 | in vec3 **SDF**               | Signed distance field to the surface of the :ref:`FogVolume <class_FogVolume>`. Negative if     |
 |                               | inside volume, positive otherwise.                                                              |

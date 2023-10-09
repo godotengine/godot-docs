@@ -427,7 +427,7 @@ If ``true``, during a jump against the ceiling, the body will slide, if ``false`
 - void **set_up_direction** **(** :ref:`Vector3<class_Vector3>` value **)**
 - :ref:`Vector3<class_Vector3>` **get_up_direction** **(** **)**
 
-Vector pointing upwards, used to determine what is a wall and what is a floor (or a ceiling) when calling :ref:`move_and_slide<class_CharacterBody3D_method_move_and_slide>`. Defaults to ``Vector3.UP``. As the vector will be normalized it can't be equal to :ref:`Vector3.ZERO<class_Vector3_constant_ZERO>`, if you want all collisions to be reported as walls, consider using :ref:`MOTION_MODE_FLOATING<class_CharacterBody3D_constant_MOTION_MODE_FLOATING>` as :ref:`motion_mode<class_CharacterBody3D_property_motion_mode>`.
+Vector pointing upwards, used to determine what is a wall and what is a floor (or a ceiling) when calling :ref:`move_and_slide<class_CharacterBody3D_method_move_and_slide>`. Defaults to :ref:`Vector3.UP<class_Vector3_constant_UP>`. As the vector will be normalized it can't be equal to :ref:`Vector3.ZERO<class_Vector3_constant_ZERO>`, if you want all collisions to be reported as walls, consider using :ref:`MOTION_MODE_FLOATING<class_CharacterBody3D_constant_MOTION_MODE_FLOATING>` as :ref:`motion_mode<class_CharacterBody3D_property_motion_mode>`.
 
 .. rst-class:: classref-item-separator
 
@@ -490,7 +490,7 @@ Allows to manually apply a snap to the floor regardless of the body's velocity. 
 
 :ref:`float<class_float>` **get_floor_angle** **(** :ref:`Vector3<class_Vector3>` up_direction=Vector3(0, 1, 0) **)** |const|
 
-Returns the floor's collision angle at the last collision point according to ``up_direction``, which is ``Vector3.UP`` by default. This value is always positive and only valid after calling :ref:`move_and_slide<class_CharacterBody3D_method_move_and_slide>` and when :ref:`is_on_floor<class_CharacterBody3D_method_is_on_floor>` returns ``true``.
+Returns the floor's collision angle at the last collision point according to ``up_direction``, which is :ref:`Vector3.UP<class_Vector3_constant_UP>` by default. This value is always positive and only valid after calling :ref:`move_and_slide<class_CharacterBody3D_method_move_and_slide>` and when :ref:`is_on_floor<class_CharacterBody3D_method_is_on_floor>` returns ``true``.
 
 .. rst-class:: classref-item-separator
 

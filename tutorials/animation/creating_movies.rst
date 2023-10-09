@@ -247,7 +247,9 @@ Quitting Movie Maker mode
 -------------------------
 
 To safely quit a project that is using Movie Maker mode, use the X button at the
-top of the window, or call ``get_tree().quit()`` in a script.
+top of the window, or call ``get_tree().quit()`` in a script. You can also use
+the ``--quit-after N`` command line argument where ``N`` is the number of frames
+to render before quitting.
 
 Pressing :kbd:`F8` (:kbd:`Cmd + .` on macOS) or pressing :kbd:`Ctrl + C` on the
 terminal running Godot is **not recommended**, as it will result in an

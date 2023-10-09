@@ -6,11 +6,26 @@ Introduction to the buildsystem
 .. highlight:: shell
 
 
-Setup
------
+Godot is a primarily C++ project and it :ref:`uses the SCons build system. <doc_faq_why_scons>`
+We love SCons for how maintainable and easy to set up it makes our buildsystem. And thanks to
+that compiling Godot from source can be as simple as running::
 
-:ref:`Godot uses the SCons build system. <doc_faq_why_scons>`
-Please refer to the documentation for:
+    scons
+
+This produces an *export template* for your current platform, operating system, and architecture.
+An export template is a build of the engine that is used for running exported projects. To build
+the *editor* instead you can run the following command::
+
+    scons target=editor
+
+If you plan to debug or develop the engine, then you might want to add another option to the command::
+
+    scons dev_build=yes
+    scons target=editor dev_build=yes
+
+Following sections in the article will explain these and other universal options in more detail. But
+before you can compile Godot, you need to install a few prerequisites. Please refer to the platform
+documentation to learn more:
 
 - :ref:`doc_compiling_for_android`
 - :ref:`doc_compiling_for_ios`
@@ -19,6 +34,22 @@ Please refer to the documentation for:
 - :ref:`doc_compiling_for_uwp`
 - :ref:`doc_compiling_for_web`
 - :ref:`doc_compiling_for_windows`
+
+These articles cover in great detail both how to setup your environment to compile Godot on a specific
+platform, and how to compile for that platform. Please feel free to go back and forth between them and
+this article to reference platform-specific and universal configuration options.
+
+Using multi-threading
+---------------------
+
+The build process may take a while, depending on how powerful your system is. By default, Godot's
+SCons setup is configured to use all CPU threads but one (to keep the system responsive during
+compilation). If you want to adjust how many CPU threads SCons will use, use the ``-j <threads>``
+parameter to specify how many threads will be used for the build.
+
+Example for using 4 threads::
+
+    scons -j4
 
 Platform selection
 ------------------
@@ -52,18 +83,6 @@ To build for a platform (for example, ``linuxbsd``), run with the ``platform=``
 ::
 
     scons platform=linuxbsd
-
-This will start the build process, which will take a while. By default, Godot's
-SCons setup is configured to use all CPU threads but one (to keep the system
-responsive during compilation). If you want to adjust how many CPU threads SCons
-will use, use the ``-j <threads>`` parameter to specify how many threads will be
-used for the build.
-
-Example for using 4 threads:
-
-::
-
-    scons platform=linuxbsd -j4
 
 .. _doc_introduction_to_the_buildsystem_resulting_binary:
 
@@ -107,9 +126,9 @@ Target
 Target controls if the editor is contained and debug flags are used.
 All builds are optimized. Each mode means:
 
--  **editor**: Build with editor, optimized, with debugging code (defines: ``TOOLS_ENABLED``, ``DEBUG_ENABLED``, ``-O2``/``/O2``)
--  **template_debug**: Build with C++ debugging symbols (defines: ``DEBUG_ENABLED``, ``-O2``/``/O2``)
--  **template_release**: Build without symbols (defines: ``-O3``/``/O2``)
+-  ``target=editor``: Build with editor, optimized, with debugging code (defines: ``TOOLS_ENABLED``, ``DEBUG_ENABLED``, ``-O2``/``/O2``)
+-  ``target=template_debug``: Build with C++ debugging symbols (defines: ``DEBUG_ENABLED``, ``-O2``/``/O2``)
+-  ``target=template_release``: Build without symbols (defines: ``-O3``/``/O2``)
 
 The editor is enabled by default in all PC targets (Linux, Windows, macOS),
 disabled for everything else. Disabling the editor produces a binary that can

@@ -16,7 +16,7 @@ Godot provides several types of trails you can add to a particle system. Before 
 work with trails, you need to set up a couple of parameters first. Create a new particle
 system and assign a process material :ref:`as described before <doc_creating_3d_particle_system>`.
 In the ``Trails`` group of the particle system, check the box next to ``Enabled`` and
-increase the emission duration by setting ``Length Secs`` to something like ``0.8``. On
+increase the emission duration by setting ``Lifetime`` to something like ``0.8``. On
 the process material, set ``Direction`` to ``(X=0,Y=1.0,Z=0)`` and ``Initial Velocity`` to
 ``10.0`` for both ``Min`` and ``Max``.
 

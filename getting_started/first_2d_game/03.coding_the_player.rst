@@ -93,16 +93,17 @@ value written in the script.
 
     If you're using C#, you need to (re)build the project assemblies
     whenever you want to see new export variables or signals. This
-    build can be manually triggered by clicking the "Build" button at
+    build can be manually triggered by clicking the **Build** button at
     the top right of the editor.
 
     .. image:: img/build_dotnet.webp
 
-    A manual build can also be triggered from the MSBuild Panel. Click
-    the word "MSBuild" at the bottom of the editor window to reveal the
-    MSBuild Panel, then click the "Build" button.
-
 .. image:: img/export_variable.webp
+
+Your ``player.gd`` script should already contain
+a ``_ready()`` and a ``_process()`` function.
+If you didn't select the default template shown above,
+create these functions while following the lesson.
 
 The ``_ready()`` function is called when a node enters the scene tree, which is
 a good time to find the size of the game window:

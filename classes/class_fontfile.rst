@@ -914,7 +914,7 @@ Returns list of script support overrides.
 
 :ref:`Vector2i[]<class_Vector2i>` **get_size_cache_list** **(** :ref:`int<class_int>` cache_index **)** |const|
 
-Returns list of the font sizes in the cache. Each size is ``Vector2i`` with font size and outline size.
+Returns list of the font sizes in the cache. Each size is :ref:`Vector2i<class_Vector2i>` with font size and outline size.
 
 .. rst-class:: classref-item-separator
 

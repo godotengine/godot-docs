@@ -23,6 +23,13 @@ Description
 
 \ **Note:** **CanvasTexture** cannot be used in 3D rendering. For physically-based materials in 3D, use :ref:`BaseMaterial3D<class_BaseMaterial3D>` instead.
 
+.. rst-class:: classref-introduction-group
+
+Tutorials
+---------
+
+- :doc:`2D Lights and Shadows <../tutorials/2d/2d_lights_and_shadows>`
+
 .. rst-class:: classref-reftable-group
 
 Properties

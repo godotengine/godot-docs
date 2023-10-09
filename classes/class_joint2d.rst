@@ -41,6 +41,18 @@ Properties
    | :ref:`NodePath<class_NodePath>` | :ref:`node_b<class_Joint2D_property_node_b>`                       | ``NodePath("")`` |
    +---------------------------------+--------------------------------------------------------------------+------------------+
 
+.. rst-class:: classref-reftable-group
+
+Methods
+-------
+
+.. table::
+   :widths: auto
+
+   +-----------------------+------------------------------------------------------------------+
+   | :ref:`RID<class_RID>` | :ref:`get_rid<class_Joint2D_method_get_rid>` **(** **)** |const| |
+   +-----------------------+------------------------------------------------------------------+
+
 .. rst-class:: classref-section-separator
 
 ----
@@ -61,7 +73,7 @@ Property Descriptions
 - void **set_bias** **(** :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_bias** **(** **)**
 
-When :ref:`node_a<class_Joint2D_property_node_a>` and :ref:`node_b<class_Joint2D_property_node_b>` move in different directions the ``bias`` controls how fast the joint pulls them back to their original position. The lower the ``bias`` the more the two bodies can pull on the joint.
+When :ref:`node_a<class_Joint2D_property_node_a>` and :ref:`node_b<class_Joint2D_property_node_b>` move in different directions the :ref:`bias<class_Joint2D_property_bias>` controls how fast the joint pulls them back to their original position. The lower the :ref:`bias<class_Joint2D_property_bias>` the more the two bodies can pull on the joint.
 
 When set to ``0``, the default value from :ref:`ProjectSettings.physics/2d/solver/default_constraint_bias<class_ProjectSettings_property_physics/2d/solver/default_constraint_bias>` is used.
 
@@ -115,6 +127,23 @@ The first body attached to the joint. Must derive from :ref:`PhysicsBody2D<class
 - :ref:`NodePath<class_NodePath>` **get_node_b** **(** **)**
 
 The second body attached to the joint. Must derive from :ref:`PhysicsBody2D<class_PhysicsBody2D>`.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
+
+Method Descriptions
+-------------------
+
+.. _class_Joint2D_method_get_rid:
+
+.. rst-class:: classref-method
+
+:ref:`RID<class_RID>` **get_rid** **(** **)** |const|
+
+Returns the joint's :ref:`RID<class_RID>`.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

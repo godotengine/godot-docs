@@ -23,6 +23,49 @@ Description
 
 Abstract base class for separators, used for separating other controls. **Separator**\ s are purely visual and normally drawn as a :ref:`StyleBoxLine<class_StyleBoxLine>`.
 
+.. rst-class:: classref-reftable-group
+
+Theme Properties
+----------------
+
+.. table::
+   :widths: auto
+
+   +---------------------------------+--------------------------------------------------------------+-------+
+   | :ref:`int<class_int>`           | :ref:`separation<class_Separator_theme_constant_separation>` | ``0`` |
+   +---------------------------------+--------------------------------------------------------------+-------+
+   | :ref:`StyleBox<class_StyleBox>` | :ref:`separator<class_Separator_theme_style_separator>`      |       |
+   +---------------------------------+--------------------------------------------------------------+-------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
+
+Theme Property Descriptions
+---------------------------
+
+.. _class_Separator_theme_constant_separation:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`int<class_int>` **separation** = ``0``
+
+The size of the area covered by the separator. Effectively works like a minimum width/height.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Separator_theme_style_separator:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`StyleBox<class_StyleBox>` **separator**
+
+The style for the separator line. Works best with :ref:`StyleBoxLine<class_StyleBoxLine>` (remember to enable :ref:`StyleBoxLine.vertical<class_StyleBoxLine_property_vertical>` for :ref:`VSeparator<class_VSeparator>`).
+
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

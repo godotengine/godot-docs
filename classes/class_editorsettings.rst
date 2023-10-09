@@ -467,6 +467,8 @@ Properties
    +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`       | :ref:`text_editor/completion/code_complete_enabled<class_EditorSettings_property_text_editor/completion/code_complete_enabled>`                                                     |
    +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`text_editor/completion/colorize_suggestions<class_EditorSettings_property_text_editor/completion/colorize_suggestions>`                                                       |
+   +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`       | :ref:`text_editor/completion/complete_file_paths<class_EditorSettings_property_text_editor/completion/complete_file_paths>`                                                         |
    +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`     | :ref:`text_editor/completion/idle_parse_delay<class_EditorSettings_property_text_editor/completion/idle_parse_delay>`                                                               |
@@ -528,6 +530,8 @@ Properties
    | :ref:`Color<class_Color>`     | :ref:`text_editor/theme/highlighting/engine_type_color<class_EditorSettings_property_text_editor/theme/highlighting/engine_type_color>`                                             |
    +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Color<class_Color>`     | :ref:`text_editor/theme/highlighting/executing_line_color<class_EditorSettings_property_text_editor/theme/highlighting/executing_line_color>`                                       |
+   +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Color<class_Color>`     | :ref:`text_editor/theme/highlighting/folded_code_region_color<class_EditorSettings_property_text_editor/theme/highlighting/folded_code_region_color>`                               |
    +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Color<class_Color>`     | :ref:`text_editor/theme/highlighting/function_color<class_EditorSettings_property_text_editor/theme/highlighting/function_color>`                                                   |
    +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -3225,6 +3229,18 @@ If ``true``, code completion will be triggered automatically after :ref:`text_ed
 
 ----
 
+.. _class_EditorSettings_property_text_editor/completion/colorize_suggestions:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **text_editor/completion/colorize_suggestions**
+
+If ``true`` enables the coloring for some items in the autocompletion suggestions, like vector components.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_EditorSettings_property_text_editor/completion/complete_file_paths:
 
 .. rst-class:: classref-property
@@ -3602,6 +3618,18 @@ The script editor's engine type color (:ref:`Vector2<class_Vector2>`, :ref:`Vect
 :ref:`Color<class_Color>` **text_editor/theme/highlighting/executing_line_color**
 
 The script editor's color for the debugger's executing line icon (displayed in the gutter).
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSettings_property_text_editor/theme/highlighting/folded_code_region_color:
+
+.. rst-class:: classref-property
+
+:ref:`Color<class_Color>` **text_editor/theme/highlighting/folded_code_region_color**
+
+The script editor's background line highlighting color for folded code region.
 
 .. rst-class:: classref-item-separator
 

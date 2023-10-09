@@ -6,17 +6,6 @@ C# basics
 Introduction
 ------------
 
-.. warning::
-
-    .NET support has been heavily modified between Godot 3 and 4. As such, you
-    may still run into some issues, or find spots where the documentation could
-    be improved.
-
-    Please report issues with C# in Godot on the
-    `engine GitHub page <https://github.com/godotengine/godot/issues>`_,
-    and any documentation issues on the
-    `documentation GitHub page <https://github.com/godotengine/godot-docs/issues>`_.
-
 This page provides a brief introduction to C#, both what it is and
 how to use it in Godot. Afterwards, you may want to look at
 :ref:`how to use specific features <doc_c_sharp_features>`, read about the
@@ -29,9 +18,10 @@ it is implemented with .NET 6.0.
 
 .. attention::
 
-    Projects written in C# using Godot 4.x currently cannot be exported to
-    Android, iOS and web platforms. To use C# on those platforms, use Godot 3
-    instead.
+    Projects written in C# using Godot 4 currently cannot be exported to iOS
+    and web platforms. To use C# on those platforms, consider Godot 3 instead.
+    Android platform support is available as of Godot 4.2, but is experimental
+    and :ref:`some limitations apply <doc_c_sharp_platforms>`.
 
 .. note::
 
@@ -77,7 +67,6 @@ click on **Editor → Editor Settings** and scroll down to
 external editor of choice. Godot currently supports the following
 external editors:
 
-- Visual Studio 2019
 - Visual Studio 2022
 - Visual Studio Code
 - MonoDevelop
@@ -123,7 +112,7 @@ In Visual Studio Code:
 To configure a project for debugging, you need a ``tasks.json`` and ``launch.json`` file in
 the ``.vscode`` folder with the necessary configuration. An example configuration can be
 found `here <https://github.com/godotengine/godot-csharp-vscode/issues/43#issuecomment-1258321229>`__ .
-In the ``tasks.json`` file, make sure the ``program`` parameter points to your Godot executable, either by
+In the ``launch.json`` file, make sure the ``program`` parameter in the relevant configuration points to your Godot executable, either by
 changing it to the path of the executable or by defining a ``GODOT4`` environment variable that points to the
 executable. Now, when you start the debugger in Visual Studio Code, your Godot project will run.
 
@@ -149,16 +138,6 @@ While installing Visual Studio, select this workload:
 In Godot's **Editor → Editor Settings** menu:
 
 - Set **Dotnet** -> **Editor** -> **External Editor** to **Visual Studio**.
-
-Next, you can download the Godot Visual Studio extension from github
-`here <https://github.com/godotengine/godot-csharp-visualstudio/releases>`__.
-Double click on the downloaded file and follow the installation process.
-
-.. note:: The option to debug your game in Visual Studio may not appear after
-          installing the extension. To enable debugging, there is a
-          `workaround for Visual Studio 2019 <https://github.com/godotengine/godot-csharp-visualstudio/issues/10#issuecomment-720153256>`__.
-          There is
-          `a separate issue about this problem in Visual Studio 2022 <https://github.com/godotengine/godot-csharp-visualstudio/issues/28>`__.
 
 .. note:: If you see an error like "Unable to find package Godot.NET.Sdk",
           your NuGet configuration may be incorrect and need to be fixed.
@@ -250,10 +229,10 @@ For more information, see the :ref:`doc_c_sharp_differences` page.
 
     You need to (re)build the project assemblies whenever you want to see new
     exported variables or signals in the editor. This build can be manually
-    triggered by clicking the word **Build** in the top right corner of the
-    editor. You can also click **MSBuild** at the bottom of the editor window
-    to reveal the MSBuild panel, then click the **Build** button to reveal a
-    dropdown, then click the **Build Solution** option.
+    triggered by clicking the **Build** button in the top right corner of the
+    editor.
+
+    .. image:: img/build_dotnet.webp
 
     You will also need to rebuild the project assemblies to apply changes in
     "tool" scripts.

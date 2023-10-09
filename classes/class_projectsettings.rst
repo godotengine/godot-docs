@@ -133,6 +133,8 @@ Properties
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`audio/video/video_delay_compensation_ms<class_ProjectSettings_property_audio/video/video_delay_compensation_ms>`                                                                                     | ``0``                                                                                            |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`collada/use_ambient<class_ProjectSettings_property_collada/use_ambient>`                                                                                                                             | ``false``                                                                                        |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`compression/formats/gzip/compression_level<class_ProjectSettings_property_compression/formats/gzip/compression_level>`                                                                               | ``-1``                                                                                           |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`compression/formats/zlib/compression_level<class_ProjectSettings_property_compression/formats/zlib/compression_level>`                                                                               | ``-1``                                                                                           |
@@ -179,6 +181,8 @@ Properties
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`debug/gdscript/warnings/inference_on_variant<class_ProjectSettings_property_debug/gdscript/warnings/inference_on_variant>`                                                                           | ``2``                                                                                            |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`debug/gdscript/warnings/inferred_declaration<class_ProjectSettings_property_debug/gdscript/warnings/inferred_declaration>`                                                                           | ``0``                                                                                            |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`debug/gdscript/warnings/int_as_enum_without_cast<class_ProjectSettings_property_debug/gdscript/warnings/int_as_enum_without_cast>`                                                                   | ``1``                                                                                            |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`debug/gdscript/warnings/int_as_enum_without_match<class_ProjectSettings_property_debug/gdscript/warnings/int_as_enum_without_match>`                                                                 | ``1``                                                                                            |
@@ -194,8 +198,6 @@ Properties
    | :ref:`int<class_int>`                             | :ref:`debug/gdscript/warnings/property_used_as_function<class_ProjectSettings_property_debug/gdscript/warnings/property_used_as_function>`                                                                 | ``1``                                                                                            |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`debug/gdscript/warnings/redundant_await<class_ProjectSettings_property_debug/gdscript/warnings/redundant_await>`                                                                                     | ``1``                                                                                            |
-   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                             | :ref:`debug/gdscript/warnings/redundant_for_variable_type<class_ProjectSettings_property_debug/gdscript/warnings/redundant_for_variable_type>`                                                             | ``1``                                                                                            |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`debug/gdscript/warnings/redundant_static_unload<class_ProjectSettings_property_debug/gdscript/warnings/redundant_static_unload>`                                                                     | ``1``                                                                                            |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
@@ -232,6 +234,8 @@ Properties
    | :ref:`int<class_int>`                             | :ref:`debug/gdscript/warnings/unsafe_property_access<class_ProjectSettings_property_debug/gdscript/warnings/unsafe_property_access>`                                                                       | ``0``                                                                                            |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`debug/gdscript/warnings/unsafe_void_return<class_ProjectSettings_property_debug/gdscript/warnings/unsafe_void_return>`                                                                               | ``1``                                                                                            |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`debug/gdscript/warnings/untyped_declaration<class_ProjectSettings_property_debug/gdscript/warnings/untyped_declaration>`                                                                             | ``0``                                                                                            |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`debug/gdscript/warnings/unused_local_constant<class_ProjectSettings_property_debug/gdscript/warnings/unused_local_constant>`                                                                         | ``1``                                                                                            |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
@@ -1307,6 +1311,10 @@ Properties
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                       | :ref:`rendering/gl_compatibility/driver.windows<class_ProjectSettings_property_rendering/gl_compatibility/driver.windows>`                                                                                 | ``"opengl3"``                                                                                    |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`rendering/gl_compatibility/fallback_to_angle<class_ProjectSettings_property_rendering/gl_compatibility/fallback_to_angle>`                                                                           | ``true``                                                                                         |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`Array<class_Array>`                         | :ref:`rendering/gl_compatibility/force_angle_on_devices<class_ProjectSettings_property_rendering/gl_compatibility/force_angle_on_devices>`                                                                 | ``[]``                                                                                           |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`rendering/gl_compatibility/item_buffer_size<class_ProjectSettings_property_rendering/gl_compatibility/item_buffer_size>`                                                                             | ``16384``                                                                                        |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`rendering/gl_compatibility/nvidia_disable_threaded_optimization<class_ProjectSettings_property_rendering/gl_compatibility/nvidia_disable_threaded_optimization>`                                     | ``true``                                                                                         |
@@ -1515,7 +1523,17 @@ Properties
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`xr/openxr/enabled<class_ProjectSettings_property_xr/openxr/enabled>`                                                                                                                                 | ``false``                                                                                        |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`xr/openxr/environment_blend_mode<class_ProjectSettings_property_xr/openxr/environment_blend_mode>`                                                                                                   | ``"0"``                                                                                          |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`xr/openxr/extensions/eye_gaze_interaction<class_ProjectSettings_property_xr/openxr/extensions/eye_gaze_interaction>`                                                                                 | ``false``                                                                                        |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`xr/openxr/extensions/hand_tracking<class_ProjectSettings_property_xr/openxr/extensions/hand_tracking>`                                                                                               | ``true``                                                                                         |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`xr/openxr/form_factor<class_ProjectSettings_property_xr/openxr/form_factor>`                                                                                                                         | ``"0"``                                                                                          |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`xr/openxr/foveation_dynamic<class_ProjectSettings_property_xr/openxr/foveation_dynamic>`                                                                                                             | ``false``                                                                                        |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`xr/openxr/foveation_level<class_ProjectSettings_property_xr/openxr/foveation_level>`                                                                                                                 | ``"0"``                                                                                          |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`xr/openxr/reference_space<class_ProjectSettings_property_xr/openxr/reference_space>`                                                                                                                 | ``"1"``                                                                                          |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
@@ -1633,6 +1651,8 @@ If ``true``, scale the boot splash image to the full window size (preserving the
 Path to an image used as the boot splash. If left empty, the default Godot Engine splash will be displayed instead.
 
 \ **Note:** Only effective if :ref:`application/boot_splash/show_image<class_ProjectSettings_property_application/boot_splash/show_image>` is ``true``.
+
+\ **Note:** The only supported format is PNG. Using another image format will result in an error.
 
 .. rst-class:: classref-item-separator
 
@@ -2180,6 +2200,18 @@ Setting to hardcode audio delay when playing video. Best to leave this untouched
 
 ----
 
+.. _class_ProjectSettings_property_collada/use_ambient:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **collada/use_ambient** = ``false``
+
+If ``true``, ambient lights will be imported from COLLADA models as :ref:`DirectionalLight3D<class_DirectionalLight3D>`. If ``false``, ambient lights will be ignored.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_ProjectSettings_property_compression/formats/gzip/compression_level:
 
 .. rst-class:: classref-property
@@ -2456,6 +2488,20 @@ When set to ``warn`` or ``error``, produces a warning or an error respectively w
 
 ----
 
+.. _class_ProjectSettings_property_debug/gdscript/warnings/inferred_declaration:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **debug/gdscript/warnings/inferred_declaration** = ``0``
+
+When set to ``warn`` or ``error``, produces a warning or an error respectively when a variable, constant, or parameter has an implicitly inferred static type.
+
+\ **Note:** This warning is recommended *in addition* to :ref:`debug/gdscript/warnings/untyped_declaration<class_ProjectSettings_property_debug/gdscript/warnings/untyped_declaration>` if you want to always specify the type explicitly. Having ``INFERRED_DECLARATION`` warning level higher than ``UNTYPED_DECLARATION`` warning level makes little sense and is not recommended.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_ProjectSettings_property_debug/gdscript/warnings/int_as_enum_without_cast:
 
 .. rst-class:: classref-property
@@ -2547,18 +2593,6 @@ When set to ``warn`` or ``error``, produces a warning or an error respectively w
 :ref:`int<class_int>` **debug/gdscript/warnings/redundant_await** = ``1``
 
 When set to ``warn`` or ``error``, produces a warning or an error respectively when a function that is not a coroutine is called with await.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_ProjectSettings_property_debug/gdscript/warnings/redundant_for_variable_type:
-
-.. rst-class:: classref-property
-
-:ref:`int<class_int>` **debug/gdscript/warnings/redundant_for_variable_type** = ``1``
-
-When set to ``warn`` or ``error``, produces a warning or an error respectively when a ``for`` variable type specifier is a supertype of the inferred type.
 
 .. rst-class:: classref-item-separator
 
@@ -2775,6 +2809,18 @@ When set to ``warn`` or ``error``, produces a warning or an error respectively w
 :ref:`int<class_int>` **debug/gdscript/warnings/unsafe_void_return** = ``1``
 
 When set to ``warn`` or ``error``, produces a warning or an error respectively when returning a call from a ``void`` function when such call cannot be guaranteed to be also ``void``.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_debug/gdscript/warnings/untyped_declaration:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **debug/gdscript/warnings/untyped_declaration** = ``0``
+
+When set to ``warn`` or ``error``, produces a warning or an error respectively when a variable or parameter has no static type, or if a function has no static return type.
 
 .. rst-class:: classref-item-separator
 
@@ -4284,7 +4330,7 @@ If ``true``, snaps :ref:`Control<class_Control>` node vertices to the nearest pi
 
 :ref:`bool<class_bool>` **gui/common/swap_cancel_ok**
 
-If ``true``, swaps **Cancel** and **OK** buttons in dialogs on Windows and UWP to follow interface conventions. :ref:`DisplayServer.get_swap_cancel_ok<class_DisplayServer_method_get_swap_cancel_ok>` can be used to query whether buttons are swapped at run-time.
+If ``true``, swaps **Cancel** and **OK** buttons in dialogs on Windows to follow interface conventions. :ref:`DisplayServer.get_swap_cancel_ok<class_DisplayServer_method_get_swap_cancel_ok>` can be used to query whether buttons are swapped at run-time.
 
 \ **Note:** This doesn't affect native dialogs such as the ones spawned by :ref:`DisplayServer.dialog_show<class_DisplayServer_method_dialog_show>`.
 
@@ -8746,12 +8792,12 @@ The default gravity strength in 3D (in meters per second squared).
  .. code-tab:: gdscript
 
     # Set the default gravity strength to 9.8.
-    PhysicsServer3D.area_set_param(get_viewport().find_world().space, PhysicsServer3D.AREA_PARAM_GRAVITY, 9.8)
+    PhysicsServer3D.area_set_param(get_viewport().find_world_3d().space, PhysicsServer3D.AREA_PARAM_GRAVITY, 9.8)
 
  .. code-tab:: csharp
 
     // Set the default gravity strength to 9.8.
-    PhysicsServer3D.AreaSetParam(GetViewport().FindWorld().Space, PhysicsServer3D.AreaParameter.Gravity, 9.8);
+    PhysicsServer3D.AreaSetParam(GetViewport().FindWorld3D().Space, PhysicsServer3D.AreaParameter.Gravity, 9.8);
 
 
 
@@ -8775,12 +8821,12 @@ The default gravity direction in 3D.
  .. code-tab:: gdscript
 
     # Set the default gravity direction to `Vector3(0, -1, 0)`.
-    PhysicsServer3D.area_set_param(get_viewport().find_world().get_space(), PhysicsServer3D.AREA_PARAM_GRAVITY_VECTOR, Vector3.DOWN)
+    PhysicsServer3D.area_set_param(get_viewport().find_world_3d().space, PhysicsServer3D.AREA_PARAM_GRAVITY_VECTOR, Vector3.DOWN)
 
  .. code-tab:: csharp
 
     // Set the default gravity direction to `Vector3(0, -1, 0)`.
-    PhysicsServer3D.AreaSetParam(GetViewport().FindWorld().Space, PhysicsServer3D.AreaParameter.GravityVector, Vector3.Down)
+    PhysicsServer3D.AreaSetParam(GetViewport().FindWorld3D().Space, PhysicsServer3D.AreaParameter.GravityVector, Vector3.Down)
 
 
 
@@ -9618,6 +9664,32 @@ Windows override for :ref:`rendering/gl_compatibility/driver<class_ProjectSettin
 
 ----
 
+.. _class_ProjectSettings_property_rendering/gl_compatibility/fallback_to_angle:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **rendering/gl_compatibility/fallback_to_angle** = ``true``
+
+If ``true``, the compatibility renderer will fall back to ANGLE if native OpenGL is not supported or the device is listed in :ref:`rendering/gl_compatibility/force_angle_on_devices<class_ProjectSettings_property_rendering/gl_compatibility/force_angle_on_devices>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_rendering/gl_compatibility/force_angle_on_devices:
+
+.. rst-class:: classref-property
+
+:ref:`Array<class_Array>` **rendering/gl_compatibility/force_angle_on_devices** = ``[]``
+
+An :ref:`Array<class_Array>` of devices which should always use the ANGLE renderer.
+
+Each entry is a :ref:`Dictionary<class_Dictionary>` with the following keys: ``vendor`` and ``name``. ``name`` can be set to ``*`` to add all devices with the specified ``vendor``.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_ProjectSettings_property_rendering/gl_compatibility/item_buffer_size:
 
 .. rst-class:: classref-property
@@ -10241,6 +10313,8 @@ The number of occlusion rays traced per CPU thread. Higher values will result in
 If ``true``, :ref:`OccluderInstance3D<class_OccluderInstance3D>` nodes will be usable for occlusion culling in 3D in the root viewport. In custom viewports, :ref:`Viewport.use_occlusion_culling<class_Viewport_property_use_occlusion_culling>` must be set to ``true`` instead.
 
 \ **Note:** Enabling occlusion culling has a cost on the CPU. Only enable occlusion culling if you actually plan to use it. Large open scenes with few or no objects blocking the view will generally not benefit much from occlusion culling. Large open scenes generally benefit more from mesh LOD and visibility ranges (:ref:`GeometryInstance3D.visibility_range_begin<class_GeometryInstance3D_property_visibility_range_begin>` and :ref:`GeometryInstance3D.visibility_range_end<class_GeometryInstance3D_property_visibility_range_end>`) compared to occlusion culling.
+
+\ **Note:** Due to memory constraints, occlusion culling is not supported by default in Web export templates. It can be enabled by compiling custom Web export templates with ``module_raycast_enabled=yes``.
 
 .. rst-class:: classref-item-separator
 
@@ -10987,6 +11061,42 @@ If ``true`` Godot will setup and initialize OpenXR on startup.
 
 ----
 
+.. _class_ProjectSettings_property_xr/openxr/environment_blend_mode:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **xr/openxr/environment_blend_mode** = ``"0"``
+
+Specify how OpenXR should blend in the environment. This is specific to certain AR and passthrough devices where camera images are blended in by the XR compositor.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_xr/openxr/extensions/eye_gaze_interaction:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **xr/openxr/extensions/eye_gaze_interaction** = ``false``
+
+Specify whether to enable eye tracking for this project. Depending on the platform, additional export configuration may be needed.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_xr/openxr/extensions/hand_tracking:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **xr/openxr/extensions/hand_tracking** = ``true``
+
+If true we enable the hand tracking extension if available.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_ProjectSettings_property_xr/openxr/form_factor:
 
 .. rst-class:: classref-property
@@ -10994,6 +11104,30 @@ If ``true`` Godot will setup and initialize OpenXR on startup.
 :ref:`int<class_int>` **xr/openxr/form_factor** = ``"0"``
 
 Specify whether OpenXR should be configured for an HMD or a hand held device.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_xr/openxr/foveation_dynamic:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **xr/openxr/foveation_dynamic** = ``false``
+
+If true and foveation is supported, will automatically adjust foveation level based on framerate up to the level set on :ref:`xr/openxr/foveation_level<class_ProjectSettings_property_xr/openxr/foveation_level>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_xr/openxr/foveation_level:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **xr/openxr/foveation_level** = ``"0"``
+
+Applied foveation level if supported: 0 = off, 1 = low, 2 = medium, 3 = high.
 
 .. rst-class:: classref-item-separator
 

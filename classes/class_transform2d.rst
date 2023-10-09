@@ -103,6 +103,8 @@ Methods
    +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Transform2D<class_Transform2D>` | :ref:`inverse<class_Transform2D_method_inverse>` **(** **)** |const|                                                                                                 |
    +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`               | :ref:`is_conformal<class_Transform2D_method_is_conformal>` **(** **)** |const|                                                                                       |
+   +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`               | :ref:`is_equal_approx<class_Transform2D_method_is_equal_approx>` **(** :ref:`Transform2D<class_Transform2D>` xform **)** |const|                                     |
    +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`               | :ref:`is_finite<class_Transform2D_method_is_finite>` **(** **)** |const|                                                                                             |
@@ -418,13 +420,25 @@ Returns the inverse of the transform, under the assumption that the transformati
 
 ----
 
+.. _class_Transform2D_method_is_conformal:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **is_conformal** **(** **)** |const|
+
+Returns ``true`` if the transform's basis is conformal, meaning it preserves angles and distance ratios, and may only be composed of rotation and uniform scale. Returns ``false`` if the transform's basis has non-uniform scale or shear/skew. This can be used to validate if the transform is non-distorted, which is important for physics and other use cases.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_Transform2D_method_is_equal_approx:
 
 .. rst-class:: classref-method
 
 :ref:`bool<class_bool>` **is_equal_approx** **(** :ref:`Transform2D<class_Transform2D>` xform **)** |const|
 
-Returns ``true`` if this transform and ``xform`` are approximately equal, by calling ``is_equal_approx`` on each component.
+Returns ``true`` if this transform and ``xform`` are approximately equal, by running :ref:`@GlobalScope.is_equal_approx<class_@GlobalScope_method_is_equal_approx>` on each component.
 
 .. rst-class:: classref-item-separator
 

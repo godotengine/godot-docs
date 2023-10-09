@@ -48,8 +48,6 @@ Theme Properties
    +---------------------------------+-----------------------------------------------------------------------------+--------------------------------+
    | :ref:`Color<class_Color>`       | :ref:`font_outline_color<class_ProgressBar_theme_color_font_outline_color>` | ``Color(1, 1, 1, 1)``          |
    +---------------------------------+-----------------------------------------------------------------------------+--------------------------------+
-   | :ref:`Color<class_Color>`       | :ref:`font_shadow_color<class_ProgressBar_theme_color_font_shadow_color>`   | ``Color(0, 0, 0, 1)``          |
-   +---------------------------------+-----------------------------------------------------------------------------+--------------------------------+
    | :ref:`int<class_int>`           | :ref:`outline_size<class_ProgressBar_theme_constant_outline_size>`          | ``0``                          |
    +---------------------------------+-----------------------------------------------------------------------------+--------------------------------+
    | :ref:`Font<class_Font>`         | :ref:`font<class_ProgressBar_theme_font_font>`                              |                                |
@@ -175,18 +173,6 @@ The color of the text.
 :ref:`Color<class_Color>` **font_outline_color** = ``Color(1, 1, 1, 1)``
 
 The tint of text outline of the **ProgressBar**.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_ProgressBar_theme_color_font_shadow_color:
-
-.. rst-class:: classref-themeproperty
-
-:ref:`Color<class_Color>` **font_shadow_color** = ``Color(0, 0, 0, 1)``
-
-The color of the text's shadow.
 
 .. rst-class:: classref-item-separator
 

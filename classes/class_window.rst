@@ -58,6 +58,8 @@ Properties
    +-----------------------------------------------------------------+-----------------------------------------------------------------------------------+--------------------------+
    | :ref:`WindowInitialPosition<enum_Window_WindowInitialPosition>` | :ref:`initial_position<class_Window_property_initial_position>`                   | ``0``                    |
    +-----------------------------------------------------------------+-----------------------------------------------------------------------------------+--------------------------+
+   | :ref:`bool<class_bool>`                                         | :ref:`keep_title_visible<class_Window_property_keep_title_visible>`               | ``false``                |
+   +-----------------------------------------------------------------+-----------------------------------------------------------------------------------+--------------------------+
    | :ref:`Vector2i<class_Vector2i>`                                 | :ref:`max_size<class_Window_property_max_size>`                                   | ``Vector2i(0, 0)``       |
    +-----------------------------------------------------------------+-----------------------------------------------------------------------------------+--------------------------+
    | :ref:`Vector2i<class_Vector2i>`                                 | :ref:`min_size<class_Window_property_min_size>`                                   | ``Vector2i(0, 0)``       |
@@ -505,9 +507,15 @@ Maximized window mode, i.e. **Window** will occupy whole screen area except task
 
 :ref:`Mode<enum_Window_Mode>` **MODE_FULLSCREEN** = ``3``
 
-Full screen window mode. Note that this is not *exclusive* full screen. On Windows and Linux, a borderless window is used to emulate full screen. On macOS, a new desktop is used to display the running project.
+Full screen mode with full multi-window support.
 
-Regardless of the platform, enabling full screen will change the window size to match the monitor's size. Therefore, make sure your project supports :doc:`multiple resolutions <../tutorials/rendering/multiple_resolutions>` when enabling full screen mode.
+Full screen window covers the entire display area of a screen and has no decorations. The display's video mode is not changed.
+
+\ **On Windows:** Multi-window full-screen mode has a 1px border of the :ref:`ProjectSettings.rendering/environment/defaults/default_clear_color<class_ProjectSettings_property_rendering/environment/defaults/default_clear_color>` color.
+
+\ **On macOS:** A new desktop is used to display the running project.
+
+\ **Note:** Regardless of the platform, enabling full screen will change the window size to match the monitor's size. Therefore, make sure your project supports :doc:`multiple resolutions <../tutorials/rendering/multiple_resolutions>` when enabling full screen mode.
 
 .. _class_Window_constant_MODE_EXCLUSIVE_FULLSCREEN:
 
@@ -515,11 +523,17 @@ Regardless of the platform, enabling full screen will change the window size to 
 
 :ref:`Mode<enum_Window_Mode>` **MODE_EXCLUSIVE_FULLSCREEN** = ``4``
 
-Exclusive full screen window mode. This mode is implemented on Windows only. On other platforms, it is equivalent to :ref:`MODE_FULLSCREEN<class_Window_constant_MODE_FULLSCREEN>`.
+A single window full screen mode. This mode has less overhead, but only one window can be open on a given screen at a time (opening a child window or application switching will trigger a full screen transition).
 
-Only one window in exclusive full screen mode can be visible on a given screen at a time. If multiple windows are in exclusive full screen mode for the same screen, the last one being set to this mode takes precedence.
+Full screen window covers the entire display area of a screen and has no border or decorations. The display's video mode is not changed.
 
-Regardless of the platform, enabling full screen will change the window size to match the monitor's size. Therefore, make sure your project supports :doc:`multiple resolutions <../tutorials/rendering/multiple_resolutions>` when enabling full screen mode.
+\ **On Windows:** Depending on video driver, full screen transition might cause screens to go black for a moment.
+
+\ **On macOS:** A new desktop is used to display the running project. Exclusive full screen mode prevents Dock and Menu from showing up when the mouse pointer is hovering the edge of the screen.
+
+\ **On Linux (X11):** Exclusive full screen mode bypasses compositor.
+
+\ **Note:** Regardless of the platform, enabling full screen will change the window size to match the monitor's size. Therefore, make sure your project supports :doc:`multiple resolutions <../tutorials/rendering/multiple_resolutions>` when enabling full screen mode.
 
 .. rst-class:: classref-item-separator
 
@@ -1070,6 +1084,23 @@ If ``true``, the **Window** contents is expanded to the full size of the window,
 - :ref:`WindowInitialPosition<enum_Window_WindowInitialPosition>` **get_initial_position** **(** **)**
 
 Specifies the initial type of position for the **Window**. See :ref:`WindowInitialPosition<enum_Window_WindowInitialPosition>` constants.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Window_property_keep_title_visible:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **keep_title_visible** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_keep_title_visible** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **get_keep_title_visible** **(** **)**
+
+If ``true``, the **Window** width is expanded to keep the title bar text fully visible.
 
 .. rst-class:: classref-item-separator
 

@@ -39,13 +39,6 @@ in the user's browser.
              Browsers also require that the web page is served with specific
              `cross-origin isolation headers <https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cross-Origin-Embedder-Policy>`__.
 
-.. note::
-
-    If you use Linux, due to
-    `poor Firefox WebGL performance <https://bugzilla.mozilla.org/show_bug.cgi?id=1010527>`__,
-    it's recommended to play the exported project using a Chromium-based browser
-    instead of Firefox.
-
 WebGL version
 -------------
 
@@ -233,6 +226,15 @@ The ``.pck`` file is binary, usually delivered with the MIME-type
 .. caution:: Delivering the WebAssembly module (``.wasm``) with a MIME-type
              other than :mimetype:`application/wasm` can prevent some start-up
              optimizations.
+
+.. tip::
+    Godot 4 web exports use the `SharedArrayBuffer <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer>`__, and require the following CORS headers to be set when serving the files:
+
+    ::
+        Cross-Origin-Opener-Policy: same-origin
+        Cross-Origin-Embedder-Policy: require-corp
+
+
 
 Delivering the files with server-side compression is recommended especially for
 the ``.pck`` and ``.wasm`` files, which are usually large in size.

@@ -64,6 +64,8 @@ Methods
    +-------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                      | :ref:`add_filter<class_EditorFileDialog_method_add_filter>` **(** :ref:`String<class_String>` filter, :ref:`String<class_String>` description="" **)** |
    +-------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                      | :ref:`add_side_menu<class_EditorFileDialog_method_add_side_menu>` **(** :ref:`Control<class_Control>` menu, :ref:`String<class_String>` title="" **)** |
+   +-------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                      | :ref:`clear_filters<class_EditorFileDialog_method_clear_filters>` **(** **)**                                                                          |
    +-------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`LineEdit<class_LineEdit>`           | :ref:`get_line_edit<class_EditorFileDialog_method_get_line_edit>` **(** **)**                                                                          |
@@ -412,6 +414,18 @@ For example, a ``filter`` of ``"*.tscn, *.scn"`` and a ``description`` of ``"Sce
 
 ----
 
+.. _class_EditorFileDialog_method_add_side_menu:
+
+.. rst-class:: classref-method
+
+void **add_side_menu** **(** :ref:`Control<class_Control>` menu, :ref:`String<class_String>` title="" **)**
+
+Adds the given ``menu`` to the side of the file dialog with the given ``title`` text on top. Only one side menu is allowed.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_EditorFileDialog_method_clear_filters:
 
 .. rst-class:: classref-method
@@ -444,7 +458,7 @@ Returns the LineEdit for the selected file.
 
 :ref:`VBoxContainer<class_VBoxContainer>` **get_vbox** **(** **)**
 
-Returns the ``VBoxContainer`` used to display the file system.
+Returns the :ref:`VBoxContainer<class_VBoxContainer>` used to display the file system.
 
 \ **Warning:** This is a required internal node, removing and freeing it may cause a crash. If you wish to hide it or any of its children, use their :ref:`CanvasItem.visible<class_CanvasItem_property_visible>` property.
 

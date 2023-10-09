@@ -343,6 +343,7 @@ source,destination
 /tutorials/assetlib/uploading_to_assetlib.html,/community/asset_library/uploading_to_assetlib.html
 /tutorials/assetlib/using_assetlib.html,/community/asset_library/using_assetlib.html
 /tutorials/assetlib/what_is_assetlib.html,/community/asset_library/what_is_assetlib.html
+/tutorials/assets_pipeline/importing_scenes.html,/tutorials/assets_pipeline/importing_3d_scenes/index.html
 /tutorials/content/making_trees.html,/tutorials/shaders/making_trees.html
 /tutorials/content/procedural_geometry/arraymesh.html,/tutorials/3d/procedural_geometry/arraymesh.html
 /tutorials/content/procedural_geometry/immediategeometry.html,/tutorials/3d/procedural_geometry/immediategeometry.html
