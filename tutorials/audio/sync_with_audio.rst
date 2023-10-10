@@ -138,7 +138,7 @@ Here is the same code as before using this approach:
         GetNode<AudioStreamPlayer>("Player").Play();
     }
 
-    public override void _Process(double _delta)
+    public override void _Process(double delta)
     {
         double time = GetNode<AudioStreamPlayer>("Player").GetPlaybackPosition() + AudioServer.GetTimeSinceLastMix();
         // Compensate for output latency.
