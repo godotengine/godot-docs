@@ -1,6 +1,7 @@
 # Sync with readthedocs:
 # https://github.com/readthedocs/readthedocs.org/blob/master/requirements/pip.txt
 # https://github.com/readthedocs/readthedocs.org/blob/master/requirements/docs.txt
+# Noop
 
 # Base dependencies
 pygments==2.16.1
