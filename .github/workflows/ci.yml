@@ -20,7 +20,7 @@ jobs:
           # Install tools used by `_tools/format.sh`.
           sudo apt-get -qq update
           sudo apt-get -qq install dos2unix recode
-          sudo pip3 install -r requirements.txt
+          sudo pip3 -v install -r requirements.txt
           sudo pip3 install codespell
 
       - name: Linter checks
