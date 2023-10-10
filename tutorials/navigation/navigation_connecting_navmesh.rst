@@ -26,7 +26,7 @@ navigation region edge connections on the NavigationServer and should be avoided
     Exactly means exactly for the vertex position merge. Small float errors
     that happen quite regularly with imported meshes will prevent a successful vertex merge.
 
-Alternatively navigation meshes are not merged but still considered as ``connected`` by
+Alternatively navigation meshes are not merged but still considered as **connected** by
 the NavigationServer when their edges are nearly parallel and within distance
 to each other. The connection distance is defined by the  ``edge_connection_margin`` for each
 navigation map. In many cases navigation mesh edges cannot properly connect when they partly overlap.

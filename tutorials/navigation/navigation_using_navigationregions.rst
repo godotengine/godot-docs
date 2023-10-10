@@ -3,7 +3,7 @@
 Using NavigationRegions
 =======================
 
-NavigationRegions are the visual Node representation of a ``region`` of the navigation ``map`` on the NavigationServer.
+NavigationRegions are the visual Node representation of a **region** of the navigation **map** on the NavigationServer.
 Each NavigationRegion node holds a resource for the navigation mesh data.
 
 Both 2D and 3D version are available as :ref:`NavigationRegion2D<class_NavigationRegion2D>`

@@ -30,7 +30,7 @@ that appear in the top bar of the editor when a NavigationRegion2D is selected.
 
 .. image:: img/nav_polydrawtool.png
 
-The NavigationPolygon draw tools can be used to create and edit navigation meshes by defining ``outline`` polygons.
+The NavigationPolygon draw tools can be used to create and edit navigation meshes by defining **outline** polygons.
 The outline polygons are later converted to real navigation mesh resources for the NavigationServer regions.
 
 .. image:: img/nav_polymatroschka.png
