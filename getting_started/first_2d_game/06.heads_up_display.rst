@@ -331,14 +331,12 @@ should look like this, so make sure you didn't miss anything:
 Now we need to connect the ``HUD`` functionality to our ``Main`` script. This
 requires a few additions to the ``Main`` scene:
 
-In the Node tab, connect the HUD's ``start_game`` signal to the ``new_game()``
+First, we don't want to start the new game automatically, so remove the call to ``new_game()`` 
+in ``_ready()``. Then, in the Node tab, connect the HUD's ``start_game`` signal to the ``new_game()``
 function of the Main node by clicking the "Pick" button in the "Connect a Signal"
 window and selecting the ``new_game()`` method or type "new_game" below "Receiver Method"
 in the window. Verify that the green connection icon now appears next to
 ``func new_game()`` in the script.
-
-Remember to remove the call to ``new_game()`` from
-``_ready()``.
 
 In ``new_game()``, update the score display and show the "Get Ready" message:
 
@@ -374,8 +372,6 @@ In ``game_over()`` we need to call the corresponding ``HUD`` function:
 
         _hud->show_game_over();
 
-Just a reminder: we don't want to start the new game automatically, so
-remove the call to ``new_game()`` in ``_ready()`` if you haven't yet.
 
 Finally, add this to ``_on_score_timer_timeout()`` to keep the display in sync
 with the changing score:
