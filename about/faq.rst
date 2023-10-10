@@ -29,7 +29,7 @@ different licenses.
 
 For full details, look at the `COPYRIGHT.txt <https://github.com/godotengine/godot/blob/master/COPYRIGHT.txt>`_
 as well as the `LICENSE.txt <https://github.com/godotengine/godot/blob/master/LICENSE.txt>`_
-and `LOGO_LICENSE.txt <https://github.com/godotengine/godot/blob/master/LOGO_LICENSE.md>`_ files
+and `LOGO_LICENSE.txt <https://github.com/godotengine/godot/blob/master/LOGO_LICENSE.txt>`_ files
 in the Godot repository.
 
 Also, see `the license page on the Godot website <https://godotengine.org/license>`_.
