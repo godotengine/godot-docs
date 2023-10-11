@@ -256,6 +256,7 @@ Text Editor
 | Fold/Unfold Line          | :kbd:`Alt + F`           | :kbd:`Alt + F`             | ``script_text_editor/toggle_fold_line``         |
 +---------------------------+--------------------------+----------------------------+-------------------------------------------------+
 | Clone Down                | :kbd:`Ctrl + Shift + D`  | :kbd:`Cmd + Shift + C`     | ``script_text_editor/clone_down``               |
+| Duplicate Selection       | :kbd:`Ctrl + Shift + D`  | :kbd:`Cmd + Shift + C`     | ``script_text_editor/duplicate_selection``      |
 +---------------------------+--------------------------+----------------------------+-------------------------------------------------+
 | Complete Symbol           | :kbd:`Ctrl + Space`      | :kbd:`Ctrl + Space`        | ``script_text_editor/complete_symbol``          |
 +---------------------------+--------------------------+----------------------------+-------------------------------------------------+
