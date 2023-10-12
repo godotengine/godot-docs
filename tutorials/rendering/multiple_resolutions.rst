@@ -324,10 +324,8 @@ Desktop game
     viewport, you should use the ``canvas_items`` stretch mode instead of the ``viewport``
     stretch mode.
 
-    Godot currently doesn't have a way to enforce integer scaling when using the
-    ``canvas_items`` or ``viewport`` stretch mode, which means pixel art may look bad if the
-    final window size is not a multiple of the base window size.
-    To fix this, use an add-on such as the `Integer Resolution Handler <https://github.com/Yukitty/godot-addon-integer_resolution_handler>`__.
+    Godot has an integer scaling mode since version 4.2, in previous versions, a 
+    technique using a subviewport was best used.
 
 Mobile game in landscape mode
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
