@@ -128,10 +128,10 @@ officially supported .NET option.
 
 .. attention::
 
-    Projects written in C# using Godot 4 currently cannot be exported to iOS
-    and web platforms. To use C# on those platforms, consider Godot 3 instead.
-    Android platform support is available as of Godot 4.2, but is experimental
-    and :ref:`some limitations apply <doc_c_sharp_platforms>`.
+    Projects written in C# using Godot 4 currently cannot be exported to the web
+    platform. To use C# on that platform, consider Godot 3 instead.
+    Android and iOS platform support is available as of Godot 4.2, but is
+    experimental and :ref:`some limitations apply <doc_c_sharp_platforms>`.
 
 C++ via GDExtension
 ~~~~~~~~~~~~~~~~~~~
