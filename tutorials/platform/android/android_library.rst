@@ -20,7 +20,7 @@ Using the Godot Android library
 
 The Godot Android library is packaged as an AAR archive file and hosted on `MavenCentral <https://central.sonatype.com/artifact/org.godotengine/godot>`_ along with `its documentation <https://javadoc.io/doc/org.godotengine/godot/latest/index.html>`_.
 
-It is used to provide access to Godot APIs and capabilities on Android platforms for the following (non-exhaustive) use-cases.
+It provides access to Godot APIs and capabilities on Android platforms for the following non-exhaustive use-cases.
 
 Godot Android plugins
 ---------------------
@@ -28,31 +28,27 @@ Godot Android plugins
 Android plugins are powerful tools to extend the capabilities of the Godot Engine
 by tapping into the functionality provided by Android platforms and ecosystem.
 
-They are also Android libraries with a dependency on the Godot Android library
-which is used for access to the Godot APIs and integration into the engine's lifecycle.
-
-They offer similar features to the Godot Android library,
-notably the ability to integrate with the Gradle (or other Android supported) build system,
-and the ability to be portable and embeddable.
-
-Access to Godot APIs and lifecycle grants Android plugins powerful capabilities
-such as GDExtension which allows to update / mod the engine behavior as needed.
+An Android plugin is an Android library with a dependency on the Godot Android library
+which the plugin uses to integrate into the engine's lifecycle and to access Godot APIs,
+granting it powerful capabilities such as GDExtension support which allows to update / mod the engine behavior as needed.
 
 For more information, see :ref:`Godot Android plugins <doc_android_plugin>`.
 
 Embedding Godot in existing Android projects
 --------------------------------------------
 
-The Godot Engine can be integrated within existing Android applications or libraries,
+The Godot Engine can be embedded within existing Android applications or libraries,
 allowing developers to leverage mature and battle-tested code and libraries better suited to a specific task.
 
 The hosting component is responsible for driving the engine lifecycle via Godot's Android APIs.
-These APIs can also be used to provide bidirectional communication between the host and the running Godot instance allowing for greater control over the desired experience.
+These APIs can also be used to provide bidirectional communication between the host and the embedded
+Godot instance allowing for greater control over the desired experience.
 
-We showcase how this is done using a sample Android app that uses the Godot Engine as an embeddable Android view to render 3D GLTF models.
+We showcase how this is done using a sample Android app that embeds the Godot Engine as an Android view,
+and uses it to render 3D GLTF models.
 
 The `GLTF Viewer <https://github.com/m4gr3d/Godot-Android-Samples/tree/master/apps/gltf_viewer>`_ sample app uses an `Android RecyclerView component <https://developer.android.com/develop/ui/views/layout/recyclerview>`_ to create
-and populate a list of GLTF items from `Kenney's Food Kit pack <https://kenney.nl/assets/food-kit>`_.
+a list of GLTF items, populated from `Kenney's Food Kit pack <https://kenney.nl/assets/food-kit>`_.
 When an item on the list is selected, the app's logic interacts with the embedded Godot Engine to render the selected GLTF item as a 3D model.
 
 .. image:: img/gltf_viewer_sample_app_screenshot.webp
@@ -174,18 +170,18 @@ Below we break-down the steps used to create the GLTF Viewer app.
 
   On Android, Godot's project files are exported to the ``assets`` directory of the generated ``apk`` binary.
 
-  We use that info to bind our Android app and Godot project together by creating the Godot project in the Android app's ``assets`` directory.
+  We leverage that architecture to bind our Android app and Godot project together by creating the Godot project in the Android app's ``assets`` directory.
 
   Note that it's also possible to create the Godot project in a separate directory and export it as a `PCK or ZIP file <https://docs.godotengine.org/en/stable/tutorials/export/exporting_projects.html#pck-versus-zip-pack-file-formats>`_
   to the Android app's ``assets`` directory.
   Using this approach requires passing the ``--main-pack <pck_or_zip_filepath_relative_to_assets_dir>`` argument to the hosted Godot Engine instance using `GodotHost#getCommandLine() <https://github.com/godotengine/godot/blob/6916349697a4339216469e9bf5899b983d78db07/platform/android/java/lib/src/org/godotengine/godot/GodotHost.java#L45>`_.
 
-  The instructions below (and the sample app) follow the first approach of creating the Godot project in the Android app's ``assets`` directory.
+  The instructions below and the sample app follow the first approach of creating the Godot project in the Android app's ``assets`` directory.
 
 
 - As mentioned in the **note** above, open the Godot Editor and create a Godot project directly (no subfolder) in the ``assets`` directory of the Android application project
 
-  - See the sampple app's `Godot project <https://github.com/m4gr3d/Godot-Android-Samples/tree/master/apps/gltf_viewer/src/main/assets>`_ for reference
+  - See the sample app's `Godot project <https://github.com/m4gr3d/Godot-Android-Samples/tree/master/apps/gltf_viewer/src/main/assets>`_ for reference
 
 - Configure the Godot project as desired
 
