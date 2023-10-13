@@ -416,7 +416,8 @@ the ``new_game()`` function in ``Main``:
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-        get_tree().call_group("mobs", "queue_free")
+        var scene_tree = SceneTree.new()
+	    scene_tree.call_group("mobs", "queue_free")
 
  .. code-tab:: csharp
 
