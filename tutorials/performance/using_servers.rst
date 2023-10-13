@@ -162,6 +162,7 @@ The 3D APIs are different from the 2D ones, so the instantiation API must be use
         RenderingServer.instance_set_transform(instance, xform)
 
  .. code-tab:: csharp
+
     public partial class MyNode3D : Node3D
     {
         // RenderingServer expects references to be kept around. GC will otherwise remove your meshes sooner or later...
