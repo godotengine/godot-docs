@@ -38,12 +38,12 @@ While introduced in Godot 3.2, the Android plugin system got a significant archi
 The new plugin system is backward-incompatible with the previous one and in Godot 4.0, the previous system was fully deprecated and removed.
 Since we previously did not version the Android plugin systems, the new one is now labelled ``v1`` and is the starting point for the modern Godot Android ecosystem.
 
-As a prerequisite, make sure you understand how to set up a :ref:`custom build environment<doc_android_custom_build>` for Android.
+As a prerequisite, make sure you understand how to set up a :ref:`gradle build environment<doc_android_gradle_build>` for Android.
 
 At its core, a Godot Android plugin is a `Android archive library <https://developer.android.com/studio/projects/android-library#aar-contents>`_ (*aar* archive file)
 with the following caveats:
 
-- The library must have a dependency on the Godot engine library (``godot-lib.<version>.<status>.aar``). A stable version is made available for each Godot release on the `Godot download page <https://godotengine.org/download>`_.
+- The library must have a dependency on the :ref:`Godot Android library <doc_android_library>`. A stable version is made available for each Godot release on `MavenCentral <https://central.sonatype.com/artifact/org.godotengine/godot>`_ and on the `Godot download page <https://godotengine.org/download>`_.
 - The library must include a specifically configured ``<meta-data>`` tag in its manifest file.
 
 Building an Android plugin
@@ -136,25 +136,10 @@ From your script::
         print(singleton.myPluginFunction("World"))
 
 
-Bundling GDExtension resources
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-An Android plugin can define and provide C/C++ GDExtension resources, either to provide and/or access functionality from the game logic.
-The GDExtension resources can be bundled within the plugin ``aar`` file which simplifies the distribution and deployment process:
-
-- The shared libraries (``.so``) for the defined GDExtension libraries will be automatically bundled by the ``aar`` build system.
-- Godot ``*.gdnlib`` and ``*.gdns`` resource files must be manually defined in the plugin ``assets`` directory.
-  The recommended path for these resources relative to the ``assets`` directory should be: ``godot/plugin/v1/[PluginName]/``.
-
-For GDExtension libraries, the plugin singleton object must override the ``org.godotengine.godot.plugin.GodotPlugin::getPluginGDNativeLibrariesPaths()`` method,
-and return the paths to the bundled GDExtension libraries config files (``*.gdextension``). The paths must be relative to the ``assets`` directory.
-At runtime, the plugin will provide these paths to Godot core which will use them to load and initialize the bundled GDExtension libraries.
-
 Reference implementations
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
 - `Godot Oculus Mobile plugin <https://github.com/GodotVR/godot_oculus_mobile>`_
-  - `Bundled gdnative resources <https://github.com/GodotVR/godot_oculus_mobile/tree/master/plugin/src/main/assets/addons/godot_ovrmobile>`_
 - `Godot Google Play Billing plugin <https://github.com/godotengine/godot-google-play-billing>`_
 
 
