@@ -161,6 +161,30 @@ The 3D APIs are different from the 2D ones, so the instantiation API must be use
         var xform = Transform3D(Basis(), Vector3(20, 100, 0))
         RenderingServer.instance_set_transform(instance, xform)
 
+ .. code-tab:: csharp
+    public partial class MyNode3D : Node3D
+    {
+        // RenderingServer expects references to be kept around. GC will otherwise remove your meshes sooner or later...
+        Mesh mesh;
+
+        public override void _Ready()
+    	{
+            // Create a visual instance (for 3D).
+            Rid instance = RenderingServer.InstanceCreate();
+            // Set the scenario from the world, this ensures it
+            // appears with the same objects as the scene.
+            Rid scenario = GetWorld3D().Scenario;
+            RenderingServer.InstanceSetScenario(instance, scenario);
+            // Add a mesh to it.
+            // Remember, keep the reference.
+            mesh = ResourceLoader.Load<Mesh>("res://mymesh.obj");
+            RenderingServer.InstanceSetBase(instance, mesh.GetRid());
+            // Move the mesh around.
+            Transform3D xform = new Transform3D(Basis.Identity, new Vector3(20, 100, 0));
+            RenderingServer.InstanceSetTransform(instance, xform);
+        }
+    }
+
 Creating a 2D RigidBody and moving a sprite with it
 ---------------------------------------------------
 
