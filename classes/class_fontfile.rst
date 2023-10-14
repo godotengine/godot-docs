@@ -73,6 +73,8 @@ Properties
    +-----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+-----------------------+
    | :ref:`int<class_int>`                                           | :ref:`fixed_size<class_FontFile_property_fixed_size>`                                                 | ``0``                 |
    +-----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`FixedSizeScaleMode<enum_TextServer_FixedSizeScaleMode>`   | :ref:`fixed_size_scale_mode<class_FontFile_property_fixed_size_scale_mode>`                           | ``0``                 |
+   +-----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+-----------------------+
    | :ref:`String<class_String>`                                     | :ref:`font_name<class_FontFile_property_font_name>`                                                   | ``""``                |
    +-----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+-----------------------+
    | :ref:`int<class_int>`                                           | :ref:`font_stretch<class_FontFile_property_font_stretch>`                                             | ``100``               |
@@ -314,6 +316,23 @@ Contents of the dynamic font source file.
 - :ref:`int<class_int>` **get_fixed_size** **(** **)**
 
 Font size, used only for the bitmap fonts.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_FontFile_property_fixed_size_scale_mode:
+
+.. rst-class:: classref-property
+
+:ref:`FixedSizeScaleMode<enum_TextServer_FixedSizeScaleMode>` **fixed_size_scale_mode** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_fixed_size_scale_mode** **(** :ref:`FixedSizeScaleMode<enum_TextServer_FixedSizeScaleMode>` value **)**
+- :ref:`FixedSizeScaleMode<enum_TextServer_FixedSizeScaleMode>` **get_fixed_size_scale_mode** **(** **)**
+
+Scaling mode, used only for the bitmap fonts with :ref:`fixed_size<class_FontFile_property_fixed_size>` greater than zero.
 
 .. rst-class:: classref-item-separator
 

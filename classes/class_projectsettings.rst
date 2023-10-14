@@ -145,6 +145,10 @@ Properties
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`compression/formats/zstd/window_log_size<class_ProjectSettings_property_compression/formats/zstd/window_log_size>`                                                                                   | ``27``                                                                                           |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`Color<class_Color>`                         | :ref:`debug/canvas_items/debug_redraw_color<class_ProjectSettings_property_debug/canvas_items/debug_redraw_color>`                                                                                         | ``Color(1, 0.2, 0.2, 0.5)``                                                                      |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`                         | :ref:`debug/canvas_items/debug_redraw_time<class_ProjectSettings_property_debug/canvas_items/debug_redraw_time>`                                                                                           | ``1.0``                                                                                          |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`debug/file_logging/enable_file_logging<class_ProjectSettings_property_debug/file_logging/enable_file_logging>`                                                                                       | ``false``                                                                                        |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`debug/file_logging/enable_file_logging.pc<class_ProjectSettings_property_debug/file_logging/enable_file_logging.pc>`                                                                                 | ``true``                                                                                         |
@@ -664,6 +668,10 @@ Properties
    | :ref:`String<class_String>`                       | :ref:`input_devices/pen_tablet/driver<class_ProjectSettings_property_input_devices/pen_tablet/driver>`                                                                                                     |                                                                                                  |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                       | :ref:`input_devices/pen_tablet/driver.windows<class_ProjectSettings_property_input_devices/pen_tablet/driver.windows>`                                                                                     |                                                                                                  |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`input_devices/pointing/android/enable_long_press_as_right_click<class_ProjectSettings_property_input_devices/pointing/android/enable_long_press_as_right_click>`                                     | ``false``                                                                                        |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`input_devices/pointing/android/enable_pan_and_scale_gestures<class_ProjectSettings_property_input_devices/pointing/android/enable_pan_and_scale_gestures>`                                           | ``false``                                                                                        |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`input_devices/pointing/emulate_mouse_from_touch<class_ProjectSettings_property_input_devices/pointing/emulate_mouse_from_touch>`                                                                     | ``true``                                                                                         |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
@@ -1337,19 +1345,21 @@ Properties
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`rendering/lightmapping/bake_quality/high_quality_probe_ray_count<class_ProjectSettings_property_rendering/lightmapping/bake_quality/high_quality_probe_ray_count>`                                   | ``512``                                                                                          |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                             | :ref:`rendering/lightmapping/bake_quality/high_quality_ray_count<class_ProjectSettings_property_rendering/lightmapping/bake_quality/high_quality_ray_count>`                                               | ``256``                                                                                          |
+   | :ref:`int<class_int>`                             | :ref:`rendering/lightmapping/bake_quality/high_quality_ray_count<class_ProjectSettings_property_rendering/lightmapping/bake_quality/high_quality_ray_count>`                                               | ``512``                                                                                          |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`rendering/lightmapping/bake_quality/low_quality_probe_ray_count<class_ProjectSettings_property_rendering/lightmapping/bake_quality/low_quality_probe_ray_count>`                                     | ``64``                                                                                           |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                             | :ref:`rendering/lightmapping/bake_quality/low_quality_ray_count<class_ProjectSettings_property_rendering/lightmapping/bake_quality/low_quality_ray_count>`                                                 | ``16``                                                                                           |
+   | :ref:`int<class_int>`                             | :ref:`rendering/lightmapping/bake_quality/low_quality_ray_count<class_ProjectSettings_property_rendering/lightmapping/bake_quality/low_quality_ray_count>`                                                 | ``32``                                                                                           |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`rendering/lightmapping/bake_quality/medium_quality_probe_ray_count<class_ProjectSettings_property_rendering/lightmapping/bake_quality/medium_quality_probe_ray_count>`                               | ``256``                                                                                          |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                             | :ref:`rendering/lightmapping/bake_quality/medium_quality_ray_count<class_ProjectSettings_property_rendering/lightmapping/bake_quality/medium_quality_ray_count>`                                           | ``64``                                                                                           |
+   | :ref:`int<class_int>`                             | :ref:`rendering/lightmapping/bake_quality/medium_quality_ray_count<class_ProjectSettings_property_rendering/lightmapping/bake_quality/medium_quality_ray_count>`                                           | ``128``                                                                                          |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`rendering/lightmapping/bake_quality/ultra_quality_probe_ray_count<class_ProjectSettings_property_rendering/lightmapping/bake_quality/ultra_quality_probe_ray_count>`                                 | ``2048``                                                                                         |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                             | :ref:`rendering/lightmapping/bake_quality/ultra_quality_ray_count<class_ProjectSettings_property_rendering/lightmapping/bake_quality/ultra_quality_ray_count>`                                             | ``1024``                                                                                         |
+   | :ref:`int<class_int>`                             | :ref:`rendering/lightmapping/bake_quality/ultra_quality_ray_count<class_ProjectSettings_property_rendering/lightmapping/bake_quality/ultra_quality_ray_count>`                                             | ``2048``                                                                                         |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`rendering/lightmapping/denoising/denoiser<class_ProjectSettings_property_rendering/lightmapping/denoising/denoiser>`                                                                                 | ``0``                                                                                            |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                         | :ref:`rendering/lightmapping/primitive_meshes/texel_size<class_ProjectSettings_property_rendering/lightmapping/primitive_meshes/texel_size>`                                                               | ``0.2``                                                                                          |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
@@ -2267,6 +2277,30 @@ Enables `long-distance matching <https://github.com/facebook/zstd/releases/tag/v
 :ref:`int<class_int>` **compression/formats/zstd/window_log_size** = ``27``
 
 Largest size limit (in power of 2) allowed when compressing using long-distance matching with Zstandard. Higher values can result in better compression, but will require more memory when compressing and decompressing.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_debug/canvas_items/debug_redraw_color:
+
+.. rst-class:: classref-property
+
+:ref:`Color<class_Color>` **debug/canvas_items/debug_redraw_color** = ``Color(1, 0.2, 0.2, 0.5)``
+
+If canvas item redraw debugging is active, this color will be flashed on canvas items when they redraw.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_debug/canvas_items/debug_redraw_time:
+
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **debug/canvas_items/debug_redraw_time** = ``1.0``
+
+If canvas item redraw debugging is active, this will be the time the flash will last each time they redraw.
 
 .. rst-class:: classref-item-separator
 
@@ -5627,6 +5661,30 @@ Specifies the tablet driver to use. If left empty, the default driver will be us
 :ref:`String<class_String>` **input_devices/pen_tablet/driver.windows**
 
 Override for :ref:`input_devices/pen_tablet/driver<class_ProjectSettings_property_input_devices/pen_tablet/driver>` on Windows.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_input_devices/pointing/android/enable_long_press_as_right_click:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **input_devices/pointing/android/enable_long_press_as_right_click** = ``false``
+
+If ``true``, long press events on an Android touchscreen are transformed into right click events.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_input_devices/pointing/android/enable_pan_and_scale_gestures:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **input_devices/pointing/android/enable_pan_and_scale_gestures** = ``false``
+
+If ``true``, multi-touch pan and scale gestures are enabled on Android devices.
 
 .. rst-class:: classref-item-separator
 
@@ -9840,7 +9898,7 @@ The number of rays to use for baking dynamic object lighting in :ref:`LightmapPr
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **rendering/lightmapping/bake_quality/high_quality_ray_count** = ``256``
+:ref:`int<class_int>` **rendering/lightmapping/bake_quality/high_quality_ray_count** = ``512``
 
 The number of rays to use for baking lightmaps with :ref:`LightmapGI<class_LightmapGI>` when :ref:`LightmapGI.quality<class_LightmapGI_property_quality>` is :ref:`LightmapGI.BAKE_QUALITY_HIGH<class_LightmapGI_constant_BAKE_QUALITY_HIGH>`.
 
@@ -9864,7 +9922,7 @@ The number of rays to use for baking dynamic object lighting in :ref:`LightmapPr
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **rendering/lightmapping/bake_quality/low_quality_ray_count** = ``16``
+:ref:`int<class_int>` **rendering/lightmapping/bake_quality/low_quality_ray_count** = ``32``
 
 The number of rays to use for baking lightmaps with :ref:`LightmapGI<class_LightmapGI>` when :ref:`LightmapGI.quality<class_LightmapGI_property_quality>` is :ref:`LightmapGI.BAKE_QUALITY_LOW<class_LightmapGI_constant_BAKE_QUALITY_LOW>`.
 
@@ -9888,7 +9946,7 @@ The number of rays to use for baking dynamic object lighting in :ref:`LightmapPr
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **rendering/lightmapping/bake_quality/medium_quality_ray_count** = ``64``
+:ref:`int<class_int>` **rendering/lightmapping/bake_quality/medium_quality_ray_count** = ``128``
 
 The number of rays to use for baking lightmaps with :ref:`LightmapGI<class_LightmapGI>` when :ref:`LightmapGI.quality<class_LightmapGI_property_quality>` is :ref:`LightmapGI.BAKE_QUALITY_MEDIUM<class_LightmapGI_constant_BAKE_QUALITY_MEDIUM>`.
 
@@ -9912,9 +9970,33 @@ The number of rays to use for baking dynamic object lighting in :ref:`LightmapPr
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **rendering/lightmapping/bake_quality/ultra_quality_ray_count** = ``1024``
+:ref:`int<class_int>` **rendering/lightmapping/bake_quality/ultra_quality_ray_count** = ``2048``
 
 The number of rays to use for baking lightmaps with :ref:`LightmapGI<class_LightmapGI>` when :ref:`LightmapGI.quality<class_LightmapGI_property_quality>` is :ref:`LightmapGI.BAKE_QUALITY_ULTRA<class_LightmapGI_constant_BAKE_QUALITY_ULTRA>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_rendering/lightmapping/denoising/denoiser:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **rendering/lightmapping/denoising/denoiser** = ``0``
+
+Denoiser tool used for denoising lightmaps.
+
+Using `OpenImageDenoise <https://www.openimagedenoise.org/>`__ (OIDN) requires configuring a path to an OIDN executable in the editor settings at :ref:`EditorSettings.filesystem/tools/oidn/oidn_denoise_path<class_EditorSettings_property_filesystem/tools/oidn/oidn_denoise_path>`. OIDN can be downloaded from `OpenImageDenoise's downloads page <https://www.openimagedenoise.org/downloads.html>`__.
+
+OIDN will use GPU acceleration when available. Unlike JNLM which uses compute shaders for acceleration, OIDN uses vendor-specific acceleration methods. For GPU acceleration to be available, the following libraries must be installed on the system depending on your GPU:
+
+- NVIDIA GPUs: CUDA libraries
+
+- AMD GPUs: HIP libraries
+
+- Intel GPUs: SYCL libraries
+
+If no GPU acceleration is configured on the system, multi-threaded CPU-based denoising will be performed instead. This CPU-based denoising is significantly slower than the JNLM denoiser in most cases.
 
 .. rst-class:: classref-item-separator
 

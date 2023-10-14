@@ -45,6 +45,8 @@ Properties
    +-----------------------------------------------------------+-------------------------------------------------------------------------------+-------------------------------+
    | :ref:`int<class_int>`                                     | :ref:`amount<class_GPUParticles3D_property_amount>`                           | ``8``                         |
    +-----------------------------------------------------------+-------------------------------------------------------------------------------+-------------------------------+
+   | :ref:`float<class_float>`                                 | :ref:`amount_ratio<class_GPUParticles3D_property_amount_ratio>`               | ``1.0``                       |
+   +-----------------------------------------------------------+-------------------------------------------------------------------------------+-------------------------------+
    | :ref:`float<class_float>`                                 | :ref:`collision_base_size<class_GPUParticles3D_property_collision_base_size>` | ``0.01``                      |
    +-----------------------------------------------------------+-------------------------------------------------------------------------------+-------------------------------+
    | :ref:`DrawOrder<enum_GPUParticles3D_DrawOrder>`           | :ref:`draw_order<class_GPUParticles3D_property_draw_order>`                   | ``0``                         |
@@ -68,6 +70,8 @@ Properties
    | :ref:`int<class_int>`                                     | :ref:`fixed_fps<class_GPUParticles3D_property_fixed_fps>`                     | ``30``                        |
    +-----------------------------------------------------------+-------------------------------------------------------------------------------+-------------------------------+
    | :ref:`bool<class_bool>`                                   | :ref:`fract_delta<class_GPUParticles3D_property_fract_delta>`                 | ``true``                      |
+   +-----------------------------------------------------------+-------------------------------------------------------------------------------+-------------------------------+
+   | :ref:`float<class_float>`                                 | :ref:`interp_to_end<class_GPUParticles3D_property_interp_to_end>`             | ``0.0``                       |
    +-----------------------------------------------------------+-------------------------------------------------------------------------------+-------------------------------+
    | :ref:`bool<class_bool>`                                   | :ref:`interpolate<class_GPUParticles3D_property_interpolate>`                 | ``true``                      |
    +-----------------------------------------------------------+-------------------------------------------------------------------------------+-------------------------------+
@@ -319,6 +323,25 @@ Number of particles to emit.
 
 ----
 
+.. _class_GPUParticles3D_property_amount_ratio:
+
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **amount_ratio** = ``1.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_amount_ratio** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_amount_ratio** **(** **)**
+
+The ratio of particles that should actually be emitted. If set to a value lower than ``1.0``, this will set the amount of emitted particles throughout the lifetime to ``amount * amount_ratio``. Unlike changing :ref:`amount<class_GPUParticles3D_property_amount>`, changing :ref:`amount_ratio<class_GPUParticles3D_property_amount_ratio>` while emitting does not affect already-emitted particles and doesn't cause the particle system to restart. :ref:`amount_ratio<class_GPUParticles3D_property_amount_ratio>` can be used to create effects that make the number of emitted particles vary over time.
+
+\ **Note:** Reducing the :ref:`amount_ratio<class_GPUParticles3D_property_amount_ratio>` has no performance benefit, since resources need to be allocated and processed for the total :ref:`amount<class_GPUParticles3D_property_amount>` of particles regardless of the :ref:`amount_ratio<class_GPUParticles3D_property_amount_ratio>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_GPUParticles3D_property_collision_base_size:
 
 .. rst-class:: classref-property
@@ -524,6 +547,25 @@ The particle system's frame rate is fixed to a value. For example, changing the 
 - :ref:`bool<class_bool>` **get_fractional_delta** **(** **)**
 
 If ``true``, results in fractional delta calculation which has a smoother particles display effect.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_GPUParticles3D_property_interp_to_end:
+
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **interp_to_end** = ``0.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_interp_to_end** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_interp_to_end** **(** **)**
+
+Causes all the particles in this node to interpolate towards the end of their lifetime.
+
+\ **Note**: This only works when used with a :ref:`ParticleProcessMaterial<class_ParticleProcessMaterial>`. It needs to be manually implemented for custom process shaders.
 
 .. rst-class:: classref-item-separator
 

@@ -68,6 +68,8 @@ Methods
    +-----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                                           | :ref:`font_get_fixed_size<class_TextServer_method_font_get_fixed_size>` **(** :ref:`RID<class_RID>` font_rid **)** |const|                                                                                                                                                                                                                                             |
    +-----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`FixedSizeScaleMode<enum_TextServer_FixedSizeScaleMode>`   | :ref:`font_get_fixed_size_scale_mode<class_TextServer_method_font_get_fixed_size_scale_mode>` **(** :ref:`RID<class_RID>` font_rid **)** |const|                                                                                                                                                                                                                       |
+   +-----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                         | :ref:`font_get_generate_mipmaps<class_TextServer_method_font_get_generate_mipmaps>` **(** :ref:`RID<class_RID>` font_rid **)** |const|                                                                                                                                                                                                                                 |
    +-----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                                       | :ref:`font_get_global_oversampling<class_TextServer_method_font_get_global_oversampling>` **(** **)** |const|                                                                                                                                                                                                                                                          |
@@ -193,6 +195,8 @@ Methods
    | void                                                            | :ref:`font_set_face_index<class_TextServer_method_font_set_face_index>` **(** :ref:`RID<class_RID>` font_rid, :ref:`int<class_int>` face_index **)**                                                                                                                                                                                                                   |
    +-----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                            | :ref:`font_set_fixed_size<class_TextServer_method_font_set_fixed_size>` **(** :ref:`RID<class_RID>` font_rid, :ref:`int<class_int>` fixed_size **)**                                                                                                                                                                                                                   |
+   +-----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                                            | :ref:`font_set_fixed_size_scale_mode<class_TextServer_method_font_set_fixed_size_scale_mode>` **(** :ref:`RID<class_RID>` font_rid, :ref:`FixedSizeScaleMode<enum_TextServer_FixedSizeScaleMode>` fixed_size_scale_mode **)**                                                                                                                                          |
    +-----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                            | :ref:`font_set_force_autohinter<class_TextServer_method_font_set_force_autohinter>` **(** :ref:`RID<class_RID>` font_rid, :ref:`bool<class_bool>` force_autohinter **)**                                                                                                                                                                                               |
    +-----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1474,6 +1478,40 @@ BiDi override for GDScript.
 
 User defined structured text BiDi override function.
 
+.. rst-class:: classref-item-separator
+
+----
+
+.. _enum_TextServer_FixedSizeScaleMode:
+
+.. rst-class:: classref-enumeration
+
+enum **FixedSizeScaleMode**:
+
+.. _class_TextServer_constant_FIXED_SIZE_SCALE_DISABLE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`FixedSizeScaleMode<enum_TextServer_FixedSizeScaleMode>` **FIXED_SIZE_SCALE_DISABLE** = ``0``
+
+Bitmap font is not scaled.
+
+.. _class_TextServer_constant_FIXED_SIZE_SCALE_INTEGER_ONLY:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`FixedSizeScaleMode<enum_TextServer_FixedSizeScaleMode>` **FIXED_SIZE_SCALE_INTEGER_ONLY** = ``1``
+
+Bitmap font is scaled to the closest integer multiple of the font's fixed size. This is the recommended option for pixel art fonts.
+
+.. _class_TextServer_constant_FIXED_SIZE_SCALE_ENABLED:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`FixedSizeScaleMode<enum_TextServer_FixedSizeScaleMode>` **FIXED_SIZE_SCALE_ENABLED** = ``2``
+
+Bitmap font is scaled to an arbitrary (fractional) size. This is the recommended option for non-pixel art fonts.
+
 .. rst-class:: classref-section-separator
 
 ----
@@ -1710,6 +1748,18 @@ Recturns an active face index in the TrueType / OpenType collection.
 :ref:`int<class_int>` **font_get_fixed_size** **(** :ref:`RID<class_RID>` font_rid **)** |const|
 
 Returns bitmap font fixed size.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_TextServer_method_font_get_fixed_size_scale_mode:
+
+.. rst-class:: classref-method
+
+:ref:`FixedSizeScaleMode<enum_TextServer_FixedSizeScaleMode>` **font_get_fixed_size_scale_mode** **(** :ref:`RID<class_RID>` font_rid **)** |const|
+
+Returned bitmap font scaling mode.
 
 .. rst-class:: classref-item-separator
 
@@ -2482,6 +2532,18 @@ Sets an active face index in the TrueType / OpenType collection.
 void **font_set_fixed_size** **(** :ref:`RID<class_RID>` font_rid, :ref:`int<class_int>` fixed_size **)**
 
 Sets bitmap font fixed size. If set to value greater than zero, same cache entry will be used for all font sizes.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_TextServer_method_font_set_fixed_size_scale_mode:
+
+.. rst-class:: classref-method
+
+void **font_set_fixed_size_scale_mode** **(** :ref:`RID<class_RID>` font_rid, :ref:`FixedSizeScaleMode<enum_TextServer_FixedSizeScaleMode>` fixed_size_scale_mode **)**
+
+Sets bitmap font scaling mode. This property is used only if ``fixed_size`` is greater than zero.
 
 .. rst-class:: classref-item-separator
 

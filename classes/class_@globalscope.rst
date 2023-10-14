@@ -2601,7 +2601,7 @@ Game controller SDL guide button. Corresponds to the Sony PS, Xbox Home button.
 
 :ref:`JoyButton<enum_@GlobalScope_JoyButton>` **JOY_BUTTON_START** = ``6``
 
-Game controller SDL start button. Corresponds to the Nintendo + button.
+Game controller SDL start button. Corresponds to the Sony Options, Xbox Menu, Nintendo + button.
 
 .. _class_@GlobalScope_constant_JOY_BUTTON_LEFT_STICK:
 
