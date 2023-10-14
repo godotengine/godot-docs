@@ -123,20 +123,18 @@ This is an example of how to create a sprite from code and move it using the low
 
     public partial class MyNode2D : Node2D
     {
-        // RenderingServer expects references to be kept around. GC will otherwise remove your objects sooner or later...
-        Texture2D texture;
-        // We keep the Rid for later access, for example if we want to remove (clear) the item later.
-        Rid ci_rid;
+        // RenderingServer expects references to be kept around.
+        private Texture2D _texture;
 
         public override void _Ready()
     	{
     		// Create a canvas item, child of this node.
-    		ci_rid = RenderingServer.CanvasItemCreate();
+            Rid ciRid = RenderingServer.CanvasItemCreate();
     		// Make this node the parent.
     		RenderingServer.CanvasItemSetParent(ci_rid, GetCanvasItem());
             // Draw a texture on it.
             // Remember, keep this reference.
-            Texture2D texture = ResourceLoader.Load<Texture2D>("res://my_texture.png");
+            _texture = ResourceLoader.Load<Texture2D>("res://MyTexture.png");
     		// Add it, centered.
     		RenderingServer.CanvasItemAddTextureRect(ci_rid, new Rect2(texture.GetSize() / 2, texture.GetSize()), texture.GetRid());
             // Add the item, rotated 45 degrees and translated.
