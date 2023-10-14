@@ -206,7 +206,7 @@ The 3D APIs are different from the 2D ones, so the instantiation API must be use
             RenderingServer.InstanceSetScenario(instance, scenario);
             // Add a mesh to it.
             // Remember, keep the reference.
-            mesh = ResourceLoader.Load<Mesh>("res://mymesh.obj");
+            _mesh = ResourceLoader.Load<Mesh>("res://MyMesh.obj");
             RenderingServer.InstanceSetBase(instance, mesh.GetRid());
             // Move the mesh around.
             Transform3D xform = new Transform3D(Basis.Identity, new Vector3(20, 100, 0));
