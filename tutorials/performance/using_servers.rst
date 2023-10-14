@@ -119,6 +119,32 @@ This is an example of how to create a sprite from code and move it using the low
         var xform = Transform2D().rotated(deg_to_rad(45)).translated(Vector2(20, 30))
         RenderingServer.canvas_item_set_transform(ci_rid, xform)
 
+ .. code-tab:: csharp
+
+    public partial class MyNode2D : Node2D
+    {
+        // RenderingServer expects references to be kept around. GC will otherwise remove your objects sooner or later...
+        Texture2D texture;
+        // We keep the Rid for later access, for example if we want to remove (clear) the item later.
+        Rid ci_rid;
+
+        public override void _Ready()
+    	{
+    		// Create a canvas item, child of this node.
+    		ci_rid = RenderingServer.CanvasItemCreate();
+    		// Make this node the parent.
+    		RenderingServer.CanvasItemSetParent(ci_rid, GetCanvasItem());
+            // Draw a texture on it.
+            // Remember, keep this reference.
+            Texture2D texture = ResourceLoader.Load<Texture2D>("res://my_texture.png");
+    		// Add it, centered.
+    		RenderingServer.CanvasItemAddTextureRect(ci_rid, new Rect2(texture.GetSize() / 2, texture.GetSize()), texture.GetRid());
+            // Add the item, rotated 45 degrees and translated.
+            Transform2D xform = Transform2D.Identity.Rotated(Mathf.DegToRad(45)).Translated(new Vector2(20, 30));
+            RenderingServer.CanvasItemSetTransform(ci_rid, xform);
+        }
+    }
+
 The Canvas Item API in the server allows you to add draw primitives to it. Once added, they can't be modified.
 The Item needs to be cleared and the primitives re-added (this is not the case for setting the transform,
 which can be done as many times as desired).
@@ -129,6 +155,10 @@ Primitives are cleared this way:
  .. code-tab:: gdscript GDScript
 
     RenderingServer.canvas_item_clear(ci_rid)
+
+ .. code-tab:: csharp
+
+    RenderingServer.CanvasItemClear(ci_rid);
 
 
 Instantiating a Mesh into 3D space
