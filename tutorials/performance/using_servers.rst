@@ -127,19 +127,19 @@ This is an example of how to create a sprite from code and move it using the low
         private Texture2D _texture;
 
         public override void _Ready()
-    	{
-    		// Create a canvas item, child of this node.
+        {
+    	    // Create a canvas item, child of this node.
             Rid ciRid = RenderingServer.CanvasItemCreate();
-    		// Make this node the parent.
-    		RenderingServer.CanvasItemSetParent(ci_rid, GetCanvasItem());
+            // Make this node the parent.
+            RenderingServer.CanvasItemSetParent(ciRid, GetCanvasItem());
             // Draw a texture on it.
             // Remember, keep this reference.
             _texture = ResourceLoader.Load<Texture2D>("res://MyTexture.png");
-    		// Add it, centered.
-    		RenderingServer.CanvasItemAddTextureRect(ci_rid, new Rect2(texture.GetSize() / 2, texture.GetSize()), texture.GetRid());
+            // Add it, centered.
+            RenderingServer.CanvasItemAddTextureRect(ciRid, new Rect2(texture.GetSize() / 2, texture.GetSize()), texture.GetRid());
             // Add the item, rotated 45 degrees and translated.
             Transform2D xform = Transform2D.Identity.Rotated(Mathf.DegToRad(45)).Translated(new Vector2(20, 30));
-            RenderingServer.CanvasItemSetTransform(ci_rid, xform);
+            RenderingServer.CanvasItemSetTransform(ciRid, xform);
         }
     }
 
@@ -156,7 +156,7 @@ Primitives are cleared this way:
 
  .. code-tab:: csharp
 
-    RenderingServer.CanvasItemClear(ci_rid);
+    RenderingServer.CanvasItemClear(ciRid);
 
 
 Instantiating a Mesh into 3D space
@@ -197,7 +197,7 @@ The 3D APIs are different from the 2D ones, so the instantiation API must be use
         private Mesh _mesh;
 
         public override void _Ready()
-    	{
+        {
             // Create a visual instance (for 3D).
             Rid instance = RenderingServer.InstanceCreate();
             // Set the scenario from the world, this ensures it
