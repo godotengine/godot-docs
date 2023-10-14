@@ -195,8 +195,8 @@ The 3D APIs are different from the 2D ones, so the instantiation API must be use
 
     public partial class MyNode3D : Node3D
     {
-        // RenderingServer expects references to be kept around. GC will otherwise remove your meshes sooner or later...
-        Mesh mesh;
+        // RenderingServer expects references to be kept around.
+        private Mesh _mesh;
 
         public override void _Ready()
     	{
