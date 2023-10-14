@@ -67,6 +67,8 @@ Methods
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`_get_comment_delimiters<class_ScriptLanguageExtension_method__get_comment_delimiters>` **(** **)** |virtual| |const|                                                                                                                                                                                                                       |
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`_get_doc_comment_delimiters<class_ScriptLanguageExtension_method__get_doc_comment_delimiters>` **(** **)** |virtual| |const|                                                                                                                                                                                                               |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                       | :ref:`_get_extension<class_ScriptLanguageExtension_method__get_extension>` **(** **)** |virtual| |const|                                                                                                                                                                                                                                         |
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Dictionary<class_Dictionary>`               | :ref:`_get_global_class_name<class_ScriptLanguageExtension_method__get_global_class_name>` **(** :ref:`String<class_String>` path **)** |virtual| |const|                                                                                                                                                                                        |
@@ -663,6 +665,20 @@ void **_frame** **(** **)** |virtual|
 .. rst-class:: classref-method
 
 :ref:`PackedStringArray<class_PackedStringArray>` **_get_comment_delimiters** **(** **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ScriptLanguageExtension_method__get_doc_comment_delimiters:
+
+.. rst-class:: classref-method
+
+:ref:`PackedStringArray<class_PackedStringArray>` **_get_doc_comment_delimiters** **(** **)** |virtual| |const|
 
 .. container:: contribute
 

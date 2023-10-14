@@ -48,6 +48,8 @@ The above code will create a **SpinBox**, disable context menu on it and set the
 
 See :ref:`Range<class_Range>` class for more options over the **SpinBox**.
 
+\ **Note:** With the **SpinBox**'s context menu disabled, you can right-click the bottom half of the spinbox to set the value to its minimum, while right-clicking the top half sets the value to its maximum.
+
 \ **Note:** **SpinBox** relies on an underlying :ref:`LineEdit<class_LineEdit>` node. To theme a **SpinBox**'s background, add theme items for :ref:`LineEdit<class_LineEdit>` and customize them.
 
 \ **Note:** If you want to implement drag and drop for the underlying :ref:`LineEdit<class_LineEdit>`, you can use :ref:`Control.set_drag_forwarding<class_Control_method_set_drag_forwarding>` on the node returned by :ref:`get_line_edit<class_SpinBox_method_get_line_edit>`.

@@ -644,6 +644,8 @@ Returns the last error that happened when trying to perform operations. Compare 
 
 Returns the whole ``path`` file contents as a :ref:`PackedByteArray<class_PackedByteArray>` without any decoding.
 
+Returns an empty :ref:`PackedByteArray<class_PackedByteArray>` if an error occurred while opening the file. You can use :ref:`get_open_error<class_FileAccess_method_get_open_error>` to check the error that occurred.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -655,6 +657,8 @@ Returns the whole ``path`` file contents as a :ref:`PackedByteArray<class_Packed
 :ref:`String<class_String>` **get_file_as_string** **(** :ref:`String<class_String>` path **)** |static|
 
 Returns the whole ``path`` file contents as a :ref:`String<class_String>`. Text is interpreted as being UTF-8 encoded.
+
+Returns an empty :ref:`String<class_String>` if an error occurred while opening the file. You can use :ref:`get_open_error<class_FileAccess_method_get_open_error>` to check the error that occurred.
 
 .. rst-class:: classref-item-separator
 

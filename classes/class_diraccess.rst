@@ -152,6 +152,8 @@ Methods
    +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`get_space_left<class_DirAccess_method_get_space_left>` **(** **)**                                                                                                               |
    +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`is_case_sensitive<class_DirAccess_method_is_case_sensitive>` **(** :ref:`String<class_String>` path **)** |const|                                                                |
+   +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Error<enum_@GlobalScope_Error>`             | :ref:`list_dir_begin<class_DirAccess_method_list_dir_begin>` **(** **)**                                                                                                               |
    +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                              | :ref:`list_dir_end<class_DirAccess_method_list_dir_end>` **(** **)**                                                                                                                   |
@@ -472,6 +474,20 @@ Returns the result of the last :ref:`open<class_DirAccess_method_open>` call in 
 :ref:`int<class_int>` **get_space_left** **(** **)**
 
 Returns the available space on the current directory's disk, in bytes. Returns ``0`` if the platform-specific method to query the available space fails.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_DirAccess_method_is_case_sensitive:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **is_case_sensitive** **(** :ref:`String<class_String>` path **)** |const|
+
+Returns ``true`` if the file system or directory use case sensitive file names.
+
+\ **Note:** This method is implemented on macOS, Linux (for EXT4 and F2FS filesystems only) and Windows. On other platforms, it always returns ``true``.
 
 .. rst-class:: classref-item-separator
 
