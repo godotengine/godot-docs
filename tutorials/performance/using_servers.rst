@@ -128,7 +128,7 @@ This is an example of how to create a sprite from code and move it using the low
 
         public override void _Ready()
         {
-    	    // Create a canvas item, child of this node.
+            // Create a canvas item, child of this node.
             Rid ciRid = RenderingServer.CanvasItemCreate();
             // Make this node the parent.
             RenderingServer.CanvasItemSetParent(ciRid, GetCanvasItem());
@@ -136,7 +136,7 @@ This is an example of how to create a sprite from code and move it using the low
             // Remember, keep this reference.
             _texture = ResourceLoader.Load<Texture2D>("res://MyTexture.png");
             // Add it, centered.
-            RenderingServer.CanvasItemAddTextureRect(ciRid, new Rect2(texture.GetSize() / 2, texture.GetSize()), texture.GetRid());
+            RenderingServer.CanvasItemAddTextureRect(ciRid, new Rect2(_texture.GetSize() / 2, _texture.GetSize()), _texture.GetRid());
             // Add the item, rotated 45 degrees and translated.
             Transform2D xform = Transform2D.Identity.Rotated(Mathf.DegToRad(45)).Translated(new Vector2(20, 30));
             RenderingServer.CanvasItemSetTransform(ciRid, xform);
@@ -207,7 +207,7 @@ The 3D APIs are different from the 2D ones, so the instantiation API must be use
             // Add a mesh to it.
             // Remember, keep the reference.
             _mesh = ResourceLoader.Load<Mesh>("res://MyMesh.obj");
-            RenderingServer.InstanceSetBase(instance, mesh.GetRid());
+            RenderingServer.InstanceSetBase(instance, _mesh.GetRid());
             // Move the mesh around.
             Transform3D xform = new Transform3D(Basis.Identity, new Vector3(20, 100, 0));
             RenderingServer.InstanceSetTransform(instance, xform);
