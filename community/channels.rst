@@ -12,7 +12,7 @@ A brief overview over these and other channels is also available on the `Godot w
 Q&A
 ---
 
-- `Official Godot Questions & Answers <https://godotengine.org/qa/>`_
+- `Official Godot Questions & Answers <https://ask.godotengine.org/>`_
 
 Rocket.Chat
 -----------
