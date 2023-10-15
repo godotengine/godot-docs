@@ -155,7 +155,19 @@ Signals
 
 **bus_layout_changed** **(** **)**
 
-Emitted when the :ref:`AudioBusLayout<class_AudioBusLayout>` changes.
+Emitted when an audio bus is added, deleted, or moved.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_AudioServer_signal_bus_renamed:
+
+.. rst-class:: classref-signal
+
+**bus_renamed** **(** :ref:`int<class_int>` bus_index, :ref:`StringName<class_StringName>` old_name, :ref:`StringName<class_StringName>` new_name **)**
+
+Emitted when the audio bus at ``bus_index`` is renamed from ``old_name`` to ``new_name``.
 
 .. rst-class:: classref-section-separator
 
@@ -378,7 +390,7 @@ Returns the :ref:`AudioEffectInstance<class_AudioEffectInstance>` assigned to th
 
 :ref:`int<class_int>` **get_bus_index** **(** :ref:`StringName<class_StringName>` bus_name **)** |const|
 
-Returns the index of the bus with the name ``bus_name``.
+Returns the index of the bus with the name ``bus_name``. Returns ``-1`` if no bus with the specified name exist.
 
 .. rst-class:: classref-item-separator
 
@@ -488,7 +500,9 @@ Returns the names of all audio output devices detected on the system.
 
 :ref:`float<class_float>` **get_output_latency** **(** **)** |const|
 
-Returns the audio driver's output latency.
+Returns the audio driver's effective output latency. This is based on :ref:`ProjectSettings.audio/driver/output_latency<class_ProjectSettings_property_audio/driver/output_latency>`, but the exact returned value will differ depending on the operating system and audio driver.
+
+\ **Note:** This can be expensive; it is not recommended to call :ref:`get_output_latency<class_AudioServer_method_get_output_latency>` every frame.
 
 .. rst-class:: classref-item-separator
 
@@ -764,3 +778,4 @@ Unlocks the audio driver's main loop. (After locking it, you should always unloc
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

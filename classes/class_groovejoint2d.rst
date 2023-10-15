@@ -12,14 +12,14 @@ GrooveJoint2D
 
 **Inherits:** :ref:`Joint2D<class_Joint2D>` **<** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-Groove constraint for 2D physics.
+A physics joint that restricts the movement of two 2D physics bodies to a fixed axis.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-Groove constraint for 2D physics. This is useful for making a body "slide" through a segment placed in another.
+A physics joint that restricts the movement of two 2D physics bodies to a fixed axis. For example, a :ref:`StaticBody2D<class_StaticBody2D>` representing a piston base can be attached to a :ref:`RigidBody2D<class_RigidBody2D>` representing the piston head, moving up and down.
 
 .. rst-class:: classref-reftable-group
 
@@ -80,3 +80,4 @@ The groove's length. The groove is from the joint's origin towards :ref:`length<
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

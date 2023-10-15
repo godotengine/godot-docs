@@ -67,6 +67,8 @@ Methods
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`_get_comment_delimiters<class_ScriptLanguageExtension_method__get_comment_delimiters>` **(** **)** |virtual| |const|                                                                                                                                                                                                                       |
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`_get_doc_comment_delimiters<class_ScriptLanguageExtension_method__get_doc_comment_delimiters>` **(** **)** |virtual| |const|                                                                                                                                                                                                               |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                       | :ref:`_get_extension<class_ScriptLanguageExtension_method__get_extension>` **(** **)** |virtual| |const|                                                                                                                                                                                                                                         |
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Dictionary<class_Dictionary>`               | :ref:`_get_global_class_name<class_ScriptLanguageExtension_method__get_global_class_name>` **(** :ref:`String<class_String>` path **)** |virtual| |const|                                                                                                                                                                                        |
@@ -245,7 +247,7 @@ enum **CodeCompletionLocation**:
 
 :ref:`CodeCompletionLocation<enum_ScriptLanguageExtension_CodeCompletionLocation>` **LOCATION_LOCAL** = ``0``
 
-The option is local to the location of the code completion query - e.g. a local variable.
+The option is local to the location of the code completion query - e.g. a local variable. Subsequent value of location represent options from the outer class, the exact value represent how far they are (in terms of inner classes).
 
 .. _class_ScriptLanguageExtension_constant_LOCATION_PARENT_MASK:
 
@@ -253,7 +255,7 @@ The option is local to the location of the code completion query - e.g. a local 
 
 :ref:`CodeCompletionLocation<enum_ScriptLanguageExtension_CodeCompletionLocation>` **LOCATION_PARENT_MASK** = ``256``
 
-The option is from the containing class or a parent class, relative to the location of the code completion query. Perform a bitwise OR with the class depth (e.g. 0 for the local class, 1 for the parent, 2 for the grandparent, etc) to store the depth of an option in a the class or a parent class.
+The option is from the containing class or a parent class, relative to the location of the code completion query. Perform a bitwise OR with the class depth (e.g. 0 for the local class, 1 for the parent, 2 for the grandparent, etc) to store the depth of an option in the class or a parent class.
 
 .. _class_ScriptLanguageExtension_constant_LOCATION_OTHER_USER_CODE:
 
@@ -672,6 +674,20 @@ void **_frame** **(** **)** |virtual|
 
 ----
 
+.. _class_ScriptLanguageExtension_method__get_doc_comment_delimiters:
+
+.. rst-class:: classref-method
+
+:ref:`PackedStringArray<class_PackedStringArray>` **_get_doc_comment_delimiters** **(** **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_ScriptLanguageExtension_method__get_extension:
 
 .. rst-class:: classref-method
@@ -832,9 +848,7 @@ void **_frame** **(** **)** |virtual|
 
 :ref:`bool<class_bool>` **_has_named_classes** **(** **)** |virtual| |const|
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+*Deprecated.* This method is not called by the engine.
 
 .. rst-class:: classref-item-separator
 
@@ -1136,3 +1150,4 @@ void **_thread_exit** **(** **)** |virtual|
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

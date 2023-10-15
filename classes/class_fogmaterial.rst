@@ -12,7 +12,7 @@ FogMaterial
 
 **Inherits:** :ref:`Material<class_Material>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-:ref:`Material<class_Material>` used with a :ref:`FogVolume<class_FogVolume>` to draw things with the volumetric fog effect.
+A material that controls how volumetric fog is rendered, to be assigned to a :ref:`FogVolume<class_FogVolume>`.
 
 .. rst-class:: classref-introduction-group
 
@@ -160,3 +160,4 @@ The rate by which the height-based fog decreases in density as height increases 
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

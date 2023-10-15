@@ -14,16 +14,16 @@ StyleBox
 
 **Inherited By:** :ref:`StyleBoxEmpty<class_StyleBoxEmpty>`, :ref:`StyleBoxFlat<class_StyleBoxFlat>`, :ref:`StyleBoxLine<class_StyleBoxLine>`, :ref:`StyleBoxTexture<class_StyleBoxTexture>`
 
-Base class for drawing stylized boxes for the UI.
+Abstract base class for defining stylized boxes for UI elements.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-StyleBox is :ref:`Resource<class_Resource>` that provides an abstract base class for drawing stylized boxes for the UI. StyleBoxes are used for drawing the styles of buttons, line edit backgrounds, tree backgrounds, etc. and also for testing a transparency mask for pointer signals. If mask test fails on a StyleBox assigned as mask to a control, clicks and motion signals will go through it to the one below.
+**StyleBox** is an abstract base class for drawing stylized boxes for UI elements. It is used for panels, buttons, :ref:`LineEdit<class_LineEdit>` backgrounds, :ref:`Tree<class_Tree>` backgrounds, etc. and also for testing a transparency mask for pointer signals. If mask test fails on a **StyleBox** assigned as mask to a control, clicks and motion signals will go through it to the one below.
 
-\ **Note:** For children of :ref:`Control<class_Control>` that have *Theme Properties*, the ``focus`` **StyleBox** is displayed over the ``normal``, ``hover`` or ``pressed`` **StyleBox**. This makes the ``focus`` **StyleBox** more reusable across different nodes.
+\ **Note:** For control nodes that have *Theme Properties*, the ``focus`` **StyleBox** is displayed over the ``normal``, ``hover`` or ``pressed`` **StyleBox**. This makes the ``focus`` **StyleBox** more reusable across different nodes.
 
 .. rst-class:: classref-reftable-group
 
@@ -101,7 +101,7 @@ Property Descriptions
 
 The bottom margin for the contents of this style box. Increasing this value reduces the space available to the contents from the bottom.
 
-If this value is negative, it is ignored and a child-specific margin is used instead. For example for :ref:`StyleBoxFlat<class_StyleBoxFlat>` the border thickness (if any) is used instead.
+If this value is negative, it is ignored and a child-specific margin is used instead. For example, for :ref:`StyleBoxFlat<class_StyleBoxFlat>`, the border thickness (if any) is used instead.
 
 It is up to the code using this style box to decide what these contents are: for example, a :ref:`Button<class_Button>` respects this content margin for the textual contents of the button.
 
@@ -122,7 +122,7 @@ It is up to the code using this style box to decide what these contents are: for
 - void **set_content_margin** **(** :ref:`Side<enum_@GlobalScope_Side>` margin, :ref:`float<class_float>` offset **)**
 - :ref:`float<class_float>` **get_content_margin** **(** :ref:`Side<enum_@GlobalScope_Side>` margin **)** |const|
 
-The left margin for the contents of this style box.	Increasing this value reduces the space available to the contents from the left.
+The left margin for the contents of this style box. Increasing this value reduces the space available to the contents from the left.
 
 Refer to :ref:`content_margin_bottom<class_StyleBox_property_content_margin_bottom>` for extra considerations.
 
@@ -341,3 +341,4 @@ Test a position in a rectangle, return whether it passes the mask test.
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

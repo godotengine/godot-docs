@@ -12,7 +12,7 @@ ResourcePreloader
 
 **Inherits:** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-Preloads a list of resources inside a scene.
+A node used to preload sub-resources inside a scene.
 
 .. rst-class:: classref-introduction-group
 
@@ -128,3 +128,4 @@ Renames a resource inside the preloader from ``name`` to ``newname``.
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

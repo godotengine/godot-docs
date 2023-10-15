@@ -14,14 +14,14 @@ Joint2D
 
 **Inherited By:** :ref:`DampedSpringJoint2D<class_DampedSpringJoint2D>`, :ref:`GrooveJoint2D<class_GrooveJoint2D>`, :ref:`PinJoint2D<class_PinJoint2D>`
 
-Base node for all joint constraints in 2D physics.
+Abstract base class for all 2D physics joints.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-Base node for all joint constraints in 2D physics. Joints take 2 bodies and apply a custom constraint.
+Abstract base class for all joints in 2D physics. 2D joints bind together two physics bodies and apply a constraint.
 
 .. rst-class:: classref-reftable-group
 
@@ -40,6 +40,18 @@ Properties
    +---------------------------------+--------------------------------------------------------------------+------------------+
    | :ref:`NodePath<class_NodePath>` | :ref:`node_b<class_Joint2D_property_node_b>`                       | ``NodePath("")`` |
    +---------------------------------+--------------------------------------------------------------------+------------------+
+
+.. rst-class:: classref-reftable-group
+
+Methods
+-------
+
+.. table::
+   :widths: auto
+
+   +-----------------------+------------------------------------------------------------------+
+   | :ref:`RID<class_RID>` | :ref:`get_rid<class_Joint2D_method_get_rid>` **(** **)** |const| |
+   +-----------------------+------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -61,7 +73,7 @@ Property Descriptions
 - void **set_bias** **(** :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_bias** **(** **)**
 
-When :ref:`node_a<class_Joint2D_property_node_a>` and :ref:`node_b<class_Joint2D_property_node_b>` move in different directions the ``bias`` controls how fast the joint pulls them back to their original position. The lower the ``bias`` the more the two bodies can pull on the joint.
+When :ref:`node_a<class_Joint2D_property_node_a>` and :ref:`node_b<class_Joint2D_property_node_b>` move in different directions the :ref:`bias<class_Joint2D_property_bias>` controls how fast the joint pulls them back to their original position. The lower the :ref:`bias<class_Joint2D_property_bias>` the more the two bodies can pull on the joint.
 
 When set to ``0``, the default value from :ref:`ProjectSettings.physics/2d/solver/default_constraint_bias<class_ProjectSettings_property_physics/2d/solver/default_constraint_bias>` is used.
 
@@ -116,9 +128,27 @@ The first body attached to the joint. Must derive from :ref:`PhysicsBody2D<class
 
 The second body attached to the joint. Must derive from :ref:`PhysicsBody2D<class_PhysicsBody2D>`.
 
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
+
+Method Descriptions
+-------------------
+
+.. _class_Joint2D_method_get_rid:
+
+.. rst-class:: classref-method
+
+:ref:`RID<class_RID>` **get_rid** **(** **)** |const|
+
+Returns the joint's :ref:`RID<class_RID>`.
+
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

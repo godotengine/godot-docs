@@ -1,6 +1,6 @@
 .. _docs_image_guidelines:
 
-Creating Documentation Images
+Creating documentation images
 =============================
 
 Throughout documentation images are often needed to make the explanation
@@ -31,17 +31,21 @@ All screenshots should ideally be taken on a 1080p screen. Anything higher
 resolution is adding detail that doesn't make the documentation better and
 dramatically increases file size. If you're taking screenshots on a higher
 resolution screen the screenshot should be scaled down. There are instructions
-on  how to do this later on this page.
+on how to do this later on this page.
 
 Format conversion
 -----------------
 
-The current format for images in Godot's documentation is WebP (.webp). While some
-Linux programs will support saving screenshots in this format, macOS and the
-Snip & Sketch program on Windows do not. For images that don't need editing,
-such as precise cropping or adding outlines, Squoosh can be used.
+The current format for images in Godot's documentation is WebP (``.webp``).
+While some Linux programs will support saving screenshots in this format, macOS
+and the Snip & Sketch program on Windows do not. For images that don't need
+editing, such as precise cropping or adding outlines, Squoosh can be used.
 `Squoosh <https://squoosh.app/>`_ is a converter developed by Google, is open
-source, and doesn't give Google any image rights by using it.
+source, and doesn't give Google any image rights by using it. When choosing
+compression if you can get an image that's under 300KB in size use lossless
+compression. If it's over 300KB use just enough lossy compression to get it
+under that size. If this results in noticable compression artifacts using less
+compression is fine, even if the file size is bigger.
 
 If you already have an image editor such as GIMP, Krita or Photoshop installed
 it may have the ability to open an image then save it as a WebP file.
@@ -87,9 +91,9 @@ Scaling down an image
 As explained earlier on this page, all images taken on a screen that is a higher resolution
 than 1080p should be scaled down. To do this in Krita click on **Image** on the top bar, and
 from the dropdown menu select **Scale Image To New Size**. This menu can also be opened by
-pressing :kbd: `ctrl + alt + I`. On this menu you want to adjust the pixel dimensions. For
+pressing :kbd:`Ctrl + Alt + I`. On this menu you want to adjust the pixel dimensions. For
 anything taken on a 4K monitor change the value of the width and height to half of its current
-value, for anything taken on a 1440p monitor multiply the width and height by .75. Make
+value, for anything taken on a 1440p monitor multiply the width and height by 0.75. Make
 sure the **Constrain Proportions** box at the bottom of the menu is checked so you only have
 to change 1 value.
 
@@ -101,20 +105,25 @@ To save an image as webp if it isn't already one, Go to **File > Save As**. Sele
 will popup with webp options. Make sure **Losses** is checked and **Quality** is set to 100%. This
 means the image will not lose detail and will be as small as possible.
 
+If the image is over 300KB in size try compressing it losslessly using `Squoosh <https://squoosh.app/>`_.
+If it's still over 300KB change to lossy compression and slowly increase the compression until it's under
+300KB. If this results in noticable compression artifacts using less compression is fine, even if the file
+size is bigger.
+
 Outlines arrows and text
 ------------------------
 
 Sometimes an image needs something extra to properly direct the readers
 attention, or make something clear. Outlines and arrows can be used
 for this purpose. For these types of edits Inkscape is the recommended open
-source program, it can be downloaded from the `official Inkscape website <https://inkscape.org/release/inkscape-1.2.1/>`_.
-Like Krita, if you're on linux you can also check your distributions repository
+source program, it can be downloaded from the `official Inkscape website <https://inkscape.org/>`_.
+Like Krita, if you're on Linux you can also check your distributions repository
 or get it from Flathub.
 
 A full tutorial on creating outlines is not provided here, we recommend searching
 for various tutorials on how to use it online. However there are two standards
 for doc image outlines and arrows. First, the color should be yellow, specifically
-this hex color: fffb44 (fffb44ff if there is a transparency value like in inkscape).
+this hex color: ``fffb44`` (``fffb44ff`` if there is a transparency value like in Inkscape).
 This color was chosen specifically to make sure color blind people do not have
 issues reading the documentation, other colors can be used in addition to this yellow
 if multiple outlines on an image are needed, red should be avoided. The second standard
@@ -129,8 +138,15 @@ multiple outlines in multiple colors.
 Adding an image to a documentation page
 ---------------------------------------
 
-Once you've finished working on your image it can be added to the documentation.
-All images are stored in folders named `img`. To add your image add it to the img
-folder that's in the same folder as the rst file for the page. To add it in the
-text yourself you would type this `.. image:: img/documentation_image.webp` and
-`documentation_image.webp` would be whatever your image is named.
+Once you've finished working on your image, it can be added to the documentation.
+All images are stored in folders named ``img`` next to the page they are used in.
+
+To add your image, add it to the ``img`` folder that's in the same folder as the
+``.rst`` file for the page (create it if it doesn't exist). In the ``.rst`` page,
+images should be included with the following code snippet::
+
+    .. image:: img/documentation_image.webp
+
+Where ``documentation_image.webp`` would be changed to the name of the image you
+created. Name your images in a way that makes their meaning clear, possibly with
+a prefix that makes their relationship to a documentation page explicit.

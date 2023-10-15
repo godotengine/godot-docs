@@ -181,7 +181,7 @@ enum **Camera2DProcessCallback**:
 
 :ref:`Camera2DProcessCallback<enum_Camera2D_Camera2DProcessCallback>` **CAMERA2D_PROCESS_PHYSICS** = ``0``
 
-The camera updates with the ``_physics_process`` callback.
+The camera updates during physics frames (see :ref:`Node.NOTIFICATION_INTERNAL_PHYSICS_PROCESS<class_Node_constant_NOTIFICATION_INTERNAL_PHYSICS_PROCESS>`).
 
 .. _class_Camera2D_constant_CAMERA2D_PROCESS_IDLE:
 
@@ -189,7 +189,7 @@ The camera updates with the ``_physics_process`` callback.
 
 :ref:`Camera2DProcessCallback<enum_Camera2D_Camera2DProcessCallback>` **CAMERA2D_PROCESS_IDLE** = ``1``
 
-The camera updates with the ``_process`` callback.
+The camera updates during process frames (see :ref:`Node.NOTIFICATION_INTERNAL_PROCESS<class_Node_constant_NOTIFICATION_INTERNAL_PROCESS>`).
 
 .. rst-class:: classref-section-separator
 
@@ -818,3 +818,4 @@ Sets the camera limit for the specified :ref:`Side<enum_@GlobalScope_Side>`. See
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

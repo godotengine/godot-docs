@@ -14,22 +14,22 @@ RigidBody3D
 
 **Inherited By:** :ref:`VehicleBody3D<class_VehicleBody3D>`
 
-Physics Body which is moved by 3D physics simulation. Useful for objects that have gravity and can be pushed by other objects.
+A 3D physics body that is moved by a physics simulation.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-This is the node that implements full 3D physics. This means that you do not control a RigidBody3D directly. Instead, you can apply forces to it (gravity, impulses, etc.), and the physics simulation will calculate the resulting movement, collision, bouncing, rotating, etc.
+**RigidBody3D** implements full 3D physics. It cannot be controlled directly, instead, you must apply forces to it (gravity, impulses, etc.), and the physics simulation will calculate the resulting movement, rotation, react to collisions, and affect other physics bodies in its path.
 
-You can switch the body's behavior using :ref:`lock_rotation<class_RigidBody3D_property_lock_rotation>`, :ref:`freeze<class_RigidBody3D_property_freeze>`, and :ref:`freeze_mode<class_RigidBody3D_property_freeze_mode>`.
+The body's behavior can be adjusted via :ref:`lock_rotation<class_RigidBody3D_property_lock_rotation>`, :ref:`freeze<class_RigidBody3D_property_freeze>`, and :ref:`freeze_mode<class_RigidBody3D_property_freeze_mode>`. By changing various properties of the object, such as :ref:`mass<class_RigidBody3D_property_mass>`, you can control how the physics simulation acts on it.
 
-\ **Note:** Don't change a RigidBody3D's position every frame or very often. Sporadic changes work fine, but physics runs at a different granularity (fixed Hz) than usual rendering (process callback) and maybe even in a separate thread, so changing this from a process loop may result in strange behavior. If you need to directly affect the body's state, use :ref:`_integrate_forces<class_RigidBody3D_method__integrate_forces>`, which allows you to directly access the physics state.
+A rigid body will always maintain its shape and size, even when forces are applied to it. It is useful for objects that can be interacted with in an environment, such as a tree that can be knocked over or a stack of crates that can be pushed around.
 
 If you need to override the default physics behavior, you can write a custom force integration function. See :ref:`custom_integrator<class_RigidBody3D_property_custom_integrator>`.
 
-\ **Warning:** With a non-uniform scale this node will probably not function as expected. Please make sure to keep its scale uniform (i.e. the same on all axes), and change the size(s) of its collision shape(s) instead.
+\ **Note:** Changing the 3D transform or :ref:`linear_velocity<class_RigidBody3D_property_linear_velocity>` of a **RigidBody3D** very often may lead to some unpredictable behaviors. If you need to directly affect the body, prefer :ref:`_integrate_forces<class_RigidBody3D_method__integrate_forces>` as it allows you to directly access the physics state.
 
 .. rst-class:: classref-introduction-group
 
@@ -270,7 +270,7 @@ enum **CenterOfMassMode**:
 
 :ref:`CenterOfMassMode<enum_RigidBody3D_CenterOfMassMode>` **CENTER_OF_MASS_MODE_AUTO** = ``0``
 
-In this mode, the body's center of mass is calculated automatically based on its shapes.
+In this mode, the body's center of mass is calculated automatically based on its shapes. This assumes that the shapes' origins are also their center of mass.
 
 .. _class_RigidBody3D_constant_CENTER_OF_MASS_MODE_CUSTOM:
 
@@ -470,7 +470,7 @@ See :ref:`add_constant_torque<class_RigidBody3D_method_add_constant_torque>`.
 - void **set_contact_monitor** **(** :ref:`bool<class_bool>` value **)**
 - :ref:`bool<class_bool>` **is_contact_monitor_enabled** **(** **)**
 
-If ``true``, the RigidBody3D will emit signals when it collides with another RigidBody3D.
+If ``true``, the RigidBody3D will emit signals when it collides with another body.
 
 \ **Note:** By default the maximum contacts reported is set to 0, meaning nothing will be recorded, see :ref:`max_contacts_reported<class_RigidBody3D_property_max_contacts_reported>`.
 
@@ -584,7 +584,7 @@ This is multiplied by the global 3D gravity setting found in **Project > Project
 
 The body's moment of inertia. This is like mass, but for rotation: it determines how much torque it takes to rotate the body on each axis. The moment of inertia is usually computed automatically from the mass and the shapes, but this property allows you to set a custom value.
 
-If set to ``Vector3.ZERO``, inertia is automatically computed (default value).
+If set to :ref:`Vector3.ZERO<class_Vector3_constant_ZERO>`, inertia is automatically computed (default value).
 
 \ **Note:** This value does not change when inertia is automatically computed. Use :ref:`PhysicsServer3D<class_PhysicsServer3D>` to get the computed inertia.
 
@@ -961,3 +961,4 @@ Sets an axis velocity. The velocity in the given vector axis will be set as the 
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

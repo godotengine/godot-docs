@@ -18,3 +18,4 @@ path.
    :name: toc-migrating
 
    upgrading_to_godot_4
+   upgrading_to_godot_4.1

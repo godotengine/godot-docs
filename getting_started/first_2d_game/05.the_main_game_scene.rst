@@ -10,7 +10,7 @@ Create a new scene and add a :ref:`Node <class_Node>` named ``Main``.
 be a container for handling game logic. It does not require 2D functionality itself.)
 
 Click the **Instance** button (represented by a chain link icon) and select your saved
-``Player.tscn``.
+``player.tscn``.
 
 .. image:: img/instance_scene.webp
 
@@ -178,21 +178,23 @@ under "Script Variables".
 
 You can assign this property's value in two ways:
 
-- Drag ``Mob.tscn`` from the "FileSystem" dock and drop it in the **Mob Scene**
+- Drag ``mob.tscn`` from the "FileSystem" dock and drop it in the **Mob Scene**
   property.
-- Click the down arrow next to "[empty]" and choose "Load". Select ``Mob.tscn``.
+- Click the down arrow next to "[empty]" and choose "Load". Select ``mob.tscn``.
 
-Next, select the ``Player`` node in the Scene dock, and access the Node dock on
-the sidebar. Make sure to have the Signals tab selected in the Node dock.
+Next, select the instance of the ``Player`` scene under ``Main`` node in the Scene dock,
+and access the Node dock on the sidebar. Make sure to have the Signals tab selected
+in the Node dock.
 
 You should see a list of the signals for the ``Player`` node. Find and
 double-click the ``hit`` signal in the list (or right-click it and select
 "Connect..."). This will open the signal connection dialog. We want to make a
 new function named ``game_over``, which will handle what needs to happen when a
 game ends. Type "game_over" in the "Receiver Method" box at the bottom of the
-signal connection dialog and click "Connect". Add the following code to the new
-function, as well as a ``new_game`` function that will set everything up for a
-new game:
+signal connection dialog and click "Connect". You are aiming to have the ``hit`` signal
+emitted from ``Player`` and handled in the ``Main`` script. Add the following code
+to the new function, as well as a ``new_game`` function that will set
+everything up for a new game:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -289,7 +291,7 @@ the other two timers. ``ScoreTimer`` will increment the score by 1.
         godot::register_property("mob_scene", &Main::mob_scene, (godot::Ref<godot::PackedScene>)nullptr);
     }
 
-In ``_on_MobTimer_timeout()``, we will create a mob instance, pick a random
+In ``_on_mob_timer_timeout()``, we will create a mob instance, pick a random
 starting location along the ``Path2D``, and set the mob in motion. The
 ``PathFollow2D`` node will automatically rotate as it follows the path, so we
 will use that to select the mob's direction as well as its position.
@@ -392,8 +394,8 @@ Note that a new instance must be added to the scene using ``add_child()``.
                not degrees. Pi represents a half turn in radians, about
                ``3.1415`` (there is also ``TAU`` which is equal to ``2 * PI``).
                If you're more comfortable working with degrees, you'll need to
-               use the ``deg2rad()`` and ``rad2deg()`` functions to convert
-               between the two.
+               use the ``deg_to_rad()`` and ``rad_to_deg()`` functions to
+               convert between the two.
 
 Testing the scene
 ~~~~~~~~~~~~~~~~~
@@ -422,11 +424,11 @@ call to ``_ready()``:
     }
 
 Let's also assign ``Main`` as our "Main Scene" - the one that runs automatically
-when the game launches. Press the "Play" button and select ``Main.tscn`` when
+when the game launches. Press the "Play" button and select ``main.tscn`` when
 prompted.
 
 .. tip:: If you had already set another scene as the "Main Scene", you can right
-         click ``Main.tscn`` in the FileSystem dock and select "Set As Main Scene".
+         click ``main.tscn`` in the FileSystem dock and select "Set As Main Scene".
 
 You should be able to move the player around, see mobs spawning, and see the
 player disappear when hit by a mob.

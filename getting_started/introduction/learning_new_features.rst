@@ -1,5 +1,3 @@
-:article_outdated: True
-
 .. Keep this page short and sweet! We want users to read it to the end, so they
    know where to find information, how to get help, and how to maximize chances
    of getting answers.
@@ -33,7 +31,7 @@ access it both online and offline. We recommend browsing the reference offline,
 from within the Godot editor. To do so, go to Help -> Search Help or press
 :kbd:`F1`.
 
-.. image:: img/manual_class_reference_search.png
+.. image:: img/manual_class_reference_search.webp
 
 To browse it online, head to the manual's :ref:`Class Reference <doc_class_reference>`
 section.
@@ -87,7 +85,7 @@ help on one of the many `active
 communities <https://godotengine.org/community>`_.
 
 The best place to ask questions and find already answered ones is the
-official `Questions & Answers <https://godotengine.org/qa/>`_ site. These
+official `Questions & Answers <https://ask.godotengine.org/>`_ site. These
 responses show up in search engine results and get saved, allowing other users
 to benefit from discussions on the platform. Once you have asked a question there,
 you can share its link on other social platforms. Before asking a question, be

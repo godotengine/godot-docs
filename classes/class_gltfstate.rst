@@ -12,9 +12,23 @@ GLTFState
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-.. container:: contribute
+Represents all data of a GLTF file.
 
-	There is currently no description for this class. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+.. rst-class:: classref-introduction-group
+
+Description
+-----------
+
+Contains all nodes and resources of a GLTF file. This is used by :ref:`GLTFDocument<class_GLTFDocument>` as data storage, which allows :ref:`GLTFDocument<class_GLTFDocument>` and all :ref:`GLTFDocumentExtension<class_GLTFDocumentExtension>` classes to remain stateless.
+
+GLTFState can be populated by :ref:`GLTFDocument<class_GLTFDocument>` reading a file or by converting a Godot scene. Then the data can either be used to create a Godot scene or save to a GLTF file. The code that converts to/from a Godot scene can be intercepted at arbitrary points by :ref:`GLTFDocumentExtension<class_GLTFDocumentExtension>` classes. This allows for custom data to be stored in the GLTF file or for custom data to be converted to/from Godot nodes.
+
+.. rst-class:: classref-introduction-group
+
+Tutorials
+---------
+
+- `GLTF asset header schema <https://github.com/KhronosGroup/glTF/blob/main/specification/2.0/schema/asset.schema.json">`__
 
 .. rst-class:: classref-reftable-group
 
@@ -29,7 +43,11 @@ Properties
    +-------------------------------------------------+----------------------------------------------------------------------------+------------------------+
    | :ref:`PackedByteArray[]<class_PackedByteArray>` | :ref:`buffers<class_GLTFState_property_buffers>`                           | ``[]``                 |
    +-------------------------------------------------+----------------------------------------------------------------------------+------------------------+
+   | :ref:`String<class_String>`                     | :ref:`copyright<class_GLTFState_property_copyright>`                       | ``""``                 |
+   +-------------------------------------------------+----------------------------------------------------------------------------+------------------------+
    | :ref:`bool<class_bool>`                         | :ref:`create_animations<class_GLTFState_property_create_animations>`       | ``true``               |
+   +-------------------------------------------------+----------------------------------------------------------------------------+------------------------+
+   | :ref:`String<class_String>`                     | :ref:`filename<class_GLTFState_property_filename>`                         | ``""``                 |
    +-------------------------------------------------+----------------------------------------------------------------------------+------------------------+
    | :ref:`PackedByteArray<class_PackedByteArray>`   | :ref:`glb_data<class_GLTFState_property_glb_data>`                         | ``PackedByteArray()``  |
    +-------------------------------------------------+----------------------------------------------------------------------------+------------------------+
@@ -80,6 +98,8 @@ Methods
    | :ref:`Material[]<class_Material>`                     | :ref:`get_materials<class_GLTFState_method_get_materials>` **(** **)**                                                                                                               |
    +-------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`GLTFMesh[]<class_GLTFMesh>`                     | :ref:`get_meshes<class_GLTFState_method_get_meshes>` **(** **)**                                                                                                                     |
+   +-------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                                 | :ref:`get_node_index<class_GLTFState_method_get_node_index>` **(** :ref:`Node<class_Node>` scene_node **)**                                                                          |
    +-------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`GLTFNode[]<class_GLTFNode>`                     | :ref:`get_nodes<class_GLTFState_method_get_nodes>` **(** **)**                                                                                                                       |
    +-------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -193,9 +213,7 @@ Property Descriptions
 - void **set_base_path** **(** :ref:`String<class_String>` value **)**
 - :ref:`String<class_String>` **get_base_path** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+The folder path associated with this GLTF data. This is used to find other files the GLTF file references, like images or binary buffers. This will be set during import when appending from a file, and will be set during export when writing to a file.
 
 .. rst-class:: classref-item-separator
 
@@ -220,6 +238,23 @@ Property Descriptions
 
 ----
 
+.. _class_GLTFState_property_copyright:
+
+.. rst-class:: classref-property
+
+:ref:`String<class_String>` **copyright** = ``""``
+
+.. rst-class:: classref-property-setget
+
+- void **set_copyright** **(** :ref:`String<class_String>` value **)**
+- :ref:`String<class_String>` **get_copyright** **(** **)**
+
+The copyright string in the asset header of the GLTF file. This is set during import if present and export if non-empty. See the GLTF asset header documentation for more information.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_GLTFState_property_create_animations:
 
 .. rst-class:: classref-property
@@ -234,6 +269,23 @@ Property Descriptions
 .. container:: contribute
 
 	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_GLTFState_property_filename:
+
+.. rst-class:: classref-property
+
+:ref:`String<class_String>` **filename** = ``""``
+
+.. rst-class:: classref-property-setget
+
+- void **set_filename** **(** :ref:`String<class_String>` value **)**
+- :ref:`String<class_String>` **get_filename** **(** **)**
+
+The file name associated with this GLTF data. If it ends with ``.gltf``, this is text-based GLTF, otherwise this is binary GLB. This will be set during import when appending from a file, and will be set during export when writing to a file. If writing to a buffer, this will be an empty string.
 
 .. rst-class:: classref-item-separator
 
@@ -326,9 +378,7 @@ Property Descriptions
 - void **set_root_nodes** **(** :ref:`PackedInt32Array<class_PackedInt32Array>` value **)**
 - :ref:`PackedInt32Array<class_PackedInt32Array>` **get_root_nodes** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+The root nodes of the GLTF file. Typically, a GLTF file will only have one scene, and therefore one root node. However, a GLTF file may have multiple scenes and therefore multiple root nodes, which will be generated as siblings of each other and as children of the root node of the generated Godot scene.
 
 .. rst-class:: classref-item-separator
 
@@ -345,9 +395,7 @@ Property Descriptions
 - void **set_scene_name** **(** :ref:`String<class_String>` value **)**
 - :ref:`String<class_String>` **get_scene_name** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+The name of the scene. When importing, if not specified, this will be the file name. When exporting, if specified, the scene name will be saved to the GLTF file.
 
 .. rst-class:: classref-item-separator
 
@@ -423,9 +471,7 @@ The argument should be the :ref:`GLTFDocumentExtension<class_GLTFDocumentExtensi
 
 :ref:`AnimationPlayer<class_AnimationPlayer>` **get_animation_player** **(** :ref:`int<class_int>` idx **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Returns the :ref:`AnimationPlayer<class_AnimationPlayer>` node with the given index. These nodes are only used during the export process when converting Godot :ref:`AnimationPlayer<class_AnimationPlayer>` nodes to GLTF animations.
 
 .. rst-class:: classref-item-separator
 
@@ -437,9 +483,7 @@ The argument should be the :ref:`GLTFDocumentExtension<class_GLTFDocumentExtensi
 
 :ref:`int<class_int>` **get_animation_players_count** **(** :ref:`int<class_int>` idx **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Returns the number of :ref:`AnimationPlayer<class_AnimationPlayer>` nodes in this **GLTFState**. These nodes are only used during the export process when converting Godot :ref:`AnimationPlayer<class_AnimationPlayer>` nodes to GLTF animations.
 
 .. rst-class:: classref-item-separator
 
@@ -451,9 +495,7 @@ The argument should be the :ref:`GLTFDocumentExtension<class_GLTFDocumentExtensi
 
 :ref:`GLTFAnimation[]<class_GLTFAnimation>` **get_animations** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Returns an array of all :ref:`GLTFAnimation<class_GLTFAnimation>`\ s in the GLTF file. When importing, these will be generated as animations in an :ref:`AnimationPlayer<class_AnimationPlayer>` node. When exporting, these will be generated from Godot :ref:`AnimationPlayer<class_AnimationPlayer>` nodes.
 
 .. rst-class:: classref-item-separator
 
@@ -479,9 +521,7 @@ The argument should be the :ref:`GLTFDocumentExtension<class_GLTFDocumentExtensi
 
 :ref:`GLTFCamera[]<class_GLTFCamera>` **get_cameras** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Returns an array of all :ref:`GLTFCamera<class_GLTFCamera>`\ s in the GLTF file. These are the cameras that the :ref:`GLTFNode.camera<class_GLTFNode_property_camera>` index refers to.
 
 .. rst-class:: classref-item-separator
 
@@ -507,9 +547,7 @@ The argument should be the :ref:`GLTFDocumentExtension<class_GLTFDocumentExtensi
 
 :ref:`Texture2D[]<class_Texture2D>` **get_images** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Gets the images of the GLTF file as an array of :ref:`Texture2D<class_Texture2D>`\ s. These are the images that the :ref:`GLTFTexture.src_image<class_GLTFTexture_property_src_image>` index refers to.
 
 .. rst-class:: classref-item-separator
 
@@ -521,9 +559,7 @@ The argument should be the :ref:`GLTFDocumentExtension<class_GLTFDocumentExtensi
 
 :ref:`GLTFLight[]<class_GLTFLight>` **get_lights** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Returns an array of all :ref:`GLTFLight<class_GLTFLight>`\ s in the GLTF file. These are the lights that the :ref:`GLTFNode.light<class_GLTFNode_property_light>` index refers to.
 
 .. rst-class:: classref-item-separator
 
@@ -549,9 +585,21 @@ The argument should be the :ref:`GLTFDocumentExtension<class_GLTFDocumentExtensi
 
 :ref:`GLTFMesh[]<class_GLTFMesh>` **get_meshes** **(** **)**
 
-.. container:: contribute
+Returns an array of all :ref:`GLTFMesh<class_GLTFMesh>`\ es in the GLTF file. These are the meshes that the :ref:`GLTFNode.mesh<class_GLTFNode_property_mesh>` index refers to.
 
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_GLTFState_method_get_node_index:
+
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **get_node_index** **(** :ref:`Node<class_Node>` scene_node **)**
+
+Returns the index of the :ref:`GLTFNode<class_GLTFNode>` corresponding to this Godot scene node. This is the inverse of :ref:`get_scene_node<class_GLTFState_method_get_scene_node>`. Useful during the export process.
+
+\ **Note:** Not every Godot scene node will have a corresponding :ref:`GLTFNode<class_GLTFNode>`, and not every :ref:`GLTFNode<class_GLTFNode>` will have a scene node generated. If there is no :ref:`GLTFNode<class_GLTFNode>` index for this scene node, ``-1`` is returned.
 
 .. rst-class:: classref-item-separator
 
@@ -563,9 +611,7 @@ The argument should be the :ref:`GLTFDocumentExtension<class_GLTFDocumentExtensi
 
 :ref:`GLTFNode[]<class_GLTFNode>` **get_nodes** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Returns an array of all :ref:`GLTFNode<class_GLTFNode>`\ s in the GLTF file. These are the nodes that :ref:`GLTFNode.children<class_GLTFNode_property_children>` and :ref:`root_nodes<class_GLTFState_property_root_nodes>` refer to. This includes nodes that may not be generated in the Godot scene, or nodes that may generate multiple Godot scene nodes.
 
 .. rst-class:: classref-item-separator
 
@@ -577,9 +623,9 @@ The argument should be the :ref:`GLTFDocumentExtension<class_GLTFDocumentExtensi
 
 :ref:`Node<class_Node>` **get_scene_node** **(** :ref:`int<class_int>` idx **)**
 
-.. container:: contribute
+Returns the Godot scene node that corresponds to the same index as the :ref:`GLTFNode<class_GLTFNode>` it was generated from. This is the inverse of :ref:`get_node_index<class_GLTFState_method_get_node_index>`. Useful during the import process.
 
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+\ **Note:** Not every :ref:`GLTFNode<class_GLTFNode>` will have a scene node generated, and not every generated scene node will have a corresponding :ref:`GLTFNode<class_GLTFNode>`. If there is no scene node for this :ref:`GLTFNode<class_GLTFNode>` index, ``null`` is returned.
 
 .. rst-class:: classref-item-separator
 
@@ -591,9 +637,7 @@ The argument should be the :ref:`GLTFDocumentExtension<class_GLTFDocumentExtensi
 
 :ref:`GLTFSkeleton[]<class_GLTFSkeleton>` **get_skeletons** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Returns an array of all :ref:`GLTFSkeleton<class_GLTFSkeleton>`\ s in the GLTF file. These are the skeletons that the :ref:`GLTFNode.skeleton<class_GLTFNode_property_skeleton>` index refers to.
 
 .. rst-class:: classref-item-separator
 
@@ -605,9 +649,7 @@ The argument should be the :ref:`GLTFDocumentExtension<class_GLTFDocumentExtensi
 
 :ref:`GLTFSkin[]<class_GLTFSkin>` **get_skins** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Returns an array of all :ref:`GLTFSkin<class_GLTFSkin>`\ s in the GLTF file. These are the skins that the :ref:`GLTFNode.skin<class_GLTFNode_property_skin>` index refers to.
 
 .. rst-class:: classref-item-separator
 
@@ -645,9 +687,7 @@ Retrieves the array of texture samplers that are used by the textures contained 
 
 :ref:`String[]<class_String>` **get_unique_animation_names** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Returns an array of unique animation names. This is only used during the import process.
 
 .. rst-class:: classref-item-separator
 
@@ -659,9 +699,7 @@ Retrieves the array of texture samplers that are used by the textures contained 
 
 :ref:`String[]<class_String>` **get_unique_names** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Returns an array of unique node names. This is used in both the import process and export process.
 
 .. rst-class:: classref-item-separator
 
@@ -701,9 +739,7 @@ The first argument should be the :ref:`GLTFDocumentExtension<class_GLTFDocumentE
 
 void **set_animations** **(** :ref:`GLTFAnimation[]<class_GLTFAnimation>` animations **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Sets the :ref:`GLTFAnimation<class_GLTFAnimation>`\ s in the state. When importing, these will be generated as animations in an :ref:`AnimationPlayer<class_AnimationPlayer>` node. When exporting, these will be generated from Godot :ref:`AnimationPlayer<class_AnimationPlayer>` nodes.
 
 .. rst-class:: classref-item-separator
 
@@ -729,9 +765,7 @@ void **set_buffer_views** **(** :ref:`GLTFBufferView[]<class_GLTFBufferView>` bu
 
 void **set_cameras** **(** :ref:`GLTFCamera[]<class_GLTFCamera>` cameras **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Sets the :ref:`GLTFCamera<class_GLTFCamera>`\ s in the state. These are the cameras that the :ref:`GLTFNode.camera<class_GLTFNode_property_camera>` index refers to.
 
 .. rst-class:: classref-item-separator
 
@@ -757,9 +791,7 @@ void **set_handle_binary_image** **(** :ref:`int<class_int>` method **)**
 
 void **set_images** **(** :ref:`Texture2D[]<class_Texture2D>` images **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Sets the images in the state stored as an array of :ref:`Texture2D<class_Texture2D>`\ s. This can be used during export. These are the images that the :ref:`GLTFTexture.src_image<class_GLTFTexture_property_src_image>` index refers to.
 
 .. rst-class:: classref-item-separator
 
@@ -771,9 +803,7 @@ void **set_images** **(** :ref:`Texture2D[]<class_Texture2D>` images **)**
 
 void **set_lights** **(** :ref:`GLTFLight[]<class_GLTFLight>` lights **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Sets the :ref:`GLTFLight<class_GLTFLight>`\ s in the state. These are the lights that the :ref:`GLTFNode.light<class_GLTFNode_property_light>` index refers to.
 
 .. rst-class:: classref-item-separator
 
@@ -799,9 +829,7 @@ void **set_materials** **(** :ref:`Material[]<class_Material>` materials **)**
 
 void **set_meshes** **(** :ref:`GLTFMesh[]<class_GLTFMesh>` meshes **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Sets the :ref:`GLTFMesh<class_GLTFMesh>`\ es in the state. These are the meshes that the :ref:`GLTFNode.mesh<class_GLTFNode_property_mesh>` index refers to.
 
 .. rst-class:: classref-item-separator
 
@@ -813,9 +841,7 @@ void **set_meshes** **(** :ref:`GLTFMesh[]<class_GLTFMesh>` meshes **)**
 
 void **set_nodes** **(** :ref:`GLTFNode[]<class_GLTFNode>` nodes **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Sets the :ref:`GLTFNode<class_GLTFNode>`\ s in the state. These are the nodes that :ref:`GLTFNode.children<class_GLTFNode_property_children>` and :ref:`root_nodes<class_GLTFState_property_root_nodes>` refer to. Some of the nodes set here may not be generated in the Godot scene, or may generate multiple Godot scene nodes.
 
 .. rst-class:: classref-item-separator
 
@@ -827,9 +853,7 @@ void **set_nodes** **(** :ref:`GLTFNode[]<class_GLTFNode>` nodes **)**
 
 void **set_skeletons** **(** :ref:`GLTFSkeleton[]<class_GLTFSkeleton>` skeletons **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Sets the :ref:`GLTFSkeleton<class_GLTFSkeleton>`\ s in the state. These are the skeletons that the :ref:`GLTFNode.skeleton<class_GLTFNode_property_skeleton>` index refers to.
 
 .. rst-class:: classref-item-separator
 
@@ -841,9 +865,7 @@ void **set_skeletons** **(** :ref:`GLTFSkeleton[]<class_GLTFSkeleton>` skeletons
 
 void **set_skins** **(** :ref:`GLTFSkin[]<class_GLTFSkin>` skins **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Sets the :ref:`GLTFSkin<class_GLTFSkin>`\ s in the state. These are the skins that the :ref:`GLTFNode.skin<class_GLTFNode_property_skin>` index refers to.
 
 .. rst-class:: classref-item-separator
 
@@ -881,9 +903,7 @@ void **set_textures** **(** :ref:`GLTFTexture[]<class_GLTFTexture>` textures **)
 
 void **set_unique_animation_names** **(** :ref:`String[]<class_String>` unique_animation_names **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Sets the unique animation names in the state. This is only used during the import process.
 
 .. rst-class:: classref-item-separator
 
@@ -895,9 +915,7 @@ void **set_unique_animation_names** **(** :ref:`String[]<class_String>` unique_a
 
 void **set_unique_names** **(** :ref:`String[]<class_String>` unique_names **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Sets the unique node names in the state. This is used in both the import process and export process.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
@@ -905,3 +923,4 @@ void **set_unique_names** **(** :ref:`String[]<class_String>` unique_names **)**
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

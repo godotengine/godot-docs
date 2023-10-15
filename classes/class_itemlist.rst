@@ -12,20 +12,20 @@ ItemList
 
 **Inherits:** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-Control that provides a list of selectable items (and/or icons) in a single column, or optionally in multiple columns.
+A vertical list of selectable items with one or multiple columns.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-This control provides a selectable list of items that may be in a single (or multiple columns) with option of text, icons, or both text and icon. Tooltips are supported and may be different for every item in the list.
+This control provides a vertical list of selectable items that may be in a single or in multiple columns, with each item having options for text and an icon. Tooltips are supported and may be different for every item in the list.
 
 Selectable items in the list may be selected or deselected and multiple selection may be enabled. Selection with right mouse button may also be enabled to allow use of popup context menus. Items may also be "activated" by double-clicking them or by pressing :kbd:`Enter`.
 
-Item text only supports single-line strings, newline characters (e.g. ``\n``) in the string won't produce a newline. Text wrapping is enabled in :ref:`ICON_MODE_TOP<class_ItemList_constant_ICON_MODE_TOP>` mode, but column's width is adjusted to fully fit its content by default. You need to set :ref:`fixed_column_width<class_ItemList_property_fixed_column_width>` greater than zero to wrap the text.
+Item text only supports single-line strings. Newline characters (e.g. ``\n``) in the string won't produce a newline. Text wrapping is enabled in :ref:`ICON_MODE_TOP<class_ItemList_constant_ICON_MODE_TOP>` mode, but the column's width is adjusted to fully fit its content by default. You need to set :ref:`fixed_column_width<class_ItemList_property_fixed_column_width>` greater than zero to wrap the text.
 
-All ``set_*`` methods allow negative item index, which makes the item accessed from the last one.
+All ``set_*`` methods allow negative item indices, i.e. ``-1`` to access the last item, ``-2`` to select the second-to-last item, and so on.
 
 \ **Incremental search:** Like :ref:`PopupMenu<class_PopupMenu>` and :ref:`Tree<class_Tree>`, **ItemList** supports searching within the list while the control is focused. Press a key that matches the first letter of an item's name to select the first item starting with the given letter. After that point, there are two ways to perform incremental search: 1) Press the same key again before the timeout duration to select the next item starting with the same letter. 2) Press letter keys that match the rest of the word before the timeout duration to match to select the item in question directly. Both of these actions will be reset to the beginning of the list if the timeout duration has passed since the last keystroke was registered. You can adjust the timeout duration by changing :ref:`ProjectSettings.gui/timers/incremental_search_max_interval_msec<class_ProjectSettings_property_gui/timers/incremental_search_max_interval_msec>`.
 
@@ -41,6 +41,8 @@ Properties
    | :ref:`bool<class_bool>`                                 | :ref:`allow_reselect<class_ItemList_property_allow_reselect>`               | ``false``                                                                 |
    +---------------------------------------------------------+-----------------------------------------------------------------------------+---------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                 | :ref:`allow_rmb_select<class_ItemList_property_allow_rmb_select>`           | ``false``                                                                 |
+   +---------------------------------------------------------+-----------------------------------------------------------------------------+---------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                 | :ref:`allow_search<class_ItemList_property_allow_search>`                   | ``true``                                                                  |
    +---------------------------------------------------------+-----------------------------------------------------------------------------+---------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                 | :ref:`auto_height<class_ItemList_property_auto_height>`                     | ``false``                                                                 |
    +---------------------------------------------------------+-----------------------------------------------------------------------------+---------------------------------------------------------------------------+
@@ -90,6 +92,8 @@ Methods
    +--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                             | :ref:`ensure_current_is_visible<class_ItemList_method_ensure_current_is_visible>` **(** **)**                                                                                      |
    +--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                             | :ref:`force_update_list_size<class_ItemList_method_force_update_list_size>` **(** **)**                                                                                            |
+   +--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                            | :ref:`get_item_at_position<class_ItemList_method_get_item_at_position>` **(** :ref:`Vector2<class_Vector2>` position, :ref:`bool<class_bool>` exact=false **)** |const|            |
    +--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Color<class_Color>`                        | :ref:`get_item_custom_bg_color<class_ItemList_method_get_item_custom_bg_color>` **(** :ref:`int<class_int>` idx **)** |const|                                                      |
@@ -105,6 +109,8 @@ Methods
    | :ref:`String<class_String>`                      | :ref:`get_item_language<class_ItemList_method_get_item_language>` **(** :ref:`int<class_int>` idx **)** |const|                                                                    |
    +--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Variant<class_Variant>`                    | :ref:`get_item_metadata<class_ItemList_method_get_item_metadata>` **(** :ref:`int<class_int>` idx **)** |const|                                                                    |
+   +--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Rect2<class_Rect2>`                        | :ref:`get_item_rect<class_ItemList_method_get_item_rect>` **(** :ref:`int<class_int>` idx, :ref:`bool<class_bool>` expand=true **)** |const|                                       |
    +--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                      | :ref:`get_item_text<class_ItemList_method_get_item_text>` **(** :ref:`int<class_int>` idx **)** |const|                                                                            |
    +--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -176,6 +182,8 @@ Theme Properties
    +---------------------------------+----------------------------------------------------------------------------+--------------------------------+
    | :ref:`Color<class_Color>`       | :ref:`font_color<class_ItemList_theme_color_font_color>`                   | ``Color(0.65, 0.65, 0.65, 1)`` |
    +---------------------------------+----------------------------------------------------------------------------+--------------------------------+
+   | :ref:`Color<class_Color>`       | :ref:`font_hovered_color<class_ItemList_theme_color_font_hovered_color>`   | ``Color(0.95, 0.95, 0.95, 1)`` |
+   +---------------------------------+----------------------------------------------------------------------------+--------------------------------+
    | :ref:`Color<class_Color>`       | :ref:`font_outline_color<class_ItemList_theme_color_font_outline_color>`   | ``Color(1, 1, 1, 1)``          |
    +---------------------------------+----------------------------------------------------------------------------+--------------------------------+
    | :ref:`Color<class_Color>`       | :ref:`font_selected_color<class_ItemList_theme_color_font_selected_color>` | ``Color(1, 1, 1, 1)``          |
@@ -201,6 +209,8 @@ Theme Properties
    | :ref:`StyleBox<class_StyleBox>` | :ref:`cursor_unfocused<class_ItemList_theme_style_cursor_unfocused>`       |                                |
    +---------------------------------+----------------------------------------------------------------------------+--------------------------------+
    | :ref:`StyleBox<class_StyleBox>` | :ref:`focus<class_ItemList_theme_style_focus>`                             |                                |
+   +---------------------------------+----------------------------------------------------------------------------+--------------------------------+
+   | :ref:`StyleBox<class_StyleBox>` | :ref:`hovered<class_ItemList_theme_style_hovered>`                         |                                |
    +---------------------------------+----------------------------------------------------------------------------+--------------------------------+
    | :ref:`StyleBox<class_StyleBox>` | :ref:`panel<class_ItemList_theme_style_panel>`                             |                                |
    +---------------------------------+----------------------------------------------------------------------------+--------------------------------+
@@ -373,6 +383,23 @@ If ``true``, the currently selected item can be selected again.
 - :ref:`bool<class_bool>` **get_allow_rmb_select** **(** **)**
 
 If ``true``, right mouse button click can select items.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ItemList_property_allow_search:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **allow_search** = ``true``
+
+.. rst-class:: classref-property-setget
+
+- void **set_allow_search** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **get_allow_search** **(** **)**
+
+If ``true``, allows navigating the **ItemList** with letter keys through incremental search.
 
 .. rst-class:: classref-item-separator
 
@@ -658,6 +685,18 @@ Ensure current selection is visible, adjusting the scroll position as necessary.
 
 ----
 
+.. _class_ItemList_method_force_update_list_size:
+
+.. rst-class:: classref-method
+
+void **force_update_list_size** **(** **)**
+
+Forces an update to the list size based on its items. This happens automatically whenever size of the items, or other relevant settings like :ref:`auto_height<class_ItemList_property_auto_height>`, change. The method can be used to trigger the update ahead of next drawing pass.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_ItemList_method_get_item_at_position:
 
 .. rst-class:: classref-method
@@ -667,6 +706,8 @@ Ensure current selection is visible, adjusting the scroll position as necessary.
 Returns the item index at the given ``position``.
 
 When there is no item at that point, -1 will be returned if ``exact`` is ``true``, and the closest item index will be returned otherwise.
+
+\ **Note:** The returned value is unreliable if called right after modifying the **ItemList**, before it redraws in the next frame.
 
 .. rst-class:: classref-item-separator
 
@@ -751,6 +792,20 @@ Returns item's text language code.
 :ref:`Variant<class_Variant>` **get_item_metadata** **(** :ref:`int<class_int>` idx **)** |const|
 
 Returns the metadata value of the specified index.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ItemList_method_get_item_rect:
+
+.. rst-class:: classref-method
+
+:ref:`Rect2<class_Rect2>` **get_item_rect** **(** :ref:`int<class_int>` idx, :ref:`bool<class_bool>` expand=true **)** |const|
+
+Returns the position and size of the item with the specified index, in the coordinate system of the **ItemList** node. If ``expand`` is ``true`` the last column expands to fill the rest of the row.
+
+\ **Note:** The returned value is unreliable if called right after modifying the **ItemList**, before it redraws in the next frame.
 
 .. rst-class:: classref-item-separator
 
@@ -1127,6 +1182,18 @@ Default text :ref:`Color<class_Color>` of the item.
 
 ----
 
+.. _class_ItemList_theme_color_font_hovered_color:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`Color<class_Color>` **font_hovered_color** = ``Color(0.95, 0.95, 0.95, 1)``
+
+Text :ref:`Color<class_Color>` used when the item is hovered and not selected yet.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_ItemList_theme_color_font_outline_color:
 
 .. rst-class:: classref-themeproperty
@@ -1285,6 +1352,18 @@ The focused style for the **ItemList**, drawn on top of the background, but belo
 
 ----
 
+.. _class_ItemList_theme_style_hovered:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`StyleBox<class_StyleBox>` **hovered**
+
+:ref:`StyleBox<class_StyleBox>` for the hovered, but not selected items.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_ItemList_theme_style_panel:
 
 .. rst-class:: classref-themeproperty
@@ -1323,3 +1402,4 @@ The background style for the **ItemList**.
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

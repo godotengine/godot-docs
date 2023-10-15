@@ -1,3 +1,5 @@
+:article_outdated: True
+
 .. _doc_first_3d_game_killing_the_player:
 
 Killing the player
@@ -15,7 +17,7 @@ works well for hitboxes.
 Hitbox with the Area node
 -------------------------
 
-Head back to the ``Player.tscn`` scene and add a new child node :ref:`Area3D <class_Area3D>`. Name it
+Head back to the ``player.tscn`` scene and add a new child node :ref:`Area3D <class_Area3D>`. Name it
 ``MobDetector``
 Add a :ref:`CollisionShape3D <class_CollisionShape3D>` node as a child of it.
 
@@ -126,7 +128,7 @@ We can use the ``Player``\ 's ``hit`` signal to end the game. All we need
 to do is connect it to the ``Main`` node and stop the ``MobTimer`` in
 reaction.
 
-Open ``Main.tscn``, select the ``Player`` node, and in the *Node* dock,
+Open ``main.tscn``, select the ``Player`` node, and in the *Node* dock,
 connect its ``hit`` signal to the ``Main`` node.
 
 |image5|
@@ -163,7 +165,7 @@ Code checkpoint
 Here are the complete scripts for the ``Main``, ``Mob``, and ``Player`` nodes,
 for reference. You can use them to compare and check your code.
 
-Starting with ``Main.gd``.
+Starting with ``main.gd``.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -382,7 +384,7 @@ Finally, the longest script, ``Player.gd``:
             var collision = get_slide_collision(index)
 
             # If the collision is with ground
-            if (collision.get_collider() == null):
+            if collision.get_collider() == null:
                 continue
 
             # If the collider is with a mob

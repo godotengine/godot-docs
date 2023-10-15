@@ -23,6 +23,10 @@ Singletons are also documented here, since they can be accessed from anywhere.
 
 For the entries related to GDScript which can be accessed in any script see :ref:`@GDScript<class_@GDScript>`.
 
+.. note::
+
+	There are notable differences when using this API with C#. See :ref:`doc_c_sharp_differences` for more information.
+
 .. rst-class:: classref-introduction-group
 
 Tutorials
@@ -46,6 +50,8 @@ Properties
    | :ref:`ClassDB<class_ClassDB>`                                 | :ref:`ClassDB<class_@GlobalScope_property_ClassDB>`                                 |
    +---------------------------------------------------------------+-------------------------------------------------------------------------------------+
    | :ref:`DisplayServer<class_DisplayServer>`                     | :ref:`DisplayServer<class_@GlobalScope_property_DisplayServer>`                     |
+   +---------------------------------------------------------------+-------------------------------------------------------------------------------------+
+   | :ref:`EditorInterface<class_EditorInterface>`                 | :ref:`EditorInterface<class_@GlobalScope_property_EditorInterface>`                 |
    +---------------------------------------------------------------+-------------------------------------------------------------------------------------+
    | :ref:`Engine<class_Engine>`                                   | :ref:`Engine<class_@GlobalScope_property_Engine>`                                   |
    +---------------------------------------------------------------+-------------------------------------------------------------------------------------+
@@ -129,11 +135,19 @@ Methods
    +-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                       | :ref:`acos<class_@GlobalScope_method_acos>` **(** :ref:`float<class_float>` x **)**                                                                                                                                                                                                                                                                                            |
    +-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`                       | :ref:`acosh<class_@GlobalScope_method_acosh>` **(** :ref:`float<class_float>` x **)**                                                                                                                                                                                                                                                                                          |
+   +-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`                       | :ref:`angle_difference<class_@GlobalScope_method_angle_difference>` **(** :ref:`float<class_float>` from, :ref:`float<class_float>` to **)**                                                                                                                                                                                                                                   |
+   +-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                       | :ref:`asin<class_@GlobalScope_method_asin>` **(** :ref:`float<class_float>` x **)**                                                                                                                                                                                                                                                                                            |
+   +-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`                       | :ref:`asinh<class_@GlobalScope_method_asinh>` **(** :ref:`float<class_float>` x **)**                                                                                                                                                                                                                                                                                          |
    +-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                       | :ref:`atan<class_@GlobalScope_method_atan>` **(** :ref:`float<class_float>` x **)**                                                                                                                                                                                                                                                                                            |
    +-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                       | :ref:`atan2<class_@GlobalScope_method_atan2>` **(** :ref:`float<class_float>` y, :ref:`float<class_float>` x **)**                                                                                                                                                                                                                                                             |
+   +-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`                       | :ref:`atanh<class_@GlobalScope_method_atanh>` **(** :ref:`float<class_float>` x **)**                                                                                                                                                                                                                                                                                          |
    +-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                       | :ref:`bezier_derivative<class_@GlobalScope_method_bezier_derivative>` **(** :ref:`float<class_float>` start, :ref:`float<class_float>` control_1, :ref:`float<class_float>` control_2, :ref:`float<class_float>` end, :ref:`float<class_float>` t **)**                                                                                                                        |
    +-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -281,6 +295,8 @@ Methods
    +-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`RID<class_RID>`                           | :ref:`rid_from_int64<class_@GlobalScope_method_rid_from_int64>` **(** :ref:`int<class_int>` base **)**                                                                                                                                                                                                                                                                         |
    +-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`                       | :ref:`rotate_toward<class_@GlobalScope_method_rotate_toward>` **(** :ref:`float<class_float>` from, :ref:`float<class_float>` to, :ref:`float<class_float>` delta **)**                                                                                                                                                                                                        |
+   +-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Variant<class_Variant>`                   | :ref:`round<class_@GlobalScope_method_round>` **(** :ref:`Variant<class_Variant>` x **)**                                                                                                                                                                                                                                                                                      |
    +-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                       | :ref:`roundf<class_@GlobalScope_method_roundf>` **(** :ref:`float<class_float>` x **)**                                                                                                                                                                                                                                                                                        |
@@ -318,6 +334,10 @@ Methods
    | :ref:`float<class_float>`                       | :ref:`tan<class_@GlobalScope_method_tan>` **(** :ref:`float<class_float>` angle_rad **)**                                                                                                                                                                                                                                                                                      |
    +-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                       | :ref:`tanh<class_@GlobalScope_method_tanh>` **(** :ref:`float<class_float>` x **)**                                                                                                                                                                                                                                                                                            |
+   +-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Variant<class_Variant>`                   | :ref:`type_convert<class_@GlobalScope_method_type_convert>` **(** :ref:`Variant<class_Variant>` variant, :ref:`int<class_int>` type **)**                                                                                                                                                                                                                                      |
+   +-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                     | :ref:`type_string<class_@GlobalScope_method_type_string>` **(** :ref:`int<class_int>` type **)**                                                                                                                                                                                                                                                                               |
    +-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                           | :ref:`typeof<class_@GlobalScope_method_typeof>` **(** :ref:`Variant<class_Variant>` variable **)**                                                                                                                                                                                                                                                                             |
    +-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1679,6 +1699,38 @@ Launch Shortcut E key.
 
 Launch Shortcut F key.
 
+.. _class_@GlobalScope_constant_KEY_GLOBE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Key<enum_@GlobalScope_Key>` **KEY_GLOBE** = ``4194416``
+
+"Globe" key on Mac / iPad keyboard.
+
+.. _class_@GlobalScope_constant_KEY_KEYBOARD:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Key<enum_@GlobalScope_Key>` **KEY_KEYBOARD** = ``4194417``
+
+"On-screen keyboard" key on iPad keyboard.
+
+.. _class_@GlobalScope_constant_KEY_JIS_EISU:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Key<enum_@GlobalScope_Key>` **KEY_JIS_EISU** = ``4194418``
+
+英数 key on Mac keyboard.
+
+.. _class_@GlobalScope_constant_KEY_JIS_KANA:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Key<enum_@GlobalScope_Key>` **KEY_JIS_KANA** = ``4194419``
+
+かな key on Mac keyboard.
+
 .. _class_@GlobalScope_constant_KEY_UNKNOWN:
 
 .. rst-class:: classref-enumeration-constant
@@ -2255,38 +2307,6 @@ Z key.
 
 § key.
 
-.. _class_@GlobalScope_constant_KEY_GLOBE:
-
-.. rst-class:: classref-enumeration-constant
-
-:ref:`Key<enum_@GlobalScope_Key>` **KEY_GLOBE** = ``4194416``
-
-"Globe" key on Mac / iPad keyboard.
-
-.. _class_@GlobalScope_constant_KEY_KEYBOARD:
-
-.. rst-class:: classref-enumeration-constant
-
-:ref:`Key<enum_@GlobalScope_Key>` **KEY_KEYBOARD** = ``4194417``
-
-"On-screen keyboard" key iPad keyboard.
-
-.. _class_@GlobalScope_constant_KEY_JIS_EISU:
-
-.. rst-class:: classref-enumeration-constant
-
-:ref:`Key<enum_@GlobalScope_Key>` **KEY_JIS_EISU** = ``4194418``
-
-英数 key on Mac keyboard.
-
-.. _class_@GlobalScope_constant_KEY_JIS_KANA:
-
-.. rst-class:: classref-enumeration-constant
-
-:ref:`Key<enum_@GlobalScope_Key>` **KEY_JIS_KANA** = ``4194419``
-
-かな key on Mac keyboard.
-
 .. rst-class:: classref-item-separator
 
 ----
@@ -2581,7 +2601,7 @@ Game controller SDL guide button. Corresponds to the Sony PS, Xbox Home button.
 
 :ref:`JoyButton<enum_@GlobalScope_JoyButton>` **JOY_BUTTON_START** = ``6``
 
-Game controller SDL start button. Corresponds to the Nintendo + button.
+Game controller SDL start button. Corresponds to the Sony Options, Xbox Menu, Nintendo + button.
 
 .. _class_@GlobalScope_constant_JOY_BUTTON_LEFT_STICK:
 
@@ -2823,7 +2843,7 @@ Enum value which doesn't correspond to any MIDI message. This is used to initial
 
 :ref:`MIDIMessage<enum_@GlobalScope_MIDIMessage>` **MIDI_MESSAGE_NOTE_OFF** = ``8``
 
-MIDI note OFF message. See the documentation of :ref:`InputEventMIDI<class_InputEventMIDI>` for information of how to use MIDI inputs.
+MIDI note OFF message. Not all MIDI devices send this event; some send :ref:`MIDI_MESSAGE_NOTE_ON<class_@GlobalScope_constant_MIDI_MESSAGE_NOTE_ON>` with zero velocity instead. See the documentation of :ref:`InputEventMIDI<class_InputEventMIDI>` for information of how to use MIDI inputs.
 
 .. _class_@GlobalScope_constant_MIDI_MESSAGE_NOTE_ON:
 
@@ -2831,7 +2851,7 @@ MIDI note OFF message. See the documentation of :ref:`InputEventMIDI<class_Input
 
 :ref:`MIDIMessage<enum_@GlobalScope_MIDIMessage>` **MIDI_MESSAGE_NOTE_ON** = ``9``
 
-MIDI note ON message. See the documentation of :ref:`InputEventMIDI<class_InputEventMIDI>` for information of how to use MIDI inputs.
+MIDI note ON message. Some MIDI devices send this event with velocity zero instead of :ref:`MIDI_MESSAGE_NOTE_OFF<class_@GlobalScope_constant_MIDI_MESSAGE_NOTE_OFF>`, but implementations vary. See the documentation of :ref:`InputEventMIDI<class_InputEventMIDI>` for information of how to use MIDI inputs.
 
 .. _class_@GlobalScope_constant_MIDI_MESSAGE_AFTERTOUCH:
 
@@ -3409,7 +3429,7 @@ Hints that an :ref:`int<class_int>` or :ref:`float<class_float>` property should
 
 \ **Example:** ``"-360,360,1,or_greater,or_less"``.
 
-Additionally, other keywords can be included: ``"exp"`` for exponential range editing, ``"radians"`` for editing radian angles in degrees, ``"degrees"`` to hint at an angle and ``"hide_slider"`` to hide the slider.
+Additionally, other keywords can be included: ``"exp"`` for exponential range editing, ``"radians_as_degrees"`` for editing radian angles in degrees (the range values are also in degrees), ``"degrees"`` to hint at an angle and ``"hide_slider"`` to hide the slider.
 
 .. _class_@GlobalScope_constant_PROPERTY_HINT_ENUM:
 
@@ -3509,6 +3529,14 @@ Hints that an :ref:`int<class_int>` property is a bitmask using the optionally n
 
 Hints that an :ref:`int<class_int>` property is a bitmask using the optionally named 3D navigation layers.
 
+.. _class_@GlobalScope_constant_PROPERTY_HINT_LAYERS_AVOIDANCE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`PropertyHint<enum_@GlobalScope_PropertyHint>` **PROPERTY_HINT_LAYERS_AVOIDANCE** = ``37``
+
+Hints that an integer property is a bitmask using the optionally named avoidance layers.
+
 .. _class_@GlobalScope_constant_PROPERTY_HINT_FILE:
 
 .. rst-class:: classref-enumeration-constant
@@ -3595,16 +3623,74 @@ Hints that a :ref:`Color<class_Color>` property should be edited without affecti
 
 :ref:`PropertyHint<enum_@GlobalScope_PropertyHint>` **PROPERTY_HINT_TYPE_STRING** = ``23``
 
-Hint that a property represents a particular type. If a property is :ref:`TYPE_STRING<class_@GlobalScope_constant_TYPE_STRING>`, allows to set a type from the create dialog. If you need to create an :ref:`Array<class_Array>` to contain elements of a specific type, the ``hint_string`` must encode nested types using ``":"`` and ``"/"`` for specifying :ref:`Resource<class_Resource>` types. For instance:
+If a property is :ref:`String<class_String>`, hints that the property represents a particular type (class). This allows to select a type from the create dialog. The property will store the selected type as a string.
 
-::
+If a property is :ref:`Array<class_Array>`, hints the editor how to show elements. The ``hint_string`` must encode nested types using ``":"`` and ``"/"``.
 
-    hint_string = "%s:" % [TYPE_INT] # Array of integers.
-    hint_string = "%s:%s:" % [TYPE_ARRAY, TYPE_REAL] # Two-dimensional array of floats.
-    hint_string = "%s/%s:Resource" % [TYPE_OBJECT, TYPE_OBJECT] # Array of resources.
-    hint_string = "%s:%s/%s:Resource" % [TYPE_ARRAY, TYPE_OBJECT, TYPE_OBJECT] # Two-dimensional array of resources.
 
-\ **Note:** The final colon is required for properly detecting built-in types.
+.. tabs::
+
+ .. code-tab:: gdscript
+
+    # Array of elem_type.
+    hint_string = "%d:" % [elem_type]
+    hint_string = "%d/%d:%s" % [elem_type, elem_hint, elem_hint_string]
+    # Two-dimensional array of elem_type (array of arrays of elem_type).
+    hint_string = "%d:%d:" % [TYPE_ARRAY, elem_type]
+    hint_string = "%d:%d/%d:%s" % [TYPE_ARRAY, elem_type, elem_hint, elem_hint_string]
+    # Three-dimensional array of elem_type (array of arrays of arrays of elem_type).
+    hint_string = "%d:%d:%d:" % [TYPE_ARRAY, TYPE_ARRAY, elem_type]
+    hint_string = "%d:%d:%d/%d:%s" % [TYPE_ARRAY, TYPE_ARRAY, elem_type, elem_hint, elem_hint_string]
+
+ .. code-tab:: csharp
+
+    // Array of elemType.
+    hintString = $"{elemType:D}:";
+    hintString = $"{elemType:}/{elemHint:D}:{elemHintString}";
+    // Two-dimensional array of elemType (array of arrays of elemType).
+    hintString = $"{Variant.Type.Array:D}:{elemType:D}:";
+    hintString = $"{Variant.Type.Array:D}:{elemType:D}/{elemHint:D}:{elemHintString}";
+    // Three-dimensional array of elemType (array of arrays of arrays of elemType).
+    hintString = $"{Variant.Type.Array:D}:{Variant.Type.Array:D}:{elemType:D}:";
+    hintString = $"{Variant.Type.Array:D}:{Variant.Type.Array:D}:{elemType:D}/{elemHint:D}:{elemHintString}";
+
+
+
+Examples:
+
+
+.. tabs::
+
+ .. code-tab:: gdscript
+
+    hint_string = "%d:" % [TYPE_INT] # Array of integers.
+    hint_string = "%d/%d:1,10,1" % [TYPE_INT, PROPERTY_HINT_RANGE] # Array of integers (in range from 1 to 10).
+    hint_string = "%d/%d:Zero,One,Two" % [TYPE_INT, PROPERTY_HINT_ENUM] # Array of integers (an enum).
+    hint_string = "%d/%d:Zero,One,Three:3,Six:6" % [TYPE_INT, PROPERTY_HINT_ENUM] # Array of integers (an enum).
+    hint_string = "%d/%d:*.png" % [TYPE_STRING, PROPERTY_HINT_FILE] # Array of strings (file paths).
+    hint_string = "%d/%d:Texture2D" % [TYPE_OBJECT, PROPERTY_HINT_RESOURCE_TYPE] # Array of textures.
+    
+    hint_string = "%d:%d:" % [TYPE_ARRAY, TYPE_FLOAT] # Two-dimensional array of floats.
+    hint_string = "%d:%d/%d:" % [TYPE_ARRAY, TYPE_STRING, PROPERTY_HINT_MULTILINE_TEXT] # Two-dimensional array of multiline strings.
+    hint_string = "%d:%d/%d:-1,1,0.1" % [TYPE_ARRAY, TYPE_FLOAT, PROPERTY_HINT_RANGE] # Two-dimensional array of floats (in range from -1 to 1).
+    hint_string = "%d:%d/%d:Texture2D" % [TYPE_ARRAY, TYPE_OBJECT, PROPERTY_HINT_RESOURCE_TYPE] # Two-dimensional array of textures.
+
+ .. code-tab:: csharp
+
+    hintString = $"{Variant.Type.Int:D}/{PropertyHint.Range:D}:1,10,1"; // Array of integers (in range from 1 to 10).
+    hintString = $"{Variant.Type.Int:D}/{PropertyHint.Enum:D}:Zero,One,Two"; // Array of integers (an enum).
+    hintString = $"{Variant.Type.Int:D}/{PropertyHint.Enum:D}:Zero,One,Three:3,Six:6"; // Array of integers (an enum).
+    hintString = $"{Variant.Type.String:D}/{PropertyHint.File:D}:*.png"; // Array of strings (file paths).
+    hintString = $"{Variant.Type.Object:D}/{PropertyHint.ResourceType:D}:Texture2D"; // Array of textures.
+    
+    hintString = $"{Variant.Type.Array:D}:{Variant.Type.Float:D}:"; // Two-dimensional array of floats.
+    hintString = $"{Variant.Type.Array:D}:{Variant.Type.String:D}/{PropertyHint.MultilineText:D}:"; // Two-dimensional array of multiline strings.
+    hintString = $"{Variant.Type.Array:D}:{Variant.Type.Float:D}/{PropertyHint.Range:D}:-1,1,0.1"; // Two-dimensional array of floats (in range from -1 to 1).
+    hintString = $"{Variant.Type.Array:D}:{Variant.Type.Object:D}/{PropertyHint.ResourceType:D}:Texture2D"; // Two-dimensional array of textures.
+
+
+
+\ **Note:** The trailing colon is required for properly detecting built-in types.
 
 .. _class_@GlobalScope_constant_PROPERTY_HINT_NODE_PATH_TO_EDITED_NODE:
 
@@ -3714,7 +3800,7 @@ Hints that a string property is a password, and every character is replaced with
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`PropertyHint<enum_@GlobalScope_PropertyHint>` **PROPERTY_HINT_MAX** = ``37``
+:ref:`PropertyHint<enum_@GlobalScope_PropertyHint>` **PROPERTY_HINT_MAX** = ``38``
 
 Represents the size of the :ref:`PropertyHint<enum_@GlobalScope_PropertyHint>` enum.
 
@@ -3758,7 +3844,7 @@ The property is shown in the :ref:`EditorInspector<class_EditorInspector>` (defa
 
 :ref:`PropertyUsageFlags<enum_@GlobalScope_PropertyUsageFlags>` **PROPERTY_USAGE_INTERNAL** = ``8``
 
-
+The property is excluded from the class reference.
 
 .. _class_@GlobalScope_constant_PROPERTY_USAGE_CHECKABLE:
 
@@ -3960,13 +4046,21 @@ The property is only shown in the editor if modern renderers are supported (the 
 
 The property is read-only in the :ref:`EditorInspector<class_EditorInspector>`.
 
+.. _class_@GlobalScope_constant_PROPERTY_USAGE_SECRET:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`PropertyUsageFlags<enum_@GlobalScope_PropertyUsageFlags>` **PROPERTY_USAGE_SECRET** = ``536870912``
+
+An export preset property with this flag contains confidential information and is stored separately from the rest of the export preset configuration.
+
 .. _class_@GlobalScope_constant_PROPERTY_USAGE_DEFAULT:
 
 .. rst-class:: classref-enumeration-constant
 
 :ref:`PropertyUsageFlags<enum_@GlobalScope_PropertyUsageFlags>` **PROPERTY_USAGE_DEFAULT** = ``6``
 
-Default usage (storage, editor and network).
+Default usage (storage and editor).
 
 .. _class_@GlobalScope_constant_PROPERTY_USAGE_NO_EDITOR:
 
@@ -3974,7 +4068,7 @@ Default usage (storage, editor and network).
 
 :ref:`PropertyUsageFlags<enum_@GlobalScope_PropertyUsageFlags>` **PROPERTY_USAGE_NO_EDITOR** = ``2``
 
-Default usage but without showing the property in the editor (storage, network).
+Default usage but without showing the property in the editor (storage).
 
 .. rst-class:: classref-item-separator
 
@@ -4647,6 +4741,20 @@ The :ref:`DisplayServer<class_DisplayServer>` singleton.
 
 ----
 
+.. _class_@GlobalScope_property_EditorInterface:
+
+.. rst-class:: classref-property
+
+:ref:`EditorInterface<class_EditorInterface>` **EditorInterface**
+
+The :ref:`EditorInterface<class_EditorInterface>` singleton.
+
+\ **Note:** Only available in editor builds.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_@GlobalScope_property_Engine:
 
 .. rst-class:: classref-property
@@ -4825,7 +4933,7 @@ The :ref:`NavigationServer2D<class_NavigationServer2D>` singleton.
 
 :ref:`NavigationServer3D<class_NavigationServer3D>` **NavigationServer3D**
 
-The :ref:`NavigationServer2D<class_NavigationServer2D>` singleton.
+The :ref:`NavigationServer3D<class_NavigationServer3D>` singleton.
 
 .. rst-class:: classref-item-separator
 
@@ -5114,12 +5222,43 @@ Returns the absolute value of int parameter ``x`` (i.e. positive value).
 
 :ref:`float<class_float>` **acos** **(** :ref:`float<class_float>` x **)**
 
-Returns the arc cosine of ``x`` in radians. Use to get the angle of cosine ``x``. ``x`` must be between ``-1.0`` and ``1.0`` (inclusive), otherwise, :ref:`acos<class_@GlobalScope_method_acos>` will return :ref:`@GDScript.NAN<class_@GDScript_constant_NAN>`.
+Returns the arc cosine of ``x`` in radians. Use to get the angle of cosine ``x``. ``x`` will be clamped between ``-1.0`` and ``1.0`` (inclusive), in order to prevent :ref:`acos<class_@GlobalScope_method_acos>` from returning :ref:`@GDScript.NAN<class_@GDScript_constant_NAN>`.
 
 ::
 
     # c is 0.523599 or 30 degrees if converted with rad_to_deg(c)
     var c = acos(0.866025)
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_@GlobalScope_method_acosh:
+
+.. rst-class:: classref-method
+
+:ref:`float<class_float>` **acosh** **(** :ref:`float<class_float>` x **)**
+
+Returns the hyperbolic arc (also called inverse) cosine of ``x``, returning a value in radians. Use it to get the angle from an angle's cosine in hyperbolic space if ``x`` is larger or equal to 1. For values of ``x`` lower than 1, it will return 0, in order to prevent :ref:`acosh<class_@GlobalScope_method_acosh>` from returning :ref:`@GDScript.NAN<class_@GDScript_constant_NAN>`.
+
+::
+
+    var a = acosh(2) # Returns 1.31695789692482
+    cosh(a) # Returns 2
+    
+    var b = acosh(-1) # Returns 0
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_@GlobalScope_method_angle_difference:
+
+.. rst-class:: classref-method
+
+:ref:`float<class_float>` **angle_difference** **(** :ref:`float<class_float>` from, :ref:`float<class_float>` to **)**
+
+Returns the difference between the two angles, in the range of ``[-PI, +PI]``. When ``from`` and ``to`` are opposite, returns ``-PI`` if ``from`` is smaller than ``to``, or ``PI`` otherwise.
 
 .. rst-class:: classref-item-separator
 
@@ -5131,12 +5270,29 @@ Returns the arc cosine of ``x`` in radians. Use to get the angle of cosine ``x``
 
 :ref:`float<class_float>` **asin** **(** :ref:`float<class_float>` x **)**
 
-Returns the arc sine of ``x`` in radians. Use to get the angle of sine ``x``. ``x`` must be between ``-1.0`` and ``1.0`` (inclusive), otherwise, :ref:`asin<class_@GlobalScope_method_asin>` will return :ref:`@GDScript.NAN<class_@GDScript_constant_NAN>`.
+Returns the arc sine of ``x`` in radians. Use to get the angle of sine ``x``. ``x`` will be clamped between ``-1.0`` and ``1.0`` (inclusive), in order to prevent :ref:`asin<class_@GlobalScope_method_asin>` from returning :ref:`@GDScript.NAN<class_@GDScript_constant_NAN>`.
 
 ::
 
     # s is 0.523599 or 30 degrees if converted with rad_to_deg(s)
     var s = asin(0.5)
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_@GlobalScope_method_asinh:
+
+.. rst-class:: classref-method
+
+:ref:`float<class_float>` **asinh** **(** :ref:`float<class_float>` x **)**
+
+Returns the hyperbolic arc (also called inverse) sine of ``x``, returning a value in radians. Use it to get the angle from an angle's sine in hyperbolic space.
+
+::
+
+    var a = asinh(0.9) # Returns 0.8088669356527824
+    sinh(a) # Returns 0.9
 
 .. rst-class:: classref-item-separator
 
@@ -5175,6 +5331,28 @@ Important note: The Y coordinate comes first, by convention.
 ::
 
     var a = atan2(0, -1) # a is 3.141593
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_@GlobalScope_method_atanh:
+
+.. rst-class:: classref-method
+
+:ref:`float<class_float>` **atanh** **(** :ref:`float<class_float>` x **)**
+
+Returns the hyperbolic arc (also called inverse) tangent of ``x``, returning a value in radians. Use it to get the angle from an angle's tangent in hyperbolic space if ``x`` is between -1 and 1 (non-inclusive).
+
+In mathematics, the inverse hyperbolic tangent is only defined for -1 < ``x`` < 1 in the real set, so values equal or lower to -1 for ``x`` return negative :ref:`@GDScript.INF<class_@GDScript_constant_INF>` and values equal or higher than 1 return positive :ref:`@GDScript.INF<class_@GDScript_constant_INF>` in order to prevent :ref:`atanh<class_@GlobalScope_method_atanh>` from returning :ref:`@GDScript.NAN<class_@GDScript_constant_NAN>`.
+
+::
+
+    var a = atanh(0.9) # Returns 1.47221948958322
+    tanh(a) # Returns 0.9
+    
+    var b = atanh(-2) # Returns -inf
+    tanh(b) # Returns -1
 
 .. rst-class:: classref-item-separator
 
@@ -5287,7 +5465,7 @@ A type-safe version of :ref:`ceil<class_@GlobalScope_method_ceil>`, returning an
 
 :ref:`Variant<class_Variant>` **clamp** **(** :ref:`Variant<class_Variant>` value, :ref:`Variant<class_Variant>` min, :ref:`Variant<class_Variant>` max **)**
 
-Clamps the ``value``, returning a :ref:`Variant<class_Variant>` not less than ``min`` and not more than ``max``. Supported types: :ref:`int<class_int>`, :ref:`float<class_float>`, :ref:`Vector2<class_Vector2>`, :ref:`Vector2i<class_Vector2i>`, :ref:`Vector3<class_Vector3>`, :ref:`Vector3i<class_Vector3i>`, :ref:`Vector4<class_Vector4>`, :ref:`Vector4i<class_Vector4i>`.
+Clamps the ``value``, returning a :ref:`Variant<class_Variant>` not less than ``min`` and not more than ``max``. Any values that can be compared with the less than and greater than operators will work.
 
 ::
 
@@ -5309,7 +5487,7 @@ Clamps the ``value``, returning a :ref:`Variant<class_Variant>` not less than ``
     var f = clamp(Vector3i(-7, -8, -9), Vector3i(-1, 2, 3), Vector3i(-4, -5, -6))
     # f is (-4, -5, -6)
 
-\ **Note:** For better type safety, use :ref:`clampf<class_@GlobalScope_method_clampf>`, :ref:`clampi<class_@GlobalScope_method_clampi>`, :ref:`Vector2.clamp<class_Vector2_method_clamp>`, :ref:`Vector2i.clamp<class_Vector2i_method_clamp>`, :ref:`Vector3.clamp<class_Vector3_method_clamp>`, :ref:`Vector3i.clamp<class_Vector3i_method_clamp>`, :ref:`Vector4.clamp<class_Vector4_method_clamp>`, or :ref:`Vector4i.clamp<class_Vector4i_method_clamp>`.
+\ **Note:** For better type safety, use :ref:`clampf<class_@GlobalScope_method_clampf>`, :ref:`clampi<class_@GlobalScope_method_clampi>`, :ref:`Vector2.clamp<class_Vector2_method_clamp>`, :ref:`Vector2i.clamp<class_Vector2i_method_clamp>`, :ref:`Vector3.clamp<class_Vector3_method_clamp>`, :ref:`Vector3i.clamp<class_Vector3i_method_clamp>`, :ref:`Vector4.clamp<class_Vector4_method_clamp>`, :ref:`Vector4i.clamp<class_Vector4i_method_clamp>`, or :ref:`Color.clamp<class_Color_method_clamp>`.
 
 .. rst-class:: classref-item-separator
 
@@ -5421,7 +5599,7 @@ Cubic interpolates between two rotation values with shortest path by the factor 
 
 Cubic interpolates between two rotation values with shortest path by the factor defined in ``weight`` with ``pre`` and ``post`` values. See also :ref:`lerp_angle<class_@GlobalScope_method_lerp_angle>`.
 
-It can perform smoother interpolation than ``cubic_interpolate()`` by the time values.
+It can perform smoother interpolation than :ref:`cubic_interpolate<class_@GlobalScope_method_cubic_interpolate>` by the time values.
 
 .. rst-class:: classref-item-separator
 
@@ -5520,9 +5698,9 @@ Returns a human-readable name for the given :ref:`Error<enum_@GlobalScope_Error>
 
 :ref:`float<class_float>` **exp** **(** :ref:`float<class_float>` x **)**
 
-The natural exponential function. It raises the mathematical constant **e** to the power of ``x`` and returns it.
+The natural exponential function. It raises the mathematical constant *e* to the power of ``x`` and returns it.
 
-\ **e** has an approximate value of 2.71828, and can be obtained with ``exp(1)``.
+\ *e* has an approximate value of 2.71828, and can be obtained with ``exp(1)``.
 
 For exponents to other bases use the method :ref:`pow<class_@GlobalScope_method_pow>`.
 
@@ -5904,7 +6082,7 @@ Linearly interpolates between two values by the factor defined in ``weight``. To
 
 ::
 
-    lerp(0, 4, 0.75) # Returns 3.0
+    lerpf(0, 4, 0.75) # Returns 3.0
 
 See also :ref:`inverse_lerp<class_@GlobalScope_method_inverse_lerp>` which performs the reverse of this operation. To perform eased interpolation with :ref:`lerp<class_@GlobalScope_method_lerp>`, combine it with :ref:`ease<class_@GlobalScope_method_ease>` or :ref:`smoothstep<class_@GlobalScope_method_smoothstep>`.
 
@@ -5939,9 +6117,9 @@ Converts from linear energy to decibels (audio). This can be used to implement v
 
 :ref:`float<class_float>` **log** **(** :ref:`float<class_float>` x **)**
 
-Returns the natural logarithm of ``x``. This is the amount of time needed to reach a certain level of continuous growth.
+Returns the `natural logarithm <https://en.wikipedia.org/wiki/Natural_logarithm>`__ of ``x`` (base `[i]e[/i] <https://en.wikipedia.org/wiki/E_(mathematical_constant)>`__, with *e* being approximately 2.71828). This is the amount of time needed to reach a certain level of continuous growth.
 
-\ **Note:** This is not the same as the "log" function on most calculators, which uses a base 10 logarithm.
+\ **Note:** This is not the same as the "log" function on most calculators, which uses a base 10 logarithm. To use base 10 logarithm, use ``log(x) / log(10)``.
 
 ::
 
@@ -6059,7 +6237,7 @@ Returns the minimum of two :ref:`int<class_int>` values.
 
 :ref:`float<class_float>` **move_toward** **(** :ref:`float<class_float>` from, :ref:`float<class_float>` to, :ref:`float<class_float>` delta **)**
 
-Moves ``from`` toward ``to`` by the ``delta`` value.
+Moves ``from`` toward ``to`` by the ``delta`` amount. Will not go past ``to``.
 
 Use a negative ``delta`` value to move away.
 
@@ -6067,6 +6245,7 @@ Use a negative ``delta`` value to move away.
 
     move_toward(5, 10, 4)    # Returns 9
     move_toward(10, 5, 4)    # Returns 6
+    move_toward(5, 10, 9)    # Returns 10
     move_toward(10, 5, -1.5) # Returns 11.5
 
 .. rst-class:: classref-item-separator
@@ -6079,9 +6258,7 @@ Use a negative ``delta`` value to move away.
 
 :ref:`int<class_int>` **nearest_po2** **(** :ref:`int<class_int>` value **)**
 
-Returns the nearest equal or larger power of 2 for the integer ``value``.
-
-In other words, returns the smallest value ``a`` where ``a = pow(2, n)`` such that ``value <= a`` for some non-negative integer ``n``.
+Returns the smallest integer power of 2 that is greater than or equal to ``value``.
 
 ::
 
@@ -6092,7 +6269,7 @@ In other words, returns the smallest value ``a`` where ``a = pow(2, n)`` such th
     nearest_po2(0)  # Returns 0 (this may not be expected)
     nearest_po2(-1) # Returns 0 (this may not be expected)
 
-\ **Warning:** Due to the way it is implemented, this function returns ``0`` rather than ``1`` for negative values of ``value`` (in reality, 1 is the smallest integer power of 2).
+\ **Warning:** Due to its implementation, this method returns ``0`` rather than ``1`` for values less than or equal to ``0``, with an exception for ``value`` being the smallest negative 64-bit integer (``-9223372036854775808``) in which case the ``value`` is returned unchanged.
 
 .. rst-class:: classref-item-separator
 
@@ -6208,24 +6385,32 @@ Converts one or more arguments of any type to string in the best way possible an
 
 void **print_rich** **(** ... **)** |vararg|
 
-Converts one or more arguments of any type to string in the best way possible and prints them to the console. The following BBCode tags are supported: b, i, u, s, indent, code, url, center, right, color, bgcolor, fgcolor. Color tags only support named colors such as ``red``, *not* hexadecimal color codes. Unsupported tags will be left as-is in standard output.
+Converts one or more arguments of any type to string in the best way possible and prints them to the console.
 
-When printing to standard output, the supported subset of BBCode is converted to ANSI escape codes for the terminal emulator to display. Displaying ANSI escape codes is currently only supported on Linux and macOS. Support for ANSI escape codes may vary across terminal emulators, especially for italic and strikethrough.
+The following BBCode tags are supported: ``b``, ``i``, ``u``, ``s``, ``indent``, ``code``, ``url``, ``center``, ``right``, ``color``, ``bgcolor``, ``fgcolor``.
+
+Color tags only support the following named colors: ``black``, ``red``, ``green``, ``yellow``, ``blue``, ``magenta``, ``pink``, ``purple``, ``cyan``, ``white``, ``orange``, ``gray``. Hexadecimal color codes are not supported.
+
+URL tags only support URLs wrapped by a URL tag, not URLs with a different title.
+
+When printing to standard output, the supported subset of BBCode is converted to ANSI escape codes for the terminal emulator to display. Support for ANSI escape codes varies across terminal emulators, especially for italic and strikethrough. In standard output, ``code`` is represented with faint text but without any font change. Unsupported tags are left as-is in standard output.
 
 
 .. tabs::
 
  .. code-tab:: gdscript
 
-    print_rich("[code][b]Hello world![/b][/code]") # Prints out: [b]Hello world![/b]
+    print_rich("[color=green][b]Hello world![/b][/color]") # Prints out "Hello world!" in green with a bold font
 
  .. code-tab:: csharp
 
-    GD.PrintRich("[code][b]Hello world![/b][/code]"); // Prints out: [b]Hello world![/b]
+    GD.PrintRich("[color=green][b]Hello world![/b][/color]"); // Prints out "Hello world!" in green with a bold font
 
 
 
 \ **Note:** Consider using :ref:`push_error<class_@GlobalScope_method_push_error>` and :ref:`push_warning<class_@GlobalScope_method_push_warning>` to print error and warning messages instead of :ref:`print<class_@GlobalScope_method_print>` or :ref:`print_rich<class_@GlobalScope_method_print_rich>`. This distinguishes them from print messages used for debugging purposes, while also displaying a stack trace when an error or warning is printed.
+
+\ **Note:** On Windows, only Windows 10 and later correctly displays ANSI escape codes in standard output.
 
 .. rst-class:: classref-item-separator
 
@@ -6618,6 +6803,22 @@ Creates a RID from a ``base``. This is used mainly from native extensions to bui
 
 ----
 
+.. _class_@GlobalScope_method_rotate_toward:
+
+.. rst-class:: classref-method
+
+:ref:`float<class_float>` **rotate_toward** **(** :ref:`float<class_float>` from, :ref:`float<class_float>` to, :ref:`float<class_float>` delta **)**
+
+Rotates ``from`` toward ``to`` by the ``delta`` amount. Will not go past ``to``.
+
+Similar to :ref:`move_toward<class_@GlobalScope_method_move_toward>`, but interpolates correctly when the angles wrap around :ref:`@GDScript.TAU<class_@GDScript_constant_TAU>`.
+
+If ``delta`` is negative, this function will rotate away from ``to``, toward the opposite angle, and will not go past the opposite angle.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_@GlobalScope_method_round:
 
 .. rst-class:: classref-method
@@ -6709,13 +6910,16 @@ Sets the seed for the random number generator to ``base``. Setting the seed manu
 
 :ref:`Variant<class_Variant>` **sign** **(** :ref:`Variant<class_Variant>` x **)**
 
-Returns the same type of :ref:`Variant<class_Variant>` as ``x``, with ``-1`` for negative values, ``1`` for positive values, and ``0`` for zeros. Supported types: :ref:`int<class_int>`, :ref:`float<class_float>`, :ref:`Vector2<class_Vector2>`, :ref:`Vector2i<class_Vector2i>`, :ref:`Vector3<class_Vector3>`, :ref:`Vector3i<class_Vector3i>`, :ref:`Vector4<class_Vector4>`, :ref:`Vector4i<class_Vector4i>`.
+Returns the same type of :ref:`Variant<class_Variant>` as ``x``, with ``-1`` for negative values, ``1`` for positive values, and ``0`` for zeros. For ``nan`` values it returns 0.
+
+Supported types: :ref:`int<class_int>`, :ref:`float<class_float>`, :ref:`Vector2<class_Vector2>`, :ref:`Vector2i<class_Vector2i>`, :ref:`Vector3<class_Vector3>`, :ref:`Vector3i<class_Vector3i>`, :ref:`Vector4<class_Vector4>`, :ref:`Vector4i<class_Vector4i>`.
 
 ::
 
     sign(-6.0) # Returns -1
     sign(0.0)  # Returns 0
     sign(6.0)  # Returns 1
+    sign(NAN)  # Returns 0
     
     sign(Vector3(-6.0, 0.0, 6.0)) # Returns (-1, 0, 1)
 
@@ -6731,13 +6935,14 @@ Returns the same type of :ref:`Variant<class_Variant>` as ``x``, with ``-1`` for
 
 :ref:`float<class_float>` **signf** **(** :ref:`float<class_float>` x **)**
 
-Returns ``-1.0`` if ``x`` is negative, ``1.0`` if ``x`` is positive, and ``0.0`` if ``x`` is zero.
+Returns ``-1.0`` if ``x`` is negative, ``1.0`` if ``x`` is positive, and ``0.0`` if ``x`` is zero. For ``nan`` values of ``x`` it returns 0.0.
 
 ::
 
-    sign(-6.5) # Returns -1.0
-    sign(0.0)  # Returns 0.0
-    sign(6.5)  # Returns 1.0
+    signf(-6.5) # Returns -1.0
+    signf(0.0)  # Returns 0.0
+    signf(6.5)  # Returns 1.0
+    signf(NAN)  # Returns 0.0
 
 .. rst-class:: classref-item-separator
 
@@ -6753,9 +6958,9 @@ Returns ``-1`` if ``x`` is negative, ``1`` if ``x`` is positive, and ``0`` if if
 
 ::
 
-    sign(-6) # Returns -1
-    sign(0)  # Returns 0
-    sign(6)  # Returns 1
+    signi(-6) # Returns -1
+    signi(0)  # Returns 0
+    signi(6)  # Returns 1
 
 .. rst-class:: classref-item-separator
 
@@ -6859,8 +7064,8 @@ A type-safe version of :ref:`snapped<class_@GlobalScope_method_snapped>`, return
 
 ::
 
-    snapped(32.0, 2.5)  # Returns 32.5
-    snapped(3.14159, 0.01)  # Returns 3.14
+    snappedf(32.0, 2.5)  # Returns 32.5
+    snappedf(3.14159, 0.01)  # Returns 3.14
 
 .. rst-class:: classref-item-separator
 
@@ -6878,8 +7083,8 @@ A type-safe version of :ref:`snapped<class_@GlobalScope_method_snapped>`, return
 
 ::
 
-    snapped(53, 16)  # Returns 48
-    snapped(4096, 100)  # Returns 4100
+    snappedi(53, 16)  # Returns 48
+    snappedi(4096, 100)  # Returns 4100
 
 .. rst-class:: classref-item-separator
 
@@ -7004,6 +7209,50 @@ Returns the hyperbolic tangent of ``x``.
 
 ----
 
+.. _class_@GlobalScope_method_type_convert:
+
+.. rst-class:: classref-method
+
+:ref:`Variant<class_Variant>` **type_convert** **(** :ref:`Variant<class_Variant>` variant, :ref:`int<class_int>` type **)**
+
+Converts the given ``variant`` to the given ``type``, using the :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` values. This method is generous with how it handles types, it can automatically convert between array types, convert numeric :ref:`String<class_String>`\ s to :ref:`int<class_int>`, and converting most things to :ref:`String<class_String>`.
+
+If the type conversion cannot be done, this method will return the default value for that type, for example converting :ref:`Rect2<class_Rect2>` to :ref:`Vector2<class_Vector2>` will always return :ref:`Vector2.ZERO<class_Vector2_constant_ZERO>`. This method will never show error messages as long as ``type`` is a valid Variant type.
+
+The returned value is a :ref:`Variant<class_Variant>`, but the data inside and the :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` will be the same as the requested type.
+
+::
+
+    type_convert("Hi!", TYPE_INT) # Returns 0
+    type_convert("123", TYPE_INT) # Returns 123
+    type_convert(123.4, TYPE_INT) # Returns 123
+    type_convert(5, TYPE_VECTOR2) # Returns (0, 0)
+    type_convert("Hi!", TYPE_NIL) # Returns null
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_@GlobalScope_method_type_string:
+
+.. rst-class:: classref-method
+
+:ref:`String<class_String>` **type_string** **(** :ref:`int<class_int>` type **)**
+
+Returns a human-readable name of the given ``type``, using the :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` values.
+
+::
+
+    print(TYPE_INT) # Prints 2.
+    print(type_string(TYPE_INT)) # Prints "int".
+    print(type_string(TYPE_STRING)) # Prints "String".
+
+See also :ref:`typeof<class_@GlobalScope_method_typeof>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_@GlobalScope_method_typeof:
 
 .. rst-class:: classref-method
@@ -7021,6 +7270,8 @@ Returns the internal type of the given ``variable``, using the :ref:`Variant.Typ
         print(result[0]) # Prints a
     else:
         print("Unexpected result")
+
+See also :ref:`type_string<class_@GlobalScope_method_type_string>`.
 
 .. rst-class:: classref-item-separator
 
@@ -7083,6 +7334,8 @@ Prints:
         "a": 1,
         "b": 2
     }
+
+\ **Note:** Converting :ref:`Signal<class_Signal>` or :ref:`Callable<class_Callable>` is not supported and will result in an empty value for these types, regardless of their data.
 
 .. rst-class:: classref-item-separator
 
@@ -7152,7 +7405,7 @@ Wraps the float ``value`` between ``min`` and ``max``. Can be used for creating 
 
 \ **Note:** If ``min`` is ``0``, this is equivalent to :ref:`fposmod<class_@GlobalScope_method_fposmod>`, so prefer using that instead.
 
-\ ``wrapf`` is more flexible than using the :ref:`fposmod<class_@GlobalScope_method_fposmod>` approach by giving the user control over the minimum value.
+\ :ref:`wrapf<class_@GlobalScope_method_wrapf>` is more flexible than using the :ref:`fposmod<class_@GlobalScope_method_fposmod>` approach by giving the user control over the minimum value.
 
 .. rst-class:: classref-item-separator
 
@@ -7182,3 +7435,4 @@ Wraps the integer ``value`` between ``min`` and ``max``. Can be used for creatin
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

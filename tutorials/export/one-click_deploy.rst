@@ -57,7 +57,9 @@ Using one-click deploy
   icons will appear in the top-right corner of the editor.
 - Click the button to export to the desired platform in one click.
 
-.. image:: img/oneclick.png
+.. image:: img/remote_debug.webp
+
+.. _doc_one-click_deploy_troubleshooting:
 
 Troubleshooting
 ---------------

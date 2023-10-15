@@ -12,14 +12,14 @@ PhysicsPointQueryParameters2D
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-Parameters to be sent to a 2D point physics query.
+Provides parameters for :ref:`PhysicsDirectSpaceState2D.intersect_point<class_PhysicsDirectSpaceState2D_method_intersect_point>`.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-This class contains the position and other parameters to be used for :ref:`PhysicsDirectSpaceState2D.intersect_point<class_PhysicsDirectSpaceState2D_method_intersect_point>`.
+By changing various properties of this object, such as the point position, you can configure the parameters for :ref:`PhysicsDirectSpaceState2D.intersect_point<class_PhysicsDirectSpaceState2D_method_intersect_point>`.
 
 .. rst-class:: classref-reftable-group
 
@@ -158,3 +158,4 @@ The position being queried for, in global coordinates.
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

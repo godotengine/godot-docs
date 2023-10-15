@@ -139,11 +139,11 @@ You should avoid using more than one **Tween** per object's property. If two or 
 
 Some :ref:`Tweener<class_Tweener>`\ s use transitions and eases. The first accepts a :ref:`TransitionType<enum_Tween_TransitionType>` constant, and refers to the way the timing of the animation is handled (see `easings.net <https://easings.net/>`__ for some examples). The second accepts an :ref:`EaseType<enum_Tween_EaseType>` constant, and controls where the ``trans_type`` is applied to the interpolation (in the beginning, the end, or both). If you don't know which transition and easing to pick, you can try different :ref:`TransitionType<enum_Tween_TransitionType>` constants with :ref:`EASE_IN_OUT<class_Tween_constant_EASE_IN_OUT>`, and use the one that looks best.
 
-\ `Tween easing and transition types cheatsheet <https://raw.githubusercontent.com/godotengine/godot-docs/master/img/tween_cheatsheet.png>`__\ 
+\ `Tween easing and transition types cheatsheet <https://raw.githubusercontent.com/godotengine/godot-docs/master/img/tween_cheatsheet.webp>`__\ 
 
-\ **Note:** All **Tween**\ s will automatically start by default. To prevent a **Tween** from autostarting, you can call :ref:`stop<class_Tween_method_stop>` immediately after it is created.
+\ **Note:** Tweens are not designed to be re-used and trying to do so results in an undefined behavior. Create a new Tween for each animation and every time you replay an animation from start. Keep in mind that Tweens start immediately, so only create a Tween when you want to start animating.
 
-\ **Note:** **Tween**\ s are processing after all of nodes in the current frame, i.e. after :ref:`Node._process<class_Node_method__process>` or :ref:`Node._physics_process<class_Node_method__physics_process>` (depending on :ref:`TweenProcessMode<enum_Tween_TweenProcessMode>`).
+\ **Note:** The tween is processed after all of the nodes in the current frame, i.e. node's :ref:`Node._process<class_Node_method__process>` method would be called before the tween (or :ref:`Node._physics_process<class_Node_method__physics_process>` depending on the value passed to :ref:`set_process_mode<class_Tween_method_set_process_mode>`).
 
 .. rst-class:: classref-reftable-group
 
@@ -159,6 +159,8 @@ Methods
    | :ref:`Tween<class_Tween>`                     | :ref:`chain<class_Tween_method_chain>` **(** **)**                                                                                                                                                                                                                                                                                                                  |
    +-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                       | :ref:`custom_step<class_Tween_method_custom_step>` **(** :ref:`float<class_float>` delta **)**                                                                                                                                                                                                                                                                      |
+   +-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                         | :ref:`get_loops_left<class_Tween_method_get_loops_left>` **(** **)** |const|                                                                                                                                                                                                                                                                                        |
    +-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                     | :ref:`get_total_elapsed_time<class_Tween_method_get_total_elapsed_time>` **(** **)** |const|                                                                                                                                                                                                                                                                        |
    +-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -218,8 +220,6 @@ Signals
 
 Emitted when the **Tween** has finished all tweening. Never emitted when the **Tween** is set to infinite looping (see :ref:`set_loops<class_Tween_method_set_loops>`).
 
-\ **Note:** The **Tween** is removed (invalidated) in the next processing frame after this signal is emitted. Calling :ref:`stop<class_Tween_method_stop>` inside the signal callback will prevent the **Tween** from being removed.
-
 .. rst-class:: classref-item-separator
 
 ----
@@ -265,7 +265,7 @@ enum **TweenProcessMode**:
 
 :ref:`TweenProcessMode<enum_Tween_TweenProcessMode>` **TWEEN_PROCESS_PHYSICS** = ``0``
 
-The **Tween** updates during the physics frame.
+The **Tween** updates after each physics frame (see :ref:`Node._physics_process<class_Node_method__physics_process>`).
 
 .. _class_Tween_constant_TWEEN_PROCESS_IDLE:
 
@@ -273,7 +273,7 @@ The **Tween** updates during the physics frame.
 
 :ref:`TweenProcessMode<enum_Tween_TweenProcessMode>` **TWEEN_PROCESS_IDLE** = ``1``
 
-The **Tween** updates during the idle frame.
+The **Tween** updates after each process frame (see :ref:`Node._process<class_Node_method__process>`).
 
 .. rst-class:: classref-item-separator
 
@@ -407,6 +407,14 @@ The animation is interpolated by bouncing at the end.
 
 The animation is interpolated backing out at ends.
 
+.. _class_Tween_constant_TRANS_SPRING:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`TransitionType<enum_Tween_TransitionType>` **TRANS_SPRING** = ``11``
+
+The animation is interpolated like a spring towards the end.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -513,7 +521,17 @@ Processes the **Tween** by the given ``delta`` value, in seconds. This is mostly
 
 Returns ``true`` if the **Tween** still has :ref:`Tweener<class_Tweener>`\ s that haven't finished.
 
-\ **Note:** The **Tween** will become invalid in the next processing frame after its animation finishes. Calling :ref:`stop<class_Tween_method_stop>` after performing :ref:`custom_step<class_Tween_method_custom_step>` instead keeps and resets the **Tween**.
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Tween_method_get_loops_left:
+
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **get_loops_left** **(** **)** |const|
+
+Returns the number of remaining loops for this **Tween** (see :ref:`set_loops<class_Tween_method_set_loops>`). A return value of ``-1`` indicates an infinitely looping **Tween**, and a return value of ``0`` indicates that the **Tween** has already finished.
 
 .. rst-class:: classref-item-separator
 
@@ -636,6 +654,8 @@ void **pause** **(** **)**
 
 Pauses the tweening. The animation can be resumed by using :ref:`play<class_Tween_method_play>`.
 
+\ **Note:** If a Tween is paused and not bound to any node, it will exist indefinitely until manually started or invalidated. If you lose a reference to such Tween, you can retrieve it using :ref:`SceneTree.get_processed_tweens<class_SceneTree_method_get_processed_tweens>`.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -714,7 +734,7 @@ Default value is :ref:`TWEEN_PAUSE_BOUND<class_Tween_constant_TWEEN_PAUSE_BOUND>
 
 :ref:`Tween<class_Tween>` **set_process_mode** **(** :ref:`TweenProcessMode<enum_Tween_TweenProcessMode>` mode **)**
 
-Determines whether the **Tween** should run during idle frame (see :ref:`Node._process<class_Node_method__process>`) or physics frame (see :ref:`Node._physics_process<class_Node_method__physics_process>`.
+Determines whether the **Tween** should run after process frames (see :ref:`Node._process<class_Node_method__process>`) or physics frames (see :ref:`Node._physics_process<class_Node_method__physics_process>`).
 
 Default value is :ref:`TWEEN_PROCESS_IDLE<class_Tween_constant_TWEEN_PROCESS_IDLE>`.
 
@@ -755,6 +775,8 @@ If not specified, the default value is :ref:`TRANS_LINEAR<class_Tween_constant_T
 void **stop** **(** **)**
 
 Stops the tweening and resets the **Tween** to its initial state. This will not remove any appended :ref:`Tweener<class_Tweener>`\ s.
+
+\ **Note:** If a Tween is stopped and not bound to any node, it will exist indefinitely until manually started or invalidated. If you lose a reference to such Tween, you can retrieve it using :ref:`SceneTree.get_processed_tweens<class_SceneTree_method_get_processed_tweens>`.
 
 .. rst-class:: classref-item-separator
 
@@ -888,7 +910,7 @@ Creates and appends a :ref:`MethodTweener<class_MethodTweener>`. This method is 
  .. code-tab:: csharp
 
     Tween tween = CreateTween();
-    tween.TweenMethod(Callable.From(() => LookAt(Vector3.Up)), new Vector3(-1.0f, 0.0f, -1.0f), new Vector3(1.0f, 0.0f, -1.0f), 1.0f); // The LookAt() method takes up vector as second argument.
+    tween.TweenMethod(Callable.From((Vector3 target) => LookAt(target, Vector3.Up)), new Vector3(-1.0f, 0.0f, -1.0f), new Vector3(1.0f, 0.0f, -1.0f), 1.0f); // Use lambdas to bind additional arguments for the call.
 
 
 
@@ -983,3 +1005,4 @@ will move the sprite to position (100, 200) and then to (200, 300). If you use :
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

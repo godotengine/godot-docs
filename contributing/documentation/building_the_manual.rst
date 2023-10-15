@@ -10,7 +10,7 @@ documentation as a PDF, EPUB, or LaTeX file, for example.
 Before you get started, make sure that you have:
 
 - `Git <https://git-scm.com/>`_
-- `make <https://www.gnu.org/software/make/>`_ (unless you’re using Windows)
+- `make <https://www.gnu.org/software/make/>`_ (unless you're using Windows)
 - `Python <https://www.python.org/>`_ 3
 
 .. note:: Python 3 should come with the ``pip3`` command. You may need to write
@@ -153,6 +153,11 @@ If you have at least 16 GB of RAM, you can speed up compilation by running:
         .. code:: sh
 
             make html SPHINXOPTS=-j2
+
+You can use ``-j auto`` to use all available CPU threads, but this can use a lot
+of RAM if you have a lot of CPU threads. For instance, on a system with 32 CPU
+threads, ``-j auto`` (which corresponds to ``-j 32`` here) can require 20+ GB of
+RAM for Sphinx alone.
 
 Specifying a list of files
 ^^^^^^^^^^^^^^^^^^^^^^^^^^

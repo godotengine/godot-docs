@@ -43,7 +43,7 @@ This is because images have to be imported as a :ref:`CompressedTexture2D<class_
 ::
 
     var texture = load("res://icon.svg")
-    var image : Image = texture.get_image()
+    var image: Image = texture.get_image()
 
 An **ImageTexture** is not meant to be operated from within the editor interface directly, and is mostly useful for rendering images on screen dynamically via code. If you need to generate images procedurally from within the editor, consider saving and importing images as custom texture resources implementing a new :ref:`EditorImportPlugin<class_EditorImportPlugin>`.
 
@@ -165,3 +165,4 @@ Use this method over :ref:`set_image<class_ImageTexture_method_set_image>` if yo
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

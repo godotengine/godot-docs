@@ -12,7 +12,7 @@ PhysicalSkyMaterial
 
 **Inherits:** :ref:`Material<class_Material>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-:ref:`Sky<class_Sky>` :ref:`Material<class_Material>` used for a physically based sky.
+A material that defines a sky for a :ref:`Sky<class_Sky>` resource by a set of physical properties.
 
 .. rst-class:: classref-introduction-group
 
@@ -255,3 +255,4 @@ If ``true``, enables debanding. Debanding adds a small amount of noise which hel
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

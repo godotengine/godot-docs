@@ -10,7 +10,7 @@
 AABB
 ====
 
-Axis-Aligned Bounding Box.
+A 3D axis-aligned bounding box.
 
 .. rst-class:: classref-introduction-group
 
@@ -24,6 +24,10 @@ It uses floating-point coordinates. The 2D counterpart to **AABB** is :ref:`Rect
 Negative values for :ref:`size<class_AABB_property_size>` are not supported and will not work for most methods. Use :ref:`abs<class_AABB_method_abs>` to get an AABB with a positive size.
 
 \ **Note:** Unlike :ref:`Rect2<class_Rect2>`, **AABB** does not have a variant that uses integer coordinates.
+
+.. note::
+
+	There are notable differences when using this API with C#. See :ref:`doc_c_sharp_differences` for more information.
 
 .. rst-class:: classref-introduction-group
 
@@ -392,7 +396,7 @@ Returns the scalar length of the shortest axis of the **AABB**.
 
 :ref:`Vector3<class_Vector3>` **get_support** **(** :ref:`Vector3<class_Vector3>` dir **)** |const|
 
-Returns the support point in a given direction. This is useful for collision detection algorithms.
+Returns the vertex of the AABB that's the farthest in a given direction. This point is commonly known as the support point in collision detection algorithms.
 
 .. rst-class:: classref-item-separator
 
@@ -502,7 +506,7 @@ Returns ``true`` if the **AABB** is on both sides of a plane.
 
 :ref:`Variant<class_Variant>` **intersects_ray** **(** :ref:`Vector3<class_Vector3>` from, :ref:`Vector3<class_Vector3>` dir **)** |const|
 
-Returns ``true`` if the given ray intersects with this **AABB**. Ray length is infinite.
+Returns the point of intersection of the given ray with this **AABB** or ``null`` if there is no intersection. Ray length is infinite.
 
 .. rst-class:: classref-item-separator
 
@@ -514,7 +518,7 @@ Returns ``true`` if the given ray intersects with this **AABB**. Ray length is i
 
 :ref:`Variant<class_Variant>` **intersects_segment** **(** :ref:`Vector3<class_Vector3>` from, :ref:`Vector3<class_Vector3>` to **)** |const|
 
-Returns ``true`` if the **AABB** intersects the line segment between ``from`` and ``to``.
+Returns the point of intersection between ``from`` and ``to`` with this **AABB** or ``null`` if there is no intersection.
 
 .. rst-class:: classref-item-separator
 
@@ -567,7 +571,7 @@ Operator Descriptions
 
 :ref:`bool<class_bool>` **operator !=** **(** :ref:`AABB<class_AABB>` right **)**
 
-Returns ``true`` if the vectors are not equal.
+Returns ``true`` if the AABBs are not equal.
 
 \ **Note:** Due to floating-point precision errors, consider using :ref:`is_equal_approx<class_AABB_method_is_equal_approx>` instead, which is more reliable.
 
@@ -603,3 +607,4 @@ Returns ``true`` if the AABBs are exactly equal.
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

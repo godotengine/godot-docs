@@ -10,16 +10,18 @@
 Vector4i
 ========
 
-Vector used for 4D math using integer coordinates.
+A 4D vector using integer coordinates.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-4-element structure that can be used to represent 4D grid coordinates or sets of integers.
+A 4-element structure that can be used to represent 4D grid coordinates or any other quadruplet of integers.
 
 It uses integer coordinates and is therefore preferable to :ref:`Vector4<class_Vector4>` when exact precision is required. Note that the values are limited to 32 bits, and unlike :ref:`Vector4<class_Vector4>` this cannot be configured with an engine build option. Use :ref:`int<class_int>` or :ref:`PackedInt64Array<class_PackedInt64Array>` if 64-bit values are needed.
+
+\ **Note:** In a boolean context, a Vector4i will evaluate to ``false`` if it's equal to ``Vector4i(0, 0, 0, 0)``. Otherwise, a Vector3i will always evaluate to ``true``.
 
 .. rst-class:: classref-reftable-group
 
@@ -188,6 +190,22 @@ Zero vector, a vector with all components set to ``0``.
 
 One vector, a vector with all components set to ``1``.
 
+.. _class_Vector4i_constant_MIN:
+
+.. rst-class:: classref-constant
+
+**MIN** = ``Vector4i(-2147483648, -2147483648, -2147483648, -2147483648)``
+
+Min vector, a vector with all components equal to ``INT32_MIN``. Can be used as a negative integer equivalent of :ref:`Vector4.INF<class_Vector4_constant_INF>`.
+
+.. _class_Vector4i_constant_MAX:
+
+.. rst-class:: classref-constant
+
+**MAX** = ``Vector4i(2147483647, 2147483647, 2147483647, 2147483647)``
+
+Max vector, a vector with all components equal to ``INT32_MAX``. Can be used as an integer equivalent of :ref:`Vector4.INF<class_Vector4_constant_INF>`.
+
 .. rst-class:: classref-section-separator
 
 ----
@@ -276,7 +294,7 @@ Constructs a **Vector4i** as a copy of the given **Vector4i**.
 
 :ref:`Vector4i<class_Vector4i>` **Vector4i** **(** :ref:`Vector4<class_Vector4>` from **)**
 
-Constructs a new **Vector4i** from the given :ref:`Vector4<class_Vector4>`.
+Constructs a new **Vector4i** from the given :ref:`Vector4<class_Vector4>` by truncating components' fractional parts (rounding towards zero). For a different behavior consider passing the result of :ref:`Vector4.ceil<class_Vector4_method_ceil>`, :ref:`Vector4.floor<class_Vector4_method_floor>` or :ref:`Vector4.round<class_Vector4_method_round>` to this constructor instead.
 
 .. rst-class:: classref-item-separator
 
@@ -339,7 +357,9 @@ Returns the length (magnitude) of this vector.
 
 :ref:`int<class_int>` **length_squared** **(** **)** |const|
 
-Returns the squared length (squared magnitude) of this vector. This method runs faster than :ref:`length<class_Vector4i_method_length>`.
+Returns the squared length (squared magnitude) of this vector.
+
+This method runs faster than :ref:`length<class_Vector4i_method_length>`, so prefer it if you need to compare vectors or need the squared distance for some formula.
 
 .. rst-class:: classref-item-separator
 
@@ -664,3 +684,4 @@ Returns the negative value of the **Vector4i**. This is the same as writing ``Ve
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

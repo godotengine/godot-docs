@@ -445,7 +445,7 @@ terrain. Godot provides :ref:`class_fastnoiselite` for this, which supports
     func _ready():
         randomize()
         # Configure the FastNoiseLite instance.
-        _noise.noise_type = NoiseType.TYPE_SIMPLEX_SMOOTH
+        _noise.noise_type = FastNoiseLite.NoiseType.TYPE_SIMPLEX_SMOOTH
         _noise.seed = randi()
         _noise.fractal_octaves = 4
         _noise.frequency = 1.0 / 20.0

@@ -12,9 +12,7 @@ SystemFont
 
 **Inherits:** :ref:`Font<class_Font>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-Font loaded from a system font.
-
-\ **Note:** This class is implemented on iOS, Linux, macOS and Windows, on other platforms it will fallback to default theme font.
+A font loaded from a system font. Falls back to a default theme font if not implemented on the host OS.
 
 .. rst-class:: classref-introduction-group
 
@@ -29,6 +27,8 @@ The returned font might be part of a font collection or be a variable font with 
 
 You can create :ref:`FontVariation<class_FontVariation>` of the system font for fine control over its features.
 
+\ **Note:** This class is implemented on iOS, Linux, macOS and Windows, on other platforms it will fallback to default theme font.
+
 .. rst-class:: classref-reftable-group
 
 Properties
@@ -41,8 +41,6 @@ Properties
    | :ref:`bool<class_bool>`                                         | :ref:`allow_system_fallback<class_SystemFont_property_allow_system_fallback>`                           | ``true``                |
    +-----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+-------------------------+
    | :ref:`FontAntialiasing<enum_TextServer_FontAntialiasing>`       | :ref:`antialiasing<class_SystemFont_property_antialiasing>`                                             | ``1``                   |
-   +-----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+-------------------------+
-   | :ref:`Font[]<class_Font>`                                       | :ref:`fallbacks<class_SystemFont_property_fallbacks>`                                                   | ``[]``                  |
    +-----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+-------------------------+
    | :ref:`bool<class_bool>`                                         | :ref:`font_italic<class_SystemFont_property_font_italic>`                                               | ``false``               |
    +-----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+-------------------------+
@@ -107,23 +105,6 @@ If set to ``true``, system fonts can be automatically used as fallbacks.
 - :ref:`FontAntialiasing<enum_TextServer_FontAntialiasing>` **get_antialiasing** **(** **)**
 
 Font anti-aliasing mode.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_SystemFont_property_fallbacks:
-
-.. rst-class:: classref-property
-
-:ref:`Font[]<class_Font>` **fallbacks** = ``[]``
-
-.. rst-class:: classref-property-setget
-
-- void **set_fallbacks** **(** :ref:`Font[]<class_Font>` value **)**
-- :ref:`Font[]<class_Font>` **get_fallbacks** **(** **)**
-
-Array of fallback :ref:`Font<class_Font>`\ s.
 
 .. rst-class:: classref-item-separator
 
@@ -335,3 +316,4 @@ Font glyph subpixel positioning mode. Subpixel positioning provides shaper text 
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

@@ -14,21 +14,21 @@ BaseMaterial3D
 
 **Inherited By:** :ref:`ORMMaterial3D<class_ORMMaterial3D>`, :ref:`StandardMaterial3D<class_StandardMaterial3D>`
 
-Default 3D rendering material.
+Abstract base class for defining the 3D rendering properties of meshes.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-This provides a default material with a wide variety of rendering features and properties without the need to write shader code. See the tutorial below for details.
+This class serves as a default material with a wide variety of rendering features and properties without the need to write shader code. See the tutorial below for details.
 
 .. rst-class:: classref-introduction-group
 
 Tutorials
 ---------
 
-- :doc:`Standard Material 3D <../tutorials/3d/standard_material_3d>`
+- :doc:`Standard Material 3D and ORM Material 3D <../tutorials/3d/standard_material_3d>`
 
 .. rst-class:: classref-reftable-group
 
@@ -110,6 +110,8 @@ Properties
    | :ref:`DiffuseMode<enum_BaseMaterial3D_DiffuseMode>`             | :ref:`diffuse_mode<class_BaseMaterial3D_property_diffuse_mode>`                                                   | ``0``                 |
    +-----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------+-----------------------+
    | :ref:`bool<class_bool>`                                         | :ref:`disable_ambient_light<class_BaseMaterial3D_property_disable_ambient_light>`                                 | ``false``             |
+   +-----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`bool<class_bool>`                                         | :ref:`disable_fog<class_BaseMaterial3D_property_disable_fog>`                                                     | ``false``             |
    +-----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------+-----------------------+
    | :ref:`bool<class_bool>`                                         | :ref:`disable_receive_shadows<class_BaseMaterial3D_property_disable_receive_shadows>`                             | ``false``             |
    +-----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------+-----------------------+
@@ -1093,11 +1095,19 @@ Enables parts of the shader required for :ref:`GPUParticles3D<class_GPUParticles
 
 Enables multichannel signed distance field rendering shader.
 
+.. _class_BaseMaterial3D_constant_FLAG_DISABLE_FOG:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Flags<enum_BaseMaterial3D_Flags>` **FLAG_DISABLE_FOG** = ``21``
+
+Disables receiving depth-based or volumetric fog.
+
 .. _class_BaseMaterial3D_constant_FLAG_MAX:
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`Flags<enum_BaseMaterial3D_Flags>` **FLAG_MAX** = ``21``
+:ref:`Flags<enum_BaseMaterial3D_Flags>` **FLAG_MAX** = ``22``
 
 Represents the size of the :ref:`Flags<enum_BaseMaterial3D_Flags>` enum.
 
@@ -1982,6 +1992,23 @@ If ``true``, the object receives no ambient light.
 
 ----
 
+.. _class_BaseMaterial3D_property_disable_fog:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **disable_fog** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_flag** **(** :ref:`Flags<enum_BaseMaterial3D_Flags>` flag, :ref:`bool<class_bool>` enable **)**
+- :ref:`bool<class_bool>` **get_flag** **(** :ref:`Flags<enum_BaseMaterial3D_Flags>` flag **)** |const|
+
+If ``true``, the object will not be affected by fog (neither volumetric nor depth fog). This is useful for unshaded or transparent materials (e.g. particles), which without this setting will be affected even if fully transparent.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_BaseMaterial3D_property_disable_receive_shadows:
 
 .. rst-class:: classref-property
@@ -2012,7 +2039,7 @@ If ``true``, the object receives no shadow that would otherwise be cast onto it.
 
 Distance at which the object appears fully opaque.
 
-\ **Note:** If ``distance_fade_max_distance`` is less than ``distance_fade_min_distance``, the behavior will be reversed. The object will start to fade away at ``distance_fade_max_distance`` and will fully disappear once it reaches ``distance_fade_min_distance``.
+\ **Note:** If :ref:`distance_fade_max_distance<class_BaseMaterial3D_property_distance_fade_max_distance>` is less than :ref:`distance_fade_min_distance<class_BaseMaterial3D_property_distance_fade_min_distance>`, the behavior will be reversed. The object will start to fade away at :ref:`distance_fade_max_distance<class_BaseMaterial3D_property_distance_fade_max_distance>` and will fully disappear once it reaches :ref:`distance_fade_min_distance<class_BaseMaterial3D_property_distance_fade_min_distance>`.
 
 .. rst-class:: classref-item-separator
 
@@ -2031,7 +2058,7 @@ Distance at which the object appears fully opaque.
 
 Distance at which the object starts to become visible. If the object is less than this distance away, it will be invisible.
 
-\ **Note:** If ``distance_fade_min_distance`` is greater than ``distance_fade_max_distance``, the behavior will be reversed. The object will start to fade away at ``distance_fade_max_distance`` and will fully disappear once it reaches ``distance_fade_min_distance``.
+\ **Note:** If :ref:`distance_fade_min_distance<class_BaseMaterial3D_property_distance_fade_min_distance>` is greater than :ref:`distance_fade_max_distance<class_BaseMaterial3D_property_distance_fade_max_distance>`, the behavior will be reversed. The object will start to fade away at :ref:`distance_fade_max_distance<class_BaseMaterial3D_property_distance_fade_max_distance>` and will fully disappear once it reaches :ref:`distance_fade_min_distance<class_BaseMaterial3D_property_distance_fade_min_distance>`.
 
 .. rst-class:: classref-item-separator
 
@@ -2474,7 +2501,7 @@ Specifies the channel of the :ref:`metallic_texture<class_BaseMaterial3D_propert
 - void **set_msdf_outline_size** **(** :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_msdf_outline_size** **(** **)**
 
-The width of the shape outine.
+The width of the shape outline.
 
 .. rst-class:: classref-item-separator
 
@@ -2945,7 +2972,7 @@ The method for rendering the specular blob. See :ref:`SpecularMode<enum_BaseMate
 - void **set_feature** **(** :ref:`Feature<enum_BaseMaterial3D_Feature>` feature, :ref:`bool<class_bool>` enable **)**
 - :ref:`bool<class_bool>` **get_feature** **(** :ref:`Feature<enum_BaseMaterial3D_Feature>` feature **)** |const|
 
-If ``true``, subsurface scattering is enabled. Emulates light that penetrates an object's surface, is scattered, and then emerges.
+If ``true``, subsurface scattering is enabled. Emulates light that penetrates an object's surface, is scattered, and then emerges. Subsurface scattering quality is controlled by :ref:`ProjectSettings.rendering/environment/subsurface_scattering/subsurface_scattering_quality<class_ProjectSettings_property_rendering/environment/subsurface_scattering/subsurface_scattering_quality>`.
 
 .. rst-class:: classref-item-separator
 
@@ -2979,7 +3006,7 @@ If ``true``, subsurface scattering will use a special mode optimized for the col
 - void **set_subsurface_scattering_strength** **(** :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_subsurface_scattering_strength** **(** **)**
 
-The strength of the subsurface scattering effect.
+The strength of the subsurface scattering effect. The depth of the effect is also controlled by :ref:`ProjectSettings.rendering/environment/subsurface_scattering/subsurface_scattering_scale<class_ProjectSettings_property_rendering/environment/subsurface_scattering/subsurface_scattering_scale>`, which is set globally.
 
 .. rst-class:: classref-item-separator
 
@@ -3134,7 +3161,7 @@ Repeat flags for the texture. See :ref:`TextureFilter<enum_BaseMaterial3D_Textur
 - void **set_transparency** **(** :ref:`Transparency<enum_BaseMaterial3D_Transparency>` value **)**
 - :ref:`Transparency<enum_BaseMaterial3D_Transparency>` **get_transparency** **(** **)**
 
-If ``true``, transparency is enabled on the body. Some transparency modes will disable shadow casting. Any transparency mode other than Disabled has a greater performance impact compared to opaque rendering. See also :ref:`blend_mode<class_BaseMaterial3D_property_blend_mode>`.
+The material's transparency mode. Some transparency modes will disable shadow casting. Any transparency mode other than :ref:`TRANSPARENCY_DISABLED<class_BaseMaterial3D_constant_TRANSPARENCY_DISABLED>` has a greater performance impact compared to opaque rendering. See also :ref:`blend_mode<class_BaseMaterial3D_property_blend_mode>`.
 
 .. rst-class:: classref-item-separator
 
@@ -3465,3 +3492,4 @@ Sets the texture for the slot specified by ``param``. See :ref:`TextureParam<enu
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

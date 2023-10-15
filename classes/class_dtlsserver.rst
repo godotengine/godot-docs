@@ -43,8 +43,8 @@ Below a small example of how to use it:
     
     func _process(delta):
         while server.is_connection_available():
-            var peer : PacketPeerUDP = server.take_connection()
-            var dtls_peer : PacketPeerDTLS = dtls.take_connection(peer)
+            var peer: PacketPeerUDP = server.take_connection()
+            var dtls_peer: PacketPeerDTLS = dtls.take_connection(peer)
             if dtls_peer.get_status() != PacketPeerDTLS.STATUS_HANDSHAKING:
                 continue # It is normal that 50% of the connections fails due to cookie exchange.
             print("Peer connected!")
@@ -55,7 +55,7 @@ Below a small example of how to use it:
             if p.get_status() == PacketPeerDTLS.STATUS_CONNECTED:
                 while p.get_available_packet_count() > 0:
                     print("Received message from client: %s" % p.get_packet().get_string_from_utf8())
-                    p.put_packet("Hello DTLS client".to_utf8())
+                    p.put_packet("Hello DTLS client".to_utf8_buffer())
 
  .. code-tab:: csharp
 
@@ -98,7 +98,7 @@ Below a small example of how to use it:
                     while (p.GetAvailablePacketCount() > 0)
                     {
                         GD.Print($"Received Message From Client: {p.GetPacket().GetStringFromUtf8()}");
-                        p.PutPacket("Hello DTLS Client".ToUtf8());
+                        p.PutPacket("Hello DTLS Client".ToUtf8Buffer());
                     }
                 }
             }
@@ -128,7 +128,7 @@ Below a small example of how to use it:
         if dtls.get_status() == PacketPeerDTLS.STATUS_CONNECTED:
             if !connected:
                 # Try to contact server
-                dtls.put_packet("The answer is... 42!".to_utf8())
+                dtls.put_packet("The answer is... 42!".to_utf8_buffer())
             while dtls.get_available_packet_count() > 0:
                 print("Connected: %s" % dtls.get_packet().get_string_from_utf8())
                 connected = true
@@ -159,7 +159,7 @@ Below a small example of how to use it:
                 if (!_connected)
                 {
                     // Try to contact server
-                    _dtls.PutPacket("The Answer Is..42!".ToUtf8());
+                    _dtls.PutPacket("The Answer Is..42!".ToUtf8Buffer());
                 }
                 while (_dtls.GetAvailablePacketCount() > 0)
                 {
@@ -223,3 +223,4 @@ Try to initiate the DTLS handshake with the given ``udp_peer`` which must be alr
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

@@ -12,14 +12,14 @@ StyleBoxEmpty
 
 **Inherits:** :ref:`StyleBox<class_StyleBox>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-Empty stylebox (does not display anything).
+An empty :ref:`StyleBox<class_StyleBox>` (does not display anything).
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-Empty stylebox (really does not display anything).
+An empty :ref:`StyleBox<class_StyleBox>` that can be used to display nothing instead of the default style (e.g. it can "disable" ``focus`` styles).
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
@@ -27,3 +27,4 @@ Empty stylebox (really does not display anything).
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

@@ -12,14 +12,14 @@ Geometry3D
 
 **Inherits:** :ref:`Object<class_Object>`
 
-Helper node to calculate generic geometry operations in 3D space.
+Provides methods for some common 3D geometric operations.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-Geometry3D provides users with a set of helper functions to create geometric shapes, compute intersections between shapes, and process various other geometric operations.
+Provides a set of helper functions to create geometric shapes, compute intersections between shapes, and process various other geometric operations in 3D.
 
 .. rst-class:: classref-reftable-group
 
@@ -38,15 +38,19 @@ Methods
    +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`PackedVector3Array<class_PackedVector3Array>` | :ref:`clip_polygon<class_Geometry3D_method_clip_polygon>` **(** :ref:`PackedVector3Array<class_PackedVector3Array>` points, :ref:`Plane<class_Plane>` plane **)**                                                                                                           |
    +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PackedVector3Array<class_PackedVector3Array>` | :ref:`compute_convex_mesh_points<class_Geometry3D_method_compute_convex_mesh_points>` **(** :ref:`Plane[]<class_Plane>` planes **)**                                                                                                                                        |
+   +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Vector3<class_Vector3>`                       | :ref:`get_closest_point_to_segment<class_Geometry3D_method_get_closest_point_to_segment>` **(** :ref:`Vector3<class_Vector3>` point, :ref:`Vector3<class_Vector3>` s1, :ref:`Vector3<class_Vector3>` s2 **)**                                                               |
    +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Vector3<class_Vector3>`                       | :ref:`get_closest_point_to_segment_uncapped<class_Geometry3D_method_get_closest_point_to_segment_uncapped>` **(** :ref:`Vector3<class_Vector3>` point, :ref:`Vector3<class_Vector3>` s1, :ref:`Vector3<class_Vector3>` s2 **)**                                             |
    +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`PackedVector3Array<class_PackedVector3Array>` | :ref:`get_closest_points_between_segments<class_Geometry3D_method_get_closest_points_between_segments>` **(** :ref:`Vector3<class_Vector3>` p1, :ref:`Vector3<class_Vector3>` p2, :ref:`Vector3<class_Vector3>` q1, :ref:`Vector3<class_Vector3>` q2 **)**                  |
    +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector3<class_Vector3>`                       | :ref:`get_triangle_barycentric_coords<class_Geometry3D_method_get_triangle_barycentric_coords>` **(** :ref:`Vector3<class_Vector3>` point, :ref:`Vector3<class_Vector3>` a, :ref:`Vector3<class_Vector3>` b, :ref:`Vector3<class_Vector3>` c **)**                          |
+   +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Variant<class_Variant>`                       | :ref:`ray_intersects_triangle<class_Geometry3D_method_ray_intersects_triangle>` **(** :ref:`Vector3<class_Vector3>` from, :ref:`Vector3<class_Vector3>` dir, :ref:`Vector3<class_Vector3>` a, :ref:`Vector3<class_Vector3>` b, :ref:`Vector3<class_Vector3>` c **)**        |
    +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`PackedVector3Array<class_PackedVector3Array>` | :ref:`segment_intersects_convex<class_Geometry3D_method_segment_intersects_convex>` **(** :ref:`Vector3<class_Vector3>` from, :ref:`Vector3<class_Vector3>` to, :ref:`Array<class_Array>` planes **)**                                                                      |
+   | :ref:`PackedVector3Array<class_PackedVector3Array>` | :ref:`segment_intersects_convex<class_Geometry3D_method_segment_intersects_convex>` **(** :ref:`Vector3<class_Vector3>` from, :ref:`Vector3<class_Vector3>` to, :ref:`Plane[]<class_Plane>` planes **)**                                                                    |
    +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`PackedVector3Array<class_PackedVector3Array>` | :ref:`segment_intersects_cylinder<class_Geometry3D_method_segment_intersects_cylinder>` **(** :ref:`Vector3<class_Vector3>` from, :ref:`Vector3<class_Vector3>` to, :ref:`float<class_float>` height, :ref:`float<class_float>` radius **)**                                |
    +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -112,6 +116,18 @@ Clips the polygon defined by the points in ``points`` against the ``plane`` and 
 
 ----
 
+.. _class_Geometry3D_method_compute_convex_mesh_points:
+
+.. rst-class:: classref-method
+
+:ref:`PackedVector3Array<class_PackedVector3Array>` **compute_convex_mesh_points** **(** :ref:`Plane[]<class_Plane>` planes **)**
+
+Calculates and returns all the vertex points of a convex shape defined by an array of ``planes``.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_Geometry3D_method_get_closest_point_to_segment:
 
 .. rst-class:: classref-method
@@ -148,6 +164,20 @@ Given the two 3D segments (``p1``, ``p2``) and (``q1``, ``q2``), finds those two
 
 ----
 
+.. _class_Geometry3D_method_get_triangle_barycentric_coords:
+
+.. rst-class:: classref-method
+
+:ref:`Vector3<class_Vector3>` **get_triangle_barycentric_coords** **(** :ref:`Vector3<class_Vector3>` point, :ref:`Vector3<class_Vector3>` a, :ref:`Vector3<class_Vector3>` b, :ref:`Vector3<class_Vector3>` c **)**
+
+Returns a :ref:`Vector3<class_Vector3>` containing weights based on how close a 3D position (``point``) is to a triangle's different vertices (``a``, ``b`` and ``c``). This is useful for interpolating between the data of different vertices in a triangle. One example use case is using this to smoothly rotate over a mesh instead of relying solely on face normals.
+
+\ `Here is a more detailed explanation of barycentric coordinates. <https://en.wikipedia.org/wiki/Barycentric_coordinate_system>`__
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_Geometry3D_method_ray_intersects_triangle:
 
 .. rst-class:: classref-method
@@ -164,7 +194,7 @@ Tests if the 3D ray starting at ``from`` with the direction of ``dir`` intersect
 
 .. rst-class:: classref-method
 
-:ref:`PackedVector3Array<class_PackedVector3Array>` **segment_intersects_convex** **(** :ref:`Vector3<class_Vector3>` from, :ref:`Vector3<class_Vector3>` to, :ref:`Array<class_Array>` planes **)**
+:ref:`PackedVector3Array<class_PackedVector3Array>` **segment_intersects_convex** **(** :ref:`Vector3<class_Vector3>` from, :ref:`Vector3<class_Vector3>` to, :ref:`Plane[]<class_Plane>` planes **)**
 
 Given a convex hull defined though the :ref:`Plane<class_Plane>`\ s in the array ``planes``, tests if the segment (``from``, ``to``) intersects with that hull. If an intersection is found, returns a :ref:`PackedVector3Array<class_PackedVector3Array>` containing the point the intersection and the hull's normal. Otherwise, returns an empty array.
 
@@ -210,3 +240,4 @@ Tests if the segment (``from``, ``to``) intersects the triangle ``a``, ``b``, ``
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

@@ -12,16 +12,14 @@ LineEdit
 
 **Inherits:** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-Control that provides single-line string editing.
+An input field for single-line text.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-LineEdit provides a single-line string editor, used for text fields.
-
-It features many built-in shortcuts which will always be available (:kbd:`Ctrl` here maps to :kbd:`Cmd` on macOS):
+**LineEdit** provides an input field for editing a single line of text. It features many built-in shortcuts that are always available (:kbd:`Ctrl` here maps to :kbd:`Cmd` on macOS):
 
 - :kbd:`Ctrl + C`: Copy
 
@@ -45,21 +43,21 @@ It features many built-in shortcuts which will always be available (:kbd:`Ctrl` 
 
 On macOS, some extra keyboard shortcuts are available:
 
-- :kbd:`Ctrl + F`: Same as :kbd:`Right Arrow`, move the caret one character right
+- :kbd:`Cmd + F`: Same as :kbd:`Right Arrow`, move the caret one character right
 
-- :kbd:`Ctrl + B`: Same as :kbd:`Left Arrow`, move the caret one character left
+- :kbd:`Cmd + B`: Same as :kbd:`Left Arrow`, move the caret one character left
 
-- :kbd:`Ctrl + P`: Same as :kbd:`Up Arrow`, move the caret to the previous line
+- :kbd:`Cmd + P`: Same as :kbd:`Up Arrow`, move the caret to the previous line
 
-- :kbd:`Ctrl + N`: Same as :kbd:`Down Arrow`, move the caret to the next line
+- :kbd:`Cmd + N`: Same as :kbd:`Down Arrow`, move the caret to the next line
 
-- :kbd:`Ctrl + D`: Same as :kbd:`Delete`, delete the character on the right side of caret
+- :kbd:`Cmd + D`: Same as :kbd:`Delete`, delete the character on the right side of caret
 
-- :kbd:`Ctrl + H`: Same as :kbd:`Backspace`, delete the character on the left side of the caret
+- :kbd:`Cmd + H`: Same as :kbd:`Backspace`, delete the character on the left side of the caret
 
-- :kbd:`Ctrl + A`: Same as :kbd:`Home`, move the caret to the beginning of the line
+- :kbd:`Cmd + A`: Same as :kbd:`Home`, move the caret to the beginning of the line
 
-- :kbd:`Ctrl + E`: Same as :kbd:`End`, move the caret to the end of the line
+- :kbd:`Cmd + E`: Same as :kbd:`End`, move the caret to the end of the line
 
 - :kbd:`Cmd + Left Arrow`: Same as :kbd:`Home`, move the caret to the beginning of the line
 
@@ -84,13 +82,15 @@ Properties
    +-------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                           | :ref:`caret_force_displayed<class_LineEdit_property_caret_force_displayed>`                                 | ``false``                                                                           |
    +-------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                                           | :ref:`caret_mid_grapheme<class_LineEdit_property_caret_mid_grapheme>`                                       | ``true``                                                                            |
+   | :ref:`bool<class_bool>`                                           | :ref:`caret_mid_grapheme<class_LineEdit_property_caret_mid_grapheme>`                                       | ``false``                                                                           |
    +-------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                           | :ref:`clear_button_enabled<class_LineEdit_property_clear_button_enabled>`                                   | ``false``                                                                           |
    +-------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                           | :ref:`context_menu_enabled<class_LineEdit_property_context_menu_enabled>`                                   | ``true``                                                                            |
    +-------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                           | :ref:`deselect_on_focus_loss_enabled<class_LineEdit_property_deselect_on_focus_loss_enabled>`               | ``true``                                                                            |
+   +-------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                           | :ref:`drag_and_drop_selection_enabled<class_LineEdit_property_drag_and_drop_selection_enabled>`             | ``true``                                                                            |
    +-------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                           | :ref:`draw_control_chars<class_LineEdit_property_draw_control_chars>`                                       | ``false``                                                                           |
    +-------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
@@ -157,6 +157,8 @@ Methods
    | :ref:`PopupMenu<class_PopupMenu>` | :ref:`get_menu<class_LineEdit_method_get_menu>` **(** **)** |const|                                                                  |
    +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`         | :ref:`get_scroll_offset<class_LineEdit_method_get_scroll_offset>` **(** **)** |const|                                                |
+   +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`       | :ref:`get_selected_text<class_LineEdit_method_get_selected_text>` **(** **)**                                                        |
    +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`             | :ref:`get_selection_from_column<class_LineEdit_method_get_selection_from_column>` **(** **)** |const|                                |
    +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
@@ -640,7 +642,7 @@ Text alignment as defined in the :ref:`HorizontalAlignment<enum_@GlobalScope_Hor
 - void **set_caret_blink_enabled** **(** :ref:`bool<class_bool>` value **)**
 - :ref:`bool<class_bool>` **is_caret_blink_enabled** **(** **)**
 
-If ``true``, the caret (text cursor) blinks.
+If ``true``, makes the caret blink.
 
 .. rst-class:: classref-item-separator
 
@@ -657,7 +659,7 @@ If ``true``, the caret (text cursor) blinks.
 - void **set_caret_blink_interval** **(** :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_caret_blink_interval** **(** **)**
 
-Duration (in seconds) of a caret's blinking cycle.
+The interval at which the caret blinks (in seconds).
 
 .. rst-class:: classref-item-separator
 
@@ -701,7 +703,7 @@ If ``true``, the **LineEdit** will always show the caret, even if focus is lost.
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **caret_mid_grapheme** = ``true``
+:ref:`bool<class_bool>` **caret_mid_grapheme** = ``false``
 
 .. rst-class:: classref-property-setget
 
@@ -727,7 +729,7 @@ Allow moving caret, selecting and removing the individual composite character co
 - void **set_clear_button_enabled** **(** :ref:`bool<class_bool>` value **)**
 - :ref:`bool<class_bool>` **is_clear_button_enabled** **(** **)**
 
-If ``true``, the **LineEdit** will show a clear button if ``text`` is not empty, which can be used to clear the text quickly.
+If ``true``, the **LineEdit** will show a clear button if :ref:`text<class_LineEdit_property_text>` is not empty, which can be used to clear the text quickly.
 
 .. rst-class:: classref-item-separator
 
@@ -762,6 +764,23 @@ If ``true``, the context menu will appear when right-clicked.
 - :ref:`bool<class_bool>` **is_deselect_on_focus_loss_enabled** **(** **)**
 
 If ``true``, the selected text will be deselected when focus is lost.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_LineEdit_property_drag_and_drop_selection_enabled:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **drag_and_drop_selection_enabled** = ``true``
+
+.. rst-class:: classref-property-setget
+
+- void **set_drag_and_drop_selection_enabled** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_drag_and_drop_selection_enabled** **(** **)**
+
+If ``true``, allow drag and drop of selected text.
 
 .. rst-class:: classref-item-separator
 
@@ -829,7 +848,7 @@ If ``true``, the **LineEdit** width will increase to stay longer than the :ref:`
 - void **set_flat** **(** :ref:`bool<class_bool>` value **)**
 - :ref:`bool<class_bool>` **is_flat** **(** **)**
 
-If ``true``, the **LineEdit** don't display decoration.
+If ``true``, the **LineEdit** doesn't display decoration.
 
 .. rst-class:: classref-item-separator
 
@@ -846,7 +865,7 @@ If ``true``, the **LineEdit** don't display decoration.
 - void **set_language** **(** :ref:`String<class_String>` value **)**
 - :ref:`String<class_String>` **get_language** **(** **)**
 
-Language code used for line-breaking and text shaping algorithms, if left empty current locale is used instead.
+Language code used for line-breaking and text shaping algorithms. If left empty, current locale is used instead.
 
 .. rst-class:: classref-item-separator
 
@@ -1264,6 +1283,18 @@ Returns the scroll offset due to :ref:`caret_column<class_LineEdit_property_care
 
 ----
 
+.. _class_LineEdit_method_get_selected_text:
+
+.. rst-class:: classref-method
+
+:ref:`String<class_String>` **get_selected_text** **(** **)**
+
+Returns the text inside the selection.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_LineEdit_method_get_selection_from_column:
 
 .. rst-class:: classref-method
@@ -1572,7 +1603,7 @@ Texture for the clear button. See :ref:`clear_button_enabled<class_LineEdit_prop
 
 :ref:`StyleBox<class_StyleBox>` **focus**
 
-Background used when **LineEdit** has GUI focus. The ``focus`` :ref:`StyleBox<class_StyleBox>` is displayed *over* the base :ref:`StyleBox<class_StyleBox>`, so a partially transparent :ref:`StyleBox<class_StyleBox>` should be used to ensure the base :ref:`StyleBox<class_StyleBox>` remains visible. A :ref:`StyleBox<class_StyleBox>` that represents an outline or an underline works well for this purpose. To disable the focus visual effect, assign a :ref:`StyleBoxEmpty<class_StyleBoxEmpty>` resource. Note that disabling the focus visual effect will harm keyboard/controller navigation usability, so this is not recommended for accessibility reasons.
+Background used when **LineEdit** has GUI focus. The :ref:`focus<class_LineEdit_theme_style_focus>` :ref:`StyleBox<class_StyleBox>` is displayed *over* the base :ref:`StyleBox<class_StyleBox>`, so a partially transparent :ref:`StyleBox<class_StyleBox>` should be used to ensure the base :ref:`StyleBox<class_StyleBox>` remains visible. A :ref:`StyleBox<class_StyleBox>` that represents an outline or an underline works well for this purpose. To disable the focus visual effect, assign a :ref:`StyleBoxEmpty<class_StyleBoxEmpty>` resource. Note that disabling the focus visual effect will harm keyboard/controller navigation usability, so this is not recommended for accessibility reasons.
 
 .. rst-class:: classref-item-separator
 
@@ -1604,3 +1635,4 @@ Background used when **LineEdit** is in read-only mode (:ref:`editable<class_Lin
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

@@ -137,7 +137,7 @@ Feedback delay time in milliseconds.
 - void **set_feedback_level_db** **(** :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_feedback_level_db** **(** **)**
 
-Sound level for ``tap1``.
+Sound level for feedback.
 
 .. rst-class:: classref-item-separator
 
@@ -171,7 +171,7 @@ Low-pass filter for feedback, in Hz. Frequencies below this value are filtered o
 - void **set_tap1_active** **(** :ref:`bool<class_bool>` value **)**
 - :ref:`bool<class_bool>` **is_tap1_active** **(** **)**
 
-If ``true``, ``tap1`` will be enabled.
+If ``true``, the first tap will be enabled.
 
 .. rst-class:: classref-item-separator
 
@@ -188,7 +188,7 @@ If ``true``, ``tap1`` will be enabled.
 - void **set_tap1_delay_ms** **(** :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_tap1_delay_ms** **(** **)**
 
-``tap1`` delay time in milliseconds.
+First tap delay time in milliseconds.
 
 .. rst-class:: classref-item-separator
 
@@ -205,7 +205,7 @@ If ``true``, ``tap1`` will be enabled.
 - void **set_tap1_level_db** **(** :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_tap1_level_db** **(** **)**
 
-Sound level for ``tap1``.
+Sound level for the first tap.
 
 .. rst-class:: classref-item-separator
 
@@ -222,7 +222,7 @@ Sound level for ``tap1``.
 - void **set_tap1_pan** **(** :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_tap1_pan** **(** **)**
 
-Pan position for ``tap1``. Value can range from -1 (fully left) to 1 (fully right).
+Pan position for the first tap. Value can range from -1 (fully left) to 1 (fully right).
 
 .. rst-class:: classref-item-separator
 
@@ -239,7 +239,7 @@ Pan position for ``tap1``. Value can range from -1 (fully left) to 1 (fully righ
 - void **set_tap2_active** **(** :ref:`bool<class_bool>` value **)**
 - :ref:`bool<class_bool>` **is_tap2_active** **(** **)**
 
-If ``true``, ``tap2`` will be enabled.
+If ``true``, the second tap will be enabled.
 
 .. rst-class:: classref-item-separator
 
@@ -256,7 +256,7 @@ If ``true``, ``tap2`` will be enabled.
 - void **set_tap2_delay_ms** **(** :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_tap2_delay_ms** **(** **)**
 
-**Tap2** delay time in milliseconds.
+Second tap delay time in milliseconds.
 
 .. rst-class:: classref-item-separator
 
@@ -273,7 +273,7 @@ If ``true``, ``tap2`` will be enabled.
 - void **set_tap2_level_db** **(** :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_tap2_level_db** **(** **)**
 
-Sound level for ``tap2``.
+Sound level for the second tap.
 
 .. rst-class:: classref-item-separator
 
@@ -290,7 +290,7 @@ Sound level for ``tap2``.
 - void **set_tap2_pan** **(** :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_tap2_pan** **(** **)**
 
-Pan position for ``tap2``. Value can range from -1 (fully left) to 1 (fully right).
+Pan position for the second tap. Value can range from -1 (fully left) to 1 (fully right).
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
@@ -298,3 +298,4 @@ Pan position for ``tap2``. Value can range from -1 (fully left) to 1 (fully righ
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

@@ -12,14 +12,14 @@ NavigationPathQueryResult2D
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-Result from a :ref:`NavigationPathQueryParameters2D<class_NavigationPathQueryParameters2D>` navigation path query.
+Represents the result of a 2D pathfinding query.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-This class contains the result of a navigation path query from :ref:`NavigationServer2D.query_path<class_NavigationServer2D_method_query_path>`.
+This class stores the result of a 2D navigation path query from the :ref:`NavigationServer2D<class_NavigationServer2D>`.
 
 .. rst-class:: classref-introduction-group
 
@@ -185,3 +185,4 @@ Reset the result object to its initial state. This is useful to reuse the object
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

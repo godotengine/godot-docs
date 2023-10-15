@@ -1,3 +1,5 @@
+:article_outdated: True
+
 .. _doc_cutout_animation:
 
 Cutout animation
@@ -59,7 +61,8 @@ character, created by Andreas Esau.
 
 .. image:: img/tuto_cutout_walk.gif
 
-Get your assets: :download:`gbot_resources.zip <files/gbot_resources.zip>`.
+Get your assets:
+`cutout_animation_assets.zip <https://github.com/godotengine/godot-docs-project-starters/releases/download/latest-4.x/cutout_animation_assets.zip>`_.
 
 Setting up the rig
 ~~~~~~~~~~~~~~~~~~

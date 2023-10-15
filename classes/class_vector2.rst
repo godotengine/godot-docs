@@ -10,14 +10,14 @@
 Vector2
 =======
 
-Vector used for 2D math using floating point coordinates.
+A 2D vector using floating point coordinates.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-2-element structure that can be used to represent positions in 2D space or any other pair of numeric values.
+A 2-element structure that can be used to represent 2D coordinates or any other pair of numeric values.
 
 It uses floating-point coordinates. By default, these floating-point values use 32-bit precision, unlike :ref:`float<class_float>` which is always 64-bit. If double precision is needed, compile the engine with the option ``precision=double``.
 
@@ -534,7 +534,7 @@ This is the signed area of the parallelogram formed by the two vectors. If the s
 
 :ref:`Vector2<class_Vector2>` **cubic_interpolate** **(** :ref:`Vector2<class_Vector2>` b, :ref:`Vector2<class_Vector2>` pre_a, :ref:`Vector2<class_Vector2>` post_b, :ref:`float<class_float>` weight **)** |const|
 
-Cubically interpolates between this vector and ``b`` using ``pre_a`` and ``post_b`` as handles, and returns the result at position ``weight``. ``weight`` is on the range of 0.0 to 1.0, representing the amount of interpolation.
+Performs a cubic interpolation between this vector and ``b`` using ``pre_a`` and ``post_b`` as handles, and returns the result at position ``weight``. ``weight`` is on the range of 0.0 to 1.0, representing the amount of interpolation.
 
 .. rst-class:: classref-item-separator
 
@@ -546,9 +546,9 @@ Cubically interpolates between this vector and ``b`` using ``pre_a`` and ``post_
 
 :ref:`Vector2<class_Vector2>` **cubic_interpolate_in_time** **(** :ref:`Vector2<class_Vector2>` b, :ref:`Vector2<class_Vector2>` pre_a, :ref:`Vector2<class_Vector2>` post_b, :ref:`float<class_float>` weight, :ref:`float<class_float>` b_t, :ref:`float<class_float>` pre_a_t, :ref:`float<class_float>` post_b_t **)** |const|
 
-Cubically interpolates between this vector and ``b`` using ``pre_a`` and ``post_b`` as handles, and returns the result at position ``weight``. ``weight`` is on the range of 0.0 to 1.0, representing the amount of interpolation.
+Performs a cubic interpolation between this vector and ``b`` using ``pre_a`` and ``post_b`` as handles, and returns the result at position ``weight``. ``weight`` is on the range of 0.0 to 1.0, representing the amount of interpolation.
 
-It can perform smoother interpolation than ``cubic_interpolate()`` by the time values.
+It can perform smoother interpolation than :ref:`cubic_interpolate<class_Vector2_method_cubic_interpolate>` by the time values.
 
 .. rst-class:: classref-item-separator
 
@@ -646,7 +646,7 @@ Creates a unit **Vector2** rotated to the given ``angle`` in radians. This is eq
 
 :ref:`bool<class_bool>` **is_equal_approx** **(** :ref:`Vector2<class_Vector2>` to **)** |const|
 
-Returns ``true`` if this vector and ``v`` are approximately equal, by running :ref:`@GlobalScope.is_equal_approx<class_@GlobalScope_method_is_equal_approx>` on each component.
+Returns ``true`` if this vector and ``to`` are approximately equal, by running :ref:`@GlobalScope.is_equal_approx<class_@GlobalScope_method_is_equal_approx>` on each component.
 
 .. rst-class:: classref-item-separator
 
@@ -670,7 +670,7 @@ Returns ``true`` if this vector is finite, by calling :ref:`@GlobalScope.is_fini
 
 :ref:`bool<class_bool>` **is_normalized** **(** **)** |const|
 
-Returns ``true`` if the vector is normalized, ``false`` otherwise.
+Returns ``true`` if the vector is normalized, i.e. its length is approximately equal to 1.
 
 .. rst-class:: classref-item-separator
 
@@ -722,7 +722,7 @@ This method runs faster than :ref:`length<class_Vector2_method_length>`, so pref
 
 :ref:`Vector2<class_Vector2>` **lerp** **(** :ref:`Vector2<class_Vector2>` to, :ref:`float<class_float>` weight **)** |const|
 
-Returns the result of the linear interpolation between this vector and ``to`` by amount ``weight``. ``weight`` is on the range of 0.0 to 1.0, representing the amount of interpolation.
+Returns the result of the linear interpolation between this vector and ``to`` by amount ``weight``. ``weight`` is on the range of ``0.0`` to ``1.0``, representing the amount of interpolation.
 
 .. rst-class:: classref-item-separator
 
@@ -782,7 +782,9 @@ Returns a new vector moved toward ``to`` by the fixed ``delta`` amount. Will not
 
 :ref:`Vector2<class_Vector2>` **normalized** **(** **)** |const|
 
-Returns a new vector scaled to unit length. Equivalent to ``v / v.length()``.
+Returns the result of scaling the vector to unit length. Equivalent to ``v / v.length()``. See also :ref:`is_normalized<class_Vector2_method_is_normalized>`.
+
+\ **Note:** This function may return incorrect values if the input vector length is near zero.
 
 .. rst-class:: classref-item-separator
 
@@ -937,6 +939,8 @@ Returns ``true`` if the vectors are not equal.
 
 \ **Note:** Due to floating-point precision errors, consider using :ref:`is_equal_approx<class_Vector2_method_is_equal_approx>` instead, which is more reliable.
 
+\ **Note:** Vectors with :ref:`@GDScript.NAN<class_@GDScript_constant_NAN>` elements don't behave the same as other vectors. Therefore, the results from this operator may not be accurate if NaNs are included.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -1073,6 +1077,8 @@ Divides each component of the **Vector2** by the given :ref:`int<class_int>`.
 
 Compares two **Vector2** vectors by first checking if the X value of the left vector is less than the X value of the ``right`` vector. If the X values are exactly equal, then it repeats this check with the Y values of the two vectors. This operator is useful for sorting vectors.
 
+\ **Note:** Vectors with :ref:`@GDScript.NAN<class_@GDScript_constant_NAN>` elements don't behave the same as other vectors. Therefore, the results from this operator may not be accurate if NaNs are included.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -1084,6 +1090,8 @@ Compares two **Vector2** vectors by first checking if the X value of the left ve
 :ref:`bool<class_bool>` **operator <=** **(** :ref:`Vector2<class_Vector2>` right **)**
 
 Compares two **Vector2** vectors by first checking if the X value of the left vector is less than or equal to the X value of the ``right`` vector. If the X values are exactly equal, then it repeats this check with the Y values of the two vectors. This operator is useful for sorting vectors.
+
+\ **Note:** Vectors with :ref:`@GDScript.NAN<class_@GDScript_constant_NAN>` elements don't behave the same as other vectors. Therefore, the results from this operator may not be accurate if NaNs are included.
 
 .. rst-class:: classref-item-separator
 
@@ -1099,6 +1107,8 @@ Returns ``true`` if the vectors are exactly equal.
 
 \ **Note:** Due to floating-point precision errors, consider using :ref:`is_equal_approx<class_Vector2_method_is_equal_approx>` instead, which is more reliable.
 
+\ **Note:** Vectors with :ref:`@GDScript.NAN<class_@GDScript_constant_NAN>` elements don't behave the same as other vectors. Therefore, the results from this operator may not be accurate if NaNs are included.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -1111,6 +1121,8 @@ Returns ``true`` if the vectors are exactly equal.
 
 Compares two **Vector2** vectors by first checking if the X value of the left vector is greater than the X value of the ``right`` vector. If the X values are exactly equal, then it repeats this check with the Y values of the two vectors. This operator is useful for sorting vectors.
 
+\ **Note:** Vectors with :ref:`@GDScript.NAN<class_@GDScript_constant_NAN>` elements don't behave the same as other vectors. Therefore, the results from this operator may not be accurate if NaNs are included.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -1122,6 +1134,8 @@ Compares two **Vector2** vectors by first checking if the X value of the left ve
 :ref:`bool<class_bool>` **operator >=** **(** :ref:`Vector2<class_Vector2>` right **)**
 
 Compares two **Vector2** vectors by first checking if the X value of the left vector is greater than or equal to the X value of the ``right`` vector. If the X values are exactly equal, then it repeats this check with the Y values of the two vectors. This operator is useful for sorting vectors.
+
+\ **Note:** Vectors with :ref:`@GDScript.NAN<class_@GDScript_constant_NAN>` elements don't behave the same as other vectors. Therefore, the results from this operator may not be accurate if NaNs are included.
 
 .. rst-class:: classref-item-separator
 
@@ -1165,3 +1179,4 @@ Returns the negative value of the **Vector2**. This is the same as writing ``Vec
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

@@ -77,6 +77,8 @@ Methods
    +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`               | :ref:`instance_has<class_Script_method_instance_has>` **(** :ref:`Object<class_Object>` base_object **)** |const|                          |
    +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`               | :ref:`is_abstract<class_Script_method_is_abstract>` **(** **)** |const|                                                                    |
+   +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`               | :ref:`is_tool<class_Script_method_is_tool>` **(** **)** |const|                                                                            |
    +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Error<enum_@GlobalScope_Error>` | :ref:`reload<class_Script_method_reload>` **(** :ref:`bool<class_bool>` keep_state=false **)**                                             |
@@ -245,6 +247,18 @@ Returns ``true`` if ``base_object`` is an instance of this script.
 
 ----
 
+.. _class_Script_method_is_abstract:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **is_abstract** **(** **)** |const|
+
+Returns ``true`` if the script is an abstract script. An abstract script does not have a constructor and cannot be instantiated.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_Script_method_is_tool:
 
 .. rst-class:: classref-method
@@ -271,3 +285,4 @@ Reloads the script's class implementation. Returns an error code.
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

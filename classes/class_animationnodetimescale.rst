@@ -12,21 +12,21 @@ AnimationNodeTimeScale
 
 **Inherits:** :ref:`AnimationNode<class_AnimationNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-A time-scaling animation node to be used with :ref:`AnimationTree<class_AnimationTree>`.
+A time-scaling animation node used in :ref:`AnimationTree<class_AnimationTree>`.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-Allows scaling the speed of the animation (or reversing it) in any children nodes. Setting it to 0 will pause the animation.
+Allows to scale the speed of the animation (or reverse it) in any children :ref:`AnimationNode<class_AnimationNode>`\ s. Setting it to ``0.0`` will pause the animation.
 
 .. rst-class:: classref-introduction-group
 
 Tutorials
 ---------
 
-- :doc:`AnimationTree <../tutorials/animation/animation_tree>`
+- :doc:`Using AnimationTree <../tutorials/animation/animation_tree>`
 
 - `3D Platformer Demo <https://godotengine.org/asset-library/asset/125>`__
 
@@ -36,3 +36,4 @@ Tutorials
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

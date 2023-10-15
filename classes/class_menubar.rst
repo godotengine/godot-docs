@@ -12,14 +12,14 @@ MenuBar
 
 **Inherits:** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-A horizontal menu bar, which displays :ref:`PopupMenu<class_PopupMenu>`\ s or system global menu.
+A horizontal menu bar that creates a :ref:`MenuButton<class_MenuButton>` for each :ref:`PopupMenu<class_PopupMenu>` child.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-New items can be created by adding :ref:`PopupMenu<class_PopupMenu>` nodes to this node.
+A horizontal menu bar that creates a :ref:`MenuButton<class_MenuButton>` for each :ref:`PopupMenu<class_PopupMenu>` child. New items are created by adding :ref:`PopupMenu<class_PopupMenu>`\ s to this node.
 
 .. rst-class:: classref-reftable-group
 
@@ -110,13 +110,23 @@ Theme Properties
    +---------------------------------+-------------------------------------------------------------------------------------+-------------------------------------+
    | :ref:`StyleBox<class_StyleBox>` | :ref:`disabled<class_MenuBar_theme_style_disabled>`                                 |                                     |
    +---------------------------------+-------------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`StyleBox<class_StyleBox>` | :ref:`focus<class_MenuBar_theme_style_focus>`                                       |                                     |
+   | :ref:`StyleBox<class_StyleBox>` | :ref:`disabled_mirrored<class_MenuBar_theme_style_disabled_mirrored>`               |                                     |
    +---------------------------------+-------------------------------------------------------------------------------------+-------------------------------------+
    | :ref:`StyleBox<class_StyleBox>` | :ref:`hover<class_MenuBar_theme_style_hover>`                                       |                                     |
    +---------------------------------+-------------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`StyleBox<class_StyleBox>` | :ref:`hover_mirrored<class_MenuBar_theme_style_hover_mirrored>`                     |                                     |
+   +---------------------------------+-------------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`StyleBox<class_StyleBox>` | :ref:`hover_pressed<class_MenuBar_theme_style_hover_pressed>`                       |                                     |
+   +---------------------------------+-------------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`StyleBox<class_StyleBox>` | :ref:`hover_pressed_mirrored<class_MenuBar_theme_style_hover_pressed_mirrored>`     |                                     |
+   +---------------------------------+-------------------------------------------------------------------------------------+-------------------------------------+
    | :ref:`StyleBox<class_StyleBox>` | :ref:`normal<class_MenuBar_theme_style_normal>`                                     |                                     |
    +---------------------------------+-------------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`StyleBox<class_StyleBox>` | :ref:`normal_mirrored<class_MenuBar_theme_style_normal_mirrored>`                   |                                     |
+   +---------------------------------+-------------------------------------------------------------------------------------+-------------------------------------+
    | :ref:`StyleBox<class_StyleBox>` | :ref:`pressed<class_MenuBar_theme_style_pressed>`                                   |                                     |
+   +---------------------------------+-------------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`StyleBox<class_StyleBox>` | :ref:`pressed_mirrored<class_MenuBar_theme_style_pressed_mirrored>`                 |                                     |
    +---------------------------------+-------------------------------------------------------------------------------------+-------------------------------------+
 
 .. rst-class:: classref-section-separator
@@ -530,13 +540,13 @@ Font size of the menu item's text.
 
 ----
 
-.. _class_MenuBar_theme_style_focus:
+.. _class_MenuBar_theme_style_disabled_mirrored:
 
 .. rst-class:: classref-themeproperty
 
-:ref:`StyleBox<class_StyleBox>` **focus**
+:ref:`StyleBox<class_StyleBox>` **disabled_mirrored**
 
-:ref:`StyleBox<class_StyleBox>` used when the menu item is focused. The ``focus`` :ref:`StyleBox<class_StyleBox>` is displayed *over* the base :ref:`StyleBox<class_StyleBox>`, so a partially transparent :ref:`StyleBox<class_StyleBox>` should be used to ensure the base :ref:`StyleBox<class_StyleBox>` remains visible. A :ref:`StyleBox<class_StyleBox>` that represents an outline or an underline works well for this purpose. To disable the focus visual effect, assign a :ref:`StyleBoxEmpty<class_StyleBoxEmpty>` resource. Note that disabling the focus visual effect will harm keyboard/controller navigation usability, so this is not recommended for accessibility reasons.
+:ref:`StyleBox<class_StyleBox>` used when the menu item is disabled (for right-to-left layouts).
 
 .. rst-class:: classref-item-separator
 
@@ -554,6 +564,42 @@ Font size of the menu item's text.
 
 ----
 
+.. _class_MenuBar_theme_style_hover_mirrored:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`StyleBox<class_StyleBox>` **hover_mirrored**
+
+:ref:`StyleBox<class_StyleBox>` used when the menu item is being hovered (for right-to-left layouts).
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_MenuBar_theme_style_hover_pressed:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`StyleBox<class_StyleBox>` **hover_pressed**
+
+:ref:`StyleBox<class_StyleBox>` used when the menu item is being pressed and hovered at the same time.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_MenuBar_theme_style_hover_pressed_mirrored:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`StyleBox<class_StyleBox>` **hover_pressed_mirrored**
+
+:ref:`StyleBox<class_StyleBox>` used when the menu item is being pressed and hovered at the same time (for right-to-left layouts).
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_MenuBar_theme_style_normal:
 
 .. rst-class:: classref-themeproperty
@@ -561,6 +607,18 @@ Font size of the menu item's text.
 :ref:`StyleBox<class_StyleBox>` **normal**
 
 Default :ref:`StyleBox<class_StyleBox>` for the menu item.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_MenuBar_theme_style_normal_mirrored:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`StyleBox<class_StyleBox>` **normal_mirrored**
+
+Default :ref:`StyleBox<class_StyleBox>` for the menu item (for right-to-left layouts).
 
 .. rst-class:: classref-item-separator
 
@@ -574,9 +632,22 @@ Default :ref:`StyleBox<class_StyleBox>` for the menu item.
 
 :ref:`StyleBox<class_StyleBox>` used when the menu item is being pressed.
 
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_MenuBar_theme_style_pressed_mirrored:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`StyleBox<class_StyleBox>` **pressed_mirrored**
+
+:ref:`StyleBox<class_StyleBox>` used when the menu item is being pressed (for right-to-left layouts).
+
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

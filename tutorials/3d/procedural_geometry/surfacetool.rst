@@ -95,7 +95,7 @@ note, ``generate_normals()`` only works if the primitive type is set to ``Mesh.P
 You may notice that normal mapping or other material properties look broken on
 the generated mesh. This is because normal mapping **requires** the mesh to
 feature *tangents*, which are separate from *normals*. You can either add custom
-tangents manually, or generate them automatically with with
+tangents manually, or generate them automatically with
 ``generate_tangents()``. This method requires that each vertex have UVs and
 normals set already.
 

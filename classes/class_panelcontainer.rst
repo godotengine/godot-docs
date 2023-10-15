@@ -14,21 +14,21 @@ PanelContainer
 
 **Inherited By:** :ref:`ScriptEditor<class_ScriptEditor>`
 
-Panel container type.
+A container that keeps its child controls within the area of a :ref:`StyleBox<class_StyleBox>`.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-Panel container type. This container fits controls inside of the delimited area of a stylebox. It's useful for giving controls an outline.
+A container that keeps its child controls within the area of a :ref:`StyleBox<class_StyleBox>`. Useful for giving controls an outline.
 
 .. rst-class:: classref-introduction-group
 
 Tutorials
 ---------
 
-- :doc:`GUI containers <../tutorials/ui/gui_containers>`
+- :doc:`Using Containers <../tutorials/ui/gui_containers>`
 
 - `2D Role Playing Game Demo <https://godotengine.org/asset-library/asset/520>`__
 
@@ -79,3 +79,4 @@ The style of **PanelContainer**'s background.
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

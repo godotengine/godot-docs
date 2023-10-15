@@ -19,8 +19,10 @@ and ask fellow developers for insights.
 In general, keeping your code consistent in your projects and within your team is
 more important than following this guide to a tee.
 
-.. note:: Godot's built-in script editor uses a lot of these conventions
-          by default. Let it help you.
+.. note::
+
+    Godot's built-in script editor uses a lot of these conventions
+    by default. Let it help you.
 
 Here is a complete class example based on these guidelines:
 
@@ -28,9 +30,10 @@ Here is a complete class example based on these guidelines:
 
     class_name StateMachine
     extends Node
-    # Hierarchical State machine for the player.
-    # Initializes states and delegates engine callbacks
-    # (_physics_process, _unhandled_input) to the state.
+    ## Hierarchical State machine for the player.
+    ##
+    ## Initializes states and delegates engine callbacks ([method Node._physics_process],
+    ## [method Node._unhandled_input]) to the state.
 
 
     signal state_changed(previous, new)
@@ -40,17 +43,17 @@ Here is a complete class example based on these guidelines:
         set = set_is_active
 
     @onready var _state = initial_state:
-        get = set_state
+        set = set_state
     @onready var _state_name = _state.name
 
 
     func _init():
         add_to_group("state_machine")
-        
-        
+
+
     func _enter_tree():
         print("this happens before the ready method!")
-        
+
 
     func _ready():
         state_changed.connect(_on_state_changed)
@@ -287,8 +290,10 @@ Surround functions and class definitions with two blank lines:
 
 Use one blank line inside functions to separate logical sections.
 
-.. note:: We use a single line between classes and function definitions in the class reference and
-          in short code snippets in this documentation.
+.. note::
+
+    We use a single line between classes and function definitions in the class reference and
+    in short code snippets in this documentation.
 
 Line length
 ~~~~~~~~~~~
@@ -331,7 +336,7 @@ The only exception to that rule is the ternary operator:
 
 ::
 
-   next_state = "idle" if is_on_floor() else "fall"
+    next_state = "idle" if is_on_floor() else "fall"
 
 Format multiline statements for readability
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -467,9 +472,9 @@ This helps differentiate text comments from disabled code.
 
 .. note::
 
-   In the script editor, to toggle the selected code commented, press
-   :kbd:`Ctrl + K`. This feature adds a single # sign at the start
-   of the selected lines.
+    In the script editor, to toggle the selected code commented, press
+    :kbd:`Ctrl + K`. This feature adds a single # sign at the start
+    of the selected lines.
 
 Whitespace
 ~~~~~~~~~~
@@ -636,7 +641,7 @@ Use PascalCase for class and node names:
 
 ::
 
-   extends CharacterBody3D
+    extends CharacterBody3D
 
 Also use PascalCase when loading a class into a constant or a variable:
 
@@ -651,16 +656,16 @@ Use snake\_case to name functions and variables:
 
 ::
 
-   var particle_effect
-   func load_level():
+    var particle_effect
+    func load_level():
 
 Prepend a single underscore (\_) to virtual methods functions the user must
 override, private functions, and private variables:
 
 ::
 
-   var _counter = 0
-   func _recalculate_path():
+    var _counter = 0
+    func _recalculate_path():
 
 Signals
 ~~~~~~~
@@ -745,22 +750,25 @@ Class declaration
 If the code is meant to run in the editor, place the ``@tool`` annotation on the
 first line of the script.
 
-Follow with the `class_name` if necessary. You can turn a GDScript file into a
+Follow with the ``class_name`` if necessary. You can turn a GDScript file into a
 global type in your project using this feature. For more information, see
 :ref:`doc_gdscript`.
 
-Then, add the `extends` keyword if the class extends a built-in type.
+Then, add the ``extends`` keyword if the class extends a built-in type.
 
-Following that, you should have the class's optional docstring as comments. You
-can use that to explain the role of your class to your teammates, how it works,
+Following that, you should have the class's optional
+:ref:`documentation comments <doc_gdscript_documentation_comments>`.
+You can use that to explain the role of your class to your teammates, how it works,
 and how other developers should use it, for example.
 
 ::
 
-   class_name MyNode
-   extends Node
-   # A brief description of the class's role and functionality.
-   # Longer description.
+    class_name MyNode
+    extends Node
+    ## A brief description of the class's role and functionality.
+    ##
+    ## The description of the script, what it can do,
+    ## and any further detail.
 
 Signals and properties
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -776,32 +784,32 @@ variables, in that order.
 
 ::
 
-   signal spawn_player(position)
+    signal player_spawned(position)
 
-   enum Jobs {KNIGHT, WIZARD, ROGUE, HEALER, SHAMAN}
+    enum Jobs {KNIGHT, WIZARD, ROGUE, HEALER, SHAMAN}
 
-   const MAX_LIVES = 3
+    const MAX_LIVES = 3
 
-   @export var job: Jobs = Jobs.KNIGHT
-   @export var max_health = 50
-   @export var attack = 5
+    @export var job: Jobs = Jobs.KNIGHT
+    @export var max_health = 50
+    @export var attack = 5
 
-   var health = max_health:
-       set(new_health):
-           health = new_health
+    var health = max_health:
+        set(new_health):
+            health = new_health
 
-   var _speed = 300.0
+    var _speed = 300.0
 
-   @onready var sword = get_node("Sword")
-   @onready var gun = get_node("Gun")
+    @onready var sword = get_node("Sword")
+    @onready var gun = get_node("Gun")
 
 
 .. note::
 
-   The GDScript compiler evaluates onready variables right before the ``_ready``
-   callback. You can use that to cache node dependencies, that is to say, to get
-   child nodes in the scene that your class relies on. This is what the example
-   above shows.
+    The GDScript compiler evaluates onready variables right before the ``_ready``
+    callback. You can use that to cache node dependencies, that is to say, to get
+    child nodes in the scene that your class relies on. This is what the example
+    above shows.
 
 Member variables
 ~~~~~~~~~~~~~~~~
@@ -881,13 +889,13 @@ To declare a variable's type, use ``<variable>: <type>``:
 
 ::
 
-   var health: int = 0
+    var health: int = 0
 
 To declare the return type of a function, use ``-> <type>``:
 
 ::
 
-   func heal(amount: int) -> void:
+    func heal(amount: int) -> void:
 
 Inferred types
 ~~~~~~~~~~~~~~
@@ -902,8 +910,8 @@ otherwise prefer writing the type explicitly.
 
 ::
 
-   var health: int = 0 # The type can be int or float, and thus should be stated explicitly.
-   var direction := Vector3(1, 2, 3) # The type is clearly inferred as Vector3.
+    var health: int = 0 # The type can be int or float, and thus should be stated explicitly.
+    var direction := Vector3(1, 2, 3) # The type is clearly inferred as Vector3.
 
 Include the type hint when the type is ambiguous, and
 omit the type hint when it's redundant.
@@ -914,11 +922,11 @@ omit the type hint when it's redundant.
 
 ::
 
-   var health := 0 # Typed as int, but it could be that float was intended.
-   var direction: Vector3 = Vector3(1, 2, 3) # The type hint has redundant information.
+    var health := 0 # Typed as int, but it could be that float was intended.
+    var direction: Vector3 = Vector3(1, 2, 3) # The type hint has redundant information.
 
-   # What type is this? It's not immediately clear to the reader, so it's bad.
-   var value := complex_function()
+    # What type is this? It's not immediately clear to the reader, so it's bad.
+    var value := complex_function()
 
 In some cases, the type must be stated explicitly, otherwise the behavior
 will not be as expected because the compiler will only be able to use
@@ -932,7 +940,7 @@ should set the type explicitly.
 
 ::
 
-   @onready var health_bar: ProgressBar = get_node("UI/LifeBar")
+    @onready var health_bar: ProgressBar = get_node("UI/LifeBar")
 
 Alternatively, you can use the ``as`` keyword to cast the return type, and
 that type will be used to infer the type of the var.
@@ -941,8 +949,8 @@ that type will be used to infer the type of the var.
 
 ::
 
-   @onready var health_bar := get_node("UI/LifeBar") as ProgressBar
-   # health_bar will be typed as ProgressBar
+    @onready var health_bar := get_node("UI/LifeBar") as ProgressBar
+    # health_bar will be typed as ProgressBar
 
 This option is also considered more :ref:`type-safe<doc_gdscript_static_typing_safe_lines>` than the first.
 
@@ -952,6 +960,6 @@ This option is also considered more :ref:`type-safe<doc_gdscript_static_typing_s
 
 ::
 
-   # The compiler can't infer the exact type and will use Node
-   # instead of ProgressBar.
-   @onready var health_bar := get_node("UI/LifeBar")
+    # The compiler can't infer the exact type and will use Node
+    # instead of ProgressBar.
+    @onready var health_bar := get_node("UI/LifeBar")

@@ -19,22 +19,24 @@ Blends two of three animations linearly inside of an :ref:`AnimationNodeBlendTre
 Description
 -----------
 
-A resource to add to an :ref:`AnimationNodeBlendTree<class_AnimationNodeBlendTree>`. Blends two animations together linearly out of three based on a value in the ``[-1.0, 1.0]`` range.
+A resource to add to an :ref:`AnimationNodeBlendTree<class_AnimationNodeBlendTree>`. Blends two animations out of three linearly out of three based on the amount value.
 
-This node has three inputs:
+This animation node has three inputs:
 
-- The base animation
+- The base animation to blend with
 
-- A -blend animation to blend with when the blend amount is in the ``[-1.0, 0.0]`` range.
+- A "-blend" animation to blend with when the blend amount is negative value
 
-- A +blend animation to blend with when the blend amount is in the ``[0.0, 1.0]`` range
+- A "+blend" animation to blend with when the blend amount is positive value
+
+In general, the blend value should be in the ``[-1.0, 1.0]`` range. Values outside of this range can blend amplified animations, however, :ref:`AnimationNodeAdd3<class_AnimationNodeAdd3>` works better for this purpose.
 
 .. rst-class:: classref-introduction-group
 
 Tutorials
 ---------
 
-- :doc:`AnimationTree <../tutorials/animation/animation_tree>`
+- :doc:`Using AnimationTree <../tutorials/animation/animation_tree>`
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
@@ -42,3 +44,4 @@ Tutorials
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

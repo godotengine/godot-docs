@@ -17,7 +17,7 @@ a 2D game.
           programming entirely, you should start here: :ref:`doc_scripting`.
 
 The game is called "Dodge the Creeps!". Your character must move and avoid the
-enemies for as long as possible. 
+enemies for as long as possible.
 
 You will learn to:
 
@@ -57,7 +57,7 @@ the code.
 
 You can download them by clicking the link below.
 
-:download:`dodge_assets.zip <files/dodge_assets.zip>`.
+`dodge_the_creeps_2d_assets.zip <https://github.com/godotengine/godot-docs-project-starters/releases/download/latest-4.x/dodge_the_creeps_2d_assets.zip>`_.
 
 Contents
 --------

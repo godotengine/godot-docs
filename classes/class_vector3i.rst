@@ -10,14 +10,14 @@
 Vector3i
 ========
 
-Vector used for 3D math using integer coordinates.
+A 3D vector using integer coordinates.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-3-element structure that can be used to represent positions in 3D space or any other triplet of numeric values.
+A 3-element structure that can be used to represent 3D grid coordinates or any other triplet of integers.
 
 It uses integer coordinates and is therefore preferable to :ref:`Vector3<class_Vector3>` when exact precision is required. Note that the values are limited to 32 bits, and unlike :ref:`Vector3<class_Vector3>` this cannot be configured with an engine build option. Use :ref:`int<class_int>` or :ref:`PackedInt64Array<class_PackedInt64Array>` if 64-bit values are needed.
 
@@ -191,6 +191,22 @@ Zero vector, a vector with all components set to ``0``.
 
 One vector, a vector with all components set to ``1``.
 
+.. _class_Vector3i_constant_MIN:
+
+.. rst-class:: classref-constant
+
+**MIN** = ``Vector3i(-2147483648, -2147483648, -2147483648)``
+
+Min vector, a vector with all components equal to ``INT32_MIN``. Can be used as a negative integer equivalent of :ref:`Vector3.INF<class_Vector3_constant_INF>`.
+
+.. _class_Vector3i_constant_MAX:
+
+.. rst-class:: classref-constant
+
+**MAX** = ``Vector3i(2147483647, 2147483647, 2147483647)``
+
+Max vector, a vector with all components equal to ``INT32_MAX``. Can be used as an integer equivalent of :ref:`Vector3.INF<class_Vector3_constant_INF>`.
+
 .. _class_Vector3i_constant_LEFT:
 
 .. rst-class:: classref-constant
@@ -315,7 +331,7 @@ Constructs a **Vector3i** as a copy of the given **Vector3i**.
 
 :ref:`Vector3i<class_Vector3i>` **Vector3i** **(** :ref:`Vector3<class_Vector3>` from **)**
 
-Constructs a new **Vector3i** from :ref:`Vector3<class_Vector3>`. The floating point coordinates will be truncated.
+Constructs a new **Vector3i** from the given :ref:`Vector3<class_Vector3>` by truncating components' fractional parts (rounding towards zero). For a different behavior consider passing the result of :ref:`Vector3.ceil<class_Vector3_method_ceil>`, :ref:`Vector3.floor<class_Vector3_method_floor>` or :ref:`Vector3.round<class_Vector3_method_round>` to this constructor instead.
 
 .. rst-class:: classref-item-separator
 
@@ -473,7 +489,7 @@ Gets the remainder of each component of the **Vector3i** with the components of 
 
 :ref:`Vector3i<class_Vector3i>` **operator %** **(** :ref:`int<class_int>` right **)**
 
-Gets the remainder of each component of the **Vector3i** with the the given :ref:`int<class_int>`. This operation uses truncated division, which is often not desired as it does not work well with negative numbers. Consider using :ref:`@GlobalScope.posmod<class_@GlobalScope_method_posmod>` instead if you want to handle negative numbers.
+Gets the remainder of each component of the **Vector3i** with the given :ref:`int<class_int>`. This operation uses truncated division, which is often not desired as it does not work well with negative numbers. Consider using :ref:`@GlobalScope.posmod<class_@GlobalScope_method_posmod>` instead if you want to handle negative numbers.
 
 ::
 
@@ -701,3 +717,4 @@ Returns the negative value of the **Vector3i**. This is the same as writing ``Ve
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

@@ -19,7 +19,7 @@ Suggested bindings object for OpenXR.
 Description
 -----------
 
-This object stores suggested bindings for an interaction profile. Interaction profiles define the meta data for a tracked XR device such as an XR controller.
+This object stores suggested bindings for an interaction profile. Interaction profiles define the metadata for a tracked XR device such as an XR controller.
 
 For more information see the `interaction profiles info in the OpenXR specification <https://www.khronos.org/registry/OpenXR/specs/1.0/html/xrspec.html#semantic-path-interaction-profiles>`__.
 
@@ -125,3 +125,4 @@ Get the number of bindings in this interaction profile.
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

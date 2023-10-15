@@ -12,14 +12,18 @@ ShaderMaterial
 
 **Inherits:** :ref:`Material<class_Material>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-A material that uses a custom :ref:`Shader<class_Shader>` program.
+A material defined by a custom :ref:`Shader<class_Shader>` program and the values of its shader parameters.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-A material that uses a custom :ref:`Shader<class_Shader>` program to render either items to screen or process particles. You can create multiple materials for the same shader but configure different values for the uniforms defined in the shader.
+A material that uses a custom :ref:`Shader<class_Shader>` program to render visual items (canvas items, meshes, skies, fog), or to process particles. Compared to other materials, **ShaderMaterial** gives deeper control over the generated shader code. For more information, see the shaders documentation index below.
+
+Multiple **ShaderMaterial**\ s can use the same shader and configure different values for the shader uniforms.
+
+\ **Note:** For performance reasons, the :ref:`Resource.changed<class_Resource_signal_changed>` signal is only emitted when the :ref:`Resource.resource_name<class_Resource_property_resource_name>` changes. Only in editor, it is also emitted for :ref:`shader<class_ShaderMaterial_property_shader>` changes.
 
 .. rst-class:: classref-introduction-group
 
@@ -115,3 +119,4 @@ Changes the value set for this material of a uniform in the shader.
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

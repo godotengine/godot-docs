@@ -12,22 +12,20 @@ RayCast2D
 
 **Inherits:** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-Query the closest object intersecting a ray.
+A ray in 2D space, used to find the first :ref:`CollisionObject2D<class_CollisionObject2D>` it intersects.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-A RayCast represents a line from its origin to its destination position, :ref:`target_position<class_RayCast2D_property_target_position>`. It is used to query the 2D space in order to find the closest object along the path of the ray.
+A raycast represents a ray from its origin to its :ref:`target_position<class_RayCast2D_property_target_position>` that finds the closest :ref:`CollisionObject2D<class_CollisionObject2D>` along its path, if it intersects any. This is useful for a lot of things, such as
 
-RayCast2D can ignore some objects by adding them to the exception list via :ref:`add_exception<class_RayCast2D_method_add_exception>`, by setting proper filtering with collision layers, or by filtering object types with type masks.
+\ **RayCast2D** can ignore some objects by adding them to an exception list, by making its detection reporting ignore :ref:`Area2D<class_Area2D>`\ s (:ref:`collide_with_areas<class_RayCast2D_property_collide_with_areas>`) or :ref:`PhysicsBody2D<class_PhysicsBody2D>`\ s (:ref:`collide_with_bodies<class_RayCast2D_property_collide_with_bodies>`), or by configuring physics layers.
 
-RayCast2D can be configured to report collisions with :ref:`Area2D<class_Area2D>`\ s (:ref:`collide_with_areas<class_RayCast2D_property_collide_with_areas>`) and/or :ref:`PhysicsBody2D<class_PhysicsBody2D>`\ s (:ref:`collide_with_bodies<class_RayCast2D_property_collide_with_bodies>`).
+\ **RayCast2D** calculates intersection every physics frame, and it holds the result until the next physics frame. For an immediate raycast, or if you want to configure a **RayCast2D** multiple times within the same physics frame, use :ref:`force_raycast_update<class_RayCast2D_method_force_raycast_update>`.
 
-Only enabled raycasts will be able to query the space and report collisions.
-
-RayCast2D calculates intersection every physics frame (see :ref:`Node<class_Node>`), and the result is cached so it can be used later until the next frame. If multiple queries are required between physics frames (or during the same frame) use :ref:`force_raycast_update<class_RayCast2D_method_force_raycast_update>` after adjusting the raycast.
+To sweep over a region of 2D space, you can approximate the region with multiple **RayCast2D**\ s or use :ref:`ShapeCast2D<class_ShapeCast2D>`.
 
 .. rst-class:: classref-introduction-group
 
@@ -118,7 +116,7 @@ Property Descriptions
 - void **set_collide_with_areas** **(** :ref:`bool<class_bool>` value **)**
 - :ref:`bool<class_bool>` **is_collide_with_areas_enabled** **(** **)**
 
-If ``true``, collision with :ref:`Area2D<class_Area2D>`\ s will be reported.
+If ``true``, collisions with :ref:`Area2D<class_Area2D>`\ s will be reported.
 
 .. rst-class:: classref-item-separator
 
@@ -135,7 +133,7 @@ If ``true``, collision with :ref:`Area2D<class_Area2D>`\ s will be reported.
 - void **set_collide_with_bodies** **(** :ref:`bool<class_bool>` value **)**
 - :ref:`bool<class_bool>` **is_collide_with_bodies_enabled** **(** **)**
 
-If ``true``, collision with :ref:`PhysicsBody2D<class_PhysicsBody2D>`\ s will be reported.
+If ``true``, collisions with :ref:`PhysicsBody2D<class_PhysicsBody2D>`\ s will be reported.
 
 .. rst-class:: classref-item-separator
 
@@ -273,7 +271,7 @@ Removes all collision exceptions for this ray.
 
 void **force_raycast_update** **(** **)**
 
-Updates the collision information for the ray. Use this method to update the collision information immediately instead of waiting for the next ``_physics_process`` call, for example if the ray or its parent has changed state.
+Updates the collision information for the ray immediately, without waiting for the next ``_physics_process`` call. Use this method, for example, when the ray or its parent has changed state.
 
 \ **Note:** :ref:`enabled<class_RayCast2D_property_enabled>` does not need to be ``true`` for this to work.
 
@@ -405,3 +403,4 @@ Based on ``value``, enables or disables the specified layer in the :ref:`collisi
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

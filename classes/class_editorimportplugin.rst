@@ -51,10 +51,10 @@ Below is an example EditorImportPlugin that imports a :ref:`Mesh<class_Mesh>` fr
     func _get_preset_count():
         return 1
     
-    func _get_preset_name(i):
+    func _get_preset_name(preset_index):
         return "Default"
     
-    func _get_import_options(i):
+    func _get_import_options(path, preset_index):
         return [{"name": "my_option", "default_value": false}]
     
     func _import(source_file, save_path, options, platform_variants, gen_files):
@@ -115,7 +115,7 @@ Below is an example EditorImportPlugin that imports a :ref:`Mesh<class_Mesh>` fr
                 new Godot.Collections.Dictionary
                 {
                     { "name", "myOption" },
-                    { "defaultValue", false },
+                    { "default_value", false },
                 }
             };
         }
@@ -249,12 +249,12 @@ This method can be overridden to hide specific import options if conditions are 
 
  .. code-tab:: csharp
 
-    public void GetOptionVisibility(string option, Godot.Collections.Dictionary options)
+    public void _GetOptionVisibility(string option, Godot.Collections.Dictionary options)
     {
         // Only show the lossy quality setting if the compression mode is set to "Lossy".
-        if (option == "compress/lossyQuality" && options.Contains("compress/mode"))
+        if (option == "compress/lossy_quality" && options.ContainsKey("compress/mode"))
         {
-            return (int)options["compress/mode"] == COMPRESS_LOSSY; // This is a constant you set
+            return (int)options["compress/mode"] == CompressLossy; // This is a constant you set
         }
     
         return true;
@@ -380,3 +380,4 @@ This function can only be called during the :ref:`_import<class_EditorImportPlug
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

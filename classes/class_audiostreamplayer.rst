@@ -286,7 +286,7 @@ The :ref:`AudioStream<class_AudioStream>` object to be played.
 - void **set_stream_paused** **(** :ref:`bool<class_bool>` value **)**
 - :ref:`bool<class_bool>` **get_stream_paused** **(** **)**
 
-If ``true``, the playback is paused. You can resume it by setting ``stream_paused`` to ``false``.
+If ``true``, the playback is paused. You can resume it by setting :ref:`stream_paused<class_AudioStreamPlayer_property_stream_paused>` to ``false``.
 
 .. rst-class:: classref-item-separator
 
@@ -388,3 +388,4 @@ Stops the audio.
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

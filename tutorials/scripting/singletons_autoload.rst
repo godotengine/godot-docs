@@ -87,17 +87,12 @@ This means that any node can access a singleton named "PlayerVariables" with:
     playerVariables.Health -= 10; // Instance field.
 
 If the **Enable** column is checked (which is the default), then the singleton can
-be accessed directly without requiring ``get_node()``:
+be accessed directly in GDScript, without requiring ``get_node()``:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
 
    PlayerVariables.health -= 10
-
- .. code-tab:: csharp
-
-    // Static members can be accessed by using the class name.
-    PlayerVariables.Health -= 10;
 
 Note that autoload objects (scripts and/or scenes) are accessed just like any
 other node in the scene tree. In fact, if you look at the running scene tree,
@@ -120,12 +115,13 @@ method (see :ref:`doc_scene_tree` for details). However, if you need more
 complex behavior when changing scenes, this method provides more functionality.
 
 To begin, download the template from here:
-:download:`autoload.zip <files/autoload.zip>` and open it in Godot.
+`singleton_autoload_starter.zip <https://github.com/godotengine/godot-docs-project-starters/releases/download/latest-4.x/singleton_autoload_starter.zip>`_
+and open it in Godot.
 
-The project contains two scenes: ``Scene1.tscn`` and ``Scene2.tscn``. Each
+The project contains two scenes: ``scene_1.tscn`` and ``scene_2.tscn``. Each
 scene contains a label displaying the scene name and a button with its
 ``pressed()`` signal connected. When you run the project, it starts in
-``Scene1.tscn``. However, pressing the button does nothing.
+``scene_1.tscn``. However, pressing the button does nothing.
 
 Creating the script
 ~~~~~~~~~~~~~~~~~~~~~
@@ -195,7 +191,7 @@ current scene and replace it with the requested one.
 
 
     func _deferred_goto_scene(path):
-        # It is now safe to remove the current scene
+        # It is now safe to remove the current scene.
         current_scene.free()
 
         # Load the new scene.
@@ -223,16 +219,16 @@ current scene and replace it with the requested one.
         // The solution is to defer the load to a later time, when
         // we can be sure that no code from the current scene is running:
 
-        CallDeferred(nameof(DeferredGotoScene), path);
+        CallDeferred(MethodName.DeferredGotoScene, path);
     }
 
     public void DeferredGotoScene(string path)
     {
-        // It is now safe to remove the current scene
+        // It is now safe to remove the current scene.
         CurrentScene.Free();
 
         // Load a new scene.
-        var nextScene = (PackedScene)GD.Load(path);
+        var nextScene = GD.Load<PackedScene>(path);
 
         // Instance the new scene.
         CurrentScene = nextScene.Instantiate();
@@ -256,14 +252,14 @@ Finally, we need to fill the empty callback functions in the two scenes:
 
     # Add to 'Scene1.gd'.
 
-    func _on_Button_pressed():
-        Global.goto_scene("res://Scene2.tscn")
+    func _on_button_pressed():
+        Global.goto_scene("res://scene_2.tscn")
 
  .. code-tab:: csharp
 
     // Add to 'Scene1.cs'.
 
-    public void OnButtonPressed()
+    private void OnButtonPressed()
     {
         var global = GetNode<Global>("/root/Global");
         global.GotoScene("res://Scene2.tscn");
@@ -276,14 +272,14 @@ and
 
     # Add to 'Scene2.gd'.
 
-    func _on_Button_pressed():
-        Global.goto_scene("res://Scene1.tscn")
+    func _on_button_pressed():
+        Global.goto_scene("res://scene_1.tscn")
 
  .. code-tab:: csharp
 
     // Add to 'Scene2.cs'.
 
-    public void OnButtonPressed()
+    private void OnButtonPressed()
     {
         var global = GetNode<Global>("/root/Global");
         global.GotoScene("res://Scene1.tscn");

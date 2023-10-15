@@ -12,16 +12,16 @@ MarginContainer
 
 **Inherits:** :ref:`Container<class_Container>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-Simple margin container.
+A container that keeps a margin around its child controls.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-Adds a top, left, bottom, and right margin to all :ref:`Control<class_Control>` nodes that are direct children of the container. To control the **MarginContainer**'s margin, use the ``margin_*`` theme properties listed below.
+**MarginContainer** adds an adjustable margin on each side of its child controls. The margins are added around all children, not around each individual one. To control the **MarginContainer**'s margins, use the ``margin_*`` theme properties listed below.
 
-\ **Note:** Be careful, :ref:`Control<class_Control>` margin values are different from the constant margin values. If you want to change the custom margin values of the **MarginContainer** by code, you should use the following examples:
+\ **Note:** The margin sizes are theme overrides, not normal properties. This is an example of how to change them in code:
 
 
 .. tabs::
@@ -51,7 +51,7 @@ Adds a top, left, bottom, and right margin to all :ref:`Control<class_Control>` 
 Tutorials
 ---------
 
-- :doc:`GUI containers <../tutorials/ui/gui_containers>`
+- :doc:`Using Containers <../tutorials/ui/gui_containers>`
 
 .. rst-class:: classref-reftable-group
 
@@ -86,7 +86,7 @@ Theme Property Descriptions
 
 :ref:`int<class_int>` **margin_bottom** = ``0``
 
-All direct children of **MarginContainer** will have a bottom margin of ``margin_bottom`` pixels.
+Offsets towards the inside direct children of the container by this amount of pixels from the bottom.
 
 .. rst-class:: classref-item-separator
 
@@ -98,7 +98,7 @@ All direct children of **MarginContainer** will have a bottom margin of ``margin
 
 :ref:`int<class_int>` **margin_left** = ``0``
 
-All direct children of **MarginContainer** will have a left margin of ``margin_left`` pixels.
+Offsets towards the inside direct children of the container by this amount of pixels from the left.
 
 .. rst-class:: classref-item-separator
 
@@ -110,7 +110,7 @@ All direct children of **MarginContainer** will have a left margin of ``margin_l
 
 :ref:`int<class_int>` **margin_right** = ``0``
 
-All direct children of **MarginContainer** will have a right margin of ``margin_right`` pixels.
+Offsets towards the inside direct children of the container by this amount of pixels from the right.
 
 .. rst-class:: classref-item-separator
 
@@ -122,7 +122,7 @@ All direct children of **MarginContainer** will have a right margin of ``margin_
 
 :ref:`int<class_int>` **margin_top** = ``0``
 
-All direct children of **MarginContainer** will have a top margin of ``margin_top`` pixels.
+Offsets towards the inside direct children of the container by this amount of pixels from the top.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
@@ -130,3 +130,4 @@ All direct children of **MarginContainer** will have a top margin of ``margin_to
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

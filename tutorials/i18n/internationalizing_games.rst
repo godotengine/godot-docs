@@ -153,12 +153,14 @@ singular and plural don't clearly apply.
 ::
 
     var num_apples = 5
-	label.text = tr_n("There is %d apple", "There are %d apples", num_apples) % num_apples
+    label.text = tr_n("There is %d apple", "There are %d apples", num_apples) % num_apples
 
 This can be combined with a context if needed:
 
+::
+
     var num_jobs = 1
-	label.text = tr_n("%d job", "%d jobs", num_jobs, "Task Manager") % num_jobs
+    label.text = tr_n("%d job", "%d jobs", num_jobs, "Task Manager") % num_jobs
 
 .. note::
 
@@ -232,7 +234,7 @@ It is possible to override text and control layout direction by using the follow
 
 -  ``text_direction``, sets the base text direction. When set to "auto", direction depends on the first strong directional character in the text according to the Unicode Bidirectional Algorithm,
 -  ``language``, overrides current project locale.
--  ``structured_text_bidi_override property`` and ``_structured_text_parser callback``, enables special handling for structured text.
+-  ``structured_text_bidi_override`` property and ``_structured_text_parser`` callback, enables special handling for structured text.
 -  ``layout_direction``, overrides control mirroring.
 
 .. image:: img/ui_mirror.png
@@ -290,12 +292,12 @@ Testing translations
 You may want to test a project's translation before releasing it. Godot provides two ways
 to do this.
 
-First, in the Project Settings, under **Input Devices > Locale**, there is a **Test**
+First, in the Project Settings, under **Internationalization > Locale** (with advanced settings enabled), there is a **Test**
 property. Set this property to the locale code of the language you want to test. Godot will
 run the project with that locale when the project is run (either from the editor or when
 exported).
 
-.. image:: img/locale_test.png
+.. image:: img/locale_test.webp
 
 Keep in mind that since this is a project setting, it will show up in version control when
 it is set to a non-empty value. Therefore, it should be set back to an empty value before

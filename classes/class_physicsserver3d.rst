@@ -14,14 +14,28 @@ PhysicsServer3D
 
 **Inherited By:** :ref:`PhysicsServer3DExtension<class_PhysicsServer3DExtension>`
 
-Server interface for low-level physics access.
+A server interface for low-level 3D physics access.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-PhysicsServer3D is the server responsible for all 3D physics. It can create many kinds of physics objects, but does not insert them on the node tree.
+PhysicsServer3D is the server responsible for all 3D physics. It can directly create and manipulate all physics objects:
+
+- A *space* is a self-contained world for a physics simulation. It contains bodies, areas, and joints. Its state can be queried for collision and intersection information, and several parameters of the simulation can be modified.
+
+- A *shape* is a geometric shape such as a sphere, a box, a cylinder, or a polygon. It can be used for collision detection by adding it to a body/area, possibly with an extra transformation relative to the body/area's origin. Bodies/areas can have multiple (transformed) shapes added to them, and a single shape can be added to bodies/areas multiple times with different local transformations.
+
+- A *body* is a physical object which can be in static, kinematic, or rigid mode. Its state (such as position and velocity) can be queried and updated. A force integration callback can be set to customize the body's physics.
+
+- An *area* is a region in space which can be used to detect bodies and areas entering and exiting it. A body monitoring callback can be set to report entering/exiting body shapes, and similarly an area monitoring callback can be set. Gravity and damping can be overridden within the area by setting area parameters.
+
+- A *joint* is a constraint, either between two bodies or on one body relative to a point. Parameters such as the joint bias and the rest length of a spring joint can be adjusted.
+
+Physics objects in **PhysicsServer3D** may be created and manipulated independently; they do not have to be tied to nodes in the scene tree.
+
+\ **Note:** All the 3D physics nodes use the physics server internally. Adding a physics node to the scene tree will cause a corresponding physics object to be created in the physics server. A rigid body node registers a callback that updates the node's transform with the transform of the respective body object in the physics server (every physics update). An area node registers a callback to inform the area node about overlaps with the respective area object in the physics server. The raycast node queries the direct state of the relevant space in the physics server.
 
 .. rst-class:: classref-reftable-group
 
@@ -542,7 +556,7 @@ A factor applied to the movement across the slider axis once the limits get surp
 
 :ref:`SliderJointParam<enum_PhysicsServer3D_SliderJointParam>` **SLIDER_JOINT_LINEAR_LIMIT_RESTITUTION** = ``3``
 
-The amount of restitution once the limits are surpassed. The lower, the more velocityenergy gets lost.
+The amount of restitution once the limits are surpassed. The lower, the more velocity-energy gets lost.
 
 .. _class_PhysicsServer3D_constant_SLIDER_JOINT_LINEAR_LIMIT_DAMPING:
 
@@ -1799,9 +1813,19 @@ Removes a shape from an area. It does not delete the shape, so it can be reassig
 
 void **area_set_area_monitor_callback** **(** :ref:`RID<class_RID>` area, :ref:`Callable<class_Callable>` callback **)**
 
-.. container:: contribute
+Sets the area's area monitor callback. This callback will be called when any other (shape of an) area enters or exits (a shape of) the given area, and must take the following five parameters:
 
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+1. an integer ``status``: either :ref:`AREA_BODY_ADDED<class_PhysicsServer3D_constant_AREA_BODY_ADDED>` or :ref:`AREA_BODY_REMOVED<class_PhysicsServer3D_constant_AREA_BODY_REMOVED>` depending on whether the other area's shape entered or exited the area,
+
+2. an :ref:`RID<class_RID>` ``area_rid``: the :ref:`RID<class_RID>` of the other area that entered or exited the area,
+
+3. an integer ``instance_id``: the ``ObjectID`` attached to the other area,
+
+4. an integer ``area_shape_idx``: the index of the shape of the other area that entered or exited the area,
+
+5. an integer ``self_shape_idx``: the index of the shape of the area where the other area entered or exited.
+
+By counting (or keeping track of) the shapes that enter and exit, it can be determined if an area (with all its shapes) is entering for the first time or exiting for the last time.
 
 .. rst-class:: classref-item-separator
 
@@ -1837,17 +1861,19 @@ Sets which physics layers the area will monitor.
 
 void **area_set_monitor_callback** **(** :ref:`RID<class_RID>` area, :ref:`Callable<class_Callable>` callback **)**
 
-Sets the function to call when any body/area enters or exits the area. This callback will be called for any object interacting with the area, and takes five parameters:
+Sets the area's body monitor callback. This callback will be called when any other (shape of a) body enters or exits (a shape of) the given area, and must take the following five parameters:
 
-1: :ref:`AREA_BODY_ADDED<class_PhysicsServer3D_constant_AREA_BODY_ADDED>` or :ref:`AREA_BODY_REMOVED<class_PhysicsServer3D_constant_AREA_BODY_REMOVED>`, depending on whether the object entered or exited the area.
+1. an integer ``status``: either :ref:`AREA_BODY_ADDED<class_PhysicsServer3D_constant_AREA_BODY_ADDED>` or :ref:`AREA_BODY_REMOVED<class_PhysicsServer3D_constant_AREA_BODY_REMOVED>` depending on whether the other body shape entered or exited the area,
 
-2: :ref:`RID<class_RID>` of the object that entered/exited the area.
+2. an :ref:`RID<class_RID>` ``body_rid``: the :ref:`RID<class_RID>` of the body that entered or exited the area,
 
-3: Instance ID of the object that entered/exited the area.
+3. an integer ``instance_id``: the ``ObjectID`` attached to the body,
 
-4: The shape index of the object that entered/exited the area.
+4. an integer ``body_shape_idx``: the index of the shape of the body that entered or exited the area,
 
-5: The shape index of the area where the object entered/exited.
+5. an integer ``self_shape_idx``: the index of the shape of the area where the body entered or exited.
+
+By counting (or keeping track of) the shapes that enter and exit, it can be determined if a body (with all its shapes) is entering for the first time or exiting for the last time.
 
 .. rst-class:: classref-item-separator
 
@@ -2511,13 +2537,11 @@ Continuous collision detection tries to predict where a moving body will collide
 
 void **body_set_force_integration_callback** **(** :ref:`RID<class_RID>` body, :ref:`Callable<class_Callable>` callable, :ref:`Variant<class_Variant>` userdata=null **)**
 
-Sets the function used to calculate physics for an object, if that object allows it (see :ref:`body_set_omit_force_integration<class_PhysicsServer3D_method_body_set_omit_force_integration>`).
+Sets the function used to calculate physics for an object, if that object allows it (see :ref:`body_set_omit_force_integration<class_PhysicsServer3D_method_body_set_omit_force_integration>`). The force integration function takes 2 arguments:
 
-The force integration function takes 2 arguments:
+- ``state`` — :ref:`PhysicsDirectBodyState3D<class_PhysicsDirectBodyState3D>` used to retrieve and modify the body's state.
 
-\ ``state:`` :ref:`PhysicsDirectBodyState3D<class_PhysicsDirectBodyState3D>` used to retrieve and modify the body's state.
-
-\ ``userdata:`` Optional user data, if it was passed when calling ``body_set_force_integration_callback``.
+- ``userdata`` — optional user data passed to :ref:`body_set_force_integration_callback<class_PhysicsServer3D_method_body_set_force_integration_callback>`.
 
 .. rst-class:: classref-item-separator
 
@@ -3331,3 +3355,4 @@ Sets the value for a space parameter. A list of available parameters is on the :
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

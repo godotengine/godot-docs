@@ -12,25 +12,23 @@ GridContainer
 
 **Inherits:** :ref:`Container<class_Container>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-Grid container used to arrange Control-derived children in a grid like layout.
+A container that arranges its child controls in a grid layout.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-GridContainer will arrange its Control-derived children in a grid like structure, the grid columns are specified using the :ref:`columns<class_GridContainer_property_columns>` property and the number of rows will be equal to the number of children in the container divided by the number of columns. For example, if the container has 5 children, and 2 columns, there will be 3 rows in the container.
+**GridContainer** arranges its child controls in a grid layout. The number of columns is specified by the :ref:`columns<class_GridContainer_property_columns>` property, whereas the number of rows depends on how many are needed for the child controls. The number of rows and columns is preserved for every size of the container.
 
-Notice that grid layout will preserve the columns and rows for every size of the container, and that empty columns will be expanded automatically.
-
-\ **Note:** GridContainer only works with child nodes inheriting from Control. It won't rearrange child nodes inheriting from Node2D.
+\ **Note:** **GridContainer** only works with child nodes inheriting from :ref:`Control<class_Control>`. It won't rearrange child nodes inheriting from :ref:`Node2D<class_Node2D>`.
 
 .. rst-class:: classref-introduction-group
 
 Tutorials
 ---------
 
-- :doc:`GUI containers <../tutorials/ui/gui_containers>`
+- :doc:`Using Containers <../tutorials/ui/gui_containers>`
 
 - `OS Test Demo <https://godotengine.org/asset-library/asset/677>`__
 
@@ -117,3 +115,4 @@ The vertical separation of children nodes.
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

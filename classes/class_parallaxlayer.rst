@@ -61,9 +61,11 @@ Property Descriptions
 - void **set_mirroring** **(** :ref:`Vector2<class_Vector2>` value **)**
 - :ref:`Vector2<class_Vector2>` **get_mirroring** **(** **)**
 
-The ParallaxLayer's :ref:`Texture2D<class_Texture2D>` mirroring. Useful for creating an infinite scrolling background. If an axis is set to ``0``, the :ref:`Texture2D<class_Texture2D>` will not be mirrored.
+The ParallaxLayer's :ref:`Texture2D<class_Texture2D>` repeating. Useful for creating an infinite scrolling background. If an axis is set to ``0``, the :ref:`Texture2D<class_Texture2D>` will not be repeated.
 
-If the length of the viewport axis is bigger than twice the mirrored axis size, it will not repeat infinitely, as the parallax layer only draws 2 instances of the texture at any one time.
+If the length of the viewport axis is bigger than twice the repeated axis size, it will not repeat infinitely, as the parallax layer only draws 2 instances of the texture at any given time.
+
+\ **Note:** Despite its name, the texture will not be mirrored, it will simply be repeated.
 
 .. rst-class:: classref-item-separator
 
@@ -105,3 +107,4 @@ Multiplies the ParallaxLayer's motion. If an axis is set to ``0``, it will not s
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

@@ -27,6 +27,8 @@ This class is used when loading a project that uses a :ref:`TextureLayered<class
 
 - When this subclass is missing due to using a different engine version or build (e.g. modules disabled).
 
+\ **Note:** This is not intended to be used as an actual texture for rendering. It is not guaranteed to work like one in shaders or materials (for example when calculating UV).
+
 .. rst-class:: classref-reftable-group
 
 Properties
@@ -86,3 +88,4 @@ The size of each texture layer (in pixels).
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

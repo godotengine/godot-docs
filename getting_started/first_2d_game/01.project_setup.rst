@@ -9,17 +9,19 @@ Launch Godot and create a new project.
 
 .. image:: img/new-project-button.webp
 
+When creating the new project, you only need to choose a valid *Project Path*. You can leave the other default settings alone.
+
 .. tabs::
  .. tab:: GDScript
 
-    Download :download:`dodge_assets.zip <files/dodge_assets.zip>`.
+    Download `dodge_the_creeps_2d_assets.zip <https://github.com/godotengine/godot-docs-project-starters/releases/download/latest-4.x/dodge_the_creeps_2d_assets.zip>`_.
     The archive contains the images and sounds you'll be using
     to make the game. Extract the archive and move the ``art/``
     and ``fonts/`` directories to your project's directory.
 
  .. tab:: C#
 
-    Download :download:`dodge_assets.zip <files/dodge_assets.zip>`.
+    Download `dodge_the_creeps_2d_assets.zip <https://github.com/godotengine/godot-docs-project-starters/releases/download/latest-4.x/dodge_the_creeps_2d_assets.zip>`_.
     The archive contains the images and sounds you'll be using
     to make the game. Extract the archive and move the ``art/``
     and ``fonts/`` directories to your project's directory.
@@ -34,7 +36,7 @@ Launch Godot and create a new project.
 
 Your project folder should look like this.
 
-.. image:: img/folder-content.png
+.. image:: img/folder-content.webp
 
 This game is designed for portrait mode, so we need to adjust the size of the
 game window. Click on *Project -> Project Settings* to open the project settings

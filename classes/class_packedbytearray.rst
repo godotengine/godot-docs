@@ -21,6 +21,10 @@ An array specifically designed to hold bytes. Packs data tightly, so it saves me
 
 \ **PackedByteArray** also provides methods to encode/decode various types to/from bytes. The way values are encoded is an implementation detail and shouldn't be relied upon when interacting with external apps.
 
+.. note::
+
+	There are notable differences when using this API with C#. See :ref:`doc_c_sharp_differences` for more information.
+
 .. rst-class:: classref-reftable-group
 
 Constructors
@@ -64,21 +68,21 @@ Methods
    +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                           | :ref:`decode_half<class_PackedByteArray_method_decode_half>` **(** :ref:`int<class_int>` byte_offset **)** |const|                                                                         |
    +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                               | :ref:`decode_s8<class_PackedByteArray_method_decode_s8>` **(** :ref:`int<class_int>` byte_offset **)** |const|                                                                             |
+   +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                               | :ref:`decode_s16<class_PackedByteArray_method_decode_s16>` **(** :ref:`int<class_int>` byte_offset **)** |const|                                                                           |
    +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                               | :ref:`decode_s32<class_PackedByteArray_method_decode_s32>` **(** :ref:`int<class_int>` byte_offset **)** |const|                                                                           |
    +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                               | :ref:`decode_s64<class_PackedByteArray_method_decode_s64>` **(** :ref:`int<class_int>` byte_offset **)** |const|                                                                           |
    +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                               | :ref:`decode_s8<class_PackedByteArray_method_decode_s8>` **(** :ref:`int<class_int>` byte_offset **)** |const|                                                                             |
+   | :ref:`int<class_int>`                               | :ref:`decode_u8<class_PackedByteArray_method_decode_u8>` **(** :ref:`int<class_int>` byte_offset **)** |const|                                                                             |
    +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                               | :ref:`decode_u16<class_PackedByteArray_method_decode_u16>` **(** :ref:`int<class_int>` byte_offset **)** |const|                                                                           |
    +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                               | :ref:`decode_u32<class_PackedByteArray_method_decode_u32>` **(** :ref:`int<class_int>` byte_offset **)** |const|                                                                           |
    +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                               | :ref:`decode_u64<class_PackedByteArray_method_decode_u64>` **(** :ref:`int<class_int>` byte_offset **)** |const|                                                                           |
-   +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                               | :ref:`decode_u8<class_PackedByteArray_method_decode_u8>` **(** :ref:`int<class_int>` byte_offset **)** |const|                                                                             |
    +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Variant<class_Variant>`                       | :ref:`decode_var<class_PackedByteArray_method_decode_var>` **(** :ref:`int<class_int>` byte_offset, :ref:`bool<class_bool>` allow_objects=false **)** |const|                              |
    +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -96,21 +100,21 @@ Methods
    +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                | :ref:`encode_half<class_PackedByteArray_method_encode_half>` **(** :ref:`int<class_int>` byte_offset, :ref:`float<class_float>` value **)**                                                |
    +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                                | :ref:`encode_s8<class_PackedByteArray_method_encode_s8>` **(** :ref:`int<class_int>` byte_offset, :ref:`int<class_int>` value **)**                                                        |
+   +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                | :ref:`encode_s16<class_PackedByteArray_method_encode_s16>` **(** :ref:`int<class_int>` byte_offset, :ref:`int<class_int>` value **)**                                                      |
    +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                | :ref:`encode_s32<class_PackedByteArray_method_encode_s32>` **(** :ref:`int<class_int>` byte_offset, :ref:`int<class_int>` value **)**                                                      |
    +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                | :ref:`encode_s64<class_PackedByteArray_method_encode_s64>` **(** :ref:`int<class_int>` byte_offset, :ref:`int<class_int>` value **)**                                                      |
    +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                                | :ref:`encode_s8<class_PackedByteArray_method_encode_s8>` **(** :ref:`int<class_int>` byte_offset, :ref:`int<class_int>` value **)**                                                        |
+   | void                                                | :ref:`encode_u8<class_PackedByteArray_method_encode_u8>` **(** :ref:`int<class_int>` byte_offset, :ref:`int<class_int>` value **)**                                                        |
    +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                | :ref:`encode_u16<class_PackedByteArray_method_encode_u16>` **(** :ref:`int<class_int>` byte_offset, :ref:`int<class_int>` value **)**                                                      |
    +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                | :ref:`encode_u32<class_PackedByteArray_method_encode_u32>` **(** :ref:`int<class_int>` byte_offset, :ref:`int<class_int>` value **)**                                                      |
    +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                | :ref:`encode_u64<class_PackedByteArray_method_encode_u64>` **(** :ref:`int<class_int>` byte_offset, :ref:`int<class_int>` value **)**                                                      |
-   +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                                | :ref:`encode_u8<class_PackedByteArray_method_encode_u8>` **(** :ref:`int<class_int>` byte_offset, :ref:`int<class_int>` value **)**                                                        |
    +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                               | :ref:`encode_var<class_PackedByteArray_method_encode_var>` **(** :ref:`int<class_int>` byte_offset, :ref:`Variant<class_Variant>` value, :ref:`bool<class_bool>` allow_objects=false **)** |
    +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -120,11 +124,13 @@ Methods
    +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                         | :ref:`get_string_from_ascii<class_PackedByteArray_method_get_string_from_ascii>` **(** **)** |const|                                                                                       |
    +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                         | :ref:`get_string_from_utf8<class_PackedByteArray_method_get_string_from_utf8>` **(** **)** |const|                                                                                         |
+   +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                         | :ref:`get_string_from_utf16<class_PackedByteArray_method_get_string_from_utf16>` **(** **)** |const|                                                                                       |
    +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                         | :ref:`get_string_from_utf32<class_PackedByteArray_method_get_string_from_utf32>` **(** **)** |const|                                                                                       |
    +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`String<class_String>`                         | :ref:`get_string_from_utf8<class_PackedByteArray_method_get_string_from_utf8>` **(** **)** |const|                                                                                         |
+   | :ref:`String<class_String>`                         | :ref:`get_string_from_wchar<class_PackedByteArray_method_get_string_from_wchar>` **(** **)** |const|                                                                                       |
    +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                             | :ref:`has<class_PackedByteArray_method_has>` **(** :ref:`int<class_int>` value **)** |const|                                                                                               |
    +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -337,6 +343,18 @@ Decodes a 16-bit floating point number from the bytes starting at ``byte_offset`
 
 ----
 
+.. _class_PackedByteArray_method_decode_s8:
+
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **decode_s8** **(** :ref:`int<class_int>` byte_offset **)** |const|
+
+Decodes a 8-bit signed integer number from the bytes starting at ``byte_offset``. Fails if the byte count is insufficient. Returns ``0`` if a valid number can't be decoded.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_PackedByteArray_method_decode_s16:
 
 .. rst-class:: classref-method
@@ -373,13 +391,13 @@ Decodes a 64-bit signed integer number from the bytes starting at ``byte_offset`
 
 ----
 
-.. _class_PackedByteArray_method_decode_s8:
+.. _class_PackedByteArray_method_decode_u8:
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **decode_s8** **(** :ref:`int<class_int>` byte_offset **)** |const|
+:ref:`int<class_int>` **decode_u8** **(** :ref:`int<class_int>` byte_offset **)** |const|
 
-Decodes a 8-bit signed integer number from the bytes starting at ``byte_offset``. Fails if the byte count is insufficient. Returns ``0`` if a valid number can't be decoded.
+Decodes a 8-bit unsigned integer number from the bytes starting at ``byte_offset``. Fails if the byte count is insufficient. Returns ``0`` if a valid number can't be decoded.
 
 .. rst-class:: classref-item-separator
 
@@ -416,18 +434,6 @@ Decodes a 32-bit unsigned integer number from the bytes starting at ``byte_offse
 :ref:`int<class_int>` **decode_u64** **(** :ref:`int<class_int>` byte_offset **)** |const|
 
 Decodes a 64-bit unsigned integer number from the bytes starting at ``byte_offset``. Fails if the byte count is insufficient. Returns ``0`` if a valid number can't be decoded.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_PackedByteArray_method_decode_u8:
-
-.. rst-class:: classref-method
-
-:ref:`int<class_int>` **decode_u8** **(** :ref:`int<class_int>` byte_offset **)** |const|
-
-Decodes a 8-bit unsigned integer number from the bytes starting at ``byte_offset``. Fails if the byte count is insufficient. Returns ``0`` if a valid number can't be decoded.
 
 .. rst-class:: classref-item-separator
 
@@ -475,9 +481,9 @@ Returns a new **PackedByteArray** with the data decompressed. Set ``buffer_size`
 
 :ref:`PackedByteArray<class_PackedByteArray>` **decompress_dynamic** **(** :ref:`int<class_int>` max_output_size, :ref:`int<class_int>` compression_mode=0 **)** |const|
 
-Returns a new **PackedByteArray** with the data decompressed. Set the compression mode using one of :ref:`CompressionMode<enum_FileAccess_CompressionMode>`'s constants. **This method only accepts gzip and deflate compression modes.**\ 
+Returns a new **PackedByteArray** with the data decompressed. Set the compression mode using one of :ref:`CompressionMode<enum_FileAccess_CompressionMode>`'s constants. **This method only accepts brotli, gzip, and deflate compression modes.**\ 
 
-This method is potentially slower than ``decompress``, as it may have to re-allocate its output buffer multiple times while decompressing, whereas ``decompress`` knows it's output buffer size from the beginning.
+This method is potentially slower than :ref:`decompress<class_PackedByteArray_method_decompress>`, as it may have to re-allocate its output buffer multiple times while decompressing, whereas :ref:`decompress<class_PackedByteArray_method_decompress>` knows it's output buffer size from the beginning.
 
 GZIP has a maximal compression ratio of 1032:1, meaning it's very possible for a small compressed payload to decompress to a potentially very large output. To guard against this, you may provide a maximum size this function is allowed to allocate in bytes via ``max_output_size``. Passing -1 will allow for unbounded output. If any positive value is passed, and the decompression exceeds that amount in bytes, then an error will be returned.
 
@@ -533,6 +539,18 @@ Encodes a 16-bit floating point number as bytes at the index of ``byte_offset`` 
 
 ----
 
+.. _class_PackedByteArray_method_encode_s8:
+
+.. rst-class:: classref-method
+
+void **encode_s8** **(** :ref:`int<class_int>` byte_offset, :ref:`int<class_int>` value **)**
+
+Encodes a 8-bit signed integer number (signed byte) at the index of ``byte_offset`` bytes. The array must have at least 1 byte of space, starting at the offset.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_PackedByteArray_method_encode_s16:
 
 .. rst-class:: classref-method
@@ -569,13 +587,13 @@ Encodes a 64-bit signed integer number as bytes at the index of ``byte_offset`` 
 
 ----
 
-.. _class_PackedByteArray_method_encode_s8:
+.. _class_PackedByteArray_method_encode_u8:
 
 .. rst-class:: classref-method
 
-void **encode_s8** **(** :ref:`int<class_int>` byte_offset, :ref:`int<class_int>` value **)**
+void **encode_u8** **(** :ref:`int<class_int>` byte_offset, :ref:`int<class_int>` value **)**
 
-Encodes a 8-bit signed integer number (signed byte) at the index of ``byte_offset`` bytes. The array must have at least 1 byte of space, starting at the offset.
+Encodes a 8-bit unsigned integer number (byte) at the index of ``byte_offset`` bytes. The array must have at least 1 byte of space, starting at the offset.
 
 .. rst-class:: classref-item-separator
 
@@ -612,18 +630,6 @@ Encodes a 32-bit unsigned integer number as bytes at the index of ``byte_offset`
 void **encode_u64** **(** :ref:`int<class_int>` byte_offset, :ref:`int<class_int>` value **)**
 
 Encodes a 64-bit unsigned integer number as bytes at the index of ``byte_offset`` bytes. The array must have at least 8 bytes of space, starting at the offset.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_PackedByteArray_method_encode_u8:
-
-.. rst-class:: classref-method
-
-void **encode_u8** **(** :ref:`int<class_int>` byte_offset, :ref:`int<class_int>` value **)**
-
-Encodes a 8-bit unsigned integer number (byte) at the index of ``byte_offset`` bytes. The array must have at least 1 byte of space, starting at the offset.
 
 .. rst-class:: classref-item-separator
 
@@ -671,31 +677,7 @@ Searches the array for a value and returns its index or ``-1`` if not found. Opt
 
 :ref:`String<class_String>` **get_string_from_ascii** **(** **)** |const|
 
-Converts ASCII/Latin-1 encoded array to :ref:`String<class_String>`. Fast alternative to :ref:`get_string_from_utf8<class_PackedByteArray_method_get_string_from_utf8>` if the content is ASCII/Latin-1 only. Unlike the UTF-8 function this function maps every byte to a character in the array. Multibyte sequences will not be interpreted correctly. For parsing user input always use :ref:`get_string_from_utf8<class_PackedByteArray_method_get_string_from_utf8>`.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_PackedByteArray_method_get_string_from_utf16:
-
-.. rst-class:: classref-method
-
-:ref:`String<class_String>` **get_string_from_utf16** **(** **)** |const|
-
-Converts UTF-16 encoded array to :ref:`String<class_String>`. If the BOM is missing, system endianness is assumed. Returns empty string if source array is not valid UTF-16 string.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_PackedByteArray_method_get_string_from_utf32:
-
-.. rst-class:: classref-method
-
-:ref:`String<class_String>` **get_string_from_utf32** **(** **)** |const|
-
-Converts UTF-32 encoded array to :ref:`String<class_String>`. System endianness is assumed. Returns empty string if source array is not valid UTF-32 string.
+Converts ASCII/Latin-1 encoded array to :ref:`String<class_String>`. Fast alternative to :ref:`get_string_from_utf8<class_PackedByteArray_method_get_string_from_utf8>` if the content is ASCII/Latin-1 only. Unlike the UTF-8 function this function maps every byte to a character in the array. Multibyte sequences will not be interpreted correctly. For parsing user input always use :ref:`get_string_from_utf8<class_PackedByteArray_method_get_string_from_utf8>`. This is the inverse of :ref:`String.to_ascii_buffer<class_String_method_to_ascii_buffer>`.
 
 .. rst-class:: classref-item-separator
 
@@ -707,7 +689,43 @@ Converts UTF-32 encoded array to :ref:`String<class_String>`. System endianness 
 
 :ref:`String<class_String>` **get_string_from_utf8** **(** **)** |const|
 
-Converts UTF-8 encoded array to :ref:`String<class_String>`. Slower than :ref:`get_string_from_ascii<class_PackedByteArray_method_get_string_from_ascii>` but supports UTF-8 encoded data. Use this function if you are unsure about the source of the data. For user input this function should always be preferred. Returns empty string if source array is not valid UTF-8 string.
+Converts UTF-8 encoded array to :ref:`String<class_String>`. Slower than :ref:`get_string_from_ascii<class_PackedByteArray_method_get_string_from_ascii>` but supports UTF-8 encoded data. Use this function if you are unsure about the source of the data. For user input this function should always be preferred. Returns empty string if source array is not valid UTF-8 string. This is the inverse of :ref:`String.to_utf8_buffer<class_String_method_to_utf8_buffer>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_PackedByteArray_method_get_string_from_utf16:
+
+.. rst-class:: classref-method
+
+:ref:`String<class_String>` **get_string_from_utf16** **(** **)** |const|
+
+Converts UTF-16 encoded array to :ref:`String<class_String>`. If the BOM is missing, system endianness is assumed. Returns empty string if source array is not valid UTF-16 string. This is the inverse of :ref:`String.to_utf16_buffer<class_String_method_to_utf16_buffer>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_PackedByteArray_method_get_string_from_utf32:
+
+.. rst-class:: classref-method
+
+:ref:`String<class_String>` **get_string_from_utf32** **(** **)** |const|
+
+Converts UTF-32 encoded array to :ref:`String<class_String>`. System endianness is assumed. Returns empty string if source array is not valid UTF-32 string. This is the inverse of :ref:`String.to_utf32_buffer<class_String_method_to_utf32_buffer>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_PackedByteArray_method_get_string_from_wchar:
+
+.. rst-class:: classref-method
+
+:ref:`String<class_String>` **get_string_from_wchar** **(** **)** |const|
+
+Converts wide character (``wchar_t``, UTF-16 on Windows, UTF-32 on other platforms) encoded array to :ref:`String<class_String>`. Returns empty string if source array is not valid wide string. This is the inverse of :ref:`String.to_wchar_buffer<class_String_method_to_wchar_buffer>`.
 
 .. rst-class:: classref-item-separator
 
@@ -731,7 +749,7 @@ Returns ``true`` if the array contains ``value``.
 
 :ref:`bool<class_bool>` **has_encoded_var** **(** :ref:`int<class_int>` byte_offset, :ref:`bool<class_bool>` allow_objects=false **)** |const|
 
-Returns ``true`` if a valid :ref:`Variant<class_Variant>` value can be decoded at the ``byte_offset``. Returns ``false`` othewrise or when the value is :ref:`Object<class_Object>`-derived and ``allow_objects`` is ``false``.
+Returns ``true`` if a valid :ref:`Variant<class_Variant>` value can be decoded at the ``byte_offset``. Returns ``false`` otherwise or when the value is :ref:`Object<class_Object>`-derived and ``allow_objects`` is ``false``.
 
 .. rst-class:: classref-item-separator
 
@@ -1021,3 +1039,4 @@ Note that the byte is returned as a 64-bit :ref:`int<class_int>`.
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

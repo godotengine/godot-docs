@@ -71,7 +71,7 @@ same statement:
         // Code to execute when in game.
     }
 
-Pieces of code do not have either of the 2 conditions above will run both
+Pieces of code that do not have either of the 2 conditions above will run both
 in-editor and in-game.
 
 Here is how a ``_process()`` function might look for you:
@@ -110,6 +110,13 @@ Here is how a ``_process()`` function might look for you:
     Modifications in the editor are permanent. For example, in the following
     case, when we remove the script, the node will keep its rotation. Be careful
     to avoid making unwanted modifications.
+
+.. note::
+
+    Extending a ``@tool`` script does not automatically make the extending script
+    a ``@tool``. Omitting ``@tool`` from the extending script will disable tool
+    behavior from the super class. Therefore the extending script should also
+    specify the ``@tool`` annotation.
 
 Try it out
 -----------
@@ -180,8 +187,8 @@ run the game, it will spin counter-clockwise.
 Editing variables
 -----------------
 
-Add and export a variable speed to the script. The function set_speed after
-``setget`` is executed with your input to change the variable. Modify
+Add and export a variable speed to the script. To update the speed and also reset the rotation
+angle add a setter ``set(new_speed)`` which is executed with the input from the inspector. Modify
 ``_process()`` to include the rotation speed.
 
 .. tabs::
@@ -268,14 +275,16 @@ By default, the warning only updates when closing and reopening the scene.
 
 
     func _get_configuration_warnings():
-        var warning = []
-        if title == "":
-            warning.append("Please set `title` to a non-empty value.")
-        if description.length() >= 100:
-            warning.append("`description` should be less than 100 characters long.")
+        var warnings = []
 
-        # Returning an empty string means "no warning".
-        return warning
+        if title == "":
+            warnings.append("Please set `title` to a non-empty value.")
+
+        if description.length() >= 100:
+            warnings.append("`description` should be less than 100 characters long.")
+
+        # Returning an empty array means "no warning".
+        return warnings
 
 Instancing scenes
 -----------------

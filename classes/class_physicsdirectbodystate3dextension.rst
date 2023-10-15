@@ -12,9 +12,16 @@ PhysicsDirectBodyState3DExtension
 
 **Inherits:** :ref:`PhysicsDirectBodyState3D<class_PhysicsDirectBodyState3D>` **<** :ref:`Object<class_Object>`
 
-.. container:: contribute
+Provides virtual methods that can be overridden to create custom :ref:`PhysicsDirectBodyState3D<class_PhysicsDirectBodyState3D>` implementations.
 
-	There is currently no description for this class. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+.. rst-class:: classref-introduction-group
+
+Description
+-----------
+
+This class extends :ref:`PhysicsDirectBodyState3D<class_PhysicsDirectBodyState3D>` by providing additional virtual methods that can be overridden. When these methods are overridden, they will be called instead of the internal methods of the physics server.
+
+Intended for use with GDExtension to create custom implementations of :ref:`PhysicsDirectBodyState3D<class_PhysicsDirectBodyState3D>`.
 
 .. rst-class:: classref-reftable-group
 
@@ -74,6 +81,8 @@ Methods
    | :ref:`Vector3<class_Vector3>`                                     | :ref:`_get_contact_local_position<class_PhysicsDirectBodyState3DExtension_method__get_contact_local_position>` **(** :ref:`int<class_int>` contact_idx **)** |virtual| |const|                               |
    +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                                             | :ref:`_get_contact_local_shape<class_PhysicsDirectBodyState3DExtension_method__get_contact_local_shape>` **(** :ref:`int<class_int>` contact_idx **)** |virtual| |const|                                     |
+   +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector3<class_Vector3>`                                     | :ref:`_get_contact_local_velocity_at_position<class_PhysicsDirectBodyState3DExtension_method__get_contact_local_velocity_at_position>` **(** :ref:`int<class_int>` contact_idx **)** |virtual| |const|       |
    +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Vector3<class_Vector3>`                                     | :ref:`_get_inverse_inertia<class_PhysicsDirectBodyState3DExtension_method__get_inverse_inertia>` **(** **)** |virtual| |const|                                                                               |
    +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -475,6 +484,20 @@ void **_apply_torque_impulse** **(** :ref:`Vector3<class_Vector3>` impulse **)**
 
 ----
 
+.. _class_PhysicsDirectBodyState3DExtension_method__get_contact_local_velocity_at_position:
+
+.. rst-class:: classref-method
+
+:ref:`Vector3<class_Vector3>` **_get_contact_local_velocity_at_position** **(** :ref:`int<class_int>` contact_idx **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_PhysicsDirectBodyState3DExtension_method__get_inverse_inertia:
 
 .. rst-class:: classref-method
@@ -757,3 +780,4 @@ void **_set_transform** **(** :ref:`Transform3D<class_Transform3D>` transform **
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

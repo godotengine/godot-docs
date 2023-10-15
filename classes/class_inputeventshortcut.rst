@@ -12,9 +12,14 @@ InputEventShortcut
 
 **Inherits:** :ref:`InputEvent<class_InputEvent>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-.. container:: contribute
+Represents a triggered keyboard :ref:`Shortcut<class_Shortcut>`.
 
-	There is currently no description for this class. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+.. rst-class:: classref-introduction-group
+
+Description
+-----------
+
+InputEventShortcut is a special event that can be received in :ref:`Node._unhandled_key_input<class_Node_method__unhandled_key_input>`. It is typically sent by the editor's Command Palette to trigger actions, but can also be sent manually using :ref:`Viewport.push_input<class_Viewport_method_push_input>`.
 
 .. rst-class:: classref-reftable-group
 
@@ -48,9 +53,7 @@ Property Descriptions
 - void **set_shortcut** **(** :ref:`Shortcut<class_Shortcut>` value **)**
 - :ref:`Shortcut<class_Shortcut>` **get_shortcut** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+The :ref:`Shortcut<class_Shortcut>` represented by this event. Its :ref:`Shortcut.matches_event<class_Shortcut_method_matches_event>` method will always return ``true`` for this event.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
@@ -58,3 +61,4 @@ Property Descriptions
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

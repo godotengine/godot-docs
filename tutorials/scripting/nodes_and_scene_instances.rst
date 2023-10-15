@@ -181,14 +181,14 @@ Scenes are templates from which you can create as many reproductions as you'd
 like. This operation is called instancing, and doing it from code happens in two
 steps:
 
-1. Loading the scene from the hard drive.
+1. Loading the scene from the local drive.
 2. Creating an instance of the loaded :ref:`PackedScene <class_PackedScene>`
    resource.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    var scene = load("res://MyScene.tscn")
+    var scene = load("res://my_scene.tscn")
 
  .. code-tab:: csharp
 
@@ -201,7 +201,7 @@ only available with GDScript.
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    var scene = preload("res://MyScene.tscn")
+    var scene = preload("res://my_scene.tscn")
 
 At that point, ``scene`` is a packed scene resource, not a node. To create the
 actual node, you need to call :ref:`PackedScene.instantiate()

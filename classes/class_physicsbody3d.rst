@@ -14,16 +14,16 @@ PhysicsBody3D
 
 **Inherited By:** :ref:`CharacterBody3D<class_CharacterBody3D>`, :ref:`PhysicalBone3D<class_PhysicalBone3D>`, :ref:`RigidBody3D<class_RigidBody3D>`, :ref:`StaticBody3D<class_StaticBody3D>`
 
-Base class for all objects affected by physics in 3D space.
+Abstract base class for 3D game objects affected by physics.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-PhysicsBody3D is an abstract base class for implementing a physics body. All \*Body3D types inherit from it.
+**PhysicsBody3D** is an abstract base class for 3D game objects affected by physics. All 3D physics bodies inherit from it.
 
-\ **Warning:** With a non-uniform scale this node will probably not function as expected. Please make sure to keep its scale uniform (i.e. the same on all axes), and change the size(s) of its collision shape(s) instead.
+\ **Warning:** With a non-uniform scale, this node will likely not behave as expected. It is advised to keep its scale the same on all axes and adjust its collision shape(s) instead.
 
 .. rst-class:: classref-introduction-group
 
@@ -300,3 +300,4 @@ If ``recovery_as_collision`` is ``true``, any depenetration from the recovery ph
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

@@ -36,11 +36,13 @@ Properties
 .. table::
    :widths: auto
 
-   +---------------------------------------+---------------------------------------------------------------------+---------+
-   | :ref:`XRInterface<class_XRInterface>` | :ref:`primary_interface<class_XRServer_property_primary_interface>` |         |
-   +---------------------------------------+---------------------------------------------------------------------+---------+
-   | :ref:`float<class_float>`             | :ref:`world_scale<class_XRServer_property_world_scale>`             | ``1.0`` |
-   +---------------------------------------+---------------------------------------------------------------------+---------+
+   +---------------------------------------+---------------------------------------------------------------------+-----------------------------------------------------+
+   | :ref:`XRInterface<class_XRInterface>` | :ref:`primary_interface<class_XRServer_property_primary_interface>` |                                                     |
+   +---------------------------------------+---------------------------------------------------------------------+-----------------------------------------------------+
+   | :ref:`Transform3D<class_Transform3D>` | :ref:`world_origin<class_XRServer_property_world_origin>`           | ``Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)`` |
+   +---------------------------------------+---------------------------------------------------------------------+-----------------------------------------------------+
+   | :ref:`float<class_float>`             | :ref:`world_scale<class_XRServer_property_world_scale>`             | ``1.0``                                             |
+   +---------------------------------------+---------------------------------------------------------------------+-----------------------------------------------------+
 
 .. rst-class:: classref-reftable-group
 
@@ -274,6 +276,25 @@ The primary :ref:`XRInterface<class_XRInterface>` currently bound to the **XRSer
 
 ----
 
+.. _class_XRServer_property_world_origin:
+
+.. rst-class:: classref-property
+
+:ref:`Transform3D<class_Transform3D>` **world_origin** = ``Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)``
+
+.. rst-class:: classref-property-setget
+
+- void **set_world_origin** **(** :ref:`Transform3D<class_Transform3D>` value **)**
+- :ref:`Transform3D<class_Transform3D>` **get_world_origin** **(** **)**
+
+The current origin of our tracking space in the virtual world. This is used by the renderer to properly position the camera with new tracking data.
+
+\ **Note:** This property is managed by the current :ref:`XROrigin3D<class_XROrigin3D>` node. It is exposed for access from GDExtensions.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_XRServer_property_world_scale:
 
 .. rst-class:: classref-property
@@ -464,3 +485,4 @@ Removes this positional ``tracker``.
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

@@ -12,14 +12,14 @@ StyleBoxLine
 
 **Inherits:** :ref:`StyleBox<class_StyleBox>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-:ref:`StyleBox<class_StyleBox>` that displays a single line.
+A :ref:`StyleBox<class_StyleBox>` that displays a single line of a given color and thickness.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-:ref:`StyleBox<class_StyleBox>` that displays a single line of a given color and thickness. It can be used to draw things like separators.
+A :ref:`StyleBox<class_StyleBox>` that displays a single line of a given color and thickness. The line can be either horizontal or vertical. Useful for separators.
 
 .. rst-class:: classref-reftable-group
 
@@ -137,3 +137,4 @@ If ``true``, the line will be vertical. If ``false``, the line will be horizonta
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

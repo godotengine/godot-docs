@@ -12,16 +12,14 @@ Label
 
 **Inherits:** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-Displays plain text in a line or wrapped inside a rectangle. For formatted text, use :ref:`RichTextLabel<class_RichTextLabel>`.
+A control for displaying plain text.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-Label displays plain text on the screen. It gives you control over the horizontal and vertical alignment and can wrap the text inside the node's bounding rectangle. It doesn't support bold, italics, or other formatting. For that, use :ref:`RichTextLabel<class_RichTextLabel>` instead.
-
-\ **Note:** Contrarily to most other :ref:`Control<class_Control>`\ s, Label's :ref:`Control.mouse_filter<class_Control_property_mouse_filter>` defaults to :ref:`Control.MOUSE_FILTER_IGNORE<class_Control_constant_MOUSE_FILTER_IGNORE>` (i.e. it doesn't react to mouse input events). This implies that a label won't display any configured :ref:`Control.tooltip_text<class_Control_property_tooltip_text>`, unless you change its mouse filter.
+A control for displaying plain text. It gives you control over the horizontal and vertical alignment and can wrap the text inside the node's bounding rectangle. It doesn't support bold, italics, or other rich text formatting. For that, use :ref:`RichTextLabel<class_RichTextLabel>` instead.
 
 .. rst-class:: classref-introduction-group
 
@@ -45,6 +43,8 @@ Properties
    +-----------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
    | :ref:`HorizontalAlignment<enum_@GlobalScope_HorizontalAlignment>`           | :ref:`horizontal_alignment<class_Label_property_horizontal_alignment>`                                   | ``0``                                                                        |
    +-----------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
+   | |bitfield|\<:ref:`JustificationFlag<enum_TextServer_JustificationFlag>`\>   | :ref:`justification_flags<class_Label_property_justification_flags>`                                     | ``163``                                                                      |
+   +-----------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
    | :ref:`LabelSettings<class_LabelSettings>`                                   | :ref:`label_settings<class_Label_property_label_settings>`                                               |                                                                              |
    +-----------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                                                 | :ref:`language<class_Label_property_language>`                                                           | ``""``                                                                       |
@@ -55,11 +55,13 @@ Properties
    +-----------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
    | :ref:`MouseFilter<enum_Control_MouseFilter>`                                | mouse_filter                                                                                             | ``2`` (overrides :ref:`Control<class_Control_property_mouse_filter>`)        |
    +-----------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
-   | :ref:`SizeFlags<enum_Control_SizeFlags>`                                    | size_flags_vertical                                                                                      | ``4`` (overrides :ref:`Control<class_Control_property_size_flags_vertical>`) |
+   | |bitfield|\<:ref:`SizeFlags<enum_Control_SizeFlags>`\>                      | size_flags_vertical                                                                                      | ``4`` (overrides :ref:`Control<class_Control_property_size_flags_vertical>`) |
    +-----------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
    | :ref:`StructuredTextParser<enum_TextServer_StructuredTextParser>`           | :ref:`structured_text_bidi_override<class_Label_property_structured_text_bidi_override>`                 | ``0``                                                                        |
    +-----------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
    | :ref:`Array<class_Array>`                                                   | :ref:`structured_text_bidi_override_options<class_Label_property_structured_text_bidi_override_options>` | ``[]``                                                                       |
+   +-----------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
+   | :ref:`PackedFloat32Array<class_PackedFloat32Array>`                         | :ref:`tab_stops<class_Label_property_tab_stops>`                                                         | ``PackedFloat32Array()``                                                     |
    +-----------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                                                 | :ref:`text<class_Label_property_text>`                                                                   | ``""``                                                                       |
    +-----------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
@@ -188,6 +190,23 @@ Controls the text's horizontal alignment. Supports left, center, right, and fill
 
 ----
 
+.. _class_Label_property_justification_flags:
+
+.. rst-class:: classref-property
+
+|bitfield|\<:ref:`JustificationFlag<enum_TextServer_JustificationFlag>`\> **justification_flags** = ``163``
+
+.. rst-class:: classref-property-setget
+
+- void **set_justification_flags** **(** |bitfield|\<:ref:`JustificationFlag<enum_TextServer_JustificationFlag>`\> value **)**
+- |bitfield|\<:ref:`JustificationFlag<enum_TextServer_JustificationFlag>`\> **get_justification_flags** **(** **)**
+
+Line fill alignment rules. For more info see :ref:`JustificationFlag<enum_TextServer_JustificationFlag>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_Label_property_label_settings:
 
 .. rst-class:: classref-property
@@ -233,7 +252,7 @@ Language code used for line-breaking and text shaping algorithms, if left empty 
 - void **set_lines_skipped** **(** :ref:`int<class_int>` value **)**
 - :ref:`int<class_int>` **get_lines_skipped** **(** **)**
 
-The node ignores the first ``lines_skipped`` lines before it starts to display text.
+The number of the lines ignored and not displayed from the start of the :ref:`text<class_Label_property_text>` value.
 
 .. rst-class:: classref-item-separator
 
@@ -285,6 +304,23 @@ Set BiDi algorithm override for the structured text.
 - :ref:`Array<class_Array>` **get_structured_text_bidi_override_options** **(** **)**
 
 Set additional options for BiDi override.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Label_property_tab_stops:
+
+.. rst-class:: classref-property
+
+:ref:`PackedFloat32Array<class_PackedFloat32Array>` **tab_stops** = ``PackedFloat32Array()``
+
+.. rst-class:: classref-property-setget
+
+- void **set_tab_stops** **(** :ref:`PackedFloat32Array<class_PackedFloat32Array>` value **)**
+- :ref:`PackedFloat32Array<class_PackedFloat32Array>` **get_tab_stops** **(** **)**
+
+Aligns text to the given tab-stops.
 
 .. rst-class:: classref-item-separator
 
@@ -628,3 +664,4 @@ Background :ref:`StyleBox<class_StyleBox>` for the **Label**.
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

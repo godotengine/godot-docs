@@ -381,7 +381,7 @@ Sets the texture repeating mode. See :ref:`TextureRepeat<enum_VisualShaderNodeTe
 - void **set_texture_source** **(** :ref:`TextureSource<enum_VisualShaderNodeTextureParameter_TextureSource>` value **)**
 - :ref:`TextureSource<enum_VisualShaderNodeTextureParameter_TextureSource>` **get_texture_source** **(** **)**
 
-Sets the texture source mode. Used for reading from the screen, depth, or normal_roughness texture. see :ref:`TextureSource<enum_VisualShaderNodeTextureParameter_TextureSource>` for options.
+Sets the texture source mode. Used for reading from the screen, depth, or normal_roughness texture. See :ref:`TextureSource<enum_VisualShaderNodeTextureParameter_TextureSource>` for options.
 
 .. rst-class:: classref-item-separator
 
@@ -406,3 +406,4 @@ Defines the type of data provided by the source texture. See :ref:`TextureType<e
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

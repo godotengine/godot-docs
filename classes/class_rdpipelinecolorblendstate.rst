@@ -12,9 +12,14 @@ RDPipelineColorBlendState
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-.. container:: contribute
+Pipeline color blend state (used by :ref:`RenderingDevice<class_RenderingDevice>`).
 
-	There is currently no description for this class. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+.. rst-class:: classref-introduction-group
+
+Description
+-----------
+
+This object is used by :ref:`RenderingDevice<class_RenderingDevice>`.
 
 .. rst-class:: classref-reftable-group
 
@@ -54,9 +59,7 @@ Property Descriptions
 - void **set_attachments** **(** :ref:`RDPipelineColorBlendStateAttachment[]<class_RDPipelineColorBlendStateAttachment>` value **)**
 - :ref:`RDPipelineColorBlendStateAttachment[]<class_RDPipelineColorBlendStateAttachment>` **get_attachments** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+The attachments that are blended together.
 
 .. rst-class:: classref-item-separator
 
@@ -73,9 +76,7 @@ Property Descriptions
 - void **set_blend_constant** **(** :ref:`Color<class_Color>` value **)**
 - :ref:`Color<class_Color>` **get_blend_constant** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+The constant color to blend with. See also :ref:`RenderingDevice.draw_list_set_blend_constants<class_RenderingDevice_method_draw_list_set_blend_constants>`.
 
 .. rst-class:: classref-item-separator
 
@@ -92,9 +93,7 @@ Property Descriptions
 - void **set_enable_logic_op** **(** :ref:`bool<class_bool>` value **)**
 - :ref:`bool<class_bool>` **get_enable_logic_op** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+If ``true``, performs the logic operation defined in :ref:`logic_op<class_RDPipelineColorBlendState_property_logic_op>`.
 
 .. rst-class:: classref-item-separator
 
@@ -111,9 +110,7 @@ Property Descriptions
 - void **set_logic_op** **(** :ref:`LogicOperation<enum_RenderingDevice_LogicOperation>` value **)**
 - :ref:`LogicOperation<enum_RenderingDevice_LogicOperation>` **get_logic_op** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+The logic operation to perform for blending. Only effective if :ref:`enable_logic_op<class_RDPipelineColorBlendState_property_enable_logic_op>` is ``true``.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
@@ -121,3 +118,4 @@ Property Descriptions
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

@@ -21,13 +21,13 @@ Description
 
 A TileSet is a library of tiles for a :ref:`TileMap<class_TileMap>`. A TileSet handles a list of :ref:`TileSetSource<class_TileSetSource>`, each of them storing a set of tiles.
 
-Tiles can either be from a :ref:`TileSetAtlasSource<class_TileSetAtlasSource>`, that render tiles out of a texture with support for physics, navigation, etc... or from a :ref:`TileSetScenesCollectionSource<class_TileSetScenesCollectionSource>` which exposes scene-based tiles.
+Tiles can either be from a :ref:`TileSetAtlasSource<class_TileSetAtlasSource>`, which renders tiles out of a texture with support for physics, navigation, etc., or from a :ref:`TileSetScenesCollectionSource<class_TileSetScenesCollectionSource>`, which exposes scene-based tiles.
 
-Tiles are referenced by using three IDs: their source ID, their atlas coordinates ID and their alternative tile ID.
+Tiles are referenced by using three IDs: their source ID, their atlas coordinates ID, and their alternative tile ID.
 
-A TileSet can be configured so that its tiles expose more or less properties. To do so, the TileSet resources uses property layers, that you can add or remove depending on your needs.
+A TileSet can be configured so that its tiles expose more or fewer properties. To do so, the TileSet resources use property layers, which you can add or remove depending on your needs.
 
-For example, adding a physics layer allows giving collision shapes to your tiles. Each layer having dedicated properties (physics layer an mask), you may add several TileSet physics layers for each type of collision you need.
+For example, adding a physics layer allows giving collision shapes to your tiles. Each layer has dedicated properties (physics layer and mask), so you may add several TileSet physics layers for each type of collision you need.
 
 See the functions to add new layers for more information.
 
@@ -712,7 +712,9 @@ Physics layers allow assigning collision polygons to atlas tiles.
 
 Adds a :ref:`TileSetSource<class_TileSetSource>` to the TileSet. If ``atlas_source_id_override`` is not -1, also set its source ID. Otherwise, a unique identifier is automatically generated.
 
-The function returns the added source source ID or -1 if the source could not be added.
+The function returns the added source ID or -1 if the source could not be added.
+
+\ **Warning:** A source cannot belong to two TileSets at the same time. If the added source was attached to another **TileSet**, it will be removed from that one.
 
 .. rst-class:: classref-item-separator
 
@@ -860,7 +862,7 @@ Returns whether or not the specified navigation layer of the TileSet navigation 
 
 :ref:`int<class_int>` **get_navigation_layer_layers** **(** :ref:`int<class_int>` layer_index **)** |const|
 
-Returns the navigation layers (as in the Navigation server) of the gives TileSet navigation layer.
+Returns the navigation layers (as in the Navigation server) of the given TileSet navigation layer.
 
 .. rst-class:: classref-item-separator
 
@@ -884,7 +886,7 @@ Returns the navigation layers count.
 
 :ref:`int<class_int>` **get_next_source_id** **(** **)** |const|
 
-Returns a new unused source ID. This generated ID is the same that a call to ``add_source`` would return.
+Returns a new unused source ID. This generated ID is the same that a call to :ref:`add_source<class_TileSet_method_add_source>` would return.
 
 .. rst-class:: classref-item-separator
 
@@ -1162,7 +1164,7 @@ Returns if there is a source-level proxy for the given source ID.
 
 :ref:`Array<class_Array>` **map_tile_proxy** **(** :ref:`int<class_int>` source_from, :ref:`Vector2i<class_Vector2i>` coords_from, :ref:`int<class_int>` alternative_from **)** |const|
 
-According to the configured proxies, maps the provided indentifiers to a new set of identifiers. The source ID, atlas coordinates ID and alternative tile ID are returned as a 3 elements Array.
+According to the configured proxies, maps the provided identifiers to a new set of identifiers. The source ID, atlas coordinates ID and alternative tile ID are returned as a 3 elements Array.
 
 This function first look for matching alternative-level proxies, then coordinates-level proxies, then source-level proxies.
 
@@ -1450,7 +1452,7 @@ Based on ``value``, enables or disables the specified navigation layer of the Ti
 
 void **set_navigation_layer_layers** **(** :ref:`int<class_int>` layer_index, :ref:`int<class_int>` layers **)**
 
-Sets the navigation layers (as in the navigation server) for navigation regions is the given TileSet navigation layer.
+Sets the navigation layers (as in the navigation server) for navigation regions in the given TileSet navigation layer.
 
 .. rst-class:: classref-item-separator
 
@@ -1474,7 +1476,7 @@ Sets the occlusion layer (as in the rendering server) for occluders in the given
 
 void **set_occlusion_layer_sdf_collision** **(** :ref:`int<class_int>` layer_index, :ref:`bool<class_bool>` sdf_collision **)**
 
-Enables or disables sdf collision for occluders in the given TileSet occlusion layer.
+Enables or disables SDF collision for occluders in the given TileSet occlusion layer.
 
 .. rst-class:: classref-item-separator
 
@@ -1534,7 +1536,7 @@ Changes a source's ID.
 
 void **set_source_level_tile_proxy** **(** :ref:`int<class_int>` source_from, :ref:`int<class_int>` source_to **)**
 
-Creates a source-level proxy for the given source ID. A proxy will map set of tile identifiers to another set of identifiers. Both the atlac coordinates ID and the alternative tile ID are kept the same when using source-level proxies.
+Creates a source-level proxy for the given source ID. A proxy will map set of tile identifiers to another set of identifiers. Both the atlas coordinates ID and the alternative tile ID are kept the same when using source-level proxies.
 
 This can be used to replace a source in all TileMaps using this TileSet, as TileMap nodes will find and use the proxy's target source when one is available.
 
@@ -1582,3 +1584,4 @@ Sets a terrain mode. Each mode determines which bits of a tile shape is used to 
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

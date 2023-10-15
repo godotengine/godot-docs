@@ -12,14 +12,14 @@ SkeletonModification2DTwoBoneIK
 
 **Inherits:** :ref:`SkeletonModification2D<class_SkeletonModification2D>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-A modification that rotates two bones using the law of cosigns to reach the target.
+A modification that rotates two bones using the law of cosines to reach the target.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-This :ref:`SkeletonModification2D<class_SkeletonModification2D>` uses an algorithm typically called TwoBoneIK. This algorithm works by leveraging the law of cosigns and the lengths of the bones to figure out what rotation the bones currently have, and what rotation they need to make a complete triangle, where the first bone, the second bone, and the target form the three vertices of the triangle. Because the algorithm works by making a triangle, it can only operate on two bones.
+This :ref:`SkeletonModification2D<class_SkeletonModification2D>` uses an algorithm typically called TwoBoneIK. This algorithm works by leveraging the law of cosines and the lengths of the bones to figure out what rotation the bones currently have, and what rotation they need to make a complete triangle, where the first bone, the second bone, and the target form the three vertices of the triangle. Because the algorithm works by making a triangle, it can only operate on two bones.
 
 TwoBoneIK is great for arms, legs, and really any joints that can be represented by just two bones that bend to reach a target. This solver is more lightweight than :ref:`SkeletonModification2DFABRIK<class_SkeletonModification2DFABRIK>`, but gives similar, natural looking results.
 
@@ -247,3 +247,4 @@ Sets the index of the :ref:`Bone2D<class_Bone2D>` node that is being used as the
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

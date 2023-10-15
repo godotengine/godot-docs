@@ -12,14 +12,14 @@ Curve
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-A mathematic curve.
+A mathematical curve.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-A curve that can be saved and re-used for other objects. By default, it ranges between ``0`` and ``1`` on the Y axis and positions points relative to the ``0.5`` Y position.
+This resource describes a mathematical curve by defining a set of points and tangents at each point. By default, it ranges between ``0`` and ``1`` on the Y axis and positions points relative to the ``0.5`` Y position.
 
 See also :ref:`Gradient<class_Gradient>` which is designed for color interpolation. See also :ref:`Curve2D<class_Curve2D>` and :ref:`Curve3D<class_Curve3D>`.
 
@@ -443,3 +443,4 @@ Assigns the vertical position ``y`` to the point at ``index``.
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

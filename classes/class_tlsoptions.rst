@@ -35,7 +35,7 @@ Objects of this class cannot be instantiated directly, and one of the static met
     # Create a TLS server configuration.
     var server_certs = load("res://my_server_cas.crt")
     var server_key = load("res://my_server_key.key")
-    var server_tls_options = TLSOptions.server(server_certs, server_key)
+    var server_tls_options = TLSOptions.server(server_key, server_certs)
 
 
 
@@ -72,9 +72,9 @@ Method Descriptions
 
 Creates a TLS client configuration which validates certificates and their common names (fully qualified domain names).
 
-You can specify a custom ``trusted_chain`` of certification authorities (the default CA list will be used if ``null``), and optionally provide a ``common_name_override`` if you expect the certificate to have a common name other then the server FQDN.
+You can specify a custom ``trusted_chain`` of certification authorities (the default CA list will be used if ``null``), and optionally provide a ``common_name_override`` if you expect the certificate to have a common name other than the server FQDN.
 
-Note: On the Web plafrom, TLS verification is always enforced against the CA list of the web browser. This is considered a security feature.
+\ **Note:** On the Web platform, TLS verification is always enforced against the CA list of the web browser. This is considered a security feature.
 
 .. rst-class:: classref-item-separator
 
@@ -86,9 +86,9 @@ Note: On the Web plafrom, TLS verification is always enforced against the CA lis
 
 :ref:`TLSOptions<class_TLSOptions>` **client_unsafe** **(** :ref:`X509Certificate<class_X509Certificate>` trusted_chain=null **)** |static|
 
-Creates an **unsafe** TLS client configuration where certificate validation is optional. You can optionally provide a valid ``trusted_chain``, but the common name of the certififcates will never be checked. Using this configuration for purposes other than testing **is not recommended**.
+Creates an **unsafe** TLS client configuration where certificate validation is optional. You can optionally provide a valid ``trusted_chain``, but the common name of the certificates will never be checked. Using this configuration for purposes other than testing **is not recommended**.
 
-Note: On the Web plafrom, TLS verification is always enforced against the CA list of the web browser. This is considered a security feature.
+\ **Note:** On the Web platform, TLS verification is always enforced against the CA list of the web browser. This is considered a security feature.
 
 .. rst-class:: classref-item-separator
 
@@ -102,7 +102,7 @@ Note: On the Web plafrom, TLS verification is always enforced against the CA lis
 
 Creates a TLS server configuration using the provided ``key`` and ``certificate``.
 
-Note: The ``certificate`` should include the full certificate chain up to the signing CA (certificates file can be concatenated using a general purpose text editor).
+\ **Note:** The ``certificate`` should include the full certificate chain up to the signing CA (certificates file can be concatenated using a general purpose text editor).
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
@@ -110,3 +110,4 @@ Note: The ``certificate`` should include the full certificate chain up to the si
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

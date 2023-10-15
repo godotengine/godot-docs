@@ -15,7 +15,7 @@ The preferred way to find Godot plugins is to use the
 browsed online, it's more convenient to use it directly from the editor.
 To do so, click the **AssetLib** tab at the top of the editor:
 
-.. image:: img/installing_plugins_assetlib_tab.png
+.. image:: img/installing_plugins_assetlib_tab.webp
 
 You can also find assets on code hosting websites such as GitHub.
 
@@ -58,11 +58,10 @@ Enabling a plugin
 
 To enable the freshly installed plugin, open **Project > Project Settings** at
 the top of the editor then go the **Plugins** tab. If the plugin was packaged
-correctly, you should see it in the list of plugins. Click on the gray
-**Inactive** text and choose **Active** to enable the plugin. The word
-**Active** will display in green to confirm the plugin was enabled.
+correctly, you should see it in the list of plugins. Click on the
+**Enable** checkbox to enable the plugin.
 
-.. image:: img/installing_plugins_project_settings.png
+.. image:: img/installing_plugins_project_settings.webp
 
 
 You can use the plugin immediately after enabling it; there's no need to restart

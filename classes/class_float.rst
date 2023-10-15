@@ -10,18 +10,18 @@
 float
 =====
 
-Float built-in type.
+A built-in type for floating point numbers.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-The **float** built-in type is a 64-bit double-precision floating-point number, equivalent to ``double`` in C++. This type has 14 reliable decimal digits of precision. The **float** type can be stored in :ref:`Variant<class_Variant>`, which is the generic type used by the engine. The maximum value of **float** is approximately ``1.79769e308``, and the minimum is approximately ``-1.79769e308``.
+The **float** built-in type is a 64-bit double-precision floating-point number, equivalent to ``double`` in C++. This type has 14 reliable decimal digits of precision. The maximum value of **float** is approximately ``1.79769e308``, and the minimum is approximately ``-1.79769e308``.
 
 Many methods and properties in the engine use 32-bit single-precision floating-point numbers instead, equivalent to ``float`` in C++, which have 6 reliable decimal digits of precision. For data structures such as :ref:`Vector2<class_Vector2>` and :ref:`Vector3<class_Vector3>`, Godot uses 32-bit floating-point numbers by default, but it can be changed to use 64-bit doubles if Godot is compiled with the ``precision=double`` option.
 
-Math done using the **float** type is not guaranteed to be exact or deterministic, and will often result in small errors. You should usually use the :ref:`@GlobalScope.is_equal_approx<class_@GlobalScope_method_is_equal_approx>` and :ref:`@GlobalScope.is_zero_approx<class_@GlobalScope_method_is_zero_approx>` methods instead of ``==`` to compare **float** values for equality.
+Math done using the **float** type is not guaranteed to be exact and will often result in small errors. You should usually use the :ref:`@GlobalScope.is_equal_approx<class_@GlobalScope_method_is_equal_approx>` and :ref:`@GlobalScope.is_zero_approx<class_@GlobalScope_method_is_zero_approx>` methods instead of ``==`` to compare **float** values for equality.
 
 .. rst-class:: classref-introduction-group
 
@@ -200,6 +200,8 @@ Operator Descriptions
 
 Returns ``true`` if two floats are different from each other.
 
+\ **Note:** :ref:`@GDScript.NAN<class_@GDScript_constant_NAN>` doesn't behave the same as other numbers. Therefore, the results from this operator may not be accurate if NaNs are included.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -222,11 +224,11 @@ Returns ``true`` if the integer has different value than the float.
 
 :ref:`Color<class_Color>` **operator *** **(** :ref:`Color<class_Color>` right **)**
 
-Multiplies each component of the :ref:`Color<class_Color>` by the given **float**.
+Multiplies each component of the :ref:`Color<class_Color>`, including the alpha, by the given **float**.
 
 ::
 
-    print(1.5 * Color(0.5, 0.5, 0.5)) # Color(0.75, 0.75, 0.75)
+    print(1.5 * Color(0.5, 0.5, 0.5)) # Prints "(0.75, 0.75, 0.75, 1.5)"
 
 .. rst-class:: classref-item-separator
 
@@ -468,6 +470,8 @@ Divides a **float** by an :ref:`int<class_int>`. The result is a **float**.
 
 Returns ``true`` if the left float is less than the right one.
 
+\ **Note:** :ref:`@GDScript.NAN<class_@GDScript_constant_NAN>` doesn't behave the same as other numbers. Therefore, the results from this operator may not be accurate if NaNs are included.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -491,6 +495,8 @@ Returns ``true`` if this **float** is less than the given :ref:`int<class_int>`.
 :ref:`bool<class_bool>` **operator <=** **(** :ref:`float<class_float>` right **)**
 
 Returns ``true`` if the left float is less than or equal to the right one.
+
+\ **Note:** :ref:`@GDScript.NAN<class_@GDScript_constant_NAN>` doesn't behave the same as other numbers. Therefore, the results from this operator may not be accurate if NaNs are included.
 
 .. rst-class:: classref-item-separator
 
@@ -518,6 +524,8 @@ Returns ``true`` if both floats are exactly equal.
 
 \ **Note:** Due to floating-point precision errors, consider using :ref:`@GlobalScope.is_equal_approx<class_@GlobalScope_method_is_equal_approx>` or :ref:`@GlobalScope.is_zero_approx<class_@GlobalScope_method_is_zero_approx>` instead, which are more reliable.
 
+\ **Note:** :ref:`@GDScript.NAN<class_@GDScript_constant_NAN>` doesn't behave the same as other numbers. Therefore, the results from this operator may not be accurate if NaNs are included.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -542,6 +550,8 @@ Returns ``true`` if the **float** and the given :ref:`int<class_int>` are equal.
 
 Returns ``true`` if the left float is greater than the right one.
 
+\ **Note:** :ref:`@GDScript.NAN<class_@GDScript_constant_NAN>` doesn't behave the same as other numbers. Therefore, the results from this operator may not be accurate if NaNs are included.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -565,6 +575,8 @@ Returns ``true`` if this **float** is greater than the given :ref:`int<class_int
 :ref:`bool<class_bool>` **operator >=** **(** :ref:`float<class_float>` right **)**
 
 Returns ``true`` if the left float is greater than or equal to the right one.
+
+\ **Note:** :ref:`@GDScript.NAN<class_@GDScript_constant_NAN>` doesn't behave the same as other numbers. Therefore, the results from this operator may not be accurate if NaNs are included.
 
 .. rst-class:: classref-item-separator
 
@@ -608,3 +620,4 @@ Returns the negative value of the **float**. If positive, turns the number negat
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

@@ -12,7 +12,7 @@ CPUParticles3D
 
 **Inherits:** :ref:`GeometryInstance3D<class_GeometryInstance3D>` **<** :ref:`VisualInstance3D<class_VisualInstance3D>` **<** :ref:`Node3D<class_Node3D>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-CPU-based 3D particle emitter.
+A CPU-based 3D particle emitter.
 
 .. rst-class:: classref-introduction-group
 
@@ -22,6 +22,13 @@ Description
 CPU-based 3D particle node used to create a variety of particle systems and effects.
 
 See also :ref:`GPUParticles3D<class_GPUParticles3D>`, which provides the same functionality with hardware acceleration, but may not run on older devices.
+
+.. rst-class:: classref-introduction-group
+
+Tutorials
+---------
+
+- :doc:`Particle systems (3D) <../tutorials/3d/particles/index>`
 
 .. rst-class:: classref-reftable-group
 
@@ -208,6 +215,23 @@ Methods
    +---------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                      | :ref:`set_particle_flag<class_CPUParticles3D_method_set_particle_flag>` **(** :ref:`ParticleFlags<enum_CPUParticles3D_ParticleFlags>` particle_flag, :ref:`bool<class_bool>` enable **)** |
    +---------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
+
+Signals
+-------
+
+.. _class_CPUParticles3D_signal_finished:
+
+.. rst-class:: classref-signal
+
+**finished** **(** **)**
+
+Emitted when all active particles have finished processing. When :ref:`one_shot<class_CPUParticles3D_property_one_shot>` is disabled, particles will process continuously, so this is never emitted.
 
 .. rst-class:: classref-section-separator
 
@@ -1033,7 +1057,7 @@ The sphere's radius if :ref:`EmissionShape<enum_CPUParticles3D_EmissionShape>` i
 - void **set_emitting** **(** :ref:`bool<class_bool>` value **)**
 - :ref:`bool<class_bool>` **is_emitting** **(** **)**
 
-If ``true``, particles are being emitted.
+If ``true``, particles are being emitted. :ref:`emitting<class_CPUParticles3D_property_emitting>` can be used to start and stop particles from emitting. However, if :ref:`one_shot<class_CPUParticles3D_property_one_shot>` is ``true`` setting :ref:`emitting<class_CPUParticles3D_property_emitting>` to ``true`` will not restart the emission cycle until after all active particles finish processing. You can use the :ref:`finished<class_CPUParticles3D_signal_finished>` signal to be notified once all active particles finish processing.
 
 .. rst-class:: classref-item-separator
 
@@ -1662,7 +1686,7 @@ Particle system's running speed scaling ratio. A value of ``0`` can be used to p
 - void **set_split_scale** **(** :ref:`bool<class_bool>` value **)**
 - :ref:`bool<class_bool>` **get_split_scale** **(** **)**
 
-If set to true, three different scale curves can be specified, one per scale axis.
+If set to ``true``, three different scale curves can be specified, one per scale axis.
 
 .. rst-class:: classref-item-separator
 
@@ -1863,3 +1887,4 @@ Enables or disables the given particle flag (see :ref:`ParticleFlags<enum_CPUPar
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

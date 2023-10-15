@@ -23,6 +23,13 @@ Description
 
 See :ref:`OccluderInstance3D<class_OccluderInstance3D>`'s documentation for instructions on setting up occlusion culling.
 
+.. rst-class:: classref-introduction-group
+
+Tutorials
+---------
+
+- :doc:`Occlusion culling <../tutorials/3d/occlusion_culling>`
+
 .. rst-class:: classref-reftable-group
 
 Properties
@@ -69,9 +76,9 @@ Property Descriptions
 - void **set_indices** **(** :ref:`PackedInt32Array<class_PackedInt32Array>` value **)**
 - :ref:`PackedInt32Array<class_PackedInt32Array>` **get_indices** **(** **)**
 
-.. container:: contribute
+The occluder's index position. Indices determine which points from the :ref:`vertices<class_ArrayOccluder3D_property_vertices>` array should be drawn, and in which order.
 
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+\ **Note:** The occluder is always updated after setting this value. If creating occluders procedurally, consider using :ref:`set_arrays<class_ArrayOccluder3D_method_set_arrays>` instead to avoid updating the occluder twice when it's created.
 
 .. rst-class:: classref-item-separator
 
@@ -88,9 +95,9 @@ Property Descriptions
 - void **set_vertices** **(** :ref:`PackedVector3Array<class_PackedVector3Array>` value **)**
 - :ref:`PackedVector3Array<class_PackedVector3Array>` **get_vertices** **(** **)**
 
-.. container:: contribute
+The occluder's vertex positions in local 3D coordinates.
 
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+\ **Note:** The occluder is always updated after setting this value. If creating occluders procedurally, consider using :ref:`set_arrays<class_ArrayOccluder3D_method_set_arrays>` instead to avoid updating the occluder twice when it's created.
 
 .. rst-class:: classref-section-separator
 
@@ -107,9 +114,7 @@ Method Descriptions
 
 void **set_arrays** **(** :ref:`PackedVector3Array<class_PackedVector3Array>` vertices, :ref:`PackedInt32Array<class_PackedInt32Array>` indices **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Sets :ref:`indices<class_ArrayOccluder3D_property_indices>` and :ref:`vertices<class_ArrayOccluder3D_property_vertices>`, while updating the final occluder only once after both values are set.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
@@ -117,3 +122,4 @@ void **set_arrays** **(** :ref:`PackedVector3Array<class_PackedVector3Array>` ve
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

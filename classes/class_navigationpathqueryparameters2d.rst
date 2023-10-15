@@ -12,14 +12,14 @@ NavigationPathQueryParameters2D
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-Parameters to be sent to a 2D navigation path query.
+Provides parameters for 2D navigation path queries.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-This class contains the start and target position and other parameters to be used with :ref:`NavigationServer2D.query_path<class_NavigationServer2D_method_query_path>`.
+By changing various properties of this object, such as the start and target position, you can configure path queries to the :ref:`NavigationServer2D<class_NavigationServer2D>`.
 
 .. rst-class:: classref-introduction-group
 
@@ -36,21 +36,21 @@ Properties
 .. table::
    :widths: auto
 
-   +----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+-------------------+
-   | :ref:`RID<class_RID>`                                                                  | :ref:`map<class_NavigationPathQueryParameters2D_property_map>`                                     |                   |
-   +----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+-------------------+
-   | :ref:`PathMetadataFlags<enum_NavigationPathQueryParameters2D_PathMetadataFlags>`       | :ref:`metadata_flags<class_NavigationPathQueryParameters2D_property_metadata_flags>`               | ``7``             |
-   +----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+-------------------+
-   | :ref:`int<class_int>`                                                                  | :ref:`navigation_layers<class_NavigationPathQueryParameters2D_property_navigation_layers>`         | ``1``             |
-   +----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+-------------------+
-   | :ref:`PathPostProcessing<enum_NavigationPathQueryParameters2D_PathPostProcessing>`     | :ref:`path_postprocessing<class_NavigationPathQueryParameters2D_property_path_postprocessing>`     | ``0``             |
-   +----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+-------------------+
-   | :ref:`PathfindingAlgorithm<enum_NavigationPathQueryParameters2D_PathfindingAlgorithm>` | :ref:`pathfinding_algorithm<class_NavigationPathQueryParameters2D_property_pathfinding_algorithm>` | ``0``             |
-   +----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+-------------------+
-   | :ref:`Vector2<class_Vector2>`                                                          | :ref:`start_position<class_NavigationPathQueryParameters2D_property_start_position>`               | ``Vector2(0, 0)`` |
-   +----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+-------------------+
-   | :ref:`Vector2<class_Vector2>`                                                          | :ref:`target_position<class_NavigationPathQueryParameters2D_property_target_position>`             | ``Vector2(0, 0)`` |
-   +----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+-------------------+
+   +------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+-------------------+
+   | :ref:`RID<class_RID>`                                                                          | :ref:`map<class_NavigationPathQueryParameters2D_property_map>`                                     | ``RID()``         |
+   +------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+-------------------+
+   | |bitfield|\<:ref:`PathMetadataFlags<enum_NavigationPathQueryParameters2D_PathMetadataFlags>`\> | :ref:`metadata_flags<class_NavigationPathQueryParameters2D_property_metadata_flags>`               | ``7``             |
+   +------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+-------------------+
+   | :ref:`int<class_int>`                                                                          | :ref:`navigation_layers<class_NavigationPathQueryParameters2D_property_navigation_layers>`         | ``1``             |
+   +------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+-------------------+
+   | :ref:`PathPostProcessing<enum_NavigationPathQueryParameters2D_PathPostProcessing>`             | :ref:`path_postprocessing<class_NavigationPathQueryParameters2D_property_path_postprocessing>`     | ``0``             |
+   +------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+-------------------+
+   | :ref:`PathfindingAlgorithm<enum_NavigationPathQueryParameters2D_PathfindingAlgorithm>`         | :ref:`pathfinding_algorithm<class_NavigationPathQueryParameters2D_property_pathfinding_algorithm>` | ``0``             |
+   +------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+-------------------+
+   | :ref:`Vector2<class_Vector2>`                                                                  | :ref:`start_position<class_NavigationPathQueryParameters2D_property_start_position>`               | ``Vector2(0, 0)`` |
+   +------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+-------------------+
+   | :ref:`Vector2<class_Vector2>`                                                                  | :ref:`target_position<class_NavigationPathQueryParameters2D_property_target_position>`             | ``Vector2(0, 0)`` |
+   +------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+-------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -164,14 +164,14 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`RID<class_RID>` **map**
+:ref:`RID<class_RID>` **map** = ``RID()``
 
 .. rst-class:: classref-property-setget
 
 - void **set_map** **(** :ref:`RID<class_RID>` value **)**
 - :ref:`RID<class_RID>` **get_map** **(** **)**
 
-The navigation ``map`` :ref:`RID<class_RID>` used in the path query.
+The navigation map :ref:`RID<class_RID>` used in the path query.
 
 .. rst-class:: classref-item-separator
 
@@ -181,12 +181,12 @@ The navigation ``map`` :ref:`RID<class_RID>` used in the path query.
 
 .. rst-class:: classref-property
 
-:ref:`PathMetadataFlags<enum_NavigationPathQueryParameters2D_PathMetadataFlags>` **metadata_flags** = ``7``
+|bitfield|\<:ref:`PathMetadataFlags<enum_NavigationPathQueryParameters2D_PathMetadataFlags>`\> **metadata_flags** = ``7``
 
 .. rst-class:: classref-property-setget
 
-- void **set_metadata_flags** **(** :ref:`PathMetadataFlags<enum_NavigationPathQueryParameters2D_PathMetadataFlags>` value **)**
-- :ref:`PathMetadataFlags<enum_NavigationPathQueryParameters2D_PathMetadataFlags>` **get_metadata_flags** **(** **)**
+- void **set_metadata_flags** **(** |bitfield|\<:ref:`PathMetadataFlags<enum_NavigationPathQueryParameters2D_PathMetadataFlags>`\> value **)**
+- |bitfield|\<:ref:`PathMetadataFlags<enum_NavigationPathQueryParameters2D_PathMetadataFlags>`\> **get_metadata_flags** **(** **)**
 
 Additional information to include with the navigation path.
 
@@ -281,3 +281,4 @@ The pathfinding target position in global coordinates.
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

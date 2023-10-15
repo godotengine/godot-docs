@@ -38,13 +38,14 @@ Video tutorials
 - `TheBuffED <https://www.youtube.com/watch?v=ygGaN1EOQEA&list=PLvN5Z3tTxXEDfQkt4Frg6ALirespSwZd7>`_ (2D, GDScript).
 - `Code with Tom <https://www.youtube.com/playlist?list=PLiUQR4U_J9ec0k91iHPme_qtfS1nrWF3W>`_ (2D and 3D, GDScript).
 - `BornCG <https://www.youtube.com/playlist?list=PLda3VoSoc_TSBBOBYwcmlamF1UrjVtccZ>`_ (2D and 3D, GDScript).
-- `Gonkee <https://www.youtube.com/channel/UCJqCPFHdbc6443G3Sz6VYDw>`_ (2D and 3D, GDScript, Shaders).
 - `TheGuideKnight <https://www.youtube.com/playlist?list=PLYcTJBw32KtX2fvOdtO_fS3Nd6sxM71tn>`_ (2D, GDScript).
 - `GDScript Dude <https://www.youtube.com/channel/UCQs0i6vKISElM6mh7OzLouQ>`_ (GDScript).
 - `Garbaj <https://www.youtube.com/c/Garbaj/>`_ (3D, GDScript).
 - `Kasper Frandsen <https://www.youtube.com/c/KasperFrandsen/>`_ (3D, Shaders).
 - `bitbrain <https://www.youtube.com/watch?v=lFIBn8kJ-IM&list=PL4AhUX6lGjJWfiDORSmEu8x_myelbe1p2>`_ (2D, GDScript).
 - `Gwizz <https://www.youtube.com/@Gwizz1027>`_ (2D, GDScript).
+- `Quiver <https://quiver.dev/>`_ (2D, GDScript).
+- `Maker Tech <https://www.youtube.com/watch?v=0mUoRdYe0s4>`_ (2D, GDScript).
 
 Text tutorials
 --------------
@@ -52,7 +53,7 @@ Text tutorials
 - `FinepointCGI website by Mitch <https://finepointcgi.io/>`__
 - `GDScript website by Andrew Wilkes <https://gdscript.com>`__
 - `Godot Recipes by KidsCanCode <https://kidscancode.org/godot_recipes/4.x/>`__
-- `Steincodes <https://steincodes.tumblr.com>`__
+- `Godot Tutorials by SomethingLikeGames <https://www.somethinglikegames.de/en/tags/godot-engine/>`__
 
 Devlogs
 -------

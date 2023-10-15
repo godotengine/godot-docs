@@ -6,7 +6,7 @@ Prototyping levels with CSG
 ===========================
 
 CSG stands for **Constructive Solid Geometry**, and is a tool to combine basic
-shapes or custom meshes to create more complex shapes. In 3D modelling software,
+shapes or custom meshes to create more complex shapes. In 3D modeling software,
 CSG is mostly known as "Boolean Operators".
 
 Level prototyping is one of the main uses of CSG in Godot. This technique allows
@@ -87,7 +87,7 @@ Custom meshes
 ~~~~~~~~~~~~~
 
 Any mesh can be used for :ref:`CSGMesh3D <class_CSGMesh3D>`; the mesh can be
-modelled in other software and imported into Godot. Multiple materials are
+modeled in other software and imported into Godot. Multiple materials are
 supported. There are some restrictions for geometry:
 
 - it must be closed,
@@ -290,3 +290,12 @@ in the **Scale** property will cause the texture to repeat more often.
          and choose **Copy**. To paste it, select the node you'd like to apply
          the material onto, click the dropdown arrow next to its material
          property then choose **Paste**.
+
+Exporting as glTF
+------------------------
+
+It can be useful to block out a level using CSG, then export it as a 3d model, to
+import into 3D modeling software. You can do this by selecting **Scene > Export As... >
+glTF 2.0 Scene**.
+
+.. image:: img/export_as_gltf.webp

@@ -14,16 +14,16 @@ CollisionObject3D
 
 **Inherited By:** :ref:`Area3D<class_Area3D>`, :ref:`PhysicsBody3D<class_PhysicsBody3D>`
 
-Base node for collision objects.
+Abstract base class for 3D physics objects.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-CollisionObject3D is the base class for physics objects. It can hold any number of collision :ref:`Shape3D<class_Shape3D>`\ s. Each shape must be assigned to a *shape owner*. The CollisionObject3D can have any number of shape owners. Shape owners are not nodes and do not appear in the editor, but are accessible through code using the ``shape_owner_*`` methods.
+Abstract base class for 3D physics objects. **CollisionObject3D** can hold any number of :ref:`Shape3D<class_Shape3D>`\ s for collision. Each shape must be assigned to a *shape owner*. Shape owners are not nodes and do not appear in the editor, but are accessible through code using the ``shape_owner_*`` methods.
 
-\ **Warning:** With a non-uniform scale this node will probably not function as expected. Please make sure to keep its scale uniform (i.e. the same on all axes), and change the size(s) of its collision shape(s) instead.
+\ **Warning:** With a non-uniform scale, this node will likely not behave as expected. It is advised to keep its scale the same on all axes and adjust its collision shape(s) instead.
 
 .. rst-class:: classref-reftable-group
 
@@ -591,3 +591,4 @@ Sets the :ref:`Transform3D<class_Transform3D>` of the given shape owner.
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

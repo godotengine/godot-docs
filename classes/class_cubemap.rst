@@ -12,7 +12,7 @@ Cubemap
 
 **Inherits:** :ref:`ImageTextureLayered<class_ImageTextureLayered>` **<** :ref:`TextureLayered<class_TextureLayered>` **<** :ref:`Texture<class_Texture>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-6-sided texture typically used in 3D rendering.
+Six square textures representing the faces of a cube. Commonly used as a skybox.
 
 .. rst-class:: classref-introduction-group
 
@@ -62,3 +62,4 @@ Creates a placeholder version of this resource (:ref:`PlaceholderCubemap<class_P
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

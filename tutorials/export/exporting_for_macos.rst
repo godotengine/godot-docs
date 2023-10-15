@@ -213,3 +213,34 @@ See `App Sandbox <https://developer.apple.com/documentation/security/app_sandbox
 .. note::
 
     You can override default entitlements by selecting custom entitlements file, in this case all other entitlement are ignored.
+
+Environment variables
+---------------------
+
+You can use the following environment variables to set export options outside of
+the editor. During the export process, these override the values that you set in
+the export menu.
+
+.. list-table:: macOS export environment variables
+   :header-rows: 1
+
+   * - Export option
+     - Environment variable
+   * - Encryption / Encryption Key
+     - GODOT_SCRIPT_ENCRYPTION_KEY
+   * - Options / Codesign / Certificate File
+     - GODOT_MACOS_CODESIGN_CERTIFICATE_FILE
+   * - Options / Codesign / Certificate Password
+     - GODOT_MACOS_CODESIGN_CERTIFICATE_PASSWORD
+   * - Options / Codesign / Provisioning Profile
+     - GODOT_MACOS_CODESIGN_PROVISIONING_PROFILE
+   * - Options / Notarization / API UUID
+     - GODOT_MACOS_NOTARIZATION_API_UUID
+   * - Options / Notarization / API Key
+     - GODOT_MACOS_NOTARIZATION_API_KEY
+   * - Options / Notarization / API Key ID
+     - GODOT_MACOS_NOTARIZATION_API_KEY_ID
+   * - Options / Notarization / Apple ID Name
+     - GODOT_MACOS_NOTARIZATION_APPLE_ID_NAME
+   * - Options / Notarization / Apple ID Password
+     - GODOT_MACOS_NOTARIZATION_APPLE_ID_PASSWORD

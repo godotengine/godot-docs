@@ -76,7 +76,7 @@ enum **ZipAppend**:
 
 :ref:`ZipAppend<enum_ZIPPacker_ZipAppend>` **APPEND_CREATE** = ``0``
 
-
+Create a new zip archive at the given path.
 
 .. _class_ZIPPacker_constant_APPEND_CREATEAFTER:
 
@@ -84,7 +84,7 @@ enum **ZipAppend**:
 
 :ref:`ZipAppend<enum_ZIPPacker_ZipAppend>` **APPEND_CREATEAFTER** = ``1``
 
-
+Append a new zip archive to the end of the already existing file at the given path.
 
 .. _class_ZIPPacker_constant_APPEND_ADDINZIP:
 
@@ -92,7 +92,7 @@ enum **ZipAppend**:
 
 :ref:`ZipAppend<enum_ZIPPacker_ZipAppend>` **APPEND_ADDINZIP** = ``2``
 
-
+Add new files to the existing zip archive at the given path.
 
 .. rst-class:: classref-section-separator
 
@@ -173,3 +173,4 @@ Needs to be called after :ref:`start_file<class_ZIPPacker_method_start_file>`.
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

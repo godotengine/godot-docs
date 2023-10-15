@@ -30,11 +30,11 @@ The HMACContext class is useful for advanced HMAC use cases, such as streaming t
     var ctx = HMACContext.new()
     
     func _ready():
-        var key = "supersecret".to_utf8()
+        var key = "supersecret".to_utf8_buffer()
         var err = ctx.start(HashingContext.HASH_SHA256, key)
         assert(err == OK)
-        var msg1 = "this is ".to_utf8()
-        var msg2 = "super duper secret".to_utf8()
+        var msg1 = "this is ".to_utf8_buffer()
+        var msg2 = "super duper secret".to_utf8_buffer()
         err = ctx.update(msg1)
         assert(err == OK)
         err = ctx.update(msg2)
@@ -54,11 +54,11 @@ The HMACContext class is useful for advanced HMAC use cases, such as streaming t
     
         public override void _Ready()
         {
-            byte[] key = "supersecret".ToUtf8();
+            byte[] key = "supersecret".ToUtf8Buffer();
             Error err = _ctx.Start(HashingContext.HashType.Sha256, key);
             Debug.Assert(err == Error.Ok);
-            byte[] msg1 = "this is ".ToUtf8();
-            byte[] msg2 = "super duper secret".ToUtf8();
+            byte[] msg1 = "this is ".ToUtf8Buffer();
+            byte[] msg2 = "super duper secret".ToUtf8Buffer();
             err = _ctx.Update(msg1);
             Debug.Assert(err == Error.Ok);
             err = _ctx.Update(msg2);
@@ -133,3 +133,4 @@ Updates the message to be HMACed. This can be called multiple times before :ref:
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

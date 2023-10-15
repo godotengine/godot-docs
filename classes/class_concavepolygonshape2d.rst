@@ -12,20 +12,22 @@ ConcavePolygonShape2D
 
 **Inherits:** :ref:`Shape2D<class_Shape2D>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-Concave polygon shape resource for 2D physics.
+A 2D polyline shape used for physics collision.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-2D concave polygon shape to be added as a *direct* child of a :ref:`PhysicsBody2D<class_PhysicsBody2D>` or :ref:`Area2D<class_Area2D>` using a :ref:`CollisionShape2D<class_CollisionShape2D>` node. It is made out of segments and is optimal for complex polygonal concave collisions. However, it is not advised to use for :ref:`RigidBody2D<class_RigidBody2D>` nodes. A CollisionPolygon2D in convex decomposition mode (solids) or several convex objects are advised for that instead. Otherwise, a concave polygon 2D shape is better for static collisions.
+A 2D polyline shape, intended for use in physics. Used internally in :ref:`CollisionPolygon2D<class_CollisionPolygon2D>` when it's in :ref:`CollisionPolygon2D.BUILD_SEGMENTS<class_CollisionPolygon2D_constant_BUILD_SEGMENTS>` mode.
 
-The main difference between a :ref:`ConvexPolygonShape2D<class_ConvexPolygonShape2D>` and a **ConcavePolygonShape2D** is that a concave polygon assumes it is concave and uses a more complex method of collision detection, and a convex one forces itself to be convex to speed up collision detection.
+Being just a collection of interconnected line segments, **ConcavePolygonShape2D** is the most freely configurable single 2D shape. It can be used to form polygons of any nature, or even shapes that don't enclose an area. However, :ref:`ConvexPolygonShape2D<class_ConvexPolygonShape2D>` is *hollow* even if the interconnected line segments do enclose an area, which often makes it unsuitable for physics or detection.
 
-\ **Performance:** Due to its complexity, **ConcavePolygonShape2D** is the slowest collision shape to check collisions against. Its use should generally be limited to level geometry. For convex geometry, using :ref:`ConvexPolygonShape2D<class_ConvexPolygonShape2D>` will perform better. For dynamic physics bodies that need concave collision, several :ref:`ConvexPolygonShape2D<class_ConvexPolygonShape2D>`\ s can be used to represent its collision by using convex decomposition; see :ref:`ConvexPolygonShape2D<class_ConvexPolygonShape2D>`'s documentation for instructions. However, consider using primitive collision shapes such as :ref:`CircleShape2D<class_CircleShape2D>` or :ref:`RectangleShape2D<class_RectangleShape2D>` first.
+\ **Note:** When used for collision, **ConcavePolygonShape2D** is intended to work with static :ref:`CollisionShape2D<class_CollisionShape2D>` nodes like :ref:`StaticBody2D<class_StaticBody2D>` and will likely not behave well for :ref:`CharacterBody2D<class_CharacterBody2D>`\ s or :ref:`RigidBody2D<class_RigidBody2D>`\ s in a mode other than Static.
 
-\ **Warning:** Using this shape for an :ref:`Area2D<class_Area2D>` (via a :ref:`CollisionShape2D<class_CollisionShape2D>` node) may give unexpected results: the area will only detect collisions with the segments in the **ConcavePolygonShape2D** (and not with any "inside" of the shape, for example).
+\ **Warning:** Physics bodies that are small have a chance to clip through this shape when moving fast. This happens because on one frame, the physics body may be on the "outside" of the shape, and on the next frame it may be "inside" it. **ConcavePolygonShape2D** is hollow, so it won't detect a collision.
+
+\ **Performance:** Due to its complexity, **ConcavePolygonShape2D** is the slowest 2D collision shape to check collisions against. Its use should generally be limited to level geometry. If the polyline is closed, :ref:`CollisionPolygon2D<class_CollisionPolygon2D>`'s :ref:`CollisionPolygon2D.BUILD_SOLIDS<class_CollisionPolygon2D_constant_BUILD_SOLIDS>` mode can be used, which decomposes the polygon into convex ones; see :ref:`ConvexPolygonShape2D<class_ConvexPolygonShape2D>`'s documentation for instructions.
 
 .. rst-class:: classref-reftable-group
 
@@ -59,7 +61,7 @@ Property Descriptions
 - void **set_segments** **(** :ref:`PackedVector2Array<class_PackedVector2Array>` value **)**
 - :ref:`PackedVector2Array<class_PackedVector2Array>` **get_segments** **(** **)**
 
-The array of points that make up the **ConcavePolygonShape2D**'s line segments.
+The array of points that make up the **ConcavePolygonShape2D**'s line segments. The array (of length divisible by two) is naturally divided into pairs (one pair for each segment); each pair consists of the starting point of a segment and the endpoint of a segment.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
@@ -67,3 +69,4 @@ The array of points that make up the **ConcavePolygonShape2D**'s line segments.
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

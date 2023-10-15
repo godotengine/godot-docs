@@ -214,7 +214,7 @@ You can generate a MO file with the command below:
     msgfmt fr.po --no-hash -o fr.mo
 
 If the PO file is valid, this command will create a ``fr.mo`` file besides
-the PO file. This MO file can then be loaded in Godot as described below.
+the PO file. This MO file can then be loaded in Godot as described above.
 
 The original PO file should be kept in version control so you can update
 your translation in the future. In case you lose the original PO file and

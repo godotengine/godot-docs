@@ -12,14 +12,14 @@ PhysicsShapeQueryParameters2D
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-Parameters to be sent to a 2D shape physics query.
+Provides parameters for :ref:`PhysicsDirectSpaceState2D.intersect_shape<class_PhysicsDirectSpaceState2D_method_intersect_shape>`.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-This class contains the shape and other parameters for :ref:`PhysicsDirectSpaceState2D<class_PhysicsDirectSpaceState2D>` intersection/collision queries.
+By changing various properties of this object, such as the shape, you can configure the parameters for :ref:`PhysicsDirectSpaceState2D.intersect_shape<class_PhysicsDirectSpaceState2D_method_intersect_shape>`.
 
 .. rst-class:: classref-reftable-group
 
@@ -44,7 +44,7 @@ Properties
    +---------------------------------------+----------------------------------------------------------------------------------------------+-----------------------------------+
    | :ref:`Resource<class_Resource>`       | :ref:`shape<class_PhysicsShapeQueryParameters2D_property_shape>`                             |                                   |
    +---------------------------------------+----------------------------------------------------------------------------------------------+-----------------------------------+
-   | :ref:`RID<class_RID>`                 | :ref:`shape_rid<class_PhysicsShapeQueryParameters2D_property_shape_rid>`                     |                                   |
+   | :ref:`RID<class_RID>`                 | :ref:`shape_rid<class_PhysicsShapeQueryParameters2D_property_shape_rid>`                     | ``RID()``                         |
    +---------------------------------------+----------------------------------------------------------------------------------------------+-----------------------------------+
    | :ref:`Transform2D<class_Transform2D>` | :ref:`transform<class_PhysicsShapeQueryParameters2D_property_transform>`                     | ``Transform2D(1, 0, 0, 1, 0, 0)`` |
    +---------------------------------------+----------------------------------------------------------------------------------------------+-----------------------------------+
@@ -181,7 +181,7 @@ The :ref:`Shape2D<class_Shape2D>` that will be used for collision/intersection q
 
 .. rst-class:: classref-property
 
-:ref:`RID<class_RID>` **shape_rid**
+:ref:`RID<class_RID>` **shape_rid** = ``RID()``
 
 .. rst-class:: classref-property-setget
 
@@ -246,3 +246,4 @@ The queried shape's transform matrix.
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

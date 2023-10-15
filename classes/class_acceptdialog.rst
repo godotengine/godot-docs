@@ -14,14 +14,14 @@ AcceptDialog
 
 **Inherited By:** :ref:`ConfirmationDialog<class_ConfirmationDialog>`
 
-Base dialog for user notification.
+A base dialog used for user notification.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-This dialog is useful for small notifications to the user about an event. It can only be accepted or closed, with the same result.
+The default use of **AcceptDialog** is to allow it to only be accepted or closed, with the same result. However, the :ref:`confirmed<class_AcceptDialog_signal_confirmed>` and :ref:`canceled<class_AcceptDialog_signal_canceled>` signals allow to make the two actions different, and the :ref:`add_button<class_AcceptDialog_method_add_button>` method allows to add custom buttons and actions.
 
 .. rst-class:: classref-reftable-group
 
@@ -31,27 +31,29 @@ Properties
 .. table::
    :widths: auto
 
-   +-----------------------------+-----------------------------------------------------------------------------------+-------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`     | :ref:`dialog_autowrap<class_AcceptDialog_property_dialog_autowrap>`               | ``false``                                                               |
-   +-----------------------------+-----------------------------------------------------------------------------------+-------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`     | :ref:`dialog_close_on_escape<class_AcceptDialog_property_dialog_close_on_escape>` | ``true``                                                                |
-   +-----------------------------+-----------------------------------------------------------------------------------+-------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`     | :ref:`dialog_hide_on_ok<class_AcceptDialog_property_dialog_hide_on_ok>`           | ``true``                                                                |
-   +-----------------------------+-----------------------------------------------------------------------------------+-------------------------------------------------------------------------+
-   | :ref:`String<class_String>` | :ref:`dialog_text<class_AcceptDialog_property_dialog_text>`                       | ``""``                                                                  |
-   +-----------------------------+-----------------------------------------------------------------------------------+-------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`     | exclusive                                                                         | ``true`` (overrides :ref:`Window<class_Window_property_exclusive>`)     |
-   +-----------------------------+-----------------------------------------------------------------------------------+-------------------------------------------------------------------------+
-   | :ref:`String<class_String>` | :ref:`ok_button_text<class_AcceptDialog_property_ok_button_text>`                 | ``"OK"``                                                                |
-   +-----------------------------+-----------------------------------------------------------------------------------+-------------------------------------------------------------------------+
-   | :ref:`String<class_String>` | title                                                                             | ``"Alert!"`` (overrides :ref:`Window<class_Window_property_title>`)     |
-   +-----------------------------+-----------------------------------------------------------------------------------+-------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`     | transient                                                                         | ``true`` (overrides :ref:`Window<class_Window_property_transient>`)     |
-   +-----------------------------+-----------------------------------------------------------------------------------+-------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`     | visible                                                                           | ``false`` (overrides :ref:`Window<class_Window_property_visible>`)      |
-   +-----------------------------+-----------------------------------------------------------------------------------+-------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`     | wrap_controls                                                                     | ``true`` (overrides :ref:`Window<class_Window_property_wrap_controls>`) |
-   +-----------------------------+-----------------------------------------------------------------------------------+-------------------------------------------------------------------------+
+   +-----------------------------+-----------------------------------------------------------------------------------+------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`     | :ref:`dialog_autowrap<class_AcceptDialog_property_dialog_autowrap>`               | ``false``                                                                    |
+   +-----------------------------+-----------------------------------------------------------------------------------+------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`     | :ref:`dialog_close_on_escape<class_AcceptDialog_property_dialog_close_on_escape>` | ``true``                                                                     |
+   +-----------------------------+-----------------------------------------------------------------------------------+------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`     | :ref:`dialog_hide_on_ok<class_AcceptDialog_property_dialog_hide_on_ok>`           | ``true``                                                                     |
+   +-----------------------------+-----------------------------------------------------------------------------------+------------------------------------------------------------------------------+
+   | :ref:`String<class_String>` | :ref:`dialog_text<class_AcceptDialog_property_dialog_text>`                       | ``""``                                                                       |
+   +-----------------------------+-----------------------------------------------------------------------------------+------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`     | exclusive                                                                         | ``true`` (overrides :ref:`Window<class_Window_property_exclusive>`)          |
+   +-----------------------------+-----------------------------------------------------------------------------------+------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`     | keep_title_visible                                                                | ``true`` (overrides :ref:`Window<class_Window_property_keep_title_visible>`) |
+   +-----------------------------+-----------------------------------------------------------------------------------+------------------------------------------------------------------------------+
+   | :ref:`String<class_String>` | :ref:`ok_button_text<class_AcceptDialog_property_ok_button_text>`                 | ``"OK"``                                                                     |
+   +-----------------------------+-----------------------------------------------------------------------------------+------------------------------------------------------------------------------+
+   | :ref:`String<class_String>` | title                                                                             | ``"Alert!"`` (overrides :ref:`Window<class_Window_property_title>`)          |
+   +-----------------------------+-----------------------------------------------------------------------------------+------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`     | transient                                                                         | ``true`` (overrides :ref:`Window<class_Window_property_transient>`)          |
+   +-----------------------------+-----------------------------------------------------------------------------------+------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`     | visible                                                                           | ``false`` (overrides :ref:`Window<class_Window_property_visible>`)           |
+   +-----------------------------+-----------------------------------------------------------------------------------+------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`     | wrap_controls                                                                     | ``true`` (overrides :ref:`Window<class_Window_property_wrap_controls>`)      |
+   +-----------------------------+-----------------------------------------------------------------------------------+------------------------------------------------------------------------------+
 
 .. rst-class:: classref-reftable-group
 
@@ -344,3 +346,4 @@ The panel that fills the background of the window.
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

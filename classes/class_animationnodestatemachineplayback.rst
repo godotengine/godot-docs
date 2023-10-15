@@ -12,7 +12,7 @@ AnimationNodeStateMachinePlayback
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-Playback control for :ref:`AnimationNodeStateMachine<class_AnimationNodeStateMachine>`.
+Provides playback control for an :ref:`AnimationNodeStateMachine<class_AnimationNodeStateMachine>`.
 
 .. rst-class:: classref-introduction-group
 
@@ -33,7 +33,7 @@ Allows control of :ref:`AnimationTree<class_AnimationTree>` state machines creat
 
  .. code-tab:: csharp
 
-    var stateMachine = GetNode<AnimationTree>("AnimationTree").Get("parameters/playback") as AnimationNodeStateMachinePlayback;
+    var stateMachine = GetNode<AnimationTree>("AnimationTree").Get("parameters/playback").As<AnimationNodeStateMachinePlayback>();
     stateMachine.Travel("some_state");
 
 
@@ -43,7 +43,7 @@ Allows control of :ref:`AnimationTree<class_AnimationTree>` state machines creat
 Tutorials
 ---------
 
-- :doc:`AnimationTree <../tutorials/animation/animation_tree>`
+- :doc:`Using AnimationTree <../tutorials/animation/animation_tree>`
 
 .. rst-class:: classref-reftable-group
 
@@ -65,27 +65,27 @@ Methods
 .. table::
    :widths: auto
 
-   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`float<class_float>`                         | :ref:`get_current_length<class_AnimationNodeStateMachinePlayback_method_get_current_length>` **(** **)** |const|                                                             |
-   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`StringName<class_StringName>`               | :ref:`get_current_node<class_AnimationNodeStateMachinePlayback_method_get_current_node>` **(** **)** |const|                                                                 |
-   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`float<class_float>`                         | :ref:`get_current_play_position<class_AnimationNodeStateMachinePlayback_method_get_current_play_position>` **(** **)** |const|                                               |
-   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`StringName<class_StringName>`               | :ref:`get_fading_from_node<class_AnimationNodeStateMachinePlayback_method_get_fading_from_node>` **(** **)** |const|                                                         |
-   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`get_travel_path<class_AnimationNodeStateMachinePlayback_method_get_travel_path>` **(** **)** |const|                                                                   |
-   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                           | :ref:`is_playing<class_AnimationNodeStateMachinePlayback_method_is_playing>` **(** **)** |const|                                                                             |
-   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                              | :ref:`next<class_AnimationNodeStateMachinePlayback_method_next>` **(** **)**                                                                                                 |
-   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                              | :ref:`start<class_AnimationNodeStateMachinePlayback_method_start>` **(** :ref:`StringName<class_StringName>` node, :ref:`bool<class_bool>` reset=true **)**                  |
-   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                              | :ref:`stop<class_AnimationNodeStateMachinePlayback_method_stop>` **(** **)**                                                                                                 |
-   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                              | :ref:`travel<class_AnimationNodeStateMachinePlayback_method_travel>` **(** :ref:`StringName<class_StringName>` to_node, :ref:`bool<class_bool>` reset_on_teleport=true **)** |
-   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`             | :ref:`get_current_length<class_AnimationNodeStateMachinePlayback_method_get_current_length>` **(** **)** |const|                                                             |
+   +---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`StringName<class_StringName>`   | :ref:`get_current_node<class_AnimationNodeStateMachinePlayback_method_get_current_node>` **(** **)** |const|                                                                 |
+   +---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`             | :ref:`get_current_play_position<class_AnimationNodeStateMachinePlayback_method_get_current_play_position>` **(** **)** |const|                                               |
+   +---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`StringName<class_StringName>`   | :ref:`get_fading_from_node<class_AnimationNodeStateMachinePlayback_method_get_fading_from_node>` **(** **)** |const|                                                         |
+   +---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`StringName[]<class_StringName>` | :ref:`get_travel_path<class_AnimationNodeStateMachinePlayback_method_get_travel_path>` **(** **)** |const|                                                                   |
+   +---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`               | :ref:`is_playing<class_AnimationNodeStateMachinePlayback_method_is_playing>` **(** **)** |const|                                                                             |
+   +---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                  | :ref:`next<class_AnimationNodeStateMachinePlayback_method_next>` **(** **)**                                                                                                 |
+   +---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                  | :ref:`start<class_AnimationNodeStateMachinePlayback_method_start>` **(** :ref:`StringName<class_StringName>` node, :ref:`bool<class_bool>` reset=true **)**                  |
+   +---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                  | :ref:`stop<class_AnimationNodeStateMachinePlayback_method_stop>` **(** **)**                                                                                                 |
+   +---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                  | :ref:`travel<class_AnimationNodeStateMachinePlayback_method_travel>` **(** :ref:`StringName<class_StringName>` to_node, :ref:`bool<class_bool>` reset_on_teleport=true **)** |
+   +---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -152,7 +152,7 @@ Returns the starting state of currently fading animation.
 
 .. rst-class:: classref-method
 
-:ref:`PackedStringArray<class_PackedStringArray>` **get_travel_path** **(** **)** |const|
+:ref:`StringName[]<class_StringName>` **get_travel_path** **(** **)** |const|
 
 Returns the current travel path as computed internally by the A\* algorithm.
 
@@ -228,3 +228,4 @@ If ``reset_on_teleport`` is ``true``, the animation is played from the beginning
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

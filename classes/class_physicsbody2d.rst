@@ -14,14 +14,14 @@ PhysicsBody2D
 
 **Inherited By:** :ref:`CharacterBody2D<class_CharacterBody2D>`, :ref:`RigidBody2D<class_RigidBody2D>`, :ref:`StaticBody2D<class_StaticBody2D>`
 
-Base class for all objects affected by physics in 2D space.
+Abstract base class for 2D game objects affected by physics.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-PhysicsBody2D is an abstract base class for implementing a physics body. All \*Body2D types inherit from it.
+**PhysicsBody2D** is an abstract base class for 2D game objects affected by physics. All 2D physics bodies inherit from it.
 
 .. rst-class:: classref-introduction-group
 
@@ -149,3 +149,4 @@ If ``recovery_as_collision`` is ``true``, any depenetration from the recovery ph
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

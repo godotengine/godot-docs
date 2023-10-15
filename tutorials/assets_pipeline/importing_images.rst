@@ -22,9 +22,12 @@ Godot can import the following image formats:
 - PNG (``.png``)
   - Precision is limited to 8 bits per channel upon importing (no HDR images).
 - Truevision Targa (``.tga``)
-- SVG (``.svg``, ``.svgz``)
+- SVG (``.svg``)
   - SVGs are rasterized using `ThorVG <https://www.thorvg.org/>`__
-  when importing them. Support is limited; complex vectors may not render correctly.
+  when importing them. `Support is limited <https://www.thorvg.org/about#:~:text=among%20the%20svg%20tiny%20specs%2C%20yet%20unsupported%20features%20in%20the%20thorvg%20are%20the%20following>`__;
+  complex vectors may not render correctly.
+  You can check whether ThorVG can render a certain vector correctly using its
+  `web-based viewer <https://www.thorvg.org/viewer>`__.
   For complex vectors, rendering them to PNGs using `Inkscape <https://inkscape.org/>`__
   is often a better solution. This can be automated thanks to its
   `command-line interface <https://wiki.inkscape.org/wiki/index.php/Using_the_Command_Line#Export_files>`__.
@@ -95,11 +98,6 @@ It is possible to choose other types of imported resources in the Import dock:
 - **TextureAtlas:** Import the image as an *atlas* of different textures. Can be
   used to reduce memory usage for animated 2D sprites. Only supported in 2D due
   to missing support in built-in 3D shaders.
-
-.. note::
-
-    For technical reasons, the editor must be restarted after changing an import
-    type in the Import dock.
 
 Detect 3D
 ^^^^^^^^^
@@ -340,6 +338,8 @@ and :ref:`class_Texture3D`). This forces all layers from the texture to be impor
 with the RG color format to reduce memory usage, with only the red and green
 channels preserved. This only has an effect on textures with the **VRAM Compressed**
 or **Basis Universal** compression modes.
+
+.. _doc_importing_images_mipmaps:
 
 Mipmaps > Generate
 ^^^^^^^^^^^^^^^^^^

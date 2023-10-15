@@ -12,25 +12,25 @@ Area3D
 
 **Inherits:** :ref:`CollisionObject3D<class_CollisionObject3D>` **<** :ref:`Node3D<class_Node3D>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-3D area for detection, as well as physics and audio influence.
+A region of 3D space that detects other :ref:`CollisionObject3D<class_CollisionObject3D>`\ s entering or exiting it.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-3D area that detects :ref:`CollisionObject3D<class_CollisionObject3D>` nodes overlapping, entering, or exiting. Can also alter or override local physics parameters (gravity, damping) and route audio to custom audio buses.
+**Area3D** is a region of 3D space defined by one or multiple :ref:`CollisionShape3D<class_CollisionShape3D>` or :ref:`CollisionPolygon3D<class_CollisionPolygon3D>` child nodes. It detects when other :ref:`CollisionObject3D<class_CollisionObject3D>`\ s enter or exit it, and it also keeps track of which collision objects haven't exited it yet (i.e. which one are overlapping it).
 
-To give the area its shape, add a :ref:`CollisionShape3D<class_CollisionShape3D>` or a :ref:`CollisionPolygon3D<class_CollisionPolygon3D>` node as a *direct* child (or add multiple such nodes as direct children) of the area.
+This node can also locally alter or override physics parameters (gravity, damping) and route audio to custom audio buses.
 
-\ **Warning:** See :ref:`ConcavePolygonShape3D<class_ConcavePolygonShape3D>` (also called "trimesh") for a warning about possibly unexpected behavior when using that shape for an area.
-
-\ **Warning:** With a non-uniform scale this node will probably not function as expected. Please make sure to keep its scale uniform (i.e. the same on all axes), and change the size(s) of its collision shape(s) instead.
+\ **Warning:** Using a :ref:`ConcavePolygonShape3D<class_ConcavePolygonShape3D>` inside a :ref:`CollisionShape3D<class_CollisionShape3D>` child of this node (created e.g. by using the **Create Trimesh Collision Sibling** option in the **Mesh** menu that appears when selecting a :ref:`MeshInstance3D<class_MeshInstance3D>` node) may give unexpected results, since this collision shape is hollow. If this is not desired, it has to be split into multiple :ref:`ConvexPolygonShape3D<class_ConvexPolygonShape3D>`\ s or primitive shapes like :ref:`BoxShape3D<class_BoxShape3D>`, or in some cases it may be replaceable by a :ref:`CollisionPolygon3D<class_CollisionPolygon3D>`.
 
 .. rst-class:: classref-introduction-group
 
 Tutorials
 ---------
+
+- :doc:`Using Area2D <../tutorials/physics/using_area_2d>`
 
 - `3D Platformer Demo <https://godotengine.org/asset-library/asset/125>`__
 
@@ -73,7 +73,7 @@ Properties
    +-------------------------------------------------+---------------------------------------------------------------------------------------+-----------------------+
    | :ref:`bool<class_bool>`                         | :ref:`monitoring<class_Area3D_property_monitoring>`                                   | ``true``              |
    +-------------------------------------------------+---------------------------------------------------------------------------------------+-----------------------+
-   | :ref:`float<class_float>`                       | :ref:`priority<class_Area3D_property_priority>`                                       | ``0.0``               |
+   | :ref:`int<class_int>`                           | :ref:`priority<class_Area3D_property_priority>`                                       | ``0``                 |
    +-------------------------------------------------+---------------------------------------------------------------------------------------+-----------------------+
    | :ref:`float<class_float>`                       | :ref:`reverb_bus_amount<class_Area3D_property_reverb_bus_amount>`                     | ``0.0``               |
    +-------------------------------------------------+---------------------------------------------------------------------------------------+-----------------------+
@@ -563,14 +563,14 @@ If ``true``, the area detects bodies or areas entering and exiting it.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **priority** = ``0.0``
+:ref:`int<class_int>` **priority** = ``0``
 
 .. rst-class:: classref-property-setget
 
-- void **set_priority** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_priority** **(** **)**
+- void **set_priority** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_priority** **(** **)**
 
-The area's priority. Higher priority areas are processed first.
+The area's priority. Higher priority areas are processed first. The :ref:`World3D<class_World3D>`'s physics is always processed last, after all areas.
 
 .. rst-class:: classref-item-separator
 
@@ -689,7 +689,7 @@ The magnitude of area-specific wind force.
 - void **set_wind_source_path** **(** :ref:`NodePath<class_NodePath>` value **)**
 - :ref:`NodePath<class_NodePath>` **get_wind_source_path** **(** **)**
 
-The :ref:`Node3D<class_Node3D>` which is used to specify the the direction and origin of an area-specific wind force. The direction is opposite to the z-axis of the :ref:`Node3D<class_Node3D>`'s local transform, and its origin is the origin of the :ref:`Node3D<class_Node3D>`'s local transform.
+The :ref:`Node3D<class_Node3D>` which is used to specify the direction and origin of an area-specific wind force. The direction is opposite to the z-axis of the :ref:`Node3D<class_Node3D>`'s local transform, and its origin is the origin of the :ref:`Node3D<class_Node3D>`'s local transform.
 
 .. rst-class:: classref-section-separator
 
@@ -788,3 +788,4 @@ The ``body`` argument can either be a :ref:`PhysicsBody3D<class_PhysicsBody3D>` 
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

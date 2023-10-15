@@ -14,21 +14,21 @@ BoxContainer
 
 **Inherited By:** :ref:`HBoxContainer<class_HBoxContainer>`, :ref:`VBoxContainer<class_VBoxContainer>`
 
-Base class for box containers.
+A container that arranges its child controls horizontally or vertically.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-Arranges child :ref:`Control<class_Control>` nodes vertically or horizontally, and rearranges them automatically when their minimum size changes.
+A container that arranges its child controls horizontally or vertically, rearranging them automatically when their minimum size changes.
 
 .. rst-class:: classref-introduction-group
 
 Tutorials
 ---------
 
-- :doc:`GUI containers <../tutorials/ui/gui_containers>`
+- :doc:`Using Containers <../tutorials/ui/gui_containers>`
 
 .. rst-class:: classref-reftable-group
 
@@ -188,3 +188,4 @@ The space between the **BoxContainer**'s elements, in pixels.
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

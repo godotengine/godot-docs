@@ -10,18 +10,22 @@
 Quaternion
 ==========
 
-Quaternion.
+A unit quaternion used for representing 3D rotations.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-A unit quaternion used for representing 3D rotations. Quaternions need to be normalized to be used for rotation.
+Quaternions are similar to :ref:`Basis<class_Basis>`, which implements the matrix representation of rotations. Unlike :ref:`Basis<class_Basis>`, which stores rotation, scale, and shearing, quaternions only store rotation.
 
-It is similar to Basis, which implements matrix representation of rotations, and can be parametrized using both an axis-angle pair or Euler angles. Basis stores rotation, scale, and shearing, while Quaternion only stores rotation.
+Quaternions can be parametrized using both an axis-angle pair or Euler angles. Due to their compactness and the way they are stored in memory, certain operations (obtaining axis-angle and performing SLERP, in particular) are more efficient and robust against floating-point errors.
 
-Due to its compactness and the way it is stored in memory, certain operations (obtaining axis-angle and performing SLERP, in particular) are more efficient and robust against floating-point errors.
+\ **Note:** Quaternions need to be normalized before being used for rotation.
+
+.. note::
+
+	There are notable differences when using this API with C#. See :ref:`doc_c_sharp_differences` for more information.
 
 .. rst-class:: classref-introduction-group
 
@@ -269,9 +273,7 @@ Constructs a **Quaternion** as a copy of the given **Quaternion**.
 
 :ref:`Quaternion<class_Quaternion>` **Quaternion** **(** :ref:`Vector3<class_Vector3>` arc_from, :ref:`Vector3<class_Vector3>` arc_to **)**
 
-.. container:: contribute
-
-	There is currently no description for this constructor. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Constructs a quaternion representing the shortest arc between two points on the surface of a sphere with a radius of ``1.0``.
 
 .. rst-class:: classref-item-separator
 
@@ -548,7 +550,7 @@ Performs a spherical cubic interpolation between quaternions ``pre_a``, this vec
 
 Performs a spherical cubic interpolation between quaternions ``pre_a``, this vector, ``b``, and ``post_b``, by the given amount ``weight``.
 
-It can perform smoother interpolation than ``spherical_cubic_interpolate()`` by the time values.
+It can perform smoother interpolation than :ref:`spherical_cubic_interpolate<class_Quaternion_method_spherical_cubic_interpolate>` by the time values.
 
 .. rst-class:: classref-section-separator
 
@@ -721,3 +723,4 @@ Returns the negative value of the **Quaternion**. This is the same as writing ``
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

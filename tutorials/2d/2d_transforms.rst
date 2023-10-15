@@ -1,5 +1,3 @@
-:article_outdated: True
-
 .. _doc_viewport_and_canvas_transforms:
 
 Viewport and canvas transforms
@@ -11,6 +9,12 @@ Introduction
 This is an overview of the 2D transforms going on for nodes from the
 moment they draw their content locally to the time they are drawn onto
 the screen. This overview discusses very low level details of the engine.
+
+The goal of this tutorial is to teach a way for feeding input events to the
+Input with a position in the correct coordinate system.
+
+A more extensive description of all coordinate systems and 2d transforms is
+available in :ref:`doc_2d_coordinate_systems`.
 
 Canvas transform
 ----------------
@@ -30,9 +34,8 @@ Global canvas transform
 
 Viewports also have a Global Canvas transform (also a
 :ref:`Transform2D <class_Transform2D>`). This is the master transform and
-affects all individual *Canvas Layer* transforms. Generally, this
-transform is not of much use, but is used in the CanvasItem Editor
-in Godot's editor.
+affects all individual *Canvas Layer* transforms. Generally, this is primarily
+used in Godot's CanvasItem Editor.
 
 Stretch transform
 -----------------
@@ -47,68 +50,82 @@ convert InputEvent coordinates to local CanvasItem coordinates, the
 :ref:`CanvasItem.make_input_local() <class_CanvasItem_method_make_input_local>`
 function was added for convenience.
 
+Window transform
+----------------
+
+The root viewport is a :ref:`Window <class_Window>`. In order to scale and
+position the *Window's* content as described in :ref:`doc_multiple_resolutions`,
+each :ref:`Window <class_Window>` contains a *window transform*. It is for
+example responsible for the black bars at the *Window's* sides so that the
+*Viewport* is displayed with a fixed aspect ratio.
+
 Transform order
 ---------------
 
-For a coordinate in CanvasItem local properties to become an actual
-screen coordinate, the following chain of transforms must be applied:
+To convert a CanvasItem local coordinate to an actual screen coordinate,
+the following chain of transforms must be applied:
 
-.. image:: img/viewport_transforms2.png
+.. image:: img/viewport_transforms3.webp
 
 Transform functions
 -------------------
 
-Obtaining each transform can be achieved with the following functions:
-
-+----------------------------------+---------------------------------------------------------------------------------------------+
-| Type                             | Transform                                                                                   |
-+==================================+=============================================================================================+
-| CanvasItem                       | :ref:`CanvasItem.get_global_transform() <class_CanvasItem_method_get_global_transform>`     |
-+----------------------------------+---------------------------------------------------------------------------------------------+
-| CanvasLayer                      | :ref:`CanvasItem.get_canvas_transform() <class_CanvasItem_method_get_canvas_transform>`     |
-+----------------------------------+---------------------------------------------------------------------------------------------+
-| CanvasLayer+GlobalCanvas+Stretch | :ref:`CanvasItem.get_viewport_transform() <class_CanvasItem_method_get_viewport_transform>` |
-+----------------------------------+---------------------------------------------------------------------------------------------+
-
-Finally, then, to convert a CanvasItem local coordinates to screen
-coordinates, just multiply in the following order:
+The above graphic shows some available transform functions. All transforms are directed from right
+to left, this means multiplying a transform with a coordinate results in a coordinate system
+further to the left, multiplying the :ref:`affine inverse <class_Transform2D_method_affine_inverse>`
+of a transform results in a coordinate system further to the right:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    var screen_coord = get_viewport_transform() * (get_global_transform() * local_pos)
+    # Called from a CanvasItem.
+    canvas_pos = get_global_transform() * local_pos
+    local_pos = get_global_transform().affine_inverse() * canvas_pos
 
  .. code-tab:: csharp
 
-    var screenCord = (GetViewportTransform() * GetGlobalTransform()).Xform(localPos);
+    // Called from a CanvasItem.
+    canvasPos = GetGlobalTransform() * localPos;
+    localPos = GetGlobalTransform().AffineInverse() * canvasPos;
 
-Keep in mind, however, that it is generally not desired to work with
-screen coordinates. The recommended approach is to simply work in Canvas
-coordinates (``CanvasItem.get_global_transform()``), to allow automatic
-screen resolution resizing to work properly.
+Finally, then, to convert a CanvasItem local coordinates to screen coordinates, just multiply in
+the following order:
+
+.. tabs::
+ .. code-tab:: gdscript GDScript
+
+    var screen_coord = get_viewport().get_screen_transform() * get_global_transform_with_canvas() * local_pos
+
+ .. code-tab:: csharp
+
+    var screenCord = GetViewport().GetScreenTransform() * GetGlobalTransformWithCanvas() * localPos;
+
+Keep in mind, however, that it is generally not desired to work with screen coordinates. The
+recommended approach is to simply work in Canvas coordinates
+(``CanvasItem.get_global_transform()``), to allow automatic screen resolution resizing to work
+properly.
 
 Feeding custom input events
 ---------------------------
 
-It is often desired to feed custom input events to the scene tree. With
-the above knowledge, to correctly do this, it must be done the following
-way:
+It is often desired to feed custom input events to the game. With the above knowledge, to correctly
+do this in the focused window, it must be done the following way:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    var local_pos = Vector2(10, 20) # local to Control/Node2D
+    var local_pos = Vector2(10, 20) # Local to Control/Node2D.
     var ie = InputEventMouseButton.new()
     ie.button_index = MOUSE_BUTTON_LEFT
-    ie.position = get_viewport_transform() * (get_global_transform() * local_pos)
-    get_tree().input_event(ie)
+    ie.position = get_viewport().get_screen_transform() * get_global_transform_with_canvas() * local_pos
+    Input.parse_input_event(ie)
 
  .. code-tab:: csharp
 
-    var localPos = new Vector2(10,20); // local to Control/Node2D
+    var localPos = new Vector2(10,20); // Local to Control/Node2D.
     var ie = new InputEventMouseButton()
     {
         ButtonIndex = MouseButton.Left,
-        Position = GetViewportTransform() * (GetGlobalTransform() * localPos),
+        Position = GetViewport().GetScreenTransform() * GetGlobalTransformWithCanvas() * localPos,
     };
-    GetTree().InputEvent(ie);
+    Input.ParseInputEvent(ie);

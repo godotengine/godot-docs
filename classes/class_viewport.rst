@@ -14,7 +14,7 @@ Viewport
 
 **Inherited By:** :ref:`SubViewport<class_SubViewport>`, :ref:`Window<class_Window>`
 
-Base class for viewports.
+Abstract base class for viewports. Encapsulates drawing and interaction with a game world.
 
 .. rst-class:: classref-introduction-group
 
@@ -23,7 +23,7 @@ Description
 
 A Viewport creates a different view into the screen, or a sub-view inside another viewport. Children 2D Nodes will display on it, and children Camera3D 3D nodes will render on it too.
 
-Optionally, a viewport can have its own 2D or 3D world, so they don't share what they draw with other viewports.
+Optionally, a viewport can have its own 2D or 3D world, so it doesn't share what it draws with other viewports.
 
 Viewports can also choose to be audio listeners, so they generate positional audio depending on a 2D or 3D camera child of it.
 
@@ -74,6 +74,8 @@ Properties
    | :ref:`Transform2D<class_Transform2D>`                                                         | :ref:`canvas_transform<class_Viewport_property_canvas_transform>`                                     |                |
    +-----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+----------------+
    | :ref:`DebugDraw<enum_Viewport_DebugDraw>`                                                     | :ref:`debug_draw<class_Viewport_property_debug_draw>`                                                 | ``0``          |
+   +-----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+----------------+
+   | :ref:`bool<class_bool>`                                                                       | :ref:`disable_2d<class_Viewport_property_disable_2d>`                                                 | ``false``      |
    +-----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+----------------+
    | :ref:`bool<class_bool>`                                                                       | :ref:`disable_3d<class_Viewport_property_disable_3d>`                                                 | ``false``      |
    +-----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+----------------+
@@ -133,6 +135,8 @@ Properties
    +-----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+----------------+
    | :ref:`bool<class_bool>`                                                                       | :ref:`use_debanding<class_Viewport_property_use_debanding>`                                           | ``false``      |
    +-----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+----------------+
+   | :ref:`bool<class_bool>`                                                                       | :ref:`use_hdr_2d<class_Viewport_property_use_hdr_2d>`                                                 | ``false``      |
+   +-----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+----------------+
    | :ref:`bool<class_bool>`                                                                       | :ref:`use_occlusion_culling<class_Viewport_property_use_occlusion_culling>`                           | ``false``      |
    +-----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+----------------+
    | :ref:`bool<class_bool>`                                                                       | :ref:`use_taa<class_Viewport_property_use_taa>`                                                       | ``false``      |
@@ -167,6 +171,8 @@ Methods
    +-----------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                                                       | :ref:`get_canvas_cull_mask_bit<class_Viewport_method_get_canvas_cull_mask_bit>` **(** :ref:`int<class_int>` layer **)** |const|                                                                                                                                        |
    +-----------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Window[]<class_Window>`                                                                 | :ref:`get_embedded_subwindows<class_Viewport_method_get_embedded_subwindows>` **(** **)** |const|                                                                                                                                                                      |
+   +-----------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Transform2D<class_Transform2D>`                                                         | :ref:`get_final_transform<class_Viewport_method_get_final_transform>` **(** **)** |const|                                                                                                                                                                              |
    +-----------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Vector2<class_Vector2>`                                                                 | :ref:`get_mouse_position<class_Viewport_method_get_mouse_position>` **(** **)** |const|                                                                                                                                                                                |
@@ -185,7 +191,7 @@ Methods
    +-----------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Variant<class_Variant>`                                                                 | :ref:`gui_get_drag_data<class_Viewport_method_gui_get_drag_data>` **(** **)** |const|                                                                                                                                                                                  |
    +-----------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Control<class_Control>`                                                                 | :ref:`gui_get_focus_owner<class_Viewport_method_gui_get_focus_owner>` **(** **)**                                                                                                                                                                                      |
+   | :ref:`Control<class_Control>`                                                                 | :ref:`gui_get_focus_owner<class_Viewport_method_gui_get_focus_owner>` **(** **)** |const|                                                                                                                                                                              |
    +-----------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                                                       | :ref:`gui_is_drag_successful<class_Viewport_method_gui_is_drag_successful>` **(** **)** |const|                                                                                                                                                                        |
    +-----------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -206,6 +212,8 @@ Methods
    | void                                                                                          | :ref:`set_input_as_handled<class_Viewport_method_set_input_as_handled>` **(** **)**                                                                                                                                                                                    |
    +-----------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                                                          | :ref:`set_positional_shadow_atlas_quadrant_subdiv<class_Viewport_method_set_positional_shadow_atlas_quadrant_subdiv>` **(** :ref:`int<class_int>` quadrant, :ref:`PositionalShadowAtlasQuadrantSubdiv<enum_Viewport_PositionalShadowAtlasQuadrantSubdiv>` subdiv **)** |
+   +-----------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                                                                          | :ref:`update_mouse_cursor_state<class_Viewport_method_update_mouse_cursor_state>` **(** **)**                                                                                                                                                                          |
    +-----------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                                                          | :ref:`warp_mouse<class_Viewport_method_warp_mouse>` **(** :ref:`Vector2<class_Vector2>` position **)**                                                                                                                                                                 |
    +-----------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -334,7 +342,7 @@ enum **Scaling3DMode**:
 
 :ref:`Scaling3DMode<enum_Viewport_Scaling3DMode>` **SCALING_3D_MODE_BILINEAR** = ``0``
 
-Use bilinear scaling for the viewport's 3D buffer. The amount of scaling can be set using :ref:`scaling_3d_scale<class_Viewport_property_scaling_3d_scale>`. Values less then ``1.0`` will result in undersampling while values greater than ``1.0`` will result in supersampling. A value of ``1.0`` disables scaling.
+Use bilinear scaling for the viewport's 3D buffer. The amount of scaling can be set using :ref:`scaling_3d_scale<class_Viewport_property_scaling_3d_scale>`. Values less than ``1.0`` will result in undersampling while values greater than ``1.0`` will result in supersampling. A value of ``1.0`` disables scaling.
 
 .. _class_Viewport_constant_SCALING_3D_MODE_FSR:
 
@@ -342,13 +350,21 @@ Use bilinear scaling for the viewport's 3D buffer. The amount of scaling can be 
 
 :ref:`Scaling3DMode<enum_Viewport_Scaling3DMode>` **SCALING_3D_MODE_FSR** = ``1``
 
-Use AMD FidelityFX Super Resolution 1.0 upscaling for the viewport's 3D buffer. The amount of scaling can be set using :ref:`scaling_3d_scale<class_Viewport_property_scaling_3d_scale>`. Values less then ``1.0`` will be result in the viewport being upscaled using FSR. Values greater than ``1.0`` are not supported and bilinear downsampling will be used instead. A value of ``1.0`` disables scaling.
+Use AMD FidelityFX Super Resolution 1.0 upscaling for the viewport's 3D buffer. The amount of scaling can be set using :ref:`scaling_3d_scale<class_Viewport_property_scaling_3d_scale>`. Values less than ``1.0`` will be result in the viewport being upscaled using FSR. Values greater than ``1.0`` are not supported and bilinear downsampling will be used instead. A value of ``1.0`` disables scaling.
+
+.. _class_Viewport_constant_SCALING_3D_MODE_FSR2:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Scaling3DMode<enum_Viewport_Scaling3DMode>` **SCALING_3D_MODE_FSR2** = ``2``
+
+Use AMD FidelityFX Super Resolution 2.2 upscaling for the viewport's 3D buffer. The amount of scaling can be set using :ref:`scaling_3d_scale<class_Viewport_property_scaling_3d_scale>`. Values less than ``1.0`` will be result in the viewport being upscaled using FSR2. Values greater than ``1.0`` are not supported and bilinear downsampling will be used instead. A value of ``1.0`` will use FSR2 at native resolution as a TAA solution.
 
 .. _class_Viewport_constant_SCALING_3D_MODE_MAX:
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`Scaling3DMode<enum_Viewport_Scaling3DMode>` **SCALING_3D_MODE_MAX** = ``2``
+:ref:`Scaling3DMode<enum_Viewport_Scaling3DMode>` **SCALING_3D_MODE_MAX** = ``3``
 
 Represents the size of the :ref:`Scaling3DMode<enum_Viewport_Scaling3DMode>` enum.
 
@@ -730,6 +746,14 @@ Draws the decal atlas used by :ref:`Decal<class_Decal>`\ s and light projector t
 
 
 
+.. _class_Viewport_constant_DEBUG_DRAW_INTERNAL_BUFFER:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`DebugDraw<enum_Viewport_DebugDraw>` **DEBUG_DRAW_INTERNAL_BUFFER** = ``26``
+
+Draws the internal resolution buffer of the scene before post-processing is applied.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -1084,6 +1108,23 @@ The overlay mode for test rendered geometry in debug purposes.
 
 ----
 
+.. _class_Viewport_property_disable_2d:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **disable_2d** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_disable_2d** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_2d_disabled** **(** **)**
+
+If ``true``, disables 2D rendering while keeping 3D rendering. See also :ref:`disable_3d<class_Viewport_property_disable_3d>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_Viewport_property_disable_3d:
 
 .. rst-class:: classref-property
@@ -1095,7 +1136,7 @@ The overlay mode for test rendered geometry in debug purposes.
 - void **set_disable_3d** **(** :ref:`bool<class_bool>` value **)**
 - :ref:`bool<class_bool>` **is_3d_disabled** **(** **)**
 
-Disable 3D rendering (but keep 2D rendering).
+If ``true``, disables 3D rendering while keeping 2D rendering. See also :ref:`disable_2d<class_Viewport_property_disable_2d>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1199,7 +1240,7 @@ If ``true``, the GUI controls on the viewport will lay pixel perfectly.
 - void **set_handle_input_locally** **(** :ref:`bool<class_bool>` value **)**
 - :ref:`bool<class_bool>` **is_handling_input_locally** **(** **)**
 
-If ``true``, this viewport will mark incoming input events as handled by itself. If ``false``, this is instead done by the the first parent viewport that is set to handle input locally.
+If ``true``, this viewport will mark incoming input events as handled by itself. If ``false``, this is instead done by the first parent viewport that is set to handle input locally.
 
 A :ref:`SubViewportContainer<class_SubViewportContainer>` will automatically set this property to ``false`` for the **Viewport** contained inside of it.
 
@@ -1294,6 +1335,8 @@ If ``true``, the viewport will use a unique copy of the :ref:`World3D<class_Worl
 
 If ``true``, the objects rendered by viewport become subjects of mouse picking process.
 
+\ **Note:** The number of simultaneously pickable objects is limited to 64 and they are selected in a non-deterministic order, which can be different in each picking process.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -1313,6 +1356,8 @@ If ``true``, objects receive mouse picking events sorted primarily by their :ref
 
 \ **Note:** This setting is disabled by default because of its potential expensive computational cost.
 
+\ **Note:** Sorting happens after selecting the pickable objects. Because of the limitation of 64 simultaneously pickable objects, it is not guaranteed that the object with the highest :ref:`CanvasItem.z_index<class_CanvasItem_property_z_index>` receives the picking event.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -1328,9 +1373,7 @@ If ``true``, objects receive mouse picking events sorted primarily by their :ref
 - void **set_positional_shadow_atlas_16_bits** **(** :ref:`bool<class_bool>` value **)**
 - :ref:`bool<class_bool>` **get_positional_shadow_atlas_16_bits** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Use 16 bits for the omni/spot shadow depth map. Enabling this results in shadows having less precision and may result in shadow acne, but can lead to performance improvements on some devices.
 
 .. rst-class:: classref-item-separator
 
@@ -1415,9 +1458,9 @@ The subdivision amount of the fourth quadrant on the shadow atlas.
 - void **set_positional_shadow_atlas_size** **(** :ref:`int<class_int>` value **)**
 - :ref:`int<class_int>` **get_positional_shadow_atlas_size** **(** **)**
 
-The shadow atlas' resolution (used for omni and spot lights). The value will be rounded up to the nearest power of 2.
+The shadow atlas' resolution (used for omni and spot lights). The value is rounded up to the nearest power of 2.
 
-\ **Note:** If this is set to ``0``, no shadows will be visible at all (including directional shadows).
+\ **Note:** If this is set to ``0``, no positional shadows will be visible at all. This can improve performance significantly on low-end systems by reducing both the CPU and GPU load (as fewer draw calls are needed to draw the scene without shadows).
 
 .. rst-class:: classref-item-separator
 
@@ -1569,7 +1612,7 @@ Sets the screen-space antialiasing method used. Screen-space antialiasing works 
 
 Affects the final texture sharpness by reading from a lower or higher mipmap (also called "texture LOD bias"). Negative values make mipmapped textures sharper but grainier when viewed at a distance, while positive values make mipmapped textures blurrier (even when up close).
 
-Enabling temporal antialiasing (:ref:`use_taa<class_Viewport_property_use_taa>`) will automatically apply a ``-0.5`` offset to this value, while enabling FXAA (:ref:`screen_space_aa<class_Viewport_property_screen_space_aa>`) will automatically apply a ``-0.25`` offset to this value. If both TAA and FXAA are enbled at the same time, an offset of ``-0.75`` is applied to this value.
+Enabling temporal antialiasing (:ref:`use_taa<class_Viewport_property_use_taa>`) will automatically apply a ``-0.5`` offset to this value, while enabling FXAA (:ref:`screen_space_aa<class_Viewport_property_screen_space_aa>`) will automatically apply a ``-0.25`` offset to this value. If both TAA and FXAA are enabled at the same time, an offset of ``-0.75`` is applied to this value.
 
 \ **Note:** If :ref:`scaling_3d_scale<class_Viewport_property_scaling_3d_scale>` is lower than ``1.0`` (exclusive), :ref:`texture_mipmap_bias<class_Viewport_property_texture_mipmap_bias>` is used to adjust the automatic mipmap bias which is calculated internally based on the scale factor. The formula for this is ``log2(scaling_3d_scale) + mipmap_bias``.
 
@@ -1615,6 +1658,25 @@ In some cases, debanding may introduce a slightly noticeable dithering pattern. 
 
 ----
 
+.. _class_Viewport_property_use_hdr_2d:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **use_hdr_2d** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_use_hdr_2d** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_using_hdr_2d** **(** **)**
+
+If ``true``, 2D rendering will use an high dynamic range (HDR) format framebuffer matching the bit depth of the 3D framebuffer. When using the Forward+ renderer this will be a ``RGBA16`` framebuffer, while when using the Mobile renderer it will be a ``RGB10_A2`` framebuffer. Additionally, 2D rendering will take place in linear color space and will be converted to sRGB space immediately before blitting to the screen (if the Viewport is attached to the screen). Practically speaking, this means that the end result of the Viewport will not be clamped into the ``0-1`` range and can be used in 3D rendering without color space adjustments. This allows 2D rendering to take advantage of effects requiring high dynamic range (e.g. 2D glow) as well as substantially improves the appearance of effects requiring highly detailed gradients.
+
+\ **Note:** This setting will have no effect when using the GL Compatibility renderer as the GL Compatibility renderer always renders in low dynamic range for performance reasons.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_Viewport_property_use_occlusion_culling:
 
 .. rst-class:: classref-property
@@ -1629,6 +1691,8 @@ In some cases, debanding may introduce a slightly noticeable dithering pattern. 
 If ``true``, :ref:`OccluderInstance3D<class_OccluderInstance3D>` nodes will be usable for occlusion culling in 3D for this viewport. For the root viewport, :ref:`ProjectSettings.rendering/occlusion_culling/use_occlusion_culling<class_ProjectSettings_property_rendering/occlusion_culling/use_occlusion_culling>` must be set to ``true`` instead.
 
 \ **Note:** Enabling occlusion culling has a cost on the CPU. Only enable occlusion culling if you actually plan to use it, and think whether your scene can actually benefit from occlusion culling. Large, open scenes with few or no objects blocking the view will generally not benefit much from occlusion culling. Large open scenes generally benefit more from mesh LOD and visibility ranges (:ref:`GeometryInstance3D.visibility_range_begin<class_GeometryInstance3D_property_visibility_range_begin>` and :ref:`GeometryInstance3D.visibility_range_end<class_GeometryInstance3D_property_visibility_range_end>`) compared to occlusion culling.
+
+\ **Note:** Due to memory constraints, occlusion culling is not supported by default in Web export templates. It can be enabled by compiling custom Web export templates with ``module_raycast_enabled=yes``.
 
 .. rst-class:: classref-item-separator
 
@@ -1818,6 +1882,20 @@ Returns an individual bit on the rendering layer mask.
 
 ----
 
+.. _class_Viewport_method_get_embedded_subwindows:
+
+.. rst-class:: classref-method
+
+:ref:`Window[]<class_Window>` **get_embedded_subwindows** **(** **)** |const|
+
+Returns a list of the visible embedded :ref:`Window<class_Window>`\ s inside the viewport.
+
+\ **Note:** :ref:`Window<class_Window>`\ s inside other viewports will not be listed.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_Viewport_method_get_final_transform:
 
 .. rst-class:: classref-method
@@ -1860,9 +1938,7 @@ Returns the :ref:`PositionalShadowAtlasQuadrantSubdiv<enum_Viewport_PositionalSh
 
 :ref:`int<class_int>` **get_render_info** **(** :ref:`RenderInfoType<enum_Viewport_RenderInfoType>` type, :ref:`RenderInfo<enum_Viewport_RenderInfo>` info **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Returns rendering statistics of the given type. See :ref:`RenderInfoType<enum_Viewport_RenderInfoType>` and :ref:`RenderInfo<enum_Viewport_RenderInfo>` for options.
 
 .. rst-class:: classref-item-separator
 
@@ -1940,7 +2016,7 @@ Returns the drag data from the GUI, that was previously returned by :ref:`Contro
 
 .. rst-class:: classref-method
 
-:ref:`Control<class_Control>` **gui_get_focus_owner** **(** **)**
+:ref:`Control<class_Control>` **gui_get_focus_owner** **(** **)** |const|
 
 Returns the :ref:`Control<class_Control>` having the focus within this viewport. If no :ref:`Control<class_Control>` has the focus, returns null.
 
@@ -2020,7 +2096,15 @@ Calling this method will propagate calls to child nodes for following methods in
 
 - :ref:`Control._gui_input<class_Control_method__gui_input>` for :ref:`Control<class_Control>` nodes
 
+- :ref:`Node._shortcut_input<class_Node_method__shortcut_input>`\ 
+
+- :ref:`Node._unhandled_key_input<class_Node_method__unhandled_key_input>`\ 
+
+- :ref:`Node._unhandled_input<class_Node_method__unhandled_input>`\ 
+
 If an earlier method marks the input as handled via :ref:`set_input_as_handled<class_Viewport_method_set_input_as_handled>`, any later method in this list will not be called.
+
+If none of the methods handle the event and :ref:`physics_object_picking<class_Viewport_property_physics_object_picking>` is ``true``, the event is used for physics object picking.
 
 .. rst-class:: classref-item-separator
 
@@ -2032,9 +2116,7 @@ If an earlier method marks the input as handled via :ref:`set_input_as_handled<c
 
 void **push_text_input** **(** :ref:`String<class_String>` text **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Helper method which calls the ``set_text()`` method on the currently focused :ref:`Control<class_Control>`, provided that it is defined (e.g. if the focused Control is :ref:`Button<class_Button>` or :ref:`LineEdit<class_LineEdit>`).
 
 .. rst-class:: classref-item-separator
 
@@ -2056,13 +2138,17 @@ Calling this method will propagate calls to child nodes for following methods in
 
 - :ref:`Node._shortcut_input<class_Node_method__shortcut_input>`\ 
 
-- :ref:`Node._unhandled_input<class_Node_method__unhandled_input>`\ 
-
 - :ref:`Node._unhandled_key_input<class_Node_method__unhandled_key_input>`\ 
+
+- :ref:`Node._unhandled_input<class_Node_method__unhandled_input>`\ 
 
 If an earlier method marks the input as handled via :ref:`set_input_as_handled<class_Viewport_method_set_input_as_handled>`, any later method in this list will not be called.
 
 If none of the methods handle the event and :ref:`physics_object_picking<class_Viewport_property_physics_object_picking>` is ``true``, the event is used for physics object picking.
+
+\ **Note:** This method doesn't propagate input events to embedded :ref:`Window<class_Window>`\ s or :ref:`SubViewport<class_SubViewport>`\ s.
+
+\ *Deprecated.* Use :ref:`push_input<class_Viewport_method_push_input>` instead.
 
 .. rst-class:: classref-item-separator
 
@@ -2088,6 +2174,8 @@ void **set_input_as_handled** **(** **)**
 
 Stops the input from propagating further down the :ref:`SceneTree<class_SceneTree>`.
 
+\ **Note:** This does not affect the methods in :ref:`Input<class_Input>`, only the way events are propagated.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -2099,6 +2187,18 @@ Stops the input from propagating further down the :ref:`SceneTree<class_SceneTre
 void **set_positional_shadow_atlas_quadrant_subdiv** **(** :ref:`int<class_int>` quadrant, :ref:`PositionalShadowAtlasQuadrantSubdiv<enum_Viewport_PositionalShadowAtlasQuadrantSubdiv>` subdiv **)**
 
 Sets the number of subdivisions to use in the specified quadrant. A higher number of subdivisions allows you to have more shadows in the scene at once, but reduces the quality of the shadows. A good practice is to have quadrants with a varying number of subdivisions and to have as few subdivisions as possible.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Viewport_method_update_mouse_cursor_state:
+
+.. rst-class:: classref-method
+
+void **update_mouse_cursor_state** **(** **)**
+
+Force instantly updating the display based on the current mouse cursor position. This includes updating the mouse cursor shape and sending necessary :ref:`Control.mouse_entered<class_Control_signal_mouse_entered>`, :ref:`CollisionObject2D.mouse_entered<class_CollisionObject2D_signal_mouse_entered>`, :ref:`CollisionObject3D.mouse_entered<class_CollisionObject3D_signal_mouse_entered>` and :ref:`Window.mouse_entered<class_Window_signal_mouse_entered>` signals and their respective ``mouse_exited`` counterparts.
 
 .. rst-class:: classref-item-separator
 
@@ -2120,3 +2220,4 @@ Moves the mouse pointer to the specified position in this **Viewport** using the
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

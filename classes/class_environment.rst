@@ -36,7 +36,7 @@ Tutorials
 
 - :doc:`Environment and post-processing <../tutorials/3d/environment_and_post_processing>`
 
-- :doc:`Light transport in game engines <../tutorials/3d/high_dynamic_range>`
+- :doc:`High dynamic range lighting <../tutorials/3d/high_dynamic_range>`
 
 - `3D Material Testers Demo <https://godotengine.org/asset-library/asset/123>`__
 
@@ -551,7 +551,7 @@ Property Descriptions
 - void **set_adjustment_brightness** **(** :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_adjustment_brightness** **(** **)**
 
-The global brightness value of the rendered scene. Effective only if ``adjustment_enabled`` is ``true``.
+The global brightness value of the rendered scene. Effective only if :ref:`adjustment_enabled<class_Environment_property_adjustment_enabled>` is ``true``.
 
 .. rst-class:: classref-item-separator
 
@@ -568,7 +568,7 @@ The global brightness value of the rendered scene. Effective only if ``adjustmen
 - void **set_adjustment_color_correction** **(** :ref:`Texture<class_Texture>` value **)**
 - :ref:`Texture<class_Texture>` **get_adjustment_color_correction** **(** **)**
 
-The :ref:`Texture2D<class_Texture2D>` or :ref:`Texture3D<class_Texture3D>` lookup table (LUT) to use for the built-in post-process color grading. Can use a :ref:`GradientTexture1D<class_GradientTexture1D>` for a 1-dimensional LUT, or a :ref:`Texture3D<class_Texture3D>` for a more complex LUT. Effective only if ``adjustment_enabled`` is ``true``.
+The :ref:`Texture2D<class_Texture2D>` or :ref:`Texture3D<class_Texture3D>` lookup table (LUT) to use for the built-in post-process color grading. Can use a :ref:`GradientTexture1D<class_GradientTexture1D>` for a 1-dimensional LUT, or a :ref:`Texture3D<class_Texture3D>` for a more complex LUT. Effective only if :ref:`adjustment_enabled<class_Environment_property_adjustment_enabled>` is ``true``.
 
 .. rst-class:: classref-item-separator
 
@@ -585,7 +585,7 @@ The :ref:`Texture2D<class_Texture2D>` or :ref:`Texture3D<class_Texture3D>` looku
 - void **set_adjustment_contrast** **(** :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_adjustment_contrast** **(** **)**
 
-The global contrast value of the rendered scene (default value is 1). Effective only if ``adjustment_enabled`` is ``true``.
+The global contrast value of the rendered scene (default value is 1). Effective only if :ref:`adjustment_enabled<class_Environment_property_adjustment_enabled>` is ``true``.
 
 .. rst-class:: classref-item-separator
 
@@ -621,7 +621,7 @@ If ``true``, enables the ``adjustment_*`` properties provided by this resource. 
 - void **set_adjustment_saturation** **(** :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_adjustment_saturation** **(** **)**
 
-The global color saturation value of the rendered scene (default value is 1). Effective only if ``adjustment_enabled`` is ``true``.
+The global color saturation value of the rendered scene (default value is 1). Effective only if :ref:`adjustment_enabled<class_Environment_property_adjustment_enabled>` is ``true``.
 
 .. rst-class:: classref-item-separator
 
@@ -1858,7 +1858,7 @@ If ``true``, screen-space reflections are enabled. Screen-space reflections are 
 - void **set_ssr_fade_in** **(** :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_ssr_fade_in** **(** **)**
 
-The fade-in distance for screen-space reflections. Affects the area from the reflected material to the screen-space reflection). Only positive values are valid (negative values will be clamped to ``0.0``).
+The fade-in distance for screen-space reflections. Affects the area from the reflected material to the screen-space reflection. Only positive values are valid (negative values will be clamped to ``0.0``).
 
 .. rst-class:: classref-item-separator
 
@@ -2215,3 +2215,4 @@ Sets the intensity of the glow level ``idx``. A value above ``0.0`` enables the 
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

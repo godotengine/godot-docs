@@ -33,10 +33,8 @@ Godot 3.x for the following reasons:
 - `Godot 3.x is tried and true, while Godot 4 remains in its early stages. <https://godotengine.org/article/release-management-4-0-and-beyond>`__
 
   - Godot 4.0 is expected to contain workflow and performance issues that Godot
-    3.x doesn't have. If stability is crucial to your project, it's recommended to
-    wait for the first minor release in the 4.x series to land, along with its
-    respective patch release. This means staying on Godot 3.x until Godot 4.1.1 is
-    released.
+    3.x doesn't have. These issues will be ironed out over time in future
+    Godot 4.x releases.
 
 - Godot 4 has fewer third-party tutorials available compared to Godot 3.x.
   If you're new to game engines, you may have a better experience using Godot 3.x
@@ -430,10 +428,11 @@ table to find its new name.
 - MultiPlayerAPI's ``get_network_unique_id()`` is now ``get_unique_id()``.
 - MultiPlayerAPI's ``has_network_peer()`` is now ``has_multiplayer_peer()``.
 - PacketPeerUDP's ``is_listening()`` is now ``is_bound()``.
-- PacketPeerUDP's ``listen()`` is now ``bound()``.
+- PacketPeerUDP's ``listen()`` is now ``bind()``.
 - ParticleProcessMaterial's ``set_flag()`` is now ``set_particle_flag()``.
 - ResourceFormatLoader's ``get_dependencies()`` is now ``_get_dependencies()``
   (note the leading underscore, which denotes a virtual method).
+- SceneTree's ``change_scene()`` is now ``change_scene_to_file()``.
 - Shortcut's ``is_valid()`` is now ``has_valid_event()``.
 - TileMap's ``world_to_map()`` is now ``local_to_map()``.
 - TileMap's ``map_to_world()`` is now ``map_to_local()``.
@@ -533,6 +532,10 @@ break backwards compatibility due to different default behavior.
 
 The most notable examples of this are:
 
+- Lifecycle functions such as ``_ready()`` and ``_process()`` no longer
+  implicitly call parent classes' functions that have the same name. Instead,
+  you must use ``super()`` at the top of a lifecycle function in the child class
+  so that the parent class function is called first.
 - Both :ref:`class_String` and :ref:`class_StringName` are now exposed to
   GDScript. This allows for greater optimization, as StringName is specifically
   designed to be used for "constant" strings that are created once and reused

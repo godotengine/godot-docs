@@ -38,7 +38,7 @@ In computer programming, a Variant class is a class that is designed to store a 
     var boo = "Boo is a string!";
     var ref = new RefCounted(); // var is especially useful when used together with a constructor.
     
-    // Godot also provides a Variant type that works like an union of all the Variant-compatible types.
+    // Godot also provides a Variant type that works like a union of all the Variant-compatible types.
     Variant fooVar = 2; // fooVar is dynamically an integer (stored as a `long` in the Variant type).
     fooVar = "Now fooVar is a string!";
     fooVar = new RefCounted(); // fooVar is a GodotObject.
@@ -49,7 +49,7 @@ Godot tracks all scripting API variables within Variants. Without even realizing
 
 - GDScript automatically wrap values in them. It keeps all data in plain Variants by default and then optionally enforces custom static typing rules on variable types.
 
-- C# is statically typed, but uses its own implementation of the ``Variant`` type in place of Godot's Variant class when it needs to represent a dynamic value. A ``Variant`` can be assigned any compatible type implicitly but converting requires an explicit cast.
+- C# is statically typed, but uses its own implementation of the Variant type in place of Godot's **Variant** class when it needs to represent a dynamic value. C# Variant can be assigned any compatible type implicitly but converting requires an explicit cast.
 
 The global :ref:`@GlobalScope.typeof<class_@GlobalScope_method_typeof>` function returns the enumerated value of the Variant type stored in the current variable (see :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>`).
 
@@ -69,8 +69,7 @@ The global :ref:`@GlobalScope.typeof<class_@GlobalScope_method_typeof>` function
             # To get the name of the underlying Object type, you need the `get_class()` method.
             print("foo is a(n) %s" % foo.get_class()) # inject the class name into a formatted string.
             # Note also that there is not yet any way to get a script's `class_name` string easily.
-            # To fetch that value, you can use [member ProjectSettings.get_global_class_list].
-            # Open your project.godot file to see it up close.
+            # To fetch that value, you can use ProjectSettings.get_global_class_list().
 
  .. code-tab:: csharp
 
@@ -122,6 +121,10 @@ A Variant:
 
 Modifications to a container will modify all references to it. A :ref:`Mutex<class_Mutex>` should be created to lock it if multi-threaded access is desired.
 
+.. note::
+
+	There are notable differences when using this API with C#. See :ref:`doc_c_sharp_differences` for more information.
+
 .. rst-class:: classref-introduction-group
 
 Tutorials
@@ -135,3 +138,4 @@ Tutorials
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

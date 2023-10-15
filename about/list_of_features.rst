@@ -37,6 +37,13 @@ Platforms
 Godot aims to be as platform-independent as possible and can be
 :ref:`ported to new platforms <doc_custom_platform_ports>` with relative ease.
 
+.. note::
+
+    Projects written in C# using Godot 4 currently cannot be exported to iOS
+    and web platforms. To use C# on those platforms, consider Godot 3 instead.
+    Android platform support is available as of Godot 4.2, but is experimental
+    and :ref:`some limitations apply <doc_c_sharp_platforms>`.
+
 Editor
 ------
 
@@ -185,7 +192,7 @@ Rendering
 - Parallax/relief mapping with automatic level of detail based on distance.
 - Detail mapping for the albedo and normal maps.
 - Sub-surface scattering and transmittance.
-- Refraction with support for material roughness (resulting in blurry refraction).
+- Screen-space refraction with support for material roughness (resulting in blurry refraction).
 - Proximity fade (soft particles) and distance fade.
 - Distance fade can use alpha blending or dithering to avoid going through
   the transparent pipeline.
@@ -429,11 +436,17 @@ Scripting
 :ref:`C#: <toc-learn-scripting-C#>`
 
 - Packaged in a separate binary to keep file sizes and dependencies down.
-- Uses .NET 6.
+- Supports .NET 6 and higher.
 
    - Full support for the C# 10.0 syntax and features.
 
-- Supports Windows, Linux and macOS.
+- Supports Windows, Linux, and macOS. As of 4.2 experimental support for Android
+  is also available (requires a .NET 7.0 project).
+
+   - On the Android platform only some architectures are supported: ``arm64`` and ``x64``.
+   - iOS and web platforms are currently unsupported. To use C# on those platforms,
+     consider Godot 3 instead.
+
 - Using an external editor is recommended to benefit from IDE functionality.
 
 **GDExtension (C, C++, Rust, D, ...):**

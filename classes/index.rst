@@ -32,6 +32,7 @@ Nodes
     class_animatablebody3d
     class_animatedsprite2d
     class_animatedsprite3d
+    class_animationmixer
     class_animationplayer
     class_animationtree
     class_area2d
@@ -92,7 +93,6 @@ Nodes
     class_editorfiledialog
     class_editorfilesystem
     class_editorinspector
-    class_editorinterface
     class_editorplugin
     class_editorproperty
     class_editorresourcepicker
@@ -117,6 +117,7 @@ Nodes
     class_gpuparticlescollisionsdf3d
     class_gpuparticlescollisionsphere3d
     class_graphedit
+    class_graphelement
     class_graphnode
     class_gridcontainer
     class_gridmap
@@ -288,6 +289,7 @@ Resources
     class_animationnodestatemachine
     class_animationnodestatemachineplayback
     class_animationnodestatemachinetransition
+    class_animationnodesub2
     class_animationnodesync
     class_animationnodetimescale
     class_animationnodetimeseek
@@ -392,6 +394,8 @@ Resources
     class_gltflight
     class_gltfmesh
     class_gltfnode
+    class_gltfphysicsbody
+    class_gltfphysicsshape
     class_gltfskeleton
     class_gltfskin
     class_gltfspecgloss
@@ -435,9 +439,12 @@ Resources
     class_missingresource
     class_multimesh
     class_navigationmesh
+    class_navigationmeshsourcegeometrydata2d
+    class_navigationmeshsourcegeometrydata3d
     class_navigationpolygon
     class_noise
     class_noisetexture2d
+    class_noisetexture3d
     class_occluder3d
     class_occluderpolygon2d
     class_oggpacketsequence
@@ -518,8 +525,14 @@ Resources
     class_texture
     class_texture2d
     class_texture2darray
+    class_texture2darrayrd
+    class_texture2drd
     class_texture3d
+    class_texture3drd
+    class_texturecubemaparrayrd
+    class_texturecubemaprd
     class_texturelayered
+    class_texturelayeredrd
     class_theme
     class_tilemappattern
     class_tileset
@@ -593,7 +606,9 @@ Resources
     class_visualshadernoderandomrange
     class_visualshadernoderemap
     class_visualshadernoderesizablebase
+    class_visualshadernoderotationbyaxis
     class_visualshadernodesample3d
+    class_visualshadernodescreennormalworldspace
     class_visualshadernodescreenuvtosdf
     class_visualshadernodesdfraymarch
     class_visualshadernodesdftoscreenuv
@@ -640,6 +655,7 @@ Resources
     class_visualshadernodevectorlen
     class_visualshadernodevectorop
     class_visualshadernodevectorrefract
+    class_visualshadernodeworldpositionfromdepth
     class_voxelgidata
     class_world2d
     class_world3d
@@ -656,7 +672,6 @@ Other objects
 
     class_object
     class_aescontext
-    class_animationtrackeditplugin
     class_astar2d
     class_astar3d
     class_astargrid2d
@@ -681,16 +696,25 @@ Other objects
     class_editordebuggerplugin
     class_editordebuggersession
     class_editorexportplatform
+    class_editorexportplatformandroid
+    class_editorexportplatformios
+    class_editorexportplatformlinuxbsd
+    class_editorexportplatformmacos
+    class_editorexportplatformpc
+    class_editorexportplatformweb
+    class_editorexportplatformwindows
     class_editorexportplugin
     class_editorfeatureprofile
     class_editorfilesystemdirectory
     class_editorfilesystemimportformatsupportquery
     class_editorimportplugin
     class_editorinspectorplugin
+    class_editorinterface
     class_editornode3dgizmo
     class_editorpaths
     class_editorresourceconversionplugin
     class_editorresourcepreviewgenerator
+    class_editorresourcetooltipplugin
     class_editorsceneformatimporter
     class_editorsceneformatimporterblend
     class_editorsceneformatimporterfbx
@@ -736,6 +760,7 @@ Other objects
     class_lightmapperrd
     class_mainloop
     class_marshalls
+    class_meshconvexdecompositionsettings
     class_meshdatatool
     class_methodtweener
     class_mobilevrinterface
@@ -756,6 +781,9 @@ Other objects
     class_node3dgizmo
     class_offlinemultiplayerpeer
     class_oggpacketsequenceplayback
+    class_openxrapiextension
+    class_openxrextensionwrapperextension
+    class_openxrinteractionprofilemetadata
     class_openxrinterface
     class_os
     class_packeddatacontainerref
@@ -813,10 +841,29 @@ Other objects
     class_regexmatch
     class_renderingdevice
     class_renderingserver
+    class_renderscenebuffers
+    class_renderscenebuffersconfiguration
+    class_renderscenebuffersextension
+    class_renderscenebuffersrd
     class_resource
     class_resourceformatloader
     class_resourceformatsaver
     class_resourceimporter
+    class_resourceimporterbitmap
+    class_resourceimporterbmfont
+    class_resourceimportercsvtranslation
+    class_resourceimporterdynamicfont
+    class_resourceimporterimage
+    class_resourceimporterimagefont
+    class_resourceimporterlayeredtexture
+    class_resourceimportermp3
+    class_resourceimporterobj
+    class_resourceimporteroggvorbis
+    class_resourceimporterscene
+    class_resourceimportershaderfile
+    class_resourceimportertexture
+    class_resourceimportertextureatlas
+    class_resourceimporterwav
     class_resourceloader
     class_resourcesaver
     class_resourceuid
@@ -877,6 +924,64 @@ Other objects
     class_zippacker
     class_zipreader
 
+Editor-only
+===========
+
+.. toctree::
+    :maxdepth: 1
+    :name: toc-class-ref-editors
+
+    class_editorcommandpalette
+    class_editordebuggerplugin
+    class_editordebuggersession
+    class_editorexportplatform
+    class_editorexportplatformandroid
+    class_editorexportplatformios
+    class_editorexportplatformlinuxbsd
+    class_editorexportplatformmacos
+    class_editorexportplatformpc
+    class_editorexportplatformweb
+    class_editorexportplatformwindows
+    class_editorexportplugin
+    class_editorfeatureprofile
+    class_editorfiledialog
+    class_editorfilesystem
+    class_editorfilesystemdirectory
+    class_editorfilesystemimportformatsupportquery
+    class_editorimportplugin
+    class_editorinspector
+    class_editorinspectorplugin
+    class_editorinterface
+    class_editornode3dgizmo
+    class_editornode3dgizmoplugin
+    class_editorpaths
+    class_editorplugin
+    class_editorproperty
+    class_editorresourceconversionplugin
+    class_editorresourcepicker
+    class_editorresourcepreview
+    class_editorresourcepreviewgenerator
+    class_editorresourcetooltipplugin
+    class_editorsceneformatimporter
+    class_editorsceneformatimporterblend
+    class_editorsceneformatimporterfbx
+    class_editorsceneformatimportergltf
+    class_editorscenepostimport
+    class_editorscenepostimportplugin
+    class_editorscript
+    class_editorscriptpicker
+    class_editorselection
+    class_editorsettings
+    class_editorspinslider
+    class_editorsyntaxhighlighter
+    class_editortranslationparserplugin
+    class_editorundoredomanager
+    class_editorvcsinterface
+    class_filesystemdock
+    class_scriptcreatedialog
+    class_scripteditor
+    class_scripteditorbase
+
 Variant types
 =============
 
@@ -884,6 +989,7 @@ Variant types
     :maxdepth: 1
     :name: toc-class-ref-variants
 
+    class_variant
     class_aabb
     class_array
     class_basis
@@ -915,7 +1021,6 @@ Variant types
     class_stringname
     class_transform2d
     class_transform3d
-    class_variant
     class_vector2
     class_vector2i
     class_vector3

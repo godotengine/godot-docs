@@ -295,13 +295,18 @@ Cubic interpolation tends to follow the curves better, but linear is faster (and
 
 :ref:`Transform2D<class_Transform2D>` **sample_baked_with_rotation** **(** :ref:`float<class_float>` offset=0.0, :ref:`bool<class_bool>` cubic=false **)** |const|
 
-Similar to :ref:`sample_baked<class_Curve2D_method_sample_baked>`, but returns :ref:`Transform2D<class_Transform2D>` that includes a rotation along the curve. Returns empty transform if length of the curve is ``0``.
+Similar to :ref:`sample_baked<class_Curve2D_method_sample_baked>`, but returns :ref:`Transform2D<class_Transform2D>` that includes a rotation along the curve, with :ref:`Transform2D.origin<class_Transform2D_property_origin>` as the point position, :ref:`Transform2D.x<class_Transform2D_property_x>` as the sideways vector, and :ref:`Transform2D.y<class_Transform2D_property_y>` as the forward vector. Returns an empty transform if the length of the curve is ``0``.
 
 ::
 
-    var transform = curve.sample_baked_with_rotation(offset)
-    position = transform.get_origin()
-    rotation = transform.get_rotation()
+    var baked = curve.sample_baked_with_rotation(offset)
+    # This will rotate and position the node with the up direction pointing along the curve.
+    position = baked.get_origin()
+    rotation = baked.get_rotation()
+    # Alternatively, not preserving scale.
+    transform = baked * Transform2D.FLIP_Y
+    # To match the rotation of PathFollow2D, not preserving scale.
+    transform = Transform2D(baked.y, baked.x, baked.origin)
 
 .. rst-class:: classref-item-separator
 
@@ -389,3 +394,4 @@ Returns a list of points along the curve, with almost uniform density. ``max_sta
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

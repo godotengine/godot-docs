@@ -19,6 +19,7 @@ Development Environment), here are setup instructions for some popular ones:
    code_blocks
    kdevelop
    qt_creator
+   rider
    visual_studio
    visual_studio_code
    xcode

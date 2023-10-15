@@ -12,14 +12,14 @@ FontVariation
 
 **Inherits:** :ref:`Font<class_Font>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-Variation of the :ref:`Font<class_Font>`.
+A variation of a font with additional settings.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-OpenType variations, simulated bold / slant, and additional font settings like OpenType features and extra spacing.
+Provides OpenType variations, simulated bold / slant, and additional font settings like OpenType features and extra spacing.
 
 To use simulated bold font variant:
 
@@ -44,6 +44,15 @@ To use simulated bold font variant:
 
 
 
+To set the coordinate of multiple variation axes:
+
+::
+
+    var fv = FontVariation.new();
+    var ts = TextServerManager.get_primary_interface()
+    fv.base_font = load("res://BarlowCondensed-Regular.ttf")
+    fv.variation_opentype = { ts.name_to_tag("wght"): 900, ts.name_to_tag("custom_hght"): 900 }
+
 .. rst-class:: classref-reftable-group
 
 Properties
@@ -54,8 +63,6 @@ Properties
 
    +---------------------------------------+--------------------------------------------------------------------------------+-----------------------------------+
    | :ref:`Font<class_Font>`               | :ref:`base_font<class_FontVariation_property_base_font>`                       |                                   |
-   +---------------------------------------+--------------------------------------------------------------------------------+-----------------------------------+
-   | :ref:`Font[]<class_Font>`             | :ref:`fallbacks<class_FontVariation_property_fallbacks>`                       | ``[]``                            |
    +---------------------------------------+--------------------------------------------------------------------------------+-----------------------------------+
    | :ref:`Dictionary<class_Dictionary>`   | :ref:`opentype_features<class_FontVariation_property_opentype_features>`       | ``{}``                            |
    +---------------------------------------+--------------------------------------------------------------------------------+-----------------------------------+
@@ -109,23 +116,6 @@ Property Descriptions
 - :ref:`Font<class_Font>` **get_base_font** **(** **)**
 
 Base font used to create a variation. If not set, default :ref:`Theme<class_Theme>` font is used.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_FontVariation_property_fallbacks:
-
-.. rst-class:: classref-property
-
-:ref:`Font[]<class_Font>` **fallbacks** = ``[]``
-
-.. rst-class:: classref-property-setget
-
-- void **set_fallbacks** **(** :ref:`Font[]<class_Font>` value **)**
-- :ref:`Font[]<class_Font>` **get_fallbacks** **(** **)**
-
-Array of fallback :ref:`Font<class_Font>`\ s. If not set :ref:`base_font<class_FontVariation_property_base_font>` fallback are ussed.
 
 .. rst-class:: classref-item-separator
 
@@ -265,6 +255,10 @@ Active face index in the TrueType / OpenType collection file.
 
 Font OpenType variation coordinates. More info: `OpenType variation tags <https://docs.microsoft.com/en-us/typography/opentype/spec/dvaraxisreg>`__.
 
+\ **Note:** This :ref:`Dictionary<class_Dictionary>` uses OpenType tags as keys. Variation axes can be identified both by tags (:ref:`int<class_int>`, e.g. ``0x77678674``) and names (:ref:`String<class_String>`, e.g. ``wght``). Some axes might be accessible by multiple names. For example, ``wght`` refers to the same axis as ``weight``. Tags on the other hand are unique. To convert between names and tags, use :ref:`TextServer.name_to_tag<class_TextServer_method_name_to_tag>` and :ref:`TextServer.tag_to_name<class_TextServer_method_tag_to_name>`.
+
+\ **Note:** To get available variation axes of a font, use :ref:`Font.get_supported_variation_list<class_Font_method_get_supported_variation_list>`.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -299,7 +293,7 @@ Method Descriptions
 
 void **set_spacing** **(** :ref:`SpacingType<enum_TextServer_SpacingType>` spacing, :ref:`int<class_int>` value **)**
 
-Sets the spacing for ``type`` (see :ref:`SpacingType<enum_TextServer_SpacingType>`) to ``value`` in pixels (not relative to the font size).
+Sets the spacing for ``spacing`` (see :ref:`SpacingType<enum_TextServer_SpacingType>`) to ``value`` in pixels (not relative to the font size).
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
@@ -307,3 +301,4 @@ Sets the spacing for ``type`` (see :ref:`SpacingType<enum_TextServer_SpacingType
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

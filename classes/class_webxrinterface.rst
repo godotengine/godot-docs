@@ -151,6 +151,10 @@ Methods
    :widths: auto
 
    +---------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Array<class_Array>`                               | :ref:`get_available_display_refresh_rates<class_WebXRInterface_method_get_available_display_refresh_rates>` **(** **)** |const|                                 |
+   +---------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`                               | :ref:`get_display_refresh_rate<class_WebXRInterface_method_get_display_refresh_rate>` **(** **)** |const|                                                       |
+   +---------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`TargetRayMode<enum_WebXRInterface_TargetRayMode>` | :ref:`get_input_source_target_ray_mode<class_WebXRInterface_method_get_input_source_target_ray_mode>` **(** :ref:`int<class_int>` input_source_id **)** |const| |
    +---------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`XRPositionalTracker<class_XRPositionalTracker>`   | :ref:`get_input_source_tracker<class_WebXRInterface_method_get_input_source_tracker>` **(** :ref:`int<class_int>` input_source_id **)** |const|                 |
@@ -158,6 +162,8 @@ Methods
    | :ref:`bool<class_bool>`                                 | :ref:`is_input_source_active<class_WebXRInterface_method_is_input_source_active>` **(** :ref:`int<class_int>` input_source_id **)** |const|                     |
    +---------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                    | :ref:`is_session_supported<class_WebXRInterface_method_is_session_supported>` **(** :ref:`String<class_String>` session_mode **)**                              |
+   +---------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                                    | :ref:`set_display_refresh_rate<class_WebXRInterface_method_set_display_refresh_rate>` **(** :ref:`float<class_float>` refresh_rate **)**                        |
    +---------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
@@ -168,6 +174,18 @@ Methods
 
 Signals
 -------
+
+.. _class_WebXRInterface_signal_display_refresh_rate_changed:
+
+.. rst-class:: classref-signal
+
+**display_refresh_rate_changed** **(** **)**
+
+Emitted after the display's refresh rate has changed.
+
+.. rst-class:: classref-item-separator
+
+----
 
 .. _class_WebXRInterface_signal_reference_space_reset:
 
@@ -518,6 +536,30 @@ Possible values come from `WebXR's XRVisibilityState <https://developer.mozilla.
 Method Descriptions
 -------------------
 
+.. _class_WebXRInterface_method_get_available_display_refresh_rates:
+
+.. rst-class:: classref-method
+
+:ref:`Array<class_Array>` **get_available_display_refresh_rates** **(** **)** |const|
+
+Returns display refresh rates supported by the current HMD. Only returned if this feature is supported by the web browser and after the interface has been initialized.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_WebXRInterface_method_get_display_refresh_rate:
+
+.. rst-class:: classref-method
+
+:ref:`float<class_float>` **get_display_refresh_rate** **(** **)** |const|
+
+Returns the display refresh rate for the current HMD. Not supported on all HMDs and browsers. It may not report an accurate value until after using :ref:`set_display_refresh_rate<class_WebXRInterface_method_set_display_refresh_rate>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_WebXRInterface_method_get_input_source_target_ray_mode:
 
 .. rst-class:: classref-method
@@ -584,9 +626,22 @@ Possible values come from `WebXR's XRSessionMode <https://developer.mozilla.org/
 
 This method returns nothing, instead it emits the :ref:`session_supported<class_WebXRInterface_signal_session_supported>` signal with the result.
 
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_WebXRInterface_method_set_display_refresh_rate:
+
+.. rst-class:: classref-method
+
+void **set_display_refresh_rate** **(** :ref:`float<class_float>` refresh_rate **)**
+
+Sets the display refresh rate for the current HMD. Not supported on all HMDs and browsers. It won't take effect right away until after :ref:`display_refresh_rate_changed<class_WebXRInterface_signal_display_refresh_rate_changed>` is emitted.
+
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

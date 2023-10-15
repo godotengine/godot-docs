@@ -93,7 +93,7 @@ This node will execute a sub-animation and return once it finishes. Blend times 
 
 .. image:: img/animtree6b.gif
 
-After setting the request and changing the animation playback, the one-shot node automatically clears the request on the next process frame by setting its [code]request[/code] value to [constant ONE_SHOT_REQUEST_NONE].
+After setting the request and changing the animation playback, the one-shot node automatically clears the request on the next process frame by setting its ``request`` value to ``AnimationNodeOneShot.ONE_SHOT_REQUEST_NONE``.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -116,10 +116,10 @@ After setting the request and changing the animation playback, the one-shot node
  .. code-tab:: csharp
 
     // Play child animation connected to "shot" port.
-    animationTree.Set("parameters/OneShot/request", AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE);
+    animationTree.Set("parameters/OneShot/request", (int)AnimationNodeOneShot.OneShotRequest.Fire);
 
     // Abort child animation connected to "shot" port.
-    animationTree.Set("parameters/OneShot/request", AnimationNodeOneShot.ONE_SHOT_REQUEST_ABORT);
+    animationTree.Set("parameters/OneShot/request", (int)AnimationNodeOneShot.OneShotRequest.Abort);
 
     // Get current state (read-only).
     animationTree.Get("parameters/OneShot/active");
@@ -155,13 +155,13 @@ After setting the time and changing the animation playback, the seek node automa
 TimeScale
 ^^^^^^^^^
 
-Allows scaling the speed of the animation (or reverse it) in any children nodes. Setting it to 0 will pause the animation.
+Allows scaling the speed of the animation (or reverse it) connected to the `in` input via the `scale` parameter. Setting the `scale` to 0 will pause the animation.
 
 Transition
 ^^^^^^^^^^
 
 Very simple state machine (when you don't want to cope with a ``StateMachine`` node). Animations can be connected to the outputs and transition times can be specified.
-After setting the request and changing the animation playback, the transition node automatically clears the request on the next process frame by setting its [code]transition_request[/code] value to empty.
+After setting the request and changing the animation playback, the transition node automatically clears the request on the next process frame by setting its ``transition_request`` value to an empty string (``""``).
 
 .. tabs::
  .. code-tab:: gdscript GDScript

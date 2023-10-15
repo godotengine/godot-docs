@@ -35,8 +35,7 @@ Importing the project
 
 - Within the ``tasks.json`` file find the ``"tasks"`` array and add a new section to it:
 
-.. tabs::
-  .. code-tab:: js LinuxBSD
+  .. code-block:: js
 
     {
       "label": "build",
@@ -45,19 +44,6 @@ Importing the project
       "command": "scons",
       "args": [
         // enable for debugging with breakpoints
-        "dev_build=yes",
-      ],
-      "problemMatcher": "$msCompile"
-    }
-
-  .. code-tab:: js Windows
-
-    {
-      "label": "build",
-      "group": "build",
-      "type": "shell",
-      "command": "scons",
-      "args": [
         "dev_build=yes",
       ],
       "problemMatcher": "$msCompile"

@@ -22,6 +22,11 @@ run C or C++ code in a Godot project.
 They also both allow you to integrate third-party libraries into Godot. The one
 you should choose depends on your needs.
 
+.. note:: If you notice that specific systems are not accessible via GDExtension
+          but are via custom modules feel free to open an issue on the
+          `godot-cpp repository <https://github.com/godotengine/godot-cpp>`__ to discuss
+          implementation options to expose the missing functionality.
+
 Advantages of GDExtension
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -77,6 +82,7 @@ The bindings below are developed and maintained by the community:
 .. Please keep languages sorted in alphabetical order.
 
 - `Rust <https://github.com/godot-rust/gdextension>`__
+- `Swift <https://github.com/migueldeicaza/SwiftGodot>`__
 
 .. note::
 

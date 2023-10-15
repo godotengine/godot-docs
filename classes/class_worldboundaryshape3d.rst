@@ -12,16 +12,14 @@ WorldBoundaryShape3D
 
 **Inherits:** :ref:`Shape3D<class_Shape3D>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-World boundary (infinite plane) shape resource for 3D physics.
+A 3D world boundary (half-space) shape used for physics collision.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-3D world boundary shape to be added as a *direct* child of a :ref:`PhysicsBody3D<class_PhysicsBody3D>` or :ref:`Area3D<class_Area3D>` using a :ref:`CollisionShape3D<class_CollisionShape3D>` node. **WorldBoundaryShape3D** works like an infinite plane and will not allow any physics body to go to the negative side. Note that the :ref:`Plane<class_Plane>`'s normal matters; anything "below" the plane will collide with it. If the **WorldBoundaryShape3D** is used in a :ref:`PhysicsBody3D<class_PhysicsBody3D>`, it will cause colliding objects placed "below" it to teleport "above" the plane.
-
-\ **Performance:** Being a primitive collision shape, **WorldBoundaryShape3D** is fast to check collisions against.
+A 3D world boundary shape, intended for use in physics. **WorldBoundaryShape3D** works like an infinite plane that forces all physics bodies to stay above it. The :ref:`plane<class_WorldBoundaryShape3D_property_plane>`'s normal determines which direction is considered as "above" and in the editor, the line over the plane represents this direction. It can for example be used for endless flat floors.
 
 .. rst-class:: classref-reftable-group
 
@@ -63,3 +61,4 @@ The :ref:`Plane<class_Plane>` used by the **WorldBoundaryShape3D** for collision
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

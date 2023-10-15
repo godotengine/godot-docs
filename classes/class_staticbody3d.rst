@@ -14,24 +14,18 @@ StaticBody3D
 
 **Inherited By:** :ref:`AnimatableBody3D<class_AnimatableBody3D>`
 
-Physics body for 3D physics which is static or moves only by script. Useful for floor and walls.
+A 3D physics body that can't be moved by external forces. When moved manually, it doesn't affect other bodies in its path.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-Static body for 3D physics.
+A static 3D physics body. It can't be moved by external forces or contacts, but can be moved manually by other means such as code, :ref:`AnimationMixer<class_AnimationMixer>`\ s (with :ref:`AnimationMixer.callback_mode_process<class_AnimationMixer_property_callback_mode_process>` set to :ref:`AnimationMixer.ANIMATION_CALLBACK_MODE_PROCESS_PHYSICS<class_AnimationMixer_constant_ANIMATION_CALLBACK_MODE_PROCESS_PHYSICS>`), and :ref:`RemoteTransform3D<class_RemoteTransform3D>`.
 
-A static body is a simple body that doesn't move under physics simulation, i.e. it can't be moved by external forces or contacts but its transformation can still be updated manually by the user. It is ideal for implementing objects in the environment, such as walls or platforms. In contrast to :ref:`RigidBody3D<class_RigidBody3D>`, it doesn't consume any CPU resources as long as they don't move.
+When **StaticBody3D** is moved, it is teleported to its new position without affecting other physics bodies in its path. If this is not desired, use :ref:`AnimatableBody3D<class_AnimatableBody3D>` instead.
 
-They have extra functionalities to move and affect other bodies:
-
-\ *Static transform change:* Static bodies can be moved by animation or script. In this case, they are just teleported and don't affect other bodies on their path.
-
-\ *Constant velocity:* When :ref:`constant_linear_velocity<class_StaticBody3D_property_constant_linear_velocity>` or :ref:`constant_angular_velocity<class_StaticBody3D_property_constant_angular_velocity>` is set, static bodies don't move themselves but affect touching bodies as if they were moving. This is useful for simulating conveyor belts or conveyor wheels.
-
-\ **Warning:** With a non-uniform scale this node will probably not function as expected. Please make sure to keep its scale uniform (i.e. the same on all axes), and change the size(s) of its collision shape(s) instead.
+\ **StaticBody3D** is useful for completely static objects like floors and walls, as well as moving surfaces like conveyor belts and circular revolving platforms (by using :ref:`constant_linear_velocity<class_StaticBody3D_property_constant_linear_velocity>` and :ref:`constant_angular_velocity<class_StaticBody3D_property_constant_angular_velocity>`).
 
 .. rst-class:: classref-introduction-group
 
@@ -124,3 +118,4 @@ If a material is assigned to this property, it will be used instead of any other
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

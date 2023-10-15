@@ -12,14 +12,14 @@ BoneMap
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-Bone map for retargeting.
+Describes a mapping of bone names for retargeting :ref:`Skeleton3D<class_Skeleton3D>` into common names defined by a :ref:`SkeletonProfile<class_SkeletonProfile>`.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-This class contains a hashmap that uses a list of bone names in :ref:`SkeletonProfile<class_SkeletonProfile>` as key names.
+This class contains a dictionary that uses a list of bone names in :ref:`SkeletonProfile<class_SkeletonProfile>` as key names.
 
 By assigning the actual :ref:`Skeleton3D<class_Skeleton3D>` bone name as the key value, it maps the :ref:`Skeleton3D<class_Skeleton3D>` to the :ref:`SkeletonProfile<class_SkeletonProfile>`.
 
@@ -162,3 +162,4 @@ In the retargeting process, the setting bone name is the bone name of the source
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

@@ -49,7 +49,7 @@ Can be used to make HTTP requests, i.e. download or upload files or web content 
         # Note: Don't make simultaneous requests using a single HTTPRequest node.
         # The snippet below is provided for reference only.
         var body = JSON.new().stringify({"name": "Godette"})
-        error = http_request.request("https://httpbin.org/post", [], true, HTTPClient.METHOD_POST, body)
+        error = http_request.request("https://httpbin.org/post", [], HTTPClient.METHOD_POST, body)
         if error != OK:
             push_error("An error occurred in the HTTP request.")
     
@@ -85,7 +85,7 @@ Can be used to make HTTP requests, i.e. download or upload files or web content 
         {
             { "name", "Godette" }
         });
-        error = httpRequest.Request("https://httpbin.org/post", null, true, HTTPClient.Method.Post, body);
+        error = httpRequest.Request("https://httpbin.org/post", null, HTTPClient.Method.Post, body);
         if (error != Error.Ok)
         {
             GD.PushError("An error occurred in the HTTP request.");
@@ -386,7 +386,7 @@ Request reached its maximum redirect limit, see :ref:`max_redirects<class_HTTPRe
 
 :ref:`Result<enum_HTTPRequest_Result>` **RESULT_TIMEOUT** = ``13``
 
-
+Request failed due to a timeout. If you expect requests to take a long time, try increasing the value of :ref:`timeout<class_HTTPRequest_property_timeout>` or setting it to ``0.0`` to remove the timeout completely.
 
 .. rst-class:: classref-section-separator
 
@@ -410,11 +410,11 @@ Property Descriptions
 
 If ``true``, this header will be added to each request: ``Accept-Encoding: gzip, deflate`` telling servers that it's okay to compress response bodies.
 
-Any Response body declaring a ``Content-Encoding`` of either ``gzip`` or ``deflate`` will then be automatically decompressed, and the uncompressed bytes will be delivered via ``request_completed``.
+Any Response body declaring a ``Content-Encoding`` of either ``gzip`` or ``deflate`` will then be automatically decompressed, and the uncompressed bytes will be delivered via :ref:`request_completed<class_HTTPRequest_signal_request_completed>`.
 
-If the user has specified their own ``Accept-Encoding`` header, then no header will be added regardless of ``accept_gzip``.
+If the user has specified their own ``Accept-Encoding`` header, then no header will be added regardless of :ref:`accept_gzip<class_HTTPRequest_property_accept_gzip>`.
 
-If ``false`` no header will be added, and no decompression will be performed on response bodies. The raw bytes of the response body will be returned via ``request_completed``.
+If ``false`` no header will be added, and no decompression will be performed on response bodies. The raw bytes of the response body will be returned via :ref:`request_completed<class_HTTPRequest_signal_request_completed>`.
 
 .. rst-class:: classref-item-separator
 
@@ -501,7 +501,7 @@ Maximum number of allowed redirects.
 - void **set_timeout** **(** :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_timeout** **(** **)**
 
-If set to a value greater than ``0.0`` before the request starts, the HTTP request will time out after ``timeout`` seconds have passed and the request is not *completed* yet. For small HTTP requests such as REST API usage, set :ref:`timeout<class_HTTPRequest_property_timeout>` to a value between ``10.0`` and ``30.0`` to prevent the application from getting stuck if the request fails to get a response in a timely manner. For file downloads, leave this to ``0.0`` to prevent the download from failing if it takes too much time.
+The duration to wait in seconds before a request times out. If :ref:`timeout<class_HTTPRequest_property_timeout>` is set to ``0.0`` then the request will never time out. For simple requests, such as communication with a REST API, it is recommended that :ref:`timeout<class_HTTPRequest_property_timeout>` is set to a value suitable for the server response time (e.g. between ``1.0`` and ``10.0``). This will help prevent unwanted timeouts caused by variation in server response times while still allowing the application to detect when a request has timed out. For larger requests such as file downloads it is suggested the :ref:`timeout<class_HTTPRequest_property_timeout>` be set to ``0.0``, disabling the timeout functionality. This will help to prevent large transfers from failing due to exceeding the timeout value.
 
 .. rst-class:: classref-item-separator
 
@@ -653,3 +653,4 @@ Sets the :ref:`TLSOptions<class_TLSOptions>` to be used when connecting to an HT
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

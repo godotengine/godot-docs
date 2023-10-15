@@ -7,9 +7,7 @@ GDScript reference
 <https://en.wikipedia.org/wiki/Object-oriented_programming>`_, `imperative
 <https://en.wikipedia.org/wiki/Imperative_programming>`_, and `gradually typed
 <https://en.wikipedia.org/wiki/Gradual_typing>`_ programming language built for Godot.
-
-*GDScript* is a high-level, dynamically typed programming language used to
-create content. It uses an indentation-based syntax similar to languages like
+It uses an indentation-based syntax similar to languages like
 `Python <https://en.wikipedia.org/wiki/Python_%28programming_language%29>`_.
 Its goal is to be optimized for and tightly integrated with Godot Engine,
 allowing great flexibility for content creation and integration.
@@ -175,9 +173,9 @@ in case you want to take a look under the hood.
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 | return     | Returns a value from a function.                                                                                                                  |
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| class      | Defines a class.                                                                                                                                  |
+| class      | Defines an inner class. See `Inner classes`_.                                                                                                     |
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| class_name | Defines the script as a globally accessible class with the specified name.                                                                        |
+| class_name | Defines the script as a globally accessible class with the specified name. See `Registering named classes`_.                                      |
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 | extends    | Defines what class to extend with the current class.                                                                                              |
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -193,7 +191,7 @@ in case you want to take a look under the hood.
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 | func       | Defines a function.                                                                                                                               |
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| static     | Defines a static function. Static member variables are not allowed.                                                                               |
+| static     | Defines a static function or a static member variable.                                                                                            |
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 | const      | Defines a constant.                                                                                                                               |
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -201,11 +199,12 @@ in case you want to take a look under the hood.
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 | var        | Defines a variable.                                                                                                                               |
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| breakpoint | Editor helper for debugger breakpoints.                                                                                                           |
+| breakpoint | Editor helper for debugger breakpoints. Unlike breakpoints created by clicking in the gutter, ``breakpoint`` is stored in the script itself.      |
+|            | This makes it persistent across different machines when using version control.                                                                    |
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 | preload    | Preloads a class or variable. See `Classes as resources`_.                                                                                        |
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| await      | Waits for a signal or a coroutine to finish. See `Awaiting for signals`_.                                                                         |
+| await      | Waits for a signal or a coroutine to finish. See `Awaiting for signals or coroutines`_.                                                           |
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 | yield      | Previously used for coroutines. Kept as keyword for transition.                                                                                   |
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -227,100 +226,157 @@ Operators
 
 The following is the list of supported operators and their precedence.
 
-+---------------------------------------------------------------------------------------+-------------------------------------------+
-| **Operator**                                                                          | **Description**                           |
-+=======================================================================================+===========================================+
-| ``x[index]``                                                                          | Subscription (highest priority)           |
-+---------------------------------------------------------------------------------------+-------------------------------------------+
-| ``x.attribute``                                                                       | Attribute reference                       |
-+---------------------------------------------------------------------------------------+-------------------------------------------+
-| ``foo()``                                                                             | Function call                             |
-+---------------------------------------------------------------------------------------+-------------------------------------------+
-| ``is``                                                                                | Instance type checker                     |
-+---------------------------------------------------------------------------------------+-------------------------------------------+
-| ``**``                                                                                | Power operator                            |
-|                                                                                       |                                           |
-|                                                                                       | Multiplies value by itself ``x`` times,   |
-|                                                                                       | similar to calling ``pow`` built-in       |
-|                                                                                       | function                                  |
-+---------------------------------------------------------------------------------------+-------------------------------------------+
-| ``~``                                                                                 | Bitwise NOT                               |
-+---------------------------------------------------------------------------------------+-------------------------------------------+
-| ``-x``                                                                                | Negative / Unary negation                 |
-+---------------------------------------------------------------------------------------+-------------------------------------------+
-| ``*`` ``/`` ``%``                                                                     | Multiplication / Division / Remainder     |
-|                                                                                       |                                           |
-|                                                                                       | These operators have the same behavior    |
-|                                                                                       | as C++. Integer division is truncated     |
-|                                                                                       | rather than returning a fractional        |
-|                                                                                       | number, and the % operator is only        |
-|                                                                                       | available for ints (``fmod`` for floats), |
-|                                                                                       | and is additionally used for Format       |
-|                                                                                       | Strings                                   |
-+---------------------------------------------------------------------------------------+-------------------------------------------+
-| ``+``                                                                                 | Addition / Concatenation of arrays        |
-+---------------------------------------------------------------------------------------+-------------------------------------------+
-| ``-``                                                                                 | Subtraction                               |
-+---------------------------------------------------------------------------------------+-------------------------------------------+
-| ``<<`` ``>>``                                                                         | Bit shifting                              |
-+---------------------------------------------------------------------------------------+-------------------------------------------+
-| ``&``                                                                                 | Bitwise AND                               |
-+---------------------------------------------------------------------------------------+-------------------------------------------+
-| ``^``                                                                                 | Bitwise XOR                               |
-+---------------------------------------------------------------------------------------+-------------------------------------------+
-| ``|``                                                                                 | Bitwise OR                                |
-+---------------------------------------------------------------------------------------+-------------------------------------------+
-| ``<`` ``>`` ``==`` ``!=`` ``>=`` ``<=``                                               | Comparisons                               |
-+---------------------------------------------------------------------------------------+-------------------------------------------+
-| ``in``                                                                                | Inclusion checker (when used with         |
-|                                                                                       | control flow keywords or in a             |
-|                                                                                       | standalone expression)                    |
-|                                                                                       |                                           |
-|                                                                                       | Content iterator (when used with the      |
-|                                                                                       | for_ keyword)                             |
-+---------------------------------------------------------------------------------------+-------------------------------------------+
-| ``not`` ``!``                                                                         | Boolean NOT and its                       |
-|                                                                                       | :ref:`aliases<boolean_operators>`         |
-+---------------------------------------------------------------------------------------+-------------------------------------------+
-| ``and`` ``&&``                                                                        | Boolean AND and its                       |
-|                                                                                       | :ref:`aliases<boolean_operators>`         |
-+---------------------------------------------------------------------------------------+-------------------------------------------+
-| ``or`` ``||``                                                                         | Boolean OR and its                        |
-|                                                                                       | :ref:`aliases<boolean_operators>`         |
-+---------------------------------------------------------------------------------------+-------------------------------------------+
-| ``if x else``                                                                         | Ternary if/else                           |
-+---------------------------------------------------------------------------------------+-------------------------------------------+
-| ``as``                                                                                | Type casting                              |
-+---------------------------------------------------------------------------------------+-------------------------------------------+
-| ``=`` ``+=`` ``-=`` ``*=`` ``/=`` ``%=`` ``**=`` ``&=`` ``^=`` ``|=`` ``<<=`` ``>>=`` | Assignment (lowest priority)              |
-+---------------------------------------------------------------------------------------+-------------------------------------------+
++---------------------------------------+-----------------------------------------------------------------------------+
+| **Operator**                          | **Description**                                                             |
++=======================================+=============================================================================+
+| ``(`` ``)``                           | Grouping (highest priority)                                                 |
+|                                       |                                                                             |
+|                                       | Parentheses are not really an operator, but allow you to explicitly specify |
+|                                       | the precedence of an operation.                                             |
++---------------------------------------+-----------------------------------------------------------------------------+
+| ``x[index]``                          | Subscription                                                                |
++---------------------------------------+-----------------------------------------------------------------------------+
+| ``x.attribute``                       | Attribute reference                                                         |
++---------------------------------------+-----------------------------------------------------------------------------+
+| ``foo()``                             | Function call                                                               |
++---------------------------------------+-----------------------------------------------------------------------------+
+| ``await x``                           | `Awaiting for signals or coroutines`_                                       |
++---------------------------------------+-----------------------------------------------------------------------------+
+| ``x is Node``                         | Type checking                                                               |
+|                                       |                                                                             |
+|                                       | See also :ref:`is_instance_of() <class_@GDScript_method_is_instance_of>`    |
+|                                       | function.                                                                   |
++---------------------------------------+-----------------------------------------------------------------------------+
+| ``x ** y``                            | Power                                                                       |
+|                                       |                                                                             |
+|                                       | Multiplies ``x`` by itself ``y`` times, similar to calling                  |
+|                                       | :ref:`pow() <class_@GlobalScope_method_pow>` function.                      |
+|                                       |                                                                             |
+|                                       | **Note:** In GDScript, the ``**`` operator is                               |
+|                                       | `left-associative <https://en.wikipedia.org/wiki/Operator_associativity>`_. |
+|                                       | See a detailed note after the table.                                        |
++---------------------------------------+-----------------------------------------------------------------------------+
+| ``~x``                                | Bitwise NOT                                                                 |
++---------------------------------------+-----------------------------------------------------------------------------+
+| | ``+x``                              | Identity / Negation                                                         |
+| | ``-x``                              |                                                                             |
++---------------------------------------+-----------------------------------------------------------------------------+
+| | ``x * y``                           | Multiplication / Division / Remainder                                       |
+| | ``x / y``                           |                                                                             |
+| | ``x % y``                           | The ``%`` operator is additionally used for                                 |
+|                                       | :ref:`format strings <doc_gdscript_printf>`.                                |
+|                                       |                                                                             |
+|                                       | **Note:** These operators have the same behavior as C++, which may be       |
+|                                       | unexpected for users coming from Python, JavaScript, etc. See a detailed    |
+|                                       | note after the table.                                                       |
++---------------------------------------+-----------------------------------------------------------------------------+
+| | ``x + y``                           | Addition (or Concatenation) / Subtraction                                   |
+| | ``x - y``                           |                                                                             |
++---------------------------------------+-----------------------------------------------------------------------------+
+| | ``x << y``                          | Bit shifting                                                                |
+| | ``x >> y``                          |                                                                             |
++---------------------------------------+-----------------------------------------------------------------------------+
+| ``x & y``                             | Bitwise AND                                                                 |
++---------------------------------------+-----------------------------------------------------------------------------+
+| ``x ^ y``                             | Bitwise XOR                                                                 |
++---------------------------------------+-----------------------------------------------------------------------------+
+| ``x | y``                             | Bitwise OR                                                                  |
++---------------------------------------+-----------------------------------------------------------------------------+
+| | ``x == y``                          | Comparison                                                                  |
+| | ``x != y``                          |                                                                             |
+| | ``x < y``                           | See a detailed note after the table.                                        |
+| | ``x > y``                           |                                                                             |
+| | ``x <= y``                          |                                                                             |
+| | ``x >= y``                          |                                                                             |
++---------------------------------------+-----------------------------------------------------------------------------+
+| | ``x in y``                          | Inclusion checking                                                          |
+| | ``x not in y``                      |                                                                             |
+|                                       | ``in`` is also used with the for_ keyword as part of the syntax.            |
++---------------------------------------+-----------------------------------------------------------------------------+
+| | ``not x``                           | Boolean NOT and its :ref:`unrecommended <boolean_operators>` alias          |
+| | ``!x``                              |                                                                             |
++---------------------------------------+-----------------------------------------------------------------------------+
+| | ``x and y``                         | Boolean AND and its :ref:`unrecommended <boolean_operators>` alias          |
+| | ``x && y``                          |                                                                             |
++---------------------------------------+-----------------------------------------------------------------------------+
+| | ``x or y``                          | Boolean OR and its :ref:`unrecommended <boolean_operators>` alias           |
+| | ``x || y``                          |                                                                             |
++---------------------------------------+-----------------------------------------------------------------------------+
+| ``true_expr if cond else false_expr`` | Ternary if/else                                                             |
++---------------------------------------+-----------------------------------------------------------------------------+
+| ``x as Node``                         | `Type casting <casting_>`_                                                  |
++---------------------------------------+-----------------------------------------------------------------------------+
+| | ``x = y``                           | Assignment (lowest priority)                                                |
+| | ``x += y``                          |                                                                             |
+| | ``x -= y``                          | You cannot use an assignment operator inside an expression.                 |
+| | ``x *= y``                          |                                                                             |
+| | ``x /= y``                          |                                                                             |
+| | ``x **= y``                         |                                                                             |
+| | ``x %= y``                          |                                                                             |
+| | ``x &= y``                          |                                                                             |
+| | ``x |= y``                          |                                                                             |
+| | ``x ^= y``                          |                                                                             |
+| | ``x <<= y``                         |                                                                             |
+| | ``x >>= y``                         |                                                                             |
++---------------------------------------+-----------------------------------------------------------------------------+
+
+.. note::
+
+    The behavior of some operators may differ from what you expect:
+
+    1. If both operands of the ``/`` operator are :ref:`int <class_int>`, then integer division is performed instead of fractional. For example ``5 / 2 == 2``, not ``2.5``.
+       If this is not desired, use at least one :ref:`float <class_float>` literal (``x / 2.0``), cast (``float(x) / y``), or multiply by ``1.0`` (``x * 1.0 / y``).
+    2. The ``%`` operator is only available for ints, for floats use the :ref:`fmod() <class_@GlobalScope_method_fmod>` function.
+    3. For negative values, the ``%`` operator and ``fmod()`` use `truncation <https://en.wikipedia.org/wiki/Truncation>`_ instead of rounding towards negative infinity.
+       This means that the remainder has a sign. If you need the remainder in a mathematical sense, use the :ref:`posmod() <class_@GlobalScope_method_posmod>` and
+       :ref:`fposmod() <class_@GlobalScope_method_fposmod>` functions instead.
+    4. The ``**`` operator is `left-associative <https://en.wikipedia.org/wiki/Operator_associativity>`_. This means that ``2 ** 2 ** 3`` is equal to ``(2 ** 2) ** 3``.
+       Use parentheses to explicitly specify precedence you need, for example ``2 ** (2 ** 3)``.
+    5. The ``==`` and ``!=`` operators sometimes allow you to compare values of different types (for example, ``1 == 1.0`` is true), but in other cases it can cause
+       a runtime error. If you're not sure about the types of the operands, you can safely use the :ref:`is_same() <class_@GlobalScope_method_is_same>` function
+       (but note that it is more strict about types and references). To compare floats, use the :ref:`is_equal_approx() <class_@GlobalScope_method_is_equal_approx>`
+       and :ref:`is_zero_approx() <class_@GlobalScope_method_is_zero_approx>` functions instead.
 
 Literals
 ~~~~~~~~
 
-+--------------------------+-------------------------------------------+
-| **Literal**              | **Type**                                  |
-+--------------------------+-------------------------------------------+
-| ``45``                   | Base 10 integer                           |
-+--------------------------+-------------------------------------------+
-| ``0x8f51``               | Base 16 (hexadecimal) integer             |
-+--------------------------+-------------------------------------------+
-| ``0b101010``             | Base 2 (binary) integer                   |
-+--------------------------+-------------------------------------------+
-| ``3.14``, ``58.1e-10``   | Floating-point number (real)              |
-+--------------------------+-------------------------------------------+
-| ``"Hello"``, ``'Hi'``    | Strings                                   |
-+--------------------------+-------------------------------------------+
-| ``"""Hello"""``          | Multiline string                          |
-+--------------------------+-------------------------------------------+
-| ``&"name"``              | :ref:`StringName <class_StringName>`      |
-+--------------------------+-------------------------------------------+
-| ``^"Node/Label"``        | :ref:`NodePath <class_NodePath>`          |
-+--------------------------+-------------------------------------------+
-| ``$NodePath``            | Shorthand for ``get_node("NodePath")``    |
-+--------------------------+-------------------------------------------+
-| ``%UniqueNode``          | Shorthand for ``get_node("%UniqueNode")`` |
-+--------------------------+-------------------------------------------+
++---------------------------------+-------------------------------------------+
+| **Example(s)**                  | **Description**                           |
++---------------------------------+-------------------------------------------+
+| ``null``                        | Null value                                |
++---------------------------------+-------------------------------------------+
+| ``false``, ``true``             | Boolean values                            |
++---------------------------------+-------------------------------------------+
+| ``45``                          | Base 10 integer                           |
++---------------------------------+-------------------------------------------+
+| ``0x8f51``                      | Base 16 (hexadecimal) integer             |
++---------------------------------+-------------------------------------------+
+| ``0b101010``                    | Base 2 (binary) integer                   |
++---------------------------------+-------------------------------------------+
+| ``3.14``, ``58.1e-10``          | Floating-point number (real)              |
++---------------------------------+-------------------------------------------+
+| ``"Hello"``, ``'Hi'``           | Regular strings                           |
++---------------------------------+-------------------------------------------+
+| ``"""Hello"""``, ``'''Hi'''``   | Triple-quoted regular strings             |
++---------------------------------+-------------------------------------------+
+| ``r"Hello"``, ``r'Hi'``         | Raw strings                               |
++---------------------------------+-------------------------------------------+
+| ``r"""Hello"""``, ``r'''Hi'''`` | Triple-quoted raw strings                 |
++---------------------------------+-------------------------------------------+
+| ``&"name"``                     | :ref:`StringName <class_StringName>`      |
++---------------------------------+-------------------------------------------+
+| ``^"Node/Label"``               | :ref:`NodePath <class_NodePath>`          |
++---------------------------------+-------------------------------------------+
+
+There are also two constructs that look like literals, but actually are not:
+
++---------------------------------+-------------------------------------------+
+| **Example**                     | **Description**                           |
++---------------------------------+-------------------------------------------+
+| ``$NodePath``                   | Shorthand for ``get_node("NodePath")``    |
++---------------------------------+-------------------------------------------+
+| ``%UniqueNode``                 | Shorthand for ``get_node("%UniqueNode")`` |
++---------------------------------+-------------------------------------------+
 
 Integers and floats can have their numbers separated with ``_`` to make them more readable.
 The following ways to write numbers are all valid::
@@ -329,6 +385,63 @@ The following ways to write numbers are all valid::
     3.141_592_7  # Equal to 3.1415927.
     0x8080_0000_ffff  # Equal to 0x80800000ffff.
     0b11_00_11_00  # Equal to 0b11001100.
+
+**Regular string literals** can contain the following escape sequences:
+
++---------------------+---------------------------------+
+| **Escape sequence** | **Expands to**                  |
++---------------------+---------------------------------+
+| ``\n``              | Newline (line feed)             |
++---------------------+---------------------------------+
+| ``\t``              | Horizontal tab character        |
++---------------------+---------------------------------+
+| ``\r``              | Carriage return                 |
++---------------------+---------------------------------+
+| ``\a``              | Alert (beep/bell)               |
++---------------------+---------------------------------+
+| ``\b``              | Backspace                       |
++---------------------+---------------------------------+
+| ``\f``              | Formfeed page break             |
++---------------------+---------------------------------+
+| ``\v``              | Vertical tab character          |
++---------------------+---------------------------------+
+| ``\"``              | Double quote                    |
++---------------------+---------------------------------+
+| ``\'``              | Single quote                    |
++---------------------+---------------------------------+
+| ``\\``              | Backslash                       |
++---------------------+---------------------------------+
+| ``\uXXXX``          | UTF-16 Unicode codepoint        |
+|                     | ``XXXX``                        |
+|                     | (hexadecimal, case-insensitive) |
++---------------------+---------------------------------+
+| ``\UXXXXXX``        | UTF-32 Unicode codepoint        |
+|                     | ``XXXXXX``                      |
+|                     | (hexadecimal, case-insensitive) |
++---------------------+---------------------------------+
+
+There are two ways to represent an escaped Unicode character above ``0xFFFF``:
+
+- as a `UTF-16 surrogate pair <https://en.wikipedia.org/wiki/UTF-16#Code_points_from_U+010000_to_U+10FFFF>`_ ``\uXXXX\uXXXX``.
+- as a single UTF-32 codepoint ``\UXXXXXX``.
+
+Also, using ``\`` followed by a newline inside a string will allow you to continue it in the next line,
+without inserting a newline character in the string itself.
+
+A string enclosed in quotes of one type (for example ``"``) can contain quotes of another type
+(for example ``'``) without escaping. Triple-quoted strings allow you to avoid escaping up to
+two consecutive quotes of the same type (unless they are adjacent to the string edges).
+
+**Raw string literals** always encode the string as it appears in the source code.
+This is especially useful for regular expressions. Raw strings do not process escape sequences,
+but you can "escape" a quote or backslash (they replace themselves).
+
+::
+
+    print("\tchar=\"\\t\"")  # Prints `    char="\t"`.
+    print(r"\tchar=\"\\t\"") # Prints `\tchar=\"\\t\"`.
+
+GDScript also supports :ref:`format strings <doc_gdscript_printf>`.
 
 Annotations
 ~~~~~~~~~~~
@@ -349,22 +462,29 @@ For instance, you can use it to export a value to the editor::
 For more information about exporting properties, read the :ref:`GDScript exports <doc_gdscript_exports>`
 article.
 
+Any constant expression compatible with the required argument type can be passed as an annotation argument value::
+
+    const MAX_SPEED = 120.0
+
+    @export_range(0.0, 0.5 * MAX_SPEED)
+    var initial_speed: float = 0.25 * MAX_SPEED
+
 Annotations can be specified one per line or all in the same line. They affect
 the next statement that isn't an annotation. Annotations can have arguments sent
 between parentheses and separated by commas.
 
 Both of these are the same::
 
-    @onready
-    @export_node_path(TextEdit, LineEdit)
-    var input_field
+    @annotation_a
+    @annotation_b
+    var variable
 
-    @onready @export_node_path(TextEdit, LineEdit) var input_field
+    @annotation_a @annotation_b var variable
 
 .. _doc_gdscript_onready_annotation:
 
-`@onready` annotation
-~~~~~~~~~~~~~~~~~~~~~
+``@onready`` annotation
+~~~~~~~~~~~~~~~~~~~~~~~
 
 When using nodes, it's common to desire to keep references to parts
 of the scene in a variable. As scenes are only warranted to be
@@ -385,6 +505,29 @@ defers initialization of a member variable until ``_ready()`` is called. It
 can replace the above code with a single line::
 
     @onready var my_label = get_node("MyLabel")
+
+.. warning::
+
+    Applying ``@onready`` and any ``@export`` annotation to the same variable
+    doesn't work as you might expect. The ``@onready`` annotation will cause
+    the default value to be set after the ``@export`` takes effect and will
+    override it::
+
+        @export var a = "init_value_a"
+        @onready @export var b = "init_value_b"
+
+        func _init():
+            prints(a, b) # init_value_a <null>
+
+        func _notification(what):
+            if what == NOTIFICATION_SCENE_INSTANTIATED:
+                prints(a, b) # exported_value_a exported_value_b
+
+        func _ready():
+            prints(a, b) # exported_value_a init_value_b
+
+    Therefore, the ``ONREADY_WITH_EXPORT`` warning is generated, which is treated
+    as an error by default. We do not recommend disabling or ignoring it.
 
 Comments
 ~~~~~~~~
@@ -424,9 +567,10 @@ Built-in types
 
 Built-in types are stack-allocated. They are passed as values. This means a copy
 is created on each assignment or when passing them as arguments to functions.
-The only exceptions are ``Array``\ s and ``Dictionaries``, which are passed by
-reference so they are shared. (Packed arrays such as ``PackedByteArray`` are still
-passed as values.)
+The exceptions are ``Object``, ``Array``, ``Dictionary``, and packed arrays
+(such as ``PackedByteArray``), which are passed by reference so they are shared.
+All arrays, ``Dictionary``, and some objects (``Node``, ``Resource``)
+have a ``duplicate()`` method that allows you to make a copy.
 
 Basic built-in types
 ~~~~~~~~~~~~~~~~~~~~
@@ -448,63 +592,20 @@ Short for "boolean", it can only contain ``true`` or ``false``.
 ^^^^^^^^^^^^^^^^^^^^^^
 
 Short for "integer", it stores whole numbers (positive and negative).
-It is stored as a 64-bit value, equivalent to "int64_t" in C++.
+It is stored as a 64-bit value, equivalent to ``int64_t`` in C++.
 
 :ref:`float <class_float>`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Stores real numbers, including decimals, using floating-point values.
-It is stored as a 64-bit value, equivalent to "double" in C++.
-Note: Currently, data structures such as Vector2, Vector3, and
-PackedFloat32Array store 32-bit single-precision "float" values.
+It is stored as a 64-bit value, equivalent to ``double`` in C++.
+Note: Currently, data structures such as ``Vector2``, ``Vector3``, and
+``PackedFloat32Array`` store 32-bit single-precision ``float`` values.
 
 :ref:`String <class_String>`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 A sequence of characters in `Unicode format <https://en.wikipedia.org/wiki/Unicode>`_.
-Strings can contain the following escape sequences:
-
-+---------------------+---------------------------------+
-| **Escape sequence** | **Expands to**                  |
-+---------------------+---------------------------------+
-| ``\n``              | Newline (line feed)             |
-+---------------------+---------------------------------+
-| ``\t``              | Horizontal tab character        |
-+---------------------+---------------------------------+
-| ``\r``              | Carriage return                 |
-+---------------------+---------------------------------+
-| ``\a``              | Alert (beep/bell)               |
-+---------------------+---------------------------------+
-| ``\b``              | Backspace                       |
-+---------------------+---------------------------------+
-| ``\f``              | Formfeed page break             |
-+---------------------+---------------------------------+
-| ``\v``              | Vertical tab character          |
-+---------------------+---------------------------------+
-| ``\"``              | Double quote                    |
-+---------------------+---------------------------------+
-| ``\'``              | Single quote                    |
-+---------------------+---------------------------------+
-| ``\\``              | Backslash                       |
-+---------------------+---------------------------------+
-| ``\uXXXX``          | UTF-16 Unicode codepoint        |
-|                     | ``XXXX``                        |
-|                     | (hexadecimal, case-insensitive) |
-+---------------------+---------------------------------+
-| ``\UXXXXXX``        | UTF-32 Unicode codepoint        |
-|                     | ``XXXXXX``                      |
-|                     | (hexadecimal, case-insensitive) |
-+---------------------+---------------------------------+
-
-There are two ways to represent an escaped Unicode character above 0xFFFF:
-
-- as a `UTF-16 surrogate pair <https://en.wikipedia.org/wiki/UTF-16#Code_points_from_U+010000_to_U+10FFFF>`_ ``\uXXXX\uXXXX``.
-- as a single UTF-32 codepoint ``\UXXXXXX``.
-
-Also, using ``\`` followed by a newline inside a string will allow you to continue it in the next line, without
-inserting a newline character in the string itself.
-
-GDScript also supports :ref:`doc_gdscript_printf`.
 
 :ref:`StringName <class_StringName>`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -516,7 +617,8 @@ very fast to compare, which makes them good candidates for dictionary keys.
 :ref:`NodePath <class_NodePath>`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-A pre-parsed path to a node or a node property. They are useful to interact with
+A pre-parsed path to a node or a node property.  It can be
+easily assigned to, and from, a String. They are useful to interact with
 the tree to get a node, or affecting properties like with :ref:`Tweens <class_Tween>`.
 
 Vector built-in types
@@ -598,12 +700,6 @@ Engine built-in types
 Color data type contains ``r``, ``g``, ``b``, and ``a`` fields. It can
 also be accessed as ``h``, ``s``, and ``v`` for hue/saturation/value.
 
-:ref:`NodePath <class_NodePath>`
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Compiled path to a node used mainly in the scene system. It can be
-easily assigned to, and from, a String.
-
 :ref:`RID <class_RID>`
 ^^^^^^^^^^^^^^^^^^^^^^
 
@@ -634,6 +730,55 @@ Negative indices count from the end.
     arr[0] = "Hi!" # Replacing value 1 with "Hi!".
     arr.append(4) # Array is now ["Hi!", 2, 3, 4].
 
+Typed arrays
+^^^^^^^^^^^^
+
+Godot 4.0 added support for typed arrays. On write operations, Godot checks that
+element values match the specified type, so the array cannot contain invalid values.
+The GDScript static analyzer takes typed arrays into account, however array methods like
+``front()`` and ``back()`` still have the ``Variant`` return type.
+
+Typed arrays have the syntax ``Array[Type]``, where ``Type`` can be any ``Variant`` type,
+native or user class, or enum. Nested array types (like ``Array[Array[int]]``) are not supported.
+
+::
+
+    var a: Array[int]
+    var b: Array[Node]
+    var c: Array[MyClass]
+    var d: Array[MyEnum]
+    var e: Array[Variant]
+
+``Array`` and ``Array[Variant]`` are the same thing.
+
+.. note::
+
+    Arrays are passed by reference, so the array element type is also an attribute of the in-memory
+    structure referenced by a variable in runtime. The static type of a variable restricts the structures
+    that it can reference to. Therefore, you **cannot** assign an array with a different element type,
+    even if the type is a subtype of the required type.
+
+    If you want to *convert* a typed array, you can create a new array and use the
+    :ref:`Array.assign() <class_Array_method_assign>` method::
+
+        var a: Array[Node2D] = [Node2D.new()]
+
+        # (OK) You can add the value to the array because `Node2D` extends `Node`.
+        var b: Array[Node] = [a[0]]
+
+        # (Error) You cannot assign an `Array[Node2D]` to an `Array[Node]` variable.
+        b = a
+
+        # (OK) But you can use the `assign()` method instead. Unlike the `=` operator,
+        # the `assign()` method copies the contents of the array, not the reference.
+        b.assign(a)
+
+    The only exception was made for the ``Array`` (``Array[Variant]``) type, for user convenience
+    and compatibility with old code. However, operations on untyped arrays are considered unsafe.
+
+Packed arrays
+^^^^^^^^^^^^^
+
 GDScript arrays are allocated linearly in memory for speed.
 Large arrays (more than tens of thousands of elements) may however cause
 memory fragmentation. If this is a concern, special types of
@@ -647,9 +792,9 @@ arrays. They are therefore only recommended to use for large data sets:
 - :ref:`PackedFloat32Array <class_PackedFloat32Array>`: An array of 32-bit floats.
 - :ref:`PackedFloat64Array <class_PackedFloat64Array>`: An array of 64-bit floats.
 - :ref:`PackedStringArray <class_PackedStringArray>`: An array of strings.
-- :ref:`PackedVector2Array <class_PackedVector2Array>`: An array of :ref:`Vector2 <class_Vector2>` objects.
-- :ref:`PackedVector3Array <class_PackedVector3Array>`: An array of :ref:`Vector3 <class_Vector3>` objects.
-- :ref:`PackedColorArray <class_PackedColorArray>`: An array of :ref:`Color <class_Color>` objects.
+- :ref:`PackedVector2Array <class_PackedVector2Array>`: An array of :ref:`Vector2 <class_Vector2>` values.
+- :ref:`PackedVector3Array <class_PackedVector3Array>`: An array of :ref:`Vector3 <class_Vector3>` values.
+- :ref:`PackedColorArray <class_PackedColorArray>`: An array of :ref:`Color <class_Color>` values.
 
 :ref:`Dictionary <class_Dictionary>`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -780,6 +925,110 @@ Valid types are:
     You can turn off this check, or make it only a warning, by changing it in
     the project settings. See :ref:`doc_gdscript_warning_system` for details.
 
+Static variables
+^^^^^^^^^^^^^^^^
+
+A class member variable can be declared static::
+
+    static var a
+
+Static variables belong to the class, not instances. This means that static variables
+share values between multiple instances, unlike regular member variables.
+
+From inside a class, you can access static variables from any function, both static and non-static.
+From outside the class, you can access static variables using the class or an instance
+(the second is not recommended as it is less readable).
+
+.. note::
+
+    The ``@export`` and ``@onready`` annotations cannot be applied to a static variable.
+    Local variables cannot be static.
+
+The following example defines a ``Person`` class with a static variable named ``max_id``.
+We increment the ``max_id`` in the ``_init()`` function. This makes it easy to keep track
+of the number of ``Person`` instances in our game.
+
+::
+
+    # person.gd
+    class_name Person
+
+    static var max_id = 0
+
+    var id
+    var name
+
+    func _init(p_name):
+        max_id += 1
+        id = max_id
+        name = p_name
+
+In this code, we create two instances of our ``Person`` class and check that the class
+and every instance have the same ``max_id`` value, because the variable is static and accessible to every instance.
+
+::
+
+    # test.gd
+    extends Node
+
+    func _ready():
+        var person1 = Person.new("John Doe")
+        var person2 = Person.new("Jane Doe")
+
+        print(person1.id) # 1
+        print(person2.id) # 2
+
+        print(Person.max_id)  # 2
+        print(person1.max_id) # 2
+        print(person2.max_id) # 2
+
+Static variables can have type hints, setters and getters::
+
+    static var balance: int = 0
+
+    static var debt: int:
+        get:
+            return -balance
+        set(value):
+            balance = -value
+
+A base class static variable can also be accessed via a child class::
+
+    class A:
+        static var x = 1
+
+    class B extends A:
+        pass
+
+    func _ready():
+        prints(A.x, B.x) # 1 1
+        A.x = 2
+        prints(A.x, B.x) # 2 2
+        B.x = 3
+        prints(A.x, B.x) # 3 3
+
+``@static_unload`` annotation
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Since GDScript classes are resources, having static variables in a script prevents it from being unloaded
+even if there are no more instances of that class and no other references left. This can be important
+if static variables store large amounts of data or hold references to other project resources, such as scenes.
+You should clean up this data manually, or use the :ref:`@static_unload <class_@GDScript_annotation_@static_unload>`
+annotation if static variables don't store important data and can be reset.
+
+.. warning::
+
+    Currently, due to a bug, scripts are never freed, even if ``@static_unload`` annotation is used.
+
+Note that ``@static_unload`` applies to the entire script (including inner classes)
+and must be placed at the top of the script, before ``class_name`` and ``extends``::
+
+    @static_unload
+    class_name MyNode
+    extends Node
+
+See also `Static functions`_ and `Static constructor`_.
+
 Casting
 ^^^^^^^
 
@@ -864,26 +1113,38 @@ Enums
 Enums are basically a shorthand for constants, and are pretty useful if you
 want to assign consecutive integers to some constant.
 
-If you pass a name to the enum, it will put all the keys inside a constant
-dictionary of that name.
-
-.. important:: In Godot 3.1 and later, keys in a named enum are not registered
-               as global constants. They should be accessed prefixed by the
-               enum's name (``Name.KEY``); see an example below.
-
 ::
 
     enum {TILE_BRICK, TILE_FLOOR, TILE_SPIKE, TILE_TELEPORT}
+
     # Is the same as:
     const TILE_BRICK = 0
     const TILE_FLOOR = 1
     const TILE_SPIKE = 2
     const TILE_TELEPORT = 3
 
+
+If you pass a name to the enum, it will put all the keys inside a constant
+:ref:`Dictionary <class_Dictionary>` of that name. This means all constant methods of
+a dictionary can also be used with a named enum.
+
+.. important:: Keys in a named enum are not registered
+               as global constants. They should be accessed prefixed
+               by the enum's name (``Name.KEY``).
+
+::
+
     enum State {STATE_IDLE, STATE_JUMP = 5, STATE_SHOOT}
+
     # Is the same as:
     const State = {STATE_IDLE = 0, STATE_JUMP = 5, STATE_SHOOT = 6}
-    # Access values with State.STATE_IDLE, etc.
+
+    func _ready():
+        # Access values with Name.KEY, prints '5'
+        print(State.STATE_JUMP)
+        # Use constant dictionary functions
+        # prints '["STATE_IDLE", "STATE_JUMP", "STATE_SHOOT"]'
+        print(State.keys())
 
 
 Functions
@@ -1001,15 +1262,15 @@ Lambda functions capture the local environment. Local variables are passed by va
 Static functions
 ^^^^^^^^^^^^^^^^
 
-A function can be declared static. When a function is static, it has no
-access to the instance member variables or ``self``. This is mainly
-useful to make libraries of helper functions::
+A function can be declared static. When a function is static, it has no access to the instance member variables or ``self``.
+A static function has access to static variables. Also static functions are useful to make libraries of helper functions::
 
     static func sum2(a, b):
         return a + b
 
 Lambdas cannot be declared static.
 
+See also `Static variables`_ and `Static constructor`_.
 
 Statements and control flow
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1186,33 +1447,45 @@ match
 A ``match`` statement is used to branch execution of a program.
 It's the equivalent of the ``switch`` statement found in many other languages, but offers some additional features.
 
-Basic syntax::
+.. warning::
 
-    match (expression):
-        [pattern](s):
-            [block]
-        [pattern](s):
-            [block]
-        [pattern](s):
-            [block]
+    ``match`` is more type strict than the ``==`` operator. For example ``1`` will **not** match ``1.0``. The only exception is ``String`` vs ``StringName`` matching:
+    for example, the String ``"hello"`` is considered equal to the StringName ``&"hello"``.
 
+Basic syntax
+""""""""""""
 
-**Crash-course for people who are familiar with switch statements**:
+::
+
+    match <expression>:
+        <pattern(s)>:
+            <block>
+        <pattern(s)> when <guard expression>:
+            <block>
+        <...>
+
+Crash-course for people who are familiar with switch statements
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 1. Replace ``switch`` with ``match``.
 2. Remove ``case``.
 3. Remove any ``break``\ s.
 4. Change ``default`` to a single underscore.
 
-**Control flow**:
+Control flow
+""""""""""""
 
 The patterns are matched from top to bottom.
 If a pattern matches, the first corresponding block will be executed. After that, the execution continues below the ``match`` statement.
 
-There are 6 pattern types:
+.. note::
 
-- Constant pattern
-    Constant primitives, like numbers and strings::
+    The special ``continue`` behavior in ``match`` supported in 3.x was removed in Godot 4.0.
+
+The following pattern types are available:
+
+- Literal pattern
+    Matches a `literal <Literals_>`_::
 
         match x:
             1:
@@ -1222,9 +1495,8 @@ There are 6 pattern types:
             "test":
                 print("Oh snap! It's a string!")
 
-
-- Variable pattern
-    Matches the contents of a variable/enum::
+- Expression pattern
+    Matches a constant expression, an identifier, or an attribute access (``A.B``)::
 
         match typeof(x):
             TYPE_FLOAT:
@@ -1233,7 +1505,6 @@ There are 6 pattern types:
                 print("text")
             TYPE_ARRAY:
                 print("array")
-
 
 - Wildcard pattern
     This pattern matches everything. It's written as a single underscore.
@@ -1248,7 +1519,6 @@ There are 6 pattern types:
             _:
                 print("It's not 1 or 2. I don't care to be honest.")
 
-
 - Binding pattern
     A binding pattern introduces a new variable. Like the wildcard pattern, it matches everything - and also gives that value a name.
     It's especially useful in array and dictionary patterns::
@@ -1260,7 +1530,6 @@ There are 6 pattern types:
                 print("It's one times two!")
             var new_var:
                 print("It's not 1 or 2, it's ", new_var)
-
 
 - Array pattern
     Matches an array. Every single element of the array pattern is a pattern itself, so you can nest them.
@@ -1321,6 +1590,34 @@ There are 6 pattern types:
             "Sword", "Splash potion", "Fist":
                 print("Yep, you've taken damage")
 
+Pattern guards
+""""""""""""""
+
+Only one branch can be executed per ``match``. Once a branch is chosen, the rest are not checked.
+If you want to use the same pattern for multiple branches or to prevent choosing a branch with too general pattern,
+you can specify a guard expression after the list of patterns with the ``when`` keyword::
+
+    match point:
+        [0, 0]:
+            print("Origin")
+        [_, 0]:
+            print("Point on X-axis")
+        [0, _]:
+            print("Point on Y-axis")
+        [var x, var y] when y == x:
+            print("Point on line y = x")
+        [var x, var y] when y == -x:
+            print("Point on line y = -x")
+        [var x, var y]:
+            print("Point (%s, %s)" % [x, y])
+
+- If there is no matching pattern for the current branch, the guard expression
+  is **not** evaluated and the patterns of the next branch are checked.
+- If a matching pattern is found, the guard expression is evaluated.
+
+  - If it's true, then the body of the branch is executed and ``match`` ends.
+  - If it's false, then the patterns of the next branch are checked.
+
 Classes
 ~~~~~~~
 
@@ -1328,7 +1625,7 @@ By default, all script files are unnamed classes. In this case, you can only
 reference them using the file's path, using either a relative or an absolute
 path. For example, if you name a script file ``character.gd``::
 
-   # Inherit from 'Character.gd'.
+   # Inherit from 'character.gd'.
 
    extends "res://path/to/character.gd"
 
@@ -1347,7 +1644,7 @@ editor. For that, you use the ``class_name`` keyword. You can optionally use
 the ``@icon`` annotation with a path to an image, to use it as an icon. Your
 class will then appear with its new icon in the editor::
 
-   # Item.gd
+   # item.gd
 
    @icon("res://interface/icons/item.png")
    class_name Item
@@ -1380,13 +1677,11 @@ If you want to use ``extends`` too, you can keep both on the same line::
 
     class_name MyNode extends Node
 
-.. note:: Godot's class syntax is compact: it can only contain member variables or
-          functions. You can use static functions, but not static member variables. In the
-          same way, the engine initializes variables every time you create an instance,
-          and this includes arrays and dictionaries. This is in the spirit of thread
-          safety, since scripts can be initialized in separate threads without the user
-          knowing.
+.. note::
 
+    Godot initializes non-static variables every time you create an instance,
+    and this includes arrays and dictionaries. This is in the spirit of thread safety,
+    since scripts can be initialized in separate threads without the user knowing.
 
 Inheritance
 ^^^^^^^^^^^
@@ -1448,6 +1743,22 @@ the function name with the attribute operator::
     func dont_override():
         return super.overriding() # This calls the method as defined in the base class.
 
+.. warning::
+
+    One of the common misconceptions is trying to override *non-virtual* engine methods
+    such as ``get_class()``, ``queue_free()``, etc. This is not supported for technical reasons.
+
+    In Godot 3, you can *shadow* engine methods in GDScript, and it will work if you call this method in GDScript.
+    However, the engine will **not** execute your code if the method is called inside the engine on some event.
+
+    In Godot 4, even shadowing may not always work, as GDScript optimizes native method calls.
+    Therefore, we added the ``NATIVE_METHOD_OVERRIDE`` warning, which is treated as an error by default.
+    We strongly advise against disabling or ignoring the warning.
+
+    Note that this does not apply to virtual methods such as ``_ready()``, ``_process()`` and others
+    (marked with the ``virtual`` qualifier in the documentation and the names start with an underscore).
+    These methods are specifically for customizing engine behavior and can be overridden in GDScript.
+    Signals and notifications can also be useful for these purposes.
 
 Class constructor
 ^^^^^^^^^^^^^^^^^
@@ -1463,7 +1774,7 @@ explicit constructor::
 
 This is better explained through examples. Consider this scenario::
 
-    # State.gd (inherited class).
+    # state.gd (inherited class).
     var entity = null
     var message = null
 
@@ -1476,8 +1787,8 @@ This is better explained through examples. Consider this scenario::
         message = m
 
 
-    # Idle.gd (inheriting class).
-    extends "State.gd"
+    # idle.gd (inheriting class).
+    extends "state.gd"
 
 
     func _init(e=null, m=null):
@@ -1487,20 +1798,35 @@ This is better explained through examples. Consider this scenario::
 
 There are a few things to keep in mind here:
 
-1. If the inherited class (``State.gd``) defines a ``_init`` constructor that takes
-   arguments (``e`` in this case), then the inheriting class (``Idle.gd``) *must*
-   define ``_init`` as well and pass appropriate parameters to ``_init`` from ``State.gd``.
-2. ``Idle.gd`` can have a different number of arguments than the base class ``State.gd``.
-3. In the example above, ``e`` passed to the ``State.gd`` constructor is the same ``e`` passed
-   in to ``Idle.gd``.
-4. If ``Idle.gd``'s ``_init`` constructor takes 0 arguments, it still needs to pass some value
-   to the ``State.gd`` base class, even if it does nothing. This brings us to the fact that you
+1. If the inherited class (``state.gd``) defines a ``_init`` constructor that takes
+   arguments (``e`` in this case), then the inheriting class (``idle.gd``) *must*
+   define ``_init`` as well and pass appropriate parameters to ``_init`` from ``state.gd``.
+2. ``idle.gd`` can have a different number of arguments than the base class ``state.gd``.
+3. In the example above, ``e`` passed to the ``state.gd`` constructor is the same ``e`` passed
+   in to ``idle.gd``.
+4. If ``idle.gd``'s ``_init`` constructor takes 0 arguments, it still needs to pass some value
+   to the ``state.gd`` base class, even if it does nothing. This brings us to the fact that you
    can pass expressions to the base constructor as well, not just variables, e.g.::
 
-    # Idle.gd
+    # idle.gd
 
     func _init():
         super(5)
+
+Static constructor
+^^^^^^^^^^^^^^^^^^
+
+A static constructor is a static function ``_static_init`` that is called automatically
+when the class is loaded, after the static variables have been initialized::
+
+    static var my_static_var = 1
+
+    static func _static_init():
+        my_static_var = 2
+
+A static constructor cannot take arguments and must not return any value.
+
+.. _doc_gdscript_basics_inner_classes:
 
 Inner classes
 ^^^^^^^^^^^^^
@@ -1578,8 +1904,8 @@ Example::
         set(value):
             milliseconds = value * 1000
 
-Using the variable name inside its own setter or getter will directly access the underlying member, so it
-won't generate infinite recursion and saves you from explicitly declaring another variable::
+Using the variable's name to set it inside its own setter or to get it inside its own getter will directly access the underlying member,
+so it won't generate infinite recursion and saves you from explicitly declaring another variable::
 
     signal changed(new_value)
     var warns_when_changed = "some value":
@@ -1663,9 +1989,9 @@ Here is an example:
     var my_file_ref
 
     func _ready():
-        var f = File.new()
+        var f = FileAccess.open("user://example_file.json", FileAccess.READ)
         my_file_ref = weakref(f)
-        # the File class inherits RefCounted, so it will be freed when not in use
+        # the FileAccess class inherits RefCounted, so it will be freed when not in use
 
         # the WeakRef will not prevent f from being freed when other_node is finished
         other_node.use_file(f)
@@ -1709,16 +2035,16 @@ signals of nodes like :ref:`class_Button` or :ref:`class_RigidBody3D`.
 
 In the example below, we connect the ``health_depleted`` signal from a
 ``Character`` node to a ``Game`` node. When the ``Character`` node emits the
-signal, the game node's ``_on_Character_health_depleted`` is called::
+signal, the game node's ``_on_character_health_depleted`` is called::
 
-    # Game.gd
+    # game.gd
 
     func _ready():
         var character_node = get_node('Character')
-        character_node.health_depleted.connect(_on_Character_health_depleted)
+        character_node.health_depleted.connect(_on_character_health_depleted)
 
 
-    func _on_Character_health_depleted():
+    func _on_character_health_depleted():
         get_tree().reload_current_scene()
 
 You can emit as many arguments as you want along with a signal.
@@ -1727,12 +2053,12 @@ Here is an example where this is useful. Let's say we want a life bar on screen
 to react to health changes with an animation, but we want to keep the user
 interface separate from the player in our scene tree.
 
-In our ``Character.gd`` script, we define a ``health_changed`` signal and emit
+In our ``character.gd`` script, we define a ``health_changed`` signal and emit
 it with :ref:`Signal.emit() <class_Signal_method_emit>`, and from
 a ``Game`` node higher up our scene tree, we connect it to the ``Lifebar`` using
 the :ref:`Signal.connect() <class_Signal_method_connect>` method::
 
-    # Character.gd
+    # character.gd
 
     ...
     signal health_changed
@@ -1749,7 +2075,7 @@ the :ref:`Signal.connect() <class_Signal_method_connect>` method::
 
 ::
 
-    # Lifebar.gd
+    # lifebar.gd
 
     # Here, we define a function to use as a callback when the
     # character's health_changed signal is emitted.
@@ -1772,7 +2098,7 @@ node in this case.
 
 ::
 
-    # Game.gd
+    # game.gd
 
     func _ready():
         var character_node = get_node('Character')
@@ -1810,7 +2136,7 @@ taken by each character on the screen, like ``Player1 took 22 damage.``. The
 damage. So when we connect the signal to the in-game console, we can add the
 character's name in the binds array argument::
 
-    # Game.gd
+    # game.gd
 
     func _ready():
         var character_node = get_node('Character')
@@ -1820,7 +2146,7 @@ character's name in the binds array argument::
 
 Our ``BattleLog`` node receives each element in the binds array as an extra argument::
 
-    # BattleLog.gd
+    # battle_log.gd
 
     func _on_Character_health_changed(old_value, new_value, character_name):
         if not new_value <= old_value:
@@ -1830,11 +2156,11 @@ Our ``BattleLog`` node receives each element in the binds array as an extra argu
         label.text += character_name + " took " + str(damage) + " damage."
 
 
-Awaiting for signals
-~~~~~~~~~~~~~~~~~~~~
+Awaiting for signals or coroutines
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The ``await`` keyword can be used to create `coroutines <https://en.wikipedia.org/wiki/Coroutine>`_
-which waits until a signal is emitted before continuing execution. Using the ``await`` keyword with a signal or a
+which wait until a signal is emitted before continuing execution. Using the ``await`` keyword with a signal or a
 call to a function that is also a coroutine will immediately return the control to the caller. When the signal is
 emitted (or the called coroutine finishes), it will resume execution from the point on where it stopped.
 

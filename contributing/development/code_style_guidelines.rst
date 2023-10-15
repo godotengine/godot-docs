@@ -31,12 +31,12 @@ file of the Godot repository.
 
 As long as you ensure that your style matches the surrounding code and that you
 not introducing trailing whitespace or space-based indentation, you should be
-fine. If you plan to contribute regularly however, we strongly advise that you
-setup clang-format locally to check and automatically fix all your commits.
+fine. If you plan to contribute regularly, however, we strongly advise that you
+set up clang-format locally to check and automatically fix all your commits.
 
 .. warning:: Godot's code style should *not* be applied to third-party code,
              i.e. that is included in Godot's source tree but was not written
-             specifically for our project. Such code usually come from
+             specifically for our project. Such code usually comes from
              different upstream projects with their own style guides (or lack
              thereof), and don't want to introduce differences that would make
              syncing with upstream repositories harder.
@@ -81,7 +81,7 @@ You then have different possibilities to apply clang-format to your changes:
 Manual usage
 ^^^^^^^^^^^^
 
-You can apply clang-format manually one or more files with the following
+You can apply clang-format manually for one or more files with the following
 command:
 
 ::
@@ -102,7 +102,7 @@ For ease of use, we provide a pre-commit hook for Git that will run
 clang-format automatically on all your commits to check them, and let you apply
 its changes in the final commit.
 
-This "hook" is a script which can be found in ``misc/hooks``, refer to that
+This "hook" is a script that can be found in ``misc/hooks``, refer to that
 folder's README.md for installation instructions.
 
 If your clang-format is not in the ``PATH``, you may have to edit the
@@ -114,18 +114,18 @@ IDE plugin
 ^^^^^^^^^^
 
 Most IDEs or code editors have beautifier plugins that can be configured to run
-clang-format automatically, for example each time you save a file.
+clang-format automatically, for example, each time you save a file.
 
 Here is a non-exhaustive list of beautifier plugins for some IDEs:
 
 - Qt Creator: `Beautifier plugin <https://doc.qt.io/qtcreator/creator-beautifier.html>`__
 - Visual Studio Code: `Clang-Format <https://marketplace.visualstudio.com/items?itemName=xaver.clang-format>`__
-- Visual Studio: `ClangFormat <https://marketplace.visualstudio.com/items?itemName=LLVMExtensions.ClangFormat>`__
+- Visual Studio: `Clang Power Tools 2022 <https://marketplace.visualstudio.com/items?itemName=caphyon.ClangPowerTools2022>`__
 - vim: `vim-clang-format <https://github.com/rhysd/vim-clang-format>`__
 - CLion: Starting from version ``2019.1``, no plugin is required. Instead, enable
   `ClangFormat <https://www.jetbrains.com/help/clion/clangformat-as-alternative-formatter.html#clion-support>`__
 
-(Pull requests welcome to extend this list with tested plugins.)
+(Pull requests are welcome to extend this list with tested plugins.)
 
 .. _doc_code_style_guidelines_header_includes:
 
@@ -307,7 +307,7 @@ Editor integration
 ^^^^^^^^^^^^^^^^^^
 
 Many IDEs or code editors have beautifier plugins that can be configured to run
-black automatically, for example each time you save a file. For details you can
+black automatically, for example, each time you save a file. For details, you can
 check `Black editor integration <https://github.com/psf/black#editor-integration>`__.
 
 Comment style guide

@@ -164,7 +164,7 @@ Remove the cell at the given coordinates.
 
 void **set_cell** **(** :ref:`Vector2i<class_Vector2i>` coords, :ref:`int<class_int>` source_id=-1, :ref:`Vector2i<class_Vector2i>` atlas_coords=Vector2i(-1, -1), :ref:`int<class_int>` alternative_tile=-1 **)**
 
-Sets the tile indentifiers for the cell at coordinates ``coords``. See :ref:`TileMap.set_cell<class_TileMap_method_set_cell>`.
+Sets the tile identifiers for the cell at coordinates ``coords``. See :ref:`TileMap.set_cell<class_TileMap_method_set_cell>`.
 
 .. rst-class:: classref-item-separator
 
@@ -184,3 +184,4 @@ Sets the size of the pattern.
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

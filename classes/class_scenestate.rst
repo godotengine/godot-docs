@@ -12,14 +12,14 @@ SceneState
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-A script interface to a scene file's data.
+Provides access to a scene file's information.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-Maintains a list of resources, nodes, exported, and overridden properties, and built-in scripts associated with a scene.
+Maintains a list of resources, nodes, exported and overridden properties, and built-in scripts associated with a scene. They cannot be modified from a **SceneState**, only accessed. Useful for peeking into what a :ref:`PackedScene<class_PackedScene>` contains without instantiating it.
 
 This class cannot be instantiated directly, it is retrieved for a given scene as the result of :ref:`PackedScene.get_state<class_PackedScene_method_get_state>`.
 
@@ -399,3 +399,4 @@ Returns ``true`` if the node at ``idx`` is an :ref:`InstancePlaceholder<class_In
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

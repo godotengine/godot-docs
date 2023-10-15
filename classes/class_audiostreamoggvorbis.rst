@@ -12,9 +12,14 @@ AudioStreamOggVorbis
 
 **Inherits:** :ref:`AudioStream<class_AudioStream>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-.. container:: contribute
+A class representing an Ogg Vorbis audio stream.
 
-	There is currently no description for this class. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+.. rst-class:: classref-introduction-group
+
+Description
+-----------
+
+The AudioStreamOggVorbis class is a specialized :ref:`AudioStream<class_AudioStream>` for handling Ogg Vorbis file formats. It offers functionality for loading and playing back Ogg Vorbis files, as well as managing looping and other playback properties. This class is part of the audio stream system, which also supports WAV files through the :ref:`AudioStreamWAV<class_AudioStreamWAV>` class.
 
 .. rst-class:: classref-reftable-group
 
@@ -37,6 +42,20 @@ Properties
    +---------------------------------------------------+-----------------------------------------------------------------------------+-----------+
    | :ref:`OggPacketSequence<class_OggPacketSequence>` | :ref:`packet_sequence<class_AudioStreamOggVorbis_property_packet_sequence>` |           |
    +---------------------------------------------------+-----------------------------------------------------------------------------+-----------+
+
+.. rst-class:: classref-reftable-group
+
+Methods
+-------
+
+.. table::
+   :widths: auto
+
+   +---------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`AudioStreamOggVorbis<class_AudioStreamOggVorbis>` | :ref:`load_from_buffer<class_AudioStreamOggVorbis_method_load_from_buffer>` **(** :ref:`PackedByteArray<class_PackedByteArray>` buffer **)** |static| |
+   +---------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`AudioStreamOggVorbis<class_AudioStreamOggVorbis>` | :ref:`load_from_file<class_AudioStreamOggVorbis_method_load_from_file>` **(** :ref:`String<class_String>` path **)** |static|                         |
+   +---------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -115,7 +134,7 @@ Property Descriptions
 - void **set_loop** **(** :ref:`bool<class_bool>` value **)**
 - :ref:`bool<class_bool>` **has_loop** **(** **)**
 
-If ``true``, the stream will automatically loop when it reaches the end.
+If ``true``, the audio will play again from the specified :ref:`loop_offset<class_AudioStreamOggVorbis_property_loop_offset>` once it is done playing. Useful for ambient sounds and background music.
 
 .. rst-class:: classref-item-separator
 
@@ -151,9 +170,39 @@ Time in seconds at which the stream starts after being looped.
 
 Contains the raw Ogg data for this stream.
 
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
+
+Method Descriptions
+-------------------
+
+.. _class_AudioStreamOggVorbis_method_load_from_buffer:
+
+.. rst-class:: classref-method
+
+:ref:`AudioStreamOggVorbis<class_AudioStreamOggVorbis>` **load_from_buffer** **(** :ref:`PackedByteArray<class_PackedByteArray>` buffer **)** |static|
+
+Creates a new AudioStreamOggVorbis instance from the given buffer. The buffer must contain Ogg Vorbis data.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_AudioStreamOggVorbis_method_load_from_file:
+
+.. rst-class:: classref-method
+
+:ref:`AudioStreamOggVorbis<class_AudioStreamOggVorbis>` **load_from_file** **(** :ref:`String<class_String>` path **)** |static|
+
+Creates a new AudioStreamOggVorbis instance from the given file path. The file must be in Ogg Vorbis format.
+
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

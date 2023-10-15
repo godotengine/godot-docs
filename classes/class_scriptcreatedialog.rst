@@ -12,7 +12,7 @@ ScriptCreateDialog
 
 **Inherits:** :ref:`ConfirmationDialog<class_ConfirmationDialog>` **<** :ref:`AcceptDialog<class_AcceptDialog>` **<** :ref:`Window<class_Window>` **<** :ref:`Viewport<class_Viewport>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-The Editor's popup dialog for creating new :ref:`Script<class_Script>` files.
+Godot editor's popup dialog for creating new :ref:`Script<class_Script>` files.
 
 .. rst-class:: classref-introduction-group
 
@@ -112,3 +112,4 @@ Prefills required fields to configure the ScriptCreateDialog for use.
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

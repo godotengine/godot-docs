@@ -121,9 +121,7 @@ If ``true``, polygon edges will be anti-aliased.
 
 :ref:`Array<class_Array>` **bones** = ``[]``
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Internal list of :ref:`Bone2D<class_Bone2D>` nodes used by the assigned :ref:`skeleton<class_Polygon2D_property_skeleton>`. Edited using the Polygon2D editor ("UV" button on the top toolbar).
 
 .. rst-class:: classref-item-separator
 
@@ -140,7 +138,7 @@ If ``true``, polygon edges will be anti-aliased.
 - void **set_color** **(** :ref:`Color<class_Color>` value **)**
 - :ref:`Color<class_Color>` **get_color** **(** **)**
 
-The polygon's fill color. If ``texture`` is defined, it will be multiplied by this color. It will also be the default color for vertices not set in ``vertex_colors``.
+The polygon's fill color. If :ref:`texture<class_Polygon2D_property_texture>` is set, it will be multiplied by this color. It will also be the default color for vertices not set in :ref:`vertex_colors<class_Polygon2D_property_vertex_colors>`.
 
 .. rst-class:: classref-item-separator
 
@@ -157,9 +155,7 @@ The polygon's fill color. If ``texture`` is defined, it will be multiplied by th
 - void **set_internal_vertex_count** **(** :ref:`int<class_int>` value **)**
 - :ref:`int<class_int>` **get_internal_vertex_count** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Number of internal vertices, used for UV mapping.
 
 .. rst-class:: classref-item-separator
 
@@ -263,9 +259,7 @@ The list of polygons, in case more than one is being represented. Every individu
 - void **set_skeleton** **(** :ref:`NodePath<class_NodePath>` value **)**
 - :ref:`NodePath<class_NodePath>` **get_skeleton** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Path to a :ref:`Skeleton2D<class_Skeleton2D>` node used for skeleton-based deformations of this polygon. If empty or invalid, skeletal deformations will not be used.
 
 .. rst-class:: classref-item-separator
 
@@ -282,7 +276,7 @@ The list of polygons, in case more than one is being represented. Every individu
 - void **set_texture** **(** :ref:`Texture2D<class_Texture2D>` value **)**
 - :ref:`Texture2D<class_Texture2D>` **get_texture** **(** **)**
 
-The polygon's fill texture. Use ``uv`` to set texture coordinates.
+The polygon's fill texture. Use :ref:`uv<class_Polygon2D_property_uv>` to set texture coordinates.
 
 .. rst-class:: classref-item-separator
 
@@ -299,7 +293,7 @@ The polygon's fill texture. Use ``uv`` to set texture coordinates.
 - void **set_texture_offset** **(** :ref:`Vector2<class_Vector2>` value **)**
 - :ref:`Vector2<class_Vector2>` **get_texture_offset** **(** **)**
 
-Amount to offset the polygon's ``texture``. If ``(0, 0)`` the texture's origin (its top-left corner) will be placed at the polygon's ``position``.
+Amount to offset the polygon's :ref:`texture<class_Polygon2D_property_texture>`. If set to ``Vector2(0, 0)``, the texture's origin (its top-left corner) will be placed at the polygon's position.
 
 .. rst-class:: classref-item-separator
 
@@ -333,7 +327,7 @@ The texture's rotation in radians.
 - void **set_texture_scale** **(** :ref:`Vector2<class_Vector2>` value **)**
 - :ref:`Vector2<class_Vector2>` **get_texture_scale** **(** **)**
 
-Amount to multiply the ``uv`` coordinates when using a ``texture``. Larger values make the texture smaller, and vice versa.
+Amount to multiply the :ref:`uv<class_Polygon2D_property_uv>` coordinates when using :ref:`texture<class_Polygon2D_property_texture>`. Larger values make the texture smaller, and vice versa.
 
 .. rst-class:: classref-item-separator
 
@@ -350,7 +344,7 @@ Amount to multiply the ``uv`` coordinates when using a ``texture``. Larger value
 - void **set_uv** **(** :ref:`PackedVector2Array<class_PackedVector2Array>` value **)**
 - :ref:`PackedVector2Array<class_PackedVector2Array>` **get_uv** **(** **)**
 
-Texture coordinates for each vertex of the polygon. There should be one ``uv`` per polygon vertex. If there are fewer, undefined vertices will use ``(0, 0)``.
+Texture coordinates for each vertex of the polygon. There should be one UV value per polygon vertex. If there are fewer, undefined vertices will use ``Vector2(0, 0)``.
 
 .. rst-class:: classref-item-separator
 
@@ -367,7 +361,7 @@ Texture coordinates for each vertex of the polygon. There should be one ``uv`` p
 - void **set_vertex_colors** **(** :ref:`PackedColorArray<class_PackedColorArray>` value **)**
 - :ref:`PackedColorArray<class_PackedColorArray>` **get_vertex_colors** **(** **)**
 
-Color for each vertex. Colors are interpolated between vertices, resulting in smooth gradients. There should be one per polygon vertex. If there are fewer, undefined vertices will use ``color``.
+Color for each vertex. Colors are interpolated between vertices, resulting in smooth gradients. There should be one per polygon vertex. If there are fewer, undefined vertices will use :ref:`color<class_Polygon2D_property_color>`.
 
 .. rst-class:: classref-section-separator
 
@@ -444,7 +438,7 @@ Returns the path to the node associated with the specified bone.
 
 :ref:`PackedFloat32Array<class_PackedFloat32Array>` **get_bone_weights** **(** :ref:`int<class_int>` index **)** |const|
 
-Returns the height values of the specified bone.
+Returns the weight values of the specified bone.
 
 .. rst-class:: classref-item-separator
 
@@ -476,3 +470,4 @@ Sets the weight values for the specified bone.
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

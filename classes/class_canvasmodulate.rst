@@ -12,14 +12,14 @@ CanvasModulate
 
 **Inherits:** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-Tint the entire canvas.
+A node that applies a color tint to a canvas.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-**CanvasModulate** tints the canvas elements using its assigned :ref:`color<class_CanvasModulate_property_color>`.
+**CanvasModulate** applies a color tint to all nodes on a canvas. Only one can be used to tint a canvas, but :ref:`CanvasLayer<class_CanvasLayer>`\ s can be used to render things independently.
 
 .. rst-class:: classref-reftable-group
 
@@ -61,3 +61,4 @@ The tint color to apply.
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

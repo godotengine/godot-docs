@@ -1,10 +1,7 @@
 .. _doc_c_sharp_exports:
 
-C# exports
-==========
-
-Introduction to exports
------------------------
+C# exported properties
+======================
 
 In Godot, class members can be exported. This means their value gets saved along
 with the resource (such as the :ref:`scene <class_PackedScene>`) they're
@@ -207,23 +204,14 @@ Allow floats from -10 to 20 and snap the value to multiples of 0.2.
     [Export(PropertyHint.Range, "-10,20,0.2")]
     public float Number { get; set; }
 
-If you add the hints "or_greater" and/or "or_lesser" you can go above
+If you add the hints "or_greater" and/or "or_less" you can go above
 or below the limits when adjusting the value by typing it instead of using
 the slider.
 
 .. code-block:: csharp
 
-    [Export(PropertyHint.Range, "0,100,1,or_greater,or_lesser")]
+    [Export(PropertyHint.Range, "0,100,1,or_greater,or_less")]
     public int Number { get; set; }
-
-Allow values 'y = exp(x)' where 'y' varies between 100 and 1000
-while snapping to steps of 20. The editor will present a
-slider for easily editing the value. This only works with floats.
-
-.. code-block:: csharp
-
-    [Export(PropertyHint.ExpRange, "100,1000,20")]
-    public float Number { get; set; }
 
 Floats with easing hint
 -----------------------
@@ -263,6 +251,8 @@ Since Godot 4.0, nodes can be directly exported without having to use NodePaths.
     [Export]
     public Node Node { get; set; }
 
+Custom node classes can also be used, see :ref:`doc_c_sharp_global_classes`.
+
 Exporting NodePaths like in Godot 3.x is still possible, in case you need it:
 
 .. code-block:: csharp
@@ -296,7 +286,8 @@ Therefore, if you specify a type derived from Resource such as:
     private AnimationNode Resource;
 
 The drop-down menu will be limited to AnimationNode and all
-its inherited classes.
+its inherited classes. Custom resource classes can also be used,
+see :ref:`doc_c_sharp_global_classes`.
 
 It must be noted that even if the script is not being run while in the
 editor, the exported properties are still editable. This can be used

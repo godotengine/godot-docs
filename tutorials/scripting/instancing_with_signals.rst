@@ -41,7 +41,7 @@ given velocity:
 
     public partial class Bullet : Area2D
     {
-        Vector2 Velocity = new Vector2();
+        public Vector2 Velocity { get; set; } = Vector2.Zero;
 
         public override void _PhysicsProcess(double delta)
         {
@@ -94,7 +94,7 @@ Here is the code for the player using signals to emit the bullet:
 
     signal shoot(bullet, direction, location)
 
-    var Bullet = preload("res://Bullet.tscn")
+    var Bullet = preload("res://bullet.tscn")
 
     func _input(event):
         if event is InputEventMouseButton:
@@ -111,7 +111,7 @@ Here is the code for the player using signals to emit the bullet:
     public partial class Player : Sprite2D
     {
         [Signal]
-        delegate void ShootEventHandler(PackedScene bullet, Vector2 direction, Vector2 location);
+        public delegate void ShootEventHandler(PackedScene bullet, float direction, Vector2 location);
 
         private PackedScene _bullet = GD.Load<PackedScene>("res://Bullet.tscn");
 
@@ -138,7 +138,7 @@ In the main scene, we then connect the player's signal (it will appear in the
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    func _on_Player_shoot(Bullet, direction, location):
+    func _on_player_shoot(Bullet, direction, location):
         var spawned_bullet = Bullet.instantiate()
         add_child(spawned_bullet)
         spawned_bullet.rotation = direction
@@ -147,13 +147,13 @@ In the main scene, we then connect the player's signal (it will appear in the
 
  .. code-tab:: csharp
 
-    public void _on_Player_Shoot(PackedScene bullet, Vector2 direction, Vector2 location)
+    private void OnPlayerShoot(PackedScene bullet, float direction, Vector2 location)
     {
-        var bulletInstance = (Bullet)bullet.Instantiate();
-        AddChild(bulletInstance);
-        bulletInstance.Rotation = direction;
-        bulletInstance.Position = location;
-        bulletInstance.Velocity = bulletInstance.Velocity.Rotated(direction);
+        var spawnedBullet = bullet.Instantiate<Bullet>();
+        AddChild(spawnedBullet);
+        spawnedBullet.Rotation = direction;
+        spawnedBullet.Position = location;
+        spawnedBullet.Velocity = spawnedBullet.Velocity.Rotated(direction);
     }
 
 Now the bullets will maintain their own movement independent of the player's

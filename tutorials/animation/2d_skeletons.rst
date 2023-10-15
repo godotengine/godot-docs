@@ -1,3 +1,5 @@
+:article_outdated: True
+
 .. _doc_2d_skeletons:
 
 2D skeletons
@@ -7,7 +9,7 @@ Introduction
 ------------
 
 When working with 3D, skeletal deforms are common for characters and creatures
-and most 3D modelling applications support it. For 2D, as this function is not
+and most 3D modeling applications support it. For 2D, as this function is not
 used as often, it's difficult to find mainstream software aimed for this.
 
 One option is to create animations in third-party software such as Spine or

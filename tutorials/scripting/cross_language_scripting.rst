@@ -74,9 +74,8 @@ with :ref:`new() <class_CSharpScript_method_new>`.
 
 .. code-block:: gdscript
 
-    var my_csharp_script = load("res://path_to_cs_file.cs")
+    var my_csharp_script = load("res://Path/To/MyCSharpNode.cs")
     var my_csharp_node = my_csharp_script.new()
-    print(my_csharp_node.str2) # barbar
 
 .. warning::
 
@@ -101,8 +100,8 @@ be instantiated with :ref:`GDScript.New() <class_GDScript_method_new>`.
 
 .. code-block:: csharp
 
-    GDScript MyGDScript = (GDScript)GD.Load("res://path_to_gd_file.gd");
-    GodotObject myGDScriptNode = (GodotObject)MyGDScript.New(); // This is a GodotObject
+    GDScript MyGDScript = GD.Load<GDScript>("res://path/to/my_gd_script.gd");
+    GodotObject myGDScriptNode = (GodotObject)MyGDScript.New(); // This is a GodotObject.
 
 Here we are using an :ref:`class_Object`, but you can use type conversion like
 explained in :ref:`doc_c_sharp_features_type_conversion_and_casting`.
@@ -178,7 +177,7 @@ to said method.
     string[] arr = new string[] { "a", "b", "c" };
     myGDScriptNode.Call("print_array", arr); // a, b, c
     myGDScriptNode.Call("print_array", new int[] { 1, 2, 3 }); // 1, 2, 3
-    // Note how the type of each array entry does not matter as long as it can be handled by the marshaller
+    // Note how the type of each array entry does not matter as long as it can be handled by the marshaller.
 
 .. warning::
 

@@ -12,7 +12,7 @@ CompressedCubemapArray
 
 **Inherits:** :ref:`CompressedTextureLayered<class_CompressedTextureLayered>` **<** :ref:`TextureLayered<class_TextureLayered>` **<** :ref:`Texture<class_Texture>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-Array of 6-sided textures typically used in 3D rendering, optionally compressed.
+An optionally compressed :ref:`CubemapArray<class_CubemapArray>`.
 
 .. rst-class:: classref-introduction-group
 
@@ -21,13 +21,15 @@ Description
 
 A cubemap array that is loaded from a ``.ccubearray`` file. This file format is internal to Godot; it is created by importing other image formats with the import system. **CompressedCubemapArray** can use one of 4 compresson methods:
 
-- Uncompressed (uncompressed on the GPU)
-
 - Lossless (WebP or PNG, uncompressed on the GPU)
 
 - Lossy (WebP, uncompressed on the GPU)
 
 - VRAM Compressed (compressed on the GPU)
+
+- VRAM Uncompressed (uncompressed on the GPU)
+
+- Basis Universal (compressed on the GPU. Lower file sizes than VRAM Compressed, but slower to compress and lower quality than VRAM Compressed)
 
 Only **VRAM Compressed** actually reduces the memory usage on the GPU. The **Lossless** and **Lossy** compression methods will reduce the required storage on disk, but they will not reduce memory usage on the GPU as the texture is sent to the GPU uncompressed.
 
@@ -41,3 +43,4 @@ See :ref:`CubemapArray<class_CubemapArray>` for a general description of cubemap
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

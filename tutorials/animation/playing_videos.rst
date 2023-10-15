@@ -76,7 +76,7 @@ a float. Otherwise, the division's result will always be an integer.
 
 Once you've configured the AspectRatioContainer, reparent your VideoStreamPlayer
 node to be a child of the AspectRatioContainer node. Make sure **Expand** is
-disabled on the VideoStreamPlayer. Your video should now scale automatically
+enabled on the VideoStreamPlayer. Your video should now scale automatically
 to fit the whole screen while avoiding distortion.
 
 .. seealso::
@@ -116,6 +116,18 @@ See :ref:`doc_viewports` and the
 `GUI in 3D demo <https://github.com/godotengine/godot-demo-projects/tree/master/viewport/gui_in_3d>`__
 for more information on setting this up.
 
+Looping a video
+^^^^^^^^^^^^^^^
+
+For looping a video, the **Loop** property can be enabled. This will seamlessly
+restart the video when it reaches its end.
+
+Note that setting the project setting **Video Delay Compensation** to a non-zero
+value might cause your loop to not be seamless, because the synchronization of
+audio and video takes place at the start of each loop causing occasional missed
+frames. Set **Video Delay Compensation** in your project settings to **0** to
+avoid frame drop issues.
+
 Video decoding conditions and recommended resolutions
 -----------------------------------------------------
 
@@ -143,13 +155,6 @@ There are several limitations with the current implementation of video playback 
 - Seeking a video to a certain point is not supported.
 - Changing playback speed is not supported. VideoStreamPlayer also won't follow
   :ref:`Engine.time_scale<class_Engine_property_time_scale>`.
-- Looping is not supported, but you can connect a VideoStreamPlayer's
-  :ref:`finished <class_VideoStreamPlayer_signal_finished>` signal to a function
-  that plays the video again. However, this will cause a black frame to be
-  visible when the video restarts. This can be worked around by adding a fade to
-  black in the video file before the video ends, or by hiding the video for one
-  frame and displaying a TextureRect with a screenshot of the first frame of the
-  video until the video is restarted.
 - Streaming a video from a URL is not supported.
 
 .. _doc_playing_videos_recommended_theora_encoding_settings:
@@ -205,7 +210,9 @@ The **audio quality** level (``-q:a``) must be between ``-1`` and ``10``. Qualit
 video quality, increasing audio quality doesn't increase the output file size
 nearly as much. Therefore, if you want the cleanest audio possible, you can
 increase this to ``9`` to get *perceptually lossless* audio. This is especially
-valuable if your input file already uses lossy audio compression. See
+valuable if your input file already uses lossy audio compression. Higher quality
+audio does increase the CPU usage of the decoder, so it might lead to audio
+dropouts in case of high system load. See
 `this page <https://wiki.hydrogenaud.io/index.php?title=Recommended_Ogg_Vorbis#Recommended_Encoder_Settings>`__
 for a table listing Ogg Vorbis audio quality presets and their respective
 variable bitrates.
