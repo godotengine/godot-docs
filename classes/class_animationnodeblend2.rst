@@ -19,14 +19,16 @@ Blends two animations linearly inside of an :ref:`AnimationNodeBlendTree<class_A
 Description
 -----------
 
-A resource to add to an :ref:`AnimationNodeBlendTree<class_AnimationNodeBlendTree>`. Blends two animations linearly based on an amount value in the ``[0.0, 1.0]`` range.
+A resource to add to an :ref:`AnimationNodeBlendTree<class_AnimationNodeBlendTree>`. Blends two animations linearly based on the amount value.
+
+In general, the blend value should be in the ``[0.0, 1.0]`` range. Values outside of this range can blend amplified or inverted animations, however, :ref:`AnimationNodeAdd2<class_AnimationNodeAdd2>` works better for this purpose.
 
 .. rst-class:: classref-introduction-group
 
 Tutorials
 ---------
 
-- :doc:`AnimationTree <../tutorials/animation/animation_tree>`
+- :doc:`Using AnimationTree <../tutorials/animation/animation_tree>`
 
 - `3D Platformer Demo <https://godotengine.org/asset-library/asset/125>`__
 
@@ -38,3 +40,4 @@ Tutorials
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

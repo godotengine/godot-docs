@@ -10,14 +10,14 @@
 Array
 =====
 
-A generic array datatype.
+A built-in data structure that holds a sequence of elements.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-A generic array that can contain several elements of any type, accessible by a numerical index starting at 0. Negative indices can be used to count from the back, like in Python (-1 is the last element, -2 is the second to last, etc.).
+An array data structure that can contain a sequence of elements of any type. Elements are accessed by a numerical index starting at 0. Negative indices are used to count from the back (-1 is the last element, -2 is the second to last, etc.).
 
 \ **Example:**\ 
 
@@ -64,13 +64,13 @@ Arrays can be concatenated using the ``+`` operator:
 
 
 
-\ **Note:** Concatenating with the ``+=`` operator will create a new array, which has a cost. If you want to append another array to an existing array, :ref:`append_array<class_Array_method_append_array>` is more efficient.
-
 \ **Note:** Arrays are always passed by reference. To get a copy of an array that can be modified independently of the original array, use :ref:`duplicate<class_Array_method_duplicate>`.
 
 \ **Note:** Erasing elements while iterating over arrays is **not** supported and will result in unpredictable behavior.
 
-\ **Note:** When declaring an array with ``const``, the array itself can still be mutated by defining the values at individual indices or pushing/removing elements. Using ``const`` will only prevent assigning the constant with another value after it was initialized.
+.. note::
+
+	There are notable differences when using this API with C#. See :ref:`doc_c_sharp_differences` for more information.
 
 .. rst-class:: classref-reftable-group
 
@@ -567,7 +567,7 @@ void **erase** **(** :ref:`Variant<class_Variant>` value **)**
 
 Removes the first occurrence of a value from the array. If the value does not exist in the array, nothing happens. To remove an element by index, use :ref:`remove_at<class_Array_method_remove_at>` instead.
 
-\ **Note:** This method acts in-place and doesn't return a value.
+\ **Note:** This method acts in-place and doesn't return a modified array.
 
 \ **Note:** On large arrays, this method will be slower if the removed element is close to the beginning of the array (index 0). This is because all elements placed after the removed element have to be reindexed.
 
@@ -770,9 +770,9 @@ Returns a hashed 32-bit integer value representing the array and its contents.
 
 :ref:`int<class_int>` **insert** **(** :ref:`int<class_int>` position, :ref:`Variant<class_Variant>` value **)**
 
-Inserts a new element at a given position in the array. The position must be valid, or at the end of the array (``pos == size()``).
+Inserts a new element at a given position in the array. The position must be valid, or at the end of the array (``pos == size()``). Returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` on success, or one of the other :ref:`Error<enum_@GlobalScope_Error>` values if the operation failed.
 
-\ **Note:** This method acts in-place and doesn't return a value.
+\ **Note:** This method acts in-place and doesn't return a modified array.
 
 \ **Note:** On large arrays, this method will be slower if the inserted element is close to the beginning of the array (index 0). This is because all elements placed after the newly inserted element have to be reindexed.
 
@@ -873,6 +873,18 @@ See also :ref:`filter<class_Array_method_filter>`, :ref:`reduce<class_Array_meth
 
 Returns the maximum value contained in the array if all elements are of comparable types. If the elements can't be compared, ``null`` is returned.
 
+To find the maximum value using a custom comparator, you can use :ref:`reduce<class_Array_method_reduce>`. In this example every array element is checked and the first maximum value is returned:
+
+::
+
+    func _ready():
+        var arr = [Vector2(0, 1), Vector2(2, 0), Vector2(1, 1), Vector2(1, 0), Vector2(0, 2)]
+        # In this example we compare the lengths.
+        print(arr.reduce(func(max, val): return val if is_length_greater(val, max) else max))
+    
+    func is_length_greater(a, b):
+        return a.length() > b.length()
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -885,6 +897,8 @@ Returns the maximum value contained in the array if all elements are of comparab
 
 Returns the minimum value contained in the array if all elements are of comparable types. If the elements can't be compared, ``null`` is returned.
 
+See also :ref:`max<class_Array_method_max>` for an example of using a custom comparator.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -895,7 +909,7 @@ Returns the minimum value contained in the array if all elements are of comparab
 
 :ref:`Variant<class_Variant>` **pick_random** **(** **)** |const|
 
-Returns a random value from the target array.
+Returns a random value from the target array. Prints an error and returns ``null`` if the array is empty.
 
 
 .. tabs::
@@ -1015,9 +1029,11 @@ void **remove_at** **(** :ref:`int<class_int>` position **)**
 
 Removes an element from the array by index. If the index does not exist in the array, nothing happens. To remove an element by searching for its value, use :ref:`erase<class_Array_method_erase>` instead.
 
-\ **Note:** This method acts in-place and doesn't return a value.
+\ **Note:** This method acts in-place and doesn't return a modified array.
 
 \ **Note:** On large arrays, this method will be slower if the removed element is close to the beginning of the array (index 0). This is because all elements placed after the removed element have to be reindexed.
+
+\ **Note:** ``position`` cannot be negative. To remove an element relative to the end of the array, use ``arr.remove_at(arr.size() - (i + 1))``. To remove the last element from the array without returning the value, use ``arr.resize(arr.size() - 1)``.
 
 .. rst-class:: classref-item-separator
 
@@ -1029,7 +1045,9 @@ Removes an element from the array by index. If the index does not exist in the a
 
 :ref:`int<class_int>` **resize** **(** :ref:`int<class_int>` size **)**
 
-Resizes the array to contain a different number of elements. If the array size is smaller, elements are cleared, if bigger, new elements are ``null``.
+Resizes the array to contain a different number of elements. If the array size is smaller, elements are cleared, if bigger, new elements are ``null``. Returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` on success, or one of the other :ref:`Error<enum_@GlobalScope_Error>` values if the operation failed.
+
+\ **Note:** This method acts in-place and doesn't return a modified array.
 
 .. rst-class:: classref-item-separator
 
@@ -1098,6 +1116,8 @@ If either ``begin`` or ``end`` are negative, they will be relative to the end of
 If specified, ``step`` is the relative index between source elements. It can be negative, then ``begin`` must be higher than ``end``. For example, ``[0, 1, 2, 3, 4, 5].slice(5, 1, -2)`` returns ``[5, 3]``.
 
 If ``deep`` is true, each element will be copied by value rather than by reference.
+
+\ **Note:** To include the first element when ``step`` is negative, use ``arr.slice(begin, -arr.size() - 1, step)`` (i.e. ``[0, 1, 2].slice(1, -4, -1)`` returns ``[1, 0]``).
 
 .. rst-class:: classref-item-separator
 
@@ -1288,3 +1308,4 @@ Returns a reference to the element of type :ref:`Variant<class_Variant>` at the 
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

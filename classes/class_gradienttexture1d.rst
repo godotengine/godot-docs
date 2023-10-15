@@ -12,14 +12,14 @@ GradientTexture1D
 
 **Inherits:** :ref:`Texture2D<class_Texture2D>` **<** :ref:`Texture<class_Texture>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-Gradient-filled texture.
+A 1D texture that uses colors obtained from a :ref:`Gradient<class_Gradient>`.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-GradientTexture1D uses a :ref:`Gradient<class_Gradient>` to fill the texture data. The gradient will be filled from left to right using colors obtained from the gradient. This means the texture does not necessarily represent an exact copy of the gradient, but instead an interpolation of samples obtained from the gradient at fixed steps (see :ref:`width<class_GradientTexture1D_property_width>`). See also :ref:`GradientTexture2D<class_GradientTexture2D>`, :ref:`CurveTexture<class_CurveTexture>` and :ref:`CurveXYZTexture<class_CurveXYZTexture>`.
+A 1D texture that obtains colors from a :ref:`Gradient<class_Gradient>` to fill the texture data. The texture is filled by sampling the gradient for each pixel. Therefore, the texture does not necessarily represent an exact copy of the gradient, as it may miss some colors if there are not enough pixels. See also :ref:`GradientTexture2D<class_GradientTexture2D>`, :ref:`CurveTexture<class_CurveTexture>` and :ref:`CurveXYZTexture<class_CurveXYZTexture>`.
 
 .. rst-class:: classref-reftable-group
 
@@ -59,7 +59,7 @@ Property Descriptions
 - void **set_gradient** **(** :ref:`Gradient<class_Gradient>` value **)**
 - :ref:`Gradient<class_Gradient>` **get_gradient** **(** **)**
 
-The :ref:`Gradient<class_Gradient>` that will be used to fill the texture.
+The :ref:`Gradient<class_Gradient>` used to fill the texture.
 
 .. rst-class:: classref-item-separator
 
@@ -101,3 +101,4 @@ The number of color samples that will be obtained from the :ref:`Gradient<class_
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

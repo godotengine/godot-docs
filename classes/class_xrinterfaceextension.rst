@@ -21,6 +21,13 @@ Description
 
 External XR interface plugins should inherit from this class.
 
+.. rst-class:: classref-introduction-group
+
+Tutorials
+---------
+
+- :doc:`XR documentation index <../tutorials/xr/index>`
+
 .. rst-class:: classref-reftable-group
 
 Methods
@@ -57,6 +64,8 @@ Methods
    | :ref:`PackedStringArray<class_PackedStringArray>`      | :ref:`_get_suggested_pose_names<class_XRInterfaceExtension_method__get_suggested_pose_names>` **(** :ref:`StringName<class_StringName>` tracker_name **)** |virtual| |const|                                                                                                                                                                                                                                                                                                          |
    +--------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`PackedStringArray<class_PackedStringArray>`      | :ref:`_get_suggested_tracker_names<class_XRInterfaceExtension_method__get_suggested_tracker_names>` **(** **)** |virtual| |const|                                                                                                                                                                                                                                                                                                                                                     |
+   +--------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Dictionary<class_Dictionary>`                    | :ref:`_get_system_info<class_XRInterfaceExtension_method__get_system_info>` **(** **)** |virtual| |const|                                                                                                                                                                                                                                                                                                                                                                             |
    +--------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`TrackingStatus<enum_XRInterface_TrackingStatus>` | :ref:`_get_tracking_status<class_XRInterfaceExtension_method__get_tracking_status>` **(** **)** |virtual| |const|                                                                                                                                                                                                                                                                                                                                                                     |
    +--------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -278,6 +287,18 @@ Returns a :ref:`PackedStringArray<class_PackedStringArray>` with tracker names c
 
 ----
 
+.. _class_XRInterfaceExtension_method__get_system_info:
+
+.. rst-class:: classref-method
+
+:ref:`Dictionary<class_Dictionary>` **_get_system_info** **(** **)** |virtual| |const|
+
+Returns a :ref:`Dictionary<class_Dictionary>` with system information related to this interface.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_XRInterfaceExtension_method__get_tracking_status:
 
 .. rst-class:: classref-method
@@ -394,7 +415,7 @@ Called if this is our primary **XRInterfaceExtension** before we start processin
 
 void **_pre_render** **(** **)** |virtual|
 
-Called if this **XRInterfaceExtension** is active before rendering starts, most XR interfaces will sync tracking at this point in time.
+Called if this **XRInterfaceExtension** is active before rendering starts. Most XR interfaces will sync tracking at this point in time.
 
 .. rst-class:: classref-item-separator
 
@@ -406,7 +427,7 @@ Called if this **XRInterfaceExtension** is active before rendering starts, most 
 
 void **_process** **(** **)** |virtual|
 
-Called if this **XRInterfaceExtension** is active before our physics and game process is called. most XR interfaces will update its :ref:`XRPositionalTracker<class_XRPositionalTracker>`\ s at this point in time.
+Called if this **XRInterfaceExtension** is active before our physics and game process is called. Most XR interfaces will update its :ref:`XRPositionalTracker<class_XRPositionalTracker>`\ s at this point in time.
 
 .. rst-class:: classref-item-separator
 
@@ -540,3 +561,4 @@ Returns a valid :ref:`RID<class_RID>` for a texture to which we should render th
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

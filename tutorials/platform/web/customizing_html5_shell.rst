@@ -101,7 +101,7 @@ optionally overriding any :js:attr:`EngineConfig` parameters.
     });
 
 This snippet of code automatically loads and initializes the engine before starting the game.
-It uses the given configuration to to load the engine. The :js:meth:`engine.startGame <Engine.prototype.startGame>`
+It uses the given configuration to load the engine. The :js:meth:`engine.startGame <Engine.prototype.startGame>`
 method is asynchronous and returns a ``Promise``. This allows your control code to track if
 the game was loaded correctly without blocking execution or relying on polling.
 

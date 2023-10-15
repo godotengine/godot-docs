@@ -12,22 +12,14 @@ StyleBoxFlat
 
 **Inherits:** :ref:`StyleBox<class_StyleBox>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-Customizable :ref:`StyleBox<class_StyleBox>` with a given set of parameters (no texture required).
+A customizable :ref:`StyleBox<class_StyleBox>` that doesn't use a texture.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-This :ref:`StyleBox<class_StyleBox>` can be used to achieve all kinds of looks without the need of a texture. The following properties are customizable:
-
-- Color
-
-- Border width (individual width for each border)
-
-- Rounded corners (individual radius for each corner)
-
-- Shadow (with blur and offset)
+By configuring various properties of this style box, you can achieve many common looks without the need of a texture. This includes optionally rounded borders, antialiasing, shadows, and skew.
 
 Setting corner radius to high values is allowed. As soon as corners overlap, the stylebox will switch to a relative system.
 
@@ -57,7 +49,7 @@ Properties
    +-------------------------------+-------------------------------------------------------------------------------------------+-----------------------------+
    | :ref:`bool<class_bool>`       | :ref:`anti_aliasing<class_StyleBoxFlat_property_anti_aliasing>`                           | ``true``                    |
    +-------------------------------+-------------------------------------------------------------------------------------------+-----------------------------+
-   | :ref:`float<class_float>`     | :ref:`anti_aliasing_size<class_StyleBoxFlat_property_anti_aliasing_size>`                 | ``0.625``                   |
+   | :ref:`float<class_float>`     | :ref:`anti_aliasing_size<class_StyleBoxFlat_property_anti_aliasing_size>`                 | ``1.0``                     |
    +-------------------------------+-------------------------------------------------------------------------------------------+-----------------------------+
    | :ref:`Color<class_Color>`     | :ref:`bg_color<class_StyleBoxFlat_property_bg_color>`                                     | ``Color(0.6, 0.6, 0.6, 1)`` |
    +-------------------------------+-------------------------------------------------------------------------------------------+-----------------------------+
@@ -164,14 +156,16 @@ Antialiasing draws a small ring around the edges, which fades to transparency. A
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **anti_aliasing_size** = ``0.625``
+:ref:`float<class_float>` **anti_aliasing_size** = ``1.0``
 
 .. rst-class:: classref-property-setget
 
 - void **set_aa_size** **(** :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_aa_size** **(** **)**
 
-This changes the size of the faded ring. Higher values can be used to achieve a "blurry" effect.
+This changes the size of the antialiasing effect. ``1.0`` is recommended for an optimal result at 100% scale, identical to how rounded rectangles are rendered in web browsers and most vector drawing software.
+
+\ **Note:** Higher values may produce a blur effect but can also create undesired artifacts on small boxes with large-radius corners.
 
 .. rst-class:: classref-item-separator
 
@@ -675,3 +669,4 @@ Sets the expand margin to ``size`` pixels for all sides.
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

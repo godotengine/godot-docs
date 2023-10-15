@@ -13,6 +13,11 @@ Exporting for Android
 Exporting for Android has fewer requirements than compiling Godot for Android.
 The following steps detail what is needed to set up the Android SDK and the engine.
 
+.. attention::
+
+    Projects written in C# using Godot 4 currently cannot be exported to Android.
+    To use C# on Android, use Godot 3 instead.
+
 Install OpenJDK 11
 ------------------
 
@@ -148,10 +153,6 @@ Now fill in the following forms in your Android Export Presets:
 - **Release User:** Replace with the key alias.
 - **Release Password:** Key password. Note that the keystore password and the key password currently have to be the same.
 
-**Your export_presets.cfg file now contains sensitive information.** If you use
-a version control system, you should remove it from public repositories and add
-it to your ``.gitignore`` file or equivalent.
-
 Don't forget to uncheck the **Export With Debug** checkbox while exporting.
 
 .. image:: img/export-with-debug-button.png
@@ -176,3 +177,30 @@ and ARMv8 is usually sufficient to cover most devices in use today.
 You can optimize the size further by compiling an Android export template with
 only the features you need. See :ref:`doc_optimizing_for_size` for more
 information.
+
+Environment variables
+---------------------
+
+You can use the following environment variables to set export options outside of
+the editor. During the export process, these override the values that you set in
+the export menu.
+
+.. list-table:: Android export environment variables
+   :header-rows: 1
+
+   * - Export option
+     - Environment variable
+   * - Encryption / Encryption Key
+     - GODOT_SCRIPT_ENCRYPTION_KEY
+   * - Options / Keystore / Debug
+     - GODOT_ANDROID_KEYSTORE_DEBUG_PATH
+   * - Options / Keystore / Debug User
+     - GODOT_ANDROID_KEYSTORE_DEBUG_USER
+   * - Options / Keystore / Debug Password
+     - GODOT_ANDROID_KEYSTORE_DEBUG_PASSWORD
+   * - Options / Keystore / Release
+     - GODOT_ANDROID_KEYSTORE_RELEASE_PATH
+   * - Options / Keystore / Release User
+     - GODOT_ANDROID_KEYSTORE_RELEASE_USER
+   * - Options / Keystore / Release Password
+     - GODOT_ANDROID_KEYSTORE_RELEASE_PASSWORD

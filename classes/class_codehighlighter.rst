@@ -12,14 +12,14 @@ CodeHighlighter
 
 **Inherits:** :ref:`SyntaxHighlighter<class_SyntaxHighlighter>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-A syntax highlighter for code.
+A syntax highlighter intended for code.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-A syntax highlighter for code.
+By adjusting various properties of this resource, you can change the colors of strings, comments, numbers, and other text patterns inside a :ref:`TextEdit<class_TextEdit>` control.
 
 .. rst-class:: classref-reftable-group
 
@@ -396,3 +396,4 @@ Removes the member keyword.
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

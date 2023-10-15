@@ -12,16 +12,16 @@ BoxShape3D
 
 **Inherits:** :ref:`Shape3D<class_Shape3D>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-Box shape resource for 3D collisions.
+A 3D box shape used for physics collision.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-3D box shape to be added as a *direct* child of a :ref:`PhysicsBody3D<class_PhysicsBody3D>` or :ref:`Area3D<class_Area3D>` using a :ref:`CollisionShape3D<class_CollisionShape3D>` node.
+A 3D box shape, intended for use in physics. Usually used to provide a shape for a :ref:`CollisionShape3D<class_CollisionShape3D>`.
 
-\ **Performance:** Being a primitive collision shape, **BoxShape3D** is fast to check collisions against (though not as fast as :ref:`SphereShape3D<class_SphereShape3D>`).
+\ **Performance:** **BoxShape3D** is fast to check collisions against. It is faster than :ref:`CapsuleShape3D<class_CapsuleShape3D>` and :ref:`CylinderShape3D<class_CylinderShape3D>`, but slower than :ref:`SphereShape3D<class_SphereShape3D>`.
 
 .. rst-class:: classref-introduction-group
 
@@ -74,3 +74,4 @@ The box's width, height and depth.
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

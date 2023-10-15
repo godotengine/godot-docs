@@ -12,14 +12,14 @@ AESContext
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-Interface to low level AES encryption features.
+Provides access to AES encryption/decryption of raw data.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-This class provides access to AES encryption/decryption of raw data. Both AES-ECB and AES-CBC mode are supported.
+This class holds the context information required for encryption and decryption operations with AES (Advanced Encryption Standard). Both AES-ECB and AES-CBC modes are supported.
 
 
 .. tabs::
@@ -34,27 +34,27 @@ This class provides access to AES encryption/decryption of raw data. Both AES-EC
         var key = "My secret key!!!" # Key must be either 16 or 32 bytes.
         var data = "My secret text!!" # Data size must be multiple of 16 bytes, apply padding if needed.
         # Encrypt ECB
-        aes.start(AESContext.MODE_ECB_ENCRYPT, key.to_utf8())
-        var encrypted = aes.update(data.to_utf8())
+        aes.start(AESContext.MODE_ECB_ENCRYPT, key.to_utf8_buffer())
+        var encrypted = aes.update(data.to_utf8_buffer())
         aes.finish()
         # Decrypt ECB
-        aes.start(AESContext.MODE_ECB_DECRYPT, key.to_utf8())
+        aes.start(AESContext.MODE_ECB_DECRYPT, key.to_utf8_buffer())
         var decrypted = aes.update(encrypted)
         aes.finish()
         # Check ECB
-        assert(decrypted == data.to_utf8())
+        assert(decrypted == data.to_utf8_buffer())
     
         var iv = "My secret iv!!!!" # IV must be of exactly 16 bytes.
         # Encrypt CBC
-        aes.start(AESContext.MODE_CBC_ENCRYPT, key.to_utf8(), iv.to_utf8())
-        encrypted = aes.update(data.to_utf8())
+        aes.start(AESContext.MODE_CBC_ENCRYPT, key.to_utf8_buffer(), iv.to_utf8_buffer())
+        encrypted = aes.update(data.to_utf8_buffer())
         aes.finish()
         # Decrypt CBC
-        aes.start(AESContext.MODE_CBC_DECRYPT, key.to_utf8(), iv.to_utf8())
+        aes.start(AESContext.MODE_CBC_DECRYPT, key.to_utf8_buffer(), iv.to_utf8_buffer())
         decrypted = aes.update(encrypted)
         aes.finish()
         # Check CBC
-        assert(decrypted == data.to_utf8())
+        assert(decrypted == data.to_utf8_buffer())
 
  .. code-tab:: csharp
 
@@ -70,27 +70,27 @@ This class provides access to AES encryption/decryption of raw data. Both AES-EC
             string key = "My secret key!!!"; // Key must be either 16 or 32 bytes.
             string data = "My secret text!!"; // Data size must be multiple of 16 bytes, apply padding if needed.
             // Encrypt ECB
-            _aes.Start(AesContext.Mode.EcbEncrypt, key.ToUtf8());
-            byte[] encrypted = _aes.Update(data.ToUtf8());
+            _aes.Start(AesContext.Mode.EcbEncrypt, key.ToUtf8Buffer());
+            byte[] encrypted = _aes.Update(data.ToUtf8Buffer());
             _aes.Finish();
             // Decrypt ECB
-            _aes.Start(AesContext.Mode.EcbDecrypt, key.ToUtf8());
+            _aes.Start(AesContext.Mode.EcbDecrypt, key.ToUtf8Buffer());
             byte[] decrypted = _aes.Update(encrypted);
             _aes.Finish();
             // Check ECB
-            Debug.Assert(decrypted == data.ToUtf8());
+            Debug.Assert(decrypted == data.ToUtf8Buffer());
     
             string iv = "My secret iv!!!!"; // IV must be of exactly 16 bytes.
             // Encrypt CBC
-            _aes.Start(AesContext.Mode.EcbEncrypt, key.ToUtf8(), iv.ToUtf8());
-            encrypted = _aes.Update(data.ToUtf8());
+            _aes.Start(AesContext.Mode.EcbEncrypt, key.ToUtf8Buffer(), iv.ToUtf8Buffer());
+            encrypted = _aes.Update(data.ToUtf8Buffer());
             _aes.Finish();
             // Decrypt CBC
-            _aes.Start(AesContext.Mode.EcbDecrypt, key.ToUtf8(), iv.ToUtf8());
+            _aes.Start(AesContext.Mode.EcbDecrypt, key.ToUtf8Buffer(), iv.ToUtf8Buffer());
             decrypted = _aes.Update(encrypted);
             _aes.Finish();
             // Check CBC
-            Debug.Assert(decrypted == data.ToUtf8());
+            Debug.Assert(decrypted == data.ToUtf8Buffer());
         }
     }
 
@@ -232,3 +232,4 @@ Run the desired operation for this AES context. Will return a :ref:`PackedByteAr
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

@@ -12,18 +12,16 @@ Area2D
 
 **Inherits:** :ref:`CollisionObject2D<class_CollisionObject2D>` **<** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-2D area for detection, as well as physics and audio influence.
+A region of 2D space that detects other :ref:`CollisionObject2D<class_CollisionObject2D>`\ s entering or exiting it.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-2D area that detects :ref:`CollisionObject2D<class_CollisionObject2D>` nodes overlapping, entering, or exiting. Can also alter or override local physics parameters (gravity, damping) and route audio to custom audio buses.
+**Area2D** is a region of 2D space defined by one or multiple :ref:`CollisionShape2D<class_CollisionShape2D>` or :ref:`CollisionPolygon2D<class_CollisionPolygon2D>` child nodes. It detects when other :ref:`CollisionObject2D<class_CollisionObject2D>`\ s enter or exit it, and it also keeps track of which collision objects haven't exited it yet (i.e. which one are overlapping it).
 
-To give the area its shape, add a :ref:`CollisionShape2D<class_CollisionShape2D>` or a :ref:`CollisionPolygon2D<class_CollisionPolygon2D>` node as a *direct* child (or add multiple such nodes as direct children) of the area.
-
-\ **Warning:** See :ref:`ConcavePolygonShape2D<class_ConcavePolygonShape2D>` for a warning about possibly unexpected behavior when using that shape for an area.
+This node can also locally alter or override physics parameters (gravity, damping) and route audio to custom audio buses.
 
 .. rst-class:: classref-introduction-group
 
@@ -75,7 +73,7 @@ Properties
    +-------------------------------------------------+---------------------------------------------------------------------------------------+-------------------+
    | :ref:`bool<class_bool>`                         | :ref:`monitoring<class_Area2D_property_monitoring>`                                   | ``true``          |
    +-------------------------------------------------+---------------------------------------------------------------------------------------+-------------------+
-   | :ref:`float<class_float>`                       | :ref:`priority<class_Area2D_property_priority>`                                       | ``0.0``           |
+   | :ref:`int<class_int>`                           | :ref:`priority<class_Area2D_property_priority>`                                       | ``0``             |
    +-------------------------------------------------+---------------------------------------------------------------------------------------+-------------------+
 
 .. rst-class:: classref-reftable-group
@@ -551,14 +549,14 @@ If ``true``, the area detects bodies or areas entering and exiting it.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **priority** = ``0.0``
+:ref:`int<class_int>` **priority** = ``0``
 
 .. rst-class:: classref-property-setget
 
-- void **set_priority** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_priority** **(** **)**
+- void **set_priority** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_priority** **(** **)**
 
-The area's priority. Higher priority areas are processed first.
+The area's priority. Higher priority areas are processed first. The :ref:`World2D<class_World2D>`'s physics is always processed last, after all areas.
 
 .. rst-class:: classref-section-separator
 
@@ -657,3 +655,4 @@ The ``body`` argument can either be a :ref:`PhysicsBody2D<class_PhysicsBody2D>` 
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

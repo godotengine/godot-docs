@@ -1,3 +1,5 @@
+:article_outdated: True
+
 .. _doc_first_3d_game_player_movement:
 
 Moving the player with code
@@ -357,14 +359,14 @@ tab at the top of the editor to do so.
 |image1|
 
 If you closed the scene before, head to the *FileSystem* dock and double-click
-``Main.tscn`` to re-open it.
+``main.tscn`` to re-open it.
 
-To instantiate the ``Player``, right-click on the ``Main`` node and select *Instance
+To instantiate the ``Player``, right-click on the ``Main`` node and select *Instantiate
 Child Scene*.
 
 |image2|
 
-In the popup, double-click ``Player.tscn``. The character should appear in the
+In the popup, double-click ``player.tscn``. The character should appear in the
 center of the viewport.
 
 Adding a camera
@@ -444,7 +446,7 @@ work on the monsters.
 
 .. |image0| image:: img/03.player_movement_code/01.attach_script_to_player.webp
 .. |image1| image:: img/03.player_movement_code/02.clicking_main_tab.png
-.. |image2| image:: img/03.player_movement_code/03.instance_child_scene.png
+.. |image2| image:: img/03.player_movement_code/03.instance_child_scene.webp
 .. |image3| image:: img/03.player_movement_code/04.scene_tree_with_camera.png
 .. |image4| image:: img/03.player_movement_code/05.camera_preview_checkbox.png
 .. |image5| image:: img/03.player_movement_code/06.two_viewports.png

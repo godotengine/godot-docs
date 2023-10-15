@@ -12,16 +12,14 @@ VSlider
 
 **Inherits:** :ref:`Slider<class_Slider>` **<** :ref:`Range<class_Range>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-Vertical slider.
+A vertical slider that goes from bottom (min) to top (max).
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-Vertical slider. See :ref:`Slider<class_Slider>`. This one goes from bottom (min) to top (max).
-
-\ **Note:** The :ref:`Range.changed<class_Range_signal_changed>` and :ref:`Range.value_changed<class_Range_signal_value_changed>` signals are part of the :ref:`Range<class_Range>` class which this class inherits from.
+A vertical slider, used to adjust a value by moving a grabber along a vertical axis. It is a :ref:`Range<class_Range>`-based control and goes from bottom (min) to top (max). Note that this direction is the opposite of :ref:`VScrollBar<class_VScrollBar>`'s.
 
 .. rst-class:: classref-reftable-group
 
@@ -31,138 +29,11 @@ Properties
 .. table::
    :widths: auto
 
-   +------------------------------------------+-----------------------+--------------------------------------------------------------------------------+
-   | :ref:`SizeFlags<enum_Control_SizeFlags>` | size_flags_horizontal | ``0`` (overrides :ref:`Control<class_Control_property_size_flags_horizontal>`) |
-   +------------------------------------------+-----------------------+--------------------------------------------------------------------------------+
-   | :ref:`SizeFlags<enum_Control_SizeFlags>` | size_flags_vertical   | ``1`` (overrides :ref:`Control<class_Control_property_size_flags_vertical>`)   |
-   +------------------------------------------+-----------------------+--------------------------------------------------------------------------------+
-
-.. rst-class:: classref-reftable-group
-
-Theme Properties
-----------------
-
-.. table::
-   :widths: auto
-
-   +-----------------------------------+---------------------------------------------------------------------------------+-------+
-   | :ref:`int<class_int>`             | :ref:`grabber_offset<class_VSlider_theme_constant_grabber_offset>`              | ``0`` |
-   +-----------------------------------+---------------------------------------------------------------------------------+-------+
-   | :ref:`Texture2D<class_Texture2D>` | :ref:`grabber<class_VSlider_theme_icon_grabber>`                                |       |
-   +-----------------------------------+---------------------------------------------------------------------------------+-------+
-   | :ref:`Texture2D<class_Texture2D>` | :ref:`grabber_disabled<class_VSlider_theme_icon_grabber_disabled>`              |       |
-   +-----------------------------------+---------------------------------------------------------------------------------+-------+
-   | :ref:`Texture2D<class_Texture2D>` | :ref:`grabber_highlight<class_VSlider_theme_icon_grabber_highlight>`            |       |
-   +-----------------------------------+---------------------------------------------------------------------------------+-------+
-   | :ref:`Texture2D<class_Texture2D>` | :ref:`tick<class_VSlider_theme_icon_tick>`                                      |       |
-   +-----------------------------------+---------------------------------------------------------------------------------+-------+
-   | :ref:`StyleBox<class_StyleBox>`   | :ref:`grabber_area<class_VSlider_theme_style_grabber_area>`                     |       |
-   +-----------------------------------+---------------------------------------------------------------------------------+-------+
-   | :ref:`StyleBox<class_StyleBox>`   | :ref:`grabber_area_highlight<class_VSlider_theme_style_grabber_area_highlight>` |       |
-   +-----------------------------------+---------------------------------------------------------------------------------+-------+
-   | :ref:`StyleBox<class_StyleBox>`   | :ref:`slider<class_VSlider_theme_style_slider>`                                 |       |
-   +-----------------------------------+---------------------------------------------------------------------------------+-------+
-
-.. rst-class:: classref-section-separator
-
-----
-
-.. rst-class:: classref-descriptions-group
-
-Theme Property Descriptions
----------------------------
-
-.. _class_VSlider_theme_constant_grabber_offset:
-
-.. rst-class:: classref-themeproperty
-
-:ref:`int<class_int>` **grabber_offset** = ``0``
-
-Horizontal offset of the grabber.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_VSlider_theme_icon_grabber:
-
-.. rst-class:: classref-themeproperty
-
-:ref:`Texture2D<class_Texture2D>` **grabber**
-
-The texture for the grabber (the draggable element).
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_VSlider_theme_icon_grabber_disabled:
-
-.. rst-class:: classref-themeproperty
-
-:ref:`Texture2D<class_Texture2D>` **grabber_disabled**
-
-The texture for the grabber when it's disabled.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_VSlider_theme_icon_grabber_highlight:
-
-.. rst-class:: classref-themeproperty
-
-:ref:`Texture2D<class_Texture2D>` **grabber_highlight**
-
-The texture for the grabber when it's focused.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_VSlider_theme_icon_tick:
-
-.. rst-class:: classref-themeproperty
-
-:ref:`Texture2D<class_Texture2D>` **tick**
-
-The texture for the ticks, visible when :ref:`Slider.tick_count<class_Slider_property_tick_count>` is greater than 0.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_VSlider_theme_style_grabber_area:
-
-.. rst-class:: classref-themeproperty
-
-:ref:`StyleBox<class_StyleBox>` **grabber_area**
-
-The background of the area below the grabber.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_VSlider_theme_style_grabber_area_highlight:
-
-.. rst-class:: classref-themeproperty
-
-:ref:`StyleBox<class_StyleBox>` **grabber_area_highlight**
-
-The background of the area below the grabber that displays when it's being hovered or focused.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_VSlider_theme_style_slider:
-
-.. rst-class:: classref-themeproperty
-
-:ref:`StyleBox<class_StyleBox>` **slider**
-
-The background for the whole slider. Determines the width of the ``grabber_area``.
+   +--------------------------------------------------------+-----------------------+--------------------------------------------------------------------------------+
+   | |bitfield|\<:ref:`SizeFlags<enum_Control_SizeFlags>`\> | size_flags_horizontal | ``0`` (overrides :ref:`Control<class_Control_property_size_flags_horizontal>`) |
+   +--------------------------------------------------------+-----------------------+--------------------------------------------------------------------------------+
+   | |bitfield|\<:ref:`SizeFlags<enum_Control_SizeFlags>`\> | size_flags_vertical   | ``1`` (overrides :ref:`Control<class_Control_property_size_flags_vertical>`)   |
+   +--------------------------------------------------------+-----------------------+--------------------------------------------------------------------------------+
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
@@ -170,3 +41,4 @@ The background for the whole slider. Determines the width of the ``grabber_area`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

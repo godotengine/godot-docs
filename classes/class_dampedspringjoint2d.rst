@@ -12,14 +12,14 @@ DampedSpringJoint2D
 
 **Inherits:** :ref:`Joint2D<class_Joint2D>` **<** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-Damped spring constraint for 2D physics.
+A physics joint that connects two 2D physics bodies with a spring-like force.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-Damped spring constraint for 2D physics. This resembles a spring joint that always wants to go back to a given length.
+A physics joint that connects two 2D physics bodies with a spring-like force. This resembles a spring that always wants to stretch to a given length.
 
 .. rst-class:: classref-reftable-group
 
@@ -59,7 +59,7 @@ Property Descriptions
 - void **set_damping** **(** :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_damping** **(** **)**
 
-The spring joint's damping ratio. A value between ``0`` and ``1``. When the two bodies move into different directions the system tries to align them to the spring axis again. A high ``damping`` value forces the attached bodies to align faster.
+The spring joint's damping ratio. A value between ``0`` and ``1``. When the two bodies move into different directions the system tries to align them to the spring axis again. A high :ref:`damping<class_DampedSpringJoint2D_property_damping>` value forces the attached bodies to align faster.
 
 .. rst-class:: classref-item-separator
 
@@ -118,3 +118,4 @@ The higher the value, the less the bodies attached to the joint will deform it. 
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

@@ -28,11 +28,11 @@ This is useful to optimize the rendering of a high number of instances of a give
 Tutorials
 ---------
 
-- :doc:`Animating thousands of fish with MultiMeshInstance <../tutorials/performance/vertex_animation/animating_thousands_of_fish>`
-
 - :doc:`Using MultiMeshInstance <../tutorials/3d/using_multi_mesh_instance>`
 
 - :doc:`Optimization using MultiMeshes <../tutorials/performance/using_multimesh>`
+
+- :doc:`Animating thousands of fish with MultiMeshInstance <../tutorials/performance/vertex_animation/animating_thousands_of_fish>`
 
 .. rst-class:: classref-reftable-group
 
@@ -74,3 +74,4 @@ The :ref:`MultiMesh<class_MultiMesh>` resource that will be used and shared amon
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

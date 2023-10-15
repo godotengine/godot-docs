@@ -19,13 +19,8 @@ For compiling under macOS, the following is required:
 - `SCons 3.0+ <https://scons.org/pages/download.html>`_ build system.
 - `Xcode <https://apps.apple.com/us/app/xcode/id497799835>`_
   (or the more lightweight Command Line Tools for Xcode).
-
-.. warning::
-
-    If you are building the ``master`` branch, download and install the
-    `Vulkan SDK for macOS <https://vulkan.lunarg.com/sdk/home>`__. This
-    is **required** to compile Godot 4.x, as MoltenVK is used to translate Vulkan
-    to Metal (macOS doesn't support Vulkan out of the box).
+- `Vulkan SDK <https://sdk.lunarg.com/sdk/download/latest/mac/vulkan-sdk.dmg>`_
+  for MoltenVK (macOS doesn't support Vulkan out of the box).
 
 .. note:: If you have `Homebrew <https://brew.sh/>`_ installed, you can easily
           install SCons using the following command::
@@ -62,7 +57,7 @@ To compile for Apple Silicon (ARM64) powered Macs, use::
 
 To support both architectures in a single "Universal 2" binary, run the above two commands and then use ``lipo`` to bundle them together::
 
-    lipo -create bin/godot.macos.tools.x86_64 bin/godot.macos.tools.arm64 -output bin/godot.macos.tools.universal
+    lipo -create bin/godot.macos.editor.x86_64 bin/godot.macos.editor.arm64 -output bin/godot.macos.editor.universal
 
 If all goes well, the resulting binary executable will be placed in the
 ``bin/`` subdirectory. This executable file contains the whole engine and
@@ -76,12 +71,13 @@ Manager.
 
 To create an ``.app`` bundle like in the official builds, you need to use the
 template located in ``misc/dist/macos_tools.app``. Typically, for an optimized
-editor binary built with ``target=release_debug``::
+editor binary built with ``dev_build=yes``::
 
     cp -r misc/dist/macos_tools.app ./Godot.app
     mkdir -p Godot.app/Contents/MacOS
-    cp bin/godot.macos.opt.tools.universal Godot.app/Contents/MacOS/Godot
+    cp bin/godot.macos.editor.universal Godot.app/Contents/MacOS/Godot
     chmod +x Godot.app/Contents/MacOS/Godot
+    codesign --force --timestamp --options=runtime --entitlements misc/dist/macos/editor.entitlements -s - Godot.app
 
 .. note::
 

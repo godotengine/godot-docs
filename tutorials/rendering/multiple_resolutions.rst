@@ -1,5 +1,3 @@
-:article_outdated: True
-
 .. _doc_multiple_resolutions:
 
 Multiple resolutions
@@ -109,7 +107,7 @@ little easier. The :ref:`Viewport <class_Viewport>`
 node has several functions to handle resizing, and the root node of the
 scene tree is always a viewport (scenes loaded are instanced as a child
 of it, and it can always be accessed by calling
-``get_tree().get_root()`` or ``get_node("/root")``).
+``get_tree().root`` or ``get_node("/root")``).
 
 In any case, while changing the root Viewport params is probably the
 most flexible way to deal with the problem, it can be a lot of work,
@@ -147,7 +145,7 @@ demonstrate the effect of different stretch modes. A single sprite, also
 
    .. image:: img/stretch_disabled_expand.gif
 
--  **Stretch Mode = 2D**: In this mode, the base size specified in
+-  **Stretch Mode = Canvas Items**: In this mode, the base size specified in
    width and height in the project settings is
    stretched to cover the whole screen (taking the **Stretch Aspect**
    setting into account). This means that everything is rendered
@@ -291,7 +289,7 @@ Desktop game
 **Non-pixel art:**
 
 - Set the base window width to ``1920`` and window height to ``1080``. If you have a
-  display smaller than 1920×1080, set **Test Width** and **Test Height** to
+  display smaller than 1920×1080, set **Window Width Override** and **Window Height Override** to
   lower values to make the window smaller when the project starts.
 - Alternatively, if you're targeting high-end devices primarily, set the base
   window width to ``3840`` and window height to ``2160``.
@@ -363,7 +361,7 @@ to change the display orientation project setting.
 Mobile game in portrait mode
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-- Set the base window width to ``720`` and window height to ``1080``.
+- Set the base window width to ``720`` and window height to ``1280``.
 - Alternatively, if you're targeting high-end devices primarily, set the base
   window width to ``1080`` and window height to ``1920``.
   This allows you to provide higher resolution 2D assets, resulting in crisper
@@ -436,8 +434,9 @@ Reducing aliasing on downsampling
 If the game has a very high base resolution (e.g. 3840×2160), aliasing might
 appear when downsampling to something considerably lower like 1280×720.
 
-To resolve this, you can enable mipmaps on all your 2D textures. However, enabling mipmaps
-will increase memory usage which may be problematic on low-end mobile devices.
+To resolve this, you can :ref:`enable mipmaps <doc_importing_images_mipmaps>` on
+all your 2D textures. However, enabling mipmaps will increase memory usage which
+can be an issue on low-end mobile devices.
 
 Handling aspect ratios
 ----------------------

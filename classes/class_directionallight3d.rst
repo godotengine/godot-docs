@@ -26,7 +26,9 @@ A directional light is a type of :ref:`Light3D<class_Light3D>` node that models 
 Tutorials
 ---------
 
-- :doc:`Lights and shadows <../tutorials/3d/lights_and_shadows>`
+- :doc:`3D lights and shadows <../tutorials/3d/lights_and_shadows>`
+
+- :doc:`Faking global illumination <../tutorials/3d/global_illumination/faking_global_illumination>`
 
 .. rst-class:: classref-reftable-group
 
@@ -293,3 +295,4 @@ Set whether this **DirectionalLight3D** is visible in the sky, in the scene, or 
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

@@ -40,7 +40,7 @@ Start by declaring the member variables this object will need:
     public partial class Player : Area2D
     {
         [Export]
-        public int Speed = 400; // How fast the player will move (pixels/sec).
+        public int Speed { get; set; } = 400; // How fast the player will move (pixels/sec).
 
         public Vector2 ScreenSize; // Size of the game window.
     }
@@ -93,16 +93,17 @@ value written in the script.
 
     If you're using C#, you need to (re)build the project assemblies
     whenever you want to see new export variables or signals. This
-    build can be manually triggered by clicking the "Build" button at
+    build can be manually triggered by clicking the **Build** button at
     the top right of the editor.
 
     .. image:: img/build_dotnet.webp
 
-    A manual build can also be triggered from the MSBuild Panel. Click
-    the word "MSBuild" at the bottom of the editor window to reveal the
-    MSBuild Panel, then click the "Build" button.
-
 .. image:: img/export_variable.webp
+
+Your ``player.gd`` script should already contain
+a ``_ready()`` and a ``_process()`` function.
+If you didn't select the default template shown above,
+create these functions while following the lesson.
 
 The ``_ready()`` function is called when a node enters the scene tree, which is
 a good time to find the size of the game window:
@@ -297,8 +298,7 @@ the ``_process`` function (make sure it's not indented under the `else`):
  .. code-tab:: gdscript GDScript
 
         position += velocity * delta
-        position.x = clamp(position.x, 0, screen_size.x)
-        position.y = clamp(position.y, 0, screen_size.y)
+        position = position.clamp(Vector2.ZERO, screen_size)
 
  .. code-tab:: csharp
 

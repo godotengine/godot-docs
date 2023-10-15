@@ -14,14 +14,14 @@ Translation
 
 **Inherited By:** :ref:`OptimizedTranslation<class_OptimizedTranslation>`
 
-Language Translation.
+A language translation that maps a collection of strings to their individual translations.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-Translations are resources that can be loaded and unloaded on demand. They map a string to another string.
+**Translation**\ s are resources that can be loaded and unloaded on demand. They map a collection of strings to their individual translations, and they also provide convenience methods for pluralization.
 
 .. rst-class:: classref-introduction-group
 
@@ -233,3 +233,4 @@ Returns all the messages (translated text).
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

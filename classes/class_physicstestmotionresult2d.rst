@@ -12,14 +12,14 @@ PhysicsTestMotionResult2D
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-Result from a 2D body motion test.
+Describes the motion and collision result from :ref:`PhysicsServer2D.body_test_motion<class_PhysicsServer2D_method_body_test_motion>`.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-This class contains the motion and collision result from :ref:`PhysicsServer2D.body_test_motion<class_PhysicsServer2D_method_body_test_motion>`.
+Describes the motion and collision result from :ref:`PhysicsServer2D.body_test_motion<class_PhysicsServer2D_method_body_test_motion>`.
 
 .. rst-class:: classref-reftable-group
 
@@ -224,3 +224,4 @@ Returns the moving object's travel before collision.
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

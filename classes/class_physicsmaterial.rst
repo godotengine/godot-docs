@@ -12,14 +12,14 @@ PhysicsMaterial
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-A material for physics properties.
+Holds physics-related properties of a surface, namely its roughness and bounciness.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-Provides a means of modifying the collision properties of a :ref:`PhysicsBody3D<class_PhysicsBody3D>`.
+Holds physics-related properties of a surface, namely its roughness and bounciness. This class is used to apply these properties to a physics body.
 
 .. rst-class:: classref-reftable-group
 
@@ -118,3 +118,4 @@ If ``true``, the physics engine will use the friction of the object marked as "r
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

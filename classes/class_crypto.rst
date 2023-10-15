@@ -12,16 +12,16 @@ Crypto
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-Access to advanced cryptographic functionalities.
+Provides access to advanced cryptographic functionalities.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-The Crypto class allows you to access some more advanced cryptographic functionalities in Godot.
+The Crypto class provides access to advanced cryptographic functionalities.
 
-For now, this includes generating cryptographically secure random bytes, RSA keys and self-signed X509 certificates generation, asymmetric key encryption/decryption, and signing/verification.
+Currently, this includes asymmetric key encryption/decryption, signing/verification, and generating cryptographically secure random bytes, RSA keys, HMAC digests, and self-signed :ref:`X509Certificate<class_X509Certificate>`\ s.
 
 
 .. tabs::
@@ -44,7 +44,7 @@ For now, this includes generating cryptographically secure random bytes, RSA key
         cert.save("user://generated.crt")
         # Encryption
         var data = "Some data"
-        var encrypted = crypto.encrypt(key, data.to_utf8())
+        var encrypted = crypto.encrypt(key, data.to_utf8_buffer())
         # Decryption
         var decrypted = crypto.decrypt(key, encrypted)
         # Signing
@@ -53,7 +53,7 @@ For now, this includes generating cryptographically secure random bytes, RSA key
         var verified = crypto.verify(HashingContext.HASH_SHA256, data.sha256_buffer(), signature, key)
         # Checks
         assert(verified)
-        assert(data.to_utf8() == decrypted)
+        assert(data.to_utf8_buffer() == decrypted)
 
  .. code-tab:: csharp
 
@@ -77,7 +77,7 @@ For now, this includes generating cryptographically secure random bytes, RSA key
             _cert.Save("user://generated.crt");
             // Encryption
             string data = "Some data";
-            byte[] encrypted = _crypto.Encrypt(_key, data.ToUtf8());
+            byte[] encrypted = _crypto.Encrypt(_key, data.ToUtf8Buffer());
             // Decryption
             byte[] decrypted = _crypto.Decrypt(_key, encrypted);
             // Signing
@@ -86,7 +86,7 @@ For now, this includes generating cryptographically secure random bytes, RSA key
             bool verified = _crypto.Verify(HashingContext.HashType.Sha256, Data.Sha256Buffer(), signature, _key);
             // Checks
             Debug.Assert(verified);
-            Debug.Assert(data.ToUtf8() == decrypted);
+            Debug.Assert(data.ToUtf8Buffer() == decrypted);
         }
     }
 
@@ -270,3 +270,4 @@ Verify that a given ``signature`` for ``hash`` of type ``hash_type`` against the
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

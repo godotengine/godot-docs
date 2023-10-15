@@ -16,7 +16,7 @@ Export
    exporting_for_uwp
    exporting_for_ios
    exporting_for_android
-   android_custom_build
+   android_gradle_build
    exporting_for_web
    exporting_for_dedicated_servers
    one-click_deploy

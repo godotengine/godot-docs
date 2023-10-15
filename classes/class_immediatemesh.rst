@@ -19,7 +19,32 @@ Mesh optimized for creating geometry manually.
 Description
 -----------
 
-Mesh optimized for creating geometry manually, similar to OpenGL1.x immediate mode.
+A mesh type optimized for creating geometry manually, similar to OpenGL 1.x immediate mode.
+
+Here's a sample on how to generate a triangular face:
+
+
+.. tabs::
+
+ .. code-tab:: gdscript
+
+    var mesh = ImmediateMesh.new()
+    mesh.surface_begin(Mesh.PRIMITIVE_TRIANGLES)
+    mesh.surface_add_vertex(Vector3.LEFT)
+    mesh.surface_add_vertex(Vector3.FORWARD)
+    mesh.surface_add_vertex(Vector3.ZERO)
+    mesh.surface_end()
+
+
+
+\ **Note:** Generating complex geometries with **ImmediateMesh** is highly inefficient. Instead, it is designed to generate simple geometry that changes often.
+
+.. rst-class:: classref-introduction-group
+
+Tutorials
+---------
+
+- :doc:`Using ImmediateMesh <../tutorials/3d/procedural_geometry/immediatemesh>`
 
 .. rst-class:: classref-reftable-group
 
@@ -182,3 +207,4 @@ Set the UV2 attribute that will be pushed with the next vertex.
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

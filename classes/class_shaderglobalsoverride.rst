@@ -12,9 +12,25 @@ ShaderGlobalsOverride
 
 **Inherits:** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-.. container:: contribute
+A node used to override global shader parameters' values in a scene.
 
-	There is currently no description for this class. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+.. rst-class:: classref-introduction-group
+
+Description
+-----------
+
+Similar to how a :ref:`WorldEnvironment<class_WorldEnvironment>` node can be used to override the environment while a specific scene is loaded, **ShaderGlobalsOverride** can be used to override global shader parameters temporarily. Once the node is removed, the project-wide values for the global shader parameters are restored. See the :ref:`RenderingServer<class_RenderingServer>` ``global_shader_parameter_*`` methods for more information.
+
+\ **Note:** Only one **ShaderGlobalsOverride** can be used per scene. If there is more than one **ShaderGlobalsOverride** node in the scene tree, only the first node (in tree order) will be taken into account.
+
+\ **Note:** All **ShaderGlobalsOverride** nodes are made part of a ``"shader_overrides_group"`` group when they are added to the scene tree. The currently active **ShaderGlobalsOverride** node also has a ``"shader_overrides_group_active"`` group added to it. You can use this to check which **ShaderGlobalsOverride** node is currently active.
+
+.. rst-class:: classref-introduction-group
+
+Tutorials
+---------
+
+- :doc:`Shading language <../tutorials/shaders/shader_reference/shading_language>`
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
@@ -22,3 +38,4 @@ ShaderGlobalsOverride
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

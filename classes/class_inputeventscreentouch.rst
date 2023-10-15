@@ -12,23 +12,21 @@ InputEventScreenTouch
 
 **Inherits:** :ref:`InputEventFromWindow<class_InputEventFromWindow>` **<** :ref:`InputEvent<class_InputEvent>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-Input event type for screen touch events.
-
-(only available on mobile devices)
+Represents a screen touch event.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-Stores multi-touch press/release information. Supports touch press, touch release and :ref:`index<class_InputEventScreenTouch_property_index>` for multi-touch count and order.
+Stores information about multi-touch press/release input events. Supports touch press, touch release and :ref:`index<class_InputEventScreenTouch_property_index>` for multi-touch count and order.
 
 .. rst-class:: classref-introduction-group
 
 Tutorials
 ---------
 
-- :doc:`InputEvent <../tutorials/inputs/inputevent>`
+- :doc:`Using InputEvent <../tutorials/inputs/inputevent>`
 
 .. rst-class:: classref-reftable-group
 
@@ -38,6 +36,8 @@ Properties
 .. table::
    :widths: auto
 
+   +-------------------------------+--------------------------------------------------------------------+-------------------+
+   | :ref:`bool<class_bool>`       | :ref:`canceled<class_InputEventScreenTouch_property_canceled>`     | ``false``         |
    +-------------------------------+--------------------------------------------------------------------+-------------------+
    | :ref:`bool<class_bool>`       | :ref:`double_tap<class_InputEventScreenTouch_property_double_tap>` | ``false``         |
    +-------------------------------+--------------------------------------------------------------------+-------------------+
@@ -56,6 +56,23 @@ Properties
 
 Property Descriptions
 ---------------------
+
+.. _class_InputEventScreenTouch_property_canceled:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **canceled** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_canceled** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_canceled** **(** **)**
+
+If ``true``, the touch event has been canceled.
+
+.. rst-class:: classref-item-separator
+
+----
 
 .. _class_InputEventScreenTouch_property_double_tap:
 
@@ -127,3 +144,4 @@ If ``true``, the touch's state is pressed. If ``false``, the touch's state is re
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

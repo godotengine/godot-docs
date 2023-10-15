@@ -21,6 +21,8 @@ Description
 
 **MethodTweener** is similar to a combination of :ref:`CallbackTweener<class_CallbackTweener>` and :ref:`PropertyTweener<class_PropertyTweener>`. It calls a method providing an interpolated value as a parameter. See :ref:`Tween.tween_method<class_Tween_method_tween_method>` for more usage information.
 
+The tweener will finish automatically if the callback's target object is freed.
+
 \ **Note:** :ref:`Tween.tween_method<class_Tween_method_tween_method>` is the only correct way to create **MethodTweener**. Any **MethodTweener** created manually will not function correctly.
 
 .. rst-class:: classref-reftable-group
@@ -86,3 +88,4 @@ Sets the type of used transition from :ref:`TransitionType<enum_Tween_Transition
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

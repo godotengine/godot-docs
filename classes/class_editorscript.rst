@@ -68,9 +68,9 @@ Methods
    +-----------------------------------------------+--------------------------------------------------------------------------------------------------------+
    | void                                          | :ref:`add_root_node<class_EditorScript_method_add_root_node>` **(** :ref:`Node<class_Node>` node **)** |
    +-----------------------------------------------+--------------------------------------------------------------------------------------------------------+
-   | :ref:`EditorInterface<class_EditorInterface>` | :ref:`get_editor_interface<class_EditorScript_method_get_editor_interface>` **(** **)**                |
+   | :ref:`EditorInterface<class_EditorInterface>` | :ref:`get_editor_interface<class_EditorScript_method_get_editor_interface>` **(** **)** |const|        |
    +-----------------------------------------------+--------------------------------------------------------------------------------------------------------+
-   | :ref:`Node<class_Node>`                       | :ref:`get_scene<class_EditorScript_method_get_scene>` **(** **)**                                      |
+   | :ref:`Node<class_Node>`                       | :ref:`get_scene<class_EditorScript_method_get_scene>` **(** **)** |const|                              |
    +-----------------------------------------------+--------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
@@ -112,9 +112,11 @@ Adds ``node`` as a child of the root node in the editor context.
 
 .. rst-class:: classref-method
 
-:ref:`EditorInterface<class_EditorInterface>` **get_editor_interface** **(** **)**
+:ref:`EditorInterface<class_EditorInterface>` **get_editor_interface** **(** **)** |const|
 
 Returns the :ref:`EditorInterface<class_EditorInterface>` singleton instance.
+
+\ *Deprecated.* :ref:`EditorInterface<class_EditorInterface>` is a global singleton and can be accessed directly by its name.
 
 .. rst-class:: classref-item-separator
 
@@ -124,7 +126,7 @@ Returns the :ref:`EditorInterface<class_EditorInterface>` singleton instance.
 
 .. rst-class:: classref-method
 
-:ref:`Node<class_Node>` **get_scene** **(** **)**
+:ref:`Node<class_Node>` **get_scene** **(** **)** |const|
 
 Returns the Editor's currently active scene.
 
@@ -134,3 +136,4 @@ Returns the Editor's currently active scene.
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

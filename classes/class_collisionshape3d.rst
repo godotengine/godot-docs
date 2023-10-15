@@ -12,18 +12,16 @@ CollisionShape3D
 
 **Inherits:** :ref:`Node3D<class_Node3D>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-Node that represents collision shape data in 3D space.
+A node that provides a :ref:`Shape3D<class_Shape3D>` to a :ref:`CollisionObject3D<class_CollisionObject3D>` parent.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-Editor facility for creating and editing collision shapes in 3D space. Set the :ref:`shape<class_CollisionShape3D_property_shape>` property to configure the shape. **IMPORTANT**: this is an Editor-only helper to create shapes, use :ref:`CollisionObject3D.shape_owner_get_shape<class_CollisionObject3D_method_shape_owner_get_shape>` to get the actual shape.
+A node that provides a :ref:`Shape3D<class_Shape3D>` to a :ref:`CollisionObject3D<class_CollisionObject3D>` parent and allows to edit it. This can give a detection shape to an :ref:`Area3D<class_Area3D>` or turn a :ref:`PhysicsBody3D<class_PhysicsBody3D>` into a solid object.
 
-You can use this node to represent all sorts of collision shapes, for example, add this to an :ref:`Area3D<class_Area3D>` to give it a detection shape, or add it to a :ref:`PhysicsBody3D<class_PhysicsBody3D>` to create a solid object.
-
-\ **Warning:** A non-uniformly scaled CollisionShape3D node will probably not function as expected. Please make sure to keep its scale uniform (i.e. the same on all axes), and change the size of its :ref:`shape<class_CollisionShape3D_property_shape>` resource instead.
+\ **Warning:** A non-uniformly scaled **CollisionShape3D** will likely not behave as expected. Make sure to keep its scale the same on all axes and adjust its :ref:`shape<class_CollisionShape3D_property_shape>` resource instead.
 
 .. rst-class:: classref-introduction-group
 
@@ -132,7 +130,7 @@ Sets the collision shape's shape to the addition of all its convexed :ref:`MeshI
 
 void **resource_changed** **(** :ref:`Resource<class_Resource>` resource **)**
 
-If this method exists within a script it will be called whenever the shape resource has been modified.
+*Obsoleted.* Use :ref:`Resource.changed<class_Resource_signal_changed>` instead.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
@@ -140,3 +138,4 @@ If this method exists within a script it will be called whenever the shape resou
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

@@ -19,9 +19,14 @@ A custom shader program with a visual editor.
 Description
 -----------
 
-This class allows you to define a custom shader program that can be used for various materials to render objects.
+This class provides a graph-like visual editor for creating a :ref:`Shader<class_Shader>`. Although **VisualShader**\ s do not require coding, they share the same logic with script shaders. They use :ref:`VisualShaderNode<class_VisualShaderNode>`\ s that can be connected to each other to control the flow of the shader. The visual shader graph is converted to a script shader behind the scenes.
 
-The visual shader editor creates the shader.
+.. rst-class:: classref-introduction-group
+
+Tutorials
+---------
+
+- :doc:`Using VisualShaders <../tutorials/shaders/visual_shaders>`
 
 .. rst-class:: classref-reftable-group
 
@@ -574,3 +579,4 @@ Sets the position of the specified node.
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

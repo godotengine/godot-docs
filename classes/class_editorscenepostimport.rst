@@ -80,7 +80,7 @@ The :ref:`_post_import<class_EditorScenePostImport_method__post_import>` callbac
 Tutorials
 ---------
 
-- `Importing 3D scenes: Custom script <../tutorials/assets_pipeline/importing_scenes.html#custom-script>`__
+- `Importing 3D scenes: Configuration: Using import scripts for automation <../tutorials/assets_pipeline/importing_3d_scenes/import_configuration.html#using-import-scripts-for-automation>`__
 
 .. rst-class:: classref-reftable-group
 
@@ -131,3 +131,4 @@ Returns the source file path which got imported (e.g. ``res://scene.dae``).
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

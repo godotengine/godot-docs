@@ -15,6 +15,11 @@ This requires support for `WebAssembly
 `SharedArrayBuffer <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer>`_
 in the user's browser.
 
+.. attention::
+
+    Projects written in C# using Godot 4 currently cannot be exported to the
+    web. To use C# on web platforms, use Godot 3 instead.
+
 .. important:: Use the browser-integrated developer console, usually opened
                with :kbd:`F12`, to view **debug information** like JavaScript,
                engine, and WebGL errors.
@@ -33,13 +38,6 @@ in the user's browser.
 .. warning:: SharedArrayBuffer requires a :ref:`secure context <doc_javascript_secure_contexts>`.
              Browsers also require that the web page is served with specific
              `cross-origin isolation headers <https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cross-Origin-Embedder-Policy>`__.
-
-.. note::
-
-    If you use Linux, due to
-    `poor Firefox WebGL performance <https://bugzilla.mozilla.org/show_bug.cgi?id=1010527>`__,
-    it's recommended to play the exported project using a Chromium-based browser
-    instead of Firefox.
 
 WebGL version
 -------------
@@ -229,6 +227,15 @@ The ``.pck`` file is binary, usually delivered with the MIME-type
              other than :mimetype:`application/wasm` can prevent some start-up
              optimizations.
 
+.. tip::
+    Godot 4 web exports use the `SharedArrayBuffer <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer>`__, and require the following CORS headers to be set when serving the files:
+
+    ::
+        Cross-Origin-Opener-Policy: same-origin
+        Cross-Origin-Embedder-Policy: require-corp
+
+
+
 Delivering the files with server-side compression is recommended especially for
 the ``.pck`` and ``.wasm`` files, which are usually large in size.
 The WebAssembly module compresses particularly well, down to around a quarter
@@ -368,3 +375,18 @@ defaulting to ``false`` to prevent polluting the global namespace:
         // thus adding a new JavaScript global variable `SomeGlobal`
         JavaScriptBridge.Eval("var SomeGlobal = {};", true);
     }
+
+Environment variables
+---------------------
+
+You can use the following environment variables to set export options outside of
+the editor. During the export process, these override the values that you set in
+the export menu.
+
+.. list-table:: HTML5 export environment variables
+   :header-rows: 1
+
+   * - Export option
+     - Environment variable
+   * - Encryption / Encryption Key
+     - GODOT_SCRIPT_ENCRYPTION_KEY

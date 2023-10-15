@@ -12,16 +12,14 @@ WorldBoundaryShape2D
 
 **Inherits:** :ref:`Shape2D<class_Shape2D>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-World boundary (infinite plane) shape resource for 2D physics.
+A 2D world boundary (half-plane) shape used for physics collision.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-2D world boundary shape to be added as a *direct* child of a :ref:`PhysicsBody2D<class_PhysicsBody2D>` or :ref:`Area2D<class_Area2D>` using a :ref:`CollisionShape2D<class_CollisionShape2D>` node. **WorldBoundaryShape2D** works like an infinite plane and will not allow any physics body to go to the negative side. Note that the :ref:`normal<class_WorldBoundaryShape2D_property_normal>` matters; anything "below" the plane will collide with it. If the **WorldBoundaryShape2D** is used in a :ref:`PhysicsBody2D<class_PhysicsBody2D>`, it will cause colliding objects placed "below" it to teleport "above" the plane.
-
-\ **Performance:** Being a primitive collision shape, **WorldBoundaryShape2D** is fast to check collisions against.
+A 2D world boundary shape, intended for use in physics. **WorldBoundaryShape2D** works like an infinite straight line that forces all physics bodies to stay above it. The line's normal determines which direction is considered as "above" and in the editor, the smaller line over it represents this direction. It can for example be used for endless flat floors.
 
 .. rst-class:: classref-reftable-group
 
@@ -57,7 +55,9 @@ Property Descriptions
 - void **set_distance** **(** :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_distance** **(** **)**
 
-The line's distance from the origin.
+The distance from the origin to the line, expressed in terms of :ref:`normal<class_WorldBoundaryShape2D_property_normal>` (according to its direction and magnitude). Actual absolute distance from the origin to the line can be calculated as ``abs(distance) / normal.length()``.
+
+In the scalar equation of the line ``ax + by = d``, this is ``d``, while the ``(a, b)`` coordinates are represented by the :ref:`normal<class_WorldBoundaryShape2D_property_normal>` property.
 
 .. rst-class:: classref-item-separator
 
@@ -74,7 +74,7 @@ The line's distance from the origin.
 - void **set_normal** **(** :ref:`Vector2<class_Vector2>` value **)**
 - :ref:`Vector2<class_Vector2>` **get_normal** **(** **)**
 
-The line's normal. Defaults to ``Vector2.UP``.
+The line's normal, typically a unit vector. Its direction indicates the non-colliding half-plane. Can be of any length but zero. Defaults to :ref:`Vector2.UP<class_Vector2_constant_UP>`.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
@@ -82,3 +82,4 @@ The line's normal. Defaults to ``Vector2.UP``.
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

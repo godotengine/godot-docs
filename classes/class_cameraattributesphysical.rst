@@ -27,6 +27,13 @@ The default settings are intended for use in an outdoor environment, tips for se
 
 \ **Note:** Depth of field blur is only supported in the Forward+ and Mobile rendering methods, not Compatibility.
 
+.. rst-class:: classref-introduction-group
+
+Tutorials
+---------
+
+- :doc:`Physical light and camera units <../tutorials/3d/physical_light_and_camera_units>`
+
 .. rst-class:: classref-reftable-group
 
 Properties
@@ -233,3 +240,4 @@ Returns the vertical field of view that corresponds to the :ref:`frustum_focal_l
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

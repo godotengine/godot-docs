@@ -12,21 +12,21 @@ InputEventJoypadMotion
 
 **Inherits:** :ref:`InputEvent<class_InputEvent>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-Input event type for gamepad joysticks and other motions. For buttons, see ``InputEventJoypadButton``.
+Represents axis motions (such as joystick or analog triggers) from a gamepad.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-Stores information about joystick motions. One **InputEventJoypadMotion** represents one axis at a time.
+Stores information about joystick motions. One **InputEventJoypadMotion** represents one axis at a time. For gamepad buttons, see :ref:`InputEventJoypadButton<class_InputEventJoypadButton>`.
 
 .. rst-class:: classref-introduction-group
 
 Tutorials
 ---------
 
-- :doc:`InputEvent <../tutorials/inputs/inputevent>`
+- :doc:`Using InputEvent <../tutorials/inputs/inputevent>`
 
 .. rst-class:: classref-reftable-group
 
@@ -87,3 +87,4 @@ Current position of the joystick on the given axis. The value ranges from ``-1.0
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

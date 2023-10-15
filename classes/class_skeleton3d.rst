@@ -12,18 +12,18 @@ Skeleton3D
 
 **Inherits:** :ref:`Node3D<class_Node3D>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-Skeleton for characters and animated objects.
+A node containing a bone hierarchy, used to create a 3D skeletal animation.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-Skeleton3D provides a hierarchical interface for managing bones, including pose, rest and animation (see :ref:`Animation<class_Animation>`). It can also use ragdoll physics.
+**Skeleton3D** provides an interface for managing a hierarchy of bones, including pose, rest and animation (see :ref:`Animation<class_Animation>`). It can also use ragdoll physics.
 
-The overall transform of a bone with respect to the skeleton is determined by the following hierarchical order: rest pose, custom pose and pose.
+The overall transform of a bone with respect to the skeleton is determined by bone pose. Bone rest defines the initial transform of the bone pose.
 
-Note that "global pose" below refers to the overall transform of the bone with respect to skeleton, so it not the actual global/world transform of the bone.
+Note that "global pose" below refers to the overall transform of the bone with respect to skeleton, so it is not the actual global/world transform of the bone.
 
 To setup different types of inverse kinematics, consider using :ref:`SkeletonIK3D<class_SkeletonIK3D>`, or add a custom IK implementation in :ref:`Node._process<class_Node_method__process>` as a child node.
 
@@ -257,7 +257,7 @@ Property Descriptions
 - void **set_motion_scale** **(** :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_motion_scale** **(** **)**
 
-Multiplies the position 3D track animation.
+Multiplies the 3D position track animation.
 
 \ **Note:** Unless this value is ``1.0``, the key value in animation will not match the actual position value.
 
@@ -358,6 +358,8 @@ Returns the bone index that matches ``name`` as its name.
 void **force_update_all_bone_transforms** **(** **)**
 
 Force updates the bone transforms/poses for all bones in the skeleton.
+
+\ *Deprecated.* Do not use.
 
 .. rst-class:: classref-item-separator
 
@@ -479,7 +481,7 @@ Returns the bone index which is the parent of the bone at ``bone_idx``. If -1, t
 
 :ref:`Transform3D<class_Transform3D>` **get_bone_pose** **(** :ref:`int<class_int>` bone_idx **)** |const|
 
-Returns the pose transform of the specified bone. Pose is applied on top of the custom pose, which is applied on top the rest pose.
+Returns the pose transform of the specified bone.
 
 .. rst-class:: classref-item-separator
 
@@ -805,3 +807,4 @@ Unparents the bone at ``bone_idx`` and sets its rest position to that of its par
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

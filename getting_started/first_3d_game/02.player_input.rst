@@ -1,3 +1,5 @@
+:article_outdated: True
+
 .. _doc_first_3d_game_player_scene_and_input:
 
 Player scene and input actions
@@ -79,7 +81,7 @@ You can toggle the model's visibility by clicking the eye icon next to the
 
 |image5|
 
-Save the scene as ``Player.tscn``
+Save the scene as ``player.tscn``
 
 With the nodes ready, we can almost get coding. But first, we need to define
 some input actions.

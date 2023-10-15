@@ -201,7 +201,7 @@ Starts a new multiplayer client connecting to the given ``url``. TLS certificate
 
 :ref:`Error<enum_@GlobalScope_Error>` **create_server** **(** :ref:`int<class_int>` port, :ref:`String<class_String>` bind_address="*", :ref:`TLSOptions<class_TLSOptions>` tls_server_options=null **)**
 
-Starts a new multiplayer server listening on the given ``port``. You can optionally specify a ``bind_address``, and provide valiid ``tls_server_options`` to use TLS. See :ref:`TLSOptions.server<class_TLSOptions_method_server>`.
+Starts a new multiplayer server listening on the given ``port``. You can optionally specify a ``bind_address``, and provide valid ``tls_server_options`` to use TLS. See :ref:`TLSOptions.server<class_TLSOptions_method_server>`.
 
 .. rst-class:: classref-item-separator
 
@@ -245,3 +245,4 @@ Returns the remote port of the given peer.
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

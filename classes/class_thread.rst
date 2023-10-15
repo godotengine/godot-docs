@@ -21,7 +21,15 @@ Description
 
 A unit of execution in a process. Can run methods on :ref:`Object<class_Object>`\ s simultaneously. The use of synchronization via :ref:`Mutex<class_Mutex>` or :ref:`Semaphore<class_Semaphore>` is advised if working with shared objects.
 
-\ **Note:** Breakpoints won't break on code if it's running in a thread. This is a current limitation of the GDScript debugger.
+\ **Warning:**\ 
+
+To ensure proper cleanup without crashes or deadlocks, when a **Thread**'s reference count reaches zero and it is therefore destroyed, the following conditions must be met:
+
+- It must not have any :ref:`Mutex<class_Mutex>` objects locked.
+
+- It must not be waiting on any :ref:`Semaphore<class_Semaphore>` objects.
+
+- :ref:`wait_to_finish<class_Thread_method_wait_to_finish>` should have been called on it.
 
 .. rst-class:: classref-introduction-group
 
@@ -42,17 +50,19 @@ Methods
 .. table::
    :widths: auto
 
-   +---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`String<class_String>`           | :ref:`get_id<class_Thread_method_get_id>` **(** **)** |const|                                                                                  |
-   +---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`               | :ref:`is_alive<class_Thread_method_is_alive>` **(** **)** |const|                                                                              |
-   +---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`               | :ref:`is_started<class_Thread_method_is_started>` **(** **)** |const|                                                                          |
-   +---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Error<enum_@GlobalScope_Error>` | :ref:`start<class_Thread_method_start>` **(** :ref:`Callable<class_Callable>` callable, :ref:`Priority<enum_Thread_Priority>` priority=1 **)** |
-   +---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Variant<class_Variant>`         | :ref:`wait_to_finish<class_Thread_method_wait_to_finish>` **(** **)**                                                                          |
-   +---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
+   +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`           | :ref:`get_id<class_Thread_method_get_id>` **(** **)** |const|                                                                                      |
+   +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`               | :ref:`is_alive<class_Thread_method_is_alive>` **(** **)** |const|                                                                                  |
+   +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`               | :ref:`is_started<class_Thread_method_is_started>` **(** **)** |const|                                                                              |
+   +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                  | :ref:`set_thread_safety_checks_enabled<class_Thread_method_set_thread_safety_checks_enabled>` **(** :ref:`bool<class_bool>` enabled **)** |static| |
+   +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>` | :ref:`start<class_Thread_method_start>` **(** :ref:`Callable<class_Callable>` callable, :ref:`Priority<enum_Thread_Priority>` priority=1 **)**     |
+   +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Variant<class_Variant>`         | :ref:`wait_to_finish<class_Thread_method_wait_to_finish>` **(** **)**                                                                              |
+   +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -108,7 +118,7 @@ Method Descriptions
 
 :ref:`String<class_String>` **get_id** **(** **)** |const|
 
-Returns the current **Thread**'s ID, uniquely identifying it among all threads. If the **Thread** is not running this returns an empty string.
+Returns the current **Thread**'s ID, uniquely identifying it among all threads. If the **Thread** has not started running or if :ref:`wait_to_finish<class_Thread_method_wait_to_finish>` has been called, this returns an empty string.
 
 .. rst-class:: classref-item-separator
 
@@ -120,7 +130,7 @@ Returns the current **Thread**'s ID, uniquely identifying it among all threads. 
 
 :ref:`bool<class_bool>` **is_alive** **(** **)** |const|
 
-Returns ``true`` if this **Thread** is currently running. This is useful for determining if :ref:`wait_to_finish<class_Thread_method_wait_to_finish>` can be called without blocking the calling thread.
+Returns ``true`` if this **Thread** is currently running the provided function. This is useful for determining if :ref:`wait_to_finish<class_Thread_method_wait_to_finish>` can be called without blocking the calling thread.
 
 To check if a **Thread** is joinable, use :ref:`is_started<class_Thread_method_is_started>`.
 
@@ -135,6 +145,30 @@ To check if a **Thread** is joinable, use :ref:`is_started<class_Thread_method_i
 :ref:`bool<class_bool>` **is_started** **(** **)** |const|
 
 Returns ``true`` if this **Thread** has been started. Once started, this will return ``true`` until it is joined using :ref:`wait_to_finish<class_Thread_method_wait_to_finish>`. For checking if a **Thread** is still executing its task, use :ref:`is_alive<class_Thread_method_is_alive>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Thread_method_set_thread_safety_checks_enabled:
+
+.. rst-class:: classref-method
+
+void **set_thread_safety_checks_enabled** **(** :ref:`bool<class_bool>` enabled **)** |static|
+
+Sets whether the thread safety checks the engine normally performs in methods of certain classes (e.g., :ref:`Node<class_Node>`) should happen **on the current thread**.
+
+The default, for every thread, is that they are enabled (as if called with ``enabled`` being ``true``).
+
+Those checks are conservative. That means that they will only succeed in considering a call thread-safe (and therefore allow it to happen) if the engine can guarantee such safety.
+
+Because of that, there may be cases where the user may want to disable them (``enabled`` being ``false``) to make certain operations allowed again. By doing so, it becomes the user's responsibility to ensure thread safety (e.g., by using :ref:`Mutex<class_Mutex>`) for those objects that are otherwise protected by the engine.
+
+\ **Note:** This is an advanced usage of the engine. You are advised to use it only if you know what you are doing and there is no safer way.
+
+\ **Note:** This is useful for scripts running on either arbitrary **Thread** objects or tasks submitted to the :ref:`WorkerThreadPool<class_WorkerThreadPool>`. It doesn't apply to code running during :ref:`Node<class_Node>` group processing, where the checks will be always performed.
+
+\ **Note:** Even in the case of having disabled the checks in a :ref:`WorkerThreadPool<class_WorkerThreadPool>` task, there's no need to re-enable them at the end. The engine will do so.
 
 .. rst-class:: classref-item-separator
 
@@ -170,11 +204,10 @@ Should either be used when you want to retrieve the value returned from the meth
 
 To determine if this can be called without blocking the calling thread, check if :ref:`is_alive<class_Thread_method_is_alive>` is ``false``.
 
-\ **Note:** After the **Thread** finishes joining it will be disposed. If you want to use it again you will have to create a new instance of it.
-
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

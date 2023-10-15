@@ -12,14 +12,14 @@ SliderJoint3D
 
 **Inherits:** :ref:`Joint3D<class_Joint3D>` **<** :ref:`Node3D<class_Node3D>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-Slider between two PhysicsBodies in 3D.
+A physics joint that restricts the movement of a 3D physics body along an axis relative to another physics body.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-Slides across the X axis of the pivot object. See also :ref:`Generic6DOFJoint3D<class_Generic6DOFJoint3D>`.
+A physics joint that restricts the movement of a 3D physics body along an axis relative to another physics body. For example, Body A could be a :ref:`StaticBody3D<class_StaticBody3D>` representing a piston base, while Body B could be a :ref:`RigidBody3D<class_RigidBody3D>` representing the piston head, moving up and down.
 
 .. rst-class:: classref-reftable-group
 
@@ -134,7 +134,7 @@ A factor applied to the movement across the slider axis once the limits get surp
 
 :ref:`Param<enum_SliderJoint3D_Param>` **PARAM_LINEAR_LIMIT_RESTITUTION** = ``3``
 
-The amount of restitution once the limits are surpassed. The lower, the more velocityenergy gets lost.
+The amount of restitution once the limits are surpassed. The lower, the more velocity-energy gets lost.
 
 .. _class_SliderJoint3D_constant_PARAM_LINEAR_LIMIT_DAMPING:
 
@@ -712,3 +712,4 @@ void **set_param** **(** :ref:`Param<enum_SliderJoint3D_Param>` param, :ref:`flo
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

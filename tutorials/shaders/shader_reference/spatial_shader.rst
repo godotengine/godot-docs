@@ -84,6 +84,8 @@ Render modes
 +-------------------------------+------------------------------------------------------------------------------------------------------+
 | **alpha_to_coverage_and_one** | Alpha antialiasing mode, see `here <https://github.com/godotengine/godot/pull/40364>`_ for more.     |
 +-------------------------------+------------------------------------------------------------------------------------------------------+
+| **fog_disabled**              | Disable receiving depth-based or volumetric fog. Useful for blend_add materials like particles.      |
++-------------------------------+------------------------------------------------------------------------------------------------------+
 
 Built-ins
 ^^^^^^^^^
@@ -217,7 +219,7 @@ shader, this value can be used as desired.
 +----------------------------------------+--------------------------------------------------------+
 | inout mat4 **MODEL_MATRIX**            | Model space to world space transform.                  |
 +----------------------------------------+--------------------------------------------------------+
-| inout mat3 **WORLD_NORMAL_MATRIX**     |                                                        |
+| inout mat3 **MODEL_NORMAL_MATRIX**     |                                                        |
 +----------------------------------------+--------------------------------------------------------+
 | inout mat4 **PROJECTION_MATRIX**       | View space to clip space transform.                    |
 +----------------------------------------+--------------------------------------------------------+
@@ -399,7 +401,7 @@ Below is an example of a custom light function using a Lambertian lighting model
 .. code-block:: glsl
 
     void light() {
-        DIFFUSE_LIGHT += clamp(dot(NORMAL, LIGHT), 0.0, 1.0) * ATTENUATION * ALBEDO;
+        DIFFUSE_LIGHT += clamp(dot(NORMAL, LIGHT), 0.0, 1.0) * ATTENUATION * LIGHT_COLOR;
     }
 
 If you want the lights to add together, add the light contribution to ``DIFFUSE_LIGHT`` using ``+=``, rather than overwriting it.
@@ -441,7 +443,16 @@ If you want the lights to add together, add the light contribution to ``DIFFUSE_
 +-----------------------------------+----------------------------------------------------+
 | in vec3 **LIGHT**                 | Light Vector, in view space.                       |
 +-----------------------------------+----------------------------------------------------+
-| in vec3 **LIGHT_COLOR**           | Color of light multiplied by energy.               |
+| in vec3 **LIGHT_COLOR**           | Color of light multiplied by ``energy * PI``.      |
+|                                   | The ``PI`` multiplication is present because       |
+|                                   | physically-based lighting models include a         |
+|                                   | division by ``PI``.                                |
++-----------------------------------+----------------------------------------------------+
+| in float **SPECULAR_AMOUNT**      | 2.0 * ``light_specular`` property for              |
+|                                   | ``OmniLight3D`` and ``SpotLight3D``.               |
+|                                   | 1.0 for ``DirectionalLight3D``.                    |
++-----------------------------------+----------------------------------------------------+
+| in bool **LIGHT_IS_DIRECTIONAL**  | ``true`` if this pass is a ``DirectionalLight3D``. |
 +-----------------------------------+----------------------------------------------------+
 | in float **ATTENUATION**          | Attenuation based on distance or shadow.           |
 +-----------------------------------+----------------------------------------------------+

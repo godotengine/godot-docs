@@ -23,6 +23,13 @@ The CryptoKey class represents a cryptographic key. Keys can be loaded and saved
 
 They can be used to generate a self-signed :ref:`X509Certificate<class_X509Certificate>` via :ref:`Crypto.generate_self_signed_certificate<class_Crypto_method_generate_self_signed_certificate>` and as private key in :ref:`StreamPeerTLS.accept_stream<class_StreamPeerTLS_method_accept_stream>` along with the appropriate certificate.
 
+.. rst-class:: classref-introduction-group
+
+Tutorials
+---------
+
+- :doc:`SSL certificates <../tutorials/networking/ssl_certificates>`
+
 .. rst-class:: classref-reftable-group
 
 Methods
@@ -118,3 +125,4 @@ Returns a string containing the key in PEM format. If ``public_only`` is ``true`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

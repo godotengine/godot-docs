@@ -87,7 +87,8 @@ There are two ways to load resources from code. First, you can use the ``load()`
 
     public override void _Ready()
     {
-        var texture = (Texture)GD.Load("res://robi.png"); // Godot loads the Resource when it reads the line.
+        // Godot loads the Resource when it executes this line.
+        var texture = GD.Load<Texture>("res://Robi.png");
         var sprite = GetNode<Sprite2D>("sprite");
         sprite.Texture = texture;
     }
@@ -128,9 +129,9 @@ To get an instance of the scene, you have to use the
 
  .. code-tab:: csharp
 
-    private PackedScene _bulletScene = (PackedScene)GD.Load("res://bullet.tscn");
+    private PackedScene _bulletScene = GD.Load<PackedScene>("res://Bullet.tscn");
 
-    public void OnShoot()
+    private void OnShoot()
     {
         Node bullet = _bulletScene.Instantiate();
         AddChild(bullet);

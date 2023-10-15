@@ -27,7 +27,9 @@ The playback of the animation is controlled by the :ref:`speed_scale<class_Anima
 
 \ **Note:** AnimatedTexture doesn't support using :ref:`AtlasTexture<class_AtlasTexture>`\ s. Each frame needs to be a separate :ref:`Texture2D<class_Texture2D>`.
 
-\ **Warning:** AnimatedTexture is deprecated, and might be removed in a future release. Its current implementation is not efficient for the modern renderers.
+\ **Warning:** The current implementation is not efficient for the modern renderers.
+
+\ *Deprecated.* This class is deprecated, and might be removed in a future release.
 
 .. rst-class:: classref-reftable-group
 
@@ -237,3 +239,4 @@ You can define any number of textures up to :ref:`MAX_FRAMES<class_AnimatedTextu
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

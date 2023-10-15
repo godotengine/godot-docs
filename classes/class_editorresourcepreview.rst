@@ -12,14 +12,14 @@ EditorResourcePreview
 
 **Inherits:** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-Helper to generate previews of resources or files.
+A node used to generate previews of resources or files.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-This object is used to generate previews for resources of files.
+This node is used to generate previews for resources or files.
 
 \ **Note:** This class shouldn't be instantiated directly. Instead, access the singleton using :ref:`EditorInterface.get_resource_previewer<class_EditorInterface_method_get_resource_previewer>`.
 
@@ -135,3 +135,4 @@ Removes a custom preview generator.
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

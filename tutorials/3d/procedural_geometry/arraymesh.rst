@@ -40,7 +40,7 @@ See :ref:`Mesh.ArrayType <enum_Mesh_ArrayType>` for a full list.
     
     * - 2
       - ``ARRAY_TANGENT``
-      - :ref:`PackedFloat32Array <class_PackedFloat32Array>` of groups of 4 floats. The first 3 floats determine the tangent, and the last float the binormal 
+      - :ref:`PackedFloat32Array <class_PackedFloat32Array>` or :ref:`PackedFloat64Array <class_PackedFloat64Array>` of groups of 4 floats. The first 3 floats determine the tangent, and the last float the binormal 
         direction as -1 or 1.
     
     * - 3
@@ -61,7 +61,7 @@ See :ref:`Mesh.ArrayType <enum_Mesh_ArrayType>` for a full list.
     
     * - 11
       - ``ARRAY_WEIGHTS``
-      - :ref:`PackedFloat32Array <class_PackedFloat32Array>` of groups of 4 floats. Each float lists the amount of weight the corresponding bone in ``ARRAY_BONES`` has on a given vertex.
+      - :ref:`PackedFloat32Array <class_PackedFloat32Array>` or :ref:`PackedFloat64Array <class_PackedFloat64Array>` of groups of 4 floats. Each float lists the amount of weight the corresponding bone in ``ARRAY_BONES`` has on a given vertex.
     
     * - 12
       - ``ARRAY_INDEX``

@@ -11,7 +11,7 @@ into any number of scenes. This feature helps you break down and organize your
 game's different components.
 
 You can create as many scenes as you'd like and save them as files with the
-``.tscn`` extension, which stands for "text scene". The ``Label.tscn`` file from
+``.tscn`` extension, which stands for "text scene". The ``label.tscn`` file from
 the previous lesson was an example. We call those files "Packed Scenes" as they
 pack information about your scene's content.
 
@@ -33,7 +33,7 @@ editor hides their content by default. When you instance the Ball, you only see
 the Ball node. Notice also how each duplicate has a unique name.
 
 Every instance of the Ball scene starts with the same structure and properties
-as ``Ball.tscn``. However, you can modify each independently, such as changing
+as ``ball.tscn``. However, you can modify each independently, such as changing
 how they bounce, how heavy they are, or any property exposed by the source
 scene.
 
@@ -42,7 +42,7 @@ In practice
 
 Let's use instancing in practice to see how it works in Godot. We invite
 you to download the ball's sample project we prepared for you:
-:download:`instancing.zip <files/instancing.zip>`.
+`instancing_starter.zip <https://github.com/godotengine/godot-docs-project-starters/releases/download/latest-4.x/instancing_starter.zip>`_.
 
 Extract the archive on your computer. To import it, you need the Project Manager.
 The Project Manager is accessed by opening Godot, or if you already have Godot opened, click on *Project -> Quit to Project List* (:kbd:`Ctrl + Shift + Q`, :kbd:`Ctrl + Option + Cmd + B` on macOS)
@@ -64,8 +64,8 @@ Finally, click the Import & Edit button.
 
 .. image:: img/instancing_import_and_edit_button.png
 
-The project contains two packed scenes: ``Main.tscn``, containing walls against
-which the ball collides, and ``Ball.tscn``. The Main scene should open
+The project contains two packed scenes: ``main.tscn``, containing walls against
+which the ball collides, and ``ball.tscn``. The Main scene should open
 automatically.
 
 .. image:: img/instancing_main_scene.png
@@ -91,7 +91,7 @@ Click on it and drag it towards the center of the view.
 Play the game by pressing :kbd:`F5` (:kbd:`Cmd + B` on macOS). You should see it fall.
 
 Now, we want to create more instances of the Ball node. With the ball still
-selected, press :kbd:`Ctrl-D` (:kbd:`Cmd-D` on macOS) to call the duplicate
+selected, press :kbd:`Ctrl + D` (:kbd:`Cmd + D` on macOS) to call the duplicate
 command. Click and drag to move the new ball to a different location.
 
 .. image:: img/instancing_ball_duplicated.png
@@ -111,22 +111,22 @@ There is more to instances. With this feature, you can:
 
 1. Change the properties of one ball without affecting the others using the
    Inspector.
-2. Change the default properties of every Ball by opening the ``Ball.tscn`` scene
+2. Change the default properties of every Ball by opening the ``ball.tscn`` scene
    and making a change to the Ball node there. Upon saving, all instances of the
    Ball in the project will see their values update.
 
 .. note:: Changing a property on an instance always overrides values from the
           corresponding packed scene.
 
-Let's try this. Open ``Ball.tscn`` and select the Ball node. In the Inspector on
+Let's try this. Open ``ball.tscn`` and select the Ball node. In the Inspector on
 the right, click on the PhysicsMaterial property to expand it.
 
-.. image:: img/instancing_physics_material_expand.png
+.. image:: img/instancing_physics_material_expand.webp
 
-Set its Bounce property to ``2`` by clicking on the number field, typing ``2``,
+Set its Bounce property to ``0.5`` by clicking on the number field, typing ``0.5``,
 and pressing :kbd:`Enter`.
 
-.. image:: img/instancing_property_bounce_updated.png
+.. image:: img/instancing_property_bounce_updated.webp
 
 Play the game by pressing :kbd:`F5` and notice how all balls now bounce a lot
 more. As the Ball scene is a template for all instances, modifying it and saving

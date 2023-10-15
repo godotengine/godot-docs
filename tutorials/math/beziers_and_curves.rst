@@ -262,7 +262,7 @@ Traversal at constant speed, then, can be done with the following pseudo-code:
 
     func _process(delta):
         t += delta
-        position = curve.interpolate_baked(t * curve.get_baked_length(), true)
+        position = curve.sample_baked(t * curve.get_baked_length(), true)
 
  .. code-tab:: csharp
 
@@ -271,7 +271,7 @@ Traversal at constant speed, then, can be done with the following pseudo-code:
     public override void _Process(double delta)
     {
         _t += (float)delta;
-        Position = curve.InterpolateBaked(_t * curve.GetBakedLength(), true);
+        Position = curve.SampleBaked(_t * curve.GetBakedLength(), true);
     }
 
 And the output will, then, move at constant speed:

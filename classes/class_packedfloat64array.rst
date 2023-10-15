@@ -21,6 +21,10 @@ An array specifically designed to hold 64-bit floating-point values (double). Pa
 
 If you only need to pack 32-bit floats tightly, see :ref:`PackedFloat32Array<class_PackedFloat32Array>` for a more memory-friendly alternative.
 
+.. note::
+
+	There are notable differences when using this API with C#. See :ref:`doc_c_sharp_differences` for more information.
+
 .. rst-class:: classref-reftable-group
 
 Constructors
@@ -187,6 +191,8 @@ Finds the index of an existing value (or the insertion index that maintains sort
 
 \ **Note:** Calling :ref:`bsearch<class_PackedFloat64Array_method_bsearch>` on an unsorted array results in unexpected behavior.
 
+\ **Note:** :ref:`@GDScript.NAN<class_@GDScript_constant_NAN>` doesn't behave the same as other numbers. Therefore, the results from this method may not be accurate if NaNs are included.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -210,6 +216,8 @@ Clears the array. This is equivalent to using :ref:`resize<class_PackedFloat64Ar
 :ref:`int<class_int>` **count** **(** :ref:`float<class_float>` value **)** |const|
 
 Returns the number of times an element is in the array.
+
+\ **Note:** :ref:`@GDScript.NAN<class_@GDScript_constant_NAN>` doesn't behave the same as other numbers. Therefore, the results from this method may not be accurate if NaNs are included.
 
 .. rst-class:: classref-item-separator
 
@@ -247,6 +255,8 @@ Assigns the given value to all elements in the array. This can typically be used
 
 Searches the array for a value and returns its index or ``-1`` if not found. Optionally, the initial search index can be passed.
 
+\ **Note:** :ref:`@GDScript.NAN<class_@GDScript_constant_NAN>` doesn't behave the same as other numbers. Therefore, the results from this method may not be accurate if NaNs are included.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -258,6 +268,8 @@ Searches the array for a value and returns its index or ``-1`` if not found. Opt
 :ref:`bool<class_bool>` **has** **(** :ref:`float<class_float>` value **)** |const|
 
 Returns ``true`` if the array contains ``value``.
+
+\ **Note:** :ref:`@GDScript.NAN<class_@GDScript_constant_NAN>` doesn't behave the same as other numbers. Therefore, the results from this method may not be accurate if NaNs are included.
 
 .. rst-class:: classref-item-separator
 
@@ -343,6 +355,8 @@ Reverses the order of the elements in the array.
 
 Searches the array in reverse order. Optionally, a start search index can be passed. If negative, the start index is considered relative to the end of the array.
 
+\ **Note:** :ref:`@GDScript.NAN<class_@GDScript_constant_NAN>` doesn't behave the same as other numbers. Therefore, the results from this method may not be accurate if NaNs are included.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -394,6 +408,8 @@ If either ``begin`` or ``end`` are negative, they will be relative to the end of
 void **sort** **(** **)**
 
 Sorts the elements of the array in ascending order.
+
+\ **Note:** :ref:`@GDScript.NAN<class_@GDScript_constant_NAN>` doesn't behave the same as other numbers. Therefore, the results from this method may not be accurate if NaNs are included.
 
 .. rst-class:: classref-item-separator
 
@@ -468,3 +484,4 @@ Returns the :ref:`float<class_float>` at index ``index``. Negative indices can b
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

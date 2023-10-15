@@ -256,7 +256,7 @@ Call a group in reverse scene order.
 
 :ref:`GroupCallFlags<enum_SceneTree_GroupCallFlags>` **GROUP_CALL_DEFERRED** = ``2``
 
-Call a group with a one-frame delay (idle frame, not physics).
+Call a group at the end of the current frame (process or physics).
 
 .. _class_SceneTree_constant_GROUP_CALL_UNIQUE:
 
@@ -288,7 +288,7 @@ Property Descriptions
 - void **set_auto_accept_quit** **(** :ref:`bool<class_bool>` value **)**
 - :ref:`bool<class_bool>` **is_auto_accept_quit** **(** **)**
 
-If ``true``, the application automatically accepts quitting.
+If ``true``, the application automatically accepts quitting requests.
 
 For mobile platforms, see :ref:`quit_on_go_back<class_SceneTree_property_quit_on_go_back>`.
 
@@ -307,7 +307,9 @@ For mobile platforms, see :ref:`quit_on_go_back<class_SceneTree_property_quit_on
 - void **set_current_scene** **(** :ref:`Node<class_Node>` value **)**
 - :ref:`Node<class_Node>` **get_current_scene** **(** **)**
 
-The current scene.
+Returns the root node of the currently running scene, regardless of its structure.
+
+\ **Warning:** Setting this directly might not work as expected, and will *not* add or remove any nodes from the tree, consider using :ref:`change_scene_to_file<class_SceneTree_method_change_scene_to_file>` or :ref:`change_scene_to_packed<class_SceneTree_method_change_scene_to_packed>` instead.
 
 .. rst-class:: classref-item-separator
 
@@ -438,7 +440,7 @@ If ``true``, the **SceneTree** is paused. Doing so will have the following behav
 - void **set_quit_on_go_back** **(** :ref:`bool<class_bool>` value **)**
 - :ref:`bool<class_bool>` **is_quit_on_go_back** **(** **)**
 
-If ``true``, the application quits automatically on going back (e.g. on Android).
+If ``true``, the application quits automatically when navigating back (e.g. using the system "Back" button on Android).
 
 To handle 'Go Back' button when this option is disabled, use :ref:`DisplayServer.WINDOW_EVENT_GO_BACK_REQUEST<class_DisplayServer_constant_WINDOW_EVENT_GO_BACK_REQUEST>`.
 
@@ -475,7 +477,7 @@ void **call_group** **(** :ref:`StringName<class_StringName>` group, :ref:`Strin
 
 Calls ``method`` on each member of the given group. You can pass arguments to ``method`` by specifying them at the end of the method call. If a node doesn't have the given method or the argument list does not match (either in count or in types), it will be skipped.
 
-\ **Note:** :ref:`call_group<class_SceneTree_method_call_group>` will call methods immediately on all members at once, which can cause stuttering if an expensive method is called on lots of members. To wait for one frame after :ref:`call_group<class_SceneTree_method_call_group>` was called, use :ref:`call_group_flags<class_SceneTree_method_call_group_flags>` with the :ref:`GROUP_CALL_DEFERRED<class_SceneTree_constant_GROUP_CALL_DEFERRED>` flag.
+\ **Note:** :ref:`call_group<class_SceneTree_method_call_group>` will call methods immediately on all members at once, which can cause stuttering if an expensive method is called on lots of members.
 
 .. rst-class:: classref-item-separator
 
@@ -494,7 +496,7 @@ Calls ``method`` on each member of the given group, respecting the given :ref:`G
     # Call the method in a deferred manner and in reverse order.
     get_tree().call_group_flags(SceneTree.GROUP_CALL_DEFERRED | SceneTree.GROUP_CALL_REVERSE)
 
-\ **Note:** Group call flags are used to control the method calling behavior. By default, methods will be called immediately in a way similar to :ref:`call_group<class_SceneTree_method_call_group>`. However, if the :ref:`GROUP_CALL_DEFERRED<class_SceneTree_constant_GROUP_CALL_DEFERRED>` flag is present in the ``flags`` argument, methods will be called with a one-frame delay in a way similar to :ref:`Object.set_deferred<class_Object_method_set_deferred>`.
+\ **Note:** Group call flags are used to control the method calling behavior. By default, methods will be called immediately in a way similar to :ref:`call_group<class_SceneTree_method_call_group>`. However, if the :ref:`GROUP_CALL_DEFERRED<class_SceneTree_constant_GROUP_CALL_DEFERRED>` flag is present in the ``flags`` argument, methods will be called at the end of the frame in a way similar to :ref:`Object.set_deferred<class_Object_method_set_deferred>`.
 
 .. rst-class:: classref-item-separator
 
@@ -510,7 +512,7 @@ Changes the running scene to the one at the given ``path``, after loading it int
 
 Returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` on success, :ref:`@GlobalScope.ERR_CANT_OPEN<class_@GlobalScope_constant_ERR_CANT_OPEN>` if the ``path`` cannot be loaded into a :ref:`PackedScene<class_PackedScene>`, or :ref:`@GlobalScope.ERR_CANT_CREATE<class_@GlobalScope_constant_ERR_CANT_CREATE>` if that scene cannot be instantiated.
 
-\ **Note:** The scene change is deferred, which means that the new scene node is added on the next idle frame. This ensures that both scenes are never loaded at the same time, which can exhaust system resources if the scenes are too large or if running in a memory constrained environment. As such, you won't be able to access the loaded scene immediately after the :ref:`change_scene_to_file<class_SceneTree_method_change_scene_to_file>` call.
+\ **Note:** The new scene node is added to the tree at the end of the frame. This ensures that both scenes aren't running at the same time, while still freeing the previous scene in a safe way similar to :ref:`Node.queue_free<class_Node_method_queue_free>`. As such, you won't be able to access the loaded scene immediately after the :ref:`change_scene_to_file<class_SceneTree_method_change_scene_to_file>` call.
 
 .. rst-class:: classref-item-separator
 
@@ -526,7 +528,7 @@ Changes the running scene to a new instance of the given :ref:`PackedScene<class
 
 Returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` on success, :ref:`@GlobalScope.ERR_CANT_CREATE<class_@GlobalScope_constant_ERR_CANT_CREATE>` if the scene cannot be instantiated, or :ref:`@GlobalScope.ERR_INVALID_PARAMETER<class_@GlobalScope_constant_ERR_INVALID_PARAMETER>` if the scene is invalid.
 
-\ **Note:** The scene change is deferred, which means that the new scene node is added on the next idle frame. You won't be able to access it immediately after the :ref:`change_scene_to_packed<class_SceneTree_method_change_scene_to_packed>` call.
+\ **Note:** The new scene node is added to the tree at the end of the frame. You won't be able to access it immediately after the :ref:`change_scene_to_packed<class_SceneTree_method_change_scene_to_packed>` call.
 
 .. rst-class:: classref-item-separator
 
@@ -538,7 +540,7 @@ Returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` on success, :ref:
 
 :ref:`SceneTreeTimer<class_SceneTreeTimer>` **create_timer** **(** :ref:`float<class_float>` time_sec, :ref:`bool<class_bool>` process_always=true, :ref:`bool<class_bool>` process_in_physics=false, :ref:`bool<class_bool>` ignore_time_scale=false **)**
 
-Returns a :ref:`SceneTreeTimer<class_SceneTreeTimer>` which will :ref:`SceneTreeTimer.timeout<class_SceneTreeTimer_signal_timeout>` after the given time in seconds elapsed in this **SceneTree**.
+Returns a :ref:`SceneTreeTimer<class_SceneTreeTimer>` which will emit :ref:`SceneTreeTimer.timeout<class_SceneTreeTimer_signal_timeout>` after the given time in seconds elapsed in this **SceneTree**.
 
 If ``process_always`` is set to ``false``, pausing the **SceneTree** will also pause the timer.
 
@@ -571,6 +573,8 @@ Commonly used to create a one-shot delay timer as in the following example:
 
 The timer will be automatically freed after its time elapses.
 
+\ **Note:** The timer is processed after all of the nodes in the current frame, i.e. node's :ref:`Node._process<class_Node_method__process>` method would be called before the timer (or :ref:`Node._physics_process<class_Node_method__physics_process>` if ``process_in_physics`` is set to ``true``).
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -581,7 +585,9 @@ The timer will be automatically freed after its time elapses.
 
 :ref:`Tween<class_Tween>` **create_tween** **(** **)**
 
-Creates and returns a new :ref:`Tween<class_Tween>`.
+Creates and returns a new :ref:`Tween<class_Tween>`. The Tween will start automatically on the next process frame or physics frame (depending on :ref:`TweenProcessMode<enum_Tween_TweenProcessMode>`).
+
+\ **Note:** When creating a :ref:`Tween<class_Tween>` using this method, the :ref:`Tween<class_Tween>` will not be tied to the :ref:`Node<class_Node>` that called it. It will continue to animate even if the :ref:`Node<class_Node>` is freed, but it will automatically finish if there's nothing left to animate. If you want the :ref:`Tween<class_Tween>` to be automatically killed when the :ref:`Node<class_Node>` is freed, use :ref:`Node.create_tween<class_Node_method_create_tween>` or :ref:`Tween.bind_node<class_Tween_method_bind_node>`.
 
 .. rst-class:: classref-item-separator
 
@@ -617,7 +623,7 @@ Returns the current frame number, i.e. the total frame count since the applicati
 
 :ref:`MultiplayerAPI<class_MultiplayerAPI>` **get_multiplayer** **(** :ref:`NodePath<class_NodePath>` for_path=NodePath("") **)** |const|
 
-Return the :ref:`MultiplayerAPI<class_MultiplayerAPI>` configured for the given path, or the default one if ``for_path`` is empty.
+Searches for the :ref:`MultiplayerAPI<class_MultiplayerAPI>` configured for the given path, if one does not exist it searches the parent paths until one is found. If the path is empty, or none is found, the default one is returned. See :ref:`set_multiplayer<class_SceneTree_method_set_multiplayer>`.
 
 .. rst-class:: classref-item-separator
 
@@ -667,6 +673,8 @@ Returns an array of currently existing :ref:`Tween<class_Tween>`\ s in the **Sce
 
 Returns ``true`` if the given group exists.
 
+A group exists if any :ref:`Node<class_Node>` in the tree belongs to it (see :ref:`Node.add_to_group<class_Node_method_add_to_group>`). Groups without nodes are removed automatically.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -679,7 +687,7 @@ void **notify_group** **(** :ref:`StringName<class_StringName>` group, :ref:`int
 
 Sends the given notification to all members of the ``group``.
 
-\ **Note:** :ref:`notify_group<class_SceneTree_method_notify_group>` will immediately notify all members at once, which can cause stuttering if an expensive method is called as a result of sending the notification lots of members. To wait for one frame, use :ref:`notify_group_flags<class_SceneTree_method_notify_group_flags>` with the :ref:`GROUP_CALL_DEFERRED<class_SceneTree_constant_GROUP_CALL_DEFERRED>` flag.
+\ **Note:** :ref:`notify_group<class_SceneTree_method_notify_group>` will immediately notify all members at once, which can cause stuttering if an expensive method is called as a result of sending the notification to lots of members.
 
 .. rst-class:: classref-item-separator
 
@@ -693,7 +701,7 @@ void **notify_group_flags** **(** :ref:`int<class_int>` call_flags, :ref:`String
 
 Sends the given notification to all members of the ``group``, respecting the given :ref:`GroupCallFlags<enum_SceneTree_GroupCallFlags>`.
 
-\ **Note:** Group call flags are used to control the notification sending behavior. By default, notifications will be sent immediately in a way similar to :ref:`notify_group<class_SceneTree_method_notify_group>`. However, if the :ref:`GROUP_CALL_DEFERRED<class_SceneTree_constant_GROUP_CALL_DEFERRED>` flag is present in the ``call_flags`` argument, notifications will be sent with a one-frame delay in a way similar to using ``Object.call_deferred("notification", ...)``.
+\ **Note:** Group call flags are used to control the notification sending behavior. By default, notifications will be sent immediately in a way similar to :ref:`notify_group<class_SceneTree_method_notify_group>`. However, if the :ref:`GROUP_CALL_DEFERRED<class_SceneTree_constant_GROUP_CALL_DEFERRED>` flag is present in the ``call_flags`` argument, notifications will be sent at the end of the current frame in a way similar to using ``Object.call_deferred("notification", ...)``.
 
 .. rst-class:: classref-item-separator
 
@@ -705,7 +713,7 @@ Sends the given notification to all members of the ``group``, respecting the giv
 
 void **queue_delete** **(** :ref:`Object<class_Object>` obj **)**
 
-Queues the given object for deletion, delaying the call to :ref:`Object.free<class_Object_method_free>` to after the current frame.
+Queues the given object for deletion, delaying the call to :ref:`Object.free<class_Object_method_free>` to the end of the current frame.
 
 .. rst-class:: classref-item-separator
 
@@ -751,7 +759,7 @@ void **set_group** **(** :ref:`StringName<class_StringName>` group, :ref:`String
 
 Sets the given ``property`` to ``value`` on all members of the given group.
 
-\ **Note:** :ref:`set_group<class_SceneTree_method_set_group>` will set the property immediately on all members at once, which can cause stuttering if a property with an expensive setter is set on lots of members. To wait for one frame, use :ref:`set_group_flags<class_SceneTree_method_set_group_flags>` with the :ref:`GROUP_CALL_DEFERRED<class_SceneTree_constant_GROUP_CALL_DEFERRED>` flag.
+\ **Note:** :ref:`set_group<class_SceneTree_method_set_group>` will set the property immediately on all members at once, which can cause stuttering if a property with an expensive setter is set on lots of members.
 
 .. rst-class:: classref-item-separator
 
@@ -765,7 +773,7 @@ void **set_group_flags** **(** :ref:`int<class_int>` call_flags, :ref:`StringNam
 
 Sets the given ``property`` to ``value`` on all members of the given group, respecting the given :ref:`GroupCallFlags<enum_SceneTree_GroupCallFlags>`.
 
-\ **Note:** Group call flags are used to control the property setting behavior. By default, properties will be set immediately in a way similar to :ref:`set_group<class_SceneTree_method_set_group>`. However, if the :ref:`GROUP_CALL_DEFERRED<class_SceneTree_constant_GROUP_CALL_DEFERRED>` flag is present in the ``call_flags`` argument, properties will be set with a one-frame delay in a way similar to :ref:`Object.call_deferred<class_Object_method_call_deferred>`.
+\ **Note:** Group call flags are used to control the property setting behavior. By default, properties will be set immediately in a way similar to :ref:`set_group<class_SceneTree_method_set_group>`. However, if the :ref:`GROUP_CALL_DEFERRED<class_SceneTree_constant_GROUP_CALL_DEFERRED>` flag is present in the ``call_flags`` argument, properties will be set at the end of the frame in a way similar to :ref:`Object.call_deferred<class_Object_method_call_deferred>`.
 
 .. rst-class:: classref-item-separator
 
@@ -778,6 +786,8 @@ Sets the given ``property`` to ``value`` on all members of the given group, resp
 void **set_multiplayer** **(** :ref:`MultiplayerAPI<class_MultiplayerAPI>` multiplayer, :ref:`NodePath<class_NodePath>` root_path=NodePath("") **)**
 
 Sets a custom :ref:`MultiplayerAPI<class_MultiplayerAPI>` with the given ``root_path`` (controlling also the relative subpaths), or override the default one if ``root_path`` is empty.
+
+\ **Note:** No :ref:`MultiplayerAPI<class_MultiplayerAPI>` must be configured for the subpath containing ``root_path``, nested custom multiplayers are not allowed. I.e. if one is configured for ``"/root/Foo"`` setting one for ``"/root/Foo/Bar"`` will cause an error.
 
 .. rst-class:: classref-item-separator
 
@@ -797,3 +807,4 @@ If a current scene is loaded, calling this method will unload it.
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

@@ -16,6 +16,12 @@ distribute the software (and derivative projects, including games made with it).
 Your game or project can have a different license, but it still needs to comply
 with the original one.
 
+.. note::
+
+    This section covers compliance with licenses from a user perspective.
+    If you are interested in licence compliance as a contributor, you can find
+    guidelines :ref:`here <doc_best_practices_for_engine_contributors_license_compliance>`.
+
 .. warning::
 
     In your project's credits screen, remember to also list third-party notices

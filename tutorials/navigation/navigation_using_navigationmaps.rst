@@ -9,21 +9,21 @@ A NavigationMap is an abstract navigation world on the NavigationServer identifi
 
 A map can hold and connect a near infinite number of navigation regions with navigation meshes to build the traversable areas of a game world for pathfinding.
 
-A map can be joined by avoidance agents to process collision avoidance between the avoidance agents.
+A map can contain avoidance agents. Collision avoidance will be calculated based on the agents present in the map.
 
 .. note::
 
     Different NavigationMaps are completely isolated from each other but navigation regions
-    and avoidance agents can switch between different maps once every server synchronization.
+    and avoidance agents can switch between different maps. Switches will become effective on NavigationServer synchronization.
 
 Default navigation maps
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-By default Godot creates a navigation map RID for each :ref:`World2D<class_World2D>` and :ref:`World3D<class_World3D>` of the root viewport.
+By default Godot creates a navigation map for each :ref:`World2D<class_World2D>` and :ref:`World3D<class_World3D>` of the root viewport.
 
-The 2D default navigation ``map`` can be obtained with ``get_world_2d().get_navigation_map()`` from any :ref:`Node2D<class_Node2D>` inheriting Node.
+The 2D default navigation map RID can be obtained with ``get_world_2d().get_navigation_map()`` from any :ref:`Node2D<class_Node2D>` inheriting Node.
 
-The 3D default navigation ``map`` can be obtained with ``get_world_3d().get_navigation_map()`` from any :ref:`Node3D<class_Node3D>` inheriting Node.
+The 3D default navigation map RID can be obtained with ``get_world_3d().get_navigation_map()`` from any :ref:`Node3D<class_Node3D>` inheriting Node.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -42,15 +42,15 @@ The 3D default navigation ``map`` can be obtained with ``get_world_3d().get_navi
 Creating new navigation maps
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The NavigationServer can create and support as many navigation maps as are required for specific gameplay.
-Additional navigation maps are created and maintained by using the NavigationServer API
+The NavigationServer can create and support as many navigation maps as required for specific gameplay.
+Additional navigation maps are created and handled by using the NavigationServer API
 directly e.g. to support different avoidance agent or actor locomotion types.
 
 For example uses of different navigation maps see :ref:`doc_navigation_different_actor_types` and :ref:`doc_navigation_different_actor_locomotion`.
 
-Each navigation map synchronizes queued changes to its navigation regions and avoidance agents individually.
+Each navigation map individually synchronizes queued changes to its navigation regions and avoidance agents.
 A navigation map that has not received changes will consume little to no processing time.
-Navigation regions and avoidance agents can only be part of a single navigations map but they can switch maps at any time.
+Navigation regions and avoidance agents can only be part of a single navigation map but they can switch map at any time.
 
 .. note::
 

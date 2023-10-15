@@ -54,7 +54,7 @@ The last three listed below are physics bodies and additionally extend :ref:`Phy
 Physics material
 ~~~~~~~~~~~~~~~~
 
-Static bodies and rigid bodies can be configured to use a :ref:`physics material
+Static bodies and rigid bodies can be configured to use a :ref:`PhysicsMaterial
 <class_PhysicsMaterial>`. This allows adjusting the friction and bounce of an object,
 and set if it's absorbent and/or rough.
 
@@ -114,7 +114,7 @@ Collision layers and masks
 One of the most powerful, but frequently misunderstood, collision features
 is the collision layer system. This system allows you to build up complex
 interactions between a variety of objects. The key concepts are **layers**
-and **masks**. Each ``CollisionObject2D`` has 20 different physics layers
+and **masks**. Each ``CollisionObject2D`` has 32 different physics layers
 it can interact with.
 
 Let's look at each of the properties in turn:
@@ -168,8 +168,8 @@ would be as follows::
     # Example: Setting mask value for enabling layers 1, 3 and 4
 
     # Binary - set the bit corresponding to the layers you want to enable (1, 3, and 4) to 1, set all other bits to 0.
-    # Note: Layer 20 is the first bit, layer 1 is the last. The mask for layers 4,3 and 1 is therefore
-    0b00000000000000001101
+    # Note: Layer 32 is the first bit, layer 1 is the last. The mask for layers 4,3 and 1 is therefore
+    0b00000000_00000000_00000000_00001101
     # (This can be shortened to 0b1101)
 
     # Hexadecimal equivalent (1101 binary converted to hexadecimal)
@@ -286,19 +286,19 @@ For example, here is the code for an "Asteroids" style spaceship:
         private Vector2 _thrust = new Vector2(0, -250);
         private float _torque = 20000;
 
-        public override void _IntegrateForces(Physics2DDirectBodyState state)
+        public override void _IntegrateForces(PhysicsDirectBodyState2D state)
         {
             if (Input.IsActionPressed("ui_up"))
-                AppliedForce = _thrust.Rotated(Rotation);
+                state.ApplyForce(_thrust.Rotated(Rotation));
             else
-                AppliedForce = new Vector2();
+                state.ApplyForce(new Vector2());
 
             var rotationDir = 0;
             if (Input.IsActionPressed("ui_right"))
                 rotationDir += 1;
             if (Input.IsActionPressed("ui_left"))
                 rotationDir -= 1;
-            AppliedTorque = rotationDir * _torque;
+            state.ApplyTorque(rotationDir * _torque);
         }
     }
 
@@ -368,7 +368,7 @@ occurred:
     func _physics_process(delta):
         var collision_info = move_and_collide(velocity * delta)
         if collision_info:
-            var collision_point = collision_info.position
+            var collision_point = collision_info.get_position()
 
  .. code-tab:: csharp
 
@@ -378,9 +378,9 @@ occurred:
     {
         private Vector2 _velocity = new Vector2(250, 250);
 
-        public override void _PhysicsProcess(float delta)
+        public override void _PhysicsProcess(double delta)
         {
-            var collisionInfo = MoveAndCollide(_velocity * delta);
+            var collisionInfo = MoveAndCollide(_velocity * (float)delta);
             if (collisionInfo != null)
             {
                 var collisionPoint = collisionInfo.GetPosition();
@@ -400,7 +400,7 @@ Or to bounce off of the colliding object:
     func _physics_process(delta):
         var collision_info = move_and_collide(velocity * delta)
         if collision_info:
-            velocity = velocity.bounce(collision_info.normal)
+            velocity = velocity.bounce(collision_info.get_normal())
 
  .. code-tab:: csharp
 
@@ -410,11 +410,11 @@ Or to bounce off of the colliding object:
     {
         private Vector2 _velocity = new Vector2(250, 250);
 
-        public override void _PhysicsProcess(float delta)
+        public override void _PhysicsProcess(double delta)
         {
-            var collisionInfo = MoveAndCollide(_velocity * delta);
+            var collisionInfo = MoveAndCollide(_velocity * (float)delta);
             if (collisionInfo != null)
-                _velocity = _velocity.Bounce(collisionInfo.Normal);
+                _velocity = _velocity.Bounce(collisionInfo.GetNormal());
         }
     }
 
@@ -473,23 +473,28 @@ the ground (including slopes) and jump when standing on the ground:
 
         private void GetInput()
         {
-            _velocity.x = 0;
+            var velocity = Velocity;
+            velocity.X = 0;
 
             var right = Input.IsActionPressed("ui_right");
             var left = Input.IsActionPressed("ui_left");
             var jump = Input.IsActionPressed("ui_select");
 
             if (IsOnFloor() && jump)
-                _velocity.y = _jumpSpeed;
+                velocity.Y = _jumpSpeed;
             if (right)
-                _velocity.x += _runSpeed;
+                velocity.X += _runSpeed;
             if (left)
-                _velocity.x -= _runSpeed;
+                velocity.X -= _runSpeed;
+
+            Velocity = velocity;
         }
 
-        public override void _PhysicsProcess(float delta)
+        public override void _PhysicsProcess(double delta)
         {
-            _velocity.y += _gravity * delta;
+            var velocity = Velocity;
+            velocity.Y += _gravity * (float)delta;
+            Velocity = velocity;
             GetInput();
             MoveAndSlide();
         }

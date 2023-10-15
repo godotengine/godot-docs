@@ -12,9 +12,16 @@ PhysicsDirectSpaceState3DExtension
 
 **Inherits:** :ref:`PhysicsDirectSpaceState3D<class_PhysicsDirectSpaceState3D>` **<** :ref:`Object<class_Object>`
 
-.. container:: contribute
+Provides virtual methods that can be overridden to create custom :ref:`PhysicsDirectSpaceState3D<class_PhysicsDirectSpaceState3D>` implementations.
 
-	There is currently no description for this class. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+.. rst-class:: classref-introduction-group
+
+Description
+-----------
+
+This class extends :ref:`PhysicsDirectSpaceState3D<class_PhysicsDirectSpaceState3D>` by providing additional virtual methods that can be overridden. When these methods are overridden, they will be called instead of the internal methods of the physics server.
+
+Intended for use with GDExtension to create custom implementations of :ref:`PhysicsDirectSpaceState3D<class_PhysicsDirectSpaceState3D>`.
 
 .. rst-class:: classref-reftable-group
 
@@ -33,7 +40,7 @@ Methods
    +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`         | :ref:`_intersect_point<class_PhysicsDirectSpaceState3DExtension_method__intersect_point>` **(** :ref:`Vector3<class_Vector3>` position, :ref:`int<class_int>` collision_mask, :ref:`bool<class_bool>` collide_with_bodies, :ref:`bool<class_bool>` collide_with_areas, PhysicsServer3DExtensionShapeResult* results, :ref:`int<class_int>` max_results **)** |virtual|                                                                                                                        |
    +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`       | :ref:`_intersect_ray<class_PhysicsDirectSpaceState3DExtension_method__intersect_ray>` **(** :ref:`Vector3<class_Vector3>` from, :ref:`Vector3<class_Vector3>` to, :ref:`int<class_int>` collision_mask, :ref:`bool<class_bool>` collide_with_bodies, :ref:`bool<class_bool>` collide_with_areas, :ref:`bool<class_bool>` hit_from_inside, :ref:`bool<class_bool>` hit_back_faces, PhysicsServer3DExtensionRayResult* result **)** |virtual|                                                   |
+   | :ref:`bool<class_bool>`       | :ref:`_intersect_ray<class_PhysicsDirectSpaceState3DExtension_method__intersect_ray>` **(** :ref:`Vector3<class_Vector3>` from, :ref:`Vector3<class_Vector3>` to, :ref:`int<class_int>` collision_mask, :ref:`bool<class_bool>` collide_with_bodies, :ref:`bool<class_bool>` collide_with_areas, :ref:`bool<class_bool>` hit_from_inside, :ref:`bool<class_bool>` hit_back_faces, :ref:`bool<class_bool>` pick_ray, PhysicsServer3DExtensionRayResult* result **)** |virtual|                 |
    +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`         | :ref:`_intersect_shape<class_PhysicsDirectSpaceState3DExtension_method__intersect_shape>` **(** :ref:`RID<class_RID>` shape_rid, :ref:`Transform3D<class_Transform3D>` transform, :ref:`Vector3<class_Vector3>` motion, :ref:`float<class_float>` margin, :ref:`int<class_int>` collision_mask, :ref:`bool<class_bool>` collide_with_bodies, :ref:`bool<class_bool>` collide_with_areas, PhysicsServer3DExtensionShapeResult* result_count, :ref:`int<class_int>` max_results **)** |virtual| |
    +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -111,7 +118,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **_intersect_ray** **(** :ref:`Vector3<class_Vector3>` from, :ref:`Vector3<class_Vector3>` to, :ref:`int<class_int>` collision_mask, :ref:`bool<class_bool>` collide_with_bodies, :ref:`bool<class_bool>` collide_with_areas, :ref:`bool<class_bool>` hit_from_inside, :ref:`bool<class_bool>` hit_back_faces, PhysicsServer3DExtensionRayResult* result **)** |virtual|
+:ref:`bool<class_bool>` **_intersect_ray** **(** :ref:`Vector3<class_Vector3>` from, :ref:`Vector3<class_Vector3>` to, :ref:`int<class_int>` collision_mask, :ref:`bool<class_bool>` collide_with_bodies, :ref:`bool<class_bool>` collide_with_areas, :ref:`bool<class_bool>` hit_from_inside, :ref:`bool<class_bool>` hit_back_faces, :ref:`bool<class_bool>` pick_ray, PhysicsServer3DExtensionRayResult* result **)** |virtual|
 
 .. container:: contribute
 
@@ -165,3 +172,4 @@ Method Descriptions
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

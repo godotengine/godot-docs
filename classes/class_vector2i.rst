@@ -10,14 +10,14 @@
 Vector2i
 ========
 
-Vector used for 2D math using integer coordinates.
+A 2D vector using integer coordinates.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-2-element structure that can be used to represent positions in 2D space or any other pair of numeric values.
+A 2-element structure that can be used to represent 2D grid coordinates or any other pair of integers.
 
 It uses integer coordinates and is therefore preferable to :ref:`Vector2<class_Vector2>` when exact precision is required. Note that the values are limited to 32 bits, and unlike :ref:`Vector2<class_Vector2>` this cannot be configured with an engine build option. Use :ref:`int<class_int>` or :ref:`PackedInt64Array<class_PackedInt64Array>` if 64-bit values are needed.
 
@@ -183,6 +183,22 @@ Zero vector, a vector with all components set to ``0``.
 
 One vector, a vector with all components set to ``1``.
 
+.. _class_Vector2i_constant_MIN:
+
+.. rst-class:: classref-constant
+
+**MIN** = ``Vector2i(-2147483648, -2147483648)``
+
+Min vector, a vector with all components equal to ``INT32_MIN``. Can be used as a negative integer equivalent of :ref:`Vector2.INF<class_Vector2_constant_INF>`.
+
+.. _class_Vector2i_constant_MAX:
+
+.. rst-class:: classref-constant
+
+**MAX** = ``Vector2i(2147483647, 2147483647)``
+
+Max vector, a vector with all components equal to ``INT32_MAX``. Can be used as an integer equivalent of :ref:`Vector2.INF<class_Vector2_constant_INF>`.
+
 .. _class_Vector2i_constant_LEFT:
 
 .. rst-class:: classref-constant
@@ -279,7 +295,7 @@ Constructs a **Vector2i** as a copy of the given **Vector2i**.
 
 :ref:`Vector2i<class_Vector2i>` **Vector2i** **(** :ref:`Vector2<class_Vector2>` from **)**
 
-Constructs a new **Vector2i** from :ref:`Vector2<class_Vector2>`. The floating point coordinates will be truncated.
+Constructs a new **Vector2i** from the given :ref:`Vector2<class_Vector2>` by truncating components' fractional parts (rounding towards zero). For a different behavior consider passing the result of :ref:`Vector2.ceil<class_Vector2_method_ceil>`, :ref:`Vector2.floor<class_Vector2_method_floor>` or :ref:`Vector2.round<class_Vector2_method_round>` to this constructor instead.
 
 .. rst-class:: classref-item-separator
 
@@ -449,7 +465,7 @@ Gets the remainder of each component of the **Vector2i** with the components of 
 
 :ref:`Vector2i<class_Vector2i>` **operator %** **(** :ref:`int<class_int>` right **)**
 
-Gets the remainder of each component of the **Vector2i** with the the given :ref:`int<class_int>`. This operation uses truncated division, which is often not desired as it does not work well with negative numbers. Consider using :ref:`@GlobalScope.posmod<class_@GlobalScope_method_posmod>` instead if you want to handle negative numbers.
+Gets the remainder of each component of the **Vector2i** with the given :ref:`int<class_int>`. This operation uses truncated division, which is often not desired as it does not work well with negative numbers. Consider using :ref:`@GlobalScope.posmod<class_@GlobalScope_method_posmod>` instead if you want to handle negative numbers.
 
 ::
 
@@ -677,3 +693,4 @@ Returns the negative value of the **Vector2i**. This is the same as writing ``Ve
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

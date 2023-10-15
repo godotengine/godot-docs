@@ -12,57 +12,14 @@ HSeparator
 
 **Inherits:** :ref:`Separator<class_Separator>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-Horizontal separator.
+A horizontal line used for separating other controls.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-Horizontal separator. See :ref:`Separator<class_Separator>`. Even though it looks horizontal, it is used to separate objects vertically.
-
-.. rst-class:: classref-reftable-group
-
-Theme Properties
-----------------
-
-.. table::
-   :widths: auto
-
-   +---------------------------------+---------------------------------------------------------------+-------+
-   | :ref:`int<class_int>`           | :ref:`separation<class_HSeparator_theme_constant_separation>` | ``4`` |
-   +---------------------------------+---------------------------------------------------------------+-------+
-   | :ref:`StyleBox<class_StyleBox>` | :ref:`separator<class_HSeparator_theme_style_separator>`      |       |
-   +---------------------------------+---------------------------------------------------------------+-------+
-
-.. rst-class:: classref-section-separator
-
-----
-
-.. rst-class:: classref-descriptions-group
-
-Theme Property Descriptions
----------------------------
-
-.. _class_HSeparator_theme_constant_separation:
-
-.. rst-class:: classref-themeproperty
-
-:ref:`int<class_int>` **separation** = ``4``
-
-The height of the area covered by the separator. Effectively works like a minimum height.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_HSeparator_theme_style_separator:
-
-.. rst-class:: classref-themeproperty
-
-:ref:`StyleBox<class_StyleBox>` **separator**
-
-The style for the separator line. Works best with :ref:`StyleBoxLine<class_StyleBoxLine>`.
+A horizontal separator used for separating other controls that are arranged **vertically**. **HSeparator** is purely visual and normally drawn as a :ref:`StyleBoxLine<class_StyleBoxLine>`.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
@@ -70,3 +27,4 @@ The style for the separator line. Works best with :ref:`StyleBoxLine<class_Style
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

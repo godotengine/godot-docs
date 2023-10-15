@@ -86,7 +86,7 @@ at various points, and change their timing.
 Each line in the Animation Panel is an animation track that references a
 Normal or Transform property of a node. Each track stores a path to
 a node and its affected property. For example, the position track
-in the illustration refers to to the ``position`` property of the Sprite2D
+in the illustration refers to the ``position`` property of the Sprite2D
 node.
 
 .. figure:: img/animation_normal_track.png

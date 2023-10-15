@@ -22,7 +22,7 @@ limits `coupling
 code flexible.
 
 For example, you might have a life bar on the screen that represents the
-player’s health. When the player takes damage or uses a healing potion, you want
+player's health. When the player takes damage or uses a healing potion, you want
 the bar to reflect the change. To do so, in Godot, you would use signals.
 
 .. note:: As mentioned in the introduction, signals are Godot's version of the
@@ -38,19 +38,19 @@ Scene setup
 -----------
 
 To add a button to our game, we will create a new main scene which will include
-both a button and the ``Sprite2D.tscn`` scene that we scripted in previous
-lessons.
+both a :ref:`Button <class_button>` and the ``sprite_2d.tscn`` scene we created in
+the :ref:`doc_scripting_first_script` lesson.
 
 Create a new scene by going to the menu Scene -> New Scene.
 
-.. image:: img/signals_01_new_scene.png
+.. image:: img/signals_01_new_scene.webp
 
-In the Scene dock, click the 2D Scene button. This will add a Node2D as our
-root.
+In the Scene dock, click the 2D Scene button. This will add
+a :ref:`Node2D <class_Node2D>` as our root.
 
-.. image:: img/signals_02_2d_scene.png
+.. image:: img/signals_02_2d_scene.webp
 
-In the FileSystem dock, click and drag the ``Sprite2D.tscn`` file you saved
+In the FileSystem dock, click and drag the ``sprite_2d.tscn`` file you saved
 previously onto the Node2D to instantiate it.
 
 .. image:: img/signals_03_dragging_scene.png
@@ -58,11 +58,11 @@ previously onto the Node2D to instantiate it.
 We want to add another node as a sibling of the Sprite2D. To do so, right-click
 on Node2D and select Add Child Node.
 
-.. image:: img/signals_04_add_child_node.png
+.. image:: img/signals_04_add_child_node.webp
 
-Search for the Button node type and add it.
+Search for the :ref:`Button <class_button>` node and add it.
 
-.. image:: img/signals_05_add_button.png
+.. image:: img/signals_05_add_button.webp
 
 The node is small by default. Click and drag on the bottom-right handle of the
 Button in the viewport to resize it.
@@ -71,20 +71,21 @@ Button in the viewport to resize it.
 
 If you don't see the handles, ensure the select tool is active in the toolbar.
 
-.. image:: img/signals_07_select_tool.png
+.. image:: img/signals_07_select_tool.webp
 
 Click and drag on the button itself to move it closer to the sprite.
 
 You can also write a label on the Button by editing its Text property in the
-Inspector. Enter "Toggle motion".
+Inspector. Enter ``Toggle motion``.
 
-.. image:: img/signals_08_toggle_motion_text.png
+.. image:: img/signals_08_toggle_motion_text.webp
 
 Your scene tree and viewport should look like this.
 
 .. image:: img/signals_09_scene_setup.png
 
-Save your newly created scene. You can then run it with :kbd:`F6` (:kbd:`Cmd + R` on macOS).
+Save your newly created scene as ``node_2d.tscn``, if you haven't already.
+You can then run it with :kbd:`F6` (:kbd:`Cmd + R` on macOS).
 At the moment, the button will be visible, but nothing will happen if you
 press it.
 
@@ -99,11 +100,11 @@ lesson.
 You can connect signals in the Node dock. Select the Button node and, on the
 right side of the editor, click on the tab named "Node" next to the Inspector.
 
-.. image:: img/signals_10_node_dock.png
+.. image:: img/signals_10_node_dock.webp
 
 The dock displays a list of signals available on the selected node.
 
-.. image:: img/signals_11_pressed_signals.png
+.. image:: img/signals_11_pressed_signals.webp
 
 Double-click the "pressed" signal to open the node connection window.
 
@@ -184,7 +185,7 @@ following code, which we saw two lessons ago:
         Position += velocity * (float)delta;
     }
 
-Your complete ``Sprite2D.gd`` code should look like the following.
+Your complete ``sprite_2d.gd`` code should look like the following.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -238,7 +239,7 @@ Let's use a different node here. Godot has a :ref:`Timer <class_Timer>` node
 that's useful to implement skill cooldown times, weapon reloading, and more.
 
 Head back to the 2D workspace. You can either click the "2D" text at the top of
-the window or press :kbd:`Ctrl + F1` (:kbd:`Alt + 1` on macOS).
+the window or press :kbd:`Ctrl + F1` (:kbd:`Ctrl + Cmd + 1` on macOS).
 
 In the Scene dock, right-click on the Sprite2D node and add a new child node.
 Search for Timer and add the corresponding node. Your scene should now look like
@@ -313,7 +314,7 @@ which the script is attached. When the Timer emits ``timeout``, we want to call
 the function ``_on_timer_timeout()``, that we need to define. Let's add it at the
 bottom of our script and use it to toggle our sprite's visibility.
 
-.. note:: By convention, we name these callback methods in GDScript as 
+.. note:: By convention, we name these callback methods in GDScript as
           "_on_node_name_signal_name" and in C# as "OnNodeNameSignalName".
           Here, it'll be "_on_timer_timeout" for GDScript and OnTimerTimeout() for C#.
 
@@ -341,7 +342,7 @@ Complete script
 ---------------
 
 That's it for our little moving and blinking Godot icon demo!
-Here is the complete ``Sprite2D.gd`` file for reference.
+Here is the complete ``sprite_2d.gd`` file for reference.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -354,7 +355,7 @@ Here is the complete ``Sprite2D.gd`` file for reference.
 
     func _ready():
         var timer = get_node("Timer")
-        timer.timeout.connect(_on_Timer_timeout)
+        timer.timeout.connect(_on_timer_timeout)
 
 
     func _process(delta):
@@ -367,7 +368,7 @@ Here is the complete ``Sprite2D.gd`` file for reference.
         set_process(not is_processing())
 
 
-    func _on_Timer_timeout():
+    func _on_timer_timeout():
         visible = not visible
 
  .. code-tab:: csharp C#

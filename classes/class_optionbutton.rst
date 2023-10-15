@@ -12,18 +12,20 @@ OptionButton
 
 **Inherits:** :ref:`Button<class_Button>` **<** :ref:`BaseButton<class_BaseButton>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-Button control that provides selectable options when pressed.
+A button that brings up a dropdown with selectable options when pressed.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-OptionButton is a type button that provides a selectable list of items when pressed. The item selected becomes the "current" item and is displayed as the button text.
+**OptionButton** is a type of button that brings up a dropdown with selectable items when pressed. The item selected becomes the "current" item and is displayed as the button text.
 
 See also :ref:`BaseButton<class_BaseButton>` which contains common properties and methods associated with this node.
 
-\ **Note:** Properties :ref:`Button.text<class_Button_property_text>` and :ref:`Button.icon<class_Button_property_icon>` are automatically set based on the selected item. They shouldn't be changed manually.
+\ **Note:** The ID values used for items are limited to 32 bits, not full 64 bits of :ref:`int<class_int>`. This has a range of ``-2^32`` to ``2^32 - 1``, i.e. ``-2147483648`` to ``2147483647``.
+
+\ **Note:** The :ref:`Button.text<class_Button_property_text>` and :ref:`Button.icon<class_Button_property_icon>` properties are set automatically based on the selected item. They shouldn't be changed manually.
 
 .. rst-class:: classref-reftable-group
 
@@ -37,6 +39,8 @@ Properties
    | :ref:`ActionMode<enum_BaseButton_ActionMode>`                     | action_mode                                                                 | ``0`` (overrides :ref:`BaseButton<class_BaseButton_property_action_mode>`)    |
    +-------------------------------------------------------------------+-----------------------------------------------------------------------------+-------------------------------------------------------------------------------+
    | :ref:`HorizontalAlignment<enum_@GlobalScope_HorizontalAlignment>` | alignment                                                                   | ``0`` (overrides :ref:`Button<class_Button_property_alignment>`)              |
+   +-------------------------------------------------------------------+-----------------------------------------------------------------------------+-------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                           | :ref:`allow_reselect<class_OptionButton_property_allow_reselect>`           | ``false``                                                                     |
    +-------------------------------------------------------------------+-----------------------------------------------------------------------------+-------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                           | :ref:`fit_to_longest_item<class_OptionButton_property_fit_to_longest_item>` | ``true``                                                                      |
    +-------------------------------------------------------------------+-----------------------------------------------------------------------------+-------------------------------------------------------------------------------+
@@ -94,6 +98,8 @@ Methods
    +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                              | :ref:`select<class_OptionButton_method_select>` **(** :ref:`int<class_int>` idx **)**                                                                                               |
    +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                              | :ref:`set_disable_shortcuts<class_OptionButton_method_set_disable_shortcuts>` **(** :ref:`bool<class_bool>` disabled **)**                                                          |
+   +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                              | :ref:`set_item_disabled<class_OptionButton_method_set_item_disabled>` **(** :ref:`int<class_int>` idx, :ref:`bool<class_bool>` disabled **)**                                       |
    +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                              | :ref:`set_item_icon<class_OptionButton_method_set_item_icon>` **(** :ref:`int<class_int>` idx, :ref:`Texture2D<class_Texture2D>` texture **)**                                      |
@@ -117,53 +123,13 @@ Theme Properties
 .. table::
    :widths: auto
 
-   +-----------------------------------+------------------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`Color<class_Color>`         | :ref:`font_color<class_OptionButton_theme_color_font_color>`                             | ``Color(0.875, 0.875, 0.875, 1)``   |
-   +-----------------------------------+------------------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`Color<class_Color>`         | :ref:`font_disabled_color<class_OptionButton_theme_color_font_disabled_color>`           | ``Color(0.875, 0.875, 0.875, 0.5)`` |
-   +-----------------------------------+------------------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`Color<class_Color>`         | :ref:`font_focus_color<class_OptionButton_theme_color_font_focus_color>`                 | ``Color(0.95, 0.95, 0.95, 1)``      |
-   +-----------------------------------+------------------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`Color<class_Color>`         | :ref:`font_hover_color<class_OptionButton_theme_color_font_hover_color>`                 | ``Color(0.95, 0.95, 0.95, 1)``      |
-   +-----------------------------------+------------------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`Color<class_Color>`         | :ref:`font_hover_pressed_color<class_OptionButton_theme_color_font_hover_pressed_color>` | ``Color(1, 1, 1, 1)``               |
-   +-----------------------------------+------------------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`Color<class_Color>`         | :ref:`font_outline_color<class_OptionButton_theme_color_font_outline_color>`             | ``Color(1, 1, 1, 1)``               |
-   +-----------------------------------+------------------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`Color<class_Color>`         | :ref:`font_pressed_color<class_OptionButton_theme_color_font_pressed_color>`             | ``Color(1, 1, 1, 1)``               |
-   +-----------------------------------+------------------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`int<class_int>`             | :ref:`arrow_margin<class_OptionButton_theme_constant_arrow_margin>`                      | ``4``                               |
-   +-----------------------------------+------------------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`int<class_int>`             | :ref:`h_separation<class_OptionButton_theme_constant_h_separation>`                      | ``2``                               |
-   +-----------------------------------+------------------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`int<class_int>`             | :ref:`modulate_arrow<class_OptionButton_theme_constant_modulate_arrow>`                  | ``0``                               |
-   +-----------------------------------+------------------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`int<class_int>`             | :ref:`outline_size<class_OptionButton_theme_constant_outline_size>`                      | ``0``                               |
-   +-----------------------------------+------------------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`Font<class_Font>`           | :ref:`font<class_OptionButton_theme_font_font>`                                          |                                     |
-   +-----------------------------------+------------------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`int<class_int>`             | :ref:`font_size<class_OptionButton_theme_font_size_font_size>`                           |                                     |
-   +-----------------------------------+------------------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`Texture2D<class_Texture2D>` | :ref:`arrow<class_OptionButton_theme_icon_arrow>`                                        |                                     |
-   +-----------------------------------+------------------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`StyleBox<class_StyleBox>`   | :ref:`disabled<class_OptionButton_theme_style_disabled>`                                 |                                     |
-   +-----------------------------------+------------------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`StyleBox<class_StyleBox>`   | :ref:`disabled_mirrored<class_OptionButton_theme_style_disabled_mirrored>`               |                                     |
-   +-----------------------------------+------------------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`StyleBox<class_StyleBox>`   | :ref:`focus<class_OptionButton_theme_style_focus>`                                       |                                     |
-   +-----------------------------------+------------------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`StyleBox<class_StyleBox>`   | :ref:`hover<class_OptionButton_theme_style_hover>`                                       |                                     |
-   +-----------------------------------+------------------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`StyleBox<class_StyleBox>`   | :ref:`hover_mirrored<class_OptionButton_theme_style_hover_mirrored>`                     |                                     |
-   +-----------------------------------+------------------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`StyleBox<class_StyleBox>`   | :ref:`normal<class_OptionButton_theme_style_normal>`                                     |                                     |
-   +-----------------------------------+------------------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`StyleBox<class_StyleBox>`   | :ref:`normal_mirrored<class_OptionButton_theme_style_normal_mirrored>`                   |                                     |
-   +-----------------------------------+------------------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`StyleBox<class_StyleBox>`   | :ref:`pressed<class_OptionButton_theme_style_pressed>`                                   |                                     |
-   +-----------------------------------+------------------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`StyleBox<class_StyleBox>`   | :ref:`pressed_mirrored<class_OptionButton_theme_style_pressed_mirrored>`                 |                                     |
-   +-----------------------------------+------------------------------------------------------------------------------------------+-------------------------------------+
+   +-----------------------------------+-------------------------------------------------------------------------+-------+
+   | :ref:`int<class_int>`             | :ref:`arrow_margin<class_OptionButton_theme_constant_arrow_margin>`     | ``4`` |
+   +-----------------------------------+-------------------------------------------------------------------------+-------+
+   | :ref:`int<class_int>`             | :ref:`modulate_arrow<class_OptionButton_theme_constant_modulate_arrow>` | ``0`` |
+   +-----------------------------------+-------------------------------------------------------------------------+-------+
+   | :ref:`Texture2D<class_Texture2D>` | :ref:`arrow<class_OptionButton_theme_icon_arrow>`                       |       |
+   +-----------------------------------+-------------------------------------------------------------------------+-------+
 
 .. rst-class:: classref-section-separator
 
@@ -194,6 +160,8 @@ Emitted when the user navigates to an item using the :ref:`ProjectSettings.input
 
 Emitted when the current item has been changed by the user. The index of the item selected is passed as argument.
 
+\ :ref:`allow_reselect<class_OptionButton_property_allow_reselect>` must be enabled to reselect an item.
+
 .. rst-class:: classref-section-separator
 
 ----
@@ -202,6 +170,23 @@ Emitted when the current item has been changed by the user. The index of the ite
 
 Property Descriptions
 ---------------------
+
+.. _class_OptionButton_property_allow_reselect:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **allow_reselect** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_allow_reselect** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **get_allow_reselect** **(** **)**
+
+If ``true``, the currently selected item can be selected again.
+
+.. rst-class:: classref-item-separator
+
+----
 
 .. _class_OptionButton_property_fit_to_longest_item:
 
@@ -494,6 +479,18 @@ Passing ``-1`` as the index deselects any currently selected item.
 
 ----
 
+.. _class_OptionButton_method_set_disable_shortcuts:
+
+.. rst-class:: classref-method
+
+void **set_disable_shortcuts** **(** :ref:`bool<class_bool>` disabled **)**
+
+If ``true``, shortcuts are disabled and cannot be used to trigger the button.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_OptionButton_method_set_item_disabled:
 
 .. rst-class:: classref-method
@@ -585,90 +582,6 @@ Adjusts popup position and sizing for the **OptionButton**, then shows the :ref:
 Theme Property Descriptions
 ---------------------------
 
-.. _class_OptionButton_theme_color_font_color:
-
-.. rst-class:: classref-themeproperty
-
-:ref:`Color<class_Color>` **font_color** = ``Color(0.875, 0.875, 0.875, 1)``
-
-Default text :ref:`Color<class_Color>` of the **OptionButton**.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_OptionButton_theme_color_font_disabled_color:
-
-.. rst-class:: classref-themeproperty
-
-:ref:`Color<class_Color>` **font_disabled_color** = ``Color(0.875, 0.875, 0.875, 0.5)``
-
-Text :ref:`Color<class_Color>` used when the **OptionButton** is disabled.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_OptionButton_theme_color_font_focus_color:
-
-.. rst-class:: classref-themeproperty
-
-:ref:`Color<class_Color>` **font_focus_color** = ``Color(0.95, 0.95, 0.95, 1)``
-
-Text :ref:`Color<class_Color>` used when the **OptionButton** is focused. Only replaces the normal text color of the button. Disabled, hovered, and pressed states take precedence over this color.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_OptionButton_theme_color_font_hover_color:
-
-.. rst-class:: classref-themeproperty
-
-:ref:`Color<class_Color>` **font_hover_color** = ``Color(0.95, 0.95, 0.95, 1)``
-
-Text :ref:`Color<class_Color>` used when the **OptionButton** is being hovered.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_OptionButton_theme_color_font_hover_pressed_color:
-
-.. rst-class:: classref-themeproperty
-
-:ref:`Color<class_Color>` **font_hover_pressed_color** = ``Color(1, 1, 1, 1)``
-
-Text :ref:`Color<class_Color>` used when the **OptionButton** is being hovered and pressed.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_OptionButton_theme_color_font_outline_color:
-
-.. rst-class:: classref-themeproperty
-
-:ref:`Color<class_Color>` **font_outline_color** = ``Color(1, 1, 1, 1)``
-
-The tint of text outline of the **OptionButton**.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_OptionButton_theme_color_font_pressed_color:
-
-.. rst-class:: classref-themeproperty
-
-:ref:`Color<class_Color>` **font_pressed_color** = ``Color(1, 1, 1, 1)``
-
-Text :ref:`Color<class_Color>` used when the **OptionButton** is being pressed.
-
-.. rst-class:: classref-item-separator
-
-----
-
 .. _class_OptionButton_theme_constant_arrow_margin:
 
 .. rst-class:: classref-themeproperty
@@ -676,18 +589,6 @@ Text :ref:`Color<class_Color>` used when the **OptionButton** is being pressed.
 :ref:`int<class_int>` **arrow_margin** = ``4``
 
 The horizontal space between the arrow icon and the right edge of the button.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_OptionButton_theme_constant_h_separation:
-
-.. rst-class:: classref-themeproperty
-
-:ref:`int<class_int>` **h_separation** = ``2``
-
-The horizontal space between **OptionButton**'s icon and text. Negative values will be treated as ``0`` when used.
 
 .. rst-class:: classref-item-separator
 
@@ -705,44 +606,6 @@ If different than ``0``, the arrow icon will be modulated to the font color.
 
 ----
 
-.. _class_OptionButton_theme_constant_outline_size:
-
-.. rst-class:: classref-themeproperty
-
-:ref:`int<class_int>` **outline_size** = ``0``
-
-The size of the text outline.
-
-\ **Note:** If using a font with :ref:`FontFile.multichannel_signed_distance_field<class_FontFile_property_multichannel_signed_distance_field>` enabled, its :ref:`FontFile.msdf_pixel_range<class_FontFile_property_msdf_pixel_range>` must be set to at least *twice* the value of :ref:`outline_size<class_OptionButton_theme_constant_outline_size>` for outline rendering to look correct. Otherwise, the outline may appear to be cut off earlier than intended.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_OptionButton_theme_font_font:
-
-.. rst-class:: classref-themeproperty
-
-:ref:`Font<class_Font>` **font**
-
-:ref:`Font<class_Font>` of the **OptionButton**'s text.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_OptionButton_theme_font_size_font_size:
-
-.. rst-class:: classref-themeproperty
-
-:ref:`int<class_int>` **font_size**
-
-Font size of the **OptionButton**'s text.
-
-.. rst-class:: classref-item-separator
-
-----
-
 .. _class_OptionButton_theme_icon_arrow:
 
 .. rst-class:: classref-themeproperty
@@ -751,117 +614,10 @@ Font size of the **OptionButton**'s text.
 
 The arrow icon to be drawn on the right end of the button.
 
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_OptionButton_theme_style_disabled:
-
-.. rst-class:: classref-themeproperty
-
-:ref:`StyleBox<class_StyleBox>` **disabled**
-
-:ref:`StyleBox<class_StyleBox>` used when the **OptionButton** is disabled (for left-to-right layouts).
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_OptionButton_theme_style_disabled_mirrored:
-
-.. rst-class:: classref-themeproperty
-
-:ref:`StyleBox<class_StyleBox>` **disabled_mirrored**
-
-:ref:`StyleBox<class_StyleBox>` used when the **OptionButton** is disabled (for right-to-left layouts).
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_OptionButton_theme_style_focus:
-
-.. rst-class:: classref-themeproperty
-
-:ref:`StyleBox<class_StyleBox>` **focus**
-
-:ref:`StyleBox<class_StyleBox>` used when the **OptionButton** is focused. The ``focus`` :ref:`StyleBox<class_StyleBox>` is displayed *over* the base :ref:`StyleBox<class_StyleBox>`, so a partially transparent :ref:`StyleBox<class_StyleBox>` should be used to ensure the base :ref:`StyleBox<class_StyleBox>` remains visible. A :ref:`StyleBox<class_StyleBox>` that represents an outline or an underline works well for this purpose. To disable the focus visual effect, assign a :ref:`StyleBoxEmpty<class_StyleBoxEmpty>` resource. Note that disabling the focus visual effect will harm keyboard/controller navigation usability, so this is not recommended for accessibility reasons.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_OptionButton_theme_style_hover:
-
-.. rst-class:: classref-themeproperty
-
-:ref:`StyleBox<class_StyleBox>` **hover**
-
-:ref:`StyleBox<class_StyleBox>` used when the **OptionButton** is being hovered (for left-to-right layouts).
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_OptionButton_theme_style_hover_mirrored:
-
-.. rst-class:: classref-themeproperty
-
-:ref:`StyleBox<class_StyleBox>` **hover_mirrored**
-
-:ref:`StyleBox<class_StyleBox>` used when the **OptionButton** is being hovered (for right-to-left layouts).
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_OptionButton_theme_style_normal:
-
-.. rst-class:: classref-themeproperty
-
-:ref:`StyleBox<class_StyleBox>` **normal**
-
-Default :ref:`StyleBox<class_StyleBox>` for the **OptionButton** (for left-to-right layouts).
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_OptionButton_theme_style_normal_mirrored:
-
-.. rst-class:: classref-themeproperty
-
-:ref:`StyleBox<class_StyleBox>` **normal_mirrored**
-
-Default :ref:`StyleBox<class_StyleBox>` for the **OptionButton** (for right-to-left layouts).
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_OptionButton_theme_style_pressed:
-
-.. rst-class:: classref-themeproperty
-
-:ref:`StyleBox<class_StyleBox>` **pressed**
-
-:ref:`StyleBox<class_StyleBox>` used when the **OptionButton** is being pressed (for left-to-right layouts).
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_OptionButton_theme_style_pressed_mirrored:
-
-.. rst-class:: classref-themeproperty
-
-:ref:`StyleBox<class_StyleBox>` **pressed_mirrored**
-
-:ref:`StyleBox<class_StyleBox>` used when the **OptionButton** is being pressed (for right-to-left layouts).
-
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

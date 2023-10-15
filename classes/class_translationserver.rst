@@ -12,14 +12,14 @@ TranslationServer
 
 **Inherits:** :ref:`Object<class_Object>`
 
-Server that manages all translations.
+The server responsible for language translations.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-Server that manages all translations. Translations can be set to it and removed from it.
+The server that manages all language translations. Translations can be added to or removed from it.
 
 .. rst-class:: classref-introduction-group
 
@@ -155,7 +155,7 @@ Clears the server from all translations.
 
 :ref:`int<class_int>` **compare_locales** **(** :ref:`String<class_String>` locale_a, :ref:`String<class_String>` locale_b **)** |const|
 
-Compares two locales and return similarity score between ``0``\ (no match) and ``10``\ (full match).
+Compares two locales and returns a similarity score between ``0`` (no match) and ``10`` (full match).
 
 .. rst-class:: classref-item-separator
 
@@ -167,7 +167,7 @@ Compares two locales and return similarity score between ``0``\ (no match) and `
 
 :ref:`PackedStringArray<class_PackedStringArray>` **get_all_countries** **(** **)** |const|
 
-Returns array of known country codes.
+Returns an array of known country codes.
 
 .. rst-class:: classref-item-separator
 
@@ -191,7 +191,7 @@ Returns array of known language codes.
 
 :ref:`PackedStringArray<class_PackedStringArray>` **get_all_scripts** **(** **)** |const|
 
-Returns array of known script codes.
+Returns an array of known script codes.
 
 .. rst-class:: classref-item-separator
 
@@ -203,7 +203,7 @@ Returns array of known script codes.
 
 :ref:`String<class_String>` **get_country_name** **(** :ref:`String<class_String>` country **)** |const|
 
-Returns readable country name for the ``country`` code.
+Returns a readable country name for the ``country`` code.
 
 .. rst-class:: classref-item-separator
 
@@ -215,7 +215,7 @@ Returns readable country name for the ``country`` code.
 
 :ref:`String<class_String>` **get_language_name** **(** :ref:`String<class_String>` language **)** |const|
 
-Returns readable language name for the ``language`` code.
+Returns a readable language name for the ``language`` code.
 
 .. rst-class:: classref-item-separator
 
@@ -265,7 +265,7 @@ Returns a locale's language and its variant (e.g. ``"en_US"`` would return ``"En
 
 :ref:`String<class_String>` **get_script_name** **(** :ref:`String<class_String>` script **)** |const|
 
-Returns readable script name for the ``script`` code.
+Returns a readable script name for the ``script`` code.
 
 .. rst-class:: classref-item-separator
 
@@ -355,7 +355,7 @@ If translations have been loaded beforehand for the new locale, they will be app
 
 :ref:`String<class_String>` **standardize_locale** **(** :ref:`String<class_String>` locale **)** |const|
 
-Returns ``locale`` string standardized to match known locales (e.g. ``en-US`` would be matched to ``en_US``).
+Returns a ``locale`` string standardized to match known locales (e.g. ``en-US`` would be matched to ``en_US``).
 
 .. rst-class:: classref-item-separator
 
@@ -379,7 +379,7 @@ Returns the current locale's translation for the given message (key) and context
 
 :ref:`StringName<class_StringName>` **translate_plural** **(** :ref:`StringName<class_StringName>` message, :ref:`StringName<class_StringName>` plural_message, :ref:`int<class_int>` n, :ref:`StringName<class_StringName>` context="" **)** |const|
 
-Returns the current locale's translation for the given message (key), plural_message and context.
+Returns the current locale's translation for the given message (key), plural message and context.
 
 The number ``n`` is the number or quantity of the plural object. It will be used to guide the translation system to fetch the correct plural form for the selected language.
 
@@ -389,3 +389,4 @@ The number ``n`` is the number or quantity of the plural object. It will be used
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

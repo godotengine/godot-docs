@@ -80,7 +80,7 @@ This action provides a float value between ``0.0`` and ``1.0`` for any analog in
 
 :ref:`ActionType<enum_OpenXRAction_ActionType>` **OPENXR_ACTION_VECTOR2** = ``2``
 
-This action provides a vector2 value and can be bound to embedded trackpads and joysticks
+This action provides a :ref:`Vector2<class_Vector2>` value and can be bound to embedded trackpads and joysticks.
 
 .. _class_OpenXRAction_constant_OPENXR_ACTION_POSE:
 
@@ -152,3 +152,4 @@ A collections of toplevel paths to which this action can be bound.
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

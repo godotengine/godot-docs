@@ -12,14 +12,14 @@ ThemeDB
 
 **Inherits:** :ref:`Object<class_Object>`
 
-An engine singleton providing access to static :ref:`Theme<class_Theme>` information, such as default and project theme, and fallback values.
+A singleton that provides access to static information about :ref:`Theme<class_Theme>` resources used by the engine and by your project.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-This engine singleton provides access to static information about :ref:`Theme<class_Theme>` resources used by the engine and by your projects. You can fetch the default engine theme, as well as your project configured theme.
+This singleton provides access to static information about :ref:`Theme<class_Theme>` resources used by the engine and by your projects. You can fetch the default engine theme, as well as your project configured theme.
 
 \ **ThemeDB** also contains fallback values for theme properties.
 
@@ -207,3 +207,4 @@ To set the project theme, see :ref:`ProjectSettings.gui/theme/custom<class_Proje
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

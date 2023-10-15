@@ -12,7 +12,36 @@ PackedDataContainerRef
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-Reference-counted version of :ref:`PackedDataContainer<class_PackedDataContainer>`.
+An internal class used by :ref:`PackedDataContainer<class_PackedDataContainer>` to pack nested arrays and dictionaries.
+
+.. rst-class:: classref-introduction-group
+
+Description
+-----------
+
+When packing nested containers using :ref:`PackedDataContainer<class_PackedDataContainer>`, they are recursively packed into **PackedDataContainerRef** (only applies to :ref:`Array<class_Array>` and :ref:`Dictionary<class_Dictionary>`). Their data can be retrieved the same way as from :ref:`PackedDataContainer<class_PackedDataContainer>`.
+
+::
+
+    var packed = PackedDataContainer.new()
+    packed.pack([1, 2, 3, ["abc", "def"], 4, 5, 6])
+    
+    for element in packed:
+        if element is PackedDataContainerRef:
+            for subelement in element:
+                print("::", subelement)
+        else:
+            print(element)
+    
+    # Prints:
+    # 1
+    # 2
+    # 3
+    # ::abc
+    # ::def
+    # 4
+    # 5
+    # 6
 
 .. rst-class:: classref-reftable-group
 
@@ -41,9 +70,7 @@ Method Descriptions
 
 :ref:`int<class_int>` **size** **(** **)** |const|
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Returns the size of the packed container (see :ref:`Array.size<class_Array_method_size>` and :ref:`Dictionary.size<class_Dictionary_method_size>`).
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
@@ -51,3 +78,4 @@ Method Descriptions
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

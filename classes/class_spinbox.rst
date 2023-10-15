@@ -12,14 +12,14 @@ SpinBox
 
 **Inherits:** :ref:`Range<class_Range>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-Numerical input text field.
+An input field for numbers.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-SpinBox is a numerical input text field. It allows entering integers and floats.
+**SpinBox** is a numerical input text field. It allows entering integers and floating point numbers.
 
 \ **Example:**\ 
 
@@ -48,6 +48,8 @@ The above code will create a **SpinBox**, disable context menu on it and set the
 
 See :ref:`Range<class_Range>` class for more options over the **SpinBox**.
 
+\ **Note:** With the **SpinBox**'s context menu disabled, you can right-click the bottom half of the spinbox to set the value to its minimum, while right-clicking the top half sets the value to its maximum.
+
 \ **Note:** **SpinBox** relies on an underlying :ref:`LineEdit<class_LineEdit>` node. To theme a **SpinBox**'s background, add theme items for :ref:`LineEdit<class_LineEdit>` and customize them.
 
 \ **Note:** If you want to implement drag and drop for the underlying :ref:`LineEdit<class_LineEdit>`, you can use :ref:`Control.set_drag_forwarding<class_Control_method_set_drag_forwarding>` on the node returned by :ref:`get_line_edit<class_SpinBox_method_get_line_edit>`.
@@ -71,7 +73,7 @@ Properties
    +-------------------------------------------------------------------+------------------------------------------------------------------------------+------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                           | :ref:`select_all_on_focus<class_SpinBox_property_select_all_on_focus>`       | ``false``                                                                    |
    +-------------------------------------------------------------------+------------------------------------------------------------------------------+------------------------------------------------------------------------------+
-   | :ref:`SizeFlags<enum_Control_SizeFlags>`                          | size_flags_vertical                                                          | ``1`` (overrides :ref:`Control<class_Control_property_size_flags_vertical>`) |
+   | |bitfield|\<:ref:`SizeFlags<enum_Control_SizeFlags>`\>            | size_flags_vertical                                                          | ``1`` (overrides :ref:`Control<class_Control_property_size_flags_vertical>`) |
    +-------------------------------------------------------------------+------------------------------------------------------------------------------+------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                                         | step                                                                         | ``1.0`` (overrides :ref:`Range<class_Range_property_step>`)                  |
    +-------------------------------------------------------------------+------------------------------------------------------------------------------+------------------------------------------------------------------------------+
@@ -143,7 +145,7 @@ Changes the alignment of the underlying :ref:`LineEdit<class_LineEdit>`.
 - void **set_custom_arrow_step** **(** :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_custom_arrow_step** **(** **)**
 
-If not ``0``, ``value`` will always be rounded to a multiple of ``custom_arrow_step`` when interacting with the arrow buttons of the **SpinBox**.
+If not ``0``, :ref:`Range.value<class_Range_property_value>` will always be rounded to a multiple of :ref:`custom_arrow_step<class_SpinBox_property_custom_arrow_step>` when interacting with the arrow buttons of the **SpinBox**.
 
 .. rst-class:: classref-item-separator
 
@@ -177,7 +179,7 @@ If ``true``, the **SpinBox** will be editable. Otherwise, it will be read only.
 - void **set_prefix** **(** :ref:`String<class_String>` value **)**
 - :ref:`String<class_String>` **get_prefix** **(** **)**
 
-Adds the specified ``prefix`` string before the numerical value of the **SpinBox**.
+Adds the specified prefix string before the numerical value of the **SpinBox**.
 
 .. rst-class:: classref-item-separator
 
@@ -211,7 +213,7 @@ If ``true``, the **SpinBox** will select the whole text when the :ref:`LineEdit<
 - void **set_suffix** **(** :ref:`String<class_String>` value **)**
 - :ref:`String<class_String>` **get_suffix** **(** **)**
 
-Adds the specified ``suffix`` string after the numerical value of the **SpinBox**.
+Adds the specified suffix string after the numerical value of the **SpinBox**.
 
 .. rst-class:: classref-item-separator
 
@@ -284,3 +286,4 @@ Sets a custom :ref:`Texture2D<class_Texture2D>` for up and down arrows of the **
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

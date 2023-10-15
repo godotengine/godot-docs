@@ -78,7 +78,7 @@ program termination, you should send the notification yourself:
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    get_tree().get_root().propagate_notification(NOTIFICATION_WM_CLOSE_REQUEST)
+    get_tree().root.propagate_notification(NOTIFICATION_WM_CLOSE_REQUEST)
 
  .. code-tab:: csharp
 

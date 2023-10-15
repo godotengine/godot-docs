@@ -26,6 +26,7 @@
 
  /* Default (light) theme colors */
  :root {
+    color-scheme: light dark;
     --body-color: #404040;
     --content-wrap-background-color: #efefef;
     --content-background-color: #fcfcfc;
@@ -95,6 +96,7 @@
     --highlight-comment-color: #408090;
     --highlight-keyword-color: #007020;
     --highlight-keyword2-color: #902000;
+    --highlight-control-flow-keyword-color: #902060;
     --highlight-number-color: #208050;
     --highlight-decorator-color: #4070a0;
     --highlight-type-color: #007020;
@@ -112,7 +114,7 @@
     --copybtn-tooltip-background-color: #24292f;
     --copybtn-box-shadow: 0 1px 0 rgba(27,31,36,0.04), inset 0 1px 0 rgba(255,255,255,0.25);
     --copybtn-border-color-success: #2da44e;
-    
+
     --contribute-background-color: #d7dee8;
     --contribute-text-color: #646e72;
 
@@ -223,6 +225,7 @@
         --highlight-comment-color: rgba(204, 206, 211, 0.5);
         --highlight-keyword-color: #ff7085;
         --highlight-keyword2-color: #42ffc2;
+        --highlight-control-flow-keyword-color: #ff8ccc;
         --highlight-number-color: #a1ffe0;
         --highlight-decorator-color: #ffb373;
         --highlight-type-color: #8effda;
@@ -796,7 +799,7 @@ html.writer-html5 .rst-content .wy-table-responsive > table td > p code.literal 
 code,
 .rst-content tt,
 .rst-content code {
-    font-size: 14px;
+    font-size: .875em;
     font-family: var(--monospace-font-family);
     background-color: var(--code-background-color);
     border: none;
@@ -844,6 +847,7 @@ code,
 
 .highlight {
     background-color: var(--highlight-background-color);
+    tab-size: 4;
 }
 
 /* Emphasized lines */
@@ -875,6 +879,10 @@ code,
 .highlight .kt /* Keyword.Type */,
 .highlight .ow /* Operator.Word */ {
     color: var(--highlight-keyword-color);
+}
+
+.highlight .k-ControlFlow /* Keyword.ControlFlow */ {
+    color: var(--highlight-control-flow-keyword-color);
 }
 
 .highlight .ch /* Comment.Hashbang */,
@@ -1714,7 +1722,7 @@ p + .classref-constant {
     left: 3.5px;
     top: 3.5px;
     color: var(--copybtn-icon-color);
-    pointer-events: none; 
+    pointer-events: none;
 }
 .highlight button.copybtn.success {
     border-color: var(--copybtn-border-color-success);
@@ -1728,4 +1736,30 @@ p + .classref-constant {
     color: #ffffff;
     border-radius: 6px;
     padding: 0.5em 0.75em;
+}
+
+/* Allow :abbr: tags' content to be displayed on mobile platforms by tapping the word */
+@media (hover: none), (hover: on-demand), (-moz-touch-enabled: 1), (pointer:coarse) {
+    /* Do not enable on desktop platforms to avoid doubling the tooltip */
+    abbr[title] {
+        position: relative;
+    }
+
+    abbr[title]:hover::after,
+    abbr[title]:focus::after {
+        content: attr(title);
+
+        position: absolute;
+        left: 0;
+        bottom: -32px;
+        width: auto;
+        white-space: nowrap;
+
+        background-color: #1e1e1e;
+        color: #fff;
+        border-radius: 3px;
+        box-shadow: 1px 1px 5px 0 rgba(0, 0, 0, 0.4);
+        font-size: 14px;
+        padding: 3px 5px;
+    }
 }

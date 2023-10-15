@@ -12,14 +12,14 @@ InputEventMouseMotion
 
 **Inherits:** :ref:`InputEventMouse<class_InputEventMouse>` **<** :ref:`InputEventWithModifiers<class_InputEventWithModifiers>` **<** :ref:`InputEventFromWindow<class_InputEventFromWindow>` **<** :ref:`InputEvent<class_InputEvent>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-Input event type for mouse motion events.
+Represents a mouse or a pen movement.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-Contains mouse and pen motion information. Supports relative, absolute positions and velocity. See :ref:`Node._input<class_Node_method__input>`.
+Stores information about a mouse or a pen motion. This includes relative position, absolute position, and velocity. See :ref:`Node._input<class_Node_method__input>`.
 
 \ **Note:** By default, this event is only emitted once per frame rendered at most. If you need more precise input reporting, set :ref:`Input.use_accumulated_input<class_Input_property_use_accumulated_input>` to ``false`` to make events emitted as often as possible. If you use InputEventMouseMotion to draw lines, consider implementing `Bresenham's line algorithm <https://en.wikipedia.org/wiki/Bresenham%27s_line_algorithm>`__ as well to avoid visible gaps in lines if the user is moving the mouse quickly.
 
@@ -27,6 +27,8 @@ Contains mouse and pen motion information. Supports relative, absolute positions
 
 Tutorials
 ---------
+
+- :doc:`Using InputEvent <../tutorials/inputs/inputevent>`
 
 - :doc:`Mouse and input coordinates <../tutorials/inputs/mouse_and_input_coordinates>`
 
@@ -152,3 +154,4 @@ The mouse velocity in pixels per second.
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

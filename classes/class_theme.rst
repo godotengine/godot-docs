@@ -12,14 +12,14 @@ Theme
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-Theme resource for styling/skinning :ref:`Control<class_Control>`\ s and :ref:`Window<class_Window>`\ s.
+A resource used for styling/skinning :ref:`Control<class_Control>`\ s and :ref:`Window<class_Window>`\ s.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-A theme resource is used for styling/skinning :ref:`Control<class_Control>` and :ref:`Window<class_Window>` nodes. While individual controls can be styled using their local theme overrides (see :ref:`Control.add_theme_color_override<class_Control_method_add_theme_color_override>`), theme resources allow you to store and apply the same settings between all controls sharing the same type (e.g. style all :ref:`Button<class_Button>`\ s the same). One theme resource can be used for the entire project, but you can also set a separate theme resource to a branch of control nodes. A theme resources assigned to a control node applies to the control itself, as well as all of its direct and indirect children (as long as a chain of controls is uninterrupted).
+A resource used for styling/skinning :ref:`Control<class_Control>` and :ref:`Window<class_Window>` nodes. While individual controls can be styled using their local theme overrides (see :ref:`Control.add_theme_color_override<class_Control_method_add_theme_color_override>`), theme resources allow you to store and apply the same settings across all controls sharing the same type (e.g. style all :ref:`Button<class_Button>`\ s the same). One theme resource can be used for the entire project, but you can also set a separate theme resource to a branch of control nodes. A theme resource assigned to a control applies to the control itself, as well as all of its direct and indirect children (as long as a chain of controls is uninterrupted).
 
 Use :ref:`ProjectSettings.gui/theme/custom<class_ProjectSettings_property_gui/theme/custom>` to set up a project-scope theme that will be available to every control in your project.
 
@@ -704,7 +704,7 @@ Returns a list of all unique theme type names for :ref:`StyleBox<class_StyleBox>
 
 Returns the theme property of ``data_type`` defined by ``name`` and ``theme_type``, if it exists.
 
-Returns the engine fallback icon value if the property doesn't exist (see :ref:`ThemeDB<class_ThemeDB>`). Use :ref:`has_theme_item<class_Theme_method_has_theme_item>` to check for existence.
+Returns the engine fallback value if the property doesn't exist (see :ref:`ThemeDB<class_ThemeDB>`). Use :ref:`has_theme_item<class_Theme_method_has_theme_item>` to check for existence.
 
 \ **Note:** This method is analogous to calling the corresponding data type specific method, but can be used for more generalized logic.
 
@@ -1164,3 +1164,4 @@ Variations can also be nested, i.e. ``base_type`` can be another variation. If a
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

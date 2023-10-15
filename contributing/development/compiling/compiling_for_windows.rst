@@ -140,8 +140,8 @@ the engine source code (using ``cd``) and type::
           pywin32 being missing. You can safely ignore this warning.
 
 If all goes well, the resulting binary executable will be placed in
-``C:\godot\bin\`` with the name ``godot.windows.tools.32.exe`` or
-``godot.windows.tools.64.exe``. By default, SCons will build a binary matching
+``C:\godot\bin\`` with the name ``godot.windows.editor.x86_32.exe`` or
+``godot.windows.editor.x86_64.exe``. By default, SCons will build a binary matching
 your CPU architecture, but this can be overridden using ``arch=x86_64`` or
 ``arch=x86_32``.
 
@@ -153,7 +153,7 @@ dependencies. Running it will bring up the Project Manager.
           SCons option ``target=template_release``.
 
           If you are compiling Godot with MinGW, you can make the binary
-          even smaller and faster by adding the SCons option ``use_lto=yes``.
+          even smaller and faster by adding the SCons option ``lto=full``.
           As link-time optimization is a memory-intensive process,
           this will require about 7 GB of available RAM while compiling.
 

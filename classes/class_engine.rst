@@ -12,7 +12,7 @@ Engine
 
 **Inherits:** :ref:`Object<class_Object>`
 
-Access to engine properties.
+Provides access to engine properties.
 
 .. rst-class:: classref-introduction-group
 
@@ -226,7 +226,7 @@ If ``false``, stops printing error and warning messages to the console and edito
 - void **set_time_scale** **(** :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_time_scale** **(** **)**
 
-Controls how fast or slow the in-game clock ticks versus the real life one. It defaults to 1.0. A value of 2.0 means the game moves twice as fast as real life, whilst a value of 0.5 means the game moves at half the regular speed.
+Controls how fast or slow the in-game clock ticks versus the real life one. It defaults to 1.0. A value of 2.0 means the game moves twice as fast as real life, whilst a value of 0.5 means the game moves at half the regular speed. This also affects :ref:`Timer<class_Timer>` and :ref:`SceneTreeTimer<class_SceneTreeTimer>` (see :ref:`SceneTree.create_timer<class_SceneTree_method_create_timer>` for how to control this).
 
 .. rst-class:: classref-section-separator
 
@@ -243,7 +243,7 @@ Method Descriptions
 
 :ref:`String<class_String>` **get_architecture_name** **(** **)** |const|
 
-Returns the name of the CPU architecture the Godot binary was built for. Possible return values are ``x86_64``, ``x86_32``, ``arm64``, ``armv7``, ``rv64``, ``riscv``, ``ppc64``, ``ppc``, ``wasm64`` and ``wasm32``.
+Returns the name of the CPU architecture the Godot binary was built for. Possible return values are ``x86_64``, ``x86_32``, ``arm64``, ``arm32``, ``rv64``, ``riscv``, ``ppc64``, ``ppc``, ``wasm64`` and ``wasm32``.
 
 To detect whether the current CPU architecture is 64-bit, you can use the fact that all 64-bit architecture names have ``64`` in their name:
 
@@ -253,16 +253,16 @@ To detect whether the current CPU architecture is 64-bit, you can use the fact t
  .. code-tab:: gdscript
 
     if "64" in Engine.get_architecture_name():
-        print("Running on 64-bit CPU.")
+        print("Running a 64-bit build of Godot.")
     else:
-        print("Running on 32-bit CPU.")
+        print("Running a 32-bit build of Godot.")
 
  .. code-tab:: csharp
 
     if (Engine.GetArchitectureName().Contains("64"))
-        GD.Print("Running on 64-bit CPU.");
+        GD.Print("Running a 64-bit build of Godot.");
     else
-        GD.Print("Running on 32-bit CPU.");
+        GD.Print("Running a 32-bit build of Godot.");
 
 
 
@@ -706,3 +706,4 @@ Unregisters the singleton registered under ``name``. The singleton object is not
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

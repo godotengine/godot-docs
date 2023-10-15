@@ -89,7 +89,7 @@ other options by default and click the Create button to create the script.
 
 .. image:: img/scripting_first_script_attach_node_script.webp
 
-The Script workspace should appear with your new ``Sprite2D.gd`` file open and
+The Script workspace should appear with your new ``sprite_2d.gd`` file open and
 the following line of code:
 
 .. tabs::
@@ -101,7 +101,7 @@ the following line of code:
 
     using Godot;
 
-    public partial class Sprite : Sprite2D
+    public partial class MySprite2D : Sprite2D
     {
     }
 
@@ -143,7 +143,7 @@ Add the following code to your script:
 
  .. code-tab:: csharp C#
 
-    public Sprite()
+    public MySprite2D()
     {
         GD.Print("Hello, world!");
     }
@@ -183,8 +183,8 @@ angular speed in radians per second.  Add the following after the ``extends Spri
 
  .. code-tab:: csharp C#
 
-    private int Speed = 400;
-    private float AngularSpeed = Mathf.Pi;
+    private int _speed = 400;
+    private float _angularSpeed = Mathf.Pi;
 
 Member variables sit near the top of the script, after any "extends" lines,
 but before functions. Every node
@@ -226,7 +226,7 @@ At the bottom of the script, define the function:
 
     public override void _Process(double delta)
     {
-        Rotation += AngularSpeed * (float)delta;
+        Rotation += _angularSpeed * (float)delta;
     }
 
 The ``func`` keyword defines a new function. After it, we have to write the
@@ -260,7 +260,7 @@ Moving forward
 ~~~~~~~~~~~~~~
 
 Let's now make the node move. Add the following two lines inside of the ``_process()``
-function, ensuring the new lines are indented the same way as the ``rotation += angular * delta`` line before
+function, ensuring the new lines are indented the same way as the ``rotation += angular_speed * delta`` line before
 them.
 
 .. tabs::
@@ -272,7 +272,7 @@ them.
 
  .. code-tab:: csharp C#
 
-    var velocity = Vector2.Up.Rotated(Rotation) * Speed;
+    var velocity = Vector2.Up.Rotated(Rotation) * _speed;
 
     Position += velocity * (float)delta;
 
@@ -305,7 +305,7 @@ Our node currently moves by itself. In the next part
 Complete script
 ---------------
 
-Here is the complete ``Sprite2D.gd`` file for reference.
+Here is the complete ``sprite_2d.gd`` file for reference.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -327,15 +327,15 @@ Here is the complete ``Sprite2D.gd`` file for reference.
 
     using Godot;
 
-    public partial class Sprite : Sprite2D
+    public partial class MySprite2D : Sprite2D
     {
-        private int Speed = 400;
-        private float AngularSpeed = Mathf.Pi;
+        private int _speed = 400;
+        private float _angularSpeed = Mathf.Pi;
 
         public override void _Process(double delta)
         {
-            Rotation += AngularSpeed * (float)delta;
-            var velocity = Vector2.Up.Rotated(Rotation) * Speed;
+            Rotation += _angularSpeed * (float)delta;
+            var velocity = Vector2.Up.Rotated(Rotation) * _speed;
 
             Position += velocity * (float)delta;
         }

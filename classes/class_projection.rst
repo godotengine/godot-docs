@@ -10,7 +10,7 @@
 Projection
 ==========
 
-3D projection (4x4 matrix).
+A 4×4 matrix for 3D projective transformations.
 
 .. rst-class:: classref-introduction-group
 
@@ -19,9 +19,13 @@ Description
 
 A 4x4 matrix used for 3D projective transformations. It can represent transformations such as translation, rotation, scaling, shearing, and perspective division. It consists of four :ref:`Vector4<class_Vector4>` columns.
 
-For purely linear transformations (translation, rotation, and scale), it is recommended to use :ref:`Transform3D<class_Transform3D>`, as it is more performant and has a lower memory footprint.
+For purely linear transformations (translation, rotation, and scale), it is recommended to use :ref:`Transform3D<class_Transform3D>`, as it is more performant and requires less memory.
 
 Used internally as :ref:`Camera3D<class_Camera3D>`'s projection matrix.
+
+.. note::
+
+	There are notable differences when using this API with C#. See :ref:`doc_c_sharp_differences` for more information.
 
 .. rst-class:: classref-reftable-group
 
@@ -726,3 +730,4 @@ Indices are in the following order: x, y, z, w.
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

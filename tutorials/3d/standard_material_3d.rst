@@ -18,7 +18,7 @@ the *Material* property of the mesh. It can be added in the *Material* property 
 the node using the mesh (such as a MeshInstance3D node), the *Material Override* property
 of the node using the mesh, and the *Material Overlay*.
 
-.. image:: img/add_material.png
+.. image:: img/add_material.webp
 
 If you add a material to the mesh itself, every time that mesh is used it will have that
 material. If you add a material to the node using the mesh, the material will only be used
@@ -30,7 +30,7 @@ the mesh.
 The *Material Overlay* property will render a material **over** the current one being used by
 the mesh. As an example, this can be used to put a transparent shield effect on a mesh.
 
-BaseMaterial 3D Settings
+BaseMaterial 3D settings
 ------------------------
 
 StandardMaterial3D has many settings that determine the look of a material. All of these are
@@ -114,7 +114,7 @@ Specifies when depth rendering must take place.
 * **Opaque Only (default):** Depth is only drawn for opaque objects.
 * **Always:** Depth draw is drawn for both opaque and transparent objects.
 * **Never:** No depth draw takes place
-  (do not confuse this with the No Depth Test option above).
+  (do not confuse this with the No Depth Test option below).
 * **Depth Pre-Pass:** For transparent objects, an opaque pass is made first
   with the opaque parts, then transparency is drawn above.
   Use this option with transparent grass or tree foliage.
@@ -202,11 +202,16 @@ Disable Ambient Light
 Makes the object not receive any kind of ambient lighting that would
 otherwise light it.
 
+Disable Fog
+~~~~~~~~~~~
+
+Makes the object unaffected by depth-based or volumetric fog. This is useful for particles or other additively blended materials that would otherwise show the shape of the mesh (even in places where it would be invisible without the fog).
+
 Vertex Color
 ------------
 
 This setting allows choosing what is done by default to vertex colors that come
-from your 3D modelling application. By default, they are ignored.
+from your 3D modeling application. By default, they are ignored.
 
 .. image:: img/spatial_material4.png
 
@@ -372,12 +377,34 @@ such as plant leaves, grass, human ears, etc.
 Refraction
 ----------
 
-
 When refraction is enabled, it supersedes alpha blending, and Godot attempts to
 fetch information from behind the object being rendered instead. This allows
 distorting the transparency in a way similar to refraction in real life.
 
+Remember to use a transparent albedo texture (or reduce the albedo color's alpha
+channel) to make refraction visible, as refraction relies on transparency to
+have a visible effect.
+
+A normal map can optionally be specified in the **Refraction Texture** property
+to allow distorting the refraction's direction on a per-pixel basis.
+
 .. image:: img/spatial_material23.png
+
+.. note::
+
+    Refraction is implemented as a screen-space effect and forces the material
+    to be transparent. This makes the effect relatively fast, but this results
+    in some limitations:
+
+    - :ref:`Transparency sorting <doc_3d_rendering_limitations_transparency_sorting>`
+      issues may occur.
+    - The refractive material cannot refract onto itself, or onto other
+      transparent materials. A refractive material behind another transparent
+      material will be invisible.
+    - Off-screen objects cannot appear in the refraction. This is most
+      noticeable with high refraction strength values.
+    - Opaque materials in front of the refractive material will appear to have
+      "refracted" edges, even though they shouldn't.
 
 Detail
 ------
@@ -490,15 +517,15 @@ Enables billboard mode for drawing materials. This controls how the object
 faces the camera:
 
 * **Disabled:** Billboard mode is disabled.
-* **Enabled:** Billboard mode is enabled, the object's -Z axis will always
-  face the camera.
-* **Y-Billboard:** The object's X axis will always be aligned with the camera.
-* **Particles:** Most suited for particle systems, because it allows
-  specifying animation options.
+* **Enabled:** Billboard mode is enabled. The object's -Z axis will always
+  face the camera's viewing plane.
+* **Y-Billboard:** The object's X axis will always be aligned with the camera's viewing plane.
+* **Particle Billboard:** Most suited for particle systems, because it allows
+  specifying :ref:`flipbook animation <doc_process_material_properties_animation>`.
 
 .. image:: img/spatial_material9.png
 
-The above options are only enabled for Particle Billboard.
+The **Particles Anim** section is only visible when the billboard mode is **Particle Billboard**.
 
 Billboard Keep Scale
 ~~~~~~~~~~~~~~~~~~~~

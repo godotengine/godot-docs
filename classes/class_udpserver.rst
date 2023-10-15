@@ -43,7 +43,7 @@ Below a small example of how it can be used:
     func _process(delta):
         server.poll() # Important!
         if server.is_connection_available():
-            var peer : PacketPeerUDP = server.take_connection()
+            var peer: PacketPeerUDP = server.take_connection()
             var packet = peer.get_packet()
             print("Accepted peer: %s:%s" % [peer.get_packet_ip(), peer.get_packet_port()])
             print("Received data: %s" % [packet.get_string_from_utf8()])
@@ -112,7 +112,7 @@ Below a small example of how it can be used:
     func _process(delta):
         if !connected:
             # Try to contact server
-            udp.put_packet("The answer is... 42!".to_utf8())
+            udp.put_packet("The answer is... 42!".to_utf8_buffer())
         if udp.get_available_packet_count() > 0:
             print("Connected: %s" % udp.get_packet().get_string_from_utf8())
             connected = true
@@ -137,7 +137,7 @@ Below a small example of how it can be used:
             if (!_connected)
             {
                 // Try to contact server
-                _udp.PutPacket("The Answer Is..42!".ToUtf8());
+                _udp.PutPacket("The Answer Is..42!".ToUtf8Buffer());
             }
             if (_udp.GetAvailablePacketCount() > 0)
             {
@@ -302,3 +302,4 @@ Returns the first pending connection (connected to the appropriate address/port)
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

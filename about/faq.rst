@@ -29,7 +29,7 @@ different licenses.
 
 For full details, look at the `COPYRIGHT.txt <https://github.com/godotengine/godot/blob/master/COPYRIGHT.txt>`_
 as well as the `LICENSE.txt <https://github.com/godotengine/godot/blob/master/LICENSE.txt>`_
-and `LOGO_LICENSE.txt <https://github.com/godotengine/godot/blob/master/LOGO_LICENSE.md>`_ files
+and `LOGO_LICENSE.txt <https://github.com/godotengine/godot/blob/master/LOGO_LICENSE.txt>`_ files
 in the Godot repository.
 
 Also, see `the license page on the Godot website <https://godotengine.org/license>`_.
@@ -81,12 +81,14 @@ the long run, for prototyping, developing Minimum Viable Products (MVPs), and
 focusing on Time-To-Market (TTM), GDScript will provide a fast, friendly, and capable
 way of developing your games.
 
-Note that C# support is still relatively new, and as such, you may encounter some
-issues along the way. Our friendly and hard-working development community is always
-ready to tackle new problems as they arise, but since this is an open source project,
-we recommend that you first do some due diligence yourself. Searching through
-discussions on `open issues <https://github.com/godotengine/godot/issues>`_ is a
-great way to start your troubleshooting.
+Note that C# support is still relatively new, and as such, you may encounter
+some issues along the way. C# support is also currently missing on Android, iOS
+and web platforms. Our friendly and hard-working development community is always
+ready to tackle new problems as they arise, but since this is an open source
+project, we recommend that you first do some due diligence yourself. Searching
+through discussions on
+`open issues <https://github.com/godotengine/godot/issues?q=is%3Aopen+is%3Aissue+label%3Atopic%3Adotnet>`__
+is a great way to start your troubleshooting.
 
 As for new languages, support is possible via third parties with GDExtensions. (See the question
 about plugins below). Work is currently underway, for example, on unofficial bindings for Godot
@@ -376,6 +378,20 @@ When is the next release of Godot out?
 When it's ready! See :ref:`doc_release_policy_when_is_next_release_out` for more
 information.
 
+Which Godot version should I use for a new project?
+---------------------------------------------------
+
+We recommend using Godot 4.x for new projects, but depending on the feature set
+you need, it may be better to use 3.x instead. See
+:ref:`doc_release_policy_which_version_should_i_use` for more information.
+
+Should I upgrade my project to use new Godot versions?
+------------------------------------------------------
+
+Some new versions are safer to upgrade to than others. In general, whether you
+should upgrade depends on your project's circumstances. See
+:ref:`doc_release_policy_should_i_upgrade_my_project` for more information.
+
 I would like to contribute! How can I get started?
 --------------------------------------------------
 
@@ -435,9 +451,6 @@ size can make it a suitable alternative to frameworks like Electron or Qt.
 When creating a non-game application, make sure to enable
 :ref:`low-processor mode <class_ProjectSettings_property_application/run/low_processor_mode>`
 in the Project Settings to decrease CPU and GPU usage.
-
-That said, we wouldn't recommend using Godot to create a *mobile* application
-since low-processor mode isn't supported on mobile platforms yet.
 
 Check out `Material Maker <https://github.com/RodZill4/material-maker>`__ and
 `Pixelorama <https://github.com/Orama-Interactive/Pixelorama>`__ for examples of

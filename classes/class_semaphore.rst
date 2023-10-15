@@ -12,14 +12,22 @@ Semaphore
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-A synchronization semaphore.
+A synchronization mechanism used to control access to a shared resource by :ref:`Thread<class_Thread>`\ s.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-A synchronization semaphore which can be used to synchronize multiple :ref:`Thread<class_Thread>`\ s. Initialized to zero on creation. Be careful to avoid deadlocks. For a binary version, see :ref:`Mutex<class_Mutex>`.
+A synchronization semaphore that can be used to synchronize multiple :ref:`Thread<class_Thread>`\ s. Initialized to zero on creation. For a binary version, see :ref:`Mutex<class_Mutex>`.
+
+\ **Warning:** Semaphores must be used carefully to avoid deadlocks.
+
+\ **Warning:** To guarantee that the operating system is able to perform proper cleanup (no crashes, no deadlocks), these conditions must be met:
+
+- When a **Semaphore**'s reference count reaches zero and it is therefore destroyed, no threads must be waiting on it.
+
+- When a :ref:`Thread<class_Thread>`'s reference count reaches zero and it is therefore destroyed, it must not be waiting on any semaphore.
 
 .. rst-class:: classref-introduction-group
 
@@ -27,6 +35,8 @@ Tutorials
 ---------
 
 - :doc:`Using multiple threads <../tutorials/performance/using_multiple_threads>`
+
+- :doc:`Thread-safe APIs <../tutorials/performance/thread_safe_apis>`
 
 .. rst-class:: classref-reftable-group
 
@@ -91,3 +101,4 @@ Waits for the **Semaphore**, if its value is zero, blocks until non-zero.
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

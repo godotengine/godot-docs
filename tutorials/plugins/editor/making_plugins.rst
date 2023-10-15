@@ -32,11 +32,11 @@ placing them where they need to be.
 
 In the main toolbar, click the ``Project`` dropdown. Then click
 ``Project Settings...``. Go to the ``Plugins`` tab and then click
-on the ``Create`` button in the top-right.
+on the ``Create New Plugin`` button in the top-right.
 
 You will see the dialog appear, like so:
 
-.. image:: img/making_plugins-create_plugin_dialog.png
+.. image:: img/making_plugins-create_plugin_dialog.webp
 
 The placeholder text in each field describes how it affects the plugin's
 creation of the files and the config file's values.
@@ -58,7 +58,7 @@ To continue with the example, use the following values:
  .. code-tab:: ini C#
 
     Plugin Name: My Custom Node
-    Subfolder: my_custom_node
+    Subfolder: MyCustomNode
     Description: A custom node made to extend the Godot Engine.
     Author: Your Name Here
     Version: 1.0.0
@@ -75,7 +75,7 @@ To continue with the example, use the following values:
 
 You should end up with a directory structure like this:
 
-.. image:: img/making_plugins-my_custom_mode_folder.png
+.. image:: img/making_plugins-my_custom_mode_folder.webp
 
 ``plugin.cfg`` is an INI file with metadata about your plugin.
 The name and description help people understand what it does.
@@ -209,7 +209,7 @@ That's it for our basic button. You can save this as ``my_button.gd`` inside the
 plugin folder. You'll also need a 16×16 icon to show in the scene tree. If you
 don't have one, you can grab the default one from the engine and save it in your
 `addons/my_custom_node` folder as `icon.png`, or use the default Godot logo
-(`preload("res://icon.png")`). You can also use SVG icons if desired.
+(`preload("res://icon.svg")`).
 
 .. image:: img/making_plugins-custom_node_icon.png
 
@@ -246,8 +246,8 @@ dialog. For that, change the ``custom_node.gd`` script to the following:
         {
             // Initialization of the plugin goes here.
             // Add the new type with a name, a parent type, a script and an icon.
-            var script = GD.Load<Script>("MyButton.cs");
-            var texture = GD.Load<Texture2D>("icon.png");
+            var script = GD.Load<Script>("res://addons/MyCustomNode/MyButton.cs");
+            var texture = GD.Load<Texture2D>("res://addons/MyCustomNode/Icon.png");
             AddCustomType("MyButton", "Button", script, texture);
         }
 
@@ -265,13 +265,13 @@ With that done, the plugin should already be available in the plugin list in the
 
 Then try it out by adding your new node:
 
-.. image:: img/making_plugins-custom_node_create.png
+.. image:: img/making_plugins-custom_node_create.webp
 
 When you add the node, you can see that it already has the script you created
 attached to it. Set a text to the button, save and run the scene. When you
 click the button, you can see some text in the console:
 
-.. image:: img/making_plugins-custom_node_console.png
+.. image:: img/making_plugins-custom_node_console.webp
 
 A custom dock
 ^^^^^^^^^^^^^
@@ -319,7 +319,7 @@ The name of the root node will also be the name that appears on the dock tab,
 so be sure to give it a short and descriptive name.
 Also, don't forget to add some text to your button.
 
-.. image:: img/making_plugins-my_custom_dock_scene.png
+.. image:: img/making_plugins-my_custom_dock_scene.webp
 
 Save this scene as ``my_dock.tscn``. Now, we need to grab the scene we created
 then add it as a dock in the editor. For this, you can rely on the function
@@ -367,21 +367,21 @@ The script could look like this:
     [Tool]
     public partial class CustomDock : EditorPlugin
     {
-        Control dock;
+        private Control _dock;
 
         public override void _EnterTree()
         {
-            dock = (Control)GD.Load<PackedScene>("addons/my_custom_dock/my_dock.tscn").Instantiate();
-            AddControlToDock(DockSlot.LeftUl, dock);
+            _dock = GD.Load<PackedScene>("res://addons/MyCustomDock/MyDock.tscn").Instantiate<Control>();
+            AddControlToDock(DockSlot.LeftUl, _dock);
         }
 
         public override void _ExitTree()
         {
             // Clean-up of the plugin goes here.
             // Remove the dock.
-            RemoveControlFromDocks(dock);
+            RemoveControlFromDocks(_dock);
             // Erase the control from the memory.
-            dock.Free();
+            _dock.Free();
         }
     }
     #endif
@@ -394,16 +394,16 @@ Checking the results
 
 It's now time to check the results of your work. Open the **Project
 Settings** and click on the **Plugins** tab. Your plugin should be the only one
-on the list. If it is not showing, click on the **Update** button in the
-top-right corner.
+on the list.
 
-.. image:: img/making_plugins-project_settings.png
+.. image:: img/making_plugins-project_settings.webp
 
-You can see the plugin is inactive on the **Status** column; click on the status
-to select **Active**. The dock should become visible before you even close
+You can see the plugin is not enabled.
+Click the **Enable** checkbox to activate the plugin.
+The dock should become visible before you even close
 the settings window. You should now have a custom dock:
 
-.. image:: img/making_plugins-custom_dock.png
+.. image:: img/making_plugins-custom_dock.webp
 
 Going beyond
 ~~~~~~~~~~~~
@@ -432,7 +432,8 @@ an autoload.
 
 Use the following code to register a singleton from an editor plugin:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     @tool
     extends EditorPlugin
@@ -448,3 +449,27 @@ Use the following code to register a singleton from an editor plugin:
 
     func _exit_tree():
         remove_autoload_singleton(AUTOLOAD_NAME)
+
+ .. code-tab:: csharp
+
+    #if TOOLS
+    using Godot;
+
+    [Tool]
+    public partial class MyEditorPlugin : EditorPlugin
+    {
+        // Replace this value with a PascalCase autoload name.
+        private const string AutoloadName = "SomeAutoload";
+
+        public override void _EnterTree()
+        {
+            // The autoload can be a scene or script file.
+            AddAutoloadSingleton(AutoloadName, "res://addons/MyAddon/SomeAutoload.tscn");
+        }
+
+        public override void _ExitTree()
+        {
+            RemoveAutoloadSingleton(AutoloadName);
+        }
+    }
+    #endif

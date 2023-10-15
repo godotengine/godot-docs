@@ -166,6 +166,32 @@ unwrappers in 3D modeling software are not quality-oriented, as they are meant
 to work quickly. You will mostly need to use seams or other techniques to create
 better unwrapping.
 
+Generating UV2 for primitive meshes
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. note::
+
+    This option is only available for primitive meshes such as :ref:`class_BoxMesh`,
+    :ref:`class_CylinderMesh`, :ref:`class_PlaneMesh`, etc.
+
+Enabling UV2 on primitive meshes allows you to make them receive and contribute
+to baked lighting. This can be used in certain lighting setups. For instance,
+you could hide a torus that has an emissive material after baking lightmaps to
+create an area light that follows the shape of a torus.
+
+By default, primitive meshes do not have UV2 generated to save resources (as
+these meshes may be created during gameplay). You can edit a primitive mesh in
+the inspector and enable **Add UV2** to make the engine procedurally generate
+UV2 for a primitive mesh. The default **UV2 Padding** value is tuned to avoid
+most lightmap bleeding, without wasting too much space on the edges. If you
+notice lightmap bleeding on a specific primitive mesh only, you may have to
+increase **UV2 Padding**.
+
+**Lightmap Size Hint** represents the size taken by a single mesh on the
+lightmap texture, which varies depending on the mesh's size properties and the
+**UV2 Padding** value. **Lightmap Size Hint** should not be manually changed, as
+any modifications will be lost when the scene is reloaded.
+
 Checking UV2
 ^^^^^^^^^^^^
 
@@ -216,10 +242,14 @@ The modes are:
 Disabled
 ^^^^^^^^
 
-The light is ignored when baking lightmaps. Keep in mind hiding a light will have
-no effect for baking, so this must be used instead of hiding the Light node.
+The light is ignored when baking lightmaps. This is the mode to use for dynamic
+lighting effects such as explosions and weapon effects.
 
-This is the mode to use for dynamic lighting effects such as explosions and weapon effects.
+.. warning::
+
+    Hiding a light has no effect on the resulting lightmap bake. This means
+    you must use the Disabled bake mode instead of hiding the Light node by
+    disabling its **Visible** property.
 
 Dynamic
 ^^^^^^^
@@ -272,6 +302,16 @@ To begin the bake process, click the **Bake Lightmaps** button at the top of the
 
 This can take from seconds to minutes (or hours) depending on scene size, bake
 method and quality selected.
+
+.. warning::
+
+    Baking lightmaps is a process that can require a lot of video memory,
+    especially if the resulting texture is large. Due to internal limitations,
+    the engine may also crash if the generated texture size is too large (even
+    on systems with a lot of video memory).
+
+    To avoid crashes, make sure the lightmap texel size in the Import dock is
+    set to a high enough value.
 
 Tweaks
 ^^^^^^

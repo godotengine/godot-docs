@@ -12,14 +12,14 @@ AnimationNodeOneShot
 
 **Inherits:** :ref:`AnimationNodeSync<class_AnimationNodeSync>` **<** :ref:`AnimationNode<class_AnimationNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-Plays an animation once in :ref:`AnimationNodeBlendTree<class_AnimationNodeBlendTree>`.
+Plays an animation once in an :ref:`AnimationNodeBlendTree<class_AnimationNodeBlendTree>`.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-A resource to add to an :ref:`AnimationNodeBlendTree<class_AnimationNodeBlendTree>`. This node will execute a sub-animation and return once it finishes. Blend times for fading in and out can be customized, as well as filters.
+A resource to add to an :ref:`AnimationNodeBlendTree<class_AnimationNodeBlendTree>`. This animation node will execute a sub-animation and return once it finishes. Blend times for fading in and out can be customized, as well as filters.
 
 After setting the request and changing the animation playback, the one-shot node automatically clears the request on the next process frame by setting its ``request`` value to :ref:`ONE_SHOT_REQUEST_NONE<class_AnimationNodeOneShot_constant_ONE_SHOT_REQUEST_NONE>`.
 
@@ -38,21 +38,37 @@ After setting the request and changing the animation playback, the one-shot node
     # Alternative syntax (same result as above).
     animation_tree["parameters/OneShot/request"] = AnimationNodeOneShot.ONE_SHOT_REQUEST_ABORT
     
+    # Abort child animation with fading out connected to "shot" port.
+    animation_tree.set("parameters/OneShot/request", AnimationNodeOneShot.ONE_SHOT_REQUEST_FADE_OUT)
+    # Alternative syntax (same result as above).
+    animation_tree["parameters/OneShot/request"] = AnimationNodeOneShot.ONE_SHOT_REQUEST_FADE_OUT
+    
     # Get current state (read-only).
-    animation_tree.get("parameters/OneShot/active"))
+    animation_tree.get("parameters/OneShot/active")
     # Alternative syntax (same result as above).
     animation_tree["parameters/OneShot/active"]
+    
+    # Get current internal state (read-only).
+    animation_tree.get("parameters/OneShot/internal_active")
+    # Alternative syntax (same result as above).
+    animation_tree["parameters/OneShot/internal_active"]
 
  .. code-tab:: csharp
 
     // Play child animation connected to "shot" port.
-    animationTree.Set("parameters/OneShot/request", AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE);
+    animationTree.Set("parameters/OneShot/request", (int)AnimationNodeOneShot.OneShotRequest.Fire);
     
     // Abort child animation connected to "shot" port.
-    animationTree.Set("parameters/OneShot/request", AnimationNodeOneShot.ONE_SHOT_REQUEST_ABORT);
+    animationTree.Set("parameters/OneShot/request", (int)AnimationNodeOneShot.OneShotRequest.Abort);
+    
+    // Abort child animation with fading out connected to "shot" port.
+    animationTree.Set("parameters/OneShot/request", (int)AnimationNodeOneShot.OneShotRequest.FadeOut);
     
     // Get current state (read-only).
     animationTree.Get("parameters/OneShot/active");
+    
+    // Get current internal state (read-only).
+    animationTree.Get("parameters/OneShot/internal_active");
 
 
 
@@ -61,7 +77,7 @@ After setting the request and changing the animation playback, the one-shot node
 Tutorials
 ---------
 
-- :doc:`AnimationTree <../tutorials/animation/animation_tree>`
+- :doc:`Using AnimationTree <../tutorials/animation/animation_tree>`
 
 - `Third Person Shooter Demo <https://godotengine.org/asset-library/asset/678>`__
 
@@ -80,7 +96,11 @@ Properties
    +---------------------------------------------------+-----------------------------------------------------------------------------------------------+-----------+
    | :ref:`float<class_float>`                         | :ref:`autorestart_random_delay<class_AnimationNodeOneShot_property_autorestart_random_delay>` | ``0.0``   |
    +---------------------------------------------------+-----------------------------------------------------------------------------------------------+-----------+
+   | :ref:`Curve<class_Curve>`                         | :ref:`fadein_curve<class_AnimationNodeOneShot_property_fadein_curve>`                         |           |
+   +---------------------------------------------------+-----------------------------------------------------------------------------------------------+-----------+
    | :ref:`float<class_float>`                         | :ref:`fadein_time<class_AnimationNodeOneShot_property_fadein_time>`                           | ``0.0``   |
+   +---------------------------------------------------+-----------------------------------------------------------------------------------------------+-----------+
+   | :ref:`Curve<class_Curve>`                         | :ref:`fadeout_curve<class_AnimationNodeOneShot_property_fadeout_curve>`                       |           |
    +---------------------------------------------------+-----------------------------------------------------------------------------------------------+-----------+
    | :ref:`float<class_float>`                         | :ref:`fadeout_time<class_AnimationNodeOneShot_property_fadeout_time>`                         | ``0.0``   |
    +---------------------------------------------------+-----------------------------------------------------------------------------------------------+-----------+
@@ -125,6 +145,14 @@ The request to play the animation connected to "shot" port.
 :ref:`OneShotRequest<enum_AnimationNodeOneShot_OneShotRequest>` **ONE_SHOT_REQUEST_ABORT** = ``2``
 
 The request to stop the animation connected to "shot" port.
+
+.. _class_AnimationNodeOneShot_constant_ONE_SHOT_REQUEST_FADE_OUT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`OneShotRequest<enum_AnimationNodeOneShot_OneShotRequest>` **ONE_SHOT_REQUEST_FADE_OUT** = ``3``
+
+The request to fade out the animation connected to "shot" port.
 
 .. rst-class:: classref-item-separator
 
@@ -214,6 +242,23 @@ If :ref:`autorestart<class_AnimationNodeOneShot_property_autorestart>` is ``true
 
 ----
 
+.. _class_AnimationNodeOneShot_property_fadein_curve:
+
+.. rst-class:: classref-property
+
+:ref:`Curve<class_Curve>` **fadein_curve**
+
+.. rst-class:: classref-property-setget
+
+- void **set_fadein_curve** **(** :ref:`Curve<class_Curve>` value **)**
+- :ref:`Curve<class_Curve>` **get_fadein_curve** **(** **)**
+
+Determines how cross-fading between animations is eased. If empty, the transition will be linear.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_AnimationNodeOneShot_property_fadein_time:
 
 .. rst-class:: classref-property
@@ -225,7 +270,24 @@ If :ref:`autorestart<class_AnimationNodeOneShot_property_autorestart>` is ``true
 - void **set_fadein_time** **(** :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_fadein_time** **(** **)**
 
-The fade-in duration. For example, setting this to ``1.0`` for a 5 second length animation will produce a crossfade that starts at 0 second and ends at 1 second during the animation.
+The fade-in duration. For example, setting this to ``1.0`` for a 5 second length animation will produce a cross-fade that starts at 0 second and ends at 1 second during the animation.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_AnimationNodeOneShot_property_fadeout_curve:
+
+.. rst-class:: classref-property
+
+:ref:`Curve<class_Curve>` **fadeout_curve**
+
+.. rst-class:: classref-property-setget
+
+- void **set_fadeout_curve** **(** :ref:`Curve<class_Curve>` value **)**
+- :ref:`Curve<class_Curve>` **get_fadeout_curve** **(** **)**
+
+Determines how cross-fading between animations is eased. If empty, the transition will be linear.
 
 .. rst-class:: classref-item-separator
 
@@ -242,7 +304,7 @@ The fade-in duration. For example, setting this to ``1.0`` for a 5 second length
 - void **set_fadeout_time** **(** :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_fadeout_time** **(** **)**
 
-The fade-out duration. For example, setting this to ``1.0`` for a 5 second length animation will produce a crossfade that starts at 4 second and ends at 5 second during the animation.
+The fade-out duration. For example, setting this to ``1.0`` for a 5 second length animation will produce a cross-fade that starts at 4 second and ends at 5 second during the animation.
 
 .. rst-class:: classref-item-separator
 
@@ -267,3 +329,4 @@ The blend type.
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

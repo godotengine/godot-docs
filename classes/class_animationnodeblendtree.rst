@@ -12,14 +12,14 @@ AnimationNodeBlendTree
 
 **Inherits:** :ref:`AnimationRootNode<class_AnimationRootNode>` **<** :ref:`AnimationNode<class_AnimationNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-:ref:`AnimationTree<class_AnimationTree>` node resource that contains many blend type nodes.
+A sub-tree of many type :ref:`AnimationNode<class_AnimationNode>`\ s used for complex animations. Used by :ref:`AnimationTree<class_AnimationTree>`.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-This node may contain a sub-tree of any other blend type nodes, such as :ref:`AnimationNodeTransition<class_AnimationNodeTransition>`, :ref:`AnimationNodeBlend2<class_AnimationNodeBlend2>`, :ref:`AnimationNodeBlend3<class_AnimationNodeBlend3>`, :ref:`AnimationNodeOneShot<class_AnimationNodeOneShot>`, etc. This is one of the most commonly used roots.
+This animation node may contain a sub-tree of any other type animation nodes, such as :ref:`AnimationNodeTransition<class_AnimationNodeTransition>`, :ref:`AnimationNodeBlend2<class_AnimationNodeBlend2>`, :ref:`AnimationNodeBlend3<class_AnimationNodeBlend3>`, :ref:`AnimationNodeOneShot<class_AnimationNodeOneShot>`, etc. This is one of the most commonly used animation node roots.
 
 An :ref:`AnimationNodeOutput<class_AnimationNodeOutput>` node named ``output`` is created by default.
 
@@ -28,7 +28,7 @@ An :ref:`AnimationNodeOutput<class_AnimationNodeOutput>` node named ``output`` i
 Tutorials
 ---------
 
-- :doc:`AnimationTree <../tutorials/animation/animation_tree>`
+- :doc:`Using AnimationTree <../tutorials/animation/animation_tree>`
 
 .. rst-class:: classref-reftable-group
 
@@ -164,7 +164,7 @@ Property Descriptions
 - void **set_graph_offset** **(** :ref:`Vector2<class_Vector2>` value **)**
 - :ref:`Vector2<class_Vector2>` **get_graph_offset** **(** **)**
 
-The global offset of all sub-nodes.
+The global offset of all sub animation nodes.
 
 .. rst-class:: classref-section-separator
 
@@ -181,7 +181,7 @@ Method Descriptions
 
 void **add_node** **(** :ref:`StringName<class_StringName>` name, :ref:`AnimationNode<class_AnimationNode>` node, :ref:`Vector2<class_Vector2>` position=Vector2(0, 0) **)**
 
-Adds an :ref:`AnimationNode<class_AnimationNode>` at the given ``position``. The ``name`` is used to identify the created sub-node later.
+Adds an :ref:`AnimationNode<class_AnimationNode>` at the given ``position``. The ``name`` is used to identify the created sub animation node later.
 
 .. rst-class:: classref-item-separator
 
@@ -205,7 +205,7 @@ Connects the output of an :ref:`AnimationNode<class_AnimationNode>` as input for
 
 void **disconnect_node** **(** :ref:`StringName<class_StringName>` input_node, :ref:`int<class_int>` input_index **)**
 
-Disconnects the node connected to the specified input.
+Disconnects the animation node connected to the specified input.
 
 .. rst-class:: classref-item-separator
 
@@ -217,7 +217,7 @@ Disconnects the node connected to the specified input.
 
 :ref:`AnimationNode<class_AnimationNode>` **get_node** **(** :ref:`StringName<class_StringName>` name **)** |const|
 
-Returns the sub-node with the specified ``name``.
+Returns the sub animation node with the specified ``name``.
 
 .. rst-class:: classref-item-separator
 
@@ -229,7 +229,7 @@ Returns the sub-node with the specified ``name``.
 
 :ref:`Vector2<class_Vector2>` **get_node_position** **(** :ref:`StringName<class_StringName>` name **)** |const|
 
-Returns the position of the sub-node with the specified ``name``.
+Returns the position of the sub animation node with the specified ``name``.
 
 .. rst-class:: classref-item-separator
 
@@ -241,7 +241,7 @@ Returns the position of the sub-node with the specified ``name``.
 
 :ref:`bool<class_bool>` **has_node** **(** :ref:`StringName<class_StringName>` name **)** |const|
 
-Returns ``true`` if a sub-node with specified ``name`` exists.
+Returns ``true`` if a sub animation node with specified ``name`` exists.
 
 .. rst-class:: classref-item-separator
 
@@ -253,7 +253,7 @@ Returns ``true`` if a sub-node with specified ``name`` exists.
 
 void **remove_node** **(** :ref:`StringName<class_StringName>` name **)**
 
-Removes a sub-node.
+Removes a sub animation node.
 
 .. rst-class:: classref-item-separator
 
@@ -265,7 +265,7 @@ Removes a sub-node.
 
 void **rename_node** **(** :ref:`StringName<class_StringName>` name, :ref:`StringName<class_StringName>` new_name **)**
 
-Changes the name of a sub-node.
+Changes the name of a sub animation node.
 
 .. rst-class:: classref-item-separator
 
@@ -277,7 +277,7 @@ Changes the name of a sub-node.
 
 void **set_node_position** **(** :ref:`StringName<class_StringName>` name, :ref:`Vector2<class_Vector2>` position **)**
 
-Modifies the position of a sub-node.
+Modifies the position of a sub animation node.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
@@ -285,3 +285,4 @@ Modifies the position of a sub-node.
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

@@ -1,3 +1,5 @@
+:article_outdated: True
+
 .. _doc_soft_body:
 
 Using SoftBody

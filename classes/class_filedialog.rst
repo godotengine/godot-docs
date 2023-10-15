@@ -12,14 +12,14 @@ FileDialog
 
 **Inherits:** :ref:`ConfirmationDialog<class_ConfirmationDialog>` **<** :ref:`AcceptDialog<class_AcceptDialog>` **<** :ref:`Window<class_Window>` **<** :ref:`Viewport<class_Viewport>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-Dialog for selecting files or directories in the filesystem.
+A dialog for selecting files or directories in the filesystem.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-FileDialog is a preset dialog used to choose files and directories in the filesystem. It supports filter masks. The FileDialog automatically sets its window title according to the :ref:`file_mode<class_FileDialog_property_file_mode>`. If you want to use a custom title, disable this by setting :ref:`mode_overrides_title<class_FileDialog_property_mode_overrides_title>` to ``false``.
+**FileDialog** is a preset dialog used to choose files and directories in the filesystem. It supports filter masks. **FileDialog** automatically sets its window title according to the :ref:`file_mode<class_FileDialog_property_file_mode>`. If you want to use a custom title, disable this by setting :ref:`mode_overrides_title<class_FileDialog_property_mode_overrides_title>` to ``false``.
 
 .. rst-class:: classref-reftable-group
 
@@ -51,6 +51,8 @@ Properties
    | :ref:`bool<class_bool>`                           | :ref:`show_hidden_files<class_FileDialog_property_show_hidden_files>`       | ``false``                                                                                |
    +---------------------------------------------------+-----------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                       | title                                                                       | ``"Save a File"`` (overrides :ref:`Window<class_Window_property_title>`)                 |
+   +---------------------------------------------------+-----------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`use_native_dialog<class_FileDialog_property_use_native_dialog>`       | ``false``                                                                                |
    +---------------------------------------------------+-----------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-reftable-group
@@ -255,7 +257,7 @@ Property Descriptions
 - void **set_access** **(** :ref:`Access<enum_FileDialog_Access>` value **)**
 - :ref:`Access<enum_FileDialog_Access>` **get_access** **(** **)**
 
-The file system access scope. See enum ``Access`` constants.
+The file system access scope. See :ref:`Access<enum_FileDialog_Access>` constants.
 
 \ **Warning:** Currently, in sandboxed environments such as Web builds or sandboxed macOS apps, FileDialog cannot access the host file system. See `godot-proposals#1123 <https://github.com/godotengine/godot-proposals/issues/1123>`__.
 
@@ -359,7 +361,7 @@ The available file type filters. For example, this shows only ``.png`` and ``.gd
 - void **set_mode_overrides_title** **(** :ref:`bool<class_bool>` value **)**
 - :ref:`bool<class_bool>` **is_mode_overriding_title** **(** **)**
 
-If ``true``, changing the ``Mode`` property will set the window title accordingly (e.g. setting mode to :ref:`FILE_MODE_OPEN_FILE<class_FileDialog_constant_FILE_MODE_OPEN_FILE>` will change the window title to "Open a File").
+If ``true``, changing the :ref:`file_mode<class_FileDialog_property_file_mode>` property will set the window title accordingly (e.g. setting :ref:`file_mode<class_FileDialog_property_file_mode>` to :ref:`FILE_MODE_OPEN_FILE<class_FileDialog_constant_FILE_MODE_OPEN_FILE>` will change the window title to "Open a File").
 
 .. rst-class:: classref-item-separator
 
@@ -394,6 +396,25 @@ If non-empty, the given sub-folder will be "root" of this **FileDialog**, i.e. u
 - :ref:`bool<class_bool>` **is_showing_hidden_files** **(** **)**
 
 If ``true``, the dialog will show hidden files.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_FileDialog_property_use_native_dialog:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **use_native_dialog** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_use_native_dialog** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **get_use_native_dialog** **(** **)**
+
+If ``true``, :ref:`access<class_FileDialog_property_access>` is set to :ref:`ACCESS_FILESYSTEM<class_FileDialog_constant_ACCESS_FILESYSTEM>`, and it is supported by the current :ref:`DisplayServer<class_DisplayServer>`, OS native dialog will be used instead of custom one.
+
+\ **Note:** On macOS, sandboxed apps always use native dialogs to access host filesystem.
 
 .. rst-class:: classref-section-separator
 
@@ -611,3 +632,4 @@ Custom icon for the toggle hidden button.
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

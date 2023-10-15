@@ -87,7 +87,7 @@ Return true whether the stream associated with an integer ID is still playing. C
 
 Play an :ref:`AudioStream<class_AudioStream>` at a given offset, volume and pitch scale. Playback starts immediately.
 
-The return value is an unique integer ID that is associated to this playback stream and which can be used to control it.
+The return value is a unique integer ID that is associated to this playback stream and which can be used to control it.
 
 This ID becomes invalid when the stream ends (if it does not loop), when the **AudioStreamPlaybackPolyphonic** is stopped, or when :ref:`stop_stream<class_AudioStreamPlaybackPolyphonic_method_stop_stream>` is called.
 
@@ -135,3 +135,4 @@ Stop a stream. The ``stream`` argument is an integer ID returned by :ref:`play_s
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

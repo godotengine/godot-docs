@@ -130,7 +130,7 @@ source,destination
 /getting_started/workflow/best_practices/scene_organization.html,/tutorials/best_practices/scene_organization.html
 /getting_started/workflow/best_practices/scenes_versus_scripts.html,/tutorials/best_practices/scenes_versus_scripts.html
 /getting_started/workflow/best_practices/what_are_godot_classes.html,/tutorials/best_practices/what_are_godot_classes.html
-/getting_started/workflow/export/android_custom_build.html,/tutorials/export/android_custom_build.html
+/getting_started/workflow/export/android_custom_build.html,/tutorials/export/android_gradle_build.html
 /getting_started/workflow/export/changing_application_icon_for_windows.html,/tutorials/export/changing_application_icon_for_windows.html
 /getting_started/workflow/export/exporting_for_android.html,/tutorials/export/exporting_for_android.html
 /getting_started/workflow/export/exporting_for_dedicated_servers.html,/tutorials/export/exporting_for_dedicated_servers.html
@@ -343,6 +343,7 @@ source,destination
 /tutorials/assetlib/uploading_to_assetlib.html,/community/asset_library/uploading_to_assetlib.html
 /tutorials/assetlib/using_assetlib.html,/community/asset_library/using_assetlib.html
 /tutorials/assetlib/what_is_assetlib.html,/community/asset_library/what_is_assetlib.html
+/tutorials/assets_pipeline/importing_scenes.html,/tutorials/assets_pipeline/importing_3d_scenes/index.html
 /tutorials/content/making_trees.html,/tutorials/shaders/making_trees.html
 /tutorials/content/procedural_geometry/arraymesh.html,/tutorials/3d/procedural_geometry/arraymesh.html
 /tutorials/content/procedural_geometry/immediategeometry.html,/tutorials/3d/procedural_geometry/immediategeometry.html

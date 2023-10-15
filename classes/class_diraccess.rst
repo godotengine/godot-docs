@@ -12,14 +12,14 @@ DirAccess
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-Type used to handle the filesystem.
+Provides methods for managing directories and their content.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-Directory type. It is used to manage directories and their content (not restricted to the project folder).
+This class is used to manage directories and their content, even outside of the project folder.
 
 \ **DirAccess** can't be instantiated directly. Instead it is created with a static method that takes a path for which it will be opened.
 
@@ -152,6 +152,8 @@ Methods
    +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`get_space_left<class_DirAccess_method_get_space_left>` **(** **)**                                                                                                               |
    +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`is_case_sensitive<class_DirAccess_method_is_case_sensitive>` **(** :ref:`String<class_String>` path **)** |const|                                                                |
+   +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Error<enum_@GlobalScope_Error>`             | :ref:`list_dir_begin<class_DirAccess_method_list_dir_begin>` **(** **)**                                                                                                               |
    +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                              | :ref:`list_dir_end<class_DirAccess_method_list_dir_end>` **(** **)**                                                                                                                   |
@@ -195,7 +197,7 @@ Property Descriptions
 - void **set_include_hidden** **(** :ref:`bool<class_bool>` value **)**
 - :ref:`bool<class_bool>` **get_include_hidden** **(** **)**
 
-If ``true``, hidden files are included when the navigating directory.
+If ``true``, hidden files are included when navigating the directory.
 
 Affects :ref:`list_dir_begin<class_DirAccess_method_list_dir_begin>`, :ref:`get_directories<class_DirAccess_method_get_directories>` and :ref:`get_files<class_DirAccess_method_get_files>`.
 
@@ -236,6 +238,8 @@ Method Descriptions
 Changes the currently opened directory to the one passed as an argument. The argument can be relative to the current directory (e.g. ``newdir`` or ``../newdir``), or an absolute path (e.g. ``/tmp/newdir`` or ``res://somedir/newdir``).
 
 Returns one of the :ref:`Error<enum_@GlobalScope_Error>` code constants (:ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` on success).
+
+\ **Note:** The new directory must be within the same scope, e.g. when you had opened a directory inside ``res://``, you can't change it to ``user://`` directory. If you need to open a directory in another access scope, use :ref:`open<class_DirAccess_method_open>` to create a new instance instead.
 
 .. rst-class:: classref-item-separator
 
@@ -417,6 +421,8 @@ Returns a :ref:`PackedStringArray<class_PackedStringArray>` containing filenames
 
 Affected by :ref:`include_hidden<class_DirAccess_property_include_hidden>`.
 
+\ **Note:** When used on a ``res://`` path in an exported project, only the files actually included in the PCK at the given folder level are returned. In practice, this means that since imported resources are stored in a top-level ``.godot/`` folder, only paths to ``*.gd`` and ``*.import`` files are returned (plus a few files such as ``project.godot`` or ``project.binary`` and the project icon). In an exported project, the list of returned files will also vary depending on whether :ref:`ProjectSettings.editor/export/convert_text_resources_to_binary<class_ProjectSettings_property_editor/export/convert_text_resources_to_binary>` is ``true``.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -468,6 +474,20 @@ Returns the result of the last :ref:`open<class_DirAccess_method_open>` call in 
 :ref:`int<class_int>` **get_space_left** **(** **)**
 
 Returns the available space on the current directory's disk, in bytes. Returns ``0`` if the platform-specific method to query the available space fails.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_DirAccess_method_is_case_sensitive:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **is_case_sensitive** **(** :ref:`String<class_String>` path **)** |const|
+
+Returns ``true`` if the file system or directory use case sensitive file names.
+
+\ **Note:** This method is implemented on macOS, Linux (for EXT4 and F2FS filesystems only) and Windows. On other platforms, it always returns ``true``.
 
 .. rst-class:: classref-item-separator
 
@@ -623,3 +643,4 @@ Static version of :ref:`rename<class_DirAccess_method_rename>`. Supports only ab
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

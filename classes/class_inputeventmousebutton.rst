@@ -12,19 +12,21 @@ InputEventMouseButton
 
 **Inherits:** :ref:`InputEventMouse<class_InputEventMouse>` **<** :ref:`InputEventWithModifiers<class_InputEventWithModifiers>` **<** :ref:`InputEventFromWindow<class_InputEventFromWindow>` **<** :ref:`InputEvent<class_InputEvent>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-Input event type for mouse button events.
+Represents a mouse button being pressed or released.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-Contains mouse click information. See :ref:`Node._input<class_Node_method__input>`.
+Stores information about mouse click events. See :ref:`Node._input<class_Node_method__input>`.
 
 .. rst-class:: classref-introduction-group
 
 Tutorials
 ---------
+
+- :doc:`Using InputEvent <../tutorials/inputs/inputevent>`
 
 - :doc:`Mouse and input coordinates <../tutorials/inputs/mouse_and_input_coordinates>`
 
@@ -38,6 +40,8 @@ Properties
 
    +---------------------------------------------------+------------------------------------------------------------------------+-----------+
    | :ref:`MouseButton<enum_@GlobalScope_MouseButton>` | :ref:`button_index<class_InputEventMouseButton_property_button_index>` | ``0``     |
+   +---------------------------------------------------+------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`                           | :ref:`canceled<class_InputEventMouseButton_property_canceled>`         | ``false`` |
    +---------------------------------------------------+------------------------------------------------------------------------+-----------+
    | :ref:`bool<class_bool>`                           | :ref:`double_click<class_InputEventMouseButton_property_double_click>` | ``false`` |
    +---------------------------------------------------+------------------------------------------------------------------------+-----------+
@@ -67,6 +71,23 @@ Property Descriptions
 - :ref:`MouseButton<enum_@GlobalScope_MouseButton>` **get_button_index** **(** **)**
 
 The mouse button identifier, one of the :ref:`MouseButton<enum_@GlobalScope_MouseButton>` button or button wheel constants.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_InputEventMouseButton_property_canceled:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **canceled** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_canceled** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_canceled** **(** **)**
+
+If ``true``, the mouse button event has been canceled.
 
 .. rst-class:: classref-item-separator
 
@@ -125,3 +146,4 @@ If ``true``, the mouse button's state is pressed. If ``false``, the mouse button
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

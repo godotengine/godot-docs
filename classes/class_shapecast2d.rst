@@ -12,20 +12,18 @@ ShapeCast2D
 
 **Inherits:** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-Node for physics collision sweep and immediate overlap queries. Similar to the :ref:`RayCast2D<class_RayCast2D>` node.
+A 2D shape that sweeps a region of space to detect :ref:`CollisionObject2D<class_CollisionObject2D>`\ s.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-Shape casting allows to detect collision objects by sweeping the :ref:`shape<class_ShapeCast2D_property_shape>` along the cast direction determined by :ref:`target_position<class_ShapeCast2D_property_target_position>` (useful for things like beam weapons).
+Shape casting allows to detect collision objects by sweeping its :ref:`shape<class_ShapeCast2D_property_shape>` along the cast direction determined by :ref:`target_position<class_ShapeCast2D_property_target_position>`. This is similar to :ref:`RayCast2D<class_RayCast2D>`, but it allows for sweeping a region of space, rather than just a straight line. **ShapeCast2D** can detect multiple collision objects. It is useful for things like wide laser beams or snapping a simple shape to a floor.
 
-Immediate collision overlaps can be done with the :ref:`target_position<class_ShapeCast2D_property_target_position>` set to ``Vector2(0, 0)`` and by calling :ref:`force_shapecast_update<class_ShapeCast2D_method_force_shapecast_update>` within the same **physics_frame**. This also helps to overcome some limitations of :ref:`Area2D<class_Area2D>` when used as a continuous detection area, often requiring waiting a couple of frames before collision information is available to :ref:`Area2D<class_Area2D>` nodes, and when using the signals creates unnecessary complexity.
+Immediate collision overlaps can be done with the :ref:`target_position<class_ShapeCast2D_property_target_position>` set to ``Vector2(0, 0)`` and by calling :ref:`force_shapecast_update<class_ShapeCast2D_method_force_shapecast_update>` within the same physics frame. This helps to overcome some limitations of :ref:`Area2D<class_Area2D>` when used as an instantaneous detection area, as collision information isn't immediately available to it.
 
-The node can detect multiple collision objects, but it's usually used to detect the first collision.
-
-\ **Note:** shape casting is more computationally expensive compared to ray casting.
+\ **Note:** Shape casting is more computationally expensive than ray casting.
 
 .. rst-class:: classref-reftable-group
 
@@ -490,3 +488,4 @@ Based on ``value``, enables or disables the specified layer in the :ref:`collisi
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

@@ -1,3 +1,5 @@
+:article_outdated: True
+
 .. _doc_first_3d_game_score_and_replay:
 
 Score and replay
@@ -100,12 +102,12 @@ monsters from the code, we cannot connect the mob signal to the ``ScoreLabel`` v
 Instead, we have to make the connection from the code every time we spawn a
 monster.
 
-Open the script ``Main.gd``. If it's still open, you can click on its name in
+Open the script ``main.gd``. If it's still open, you can click on its name in
 the script editor's left column.
 
 |image8|
 
-Alternatively, you can double-click the ``Main.gd`` file in the *FileSystem*
+Alternatively, you can double-click the ``main.gd`` file in the *FileSystem*
 dock.
 
 At the bottom of the ``_on_mob_timer_timeout()`` function, add the following
@@ -117,7 +119,7 @@ line:
     func _on_mob_timer_timeout():
         #...
         # We connect the mob to the score label to update the score upon squashing one.
-        mob.squashed.connect($UserInterface/ScoreLabel._on_Mob_squashed.bind())
+        mob.squashed.connect($UserInterface/ScoreLabel._on_mob_squashed.bind())
 
   .. code-tab:: csharp
 
@@ -129,9 +131,9 @@ line:
     }
 
 This line means that when the mob emits the ``squashed`` signal, the
-``ScoreLabel`` node will receive it and call the function ``_on_Mob_squashed()``.
+``ScoreLabel`` node will receive it and call the function ``_on_mob_squashed()``.
 
-Head back to the ``ScoreLabel.gd`` script to define the ``_on_Mob_squashed()``
+Head back to the ``ScoreLabel.gd`` script to define the ``_on_mob_squashed()``
 callback function.
 
 There, we increment the score and update the displayed text.
@@ -139,7 +141,7 @@ There, we increment the score and update the displayed text.
 .. tabs::
   .. code-tab:: gdscript GDScript
 
-    func _on_Mob_squashed():
+    func _on_mob_squashed():
         score += 1
         text = "Score: %s" % score
 
@@ -153,19 +155,13 @@ There, we increment the score and update the displayed text.
 
 The second line uses the value of the ``score`` variable to replace the
 placeholder ``%s``. When using this feature, Godot automatically converts values
-to string text, which is convenient to output text in labels or using the ``print()``
-function.
+to string text, which is convenient when outputting text in labels or
+when using the ``print()`` function.
 
 .. seealso::
 
     You can learn more about string formatting here: :ref:`doc_gdscript_printf`.
     In C#, consider using `string interpolation with "$" <https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/tokens/interpolated>`_.
-
-
-.. note::
-
-    If you get an error when you squash a mob
-    check your capital letters in the signal "_on_Mob_squashed"
 
 You can now play the game and squash a few enemies to see the score
 increase.
@@ -186,7 +182,7 @@ Retrying the game
 We'll now add the ability to play again after dying. When the player dies, we'll
 display a message on the screen and wait for input.
 
-Head back to the ``Main.tscn`` scene, select the ``UserInterface`` node, add a
+Head back to the ``main.tscn`` scene, select the ``UserInterface`` node, add a
 child node :ref:`ColorRect <class_ColorRect>`, and name it ``Retry``. This node fills a
 rectangle with a uniform color and will serve as an overlay to darken the
 screen.
@@ -232,7 +228,7 @@ Coding the retry option
 We can now head to the code to show and hide the ``Retry`` node when the player
 dies and plays again.
 
-Open the script ``Main.gd``. First, we want to hide the overlay at the start of
+Open the script ``main.gd``. First, we want to hide the overlay at the start of
 the game. Add this line to the ``_ready()`` function.
 
 .. tabs::
@@ -359,7 +355,7 @@ game's viewport.
 And that does it for this lesson. In the next part, we'll add an animation to
 make the game both look and feel much nicer.
 
-Here is the complete ``Main.gd`` script for reference.
+Here is the complete ``main.gd`` script for reference.
 
 .. tabs::
   .. code-tab:: gdscript GDScript
@@ -389,7 +385,7 @@ Here is the complete ``Main.gd`` script for reference.
         add_child(mob)
 
         # We connect the mob to the score label to update the score upon squashing one.
-        mob.squashed.connect($UserInterface/ScoreLabel._on_Mob_squashed.bind())
+        mob.squashed.connect($UserInterface/ScoreLabel._on_mob_squashed.bind())
 
     func _on_player_hit():
         $MobTimer.stop()

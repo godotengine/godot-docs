@@ -3,11 +3,11 @@
 Using NavigationPaths
 =====================
 
-Obtaining a Navigationpath
+Obtaining a NavigationPath
 --------------------------
 
 Navigation paths can be directly queried from the NavigationServer and do not require any
-additional nodes or objects as long as the navigation map has a navigationmesh to work with.
+additional nodes or objects as long as the navigation map has a navigation mesh to work with.
 
 To obtain a 2D path, use ``NavigationServer2D.map_get_path(map, from, to, optimize, navigation_layers)``.
 
@@ -16,19 +16,19 @@ To obtain a 3D path, use ``NavigationServer3D.map_get_path(map, from, to, optimi
 For more customizable navigation path queries that require additional setup see :ref:`doc_navigation_using_navigationpathqueryobjects`.
 
 One of the required parameters for the query is the RID of the navigation map.
-Each game ``World`` has a default navigation map automatically created.
+Each game world has a default navigation map automatically created.
 The default navigation maps can be retrieved with ``get_world_2d().get_navigation_map()`` from
 any Node2D inheriting node or ``get_world_3d().get_navigation_map()`` from any Node3D inheriting node.
 The second and third parameters are the starting position and the target position as Vector2 for 2D or Vector3 for 3D.
 
 If the ``optimized`` parameter is ``true``, path positions will be shortened along polygon
 corners with an additional funnel algorithm pass. This works well for free movement
-on navigationmeshes with unequal sized polygons as the path will hug around corners
+on navigation meshes with unequally sized polygons as the path will hug around corners
 along the polygon corridor found by the A* algorithm. With small cells the A* algorithm
 creates a very narrow funnel corridor that can create ugly corner paths when used with grids.
 
 If the ``optimized`` parameter is ``false``, path positions will be placed at the center of each polygon edge.
-This works well for pure grid movement on navmeshes with equal sized polygons as the path will go through the center of the grid cells.
+This works well for pure grid movement on navigation meshes with equally sized polygons as the path will go through the center of the grid cells.
 Outside of grids due to polygons often covering large open areas with a single, long edge this can create paths with unnecessary long detours.
 
 
@@ -65,9 +65,9 @@ Outside of grids due to polygons often covering large open areas with a single, 
 A returned ``path`` by the NavigationServer will be a ``PackedVector2Array`` for 2D or a ``PackedVector3Array`` for 3D.
 These are just a memory-optimized ``Array`` of vector positions.
 All position vectors inside the array are guaranteed to be inside a NavigationPolygon or NavigationMesh.
-The path array, if not empty, has the navigationmesh position closest to the starting position at the first index ``path[0]`` position.
-The closest available navigationmesh position to the target position is the last index ``path[path.size()-1]`` position.
-All index between are the pathpoints that an actor should follow to reach the target without leaving the navigation mesh.
+The path array, if not empty, has the navigation mesh position closest to the starting position at the first index ``path[0]`` position.
+The closest available navigation mesh position to the target position is the last index ``path[path.size()-1]`` position.
+All indexes between are the path points that an actor should follow to reach the target without leaving the navigation mesh.
 
 .. note::
 
@@ -121,6 +121,6 @@ the default navigation map by setting the target position with ``set_movement_ta
 
         current_path_point = current_path[current_path_index]
 
-        var new_velocity: Vector3 = (current_path_point - global_transform.origin).normalized() * movement_delta
+        var new_velocity: Vector3 = global_transform.origin.direction_to(current_path_point) * movement_delta
 
         global_transform.origin = global_transform.origin.move_toward(global_transform.origin + new_velocity, movement_delta)

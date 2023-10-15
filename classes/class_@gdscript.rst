@@ -10,7 +10,7 @@
 @GDScript
 =========
 
-Built-in GDScript functions.
+Built-in GDScript constants, functions, and annotations.
 
 .. rst-class:: classref-introduction-group
 
@@ -109,7 +109,7 @@ Positive floating-point infinity. This is the result of floating-point division 
 
 **NAN** = ``nan``
 
-"Not a Number", an invalid floating-point value. :ref:`NAN<class_@GDScript_constant_NAN>` has special properties, including that it is not equal to itself (``NAN == NAN`` returns ``false``). It is output by some invalid operations, such as dividing floating-point ``0.0`` by ``0.0``.
+"Not a Number", an invalid floating-point value. :ref:`NAN<class_@GDScript_constant_NAN>` has special properties, including that ``!=`` always returns ``true``, while other comparison operators always return ``false``. This is true even when comparing with itself (``NAN == NAN`` returns ``false`` and ``NAN != NAN`` returns ``true``). It is returned by some invalid operations, such as dividing floating-point ``0.0`` by ``0.0``.
 
 \ **Warning:** "Not a Number" is only a concept with floating-point numbers, and has no equivalent for integers. Dividing an integer ``0`` by ``0`` will not result in :ref:`NAN<class_@GDScript_constant_NAN>` and will result in a run-time error instead.
 
@@ -130,10 +130,37 @@ Mark the following property as exported (editable in the Inspector dock and save
 
 ::
 
+    extends Node
+    
+    enum Direction {LEFT, RIGHT, UP, DOWN}
+    
+    # Built-in types.
     @export var string = ""
     @export var int_number = 5
     @export var float_number: float = 5
-    @export var image : Image
+    
+    # Enums.
+    @export var type: Variant.Type
+    @export var format: Image.Format
+    @export var direction: Direction
+    
+    # Resources.
+    @export var image: Image
+    @export var custom_resource: CustomResource
+    
+    # Nodes.
+    @export var node: Node
+    @export var custom_node: CustomNode
+    
+    # Typed arrays.
+    @export var int_array: Array[int]
+    @export var direction_array: Array[Direction]
+    @export var image_array: Array[Image]
+    @export var node_array: Array[Node]
+
+\ **Note:** Custom resources and nodes must be registered as global classes using ``class_name``.
+
+\ **Note:** Node export is only supported in :ref:`Node<class_Node>`-derived classes and has a number of other limitations.
 
 .. rst-class:: classref-item-separator
 
@@ -173,7 +200,7 @@ See also :ref:`@GlobalScope.PROPERTY_HINT_COLOR_NO_ALPHA<class_@GlobalScope_cons
 
 ::
 
-    @export_color_no_alpha var dye_color : Color
+    @export_color_no_alpha var dye_color: Color
 
 .. rst-class:: classref-item-separator
 
@@ -418,6 +445,24 @@ See also :ref:`@GlobalScope.PROPERTY_HINT_LAYERS_3D_RENDER<class_@GlobalScope_co
 
 ----
 
+.. _class_@GDScript_annotation_@export_flags_avoidance:
+
+.. rst-class:: classref-annotation
+
+**@export_flags_avoidance** **(** **)**
+
+Export an integer property as a bit flag field for navigation avoidance layers. The widget in the Inspector dock will use the layer names defined in :ref:`ProjectSettings.layer_names/avoidance/layer_1<class_ProjectSettings_property_layer_names/avoidance/layer_1>`.
+
+See also :ref:`@GlobalScope.PROPERTY_HINT_LAYERS_AVOIDANCE<class_@GlobalScope_constant_PROPERTY_HINT_LAYERS_AVOIDANCE>`.
+
+::
+
+    @export_flags_avoidance var avoidance_layers: int
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_@GDScript_annotation_@export_global_dir:
 
 .. rst-class:: classref-annotation
@@ -465,7 +510,7 @@ See also :ref:`@GlobalScope.PROPERTY_HINT_GLOBAL_FILE<class_@GlobalScope_constan
 
 Define a new group for the following exported properties. This helps to organize properties in the Inspector dock. Groups can be added with an optional ``prefix``, which would make group to only consider properties that have this prefix. The grouping will break on the first property that doesn't have a prefix. The prefix is also removed from the property's name in the Inspector dock.
 
-If no ``prefix`` is provided, the every following property is added to the group. The group ends when then next group or category is defined. You can also force end a group by using this annotation with empty strings for parameters, ``@export_group("", "")``.
+If no ``prefix`` is provided, then every following property will be added to the group. The group ends when then next group or category is defined. You can also force end a group by using this annotation with empty strings for parameters, ``@export_group("", "")``.
 
 Groups cannot be nested, use :ref:`@export_subgroup<class_@GDScript_annotation_@export_subgroup>` to add subgroups within groups.
 
@@ -520,6 +565,8 @@ See also :ref:`@GlobalScope.PROPERTY_HINT_NODE_PATH_VALID_TYPES<class_@GlobalSco
 
     @export_node_path("Button", "TouchScreenButton") var some_button
 
+\ **Note:** The type must be a native class or a globally registered script (using the ``class_name`` keyword) that inherits :ref:`Node<class_Node>`.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -552,7 +599,7 @@ Export an :ref:`int<class_int>` or :ref:`float<class_float>` property as a range
 
 If hints ``"or_greater"`` and ``"or_less"`` are provided, the editor widget will not cap the value at range boundaries. The ``"exp"`` hint will make the edited values on range to change exponentially. The ``"hide_slider"`` hint will hide the slider element of the editor widget.
 
-Hints also allow to indicate the units for the edited value. Using ``"radians"`` you can specify that the actual value is in radians, but should be displayed in degrees in the Inspector dock. ``"degrees"`` allows to add a degree sign as a unit suffix. Finally, a custom suffix can be provided using ``"suffix:unit"``, where "unit" can be any string.
+Hints also allow to indicate the units for the edited value. Using ``"radians_as_degrees"`` you can specify that the actual value is in radians, but should be displayed in degrees in the Inspector dock (the range values are also in degrees). ``"degrees"`` allows to add a degree sign as a unit suffix (the value is unchanged). Finally, a custom suffix can be provided using ``"suffix:unit"``, where "unit" can be any string.
 
 See also :ref:`@GlobalScope.PROPERTY_HINT_RANGE<class_@GlobalScope_constant_PROPERTY_HINT_RANGE>`.
 
@@ -565,7 +612,7 @@ See also :ref:`@GlobalScope.PROPERTY_HINT_RANGE<class_@GlobalScope_constant_PROP
     @export_range(0, 100, 1, "or_greater") var power_percent
     @export_range(0, 100, 1, "or_greater", "or_less") var health_delta
     
-    @export_range(-3.14, 3.14, 0.001, "radians") var angle_radians
+    @export_range(-180, 180, 0.001, "radians_as_degrees") var angle_radians
     @export_range(0, 360, 1, "degrees") var angle_degrees
     @export_range(-8, 8, 2, "suffix:px") var target_offset
 
@@ -605,7 +652,7 @@ See also :ref:`@GlobalScope.PROPERTY_USAGE_SUBGROUP<class_@GlobalScope_constant_
 
 **@icon** **(** :ref:`String<class_String>` icon_path **)**
 
-Add a custom icon to the current script. The script must be registered as a global class using the ``class_name`` keyword for this to have a visible effect. The icon specified at ``icon_path`` is displayed in the Scene dock for every node of that class, as well as in various editor dialogs.
+Add a custom icon to the current script. The icon specified at ``icon_path`` is displayed in the Scene dock for every node of that class, as well as in various editor dialogs.
 
 ::
 
@@ -613,9 +660,9 @@ Add a custom icon to the current script. The script must be registered as a glob
 
 \ **Note:** Only the script can have a custom icon. Inner classes are not supported.
 
-\ **Note:** As annotations describe their subject, the ``@icon`` annotation must be placed before the class definition and inheritance.
+\ **Note:** As annotations describe their subject, the :ref:`@icon<class_@GDScript_annotation_@icon>` annotation must be placed before the class definition and inheritance.
 
-\ **Note:** Unlike other annotations, the argument of the ``@icon`` annotation must be a string literal (constant expressions are not supported).
+\ **Note:** Unlike other annotations, the argument of the :ref:`@icon<class_@GDScript_annotation_@icon>` annotation must be a string literal (constant expressions are not supported).
 
 .. rst-class:: classref-item-separator
 
@@ -641,11 +688,19 @@ Mark the following property as assigned when the :ref:`Node<class_Node>` is read
 
 .. rst-class:: classref-annotation
 
-**@rpc** **(** :ref:`String<class_String>` mode="authority", :ref:`String<class_String>` sync="call_remote", :ref:`String<class_String>` transfer_mode="unreliable", :ref:`int<class_int>` transfer_channel=0, ... **)** |vararg|
+**@rpc** **(** :ref:`String<class_String>` mode="authority", :ref:`String<class_String>` sync="call_remote", :ref:`String<class_String>` transfer_mode="unreliable", :ref:`int<class_int>` transfer_channel=0 **)**
 
 Mark the following method for remote procedure calls. See :doc:`High-level multiplayer <../tutorials/networking/high_level_multiplayer>`.
 
-The order of ``mode``, ``sync`` and ``transfer_mode`` does not matter and all arguments can be omitted, but ``transfer_channel`` always has to be the last argument. The accepted values for ``mode`` are ``"any_peer"`` or ``"authority"``, for ``sync`` are ``"call_remote"`` or ``"call_local"`` and for ``transfer_mode`` are ``"unreliable"``, ``"unreliable_ordered"`` or ``"reliable"``.
+If ``mode`` is set as ``"any_peer"``, allows any peer to call this RPC function. Otherwise, only the authority peer is allowed to call it and ``mode`` should be kept as ``"authority"``. When configuring functions as RPCs with :ref:`Node.rpc_config<class_Node_method_rpc_config>`, each of these modes respectively corresponds to the :ref:`MultiplayerAPI.RPC_MODE_AUTHORITY<class_MultiplayerAPI_constant_RPC_MODE_AUTHORITY>` and :ref:`MultiplayerAPI.RPC_MODE_ANY_PEER<class_MultiplayerAPI_constant_RPC_MODE_ANY_PEER>` RPC modes. See :ref:`RPCMode<enum_MultiplayerAPI_RPCMode>`. If a peer that is not the authority tries to call a function that is only allowed for the authority, the function will not be executed. If the error can be detected locally (when the RPC configuration is consistent between the local and the remote peer), an error message will be displayed on the sender peer. Otherwise, the remote peer will detect the error and print an error there.
+
+If ``sync`` is set as ``"call_remote"``, the function will only be executed on the remote peer, but not locally. To run this function locally too, set ``sync`` to ``"call_local"``. When configuring functions as RPCs with :ref:`Node.rpc_config<class_Node_method_rpc_config>`, this is equivalent to setting ``call_local`` to ``true``.
+
+The ``transfer_mode`` accepted values are ``"unreliable"``, ``"unreliable_ordered"``, or ``"reliable"``. It sets the transfer mode of the underlying :ref:`MultiplayerPeer<class_MultiplayerPeer>`. See :ref:`MultiplayerPeer.transfer_mode<class_MultiplayerPeer_property_transfer_mode>`.
+
+The ``transfer_channel`` defines the channel of the underlying :ref:`MultiplayerPeer<class_MultiplayerPeer>`. See :ref:`MultiplayerPeer.transfer_channel<class_MultiplayerPeer_property_transfer_channel>`.
+
+The order of ``mode``, ``sync`` and ``transfer_mode`` does not matter, but values related to the same argument must not be used more than once. ``transfer_channel`` always has to be the 4th argument (you must specify 3 preceding arguments).
 
 ::
 
@@ -657,6 +712,18 @@ The order of ``mode``, ``sync`` and ``transfer_mode`` does not matter and all ar
     
     @rpc("authority", "call_remote", "unreliable", 0) # Equivalent to @rpc
     func fn_default(): pass
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_@GDScript_annotation_@static_unload:
+
+.. rst-class:: classref-annotation
+
+**@static_unload** **(** **)**
+
+Make a script with static variables to not persist after all references are lost. If the script is loaded again the static variables will revert to their default values.
 
 .. rst-class:: classref-item-separator
 
@@ -675,7 +742,7 @@ Mark the current script as a tool script, allowing it to be loaded and executed 
     @tool
     extends Node
 
-\ **Note:** As annotations describe their subject, the ``@tool`` annotation must be placed before the class definition and inheritance.
+\ **Note:** As annotations describe their subject, the :ref:`@tool<class_@GDScript_annotation_@tool>` annotation must be placed before the class definition and inheritance.
 
 .. rst-class:: classref-item-separator
 
@@ -712,13 +779,15 @@ Method Descriptions
 
 :ref:`Color<class_Color>` **Color8** **(** :ref:`int<class_int>` r8, :ref:`int<class_int>` g8, :ref:`int<class_int>` b8, :ref:`int<class_int>` a8=255 **)**
 
-Returns a :ref:`Color<class_Color>` constructed from red (``r8``), green (``g8``), blue (``b8``), and optionally alpha (``a8``) integer channels, each divided by ``255.0`` for their final value.
+Returns a :ref:`Color<class_Color>` constructed from red (``r8``), green (``g8``), blue (``b8``), and optionally alpha (``a8``) integer channels, each divided by ``255.0`` for their final value. Using :ref:`Color8<class_@GDScript_method_Color8>` instead of the standard :ref:`Color<class_Color>` constructor is useful when you need to match exact color values in an :ref:`Image<class_Image>`.
 
 ::
 
     var red = Color8(255, 0, 0)             # Same as Color(1, 0, 0).
     var dark_blue = Color8(0, 0, 51)        # Same as Color(0, 0, 0.2).
     var my_color = Color8(306, 255, 0, 102) # Same as Color(1.2, 1, 0, 0.4).
+
+\ **Note:** Due to the lower precision of :ref:`Color8<class_@GDScript_method_Color8>` compared to the standard :ref:`Color<class_Color>` constructor, a color created with :ref:`Color8<class_@GDScript_method_Color8>` will generally not be equal to the same color created with the standard :ref:`Color<class_Color>` constructor. Use :ref:`Color.is_equal_approx<class_Color_method_is_equal_approx>` for comparisons to avoid issues with floating-point precision error.
 
 .. rst-class:: classref-item-separator
 
@@ -772,6 +841,8 @@ Returns a single character (as a :ref:`String<class_String>`) of the given Unico
 .. rst-class:: classref-method
 
 :ref:`Variant<class_Variant>` **convert** **(** :ref:`Variant<class_Variant>` what, :ref:`int<class_int>` type **)**
+
+*Deprecated.* Use :ref:`@GlobalScope.type_convert<class_@GlobalScope_method_type_convert>` instead.
 
 Converts ``what`` to ``type`` in the best way possible. The ``type`` uses the :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` values.
 
@@ -887,7 +958,7 @@ Examples:
     print(is_instance_of(a, MyClass))
     print(is_instance_of(a, MyClass.InnerClass))
 
-\ **Note:** If ``value`` and/or ``type`` are freed objects (see :ref:`@GlobalScope.is_instance_valid<class_@GlobalScope_method_is_instance_valid>`), or ``type`` is not one of the above options, this method will raise an runtime error.
+\ **Note:** If ``value`` and/or ``type`` are freed objects (see :ref:`@GlobalScope.is_instance_valid<class_@GlobalScope_method_is_instance_valid>`), or ``type`` is not one of the above options, this method will raise a runtime error.
 
 See also :ref:`@GlobalScope.typeof<class_@GlobalScope_method_typeof>`, :ref:`type_exists<class_@GDScript_method_type_exists>`, :ref:`Array.is_same_typed<class_Array_method_is_same_typed>` (and other :ref:`Array<class_Array>` methods).
 
@@ -935,6 +1006,8 @@ Returns a :ref:`Resource<class_Resource>` from the filesystem located at the abs
 This function is a simplified version of :ref:`ResourceLoader.load<class_ResourceLoader_method_load>`, which can be used for more advanced scenarios.
 
 \ **Note:** Files have to be imported into the engine first to load them using this function. If you want to load :ref:`Image<class_Image>`\ s at run-time, you may use :ref:`Image.load<class_Image_method_load>`. If you want to import audio files, you can use the snippet described in :ref:`AudioStreamMP3.data<class_AudioStreamMP3_property_data>`.
+
+\ **Note:** If :ref:`ProjectSettings.editor/export/convert_text_resources_to_binary<class_ProjectSettings_property_editor/export/convert_text_resources_to_binary>` is ``true``, :ref:`load<class_@GDScript_method_load>` will not be able to read converted files in an exported project. If you rely on run-time loading of files present within the PCK, set :ref:`ProjectSettings.editor/export/convert_text_resources_to_binary<class_ProjectSettings_property_editor/export/convert_text_resources_to_binary>` to ``false``.
 
 .. rst-class:: classref-item-separator
 
@@ -1034,8 +1107,8 @@ To iterate over an :ref:`Array<class_Array>` backwards, use:
 ::
 
     var array = [3, 6, 9]
-    for i in range(array.size(), 0, -1):
-        print(array[i - 1])
+    for i in range(array.size() - 1, -1, -1):
+        print(array[i])
 
 Output:
 
@@ -1083,3 +1156,4 @@ Returns ``true`` if the given :ref:`Object<class_Object>`-derived class exists i
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

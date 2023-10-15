@@ -247,7 +247,7 @@ Start a terminal, go to the root dir of the engine source code and type:
 
     Prior to Godot 4.0, the Linux/\*BSD target was called ``x11`` instead of
     ``linuxbsd``. If you are looking to compile Godot 3.x, make sure to use the
-    `stable branch of this documentation <https://docs.godotengine.org/en/stable/development/compiling/compiling_for_x11.html>`__.
+    `3.x branch of this documentation <https://docs.godotengine.org/en/3.6/development/compiling/compiling_for_x11.html>`__.
 
 If all goes well, the resulting binary executable will be placed in the
 "bin" subdirectory. This executable file contains the whole engine and
@@ -270,7 +270,7 @@ Manager.
           SCons options ``target=template_release production=yes``.
 
           If you are compiling Godot with GCC, you can make the binary
-          even smaller and faster by adding the SCons option ``use_lto=yes``.
+          even smaller and faster by adding the SCons option ``lto=full``.
           As link-time optimization is a memory-intensive process,
           this will require about 7 GB of available RAM while compiling.
 
@@ -379,6 +379,16 @@ created in the ``bin/`` folder.
 It's still recommended to use GCC for production builds as they can be compiled using
 link-time optimization, making the resulting binaries smaller and faster.
 
+If this error occurs::
+
+    /usr/bin/ld: cannot find -l:libatomic.a: No such file or directory
+
+There are two solutions:
+
+- In your SCons command, add the parameter ``use_static_cpp=no``.
+- Follow `these instructions <https://github.com/ivmai/libatomic_ops#installation-and-usage>`__ to configure, build, and
+  install ``libatomic_ops``. Then, copy ``/usr/lib/libatomic_ops.a`` to ``/usr/lib/libatomic.a``.
+
 Using mold for faster development
 ---------------------------------
 
@@ -426,7 +436,7 @@ listed in the :ref:`doc_compiling_for_linuxbsd_oneliners`:
 +------------------+-----------------------------------------------------------------------------------------------------------+
 | **Fedora**       | ::                                                                                                        |
 |                  |                                                                                                           |
-|                  |     sudo dnf install embree-devel enet-devel glslang-devel graphite2-devel harfbuzz-devel libicu-devel \  |
+|                  |     sudo dnf install embree3-devel enet-devel glslang-devel graphite2-devel harfbuzz-devel libicu-devel \ |
 |                  |         libsquish-devel libtheora-devel libvorbis-devel libwebp-devel libzstd-devel mbedtls-devel \       |
 |                  |         miniupnpc-devel                                                                                   |
 +------------------+-----------------------------------------------------------------------------------------------------------+

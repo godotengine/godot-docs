@@ -12,14 +12,14 @@ Sky
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-Background that uses a :ref:`Material<class_Material>` to draw a sky.
+Defines a 3D environment's background by using a :ref:`Material<class_Material>`.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-The **Sky** class uses a :ref:`Material<class_Material>` to draw the background and update the reflection/radiance cubemaps.
+The **Sky** class uses a :ref:`Material<class_Material>` to render a 3D environment's background and the light it emits by updating the reflection/radiance cubemaps.
 
 .. rst-class:: classref-reftable-group
 
@@ -158,7 +158,7 @@ Uses the same high quality importance sampling to process the radiance map as :r
 
 Uses the fast filtering algorithm to process the radiance map. In general this results in lower quality, but substantially faster run times. If you need better quality, but still need to update the sky every frame, consider turning on :ref:`ProjectSettings.rendering/reflections/sky_reflections/fast_filter_high_quality<class_ProjectSettings_property_rendering/reflections/sky_reflections/fast_filter_high_quality>`.
 
-\ **Note:** The fast filtering algorithm is limited to 256x256 cubemaps, so :ref:`radiance_size<class_Sky_property_radiance_size>` must be set to :ref:`RADIANCE_SIZE_256<class_Sky_constant_RADIANCE_SIZE_256>`.
+\ **Note:** The fast filtering algorithm is limited to 256×256 cubemaps, so :ref:`radiance_size<class_Sky_property_radiance_size>` must be set to :ref:`RADIANCE_SIZE_256<class_Sky_constant_RADIANCE_SIZE_256>`. Otherwise, a warning is printed and the overridden radiance size is ignored.
 
 .. rst-class:: classref-section-separator
 
@@ -226,3 +226,4 @@ See :ref:`RadianceSize<enum_Sky_RadianceSize>` constants for values.
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

@@ -12,16 +12,16 @@ SphereShape3D
 
 **Inherits:** :ref:`Shape3D<class_Shape3D>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-Sphere shape resource for 3D collisions.
+A 3D sphere shape used for physics collision.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-3D sphere shape to be added as a *direct* child of a :ref:`PhysicsBody3D<class_PhysicsBody3D>` or :ref:`Area3D<class_Area3D>` using a :ref:`CollisionShape3D<class_CollisionShape3D>` node. This shape is useful for modeling sphere-like 3D objects.
+A 3D sphere shape, intended for use in physics. Usually used to provide a shape for a :ref:`CollisionShape3D<class_CollisionShape3D>`.
 
-\ **Performance:** Being a primitive collision shape, **SphereShape3D** is the fastest collision shape to check collisions against, as it only requires a distance check with the shape's origin.
+\ **Performance:** **SphereShape3D** is fast to check collisions against. It is faster than :ref:`BoxShape3D<class_BoxShape3D>`, :ref:`CapsuleShape3D<class_CapsuleShape3D>`, and :ref:`CylinderShape3D<class_CylinderShape3D>`.
 
 .. rst-class:: classref-introduction-group
 
@@ -70,3 +70,4 @@ The sphere's radius. The shape's diameter is double the radius.
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

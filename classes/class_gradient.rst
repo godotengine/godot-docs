@@ -12,14 +12,14 @@ Gradient
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-A color interpolator resource which can be used to generate colors between user-defined color points.
+A color transition.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-Given a set of colors, this resource will interpolate them in order. This means that if you have color 1, color 2 and color 3, the gradient will interpolate from color 1 to color 2 and from color 2 to color 3. The gradient will initially have 2 colors (black and white), one (black) at gradient lower offset 0 and the other (white) at the gradient higher offset 1.
+This resource describes a color transition by defining a set of colored points and how to interpolate between them.
 
 See also :ref:`Curve<class_Curve>` which supports more complex easing methods, but does not support colors.
 
@@ -31,13 +31,15 @@ Properties
 .. table::
    :widths: auto
 
-   +-----------------------------------------------------------+-----------------------------------------------------------------------+----------------------------------------------+
-   | :ref:`PackedColorArray<class_PackedColorArray>`           | :ref:`colors<class_Gradient_property_colors>`                         | ``PackedColorArray(0, 0, 0, 1, 1, 1, 1, 1)`` |
-   +-----------------------------------------------------------+-----------------------------------------------------------------------+----------------------------------------------+
-   | :ref:`InterpolationMode<enum_Gradient_InterpolationMode>` | :ref:`interpolation_mode<class_Gradient_property_interpolation_mode>` | ``0``                                        |
-   +-----------------------------------------------------------+-----------------------------------------------------------------------+----------------------------------------------+
-   | :ref:`PackedFloat32Array<class_PackedFloat32Array>`       | :ref:`offsets<class_Gradient_property_offsets>`                       | ``PackedFloat32Array(0, 1)``                 |
-   +-----------------------------------------------------------+-----------------------------------------------------------------------+----------------------------------------------+
+   +-----------------------------------------------------------+-------------------------------------------------------------------------------------+----------------------------------------------+
+   | :ref:`PackedColorArray<class_PackedColorArray>`           | :ref:`colors<class_Gradient_property_colors>`                                       | ``PackedColorArray(0, 0, 0, 1, 1, 1, 1, 1)`` |
+   +-----------------------------------------------------------+-------------------------------------------------------------------------------------+----------------------------------------------+
+   | :ref:`ColorSpace<enum_Gradient_ColorSpace>`               | :ref:`interpolation_color_space<class_Gradient_property_interpolation_color_space>` | ``0``                                        |
+   +-----------------------------------------------------------+-------------------------------------------------------------------------------------+----------------------------------------------+
+   | :ref:`InterpolationMode<enum_Gradient_InterpolationMode>` | :ref:`interpolation_mode<class_Gradient_property_interpolation_mode>`               | ``0``                                        |
+   +-----------------------------------------------------------+-------------------------------------------------------------------------------------+----------------------------------------------+
+   | :ref:`PackedFloat32Array<class_PackedFloat32Array>`       | :ref:`offsets<class_Gradient_property_offsets>`                                     | ``PackedFloat32Array(0, 1)``                 |
+   +-----------------------------------------------------------+-------------------------------------------------------------------------------------+----------------------------------------------+
 
 .. rst-class:: classref-reftable-group
 
@@ -106,6 +108,40 @@ Constant interpolation, color changes abruptly at each point and stays uniform b
 
 Cubic interpolation.
 
+.. rst-class:: classref-item-separator
+
+----
+
+.. _enum_Gradient_ColorSpace:
+
+.. rst-class:: classref-enumeration
+
+enum **ColorSpace**:
+
+.. _class_Gradient_constant_GRADIENT_COLOR_SPACE_SRGB:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ColorSpace<enum_Gradient_ColorSpace>` **GRADIENT_COLOR_SPACE_SRGB** = ``0``
+
+sRGB color space.
+
+.. _class_Gradient_constant_GRADIENT_COLOR_SPACE_LINEAR_SRGB:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ColorSpace<enum_Gradient_ColorSpace>` **GRADIENT_COLOR_SPACE_LINEAR_SRGB** = ``1``
+
+Linear sRGB color space.
+
+.. _class_Gradient_constant_GRADIENT_COLOR_SPACE_OKLAB:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ColorSpace<enum_Gradient_ColorSpace>` **GRADIENT_COLOR_SPACE_OKLAB** = ``2``
+
+`Oklab <https://bottosson.github.io/posts/oklab/>`__ color space. This color space provides a smooth and uniform-looking transition between colors.
+
 .. rst-class:: classref-section-separator
 
 ----
@@ -128,6 +164,27 @@ Property Descriptions
 
 Gradient's colors returned as a :ref:`PackedColorArray<class_PackedColorArray>`.
 
+\ **Note:** This property returns a copy, modifying the return value does not update the gradient. To update the gradient use :ref:`set_color<class_Gradient_method_set_color>` method (for updating colors individually) or assign to this property directly (for bulk-updating all colors at once).
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Gradient_property_interpolation_color_space:
+
+.. rst-class:: classref-property
+
+:ref:`ColorSpace<enum_Gradient_ColorSpace>` **interpolation_color_space** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_interpolation_color_space** **(** :ref:`ColorSpace<enum_Gradient_ColorSpace>` value **)**
+- :ref:`ColorSpace<enum_Gradient_ColorSpace>` **get_interpolation_color_space** **(** **)**
+
+The color space used to interpolate between points of the gradient. It does not affect the returned colors, which will always be in sRGB space. See :ref:`ColorSpace<enum_Gradient_ColorSpace>` for available modes.
+
+\ **Note:** This setting has no effect when :ref:`interpolation_mode<class_Gradient_property_interpolation_mode>` is set to :ref:`GRADIENT_INTERPOLATE_CONSTANT<class_Gradient_constant_GRADIENT_INTERPOLATE_CONSTANT>`.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -143,7 +200,7 @@ Gradient's colors returned as a :ref:`PackedColorArray<class_PackedColorArray>`.
 - void **set_interpolation_mode** **(** :ref:`InterpolationMode<enum_Gradient_InterpolationMode>` value **)**
 - :ref:`InterpolationMode<enum_Gradient_InterpolationMode>` **get_interpolation_mode** **(** **)**
 
-Defines how the colors between points of the gradient are interpolated. See :ref:`InterpolationMode<enum_Gradient_InterpolationMode>` for available modes.
+The algorithm used to interpolate between points of the gradient. See :ref:`InterpolationMode<enum_Gradient_InterpolationMode>` for available modes.
 
 .. rst-class:: classref-item-separator
 
@@ -162,6 +219,8 @@ Defines how the colors between points of the gradient are interpolated. See :ref
 
 Gradient's offsets returned as a :ref:`PackedFloat32Array<class_PackedFloat32Array>`.
 
+\ **Note:** This property returns a copy, modifying the return value does not update the gradient. To update the gradient use :ref:`set_offset<class_Gradient_method_set_offset>` method (for updating offsets individually) or assign to this property directly (for bulk-updating all offsets at once).
+
 .. rst-class:: classref-section-separator
 
 ----
@@ -177,7 +236,7 @@ Method Descriptions
 
 void **add_point** **(** :ref:`float<class_float>` offset, :ref:`Color<class_Color>` color **)**
 
-Adds the specified color to the end of the gradient, with the specified offset.
+Adds the specified color to the gradient, with the specified offset.
 
 .. rst-class:: classref-item-separator
 
@@ -225,7 +284,7 @@ Returns the number of colors in the gradient.
 
 void **remove_point** **(** :ref:`int<class_int>` point **)**
 
-Removes the color at the index ``point``.
+Removes the color at index ``point``.
 
 .. rst-class:: classref-item-separator
 
@@ -238,6 +297,8 @@ Removes the color at the index ``point``.
 void **reverse** **(** **)**
 
 Reverses/mirrors the gradient.
+
+\ **Note:** This method mirrors all points around the middle of the gradient, which may produce unexpected results when :ref:`interpolation_mode<class_Gradient_property_interpolation_mode>` is set to :ref:`GRADIENT_INTERPOLATE_CONSTANT<class_Gradient_constant_GRADIENT_INTERPOLATE_CONSTANT>`.
 
 .. rst-class:: classref-item-separator
 
@@ -281,3 +342,4 @@ Sets the offset for the gradient color at index ``point``.
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

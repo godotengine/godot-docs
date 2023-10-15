@@ -62,13 +62,13 @@ Setting up the buildsystem
 
     ::
 
-        tools/bin/sdkmanager --sdk_root=<android_sdk_path> --licenses
+        cmdline-tools/latest/bin/sdkmanager --sdk_root=<android_sdk_path> --licenses
 
     -  Complete setup by running the following command where ``android_sdk_path`` is the path to the Android SDK.
 
     ::
 
-        tools/bin/sdkmanager --sdk_root=<android_sdk_path> "platform-tools" "build-tools;30.0.3" "platforms;android-29" "cmdline-tools;latest" "cmake;3.10.2.4988404"
+        cmdline-tools/latest/bin/sdkmanager --sdk_root=<android_sdk_path> "platform-tools" "build-tools;30.0.3" "platforms;android-29" "cmdline-tools;latest" "cmake;3.10.2.4988404"
 
 .. seealso::   To set the environment variable on Windows, press :kbd:`Windows + R`, type
             "control system", then click on **Advanced system settings** in the left
@@ -94,8 +94,8 @@ root directory with the following arguments:
 
 ::
 
-    scons platform=android target=template_release arch=armv7
-    scons platform=android target=template_release arch=arm64v8
+    scons platform=android target=template_release arch=arm32
+    scons platform=android target=template_release arch=arm64
     cd platform/android/java
     # On Windows
     .\gradlew generateGodotTemplates
@@ -109,8 +109,8 @@ The resulting APK will be located at ``bin/android_release.apk``.
 
 ::
 
-    scons platform=android target=template_debug arch=armv7
-    scons platform=android target=template_debug arch=arm64v8
+    scons platform=android target=template_debug arch=arm32
+    scons platform=android target=template_debug arch=arm64
     cd platform/android/java
     # On Windows
     .\gradlew generateGodotTemplates
@@ -120,11 +120,10 @@ The resulting APK will be located at ``bin/android_release.apk``.
 
 The resulting APK will be located at ``bin/android_debug.apk``.
 
-
 .. seealso::
 
     If you want to enable Vulkan validation layers, see
-    :ref:`Vulkan validation layers on Android<doc_vulkan_validation_layers-android>`.
+    :ref:`Vulkan validation layers on Android <doc_vulkan_validation_layers_android>`.
 
 Adding support for x86 devices
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -136,9 +135,9 @@ example, for the release template:
 
 ::
 
-    scons platform=android target=template_release arch=armv7
-    scons platform=android target=template_release arch=arm64v8
-    scons platform=android target=template_release arch=x86
+    scons platform=android target=template_release arch=arm32
+    scons platform=android target=template_release arch=arm64
+    scons platform=android target=template_release arch=x86_32
     scons platform=android target=template_release arch=x86_64
     cd platform/android/java
     # On Windows
@@ -161,9 +160,9 @@ You can use the following commands to remove the generated export templates:
 
     cd platform/android/java
     # On Windows
-    .\gradlew cleanGodotTemplates
+    .\gradlew clean
     # On Linux and macOS
-    ./gradlew cleanGodotTemplates
+    ./gradlew clean
 
 
 Using the export templates
@@ -214,9 +213,9 @@ root directory with the following arguments:
 
 ::
 
-   scons platform=android arch=armv7 production=yes target=editor
-   scons platform=android arch=arm64v8 production=yes target=editor
-   scons platform=android arch=x86 production=yes target=editor
+   scons platform=android arch=arm32 production=yes target=editor
+   scons platform=android arch=arm64 production=yes target=editor
+   scons platform=android arch=x86_32 production=yes target=editor
    scons platform=android arch=x86_64 production=yes target=editor
    cd platform/android/java
    # On Windows
@@ -225,7 +224,7 @@ root directory with the following arguments:
    ./gradlew generateGodotEditor
 
 
-The resulting APK will be located at ``bin/android_editor.apk``.
+The resulting APK will be located at ``bin/android_editor_builds/android_editor-release.apk``.
 
 Removing the Editor templates
 -----------------------------
@@ -236,9 +235,9 @@ You can use the following commands to remove the generated editor templates:
 
     cd platform/android/java
     # On Windows
-   .\gradlew cleanGodotEditor
+   .\gradlew clean
    # On Linux and macOS
-   ./gradlew cleanGodotEditor
+   ./gradlew clean
 
 Installing the Godot editor
 ---------------------------
@@ -248,7 +247,7 @@ Open up a Terminal/Command Prompt and run the following commands from the root d
 
 ::
 
-   adb install ./bin/android_editor.apk
+   adb install ./bin/android_editor_builds/android_editor-release.apk
 
 Troubleshooting
 ---------------

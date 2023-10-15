@@ -1,5 +1,3 @@
-:article_outdated: True
-
 .. Intention: introduce only a handful of key concepts and avoid a big cognitive
    load. Readers will then be reminded of the concepts further in the getting
    started series, reinforcing their learning.
@@ -26,12 +24,12 @@ a weapon, a menu in the user interface, a single house, an entire level, or
 anything you can think of. Godot's scenes are flexible; they fill the role of
 both prefabs and scenes in some other game engines.
 
-.. image:: img/key_concepts_main_menu.png
+.. image:: img/key_concepts_main_menu.webp
 
 You can also nest scenes. For example, you can put your character in a level,
 and drag and drop a scene as a child of it.
 
-.. image:: img/key_concepts_scene_example.png
+.. image:: img/key_concepts_scene_example.webp
 
 Nodes
 -----
@@ -40,13 +38,14 @@ A scene is composed of one or more **nodes**. Nodes are your game's smallest
 building blocks that you arrange into trees. Here's an example of a character's
 nodes.
 
-.. image:: img/key_concepts_character_nodes.png
+.. image:: img/key_concepts_character_nodes.webp
 
-It is made of a ``CharacterBody2D`` node named "Character", a ``Sprite2D``, a
-``Camera2D``, and a ``CollisionShape2D``.
+It is made of a ``CharacterBody2D`` node named "Player", a ``Camera2D``, a
+``Sprite2D``, and a ``CollisionShape2D``.
 
 .. note:: The node names end with "2D" because this is a 2D scene. Their 3D
-          counterparts have names that end with "3D".
+          counterparts have names that end with "3D". Be aware that "Spatial"
+          Nodes are now called "Node3D" starting with Godot 4.
 
 Notice how nodes and scenes look the same in the editor. When you save a tree of
 nodes as a scene, it then shows as a single node, with its internal structure

@@ -21,6 +21,13 @@ Description
 
 Defines the API that the editor uses to extract information from the underlying VCS. The implementation of this API is included in VCS plugins, which are GDExtension plugins that inherit **EditorVCSInterface** and are attached (on demand) to the singleton instance of **EditorVCSInterface**. Instead of performing the task themselves, all the virtual functions listed below are calling the internally overridden functions in the VCS plugins to provide a plug-n-play experience. A custom VCS plugin is supposed to inherit from **EditorVCSInterface** and override each of these virtual functions.
 
+.. rst-class:: classref-introduction-group
+
+Tutorials
+---------
+
+- :doc:`Version control systems <../tutorials/best_practices/version_control_systems>`
+
 .. rst-class:: classref-reftable-group
 
 Methods
@@ -265,7 +272,7 @@ Discards the changes made in a file present at ``file_path``.
 
 void **_fetch** **(** :ref:`String<class_String>` remote **)** |virtual|
 
-Fetches new changes from the remote, but doesn't write changes to the current working directory. Equivalent to ``git fetch``.
+Fetches new changes from the ``remote``, but doesn't write changes to the current working directory. Equivalent to ``git fetch``.
 
 .. rst-class:: classref-item-separator
 
@@ -397,7 +404,7 @@ Pulls changes from the remote. This can give rise to merge conflicts.
 
 void **_push** **(** :ref:`String<class_String>` remote, :ref:`bool<class_bool>` force **)** |virtual|
 
-Pushes changes to the ``remote``. Optionally, if ``force`` is set to true, a force push will override the change history already present on the remote.
+Pushes changes to the ``remote``. If ``force`` is ``true``, a force push will override the change history already present on the remote.
 
 .. rst-class:: classref-item-separator
 
@@ -517,7 +524,7 @@ Helper function to create a commit :ref:`Dictionary<class_Dictionary>` item. ``m
 
 :ref:`Dictionary<class_Dictionary>` **create_diff_file** **(** :ref:`String<class_String>` new_file, :ref:`String<class_String>` old_file **)**
 
-Helper function to create a ``Dictionary`` for storing old and new diff file paths.
+Helper function to create a :ref:`Dictionary<class_Dictionary>` for storing old and new diff file paths.
 
 .. rst-class:: classref-item-separator
 
@@ -529,7 +536,7 @@ Helper function to create a ``Dictionary`` for storing old and new diff file pat
 
 :ref:`Dictionary<class_Dictionary>` **create_diff_hunk** **(** :ref:`int<class_int>` old_start, :ref:`int<class_int>` new_start, :ref:`int<class_int>` old_lines, :ref:`int<class_int>` new_lines **)**
 
-Helper function to create a ``Dictionary`` for storing diff hunk data. ``old_start`` is the starting line number in old file. ``new_start`` is the starting line number in new file. ``old_lines`` is the number of lines in the old file. ``new_lines`` is the number of lines in the new file.
+Helper function to create a :ref:`Dictionary<class_Dictionary>` for storing diff hunk data. ``old_start`` is the starting line number in old file. ``new_start`` is the starting line number in new file. ``old_lines`` is the number of lines in the old file. ``new_lines`` is the number of lines in the new file.
 
 .. rst-class:: classref-item-separator
 
@@ -541,7 +548,7 @@ Helper function to create a ``Dictionary`` for storing diff hunk data. ``old_sta
 
 :ref:`Dictionary<class_Dictionary>` **create_diff_line** **(** :ref:`int<class_int>` new_line_no, :ref:`int<class_int>` old_line_no, :ref:`String<class_String>` content, :ref:`String<class_String>` status **)**
 
-Helper function to create a ``Dictionary`` for storing a line diff. ``new_line_no`` is the line number in the new file (can be ``-1`` if the line is deleted). ``old_line_no`` is the line number in the old file (can be ``-1`` if the line is added). ``content`` is the diff text. ``status`` is a single character string which stores the line origin.
+Helper function to create a :ref:`Dictionary<class_Dictionary>` for storing a line diff. ``new_line_no`` is the line number in the new file (can be ``-1`` if the line is deleted). ``old_line_no`` is the line number in the old file (can be ``-1`` if the line is added). ``content`` is the diff text. ``status`` is a single character string which stores the line origin.
 
 .. rst-class:: classref-item-separator
 
@@ -553,7 +560,7 @@ Helper function to create a ``Dictionary`` for storing a line diff. ``new_line_n
 
 :ref:`Dictionary<class_Dictionary>` **create_status_file** **(** :ref:`String<class_String>` file_path, :ref:`ChangeType<enum_EditorVCSInterface_ChangeType>` change_type, :ref:`TreeArea<enum_EditorVCSInterface_TreeArea>` area **)**
 
-Helper function to create a ``Dictionary`` used by editor to read the status of a file.
+Helper function to create a :ref:`Dictionary<class_Dictionary>` used by editor to read the status of a file.
 
 .. rst-class:: classref-item-separator
 
@@ -565,7 +572,7 @@ Helper function to create a ``Dictionary`` used by editor to read the status of 
 
 void **popup_error** **(** :ref:`String<class_String>` msg **)**
 
-Pops up an error message in the edior which is shown as coming from the underlying VCS. Use this to show VCS specific error messages.
+Pops up an error message in the editor which is shown as coming from the underlying VCS. Use this to show VCS specific error messages.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
@@ -573,3 +580,4 @@ Pops up an error message in the edior which is shown as coming from the underlyi
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

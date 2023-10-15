@@ -12,7 +12,7 @@ AnimationNodeTransition
 
 **Inherits:** :ref:`AnimationNodeSync<class_AnimationNodeSync>` **<** :ref:`AnimationNode<class_AnimationNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-A generic animation transition node for :ref:`AnimationTree<class_AnimationTree>`.
+A transition within an :ref:`AnimationTree<class_AnimationTree>` connecting two :ref:`AnimationNode<class_AnimationNode>`\ s.
 
 .. rst-class:: classref-introduction-group
 
@@ -41,7 +41,7 @@ After setting the request and changing the animation playback, the transition no
     animation_tree["parameters/Transition/current_state"]
     
     # Get current state index (read-only).
-    animation_tree.get("parameters/Transition/current_index"))
+    animation_tree.get("parameters/Transition/current_index")
     # Alternative syntax (same result as above).
     animation_tree["parameters/Transition/current_index"]
 
@@ -63,7 +63,7 @@ After setting the request and changing the animation playback, the transition no
 Tutorials
 ---------
 
-- :doc:`AnimationTree <../tutorials/animation/animation_tree>`
+- :doc:`Using AnimationTree <../tutorials/animation/animation_tree>`
 
 - `3D Platformer Demo <https://godotengine.org/asset-library/asset/125>`__
 
@@ -142,7 +142,7 @@ If ``true``, allows transition to the self state. When the reset option is enabl
 - void **set_input_count** **(** :ref:`int<class_int>` value **)**
 - :ref:`int<class_int>` **get_input_count** **(** **)**
 
-The number of enabled input ports for this node.
+The number of enabled input ports for this animation node.
 
 .. rst-class:: classref-item-separator
 
@@ -237,3 +237,4 @@ If ``true``, the destination animation is restarted when the animation transitio
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

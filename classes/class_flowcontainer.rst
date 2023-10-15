@@ -14,16 +14,21 @@ FlowContainer
 
 **Inherited By:** :ref:`HFlowContainer<class_HFlowContainer>`, :ref:`VFlowContainer<class_VFlowContainer>`
 
-Base class for flow containers.
+A container that arranges its child controls horizontally or vertically and wraps them around at the borders.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-Arranges child :ref:`Control<class_Control>` nodes vertically or horizontally in a left-to-right or top-to-bottom flow.
+A container that arranges its child controls horizontally or vertically and wraps them around at the borders. This is similar to how text in a book wraps around when no more words can fit on a line.
 
-A line is filled with :ref:`Control<class_Control>` nodes until no more fit on the same line, similar to text in an autowrapped label.
+.. rst-class:: classref-introduction-group
+
+Tutorials
+---------
+
+- :doc:`Using Containers <../tutorials/ui/gui_containers>`
 
 .. rst-class:: classref-reftable-group
 
@@ -197,3 +202,4 @@ The vertical separation of children nodes.
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

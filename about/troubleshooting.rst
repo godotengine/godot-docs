@@ -74,6 +74,13 @@ peripherals' drivers to their latest version. If the bug persists, you need to
 disconnect the specific peripheral before opening the editor. You can then
 connect the peripheral again.
 
+Firewall software such as Portmaster may also cause the debug port to be
+blocked. This causes the project to take a long time to start, while being
+unable to use debugging features in the editor (such as viewing ``print()``
+output). You can work this around by changing the debug port used by the project
+in the Editor Settings (**Network > Debug > Remote Port**). The default is
+``6007``; try another value that is greater than ``1024``, such as ``7007``.
+
 The Godot editor appears frozen after clicking the system console
 -----------------------------------------------------------------
 
@@ -85,6 +92,23 @@ the system console. Godot cannot override this system-specific behavior.
 To solve this, select the system console window and press Enter to leave
 selection mode.
 
+The Godot editor's macOS dock icon gets duplicated every time it is manually moved
+----------------------------------------------------------------------------------
+
+If you open the Godot editor and manually change the position of the dock icon,
+then restart the editor, you will get a duplicate dock icon all the way to the
+right of the dock.
+
+This is due to a design limitation of the macOS dock. The only known way to
+resolve this would be to merge the project manager and editor into a single
+process, which means the project manager would no longer spawn a separate
+process when starting the editor. While using a single process instance would
+bring several benefits, it isn't planned to be done in the near future due to
+the complexity of the task.
+
+To avoid this issue, keep the Godot editor's dock icon at its default location
+as created by macOS.
+
 Some text such as "NO DC" appears in the top-left corner of the Project Manager and editor window
 -------------------------------------------------------------------------------------------------
 
@@ -95,6 +119,92 @@ default values in the NVIDIA Control Panel.
 
 To disable this overlay on Linux, open ``nvidia-settings``, go to **X Screen 0 >
 OpenGL Settings** then uncheck **Enable Graphics API Visual Indicator**.
+
+The editor or project appears overly sharp or blurry
+----------------------------------------------------
+
+.. figure:: img/troubleshooting_graphics_driver_sharpening.webp
+   :align: center
+   :alt: Correct appearance (left), oversharpened appearance due to graphics driver sharpening (right)
+
+   Correct appearance (left), oversharpened appearance due to graphics driver sharpening (right)
+
+If the editor or project appears overly sharp, this is likely due to image
+sharpening being forced on all Vulkan or OpenGL applications by your graphics
+driver. You can disable this behavior in the graphics driver's control panel:
+
+- **NVIDIA (Windows):** Open the start menu and choose **NVIDIA Control Panel**.
+  Open the **Manage 3D settings** tab on the left. In the list in the middle,
+  scroll to **Image Sharpening** and set it to **Sharpening Off**.
+- **AMD (Windows):** Open the start menu and choose **AMD Software**. Click the
+  settings "cog" icon in the top-right corner. Go to the **Graphics** tab then
+  disable **Radeon Image Sharpening**.
+
+If the editor or project appears overly blurry, this is likely due to
+:abbr:`FXAA (Fast Approximate AntiAliasing)` being forced on all Vulkan or
+OpenGL applications by your graphics driver.
+
+- **NVIDIA (Windows):** Open the start menu and choose **NVIDIA Control Panel**.
+  Open the **Manage 3D settings** tab on the left. In the list in the middle,
+  scroll to **Fast Approximate Antialiasing** and set it to **Application
+  Controlled**.
+- **NVIDIA (Linux):** Open the applications menu and choose **NVIDIA X Server
+  Settings**. Select to **Antialiasing Settings** on the left, then uncheck
+  **Enable FXAA**.
+- **AMD (Windows):** Open the start menu and choose **AMD Software**. Click the
+  settings "cog" icon in the top-right corner. Go to the **Graphics** tab,
+  scroll to the bottom and click **Advanced** to unfold its settings. Disable
+  **Morphological Anti-Aliasing**.
+
+Third-party vendor-independent utilities such as vkBasalt may also force
+sharpening or FXAA on all Vulkan applications. You may want to check their
+configuration as well.
+
+After changing options in the graphics driver or third-party utilities, restart
+Godot to make the changes effective.
+
+If you still wish to force sharpening or FXAA on other applications, it's
+recommended to do so on a per-application basis using the application profiles
+system provided by graphics drivers' control panels.
+
+The editor or project appears to have washed out colors
+-------------------------------------------------------
+
+On Windows, this is usually caused by incorrect OS or monitor settings, as Godot
+currently does not support :abbr:`HDR (High Dynamic Range)` *output*
+(even though it may internally render in HDR).
+
+As `most displays are not designed to display SDR content in HDR mode <https://tftcentral.co.uk/articles/heres-why-you-should-only-enable-hdr-mode-on-your-pc-when-you-are-viewing-hdr-content>`__,
+it is recommended to disable HDR in the Windows settings when not running applications
+that use HDR output. On Windows 11, this can be done by pressing
+:kbd:`Windows + Alt + B` (this shortcut is part of the Xbox Game Bar app).
+To toggle HDR automatically based on applications currently running, you can use
+`AutoActions <https://github.com/Codectory/AutoActions>`__.
+
+If you insist on leaving HDR enabled, it is possible to somewhat improve the
+result by ensuring the display is configured to use :abbr:`HGIG (HDR Gaming Interest Group)`
+tonemapping (as opposed to :abbr:`DTM (Dynamic Tone Mapping)`), then
+`using the Windows HDR calibration app <https://support.microsoft.com/en-us/windows/calibrate-your-hdr-display-using-the-windows-hdr-calibration-app-f30f4809-3369-43e4-9b02-9eabebd23f19>`__.
+It is also strongly recommended to use Windows 11 instead of Windows 10 when using HDR.
+The end result will still likely be inferior to disabling HDR on the display, though.
+
+Support for HDR *output* is planned in a future release.
+
+The editor/project freezes or displays glitched visuals after resuming the PC from suspend
+------------------------------------------------------------------------------------------
+
+This is a known issue on Linux with NVIDIA graphics when using the proprietary
+driver. There is no definitive fix yet, as suspend on Linux + NVIDIA is often
+buggy when OpenGL or Vulkan is involved. The Compatibility rendering method
+(which uses OpenGL) is generally less prone to suspend-related issues compared
+to the Forward+ and Forward Mobile rendering methods (which use Vulkan).
+
+The NVIDIA driver offers an *experimental*
+`option to preserve video memory after suspend <https://wiki.archlinux.org/title/NVIDIA/Tips_and_tricks#Preserve_video_memory_after_suspend>`__
+which may resolve this issue. This option has been reported to work better with
+more recent NVIDIA driver versions.
+
+To avoid losing work, save scenes in the editor before putting the PC to sleep.
 
 The project works when run from the editor, but fails to load some files when running from an exported copy
 -----------------------------------------------------------------------------------------------------------

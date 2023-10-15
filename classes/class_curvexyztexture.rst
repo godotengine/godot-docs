@@ -12,14 +12,14 @@ CurveXYZTexture
 
 **Inherits:** :ref:`Texture2D<class_Texture2D>` **<** :ref:`Texture<class_Texture>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-A texture that shows 3 different curves (stored on the red, green and blue color channels).
+A 1D texture where the red, green, and blue color channels correspond to points on 3 curves.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-Renders 3 given :ref:`Curve<class_Curve>`\ s provided to it, on the red, green and blue channels respectively. Compared to using separate :ref:`CurveTexture<class_CurveTexture>`\ s, this further simplifies the task of drawing curves and/or saving them as image files.
+A 1D texture where the red, green, and blue color channels correspond to points on 3 :ref:`Curve<class_Curve>` resources. Compared to using separate :ref:`CurveTexture<class_CurveTexture>`\ s, this further simplifies the task of saving curves as image files.
 
 If you only need to store one curve within a single texture, use :ref:`CurveTexture<class_CurveTexture>` instead. See also :ref:`GradientTexture1D<class_GradientTexture1D>` and :ref:`GradientTexture2D<class_GradientTexture2D>`.
 
@@ -122,3 +122,4 @@ The width of the texture (in pixels). Higher values make it possible to represen
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

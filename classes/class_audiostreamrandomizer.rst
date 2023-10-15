@@ -32,9 +32,9 @@ Properties
    +--------------------------------------------------------------+----------------------------------------------------------------------------------------------+---------+
    | :ref:`PlaybackMode<enum_AudioStreamRandomizer_PlaybackMode>` | :ref:`playback_mode<class_AudioStreamRandomizer_property_playback_mode>`                     | ``0``   |
    +--------------------------------------------------------------+----------------------------------------------------------------------------------------------+---------+
-   | :ref:`float<class_float>`                                    | :ref:`random_pitch<class_AudioStreamRandomizer_property_random_pitch>`                       | ``1.1`` |
+   | :ref:`float<class_float>`                                    | :ref:`random_pitch<class_AudioStreamRandomizer_property_random_pitch>`                       | ``1.0`` |
    +--------------------------------------------------------------+----------------------------------------------------------------------------------------------+---------+
-   | :ref:`float<class_float>`                                    | :ref:`random_volume_offset_db<class_AudioStreamRandomizer_property_random_volume_offset_db>` | ``5.0`` |
+   | :ref:`float<class_float>`                                    | :ref:`random_volume_offset_db<class_AudioStreamRandomizer_property_random_volume_offset_db>` | ``0.0`` |
    +--------------------------------------------------------------+----------------------------------------------------------------------------------------------+---------+
    | :ref:`int<class_int>`                                        | :ref:`streams_count<class_AudioStreamRandomizer_property_streams_count>`                     | ``0``   |
    +--------------------------------------------------------------+----------------------------------------------------------------------------------------------+---------+
@@ -132,7 +132,7 @@ Controls how this AudioStreamRandomizer picks which AudioStream to play next.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **random_pitch** = ``1.1``
+:ref:`float<class_float>` **random_pitch** = ``1.0``
 
 .. rst-class:: classref-property-setget
 
@@ -149,7 +149,7 @@ The intensity of random pitch variation. A value of 1 means no variation.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **random_volume_offset_db** = ``5.0``
+:ref:`float<class_float>` **random_volume_offset_db** = ``0.0``
 
 .. rst-class:: classref-property-setget
 
@@ -270,3 +270,4 @@ Set the probability weight of the stream at the specified index. The higher this
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

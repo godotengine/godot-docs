@@ -12,7 +12,14 @@ TextServerAdvanced
 
 **Inherits:** :ref:`TextServerExtension<class_TextServerExtension>` **<** :ref:`TextServer<class_TextServer>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-Text Server using HarfBuzz, ICU and SIL Graphite to support BiDi, complex text layouts and contextual OpenType features.
+An advanced text server with support for BiDi, complex text layout, and contextual OpenType features. Used in Godot by default.
+
+.. rst-class:: classref-introduction-group
+
+Description
+-----------
+
+An implementation of :ref:`TextServer<class_TextServer>` that uses HarfBuzz, ICU and SIL Graphite to support BiDi, complex text layouts and contextual OpenType features. This is Godot's default primary :ref:`TextServer<class_TextServer>` interface.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
@@ -20,3 +27,4 @@ Text Server using HarfBuzz, ICU and SIL Graphite to support BiDi, complex text l
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

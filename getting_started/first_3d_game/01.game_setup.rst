@@ -1,3 +1,5 @@
+:article_outdated: True
+
 .. _doc_first_3d_game_game_area:
 
 Setting up the game area
@@ -45,7 +47,7 @@ a node to the scene, you can press :kbd:`Ctrl + a` (or :kbd:`Cmd + a` on macOS).
 
 .. image:: img/01.game_setup/05.main_node.png
 
-Save the scene as ``Main.tscn`` by pressing :kbd:`Ctrl + s` (:kbd:`Cmd + s` on macOS).
+Save the scene as ``main.tscn`` by pressing :kbd:`Ctrl + s` (:kbd:`Cmd + s` on macOS).
 
 We'll start by adding a floor that'll prevent the characters from falling. To
 create static colliders like the floor, walls, or ceilings, you can use :ref:`StaticBody3D <class_StaticBody3D>` nodes. They require :ref:`CollisionShape3D <class_CollisionShape3D>` child nodes to
@@ -99,7 +101,7 @@ You should see a wide grey slab that covers the grid and blue and red axes in
 the viewport.
 
 We're going to move the ground down so we can see the floor grid. Select the
-``Ground`` node, hold the :kbd:`Ctrl` key down to turn on grid snapping (:kbd:`Cmd` on macOS),
+``Ground`` node, hold the :kbd:`Ctrl` key down to turn on grid snapping,
 and click and drag down on the Y axis. It's the green arrow in the move gizmo.
 
 .. image:: img/01.game_setup/move_gizmo_y_axis.webp

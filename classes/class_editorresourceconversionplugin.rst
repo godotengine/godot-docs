@@ -30,13 +30,13 @@ Below shows an example of a basic plugin that will convert an :ref:`ImageTexture
 
     extends EditorResourceConversionPlugin
     
-    func _handles(resource : Resource):
+    func _handles(resource: Resource):
         return resource is ImageTexture
     
     func _converts_to():
         return "PortableCompressedTexture2D"
     
-    func _convert(itex : Resource):
+    func _convert(itex: Resource):
         var ptex = PortableCompressedTexture2D.new()
         ptex.create_from_image(itex.get_image(), PortableCompressedTexture2D.COMPRESSION_MODE_LOSSLESS)
         return ptex
@@ -108,3 +108,4 @@ Called to determine whether a particular :ref:`Resource<class_Resource>` can be 
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

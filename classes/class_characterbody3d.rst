@@ -12,20 +12,16 @@ CharacterBody3D
 
 **Inherits:** :ref:`PhysicsBody3D<class_PhysicsBody3D>` **<** :ref:`CollisionObject3D<class_CollisionObject3D>` **<** :ref:`Node3D<class_Node3D>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-Specialized 3D physics body node for characters moved by script.
+A 3D physics body specialized for characters moved by script.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-Character bodies are special types of bodies that are meant to be user-controlled. They are not affected by physics at all; to other types of bodies, such as a rigid body, these are the same as a :ref:`AnimatableBody3D<class_AnimatableBody3D>`. However, they have two main uses:
+**CharacterBody3D** is a specialized class for physics bodies that are meant to be user-controlled. They are not affected by physics at all, but they affect other physics bodies in their path. They are mainly used to provide high-level API to move objects with wall and slope detection (:ref:`move_and_slide<class_CharacterBody3D_method_move_and_slide>` method) in addition to the general collision detection provided by :ref:`PhysicsBody3D.move_and_collide<class_PhysicsBody3D_method_move_and_collide>`. This makes it useful for highly configurable physics bodies that must move in specific ways and collide with the world, as is often the case with user-controlled characters.
 
-\ *Kinematic characters:* Character bodies have an API for moving objects with walls and slopes detection (:ref:`move_and_slide<class_CharacterBody3D_method_move_and_slide>` method), in addition to collision detection (also done with :ref:`PhysicsBody3D.move_and_collide<class_PhysicsBody3D_method_move_and_collide>`). This makes them really useful to implement characters that move in specific ways and collide with the world, but don't require advanced physics.
-
-\ *Kinematic motion:* Character bodies can also be used for kinematic motion (same functionality as :ref:`AnimatableBody3D<class_AnimatableBody3D>`), which allows them to be moved by code and push other bodies on their path.
-
-\ **Warning:** With a non-uniform scale this node will probably not function as expected. Please make sure to keep its scale uniform (i.e. the same on all axes), and change the size(s) of its collision shape(s) instead.
+For game objects that don't require complex movement or collision detection, such as moving platforms, :ref:`AnimatableBody3D<class_AnimatableBody3D>` is simpler to configure.
 
 .. rst-class:: classref-introduction-group
 
@@ -90,6 +86,8 @@ Methods
 .. table::
    :widths: auto
 
+   +---------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                                    | :ref:`apply_floor_snap<class_CharacterBody3D_method_apply_floor_snap>` **(** **)**                                                                   |
    +---------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                               | :ref:`get_floor_angle<class_CharacterBody3D_method_get_floor_angle>` **(** :ref:`Vector3<class_Vector3>` up_direction=Vector3(0, 1, 0) **)** |const| |
    +---------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -268,7 +266,7 @@ Maximum angle (in radians) where a slope is still considered a floor (or a ceili
 
 Sets a snapping distance. When set to a value different from ``0.0``, the body is kept attached to slopes when calling :ref:`move_and_slide<class_CharacterBody3D_method_move_and_slide>`. The snapping vector is determined by the given distance along the opposite direction of the :ref:`up_direction<class_CharacterBody3D_property_up_direction>`.
 
-As long as the snapping vector is in contact with the ground and the body moves against :ref:`up_direction<class_CharacterBody3D_property_up_direction>`, the body will remain attached to the surface. Snapping is not applied if the body moves along :ref:`up_direction<class_CharacterBody3D_property_up_direction>`, so it will be able to detach from the ground when jumping.
+As long as the snapping vector is in contact with the ground and the body moves against :ref:`up_direction<class_CharacterBody3D_property_up_direction>`, the body will remain attached to the surface. Snapping is not applied if the body moves along :ref:`up_direction<class_CharacterBody3D_property_up_direction>`, meaning it contains vertical rising velocity, so it will be able to detach from the ground when jumping or when the body is pushed up by something. If you want to apply a snap without taking into account the velocity, use :ref:`apply_floor_snap<class_CharacterBody3D_method_apply_floor_snap>`.
 
 .. rst-class:: classref-item-separator
 
@@ -429,7 +427,7 @@ If ``true``, during a jump against the ceiling, the body will slide, if ``false`
 - void **set_up_direction** **(** :ref:`Vector3<class_Vector3>` value **)**
 - :ref:`Vector3<class_Vector3>` **get_up_direction** **(** **)**
 
-Vector pointing upwards, used to determine what is a wall and what is a floor (or a ceiling) when calling :ref:`move_and_slide<class_CharacterBody3D_method_move_and_slide>`. Defaults to ``Vector3.UP``. As the vector will be normalized it can't be equal to :ref:`Vector3.ZERO<class_Vector3_constant_ZERO>`, if you want all collisions to be reported as walls, consider using :ref:`MOTION_MODE_FLOATING<class_CharacterBody3D_constant_MOTION_MODE_FLOATING>` as :ref:`motion_mode<class_CharacterBody3D_property_motion_mode>`.
+Vector pointing upwards, used to determine what is a wall and what is a floor (or a ceiling) when calling :ref:`move_and_slide<class_CharacterBody3D_method_move_and_slide>`. Defaults to :ref:`Vector3.UP<class_Vector3_constant_UP>`. As the vector will be normalized it can't be equal to :ref:`Vector3.ZERO<class_Vector3_constant_ZERO>`, if you want all collisions to be reported as walls, consider using :ref:`MOTION_MODE_FLOATING<class_CharacterBody3D_constant_MOTION_MODE_FLOATING>` as :ref:`motion_mode<class_CharacterBody3D_property_motion_mode>`.
 
 .. rst-class:: classref-item-separator
 
@@ -474,13 +472,25 @@ Minimum angle (in radians) where the body is allowed to slide when it encounters
 Method Descriptions
 -------------------
 
+.. _class_CharacterBody3D_method_apply_floor_snap:
+
+.. rst-class:: classref-method
+
+void **apply_floor_snap** **(** **)**
+
+Allows to manually apply a snap to the floor regardless of the body's velocity. This function does nothing when :ref:`is_on_floor<class_CharacterBody3D_method_is_on_floor>` returns ``true``.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_CharacterBody3D_method_get_floor_angle:
 
 .. rst-class:: classref-method
 
 :ref:`float<class_float>` **get_floor_angle** **(** :ref:`Vector3<class_Vector3>` up_direction=Vector3(0, 1, 0) **)** |const|
 
-Returns the floor's collision angle at the last collision point according to ``up_direction``, which is ``Vector3.UP`` by default. This value is always positive and only valid after calling :ref:`move_and_slide<class_CharacterBody3D_method_move_and_slide>` and when :ref:`is_on_floor<class_CharacterBody3D_method_is_on_floor>` returns ``true``.
+Returns the floor's collision angle at the last collision point according to ``up_direction``, which is :ref:`Vector3.UP<class_Vector3_constant_UP>` by default. This value is always positive and only valid after calling :ref:`move_and_slide<class_CharacterBody3D_method_move_and_slide>` and when :ref:`is_on_floor<class_CharacterBody3D_method_is_on_floor>` returns ``true``.
 
 .. rst-class:: classref-item-separator
 
@@ -698,3 +708,4 @@ Returns ``true`` if the body collided, otherwise, returns ``false``.
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

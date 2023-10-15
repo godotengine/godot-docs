@@ -14,14 +14,14 @@ Button
 
 **Inherited By:** :ref:`CheckBox<class_CheckBox>`, :ref:`CheckButton<class_CheckButton>`, :ref:`ColorPickerButton<class_ColorPickerButton>`, :ref:`MenuButton<class_MenuButton>`, :ref:`OptionButton<class_OptionButton>`
 
-Standard themed Button.
+A themed button that can contain text and an icon.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-Button is the standard themed button. It can contain text and an icon, and will display them according to the current :ref:`Theme<class_Theme>`.
+**Button** is the standard themed button. It can contain text and an icon, and it will display them according to the current :ref:`Theme<class_Theme>`.
 
 \ **Example of creating a button and assigning an action when pressed by code:**\ 
 
@@ -56,11 +56,9 @@ Button is the standard themed button. It can contain text and an icon, and will 
 
 
 
-Buttons (like all Control nodes) can also be created in the editor, but some situations may require creating them from code.
-
 See also :ref:`BaseButton<class_BaseButton>` which contains common properties and methods associated with this node.
 
-\ **Note:** Buttons do not interpret touch input and therefore don't support multitouch, since mouse emulation can only press one button at a given time. Use :ref:`TouchScreenButton<class_TouchScreenButton>` for buttons that trigger gameplay movement or actions, as :ref:`TouchScreenButton<class_TouchScreenButton>` supports multitouch.
+\ **Note:** Buttons do not interpret touch input and therefore don't support multitouch, since mouse emulation can only press one button at a given time. Use :ref:`TouchScreenButton<class_TouchScreenButton>` for buttons that trigger gameplay movement or actions.
 
 .. rst-class:: classref-introduction-group
 
@@ -79,27 +77,29 @@ Properties
 .. table::
    :widths: auto
 
-   +-------------------------------------------------------------------+---------------------------------------------------------------------------+-----------+
-   | :ref:`HorizontalAlignment<enum_@GlobalScope_HorizontalAlignment>` | :ref:`alignment<class_Button_property_alignment>`                         | ``1``     |
-   +-------------------------------------------------------------------+---------------------------------------------------------------------------+-----------+
-   | :ref:`bool<class_bool>`                                           | :ref:`clip_text<class_Button_property_clip_text>`                         | ``false`` |
-   +-------------------------------------------------------------------+---------------------------------------------------------------------------+-----------+
-   | :ref:`bool<class_bool>`                                           | :ref:`expand_icon<class_Button_property_expand_icon>`                     | ``false`` |
-   +-------------------------------------------------------------------+---------------------------------------------------------------------------+-----------+
-   | :ref:`bool<class_bool>`                                           | :ref:`flat<class_Button_property_flat>`                                   | ``false`` |
-   +-------------------------------------------------------------------+---------------------------------------------------------------------------+-----------+
-   | :ref:`Texture2D<class_Texture2D>`                                 | :ref:`icon<class_Button_property_icon>`                                   |           |
-   +-------------------------------------------------------------------+---------------------------------------------------------------------------+-----------+
-   | :ref:`HorizontalAlignment<enum_@GlobalScope_HorizontalAlignment>` | :ref:`icon_alignment<class_Button_property_icon_alignment>`               | ``0``     |
-   +-------------------------------------------------------------------+---------------------------------------------------------------------------+-----------+
-   | :ref:`String<class_String>`                                       | :ref:`language<class_Button_property_language>`                           | ``""``    |
-   +-------------------------------------------------------------------+---------------------------------------------------------------------------+-----------+
-   | :ref:`String<class_String>`                                       | :ref:`text<class_Button_property_text>`                                   | ``""``    |
-   +-------------------------------------------------------------------+---------------------------------------------------------------------------+-----------+
-   | :ref:`TextDirection<enum_Control_TextDirection>`                  | :ref:`text_direction<class_Button_property_text_direction>`               | ``0``     |
-   +-------------------------------------------------------------------+---------------------------------------------------------------------------+-----------+
-   | :ref:`OverrunBehavior<enum_TextServer_OverrunBehavior>`           | :ref:`text_overrun_behavior<class_Button_property_text_overrun_behavior>` | ``0``     |
-   +-------------------------------------------------------------------+---------------------------------------------------------------------------+-----------+
+   +-------------------------------------------------------------------+-------------------------------------------------------------------------------+-----------+
+   | :ref:`HorizontalAlignment<enum_@GlobalScope_HorizontalAlignment>` | :ref:`alignment<class_Button_property_alignment>`                             | ``1``     |
+   +-------------------------------------------------------------------+-------------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`                                           | :ref:`clip_text<class_Button_property_clip_text>`                             | ``false`` |
+   +-------------------------------------------------------------------+-------------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`                                           | :ref:`expand_icon<class_Button_property_expand_icon>`                         | ``false`` |
+   +-------------------------------------------------------------------+-------------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`                                           | :ref:`flat<class_Button_property_flat>`                                       | ``false`` |
+   +-------------------------------------------------------------------+-------------------------------------------------------------------------------+-----------+
+   | :ref:`Texture2D<class_Texture2D>`                                 | :ref:`icon<class_Button_property_icon>`                                       |           |
+   +-------------------------------------------------------------------+-------------------------------------------------------------------------------+-----------+
+   | :ref:`HorizontalAlignment<enum_@GlobalScope_HorizontalAlignment>` | :ref:`icon_alignment<class_Button_property_icon_alignment>`                   | ``0``     |
+   +-------------------------------------------------------------------+-------------------------------------------------------------------------------+-----------+
+   | :ref:`String<class_String>`                                       | :ref:`language<class_Button_property_language>`                               | ``""``    |
+   +-------------------------------------------------------------------+-------------------------------------------------------------------------------+-----------+
+   | :ref:`String<class_String>`                                       | :ref:`text<class_Button_property_text>`                                       | ``""``    |
+   +-------------------------------------------------------------------+-------------------------------------------------------------------------------+-----------+
+   | :ref:`TextDirection<enum_Control_TextDirection>`                  | :ref:`text_direction<class_Button_property_text_direction>`                   | ``0``     |
+   +-------------------------------------------------------------------+-------------------------------------------------------------------------------+-----------+
+   | :ref:`OverrunBehavior<enum_TextServer_OverrunBehavior>`           | :ref:`text_overrun_behavior<class_Button_property_text_overrun_behavior>`     | ``0``     |
+   +-------------------------------------------------------------------+-------------------------------------------------------------------------------+-----------+
+   | :ref:`VerticalAlignment<enum_@GlobalScope_VerticalAlignment>`     | :ref:`vertical_icon_alignment<class_Button_property_vertical_icon_alignment>` | ``1``     |
+   +-------------------------------------------------------------------+-------------------------------------------------------------------------------+-----------+
 
 .. rst-class:: classref-reftable-group
 
@@ -109,51 +109,67 @@ Theme Properties
 .. table::
    :widths: auto
 
-   +---------------------------------+------------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`Color<class_Color>`       | :ref:`font_color<class_Button_theme_color_font_color>`                             | ``Color(0.875, 0.875, 0.875, 1)``   |
-   +---------------------------------+------------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`Color<class_Color>`       | :ref:`font_disabled_color<class_Button_theme_color_font_disabled_color>`           | ``Color(0.875, 0.875, 0.875, 0.5)`` |
-   +---------------------------------+------------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`Color<class_Color>`       | :ref:`font_focus_color<class_Button_theme_color_font_focus_color>`                 | ``Color(0.95, 0.95, 0.95, 1)``      |
-   +---------------------------------+------------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`Color<class_Color>`       | :ref:`font_hover_color<class_Button_theme_color_font_hover_color>`                 | ``Color(0.95, 0.95, 0.95, 1)``      |
-   +---------------------------------+------------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`Color<class_Color>`       | :ref:`font_hover_pressed_color<class_Button_theme_color_font_hover_pressed_color>` | ``Color(1, 1, 1, 1)``               |
-   +---------------------------------+------------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`Color<class_Color>`       | :ref:`font_outline_color<class_Button_theme_color_font_outline_color>`             | ``Color(1, 1, 1, 1)``               |
-   +---------------------------------+------------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`Color<class_Color>`       | :ref:`font_pressed_color<class_Button_theme_color_font_pressed_color>`             | ``Color(1, 1, 1, 1)``               |
-   +---------------------------------+------------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`Color<class_Color>`       | :ref:`icon_disabled_color<class_Button_theme_color_icon_disabled_color>`           | ``Color(1, 1, 1, 0.4)``             |
-   +---------------------------------+------------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`Color<class_Color>`       | :ref:`icon_focus_color<class_Button_theme_color_icon_focus_color>`                 | ``Color(1, 1, 1, 1)``               |
-   +---------------------------------+------------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`Color<class_Color>`       | :ref:`icon_hover_color<class_Button_theme_color_icon_hover_color>`                 | ``Color(1, 1, 1, 1)``               |
-   +---------------------------------+------------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`Color<class_Color>`       | :ref:`icon_hover_pressed_color<class_Button_theme_color_icon_hover_pressed_color>` | ``Color(1, 1, 1, 1)``               |
-   +---------------------------------+------------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`Color<class_Color>`       | :ref:`icon_normal_color<class_Button_theme_color_icon_normal_color>`               | ``Color(1, 1, 1, 1)``               |
-   +---------------------------------+------------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`Color<class_Color>`       | :ref:`icon_pressed_color<class_Button_theme_color_icon_pressed_color>`             | ``Color(1, 1, 1, 1)``               |
-   +---------------------------------+------------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`int<class_int>`           | :ref:`h_separation<class_Button_theme_constant_h_separation>`                      | ``2``                               |
-   +---------------------------------+------------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`int<class_int>`           | :ref:`outline_size<class_Button_theme_constant_outline_size>`                      | ``0``                               |
-   +---------------------------------+------------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`Font<class_Font>`         | :ref:`font<class_Button_theme_font_font>`                                          |                                     |
-   +---------------------------------+------------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`int<class_int>`           | :ref:`font_size<class_Button_theme_font_size_font_size>`                           |                                     |
-   +---------------------------------+------------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`StyleBox<class_StyleBox>` | :ref:`disabled<class_Button_theme_style_disabled>`                                 |                                     |
-   +---------------------------------+------------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`StyleBox<class_StyleBox>` | :ref:`focus<class_Button_theme_style_focus>`                                       |                                     |
-   +---------------------------------+------------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`StyleBox<class_StyleBox>` | :ref:`hover<class_Button_theme_style_hover>`                                       |                                     |
-   +---------------------------------+------------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`StyleBox<class_StyleBox>` | :ref:`normal<class_Button_theme_style_normal>`                                     |                                     |
-   +---------------------------------+------------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`StyleBox<class_StyleBox>` | :ref:`pressed<class_Button_theme_style_pressed>`                                   |                                     |
-   +---------------------------------+------------------------------------------------------------------------------------+-------------------------------------+
+   +-----------------------------------+------------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`Color<class_Color>`         | :ref:`font_color<class_Button_theme_color_font_color>`                             | ``Color(0.875, 0.875, 0.875, 1)``   |
+   +-----------------------------------+------------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`Color<class_Color>`         | :ref:`font_disabled_color<class_Button_theme_color_font_disabled_color>`           | ``Color(0.875, 0.875, 0.875, 0.5)`` |
+   +-----------------------------------+------------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`Color<class_Color>`         | :ref:`font_focus_color<class_Button_theme_color_font_focus_color>`                 | ``Color(0.95, 0.95, 0.95, 1)``      |
+   +-----------------------------------+------------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`Color<class_Color>`         | :ref:`font_hover_color<class_Button_theme_color_font_hover_color>`                 | ``Color(0.95, 0.95, 0.95, 1)``      |
+   +-----------------------------------+------------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`Color<class_Color>`         | :ref:`font_hover_pressed_color<class_Button_theme_color_font_hover_pressed_color>` | ``Color(1, 1, 1, 1)``               |
+   +-----------------------------------+------------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`Color<class_Color>`         | :ref:`font_outline_color<class_Button_theme_color_font_outline_color>`             | ``Color(1, 1, 1, 1)``               |
+   +-----------------------------------+------------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`Color<class_Color>`         | :ref:`font_pressed_color<class_Button_theme_color_font_pressed_color>`             | ``Color(1, 1, 1, 1)``               |
+   +-----------------------------------+------------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`Color<class_Color>`         | :ref:`icon_disabled_color<class_Button_theme_color_icon_disabled_color>`           | ``Color(1, 1, 1, 0.4)``             |
+   +-----------------------------------+------------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`Color<class_Color>`         | :ref:`icon_focus_color<class_Button_theme_color_icon_focus_color>`                 | ``Color(1, 1, 1, 1)``               |
+   +-----------------------------------+------------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`Color<class_Color>`         | :ref:`icon_hover_color<class_Button_theme_color_icon_hover_color>`                 | ``Color(1, 1, 1, 1)``               |
+   +-----------------------------------+------------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`Color<class_Color>`         | :ref:`icon_hover_pressed_color<class_Button_theme_color_icon_hover_pressed_color>` | ``Color(1, 1, 1, 1)``               |
+   +-----------------------------------+------------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`Color<class_Color>`         | :ref:`icon_normal_color<class_Button_theme_color_icon_normal_color>`               | ``Color(1, 1, 1, 1)``               |
+   +-----------------------------------+------------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`Color<class_Color>`         | :ref:`icon_pressed_color<class_Button_theme_color_icon_pressed_color>`             | ``Color(1, 1, 1, 1)``               |
+   +-----------------------------------+------------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`int<class_int>`             | :ref:`h_separation<class_Button_theme_constant_h_separation>`                      | ``4``                               |
+   +-----------------------------------+------------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`int<class_int>`             | :ref:`icon_max_width<class_Button_theme_constant_icon_max_width>`                  | ``0``                               |
+   +-----------------------------------+------------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`int<class_int>`             | :ref:`outline_size<class_Button_theme_constant_outline_size>`                      | ``0``                               |
+   +-----------------------------------+------------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`Font<class_Font>`           | :ref:`font<class_Button_theme_font_font>`                                          |                                     |
+   +-----------------------------------+------------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`int<class_int>`             | :ref:`font_size<class_Button_theme_font_size_font_size>`                           |                                     |
+   +-----------------------------------+------------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`Texture2D<class_Texture2D>` | :ref:`icon<class_Button_theme_icon_icon>`                                          |                                     |
+   +-----------------------------------+------------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`StyleBox<class_StyleBox>`   | :ref:`disabled<class_Button_theme_style_disabled>`                                 |                                     |
+   +-----------------------------------+------------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`StyleBox<class_StyleBox>`   | :ref:`disabled_mirrored<class_Button_theme_style_disabled_mirrored>`               |                                     |
+   +-----------------------------------+------------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`StyleBox<class_StyleBox>`   | :ref:`focus<class_Button_theme_style_focus>`                                       |                                     |
+   +-----------------------------------+------------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`StyleBox<class_StyleBox>`   | :ref:`hover<class_Button_theme_style_hover>`                                       |                                     |
+   +-----------------------------------+------------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`StyleBox<class_StyleBox>`   | :ref:`hover_mirrored<class_Button_theme_style_hover_mirrored>`                     |                                     |
+   +-----------------------------------+------------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`StyleBox<class_StyleBox>`   | :ref:`hover_pressed<class_Button_theme_style_hover_pressed>`                       |                                     |
+   +-----------------------------------+------------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`StyleBox<class_StyleBox>`   | :ref:`hover_pressed_mirrored<class_Button_theme_style_hover_pressed_mirrored>`     |                                     |
+   +-----------------------------------+------------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`StyleBox<class_StyleBox>`   | :ref:`normal<class_Button_theme_style_normal>`                                     |                                     |
+   +-----------------------------------+------------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`StyleBox<class_StyleBox>`   | :ref:`normal_mirrored<class_Button_theme_style_normal_mirrored>`                   |                                     |
+   +-----------------------------------+------------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`StyleBox<class_StyleBox>`   | :ref:`pressed<class_Button_theme_style_pressed>`                                   |                                     |
+   +-----------------------------------+------------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`StyleBox<class_StyleBox>`   | :ref:`pressed_mirrored<class_Button_theme_style_pressed_mirrored>`                 |                                     |
+   +-----------------------------------+------------------------------------------------------------------------------------+-------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -209,7 +225,7 @@ When this property is enabled, text that is too large to fit the button is clipp
 - void **set_expand_icon** **(** :ref:`bool<class_bool>` value **)**
 - :ref:`bool<class_bool>` **is_expand_icon** **(** **)**
 
-When enabled, the button's icon will expand/shrink to fit the button's size while keeping its aspect.
+When enabled, the button's icon will expand/shrink to fit the button's size while keeping its aspect. See also :ref:`icon_max_width<class_Button_theme_constant_icon_max_width>`.
 
 .. rst-class:: classref-item-separator
 
@@ -262,7 +278,7 @@ To edit margin and spacing of the icon, use :ref:`h_separation<class_Button_them
 - void **set_icon_alignment** **(** :ref:`HorizontalAlignment<enum_@GlobalScope_HorizontalAlignment>` value **)**
 - :ref:`HorizontalAlignment<enum_@GlobalScope_HorizontalAlignment>` **get_icon_alignment** **(** **)**
 
-Specifies if the icon should be aligned to the left, right, or center of a button. Uses the same :ref:`HorizontalAlignment<enum_@GlobalScope_HorizontalAlignment>` constants as the text alignment. If centered, text will draw on top of the icon.
+Specifies if the icon should be aligned horizontally to the left, right, or center of a button. Uses the same :ref:`HorizontalAlignment<enum_@GlobalScope_HorizontalAlignment>` constants as the text alignment. If centered horizontally and vertically, text will draw on top of the icon.
 
 .. rst-class:: classref-item-separator
 
@@ -331,6 +347,23 @@ Base text writing direction.
 - :ref:`OverrunBehavior<enum_TextServer_OverrunBehavior>` **get_text_overrun_behavior** **(** **)**
 
 Sets the clipping behavior when the text exceeds the node's bounding rectangle. See :ref:`OverrunBehavior<enum_TextServer_OverrunBehavior>` for a description of all modes.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Button_property_vertical_icon_alignment:
+
+.. rst-class:: classref-property
+
+:ref:`VerticalAlignment<enum_@GlobalScope_VerticalAlignment>` **vertical_icon_alignment** = ``1``
+
+.. rst-class:: classref-property-setget
+
+- void **set_vertical_icon_alignment** **(** :ref:`VerticalAlignment<enum_@GlobalScope_VerticalAlignment>` value **)**
+- :ref:`VerticalAlignment<enum_@GlobalScope_VerticalAlignment>` **get_vertical_icon_alignment** **(** **)**
+
+Specifies if the icon should be aligned vertically to the top, bottom, or center of a button. Uses the same :ref:`VerticalAlignment<enum_@GlobalScope_VerticalAlignment>` constants as the text alignment. If centered horizontally and vertically, text will draw on top of the icon.
 
 .. rst-class:: classref-section-separator
 
@@ -501,9 +534,21 @@ Icon modulate :ref:`Color<class_Color>` used when the **Button** is being presse
 
 .. rst-class:: classref-themeproperty
 
-:ref:`int<class_int>` **h_separation** = ``2``
+:ref:`int<class_int>` **h_separation** = ``4``
 
 The horizontal space between **Button**'s icon and text. Negative values will be treated as ``0`` when used.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Button_theme_constant_icon_max_width:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`int<class_int>` **icon_max_width** = ``0``
+
+The maximum allowed width of the **Button**'s icon. This limit is applied on top of the default size of the icon, or its expanded size if :ref:`expand_icon<class_Button_property_expand_icon>` is ``true``. The height is adjusted according to the icon's ratio.
 
 .. rst-class:: classref-item-separator
 
@@ -547,6 +592,20 @@ Font size of the **Button**'s text.
 
 ----
 
+.. _class_Button_theme_icon_icon:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`Texture2D<class_Texture2D>` **icon**
+
+.. container:: contribute
+
+	There is currently no description for this theme property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_Button_theme_style_disabled:
 
 .. rst-class:: classref-themeproperty
@@ -559,13 +618,25 @@ Font size of the **Button**'s text.
 
 ----
 
+.. _class_Button_theme_style_disabled_mirrored:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`StyleBox<class_StyleBox>` **disabled_mirrored**
+
+:ref:`StyleBox<class_StyleBox>` used when the **Button** is disabled (for right-to-left layouts).
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_Button_theme_style_focus:
 
 .. rst-class:: classref-themeproperty
 
 :ref:`StyleBox<class_StyleBox>` **focus**
 
-:ref:`StyleBox<class_StyleBox>` used when the **Button** is focused. The ``focus`` :ref:`StyleBox<class_StyleBox>` is displayed *over* the base :ref:`StyleBox<class_StyleBox>`, so a partially transparent :ref:`StyleBox<class_StyleBox>` should be used to ensure the base :ref:`StyleBox<class_StyleBox>` remains visible. A :ref:`StyleBox<class_StyleBox>` that represents an outline or an underline works well for this purpose. To disable the focus visual effect, assign a :ref:`StyleBoxEmpty<class_StyleBoxEmpty>` resource. Note that disabling the focus visual effect will harm keyboard/controller navigation usability, so this is not recommended for accessibility reasons.
+:ref:`StyleBox<class_StyleBox>` used when the **Button** is focused. The :ref:`focus<class_Button_theme_style_focus>` :ref:`StyleBox<class_StyleBox>` is displayed *over* the base :ref:`StyleBox<class_StyleBox>`, so a partially transparent :ref:`StyleBox<class_StyleBox>` should be used to ensure the base :ref:`StyleBox<class_StyleBox>` remains visible. A :ref:`StyleBox<class_StyleBox>` that represents an outline or an underline works well for this purpose. To disable the focus visual effect, assign a :ref:`StyleBoxEmpty<class_StyleBoxEmpty>` resource. Note that disabling the focus visual effect will harm keyboard/controller navigation usability, so this is not recommended for accessibility reasons.
 
 .. rst-class:: classref-item-separator
 
@@ -583,6 +654,42 @@ Font size of the **Button**'s text.
 
 ----
 
+.. _class_Button_theme_style_hover_mirrored:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`StyleBox<class_StyleBox>` **hover_mirrored**
+
+:ref:`StyleBox<class_StyleBox>` used when the **Button** is being hovered (for right-to-left layouts).
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Button_theme_style_hover_pressed:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`StyleBox<class_StyleBox>` **hover_pressed**
+
+:ref:`StyleBox<class_StyleBox>` used when the **Button** is being pressed and hovered at the same time.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Button_theme_style_hover_pressed_mirrored:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`StyleBox<class_StyleBox>` **hover_pressed_mirrored**
+
+:ref:`StyleBox<class_StyleBox>` used when the **Button** is being pressed and hovered at the same time (for right-to-left layouts).
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_Button_theme_style_normal:
 
 .. rst-class:: classref-themeproperty
@@ -590,6 +697,18 @@ Font size of the **Button**'s text.
 :ref:`StyleBox<class_StyleBox>` **normal**
 
 Default :ref:`StyleBox<class_StyleBox>` for the **Button**.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Button_theme_style_normal_mirrored:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`StyleBox<class_StyleBox>` **normal_mirrored**
+
+Default :ref:`StyleBox<class_StyleBox>` for the **Button** (for right-to-left layouts).
 
 .. rst-class:: classref-item-separator
 
@@ -603,9 +722,22 @@ Default :ref:`StyleBox<class_StyleBox>` for the **Button**.
 
 :ref:`StyleBox<class_StyleBox>` used when the **Button** is being pressed.
 
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Button_theme_style_pressed_mirrored:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`StyleBox<class_StyleBox>` **pressed_mirrored**
+
+:ref:`StyleBox<class_StyleBox>` used when the **Button** is being pressed (for right-to-left layouts).
+
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

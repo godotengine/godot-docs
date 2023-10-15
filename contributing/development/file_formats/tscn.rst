@@ -1,5 +1,3 @@
-:article_outdated: True
-
 .. _doc_tscn_file_format:
 
 TSCN file format
@@ -17,41 +15,70 @@ SCN files stored inside the ``.godot/imported/`` folder.
 This reduces the data size and speeds up loading, as binary formats are faster
 to load compared to text-based formats.
 
+To make files more compact, properties equal to the default value are not stored
+in scene/resource files. It is possible to write them manually, but they will be
+discarded when saving the file.
+
 For those looking for a complete description, the parsing is handled in the file
 `resource_format_text.cpp <https://github.com/godotengine/godot/blob/master/scene/resources/resource_format_text.cpp>`_
 in the ``ResourceFormatLoaderText`` class.
+
+.. note::
+
+    The scene and resource file formats have changed significantly in Godot 4,
+    with the introduction of string-based UIDs to replace incremental integer
+    IDs.
+
+    Mesh, skeleton and animation data is also stored differently compared to Godot 3.
+    You can read about some of the changes in this article:
+    `Animation data rework for 4.0 <https://godotengine.org/article/animation-data-redesign-40/>`__
+
+    Scenes and resources saved with Godot 4.x contain ``format=3`` in their
+    header, whereas Godot 3.x uses ``format=2`` instead.
 
 File structure
 --------------
 
 There are five main sections inside the TSCN file:
 
-0. File Descriptor
+0. File descriptor
 1. External resources
 2. Internal resources
 3. Nodes
 4. Connections
 
-The file descriptor looks like ``[gd_scene load_steps=3 format=2]`` and should
-be the first entry in the file. The ``load_steps`` parameter is equal to the
+The file descriptor looks like ``[gd_scene load_steps=4 format=3 uid="uid://cecaux1sm7mo0"]``
+and should be the first entry in the file. The ``load_steps`` parameter is equal to the
 total amount of resources (internal and external) plus one (for the file itself).
 If the file has no resources, ``load_steps`` is omitted. The engine will
 still load the file correctly if ``load_steps`` is incorrect, but this will affect
 loading bars and any other piece of code relying on that value.
 
+``uid`` is an unique string-based identifier representing the scene. This is
+used by the engine to track files that are moved around, even while the editor
+is closed. Scripts can also load UID-based resources using the ``uid://`` path
+prefix to avoid relying on filesystem paths. This makes it possible to move
+around a file in the project, but still be able to load it in scripts without
+having to modify the script. Godot does not use external files to keep track of
+IDs, which means no central metadata storage location is required within the
+project. See `this pull request <https://github.com/godotengine/godot/pull/50786>`__
+for detailed information.
+
 These sections should appear in order, but it can be hard to distinguish them.
 The only difference between them is the first element in the heading for all of
 the items in the section. For example, the heading of all external resources
-should start with ``[ext_resource .....]``.
+should start with ``[ext_resource ...]``.
 
 A TSCN file may contain single-line comments starting with a semicolon (``;``).
 However, comments will be discarded when saving the file using the Godot editor.
+Whitespace within a TSCN file is not significant (except within strings), but
+extraneous whitespace will be discarded when saving the file.
 
 Entries inside the file
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 A heading looks like
-``[<resource_type> key=value key=value key=value ...]``
+``[<resource_type> key1=value1 key2=value2 key3=value3 ...]``
 where resource_type is one of:
 
 - ``ext_resource``
@@ -65,27 +92,26 @@ so on. For example, a Node3D looks like:
 
 ::
 
-    [node name="Cube" type="Node3D" parent="."]
-    transform=Transform( 1.0, 0.0, 0.0 ,0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0 )
-
+    [node name="Cube" type="Node3D"]
+    transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 2, 3)
 
 The scene tree
 --------------
 
 The scene tree is made up of… nodes! The heading of each node consists of
-its name, parent and (most of the time) a type. For example
-``[node type="Camera" name="PlayerCamera" parent="Player/Head"]``
+its name, parent and (most of the time) a type. For example:
+``[node name="PlayerCamera" type="Camera" parent="Player/Head"]``
 
 Other valid keywords include:
 
  - ``instance``
  - ``instance_placeholder``
  - ``owner``
- - ``index`` (sets the order of appearance in the tree. If absent, inherited nodes will take precedence over plain ones)
+ - ``index`` (sets the order of appearance in the tree; if absent, inherited nodes will take precedence over plain ones)
  - ``groups``
 
-The first node in the file, which is also the scene root, must not have a
-``parent=Path/To/Node`` entry in its heading. All scene files should have
+The first node in the file, which is also the scene root, must **not** have a
+``parent="Path/To/Node"`` entry in its heading. All scene files should have
 exactly *one* scene root. If it doesn't, Godot will fail to import the file.
 The parent path of other nodes should be absolute, but shouldn't contain
 the scene root's name. If the node is a direct child of the scene root,
@@ -94,172 +120,140 @@ the path should be ``"."``. Here is an example scene tree
 
 ::
 
-    [node name="Player" type="Node3D"]             ; The scene root
-    [node name="Arm" parent="." type="Node3D"]     ; Parented to the scene root
-    [node name="Hand" parent="Arm" type="Node3D"]
-    [node name="Finger" parent="Arm/Hand" type="Node3D"]
+    [node name="Player" type="Node3D"]                    ; The scene root
+    [node name="Arm" type="Node3D" parent="."]            ; Parented to the scene root
+    [node name="Hand" type="Node3D" parent="Arm"]         ; Child of "Arm"
+    [node name="Finger" type="Node3D" parent="Arm/Hand"]  ; Child of "Hand"
 
+.. tip::
 
-Similar to the internal resource, the document for each node is currently
-incomplete. Fortunately, it is easy to find out because you can simply
-save a file with that node in it. Some example nodes are:
+    To make the file structure easier to grasp, you can saving a file with any
+    given node or resource then inspect it yourself in an external editor. You
+    can also make incremental changes in the Godot editor, and keep an external
+    text editor open on the ``.tscn`` or ``.tres`` file with auto-reload enabled
+    to see what changes.
+
+Here is an example of a scene containing a RigidBody3D-based ball with
+collision, visuals (mesh + light) and a camera parented to the RigidBody3D:
 
 ::
 
-    [node type="CollisionShape" name="SphereCollision" parent="SpherePhysics"]
+    [gd_scene load_steps=4 format=3 uid="uid://cecaux1sm7mo0"]
 
-    shape = SubResource(8)
-    transform = Transform( 1.0 , 0.0 , -0.0 , 0.0 , -4.371138828673793e-08 , 1.0 , -0.0 , -1.0 , -4.371138828673793e-08 ,0.0 ,0.0 ,-0.0  )
+    [sub_resource type="SphereShape3D" id="SphereShape3D_tj6p1"]
 
+    [sub_resource type="SphereMesh" id="SphereMesh_4w3ye"]
 
-    [node type="MeshInstance3D" name="Sphere" parent="SpherePhysics"]
+    [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k54se"]
+    albedo_color = Color(1, 0.639216, 0.309804, 1)
 
-    mesh = SubResource(9)
-    transform = Transform( 1.0 , 0.0 , -0.0 , 0.0 , 1.0 , -0.0 , -0.0 , -0.0 , 1.0 ,0.0 ,0.0 ,-0.0  )
+    [node name="Ball" type="RigidBody3D"]
 
+    [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+    shape = SubResource("SphereShape3D_tj6p1")
 
-    [node type="OmniLight" name="Lamp" parent="."]
+    [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+    mesh = SubResource("SphereMesh_4w3ye")
+    surface_material_override/0 = SubResource("StandardMaterial3D_k54se")
 
-    light_energy = 1.0
-    light_specular = 1.0
-    transform = Transform( -0.29086464643478394 , -0.7711008191108704 , 0.5663931369781494 , -0.05518905818462372 , 0.6045246720314026 , 0.7946722507476807 , -0.9551711678504944 , 0.199883371591568 , -0.21839118003845215 ,4.076245307922363 ,7.3235554695129395 ,-1.0054539442062378  )
-    omni_range = 30
-    shadow_enabled = true
-    light_negative = false
-    light_color = Color( 1.0, 1.0, 1.0, 1.0 )
+    [node name="OmniLight3D" type="OmniLight3D" parent="."]
+    light_color = Color(1, 0.698039, 0.321569, 1)
+    omni_range = 10.0
 
-
-    [node type="Camera" name="Camera" parent="."]
-
-    projection = 0
-    near = 0.10000000149011612
-    fov = 50
-    transform = Transform( 0.6859206557273865 , -0.32401350140571594 , 0.6515582203865051 , 0.0 , 0.8953956365585327 , 0.44527143239974976 , -0.7276763319969177 , -0.3054208755493164 , 0.6141703724861145 ,14.430776596069336 ,10.093015670776367 ,13.058500289916992  )
-    far = 100.0
-
+    [node name="Camera3D" type="Camera3D" parent="."]
+    transform = Transform3D(1, 0, 0, 0, 0.939693, 0.34202, 0, -0.34202, 0.939693, 0, 1, 3)
 
 NodePath
 ~~~~~~~~
 
 A tree structure is not enough to represent the whole scene. Godot uses a
 ``NodePath(Path/To/Node)`` structure to refer to another node or attribute of
-the node anywhere in the scene tree. For instance, MeshInstance3D uses
-``NodePath()`` to point to its skeleton. Likewise, Animation tracks use
-``NodePath()`` to point to node properties to animate.
+the node anywhere in the scene tree. Paths are relative to the current node,
+with ``NodePath(".")`` pointing to the current node and ``NodePath("")``
+pointing to no node at all.
+
+For instance, MeshInstance3D uses ``NodePath()`` to point to its skeleton.
+Likewise, Animation tracks use ``NodePath()`` to point to node properties to
+animate.
+
+NodePath can also point to a property using a ``:property_name`` suffix, and
+even point to a specific component for vector, transform and color types. This
+is used by Animation resources to point to specific properties to animate. For
+example, ``NodePath("MeshInstance3D:scale.x")`` points to the ``x`` component of
+the ``scale`` Vector3 property in MeshInstance3D.
+
+For example, the ``skeleton`` property in the MeshInstance3D node called
+``mesh`` points to its parent, ``Armature01``:
 
 ::
 
-    [node name="mesh" type="MeshInstance3D" parent="Armature001"]
+    [node name="mesh" type="MeshInstance3D" parent="Armature01"]
+    skeleton = NodePath("..")
 
-    mesh = SubResource(1)
-    skeleton = NodePath("..:")
+Skeleton3D
+~~~~~~~~~~
 
+The :ref:`class_Skeleton3D` node inherits the Node3D node, but may alsohave a
+list of bones described in key-value pairs in the format
+``bones/<id>/<attribute> = value``. The bone attributes consist of:
 
-::
+- ``position``: Vector3
+- ``rotation``: Quaternion
+- ``scale``: Vector3
 
-    [sub_resource id=3 type="Animation"]
-
-    ...
-    tracks/0/type = "transform"
-    tracks/0/path = NodePath("Cube:")
-    ...
-
-
-Skeleton
-~~~~~~~~
-
-The Skeleton node inherits the Node3D node, but also may have a list of bones
-described in key-value pairs in the format ``bones/Id/Attribute=Value``. The
-bone attributes consist of:
-
-- ``name``
-- ``parent``
-- ``rest``
-- ``pose``
-- ``enabled``
-- ``bound_children``
-
-1. ``name`` must be the first attribute of each bone.
-2. ``parent`` is the index of parent bone in the bone list, with parent index,
-   the bone list is built to a bone tree.
-3. ``rest`` is the transform matrix of bone in its "resting" position.
-4. ``pose`` is the pose matrix; use ``rest`` as the basis.
-5. ``bound_children`` is a list of ``NodePath()`` which point to
-   BoneAttachments belonging to this bone.
+These attributes are all optional. For instance, a bone may only define
+``position`` or ``rotation`` without defining the other properties.
 
 Here's an example of a skeleton node with two bones:
 
 ::
 
-    [node name="Skeleton" type="Skeleton" parent="Armature001" index="0"]
+    [node name="Skeleton3D" type="Skeleton3D" parent="PlayerModel/Robot_Skeleton" index="0"]
+    bones/1/position = Vector3(0.114471, 2.19771, -0.197845)
+    bones/1/rotation = Quaternion(0.191422, -0.0471201, -0.00831942, 0.980341)
+    bones/2/position = Vector3(-2.59096e-05, 0.236002, 0.000347473)
+    bones/2/rotation = Quaternion(-0.0580488, 0.0310587, -0.0085914, 0.997794)
+    bones/2/scale = Vector3(0.9276, 0.9276, 0.9276)
 
-    bones/0/name = "Bone.001"
-    bones/0/parent = -1
-    bones/0/rest = Transform( 1, 0, 0, 0, 0, -1, 0, 1, 0, 0.038694, 0.252999, 0.0877164 )
-    bones/0/pose = Transform( 1.0, 0.0, -0.0, 0.0, 1.0, -0.0, -0.0, -0.0, 1.0, 0.0, 0.0, -0.0 )
-    bones/0/enabled = true
-    bones/0/bound_children = [  ]
-    bones/1/name = "Bone.002"
-    bones/1/parent = 0
-    bones/1/rest = Transform( 0.0349042, 0.99939, 0.000512929, -0.721447, 0.0248417, 0.692024, 0.691589, -0.0245245, 0.721874, 0, 5.96046e-08, -1.22688 )
-    bones/1/pose = Transform( 1.0, 0.0, -0.0, 0.0, 1.0, -0.0, -0.0, -0.0, 1.0, 0.0, 0.0, -0.0 )
-    bones/1/enabled = true
-    bones/1/bound_children = [  ]
+BoneAttachment3D
+~~~~~~~~~~~~~~~~
 
+The :ref:`class_BoneAttachment3D` node is an intermediate node to describe some
+node being parented to a single bone in a Skeleton node. The BoneAttachment has
+a ``bone_name = "name of bone"`` property, as well as a property for the matching
+bone index.
 
-BoneAttachment
-~~~~~~~~~~~~~~
-
-BoneAttachment node is an intermediate node to describe some node being parented
-to a single bone in a Skeleton node. The BoneAttachment has a
-``bone_name=NameOfBone`` attribute, and the corresponding bone being the parent has the
-BoneAttachment node in its ``bound_children`` list.
-
-An example of one MeshInstance3D parented to a bone in Skeleton:
+An example of a :ref:`class_Marker3D` node parented to a bone in Skeleton:
 
 ::
 
-    [node name="Armature" type="Skeleton" parent="."]
+    [node name="GunBone" type="BoneAttachment3D" parent="PlayerModel/Robot_Skeleton/Skeleton3D" index="5"]
+    transform = Transform3D(0.333531, 0.128981, -0.933896, 0.567174, 0.763886, 0.308015, 0.753209, -0.632331, 0.181604, -0.323915, 1.07098, 0.0497144)
+    bone_name = "hand.R"
+    bone_idx = 55
 
-    transform = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, -0.0219986, 0.0125825, 0.0343127)
-    bones/0/name = "Bone"
-    bones/0/parent = -1
-    bones/0/rest = Transform(1.0, 0.0, 0.0, 0.0, 0.0, -1.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0)
-    bones/0/pose = Transform(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0)
-    bones/0/enabled = true
-    bones/0/bound_children = [NodePath("BoneAttachment:")]
-
-    [node name="BoneAttachment" type="BoneAttachment" parent="Armature"]
-
-    bone_name = "Bone"
-
-    [node name="Cylinder" type="MeshInstance3D" parent="Armature/BoneAttachment"]
-
-    mesh = SubResource(1)
-    transform = Transform(1.0, 0.0, 0.0, 0.0, 1.86265e-09, 1.0, 0.0, -1.0, 0.0, 0.0219986, -0.0343127, 2.25595)
-
+    [node name="ShootFrom" type="Marker3D" parent="PlayerModel/Robot_Skeleton/Skeleton3D/GunBone"]
+    transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 0)
 
 AnimationPlayer
 ~~~~~~~~~~~~~~~
 
-AnimationPlayer works as an animation library. It stores animations listed in
-the format ``anim/Name=SubResource(ResourceId)``; each line refers to an
-Animation resource. All the animation resources use the root node of
-AnimationPlayer. The root node is stored as
-``root_node=NodePath(Path/To/Node)``.
+The :ref:`class_AnimationPlayer` node works with one or more animation libraries
+stored in :ref:`class_AnimationLibrary` resources. An animation library is a
+collection of individual :ref:`class_Animation` resources, whose structure is
+documented :ref:`here <doc_tscn_animation>`.
 
-::
+This split between animations themselves and animation libraries was done in
+Godot 4, so that animations can be imported separately from 3D meshes, which is
+a common workflow in 3D animation software. See the `original pull request
+<https://github.com/godotengine/godot/pull/59980>`__ for details.
 
-    [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="1"]
-
-    root_node = NodePath("..")
-    autoplay = ""
-    playback_process_mode = 1
-    playback_default_blend_time = 0.0
-    playback_speed = 1.0
-    anims/default = SubResource( 2 )
-    blend_times = [  ]
-
+If the library name is empty, then it acts acts the unique source of animations
+for this AnimationPlayer. This allows using ``<animation_name>`` directly to
+play animations from script. If you name the library, then you must play it as
+``<library_name>/<animation_name>``. This ensures backwards compatibility and
+keeps the existing workflow if you don't want to use multiple animation
+libraries.
 
 Resources
 ---------
@@ -268,20 +262,26 @@ Resources are components that make up the nodes. For example, a MeshInstance3D
 node will have an accompanying ArrayMesh resource. The ArrayMesh resource
 may be either internal or external to the TSCN file.
 
-References to the resources are handled by ``id`` numbers in the resource's
-heading. External resources and internal resources are referred to with
-``ExtResource(id)`` and ``SubResource(id)``, respectively. Because there
+References to the resources are handled by unique string-based IDs in the
+resource's heading. This is different from the ``uid`` property, which each
+external resource also has (but subresources don't).
+
+External resources and internal resources are referred to with
+``ExtResource("id")`` and ``SubResource("id")``, respectively. Because there
 have different methods to refer to internal and external resources, you can have
 the same ID for both an internal and external resource.
 
-For example, to refer to the resource ``[ext_resource id=3 type="PackedScene"
-path=....]``, you would use ``ExtResource(3)``.
+For example, to refer to the resource
+``[ext_resource type="Material" uid="uid://c4cp0al3ljsjv" path="res://material.tres" id="1_7bt6s"]``,
+you would use ``ExtResource("1_7bt6s")``.
 
 External resources
 ~~~~~~~~~~~~~~~~~~
 
 External resources are links to resources not contained within the TSCN file
-itself. An external resource consists of a path, a type and an ID.
+itself. An external resource consists of a path, a type, an UID (used to map its
+filesystem location to an unique identifier) and an ID (used to refer to the
+resource in the scene file).
 
 Godot always generates absolute paths relative to the resource directory and
 thus prefixed with ``res://``, but paths relative to the TSCN file's location
@@ -291,13 +291,14 @@ Some example external resources are:
 
 ::
 
-    [ext_resource path="res://characters/player.dae" type="PackedScene" id=1]
-    [ext_resource path="metal.tres" type="Material" id=2]
-
+    [ext_resource type="Texture2D" uid="uid://ccbm14ebjmpy1" path="res://gradient.tres" id="2_eorut"]
+    [ext_resource type="Material" uid="uid://c4cp0al3ljsjv" path="material.tres" id="1_7bt6s"]
 
 Like TSCN files, a TRES file may contain single-line comments starting with a
 semicolon (``;``). However, comments will be discarded when saving the resource
 using the Godot editor.
+Whitespace within a TRES file is not significant (except within strings), but
+extraneous whitespace will be discarded when saving the file.
 
 Internal resources
 ~~~~~~~~~~~~~~~~~~
@@ -310,140 +311,208 @@ heading. For example, a capsule collision shape looks like:
 
 ::
 
-    [sub_resource type="CapsuleShape" id=2]
-
-    radius = 0.5
+    [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_fdxgg"]
+    radius = 1.0
     height = 3.0
-
 
 Some internal resources contain links to other internal resources (such as a
 mesh having a material). In this case, the referring resource must appear
 *before* the reference to it. This means that order matters in the file's
 internal resources section.
 
-Unfortunately, documentation on the formats for these subresources isn't
-complete. Some examples can be found by inspecting saved resource files, but
-others can only be found by looking through Godot's source.
-
 ArrayMesh
 ~~~~~~~~~
 
-ArrayMesh consists of several surfaces, each in the format ``surface\Index={}``.
-Each surface is a set of vertices and a material.
+An ArrayMesh consists of several surfaces contained in the ``_surfaces`` array
+(notice the leading underscore). Each surface's data is stored in a dictionary
+with the following keys:
 
-TSCN files support two surface formats:
+- ``aabb``: The computed axis-aligned bounding box for visibility.
+  ``Mesh.PrimitiveType`` Godot enum. ``0`` = points, ``1`` = lines, ``2`` = line
+  strip, ``3`` = triangles (most common), ``4`` = triangle strip.
+- ``attribute_data``: Vertex attribute data, such as normals, tangents, vertex
+  colors, UV1, UV2 and custom vertex data.
+- ``bone_aabbs``: The axis-aligned bounding box of each bone for visibility.
+- ``format``: The surface's buffer format.
+- ``index_count``: The number of indices in the surface. This must match
+  ``index_data``'s size.
+- ``index_data``: The index data, which determines which vertices from
+  ``vertex_data`` are drawn.
+- ``lods``: Level of detail variations, stored as an array. Each LOD level
+  represents two values in the array. The first value is the percentage of
+  screen space the LOD level is most suited for (edge length); the second value
+  is the list of indices that should be drawn for the given LOD level.
+- ``material``: The material used when drawing the surface.
+- ``name``: The surface's name. This can be used in scripts and is imported from
+  3D DCCs.
+- ``primitive``: The surface's primitive type, matching the
+- ``skin_data``: Bone weight data.
+- ``vertex_count``: Number of vertices in the surface. This must match ``vertex_data``'s size.
+- ``vertex_data``: The vertex position data.
 
-1. For the old format, each surface has three essential keys:
-
-- ``primitive``
-- ``arrays``
-- ``morph_arrays``
-
-    i. ``primitive`` is an enumerate variable, ``primitive=4`` which is
-       ``PRIMITIVE_TRIANGLES`` is frequently used.
-
-    ii. ``arrays`` is a two-dimensional array, it contains:
-
-        1. Vertex positions array
-        2. Normals array
-        3. Tangents array
-        4. Vertex colors array
-        5. UV array 1
-        6. UV array 2
-        7. Bone indexes array
-        8. Bone weights array
-        9. Vertex indexes array
-
-    iii. ``morph_arrays`` is an array of morphs. Each morph is exactly an
-         ``arrays`` without the vertex indexes array.
-
-An example of ArrayMesh:
+Here's an example of an ArrayMesh saved to its own ``.tres`` file. Some fields were shortened with ``...`` for brevity:
 
 ::
 
-    [sub_resource id=1 type="ArrayMesh"]
+    [gd_resource type="ArrayMesh" load_steps=2 format=3 uid="uid://dww8o7hsqrhx5"]
 
-    surfaces/0 = {
-        "primitive":4,
-        "arrays":[
-            Vector3Array(0.0, 1.0, -1.0, 0.866025, -1.0, -0.5, 0.0, -1.0, -1.0, 0.866025, 1.0, -0.5, 0.866025, -1.0, 0.5, 0.866025, 1.0, 0.5, -8.74228e-08, -1.0, 1.0, -8.74228e-08, 1.0, 1.0, -0.866025, -1.0, 0.5, -0.866025, 1.0, 0.5, -0.866025, -1.0, -0.5, -0.866025, 1.0, -0.5),
-            Vector3Array(0.0, 0.609973, -0.792383, 0.686239, -0.609973, -0.396191, 0.0, -0.609973, -0.792383, 0.686239, 0.609973, -0.396191, 0.686239, -0.609973, 0.396191, 0.686239, 0.609973, 0.396191, 0.0, -0.609973, 0.792383, 0.0, 0.609973, 0.792383, -0.686239, -0.609973, 0.396191, -0.686239, 0.609973, 0.396191, -0.686239, -0.609973, -0.396191, -0.686239, 0.609973, -0.396191),
-            null, ; No Tangents,
-            null, ; no Vertex Colors,
-            null, ; No UV1,
-            null, ; No UV2,
-            null, ; No Bones,
-            null, ; No Weights,
-            IntArray(0, 2, 1, 3, 1, 4, 5, 4, 6, 7, 6, 8, 0, 5, 9, 9, 8, 10, 11, 10, 2, 1, 10, 8, 0, 1, 3, 3, 4, 5, 5, 6, 7, 7, 8, 9, 5, 0, 3, 0, 9, 11, 9, 5, 7, 9, 10, 11, 11, 2, 0, 10, 1, 2, 1, 6, 4, 6, 1, 8)
-        ],
-        "morph_arrays":[]
-    }
+    [ext_resource type="Material" path="res://player/model/playerobot.tres" id="1_r3bjq"]
 
+    [resource]
+    resource_name = "player_Sphere_016"
+    _surfaces = [{
+    "aabb": AABB(-0.207928, 1.21409, -0.14545, 0.415856, 0.226569, 0.223374),
+    "attribute_data": PackedByteArray(63, 121, ..., 117, 63),
+    "bone_aabbs": [AABB(0, 0, 0, -1, -1, -1), ..., AABB(-0.207928, 1.21409, -0.14545, 0.134291, 0.226569, 0.223374)],
+    "format": 7191,
+    "index_count": 1224,
+    "index_data": PackedByteArray(30, 0, ..., 150, 4),
+    "lods": [0.0382013, PackedByteArray(33, 1, ..., 150, 4)],
+    "material": ExtResource("1_r3bjq"),
+    "name": "playerobot",
+    "primitive": 3,
+    "skin_data": PackedByteArray(15, 0, ..., 0, 0),
+    "vertex_count": 1250,
+    "vertex_data": PackedByteArray(196, 169, ..., 11, 38)
+    }]
+    blend_shape_mode = 0
+
+.. _doc_tscn_animation:
 
 Animation
 ~~~~~~~~~
 
-An animation resource consists of tracks. Besides, it has ``length``, ``loop``
-and ``step`` applied to all the tracks.
+Each animation has the following properties:
 
-1. ``length`` and ``step`` are both durations in seconds.
+- ``length``: The animation's length in seconds. Note that keyframes may be
+  placed outside the ``[0; length]`` interval, but they may have no effect
+  depending on the interpolation mode chosen.
+- ``loop_mode``: ``0`` = no looping, ``1`` = wrap-around looping, ``2`` =
+  clamped looping.
+- ``step``: The step size to use when editing this animation in the editor.
+  This is only used in the editor; it doesn't affect animation playback in any way.
 
 Each track is described by a list of key-value pairs in the format
-``tracks/Id/Attribute``. Each track includes:
+``tracks/<id>/<attribute>``. Each track includes:
 
-- ``type``
-- ``path``
-- ``interp``
-- ``keys``
-- ``loop_wrap``
-- ``imported``
-- ``enabled``
+- ``type``: The track's type. This defines what kind of properties may be
+  animated by this track, and how it'll be exposed to the user in the editor.
+  Valid types are ``value`` (generic property track), ``position_3d``,
+  ``rotation_3d``, ``scale_3d``, ``blend_shape`` (optimized 3D animation
+  tracks), ``method`` (method call tracks), ``bezier`` (Bezier curve tracks),
+  ``audio`` (audio playback tracks), ``animation`` (tracks that play other
+  animations).
+- ``imported``: ``true`` if the track was created from an imported 3D scene,
+  ``false`` if it was manually created by the user in the Godot editor or using
+  a script.
+- ``enabled``: ``true`` if the track is effective, ``false`` if it was disabled
+  in the editor.
+- ``path``: Path to the node property that will be affected by the track. The
+  property is written after the node path with a ``:`` separator.
+- ``interp``: The interpolation mode to use. ``0`` = nearest, ``1`` = linear,
+  ``2`` = cubic, ``3`` = linear angle, ``4`` = cubic angle.
+- ``loop_wrap``: ``true`` if the track is designed to wrap around when the
+  animation is looping, ``false`` if the track clamps to the first/last
+  keyframes.
+- ``keys``: The animation track's values. This attribute's structure depends on the ``type``.
 
-1. The ``type`` must be the first attribute of each track.
-   The value of ``type`` can be:
-
-    - ``transform``
-    - ``value``
-    - ``method``
-
-2. The ``path`` has the format ``NodePath(Path/To/Node:attribute)``.
-   It's the path to the animated node or attribute, relative to the root node
-   defined in the AnimationPlayer.
-
-3. The ``interp`` is the method to interpolate frames from the keyframes.
-   It is an enum variable with one of the following values:
-
-    - ``0`` (constant)
-    - ``1`` (linear)
-    - ``2`` (cubic)
-
-4. The ``keys`` correspond to the keyframes. It appears as a ``PackedFloat32Array()``,
-   but may have a different structure for tracks with different types.
-
-    - A Transform track uses every 12 real numbers in the ``keys`` to describe
-      a keyframe. The first number is the timestamp. The second number is the
-      transition followed by a 3-number translation vector, followed by a
-      4-number rotation quaternion (X, Y, Z, W) and finally a 3-number
-      scale vector. The default transition in a Transform track is 1.0.
+Here is a scene containing an AnimationPlayer that scales down a cube over time
+using a generic property track. The AnimationLibrary workflow was not used, so
+the animation library has an empty name (but the animation is still given a
+``scale_down`` name). Note that the ``RESET`` track was not created in this
+AnimationPlayer for brevity:
 
 ::
 
-    [sub_resource type="Animation" id=2]
+    [gd_scene load_steps=4 format=3 uid="uid://cdyt3nktp6y6"]
 
-    length = 4.95833
-    loop = false
-    step = 0.1
-    tracks/0/type = "transform"
-    tracks/0/path = NodePath("Armature001")
+    [sub_resource type="Animation" id="Animation_r2qdp"]
+    resource_name = "scale_down"
+    length = 1.5
+    loop_mode = 2
+    step = 0.05
+    tracks/0/type = "value"
+    tracks/0/imported = false
+    tracks/0/enabled = true
+    tracks/0/path = NodePath("Box:scale")
     tracks/0/interp = 1
     tracks/0/loop_wrap = true
-    tracks/0/imported = true
+    tracks/0/keys = {
+    "times": PackedFloat32Array(0, 1),
+    "transitions": PackedFloat32Array(1, 1),
+    "update": 0,
+    "values": [Vector3(1, 1, 1), Vector3(0, 0, 0)]
+    }
+
+    [sub_resource type="AnimationLibrary" id="AnimationLibrary_4qx36"]
+    _data = {
+    "scale_down": SubResource("Animation_r2qdp")
+    }
+
+    [sub_resource type="BoxMesh" id="BoxMesh_u688r"]
+
+    [node name="Node3D" type="Node3D"]
+
+    [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+    autoplay = "scale_down"
+    libraries = {
+    "": SubResource("AnimationLibrary_4qx36")
+    }
+
+    [node name="Box" type="MeshInstance3D" parent="."]
+    mesh = SubResource("BoxMesh_u688r")
+
+For generic property ``value`` tracks, ``keys`` is a dictionary containing 3
+arrays with positions in ``times`` (PackedFloat32Array), easing values in
+``transitions`` (PackedFloat32Array) and values in ``values`` (Array). There is
+an additional ``update`` property, which is an integer with the values ``0`` =
+continuous, ``1`` = discrete, ``2`` = capture.
+
+Here is a second Animation resource that makes use of the 3D Position and 3D
+Rotation tracks. These tracks (in addition to the 3D Scale track) replace
+Transform tracks from Godot 3. They are optimized for fast playback and can
+optionally be compressed.
+
+The downside of these optimized track types is that they can't use custom easing
+values. Instead, all keyframes use linear interpolation. That said, you can
+still opt for using nearest or cubic interpolation for all keyframes in a given
+track by changing the track's interpolation mode.
+
+::
+
+    [sub_resource type="Animation" id="Animation_r2qdp"]
+    resource_name = "move_and_rotate"
+    length = 1.5
+    loop_mode = 2
+    step = 0.05
+    tracks/0/type = "position_3d"
+    tracks/0/imported = false
     tracks/0/enabled = true
-    tracks/0/keys = PackedFloat32Array( 0, 1, -0.0358698, -0.829927, 0.444204, 0, 0, 0, 1, 0.815074, 0.815074, 0.815074, 4.95833, 1, -0.0358698, -0.829927, 0.444204, 0, 0, 0, 1, 0.815074, 0.815074, 0.815074 )
-    tracks/1/type = "transform"
-    tracks/1/path = NodePath("Armature001/Skeleton:Bone.001")
+    tracks/0/path = NodePath("Box")
+    tracks/0/interp = 1
+    tracks/0/loop_wrap = true
+    tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1.5, 1, 1.5, 1, 0)
+    tracks/1/type = "rotation_3d"
+    tracks/1/imported = false
+    tracks/1/enabled = true
+    tracks/1/path = NodePath("Box")
     tracks/1/interp = 1
     tracks/1/loop_wrap = true
-    tracks/1/imported = true
-    tracks/1/enabled = false
-    tracks/1/keys = PackedFloat32Array( 0, 1, 0, 5.96046e-08, 0, 0, 0, 0, 1, 1, 1, 1, 4.95833, 1, 0, 5.96046e-08, 0, 0, 0, 0, 1, 1, 1, 1 )
+    tracks/1/keys = PackedFloat32Array(0, 1, 0.211, -0.047, 0.211, 0.953, 1.5, 1, 0.005, 0.976, -0.216, 0.022)
+
+For 3D position, rotation and scale tracks, ``keys`` is a PackedFloat32Array
+with all values stored in a sequence.
+
+In the visual guide below, ``T`` is the keyframe's time in seconds since the
+start of the animation, ``E`` is the keyframe's transition (currently always
+``1``). For 3D position and scale tracks, ``X``, ``Y``, ``Z`` are the Vector3's
+coordinates. For 3D rotation tracks, ``X``, ``Y``, ``Z`` and ``W`` are the
+Quaternion's coordinates.
+
+::
+
+    # For 3D position and scale, which use Vector3:
+    tracks/<id>/keys = PackedFloat32Array(T, E,   X, Y, Z,      T, E,   X, Y, Z, ...)
+
+    # For 3D rotation, which use Quaternion:
+    tracks/<id>/keys = PackedFloat32Array(T, E,   X, Y, Z, W,      T, E,   X, Y, Z, W, ...)

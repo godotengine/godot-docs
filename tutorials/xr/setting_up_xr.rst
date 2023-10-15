@@ -44,7 +44,7 @@ While in Godot 3 most things worked out of the box, Godot 4 needs a little more 
 OpenXR
 ------
 
-OpenXR is a new industry standard that allows different XR platforms to present themselves through a standardised API to XR applications. This standard is an open standard maintained by the Khronos Group and thus aligns very well with Godots interests.
+OpenXR is a new industry standard that allows different XR platforms to present themselves through a standardised API to XR applications. This standard is an open standard maintained by the Khronos Group and thus aligns very well with Godot's interests.
 
 The Vulkan implementation of OpenXR is closely integrated with Vulkan, taking over part of the Vulkan system. This requires tight integration of certain core graphics features in the Vulkan renderer which are needed before the XR system is setup. This was one of the main deciding factors to include OpenXR as a core interface.
 
@@ -74,15 +74,16 @@ Right now all these nodes are on the floor, the will be positioned correctly in 
 
 Next we need to add a script to our root node. Add the following code into this script:
 
-::
+.. tabs::
+  .. code-tab:: gdscript GDScript
 
     extends Node3D
 
-    var interface: XRInterface
+    var xr_interface: XRInterface
 
     func _ready():
-        interface = XRServer.find_interface("OpenXR")
-        if interface and interface.is_initialized():
+        xr_interface = XRServer.find_interface("OpenXR")
+        if xr_interface and xr_interface.is_initialized():
             print("OpenXR initialised successfully")
 
             # Turn off v-sync!
@@ -91,7 +92,35 @@ Next we need to add a script to our root node. Add the following code into this 
             # Change our main viewport to output to the HMD
             get_viewport().use_xr = true
         else:
-            print("OpenXR not initialised, please check if your headset is connected")
+            print("OpenXR not initialized, please check if your headset is connected")
+
+  .. code-tab:: csharp
+
+    using Godot;
+
+    public partial class MyNode3D : Node3D
+    {
+        private XRInterface _xrInterface;
+
+        public override void _Ready()
+        {
+            _xrInterface = XRServer.FindInterface("OpenXR");
+            if(_xrInterface != null && _xrInterface.IsInitialized())
+            {
+                GD.Print("OpenXR initialized successfully");
+
+                // Turn off v-sync!
+                DisplayServer.WindowSetVsyncMode(DisplayServer.VSyncMode.Disabled);
+
+                // Change our main viewport to output to the HMD
+                GetViewport().UseXR = true;
+            }
+            else
+            {
+                GD.Print("OpenXR not initialized, please check if your headset is connected");
+            }
+        }
+    }
 
 This code fragment assumes we are using OpenXR, if you wish to use any of the other interfaces you can change the ``find_interface`` call.
 

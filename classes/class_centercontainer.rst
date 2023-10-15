@@ -12,21 +12,21 @@ CenterContainer
 
 **Inherits:** :ref:`Container<class_Container>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-Keeps children controls centered.
+A container that keeps child controls in its center.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-CenterContainer keeps children controls centered. This container keeps all children to their minimum size, in the center.
+**CenterContainer** is a container that keeps all of its child controls in its center at their minimum size.
 
 .. rst-class:: classref-introduction-group
 
 Tutorials
 ---------
 
-- :doc:`GUI containers <../tutorials/ui/gui_containers>`
+- :doc:`Using Containers <../tutorials/ui/gui_containers>`
 
 .. rst-class:: classref-reftable-group
 
@@ -68,3 +68,4 @@ If ``true``, centers children relative to the **CenterContainer**'s top left cor
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

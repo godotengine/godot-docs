@@ -13,6 +13,11 @@ These are the steps to load a Godot project in Xcode. This allows you to
 build and deploy to an iOS device, build a release for the App Store, and
 do everything else you can normally do with Xcode.
 
+.. attention::
+
+    Projects written in C# using Godot 4 currently cannot be exported to iOS.
+    To use C# on iOS, use Godot 3 instead.
+
 Requirements
 ------------
 
@@ -104,3 +109,22 @@ Plugins for iOS
 
 Special iOS plugins can be used in Godot. Check out the
 :ref:`doc_plugins_for_ios` page.
+
+Environment variables
+---------------------
+
+You can use the following environment variables to set export options outside of
+the editor. During the export process, these override the values that you set in
+the export menu.
+
+.. list-table:: iOS export environment variables
+   :header-rows: 1
+
+   * - Export option
+     - Environment variable
+   * - Encryption / Encryption Key
+     - GODOT_SCRIPT_ENCRYPTION_KEY
+   * - Options / Application / Provisioning Profile UUID Debug
+     - GODOT_IOS_PROVISIONING_PROFILE_UUID_DEBUG
+   * - Options / Application / Provisioning Profile UUID Release
+     - GODOT_IOS_PROVISIONING_PROFILE_UUID_RELEASE

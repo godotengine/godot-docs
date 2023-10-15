@@ -40,15 +40,17 @@ Methods
 .. table::
    :widths: auto
 
-   +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Error<enum_@GlobalScope_Error>`             | :ref:`close<class_ZIPReader_method_close>` **(** **)**                                                                                       |
-   +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`get_files<class_ZIPReader_method_get_files>` **(** **)**                                                                               |
-   +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Error<enum_@GlobalScope_Error>`             | :ref:`open<class_ZIPReader_method_open>` **(** :ref:`String<class_String>` path **)**                                                        |
-   +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`PackedByteArray<class_PackedByteArray>`     | :ref:`read_file<class_ZIPReader_method_read_file>` **(** :ref:`String<class_String>` path, :ref:`bool<class_bool>` case_sensitive=true **)** |
-   +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>`             | :ref:`close<class_ZIPReader_method_close>` **(** **)**                                                                                           |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`file_exists<class_ZIPReader_method_file_exists>` **(** :ref:`String<class_String>` path, :ref:`bool<class_bool>` case_sensitive=true **)** |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`get_files<class_ZIPReader_method_get_files>` **(** **)**                                                                                   |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>`             | :ref:`open<class_ZIPReader_method_open>` **(** :ref:`String<class_String>` path **)**                                                            |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PackedByteArray<class_PackedByteArray>`     | :ref:`read_file<class_ZIPReader_method_read_file>` **(** :ref:`String<class_String>` path, :ref:`bool<class_bool>` case_sensitive=true **)**     |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -66,6 +68,20 @@ Method Descriptions
 :ref:`Error<enum_@GlobalScope_Error>` **close** **(** **)**
 
 Closes the underlying resources used by this instance.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ZIPReader_method_file_exists:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **file_exists** **(** :ref:`String<class_String>` path, :ref:`bool<class_bool>` case_sensitive=true **)**
+
+Returns ``true`` if the file exists in the loaded zip archive.
+
+Must be called after :ref:`open<class_ZIPReader_method_open>`.
 
 .. rst-class:: classref-item-separator
 
@@ -113,3 +129,4 @@ Must be called after :ref:`open<class_ZIPReader_method_open>`.
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

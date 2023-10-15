@@ -322,23 +322,24 @@ Iterating using the C-style for loop in C-derived languages can be quite complex
 
 .. code-block:: cpp
 
-    const char* strings = new const char*[50];
+    const char** strings = new const char*[50];
 
     [..]
 
     for (int i = 0; i < 50; i++) {
-
-        printf("Value: %s\n", i, strings[i]);
-    }
+		printf("Value: %c Index: %d\n", strings[i], i);
+	}
 
     // Even in STL:
+    std::list<std::string> strings;
+    
+    [..]
 
-    for (std::list<std::string>::const_iterator it = strings.begin(); it != strings.end(); it++) {
+	for (std::string::const_iterator it = strings.begin(); it != strings.end(); it++) {
+		std::cout << *it << std::endl;
+	}
 
-        std::cout << *it << std::endl;
-    }
-
-Because of this, GDScript makes the opinonated decision to have a for-in loop over iterables instead:
+Because of this, GDScript makes the opinionated decision to have a for-in loop over iterables instead:
 
 ::
 

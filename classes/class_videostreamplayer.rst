@@ -12,20 +12,27 @@ VideoStreamPlayer
 
 **Inherits:** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-Control for playing video streams.
+A control used for video playback.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-Control node for playing video streams using :ref:`VideoStream<class_VideoStream>` resources.
+A control used for playback of :ref:`VideoStream<class_VideoStream>` resources.
 
 Supported video formats are `Ogg Theora <https://www.theora.org/>`__ (``.ogv``, :ref:`VideoStreamTheora<class_VideoStreamTheora>`) and any format exposed via a GDExtension plugin.
 
 \ **Note:** Due to a bug, VideoStreamPlayer does not support localization remapping yet.
 
 \ **Warning:** On Web, video playback *will* perform poorly due to missing architecture-specific assembly optimizations.
+
+.. rst-class:: classref-introduction-group
+
+Tutorials
+---------
+
+- :doc:`Playing videos <../tutorials/animation/playing_videos>`
 
 .. rst-class:: classref-reftable-group
 
@@ -46,6 +53,8 @@ Properties
    +---------------------------------------+--------------------------------------------------------------------------+---------------+
    | :ref:`bool<class_bool>`               | :ref:`expand<class_VideoStreamPlayer_property_expand>`                   | ``false``     |
    +---------------------------------------+--------------------------------------------------------------------------+---------------+
+   | :ref:`bool<class_bool>`               | :ref:`loop<class_VideoStreamPlayer_property_loop>`                       | ``false``     |
+   +---------------------------------------+--------------------------------------------------------------------------+---------------+
    | :ref:`bool<class_bool>`               | :ref:`paused<class_VideoStreamPlayer_property_paused>`                   | ``false``     |
    +---------------------------------------+--------------------------------------------------------------------------+---------------+
    | :ref:`VideoStream<class_VideoStream>` | :ref:`stream<class_VideoStreamPlayer_property_stream>`                   |               |
@@ -65,6 +74,8 @@ Methods
 .. table::
    :widths: auto
 
+   +-----------------------------------+------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`         | :ref:`get_stream_length<class_VideoStreamPlayer_method_get_stream_length>` **(** **)** |const| |
    +-----------------------------------+------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`       | :ref:`get_stream_name<class_VideoStreamPlayer_method_get_stream_name>` **(** **)** |const|     |
    +-----------------------------------+------------------------------------------------------------------------------------------------+
@@ -188,6 +199,23 @@ If ``true``, the video scales to the control size. Otherwise, the control minimu
 
 ----
 
+.. _class_VideoStreamPlayer_property_loop:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **loop** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_loop** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **has_loop** **(** **)**
+
+If ``true``, the video restarts when it reaches its end.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_VideoStreamPlayer_property_paused:
 
 .. rst-class:: classref-property
@@ -280,6 +308,20 @@ Audio volume in dB.
 Method Descriptions
 -------------------
 
+.. _class_VideoStreamPlayer_method_get_stream_length:
+
+.. rst-class:: classref-method
+
+:ref:`float<class_float>` **get_stream_length** **(** **)** |const|
+
+The length of the current stream, in seconds.
+
+\ **Note:** For :ref:`VideoStreamTheora<class_VideoStreamTheora>` streams (the built-in format supported by Godot), this value will always be zero, as getting the stream length is not implemented yet. The feature may be supported by video formats implemented by a GDExtension add-on.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_VideoStreamPlayer_method_get_stream_name:
 
 .. rst-class:: classref-method
@@ -346,3 +388,4 @@ Stops the video playback and sets the stream position to 0.
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

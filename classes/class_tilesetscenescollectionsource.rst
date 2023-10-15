@@ -180,7 +180,7 @@ Sets whether or not the scene tile with ``id`` should display a placeholder in t
 
 void **set_scene_tile_id** **(** :ref:`int<class_int>` id, :ref:`int<class_int>` new_id **)**
 
-Changes a scene tile's ID from ``id`` to ``new_id``. This will fail if there is already a tile with a ID equal to ``new_id``.
+Changes a scene tile's ID from ``id`` to ``new_id``. This will fail if there is already a tile with an ID equal to ``new_id``.
 
 .. rst-class:: classref-item-separator
 
@@ -200,3 +200,4 @@ Assigns a :ref:`PackedScene<class_PackedScene>` resource to the scene tile with 
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

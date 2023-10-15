@@ -64,6 +64,43 @@ update the radiance cubemap each frame, make sure your
 :ref:`Sky process mode <class_Sky_property_process_mode>` is set to
 :ref:`REALTIME <class_Sky_constant_PROCESS_MODE_REALTIME>`.
 
+Note that the :ref:`process mode <class_Sky_property_process_mode>` only
+affects the rendering of the radiance cubemap. The visible sky is always
+rendered by calling the fragment shader for every pixel. With complex fragment
+shaders, this can result in a high rendering overhead. If the sky is static
+(the conditions listed above are met) or changes slowly, running the full
+fragment shader every frame is not needed. This can be avoided by rendering the
+full sky into the radiance cubemap, and reading from this cubemap when
+rendering the visible sky. With a completely static sky, this means that it
+needs to be rendered only once.
+
+The following code renders the full sky into the radiance cubemap and reads
+from that cubemap for displaying the visible sky:
+
+.. code-block:: glsl
+
+    shader_type sky;
+
+    void sky() {
+        if (AT_CUBEMAP_PASS) {
+            vec3 dir = EYEDIR;
+
+            vec4 col = vec4(0.0);
+
+            // Complex color calculation
+
+            COLOR = col.xyz;
+            ALPHA = 1.0;
+        } else {
+            COLOR = texture(RADIANCE, EYEDIR).rgb;
+        }
+    }
+
+This way, the complex calculations happen only in the cubemap pass, which can
+be optimized by setting the sky's :ref:`process mode <class_Sky_property_process_mode>`
+and the :ref:`radiance size <class_Sky_property_radiance_size>` to get the
+desired balance between performance and visual fidelity.
+
 Render modes
 ^^^^^^^^^^^^
 
@@ -103,7 +140,7 @@ Built-ins
 ^^^^^^^^^
 
 Values marked as "in" are read-only. Values marked as "out" are for optional
-writing and will not necessarily contain sensible values. Samplers cannot be 
+writing and will not necessarily contain sensible values. Samplers cannot be
 written to so they are not marked.
 
 Global built-ins

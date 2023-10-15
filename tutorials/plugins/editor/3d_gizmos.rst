@@ -30,7 +30,7 @@ This would be a basic setup:
 
 ::
 
-    # MyCustomGizmoPlugin.gd
+    # my_custom_gizmo_plugin.gd
     extends EditorNode3DGizmoPlugin
 
 
@@ -45,7 +45,7 @@ This would be a basic setup:
     extends EditorPlugin
 
 
-    const MyCustomGizmoPlugin = preload("res://addons/my-addon/MyCustomGizmoPlugin.gd")
+    const MyCustomGizmoPlugin = preload("res://addons/my-addon/my_custom_gizmo_plugin.gd")
 
     var gizmo_plugin = MyCustomGizmoPlugin.new()
 
@@ -126,7 +126,7 @@ So the final plugin would look somewhat like this:
     extends EditorNode3DGizmoPlugin
 
 
-    const MyCustomNode3D = preload("res://addons/my-addon/MyCustomNode3D.gd")
+    const MyCustomNode3D = preload("res://addons/my-addon/my_custom_node_3d.gd")
 
 
     func _init():
@@ -177,12 +177,12 @@ for the Node3D nodes we want to target.
 
 ::
 
-    # MyCustomGizmoPlugin.gd
+    # my_custom_gizmo_plugin.gd
     extends EditorNode3DGizmoPlugin
 
 
-    const MyCustomNode3D = preload("res://addons/my-addon/MyCustomNode3D.gd")
-    const MyCustomGizmo = preload("res://addons/my-addon/MyCustomGizmo.gd")
+    const MyCustomNode3D = preload("res://addons/my-addon/my_custom_node_3d.gd")
+    const MyCustomGizmo = preload("res://addons/my-addon/my_custom_gizmo.gd")
 
 
     func _init():
@@ -201,7 +201,7 @@ This way all the gizmo logic and drawing methods can be implemented in a new cla
 
 ::
 
-    # MyCustomGizmo.gd
+    # my_custom_gizmo.gd
     extends EditorNode3DGizmo
 
 

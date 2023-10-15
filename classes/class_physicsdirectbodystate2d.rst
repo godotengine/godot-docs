@@ -14,14 +14,14 @@ PhysicsDirectBodyState2D
 
 **Inherited By:** :ref:`PhysicsDirectBodyState2DExtension<class_PhysicsDirectBodyState2DExtension>`
 
-Direct access object to a physics body in the :ref:`PhysicsServer2D<class_PhysicsServer2D>`.
+Provides direct access to a physics body in the :ref:`PhysicsServer2D<class_PhysicsServer2D>`.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-Provides direct access to a physics body in the :ref:`PhysicsServer2D<class_PhysicsServer2D>`, allowing safe changes to physics properties. This object is passed via the direct state callback of rigid bodies, and is intended for changing the direct state of that body. See :ref:`RigidBody2D._integrate_forces<class_RigidBody2D_method__integrate_forces>`.
+Provides direct access to a physics body in the :ref:`PhysicsServer2D<class_PhysicsServer2D>`, allowing safe changes to physics properties. This object is passed via the direct state callback of :ref:`RigidBody2D<class_RigidBody2D>`, and is intended for changing the direct state of that body. See :ref:`RigidBody2D._integrate_forces<class_RigidBody2D_method__integrate_forces>`.
 
 .. rst-class:: classref-introduction-group
 
@@ -118,6 +118,8 @@ Methods
    | :ref:`Vector2<class_Vector2>`                                     | :ref:`get_contact_local_position<class_PhysicsDirectBodyState2D_method_get_contact_local_position>` **(** :ref:`int<class_int>` contact_idx **)** |const|                                 |
    +-------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                                             | :ref:`get_contact_local_shape<class_PhysicsDirectBodyState2D_method_get_contact_local_shape>` **(** :ref:`int<class_int>` contact_idx **)** |const|                                       |
+   +-------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector2<class_Vector2>`                                     | :ref:`get_contact_local_velocity_at_position<class_PhysicsDirectBodyState2D_method_get_contact_local_velocity_at_position>` **(** :ref:`int<class_int>` contact_idx **)** |const|         |
    +-------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`PhysicsDirectSpaceState2D<class_PhysicsDirectSpaceState2D>` | :ref:`get_space_state<class_PhysicsDirectBodyState2D_method_get_space_state>` **(** **)**                                                                                                 |
    +-------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -540,7 +542,7 @@ Returns the collider object. This depends on how it was created (will return a s
 
 :ref:`Vector2<class_Vector2>` **get_contact_collider_position** **(** :ref:`int<class_int>` contact_idx **)** |const|
 
-Returns the contact position in the collider.
+Returns the position of the contact point on the collider in the global coordinate system.
 
 .. rst-class:: classref-item-separator
 
@@ -564,7 +566,7 @@ Returns the collider's shape index.
 
 :ref:`Vector2<class_Vector2>` **get_contact_collider_velocity_at_position** **(** :ref:`int<class_int>` contact_idx **)** |const|
 
-Returns the linear velocity vector at the collider's contact point.
+Returns the velocity vector at the collider's contact point.
 
 .. rst-class:: classref-item-separator
 
@@ -614,7 +616,7 @@ Returns the local normal at the contact point.
 
 :ref:`Vector2<class_Vector2>` **get_contact_local_position** **(** :ref:`int<class_int>` contact_idx **)** |const|
 
-Returns the local position of the contact point.
+Returns the position of the contact point on the body in the global coordinate system.
 
 .. rst-class:: classref-item-separator
 
@@ -627,6 +629,18 @@ Returns the local position of the contact point.
 :ref:`int<class_int>` **get_contact_local_shape** **(** :ref:`int<class_int>` contact_idx **)** |const|
 
 Returns the local shape index of the collision.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_PhysicsDirectBodyState2D_method_get_contact_local_velocity_at_position:
+
+.. rst-class:: classref-method
+
+:ref:`Vector2<class_Vector2>` **get_contact_local_velocity_at_position** **(** :ref:`int<class_int>` contact_idx **)** |const|
+
+Returns the velocity vector at the body's contact point.
 
 .. rst-class:: classref-item-separator
 
@@ -698,3 +712,4 @@ See :ref:`add_constant_torque<class_PhysicsDirectBodyState2D_method_add_constant
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

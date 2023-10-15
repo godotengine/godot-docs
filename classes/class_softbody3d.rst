@@ -12,16 +12,16 @@ SoftBody3D
 
 **Inherits:** :ref:`MeshInstance3D<class_MeshInstance3D>` **<** :ref:`GeometryInstance3D<class_GeometryInstance3D>` **<** :ref:`VisualInstance3D<class_VisualInstance3D>` **<** :ref:`Node3D<class_Node3D>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-A soft mesh physics body.
+A deformable 3D physics mesh.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-A deformable physics body. Used to create elastic or deformable objects such as cloth, rubber, or other flexible materials.
+A deformable 3D physics mesh. Used to create elastic or deformable objects such as cloth, rubber, or other flexible materials.
 
-\ **Note:** There are many known bugs in **SoftBody3D**. Therefore, it's not recommended to use them for things that can affect gameplay (such as a player character made entirely out of soft bodies).
+\ **Note:** There are many known bugs in **SoftBody3D**. Therefore, it's not recommended to use them for things that can affect gameplay (such as trampolines).
 
 .. rst-class:: classref-introduction-group
 
@@ -240,9 +240,7 @@ Defines the behavior in physics when :ref:`Node.process_mode<class_Node_property
 - void **set_linear_stiffness** **(** :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_linear_stiffness** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Higher values will result in a stiffer body, while lower values will increase the body's ability to bend. The value can be between ``0.0`` and ``1.0`` (inclusive).
 
 .. rst-class:: classref-item-separator
 
@@ -476,3 +474,4 @@ Sets the pinned state of a surface vertex. When set to ``true``, the optional ``
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

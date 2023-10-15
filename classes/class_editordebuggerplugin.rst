@@ -151,7 +151,7 @@ Returns the :ref:`EditorDebuggerSession<class_EditorDebuggerSession>` with the g
 
 Returns an array of :ref:`EditorDebuggerSession<class_EditorDebuggerSession>` currently available to this debugger plugin.
 
-Note: Not sessions in the array may be inactive, check their state via :ref:`EditorDebuggerSession.is_active<class_EditorDebuggerSession_method_is_active>`
+\ **Note:** Sessions in the array may be inactive, check their state via :ref:`EditorDebuggerSession.is_active<class_EditorDebuggerSession_method_is_active>`.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
@@ -159,3 +159,4 @@ Note: Not sessions in the array may be inactive, check their state via :ref:`Edi
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

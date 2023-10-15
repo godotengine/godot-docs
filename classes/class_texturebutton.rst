@@ -289,7 +289,7 @@ Texture to display when the mouse hovers the node.
 - void **set_texture_normal** **(** :ref:`Texture2D<class_Texture2D>` value **)**
 - :ref:`Texture2D<class_Texture2D>` **get_texture_normal** **(** **)**
 
-Texture to display by default, when the node is **not** in the disabled, focused, hover or pressed state.
+Texture to display by default, when the node is **not** in the disabled, hover or pressed state. This texture is still displayed in the focused state, with :ref:`texture_focused<class_TextureButton_property_texture_focused>` drawn on top.
 
 .. rst-class:: classref-item-separator
 
@@ -314,3 +314,4 @@ Texture to display on mouse down over the node, if the node has keyboard focus a
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
