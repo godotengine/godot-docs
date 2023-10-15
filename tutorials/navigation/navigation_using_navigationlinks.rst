@@ -44,7 +44,5 @@ If no valid polygon is found within the search radius the navigation link gets d
 The link debug visuals can be changed in the Editor :ref:`ProjectSettings<class_ProjectSettings>` under ``debug/shapes/navigation``.
 The visibility of the debug can also be controlled in the Editor 3D Viewport gizmo menu.
 
-.. note::
-
 A navigation link provides automated movement through the link. If it does not appear to be working, try changing the start and end positions of the link.
 Occasionally it will not be detected if positioned incorrectly.
