@@ -142,7 +142,7 @@ and randomly choose one of the three animation types:
         _animated_sprite->set_animation(mob_types[random->randi() % mob_types.size()]);
     }
 
-First, we get the list of animation names from the AnimatedSprite2D's ``frames``
+First, we get the list of animation names from the AnimatedSprite2D's ``sprite_frames``
 property. This returns an Array containing all three animation names: ``["walk",
 "swim", "fly"]``.
 
