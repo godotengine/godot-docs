@@ -46,6 +46,7 @@ Video tutorials
 - `Gwizz <https://www.youtube.com/@Gwizz1027>`_ (2D, GDScript).
 - `Quiver <https://quiver.dev/>`_ (2D, GDScript).
 - `Maker Tech <https://www.youtube.com/watch?v=0mUoRdYe0s4>`_ (2D, GDScript).
+- `Serkan Tarçın <https://www.youtube.com/playlist?list=PLBeiK76JaICn7fiHKtgOwY7R0T7Uw1VkV>`_ (3D, GDScript).
 
 Text tutorials
 --------------
