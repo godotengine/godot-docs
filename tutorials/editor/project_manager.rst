@@ -22,17 +22,17 @@ Creating and importing projects
 
 To create a new project:
 
-1. Click the ``New Project`` button on the right of the window.
+1. Click the ``New`` button on the top-left of the window.
 2. Give the project a name, choose an empty folder on your computer to save the
    files, and select a rendering backend.
-3. Click the Create & Edit button to create the project folder and open it in the editor.
+3. Click the ``Create & Edit`` button to create the project folder and open it in the editor.
 
 .. image:: img/editor_ui_intro_project_manager_04.webp
 
 Using the file browser
 ~~~~~~~~~~~~~~~~~~~~~~
 
-Click the Browse button to open Godot's file browser and pick a location or type
+Click the ``Browse`` button to open Godot's file browser and pick a location or type
 the folder's path in the Project Path field.
 
 .. image:: img/editor_ui_intro_project_manager_05.webp
@@ -49,7 +49,7 @@ list. Double click on it to open it in the editor.
 
 .. image:: img/editor_ui_intro_project_manager_06.webp
 
-You can similarly import existing projects using the Import button. Locate the
+You can similarly import existing projects using the ``Import`` button. Locate the
 folder that contains the project or the ``project.godot`` file to import and
 edit it.
 
@@ -62,7 +62,7 @@ When the folder path is correct, you'll see a green checkmark.
 Downloading demos and templates
 -------------------------------
 
-From the **Asset Library Projects** tab you can download open source project templates and
+From the ``Asset Library Projects`` tab you can download open source project templates and
 demos from the :ref:`Asset Library <doc_what_is_assetlib>` to help you get
 started faster.
 
