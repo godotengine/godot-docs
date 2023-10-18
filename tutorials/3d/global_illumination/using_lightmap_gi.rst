@@ -324,10 +324,12 @@ Tweaks
 - **Bounces:** The number of bounces to use for indirect lighting. The default
   value (``3``) is a good compromise between bake times and quality. Higher
   values will make light bounce around more times before it stops, which makes
-  indirect lighting look smoother (but also brighter). During the initial
-  lighting iteration work, it is recommended to decrease the number of bounces
-  to ``1`` to speed up baking. Remember that your scene will be darker when
-  decreasing the number of bounces.
+  indirect lighting look smoother (but also possibly brighter depending on
+  materials and geometry).
+- **Bounce Indirect Energy:** The global multiplier to use when baking lights'
+  indirect energy. This multiplies each light's own **Indirect Energy** value.
+  Values different from ``1.0`` are not physically accurate, but can be used for
+  artistic effect.
 - **Directional:** If enabled, stores directional information for lightmaps.
   This improves normal mapped materials' appearance for baked surfaces,
   especially with fully baked lights (since they also have direct light baked).
@@ -335,12 +337,20 @@ Tweaks
   They also require more time to bake and result in larger file sizes.
 - **Interior:** If enabled, environment lighting will not be sourced. Use this
   for purely indoor scenes to avoid light leaks.
-- **Use Denoiser:** If enabled, uses `OpenImageDenoise <https://www.openimagedenoise.org/>`__
-  to make the lightmap significantly less noisy. This increases bake times and can
-  occasionally introduce artifacts, but the result is often worth it.
-  **All** bake mode on a light, this will turn colored lighting into grayscale
-  lighting. This can be disabled together with HDR to get the smallest possible
-  lightmap file at a given resolution.
+- **Use Texture for Bounces:** If enabled, a texture with the lighting
+  information will be generated to speed up the generation of indirect lighting
+  at the cost of some accuracy. The geometry might exhibit extra light leak
+  artifacts when using low resolution lightmaps or UVs that stretch the lightmap
+  significantly across surfaces. Leave this enabled if unsure.
+- **Use Denoiser:** If enabled, uses a denoising algorithm to make the lightmap
+  significantly less noisy. This increases bake times and can occasionally
+  introduce artifacts, but the result is often worth it. See
+  :ref:`doc_using_lightmap_gi_denoising` for more information.
+- **Denoiser Strength:** The strength of denoising step applied to the generated
+  lightmaps. Higher values are more effective at removing noise, but can reduce
+  shadow detail for static shadows. Only effective if denoising is enabled and
+  the denoising method is :abbr:`JNLM (Non-Local Means with Joint Filtering)`
+  (:abbr:`OIDN (Open Image Denoise)` does not have a denoiser strength setting).
 - **Bias:** The offset value to use for shadows in 3D units. You generally don't
   need to change this value, except if you run into issues with light bleeding or
   dark spots in your lightmap after baking. This setting does not affect real-time
@@ -370,6 +380,97 @@ Reducing the lightmap resolution by increasing **Lightmap Texel Size** on the
 imported 3D scenes will also speed up baking significantly. However, this will
 require you to reimport all lightmapped 3D scenes before you can bake lightmaps
 again.
+
+
+.. _doc_using_lightmap_gi_denoising:
+
+Denoising
+---------
+
+Since baking lightmaps relies on raytracing, there will always be visible noise
+in the "raw" baked lightmap. Noise is especially visible in areas that are
+difficult to reach by bounced light, such as indoor areas with small openings
+where the sunlight can enter. Noise can be reduced by increasing bake quality,
+but doing so will increase bake times significantly.
+
+.. figure:: img/lightmap_gi_denoiser_comparison.webp
+   :align: center
+   :alt: Comparison between denoising disabled and enabled
+
+   Comparison between denoising disabled and enabled (with the default JNLM denoiser).
+
+To combat noise without increasing bake times too much, a denoiser can be used.
+A denoiser is an algorithm that runs on the final baked lightmap, detects patterns of
+noise and softens them while attempting to best preseve detail.
+Godot offers two denoising algorithms:
+
+JNLM (Non-Local Means with Joint Filtering)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+JNLM is the default denoising method and is included in Godot. It uses a simple
+but efficient denoising algorithm known as *non-local means*. JNLM runs on the
+GPU using a compute shader, and is compatible with any GPU that can run Godot
+4's Vulkan-based rendering methods. No additional setup is required.
+
+JNLM's denoising can be adjusted using the **Denoiser Strength** property that
+is visible when **Use Denoiser** enabled. Higher values can be more effective at
+removing noise, at the cost of suppressing shadow detail for static shadows.
+
+.. figure:: img/lightmap_gi_denoiser_jnlm_strength.webp
+   :align: center
+   :alt: Comparison between JNLM denoiser strength values
+
+   Comparison between JNLM denoiser strength values. Higher values can reduce detail.
+
+OIDN (Open Image Denoise)
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Unlike JNLM, OIDN uses a machine learning approach to denoising lightmaps. It
+features a model specifically trained to remove noise from lightmaps while
+preserving more shadow detail in most scenes compared to JNLM.
+
+OIDN can run on the GPU if hardware acceleration is configured. With a modern
+high-end GPU, this can provide a speedup of over 50× over CPU-based denoising:
+
+- On AMD GPUs, HIP must be installed and configured.
+- On NVIDIA GPUs, CUDA must be installed and configured. This may automatically
+  be done by the NVIDIA installer, but on Linux, CUDA libraries may not be
+  installed by default. Double-check that the CUDA packages from your Linux
+  distribution are installed.
+- On Intel GPUs, SYCL must be installed and configured.
+
+If hardware acceleration is not available, OIDN will fall back to multithreaded
+CPU-based denoising. To confirm whether GPU-based denoising is working, use a
+GPU utilization monitor while baking lightmaps and look at the GPU utilization
+percentage and VRAM utilization while the denoising step is shown in the Godot
+editor. The ``nvidia-smi`` command line tool can be useful for this.
+
+OIDN is not included with Godot due to its relatively large download size. You
+can download precompiled OIDN binary packages from its
+`website <https://www.openimagedenoise.org/downloads.html>`__.
+Extract the package to a location on your PC, then specify the path to the
+``oidnDenoise`` executable in the Editor Settings (**FileSystem > Tools > OIDN >
+OIDN Denoise Path**). This executable is located within the ``bin`` folder of
+the binary package you extracted.
+
+After specifying the path to the OIDN denoising executable, change the denoising
+method in the project settings by setting **Rendering > Lightmapping >
+Denoiser** to **OIDN**. This will affect all lightmap bakes on this project
+after the setting is changed.
+
+.. note::
+
+    The denoising method is configured in the project settings instead of the
+    editor settings. This is done so that different team members working on the
+    same project are assured to be using the same denoising method for
+    consistent results.
+
+.. figure:: img/lightmap_gi_denoiser_jnlm_vs_oidn.webp
+   :align: center
+   :alt: Comparison between JNLM and OIDN denoisers
+
+   Comparison between JNLM and OIDN denoisers.
+   Notice how OIDN better preserves detail and reduces seams across different objects.
 
 .. _doc_using_lightmap_gi_dynamic_objects:
 

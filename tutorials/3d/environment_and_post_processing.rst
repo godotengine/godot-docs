@@ -474,6 +474,8 @@ parameters:
   direct light. Values above ``0.0`` are not physically accurate, but some
   artists prefer this effect.
 
+.. _doc_environment_and_post_processing_ssil:
+
 Screen-Space Indirect Lighting (SSIL)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
