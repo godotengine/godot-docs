@@ -248,6 +248,10 @@ section <doc_pr_workflow_rebase>` for instructions.
          to find the commit ID of the previous state that you would like to restore, and
          use it as argument of ``git reset --hard`` to go back to that state.
 
+If you had local changes before rebasing, the rebase rewrites your local git history.
+In that case, you will need to force push using ``git push --force origin master``
+instead of pushing normally.
+
 Making changes
 --------------
 
