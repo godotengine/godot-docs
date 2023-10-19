@@ -142,6 +142,8 @@ Rendering
 - GPU-based :ref:`particles <doc_particle_systems_2d>` with support for
   :ref:`custom particle shaders <doc_particle_shader>`.
 - CPU-based particles.
+- Optional :ref:`2D HDR rendering <doc_environment_and_post_processing_using_glow_in_2d>`
+  for better glow capabilities.
 
 2D tools
 --------
@@ -329,6 +331,7 @@ Rendering
 - Glow/bloom with optional bicubic upscaling and several blend modes available:
   Screen, Soft Light, Add, Replace, Mix.
 - Glow can have a colored dirt map texture, acting as a lens dirt effect.
+- Glow can be :ref:`used as a screen-space blur effect <doc_environment_and_post_processing_using_glow_to_blur_the_screen>`.
 - Color correction using a one-dimensional ramp or a 3D LUT texture.
 - Roughness limiter to reduce the impact of specular aliasing.
 - Brightness, contrast and saturation adjustments.
