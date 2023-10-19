@@ -137,9 +137,9 @@ Signals
 
 **finished** **(** **)**
 
-Emitted when all active particles have finished processing. When :ref:`one_shot<class_GPUParticles3D_property_one_shot>` is disabled, particles will process continuously, so this is never emitted.
+Emitted when all active particles are no longer visible. To immediately emit new particles, call the emitter with ``restart()`` as the emitter may still have ``emitting == true`` (due to invisible particles still being processed).
 
-\ **Note:** Due to the particles being computed on the GPU there might be a delay before the signal gets emitted.
+When :ref:`one_shot<class_GPUParticles3D_property_one_shot>` is disabled, particles will process continuously, so this is never emitted.
 
 .. rst-class:: classref-section-separator
 
