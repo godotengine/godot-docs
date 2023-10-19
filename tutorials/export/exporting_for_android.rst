@@ -18,10 +18,10 @@ The following steps detail what is needed to set up the Android SDK and the engi
     Projects written in C# using Godot 4 currently cannot be exported to Android.
     To use C# on Android, use Godot 3 instead.
 
-Install OpenJDK 11
+Install OpenJDK 17
 ------------------
 
-Download and install  `OpenJDK 11 <https://adoptium.net/?variant=openjdk11>`__.
+Download and install `OpenJDK 17 <https://adoptium.net/temurin/releases/?variant=openjdk17>`__.
 
 Download the Android SDK
 ------------------------
