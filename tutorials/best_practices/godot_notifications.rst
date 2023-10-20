@@ -164,28 +164,39 @@ _init vs. initialization vs. export
 -----------------------------------
 
 If the script initializes its own node subtree, without a scene,
-that code should execute here. Other property or SceneTree-independent
-initializations should also run here. This triggers before ``_ready()`` or
-``_enter_tree()``, but after a script creates and initializes its properties.
+that code should execute in ``_init()``. Other property or SceneTree-independent
+initializations should also run here.
 
-Scripts have three types of property assignments that can occur during
-instantiation:
+.. note::
+  The C# equivalent to GDScript's ``_init()`` method is the constructor.
+
+``_init()`` triggers before ``_enter_tree()`` or ``_ready()``, but after a script
+creates and initializes its properties. When instantiating a scene, property
+values will set up according to the following sequence:
+
+1. **Initial value assignment:** the property is assigned its initialization value,
+   or its default value if one is not specified. If a setter exists, it is not used.
+
+2. **``_init()`` assignment:** the property's value is replaced by any assignments
+   made in ``_init()``, triggering the setter.
+
+3. **Exported value assignment:** an exported property's value is again replaced by
+   any value set in the Inspector, triggering the setter.
 
 .. tabs::
   .. code-tab:: gdscript GDScript
 
-    # "one" is an "initialized value". These DO NOT trigger the setter.
-    # If someone set the value as "two" from the Inspector, this would be an
-    # "exported value". These DO trigger the setter.
+    # test is initialized to "one", without triggering the setter.
     @export var test: String = "one":
         set(value):
-            test = value
-            print("Setting: ", test)
+            test = value + "!"
 
     func _init():
-        # "three" is an "init assignment value".
-        # Trigger the setter
-        test = "three"
+        # Triggers the setter, changing test's value from "one" to "two!".
+        test = "two"
+
+    # If someone sets test to "three" from the Inspector, it would trigger
+    # the setter, changing test's value from "two!" to "three!".
 
   .. code-tab:: csharp
 
@@ -195,37 +206,24 @@ instantiation:
     {
         private string _test = "one";
 
-        // Changing the value from the inspector does trigger the setter in C#.
         [Export]
         public string Test
         {
             get { return _test; }
-            set
-            {
-                _test = value;
-                GD.Print($"Setting: {_test}");
-            }
+            set { _test = $"{value}!"; }
         }
 
         public MyNode()
         {
-            // Triggers the setter as well
-            Test = "three";
+            // Triggers the setter, changing _test's value from "one" to "two!".
+            Test = "two";
         }
+
+        // If someone sets Test to "three" in the Inspector, it would trigger
+        // the setter, changing _test's value from "two!" to "three!".
     }
 
-When instantiating a scene, property values will set up according to the
-following sequence:
-
-1. **Initial value assignment:** instantiation will assign either the
-   initialization value or the init assignment value. Init assignments take
-   priority over initialization values.
-
-2. **Exported value assignment:** If instancing from a scene rather than
-   a script, Godot will assign the exported value to replace the initial
-   value defined in the script.
-
-As a result, instantiating a script versus a scene will affect both the
+As a result, instantiating a script versus a scene may affect both the
 initialization *and* the number of times the engine calls the setter.
 
 _ready vs. _enter_tree vs. NOTIFICATION_PARENTED
