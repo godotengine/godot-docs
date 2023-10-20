@@ -14,7 +14,7 @@ Texture3D
 
 **Inherited By:** :ref:`CompressedTexture3D<class_CompressedTexture3D>`, :ref:`ImageTexture3D<class_ImageTexture3D>`, :ref:`NoiseTexture3D<class_NoiseTexture3D>`, :ref:`PlaceholderTexture3D<class_PlaceholderTexture3D>`, :ref:`Texture3DRD<class_Texture3DRD>`
 
-Base class for 3-dimensional textures.
+Base class for 3-dimensionnal textures.
 
 .. rst-class:: classref-introduction-group
 
