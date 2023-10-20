@@ -37,16 +37,34 @@ Here is a custom ``look_at()`` method that will work reliably with rigid bodies:
     extends RigidBody3D
 
     func look_follow(state, current_transform, target_position):
-        var up_dir = Vector3(0, 1, 0)
-        var cur_dir = current_transform.basis * Vector3(0, 0, 1)
-        var target_dir = current_transform.origin.direction_to(target_position)
-        var rotation_angle = acos(cur_dir.x) - acos(target_dir.x)
-
-        state.angular_velocity = up_dir * (rotation_angle / state.step)
+    	var facing_direction = current_transform.basis.z
+    	var desired_direction = current_transform.origin.direction_to(target_position)
+    	
+    	var dot_product = facing_direction.dot(desired_direction)
+    	var cross_product = facing_direction.cross(desired_direction)	
+    	var facing_dir_magnitude = facing_direction.length()
+    	var desired_dir_magnitude = desired_direction.length()
+    	
+    	# The difference from the current orientation to the desired orientation in radians
+    	var angle_variance_radians = acos(dot_product / (facing_dir_magnitude * desired_dir_magnitude))
+    	
+    	# This will return positive or negative and give us an indication of direction that we can use to differentiate.  
+    	# For example, we don't want to turn 270 degrees right, we want 90 degrees left, etc...	
+    	var perpendicular_magnitude = cross_product / (facing_dir_magnitude * desired_dir_magnitude)
+    
+    	# Lerp has limited effect when used in the physics process instead of being called in _PhysicsProcess.
+    	# Instead, we will shift the time step here to control/keep the entire movement from happening in a single frame.
+    	# The higher this is, the slower the rotation will be.
+    	var lerp_offset = 10
+    	
+    	# If input-based, it may be good to check that there is input as well
+    	if (angle_variance_radians > 0):
+    		state.angular_velocity = Vector3.UP * (angle_variance_radians / (state.step * lerp_offset)) \
+    		# This bit controls the direction of turning
+    		* sign(perpendicular_magnitude.y)
 
     func _integrate_forces(state):
-        var target_position = $my_target_node3d_node.global_transform.origin
-        look_follow(state, global_transform, target_position)
+	    look_follow(state, global_transform, TargetPosition)
 
  .. code-tab:: csharp
 
@@ -54,20 +72,40 @@ Here is a custom ``look_at()`` method that will work reliably with rigid bodies:
 
     public partial class MyRigidBody3D : RigidBody3D
     {
-        private void LookFollow(PhysicsDirectBodyState state, Transform3D currentTransform, Vector3 targetPosition)
+        private void LookFollow(PhysicsDirectBodyState3D state, Transform3D currentTransform, Vector3 targetPosition)
         {
-            var upDir = new Vector3(0, 1, 0);
-            var curDir = currentTransform.Basis * new Vector3(0, 0, 1);
-            var targetDir = currentTransform.Origin.DirectionTo(targetPosition);
-            var rotationAngle = Mathf.Acos(curDir.X) - Mathf.Acos(targetDir.X);
-
-            state.SetAngularVelocity(upDir * (rotationAngle / state.GetStep()));
+            var facingDirection = currentTransform.Basis.Z;
+            var desiredDirection = (targetPosition - currentTransform.Origin).Normalized();
+    
+    		var dotProduct = facingDirection.Dot(desiredDirection);
+    		var crossProduct = facingDirection.Cross(desiredDirection);
+    		var facingDirMagnitude = facingDirection.Length();
+    		var desiredDirMagnitude = desiredDirection.Length();
+    
+    		// The difference from the current orientation to the desired orientation in radians
+    		var angleVarianceRadians = Mathf.Acos(dotProduct / (facingDirMagnitude * desiredDirMagnitude));
+    
+    		// This will return positive or negative and give us an indication of direction that we can use to differentiate.  
+    		// For example, we don't want to turn 270 degrees right, we want 90 degrees left, etc...
+    		var perpendicularMagnitude = crossProduct / (facingDirMagnitude * desiredDirMagnitude);
+    
+    		// Lerp has limited effect when used in the physics process instead of being called in _PhysicsProcess.
+    		// Instead, we will shift the time step here to control/keep the entire movement from happening in a single frame.
+    		// The higher this is, the slower the rotation will be.
+    		var LerpOffset = 10f;
+    
+    		// If input-based, it may be good to check that there is input as well
+    		if (angleVarianceRadians > 0f)
+    		{
+    			state.AngularVelocity = Vector3.Up * (angleVarianceRadians / (state.Step * LerpOffset)) 
+    			// This bit controls the direction of turning
+    			* Mathf.Sign(perpendicularMagnitude.Y);	
+    		}
         }
-
-        public override void _IntegrateForces(PhysicsDirectBodyState state)
+    
+        public override void _IntegrateForces(PhysicsDirectBodyState3D state)
         {
-            var targetPosition = GetNode<Node3D>("MyTargetNode3DNode").GetGlobalTransform().Origin;
-            LookFollow(state, GetGlobalTransform(), targetPosition);
+    		LookFollow(state, GlobalTransform, targetPosition);
         }
     }
 
