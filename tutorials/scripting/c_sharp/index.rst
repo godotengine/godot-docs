@@ -22,7 +22,7 @@ Godot API for C#
 ----------------
 
 As a general purpose game engine Godot offers some high-level features as a part
-of its API. Articles below explain how these features intergrate into C# and how
+of its API. Articles below explain how these features integrate into C# and how
 C# API may be different from GDScript.
 
 .. toctree::
