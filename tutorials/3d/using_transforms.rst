@@ -158,12 +158,16 @@ It is possible to rotate a transform, either by multiplying its basis by another
 
  .. code-tab:: csharp
 
+    Transform3D transform = Transform;
     Vector3 axis = new Vector3(1, 0, 0); // Or Vector3.Right
     float rotationAmount = 0.1f;
+
     // Rotate the transform around the X axis by 0.1 radians.
     transform.Basis = new Basis(axis, rotationAmount) * transform.Basis;
     // shortened
     transform.Basis = transform.Basis.Rotated(axis, rotationAmount);
+
+    Transform = transform;
 
 A method in Node3D simplifies this:
 

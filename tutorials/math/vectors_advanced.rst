@@ -189,9 +189,9 @@ degrees to either side:
     // Calculate vector from `a` to `b`.
     var dvec = pointA.DirectionTo(pointB);
     // Rotate 90 degrees.
-    var normal = new Vector2(dvec.y, -dvec.x);
+    var normal = new Vector2(dvec.Y, -dvec.X);
     // Alternatively (depending the desired side of the normal):
-    // var normal = new Vector2(-dvec.y, dvec.x);
+    // var normal = new Vector2(-dvec.Y, dvec.X);
 
 The rest is the same as the previous example. Either point_a or
 point_b will work, as they are in the same plane:
