@@ -51,6 +51,26 @@ changes in a text-based format. The second is you need the texture files
 separate from the material file. If you don't need either of those, glTF binary
 files are fine.
 
+The glTF import process first loads the glTF file's data into an in-memory
+GLTFState class. This data is then used to generate a Godot scene.
+When importing files at runtime, this scene can be directly added to the tree.
+The export process is the reverse of this, a Godot scene is converted to a
+GLTFState class, then the glTF file is generated from that.
+
+.. figure:: img/importing_3d_scenes_available_formats_gltf_runtime.webp
+   :align: center
+   :alt: Diagram explaining the runtime import and export process for glTF files in Godot
+
+When importing glTF files in the editor, there are two more steps.
+After generating the Godot scene, the ResourceImporterScene class is used to
+apply additional import settings, including settings you set through the
+Import dock and the Advanced Import Settings dialog. This is then saved as
+a Godot scene file, which is what gets used when you run/export your game.
+
+.. figure:: img/importing_3d_scenes_available_formats_gltf_editor.webp
+   :align: center
+   :alt: Diagram explaining the editor import process for glTF files in Godot
+
 .. warning::
 
     If your model contains blend shapes (also known as "shape keys" and "morph
@@ -105,6 +125,14 @@ directory containing the Blender executable in the Editor Settings
 If you keep ``.blend`` files within your project folder but don't want them to
 be imported by Godot, disable **Filesystem > Import > Blender > Enabled** in the
 advanced Project Settings.
+
+The ``.blend`` import process converts to glTF first, so it still uses
+Godot's glTF import code. Therefore, the ``.blend`` import process is the same
+as the glTF import process, but with an extra step at the beginning.
+
+.. figure:: img/importing_3d_scenes_available_formats_blend.webp
+   :align: center
+   :alt: Diagram explaining the import process for Blender files in Godot
 
 .. note::
 
@@ -165,6 +193,14 @@ specify its path in the dialog.
 If you keep ``.fbx`` files within your project folder but don't want them to
 be imported by Godot, disable **Filesystem > Import > FBX > Enabled** in the
 advanced Project Settings.
+
+The FBX import process converts to glTF first, so it still uses
+Godot's glTF import code. Therefore, the FBX import process is the same
+as the glTF import process, but with an extra step at the beginning.
+
+.. figure:: img/importing_3d_scenes_available_formats_fbx.webp
+   :align: center
+   :alt: Diagram explaining the import process for FBX files in Godot
 
 .. seealso::
 
