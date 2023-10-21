@@ -459,7 +459,7 @@ Here's the *Player* script.
             // Jumping.
             if (IsOnFloor() && Input.IsActionJustPressed("jump"))
             {
-                _targetVelocity.y += JumpImpulse;
+                _targetVelocity.Y += JumpImpulse;
             }
 
             // Iterate through all collisions that occurred this frame.
