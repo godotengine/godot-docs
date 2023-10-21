@@ -73,13 +73,6 @@ The compressor has many uses. For example:
     a :ref:`limiter <doc_audio_buses_limiter>` is likely a better choice
     than a compressor.
 
-Limiter
-~~~~~~~
-
-A limiter is similar to a compressor, but it's less flexible and designed to
-prevent a signal's amplitude exceeding a given dB threshold. Adding a limiter to
-the Master bus is good practice, as it offers an easy safeguard against clipping.
-
 Delay
 ~~~~~
 
@@ -127,6 +120,13 @@ HighShelfFilter
 Reduces all frequencies above a specific *Cutoff* frequency.
 
 .. _doc_audio_buses_limiter:
+
+Limiter
+~~~~~~~
+
+A limiter is similar to a compressor, but it's less flexible and designed to
+prevent a signal's amplitude exceeding a given dB threshold. Adding a limiter to
+the Master bus is good practice, as it offers an easy safeguard against clipping.
 
 LowPassFilter
 ~~~~~~~~~~~~~
