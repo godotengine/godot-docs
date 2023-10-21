@@ -73,20 +73,27 @@ The compressor has many uses. For example:
     a :ref:`limiter <doc_audio_buses_limiter>` is likely a better choice
     than a compressor.
 
+Limiter
+~~~~~~~
+
+A limiter is similar to a compressor, but it's less flexible and designed to
+prevent a signal's amplitude exceeding a given dB threshold. Adding a limiter to
+the Master bus is good practice, as it offers an easy safeguard against clipping.
 
 Delay
 ~~~~~
 
-Adds an "echo" effect with a feedback loop. It can be used together
-with *Reverb* to simulate wide rooms, canyons, etc. where sound bounces
-are far apart.
+Digital delay essentially duplicates a signal and replays it at a specified speed with a volume level that decays for each repeat. Delay is great for simulating the acoustic space of a canyon or large room, where sound bounces have a lot of *delay* between their repeats. This is in contrast to reverb, which has a more natural and blurred sound to it. Using this in conjunction with reverb can create very natural sounding environments!
 
 Distortion
 ~~~~~~~~~~
 
-Makes the sound distorted. Godot offers several types of distortion: *overdrive*,
-*tan* and *bit crushing*. Distortion can be used to simulate sound coming through
+Makes the sound distorted. Godot offers several types of distortion:
+- *Overdrive* sounds like a guitar distortion pedal or megaphone. Sounds distorted with this sound like they're coming through
 a low-quality speaker or device.
+- *Tan* sounds like another interesting flavor of overdrive.
+- *Bit crushing* clamps the amplitude of the signal, making it sound flat and crunchy.
+All three types of distortion can add higher frequency sounds to an original sound, making it stand out better in "the mix".
 
 EQ
 ~~
@@ -97,10 +104,10 @@ scripts to create an equalizer with a custom number of bands.
 EQ6, EQ10, EQ21
 ~~~~~~~~~~~~~~~
 
-Godot provides three equalizers with different numbers of bands. An equalizer on
-the Master bus can be useful to cut frequencies that the device's speakers can't
-reproduce well (e.g. a mobile phone's speakers won't reproduce bass content
-well). The equalizer effect can be disabled when headphones are plugged in.
+Godot provides three equalizers with different numbers of bands, which are represented in the title (6, 10, and 21 bands, respectively). An equalizer on the Master bus can be useful for cutting low and high frequencies that the device's speakers can't
+reproduce well. For example a mobile phone's speakers won't reproduce bass content below 100Hz well, and could introduce sound to a limiter or compressor's attenuator that isn't even audible to the user anyway.
+
+Note: The equalizer effect can be disabled when headphones are plugged in, giving the user the best of both worlds.
 
 Filter
 ~~~~~~
@@ -120,13 +127,6 @@ HighShelfFilter
 Reduces all frequencies above a specific *Cutoff* frequency.
 
 .. _doc_audio_buses_limiter:
-
-Limiter
-~~~~~~~
-
-A limiter is similar to a compressor, but it's less flexible and designed to
-prevent a signal's amplitude exceeding a given dB threshold. Adding a limiter to
-the Master bus is a safeguard against clipping.
 
 LowPassFilter
 ~~~~~~~~~~~~~
