@@ -21,7 +21,7 @@ Description
 
 An advanced :ref:`Variant<class_Variant>` type. All classes in the engine inherit from Object. Each class may define new properties, methods or signals, which are available to all inheriting classes. For example, a :ref:`Sprite2D<class_Sprite2D>` instance is able to call :ref:`Node.add_child<class_Node_method_add_child>` because it inherits from :ref:`Node<class_Node>`.
 
-You can create new instances, using ``Object.new()`` in GDScript, or ``new Object`` in C#.
+You can create new instances, using ``Object.new()`` in GDScript, or ``new GodotObject`` in C#.
 
 To delete an Object instance, call :ref:`free<class_Object_method_free>`. This is necessary for most classes inheriting Object, because they do not manage memory on their own, and will otherwise cause memory leaks when no longer in use. There are a few classes that perform memory management. For example, :ref:`RefCounted<class_RefCounted>` (and by extension :ref:`Resource<class_Resource>`) deletes itself when no longer referenced, and :ref:`Node<class_Node>` deletes its children when freed.
 
@@ -449,7 +449,7 @@ The example below displays ``hammer_type`` in the Inspector dock, only if ``hold
 
 void **_init** **(** **)** |virtual|
 
-Called when the object's script is instantiated, oftentimes after the object is initialized in memory (through ``Object.new()`` in GDScript, or ``new Object`` in C#). It can be also defined to take in parameters. This method is similar to a constructor in most programming languages.
+Called when the object's script is instantiated, oftentimes after the object is initialized in memory (through ``Object.new()`` in GDScript, or ``new GodotObject`` in C#). It can be also defined to take in parameters. This method is similar to a constructor in most programming languages.
 
 \ **Note:** If :ref:`_init<class_Object_method__init>` is defined with *required* parameters, the Object with script may only be created directly. If any other means (such as :ref:`PackedScene.instantiate<class_PackedScene_method_instantiate>` or :ref:`Node.duplicate<class_Node_method_duplicate>`) are used, the script's initialization will fail.
 
@@ -542,6 +542,7 @@ Combined with :ref:`_get<class_Object_method__get>` and :ref:`_get_property_list
             # Storing the value in the fake property.
             internal_data["fake_property"] = value
             return true
+        return false
     
     func _get_property_list():
         return [
@@ -552,7 +553,7 @@ Combined with :ref:`_get<class_Object_method__get>` and :ref:`_get_property_list
 
     private Godot.Collections.Dictionary _internalData = new Godot.Collections.Dictionary();
     
-    public override void _Set(StringName property, Variant value)
+    public override bool _Set(StringName property, Variant value)
     {
         if (property == "FakeProperty")
         {

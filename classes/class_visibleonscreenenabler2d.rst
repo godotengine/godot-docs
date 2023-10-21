@@ -12,14 +12,18 @@ VisibleOnScreenEnabler2D
 
 **Inherits:** :ref:`VisibleOnScreenNotifier2D<class_VisibleOnScreenNotifier2D>` **<** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-Automatically disables another node if not visible on screen.
+A rectangular region of 2D space that, when visible on screen, enables a target node.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-VisibleOnScreenEnabler2D detects when it is visible on screen (just like :ref:`VisibleOnScreenNotifier2D<class_VisibleOnScreenNotifier2D>`) and automatically enables or disables the target node. The target node is disabled when **VisibleOnScreenEnabler2D** is not visible on screen (including when :ref:`CanvasItem.visible<class_CanvasItem_property_visible>` is ``false``), and enabled when the enabler is visible. The disabling is achieved by changing :ref:`Node.process_mode<class_Node_property_process_mode>`.
+**VisibleOnScreenEnabler2D** contains a rectangular region of 2D space and a target node. The target node will be automatically enabled (via its :ref:`Node.process_mode<class_Node_property_process_mode>` property) when any part of this region becomes visible on the screen, and automatically disabled otherwise. This can for example be used to activate enemies only when the player approaches them.
+
+See :ref:`VisibleOnScreenNotifier2D<class_VisibleOnScreenNotifier2D>` if you only want to be notified when the region is visible on screen.
+
+\ **Note:** **VisibleOnScreenEnabler2D** uses the render culling code to determine whether it's visible on screen, so it won't function unless :ref:`CanvasItem.visible<class_CanvasItem_property_visible>` is set to ``true``.
 
 .. rst-class:: classref-reftable-group
 
@@ -94,7 +98,7 @@ Property Descriptions
 - void **set_enable_mode** **(** :ref:`EnableMode<enum_VisibleOnScreenEnabler2D_EnableMode>` value **)**
 - :ref:`EnableMode<enum_VisibleOnScreenEnabler2D_EnableMode>` **get_enable_mode** **(** **)**
 
-Determines how the node is enabled. Corresponds to :ref:`ProcessMode<enum_Node_ProcessMode>`. Disabled node uses :ref:`Node.PROCESS_MODE_DISABLED<class_Node_constant_PROCESS_MODE_DISABLED>`.
+Determines how the target node is enabled. Corresponds to :ref:`ProcessMode<enum_Node_ProcessMode>`. When the node is disabled, it always uses :ref:`Node.PROCESS_MODE_DISABLED<class_Node_constant_PROCESS_MODE_DISABLED>`.
 
 .. rst-class:: classref-item-separator
 
@@ -111,7 +115,7 @@ Determines how the node is enabled. Corresponds to :ref:`ProcessMode<enum_Node_P
 - void **set_enable_node_path** **(** :ref:`NodePath<class_NodePath>` value **)**
 - :ref:`NodePath<class_NodePath>` **get_enable_node_path** **(** **)**
 
-The path to the target node, relative to the **VisibleOnScreenEnabler2D**. The target node is cached; it's only assigned when setting this property (if the **VisibleOnScreenEnabler2D** is inside scene tree) and every time the **VisibleOnScreenEnabler2D** enters the scene tree. If the path is invalid, nothing will happen.
+The path to the target node, relative to the **VisibleOnScreenEnabler2D**. The target node is cached; it's only assigned when setting this property (if the **VisibleOnScreenEnabler2D** is inside the scene tree) and every time the **VisibleOnScreenEnabler2D** enters the scene tree. If the path is invalid, an error will be printed in the editor and no node will be affected.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

@@ -598,9 +598,7 @@ Font size of the **Button**'s text.
 
 :ref:`Texture2D<class_Texture2D>` **icon**
 
-.. container:: contribute
-
-	There is currently no description for this theme property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Default icon for the **Button**. Appears only if :ref:`icon<class_Button_property_icon>` is not assigned.
 
 .. rst-class:: classref-item-separator
 

@@ -692,7 +692,9 @@ Returns ``true`` if the vectors are not equal.
 
 :ref:`Vector4<class_Vector4>` **operator *** **(** :ref:`Projection<class_Projection>` right **)**
 
-Inversely transforms (multiplies) the **Vector4** by the given :ref:`Projection<class_Projection>` matrix.
+Transforms (multiplies) the **Vector4** by the transpose of the given :ref:`Projection<class_Projection>` matrix.
+
+For transforming by inverse of a projection ``projection.inverse() * vector`` can be used instead. See :ref:`Projection.inverse<class_Projection_method_inverse>`.
 
 .. rst-class:: classref-item-separator
 

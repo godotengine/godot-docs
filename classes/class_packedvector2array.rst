@@ -463,7 +463,11 @@ Returns ``true`` if contents of the arrays differ.
 
 :ref:`PackedVector2Array<class_PackedVector2Array>` **operator *** **(** :ref:`Transform2D<class_Transform2D>` right **)**
 
-Transforms (multiplies) all vectors in the array by the :ref:`Transform2D<class_Transform2D>` matrix.
+Returns a new **PackedVector2Array** with all vectors in this array inversely transformed (multiplied) by the given :ref:`Transform2D<class_Transform2D>` transformation matrix, under the assumption that the transformation basis is orthonormal (i.e. rotation/reflection is fine, scaling/skew is not).
+
+\ ``array * transform`` is equivalent to ``transform.inverse() * array``. See :ref:`Transform2D.inverse<class_Transform2D_method_inverse>`.
+
+For transforming by inverse of an affine transformation (e.g. with scaling) ``transform.affine_inverse() * array`` can be used instead. See :ref:`Transform2D.affine_inverse<class_Transform2D_method_affine_inverse>`.
 
 .. rst-class:: classref-item-separator
 

@@ -951,7 +951,11 @@ Returns ``true`` if the vectors are not equal.
 
 :ref:`Vector2<class_Vector2>` **operator *** **(** :ref:`Transform2D<class_Transform2D>` right **)**
 
-Inversely transforms (multiplies) the **Vector2** by the given :ref:`Transform2D<class_Transform2D>` transformation matrix.
+Inversely transforms (multiplies) the **Vector2** by the given :ref:`Transform2D<class_Transform2D>` transformation matrix, under the assumption that the transformation basis is orthonormal (i.e. rotation/reflection is fine, scaling/skew is not).
+
+\ ``vector * transform`` is equivalent to ``transform.inverse() * vector``. See :ref:`Transform2D.inverse<class_Transform2D_method_inverse>`.
+
+For transforming by inverse of an affine transformation (e.g. with scaling) ``transform.affine_inverse() * vector`` can be used instead. See :ref:`Transform2D.affine_inverse<class_Transform2D_method_affine_inverse>`.
 
 .. rst-class:: classref-item-separator
 
