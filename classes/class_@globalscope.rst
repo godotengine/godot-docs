@@ -5416,7 +5416,7 @@ Decodes a byte array back to a :ref:`Variant<class_Variant>` value. Decoding obj
 
 :ref:`Variant<class_Variant>` **ceil** **(** :ref:`Variant<class_Variant>` x **)**
 
-Rounds ``x`` upward (towards positive infinity), returning the smallest whole number that is not less than ``x``. Supported types: :ref:`int<class_int>`, :ref:`float<class_float>`, :ref:`Vector2<class_Vector2>`, :ref:`Vector3<class_Vector3>`, :ref:`Vector4<class_Vector4>`.
+Rounds ``x`` upward (towards positive infinity), returning the smallest whole number that is not less than ``x``. Supported types: :ref:`int<class_int>`, :ref:`float<class_float>`, :ref:`Vector2<class_Vector2>`, :ref:`Vector2i<class_Vector2i>`, :ref:`Vector3<class_Vector3>`, :ref:`Vector3i<class_Vector3i>`, :ref:`Vector4<class_Vector4>`, :ref:`Vector4i<class_Vector4i>`.
 
 ::
 
@@ -5718,7 +5718,7 @@ For exponents to other bases use the method :ref:`pow<class_@GlobalScope_method_
 
 :ref:`Variant<class_Variant>` **floor** **(** :ref:`Variant<class_Variant>` x **)**
 
-Rounds ``x`` downward (towards negative infinity), returning the largest whole number that is not more than ``x``. Supported types: :ref:`int<class_int>`, :ref:`float<class_float>`, :ref:`Vector2<class_Vector2>`, :ref:`Vector3<class_Vector3>`, :ref:`Vector4<class_Vector4>`.
+Rounds ``x`` downward (towards negative infinity), returning the largest whole number that is not more than ``x``. Supported types: :ref:`int<class_int>`, :ref:`float<class_float>`, :ref:`Vector2<class_Vector2>`, :ref:`Vector2i<class_Vector2i>`, :ref:`Vector3<class_Vector3>`, :ref:`Vector3i<class_Vector3i>`, :ref:`Vector4<class_Vector4>`, :ref:`Vector4i<class_Vector4i>`.
 
 ::
 
@@ -6825,7 +6825,7 @@ If ``delta`` is negative, this function will rotate away from ``to``, toward the
 
 :ref:`Variant<class_Variant>` **round** **(** :ref:`Variant<class_Variant>` x **)**
 
-Rounds ``x`` to the nearest whole number, with halfway cases rounded away from 0. Supported types: :ref:`int<class_int>`, :ref:`float<class_float>`, :ref:`Vector2<class_Vector2>`, :ref:`Vector3<class_Vector3>`, :ref:`Vector4<class_Vector4>`.
+Rounds ``x`` to the nearest whole number, with halfway cases rounded away from 0. Supported types: :ref:`int<class_int>`, :ref:`float<class_float>`, :ref:`Vector2<class_Vector2>`, :ref:`Vector2i<class_Vector2i>`, :ref:`Vector3<class_Vector3>`, :ref:`Vector3i<class_Vector3i>`, :ref:`Vector4<class_Vector4>`, :ref:`Vector4i<class_Vector4i>`.
 
 ::
 

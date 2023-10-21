@@ -14,18 +14,18 @@ VisibleOnScreenNotifier3D
 
 **Inherited By:** :ref:`VisibleOnScreenEnabler3D<class_VisibleOnScreenEnabler3D>`
 
-Detects approximately when the node is visible on screen.
+A box-shaped region of 3D space that detects whether it is visible on screen.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-The VisibleOnScreenNotifier3D detects when it is visible on the screen. It also notifies when its bounding rectangle enters or exits the screen or a :ref:`Camera3D<class_Camera3D>`'s view.
+:ref:`VisibleOnScreenEnabler3D<class_VisibleOnScreenEnabler3D>` represents a box-shaped region of 3D space. When any part of this region becomes visible on screen or in a :ref:`Camera3D<class_Camera3D>`'s view, it will emit a :ref:`screen_entered<class_VisibleOnScreenNotifier3D_signal_screen_entered>` signal, and likewise it will emit a :ref:`screen_exited<class_VisibleOnScreenNotifier3D_signal_screen_exited>` signal when no part of it remains visible.
 
-If you want nodes to be disabled automatically when they exit the screen, use :ref:`VisibleOnScreenEnabler3D<class_VisibleOnScreenEnabler3D>` instead.
+If you want a node to be enabled automatically when this region is visible on screen, use :ref:`VisibleOnScreenEnabler3D<class_VisibleOnScreenEnabler3D>`.
 
-\ **Note:** VisibleOnScreenNotifier3D uses the render culling code to determine whether it's visible on screen, which also means that its :ref:`Node3D.visible<class_Node3D_property_visible>` must be ``true`` to work correctly.
+\ **Note:** **VisibleOnScreenNotifier3D** uses an approximate heuristic that doesn't take walls and other occlusion into account, unless occlusion culling is used. It also won't function unless :ref:`Node3D.visible<class_Node3D_property_visible>` is set to ``true``.
 
 .. rst-class:: classref-reftable-group
 
@@ -66,7 +66,7 @@ Signals
 
 **screen_entered** **(** **)**
 
-Emitted when the VisibleOnScreenNotifier3D enters the screen.
+Emitted when the **VisibleOnScreenNotifier3D** enters the screen.
 
 .. rst-class:: classref-item-separator
 
@@ -78,7 +78,7 @@ Emitted when the VisibleOnScreenNotifier3D enters the screen.
 
 **screen_exited** **(** **)**
 
-Emitted when the VisibleOnScreenNotifier3D exits the screen.
+Emitted when the **VisibleOnScreenNotifier3D** exits the screen.
 
 .. rst-class:: classref-section-separator
 
@@ -100,7 +100,7 @@ Property Descriptions
 - void **set_aabb** **(** :ref:`AABB<class_AABB>` value **)**
 - :ref:`AABB<class_AABB>` **get_aabb** **(** **)**
 
-The VisibleOnScreenNotifier3D's bounding box.
+The **VisibleOnScreenNotifier3D**'s bounding box.
 
 .. rst-class:: classref-section-separator
 
@@ -117,9 +117,9 @@ Method Descriptions
 
 :ref:`bool<class_bool>` **is_on_screen** **(** **)** |const|
 
-If ``true``, the bounding box is on the screen.
+Returns ``true`` if the bounding box is on the screen.
 
-\ **Note:** It takes one frame for the node's visibility to be assessed once added to the scene tree, so this method will return ``false`` right after it is instantiated, even if it will be on screen in the draw pass.
+\ **Note:** It takes one frame for the **VisibleOnScreenNotifier3D**'s visibility to be assessed once added to the scene tree, so this method will always return ``false`` right after it is instantiated.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

@@ -998,7 +998,7 @@ If ``true``, every character is replaced with the secret character (see :ref:`se
 - void **set_secret_character** **(** :ref:`String<class_String>` value **)**
 - :ref:`String<class_String>` **get_secret_character** **(** **)**
 
-The character to use to mask secret input (defaults to "•"). Only a single character can be used as the secret character.
+The character to use to mask secret input. Only a single character can be used as the secret character. If it is longer than one character, only the first one will be used. If it is empty, a space will be used instead.
 
 .. rst-class:: classref-item-separator
 

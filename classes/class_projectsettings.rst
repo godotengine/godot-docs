@@ -129,6 +129,10 @@ Properties
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                         | :ref:`audio/general/3d_panning_strength<class_ProjectSettings_property_audio/general/3d_panning_strength>`                                                                                                 | ``0.5``                                                                                          |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`audio/general/ios/mix_with_others<class_ProjectSettings_property_audio/general/ios/mix_with_others>`                                                                                                 | ``false``                                                                                        |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`audio/general/ios/session_category<class_ProjectSettings_property_audio/general/ios/session_category>`                                                                                               | ``0``                                                                                            |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`audio/general/text_to_speech<class_ProjectSettings_property_audio/general/text_to_speech>`                                                                                                           | ``false``                                                                                        |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`audio/video/video_delay_compensation_ms<class_ProjectSettings_property_audio/video/video_delay_compensation_ms>`                                                                                     | ``0``                                                                                            |
@@ -2179,6 +2183,32 @@ The default value of ``0.5`` is tuned for headphones. When using speakers, you m
 The base strength of the panning effect for all :ref:`AudioStreamPlayer3D<class_AudioStreamPlayer3D>` nodes. The panning strength can be further scaled on each Node using :ref:`AudioStreamPlayer3D.panning_strength<class_AudioStreamPlayer3D_property_panning_strength>`. A value of ``0.0`` disables stereo panning entirely, leaving only volume attenuation in place. A value of ``1.0`` completely mutes one of the channels if the sound is located exactly to the left (or right) of the listener.
 
 The default value of ``0.5`` is tuned for headphones. When using speakers, you may find lower values to sound better as speakers have a lower stereo separation compared to headphones.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_audio/general/ios/mix_with_others:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **audio/general/ios/mix_with_others** = ``false``
+
+Sets the `mixWithOthers <https://developer.apple.com/documentation/avfaudio/avaudiosession/categoryoptions/1616611-mixwithothers>`__ option for the AVAudioSession on iOS. This will override the mix behavior, if the category is set to ``Play and Record``, ``Playback``, or ``Multi Route``.
+
+\ ``Ambient`` always has this set per default.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_audio/general/ios/session_category:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **audio/general/ios/session_category** = ``0``
+
+Sets the `AVAudioSessionCategory <https://developer.apple.com/documentation/avfaudio/avaudiosessioncategory>`__ on iOS. Use the ``Playback`` category to get sound output, even if the phone is in silent mode.
 
 .. rst-class:: classref-item-separator
 

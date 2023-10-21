@@ -300,7 +300,7 @@ Method Descriptions
 
 :ref:`Transform2D<class_Transform2D>` **affine_inverse** **(** **)** |const|
 
-Returns the inverse of the transform, under the assumption that the transformation is composed of rotation, scaling and translation.
+Returns the inverse of the transform, under the assumption that the basis is invertible (must have non-zero determinant).
 
 .. rst-class:: classref-item-separator
 
@@ -314,7 +314,7 @@ Returns the inverse of the transform, under the assumption that the transformati
 
 Returns a vector transformed (multiplied) by the basis matrix.
 
-This method does not account for translation (the origin vector).
+This method does not account for translation (the :ref:`origin<class_Transform2D_property_origin>` vector).
 
 .. rst-class:: classref-item-separator
 
@@ -326,9 +326,13 @@ This method does not account for translation (the origin vector).
 
 :ref:`Vector2<class_Vector2>` **basis_xform_inv** **(** :ref:`Vector2<class_Vector2>` v **)** |const|
 
-Returns a vector transformed (multiplied) by the inverse basis matrix.
+Returns a vector transformed (multiplied) by the inverse basis matrix, under the assumption that the basis is orthonormal (i.e. rotation/reflection is fine, scaling/skew is not).
 
-This method does not account for translation (the origin vector).
+This method does not account for translation (the :ref:`origin<class_Transform2D_property_origin>` vector).
+
+\ ``transform.basis_xform_inv(vector)`` is equivalent to ``transform.inverse().basis_xform(vector)``. See :ref:`inverse<class_Transform2D_method_inverse>`.
+
+For non-orthonormal transforms (e.g. with scaling) ``transform.affine_inverse().basis_xform(vector)`` can be used instead. See :ref:`affine_inverse<class_Transform2D_method_affine_inverse>`.
 
 .. rst-class:: classref-item-separator
 
@@ -414,7 +418,7 @@ Returns a transform interpolated between this transform and another by a given `
 
 :ref:`Transform2D<class_Transform2D>` **inverse** **(** **)** |const|
 
-Returns the inverse of the transform, under the assumption that the transformation is composed of rotation and translation (no scaling, use :ref:`affine_inverse<class_Transform2D_method_affine_inverse>` for transforms with scaling).
+Returns the inverse of the transform, under the assumption that the transformation basis is orthonormal (i.e. rotation/reflection is fine, scaling/skew is not). Use :ref:`affine_inverse<class_Transform2D_method_affine_inverse>` for non-orthonormal transforms (e.g. with scaling).
 
 .. rst-class:: classref-item-separator
 
@@ -651,7 +655,7 @@ Transforms (multiplies) the :ref:`Vector2<class_Vector2>` by the given **Transfo
 
 :ref:`Transform2D<class_Transform2D>` **operator *** **(** :ref:`float<class_float>` right **)**
 
-This operator multiplies all components of the **Transform2D**, including the origin vector, which scales it uniformly.
+This operator multiplies all components of the **Transform2D**, including the :ref:`origin<class_Transform2D_property_origin>` vector, which scales it uniformly.
 
 .. rst-class:: classref-item-separator
 
@@ -663,7 +667,7 @@ This operator multiplies all components of the **Transform2D**, including the or
 
 :ref:`Transform2D<class_Transform2D>` **operator *** **(** :ref:`int<class_int>` right **)**
 
-This operator multiplies all components of the **Transform2D**, including the origin vector, which scales it uniformly.
+This operator multiplies all components of the **Transform2D**, including the :ref:`origin<class_Transform2D_property_origin>` vector, which scales it uniformly.
 
 .. rst-class:: classref-item-separator
 

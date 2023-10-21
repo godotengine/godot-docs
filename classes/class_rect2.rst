@@ -520,7 +520,11 @@ Returns ``true`` if the :ref:`position<class_Rect2_property_position>` or :ref:`
 
 :ref:`Rect2<class_Rect2>` **operator *** **(** :ref:`Transform2D<class_Transform2D>` right **)**
 
-Inversely transforms (multiplies) the **Rect2** by the given :ref:`Transform2D<class_Transform2D>` transformation matrix.
+Inversely transforms (multiplies) the **Rect2** by the given :ref:`Transform2D<class_Transform2D>` transformation matrix, under the assumption that the transformation basis is orthonormal (i.e. rotation/reflection is fine, scaling/skew is not).
+
+\ ``rect * transform`` is equivalent to ``transform.inverse() * rect``. See :ref:`Transform2D.inverse<class_Transform2D_method_inverse>`.
+
+For transforming by inverse of an affine transformation (e.g. with scaling) ``transform.affine_inverse() * rect`` can be used instead. See :ref:`Transform2D.affine_inverse<class_Transform2D_method_affine_inverse>`.
 
 .. rst-class:: classref-item-separator
 

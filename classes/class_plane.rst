@@ -475,6 +475,8 @@ Returns ``true`` if the planes are not equal.
 
 Inversely transforms (multiplies) the **Plane** by the given :ref:`Transform3D<class_Transform3D>` transformation matrix.
 
+\ ``plane * transform`` is equivalent to ``transform.affine_inverse() * plane``. See :ref:`Transform3D.affine_inverse<class_Transform3D_method_affine_inverse>`.
+
 .. rst-class:: classref-item-separator
 
 ----
