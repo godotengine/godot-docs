@@ -100,11 +100,11 @@ call the Godot executable:
 
 .. code-block:: none
 
-    godot --dump-extension-api extension_api.json
+    godot --dump-extension-api 
 
-Place the resulting ``extension_api.json`` file in the project folder and add
-``custom_api_file=<PATH_TO_FILE>`` to the scons command
-below.
+The resulting ``extension_api.json`` file will be created in the executable's 
+directory. Copy it to the project folder and add ``custom_api_file=<PATH_TO_FILE>`` 
+to the scons command below.
 
 To generate and compile the bindings, use this command (replacing ``<platform>``
 with ``windows``, ``linux`` or ``macos`` depending on your OS):
