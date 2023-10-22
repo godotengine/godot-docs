@@ -341,45 +341,71 @@ AnimatedSprite2D is playing based on its direction. We have the "walk" animation
 which shows the player walking to the right. This animation should be flipped
 horizontally using the ``flip_h`` property for left movement. We also have the
 "up" animation, which should be flipped vertically with ``flip_v`` for downward
-movement. Let's place this code at the end of the ``_process()`` function:
+movement. Replace the previous code referencing AnimatedSprite2D with the following:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
 
+        var animation
+
         if velocity.x != 0:
-            $AnimatedSprite2D.animation = "walk"
+            animation = "walk"
             $AnimatedSprite2D.flip_v = false
             # See the note below about boolean assignment.
             $AnimatedSprite2D.flip_h = velocity.x < 0
         elif velocity.y != 0:
-            $AnimatedSprite2D.animation = "up"
+            animation = "up"
             $AnimatedSprite2D.flip_v = velocity.y > 0
+
+        if animation:
+            $AnimatedSprite2D.play(animation)
+        else:
+            $AnimatedSprite2D.stop()
 
  .. code-tab:: csharp
 
+        string animation = null;
+
         if (velocity.X != 0)
         {
-            animatedSprite2D.Animation = "walk";
+            animation = "walk";
             animatedSprite2D.FlipV = false;
             // See the note below about boolean assignment.
             animatedSprite2D.FlipH = velocity.X < 0;
         }
         else if (velocity.Y != 0)
         {
-            animatedSprite2D.Animation = "up";
+            animation = "up";
             animatedSprite2D.FlipV = velocity.Y > 0;
+        }
+
+        if (animation != null)
+        {
+            animatedSprite2D.Play(animation);
+        }
+        else
+        {
+            animatedSprite2D.Stop();
         }
 
  .. code-tab:: cpp
 
+        const char* animation = nullptr;
+
         if (velocity.x != 0) {
-            _animated_sprite->set_animation("walk");
+            animation = "walk";
             _animated_sprite->set_flip_v(false);
             // See the note below about boolean assignment.
             _animated_sprite->set_flip_h(velocity.x < 0);
         } else if (velocity.y != 0) {
-            _animated_sprite->set_animation("up");
+            animation = "up";
             _animated_sprite->set_flip_v(velocity.y > 0);
+        }
+
+        if (animation) {
+            _animated_sprite->play(animation);
+        } else {
+            _animated_sprite->Stop();
         }
 
 .. Note:: The boolean assignments in the code above are a common shorthand for
