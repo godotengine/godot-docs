@@ -19,10 +19,8 @@ jobs:
         run: |
           # Install tools used by `_tools/format.sh`.
           sudo apt-get -qq update
-          sudo apt-get -qq install python3.9 dos2unix recode
-          python3 --version
-          python3.9 --version
-          sudo pip3 -v install -r requirements.txt
+          sudo apt-get -qq install dos2unix recode
+          sudo pip3 install -r requirements.txt
           sudo pip3 install codespell
 
       - name: Linter checks
