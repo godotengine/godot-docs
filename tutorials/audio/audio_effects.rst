@@ -17,7 +17,8 @@ Amplify
 ~~~~~~~
 
 Amplify changes the volume of the signal. Some care needs to be taken, though:
-setting the level too high can make the sound digitally clip, which can produce unpleasant crackles and pops.
+setting the level too high can make the sound digitally clip, which can produce
+unpleasant crackles and pops.
 
 BandLimit and BandPass
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -38,7 +39,13 @@ or to transmit audio over the network in real-time.
 Chorus
 ~~~~~~
 
-As the name of the effect implies, the Chorus effect makes a single audio sample sound like an entire chorus. It does this by duplicating a signal and very slightly altering the timing and pitch of each duplicate, and varying that over time via an LFO (low frequency oscillator). The duplicate(s) are then mixed back together with the original signal, producing a lush, wide, and large sound. Although chorus is traditionally used for voices, it can be desirable with almost any type of sound.
+As the name of the effect implies, the Chorus effect makes a single audio sample
+sound like an entire chorus. It does this by duplicating a signal and very
+slightly altering the timing and pitch of each duplicate, and varying that
+over time via an LFO (low frequency oscillator). The duplicate(s) are then
+mixed back together with the original signal, producing a lush, wide, and
+large sound. Although chorus is traditionally used for voices, it can be
+desirable with almost any type of sound.
 
 Compressor
 ~~~~~~~~~~
@@ -73,7 +80,12 @@ The compressor has many uses. For example:
 Delay
 ~~~~~
 
-Digital delay essentially duplicates a signal and repeats it at a specified speed with a volume level that decays for each repeat. Delay is great for simulating the acoustic space of a canyon or large room, where sound bounces have a lot of *delay* between their repeats. This is in contrast to reverb, which has a more natural and blurred sound to it. Using this in conjunction with reverb can create very natural sounding environments!
+Digital delay essentially duplicates a signal and repeats it at a specified
+speed with a volume level that decays for each repeat. Delay is great for
+simulating the acoustic space of a canyon or large room, where sound bounces
+have a lot of *delay* between their repeats. This is in contrast to reverb,
+which has a more natural and blurred sound to it. Using this in conjunction
+with reverb can create very natural sounding environments!
 
 Distortion
 ~~~~~~~~~~
@@ -96,7 +108,13 @@ scripts to create an equalizer with a custom number of bands.
 EQ6, EQ10, EQ21
 ~~~~~~~~~~~~~~~
 
-Godot provides three equalizers with different numbers of bands, which are represented in the title (6, 10, and 21 bands, respectively). An equalizer on the Master bus can be useful for cutting low and high frequencies that the device's speakers can't reproduce well. For example, phone or tablet speakers usually don't reproduce low frequency sounds well, and could make a limiter or compressor attenuate sounds that aren't even audible to the user anyway.
+Godot provides three equalizers with different numbers of bands, which
+are represented in the title (6, 10, and 21 bands, respectively).
+An equalizer on the Master bus can be useful for cutting low and high
+frequencies that the device's speakers can't reproduce well.
+For example, phone or tablet speakers usually don't reproduce
+low frequency sounds well, and could make a limiter or compressor
+attenuate sounds that aren't even audible to the user anyway.
 
 Note: The equalizer effect can be disabled when headphones are plugged in, giving the user the best of both worlds.
 
@@ -154,7 +172,11 @@ the left and right channels. Headphones are recommended when configuring in this
 Phaser
 ~~~~~~
 
-This effect is formed by de-phasing two duplicates of the same sound so they cancel each other out in an interesting way. Phaser produces a pleasant whooshing sound that moves back and forth through the audio spectrum, and can be a great way to create sci fi effects or Darth Vader-like voices.
+This effect is formed by de-phasing two duplicates of the same sound so
+they cancel each other out in an interesting way. Phaser produces a
+pleasant whooshing sound that moves back and forth through the audio
+spectrum, and can be a great way to create sci fi effects or Darth
+Vader-like voices.
 
 PitchShift
 ~~~~~~~~~~
