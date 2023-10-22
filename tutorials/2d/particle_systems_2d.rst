@@ -388,9 +388,10 @@ To set up the particle flipbook for linear playback, set the **Speed Min** and *
    Setting up particle animation for playback during the particle's lifetime
 
 By default, looping is disabled. If the particle is done playing before its
-lifetime ends, the particle will keep using the flipbook's frame (which may be
-fully transparent depending on how the flipbook texture is designed). If looping
-is enabled, the animation will loop back to the first frame and resume playing.
+lifetime ends, the particle will keep using the flipbook's last frame (which may
+be fully transparent depending on how the flipbook texture is designed). If
+looping is enabled, the animation will loop back to the first frame and resume
+playing.
 
 Depending on how many images your sprite sheet contains and for how long your
 particle is alive, the animation might not look smooth. The relationship between
