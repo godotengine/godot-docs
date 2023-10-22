@@ -322,7 +322,7 @@ If you are using :ref:`EditorScript<class_EditorScript>`:
 
     func _run():
         # `parent` could be any node in the scene.
-        var parent = get_scene().find_node("Parent")
+        var parent = get_scene().get_node("Parent")
         var node = Node3D.new()
         parent.add_child(node)
 
@@ -335,7 +335,7 @@ If you are using :ref:`EditorScript<class_EditorScript>`:
     public override void _Run()
     {
         // `parent` could be any node in the scene.
-        var parent = GetScene().FindNode("Parent");
+        var parent = GetScene().GetNode("Parent");
         var node = new Node3D();
         parent.AddChild(node);
 
