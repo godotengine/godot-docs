@@ -1,22 +1,21 @@
 # Sync with readthedocs:
 # https://github.com/readthedocs/readthedocs.org/blob/master/requirements/pip.txt
 # https://github.com/readthedocs/readthedocs.org/blob/master/requirements/docs.txt
-# Noop
 
 # Base dependencies
-pygments==2.16.1
+pygments==2.15.1
 
 # Sphinx base and RTD theme.
-sphinx==7.2.6
-sphinx_rtd_theme==2.0.0rc2
+sphinx==4.4.0
+sphinx_rtd_theme==1.1.1
 
 # Sphinx extensions.
 
 # Code tabs extension to display codeblocks in different languages as tabs.
-sphinx-tabs==3.4.1
+sphinx-tabs==3.4.0
 # Adds a 'copy' button to the right of codeblocks.
-sphinx-copybutton==0.5.2
+sphinx-copybutton==0.5.1
 # Custom 404 error page (more useful than the default).
-sphinx-notfound-page==1.0.0
+sphinx-notfound-page==0.8.3
 # Adds Open Graph tags in the HTML `<head>` tag.
-sphinxext-opengraph==0.8.2
+sphinxext-opengraph==0.7.5
