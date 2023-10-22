@@ -83,6 +83,7 @@ Makes the sound distorted. Godot offers several types of distortion:
 a low-quality speaker or device.
 - *Tan* sounds like another interesting flavor of overdrive.
 - *Bit crushing* clamps the amplitude of the signal, making it sound flat and crunchy.
+
 All three types of distortion can add higher frequency sounds to an original sound, making it stand out better in a mix.
 
 EQ
