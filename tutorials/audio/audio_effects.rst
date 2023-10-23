@@ -93,7 +93,7 @@ Distortion
 Makes the sound distorted. Godot offers several types of distortion:
 
 - *Overdrive* sounds like a guitar distortion pedal or megaphone. Sounds distorted with this sound like they're coming through
-a low-quality speaker or device.
+  a low-quality speaker or device.
 - *Tan* sounds like another interesting flavor of overdrive.
 - *Bit crushing* clamps the amplitude of the signal, making it sound flat and crunchy.
 
