@@ -581,6 +581,9 @@ The most notable examples of this are:
 - :ref:`class_AnimatedSprite2D` and :ref:`class_AnimatedSprite3D`'s ``playing``
   property was removed. Use ``play()``/``stop()`` method instead OR configure
   ``autoplay`` animation via the SpriteFrames bottom panel (but not both at once).
+- :ref:`class_Array`'s ``slice()`` second parameter (``end``) is now *exclusive*,
+  instead of being inclusive. For example, this means that
+  ``[1, 2, 3].slice(0, 1)`` now returns ``[1]`` instead of ``[1, 2]``.
 - :ref:`class_BaseButton`'s signals are now ``button_up`` and ``button_down``.
   The ``pressed`` property is now ``button_pressed``.
 - :ref:`class_Camera2D`'s ``rotating`` property was replaced by
