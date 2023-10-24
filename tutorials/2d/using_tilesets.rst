@@ -605,6 +605,13 @@ atlas), but configured in different ways. For example, you may want to use the
 same tile image, but rotated, flipped, or modulated with a different color. This
 can be done using *alternative tiles*.
 
+.. tip::
+
+      Since Godot 4.2, you don't have to create alternative tiles to rotate or
+      flip tiles anymore. You can rotate any tile while placing it in the
+      TileMap editor by using the rotation/flip buttons in the TileMap editor
+      toolbar.
+
 To create an alternative tile, right-click a base tile in the atlas displayed by
 the TileSet editor, then choose **Create an Alternative Tile**:
 
