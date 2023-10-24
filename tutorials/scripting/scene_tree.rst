@@ -118,7 +118,7 @@ then the node below that and so on.
 An important exception is the ``_ready()`` function: each parent node has its
 ``_ready()`` function called only after all its child nodes have their 
 ``_ready()`` functions called, so that the parent knows its children are 
-completely ready to be accessed.  This is also known as post-order traversal.
+completely ready to be accessed. This is also known as post-order traversal.
 In the above image, ``NameLabel`` would be notified first (but only after its
 children, if it had any!), followed by ``Name``, etc., and ``Panel`` would be
 notified last.
