@@ -60,7 +60,7 @@ procedure:
 
  .. code-tab:: csharp
 
-    GetTree().SetAutoAcceptQuit(false);
+    GetTree().AutoAcceptQuit = false;
 
 Sending your own quit notification
 ----------------------------------
