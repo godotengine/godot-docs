@@ -501,7 +501,7 @@ this code to the function:
 
  .. code-tab:: csharp
 
-    private void OnBodyEntered(PhysicsBody2D body)
+    private void OnBodyEntered(Node2D body)
     {
         Hide(); // Player disappears after being hit.
         EmitSignal(SignalName.Hit);
