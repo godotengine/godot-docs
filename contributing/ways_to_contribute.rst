@@ -5,7 +5,7 @@ Ways to contribute
 
 Godot Engine is a non-profit, community-driven free and open source project.
 Almost all (but our lead dev Juan, more on that below) developers are working
-*pro bono* on their free time, out of personal interest and for the love of
+*pro bono* in their free time, out of personal interest and for the love of
 creating a libre engine of exceptional quality.
 
 This means that to thrive, Godot needs as many users as possible to get
@@ -14,24 +14,24 @@ such a big project, making it possible for everybody to bring something
 positive to the engine, regardless of their skill set:
 
 -  **Be part of the community.** The best way to contribute to Godot and help
-   it become ever better is simply to use the engine and promote it by
+   it become even better is simply to use the engine and promote it by
    word-of-mouth, in the credits or splash screen of your games, blog posts, tutorials,
-   videos, demos, gamedev or free software events, support on the Q&A, forums,
+   videos, demos, gamedev, or free software events, support on the Q&A, forums,
    Contributors Chat, Discord, etc. Participate!
    Being a user and advocate helps spread the word about our great engine,
    which has no marketing budget and can therefore only rely on its community
    to become more mainstream.
 
--  **Make games.** It's no secret that, to convince new users and especially the
+-  **Make games.** It's no secret that to convince new users and especially the
    industry at large that Godot is a relevant market player, we need great games
    made with Godot. We know that the engine has a lot of potential, both for 2D
    and 3D games, but given its young age we still lack big releases that will
    draw attention to Godot. So keep working on your awesome projects, each new
    game increases our credibility on the gamedev market!
 
--  **Get involved in the engine's development.** This can be by contributing
+-  **Get involved in the engine's development.** This can be done by contributing
    code via pull requests, testing the development snapshots or directly the
-   git *master* branch, report bugs or suggest enhancements on the issue
+   git *master* branch, report bugs or suggest enhancements to the issue
    tracker, improve the official documentation (both the class reference and
    tutorials) and its translations.
    The following sections will cover each of those "direct" ways
@@ -99,7 +99,7 @@ All pull requests must go through a review process before being accepted.
 Depending on the scope of the changes, it may take some time for a maintainer
 responsible for the modified part of the engine to provide their review.
 We value all of our contributors and ask them to be patient in the meantime,
-as it is expected that in an open source project like Godot, there is going to be
+as it is expected that in an open-source project like Godot, there is going to be
 way more contributions than people validating them.
 
 To make sure that your time and efforts aren't wasted, it is recommended to vet the idea
