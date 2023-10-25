@@ -191,16 +191,16 @@ the export menu.
    * - Export option
      - Environment variable
    * - Encryption / Encryption Key
-     - GODOT_SCRIPT_ENCRYPTION_KEY
+     - ``GODOT_SCRIPT_ENCRYPTION_KEY``
    * - Options / Keystore / Debug
-     - GODOT_ANDROID_KEYSTORE_DEBUG_PATH
+     - ``GODOT_ANDROID_KEYSTORE_DEBUG_PATH``
    * - Options / Keystore / Debug User
-     - GODOT_ANDROID_KEYSTORE_DEBUG_USER
+     - ``GODOT_ANDROID_KEYSTORE_DEBUG_USER``
    * - Options / Keystore / Debug Password
-     - GODOT_ANDROID_KEYSTORE_DEBUG_PASSWORD
+     - ``GODOT_ANDROID_KEYSTORE_DEBUG_PASSWORD``
    * - Options / Keystore / Release
-     - GODOT_ANDROID_KEYSTORE_RELEASE_PATH
+     - ``GODOT_ANDROID_KEYSTORE_RELEASE_PATH``
    * - Options / Keystore / Release User
-     - GODOT_ANDROID_KEYSTORE_RELEASE_USER
+     - ``GODOT_ANDROID_KEYSTORE_RELEASE_USER``
    * - Options / Keystore / Release Password
-     - GODOT_ANDROID_KEYSTORE_RELEASE_PASSWORD
+     - ``GODOT_ANDROID_KEYSTORE_RELEASE_PASSWORD``

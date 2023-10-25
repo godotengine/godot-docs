@@ -20,9 +20,11 @@ in the user's browser.
     Projects written in C# using Godot 4 currently cannot be exported to the
     web. To use C# on web platforms, use Godot 3 instead.
 
-.. important:: Use the browser-integrated developer console, usually opened
-               with :kbd:`F12`, to view **debug information** like JavaScript,
-               engine, and WebGL errors.
+.. tip::
+
+    Use the browser-integrated developer console, usually opened
+    with :kbd:`F12` (:kbd:`Cmd + Option + I` on macOS), to view
+    **debug information** like JavaScript, engine, and WebGL errors.
 
 .. attention::
 
@@ -34,10 +36,6 @@ in the user's browser.
     Godot 3's HTML5 exports are more compatible with various browsers in
     general, especially when using the GLES2 rendering backend (which only
     requires WebGL 1.0).
-
-.. warning:: SharedArrayBuffer requires a :ref:`secure context <doc_javascript_secure_contexts>`.
-             Browsers also require that the web page is served with specific
-             `cross-origin isolation headers <https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cross-Origin-Embedder-Policy>`__.
 
 WebGL version
 -------------
@@ -92,11 +90,6 @@ of limitations you should be aware of when porting a Godot game to the web.
                this means that such features are only be available if the web
                page is served via a secure HTTPS connection (localhost is
                usually exempt from such requirement).
-
-.. tip:: Check the `list of open HTML5 issues on GitHub
-         <https://github.com/godotengine/godot/issues?q=is:open+is:issue+label:platform:web>`__
-         to see if the functionality you're interested in has an issue yet. If
-         not, open one to communicate your interest.
 
 Using cookies for data persistence
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -203,12 +196,32 @@ Exporting for the web generates several files to be served from a web server,
 including a default HTML page for presentation. A custom HTML file can be
 used, see :ref:`doc_customizing_html5_shell`.
 
+.. warning::
+
+    To ensure low audio latency and the ability to use :ref:`class_Thread` in web exports,
+    Godot 4 web exports always use
+    `SharedArrayBuffer <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer>`__.
+    This requires a :ref:`secure context <doc_javascript_secure_contexts>`,
+    while also requiring the following CORS headers to be set when serving the files:
+
+    ::
+
+        Cross-Origin-Opener-Policy: same-origin
+        Cross-Origin-Embedder-Policy: require-corp
+
+    If you don't control the web server or are unable to add response headers,
+    use `coi-serviceworker <https://github.com/gzuidhof/coi-serviceworker>`__
+    as a workaround.
+
+    If the client doesn't receive the required response headers,
+    **the project will not run**.
+
 The generated ``.html`` file can be used as ``DirectoryIndex`` in Apache
-servers and can be renamed to e.g. ``index.html`` at any time, its name is
+servers and can be renamed to e.g. ``index.html`` at any time. Its name is
 never depended on by default.
 
 The HTML page draws the game at maximum size within the browser window.
-This way it can be inserted into an ``<iframe>`` with the game's size, as is
+This way, it can be inserted into an ``<iframe>`` with the game's size, as is
 common on most web game hosting sites.
 
 The other exported files are served as they are, next to the ``.html`` file,
@@ -223,23 +236,17 @@ The ``.pck`` file is binary, usually delivered with the MIME-type
 :mimetype:`application/octet-stream`. The ``.wasm`` file is delivered as
 :mimetype:`application/wasm`.
 
-.. caution:: Delivering the WebAssembly module (``.wasm``) with a MIME-type
-             other than :mimetype:`application/wasm` can prevent some start-up
-             optimizations.
+.. warning::
 
-.. tip::
-    Godot 4 web exports use the `SharedArrayBuffer <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer>`__, and require the following CORS headers to be set when serving the files:
-
-    ::
-        Cross-Origin-Opener-Policy: same-origin
-        Cross-Origin-Embedder-Policy: require-corp
-
-
+    Delivering the WebAssembly module (``.wasm``) with a MIME-type
+    other than :mimetype:`application/wasm` can prevent some start-up
+    optimizations.
 
 Delivering the files with server-side compression is recommended especially for
-the ``.pck`` and ``.wasm`` files, which are usually large in size.
-The WebAssembly module compresses particularly well, down to around a quarter
-of its original size with gzip compression.
+the ``.pck`` and ``.wasm`` files, which are usually large in size. The
+WebAssembly module compresses particularly well, down to around a quarter of its
+original size with gzip compression. Consider using Brotli precompression if
+supported on your web server for further file size savings.
 
 **Hosts that provide on-the-fly compression:** GitHub Pages (gzip)
 
@@ -389,4 +396,4 @@ the export menu.
    * - Export option
      - Environment variable
    * - Encryption / Encryption Key
-     - GODOT_SCRIPT_ENCRYPTION_KEY
+     - ``GODOT_SCRIPT_ENCRYPTION_KEY``
