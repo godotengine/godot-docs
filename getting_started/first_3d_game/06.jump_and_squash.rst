@@ -243,17 +243,19 @@ With this code, if no collisions occurred on a given frame, the loop won't run.
            # We get one of the collisions with the player
            var collision = get_slide_collision(index)
 
+           # Get the object that was collided with
+           var obj = collision.get_collider()
+
            # If the collision is with ground
-           if collision.get_collider() == null:
+           if obj == null:
                continue
 
            # If the collider is with a mob
-           if collision.get_collider().is_in_group("mob"):
-               var mob = collision.get_collider()
+           if obj.is_in_group("mob"):
                # we check that we are hitting it from above.
                if Vector3.UP.dot(collision.get_normal()) > 0.1:
                    # If so, we squash it and bounce.
-                   mob.squash()
+                   obj.squash()
                    target_velocity.y = bounce_impulse
 
  .. code-tab:: csharp
