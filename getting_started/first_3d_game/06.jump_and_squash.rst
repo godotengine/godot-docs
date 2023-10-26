@@ -300,9 +300,9 @@ information about where and how the collision occurred. For example, we use its
 
     The method ``is_in_group()`` is available on every :ref:`Node<class_Node>`.
 
-Multiple Godot collisions can happend during the same frame including multiple collisions
-with the same object. That is why we should prevent ourselves from emitting the squash events
-multiple times by checking if the mob object is queued for deletion. This will work since
+Multiple Godot collisions can happen during the same frame including multiple collisions
+with the same object. That is why we should prevent ourselves from emitting the squash event
+multiple times by checking if the mob node is queued for deletion. This will work since
 we will be deleting the mob once squashed. We do this with the ``is_queued_for_deletion`` 
 method.
 
