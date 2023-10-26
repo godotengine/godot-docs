@@ -299,8 +299,12 @@ $(document).ready(() => {
       // Only change indentation for GDScript and C++.
       continue;
     }
-    let html = codeBlock.innerHTML;
-    html = html.replace(/(?<=^(<span class="w">)?( {4})*)( {4})/gm, '\t');
+    let html = codeBlock.innerHTML.replace(/^(<span class="w">)?( {4})/gm, '\t');
+    let html_old = "";
+    while (html != html_old) {
+      html_old = html;
+      html = html.replace(/\t( {4})/gm, '\t\t')
+    }
     codeBlock.innerHTML = html;
   }
 
