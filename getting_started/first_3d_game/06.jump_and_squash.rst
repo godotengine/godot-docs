@@ -251,7 +251,7 @@ With this code, if no collisions occurred on a given frame, the loop won't run.
            if collision.get_collider().is_in_group("mob"):
                var mob = collision.get_collider()
                # we check that we are hitting it from above.
-               if Vector3.UP.dot(collision.get_normal()) > 0.1:
+               if not mob.is_queued_for_deletion() and Vector3.UP.dot(collision.get_normal()) > 0.1:
                    # If so, we squash it and bounce.
                    mob.squash()
                    target_velocity.y = bounce_impulse
@@ -274,7 +274,7 @@ With this code, if no collisions occurred on a given frame, the loop won't run.
             if (collision.GetCollider() is Mob mob)
             {
                 // We check that we are hitting it from above.
-                if (Vector3.Up.Dot(collision.GetNormal()) > 0.1f)
+                if (mob.IsQueuedForDeletion() && Vector3.Up.Dot(collision.GetNormal()) > 0.1f)
                 {
                     // If so, we squash it and bounce.
                     mob.Squash();
@@ -299,6 +299,12 @@ information about where and how the collision occurred. For example, we use its
 .. note::
 
     The method ``is_in_group()`` is available on every :ref:`Node<class_Node>`.
+
+Multiple Godot collisions can happend during the same frame including multiple collisions
+with the same object. That is why we should prevent ourselves from emitting the squash events
+multiple times by checking if the mob object is queued for deletion. This will work since
+we will be deleting the mob once squashed. We do this with the ``is_queued_for_deletion`` 
+method.
 
 To check that we are landing on the monster, we use the vector dot product:
 ``Vector3.UP.dot(collision.get_normal()) > 0.1``. The collision normal is a 3D vector
