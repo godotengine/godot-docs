@@ -30,6 +30,7 @@ from pygments.token import (
     String,
     Number,
     Punctuation,
+    Whitespace,
 )
 
 __all__ = ["GDScriptLexer"]
@@ -65,19 +66,19 @@ class GDScriptLexer(RegexLexer):
 
     tokens = {
         "root": [
-            (r"\n", Text),
+            (r"\n", Whitespace),
             (
                 r'^(\s*)([rRuUbB]{,2})("""(?:.|\n)*?""")',
-                bygroups(Text, String.Affix, String.Doc),
+                bygroups(Whitespace, String.Affix, String.Doc),
             ),
             (
                 r"^(\s*)([rRuUbB]{,2})('''(?:.|\n)*?''')",
-                bygroups(Text, String.Affix, String.Doc),
+                bygroups(Whitespace, String.Affix, String.Doc),
             ),
-            (r"[^\S\n]+", Text),
+            (r"[^\S\n]+", Whitespace),
             (r"#.*$", Comment.Single),
             (r"[]{}:(),;[]", Punctuation),
-            (r"\\\n", Text),
+            (r"(\\)(\n)", Whitespace),
             (r"\\", Text),
             (r"(in|and|or|not)\b", Operator.Word),
             (
@@ -86,8 +87,8 @@ class GDScriptLexer(RegexLexer):
             ),
             include("keywords"),
             include("control_flow_keywords"),
-            (r"(func)((?:\s|\\\s)+)", bygroups(Keyword, Text), "funcname"),
-            (r"(class)((?:\s|\\\s)+)", bygroups(Keyword, Text), "classname"),
+            (r"(func)((?:\s|\\\s)+)", bygroups(Keyword, Whitespace), "funcname"),
+            (r"(class)((?:\s|\\\s)+)", bygroups(Keyword, Whitespace), "classname"),
             include("builtins"),
             include("decorators"),
             (
@@ -359,6 +360,7 @@ class GDScriptLexer(RegexLexer):
                         "PackedVector3iArray",
                         "PackedColorArray",
                         "null",
+                        "void",
                     ),
                     prefix=r"(?<!\.)",
                     suffix=r"\b",
@@ -405,11 +407,14 @@ class GDScriptLexer(RegexLexer):
             ),
         ],
         "numbers": [
-            (r"(\d+\.\d*|\d*\.\d+)([eE][+-]?[0-9]+)?j?", Number.Float),
-            (r"\d+[eE][+-]?[0-9]+j?", Number.Float),
-            (r"0x[a-fA-F0-9]+", Number.Hex),
-            (r"0b[01]+", Number.Bin),
-            (r"\d+j?", Number.Integer),
+            (
+                r"(-)?((\d|(?<=\d)_)+\.(\d|(?<=\d)_)*|(\d|(?<=\d)_)*\.(\d|(?<=\d)_)+)([eE][+-]?(\d|(?<=\d)_)+)?j?",
+                Number.Float,
+            ),
+            (r"(-)?(\d|(?<=\d)_)+[eE][+-]?(\d|(?<=\d)_)+j?", Number.Float),
+            (r"(-)?0[xX]([a-fA-F0-9]|(?<=[a-fA-F0-9])_)+", Number.Hex),
+            (r"(-)?0[bB]([01]|(?<=[01])_)+", Number.Bin),
+            (r"(-)?(\d|(?<=\d)_)+j?", Number.Integer),
         ],
         "name": [(r"@?[a-zA-Z_]\w*", Name)],
         "funcname": [(r"[a-zA-Z_]\w*", Name.Function, "#pop"), default("#pop")],
@@ -436,12 +441,12 @@ class GDScriptLexer(RegexLexer):
         "tdqs": [
             (r'"""', String.Double, "#pop"),
             include("strings-double"),
-            (r"\n", String.Double),
+            (r"\n", Whitespace),
         ],
         "tsqs": [
             (r"'''", String.Single, "#pop"),
             include("strings-single"),
-            (r"\n", String.Single),
+            (r"\n", Whitespace),
         ],
     }
 
