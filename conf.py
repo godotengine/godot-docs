@@ -24,6 +24,9 @@ extensions = [
 # we can ignore this so we still can treat other warnings as errors.
 sphinx_tabs_nowarn = True
 
+# Disable collapsing tabs for codeblocks.
+sphinx_tabs_disable_tab_closing = True
+
 # Custom 4O4 page HTML template.
 # https://github.com/readthedocs/sphinx-notfound-page
 notfound_context = {
