@@ -1,0 +1,36 @@
+GD0107: Types not derived from Node should not export Node members
+==================================================================
+
+====================================  ======================================
+                                      Value
+====================================  ======================================
+**Rule ID**                           GD0107
+**Category**                          Usage
+**Fix is breaking or non-breaking**   Breaking
+**Enabled by default**                Yes
+====================================  ======================================
+
+Cause
+-----
+
+A type that doesn't derive from ``Node`` contains an exported field or property
+of a type that derives from ``Node``.
+
+Rule description
+----------------
+
+Exported nodes are serialized as ``NodePath``. Only types derived from ``Node``
+are able to get the node instance from the ``NodePath``.
+
+How to fix violations
+---------------------
+
+To fix a violation of this rule, avoid exporting ``Node`` members on a type that
+doesn't derive from ``Node``, or consider exporting a ``NodePath``.
+
+When to suppress warnings
+-------------------------
+
+Do not suppress a warning from this rule. Types that don't derive from ``Node``
+will be unable to retrieve the right node instance for exported ``Node`` members,
+resulting in unexpected runtime errors.

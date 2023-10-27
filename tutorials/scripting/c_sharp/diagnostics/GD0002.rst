@@ -1,5 +1,5 @@
-GD0002: Missing partial modifier on declaration of type which contains one or more subclasses of GodotObject
-============================================================================================================
+GD0002: Missing partial modifier on declaration of type which contains nested classes that derive from GodotObject
+==================================================================================================================
 
 ====================================  ======================================
                                       Value
