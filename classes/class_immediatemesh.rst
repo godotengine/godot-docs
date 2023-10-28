@@ -35,6 +35,15 @@ Here's a sample on how to generate a triangular face:
     mesh.surface_add_vertex(Vector3.ZERO)
     mesh.surface_end()
 
+ .. code-tab:: csharp
+
+    var mesh = new ImmediateMesh();
+    mesh.SurfaceBegin(Mesh.PrimitiveType.Triangles);
+    mesh.SurfaceAddVertex(Vector3.Left);
+    mesh.SurfaceAddVertex(Vector3.Forward);
+    mesh.SurfaceAddVertex(Vector3.Zero);
+    mesh.SurfaceEnd();
+
 
 
 \ **Note:** Generating complex geometries with **ImmediateMesh** is highly inefficient. Instead, it is designed to generate simple geometry that changes often.

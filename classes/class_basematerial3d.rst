@@ -1227,7 +1227,7 @@ The object's X axis will always face the camera.
 
 :ref:`BillboardMode<enum_BaseMaterial3D_BillboardMode>` **BILLBOARD_PARTICLES** = ``3``
 
-Used for particle systems when assigned to :ref:`GPUParticles3D<class_GPUParticles3D>` and :ref:`CPUParticles3D<class_CPUParticles3D>` nodes. Enables ``particles_anim_*`` properties.
+Used for particle systems when assigned to :ref:`GPUParticles3D<class_GPUParticles3D>` and :ref:`CPUParticles3D<class_CPUParticles3D>` nodes (flipbook animation). Enables ``particles_anim_*`` properties.
 
 The :ref:`ParticleProcessMaterial.anim_speed_min<class_ParticleProcessMaterial_property_anim_speed_min>` or :ref:`CPUParticles3D.anim_speed_min<class_CPUParticles3D_property_anim_speed_min>` should also be set to a value bigger than zero for the animation to play.
 

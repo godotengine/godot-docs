@@ -59,6 +59,8 @@ Properties
    +------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+-----------------------+
    | :ref:`float<class_float>`                                                                      | :ref:`height<class_NavigationAgent3D_property_height>`                                             | ``1.0``               |
    +------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`bool<class_bool>`                                                                        | :ref:`keep_y_velocity<class_NavigationAgent3D_property_keep_y_velocity>`                           | ``true``              |
+   +------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+-----------------------+
    | :ref:`int<class_int>`                                                                          | :ref:`max_neighbors<class_NavigationAgent3D_property_max_neighbors>`                               | ``10``                |
    +------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+-----------------------+
    | :ref:`float<class_float>`                                                                      | :ref:`max_speed<class_NavigationAgent3D_property_max_speed>`                                       | ``10.0``              |
@@ -406,6 +408,23 @@ If ``true`` uses the defined :ref:`debug_path_custom_color<class_NavigationAgent
 - :ref:`float<class_float>` **get_height** **(** **)**
 
 The height of the avoidance agent. Agents will ignore other agents or obstacles that are above or below their current position + height in 2D avoidance. Does nothing in 3D avoidance which uses radius spheres alone.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_NavigationAgent3D_property_keep_y_velocity:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **keep_y_velocity** = ``true``
+
+.. rst-class:: classref-property-setget
+
+- void **set_keep_y_velocity** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **get_keep_y_velocity** **(** **)**
+
+If ``true``, and the agent uses 2D avoidance, it will remember the set y-axis velocity and reapply it after the avoidance step. While 2D avoidance has no y-axis and simulates on a flat plane this setting can help mitigate the most obvious clipping on uneven 3D geometry.
 
 .. rst-class:: classref-item-separator
 

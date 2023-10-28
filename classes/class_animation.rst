@@ -877,7 +877,7 @@ Compress the animation and all its tracks in-place. This will make :ref:`track_i
 
 void **copy_track** **(** :ref:`int<class_int>` track_idx, :ref:`Animation<class_Animation>` to_animation **)**
 
-Adds a new track that is a copy of the given track from ``to_animation``.
+Adds a new track to ``to_animation`` that is a copy of the given track from this animation.
 
 .. rst-class:: classref-item-separator
 
