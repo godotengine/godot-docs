@@ -5362,7 +5362,7 @@ Once finished with your RID, you will want to free the RID using the RenderingDe
 
 :ref:`Error<enum_@GlobalScope_Error>` **texture_clear** **(** :ref:`RID<class_RID>` texture, :ref:`Color<class_Color>` color, :ref:`int<class_int>` base_mipmap, :ref:`int<class_int>` mipmap_count, :ref:`int<class_int>` base_layer, :ref:`int<class_int>` layer_count, |bitfield|\<:ref:`BarrierMask<enum_RenderingDevice_BarrierMask>`\> post_barrier=32767 **)**
 
-Clears the specified ``texture`` by replacing all of its pixels with the specified ``color``. ``base_mipmap`` and ``mipmap_count`` determine which mipmaps of the texture are affected by this clear operation, while ``base_layer`` and ``layer_count`` determine which layers of a 3D texture (or texture array) are affected by this clear operation. For 2D textures (which only have one layer by design), ``base_layer`` and ``layer_count`` must both be ``0``.
+Clears the specified ``texture`` by replacing all of its pixels with the specified ``color``. ``base_mipmap`` and ``mipmap_count`` determine which mipmaps of the texture are affected by this clear operation, while ``base_layer`` and ``layer_count`` determine which layers of a 3D texture (or texture array) are affected by this clear operation. For 2D textures (which only have one layer by design), ``base_layer`` must be ``0`` and ``layer_count`` must be ``1``.
 
 \ **Note:** ``texture`` can't be cleared while a draw list that uses it as part of a framebuffer is being created. Ensure the draw list is finalized (and that the color/depth texture using it is not set to :ref:`FINAL_ACTION_CONTINUE<class_RenderingDevice_constant_FINAL_ACTION_CONTINUE>`) to clear this texture.
 

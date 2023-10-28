@@ -263,7 +263,7 @@ Emitted when a tab is hovered by the mouse.
 
 **tab_selected** **(** :ref:`int<class_int>` tab **)**
 
-Emitted when a tab is selected, even if it is the current tab.
+Emitted when a tab is selected via click or script, even if it is the current tab.
 
 .. rst-class:: classref-section-separator
 

@@ -9096,7 +9096,7 @@ Controls how much physics ticks are synchronized with real time. For 0 or less, 
 
 \ **Note:** For best results, when using a custom physics interpolation solution, the physics jitter fix should be disabled by setting :ref:`physics/common/physics_jitter_fix<class_ProjectSettings_property_physics/common/physics_jitter_fix>` to ``0``.
 
-\ **Note:** This property is only read when the project starts. To change the physics FPS at runtime, set :ref:`Engine.physics_jitter_fix<class_Engine_property_physics_jitter_fix>` instead.
+\ **Note:** This property is only read when the project starts. To change the physics jitter fix at runtime, set :ref:`Engine.physics_jitter_fix<class_Engine_property_physics_jitter_fix>` instead.
 
 .. rst-class:: classref-item-separator
 
