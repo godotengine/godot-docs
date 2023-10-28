@@ -149,8 +149,7 @@ your interface should look like this.
 
 |image15|
 
-The final action to set up is the ``jump`` action. Bind the Space key and the gamepad's
-A button.
+The final action to set up is the ``jump`` action. Bind the Space key and Joypad Button 0.
 
 |image16|
 
