@@ -797,7 +797,7 @@ Full list of hints below:
 +----------------------+--------------------------------------------------+-----------------------------------------------------------------------------+
 | **sampler2D**        | hint_depth_texture                               | Texture is the depth texture.                                               |
 +----------------------+--------------------------------------------------+-----------------------------------------------------------------------------+
-| **sampler2D**        | hint_normal_roughness_texture                    | Texture is the normal roughness texture.                                    |
+| **sampler2D**        | hint_normal_roughness_texture                    | Texture is the normal roughness texture (only supported in Forward+).       |
 +----------------------+--------------------------------------------------+-----------------------------------------------------------------------------+
 
 GDScript uses different variable types than GLSL does, so when passing variables
@@ -1285,8 +1285,8 @@ is used, it can be scalar or vector.
 | gvec4_type **textureLod** (gsampler2D s, vec2 p, float lod)                 | Perform a texture read at custom mipmap.                            |
 |                                                                             |                                                                     |
 | gvec4_type **textureLod** (gsampler2DArray s, vec3 p, float lod)            | The LOD defines which mipmap level is used. An LOD value of ``0.0`` |
-|                                                                             | will use the full resolution texture.                               |
-| gvec4_type **textureLod** (gsampler3D s, vec3 p, float lod)                 |                                                                     |
+|                                                                             | will use the full resolution texture. If the texture lacks mipmaps, |
+| gvec4_type **textureLod** (gsampler3D s, vec3 p, float lod)                 | all LOD values will act like ``0.0``.                               |
 |                                                                             |                                                                     |
 | vec4 **textureLod** (samplerCube s, vec3 p, float lod)                      |                                                                     |
 |                                                                             |                                                                     |
@@ -1295,8 +1295,8 @@ is used, it can be scalar or vector.
 | gvec4_type **textureProjLod** (gsampler2D s, vec3 p, float lod)             | Performs a texture read with projection/LOD.                        |
 |                                                                             |                                                                     |
 | gvec4_type **textureProjLod** (gsampler2D s, vec4 p, float lod)             | The LOD defines which mipmap level is used. An LOD value of ``0.0`` |
-|                                                                             | will use the full resolution texture.                               |
-| gvec4_type **textureProjLod** (gsampler3D s, vec4 p, float lod)             |                                                                     |
+|                                                                             | will use the full resolution texture. If the texture lacks mipmaps, |
+| gvec4_type **textureProjLod** (gsampler3D s, vec4 p, float lod)             | all LOD values will act like ``0.0``.                               |
 +-----------------------------------------------------------------------------+---------------------------------------------------------------------+
 | gvec4_type **textureGrad** (gsampler2D s, vec2 p, vec2 dPdx,                | Performs a texture read with explicit gradients.                    |
 | vec2 dPdy)                                                                  |                                                                     |
