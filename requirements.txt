@@ -18,4 +18,4 @@ sphinx-copybutton==0.5.1
 # Custom 404 error page (more useful than the default).
 sphinx-notfound-page==0.8.3
 # Adds Open Graph tags in the HTML `<head>` tag.
-sphinxext-opengraph==0.7.5
+sphinxext-opengraph==0.9.0
