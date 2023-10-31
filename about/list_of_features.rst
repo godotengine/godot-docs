@@ -724,7 +724,8 @@ File formats
    - Can (de)serialize any Godot datatype, including Vector2/3, Color, ...
 
 - Read XML files using :ref:`class_XMLParser`.
-- Read and write ZIP files using :ref:`class_ZIPReader` and :ref:`class_ZIPPacker`.
+- :ref:`Load and save images, audio/video, fonts and ZIP archives <doc_runtime_loading_and_saving>`
+  in an exported project without having to go through Godot's import system.
 - Pack game data into a PCK file (custom format optimized for fast seeking),
   into a ZIP archive, or directly into the executable for single-file distribution.
 - :ref:`Export additional PCK files<doc_exporting_pcks>` that can be read
