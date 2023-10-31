@@ -1,10 +1,7 @@
 .. _doc_c_sharp_exports:
 
-C# exports
-==========
-
-Introduction to exports
------------------------
+C# exported properties
+======================
 
 In Godot, class members can be exported. This means their value gets saved along
 with the resource (such as the :ref:`scene <class_PackedScene>`) they're

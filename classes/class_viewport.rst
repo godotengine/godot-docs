@@ -75,6 +75,8 @@ Properties
    +-----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+----------------+
    | :ref:`DebugDraw<enum_Viewport_DebugDraw>`                                                     | :ref:`debug_draw<class_Viewport_property_debug_draw>`                                                 | ``0``          |
    +-----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+----------------+
+   | :ref:`bool<class_bool>`                                                                       | :ref:`disable_2d<class_Viewport_property_disable_2d>`                                                 | ``false``      |
+   +-----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+----------------+
    | :ref:`bool<class_bool>`                                                                       | :ref:`disable_3d<class_Viewport_property_disable_3d>`                                                 | ``false``      |
    +-----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+----------------+
    | :ref:`float<class_float>`                                                                     | :ref:`fsr_sharpness<class_Viewport_property_fsr_sharpness>`                                           | ``0.2``        |
@@ -350,11 +352,19 @@ Use bilinear scaling for the viewport's 3D buffer. The amount of scaling can be 
 
 Use AMD FidelityFX Super Resolution 1.0 upscaling for the viewport's 3D buffer. The amount of scaling can be set using :ref:`scaling_3d_scale<class_Viewport_property_scaling_3d_scale>`. Values less than ``1.0`` will be result in the viewport being upscaled using FSR. Values greater than ``1.0`` are not supported and bilinear downsampling will be used instead. A value of ``1.0`` disables scaling.
 
+.. _class_Viewport_constant_SCALING_3D_MODE_FSR2:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Scaling3DMode<enum_Viewport_Scaling3DMode>` **SCALING_3D_MODE_FSR2** = ``2``
+
+Use AMD FidelityFX Super Resolution 2.2 upscaling for the viewport's 3D buffer. The amount of scaling can be set using :ref:`scaling_3d_scale<class_Viewport_property_scaling_3d_scale>`. Values less than ``1.0`` will be result in the viewport being upscaled using FSR2. Values greater than ``1.0`` are not supported and bilinear downsampling will be used instead. A value of ``1.0`` will use FSR2 at native resolution as a TAA solution.
+
 .. _class_Viewport_constant_SCALING_3D_MODE_MAX:
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`Scaling3DMode<enum_Viewport_Scaling3DMode>` **SCALING_3D_MODE_MAX** = ``2``
+:ref:`Scaling3DMode<enum_Viewport_Scaling3DMode>` **SCALING_3D_MODE_MAX** = ``3``
 
 Represents the size of the :ref:`Scaling3DMode<enum_Viewport_Scaling3DMode>` enum.
 
@@ -736,6 +746,14 @@ Draws the decal atlas used by :ref:`Decal<class_Decal>`\ s and light projector t
 
 
 
+.. _class_Viewport_constant_DEBUG_DRAW_INTERNAL_BUFFER:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`DebugDraw<enum_Viewport_DebugDraw>` **DEBUG_DRAW_INTERNAL_BUFFER** = ``26``
+
+Draws the internal resolution buffer of the scene before post-processing is applied.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -1090,6 +1108,23 @@ The overlay mode for test rendered geometry in debug purposes.
 
 ----
 
+.. _class_Viewport_property_disable_2d:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **disable_2d** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_disable_2d** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_2d_disabled** **(** **)**
+
+If ``true``, disables 2D rendering while keeping 3D rendering. See also :ref:`disable_3d<class_Viewport_property_disable_3d>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_Viewport_property_disable_3d:
 
 .. rst-class:: classref-property
@@ -1101,7 +1136,7 @@ The overlay mode for test rendered geometry in debug purposes.
 - void **set_disable_3d** **(** :ref:`bool<class_bool>` value **)**
 - :ref:`bool<class_bool>` **is_3d_disabled** **(** **)**
 
-Disable 3D rendering (but keep 2D rendering).
+If ``true``, disables 3D rendering while keeping 2D rendering. See also :ref:`disable_2d<class_Viewport_property_disable_2d>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1656,6 +1691,8 @@ If ``true``, 2D rendering will use an high dynamic range (HDR) format framebuffe
 If ``true``, :ref:`OccluderInstance3D<class_OccluderInstance3D>` nodes will be usable for occlusion culling in 3D for this viewport. For the root viewport, :ref:`ProjectSettings.rendering/occlusion_culling/use_occlusion_culling<class_ProjectSettings_property_rendering/occlusion_culling/use_occlusion_culling>` must be set to ``true`` instead.
 
 \ **Note:** Enabling occlusion culling has a cost on the CPU. Only enable occlusion culling if you actually plan to use it, and think whether your scene can actually benefit from occlusion culling. Large, open scenes with few or no objects blocking the view will generally not benefit much from occlusion culling. Large open scenes generally benefit more from mesh LOD and visibility ranges (:ref:`GeometryInstance3D.visibility_range_begin<class_GeometryInstance3D_property_visibility_range_begin>` and :ref:`GeometryInstance3D.visibility_range_end<class_GeometryInstance3D_property_visibility_range_end>`) compared to occlusion culling.
+
+\ **Note:** Due to memory constraints, occlusion culling is not supported by default in Web export templates. It can be enabled by compiling custom Web export templates with ``module_raycast_enabled=yes``.
 
 .. rst-class:: classref-item-separator
 

@@ -29,7 +29,7 @@ different licenses.
 
 For full details, look at the `COPYRIGHT.txt <https://github.com/godotengine/godot/blob/master/COPYRIGHT.txt>`_
 as well as the `LICENSE.txt <https://github.com/godotengine/godot/blob/master/LICENSE.txt>`_
-and `LOGO_LICENSE.txt <https://github.com/godotengine/godot/blob/master/LOGO_LICENSE.md>`_ files
+and `LOGO_LICENSE.txt <https://github.com/godotengine/godot/blob/master/LOGO_LICENSE.txt>`_ files
 in the Godot repository.
 
 Also, see `the license page on the Godot website <https://godotengine.org/license>`_.
@@ -451,9 +451,6 @@ size can make it a suitable alternative to frameworks like Electron or Qt.
 When creating a non-game application, make sure to enable
 :ref:`low-processor mode <class_ProjectSettings_property_application/run/low_processor_mode>`
 in the Project Settings to decrease CPU and GPU usage.
-
-That said, we wouldn't recommend using Godot to create a *mobile* application
-since low-processor mode isn't supported on mobile platforms yet.
 
 Check out `Material Maker <https://github.com/RodZill4/material-maker>`__ and
 `Pixelorama <https://github.com/Orama-Interactive/Pixelorama>`__ for examples of

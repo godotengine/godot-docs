@@ -59,7 +59,7 @@ Property Descriptions
 - void **set_damping** **(** :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_damping** **(** **)**
 
-The spring joint's damping ratio. A value between ``0`` and ``1``. When the two bodies move into different directions the system tries to align them to the spring axis again. A high ``damping`` value forces the attached bodies to align faster.
+The spring joint's damping ratio. A value between ``0`` and ``1``. When the two bodies move into different directions the system tries to align them to the spring axis again. A high :ref:`damping<class_DampedSpringJoint2D_property_damping>` value forces the attached bodies to align faster.
 
 .. rst-class:: classref-item-separator
 

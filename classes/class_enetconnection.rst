@@ -177,7 +177,7 @@ A peer has disconnected. This event is generated on a successful completion of a
 
 :ref:`EventType<enum_ENetConnection_EventType>` **EVENT_RECEIVE** = ``3``
 
-A packet has been received from a peer. The array will contain the peer which sent the packet, the channel number upon which the packet was received, and the received packet.
+A packet has been received from a peer. The array will contain the peer which sent the packet and the channel number upon which the packet was received. The received packet will be queued to the associated :ref:`ENetPacketPeer<class_ENetPacketPeer>`.
 
 .. rst-class:: classref-item-separator
 

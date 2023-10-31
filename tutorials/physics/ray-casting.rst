@@ -156,6 +156,7 @@ with Area3D, the boolean parameter ``collide_with_areas`` must be set to ``true`
 
 .. tabs::
  .. code-tab:: gdscript GDScript
+
         const RAY_LENGTH = 1000
         
         func _physics_process(delta):
@@ -178,7 +179,7 @@ about the world around it. One problem with this is that the same character
 has a collider, so the ray will only detect its parent's collider,
 as shown in the following image:
 
-.. image:: img/raycast_falsepositive.png
+.. image:: img/raycast_falsepositive.webp
 
 To avoid self-intersection, the ``intersect_ray()`` parameters object can take an
 array of exceptions via its ``exclude`` property. This is an example of how to use it 
@@ -191,7 +192,7 @@ from a CharacterBody2D or any other collision object node:
 
     func _physics_process(delta):
         var space_state = get_world_2d().direct_space_state
-        var query = PhysicsRayQueryParameters2D.create(global_position, enemy_position)
+        var query = PhysicsRayQueryParameters2D.create(global_position, player_position)
         query.exclude = [self]
         var result = space_state.intersect_ray(query)
 
@@ -204,7 +205,7 @@ from a CharacterBody2D or any other collision object node:
         public override void _PhysicsProcess(double delta)
         {
             var spaceState = GetWorld2D().DirectSpaceState;
-            var query = PhysicsRayQueryParameters2D.Create(globalPosition, enemyPosition);
+            var query = PhysicsRayQueryParameters2D.Create(globalPosition, playerPosition);
             query.Exclude = new Godot.Collections.Array<Rid> { GetRid() };
             var result = spaceState.IntersectRay(query);
         }
@@ -230,7 +231,7 @@ member variable. The array of exceptions can be supplied as the last argument as
 
     func _physics_process(delta):
         var space_state = get_world_2d().direct_space_state
-        var query = PhysicsRayQueryParameters2D.create(global_position, enemy_position, 
+        var query = PhysicsRayQueryParameters2D.create(global_position, target_position, 
             collision_mask, [self]) 
         var result = space_state.intersect_ray(query)
 
@@ -243,7 +244,7 @@ member variable. The array of exceptions can be supplied as the last argument as
         public override void _PhysicsProcess(double delta)
         {
             var spaceState = GetWorld2D().DirectSpaceState;
-            var query = PhysicsRayQueryParameters2D.Create(globalPosition, enemyPosition,
+            var query = PhysicsRayQueryParameters2D.Create(globalPosition, targetPosition,
                 CollisionMask, new Godot.Collections.Array<Rid> { GetRid() });
             var result = spaceState.IntersectRay(query);
         }

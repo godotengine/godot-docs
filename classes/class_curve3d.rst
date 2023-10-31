@@ -346,9 +346,7 @@ If ``idx`` is out of bounds it is truncated to the first or last vertex, and ``t
 
 :ref:`Vector3<class_Vector3>` **sample_baked** **(** :ref:`float<class_float>` offset=0.0, :ref:`bool<class_bool>` cubic=false **)** |const|
 
-Returns a point within the curve at position ``offset``, where ``offset`` is measured as a distance in 3D units along the curve.
-
-To do that, it finds the two cached points where the ``offset`` lies between, then interpolates the values. This interpolation is cubic if ``cubic`` is set to ``true``, or linear if set to ``false``.
+Returns a point within the curve at position ``offset``, where ``offset`` is measured as a distance in 3D units along the curve. To do that, it finds the two cached points where the ``offset`` lies between, then interpolates the values. This interpolation is cubic if ``cubic`` is set to ``true``, or linear if set to ``false``.
 
 Cubic interpolation tends to follow the curves better, but linear is faster (and often, precise enough).
 
@@ -362,9 +360,7 @@ Cubic interpolation tends to follow the curves better, but linear is faster (and
 
 :ref:`Vector3<class_Vector3>` **sample_baked_up_vector** **(** :ref:`float<class_float>` offset, :ref:`bool<class_bool>` apply_tilt=false **)** |const|
 
-Returns an up vector within the curve at position ``offset``, where ``offset`` is measured as a distance in 3D units along the curve.
-
-To do that, it finds the two cached up vectors where the ``offset`` lies between, then interpolates the values. If ``apply_tilt`` is ``true``, an interpolated tilt is applied to the interpolated up vector.
+Returns an up vector within the curve at position ``offset``, where ``offset`` is measured as a distance in 3D units along the curve. To do that, it finds the two cached up vectors where the ``offset`` lies between, then interpolates the values. If ``apply_tilt`` is ``true``, an interpolated tilt is applied to the interpolated up vector.
 
 If the curve has no up vectors, the function sends an error to the console, and returns ``(0, 1, 0)``.
 
@@ -378,7 +374,7 @@ If the curve has no up vectors, the function sends an error to the console, and 
 
 :ref:`Transform3D<class_Transform3D>` **sample_baked_with_rotation** **(** :ref:`float<class_float>` offset=0.0, :ref:`bool<class_bool>` cubic=false, :ref:`bool<class_bool>` apply_tilt=false **)** |const|
 
-Similar with ``interpolate_baked()``. The return value is ``Transform3D``, with ``origin`` as point position, ``basis.x`` as sideway vector, ``basis.y`` as up vector, ``basis.z`` as forward vector. When the curve length is 0, there is no reasonable way to calculate the rotation, all vectors aligned with global space axes.
+Returns a :ref:`Transform3D<class_Transform3D>` with ``origin`` as point position, ``basis.x`` as sideway vector, ``basis.y`` as up vector, ``basis.z`` as forward vector. When the curve length is 0, there is no reasonable way to calculate the rotation, all vectors aligned with global space axes. See also :ref:`sample_baked<class_Curve3D_method_sample_baked>`.
 
 .. rst-class:: classref-item-separator
 

@@ -53,6 +53,8 @@ Properties
    +---------------------------------------------------+------------------------------------------------------------------------------------+-------------------------+
    | :ref:`int<class_int>`                             | :ref:`rows<class_ResourceImporterImageFont_property_rows>`                         | ``1``                   |
    +---------------------------------------------------+------------------------------------------------------------------------------------+-------------------------+
+   | :ref:`int<class_int>`                             | :ref:`scaling_mode<class_ResourceImporterImageFont_property_scaling_mode>`         | ``2``                   |
+   +---------------------------------------------------+------------------------------------------------------------------------------------+-------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -146,6 +148,18 @@ Margin to cut on the sides of the entire image. This can be used to cut parts of
 :ref:`int<class_int>` **rows** = ``1``
 
 Number of rows in the font image. See also :ref:`columns<class_ResourceImporterImageFont_property_columns>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ResourceImporterImageFont_property_scaling_mode:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **scaling_mode** = ``2``
+
+Font scaling mode.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

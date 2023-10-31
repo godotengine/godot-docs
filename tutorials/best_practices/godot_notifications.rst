@@ -84,6 +84,24 @@ implementing a Timer-timeout loop is another option.
             print("This block runs every 0.5 seconds")
         )
 
+ .. code-tab:: csharp
+
+    using Godot;
+
+    public partial class MyNode : Node
+    {
+        // Allows for recurring operations that don't trigger script logic
+        // every frame (or even every fixed frame).
+        public override void _Ready()
+        {
+            var timer = new Timer();
+            timer.Autostart = true;
+            timer.WaitTime = 0.5;
+            AddChild(timer);
+            timer.Timeout += () => GD.Print("This block runs every 0.5 seconds");
+        }
+    }
+
 Use ``_physics_process()`` when one needs a framerate-independent delta time
 between frames. If code needs consistent updates over time, regardless
 of how fast or slow time advances, this is the right place.
@@ -159,18 +177,15 @@ instantiation:
     # "one" is an "initialized value". These DO NOT trigger the setter.
     # If someone set the value as "two" from the Inspector, this would be an
     # "exported value". These DO trigger the setter.
-    export(String) var test = "one" setget set_test
+    @export var test: String = "one":
+        set(value):
+            test = value
+            print("Setting: ", test)
 
     func _init():
         # "three" is an "init assignment value".
-        # These DO NOT trigger the setter, but...
+        # Trigger the setter
         test = "three"
-        # These DO trigger the setter. Note the `self` prefix.
-        self.test = "three"
-
-    func set_test(value):
-        test = value
-        print("Setting: ", test)
 
   .. code-tab:: csharp
 

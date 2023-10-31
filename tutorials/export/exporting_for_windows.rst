@@ -69,10 +69,10 @@ the export menu.
    * - Export option
      - Environment variable
    * - Encryption / Encryption Key
-     - GODOT_SCRIPT_ENCRYPTION_KEY
+     - ``GODOT_SCRIPT_ENCRYPTION_KEY``
    * - Options / Codesign / Identity Type
-     - GODOT_WINDOWS_CODESIGN_IDENTITY_TYPE
+     - ``GODOT_WINDOWS_CODESIGN_IDENTITY_TYPE``
    * - Options / Codesign / Identity
-     - GODOT_WINDOWS_CODESIGN_IDENTITY
+     - ``GODOT_WINDOWS_CODESIGN_IDENTITY``
    * - Options / Codesign / Password
-     - GODOT_WINDOWS_CODESIGN_PASSWORD
+     - ``GODOT_WINDOWS_CODESIGN_PASSWORD``

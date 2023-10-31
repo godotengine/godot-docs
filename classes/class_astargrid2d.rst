@@ -412,7 +412,7 @@ Method Descriptions
 
 Called when computing the cost between two connected points.
 
-Note that this function is hidden in the default ``AStarGrid2D`` class.
+Note that this function is hidden in the default **AStarGrid2D** class.
 
 .. rst-class:: classref-item-separator
 
@@ -426,7 +426,7 @@ Note that this function is hidden in the default ``AStarGrid2D`` class.
 
 Called when estimating the cost between a point and the path's ending point.
 
-Note that this function is hidden in the default ``AStarGrid2D`` class.
+Note that this function is hidden in the default **AStarGrid2D** class.
 
 .. rst-class:: classref-item-separator
 
@@ -490,7 +490,7 @@ Returns an array with the IDs of the points that form the path found by AStar2D 
 
 :ref:`PackedVector2Array<class_PackedVector2Array>` **get_point_path** **(** :ref:`Vector2i<class_Vector2i>` from_id, :ref:`Vector2i<class_Vector2i>` to_id **)**
 
-Returns an array with the points that are in the path found by AStarGrid2D between the given points. The array is ordered from the starting point to the ending point of the path.
+Returns an array with the points that are in the path found by **AStarGrid2D** between the given points. The array is ordered from the starting point to the ending point of the path.
 
 \ **Note:** This method is not thread-safe. If called from a :ref:`Thread<class_Thread>`, it will return an empty :ref:`PackedVector3Array<class_PackedVector3Array>` and will print an error message.
 
@@ -540,7 +540,7 @@ Indicates that the grid parameters were changed and :ref:`update<class_AStarGrid
 
 :ref:`bool<class_bool>` **is_in_bounds** **(** :ref:`int<class_int>` x, :ref:`int<class_int>` y **)** |const|
 
-Returns ``true`` if the ``x`` and ``y`` is a valid grid coordinate (id).
+Returns ``true`` if the ``x`` and ``y`` is a valid grid coordinate (id), i.e. if it is inside :ref:`region<class_AStarGrid2D_property_region>`. Equivalent to ``region.has_point(Vector2i(x, y))``.
 
 .. rst-class:: classref-item-separator
 
@@ -552,7 +552,7 @@ Returns ``true`` if the ``x`` and ``y`` is a valid grid coordinate (id).
 
 :ref:`bool<class_bool>` **is_in_boundsv** **(** :ref:`Vector2i<class_Vector2i>` id **)** |const|
 
-Returns ``true`` if the ``id`` vector is a valid grid coordinate.
+Returns ``true`` if the ``id`` vector is a valid grid coordinate, i.e. if it is inside :ref:`region<class_AStarGrid2D_property_region>`. Equivalent to ``region.has_point(id)``.
 
 .. rst-class:: classref-item-separator
 

@@ -8,7 +8,7 @@ This page aims to list **all** features currently supported by Godot.
 .. note::
 
     This page lists features supported by the current stable version of
-    Godot (4.0). Some of these features may not be available in the
+    Godot. Some of these features may not be available in the
     `LTS release series (3.x) <https://docs.godotengine.org/en/3.5/about/list_of_features.html>`__.
 
 Platforms
@@ -36,6 +36,13 @@ Platforms
 
 Godot aims to be as platform-independent as possible and can be
 :ref:`ported to new platforms <doc_custom_platform_ports>` with relative ease.
+
+.. note::
+
+    Projects written in C# using Godot 4 currently cannot be exported to the
+    web platform. To use C# on that platform, consider Godot 3 instead.
+    Android and iOS platform support is available as of Godot 4.2, but is
+    experimental and :ref:`some limitations apply <doc_c_sharp_platforms>`.
 
 Editor
 ------
@@ -135,6 +142,8 @@ Rendering
 - GPU-based :ref:`particles <doc_particle_systems_2d>` with support for
   :ref:`custom particle shaders <doc_particle_shader>`.
 - CPU-based particles.
+- Optional :ref:`2D HDR rendering <doc_environment_and_post_processing_using_glow_in_2d>`
+  for better glow capabilities.
 
 2D tools
 --------
@@ -196,7 +205,7 @@ Rendering
 - Directional lights (sun/moon). Up to 4 per scene.
 - Omnidirectional lights.
 - Spot lights with adjustable cone angle and attenuation.
-- Specular energy can be adjusted on a per-light basis.
+- Specular, indirect light, and volumetric fog energy can be adjusted on a per-light basis.
 - Adjustable light "size" for fake area lights (will also make shadows blurrier).
 - Optional distance fade system to fade distant lights and their shadows, improving performance.
 - When using the Forward+ backend (default on desktop), lights are
@@ -215,13 +224,13 @@ Rendering
 - *SpotLight:* Single texture. Supports colored projector textures.
 - Shadow normal offset bias and shadow pancaking to decrease the amount of
   visible shadow acne and peter-panning.
-- PCSS-like shadow blur based on the light size and distance from the surface
-  the shadow is cast on.
+- :abbr:`PCSS (Percentage Closer Soft Shadows)`-like shadow blur based on the
+  light size and distance from the surface the shadow is cast on.
 - Adjustable shadow blur on a per-light basis.
 
 **Global illumination with indirect lighting:**
 
-- Baked lightmaps (fast, but can't be updated at run-time).
+- :ref:`Baked lightmaps <doc_using_lightmap_gi>` (fast, but can't be updated at run-time).
 
    - Supports baking indirect light only or baking both direct and indirect lighting.
      The bake mode can be adjusted on a per-light basis to allow for hybrid light
@@ -232,22 +241,28 @@ Rendering
    - Lightmaps are baked on the GPU using compute shaders (much faster compared
      to CPU lightmapping). Baking can only be performed from the editor,
      not in exported projects.
+   - Supports GPU-based :ref:`denoising <doc_using_lightmap_gi_denoising>`
+     with JNLM, or CPU/GPU-based denoising with OIDN.
 
-- Voxel-based GI probes. Supports dynamic lights *and* dynamic occluders, while
-  also supporting reflections. Requires a fast baking step which can be
-  performed in the editor or at run-time (including from an exported project).
-- Signed-distance field GI designed for large open worlds.
+- :ref:`Voxel-based GI probes <doc_using_voxel_gi>`. Supports
+  dynamic lights *and* dynamic occluders, while also supporting reflections.
+  Requires a fast baking step which can be performed in the editor or at
+  run-time (including from an exported project).
+- :ref:`Signed-distance field GI <doc_using_sdfgi>` designed for large open worlds.
   Supports dynamic lights, but not dynamic occluders. Supports reflections.
   No baking required.
-- Screen-space indirect lighting (SSIL) at half or full resolution.
-  Fully real-time and supports any kind of emissive light source (including decals).
+- :ref:`Screen-space indirect lighting (SSIL) <doc_environment_and_post_processing_ssil>`
+  at half or full resolution. Fully real-time and supports any kind of emissive
+  light source (including decals).
 - VoxelGI and SDFGI use a deferred pass to allow for rendering GI at half
   resolution to improve performance (while still having functional MSAA support).
 
 **Reflections:**
 
 - Voxel-based reflections (when using GI probes) and SDF-based reflections
-  (when using signed distance field GI).
+  (when using signed distance field GI). Voxel-based reflections are visible
+  on transparent surfaces, while rough SDF-based reflections are visible
+  on transparent surfaces.
 - Fast baked reflections or slow real-time reflections using ReflectionProbe.
   Parallax box correction can optionally be enabled.
 - Screen-space reflections with support for material roughness.
@@ -260,7 +275,8 @@ Rendering
 
 **Decals:**
 
-- Supports albedo, emissive, :abbr:`ORM (Occlusion Roughness Metallic)` and normal mapping.
+- :ref:`Supports albedo <doc_using_decals>`, emissive, :abbr:`ORM (Occlusion Roughness Metallic)`,
+  and normal mapping.
 - Texture channels are smoothly overlaid on top of the underlying material,
   with support for normal/ORM-only decals.
 - Support for normal fade to fade the decal depending on its incidence angle.
@@ -288,12 +304,16 @@ Rendering
 - Exponential height fog.
 - Support for automatic fog color depending on the sky color (aerial perspective).
 - Support for sun scattering in the fog.
+- Support for controlling how much fog rendering should affect the sky, with
+  separate controls for traditional and volumetric fog.
+- Support for making specific materials ignore fog.
 
 **Volumetric fog:**
 
 - Global :ref:`volumetric fog <doc_volumetric_fog>` that reacts to lights and shadows.
 - Volumetric fog can take indirect light into account when using VoxelGI or SDFGI.
 - Fog volume nodes that can be placed to add fog to specific areas (or remove fog from specific areas).
+  Supported shapes include box, ellipse, cone, cylinder, and 3D texture-based density maps.
 - Each fog volume can have its own custom shader.
 - Can be used together with traditional fog.
 
@@ -322,6 +342,7 @@ Rendering
 - Glow/bloom with optional bicubic upscaling and several blend modes available:
   Screen, Soft Light, Add, Replace, Mix.
 - Glow can have a colored dirt map texture, acting as a lens dirt effect.
+- Glow can be :ref:`used as a screen-space blur effect <doc_environment_and_post_processing_using_glow_to_blur_the_screen>`.
 - Color correction using a one-dimensional ramp or a 3D LUT texture.
 - Roughness limiter to reduce the impact of specular aliasing.
 - Brightness, contrast and saturation adjustments.
@@ -429,12 +450,18 @@ Scripting
 :ref:`C#: <toc-learn-scripting-C#>`
 
 - Packaged in a separate binary to keep file sizes and dependencies down.
-- Uses .NET 6.
+- Supports .NET 6 and higher.
 
    - Full support for the C# 10.0 syntax and features.
 
-- Supports Windows, Linux and macOS. Mobile/web platforms are currently
-  unsupported. To use C# on mobile/web platforms, use Godot 3 instead.
+- Supports Windows, Linux, and macOS. As of 4.2 experimental support for Android
+  and iOS is also available (requires a .NET 7.0 project for Android and 8.0 for iOS).
+
+   - On the Android platform only some architectures are supported: ``arm64`` and ``x64``.
+   - On the iOS platform only some architectures are supported: ``arm64``.
+   - The web platform is currently unsupported. To use C# on that platform,
+     consider Godot 3 instead.
+
 - Using an external editor is recommended to benefit from IDE functionality.
 
 **GDExtension (C, C++, Rust, D, ...):**

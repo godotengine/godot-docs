@@ -93,10 +93,10 @@ a TextureRect can be centered in its parent:
 
     var textureSize = rect.Texture.GetSize();
 
-    rect.OffsetLeft = -textureSize.x / 2;
-    rect.OffsetRight = textureSize.x / 2;
-    rect.OffsetTop = -textureSize.y / 2;
-    rect.OffsetBottom = textureSize.y / 2;
+    rect.OffsetLeft = -textureSize.X / 2;
+    rect.OffsetRight = textureSize.X / 2;
+    rect.OffsetTop = -textureSize.Y / 2;
+    rect.OffsetBottom = textureSize.Y / 2;
     AddChild(rect);
 
 Setting each anchor to 0.5 moves the reference point for the margins to

@@ -26,6 +26,7 @@
 
  /* Default (light) theme colors */
  :root {
+    color-scheme: light dark;
     --body-color: #404040;
     --content-wrap-background-color: #efefef;
     --content-background-color: #fcfcfc;
@@ -798,7 +799,7 @@ html.writer-html5 .rst-content .wy-table-responsive > table td > p code.literal 
 code,
 .rst-content tt,
 .rst-content code {
-    font-size: 14px;
+    font-size: .875em;
     font-family: var(--monospace-font-family);
     background-color: var(--code-background-color);
     border: none;
@@ -846,6 +847,7 @@ code,
 
 .highlight {
     background-color: var(--highlight-background-color);
+    tab-size: 4;
 }
 
 /* Emphasized lines */

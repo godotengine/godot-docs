@@ -291,7 +291,7 @@ Returns ``true`` if the specified section-key pair exists.
 
 Loads the config file specified as a parameter. The file's contents are parsed and loaded in the **ConfigFile** object which the method was called on.
 
-Returns one of the :ref:`Error<enum_@GlobalScope_Error>` code constants (:ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` on success).
+Returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` on success, or one of the other :ref:`Error<enum_@GlobalScope_Error>` values if the operation failed.
 
 .. rst-class:: classref-item-separator
 
@@ -305,7 +305,7 @@ Returns one of the :ref:`Error<enum_@GlobalScope_Error>` code constants (:ref:`@
 
 Loads the encrypted config file specified as a parameter, using the provided ``key`` to decrypt it. The file's contents are parsed and loaded in the **ConfigFile** object which the method was called on.
 
-Returns one of the :ref:`Error<enum_@GlobalScope_Error>` code constants (:ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` on success).
+Returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` on success, or one of the other :ref:`Error<enum_@GlobalScope_Error>` values if the operation failed.
 
 .. rst-class:: classref-item-separator
 
@@ -319,7 +319,7 @@ Returns one of the :ref:`Error<enum_@GlobalScope_Error>` code constants (:ref:`@
 
 Loads the encrypted config file specified as a parameter, using the provided ``password`` to decrypt it. The file's contents are parsed and loaded in the **ConfigFile** object which the method was called on.
 
-Returns one of the :ref:`Error<enum_@GlobalScope_Error>` code constants (:ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` on success).
+Returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` on success, or one of the other :ref:`Error<enum_@GlobalScope_Error>` values if the operation failed.
 
 .. rst-class:: classref-item-separator
 
@@ -333,7 +333,7 @@ Returns one of the :ref:`Error<enum_@GlobalScope_Error>` code constants (:ref:`@
 
 Parses the passed string as the contents of a config file. The string is parsed and loaded in the ConfigFile object which the method was called on.
 
-Returns one of the :ref:`Error<enum_@GlobalScope_Error>` code constants (:ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` on success).
+Returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` on success, or one of the other :ref:`Error<enum_@GlobalScope_Error>` values if the operation failed.
 
 .. rst-class:: classref-item-separator
 
@@ -347,7 +347,7 @@ Returns one of the :ref:`Error<enum_@GlobalScope_Error>` code constants (:ref:`@
 
 Saves the contents of the **ConfigFile** object to the file specified as a parameter. The output file uses an INI-style structure.
 
-Returns one of the :ref:`Error<enum_@GlobalScope_Error>` code constants (:ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` on success).
+Returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` on success, or one of the other :ref:`Error<enum_@GlobalScope_Error>` values if the operation failed.
 
 .. rst-class:: classref-item-separator
 
@@ -361,7 +361,7 @@ Returns one of the :ref:`Error<enum_@GlobalScope_Error>` code constants (:ref:`@
 
 Saves the contents of the **ConfigFile** object to the AES-256 encrypted file specified as a parameter, using the provided ``key`` to encrypt it. The output file uses an INI-style structure.
 
-Returns one of the :ref:`Error<enum_@GlobalScope_Error>` code constants (:ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` on success).
+Returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` on success, or one of the other :ref:`Error<enum_@GlobalScope_Error>` values if the operation failed.
 
 .. rst-class:: classref-item-separator
 
@@ -375,7 +375,7 @@ Returns one of the :ref:`Error<enum_@GlobalScope_Error>` code constants (:ref:`@
 
 Saves the contents of the **ConfigFile** object to the AES-256 encrypted file specified as a parameter, using the provided ``password`` to encrypt it. The output file uses an INI-style structure.
 
-Returns one of the :ref:`Error<enum_@GlobalScope_Error>` code constants (:ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` on success).
+Returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` on success, or one of the other :ref:`Error<enum_@GlobalScope_Error>` values if the operation failed.
 
 .. rst-class:: classref-item-separator
 

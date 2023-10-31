@@ -100,11 +100,11 @@ call the Godot executable:
 
 .. code-block:: none
 
-    godot --dump-extension-api extension_api.json
+    godot --dump-extension-api 
 
-Place the resulting ``extension_api.json`` file in the project folder and add
-``custom_api_file=<PATH_TO_FILE>`` to the scons command
-below.
+The resulting ``extension_api.json`` file will be created in the executable's 
+directory. Copy it to the project folder and add ``custom_api_file=<PATH_TO_FILE>`` 
+to the scons command below.
 
 To generate and compile the bindings, use this command (replacing ``<platform>``
 with ``windows``, ``linux`` or ``macos`` depending on your OS):
@@ -158,7 +158,7 @@ Your folder structure should now look like this:
 In the ``src`` folder, we'll start with creating our header file for the
 GDExtension node we'll be creating. We will name it ``gdexample.h``:
 
-.. code-block:: C++
+.. code-block:: cpp
 
     #ifndef GDEXAMPLE_H
     #define GDEXAMPLE_H
@@ -211,7 +211,7 @@ as the ``_process`` function you're used to in GDScript.
 
 Let's implement our functions by creating our ``gdexample.cpp`` file:
 
-.. code-block:: C++
+.. code-block:: cpp
 
     #include "gdexample.h"
     #include <godot_cpp/core/class_db.hpp>
@@ -250,7 +250,7 @@ and source file like we've implemented ``GDExample`` up above. What we need now
 is a small bit of code that tells Godot about all the classes in our
 GDExtension plugin.
 
-.. code-block:: C++
+.. code-block:: cpp
 
     #include "register_types.h"
 
@@ -258,7 +258,6 @@ GDExtension plugin.
 
     #include <gdextension_interface.h>
     #include <godot_cpp/core/defs.hpp>
-    #include <godot_cpp/core/class_db.hpp>
     #include <godot_cpp/godot.hpp>
 
     using namespace godot;
@@ -298,19 +297,23 @@ needs. We call the function ``register_class`` for each of our classes in our li
 
 The important function is the third function called ``example_library_init``.
 We first call a function in our bindings library that creates an initialization object.
-This object registrates the initialization and termination functions of the GDExtension.
+This object registers the initialization and termination functions of the GDExtension.
 Furthermore, it sets the level of initialization (core, servers, scene, editor, level).
 
 At last, we need the header file for the ``register_types.cpp`` named
 ``register_types.h``.
 
-.. code-block:: C++
+.. code-block:: cpp
 
     #ifndef GDEXAMPLE_REGISTER_TYPES_H
     #define GDEXAMPLE_REGISTER_TYPES_H
 
-    void initialize_example_module();
-    void uninitialize_example_module();
+    #include <godot_cpp/core/class_db.hpp>
+
+    using namespace godot;
+
+    void initialize_example_module(ModuleInitializationLevel p_level);
+    void uninitialize_example_module(ModuleInitializationLevel p_level);
 
     #endif // GDEXAMPLE_REGISTER_TYPES_H
 
@@ -359,7 +362,7 @@ loaded for each platform and the entry function for the module. It is called ``g
     [configuration]
 
     entry_symbol = "example_library_init"
-    compatibility_minimum = 4.1
+    compatibility_minimum = "4.1"
 
     [libraries]
 
@@ -442,8 +445,9 @@ For example:
 
 .. code-block:: none
 
-    [Icon]
-    GDExample = "res://icons/GDExample.svg"
+    [icons]
+
+    GDExample = "res://icons/gd_example.svg"
 
 The path should point to a 16 by 16 pixel SVG image. Read the guide for :ref:`creating icons <doc_editor_icons>`
 for more information.
@@ -462,7 +466,7 @@ Lets add a property that allows us to control the amplitude of our wave.
 In our ``gdexample.h`` file we need to add a member variable and getter and setter
 functions:
 
-.. code-block:: C++
+.. code-block:: cpp
 
     ...
     private:
@@ -477,7 +481,7 @@ functions:
 In our ``gdexample.cpp`` file we need to make a number of changes, we will only
 show the methods we end up changing, don't remove the lines we're omitting:
 
-.. code-block:: C++
+.. code-block:: cpp
 
     void GDExample::_bind_methods() {
         ClassDB::bind_method(D_METHOD("get_amplitude"), &GDExample::get_amplitude);
@@ -519,7 +523,7 @@ Let's do the same but for the speed of our animation and use a setter and getter
 function. Our ``gdexample.h`` header file again only needs a few more lines of
 code:
 
-.. code-block:: C++
+.. code-block:: cpp
 
     ...
         double amplitude;
@@ -533,7 +537,7 @@ code:
 This requires a few more changes to our ``gdexample.cpp`` file, again we're only
 showing the methods that have changed so don't remove anything we're omitting:
 
-.. code-block:: C++
+.. code-block:: cpp
 
     void GDExample::_bind_methods() {
         ...
@@ -590,7 +594,7 @@ would need to showcase a far more complete example.
 
 This is the required syntax:
 
-.. code-block:: C++
+.. code-block:: cpp
 
     some_other_node->connect("the_signal", this, "my_method");
 
@@ -603,7 +607,7 @@ emit a signal every time a second has passed and pass the new location along.
 
 In our ``gdexample.h`` header file, we need to define a new member ``time_emit``:
 
-.. code-block:: C++
+.. code-block:: cpp
 
     ...
         double time_passed;
@@ -618,7 +622,7 @@ constructor. We'll look at the other 2 needed changes one by one.
 In our ``_bind_methods`` method, we need to declare our signal. This is done
 as follows:
 
-.. code-block:: C++
+.. code-block:: cpp
 
     void GDExample::_bind_methods() {
         ...
@@ -634,12 +638,12 @@ are ``PropertyInfo`` types which describe the essentials of each of the method's
 that the parameter will have by default.
 
 So here, we add a signal, with a ``MethodInfo`` which names the signal "position_changed". The
-``PropertyInfo`` parameters describe two esential arguments, one of type ``Object``, the other
+``PropertyInfo`` parameters describe two essential arguments, one of type ``Object``, the other
 of type ``Vector2``, respectively named "node" and "new_pos".
 
 Next, we'll need to change our ``_process`` method:
 
-.. code-block:: C++
+.. code-block:: cpp
 
     void GDExample::_process(double delta) {
         time_passed += speed * delta;

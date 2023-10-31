@@ -24,7 +24,7 @@ Sound effects
 ~~~~~~~~~~~~~
 
 Sound and music can be the single most effective way to add appeal to the game
-experience. In your game assets folder, you have two sound files: "House In a
+experience. In your game's **art** folder, you have two sound files: "House In a
 Forest Loop.ogg" for background music, and "gameover.wav" for when the player
 loses.
 
@@ -35,12 +35,59 @@ audio file.
 
 All audio is automatically imported with the ``Loop`` setting disabled.
 If you want the music to loop seamlessly, click on the Stream file arrow,
-select ``Make Unique``, then click on the Stream file and check the ``Loop`` box. 
+select ``Make Unique``, then click on the Stream file and check the ``Loop`` box.
 
 To play the music, add ``$Music.play()`` in the ``new_game()``
 function and ``$Music.stop()`` in the ``game_over()`` function.
 
 Finally, add ``$DeathSound.play()`` in the ``game_over()`` function.
+
+.. tabs::
+ .. code-tab:: gdscript GDScript
+
+    func game_over():
+        ...
+        $Music.stop()
+        $DeathSound.play()
+
+    func new_game():
+        ...
+        $Music.play()
+
+ .. code-tab:: csharp
+
+    public void GameOver()
+    {
+        ...
+        GetNode<AudioStreamPlayer>("Music").Stop();
+        GetNode<AudioStreamPlayer>("DeathSound").Play();
+    }
+
+    public void NewGame()
+    {
+        ...
+        GetNode<AudioStreamPlayer>("Music").Play();
+    }
+
+ .. code-tab:: cpp
+
+    void Main::_ready() {
+        ...
+        _music = get_node<godot::AudioStreamPlayer>("Music");
+        _death_sound = get_node<godot::AudioStreamPlayer>("DeathSound");
+    }
+
+    void Main::game_over() {
+        ...
+        _music->stop();
+        _death_sound->play();
+    }
+
+    void Main::new_game() {
+        ...
+        _music->play();
+    }
+
 
 Keyboard shortcut
 ~~~~~~~~~~~~~~~~~

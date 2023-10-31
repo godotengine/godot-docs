@@ -112,9 +112,13 @@ abs                              Mathf.Abs
 absf                             Mathf.Abs
 absi                             Mathf.Abs
 acos                             Mathf.Acos
+acosh                            Mathf.Acosh
+angle_difference                 Mathf.AngleDifference
 asin                             Mathf.Asin
+asinh                            Mathf.Asinh
 atan                             Mathf.Atan
 atan2                            Mathf.Atan2
+atanh                            Mathf.Atanh
 bezier_derivative                Mathf.BezierDerivative
 bezier_interpolate               Mathf.BezierInterpolate
 bytes_to_var                     GD.BytesToVar
@@ -128,7 +132,7 @@ clampi                           Mathf.Clamp
 cos                              Mathf.Cos
 cosh                             Mathf.Cosh
 cubic_interpolate                Mathf.CubicInterpolate
-cubic_interpoalte_angle          Mathf.CubicInterpolateAngle
+cubic_interpolate_angle          Mathf.CubicInterpolateAngle
 cubic_interpolate_angle_in_time  Mathf.CubicInterpolateInTime
 cubic_interpolate_in_time        Mathf.CubicInterpolateAngleInTime
 db_to_linear                     Mathf.DbToLinear
@@ -188,6 +192,7 @@ randomize                        GD.Randomize
 remap                            Mathf.Remap
 rid_allocate_id                  N/A
 rid_from_int64                   N/A
+rotate_toward                    Mathf.RotateToward
 round                            Mathf.Round
 roundf                           Mathf.Round
 roundi                           Mathf.RoundToInt
@@ -207,6 +212,8 @@ str                              Use `$ string interpolation`_
 str_to_var                       GD.StrToVar
 tan                              Mathf.Tan
 tanh                             Mathf.Tanh
+type_convert                     Variant.As<T> or GD.Convert
+type_string                      Variant.Type.ToString
 typeof                           Variant.VariantType
 var_to_bytes                     GD.VarToBytes
 var_to_bytes_with_objects        GD.VarToBytesWithObjects
@@ -430,6 +437,7 @@ path_join                StringExtensions.PathJoin
 repeat                   Use `string constructor`_ or a `StringBuilder`_
 replace                  `string.Replace`_ or `RegEx`_
 replacen                 StringExtensions.ReplaceN (Consider using `string.Replace`_ or `RegEx`_)
+reverse                  N/A
 rfind                    StringExtensions.RFind (Consider using `string.LastIndexOf`_ or `string.LastIndexOfAny`_)
 rfindn                   StringExtensions.RFindN (Consider using `string.LastIndexOf`_ or `string.LastIndexOfAny`_)
 right                    StringExtensions.Right (Consider using `string.Substring`_ or `string.AsSpan`_)
@@ -458,7 +466,7 @@ to_upper                 `string.ToUpper`_
 to_utf16_buffer          StringExtensions.ToUtf16Buffer (Consider using `System.Text.Encoding.UTF16.GetBytes`_)
 to_utf32_buffer          StringExtensions.ToUtf32Buffer (Consider using `System.Text.Encoding.UTF32.GetBytes`_)
 to_utf8_buffer           StringExtensions.ToUtf8Buffer (Consider using `System.Text.Encoding.UTF8.GetBytes`_)
-to_wchar_buffer          StringExtensions.ToUtf16Buffer in Windows and StringExtensiont.ToUtf32Buffer in other platforms
+to_wchar_buffer          StringExtensions.ToUtf16Buffer in Windows and StringExtensions.ToUtf32Buffer in other platforms
 trim_prefix              StringExtensions.TrimPrefix
 trim_suffix              StringExtensions.TrimSuffix
 unicode_at               `string[int]`_ indexer
@@ -794,7 +802,7 @@ Dictionary
 ----------
 
 Use ``Godot.Collections.Dictionary`` for an untyped ``Variant`` dictionary.
-``Godot.Colelctions.Dictionary<TKey, TValue>`` is a type-safe wrapper around ``Godot.Collections.Dictionary``.
+``Godot.Collections.Dictionary<TKey, TValue>`` is a type-safe wrapper around ``Godot.Collections.Dictionary``.
 
 See also :ref:`Dictionary in C# <doc_c_sharp_collections_dictionary>`.
 

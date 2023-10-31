@@ -246,7 +246,11 @@ Methods
    +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                              | :ref:`joint_set_param<class_PhysicsServer2D_method_joint_set_param>` **(** :ref:`RID<class_RID>` joint, :ref:`JointParam<enum_PhysicsServer2D_JointParam>` param, :ref:`float<class_float>` value **)**                                                                                                            |
    +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                           | :ref:`pin_joint_get_flag<class_PhysicsServer2D_method_pin_joint_get_flag>` **(** :ref:`RID<class_RID>` joint, :ref:`PinJointFlag<enum_PhysicsServer2D_PinJointFlag>` flag **)** |const|                                                                                                                            |
+   +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                                         | :ref:`pin_joint_get_param<class_PhysicsServer2D_method_pin_joint_get_param>` **(** :ref:`RID<class_RID>` joint, :ref:`PinJointParam<enum_PhysicsServer2D_PinJointParam>` param **)** |const|                                                                                                                       |
+   +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                                              | :ref:`pin_joint_set_flag<class_PhysicsServer2D_method_pin_joint_set_flag>` **(** :ref:`RID<class_RID>` joint, :ref:`PinJointFlag<enum_PhysicsServer2D_PinJointFlag>` flag, :ref:`bool<class_bool>` enabled **)**                                                                                                   |
    +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                              | :ref:`pin_joint_set_param<class_PhysicsServer2D_method_pin_joint_set_param>` **(** :ref:`RID<class_RID>` joint, :ref:`PinJointParam<enum_PhysicsServer2D_PinJointParam>` param, :ref:`float<class_float>` value **)**                                                                                              |
    +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -910,6 +914,56 @@ enum **PinJointParam**:
 
 Constant to set/get a how much the bond of the pin joint can flex. The default value of this parameter is ``0.0``.
 
+.. _class_PhysicsServer2D_constant_PIN_JOINT_LIMIT_UPPER:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`PinJointParam<enum_PhysicsServer2D_PinJointParam>` **PIN_JOINT_LIMIT_UPPER** = ``1``
+
+The maximum rotation around the pin.
+
+.. _class_PhysicsServer2D_constant_PIN_JOINT_LIMIT_LOWER:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`PinJointParam<enum_PhysicsServer2D_PinJointParam>` **PIN_JOINT_LIMIT_LOWER** = ``2``
+
+The minimum rotation around the pin.
+
+.. _class_PhysicsServer2D_constant_PIN_JOINT_MOTOR_TARGET_VELOCITY:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`PinJointParam<enum_PhysicsServer2D_PinJointParam>` **PIN_JOINT_MOTOR_TARGET_VELOCITY** = ``3``
+
+Target speed for the motor. In radians per second.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _enum_PhysicsServer2D_PinJointFlag:
+
+.. rst-class:: classref-enumeration
+
+enum **PinJointFlag**:
+
+.. _class_PhysicsServer2D_constant_PIN_JOINT_FLAG_ANGULAR_LIMIT_ENABLED:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`PinJointFlag<enum_PhysicsServer2D_PinJointFlag>` **PIN_JOINT_FLAG_ANGULAR_LIMIT_ENABLED** = ``0``
+
+If ``true``, the pin has a maximum and a minimum rotation.
+
+.. _class_PhysicsServer2D_constant_PIN_JOINT_FLAG_MOTOR_ENABLED:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`PinJointFlag<enum_PhysicsServer2D_PinJointFlag>` **PIN_JOINT_FLAG_MOTOR_ENABLED** = ``1``
+
+If ``true``, a motor turns the pin.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -1209,7 +1263,7 @@ Returns the local transform matrix of the shape with the given index in the area
 
 :ref:`RID<class_RID>` **area_get_space** **(** :ref:`RID<class_RID>` area **)** |const|
 
-Returns the :ref:`RID<class_RID>` of the space assigned to the area. Returns ``RID()`` if no space is assigned.
+Returns the :ref:`RID<class_RID>` of the space assigned to the area. Returns an empty :ref:`RID<class_RID>` if no space is assigned.
 
 .. rst-class:: classref-item-separator
 
@@ -1785,7 +1839,7 @@ Returns the local transform matrix of the shape with the given index in the area
 
 :ref:`RID<class_RID>` **body_get_space** **(** :ref:`RID<class_RID>` body **)** |const|
 
-Returns the :ref:`RID<class_RID>` of the space assigned to the body. Returns ``RID()`` if no space is assigned.
+Returns the :ref:`RID<class_RID>` of the space assigned to the body. Returns an empty :ref:`RID<class_RID>` if no space is assigned.
 
 .. rst-class:: classref-item-separator
 
@@ -2299,7 +2353,7 @@ Makes the joint a groove joint.
 
 void **joint_make_pin** **(** :ref:`RID<class_RID>` joint, :ref:`Vector2<class_Vector2>` anchor, :ref:`RID<class_RID>` body_a, :ref:`RID<class_RID>` body_b=RID() **)**
 
-Makes the joint a pin joint. If ``body_b`` is ``RID()``, then ``body_a`` is pinned to the point ``anchor`` (given in global coordinates); otherwise, ``body_a`` is pinned to ``body_b`` at the point ``anchor`` (given in global coordinates). To set the parameters which are specific to the pin joint, see :ref:`pin_joint_set_param<class_PhysicsServer2D_method_pin_joint_set_param>`.
+Makes the joint a pin joint. If ``body_b`` is an empty :ref:`RID<class_RID>`, then ``body_a`` is pinned to the point ``anchor`` (given in global coordinates); otherwise, ``body_a`` is pinned to ``body_b`` at the point ``anchor`` (given in global coordinates). To set the parameters which are specific to the pin joint, see :ref:`pin_joint_set_param<class_PhysicsServer2D_method_pin_joint_set_param>`.
 
 .. rst-class:: classref-item-separator
 
@@ -2317,6 +2371,18 @@ Sets the value of the given joint parameter. See :ref:`JointParam<enum_PhysicsSe
 
 ----
 
+.. _class_PhysicsServer2D_method_pin_joint_get_flag:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **pin_joint_get_flag** **(** :ref:`RID<class_RID>` joint, :ref:`PinJointFlag<enum_PhysicsServer2D_PinJointFlag>` flag **)** |const|
+
+Gets a pin joint flag (see :ref:`PinJointFlag<enum_PhysicsServer2D_PinJointFlag>` constants).
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_PhysicsServer2D_method_pin_joint_get_param:
 
 .. rst-class:: classref-method
@@ -2324,6 +2390,18 @@ Sets the value of the given joint parameter. See :ref:`JointParam<enum_PhysicsSe
 :ref:`float<class_float>` **pin_joint_get_param** **(** :ref:`RID<class_RID>` joint, :ref:`PinJointParam<enum_PhysicsServer2D_PinJointParam>` param **)** |const|
 
 Returns the value of a pin joint parameter. See :ref:`PinJointParam<enum_PhysicsServer2D_PinJointParam>` for a list of available parameters.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_PhysicsServer2D_method_pin_joint_set_flag:
+
+.. rst-class:: classref-method
+
+void **pin_joint_set_flag** **(** :ref:`RID<class_RID>` joint, :ref:`PinJointFlag<enum_PhysicsServer2D_PinJointFlag>` flag, :ref:`bool<class_bool>` enabled **)**
+
+Sets a pin joint flag (see :ref:`PinJointFlag<enum_PhysicsServer2D_PinJointFlag>` constants).
 
 .. rst-class:: classref-item-separator
 
@@ -2421,19 +2499,19 @@ void **shape_set_data** **(** :ref:`RID<class_RID>` shape, :ref:`Variant<class_V
 
 Sets the shape data that defines the configuration of the shape. The ``data`` to be passed depends on the shape's type (see :ref:`shape_get_type<class_PhysicsServer2D_method_shape_get_type>`):
 
-- :ref:`SHAPE_WORLD_BOUNDARY<class_PhysicsServer2D_constant_SHAPE_WORLD_BOUNDARY>`: an array of length two containing a :ref:`Vector2<class_Vector2>` ``normal`` direction and a ``float`` distance ``d``,
+- :ref:`SHAPE_WORLD_BOUNDARY<class_PhysicsServer2D_constant_SHAPE_WORLD_BOUNDARY>`: an array of length two containing a :ref:`Vector2<class_Vector2>` ``normal`` direction and a :ref:`float<class_float>` distance ``d``,
 
-- :ref:`SHAPE_SEPARATION_RAY<class_PhysicsServer2D_constant_SHAPE_SEPARATION_RAY>`: a dictionary containing the key ``length`` with a ``float`` value and the key ``slide_on_slope`` with a ``bool`` value,
+- :ref:`SHAPE_SEPARATION_RAY<class_PhysicsServer2D_constant_SHAPE_SEPARATION_RAY>`: a dictionary containing the key ``length`` with a :ref:`float<class_float>` value and the key ``slide_on_slope`` with a :ref:`bool<class_bool>` value,
 
 - :ref:`SHAPE_SEGMENT<class_PhysicsServer2D_constant_SHAPE_SEGMENT>`: a :ref:`Rect2<class_Rect2>` ``rect`` containing the first point of the segment in ``rect.position`` and the second point of the segment in ``rect.size``,
 
-- :ref:`SHAPE_CIRCLE<class_PhysicsServer2D_constant_SHAPE_CIRCLE>`: a ``float`` ``radius``,
+- :ref:`SHAPE_CIRCLE<class_PhysicsServer2D_constant_SHAPE_CIRCLE>`: a :ref:`float<class_float>` ``radius``,
 
 - :ref:`SHAPE_RECTANGLE<class_PhysicsServer2D_constant_SHAPE_RECTANGLE>`: a :ref:`Vector2<class_Vector2>` ``half_extents``,
 
-- :ref:`SHAPE_CAPSULE<class_PhysicsServer2D_constant_SHAPE_CAPSULE>`: an array of length two (or a :ref:`Vector2<class_Vector2>`) containing a ``float`` ``height`` and a ``float`` ``radius``,
+- :ref:`SHAPE_CAPSULE<class_PhysicsServer2D_constant_SHAPE_CAPSULE>`: an array of length two (or a :ref:`Vector2<class_Vector2>`) containing a :ref:`float<class_float>` ``height`` and a :ref:`float<class_float>` ``radius``,
 
-- :ref:`SHAPE_CONVEX_POLYGON<class_PhysicsServer2D_constant_SHAPE_CONVEX_POLYGON>`: either a :ref:`PackedVector2Array<class_PackedVector2Array>` of points defining a convex polygon in counterclockwise order (the clockwise outward normal of each segment formed by consecutive points is calculated internally), or a :ref:`PackedFloat32Array<class_PackedFloat32Array>` of length divisible by four so that every 4-tuple of ``float``\ s contains the coordinates of a point followed by the coordinates of the clockwise outward normal vector to the segment between the current point and the next point,
+- :ref:`SHAPE_CONVEX_POLYGON<class_PhysicsServer2D_constant_SHAPE_CONVEX_POLYGON>`: either a :ref:`PackedVector2Array<class_PackedVector2Array>` of points defining a convex polygon in counterclockwise order (the clockwise outward normal of each segment formed by consecutive points is calculated internally), or a :ref:`PackedFloat32Array<class_PackedFloat32Array>` of length divisible by four so that every 4-tuple of :ref:`float<class_float>`\ s contains the coordinates of a point followed by the coordinates of the clockwise outward normal vector to the segment between the current point and the next point,
 
 - :ref:`SHAPE_CONCAVE_POLYGON<class_PhysicsServer2D_constant_SHAPE_CONCAVE_POLYGON>`: a :ref:`PackedVector2Array<class_PackedVector2Array>` of length divisible by two (each pair of points forms one segment).
 

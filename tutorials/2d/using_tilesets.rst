@@ -639,8 +639,11 @@ properties is different compared to base tiles:
 - **Rendering > Flip H:** If ``true``, the tile is horizontally flipped.
 - **Rendering > Flip V:** If ``true``, the tile is vertically flipped.
 - **Rendering > Transpose:** If ``true``, the tile is rotated 90 degrees
-  counter-clockwise. Combine this with **Flip H** and/or **Flip V** to perform
-  180-degree or 270-degree rotation.
+  *counter-clockwise* and then flipped vertically. In practice, this means that
+  to rotate a tile by 90 degrees clockwise without flipping it, you should
+  enable **Flip H** and **Transpose**. To rotate a tile by 180 degrees
+  clockwise, enable **Flip H** and **Flip V**. To rotate a tile by 270 degrees
+  clockwise, enable **Flip V** and **Transpose**.
 - **Rendering > Texture Origin:** The origin to use for drawing the tile. This
   can be used to visually offset the tile compared to the base tile.
 - **Rendering > Modulate:** The color multiplier to use when rendering the tile.

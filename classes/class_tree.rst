@@ -477,7 +477,7 @@ Emitted when an item is selected.
 
 **multi_selected** **(** :ref:`TreeItem<class_TreeItem>` item, :ref:`int<class_int>` column, :ref:`bool<class_bool>` selected **)**
 
-Emitted instead of ``item_selected`` if ``select_mode`` is :ref:`SELECT_MULTI<class_Tree_constant_SELECT_MULTI>`.
+Emitted instead of :ref:`item_selected<class_Tree_signal_item_selected>` if :ref:`select_mode<class_Tree_property_select_mode>` is set to :ref:`SELECT_MULTI<class_Tree_constant_SELECT_MULTI>`.
 
 .. rst-class:: classref-item-separator
 

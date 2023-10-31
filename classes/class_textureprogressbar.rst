@@ -415,7 +415,7 @@ The offset of :ref:`texture_progress<class_TextureProgressBar_property_texture_p
 - void **set_tint_over** **(** :ref:`Color<class_Color>` value **)**
 - :ref:`Color<class_Color>` **get_tint_over** **(** **)**
 
-Multiplies the color of the bar's ``texture_over`` texture. The effect is similar to :ref:`CanvasItem.modulate<class_CanvasItem_property_modulate>`, except it only affects this specific texture instead of the entire node.
+Multiplies the color of the bar's :ref:`texture_over<class_TextureProgressBar_property_texture_over>` texture. The effect is similar to :ref:`CanvasItem.modulate<class_CanvasItem_property_modulate>`, except it only affects this specific texture instead of the entire node.
 
 .. rst-class:: classref-item-separator
 
@@ -432,7 +432,7 @@ Multiplies the color of the bar's ``texture_over`` texture. The effect is simila
 - void **set_tint_progress** **(** :ref:`Color<class_Color>` value **)**
 - :ref:`Color<class_Color>` **get_tint_progress** **(** **)**
 
-Multiplies the color of the bar's ``texture_progress`` texture.
+Multiplies the color of the bar's :ref:`texture_progress<class_TextureProgressBar_property_texture_progress>` texture.
 
 .. rst-class:: classref-item-separator
 
@@ -449,7 +449,7 @@ Multiplies the color of the bar's ``texture_progress`` texture.
 - void **set_tint_under** **(** :ref:`Color<class_Color>` value **)**
 - :ref:`Color<class_Color>` **get_tint_under** **(** **)**
 
-Multiplies the color of the bar's ``texture_under`` texture.
+Multiplies the color of the bar's :ref:`texture_under<class_TextureProgressBar_property_texture_under>` texture.
 
 .. rst-class:: classref-section-separator
 

@@ -95,7 +95,7 @@ Two tracks appear in the editor with a diamond icon representing each keyframe.
 |image11|
 
 You can click and drag on the diamonds to move them in time. Move the
-position key to ``0.2`` seconds and the rotation key to ``0.1`` seconds.
+position key to ``0.3`` seconds and the rotation key to ``0.1`` seconds.
 
 |image12|
 
@@ -358,7 +358,7 @@ Here's the *Player* script.
             var collision = get_slide_collision(index)
 
             # If the collision is with ground
-            if (collision.get_collider() == null):
+            if collision.get_collider() == null:
                 continue
 
             # If the collider is with a mob
@@ -459,7 +459,7 @@ Here's the *Player* script.
             // Jumping.
             if (IsOnFloor() && Input.IsActionJustPressed("jump"))
             {
-                _targetVelocity.y += JumpImpulse;
+                _targetVelocity.Y += JumpImpulse;
             }
 
             // Iterate through all collisions that occurred this frame.

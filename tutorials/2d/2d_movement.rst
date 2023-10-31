@@ -131,7 +131,7 @@ while up/down moves it forward or backward in whatever direction it's facing.
         [Export]
         public float RotationSpeed { get; set; } = 1.5f;
 
-        private int _rotationDirection;
+        private float _rotationDirection;
 
         public void GetInput()
         {

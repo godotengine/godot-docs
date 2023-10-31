@@ -16,25 +16,25 @@ Before following the OpenXR-specific instructions here, you'll need to first set
 
 See :ref:`doc_exporting_for_android` for the full details, and return here when you've finished these steps.
 
-Custom Android build
+Gradle Android build
 --------------------
 
 .. note::
     Official support for the Android platform wasn't added to the OpenXR specification initially resulting in various vendors creating custom loaders to make OpenXR available on their headsets.
     While the long term expectation is that all vendors will adopt the official OpenXR loader, for now these loaders need to be added to your project.
 
-In order to include the vendor-specific OpenXR loader into your project, you will need to setup a custom Android build.
+In order to include the vendor-specific OpenXR loader into your project, you will need to setup a gradle Android build.
 
 Select **Install Android Build Template...** from the **Project** menu:
 
-.. image:: img/android_custom_build.webp
+.. image:: img/android_gradle_build.webp
 
 This will create a folder called **android** inside of your project that contains all the runtime files needed on Android. You can now customize this installation. Godot won't show this in the editor but you can find it with a file browser.
 
-You can read more about custom builds here: :ref:`doc_android_custom_build`.
+You can read more about gradle builds here: :ref:`doc_android_gradle_build`.
 
-Installing the loader plugins
------------------------------
+Installing the loader plugin
+----------------------------
 
 .. warning::
     The Android plugin structure has been restructured in Godot 4.2, if you've previously installed the loader plugin you need to delete it from the `android/plugins` folder.
@@ -51,6 +51,16 @@ Alternatively you can manually install the loader plugin by downloading the v2.x
 You will need to copy the `assets/addons/godotopenxr` folder from the zip file into your projects `assets/addons` folder.
 
 You can find the main repository of the loader plugin `here <https://github.com/GodotVR/godot_openxr_loaders>`__.
+
+Enabling the loader plugin
+--------------------------
+
+The loader plugin needs to be enabled before the export settings become accessible.
+Open **Project** and select **Project Settings...**.
+Go to the **Plugins** tab.
+Enable the **GodotOpenXR** plugin.
+
+.. image:: img/xr_enable_loader_plugin.webp
 
 Creating the export presets
 ---------------------------

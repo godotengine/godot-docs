@@ -551,7 +551,7 @@ Property Descriptions
 - void **set_adjustment_brightness** **(** :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_adjustment_brightness** **(** **)**
 
-The global brightness value of the rendered scene. Effective only if ``adjustment_enabled`` is ``true``.
+The global brightness value of the rendered scene. Effective only if :ref:`adjustment_enabled<class_Environment_property_adjustment_enabled>` is ``true``.
 
 .. rst-class:: classref-item-separator
 
@@ -568,7 +568,7 @@ The global brightness value of the rendered scene. Effective only if ``adjustmen
 - void **set_adjustment_color_correction** **(** :ref:`Texture<class_Texture>` value **)**
 - :ref:`Texture<class_Texture>` **get_adjustment_color_correction** **(** **)**
 
-The :ref:`Texture2D<class_Texture2D>` or :ref:`Texture3D<class_Texture3D>` lookup table (LUT) to use for the built-in post-process color grading. Can use a :ref:`GradientTexture1D<class_GradientTexture1D>` for a 1-dimensional LUT, or a :ref:`Texture3D<class_Texture3D>` for a more complex LUT. Effective only if ``adjustment_enabled`` is ``true``.
+The :ref:`Texture2D<class_Texture2D>` or :ref:`Texture3D<class_Texture3D>` lookup table (LUT) to use for the built-in post-process color grading. Can use a :ref:`GradientTexture1D<class_GradientTexture1D>` for a 1-dimensional LUT, or a :ref:`Texture3D<class_Texture3D>` for a more complex LUT. Effective only if :ref:`adjustment_enabled<class_Environment_property_adjustment_enabled>` is ``true``.
 
 .. rst-class:: classref-item-separator
 
@@ -585,7 +585,7 @@ The :ref:`Texture2D<class_Texture2D>` or :ref:`Texture3D<class_Texture3D>` looku
 - void **set_adjustment_contrast** **(** :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_adjustment_contrast** **(** **)**
 
-The global contrast value of the rendered scene (default value is 1). Effective only if ``adjustment_enabled`` is ``true``.
+The global contrast value of the rendered scene (default value is 1). Effective only if :ref:`adjustment_enabled<class_Environment_property_adjustment_enabled>` is ``true``.
 
 .. rst-class:: classref-item-separator
 
@@ -621,7 +621,7 @@ If ``true``, enables the ``adjustment_*`` properties provided by this resource. 
 - void **set_adjustment_saturation** **(** :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_adjustment_saturation** **(** **)**
 
-The global color saturation value of the rendered scene (default value is 1). Effective only if ``adjustment_enabled`` is ``true``.
+The global color saturation value of the rendered scene (default value is 1). Effective only if :ref:`adjustment_enabled<class_Environment_property_adjustment_enabled>` is ``true``.
 
 .. rst-class:: classref-item-separator
 

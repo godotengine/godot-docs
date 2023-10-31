@@ -486,7 +486,7 @@ Returns the acceleration in m/s² of the device's accelerometer sensor, if the d
 
 Note this method returns an empty :ref:`Vector3<class_Vector3>` when running from the editor even when your device has an accelerometer. You must export your project to a supported device to read values from the accelerometer.
 
-\ **Note:** This method only works on iOS, Android, and UWP. On other platforms, it always returns :ref:`Vector3.ZERO<class_Vector3_constant_ZERO>`.
+\ **Note:** This method only works on Android and iOS. On other platforms, it always returns :ref:`Vector3.ZERO<class_Vector3_constant_ZERO>`.
 
 .. rst-class:: classref-item-separator
 
@@ -512,7 +512,7 @@ If ``exact_match`` is ``false``, it ignores additional input modifiers for :ref:
 
 :ref:`float<class_float>` **get_action_strength** **(** :ref:`StringName<class_StringName>` action, :ref:`bool<class_bool>` exact_match=false **)** |const|
 
-Returns a value between 0 and 1 representing the intensity of the given action. In a joypad, for example, the further away the axis (analog sticks or L2, R2 triggers) is from the dead zone, the closer the value will be to 1. If the action is mapped to a control that has no axis as the keyboard, the value returned will be 0 or 1.
+Returns a value between 0 and 1 representing the intensity of the given action. In a joypad, for example, the further away the axis (analog sticks or L2, R2 triggers) is from the dead zone, the closer the value will be to 1. If the action is mapped to a control that has no axis such as the keyboard, the value returned will be 0 or 1.
 
 If ``exact_match`` is ``false``, it ignores additional input modifiers for :ref:`InputEventKey<class_InputEventKey>` and :ref:`InputEventMouseButton<class_InputEventMouseButton>` events, and the direction for :ref:`InputEventJoypadMotion<class_InputEventJoypadMotion>` events.
 
@@ -692,7 +692,7 @@ Returns the last mouse velocity. To provide a precise and jitter-free velocity, 
 
 Returns the magnetic field strength in micro-Tesla for all axes of the device's magnetometer sensor, if the device has one. Otherwise, the method returns :ref:`Vector3.ZERO<class_Vector3_constant_ZERO>`.
 
-\ **Note:** This method only works on Android, iOS and UWP. On other platforms, it always returns :ref:`Vector3.ZERO<class_Vector3_constant_ZERO>`.
+\ **Note:** This method only works on Android and iOS. On other platforms, it always returns :ref:`Vector3.ZERO<class_Vector3_constant_ZERO>`.
 
 .. rst-class:: classref-item-separator
 

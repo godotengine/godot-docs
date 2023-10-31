@@ -91,7 +91,7 @@ of the debugger.
     restarts, even if the script wasn't saved when exiting the editor.
 
     You can also use the ``breakpoint`` keyword in GDScript to create a
-    breakpoint that is stored in the script iself. Unlike breakpoints created by
+    breakpoint that is stored in the script itself. Unlike breakpoints created by
     clicking in the gutter, this keyword-based breakpoint is persistent across
     different machines when using version control.
 

@@ -244,7 +244,7 @@ With this code, if no collisions occurred on a given frame, the loop won't run.
            var collision = get_slide_collision(index)
 
            # If the collision is with ground
-           if (collision.get_collider() == null):
+           if collision.get_collider() == null:
                continue
 
            # If the collider is with a mob
@@ -269,6 +269,8 @@ With this code, if no collisions occurred on a given frame, the loop won't run.
             KinematicCollision3D collision = GetSlideCollision(index);
 
             // If the collision is with a mob.
+            // With C# we leverage typing and pattern-matching
+            // instead of checking for the group we created.
             if (collision.GetCollider() is Mob mob)
             {
                 // We check that we are hitting it from above.
@@ -343,6 +345,10 @@ destroy the mob.
         EmitSignal(SignalName.Squashed);
         QueueFree();
     }
+
+.. note::
+
+    When using C#, Godot will create the appropriate events automatically for all Signals ending with `EventHandler`, see :ref:`C# Signals <doc_c_sharp_signals>`.
 
 We will use the signal to add points to the score in the next lesson.
 

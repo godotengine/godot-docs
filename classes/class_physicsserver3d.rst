@@ -2537,13 +2537,11 @@ Continuous collision detection tries to predict where a moving body will collide
 
 void **body_set_force_integration_callback** **(** :ref:`RID<class_RID>` body, :ref:`Callable<class_Callable>` callable, :ref:`Variant<class_Variant>` userdata=null **)**
 
-Sets the function used to calculate physics for an object, if that object allows it (see :ref:`body_set_omit_force_integration<class_PhysicsServer3D_method_body_set_omit_force_integration>`).
+Sets the function used to calculate physics for an object, if that object allows it (see :ref:`body_set_omit_force_integration<class_PhysicsServer3D_method_body_set_omit_force_integration>`). The force integration function takes 2 arguments:
 
-The force integration function takes 2 arguments:
+- ``state`` — :ref:`PhysicsDirectBodyState3D<class_PhysicsDirectBodyState3D>` used to retrieve and modify the body's state.
 
-\ ``state:`` :ref:`PhysicsDirectBodyState3D<class_PhysicsDirectBodyState3D>` used to retrieve and modify the body's state.
-
-\ ``userdata:`` Optional user data, if it was passed when calling ``body_set_force_integration_callback``.
+- ``userdata`` — optional user data passed to :ref:`body_set_force_integration_callback<class_PhysicsServer3D_method_body_set_force_integration_callback>`.
 
 .. rst-class:: classref-item-separator
 

@@ -848,7 +848,7 @@ If ``true``, the **LineEdit** width will increase to stay longer than the :ref:`
 - void **set_flat** **(** :ref:`bool<class_bool>` value **)**
 - :ref:`bool<class_bool>` **is_flat** **(** **)**
 
-If ``true``, the **LineEdit** don't display decoration.
+If ``true``, the **LineEdit** doesn't display decoration.
 
 .. rst-class:: classref-item-separator
 
@@ -865,7 +865,7 @@ If ``true``, the **LineEdit** don't display decoration.
 - void **set_language** **(** :ref:`String<class_String>` value **)**
 - :ref:`String<class_String>` **get_language** **(** **)**
 
-Language code used for line-breaking and text shaping algorithms, if left empty current locale is used instead.
+Language code used for line-breaking and text shaping algorithms. If left empty, current locale is used instead.
 
 .. rst-class:: classref-item-separator
 
@@ -998,7 +998,7 @@ If ``true``, every character is replaced with the secret character (see :ref:`se
 - void **set_secret_character** **(** :ref:`String<class_String>` value **)**
 - :ref:`String<class_String>` **get_secret_character** **(** **)**
 
-The character to use to mask secret input (defaults to "•"). Only a single character can be used as the secret character.
+The character to use to mask secret input. Only a single character can be used as the secret character. If it is longer than one character, only the first one will be used. If it is empty, a space will be used instead.
 
 .. rst-class:: classref-item-separator
 

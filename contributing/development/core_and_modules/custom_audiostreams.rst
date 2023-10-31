@@ -23,7 +23,7 @@ References:
 ~~~~~~~~~~~
 
 -  `servers/audio/audio_stream.h <https://github.com/godotengine/godot/blob/master/servers/audio/audio_stream.h>`__
--  `scene/audio/audioplayer.cpp <https://github.com/godotengine/godot/blob/master/scene/audio/audio_player.cpp>`__
+-  `scene/audio/audio_stream_player.cpp <https://github.com/godotengine/godot/blob/master/scene/audio/audio_stream_player.cpp>`__
 
 What for?
 ---------
@@ -348,4 +348,4 @@ References:
 ~~~~~~~~~~~
 -  `core/math/audio_frame.h <https://github.com/godotengine/godot/blob/master/core/math/audio_frame.h>`__
 -  `servers/audio/audio_stream.h <https://github.com/godotengine/godot/blob/master/servers/audio/audio_stream.h>`__
--  `scene/audio/audioplayer.cpp <https://github.com/godotengine/godot/blob/master/scene/audio/audio_player.cpp>`__
+-  `scene/audio/audio_stream_player.cpp <https://github.com/godotengine/godot/blob/master/scene/audio/audio_stream_player.cpp>`__

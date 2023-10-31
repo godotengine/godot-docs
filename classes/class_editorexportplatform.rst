@@ -32,6 +32,35 @@ Tutorials
 
 - `$DOCS_URL/tutorials/platform/consoles.html <Console support in Godot>`__
 
+.. rst-class:: classref-reftable-group
+
+Methods
+-------
+
+.. table::
+   :widths: auto
+
+   +-----------------------------+---------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>` | :ref:`get_os_name<class_EditorExportPlatform_method_get_os_name>` **(** **)** |const| |
+   +-----------------------------+---------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
+
+Method Descriptions
+-------------------
+
+.. _class_EditorExportPlatform_method_get_os_name:
+
+.. rst-class:: classref-method
+
+:ref:`String<class_String>` **get_os_name** **(** **)** |const|
+
+Returns the name of the export operating system handled by this **EditorExportPlatform** class, as a friendly string. Possible return values are ``Windows``, ``Linux``, ``macOS``, ``Android``, ``iOS``, and ``Web``.
+
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

@@ -286,7 +286,7 @@ The :ref:`AudioStream<class_AudioStream>` object to be played.
 - void **set_stream_paused** **(** :ref:`bool<class_bool>` value **)**
 - :ref:`bool<class_bool>` **get_stream_paused** **(** **)**
 
-If ``true``, the playback is paused. You can resume it by setting ``stream_paused`` to ``false``.
+If ``true``, the playback is paused. You can resume it by setting :ref:`stream_paused<class_AudioStreamPlayer_property_stream_paused>` to ``false``.
 
 .. rst-class:: classref-item-separator
 

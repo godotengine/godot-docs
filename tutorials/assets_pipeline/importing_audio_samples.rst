@@ -150,8 +150,8 @@ metadata, but you can choose to apply a specific loop mode:
 
 When choosing one of the **Forward**, **Ping-Pong** or **Backward** loop modes,
 loop points can also be defined to make only a specific part of the sound loop.
-**Loop Begin** is set in seconds after the beginning of the audio file. **Loop
-End** is also set in seconds after the beginning of the audio file, but will use
+**Loop Begin** is set in samples after the beginning of the audio file. **Loop
+End** is also set in samples after the beginning of the audio file, but will use
 the end of the audio file if set to ``-1``.
 
 .. warning::

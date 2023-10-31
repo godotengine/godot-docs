@@ -3,16 +3,16 @@
 Using NavigationAgents
 ======================
 
-NavigationsAgents are helper nodes that combine functionality 
+NavigationsAgents are helper nodes that combine functionality
 for pathfinding, path following and agent avoidance for a Node2D/3D inheriting parent node.
-They facilitate common calls to the NavigationServer API on 
+They facilitate common calls to the NavigationServer API on
 behalf of the parent actor node in a more convenient manner for beginners.
 
 2D and 3D version of NavigationAgents are available as
 :ref:`NavigationAgent2D<class_NavigationAgent2D>` and
 :ref:`NavigationAgent3D<class_NavigationAgent3D>` respectively.
 
-New NavigationAgent nodes will automatically join the default navigation map on the World2D/World3D.
+New NavigationAgent nodes will automatically join the default navigation map on the :ref:`World2D<class_World2D>`/:ref:`World3D<class_World3D>`.
 
 NavigationsAgent nodes are optional and not a hard requirement to use the navigation system.
 Their entire functionality can be replaced with scripts and direct calls to the NavigationServer API.
@@ -39,7 +39,7 @@ NavigationAgent Pathfollowing
 After a ``target_position`` has been set for the agent, the next position to follow in the path
 can be retrieved with the ``get_next_path_position()`` function.
 
-Once the next path position is received move the parent actor node of the agent 
+Once the next path position is received move the parent actor node of the agent
 towards this path position with your own movement code.
 
 .. note::
@@ -50,8 +50,8 @@ towards this path position with your own movement code.
 NavigationAgents have their own internal logic to proceed with the current path and call for updates.
 
 The ``get_next_path_position()`` function is responsible for updating many of the agent's internal states and properties.
-The function should be repeatedly called `once` every ``physics_process`` until ``is_navigation_finished()`` tells that the path is finished.
-The function should not be called after the target position or path end has been reached 
+The function should be repeatedly called *once* every ``physics_process`` until ``is_navigation_finished()`` tells that the path is finished.
+The function should not be called after the target position or path end has been reached
 as it can make the agent jitter in place due to the repeated path updates.
 Always check very early in script with ``is_navigation_finished()`` if the path is already finished.
 
@@ -74,7 +74,7 @@ Pathfollowing common problems
 There are some common user problems and important caveats to consider when writing agent movement scripts.
 
 - The path is returned empty
-    If an agent queries a path before the navigation map synchronisation, e.g. in a _ready() function, the path might return empty. In this case the get_next_path_position() function will return the same position as the agent parent node and the agent will consider the path end reached. This is fixed by making a deferred call or using a callback e.g. waiting for the navigation map changed signal.
+    If an agent queries a path before the navigation map synchronisation, e.g. in a ``_ready()`` function, the path might return empty. In this case the ``get_next_path_position()`` function will return the same position as the agent parent node and the agent will consider the path end reached. This is fixed by making a deferred call or using a callback e.g. waiting for the navigation map changed signal.
 
 - The agent is stuck dancing between two positions
     This is usually caused by very frequent path updates every single frame, either deliberate or by accident (e.g. max path distance set too short). The pathfinding needs to find the closest position that are valid on navigation mesh. If a new path is requested every single frame the first path positions might end up switching constantly in front and behind the agent's current position, causing it to dance between the two positions.
@@ -94,7 +94,7 @@ In order for NavigationAgents to use the avoidance feature the ``enable_avoidanc
 
 .. image:: img/agent_avoidance_enabled.png
 
-The velocity_computed signal of the NavigationAgent node must be connected to receive the ``safe_velocity`` calculation result.
+The ``velocity_computed`` signal of the NavigationAgent node must be connected to receive the safe velocity calculation result.
 
 .. image:: img/agent_safevelocity_signal.png
 
@@ -132,7 +132,7 @@ NavigationObstacles can be used to add some environment constrains to the avoida
     Avoidance does not affect the pathfinding. It should be seen as an additional option for constantly moving objects that cannot be (re)baked to a navigation mesh efficiently in order to move around them.
 
 Using the NavigationAgent ``enable_avoidance`` property is the preferred option
-to toggle avoidance. The following code snippets can be used to 
+to toggle avoidance. The following code snippets can be used to
 toggle avoidance on agents, create or delete avoidance callbacks or switch avoidance modes.
 
 .. tabs::
@@ -179,7 +179,7 @@ The following sections provides script templates for nodes commonly used with Na
 Actor as Node3D
 ~~~~~~~~~~~~~~~
 
-This script adds basic navigation movement to a Node3D with a NavigationAgent3D child node.
+This script adds basic navigation movement to a :ref:`Node3D <class_Node3D>` with a :ref:`NavigationAgent3D <class_NavigationAgent3D>` child node.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -202,8 +202,7 @@ This script adds basic navigation movement to a Node3D with a NavigationAgent3D 
 
         movement_delta = movement_speed * delta
         var next_path_position: Vector3 = navigation_agent.get_next_path_position()
-        var current_agent_position: Vector3 = global_position
-        var new_velocity: Vector3 = (next_path_position - current_agent_position).normalized() * movement_delta
+        var new_velocity: Vector3 = global_position.direction_to(next_path_position) * movement_delta
         if navigation_agent.avoidance_enabled:
             navigation_agent.set_velocity(new_velocity)
         else:
@@ -215,7 +214,7 @@ This script adds basic navigation movement to a Node3D with a NavigationAgent3D 
 Actor as CharacterBody3D
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-This script adds basic navigation movement to a CharacterBody3D with a NavigationAgent3D child node.
+This script adds basic navigation movement to a :ref:`CharacterBody3D <class_CharacterBody3D>` with a :ref:`NavigationAgent3D <class_NavigationAgent3D>` child node.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -236,8 +235,7 @@ This script adds basic navigation movement to a CharacterBody3D with a Navigatio
             return
 
         var next_path_position: Vector3 = navigation_agent.get_next_path_position()
-        var current_agent_position: Vector3 = global_position
-        var new_velocity: Vector3 = (next_path_position - current_agent_position).normalized() * movement_speed
+        var new_velocity: Vector3 = global_position.direction_to(next_path_position) * movement_speed
         if navigation_agent.avoidance_enabled:
             navigation_agent.set_velocity(new_velocity)
         else:
@@ -250,7 +248,7 @@ This script adds basic navigation movement to a CharacterBody3D with a Navigatio
 Actor as RigidBody3D
 ~~~~~~~~~~~~~~~~~~~~
 
-This script adds basic navigation movement to a RigidBody3D with a NavigationAgent3D child node.
+This script adds basic navigation movement to a :ref:`RigidBody3D <class_RigidBody3D>` with a :ref:`NavigationAgent3D <class_NavigationAgent3D>` child node.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -271,8 +269,7 @@ This script adds basic navigation movement to a RigidBody3D with a NavigationAge
             return
 
         var next_path_position: Vector3 = navigation_agent.get_next_path_position()
-        var current_agent_position: Vector3 = global_position
-        var new_velocity: Vector3 = (next_path_position - current_agent_position).normalized() * movement_speed
+        var new_velocity: Vector3 = global_position.direction_to(next_path_position) * movement_speed
         if navigation_agent.avoidance_enabled:
             navigation_agent.set_velocity(new_velocity)
         else:

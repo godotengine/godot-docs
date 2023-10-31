@@ -104,9 +104,9 @@ The tutorial will assume from now on that you placed the source code in
     add the Godot source folder to the list of exceptions in your antivirus
     software.
 
-    For Windows Defender, hit the :kbd:`Windows` key, type
-    "Windows Defender Settings" then hit :kbd:`Enter`.
-    Under **Virus & threat protection**, go to **Virus & threat protection setting**
+    For Windows Defender, hit the :kbd:`Windows` key, type "Windows Security"
+    then hit :kbd:`Enter`. Click on **Virus & threat protection** on the left
+    panel. Under **Virus & threat protection settings** click on **Mange Settings**
     and scroll down to **Exclusions**. Click **Add or remove exclusions** then
     add the Godot source folder.
 
@@ -140,8 +140,8 @@ the engine source code (using ``cd``) and type::
           pywin32 being missing. You can safely ignore this warning.
 
 If all goes well, the resulting binary executable will be placed in
-``C:\godot\bin\`` with the name ``godot.windows.tools.32.exe`` or
-``godot.windows.tools.64.exe``. By default, SCons will build a binary matching
+``C:\godot\bin\`` with the name ``godot.windows.editor.x86_32.exe`` or
+``godot.windows.editor.x86_64.exe``. By default, SCons will build a binary matching
 your CPU architecture, but this can be overridden using ``arch=x86_64`` or
 ``arch=x86_32``.
 

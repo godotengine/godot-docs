@@ -116,6 +116,18 @@ See :ref:`doc_viewports` and the
 `GUI in 3D demo <https://github.com/godotengine/godot-demo-projects/tree/master/viewport/gui_in_3d>`__
 for more information on setting this up.
 
+Looping a video
+^^^^^^^^^^^^^^^
+
+For looping a video, the **Loop** property can be enabled. This will seamlessly
+restart the video when it reaches its end.
+
+Note that setting the project setting **Video Delay Compensation** to a non-zero
+value might cause your loop to not be seamless, because the synchronization of
+audio and video takes place at the start of each loop causing occasional missed
+frames. Set **Video Delay Compensation** in your project settings to **0** to
+avoid frame drop issues.
+
 Video decoding conditions and recommended resolutions
 -----------------------------------------------------
 
@@ -143,9 +155,6 @@ There are several limitations with the current implementation of video playback 
 - Seeking a video to a certain point is not supported.
 - Changing playback speed is not supported. VideoStreamPlayer also won't follow
   :ref:`Engine.time_scale<class_Engine_property_time_scale>`.
-- Looping is not supported, but you can connect a VideoStreamPlayer's
-  :ref:`finished <class_VideoStreamPlayer_signal_finished>` signal to a function
-  that plays the video again.
 - Streaming a video from a URL is not supported.
 
 .. _doc_playing_videos_recommended_theora_encoding_settings:

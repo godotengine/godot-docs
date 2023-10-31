@@ -14,18 +14,18 @@ VisibleOnScreenNotifier2D
 
 **Inherited By:** :ref:`VisibleOnScreenEnabler2D<class_VisibleOnScreenEnabler2D>`
 
-Detects when the node extents are visible on screen.
+A rectangular region of 2D space that detects whether it is visible on screen.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-The VisibleOnScreenNotifier2D detects when it is visible on the screen. It also notifies when its bounding rectangle enters or exits the screen or a viewport.
+:ref:`VisibleOnScreenEnabler2D<class_VisibleOnScreenEnabler2D>` represents a rectangular region of 2D space. When any part of this region becomes visible on screen or in a viewport, it will emit a :ref:`screen_entered<class_VisibleOnScreenNotifier2D_signal_screen_entered>` signal, and likewise it will emit a :ref:`screen_exited<class_VisibleOnScreenNotifier2D_signal_screen_exited>` signal when no part of it remains visible.
 
-If you want nodes to be disabled automatically when they exit the screen, use :ref:`VisibleOnScreenEnabler2D<class_VisibleOnScreenEnabler2D>` instead.
+If you want a node to be enabled automatically when this region is visible on screen, use :ref:`VisibleOnScreenEnabler2D<class_VisibleOnScreenEnabler2D>`.
 
-\ **Note:** VisibleOnScreenNotifier2D uses the render culling code to determine whether it's visible on screen, which also means that its :ref:`CanvasItem.visible<class_CanvasItem_property_visible>` must be ``true`` to work correctly.
+\ **Note:** **VisibleOnScreenNotifier2D** uses the render culling code to determine whether it's visible on screen, so it won't function unless :ref:`CanvasItem.visible<class_CanvasItem_property_visible>` is set to ``true``.
 
 .. rst-class:: classref-introduction-group
 
@@ -126,7 +126,7 @@ Method Descriptions
 
 If ``true``, the bounding rectangle is on the screen.
 
-\ **Note:** It takes one frame for the node's visibility to be assessed once added to the scene tree, so this method will return ``false`` right after it is instantiated, even if it will be on screen in the draw pass.
+\ **Note:** It takes one frame for the **VisibleOnScreenNotifier2D**'s visibility to be determined once added to the scene tree, so this method will always return ``false`` right after it is instantiated, before the draw pass.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

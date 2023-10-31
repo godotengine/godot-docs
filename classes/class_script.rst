@@ -77,6 +77,8 @@ Methods
    +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`               | :ref:`instance_has<class_Script_method_instance_has>` **(** :ref:`Object<class_Object>` base_object **)** |const|                          |
    +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`               | :ref:`is_abstract<class_Script_method_is_abstract>` **(** **)** |const|                                                                    |
+   +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`               | :ref:`is_tool<class_Script_method_is_tool>` **(** **)** |const|                                                                            |
    +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Error<enum_@GlobalScope_Error>` | :ref:`reload<class_Script_method_reload>` **(** :ref:`bool<class_bool>` keep_state=false **)**                                             |
@@ -240,6 +242,18 @@ Returns ``true`` if the script contains non-empty source code.
 :ref:`bool<class_bool>` **instance_has** **(** :ref:`Object<class_Object>` base_object **)** |const|
 
 Returns ``true`` if ``base_object`` is an instance of this script.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Script_method_is_abstract:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **is_abstract** **(** **)** |const|
+
+Returns ``true`` if the script is an abstract script. An abstract script does not have a constructor and cannot be instantiated.
 
 .. rst-class:: classref-item-separator
 

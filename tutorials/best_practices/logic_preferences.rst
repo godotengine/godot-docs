@@ -96,7 +96,7 @@ either? Let's see an example:
         public override void _Ready()
         {
             // Can assign the value during initialization.
-            ABuilding = GD.Load<PackedScene>("res://office.tscn");
+            ABuilding = GD.Load<PackedScene>("res://Office.tscn");
         }
     }
 

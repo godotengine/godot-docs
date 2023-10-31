@@ -117,7 +117,7 @@ is usually:
 |                                | For a Sprite2D with a texture of size 64x32px,     |
 |                                | **TEXTURE_PIXEL_SIZE** = :code:`vec2(1/64, 1/32)`  |
 +--------------------------------+----------------------------------------------------+
-| inout vec2 **VERTEX**          | Vertex, in image space.                            |
+| inout vec2 **VERTEX**          | Vertex, in local space.                            |
 +--------------------------------+----------------------------------------------------+
 | inout vec2 **UV**              | Normalized texture coordinates. Range from 0 to 1. |
 +--------------------------------+----------------------------------------------------+

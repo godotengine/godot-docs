@@ -252,7 +252,7 @@ Language code used for line-breaking and text shaping algorithms, if left empty 
 - void **set_lines_skipped** **(** :ref:`int<class_int>` value **)**
 - :ref:`int<class_int>` **get_lines_skipped** **(** **)**
 
-The node ignores the first ``lines_skipped`` lines before it starts to display text.
+The number of the lines ignored and not displayed from the start of the :ref:`text<class_Label_property_text>` value.
 
 .. rst-class:: classref-item-separator
 

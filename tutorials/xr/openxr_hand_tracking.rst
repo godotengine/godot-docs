@@ -18,7 +18,7 @@ This allows the sensation of touch.
 Gloves are often also recognised as controllers and often will have additional controls such as buttons embedded.
 
 Three, inferred hand tracking.
-This has been the defacto approach since the early days of VR.
+This has been the de facto approach since the early days of VR.
 As we know the player is holding a controller and we know the position of this controller,
 we can infer where to render the players hand.
 Fingers can be positioned based on the controls the player is interacting with.
@@ -166,7 +166,7 @@ For now the only option available here is through HTC trackers.
 There is an extension that becomes available if HTC trackers are supported by the XR runtime.
 These are fully exposed through the action map system.
 
-Godot has full support for these and you can setup the trackers in the action map. 
+Godot has full support for these and you can setup the trackers in the action map.
 Each tracker is assigned a usage within the SteamVR interface.
 
 These are exposed through the following trackers:

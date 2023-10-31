@@ -152,6 +152,8 @@ Methods
    +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`get_space_left<class_DirAccess_method_get_space_left>` **(** **)**                                                                                                               |
    +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`is_case_sensitive<class_DirAccess_method_is_case_sensitive>` **(** :ref:`String<class_String>` path **)** |const|                                                                |
+   +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Error<enum_@GlobalScope_Error>`             | :ref:`list_dir_begin<class_DirAccess_method_list_dir_begin>` **(** **)**                                                                                                               |
    +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                              | :ref:`list_dir_end<class_DirAccess_method_list_dir_end>` **(** **)**                                                                                                                   |
@@ -236,6 +238,8 @@ Method Descriptions
 Changes the currently opened directory to the one passed as an argument. The argument can be relative to the current directory (e.g. ``newdir`` or ``../newdir``), or an absolute path (e.g. ``/tmp/newdir`` or ``res://somedir/newdir``).
 
 Returns one of the :ref:`Error<enum_@GlobalScope_Error>` code constants (:ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` on success).
+
+\ **Note:** The new directory must be within the same scope, e.g. when you had opened a directory inside ``res://``, you can't change it to ``user://`` directory. If you need to open a directory in another access scope, use :ref:`open<class_DirAccess_method_open>` to create a new instance instead.
 
 .. rst-class:: classref-item-separator
 
@@ -470,6 +474,20 @@ Returns the result of the last :ref:`open<class_DirAccess_method_open>` call in 
 :ref:`int<class_int>` **get_space_left** **(** **)**
 
 Returns the available space on the current directory's disk, in bytes. Returns ``0`` if the platform-specific method to query the available space fails.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_DirAccess_method_is_case_sensitive:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **is_case_sensitive** **(** :ref:`String<class_String>` path **)** |const|
+
+Returns ``true`` if the file system or directory use case sensitive file names.
+
+\ **Note:** This method is implemented on macOS, Linux (for EXT4 and F2FS filesystems only) and Windows. On other platforms, it always returns ``true``.
 
 .. rst-class:: classref-item-separator
 
