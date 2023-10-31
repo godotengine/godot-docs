@@ -217,7 +217,7 @@ main scene (or an autoload)'s ``_ready()`` method:
 .. tabs::
  .. code-tab:: gdscript
 
-    if DisplayServer.get_name() == "headless:
+    if DisplayServer.get_name() == "headless":
         # Run your server startup code here...
         #
         # Using this check, you can start a dedicated server by running
@@ -229,7 +229,7 @@ main scene (or an autoload)'s ``_ready()`` method:
 
     using System.Linq;
 
-    if (DisplayServer.get_name() == "--headless")
+    if (DisplayServer.GetName() == "headless")
     {
         // Run your server startup code here...
         //
