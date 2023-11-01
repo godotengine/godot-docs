@@ -270,7 +270,7 @@ Reference
     - ``[center]{text}[/center]``
 
   * - | **left**
-      | Makes ``{text}`` horizontally right-aligned.
+      | Makes ``{text}`` horizontally left-aligned.
       | Same as ``[p align=left]``.
 
     - ``[left]{text}[/left]``
