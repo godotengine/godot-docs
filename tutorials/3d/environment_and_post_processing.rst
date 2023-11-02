@@ -660,6 +660,18 @@ There are 2 ways to use glow in 2D:
    bullet have their **Modulate** property increased to overbright values using the
    RAW mode in the color picker.
 
+.. warning::
+
+    The 2D renderer renders in linear color space if the
+    **Rendering > Viewport > HDR 2D** project setting is enabled, so
+    ``source_color`` must also be used for uniform samplers that are
+    used as color input in ``canvas_item`` shaders. If this is not done,
+    the texture will appear washed out.
+
+    If 2D HDR is disabled, ``source_color`` will keep working correctly in
+    ``canvas_item`` shaders, so it's recommend to use it when relevant either
+    way.
+
 .. _doc_environment_and_post_processing_using_glow_to_blur_the_screen:
 
 Using glow to blur the screen
