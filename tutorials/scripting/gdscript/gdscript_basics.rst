@@ -544,11 +544,12 @@ considered a comment.
     In the Godot script editor, special keywords are highlighted within comments
     to bring the user's attention to specific comments:
 
-    - **Critical** *(appears in red)*: ``ALERT``, ``ATTENTION``, ``DANGER``, ``HACK``,
-      ``SECURITY``
-    - **Warning** *(appears in yellow)*: ``BUG``, ``CAUTION``, ``DEPRECATED``, ``FIXME``,
-      ``TASK``, ``TBD``, ``TODO``, ``WARNING``
-    - **Notice** *(appears in green)*: ``NOTE``, ``NOTICE``, ``TEST``, ``TESTING``
+    - **Critical** *(appears in red)*: ``ALERT``, ``ATTENTION``, ``CAUTION``,
+      ``CRITICAL``, ``DANGER``, ``SECURITY``
+    - **Warning** *(appears in yellow)*: ``BUG``, ``DEPRECATED``, ``FIXME``,
+      ``HACK``, ``TASK``, ``TBD``, ``TODO``, ``WARNING``
+    - **Notice** *(appears in green)*: ``INFO``, ``NOTE``, ``NOTICE``, ``TEST``,
+      ``TESTING``
 
     These keywords are case-sensitive, so they must be written in uppercase for them
     to be recognized:
