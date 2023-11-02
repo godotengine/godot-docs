@@ -607,7 +607,7 @@ observers of ``the_signal``. Whenever ``the_signal`` is now emitted, Godot knows
 method of which object it needs to call.
 
 Note that you can only call ``my_method`` if you've previously registered it in
-your ``_bind_methods`` method. Otherwise Godot will not be able to know about the existence
+your ``_bind_methods`` method. Otherwise Godot will not know about the existence
 of ``my_method``.
 
 To learn more about ``Callable``, check out the class reference here: :ref:`Callable <class_Callable>`
