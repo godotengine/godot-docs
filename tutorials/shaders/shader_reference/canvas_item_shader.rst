@@ -119,11 +119,17 @@ is usually:
 +--------------------------------+----------------------------------------------------------------+
 | in mat4 **PROJECTION_MATRIX**  | View space to clip space transform.                            |
 +--------------------------------+----------------------------------------------------------------+
+| in int **INSTANCE_ID**         | Instance ID for instancing. Not supported in GLES2 (returns    |
+|                                | 0).                                                            |
++--------------------------------+----------------------------------------------------------------+
 | in vec4 **INSTANCE_CUSTOM**    | Instance custom data.                                          |
 +--------------------------------+----------------------------------------------------------------+
 | in bool **AT_LIGHT_PASS**      | ``true`` if this is a light pass.                              |
 +--------------------------------+----------------------------------------------------------------+
 | inout vec2 **VERTEX**          | Vertex, in image space.                                        |
++--------------------------------+----------------------------------------------------------------+
+| in int **VERTEX_ID**           | The index of the current vertex in the vertex buffer. Not      |
+|                                | supported in GLES2 (returns 0).                                |
 +--------------------------------+----------------------------------------------------------------+
 | in vec2 **TEXTURE_PIXEL_SIZE** | Normalized pixel size of default 2D texture.                   |
 |                                | For a Sprite with a texture of size 64x32px,                   |

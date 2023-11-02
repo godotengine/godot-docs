@@ -310,7 +310,7 @@ Setting information
 
 There are, of course, cases where you want to set information to a transform. Imagine a first person controller or orbiting camera. Those are definitely done using angles, because you *do want* the transforms to happen in a specific order.
 
-For such cases, keep the angles and rotations *outside* the transform and set them every frame. Don't try to retrieve and re-use them because the transform is not meant to be used this way.
+For such cases, keep the angles and rotations *outside* the transform and set them every frame. Don't try to retrieve and reuse them because the transform is not meant to be used this way.
 
 Example of looking around, FPS style:
 
