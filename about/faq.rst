@@ -149,7 +149,7 @@ The main reasons for creating a custom scripting language for Godot were:
    large amount of code, bugs, bottlenecks, and general inefficiency (Lua, Python,
    Squirrel, JavaScript, etc.). We wanted to focus on a great engine, not a great number
    of integrations.
-4. No native vector types (vector3, matrix4, etc.), resulting in highly
+4. No native vector types (Vector3, Transform3D, etc.), resulting in highly
    reduced performance when using custom types (Lua, Python, Squirrel,
    JavaScript, ActionScript, etc.).
 5. Garbage collector results in stalls or unnecessarily large memory
@@ -185,6 +185,22 @@ If you know of a third-party SDK that is not supported by Godot but that offers
 free and open source integration, consider starting the integration work yourself.
 Godot is not owned by one person; it belongs to the community, and it grows along
 with ambitious community contributors like you.
+
+How can I extend Godot?
+-----------------------
+
+For extending Godot, like creating Godot Editor plugins or adding support
+for additional languages, take a look at :ref:`EditorPlugins <doc_making_plugins>`
+and tool scripts.
+
+Also, see the official blog post on GDExtension, a way to develop native extensions for Godot:
+
+* `Introducing GDNative's successor, GDExtension <https://godotengine.org/article/introducing-gd-extensions>`_
+
+You can also take a look at the GDScript implementation, the Godot modules,
+as well as the `unofficial Python support <https://github.com/touilleMan/godot-python>`_ for Godot.
+This would be a good starting point to see how another third-party library
+integrates with Godot.
 
 How do I install the Godot editor on my system (for desktop integration)?
 -------------------------------------------------------------------------
@@ -324,20 +340,21 @@ point and only for Apple devices, but then several Android and Apple devices
 with different resolutions and aspect ratios were created, with a very wide
 range of sizes and DPIs.
 
-The most common and proper way to achieve this is to, instead, use a single
-base resolution for the game and only handle different screen aspect ratios.
-This is mostly needed for 2D, as in 3D it's just a matter of Camera XFov or YFov.
+The most common and proper way to achieve this is to, instead, use a single base
+resolution for the game and only handle different screen aspect ratios. This is
+mostly needed for 2D, as in 3D, it's just a matter of camera vertical or
+horizontal FOV.
 
 1. Choose a single base resolution for your game. Even if there are
-   devices that go up to 2K and devices that go down to 400p, regular
+   devices that go up to 1440p and devices that go down to 400p, regular
    hardware scaling in your device will take care of this at little or
    no performance cost. The most common choices are either near 1080p
    (1920x1080) or 720p (1280x720). Keep in mind the higher the
    resolution, the larger your assets, the more memory they will take
    and the longer the time it will take for loading.
 
-2. Use the stretch options in Godot; 2D stretching while keeping aspect
-   ratios works best. Check the :ref:`doc_multiple_resolutions` tutorial
+2. Use the stretch options in Godot; canvas items stretching while keeping
+   aspect ratios works best. Check the :ref:`doc_multiple_resolutions` tutorial
    on how to achieve this.
 
 3. Determine a minimum resolution and then decide if you want your game
@@ -350,27 +367,6 @@ This is mostly needed for 2D, as in 3D it's just a matter of Camera XFov or YFov
    complex, consider learning about Containers.
 
 And that's it! Your game should work in multiple resolutions.
-
-If there is a desire to make your game also work on ancient
-devices with tiny screens (fewer than 300 pixels in width), you can use
-the export option to shrink images, and set that build to be used for
-certain screen sizes in the App Store or Google Play.
-
-How can I extend Godot?
------------------------
-
-For extending Godot, like creating Godot Editor plugins or adding support
-for additional languages, take a look at :ref:`EditorPlugins <doc_making_plugins>`
-and tool scripts.
-
-Also, see the official blog post on GDExtension, a way to develop native extensions for Godot:
-
-* `Introducing GDNative's successor, GDExtension <https://godotengine.org/article/introducing-gd-extensions>`_
-
-You can also take a look at the GDScript implementation, the Godot modules,
-as well as the `unofficial Python support <https://github.com/touilleMan/godot-python>`_ for Godot.
-This would be a good starting point to see how another third-party library
-integrates with Godot.
 
 When is the next release of Godot out?
 --------------------------------------
@@ -525,9 +521,9 @@ you are planning to build Godot yourself.
 Why does Godot not use STL (Standard Template Library)?
 -------------------------------------------------------
 
-Like many other libraries (Qt as an example), Godot does not make use of
-STL. We believe STL is a great general-purpose library, but we had special
-requirements for Godot.
+Like many other libraries (Qt as an example), Godot does not make use of STL
+(with a few exceptions such as threading primitives). We believe STL is a great
+general-purpose library, but we had special requirements for Godot.
 
 * STL templates create very large symbols, which results in huge debug binaries. We use few
   templates with very short names instead.
@@ -550,14 +546,7 @@ script), but then it will try to recover as gracefully as possible and keep
 going.
 
 Additionally, exceptions significantly increase the binary size for the
-executable.
-
-Why does Godot not enforce RTTI?
---------------------------------
-
-Godot provides its own type-casting system, which can optionally use RTTI
-internally. Disabling RTTI in Godot means considerably smaller binary sizes can
-be achieved, at a little performance cost.
+executable and result in increased compile times.
 
 Does Godot use an ECS (Entity Component System)?
 ------------------------------------------------
