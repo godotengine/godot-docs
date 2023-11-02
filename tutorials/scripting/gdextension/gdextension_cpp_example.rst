@@ -610,7 +610,7 @@ Note that you can only call ``my_method`` if you've previously registered it in
 your ``_bind_methods`` method. Otherwise Godot will not know about the existence
 of ``my_method``.
 
-To learn more about ``Callable``, check out the class reference here: :ref:`Callable <class_Callable>`
+To learn more about ``Callable``, check out the class reference here: :ref:`Callable <class_Callable>`.
 
 Having your object sending out signals is more common. For our wobbling
 Godot icon, we'll do something silly just to show how it works. We're going to
