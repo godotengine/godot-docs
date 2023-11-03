@@ -596,10 +596,21 @@ This is the required syntax:
 
 .. code-block:: cpp
 
-    some_other_node->connect("the_signal", this, "my_method");
+    some_other_node->connect("the_signal", Callable(this, "my_method"));
+
+To connect our signal ``the_signal`` from some other node with our method 
+``my_method``, we need to provide the ``connect`` method with the name of the signal 
+and a ``Callable``. The ``Callable`` holds information about an object on which a method 
+can be called. In our case, it associates our current object instance ``this`` with the 
+method ``my_method`` of the object. Then the ``connect`` method will add this to the 
+observers of ``the_signal``. Whenever ``the_signal`` is now emitted, Godot knows which 
+method of which object it needs to call.
 
 Note that you can only call ``my_method`` if you've previously registered it in
-your ``_bind_methods`` method.
+your ``_bind_methods`` method. Otherwise Godot will not know about the existence
+of ``my_method``.
+
+To learn more about ``Callable``, check out the class reference here: :ref:`Callable <class_Callable>`.
 
 Having your object sending out signals is more common. For our wobbling
 Godot icon, we'll do something silly just to show how it works. We're going to
