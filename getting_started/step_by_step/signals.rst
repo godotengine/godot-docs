@@ -300,6 +300,8 @@ We can now connect the Timer to the Sprite2D in the ``_ready()`` function.
     func _ready():
         var timer = get_node("Timer")
         timer.timeout.connect(_on_timer_timeout)
+        #for version 4.x use
+        #timer.connect("timeout", _on_timer_timeout)
 
  .. code-tab:: csharp C#
 
