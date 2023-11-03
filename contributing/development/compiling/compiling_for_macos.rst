@@ -56,6 +56,7 @@ To compile for Apple Silicon (ARM64) powered Macs, use::
     scons platform=macos arch=arm64
 
 You may need to install MoltenVK first::
+
     brew install molten-vk
 
 To support both architectures in a single "Universal 2" binary, run the above two commands and then use ``lipo`` to bundle them together::
