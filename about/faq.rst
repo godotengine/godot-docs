@@ -198,9 +198,9 @@ Also, see the official blog post on GDExtension, a way to develop native extensi
 * `Introducing GDNative's successor, GDExtension <https://godotengine.org/article/introducing-gd-extensions>`_
 
 You can also take a look at the GDScript implementation, the Godot modules,
-as well as the `unofficial Python support <https://github.com/touilleMan/godot-python>`_ for Godot.
-This would be a good starting point to see how another third-party library
-integrates with Godot.
+as well as the `Jolt physics engine integration <https://github.com/godot-jolt/godot-jolt>`__
+for Godot. This would be a good starting point to see how another
+third-party library integrates with Godot.
 
 How do I install the Godot editor on my system (for desktop integration)?
 -------------------------------------------------------------------------
