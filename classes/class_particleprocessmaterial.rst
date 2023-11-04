@@ -2295,9 +2295,7 @@ A :ref:`CurveTexture<class_CurveTexture>` that defines the maximum velocity of a
 - void **set_velocity_pivot** **(** :ref:`Vector3<class_Vector3>` value **)**
 - :ref:`Vector3<class_Vector3>` **get_velocity_pivot** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+A pivot point used to calculate radial and orbital velocity of particles.
 
 .. rst-class:: classref-section-separator
 

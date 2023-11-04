@@ -255,7 +255,7 @@ If not yet cached and ``base_mesh`` is provided, ``base_mesh`` will be used and 
 
 :ref:`Array<class_Array>` **get_surface_arrays** **(** :ref:`int<class_int>` surface_idx **)** |const|
 
-Returns the arrays for the vertices, normals, uvs, etc. that make up the requested surface. See :ref:`add_surface<class_ImporterMesh_method_add_surface>`.
+Returns the arrays for the vertices, normals, UVs, etc. that make up the requested surface. See :ref:`add_surface<class_ImporterMesh_method_add_surface>`.
 
 .. rst-class:: classref-item-separator
 

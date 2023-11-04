@@ -668,7 +668,7 @@ If ``allow_echo`` is ``true``, the shortcut can be activated with echo events.
 
 void **add_submenu_item** **(** :ref:`String<class_String>` label, :ref:`String<class_String>` submenu, :ref:`int<class_int>` id=-1 **)**
 
-Adds an item that will act as a submenu of the parent **PopupMenu** node when clicked. The ``submenu`` argument is the name of the child **PopupMenu** node that will be shown when the item is clicked.
+Adds an item that will act as a submenu of the parent **PopupMenu** node when clicked. The ``submenu`` argument must be the name of an existing **PopupMenu** that has been added as a child to this node. This submenu will be shown when the item is clicked, hovered for long enough, or activated using the ``ui_select`` or ``ui_right`` input actions.
 
 An ``id`` can optionally be provided. If no ``id`` is provided, one will be created from the index.
 
