@@ -83,9 +83,8 @@ Building the export templates
 
 Godot needs two export templates for Android: the optimized "release"
 template (``android_release.apk``) and the debug template (``android_debug.apk``).
-As Google will require all APKs to include ARMv8 (64-bit) libraries starting
-from August 2019, the commands below will build an APK containing both
-ARMv7 and ARMv8 libraries.
+As Google requires all APKs to include ARMv8 (64-bit) libraries since August 2019,
+the commands below build an APK containing both ARMv7 and ARMv8 libraries.
 
 Compiling the standard export templates is done by calling SCons from the Godot
 root directory with the following arguments:
@@ -95,13 +94,13 @@ root directory with the following arguments:
 ::
 
     scons platform=android target=template_release arch=arm32
-    scons platform=android target=template_release arch=arm64
-    cd platform/android/java
-    # On Windows
-    .\gradlew generateGodotTemplates
-    # On Linux and macOS
-    ./gradlew generateGodotTemplates
+    scons platform=android target=template_release arch=arm64 generate_apk=yes
 
+.. note::
+
+    If you are changing the list of architectures you're building, remember to add
+    ``generate_apk=yes`` to the *last* architecture you're building, so that an APK
+    file is generated after the build.
 
 The resulting APK will be located at ``bin/android_release.apk``.
 
@@ -110,13 +109,7 @@ The resulting APK will be located at ``bin/android_release.apk``.
 ::
 
     scons platform=android target=template_debug arch=arm32
-    scons platform=android target=template_debug arch=arm64
-    cd platform/android/java
-    # On Windows
-    .\gradlew generateGodotTemplates
-    # On Linux and macOS
-    ./gradlew generateGodotTemplates
-
+    scons platform=android target=template_debug arch=arm64 generate_apk=yes
 
 The resulting APK will be located at ``bin/android_debug.apk``.
 
@@ -128,7 +121,7 @@ The resulting APK will be located at ``bin/android_debug.apk``.
 Adding support for x86 devices
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If you also want to include support for x86 and x86-64 devices, run the SCons
+If you also want to include support for x86 and x86_64 devices, run the SCons
 command a third and fourth time with the ``arch=x86_32``, and
 ``arch=x86_64`` arguments before building the APK with Gradle. For
 example, for the release template:
@@ -138,13 +131,7 @@ example, for the release template:
     scons platform=android target=template_release arch=arm32
     scons platform=android target=template_release arch=arm64
     scons platform=android target=template_release arch=x86_32
-    scons platform=android target=template_release arch=x86_64
-    cd platform/android/java
-    # On Windows
-    .\gradlew generateGodotTemplates
-    # On Linux and macOS
-    ./gradlew generateGodotTemplates
-
+    scons platform=android target=template_release arch=x86_64 generate_apk=yes
 
 This will create a fat binary that works on all platforms.
 The final APK size of exported projects will depend on the platforms you choose
@@ -188,7 +175,7 @@ with their respective names. The templates folder can be located in:
 -  macOS: ``$HOME/Library/Application Support/Godot/export_templates/<version>/``
 
 ``<version>`` is of the form ``major.minor[.patch].status`` using values from
-``version.py`` in your Godot source repository (e.g. ``3.0.5.stable`` or ``3.1.dev``).
+``version.py`` in your Godot source repository (e.g. ``4.1.3.stable`` or ``4.2.dev``).
 You also need to write this same version string to a ``version.txt`` file located
 next to your export templates.
 
@@ -216,13 +203,11 @@ root directory with the following arguments:
    scons platform=android arch=arm32 production=yes target=editor
    scons platform=android arch=arm64 production=yes target=editor
    scons platform=android arch=x86_32 production=yes target=editor
-   scons platform=android arch=x86_64 production=yes target=editor
-   cd platform/android/java
-   # On Windows
-   .\gradlew generateGodotEditor
-   # On Linux and macOS
-   ./gradlew generateGodotEditor
+   scons platform=android arch=x86_64 production=yes target=editor generate_apk=yes
 
+You can skip certain architectures depending on your target device to speed up
+compilation. Remember to add ``generate_apk=yes`` to the *last* architecture
+you're building, so that an APK file is generated after the build.
 
 The resulting APK will be located at ``bin/android_editor_builds/android_editor-release.apk``.
 
