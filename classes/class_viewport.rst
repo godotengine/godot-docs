@@ -75,8 +75,6 @@ Properties
    +-----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+----------------+
    | :ref:`DebugDraw<enum_Viewport_DebugDraw>`                                                     | :ref:`debug_draw<class_Viewport_property_debug_draw>`                                                 | ``0``          |
    +-----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+----------------+
-   | :ref:`bool<class_bool>`                                                                       | :ref:`disable_2d<class_Viewport_property_disable_2d>`                                                 | ``false``      |
-   +-----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+----------------+
    | :ref:`bool<class_bool>`                                                                       | :ref:`disable_3d<class_Viewport_property_disable_3d>`                                                 | ``false``      |
    +-----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+----------------+
    | :ref:`float<class_float>`                                                                     | :ref:`fsr_sharpness<class_Viewport_property_fsr_sharpness>`                                           | ``0.2``        |
@@ -1108,23 +1106,6 @@ The overlay mode for test rendered geometry in debug purposes.
 
 ----
 
-.. _class_Viewport_property_disable_2d:
-
-.. rst-class:: classref-property
-
-:ref:`bool<class_bool>` **disable_2d** = ``false``
-
-.. rst-class:: classref-property-setget
-
-- void **set_disable_2d** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_2d_disabled** **(** **)**
-
-If ``true``, disables 2D rendering while keeping 3D rendering. See also :ref:`disable_3d<class_Viewport_property_disable_3d>`.
-
-.. rst-class:: classref-item-separator
-
-----
-
 .. _class_Viewport_property_disable_3d:
 
 .. rst-class:: classref-property
@@ -1136,7 +1117,7 @@ If ``true``, disables 2D rendering while keeping 3D rendering. See also :ref:`di
 - void **set_disable_3d** **(** :ref:`bool<class_bool>` value **)**
 - :ref:`bool<class_bool>` **is_3d_disabled** **(** **)**
 
-If ``true``, disables 3D rendering while keeping 2D rendering. See also :ref:`disable_2d<class_Viewport_property_disable_2d>`.
+Disable 3D rendering (but keep 2D rendering).
 
 .. rst-class:: classref-item-separator
 

@@ -103,9 +103,7 @@ Returns the number of frames that can be pushed to the audio sample data buffer 
 
 :ref:`int<class_int>` **get_skips** **(** **)** |const|
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Returns the number of times the playback skipped due to a buffer underrun in the audio sample data. This value is reset at the start of the playback.
 
 .. rst-class:: classref-item-separator
 
