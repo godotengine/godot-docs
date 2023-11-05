@@ -121,7 +121,7 @@ below the Text property and type "Hello World".
 You will see the text draw in the viewport as you type.
 
 .. seealso:: You can edit any property listed in the Inspector as we did with
-             the Text. For a complete reference of the Inspector dock, see the
+             the Text. For a complete reference of the Inspector dock, see
              :ref:`doc_editor_inspector_dock`.
 
 You can move your Label node in the viewport by selecting the move tool in the
