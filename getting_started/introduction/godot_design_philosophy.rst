@@ -89,8 +89,7 @@ yet it detects types and offers a static language's quality of auto-completion.
 It is also optimized for gameplay code with built-in types like Vectors and Colors.
 
 Note that with GDExtension, you can write high-performance code using compiled
-languages like C, C++, Rust, or Python (using the Cython compiler)
-without recompiling the engine.
+languages like C, C++, Rust, D, Haxe, or Swift without recompiling the engine.
 
 Note that the 3D workspace doesn't feature as many tools as the 2D workspace.
 You'll need external programs or add-ons to edit terrains, animate complex characters, and so on.
