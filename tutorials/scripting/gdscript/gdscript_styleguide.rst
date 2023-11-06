@@ -449,8 +449,13 @@ This can make long expressions easier to read.
 Comment spacing
 ~~~~~~~~~~~~~~~
 
-Regular comments should start with a space, but not code that you comment out.
-This helps differentiate text comments from disabled code.
+Regular comments (``#``) and documentation comments (``##``) should start with a
+space, but not code that you comment out. Additionally, code region comments
+(``#region``/``#endregion``) must follow that precise syntax, so they should not
+start with a space.
+
+Using a space for regular and documentation comments helps differentiate text
+comments from disabled code.
 
 **Good**:
 
@@ -473,7 +478,7 @@ This helps differentiate text comments from disabled code.
 .. note::
 
     In the script editor, to toggle the selected code commented, press
-    :kbd:`Ctrl + K`. This feature adds a single # sign at the start
+    :kbd:`Ctrl + K`. This feature adds a single ``#`` sign at the start
     of the selected lines.
 
 Whitespace
