@@ -242,9 +242,9 @@ our sprite's rotation every frame. Here, ``rotation`` is a property inherited
 from the class ``Node2D``, which ``Sprite2D`` extends. It controls the rotation
 of our node and works with radians.
 
-.. tip:: In the code editor, you can ctrl-click (:kbd:`Cmd + Click` on macOS) on
-         any built-in property or function like ``position``, ``rotation``, or
-         ``_process`` to open the corresponding documentation in a new tab.
+.. tip:: In the code editor, you can ctrl-click on any built-in property or
+         function like ``position``, ``rotation``, or ``_process`` to open the
+         corresponding documentation in a new tab.
 
 Run the scene to see the Godot icon turn in-place.
 
