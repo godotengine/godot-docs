@@ -149,7 +149,7 @@ your interface should look like this.
 
 |image15|
 
-The final action to set up is the ``jump`` action. Bind the Space key and joypad Button 0.
+The final action to set up is the ``jump`` action. Bind the Space key and joypad Button 0 (Bottom action, Sony Cross, Xbox A, Nintendo B).
 
 |image16|
 
