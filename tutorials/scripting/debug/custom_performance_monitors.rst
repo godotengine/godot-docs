@@ -91,7 +91,7 @@ Monitors** at the bottom of the editor window. Scroll down to the newly
 available **Game** section and check **Enemies**. You should see a graph
 appearing as follows:
 
-.. :figure: img/custom_performance_monitors_graph_example.webp
+.. figure:: img/custom_performance_monitors_graph_example.webp
    :align: center
    :alt: Example editor graph from a custom performance monitor
 
