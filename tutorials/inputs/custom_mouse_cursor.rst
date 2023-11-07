@@ -87,12 +87,6 @@ Create a Node and attach the following script.
     Check :ref:`Input.set_custom_mouse_cursor() <class_Input_method_set_custom_mouse_cursor>`'s
     documentation for more information on usage and platform-specific caveats.
 
-Demo project
-------------
-
-Find out more by studying this demo project:
-https://github.com/guilhermefelipecgs/custom_hardware_cursor
-
 Cursor list
 -----------
 
