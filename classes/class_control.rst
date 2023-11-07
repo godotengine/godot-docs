@@ -1131,7 +1131,9 @@ Sent when the node needs to refresh its theme items. This happens in one of the 
 
 **NOTIFICATION_SCROLL_BEGIN** = ``47``
 
-Sent when this node is inside a :ref:`ScrollContainer<class_ScrollContainer>` which has begun being scrolled.
+Sent when this node is inside a :ref:`ScrollContainer<class_ScrollContainer>` which has begun being scrolled when dragging the scrollable area *with a touch event*. This notification is *not* sent when scrolling by dragging the scrollbar, scrolling with the mouse wheel or scrolling with keyboard/gamepad events.
+
+\ **Note:** This signal is only emitted on Android or iOS, or on desktop/web platforms when :ref:`ProjectSettings.input_devices/pointing/emulate_touch_from_mouse<class_ProjectSettings_property_input_devices/pointing/emulate_touch_from_mouse>` is enabled.
 
 .. _class_Control_constant_NOTIFICATION_SCROLL_END:
 
@@ -1139,7 +1141,9 @@ Sent when this node is inside a :ref:`ScrollContainer<class_ScrollContainer>` wh
 
 **NOTIFICATION_SCROLL_END** = ``48``
 
-Sent when this node is inside a :ref:`ScrollContainer<class_ScrollContainer>` which has stopped being scrolled.
+Sent when this node is inside a :ref:`ScrollContainer<class_ScrollContainer>` which has stopped being scrolled when dragging the scrollable area *with a touch event*. This notification is *not* sent when scrolling by dragging the scrollbar, scrolling with the mouse wheel or scrolling with keyboard/gamepad events.
+
+\ **Note:** This signal is only emitted on Android or iOS, or on desktop/web platforms when :ref:`ProjectSettings.input_devices/pointing/emulate_touch_from_mouse<class_ProjectSettings_property_input_devices/pointing/emulate_touch_from_mouse>` is enabled.
 
 .. _class_Control_constant_NOTIFICATION_LAYOUT_DIRECTION_CHANGED:
 

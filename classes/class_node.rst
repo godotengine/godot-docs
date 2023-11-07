@@ -769,7 +769,7 @@ Notification received every frame when the internal physics process flag is set 
 
 **NOTIFICATION_POST_ENTER_TREE** = ``27``
 
-Notification received when the node is ready, just before :ref:`NOTIFICATION_READY<class_Node_constant_NOTIFICATION_READY>` is received. Unlike the latter, it's sent every time the node enters tree, instead of only once.
+Notification received when the node is ready, just before :ref:`NOTIFICATION_READY<class_Node_constant_NOTIFICATION_READY>` is received. Unlike the latter, it's sent every time the node enters the tree, instead of only once.
 
 .. _class_Node_constant_NOTIFICATION_DISABLED:
 

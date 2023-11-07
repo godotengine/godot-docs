@@ -477,7 +477,7 @@ Scripting
    - Use any build system and language features you wish.
 
 - Actively developed GDExtension bindings for `D <https://github.com/godot-dlang/godot-dlang>`__,
-  `Haxe <https://hxgodot.github.io/>`__, `Python <https://github.com/touilleMan/godot-python>`__, and `Rust <https://github.com/godot-rust/gdextension>`__
+  `Haxe <https://hxgodot.github.io/>`__, `Swift <https://github.com/migueldeicaza/SwiftGodot>`__, and `Rust <https://github.com/godot-rust/gdextension>`__
   bindings provided by the community. (Some of these bindings may be experimental and not production-ready).
 
 Audio
@@ -724,7 +724,8 @@ File formats
    - Can (de)serialize any Godot datatype, including Vector2/3, Color, ...
 
 - Read XML files using :ref:`class_XMLParser`.
-- Read and write ZIP files using :ref:`class_ZIPReader` and :ref:`class_ZIPPacker`.
+- :ref:`Load and save images, audio/video, fonts and ZIP archives <doc_runtime_loading_and_saving>`
+  in an exported project without having to go through Godot's import system.
 - Pack game data into a PCK file (custom format optimized for fast seeking),
   into a ZIP archive, or directly into the executable for single-file distribution.
 - :ref:`Export additional PCK files<doc_exporting_pcks>` that can be read

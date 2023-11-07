@@ -297,7 +297,7 @@ Emitted when a tab is right-clicked. :ref:`select_with_rmb<class_TabBar_property
 
 **tab_selected** **(** :ref:`int<class_int>` tab **)**
 
-Emitted when a tab is selected via click or script, even if it is the current tab.
+Emitted when a tab is selected via click, directional input, or script, even if it is the current tab.
 
 .. rst-class:: classref-section-separator
 

@@ -875,7 +875,7 @@ Minimum equivalent of :ref:`anim_speed_max<class_ParticleProcessMaterial_propert
 - void **set_attractor_interaction_enabled** **(** :ref:`bool<class_bool>` value **)**
 - :ref:`bool<class_bool>` **is_attractor_interaction_enabled** **(** **)**
 
-True if the interaction with particle attractors is enabled.
+If ``true``, interaction with particle attractors is enabled. In 3D, attraction only occurs within the area defined by the :ref:`GPUParticles3D<class_GPUParticles3D>` node's :ref:`GPUParticles3D.visibility_aabb<class_GPUParticles3D_property_visibility_aabb>`.
 
 .. rst-class:: classref-item-separator
 
@@ -928,7 +928,7 @@ The particles' friction. Values range from ``0`` (frictionless) to ``1`` (maximu
 
 The particles' collision mode.
 
-\ **Note:** 3D Particles can only collide with :ref:`GPUParticlesCollision3D<class_GPUParticlesCollision3D>` nodes, not :ref:`PhysicsBody3D<class_PhysicsBody3D>` nodes. To make particles collide with various objects, you can add :ref:`GPUParticlesCollision3D<class_GPUParticlesCollision3D>` nodes as children of :ref:`PhysicsBody3D<class_PhysicsBody3D>` nodes.
+\ **Note:** 3D Particles can only collide with :ref:`GPUParticlesCollision3D<class_GPUParticlesCollision3D>` nodes, not :ref:`PhysicsBody3D<class_PhysicsBody3D>` nodes. To make particles collide with various objects, you can add :ref:`GPUParticlesCollision3D<class_GPUParticlesCollision3D>` nodes as children of :ref:`PhysicsBody3D<class_PhysicsBody3D>` nodes. In 3D, collisions only occur within the area defined by the :ref:`GPUParticles3D<class_GPUParticles3D>` node's :ref:`GPUParticles3D.visibility_aabb<class_GPUParticles3D_property_visibility_aabb>`.
 
 \ **Note:** 2D Particles can only collide with :ref:`LightOccluder2D<class_LightOccluder2D>` nodes, not :ref:`PhysicsBody2D<class_PhysicsBody2D>` nodes.
 
@@ -947,7 +947,7 @@ The particles' collision mode.
 - void **set_collision_use_scale** **(** :ref:`bool<class_bool>` value **)**
 - :ref:`bool<class_bool>` **is_collision_using_scale** **(** **)**
 
-Should collision take scale into account.
+If ``true``, :ref:`GPUParticles3D.collision_base_size<class_GPUParticles3D_property_collision_base_size>` is multiplied by the particle's effective scale (see :ref:`scale_min<class_ParticleProcessMaterial_property_scale_min>`, :ref:`scale_max<class_ParticleProcessMaterial_property_scale_max>`, :ref:`scale_curve<class_ParticleProcessMaterial_property_scale_curve>`, and :ref:`scale_over_velocity_curve<class_ParticleProcessMaterial_property_scale_over_velocity_curve>`).
 
 .. rst-class:: classref-item-separator
 
@@ -1950,9 +1950,9 @@ Each particle's initial direction range from ``+spread`` to ``-spread`` degrees.
 - void **set_sub_emitter_amount_at_collision** **(** :ref:`int<class_int>` value **)**
 - :ref:`int<class_int>` **get_sub_emitter_amount_at_collision** **(** **)**
 
-Sub particle amount on collision.
+The amount of particles to spawn from the subemitter node when a collision occurs. When combined with :ref:`COLLISION_HIDE_ON_CONTACT<class_ParticleProcessMaterial_constant_COLLISION_HIDE_ON_CONTACT>` on the main particles material, this can be used to achieve effects such as raindrops hitting the ground.
 
-Maximum amount set in the sub particles emitter.
+\ **Note:** This value shouldn't exceed :ref:`GPUParticles2D.amount<class_GPUParticles2D_property_amount>` or :ref:`GPUParticles3D.amount<class_GPUParticles3D_property_amount>` defined on the *subemitter node* (not the main node), relative to the subemitter's particle lifetime. If the number of particles is exceeded, no new particles will spawn from the subemitter until enough particles have expired.
 
 .. rst-class:: classref-item-separator
 
@@ -1969,9 +1969,9 @@ Maximum amount set in the sub particles emitter.
 - void **set_sub_emitter_amount_at_end** **(** :ref:`int<class_int>` value **)**
 - :ref:`int<class_int>` **get_sub_emitter_amount_at_end** **(** **)**
 
-.. container:: contribute
+The amount of particles to spawn from the subemitter node when the particle expires.
 
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+\ **Note:** This value shouldn't exceed :ref:`GPUParticles2D.amount<class_GPUParticles2D_property_amount>` or :ref:`GPUParticles3D.amount<class_GPUParticles3D_property_amount>` defined on the *subemitter node* (not the main node), relative to the subemitter's particle lifetime. If the number of particles is exceeded, no new particles will spawn from the subemitter until enough particles have expired.
 
 .. rst-class:: classref-item-separator
 
@@ -1988,9 +1988,9 @@ Maximum amount set in the sub particles emitter.
 - void **set_sub_emitter_frequency** **(** :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_sub_emitter_frequency** **(** **)**
 
-.. container:: contribute
+The frequency at which particles should be emitted from the subemitter node. One particle will be spawned every :ref:`sub_emitter_frequency<class_ParticleProcessMaterial_property_sub_emitter_frequency>` seconds.
 
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+\ **Note:** This value shouldn't exceed :ref:`GPUParticles2D.amount<class_GPUParticles2D_property_amount>` or :ref:`GPUParticles3D.amount<class_GPUParticles3D_property_amount>` defined on the *subemitter node* (not the main node), relative to the subemitter's particle lifetime. If the number of particles is exceeded, no new particles will spawn from the subemitter until enough particles have expired.
 
 .. rst-class:: classref-item-separator
 
@@ -2007,9 +2007,7 @@ Maximum amount set in the sub particles emitter.
 - void **set_sub_emitter_keep_velocity** **(** :ref:`bool<class_bool>` value **)**
 - :ref:`bool<class_bool>` **get_sub_emitter_keep_velocity** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+If ``true``, the subemitter inherits the parent particle's velocity when it spawns.
 
 .. rst-class:: classref-item-separator
 
@@ -2026,9 +2024,7 @@ Maximum amount set in the sub particles emitter.
 - void **set_sub_emitter_mode** **(** :ref:`SubEmitterMode<enum_ParticleProcessMaterial_SubEmitterMode>` value **)**
 - :ref:`SubEmitterMode<enum_ParticleProcessMaterial_SubEmitterMode>` **get_sub_emitter_mode** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+The particle subemitter mode (see :ref:`GPUParticles2D.sub_emitter<class_GPUParticles2D_property_sub_emitter>` and :ref:`GPUParticles3D.sub_emitter<class_GPUParticles3D_property_sub_emitter>`).
 
 .. rst-class:: classref-item-separator
 
@@ -2299,9 +2295,7 @@ A :ref:`CurveTexture<class_CurveTexture>` that defines the maximum velocity of a
 - void **set_velocity_pivot** **(** :ref:`Vector3<class_Vector3>` value **)**
 - :ref:`Vector3<class_Vector3>` **get_velocity_pivot** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+A pivot point used to calculate radial and orbital velocity of particles.
 
 .. rst-class:: classref-section-separator
 

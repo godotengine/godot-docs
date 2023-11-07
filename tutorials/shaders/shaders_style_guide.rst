@@ -30,13 +30,12 @@ Here is a complete shader example based on these guidelines:
     shader_type canvas_item;
     // Screen-space shader to adjust a 2D scene's brightness, contrast
     // and saturation. Taken from
-    // https://github.com/godotengine/godot-demo-projects/blob/master/2d/screen_space_shaders/shaders/BCS.shader
+    // https://github.com/godotengine/godot-demo-projects/blob/master/2d/screen_space_shaders/shaders/BCS.gdshader
 
+    uniform sampler2D screen_texture : hint_screen_texture, filter_linear_mipmap;
     uniform float brightness = 0.8;
     uniform float contrast = 1.5;
     uniform float saturation = 1.8;
-
-    uniform sampler2D screen_texture : hint_screen_texture, repeat_disable, filter_nearest;
 
     void fragment() {
         vec3 c = textureLod(screen_texture, SCREEN_UV, 0.0).rgb;

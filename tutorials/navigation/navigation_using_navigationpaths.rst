@@ -80,10 +80,11 @@ the default navigation map by setting the target position with ``set_movement_ta
 .. tabs::
  .. code-tab:: gdscript GDScript
 
+    @onready var default_3d_map_rid: RID = get_world_3d().get_navigation_map()
+
     var movement_speed: float = 4.0
     var movement_delta: float
     var path_point_margin: float = 0.5
-    var default_3d_map_rid: RID = get_world_3d().get_navigation_map()
 
     var current_path_index: int = 0
     var current_path_point: Vector3
@@ -109,7 +110,7 @@ the default navigation map by setting the target position with ``set_movement_ta
         if current_path.is_empty():
             return
 
-        movement_delta = move_speed * delta
+        movement_delta = movement_speed * delta
 
         if global_transform.origin.distance_to(current_path_point) <= path_point_margin:
             current_path_index += 1

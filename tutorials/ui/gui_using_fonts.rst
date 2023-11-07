@@ -665,7 +665,8 @@ possible to display CJK characters and emoji without having to load a custom
 font. There are some restrictions that apply though, as mentioned in the
 :ref:`Using emoji <doc_using_fonts_emoji>` section.
 
-Create a SystemFont resource in the location where you desire to use the system font:
+Create a :ref:`class_SystemFont` resource in the location where you desire to
+use the system font:
 
 .. figure:: img/using_fonts_system_font_create.webp
    :align: center
@@ -719,6 +720,10 @@ that labels can extend further if needed.
     depends on the distribution. This means that on different Linux
     distributions, different fonts may be displayed for a given system font name
     or alias.
+
+It is also possible to load fonts at runtime even if they aren't installed on the system.
+See :ref:`Runtime loading and saving <doc_runtime_file_loading_and_saving_fonts>`
+for details.
 
 .. _doc_using_fonts_font_prerendering:
 

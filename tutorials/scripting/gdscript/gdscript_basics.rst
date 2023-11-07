@@ -539,6 +539,31 @@ considered a comment.
 
     # This is a comment.
 
+.. tip::
+
+    In the Godot script editor, special keywords are highlighted within comments
+    to bring the user's attention to specific comments:
+
+    - **Critical** *(appears in red)*: ``ALERT``, ``ATTENTION``, ``CAUTION``,
+      ``CRITICAL``, ``DANGER``, ``SECURITY``
+    - **Warning** *(appears in yellow)*: ``BUG``, ``DEPRECATED``, ``FIXME``,
+      ``HACK``, ``TASK``, ``TBD``, ``TODO``, ``WARNING``
+    - **Notice** *(appears in green)*: ``INFO``, ``NOTE``, ``NOTICE``, ``TEST``,
+      ``TESTING``
+
+    These keywords are case-sensitive, so they must be written in uppercase for them
+    to be recognized:
+
+    ::
+
+        # In the example below, "TODO" will appear in yellow by default.
+        # The `:` symbol after the keyword is not required, but it's often used.
+
+        # TODO: Add more items for the player to choose from.
+
+    The list of highlighted keywords and their colors can be changed in the **Text
+    Editor > Theme > Comment Markers** section of the Editor Settings.
+
 .. _doc_gdscript_builtin_types:
 
 Line continuation
