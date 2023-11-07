@@ -131,7 +131,7 @@ Bind also the :kbd:`A` key, onto the action ``move_left``.
 Let's now add support for a gamepad's left joystick. Click the "+" button again
 but this time, select *Manual Selection -> Joypad Axes*.
 
-.. image:: img/02.player_input/left_inputmap.webp
+.. image:: img/02.player_input/joystick_axis_input.webp
 
 Select the negative X axis of the left joystick.
 

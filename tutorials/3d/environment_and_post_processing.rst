@@ -65,7 +65,7 @@ be disabled using the buttons at the top of the 3D editor:
 Clicking on the 3 vertical dots on the right will display a dialog which allows
 you to customize the appearance of the preview environment:
 
-.. image:: img/environment_preview_sun_sky_toggle.webp
+.. image:: img/environment_preview_sun_sky_dialog.webp
 
 **The preview sun and sky is only visible in the editor, not in the running
 project.** Using the buttons at the bottom of the dialog, you can add the

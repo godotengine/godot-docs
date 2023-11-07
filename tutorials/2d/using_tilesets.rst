@@ -428,7 +428,7 @@ to ``false``:
 :ref:`Tile property painting <doc_using_tilemaps_using_tile_property_painting>`
 can also be used for custom data:
 
-.. figure:: img/using_tilesets_edit_custom_data.webp
+.. figure:: img/using_tilesets_paint_custom_data.webp
    :align: center
    :alt: Assigning custom data in the TileSet editor using tile property painting
 
