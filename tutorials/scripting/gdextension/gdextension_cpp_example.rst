@@ -100,22 +100,23 @@ call the Godot executable:
 
 .. code-block:: none
 
-    godot --dump-extension-api 
+    godot --dump-extension-api
 
-The resulting ``extension_api.json`` file will be created in the executable's 
-directory. Copy it to the project folder and add ``custom_api_file=<PATH_TO_FILE>`` 
+The resulting ``extension_api.json`` file will be created in the executable's
+directory. Copy it to the project folder and add ``custom_api_file=<PATH_TO_FILE>``
 to the scons command below.
 
 To generate and compile the bindings, use this command (replacing ``<platform>``
 with ``windows``, ``linux`` or ``macos`` depending on your OS):
 
-To speed up compilation, add ``-jN`` at the end of the SCons command line where ``N``
-is the number of CPU threads you have on your system. The example below uses 4 threads.
+The build process automatically detects the number of CPU threads to use for
+parallel builds. To specify a number of CPU threads to use, add ``-jN`` at the
+end of the SCons command line where ``N`` is the number of CPU threads to use.
 
 .. code-block:: none
 
     cd godot-cpp
-    scons platform=<platform> -j4 custom_api_file=<PATH_TO_FILE>
+    scons platform=<platform> custom_api_file=<PATH_TO_FILE>
     cd ..
 
 This step will take a while. When it is completed, you should have static
@@ -598,12 +599,12 @@ This is the required syntax:
 
     some_other_node->connect("the_signal", Callable(this, "my_method"));
 
-To connect our signal ``the_signal`` from some other node with our method 
-``my_method``, we need to provide the ``connect`` method with the name of the signal 
-and a ``Callable``. The ``Callable`` holds information about an object on which a method 
-can be called. In our case, it associates our current object instance ``this`` with the 
-method ``my_method`` of the object. Then the ``connect`` method will add this to the 
-observers of ``the_signal``. Whenever ``the_signal`` is now emitted, Godot knows which 
+To connect our signal ``the_signal`` from some other node with our method
+``my_method``, we need to provide the ``connect`` method with the name of the signal
+and a ``Callable``. The ``Callable`` holds information about an object on which a method
+can be called. In our case, it associates our current object instance ``this`` with the
+method ``my_method`` of the object. Then the ``connect`` method will add this to the
+observers of ``the_signal``. Whenever ``the_signal`` is now emitted, Godot knows which
 method of which object it needs to call.
 
 Note that you can only call ``my_method`` if you've previously registered it in
