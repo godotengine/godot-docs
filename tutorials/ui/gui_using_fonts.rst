@@ -156,6 +156,60 @@ property that accepts a Font resource.
    The texture filter mode can also be set on individual nodes that inherit from CanvasItem
    by setting :ref:`CanvasItem.texture_filter <class_CanvasItem_property_texture_filter>`.
 
+Font outlines and shadows
+-------------------------
+
+Font outlines and shadows can be used to improve readability when the background
+color isn't known in advance. For instance, this is the case for HUD elements
+that are drawn over a 2D/3D scene.
+
+Font outlines are available in most nodes that derive from Control, in addition
+to :ref:`class_Label3D`.
+
+To enable outline for a font on a given node, configure the theme overrides
+**Font Outline Color** and **Outline Size** in the inspector. The result should
+look like this:
+
+.. figure:: img/using_fonts_outline_example.webp
+   :align: center
+   :alt: Font outline example
+
+   Font outline example
+
+.. note::
+
+   If using a font with MSDF rendering, its **MSDF Pixel Range** import option
+   be set to at least *twice* the value of the outline size for outline
+   rendering to look correct. Otherwise, the outline may appear to be cut off
+   earlier than intended.
+
+Support for font shadows is more limited: they are only available in
+:ref:`class_Label` and :ref:`class_RichTextLabel`. Additionally, font shadows
+always have a hard edge (but you can reduce their opacity to make them look more
+subtle). To enable font shadows on a given node, configure the **Font Shadow
+Color**, **Shadow Offset X**, and **Shadow Offset Y** theme overrides in a Label
+or RichTextLabel node accordingly:
+
+.. figure:: img/using_fonts_shadow.webp
+   :align: center
+   :alt: Configuring font shadow in a Label node
+
+   Configuring font shadow in a Label node
+
+The result should look like this:
+
+.. figure:: img/using_fonts_shadow_example.webp
+   :align: center
+   :alt: Font shadow example
+
+   Font shadow example
+
+.. tip::
+
+    You can create local overrides to font display in Label nodes by creating a
+    :ref:`class_LabelSettings` resource that you reuse across Label nodes. This
+    resource takes priority over :ref:`theme properties <doc_gui_skinning>`.
+
 Advanced font features
 ----------------------
 
@@ -296,6 +350,23 @@ The downsides of MSDF font rendering are:
   If you notice rendering issues on fonts downloaded from websites such as
   `Google Fonts <https://fonts.google.com>`__, try downloading the font from the
   font author's official website instead.
+
+.. figure:: img/using_fonts_rasterized_vs_msdf_comparison.webp
+   :align: center
+   :alt: Comparison of font rasterization methods
+
+   Comparison of font rasterization methods.
+   From top to bottom: rasterized without oversampling, rasterized with oversampling, MSDF
+
+To enable MSDF rendering for a given font, select it in the FileSystem dock, go
+to the Import dock, enable **Multichannel Signed Distance Field**, then click
+**Reimport**:
+
+.. figure:: img/using_fonts_msdf_import_options.webp
+   :align: center
+   :alt: Enabling MSDF in the font's import options
+
+   Enabling MSDF in the font's import options
 
 .. _doc_using_fonts_emoji:
 
