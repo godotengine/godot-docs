@@ -7,10 +7,10 @@ Runtime file loading and saving
 
     See :ref:`doc_saving_games` for information on saving and loading game progression.
 
-Sometimes, :ref:`doc_exporting_pcks` is not ideal when you want players to be
-able to load user-generated content in your project. It requires users to
-generate a PCK or ZIP file through the Godot editor, which contains resources
-imported by Godot.
+Sometimes, :ref:`exporting packs, patches, and mods <doc_exporting_pcks>` is not
+ideal when you want players to be able to load user-generated content in your
+project. It requires users to generate a PCK or ZIP file through the Godot
+editor, which contains resources imported by Godot.
 
 Example use cases for runtime file loading and saving include:
 
@@ -23,6 +23,9 @@ Example use cases for runtime file loading and saving include:
   easily be read by other applications (ZIP).
 - Loading files created by another game or program, or even game data files from
   another game not made with Godot.
+
+Runtime file loading can be combined with :ref:`HTTP requests <doc_http_request_class>`
+to load resources from the Internet directly.
 
 .. warning::
 
@@ -67,32 +70,32 @@ strings and more. These PackedByteArray methods have names that start with
 Images
 ------
 
-Image's :ref:`load_from_file<class_Image_method_load_from_file>` static method
+Image's :ref:`Image.load_from_file <class_Image_method_load_from_file>` static method
 handles everything, from format detection based on file extension to reading the
 file from disk.
 
 If you need error handling or more control (such as changing the scale a SVG is
 loaded at), use one of the following methods depending on the file format:
 
-- :ref:`load_jpg_from_buffer<class_Image_method_load_jpg_from_buffer>`
-- :ref:`load_ktx_from_buffer<class_Image_method_load_ktx_from_buffer>`
-- :ref:`load_png_from_buffer<class_Image_method_load_png_from_buffer>`
-- :ref:`load_svg_from_buffer<class_Image_method_load_svg_from_buffer>`
-  or :ref:`load_svg_from_string<class_Image_method_load_svg_from_string>`
-- :ref:`load_tga_from_buffer<class_Image_method_load_tga_from_buffer>`
-- :ref:`load_webp_from_buffer<class_Image_method_load_webp_from_buffer>`
+- :ref:`Image.load_jpg_from_buffer <class_Image_method_load_jpg_from_buffer>`
+- :ref:`Image.load_ktx_from_buffer <class_Image_method_load_ktx_from_buffer>`
+- :ref:`Image.load_png_from_buffer <class_Image_method_load_png_from_buffer>`
+- :ref:`Image.load_svg_from_buffer <class_Image_method_load_svg_from_buffer>`
+  or :ref:`Image.load_svg_from_string <class_Image_method_load_svg_from_string>`
+- :ref:`Image.load_tga_from_buffer <class_Image_method_load_tga_from_buffer>`
+- :ref:`Image.load_webp_from_buffer <class_Image_method_load_webp_from_buffer>`
 
 Several image formats can also be saved by Godot at runtime using the following
 methods:
 
-- :ref:`save_png<class_Image_method_save_png>`
-  or :ref:`save_png_to_buffer<class_Image_method_save_png_to_buffer>`
-- :ref:`save_webp<class_Image_method_save_webp>`
-  or :ref:`save_webp_to_buffer<class_Image_method_save_webp_to_buffer>`
-- :ref:`save_jpg<class_Image_method_save_jpg>`
-  or :ref:`save_jpg_to_buffer<class_Image_method_save_jpg_to_buffer>`
-- :ref:`save_exr<class_Image_method_save_exr>`
-  or :ref:`save_exr_to_buffer<class_Image_method_save_exr_to_buffer>`
+- :ref:`Image.save_png <class_Image_method_save_png>`
+  or :ref:`Image.save_png_to_buffer <class_Image_method_save_png_to_buffer>`
+- :ref:`Image.save_webp <class_Image_method_save_webp>`
+  or :ref:`Image.save_webp_to_buffer <class_Image_method_save_webp_to_buffer>`
+- :ref:`Image.save_jpg <class_Image_method_save_jpg>`
+  or :ref:`Image.save_jpg_to_buffer <class_Image_method_save_jpg_to_buffer>`
+- :ref:`Image.save_exr <class_Image_method_save_exr>`
+  or :ref:`Image.save_exr_to_buffer <class_Image_method_save_exr_to_buffer>`
   *(only available in editor builds, cannot be used in exported projects)*
 
 The methods with the ``to_buffer`` suffix save the image to a PackedByteArray
@@ -151,7 +154,7 @@ Example of loading an Ogg Theora video file in a :ref:`class_VideoStreamPlayer` 
     scripting.
 
     It's still possible to *save* WAV files using
-    :ref:`save_to_wav<class_AudioStreamWAV_method_save_to_wav>`, which is useful
+    :ref:`AudioStreamWAV.save_to_wav <class_AudioStreamWAV_method_save_to_wav>`, which is useful
     for procedurally generated audio or microphone recordings.
 
 3D scenes
@@ -194,10 +197,10 @@ Example of loading a glTF scene and appending its root node to the scene:
 Fonts
 -----
 
-:ref:`load_dynamic_font<class_FontFile_method_load_bitmap_font>` supports the following
+:ref:`FontFile.load_dynamic_font <class_FontFile_method_load_bitmap_font>` supports the following
 font file formats: TTF, OTF, WOFF, WOFF2, PFB, PFM
 
-On the other hand, :ref:`load_bitmap_font<class_FontFile_method_load_bitmap_font>` supports
+On the other hand, :ref:`FontFile.load_bitmap_font <class_FontFile_method_load_bitmap_font>` supports
 the `BMFont <https://www.angelcode.com/products/bmfont/>`__ format (``.fnt`` or ``.font``).
 
 Additionally, it is possible to load any font that is installed on the system using
@@ -239,7 +242,7 @@ imported Godot resources rather than the original project files).
 
 .. note::
 
-    Use :ref:`load_resource_pack<class_ProjectSettings_method_load_resource_pack>`
+    Use :ref:`ProjectSettings.load_resource_pack <class_ProjectSettings_method_load_resource_pack>`
     to load PCK or ZIP files exported by Godot as
     :ref:`additional data packs <doc_exporting_pcks>`. That approach is preferred
     for DLCs, as it makes interacting with additional data packs seamless (virtual filesystem).
