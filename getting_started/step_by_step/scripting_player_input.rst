@@ -142,7 +142,7 @@ Here is the complete ``sprite_2d.gd`` file for reference.
 
     using Godot;
 
-    public partial class Sprite : Sprite2D
+    public partial class MySprite2D : Sprite2D
     {
         private float _speed = 400;
         private float _angularSpeed = Mathf.Pi;
