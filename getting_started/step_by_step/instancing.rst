@@ -215,7 +215,7 @@ all working with the Godot editor.
 Summary
 -------
 
-Instancing, the process of producing an object from a blueprint has many handy
+Instancing, the process of producing an object from a blueprint, has many handy
 uses. With scenes, it gives you:
 
 - The ability to divide your game into reusable components.
