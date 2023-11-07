@@ -85,8 +85,8 @@ These files should contain the following:
 
     /* register_types.h */
 
-    void register_tts_types();
-    void unregister_tts_types();
+    void initialize_tts_module(ModuleInitializationLevel p_level);
+    void uninitialize_tts_module(ModuleInitializationLevel p_level);
     /* yes, the word in the middle must be the same as the module folder name */
 
 .. code-block:: cpp
@@ -98,11 +98,14 @@ These files should contain the following:
     #include "core/object/class_db.h"
     #include "tts.h"
 
-    void register_tts_types() {
+    void initialize_tts_module(ModuleInitializationLevel p_level) {
+        if (p_level != MODULE_INITIALIZATION_LEVEL_SCENE) {
+            return;
+        }
         ClassDB::register_class<TTS>();
     }
 
-    void unregister_tts_types() {
+    void uninitialize_tts_module(ModuleInitializationLevel p_level) {
         // Nothing to do here in this example.
     }
 
