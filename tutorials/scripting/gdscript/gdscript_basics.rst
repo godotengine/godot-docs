@@ -566,6 +566,74 @@ considered a comment.
 
 .. _doc_gdscript_builtin_types:
 
+Code regions
+~~~~~~~~~~~~
+
+Code regions are special types of comments that the script editor understands as
+*foldable regions*. This means that after writing code region comments, you can
+collapse and expand the region by clicking the arrow that appears at the left of
+the comment. This arrow appears within a purple square to be distinguishable
+from standard code folding.
+
+The syntax is as follows:
+
+::
+
+    # Important: There must be *no* space between the `#` and `region` or `endregion`.
+
+    # Region without a description:
+    #region
+    ...
+    #endregion
+
+    # Region with a description:
+    #region Some description that is displayed even when collapsed
+    ...
+    #endregion
+
+.. tip::
+
+    To create a code region quickly, select several lines in the script editor,
+    right-click the selection then choose **Create Code Region**. The region
+    description will be selected automatically for editing.
+
+    It is possible to nest code regions within other code regions.
+
+Here's a concrete usage example of code regions:
+
+::
+
+    # This comment is outside the code region. It will be visible when collapsed.
+    #region Terrain generation
+    # This comment is inside the code region. It won't be visible when collapsed.
+    func generate_lakes():
+        pass
+
+    func generate_hills():
+        pass
+    #endregion
+
+    #region Terrain population
+    func place_vegetation():
+        pass
+
+    func place_roads():
+        pass
+    #endregion
+
+This can be useful to organize large chunks of code into easier to understand
+sections. However, remember that external editors generally don't support this
+feature, so make sure your code is easy to follow even when not relying on
+folding code regions.
+
+.. note::
+
+    Individual functions and indented sections (such as ``if`` and ``for``) can
+    *always* be collapsed in the script editor. This means you should avoid
+    using a code region to contain a single function or indented section, as it
+    won't bring much of a benefit. Code regions work best when they're used to
+    group multiple elements together.
+
 Line continuation
 ~~~~~~~~~~~~~~~~~
 
