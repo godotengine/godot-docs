@@ -67,6 +67,8 @@ several helper methods to decode/encode series of bytes to integers, floats,
 strings and more. These PackedByteArray methods have names that start with
 ``decode_`` and ``encode_``. See also :ref:`doc_binary_serialization_api`.
 
+.. _doc_runtime_file_loading_and_saving_images:
+
 Images
 ------
 
@@ -118,6 +120,8 @@ Example of loading an image and displaying it in a :ref:`class_TextureRect` node
     # Save the converted ImageTexture to a PNG image.
     $TextureRect.texture.get_image().save_png("/path/to/file.png")
 
+.. _doc_runtime_file_loading_and_saving_audio_video_files:
+
 Audio/video files
 -----------------
 
@@ -156,6 +160,8 @@ Example of loading an Ogg Theora video file in a :ref:`class_VideoStreamPlayer` 
     It's still possible to *save* WAV files using
     :ref:`AudioStreamWAV.save_to_wav <class_AudioStreamWAV_method_save_to_wav>`, which is useful
     for procedurally generated audio or microphone recordings.
+
+.. _doc_runtime_file_loading_and_saving_3d_scenes:
 
 3D scenes
 ---------

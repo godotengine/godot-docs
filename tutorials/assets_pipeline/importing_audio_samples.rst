@@ -304,3 +304,9 @@ reducing their size greatly and ensuring correct trimming.
 
 As you can see above, sound effects become much larger in file size with reverb
 added.
+
+.. seealso::
+
+    Audio samples can be loaded and saved at runtime using
+    :ref:`runtime file loading and saving <doc_runtime_file_loading_and_saving_audio_video_files>`,
+    including from an exported project.
