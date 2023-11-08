@@ -96,7 +96,7 @@ them much faster to render. You can also use emissive materials with any
 as a replacement for light nodes that emit light over a large area.
 
 Shadow mapping
-^^^^^^^^^^^^^^
+--------------
 
 Lights can optionally cast shadows. This gives them greater realism (light does
 not reach occluded areas), but it can incur a bigger performance cost.
@@ -123,6 +123,11 @@ There is a list of generic shadow parameters, each also has a specific function:
   moving objects. The downside of increasing shadow blur is that it will make
   the grainy pattern used for filtering more noticeable.
   See also :ref:`doc_lights_and_shadows_shadow_filter_mode`.
+
+.. image:: img/lights_and_shadows_blur.webp
+
+Tweaking shadow bias
+^^^^^^^^^^^^^^^^^^^^
 
 Below is an image of what tweaking bias looks like. Default values work for most
 cases, but in general, it depends on the size and complexity of geometry.
@@ -266,6 +271,8 @@ called a *contact-hardening* shadow (also known as PCSS). This kind of shadow is
 expensive, so check the recommendations in
 :ref:`doc_lights_and_shadows_pcss_recommendations` if setting this value above
 ``0.0`` on lights with shadows enabled.
+
+.. image:: img/lights_and_shadows_pcss.webp
 
 Omni shadow mapping
 ^^^^^^^^^^^^^^^^^^^
@@ -447,6 +454,8 @@ The **Soft Very Low** setting will automatically decrease shadow blur to make
 artifacts from the low sample count less visible. Conversely, the **Soft High**
 and **Soft Ultra** settings will automatically increase shadow blur to better
 make use of the increased sample count.
+
+.. image:: img/lights_and_shadows_filter_quality.webp
 
 16-bits versus 32-bit
 ^^^^^^^^^^^^^^^^^^^^^

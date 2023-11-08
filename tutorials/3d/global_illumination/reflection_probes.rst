@@ -43,6 +43,13 @@ Visual comparison
 
    Reflection probe enabled.
 
+
+.. figure:: img/gi_lightmap_gi_indirect_only_reflection_probe.webp
+   :align: center
+   :alt: Reflection probe enabled.
+
+   Reflection probe enabled with LightmapGI used at the same time. The lightmap appears in the reflection.
+
 By combining reflection probes with screen-space reflections, you can get the
 best of both worlds: high-quality reflections for general room structure (that
 remain present when off-screen), while also having real-time reflections for
