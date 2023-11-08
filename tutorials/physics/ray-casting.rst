@@ -142,13 +142,13 @@ data:
 ::
 
     {
-       position: Vector2 # point in world space for collision
-       normal: Vector2 # normal in world space for collision
-       collider: Object # Object collided or null (if unassociated)
-       collider_id: ObjectID # Object it collided against
-       rid: RID # RID it collided against
-       shape: int # shape index of collider
-       metadata: Variant() # metadata of collider
+		position: Vector2 # point in world space for collision
+		normal: Vector2 # normal in world space for collision
+		collider: Object # Object collided or null (if unassociated)
+		collider_id: ObjectID # Object it collided against
+		rid: RID # RID it collided against
+		shape: int # shape index of collider
+		metadata: Variant() # metadata of collider
     }
 
 The data is similar in 3D space, using Vector3 coordinates. Note that to enable collisions
@@ -278,9 +278,9 @@ To obtain it using a camera, the following code can be used:
 
     func _input(event):
         if event is InputEventMouseButton and event.pressed and event.button_index == 1:
-              var camera3d = $Camera3D
-              var from = camera3d.project_ray_origin(event.position)
-              var to = from + camera3d.project_ray_normal(event.position) * RAY_LENGTH
+        	var camera3d = $Camera3D
+        	var from = camera3d.project_ray_origin(event.position)
+			var to = from + camera3d.project_ray_normal(event.position) * RAY_LENGTH
 
  .. code-tab:: csharp
 
