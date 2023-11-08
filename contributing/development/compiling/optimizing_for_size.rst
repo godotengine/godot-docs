@@ -46,24 +46,8 @@ function names (this does not affect the built-in GDScript profiler).
 .. note::
 
     The above command will not work on Windows binaries compiled with MSVC
-    and platforms such as Android and HTML5. Instead, pass ``debug_symbols=no``
+    and platforms such as Android and Web. Instead, pass ``debug_symbols=no``
     on the SCons command line when compiling.
-
-Optimizing for size instead of speed
-------------------------------------
-
-- **Space savings:** High
-- **Difficulty:** Easy
-- **Performed in official builds:** Yes, but only for HTML5
-
-Godot 3.1 onwards allows compiling using size optimizations (instead of speed).
-To enable this, set the ``optimize`` flag to ``size``:
-
-::
-
-    scons p=windows target=template_release optimize=size
-
-Some platforms such as WebAssembly already use this mode by default.
 
 Compiling with link-time optimization
 -------------------------------------
@@ -79,7 +63,7 @@ and MSVC compilers:
 
 ::
 
-    scons p=windows target=template_release lto=full
+    scons target=template_release lto=full
 
 Linking becomes much slower and more RAM-consuming with this option,
 so it should be used only for release builds:
@@ -89,6 +73,59 @@ so it should be used only for release builds:
 - When compiling the ``3.x`` branch, you need to have at least 6 GB of RAM
   available for successful linking with LTO enabled.
 
+Optimizing for size instead of speed
+------------------------------------
+
+- **Space savings:** High
+- **Difficulty:** Easy
+- **Performed in official builds:** Yes, but only for web builds
+
+Godot 3.1 onwards allows compiling using size optimizations (instead of speed).
+To enable this, set the ``optimize`` flag to ``size``:
+
+::
+
+    scons target=template_release optimize=size
+
+Some platforms such as WebAssembly already use this mode by default.
+
+Disabling advanced text server
+------------------------------
+
+- **Space savings:** High
+- **Difficulty:** Easy
+- **Performed in official builds:** No
+
+By default, Godot uses an advanced text server with the support for the
+following features:
+
+- Right-to-left typesetting and complex scripts, required to write languages
+  such as Arabic and Hebrew.
+- Font ligatures and OpenType features (such as small capitals, fractions and
+  slashed zero).
+
+Godot provides a fallback text server that isn't compiled by default. This text
+server can be used as a lightweight alternative to the default advanced text
+server:
+
+::
+
+    scons target=template_release module_text_server_adv_enabled=no module_text_server_fb_enabled=yes
+
+If you only intend on supporting Latin, Greek and Cyrillic-based languages in
+your project, the fallback text server should suffice.
+
+This fallback text server can also process large amounts of text more quickly
+than the advanced text server. This makes the fallback text server a good fit
+for mobile/web projects.
+
+.. note::
+
+    Remember to always pass ``module_text_server_fb_enabled=yes`` when using
+    ``module_text_server_adv_enabled=no``. Otherwise, the compiled binary won't
+    contain any text server, which means no text will be displayed at all when
+    running the project.
+
 Disabling 3D
 ------------
 
@@ -96,11 +133,12 @@ Disabling 3D
 - **Difficulty:** Easy
 - **Performed in official builds:** No
 
-For 2D games, having the whole 3D engine available usually makes no sense. Because of this, there is a build flag to disable it:
+For 2D games, having the whole 3D engine available usually makes no sense.
+Because of this, there is a build flag to disable it:
 
 ::
 
-    scons p=windows target=template_release disable_3d=yes
+    scons target=template_release disable_3d=yes
 
 Tools must be disabled in order to use this flag, as the editor is not designed
 to operate without 3D support. Without it, the binary size can be reduced
@@ -118,7 +156,7 @@ TextEdit or GraphEdit. They can be disabled using a build flag:
 
 ::
 
-    scons p=windows target=template_release disable_advanced_gui=yes
+    scons target=template_release disable_advanced_gui=yes
 
 This is everything that will be disabled:
 
@@ -167,12 +205,12 @@ a lot of them:
 
 ::
 
-    scons p=windows target=template_release module_arkit_enabled=no module_assimp_enabled=no module_bmp_enabled=no module_bullet_enabled=no module_camera_enabled=no module_csg_enabled=no module_dds_enabled=no module_enet_enabled=no module_etc_enabled=no module_gdnative_enabled=no module_gridmap_enabled=no module_hdr_enabled=no module_jsonrpc_enabled=no module_mbedtls_enabled=no module_mobile_vr_enabled=no module_opensimplex_enabled=no module_pvr_enabled=no module_recast_enabled=no module_regex_enabled=no module_squish_enabled=no module_svg_enabled=no module_tga_enabled=no module_theora_enabled=no module_tinyexr_enabled=no module_upnp_enabled=no module_vhacd_enabled=no module_vorbis_enabled=no module_webrtc_enabled=no module_websocket_enabled=no module_xatlas_unwrap_enabled=no
+    scons target=template_release module_basis_universal_enabled=no module_bmp_enabled=no module_camera_enabled=no module_csg_enabled=no module_dds_enabled=no module_enet_enabled=no module_gridmap_enabled=no module_hdr_enabled=no module_jsonrpc_enabled=no module_ktx_enabled=no module_mbedtls_enabled=no module_meshoptimizer_enabled=no module_minimp3_enabled=no module_mobile_vr_enabled=no module_msdfgen_enabled=no module_multiplayer_enabled=no module_noise_enabled=no module_navigation_enabled=no module_ogg_enabled=no module_openxr_enabled=no module_raycast_enabled=no module_regex_enabled=no module_squish_enabled=no module_svg_enabled=no module_tga_enabled=no module_theora_enabled=no module_tinyexr_enabled=no module_upnp_enabled=no module_vhacd_enabled=no module_vorbis_enabled=no module_webrtc_enabled=no module_websocket_enabled=no module_webxr_enabled=no module_zip_enabled=no
 
 If this proves not to work for your use case, you should review the list of
-modules and see which ones you actually still need for your game (e.g. you
-might want to keep networking-related modules, regex support, or theora
-to play videos).
+modules and see which ones you actually still need for your game (e.g. you might
+want to keep networking-related modules, regex support,
+``minimp3``/``ogg``/``vorbis`` to play music, or ``theora`` to play videos).
 
 Alternatively, you can supply a list of disabled modules by creating
 ``custom.py`` at the root of the source, with the contents similar to the
@@ -182,23 +220,27 @@ following:
 
     # custom.py
 
-    module_arkit_enabled = "no"
-    module_assimp_enabled = "no"
+    module_basis_universal_enabled = "no"
     module_bmp_enabled = "no"
-    module_bullet_enabled = "no"
     module_camera_enabled = "no"
     module_csg_enabled = "no"
     module_dds_enabled = "no"
     module_enet_enabled = "no"
-    module_etc_enabled = "no"
     module_gridmap_enabled = "no"
     module_hdr_enabled = "no"
     module_jsonrpc_enabled = "no"
+    module_ktx_enabled = "no"
     module_mbedtls_enabled = "no"
+    module_meshoptimizer_enabled = "no"
+    module_minimp3_enabled = "no"
     module_mobile_vr_enabled = "no"
-    module_opensimplex_enabled = "no"
-    module_pvr_enabled = "no"
-    module_recast_enabled = "no"
+    module_msdfgen_enabled= "no"
+    module_multiplayer_enabled = "no"
+    module_noise_enabled = "no"
+    module_navigation_enabled = "no"
+    module_ogg_enabled = "no"
+    module_openxr_enabled = "no"
+    module_raycast_enabled = "no"
     module_regex_enabled = "no"
     module_squish_enabled = "no"
     module_svg_enabled = "no"
@@ -210,7 +252,8 @@ following:
     module_vorbis_enabled = "no"
     module_webrtc_enabled = "no"
     module_websocket_enabled = "no"
-    module_xatlas_unwrap_enabled = "no"
+    module_webxr_enabled = "no"
+    module_zip_enabled = "no"
 
 .. seealso::
 
