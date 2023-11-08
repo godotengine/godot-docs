@@ -85,7 +85,7 @@ The Attach Node Script window appears. It allows you to select the script's
 language and file path, among other options.
 
 Change the Template field from "Node: Default" to "Object: Empty" to start with a clean file. Leave the
-other options at their default values and click the Create button to create the script.
+other options set to their default values and click the Create button to create the script.
 
 .. image:: img/scripting_first_script_attach_node_script.webp
 
