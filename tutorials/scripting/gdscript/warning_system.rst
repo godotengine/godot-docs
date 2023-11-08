@@ -18,7 +18,9 @@ called **GDScript**:
 
 .. note::
 
-   As shown in the image above, you must enable **Advanced Settings** in order to see the GDScript section.
+   You must enable **Advanced Settings** in order to see the 
+   GDScript section in the sidebar. You can also search for "GDScript" when
+   Advanced Settings is off.
 
 You can find a list of warnings for the active GDScript file in the
 script editor's status bar. The example below has 3 warnings:
