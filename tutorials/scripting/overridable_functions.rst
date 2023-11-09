@@ -12,7 +12,7 @@ This document presents the ones you'll use most often.
              notifications system. To learn more about it, see
              :ref:`doc_godot_notifications`.
 
-Two functions allow you to initialize and get nodes, besides the class's
+Two functions allow you to initialize and get nodes besides the class's
 constructor: ``_enter_tree()`` and ``_ready()``.
 
 When the node enters the Scene Tree, it becomes active and the engine calls its
@@ -22,13 +22,13 @@ multiple times throughout a node's lifetime.
 
 Most of the time, you'll use ``_ready()`` instead. This function is called only
 once in a node's lifetime, after ``_enter_tree()``. ``_ready()`` ensures that all children
-have entered the scene tree first, so you can safely call ``get_node()`` on it.
+have entered the scene tree first, so you can safely call ``get_node()`` on them.
 
 .. seealso:: To learn more about getting node references, read
              :ref:`doc_nodes_and_scene_instances`.
 
 Another related callback is ``_exit_tree()``, which the engine calls every time
-a node exits the scene tree. This can be when you call :ref:`Node.remove_child()
+a node is about to exit the scene tree. This can be when you call :ref:`Node.remove_child()
 <class_Node_method_remove_child>` or when you free a node.
 
 .. tabs::
@@ -76,7 +76,7 @@ information, read the dedicated documentation:
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    # Called every frame, as often as possible.
+    # Called every frame.
     func _process(delta):
         pass
 
@@ -88,7 +88,7 @@ information, read the dedicated documentation:
 
     public override void _Process(double delta)
     {
-        // Called every frame, as often as possible.
+        // Called every frame.
         base._Process(delta);
     }
 
@@ -116,7 +116,7 @@ To learn more about inputs in Godot, see the :ref:`Input section <toc-learn-feat
     func _unhandled_input(event):
         pass
 
-    # Called once for every event, before _unhandled_input(), allowing you to
+    # Called once for every event before _unhandled_input(), allowing you to
     # consume some events.
     func _input(event):
         pass
@@ -129,7 +129,7 @@ To learn more about inputs in Godot, see the :ref:`Input section <toc-learn-feat
         base._UnhandledInput(@event);
     }
 
-    // Called once for every event, before _unhandled_input(), allowing you to
+    // Called once for every event before _UnhandledInput(), allowing you to
     // consume some events.
     public override void _Input(InputEvent @event)
     {
