@@ -72,13 +72,14 @@ We have official plugins for the following code editors:
 LSP/DAP support
 ---------------
 
-Godot supports the `Language Server Protocol <https://microsoft.github.io/language-server-protocol/>`_ (**LSP**) for code completion and the `Debug Adapter Protocol <https://microsoft.github.io/debug-adapter-protocol/>`_ (**DAP**) for debugging. You can check the `LSP client list <https://microsoft.github.io/language-server-protocol/implementors/tools/>`_ and `DAP client list <https://microsoft.github.io/debug-adapter-protocol/implementors/tools/>`_ to find if your editor supports them, and if yes, you should be able to take advantage of these features without the need of a custom plugin.
+Godot supports the `Language Server Protocol <https://microsoft.github.io/language-server-protocol/>`_ (**LSP**) for code completion and the `Debug Adapter Protocol <https://microsoft.github.io/debug-adapter-protocol/>`_ (**DAP**) for debugging. You can check the `LSP client list <https://microsoft.github.io/language-server-protocol/implementors/tools/>`_ and `DAP client list <https://microsoft.github.io/debug-adapter-protocol/implementors/tools/>`_ to find if your editor supports them. If this is the case, you should be able to take advantage of these features without the need of a custom plugin.
 
 To use these protocols, a Godot instance must be running on your current project. You should then configure your editor to communicate to the running adapter ports in Godot, which by default are ``6005`` for **LSP**, and ``6006`` for **DAP**. You can change these ports and other settings in the **Editor Settings**, under the **Network > Language Server** and **Network > Debug Adapter** sections respectively.
 
 Below are some configuration steps for specific editors:
 
-- Visual Studio Code
+Visual Studio Code
+^^^^^^^^^^^^^^^^^^
 
 You need to install the official `Visual Studio Code plugin <https://github.com/godotengine/godot-vscode-plugin>`_.
 
@@ -104,7 +105,8 @@ For **DAP**, specify the ``debugServer`` property in your ``launch.json`` file:
         ]
     }
 
-- Emacs
+Emacs
+^^^^^
 
 Check the official instructions to configure `LSP <https://github.com/godotengine/emacs-gdscript-mode#auto-completion-with-the-language-server-protocol-lsp>`_, and `DAP <https://github.com/godotengine/emacs-gdscript-mode#using-the-debugger>`_.
 
