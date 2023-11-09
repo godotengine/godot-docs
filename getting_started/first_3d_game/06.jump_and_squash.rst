@@ -255,6 +255,8 @@ With this code, if no collisions occurred on a given frame, the loop won't run.
                     # If so, we squash it and bounce.
                     mob.squash()
                     target_velocity.y = bounce_impulse
+                    # Prevent further duplicate calls.
+                    break
 
  .. code-tab:: csharp
 
@@ -279,6 +281,8 @@ With this code, if no collisions occurred on a given frame, the loop won't run.
                     // If so, we squash it and bounce.
                     mob.Squash();
                     _targetVelocity.Y = BounceImpulse;
+                    // Prevent further duplicate calls.
+                    break;
                 }
             }
         }
@@ -308,6 +312,10 @@ allows us to compare it to the up direction.
 With dot products, when the result is greater than ``0``, the two vectors are at
 an angle of fewer than 90 degrees. A value higher than ``0.1`` tells us that we
 are roughly above the monster.
+
+After handling the squash and bounce logic, we terminate the loop early via the ``break`` statement
+to prevent further duplicate calls to ``mob.squash()``, which may otherwise result in unintended bugs
+such as counting the score multiple times for one kill.
 
 We are calling one undefined function, ``mob.squash()``, so we have to add it to
 the Mob class.
