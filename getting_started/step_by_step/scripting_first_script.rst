@@ -85,7 +85,7 @@ The Attach Node Script window appears. It allows you to select the script's
 language and file path, among other options.
 
 Change the Template field from "Node: Default" to "Object: Empty" to start with a clean file. Leave the
-other options by default and click the Create button to create the script.
+other options set to their default values and click the Create button to create the script.
 
 .. image:: img/scripting_first_script_attach_node_script.webp
 
@@ -283,7 +283,7 @@ defines a local variable: it only exists within the function's scope.
 We define a local variable named ``velocity``, a 2D vector representing both a
 direction and a speed. To make the node move forward, we start from the Vector2
 class's constant ``Vector2.UP``, a vector pointing up, and rotate it by calling the
-``rotated()`` method on any ``Vector2``. This expression, ``Vector2.UP.rotated(rotation)``,
+Vector2 method ``rotated()``. This expression, ``Vector2.UP.rotated(rotation)``,
 is a vector pointing forward relative to our icon. Multiplied by our ``speed``
 property, it gives us a velocity we can use to move the node forward.
 
@@ -299,7 +299,7 @@ Run the scene to see the Godot head run in circles.
           walls or the floor. In :ref:`doc_your_first_2d_game`, you will learn
           another approach to moving objects while detecting collisions.
 
-Our node currently moves by itself. In the next part
+Our node currently moves by itself. In the next part,
 :ref:`doc_scripting_player_input`, we'll use player input to control it.
 
 Complete script
