@@ -32,7 +32,7 @@ draw objects to a texture as if it were another screen and can then choose
 what to do with the resulting texture.
 
 Another kind of Viewports in Godot are :ref:`Windows <class_Window>`. They allow their content to be projected onto a window. While the Root Viewport is a Window, they are less
-flexible. If you want to use the texture of a Viewport you will be working with :ref:`SubViewports <class_SubViewport>` most of the time.
+flexible. If you want to use the texture of a Viewport, you'll be working with :ref:`SubViewports <class_SubViewport>` most of the time.
 
 Input
 -----
@@ -60,7 +60,7 @@ Cameras (2D & 3D)
 -----------------
 
 When using a :ref:`Camera3D <class_Camera3D>` or
-:ref:`Camera2D <class_Camera2D>` it will always display on the
+:ref:`Camera2D <class_Camera2D>`, it will always display on the
 closest parent :ref:`Viewport <class_Viewport>` (going towards the root). For example, in the
 following hierarchy:
 
@@ -68,7 +68,7 @@ following hierarchy:
 
 ``CameraA`` will display on the Root :ref:`Viewport <class_Viewport>` and it will draw ``MeshA``. ``CameraB``
 will be captured by the :ref:`SubViewport <class_SubViewport>` along with ``MeshB``. Even though ``MeshB`` is in the scene
-hierarchy, it will still not be drawn to the Root Viewport. Similarly ``MeshA`` will not
+hierarchy, it will still not be drawn to the Root Viewport. Similarly, ``MeshA`` will not
 be visible from the SubViewport because SubViewports only
 capture nodes below them in the hierarchy.
 
@@ -109,8 +109,8 @@ For 3D, a :ref:`Viewport <class_Viewport>` will contain a :ref:`World3D <class_W
 is basically the universe that links physics and rendering together.
 Node3D-based nodes will register using the World3D of the closest Viewport.
 By default, newly created Viewports do not contain a World3D but
-use the same as their parent Viewport (the Root Viewport always contains a
-World3D, which is the one objects are rendered to by default). 
+use the same as their parent Viewport. The Root Viewport always contains a
+World3D, which is the one objects are rendered to by default.
 
 A :ref:`World3D <class_World3D>` can
 be set in a :ref:`Viewport <class_Viewport>` using the :ref:`World 3D<class_Viewport_property_world_3d>` property, that will separate
@@ -184,11 +184,11 @@ Disabling 3D is slightly faster and uses less memory compared to enabled 3D. It'
 .. note::
 
     If you need to render 3D shadows in the viewport, make sure to set the viewport's :ref:`positional_shadow_atlas_size<class_Viewport_property_positional_shadow_atlas_size>` property to a value higher than ``0``.
-    Otherwise, shadows won't be rendered. By default the value is set to ``2048``.
+    Otherwise, shadows won't be rendered. By default, the equivalent project setting is set to ``4096`` on desktop platforms and ``2048`` on mobile platforms.
 
 Godot also provides a way of customizing how everything is drawn inside :ref:`Viewports <class_Viewport>` using :ref:`Debug Draw<class_Viewport_property_debug_draw>`.
 Debug Draw allows you to specify a mode which determines how the Viewport will display things drawn
-inside it. Debug Draw is ``Disabled`` by default. Some other options are ``Unshaded``, ``Overdraw``, and ``Wireframe``. For a full list refer to the :ref:`Viewport Documentation<class_Viewport_property_debug_draw>`.
+inside it. Debug Draw is ``Disabled`` by default. Some other options are ``Unshaded``, ``Overdraw``, and ``Wireframe``. For a full list, refer to the :ref:`Viewport Documentation<class_Viewport_property_debug_draw>`.
 
 -  **Debug Draw = Disabled** (default): The scene is drawn normally.
 
@@ -232,7 +232,7 @@ and then selecting the :ref:`Viewport <class_Viewport>` you want to use.
 .. image:: img/texturepath.webp
 
 Every frame, the :ref:`Viewport's <class_Viewport>` texture is cleared away with the default clear color (or a transparent
-color if :ref:`Transparent Bg<class_Viewport_property_transparent_bg>` is set to ``true``). This can be changed by setting :ref:`Clear Mode<class_SubViewport_property_render_target_clear_mode>` to ``Never`` or ``Next Frame``.
+color if :ref:`Transparent BG<class_Viewport_property_transparent_bg>` is set to ``true``). This can be changed by setting :ref:`Clear Mode<class_SubViewport_property_render_target_clear_mode>` to ``Never`` or ``Next Frame``.
 As the name implies, Never means the texture will never be cleared, while next frame will
 clear the texture on the next frame and then set itself to Never.
 
