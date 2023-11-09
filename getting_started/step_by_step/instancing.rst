@@ -1,5 +1,3 @@
-:article_outdated: False
-
 .. _doc_instancing:
 
 Creating instances
