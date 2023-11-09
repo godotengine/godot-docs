@@ -329,7 +329,7 @@ Therefore, the process of writing integration tests for GDScript is the followin
 
    .. code-block:: shell
 
-       ./bin/<godot_binary> --gdscript-generate-tests modules/gdscript/tests/scripts
+       bin/<godot_binary> --gdscript-generate-tests modules/gdscript/tests/scripts
 
 You may add the ``--print-filenames`` option to see filenames as their test
 outputs are generated. If you are working on a new feature that is causing
