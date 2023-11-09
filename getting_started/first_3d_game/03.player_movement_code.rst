@@ -404,6 +404,9 @@ one).
 
 |image7|
 
+Then move the camera about ``15`` units on the Y axis (the green
+one).
+
 Here's where the magic happens. Select the *CameraPivot* and rotate it ``-45``
 degrees around the X axis (using the red circle). You'll see the camera move as
 if it was attached to a crane.
