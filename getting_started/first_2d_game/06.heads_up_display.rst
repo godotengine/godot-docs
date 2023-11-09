@@ -65,7 +65,7 @@ ScoreLabel
 Message
 ~~~~~~~~~~~~
 
-1. Add the text ``Dodge the creeps!``.
+1. Add the text ``Dodge the Creeps!``.
 2. Set the "Horizontal Alignment" and "Vertical Alignment" to ``Center``.
 3. Set the "Autowrap Mode" to ``Word``, otherwise the label will stay on one line.
 4. Under "Control - Layout/Transform" set "Size X"  to ``480`` to use the entire width of the screen.
@@ -203,7 +203,7 @@ We also need to process what happens when the player loses. The code below will 
         # Wait until the MessageTimer has counted down.
         await $MessageTimer.timeout
 
-        $Message.text = "Dodge the\nCreeps!"
+        $Message.text = "Dodge the Creeps!"
         $Message.show()
         # Make a one-shot timer and wait for it to finish.
         await get_tree().create_timer(1.0).timeout
@@ -219,7 +219,7 @@ We also need to process what happens when the player loses. The code below will 
         await ToSignal(messageTimer, Timer.SignalName.Timeout);
 
         var message = GetNode<Label>("Message");
-        message.Text = "Dodge the\nCreeps!";
+        message.Text = "Dodge the Creeps!";
         message.Show();
 
         await ToSignal(GetTree().CreateTimer(1.0), SceneTreeTimer.SignalName.Timeout);
@@ -310,7 +310,7 @@ signal of ``StartButton``, and add the following code to the new functions:
     }
 
     void HUD::_on_StartMessageTimer_timeout() {
-        _message_label->set_text("Dodge the\nCreeps");
+        _message_label->set_text("Dodge the Creeps!");
         _message_label->show();
         _start_button_timer->start();
     }
@@ -336,9 +336,6 @@ function of the Main node by clicking the "Pick" button in the "Connect a Signal
 window and selecting the ``new_game()`` method or type "new_game" below "Receiver Method"
 in the window. Verify that the green connection icon now appears next to
 ``func new_game()`` in the script.
-
-Remember to remove the call to ``new_game()`` from
-``_ready()``.
 
 In ``new_game()``, update the score display and show the "Get Ready" message:
 
