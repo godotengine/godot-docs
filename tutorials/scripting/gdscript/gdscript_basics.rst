@@ -908,7 +908,7 @@ Associative container which contains values referenced by unique keys.
 Lua-style table syntax is also supported. Lua-style uses ``=`` instead of ``:``
 and doesn't use quotes to mark string keys (making for slightly less to write).
 However, keys written in this form can't start with a digit (like any GDScript
-identifier).
+identifier), and must be string literals.
 
 ::
 
