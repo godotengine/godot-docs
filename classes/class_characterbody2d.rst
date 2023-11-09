@@ -19,7 +19,7 @@ A 2D physics body specialized for characters moved by script.
 Description
 -----------
 
-**CharacterBody2D** is a specialized class for physics bodies that are meant to be user-controlled. They are not affected by physics at all, but they affect other physics bodies in their path. They are mainly used to provide high-level API to move objects with wall and slope detection (:ref:`move_and_slide<class_CharacterBody2D_method_move_and_slide>` method) in addition to the general collision detection provided by :ref:`PhysicsBody2D.move_and_collide<class_PhysicsBody2D_method_move_and_collide>`. This makes it useful for highly configurable physics bodies that must move in specific ways and collide with the world, as is often the case with user-controlled characters.
+**CharacterBody2D** is a specialized class for physics bodies that are meant to be controlled by script, frequently used for player characters. They are not affected by physics at all, but they affect other physics bodies in their path. They are mainly used to provide high-level API to move objects with wall and slope detection (:ref:`move_and_slide<class_CharacterBody2D_method_move_and_slide>` method) in addition to the general collision detection provided by :ref:`PhysicsBody2D.move_and_collide<class_PhysicsBody2D_method_move_and_collide>`. This makes it useful for highly configurable physics bodies that must move in specific ways and collide with the world, as is often the case with player-controlled characters.
 
 For game objects that don't require complex movement or collision detection, such as moving platforms, :ref:`AnimatableBody2D<class_AnimatableBody2D>` is simpler to configure.
 
