@@ -208,7 +208,8 @@ inside it. Debug Draw is ``Disabled`` by default. Some other options are ``Unsha
 
 .. note::
 
-    The effects of the Debug Draw modes may vary when using the Compatibility renderer.
+    Debug Draw modes are currently **not** supported when using the
+    Compatibility rendering method. They will appear as regular draw modes.
 
 Render target
 -------------
