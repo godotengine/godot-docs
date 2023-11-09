@@ -125,7 +125,7 @@ notified last.
 
 The order of operations can also be overridden using the ``process_priority``
 node property. Nodes with a lower number are called first. For example, nodes
-with the priorities "0, 1, 2, 3" would be called in that order.
+with the priorities "0, 1, 2, 3" would be called in that order from left to right.
 
 "Becoming active" by entering the *Scene Tree*
 ----------------------------------------------
