@@ -319,7 +319,7 @@ Therefore, the process of writing integration tests for GDScript is the followin
             if true # Missing colon here.
                 print("true")
 
-3. Change directory to the root of godot source repository.
+3. Change directory to the Godot source repository root.
 
    .. code-block:: shell
 
