@@ -198,6 +198,20 @@ Example of loading a glTF scene and appending its root node to the scene:
     # `GLTFDocument.generate_buffer()` is also available for saving to memory.
     gltf_document_save.write_to_filesystem(gltf_state_save, path)
 
+.. note::
+
+    When loading a glTF scene, a *base path* must be set so that external
+    resources like textures can be loaded correctly. When loading from a file,
+    the base path is automatically set to the folder containing the file. When
+    loading from a buffer, this base path must be manually set as there is no
+    way for Godot to infer this path.
+
+    To set the base path, set
+    :ref:`GLTFState.base_path <class_GLTFState_property_base_path>` on your
+    GLTFState instance *before* calling
+    :ref:`GLTFDocument.append_from_buffer <class_GLTFDocument_method_append_from_buffer>`
+    or :ref:`GLTFDocument.append_from_file <class_GLTFDocument_method_append_from_file>`.
+
 .. _doc_runtime_file_loading_and_saving_fonts:
 
 Fonts
