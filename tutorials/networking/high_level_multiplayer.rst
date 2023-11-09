@@ -196,6 +196,16 @@ For a remote call to be successful, the sending and receiving node need to have 
 must have the same name. When using ``add_child()`` for nodes which are expected to use RPCs, set the argument
 ``force_readable_name`` to ``true``.
 
+.. warning:: 
+
+    If a function is annotated with ``@rpc`` on the client script (resp. server script),
+    then this function must also be declared on the server script (resp. client script),
+    and both must have the same signature, **even if this function is not currently used**.
+
+    If these conditions are not fulfilled, the script may print an error or
+    cause unwanted behavior. See further explanation and troubleshooting on
+    `this post <https://github.com/godotengine/godot/issues/57869#issuecomment-1034215138>`__.
+
 The annotation can take a number of arguments, which have default values. ``@rpc`` is equivalent to:
 
 ::
