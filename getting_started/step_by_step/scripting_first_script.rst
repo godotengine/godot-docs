@@ -1,5 +1,3 @@
-:article_outdated: True
-
 ..
     Intention:
 
@@ -44,7 +42,7 @@ icon, which we often use for prototyping in the community.
 We need to create a Sprite2D node to display it in the game. In the Scene dock,
 click the Other Node button.
 
-.. image:: img/scripting_first_script_click_other_node.png
+.. image:: img/scripting_first_script_click_other_node.webp
 
 Type "Sprite2D" in the search bar to filter nodes and double-click on Sprite2D
 to create the node.
@@ -67,11 +65,9 @@ slot.
     You can create Sprite2D nodes automatically by dragging and dropping images
     on the viewport.
 
-    .. image:: img/scripting_first_script_dragging_sprite.png
-
 Then, click and drag the icon in the viewport to center it in the game view.
 
-.. image:: img/scripting_first_script_centering_sprite.png
+.. image:: img/scripting_first_script_centering_sprite.webp
 
 Creating a new script
 ---------------------
@@ -163,7 +159,7 @@ Save the scene as ``sprite_2d.tscn`` if you haven't already, then press :kbd:`F6
 to run it. Look at the **Output** bottom panel that expands.
 It should display "Hello, world!".
 
-.. image:: img/scripting_first_script_print_hello_world.png
+.. image:: img/scripting_first_script_print_hello_world.webp
 
 Delete the ``_init()`` function, so you're only left with the line ``extends
 Sprite2D``.
