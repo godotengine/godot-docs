@@ -359,9 +359,9 @@ Export annotations are also provided for the physics and render layers defined i
     [Export(PropertyHint.Layers2DRender)]
     public int Layers2DRender { get; set; }
     [Export(PropertyHint.Layers3DPhysics)]
-    public int layers3DPhysics { get; set; }
+    public int Layers3DPhysics { get; set; }
     [Export(PropertyHint.Layers3DRender)]
-    public int layers3DRender { get; set; }
+    public int Layers3DRender { get; set; }
 
 Using bit flags requires some understanding of bitwise operations.
 If in doubt, use boolean variables instead.
