@@ -105,6 +105,14 @@ instead of the filesystem. This is useful to send the image over the network or
 into a ZIP archive without having to write it on the filesystem. This can
 increase performance by reducing I/O utilization.
 
+.. note::
+
+    If displaying the loaded image on a 3D surface, make sure to call
+    :ref:`Image.generate_mipmaps <class_Image_method_generate_mipmaps>`
+    so that the texture doesn't look grainy when viewed at a distance.
+    This is also useful in 2D when following instructions on
+    :ref:`reducing aliasing when downsampling <doc_multiple_resolutions_reducing_aliasing_on_downsampling>`.
+
 Example of loading an image and displaying it in a :ref:`class_TextureRect` node
 (which requires conversion to :ref:`class_ImageTexture`):
 
@@ -112,6 +120,9 @@ Example of loading an image and displaying it in a :ref:`class_TextureRect` node
 
     # Load an image of any format supported by Godot from the filesystem.
     var image = Image.load_from_file(path)
+    # Optionally, generate mipmaps if displaying the texture on a 3D surface
+    # so that the texture doesn't look grainy when viewed at a distance.
+    #image.generate_mipmaps()
     $TextureRect.texture = ImageTexture.create_from_image(image)
 
     # Save the loaded Image to a PNG image.
