@@ -175,7 +175,7 @@ Phaser
 This effect is formed by de-phasing two duplicates of the same sound so
 they cancel each other out in an interesting way. Phaser produces a
 pleasant whooshing sound that moves back and forth through the audio
-spectrum, and can be a great way to create sci fi effects or Darth
+spectrum, and can be a great way to create sci-fi effects or Darth
 Vader-like voices.
 
 PitchShift
