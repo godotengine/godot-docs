@@ -73,9 +73,9 @@ Methods
    :widths: auto
 
    +---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                        | :ref:`_tile_data_runtime_update<class_TileMap_method__tile_data_runtime_update>` **(** :ref:`int<class_int>` layer, :ref:`Vector2i<class_Vector2i>` coords, :ref:`TileData<class_TileData>` tile_data **)** |virtual|                                                                   |
+   | void                                        | :ref:`_tile_data_runtime_update<class_TileMap_private_method__tile_data_runtime_update>` **(** :ref:`int<class_int>` layer, :ref:`Vector2i<class_Vector2i>` coords, :ref:`TileData<class_TileData>` tile_data **)** |virtual|                                                           |
    +---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                     | :ref:`_use_tile_data_runtime_update<class_TileMap_method__use_tile_data_runtime_update>` **(** :ref:`int<class_int>` layer, :ref:`Vector2i<class_Vector2i>` coords **)** |virtual|                                                                                                      |
+   | :ref:`bool<class_bool>`                     | :ref:`_use_tile_data_runtime_update<class_TileMap_private_method__use_tile_data_runtime_update>` **(** :ref:`int<class_int>` layer, :ref:`Vector2i<class_Vector2i>` coords **)** |virtual|                                                                                              |
    +---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                        | :ref:`add_layer<class_TileMap_method_add_layer>` **(** :ref:`int<class_int>` to_position **)**                                                                                                                                                                                          |
    +---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -335,7 +335,7 @@ The assigned :ref:`TileSet<class_TileSet>`.
 Method Descriptions
 -------------------
 
-.. _class_TileMap_method__tile_data_runtime_update:
+.. _class_TileMap_private_method__tile_data_runtime_update:
 
 .. rst-class:: classref-method
 
@@ -343,7 +343,7 @@ void **_tile_data_runtime_update** **(** :ref:`int<class_int>` layer, :ref:`Vect
 
 Called with a TileData object about to be used internally by the TileMap, allowing its modification at runtime.
 
-This method is only called if :ref:`_use_tile_data_runtime_update<class_TileMap_method__use_tile_data_runtime_update>` is implemented and returns ``true`` for the given tile ``coords`` and ``layer``.
+This method is only called if :ref:`_use_tile_data_runtime_update<class_TileMap_private_method__use_tile_data_runtime_update>` is implemented and returns ``true`` for the given tile ``coords`` and ``layer``.
 
 \ **Warning:** The ``tile_data`` object's sub-resources are the same as the one in the TileSet. Modifying them might impact the whole TileSet. Instead, make sure to duplicate those resources.
 
@@ -353,7 +353,7 @@ This method is only called if :ref:`_use_tile_data_runtime_update<class_TileMap_
 
 ----
 
-.. _class_TileMap_method__use_tile_data_runtime_update:
+.. _class_TileMap_private_method__use_tile_data_runtime_update:
 
 .. rst-class:: classref-method
 
@@ -815,7 +815,7 @@ Moves the layer at index ``layer`` to the given position ``to_position`` in the 
 
 void **notify_runtime_tile_data_update** **(** :ref:`int<class_int>` layer=-1 **)**
 
-Notifies the TileMap node that calls to :ref:`_use_tile_data_runtime_update<class_TileMap_method__use_tile_data_runtime_update>` or :ref:`_tile_data_runtime_update<class_TileMap_method__tile_data_runtime_update>` will lead to different results. This will thus trigger a TileMap update.
+Notifies the TileMap node that calls to :ref:`_use_tile_data_runtime_update<class_TileMap_private_method__use_tile_data_runtime_update>` or :ref:`_tile_data_runtime_update<class_TileMap_private_method__tile_data_runtime_update>` will lead to different results. This will thus trigger a TileMap update.
 
 If ``layer`` is provided, only notifies changes for the given layer. Providing the ``layer`` argument (when applicable) is usually preferred for performance reasons.
 

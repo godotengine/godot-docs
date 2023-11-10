@@ -239,7 +239,7 @@ Deadzone for touch scrolling. Lower deadzone makes the scrolling more sensitive.
 
 The current horizontal scroll value.
 
-\ **Note:** If you are setting this value in the :ref:`Node._ready<class_Node_method__ready>` function or earlier, it needs to be wrapped with :ref:`Object.set_deferred<class_Object_method_set_deferred>`, since scroll bar's :ref:`Range.max_value<class_Range_property_max_value>` is not initialized yet.
+\ **Note:** If you are setting this value in the :ref:`Node._ready<class_Node_private_method__ready>` function or earlier, it needs to be wrapped with :ref:`Object.set_deferred<class_Object_method_set_deferred>`, since scroll bar's :ref:`Range.max_value<class_Range_property_max_value>` is not initialized yet.
 
 ::
 

@@ -21,13 +21,13 @@ Description
 
 **EditorInspectorPlugin** allows adding custom property editors to :ref:`EditorInspector<class_EditorInspector>`.
 
-When an object is edited, the :ref:`_can_handle<class_EditorInspectorPlugin_method__can_handle>` function is called and must return ``true`` if the object type is supported.
+When an object is edited, the :ref:`_can_handle<class_EditorInspectorPlugin_private_method__can_handle>` function is called and must return ``true`` if the object type is supported.
 
-If supported, the function :ref:`_parse_begin<class_EditorInspectorPlugin_method__parse_begin>` will be called, allowing to place custom controls at the beginning of the class.
+If supported, the function :ref:`_parse_begin<class_EditorInspectorPlugin_private_method__parse_begin>` will be called, allowing to place custom controls at the beginning of the class.
 
-Subsequently, the :ref:`_parse_category<class_EditorInspectorPlugin_method__parse_category>` and :ref:`_parse_property<class_EditorInspectorPlugin_method__parse_property>` are called for every category and property. They offer the ability to add custom controls to the inspector too.
+Subsequently, the :ref:`_parse_category<class_EditorInspectorPlugin_private_method__parse_category>` and :ref:`_parse_property<class_EditorInspectorPlugin_private_method__parse_property>` are called for every category and property. They offer the ability to add custom controls to the inspector too.
 
-Finally, :ref:`_parse_end<class_EditorInspectorPlugin_method__parse_end>` will be called.
+Finally, :ref:`_parse_end<class_EditorInspectorPlugin_private_method__parse_end>` will be called.
 
 On each of these calls, the "add" functions can be called.
 
@@ -48,25 +48,25 @@ Methods
 .. table::
    :widths: auto
 
-   +-------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>` | :ref:`_can_handle<class_EditorInspectorPlugin_method__can_handle>` **(** :ref:`Object<class_Object>` object **)** |virtual| |const|                                                                                                                                                                                                                                                                                                                              |
-   +-------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                    | :ref:`_parse_begin<class_EditorInspectorPlugin_method__parse_begin>` **(** :ref:`Object<class_Object>` object **)** |virtual|                                                                                                                                                                                                                                                                                                                                    |
-   +-------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                    | :ref:`_parse_category<class_EditorInspectorPlugin_method__parse_category>` **(** :ref:`Object<class_Object>` object, :ref:`String<class_String>` category **)** |virtual|                                                                                                                                                                                                                                                                                        |
-   +-------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                    | :ref:`_parse_end<class_EditorInspectorPlugin_method__parse_end>` **(** :ref:`Object<class_Object>` object **)** |virtual|                                                                                                                                                                                                                                                                                                                                        |
-   +-------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                    | :ref:`_parse_group<class_EditorInspectorPlugin_method__parse_group>` **(** :ref:`Object<class_Object>` object, :ref:`String<class_String>` group **)** |virtual|                                                                                                                                                                                                                                                                                                 |
-   +-------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>` | :ref:`_parse_property<class_EditorInspectorPlugin_method__parse_property>` **(** :ref:`Object<class_Object>` object, :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` type, :ref:`String<class_String>` name, :ref:`PropertyHint<enum_@GlobalScope_PropertyHint>` hint_type, :ref:`String<class_String>` hint_string, |bitfield|\<:ref:`PropertyUsageFlags<enum_@GlobalScope_PropertyUsageFlags>`\> usage_flags, :ref:`bool<class_bool>` wide **)** |virtual| |
-   +-------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                    | :ref:`add_custom_control<class_EditorInspectorPlugin_method_add_custom_control>` **(** :ref:`Control<class_Control>` control **)**                                                                                                                                                                                                                                                                                                                               |
-   +-------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                    | :ref:`add_property_editor<class_EditorInspectorPlugin_method_add_property_editor>` **(** :ref:`String<class_String>` property, :ref:`Control<class_Control>` editor, :ref:`bool<class_bool>` add_to_end=false **)**                                                                                                                                                                                                                                              |
-   +-------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                    | :ref:`add_property_editor_for_multiple_properties<class_EditorInspectorPlugin_method_add_property_editor_for_multiple_properties>` **(** :ref:`String<class_String>` label, :ref:`PackedStringArray<class_PackedStringArray>` properties, :ref:`Control<class_Control>` editor **)**                                                                                                                                                                             |
-   +-------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +-------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | :ref:`_can_handle<class_EditorInspectorPlugin_private_method__can_handle>` **(** :ref:`Object<class_Object>` object **)** |virtual| |const|                                                                                                                                                                                                                                                                                                                              |
+   +-------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                    | :ref:`_parse_begin<class_EditorInspectorPlugin_private_method__parse_begin>` **(** :ref:`Object<class_Object>` object **)** |virtual|                                                                                                                                                                                                                                                                                                                                    |
+   +-------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                    | :ref:`_parse_category<class_EditorInspectorPlugin_private_method__parse_category>` **(** :ref:`Object<class_Object>` object, :ref:`String<class_String>` category **)** |virtual|                                                                                                                                                                                                                                                                                        |
+   +-------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                    | :ref:`_parse_end<class_EditorInspectorPlugin_private_method__parse_end>` **(** :ref:`Object<class_Object>` object **)** |virtual|                                                                                                                                                                                                                                                                                                                                        |
+   +-------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                    | :ref:`_parse_group<class_EditorInspectorPlugin_private_method__parse_group>` **(** :ref:`Object<class_Object>` object, :ref:`String<class_String>` group **)** |virtual|                                                                                                                                                                                                                                                                                                 |
+   +-------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | :ref:`_parse_property<class_EditorInspectorPlugin_private_method__parse_property>` **(** :ref:`Object<class_Object>` object, :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` type, :ref:`String<class_String>` name, :ref:`PropertyHint<enum_@GlobalScope_PropertyHint>` hint_type, :ref:`String<class_String>` hint_string, |bitfield|\<:ref:`PropertyUsageFlags<enum_@GlobalScope_PropertyUsageFlags>`\> usage_flags, :ref:`bool<class_bool>` wide **)** |virtual| |
+   +-------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                    | :ref:`add_custom_control<class_EditorInspectorPlugin_method_add_custom_control>` **(** :ref:`Control<class_Control>` control **)**                                                                                                                                                                                                                                                                                                                                       |
+   +-------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                    | :ref:`add_property_editor<class_EditorInspectorPlugin_method_add_property_editor>` **(** :ref:`String<class_String>` property, :ref:`Control<class_Control>` editor, :ref:`bool<class_bool>` add_to_end=false **)**                                                                                                                                                                                                                                                      |
+   +-------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                    | :ref:`add_property_editor_for_multiple_properties<class_EditorInspectorPlugin_method_add_property_editor_for_multiple_properties>` **(** :ref:`String<class_String>` label, :ref:`PackedStringArray<class_PackedStringArray>` properties, :ref:`Control<class_Control>` editor **)**                                                                                                                                                                                     |
+   +-------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -77,7 +77,7 @@ Methods
 Method Descriptions
 -------------------
 
-.. _class_EditorInspectorPlugin_method__can_handle:
+.. _class_EditorInspectorPlugin_private_method__can_handle:
 
 .. rst-class:: classref-method
 
@@ -89,7 +89,7 @@ Returns ``true`` if this object can be handled by this plugin.
 
 ----
 
-.. _class_EditorInspectorPlugin_method__parse_begin:
+.. _class_EditorInspectorPlugin_private_method__parse_begin:
 
 .. rst-class:: classref-method
 
@@ -101,7 +101,7 @@ Called to allow adding controls at the beginning of the property list for ``obje
 
 ----
 
-.. _class_EditorInspectorPlugin_method__parse_category:
+.. _class_EditorInspectorPlugin_private_method__parse_category:
 
 .. rst-class:: classref-method
 
@@ -113,7 +113,7 @@ Called to allow adding controls at the beginning of a category in the property l
 
 ----
 
-.. _class_EditorInspectorPlugin_method__parse_end:
+.. _class_EditorInspectorPlugin_private_method__parse_end:
 
 .. rst-class:: classref-method
 
@@ -125,7 +125,7 @@ Called to allow adding controls at the end of the property list for ``object``.
 
 ----
 
-.. _class_EditorInspectorPlugin_method__parse_group:
+.. _class_EditorInspectorPlugin_private_method__parse_group:
 
 .. rst-class:: classref-method
 
@@ -137,7 +137,7 @@ Called to allow adding controls at the beginning of a group or a sub-group in th
 
 ----
 
-.. _class_EditorInspectorPlugin_method__parse_property:
+.. _class_EditorInspectorPlugin_private_method__parse_property:
 
 .. rst-class:: classref-method
 

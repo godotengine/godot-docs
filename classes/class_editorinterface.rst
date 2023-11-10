@@ -327,7 +327,7 @@ Returns the edited (current) scene's root :ref:`Node<class_Node>`.
 
 :ref:`VBoxContainer<class_VBoxContainer>` **get_editor_main_screen** **(** **)** |const|
 
-Returns the editor control responsible for main screen plugins and tools. Use it with plugins that implement :ref:`EditorPlugin._has_main_screen<class_EditorPlugin_method__has_main_screen>`.
+Returns the editor control responsible for main screen plugins and tools. Use it with plugins that implement :ref:`EditorPlugin._has_main_screen<class_EditorPlugin_private_method__has_main_screen>`.
 
 \ **Warning:** Removing and freeing this node will render a part of the editor useless and may cause a crash.
 

@@ -21,7 +21,7 @@ Abstract base class for input events.
 Description
 -----------
 
-Abstract base class of all types of input events. See :ref:`Node._input<class_Node_method__input>`.
+Abstract base class of all types of input events. See :ref:`Node._input<class_Node_private_method__input>`.
 
 .. rst-class:: classref-introduction-group
 

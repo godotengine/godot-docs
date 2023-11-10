@@ -179,6 +179,8 @@ The ``flags`` bitmask can be specified to customize the save behavior using :ref
 
 Returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` on success.
 
+\ **Note:** When the project is running, any generated UID associated with the resource will not be saved as the required code is only executed in editor mode.
+
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

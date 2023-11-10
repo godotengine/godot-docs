@@ -19,7 +19,7 @@ Represents a mouse or a pen movement.
 Description
 -----------
 
-Stores information about a mouse or a pen motion. This includes relative position, absolute position, and velocity. See :ref:`Node._input<class_Node_method__input>`.
+Stores information about a mouse or a pen motion. This includes relative position, absolute position, and velocity. See :ref:`Node._input<class_Node_private_method__input>`.
 
 \ **Note:** By default, this event is only emitted once per frame rendered at most. If you need more precise input reporting, set :ref:`Input.use_accumulated_input<class_Input_property_use_accumulated_input>` to ``false`` to make events emitted as often as possible. If you use InputEventMouseMotion to draw lines, consider implementing `Bresenham's line algorithm <https://en.wikipedia.org/wiki/Bresenham%27s_line_algorithm>`__ as well to avoid visible gaps in lines if the user is moving the mouse quickly.
 

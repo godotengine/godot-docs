@@ -24,15 +24,15 @@ Methods
 .. table::
    :widths: auto
 
-   +---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                 | :ref:`_get_available_packet_count<class_PacketPeerExtension_method__get_available_packet_count>` **(** **)** |virtual| |const|                      |
-   +---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                 | :ref:`_get_max_packet_size<class_PacketPeerExtension_method__get_max_packet_size>` **(** **)** |virtual| |const|                                    |
-   +---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Error<enum_@GlobalScope_Error>` | :ref:`_get_packet<class_PacketPeerExtension_method__get_packet>` **(** const uint8_t ** r_buffer, int32_t* r_buffer_size **)** |virtual|            |
-   +---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Error<enum_@GlobalScope_Error>` | :ref:`_put_packet<class_PacketPeerExtension_method__put_packet>` **(** const uint8_t* p_buffer, :ref:`int<class_int>` p_buffer_size **)** |virtual| |
-   +---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
+   +---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                 | :ref:`_get_available_packet_count<class_PacketPeerExtension_private_method__get_available_packet_count>` **(** **)** |virtual| |const|                      |
+   +---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                 | :ref:`_get_max_packet_size<class_PacketPeerExtension_private_method__get_max_packet_size>` **(** **)** |virtual| |const|                                    |
+   +---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>` | :ref:`_get_packet<class_PacketPeerExtension_private_method__get_packet>` **(** const uint8_t ** r_buffer, int32_t* r_buffer_size **)** |virtual|            |
+   +---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>` | :ref:`_put_packet<class_PacketPeerExtension_private_method__put_packet>` **(** const uint8_t* p_buffer, :ref:`int<class_int>` p_buffer_size **)** |virtual| |
+   +---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -43,7 +43,7 @@ Methods
 Method Descriptions
 -------------------
 
-.. _class_PacketPeerExtension_method__get_available_packet_count:
+.. _class_PacketPeerExtension_private_method__get_available_packet_count:
 
 .. rst-class:: classref-method
 
@@ -57,7 +57,7 @@ Method Descriptions
 
 ----
 
-.. _class_PacketPeerExtension_method__get_max_packet_size:
+.. _class_PacketPeerExtension_private_method__get_max_packet_size:
 
 .. rst-class:: classref-method
 
@@ -71,7 +71,7 @@ Method Descriptions
 
 ----
 
-.. _class_PacketPeerExtension_method__get_packet:
+.. _class_PacketPeerExtension_private_method__get_packet:
 
 .. rst-class:: classref-method
 
@@ -85,7 +85,7 @@ Method Descriptions
 
 ----
 
-.. _class_PacketPeerExtension_method__put_packet:
+.. _class_PacketPeerExtension_private_method__put_packet:
 
 .. rst-class:: classref-method
 

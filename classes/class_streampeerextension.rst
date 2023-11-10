@@ -24,17 +24,17 @@ Methods
 .. table::
    :widths: auto
 
-   +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                 | :ref:`_get_available_bytes<class_StreamPeerExtension_method__get_available_bytes>` **(** **)** |virtual| |const|                                                         |
-   +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Error<enum_@GlobalScope_Error>` | :ref:`_get_data<class_StreamPeerExtension_method__get_data>` **(** uint8_t* r_buffer, :ref:`int<class_int>` r_bytes, int32_t* r_received **)** |virtual|                 |
-   +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Error<enum_@GlobalScope_Error>` | :ref:`_get_partial_data<class_StreamPeerExtension_method__get_partial_data>` **(** uint8_t* r_buffer, :ref:`int<class_int>` r_bytes, int32_t* r_received **)** |virtual| |
-   +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Error<enum_@GlobalScope_Error>` | :ref:`_put_data<class_StreamPeerExtension_method__put_data>` **(** const uint8_t* p_data, :ref:`int<class_int>` p_bytes, int32_t* r_sent **)** |virtual|                 |
-   +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Error<enum_@GlobalScope_Error>` | :ref:`_put_partial_data<class_StreamPeerExtension_method__put_partial_data>` **(** const uint8_t* p_data, :ref:`int<class_int>` p_bytes, int32_t* r_sent **)** |virtual| |
-   +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                 | :ref:`_get_available_bytes<class_StreamPeerExtension_private_method__get_available_bytes>` **(** **)** |virtual| |const|                                                         |
+   +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>` | :ref:`_get_data<class_StreamPeerExtension_private_method__get_data>` **(** uint8_t* r_buffer, :ref:`int<class_int>` r_bytes, int32_t* r_received **)** |virtual|                 |
+   +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>` | :ref:`_get_partial_data<class_StreamPeerExtension_private_method__get_partial_data>` **(** uint8_t* r_buffer, :ref:`int<class_int>` r_bytes, int32_t* r_received **)** |virtual| |
+   +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>` | :ref:`_put_data<class_StreamPeerExtension_private_method__put_data>` **(** const uint8_t* p_data, :ref:`int<class_int>` p_bytes, int32_t* r_sent **)** |virtual|                 |
+   +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>` | :ref:`_put_partial_data<class_StreamPeerExtension_private_method__put_partial_data>` **(** const uint8_t* p_data, :ref:`int<class_int>` p_bytes, int32_t* r_sent **)** |virtual| |
+   +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -45,7 +45,7 @@ Methods
 Method Descriptions
 -------------------
 
-.. _class_StreamPeerExtension_method__get_available_bytes:
+.. _class_StreamPeerExtension_private_method__get_available_bytes:
 
 .. rst-class:: classref-method
 
@@ -59,7 +59,7 @@ Method Descriptions
 
 ----
 
-.. _class_StreamPeerExtension_method__get_data:
+.. _class_StreamPeerExtension_private_method__get_data:
 
 .. rst-class:: classref-method
 
@@ -73,7 +73,7 @@ Method Descriptions
 
 ----
 
-.. _class_StreamPeerExtension_method__get_partial_data:
+.. _class_StreamPeerExtension_private_method__get_partial_data:
 
 .. rst-class:: classref-method
 
@@ -87,7 +87,7 @@ Method Descriptions
 
 ----
 
-.. _class_StreamPeerExtension_method__put_data:
+.. _class_StreamPeerExtension_private_method__put_data:
 
 .. rst-class:: classref-method
 
@@ -101,7 +101,7 @@ Method Descriptions
 
 ----
 
-.. _class_StreamPeerExtension_method__put_partial_data:
+.. _class_StreamPeerExtension_private_method__put_partial_data:
 
 .. rst-class:: classref-method
 

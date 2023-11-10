@@ -39,35 +39,35 @@ Methods
 .. table::
    :widths: auto
 
-   +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Format<enum_Image_Format>`                    | :ref:`_get_format<class_TextureLayered_method__get_format>` **(** **)** |virtual| |const|                                           |
-   +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                               | :ref:`_get_height<class_TextureLayered_method__get_height>` **(** **)** |virtual| |const|                                           |
-   +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Image<class_Image>`                           | :ref:`_get_layer_data<class_TextureLayered_method__get_layer_data>` **(** :ref:`int<class_int>` layer_index **)** |virtual| |const| |
-   +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                               | :ref:`_get_layered_type<class_TextureLayered_method__get_layered_type>` **(** **)** |virtual| |const|                               |
-   +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                               | :ref:`_get_layers<class_TextureLayered_method__get_layers>` **(** **)** |virtual| |const|                                           |
-   +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                               | :ref:`_get_width<class_TextureLayered_method__get_width>` **(** **)** |virtual| |const|                                             |
-   +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                             | :ref:`_has_mipmaps<class_TextureLayered_method__has_mipmaps>` **(** **)** |virtual| |const|                                         |
-   +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Format<enum_Image_Format>`                    | :ref:`get_format<class_TextureLayered_method_get_format>` **(** **)** |const|                                                       |
-   +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                               | :ref:`get_height<class_TextureLayered_method_get_height>` **(** **)** |const|                                                       |
-   +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Image<class_Image>`                           | :ref:`get_layer_data<class_TextureLayered_method_get_layer_data>` **(** :ref:`int<class_int>` layer **)** |const|                   |
-   +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`LayeredType<enum_TextureLayered_LayeredType>` | :ref:`get_layered_type<class_TextureLayered_method_get_layered_type>` **(** **)** |const|                                           |
-   +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                               | :ref:`get_layers<class_TextureLayered_method_get_layers>` **(** **)** |const|                                                       |
-   +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                               | :ref:`get_width<class_TextureLayered_method_get_width>` **(** **)** |const|                                                         |
-   +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                             | :ref:`has_mipmaps<class_TextureLayered_method_has_mipmaps>` **(** **)** |const|                                                     |
-   +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
+   +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Format<enum_Image_Format>`                    | :ref:`_get_format<class_TextureLayered_private_method__get_format>` **(** **)** |virtual| |const|                                           |
+   +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                               | :ref:`_get_height<class_TextureLayered_private_method__get_height>` **(** **)** |virtual| |const|                                           |
+   +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Image<class_Image>`                           | :ref:`_get_layer_data<class_TextureLayered_private_method__get_layer_data>` **(** :ref:`int<class_int>` layer_index **)** |virtual| |const| |
+   +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                               | :ref:`_get_layered_type<class_TextureLayered_private_method__get_layered_type>` **(** **)** |virtual| |const|                               |
+   +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                               | :ref:`_get_layers<class_TextureLayered_private_method__get_layers>` **(** **)** |virtual| |const|                                           |
+   +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                               | :ref:`_get_width<class_TextureLayered_private_method__get_width>` **(** **)** |virtual| |const|                                             |
+   +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                             | :ref:`_has_mipmaps<class_TextureLayered_private_method__has_mipmaps>` **(** **)** |virtual| |const|                                         |
+   +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Format<enum_Image_Format>`                    | :ref:`get_format<class_TextureLayered_method_get_format>` **(** **)** |const|                                                               |
+   +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                               | :ref:`get_height<class_TextureLayered_method_get_height>` **(** **)** |const|                                                               |
+   +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Image<class_Image>`                           | :ref:`get_layer_data<class_TextureLayered_method_get_layer_data>` **(** :ref:`int<class_int>` layer **)** |const|                           |
+   +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`LayeredType<enum_TextureLayered_LayeredType>` | :ref:`get_layered_type<class_TextureLayered_method_get_layered_type>` **(** **)** |const|                                                   |
+   +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                               | :ref:`get_layers<class_TextureLayered_method_get_layers>` **(** **)** |const|                                                               |
+   +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                               | :ref:`get_width<class_TextureLayered_method_get_width>` **(** **)** |const|                                                                 |
+   +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                             | :ref:`has_mipmaps<class_TextureLayered_method_has_mipmaps>` **(** **)** |const|                                                             |
+   +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -117,7 +117,7 @@ Texture is a :ref:`CubemapArray<class_CubemapArray>`, with each cubemap being ma
 Method Descriptions
 -------------------
 
-.. _class_TextureLayered_method__get_format:
+.. _class_TextureLayered_private_method__get_format:
 
 .. rst-class:: classref-method
 
@@ -129,7 +129,7 @@ Called when the **TextureLayered**'s format is queried.
 
 ----
 
-.. _class_TextureLayered_method__get_height:
+.. _class_TextureLayered_private_method__get_height:
 
 .. rst-class:: classref-method
 
@@ -141,7 +141,7 @@ Called when the **TextureLayered**'s height is queried.
 
 ----
 
-.. _class_TextureLayered_method__get_layer_data:
+.. _class_TextureLayered_private_method__get_layer_data:
 
 .. rst-class:: classref-method
 
@@ -153,7 +153,7 @@ Called when the data for a layer in the **TextureLayered** is queried.
 
 ----
 
-.. _class_TextureLayered_method__get_layered_type:
+.. _class_TextureLayered_private_method__get_layered_type:
 
 .. rst-class:: classref-method
 
@@ -165,7 +165,7 @@ Called when the layers' type in the **TextureLayered** is queried.
 
 ----
 
-.. _class_TextureLayered_method__get_layers:
+.. _class_TextureLayered_private_method__get_layers:
 
 .. rst-class:: classref-method
 
@@ -177,7 +177,7 @@ Called when the number of layers in the **TextureLayered** is queried.
 
 ----
 
-.. _class_TextureLayered_method__get_width:
+.. _class_TextureLayered_private_method__get_width:
 
 .. rst-class:: classref-method
 
@@ -189,7 +189,7 @@ Called when the **TextureLayered**'s width queried.
 
 ----
 
-.. _class_TextureLayered_method__has_mipmaps:
+.. _class_TextureLayered_private_method__has_mipmaps:
 
 .. rst-class:: classref-method
 

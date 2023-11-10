@@ -29,7 +29,7 @@ A rigid body will always maintain its shape and size, even when forces are appli
 
 If you need to override the default physics behavior, you can write a custom force integration function. See :ref:`custom_integrator<class_RigidBody2D_property_custom_integrator>`.
 
-\ **Note:** Changing the 2D transform or :ref:`linear_velocity<class_RigidBody2D_property_linear_velocity>` of a **RigidBody2D** very often may lead to some unpredictable behaviors. If you need to directly affect the body, prefer :ref:`_integrate_forces<class_RigidBody2D_method__integrate_forces>` as it allows you to directly access the physics state.
+\ **Note:** Changing the 2D transform or :ref:`linear_velocity<class_RigidBody2D_property_linear_velocity>` of a **RigidBody2D** very often may lead to some unpredictable behaviors. If you need to directly affect the body, prefer :ref:`_integrate_forces<class_RigidBody2D_private_method__integrate_forces>` as it allows you to directly access the physics state.
 
 .. rst-class:: classref-introduction-group
 
@@ -105,7 +105,7 @@ Methods
    :widths: auto
 
    +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                          | :ref:`_integrate_forces<class_RigidBody2D_method__integrate_forces>` **(** :ref:`PhysicsDirectBodyState2D<class_PhysicsDirectBodyState2D>` state **)** |virtual|             |
+   | void                          | :ref:`_integrate_forces<class_RigidBody2D_private_method__integrate_forces>` **(** :ref:`PhysicsDirectBodyState2D<class_PhysicsDirectBodyState2D>` state **)** |virtual|     |
    +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                          | :ref:`add_constant_central_force<class_RigidBody2D_method_add_constant_central_force>` **(** :ref:`Vector2<class_Vector2>` force **)**                                       |
    +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -538,7 +538,7 @@ Continuous collision detection tries to predict where a moving body will collide
 - void **set_use_custom_integrator** **(** :ref:`bool<class_bool>` value **)**
 - :ref:`bool<class_bool>` **is_using_custom_integrator** **(** **)**
 
-If ``true``, internal force integration is disabled for this body. Aside from collision response, the body will only move as determined by the :ref:`_integrate_forces<class_RigidBody2D_method__integrate_forces>` function.
+If ``true``, internal force integration is disabled for this body. Aside from collision response, the body will only move as determined by the :ref:`_integrate_forces<class_RigidBody2D_private_method__integrate_forces>` function.
 
 .. rst-class:: classref-item-separator
 
@@ -695,7 +695,7 @@ Defines how :ref:`linear_damp<class_RigidBody2D_property_linear_damp>` is applie
 - void **set_linear_velocity** **(** :ref:`Vector2<class_Vector2>` value **)**
 - :ref:`Vector2<class_Vector2>` **get_linear_velocity** **(** **)**
 
-The body's linear velocity in pixels per second. Can be used sporadically, but **don't set this every frame**, because physics may run in another thread and runs at a different granularity. Use :ref:`_integrate_forces<class_RigidBody2D_method__integrate_forces>` as your process loop for precise control of the body state.
+The body's linear velocity in pixels per second. Can be used sporadically, but **don't set this every frame**, because physics may run in another thread and runs at a different granularity. Use :ref:`_integrate_forces<class_RigidBody2D_private_method__integrate_forces>` as your process loop for precise control of the body state.
 
 .. rst-class:: classref-item-separator
 
@@ -795,13 +795,13 @@ If ``true``, the body will not move and will not calculate forces until woken up
 Method Descriptions
 -------------------
 
-.. _class_RigidBody2D_method__integrate_forces:
+.. _class_RigidBody2D_private_method__integrate_forces:
 
 .. rst-class:: classref-method
 
 void **_integrate_forces** **(** :ref:`PhysicsDirectBodyState2D<class_PhysicsDirectBodyState2D>` state **)** |virtual|
 
-Allows you to read and safely modify the simulation state for the object. Use this instead of :ref:`Node._physics_process<class_Node_method__physics_process>` if you need to directly change the body's ``position`` or other physics properties. By default, it works in addition to the usual physics behavior, but :ref:`custom_integrator<class_RigidBody2D_property_custom_integrator>` allows you to disable the default behavior and write custom force integration for a body.
+Allows you to read and safely modify the simulation state for the object. Use this instead of :ref:`Node._physics_process<class_Node_private_method__physics_process>` if you need to directly change the body's ``position`` or other physics properties. By default, it works in addition to the usual physics behavior, but :ref:`custom_integrator<class_RigidBody2D_property_custom_integrator>` allows you to disable the default behavior and write custom force integration for a body.
 
 .. rst-class:: classref-item-separator
 

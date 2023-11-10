@@ -104,7 +104,7 @@ Methods
    :widths: auto
 
    +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Vector2<class_Vector2>`                       | :ref:`_get_contents_minimum_size<class_Window_method__get_contents_minimum_size>` **(** **)** |virtual| |const|                                                                                                                                    |
+   | :ref:`Vector2<class_Vector2>`                       | :ref:`_get_contents_minimum_size<class_Window_private_method__get_contents_minimum_size>` **(** **)** |virtual| |const|                                                                                                                            |
    +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                | :ref:`add_theme_color_override<class_Window_method_add_theme_color_override>` **(** :ref:`StringName<class_StringName>` name, :ref:`Color<class_Color>` color **)**                                                                                |
    +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1461,7 +1461,7 @@ If ``false``, you need to call :ref:`child_controls_changed<class_Window_method_
 Method Descriptions
 -------------------
 
-.. _class_Window_method__get_contents_minimum_size:
+.. _class_Window_private_method__get_contents_minimum_size:
 
 .. rst-class:: classref-method
 
@@ -1613,7 +1613,7 @@ Ends a bulk theme override update. See :ref:`begin_bulk_theme_override<class_Win
 
 Returns the combined minimum size from the child :ref:`Control<class_Control>` nodes of the window. Use :ref:`child_controls_changed<class_Window_method_child_controls_changed>` to update it when children nodes have changed.
 
-The value returned by this method can be overridden with :ref:`_get_contents_minimum_size<class_Window_method__get_contents_minimum_size>`.
+The value returned by this method can be overridden with :ref:`_get_contents_minimum_size<class_Window_private_method__get_contents_minimum_size>`.
 
 .. rst-class:: classref-item-separator
 

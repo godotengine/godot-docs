@@ -29,7 +29,7 @@ A rigid body will always maintain its shape and size, even when forces are appli
 
 If you need to override the default physics behavior, you can write a custom force integration function. See :ref:`custom_integrator<class_RigidBody3D_property_custom_integrator>`.
 
-\ **Note:** Changing the 3D transform or :ref:`linear_velocity<class_RigidBody3D_property_linear_velocity>` of a **RigidBody3D** very often may lead to some unpredictable behaviors. If you need to directly affect the body, prefer :ref:`_integrate_forces<class_RigidBody3D_method__integrate_forces>` as it allows you to directly access the physics state.
+\ **Note:** Changing the 3D transform or :ref:`linear_velocity<class_RigidBody3D_property_linear_velocity>` of a **RigidBody3D** very often may lead to some unpredictable behaviors. If you need to directly affect the body, prefer :ref:`_integrate_forces<class_RigidBody3D_private_method__integrate_forces>` as it allows you to directly access the physics state.
 
 .. rst-class:: classref-introduction-group
 
@@ -107,7 +107,7 @@ Methods
    :widths: auto
 
    +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                          | :ref:`_integrate_forces<class_RigidBody3D_method__integrate_forces>` **(** :ref:`PhysicsDirectBodyState3D<class_PhysicsDirectBodyState3D>` state **)** |virtual|                |
+   | void                          | :ref:`_integrate_forces<class_RigidBody3D_private_method__integrate_forces>` **(** :ref:`PhysicsDirectBodyState3D<class_PhysicsDirectBodyState3D>` state **)** |virtual|        |
    +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                          | :ref:`add_constant_central_force<class_RigidBody3D_method_add_constant_central_force>` **(** :ref:`Vector3<class_Vector3>` force **)**                                          |
    +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -508,7 +508,7 @@ Continuous collision detection tries to predict where a moving body will collide
 - void **set_use_custom_integrator** **(** :ref:`bool<class_bool>` value **)**
 - :ref:`bool<class_bool>` **is_using_custom_integrator** **(** **)**
 
-If ``true``, internal force integration will be disabled (like gravity or air friction) for this body. Other than collision response, the body will only move as determined by the :ref:`_integrate_forces<class_RigidBody3D_method__integrate_forces>` function, if defined.
+If ``true``, internal force integration will be disabled (like gravity or air friction) for this body. Other than collision response, the body will only move as determined by the :ref:`_integrate_forces<class_RigidBody3D_private_method__integrate_forces>` function, if defined.
 
 .. rst-class:: classref-item-separator
 
@@ -665,7 +665,7 @@ Defines how :ref:`linear_damp<class_RigidBody3D_property_linear_damp>` is applie
 - void **set_linear_velocity** **(** :ref:`Vector3<class_Vector3>` value **)**
 - :ref:`Vector3<class_Vector3>` **get_linear_velocity** **(** **)**
 
-The body's linear velocity in units per second. Can be used sporadically, but **don't set this every frame**, because physics may run in another thread and runs at a different granularity. Use :ref:`_integrate_forces<class_RigidBody3D_method__integrate_forces>` as your process loop for precise control of the body state.
+The body's linear velocity in units per second. Can be used sporadically, but **don't set this every frame**, because physics may run in another thread and runs at a different granularity. Use :ref:`_integrate_forces<class_RigidBody3D_private_method__integrate_forces>` as your process loop for precise control of the body state.
 
 .. rst-class:: classref-item-separator
 
@@ -765,7 +765,7 @@ If ``true``, the body will not move and will not calculate forces until woken up
 Method Descriptions
 -------------------
 
-.. _class_RigidBody3D_method__integrate_forces:
+.. _class_RigidBody3D_private_method__integrate_forces:
 
 .. rst-class:: classref-method
 

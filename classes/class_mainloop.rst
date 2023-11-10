@@ -88,15 +88,15 @@ Methods
 .. table::
    :widths: auto
 
-   +-------------------------+-----------------------------------------------------------------------------------------------------------------------+
-   | void                    | :ref:`_finalize<class_MainLoop_method__finalize>` **(** **)** |virtual|                                               |
-   +-------------------------+-----------------------------------------------------------------------------------------------------------------------+
-   | void                    | :ref:`_initialize<class_MainLoop_method__initialize>` **(** **)** |virtual|                                           |
-   +-------------------------+-----------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>` | :ref:`_physics_process<class_MainLoop_method__physics_process>` **(** :ref:`float<class_float>` delta **)** |virtual| |
-   +-------------------------+-----------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>` | :ref:`_process<class_MainLoop_method__process>` **(** :ref:`float<class_float>` delta **)** |virtual|                 |
-   +-------------------------+-----------------------------------------------------------------------------------------------------------------------+
+   +-------------------------+-------------------------------------------------------------------------------------------------------------------------------+
+   | void                    | :ref:`_finalize<class_MainLoop_private_method__finalize>` **(** **)** |virtual|                                               |
+   +-------------------------+-------------------------------------------------------------------------------------------------------------------------------+
+   | void                    | :ref:`_initialize<class_MainLoop_private_method__initialize>` **(** **)** |virtual|                                           |
+   +-------------------------+-------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | :ref:`_physics_process<class_MainLoop_private_method__physics_process>` **(** :ref:`float<class_float>` delta **)** |virtual| |
+   +-------------------------+-------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | :ref:`_process<class_MainLoop_private_method__process>` **(** :ref:`float<class_float>` delta **)** |virtual|                 |
+   +-------------------------+-------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -229,7 +229,7 @@ Notification received when text server is changed.
 Method Descriptions
 -------------------
 
-.. _class_MainLoop_method__finalize:
+.. _class_MainLoop_private_method__finalize:
 
 .. rst-class:: classref-method
 
@@ -241,7 +241,7 @@ Called before the program exits.
 
 ----
 
-.. _class_MainLoop_method__initialize:
+.. _class_MainLoop_private_method__initialize:
 
 .. rst-class:: classref-method
 
@@ -253,13 +253,13 @@ Called once during initialization.
 
 ----
 
-.. _class_MainLoop_method__physics_process:
+.. _class_MainLoop_private_method__physics_process:
 
 .. rst-class:: classref-method
 
 :ref:`bool<class_bool>` **_physics_process** **(** :ref:`float<class_float>` delta **)** |virtual|
 
-Called each physics frame with the time since the last physics frame as argument (``delta``, in seconds). Equivalent to :ref:`Node._physics_process<class_Node_method__physics_process>`.
+Called each physics frame with the time since the last physics frame as argument (``delta``, in seconds). Equivalent to :ref:`Node._physics_process<class_Node_private_method__physics_process>`.
 
 If implemented, the method must return a boolean value. ``true`` ends the main loop, while ``false`` lets it proceed to the next frame.
 
@@ -267,13 +267,13 @@ If implemented, the method must return a boolean value. ``true`` ends the main l
 
 ----
 
-.. _class_MainLoop_method__process:
+.. _class_MainLoop_private_method__process:
 
 .. rst-class:: classref-method
 
 :ref:`bool<class_bool>` **_process** **(** :ref:`float<class_float>` delta **)** |virtual|
 
-Called each process (idle) frame with the time since the last process frame as argument (in seconds). Equivalent to :ref:`Node._process<class_Node_method__process>`.
+Called each process (idle) frame with the time since the last process frame as argument (in seconds). Equivalent to :ref:`Node._process<class_Node_private_method__process>`.
 
 If implemented, the method must return a boolean value. ``true`` ends the main loop, while ``false`` lets it proceed to the next frame.
 
