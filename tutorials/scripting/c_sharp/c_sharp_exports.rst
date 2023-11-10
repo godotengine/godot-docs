@@ -358,13 +358,13 @@ Export annotations are also provided for the physics and render layers defined i
 .. code-block:: csharp
 
     [Export(PropertyHint.Layers2DPhysics)]
-    public int Layers2DPhysics { get; set; }
+    public uint Layers2DPhysics { get; set; }
     [Export(PropertyHint.Layers2DRender)]
-    public int Layers2DRender { get; set; }
+    public uint Layers2DRender { get; set; }
     [Export(PropertyHint.Layers3DPhysics)]
-    public int layers3DPhysics { get; set; }
+    public uint Layers3DPhysics { get; set; }
     [Export(PropertyHint.Layers3DRender)]
-    public int layers3DRender { get; set; }
+    public uint Layers3DRender { get; set; }
 
 Using bit flags requires some understanding of bitwise operations.
 If in doubt, use boolean variables instead.
