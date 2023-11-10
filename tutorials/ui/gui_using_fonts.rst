@@ -650,6 +650,11 @@ System fonts
 
     Loading system fonts is only supported on Windows, macOS, Linux, Android and iOS.
 
+    However, loading system fonts on Android is unreliable as there is no
+    official API for doing so. Godot has to rely on parsing system configuration
+    files, which can be modified by third-party Android vendors. This may result
+    in non-functional system font loading.
+
 System fonts are a different type of resource compared to imported fonts. They
 are never actually imported into the project, but are loaded at run-time. This
 has 2 benefits:
