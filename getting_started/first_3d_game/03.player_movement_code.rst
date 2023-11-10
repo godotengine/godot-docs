@@ -369,6 +369,11 @@ Child Scene*.
 In the popup, double-click ``player.tscn``. The character should appear in the
 center of the viewport.
 
+Select the newly instanciated Player node, in the Inspector tab under Node 
+section, load the previously created player script i.e. Player.gd.
+
+|image12|
+
 Adding a camera
 ~~~~~~~~~~~~~~~
 
@@ -456,3 +461,4 @@ work on the monsters.
 .. |image9| image:: img/03.player_movement_code/10.camera_perspective.png
 .. |image10| image:: img/03.player_movement_code/13.camera3d_values.webp
 .. |image11| image:: img/03.player_movement_code/12.viewport_change.webp
+.. |image12| image:: img/03.player_movement_code/14.attach_player_script.png
