@@ -586,7 +586,7 @@ Performs a cubic interpolation between this vector and ``b`` using ``pre_a`` and
 
 Performs a cubic interpolation between this vector and ``b`` using ``pre_a`` and ``post_b`` as handles, and returns the result at position ``weight``. ``weight`` is on the range of 0.0 to 1.0, representing the amount of interpolation.
 
-It can perform smoother interpolation than ``cubic_interpolate()`` by the time values.
+It can perform smoother interpolation than :ref:`cubic_interpolate<class_Vector3_method_cubic_interpolate>` by the time values.
 
 .. rst-class:: classref-item-separator
 
@@ -1023,7 +1023,11 @@ Returns ``true`` if the vectors are not equal.
 
 :ref:`Vector3<class_Vector3>` **operator *** **(** :ref:`Basis<class_Basis>` right **)**
 
-Inversely transforms (multiplies) the **Vector3** by the given :ref:`Basis<class_Basis>` matrix.
+Inversely transforms (multiplies) the **Vector3** by the given :ref:`Basis<class_Basis>` matrix, under the assumption that the basis is orthonormal (i.e. rotation/reflection is fine, scaling/skew is not).
+
+\ ``vector * basis`` is equivalent to ``basis.transposed() * vector``. See :ref:`Basis.transposed<class_Basis_method_transposed>`.
+
+For transforming by inverse of a non-orthonormal basis (e.g. with scaling) ``basis.inverse() * vector`` can be used instead. See :ref:`Basis.inverse<class_Basis_method_inverse>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1037,6 +1041,8 @@ Inversely transforms (multiplies) the **Vector3** by the given :ref:`Basis<class
 
 Inversely transforms (multiplies) the **Vector3** by the given :ref:`Quaternion<class_Quaternion>`.
 
+\ ``vector * quaternion`` is equivalent to ``quaternion.inverse() * vector``. See :ref:`Quaternion.inverse<class_Quaternion_method_inverse>`.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -1047,7 +1053,11 @@ Inversely transforms (multiplies) the **Vector3** by the given :ref:`Quaternion<
 
 :ref:`Vector3<class_Vector3>` **operator *** **(** :ref:`Transform3D<class_Transform3D>` right **)**
 
-Inversely transforms (multiplies) the **Vector3** by the given :ref:`Transform3D<class_Transform3D>` transformation matrix.
+Inversely transforms (multiplies) the **Vector3** by the given :ref:`Transform3D<class_Transform3D>` transformation matrix, under the assumption that the transformation basis is orthonormal (i.e. rotation/reflection is fine, scaling/skew is not).
+
+\ ``vector * transform`` is equivalent to ``transform.inverse() * vector``. See :ref:`Transform3D.inverse<class_Transform3D_method_inverse>`.
+
+For transforming by inverse of an affine transformation (e.g. with scaling) ``transform.affine_inverse() * vector`` can be used instead. See :ref:`Transform3D.affine_inverse<class_Transform3D_method_affine_inverse>`.
 
 .. rst-class:: classref-item-separator
 

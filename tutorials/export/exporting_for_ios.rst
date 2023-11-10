@@ -123,8 +123,8 @@ the export menu.
    * - Export option
      - Environment variable
    * - Encryption / Encryption Key
-     - GODOT_SCRIPT_ENCRYPTION_KEY
+     - ``GODOT_SCRIPT_ENCRYPTION_KEY``
    * - Options / Application / Provisioning Profile UUID Debug
-     - GODOT_IOS_PROVISIONING_PROFILE_UUID_DEBUG
+     - ``GODOT_IOS_PROVISIONING_PROFILE_UUID_DEBUG``
    * - Options / Application / Provisioning Profile UUID Release
-     - GODOT_IOS_PROVISIONING_PROFILE_UUID_RELEASE
+     - ``GODOT_IOS_PROVISIONING_PROFILE_UUID_RELEASE``

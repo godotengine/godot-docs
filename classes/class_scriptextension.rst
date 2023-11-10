@@ -69,6 +69,8 @@ Methods
    +---------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                     | :ref:`_has_source_code<class_ScriptExtension_method__has_source_code>` **(** **)** |virtual| |const|                                                                    |
    +---------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                     | :ref:`_has_static_method<class_ScriptExtension_method__has_static_method>` **(** :ref:`StringName<class_StringName>` method **)** |virtual| |const|                     |
+   +---------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                     | :ref:`_inherits_script<class_ScriptExtension_method__inherits_script>` **(** :ref:`Script<class_Script>` script **)** |virtual| |const|                                 |
    +---------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void*                                       | :ref:`_instance_create<class_ScriptExtension_method__instance_create>` **(** :ref:`Object<class_Object>` for_object **)** |virtual| |const|                             |
@@ -402,6 +404,20 @@ Method Descriptions
 .. rst-class:: classref-method
 
 :ref:`bool<class_bool>` **_has_source_code** **(** **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ScriptExtension_method__has_static_method:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **_has_static_method** **(** :ref:`StringName<class_StringName>` method **)** |virtual| |const|
 
 .. container:: contribute
 

@@ -270,7 +270,7 @@ Reference
     - ``[center]{text}[/center]``
 
   * - | **left**
-      | Makes ``{text}`` horizontally right-aligned.
+      | Makes ``{text}`` horizontally left-aligned.
       | Same as ``[p align=left]``.
 
     - ``[left]{text}[/left]``
@@ -289,6 +289,7 @@ Reference
 
   * - | **indent**
       | Indents ``{text}`` once.
+        The indentation width is the same as with ``[ul]`` or ``[ol]``, but without a bullet point.
 
     - ``[indent]{text}[/indent]``
 
@@ -351,6 +352,15 @@ Reference
     - | ``[opentype_features={list}]``
       | ``{text}``
       | ``[/opentype_features]``
+
+  * - | **lang**
+      | Overrides the language for ``{text}`` that is set by the **BiDi > Language** property
+        in :ref:`class_RichTextLabel`. ``{code}`` must be an ISO :ref:`language code <doc_locales>`.
+        This can be used to enforce the use of a specific script for a language without
+        starting a new paragraph. Some font files may contain script-specific substitutes,
+        in which case they will be used.
+
+    - ``[lang={code}]{text}[/color]``
 
   * - | **color**
       | Changes the color of ``{text}``. Color must be provided by a common name (see
@@ -492,8 +502,21 @@ Paragraph options
   | `Default` | Inherit                                    |
   +-----------+--------------------------------------------+
 
-  Locale override.
+  Locale override. Some font files may contain script-specific substitutes, in which case they will be used.
 
+- **tab_stops**
+
+  +-----------+----------------------------------------------------+
+  | `Values`  | List of floating-point numbers, e.g. ``10.0,30.0`` |
+  +-----------+----------------------------------------------------+
+  | `Default` | Width of the space character in the font           |
+  +-----------+----------------------------------------------------+
+
+  Overrides the horizontal offsets for each tab character. When the end of the
+  list is reached, the tab stops will loop over. For example, if you set
+  ``tab_stops`` to ``10.0,30.0``, the first tab will be at ``10`` pixels, the
+  second tab will be at ``10 + 30 = 40`` pixels, and the third tab will be at
+  ``10 + 30 + 10 = 50`` pixels from the origin of the RichTextLabel.
 
 .. _doc_bbcode_in_richtextlabel_handling_url_tag_clicks:
 
@@ -733,6 +756,21 @@ All examples below mention the default values for options in the listed tag form
     enough margin added around the text by using line breaks above and below the
     line using the effect.
 
+Pulse
+~~~~~
+
+.. image:: img/bbcode_in_richtextlabel_effect_pulse.webp
+
+Pulse creates an animated pulsing effect that multiplies each character's
+opacity and color. It can be used to bring attention to specific text. Its tag
+format is ``[pulse freq=1.0 color=#ffffff40 ease=-2.0]{text}[/pulse]``.
+
+``freq`` controls the frequency of the half-pulsing cycle (higher is faster). A
+full pulsing cycle takes ``2 * (1.0 / freq)`` seconds. ``color`` is the target
+color multiplier for blinking. The default mostly fades out text, but not
+entirely. ``ease`` is the easing function exponent to use. Negative values
+provide in-out easing, which is why the default is ``-2.0``.
+
 Wave
 ~~~~
 
@@ -892,34 +930,6 @@ Ghost
         var alpha = sin(char_fx.elapsed_time * speed + (char_fx.range.x / span)) * 0.5 + 0.5
         char_fx.color.a = alpha
         return true
-
-Pulse
-~~~~~
-
-::
-
-    @tool
-    extends RichTextEffect
-    class_name RichTextPulse
-
-    # Syntax: [pulse color=#ffffff33 freq=1.0 ease=-2.0 height=0][/pulse]
-
-    # Define the tag name.
-    var bbcode = "pulse"
-
-    func _process_custom_fx(char_fx):
-        # Get parameters, or use the provided default value if missing.
-        var color = Color(char_fx.env.get("color", Color(1, 1, 1, 0.2)))
-        var freq = char_fx.env.get("freq", 1.0)
-        var param_ease = char_fx.env.get("ease", -2.0)
-        var height = char_fx.env.get("height", 0)
-
-        var sined_time = (ease(pingpong(char_fx.elapsed_time, 1.0 / freq) * freq, param_ease))
-        var y_off = sined_time * height
-        char_fx.color = char_fx.color.lerp(char_fx.color * color, sined_time)
-        char_fx.offset = Vector2(0, -1) * y_off
-        return true
-
 
 Matrix
 ~~~~~~

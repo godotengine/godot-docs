@@ -21,7 +21,7 @@ Description
 
 Native image datatype. Contains image data which can be converted to an :ref:`ImageTexture<class_ImageTexture>` and provides commonly used *image processing* methods. The maximum width and height for an **Image** are :ref:`MAX_WIDTH<class_Image_constant_MAX_WIDTH>` and :ref:`MAX_HEIGHT<class_Image_constant_MAX_HEIGHT>`.
 
-An **Image** cannot be assigned to a ``texture`` property of an object directly (such as :ref:`Sprite2D<class_Sprite2D>`), and has to be converted manually to an :ref:`ImageTexture<class_ImageTexture>` first.
+An **Image** cannot be assigned to a texture property of an object directly (such as :ref:`Sprite2D.texture<class_Sprite2D_property_texture>`), and has to be converted manually to an :ref:`ImageTexture<class_ImageTexture>` first.
 
 \ **Note:** The maximum image size is 16384×16384 pixels due to graphics hardware limitations. Larger images may fail to import.
 
@@ -1224,7 +1224,7 @@ Returns the number of mipmap levels or 0 if the image has no mipmaps. The larges
 
 :ref:`int<class_int>` **get_mipmap_offset** **(** :ref:`int<class_int>` mipmap **)** |const|
 
-Returns the offset where the image's mipmap with index ``mipmap`` is stored in the ``data`` dictionary.
+Returns the offset where the image's mipmap with index ``mipmap`` is stored in the :ref:`data<class_Image_property_data>` dictionary.
 
 .. rst-class:: classref-item-separator
 

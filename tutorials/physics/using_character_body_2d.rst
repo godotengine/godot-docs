@@ -337,7 +337,7 @@ uses the mouse pointer. Here is the code for the Player, using ``move_and_slide(
 
     public partial class MyCharacterBody2D : CharacterBody2D
     {
-        private PackedScene _bullet = (PackedScene)GD.Load("res://bullet.tscn");
+        private PackedScene _bullet = GD.Load<PackedScene>("res://Bullet.tscn");
         private int _speed = 200;
 
         public void GetInput()
@@ -511,7 +511,7 @@ Here's the code for the player body:
                 velocity.Y = _jumpSpeed;
 
             // Get the input direction.
-            Vector2 direction = Input.GetAxis("ui_left", "ui_right");
+            float direction = Input.GetAxis("ui_left", "ui_right");
             velocity.X = direction * _speed;
 
             Velocity = velocity;

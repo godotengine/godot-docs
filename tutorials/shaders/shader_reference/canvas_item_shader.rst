@@ -109,6 +109,8 @@ is usually:
 | in mat4 **SCREEN_MATRIX**      | Canvas space to clip space. In clip space          |
 |                                | coordinates ranging from (-1, -1) to (1, 1).       |
 +--------------------------------+----------------------------------------------------+
+| in int  **INSTANCE_ID**        | Instance ID for instancing.                        |
++--------------------------------+----------------------------------------------------+
 | in vec4 **INSTANCE_CUSTOM**    | Instance custom data.                              |
 +--------------------------------+----------------------------------------------------+
 | in bool **AT_LIGHT_PASS**      | Always ``false``.                                  |
@@ -117,7 +119,10 @@ is usually:
 |                                | For a Sprite2D with a texture of size 64x32px,     |
 |                                | **TEXTURE_PIXEL_SIZE** = :code:`vec2(1/64, 1/32)`  |
 +--------------------------------+----------------------------------------------------+
-| inout vec2 **VERTEX**          | Vertex, in image space.                            |
+| inout vec2 **VERTEX**          | Vertex, in local space.                            |
++--------------------------------+----------------------------------------------------+
+| in int **VERTEX_ID**           | The index of the current vertex in the vertex      |
+|                                | buffer.                                            |
 +--------------------------------+----------------------------------------------------+
 | inout vec2 **UV**              | Normalized texture coordinates. Range from 0 to 1. |
 +--------------------------------+----------------------------------------------------+

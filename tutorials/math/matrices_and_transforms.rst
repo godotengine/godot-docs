@@ -85,8 +85,8 @@ To do this in code, we multiply each of the vectors:
 
     Transform2D t = Transform2D.Identity;
     // Scale
-    t.x *= 2;
-    t.y *= 2;
+    t.X *= 2;
+    t.Y *= 2;
     Transform = t; // Change the node's transform to what we calculated.
 
 If we wanted to return it to its original scale, we can multiply
@@ -324,7 +324,7 @@ As an example, let's set Y to (1, 1):
 
     Transform2D t = Transform2D.Identity;
     // Shear by setting Y to (1, 1)
-    t.y = Vector2.One;
+    t.Y = Vector2.One;
     Transform = t; // Change the node's transform to what we calculated.
 
 .. note:: You can't set the raw values of a Transform2D in the editor,

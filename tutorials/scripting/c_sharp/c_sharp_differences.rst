@@ -113,6 +113,7 @@ absf                             Mathf.Abs
 absi                             Mathf.Abs
 acos                             Mathf.Acos
 acosh                            Mathf.Acosh
+angle_difference                 Mathf.AngleDifference
 asin                             Mathf.Asin
 asinh                            Mathf.Asinh
 atan                             Mathf.Atan
@@ -191,6 +192,7 @@ randomize                        GD.Randomize
 remap                            Mathf.Remap
 rid_allocate_id                  N/A
 rid_from_int64                   N/A
+rotate_toward                    Mathf.RotateToward
 round                            Mathf.Round
 roundf                           Mathf.Round
 roundi                           Mathf.RoundToInt
@@ -210,6 +212,8 @@ str                              Use `$ string interpolation`_
 str_to_var                       GD.StrToVar
 tan                              Mathf.Tan
 tanh                             Mathf.Tanh
+type_convert                     Variant.As<T> or GD.Convert
+type_string                      Variant.Type.ToString
 typeof                           Variant.VariantType
 var_to_bytes                     GD.VarToBytes
 var_to_bytes_with_objects        GD.VarToBytesWithObjects
@@ -433,6 +437,7 @@ path_join                StringExtensions.PathJoin
 repeat                   Use `string constructor`_ or a `StringBuilder`_
 replace                  `string.Replace`_ or `RegEx`_
 replacen                 StringExtensions.ReplaceN (Consider using `string.Replace`_ or `RegEx`_)
+reverse                  N/A
 rfind                    StringExtensions.RFind (Consider using `string.LastIndexOf`_ or `string.LastIndexOfAny`_)
 rfindn                   StringExtensions.RFindN (Consider using `string.LastIndexOf`_ or `string.LastIndexOfAny`_)
 right                    StringExtensions.Right (Consider using `string.Substring`_ or `string.AsSpan`_)

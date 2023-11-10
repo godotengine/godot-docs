@@ -746,7 +746,7 @@ Prefixes to trigger an automatic indent.
 - void **set_indent_size** **(** :ref:`int<class_int>` value **)**
 - :ref:`int<class_int>` **get_indent_size** **(** **)**
 
-Size of tabs, if ``indent_use_spaces`` is enabled the number of spaces to use.
+Size of the tabulation indent (one :kbd:`Tab` press) in characters. If :ref:`indent_use_spaces<class_CodeEdit_property_indent_use_spaces>` is enabled the number of spaces to use.
 
 .. rst-class:: classref-item-separator
 
@@ -1015,7 +1015,7 @@ Removes all string delimiters.
 
 void **confirm_code_completion** **(** :ref:`bool<class_bool>` replace=false **)**
 
-Inserts the selected entry into the text. If ``replace`` is true, any existing text is replaced rather then merged.
+Inserts the selected entry into the text. If ``replace`` is true, any existing text is replaced rather than merged.
 
 .. rst-class:: classref-item-separator
 
@@ -1846,7 +1846,7 @@ Max number of options to display in the code completion popup at any one time.
 
 :ref:`int<class_int>` **completion_max_width** = ``50``
 
-Max width of options in the code completion popup. Options longer then this will be cut off.
+Max width of options in the code completion popup. Options longer than this will be cut off.
 
 .. rst-class:: classref-item-separator
 

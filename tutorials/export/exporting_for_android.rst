@@ -18,10 +18,10 @@ The following steps detail what is needed to set up the Android SDK and the engi
     Projects written in C# using Godot 4 currently cannot be exported to Android.
     To use C# on Android, use Godot 3 instead.
 
-Install OpenJDK 11
+Install OpenJDK 17
 ------------------
 
-Download and install  `OpenJDK 11 <https://adoptium.net/?variant=openjdk11>`__.
+Download and install `OpenJDK 17 <https://adoptium.net/temurin/releases/?variant=openjdk17>`__.
 
 Download the Android SDK
 ------------------------
@@ -67,7 +67,7 @@ the JDK can be used for this purpose::
 
     keytool -keyalg RSA -genkeypair -alias androiddebugkey -keypass android -keystore debug.keystore -storepass android -dname "CN=Android Debug,O=Android,C=US" -validity 9999 -deststoretype pkcs12
 
-This will create a ``debug.keystore`` file in your current directory. You should move it to a memorable location such as ``%USERPROFILE%\.android\``, because you will need its location in a later step. For more information on ``keytool`` usage, see `this Q&A article <https://godotengine.org/qa/21349/jdk-android-file-missing>`__.
+This will create a ``debug.keystore`` file in your current directory. You should move it to a memorable location such as ``%USERPROFILE%\.android\``, because you will need its location in a later step. For more information on ``keytool`` usage, see `this Q&A article <https://ask.godotengine.org/21349/jdk-android-file-missing>`__.
 
 .. note::
 
@@ -191,16 +191,16 @@ the export menu.
    * - Export option
      - Environment variable
    * - Encryption / Encryption Key
-     - GODOT_SCRIPT_ENCRYPTION_KEY
+     - ``GODOT_SCRIPT_ENCRYPTION_KEY``
    * - Options / Keystore / Debug
-     - GODOT_ANDROID_KEYSTORE_DEBUG_PATH
+     - ``GODOT_ANDROID_KEYSTORE_DEBUG_PATH``
    * - Options / Keystore / Debug User
-     - GODOT_ANDROID_KEYSTORE_DEBUG_USER
+     - ``GODOT_ANDROID_KEYSTORE_DEBUG_USER``
    * - Options / Keystore / Debug Password
-     - GODOT_ANDROID_KEYSTORE_DEBUG_PASSWORD
+     - ``GODOT_ANDROID_KEYSTORE_DEBUG_PASSWORD``
    * - Options / Keystore / Release
-     - GODOT_ANDROID_KEYSTORE_RELEASE_PATH
+     - ``GODOT_ANDROID_KEYSTORE_RELEASE_PATH``
    * - Options / Keystore / Release User
-     - GODOT_ANDROID_KEYSTORE_RELEASE_USER
+     - ``GODOT_ANDROID_KEYSTORE_RELEASE_USER``
    * - Options / Keystore / Release Password
-     - GODOT_ANDROID_KEYSTORE_RELEASE_PASSWORD
+     - ``GODOT_ANDROID_KEYSTORE_RELEASE_PASSWORD``

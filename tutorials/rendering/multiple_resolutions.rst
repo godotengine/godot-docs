@@ -277,6 +277,57 @@ To configure the stretch scale at runtime from a script, use the
 ``get_tree().root.content_scale_factor`` property (see
 :ref:`Window.content_scale_factor <class_Window_property_content_scale_factor>`).
 
+.. _doc_multiple_resolutions_stretch_scale_mode:
+
+Stretch Scale Mode
+^^^^^^^^^^^^^^^^^^
+
+Since Godot 4.2, the **Stretch Scale Mode** setting allows you to constrain the
+automatically determined scale factor (as well as the manually specified
+**Stretch Scale** setting) to integer values. By default, this setting is set to
+``fractional``, which allows any scale factor to be applied (including fractional
+values such as ``2.5``). When set to ``integer``, the value is rounded down to
+the nearest integer. For example, instead of using a scale factor of ``2.5``, it
+would be rounded down to ``2.0``. This is useful to prevent distortion when
+displaying pixel art.
+
+Compare this pixel art which is displayed with the ``viewport`` stretch mode,
+with the stretch scale mode set to ``fractional``:
+
+.. figure:: img/multiple_resolutions_pixel_art_fractional_scaling.webp
+   :align: center
+   :alt: Fractional scaling example (incorrect pixel art appearance)
+
+   Checkerboard doesn't look "even". Line widths in the logo and text varies wildly.
+
+This pixel art is also displayed with the ``viewport`` stretch mode, but the
+stretch scale mode is set to ``integer`` this time:
+
+.. figure:: img/multiple_resolutions_pixel_art_integer_scaling.webp
+   :align: center
+   :alt: Integer scaling example (correct pixel art appearance)
+
+   Checkerboard looks perfectly even. Line widths are consistent.
+
+For example, if your viewport base size is 640×360 and the window size is 1366×768:
+
+- When using ``fractional``, the viewport is displayed at a resolution of
+  1366×768 (scale factor is roughly 2.133×). The entire window space is used.
+  Each pixel in the viewport corresponds to 2.133×2.133 pixels in the displayed
+  area. However, since displays can only display "whole" pixels, this will lead
+  to uneven pixel scaling which results in incorrect appearance of pixel art.
+- When using ``integer``, the viewport is displayed at a resolution of 1280×720
+  (scale factor is 2×). The remaining space is filled with black bars on all
+  four sides, so that each pixel in the viewport corresponds to 2×2 pixels in
+  the displayed area.
+
+This setting is effective with any stretch mode. However, when using the
+``disabled`` stretch mode, it will only affect the **Stretch Scale** setting by
+rounding it *down* to the nearest integer value. This can be used for 3D games
+that have a pixel art UI, so that the visible area in the 3D viewport doesn't
+reduce in size (which occurs when using ``canvas_items`` or ``viewport`` stretch
+mode with the ``integer`` scale mode).
+
 Common use case scenarios
 -------------------------
 
@@ -305,16 +356,20 @@ Desktop game
 
 **Pixel art:**
 
-- Set the base window size to the viewport size you intend to use. Most pixel art games
-  use viewport sizes between 256×224 and 640×480. Higher viewport sizes will
-  require using higher resolution artwork, unless you intend to show more of the
-  game world at a given time.
+- Set the base window size to the viewport size you intend to use. Most pixel
+  art games use viewport sizes between 256×224 and 640×480. 640×360 is a good
+  baseline, as it scales to 1280×720, 1920×1080, 2560×1440, and 3840×2160 without
+  any black bars when using integer scaling. Higher viewport sizes will require
+  using higher resolution artwork, unless you intend to show more of the game
+  world at a given time.
 - Set the stretch mode to ``viewport``.
 - Set the stretch aspect to ``keep`` to enforce a single aspect ratio (with
   black bars). As an alternative, you can set the stretch aspect to ``expand`` to
   support multiple aspect ratios.
 - If using the ``expand`` stretch aspect, Configure Control nodes' anchors to
   snap to the correct corners using the **Layout** menu.
+- Set the stretch scale mode to ``integer``. This prevents uneven pixel scaling
+  from occurring, which makes pixel art not display as intended.
 
 .. note::
 
@@ -323,11 +378,6 @@ Desktop game
     move or rotate in "sub-pixel" positions or wish to have a high resolution 3D
     viewport, you should use the ``canvas_items`` stretch mode instead of the ``viewport``
     stretch mode.
-
-    Godot currently doesn't have a way to enforce integer scaling when using the
-    ``canvas_items`` or ``viewport`` stretch mode, which means pixel art may look bad if the
-    final window size is not a multiple of the base window size.
-    To fix this, use an add-on such as the `Integer Resolution Handler <https://github.com/Yukitty/godot-addon-integer_resolution_handler>`__.
 
 Mobile game in landscape mode
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -434,8 +484,9 @@ Reducing aliasing on downsampling
 If the game has a very high base resolution (e.g. 3840×2160), aliasing might
 appear when downsampling to something considerably lower like 1280×720.
 
-To resolve this, you can enable mipmaps on all your 2D textures. However, enabling mipmaps
-will increase memory usage which may be problematic on low-end mobile devices.
+To resolve this, you can :ref:`enable mipmaps <doc_importing_images_mipmaps>` on
+all your 2D textures. However, enabling mipmaps will increase memory usage which
+can be an issue on low-end mobile devices.
 
 Handling aspect ratios
 ----------------------

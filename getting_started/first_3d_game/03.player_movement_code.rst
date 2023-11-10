@@ -447,7 +447,7 @@ work on the monsters.
 .. |image0| image:: img/03.player_movement_code/01.attach_script_to_player.webp
 .. |image1| image:: img/03.player_movement_code/02.clicking_main_tab.png
 .. |image2| image:: img/03.player_movement_code/03.instance_child_scene.webp
-.. |image3| image:: img/03.player_movement_code/04.scene_tree_with_camera.png
+.. |image3| image:: img/03.player_movement_code/04.scene_tree_with_camera.webp
 .. |image4| image:: img/03.player_movement_code/05.camera_preview_checkbox.png
 .. |image5| image:: img/03.player_movement_code/06.two_viewports.png
 .. |image6| image:: img/03.player_movement_code/07.camera_preview_checkbox.png

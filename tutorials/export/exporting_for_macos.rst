@@ -227,20 +227,20 @@ the export menu.
    * - Export option
      - Environment variable
    * - Encryption / Encryption Key
-     - GODOT_SCRIPT_ENCRYPTION_KEY
+     - ``GODOT_SCRIPT_ENCRYPTION_KEY``
    * - Options / Codesign / Certificate File
-     - GODOT_MACOS_CODESIGN_CERTIFICATE_FILE
+     - ``GODOT_MACOS_CODESIGN_CERTIFICATE_FILE``
    * - Options / Codesign / Certificate Password
-     - GODOT_MACOS_CODESIGN_CERTIFICATE_PASSWORD
+     - ``GODOT_MACOS_CODESIGN_CERTIFICATE_PASSWORD``
    * - Options / Codesign / Provisioning Profile
-     - GODOT_MACOS_CODESIGN_PROVISIONING_PROFILE
+     - ``GODOT_MACOS_CODESIGN_PROVISIONING_PROFILE``
    * - Options / Notarization / API UUID
-     - GODOT_MACOS_NOTARIZATION_API_UUID
+     - ``GODOT_MACOS_NOTARIZATION_API_UUID``
    * - Options / Notarization / API Key
-     - GODOT_MACOS_NOTARIZATION_API_KEY
+     - ``GODOT_MACOS_NOTARIZATION_API_KEY``
    * - Options / Notarization / API Key ID
-     - GODOT_MACOS_NOTARIZATION_API_KEY_ID
+     - ``GODOT_MACOS_NOTARIZATION_API_KEY_ID``
    * - Options / Notarization / Apple ID Name
-     - GODOT_MACOS_NOTARIZATION_APPLE_ID_NAME
+     - ``GODOT_MACOS_NOTARIZATION_APPLE_ID_NAME``
    * - Options / Notarization / Apple ID Password
-     - GODOT_MACOS_NOTARIZATION_APPLE_ID_PASSWORD
+     - ``GODOT_MACOS_NOTARIZATION_APPLE_ID_PASSWORD``

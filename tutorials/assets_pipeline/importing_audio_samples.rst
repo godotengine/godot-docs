@@ -150,8 +150,8 @@ metadata, but you can choose to apply a specific loop mode:
 
 When choosing one of the **Forward**, **Ping-Pong** or **Backward** loop modes,
 loop points can also be defined to make only a specific part of the sound loop.
-**Loop Begin** is set in seconds after the beginning of the audio file. **Loop
-End** is also set in seconds after the beginning of the audio file, but will use
+**Loop Begin** is set in samples after the beginning of the audio file. **Loop
+End** is also set in samples after the beginning of the audio file, but will use
 the end of the audio file if set to ``-1``.
 
 .. warning::
@@ -304,3 +304,9 @@ reducing their size greatly and ensuring correct trimming.
 
 As you can see above, sound effects become much larger in file size with reverb
 added.
+
+.. seealso::
+
+    Audio samples can be loaded and saved at runtime using
+    :ref:`runtime file loading and saving <doc_runtime_file_loading_and_saving_audio_video_files>`,
+    including from an exported project.

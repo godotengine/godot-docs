@@ -13,6 +13,9 @@ Godot can import the following image formats:
 - DirectDraw Surface (``.dds``)
   - If mipmaps are present in the texture, they will be loaded directly.
   This can be used to achieve effects using custom mipmaps.
+- Khronos Texture (``.ktx``)
+  - Decoding is done using `libktx <https://github.com/KhronosGroup/KTX-Software>`__.
+  Only supports 2D images. Cubemaps, texture arrays and de-padding are not supported.
 - OpenEXR (``.exr``)
   - Supports HDR (highly recommended for panorama skies).
 - Radiance HDR (``.hdr``)
@@ -339,6 +342,8 @@ with the RG color format to reduce memory usage, with only the red and green
 channels preserved. This only has an effect on textures with the **VRAM Compressed**
 or **Basis Universal** compression modes.
 
+.. _doc_importing_images_mipmaps:
+
 Mipmaps > Generate
 ^^^^^^^^^^^^^^^^^^
 
@@ -536,3 +541,9 @@ worth exploring:
 - When working with 3D models using a low-poly style and plain colors, you can
   rely on vertex colors instead of textures to represent colors on the model's
   surfaces.
+
+.. seealso::
+
+    Images can be loaded and saved at runtime using
+    :ref:`runtime file loading and saving <doc_runtime_file_loading_and_saving_images>`,
+    including from an exported project.

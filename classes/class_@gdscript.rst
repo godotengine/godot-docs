@@ -130,10 +130,37 @@ Mark the following property as exported (editable in the Inspector dock and save
 
 ::
 
+    extends Node
+    
+    enum Direction {LEFT, RIGHT, UP, DOWN}
+    
+    # Built-in types.
     @export var string = ""
     @export var int_number = 5
     @export var float_number: float = 5
+    
+    # Enums.
+    @export var type: Variant.Type
+    @export var format: Image.Format
+    @export var direction: Direction
+    
+    # Resources.
     @export var image: Image
+    @export var custom_resource: CustomResource
+    
+    # Nodes.
+    @export var node: Node
+    @export var custom_node: CustomNode
+    
+    # Typed arrays.
+    @export var int_array: Array[int]
+    @export var direction_array: Array[Direction]
+    @export var image_array: Array[Image]
+    @export var node_array: Array[Node]
+
+\ **Note:** Custom resources and nodes must be registered as global classes using ``class_name``.
+
+\ **Note:** Node export is only supported in :ref:`Node<class_Node>`-derived classes and has a number of other limitations.
 
 .. rst-class:: classref-item-separator
 
@@ -633,9 +660,9 @@ Add a custom icon to the current script. The icon specified at ``icon_path`` is 
 
 \ **Note:** Only the script can have a custom icon. Inner classes are not supported.
 
-\ **Note:** As annotations describe their subject, the ``@icon`` annotation must be placed before the class definition and inheritance.
+\ **Note:** As annotations describe their subject, the :ref:`@icon<class_@GDScript_annotation_@icon>` annotation must be placed before the class definition and inheritance.
 
-\ **Note:** Unlike other annotations, the argument of the ``@icon`` annotation must be a string literal (constant expressions are not supported).
+\ **Note:** Unlike other annotations, the argument of the :ref:`@icon<class_@GDScript_annotation_@icon>` annotation must be a string literal (constant expressions are not supported).
 
 .. rst-class:: classref-item-separator
 
@@ -715,7 +742,7 @@ Mark the current script as a tool script, allowing it to be loaded and executed 
     @tool
     extends Node
 
-\ **Note:** As annotations describe their subject, the ``@tool`` annotation must be placed before the class definition and inheritance.
+\ **Note:** As annotations describe their subject, the :ref:`@tool<class_@GDScript_annotation_@tool>` annotation must be placed before the class definition and inheritance.
 
 .. rst-class:: classref-item-separator
 

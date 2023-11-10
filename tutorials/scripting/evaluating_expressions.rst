@@ -198,7 +198,7 @@ The output from the script will be::
 Built-in functions
 ------------------
 
-Most methods available in the :ref:`class_@GDScript` scope are available in the
+All methods in the :ref:`Global Scope<class_@GlobalScope>` are available in the
 Expression class, even if no base instance is bound to the expression.
 The same parameters and return types are available.
 

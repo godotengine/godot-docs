@@ -100,22 +100,23 @@ call the Godot executable:
 
 .. code-block:: none
 
-    godot --dump-extension-api extension_api.json
+    godot --dump-extension-api
 
-Place the resulting ``extension_api.json`` file in the project folder and add
-``custom_api_file=<PATH_TO_FILE>`` to the scons command
-below.
+The resulting ``extension_api.json`` file will be created in the executable's
+directory. Copy it to the project folder and add ``custom_api_file=<PATH_TO_FILE>``
+to the scons command below.
 
 To generate and compile the bindings, use this command (replacing ``<platform>``
 with ``windows``, ``linux`` or ``macos`` depending on your OS):
 
-To speed up compilation, add ``-jN`` at the end of the SCons command line where ``N``
-is the number of CPU threads you have on your system. The example below uses 4 threads.
+The build process automatically detects the number of CPU threads to use for
+parallel builds. To specify a number of CPU threads to use, add ``-jN`` at the
+end of the SCons command line where ``N`` is the number of CPU threads to use.
 
 .. code-block:: none
 
     cd godot-cpp
-    scons platform=<platform> -j4 custom_api_file=<PATH_TO_FILE>
+    scons platform=<platform> custom_api_file=<PATH_TO_FILE>
     cd ..
 
 This step will take a while. When it is completed, you should have static
@@ -158,7 +159,7 @@ Your folder structure should now look like this:
 In the ``src`` folder, we'll start with creating our header file for the
 GDExtension node we'll be creating. We will name it ``gdexample.h``:
 
-.. code-block:: C++
+.. code-block:: cpp
 
     #ifndef GDEXAMPLE_H
     #define GDEXAMPLE_H
@@ -211,7 +212,7 @@ as the ``_process`` function you're used to in GDScript.
 
 Let's implement our functions by creating our ``gdexample.cpp`` file:
 
-.. code-block:: C++
+.. code-block:: cpp
 
     #include "gdexample.h"
     #include <godot_cpp/core/class_db.hpp>
@@ -250,7 +251,7 @@ and source file like we've implemented ``GDExample`` up above. What we need now
 is a small bit of code that tells Godot about all the classes in our
 GDExtension plugin.
 
-.. code-block:: C++
+.. code-block:: cpp
 
     #include "register_types.h"
 
@@ -303,7 +304,7 @@ Furthermore, it sets the level of initialization (core, servers, scene, editor, 
 At last, we need the header file for the ``register_types.cpp`` named
 ``register_types.h``.
 
-.. code-block:: C++
+.. code-block:: cpp
 
     #ifndef GDEXAMPLE_REGISTER_TYPES_H
     #define GDEXAMPLE_REGISTER_TYPES_H
@@ -466,7 +467,7 @@ Lets add a property that allows us to control the amplitude of our wave.
 In our ``gdexample.h`` file we need to add a member variable and getter and setter
 functions:
 
-.. code-block:: C++
+.. code-block:: cpp
 
     ...
     private:
@@ -481,7 +482,7 @@ functions:
 In our ``gdexample.cpp`` file we need to make a number of changes, we will only
 show the methods we end up changing, don't remove the lines we're omitting:
 
-.. code-block:: C++
+.. code-block:: cpp
 
     void GDExample::_bind_methods() {
         ClassDB::bind_method(D_METHOD("get_amplitude"), &GDExample::get_amplitude);
@@ -523,7 +524,7 @@ Let's do the same but for the speed of our animation and use a setter and getter
 function. Our ``gdexample.h`` header file again only needs a few more lines of
 code:
 
-.. code-block:: C++
+.. code-block:: cpp
 
     ...
         double amplitude;
@@ -537,7 +538,7 @@ code:
 This requires a few more changes to our ``gdexample.cpp`` file, again we're only
 showing the methods that have changed so don't remove anything we're omitting:
 
-.. code-block:: C++
+.. code-block:: cpp
 
     void GDExample::_bind_methods() {
         ...
@@ -594,12 +595,23 @@ would need to showcase a far more complete example.
 
 This is the required syntax:
 
-.. code-block:: C++
+.. code-block:: cpp
 
-    some_other_node->connect("the_signal", this, "my_method");
+    some_other_node->connect("the_signal", Callable(this, "my_method"));
+
+To connect our signal ``the_signal`` from some other node with our method
+``my_method``, we need to provide the ``connect`` method with the name of the signal
+and a ``Callable``. The ``Callable`` holds information about an object on which a method
+can be called. In our case, it associates our current object instance ``this`` with the
+method ``my_method`` of the object. Then the ``connect`` method will add this to the
+observers of ``the_signal``. Whenever ``the_signal`` is now emitted, Godot knows which
+method of which object it needs to call.
 
 Note that you can only call ``my_method`` if you've previously registered it in
-your ``_bind_methods`` method.
+your ``_bind_methods`` method. Otherwise Godot will not know about the existence
+of ``my_method``.
+
+To learn more about ``Callable``, check out the class reference here: :ref:`Callable <class_Callable>`.
 
 Having your object sending out signals is more common. For our wobbling
 Godot icon, we'll do something silly just to show how it works. We're going to
@@ -607,7 +619,7 @@ emit a signal every time a second has passed and pass the new location along.
 
 In our ``gdexample.h`` header file, we need to define a new member ``time_emit``:
 
-.. code-block:: C++
+.. code-block:: cpp
 
     ...
         double time_passed;
@@ -622,7 +634,7 @@ constructor. We'll look at the other 2 needed changes one by one.
 In our ``_bind_methods`` method, we need to declare our signal. This is done
 as follows:
 
-.. code-block:: C++
+.. code-block:: cpp
 
     void GDExample::_bind_methods() {
         ...
@@ -643,7 +655,7 @@ of type ``Vector2``, respectively named "node" and "new_pos".
 
 Next, we'll need to change our ``_process`` method:
 
-.. code-block:: C++
+.. code-block:: cpp
 
     void GDExample::_process(double delta) {
         time_passed += speed * delta;

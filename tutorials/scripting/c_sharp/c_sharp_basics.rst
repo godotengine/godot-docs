@@ -6,17 +6,6 @@ C# basics
 Introduction
 ------------
 
-.. warning::
-
-    .NET support has been heavily modified between Godot 3 and 4. As such, you
-    may still run into some issues, or find spots where the documentation could
-    be improved.
-
-    Please report issues with C# in Godot on the
-    `engine GitHub page <https://github.com/godotengine/godot/issues>`_,
-    and any documentation issues on the
-    `documentation GitHub page <https://github.com/godotengine/godot-docs/issues>`_.
-
 This page provides a brief introduction to C#, both what it is and
 how to use it in Godot. Afterwards, you may want to look at
 :ref:`how to use specific features <doc_c_sharp_features>`, read about the
@@ -29,9 +18,10 @@ it is implemented with .NET 6.0.
 
 .. attention::
 
-    Projects written in C# using Godot 4.x currently cannot be exported to
-    Android, iOS and web platforms. To use C# on those platforms, use Godot 3
-    instead.
+    Projects written in C# using Godot 4 currently cannot be exported to the web
+    platform. To use C# on the web platform, consider Godot 3 instead.
+    Android and iOS platform support is available as of Godot 4.2, but is
+    experimental and :ref:`some limitations apply <doc_c_sharp_platforms>`.
 
 .. note::
 
@@ -239,10 +229,10 @@ For more information, see the :ref:`doc_c_sharp_differences` page.
 
     You need to (re)build the project assemblies whenever you want to see new
     exported variables or signals in the editor. This build can be manually
-    triggered by clicking the word **Build** in the top right corner of the
-    editor. You can also click **MSBuild** at the bottom of the editor window
-    to reveal the MSBuild panel, then click the **Build** button to reveal a
-    dropdown, then click the **Build Solution** option.
+    triggered by clicking the **Build** button in the top right corner of the
+    editor.
+
+    .. image:: img/build_dotnet.webp
 
     You will also need to rebuild the project assemblies to apply changes in
     "tool" scripts.

@@ -16,6 +16,12 @@ want to activate or deactivate particle systems dynamically.
 The ``Amount`` property controls the maximum number of particles visible at any given time. Increase the
 value to spawn more particles at the cost of performance.
 
+The ``Amount Ratio`` property is the radio of particles compared to the ammount that will be emitted.
+If it's less than ``1.0`` the ammount of particles emitted through the lifetime will be the ``Ammount`` *
+``Amount Ratio``. Changing this value while emitted doesn't affect already created particles and doesn't
+cause the particle system to restart. It's useful for making effects where the number of emitted particels
+varies over time.
+
 You can set another particle node as a ``Sub Emitter``, which will be spawned as a child of each
 particle. See the :ref:`Sub-emitters <doc_3d_particles_subemitters>` section in this manual for a detailed explanation of how
 to add a sub-emitter to a particle system.
@@ -42,6 +48,9 @@ would use:
 
 Example: Emitting 32 particles with a lifetime of 4 seconds each would mean the system emits
 8 particles per second.
+
+The ``Interp to End`` property causes all the particles in the node to interpolate towards
+the end of their lifetime.
 
 If the checkbox next to the ``One Shot`` property is checked, the particle system will emit ``amount`` particles
 and then disable itself. It "runs" only once. This property is unchecked by default, so the system will

@@ -64,8 +64,6 @@ Theme Properties
    +-----------------------------------+----------------------------------------------------------------------------+
    | :ref:`StyleBox<class_StyleBox>`   | :ref:`grabber_pressed<class_ScrollBar_theme_style_grabber_pressed>`        |
    +-----------------------------------+----------------------------------------------------------------------------+
-   | :ref:`StyleBox<class_StyleBox>`   | :ref:`hscroll<class_ScrollBar_theme_style_hscroll>`                        |
-   +-----------------------------------+----------------------------------------------------------------------------+
    | :ref:`StyleBox<class_StyleBox>`   | :ref:`scroll<class_ScrollBar_theme_style_scroll>`                          |
    +-----------------------------------+----------------------------------------------------------------------------+
    | :ref:`StyleBox<class_StyleBox>`   | :ref:`scroll_focus<class_ScrollBar_theme_style_scroll_focus>`              |
@@ -222,20 +220,6 @@ Used when the mouse hovers over the grabber.
 :ref:`StyleBox<class_StyleBox>` **grabber_pressed**
 
 Used when the grabber is being dragged.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_ScrollBar_theme_style_hscroll:
-
-.. rst-class:: classref-themeproperty
-
-:ref:`StyleBox<class_StyleBox>` **hscroll**
-
-.. container:: contribute
-
-	There is currently no description for this theme property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 .. rst-class:: classref-item-separator
 

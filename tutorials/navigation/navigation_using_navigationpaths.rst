@@ -16,7 +16,7 @@ To obtain a 3D path, use ``NavigationServer3D.map_get_path(map, from, to, optimi
 For more customizable navigation path queries that require additional setup see :ref:`doc_navigation_using_navigationpathqueryobjects`.
 
 One of the required parameters for the query is the RID of the navigation map.
-Each game ``World`` has a default navigation map automatically created.
+Each game world has a default navigation map automatically created.
 The default navigation maps can be retrieved with ``get_world_2d().get_navigation_map()`` from
 any Node2D inheriting node or ``get_world_3d().get_navigation_map()`` from any Node3D inheriting node.
 The second and third parameters are the starting position and the target position as Vector2 for 2D or Vector3 for 3D.
@@ -80,10 +80,11 @@ the default navigation map by setting the target position with ``set_movement_ta
 .. tabs::
  .. code-tab:: gdscript GDScript
 
+    @onready var default_3d_map_rid: RID = get_world_3d().get_navigation_map()
+
     var movement_speed: float = 4.0
     var movement_delta: float
     var path_point_margin: float = 0.5
-    var default_3d_map_rid: RID = get_world_3d().get_navigation_map()
 
     var current_path_index: int = 0
     var current_path_point: Vector3
@@ -109,7 +110,7 @@ the default navigation map by setting the target position with ``set_movement_ta
         if current_path.is_empty():
             return
 
-        movement_delta = move_speed * delta
+        movement_delta = movement_speed * delta
 
         if global_transform.origin.distance_to(current_path_point) <= path_point_margin:
             current_path_index += 1

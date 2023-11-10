@@ -35,7 +35,7 @@ The same approach can be used to distinguish between e.g. landwalking, swimming 
     # Create the source geometry resource that will hold the parsed geometry data.
     var source_geometry_data: NavigationMeshSourceGeometryData3D = NavigationMeshSourceGeometryData3D.new()
 
-    # Parse the source geometry from the SceneTree on the main thread.
+    # Parse the source geometry from the scene tree on the main thread.
     # The navigation mesh is only required for the parse settings so any of the three will do.
     NavigationServer3D.parse_source_geometry_data(navigation_mesh_standard_size, source_geometry_data, root_node)
 

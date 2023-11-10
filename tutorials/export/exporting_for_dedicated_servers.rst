@@ -4,7 +4,7 @@ Exporting for dedicated servers
 ===============================
 
 If you want to run a dedicated server for your project on a machine that doesn't
-have a GPU or display server available, you'll need run Godot with the ``headless``
+have a GPU or display server available, you'll need to run Godot with the ``headless``
 display server and ``Dummy`` :ref:`audio driver <class_ProjectSettings_property_audio/driver/driver>`.
 
 Since Godot 4.0, this can be done by running a Godot binary on any platform with
@@ -217,7 +217,7 @@ main scene (or an autoload)'s ``_ready()`` method:
 .. tabs::
  .. code-tab:: gdscript
 
-    if "--headless" in OS.get_cmdline_args():
+    if DisplayServer.get_name() == "headless":
         # Run your server startup code here...
         #
         # Using this check, you can start a dedicated server by running
@@ -229,7 +229,7 @@ main scene (or an autoload)'s ``_ready()`` method:
 
     using System.Linq;
 
-    if (OS.GetCmdlineArgs().Contains("--headless"))
+    if (DisplayServer.GetName() == "headless")
     {
         // Run your server startup code here...
         //

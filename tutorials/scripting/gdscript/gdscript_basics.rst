@@ -173,15 +173,15 @@ in case you want to take a look under the hood.
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 | return     | Returns a value from a function.                                                                                                                  |
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| class      | Defines a class.                                                                                                                                  |
+| class      | Defines an inner class. See `Inner classes`_.                                                                                                     |
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| class_name | Defines the script as a globally accessible class with the specified name.                                                                        |
+| class_name | Defines the script as a globally accessible class with the specified name. See `Registering named classes`_.                                      |
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 | extends    | Defines what class to extend with the current class.                                                                                              |
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 | is         | Tests whether a variable extends a given class, or is of a given built-in type.                                                                   |
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| in         | Tests whether a value is within a string, list, range, dictionary, or node. When used with ``for``, it iterates through them instead of testing.  |
+| in         | Tests whether a value is within a string, array, range, dictionary, or node. When used with ``for``, it iterates through them instead of testing. |
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 | as         | Cast the value to a given type if possible.                                                                                                       |
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -341,7 +341,11 @@ Literals
 ~~~~~~~~
 
 +---------------------------------+-------------------------------------------+
-| **Literal**                     | **Type**                                  |
+| **Example(s)**                  | **Description**                           |
++---------------------------------+-------------------------------------------+
+| ``null``                        | Null value                                |
++---------------------------------+-------------------------------------------+
+| ``false``, ``true``             | Boolean values                            |
 +---------------------------------+-------------------------------------------+
 | ``45``                          | Base 10 integer                           |
 +---------------------------------+-------------------------------------------+
@@ -362,6 +366,12 @@ Literals
 | ``&"name"``                     | :ref:`StringName <class_StringName>`      |
 +---------------------------------+-------------------------------------------+
 | ``^"Node/Label"``               | :ref:`NodePath <class_NodePath>`          |
++---------------------------------+-------------------------------------------+
+
+There are also two constructs that look like literals, but actually are not:
+
++---------------------------------+-------------------------------------------+
+| **Example**                     | **Description**                           |
 +---------------------------------+-------------------------------------------+
 | ``$NodePath``                   | Shorthand for ``get_node("NodePath")``    |
 +---------------------------------+-------------------------------------------+
@@ -529,7 +539,100 @@ considered a comment.
 
     # This is a comment.
 
+.. tip::
+
+    In the Godot script editor, special keywords are highlighted within comments
+    to bring the user's attention to specific comments:
+
+    - **Critical** *(appears in red)*: ``ALERT``, ``ATTENTION``, ``CAUTION``,
+      ``CRITICAL``, ``DANGER``, ``SECURITY``
+    - **Warning** *(appears in yellow)*: ``BUG``, ``DEPRECATED``, ``FIXME``,
+      ``HACK``, ``TASK``, ``TBD``, ``TODO``, ``WARNING``
+    - **Notice** *(appears in green)*: ``INFO``, ``NOTE``, ``NOTICE``, ``TEST``,
+      ``TESTING``
+
+    These keywords are case-sensitive, so they must be written in uppercase for them
+    to be recognized:
+
+    ::
+
+        # In the example below, "TODO" will appear in yellow by default.
+        # The `:` symbol after the keyword is not required, but it's often used.
+
+        # TODO: Add more items for the player to choose from.
+
+    The list of highlighted keywords and their colors can be changed in the **Text
+    Editor > Theme > Comment Markers** section of the Editor Settings.
+
 .. _doc_gdscript_builtin_types:
+
+Code regions
+~~~~~~~~~~~~
+
+Code regions are special types of comments that the script editor understands as
+*foldable regions*. This means that after writing code region comments, you can
+collapse and expand the region by clicking the arrow that appears at the left of
+the comment. This arrow appears within a purple square to be distinguishable
+from standard code folding.
+
+The syntax is as follows:
+
+::
+
+    # Important: There must be *no* space between the `#` and `region` or `endregion`.
+
+    # Region without a description:
+    #region
+    ...
+    #endregion
+
+    # Region with a description:
+    #region Some description that is displayed even when collapsed
+    ...
+    #endregion
+
+.. tip::
+
+    To create a code region quickly, select several lines in the script editor,
+    right-click the selection then choose **Create Code Region**. The region
+    description will be selected automatically for editing.
+
+    It is possible to nest code regions within other code regions.
+
+Here's a concrete usage example of code regions:
+
+::
+
+    # This comment is outside the code region. It will be visible when collapsed.
+    #region Terrain generation
+    # This comment is inside the code region. It won't be visible when collapsed.
+    func generate_lakes():
+        pass
+
+    func generate_hills():
+        pass
+    #endregion
+
+    #region Terrain population
+    func place_vegetation():
+        pass
+
+    func place_roads():
+        pass
+    #endregion
+
+This can be useful to organize large chunks of code into easier to understand
+sections. However, remember that external editors generally don't support this
+feature, so make sure your code is easy to follow even when not relying on
+folding code regions.
+
+.. note::
+
+    Individual functions and indented sections (such as ``if`` and ``for``) can
+    *always* be collapsed in the script editor. This means you should avoid
+    using a code region to contain a single function or indented section, as it
+    won't bring much of a benefit. Code regions work best when they're used to
+    group multiple elements together.
 
 Line continuation
 ~~~~~~~~~~~~~~~~~
@@ -805,7 +908,7 @@ Associative container which contains values referenced by unique keys.
 Lua-style table syntax is also supported. Lua-style uses ``=`` instead of ``:``
 and doesn't use quotes to mark string keys (making for slightly less to write).
 However, keys written in this form can't start with a digit (like any GDScript
-identifier).
+identifier), and must be string literals.
 
 ::
 
@@ -1437,29 +1540,33 @@ match
 A ``match`` statement is used to branch execution of a program.
 It's the equivalent of the ``switch`` statement found in many other languages, but offers some additional features.
 
-Basic syntax::
-
-    match (expression):
-        [pattern](s):
-            [block]
-        [pattern](s):
-            [block]
-        [pattern](s):
-            [block]
-
 .. warning::
 
     ``match`` is more type strict than the ``==`` operator. For example ``1`` will **not** match ``1.0``. The only exception is ``String`` vs ``StringName`` matching:
     for example, the String ``"hello"`` is considered equal to the StringName ``&"hello"``.
 
-**Crash-course for people who are familiar with switch statements**:
+Basic syntax
+""""""""""""
+
+::
+
+    match <expression>:
+        <pattern(s)>:
+            <block>
+        <pattern(s)> when <guard expression>:
+            <block>
+        <...>
+
+Crash-course for people who are familiar with switch statements
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 1. Replace ``switch`` with ``match``.
 2. Remove ``case``.
 3. Remove any ``break``\ s.
 4. Change ``default`` to a single underscore.
 
-**Control flow**:
+Control flow
+""""""""""""
 
 The patterns are matched from top to bottom.
 If a pattern matches, the first corresponding block will be executed. After that, the execution continues below the ``match`` statement.
@@ -1468,10 +1575,10 @@ If a pattern matches, the first corresponding block will be executed. After that
 
     The special ``continue`` behavior in ``match`` supported in 3.x was removed in Godot 4.0.
 
-There are 6 pattern types:
+The following pattern types are available:
 
-- Constant pattern
-    Constant primitives, like numbers and strings::
+- Literal pattern
+    Matches a `literal <Literals_>`_::
 
         match x:
             1:
@@ -1481,9 +1588,8 @@ There are 6 pattern types:
             "test":
                 print("Oh snap! It's a string!")
 
-
-- Variable pattern
-    Matches the contents of a variable/enum::
+- Expression pattern
+    Matches a constant expression, an identifier, or an attribute access (``A.B``)::
 
         match typeof(x):
             TYPE_FLOAT:
@@ -1492,7 +1598,6 @@ There are 6 pattern types:
                 print("text")
             TYPE_ARRAY:
                 print("array")
-
 
 - Wildcard pattern
     This pattern matches everything. It's written as a single underscore.
@@ -1507,7 +1612,6 @@ There are 6 pattern types:
             _:
                 print("It's not 1 or 2. I don't care to be honest.")
 
-
 - Binding pattern
     A binding pattern introduces a new variable. Like the wildcard pattern, it matches everything - and also gives that value a name.
     It's especially useful in array and dictionary patterns::
@@ -1519,7 +1623,6 @@ There are 6 pattern types:
                 print("It's one times two!")
             var new_var:
                 print("It's not 1 or 2, it's ", new_var)
-
 
 - Array pattern
     Matches an array. Every single element of the array pattern is a pattern itself, so you can nest them.
@@ -1579,6 +1682,34 @@ There are 6 pattern types:
                 print("It's 1 - 3")
             "Sword", "Splash potion", "Fist":
                 print("Yep, you've taken damage")
+
+Pattern guards
+""""""""""""""
+
+Only one branch can be executed per ``match``. Once a branch is chosen, the rest are not checked.
+If you want to use the same pattern for multiple branches or to prevent choosing a branch with too general pattern,
+you can specify a guard expression after the list of patterns with the ``when`` keyword::
+
+    match point:
+        [0, 0]:
+            print("Origin")
+        [_, 0]:
+            print("Point on X-axis")
+        [0, _]:
+            print("Point on Y-axis")
+        [var x, var y] when y == x:
+            print("Point on line y = x")
+        [var x, var y] when y == -x:
+            print("Point on line y = -x")
+        [var x, var y]:
+            print("Point (%s, %s)" % [x, y])
+
+- If there is no matching pattern for the current branch, the guard expression
+  is **not** evaluated and the patterns of the next branch are checked.
+- If a matching pattern is found, the guard expression is evaluated.
+
+  - If it's true, then the body of the branch is executed and ``match`` ends.
+  - If it's false, then the patterns of the next branch are checked.
 
 Classes
 ~~~~~~~
@@ -1787,6 +1918,8 @@ when the class is loaded, after the static variables have been initialized::
         my_static_var = 2
 
 A static constructor cannot take arguments and must not return any value.
+
+.. _doc_gdscript_basics_inner_classes:
 
 Inner classes
 ^^^^^^^^^^^^^

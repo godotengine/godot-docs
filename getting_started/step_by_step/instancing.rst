@@ -1,5 +1,3 @@
-:article_outdated: True
-
 .. _doc_instancing:
 
 Creating instances
@@ -91,7 +89,7 @@ Click on it and drag it towards the center of the view.
 Play the game by pressing :kbd:`F5` (:kbd:`Cmd + B` on macOS). You should see it fall.
 
 Now, we want to create more instances of the Ball node. With the ball still
-selected, press :kbd:`Ctrl-D` (:kbd:`Cmd-D` on macOS) to call the duplicate
+selected, press :kbd:`Ctrl + D` (:kbd:`Cmd + D` on macOS) to call the duplicate
 command. Click and drag to move the new ball to a different location.
 
 .. image:: img/instancing_ball_duplicated.png
@@ -215,7 +213,7 @@ all working with the Godot editor.
 Summary
 -------
 
-Instancing, the process of producing an object from a blueprint has many handy
+Instancing, the process of producing an object from a blueprint, has many handy
 uses. With scenes, it gives you:
 
 - The ability to divide your game into reusable components.

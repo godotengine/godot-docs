@@ -19,6 +19,7 @@ Rules
    GD0104
    GD0105
    GD0106
+   GD0107
    GD0201
    GD0202
    GD0203

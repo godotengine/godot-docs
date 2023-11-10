@@ -1,5 +1,3 @@
-:article_outdated: True
-
 ..
     Intention:
 
@@ -44,7 +42,7 @@ icon, which we often use for prototyping in the community.
 We need to create a Sprite2D node to display it in the game. In the Scene dock,
 click the Other Node button.
 
-.. image:: img/scripting_first_script_click_other_node.png
+.. image:: img/scripting_first_script_click_other_node.webp
 
 Type "Sprite2D" in the search bar to filter nodes and double-click on Sprite2D
 to create the node.
@@ -67,11 +65,9 @@ slot.
     You can create Sprite2D nodes automatically by dragging and dropping images
     on the viewport.
 
-    .. image:: img/scripting_first_script_dragging_sprite.png
-
 Then, click and drag the icon in the viewport to center it in the game view.
 
-.. image:: img/scripting_first_script_centering_sprite.png
+.. image:: img/scripting_first_script_centering_sprite.webp
 
 Creating a new script
 ---------------------
@@ -85,7 +81,7 @@ The Attach Node Script window appears. It allows you to select the script's
 language and file path, among other options.
 
 Change the Template field from "Node: Default" to "Object: Empty" to start with a clean file. Leave the
-other options by default and click the Create button to create the script.
+other options set to their default values and click the Create button to create the script.
 
 .. image:: img/scripting_first_script_attach_node_script.webp
 
@@ -163,7 +159,7 @@ Save the scene as ``sprite_2d.tscn`` if you haven't already, then press :kbd:`F6
 to run it. Look at the **Output** bottom panel that expands.
 It should display "Hello, world!".
 
-.. image:: img/scripting_first_script_print_hello_world.png
+.. image:: img/scripting_first_script_print_hello_world.webp
 
 Delete the ``_init()`` function, so you're only left with the line ``extends
 Sprite2D``.
@@ -283,7 +279,7 @@ defines a local variable: it only exists within the function's scope.
 We define a local variable named ``velocity``, a 2D vector representing both a
 direction and a speed. To make the node move forward, we start from the Vector2
 class's constant ``Vector2.UP``, a vector pointing up, and rotate it by calling the
-``rotated()`` method on any ``Vector2``. This expression, ``Vector2.UP.rotated(rotation)``,
+Vector2 method ``rotated()``. This expression, ``Vector2.UP.rotated(rotation)``,
 is a vector pointing forward relative to our icon. Multiplied by our ``speed``
 property, it gives us a velocity we can use to move the node forward.
 
@@ -299,7 +295,7 @@ Run the scene to see the Godot head run in circles.
           walls or the floor. In :ref:`doc_your_first_2d_game`, you will learn
           another approach to moving objects while detecting collisions.
 
-Our node currently moves by itself. In the next part
+Our node currently moves by itself. In the next part,
 :ref:`doc_scripting_player_input`, we'll use player input to control it.
 
 Complete script

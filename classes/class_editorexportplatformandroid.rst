@@ -21,7 +21,7 @@ Tutorials
 
 - :doc:`Exporting for Android <../tutorials/export/exporting_for_android>`
 
-- :doc:`Custom builds for Android <../tutorials/export/android_custom_build>`
+- :doc:`Gradle builds for Android <../tutorials/export/android_gradle_build>`
 
 - :doc:`Android plugins documentation index <../tutorials/platform/index>`
 

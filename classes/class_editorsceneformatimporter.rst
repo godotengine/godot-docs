@@ -102,6 +102,14 @@ Constants
 
 
 
+.. _class_EditorSceneFormatImporter_constant_IMPORT_FORCE_DISABLE_MESH_COMPRESSION:
+
+.. rst-class:: classref-constant
+
+**IMPORT_FORCE_DISABLE_MESH_COMPRESSION** = ``64``
+
+
+
 .. rst-class:: classref-section-separator
 
 ----

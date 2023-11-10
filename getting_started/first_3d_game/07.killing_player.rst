@@ -384,7 +384,7 @@ Finally, the longest script, ``Player.gd``:
             var collision = get_slide_collision(index)
 
             # If the collision is with ground
-            if (collision.get_collider() == null):
+            if collision.get_collider() == null:
                 continue
 
             # If the collider is with a mob
@@ -395,6 +395,8 @@ Finally, the longest script, ``Player.gd``:
                     # If so, we squash it and bounce.
                     mob.squash()
                     target_velocity.y = bounce_impulse
+                    # Prevent further duplicate calls.
+                    break
 
         # Moving the Character
         velocity = target_velocity
@@ -496,6 +498,8 @@ Finally, the longest script, ``Player.gd``:
                         // If so, we squash it and bounce.
                         mob.Squash();
                         _targetVelocity.Y = BounceImpulse;
+                        // Prevent further duplicate calls.
+                        break;
                     }
                 }
             }

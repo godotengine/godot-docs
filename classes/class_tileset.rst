@@ -886,7 +886,7 @@ Returns the navigation layers count.
 
 :ref:`int<class_int>` **get_next_source_id** **(** **)** |const|
 
-Returns a new unused source ID. This generated ID is the same that a call to ``add_source`` would return.
+Returns a new unused source ID. This generated ID is the same that a call to :ref:`add_source<class_TileSet_method_add_source>` would return.
 
 .. rst-class:: classref-item-separator
 

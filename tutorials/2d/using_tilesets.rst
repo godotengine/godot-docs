@@ -428,7 +428,7 @@ to ``false``:
 :ref:`Tile property painting <doc_using_tilemaps_using_tile_property_painting>`
 can also be used for custom data:
 
-.. figure:: img/using_tilesets_edit_custom_data.webp
+.. figure:: img/using_tilesets_paint_custom_data.webp
    :align: center
    :alt: Assigning custom data in the TileSet editor using tile property painting
 
@@ -605,6 +605,13 @@ atlas), but configured in different ways. For example, you may want to use the
 same tile image, but rotated, flipped, or modulated with a different color. This
 can be done using *alternative tiles*.
 
+.. tip::
+
+      Since Godot 4.2, you don't have to create alternative tiles to rotate or
+      flip tiles anymore. You can rotate any tile while placing it in the
+      TileMap editor by using the rotation/flip buttons in the TileMap editor
+      toolbar.
+
 To create an alternative tile, right-click a base tile in the atlas displayed by
 the TileSet editor, then choose **Create an Alternative Tile**:
 
@@ -639,8 +646,11 @@ properties is different compared to base tiles:
 - **Rendering > Flip H:** If ``true``, the tile is horizontally flipped.
 - **Rendering > Flip V:** If ``true``, the tile is vertically flipped.
 - **Rendering > Transpose:** If ``true``, the tile is rotated 90 degrees
-  counter-clockwise. Combine this with **Flip H** and/or **Flip V** to perform
-  180-degree or 270-degree rotation.
+  *counter-clockwise* and then flipped vertically. In practice, this means that
+  to rotate a tile by 90 degrees clockwise without flipping it, you should
+  enable **Flip H** and **Transpose**. To rotate a tile by 180 degrees
+  clockwise, enable **Flip H** and **Flip V**. To rotate a tile by 270 degrees
+  clockwise, enable **Flip V** and **Transpose**.
 - **Rendering > Texture Origin:** The origin to use for drawing the tile. This
   can be used to visually offset the tile compared to the base tile.
 - **Rendering > Modulate:** The color multiplier to use when rendering the tile.

@@ -31,7 +31,7 @@ The last characteristic is important. **Together, nodes form a tree**, which is 
 feature to organize projects. Since different nodes have different functions,
 combining them produces more complex behavior. As we saw before, you can build a
 playable character the camera follows using a :ref:`CharacterBody2D <class_CharacterBody2D>`
-node named "Character", a :ref:`Sprite2D <class_Sprite2D>` node,
+node, a :ref:`Sprite2D <class_Sprite2D>` node,
 a :ref:`Camera2D <class_Camera2D>` node, and a :ref:`CollisionShape2D <class_CollisionShape2D>` node.
 
 .. image:: img/nodes_and_scenes_character_nodes.webp
@@ -121,7 +121,7 @@ below the Text property and type "Hello World".
 You will see the text draw in the viewport as you type.
 
 .. seealso:: You can edit any property listed in the Inspector as we did with
-             the Text. For a complete reference of the Inspector dock, see the
+             the Text. For a complete reference of the Inspector dock, see
              :ref:`doc_editor_inspector_dock`.
 
 You can move your Label node in the viewport by selecting the move tool in the

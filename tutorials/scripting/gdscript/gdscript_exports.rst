@@ -1,10 +1,7 @@
 .. _doc_gdscript_exports:
 
-GDScript exports
-================
-
-Introduction to exports
------------------------
+GDScript exported properties
+============================
 
 In Godot, class members can be exported. This means their value gets saved along
 with the resource (such as the :ref:`scene <class_PackedScene>`) they're

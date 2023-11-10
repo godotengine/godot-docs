@@ -345,7 +345,7 @@ Creates a new tile at coordinates ``atlas_coords`` with the given ``size``.
 
 :ref:`Vector2i<class_Vector2i>` **get_atlas_grid_size** **(** **)** |const|
 
-Returns the atlas grid size, which depends on how many tiles can fit in the texture. It thus depends on the Texture's size, the atlas ``margins`` the tiles' ``texture_region_size``.
+Returns the atlas grid size, which depends on how many tiles can fit in the texture. It thus depends on the :ref:`texture<class_TileSetAtlasSource_property_texture>`'s size, the atlas :ref:`margins<class_TileSetAtlasSource_property_margins>`, and the tiles' :ref:`texture_region_size<class_TileSetAtlasSource_property_texture_region_size>`.
 
 .. rst-class:: classref-item-separator
 

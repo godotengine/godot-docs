@@ -115,7 +115,7 @@ The number of items currently in the list.
 - void **set_switch_on_hover** **(** :ref:`bool<class_bool>` value **)**
 - :ref:`bool<class_bool>` **is_switch_on_hover** **(** **)**
 
-If ``true``, when the cursor hovers above another **MenuButton** within the same parent which also has ``switch_on_hover`` enabled, it will close the current **MenuButton** and open the other one.
+If ``true``, when the cursor hovers above another **MenuButton** within the same parent which also has :ref:`switch_on_hover<class_MenuButton_property_switch_on_hover>` enabled, it will close the current **MenuButton** and open the other one.
 
 .. rst-class:: classref-section-separator
 

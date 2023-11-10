@@ -40,11 +40,13 @@ Properties
 .. table::
    :widths: auto
 
-   +---------------------------+-------------------------------------------------------------------+----------+
-   | :ref:`bool<class_bool>`   | :ref:`compress<class_ResourceImporterBMFont_property_compress>`   | ``true`` |
-   +---------------------------+-------------------------------------------------------------------+----------+
-   | :ref:`Array<class_Array>` | :ref:`fallbacks<class_ResourceImporterBMFont_property_fallbacks>` | ``[]``   |
-   +---------------------------+-------------------------------------------------------------------+----------+
+   +---------------------------+-------------------------------------------------------------------------+----------+
+   | :ref:`bool<class_bool>`   | :ref:`compress<class_ResourceImporterBMFont_property_compress>`         | ``true`` |
+   +---------------------------+-------------------------------------------------------------------------+----------+
+   | :ref:`Array<class_Array>` | :ref:`fallbacks<class_ResourceImporterBMFont_property_fallbacks>`       | ``[]``   |
+   +---------------------------+-------------------------------------------------------------------------+----------+
+   | :ref:`int<class_int>`     | :ref:`scaling_mode<class_ResourceImporterBMFont_property_scaling_mode>` | ``2``    |
+   +---------------------------+-------------------------------------------------------------------------+----------+
 
 .. rst-class:: classref-section-separator
 
@@ -74,6 +76,18 @@ If ``true``, uses lossless compression for the resulting font.
 :ref:`Array<class_Array>` **fallbacks** = ``[]``
 
 List of font fallbacks to use if a glyph isn't found in this bitmap font. Fonts at the beginning of the array are attempted first.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ResourceImporterBMFont_property_scaling_mode:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **scaling_mode** = ``2``
+
+Font scaling mode.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

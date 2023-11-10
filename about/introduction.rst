@@ -28,7 +28,7 @@ is a great starting point.
 In case you have trouble with one of the tutorials or your project,
 you can find help on the various :ref:`Community channels <doc_community_channels>`,
 especially the Godot `Discord`_ community and
-`Q&A <https://godotengine.org/qa/>`_.
+`Q&A <https://ask.godotengine.org/>`_.
 
 About Godot Engine
 ------------------

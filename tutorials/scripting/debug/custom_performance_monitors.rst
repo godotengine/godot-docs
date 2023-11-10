@@ -7,11 +7,11 @@ Introduction
 ------------
 
 As explained in the :ref:`doc_debugger_panel` documentation, Godot features a
-**Debugger > Monitor** bottom panel that allows tracking various values with
+**Debugger > Monitors** bottom panel that allows tracking various values with
 graphs showing their evolution over time. The data for those graphs is sourced
 from the engine's :ref:`class_Performance` singleton.
 
-Since Godot 4.0, you can declare custom values to be displayed in this Monitor
+Since Godot 4.0, you can declare custom values to be displayed in the Monitors
 tab. Example use cases for custom performance monitors include:
 
 - Displaying performance metrics that are specific to your project. For
@@ -59,7 +59,7 @@ The main scene features a :ref:`class_Timer` node with the following script atta
 
 
 The second parameter of
-ref:`Performance.add_custom_monitor<class_Performance_method_add_custom_monitor>`
+:ref:`Performance.add_custom_monitor<class_Performance_method_add_custom_monitor>`
 is a :ref:`class_Callable`.
 
 ``enemy.tscn`` is a scene with a Node2D root node and Timer child node. The
@@ -91,7 +91,7 @@ Monitors** at the bottom of the editor window. Scroll down to the newly
 available **Game** section and check **Enemies**. You should see a graph
 appearing as follows:
 
-.. :figure: img/custom_performance_monitors_graph_example.webp
+.. figure:: img/custom_performance_monitors_graph_example.webp
    :align: center
    :alt: Example editor graph from a custom performance monitor
 

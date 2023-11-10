@@ -53,6 +53,7 @@ and :ref:`class_CPUParticles3D`, which are processed on the CPU.
 CPU particle systems are less flexible than their GPU counterpart, but they work on a wider range of hardware and
 provide better support for older devices and mobile phones. Because they are processed on the CPU,
 they are not as performant as GPU particle systems and can't render as many individual particles.
+In addition they currently do not have all the available options GPU particles have for control.
 
 GPU particle systems run on the GPU and can render hundreds of thousands of particles on modern
 hardware. You can write custom particle shaders for them, which makes them very flexible. You can

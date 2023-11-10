@@ -55,8 +55,8 @@ Advantages of C++ modules
 We recommend :ref:`C++ modules <doc_custom_modules_in_cpp>` in cases where
 GDExtension isn't enough:
 
-- C++ modules provide deeper integration into the engine. GDExtension's access is not as deep as
-  static modules
+- C++ modules provide deeper integration into the engine. GDExtension's access
+  is not as deep as static modules.
 - You can use C++ modules to provide additional features in a project without
   carrying native library files around. This extends to exported projects.
 
@@ -81,6 +81,8 @@ The bindings below are developed and maintained by the community:
 .. Binding developers: Feel free to open a pull request to add your binding if it's well-developed enough to be used in a project.
 .. Please keep languages sorted in alphabetical order.
 
+- `D <https://github.com/godot-dlang/godot-dlang>`__
+- `Haxe <https://hxgodot.github.io/>`__
 - `Rust <https://github.com/godot-rust/gdextension>`__
 - `Swift <https://github.com/migueldeicaza/SwiftGodot>`__
 
@@ -98,3 +100,9 @@ GDExtension add-ons compiled for a given Godot version are only guaranteed to wo
 with the same minor release series. For example, a GDExtension add-on compiled for
 Godot 4.0 will only work with Godot 4.0, 4.0.1, 4.0.2. In addition, GDExtension is
 not compatible with Godot 3.x.
+
+GDExtension add-ons are also only compatible with engine builds that use the
+level of floating-point precision the extension was compiled for. This means
+that if you use a engine build with double-precision floats, the extension must
+also be compiled for double-precision floats. See
+:ref:`doc_large_world_coordinates` for details.

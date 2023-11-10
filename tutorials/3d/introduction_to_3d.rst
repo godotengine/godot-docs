@@ -80,11 +80,11 @@ submitting them to the 3D API has a significant performance cost.
 Immediate geometry
 ------------------
 
-If, instead, you need to generate simple geometry that
-will be updated often, Godot provides a special node,
-:ref:`ImmediateMesh <class_ImmediateMesh>`,
-which provides an OpenGL 1.x style immediate-mode API to create points,
-lines, triangles, etc.
+If, instead, you need to generate simple geometry that will be updated often,
+Godot provides a special :ref:`ImmediateMesh <class_ImmediateMesh>` resource
+that can be used in a :ref:`MeshInstance3D <class_MeshInstance3D>` node.
+This provides an OpenGL 1.x-style immediate-mode API to create points, lines,
+triangles, etc.
 
 2D in 3D
 --------
@@ -174,6 +174,36 @@ Some useful keybindings:
 -  To snap placement or rotation, press :kbd:`Ctrl` while moving, scaling
    or rotating.
 -  To center the view on the selected object, press :kbd:`F`.
+
+Using Blender-style transform shortcuts
+---------------------------------------
+
+Since Godot 4.2, you can enable Blender-style shortcuts for translating,
+rotating and scaling nodes. In Blender, these shortcuts are:
+
+- :kbd:`G` for translating
+- :kbd:`R` for rotating
+- :kbd:`S` for scaling
+
+After pressing a shortcut key while focusing on the 3D editor viewport,
+move the mouse or enter a number to move the selected node(s) by the
+specified amount in 3D units. You can constrain movement to a specific
+axis by specifying the axis as a letter, then the distance (if entering a
+value with the keyboard).
+
+For instance, to move the selection upwards by 2.5 units, enter the
+following sequence in order (Y+ is upwards in Godot):
+
+:kbd:`G`-:kbd:`Y`-:kbd:`2`-:kbd:`.`-:kbd:`5`-:kbd:`Enter`
+
+To use Blender-style transform shortcuts in Godot, go to the Editor Settings'
+**Shortcuts** tab, then in the Spatial Editor section:
+
+- Bind **Begin Translate Transformation** to :kbd:`G`.
+- Bind **Begin Rotate Transformation** to :kbd:`R`.
+- Bind **Begin Scale Transformation** to :kbd:`S`.
+- Finally, unbind **Scale Mode** so that its shortcut won't conflict with
+  **Begin Rotate Transformation**.
 
 View menu
 ---------

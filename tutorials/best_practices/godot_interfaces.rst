@@ -80,14 +80,14 @@ access.
         // No "preload" loads during scene load exists in C#.
 
         // Initialize with a value. Editable at runtime.
-        public Script MyScript = GD.Load<Script>("MyScript.cs");
+        public Script MyScript = GD.Load<Script>("res://Path/To/MyScript.cs");
 
         // Initialize with same value. Value cannot be changed.
-        public readonly Script MyConstScript = GD.Load<Script>("MyScript.cs");
+        public readonly Script MyConstScript = GD.Load<Script>("res://Path/To/MyScript.cs");
 
         // Like 'readonly' due to inaccessible setter.
         // But, value can be set during constructor, i.e. MyType().
-        public Script Library { get; } = GD.Load<Script>("res://addons/plugin/library.gd");
+        public Script MyNoSetScript { get; } = GD.Load<Script>("res://Path/To/MyScript.cs");
 
         // If need a "const [Export]" (which doesn't exist), use a
         // conditional setter for a tool script that checks if it's executing
@@ -108,11 +108,13 @@ access.
         };
 
         // Warn users if the value hasn't been set.
-        public String _GetConfigurationWarnings()
+        public string[] _GetConfigurationWarnings()
         {
             if (EnemyScn == null)
-                return "Must initialize property 'EnemyScn'.";
-            return "";
+            {
+                return new string[] { "Must initialize property 'EnemyScn'." };
+            }
+            return Array.Empty<string>();
         }
     }
 

@@ -760,9 +760,18 @@ used, and how the editor should allow users to modify it.
     uniform vec4 other_color : source_color = vec4(1.0); // Default values go after the hint.
     uniform sampler2D image : source_color;
 
-It's important to understand that textures that are supplied as color require
-hints for proper sRGB->linear conversion (i.e. ``source_color``), as Godot's 3D
-engine renders in linear color space.
+It's important to understand that textures *that are supplied as color* require
+hints for proper sRGB -> linear conversion (i.e. ``source_color``), as Godot's
+3D engine renders in linear color space. If this is not done, the texture will
+appear washed out.
+
+.. note::
+
+    The 2D renderer also renders in linear color space if the
+    **Rendering > Viewport > HDR 2D** project setting is enabled, so
+    ``source_color`` must also be used in ``canvas_item`` shaders. If 2D HDR is
+    disabled, ``source_color`` will keep working correctly in ``canvas_item``
+    shaders, so it's recommend to use it either way.
 
 Full list of hints below:
 
@@ -797,7 +806,7 @@ Full list of hints below:
 +----------------------+--------------------------------------------------+-----------------------------------------------------------------------------+
 | **sampler2D**        | hint_depth_texture                               | Texture is the depth texture.                                               |
 +----------------------+--------------------------------------------------+-----------------------------------------------------------------------------+
-| **sampler2D**        | hint_normal_roughness_texture                    | Texture is the normal roughness texture.                                    |
+| **sampler2D**        | hint_normal_roughness_texture                    | Texture is the normal roughness texture (only supported in Forward+).       |
 +----------------------+--------------------------------------------------+-----------------------------------------------------------------------------+
 
 GDScript uses different variable types than GLSL does, so when passing variables
@@ -1285,8 +1294,8 @@ is used, it can be scalar or vector.
 | gvec4_type **textureLod** (gsampler2D s, vec2 p, float lod)                 | Perform a texture read at custom mipmap.                            |
 |                                                                             |                                                                     |
 | gvec4_type **textureLod** (gsampler2DArray s, vec3 p, float lod)            | The LOD defines which mipmap level is used. An LOD value of ``0.0`` |
-|                                                                             | will use the full resolution texture.                               |
-| gvec4_type **textureLod** (gsampler3D s, vec3 p, float lod)                 |                                                                     |
+|                                                                             | will use the full resolution texture. If the texture lacks mipmaps, |
+| gvec4_type **textureLod** (gsampler3D s, vec3 p, float lod)                 | all LOD values will act like ``0.0``.                               |
 |                                                                             |                                                                     |
 | vec4 **textureLod** (samplerCube s, vec3 p, float lod)                      |                                                                     |
 |                                                                             |                                                                     |
@@ -1295,8 +1304,8 @@ is used, it can be scalar or vector.
 | gvec4_type **textureProjLod** (gsampler2D s, vec3 p, float lod)             | Performs a texture read with projection/LOD.                        |
 |                                                                             |                                                                     |
 | gvec4_type **textureProjLod** (gsampler2D s, vec4 p, float lod)             | The LOD defines which mipmap level is used. An LOD value of ``0.0`` |
-|                                                                             | will use the full resolution texture.                               |
-| gvec4_type **textureProjLod** (gsampler3D s, vec4 p, float lod)             |                                                                     |
+|                                                                             | will use the full resolution texture. If the texture lacks mipmaps, |
+| gvec4_type **textureProjLod** (gsampler3D s, vec4 p, float lod)             | all LOD values will act like ``0.0``.                               |
 +-----------------------------------------------------------------------------+---------------------------------------------------------------------+
 | gvec4_type **textureGrad** (gsampler2D s, vec2 p, vec2 dPdx,                | Performs a texture read with explicit gradients.                    |
 | vec2 dPdy)                                                                  |                                                                     |

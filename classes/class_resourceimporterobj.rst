@@ -28,7 +28,7 @@ See also :ref:`ResourceImporterScene<class_ResourceImporterScene>`, which is use
 Tutorials
 ---------
 
-- :doc:`Importing 3D scenes <../tutorials/assets_pipeline/importing_scenes>`
+- :doc:`Importing 3D scenes <../tutorials/assets_pipeline/importing_3d_scenes/index>`
 
 .. rst-class:: classref-reftable-group
 
@@ -38,15 +38,17 @@ Properties
 .. table::
    :widths: auto
 
-   +-------------------------------+--------------------------------------------------------------------------------+----------------------+
-   | :ref:`bool<class_bool>`       | :ref:`generate_tangents<class_ResourceImporterOBJ_property_generate_tangents>` | ``true``             |
-   +-------------------------------+--------------------------------------------------------------------------------+----------------------+
-   | :ref:`Vector3<class_Vector3>` | :ref:`offset_mesh<class_ResourceImporterOBJ_property_offset_mesh>`             | ``Vector3(0, 0, 0)`` |
-   +-------------------------------+--------------------------------------------------------------------------------+----------------------+
-   | :ref:`bool<class_bool>`       | :ref:`optimize_mesh<class_ResourceImporterOBJ_property_optimize_mesh>`         | ``true``             |
-   +-------------------------------+--------------------------------------------------------------------------------+----------------------+
-   | :ref:`Vector3<class_Vector3>` | :ref:`scale_mesh<class_ResourceImporterOBJ_property_scale_mesh>`               | ``Vector3(1, 1, 1)`` |
-   +-------------------------------+--------------------------------------------------------------------------------+----------------------+
+   +-------------------------------+----------------------------------------------------------------------------------------------------------+----------------------+
+   | :ref:`bool<class_bool>`       | :ref:`force_disable_mesh_compression<class_ResourceImporterOBJ_property_force_disable_mesh_compression>` | ``false``            |
+   +-------------------------------+----------------------------------------------------------------------------------------------------------+----------------------+
+   | :ref:`bool<class_bool>`       | :ref:`generate_tangents<class_ResourceImporterOBJ_property_generate_tangents>`                           | ``true``             |
+   +-------------------------------+----------------------------------------------------------------------------------------------------------+----------------------+
+   | :ref:`Vector3<class_Vector3>` | :ref:`offset_mesh<class_ResourceImporterOBJ_property_offset_mesh>`                                       | ``Vector3(0, 0, 0)`` |
+   +-------------------------------+----------------------------------------------------------------------------------------------------------+----------------------+
+   | :ref:`bool<class_bool>`       | :ref:`optimize_mesh<class_ResourceImporterOBJ_property_optimize_mesh>`                                   | ``true``             |
+   +-------------------------------+----------------------------------------------------------------------------------------------------------+----------------------+
+   | :ref:`Vector3<class_Vector3>` | :ref:`scale_mesh<class_ResourceImporterOBJ_property_scale_mesh>`                                         | ``Vector3(1, 1, 1)`` |
+   +-------------------------------+----------------------------------------------------------------------------------------------------------+----------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -56,6 +58,18 @@ Properties
 
 Property Descriptions
 ---------------------
+
+.. _class_ResourceImporterOBJ_property_force_disable_mesh_compression:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **force_disable_mesh_compression** = ``false``
+
+If ``true``, mesh compression will not be used. Consider enabling if you notice blocky artifacts in your mesh normals or UVs, or if you have meshes that are larger than a few thousand meters in each direction.
+
+.. rst-class:: classref-item-separator
+
+----
 
 .. _class_ResourceImporterOBJ_property_generate_tangents:
 

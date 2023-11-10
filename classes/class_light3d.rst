@@ -331,6 +331,8 @@ Light is ignored when baking. This is the fastest mode, but the light will be ta
 
 Light is taken into account in static baking (:ref:`VoxelGI<class_VoxelGI>`, :ref:`LightmapGI<class_LightmapGI>`, SDFGI (:ref:`Environment.sdfgi_enabled<class_Environment_property_sdfgi_enabled>`)). The light can be moved around or modified, but its global illumination will not update in real-time. This is suitable for subtle changes (such as flickering torches), but generally not large changes such as toggling a light on and off.
 
+\ **Note:** The light is not baked in :ref:`LightmapGI<class_LightmapGI>` if :ref:`editor_only<class_Light3D_property_editor_only>` is ``true``.
+
 .. _class_Light3D_constant_BAKE_DYNAMIC:
 
 .. rst-class:: classref-enumeration-constant
@@ -435,7 +437,7 @@ The distance from the camera at which the light's shadow cuts off (in 3D units).
 - void **set_editor_only** **(** :ref:`bool<class_bool>` value **)**
 - :ref:`bool<class_bool>` **is_editor_only** **(** **)**
 
-If ``true``, the light only appears in the editor and will not be visible at runtime.
+If ``true``, the light only appears in the editor and will not be visible at runtime. If ``true``, the light will never be baked in :ref:`LightmapGI<class_LightmapGI>` regardless of its :ref:`light_bake_mode<class_Light3D_property_light_bake_mode>`.
 
 .. rst-class:: classref-item-separator
 
