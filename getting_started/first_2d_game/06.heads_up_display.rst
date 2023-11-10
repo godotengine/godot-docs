@@ -371,9 +371,6 @@ In ``game_over()`` we need to call the corresponding ``HUD`` function:
 
         _hud->show_game_over();
 
-Just a reminder: we don't want to start the new game automatically, so
-remove the call to ``new_game()`` in ``_ready()`` if you haven't yet.
-
 Finally, add this to ``_on_score_timer_timeout()`` to keep the display in sync
 with the changing score:
 
@@ -389,6 +386,12 @@ with the changing score:
  .. code-tab:: cpp
 
         _hud->update_score(score);
+
+.. warning::
+
+    Remember to remove the call to ``new_game()`` from
+    ``_ready()`` if you haven't already, otherwise
+    your game will start automatically.
 
 Now you're ready to play! Click the "Play the Project" button. You will be asked
 to select a main scene, so choose ``main.tscn``.
