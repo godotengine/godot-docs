@@ -48,7 +48,7 @@ Methods
    :widths: auto
 
    +-------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`AABB<class_AABB>` | :ref:`_get_aabb<class_VisualInstance3D_method__get_aabb>` **(** **)** |virtual| |const|                                                                       |
+   | :ref:`AABB<class_AABB>` | :ref:`_get_aabb<class_VisualInstance3D_private_method__get_aabb>` **(** **)** |virtual| |const|                                                               |
    +-------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`AABB<class_AABB>` | :ref:`get_aabb<class_VisualInstance3D_method_get_aabb>` **(** **)** |const|                                                                                   |
    +-------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -138,7 +138,7 @@ The :ref:`AABB<class_AABB>` center based sorting is generally more accurate for 
 Method Descriptions
 -------------------
 
-.. _class_VisualInstance3D_method__get_aabb:
+.. _class_VisualInstance3D_private_method__get_aabb:
 
 .. rst-class:: classref-method
 

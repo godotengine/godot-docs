@@ -99,8 +99,8 @@ information, read the dedicated documentation:
     }
 
 Two more essential built-in node callback functions are
-:ref:`Node._unhandled_input() <class_Node_method__unhandled_input>` and
-:ref:`Node._input() <class_Node_method__input>`, which you use to both receive
+:ref:`Node._unhandled_input() <class_Node_private_method__unhandled_input>` and
+:ref:`Node._input() <class_Node_private_method__input>`, which you use to both receive
 and process individual input events. The ``_unhandled_input()`` method receives
 every key press, mouse click, etc. that have not been handled already in an
 ``_input()`` callback or in a user interface component. You want to use it for
@@ -138,7 +138,7 @@ To learn more about inputs in Godot, see the :ref:`Input section <toc-learn-feat
 
 There are some more overridable functions like
 :ref:`Node._get_configuration_warnings()
-<class_Node_method__get_configuration_warnings>`. Specialized node types provide
-more callbacks like :ref:`CanvasItem._draw() <class_CanvasItem_method__draw>` to
+<class_Node_private_method__get_configuration_warnings>`. Specialized node types provide
+more callbacks like :ref:`CanvasItem._draw() <class_CanvasItem_private_method__draw>` to
 draw programmatically or :ref:`Control._gui_input()
-<class_Control_method__gui_input>` to handle clicks and input on UI elements.
+<class_Control_private_method__gui_input>` to handle clicks and input on UI elements.

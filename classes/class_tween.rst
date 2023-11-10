@@ -143,7 +143,7 @@ Some :ref:`Tweener<class_Tweener>`\ s use transitions and eases. The first accep
 
 \ **Note:** Tweens are not designed to be re-used and trying to do so results in an undefined behavior. Create a new Tween for each animation and every time you replay an animation from start. Keep in mind that Tweens start immediately, so only create a Tween when you want to start animating.
 
-\ **Note:** The tween is processed after all of the nodes in the current frame, i.e. node's :ref:`Node._process<class_Node_method__process>` method would be called before the tween (or :ref:`Node._physics_process<class_Node_method__physics_process>` depending on the value passed to :ref:`set_process_mode<class_Tween_method_set_process_mode>`).
+\ **Note:** The tween is processed after all of the nodes in the current frame, i.e. node's :ref:`Node._process<class_Node_private_method__process>` method would be called before the tween (or :ref:`Node._physics_process<class_Node_private_method__physics_process>` depending on the value passed to :ref:`set_process_mode<class_Tween_method_set_process_mode>`).
 
 .. rst-class:: classref-reftable-group
 
@@ -265,7 +265,7 @@ enum **TweenProcessMode**:
 
 :ref:`TweenProcessMode<enum_Tween_TweenProcessMode>` **TWEEN_PROCESS_PHYSICS** = ``0``
 
-The **Tween** updates after each physics frame (see :ref:`Node._physics_process<class_Node_method__physics_process>`).
+The **Tween** updates after each physics frame (see :ref:`Node._physics_process<class_Node_private_method__physics_process>`).
 
 .. _class_Tween_constant_TWEEN_PROCESS_IDLE:
 
@@ -273,7 +273,7 @@ The **Tween** updates after each physics frame (see :ref:`Node._physics_process<
 
 :ref:`TweenProcessMode<enum_Tween_TweenProcessMode>` **TWEEN_PROCESS_IDLE** = ``1``
 
-The **Tween** updates after each process frame (see :ref:`Node._process<class_Node_method__process>`).
+The **Tween** updates after each process frame (see :ref:`Node._process<class_Node_private_method__process>`).
 
 .. rst-class:: classref-item-separator
 
@@ -734,7 +734,7 @@ Default value is :ref:`TWEEN_PAUSE_BOUND<class_Tween_constant_TWEEN_PAUSE_BOUND>
 
 :ref:`Tween<class_Tween>` **set_process_mode** **(** :ref:`TweenProcessMode<enum_Tween_TweenProcessMode>` mode **)**
 
-Determines whether the **Tween** should run after process frames (see :ref:`Node._process<class_Node_method__process>`) or physics frames (see :ref:`Node._physics_process<class_Node_method__physics_process>`).
+Determines whether the **Tween** should run after process frames (see :ref:`Node._process<class_Node_private_method__process>`) or physics frames (see :ref:`Node._physics_process<class_Node_private_method__physics_process>`).
 
 Default value is :ref:`TWEEN_PROCESS_IDLE<class_Tween_constant_TWEEN_PROCESS_IDLE>`.
 

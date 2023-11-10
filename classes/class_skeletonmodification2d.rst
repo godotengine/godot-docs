@@ -48,11 +48,11 @@ Methods
    :widths: auto
 
    +-----------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                                                  | :ref:`_draw_editor_gizmo<class_SkeletonModification2D_method__draw_editor_gizmo>` **(** **)** |virtual|                                                                                                       |
+   | void                                                                  | :ref:`_draw_editor_gizmo<class_SkeletonModification2D_private_method__draw_editor_gizmo>` **(** **)** |virtual|                                                                                               |
    +-----------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                                                  | :ref:`_execute<class_SkeletonModification2D_method__execute>` **(** :ref:`float<class_float>` delta **)** |virtual|                                                                                           |
+   | void                                                                  | :ref:`_execute<class_SkeletonModification2D_private_method__execute>` **(** :ref:`float<class_float>` delta **)** |virtual|                                                                                   |
    +-----------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                                                  | :ref:`_setup_modification<class_SkeletonModification2D_method__setup_modification>` **(** :ref:`SkeletonModificationStack2D<class_SkeletonModificationStack2D>` modification_stack **)** |virtual|            |
+   | void                                                                  | :ref:`_setup_modification<class_SkeletonModification2D_private_method__setup_modification>` **(** :ref:`SkeletonModificationStack2D<class_SkeletonModificationStack2D>` modification_stack **)** |virtual|    |
    +-----------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                                             | :ref:`clamp_angle<class_SkeletonModification2D_method_clamp_angle>` **(** :ref:`float<class_float>` angle, :ref:`float<class_float>` min, :ref:`float<class_float>` max, :ref:`bool<class_bool>` invert **)** |
    +-----------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -87,7 +87,7 @@ Property Descriptions
 - void **set_enabled** **(** :ref:`bool<class_bool>` value **)**
 - :ref:`bool<class_bool>` **get_enabled** **(** **)**
 
-If ``true``, the modification's :ref:`_execute<class_SkeletonModification2D_method__execute>` function will be called by the :ref:`SkeletonModificationStack2D<class_SkeletonModificationStack2D>`.
+If ``true``, the modification's :ref:`_execute<class_SkeletonModification2D_private_method__execute>` function will be called by the :ref:`SkeletonModificationStack2D<class_SkeletonModificationStack2D>`.
 
 .. rst-class:: classref-item-separator
 
@@ -115,7 +115,7 @@ The execution mode for the modification. This tells the modification stack when 
 Method Descriptions
 -------------------
 
-.. _class_SkeletonModification2D_method__draw_editor_gizmo:
+.. _class_SkeletonModification2D_private_method__draw_editor_gizmo:
 
 .. rst-class:: classref-method
 
@@ -129,7 +129,7 @@ Used for drawing **editor-only** modification gizmos. This function will only be
 
 ----
 
-.. _class_SkeletonModification2D_method__execute:
+.. _class_SkeletonModification2D_private_method__execute:
 
 .. rst-class:: classref-method
 
@@ -141,7 +141,7 @@ Executes the given modification. This is where the modification performs whateve
 
 ----
 
-.. _class_SkeletonModification2D_method__setup_modification:
+.. _class_SkeletonModification2D_private_method__setup_modification:
 
 .. rst-class:: classref-method
 
@@ -171,7 +171,7 @@ Takes an angle and clamps it so it is within the passed-in ``min`` and ``max`` r
 
 :ref:`bool<class_bool>` **get_editor_draw_gizmo** **(** **)** |const|
 
-Returns whether this modification will call :ref:`_draw_editor_gizmo<class_SkeletonModification2D_method__draw_editor_gizmo>` in the Godot editor to draw modification-specific gizmos.
+Returns whether this modification will call :ref:`_draw_editor_gizmo<class_SkeletonModification2D_private_method__draw_editor_gizmo>` in the Godot editor to draw modification-specific gizmos.
 
 .. rst-class:: classref-item-separator
 
@@ -207,7 +207,7 @@ Returns the :ref:`SkeletonModificationStack2D<class_SkeletonModificationStack2D>
 
 void **set_editor_draw_gizmo** **(** :ref:`bool<class_bool>` draw_gizmo **)**
 
-Sets whether this modification will call :ref:`_draw_editor_gizmo<class_SkeletonModification2D_method__draw_editor_gizmo>` in the Godot editor to draw modification-specific gizmos.
+Sets whether this modification will call :ref:`_draw_editor_gizmo<class_SkeletonModification2D_private_method__draw_editor_gizmo>` in the Godot editor to draw modification-specific gizmos.
 
 .. rst-class:: classref-item-separator
 

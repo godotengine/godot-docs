@@ -453,7 +453,7 @@ For each property:
    Not all properties are included. Only properties that are configured with the
    :ref:`PROPERTY_USAGE_STORAGE<class_@GlobalScope_constant_PROPERTY_USAGE_STORAGE>`
    flag set will be serialized. You can add a new usage flag to a property by overriding the
-   :ref:`_get_property_list<class_Object_method__get_property_list>`
+   :ref:`_get_property_list<class_Object_private_method__get_property_list>`
    method in your class. You can also check how property usage is configured by
    calling ``Object._get_property_list`` See
    :ref:`PropertyUsageFlags<enum_@GlobalScope_PropertyUsageFlags>` for the

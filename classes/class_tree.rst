@@ -681,7 +681,7 @@ The number of columns.
 - void **set_drop_mode_flags** **(** :ref:`int<class_int>` value **)**
 - :ref:`int<class_int>` **get_drop_mode_flags** **(** **)**
 
-The drop mode as an OR combination of flags. See :ref:`DropModeFlags<enum_Tree_DropModeFlags>` constants. Once dropping is done, reverts to :ref:`DROP_MODE_DISABLED<class_Tree_constant_DROP_MODE_DISABLED>`. Setting this during :ref:`Control._can_drop_data<class_Control_method__can_drop_data>` is recommended.
+The drop mode as an OR combination of flags. See :ref:`DropModeFlags<enum_Tree_DropModeFlags>` constants. Once dropping is done, reverts to :ref:`DROP_MODE_DISABLED<class_Tree_constant_DROP_MODE_DISABLED>`. Setting this during :ref:`Control._can_drop_data<class_Control_private_method__can_drop_data>` is recommended.
 
 This controls the drop sections, i.e. the decision and drawing of possible drop locations based on the mouse position.
 

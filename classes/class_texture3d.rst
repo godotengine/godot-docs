@@ -35,33 +35,33 @@ Methods
 .. table::
    :widths: auto
 
-   +----------------------------------+------------------------------------------------------------------------------------------+
-   | :ref:`Image[]<class_Image>`      | :ref:`_get_data<class_Texture3D_method__get_data>` **(** **)** |virtual| |const|         |
-   +----------------------------------+------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`            | :ref:`_get_depth<class_Texture3D_method__get_depth>` **(** **)** |virtual| |const|       |
-   +----------------------------------+------------------------------------------------------------------------------------------+
-   | :ref:`Format<enum_Image_Format>` | :ref:`_get_format<class_Texture3D_method__get_format>` **(** **)** |virtual| |const|     |
-   +----------------------------------+------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`            | :ref:`_get_height<class_Texture3D_method__get_height>` **(** **)** |virtual| |const|     |
-   +----------------------------------+------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`            | :ref:`_get_width<class_Texture3D_method__get_width>` **(** **)** |virtual| |const|       |
-   +----------------------------------+------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`          | :ref:`_has_mipmaps<class_Texture3D_method__has_mipmaps>` **(** **)** |virtual| |const|   |
-   +----------------------------------+------------------------------------------------------------------------------------------+
-   | :ref:`Resource<class_Resource>`  | :ref:`create_placeholder<class_Texture3D_method_create_placeholder>` **(** **)** |const| |
-   +----------------------------------+------------------------------------------------------------------------------------------+
-   | :ref:`Image[]<class_Image>`      | :ref:`get_data<class_Texture3D_method_get_data>` **(** **)** |const|                     |
-   +----------------------------------+------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`            | :ref:`get_depth<class_Texture3D_method_get_depth>` **(** **)** |const|                   |
-   +----------------------------------+------------------------------------------------------------------------------------------+
-   | :ref:`Format<enum_Image_Format>` | :ref:`get_format<class_Texture3D_method_get_format>` **(** **)** |const|                 |
-   +----------------------------------+------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`            | :ref:`get_height<class_Texture3D_method_get_height>` **(** **)** |const|                 |
-   +----------------------------------+------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`            | :ref:`get_width<class_Texture3D_method_get_width>` **(** **)** |const|                   |
-   +----------------------------------+------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`          | :ref:`has_mipmaps<class_Texture3D_method_has_mipmaps>` **(** **)** |const|               |
-   +----------------------------------+------------------------------------------------------------------------------------------+
+   +----------------------------------+------------------------------------------------------------------------------------------------+
+   | :ref:`Image[]<class_Image>`      | :ref:`_get_data<class_Texture3D_private_method__get_data>` **(** **)** |virtual| |const|       |
+   +----------------------------------+------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`            | :ref:`_get_depth<class_Texture3D_private_method__get_depth>` **(** **)** |virtual| |const|     |
+   +----------------------------------+------------------------------------------------------------------------------------------------+
+   | :ref:`Format<enum_Image_Format>` | :ref:`_get_format<class_Texture3D_private_method__get_format>` **(** **)** |virtual| |const|   |
+   +----------------------------------+------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`            | :ref:`_get_height<class_Texture3D_private_method__get_height>` **(** **)** |virtual| |const|   |
+   +----------------------------------+------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`            | :ref:`_get_width<class_Texture3D_private_method__get_width>` **(** **)** |virtual| |const|     |
+   +----------------------------------+------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`          | :ref:`_has_mipmaps<class_Texture3D_private_method__has_mipmaps>` **(** **)** |virtual| |const| |
+   +----------------------------------+------------------------------------------------------------------------------------------------+
+   | :ref:`Resource<class_Resource>`  | :ref:`create_placeholder<class_Texture3D_method_create_placeholder>` **(** **)** |const|       |
+   +----------------------------------+------------------------------------------------------------------------------------------------+
+   | :ref:`Image[]<class_Image>`      | :ref:`get_data<class_Texture3D_method_get_data>` **(** **)** |const|                           |
+   +----------------------------------+------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`            | :ref:`get_depth<class_Texture3D_method_get_depth>` **(** **)** |const|                         |
+   +----------------------------------+------------------------------------------------------------------------------------------------+
+   | :ref:`Format<enum_Image_Format>` | :ref:`get_format<class_Texture3D_method_get_format>` **(** **)** |const|                       |
+   +----------------------------------+------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`            | :ref:`get_height<class_Texture3D_method_get_height>` **(** **)** |const|                       |
+   +----------------------------------+------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`            | :ref:`get_width<class_Texture3D_method_get_width>` **(** **)** |const|                         |
+   +----------------------------------+------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`          | :ref:`has_mipmaps<class_Texture3D_method_has_mipmaps>` **(** **)** |const|                     |
+   +----------------------------------+------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -72,7 +72,7 @@ Methods
 Method Descriptions
 -------------------
 
-.. _class_Texture3D_method__get_data:
+.. _class_Texture3D_private_method__get_data:
 
 .. rst-class:: classref-method
 
@@ -84,7 +84,7 @@ Called when the **Texture3D**'s data is queried.
 
 ----
 
-.. _class_Texture3D_method__get_depth:
+.. _class_Texture3D_private_method__get_depth:
 
 .. rst-class:: classref-method
 
@@ -96,7 +96,7 @@ Called when the **Texture3D**'s depth is queried.
 
 ----
 
-.. _class_Texture3D_method__get_format:
+.. _class_Texture3D_private_method__get_format:
 
 .. rst-class:: classref-method
 
@@ -108,7 +108,7 @@ Called when the **Texture3D**'s format is queried.
 
 ----
 
-.. _class_Texture3D_method__get_height:
+.. _class_Texture3D_private_method__get_height:
 
 .. rst-class:: classref-method
 
@@ -120,7 +120,7 @@ Called when the **Texture3D**'s height is queried.
 
 ----
 
-.. _class_Texture3D_method__get_width:
+.. _class_Texture3D_private_method__get_width:
 
 .. rst-class:: classref-method
 
@@ -132,7 +132,7 @@ Called when the **Texture3D**'s width is queried.
 
 ----
 
-.. _class_Texture3D_method__has_mipmaps:
+.. _class_Texture3D_private_method__has_mipmaps:
 
 .. rst-class:: classref-method
 

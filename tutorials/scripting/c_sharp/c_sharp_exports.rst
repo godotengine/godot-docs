@@ -540,9 +540,9 @@ common exporting features which can be implemented with a low-level API.
 
 Before reading further, you should get familiar with the way properties are
 handled and how they can be customized with
-:ref:`_Set() <class_Object_method__set>`,
-:ref:`_Get() <class_Object_method__get>`, and
-:ref:`_GetPropertyList() <class_Object_method__get_property_list>` methods as
+:ref:`_Set() <class_Object_private_method__set>`,
+:ref:`_Get() <class_Object_private_method__get>`, and
+:ref:`_GetPropertyList() <class_Object_private_method__get_property_list>` methods as
 described in :ref:`doc_accessing_data_or_logic_from_object`.
 
 .. seealso:: For binding properties using the above methods in C++, see

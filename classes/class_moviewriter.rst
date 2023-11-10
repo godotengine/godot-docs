@@ -19,7 +19,7 @@ Abstract class for non-real-time video recording encoders.
 Description
 -----------
 
-Godot can record videos with non-real-time simulation. Like the ``--fixed-fps`` :doc:`command line argument <../tutorials/editor/command_line_tutorial>`, this forces the reported ``delta`` in :ref:`Node._process<class_Node_method__process>` functions to be identical across frames, regardless of how long it actually took to render the frame. This can be used to record high-quality videos with perfect frame pacing regardless of your hardware's capabilities.
+Godot can record videos with non-real-time simulation. Like the ``--fixed-fps`` :doc:`command line argument <../tutorials/editor/command_line_tutorial>`, this forces the reported ``delta`` in :ref:`Node._process<class_Node_private_method__process>` functions to be identical across frames, regardless of how long it actually took to render the frame. This can be used to record high-quality videos with perfect frame pacing regardless of your hardware's capabilities.
 
 Godot has 2 built-in **MovieWriter**\ s:
 
@@ -41,21 +41,21 @@ Methods
 .. table::
    :widths: auto
 
-   +--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                            | :ref:`_get_audio_mix_rate<class_MovieWriter_method__get_audio_mix_rate>` **(** **)** |virtual| |const|                                                                                        |
-   +--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`SpeakerMode<enum_AudioServer_SpeakerMode>` | :ref:`_get_audio_speaker_mode<class_MovieWriter_method__get_audio_speaker_mode>` **(** **)** |virtual| |const|                                                                                |
-   +--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                          | :ref:`_handles_file<class_MovieWriter_method__handles_file>` **(** :ref:`String<class_String>` path **)** |virtual| |const|                                                                   |
-   +--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Error<enum_@GlobalScope_Error>`            | :ref:`_write_begin<class_MovieWriter_method__write_begin>` **(** :ref:`Vector2i<class_Vector2i>` movie_size, :ref:`int<class_int>` fps, :ref:`String<class_String>` base_path **)** |virtual| |
-   +--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                             | :ref:`_write_end<class_MovieWriter_method__write_end>` **(** **)** |virtual|                                                                                                                  |
-   +--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Error<enum_@GlobalScope_Error>`            | :ref:`_write_frame<class_MovieWriter_method__write_frame>` **(** :ref:`Image<class_Image>` frame_image, const void* audio_frame_block **)** |virtual|                                         |
-   +--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                             | :ref:`add_writer<class_MovieWriter_method_add_writer>` **(** :ref:`MovieWriter<class_MovieWriter>` writer **)** |static|                                                                      |
-   +--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +--------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                            | :ref:`_get_audio_mix_rate<class_MovieWriter_private_method__get_audio_mix_rate>` **(** **)** |virtual| |const|                                                                                        |
+   +--------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`SpeakerMode<enum_AudioServer_SpeakerMode>` | :ref:`_get_audio_speaker_mode<class_MovieWriter_private_method__get_audio_speaker_mode>` **(** **)** |virtual| |const|                                                                                |
+   +--------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                          | :ref:`_handles_file<class_MovieWriter_private_method__handles_file>` **(** :ref:`String<class_String>` path **)** |virtual| |const|                                                                   |
+   +--------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>`            | :ref:`_write_begin<class_MovieWriter_private_method__write_begin>` **(** :ref:`Vector2i<class_Vector2i>` movie_size, :ref:`int<class_int>` fps, :ref:`String<class_String>` base_path **)** |virtual| |
+   +--------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                             | :ref:`_write_end<class_MovieWriter_private_method__write_end>` **(** **)** |virtual|                                                                                                                  |
+   +--------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>`            | :ref:`_write_frame<class_MovieWriter_private_method__write_frame>` **(** :ref:`Image<class_Image>` frame_image, const void* audio_frame_block **)** |virtual|                                         |
+   +--------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                             | :ref:`add_writer<class_MovieWriter_method_add_writer>` **(** :ref:`MovieWriter<class_MovieWriter>` writer **)** |static|                                                                              |
+   +--------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -66,37 +66,37 @@ Methods
 Method Descriptions
 -------------------
 
-.. _class_MovieWriter_method__get_audio_mix_rate:
+.. _class_MovieWriter_private_method__get_audio_mix_rate:
 
 .. rst-class:: classref-method
 
 :ref:`int<class_int>` **_get_audio_mix_rate** **(** **)** |virtual| |const|
 
-Called when the audio sample rate used for recording the audio is requested by the engine. The value returned must be specified in Hz. Defaults to 48000 Hz if :ref:`_get_audio_mix_rate<class_MovieWriter_method__get_audio_mix_rate>` is not overridden.
+Called when the audio sample rate used for recording the audio is requested by the engine. The value returned must be specified in Hz. Defaults to 48000 Hz if :ref:`_get_audio_mix_rate<class_MovieWriter_private_method__get_audio_mix_rate>` is not overridden.
 
 .. rst-class:: classref-item-separator
 
 ----
 
-.. _class_MovieWriter_method__get_audio_speaker_mode:
+.. _class_MovieWriter_private_method__get_audio_speaker_mode:
 
 .. rst-class:: classref-method
 
 :ref:`SpeakerMode<enum_AudioServer_SpeakerMode>` **_get_audio_speaker_mode** **(** **)** |virtual| |const|
 
-Called when the audio speaker mode used for recording the audio is requested by the engine. This can affect the number of output channels in the resulting audio file/stream. Defaults to :ref:`AudioServer.SPEAKER_MODE_STEREO<class_AudioServer_constant_SPEAKER_MODE_STEREO>` if :ref:`_get_audio_speaker_mode<class_MovieWriter_method__get_audio_speaker_mode>` is not overridden.
+Called when the audio speaker mode used for recording the audio is requested by the engine. This can affect the number of output channels in the resulting audio file/stream. Defaults to :ref:`AudioServer.SPEAKER_MODE_STEREO<class_AudioServer_constant_SPEAKER_MODE_STEREO>` if :ref:`_get_audio_speaker_mode<class_MovieWriter_private_method__get_audio_speaker_mode>` is not overridden.
 
 .. rst-class:: classref-item-separator
 
 ----
 
-.. _class_MovieWriter_method__handles_file:
+.. _class_MovieWriter_private_method__handles_file:
 
 .. rst-class:: classref-method
 
 :ref:`bool<class_bool>` **_handles_file** **(** :ref:`String<class_String>` path **)** |virtual| |const|
 
-Called when the engine determines whether this **MovieWriter** is able to handle the file at ``path``. Must return ``true`` if this **MovieWriter** is able to handle the given file path, ``false`` otherwise. Typically, :ref:`_handles_file<class_MovieWriter_method__handles_file>` is overridden as follows to allow the user to record a file at any path with a given file extension:
+Called when the engine determines whether this **MovieWriter** is able to handle the file at ``path``. Must return ``true`` if this **MovieWriter** is able to handle the given file path, ``false`` otherwise. Typically, :ref:`_handles_file<class_MovieWriter_private_method__handles_file>` is overridden as follows to allow the user to record a file at any path with a given file extension:
 
 ::
 
@@ -109,7 +109,7 @@ Called when the engine determines whether this **MovieWriter** is able to handle
 
 ----
 
-.. _class_MovieWriter_method__write_begin:
+.. _class_MovieWriter_private_method__write_begin:
 
 .. rst-class:: classref-method
 
@@ -121,7 +121,7 @@ Called once before the engine starts writing video and audio data. ``movie_size`
 
 ----
 
-.. _class_MovieWriter_method__write_end:
+.. _class_MovieWriter_private_method__write_end:
 
 .. rst-class:: classref-method
 
@@ -129,13 +129,13 @@ void **_write_end** **(** **)** |virtual|
 
 Called when the engine finishes writing. This occurs when the engine quits by pressing the window manager's close button, or when :ref:`SceneTree.quit<class_SceneTree_method_quit>` is called.
 
-\ **Note:** Pressing :kbd:`Ctrl + C` on the terminal running the editor/project does *not* result in :ref:`_write_end<class_MovieWriter_method__write_end>` being called.
+\ **Note:** Pressing :kbd:`Ctrl + C` on the terminal running the editor/project does *not* result in :ref:`_write_end<class_MovieWriter_private_method__write_end>` being called.
 
 .. rst-class:: classref-item-separator
 
 ----
 
-.. _class_MovieWriter_method__write_frame:
+.. _class_MovieWriter_private_method__write_frame:
 
 .. rst-class:: classref-method
 
@@ -153,7 +153,7 @@ Called at the end of every rendered frame. The ``frame_image`` and ``audio_frame
 
 void **add_writer** **(** :ref:`MovieWriter<class_MovieWriter>` writer **)** |static|
 
-Adds a writer to be usable by the engine. The supported file extensions can be set by overriding :ref:`_handles_file<class_MovieWriter_method__handles_file>`.
+Adds a writer to be usable by the engine. The supported file extensions can be set by overriding :ref:`_handles_file<class_MovieWriter_private_method__handles_file>`.
 
 \ **Note:** :ref:`add_writer<class_MovieWriter_method_add_writer>` must be called early enough in the engine initialization to work, as movie writing is designed to start at the same time as the rest of the engine.
 

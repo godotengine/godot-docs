@@ -101,8 +101,8 @@ editor, and it must inherit from :ref:`class_EditorPlugin`.
 
 It's important to deal with initialization and clean-up of resources.
 A good practice is to use the virtual function
-:ref:`_enter_tree() <class_Node_method__enter_tree>` to initialize your plugin and
-:ref:`_exit_tree() <class_Node_method__exit_tree>` to clean it up. Thankfully,
+:ref:`_enter_tree() <class_Node_private_method__enter_tree>` to initialize your plugin and
+:ref:`_exit_tree() <class_Node_private_method__exit_tree>` to clean it up. Thankfully,
 the dialog generates these callbacks for you. Your script should look something
 like this:
 

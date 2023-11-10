@@ -83,9 +83,9 @@ The mouse button mask identifier, one of or a bitwise combination of the :ref:`M
 - void **set_global_position** **(** :ref:`Vector2<class_Vector2>` value **)**
 - :ref:`Vector2<class_Vector2>` **get_global_position** **(** **)**
 
-When received in :ref:`Node._input<class_Node_method__input>` or :ref:`Node._unhandled_input<class_Node_method__unhandled_input>`, returns the mouse's position in the root :ref:`Viewport<class_Viewport>` using the coordinate system of the root :ref:`Viewport<class_Viewport>`.
+When received in :ref:`Node._input<class_Node_private_method__input>` or :ref:`Node._unhandled_input<class_Node_private_method__unhandled_input>`, returns the mouse's position in the root :ref:`Viewport<class_Viewport>` using the coordinate system of the root :ref:`Viewport<class_Viewport>`.
 
-When received in :ref:`Control._gui_input<class_Control_method__gui_input>`, returns the mouse's position in the :ref:`CanvasLayer<class_CanvasLayer>` that the :ref:`Control<class_Control>` is in using the coordinate system of the :ref:`CanvasLayer<class_CanvasLayer>`.
+When received in :ref:`Control._gui_input<class_Control_private_method__gui_input>`, returns the mouse's position in the :ref:`CanvasLayer<class_CanvasLayer>` that the :ref:`Control<class_Control>` is in using the coordinate system of the :ref:`CanvasLayer<class_CanvasLayer>`.
 
 .. rst-class:: classref-item-separator
 
@@ -102,9 +102,9 @@ When received in :ref:`Control._gui_input<class_Control_method__gui_input>`, ret
 - void **set_position** **(** :ref:`Vector2<class_Vector2>` value **)**
 - :ref:`Vector2<class_Vector2>` **get_position** **(** **)**
 
-When received in :ref:`Node._input<class_Node_method__input>` or :ref:`Node._unhandled_input<class_Node_method__unhandled_input>`, returns the mouse's position in the :ref:`Viewport<class_Viewport>` this :ref:`Node<class_Node>` is in using the coordinate system of this :ref:`Viewport<class_Viewport>`.
+When received in :ref:`Node._input<class_Node_private_method__input>` or :ref:`Node._unhandled_input<class_Node_private_method__unhandled_input>`, returns the mouse's position in the :ref:`Viewport<class_Viewport>` this :ref:`Node<class_Node>` is in using the coordinate system of this :ref:`Viewport<class_Viewport>`.
 
-When received in :ref:`Control._gui_input<class_Control_method__gui_input>`, returns the mouse's position in the :ref:`Control<class_Control>` using the local coordinate system of the :ref:`Control<class_Control>`.
+When received in :ref:`Control._gui_input<class_Control_private_method__gui_input>`, returns the mouse's position in the :ref:`Control<class_Control>` using the local coordinate system of the :ref:`Control<class_Control>`.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

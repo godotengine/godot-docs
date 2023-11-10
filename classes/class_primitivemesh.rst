@@ -51,11 +51,11 @@ Methods
 .. table::
    :widths: auto
 
-   +---------------------------+--------------------------------------------------------------------------------------------------------+
-   | :ref:`Array<class_Array>` | :ref:`_create_mesh_array<class_PrimitiveMesh_method__create_mesh_array>` **(** **)** |virtual| |const| |
-   +---------------------------+--------------------------------------------------------------------------------------------------------+
-   | :ref:`Array<class_Array>` | :ref:`get_mesh_arrays<class_PrimitiveMesh_method_get_mesh_arrays>` **(** **)** |const|                 |
-   +---------------------------+--------------------------------------------------------------------------------------------------------+
+   +---------------------------+----------------------------------------------------------------------------------------------------------------+
+   | :ref:`Array<class_Array>` | :ref:`_create_mesh_array<class_PrimitiveMesh_private_method__create_mesh_array>` **(** **)** |virtual| |const| |
+   +---------------------------+----------------------------------------------------------------------------------------------------------------+
+   | :ref:`Array<class_Array>` | :ref:`get_mesh_arrays<class_PrimitiveMesh_method_get_mesh_arrays>` **(** **)** |const|                         |
+   +---------------------------+----------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -160,7 +160,7 @@ If the size of the lightmap texture can't be determined when generating the mesh
 Method Descriptions
 -------------------
 
-.. _class_PrimitiveMesh_method__create_mesh_array:
+.. _class_PrimitiveMesh_private_method__create_mesh_array:
 
 .. rst-class:: classref-method
 

@@ -23,7 +23,7 @@ Description
 
 Abstract base class for everything in 2D space. Canvas items are laid out in a tree; children inherit and extend their parent's transform. **CanvasItem** is extended by :ref:`Control<class_Control>` for GUI-related nodes, and by :ref:`Node2D<class_Node2D>` for 2D game objects.
 
-Any **CanvasItem** can draw. For this, :ref:`queue_redraw<class_CanvasItem_method_queue_redraw>` is called by the engine, then :ref:`NOTIFICATION_DRAW<class_CanvasItem_constant_NOTIFICATION_DRAW>` will be received on idle time to request a redraw. Because of this, canvas items don't need to be redrawn on every frame, improving the performance significantly. Several functions for drawing on the **CanvasItem** are provided (see ``draw_*`` functions). However, they can only be used inside :ref:`_draw<class_CanvasItem_method__draw>`, its corresponding :ref:`Object._notification<class_Object_method__notification>` or methods connected to the :ref:`draw<class_CanvasItem_signal_draw>` signal.
+Any **CanvasItem** can draw. For this, :ref:`queue_redraw<class_CanvasItem_method_queue_redraw>` is called by the engine, then :ref:`NOTIFICATION_DRAW<class_CanvasItem_constant_NOTIFICATION_DRAW>` will be received on idle time to request a redraw. Because of this, canvas items don't need to be redrawn on every frame, improving the performance significantly. Several functions for drawing on the **CanvasItem** are provided (see ``draw_*`` functions). However, they can only be used inside :ref:`_draw<class_CanvasItem_private_method__draw>`, its corresponding :ref:`Object._notification<class_Object_private_method__notification>` or methods connected to the :ref:`draw<class_CanvasItem_signal_draw>` signal.
 
 Canvas items are drawn in tree order on their canvas layer. By default, children are on top of their parents, so a root **CanvasItem** will be drawn behind everything. This behavior can be changed on a per-item basis.
 
@@ -89,7 +89,7 @@ Methods
    :widths: auto
 
    +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                  | :ref:`_draw<class_CanvasItem_method__draw>` **(** **)** |virtual|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+   | void                                  | :ref:`_draw<class_CanvasItem_private_method__draw>` **(** **)** |virtual|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
    +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                  | :ref:`draw_animation_slice<class_CanvasItem_method_draw_animation_slice>` **(** :ref:`float<class_float>` animation_length, :ref:`float<class_float>` slice_begin, :ref:`float<class_float>` slice_end, :ref:`float<class_float>` offset=0.0 **)**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
    +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -219,7 +219,7 @@ Signals
 
 **draw** **(** **)**
 
-Emitted when the **CanvasItem** must redraw, *after* the related :ref:`NOTIFICATION_DRAW<class_CanvasItem_constant_NOTIFICATION_DRAW>` notification, and *before* :ref:`_draw<class_CanvasItem_method__draw>` is called.
+Emitted when the **CanvasItem** must redraw, *after* the related :ref:`NOTIFICATION_DRAW<class_CanvasItem_constant_NOTIFICATION_DRAW>` notification, and *before* :ref:`_draw<class_CanvasItem_private_method__draw>` is called.
 
 \ **Note:** Deferred connections do not allow drawing through the ``draw_*`` methods.
 
@@ -465,7 +465,7 @@ The **CanvasItem**'s local transform has changed. This notification is only rece
 
 **NOTIFICATION_DRAW** = ``30``
 
-The **CanvasItem** is requested to draw (see :ref:`_draw<class_CanvasItem_method__draw>`).
+The **CanvasItem** is requested to draw (see :ref:`_draw<class_CanvasItem_private_method__draw>`).
 
 .. _class_CanvasItem_constant_NOTIFICATION_VISIBILITY_CHANGED:
 
@@ -776,7 +776,7 @@ Z index. Controls the order in which the nodes render. A node with a higher Z in
 Method Descriptions
 -------------------
 
-.. _class_CanvasItem_method__draw:
+.. _class_CanvasItem_private_method__draw:
 
 .. rst-class:: classref-method
 
@@ -784,7 +784,7 @@ void **_draw** **(** **)** |virtual|
 
 Called when **CanvasItem** has been requested to redraw (after :ref:`queue_redraw<class_CanvasItem_method_queue_redraw>` is called, either manually or by the engine).
 
-Corresponds to the :ref:`NOTIFICATION_DRAW<class_CanvasItem_constant_NOTIFICATION_DRAW>` notification in :ref:`Object._notification<class_Object_method__notification>`.
+Corresponds to the :ref:`NOTIFICATION_DRAW<class_CanvasItem_constant_NOTIFICATION_DRAW>` notification in :ref:`Object._notification<class_Object_private_method__notification>`.
 
 .. rst-class:: classref-item-separator
 
@@ -810,7 +810,7 @@ void **draw_arc** **(** :ref:`Vector2<class_Vector2>` center, :ref:`float<class_
 
 Draws an unfilled arc between the given angles with a uniform ``color`` and ``width`` and optional antialiasing (supported only for positive ``width``). The larger the value of ``point_count``, the smoother the curve. See also :ref:`draw_circle<class_CanvasItem_method_draw_circle>`.
 
-If ``width`` is negative, then the arc is drawn using :ref:`RenderingServer.PRIMITIVE_LINE_STRIP<class_RenderingServer_constant_PRIMITIVE_LINE_STRIP>`. This means that when the CanvasItem is scaled, the arc will remain thin. If this behavior is not desired, then pass a positive ``width`` like ``1.0``.
+If ``width`` is negative, it will be ignored and the arc will be drawn using :ref:`RenderingServer.PRIMITIVE_LINE_STRIP<class_RenderingServer_constant_PRIMITIVE_LINE_STRIP>`. This means that when the CanvasItem is scaled, the arc will remain thin. If this behavior is not desired, then pass a positive ``width`` like ``1.0``.
 
 The arc is drawn from ``start_angle`` towards the value of ``end_angle`` so in clockwise direction if ``start_angle < end_angle`` and counter-clockwise otherwise. Passing the same angles but in reversed order will produce the same arc. If absolute difference of ``start_angle`` and ``end_angle`` is greater than :ref:`@GDScript.TAU<class_@GDScript_constant_TAU>` radians, then a full circle arc is drawn (i.e. arc will not overlap itself).
 
@@ -1039,7 +1039,7 @@ void **draw_polyline** **(** :ref:`PackedVector2Array<class_PackedVector2Array>`
 
 Draws interconnected line segments with a uniform ``color`` and ``width`` and optional antialiasing (supported only for positive ``width``). When drawing large amounts of lines, this is faster than using individual :ref:`draw_line<class_CanvasItem_method_draw_line>` calls. To draw disconnected lines, use :ref:`draw_multiline<class_CanvasItem_method_draw_multiline>` instead. See also :ref:`draw_polygon<class_CanvasItem_method_draw_polygon>`.
 
-If ``width`` is negative, the polyline is drawn using :ref:`RenderingServer.PRIMITIVE_LINE_STRIP<class_RenderingServer_constant_PRIMITIVE_LINE_STRIP>`. This means that when the CanvasItem is scaled, the polyline will remain thin. If this behavior is not desired, then pass a positive ``width`` like ``1.0``.
+If ``width`` is negative, it will be ignored and the polyline will be drawn using :ref:`RenderingServer.PRIMITIVE_LINE_STRIP<class_RenderingServer_constant_PRIMITIVE_LINE_STRIP>`. This means that when the CanvasItem is scaled, the polyline will remain thin. If this behavior is not desired, then pass a positive ``width`` like ``1.0``.
 
 .. rst-class:: classref-item-separator
 
@@ -1053,7 +1053,7 @@ void **draw_polyline_colors** **(** :ref:`PackedVector2Array<class_PackedVector2
 
 Draws interconnected line segments with a uniform ``width``, point-by-point coloring, and optional antialiasing (supported only for positive ``width``). Colors assigned to line points match by index between ``points`` and ``colors``, i.e. each line segment is filled with a gradient between the colors of the endpoints. When drawing large amounts of lines, this is faster than using individual :ref:`draw_line<class_CanvasItem_method_draw_line>` calls. To draw disconnected lines, use :ref:`draw_multiline_colors<class_CanvasItem_method_draw_multiline_colors>` instead. See also :ref:`draw_polygon<class_CanvasItem_method_draw_polygon>`.
 
-If ``width`` is negative, then the polyline is drawn using :ref:`RenderingServer.PRIMITIVE_LINE_STRIP<class_RenderingServer_constant_PRIMITIVE_LINE_STRIP>`. This means that when the CanvasItem is scaled, the polyline will remain thin. If this behavior is not desired, then pass a positive ``width`` like ``1.0``.
+If ``width`` is negative, it will be ignored and the polyline will be drawn using :ref:`RenderingServer.PRIMITIVE_LINE_STRIP<class_RenderingServer_constant_PRIMITIVE_LINE_STRIP>`. This means that when the CanvasItem is scaled, the polyline will remain thin. If this behavior is not desired, then pass a positive ``width`` like ``1.0``.
 
 .. rst-class:: classref-item-separator
 
@@ -1428,7 +1428,7 @@ Returns ``true`` if global transform notifications are communicated to children.
 
 :ref:`bool<class_bool>` **is_visible_in_tree** **(** **)** |const|
 
-Returns ``true`` if the node is present in the :ref:`SceneTree<class_SceneTree>`, its :ref:`visible<class_CanvasItem_property_visible>` property is ``true`` and all its ancestors are also visible. If any ancestor is hidden, this node will not be visible in the scene tree, and is consequently not drawn (see :ref:`_draw<class_CanvasItem_method__draw>`).
+Returns ``true`` if the node is present in the :ref:`SceneTree<class_SceneTree>`, its :ref:`visible<class_CanvasItem_property_visible>` property is ``true`` and all its ancestors are also visible. If any ancestor is hidden, this node will not be visible in the scene tree, and is consequently not drawn (see :ref:`_draw<class_CanvasItem_private_method__draw>`).
 
 .. rst-class:: classref-item-separator
 
@@ -1478,7 +1478,7 @@ Internally, the node is moved to the bottom of parent's children list. The metho
 
 void **queue_redraw** **(** **)**
 
-Queues the **CanvasItem** to redraw. During idle time, if **CanvasItem** is visible, :ref:`NOTIFICATION_DRAW<class_CanvasItem_constant_NOTIFICATION_DRAW>` is sent and :ref:`_draw<class_CanvasItem_method__draw>` is called. This only occurs **once** per frame, even if this method has been called multiple times.
+Queues the **CanvasItem** to redraw. During idle time, if **CanvasItem** is visible, :ref:`NOTIFICATION_DRAW<class_CanvasItem_constant_NOTIFICATION_DRAW>` is sent and :ref:`_draw<class_CanvasItem_private_method__draw>` is called. This only occurs **once** per frame, even if this method has been called multiple times.
 
 .. rst-class:: classref-item-separator
 

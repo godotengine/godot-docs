@@ -21,6 +21,8 @@ Description
 
 This :ref:`Control<class_Control>` node is used in the editor's Inspector dock to allow editing of numeric values. Can be used with :ref:`EditorInspectorPlugin<class_EditorInspectorPlugin>` to recreate the same behavior.
 
+If the :ref:`Range.step<class_Range_property_step>` value is ``1``, the **EditorSpinSlider** will display up/down arrows, similar to :ref:`SpinBox<class_SpinBox>`. If the :ref:`Range.step<class_Range_property_step>` value is not ``1``, a slider will be displayed instead.
+
 .. rst-class:: classref-reftable-group
 
 Properties
@@ -137,7 +139,7 @@ If ``true``, the slider will not draw background.
 - void **set_hide_slider** **(** :ref:`bool<class_bool>` value **)**
 - :ref:`bool<class_bool>` **is_hiding_slider** **(** **)**
 
-If ``true``, the slider is hidden.
+If ``true``, the slider and up/down arrows are hidden.
 
 .. rst-class:: classref-item-separator
 

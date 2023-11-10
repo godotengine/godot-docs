@@ -71,19 +71,19 @@ Methods
 .. table::
    :widths: auto
 
-   +-------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                    | :ref:`_integrate_forces<class_PhysicalBone3D_method__integrate_forces>` **(** :ref:`PhysicsDirectBodyState3D<class_PhysicsDirectBodyState3D>` state **)** |virtual|        |
-   +-------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                    | :ref:`apply_central_impulse<class_PhysicalBone3D_method_apply_central_impulse>` **(** :ref:`Vector3<class_Vector3>` impulse **)**                                          |
-   +-------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                    | :ref:`apply_impulse<class_PhysicalBone3D_method_apply_impulse>` **(** :ref:`Vector3<class_Vector3>` impulse, :ref:`Vector3<class_Vector3>` position=Vector3(0, 0, 0) **)** |
-   +-------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`   | :ref:`get_bone_id<class_PhysicalBone3D_method_get_bone_id>` **(** **)** |const|                                                                                            |
-   +-------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>` | :ref:`get_simulate_physics<class_PhysicalBone3D_method_get_simulate_physics>` **(** **)**                                                                                  |
-   +-------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>` | :ref:`is_simulating_physics<class_PhysicalBone3D_method_is_simulating_physics>` **(** **)**                                                                                |
-   +-------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                    | :ref:`_integrate_forces<class_PhysicalBone3D_private_method__integrate_forces>` **(** :ref:`PhysicsDirectBodyState3D<class_PhysicsDirectBodyState3D>` state **)** |virtual| |
+   +-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                    | :ref:`apply_central_impulse<class_PhysicalBone3D_method_apply_central_impulse>` **(** :ref:`Vector3<class_Vector3>` impulse **)**                                           |
+   +-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                    | :ref:`apply_impulse<class_PhysicalBone3D_method_apply_impulse>` **(** :ref:`Vector3<class_Vector3>` impulse, :ref:`Vector3<class_Vector3>` position=Vector3(0, 0, 0) **)**  |
+   +-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`   | :ref:`get_bone_id<class_PhysicalBone3D_method_get_bone_id>` **(** **)** |const|                                                                                             |
+   +-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | :ref:`get_simulate_physics<class_PhysicalBone3D_method_get_simulate_physics>` **(** **)**                                                                                   |
+   +-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | :ref:`is_simulating_physics<class_PhysicalBone3D_method_is_simulating_physics>` **(** **)**                                                                                 |
+   +-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -298,7 +298,7 @@ If ``true``, the body is deactivated when there is no movement, so it will not t
 - void **set_use_custom_integrator** **(** :ref:`bool<class_bool>` value **)**
 - :ref:`bool<class_bool>` **is_using_custom_integrator** **(** **)**
 
-If ``true``, internal force integration will be disabled (like gravity or air friction) for this body. Other than collision response, the body will only move as determined by the :ref:`_integrate_forces<class_PhysicalBone3D_method__integrate_forces>` function, if defined.
+If ``true``, internal force integration will be disabled (like gravity or air friction) for this body. Other than collision response, the body will only move as determined by the :ref:`_integrate_forces<class_PhysicalBone3D_private_method__integrate_forces>` function, if defined.
 
 .. rst-class:: classref-item-separator
 
@@ -436,7 +436,7 @@ Defines how :ref:`linear_damp<class_PhysicalBone3D_property_linear_damp>` is app
 - void **set_linear_velocity** **(** :ref:`Vector3<class_Vector3>` value **)**
 - :ref:`Vector3<class_Vector3>` **get_linear_velocity** **(** **)**
 
-The body's linear velocity in units per second. Can be used sporadically, but **don't set this every frame**, because physics may run in another thread and runs at a different granularity. Use :ref:`_integrate_forces<class_PhysicalBone3D_method__integrate_forces>` as your process loop for precise control of the body state.
+The body's linear velocity in units per second. Can be used sporadically, but **don't set this every frame**, because physics may run in another thread and runs at a different granularity. Use :ref:`_integrate_forces<class_PhysicalBone3D_private_method__integrate_forces>` as your process loop for precise control of the body state.
 
 .. rst-class:: classref-item-separator
 
@@ -464,7 +464,7 @@ The body's mass.
 Method Descriptions
 -------------------
 
-.. _class_PhysicalBone3D_method__integrate_forces:
+.. _class_PhysicalBone3D_private_method__integrate_forces:
 
 .. rst-class:: classref-method
 

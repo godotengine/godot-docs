@@ -30,18 +30,6 @@ Tutorials
 
 .. rst-class:: classref-reftable-group
 
-Properties
-----------
-
-.. table::
-   :widths: auto
-
-   +-------------------------------------+-----------------------------------------------------+--------+
-   | :ref:`Dictionary<class_Dictionary>` | :ref:`_data<class_AnimationLibrary_property__data>` | ``{}`` |
-   +-------------------------------------+-----------------------------------------------------+--------+
-
-.. rst-class:: classref-reftable-group
-
 Methods
 -------
 
@@ -116,25 +104,6 @@ Emitted when an :ref:`Animation<class_Animation>` stored with the key ``name`` i
 **animation_renamed** **(** :ref:`StringName<class_StringName>` name, :ref:`StringName<class_StringName>` to_name **)**
 
 Emitted when the key for an :ref:`Animation<class_Animation>` is changed, from ``name`` to ``to_name``.
-
-.. rst-class:: classref-section-separator
-
-----
-
-.. rst-class:: classref-descriptions-group
-
-Property Descriptions
----------------------
-
-.. _class_AnimationLibrary_property__data:
-
-.. rst-class:: classref-property
-
-:ref:`Dictionary<class_Dictionary>` **_data** = ``{}``
-
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 .. rst-class:: classref-section-separator
 

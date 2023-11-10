@@ -33,17 +33,17 @@ Methods
 .. table::
    :widths: auto
 
-   +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`_get_extensions<class_EditorSceneFormatImporter_method__get_extensions>` **(** **)** |virtual| |const|                                                                                                                           |
-   +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                             | :ref:`_get_import_flags<class_EditorSceneFormatImporter_method__get_import_flags>` **(** **)** |virtual| |const|                                                                                                                       |
-   +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                              | :ref:`_get_import_options<class_EditorSceneFormatImporter_method__get_import_options>` **(** :ref:`String<class_String>` path **)** |virtual|                                                                                          |
-   +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Variant<class_Variant>`                     | :ref:`_get_option_visibility<class_EditorSceneFormatImporter_method__get_option_visibility>` **(** :ref:`String<class_String>` path, :ref:`bool<class_bool>` for_animation, :ref:`String<class_String>` option **)** |virtual| |const| |
-   +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Object<class_Object>`                       | :ref:`_import_scene<class_EditorSceneFormatImporter_method__import_scene>` **(** :ref:`String<class_String>` path, :ref:`int<class_int>` flags, :ref:`Dictionary<class_Dictionary>` options **)** |virtual|                            |
-   +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`_get_extensions<class_EditorSceneFormatImporter_private_method__get_extensions>` **(** **)** |virtual| |const|                                                                                                                           |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`_get_import_flags<class_EditorSceneFormatImporter_private_method__get_import_flags>` **(** **)** |virtual| |const|                                                                                                                       |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                              | :ref:`_get_import_options<class_EditorSceneFormatImporter_private_method__get_import_options>` **(** :ref:`String<class_String>` path **)** |virtual|                                                                                          |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Variant<class_Variant>`                     | :ref:`_get_option_visibility<class_EditorSceneFormatImporter_private_method__get_option_visibility>` **(** :ref:`String<class_String>` path, :ref:`bool<class_bool>` for_animation, :ref:`String<class_String>` option **)** |virtual| |const| |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Object<class_Object>`                       | :ref:`_import_scene<class_EditorSceneFormatImporter_private_method__import_scene>` **(** :ref:`String<class_String>` path, :ref:`int<class_int>` flags, :ref:`Dictionary<class_Dictionary>` options **)** |virtual|                            |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -119,7 +119,7 @@ Constants
 Method Descriptions
 -------------------
 
-.. _class_EditorSceneFormatImporter_method__get_extensions:
+.. _class_EditorSceneFormatImporter_private_method__get_extensions:
 
 .. rst-class:: classref-method
 
@@ -133,7 +133,7 @@ Method Descriptions
 
 ----
 
-.. _class_EditorSceneFormatImporter_method__get_import_flags:
+.. _class_EditorSceneFormatImporter_private_method__get_import_flags:
 
 .. rst-class:: classref-method
 
@@ -147,7 +147,7 @@ Method Descriptions
 
 ----
 
-.. _class_EditorSceneFormatImporter_method__get_import_options:
+.. _class_EditorSceneFormatImporter_private_method__get_import_options:
 
 .. rst-class:: classref-method
 
@@ -161,7 +161,7 @@ void **_get_import_options** **(** :ref:`String<class_String>` path **)** |virtu
 
 ----
 
-.. _class_EditorSceneFormatImporter_method__get_option_visibility:
+.. _class_EditorSceneFormatImporter_private_method__get_option_visibility:
 
 .. rst-class:: classref-method
 
@@ -175,7 +175,7 @@ void **_get_import_options** **(** :ref:`String<class_String>` path **)** |virtu
 
 ----
 
-.. _class_EditorSceneFormatImporter_method__import_scene:
+.. _class_EditorSceneFormatImporter_private_method__import_scene:
 
 .. rst-class:: classref-method
 

@@ -86,11 +86,11 @@ Methods
    :widths: auto
 
    +-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                            | :ref:`_confirm_code_completion<class_CodeEdit_method__confirm_code_completion>` **(** :ref:`bool<class_bool>` replace **)** |virtual|                                                                                                                                                                                                                                                                                              |
+   | void                                            | :ref:`_confirm_code_completion<class_CodeEdit_private_method__confirm_code_completion>` **(** :ref:`bool<class_bool>` replace **)** |virtual|                                                                                                                                                                                                                                                                                      |
    +-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Dictionary[]<class_Dictionary>`           | :ref:`_filter_code_completion_candidates<class_CodeEdit_method__filter_code_completion_candidates>` **(** :ref:`Dictionary[]<class_Dictionary>` candidates **)** |virtual| |const|                                                                                                                                                                                                                                                 |
+   | :ref:`Dictionary[]<class_Dictionary>`           | :ref:`_filter_code_completion_candidates<class_CodeEdit_private_method__filter_code_completion_candidates>` **(** :ref:`Dictionary[]<class_Dictionary>` candidates **)** |virtual| |const|                                                                                                                                                                                                                                         |
    +-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                            | :ref:`_request_code_completion<class_CodeEdit_method__request_code_completion>` **(** :ref:`bool<class_bool>` force **)** |virtual|                                                                                                                                                                                                                                                                                                |
+   | void                                            | :ref:`_request_code_completion<class_CodeEdit_private_method__request_code_completion>` **(** :ref:`bool<class_bool>` force **)** |virtual|                                                                                                                                                                                                                                                                                        |
    +-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                            | :ref:`add_auto_brace_completion_pair<class_CodeEdit_method_add_auto_brace_completion_pair>` **(** :ref:`String<class_String>` start_key, :ref:`String<class_String>` end_key **)**                                                                                                                                                                                                                                                 |
    +-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -825,7 +825,7 @@ Set when a validated word from :ref:`symbol_validate<class_CodeEdit_signal_symbo
 Method Descriptions
 -------------------
 
-.. _class_CodeEdit_method__confirm_code_completion:
+.. _class_CodeEdit_private_method__confirm_code_completion:
 
 .. rst-class:: classref-method
 
@@ -837,7 +837,7 @@ Override this method to define how the selected entry should be inserted. If ``r
 
 ----
 
-.. _class_CodeEdit_method__filter_code_completion_candidates:
+.. _class_CodeEdit_private_method__filter_code_completion_candidates:
 
 .. rst-class:: classref-method
 
@@ -851,7 +851,7 @@ Both ``candidates`` and the return is a :ref:`Array<class_Array>` of :ref:`Dicti
 
 ----
 
-.. _class_CodeEdit_method__request_code_completion:
+.. _class_CodeEdit_private_method__request_code_completion:
 
 .. rst-class:: classref-method
 

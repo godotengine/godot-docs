@@ -53,13 +53,13 @@ Methods
 .. table::
    :widths: auto
 
-   +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Resource<class_Resource>` | :ref:`_convert<class_EditorResourceConversionPlugin_method__convert>` **(** :ref:`Resource<class_Resource>` resource **)** |virtual| |const| |
-   +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`String<class_String>`     | :ref:`_converts_to<class_EditorResourceConversionPlugin_method__converts_to>` **(** **)** |virtual| |const|                                  |
-   +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`         | :ref:`_handles<class_EditorResourceConversionPlugin_method__handles>` **(** :ref:`Resource<class_Resource>` resource **)** |virtual| |const| |
-   +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+   +---------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Resource<class_Resource>` | :ref:`_convert<class_EditorResourceConversionPlugin_private_method__convert>` **(** :ref:`Resource<class_Resource>` resource **)** |virtual| |const| |
+   +---------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`     | :ref:`_converts_to<class_EditorResourceConversionPlugin_private_method__converts_to>` **(** **)** |virtual| |const|                                  |
+   +---------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`         | :ref:`_handles<class_EditorResourceConversionPlugin_private_method__handles>` **(** :ref:`Resource<class_Resource>` resource **)** |virtual| |const| |
+   +---------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -70,19 +70,19 @@ Methods
 Method Descriptions
 -------------------
 
-.. _class_EditorResourceConversionPlugin_method__convert:
+.. _class_EditorResourceConversionPlugin_private_method__convert:
 
 .. rst-class:: classref-method
 
 :ref:`Resource<class_Resource>` **_convert** **(** :ref:`Resource<class_Resource>` resource **)** |virtual| |const|
 
-Takes an input :ref:`Resource<class_Resource>` and converts it to the type given in :ref:`_converts_to<class_EditorResourceConversionPlugin_method__converts_to>`. The returned :ref:`Resource<class_Resource>` is the result of the conversion, and the input :ref:`Resource<class_Resource>` remains unchanged.
+Takes an input :ref:`Resource<class_Resource>` and converts it to the type given in :ref:`_converts_to<class_EditorResourceConversionPlugin_private_method__converts_to>`. The returned :ref:`Resource<class_Resource>` is the result of the conversion, and the input :ref:`Resource<class_Resource>` remains unchanged.
 
 .. rst-class:: classref-item-separator
 
 ----
 
-.. _class_EditorResourceConversionPlugin_method__converts_to:
+.. _class_EditorResourceConversionPlugin_private_method__converts_to:
 
 .. rst-class:: classref-method
 
@@ -94,7 +94,7 @@ Returns the class name of the target type of :ref:`Resource<class_Resource>` tha
 
 ----
 
-.. _class_EditorResourceConversionPlugin_method__handles:
+.. _class_EditorResourceConversionPlugin_private_method__handles:
 
 .. rst-class:: classref-method
 
