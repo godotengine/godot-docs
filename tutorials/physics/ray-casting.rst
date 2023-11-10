@@ -40,7 +40,7 @@ Accessing space
 Godot physics runs by default in the same thread as game logic, but may
 be set to run on a separate thread to work more efficiently. Due to
 this, the only time accessing space is safe is during the
-:ref:`Node._physics_process() <class_Node_method__physics_process>`
+:ref:`Node._physics_process() <class_Node_private_method__physics_process>`
 callback. Accessing it from outside this function may result in an error
 due to space being *locked*.
 
@@ -158,17 +158,17 @@ with Area3D, the boolean parameter ``collide_with_areas`` must be set to ``true`
  .. code-tab:: gdscript GDScript
 
         const RAY_LENGTH = 1000
-        
+
         func _physics_process(delta):
             var space_state = get_world_3d().direct_space_state
             var cam = $Camera3D
             var mousepos = get_viewport().get_mouse_position()
-        
+
             var origin = cam.project_ray_origin(mousepos)
             var end = origin + cam.project_ray_normal(mousepos) * RAY_LENGTH
             var query = PhysicsRayQueryParameters3D.create(origin, end)
             query.collide_with_areas = true
-            
+
             var result = space_state.intersect_ray(query)
 
 Collision exceptions
@@ -182,7 +182,7 @@ as shown in the following image:
 .. image:: img/raycast_falsepositive.webp
 
 To avoid self-intersection, the ``intersect_ray()`` parameters object can take an
-array of exceptions via its ``exclude`` property. This is an example of how to use it 
+array of exceptions via its ``exclude`` property. This is an example of how to use it
 from a CharacterBody2D or any other collision object node:
 
 .. tabs::
@@ -231,8 +231,8 @@ member variable. The array of exceptions can be supplied as the last argument as
 
     func _physics_process(delta):
         var space_state = get_world_2d().direct_space_state
-        var query = PhysicsRayQueryParameters2D.create(global_position, target_position, 
-            collision_mask, [self]) 
+        var query = PhysicsRayQueryParameters2D.create(global_position, target_position,
+            collision_mask, [self])
         var result = space_state.intersect_ray(query)
 
  .. code-tab:: csharp

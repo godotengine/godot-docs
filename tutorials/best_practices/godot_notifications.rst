@@ -4,7 +4,7 @@ Godot notifications
 ===================
 
 Every Object in Godot implements a
-:ref:`_notification <class_Object_method__notification>` method. Its purpose is to
+:ref:`_notification <class_Object_private_method__notification>` method. Its purpose is to
 allow the Object to respond to a variety of engine-level callbacks that may
 relate to it. For example, if the engine tells a
 :ref:`CanvasItem <class_CanvasItem>` to "draw", it will call
@@ -53,7 +53,7 @@ One can access all these custom notifications from the universal
   overridden by scripts.
 
   A classic example is the
-  :ref:`_init <class_Object_method__init>` method in Object. While it has no
+  :ref:`_init <class_Object_private_method__init>` method in Object. While it has no
   ``NOTIFICATION_*`` equivalent, the engine still calls the method. Most languages
   (except C#) rely on it as a constructor.
 
