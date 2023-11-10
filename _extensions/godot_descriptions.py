@@ -106,7 +106,7 @@ def generate_description(app, pagename, templatename, context, doctree):
         '<meta name="description" content="' + generator.create_description() + '" />\n'
     )
 
-    if not re.search('<meta name="description"', context["metatags"]):
+    if not '<meta name="description"' in context["metatags"]:
         context["metatags"] += description
 
 
