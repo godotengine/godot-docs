@@ -29,13 +29,13 @@ Methods
 .. table::
    :widths: auto
 
-   +---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`_get_file_extensions<class_EditorFileSystemImportFormatSupportQuery_method__get_file_extensions>` **(** **)** |virtual| |const| |
-   +---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                           | :ref:`_is_active<class_EditorFileSystemImportFormatSupportQuery_method__is_active>` **(** **)** |virtual| |const|                     |
-   +---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                           | :ref:`_query<class_EditorFileSystemImportFormatSupportQuery_method__query>` **(** **)** |virtual| |const|                             |
-   +---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
+   +---------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`_get_file_extensions<class_EditorFileSystemImportFormatSupportQuery_private_method__get_file_extensions>` **(** **)** |virtual| |const| |
+   +---------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`_is_active<class_EditorFileSystemImportFormatSupportQuery_private_method__is_active>` **(** **)** |virtual| |const|                     |
+   +---------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`_query<class_EditorFileSystemImportFormatSupportQuery_private_method__query>` **(** **)** |virtual| |const|                             |
+   +---------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -46,7 +46,7 @@ Methods
 Method Descriptions
 -------------------
 
-.. _class_EditorFileSystemImportFormatSupportQuery_method__get_file_extensions:
+.. _class_EditorFileSystemImportFormatSupportQuery_private_method__get_file_extensions:
 
 .. rst-class:: classref-method
 
@@ -58,7 +58,7 @@ Return the file extensions supported.
 
 ----
 
-.. _class_EditorFileSystemImportFormatSupportQuery_method__is_active:
+.. _class_EditorFileSystemImportFormatSupportQuery_private_method__is_active:
 
 .. rst-class:: classref-method
 
@@ -70,7 +70,7 @@ Return whether this importer is active.
 
 ----
 
-.. _class_EditorFileSystemImportFormatSupportQuery_method__query:
+.. _class_EditorFileSystemImportFormatSupportQuery_private_method__query:
 
 .. rst-class:: classref-method
 

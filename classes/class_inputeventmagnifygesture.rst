@@ -21,6 +21,8 @@ Description
 
 Stores the factor of a magnifying touch gesture. This is usually performed when the user pinches the touch screen and used for zooming in/out.
 
+\ **Note:** On Android, this requires the :ref:`ProjectSettings.input_devices/pointing/android/enable_pan_and_scale_gestures<class_ProjectSettings_property_input_devices/pointing/android/enable_pan_and_scale_gestures>` project setting to be enabled.
+
 .. rst-class:: classref-introduction-group
 
 Tutorials

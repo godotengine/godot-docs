@@ -26,13 +26,13 @@ Methods
 .. table::
    :widths: auto
 
-   +---------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`float<class_float>` | :ref:`_get_stream_sampling_rate<class_AudioStreamPlaybackResampled_method__get_stream_sampling_rate>` **(** **)** |virtual| |const|                             |
-   +---------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`     | :ref:`_mix_resampled<class_AudioStreamPlaybackResampled_method__mix_resampled>` **(** AudioFrame* dst_buffer, :ref:`int<class_int>` frame_count **)** |virtual| |
-   +---------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                      | :ref:`begin_resample<class_AudioStreamPlaybackResampled_method_begin_resample>` **(** **)**                                                                     |
-   +---------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +---------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>` | :ref:`_get_stream_sampling_rate<class_AudioStreamPlaybackResampled_private_method__get_stream_sampling_rate>` **(** **)** |virtual| |const|                             |
+   +---------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`     | :ref:`_mix_resampled<class_AudioStreamPlaybackResampled_private_method__mix_resampled>` **(** AudioFrame* dst_buffer, :ref:`int<class_int>` frame_count **)** |virtual| |
+   +---------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                      | :ref:`begin_resample<class_AudioStreamPlaybackResampled_method_begin_resample>` **(** **)**                                                                             |
+   +---------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -43,7 +43,7 @@ Methods
 Method Descriptions
 -------------------
 
-.. _class_AudioStreamPlaybackResampled_method__get_stream_sampling_rate:
+.. _class_AudioStreamPlaybackResampled_private_method__get_stream_sampling_rate:
 
 .. rst-class:: classref-method
 
@@ -57,7 +57,7 @@ Method Descriptions
 
 ----
 
-.. _class_AudioStreamPlaybackResampled_method__mix_resampled:
+.. _class_AudioStreamPlaybackResampled_private_method__mix_resampled:
 
 .. rst-class:: classref-method
 

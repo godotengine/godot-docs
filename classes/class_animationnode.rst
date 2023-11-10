@@ -53,21 +53,21 @@ Methods
    :widths: auto
 
    +-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`String<class_String>`               | :ref:`_get_caption<class_AnimationNode_method__get_caption>` **(** **)** |virtual| |const|                                                                                                                                                                                                                                                                                                                                                           |
+   | :ref:`String<class_String>`               | :ref:`_get_caption<class_AnimationNode_private_method__get_caption>` **(** **)** |virtual| |const|                                                                                                                                                                                                                                                                                                                                                   |
    +-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`AnimationNode<class_AnimationNode>` | :ref:`_get_child_by_name<class_AnimationNode_method__get_child_by_name>` **(** :ref:`StringName<class_StringName>` name **)** |virtual| |const|                                                                                                                                                                                                                                                                                                      |
+   | :ref:`AnimationNode<class_AnimationNode>` | :ref:`_get_child_by_name<class_AnimationNode_private_method__get_child_by_name>` **(** :ref:`StringName<class_StringName>` name **)** |virtual| |const|                                                                                                                                                                                                                                                                                              |
    +-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Dictionary<class_Dictionary>`       | :ref:`_get_child_nodes<class_AnimationNode_method__get_child_nodes>` **(** **)** |virtual| |const|                                                                                                                                                                                                                                                                                                                                                   |
+   | :ref:`Dictionary<class_Dictionary>`       | :ref:`_get_child_nodes<class_AnimationNode_private_method__get_child_nodes>` **(** **)** |virtual| |const|                                                                                                                                                                                                                                                                                                                                           |
    +-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Variant<class_Variant>`             | :ref:`_get_parameter_default_value<class_AnimationNode_method__get_parameter_default_value>` **(** :ref:`StringName<class_StringName>` parameter **)** |virtual| |const|                                                                                                                                                                                                                                                                             |
+   | :ref:`Variant<class_Variant>`             | :ref:`_get_parameter_default_value<class_AnimationNode_private_method__get_parameter_default_value>` **(** :ref:`StringName<class_StringName>` parameter **)** |virtual| |const|                                                                                                                                                                                                                                                                     |
    +-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Array<class_Array>`                 | :ref:`_get_parameter_list<class_AnimationNode_method__get_parameter_list>` **(** **)** |virtual| |const|                                                                                                                                                                                                                                                                                                                                             |
+   | :ref:`Array<class_Array>`                 | :ref:`_get_parameter_list<class_AnimationNode_private_method__get_parameter_list>` **(** **)** |virtual| |const|                                                                                                                                                                                                                                                                                                                                     |
    +-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                   | :ref:`_has_filter<class_AnimationNode_method__has_filter>` **(** **)** |virtual| |const|                                                                                                                                                                                                                                                                                                                                                             |
+   | :ref:`bool<class_bool>`                   | :ref:`_has_filter<class_AnimationNode_private_method__has_filter>` **(** **)** |virtual| |const|                                                                                                                                                                                                                                                                                                                                                     |
    +-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                   | :ref:`_is_parameter_read_only<class_AnimationNode_method__is_parameter_read_only>` **(** :ref:`StringName<class_StringName>` parameter **)** |virtual| |const|                                                                                                                                                                                                                                                                                       |
+   | :ref:`bool<class_bool>`                   | :ref:`_is_parameter_read_only<class_AnimationNode_private_method__is_parameter_read_only>` **(** :ref:`StringName<class_StringName>` parameter **)** |virtual| |const|                                                                                                                                                                                                                                                                               |
    +-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`float<class_float>`                 | :ref:`_process<class_AnimationNode_method__process>` **(** :ref:`float<class_float>` time, :ref:`bool<class_bool>` seek, :ref:`bool<class_bool>` is_external_seeking, :ref:`bool<class_bool>` test_only **)** |virtual| |const|                                                                                                                                                                                                                      |
+   | :ref:`float<class_float>`                 | :ref:`_process<class_AnimationNode_private_method__process>` **(** :ref:`float<class_float>` time, :ref:`bool<class_bool>` seek, :ref:`bool<class_bool>` is_external_seeking, :ref:`bool<class_bool>` test_only **)** |virtual| |const|                                                                                                                                                                                                              |
    +-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                   | :ref:`add_input<class_AnimationNode_method_add_input>` **(** :ref:`String<class_String>` name **)**                                                                                                                                                                                                                                                                                                                                                  |
    +-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -215,7 +215,7 @@ If ``true``, filtering is enabled.
 Method Descriptions
 -------------------
 
-.. _class_AnimationNode_method__get_caption:
+.. _class_AnimationNode_private_method__get_caption:
 
 .. rst-class:: classref-method
 
@@ -227,7 +227,7 @@ When inheriting from :ref:`AnimationRootNode<class_AnimationRootNode>`, implemen
 
 ----
 
-.. _class_AnimationNode_method__get_child_by_name:
+.. _class_AnimationNode_private_method__get_child_by_name:
 
 .. rst-class:: classref-method
 
@@ -239,7 +239,7 @@ When inheriting from :ref:`AnimationRootNode<class_AnimationRootNode>`, implemen
 
 ----
 
-.. _class_AnimationNode_method__get_child_nodes:
+.. _class_AnimationNode_private_method__get_child_nodes:
 
 .. rst-class:: classref-method
 
@@ -251,7 +251,7 @@ When inheriting from :ref:`AnimationRootNode<class_AnimationRootNode>`, implemen
 
 ----
 
-.. _class_AnimationNode_method__get_parameter_default_value:
+.. _class_AnimationNode_private_method__get_parameter_default_value:
 
 .. rst-class:: classref-method
 
@@ -263,7 +263,7 @@ When inheriting from :ref:`AnimationRootNode<class_AnimationRootNode>`, implemen
 
 ----
 
-.. _class_AnimationNode_method__get_parameter_list:
+.. _class_AnimationNode_private_method__get_parameter_list:
 
 .. rst-class:: classref-method
 
@@ -275,7 +275,7 @@ When inheriting from :ref:`AnimationRootNode<class_AnimationRootNode>`, implemen
 
 ----
 
-.. _class_AnimationNode_method__has_filter:
+.. _class_AnimationNode_private_method__has_filter:
 
 .. rst-class:: classref-method
 
@@ -287,7 +287,7 @@ When inheriting from :ref:`AnimationRootNode<class_AnimationRootNode>`, implemen
 
 ----
 
-.. _class_AnimationNode_method__is_parameter_read_only:
+.. _class_AnimationNode_private_method__is_parameter_read_only:
 
 .. rst-class:: classref-method
 
@@ -299,7 +299,7 @@ When inheriting from :ref:`AnimationRootNode<class_AnimationRootNode>`, implemen
 
 ----
 
-.. _class_AnimationNode_method__process:
+.. _class_AnimationNode_private_method__process:
 
 .. rst-class:: classref-method
 

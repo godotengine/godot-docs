@@ -57,9 +57,9 @@ Methods
 .. table::
    :widths: auto
 
-   +-------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>` | :ref:`_process_custom_fx<class_RichTextEffect_method__process_custom_fx>` **(** :ref:`CharFXTransform<class_CharFXTransform>` char_fx **)** |virtual| |const| |
-   +-------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | :ref:`_process_custom_fx<class_RichTextEffect_private_method__process_custom_fx>` **(** :ref:`CharFXTransform<class_CharFXTransform>` char_fx **)** |virtual| |const| |
+   +-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -70,7 +70,7 @@ Methods
 Method Descriptions
 -------------------
 
-.. _class_RichTextEffect_method__process_custom_fx:
+.. _class_RichTextEffect_private_method__process_custom_fx:
 
 .. rst-class:: classref-method
 

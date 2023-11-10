@@ -19,7 +19,7 @@ Represents a mouse button being pressed or released.
 Description
 -----------
 
-Stores information about mouse click events. See :ref:`Node._input<class_Node_method__input>`.
+Stores information about mouse click events. See :ref:`Node._input<class_Node_private_method__input>`.
 
 .. rst-class:: classref-introduction-group
 

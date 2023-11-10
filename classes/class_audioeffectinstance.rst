@@ -26,11 +26,11 @@ Methods
 .. table::
    :widths: auto
 
-   +-------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                    | :ref:`_process<class_AudioEffectInstance_method__process>` **(** const void* src_buffer, AudioFrame* dst_buffer, :ref:`int<class_int>` frame_count **)** |virtual| |
-   +-------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>` | :ref:`_process_silence<class_AudioEffectInstance_method__process_silence>` **(** **)** |virtual| |const|                                                           |
-   +-------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +-------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                    | :ref:`_process<class_AudioEffectInstance_private_method__process>` **(** const void* src_buffer, AudioFrame* dst_buffer, :ref:`int<class_int>` frame_count **)** |virtual| |
+   +-------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | :ref:`_process_silence<class_AudioEffectInstance_private_method__process_silence>` **(** **)** |virtual| |const|                                                           |
+   +-------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -41,7 +41,7 @@ Methods
 Method Descriptions
 -------------------
 
-.. _class_AudioEffectInstance_method__process:
+.. _class_AudioEffectInstance_private_method__process:
 
 .. rst-class:: classref-method
 
@@ -55,7 +55,7 @@ void **_process** **(** const void* src_buffer, AudioFrame* dst_buffer, :ref:`in
 
 ----
 
-.. _class_AudioEffectInstance_method__process_silence:
+.. _class_AudioEffectInstance_private_method__process_silence:
 
 .. rst-class:: classref-method
 

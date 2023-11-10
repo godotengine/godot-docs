@@ -63,15 +63,15 @@ Methods
 .. table::
    :widths: auto
 
-   +------+--------------------------------------------------------------------------------------------------------------------+
-   | void | :ref:`_value_changed<class_Range_method__value_changed>` **(** :ref:`float<class_float>` new_value **)** |virtual| |
-   +------+--------------------------------------------------------------------------------------------------------------------+
-   | void | :ref:`set_value_no_signal<class_Range_method_set_value_no_signal>` **(** :ref:`float<class_float>` value **)**     |
-   +------+--------------------------------------------------------------------------------------------------------------------+
-   | void | :ref:`share<class_Range_method_share>` **(** :ref:`Node<class_Node>` with **)**                                    |
-   +------+--------------------------------------------------------------------------------------------------------------------+
-   | void | :ref:`unshare<class_Range_method_unshare>` **(** **)**                                                             |
-   +------+--------------------------------------------------------------------------------------------------------------------+
+   +------+----------------------------------------------------------------------------------------------------------------------------+
+   | void | :ref:`_value_changed<class_Range_private_method__value_changed>` **(** :ref:`float<class_float>` new_value **)** |virtual| |
+   +------+----------------------------------------------------------------------------------------------------------------------------+
+   | void | :ref:`set_value_no_signal<class_Range_method_set_value_no_signal>` **(** :ref:`float<class_float>` value **)**             |
+   +------+----------------------------------------------------------------------------------------------------------------------------+
+   | void | :ref:`share<class_Range_method_share>` **(** :ref:`Node<class_Node>` with **)**                                            |
+   +------+----------------------------------------------------------------------------------------------------------------------------+
+   | void | :ref:`unshare<class_Range_method_unshare>` **(** **)**                                                                     |
+   +------+----------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -288,7 +288,7 @@ Range's current value. Changing this property (even via code) will trigger :ref:
 Method Descriptions
 -------------------
 
-.. _class_Range_method__value_changed:
+.. _class_Range_private_method__value_changed:
 
 .. rst-class:: classref-method
 

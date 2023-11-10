@@ -14,7 +14,7 @@ Material
 
 **Inherited By:** :ref:`BaseMaterial3D<class_BaseMaterial3D>`, :ref:`CanvasItemMaterial<class_CanvasItemMaterial>`, :ref:`FogMaterial<class_FogMaterial>`, :ref:`PanoramaSkyMaterial<class_PanoramaSkyMaterial>`, :ref:`ParticleProcessMaterial<class_ParticleProcessMaterial>`, :ref:`PhysicalSkyMaterial<class_PhysicalSkyMaterial>`, :ref:`PlaceholderMaterial<class_PlaceholderMaterial>`, :ref:`ProceduralSkyMaterial<class_ProceduralSkyMaterial>`, :ref:`ShaderMaterial<class_ShaderMaterial>`
 
-Abstract base class for applying visual properties to an object, such as color and roughness.
+Virtual base class for applying visual properties to an object, such as color and roughness.
 
 .. rst-class:: classref-introduction-group
 
@@ -22,6 +22,8 @@ Description
 -----------
 
 **Material** is a base resource used for coloring and shading geometry. All materials inherit from it and almost all :ref:`VisualInstance3D<class_VisualInstance3D>` derived nodes carry a **Material**. A few flags and parameters are shared between all material types and are configured here.
+
+Importantly, you can inherit from **Material** to create your own custom material type in script or in GDExtension.
 
 .. rst-class:: classref-introduction-group
 
@@ -54,19 +56,19 @@ Methods
 .. table::
    :widths: auto
 
-   +---------------------------------+---------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`         | :ref:`_can_do_next_pass<class_Material_method__can_do_next_pass>` **(** **)** |virtual| |const|               |
-   +---------------------------------+---------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`         | :ref:`_can_use_render_priority<class_Material_method__can_use_render_priority>` **(** **)** |virtual| |const| |
-   +---------------------------------+---------------------------------------------------------------------------------------------------------------+
-   | :ref:`Mode<enum_Shader_Mode>`   | :ref:`_get_shader_mode<class_Material_method__get_shader_mode>` **(** **)** |virtual| |const|                 |
-   +---------------------------------+---------------------------------------------------------------------------------------------------------------+
-   | :ref:`RID<class_RID>`           | :ref:`_get_shader_rid<class_Material_method__get_shader_rid>` **(** **)** |virtual| |const|                   |
-   +---------------------------------+---------------------------------------------------------------------------------------------------------------+
-   | :ref:`Resource<class_Resource>` | :ref:`create_placeholder<class_Material_method_create_placeholder>` **(** **)** |const|                       |
-   +---------------------------------+---------------------------------------------------------------------------------------------------------------+
-   | void                            | :ref:`inspect_native_shader_code<class_Material_method_inspect_native_shader_code>` **(** **)**               |
-   +---------------------------------+---------------------------------------------------------------------------------------------------------------+
+   +---------------------------------+-----------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`         | :ref:`_can_do_next_pass<class_Material_private_method__can_do_next_pass>` **(** **)** |virtual| |const|               |
+   +---------------------------------+-----------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`         | :ref:`_can_use_render_priority<class_Material_private_method__can_use_render_priority>` **(** **)** |virtual| |const| |
+   +---------------------------------+-----------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Mode<enum_Shader_Mode>`   | :ref:`_get_shader_mode<class_Material_private_method__get_shader_mode>` **(** **)** |virtual| |const|                 |
+   +---------------------------------+-----------------------------------------------------------------------------------------------------------------------+
+   | :ref:`RID<class_RID>`           | :ref:`_get_shader_rid<class_Material_private_method__get_shader_rid>` **(** **)** |virtual| |const|                   |
+   +---------------------------------+-----------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Resource<class_Resource>` | :ref:`create_placeholder<class_Material_method_create_placeholder>` **(** **)** |const|                               |
+   +---------------------------------+-----------------------------------------------------------------------------------------------------------------------+
+   | void                            | :ref:`inspect_native_shader_code<class_Material_method_inspect_native_shader_code>` **(** **)**                       |
+   +---------------------------------+-----------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -115,6 +117,8 @@ Property Descriptions
 
 Sets the **Material** to be used for the next pass. This renders the object again using a different material.
 
+\ **Note:** :ref:`next_pass<class_Material_property_next_pass>` materials are not necessarily drawn immediately after the source **Material**. Draw order is determined by material properties, :ref:`render_priority<class_Material_property_render_priority>`, and distance to camera.
+
 \ **Note:** This only applies to :ref:`StandardMaterial3D<class_StandardMaterial3D>`\ s and :ref:`ShaderMaterial<class_ShaderMaterial>`\ s with type "Spatial".
 
 .. rst-class:: classref-item-separator
@@ -132,11 +136,11 @@ Sets the **Material** to be used for the next pass. This renders the object agai
 - void **set_render_priority** **(** :ref:`int<class_int>` value **)**
 - :ref:`int<class_int>` **get_render_priority** **(** **)**
 
-Sets the render priority for transparent objects in 3D scenes. Higher priority objects will be sorted in front of lower priority objects.
+Sets the render priority for objects in 3D scenes. Higher priority objects will be sorted in front of lower priority objects. In other words, all objects with :ref:`render_priority<class_Material_property_render_priority>` ``1`` will render before all objects with :ref:`render_priority<class_Material_property_render_priority>` ``0``).
 
 \ **Note:** This only applies to :ref:`StandardMaterial3D<class_StandardMaterial3D>`\ s and :ref:`ShaderMaterial<class_ShaderMaterial>`\ s with type "Spatial".
 
-\ **Note:** This only applies to sorting of transparent objects. This will not impact how transparent objects are sorted relative to opaque objects. This is because opaque objects are not sorted, while transparent objects are sorted from back to front (subject to priority).
+\ **Note:** This will not impact how transparent objects are sorted relative to opaque objects or how dynamic meshes will be sorted relative to other opaque meshes. This is because all transparent objects are drawn after all opaque objects and all dynamic opaque meshes are drawn before other opaque meshes.
 
 .. rst-class:: classref-section-separator
 
@@ -147,57 +151,49 @@ Sets the render priority for transparent objects in 3D scenes. Higher priority o
 Method Descriptions
 -------------------
 
-.. _class_Material_method__can_do_next_pass:
+.. _class_Material_private_method__can_do_next_pass:
 
 .. rst-class:: classref-method
 
 :ref:`bool<class_bool>` **_can_do_next_pass** **(** **)** |virtual| |const|
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Only exposed for the purpose of overriding. You cannot call this function directly. Used internally to determine if :ref:`next_pass<class_Material_property_next_pass>` should be shown in the editor or not.
 
 .. rst-class:: classref-item-separator
 
 ----
 
-.. _class_Material_method__can_use_render_priority:
+.. _class_Material_private_method__can_use_render_priority:
 
 .. rst-class:: classref-method
 
 :ref:`bool<class_bool>` **_can_use_render_priority** **(** **)** |virtual| |const|
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Only exposed for the purpose of overriding. You cannot call this function directly. Used internally to determine if :ref:`render_priority<class_Material_property_render_priority>` should be shown in the editor or not.
 
 .. rst-class:: classref-item-separator
 
 ----
 
-.. _class_Material_method__get_shader_mode:
+.. _class_Material_private_method__get_shader_mode:
 
 .. rst-class:: classref-method
 
 :ref:`Mode<enum_Shader_Mode>` **_get_shader_mode** **(** **)** |virtual| |const|
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Only exposed for the purpose of overriding. You cannot call this function directly. Used internally by various editor tools.
 
 .. rst-class:: classref-item-separator
 
 ----
 
-.. _class_Material_method__get_shader_rid:
+.. _class_Material_private_method__get_shader_rid:
 
 .. rst-class:: classref-method
 
 :ref:`RID<class_RID>` **_get_shader_rid** **(** **)** |virtual| |const|
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Only exposed for the purpose of overriding. You cannot call this function directly. Used internally by various editor tools. Used to access the RID of the **Material**'s :ref:`Shader<class_Shader>`.
 
 .. rst-class:: classref-item-separator
 
@@ -221,9 +217,7 @@ Creates a placeholder version of this resource (:ref:`PlaceholderMaterial<class_
 
 void **inspect_native_shader_code** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Only available when running in the editor. Opens a popup that visualizes the generated shader code, including all variants and internal shader code.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

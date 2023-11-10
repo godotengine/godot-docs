@@ -181,7 +181,7 @@ Emitted whenever a node is renamed.
 
 **physics_frame** **(** **)**
 
-Emitted immediately before :ref:`Node._physics_process<class_Node_method__physics_process>` is called on every node in the **SceneTree**.
+Emitted immediately before :ref:`Node._physics_process<class_Node_private_method__physics_process>` is called on every node in the **SceneTree**.
 
 .. rst-class:: classref-item-separator
 
@@ -193,7 +193,7 @@ Emitted immediately before :ref:`Node._physics_process<class_Node_method__physic
 
 **process_frame** **(** **)**
 
-Emitted immediately before :ref:`Node._process<class_Node_method__process>` is called on every node in the **SceneTree**.
+Emitted immediately before :ref:`Node._process<class_Node_private_method__process>` is called on every node in the **SceneTree**.
 
 .. rst-class:: classref-item-separator
 
@@ -423,7 +423,7 @@ If ``true``, the **SceneTree** is paused. Doing so will have the following behav
 
 - 2D and 3D physics will be stopped. This includes signals and collision detection.
 
-- :ref:`Node._process<class_Node_method__process>`, :ref:`Node._physics_process<class_Node_method__physics_process>` and :ref:`Node._input<class_Node_method__input>` will not be called anymore in nodes.
+- :ref:`Node._process<class_Node_private_method__process>`, :ref:`Node._physics_process<class_Node_private_method__physics_process>` and :ref:`Node._input<class_Node_private_method__input>` will not be called anymore in nodes.
 
 .. rst-class:: classref-item-separator
 
@@ -573,7 +573,7 @@ Commonly used to create a one-shot delay timer as in the following example:
 
 The timer will be automatically freed after its time elapses.
 
-\ **Note:** The timer is processed after all of the nodes in the current frame, i.e. node's :ref:`Node._process<class_Node_method__process>` method would be called before the timer (or :ref:`Node._physics_process<class_Node_method__physics_process>` if ``process_in_physics`` is set to ``true``).
+\ **Note:** The timer is processed after all of the nodes in the current frame, i.e. node's :ref:`Node._process<class_Node_private_method__process>` method would be called before the timer (or :ref:`Node._physics_process<class_Node_private_method__physics_process>` if ``process_in_physics`` is set to ``true``).
 
 .. rst-class:: classref-item-separator
 

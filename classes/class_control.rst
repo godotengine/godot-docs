@@ -29,9 +29,9 @@ For more information on Godot's UI system, anchors, offsets, and containers, see
 
 Godot propagates input events via viewports. Each :ref:`Viewport<class_Viewport>` is responsible for propagating :ref:`InputEvent<class_InputEvent>`\ s to their child nodes. As the :ref:`SceneTree.root<class_SceneTree_property_root>` is a :ref:`Window<class_Window>`, this already happens automatically for all UI elements in your game.
 
-Input events are propagated through the :ref:`SceneTree<class_SceneTree>` from the root node to all child nodes by calling :ref:`Node._input<class_Node_method__input>`. For UI elements specifically, it makes more sense to override the virtual method :ref:`_gui_input<class_Control_method__gui_input>`, which filters out unrelated input events, such as by checking z-order, :ref:`mouse_filter<class_Control_property_mouse_filter>`, focus, or if the event was inside of the control's bounding box.
+Input events are propagated through the :ref:`SceneTree<class_SceneTree>` from the root node to all child nodes by calling :ref:`Node._input<class_Node_private_method__input>`. For UI elements specifically, it makes more sense to override the virtual method :ref:`_gui_input<class_Control_private_method__gui_input>`, which filters out unrelated input events, such as by checking z-order, :ref:`mouse_filter<class_Control_property_mouse_filter>`, focus, or if the event was inside of the control's bounding box.
 
-Call :ref:`accept_event<class_Control_method_accept_event>` so no other node receives the event. Once you accept an input, it becomes handled so :ref:`Node._unhandled_input<class_Node_method__unhandled_input>` will not process it.
+Call :ref:`accept_event<class_Control_method_accept_event>` so no other node receives the event. Once you accept an input, it becomes handled so :ref:`Node._unhandled_input<class_Node_private_method__unhandled_input>` will not process it.
 
 Only one **Control** node can be in focus. Only the node in focus will receive events. To get the focus, call :ref:`grab_focus<class_Control_method_grab_focus>`. **Control** nodes lose focus when another node grabs it, or if you hide the node in focus.
 
@@ -153,23 +153,23 @@ Methods
    :widths: auto
 
    +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                      | :ref:`_can_drop_data<class_Control_method__can_drop_data>` **(** :ref:`Vector2<class_Vector2>` at_position, :ref:`Variant<class_Variant>` data **)** |virtual| |const|                                                                                             |
+   | :ref:`bool<class_bool>`                      | :ref:`_can_drop_data<class_Control_private_method__can_drop_data>` **(** :ref:`Vector2<class_Vector2>` at_position, :ref:`Variant<class_Variant>` data **)** |virtual| |const|                                                                                     |
    +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                         | :ref:`_drop_data<class_Control_method__drop_data>` **(** :ref:`Vector2<class_Vector2>` at_position, :ref:`Variant<class_Variant>` data **)** |virtual|                                                                                                             |
+   | void                                         | :ref:`_drop_data<class_Control_private_method__drop_data>` **(** :ref:`Vector2<class_Vector2>` at_position, :ref:`Variant<class_Variant>` data **)** |virtual|                                                                                                     |
    +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Variant<class_Variant>`                | :ref:`_get_drag_data<class_Control_method__get_drag_data>` **(** :ref:`Vector2<class_Vector2>` at_position **)** |virtual|                                                                                                                                         |
+   | :ref:`Variant<class_Variant>`                | :ref:`_get_drag_data<class_Control_private_method__get_drag_data>` **(** :ref:`Vector2<class_Vector2>` at_position **)** |virtual|                                                                                                                                 |
    +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Vector2<class_Vector2>`                | :ref:`_get_minimum_size<class_Control_method__get_minimum_size>` **(** **)** |virtual| |const|                                                                                                                                                                     |
+   | :ref:`Vector2<class_Vector2>`                | :ref:`_get_minimum_size<class_Control_private_method__get_minimum_size>` **(** **)** |virtual| |const|                                                                                                                                                             |
    +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`String<class_String>`                  | :ref:`_get_tooltip<class_Control_method__get_tooltip>` **(** :ref:`Vector2<class_Vector2>` at_position **)** |virtual| |const|                                                                                                                                     |
+   | :ref:`String<class_String>`                  | :ref:`_get_tooltip<class_Control_private_method__get_tooltip>` **(** :ref:`Vector2<class_Vector2>` at_position **)** |virtual| |const|                                                                                                                             |
    +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                         | :ref:`_gui_input<class_Control_method__gui_input>` **(** :ref:`InputEvent<class_InputEvent>` event **)** |virtual|                                                                                                                                                 |
+   | void                                         | :ref:`_gui_input<class_Control_private_method__gui_input>` **(** :ref:`InputEvent<class_InputEvent>` event **)** |virtual|                                                                                                                                         |
    +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                      | :ref:`_has_point<class_Control_method__has_point>` **(** :ref:`Vector2<class_Vector2>` point **)** |virtual| |const|                                                                                                                                               |
+   | :ref:`bool<class_bool>`                      | :ref:`_has_point<class_Control_private_method__has_point>` **(** :ref:`Vector2<class_Vector2>` point **)** |virtual| |const|                                                                                                                                       |
    +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Object<class_Object>`                  | :ref:`_make_custom_tooltip<class_Control_method__make_custom_tooltip>` **(** :ref:`String<class_String>` for_text **)** |virtual| |const|                                                                                                                          |
+   | :ref:`Object<class_Object>`                  | :ref:`_make_custom_tooltip<class_Control_private_method__make_custom_tooltip>` **(** :ref:`String<class_String>` for_text **)** |virtual| |const|                                                                                                                  |
    +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Vector3i[]<class_Vector3i>`            | :ref:`_structured_text_parser<class_Control_method__structured_text_parser>` **(** :ref:`Array<class_Array>` args, :ref:`String<class_String>` text **)** |virtual| |const|                                                                                        |
+   | :ref:`Vector3i[]<class_Vector3i>`            | :ref:`_structured_text_parser<class_Control_private_method__structured_text_parser>` **(** :ref:`Array<class_Array>` args, :ref:`String<class_String>` text **)** |virtual| |const|                                                                                |
    +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                         | :ref:`accept_event<class_Control_method_accept_event>` **(** **)**                                                                                                                                                                                                 |
    +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -389,7 +389,7 @@ Emitted when the node's minimum size changes.
 
 **mouse_entered** **(** **)**
 
-Emitted when the mouse cursor enters the control's visible area, that is not occluded behind other Controls or Windows, provided its :ref:`mouse_filter<class_Control_property_mouse_filter>` lets the event reach it and regardless if it's currently focused or not.
+Emitted when the mouse cursor enters the control's (or any child control's) visible area, that is not occluded behind other Controls or Windows, provided its :ref:`mouse_filter<class_Control_property_mouse_filter>` lets the event reach it and regardless if it's currently focused or not.
 
 \ **Note:** :ref:`CanvasItem.z_index<class_CanvasItem_property_z_index>` doesn't affect, which Control receives the signal.
 
@@ -403,7 +403,7 @@ Emitted when the mouse cursor enters the control's visible area, that is not occ
 
 **mouse_exited** **(** **)**
 
-Emitted when the mouse cursor leaves the control's visible area, that is not occluded behind other Controls or Windows, provided its :ref:`mouse_filter<class_Control_property_mouse_filter>` lets the event reach it and regardless if it's currently focused or not.
+Emitted when the mouse cursor leaves the control's (and all child control's) visible area, that is not occluded behind other Controls or Windows, provided its :ref:`mouse_filter<class_Control_property_mouse_filter>` lets the event reach it and regardless if it's currently focused or not.
 
 \ **Note:** :ref:`CanvasItem.z_index<class_CanvasItem_property_z_index>` doesn't affect, which Control receives the signal.
 
@@ -892,7 +892,7 @@ enum **MouseFilter**:
 
 :ref:`MouseFilter<enum_Control_MouseFilter>` **MOUSE_FILTER_STOP** = ``0``
 
-The control will receive mouse movement input events and mouse button input events if clicked on through :ref:`_gui_input<class_Control_method__gui_input>`. And the control will receive the :ref:`mouse_entered<class_Control_signal_mouse_entered>` and :ref:`mouse_exited<class_Control_signal_mouse_exited>` signals. These events are automatically marked as handled, and they will not propagate further to other controls. This also results in blocking signals in other controls.
+The control will receive mouse movement input events and mouse button input events if clicked on through :ref:`_gui_input<class_Control_private_method__gui_input>`. And the control will receive the :ref:`mouse_entered<class_Control_signal_mouse_entered>` and :ref:`mouse_exited<class_Control_signal_mouse_exited>` signals. These events are automatically marked as handled, and they will not propagate further to other controls. This also results in blocking signals in other controls.
 
 .. _class_Control_constant_MOUSE_FILTER_PASS:
 
@@ -900,7 +900,7 @@ The control will receive mouse movement input events and mouse button input even
 
 :ref:`MouseFilter<enum_Control_MouseFilter>` **MOUSE_FILTER_PASS** = ``1``
 
-The control will receive mouse movement input events and mouse button input events if clicked on through :ref:`_gui_input<class_Control_method__gui_input>`. And the control will receive the :ref:`mouse_entered<class_Control_signal_mouse_entered>` and :ref:`mouse_exited<class_Control_signal_mouse_exited>` signals. If this control does not handle the event, the parent control (if any) will be considered, and so on until there is no more parent control to potentially handle it. This also allows signals to fire in other controls. If no control handled it, the event will be passed to :ref:`Node._shortcut_input<class_Node_method__shortcut_input>` for further processing.
+The control will receive mouse movement input events and mouse button input events if clicked on through :ref:`_gui_input<class_Control_private_method__gui_input>`. And the control will receive the :ref:`mouse_entered<class_Control_signal_mouse_entered>` and :ref:`mouse_exited<class_Control_signal_mouse_exited>` signals. If this control does not handle the event, the parent control (if any) will be considered, and so on until there is no more parent control to potentially handle it. This also allows signals to fire in other controls. If no control handled it, the event will be passed to :ref:`Node._shortcut_input<class_Node_private_method__shortcut_input>` for further processing.
 
 .. _class_Control_constant_MOUSE_FILTER_IGNORE:
 
@@ -908,7 +908,9 @@ The control will receive mouse movement input events and mouse button input even
 
 :ref:`MouseFilter<enum_Control_MouseFilter>` **MOUSE_FILTER_IGNORE** = ``2``
 
-The control will not receive mouse movement input events and mouse button input events if clicked on through :ref:`_gui_input<class_Control_method__gui_input>`. The control will also not receive the :ref:`mouse_entered<class_Control_signal_mouse_entered>` nor :ref:`mouse_exited<class_Control_signal_mouse_exited>` signals. This will not block other controls from receiving these events or firing the signals. Ignored events will not be handled automatically.
+The control will not receive mouse movement input events and mouse button input events if clicked on through :ref:`_gui_input<class_Control_private_method__gui_input>`. The control will also not receive the :ref:`mouse_entered<class_Control_signal_mouse_entered>` nor :ref:`mouse_exited<class_Control_signal_mouse_exited>` signals. This will not block other controls from receiving these events or firing the signals. Ignored events will not be handled automatically.
+
+\ **Note:** If the control has received :ref:`mouse_entered<class_Control_signal_mouse_entered>` but not :ref:`mouse_exited<class_Control_signal_mouse_exited>`, changing the :ref:`mouse_filter<class_Control_property_mouse_filter>` to :ref:`MOUSE_FILTER_IGNORE<class_Control_constant_MOUSE_FILTER_IGNORE>` will cause :ref:`mouse_exited<class_Control_signal_mouse_exited>` to be emitted.
 
 .. rst-class:: classref-item-separator
 
@@ -1077,9 +1079,11 @@ Sent when the node changes size. Use :ref:`size<class_Control_property_size>` to
 
 **NOTIFICATION_MOUSE_ENTER** = ``41``
 
-Sent when the mouse cursor enters the control's visible area, that is not occluded behind other Controls or Windows, provided its :ref:`mouse_filter<class_Control_property_mouse_filter>` lets the event reach it and regardless if it's currently focused or not.
+Sent when the mouse cursor enters the control's (or any child control's) visible area, that is not occluded behind other Controls or Windows, provided its :ref:`mouse_filter<class_Control_property_mouse_filter>` lets the event reach it and regardless if it's currently focused or not.
 
-\ **Note:** :ref:`CanvasItem.z_index<class_CanvasItem_property_z_index>` doesn't affect, which Control receives the notification.
+\ **Note:** :ref:`CanvasItem.z_index<class_CanvasItem_property_z_index>` doesn't affect which Control receives the notification.
+
+See also :ref:`NOTIFICATION_MOUSE_ENTER_SELF<class_Control_constant_NOTIFICATION_MOUSE_ENTER_SELF>`.
 
 .. _class_Control_constant_NOTIFICATION_MOUSE_EXIT:
 
@@ -1087,9 +1091,35 @@ Sent when the mouse cursor enters the control's visible area, that is not occlud
 
 **NOTIFICATION_MOUSE_EXIT** = ``42``
 
+Sent when the mouse cursor leaves the control's (and all child control's) visible area, that is not occluded behind other Controls or Windows, provided its :ref:`mouse_filter<class_Control_property_mouse_filter>` lets the event reach it and regardless if it's currently focused or not.
+
+\ **Note:** :ref:`CanvasItem.z_index<class_CanvasItem_property_z_index>` doesn't affect which Control receives the notification.
+
+See also :ref:`NOTIFICATION_MOUSE_EXIT_SELF<class_Control_constant_NOTIFICATION_MOUSE_EXIT_SELF>`.
+
+.. _class_Control_constant_NOTIFICATION_MOUSE_ENTER_SELF:
+
+.. rst-class:: classref-constant
+
+**NOTIFICATION_MOUSE_ENTER_SELF** = ``60``
+
+Sent when the mouse cursor enters the control's visible area, that is not occluded behind other Controls or Windows, provided its :ref:`mouse_filter<class_Control_property_mouse_filter>` lets the event reach it and regardless if it's currently focused or not.
+
+\ **Note:** :ref:`CanvasItem.z_index<class_CanvasItem_property_z_index>` doesn't affect which Control receives the notification.
+
+See also :ref:`NOTIFICATION_MOUSE_ENTER<class_Control_constant_NOTIFICATION_MOUSE_ENTER>`.
+
+.. _class_Control_constant_NOTIFICATION_MOUSE_EXIT_SELF:
+
+.. rst-class:: classref-constant
+
+**NOTIFICATION_MOUSE_EXIT_SELF** = ``61``
+
 Sent when the mouse cursor leaves the control's visible area, that is not occluded behind other Controls or Windows, provided its :ref:`mouse_filter<class_Control_property_mouse_filter>` lets the event reach it and regardless if it's currently focused or not.
 
-\ **Note:** :ref:`CanvasItem.z_index<class_CanvasItem_property_z_index>` doesn't affect, which Control receives the notification.
+\ **Note:** :ref:`CanvasItem.z_index<class_CanvasItem_property_z_index>` doesn't affect which Control receives the notification.
+
+See also :ref:`NOTIFICATION_MOUSE_EXIT<class_Control_constant_NOTIFICATION_MOUSE_EXIT>`.
 
 .. _class_Control_constant_NOTIFICATION_FOCUS_ENTER:
 
@@ -1518,7 +1548,7 @@ The default cursor shape for this control. Useful for Godot plugins and applicat
 - void **set_mouse_filter** **(** :ref:`MouseFilter<enum_Control_MouseFilter>` value **)**
 - :ref:`MouseFilter<enum_Control_MouseFilter>` **get_mouse_filter** **(** **)**
 
-Controls whether the control will be able to receive mouse button input events through :ref:`_gui_input<class_Control_method__gui_input>` and how these events should be handled. Also controls whether the control can receive the :ref:`mouse_entered<class_Control_signal_mouse_entered>`, and :ref:`mouse_exited<class_Control_signal_mouse_exited>` signals. See the constants to learn what each does.
+Controls whether the control will be able to receive mouse button input events through :ref:`_gui_input<class_Control_private_method__gui_input>` and how these events should be handled. Also controls whether the control can receive the :ref:`mouse_entered<class_Control_signal_mouse_entered>`, and :ref:`mouse_exited<class_Control_signal_mouse_exited>` signals. See the constants to learn what each does.
 
 .. rst-class:: classref-item-separator
 
@@ -1535,9 +1565,9 @@ Controls whether the control will be able to receive mouse button input events t
 - void **set_force_pass_scroll_events** **(** :ref:`bool<class_bool>` value **)**
 - :ref:`bool<class_bool>` **is_force_pass_scroll_events** **(** **)**
 
-When enabled, scroll wheel events processed by :ref:`_gui_input<class_Control_method__gui_input>` will be passed to the parent control even if :ref:`mouse_filter<class_Control_property_mouse_filter>` is set to :ref:`MOUSE_FILTER_STOP<class_Control_constant_MOUSE_FILTER_STOP>`. As it defaults to true, this allows nested scrollable containers to work out of the box.
+When enabled, scroll wheel events processed by :ref:`_gui_input<class_Control_private_method__gui_input>` will be passed to the parent control even if :ref:`mouse_filter<class_Control_property_mouse_filter>` is set to :ref:`MOUSE_FILTER_STOP<class_Control_constant_MOUSE_FILTER_STOP>`. As it defaults to true, this allows nested scrollable containers to work out of the box.
 
-You should disable it on the root of your UI if you do not want scroll events to go to the :ref:`Node._unhandled_input<class_Node_method__unhandled_input>` processing.
+You should disable it on the root of your UI if you do not want scroll events to go to the :ref:`Node._unhandled_input<class_Node_private_method__unhandled_input>` processing.
 
 .. rst-class:: classref-item-separator
 
@@ -1850,7 +1880,7 @@ When set, this property gives the highest priority to the type of the specified 
 
 The default tooltip text. The tooltip appears when the user's mouse cursor stays idle over this control for a few moments, provided that the :ref:`mouse_filter<class_Control_property_mouse_filter>` property is not :ref:`MOUSE_FILTER_IGNORE<class_Control_constant_MOUSE_FILTER_IGNORE>`. The time required for the tooltip to appear can be changed with the :ref:`ProjectSettings.gui/timers/tooltip_delay_sec<class_ProjectSettings_property_gui/timers/tooltip_delay_sec>` option. See also :ref:`get_tooltip<class_Control_method_get_tooltip>`.
 
-The tooltip popup will use either a default implementation, or a custom one that you can provide by overriding :ref:`_make_custom_tooltip<class_Control_method__make_custom_tooltip>`. The default tooltip includes a :ref:`PopupPanel<class_PopupPanel>` and :ref:`Label<class_Label>` whose theme properties can be customized using :ref:`Theme<class_Theme>` methods with the ``"TooltipPanel"`` and ``"TooltipLabel"`` respectively. For example:
+The tooltip popup will use either a default implementation, or a custom one that you can provide by overriding :ref:`_make_custom_tooltip<class_Control_private_method__make_custom_tooltip>`. The default tooltip includes a :ref:`PopupPanel<class_PopupPanel>` and :ref:`Label<class_Label>` whose theme properties can be customized using :ref:`Theme<class_Theme>` methods with the ``"TooltipPanel"`` and ``"TooltipLabel"`` respectively. For example:
 
 
 .. tabs::
@@ -1884,15 +1914,15 @@ The tooltip popup will use either a default implementation, or a custom one that
 Method Descriptions
 -------------------
 
-.. _class_Control_method__can_drop_data:
+.. _class_Control_private_method__can_drop_data:
 
 .. rst-class:: classref-method
 
 :ref:`bool<class_bool>` **_can_drop_data** **(** :ref:`Vector2<class_Vector2>` at_position, :ref:`Variant<class_Variant>` data **)** |virtual| |const|
 
-Godot calls this method to test if ``data`` from a control's :ref:`_get_drag_data<class_Control_method__get_drag_data>` can be dropped at ``at_position``. ``at_position`` is local to this control.
+Godot calls this method to test if ``data`` from a control's :ref:`_get_drag_data<class_Control_private_method__get_drag_data>` can be dropped at ``at_position``. ``at_position`` is local to this control.
 
-This method should only be used to test the data. Process the data in :ref:`_drop_data<class_Control_method__drop_data>`.
+This method should only be used to test the data. Process the data in :ref:`_drop_data<class_Control_private_method__drop_data>`.
 
 
 .. tabs::
@@ -1919,13 +1949,13 @@ This method should only be used to test the data. Process the data in :ref:`_dro
 
 ----
 
-.. _class_Control_method__drop_data:
+.. _class_Control_private_method__drop_data:
 
 .. rst-class:: classref-method
 
 void **_drop_data** **(** :ref:`Vector2<class_Vector2>` at_position, :ref:`Variant<class_Variant>` data **)** |virtual|
 
-Godot calls this method to pass you the ``data`` from a control's :ref:`_get_drag_data<class_Control_method__get_drag_data>` result. Godot first calls :ref:`_can_drop_data<class_Control_method__can_drop_data>` to test if ``data`` is allowed to drop at ``at_position`` where ``at_position`` is local to this control.
+Godot calls this method to pass you the ``data`` from a control's :ref:`_get_drag_data<class_Control_private_method__get_drag_data>` result. Godot first calls :ref:`_can_drop_data<class_Control_private_method__can_drop_data>` to test if ``data`` is allowed to drop at ``at_position`` where ``at_position`` is local to this control.
 
 
 .. tabs::
@@ -1956,13 +1986,13 @@ Godot calls this method to pass you the ``data`` from a control's :ref:`_get_dra
 
 ----
 
-.. _class_Control_method__get_drag_data:
+.. _class_Control_private_method__get_drag_data:
 
 .. rst-class:: classref-method
 
 :ref:`Variant<class_Variant>` **_get_drag_data** **(** :ref:`Vector2<class_Vector2>` at_position **)** |virtual|
 
-Godot calls this method to get data that can be dragged and dropped onto controls that expect drop data. Returns ``null`` if there is no data to drag. Controls that want to receive drop data should implement :ref:`_can_drop_data<class_Control_method__can_drop_data>` and :ref:`_drop_data<class_Control_method__drop_data>`. ``at_position`` is local to this control. Drag may be forced with :ref:`force_drag<class_Control_method_force_drag>`.
+Godot calls this method to get data that can be dragged and dropped onto controls that expect drop data. Returns ``null`` if there is no data to drag. Controls that want to receive drop data should implement :ref:`_can_drop_data<class_Control_private_method__can_drop_data>` and :ref:`_drop_data<class_Control_private_method__drop_data>`. ``at_position`` is local to this control. Drag may be forced with :ref:`force_drag<class_Control_method_force_drag>`.
 
 A preview that will follow the mouse that should represent the data can be set with :ref:`set_drag_preview<class_Control_method_set_drag_preview>`. A good time to set the preview is in this method.
 
@@ -1991,7 +2021,7 @@ A preview that will follow the mouse that should represent the data can be set w
 
 ----
 
-.. _class_Control_method__get_minimum_size:
+.. _class_Control_private_method__get_minimum_size:
 
 .. rst-class:: classref-method
 
@@ -2007,7 +2037,7 @@ If not overridden, defaults to :ref:`Vector2.ZERO<class_Vector2_constant_ZERO>`.
 
 ----
 
-.. _class_Control_method__get_tooltip:
+.. _class_Control_private_method__get_tooltip:
 
 .. rst-class:: classref-method
 
@@ -2021,7 +2051,7 @@ Virtual method to be implemented by the user. Returns the tooltip text for the p
 
 ----
 
-.. _class_Control_method__gui_input:
+.. _class_Control_private_method__gui_input:
 
 .. rst-class:: classref-method
 
@@ -2058,7 +2088,7 @@ Virtual method to be implemented by the user. Use this method to process and acc
 
 The event won't trigger if:
 
-\* clicking outside the control (see :ref:`_has_point<class_Control_method__has_point>`);
+\* clicking outside the control (see :ref:`_has_point<class_Control_private_method__has_point>`);
 
 \* control has :ref:`mouse_filter<class_Control_property_mouse_filter>` set to :ref:`MOUSE_FILTER_IGNORE<class_Control_constant_MOUSE_FILTER_IGNORE>`;
 
@@ -2074,7 +2104,7 @@ The event won't trigger if:
 
 ----
 
-.. _class_Control_method__has_point:
+.. _class_Control_private_method__has_point:
 
 .. rst-class:: classref-method
 
@@ -2090,7 +2120,7 @@ If not overridden, default behavior is checking if the point is within control's
 
 ----
 
-.. _class_Control_method__make_custom_tooltip:
+.. _class_Control_private_method__make_custom_tooltip:
 
 .. rst-class:: classref-method
 
@@ -2156,7 +2186,7 @@ The returned node will be added as child to a :ref:`PopupPanel<class_PopupPanel>
 
 ----
 
-.. _class_Control_method__structured_text_parser:
+.. _class_Control_private_method__structured_text_parser:
 
 .. rst-class:: classref-method
 
@@ -2176,7 +2206,7 @@ Returns an :ref:`Array<class_Array>` of :ref:`Vector3i<class_Vector3i>` text ran
 
 void **accept_event** **(** **)**
 
-Marks an input event as handled. Once you accept an input event, it stops propagating, even to nodes listening to :ref:`Node._unhandled_input<class_Node_method__unhandled_input>` or :ref:`Node._unhandled_key_input<class_Node_method__unhandled_key_input>`.
+Marks an input event as handled. Once you accept an input event, it stops propagating, even to nodes listening to :ref:`Node._unhandled_input<class_Node_private_method__unhandled_input>` or :ref:`Node._unhandled_key_input<class_Node_private_method__unhandled_key_input>`.
 
 \ **Note:** This does not affect the methods in :ref:`Input<class_Input>`, only the way events are propagated.
 
@@ -2392,9 +2422,9 @@ Finds the next **Control** that can receive the focus on the specified :ref:`Sid
 
 void **force_drag** **(** :ref:`Variant<class_Variant>` data, :ref:`Control<class_Control>` preview **)**
 
-Forces drag and bypasses :ref:`_get_drag_data<class_Control_method__get_drag_data>` and :ref:`set_drag_preview<class_Control_method_set_drag_preview>` by passing ``data`` and ``preview``. Drag will start even if the mouse is neither over nor pressed on this control.
+Forces drag and bypasses :ref:`_get_drag_data<class_Control_private_method__get_drag_data>` and :ref:`set_drag_preview<class_Control_method_set_drag_preview>` by passing ``data`` and ``preview``. Drag will start even if the mouse is neither over nor pressed on this control.
 
-The methods :ref:`_can_drop_data<class_Control_method__can_drop_data>` and :ref:`_drop_data<class_Control_method__drop_data>` must be implemented on controls that want to receive drop data.
+The methods :ref:`_can_drop_data<class_Control_private_method__can_drop_data>` and :ref:`_drop_data<class_Control_private_method__drop_data>` must be implemented on controls that want to receive drop data.
 
 .. rst-class:: classref-item-separator
 
@@ -2733,7 +2763,7 @@ See :ref:`get_theme_color<class_Control_method_get_theme_color>` for details.
 
 Returns the tooltip text for the position ``at_position`` in control's local coordinates, which will typically appear when the cursor is resting over this control. By default, it returns :ref:`tooltip_text<class_Control_property_tooltip_text>`.
 
-This method can be overridden to customize its behavior. See :ref:`_get_tooltip<class_Control_method__get_tooltip>`.
+This method can be overridden to customize its behavior. See :ref:`_get_tooltip<class_Control_private_method__get_tooltip>`.
 
 \ **Note:** If this method returns an empty :ref:`String<class_String>`, no tooltip is displayed.
 
@@ -2778,7 +2808,7 @@ void **grab_focus** **(** **)**
 
 Steal the focus from another control and become the focused control (see :ref:`focus_mode<class_Control_property_focus_mode>`).
 
-\ **Note:** Using this method together with :ref:`Callable.call_deferred<class_Callable_method_call_deferred>` makes it more reliable, especially when called inside :ref:`Node._ready<class_Node_method__ready>`.
+\ **Note:** Using this method together with :ref:`Callable.call_deferred<class_Callable_method_call_deferred>` makes it more reliable, especially when called inside :ref:`Node._ready<class_Node_private_method__ready>`.
 
 .. rst-class:: classref-item-separator
 
@@ -3158,7 +3188,7 @@ Sets :ref:`offset_left<class_Control_property_offset_left>` and :ref:`offset_top
 
 void **set_drag_forwarding** **(** :ref:`Callable<class_Callable>` drag_func, :ref:`Callable<class_Callable>` can_drop_func, :ref:`Callable<class_Callable>` drop_func **)**
 
-Forwards the handling of this control's :ref:`_get_drag_data<class_Control_method__get_drag_data>`,  :ref:`_can_drop_data<class_Control_method__can_drop_data>` and :ref:`_drop_data<class_Control_method__drop_data>` virtual functions to delegate callables.
+Forwards the handling of this control's :ref:`_get_drag_data<class_Control_private_method__get_drag_data>`,  :ref:`_can_drop_data<class_Control_private_method__can_drop_data>` and :ref:`_drop_data<class_Control_private_method__drop_data>` virtual functions to delegate callables.
 
 For each argument, if not empty, the delegate callable is used, otherwise the local (virtual) function is used.
 
@@ -3174,7 +3204,7 @@ The function format for each callable should be exactly the same as the virtual 
 
 void **set_drag_preview** **(** :ref:`Control<class_Control>` control **)**
 
-Shows the given control at the mouse pointer. A good time to call this method is in :ref:`_get_drag_data<class_Control_method__get_drag_data>`. The control must not be in the scene tree. You should not free the control, and you should not keep a reference to the control beyond the duration of the drag. It will be deleted automatically after the drag has ended.
+Shows the given control at the mouse pointer. A good time to call this method is in :ref:`_get_drag_data<class_Control_private_method__get_drag_data>`. The control must not be in the scene tree. You should not free the control, and you should not keep a reference to the control beyond the duration of the drag. It will be deleted automatically after the drag has ended.
 
 
 .. tabs::

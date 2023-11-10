@@ -19,7 +19,7 @@ Represents a key on a keyboard being pressed or released.
 Description
 -----------
 
-An input event for keys on a keyboard. Supports key presses, key releases and :ref:`echo<class_InputEventKey_property_echo>` events. It can also be received in :ref:`Node._unhandled_key_input<class_Node_method__unhandled_key_input>`.
+An input event for keys on a keyboard. Supports key presses, key releases and :ref:`echo<class_InputEventKey_property_echo>` events. It can also be received in :ref:`Node._unhandled_key_input<class_Node_private_method__unhandled_key_input>`.
 
 \ **Note:** Events received from the keyboard usually have all properties set. Event mappings should have only one of the :ref:`keycode<class_InputEventKey_property_keycode>`, :ref:`physical_keycode<class_InputEventKey_property_physical_keycode>` or :ref:`unicode<class_InputEventKey_property_unicode>` set.
 
@@ -169,7 +169,30 @@ To get a human-readable representation of the **InputEventKey**, use ``OS.get_ke
 
 Represents the physical location of a key on the 101/102-key US QWERTY keyboard, which corresponds to one of the :ref:`Key<enum_@GlobalScope_Key>` constants.
 
-To get a human-readable representation of the **InputEventKey**, use ``OS.get_keycode_string(event.keycode)`` where ``event`` is the **InputEventKey**.
+To get a human-readable representation of the **InputEventKey**, use :ref:`OS.get_keycode_string<class_OS_method_get_keycode_string>` in combination with :ref:`DisplayServer.keyboard_get_keycode_from_physical<class_DisplayServer_method_keyboard_get_keycode_from_physical>`:
+
+
+.. tabs::
+
+ .. code-tab:: gdscript
+
+    func _input(event):
+        if event is InputEventKey:
+            var keycode = DisplayServer.keyboard_get_keycode_from_physical(event.physical_keycode)
+            print(OS.get_keycode_string(keycode))
+
+ .. code-tab:: csharp
+
+    public override void _Input(InputEvent @event)
+    {
+        if (@event is InputEventKey inputEventKey)
+        {
+            var keycode = DisplayServer.KeyboardGetKeycodeFromPhysical(inputEventKey.PhysicalKeycode);
+            GD.Print(OS.GetKeycodeString(keycode));
+        }
+    }
+
+
 
 .. rst-class:: classref-item-separator
 

@@ -19,7 +19,7 @@ Represents a triggered keyboard :ref:`Shortcut<class_Shortcut>`.
 Description
 -----------
 
-InputEventShortcut is a special event that can be received in :ref:`Node._unhandled_key_input<class_Node_method__unhandled_key_input>`. It is typically sent by the editor's Command Palette to trigger actions, but can also be sent manually using :ref:`Viewport.push_input<class_Viewport_method_push_input>`.
+InputEventShortcut is a special event that can be received in :ref:`Node._unhandled_key_input<class_Node_private_method__unhandled_key_input>`. It is typically sent by the editor's Command Palette to trigger actions, but can also be sent manually using :ref:`Viewport.push_input<class_Viewport_method_push_input>`.
 
 .. rst-class:: classref-reftable-group
 

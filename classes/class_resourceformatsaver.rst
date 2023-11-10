@@ -31,17 +31,17 @@ Methods
 .. table::
    :widths: auto
 
-   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`_get_recognized_extensions<class_ResourceFormatSaver_method__get_recognized_extensions>` **(** :ref:`Resource<class_Resource>` resource **)** |virtual| |const|              |
-   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                           | :ref:`_recognize<class_ResourceFormatSaver_method__recognize>` **(** :ref:`Resource<class_Resource>` resource **)** |virtual| |const|                                              |
-   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                           | :ref:`_recognize_path<class_ResourceFormatSaver_method__recognize_path>` **(** :ref:`Resource<class_Resource>` resource, :ref:`String<class_String>` path **)** |virtual| |const|  |
-   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Error<enum_@GlobalScope_Error>`             | :ref:`_save<class_ResourceFormatSaver_method__save>` **(** :ref:`Resource<class_Resource>` resource, :ref:`String<class_String>` path, :ref:`int<class_int>` flags **)** |virtual| |
-   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Error<enum_@GlobalScope_Error>`             | :ref:`_set_uid<class_ResourceFormatSaver_method__set_uid>` **(** :ref:`String<class_String>` path, :ref:`int<class_int>` uid **)** |virtual|                                       |
-   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`_get_recognized_extensions<class_ResourceFormatSaver_private_method__get_recognized_extensions>` **(** :ref:`Resource<class_Resource>` resource **)** |virtual| |const|              |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`_recognize<class_ResourceFormatSaver_private_method__recognize>` **(** :ref:`Resource<class_Resource>` resource **)** |virtual| |const|                                              |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`_recognize_path<class_ResourceFormatSaver_private_method__recognize_path>` **(** :ref:`Resource<class_Resource>` resource, :ref:`String<class_String>` path **)** |virtual| |const|  |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>`             | :ref:`_save<class_ResourceFormatSaver_private_method__save>` **(** :ref:`Resource<class_Resource>` resource, :ref:`String<class_String>` path, :ref:`int<class_int>` flags **)** |virtual| |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>`             | :ref:`_set_uid<class_ResourceFormatSaver_private_method__set_uid>` **(** :ref:`String<class_String>` path, :ref:`int<class_int>` uid **)** |virtual|                                       |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -52,19 +52,19 @@ Methods
 Method Descriptions
 -------------------
 
-.. _class_ResourceFormatSaver_method__get_recognized_extensions:
+.. _class_ResourceFormatSaver_private_method__get_recognized_extensions:
 
 .. rst-class:: classref-method
 
 :ref:`PackedStringArray<class_PackedStringArray>` **_get_recognized_extensions** **(** :ref:`Resource<class_Resource>` resource **)** |virtual| |const|
 
-Returns the list of extensions available for saving the resource object, provided it is recognized (see :ref:`_recognize<class_ResourceFormatSaver_method__recognize>`).
+Returns the list of extensions available for saving the resource object, provided it is recognized (see :ref:`_recognize<class_ResourceFormatSaver_private_method__recognize>`).
 
 .. rst-class:: classref-item-separator
 
 ----
 
-.. _class_ResourceFormatSaver_method__recognize:
+.. _class_ResourceFormatSaver_private_method__recognize:
 
 .. rst-class:: classref-method
 
@@ -76,7 +76,7 @@ Returns whether the given resource object can be saved by this saver.
 
 ----
 
-.. _class_ResourceFormatSaver_method__recognize_path:
+.. _class_ResourceFormatSaver_private_method__recognize_path:
 
 .. rst-class:: classref-method
 
@@ -84,13 +84,13 @@ Returns whether the given resource object can be saved by this saver.
 
 Returns ``true`` if this saver handles a given save path and ``false`` otherwise.
 
-If this method is not implemented, the default behavior returns whether the path's extension is within the ones provided by :ref:`_get_recognized_extensions<class_ResourceFormatSaver_method__get_recognized_extensions>`.
+If this method is not implemented, the default behavior returns whether the path's extension is within the ones provided by :ref:`_get_recognized_extensions<class_ResourceFormatSaver_private_method__get_recognized_extensions>`.
 
 .. rst-class:: classref-item-separator
 
 ----
 
-.. _class_ResourceFormatSaver_method__save:
+.. _class_ResourceFormatSaver_private_method__save:
 
 .. rst-class:: classref-method
 
@@ -104,7 +104,7 @@ Returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` on success, or an
 
 ----
 
-.. _class_ResourceFormatSaver_method__set_uid:
+.. _class_ResourceFormatSaver_private_method__set_uid:
 
 .. rst-class:: classref-method
 

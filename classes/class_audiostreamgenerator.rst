@@ -23,7 +23,10 @@ Description
 
 Here's a sample on how to use it to generate a sine wave:
 
-::
+
+.. tabs::
+
+ .. code-tab:: gdscript
 
     var playback # Will hold the AudioStreamGeneratorPlayback.
     @onready var sample_hz = $AudioStreamPlayer.stream.mix_rate
@@ -42,6 +45,40 @@ Here's a sample on how to use it to generate a sine wave:
         for i in range(frames_available):
             playback.push_frame(Vector2.ONE * sin(phase * TAU))
             phase = fmod(phase + increment, 1.0)
+
+ .. code-tab:: csharp
+
+    [Export] public AudioStreamPlayer Player { get; set; }
+    
+    private AudioStreamGeneratorPlayback _playback; // Will hold the AudioStreamGeneratorPlayback.
+    private float _sampleHz;
+    private float _pulseHz = 440.0f; // The frequency of the sound wave.
+    
+    public override void _Ready()
+    {
+        if (Player.Stream is AudioStreamGenerator generator) // Type as a generator to access MixRate.
+        {
+            _sampleHz = generator.MixRate;
+            Player.Play();
+            _playback = (AudioStreamGeneratorPlayback)Player.GetStreamPlayback();
+            FillBuffer();
+        }
+    }
+    
+    public void FillBuffer()
+    {
+        double phase = 0.0;
+        float increment = _pulseHz / _sampleHz;
+        int framesAvailable = _playback.GetFramesAvailable();
+    
+        for (int i = 0; i < framesAvailable; i++)
+        {
+            _playback.PushFrame(Vector2.One * (float)Mathf.Sin(phase * Mathf.Tau));
+            phase = Mathf.PosMod(phase + increment, 1.0);
+        }
+    }
+
+
 
 In the example above, the "AudioStreamPlayer" node must use an **AudioStreamGenerator** as its stream. The ``fill_buffer`` function provides audio data for approximating a sine wave.
 
