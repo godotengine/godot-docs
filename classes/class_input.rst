@@ -742,6 +742,8 @@ If ``exact_match`` is ``false``, it ignores additional input modifiers for :ref:
 
 \ **Note:** Due to keyboard ghosting, :ref:`is_action_just_pressed<class_Input_method_is_action_just_pressed>` may return ``false`` even if one of the action's keys is pressed. See `Input examples <../tutorials/inputs/input_examples.html#keyboard-events>`__ in the documentation for more information.
 
+\ **Note:** During input handling (e.g. :ref:`Node._input<class_Node_private_method__input>`), use :ref:`InputEvent.is_action_pressed<class_InputEvent_method_is_action_pressed>` instead to query the action state of the current event.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -757,6 +759,8 @@ Returns ``true`` when the user *stops* pressing the action event in the current 
 \ **Note:** Returning ``true`` does not imply that the action is *still* not pressed. An action can be released and pressed again rapidly, and ``true`` will still be returned so as not to miss input.
 
 If ``exact_match`` is ``false``, it ignores additional input modifiers for :ref:`InputEventKey<class_InputEventKey>` and :ref:`InputEventMouseButton<class_InputEventMouseButton>` events, and the direction for :ref:`InputEventJoypadMotion<class_InputEventJoypadMotion>` events.
+
+\ **Note:** During input handling (e.g. :ref:`Node._input<class_Node_private_method__input>`), use :ref:`InputEvent.is_action_released<class_InputEvent_method_is_action_released>` instead to query the action state of the current event.
 
 .. rst-class:: classref-item-separator
 
