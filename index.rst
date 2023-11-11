@@ -79,12 +79,11 @@ the ``GodotEngine.epub`` file in an e-book reader application.
    :name: sec-general
 
    about/introduction
-   about/faq
-   about/troubleshooting
    about/list_of_features
-   about/docs_changelog
-   about/release_policy
+   about/faq
    about/complying_with_licenses
+   about/release_policy
+   about/docs_changelog 
 
 .. toctree::
    :hidden:
@@ -108,6 +107,7 @@ the ``GodotEngine.epub`` file in an e-book reader application.
    :name: sec-tutorials
 
    tutorials/best_practices/index
+   tutorials/troubleshooting
    tutorials/editor/index
    tutorials/migrating/index
 
