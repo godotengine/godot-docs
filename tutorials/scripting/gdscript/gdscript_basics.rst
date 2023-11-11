@@ -1997,6 +1997,40 @@ Example::
         set(value):
             milliseconds = value * 1000
 
+.. note::
+
+    Unlike ``setget`` in previous Godot versions, the properties setter and getter are **always** called (except as noted below),
+    even when accessed inside the same class (with or without prefixing with ``self.``). This makes the behavior
+    consistent. If you need direct access to the value, use another variable for direct access and make the property
+    code use that name.
+
+Alternative syntax
+^^^^^^^^^^^^^^^^^^
+
+Also there is another notation to use existing class functions if you want to split the code from the variable declaration
+or you need to reuse the code across multiple properties (but you can't distinguish which property the setter/getter is being called for)::
+
+    var my_prop:
+        get = get_my_prop, set = set_my_prop
+
+This can also be done in the same line::
+
+    var my_prop: get = get_my_prop, set = set_my_prop
+
+The setter and getter must use the same notation, mixing styles for the same variable is not allowed.
+
+.. note::
+
+    You cannot specify type hints for *inline* setters and getters. This is done on purpose to reduce the boilerplate.
+    If the variable is typed, then the setter's argument is automatically of the same type, and the getter's return value must match it.
+    Separated setter/getter functions can have type hints, and the type must match the variable's type or be a wider type.
+
+When setter/getter is not called
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+When a variable is initialized, the value of the initializer will be written directly to the variable.
+Including if the ``@onready`` annotation is applied to the variable.
+
 Using the variable's name to set it inside its own setter or to get it inside its own getter will directly access the underlying member,
 so it won't generate infinite recursion and saves you from explicitly declaring another variable::
 
@@ -2008,22 +2042,24 @@ so it won't generate infinite recursion and saves you from explicitly declaring 
             changed.emit(value)
             warns_when_changed = value
 
-This backing member variable is not created if you don't use it.
+This also applies to the alternative syntax::
 
-.. note::
+    var my_prop: set = set_my_prop
 
-    Unlike ``setget`` in previous Godot versions, the properties setter and getter are **always** called,
-    even when accessed inside the same class (with or without prefixing with ``self.``). This makes the behavior
-    consistent. If you need direct access to the value, use another variable for direct access and make the property
-    code use that name.
+    func set_my_prop(value):
+        my_prop = value # No infinite recursion.
 
-In case you want to split the code from the variable declaration or you need to share the code across multiple properties,
-you can use a different notation to use existing class functions::
+.. warning::
 
-    var my_prop:
-        get = get_my_prop, set = set_my_prop
+    The exception does **not** propagate to other functions called in the setter/getter.
+    For example, the following code **will** cause an infinite recursion::
 
-This can also be done in the same line.
+        var my_prop:
+            set(value):
+                set_my_prop(value)
+
+        func set_my_prop(value):
+            my_prop = value # Infinite recursion, since `set_my_prop()` is not the setter.
 
 .. _doc_gdscript_tool_mode:
 
