@@ -1935,7 +1935,7 @@ Returns ``true`` if this is an instance load placeholder. See :ref:`InstancePlac
 
 :ref:`SceneTree<class_SceneTree>` **get_tree** **(** **)** |const|
 
-Returns the :ref:`SceneTree<class_SceneTree>` that contains this node.
+Returns the :ref:`SceneTree<class_SceneTree>` that contains this node. Returns ``null`` and prints an error if this node is not inside the scene tree. See also :ref:`is_inside_tree<class_Node_method_is_inside_tree>`.
 
 .. rst-class:: classref-item-separator
 
