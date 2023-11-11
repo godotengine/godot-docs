@@ -46,6 +46,7 @@ Video tutorials
 - `Gwizz <https://www.youtube.com/@Gwizz1027>`_ (2D, GDScript).
 - `Quiver <https://quiver.dev/>`_ (2D, GDScript).
 - `Maker Tech <https://www.youtube.com/watch?v=0mUoRdYe0s4>`_ (2D, GDScript).
+- `Clear Code <https://www.youtube.com/watch?v=nAh_Kx5Zh5Q>`_ (2D, GDScript, Programming Basics).
 - `Game Dev Artisan <https://www.youtube.com/@GameDevArtisan>`_ (2D, GDScript).
 
 Text tutorials
