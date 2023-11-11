@@ -149,7 +149,7 @@ Example (Windows)
     scons p=windows target=template_release module_mono_enabled=yes
     
     # Generate glue sources
-    bin/godot.windows.editor.x86_64.mono --generate-mono-glue modules/mono/glue
+    bin/godot.windows.editor.x86_64.mono --headless --generate-mono-glue modules/mono/glue
     # Build .NET assemblies
     ./modules/mono/build_scripts/build_assemblies.py --godot-output-dir=./bin --godot-platform=windows
 
@@ -166,7 +166,7 @@ Example (Linux, \*BSD)
     scons p=linuxbsd target=template_release module_mono_enabled=yes
 
     # Generate glue sources
-    bin/godot.linuxbsd.editor.x86_64.mono --generate-mono-glue modules/mono/glue
+    bin/godot.linuxbsd.editor.x86_64.mono --headless --generate-mono-glue modules/mono/glue
     # Generate binaries
     ./modules/mono/build_scripts/build_assemblies.py --godot-output-dir=./bin --godot-platform=linuxbsd
 
