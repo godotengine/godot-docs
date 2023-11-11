@@ -162,6 +162,9 @@ shader, this value can be used as desired.
 +--------------------------------------+--------------------------------------------------------+
 | inout vec3 **VERTEX**                | Vertex in local coordinates.                           |
 +--------------------------------------+--------------------------------------------------------+
+| in int **VERTEX_ID**                 | The index of the current vertex in the vertex buffer.  |
+|                                      | Not supported in GLES2 (returns 0).                    |
++--------------------------------------+--------------------------------------------------------+
 | out vec4 **POSITION**                | If written to, overrides final vertex position.        |
 +--------------------------------------+--------------------------------------------------------+
 | inout vec3 **NORMAL**                | Normal in local coordinates.                           |
@@ -183,7 +186,8 @@ shader, this value can be used as desired.
 +--------------------------------------+--------------------------------------------------------+
 | inout float **POINT_SIZE**           | Point size for point rendering.                        |
 +--------------------------------------+--------------------------------------------------------+
-| in int **INSTANCE_ID**               | Instance ID for instancing.                            |
+| in int **INSTANCE_ID**               | Instance ID for instancing. Not supported in GLES2     |
+|                                      | (returns 0).                                           |
 +--------------------------------------+--------------------------------------------------------+
 | in vec4 **INSTANCE_CUSTOM**          | Instance custom data (for particles, mostly).          |
 +--------------------------------------+--------------------------------------------------------+
