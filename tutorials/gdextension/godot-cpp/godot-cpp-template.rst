@@ -6,36 +6,38 @@ Using the godot-cpp-template
 Introduction
 ------------
 
-.. container:: steps
+.. container:: tutorial
 
-    .. compound:: Step 1
+    .. container:: steps
 
-        Test 1
+        .. compound:: Step 1
 
-        .. container:: step-context
+            Test 1
 
-            .. image:: img/icu_data.png
+            .. container:: step-context
 
-    .. compound:: Step 2
+                .. image:: img/icu_data.png
 
-        Test 2
+        .. compound:: Step 2
 
-        .. container:: step-context
+            Test 2
 
-            .. code-block:: cpp
-                :caption: src/test.cpp
-                :name: intro-step2-code
-                :linenos:
-                :emphasize-lines: 1
+            .. container:: step-context
 
-                #include <godot_cpp/classes/node.hpp>
+                .. code-block:: cpp
+                    :caption: src/test.cpp
+                    :name: intro-step2-code
+                    :linenos:
+                    :emphasize-lines: 1
 
-                using namepsace Godot;
+                    #include <godot_cpp/classes/node.hpp>
 
-                class Test : public Node {
-                    GDCLASS(Test, Node);
+                    using namepsace Godot;
 
-                public:
-                    Test();
-                    ~Test();
-                };
+                    class Test : public Node {
+                        GDCLASS(Test, Node);
+
+                    public:
+                        Test();
+                        ~Test();
+                    };

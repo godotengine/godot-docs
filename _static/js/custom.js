@@ -493,3 +493,19 @@ $(document).ready(() => {
 Documentation.highlightSearchWords = function() {
   // Nope.
 }
+
+// Tutorial
+document.addEventListener("DOMContentLoaded", () => {
+  /** @type {NodeListOf<HTMLElement>} */
+  const tutorials = document.querySelectorAll(".tutorial");
+  for (const tutorial of Array.from(tutorials)) {
+    const display = tutorial.appendChild(document.createElement("div"));
+    display.classList.add("display");
+
+    const content = display.appendChild(document.createElement("div"));
+    content.classList.add("content");
+
+    const padding = tutorial.appendChild(document.createElement("div"));
+    padding.classList.add("padding");
+  }
+});

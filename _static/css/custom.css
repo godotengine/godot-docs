@@ -1777,3 +1777,41 @@ p + .classref-constant {
 #godot-giscus {
     margin-bottom: 1em;
 }
+
+/* Tutorial */
+.tutorial {
+    display: grid;
+    grid-template-areas:
+        "steps display"
+        "padding display";
+}
+
+.tutorial .steps {
+    grid-area: steps;
+}
+
+.tutorial .display {
+    grid-area: display;
+    height: 100%;
+    display: flex;
+    align-items: end;
+}
+
+.tutorial .display .content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: sticky;
+    bottom: 0;
+    width: 100%;
+    height: 100vh;
+}
+
+.tutorial .padding {
+    grid-area: padding;
+    height: 100vh;
+}
+
+.tutorial .steps .compound .step-context {
+    display: none;
+}
