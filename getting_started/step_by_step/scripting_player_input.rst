@@ -7,7 +7,7 @@
 Listening to player input
 =========================
 
-Building upon the previous lesson :ref:`doc_scripting_first_script`, let's look
+Building upon the previous lesson, :ref:`doc_scripting_first_script`, let's look
 at another important feature of any game: giving control to the player.
 To add this, we need to modify our ``sprite_2d.gd`` code.
 
@@ -181,12 +181,12 @@ Summary
 
 In summary, every script in Godot represents a class and extends one of the
 engine's built-in classes. The node types your classes inherit from give you
-access to properties like ``rotation`` and ``position`` in our sprite's case.
+access to properties, such as ``rotation`` and ``position`` in our sprite's case.
 You also inherit many functions, which we didn't get to use in this example.
 
 In GDScript, the variables you put at the top of the file are your class's
 properties, also called member variables. Besides variables, you can define
-functions, which, for the most part, will be your classes' methods.
+functions, which, for the most part, will be your class's methods.
 
 Godot provides several virtual functions you can define to connect your class
 with the engine. These include ``_process()``, to apply changes to the node
@@ -196,5 +196,5 @@ button presses from the users. There are quite a few more.
 The ``Input`` singleton allows you to react to the players' input anywhere in
 your code. In particular, you'll get to use it in the ``_process()`` loop.
 
-In the next lesson :ref:`doc_signals`, we'll build upon the relationship between
+In the next lesson, :ref:`doc_signals`, we'll build upon the relationship between
 scripts and nodes by having our nodes trigger code in scripts.
