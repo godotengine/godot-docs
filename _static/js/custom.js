@@ -496,16 +496,109 @@ Documentation.highlightSearchWords = function() {
 
 // Tutorial
 document.addEventListener("DOMContentLoaded", () => {
-  /** @type {NodeListOf<HTMLElement>} */
+  /** @type {NodeListOf<HTMLDivElement>} */
   const tutorials = document.querySelectorAll(".tutorial");
   for (const tutorial of Array.from(tutorials)) {
+    /** @type {HTMLDivElement} */
     const display = tutorial.appendChild(document.createElement("div"));
     display.classList.add("display");
 
+    /** @type {HTMLDivElement} */
+    const top = tutorial.appendChild(document.createElement("div"));
+    top.classList.add("top");
+
+    /** @type {HTMLDivElement} */
+    const bottom = tutorial.appendChild(document.createElement("div"));
+    bottom.classList.add("bottom");
+
+    /** @type {HTMLDivElement} */
     const content = display.appendChild(document.createElement("div"));
     content.classList.add("content");
 
-    const padding = tutorial.appendChild(document.createElement("div"));
-    padding.classList.add("padding");
+    // Intersection observer
+    /** @type {Map<HTMLElement, IntersectionObserverEntry>} */
+    const observedEntries = new Map();
+    /** @type {HTMLDivElement | null} */
+    let activeEntry = null;
+
+    /** @type {IntersectionObserverInit} */
+    const observerOptions = {
+      root: null,
+    };
+    /** @type {IntersectionObserverCallback} */
+    const observerCallback = (entries, observer) => {
+      for (const entry of entries) {
+        if (observedEntries.has(entry.target)) {
+          observedEntries.delete(entry.target);
+        }
+        if (entry.isIntersecting) {
+          observedEntries.set(entry.target, entry);
+        }
+      }
+    };
+    /** @type {IntersectionObserver} */
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+    /** @type {NodeListOf<HTMLDivElement>} */
+    const compounds = tutorial.querySelectorAll(".steps .compound");
+    for (const compound of Array.from(compounds)) {
+      observer.observe(compound);
+    }
+
+    /** @type {(entry: HTMLDivElement) => void} */
+    const switchEntry = (entry) => {
+      if (entry === activeEntry || entry == null) {
+        return;
+      }
+
+      if (activeEntry !== null) {
+        activeEntry.classList.remove("active");
+      }
+      entry.classList.add("active");
+      activeEntry = entry;
+
+      // Remove the current element
+      for (const child of Array.from(content.children)) {
+        child.remove();
+      }
+
+      // Add the current element
+      /** @type {HTMLDivElement | null} */
+      const originalContext = entry.querySelector(".step-context");
+      if (originalContext == null) {
+        return;
+      }
+      /** @type {HTMLElement} */
+      const clonedContext = content.appendChild(originalContext.cloneNode(true));
+      clonedContext.classList.remove("compound-last", "docutils", "container");
+      clonedContext.hidden = false;
+    };
+
+    /** @type {FrameRequestCallback} */
+    const animationFrameRequest = (_time) => {
+      window.requestAnimationFrame(animationFrameRequest);
+
+      if (observedEntries.size === 0) {
+        return;
+      }
+
+      /** @type {Array<{ entry: IntersectionObserverEntry, distance: number }>} */
+      let entries = [];
+      const clientHeight = document.documentElement.clientHeight;
+      const clientHeightQuarter = clientHeight / 4;
+      for (const [target, entry] of Array.from(observedEntries)) {
+        const entryCenter = (entry.target.getBoundingClientRect().bottom + entry.target.getBoundingClientRect().top) / 2;
+        const entryDistance = Math.abs(entryCenter - clientHeightQuarter);
+        entries.push({ entry, distance: entryDistance });
+      }
+      entries = entries.sort((a, b) => {
+        return a.distance - b.distance;
+      });
+
+      const firstEntry = entries[0];
+      switchEntry(firstEntry.entry.target);
+    };
+    window.requestAnimationFrame(animationFrameRequest);
+
+    switchEntry((tutorial.querySelectorAll(".steps .compound") ?? [null])[0]);
   }
 });
