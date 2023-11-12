@@ -92,6 +92,56 @@ the vector will take the value of the scalar.
 When connecting any ``vector`` output to a ``scalar`` input, the value of the
 scalar will be the average of the vector's components.
 
+Visual Shader node interface
+------------------------------
+
+Visual shader nodes have input and output ports. The input ports are located on the left side of the node, and output ports are located on the right side of the node.
+
+.. figure:: img/vs_node.webp
+
+These ports are colored to differentiate type of port:
+
+.. |scalar| image:: img/vs_scalar.webp
+.. |vector| image:: img/vs_vector.webp
+.. |boolean| image:: img/vs_boolean.webp
+.. |transform| image:: img/vs_transform.webp
+.. |sampler| image:: img/vs_sampler.webp
+
+
+.. list-table:: Port types
+   :widths: auto
+   :header-rows: 1
+
+   * - Type
+     - Color
+     - Description
+     - Example
+   * - Scalar
+     - Cyan
+     - Scalar is a single value.
+     - |scalar|
+   * - Vector
+     - Purple
+     - Vector is a set of values.
+     - |vector|
+   * - Boolean
+     - Blue
+     - On or off, true or false.
+     - |boolean|
+   * - Transform
+     - Orange
+     - A matrix, usually used to transform vertices.
+     - |transform|
+   * - Sampler
+     - Yellow
+     - A texture sampler. It can be used to sample textures.
+     - |sampler|
+
+All of the types are used in the calculations of vertices, fragments, and lights in the shader. For example: matrix multiplication, 
+vector addition, or scalar division.
+
+There are other types but these are the main ones.
+
 Visual Shader nodes
 -------------------
 
