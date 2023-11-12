@@ -1,5 +1,3 @@
-:article_outdated: True
-
 .. _doc_first_3d_game_killing_the_player:
 
 Killing the player
@@ -115,7 +113,7 @@ the character should die when an enemy runs into the collider. Note that without
     Vector3 playerPosition = GetNode<Player>("Player").Position;
 
 
-gives error because there is no $Player!
+gives an error because there is no $Player!
 
 Also note that the enemy colliding with the player and dying depends on the size and position of the
 ``Player`` and the ``Mob``\ 's collision shapes. You may need to move them
@@ -151,6 +149,9 @@ Get the timer, and stop it, in the ``_on_player_hit()`` function.
 
 If you try the game now, the monsters will stop spawning when you die,
 and the remaining ones will leave the screen.
+
+Notice also that the game no longer crashes or displays an error when the player dies. Because
+we are stopping the MobTimer, it no longer triggers the ``_on_mob_timer_timeout()`` function.
 
 You can pat yourself in the back: you prototyped a complete 3D game,
 even if it's still a bit rough.
