@@ -8,113 +8,111 @@ Introduction
 
 .. container:: tutorial
 
-    .. container:: steps
+    .. compound:: Step 1
 
-        .. compound:: Step 1
+        Test 1
 
-            Test 1
+        .. container:: step-context
 
-            .. container:: step-context
+            .. image:: img/icu_data.png
 
-                .. image:: img/icu_data.png
+    .. container:: comment
 
-        .. container:: Comment
+        Hello. This is a comment inbetween two steps.
 
-            Hello. This is a comment inbetween two steps.
+    .. compound:: Step 2
 
-        .. compound:: Step 2
+        Test 2
 
-            Test 2
+        .. container:: step-context
 
-            .. container:: step-context
+            .. code-block:: cpp
+                :caption: src/test.cpp
+                :name: intro-step2-code
+                :linenos:
+                :emphasize-lines: 1
 
-                .. code-block:: cpp
-                    :caption: src/test.cpp
-                    :name: intro-step2-code
-                    :linenos:
-                    :emphasize-lines: 1
+                #include <godot_cpp/classes/node.hpp>
 
-                    #include <godot_cpp/classes/node.hpp>
+    .. compound:: Step 3
 
-        .. compound:: Step 3
+        Test 3
 
-            Test 3
+        .. container:: step-context
 
-            .. container:: step-context
+            .. code-block:: cpp
+                :caption: src/test.cpp
+                :name: intro-step3-code
+                :linenos:
+                :emphasize-lines: 3
 
-                .. code-block:: cpp
-                    :caption: src/test.cpp
-                    :name: intro-step3-code
-                    :linenos:
-                    :emphasize-lines: 3
+                #include <godot_cpp/classes/node.hpp>
 
-                    #include <godot_cpp/classes/node.hpp>
+                using namepsace Godot;
 
-                    using namepsace Godot;
+    .. compound:: Step 4
 
-        .. compound:: Step 4
+        Test 4
 
-            Test 4
+        .. container:: step-context
 
-            .. container:: step-context
+            .. code-block:: cpp
+                :caption: src/test.cpp
+                :name: intro-step4-code
+                :linenos:
+                :emphasize-lines: 5-6
 
-                .. code-block:: cpp
-                    :caption: src/test.cpp
-                    :name: intro-step4-code
-                    :linenos:
-                    :emphasize-lines: 5-6
+                #include <godot_cpp/classes/node.hpp>
 
-                    #include <godot_cpp/classes/node.hpp>
+                using namepsace Godot;
 
-                    using namepsace Godot;
+                class Test : public Node {
+                };
 
-                    class Test : public Node {
-                    };
+    .. container:: comment
 
-        .. container:: Comment
+        Hello again! This is another comment.
 
-            Hello again! This is another comment.
+    .. compound:: Step 5
 
-        .. compound:: Step 5
+        Test 5
 
-            Test 5
+        .. container:: step-context
 
-            .. container:: step-context
+            .. code-block:: cpp
+                :caption: src/test.cpp
+                :name: intro-step5-code
+                :linenos:
+                :emphasize-lines: 6
 
-                .. code-block:: cpp
-                    :caption: src/test.cpp
-                    :name: intro-step5-code
-                    :linenos:
-                    :emphasize-lines: 6
+                #include <godot_cpp/classes/node.hpp>
 
-                    #include <godot_cpp/classes/node.hpp>
+                using namepsace Godot;
 
-                    using namepsace Godot;
+                class Test : public Node {
+                    GDCLASS(Test, Node);
+                };
 
-                    class Test : public Node {
-                        GDCLASS(Test, Node);
-                    };
+    .. compound:: Step 6
 
-        .. compound:: Step 6
+        Test 6
 
-            Test 6
+        .. container:: step-context
 
-            .. container:: step-context
+            .. code-block:: cpp
+                :caption: src/test.cpp
+                :name: intro-step6-code
+                :linenos:
+                :emphasize-lines: 8-10
 
-                .. code-block:: cpp
-                    :caption: src/test.cpp
-                    :name: intro-step6-code
-                    :linenos:
-                    :emphasize-lines: 8-10
+                #include <godot_cpp/classes/node.hpp>
 
-                    #include <godot_cpp/classes/node.hpp>
+                using namepsace Godot;
 
-                    using namepsace Godot;
+                class Test : public Node {
+                    GDCLASS(Test, Node);
 
-                    class Test : public Node {
-                        GDCLASS(Test, Node);
-
-                    public:
-                        Test();
-                        ~Test();
-                    };
+                public:
+                    Test();
+                    ~Test();
+                };

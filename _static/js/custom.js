@@ -499,19 +499,39 @@ document.addEventListener("DOMContentLoaded", () => {
   /** @type {NodeListOf<HTMLDivElement>} */
   const tutorials = document.querySelectorAll(".tutorial");
   for (const tutorial of Array.from(tutorials)) {
-    /** @type {HTMLDivElement} */
+    /**
+     * The left column
+     */
+    const steps = document.createElement("div");
+    steps.classList.add("steps");
+    steps.append(...Array.from(tutorial.children));
+    tutorial.append(steps);
+
+    /**
+     * The right column
+     * @type {HTMLDivElement}
+     */
     const display = tutorial.appendChild(document.createElement("div"));
     display.classList.add("display");
 
-    /** @type {HTMLDivElement} */
+    /**
+     * Top spacer
+     * @type {HTMLDivElement}
+     */
     const top = tutorial.appendChild(document.createElement("div"));
     top.classList.add("top");
 
-    /** @type {HTMLDivElement} */
+    /**
+     * Bottom spacer
+     * @type {HTMLDivElement}
+     */
     const bottom = tutorial.appendChild(document.createElement("div"));
     bottom.classList.add("bottom");
 
-    /** @type {HTMLDivElement} */
+    /**
+     * Content of the right column
+     * @type {HTMLDivElement}
+     */
     const content = display.appendChild(document.createElement("div"));
     content.classList.add("content");
 
