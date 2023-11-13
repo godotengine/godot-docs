@@ -1779,83 +1779,14 @@ p + .classref-constant {
 }
 
 /* Tutorial */
-.tutorial {
-    display: grid;
-    grid-template-areas:
-        "top    display"
-        "steps  display"
-        "bottom display";
-    grid-template-columns:
-        1fr 2fr;
-    gap: 1rem;
-}
-
-.tutorial .display {
-    grid-area: display;
-    height: 100%;
-    display: flex;
-    align-items: end;
-}
-
-.tutorial .display .content {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: sticky;
-    bottom: 0;
-    width: 100%;
-    height: 100vh;
-}
-
-.tutorial .step-context {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-}
-
-.tutorial .step-context .literal-block-wrapper {
+.tutorial .steps .comment {
     position: relative;
-    width: 100%;
-    height: 100%;
-    display: grid;
-    grid-template-areas:
-        "caption"
-        "code";
-    grid-template-columns: 1fr;
-    grid-template-rows: auto 1fr;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
 }
 
-.tutorial .step-context .literal-block-wrapper .code-block-caption {
-    grid-area: caption;
-    width: 100%;
-}
-
-.tutorial .step-context .literal-block-wrapper .code-block-caption + div {
-    grid-area: code;
-    width: 100%;
-}
-
-.tutorial .step-context .literal-block-wrapper .code-block-caption + div .highlight {
-    height: 100%;
-}
-
-.tutorial .top {
-    grid-area: top;
-    height: 100px;
-}
-
-.tutorial .bottom {
-    grid-area: bottom;
-    height: calc(100vh - 1rem);
-}
-
-.tutorial .steps {
-    grid-area: steps;
-    display: flex;
-    flex-direction: column;
-    gap: 100px;
+.tutorial .steps .comment p:last-of-type {
+    margin: 0;
 }
 
 .tutorial .steps .compound {
@@ -1881,7 +1812,7 @@ p + .classref-constant {
 }
 
 .tutorial .steps .compound .compound-first {
-    margin-top: 1rem;
+    padding-top: 1rem;
     line-height: normal;
     font-weight: bold;
 }
@@ -1893,4 +1824,109 @@ p + .classref-constant {
 
 .tutorial .steps .compound .step-context {
     display: none;
+}
+
+.tutorial .steps .step-display {
+    display: block;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.tutorial .display .content {
+    display: none;
+}
+
+@media only screen and (min-width: 1036px) {
+    .tutorial {
+        display: grid;
+        position: relative;
+        top: 0;
+        left: 0;
+        grid-template-areas:
+            "top    display"
+            "steps  display"
+            "bottom display";
+        grid-template-columns:
+            1fr 2fr;
+        gap: 1rem;
+    }
+
+    .tutorial .display {
+        grid-area: display;
+        height: 100%;
+        display: flex;
+        align-items: end;
+    }
+
+    .tutorial .display .content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: sticky;
+        bottom: 0;
+        width: 100%;
+        height: 100vh;
+    }
+
+    .tutorial .step-context {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+    }
+
+    .tutorial .step-context .literal-block-wrapper {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-template-areas:
+            "caption"
+            "code";
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr;
+    }
+
+    .tutorial .step-context .literal-block-wrapper .code-block-caption {
+        grid-area: caption;
+        width: 100%;
+    }
+
+    .tutorial .step-context .literal-block-wrapper .code-block-caption + div {
+        grid-area: code;
+        width: 100%;
+    }
+
+    .tutorial .step-context .literal-block-wrapper .code-block-caption + div .highlight {
+        height: 100%;
+    }
+
+    .tutorial .top {
+        grid-area: top;
+        height: 100px;
+    }
+
+    .tutorial .bottom {
+        grid-area: bottom;
+        height: calc(100vh - 1rem);
+    }
+
+    .tutorial .steps {
+        grid-area: steps;
+        display: flex;
+        flex-direction: column;
+        gap: 100px;
+    }
+
+    .tutorial .steps .step-display {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 1036px) and (max-width: 1200px) {
+    .tutorial {
+        grid-template-columns:
+            200px 1fr;
+    }
 }

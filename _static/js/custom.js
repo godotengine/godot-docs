@@ -515,6 +515,21 @@ document.addEventListener("DOMContentLoaded", () => {
     const content = display.appendChild(document.createElement("div"));
     content.classList.add("content");
 
+    /** @type {NodeListOf<HTMLDivElement>} */
+    const compoundSteps = tutorial.querySelectorAll(".steps .compound");
+    for (const compoundStep of Array.from(compoundSteps)) {
+      /** @type {HTMLDivElement | null} */
+      const stepContext = compoundStep.querySelector(".step-context");
+      if (stepContext == null) {
+        continue;
+      }
+
+      /** @type {HTMLDivElement} */
+      const clonedStepContext = stepContext.cloneNode(true);
+      clonedStepContext.classList.add("step-display");
+      compoundStep.after(clonedStepContext);
+    }
+
     // Intersection observer
     /** @type {Map<HTMLElement, IntersectionObserverEntry>} */
     const observedEntries = new Map();
