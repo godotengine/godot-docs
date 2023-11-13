@@ -21,7 +21,7 @@ Provides direct access to a physics body in the :ref:`PhysicsServer2D<class_Phys
 Description
 -----------
 
-Provides direct access to a physics body in the :ref:`PhysicsServer2D<class_PhysicsServer2D>`, allowing safe changes to physics properties. This object is passed via the direct state callback of :ref:`RigidBody2D<class_RigidBody2D>`, and is intended for changing the direct state of that body. See :ref:`RigidBody2D._integrate_forces<class_RigidBody2D_method__integrate_forces>`.
+Provides direct access to a physics body in the :ref:`PhysicsServer2D<class_PhysicsServer2D>`, allowing safe changes to physics properties. This object is passed via the direct state callback of :ref:`RigidBody2D<class_RigidBody2D>`, and is intended for changing the direct state of that body. See :ref:`RigidBody2D._integrate_forces<class_RigidBody2D_private_method__integrate_forces>`.
 
 .. rst-class:: classref-introduction-group
 

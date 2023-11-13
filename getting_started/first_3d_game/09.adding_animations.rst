@@ -369,6 +369,8 @@ Here's the *Player* script.
                     # If so, we squash it and bounce.
                     mob.squash()
                     target_velocity.y = bounce_impulse
+                    # Prevent further duplicate calls.
+                    break
 
         # Moving the Character
         velocity = target_velocity
@@ -477,6 +479,8 @@ Here's the *Player* script.
                         // If so, we squash it and bounce.
                         mob.Squash();
                         _targetVelocity.Y = BounceImpulse;
+                        // Prevent further duplicate calls.
+                        break;
                     }
                 }
             }

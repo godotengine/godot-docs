@@ -2054,7 +2054,7 @@ The vertical separation of elements in a table.
 
 :ref:`int<class_int>` **text_highlight_h_padding** = ``3``
 
-The horizontal padding around a highlighting and background color box.
+The horizontal padding around boxes drawn by the ``[fgcolor]`` and ``[bgcolor]`` tags. This does not affect the appearance of text selection.
 
 .. rst-class:: classref-item-separator
 
@@ -2066,7 +2066,7 @@ The horizontal padding around a highlighting and background color box.
 
 :ref:`int<class_int>` **text_highlight_v_padding** = ``3``
 
-The vertical padding around a highlighting and background color box.
+The vertical padding around boxes drawn by the ``[fgcolor]`` and ``[bgcolor]`` tags. This does not affect the appearance of text selection.
 
 .. rst-class:: classref-item-separator
 

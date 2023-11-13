@@ -83,17 +83,17 @@ These nodes allow you to draw the shape directly in the editor workspace.
 Physics process callback
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-The physics engine runs at a fixed rate (a default of 60 iterations per second). This rate 
+The physics engine runs at a fixed rate (a default of 60 iterations per second). This rate
 is typically different from the frame rate which fluctuates based on what is rendered and
 available resources.
 
-It is important that all physics related code runs at this fixed rate. Therefore Godot 
+It is important that all physics related code runs at this fixed rate. Therefore Godot
 differentiates :ref:`between physics and idle processing <doc_idle_and_physics_processing>`.
-Code that runs each frame is called idle processing and code that runs on each physics 
-tick is called physics processing. Godot provides two different callbacks, one for each 
+Code that runs each frame is called idle processing and code that runs on each physics
+tick is called physics processing. Godot provides two different callbacks, one for each
 of those processing rates.
 
-The physics callback, :ref:`Node._physics_process() <class_Node_method__physics_process>`, 
+The physics callback, :ref:`Node._physics_process() <class_Node_private_method__physics_process>`,
 is called before each physics step. Any code that needs to access a body's properties should
 be run in here. This method will be passed a ``delta``
 parameter, which is a floating-point number equal to the time passed in
@@ -249,7 +249,7 @@ automatically be calculated by the physics engine.
 However, if you do wish to have some control over the body, you should take
 care - altering the ``position``, ``linear_velocity``, or other physics properties
 of a rigid body can result in unexpected behavior. If you need to alter any
-of the physics-related properties, you should use the :ref:`_integrate_forces() <class_RigidBody2D_method__integrate_forces>`
+of the physics-related properties, you should use the :ref:`_integrate_forces() <class_RigidBody2D_private_method__integrate_forces>`
 callback instead of ``_physics_process()``. In this callback, you have access
 to the body's :ref:`PhysicsDirectBodyState2D <class_PhysicsDirectBodyState2D>`,
 which allows for safely changing properties and synchronizing them with

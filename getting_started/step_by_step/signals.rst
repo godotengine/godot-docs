@@ -266,7 +266,7 @@ We need to do two operations to connect the nodes via code:
           listen to the Timer's "timeout" signal.
 
 We want to connect the signal when the scene is instantiated, and we can do that
-using the :ref:`Node._ready() <class_Node_method__ready>` built-in function,
+using the :ref:`Node._ready() <class_Node_private_method__ready>` built-in function,
 which is called automatically by the engine when a node is fully instantiated.
 
 To get a reference to a node relative to the current one, we use the method

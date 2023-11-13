@@ -1126,7 +1126,7 @@ enum **WindowEvent**:
 
 :ref:`WindowEvent<enum_DisplayServer_WindowEvent>` **WINDOW_EVENT_MOUSE_ENTER** = ``0``
 
-Sent when the mouse pointer enters the window, see :ref:`window_set_window_event_callback<class_DisplayServer_method_window_set_window_event_callback>`.
+Sent when the mouse pointer enters the window.
 
 .. _class_DisplayServer_constant_WINDOW_EVENT_MOUSE_EXIT:
 
@@ -1134,7 +1134,7 @@ Sent when the mouse pointer enters the window, see :ref:`window_set_window_event
 
 :ref:`WindowEvent<enum_DisplayServer_WindowEvent>` **WINDOW_EVENT_MOUSE_EXIT** = ``1``
 
-Sent when the mouse pointer exits the window, see :ref:`window_set_window_event_callback<class_DisplayServer_method_window_set_window_event_callback>`.
+Sent when the mouse pointer exits the window.
 
 .. _class_DisplayServer_constant_WINDOW_EVENT_FOCUS_IN:
 
@@ -1142,7 +1142,7 @@ Sent when the mouse pointer exits the window, see :ref:`window_set_window_event_
 
 :ref:`WindowEvent<enum_DisplayServer_WindowEvent>` **WINDOW_EVENT_FOCUS_IN** = ``2``
 
-Sent when the window grabs focus, see :ref:`window_set_window_event_callback<class_DisplayServer_method_window_set_window_event_callback>`.
+Sent when the window grabs focus.
 
 .. _class_DisplayServer_constant_WINDOW_EVENT_FOCUS_OUT:
 
@@ -1150,7 +1150,7 @@ Sent when the window grabs focus, see :ref:`window_set_window_event_callback<cla
 
 :ref:`WindowEvent<enum_DisplayServer_WindowEvent>` **WINDOW_EVENT_FOCUS_OUT** = ``3``
 
-Sent when the window loses focus, see :ref:`window_set_window_event_callback<class_DisplayServer_method_window_set_window_event_callback>`.
+Sent when the window loses focus.
 
 .. _class_DisplayServer_constant_WINDOW_EVENT_CLOSE_REQUEST:
 
@@ -1158,7 +1158,7 @@ Sent when the window loses focus, see :ref:`window_set_window_event_callback<cla
 
 :ref:`WindowEvent<enum_DisplayServer_WindowEvent>` **WINDOW_EVENT_CLOSE_REQUEST** = ``4``
 
-Sent when the user has attempted to close the window (e.g. close button is pressed), see :ref:`window_set_window_event_callback<class_DisplayServer_method_window_set_window_event_callback>`.
+Sent when the user has attempted to close the window (e.g. close button is pressed).
 
 .. _class_DisplayServer_constant_WINDOW_EVENT_GO_BACK_REQUEST:
 
@@ -1166,7 +1166,7 @@ Sent when the user has attempted to close the window (e.g. close button is press
 
 :ref:`WindowEvent<enum_DisplayServer_WindowEvent>` **WINDOW_EVENT_GO_BACK_REQUEST** = ``5``
 
-Sent when the device "Back" button is pressed, see :ref:`window_set_window_event_callback<class_DisplayServer_method_window_set_window_event_callback>`.
+Sent when the device "Back" button is pressed.
 
 \ **Note:** This event is implemented only on Android.
 
@@ -1176,7 +1176,7 @@ Sent when the device "Back" button is pressed, see :ref:`window_set_window_event
 
 :ref:`WindowEvent<enum_DisplayServer_WindowEvent>` **WINDOW_EVENT_DPI_CHANGE** = ``6``
 
-Sent when the window is moved to the display with different DPI, or display DPI is changed, see :ref:`window_set_window_event_callback<class_DisplayServer_method_window_set_window_event_callback>`.
+Sent when the window is moved to the display with different DPI, or display DPI is changed.
 
 \ **Note:** This flag is implemented only on macOS.
 
@@ -1186,7 +1186,7 @@ Sent when the window is moved to the display with different DPI, or display DPI 
 
 :ref:`WindowEvent<enum_DisplayServer_WindowEvent>` **WINDOW_EVENT_TITLEBAR_CHANGE** = ``7``
 
-Sent when the window title bar decoration is changed (e.g. :ref:`WINDOW_FLAG_EXTEND_TO_TITLE<class_DisplayServer_constant_WINDOW_FLAG_EXTEND_TO_TITLE>` is set or window entered/exited full screen mode), see :ref:`window_set_window_event_callback<class_DisplayServer_method_window_set_window_event_callback>`.
+Sent when the window title bar decoration is changed (e.g. :ref:`WINDOW_FLAG_EXTEND_TO_TITLE<class_DisplayServer_constant_WINDOW_FLAG_EXTEND_TO_TITLE>` is set or window entered/exited full screen mode).
 
 \ **Note:** This flag is implemented only on macOS.
 
@@ -3653,6 +3653,8 @@ void **window_set_drop_files_callback** **(** :ref:`Callable<class_Callable>` ca
 
 Sets the ``callback`` that should be called when files are dropped from the operating system's file manager to the window specified by ``window_id``.
 
+\ **Warning:** Advanced users only! Adding such a callback to a :ref:`Window<class_Window>` node will override its default implementation, which can introduce bugs.
+
 \ **Note:** This method is implemented on Windows, macOS, Linux (X11) and Web.
 
 .. rst-class:: classref-item-separator
@@ -3719,6 +3721,8 @@ void **window_set_input_event_callback** **(** :ref:`Callable<class_Callable>` c
 
 Sets the ``callback`` that should be called when any :ref:`InputEvent<class_InputEvent>` is sent to the window specified by ``window_id``.
 
+\ **Warning:** Advanced users only! Adding such a callback to a :ref:`Window<class_Window>` node will override its default implementation, which can introduce bugs.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -3730,6 +3734,8 @@ Sets the ``callback`` that should be called when any :ref:`InputEvent<class_Inpu
 void **window_set_input_text_callback** **(** :ref:`Callable<class_Callable>` callback, :ref:`int<class_int>` window_id=0 **)**
 
 Sets the ``callback`` that should be called when text is entered using the virtual keyboard to the window specified by ``window_id``.
+
+\ **Warning:** Advanced users only! Adding such a callback to a :ref:`Window<class_Window>` node will override its default implementation, which can introduce bugs.
 
 .. rst-class:: classref-item-separator
 
@@ -3873,6 +3879,8 @@ void **window_set_rect_changed_callback** **(** :ref:`Callable<class_Callable>` 
 
 Sets the ``callback`` that will be called when the window specified by ``window_id`` is moved or resized.
 
+\ **Warning:** Advanced users only! Adding such a callback to a :ref:`Window<class_Window>` node will override its default implementation, which can introduce bugs.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -3962,6 +3970,8 @@ When :ref:`WINDOW_FLAG_EXTEND_TO_TITLE<class_DisplayServer_constant_WINDOW_FLAG_
 void **window_set_window_event_callback** **(** :ref:`Callable<class_Callable>` callback, :ref:`int<class_int>` window_id=0 **)**
 
 Sets the ``callback`` that will be called when an event occurs in the window specified by ``window_id``.
+
+\ **Warning:** Advanced users only! Adding such a callback to a :ref:`Window<class_Window>` node will override its default implementation, which can introduce bugs.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

@@ -21,16 +21,6 @@ optimized for drawing large numbers of tiles. Finally, you can add collision,
 occlusion, and navigation shapes to tiles, adding greater functionality to
 the TileMap.
 
-.. note::
-
-    Godot 4.0 has moved several per-tile properties, such as tile rotation, from
-    TileMap to TileSet. Individual tiles can no longer be rotated while in the
-    TileMap editor. Instead, the TileSet editor must be used to create
-    alternative rotated tiles.
-
-    This change allows for greater design consistency, as not every tile needs to be
-    rotated or flipped within a TileSet.
-
 Specifying the TileSet in the TileMap
 -------------------------------------
 
@@ -258,7 +248,7 @@ you can place them in a repeating pattern across the line.
 You can toggle this mode temporarily while in Paint or Eraser mode by holding
 :kbd:`Shift` then drawing.
 
-.. figure:: img/using_tilemaps_bucket_fill.webp
+.. figure:: img/using_tilesets_line_tool_multiple_tiles.webp
    :align: center
    :alt: Using the line tool after selecting two tiles to draw platforms diagonally
 

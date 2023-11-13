@@ -236,7 +236,7 @@ Returns an array of nodes that were added as collision exceptions for this body.
 
 :ref:`KinematicCollision3D<class_KinematicCollision3D>` **move_and_collide** **(** :ref:`Vector3<class_Vector3>` motion, :ref:`bool<class_bool>` test_only=false, :ref:`float<class_float>` safe_margin=0.001, :ref:`bool<class_bool>` recovery_as_collision=false, :ref:`int<class_int>` max_collisions=1 **)**
 
-Moves the body along the vector ``motion``. In order to be frame rate independent in :ref:`Node._physics_process<class_Node_method__physics_process>` or :ref:`Node._process<class_Node_method__process>`, ``motion`` should be computed using ``delta``.
+Moves the body along the vector ``motion``. In order to be frame rate independent in :ref:`Node._physics_process<class_Node_private_method__physics_process>` or :ref:`Node._process<class_Node_private_method__process>`, ``motion`` should be computed using ``delta``.
 
 The body will stop if it collides. Returns a :ref:`KinematicCollision3D<class_KinematicCollision3D>`, which contains information about the collision when stopped, or when touching another body along the motion.
 
@@ -282,7 +282,7 @@ Locks or unlocks the specified linear or rotational ``axis`` depending on the va
 
 :ref:`bool<class_bool>` **test_move** **(** :ref:`Transform3D<class_Transform3D>` from, :ref:`Vector3<class_Vector3>` motion, :ref:`KinematicCollision3D<class_KinematicCollision3D>` collision=null, :ref:`float<class_float>` safe_margin=0.001, :ref:`bool<class_bool>` recovery_as_collision=false, :ref:`int<class_int>` max_collisions=1 **)**
 
-Checks for collisions without moving the body. In order to be frame rate independent in :ref:`Node._physics_process<class_Node_method__physics_process>` or :ref:`Node._process<class_Node_method__process>`, ``motion`` should be computed using ``delta``.
+Checks for collisions without moving the body. In order to be frame rate independent in :ref:`Node._physics_process<class_Node_private_method__physics_process>` or :ref:`Node._process<class_Node_private_method__process>`, ``motion`` should be computed using ``delta``.
 
 Virtually sets the node's position, scale and rotation to that of the given :ref:`Transform3D<class_Transform3D>`, then tries to move the body along the vector ``motion``. Returns ``true`` if a collision would stop the body from moving along the whole path.
 

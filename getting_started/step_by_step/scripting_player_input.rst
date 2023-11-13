@@ -1,5 +1,3 @@
-:article_outdated: True
-
 .. Intention: only introduce one necessary input method at this point. The
    Inputs section of the docs should provide more guides comparing the various
    tools you have to manage the complexity of user input.

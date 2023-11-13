@@ -431,7 +431,7 @@ Method Descriptions
 
 void **add_used_extension** **(** :ref:`String<class_String>` extension_name, :ref:`bool<class_bool>` required **)**
 
-Appends an extension to the list of extensions used by this GLTF file during serialization. If ``required`` is true, the extension will also be added to the list of required extensions. Do not run this in :ref:`GLTFDocumentExtension._export_post<class_GLTFDocumentExtension_method__export_post>`, as that stage is too late to add extensions. The final list is sorted alphabetically.
+Appends an extension to the list of extensions used by this GLTF file during serialization. If ``required`` is true, the extension will also be added to the list of required extensions. Do not run this in :ref:`GLTFDocumentExtension._export_post<class_GLTFDocumentExtension_private_method__export_post>`, as that stage is too late to add extensions. The final list is sorted alphabetically.
 
 .. rst-class:: classref-item-separator
 

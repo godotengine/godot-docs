@@ -355,13 +355,13 @@ Export annotations are also provided for the physics and render layers defined i
 .. code-block:: csharp
 
     [Export(PropertyHint.Layers2DPhysics)]
-    public int Layers2DPhysics { get; set; }
+    public uint Layers2DPhysics { get; set; }
     [Export(PropertyHint.Layers2DRender)]
-    public int Layers2DRender { get; set; }
+    public uint Layers2DRender { get; set; }
     [Export(PropertyHint.Layers3DPhysics)]
-    public int layers3DPhysics { get; set; }
+    public uint Layers3DPhysics { get; set; }
     [Export(PropertyHint.Layers3DRender)]
-    public int layers3DRender { get; set; }
+    public uint Layers3DRender { get; set; }
 
 Using bit flags requires some understanding of bitwise operations.
 If in doubt, use boolean variables instead.
@@ -540,9 +540,9 @@ common exporting features which can be implemented with a low-level API.
 
 Before reading further, you should get familiar with the way properties are
 handled and how they can be customized with
-:ref:`_Set() <class_Object_method__set>`,
-:ref:`_Get() <class_Object_method__get>`, and
-:ref:`_GetPropertyList() <class_Object_method__get_property_list>` methods as
+:ref:`_Set() <class_Object_private_method__set>`,
+:ref:`_Get() <class_Object_private_method__get>`, and
+:ref:`_GetPropertyList() <class_Object_private_method__get_property_list>` methods as
 described in :ref:`doc_accessing_data_or_logic_from_object`.
 
 .. seealso:: For binding properties using the above methods in C++, see

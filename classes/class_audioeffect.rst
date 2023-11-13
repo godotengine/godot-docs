@@ -38,9 +38,9 @@ Methods
 .. table::
    :widths: auto
 
-   +-------------------------------------------------------+----------------------------------------------------------------------------------+
-   | :ref:`AudioEffectInstance<class_AudioEffectInstance>` | :ref:`_instantiate<class_AudioEffect_method__instantiate>` **(** **)** |virtual| |
-   +-------------------------------------------------------+----------------------------------------------------------------------------------+
+   +-------------------------------------------------------+------------------------------------------------------------------------------------------+
+   | :ref:`AudioEffectInstance<class_AudioEffectInstance>` | :ref:`_instantiate<class_AudioEffect_private_method__instantiate>` **(** **)** |virtual| |
+   +-------------------------------------------------------+------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -51,7 +51,7 @@ Methods
 Method Descriptions
 -------------------
 
-.. _class_AudioEffect_method__instantiate:
+.. _class_AudioEffect_private_method__instantiate:
 
 .. rst-class:: classref-method
 

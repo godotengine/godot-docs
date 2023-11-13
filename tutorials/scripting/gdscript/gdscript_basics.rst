@@ -539,7 +539,100 @@ considered a comment.
 
     # This is a comment.
 
+.. tip::
+
+    In the Godot script editor, special keywords are highlighted within comments
+    to bring the user's attention to specific comments:
+
+    - **Critical** *(appears in red)*: ``ALERT``, ``ATTENTION``, ``CAUTION``,
+      ``CRITICAL``, ``DANGER``, ``SECURITY``
+    - **Warning** *(appears in yellow)*: ``BUG``, ``DEPRECATED``, ``FIXME``,
+      ``HACK``, ``TASK``, ``TBD``, ``TODO``, ``WARNING``
+    - **Notice** *(appears in green)*: ``INFO``, ``NOTE``, ``NOTICE``, ``TEST``,
+      ``TESTING``
+
+    These keywords are case-sensitive, so they must be written in uppercase for them
+    to be recognized:
+
+    ::
+
+        # In the example below, "TODO" will appear in yellow by default.
+        # The `:` symbol after the keyword is not required, but it's often used.
+
+        # TODO: Add more items for the player to choose from.
+
+    The list of highlighted keywords and their colors can be changed in the **Text
+    Editor > Theme > Comment Markers** section of the Editor Settings.
+
 .. _doc_gdscript_builtin_types:
+
+Code regions
+~~~~~~~~~~~~
+
+Code regions are special types of comments that the script editor understands as
+*foldable regions*. This means that after writing code region comments, you can
+collapse and expand the region by clicking the arrow that appears at the left of
+the comment. This arrow appears within a purple square to be distinguishable
+from standard code folding.
+
+The syntax is as follows:
+
+::
+
+    # Important: There must be *no* space between the `#` and `region` or `endregion`.
+
+    # Region without a description:
+    #region
+    ...
+    #endregion
+
+    # Region with a description:
+    #region Some description that is displayed even when collapsed
+    ...
+    #endregion
+
+.. tip::
+
+    To create a code region quickly, select several lines in the script editor,
+    right-click the selection then choose **Create Code Region**. The region
+    description will be selected automatically for editing.
+
+    It is possible to nest code regions within other code regions.
+
+Here's a concrete usage example of code regions:
+
+::
+
+    # This comment is outside the code region. It will be visible when collapsed.
+    #region Terrain generation
+    # This comment is inside the code region. It won't be visible when collapsed.
+    func generate_lakes():
+        pass
+
+    func generate_hills():
+        pass
+    #endregion
+
+    #region Terrain population
+    func place_vegetation():
+        pass
+
+    func place_roads():
+        pass
+    #endregion
+
+This can be useful to organize large chunks of code into easier to understand
+sections. However, remember that external editors generally don't support this
+feature, so make sure your code is easy to follow even when not relying on
+folding code regions.
+
+.. note::
+
+    Individual functions and indented sections (such as ``if`` and ``for``) can
+    *always* be collapsed in the script editor. This means you should avoid
+    using a code region to contain a single function or indented section, as it
+    won't bring much of a benefit. Code regions work best when they're used to
+    group multiple elements together.
 
 Line continuation
 ~~~~~~~~~~~~~~~~~
@@ -815,7 +908,7 @@ Associative container which contains values referenced by unique keys.
 Lua-style table syntax is also supported. Lua-style uses ``=`` instead of ``:``
 and doesn't use quotes to mark string keys (making for slightly less to write).
 However, keys written in this form can't start with a digit (like any GDScript
-identifier).
+identifier), and must be string literals.
 
 ::
 
@@ -1904,6 +1997,40 @@ Example::
         set(value):
             milliseconds = value * 1000
 
+.. note::
+
+    Unlike ``setget`` in previous Godot versions, the properties setter and getter are **always** called (except as noted below),
+    even when accessed inside the same class (with or without prefixing with ``self.``). This makes the behavior
+    consistent. If you need direct access to the value, use another variable for direct access and make the property
+    code use that name.
+
+Alternative syntax
+^^^^^^^^^^^^^^^^^^
+
+Also there is another notation to use existing class functions if you want to split the code from the variable declaration
+or you need to reuse the code across multiple properties (but you can't distinguish which property the setter/getter is being called for)::
+
+    var my_prop:
+        get = get_my_prop, set = set_my_prop
+
+This can also be done in the same line::
+
+    var my_prop: get = get_my_prop, set = set_my_prop
+
+The setter and getter must use the same notation, mixing styles for the same variable is not allowed.
+
+.. note::
+
+    You cannot specify type hints for *inline* setters and getters. This is done on purpose to reduce the boilerplate.
+    If the variable is typed, then the setter's argument is automatically of the same type, and the getter's return value must match it.
+    Separated setter/getter functions can have type hints, and the type must match the variable's type or be a wider type.
+
+When setter/getter is not called
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+When a variable is initialized, the value of the initializer will be written directly to the variable.
+Including if the ``@onready`` annotation is applied to the variable.
+
 Using the variable's name to set it inside its own setter or to get it inside its own getter will directly access the underlying member,
 so it won't generate infinite recursion and saves you from explicitly declaring another variable::
 
@@ -1915,22 +2042,24 @@ so it won't generate infinite recursion and saves you from explicitly declaring 
             changed.emit(value)
             warns_when_changed = value
 
-This backing member variable is not created if you don't use it.
+This also applies to the alternative syntax::
 
-.. note::
+    var my_prop: set = set_my_prop
 
-    Unlike ``setget`` in previous Godot versions, the properties setter and getter are **always** called,
-    even when accessed inside the same class (with or without prefixing with ``self.``). This makes the behavior
-    consistent. If you need direct access to the value, use another variable for direct access and make the property
-    code use that name.
+    func set_my_prop(value):
+        my_prop = value # No infinite recursion.
 
-In case you want to split the code from the variable declaration or you need to share the code across multiple properties,
-you can use a different notation to use existing class functions::
+.. warning::
 
-    var my_prop:
-        get = get_my_prop, set = set_my_prop
+    The exception does **not** propagate to other functions called in the setter/getter.
+    For example, the following code **will** cause an infinite recursion::
 
-This can also be done in the same line.
+        var my_prop:
+            set(value):
+                set_my_prop(value)
+
+        func set_my_prop(value):
+            my_prop = value # Infinite recursion, since `set_my_prop()` is not the setter.
 
 .. _doc_gdscript_tool_mode:
 

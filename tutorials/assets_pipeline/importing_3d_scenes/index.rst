@@ -19,3 +19,9 @@ dialog, and inherited scenes.
    model_export_considerations
    node_type_customization
    import_configuration
+
+.. seealso::
+
+    3D scenes can be loaded at runtime using
+    :ref:`runtime file loading and saving <doc_runtime_file_loading_and_saving_3d_scenes>`,
+    including from an exported project.

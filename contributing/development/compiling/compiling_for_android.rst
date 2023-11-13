@@ -36,9 +36,9 @@ For compiling under Windows, Linux or macOS, the following is required:
       **do not use an Android SDK provided by your distribution's repositories as it will often be outdated**.
 
 - Gradle (will be downloaded and installed automatically if missing).
-- JDK 11 (either OpenJDK or Oracle JDK).
+- JDK 17 (either OpenJDK or Oracle JDK).
 
-   - You can download a build from `ojdkbuild <https://github.com/ojdkbuild/ojdkbuild>`_.
+   - You can download a build from `ojdkbuild <https://adoptium.net/temurin/releases/?variant=openjdk17>`_.
 
 .. seealso:: To get the Godot source code for compiling, see
              :ref:`doc_getting_source`.
@@ -51,7 +51,7 @@ For compiling under Windows, Linux or macOS, the following is required:
 Setting up the buildsystem
 --------------------------
 
--  Set the environment variable ``ANDROID_SDK_ROOT`` to point to the Android
+-  Set the environment variable ``ANDROID_HOME`` to point to the Android
    SDK. If you downloaded the Android command-line tools, this would be
    the folder where you extracted the contents of the ZIP archive.
 
@@ -75,7 +75,7 @@ Setting up the buildsystem
             pane, then click on **Environment variables** on the window that appears.
 
 .. seealso::   To set the environment variable on Linux or macOS, use
-            ``export ANDROID_SDK_ROOT=/path/to/android-sdk`` where ``/path/to/android-sdk`` points to
+            ``export ANDROID_HOME=/path/to/android-sdk`` where ``/path/to/android-sdk`` points to
             the root of the SDK directories.
 
 Building the export templates
@@ -255,7 +255,7 @@ Troubleshooting
 Platform doesn't appear in SCons
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Double-check that you've set the ``ANDROID_SDK_ROOT``
+Double-check that you've set the ``ANDROID_HOME``
 environment variable. This is required for the platform to appear in SCons'
 list of detected platforms.
 See :ref:`Setting up the buildsystem <doc_android_setting_up_the_buildsystem>`

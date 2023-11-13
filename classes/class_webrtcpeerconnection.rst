@@ -417,7 +417,7 @@ Valid ``configuration`` options are:
 
 :ref:`Error<enum_@GlobalScope_Error>` **poll** **(** **)**
 
-Call this method frequently (e.g. in :ref:`Node._process<class_Node_method__process>` or :ref:`Node._physics_process<class_Node_method__physics_process>`) to properly receive signals.
+Call this method frequently (e.g. in :ref:`Node._process<class_Node_private_method__process>` or :ref:`Node._physics_process<class_Node_private_method__physics_process>`) to properly receive signals.
 
 .. rst-class:: classref-item-separator
 

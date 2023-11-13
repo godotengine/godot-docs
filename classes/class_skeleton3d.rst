@@ -25,7 +25,7 @@ The overall transform of a bone with respect to the skeleton is determined by bo
 
 Note that "global pose" below refers to the overall transform of the bone with respect to skeleton, so it is not the actual global/world transform of the bone.
 
-To setup different types of inverse kinematics, consider using :ref:`SkeletonIK3D<class_SkeletonIK3D>`, or add a custom IK implementation in :ref:`Node._process<class_Node_method__process>` as a child node.
+To setup different types of inverse kinematics, consider using :ref:`SkeletonIK3D<class_SkeletonIK3D>`, or add a custom IK implementation in :ref:`Node._process<class_Node_private_method__process>` as a child node.
 
 .. rst-class:: classref-introduction-group
 
@@ -493,9 +493,7 @@ Returns the pose transform of the specified bone.
 
 :ref:`Vector3<class_Vector3>` **get_bone_pose_position** **(** :ref:`int<class_int>` bone_idx **)** |const|
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Returns the pose position of the bone at ``bone_idx``. The returned :ref:`Vector3<class_Vector3>` is in the local coordinate space of the **Skeleton3D** node.
 
 .. rst-class:: classref-item-separator
 
@@ -507,9 +505,7 @@ Returns the pose transform of the specified bone.
 
 :ref:`Quaternion<class_Quaternion>` **get_bone_pose_rotation** **(** :ref:`int<class_int>` bone_idx **)** |const|
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Returns the pose rotation of the bone at ``bone_idx``. The returned :ref:`Quaternion<class_Quaternion>` is local to the bone with respect to the rotation of any parent bones.
 
 .. rst-class:: classref-item-separator
 
@@ -521,9 +517,7 @@ Returns the pose transform of the specified bone.
 
 :ref:`Vector3<class_Vector3>` **get_bone_pose_scale** **(** :ref:`int<class_int>` bone_idx **)** |const|
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Returns the pose scale of the bone at ``bone_idx``.
 
 .. rst-class:: classref-item-separator
 
@@ -745,9 +739,7 @@ Sets the bone index ``parent_idx`` as the parent of the bone at ``bone_idx``. If
 
 void **set_bone_pose_position** **(** :ref:`int<class_int>` bone_idx, :ref:`Vector3<class_Vector3>` position **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Sets the pose position of the bone at ``bone_idx`` to ``position``. ``position`` is a :ref:`Vector3<class_Vector3>` describing a position local to the **Skeleton3D** node.
 
 .. rst-class:: classref-item-separator
 
@@ -759,9 +751,7 @@ void **set_bone_pose_position** **(** :ref:`int<class_int>` bone_idx, :ref:`Vect
 
 void **set_bone_pose_rotation** **(** :ref:`int<class_int>` bone_idx, :ref:`Quaternion<class_Quaternion>` rotation **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Sets the pose rotation of the bone at ``bone_idx`` to ``rotation``. ``rotation`` is a :ref:`Quaternion<class_Quaternion>` describing a rotation in the bone's local coordinate space with respect to the rotation of any parent bones.
 
 .. rst-class:: classref-item-separator
 
@@ -773,9 +763,7 @@ void **set_bone_pose_rotation** **(** :ref:`int<class_int>` bone_idx, :ref:`Quat
 
 void **set_bone_pose_scale** **(** :ref:`int<class_int>` bone_idx, :ref:`Vector3<class_Vector3>` scale **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Sets the pose scale of the bone at ``bone_idx`` to ``scale``.
 
 .. rst-class:: classref-item-separator
 

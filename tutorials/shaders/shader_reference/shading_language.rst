@@ -760,9 +760,18 @@ used, and how the editor should allow users to modify it.
     uniform vec4 other_color : source_color = vec4(1.0); // Default values go after the hint.
     uniform sampler2D image : source_color;
 
-It's important to understand that textures that are supplied as color require
-hints for proper sRGB->linear conversion (i.e. ``source_color``), as Godot's 3D
-engine renders in linear color space.
+It's important to understand that textures *that are supplied as color* require
+hints for proper sRGB -> linear conversion (i.e. ``source_color``), as Godot's
+3D engine renders in linear color space. If this is not done, the texture will
+appear washed out.
+
+.. note::
+
+    The 2D renderer also renders in linear color space if the
+    **Rendering > Viewport > HDR 2D** project setting is enabled, so
+    ``source_color`` must also be used in ``canvas_item`` shaders. If 2D HDR is
+    disabled, ``source_color`` will keep working correctly in ``canvas_item``
+    shaders, so it's recommend to use it either way.
 
 Full list of hints below:
 

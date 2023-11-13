@@ -1,5 +1,3 @@
-:article_outdated: True
-
 .. _doc_instancing:
 
 Creating instances
@@ -45,7 +43,7 @@ you to download the ball's sample project we prepared for you:
 `instancing_starter.zip <https://github.com/godotengine/godot-docs-project-starters/releases/download/latest-4.x/instancing_starter.zip>`_.
 
 Extract the archive on your computer. To import it, you need the Project Manager.
-The Project Manager is accessed by opening Godot, or if you already have Godot opened, click on *Project -> Quit to Project List* (:kbd:`Ctrl + Shift + Q`, :kbd:`Ctrl + Option + Cmd + B` on macOS)
+The Project Manager is accessed by opening Godot, or if you already have Godot opened, click on *Project -> Quit to Project List* (:kbd:`Ctrl + Shift + Q`, :kbd:`Ctrl + Option + Cmd + Q` on macOS)
 
 In the Project Manager, click the *Import* button to import the project.
 
@@ -215,7 +213,7 @@ all working with the Godot editor.
 Summary
 -------
 
-Instancing, the process of producing an object from a blueprint has many handy
+Instancing, the process of producing an object from a blueprint, has many handy
 uses. With scenes, it gives you:
 
 - The ability to divide your game into reusable components.

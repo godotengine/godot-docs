@@ -46,7 +46,7 @@ As opposed to :ref:`Timer<class_Timer>`, it does not require the instantiation o
 
 The timer will be dereferenced after its time elapses. To preserve the timer, you can keep a reference to it. See :ref:`RefCounted<class_RefCounted>`.
 
-\ **Note:** The timer is processed after all of the nodes in the current frame, i.e. node's :ref:`Node._process<class_Node_method__process>` method would be called before the timer (or :ref:`Node._physics_process<class_Node_method__physics_process>` if ``process_in_physics`` in :ref:`SceneTree.create_timer<class_SceneTree_method_create_timer>` has been set to ``true``).
+\ **Note:** The timer is processed after all of the nodes in the current frame, i.e. node's :ref:`Node._process<class_Node_private_method__process>` method would be called before the timer (or :ref:`Node._physics_process<class_Node_private_method__physics_process>` if ``process_in_physics`` in :ref:`SceneTree.create_timer<class_SceneTree_method_create_timer>` has been set to ``true``).
 
 .. rst-class:: classref-reftable-group
 

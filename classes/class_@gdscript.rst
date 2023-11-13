@@ -674,7 +674,7 @@ Add a custom icon to the current script. The icon specified at ``icon_path`` is 
 
 **@onready** **(** **)**
 
-Mark the following property as assigned when the :ref:`Node<class_Node>` is ready. Values for these properties are not assigned immediately when the node is initialized (:ref:`Object._init<class_Object_method__init>`), and instead are computed and stored right before :ref:`Node._ready<class_Node_method__ready>`.
+Mark the following property as assigned when the :ref:`Node<class_Node>` is ready. Values for these properties are not assigned immediately when the node is initialized (:ref:`Object._init<class_Object_private_method__init>`), and instead are computed and stored right before :ref:`Node._ready<class_Node_private_method__ready>`.
 
 ::
 

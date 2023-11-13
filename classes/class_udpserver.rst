@@ -21,7 +21,7 @@ Description
 
 A simple server that opens a UDP socket and returns connected :ref:`PacketPeerUDP<class_PacketPeerUDP>` upon receiving new packets. See also :ref:`PacketPeerUDP.connect_to_host<class_PacketPeerUDP_method_connect_to_host>`.
 
-After starting the server (:ref:`listen<class_UDPServer_method_listen>`), you will need to :ref:`poll<class_UDPServer_method_poll>` it at regular intervals (e.g. inside :ref:`Node._process<class_Node_method__process>`) for it to process new packets, delivering them to the appropriate :ref:`PacketPeerUDP<class_PacketPeerUDP>`, and taking new connections.
+After starting the server (:ref:`listen<class_UDPServer_method_listen>`), you will need to :ref:`poll<class_UDPServer_method_poll>` it at regular intervals (e.g. inside :ref:`Node._process<class_Node_private_method__process>`) for it to process new packets, delivering them to the appropriate :ref:`PacketPeerUDP<class_PacketPeerUDP>`, and taking new connections.
 
 Below a small example of how it can be used:
 
@@ -270,7 +270,7 @@ Starts the server by opening a UDP socket listening on the given ``port``. You c
 
 :ref:`Error<enum_@GlobalScope_Error>` **poll** **(** **)**
 
-Call this method at regular intervals (e.g. inside :ref:`Node._process<class_Node_method__process>`) to process new packets. And packet from known address/port pair will be delivered to the appropriate :ref:`PacketPeerUDP<class_PacketPeerUDP>`, any packet received from an unknown address/port pair will be added as a pending connection (see :ref:`is_connection_available<class_UDPServer_method_is_connection_available>`, :ref:`take_connection<class_UDPServer_method_take_connection>`). The maximum number of pending connection is defined via :ref:`max_pending_connections<class_UDPServer_property_max_pending_connections>`.
+Call this method at regular intervals (e.g. inside :ref:`Node._process<class_Node_private_method__process>`) to process new packets. And packet from known address/port pair will be delivered to the appropriate :ref:`PacketPeerUDP<class_PacketPeerUDP>`, any packet received from an unknown address/port pair will be added as a pending connection (see :ref:`is_connection_available<class_UDPServer_method_is_connection_available>`, :ref:`take_connection<class_UDPServer_method_take_connection>`). The maximum number of pending connection is defined via :ref:`max_pending_connections<class_UDPServer_property_max_pending_connections>`.
 
 .. rst-class:: classref-item-separator
 

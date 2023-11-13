@@ -384,7 +384,7 @@ If ``true``, results in fractional delta calculation which has a smoother partic
 
 Causes all the particles in this node to interpolate towards the end of their lifetime.
 
-\ **Note**: This only works when used with a :ref:`ParticleProcessMaterial<class_ParticleProcessMaterial>`. It needs to be manually implemented for custom process shaders.
+\ **Note:** This only works when used with a :ref:`ParticleProcessMaterial<class_ParticleProcessMaterial>`. It needs to be manually implemented for custom process shaders.
 
 .. rst-class:: classref-item-separator
 

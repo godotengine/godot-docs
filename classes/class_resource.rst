@@ -61,9 +61,9 @@ Methods
    :widths: auto
 
    +---------------------------------+------------------------------------------------------------------------------------------------------------------+
-   | :ref:`RID<class_RID>`           | :ref:`_get_rid<class_Resource_method__get_rid>` **(** **)** |virtual|                                            |
+   | :ref:`RID<class_RID>`           | :ref:`_get_rid<class_Resource_private_method__get_rid>` **(** **)** |virtual|                                    |
    +---------------------------------+------------------------------------------------------------------------------------------------------------------+
-   | void                            | :ref:`_setup_local_to_scene<class_Resource_method__setup_local_to_scene>` **(** **)** |virtual|                  |
+   | void                            | :ref:`_setup_local_to_scene<class_Resource_private_method__setup_local_to_scene>` **(** **)** |virtual|          |
    +---------------------------------+------------------------------------------------------------------------------------------------------------------+
    | :ref:`Resource<class_Resource>` | :ref:`duplicate<class_Resource_method_duplicate>` **(** :ref:`bool<class_bool>` subresources=false **)** |const| |
    +---------------------------------+------------------------------------------------------------------------------------------------------------------+
@@ -109,7 +109,7 @@ Emitted when the resource changes, usually when one of its properties is modifie
 
 Emitted by a newly duplicated resource with :ref:`resource_local_to_scene<class_Resource_property_resource_local_to_scene>` set to ``true``. 
 
-\ *Deprecated.* This signal is only emitted when the resource is created. Override :ref:`_setup_local_to_scene<class_Resource_method__setup_local_to_scene>` instead.
+\ *Deprecated.* This signal is only emitted when the resource is created. Override :ref:`_setup_local_to_scene<class_Resource_private_method__setup_local_to_scene>` instead.
 
 .. rst-class:: classref-section-separator
 
@@ -152,6 +152,8 @@ If ``true``, the resource is duplicated for each instance of all scenes using it
 
 An optional name for this resource. When defined, its value is displayed to represent the resource in the Inspector dock. For built-in scripts, the name is displayed as part of the tab name in the script editor.
 
+\ **Note:** Some resource formats do not support resource names. You can still set the name in the editor or via code, but it will be lost when the resource is reloaded. For example, only built-in scripts can have a resource name, while scripts stored in separate files cannot.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -180,7 +182,7 @@ The unique path to this resource. If it has been saved to disk, the value will b
 Method Descriptions
 -------------------
 
-.. _class_Resource_method__get_rid:
+.. _class_Resource_private_method__get_rid:
 
 .. rst-class:: classref-method
 
@@ -192,7 +194,7 @@ Override this method to return a custom :ref:`RID<class_RID>` when :ref:`get_rid
 
 ----
 
-.. _class_Resource_method__setup_local_to_scene:
+.. _class_Resource_private_method__setup_local_to_scene:
 
 .. rst-class:: classref-method
 
@@ -227,7 +229,7 @@ If ``subresources`` is ``false``, a shallow copy is returned; nested resources w
 
 Subresource properties with the :ref:`@GlobalScope.PROPERTY_USAGE_ALWAYS_DUPLICATE<class_@GlobalScope_constant_PROPERTY_USAGE_ALWAYS_DUPLICATE>` flag are always duplicated even with ``subresources`` set to ``false``, and properties with the :ref:`@GlobalScope.PROPERTY_USAGE_NEVER_DUPLICATE<class_@GlobalScope_constant_PROPERTY_USAGE_NEVER_DUPLICATE>` flag are never duplicated even with ``subresources`` set to ``true``.
 
-\ **Note:** For custom resources, this method will fail if :ref:`Object._init<class_Object_method__init>` has been defined with required parameters.
+\ **Note:** For custom resources, this method will fail if :ref:`Object._init<class_Object_private_method__init>` has been defined with required parameters.
 
 .. rst-class:: classref-item-separator
 
@@ -285,9 +287,9 @@ Returns the :ref:`RID<class_RID>` of this resource (or an empty RID). Many resou
 
 void **setup_local_to_scene** **(** **)**
 
-Calls :ref:`_setup_local_to_scene<class_Resource_method__setup_local_to_scene>`. If :ref:`resource_local_to_scene<class_Resource_property_resource_local_to_scene>` is set to ``true``, this method is automatically called from :ref:`PackedScene.instantiate<class_PackedScene_method_instantiate>` by the newly duplicated resource within the scene instance.
+Calls :ref:`_setup_local_to_scene<class_Resource_private_method__setup_local_to_scene>`. If :ref:`resource_local_to_scene<class_Resource_property_resource_local_to_scene>` is set to ``true``, this method is automatically called from :ref:`PackedScene.instantiate<class_PackedScene_method_instantiate>` by the newly duplicated resource within the scene instance.
 
-\ *Deprecated.* This method should only be called internally. Override :ref:`_setup_local_to_scene<class_Resource_method__setup_local_to_scene>` instead.
+\ *Deprecated.* This method should only be called internally. Override :ref:`_setup_local_to_scene<class_Resource_private_method__setup_local_to_scene>` instead.
 
 .. rst-class:: classref-item-separator
 

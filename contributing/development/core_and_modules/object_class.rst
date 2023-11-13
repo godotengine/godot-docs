@@ -14,7 +14,7 @@ General definition
 :ref:`Object <class_object>` is the base class for almost everything. Most classes in Godot
 inherit directly or indirectly from it. Objects provide reflection and
 editable properties, and declaring them is a matter of using a single
-macro like this.
+macro like this:
 
 .. code-block:: cpp
 
@@ -23,7 +23,7 @@ macro like this.
         GDCLASS(CustomObject, Object); // this is required to inherit
     };
 
-This makes Objects gain a lot of functionality, like for example
+This adds a lot of functionality to Objects. For example:
 
 .. code-block:: cpp
 
@@ -108,7 +108,7 @@ Classes often have enums such as:
     };
 
 For these to work when binding to methods, the enum must be declared
-convertible to int, for this a macro is provided:
+convertible to int. A macro is provided to help with this:
 
 .. code-block:: cpp
 
@@ -129,7 +129,7 @@ Objects export properties, properties are useful for the following:
 -  Serializing and deserializing the object.
 -  Creating a list of editable values for the Object derived class.
 
-Properties are usually defined by the PropertyInfo() class. Usually
+Properties are usually defined by the PropertyInfo() class and
 constructed as:
 
 .. code-block:: cpp
@@ -142,9 +142,9 @@ For example:
 
     PropertyInfo(Variant::INT, "amount", PROPERTY_HINT_RANGE, "0,49,1", PROPERTY_USAGE_EDITOR)
 
-This is an integer property, named "amount", hint is a range, range goes
-from 0 to 49 in steps of 1 (integers). It is only usable for the editor
-(edit value visually) but won't be serialized.
+This is an integer property named "amount". The hint is a range, and the range 
+goes from 0 to 49 in steps of 1 (integers). It is only usable for the editor
+(editing the value visually) but won't be serialized.
 
 Another example:
 
@@ -240,7 +240,7 @@ Adding signals to a class is done in ``_bind_methods``, using the
 Notifications
 -------------
 
-All objects in Godot have a :ref:`_notification <class_Object_method__notification>`
+All objects in Godot have a :ref:`_notification <class_Object_private_method__notification>`
 method that allows it to respond to engine level callbacks that may relate to it.
 More information can be found on the :ref:`doc_godot_notifications` page.
 
@@ -267,14 +267,14 @@ References:
 
 -  `core/object/reference.h <https://github.com/godotengine/godot/blob/master/core/object/ref_counted.h>`__
 
-Resources:
+Resources
 ----------
 
 :ref:`Resource <class_resource>` inherits from Reference, so all resources
 are reference counted. Resources can optionally contain a path, which
-reference a file on disk. This can be set with ``resource.set_path(path)``.
-This is normally done by the resource loader though. No two different
-resources can have the same path, attempt to do so will result in an error.
+reference a file on disk. This can be set with ``resource.set_path(path)``,
+though this is normally done by the resource loader. No two different
+resources can have the same path; attempting to do so will result in an error.
 
 Resources without a path are fine too.
 
@@ -313,8 +313,8 @@ Saving a resource can be done with the resource saver API:
 
     ResourceSaver::save("res://someresource.res", instance)
 
-Instance will be saved. Sub resources that have a path to a file will be
-saved as a reference to that resource. Sub resources without a path will
+The instance will be saved, and sub resources that have a path to a file will
+be saved as a reference to that resource. Sub resources without a path will
 be bundled with the saved resource and assigned sub-IDs, like
 ``res://someresource.res::1``. This also helps to cache them when loaded.
 

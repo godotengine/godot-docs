@@ -19,7 +19,7 @@ Base script that can be used to add extension functions to the editor.
 Description
 -----------
 
-Scripts extending this class and implementing its :ref:`_run<class_EditorScript_method__run>` method can be executed from the Script Editor's **File > Run** menu option (or by pressing :kbd:`Ctrl + Shift + X`) while the editor is running. This is useful for adding custom in-editor functionality to Godot. For more complex additions, consider using :ref:`EditorPlugin<class_EditorPlugin>`\ s instead.
+Scripts extending this class and implementing its :ref:`_run<class_EditorScript_private_method__run>` method can be executed from the Script Editor's **File > Run** menu option (or by pressing :kbd:`Ctrl + Shift + X`) while the editor is running. This is useful for adding custom in-editor functionality to Godot. For more complex additions, consider using :ref:`EditorPlugin<class_EditorPlugin>`\ s instead.
 
 \ **Note:** Extending scripts need to have ``tool`` mode enabled.
 
@@ -64,7 +64,7 @@ Methods
    :widths: auto
 
    +-----------------------------------------------+--------------------------------------------------------------------------------------------------------+
-   | void                                          | :ref:`_run<class_EditorScript_method__run>` **(** **)** |virtual|                                      |
+   | void                                          | :ref:`_run<class_EditorScript_private_method__run>` **(** **)** |virtual|                              |
    +-----------------------------------------------+--------------------------------------------------------------------------------------------------------+
    | void                                          | :ref:`add_root_node<class_EditorScript_method_add_root_node>` **(** :ref:`Node<class_Node>` node **)** |
    +-----------------------------------------------+--------------------------------------------------------------------------------------------------------+
@@ -82,7 +82,7 @@ Methods
 Method Descriptions
 -------------------
 
-.. _class_EditorScript_method__run:
+.. _class_EditorScript_private_method__run:
 
 .. rst-class:: classref-method
 

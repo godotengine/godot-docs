@@ -17,7 +17,9 @@ lots of small updates as is common for multiplayer gameplay.
 
 HTTP, however, offers interoperability with external
 web resources and is great at sending and receiving large amounts
-of data, for example to transfer files like game assets.
+of data, for example to transfer files like game assets. These assets can then
+be loaded using
+:ref:`runtime file loading and saving <doc_runtime_loading_and_saving>`.
 
 So HTTP may be useful for your game's login system, lobby browser,
 to retrieve some information from the web or to download game assets.

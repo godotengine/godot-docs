@@ -12,7 +12,7 @@ PhysicsServer3DRenderingServerHandler
 
 **Inherits:** :ref:`Object<class_Object>`
 
-A class used to provide :ref:`PhysicsServer3DExtension._soft_body_update_rendering_server<class_PhysicsServer3DExtension_method__soft_body_update_rendering_server>` with a rendering handler for soft bodies.
+A class used to provide :ref:`PhysicsServer3DExtension._soft_body_update_rendering_server<class_PhysicsServer3DExtension_private_method__soft_body_update_rendering_server>` with a rendering handler for soft bodies.
 
 .. rst-class:: classref-reftable-group
 
@@ -22,19 +22,19 @@ Methods
 .. table::
    :widths: auto
 
-   +------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void | :ref:`_set_aabb<class_PhysicsServer3DRenderingServerHandler_method__set_aabb>` **(** :ref:`AABB<class_AABB>` aabb **)** |virtual|                                              |
-   +------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void | :ref:`_set_normal<class_PhysicsServer3DRenderingServerHandler_method__set_normal>` **(** :ref:`int<class_int>` vertex_id, :ref:`Vector3<class_Vector3>` normal **)** |virtual| |
-   +------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void | :ref:`_set_vertex<class_PhysicsServer3DRenderingServerHandler_method__set_vertex>` **(** :ref:`int<class_int>` vertex_id, :ref:`Vector3<class_Vector3>` vertex **)** |virtual| |
-   +------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void | :ref:`set_aabb<class_PhysicsServer3DRenderingServerHandler_method_set_aabb>` **(** :ref:`AABB<class_AABB>` aabb **)**                                                          |
-   +------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void | :ref:`set_normal<class_PhysicsServer3DRenderingServerHandler_method_set_normal>` **(** :ref:`int<class_int>` vertex_id, :ref:`Vector3<class_Vector3>` normal **)**             |
-   +------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void | :ref:`set_vertex<class_PhysicsServer3DRenderingServerHandler_method_set_vertex>` **(** :ref:`int<class_int>` vertex_id, :ref:`Vector3<class_Vector3>` vertex **)**             |
-   +------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void | :ref:`_set_aabb<class_PhysicsServer3DRenderingServerHandler_private_method__set_aabb>` **(** :ref:`AABB<class_AABB>` aabb **)** |virtual|                                              |
+   +------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void | :ref:`_set_normal<class_PhysicsServer3DRenderingServerHandler_private_method__set_normal>` **(** :ref:`int<class_int>` vertex_id, :ref:`Vector3<class_Vector3>` normal **)** |virtual| |
+   +------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void | :ref:`_set_vertex<class_PhysicsServer3DRenderingServerHandler_private_method__set_vertex>` **(** :ref:`int<class_int>` vertex_id, :ref:`Vector3<class_Vector3>` vertex **)** |virtual| |
+   +------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void | :ref:`set_aabb<class_PhysicsServer3DRenderingServerHandler_method_set_aabb>` **(** :ref:`AABB<class_AABB>` aabb **)**                                                                  |
+   +------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void | :ref:`set_normal<class_PhysicsServer3DRenderingServerHandler_method_set_normal>` **(** :ref:`int<class_int>` vertex_id, :ref:`Vector3<class_Vector3>` normal **)**                     |
+   +------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void | :ref:`set_vertex<class_PhysicsServer3DRenderingServerHandler_method_set_vertex>` **(** :ref:`int<class_int>` vertex_id, :ref:`Vector3<class_Vector3>` vertex **)**                     |
+   +------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -45,7 +45,7 @@ Methods
 Method Descriptions
 -------------------
 
-.. _class_PhysicsServer3DRenderingServerHandler_method__set_aabb:
+.. _class_PhysicsServer3DRenderingServerHandler_private_method__set_aabb:
 
 .. rst-class:: classref-method
 
@@ -57,7 +57,7 @@ Called by the :ref:`PhysicsServer3D<class_PhysicsServer3D>` to set the bounding 
 
 ----
 
-.. _class_PhysicsServer3DRenderingServerHandler_method__set_normal:
+.. _class_PhysicsServer3DRenderingServerHandler_private_method__set_normal:
 
 .. rst-class:: classref-method
 
@@ -71,7 +71,7 @@ Called by the :ref:`PhysicsServer3D<class_PhysicsServer3D>` to set the normal fo
 
 ----
 
-.. _class_PhysicsServer3DRenderingServerHandler_method__set_vertex:
+.. _class_PhysicsServer3DRenderingServerHandler_private_method__set_vertex:
 
 .. rst-class:: classref-method
 

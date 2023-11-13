@@ -29,53 +29,53 @@ Methods
 .. table::
    :widths: auto
 
-   +----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                                           | :ref:`_close<class_MultiplayerPeerExtension_method__close>` **(** **)** |virtual|                                                                                       |
-   +----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                                           | :ref:`_disconnect_peer<class_MultiplayerPeerExtension_method__disconnect_peer>` **(** :ref:`int<class_int>` p_peer, :ref:`bool<class_bool>` p_force **)** |virtual|     |
-   +----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                                          | :ref:`_get_available_packet_count<class_MultiplayerPeerExtension_method__get_available_packet_count>` **(** **)** |virtual| |const|                                     |
-   +----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`ConnectionStatus<enum_MultiplayerPeer_ConnectionStatus>` | :ref:`_get_connection_status<class_MultiplayerPeerExtension_method__get_connection_status>` **(** **)** |virtual| |const|                                               |
-   +----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                                          | :ref:`_get_max_packet_size<class_MultiplayerPeerExtension_method__get_max_packet_size>` **(** **)** |virtual| |const|                                                   |
-   +----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Error<enum_@GlobalScope_Error>`                          | :ref:`_get_packet<class_MultiplayerPeerExtension_method__get_packet>` **(** const uint8_t ** r_buffer, int32_t* r_buffer_size **)** |virtual|                           |
-   +----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                                          | :ref:`_get_packet_channel<class_MultiplayerPeerExtension_method__get_packet_channel>` **(** **)** |virtual| |const|                                                     |
-   +----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`TransferMode<enum_MultiplayerPeer_TransferMode>`         | :ref:`_get_packet_mode<class_MultiplayerPeerExtension_method__get_packet_mode>` **(** **)** |virtual| |const|                                                           |
-   +----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                                          | :ref:`_get_packet_peer<class_MultiplayerPeerExtension_method__get_packet_peer>` **(** **)** |virtual| |const|                                                           |
-   +----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`PackedByteArray<class_PackedByteArray>`                  | :ref:`_get_packet_script<class_MultiplayerPeerExtension_method__get_packet_script>` **(** **)** |virtual|                                                               |
-   +----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                                          | :ref:`_get_transfer_channel<class_MultiplayerPeerExtension_method__get_transfer_channel>` **(** **)** |virtual| |const|                                                 |
-   +----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`TransferMode<enum_MultiplayerPeer_TransferMode>`         | :ref:`_get_transfer_mode<class_MultiplayerPeerExtension_method__get_transfer_mode>` **(** **)** |virtual| |const|                                                       |
-   +----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                                          | :ref:`_get_unique_id<class_MultiplayerPeerExtension_method__get_unique_id>` **(** **)** |virtual| |const|                                                               |
-   +----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                                        | :ref:`_is_refusing_new_connections<class_MultiplayerPeerExtension_method__is_refusing_new_connections>` **(** **)** |virtual| |const|                                   |
-   +----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                                        | :ref:`_is_server<class_MultiplayerPeerExtension_method__is_server>` **(** **)** |virtual| |const|                                                                       |
-   +----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                                        | :ref:`_is_server_relay_supported<class_MultiplayerPeerExtension_method__is_server_relay_supported>` **(** **)** |virtual| |const|                                       |
-   +----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                                           | :ref:`_poll<class_MultiplayerPeerExtension_method__poll>` **(** **)** |virtual|                                                                                         |
-   +----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Error<enum_@GlobalScope_Error>`                          | :ref:`_put_packet<class_MultiplayerPeerExtension_method__put_packet>` **(** const uint8_t* p_buffer, :ref:`int<class_int>` p_buffer_size **)** |virtual|                |
-   +----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Error<enum_@GlobalScope_Error>`                          | :ref:`_put_packet_script<class_MultiplayerPeerExtension_method__put_packet_script>` **(** :ref:`PackedByteArray<class_PackedByteArray>` p_buffer **)** |virtual|        |
-   +----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                                           | :ref:`_set_refuse_new_connections<class_MultiplayerPeerExtension_method__set_refuse_new_connections>` **(** :ref:`bool<class_bool>` p_enable **)** |virtual|            |
-   +----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                                           | :ref:`_set_target_peer<class_MultiplayerPeerExtension_method__set_target_peer>` **(** :ref:`int<class_int>` p_peer **)** |virtual|                                      |
-   +----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                                           | :ref:`_set_transfer_channel<class_MultiplayerPeerExtension_method__set_transfer_channel>` **(** :ref:`int<class_int>` p_channel **)** |virtual|                         |
-   +----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                                           | :ref:`_set_transfer_mode<class_MultiplayerPeerExtension_method__set_transfer_mode>` **(** :ref:`TransferMode<enum_MultiplayerPeer_TransferMode>` p_mode **)** |virtual| |
-   +----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                                           | :ref:`_close<class_MultiplayerPeerExtension_private_method__close>` **(** **)** |virtual|                                                                                       |
+   +----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                                           | :ref:`_disconnect_peer<class_MultiplayerPeerExtension_private_method__disconnect_peer>` **(** :ref:`int<class_int>` p_peer, :ref:`bool<class_bool>` p_force **)** |virtual|     |
+   +----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                                          | :ref:`_get_available_packet_count<class_MultiplayerPeerExtension_private_method__get_available_packet_count>` **(** **)** |virtual| |const|                                     |
+   +----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`ConnectionStatus<enum_MultiplayerPeer_ConnectionStatus>` | :ref:`_get_connection_status<class_MultiplayerPeerExtension_private_method__get_connection_status>` **(** **)** |virtual| |const|                                               |
+   +----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                                          | :ref:`_get_max_packet_size<class_MultiplayerPeerExtension_private_method__get_max_packet_size>` **(** **)** |virtual| |const|                                                   |
+   +----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>`                          | :ref:`_get_packet<class_MultiplayerPeerExtension_private_method__get_packet>` **(** const uint8_t ** r_buffer, int32_t* r_buffer_size **)** |virtual|                           |
+   +----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                                          | :ref:`_get_packet_channel<class_MultiplayerPeerExtension_private_method__get_packet_channel>` **(** **)** |virtual| |const|                                                     |
+   +----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`TransferMode<enum_MultiplayerPeer_TransferMode>`         | :ref:`_get_packet_mode<class_MultiplayerPeerExtension_private_method__get_packet_mode>` **(** **)** |virtual| |const|                                                           |
+   +----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                                          | :ref:`_get_packet_peer<class_MultiplayerPeerExtension_private_method__get_packet_peer>` **(** **)** |virtual| |const|                                                           |
+   +----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PackedByteArray<class_PackedByteArray>`                  | :ref:`_get_packet_script<class_MultiplayerPeerExtension_private_method__get_packet_script>` **(** **)** |virtual|                                                               |
+   +----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                                          | :ref:`_get_transfer_channel<class_MultiplayerPeerExtension_private_method__get_transfer_channel>` **(** **)** |virtual| |const|                                                 |
+   +----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`TransferMode<enum_MultiplayerPeer_TransferMode>`         | :ref:`_get_transfer_mode<class_MultiplayerPeerExtension_private_method__get_transfer_mode>` **(** **)** |virtual| |const|                                                       |
+   +----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                                          | :ref:`_get_unique_id<class_MultiplayerPeerExtension_private_method__get_unique_id>` **(** **)** |virtual| |const|                                                               |
+   +----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                        | :ref:`_is_refusing_new_connections<class_MultiplayerPeerExtension_private_method__is_refusing_new_connections>` **(** **)** |virtual| |const|                                   |
+   +----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                        | :ref:`_is_server<class_MultiplayerPeerExtension_private_method__is_server>` **(** **)** |virtual| |const|                                                                       |
+   +----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                        | :ref:`_is_server_relay_supported<class_MultiplayerPeerExtension_private_method__is_server_relay_supported>` **(** **)** |virtual| |const|                                       |
+   +----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                                           | :ref:`_poll<class_MultiplayerPeerExtension_private_method__poll>` **(** **)** |virtual|                                                                                         |
+   +----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>`                          | :ref:`_put_packet<class_MultiplayerPeerExtension_private_method__put_packet>` **(** const uint8_t* p_buffer, :ref:`int<class_int>` p_buffer_size **)** |virtual|                |
+   +----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>`                          | :ref:`_put_packet_script<class_MultiplayerPeerExtension_private_method__put_packet_script>` **(** :ref:`PackedByteArray<class_PackedByteArray>` p_buffer **)** |virtual|        |
+   +----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                                           | :ref:`_set_refuse_new_connections<class_MultiplayerPeerExtension_private_method__set_refuse_new_connections>` **(** :ref:`bool<class_bool>` p_enable **)** |virtual|            |
+   +----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                                           | :ref:`_set_target_peer<class_MultiplayerPeerExtension_private_method__set_target_peer>` **(** :ref:`int<class_int>` p_peer **)** |virtual|                                      |
+   +----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                                           | :ref:`_set_transfer_channel<class_MultiplayerPeerExtension_private_method__set_transfer_channel>` **(** :ref:`int<class_int>` p_channel **)** |virtual|                         |
+   +----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                                           | :ref:`_set_transfer_mode<class_MultiplayerPeerExtension_private_method__set_transfer_mode>` **(** :ref:`TransferMode<enum_MultiplayerPeer_TransferMode>` p_mode **)** |virtual| |
+   +----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -86,7 +86,7 @@ Methods
 Method Descriptions
 -------------------
 
-.. _class_MultiplayerPeerExtension_method__close:
+.. _class_MultiplayerPeerExtension_private_method__close:
 
 .. rst-class:: classref-method
 
@@ -98,7 +98,7 @@ Called when the multiplayer peer should be immediately closed (see :ref:`Multipl
 
 ----
 
-.. _class_MultiplayerPeerExtension_method__disconnect_peer:
+.. _class_MultiplayerPeerExtension_private_method__disconnect_peer:
 
 .. rst-class:: classref-method
 
@@ -110,7 +110,7 @@ Called when the connected ``p_peer`` should be forcibly disconnected (see :ref:`
 
 ----
 
-.. _class_MultiplayerPeerExtension_method__get_available_packet_count:
+.. _class_MultiplayerPeerExtension_private_method__get_available_packet_count:
 
 .. rst-class:: classref-method
 
@@ -122,7 +122,7 @@ Called when the available packet count is internally requested by the :ref:`Mult
 
 ----
 
-.. _class_MultiplayerPeerExtension_method__get_connection_status:
+.. _class_MultiplayerPeerExtension_private_method__get_connection_status:
 
 .. rst-class:: classref-method
 
@@ -134,7 +134,7 @@ Called when the connection status is requested on the :ref:`MultiplayerPeer<clas
 
 ----
 
-.. _class_MultiplayerPeerExtension_method__get_max_packet_size:
+.. _class_MultiplayerPeerExtension_private_method__get_max_packet_size:
 
 .. rst-class:: classref-method
 
@@ -146,7 +146,7 @@ Called when the maximum allowed packet size (in bytes) is requested by the :ref:
 
 ----
 
-.. _class_MultiplayerPeerExtension_method__get_packet:
+.. _class_MultiplayerPeerExtension_private_method__get_packet:
 
 .. rst-class:: classref-method
 
@@ -158,7 +158,7 @@ Called when a packet needs to be received by the :ref:`MultiplayerAPI<class_Mult
 
 ----
 
-.. _class_MultiplayerPeerExtension_method__get_packet_channel:
+.. _class_MultiplayerPeerExtension_private_method__get_packet_channel:
 
 .. rst-class:: classref-method
 
@@ -170,7 +170,7 @@ Called to get the channel over which the next available packet was received. See
 
 ----
 
-.. _class_MultiplayerPeerExtension_method__get_packet_mode:
+.. _class_MultiplayerPeerExtension_private_method__get_packet_mode:
 
 .. rst-class:: classref-method
 
@@ -182,7 +182,7 @@ Called to get the :ref:`TransferMode<enum_MultiplayerPeer_TransferMode>` the rem
 
 ----
 
-.. _class_MultiplayerPeerExtension_method__get_packet_peer:
+.. _class_MultiplayerPeerExtension_private_method__get_packet_peer:
 
 .. rst-class:: classref-method
 
@@ -194,19 +194,19 @@ Called when the ID of the :ref:`MultiplayerPeer<class_MultiplayerPeer>` who sent
 
 ----
 
-.. _class_MultiplayerPeerExtension_method__get_packet_script:
+.. _class_MultiplayerPeerExtension_private_method__get_packet_script:
 
 .. rst-class:: classref-method
 
 :ref:`PackedByteArray<class_PackedByteArray>` **_get_packet_script** **(** **)** |virtual|
 
-Called when a packet needs to be received by the :ref:`MultiplayerAPI<class_MultiplayerAPI>`, if :ref:`_get_packet<class_MultiplayerPeerExtension_method__get_packet>` isn't implemented. Use this when extending this class via GDScript.
+Called when a packet needs to be received by the :ref:`MultiplayerAPI<class_MultiplayerAPI>`, if :ref:`_get_packet<class_MultiplayerPeerExtension_private_method__get_packet>` isn't implemented. Use this when extending this class via GDScript.
 
 .. rst-class:: classref-item-separator
 
 ----
 
-.. _class_MultiplayerPeerExtension_method__get_transfer_channel:
+.. _class_MultiplayerPeerExtension_private_method__get_transfer_channel:
 
 .. rst-class:: classref-method
 
@@ -218,7 +218,7 @@ Called when the transfer channel to use is read on this :ref:`MultiplayerPeer<cl
 
 ----
 
-.. _class_MultiplayerPeerExtension_method__get_transfer_mode:
+.. _class_MultiplayerPeerExtension_private_method__get_transfer_mode:
 
 .. rst-class:: classref-method
 
@@ -230,7 +230,7 @@ Called when the transfer mode to use is read on this :ref:`MultiplayerPeer<class
 
 ----
 
-.. _class_MultiplayerPeerExtension_method__get_unique_id:
+.. _class_MultiplayerPeerExtension_private_method__get_unique_id:
 
 .. rst-class:: classref-method
 
@@ -242,7 +242,7 @@ Called when the unique ID of this :ref:`MultiplayerPeer<class_MultiplayerPeer>` 
 
 ----
 
-.. _class_MultiplayerPeerExtension_method__is_refusing_new_connections:
+.. _class_MultiplayerPeerExtension_private_method__is_refusing_new_connections:
 
 .. rst-class:: classref-method
 
@@ -254,7 +254,7 @@ Called when the "refuse new connections" status is requested on this :ref:`Multi
 
 ----
 
-.. _class_MultiplayerPeerExtension_method__is_server:
+.. _class_MultiplayerPeerExtension_private_method__is_server:
 
 .. rst-class:: classref-method
 
@@ -266,7 +266,7 @@ Called when the "is server" status is requested on the :ref:`MultiplayerAPI<clas
 
 ----
 
-.. _class_MultiplayerPeerExtension_method__is_server_relay_supported:
+.. _class_MultiplayerPeerExtension_private_method__is_server_relay_supported:
 
 .. rst-class:: classref-method
 
@@ -278,7 +278,7 @@ Called to check if the server can act as a relay in the current configuration. S
 
 ----
 
-.. _class_MultiplayerPeerExtension_method__poll:
+.. _class_MultiplayerPeerExtension_private_method__poll:
 
 .. rst-class:: classref-method
 
@@ -290,7 +290,7 @@ Called when the :ref:`MultiplayerAPI<class_MultiplayerAPI>` is polled. See :ref:
 
 ----
 
-.. _class_MultiplayerPeerExtension_method__put_packet:
+.. _class_MultiplayerPeerExtension_private_method__put_packet:
 
 .. rst-class:: classref-method
 
@@ -302,19 +302,19 @@ Called when a packet needs to be sent by the :ref:`MultiplayerAPI<class_Multipla
 
 ----
 
-.. _class_MultiplayerPeerExtension_method__put_packet_script:
+.. _class_MultiplayerPeerExtension_private_method__put_packet_script:
 
 .. rst-class:: classref-method
 
 :ref:`Error<enum_@GlobalScope_Error>` **_put_packet_script** **(** :ref:`PackedByteArray<class_PackedByteArray>` p_buffer **)** |virtual|
 
-Called when a packet needs to be sent by the :ref:`MultiplayerAPI<class_MultiplayerAPI>`, if :ref:`_put_packet<class_MultiplayerPeerExtension_method__put_packet>` isn't implemented. Use this when extending this class via GDScript.
+Called when a packet needs to be sent by the :ref:`MultiplayerAPI<class_MultiplayerAPI>`, if :ref:`_put_packet<class_MultiplayerPeerExtension_private_method__put_packet>` isn't implemented. Use this when extending this class via GDScript.
 
 .. rst-class:: classref-item-separator
 
 ----
 
-.. _class_MultiplayerPeerExtension_method__set_refuse_new_connections:
+.. _class_MultiplayerPeerExtension_private_method__set_refuse_new_connections:
 
 .. rst-class:: classref-method
 
@@ -326,7 +326,7 @@ Called when the "refuse new connections" status is set on this :ref:`Multiplayer
 
 ----
 
-.. _class_MultiplayerPeerExtension_method__set_target_peer:
+.. _class_MultiplayerPeerExtension_private_method__set_target_peer:
 
 .. rst-class:: classref-method
 
@@ -338,7 +338,7 @@ Called when the target peer to use is set for this :ref:`MultiplayerPeer<class_M
 
 ----
 
-.. _class_MultiplayerPeerExtension_method__set_transfer_channel:
+.. _class_MultiplayerPeerExtension_private_method__set_transfer_channel:
 
 .. rst-class:: classref-method
 
@@ -350,7 +350,7 @@ Called when the channel to use is set for this :ref:`MultiplayerPeer<class_Multi
 
 ----
 
-.. _class_MultiplayerPeerExtension_method__set_transfer_mode:
+.. _class_MultiplayerPeerExtension_private_method__set_transfer_mode:
 
 .. rst-class:: classref-method
 

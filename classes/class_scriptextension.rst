@@ -24,77 +24,77 @@ Methods
 .. table::
    :widths: auto
 
-   +---------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                     | :ref:`_can_instantiate<class_ScriptExtension_method__can_instantiate>` **(** **)** |virtual| |const|                                                                    |
-   +---------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                     | :ref:`_editor_can_reload_from_file<class_ScriptExtension_method__editor_can_reload_from_file>` **(** **)** |virtual|                                                    |
-   +---------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Script<class_Script>`                 | :ref:`_get_base_script<class_ScriptExtension_method__get_base_script>` **(** **)** |virtual| |const|                                                                    |
-   +---------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`String<class_String>`                 | :ref:`_get_class_icon_path<class_ScriptExtension_method__get_class_icon_path>` **(** **)** |virtual| |const|                                                            |
-   +---------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Dictionary<class_Dictionary>`         | :ref:`_get_constants<class_ScriptExtension_method__get_constants>` **(** **)** |virtual| |const|                                                                        |
-   +---------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Dictionary[]<class_Dictionary>`       | :ref:`_get_documentation<class_ScriptExtension_method__get_documentation>` **(** **)** |virtual| |const|                                                                |
-   +---------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`StringName<class_StringName>`         | :ref:`_get_global_name<class_ScriptExtension_method__get_global_name>` **(** **)** |virtual| |const|                                                                    |
-   +---------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`StringName<class_StringName>`         | :ref:`_get_instance_base_type<class_ScriptExtension_method__get_instance_base_type>` **(** **)** |virtual| |const|                                                      |
-   +---------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`ScriptLanguage<class_ScriptLanguage>` | :ref:`_get_language<class_ScriptExtension_method__get_language>` **(** **)** |virtual| |const|                                                                          |
-   +---------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                       | :ref:`_get_member_line<class_ScriptExtension_method__get_member_line>` **(** :ref:`StringName<class_StringName>` member **)** |virtual| |const|                         |
-   +---------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`StringName[]<class_StringName>`       | :ref:`_get_members<class_ScriptExtension_method__get_members>` **(** **)** |virtual| |const|                                                                            |
-   +---------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Dictionary<class_Dictionary>`         | :ref:`_get_method_info<class_ScriptExtension_method__get_method_info>` **(** :ref:`StringName<class_StringName>` method **)** |virtual| |const|                         |
-   +---------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Variant<class_Variant>`               | :ref:`_get_property_default_value<class_ScriptExtension_method__get_property_default_value>` **(** :ref:`StringName<class_StringName>` property **)** |virtual| |const| |
-   +---------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Variant<class_Variant>`               | :ref:`_get_rpc_config<class_ScriptExtension_method__get_rpc_config>` **(** **)** |virtual| |const|                                                                      |
-   +---------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Dictionary[]<class_Dictionary>`       | :ref:`_get_script_method_list<class_ScriptExtension_method__get_script_method_list>` **(** **)** |virtual| |const|                                                      |
-   +---------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Dictionary[]<class_Dictionary>`       | :ref:`_get_script_property_list<class_ScriptExtension_method__get_script_property_list>` **(** **)** |virtual| |const|                                                  |
-   +---------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Dictionary[]<class_Dictionary>`       | :ref:`_get_script_signal_list<class_ScriptExtension_method__get_script_signal_list>` **(** **)** |virtual| |const|                                                      |
-   +---------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`String<class_String>`                 | :ref:`_get_source_code<class_ScriptExtension_method__get_source_code>` **(** **)** |virtual| |const|                                                                    |
-   +---------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                     | :ref:`_has_method<class_ScriptExtension_method__has_method>` **(** :ref:`StringName<class_StringName>` method **)** |virtual| |const|                                   |
-   +---------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                     | :ref:`_has_property_default_value<class_ScriptExtension_method__has_property_default_value>` **(** :ref:`StringName<class_StringName>` property **)** |virtual| |const| |
-   +---------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                     | :ref:`_has_script_signal<class_ScriptExtension_method__has_script_signal>` **(** :ref:`StringName<class_StringName>` signal **)** |virtual| |const|                     |
-   +---------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                     | :ref:`_has_source_code<class_ScriptExtension_method__has_source_code>` **(** **)** |virtual| |const|                                                                    |
-   +---------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                     | :ref:`_has_static_method<class_ScriptExtension_method__has_static_method>` **(** :ref:`StringName<class_StringName>` method **)** |virtual| |const|                     |
-   +---------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                     | :ref:`_inherits_script<class_ScriptExtension_method__inherits_script>` **(** :ref:`Script<class_Script>` script **)** |virtual| |const|                                 |
-   +---------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void*                                       | :ref:`_instance_create<class_ScriptExtension_method__instance_create>` **(** :ref:`Object<class_Object>` for_object **)** |virtual| |const|                             |
-   +---------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                     | :ref:`_instance_has<class_ScriptExtension_method__instance_has>` **(** :ref:`Object<class_Object>` object **)** |virtual| |const|                                       |
-   +---------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                     | :ref:`_is_abstract<class_ScriptExtension_method__is_abstract>` **(** **)** |virtual| |const|                                                                            |
-   +---------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                     | :ref:`_is_placeholder_fallback_enabled<class_ScriptExtension_method__is_placeholder_fallback_enabled>` **(** **)** |virtual| |const|                                    |
-   +---------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                     | :ref:`_is_tool<class_ScriptExtension_method__is_tool>` **(** **)** |virtual| |const|                                                                                    |
-   +---------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                     | :ref:`_is_valid<class_ScriptExtension_method__is_valid>` **(** **)** |virtual| |const|                                                                                  |
-   +---------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                        | :ref:`_placeholder_erased<class_ScriptExtension_method__placeholder_erased>` **(** void* placeholder **)** |virtual|                                                    |
-   +---------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void*                                       | :ref:`_placeholder_instance_create<class_ScriptExtension_method__placeholder_instance_create>` **(** :ref:`Object<class_Object>` for_object **)** |virtual| |const|     |
-   +---------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Error<enum_@GlobalScope_Error>`       | :ref:`_reload<class_ScriptExtension_method__reload>` **(** :ref:`bool<class_bool>` keep_state **)** |virtual|                                                           |
-   +---------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                        | :ref:`_set_source_code<class_ScriptExtension_method__set_source_code>` **(** :ref:`String<class_String>` code **)** |virtual|                                           |
-   +---------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                        | :ref:`_update_exports<class_ScriptExtension_method__update_exports>` **(** **)** |virtual|                                                                              |
-   +---------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +---------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                     | :ref:`_can_instantiate<class_ScriptExtension_private_method__can_instantiate>` **(** **)** |virtual| |const|                                                                    |
+   +---------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                     | :ref:`_editor_can_reload_from_file<class_ScriptExtension_private_method__editor_can_reload_from_file>` **(** **)** |virtual|                                                    |
+   +---------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Script<class_Script>`                 | :ref:`_get_base_script<class_ScriptExtension_private_method__get_base_script>` **(** **)** |virtual| |const|                                                                    |
+   +---------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                 | :ref:`_get_class_icon_path<class_ScriptExtension_private_method__get_class_icon_path>` **(** **)** |virtual| |const|                                                            |
+   +---------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Dictionary<class_Dictionary>`         | :ref:`_get_constants<class_ScriptExtension_private_method__get_constants>` **(** **)** |virtual| |const|                                                                        |
+   +---------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Dictionary[]<class_Dictionary>`       | :ref:`_get_documentation<class_ScriptExtension_private_method__get_documentation>` **(** **)** |virtual| |const|                                                                |
+   +---------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`StringName<class_StringName>`         | :ref:`_get_global_name<class_ScriptExtension_private_method__get_global_name>` **(** **)** |virtual| |const|                                                                    |
+   +---------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`StringName<class_StringName>`         | :ref:`_get_instance_base_type<class_ScriptExtension_private_method__get_instance_base_type>` **(** **)** |virtual| |const|                                                      |
+   +---------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`ScriptLanguage<class_ScriptLanguage>` | :ref:`_get_language<class_ScriptExtension_private_method__get_language>` **(** **)** |virtual| |const|                                                                          |
+   +---------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                       | :ref:`_get_member_line<class_ScriptExtension_private_method__get_member_line>` **(** :ref:`StringName<class_StringName>` member **)** |virtual| |const|                         |
+   +---------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`StringName[]<class_StringName>`       | :ref:`_get_members<class_ScriptExtension_private_method__get_members>` **(** **)** |virtual| |const|                                                                            |
+   +---------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Dictionary<class_Dictionary>`         | :ref:`_get_method_info<class_ScriptExtension_private_method__get_method_info>` **(** :ref:`StringName<class_StringName>` method **)** |virtual| |const|                         |
+   +---------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Variant<class_Variant>`               | :ref:`_get_property_default_value<class_ScriptExtension_private_method__get_property_default_value>` **(** :ref:`StringName<class_StringName>` property **)** |virtual| |const| |
+   +---------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Variant<class_Variant>`               | :ref:`_get_rpc_config<class_ScriptExtension_private_method__get_rpc_config>` **(** **)** |virtual| |const|                                                                      |
+   +---------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Dictionary[]<class_Dictionary>`       | :ref:`_get_script_method_list<class_ScriptExtension_private_method__get_script_method_list>` **(** **)** |virtual| |const|                                                      |
+   +---------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Dictionary[]<class_Dictionary>`       | :ref:`_get_script_property_list<class_ScriptExtension_private_method__get_script_property_list>` **(** **)** |virtual| |const|                                                  |
+   +---------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Dictionary[]<class_Dictionary>`       | :ref:`_get_script_signal_list<class_ScriptExtension_private_method__get_script_signal_list>` **(** **)** |virtual| |const|                                                      |
+   +---------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                 | :ref:`_get_source_code<class_ScriptExtension_private_method__get_source_code>` **(** **)** |virtual| |const|                                                                    |
+   +---------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                     | :ref:`_has_method<class_ScriptExtension_private_method__has_method>` **(** :ref:`StringName<class_StringName>` method **)** |virtual| |const|                                   |
+   +---------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                     | :ref:`_has_property_default_value<class_ScriptExtension_private_method__has_property_default_value>` **(** :ref:`StringName<class_StringName>` property **)** |virtual| |const| |
+   +---------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                     | :ref:`_has_script_signal<class_ScriptExtension_private_method__has_script_signal>` **(** :ref:`StringName<class_StringName>` signal **)** |virtual| |const|                     |
+   +---------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                     | :ref:`_has_source_code<class_ScriptExtension_private_method__has_source_code>` **(** **)** |virtual| |const|                                                                    |
+   +---------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                     | :ref:`_has_static_method<class_ScriptExtension_private_method__has_static_method>` **(** :ref:`StringName<class_StringName>` method **)** |virtual| |const|                     |
+   +---------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                     | :ref:`_inherits_script<class_ScriptExtension_private_method__inherits_script>` **(** :ref:`Script<class_Script>` script **)** |virtual| |const|                                 |
+   +---------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void*                                       | :ref:`_instance_create<class_ScriptExtension_private_method__instance_create>` **(** :ref:`Object<class_Object>` for_object **)** |virtual| |const|                             |
+   +---------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                     | :ref:`_instance_has<class_ScriptExtension_private_method__instance_has>` **(** :ref:`Object<class_Object>` object **)** |virtual| |const|                                       |
+   +---------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                     | :ref:`_is_abstract<class_ScriptExtension_private_method__is_abstract>` **(** **)** |virtual| |const|                                                                            |
+   +---------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                     | :ref:`_is_placeholder_fallback_enabled<class_ScriptExtension_private_method__is_placeholder_fallback_enabled>` **(** **)** |virtual| |const|                                    |
+   +---------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                     | :ref:`_is_tool<class_ScriptExtension_private_method__is_tool>` **(** **)** |virtual| |const|                                                                                    |
+   +---------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                     | :ref:`_is_valid<class_ScriptExtension_private_method__is_valid>` **(** **)** |virtual| |const|                                                                                  |
+   +---------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                        | :ref:`_placeholder_erased<class_ScriptExtension_private_method__placeholder_erased>` **(** void* placeholder **)** |virtual|                                                    |
+   +---------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void*                                       | :ref:`_placeholder_instance_create<class_ScriptExtension_private_method__placeholder_instance_create>` **(** :ref:`Object<class_Object>` for_object **)** |virtual| |const|     |
+   +---------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>`       | :ref:`_reload<class_ScriptExtension_private_method__reload>` **(** :ref:`bool<class_bool>` keep_state **)** |virtual|                                                           |
+   +---------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                        | :ref:`_set_source_code<class_ScriptExtension_private_method__set_source_code>` **(** :ref:`String<class_String>` code **)** |virtual|                                           |
+   +---------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                        | :ref:`_update_exports<class_ScriptExtension_private_method__update_exports>` **(** **)** |virtual|                                                                              |
+   +---------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -105,7 +105,7 @@ Methods
 Method Descriptions
 -------------------
 
-.. _class_ScriptExtension_method__can_instantiate:
+.. _class_ScriptExtension_private_method__can_instantiate:
 
 .. rst-class:: classref-method
 
@@ -119,7 +119,7 @@ Method Descriptions
 
 ----
 
-.. _class_ScriptExtension_method__editor_can_reload_from_file:
+.. _class_ScriptExtension_private_method__editor_can_reload_from_file:
 
 .. rst-class:: classref-method
 
@@ -133,7 +133,7 @@ Method Descriptions
 
 ----
 
-.. _class_ScriptExtension_method__get_base_script:
+.. _class_ScriptExtension_private_method__get_base_script:
 
 .. rst-class:: classref-method
 
@@ -147,7 +147,7 @@ Method Descriptions
 
 ----
 
-.. _class_ScriptExtension_method__get_class_icon_path:
+.. _class_ScriptExtension_private_method__get_class_icon_path:
 
 .. rst-class:: classref-method
 
@@ -161,7 +161,7 @@ Method Descriptions
 
 ----
 
-.. _class_ScriptExtension_method__get_constants:
+.. _class_ScriptExtension_private_method__get_constants:
 
 .. rst-class:: classref-method
 
@@ -175,7 +175,7 @@ Method Descriptions
 
 ----
 
-.. _class_ScriptExtension_method__get_documentation:
+.. _class_ScriptExtension_private_method__get_documentation:
 
 .. rst-class:: classref-method
 
@@ -189,7 +189,7 @@ Method Descriptions
 
 ----
 
-.. _class_ScriptExtension_method__get_global_name:
+.. _class_ScriptExtension_private_method__get_global_name:
 
 .. rst-class:: classref-method
 
@@ -203,7 +203,7 @@ Method Descriptions
 
 ----
 
-.. _class_ScriptExtension_method__get_instance_base_type:
+.. _class_ScriptExtension_private_method__get_instance_base_type:
 
 .. rst-class:: classref-method
 
@@ -217,7 +217,7 @@ Method Descriptions
 
 ----
 
-.. _class_ScriptExtension_method__get_language:
+.. _class_ScriptExtension_private_method__get_language:
 
 .. rst-class:: classref-method
 
@@ -231,7 +231,7 @@ Method Descriptions
 
 ----
 
-.. _class_ScriptExtension_method__get_member_line:
+.. _class_ScriptExtension_private_method__get_member_line:
 
 .. rst-class:: classref-method
 
@@ -245,7 +245,7 @@ Method Descriptions
 
 ----
 
-.. _class_ScriptExtension_method__get_members:
+.. _class_ScriptExtension_private_method__get_members:
 
 .. rst-class:: classref-method
 
@@ -259,7 +259,7 @@ Method Descriptions
 
 ----
 
-.. _class_ScriptExtension_method__get_method_info:
+.. _class_ScriptExtension_private_method__get_method_info:
 
 .. rst-class:: classref-method
 
@@ -273,7 +273,7 @@ Method Descriptions
 
 ----
 
-.. _class_ScriptExtension_method__get_property_default_value:
+.. _class_ScriptExtension_private_method__get_property_default_value:
 
 .. rst-class:: classref-method
 
@@ -287,7 +287,7 @@ Method Descriptions
 
 ----
 
-.. _class_ScriptExtension_method__get_rpc_config:
+.. _class_ScriptExtension_private_method__get_rpc_config:
 
 .. rst-class:: classref-method
 
@@ -301,7 +301,7 @@ Method Descriptions
 
 ----
 
-.. _class_ScriptExtension_method__get_script_method_list:
+.. _class_ScriptExtension_private_method__get_script_method_list:
 
 .. rst-class:: classref-method
 
@@ -315,7 +315,7 @@ Method Descriptions
 
 ----
 
-.. _class_ScriptExtension_method__get_script_property_list:
+.. _class_ScriptExtension_private_method__get_script_property_list:
 
 .. rst-class:: classref-method
 
@@ -329,7 +329,7 @@ Method Descriptions
 
 ----
 
-.. _class_ScriptExtension_method__get_script_signal_list:
+.. _class_ScriptExtension_private_method__get_script_signal_list:
 
 .. rst-class:: classref-method
 
@@ -343,7 +343,7 @@ Method Descriptions
 
 ----
 
-.. _class_ScriptExtension_method__get_source_code:
+.. _class_ScriptExtension_private_method__get_source_code:
 
 .. rst-class:: classref-method
 
@@ -357,7 +357,7 @@ Method Descriptions
 
 ----
 
-.. _class_ScriptExtension_method__has_method:
+.. _class_ScriptExtension_private_method__has_method:
 
 .. rst-class:: classref-method
 
@@ -371,7 +371,7 @@ Method Descriptions
 
 ----
 
-.. _class_ScriptExtension_method__has_property_default_value:
+.. _class_ScriptExtension_private_method__has_property_default_value:
 
 .. rst-class:: classref-method
 
@@ -385,7 +385,7 @@ Method Descriptions
 
 ----
 
-.. _class_ScriptExtension_method__has_script_signal:
+.. _class_ScriptExtension_private_method__has_script_signal:
 
 .. rst-class:: classref-method
 
@@ -399,7 +399,7 @@ Method Descriptions
 
 ----
 
-.. _class_ScriptExtension_method__has_source_code:
+.. _class_ScriptExtension_private_method__has_source_code:
 
 .. rst-class:: classref-method
 
@@ -413,7 +413,7 @@ Method Descriptions
 
 ----
 
-.. _class_ScriptExtension_method__has_static_method:
+.. _class_ScriptExtension_private_method__has_static_method:
 
 .. rst-class:: classref-method
 
@@ -427,7 +427,7 @@ Method Descriptions
 
 ----
 
-.. _class_ScriptExtension_method__inherits_script:
+.. _class_ScriptExtension_private_method__inherits_script:
 
 .. rst-class:: classref-method
 
@@ -441,7 +441,7 @@ Method Descriptions
 
 ----
 
-.. _class_ScriptExtension_method__instance_create:
+.. _class_ScriptExtension_private_method__instance_create:
 
 .. rst-class:: classref-method
 
@@ -455,7 +455,7 @@ void* **_instance_create** **(** :ref:`Object<class_Object>` for_object **)** |v
 
 ----
 
-.. _class_ScriptExtension_method__instance_has:
+.. _class_ScriptExtension_private_method__instance_has:
 
 .. rst-class:: classref-method
 
@@ -469,7 +469,7 @@ void* **_instance_create** **(** :ref:`Object<class_Object>` for_object **)** |v
 
 ----
 
-.. _class_ScriptExtension_method__is_abstract:
+.. _class_ScriptExtension_private_method__is_abstract:
 
 .. rst-class:: classref-method
 
@@ -481,7 +481,7 @@ Returns ``true`` if the script is an abstract script. An abstract script does no
 
 ----
 
-.. _class_ScriptExtension_method__is_placeholder_fallback_enabled:
+.. _class_ScriptExtension_private_method__is_placeholder_fallback_enabled:
 
 .. rst-class:: classref-method
 
@@ -495,7 +495,7 @@ Returns ``true`` if the script is an abstract script. An abstract script does no
 
 ----
 
-.. _class_ScriptExtension_method__is_tool:
+.. _class_ScriptExtension_private_method__is_tool:
 
 .. rst-class:: classref-method
 
@@ -509,7 +509,7 @@ Returns ``true`` if the script is an abstract script. An abstract script does no
 
 ----
 
-.. _class_ScriptExtension_method__is_valid:
+.. _class_ScriptExtension_private_method__is_valid:
 
 .. rst-class:: classref-method
 
@@ -523,7 +523,7 @@ Returns ``true`` if the script is an abstract script. An abstract script does no
 
 ----
 
-.. _class_ScriptExtension_method__placeholder_erased:
+.. _class_ScriptExtension_private_method__placeholder_erased:
 
 .. rst-class:: classref-method
 
@@ -537,7 +537,7 @@ void **_placeholder_erased** **(** void* placeholder **)** |virtual|
 
 ----
 
-.. _class_ScriptExtension_method__placeholder_instance_create:
+.. _class_ScriptExtension_private_method__placeholder_instance_create:
 
 .. rst-class:: classref-method
 
@@ -551,7 +551,7 @@ void* **_placeholder_instance_create** **(** :ref:`Object<class_Object>` for_obj
 
 ----
 
-.. _class_ScriptExtension_method__reload:
+.. _class_ScriptExtension_private_method__reload:
 
 .. rst-class:: classref-method
 
@@ -565,7 +565,7 @@ void* **_placeholder_instance_create** **(** :ref:`Object<class_Object>` for_obj
 
 ----
 
-.. _class_ScriptExtension_method__set_source_code:
+.. _class_ScriptExtension_private_method__set_source_code:
 
 .. rst-class:: classref-method
 
@@ -579,7 +579,7 @@ void **_set_source_code** **(** :ref:`String<class_String>` code **)** |virtual|
 
 ----
 
-.. _class_ScriptExtension_method__update_exports:
+.. _class_ScriptExtension_private_method__update_exports:
 
 .. rst-class:: classref-method
 

@@ -65,7 +65,7 @@ be disabled using the buttons at the top of the 3D editor:
 Clicking on the 3 vertical dots on the right will display a dialog which allows
 you to customize the appearance of the preview environment:
 
-.. image:: img/environment_preview_sun_sky_toggle.webp
+.. image:: img/environment_preview_sun_sky_dialog.webp
 
 **The preview sun and sky is only visible in the editor, not in the running
 project.** Using the buttons at the bottom of the dialog, you can add the
@@ -659,6 +659,18 @@ There are 2 ways to use glow in 2D:
    Example of using glow in a 2D scene. HDR 2D is enabled, while coins and the
    bullet have their **Modulate** property increased to overbright values using the
    RAW mode in the color picker.
+
+.. warning::
+
+    The 2D renderer renders in linear color space if the
+    **Rendering > Viewport > HDR 2D** project setting is enabled, so
+    ``source_color`` must also be used for uniform samplers that are
+    used as color input in ``canvas_item`` shaders. If this is not done,
+    the texture will appear washed out.
+
+    If 2D HDR is disabled, ``source_color`` will keep working correctly in
+    ``canvas_item`` shaders, so it's recommend to use it when relevant either
+    way.
 
 .. _doc_environment_and_post_processing_using_glow_to_blur_the_screen:
 

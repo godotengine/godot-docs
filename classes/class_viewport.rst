@@ -75,8 +75,6 @@ Properties
    +-----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+----------------+
    | :ref:`DebugDraw<enum_Viewport_DebugDraw>`                                                     | :ref:`debug_draw<class_Viewport_property_debug_draw>`                                                 | ``0``          |
    +-----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+----------------+
-   | :ref:`bool<class_bool>`                                                                       | :ref:`disable_2d<class_Viewport_property_disable_2d>`                                                 | ``false``      |
-   +-----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+----------------+
    | :ref:`bool<class_bool>`                                                                       | :ref:`disable_3d<class_Viewport_property_disable_3d>`                                                 | ``false``      |
    +-----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+----------------+
    | :ref:`float<class_float>`                                                                     | :ref:`fsr_sharpness<class_Viewport_property_fsr_sharpness>`                                           | ``0.2``        |
@@ -1108,23 +1106,6 @@ The overlay mode for test rendered geometry in debug purposes.
 
 ----
 
-.. _class_Viewport_property_disable_2d:
-
-.. rst-class:: classref-property
-
-:ref:`bool<class_bool>` **disable_2d** = ``false``
-
-.. rst-class:: classref-property-setget
-
-- void **set_disable_2d** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_2d_disabled** **(** **)**
-
-If ``true``, disables 2D rendering while keeping 3D rendering. See also :ref:`disable_3d<class_Viewport_property_disable_3d>`.
-
-.. rst-class:: classref-item-separator
-
-----
-
 .. _class_Viewport_property_disable_3d:
 
 .. rst-class:: classref-property
@@ -1136,7 +1117,7 @@ If ``true``, disables 2D rendering while keeping 3D rendering. See also :ref:`di
 - void **set_disable_3d** **(** :ref:`bool<class_bool>` value **)**
 - :ref:`bool<class_bool>` **is_3d_disabled** **(** **)**
 
-If ``true``, disables 3D rendering while keeping 2D rendering. See also :ref:`disable_2d<class_Viewport_property_disable_2d>`.
+Disable 3D rendering (but keep 2D rendering).
 
 .. rst-class:: classref-item-separator
 
@@ -1964,7 +1945,7 @@ Returns the transform from the Viewport's coordinates to the screen coordinates 
 
 Returns the viewport's texture.
 
-\ **Note:** When trying to store the current texture (e.g. in a file), it might be completely black or outdated if used too early, especially when used in e.g. :ref:`Node._ready<class_Node_method__ready>`. To make sure the texture you get is correct, you can await :ref:`RenderingServer.frame_post_draw<class_RenderingServer_signal_frame_post_draw>` signal.
+\ **Note:** When trying to store the current texture (e.g. in a file), it might be completely black or outdated if used too early, especially when used in e.g. :ref:`Node._ready<class_Node_private_method__ready>`. To make sure the texture you get is correct, you can await :ref:`RenderingServer.frame_post_draw<class_RenderingServer_signal_frame_post_draw>` signal.
 
 ::
 
@@ -2006,7 +1987,7 @@ Returns the visible rectangle in global screen coordinates.
 
 :ref:`Variant<class_Variant>` **gui_get_drag_data** **(** **)** |const|
 
-Returns the drag data from the GUI, that was previously returned by :ref:`Control._get_drag_data<class_Control_method__get_drag_data>`.
+Returns the drag data from the GUI, that was previously returned by :ref:`Control._get_drag_data<class_Control_private_method__get_drag_data>`.
 
 .. rst-class:: classref-item-separator
 
@@ -2070,7 +2051,7 @@ Removes the focus from the currently focused :ref:`Control<class_Control>` withi
 
 Returns whether the current :ref:`InputEvent<class_InputEvent>` has been handled. Input events are not handled until :ref:`set_input_as_handled<class_Viewport_method_set_input_as_handled>` has been called during the lifetime of an :ref:`InputEvent<class_InputEvent>`.
 
-This is usually done as part of input handling methods like :ref:`Node._input<class_Node_method__input>`, :ref:`Control._gui_input<class_Control_method__gui_input>` or others, as well as in corresponding signal handlers.
+This is usually done as part of input handling methods like :ref:`Node._input<class_Node_private_method__input>`, :ref:`Control._gui_input<class_Control_private_method__gui_input>` or others, as well as in corresponding signal handlers.
 
 If :ref:`handle_input_locally<class_Viewport_property_handle_input_locally>` is set to ``false``, this method will try finding the first parent viewport that is set to handle input locally, and return its value for :ref:`is_input_handled<class_Viewport_method_is_input_handled>` instead.
 
@@ -2092,15 +2073,15 @@ While this method serves a similar purpose as :ref:`Input.parse_input_event<clas
 
 Calling this method will propagate calls to child nodes for following methods in the given order:
 
-- :ref:`Node._input<class_Node_method__input>`\ 
+- :ref:`Node._input<class_Node_private_method__input>`\ 
 
-- :ref:`Control._gui_input<class_Control_method__gui_input>` for :ref:`Control<class_Control>` nodes
+- :ref:`Control._gui_input<class_Control_private_method__gui_input>` for :ref:`Control<class_Control>` nodes
 
-- :ref:`Node._shortcut_input<class_Node_method__shortcut_input>`\ 
+- :ref:`Node._shortcut_input<class_Node_private_method__shortcut_input>`\ 
 
-- :ref:`Node._unhandled_key_input<class_Node_method__unhandled_key_input>`\ 
+- :ref:`Node._unhandled_key_input<class_Node_private_method__unhandled_key_input>`\ 
 
-- :ref:`Node._unhandled_input<class_Node_method__unhandled_input>`\ 
+- :ref:`Node._unhandled_input<class_Node_private_method__unhandled_input>`\ 
 
 If an earlier method marks the input as handled via :ref:`set_input_as_handled<class_Viewport_method_set_input_as_handled>`, any later method in this list will not be called.
 
@@ -2136,11 +2117,11 @@ While this method serves a similar purpose as :ref:`Input.parse_input_event<clas
 
 Calling this method will propagate calls to child nodes for following methods in the given order:
 
-- :ref:`Node._shortcut_input<class_Node_method__shortcut_input>`\ 
+- :ref:`Node._shortcut_input<class_Node_private_method__shortcut_input>`\ 
 
-- :ref:`Node._unhandled_key_input<class_Node_method__unhandled_key_input>`\ 
+- :ref:`Node._unhandled_key_input<class_Node_private_method__unhandled_key_input>`\ 
 
-- :ref:`Node._unhandled_input<class_Node_method__unhandled_input>`\ 
+- :ref:`Node._unhandled_input<class_Node_private_method__unhandled_input>`\ 
 
 If an earlier method marks the input as handled via :ref:`set_input_as_handled<class_Viewport_method_set_input_as_handled>`, any later method in this list will not be called.
 
