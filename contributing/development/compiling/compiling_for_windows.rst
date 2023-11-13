@@ -221,18 +221,26 @@ the following binaries in your ``PATH`` environment variable::
     x86_64-w64-mingw32-gcc
 
 If the binaries are not located in the ``PATH`` (e.g. ``/usr/bin``),
-you can define the following environment variables to give a hint to
+you can define the following environment variable to give a hint to
 the build system::
 
-    export MINGW32_PREFIX="/path/to/i686-w64-mingw32-"
-    export MINGW64_PREFIX="/path/to/x86_64-w64-mingw32-"
+    export MINGW_PREFIX="/path/to/mingw"
+
+Where ``/path/to/mingw`` is the path containing the ``bin`` directory where
+``i686-w64-mingw32-gcc`` and ``x86_64-w64-mingw32-gcc`` are located (e.g.
+``/opt/mingw-w64`` if the binaries are located in ``/opt/mingw-w64/bin``).
 
 To make sure you are doing things correctly, executing the following in
 the shell should result in a working compiler (the version output may
 differ based on your system)::
 
-    ${MINGW32_PREFIX}gcc --version
-    # i686-w64-mingw32-gcc (GCC) 6.1.0 20160427 (Mageia MinGW 6.1.0-1.mga6)
+    ${MINGW_PREFIX}/bin/x86_64-w64-mingw32-gcc --version
+    # x86_64-w64-mingw32-gcc (GCC) 13.2.0
+
+.. note:: When cross-compiling for Windows using MinGW-w64, keep in mind only
+          ``x86_64`` and ``x86_32`` architectures are supported: be sure to
+          specify the right ``arch=`` option when invoking SCons if building
+          from a different architecture.
 
 Troubleshooting
 ~~~~~~~~~~~~~~~
