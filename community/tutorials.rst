@@ -48,6 +48,7 @@ Video tutorials
 - `Maker Tech <https://www.youtube.com/watch?v=0mUoRdYe0s4>`_ (2D, GDScript).
 - `Clear Code <https://www.youtube.com/watch?v=nAh_Kx5Zh5Q>`_ (2D, GDScript, Programming Basics).
 - `Game Dev Artisan <https://www.youtube.com/@GameDevArtisan>`_ (2D, GDScript).
+- `FencerDevLog <https://www.youtube.com/@FencerDevLog>`_ (2D, 3D, GDScript, Shaders).
 
 Text tutorials
 --------------
