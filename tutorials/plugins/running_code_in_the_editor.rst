@@ -33,8 +33,8 @@ use cases:
     :ref:`Node.queue_free<class_Node_method_queue_free>`, as it can cause
     crashes if you free a node while the editor runs logic involving it.
 
-How to use it
--------------
+How to use ``@tool``
+--------------------
 
 To turn a script into a tool, add the ``@tool`` annotation at the top of your code.
 
@@ -118,8 +118,8 @@ Here is how a ``_process()`` function might look for you:
     behavior from the super class. Therefore the extending script should also
     specify the ``@tool`` annotation.
 
-Try it out
------------
+Try ``@tool`` out
+-----------------
 
 Add a ``Sprite2D`` node to your scene and set the texture to Godot icon. Attach
 and open a script, and change it to this:
@@ -286,6 +286,97 @@ By default, the warning only updates when closing and reopening the scene.
         # Returning an empty array means "no warning".
         return warnings
 
+Running one-off scripts using EditorScript
+------------------------------------------
+
+Sometimes, you need to run code just one time to automate a certain task that is
+not available in the editor out of the box. Some examples might be:
+
+- Use as a playground for GDScript or C# scripting without having to run a project.
+  ``print()`` output is displayed in the editor Output panel.
+- Scale all light nodes in the currently edited scene, as you noticed your level
+  ends up looking too dark or too bright after placing lights where desired.
+- Replace nodes that were copy-pasted with scene instances to make them easier
+  to modify later.
+
+This is available in Godot by extending :ref:`class_EditorScript` in a script.
+This provides a way to run individual scripts in the editor without having to
+create an editor plugin.
+
+To create an EditorScript, right-click a folder or empty space in the FileSystem
+dock then choose **New > Script...**. In the script creation dialog, click the
+tree icon to choose an object to extend from (or enter ``EditorScript`` directly
+in the field on the left, though note this is case-sensitive):
+
+.. figure:: img/running_code_in_the_editor_creating_editor_script.webp
+   :align: center
+   :alt: Creating an editor script in the script editor creation dialog
+
+   Creating an editor script in the script editor creation dialog
+
+This will automatically select a script template that is suited for
+EditorScripts, with a ``_run()`` method already inserted:
+
+::
+
+    @tool
+    extends EditorScript
+
+    # Called when the script is executed (using File -> Run in Script Editor).
+    func _run():
+        pass
+
+This ``_run()`` method is executed when you use **File > Run** or the keyboard
+shortcut :kbd:`Ctrl + Shift + X` while the EditorScript is the currently open
+script in the script editor. This keyboard shortcut is only effective when
+currently focused on the script editor.
+
+Scripts that extend EditorScript must be ``@tool`` scripts to function.
+
+.. warning::
+
+    EditorScripts have no undo/redo functionality, so **make sure to save your
+    scene before running one** if the script is designed to modify any data.
+
+To access nodes in the currently edited scene, use the
+:ref:`EditorScript.get_scene <class_EditorScript_method_get_scene>` method which
+returns the root Node of the currently edited scene. Here's an example that
+recursively gets all nodes in the currently edited scene and doubles the range
+of all OmniLight3D nodes:
+
+::
+
+    @tool
+    extends EditorScript
+
+    func _run():
+        for node in get_all_children(get_scene()):
+            if node is OmniLight3D:
+                # Don't operate on instanced subscene children, as changes are lost
+                # when reloading the scene.
+                # See the "Instancing scenes" section below for a description of `owner`.
+                var is_instanced_subscene_child = node != get_scene() and node.owner != get_scene()
+                if not is_instanced_subscene_child:
+                    node.omni_range *= 2.0
+
+    # This function is recursive: it calls itself to get lower levels of child nodes as needed.
+    # `children_acc` is the accumulator parameter that allows this function to work.
+    # It should be left to its default value when you call this function directly.
+    func get_all_children(in_node, children_acc = []):
+        children_acc.push_back(in_node)
+        for child in in_node.get_children():
+            children_acc = get_all_children(child, children_acc)
+
+        return children_acc
+
+.. tip::
+
+    You can change the currently edited scene at the top of the editor even
+    while the Script view is open. This will affect the return value of
+    :ref:`EditorScript.get_scene <class_EditorScript_method_get_scene>`, so make
+    sure you've selected the scene you intend to iterate upon before running
+    the script.
+
 Instancing scenes
 -----------------
 
@@ -308,7 +399,7 @@ If you are using ``@tool``:
 
         # The line below is required to make the node visible in the Scene tree dock
         # and persist changes made by the tool script to the saved scene file.
-        node.set_owner(get_tree().edited_scene_root)
+        node.owner = get_tree().edited_scene_root
 
  .. code-tab:: csharp
 
@@ -335,7 +426,7 @@ If you are using :ref:`EditorScript<class_EditorScript>`:
 
         # The line below is required to make the node visible in the Scene tree dock
         # and persist changes made by the tool script to the saved scene file.
-        node.set_owner(get_scene())
+        node.owner = get_scene()
 
  .. code-tab:: csharp
 
