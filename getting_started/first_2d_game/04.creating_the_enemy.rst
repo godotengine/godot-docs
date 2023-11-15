@@ -78,35 +78,6 @@ Add a script to the ``Mob`` like this:
         // Don't forget to rebuild the project.
     }
 
- .. code-tab:: cpp
-
-    // Copy `player.gdns` to `mob.gdns` and replace `Player` with `Mob`.
-    // Attach the `mob.gdns` file to the Mob node.
-
-    // Create two files `mob.cpp` and `mob.hpp` next to `entry.cpp` in `src`.
-    // This code goes in `mob.hpp`. We also define the methods we'll be using here.
-    #ifndef MOB_H
-    #define MOB_H
-
-    #include <AnimatedSprite2D.hpp>
-    #include <Godot.hpp>
-    #include <RigidBody2D.hpp>
-
-    class Mob : public godot::RigidBody2D {
-        GODOT_CLASS(Mob, godot::RigidBody2D)
-
-        godot::AnimatedSprite2D *_animated_sprite;
-
-    public:
-        void _init() {}
-        void _ready();
-        void _on_visible_on_screen_notifier_2d_screen_exited();
-
-        static void _register_methods();
-    };
-
-    #endif // MOB_H
-
 Now let's look at the rest of the script. In ``_ready()`` we play the animation
 and randomly choose one of the three animation types:
 
@@ -124,22 +95,6 @@ and randomly choose one of the three animation types:
         var animatedSprite2D = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
         string[] mobTypes = animatedSprite2D.SpriteFrames.GetAnimationNames();
         animatedSprite2D.Play(mobTypes[GD.Randi() % mobTypes.Length]);
-    }
-
- .. code-tab:: cpp
-
-    // This code goes in `mob.cpp`.
-    #include "mob.hpp"
-
-    #include <RandomNumberGenerator.hpp>
-    #include <SpriteFrames.hpp>
-
-    void Mob::_ready() {
-        godot::Ref<godot::RandomNumberGenerator> random = godot::RandomNumberGenerator::_new();
-        _animated_sprite = get_node<godot::AnimatedSprite2D>("AnimatedSprite2D");
-        _animated_sprite->set_playing(true);
-        godot::PoolStringArray mob_types = _animated_sprite->get_sprite_frames()->get_animation_names();
-        _animated_sprite->set_animation(mob_types[random->randi() % mob_types.size()]);
     }
 
 First, we get the list of animation names from the AnimatedSprite2D's ``sprite_frames``
@@ -165,13 +120,6 @@ to the ``Mob`` and add this code:
     private void OnVisibleOnScreenNotifier2DScreenExited()
     {
         QueueFree();
-    }
-
- .. code-tab:: cpp
-
-    // This code goes in `mob.cpp`.
-    void Mob::_on_visible_on_screen_notifier_2d_screen_exited() {
-        queue_free();
     }
 
 This completes the `Mob` scene.

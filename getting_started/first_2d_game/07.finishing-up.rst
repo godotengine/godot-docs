@@ -69,25 +69,6 @@ Finally, add ``$DeathSound.play()`` in the ``game_over()`` function.
         GetNode<AudioStreamPlayer>("Music").Play();
     }
 
- .. code-tab:: cpp
-
-    void Main::_ready() {
-        ...
-        _music = get_node<godot::AudioStreamPlayer>("Music");
-        _death_sound = get_node<godot::AudioStreamPlayer>("DeathSound");
-    }
-
-    void Main::game_over() {
-        ...
-        _music->stop();
-        _death_sound->play();
-    }
-
-    void Main::new_game() {
-        ...
-        _music->play();
-    }
-
 
 Keyboard shortcut
 ~~~~~~~~~~~~~~~~~
