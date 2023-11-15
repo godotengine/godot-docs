@@ -143,7 +143,7 @@ this feature. There are still several ways to avoid this problem:
 
 - If you want a material to fade with distance, use the StandardMaterial3D
   distance fade mode **Pixel Dither** or **Object Dither** instead of
-  **PixelAlpha**. This will make the material opaque, which also speeds up rendering.
+  **Pixel Alpha**. This will make the material opaque, which also speeds up rendering.
 
 .. figure:: img/3d_rendering_limitations_transparency_sorting.webp
    :align: center

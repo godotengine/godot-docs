@@ -47,30 +47,134 @@ with the export preset for unreal engine, which also uses ORM textures.
 Transparency
 ------------
 
-In Godot, materials are not transparent unless specifically configured to be.
-The main reason behind this is that transparent materials are rendered
-using a different technique (sorted from back to front and rendered in order).
+By default, materials in Godot are opaque. This is fast to render, but it means
+the material can't be seen through even if you use a transparent texture in the
+**Albedo > Texture** property (or set **Albedo > Color** to a transparent color).
 
-This technique is less efficient (many state changes happen) and makes
-the materials unusable with many mid- and post-processing effects
-(such as SSAO, SSR, etc.) that require perfectly opaque geometry.
+To be able to see through a material, the material needs to be made *transparent*.
+Godot offers several transparency modes:
 
-For this reason, materials in Godot are assumed opaque unless
-specified otherwise. The main settings that enable transparency are:
+- **Disabled:** Material is opaque. This is the fastest to render, with all
+  rendering features supported.
 
-* Transparency (this one)
-* Blend mode set to other than "Mix"
-* Enabling distance or proximity fade
+- **Alpha:** Material is transparent. Semi-transparent areas are drawn with
+  blending. This is slow to render, but it allows for partial transparency (also
+  known as translucency). Materials using alpha blending also can't cast
+  shadows, and are not visible in screen-space reflections.
 
-When transparency other than ``0`` or ``1`` is not needed, it's possible to
-set a threshold to prevent the object from rendering semi-transparent pixels
-using the alpha scissor option.
+  - **Alpha** is a good fit for particle effects and VFX.
+
+- **Alpha Scissor:** Material is transparent. Semi-transparent areas whose
+  opacity is below **Alpha Scissor Threshold** are not drawn (above this
+  opacity, these are drawn as opaque). This is faster to render than Alpha and
+  doesn't exhibit transparency sorting issues. The downside is that this results
+  in "all or nothing" transparency, with no intermediate values possible.
+  Materials using alpha scissor can cast shadows.
+
+  - **Alpha Scissor** is ideal for foliage and fences, since these have hard
+    edges and require correct sorting to look good.
+
+- **Alpha Hash:** Material is transparent. Semi-transparent areas are drawn
+  using dithering. This is also "all or nothing" transparency, but dithering
+  helps represent partially opaque areas with limited precision depending on
+  viewport resolution. Materials using alpha hash can cast shadows.
+
+  - **Alpha Hash** is suited for realistic-looking hair, although stylized hair
+    may work better with alpha scissor.
+
+- **Depth Pre-Pass:** This renders the object's fully opaque pixels via the
+  opaque pipeline first, then renders the rest with alpha blending. This allows
+  transparency sorting to be *mostly* correct (albeit not fully so, as partially
+  transparent regions may still exhibit incorrect sorting). Materials using
+  depth prepass can cast shadows.
+
+.. note::
+
+    Godot will automatically force the material to be transparent with alpha
+    blending if *any* of these conditions is met:
+
+    - Setting the transparency mode to **Alpha** (as described here).
+    - Setting a blend mode other than the default **Mix**
+    - Enabling **Refraction**, **Proximity Fade**, or **Distance Fade**.
+
+Comparison between alpha blending (left) and alpha scissor (right) transparency:
 
 .. image:: img/spatial_material12.png
 
-This renders the object via the opaque pipeline when opaque pre-pass is on,
-which is faster and allows it to use mid- and post-process effects such as
-SSAO, SSR, etc.
+.. warning::
+
+    Alpha-blended transparency has several
+    :ref:`limitations <doc_3d_rendering_limitations_transparency_sorting>`:
+
+    - Alpha-blended materials are significantly slower to render, especially if
+      they overlap.
+    - Alpha-blended materials may exhibit sorting issues when transparent
+      surfaces overlap each other. This means that surfaces may render in the
+      incorrect order, with surfaces in the back appearing to be in front of
+      those which are actually closer to the camera.
+    - Alpha-blended materials don't cast shadows, although they can receive shadows.
+    - Alpha-blended materials don't appear in any reflections (other than
+      reflection probes).
+    - Screen-space reflections and sharp SDFGI reflections don't appear on
+      alpha-blended materials. When SDFGI is enabled, rough reflections are used
+      as a fallback regardless of material roughness.
+
+    Before using the **Alpha** transparency mode, always consider whether
+    another transparency mode is more suited for your needs.
+
+.. _doc_standard_material_3d_alpha_antialiasing:
+
+Alpha Antialiasing
+~~~~~~~~~~~~~~~~~~
+
+.. note::
+
+    This property is only visible when the transparency mode is
+    **Alpha Scissor** or **Alpha Hash**.
+
+While alpha scissor and alpha hash materials are faster to render than
+alpha-blended materials, they exhibit hard edges between opaque and transparent
+regions. While it's possible to use post-processing-based :ref:`antialiasing
+techniques <doc_3d_antialiasing>` such as FXAA and TAA, this is not always
+desired as these techniques tend to make the final result look blurrier or
+exhibit ghosting artifacts.
+
+There are 3 alpha antialiasing modes available:
+
+- **Disabled:** No alpha antialiasing. Edges of transparent materials will
+  appear aliased unless a post-processing-based antialiasing solution is used.
+- **Alpha Edge Blend:** Results in a smooth transition between opaque and
+  transparent areas. Also known as "alpha to coverage".
+- **Alpha Edge Clip:** Results in a sharp, but still antialiased transition
+  between opaque and transparent areas. Also known as "alpha to coverage + alpha
+  to one".
+
+When the alpha antialiasing mode is set to **Alpha Edge Blend** or **Alpha Edge
+Clip**, a new **Alpha Antialiasing Edge** property becomes visible below in the
+inspector. This property controls the threshold below which pixels should be
+made transparent. While you've already defined an alpha scissor threshold (when
+using **Alpha Scissor** only), this additional threshold is used to smoothly
+transition between opaque and transparent pixels. **Alpha Antialiasing Edge**
+must *always* be set to a value that is strictly below the alpha scissor
+threshold. The default of ``0.3`` is a sensible value with an alpha scissor of
+threshold of ``0.5``, but remember to adjust this alpha antialiasing edge when
+modifying the alpha scissor threshold.
+
+If you find the antialiasing effect not effective enough, try increasing **Alpha
+Antialiasing Edge** while making sure it's below **Alpha Scissor Threshold** (if
+the material uses alpha scissor). On the other hand, if you notice the texture's
+appearance visibly changing as the camera moves closer to the material, try
+decreasing **Alpha Antialiasing Edge**.
+
+.. important::
+
+    For best results, MSAA 3D should be set to at least 2× in the Project
+    Settings when using alpha antialiasing. This is because this feature relies
+    on alpha to coverage, which is a feature provided by MSAA.
+
+    Without MSAA, a fixed dithering pattern is applied on the material's edges,
+    which isn't very effective at smoothing out edges (although it can still
+    help a little).
 
 Blend Mode
 ~~~~~~~~~~
@@ -377,9 +481,9 @@ such as plant leaves, grass, human ears, etc.
 Refraction
 ----------
 
-When refraction is enabled, it supersedes alpha blending, and Godot attempts to
-fetch information from behind the object being rendered instead. This allows
-distorting the transparency in a way similar to refraction in real life.
+When refraction is enabled, Godot attempts to fetch information from behind the
+object being rendered. This allows distorting the transparency in a way similar
+to refraction in real life.
 
 Remember to use a transparent albedo texture (or reduce the albedo color's alpha
 channel) to make refraction visible, as refraction relies on transparency to
@@ -555,7 +659,7 @@ This is useful mostly for indicators (no depth test and high render priority)
 and some types of billboards.
 
 Use Point Size
-~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~
 
 This option is only effective when the geometry rendered is made of points
 (generally it's made of triangles when imported from 3D modeling software). If

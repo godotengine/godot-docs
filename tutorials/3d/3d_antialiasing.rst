@@ -57,12 +57,12 @@ shaders are still run for each pixel only once. Therefore, MSAA does not reduce
 transparency aliasing for materials using the **Alpha Scissor** transparency
 mode (1-bit transparency). MSAA is also ineffective on specular aliasing.
 
-To mitigate aliasing on alpha scissor materials, alpha antialiasing (also called
-*alpha to coverage*) can be enabled on specific materials in the
-StandardMaterial3D or ORMMaterial3D properties. This only has an effect when
-MSAA is used (with any level). Alpha to coverage has a moderate performance
-cost, but it's very effective at reducing aliasing on transparent materials
-without introducing any blurriness.
+To mitigate aliasing on alpha scissor materials,
+:ref:`alpha antialiasing <doc_standard_material_3d_alpha_antialiasing>`
+(also called *alpha to coverage*) can be enabled on specific materials in the
+StandardMaterial3D or ORMMaterial3D properties. Alpha to coverage has a
+moderate performance cost, but it's effective at reducing aliasing on
+transparent materials without introducing any blurriness.
 
 MSAA can be enabled in the Project Settings by changing the value of the
 **Rendering > Anti Aliasing > Quality > MSAA 3D** setting. It's important to change
