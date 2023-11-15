@@ -2,6 +2,11 @@
 
 Gradle builds for Android
 =========================
+.. note::
+
+    When using the Eclipse OpenJDK, you may encounter errors regarding the Java Virtual Machine.
+    To fix this, you could for example use :ref:`Microsofts build of OpenJDK<https://learn.microsoft.com/de-de/java/openjdk/download#openjdk-17>`.
+
 
 Godot provides the option to build using the gradle buildsystem. Instead of
 using the already pre-built template that ships with Godot, an Android
