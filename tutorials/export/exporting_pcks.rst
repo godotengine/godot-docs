@@ -132,7 +132,7 @@ The PCK file contains a “mod_scene.tscn” test scene in its root.
 .. note::
     For a C# project, you need to build the DLL and place it in the project directory first.
     Then, before loading the resource pack, you need to load its DLL as follows:
-    ``Assembly.LoadFile("mod.dll")``
+    ``var context = AssemblyLoadContext.GetLoadContext(typeof(Godot.Bridge.ScriptManagerBridge).Assembly); var assembly = context.LoadFromAssemblyPath("mod.dll"); Godot.Bridge.ScriptManagerBridge.LookupScriptsInAssembly(assembly);``
 
 Summary
 -------
