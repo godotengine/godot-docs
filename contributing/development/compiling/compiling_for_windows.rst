@@ -238,7 +238,7 @@ differ based on your system)::
     # x86_64-w64-mingw32-gcc (GCC) 13.2.0
 
 .. note:: When cross-compiling for Windows using MinGW-w64, keep in mind only
-          ``x86_64`` and ``x86_32`` architectures are supported: be sure to
+          ``x86_64`` and ``x86_32`` architectures are supported. Be sure to
           specify the right ``arch=`` option when invoking SCons if building
           from a different architecture.
 
