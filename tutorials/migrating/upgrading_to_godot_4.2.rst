@@ -13,6 +13,30 @@ Breaking changes
 If you are migrating from 4.1 to 4.2, the breaking changes listed here might
 affect you. Changes are grouped by areas/systems.
 
+.. warning::
+
+    The :ref:`class_Mesh` resource format has changed in 4.2 to allow for
+    `vertex and attribute compression <https://github.com/godotengine/godot/pull/81138>`__.
+    This allows for improved rendering performance, especially on platforms
+    constrained by memory bandwidth such as mobile.
+
+    It is still possible to load the Godot 4.0-4.1 Mesh formats, but it is
+    **not** possible to load the Godot 4.2 Mesh format in prior Godot versions.
+    When opening a Godot project made with a version prior to 4.2, you will
+    be presented with an upgrade dialog that offers two options:
+
+    - **Restart & Upgrade:** Upgrades the mesh format for all meshes in the
+      project and saves the result to disk. Once chosen, this option prevents
+      downgrading the project to a Godot version prior to 4.2. Set up a
+      version control system and push your changes *before* choosing this option!
+    - **Upgrade Only:** Upgrades the mesh format in-memory without writing it
+      to disk. This allows downgrading the project to a Godot version older than 4.2
+      if you need to do so in the future. The downside is that loading the project
+      will be slower every time as the mesh format needs to be upgraded every time
+      the project is loaded. These increased loading times will also affect the
+      exported project. The number and complexity of Mesh resources determines
+      how much loading times are be affected.
+
 This article indicates whether each breaking change affects GDScript and whether
 the C# breaking change is *binary compatible* or *source compatible*:
 
