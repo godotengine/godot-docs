@@ -22,10 +22,17 @@ run C or C++ code in a Godot project.
 They also both allow you to integrate third-party libraries into Godot. The one
 you should choose depends on your needs.
 
-.. note:: If you notice that specific systems are not accessible via GDExtension
-          but are via custom modules feel free to open an issue on the
-          `godot-cpp repository <https://github.com/godotengine/godot-cpp>`__ to discuss
-          implementation options to expose the missing functionality.
+.. warning::
+
+    Our long-term goal is that GDExtensions targeting an earlier version of
+    Godot will work in later minor versions, but not vice-versa. For example, a
+    GDExtension targeting Godot 4.2 should work just fine in Godot 4.3, but one
+    targeting Godot 4.3 won't work in Godot 4.2.
+
+    However, GDExtension is currently *experimental*, which means that we may
+    break compatibility in order to fix major bugs or include critical features.
+    For example, GDExtensions created for Godot 4.0 aren't compatible with Godot
+    4.1 (see :ref:`updating_your_gdextension_for_godot_4_1`).
 
 Advantages of GDExtension
 ^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -59,6 +66,13 @@ GDExtension isn't enough:
   is not as deep as static modules.
 - You can use C++ modules to provide additional features in a project without
   carrying native library files around. This extends to exported projects.
+
+.. note::
+
+    If you notice that specific systems are not accessible via GDExtension
+    but are via custom modules, feel free to open an issue on the
+    `godot-cpp repository <https://github.com/godotengine/godot-cpp>`__
+    to discuss implementation options for exposing the missing functionality.
 
 Supported languages
 -------------------
