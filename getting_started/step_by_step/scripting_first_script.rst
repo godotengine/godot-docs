@@ -85,7 +85,7 @@ other options set to their default values and click the Create button to create 
 
 .. image:: img/scripting_first_script_attach_node_script.webp
 
-The Script workspace should appear with your new ``sprite_2d.gd`` file open and
+The Script workspace should appear with your new ``Sprite2D.gd`` file open and
 the following line of code:
 
 .. tabs::
