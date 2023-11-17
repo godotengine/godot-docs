@@ -36,7 +36,6 @@ Limitations & known issues
 Here are the known limitations and issues of the Android editor:
 
 - No C#/Mono support
-- No GDExtension support
 - No support for external script editors
 - While available, the *Vulkan Forward+* renderer is not recommended due to severe performance issues
 - No support for building and exporting an Android APK binary.
