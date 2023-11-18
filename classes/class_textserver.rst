@@ -1735,7 +1735,7 @@ Returns number of faces in the TrueType / OpenType collection.
 
 :ref:`int<class_int>` **font_get_face_index** **(** :ref:`RID<class_RID>` font_rid **)** |const|
 
-Recturns an active face index in the TrueType / OpenType collection.
+Returns an active face index in the TrueType / OpenType collection.
 
 .. rst-class:: classref-item-separator
 
@@ -1759,7 +1759,7 @@ Returns bitmap font fixed size.
 
 :ref:`FixedSizeScaleMode<enum_TextServer_FixedSizeScaleMode>` **font_get_fixed_size_scale_mode** **(** :ref:`RID<class_RID>` font_rid **)** |const|
 
-Returned bitmap font scaling mode.
+Returns bitmap font scaling mode.
 
 .. rst-class:: classref-item-separator
 

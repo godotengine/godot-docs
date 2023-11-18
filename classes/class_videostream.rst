@@ -30,6 +30,8 @@ Tutorials
 
 - :doc:`Playing videos <../tutorials/animation/playing_videos>`
 
+- :doc:`Runtime file loading and saving <../tutorials/io/runtime_file_loading_and_saving>`
+
 .. rst-class:: classref-reftable-group
 
 Properties

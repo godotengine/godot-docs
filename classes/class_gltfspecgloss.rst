@@ -26,6 +26,8 @@ KHR_materials_pbrSpecularGlossiness is an archived GLTF extension. This means th
 Tutorials
 ---------
 
+- :doc:`Runtime file loading and saving <../tutorials/io/runtime_file_loading_and_saving>`
+
 - `KHR_materials_pbrSpecularGlossiness GLTF extension spec <https://github.com/KhronosGroup/glTF/blob/main/extensions/2.0/Archived/KHR_materials_pbrSpecularGlossiness>`__
 
 .. rst-class:: classref-reftable-group

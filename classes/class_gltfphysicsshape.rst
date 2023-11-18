@@ -26,6 +26,8 @@ Represents a physics shape as defined by the ``OMI_collider`` GLTF extension. Th
 Tutorials
 ---------
 
+- :doc:`Runtime file loading and saving <../tutorials/io/runtime_file_loading_and_saving>`
+
 - `OMI_collider GLTF extension <https://github.com/omigroup/gltf-extensions/tree/main/extensions/2.0/OMI_collider>`__
 
 .. rst-class:: classref-reftable-group

@@ -1964,7 +1964,9 @@ Changes to this setting will only be applied upon restarting the application.
 
 :ref:`int<class_int>` **application/run/frame_delay_msec** = ``0``
 
-Forces a delay between frames in the main loop (in milliseconds). This may be useful if you plan to disable vertical synchronization.
+Forces a *constant* delay between frames in the main loop (in milliseconds). In most situations, :ref:`application/run/max_fps<class_ProjectSettings_property_application/run/max_fps>` should be preferred as an FPS limiter as it's more precise.
+
+This setting can be overridden using the ``--frame-delay <ms;>`` command line argument.
 
 .. rst-class:: classref-item-separator
 

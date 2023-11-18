@@ -23,6 +23,13 @@ AudioStreamWAV stores sound samples loaded from WAV files. To play the stored so
 
 This class can also be used to store dynamically-generated PCM audio data. See also :ref:`AudioStreamGenerator<class_AudioStreamGenerator>` for procedural audio generation.
 
+.. rst-class:: classref-introduction-group
+
+Tutorials
+---------
+
+- :doc:`Runtime file loading and saving <../tutorials/io/runtime_file_loading_and_saving>`
+
 .. rst-class:: classref-reftable-group
 
 Properties

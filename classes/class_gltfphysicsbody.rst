@@ -26,6 +26,8 @@ Represents a physics body as defined by the ``OMI_physics_body`` GLTF extension.
 Tutorials
 ---------
 
+- :doc:`Runtime file loading and saving <../tutorials/io/runtime_file_loading_and_saving>`
+
 - `OMI_physics_body GLTF extension <https://github.com/omigroup/gltf-extensions/tree/main/extensions/2.0/OMI_physics_body>`__
 
 .. rst-class:: classref-reftable-group
