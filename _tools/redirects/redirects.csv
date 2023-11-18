@@ -419,3 +419,5 @@ source,destination
 /tutorials/viewports/multiple_resolutions.html,/tutorials/rendering/multiple_resolutions.html
 /tutorials/viewports/using_viewport_as_texture.html,/tutorials/shaders/using_viewport_as_texture.html
 /tutorials/viewports/viewports.html,/tutorials/rendering/viewports.html
+/contributing/development/compiling/compiling_for_uwp.html,/about/faq.html#which-platforms-are-supported-by-godot
+/tutorials/export/exporting_for_uwp.html,/about/faq.html#which-platforms-are-supported-by-godot
