@@ -139,7 +139,7 @@ player to click, tap or press a key/button to enable audio, for instance when di
 .. seealso:: Google offers additional information about their `Web Audio autoplay
              policies <https://sites.google.com/a/chromium.org/dev/audio-video/autoplay>`__.
 
-			Apple's Safari team also posted additional information about their `Auto-Play Policy Changes for macOS 
+            Apple's Safari team also posted additional information about their `Auto-Play Policy Changes for macOS 
              <https://webkit.org/blog/7734/auto-play-policy-changes-for-macos/>`__.
 
 .. warning:: Access to microphone requires a
