@@ -258,3 +258,52 @@ following:
 .. seealso::
 
     :ref:`doc_overriding_build_options`.
+
+Optimizing the distribution of your project
+-------------------------------------------
+
+Desktop
+^^^^^^^
+
+.. note::
+
+    This section is only relevant when distributing the files on a desktop
+    platform that doesn't perform its own compression or packing. As such, this
+    advice is relevant when you distribute ZIP archives on itch.io or GitHub
+    Releases.
+
+    Platforms like Steam already apply their own compression scheme, so you
+    don't need to create a ZIP archive to distribute files in the first place.
+
+As an aside, you can look into optimizing the distribution of your project itself.
+This can be done even without recompiling the export template.
+
+`7-Zip <https://7-zip.org/>`__ can be used to create ZIP archives that are more
+efficient than usual, while remaining compatible with every ZIP extractor
+(including Windows' own built-in extractor). ZIP size reduction in a large
+project can reach dozens of megabytes compared to a typical ZIP compressor,
+although average savings are in the 1-5 MB range. Creating this ZIP archive will
+take longer than usual, but it will extract just as fast as any other ZIP
+archive.
+
+When using the 7-Zip GUI, this is done by creating a ZIP archive with the Ultra
+compression mode. When using the command line, this is done using the following
+command:
+
+::
+
+    7z a -mx9 my_project.zip folder_containing_executable_and_pck
+
+Web
+^^^
+
+Enabling gzip or Brotli compression for all file types from the web export
+(especially the ``.wasm`` and ``.pck``) can reduce the download size
+significantly, leading to faster loading times, especially on slow connections.
+
+Creating precompressed gzip or Brotli files with a high compression level can be
+even more efficient, as long as the web server is configured to serve those
+files when they exist. When supported, Brotli should be preferred over gzip as
+it has a greater potential for file size reduction.
+
+See :ref:`doc_exporting_for_web_serving_the_files` for instructions.

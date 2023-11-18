@@ -189,6 +189,8 @@ The default HTML page does not display the boot splash while loading. However,
 the image is exported as a PNG file, so :ref:`custom HTML pages <doc_customizing_html5_shell>`
 can display it.
 
+.. _doc_exporting_for_web_serving_the_files:
+
 Serving the files
 -----------------
 
