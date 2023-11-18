@@ -129,7 +129,7 @@ These four conditions give us eight possibilities and eight possible directions.
 In case the player presses, say, both W and D simultaneously, the vector will
 have a length of about ``1.4``. But if they press a single key, it will have a
 length of ``1``. We want the vector's length to be consistent, and not move faster diagonally. To do so, we can
-call its ``normalize()`` method.
+call its ``normalized()`` method.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
