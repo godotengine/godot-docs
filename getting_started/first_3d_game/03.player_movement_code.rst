@@ -225,7 +225,7 @@ we apply gravity to the ``Player`` only while it is in the air.
 
 For the vertical velocity, we subtract the fall acceleration multiplied by the
 delta time every frame.
-This line of code will cause our character to fall in every frame, as long it is not on or collides with the floor.
+This line of code will cause our character to fall in every frame, as long as it is not on or colliding with the floor.
 
 The physics engine can only detect interactions with walls, the floor, or other
 bodies during a given frame if movement and collisions happen. We will use this
