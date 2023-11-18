@@ -26,6 +26,8 @@ Represents a light as defined by the ``KHR_lights_punctual`` GLTF extension.
 Tutorials
 ---------
 
+- :doc:`Runtime file loading and saving <../tutorials/io/runtime_file_loading_and_saving>`
+
 - `KHR_lights_punctual GLTF extension spec <https://github.com/KhronosGroup/glTF/blob/main/extensions/2.0/Khronos/KHR_lights_punctual>`__
 
 .. rst-class:: classref-reftable-group

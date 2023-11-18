@@ -262,7 +262,7 @@ Particles are drawn in the order emitted.
 
 :ref:`DrawOrder<enum_CPUParticles3D_DrawOrder>` **DRAW_ORDER_LIFETIME** = ``1``
 
-Particles are drawn in order of remaining lifetime.
+Particles are drawn in order of remaining lifetime. In other words, the particle with the highest lifetime is drawn at the front.
 
 .. _class_CPUParticles3D_constant_DRAW_ORDER_VIEW_DEPTH:
 

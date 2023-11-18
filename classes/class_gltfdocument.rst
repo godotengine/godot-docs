@@ -30,6 +30,8 @@ GLTFDocument can be extended with arbitrary functionality by extending the :ref:
 Tutorials
 ---------
 
+- :doc:`Runtime file loading and saving <../tutorials/io/runtime_file_loading_and_saving>`
+
 - `glTF 'What the duck?' guide <https://www.khronos.org/files/gltf20-reference-guide.pdf>`__
 
 - `Khronos glTF specification <https://registry.khronos.org/glTF/>`__

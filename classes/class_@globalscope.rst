@@ -3615,7 +3615,7 @@ Hints that a :ref:`Color<class_Color>` property should be edited without affecti
 
 :ref:`PropertyHint<enum_@GlobalScope_PropertyHint>` **PROPERTY_HINT_OBJECT_ID** = ``22``
 
-
+Hints that the property's value is an object encoded as object ID, with its type specified in the hint string. Used by the debugger.
 
 .. _class_@GlobalScope_constant_PROPERTY_HINT_TYPE_STRING:
 
@@ -3698,7 +3698,7 @@ Examples:
 
 :ref:`PropertyHint<enum_@GlobalScope_PropertyHint>` **PROPERTY_HINT_NODE_PATH_TO_EDITED_NODE** = ``24``
 
-
+*Deprecated.* This hint is not used anywhere and will be removed in the future.
 
 .. _class_@GlobalScope_constant_PROPERTY_HINT_OBJECT_TOO_BIG:
 
@@ -3706,7 +3706,7 @@ Examples:
 
 :ref:`PropertyHint<enum_@GlobalScope_PropertyHint>` **PROPERTY_HINT_OBJECT_TOO_BIG** = ``25``
 
-
+Hints that an object is too big to be sent via the debugger.
 
 .. _class_@GlobalScope_constant_PROPERTY_HINT_NODE_PATH_VALID_TYPES:
 
@@ -3714,7 +3714,7 @@ Examples:
 
 :ref:`PropertyHint<enum_@GlobalScope_PropertyHint>` **PROPERTY_HINT_NODE_PATH_VALID_TYPES** = ``26``
 
-
+Hints that the hint string specifies valid node types for property of type :ref:`NodePath<class_NodePath>`.
 
 .. _class_@GlobalScope_constant_PROPERTY_HINT_SAVE_FILE:
 
@@ -3722,7 +3722,7 @@ Examples:
 
 :ref:`PropertyHint<enum_@GlobalScope_PropertyHint>` **PROPERTY_HINT_SAVE_FILE** = ``27``
 
-
+Hints that a :ref:`String<class_String>` property is a path to a file. Editing it will show a file dialog for picking the path for the file to be saved at. The dialog has access to the project's directory. The hint string can be a set of filters with wildcards like ``"*.png,*.jpg"``. See also :ref:`FileDialog.filters<class_FileDialog_property_filters>`.
 
 .. _class_@GlobalScope_constant_PROPERTY_HINT_GLOBAL_SAVE_FILE:
 
@@ -3730,7 +3730,7 @@ Examples:
 
 :ref:`PropertyHint<enum_@GlobalScope_PropertyHint>` **PROPERTY_HINT_GLOBAL_SAVE_FILE** = ``28``
 
-
+Hints that a :ref:`String<class_String>` property is a path to a file. Editing it will show a file dialog for picking the path for the file to be saved at. The dialog has access to the entire filesystem. The hint string can be a set of filters with wildcards like ``"*.png,*.jpg"``. See also :ref:`FileDialog.filters<class_FileDialog_property_filters>`.
 
 .. _class_@GlobalScope_constant_PROPERTY_HINT_INT_IS_OBJECTID:
 
@@ -3738,7 +3738,9 @@ Examples:
 
 :ref:`PropertyHint<enum_@GlobalScope_PropertyHint>` **PROPERTY_HINT_INT_IS_OBJECTID** = ``29``
 
+Hints that an :ref:`int<class_int>` property is an object ID.
 
+\ *Deprecated.* This hint is not used anywhere and will be removed in the future.
 
 .. _class_@GlobalScope_constant_PROPERTY_HINT_INT_IS_POINTER:
 
@@ -3746,7 +3748,7 @@ Examples:
 
 :ref:`PropertyHint<enum_@GlobalScope_PropertyHint>` **PROPERTY_HINT_INT_IS_POINTER** = ``30``
 
-
+Hints that an :ref:`int<class_int>` property is a pointer. Used by GDExtension.
 
 .. _class_@GlobalScope_constant_PROPERTY_HINT_ARRAY_TYPE:
 
@@ -3754,7 +3756,7 @@ Examples:
 
 :ref:`PropertyHint<enum_@GlobalScope_PropertyHint>` **PROPERTY_HINT_ARRAY_TYPE** = ``31``
 
-
+Hints that a property is an :ref:`Array<class_Array>` with the stored type specified in the hint string.
 
 .. _class_@GlobalScope_constant_PROPERTY_HINT_LOCALE_ID:
 
@@ -3778,7 +3780,7 @@ Hints that a dictionary property is string translation map. Dictionary keys are 
 
 :ref:`PropertyHint<enum_@GlobalScope_PropertyHint>` **PROPERTY_HINT_NODE_TYPE** = ``34``
 
-
+Hints that a property is an instance of a :ref:`Node<class_Node>`-derived type, optionally specified via the hint string (e.g. ``"Node2D"``). Editing it will show a dialog for picking a node from the scene.
 
 .. _class_@GlobalScope_constant_PROPERTY_HINT_HIDE_QUATERNION_EDIT:
 
@@ -3892,7 +3894,7 @@ Used to group properties together in the editor in a subgroup (under a group). S
 
 :ref:`PropertyUsageFlags<enum_@GlobalScope_PropertyUsageFlags>` **PROPERTY_USAGE_CLASS_IS_BITFIELD** = ``512``
 
-
+The property is a bitfield, i.e. it contains multiple flags represented as bits.
 
 .. _class_@GlobalScope_constant_PROPERTY_USAGE_NO_INSTANCE_STATE:
 
@@ -3924,7 +3926,7 @@ The property is a script variable which should be serialized and saved in the sc
 
 :ref:`PropertyUsageFlags<enum_@GlobalScope_PropertyUsageFlags>` **PROPERTY_USAGE_STORE_IF_NULL** = ``8192``
 
-
+The property value of type :ref:`Object<class_Object>` will be stored even if its value is ``null``.
 
 .. _class_@GlobalScope_constant_PROPERTY_USAGE_UPDATE_ALL_IF_MODIFIED:
 
@@ -3932,7 +3934,7 @@ The property is a script variable which should be serialized and saved in the sc
 
 :ref:`PropertyUsageFlags<enum_@GlobalScope_PropertyUsageFlags>` **PROPERTY_USAGE_UPDATE_ALL_IF_MODIFIED** = ``16384``
 
-
+If this property is modified, all inspector fields will be refreshed.
 
 .. _class_@GlobalScope_constant_PROPERTY_USAGE_SCRIPT_DEFAULT_VALUE:
 
@@ -3940,7 +3942,9 @@ The property is a script variable which should be serialized and saved in the sc
 
 :ref:`PropertyUsageFlags<enum_@GlobalScope_PropertyUsageFlags>` **PROPERTY_USAGE_SCRIPT_DEFAULT_VALUE** = ``32768``
 
+Signifies a default value from a placeholder script instance.
 
+\ *Deprecated.* This hint is not used anywhere and will be removed in the future.
 
 .. _class_@GlobalScope_constant_PROPERTY_USAGE_CLASS_IS_ENUM:
 
@@ -3948,7 +3952,7 @@ The property is a script variable which should be serialized and saved in the sc
 
 :ref:`PropertyUsageFlags<enum_@GlobalScope_PropertyUsageFlags>` **PROPERTY_USAGE_CLASS_IS_ENUM** = ``65536``
 
-
+The property is an enum, i.e. it only takes named integer constants from its associated enumeration.
 
 .. _class_@GlobalScope_constant_PROPERTY_USAGE_NIL_IS_VARIANT:
 
@@ -3956,7 +3960,7 @@ The property is a script variable which should be serialized and saved in the sc
 
 :ref:`PropertyUsageFlags<enum_@GlobalScope_PropertyUsageFlags>` **PROPERTY_USAGE_NIL_IS_VARIANT** = ``131072``
 
-
+If property has ``nil`` as default value, its type will be :ref:`Variant<class_Variant>`.
 
 .. _class_@GlobalScope_constant_PROPERTY_USAGE_ARRAY:
 
@@ -3996,7 +4000,7 @@ The property is only shown in the editor if modern renderers are supported (the 
 
 :ref:`PropertyUsageFlags<enum_@GlobalScope_PropertyUsageFlags>` **PROPERTY_USAGE_NODE_PATH_FROM_SCENE_ROOT** = ``4194304``
 
-
+The :ref:`NodePath<class_NodePath>` property will always be relative to the scene's root. Mostly useful for local resources.
 
 .. _class_@GlobalScope_constant_PROPERTY_USAGE_RESOURCE_NOT_PERSISTENT:
 
@@ -4004,7 +4008,7 @@ The property is only shown in the editor if modern renderers are supported (the 
 
 :ref:`PropertyUsageFlags<enum_@GlobalScope_PropertyUsageFlags>` **PROPERTY_USAGE_RESOURCE_NOT_PERSISTENT** = ``8388608``
 
-
+Use when a resource is created on the fly, i.e. the getter will always return a different instance. :ref:`ResourceSaver<class_ResourceSaver>` needs this information to properly save such resources.
 
 .. _class_@GlobalScope_constant_PROPERTY_USAGE_KEYING_INCREMENTS:
 
@@ -4012,7 +4016,7 @@ The property is only shown in the editor if modern renderers are supported (the 
 
 :ref:`PropertyUsageFlags<enum_@GlobalScope_PropertyUsageFlags>` **PROPERTY_USAGE_KEYING_INCREMENTS** = ``16777216``
 
-
+Inserting an animation key frame of this property will automatically increment the value, allowing to easily keyframe multiple values in a row.
 
 .. _class_@GlobalScope_constant_PROPERTY_USAGE_DEFERRED_SET_RESOURCE:
 
@@ -4020,7 +4024,9 @@ The property is only shown in the editor if modern renderers are supported (the 
 
 :ref:`PropertyUsageFlags<enum_@GlobalScope_PropertyUsageFlags>` **PROPERTY_USAGE_DEFERRED_SET_RESOURCE** = ``33554432``
 
+When loading, the resource for this property can be set at the end of loading.
 
+\ *Deprecated.* This hint is not used anywhere and will be removed in the future.
 
 .. _class_@GlobalScope_constant_PROPERTY_USAGE_EDITOR_INSTANTIATE_OBJECT:
 
@@ -4028,7 +4034,7 @@ The property is only shown in the editor if modern renderers are supported (the 
 
 :ref:`PropertyUsageFlags<enum_@GlobalScope_PropertyUsageFlags>` **PROPERTY_USAGE_EDITOR_INSTANTIATE_OBJECT** = ``67108864``
 
-
+When this property is a :ref:`Resource<class_Resource>` and base object is a :ref:`Node<class_Node>`, a resource instance will be automatically created whenever the node is created in the editor.
 
 .. _class_@GlobalScope_constant_PROPERTY_USAGE_EDITOR_BASIC_SETTING:
 
@@ -4036,7 +4042,7 @@ The property is only shown in the editor if modern renderers are supported (the 
 
 :ref:`PropertyUsageFlags<enum_@GlobalScope_PropertyUsageFlags>` **PROPERTY_USAGE_EDITOR_BASIC_SETTING** = ``134217728``
 
-
+The property is considered a basic setting and will appear even when advanced mode is disabled. Used for project settings.
 
 .. _class_@GlobalScope_constant_PROPERTY_USAGE_READ_ONLY:
 
@@ -7347,7 +7353,7 @@ Prints:
 
 :ref:`Variant<class_Variant>` **weakref** **(** :ref:`Variant<class_Variant>` obj **)**
 
-Returns a weak reference to an object, or ``null`` if ``obj`` is invalid.
+Returns a :ref:`WeakRef<class_WeakRef>` instance holding a weak reference to ``obj``. Returns an empty :ref:`WeakRef<class_WeakRef>` instance if ``obj`` is ``null``. Prints an error and returns ``null`` if ``obj`` is neither :ref:`Object<class_Object>`-derived nor ``null``.
 
 A weak reference to an object is not enough to keep the object alive: when the only remaining references to a referent are weak references, garbage collection is free to destroy the referent and reuse its memory for something else. However, until the object is actually destroyed the weak reference may return the object even if there are no strong references to it.
 

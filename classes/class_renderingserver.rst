@@ -2532,7 +2532,7 @@ Draw particles in the order that they appear in the particles array.
 
 :ref:`ParticlesDrawOrder<enum_RenderingServer_ParticlesDrawOrder>` **PARTICLES_DRAW_ORDER_LIFETIME** = ``1``
 
-Sort particles based on their lifetime.
+Sort particles based on their lifetime. In other words, the particle with the highest lifetime is drawn at the front.
 
 .. _class_RenderingServer_constant_PARTICLES_DRAW_ORDER_REVERSE_LIFETIME:
 
@@ -2540,7 +2540,7 @@ Sort particles based on their lifetime.
 
 :ref:`ParticlesDrawOrder<enum_RenderingServer_ParticlesDrawOrder>` **PARTICLES_DRAW_ORDER_REVERSE_LIFETIME** = ``2``
 
-
+Sort particles based on the inverse of their lifetime. In other words, the particle with the lowest lifetime is drawn at the front.
 
 .. _class_RenderingServer_constant_PARTICLES_DRAW_ORDER_VIEW_DEPTH:
 

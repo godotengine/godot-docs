@@ -69,6 +69,8 @@ Tutorials
 
 - :doc:`File system <../tutorials/scripting/filesystem>`
 
+- :doc:`Runtime file loading and saving <../tutorials/io/runtime_file_loading_and_saving>`
+
 - `3D Voxel Demo <https://godotengine.org/asset-library/asset/676>`__
 
 .. rst-class:: classref-reftable-group
