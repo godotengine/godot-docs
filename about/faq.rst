@@ -82,8 +82,8 @@ focusing on Time-To-Market (TTM), GDScript will provide a fast, friendly, and ca
 way of developing your games.
 
 Note that C# support is still relatively new, and as such, you may encounter
-some issues along the way. C# support is also currently missing on Android, iOS
-and web platforms. Our friendly and hard-working development community is always
+some issues along the way. C# support is also currently missing on the web
+platform. Our friendly and hard-working development community is always
 ready to tackle new problems as they arise, but since this is an open source
 project, we recommend that you first do some due diligence yourself. Searching
 through discussions on

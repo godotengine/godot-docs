@@ -15,8 +15,8 @@ do everything else you can normally do with Xcode.
 
 .. attention::
 
-    Projects written in C# using Godot 4 currently cannot be exported to iOS.
-    To use C# on iOS, use Godot 3 instead.
+    Projects written in C# can be exported to iOS as of Godot 4.2, but support
+    is experimental and :ref:`some limitations apply <doc_c_sharp_platforms>`.
 
 Requirements
 ------------

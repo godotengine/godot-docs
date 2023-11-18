@@ -15,8 +15,8 @@ The following steps detail what is needed to set up the Android SDK and the engi
 
 .. attention::
 
-    Projects written in C# using Godot 4 currently cannot be exported to Android.
-    To use C# on Android, use Godot 3 instead.
+    Projects written in C# can be exported to Android as of Godot 4.2, but support
+    is experimental and :ref:`some limitations apply <doc_c_sharp_platforms>`.
 
 Install OpenJDK 17
 ------------------

@@ -79,7 +79,8 @@ in future Godot releases:
   planned to be restored at some point in the future.
 - Mono was replaced by .NET 6. This means exporting C# projects to Android, iOS
   and HTML5 is no longer supported for now. Exporting C# projects to desktop
-  platforms is still supported. Support for exporting C# projects to more
+  platforms is still supported, and as of 4.2 there's experimental support for
+  exporting to mobile platforms. Support for exporting C# projects to more
   platforms will be restored in future 4.x releases as upstream support
   improves.
 
