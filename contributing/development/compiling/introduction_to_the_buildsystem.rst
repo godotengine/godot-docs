@@ -31,7 +31,6 @@ documentation to learn more:
 - :ref:`doc_compiling_for_ios`
 - :ref:`doc_compiling_for_linuxbsd`
 - :ref:`doc_compiling_for_macos`
-- :ref:`doc_compiling_for_uwp`
 - :ref:`doc_compiling_for_web`
 - :ref:`doc_compiling_for_windows`
 
@@ -450,5 +449,5 @@ line (and nothing else). This version identifier is based on the ``major``,
 
 If you are developing for multiple platforms, macOS is definitely the most
 convenient host platform for cross-compilation, since you can cross-compile for
-almost every target (except for UWP). Linux and Windows come in second place,
+every target. Linux and Windows come in second place,
 but Linux has the advantage of being the easier platform to set this up.

@@ -142,7 +142,7 @@ can focus on the issues labelled with their team's topic.
 
 **Platforms:**
 
-*Android*, *HTML5*, *iOS*, *Linux*, *macOS*, *Windows*, *UWP*
+*Android*, *iOS*, *Linux*, *macOS*, *Web*, *Windows*
 
 By default, it is assumed that a given issue applies to all platforms.
 If one of the platform labels is used, it is then exclusive and the

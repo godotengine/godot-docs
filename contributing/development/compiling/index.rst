@@ -47,7 +47,6 @@ will try their best to cover all possible situations.
    compiling_for_android
    compiling_for_ios
    cross-compiling_for_ios_on_linux
-   compiling_for_uwp
    compiling_for_web
 
 Other compilation targets and options
