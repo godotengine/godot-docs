@@ -12,7 +12,7 @@ InputEventScreenDrag
 
 **Inherits:** :ref:`InputEventFromWindow<class_InputEventFromWindow>` **<** :ref:`InputEvent<class_InputEvent>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-Represents a screen drag event.
+Represents a screen drag event. This only applies to touchscreen inputs. 
 
 .. rst-class:: classref-introduction-group
 
