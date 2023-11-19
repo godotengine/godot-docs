@@ -19,7 +19,7 @@ Represents a screen drag event.
 Description
 -----------
 
-Stores information about screen drag events. See :ref:`Node._input<class_Node_method__input>`.
+Stores information about screen drag events. This event is for touch screen drag. See :ref:`Node._input<class_Node_method__input>`.
 
 .. rst-class:: classref-introduction-group
 
