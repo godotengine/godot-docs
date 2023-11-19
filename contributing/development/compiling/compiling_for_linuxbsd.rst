@@ -387,7 +387,9 @@ There are two solutions:
 
 - In your SCons command, add the parameter ``use_static_cpp=no``.
 - Follow `these instructions <https://github.com/ivmai/libatomic_ops#installation-and-usage>`__ to configure, build, and
-  install ``libatomic_ops``. Then, copy ``/usr/lib/libatomic_ops.a`` to ``/usr/lib/libatomic.a``.
+  install ``libatomic_ops``. Then, copy ``/usr/lib/libatomic_ops.a`` to ``/usr/lib/libatomic.a``, or create a soft link
+  to ``libatomic_ops`` by command ``ln -s /usr/lib/libatomic_ops.a /usr/lib/libatomic.a``. The soft link can ensure the
+  latest ``libatomic_ops`` will be used without the need to copy it everytime when it is updated.
 
 Using mold for faster development
 ---------------------------------
