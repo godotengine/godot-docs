@@ -22,7 +22,7 @@ affect you. Changes are grouped by areas/systems.
 
     It is still possible to load the Godot 4.0-4.1 Mesh formats, but it is
     **not** possible to load the Godot 4.2 Mesh format in prior Godot versions.
-    When opening a Godot project made with a version prior to 4.2, you will
+    When opening a Godot project made with a version prior to 4.2, you may
     be presented with an upgrade dialog that offers two options:
 
     - **Restart & Upgrade:** Upgrades the mesh format for all meshes in the
@@ -35,7 +35,10 @@ affect you. Changes are grouped by areas/systems.
       will be slower every time as the mesh format needs to be upgraded every time
       the project is loaded. These increased loading times will also affect the
       exported project. The number and complexity of Mesh resources determines
-      how much loading times are be affected.
+      how much loading times are affected.
+
+    If this dialog doesn't appear, use **Project > Tools > Upgrade Mesh Surfaces…**
+    at the top of the editor.
 
 This article indicates whether each breaking change affects GDScript and whether
 the C# breaking change is *binary compatible* or *source compatible*:
@@ -118,7 +121,7 @@ Method ``add_icon_shortcut`` adds a new ``allow_echo`` optional parameter       
 Method ``add_shortcut`` adds a new ``allow_echo`` optional parameter                                                      |✔️|                 |✔️ with compat|      |✔️ with compat|      `GH-36493`_
 Method ``clear`` adds a new ``free_submenus`` optional parameter                                                          |✔️|                 |✔️ with compat|      |✔️ with compat|      `GH-79965`_
 **RichTextLabel**
-Method ``add_image`` adds new ``key``, ``pad``, ``tooltip`` and ``size_in_percent`` optional parameters                   |✔️|                 |✔️ with compat|      |✔️|                  `GH-80410`_
+Method ``add_image`` adds new ``key``, ``pad``, ``tooltip``, and ``size_in_percent`` optional parameters                   |✔️|                 |✔️ with compat|      |✔️|                  `GH-80410`_
 ========================================================================================================================  ===================  ====================  ====================  ===========
 
 Rendering
@@ -152,7 +155,7 @@ Change                                                                          
 **Font**
 Method ``set_fallbacks`` replaced with ``fallbacks`` property                                                                         |✔️|                 |❌|                  |❌|                  `GH-78266`_
 Method ``get_fallbacks`` replaced with ``fallbacks`` property                                                                         |✔️|                 |❌|                  |❌|                  `GH-78266`_
-Method ``find_variation`` adds new ``spacing_top``, ``spacing_bottom``, ``spacing_space`` and ``spacing_glyph`` optional parameters   |✔️|                 |✔️ with compat|      |✔️|                  `GH-80954`_
+Method ``find_variation`` adds new ``spacing_top``, ``spacing_bottom``, ``spacing_space``, and ``spacing_glyph`` optional parameters   |✔️|                 |✔️ with compat|      |✔️|                  `GH-80954`_
 ====================================================================================================================================  ===================  ====================  ====================  ===========
 
 GraphEdit
@@ -168,7 +171,7 @@ Property ``snap_distance`` renamed to ``snapping_distance``                     
 Property ``use_snap`` renamed to ``snapping_enabled``                                                                     |❌|                 |✔️ with compat|      |✔️ with compat|      `GH-79308`_
 **GraphNode**
 Property ``comment`` removed                                                                                              |❌|                 |❌|                  |❌|                  `GH-79307`_
-Signal ``close_request`` renamed to``delete_request`` and moved to base class ``GraphElement``                            |❌|                 |✔️ with compat|      |✔️ with compat|      `GH-79311`_
+Signal ``close_request`` renamed to ``delete_request`` and moved to base class ``GraphElement``                           |❌|                 |✔️ with compat|      |✔️ with compat|      `GH-79311`_
 Property ``draggable`` moved to base class ``GraphElement``                                                               |✔️|                 |✔️|                  |✔️|                  `GH-79311`_
 Property ``draggable`` moved to base class ``GraphElement``                                                               |✔️|                 |✔️|                  |✔️|                  `GH-79311`_
 Signal ``dragged`` moved to base class ``GraphElement``                                                                   |✔️|                 |❌|                  |❌|                  `GH-79311`_
