@@ -99,6 +99,14 @@ order to skip those kind of tests, run the following command:
 
     ./bin/<godot_binary> --test --test-case-exclude="*[Stress]*"
 
+.. note::
+
+    Do not quote the filter when using a Visual Studio Code ``launch.json`` configuration:
+
+    .. code-block:: json
+
+        "args": [ "--test", "--test-case=*[String]*" ]
+
 Writing tests
 -------------
 
