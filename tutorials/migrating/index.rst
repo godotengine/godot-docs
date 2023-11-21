@@ -19,3 +19,4 @@ path.
 
    upgrading_to_godot_4
    upgrading_to_godot_4.1
+   upgrading_to_godot_4.2
