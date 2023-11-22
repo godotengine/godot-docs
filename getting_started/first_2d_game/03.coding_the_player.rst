@@ -483,7 +483,7 @@ for you. You don't need to change the default settings right now.
 
 .. warning::
 
-.. The issue for this bug is #41283
+    .. The issue for this bug is #41283
 
     If you're using an external text editor (for example, Visual Studio Code),
     a bug currently prevents Godot from doing so. You'll be sent to your external
