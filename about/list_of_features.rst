@@ -641,10 +641,14 @@ XR support (AR and VR)
 
 - Out of the box :ref:`support for OpenXR <doc_setting_up_xr>`.
 
-   - Including support for popular headsets like the Meta Quest and the Valve Index.
+   - Including support for popular desktop headsets like the Valve Index, WMR headsets, and Quest over Link.
 
-- Support for ARKit on iOS out of the box.
-- Support for the OpenVR APIs.
+- Support for :ref:`Android based headsets <doc_deploying_to_android>` using OpenXR through a plugin.
+
+  - Including support for popular stand alone headsets like the Meta Quest 1/2/3 and Pro, Pico 4, Magic Leap 2, and Lynx R1.
+
+- Other devices supported through an XR plugin structure.
+- Various advanced toolkits are available that implement common features required by XR applications.
 
 GUI system
 ----------
