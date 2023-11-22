@@ -478,15 +478,16 @@ be ``RigidBody2D`` nodes, we want the ``body_entered(body: Node2D)`` signal. Thi
 signal will be emitted when a body contacts the player. Click "Connect.." and
 the "Connect a Signal" window appears.
 
-Godot will attempt to create a function with that exact name directly in script
+Godot will create a function with that exact name directly in script
 for you. You don't need to change the default settings right now.
 
 .. warning::
 
-    Normally Godot is meant to automatically create a function for the signal to
-    connect to directly in the script. However, if you're using an external text
-    editor (for example, Visual Studio Code), a bug currently prevents Godot from doing
-    so. You'll be sent to your external editor, but the new function won't be there.
+.. The issue for this bug is #41283
+
+    If you're using an external text editor (for example, Visual Studio Code),
+    a bug currently prevents Godot from doing so. You'll be sent to your external
+    editor, but the new function won't be there.
 
     In this case, you'll need to write the function yourself into the Player's
     script file.
