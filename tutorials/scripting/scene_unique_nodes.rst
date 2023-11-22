@@ -57,7 +57,7 @@ Here are the results of ``get_node()`` calls inside the **Player** script:
 - ``get_node("%Eyes")`` returns the **Eyes** node.
 - ``get_node("%Hilt")`` returns ``null``.
 
-These are the results of ``get_node()`` calls inside the **Blade** script:
+These are the results of ``get_node()`` calls inside the **Sword** script:
 
 - ``get_node("%Eyes")`` returns ``null``.
 - ``get_node("%Hilt")`` returns the **Hilt** node.
