@@ -108,7 +108,7 @@ With correct back-buffer copying, the two spheres blend correctly:
 
 .. image:: img/texscreen_demo2.png
 
-.. warning:
+.. warning::
 
     In 3D, materials that use ``hint_screen_texture`` are considered transparent themselves and
     will not appear in the resulting screen texture of other materials.

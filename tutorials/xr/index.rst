@@ -25,7 +25,7 @@ Advanced topics
    openxr_hand_tracking
    openxr_passthrough
 
-.. note:
-   
+.. note::
+
    Documentation for XR in Godot 4.0 XR is still a work in progress.
    Please check back in the future.
