@@ -32,7 +32,9 @@ Render modes
 +---------------------------------+----------------------------------------------------------------------+
 | **light_only**                  | Only draw on light pass.                                             |
 +---------------------------------+----------------------------------------------------------------------+
-| **skip_vertex_transform**       | VERTEX/NORMAL/etc need to be transformed manually in vertex function.|
+| **skip_vertex_transform**       | VERTEX needs to be transformed manually in vertex function.          |
++---------------------------------+----------------------------------------------------------------------+
+| **world_vertex_coords**         | VERTEX is modified in world coordinates instead of local.            |
 +---------------------------------+----------------------------------------------------------------------+
 
 Built-ins
@@ -117,7 +119,7 @@ is usually:
 +--------------------------------+----------------------------------------------------+
 | in vec2 **TEXTURE_PIXEL_SIZE** | Normalized pixel size of default 2D texture.       |
 |                                | For a Sprite2D with a texture of size 64x32px,     |
-|                                | **TEXTURE_PIXEL_SIZE** = :code:`vec2(1/64, 1/32)`  |
+|                                | **TEXTURE_PIXEL_SIZE** = ``vec2(1/64, 1/32)``      |
 +--------------------------------+----------------------------------------------------+
 | inout vec2 **VERTEX**          | Vertex, in local space.                            |
 +--------------------------------+----------------------------------------------------+
@@ -134,16 +136,17 @@ is usually:
 Fragment built-ins
 ^^^^^^^^^^^^^^^^^^
 
-Certain Nodes (for example, :ref:`Sprite2Ds <class_Sprite2D>`) display a texture by default. However,
-when a custom fragment function is attached to these nodes, the texture lookup needs to be done
-manually. Godot does not provide the texture color in the ``COLOR`` built-in variable; to read
-the texture color for such nodes, use:
+Certain Nodes (for example, :ref:`Sprite2Ds <class_Sprite2D>`) display a texture
+by default. However, when a custom fragment function is attached to these nodes,
+the texture lookup needs to be done manually. Godot provides the texture color
+in the ``COLOR`` built-in variable multiplied by the node's color. To read the
+texture color by itself, you can use:
 
 .. code-block:: glsl
 
   COLOR = texture(TEXTURE, UV);
 
-This differs from the behavior of the built-in normal map. If a normal map is attached, Godot uses
+Similarly, if a normal map is used in the :ref:`CanvasTexture <class_CanvasTexture>`, Godot uses
 it by default and assigns its value to the built-in ``NORMAL`` variable. If you are using a normal
 map meant for use in 3D, it will appear inverted. In order to use it in your shader, you must assign
 it to the ``NORMALMAP`` property. Godot will handle converting it for use in 2D and overwriting ``NORMAL``.
@@ -167,7 +170,7 @@ it to the ``NORMALMAP`` property. Godot will handle converting it for use in 2D 
 +---------------------------------------------+---------------------------------------------------------------+
 | in vec2 **TEXTURE_PIXEL_SIZE**              | Normalized pixel size of default 2D texture.                  |
 |                                             | For a Sprite2D with a texture of size 64x32px,                |
-|                                             | **TEXTURE_PIXEL_SIZE** = :code:`vec2(1/64, 1/32)`             |
+|                                             | **TEXTURE_PIXEL_SIZE** = ``vec2(1/64, 1/32)``                 |
 +---------------------------------------------+---------------------------------------------------------------+
 | in bool **AT_LIGHT_PASS**                   | Always ``false``.                                             |
 +---------------------------------------------+---------------------------------------------------------------+
@@ -198,8 +201,8 @@ it to the ``NORMALMAP`` property. Godot will handle converting it for use in 2D 
 | inout vec3 **LIGHT_VERTEX**                 | Same as ``VERTEX`` but can be written to alter lighting.      |
 |                                             | Z component represents height.                                |
 +---------------------------------------------+---------------------------------------------------------------+
-| inout vec4 **COLOR**                        | Color from vertex function and output fragment color. If      |
-|                                             | unused, will be set to **TEXTURE** color.                     |
+| inout vec4 **COLOR**                        | Color from vertex function multiplied by the **TEXTURE**      |
+|                                             | color. Also output color value.                               |
 +---------------------------------------------+---------------------------------------------------------------+
 
 Light built-ins
@@ -212,7 +215,10 @@ words, Godot no longer draws the object again for each light.
 Use render_mode ``unshaded`` if you do not want the light processor function to
 run. Use render_mode ``light_only`` if you only want to see the impact of
 lighting on an object; this can be useful when you only want the object visible
-where it is covered by light.
+where it is covered by light. 
+
+If you define a light function it will replace the built in light function,
+even if your light function is empty.
 
 Below is an example of a light shader that takes a CanvasItem's normal map into account:
 
@@ -232,22 +238,21 @@ Below is an example of a light shader that takes a CanvasItem's normal map into 
 +----------------------------------+------------------------------------------------------------------------------+
 | in vec3 **NORMAL**               | Input Normal.                                                                |
 +----------------------------------+------------------------------------------------------------------------------+
-| in vec4 **COLOR**                | Input Color.                                                                 |
-|                                  | This is the output of the fragment function with final modulation applied.   |
+| in vec4 **COLOR**                | Input Color. This is the output of the fragment function.                    |
 +----------------------------------+------------------------------------------------------------------------------+
 | in vec2 **UV**                   | UV from vertex function, equivalent to the UV in the fragment function.      |
 +----------------------------------+------------------------------------------------------------------------------+
 | sampler2D **TEXTURE**            | Current texture in use for CanvasItem.                                       |
 +----------------------------------+------------------------------------------------------------------------------+
-| in vec2 **TEXTURE_PIXEL_SIZE**   | Normalized pixel size of default 2D texture.                                 |
-|                                  | For a Sprite2D with a texture of size 64x32px,                               |
-|                                  | **TEXTURE_PIXEL_SIZE** = :code:`vec2(1/64, 1/32)`                            |
+| in vec2 **TEXTURE_PIXEL_SIZE**   | Normalized pixel size of **TEXTURE**.                                        |
+|                                  | For a Sprite2D with a **TEXTURE** of size 64x32px,                           |
+|                                  | **TEXTURE_PIXEL_SIZE** = ``vec2(1/64, 1/32)``                                |
 +----------------------------------+------------------------------------------------------------------------------+
 | in vec2 **SCREEN_UV**            | Screen UV coordinate for current pixel.                                      |
 +----------------------------------+------------------------------------------------------------------------------+
 | in vec2 **POINT_COORD**          | UV for Point Sprite.                                                         |
 +----------------------------------+------------------------------------------------------------------------------+
-| in vec4 **LIGHT_COLOR**          | Color of Light.                                                              |
+| in vec4 **LIGHT_COLOR**          | Color of Light multiplied by Light's texture.                                |
 +----------------------------------+------------------------------------------------------------------------------+
 | in float **LIGHT_ENERGY**        | Energy multiplier of Light.                                                  |
 +----------------------------------+------------------------------------------------------------------------------+
@@ -260,8 +265,7 @@ Below is an example of a light shader that takes a CanvasItem's normal map into 
 +----------------------------------+------------------------------------------------------------------------------+
 | in vec3 **LIGHT_VERTEX**         | Pixel position, in screen space as modified in the fragment function.        |
 +----------------------------------+------------------------------------------------------------------------------+
-| inout vec4 **LIGHT**             | Value from the Light texture and output color. Can be modified. If not used, |
-|                                  | the light function is ignored.                                               |
+| inout vec4 **LIGHT**             | Output color for this Light.                                                 |
 +----------------------------------+------------------------------------------------------------------------------+
 | in vec4 **SPECULAR_SHININESS**   | Specular shininess, as set in the object's texture.                          |
 +----------------------------------+------------------------------------------------------------------------------+
@@ -280,14 +284,14 @@ present in the scene with the **SDF Collision** property enabled (which is the
 default). See the :ref:`2D lights and shadows <doc_2d_lights_and_shadows_setting_up_shadows>`
 documentation for more information.
 
-+-----------------------------------------------+----------------------------------------+
-| Function                                      | Description                            |
-+===============================================+========================================+
-| float **texture_sdf** (vec2 sdf_pos)          | Performs an SDF texture lookup.        |
-+-----------------------------------------------+----------------------------------------+
-| vec2 **texture_sdf_normal** (vec2 sdf_pos)    | Performs an SDF normal texture lookup. |
-+-----------------------------------------------+----------------------------------------+
-| vec2 **sdf_to_screen_uv** (vec2 sdf_pos)      | Converts a SDF to screen UV.           |
-+-----------------------------------------------+----------------------------------------+
-| vec2 **screen_uv_to_sdf** (vec2 uv)           | Converts screen UV to a SDF.           |
-+-----------------------------------------------+----------------------------------------+
++-----------------------------------------------+-------------------------------------------+
+| Function                                      | Description                               |
++===============================================+===========================================+
+| float **texture_sdf** (vec2 sdf_pos)          | Performs an SDF texture lookup.           |
++-----------------------------------------------+-------------------------------------------+
+| vec2 **texture_sdf_normal** (vec2 sdf_pos)    | Calculates a normal from the SDF texture. |
++-----------------------------------------------+-------------------------------------------+
+| vec2 **sdf_to_screen_uv** (vec2 sdf_pos)      | Converts a SDF to screen UV.              |
++-----------------------------------------------+-------------------------------------------+
+| vec2 **screen_uv_to_sdf** (vec2 uv)           | Converts screen UV to a SDF.              |
++-----------------------------------------------+-------------------------------------------+
