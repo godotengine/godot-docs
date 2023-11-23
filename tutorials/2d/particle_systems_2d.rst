@@ -33,8 +33,8 @@ While GPUParticles2D is configured via a :ref:`class_ParticleProcessMaterial`
 node properties in CPUParticles2D (with the exception of the trail settings).
 
 You can convert a GPUParticles2D node into a CPUParticles2D node by clicking on
-the node in the inspector, and selecting **Particles > Convert to
-CPUParticles2D** in the toolbar at the top of the 3D editor viewport.
+the node in the inspector, selecting the 2D viewport, and selecting
+**GPUParticles2D > Convert to CPUParticles2D** in the viewport toolbar.
 
 .. image:: img/particles_convert.png
 
