@@ -116,7 +116,14 @@ supported_languages = {
     "zh_TW": "Godot Engine %s 正體中文 (台灣) 文件",
 }
 
+# RTD normalized their language codes to ll-cc (e.g. zh-cn),
+# but Sphinx did not and still uses ll_CC (e.g. zh_CN).
+# `language` is the Sphinx configuration so it needs to be converted back.
 language = os.getenv("READTHEDOCS_LANGUAGE", "en")
+if "-" in language:
+    (lang_name, lang_country) = language.split("-")
+    language = lang_name + "_" + lang_country.upper()
+
 if not language in supported_languages.keys():
     print("Unknown language: " + language)
     print("Supported languages: " + ", ".join(supported_languages.keys()))
@@ -126,6 +133,7 @@ if not language in supported_languages.keys():
     language = "en"
 
 is_i18n = tags.has("i18n")  # noqa: F821
+print("Build language: {}, i18n tag: {}".format(language, is_i18n))
 
 exclude_patterns = ["_build"]
 
