@@ -13,7 +13,7 @@ Hence it is entirely possible (if not a little cumbersome) to exclusively use th
 Communicating with the NavigationServer
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To work with the NavigationServer means to prepare parameters for a **query** that can be send to the NavigationServer for updates or requesting data.
+To work with the NavigationServer means to prepare parameters for a **query** that can be sent to the NavigationServer for updates or requesting data.
 
 To reference the internal NavigationServer objects like maps, regions and agents RIDs are used as identification numbers.
 Every navigation related node in the scene tree has a function that returns the RID for this node.
