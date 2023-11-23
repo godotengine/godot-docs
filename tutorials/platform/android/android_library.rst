@@ -1,6 +1,6 @@
 .. _doc_android_library:
 
-Godot Android Library
+Godot Android library
 =====================
 
 The Godot Engine for Android platforms is designed to be used as an `Android library <https://developer.android.com/studio/projects/android-library>`_.
