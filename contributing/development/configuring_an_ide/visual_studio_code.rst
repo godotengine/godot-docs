@@ -80,7 +80,7 @@ To run and debug the project you need to create a new configuration in the ``lau
       "name": "Launch Project",
       "type": "lldb",
       "request": "launch",
-      // Change to godot.linuxbsd.tools.64.llvm for llvm-based builds.
+      // Change to godot.linuxbsd.editor.dev.x86_64.llvm for llvm-based builds.
       "program": "${workspaceFolder}/bin/godot.linuxbsd.editor.dev.x86_64",
       // Change the arguments below for the project you want to test with.
       // To run the project instead of editing it, remove the "--editor" argument.
@@ -97,7 +97,7 @@ To run and debug the project you need to create a new configuration in the ``lau
       "name": "Launch Project",
       "type": "cppdbg",
       "request": "launch",
-      // Change to godot.linuxbsd.tools.64.llvm for llvm-based builds.
+      // Change to godot.linuxbsd.editor.dev.x86_64.llvm for llvm-based builds.
       "program": "${workspaceFolder}/bin/godot.linuxbsd.editor.dev.x86_64",
       // Change the arguments below for the project you want to test with.
       // To run the project instead of editing it, remove the "--editor" argument.
