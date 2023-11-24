@@ -368,21 +368,21 @@ loaded for each platform and the entry function for the module. It is called ``g
     [libraries]
 
     macos.debug = "res://bin/libgdexample.macos.template_debug.framework"
-    macos.release = "res://bin/libgdexample.macos.template_release.framework"
+    macos = "res://bin/libgdexample.macos.template_release.framework"
     windows.debug.x86_32 = "res://bin/libgdexample.windows.template_debug.x86_32.dll"
-    windows.release.x86_32 = "res://bin/libgdexample.windows.template_release.x86_32.dll"
+    windows.x86_32 = "res://bin/libgdexample.windows.template_release.x86_32.dll"
     windows.debug.x86_64 = "res://bin/libgdexample.windows.template_debug.x86_64.dll"
-    windows.release.x86_64 = "res://bin/libgdexample.windows.template_release.x86_64.dll"
+    windows.x86_64 = "res://bin/libgdexample.windows.template_release.x86_64.dll"
     linux.debug.x86_64 = "res://bin/libgdexample.linux.template_debug.x86_64.so"
-    linux.release.x86_64 = "res://bin/libgdexample.linux.template_release.x86_64.so"
+    linux.x86_64 = "res://bin/libgdexample.linux.template_release.x86_64.so"
     linux.debug.arm64 = "res://bin/libgdexample.linux.template_debug.arm64.so"
-    linux.release.arm64 = "res://bin/libgdexample.linux.template_release.arm64.so"
+    linux.arm64 = "res://bin/libgdexample.linux.template_release.arm64.so"
     linux.debug.rv64 = "res://bin/libgdexample.linux.template_debug.rv64.so"
-    linux.release.rv64 = "res://bin/libgdexample.linux.template_release.rv64.so"
+    linux.rv64 = "res://bin/libgdexample.linux.template_release.rv64.so"
     android.debug.x86_64 = "res://bin/libgdexample.android.template_debug.x86_64.so"
-    android.release.x86_64 = "res://bin/libgdexample.android.template_release.x86_64.so"
+    android.x86_64 = "res://bin/libgdexample.android.template_release.x86_64.so"
     android.debug.arm64 = "res://bin/libgdexample.android.template_debug.arm64.so"
-    android.release.arm64 = "res://bin/libgdexample.android.template_release.arm64.so"
+    android.arm64 = "res://bin/libgdexample.android.template_release.arm64.so"
 
 This file contains a ``configuration`` section that controls the entry function of the module.
 You should also set the minimum compatible Godot version with ``compatability_minimum``,
