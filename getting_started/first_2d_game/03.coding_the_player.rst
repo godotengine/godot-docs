@@ -372,14 +372,29 @@ Inspector tab to see the list of signals the player can emit:
 Notice our custom "hit" signal is there as well! Since our enemies are going to
 be ``RigidBody2D`` nodes, we want the ``body_entered(body: Node2D)`` signal. This
 signal will be emitted when a body contacts the player. Click "Connect.." and
-the "Connect a Signal" window appears. We don't need to change any of these
-settings so click "Connect" again. Godot will automatically create a function in
-your player's script.
+the "Connect a Signal" window appears.
+
+Godot will create a function with that exact name directly in script
+for you. You don't need to change the default settings right now.
+
+.. warning::
+
+    .. The issue for this bug is #41283
+
+    If you're using an external text editor (for example, Visual Studio Code),
+    a bug currently prevents Godot from doing so. You'll be sent to your external
+    editor, but the new function won't be there.
+
+    In this case, you'll need to write the function yourself into the Player's
+    script file.
 
 .. image:: img/player_signal_connection.webp
 
-Note the green icon indicating that a signal is connected to this function. Add
-this code to the function:
+Note the green icon indicating that a signal is connected to this function; this does
+not mean the function exists, only that the signal will attempt to connect to a function
+with that name, so double-check that the spelling of the function matches exactly!
+
+Next, add this code to the function:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
