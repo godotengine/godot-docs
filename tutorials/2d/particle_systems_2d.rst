@@ -36,7 +36,7 @@ You can convert a GPUParticles2D node into a CPUParticles2D node by clicking on
 the node in the inspector, selecting the 2D viewport, and selecting
 **GPUParticles2D > Convert to CPUParticles2D** in the viewport toolbar.
 
-.. image:: img/particles_convert.png
+.. image:: img/particles_convert.webp
 
 The rest of this tutorial is going to use the GPUParticles2D node. First, add a GPUParticles2D
 node to your scene. After creating that node you will notice that only a white dot was created,
