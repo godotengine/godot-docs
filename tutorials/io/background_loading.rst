@@ -29,7 +29,7 @@ You can check the status with
 Progress can be obtained by passing an array variable via progress which will return
 a one element array containing the percentage.
 
-Finally, you retrieved loaded resources by calling
+Finally, you retrieve loaded resources by calling
 :ref:`ResourceLoader.load_threaded_get <class_ResourceLoader_method_load_threaded_get>`.
 
 Once you call ``load_threaded_get()``, either the resource finished loading in
