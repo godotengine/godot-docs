@@ -104,11 +104,44 @@ objects. Rendering at a higher framerate will allow TAA to converge faster,
 therefore making those ghosting artifacts less visible.
 
 Temporal antialiasing can be enabled in the Project Settings by changing the
-value of the **Rendering > Anti Aliasing > Quality > Use Taa** setting.
+value of the **Rendering > Anti Aliasing > Quality > Use TAA** setting.
 
 Comparison between no antialiasing (left) and TAA (right):
 
 .. image:: img/antialiasing_taa.webp
+
+.. _doc_3d_antialiasing_fsr2:
+
+AMD FidelityFX Super Resolution 2.2 (FSR2)
+------------------------------------------
+
+Since Godot 4.2, there is built-in support for
+`AMD FidelityFX Super Resolution <https://www.amd.com/en/technologies/fidelityfx-super-resolution>`__
+2.2. This is an :ref:`upscaling method <doc_resolution_scaling>`
+compatible with all recent GPUs from any vendor. FSR2 is normally designed to
+improve performance by lowering the internal 3D rendering resolution,
+then upscaling to the output resolution.
+
+However, unlike FSR1, FSR2 also provides temporal antialiasing. This means FSR2
+can be used at native resolution for high-quality antialiasing, with the input
+resolution being equal to the output resolution. In this situation, enabling
+FSR2 will actually *decrease* performance, but it will significantly improve
+rendering quality.
+
+Using FSR2 at native resolution is more demanding than using TAA at native
+resolution, so its use is only recommended if you have significant GPU headroom.
+On the bright side, FSR2 provides better antialiasing coverage with less
+blurriness compared to TAA, especially in motion.
+
+Comparison between no antialiasing (left) and FSR2 at native resolution (right):
+
+.. image:: img/antialiasing_fsr2_native.webp
+
+..  note::
+
+    By default, the **FSR Sharpness** project setting is set to ``0.2`` (higher
+    values result in less sharpening). For the purposes of comparison, FSR
+    sharpening has been disabled by setting it to ``2.0`` on the above screenshot.
 
 .. _doc_3d_antialiasing_fxaa:
 
@@ -158,7 +191,9 @@ Supersample antialiasing is performed by increasing the **Rendering > Scaling 3D
 > Scale** advanced project setting above ``1.0`` while ensuring
 **Rendering > Scaling 3D > Mode** is set to **Bilinear** (the default).
 Since the scale factor is defined per-axis, a scale factor of ``1.5`` will result
-in 2.25× SSAA while a scale factor of ``2.0`` will result in 4× SSAA.
+in 2.25× SSAA while a scale factor of ``2.0`` will result in 4× SSAA. Since Godot
+uses the hardware's own bilinear filtering to perform the downsampling, the result
+will look crisper at integer scale factors (namely, ``2.0``).
 
 Comparison between no antialiasing (left) and various SSAA levels (right):
 
@@ -223,7 +258,9 @@ For projects with a photorealistic art direction, TAA is generally the most
 suitable option. While TAA can introduce ghosting artifacts, there is no other
 technique that combats specular aliasing as well as TAA does. The screen-space
 roughness limiter helps a little, but is far less effective against specular
-aliasing overall.
+aliasing overall. If you have spare GPU power, you can use FSR2 at native
+resolution for a better-looking form of temporal antialiasing compared to
+standard TAA.
 
 For projects with a low amount of reflective surfaces (such as a cartoon
 artstyle), MSAA can work well. MSAA is also a good option if avoiding blurriness
