@@ -188,6 +188,10 @@ and create a precompiled version of it using this:
     var shaderBytecode = shaderFile.GetSpirV();
     var shader = rd.ShaderCreateFromSpirV(shaderBytecode);
 
+.. warning::
+
+    Local RenderingDevices cannot be debugged using tools such as
+    `RenderDoc <https://renderdoc.org/>`__.
 
 Provide input data
 ------------------
