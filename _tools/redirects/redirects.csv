@@ -1,5 +1,6 @@
 source,destination
 /about/index.html,/index.html
+/about/troubleshooting.html,/tutorials/troubleshooting.html
 /classes/_classes.html,/classes/
 /community/contributing/best_practices_for_engine_contributors.html,/contributing/development/best_practices_for_engine_contributors.html
 /community/contributing/bisecting_regressions.html,/contributing/workflow/bisecting_regressions.html
