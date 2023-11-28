@@ -378,7 +378,7 @@ going to create a basic rig. Right-click on the ``Main`` node again and select
 
 |image3|
 
-Notice the *Preview* checkbox that appears in the top-left when you have the
+At the very top of the editor window, there are 4 Buttons: *2D*, *3D*, *Script*, and *AssetLib*. If you're still in the *Script* view after editing the ``Player.gd`` script, now is the time to switch back to the *3D* view. Notice the *Preview* checkbox that appears in the top-left when you have the
 *Camera* selected. You can click it to preview the in-game camera projection.
 
 |image4|
