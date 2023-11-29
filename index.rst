@@ -1,4 +1,4 @@
-Godot Docs – *master* branch
+Godot Docs – *4.2* branch
 ============================
 
 .. only:: not i18n
@@ -83,7 +83,7 @@ the ``GodotEngine.epub`` file in an e-book reader application.
    about/faq
    about/complying_with_licenses
    about/release_policy
-   about/docs_changelog 
+   about/docs_changelog
 
 .. toctree::
    :hidden:
