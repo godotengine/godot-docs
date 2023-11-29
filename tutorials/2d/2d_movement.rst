@@ -262,7 +262,7 @@ on the screen will cause the player to move to the target location.
         public override void _PhysicsProcess(double delta)
         {
             Velocity = Position.DirectionTo(_target) * Speed;
-            // LookAt(target);
+            // LookAt(_target);
             if (Position.DistanceTo(_target) > 10)
             {
                 MoveAndSlide();
