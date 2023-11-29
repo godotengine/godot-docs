@@ -27,11 +27,11 @@ In addition, you can always access signal names associated with a node type thro
 
     await ToSignal(GetTree(), SceneTree.SignalName.ProcessFrame);
 
-.. note::
+.. warning::
 
-    Godot will take care of disconnecting all the signals you connected through events when your
-    nodes are freed. Meaning that: as you don't need to call ``Disconnect`` on all signals you used
-    ``Connect`` on, you don't need to ``-=`` all the signals you used ``+=`` on.
+    While all engine signals connected as events are automatically disconnected when nodes are freed, custom
+    signals aren't. Meaning that: you will need to manually disconnect (using ``-=``) all the custom signals you
+    connected as C# events (using ``+=``).
 
 Custom signals as C# events
 ---------------------------
@@ -89,7 +89,7 @@ In contrast with other C# events, you cannot use ``Invoke`` to raise events tied
 
 Signals support arguments of any :ref:`Variant-compatible <doc_c_sharp_variant>` type.
 
-Consequently, any ``Node`` or ``Reference`` will be compatible automatically, but custom data objects will need
+Consequently, any ``Node`` or ``RefCounted`` will be compatible automatically, but custom data objects will need
 to inherit from ``GodotObject`` or one of its subclasses.
 
 .. code-block:: csharp
