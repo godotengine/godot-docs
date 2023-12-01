@@ -1,3 +1,5 @@
+.. _doc_c_sharp_diagnostics:
+
 C# diagnostics
 ==============
 
