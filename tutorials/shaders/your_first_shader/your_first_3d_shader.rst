@@ -292,7 +292,7 @@ the light is affecting the terrain as if it were a flat plane. This is because
 the light shader uses the normals from the :ref:`Mesh <class_mesh>` to calculate
 light.
 
-.. note:: If you don't see OmniLight3D<class_OmniLight3D> affecting your mesh,
+.. note:: If you don't see :ref:`OmniLight3D <class_OmniLight3D>` affecting your mesh,
           delete the ``light()`` function from the shader.
 
 The normals are stored in the Mesh, but we are changing the shape of the Mesh in
