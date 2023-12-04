@@ -85,6 +85,8 @@ tab. In the same way you created the movement input actions, create a new
 input action called ``start_game`` and add a key mapping for the :kbd:`Enter`
 key.
 
+.. image:: img/input-mapping-start_game.webp
+
 Now would be a good time to add controller support if you have one available.
 Attach or pair your controller and then under each input action that you wish
 to add controller support for, click on the "+" button and press the corresponding
