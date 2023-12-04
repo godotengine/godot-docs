@@ -292,9 +292,6 @@ the light is affecting the terrain as if it were a flat plane. This is because
 the light shader uses the normals from the :ref:`Mesh <class_mesh>` to calculate
 light.
 
-.. note:: If you don't see :ref:`OmniLight3D <class_OmniLight3D>` affecting your mesh,
-          delete the ``light()`` function from the shader.
-
 The normals are stored in the Mesh, but we are changing the shape of the Mesh in
 the shader, so the normals are no longer correct. To fix this, we can
 recalculate the normals in the shader or use a normal texture that corresponds
@@ -367,8 +364,8 @@ We can even drag the light around and the lighting will update automatically.
 
 .. image:: img/normalmap2.png
 
-Here is the full code for this tutorial. You can see it is not very long as
-Godot handles most of the difficult stuff for you.
+.. note:: The default :ref:`FastNoiseLite <class_fastnoiselite>` implementation in Godot changed in Godot 4. If you want
+your mesh to look smoother, try lowering the number of Octaves in :ref:`FastNoiseLite <class_fastnoiselite>` of your normal map.
 
 .. code-block:: glsl
 
