@@ -246,6 +246,17 @@ $(document).ready(() => {
     Documentation.hideSearchWords();
   }
 
+  window.addEventListener('keydown', function(event) {
+    if (event.key === '/') {
+        var searchField = document.querySelector('#rtd-search-form input[type=text]');
+        if (document.activeElement !== searchField) {
+            searchField.focus();
+            searchField.select();
+            event.preventDefault();
+        }
+    }
+  });
+
   // Initialize handlers for page scrolling and our custom sidebar.
   const mediaQuery = window.matchMedia('only screen and (min-width: 769px)');
 
