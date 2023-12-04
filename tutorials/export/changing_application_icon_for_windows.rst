@@ -139,3 +139,25 @@ You can now export the project. If it worked correctly, you should see this:
     If your icon isn't showing up properly, on Windows 10, try clearing the icon
     cache. To do so, open the **Run** dialog and enter ``ie4uinit.exe
     -ClearIconCache`` or ``ie4uinit.exe -show``.
+
+You can also create a .bat file and paste the following lines in it and then run it
+as an administrator:
+
+.. code-block:: none
+
+    taskkill /f /im explorer.exe
+    cd /d %userprofile%\AppData\Local
+    del IconCache.db /a
+    start explorer.exe
+
+`Source <https://superuser.com/a/1095901>`_
+
+You could also try running Disk Cleanup and delete Thumbnails.
+
+Make sure that your file explorer, any folders etc. are all closed
+when you do all of this and you may have to restart your computer
+after you do all of these steps to see the effects.
+
+You may have to do these steps as there have been issues with the
+order of the sizes in the commands related to this code above:
+``magick convert icon.png -define icon:auto-resize=16,32,48,64,128,256 icon.ico``
