@@ -396,6 +396,9 @@ source,destination
 /tutorials/plugins/gdnative/gdnative-c-example.html,/tutorials/scripting/gdnative/gdnative_c_example.html
 /tutorials/plugins/gdnative/gdnative-cpp-example.html,/tutorials/scripting/gdnative/gdnative_cpp_example.html
 /tutorials/plugins/gdnative/index.html,/tutorials/scripting/gdnative/index.html
+/tutorials/scripting/gdextension/gdextension_cpp_example.html,/tutorials/gdextension/gdextension_cpp_example.html
+/tutorials/scripting/gdextension/index.html,/tutorials/gdextension/index.html
+/tutorials/scripting/gdextension/what_is_gdextension.html,/tutorials/gdextension/what_is_gdextension.html
 /tutorials/scripting/gdnative/gdnative_c_example.html,/tutorials/plugins/gdextension/gdextension_cpp_example.html
 /tutorials/scripting/gdnative/gdnative_cpp_example.html,/tutorials/plugins/gdextension/gdextension_cpp_example.html
 /tutorials/scripting/gdnative/index.html,/tutorials/scripting/gdextension/index.html
