@@ -111,16 +111,24 @@ which will override ``multiplayer`` for the node at that path and all of its des
 This allows sibling nodes to be configured with different peers, which makes it possible to run a server
 and a client simultaneously in one instance of Godot.
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     # By default, these expressions are interchangeable.
     multiplayer # Get the MultiplayerAPI object configured for this node.
     get_tree().get_multiplayer() # Get the default MultiplayerAPI object.
 
+ .. code-tab:: csharp
+
+    // By default, these expressions are interchangeable.
+    MultiplayerAPI api = Multiplayer; // Get the MultiplayerAPI object configured for this node.
+    MultiplayerAPI api = GetTree().GetMultiplayer(); // Get the default MultiplayerAPI object.
+
 To initialize networking, a ``MultiplayerPeer`` object must be created, initialized as a server or client,
 and passed to the ``MultiplayerAPI``.
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     # Create client.
     var peer = ENetMultiplayerPeer.new()
@@ -132,11 +140,28 @@ and passed to the ``MultiplayerAPI``.
     peer.create_server(PORT, MAX_CLIENTS)
     multiplayer.multiplayer_peer = peer
 
+ .. code-tab:: csharp
+
+    // Create client.
+    var peer = new ENetMultiplayerPeer();
+    peer.CreateClient(IPAddress, Port);
+    Multiplayer.MultiplayerPeer = peer;
+
+    // Create server.
+    var peer = new ENetMultiplayerPeer();
+    peer.CreateServer(Port, MaxClients);
+    Multiplayer.MultiplayerPeer = peer;
+
 To terminate networking:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     multiplayer.multiplayer_peer = null
+
+ .. code-tab:: csharp
+
+    Multiplayer.MultiplayerPeer = null;
 
 .. warning::
 
@@ -163,15 +188,25 @@ The rest are only emitted on clients:
 
 To get the unique ID of the associated peer:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     multiplayer.get_unique_id()
 
+ .. code-tab:: csharp
+
+    int peerId = Multiplayer.GetUniqueId();
+
 To check whether the peer is server or client:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     multiplayer.is_server()
+
+ .. code-tab:: csharp
+
+    if (Multiplayer.IsServer())
 
 Remote procedure calls
 ----------------------
@@ -180,7 +215,8 @@ Remote procedure calls, or RPCs, are functions that can be called on other peers
 before a function definition. To call an RPC, use ``Callable``'s method ``rpc()`` to call in every peer, or ``rpc_id()`` to
 call in a specific peer.
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     func _ready():
         if multiplayer.is_server():
@@ -189,6 +225,20 @@ call in a specific peer.
     @rpc
     func print_once_per_client():
         print("I will be printed to the console once per each connected client.")
+
+ .. code-tab:: csharp
+
+    public override void _Ready()
+    {
+        if (Multiplayer.IsServer())
+            Rpc(MethodName.PrintOncePerClient);
+    }
+
+    [Rpc]
+    public void PrintOncePerClient()
+    {
+        GD.Print("I will be printed to the console once per each connected client.");
+    }
 
 RPCs will not serialize objects or callables.
 
@@ -208,9 +258,15 @@ must have the same name. When using ``add_child()`` for nodes which are expected
 
 The annotation can take a number of arguments, which have default values. ``@rpc`` is equivalent to:
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     @rpc("authority", "call_remote", "unreliable", 0)
+
+ .. code-tab:: csharp
+
+    [Rpc(MultiplayerApi.RpcMode.Authority, TransferMode = MultiplayerPeer.TransferModeEnum.Unreliable,
+        CallLocal = false, TransferChannel = 0)]
 
 The parameters and their functions are as follows:
 
@@ -236,7 +292,8 @@ The first 3 can be passed in any order, but ``transfer_channel`` must always be 
 
 The function ``multiplayer.get_remote_sender_id()`` can be used to get the unique id of an rpc sender, when used within the function called by rpc.
 
-::
+.. tabs::
+ .. code-tab:: gdscript GDScript
 
     func _on_some_input(): # Connected to some input.
         transfer_some_input.rpc_id(1) # Send the input only to the server.
@@ -248,6 +305,23 @@ The function ``multiplayer.get_remote_sender_id()`` can be used to get the uniqu
         # The server knows who sent the input.
         var sender_id = multiplayer.get_remote_sender_id()
         # Process the input and affect game logic.
+
+ .. code-tab:: csharp
+
+    public void OnSomeInput() // Connected to some input.
+    {
+        RpcId(1, MethodName.TransferSomeInput); // Send the input only to the server.
+    }
+
+
+    // CallLocal is required if the server is also a player.
+    [Rpc(MultiplayerApi.RpcMode.AnyPeer, TransferMode = MultiplayerPeer.TransferModeEnum.Reliable, CallLocal = true)]
+    public void TransferSomeInput()
+    {
+        // The server knows who sent the input.
+        int senderId = Multiplayer.GetRemoteSenderId();
+        // Process the input and affect game logic.
+    }
 
 Channels
 --------
