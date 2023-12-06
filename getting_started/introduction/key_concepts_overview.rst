@@ -62,7 +62,7 @@ The scene tree
 
 All your game's scenes come together in the **scene tree**, literally a tree of
 scenes. And as scenes are trees of nodes, the scene tree also is a tree of
-nodes. But it's easier to think of your game in terms of scenes as they can
+scenes. But it's easier to think of your game in terms of scenes as they can
 represent characters, weapons, doors, or your user interface.
 
 .. image:: img/key_concepts_scene_tree.webp
