@@ -80,26 +80,26 @@ on GitHub.
 +--------------+----------------------+--------------------------------------------------------------------------+
 | **Version**  | **Release date**     | **Support level**                                                        |
 +--------------+----------------------+--------------------------------------------------------------------------+
-| Godot 4.2    | November 2023        | |unstable| *Development.* Receives new features, usability and           |
+| Godot 4.3    | April 2024           | |unstable| *Development.* Receives new features, usability and           |
 | (`master`)   | (estimate)           | performance improvements, as well as bug fixes, while under development. |
++--------------+----------------------+--------------------------------------------------------------------------+
+| Godot 4.2    | November 2023        | |supported| Receives fixes for bugs and security issues, as well as      |
+|              |                      | patches that enable platform support.                                    |
 +--------------+----------------------+--------------------------------------------------------------------------+
 | Godot 4.1    | July 2023            | |supported| Receives fixes for bugs and security issues, as well as      |
 |              |                      | patches that enable platform support.                                    |
 +--------------+----------------------+--------------------------------------------------------------------------+
-| Godot 4.0    | March 2023           | |supported| Receives fixes for bugs and security issues, as well as      |
-|              |                      | patches that enable platform support.                                    |
+| Godot 4.0    | March 2023           | |eol| No longer supported (last update: 4.0.4).                          |
 +--------------+----------------------+--------------------------------------------------------------------------+
-| Godot 3.6    | Q3 2023 (estimate)   | |supported| *Beta.* Receives new features, usability and performance     |
+| Godot 3.6    | Q1 2024 (estimate)   | |supported| *Beta.* Receives new features, usability and performance     |
 | (`3.x`, LTS) |                      | improvements, as well as bug fixes, while under development.             |
 +--------------+----------------------+--------------------------------------------------------------------------+
 | Godot 3.5    | August 2022          | |supported| Receives fixes for bugs and security issues, as well as      |
 |              |                      | patches that enable platform support.                                    |
 +--------------+----------------------+--------------------------------------------------------------------------+
-| Godot 3.4    | November 2021        | |eol| No longer supported, as fully superseded by the compatible 3.5     |
-|              |                      | release (last update: 3.4.5).                                            |
+| Godot 3.4    | November 2021        | |eol| No longer supported (last update: 3.4.5).                          |
 +--------------+----------------------+--------------------------------------------------------------------------+
-| Godot 3.3    | April 2021           | |eol| No longer supported, as fully superseded by the compatible 3.4     |
-|              |                      | release (last update: 3.3.4).                                            |
+| Godot 3.3    | April 2021           | |eol| No longer supported (last update: 3.3.4).                          |
 +--------------+----------------------+--------------------------------------------------------------------------+
 | Godot 3.2    | January 2020         | |eol| No longer supported (last update: 3.2.3).                          |
 +--------------+----------------------+--------------------------------------------------------------------------+
