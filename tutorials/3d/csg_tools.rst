@@ -18,7 +18,7 @@ Interior environments can be created by using inverted primitives.
           extruded 2D polygons can be used with the CSGPolygon3D node).
 
           If you're looking for an easy to use level design tool for a project,
-          you may want to use `Qodot <https://github.com/Shfty/qodot-plugin>`__
+          you may want to use `Qodot <https://github.com/QodotPlugin/Qodot>`__
           instead. It lets you design levels using
           `TrenchBroom <https://kristianduske.com/trenchbroom/>`__ and import
           them in Godot.
