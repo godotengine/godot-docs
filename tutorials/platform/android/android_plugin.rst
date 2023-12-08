@@ -354,11 +354,11 @@ For example::
         else:
             printerr("Initialization error")
 
-Support using the gdextension functionality in the Godot Editor
+Support using the GDExtension functionality in the Godot Editor
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-If planning to use the gdextension functionality in the Godot Editor, it is recommended that the
-gdextension's native binaries are compiled not just for Android, but also for the OS onto which
+If planning to use the GDExtension functionality in the Godot Editor, it is recommended that the
+GDExtension's native binaries are compiled not just for Android, but also for the OS onto which
 developers / users intend to run the Godot Editor. Not doing so may prevent developers /
 users from writing code that accesses the plugin from within the Godot Editor.
 
