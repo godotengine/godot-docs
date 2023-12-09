@@ -3,6 +3,8 @@
 Using navigation meshes
 =======================
 
+.. image:: img/nav_meshes.webp
+
 2D and 3D versions of the navigation mesh are available as
 :ref:`NavigationPolygon<class_NavigationPolygon>` and
 :ref:`NavigationMesh<class_NavigationMesh>`  respectively.
@@ -17,254 +19,333 @@ Navigation meshes are the only things considered when doing pathfinding, e.g. vi
 If you need to take other data (like visuals for example) into account when doing pathfinding, you need to adapt your navigation meshes accordingly.
 The process of factoring in navigation restrictions in navigation meshes is commonly referred to as navigation mesh baking.
 
+.. figure:: img/nav_mesh_vs_physics.webp
+   :align: center
+   :alt: Navigation mesh polygon convex vs concave comparison
+
+   A navigation mesh describes a surface that an agent can stand on safely with its center compared to physics shapes that describe outer collision bounds.
+
 If you experience clipping or collision problems while following navigation paths, always remember that you need to tell the navigation system what your intentions are through an appropriate navigation mesh.
 By itself the navigation system will never know "this is a tree / rock / wall collision shape or visual mesh" because it only knows that "here I was told I can path safely because it is on a navigation mesh".
 
 .. _doc_navigation_navmesh_baking:
 
-Creating 2D navigation meshes
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Navigation mesh baking can be done either by using a :ref:`NavigationRegion2D<class_NavigationRegion2D>` or :ref:`NavigationRegion3D<class_NavigationRegion3D>`, or by using the 
+:ref:`NavigationServer2D<class_NavigationServer2D>` and :ref:`NavigationServer3D<class_NavigationServer3D>` API directly.
 
-Navigation meshes in the 2D editor are created with the help of the NavigationPolygon draw tools
-that appear in the top bar of the editor when a NavigationRegion2D is selected.
+.. _doc_navigation_using_navigationmeshes_baking_navigation_mesh_with_navigationregion:
 
-.. image:: img/nav_polydrawtool.png
+Baking a navigation mesh with a NavigationRegion
+------------------------------------------------
 
-The NavigationPolygon draw tools can be used to create and edit navigation meshes by defining **outline** polygons.
-The outline polygons are later converted to real navigation mesh resources for the NavigationServer regions.
+.. figure:: img/nav_mesh_baking_steps.gif
+   :align: center
+   :alt: Navigation mesh baking steps
 
-.. image:: img/nav_polymatroschka.png
+   Baking a navigation mesh with agent radius offset from geometry.
 
-Multiple outlines can be added to the same NavigationPolygon resource as long as they **do not intersect or overlap**.
-Each additional outline will cut a hole in the polygon created by the larger outline.
-If the larger polygon is already a hole, it will create a new navigation mesh polygon inside.
+The navigation mesh baking is made more accessible with the NavigationRegion node. When baking with a NavigationRegion
+node, the individual parsing, baking, and region update steps are all combined into one function.
 
-Outlines are not a replacement if the intention is to merge aligned polygons e.g. from grid cells.
-Outlines, as the name would suggest, cannot intersect each other or have any overlapping vertex positions.
+The nodes are available in 2D and 3D as :ref:`NavigationRegion2D<class_NavigationRegion2D>` and :ref:`NavigationRegion3D<class_NavigationRegion3D>` respectively.
 
-.. image:: img/nav_polyoutlinefail.png
+.. tabs::
 
-Outline layouts like seen in this picture will fail the convex partitioning required by the navigation mesh generation.
-In these layout cases, the outline tool cannot be used. Use the :ref:`Geometry2D<class_Geometry2D>` class to merge or intersect polygons to create a merged mesh that is valid for navigation.
+   .. tab:: Baking with a NavigationRegion2D
+
+        When a NavigationRegion2D node is selected in the Editor, bake options as well as polygon draw tools appear in the top bar of the Editor.
+
+        .. image:: img/nav_region_baking_01.webp
+
+        In order for the region to work a :ref:`NavigationPolygon<class_NavigationPolygon>` resource needs to be added.
+
+        The properties to parse and bake a navigation mesh are then part of the used resource and can be found in the resource Inspector.
+
+        .. image:: img/nav_region_baking_02.webp
+
+        The result of the source geometry parsing can be influenced with the following properties.
+
+        - The ``parsed_geometry_type`` that filters if visual objects or physics objects or both should be parsed from the :ref:`SceneTree<class_SceneTree>`.
+          For more details on what objects are parsed and how, see the section about parsing source geometry below.
+        - The ``collision_mask`` filters which physics collision objects are included when the ``parsed_geometry_type`` includes static colliders.
+        - The ``source_geometry_mode`` that defines on which node(s) to start the parsing, and how to traverse the :ref:`SceneTree<class_SceneTree>`.
+        - The ``source_geometry_group_name`` is used when only a certain node group should be parsed. Depends on the selected ``source_geometry_mode``.
+
+        With the source geometry added, the result of the baking can be controlled with the following properties.
+
+        - The ``cell_size`` sets the rasterization grid size and should match the navigation map size.
+        - The ``agent_radius`` shrinks the baked navigation mesh to have enough margin for the agent (collision) size.
+
+        The NavigationRegion2D baking can also be used at runtime with scripts.
+
+        .. tabs::
+         .. code-tab:: gdscript GDScript
+
+            var on_thread: bool = true
+            bake_navigation_polygon(on_thread)
+
+        To quickly test the 2D baking with default settings:
+
+        - Add a :ref:`NavigationRegion2D<class_NavigationRegion2D>`.
+        - Add a :ref:`NavigationPolygon<class_NavigationPolygon>` resource to the NavigationRegion2D.
+        - Add a :ref:`Polygon2D<class_Polygon2D>` below the NavigationRegion2D.
+        - Draw 1 NavigationPolygon outline with the selected NavigationRegion2D draw tool.
+        - Draw 1 Polygon2D outline inside the NavigationPolygon outline with the selected Polygon2D draw tool.
+        - Hit the Editor bake button and a navigation mesh should appear.
+
+        .. image:: img/nav_region_baking_01.webp
+
+        .. image:: img/nav_mesh_mini_2d.webp
+
+   .. tab:: Baking with a NavigationRegion3D
+
+        When a NavigationRegion3D node is selected in the Editor, bake options appear in the top bar of the Editor.
+
+        .. image:: img/nav_mesh_bake_toolbar.webp
+
+        In order for the region to work a :ref:`NavigationMesh<class_NavigationMesh>` resource needs to be added.
+
+        The properties to parse and bake a navigation mesh are then part of the used resource and can be found in the resource Inspector.
+
+        .. image:: img/nav_region3d_baking_01.webp
+
+        The result of the source geometry parsing can be influenced with the following properties.
+
+        - The ``parsed_geometry_type`` that filters if visual objects or physics objects or both should be parsed from the :ref:`SceneTree<class_SceneTree>`.
+          For more details on what objects are parsed and how, see the section about parsing source geometry below.
+        - The ``collision_mask`` filters which physics collision objects are included when the ``parsed_geometry_type`` includes static colliders.
+        - The ``source_geometry_mode`` that defines on which node(s) to start the parsing, and how to traverse the :ref:`SceneTree<class_SceneTree>`.
+        - The ``source_geometry_group_name`` is used when only a certain node group should be parsed. Depends on the selected ``source_geometry_mode``.
+
+        With the source geometry added, the result of the baking can be controlled with the following properties.
+
+        - The ``cell_size`` and ``cell_height`` sets the rasterization voxel grid size and should match the navigation map size.
+        - The ``agent_radius`` shrinks the baked navigation mesh to have enough margin for the agent (collision) size.
+        - The ``agent_height`` excludes areas from the navigation mesh where the agent is too tall to fit in.
+        - The ``agent_max_climb`` and ``agent_max_slope`` removes areas where the height difference between neighboring voxels is too large, or where their surface is too steep.
+
+        .. warning::
+
+            A too small ``cell_size`` or ``cell_height`` can create so many voxels that it has the potential to freeze the game or even crash.
+
+
+        The NavigationRegion3D baking can also be used at runtime with scripts.
+
+        .. tabs::
+         .. code-tab:: gdscript GDScript
+
+            var on_thread: bool = true
+            bake_navigation_mesh(on_thread)
+
+        To quickly test the 3D baking with default settings:
+
+        - Add a :ref:`NavigationRegion3D<class_NavigationRegion3D>`.
+        - Add a :ref:`NavigationMesh<class_NavigationMesh>` resource to the NavigationRegion3D.
+        - Add a :ref:`MeshInstance3D<class_MeshInstance3D>` below the NavigationRegion3D.
+        - Add a :ref:`PlaneMesh<class_PlaneMesh>` to the MeshInstance3D.
+        - Hit the Editor bake button and a navigation mesh should appear.
+
+        .. image:: img/nav_mesh_bake_toolbar.webp
+
+        .. image:: img/nav_mesh_mini_3d.webp
+
+.. _doc_navigation_using_navigationmeshes_baking_navigation_mesh_with_navigationserver:
+
+Baking a navigation mesh with the NavigationServer
+--------------------------------------------------
+
+The :ref:`NavigationServer2D<class_NavigationServer2D>` and :ref:`NavigationServer3D<class_NavigationServer3D>` have API functions to call each step of the navigation mesh baking process individually.
+
+- ``parse_source_geometry_data()`` can be used to parse source geometry to a reusable and serializable resource.
+- ``bake_from_source_geometry_data()`` can be used to bake a navigation mesh from already parsed data e.g. to avoid runtime performance issues with (redundant) parsing.
+- ``bake_from_source_geometry_data_async()`` is the same but bakes the navigation mesh deferred with threads, not blocking the main thread.
+
+Compared to a NavigationRegion, the NavigationServer offers finer control over the navigation mesh baking process.
+In turn it is more complex to use but also provides more advanced options.
+
+Some other advantages of the NavigationServer over a NavigationRegion are:
+
+- The server can parse source geometry without baking, e.g. to cache it for later use.
+- The server allows selecting the root node at which to start the source geometry parsing manually.
+- The server can accept and bake from procedurally generated source geometry data.
+- The server can bake multiple navigation meshes in sequence while (re)using the same source geometry data.
+
+To bake navigation meshes with the NavigationServer, source geometry is required.
+Source geometry is geometry data that should be considered in a navigation mesh baking process.
+Both navigation meshes for 2D and 3D are created by baking them from source geometry.
+
+2D and 3D versions of the source geometry resources are available as
+:ref:`NavigationMeshSourceGeometryData2D<class_NavigationMeshSourceGeometryData2D>` and
+:ref:`NavigationMeshSourceGeometryData3D<class_NavigationMeshSourceGeometryData3D>`  respectively.
+
+Source geometry can be geometry parsed from visual meshes, from physics collision,
+or procedural created arrays of data, like outlines (2D) and triangle faces (3D).
+For convenience, source geometry is commonly parsed directly from node setups in the SceneTree.
+For runtime navigation mesh (re)bakes, be aware that the geometry parsing always happens on the main thread.
 
 .. note::
 
-    The NavigationServer does not connect navigation mesh islands from the same navigation mesh resource.
-    Do not create multiple disconnected islands in the same NavigationRegion2D or NavigationPolygon resource if they should be later connected.
-
-For 2D, no similar navigation mesh baking with geometry parsing exists like in 3D.
-The Geometry2D class functions for offset, merge, intersect, and clip can be used to shrink or enlarge existing NavigationPolygons for different actor sizes.
-
-Creating 3D navigation meshes
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. image:: img/baked_navmesh.png
-
-Navigation meshes in the 3D editor are created with the help of the
-:ref:`NavigationMeshGenerator<class_NavigationMeshGenerator>` singleton
-and the NavigationMesh bake settings that appear in the editor inspector.
-
-Navigation mesh baking is the process of creating a simplified mesh used for pathfinding out of (complex) 3D level geometry.
-For this process Godot parses scene geometry and hands the raw mesh or collision data to the
-third-party ReCast library for processing and creation of the final navigation mesh.
-
-The resulting navigation mesh is an approximation of the source geometry surfaces
-for both performance and technical reasons. Do not expect the navigation mesh
-to perfectly follow the original surfaces. Especially navigation polygons placed
-over ramps will not keep an equal distance to the ground surface. To align an
-actor perfectly with the ground use other means like physics.
+    The SceneTree is not thread-safe. Parsing source geometry from the SceneTree can only be done on the main thread.
 
 .. warning::
 
-    Meshes need to be triangulated to work as navigation meshes. Other mesh face formats like quad or ngon are not supported.
+    The data from visual meshes and polygons needs to be received from the GPU, stalling the RenderingServer in the process.
+    For runtime (re)baking prefer using physics shapes as parsed source geometry.
 
-NavigationMesh rebaking at runtime
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Source geometry is stored inside resources so the created geometry can be reused for multiple bakes.
+E.g. baking multiple navigation meshes for different agent sizes from the same source geometry.
+This also allows to save source geometry to disk so it can be loaded later, e.g. to avoid the overhead of parsing it again at runtime.
 
-To rebake a ``NavigationMesh`` at runtime, use the ``NavigationRegion3D.bake_navigation_mesh()`` function.
-Another option is to use the ``NavigationMeshGenerator.bake()`` singleton function with the NavigationMesh resource directly.
-If the NavigationMesh resource is already prepared, the region can be updated with the NavigationServer3D API directly as well.
+The geometry data should be in general kept very simple. As many edges as are required but as few as possible.
+Especially in 2D duplicated and nested geometry should be avoided as it forces polygon hole calculation that can result in flipped polygons.
+An example for nested geometry would be a smaller StaticBody2D shape placed completely inside the bounds of another StaticBody2D shape.
 
-.. tabs::
- .. code-tab:: gdscript GDScript
+Navigation mesh baking common problems
+--------------------------------------
 
-    extends NavigationRegion3D
+There are some common user problems and important caveats to consider when creating or baking navigation meshes.
 
-    func update_navigation_mesh():
+- Navigation mesh baking creates frame rate problems at runtime
+    The navigation mesh baking is by default done on a background thread, so as long as the platform supports threads, the actual baking is
+    rarely the source of any performance issues (assuming a reasonably sized and complex geometry for runtime rebakes).
 
-        # use bake and update function of region
-        var on_thread: bool = true
-        bake_navigation_mesh(on_thread)
+    The common source for performance issues at runtime is the parsing step for source geometry that involves nodes and the SceneTree.
+    The SceneTree is not thread-safe so all the nodes need to be parsed on the main thread.
+    Some nodes with a lot of data can be very heavy and slow to parse at runtime, e.g. a TileMap has one or more polygons for every single used cell and TileMapLayer to parse.
+    Nodes that hold meshes need to request the data from the RenderingServer stalling the rendering in the process.
 
-        # or use the NavigationMeshGenerator singleton
-        var _navigationmesh: NavigationMesh = navigation_mesh
-        NavigationMeshGenerator.bake(_navigationmesh, self)
-        # remove old resource first to trigger a full update
-        navigation_mesh = null
-        navigation_mesh = _navigationmesh
+    To improve performance, use more optimized shapes, e.g. collision shapes over detailed visual meshes, and merge and simplify as much geometry as possible upfront.
+    If nothing helps, don't parse the SceneTree and add the source geometry procedural with scripts. If only pure data arrays are used as source geometry, the entire baking process can be done on a background thread.
 
-        # or use NavigationServer API to update region with prepared navigation mesh
-        var region_rid: RID = get_region_rid()
-        NavigationServer3D.region_set_navigation_mesh(region_rid, navigation_mesh)
+- Navigation mesh creates unintended holes in 2D.
+    The navigation mesh baking in 2D is done by doing polygon clipping operations based on outline paths.
+    Polygons with "holes" are a necessary evil to create more complex 2D polygons but can become unpredictable for users with many complex shapes involved.
 
-.. note::
+    To avoid any unexpected problems with polygon hole calculations, avoid nesting any outlines inside other outlines of the same type (traversable / obstruction).
+    This includes the parsed shapes from nodes. E.g. placing a smaller StaticBody2D shape inside a larger StaticBody2D shape can result in the resulting polygon being flipped.
 
-    Baking a NavigationMesh at runtime is a costly operation.
-    A complex navigation mesh takes some time to bake and if done on the main thread can freeze a game.
-    (Re)baking a large navigation mesh is preferably done in a separate thread.
-
-.. warning::
-
-    Property values on a NavigationMesh resource like ``cell_size`` need
-    to match the actual mesh data stored inside in order to merge
-    different navigation meshes without issues.
-
-NavigationRegion2D and NavigationRegion3D both use meshes to mark traversable areas, only the tools to create them are different.
-
-For 2D, NavigationPolygon resources are used to draw outline points in the editor. From these outline points the NavigationServer2D creates a mesh to upload navigation data to the NavigationServer.
-
-For 3D, NavigationMesh resources are used. Instead of providing draw tools the 3D variant
-provides an extensive amount of parameters to bake a navigation mesh directly from 3D source geometry.
-
-.. note::
-
-    Technically there is no hard distinction between 2D and 3D on how to use the given toolsets to create flat navigation meshes. The 2D drawing tool can be used to create a flat 3D navigation mesh and the 3D baking tool can be used to parse flat 3D geometry into appropriate 2D navigation meshes.
-
-2D navigation mesh from CollisionPolygons
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-The following script parses all child nodes of a NavigationRegion2D for CollisionPolygons
-and bakes their shape into the NavigationPolygon. As the NavigationPolygon creates the
-navigation mesh from outline data the shapes cannot overlap.
+- Navigation mesh appears inside geometry in 3D.
+    The navigation mesh baking in 3D has no concept of "inside". The voxel cells used to rasterize the geometry are either occupied or not.
+    Remove the geometry that is on the ground inside the other geometry. If that is not possible, add smaller "dummy" geometry inside with as few triangles as possible so the cells
+    are occupied with something.
 
 .. tabs::
- .. code-tab:: gdscript GDScript
-
-    extends NavigationRegion2D
-
-    var new_navigation_polygon: NavigationPolygon = get_navigation_polygon()
-
-    func _ready():
-
-        parse_2d_collisionshapes(self)
-
-        new_navigation_polygon.make_polygons_from_outlines()
-        set_navigation_polygon(new_navigation_polygon)
-
-    func parse_2d_collisionshapes(root_node: Node2D):
-
-        for node in root_node.get_children():
-
-            if node.get_child_count() > 0:
-                parse_2d_collisionshapes(node)
-
-            if node is CollisionPolygon2D:
-
-                var collisionpolygon_transform: Transform2D = node.get_global_transform()
-                var collisionpolygon: PackedVector2Array = node.polygon
-
-                var new_collision_outline: PackedVector2Array = collisionpolygon_transform * collisionpolygon
-
-                new_navigation_polygon.add_outline(new_collision_outline)
-
-Procedural 2D navigation mesh
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-The following script creates a new 2D navigation region and fills it with procedurally generated navigation mesh data from a NavigationPolygon resource.
-
-.. tabs::
- .. code-tab:: gdscript GDScript
+ .. code-tab:: gdscript 2D GDScript
 
     extends Node2D
 
-    var new_2d_region_rid: RID = NavigationServer2D.region_create()
+    func parse_and_bake_navigation_mesh_and_create_region() -> void:
+        # Note, the navigation mesh is not baked here, it only holds the parse parameters.
+        var navigation_mesh: NavigationPolygon = NavigationPolygon.new()
+        # Create the source geometry that will hold the parsed data.
+        var source_geometry := NavigationMeshSourceGeometryData2D.new()
+        # The Node where the parsing should start traversing the SceneTree.
+        var root_node: Node2D = self
 
-    var default_2d_map_rid: RID = get_world_2d().get_navigation_map()
-    NavigationServer2D.region_set_map(new_2d_region_rid, default_2d_map_rid)
+        NavigationServer2D.parse_source_geometry_data(
+            navigation_mesh,
+            source_geometry,
+            root_node
+        )
 
-    var new_navigation_polygon: NavigationPolygon = NavigationPolygon.new()
-    var new_outline: PackedVector2Array = PackedVector2Array([
-        Vector2(0.0, 0.0),
-        Vector2(50.0, 0.0),
-        Vector2(50.0, 50.0),
-        Vector2(0.0, 50.0),
-    ])
-    new_navigation_polygon.add_outline(new_outline)
-    new_navigation_polygon.make_polygons_from_outlines()
+        # Bake the navigation mesh with the source geometry data.
+        NavigationServer2D.bake_from_source_geometry_data_async(
+            navigation_mesh,
+            source_geometry
+        )
 
-    NavigationServer2D.region_set_navigation_polygon(new_2d_region_rid, new_navigation_polygon)
+        # Create a new navigation region and update the region with prepared navigation mesh.
+        var region_rid: RID = NavigationServer2D.region_create()
+        NavigationServer2D.region_set_navigation_polygon(region_rid, navigation_mesh)
+        NavigationServer2D.region_set_enabled(region_rid, true)
+        NavigationServer2D.region_set_map(region_rid, get_world_2d().get_navigation_map())
 
-Procedural 3D navigation mesh
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-The following script creates a new 3D navigation region and fills it with procedurally generated navigation mesh data from a NavigationMesh resource.
-
-.. tabs::
- .. code-tab:: gdscript GDScript
+ .. code-tab:: gdscript 3D GDScript
 
     extends Node3D
 
-    var new_3d_region_rid: RID = NavigationServer3D.region_create()
+    func parse_and_bake_navigation_mesh_and_create_region() -> void:
+        # Note, the navigation mesh is not baked here, it only holds the parse parameters.
+        var navigation_mesh: NavigationMesh = NavigationMesh.new()
+        # Create the source geometry that will hold the parsed data.
+        var source_geometry := NavigationMeshSourceGeometryData3D.new()
+        # The Node where the parsing should start traversing the SceneTree.
+        var root_node: Node3D = self
 
-    var default_3d_map_rid: RID = get_world_3d().get_navigation_map()
-    NavigationServer3D.region_set_map(new_3d_region_rid, default_3d_map_rid)
+        NavigationServer3D.parse_source_geometry_data(
+            navigation_mesh,
+            source_geometry,
+            root_node
+        )
 
-    var new_navigation_mesh: NavigationMesh = NavigationMesh.new()
-    # Add vertices for a triangle.
-    new_navigation_mesh.vertices = PackedVector3Array([
-        Vector3(-1.0, 0.0, 1.0),
-        Vector3(1.0, 0.0, 1.0),
-        Vector3(1.0, 0.0, -1.0)
-    ])
-    # Add indices for the polygon.
-    new_navigation_mesh.add_polygon(
-        PackedInt32Array([0, 1, 2])
-    )
-    NavigationServer3D.region_set_navigation_mesh(new_3d_region_rid, new_navigation_mesh)
+        # Bake the navigation mesh with the source geometry data.
+        NavigationServer3D.bake_from_source_geometry_data_async(
+            navigation_mesh,
+            source_geometry
+        )
 
-Navigation mesh for 3D GridMaps
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        # Create a new navigation region and update the region with prepared navigation mesh.
+        var region_rid: RID = NavigationServer3D.region_create()
+        NavigationServer3D.region_set_navigation_mesh(region_rid, navigation_mesh)
+        NavigationServer3D.region_set_enabled(region_rid, true)
+        NavigationServer3D.region_set_map(region_rid, get_world_3d().get_navigation_map())
 
-The following script creates a new 3D navigation mesh for each GridMap items, clears the current grid cells, and adds new procedural grid cells with the new navigation mesh.
+Navigation mesh script templates
+--------------------------------
+
+The following script creates a new navigation region and fills it with procedurally generated navigation mesh data.
 
 .. tabs::
- .. code-tab:: gdscript GDScript
+ .. code-tab:: gdscript 2D GDScript
 
-    extends GridMap
+    extends Node2D
 
-    # enable navigation mesh for grid items
-    set_bake_navigation(true)
+    func _ready() -> void:
+        var new_2d_region_rid: RID = NavigationServer2D.region_create()
 
-    # get grid items, create and set a new navigation mesh for each item in the MeshLibrary
-    var gridmap_item_list: PackedInt32Array = mesh_library.get_item_list()
-    for item in gridmap_item_list:
-        var new_item_navigation_mesh: NavigationMesh = NavigationMesh.new()
-        # Add vertices and polygons that describe the traversable ground surface.
-        # E.g. for a convex polygon that resembles a flat square.
-        new_item_navigation_mesh.vertices = PackedVector3Array([
+        var default_2d_map_rid: RID = get_world_2d().get_navigation_map()
+        NavigationServer2D.region_set_map(new_2d_region_rid, default_2d_map_rid)
+
+        var new_navigation_mesh: NavigationPolygon = NavigationPolygon.new()
+
+        # Add vertices for a convex polygon.
+        new_navigation_mesh.vertices = PackedVector2Array([
+            Vector2(0.0, 0.0),
+            Vector2(100.0, 0.0),
+            Vector2(100.0, 100.0),
+            Vector2(0.0, 100.0)
+        ])
+
+        # Add indices for the polygon.
+        new_navigation_mesh.add_polygon(
+            PackedInt32Array([0, 1, 2, 3])
+        )
+
+        NavigationServer2D.region_set_navigation_polygon(new_2d_region_rid, new_navigation_mesh)
+
+ .. code-tab:: gdscript 3D GDScript
+
+    extends Node3D
+
+    func _ready() -> void:
+        var new_3d_region_rid: RID = NavigationServer3D.region_create()
+
+        var default_3d_map_rid: RID = get_world_3d().get_navigation_map()
+        NavigationServer3D.region_set_map(new_3d_region_rid, default_3d_map_rid)
+
+        var new_navigation_mesh: NavigationMesh = NavigationMesh.new()
+
+        # Add vertices for a convex polygon.
+        new_navigation_mesh.vertices = PackedVector3Array([
             Vector3(-1.0, 0.0, 1.0),
             Vector3(1.0, 0.0, 1.0),
             Vector3(1.0, 0.0, -1.0),
             Vector3(-1.0, 0.0, -1.0),
         ])
-        new_item_navigation_mesh.add_polygon(
+
+        # Add indices for the polygon.
+        new_navigation_mesh.add_polygon(
             PackedInt32Array([0, 1, 2, 3])
         )
-        mesh_library.set_item_navigation_mesh(item, new_item_navigation_mesh)
-        mesh_library.set_item_navigation_mesh_transform(item, Transform3D())
 
-    # clear the cells
-    clear()
-
-    # add procedural cells using the first item
-    var _position: Vector3i = Vector3i(global_transform.origin)
-    var _item: int = 0
-    var _orientation: int = 0
-    for i in range(0,10):
-        for j in range(0,10):
-            _position.x = i
-            _position.z = j
-            gridmap.set_cell_item(_position, _item, _orientation)
-            _position.x = -i
-            _position.z = -j
-            gridmap.set_cell_item(_position, _item, _orientation)
+        NavigationServer3D.region_set_navigation_mesh(new_3d_region_rid, new_navigation_mesh)
