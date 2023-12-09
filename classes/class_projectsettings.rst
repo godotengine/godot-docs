@@ -11273,6 +11273,8 @@ Specify whether OpenXR should be configured for an HMD or a hand held device.
 
 If true and foveation is supported, will automatically adjust foveation level based on framerate up to the level set on :ref:`xr/openxr/foveation_level<class_ProjectSettings_property_xr/openxr/foveation_level>`.
 
+\ **Note:** Only works on compatibility renderer.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -11284,6 +11286,8 @@ If true and foveation is supported, will automatically adjust foveation level ba
 :ref:`int<class_int>` **xr/openxr/foveation_level** = ``"0"``
 
 Applied foveation level if supported: 0 = off, 1 = low, 2 = medium, 3 = high.
+
+\ **Note:** Only works on compatibility renderer.
 
 .. rst-class:: classref-item-separator
 

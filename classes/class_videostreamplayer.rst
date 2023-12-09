@@ -23,8 +23,6 @@ A control used for playback of :ref:`VideoStream<class_VideoStream>` resources.
 
 Supported video formats are `Ogg Theora <https://www.theora.org/>`__ (``.ogv``, :ref:`VideoStreamTheora<class_VideoStreamTheora>`) and any format exposed via a GDExtension plugin.
 
-\ **Note:** Due to a bug, VideoStreamPlayer does not support localization remapping yet.
-
 \ **Warning:** On Web, video playback *will* perform poorly due to missing architecture-specific assembly optimizations.
 
 .. rst-class:: classref-introduction-group

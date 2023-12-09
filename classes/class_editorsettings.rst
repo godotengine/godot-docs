@@ -2485,9 +2485,9 @@ The icon and font color scheme to use in the editor.
 
 - **Auto** determines the color scheme to use automatically based on :ref:`interface/theme/base_color<class_EditorSettings_property_interface/theme/base_color>`.
 
-- **Dark** makes fonts and icons light (suitable for dark themes).
+- **Dark** makes fonts and icons dark (suitable for light themes). Icon colors are automatically converted by the editor following the set of rules defined in `this file <https://github.com/godotengine/godot/blob/master/editor/editor_themes.cpp>`__.
 
-- **Light** makes fonts and icons dark (suitable for light themes). Icon colors are automatically converted by the editor following `this set of rules <https://github.com/godotengine/godot/blob/master/editor/editor_themes.cpp#L135>`__.
+- **Light** makes fonts and icons light (suitable for dark themes).
 
 .. rst-class:: classref-item-separator
 
