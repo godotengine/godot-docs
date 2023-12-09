@@ -67,6 +67,8 @@ Methods
    +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`       | :ref:`get_navigation_layer_value<class_NavigationLink2D_method_get_navigation_layer_value>` **(** :ref:`int<class_int>` layer_number **)** |const|                        |
    +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`RID<class_RID>`         | :ref:`get_rid<class_NavigationLink2D_method_get_rid>` **(** **)** |const|                                                                                                 |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                          | :ref:`set_global_end_position<class_NavigationLink2D_method_set_global_end_position>` **(** :ref:`Vector2<class_Vector2>` position **)**                                  |
    +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                          | :ref:`set_global_start_position<class_NavigationLink2D_method_set_global_start_position>` **(** :ref:`Vector2<class_Vector2>` position **)**                              |
@@ -246,6 +248,18 @@ Returns the :ref:`start_position<class_NavigationLink2D_property_start_position>
 :ref:`bool<class_bool>` **get_navigation_layer_value** **(** :ref:`int<class_int>` layer_number **)** |const|
 
 Returns whether or not the specified layer of the :ref:`navigation_layers<class_NavigationLink2D_property_navigation_layers>` bitmask is enabled, given a ``layer_number`` between 1 and 32.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_NavigationLink2D_method_get_rid:
+
+.. rst-class:: classref-method
+
+:ref:`RID<class_RID>` **get_rid** **(** **)** |const|
+
+Returns the :ref:`RID<class_RID>` of this link on the :ref:`NavigationServer2D<class_NavigationServer2D>`.
 
 .. rst-class:: classref-item-separator
 

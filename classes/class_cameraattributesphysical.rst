@@ -145,7 +145,7 @@ Only available when :ref:`ProjectSettings.rendering/lights_and_shadows/use_physi
 - void **set_shutter_speed** **(** :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_shutter_speed** **(** **)**
 
-Time for shutter to open and close, measured in seconds. A higher value will let in more light leading to a brighter image, while a lower amount will let in less light leading to a darker image.
+Time for shutter to open and close, evaluated as ``1 / shutter_speed`` seconds. A higher value will allow less light (leading to a darker image), while a lower value will allow more light (leading to a brighter image).
 
 Only available when :ref:`ProjectSettings.rendering/lights_and_shadows/use_physical_light_units<class_ProjectSettings_property_rendering/lights_and_shadows/use_physical_light_units>` is enabled.
 

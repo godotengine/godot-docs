@@ -692,6 +692,8 @@ void **emit_particle** **(** :ref:`Transform2D<class_Transform2D>` xform, :ref:`
 
 Emits a single particle. Whether ``xform``, ``velocity``, ``color`` and ``custom`` are applied depends on the value of ``flags``. See :ref:`EmitFlags<enum_GPUParticles2D_EmitFlags>`.
 
+The default ParticleProcessMaterial will overwrite ``color`` and use the contents of ``custom`` as ``(rotation, age, animation, lifetime)``.
+
 .. rst-class:: classref-item-separator
 
 ----

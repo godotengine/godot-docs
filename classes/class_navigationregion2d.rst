@@ -85,6 +85,8 @@ Methods
    +-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`RID<class_RID>`   | :ref:`get_region_rid<class_NavigationRegion2D_method_get_region_rid>` **(** **)** |const|                                                                                   |
    +-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`RID<class_RID>`   | :ref:`get_rid<class_NavigationRegion2D_method_get_rid>` **(** **)** |const|                                                                                                 |
+   +-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                    | :ref:`set_avoidance_layer_value<class_NavigationRegion2D_method_set_avoidance_layer_value>` **(** :ref:`int<class_int>` layer_number, :ref:`bool<class_bool>` value **)**   |
    +-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                    | :ref:`set_navigation_layer_value<class_NavigationRegion2D_method_set_navigation_layer_value>` **(** :ref:`int<class_int>` layer_number, :ref:`bool<class_bool>` value **)** |
@@ -326,6 +328,20 @@ Returns the current navigation map :ref:`RID<class_RID>` used by this region.
 .. rst-class:: classref-method
 
 :ref:`RID<class_RID>` **get_region_rid** **(** **)** |const|
+
+Returns the :ref:`RID<class_RID>` of this region on the :ref:`NavigationServer2D<class_NavigationServer2D>`.
+
+\ *Deprecated.* Use :ref:`get_rid<class_NavigationRegion2D_method_get_rid>` instead.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_NavigationRegion2D_method_get_rid:
+
+.. rst-class:: classref-method
+
+:ref:`RID<class_RID>` **get_rid** **(** **)** |const|
 
 Returns the :ref:`RID<class_RID>` of this region on the :ref:`NavigationServer2D<class_NavigationServer2D>`. Combined with :ref:`NavigationServer2D.map_get_closest_point_owner<class_NavigationServer2D_method_map_get_closest_point_owner>` can be used to identify the **NavigationRegion2D** closest to a point on the merged navigation map.
 

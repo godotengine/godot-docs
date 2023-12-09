@@ -557,6 +557,8 @@ The display refresh rate for the current HMD. Only functional if this feature is
 
 Enable dynamic foveation adjustment, the interface must be initialized before this is accessible. If enabled foveation will automatically adjusted between low and :ref:`foveation_level<class_OpenXRInterface_property_foveation_level>`.
 
+\ **Note:** Only works on compatibility renderer.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -573,6 +575,8 @@ Enable dynamic foveation adjustment, the interface must be initialized before th
 - :ref:`int<class_int>` **get_foveation_level** **(** **)**
 
 Set foveation level from 0 (off) to 3 (high), the interface must be initialized before this is accessible.
+
+\ **Note:** Only works on compatibility renderer.
 
 .. rst-class:: classref-item-separator
 
