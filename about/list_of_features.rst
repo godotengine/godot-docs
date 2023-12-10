@@ -55,7 +55,7 @@ Editor
   Visual Studio Code or Vim.
 - GDScript :ref:`debugger <doc_debugger_panel>`.
 
-   - No support for debugging in threads yet.
+   - Support for debugging in threads is available since 4.2.
 - Visual profiler with CPU and GPU time indications for each step of the
   rendering pipeline.
 - Performance monitoring tools, including
