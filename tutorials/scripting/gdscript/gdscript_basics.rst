@@ -1231,6 +1231,7 @@ a dictionary can also be used with a named enum.
 
     # Is the same as:
     const State = {STATE_IDLE = 0, STATE_JUMP = 5, STATE_SHOOT = 6}
+    # Access values with State.STATE_IDLE, etc.
 
     func _ready():
         # Access values with Name.KEY, prints '5'
@@ -1238,6 +1239,10 @@ a dictionary can also be used with a named enum.
         # Use constant dictionary functions
         # prints '["STATE_IDLE", "STATE_JUMP", "STATE_SHOOT"]'
         print(State.keys())
+        # prints '["STATE_IDLE", "STATE_JUMP", "STATE_SHOOT"]'
+        print(State)
+        # prints '[0, 5, 6]'
+        print(State.values())
 
 
 Functions
