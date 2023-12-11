@@ -516,7 +516,7 @@ reasons why we have chosen SCons over other alternatives. For example:
    customization (:ref:`modules <doc_custom_modules_in_cpp>`). This requires
    complex logic which is easier to write in an actual programming language (like Python)
    rather than using a mostly macro-based language only meant for building.
--  Godot build process makes heavy use of cross-compiling tools. Each
+-  Godot's build process makes heavy use of cross-compiling tools. Each
    platform has a specific detection process, and all these must be
    handled as specific cases with special code written for each.
 
