@@ -43,7 +43,7 @@ to save them and then tell them all to save with this script:
  .. code-tab:: gdscript GDScript
 
     var save_nodes = get_tree().get_nodes_in_group("Persist")
-    for i in save_nodes:
+    for node in save_nodes:
         # Now, we can call our save function on each node.
 
  .. code-tab:: csharp
