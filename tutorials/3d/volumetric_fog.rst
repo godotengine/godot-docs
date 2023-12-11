@@ -149,6 +149,12 @@ and quality:
   the fog which reduces fine details but also smooths out harsh edges and
   aliasing artifacts. Disable when more detail is required.
 
+.. note::
+
+    Volumetric fog can cause banding to appear on the viewport, especially at
+    higher density levels. See :ref:`doc_3d_rendering_limitations_color_banding`
+    for guidance on reducing banding.
+
 Using fog volumes for local volumetric fog
 ------------------------------------------
 

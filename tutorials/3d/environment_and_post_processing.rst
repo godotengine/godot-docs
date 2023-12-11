@@ -301,6 +301,12 @@ In practice, it makes light stand out more across the fog.
 
 .. image:: img/environment_fog_transmission.webp
 
+.. note::
+
+    Fog can cause banding to appear on the viewport, especially at
+    higher density levels. See :ref:`doc_3d_rendering_limitations_color_banding`
+    for guidance on reducing banding.
+
 Volumetric Fog
 ^^^^^^^^^^^^^^
 
