@@ -159,7 +159,7 @@ it to the ``NORMALMAP`` property. Godot will handle converting it for use in 2D 
 | Built-in                                    | Description                                                   |
 +=============================================+===============================================================+
 | in vec4 **FRAGCOORD**                       | Coordinate of pixel center. In screen space. ``xy`` specifies |
-|                                             | position in window.                                           |
+|                                             | position in window. Origin is lower-left.                     |
 +---------------------------------------------+---------------------------------------------------------------+
 | in vec2 **SCREEN_PIXEL_SIZE**               | Size of individual pixels. Equal to inverse of resolution.    |
 +---------------------------------------------+---------------------------------------------------------------+
@@ -232,7 +232,7 @@ Below is an example of a light shader that takes a CanvasItem's normal map into 
 | Built-in                         | Description                                                                  |
 +==================================+==============================================================================+
 | in vec4 **FRAGCOORD**            | Coordinate of pixel center. In screen space. ``xy`` specifies                |
-|                                  | position in window.                                                          |
+|                                  | position in window. Origin is lower-left.                                    |
 +----------------------------------+------------------------------------------------------------------------------+
 | in vec3 **NORMAL**               | Input Normal.                                                                |
 +----------------------------------+------------------------------------------------------------------------------+
