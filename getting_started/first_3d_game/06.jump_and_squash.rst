@@ -243,10 +243,6 @@ With this code, if no collisions occurred on a given frame, the loop won't run.
             # We get one of the collisions with the player
             var collision = get_slide_collision(index)
 
-            # If the collision is with ground
-            if collision.get_collider() == null:
-                continue
-
             # If the collider is with a mob
             if collision.get_collider().is_in_group("mob"):
                 var mob = collision.get_collider()
