@@ -162,6 +162,65 @@ dependencies. Running it will bring up the Project Manager.
           :ref:`doc_data_paths_self_contained_mode` by creating a file called
           ``._sc_`` or ``_sc_`` in the ``bin/`` folder.
 
+Compiling with support for Direct3D 12
+--------------------------------------
+
+By default, builds of Godot do not contain support for the Direct3D 12 graphics
+API. 
+
+To compile Godot with Direct3D 12 support you need at least the following:
+
+- Visual Studio (follow the instructions above to install). Currently, we don't
+  support building with Direct3D 12 enabled when using MinGW. Support will be
+  added in the future if possible.
+- `The DirectX Shader Compiler <https://github.com/Microsoft/DirectXShaderCompiler/releases>`_.
+  The zip folder will be named "dxc\_" followed by the date of release. Download
+  it anywhere, unzip it and remember the path to the unzipped folder, you will
+  need it below.
+- `godot-nir-static library <https://github.com/godotengine/godot-nir-static/releases/>`_. 
+  We compile the MESA libraries you will need into a static library. Download it
+  anywhere, unzip it and remember the path to the unzipped folder, you will
+  need it below.
+
+.. note:: You can optionally build the godot-nir-static libraries yourself with
+          the following steps:
+
+          1. Install the Python package `mako <https://www.makotemplates.org>`_
+             which is needed to generate some files.
+          2. Clone the `godot-nir-static <https://github.com/godotengine/godot-nir-static>`_
+             directory and navigate to it.
+          3. Run the following::
+            
+              git submodule update --init
+              ./update_mesa.sh
+              scons
+
+Optionally, you can compile with the following for additional features:
+
+- `Pix <https://devblogs.microsoft.com/pix/download>`_: Download the
+  WinPixEventRuntime package. You will be taken to a NuGet package page where
+  you can click "Download package" to get it. Once downloaded, change the file
+  extension to .zip and unzip the file to some path.
+- `Agility SDK <https://devblogs.microsoft.com/directx/directx12agility>`_: Download
+  the latest Agility SDK package. You will be taken to a NuGet package page where
+  you can click "Download package" to get it. Once downloaded, change the file
+  extension to .zip and unzip the file to some path.
+  
+.. note:: If you use a preview version of the Agility SDK, remember to enable developer mode in Windows; otherwise it won't be used.
+
+When building Godot, you will need to tell SCons to use Direct3D 12 and where to look for the additional libraries::
+    
+    C:\godot> scons platform=windows d3d12=yes DXC_PATH=<...> plus mesa_libs=<...> 
+    
+Or, with all options enabled::
+
+    C:\godot> scons platform=windows d3d12=yes DXC_PATH=<...> plus mesa_libs=<...> AGILITY_SDK_PATH=<...> PIX_PATH=<...>
+
+.. note:: The build process will copy dxil.dll from the bin/<arch>/ directory in the DXC folder to the Godot binary directory and the appropriate bin/<arch> file in the Godot binary directory. Direct3D 12-enabled Godot packages for distribution to end users must include the dxil.dll (and relevant folders if using multi-arch), both for the editor and games.
+          At runtime, the renderer will try to load the DLL from the arch-specific folders, and will fall back to the same directory as the Godot executable if the appropriate arch isn't found.
+
+.. note:: For the Agility SDK's DLLs you have to explicitly choose the kind of workflow. Single-arch is the default (DLLs copied to bin/). If you pass ``agility_sdk_multi_arch=yes`` to SCons, you'll opt-in for multi-arch. DLLs will be copied to the appropiate bin/<arch>/ subdirectories and at runtime the right one will be loaded.
+
 Development in Visual Studio
 ----------------------------
 
