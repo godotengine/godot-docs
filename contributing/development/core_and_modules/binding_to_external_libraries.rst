@@ -172,7 +172,7 @@ environment's paths:
     # This is a path relative to /modules/tts/ where your .a libraries reside.
     # If you are compiling the module externally (not in the godot source tree),
     # these will need to be full paths.
-    env.Append(LIBPATH=['libpath'])
+    env.Append(LIBPATH=[Dir('libpath').abspath])
 
     # Check with the documentation of the external library to see which library
     # files should be included/linked.
