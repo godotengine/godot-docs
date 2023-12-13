@@ -1236,10 +1236,10 @@ a dictionary can also be used with a named enum.
     func _ready():
         # Access values with Name.KEY, prints '5'
         print(State.STATE_JUMP)
-        # Use constant dictionary functions
+        # Use dictionary methods:
         # prints '["STATE_IDLE", "STATE_JUMP", "STATE_SHOOT"]'
         print(State.keys())
-        # prints '["STATE_IDLE", "STATE_JUMP", "STATE_SHOOT"]'
+        # prints '{ "STATE_IDLE": 0, "STATE_JUMP": 5, "STATE_SHOOT": 6 }'
         print(State)
         # prints '[0, 5, 6]'
         print(State.values())
