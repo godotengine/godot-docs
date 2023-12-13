@@ -239,6 +239,43 @@ Or, with all options enabled::
           multi-arch. DLLs will be copied to the appropriate ``bin/<arch>/``
           subdirectories and at runtime the right one will be loaded.
 
+Compiling with ANGLE support
+----------------------------
+
+ANGLE provides a translation layer from OpenGL ES 3.x to Direct3D 11 and can be used
+to improve support for the Compatibility renderer on some older GPUs with outdated
+OpenGL drivers and on Windows for ARM.
+
+By default, Godot is built with dynamically linked ANGLE, you can use it by placing
+``libEGL.dll`` and ``libGLESv2.dll`` alongside the executable.
+
+.. note:: You can use dynamically linked ANGLE with export templates as well, rename
+          aforementioned DLLs to ``libEGL.{architecture}.dll`` and ``libGLESv2.{architecture}.dll``
+          and place them alongside export template executables, and libraries will
+          be automatically copied during the export process.
+
+To compile Godot with statically linked ANGLE:
+
+- Download pre-built static libraries from `godot-angle-static library <https://github.com/godotengine/godot-angle-static/releases>`_, and unzip them. 
+- When building Godot, add ``angle_libs={path}`` to tell SCons where to look for the ANGLE libraries::
+    
+    scons platform=windows angle_libs=<...> 
+
+.. note:: You can optionally build the godot-angle-static libraries yourself with
+          the following steps:
+
+          1. Clone the `godot-angle-static <https://github.com/godotengine/godot-angle-static>`_
+             directory and navigate to it.
+          2. Run the following command::
+            
+              scons
+            
+             If you are buildng with MinGW, add ``use_mingw=yes`` to the command,
+             you can also specify build architecture using ``arch={architecture}``.
+
+             ANGLE static library should be built using the same compiler you are
+             using for building Godot.
+
 Development in Visual Studio
 ----------------------------
 
