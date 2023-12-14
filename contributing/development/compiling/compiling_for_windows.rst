@@ -132,7 +132,9 @@ Running SCons
 ~~~~~~~~~~~~~
 
 After opening a command prompt, change to the root directory of
-the engine source code (using ``cd``) and type::
+the engine source code (using ``cd``) and type:
+
+.. code-block:: doscon
 
     C:\godot> scons platform=windows
 
@@ -215,11 +217,15 @@ Optionally, you can compile with the following for additional features:
           developer mode in Windows; otherwise it won't be used.
 
 When building Godot, you will need to tell SCons to use Direct3D 12 and where to
-look for the additional libraries::
-    
+look for the additional libraries:
+
+.. code-block:: doscon
+
     C:\godot> scons platform=windows d3d12=yes dxc_path=<...> mesa_libs=<...> 
     
-Or, with all options enabled::
+Or, with all options enabled:
+
+.. code-block:: doscon
 
     C:\godot> scons platform=windows d3d12=yes dxc_path=<...> mesa_libs=<...> agility_sdk_path=<...> pix_path=<...>
 
@@ -382,7 +388,9 @@ Creating Windows export templates
 ---------------------------------
 
 Windows export templates are created by compiling Godot without the editor,
-with the following flags::
+with the following flags:
+
+.. code-block:: doscon
 
     C:\godot> scons platform=windows target=template_debug arch=x86_32
     C:\godot> scons platform=windows target=template_release arch=x86_32
@@ -391,7 +399,9 @@ with the following flags::
 
 If you plan on replacing the standard export templates, copy these to the
 following location, replacing ``<version>`` with the version identifier
-(such as ``3.1.1.stable`` or ``3.2.dev``)::
+(such as ``3.1.1.stable`` or ``3.2.dev``):
+
+.. code-block:: none
 
     %USERPROFILE%\AppData\Roaming\Godot\templates\<version>\
 
