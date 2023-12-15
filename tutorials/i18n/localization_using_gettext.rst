@@ -59,7 +59,7 @@ Automatic generation using the editor
 -------------------------------------
 
 Since Godot 4.0, the editor can generate a PO template automatically from
-specified scene and script files. This POT generation also supports translation
+specified scene and GDScript files. This POT generation also supports translation
 contexts and pluralization if used in a script, with the optional second
 argument of ``tr()`` and the ``tr_n()`` method.
 
