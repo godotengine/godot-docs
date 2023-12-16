@@ -179,6 +179,8 @@ Methods
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`PackedVector3Array<class_PackedVector3Array>` | :ref:`map_get_path<class_NavigationServer3D_method_map_get_path>` **(** :ref:`RID<class_RID>` map, :ref:`Vector3<class_Vector3>` origin, :ref:`Vector3<class_Vector3>` destination, :ref:`bool<class_bool>` optimize, :ref:`int<class_int>` navigation_layers=1 **)** |const|                                                                                           |
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector3<class_Vector3>`                       | :ref:`map_get_random_point<class_NavigationServer3D_method_map_get_random_point>` **(** :ref:`RID<class_RID>` map, :ref:`int<class_int>` navigation_layers, :ref:`bool<class_bool>` uniformly **)** |const|                                                                                                                                                             |
+   +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`RID[]<class_RID>`                             | :ref:`map_get_regions<class_NavigationServer3D_method_map_get_regions>` **(** :ref:`RID<class_RID>` map **)** |const|                                                                                                                                                                                                                                                   |
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Vector3<class_Vector3>`                       | :ref:`map_get_up<class_NavigationServer3D_method_map_get_up>` **(** :ref:`RID<class_RID>` map **)** |const|                                                                                                                                                                                                                                                             |
@@ -254,6 +256,8 @@ Methods
    | :ref:`int<class_int>`                               | :ref:`region_get_navigation_layers<class_NavigationServer3D_method_region_get_navigation_layers>` **(** :ref:`RID<class_RID>` region **)** |const|                                                                                                                                                                                                                      |
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                               | :ref:`region_get_owner_id<class_NavigationServer3D_method_region_get_owner_id>` **(** :ref:`RID<class_RID>` region **)** |const|                                                                                                                                                                                                                                        |
+   +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector3<class_Vector3>`                       | :ref:`region_get_random_point<class_NavigationServer3D_method_region_get_random_point>` **(** :ref:`RID<class_RID>` region, :ref:`int<class_int>` navigation_layers, :ref:`bool<class_bool>` uniformly **)** |const|                                                                                                                                                    |
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                           | :ref:`region_get_travel_cost<class_NavigationServer3D_method_region_get_travel_cost>` **(** :ref:`RID<class_RID>` region **)** |const|                                                                                                                                                                                                                                  |
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1191,6 +1195,22 @@ Returns the navigation path to reach the destination from the origin. ``navigati
 
 ----
 
+.. _class_NavigationServer3D_method_map_get_random_point:
+
+.. rst-class:: classref-method
+
+:ref:`Vector3<class_Vector3>` **map_get_random_point** **(** :ref:`RID<class_RID>` map, :ref:`int<class_int>` navigation_layers, :ref:`bool<class_bool>` uniformly **)** |const|
+
+Returns a random position picked from all map region polygons with matching ``navigation_layers``.
+
+If ``uniformly`` is ``true``, all map regions, polygons, and faces are weighted by their surface area (slower).
+
+If ``uniformly`` is ``false``, just a random region and a random polygon are picked (faster).
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_NavigationServer3D_method_map_get_regions:
 
 .. rst-class:: classref-method
@@ -1648,6 +1668,22 @@ Returns the region's navigation layers.
 :ref:`int<class_int>` **region_get_owner_id** **(** :ref:`RID<class_RID>` region **)** |const|
 
 Returns the ``ObjectID`` of the object which manages this region.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_NavigationServer3D_method_region_get_random_point:
+
+.. rst-class:: classref-method
+
+:ref:`Vector3<class_Vector3>` **region_get_random_point** **(** :ref:`RID<class_RID>` region, :ref:`int<class_int>` navigation_layers, :ref:`bool<class_bool>` uniformly **)** |const|
+
+Returns a random position picked from all region polygons with matching ``navigation_layers``.
+
+If ``uniformly`` is ``true``, all region polygons and faces are weighted by their surface area (slower).
+
+If ``uniformly`` is ``false``, just a random polygon and face is picked (faster).
 
 .. rst-class:: classref-item-separator
 

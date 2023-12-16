@@ -326,6 +326,8 @@ Methods
    +-----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`PackedInt32Array<class_PackedInt32Array>`                 | :ref:`shaped_text_get_character_breaks<class_TextServer_method_shaped_text_get_character_breaks>` **(** :ref:`RID<class_RID>` shaped **)** |const|                                                                                                                                                                                                                     |
    +-----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                                           | :ref:`shaped_text_get_custom_ellipsis<class_TextServer_method_shaped_text_get_custom_ellipsis>` **(** :ref:`RID<class_RID>` shaped **)** |const|                                                                                                                                                                                                                       |
+   +-----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                                     | :ref:`shaped_text_get_custom_punctuation<class_TextServer_method_shaped_text_get_custom_punctuation>` **(** :ref:`RID<class_RID>` shaped **)** |const|                                                                                                                                                                                                                 |
    +-----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                                       | :ref:`shaped_text_get_descent<class_TextServer_method_shaped_text_get_descent>` **(** :ref:`RID<class_RID>` shaped **)** |const|                                                                                                                                                                                                                                       |
@@ -403,6 +405,8 @@ Methods
    | :ref:`bool<class_bool>`                                         | :ref:`shaped_text_resize_object<class_TextServer_method_shaped_text_resize_object>` **(** :ref:`RID<class_RID>` shaped, :ref:`Variant<class_Variant>` key, :ref:`Vector2<class_Vector2>` size, :ref:`InlineAlignment<enum_@GlobalScope_InlineAlignment>` inline_align=5, :ref:`float<class_float>` baseline=0.0 **)**                                                  |
    +-----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                            | :ref:`shaped_text_set_bidi_override<class_TextServer_method_shaped_text_set_bidi_override>` **(** :ref:`RID<class_RID>` shaped, :ref:`Array<class_Array>` override **)**                                                                                                                                                                                               |
+   +-----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                                            | :ref:`shaped_text_set_custom_ellipsis<class_TextServer_method_shaped_text_set_custom_ellipsis>` **(** :ref:`RID<class_RID>` shaped, :ref:`int<class_int>` char **)**                                                                                                                                                                                                   |
    +-----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                            | :ref:`shaped_text_set_custom_punctuation<class_TextServer_method_shaped_text_set_custom_punctuation>` **(** :ref:`RID<class_RID>` shaped, :ref:`String<class_String>` punct **)**                                                                                                                                                                                      |
    +-----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -3359,6 +3363,18 @@ Returns array of the composite character boundaries.
 
 ----
 
+.. _class_TextServer_method_shaped_text_get_custom_ellipsis:
+
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **shaped_text_get_custom_ellipsis** **(** :ref:`RID<class_RID>` shaped **)** |const|
+
+Returns ellipsis character used for text clipping.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_TextServer_method_shaped_text_get_custom_punctuation:
 
 .. rst-class:: classref-method
@@ -3828,6 +3844,18 @@ void **shaped_text_set_bidi_override** **(** :ref:`RID<class_RID>` shaped, :ref:
 Overrides BiDi for the structured text.
 
 Override ranges should cover full source text without overlaps. BiDi algorithm will be used on each range separately.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_TextServer_method_shaped_text_set_custom_ellipsis:
+
+.. rst-class:: classref-method
+
+void **shaped_text_set_custom_ellipsis** **(** :ref:`RID<class_RID>` shaped, :ref:`int<class_int>` char **)**
+
+Sets ellipsis character used for text clipping.
 
 .. rst-class:: classref-item-separator
 

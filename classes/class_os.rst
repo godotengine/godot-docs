@@ -215,6 +215,14 @@ The Vulkan rendering driver. It requires Vulkan 1.0 support and automatically us
 
 The OpenGL 3 rendering driver. It uses OpenGL 3.3 Core Profile on desktop platforms, OpenGL ES 3.0 on mobile devices, and WebGL 2.0 on Web.
 
+.. _class_OS_constant_RENDERING_DRIVER_D3D12:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`RenderingDriver<enum_OS_RenderingDriver>` **RENDERING_DRIVER_D3D12** = ``2``
+
+The Direct3D 12 rendering driver.
+
 .. rst-class:: classref-item-separator
 
 ----

@@ -34,6 +34,8 @@ Properties
    +---------------------------------------------------------------------------+-----------------------------------------------------------------------------+-----------+
    | :ref:`Direction<enum_TextServer_Direction>`                               | :ref:`direction<class_TextLine_property_direction>`                         | ``0``     |
    +---------------------------------------------------------------------------+-----------------------------------------------------------------------------+-----------+
+   | :ref:`String<class_String>`                                               | :ref:`ellipsis_char<class_TextLine_property_ellipsis_char>`                 | ``"…"``   |
+   +---------------------------------------------------------------------------+-----------------------------------------------------------------------------+-----------+
    | |bitfield|\<:ref:`JustificationFlag<enum_TextServer_JustificationFlag>`\> | :ref:`flags<class_TextLine_property_flags>`                                 | ``3``     |
    +---------------------------------------------------------------------------+-----------------------------------------------------------------------------+-----------+
    | :ref:`Orientation<enum_TextServer_Orientation>`                           | :ref:`orientation<class_TextLine_property_orientation>`                     | ``0``     |
@@ -131,6 +133,23 @@ Sets text alignment within the line as if the line was horizontal.
 - :ref:`Direction<enum_TextServer_Direction>` **get_direction** **(** **)**
 
 Text writing direction.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_TextLine_property_ellipsis_char:
+
+.. rst-class:: classref-property
+
+:ref:`String<class_String>` **ellipsis_char** = ``"…"``
+
+.. rst-class:: classref-property-setget
+
+- void **set_ellipsis_char** **(** :ref:`String<class_String>` value **)**
+- :ref:`String<class_String>` **get_ellipsis_char** **(** **)**
+
+Ellipsis character used for text clipping.
 
 .. rst-class:: classref-item-separator
 

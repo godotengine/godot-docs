@@ -41,6 +41,8 @@ Properties
    +-----------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                                     | :ref:`clip_text<class_Label_property_clip_text>`                                                         | ``false``                                                                    |
    +-----------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                                                 | :ref:`ellipsis_char<class_Label_property_ellipsis_char>`                                                 | ``"…"``                                                                      |
+   +-----------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
    | :ref:`HorizontalAlignment<enum_@GlobalScope_HorizontalAlignment>`           | :ref:`horizontal_alignment<class_Label_property_horizontal_alignment>`                                   | ``0``                                                                        |
    +-----------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
    | |bitfield|\<:ref:`JustificationFlag<enum_TextServer_JustificationFlag>`\>   | :ref:`justification_flags<class_Label_property_justification_flags>`                                     | ``163``                                                                      |
@@ -168,6 +170,23 @@ If set to something other than :ref:`TextServer.AUTOWRAP_OFF<class_TextServer_co
 - :ref:`bool<class_bool>` **is_clipping_text** **(** **)**
 
 If ``true``, the Label only shows the text that fits inside its bounding rectangle and will clip text horizontally.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Label_property_ellipsis_char:
+
+.. rst-class:: classref-property
+
+:ref:`String<class_String>` **ellipsis_char** = ``"…"``
+
+.. rst-class:: classref-property-setget
+
+- void **set_ellipsis_char** **(** :ref:`String<class_String>` value **)**
+- :ref:`String<class_String>` **get_ellipsis_char** **(** **)**
+
+Ellipsis character used for text clipping.
 
 .. rst-class:: classref-item-separator
 

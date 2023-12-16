@@ -33,11 +33,13 @@ Properties
 .. table::
    :widths: auto
 
-   +-----------------------------------+--------------------------------------------------------------+----------+
-   | :ref:`bool<class_bool>`           | :ref:`filter<class_PanoramaSkyMaterial_property_filter>`     | ``true`` |
-   +-----------------------------------+--------------------------------------------------------------+----------+
-   | :ref:`Texture2D<class_Texture2D>` | :ref:`panorama<class_PanoramaSkyMaterial_property_panorama>` |          |
-   +-----------------------------------+--------------------------------------------------------------+----------+
+   +-----------------------------------+--------------------------------------------------------------------------------+----------+
+   | :ref:`float<class_float>`         | :ref:`energy_multiplier<class_PanoramaSkyMaterial_property_energy_multiplier>` | ``1.0``  |
+   +-----------------------------------+--------------------------------------------------------------------------------+----------+
+   | :ref:`bool<class_bool>`           | :ref:`filter<class_PanoramaSkyMaterial_property_filter>`                       | ``true`` |
+   +-----------------------------------+--------------------------------------------------------------------------------+----------+
+   | :ref:`Texture2D<class_Texture2D>` | :ref:`panorama<class_PanoramaSkyMaterial_property_panorama>`                   |          |
+   +-----------------------------------+--------------------------------------------------------------------------------+----------+
 
 .. rst-class:: classref-section-separator
 
@@ -47,6 +49,23 @@ Properties
 
 Property Descriptions
 ---------------------
+
+.. _class_PanoramaSkyMaterial_property_energy_multiplier:
+
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **energy_multiplier** = ``1.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_energy_multiplier** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_energy_multiplier** **(** **)**
+
+The sky's overall brightness multiplier. Higher values result in a brighter sky.
+
+.. rst-class:: classref-item-separator
+
+----
 
 .. _class_PanoramaSkyMaterial_property_filter:
 

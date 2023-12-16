@@ -38,6 +38,8 @@ Properties
    +---------------------------------------------------------------------------+----------------------------------------------------------------------------------+-----------+
    | :ref:`Direction<enum_TextServer_Direction>`                               | :ref:`direction<class_TextParagraph_property_direction>`                         | ``0``     |
    +---------------------------------------------------------------------------+----------------------------------------------------------------------------------+-----------+
+   | :ref:`String<class_String>`                                               | :ref:`ellipsis_char<class_TextParagraph_property_ellipsis_char>`                 | ``"…"``   |
+   +---------------------------------------------------------------------------+----------------------------------------------------------------------------------+-----------+
    | |bitfield|\<:ref:`JustificationFlag<enum_TextServer_JustificationFlag>`\> | :ref:`justification_flags<class_TextParagraph_property_justification_flags>`     | ``163``   |
    +---------------------------------------------------------------------------+----------------------------------------------------------------------------------+-----------+
    | :ref:`int<class_int>`                                                     | :ref:`max_lines_visible<class_TextParagraph_property_max_lines_visible>`         | ``-1``    |
@@ -199,6 +201,23 @@ Custom punctuation character list, used for word breaking. If set to empty strin
 - :ref:`Direction<enum_TextServer_Direction>` **get_direction** **(** **)**
 
 Text writing direction.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_TextParagraph_property_ellipsis_char:
+
+.. rst-class:: classref-property
+
+:ref:`String<class_String>` **ellipsis_char** = ``"…"``
+
+.. rst-class:: classref-property-setget
+
+- void **set_ellipsis_char** **(** :ref:`String<class_String>` value **)**
+- :ref:`String<class_String>` **get_ellipsis_char** **(** **)**
+
+Ellipsis character used for text clipping.
 
 .. rst-class:: classref-item-separator
 

@@ -34,6 +34,8 @@ Properties
    :widths: auto
 
    +-----------------------------------+------------------------------------------------------------------------------------------------+--------------------------------------+
+   | :ref:`float<class_float>`         | :ref:`energy_multiplier<class_ProceduralSkyMaterial_property_energy_multiplier>`               | ``1.0``                              |
+   +-----------------------------------+------------------------------------------------------------------------------------------------+--------------------------------------+
    | :ref:`Color<class_Color>`         | :ref:`ground_bottom_color<class_ProceduralSkyMaterial_property_ground_bottom_color>`           | ``Color(0.2, 0.169, 0.133, 1)``      |
    +-----------------------------------+------------------------------------------------------------------------------------------------+--------------------------------------+
    | :ref:`float<class_float>`         | :ref:`ground_curve<class_ProceduralSkyMaterial_property_ground_curve>`                         | ``0.02``                             |
@@ -69,6 +71,23 @@ Properties
 
 Property Descriptions
 ---------------------
+
+.. _class_ProceduralSkyMaterial_property_energy_multiplier:
+
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **energy_multiplier** = ``1.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_energy_multiplier** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_energy_multiplier** **(** **)**
+
+The sky's overall brightness multiplier. Higher values result in a brighter sky.
+
+.. rst-class:: classref-item-separator
+
+----
 
 .. _class_ProceduralSkyMaterial_property_ground_bottom_color:
 

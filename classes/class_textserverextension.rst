@@ -330,6 +330,8 @@ Methods
    +-----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`PackedInt32Array<class_PackedInt32Array>`                 | :ref:`_shaped_text_get_character_breaks<class_TextServerExtension_private_method__shaped_text_get_character_breaks>` **(** :ref:`RID<class_RID>` shaped **)** |virtual| |const|                                                                                                                                                                                                    |
    +-----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                                           | :ref:`_shaped_text_get_custom_ellipsis<class_TextServerExtension_private_method__shaped_text_get_custom_ellipsis>` **(** :ref:`RID<class_RID>` shaped **)** |virtual| |const|                                                                                                                                                                                                      |
+   +-----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                                     | :ref:`_shaped_text_get_custom_punctuation<class_TextServerExtension_private_method__shaped_text_get_custom_punctuation>` **(** :ref:`RID<class_RID>` shaped **)** |virtual| |const|                                                                                                                                                                                                |
    +-----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                                       | :ref:`_shaped_text_get_descent<class_TextServerExtension_private_method__shaped_text_get_descent>` **(** :ref:`RID<class_RID>` shaped **)** |virtual| |const|                                                                                                                                                                                                                      |
@@ -405,6 +407,8 @@ Methods
    | :ref:`bool<class_bool>`                                         | :ref:`_shaped_text_resize_object<class_TextServerExtension_private_method__shaped_text_resize_object>` **(** :ref:`RID<class_RID>` shaped, :ref:`Variant<class_Variant>` key, :ref:`Vector2<class_Vector2>` size, :ref:`InlineAlignment<enum_@GlobalScope_InlineAlignment>` inline_align, :ref:`float<class_float>` baseline **)** |virtual|                                       |
    +-----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                            | :ref:`_shaped_text_set_bidi_override<class_TextServerExtension_private_method__shaped_text_set_bidi_override>` **(** :ref:`RID<class_RID>` shaped, :ref:`Array<class_Array>` override **)** |virtual|                                                                                                                                                                              |
+   +-----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                                            | :ref:`_shaped_text_set_custom_ellipsis<class_TextServerExtension_private_method__shaped_text_set_custom_ellipsis>` **(** :ref:`RID<class_RID>` shaped, :ref:`int<class_int>` char **)** |virtual|                                                                                                                                                                                  |
    +-----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                            | :ref:`_shaped_text_set_custom_punctuation<class_TextServerExtension_private_method__shaped_text_set_custom_punctuation>` **(** :ref:`RID<class_RID>` shaped, :ref:`String<class_String>` punct **)** |virtual|                                                                                                                                                                     |
    +-----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -2540,6 +2544,20 @@ void **_shaped_text_get_carets** **(** :ref:`RID<class_RID>` shaped, :ref:`int<c
 
 ----
 
+.. _class_TextServerExtension_private_method__shaped_text_get_custom_ellipsis:
+
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **_shaped_text_get_custom_ellipsis** **(** :ref:`RID<class_RID>` shaped **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_TextServerExtension_private_method__shaped_text_get_custom_punctuation:
 
 .. rst-class:: classref-method
@@ -3063,6 +3081,20 @@ void **_shaped_text_overrun_trim_to_width** **(** :ref:`RID<class_RID>` shaped, 
 .. rst-class:: classref-method
 
 void **_shaped_text_set_bidi_override** **(** :ref:`RID<class_RID>` shaped, :ref:`Array<class_Array>` override **)** |virtual|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_TextServerExtension_private_method__shaped_text_set_custom_ellipsis:
+
+.. rst-class:: classref-method
+
+void **_shaped_text_set_custom_ellipsis** **(** :ref:`RID<class_RID>` shaped, :ref:`int<class_int>` char **)** |virtual|
 
 .. container:: contribute
 
