@@ -1053,7 +1053,7 @@ the inspector:
    Setting a per-instance uniform's value in the GeometryInstance3D section of the inspector
 
 Per-instance uniform values can also be set at run-time using
-`set_instance_shader_parameter<class_GeometryInstance3D_method_set_instance_shader_parameter>`
+:ref:`set_instance_shader_parameter <class_GeometryInstance3D_method_set_instance_shader_parameter>`
 method on a node that inherits from :ref:`class_GeometryInstance3D`:
 
 .. code-block:: gdscript
