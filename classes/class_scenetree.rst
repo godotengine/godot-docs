@@ -93,6 +93,8 @@ Methods
    +---------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                       | :ref:`get_node_count<class_SceneTree_method_get_node_count>` **(** **)** |const|                                                                                                                                                                        |
    +---------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                       | :ref:`get_node_count_in_group<class_SceneTree_method_get_node_count_in_group>` **(** :ref:`StringName<class_StringName>` group **)** |const|                                                                                                            |
+   +---------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Node[]<class_Node>`                   | :ref:`get_nodes_in_group<class_SceneTree_method_get_nodes_in_group>` **(** :ref:`StringName<class_StringName>` group **)**                                                                                                                              |
    +---------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Tween[]<class_Tween>`                 | :ref:`get_processed_tweens<class_SceneTree_method_get_processed_tweens>` **(** **)**                                                                                                                                                                    |
@@ -642,6 +644,18 @@ Searches for the :ref:`MultiplayerAPI<class_MultiplayerAPI>` configured for the 
 :ref:`int<class_int>` **get_node_count** **(** **)** |const|
 
 Returns the number of nodes in this **SceneTree**.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_SceneTree_method_get_node_count_in_group:
+
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **get_node_count_in_group** **(** :ref:`StringName<class_StringName>` group **)** |const|
+
+Returns the number of nodes assigned to the given group.
 
 .. rst-class:: classref-item-separator
 

@@ -289,7 +289,7 @@ Name of the current device for audio output (see :ref:`get_output_device_list<cl
 - void **set_playback_speed_scale** **(** :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_playback_speed_scale** **(** **)**
 
-Scales the rate at which audio is played (i.e. setting it to ``0.5`` will make the audio be played at half its speed).
+Scales the rate at which audio is played (i.e. setting it to ``0.5`` will make the audio be played at half its speed). See also :ref:`Engine.time_scale<class_Engine_property_time_scale>` to affect the general simulation speed, which is independent from :ref:`playback_speed_scale<class_AudioServer_property_playback_speed_scale>`.
 
 .. rst-class:: classref-section-separator
 

@@ -267,6 +267,8 @@ Methods
    +----------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`RenderingDevice<class_RenderingDevice>`                                    | :ref:`create_local_rendering_device<class_RenderingServer_method_create_local_rendering_device>` **(** **)** |const|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
    +----------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Rect2<class_Rect2>`                                                        | :ref:`debug_canvas_item_get_rect<class_RenderingServer_method_debug_canvas_item_get_rect>` **(** :ref:`RID<class_RID>` item **)**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+   +----------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`RID<class_RID>`                                                            | :ref:`decal_create<class_RenderingServer_method_decal_create>` **(** **)**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
    +----------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                                             | :ref:`decal_set_albedo_mix<class_RenderingServer_method_decal_set_albedo_mix>` **(** :ref:`RID<class_RID>` decal, :ref:`float<class_float>` albedo_mix **)**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
@@ -3186,11 +3188,19 @@ Visible render pass (excluding shadows).
 
 Shadow render pass. Objects will be rendered several times depending on the number of amounts of lights with shadows and the number of directional shadow splits.
 
+.. _class_RenderingServer_constant_VIEWPORT_RENDER_INFO_TYPE_CANVAS:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ViewportRenderInfoType<enum_RenderingServer_ViewportRenderInfoType>` **VIEWPORT_RENDER_INFO_TYPE_CANVAS** = ``2``
+
+Canvas item rendering. This includes all 2D rendering.
+
 .. _class_RenderingServer_constant_VIEWPORT_RENDER_INFO_TYPE_MAX:
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`ViewportRenderInfoType<enum_RenderingServer_ViewportRenderInfoType>` **VIEWPORT_RENDER_INFO_TYPE_MAX** = ``2``
+:ref:`ViewportRenderInfoType<enum_RenderingServer_ViewportRenderInfoType>` **VIEWPORT_RENDER_INFO_TYPE_MAX** = ``3``
 
 Represents the size of the :ref:`ViewportRenderInfoType<enum_RenderingServer_ViewportRenderInfoType>` enum.
 
@@ -6669,6 +6679,20 @@ Sets the texture ``repeat`` mode to use for the canvas texture specified by the 
 Creates a RenderingDevice that can be used to do draw and compute operations on a separate thread. Cannot draw to the screen nor share data with the global RenderingDevice.
 
 \ **Note:** When using the OpenGL backend or when running in headless mode, this function always returns ``null``.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_RenderingServer_method_debug_canvas_item_get_rect:
+
+.. rst-class:: classref-method
+
+:ref:`Rect2<class_Rect2>` **debug_canvas_item_get_rect** **(** :ref:`RID<class_RID>` item **)**
+
+Returns the bounding rectangle for a canvas item in local space, as calculated by the renderer. This bound is used internally for culling.
+
+\ **Warning:** This function is intended for debugging in the editor, and will pass through and return a zero :ref:`Rect2<class_Rect2>` in exported projects.
 
 .. rst-class:: classref-item-separator
 

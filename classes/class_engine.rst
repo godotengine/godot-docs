@@ -228,6 +228,10 @@ If ``false``, stops printing error and warning messages to the console and edito
 
 Controls how fast or slow the in-game clock ticks versus the real life one. It defaults to 1.0. A value of 2.0 means the game moves twice as fast as real life, whilst a value of 0.5 means the game moves at half the regular speed. This also affects :ref:`Timer<class_Timer>` and :ref:`SceneTreeTimer<class_SceneTreeTimer>` (see :ref:`SceneTree.create_timer<class_SceneTree_method_create_timer>` for how to control this).
 
+\ **Note:** This does not affect audio playback speed. Use :ref:`AudioServer.playback_speed_scale<class_AudioServer_property_playback_speed_scale>` to adjust audio playback speed independently of :ref:`time_scale<class_Engine_property_time_scale>`.
+
+\ **Note:** This does not automatically adjust :ref:`physics_ticks_per_second<class_Engine_property_physics_ticks_per_second>`, which means that with time scales above 1.0, physics simulation may become less precise (as each physics tick will stretch over a larger period of engine time). If you're using :ref:`time_scale<class_Engine_property_time_scale>` to speed up simulation by a large factor, consider increasing :ref:`physics_ticks_per_second<class_Engine_property_physics_ticks_per_second>` as well to improve physics reliability.
+
 .. rst-class:: classref-section-separator
 
 ----
