@@ -381,7 +381,6 @@ imported 3D scenes will also speed up baking significantly. However, this will
 require you to reimport all lightmapped 3D scenes before you can bake lightmaps
 again.
 
-
 .. _doc_using_lightmap_gi_denoising:
 
 Denoising
@@ -527,3 +526,12 @@ in Base64.
     The generated EXR file can be viewed and even edited using an image editor
     to perform post-processing if needed. However, keep in mind that changes to
     the EXR file will be lost when baking lightmaps again.
+
+Reducing LightmapGI artifacts
+-----------------------------
+
+If you notice LightmapGI nodes popping in and out of existence as the camera
+moves, this is most likely because the engine is rendering too many LightmapGI
+instances at once. Godot is limited to rendering 8 LightmapGI nodes at once,
+which means up to 8 instances can be in the camera view before some of them will
+start flickering.

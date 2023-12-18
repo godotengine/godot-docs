@@ -193,3 +193,14 @@ in your level geometry. This can be remedied in several ways:
 - To combat artifacts that can appear on reflective surfaces, try increasing
   **Bias** and/or **Normal Bias** in the VoxelGIData resource as described above.
   Do not increase these values too high, or light leaking will become more pronounced.
+
+If you notice VoxelGI nodes popping in and out of existence as the camera moves,
+this is most likely because the engine is rendering too many VoxelGI instances
+at once. Godot is limited to rendering 8 VoxelGI nodes at once, which means up
+to 8 instances can be in the camera view before some of them will start
+flickering.
+
+Additionally, for performance reasons, Godot can only blend between 2 VoxelGI
+nodes at a given pixel on the screen. If you have more than 2 VoxelGI nodes
+overlapping, global illumination may appear to flicker as the camera moves or
+rotates.
