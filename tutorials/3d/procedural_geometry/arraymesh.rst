@@ -265,7 +265,7 @@ that you find online.
             var y = cos(PI * v)
 
             # Loop over segments in ring.
-            for j in range(radial_segments):
+            for j in range(radial_segments + 1):
                 var u = float(j) / radial_segments
                 var x = sin(u * PI * 2.0)
                 var z = cos(u * PI * 2.0)
@@ -284,15 +284,6 @@ that you find online.
                     indices.append(prevrow + j)
                     indices.append(thisrow + j)
                     indices.append(thisrow + j - 1)
-
-            if i > 0:
-                indices.append(prevrow + radial_segments - 1)
-                indices.append(prevrow)
-                indices.append(thisrow + radial_segments - 1)
-
-                indices.append(prevrow)
-                indices.append(prevrow + radial_segments)
-                indices.append(thisrow + radial_segments - 1)
 
             prevrow = thisrow
             thisrow = point
@@ -324,7 +315,7 @@ that you find online.
                 var y = Mathf.Cos(Mathf.Pi * v);
 
                 // Loop over segments in ring.
-                for (var j = 0; j < _radialSegments; j++)
+                for (var j = 0; j < _radialSegments + 1; j++)
                 {
                     var u = ((float)j) / _radialSegments;
                     var x = Mathf.Sin(u * Mathf.Pi * 2);
@@ -346,17 +337,6 @@ that you find online.
                         indices.Add(thisRow + j);
                         indices.Add(thisRow + j - 1);
                     }
-                }
-
-                if (i > 0)
-                {
-                    indices.Add(prevRow + _radialSegments - 1);
-                    indices.Add(prevRow);
-                    indices.Add(thisRow + _radialSegments - 1);
-
-                    indices.Add(prevRow);
-                    indices.Add(prevRow + _radialSegments);
-                    indices.Add(thisRow + _radialSegments - 1);
                 }
 
                 prevRow = thisRow;
