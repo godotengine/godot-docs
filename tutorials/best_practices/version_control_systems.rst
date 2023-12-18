@@ -21,11 +21,6 @@ create additional VCS plugins.
 Official Git plugin
 ^^^^^^^^^^^^^^^^^^^
 
-.. warning::
-
-    As of July 2023, the Git plugin hasn't been updated to work with Godot 4.1
-    and later yet.
-
 Using Git from inside the editor is supported with an official plugin.
 You can find the latest releases on
 `GitHub <https://github.com/godotengine/godot-git-plugin/releases>`__.
