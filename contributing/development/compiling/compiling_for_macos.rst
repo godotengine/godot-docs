@@ -128,7 +128,7 @@ of those two architectures by leaving out the ``lipo`` step below.
     scons platform=macos target=template_release arch=x86_64
     scons platform=macos target=template_debug arch=x86_64
 
-- For ARM64 (Apple M1)::
+- For Arm64 (Apple M1)::
 
     scons platform=macos target=template_release arch=arm64
     scons platform=macos target=template_debug arch=arm64
@@ -136,20 +136,20 @@ of those two architectures by leaving out the ``lipo`` step below.
 To support both architectures in a single "Universal 2" binary, run the above
 two commands blocks and then use ``lipo`` to bundle them together::
 
-    lipo -create bin/godot.macos.opt.x86_64 bin/godot.macos.opt.arm64 -output bin/godot.macos.opt.universal
-    lipo -create bin/godot.macos.opt.debug.x86_64 bin/godot.macos.opt.debug.arm64 -output bin/godot.macos.opt.debug.universal
+    lipo -create bin/godot.macos.template_release.x86_64 bin/godot.macos.template_release.arm64 -output bin/godot.macos.template_release.universal
+    lipo -create bin/godot.macos.template_debug.x86_64 bin/godot.macos.template_debug.arm64 -output bin/godot.macos.template_debug.universal
 
 To create an ``.app`` bundle like in the official builds, you need to use the
 template located in ``misc/dist/macos_template.app``. The release and debug
 builds should be placed in ``macos_template.app/Contents/MacOS`` with the names
-``godot_macos_release.64`` and ``godot_macos_debug.64`` respectively. You can do so
+``godot_macos_release.universal`` and ``godot_macos_debug.universal`` respectively. You can do so
 with the following commands (assuming a universal build, otherwise replace the
 ``.universal`` extension with the one of your arch-specific binaries)::
 
     cp -r misc/dist/macos_template.app .
     mkdir -p macos_template.app/Contents/MacOS
-    cp bin/godot.macos.opt.universal macos_template.app/Contents/MacOS/godot_macos_release.64
-    cp bin/godot.macos.opt.debug.universal macos_template.app/Contents/MacOS/godot_macos_debug.64
+    cp bin/godot.macos.template_release.universal macos_template.app/Contents/MacOS/godot_macos_release.universal
+    cp bin/godot.macos.template_debug.universal macos_template.app/Contents/MacOS/godot_macos_debug.universal
     chmod +x macos_template.app/Contents/MacOS/godot_macos*
 
 .. note::
