@@ -443,7 +443,7 @@ Non-game application
 - Keep the stretch mode to its default value, ``disabled``.
 - Keep the stretch aspect to its default value, ``ignore``
   (its value won't be used since the stretch mode is ``disabled``).
-- You can define a minimum window size by setting ``OS.min_window_size`` in a
+- You can define a minimum window size by setting ``DisplayServer.window_set_min_size()`` in a
   script's ``_ready()`` function. This prevents the user from resizing the application
   below a certain size, which could break the UI layout.
 
