@@ -360,7 +360,7 @@ Reference
         starting a new paragraph. Some font files may contain script-specific substitutes,
         in which case they will be used.
 
-    - ``[lang={code}]{text}[/color]``
+    - ``[lang={code}]{text}[/lang]``
 
   * - | **color**
       | Changes the color of ``{text}``. Color must be provided by a common name (see
