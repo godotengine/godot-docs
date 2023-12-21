@@ -202,13 +202,13 @@ Note that a new instance must be added to the scene using ``add_child()``.
         mob_spawn_location.progress_ratio = randf()
 
         # Set the mob's direction perpendicular to the path direction.
-        var direction = mob_spawn_location.rotation + PI / 2
+        var direction = mob_spawn_location.rotation + Pi / 2
 
         # Set the mob's position to a random location.
         mob.position = mob_spawn_location.position
 
         # Add some randomness to the direction.
-        direction += randf_range(-PI / 4, PI / 4)
+        direction += randf_range(-Pi / 4, Pi / 4)
         mob.rotation = direction
 
         # Choose the velocity for the mob.
