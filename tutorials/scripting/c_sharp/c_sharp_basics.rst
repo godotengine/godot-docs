@@ -83,7 +83,7 @@ After reading the "Prerequisites" section, you can download and install
 
 In Godot's **Editor → Editor Settings** menu:
 
-- Set **Dotnet** -> **Editor** -> **External Editor** to **JetBrains Rider**.
+- Navigate **Text Editor** -> **External Editor**, toggle **Use External Editor** checkbox **On** and set **Exec Path** to **JetBrains Rider** executable file path.
 
 In Rider:
 
@@ -98,7 +98,7 @@ After reading the "Prerequisites" section, you can download and install
 
 In Godot's **Editor → Editor Settings** menu:
 
-- Set **Dotnet** -> **Editor** -> **External Editor** to **Visual Studio Code**.
+- Navigate **Text Editor** -> **External Editor**, toggle **Use External Editor** checkbox **On** and set **Exec Path** to **Visual Studio Code** executable file path.
 
 In Visual Studio Code:
 
@@ -137,7 +137,8 @@ While installing Visual Studio, select this workload:
 
 In Godot's **Editor → Editor Settings** menu:
 
-- Set **Dotnet** -> **Editor** -> **External Editor** to **Visual Studio**.
+- Navigate **Text Editor** -> **External Editor**, toggle **Use External Editor** checkbox **On** and set **Exec Path** to **Visual Studio** executable file path.
+
 
 .. note:: If you see an error like "Unable to find package Godot.NET.Sdk",
           your NuGet configuration may be incorrect and need to be fixed.
