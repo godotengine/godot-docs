@@ -93,7 +93,9 @@ generally with this naming convention::
 
     godot.<platform>.<target>[.dev][.double].<arch>[.<extra_suffix>][.<ext>]
 
-For the previous build attempt, the result would look like this::
+For the previous build attempt, the result would look like this:
+
+.. code-block:: console
 
     ls bin
     bin/godot.linuxbsd.editor.x86_64
@@ -103,7 +105,7 @@ whole editor compiled in, and is meant for 64 bits.
 
 A Windows binary with the same configuration will look like this:
 
-.. code-block:: console
+.. code-block:: doscon
 
     C:\godot> dir bin/
     godot.windows.editor.64.exe

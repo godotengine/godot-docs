@@ -132,7 +132,9 @@ Running SCons
 ~~~~~~~~~~~~~
 
 After opening a command prompt, change to the root directory of
-the engine source code (using ``cd``) and type::
+the engine source code (using ``cd``) and type:
+
+.. code-block:: doscon
 
     C:\godot> scons platform=windows
 
@@ -268,7 +270,9 @@ Creating Windows export templates
 ---------------------------------
 
 Windows export templates are created by compiling Godot without the editor,
-with the following flags::
+with the following flags:
+
+.. code-block:: doscon
 
     C:\godot> scons platform=windows target=template_debug arch=x86_32
     C:\godot> scons platform=windows target=template_release arch=x86_32
@@ -277,7 +281,9 @@ with the following flags::
 
 If you plan on replacing the standard export templates, copy these to the
 following location, replacing ``<version>`` with the version identifier
-(such as ``3.1.1.stable`` or ``3.2.dev``)::
+(such as ``3.1.1.stable`` or ``3.2.dev``):
+
+.. code-block:: none
 
     %USERPROFILE%\AppData\Roaming\Godot\templates\<version>\
 
