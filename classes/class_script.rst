@@ -59,6 +59,8 @@ Methods
    +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Script<class_Script>`           | :ref:`get_base_script<class_Script_method_get_base_script>` **(** **)** |const|                                                            |
    +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`StringName<class_StringName>`   | :ref:`get_global_name<class_Script_method_get_global_name>` **(** **)** |const|                                                            |
+   +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`StringName<class_StringName>`   | :ref:`get_instance_base_type<class_Script_method_get_instance_base_type>` **(** **)** |const|                                              |
    +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Variant<class_Variant>`         | :ref:`get_property_default_value<class_Script_method_get_property_default_value>` **(** :ref:`StringName<class_StringName>` property **)** |
@@ -134,6 +136,39 @@ Returns ``true`` if the script can be instantiated.
 :ref:`Script<class_Script>` **get_base_script** **(** **)** |const|
 
 Returns the script directly inherited by this script.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Script_method_get_global_name:
+
+.. rst-class:: classref-method
+
+:ref:`StringName<class_StringName>` **get_global_name** **(** **)** |const|
+
+Returns the class name associated with the script, if there is one. Returns an empty string otherwise.
+
+To give the script a global name, you can use the ``class_name`` keyword in GDScript and the ``[GlobalClass]`` attribute in C#.
+
+
+.. tabs::
+
+ .. code-tab:: gdscript
+
+    class_name MyNode
+    extends Node
+
+ .. code-tab:: csharp
+
+    using Godot;
+    
+    [GlobalClass]
+    public partial class MyNode : Node
+    {
+    }
+
+
 
 .. rst-class:: classref-item-separator
 

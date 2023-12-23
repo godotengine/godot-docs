@@ -228,6 +228,8 @@ Methods
    :widths: auto
 
    +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector2<class_Vector2>`     | :ref:`get_param<class_ParticleProcessMaterial_method_get_param>` **(** :ref:`Parameter<enum_ParticleProcessMaterial_Parameter>` param **)** |const|                                                         |
+   +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`         | :ref:`get_param_max<class_ParticleProcessMaterial_method_get_param_max>` **(** :ref:`Parameter<enum_ParticleProcessMaterial_Parameter>` param **)** |const|                                                 |
    +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`         | :ref:`get_param_min<class_ParticleProcessMaterial_method_get_param_min>` **(** :ref:`Parameter<enum_ParticleProcessMaterial_Parameter>` param **)** |const|                                                 |
@@ -235,6 +237,8 @@ Methods
    | :ref:`Texture2D<class_Texture2D>` | :ref:`get_param_texture<class_ParticleProcessMaterial_method_get_param_texture>` **(** :ref:`Parameter<enum_ParticleProcessMaterial_Parameter>` param **)** |const|                                         |
    +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`           | :ref:`get_particle_flag<class_ParticleProcessMaterial_method_get_particle_flag>` **(** :ref:`ParticleFlags<enum_ParticleProcessMaterial_ParticleFlags>` particle_flag **)** |const|                         |
+   +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                              | :ref:`set_param<class_ParticleProcessMaterial_method_set_param>` **(** :ref:`Parameter<enum_ParticleProcessMaterial_Parameter>` param, :ref:`Vector2<class_Vector2>` value **)**                            |
    +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                              | :ref:`set_param_max<class_ParticleProcessMaterial_method_set_param_max>` **(** :ref:`Parameter<enum_ParticleProcessMaterial_Parameter>` param, :ref:`float<class_float>` value **)**                        |
    +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -2306,6 +2310,20 @@ A pivot point used to calculate radial and orbital velocity of particles.
 Method Descriptions
 -------------------
 
+.. _class_ParticleProcessMaterial_method_get_param:
+
+.. rst-class:: classref-method
+
+:ref:`Vector2<class_Vector2>` **get_param** **(** :ref:`Parameter<enum_ParticleProcessMaterial_Parameter>` param **)** |const|
+
+Returns the minimum and maximum values of the given ``param`` as a vector.
+
+The ``x`` component of the returned vector corresponds to minimum and the ``y`` component corresponds to maximum.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_ParticleProcessMaterial_method_get_param_max:
 
 .. rst-class:: classref-method
@@ -2349,6 +2367,20 @@ Returns the :ref:`Texture2D<class_Texture2D>` used by the specified parameter.
 :ref:`bool<class_bool>` **get_particle_flag** **(** :ref:`ParticleFlags<enum_ParticleProcessMaterial_ParticleFlags>` particle_flag **)** |const|
 
 Returns ``true`` if the specified particle flag is enabled. See :ref:`ParticleFlags<enum_ParticleProcessMaterial_ParticleFlags>` for options.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ParticleProcessMaterial_method_set_param:
+
+.. rst-class:: classref-method
+
+void **set_param** **(** :ref:`Parameter<enum_ParticleProcessMaterial_Parameter>` param, :ref:`Vector2<class_Vector2>` value **)**
+
+Sets the minimum and maximum values of the given ``param``.
+
+The ``x`` component of the argument vector corresponds to minimum and the ``y`` component corresponds to maximum.
 
 .. rst-class:: classref-item-separator
 

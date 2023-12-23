@@ -237,6 +237,8 @@ Methods
    +-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Variant<class_Variant>`       | :ref:`get<class_Dictionary_method_get>` **(** :ref:`Variant<class_Variant>` key, :ref:`Variant<class_Variant>` default=null **)** |const|       |
    +-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Variant<class_Variant>`       | :ref:`get_or_add<class_Dictionary_method_get_or_add>` **(** :ref:`Variant<class_Variant>` key, :ref:`Variant<class_Variant>` default=null **)** |
+   +-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`             | :ref:`has<class_Dictionary_method_has>` **(** :ref:`Variant<class_Variant>` key **)** |const|                                                   |
    +-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`             | :ref:`has_all<class_Dictionary_method_has_all>` **(** :ref:`Array<class_Array>` keys **)** |const|                                              |
@@ -369,6 +371,18 @@ Finds and returns the first key whose associated value is equal to ``value``, or
 :ref:`Variant<class_Variant>` **get** **(** :ref:`Variant<class_Variant>` key, :ref:`Variant<class_Variant>` default=null **)** |const|
 
 Returns the corresponding value for the given ``key`` in the dictionary. If the ``key`` does not exist, returns ``default``, or ``null`` if the parameter is omitted.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Dictionary_method_get_or_add:
+
+.. rst-class:: classref-method
+
+:ref:`Variant<class_Variant>` **get_or_add** **(** :ref:`Variant<class_Variant>` key, :ref:`Variant<class_Variant>` default=null **)**
+
+Gets a value and ensures the key is set. If the ``key`` exists in the dictionary, this behaves like :ref:`get<class_Dictionary_method_get>`. Otherwise, the ``default`` value is inserted into the dictionary and returned.
 
 .. rst-class:: classref-item-separator
 

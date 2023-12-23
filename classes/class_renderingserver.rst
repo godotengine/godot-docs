@@ -10389,7 +10389,7 @@ Updates the texture specified by the ``texture`` :ref:`RID<class_RID>`'s data wi
 
 :ref:`Format<enum_Image_Format>` **texture_get_format** **(** :ref:`RID<class_RID>` texture **)** |const|
 
-Returns the :ref:`Format<enum_Image_Format>` for the texture.
+Returns the format for the texture.
 
 .. rst-class:: classref-item-separator
 

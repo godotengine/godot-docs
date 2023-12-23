@@ -23,6 +23,8 @@ Description
 
 This node can also locally alter or override physics parameters (gravity, damping) and route audio to custom audio buses.
 
+\ **Note:** Areas and bodies created with :ref:`PhysicsServer2D<class_PhysicsServer2D>` might not interact as expected with **Area2D**\ s, and might not emit signals or track objects correctly.
+
 .. rst-class:: classref-introduction-group
 
 Tutorials

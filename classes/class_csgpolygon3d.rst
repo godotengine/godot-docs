@@ -348,7 +348,7 @@ When :ref:`mode<class_CSGPolygon3D_property_mode>` is :ref:`MODE_PATH<class_CSGP
 - void **set_path_rotation** **(** :ref:`PathRotation<enum_CSGPolygon3D_PathRotation>` value **)**
 - :ref:`PathRotation<enum_CSGPolygon3D_PathRotation>` **get_path_rotation** **(** **)**
 
-When :ref:`mode<class_CSGPolygon3D_property_mode>` is :ref:`MODE_PATH<class_CSGPolygon3D_constant_MODE_PATH>`, the :ref:`PathRotation<enum_CSGPolygon3D_PathRotation>` method used to rotate the :ref:`polygon<class_CSGPolygon3D_property_polygon>` as it is extruded.
+When :ref:`mode<class_CSGPolygon3D_property_mode>` is :ref:`MODE_PATH<class_CSGPolygon3D_constant_MODE_PATH>`, the path rotation method used to rotate the :ref:`polygon<class_CSGPolygon3D_property_polygon>` as it is extruded.
 
 .. rst-class:: classref-item-separator
 

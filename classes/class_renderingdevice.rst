@@ -311,13 +311,133 @@ Represents the size of the :ref:`DeviceType<enum_RenderingDevice_DeviceType>` en
 
 enum **DriverResource**:
 
+.. _class_RenderingDevice_constant_DRIVER_RESOURCE_LOGICAL_DEVICE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`DriverResource<enum_RenderingDevice_DriverResource>` **DRIVER_RESOURCE_LOGICAL_DEVICE** = ``0``
+
+Specific device object based on a physical device.
+
+- Vulkan: Vulkan device driver resource (``VkDevice``). (``rid`` argument doesn't apply.)
+
+.. _class_RenderingDevice_constant_DRIVER_RESOURCE_PHYSICAL_DEVICE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`DriverResource<enum_RenderingDevice_DriverResource>` **DRIVER_RESOURCE_PHYSICAL_DEVICE** = ``1``
+
+Physical device the specific logical device is based on.
+
+- Vulkan: ``VkDevice``. (``rid`` argument doesn't apply.)
+
+.. _class_RenderingDevice_constant_DRIVER_RESOURCE_TOPMOST_OBJECT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`DriverResource<enum_RenderingDevice_DriverResource>` **DRIVER_RESOURCE_TOPMOST_OBJECT** = ``2``
+
+Top-most graphics API entry object.
+
+- Vulkan: ``VkInstance``. (``rid`` argument doesn't apply.)
+
+.. _class_RenderingDevice_constant_DRIVER_RESOURCE_COMMAND_QUEUE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`DriverResource<enum_RenderingDevice_DriverResource>` **DRIVER_RESOURCE_COMMAND_QUEUE** = ``3``
+
+The main graphics-compute command queue.
+
+- Vulkan: ``VkQueue``. (``rid`` argument doesn't apply.)
+
+.. _class_RenderingDevice_constant_DRIVER_RESOURCE_QUEUE_FAMILY:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`DriverResource<enum_RenderingDevice_DriverResource>` **DRIVER_RESOURCE_QUEUE_FAMILY** = ``4``
+
+The specific family the main queue belongs to.
+
+- Vulkan: the queue family index, an ``uint32_t``. (``rid`` argument doesn't apply.)
+
+.. _class_RenderingDevice_constant_DRIVER_RESOURCE_TEXTURE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`DriverResource<enum_RenderingDevice_DriverResource>` **DRIVER_RESOURCE_TEXTURE** = ``5``
+
+- Vulkan: ``VkImage``.
+
+.. _class_RenderingDevice_constant_DRIVER_RESOURCE_TEXTURE_VIEW:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`DriverResource<enum_RenderingDevice_DriverResource>` **DRIVER_RESOURCE_TEXTURE_VIEW** = ``6``
+
+The view of an owned or shared texture.
+
+- Vulkan: ``VkImageView``.
+
+.. _class_RenderingDevice_constant_DRIVER_RESOURCE_TEXTURE_DATA_FORMAT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`DriverResource<enum_RenderingDevice_DriverResource>` **DRIVER_RESOURCE_TEXTURE_DATA_FORMAT** = ``7``
+
+The native id of the data format of the texture.
+
+- Vulkan: ``VkFormat``.
+
+.. _class_RenderingDevice_constant_DRIVER_RESOURCE_SAMPLER:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`DriverResource<enum_RenderingDevice_DriverResource>` **DRIVER_RESOURCE_SAMPLER** = ``8``
+
+- Vulkan: ``VkSampler``.
+
+.. _class_RenderingDevice_constant_DRIVER_RESOURCE_UNIFORM_SET:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`DriverResource<enum_RenderingDevice_DriverResource>` **DRIVER_RESOURCE_UNIFORM_SET** = ``9``
+
+- Vulkan: ``VkDescriptorSet``.
+
+.. _class_RenderingDevice_constant_DRIVER_RESOURCE_BUFFER:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`DriverResource<enum_RenderingDevice_DriverResource>` **DRIVER_RESOURCE_BUFFER** = ``10``
+
+Buffer of any kind of (storage, vertex, etc.).
+
+- Vulkan: ``VkBuffer``.
+
+.. _class_RenderingDevice_constant_DRIVER_RESOURCE_COMPUTE_PIPELINE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`DriverResource<enum_RenderingDevice_DriverResource>` **DRIVER_RESOURCE_COMPUTE_PIPELINE** = ``11``
+
+- Vulkan: ``VkPipeline``.
+
+.. _class_RenderingDevice_constant_DRIVER_RESOURCE_RENDER_PIPELINE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`DriverResource<enum_RenderingDevice_DriverResource>` **DRIVER_RESOURCE_RENDER_PIPELINE** = ``12``
+
+- Vulkan: ``VkPipeline``.
+
 .. _class_RenderingDevice_constant_DRIVER_RESOURCE_VULKAN_DEVICE:
 
 .. rst-class:: classref-enumeration-constant
 
 :ref:`DriverResource<enum_RenderingDevice_DriverResource>` **DRIVER_RESOURCE_VULKAN_DEVICE** = ``0``
 
-Vulkan device driver resource. This is a "global" resource and ignores the RID passed in
+*Deprecated.* Use :ref:`DRIVER_RESOURCE_LOGICAL_DEVICE<class_RenderingDevice_constant_DRIVER_RESOURCE_LOGICAL_DEVICE>`.
 
 .. _class_RenderingDevice_constant_DRIVER_RESOURCE_VULKAN_PHYSICAL_DEVICE:
 
@@ -325,7 +445,7 @@ Vulkan device driver resource. This is a "global" resource and ignores the RID p
 
 :ref:`DriverResource<enum_RenderingDevice_DriverResource>` **DRIVER_RESOURCE_VULKAN_PHYSICAL_DEVICE** = ``1``
 
-Physical device (graphics card) driver resource.
+*Deprecated.* Use :ref:`DRIVER_RESOURCE_PHYSICAL_DEVICE<class_RenderingDevice_constant_DRIVER_RESOURCE_PHYSICAL_DEVICE>`.
 
 .. _class_RenderingDevice_constant_DRIVER_RESOURCE_VULKAN_INSTANCE:
 
@@ -333,7 +453,7 @@ Physical device (graphics card) driver resource.
 
 :ref:`DriverResource<enum_RenderingDevice_DriverResource>` **DRIVER_RESOURCE_VULKAN_INSTANCE** = ``2``
 
-Vulkan instance driver resource.
+*Deprecated.* Use :ref:`DRIVER_RESOURCE_TOPMOST_OBJECT<class_RenderingDevice_constant_DRIVER_RESOURCE_TOPMOST_OBJECT>`.
 
 .. _class_RenderingDevice_constant_DRIVER_RESOURCE_VULKAN_QUEUE:
 
@@ -341,7 +461,7 @@ Vulkan instance driver resource.
 
 :ref:`DriverResource<enum_RenderingDevice_DriverResource>` **DRIVER_RESOURCE_VULKAN_QUEUE** = ``3``
 
-Vulkan queue driver resource.
+*Deprecated.* Use :ref:`DRIVER_RESOURCE_COMMAND_QUEUE<class_RenderingDevice_constant_DRIVER_RESOURCE_COMMAND_QUEUE>`.
 
 .. _class_RenderingDevice_constant_DRIVER_RESOURCE_VULKAN_QUEUE_FAMILY_INDEX:
 
@@ -349,7 +469,7 @@ Vulkan queue driver resource.
 
 :ref:`DriverResource<enum_RenderingDevice_DriverResource>` **DRIVER_RESOURCE_VULKAN_QUEUE_FAMILY_INDEX** = ``4``
 
-Vulkan queue family index driver resource.
+*Deprecated.* Use :ref:`DRIVER_RESOURCE_QUEUE_FAMILY<class_RenderingDevice_constant_DRIVER_RESOURCE_QUEUE_FAMILY>`.
 
 .. _class_RenderingDevice_constant_DRIVER_RESOURCE_VULKAN_IMAGE:
 
@@ -357,7 +477,7 @@ Vulkan queue family index driver resource.
 
 :ref:`DriverResource<enum_RenderingDevice_DriverResource>` **DRIVER_RESOURCE_VULKAN_IMAGE** = ``5``
 
-Vulkan image driver resource.
+*Deprecated.* Use :ref:`DRIVER_RESOURCE_TEXTURE<class_RenderingDevice_constant_DRIVER_RESOURCE_TEXTURE>`.
 
 .. _class_RenderingDevice_constant_DRIVER_RESOURCE_VULKAN_IMAGE_VIEW:
 
@@ -365,7 +485,7 @@ Vulkan image driver resource.
 
 :ref:`DriverResource<enum_RenderingDevice_DriverResource>` **DRIVER_RESOURCE_VULKAN_IMAGE_VIEW** = ``6``
 
-Vulkan image view driver resource.
+*Deprecated.* Use :ref:`DRIVER_RESOURCE_TEXTURE_VIEW<class_RenderingDevice_constant_DRIVER_RESOURCE_TEXTURE_VIEW>`.
 
 .. _class_RenderingDevice_constant_DRIVER_RESOURCE_VULKAN_IMAGE_NATIVE_TEXTURE_FORMAT:
 
@@ -373,7 +493,7 @@ Vulkan image view driver resource.
 
 :ref:`DriverResource<enum_RenderingDevice_DriverResource>` **DRIVER_RESOURCE_VULKAN_IMAGE_NATIVE_TEXTURE_FORMAT** = ``7``
 
-Vulkan image native texture format driver resource.
+*Deprecated.* Use :ref:`DRIVER_RESOURCE_TEXTURE_DATA_FORMAT<class_RenderingDevice_constant_DRIVER_RESOURCE_TEXTURE_DATA_FORMAT>`.
 
 .. _class_RenderingDevice_constant_DRIVER_RESOURCE_VULKAN_SAMPLER:
 
@@ -381,7 +501,7 @@ Vulkan image native texture format driver resource.
 
 :ref:`DriverResource<enum_RenderingDevice_DriverResource>` **DRIVER_RESOURCE_VULKAN_SAMPLER** = ``8``
 
-Vulkan sampler driver resource.
+*Deprecated.* Use :ref:`DRIVER_RESOURCE_SAMPLER<class_RenderingDevice_constant_DRIVER_RESOURCE_SAMPLER>`.
 
 .. _class_RenderingDevice_constant_DRIVER_RESOURCE_VULKAN_DESCRIPTOR_SET:
 
@@ -389,7 +509,7 @@ Vulkan sampler driver resource.
 
 :ref:`DriverResource<enum_RenderingDevice_DriverResource>` **DRIVER_RESOURCE_VULKAN_DESCRIPTOR_SET** = ``9``
 
-Vulkan `descriptor set <https://vkguide.dev/docs/chapter-4/descriptors/>`__ driver resource.
+*Deprecated.* Use :ref:`DRIVER_RESOURCE_UNIFORM_SET<class_RenderingDevice_constant_DRIVER_RESOURCE_UNIFORM_SET>`.
 
 .. _class_RenderingDevice_constant_DRIVER_RESOURCE_VULKAN_BUFFER:
 
@@ -397,7 +517,7 @@ Vulkan `descriptor set <https://vkguide.dev/docs/chapter-4/descriptors/>`__ driv
 
 :ref:`DriverResource<enum_RenderingDevice_DriverResource>` **DRIVER_RESOURCE_VULKAN_BUFFER** = ``10``
 
-Vulkan buffer driver resource.
+*Deprecated.* Use :ref:`DRIVER_RESOURCE_BUFFER<class_RenderingDevice_constant_DRIVER_RESOURCE_BUFFER>`.
 
 .. _class_RenderingDevice_constant_DRIVER_RESOURCE_VULKAN_COMPUTE_PIPELINE:
 
@@ -405,7 +525,7 @@ Vulkan buffer driver resource.
 
 :ref:`DriverResource<enum_RenderingDevice_DriverResource>` **DRIVER_RESOURCE_VULKAN_COMPUTE_PIPELINE** = ``11``
 
-Vulkan compute pipeline driver resource.
+*Deprecated.* Use :ref:`DRIVER_RESOURCE_COMPUTE_PIPELINE<class_RenderingDevice_constant_DRIVER_RESOURCE_COMPUTE_PIPELINE>`.
 
 .. _class_RenderingDevice_constant_DRIVER_RESOURCE_VULKAN_RENDER_PIPELINE:
 
@@ -413,7 +533,7 @@ Vulkan compute pipeline driver resource.
 
 :ref:`DriverResource<enum_RenderingDevice_DriverResource>` **DRIVER_RESOURCE_VULKAN_RENDER_PIPELINE** = ``12``
 
-Vulkan render pipeline driver resource.
+*Deprecated.* Use :ref:`DRIVER_RESOURCE_RENDER_PIPELINE<class_RenderingDevice_constant_DRIVER_RESOURCE_RENDER_PIPELINE>`.
 
 .. rst-class:: classref-item-separator
 
@@ -5485,6 +5605,8 @@ Returns the data format used to create this texture.
 Returns the internal graphics handle for this texture object. For use when communicating with third-party APIs mostly with GDExtension.
 
 \ **Note:** This function returns a ``uint64_t`` which internally maps to a ``GLuint`` (OpenGL) or ``VkImage`` (Vulkan).
+
+\ *Deprecated.* Use :ref:`get_driver_resource<class_RenderingDevice_method_get_driver_resource>` with :ref:`DRIVER_RESOURCE_TEXTURE<class_RenderingDevice_constant_DRIVER_RESOURCE_TEXTURE>` instead.
 
 .. rst-class:: classref-item-separator
 

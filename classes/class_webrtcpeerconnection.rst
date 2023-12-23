@@ -376,7 +376,7 @@ Returns the ICE :ref:`GatheringState<enum_WebRTCPeerConnection_GatheringState>` 
 
 :ref:`SignalingState<enum_WebRTCPeerConnection_SignalingState>` **get_signaling_state** **(** **)** |const|
 
-Returns the :ref:`SignalingState<enum_WebRTCPeerConnection_SignalingState>` on the local end of the connection while connecting or reconnecting to another peer.
+Returns the signaling state on the local end of the connection while connecting or reconnecting to another peer.
 
 .. rst-class:: classref-item-separator
 

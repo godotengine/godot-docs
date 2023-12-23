@@ -413,9 +413,7 @@ Renames the given animation node.
 
 void **replace_node** **(** :ref:`StringName<class_StringName>` name, :ref:`AnimationNode<class_AnimationNode>` node **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Replaces the given animation node with a new animation node.
 
 .. rst-class:: classref-item-separator
 

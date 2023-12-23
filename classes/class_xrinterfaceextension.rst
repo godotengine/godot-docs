@@ -233,7 +233,7 @@ Returns an :ref:`PackedVector3Array<class_PackedVector3Array>` that denotes the 
 
 :ref:`PlayAreaMode<enum_XRInterface_PlayAreaMode>` **_get_play_area_mode** **(** **)** |virtual| |const|
 
-Returns the :ref:`PlayAreaMode<enum_XRInterface_PlayAreaMode>` that sets up our play area.
+Returns the play area mode that sets up our play area.
 
 .. rst-class:: classref-item-separator
 

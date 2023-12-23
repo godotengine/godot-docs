@@ -610,7 +610,7 @@ Is ``true`` if this interface supports passthrough.
 
 Sets the active environment blend mode.
 
-\ ``mode`` is the :ref:`EnvironmentBlendMode<enum_XRInterface_EnvironmentBlendMode>` starting with the next frame.
+\ ``mode`` is the environment blend mode starting with the next frame.
 
 \ **Note:** Not all runtimes support all environment blend modes, so it is important to check this at startup. For example:
 

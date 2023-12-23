@@ -176,7 +176,7 @@ If ``true``, texture is flipped vertically.
 - void **set_frame** **(** :ref:`int<class_int>` value **)**
 - :ref:`int<class_int>` **get_frame** **(** **)**
 
-Current frame to display from sprite sheet. :ref:`hframes<class_Sprite2D_property_hframes>` or :ref:`vframes<class_Sprite2D_property_vframes>` must be greater than 1.
+Current frame to display from sprite sheet. :ref:`hframes<class_Sprite2D_property_hframes>` or :ref:`vframes<class_Sprite2D_property_vframes>` must be greater than 1. This property is automatically adjusted when :ref:`hframes<class_Sprite2D_property_hframes>` or :ref:`vframes<class_Sprite2D_property_vframes>` are changed to keep pointing to the same visual frame (same column and row). If that's impossible, this value is reset to ``0``.
 
 .. rst-class:: classref-item-separator
 
@@ -210,7 +210,7 @@ Coordinates of the frame to display from sprite sheet. This is as an alias for t
 - void **set_hframes** **(** :ref:`int<class_int>` value **)**
 - :ref:`int<class_int>` **get_hframes** **(** **)**
 
-The number of columns in the sprite sheet.
+The number of columns in the sprite sheet. When this property is changed, :ref:`frame<class_Sprite2D_property_frame>` is adjusted so that the same visual frame is maintained (same row and column). If that's impossible, :ref:`frame<class_Sprite2D_property_frame>` is reset to ``0``.
 
 .. rst-class:: classref-item-separator
 
@@ -312,7 +312,7 @@ The region of the atlas texture to display. :ref:`region_enabled<class_Sprite2D_
 - void **set_vframes** **(** :ref:`int<class_int>` value **)**
 - :ref:`int<class_int>` **get_vframes** **(** **)**
 
-The number of rows in the sprite sheet.
+The number of rows in the sprite sheet. When this property is changed, :ref:`frame<class_Sprite2D_property_frame>` is adjusted so that the same visual frame is maintained (same row and column). If that's impossible, :ref:`frame<class_Sprite2D_property_frame>` is reset to ``0``.
 
 .. rst-class:: classref-section-separator
 

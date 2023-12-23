@@ -344,7 +344,7 @@ Returns the channel over which the next available packet was received. See :ref:
 
 :ref:`TransferMode<enum_MultiplayerPeer_TransferMode>` **get_packet_mode** **(** **)** |const|
 
-Returns the :ref:`TransferMode<enum_MultiplayerPeer_TransferMode>` the remote peer used to send the next available packet. See :ref:`PacketPeer.get_available_packet_count<class_PacketPeer_method_get_available_packet_count>`.
+Returns the transfer mode the remote peer used to send the next available packet. See :ref:`PacketPeer.get_available_packet_count<class_PacketPeer_method_get_available_packet_count>`.
 
 .. rst-class:: classref-item-separator
 

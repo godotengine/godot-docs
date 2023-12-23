@@ -7225,7 +7225,7 @@ Converts the given ``variant`` to the given ``type``, using the :ref:`Variant.Ty
 
 If the type conversion cannot be done, this method will return the default value for that type, for example converting :ref:`Rect2<class_Rect2>` to :ref:`Vector2<class_Vector2>` will always return :ref:`Vector2.ZERO<class_Vector2_constant_ZERO>`. This method will never show error messages as long as ``type`` is a valid Variant type.
 
-The returned value is a :ref:`Variant<class_Variant>`, but the data inside and the :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` will be the same as the requested type.
+The returned value is a :ref:`Variant<class_Variant>`, but the data inside and its type will be the same as the requested type.
 
 ::
 
