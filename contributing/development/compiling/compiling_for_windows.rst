@@ -172,9 +172,6 @@ API.
 
 To compile Godot with Direct3D 12 support you need at least the following:
 
-- Visual Studio (follow the instructions above to install). Currently, we don't
-  support building with Direct3D 12 enabled when using MinGW. Support will be
-  added in the future if possible.
 - `The DirectX Shader Compiler <https://github.com/Microsoft/DirectXShaderCompiler/releases>`_.
   The zip folder will be named "dxc\_" followed by the date of release. Download
   it anywhere, unzip it and remember the path to the unzipped folder, you will
@@ -197,6 +194,12 @@ To compile Godot with Direct3D 12 support you need at least the following:
               ./update_mesa.sh
               scons
 
+             If you are buildng with MinGW, add ``use_mingw=yes`` to the ``scons``
+             command, you can also specify build architecture using ``arch={architecture}``.
+             
+             Mesa static library should be built using the same compiler you are
+             using for building Godot.
+
 Optionally, you can compile with the following for additional features:
 
 - `PIX <https://devblogs.microsoft.com/pix/download>`_ is a performance tuning
@@ -215,6 +218,17 @@ Optionally, you can compile with the following for additional features:
   
 .. note:: If you use a preview version of the Agility SDK, remember to enable
           developer mode in Windows; otherwise it won't be used.
+
+.. note:: If you want to use a PIX with MinGW build, navigate to PIX runtime
+          directory and use the following commands to generate import library::
+
+            # For x86-64:
+            gendef ./bin/x64/WinPixEventRuntime.dll
+            dlltool --machine i386:x86-64 --no-leading-underscore -d WinPixEventRuntime.def -D WinPixEventRuntime.dll -l ./bin/x64/libWinPixEventRuntime.a
+
+            # For ARM64:
+            gendef ./bin/ARM64/WinPixEventRuntime.dll
+            dlltool --machine arm64 --no-leading-underscore -d WinPixEventRuntime.def -D WinPixEventRuntime.dll -l ./bin/ARM64/libWinPixEventRuntime.a
 
 When building Godot, you will need to tell SCons to use Direct3D 12 and where to
 look for the additional libraries:
