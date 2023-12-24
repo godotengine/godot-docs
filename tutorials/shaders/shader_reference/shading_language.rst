@@ -1269,8 +1269,8 @@ is used, it can be scalar or vector.
 +-----------------------------------------------------------------------------+---------------------------------------------------------------------+
 | int **textureQueryLevels** (gsampler2D s)                                   | Get the number of accessible mipmap levels of a texture.            |
 |                                                                             |                                                                     |
-| int **textureQueryLevels** (gsampler2DArray s)                              | If the texture is unassigned to a sampler, ``0`` is returned.       |
-|                                                                             |                                                                     |
+| int **textureQueryLevels** (gsampler2DArray s)                              | If the texture is unassigned to a sampler, ``1`` is returned (Godot |
+|                                                                             | always internally assigns a texture even to an empty sampler).      |
 | int **textureQueryLevels** (gsampler3D s)                                   |                                                                     |
 |                                                                             |                                                                     |
 | int **textureQueryLevels** (samplerCube s)                                  |                                                                     |
