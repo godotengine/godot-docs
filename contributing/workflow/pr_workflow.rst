@@ -436,7 +436,7 @@ The interactive rebase
 
 If you didn't follow the above steps closely to *amend* changes into a commit
 instead of creating fixup commits, or if you authored your changes without being
-aware of our workflow and Git usage tips, reviewers might request of your to
+aware of our workflow and Git usage tips, reviewers might request you to
 *rebase* your branch to *squash* some or all of the commits into one.
 
 Indeed, if some commits have been made following reviews to fix bugs, typos, etc.
