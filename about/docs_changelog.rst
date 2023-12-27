@@ -46,6 +46,7 @@ Development
 ^^^^^^^^^^^
 
 - :ref:`doc_internal_rendering_architecture`
+- :ref:`doc_internal_audio_architecture`
 - :ref:`doc_using_sanitizers`
 
 Migrating
