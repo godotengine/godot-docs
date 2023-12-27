@@ -137,11 +137,11 @@ use this snippet:
 
 .. code-block:: cpp
 
-    uint64_t begin = OS::get_singleton()->get_ticks_usec();
+    uint64_t begin = Time::get_singleton()->get_ticks_usec();
 
     // Your code here...
 
-    uint64_t end = OS::get_singleton()->get_ticks_usec();
+    uint64_t end = Time::get_singleton()->get_ticks_usec();
     print_line(vformat("Snippet took %d microseconds", end - begin));
 
 This will print the time spent between the ``begin`` declaration and the ``end``
