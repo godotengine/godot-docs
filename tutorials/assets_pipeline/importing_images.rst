@@ -381,8 +381,8 @@ Roughness > Mode
 The color channel to consider as a roughness map in this texture. Only effective if
 **Roughness > Src Normal** is not empty.
 
-Rougness > Src Normal
-^^^^^^^^^^^^^^^^^^^^^
+Roughness > Src Normal
+^^^^^^^^^^^^^^^^^^^^^^
 
 The path to the texture to consider as a normal map for roughness filtering on
 import. Specifying this can help decrease specular aliasing slightly in 3D.
