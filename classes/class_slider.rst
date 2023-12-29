@@ -100,7 +100,7 @@ Emitted when dragging stops. If ``value_changed`` is true, :ref:`Range.value<cla
 
 **drag_started** **(** **)**
 
-Emitted when dragging is started.
+Emitted when dragging is started. This is emitted before the corresponding :ref:`Range.value_changed<class_Range_signal_value_changed>` signal.
 
 .. rst-class:: classref-section-separator
 

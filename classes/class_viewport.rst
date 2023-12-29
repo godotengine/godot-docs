@@ -191,6 +191,8 @@ Methods
    +-----------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Control<class_Control>`                                                                 | :ref:`gui_get_focus_owner<class_Viewport_method_gui_get_focus_owner>` **(** **)** |const|                                                                                                                                                                              |
    +-----------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Control<class_Control>`                                                                 | :ref:`gui_get_hovered_control<class_Viewport_method_gui_get_hovered_control>` **(** **)** |const|                                                                                                                                                                      |
+   +-----------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                                                       | :ref:`gui_is_drag_successful<class_Viewport_method_gui_is_drag_successful>` **(** **)** |const|                                                                                                                                                                        |
    +-----------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                                                       | :ref:`gui_is_dragging<class_Viewport_method_gui_is_dragging>` **(** **)** |const|                                                                                                                                                                                      |
@@ -1911,7 +1913,7 @@ Returns the mouse's position in this **Viewport** using the coordinate system of
 
 :ref:`PositionalShadowAtlasQuadrantSubdiv<enum_Viewport_PositionalShadowAtlasQuadrantSubdiv>` **get_positional_shadow_atlas_quadrant_subdiv** **(** :ref:`int<class_int>` quadrant **)** |const|
 
-Returns the :ref:`PositionalShadowAtlasQuadrantSubdiv<enum_Viewport_PositionalShadowAtlasQuadrantSubdiv>` of the specified quadrant.
+Returns the positional shadow atlas quadrant subdivision of the specified quadrant.
 
 .. rst-class:: classref-item-separator
 
@@ -2004,6 +2006,20 @@ Returns the drag data from the GUI, that was previously returned by :ref:`Contro
 :ref:`Control<class_Control>` **gui_get_focus_owner** **(** **)** |const|
 
 Returns the :ref:`Control<class_Control>` having the focus within this viewport. If no :ref:`Control<class_Control>` has the focus, returns null.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Viewport_method_gui_get_hovered_control:
+
+.. rst-class:: classref-method
+
+:ref:`Control<class_Control>` **gui_get_hovered_control** **(** **)** |const|
+
+Returns the :ref:`Control<class_Control>` that the mouse is currently hovering over in this viewport. If no :ref:`Control<class_Control>` has the cursor, returns null.
+
+Typically the leaf :ref:`Control<class_Control>` node or deepest level of the subtree which claims hover. This is very useful when used together with :ref:`Node.is_ancestor_of<class_Node_method_is_ancestor_of>` to find if the mouse is within a control tree.
 
 .. rst-class:: classref-item-separator
 

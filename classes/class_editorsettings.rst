@@ -61,6 +61,8 @@ Properties
    +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`       | :ref:`debugger/auto_switch_to_remote_scene_tree<class_EditorSettings_property_debugger/auto_switch_to_remote_scene_tree>`                                                           |
    +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`debugger/profile_native_calls<class_EditorSettings_property_debugger/profile_native_calls>`                                                                                   |
+   +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`         | :ref:`debugger/profiler_frame_history_size<class_EditorSettings_property_debugger/profiler_frame_history_size>`                                                                     |
    +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`         | :ref:`debugger/profiler_frame_max_functions<class_EditorSettings_property_debugger/profiler_frame_max_functions>`                                                                   |
@@ -231,6 +233,10 @@ Properties
    +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`   | :ref:`filesystem/external_programs/raster_image_editor<class_EditorSettings_property_filesystem/external_programs/raster_image_editor>`                                             |
    +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`   | :ref:`filesystem/external_programs/terminal_emulator<class_EditorSettings_property_filesystem/external_programs/terminal_emulator>`                                                 |
+   +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`   | :ref:`filesystem/external_programs/terminal_emulator_flags<class_EditorSettings_property_filesystem/external_programs/terminal_emulator_flags>`                                     |
+   +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`   | :ref:`filesystem/external_programs/vector_image_editor<class_EditorSettings_property_filesystem/external_programs/vector_image_editor>`                                             |
    +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`         | :ref:`filesystem/file_dialog/display_mode<class_EditorSettings_property_filesystem/file_dialog/display_mode>`                                                                       |
@@ -304,6 +310,8 @@ Properties
    | :ref:`int<class_int>`         | :ref:`interface/editor/show_internal_errors_in_toast_notifications<class_EditorSettings_property_interface/editor/show_internal_errors_in_toast_notifications>`                     |
    +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`       | :ref:`interface/editor/single_window_mode<class_EditorSettings_property_interface/editor/single_window_mode>`                                                                       |
+   +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`         | :ref:`interface/editor/ui_layout_direction<class_EditorSettings_property_interface/editor/ui_layout_direction>`                                                                     |
    +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`     | :ref:`interface/editor/unfocused_low_processor_mode_sleep_usec<class_EditorSettings_property_interface/editor/unfocused_low_processor_mode_sleep_usec>`                             |
    +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -664,6 +672,18 @@ Property Descriptions
 :ref:`bool<class_bool>` **debugger/auto_switch_to_remote_scene_tree**
 
 If ``true``, automatically switches to the **Remote** scene tree when running the project from the editor. If ``false``, stays on the **Local** scene tree when running the project from the editor.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSettings_property_debugger/profile_native_calls:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **debugger/profile_native_calls**
+
+If ``true``, enables collection of profiling data from non-GDScript Godot functions, such as engine class methods. Enabling this slows execution while profiling further.
 
 .. rst-class:: classref-item-separator
 
@@ -1735,6 +1755,48 @@ The program that opens raster image files when clicking "Open in External Progra
 
 ----
 
+.. _class_EditorSettings_property_filesystem/external_programs/terminal_emulator:
+
+.. rst-class:: classref-property
+
+:ref:`String<class_String>` **filesystem/external_programs/terminal_emulator**
+
+The terminal emulator program to use when using **Open in Terminal** context menu action in the FileSystem dock. You can enter an absolute path to a program binary, or a path to a program that is present in the ``PATH`` environment variable.
+
+If left empty, Godot will use the default terminal emulator for the system:
+
+- **Windows:** PowerShell
+
+- **macOS:** Terminal.app
+
+- **Linux:** The first terminal found on the system in this order: gnome-terminal, konsole, xfce4-terminal, lxterminal, kitty, alacritty, urxvt, xterm.
+
+To use Command Prompt (cmd) instead of PowerShell on Windows, enter ``cmd`` in this field and the correct flags will automatically be used.
+
+On macOS, make sure to point to the actual program binary located within the ``Programs/MacOS`` folder of the .app bundle, rather than the .app bundle directory.
+
+If specifying a custom terminal emulator, you may need to override :ref:`filesystem/external_programs/terminal_emulator_flags<class_EditorSettings_property_filesystem/external_programs/terminal_emulator_flags>` so it opens in the correct folder.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSettings_property_filesystem/external_programs/terminal_emulator_flags:
+
+.. rst-class:: classref-property
+
+:ref:`String<class_String>` **filesystem/external_programs/terminal_emulator_flags**
+
+The command-line arguments to pass to the terminal emulator that is run when using **Open in Terminal** context menu action in the FileSystem dock. See also :ref:`filesystem/external_programs/terminal_emulator<class_EditorSettings_property_filesystem/external_programs/terminal_emulator>`.
+
+If left empty, the default flags are ``{directory}``, which is replaced by the absolute path to the directory that is being opened in the terminal.
+
+\ **Note:** If the terminal emulator is set to PowerShell, cmd, or Konsole, Godot will automatically prepend arguments to this list, as these terminals require nonstandard arguments to open in the correct folder.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_EditorSettings_property_filesystem/external_programs/vector_image_editor:
 
 .. rst-class:: classref-property
@@ -2224,6 +2286,18 @@ The default **Auto** value will only enable this if the editor was compiled with
 :ref:`bool<class_bool>` **interface/editor/single_window_mode**
 
 If ``true``, embed modal windows such as docks inside the main editor window. When single-window mode is enabled, tooltips will also be embedded inside the main editor window, which means they can't be displayed outside of the editor window.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSettings_property_interface/editor/ui_layout_direction:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **interface/editor/ui_layout_direction**
+
+Editor UI default layout direction.
 
 .. rst-class:: classref-item-separator
 

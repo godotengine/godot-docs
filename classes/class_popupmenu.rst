@@ -37,19 +37,21 @@ Properties
 .. table::
    :widths: auto
 
-   +---------------------------+----------------------------------------------------------------------------------------------------+-----------+
-   | :ref:`bool<class_bool>`   | :ref:`allow_search<class_PopupMenu_property_allow_search>`                                         | ``true``  |
-   +---------------------------+----------------------------------------------------------------------------------------------------+-----------+
-   | :ref:`bool<class_bool>`   | :ref:`hide_on_checkable_item_selection<class_PopupMenu_property_hide_on_checkable_item_selection>` | ``true``  |
-   +---------------------------+----------------------------------------------------------------------------------------------------+-----------+
-   | :ref:`bool<class_bool>`   | :ref:`hide_on_item_selection<class_PopupMenu_property_hide_on_item_selection>`                     | ``true``  |
-   +---------------------------+----------------------------------------------------------------------------------------------------+-----------+
-   | :ref:`bool<class_bool>`   | :ref:`hide_on_state_item_selection<class_PopupMenu_property_hide_on_state_item_selection>`         | ``false`` |
-   +---------------------------+----------------------------------------------------------------------------------------------------+-----------+
-   | :ref:`int<class_int>`     | :ref:`item_count<class_PopupMenu_property_item_count>`                                             | ``0``     |
-   +---------------------------+----------------------------------------------------------------------------------------------------+-----------+
-   | :ref:`float<class_float>` | :ref:`submenu_popup_delay<class_PopupMenu_property_submenu_popup_delay>`                           | ``0.3``   |
-   +---------------------------+----------------------------------------------------------------------------------------------------+-----------+
+   +-----------------------------+----------------------------------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`     | :ref:`allow_search<class_PopupMenu_property_allow_search>`                                         | ``true``  |
+   +-----------------------------+----------------------------------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`     | :ref:`hide_on_checkable_item_selection<class_PopupMenu_property_hide_on_checkable_item_selection>` | ``true``  |
+   +-----------------------------+----------------------------------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`     | :ref:`hide_on_item_selection<class_PopupMenu_property_hide_on_item_selection>`                     | ``true``  |
+   +-----------------------------+----------------------------------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`     | :ref:`hide_on_state_item_selection<class_PopupMenu_property_hide_on_state_item_selection>`         | ``false`` |
+   +-----------------------------+----------------------------------------------------------------------------------------------------+-----------+
+   | :ref:`int<class_int>`       | :ref:`item_count<class_PopupMenu_property_item_count>`                                             | ``0``     |
+   +-----------------------------+----------------------------------------------------------------------------------------------------+-----------+
+   | :ref:`float<class_float>`   | :ref:`submenu_popup_delay<class_PopupMenu_property_submenu_popup_delay>`                           | ``0.3``   |
+   +-----------------------------+----------------------------------------------------------------------------------------------------+-----------+
+   | :ref:`String<class_String>` | :ref:`system_menu_root<class_PopupMenu_property_system_menu_root>`                                 | ``""``    |
+   +-----------------------------+----------------------------------------------------------------------------------------------------+-----------+
 
 .. rst-class:: classref-reftable-group
 
@@ -135,6 +137,8 @@ Methods
    | :ref:`bool<class_bool>`                          | :ref:`is_item_separator<class_PopupMenu_method_is_item_separator>` **(** :ref:`int<class_int>` index **)** |const|                                                                                                                                                              |
    +--------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                          | :ref:`is_item_shortcut_disabled<class_PopupMenu_method_is_item_shortcut_disabled>` **(** :ref:`int<class_int>` index **)** |const|                                                                                                                                              |
+   +--------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                          | :ref:`is_system_menu<class_PopupMenu_method_is_system_menu>` **(** **)** |const|                                                                                                                                                                                                |
    +--------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                             | :ref:`remove_item<class_PopupMenu_method_remove_item>` **(** :ref:`int<class_int>` index **)**                                                                                                                                                                                  |
    +--------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -424,6 +428,23 @@ The number of items currently in the list.
 - :ref:`float<class_float>` **get_submenu_popup_delay** **(** **)**
 
 Sets the delay time in seconds for the submenu item to popup on mouse hovering. If the popup menu is added as a child of another (acting as a submenu), it will inherit the delay time of the parent menu item.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_PopupMenu_property_system_menu_root:
+
+.. rst-class:: classref-property
+
+:ref:`String<class_String>` **system_menu_root** = ``""``
+
+.. rst-class:: classref-property-setget
+
+- void **set_system_menu_root** **(** :ref:`String<class_String>` value **)**
+- :ref:`String<class_String>` **get_system_menu_root** **(** **)**
+
+If set to one of the values returned by :ref:`DisplayServer.global_menu_get_system_menu_roots<class_DisplayServer_method_global_menu_get_system_menu_roots>`, this **PopupMenu** is bound to the special system menu. Only one **PopupMenu** can be bound to each special menu at a time.
 
 .. rst-class:: classref-section-separator
 
@@ -941,6 +962,18 @@ Returns ``true`` if the item is a separator. If it is, it will be displayed as a
 :ref:`bool<class_bool>` **is_item_shortcut_disabled** **(** :ref:`int<class_int>` index **)** |const|
 
 Returns ``true`` if the specified item's shortcut is disabled.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_PopupMenu_method_is_system_menu:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **is_system_menu** **(** **)** |const|
+
+Returns ``true`` if the menu is bound to the special system menu.
 
 .. rst-class:: classref-item-separator
 

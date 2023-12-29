@@ -113,6 +113,8 @@ Methods
    +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`_profiling_get_frame_data<class_ScriptLanguageExtension_private_method__profiling_get_frame_data>` **(** ScriptLanguageExtensionProfilingInfo* info_array, :ref:`int<class_int>` info_max **)** |virtual|                                                                                                                                          |
    +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                              | :ref:`_profiling_set_save_native_calls<class_ScriptLanguageExtension_private_method__profiling_set_save_native_calls>` **(** :ref:`bool<class_bool>` enable **)** |virtual|                                                                                                                                                                              |
+   +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                              | :ref:`_profiling_start<class_ScriptLanguageExtension_private_method__profiling_start>` **(** **)** |virtual|                                                                                                                                                                                                                                             |
    +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                              | :ref:`_profiling_stop<class_ScriptLanguageExtension_private_method__profiling_stop>` **(** **)** |virtual|                                                                                                                                                                                                                                               |
@@ -985,6 +987,20 @@ void **_init** **(** **)** |virtual|
 .. rst-class:: classref-method
 
 :ref:`int<class_int>` **_profiling_get_frame_data** **(** ScriptLanguageExtensionProfilingInfo* info_array, :ref:`int<class_int>` info_max **)** |virtual|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ScriptLanguageExtension_private_method__profiling_set_save_native_calls:
+
+.. rst-class:: classref-method
+
+void **_profiling_set_save_native_calls** **(** :ref:`bool<class_bool>` enable **)** |virtual|
 
 .. container:: contribute
 

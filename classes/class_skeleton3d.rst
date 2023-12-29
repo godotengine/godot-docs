@@ -25,8 +25,6 @@ The overall transform of a bone with respect to the skeleton is determined by bo
 
 Note that "global pose" below refers to the overall transform of the bone with respect to skeleton, so it is not the actual global/world transform of the bone.
 
-To setup different types of inverse kinematics, consider using :ref:`SkeletonIK3D<class_SkeletonIK3D>`, or add a custom IK implementation in :ref:`Node._process<class_Node_private_method__process>` as a child node.
-
 .. rst-class:: classref-introduction-group
 
 Tutorials

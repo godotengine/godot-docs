@@ -23,6 +23,8 @@ Description
 
 This node can also locally alter or override physics parameters (gravity, damping) and route audio to custom audio buses.
 
+\ **Note:** Areas and bodies created with :ref:`PhysicsServer3D<class_PhysicsServer3D>` might not interact as expected with **Area3D**\ s, and might not emit signals or track objects correctly.
+
 \ **Warning:** Using a :ref:`ConcavePolygonShape3D<class_ConcavePolygonShape3D>` inside a :ref:`CollisionShape3D<class_CollisionShape3D>` child of this node (created e.g. by using the **Create Trimesh Collision Sibling** option in the **Mesh** menu that appears when selecting a :ref:`MeshInstance3D<class_MeshInstance3D>` node) may give unexpected results, since this collision shape is hollow. If this is not desired, it has to be split into multiple :ref:`ConvexPolygonShape3D<class_ConvexPolygonShape3D>`\ s or primitive shapes like :ref:`BoxShape3D<class_BoxShape3D>`, or in some cases it may be replaceable by a :ref:`CollisionPolygon3D<class_CollisionPolygon3D>`.
 
 .. rst-class:: classref-introduction-group

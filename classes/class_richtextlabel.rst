@@ -1305,7 +1305,32 @@ Returns the number of visible paragraphs. A paragraph is considered visible if a
 
 void **install_effect** **(** :ref:`Variant<class_Variant>` effect **)**
 
-Installs a custom effect. ``effect`` should be a valid :ref:`RichTextEffect<class_RichTextEffect>`.
+Installs a custom effect. This can also be done in the RichTextLabel inspector using the :ref:`custom_effects<class_RichTextLabel_property_custom_effects>` property. ``effect`` should be a valid :ref:`RichTextEffect<class_RichTextEffect>`.
+
+Example RichTextEffect:
+
+::
+
+    # effect.gd
+    class_name MyCustomEffect
+    extends RichTextEffect
+    
+    var bbcode = "my_custom_effect"
+    
+    # ...
+
+Registering the above effect in RichTextLabel from script:
+
+::
+
+    # rich_text_label.gd
+    extends RichTextLabel
+    
+    func _ready():
+        install_effect(MyCustomEffect.new())
+    
+        # Alternatively, if not using `class_name` in the script that extends RichTextEffect:
+        install_effect(preload("res://effect.gd").new())
 
 .. rst-class:: classref-item-separator
 

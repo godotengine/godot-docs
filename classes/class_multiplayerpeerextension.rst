@@ -176,7 +176,7 @@ Called to get the channel over which the next available packet was received. See
 
 :ref:`TransferMode<enum_MultiplayerPeer_TransferMode>` **_get_packet_mode** **(** **)** |virtual| |const|
 
-Called to get the :ref:`TransferMode<enum_MultiplayerPeer_TransferMode>` the remote peer used to send the next available packet. See :ref:`MultiplayerPeer.get_packet_mode<class_MultiplayerPeer_method_get_packet_mode>`.
+Called to get the transfer mode the remote peer used to send the next available packet. See :ref:`MultiplayerPeer.get_packet_mode<class_MultiplayerPeer_method_get_packet_mode>`.
 
 .. rst-class:: classref-item-separator
 

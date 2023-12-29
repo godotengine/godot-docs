@@ -44,6 +44,8 @@ Properties
    +----------------------------------------------------+--------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
    | :ref:`FocusMode<enum_Control_FocusMode>`           | focus_mode                                                                                 | ``2`` (overrides :ref:`Control<class_Control_property_focus_mode>`)       |
    +----------------------------------------------------+--------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
+   | :ref:`GridPattern<enum_GraphEdit_GridPattern>`     | :ref:`grid_pattern<class_GraphEdit_property_grid_pattern>`                                 | ``0``                                                                     |
+   +----------------------------------------------------+--------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                            | :ref:`minimap_enabled<class_GraphEdit_property_minimap_enabled>`                           | ``true``                                                                  |
    +----------------------------------------------------+--------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
    | :ref:`float<class_float>`                          | :ref:`minimap_opacity<class_GraphEdit_property_minimap_opacity>`                           | ``0.65``                                                                  |
@@ -409,6 +411,32 @@ enum **PanningScheme**:
 
 :kbd:`Mouse Wheel` will move the view, :kbd:`Ctrl + Mouse Wheel` will zoom.
 
+.. rst-class:: classref-item-separator
+
+----
+
+.. _enum_GraphEdit_GridPattern:
+
+.. rst-class:: classref-enumeration
+
+enum **GridPattern**:
+
+.. _class_GraphEdit_constant_GRID_PATTERN_LINES:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`GridPattern<enum_GraphEdit_GridPattern>` **GRID_PATTERN_LINES** = ``0``
+
+Draw the grid using solid lines.
+
+.. _class_GraphEdit_constant_GRID_PATTERN_DOTS:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`GridPattern<enum_GraphEdit_GridPattern>` **GRID_PATTERN_DOTS** = ``1``
+
+Draw the grid using dots.
+
 .. rst-class:: classref-section-separator
 
 ----
@@ -464,6 +492,23 @@ The curvature of the lines between the nodes. 0 results in straight lines.
 - :ref:`float<class_float>` **get_connection_lines_thickness** **(** **)**
 
 The thickness of the lines between the nodes.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_GraphEdit_property_grid_pattern:
+
+.. rst-class:: classref-property
+
+:ref:`GridPattern<enum_GraphEdit_GridPattern>` **grid_pattern** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_grid_pattern** **(** :ref:`GridPattern<enum_GraphEdit_GridPattern>` value **)**
+- :ref:`GridPattern<enum_GraphEdit_GridPattern>` **get_grid_pattern** **(** **)**
+
+The pattern used for drawing the grid.
 
 .. rst-class:: classref-item-separator
 
@@ -1010,7 +1055,7 @@ Returns the points which would make up a connection between ``from_node`` and ``
 
 :ref:`Dictionary[]<class_Dictionary>` **get_connection_list** **(** **)** |const|
 
-Returns an Array containing the list of connections. A connection consists in a structure of the form ``{ from_port: 0, from: "GraphNode name 0", to_port: 1, to: "GraphNode name 1" }``.
+Returns an Array containing the list of connections. A connection consists in a structure of the form ``{ from_port: 0, from_node: "GraphNode name 0", to_port: 1, to_node: "GraphNode name 1" }``.
 
 .. rst-class:: classref-item-separator
 
@@ -1141,7 +1186,7 @@ Color of the connection's activity (see :ref:`set_connection_activity<class_Grap
 
 :ref:`Color<class_Color>` **grid_major** = ``Color(1, 1, 1, 0.2)``
 
-Color of major grid lines.
+Color of major grid lines/dots.
 
 .. rst-class:: classref-item-separator
 
@@ -1153,7 +1198,7 @@ Color of major grid lines.
 
 :ref:`Color<class_Color>` **grid_minor** = ``Color(1, 1, 1, 0.05)``
 
-Color of minor grid lines.
+Color of minor grid lines/dots.
 
 .. rst-class:: classref-item-separator
 

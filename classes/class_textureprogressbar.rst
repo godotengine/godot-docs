@@ -224,7 +224,7 @@ If ``true``, Godot treats the bar's textures like in :ref:`NinePatchRect<class_N
 - void **set_radial_center_offset** **(** :ref:`Vector2<class_Vector2>` value **)**
 - :ref:`Vector2<class_Vector2>` **get_radial_center_offset** **(** **)**
 
-Offsets :ref:`texture_progress<class_TextureProgressBar_property_texture_progress>` if :ref:`fill_mode<class_TextureProgressBar_property_fill_mode>` is :ref:`FILL_CLOCKWISE<class_TextureProgressBar_constant_FILL_CLOCKWISE>` or :ref:`FILL_COUNTER_CLOCKWISE<class_TextureProgressBar_constant_FILL_COUNTER_CLOCKWISE>`.
+Offsets :ref:`texture_progress<class_TextureProgressBar_property_texture_progress>` if :ref:`fill_mode<class_TextureProgressBar_property_fill_mode>` is :ref:`FILL_CLOCKWISE<class_TextureProgressBar_constant_FILL_CLOCKWISE>`, :ref:`FILL_COUNTER_CLOCKWISE<class_TextureProgressBar_constant_FILL_COUNTER_CLOCKWISE>`, or :ref:`FILL_CLOCKWISE_AND_COUNTER_CLOCKWISE<class_TextureProgressBar_constant_FILL_CLOCKWISE_AND_COUNTER_CLOCKWISE>`.
 
 .. rst-class:: classref-item-separator
 
@@ -241,7 +241,7 @@ Offsets :ref:`texture_progress<class_TextureProgressBar_property_texture_progres
 - void **set_fill_degrees** **(** :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_fill_degrees** **(** **)**
 
-Upper limit for the fill of :ref:`texture_progress<class_TextureProgressBar_property_texture_progress>` if :ref:`fill_mode<class_TextureProgressBar_property_fill_mode>` is :ref:`FILL_CLOCKWISE<class_TextureProgressBar_constant_FILL_CLOCKWISE>` or :ref:`FILL_COUNTER_CLOCKWISE<class_TextureProgressBar_constant_FILL_COUNTER_CLOCKWISE>`. When the node's ``value`` is equal to its ``max_value``, the texture fills up to this angle.
+Upper limit for the fill of :ref:`texture_progress<class_TextureProgressBar_property_texture_progress>` if :ref:`fill_mode<class_TextureProgressBar_property_fill_mode>` is :ref:`FILL_CLOCKWISE<class_TextureProgressBar_constant_FILL_CLOCKWISE>`, :ref:`FILL_COUNTER_CLOCKWISE<class_TextureProgressBar_constant_FILL_COUNTER_CLOCKWISE>`, or :ref:`FILL_CLOCKWISE_AND_COUNTER_CLOCKWISE<class_TextureProgressBar_constant_FILL_CLOCKWISE_AND_COUNTER_CLOCKWISE>`. When the node's ``value`` is equal to its ``max_value``, the texture fills up to this angle.
 
 See :ref:`Range.value<class_Range_property_value>`, :ref:`Range.max_value<class_Range_property_max_value>`.
 
@@ -260,7 +260,7 @@ See :ref:`Range.value<class_Range_property_value>`, :ref:`Range.max_value<class_
 - void **set_radial_initial_angle** **(** :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_radial_initial_angle** **(** **)**
 
-Starting angle for the fill of :ref:`texture_progress<class_TextureProgressBar_property_texture_progress>` if :ref:`fill_mode<class_TextureProgressBar_property_fill_mode>` is :ref:`FILL_CLOCKWISE<class_TextureProgressBar_constant_FILL_CLOCKWISE>` or :ref:`FILL_COUNTER_CLOCKWISE<class_TextureProgressBar_constant_FILL_COUNTER_CLOCKWISE>`. When the node's ``value`` is equal to its ``min_value``, the texture doesn't show up at all. When the ``value`` increases, the texture fills and tends towards :ref:`radial_fill_degrees<class_TextureProgressBar_property_radial_fill_degrees>`.
+Starting angle for the fill of :ref:`texture_progress<class_TextureProgressBar_property_texture_progress>` if :ref:`fill_mode<class_TextureProgressBar_property_fill_mode>` is :ref:`FILL_CLOCKWISE<class_TextureProgressBar_constant_FILL_CLOCKWISE>`, :ref:`FILL_COUNTER_CLOCKWISE<class_TextureProgressBar_constant_FILL_COUNTER_CLOCKWISE>`, or :ref:`FILL_CLOCKWISE_AND_COUNTER_CLOCKWISE<class_TextureProgressBar_constant_FILL_CLOCKWISE_AND_COUNTER_CLOCKWISE>`. When the node's ``value`` is equal to its ``min_value``, the texture doesn't show up at all. When the ``value`` increases, the texture fills and tends towards :ref:`radial_fill_degrees<class_TextureProgressBar_property_radial_fill_degrees>`.
 
 .. rst-class:: classref-item-separator
 
@@ -277,7 +277,7 @@ Starting angle for the fill of :ref:`texture_progress<class_TextureProgressBar_p
 - void **set_stretch_margin** **(** :ref:`Side<enum_@GlobalScope_Side>` margin, :ref:`int<class_int>` value **)**
 - :ref:`int<class_int>` **get_stretch_margin** **(** :ref:`Side<enum_@GlobalScope_Side>` margin **)** |const|
 
-The height of the 9-patch's bottom row. A margin of 16 means the 9-slice's bottom corners and side will have a height of 16 pixels. You can set all 4 margin values individually to create panels with non-uniform borders.
+The height of the 9-patch's bottom row. A margin of 16 means the 9-slice's bottom corners and side will have a height of 16 pixels. You can set all 4 margin values individually to create panels with non-uniform borders. Only effective if :ref:`nine_patch_stretch<class_TextureProgressBar_property_nine_patch_stretch>` is ``true``.
 
 .. rst-class:: classref-item-separator
 
@@ -294,7 +294,7 @@ The height of the 9-patch's bottom row. A margin of 16 means the 9-slice's botto
 - void **set_stretch_margin** **(** :ref:`Side<enum_@GlobalScope_Side>` margin, :ref:`int<class_int>` value **)**
 - :ref:`int<class_int>` **get_stretch_margin** **(** :ref:`Side<enum_@GlobalScope_Side>` margin **)** |const|
 
-The width of the 9-patch's left column.
+The width of the 9-patch's left column. Only effective if :ref:`nine_patch_stretch<class_TextureProgressBar_property_nine_patch_stretch>` is ``true``.
 
 .. rst-class:: classref-item-separator
 
@@ -311,7 +311,7 @@ The width of the 9-patch's left column.
 - void **set_stretch_margin** **(** :ref:`Side<enum_@GlobalScope_Side>` margin, :ref:`int<class_int>` value **)**
 - :ref:`int<class_int>` **get_stretch_margin** **(** :ref:`Side<enum_@GlobalScope_Side>` margin **)** |const|
 
-The width of the 9-patch's right column.
+The width of the 9-patch's right column. Only effective if :ref:`nine_patch_stretch<class_TextureProgressBar_property_nine_patch_stretch>` is ``true``.
 
 .. rst-class:: classref-item-separator
 
@@ -328,7 +328,7 @@ The width of the 9-patch's right column.
 - void **set_stretch_margin** **(** :ref:`Side<enum_@GlobalScope_Side>` margin, :ref:`int<class_int>` value **)**
 - :ref:`int<class_int>` **get_stretch_margin** **(** :ref:`Side<enum_@GlobalScope_Side>` margin **)** |const|
 
-The height of the 9-patch's top row.
+The height of the 9-patch's top row. Only effective if :ref:`nine_patch_stretch<class_TextureProgressBar_property_nine_patch_stretch>` is ``true``.
 
 .. rst-class:: classref-item-separator
 

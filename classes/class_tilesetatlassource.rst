@@ -431,7 +431,7 @@ Returns how many animation frames has the tile at coordinates ``atlas_coords``.
 
 :ref:`TileAnimationMode<enum_TileSetAtlasSource_TileAnimationMode>` **get_tile_animation_mode** **(** :ref:`Vector2i<class_Vector2i>` atlas_coords **)** |const|
 
-Returns the :ref:`TileAnimationMode<enum_TileSetAtlasSource_TileAnimationMode>` of the tile at ``atlas_coords``. See also :ref:`set_tile_animation_mode<class_TileSetAtlasSource_method_set_tile_animation_mode>`.
+Returns the tile animation mode of the tile at ``atlas_coords``. See also :ref:`set_tile_animation_mode<class_TileSetAtlasSource_method_set_tile_animation_mode>`.
 
 .. rst-class:: classref-item-separator
 
@@ -655,7 +655,7 @@ Sets how many animation frames the tile at coordinates ``atlas_coords`` has.
 
 void **set_tile_animation_mode** **(** :ref:`Vector2i<class_Vector2i>` atlas_coords, :ref:`TileAnimationMode<enum_TileSetAtlasSource_TileAnimationMode>` mode **)**
 
-Sets the :ref:`TileAnimationMode<enum_TileSetAtlasSource_TileAnimationMode>` of the tile at ``atlas_coords`` to ``mode``. See also :ref:`get_tile_animation_mode<class_TileSetAtlasSource_method_get_tile_animation_mode>`.
+Sets the tile animation mode of the tile at ``atlas_coords`` to ``mode``. See also :ref:`get_tile_animation_mode<class_TileSetAtlasSource_method_get_tile_animation_mode>`.
 
 .. rst-class:: classref-item-separator
 

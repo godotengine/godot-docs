@@ -129,7 +129,7 @@ enum **CacheMode**:
 
 :ref:`CacheMode<enum_ResourceLoader_CacheMode>` **CACHE_MODE_IGNORE** = ``0``
 
-
+The resource is always loaded from disk, even if a cache entry exists for its path, and the newly loaded copy will not be cached. Instances loaded with this mode will exist independently.
 
 .. _class_ResourceLoader_constant_CACHE_MODE_REUSE:
 
@@ -137,7 +137,7 @@ enum **CacheMode**:
 
 :ref:`CacheMode<enum_ResourceLoader_CacheMode>` **CACHE_MODE_REUSE** = ``1``
 
-
+If a resource is cached, returns the cached reference. Otherwise it's loaded from disk.
 
 .. _class_ResourceLoader_constant_CACHE_MODE_REPLACE:
 
@@ -145,7 +145,7 @@ enum **CacheMode**:
 
 :ref:`CacheMode<enum_ResourceLoader_CacheMode>` **CACHE_MODE_REPLACE** = ``2``
 
-
+The resource is always loaded from disk, even if a cache entry exists for its path. The cached entry will be replaced by the newly loaded copy.
 
 .. rst-class:: classref-section-separator
 
@@ -179,6 +179,8 @@ This method is performed implicitly for ResourceFormatLoaders written in GDScrip
 Returns whether a recognized resource exists for the given ``path``.
 
 An optional ``type_hint`` can be used to further specify the :ref:`Resource<class_Resource>` type that should be handled by the :ref:`ResourceFormatLoader<class_ResourceFormatLoader>`. Anything that inherits from :ref:`Resource<class_Resource>` can be used as a type hint, for example :ref:`Image<class_Image>`.
+
+\ **Note:** If you use :ref:`Resource.take_over_path<class_Resource_method_take_over_path>`, this method will return ``true`` for the taken path even if the resource wasn't saved (i.e. exists only in resource cache).
 
 .. rst-class:: classref-item-separator
 
