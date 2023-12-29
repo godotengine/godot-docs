@@ -37,7 +37,7 @@ here's an example of how GDScript looks.
     @icon("res://path/to/optional/icon.svg")
 
     # (optional) class definition:
-    class_name MyClass
+    class MyClass
 
     # Inheritance:
     extends BaseClass
