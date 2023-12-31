@@ -128,7 +128,7 @@ and pressing :kbd:`Enter`.
 
 .. image:: img/instancing_property_bounce_updated.webp
 
-Play the game by pressing :kbd:`F5` and notice how all balls now bounce a lot
+Play the game by pressing :kbd:`F5` (:kbd:`Cmd + B` on macOS) and notice how all balls now bounce a lot
 more. As the Ball scene is a template for all instances, modifying it and saving
 causes all instances to update accordingly.
 
