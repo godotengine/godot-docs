@@ -9,10 +9,10 @@ Note that some of these channels are run and moderated by members of the Godot c
 
 A brief overview over these and other channels is also available on the `Godot website <https://godotengine.org/community>`_.
 
-Q&A
+Forum
 ---
 
-- `Official Godot Questions & Answers <https://ask.godotengine.org/>`_
+- `Official Godot Forum <https://forum.godotengine.org/>`_
 
 Rocket.Chat
 -----------
@@ -54,7 +54,7 @@ Social networks
 - `YouTube <https://www.youtube.com/c/GodotEngineOfficial>`_
 - `Steam <https://steamcommunity.com/app/404790>`_
 
-Forum
+Unofficial Forum
 -----
 
-- `Godot Forums <https://godotforums.org/>`_
+- `Godot unofficial Forums <https://godotforums.org/>`_
