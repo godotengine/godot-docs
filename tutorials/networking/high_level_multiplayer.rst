@@ -204,8 +204,13 @@ must have the same name. When using ``add_child()`` for nodes which are expected
     All RPCs in a script are checked at once, and all RPCs must be declared
     **even functions that are currently not in use**.
 
+    The signature of the RPC includes the ``@rpc()`` declaration, the function, return type
+    AND the nodepath. If an RPC resides in a script attached to /root/Main/Node1, then it
+    must reside in precisely the same path on all systems. Function arguments (example:
+    ``func sendstuff()`` and ``func sendstuff(arg1,arg2)`` **will pass** signature matching).
+
     If these conditions are not met (if all RPCs do not pass signature matching), the script may print an
-    error or cause unwanted behavior. The error may be unrelated to the RPC function you are
+    error or cause unwanted behavior. The error message may be unrelated to the RPC function you are
     currently building and testing.
 
     See further explanation and troubleshooting on `this post <https://github.com/godotengine/godot/issues/57869#issuecomment-1034215138>`__.
