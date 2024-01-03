@@ -3,6 +3,14 @@
 Tutorials and resources
 =======================
 
+.. warning:: Many tutorials from 1-2 years ago are for Godot 3.x, please make sure that they are on 
+             the Godot 4.x as there are some huge differences between the GDScript syntax of Godot 3.x
+             and Godot 4.x.
+
+.. note:: You can easily spot the difference from the rendering method in the top right.
+          On Godot 3.x there is GLES2 and GLES3
+          However, on Godot 4.x there is Forward+, Mobile and Compatibility.
+
 This is a list of third-party tutorials and resources created by the Godot community. For resources, remember that there is the official `Godot Asset Library <https://godotengine.org/asset-library/asset>`_ full of official and community resources too! Also, have a look at this `huge list over at Reddit <https://www.reddit.com/r/godot/comments/an0iq5/godot_tutorials_list_of_video_and_written/>`_.
 
 Think there is something missing here? Feel free to submit a `Pull Request <https://github.com/godotengine/godot-docs/blob/master/community/tutorials.rst>`_ as always.
@@ -21,28 +29,14 @@ Some tutorials mentioned below provide more advanced tutorials, e.g. on 3D or sh
 Video tutorials
 ---------------
 
-- `Godot Tutorials <https://www.youtube.com/channel/UCnr9ojBEQGgwbcKsZC-2rIg>`_ (2D, GDScript, Programming Basics).
-- `Emilio <https://www.youtube.com/channel/UC9DR22-qohBDtZ74R3FxOZg>`_ (2D, GDScript).
 - `FinePointCGI <https://www.youtube.com/channel/UCSojAWUnEUTUcdA9iJ6bryQ>`_ (2D, 3D, GDScript and C#).
 - `GDQuest <https://www.youtube.com/channel/UCxboW7x0jZqFdvMdCFKTMsQ/playlists>`_ (2D and 3D, GDScript and C#).
-- `Game Development Center <https://www.youtube.com/c/GameDevelopmentCenter>`_ (2D, networked multiplayer, GDScript).
 - `Game Endeavor <https://www.youtube.com/channel/UCLweX1UtQjRjj7rs_0XQ2Eg/videos>`_ (2D, GDScript).
-- `Game from Scratch <https://www.youtube.com/watch?v=iDEcP8Mc-7s&list=PLS9MbmO_ssyDk79j9ewONxV88fD5e_o5d>`_ (2D and 3D, GDScript and C#).
-- `HeartBeast <https://www.youtube.com/watch?v=wETY5_9kFtA&list=PL9FzW-m48fn2jlBu_0DRh7PvAt-GULEmd>`_ (2D, GDScript).
+- `HeartBeast <https://www.youtube.com/watch?v=M8-JVjtJlIQ&list=PL9FzW-m48fn0i9GYBoTY-SI3yOBZjH1kJ>`_ (2D, GDScript).
 - `KidsCanCode <https://www.youtube.com/channel/UCNaPQ5uLX5iIEHUCLmfAgKg/playlists>`__ (2D and 3D, GDScript).
-- `Mister Taft Creates <https://www.youtube.com/playlist?list=PL4vbr3u7UKWqwQlvwvgNcgDL1p_3hcNn2>`_ (2D, GDScript).
-- `Miziziziz <https://www.youtube.com/playlist?list=PLmugv6_kd0qNyt0WHVnac1f5IFzG-7grN>`_ (2D and 3D, GDScript).
-- `P1X / Krzysztof Jankowski <https://www.youtube.com/playlist?list=PLvDk7UKhld4xGPovdB4IFtAHYMYjx_-3K>`_ (3D).
-- `Pigdev <https://www.youtube.com/playlist?list=PLPMN4vCRFdordS3E-3zi0Hdh7pAsbWQ6a>`_ (2D, GDScript).
-- `Steincodes <https://www.youtube.com/c/steincodes/playlists>`__ (2D, GDScript).
-- `TheBuffED <https://www.youtube.com/watch?v=ygGaN1EOQEA&list=PLvN5Z3tTxXEDfQkt4Frg6ALirespSwZd7>`_ (2D, GDScript).
-- `Code with Tom <https://www.youtube.com/playlist?list=PLiUQR4U_J9ec0k91iHPme_qtfS1nrWF3W>`_ (2D and 3D, GDScript).
-- `BornCG <https://www.youtube.com/playlist?list=PLda3VoSoc_TSBBOBYwcmlamF1UrjVtccZ>`_ (2D and 3D, GDScript).
-- `TheGuideKnight <https://www.youtube.com/playlist?list=PLYcTJBw32KtX2fvOdtO_fS3Nd6sxM71tn>`_ (2D, GDScript).
-- `GDScript Dude <https://www.youtube.com/channel/UCQs0i6vKISElM6mh7OzLouQ>`_ (GDScript).
-- `Garbaj <https://www.youtube.com/c/Garbaj/>`_ (3D, GDScript).
-- `Kasper Frandsen <https://www.youtube.com/c/KasperFrandsen/>`_ (3D, Shaders).
-- `bitbrain <https://www.youtube.com/watch?v=lFIBn8kJ-IM&list=PL4AhUX6lGjJWfiDORSmEu8x_myelbe1p2>`_ (2D, GDScript).
+- `Pigdev <https://youtube.com/playlist?list=PLPMN4vCRFdorkfETubb6dJmNp8m-ESPk-&si=Ru4-Xl3FGODllZAN>`_ (2D, GDScript).
+- `TheBuffED <https://www.youtube.com/@TheBuffED/videos>`_ (2D, GDScript).
+- `BornCG <https://youtube.com/playlist?list=PLda3VoSoc_TTp8Ng3C57spnNkOw3Hm_35&si=guggK0UBuH6t-0cT>`_ (3D, GDScript).
 - `Gwizz <https://www.youtube.com/@Gwizz1027>`_ (2D, GDScript).
 - `Quiver <https://quiver.dev/>`_ (2D, GDScript).
 - `Maker Tech <https://www.youtube.com/watch?v=0mUoRdYe0s4>`_ (2D, GDScript).
