@@ -253,7 +253,8 @@ these properties, and if you don't write to them, Godot will optimize away the c
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
 | in bool **FRONT_FACING**               | ``true`` if current face if front face.                                                          |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
-| in vec3 **VIEW**                       | Normalized vector from fragment position to camera (in view space).                              |
+| in vec3 **VIEW**                       | Normalized vector from fragment position to camera (in view space). This is the same for both    |
+|                                        | perspective and orthogonal cameras.                                                              |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
 | in vec2 **UV**                         | UV that comes from vertex function.                                                              |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
