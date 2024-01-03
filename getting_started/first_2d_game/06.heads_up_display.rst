@@ -184,8 +184,8 @@ Add the code below to ``HUD`` to update the score
         GetNode<Label>("ScoreLabel").Text = score.ToString();
     }
 
-Connect the ``timeout()`` signal of ``MessageTimer`` and the ``pressed()``
-signal of ``StartButton``, and add the following code to the new functions:
+Connect the ``pressed()`` signal of ``StartButton`` and the ``timeout()``
+signal of ``MessageTimer``, and add the following code to the new functions:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
