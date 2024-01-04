@@ -49,17 +49,17 @@ enabled. Since ``eval()`` calls can be a security concern, the
 
 The engine will now be compiled to WebAssembly by Emscripten. Once finished,
 the resulting file will be placed in the ``bin`` subdirectory. Its name is
-``godot.web.opt.wasm32.zip`` for release or ``godot.web.opt.debug.wasm32.zip``
+``godot.web.template_release.wasm32.zip`` for release or ``godot.web.template_debug.wasm32.zip``
 for debug.
 
 Finally, rename the zip archive to ``web_release.zip`` for the
 release template::
 
-    mv bin/godot.web.opt.wasm32.zip bin/web_release.zip
+    mv bin/godot.web.template_release.wasm32.zip bin/web_release.zip
 
 And ``web_debug.zip`` for the debug template::
 
-    mv bin/godot.web.opt.debug.wasm32.zip bin/web_debug.zip
+    mv bin/godot.web.template_debug.wasm32.zip bin/web_debug.zip
 
 GDExtension
 -----------
@@ -80,8 +80,8 @@ Its name will have ``_dlink`` added.
 Finally, rename the zip archives to ``web_dlink_release.zip`` and
 ``web_dlink_release.zip`` for the release template::
 
-    mv bin/godot.web.opt.wasm32.dlink.zip bin/web_dlink_release.zip
-    mv bin/godot.web.opt.debug.wasm32.dlink.zip bin/web_dlink_debug.zip
+    mv bin/godot.web.template_release.wasm32.dlink.zip bin/web_dlink_release.zip
+    mv bin/godot.web.template_debug.wasm32.dlink.zip bin/web_dlink_debug.zip
 
 Building the editor
 -------------------
@@ -93,7 +93,7 @@ over the native build. You can build the editor with::
     scons platform=web target=editor
 
 Once finished, the resulting file will be placed in the ``bin`` subdirectory.
-Its name will be ``godot.web.opt.tools.wasm32.zip``. You can upload the
+Its name will be ``godot.web.editor.wasm32.zip``. You can upload the
 zip content to your web server and visit it with your browser to use the editor.
 
 Refer to the :ref:`export page <doc_javascript_export_options>` for the web
