@@ -18,7 +18,7 @@ Think there is something missing here? Feel free to submit a `Pull Request <http
 Where to start
 --------------
 
-The Godot video tutorials by `GDQuest <https://www.youtube.com/channel/UCxboW7x0jZqFdvMdCFKTMsQ/playlists>`_, `Game from Scratch <https://www.youtube.com/watch?v=iDEcP8Mc-7s&list=PLS9MbmO_ssyDk79j9ewONxV88fD5e_o5d>`_ and `KidsCanCode <https://www.youtube.com/channel/UCNaPQ5uLX5iIEHUCLmfAgKg/playlists>`_ are well-regarded in the community and often recommended as a gentle introduction to beginners.
+The Godot video tutorials by `GDQuest <https://www.youtube.com/channel/UCxboW7x0jZqFdvMdCFKTMsQ/playlists>`_, `Godotneers <https://www.youtube.com/@godotneers>`_ and `KidsCanCode <https://www.youtube.com/channel/UCNaPQ5uLX5iIEHUCLmfAgKg/playlists>`_ are well-regarded in the community and often recommended as a gentle introduction to beginners.
 
 If you're interested in a complete introduction to programming using Godot and GDScript, the unofficial `Godot Tutorials <https://www.youtube.com/channel/UCnr9ojBEQGgwbcKsZC-2rIg>`_ YouTube channel is a good place to start.
 
@@ -29,8 +29,9 @@ Some tutorials mentioned below provide more advanced tutorials, e.g. on 3D or sh
 Video tutorials
 ---------------
 
-- `FinePointCGI <https://www.youtube.com/channel/UCSojAWUnEUTUcdA9iJ6bryQ>`_ (2D, 3D, GDScript and C#).
+- `Godotneers <https://www.youtube.com/@godotneers>`_ (2D, Shaders, GDScript)
 - `GDQuest <https://www.youtube.com/channel/UCxboW7x0jZqFdvMdCFKTMsQ/playlists>`_ (2D and 3D, GDScript and C#).
+- `FinePointCGI <https://www.youtube.com/channel/UCSojAWUnEUTUcdA9iJ6bryQ>`_ (2D, 3D, GDScript and C#).
 - `Game Endeavor <https://www.youtube.com/channel/UCLweX1UtQjRjj7rs_0XQ2Eg/videos>`_ (2D, GDScript).
 - `HeartBeast <https://www.youtube.com/watch?v=M8-JVjtJlIQ&list=PL9FzW-m48fn0i9GYBoTY-SI3yOBZjH1kJ>`_ (2D, GDScript).
 - `KidsCanCode <https://www.youtube.com/channel/UCNaPQ5uLX5iIEHUCLmfAgKg/playlists>`__ (2D and 3D, GDScript).
@@ -57,7 +58,6 @@ Text tutorials
 Devlogs
 -------
 
-- `Andrea Catania (Physics & AI) <https://www.youtube.com/channel/UCm4RuvYtgpgFDTCgaEUT5uQ/videos>`_
 - `Bastiaan Olij (AR & VR) <https://www.youtube.com/channel/UCrbLJYzJjDf2p-vJC011lYw/videos>`_
 - `DevDuck (2D) <https://www.youtube.com/@devduck/videos>`_
 
