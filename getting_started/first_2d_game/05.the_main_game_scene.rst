@@ -288,7 +288,7 @@ You should be able to move the player around, see mobs spawning, and see the
 player disappear when hit by a mob.
 
 When you're sure everything is working, remove the call to ``new_game()`` from
-``_ready()``.
+``_ready()`` and replace it with ``pass``.
 
 What's our game lacking? Some user interface. In the next lesson, we'll add a
 title screen and display the player's score.
