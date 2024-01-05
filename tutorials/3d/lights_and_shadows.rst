@@ -201,7 +201,12 @@ receive low-resolution shadows that may appear blocky.
 To fix this, a technique named *Parallel Split Shadow Maps* (PSSM) is used.
 This splits the view frustum in 2 or 4 areas. Each area gets its own shadow map.
 This allows small areas close to the viewer to have the same shadow resolution
-as a huge, far-away area.
+as a huge, far-away area. When shadows are enabled for DirectionalLight3D, the 
+default shadow mode is PSSM with 4 splits. In scenarios where an object is large 
+enough to appear in all four splits, it results in increased draw calls. Specifically, 
+such an object will be rendered five times in total: once for each of the four shadow 
+splits and once for the final scene rendering. This can impact performance, understanding
+this behavior is important for optimizing your scene and managing performance expectations.
 
 .. image:: img/lights_and_shadows_pssm_explained.webp
 
