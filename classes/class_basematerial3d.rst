@@ -3108,7 +3108,7 @@ If ``true``, enables subsurface scattering transmittance. Only effective if :ref
 - void **set_texture** **(** :ref:`TextureParam<enum_BaseMaterial3D_TextureParam>` param, :ref:`Texture2D<class_Texture2D>` texture **)**
 - :ref:`Texture2D<class_Texture2D>` **get_texture** **(** :ref:`TextureParam<enum_BaseMaterial3D_TextureParam>` param **)** |const|
 
-The texture to use for multiplying the intensity of the subsurface scattering transmitteance intensity. See also :ref:`subsurf_scatter_texture<class_BaseMaterial3D_property_subsurf_scatter_texture>`. Ignored if :ref:`subsurf_scatter_skin_mode<class_BaseMaterial3D_property_subsurf_scatter_skin_mode>` is ``true``.
+The texture to use for multiplying the intensity of the subsurface scattering transmittance intensity. See also :ref:`subsurf_scatter_texture<class_BaseMaterial3D_property_subsurf_scatter_texture>`. Ignored if :ref:`subsurf_scatter_skin_mode<class_BaseMaterial3D_property_subsurf_scatter_skin_mode>` is ``true``.
 
 .. rst-class:: classref-item-separator
 

@@ -346,9 +346,7 @@ Returns the dot product of two quaternions.
 
 :ref:`Quaternion<class_Quaternion>` **exp** **(** **)** |const|
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Returns the exponential of this quaternion. The rotation axis of the result is the normalized rotation axis of this quaternion, the angle of the result is the length of the vector part of this quaternion.
 
 .. rst-class:: classref-item-separator
 
@@ -372,9 +370,9 @@ Constructs a Quaternion from Euler angles in YXZ rotation order.
 
 :ref:`float<class_float>` **get_angle** **(** **)** |const|
 
-.. container:: contribute
+Returns the angle of the rotation represented by this quaternion.
 
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+\ **Note:** The quaternion must be normalized.
 
 .. rst-class:: classref-item-separator
 
@@ -386,9 +384,7 @@ Constructs a Quaternion from Euler angles in YXZ rotation order.
 
 :ref:`Vector3<class_Vector3>` **get_axis** **(** **)** |const|
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Returns the rotation axis of the rotation represented by this quaternion.
 
 .. rst-class:: classref-item-separator
 
@@ -484,9 +480,7 @@ Returns the length of the quaternion, squared.
 
 :ref:`Quaternion<class_Quaternion>` **log** **(** **)** |const|
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Returns the logarithm of this quaternion. The vector part of the result is the rotation axis of this quaternion multiplied by its rotation angle, the real part of the result is zero.
 
 .. rst-class:: classref-item-separator
 

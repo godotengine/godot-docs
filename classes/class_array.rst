@@ -1047,6 +1047,8 @@ Removes an element from the array by index. If the index does not exist in the a
 
 Resizes the array to contain a different number of elements. If the array size is smaller, elements are cleared, if bigger, new elements are ``null``. Returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` on success, or one of the other :ref:`Error<enum_@GlobalScope_Error>` values if the operation failed.
 
+Calling :ref:`resize<class_Array_method_resize>` once and assigning the new values is faster than adding new elements one by one.
+
 \ **Note:** This method acts in-place and doesn't return a modified array.
 
 .. rst-class:: classref-item-separator

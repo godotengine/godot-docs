@@ -19,7 +19,7 @@ An optionally compressed :ref:`CubemapArray<class_CubemapArray>`.
 Description
 -----------
 
-A cubemap array that is loaded from a ``.ccubearray`` file. This file format is internal to Godot; it is created by importing other image formats with the import system. **CompressedCubemapArray** can use one of 4 compresson methods:
+A cubemap array that is loaded from a ``.ccubearray`` file. This file format is internal to Godot; it is created by importing other image formats with the import system. **CompressedCubemapArray** can use one of 4 compression methods:
 
 - Lossless (WebP or PNG, uncompressed on the GPU)
 

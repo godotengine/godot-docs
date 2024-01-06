@@ -603,7 +603,7 @@ On the other hand, if the image already has mipmaps, they will be used, and a ne
 
 :ref:`Interpolation<enum_Image_Interpolation>` **INTERPOLATE_LANCZOS** = ``4``
 
-Performs Lanczos interpolation. This is the slowest image resizing mode, but it typically gives the best results, especially when downscalng images.
+Performs Lanczos interpolation. This is the slowest image resizing mode, but it typically gives the best results, especially when downscaling images.
 
 .. rst-class:: classref-item-separator
 

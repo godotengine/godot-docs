@@ -58,6 +58,8 @@ Methods
    +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Variant<class_Variant>`                       | :ref:`segment_intersects_triangle<class_Geometry3D_method_segment_intersects_triangle>` **(** :ref:`Vector3<class_Vector3>` from, :ref:`Vector3<class_Vector3>` to, :ref:`Vector3<class_Vector3>` a, :ref:`Vector3<class_Vector3>` b, :ref:`Vector3<class_Vector3>` c **)** |
    +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PackedInt32Array<class_PackedInt32Array>`     | :ref:`tetrahedralize_delaunay<class_Geometry3D_method_tetrahedralize_delaunay>` **(** :ref:`PackedVector3Array<class_PackedVector3Array>` points **)**                                                                                                                      |
+   +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -233,6 +235,18 @@ Checks if the segment (``from``, ``to``) intersects the sphere that is located a
 :ref:`Variant<class_Variant>` **segment_intersects_triangle** **(** :ref:`Vector3<class_Vector3>` from, :ref:`Vector3<class_Vector3>` to, :ref:`Vector3<class_Vector3>` a, :ref:`Vector3<class_Vector3>` b, :ref:`Vector3<class_Vector3>` c **)**
 
 Tests if the segment (``from``, ``to``) intersects the triangle ``a``, ``b``, ``c``. If yes, returns the point of intersection as :ref:`Vector3<class_Vector3>`. If no intersection takes place, returns ``null``.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Geometry3D_method_tetrahedralize_delaunay:
+
+.. rst-class:: classref-method
+
+:ref:`PackedInt32Array<class_PackedInt32Array>` **tetrahedralize_delaunay** **(** :ref:`PackedVector3Array<class_PackedVector3Array>` points **)**
+
+Tetrahedralizes the volume specified by a discrete set of ``points`` in 3D space, ensuring that no point lies within the circumsphere of any resulting tetrahedron. The method returns a :ref:`PackedInt32Array<class_PackedInt32Array>` where each tetrahedron consists of four consecutive point indices into the ``points`` array (resulting in an array with ``n * 4`` elements, where ``n`` is the number of tetrahedra found). If the tetrahedralization is unsuccessful, an empty :ref:`PackedInt32Array<class_PackedInt32Array>` is returned.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

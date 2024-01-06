@@ -655,7 +655,7 @@ Override this method to customize existing properties. Every property info goes 
         {
             if (property["name"].AsStringName() == PropertyName.Number && IsNumberEditable)
             {
-                var usage = property["usage"].As>PropertyUsageFlags<() | PropertyUsageFlags.ReadOnly;
+                var usage = property["usage"].As<PropertyUsageFlags>() | PropertyUsageFlags.ReadOnly;
                 property["usage"] = (int)usage;
             }
         }

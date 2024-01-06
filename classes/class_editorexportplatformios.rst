@@ -48,7 +48,7 @@ Properties
    +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`               | :ref:`application/icon_interpolation<class_EditorExportPlatformIOS_property_application/icon_interpolation>`                                     |
    +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`               | :ref:`application/launch_screens_interpolation<class_EditorExportPlatformIOS_property_application/launch_screens_interpolation>`                 |
+   | :ref:`String<class_String>`         | :ref:`application/min_ios_version<class_EditorExportPlatformIOS_property_application/min_ios_version>`                                           |
    +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`         | :ref:`application/provisioning_profile_uuid_debug<class_EditorExportPlatformIOS_property_application/provisioning_profile_uuid_debug>`           |
    +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -65,6 +65,10 @@ Properties
    | :ref:`bool<class_bool>`             | :ref:`architectures/arm64<class_EditorExportPlatformIOS_property_architectures/arm64>`                                                           |
    +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`             | :ref:`capabilities/access_wifi<class_EditorExportPlatformIOS_property_capabilities/access_wifi>`                                                 |
+   +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`             | :ref:`capabilities/performance_a12<class_EditorExportPlatformIOS_property_capabilities/performance_a12>`                                         |
+   +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`             | :ref:`capabilities/performance_gaming_tier<class_EditorExportPlatformIOS_property_capabilities/performance_gaming_tier>`                         |
    +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`             | :ref:`capabilities/push_notifications<class_EditorExportPlatformIOS_property_capabilities/push_notifications>`                                   |
    +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -96,28 +100,6 @@ Properties
    +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`         | :ref:`icons/spotlight_80x80<class_EditorExportPlatformIOS_property_icons/spotlight_80x80>`                                                       |
    +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`String<class_String>`         | :ref:`landscape_launch_screens/ipad_1024x768<class_EditorExportPlatformIOS_property_landscape_launch_screens/ipad_1024x768>`                     |
-   +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`String<class_String>`         | :ref:`landscape_launch_screens/ipad_2048x1536<class_EditorExportPlatformIOS_property_landscape_launch_screens/ipad_2048x1536>`                   |
-   +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`String<class_String>`         | :ref:`landscape_launch_screens/iphone_2208x1242<class_EditorExportPlatformIOS_property_landscape_launch_screens/iphone_2208x1242>`               |
-   +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`String<class_String>`         | :ref:`landscape_launch_screens/iphone_2436x1125<class_EditorExportPlatformIOS_property_landscape_launch_screens/iphone_2436x1125>`               |
-   +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`String<class_String>`         | :ref:`portrait_launch_screens/ipad_768x1024<class_EditorExportPlatformIOS_property_portrait_launch_screens/ipad_768x1024>`                       |
-   +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`String<class_String>`         | :ref:`portrait_launch_screens/ipad_1536x2048<class_EditorExportPlatformIOS_property_portrait_launch_screens/ipad_1536x2048>`                     |
-   +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`String<class_String>`         | :ref:`portrait_launch_screens/iphone_640x960<class_EditorExportPlatformIOS_property_portrait_launch_screens/iphone_640x960>`                     |
-   +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`String<class_String>`         | :ref:`portrait_launch_screens/iphone_640x1136<class_EditorExportPlatformIOS_property_portrait_launch_screens/iphone_640x1136>`                   |
-   +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`String<class_String>`         | :ref:`portrait_launch_screens/iphone_750x1334<class_EditorExportPlatformIOS_property_portrait_launch_screens/iphone_750x1334>`                   |
-   +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`String<class_String>`         | :ref:`portrait_launch_screens/iphone_1125x2436<class_EditorExportPlatformIOS_property_portrait_launch_screens/iphone_1125x2436>`                 |
-   +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`String<class_String>`         | :ref:`portrait_launch_screens/iphone_1242x2208<class_EditorExportPlatformIOS_property_portrait_launch_screens/iphone_1242x2208>`                 |
-   +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`         | :ref:`privacy/camera_usage_description<class_EditorExportPlatformIOS_property_privacy/camera_usage_description>`                                 |
    +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Dictionary<class_Dictionary>` | :ref:`privacy/camera_usage_description_localized<class_EditorExportPlatformIOS_property_privacy/camera_usage_description_localized>`             |
@@ -139,8 +121,6 @@ Properties
    | :ref:`int<class_int>`               | :ref:`storyboard/image_scale_mode<class_EditorExportPlatformIOS_property_storyboard/image_scale_mode>`                                           |
    +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`             | :ref:`storyboard/use_custom_bg_color<class_EditorExportPlatformIOS_property_storyboard/use_custom_bg_color>`                                     |
-   +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`             | :ref:`storyboard/use_launch_screen_storyboard<class_EditorExportPlatformIOS_property_storyboard/use_launch_screen_storyboard>`                   |
    +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`             | :ref:`user_data/accessible_from_files_app<class_EditorExportPlatformIOS_property_user_data/accessible_from_files_app>`                           |
    +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -252,13 +232,13 @@ Interpolation method used to resize application icon.
 
 ----
 
-.. _class_EditorExportPlatformIOS_property_application/launch_screens_interpolation:
+.. _class_EditorExportPlatformIOS_property_application/min_ios_version:
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **application/launch_screens_interpolation**
+:ref:`String<class_String>` **application/min_ios_version**
 
-Interpolation method used to resize launch screen images.
+Minimum version of iOS required for this application to run in the ``major.minor.patch`` or ``major.minor`` format, can only contain numeric characters (``0-9``) and periods (``.``).
 
 .. rst-class:: classref-item-separator
 
@@ -359,6 +339,34 @@ If ``true``, ``arm64`` binaries are included into exported project.
 :ref:`bool<class_bool>` **capabilities/access_wifi**
 
 If ``true``, networking features related to Wi-Fi access are enabled. See `Required Device Capabilities <https://developer.apple.com/support/required-device-capabilities/>`__.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_capabilities/performance_a12:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **capabilities/performance_a12**
+
+Requires the graphics performance and features of the A12 Bionic and later chips (devices supporting all Vulkan renderer features).
+
+Enabling this option limits supported devices to: iPhone XS, iPhone XR, iPad Mini (5th gen.), iPad Air (3rd gen.), iPad (8th gen) and newer.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_capabilities/performance_gaming_tier:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **capabilities/performance_gaming_tier**
+
+Requires the graphics performance and features of the A17 Pro and later chips.
+
+Enabling this option limits supported devices to: iPhone 15 Pro and newer.
 
 .. rst-class:: classref-item-separator
 
@@ -544,138 +552,6 @@ Spotlight icon file on iPad and iPhone (2x DPI). If left empty, it will fallback
 
 ----
 
-.. _class_EditorExportPlatformIOS_property_landscape_launch_screens/ipad_1024x768:
-
-.. rst-class:: classref-property
-
-:ref:`String<class_String>` **landscape_launch_screens/ipad_1024x768**
-
-Application launch screen image file. If left empty, it will fallback to :ref:`ProjectSettings.application/boot_splash/image<class_ProjectSettings_property_application/boot_splash/image>`.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_EditorExportPlatformIOS_property_landscape_launch_screens/ipad_2048x1536:
-
-.. rst-class:: classref-property
-
-:ref:`String<class_String>` **landscape_launch_screens/ipad_2048x1536**
-
-Application launch screen image file. If left empty, it will fallback to :ref:`ProjectSettings.application/boot_splash/image<class_ProjectSettings_property_application/boot_splash/image>`.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_EditorExportPlatformIOS_property_landscape_launch_screens/iphone_2208x1242:
-
-.. rst-class:: classref-property
-
-:ref:`String<class_String>` **landscape_launch_screens/iphone_2208x1242**
-
-Application launch screen image file. If left empty, it will fallback to :ref:`ProjectSettings.application/boot_splash/image<class_ProjectSettings_property_application/boot_splash/image>`.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_EditorExportPlatformIOS_property_landscape_launch_screens/iphone_2436x1125:
-
-.. rst-class:: classref-property
-
-:ref:`String<class_String>` **landscape_launch_screens/iphone_2436x1125**
-
-Application launch screen image file. If left empty, it will fallback to :ref:`ProjectSettings.application/boot_splash/image<class_ProjectSettings_property_application/boot_splash/image>`.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_EditorExportPlatformIOS_property_portrait_launch_screens/ipad_768x1024:
-
-.. rst-class:: classref-property
-
-:ref:`String<class_String>` **portrait_launch_screens/ipad_768x1024**
-
-Application launch screen image file. If left empty, it will fallback to :ref:`ProjectSettings.application/boot_splash/image<class_ProjectSettings_property_application/boot_splash/image>`.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_EditorExportPlatformIOS_property_portrait_launch_screens/ipad_1536x2048:
-
-.. rst-class:: classref-property
-
-:ref:`String<class_String>` **portrait_launch_screens/ipad_1536x2048**
-
-Application launch screen image file. If left empty, it will fallback to :ref:`ProjectSettings.application/boot_splash/image<class_ProjectSettings_property_application/boot_splash/image>`.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_EditorExportPlatformIOS_property_portrait_launch_screens/iphone_640x960:
-
-.. rst-class:: classref-property
-
-:ref:`String<class_String>` **portrait_launch_screens/iphone_640x960**
-
-Application launch screen image file. If left empty, it will fallback to :ref:`ProjectSettings.application/boot_splash/image<class_ProjectSettings_property_application/boot_splash/image>`.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_EditorExportPlatformIOS_property_portrait_launch_screens/iphone_640x1136:
-
-.. rst-class:: classref-property
-
-:ref:`String<class_String>` **portrait_launch_screens/iphone_640x1136**
-
-Application launch screen image file. If left empty, it will fallback to :ref:`ProjectSettings.application/boot_splash/image<class_ProjectSettings_property_application/boot_splash/image>`.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_EditorExportPlatformIOS_property_portrait_launch_screens/iphone_750x1334:
-
-.. rst-class:: classref-property
-
-:ref:`String<class_String>` **portrait_launch_screens/iphone_750x1334**
-
-Application launch screen image file. If left empty, it will fallback to :ref:`ProjectSettings.application/boot_splash/image<class_ProjectSettings_property_application/boot_splash/image>`.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_EditorExportPlatformIOS_property_portrait_launch_screens/iphone_1125x2436:
-
-.. rst-class:: classref-property
-
-:ref:`String<class_String>` **portrait_launch_screens/iphone_1125x2436**
-
-Application launch screen image file. If left empty, it will fallback to :ref:`ProjectSettings.application/boot_splash/image<class_ProjectSettings_property_application/boot_splash/image>`.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_EditorExportPlatformIOS_property_portrait_launch_screens/iphone_1242x2208:
-
-.. rst-class:: classref-property
-
-:ref:`String<class_String>` **portrait_launch_screens/iphone_1242x2208**
-
-Application launch screen image file. If left empty, it will fallback to :ref:`ProjectSettings.application/boot_splash/image<class_ProjectSettings_property_application/boot_splash/image>`.
-
-.. rst-class:: classref-item-separator
-
-----
-
 .. _class_EditorExportPlatformIOS_property_privacy/camera_usage_description:
 
 .. rst-class:: classref-property
@@ -803,18 +679,6 @@ Launch screen image scaling mode.
 :ref:`bool<class_bool>` **storyboard/use_custom_bg_color**
 
 If ``true``, :ref:`storyboard/custom_bg_color<class_EditorExportPlatformIOS_property_storyboard/custom_bg_color>` is used as a launch screen background color, otherwise ``application/boot_splash/bg_color`` project setting is used.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_EditorExportPlatformIOS_property_storyboard/use_launch_screen_storyboard:
-
-.. rst-class:: classref-property
-
-:ref:`bool<class_bool>` **storyboard/use_launch_screen_storyboard**
-
-If ``true``, storyboard launch screen is used instead of launch screen images.
 
 .. rst-class:: classref-item-separator
 

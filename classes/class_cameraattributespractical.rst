@@ -105,7 +105,7 @@ The minimum sensitivity (in ISO) used when calculating auto exposure. When calcu
 - void **set_dof_blur_amount** **(** :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_dof_blur_amount** **(** **)**
 
-Sets the maximum amount of blur. When using physically-based blur amounts, will instead act as a multiplier. High values lead to an increased amount of bluriness, but can be much more expensive to calculate. It is best to keep this as low as possible for a given art style.
+Sets the maximum amount of blur. When using physically-based blur amounts, will instead act as a multiplier. High values lead to an increased amount of blurriness, but can be much more expensive to calculate. It is best to keep this as low as possible for a given art style.
 
 .. rst-class:: classref-item-separator
 

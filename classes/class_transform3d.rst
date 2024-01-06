@@ -19,7 +19,7 @@ Description
 
 A 3×4 matrix (3 rows, 4 columns) used for 3D linear transformations. It can represent transformations such as translation, rotation, and scaling. It consists of a :ref:`basis<class_Transform3D_property_basis>` (first 3 columns) and a :ref:`Vector3<class_Vector3>` for the :ref:`origin<class_Transform3D_property_origin>` (last column).
 
-For more information, read the "Matrices and transforms" documentation article.
+For a general introduction, see the :doc:`Matrices and transforms <../tutorials/math/matrices_and_transforms>` tutorial.
 
 .. note::
 
@@ -136,6 +136,10 @@ Operators
    | :ref:`Transform3D<class_Transform3D>`               | :ref:`operator *<class_Transform3D_operator_mul_float>` **(** :ref:`float<class_float>` right **)**                                        |
    +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Transform3D<class_Transform3D>`               | :ref:`operator *<class_Transform3D_operator_mul_int>` **(** :ref:`int<class_int>` right **)**                                              |
+   +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Transform3D<class_Transform3D>`               | :ref:`operator /<class_Transform3D_operator_div_float>` **(** :ref:`float<class_float>` right **)**                                        |
+   +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Transform3D<class_Transform3D>`               | :ref:`operator /<class_Transform3D_operator_div_int>` **(** :ref:`int<class_int>` right **)**                                              |
    +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                             | :ref:`operator ==<class_Transform3D_operator_eq_Transform3D>` **(** :ref:`Transform3D<class_Transform3D>` right **)**                      |
    +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
@@ -562,6 +566,30 @@ This operator multiplies all components of the **Transform3D**, including the :r
 :ref:`Transform3D<class_Transform3D>` **operator *** **(** :ref:`int<class_int>` right **)**
 
 This operator multiplies all components of the **Transform3D**, including the :ref:`origin<class_Transform3D_property_origin>` vector, which scales it uniformly.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Transform3D_operator_div_float:
+
+.. rst-class:: classref-operator
+
+:ref:`Transform3D<class_Transform3D>` **operator /** **(** :ref:`float<class_float>` right **)**
+
+This operator divides all components of the **Transform3D**, including the :ref:`origin<class_Transform3D_property_origin>` vector, which inversely scales it uniformly.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Transform3D_operator_div_int:
+
+.. rst-class:: classref-operator
+
+:ref:`Transform3D<class_Transform3D>` **operator /** **(** :ref:`int<class_int>` right **)**
+
+This operator divides all components of the **Transform3D**, including the :ref:`origin<class_Transform3D_property_origin>` vector, which inversely scales it uniformly.
 
 .. rst-class:: classref-item-separator
 

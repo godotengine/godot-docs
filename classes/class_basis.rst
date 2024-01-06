@@ -23,7 +23,7 @@ Contains 3 vector fields X, Y and Z as its columns, which are typically interpre
 
 Basis can also be accessed as an array of 3D vectors. These vectors are usually orthogonal to each other, but are not necessarily normalized (due to scaling).
 
-For more information, read the "Matrices and transforms" documentation article.
+For a general introduction, see the :doc:`Matrices and transforms <../tutorials/math/matrices_and_transforms>` tutorial.
 
 .. note::
 
@@ -150,6 +150,10 @@ Operators
    | :ref:`Basis<class_Basis>`     | :ref:`operator *<class_Basis_operator_mul_float>` **(** :ref:`float<class_float>` right **)**       |
    +-------------------------------+-----------------------------------------------------------------------------------------------------+
    | :ref:`Basis<class_Basis>`     | :ref:`operator *<class_Basis_operator_mul_int>` **(** :ref:`int<class_int>` right **)**             |
+   +-------------------------------+-----------------------------------------------------------------------------------------------------+
+   | :ref:`Basis<class_Basis>`     | :ref:`operator /<class_Basis_operator_div_float>` **(** :ref:`float<class_float>` right **)**       |
+   +-------------------------------+-----------------------------------------------------------------------------------------------------+
+   | :ref:`Basis<class_Basis>`     | :ref:`operator /<class_Basis_operator_div_int>` **(** :ref:`int<class_int>` right **)**             |
    +-------------------------------+-----------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`       | :ref:`operator ==<class_Basis_operator_eq_Basis>` **(** :ref:`Basis<class_Basis>` right **)**       |
    +-------------------------------+-----------------------------------------------------------------------------------------------------+
@@ -328,6 +332,25 @@ A negative determinant means the basis has a negative scale. A zero determinant 
 
 Constructs a pure rotation Basis matrix from Euler angles in the specified Euler rotation order. By default, use YXZ order (most common). See the :ref:`EulerOrder<enum_@GlobalScope_EulerOrder>` enum for possible values.
 
+
+.. tabs::
+
+ .. code-tab:: gdscript
+
+    # Creates a Basis whose z axis points down.
+    var my_basis = Basis.from_euler(Vector3(TAU / 4, 0, 0))
+    
+    print(my_basis.z) # Prints (0, -1, 0).
+
+ .. code-tab:: csharp
+
+    // Creates a Basis whose z axis points down.
+    var myBasis = Basis.FromEuler(new Vector3(Mathf.Tau / 4.0f, 0.0f, 0.0f));
+    
+    GD.Print(myBasis.Z); // Prints (0, -1, 0).
+
+
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -339,6 +362,27 @@ Constructs a pure rotation Basis matrix from Euler angles in the specified Euler
 :ref:`Basis<class_Basis>` **from_scale** **(** :ref:`Vector3<class_Vector3>` scale **)** |static|
 
 Constructs a pure scale basis matrix with no rotation or shearing. The scale values are set as the diagonal of the matrix, and the other parts of the matrix are zero.
+
+
+.. tabs::
+
+ .. code-tab:: gdscript
+
+    var my_basis = Basis.from_scale(Vector3(2, 4, 8))
+    
+    print(my_basis.x) # Prints (2, 0, 0).
+    print(my_basis.y) # Prints (0, 4, 0).
+    print(my_basis.z) # Prints (0, 0, 8).
+
+ .. code-tab:: csharp
+
+    var myBasis = Basis.FromScale(new Vector3(2.0f, 4.0f, 8.0f));
+    
+    GD.Print(myBasis.X); // Prints (2, 0, 0).
+    GD.Print(myBasis.Y); // Prints (0, 4, 0).
+    GD.Print(myBasis.Z); // Prints (0, 0, 8).
+
+
 
 .. rst-class:: classref-item-separator
 
@@ -377,6 +421,37 @@ Returns the basis's rotation in the form of a quaternion. See :ref:`get_euler<cl
 :ref:`Vector3<class_Vector3>` **get_scale** **(** **)** |const|
 
 Assuming that the matrix is the combination of a rotation and scaling, return the absolute value of scaling factors along each axis.
+
+
+.. tabs::
+
+ .. code-tab:: gdscript
+
+    var my_basis = Basis(
+        Vector3(2, 0, 0),
+        Vector3(0, 4, 0),
+        Vector3(0, 0, 8)
+    )
+    # Rotating the Basis in any way preserves its scale.
+    my_basis = my_basis.rotated(Vector3.UP, TAU / 2)
+    my_basis = my_basis.rotated(Vector3.RIGHT, TAU / 4)
+    
+    print(my_basis.get_scale()) # Prints (2, 4, 8).
+
+ .. code-tab:: csharp
+
+    var myBasis = new Basis(
+        Vector3(2.0f, 0.0f, 0.0f),
+        Vector3(0.0f, 4.0f, 0.0f),
+        Vector3(0.0f, 0.0f, 8.0f)
+    );
+    // Rotating the Basis in any way preserves its scale.
+    myBasis = myBasis.Rotated(Vector3.Up, Mathf.Tau / 2.0f);
+    myBasis = myBasis.Rotated(Vector3.Right, Mathf.Tau / 4.0f);
+    
+    GD.Print(myBasis.Scale); // Prints (2, 4, 8).
+
+
 
 .. rst-class:: classref-item-separator
 
@@ -454,6 +529,30 @@ If ``use_model_front`` is ``true``, the +Z axis (asset front) is treated as forw
 
 Returns the orthonormalized version of the matrix (useful to call from time to time to avoid rounding error for orthogonal matrices). This performs a Gram-Schmidt orthonormalization on the basis of the matrix.
 
+
+.. tabs::
+
+ .. code-tab:: gdscript
+
+    # Rotate this Node3D every frame.
+    func _process(delta):
+        basis = basis.rotated(Vector3.UP, TAU * delta)
+        basis = basis.rotated(Vector3.RIGHT, TAU * delta)
+    
+        basis = basis.orthonormalized()
+
+ .. code-tab:: csharp
+
+    // Rotate this Node3D every frame.
+    public override void _Process(double delta)
+    {
+        Basis = Basis.Rotated(Vector3.Up, Mathf.Tau * (float)delta)
+                     .Rotated(Vector3.Right, Mathf.Tau * (float)delta)
+                     .Orthonormalized();
+    }
+
+
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -466,6 +565,29 @@ Returns the orthonormalized version of the matrix (useful to call from time to t
 
 Introduce an additional rotation around the given axis by ``angle`` (in radians). The axis must be a normalized vector.
 
+
+.. tabs::
+
+ .. code-tab:: gdscript
+
+    var my_basis = Basis.IDENTITY
+    var angle = TAU / 2
+    
+    my_basis = my_basis.rotated(Vector3.UP, angle)    # Rotate around the up axis (yaw).
+    my_basis = my_basis.rotated(Vector3.RIGHT, angle) # Rotate around the right axis (pitch).
+    my_basis = my_basis.rotated(Vector3.BACK, angle)  # Rotate around the back axis (roll).
+
+ .. code-tab:: csharp
+
+    var myBasis = Basis.Identity;
+    var angle = Mathf.Tau / 2.0f;
+    
+    myBasis = myBasis.Rotated(Vector3.Up, angle);    // Rotate around the up axis (yaw).
+    myBasis = myBasis.Rotated(Vector3.Right, angle); // Rotate around the right axis (pitch).
+    myBasis = myBasis.Rotated(Vector3.Back, angle);  // Rotate around the back axis (roll).
+
+
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -477,6 +599,37 @@ Introduce an additional rotation around the given axis by ``angle`` (in radians)
 :ref:`Basis<class_Basis>` **scaled** **(** :ref:`Vector3<class_Vector3>` scale **)** |const|
 
 Introduce an additional scaling specified by the given 3D scaling factor.
+
+
+.. tabs::
+
+ .. code-tab:: gdscript
+
+    var my_basis = Basis(
+        Vector3(1, 1, 1),
+        Vector3(2, 2, 2),
+        Vector3(3, 3, 3)
+    )
+    my_basis = my_basis.scaled(Vector3(0, 2, -2))
+    
+    print(my_basis.x) # Prints (0, 2, -2).
+    print(my_basis.y) # Prints (0, 4, -4).
+    print(my_basis.z) # Prints (0, 6, -6).
+
+ .. code-tab:: csharp
+
+    var myBasis = new Basis(
+        new Vector3(1.0f, 1.0f, 1.0f),
+        new Vector3(2.0f, 2.0f, 2.0f),
+        new Vector3(3.0f, 3.0f, 3.0f)
+    );
+    myBasis = myBasis.Scaled(new Vector3(0.0f, 2.0f, -2.0f));
+    
+    GD.Print(myBasis.X); // Prints (0, 2, -2).
+    GD.Print(myBasis.Y); // Prints (0, 4, -4).
+    GD.Print(myBasis.Z); // Prints (0, 6, -6).
+
+
 
 .. rst-class:: classref-item-separator
 
@@ -537,6 +690,37 @@ Transposed dot product with the Z axis of the matrix.
 :ref:`Basis<class_Basis>` **transposed** **(** **)** |const|
 
 Returns the transposed version of the matrix.
+
+
+.. tabs::
+
+ .. code-tab:: gdscript
+
+    var my_basis = Basis(
+        Vector3(1, 2, 3),
+        Vector3(4, 5, 6),
+        Vector3(7, 8, 9)
+    )
+    my_basis = my_basis.transposed()
+    
+    print(my_basis.x) # Prints (1, 4, 7).
+    print(my_basis.y) # Prints (2, 5, 8).
+    print(my_basis.z) # Prints (3, 6, 9).
+
+ .. code-tab:: csharp
+
+    var myBasis = new Basis(
+        new Vector3(1.0f, 2.0f, 3.0f),
+        new Vector3(4.0f, 5.0f, 6.0f),
+        new Vector3(7.0f, 8.0f, 9.0f)
+    );
+    myBasis = myBasis.Transposed();
+    
+    GD.Print(myBasis.X); // Prints (1, 4, 7).
+    GD.Print(myBasis.Y); // Prints (2, 5, 8).
+    GD.Print(myBasis.Z); // Prints (3, 6, 9).
+
+
 
 .. rst-class:: classref-section-separator
 
@@ -604,6 +788,30 @@ This operator multiplies all components of the **Basis**, which scales it unifor
 :ref:`Basis<class_Basis>` **operator *** **(** :ref:`int<class_int>` right **)**
 
 This operator multiplies all components of the **Basis**, which scales it uniformly.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Basis_operator_div_float:
+
+.. rst-class:: classref-operator
+
+:ref:`Basis<class_Basis>` **operator /** **(** :ref:`float<class_float>` right **)**
+
+This operator divides all components of the **Basis**, which inversely scales it uniformly.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Basis_operator_div_int:
+
+.. rst-class:: classref-operator
+
+:ref:`Basis<class_Basis>` **operator /** **(** :ref:`int<class_int>` right **)**
+
+This operator divides all components of the **Basis**, which inversely scales it uniformly.
 
 .. rst-class:: classref-item-separator
 

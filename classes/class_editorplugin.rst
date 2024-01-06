@@ -956,7 +956,7 @@ Use :ref:`_set_window_layout<class_EditorPlugin_private_method__set_window_layou
 
 Implement this function if your plugin edits a specific type of object (Resource or Node). If you return ``true``, then you will get the functions :ref:`_edit<class_EditorPlugin_private_method__edit>` and :ref:`_make_visible<class_EditorPlugin_private_method__make_visible>` called when the editor requests them. If you have declared the methods :ref:`_forward_canvas_gui_input<class_EditorPlugin_private_method__forward_canvas_gui_input>` and :ref:`_forward_3d_gui_input<class_EditorPlugin_private_method__forward_3d_gui_input>` these will be called too.
 
-\ **Note:** Each plugin should handle only one type of objects at a time. If a plugin handes more types of objects and they are edited at the same time, it will result in errors.
+\ **Note:** Each plugin should handle only one type of objects at a time. If a plugin handles more types of objects and they are edited at the same time, it will result in errors.
 
 .. rst-class:: classref-item-separator
 

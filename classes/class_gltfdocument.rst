@@ -284,7 +284,7 @@ Unregisters the given :ref:`GLTFDocumentExtension<class_GLTFDocumentExtension>` 
 
 Takes a :ref:`GLTFState<class_GLTFState>` object through the ``state`` parameter and writes a glTF file to the filesystem.
 
-\ **Note:** The extension of the glTF file determines if it is a .glb binary file or a .gltf file.
+\ **Note:** The extension of the glTF file determines if it is a .glb binary file or a .gltf text file.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
