@@ -57,6 +57,8 @@ Properties
    :widths: auto
 
    +----------------------------------------------------+------------------------------------------------------------------------------------------+------------------------+
+   | :ref:`CellShape<enum_AStarGrid2D_CellShape>`       | :ref:`cell_shape<class_AStarGrid2D_property_cell_shape>`                                 | ``0``                  |
+   +----------------------------------------------------+------------------------------------------------------------------------------------------+------------------------+
    | :ref:`Vector2<class_Vector2>`                      | :ref:`cell_size<class_AStarGrid2D_property_cell_size>`                                   | ``Vector2(1, 1)``      |
    +----------------------------------------------------+------------------------------------------------------------------------------------------+------------------------+
    | :ref:`Heuristic<enum_AStarGrid2D_Heuristic>`       | :ref:`default_compute_heuristic<class_AStarGrid2D_property_default_compute_heuristic>`   | ``0``                  |
@@ -250,6 +252,48 @@ The pathfinding algorithm will avoid using diagonals if any obstacle has been pl
 
 Represents the size of the :ref:`DiagonalMode<enum_AStarGrid2D_DiagonalMode>` enum.
 
+.. rst-class:: classref-item-separator
+
+----
+
+.. _enum_AStarGrid2D_CellShape:
+
+.. rst-class:: classref-enumeration
+
+enum **CellShape**:
+
+.. _class_AStarGrid2D_constant_CELL_SHAPE_SQUARE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`CellShape<enum_AStarGrid2D_CellShape>` **CELL_SHAPE_SQUARE** = ``0``
+
+Rectangular cell shape.
+
+.. _class_AStarGrid2D_constant_CELL_SHAPE_ISOMETRIC_RIGHT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`CellShape<enum_AStarGrid2D_CellShape>` **CELL_SHAPE_ISOMETRIC_RIGHT** = ``1``
+
+Diamond cell shape (for isometric look). Cell coordinates layout where the horizontal axis goes up-right, and the vertical one goes down-right.
+
+.. _class_AStarGrid2D_constant_CELL_SHAPE_ISOMETRIC_DOWN:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`CellShape<enum_AStarGrid2D_CellShape>` **CELL_SHAPE_ISOMETRIC_DOWN** = ``2``
+
+Diamond cell shape (for isometric look). Cell coordinates layout where the horizontal axis goes down-right, and the vertical one goes down-left.
+
+.. _class_AStarGrid2D_constant_CELL_SHAPE_MAX:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`CellShape<enum_AStarGrid2D_CellShape>` **CELL_SHAPE_MAX** = ``3``
+
+Represents the size of the :ref:`CellShape<enum_AStarGrid2D_CellShape>` enum.
+
 .. rst-class:: classref-section-separator
 
 ----
@@ -258,6 +302,23 @@ Represents the size of the :ref:`DiagonalMode<enum_AStarGrid2D_DiagonalMode>` en
 
 Property Descriptions
 ---------------------
+
+.. _class_AStarGrid2D_property_cell_shape:
+
+.. rst-class:: classref-property
+
+:ref:`CellShape<enum_AStarGrid2D_CellShape>` **cell_shape** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_cell_shape** **(** :ref:`CellShape<enum_AStarGrid2D_CellShape>` value **)**
+- :ref:`CellShape<enum_AStarGrid2D_CellShape>` **get_cell_shape** **(** **)**
+
+The cell shape. Affects how the positions are placed in the grid. If changed, :ref:`update<class_AStarGrid2D_method_update>` needs to be called before finding the next path.
+
+.. rst-class:: classref-item-separator
+
+----
 
 .. _class_AStarGrid2D_property_cell_size:
 

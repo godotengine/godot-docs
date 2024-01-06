@@ -269,14 +269,14 @@ Gets the node name indicated by ``idx`` (0 to :ref:`get_name_count<class_NodePat
     var node_path = NodePath("Path2D/PathFollow2D/Sprite2D")
     print(node_path.get_name(0)) # Path2D
     print(node_path.get_name(1)) # PathFollow2D
-    print(node_path.get_name(2)) # Sprite
+    print(node_path.get_name(2)) # Sprite2D
 
  .. code-tab:: csharp
 
     var nodePath = new NodePath("Path2D/PathFollow2D/Sprite2D");
     GD.Print(nodePath.GetName(0)); // Path2D
     GD.Print(nodePath.GetName(1)); // PathFollow2D
-    GD.Print(nodePath.GetName(2)); // Sprite
+    GD.Print(nodePath.GetName(2)); // Sprite2D
 
 
 

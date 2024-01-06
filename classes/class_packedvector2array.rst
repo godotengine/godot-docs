@@ -342,7 +342,7 @@ Removes an element from the array by index.
 
 :ref:`int<class_int>` **resize** **(** :ref:`int<class_int>` new_size **)**
 
-Sets the size of the array. If the array is grown, reserves elements at the end of the array. If the array is shrunk, truncates the array to the new size.
+Sets the size of the array. If the array is grown, reserves elements at the end of the array. If the array is shrunk, truncates the array to the new size. Calling :ref:`resize<class_PackedVector2Array_method_resize>` once and assigning the new values is faster than adding new elements one by one.
 
 .. rst-class:: classref-item-separator
 

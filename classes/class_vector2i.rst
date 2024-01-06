@@ -81,6 +81,10 @@ Methods
    +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Vector2i<class_Vector2i>` | :ref:`clamp<class_Vector2i_method_clamp>` **(** :ref:`Vector2i<class_Vector2i>` min, :ref:`Vector2i<class_Vector2i>` max **)** |const| |
    +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`           | :ref:`distance_squared_to<class_Vector2i_method_distance_squared_to>` **(** :ref:`Vector2i<class_Vector2i>` to **)** |const|           |
+   +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`       | :ref:`distance_to<class_Vector2i_method_distance_to>` **(** :ref:`Vector2i<class_Vector2i>` to **)** |const|                           |
+   +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`       | :ref:`length<class_Vector2i_method_length>` **(** **)** |const|                                                                        |
    +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`           | :ref:`length_squared<class_Vector2i_method_length_squared>` **(** **)** |const|                                                        |
@@ -347,6 +351,32 @@ Returns the aspect ratio of this vector, the ratio of :ref:`x<class_Vector2i_pro
 :ref:`Vector2i<class_Vector2i>` **clamp** **(** :ref:`Vector2i<class_Vector2i>` min, :ref:`Vector2i<class_Vector2i>` max **)** |const|
 
 Returns a new vector with all components clamped between the components of ``min`` and ``max``, by running :ref:`@GlobalScope.clamp<class_@GlobalScope_method_clamp>` on each component.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Vector2i_method_distance_squared_to:
+
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **distance_squared_to** **(** :ref:`Vector2i<class_Vector2i>` to **)** |const|
+
+Returns the squared distance between this vector and ``to``.
+
+This method runs faster than :ref:`distance_to<class_Vector2i_method_distance_to>`, so prefer it if you need to compare vectors or need the squared distance for some formula.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Vector2i_method_distance_to:
+
+.. rst-class:: classref-method
+
+:ref:`float<class_float>` **distance_to** **(** :ref:`Vector2i<class_Vector2i>` to **)** |const|
+
+Returns the distance between this vector and ``to``.
 
 .. rst-class:: classref-item-separator
 

@@ -57,7 +57,7 @@ Methods
    +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                       | :ref:`_debug_parse_stack_level_expression<class_ScriptLanguageExtension_private_method__debug_parse_stack_level_expression>` **(** :ref:`int<class_int>` level, :ref:`String<class_String>` expression, :ref:`int<class_int>` max_subitems, :ref:`int<class_int>` max_depth **)** |virtual|                                                              |
    +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                             | :ref:`_find_function<class_ScriptLanguageExtension_private_method__find_function>` **(** :ref:`String<class_String>` class_name, :ref:`String<class_String>` function_name **)** |virtual| |const|                                                                                                                                                       |
+   | :ref:`int<class_int>`                             | :ref:`_find_function<class_ScriptLanguageExtension_private_method__find_function>` **(** :ref:`String<class_String>` function, :ref:`String<class_String>` code **)** |virtual| |const|                                                                                                                                                                  |
    +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                              | :ref:`_finish<class_ScriptLanguageExtension_private_method__finish>` **(** **)** |virtual|                                                                                                                                                                                                                                                               |
    +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -610,11 +610,9 @@ void* **_debug_get_stack_level_instance** **(** :ref:`int<class_int>` level **)*
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **_find_function** **(** :ref:`String<class_String>` class_name, :ref:`String<class_String>` function_name **)** |virtual| |const|
+:ref:`int<class_int>` **_find_function** **(** :ref:`String<class_String>` function, :ref:`String<class_String>` code **)** |virtual| |const|
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Returns the line where the function is defined in the code, or ``-1`` if the function is not present.
 
 .. rst-class:: classref-item-separator
 

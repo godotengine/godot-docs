@@ -72,6 +72,10 @@ Methods
    +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Vector4i<class_Vector4i>` | :ref:`clamp<class_Vector4i_method_clamp>` **(** :ref:`Vector4i<class_Vector4i>` min, :ref:`Vector4i<class_Vector4i>` max **)** |const| |
    +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`           | :ref:`distance_squared_to<class_Vector4i_method_distance_squared_to>` **(** :ref:`Vector4i<class_Vector4i>` to **)** |const|           |
+   +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`       | :ref:`distance_to<class_Vector4i_method_distance_to>` **(** :ref:`Vector4i<class_Vector4i>` to **)** |const|                           |
+   +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`       | :ref:`length<class_Vector4i_method_length>` **(** **)** |const|                                                                        |
    +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`           | :ref:`length_squared<class_Vector4i_method_length_squared>` **(** **)** |const|                                                        |
@@ -334,6 +338,32 @@ Returns a new vector with all components in absolute values (i.e. positive).
 :ref:`Vector4i<class_Vector4i>` **clamp** **(** :ref:`Vector4i<class_Vector4i>` min, :ref:`Vector4i<class_Vector4i>` max **)** |const|
 
 Returns a new vector with all components clamped between the components of ``min`` and ``max``, by running :ref:`@GlobalScope.clamp<class_@GlobalScope_method_clamp>` on each component.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Vector4i_method_distance_squared_to:
+
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **distance_squared_to** **(** :ref:`Vector4i<class_Vector4i>` to **)** |const|
+
+Returns the squared distance between this vector and ``to``.
+
+This method runs faster than :ref:`distance_to<class_Vector4i_method_distance_to>`, so prefer it if you need to compare vectors or need the squared distance for some formula.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Vector4i_method_distance_to:
+
+.. rst-class:: classref-method
+
+:ref:`float<class_float>` **distance_to** **(** :ref:`Vector4i<class_Vector4i>` to **)** |const|
+
+Returns the distance between this vector and ``to``.
 
 .. rst-class:: classref-item-separator
 

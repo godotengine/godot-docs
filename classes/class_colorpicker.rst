@@ -123,6 +123,8 @@ Theme Properties
    +-----------------------------------+----------------------------------------------------------------------------------------+---------+
    | :ref:`Texture2D<class_Texture2D>` | :ref:`sample_bg<class_ColorPicker_theme_icon_sample_bg>`                               |         |
    +-----------------------------------+----------------------------------------------------------------------------------------+---------+
+   | :ref:`Texture2D<class_Texture2D>` | :ref:`sample_revert<class_ColorPicker_theme_icon_sample_revert>`                       |         |
+   +-----------------------------------+----------------------------------------------------------------------------------------+---------+
    | :ref:`Texture2D<class_Texture2D>` | :ref:`screen_picker<class_ColorPicker_theme_icon_screen_picker>`                       |         |
    +-----------------------------------+----------------------------------------------------------------------------------------+---------+
    | :ref:`Texture2D<class_Texture2D>` | :ref:`shape_circle<class_ColorPicker_theme_icon_shape_circle>`                         |         |
@@ -731,6 +733,18 @@ The image displayed over the color box/circle (depending on the :ref:`picker_sha
 :ref:`Texture2D<class_Texture2D>` **sample_bg**
 
 Background panel for the color preview box (visible when the color is translucent).
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ColorPicker_theme_icon_sample_revert:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`Texture2D<class_Texture2D>` **sample_revert**
+
+The icon for the revert button (visible on the middle of the "old" color when it differs from the currently selected color). This icon is modulated with a dark color if the "old" color is bright enough, so the icon should be bright to ensure visibility in both scenarios.
 
 .. rst-class:: classref-item-separator
 

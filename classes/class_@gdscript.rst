@@ -972,7 +972,7 @@ See also :ref:`@GlobalScope.typeof<class_@GlobalScope_method_typeof>`, :ref:`typ
 
 :ref:`int<class_int>` **len** **(** :ref:`Variant<class_Variant>` var **)**
 
-Returns the length of the given Variant ``var``. The length can be the character count of a :ref:`String<class_String>`, the element count of any array type or the size of a :ref:`Dictionary<class_Dictionary>`. For every other Variant type, a run-time error is generated and execution is stopped.
+Returns the length of the given Variant ``var``. The length can be the character count of a :ref:`String<class_String>` or :ref:`StringName<class_StringName>`, the element count of any array type, or the size of a :ref:`Dictionary<class_Dictionary>`. For every other Variant type, a run-time error is generated and execution is stopped.
 
 ::
 

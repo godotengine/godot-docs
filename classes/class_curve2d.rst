@@ -295,18 +295,16 @@ Cubic interpolation tends to follow the curves better, but linear is faster (and
 
 :ref:`Transform2D<class_Transform2D>` **sample_baked_with_rotation** **(** :ref:`float<class_float>` offset=0.0, :ref:`bool<class_bool>` cubic=false **)** |const|
 
-Similar to :ref:`sample_baked<class_Curve2D_method_sample_baked>`, but returns :ref:`Transform2D<class_Transform2D>` that includes a rotation along the curve, with :ref:`Transform2D.origin<class_Transform2D_property_origin>` as the point position, :ref:`Transform2D.x<class_Transform2D_property_x>` as the sideways vector, and :ref:`Transform2D.y<class_Transform2D_property_y>` as the forward vector. Returns an empty transform if the length of the curve is ``0``.
+Similar to :ref:`sample_baked<class_Curve2D_method_sample_baked>`, but returns :ref:`Transform2D<class_Transform2D>` that includes a rotation along the curve, with :ref:`Transform2D.origin<class_Transform2D_property_origin>` as the point position and the :ref:`Transform2D.x<class_Transform2D_property_x>` vector pointing in the direction of the path at that point. Returns an empty transform if the length of the curve is ``0``.
 
 ::
 
     var baked = curve.sample_baked_with_rotation(offset)
-    # This will rotate and position the node with the up direction pointing along the curve.
+    # The returned Transform2D can be set directly.
+    transform = baked
+    # You can also read the origin and rotation separately from the returned Transform2D.
     position = baked.get_origin()
     rotation = baked.get_rotation()
-    # Alternatively, not preserving scale.
-    transform = baked * Transform2D.FLIP_Y
-    # To match the rotation of PathFollow2D, not preserving scale.
-    transform = Transform2D(baked.y, baked.x, baked.origin)
 
 .. rst-class:: classref-item-separator
 

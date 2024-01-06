@@ -238,6 +238,8 @@ Returns the texture height in pixels.
 
 Returns an :ref:`Image<class_Image>` that is a copy of data from this **Texture2D** (a new :ref:`Image<class_Image>` is created each time). :ref:`Image<class_Image>`\ s can be accessed and manipulated directly.
 
+\ **Note:** This will return ``null`` if this **Texture2D** is invalid.
+
 \ **Note:** This will fetch the texture data from the GPU, which might cause performance problems when overused.
 
 .. rst-class:: classref-item-separator

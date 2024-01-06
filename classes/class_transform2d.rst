@@ -19,7 +19,7 @@ Description
 
 A 2×3 matrix (2 rows, 3 columns) used for 2D linear transformations. It can represent transformations such as translation, rotation, and scaling. It consists of three :ref:`Vector2<class_Vector2>` values: :ref:`x<class_Transform2D_property_x>`, :ref:`y<class_Transform2D_property_y>`, and the :ref:`origin<class_Transform2D_property_origin>`.
 
-For more information, read the "Matrices and transforms" documentation article.
+For a general introduction, see the :doc:`Matrices and transforms <../tutorials/math/matrices_and_transforms>` tutorial.
 
 .. note::
 
@@ -148,6 +148,10 @@ Operators
    | :ref:`Transform2D<class_Transform2D>`               | :ref:`operator *<class_Transform2D_operator_mul_float>` **(** :ref:`float<class_float>` right **)**                                        |
    +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Transform2D<class_Transform2D>`               | :ref:`operator *<class_Transform2D_operator_mul_int>` **(** :ref:`int<class_int>` right **)**                                              |
+   +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Transform2D<class_Transform2D>`               | :ref:`operator /<class_Transform2D_operator_div_float>` **(** :ref:`float<class_float>` right **)**                                        |
+   +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Transform2D<class_Transform2D>`               | :ref:`operator /<class_Transform2D_operator_div_int>` **(** :ref:`int<class_int>` right **)**                                              |
    +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                             | :ref:`operator ==<class_Transform2D_operator_eq_Transform2D>` **(** :ref:`Transform2D<class_Transform2D>` right **)**                      |
    +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
@@ -668,6 +672,30 @@ This operator multiplies all components of the **Transform2D**, including the :r
 :ref:`Transform2D<class_Transform2D>` **operator *** **(** :ref:`int<class_int>` right **)**
 
 This operator multiplies all components of the **Transform2D**, including the :ref:`origin<class_Transform2D_property_origin>` vector, which scales it uniformly.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Transform2D_operator_div_float:
+
+.. rst-class:: classref-operator
+
+:ref:`Transform2D<class_Transform2D>` **operator /** **(** :ref:`float<class_float>` right **)**
+
+This operator divides all components of the **Transform2D**, including the :ref:`origin<class_Transform2D_property_origin>` vector, which inversely scales it uniformly.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Transform2D_operator_div_int:
+
+.. rst-class:: classref-operator
+
+:ref:`Transform2D<class_Transform2D>` **operator /** **(** :ref:`int<class_int>` right **)**
+
+This operator divides all components of the **Transform2D**, including the :ref:`origin<class_Transform2D_property_origin>` vector, which inversely scales it uniformly.
 
 .. rst-class:: classref-item-separator
 

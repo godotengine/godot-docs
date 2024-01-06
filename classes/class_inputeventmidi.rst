@@ -190,7 +190,7 @@ If the message is :ref:`@GlobalScope.MIDI_MESSAGE_CONTROL_CHANGE<class_@GlobalSc
 - void **set_instrument** **(** :ref:`int<class_int>` value **)**
 - :ref:`int<class_int>` **get_instrument** **(** **)**
 
-The instrument of this input event. This value ranges from 0 to 127. Refer to the instrument list on the General MIDI wikipedia article to see a list of instruments, except that this value is 0-index, so subtract one from every number on that chart. A standard piano will have an instrument number of 0.
+The instrument of this input event. This value ranges from 0 to 127. Refer to the instrument list for `General MIDI <https://en.wikipedia.org/wiki/General_MIDI#Program_change_events>`__ to see a list of instruments, except that this value is 0-index, so subtract one from every number on that chart. A standard piano will have an instrument number of 0.
 
 .. rst-class:: classref-item-separator
 

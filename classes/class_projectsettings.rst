@@ -1113,8 +1113,6 @@ Properties
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`memory/limits/message_queue/max_size_mb<class_ProjectSettings_property_memory/limits/message_queue/max_size_mb>`                                                                                     | ``32``                                                                                           |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                             | :ref:`memory/limits/multithreaded_server/rid_pool_prealloc<class_ProjectSettings_property_memory/limits/multithreaded_server/rid_pool_prealloc>`                                                           | ``60``                                                                                           |
-   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                         | :ref:`navigation/2d/default_cell_size<class_ProjectSettings_property_navigation/2d/default_cell_size>`                                                                                                     | ``1.0``                                                                                          |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                         | :ref:`navigation/2d/default_edge_connection_margin<class_ProjectSettings_property_navigation/2d/default_edge_connection_margin>`                                                                           | ``1.0``                                                                                          |
@@ -1452,6 +1450,8 @@ Properties
    | :ref:`String<class_String>`                       | :ref:`rendering/renderer/rendering_method.mobile<class_ProjectSettings_property_rendering/renderer/rendering_method.mobile>`                                                                               | ``"mobile"``                                                                                     |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                       | :ref:`rendering/renderer/rendering_method.web<class_ProjectSettings_property_rendering/renderer/rendering_method.web>`                                                                                     | ``"gl_compatibility"``                                                                           |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`rendering/rendering_device/d3d12/agility_sdk_version<class_ProjectSettings_property_rendering/rendering_device/d3d12/agility_sdk_version>`                                                           | ``610``                                                                                          |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`rendering/rendering_device/d3d12/max_misc_descriptors_per_frame<class_ProjectSettings_property_rendering/rendering_device/d3d12/max_misc_descriptors_per_frame>`                                     | ``512``                                                                                          |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
@@ -4934,7 +4934,7 @@ Default :ref:`InputEventAction<class_InputEventAction>` to select an item in a :
 
 :ref:`Dictionary<class_Dictionary>` **input/ui_swap_input_direction**
 
-Default :ref:`InputEventAction<class_InputEventAction>` to swap input direction, i.e. change between left-to-right to right-to-left modes. Affects text-editting controls (:ref:`LineEdit<class_LineEdit>`, :ref:`TextEdit<class_TextEdit>`).
+Default :ref:`InputEventAction<class_InputEventAction>` to swap input direction, i.e. change between left-to-right to right-to-left modes. Affects text-editing controls (:ref:`LineEdit<class_LineEdit>`, :ref:`TextEdit<class_TextEdit>`).
 
 .. rst-class:: classref-item-separator
 
@@ -5336,7 +5336,7 @@ In case there's more than one caret active, removes the secondary carets and cle
 
 :ref:`Dictionary<class_Dictionary>` **input/ui_text_completion_accept**
 
-Default :ref:`InputEventAction<class_InputEventAction>` to accept an autocompetion hint.
+Default :ref:`InputEventAction<class_InputEventAction>` to accept an autocompletion hint.
 
 \ **Note:** Default ``ui_*`` actions cannot be removed as they are necessary for the internal logic of several :ref:`Control<class_Control>`\ s. The events assigned to the action can however be modified.
 
@@ -5350,7 +5350,7 @@ Default :ref:`InputEventAction<class_InputEventAction>` to accept an autocompeti
 
 :ref:`Dictionary<class_Dictionary>` **input/ui_text_completion_query**
 
-Default :ref:`InputEventAction<class_InputEventAction>` to request autocompetion.
+Default :ref:`InputEventAction<class_InputEventAction>` to request autocompletion.
 
 \ **Note:** Default ``ui_*`` actions cannot be removed as they are necessary for the internal logic of several :ref:`Control<class_Control>`\ s. The events assigned to the action can however be modified.
 
@@ -5364,7 +5364,7 @@ Default :ref:`InputEventAction<class_InputEventAction>` to request autocompetion
 
 :ref:`Dictionary<class_Dictionary>` **input/ui_text_completion_replace**
 
-Default :ref:`InputEventAction<class_InputEventAction>` to accept an autocompetion hint, replacing existing text.
+Default :ref:`InputEventAction<class_InputEventAction>` to accept an autocompletion hint, replacing existing text.
 
 \ **Note:** Default ``ui_*`` actions cannot be removed as they are necessary for the internal logic of several :ref:`Control<class_Control>`\ s. The events assigned to the action can however be modified.
 
@@ -8368,18 +8368,6 @@ Godot uses a message queue to defer some function calls. If you run out of space
 
 ----
 
-.. _class_ProjectSettings_property_memory/limits/multithreaded_server/rid_pool_prealloc:
-
-.. rst-class:: classref-property
-
-:ref:`int<class_int>` **memory/limits/multithreaded_server/rid_pool_prealloc** = ``60``
-
-This is used by servers when used in multi-threading mode (servers and visual). RIDs are preallocated to avoid stalling the server requesting them on threads. If servers get stalled too often when loading resources in a thread, increase this number.
-
-.. rst-class:: classref-item-separator
-
-----
-
 .. _class_ProjectSettings_property_navigation/2d/default_cell_size:
 
 .. rst-class:: classref-property
@@ -10629,6 +10617,18 @@ Override for :ref:`rendering/renderer/rendering_method<class_ProjectSettings_pro
 :ref:`String<class_String>` **rendering/renderer/rendering_method.web** = ``"gl_compatibility"``
 
 Override for :ref:`rendering/renderer/rendering_method<class_ProjectSettings_property_rendering/renderer/rendering_method>` on web.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_rendering/rendering_device/d3d12/agility_sdk_version:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **rendering/rendering_device/d3d12/agility_sdk_version** = ``610``
+
+Version code of the Direct3D 12 Agility SDK to use (``D3D12SDKVersion``).
 
 .. rst-class:: classref-item-separator
 

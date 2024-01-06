@@ -753,7 +753,7 @@ This is faster than :ref:`split<class_StringName_method_split>`, if you only nee
 
 Returns the 32-bit hash value representing the string's contents.
 
-\ **Note:** Strings with equal hash values are *not* guaranteed to be the same, as a result of hash collisions. On the countrary, strings with different hash values are guaranteed to be different.
+\ **Note:** Strings with equal hash values are *not* guaranteed to be the same, as a result of hash collisions. On the contrary, strings with different hash values are guaranteed to be different.
 
 .. rst-class:: classref-item-separator
 
