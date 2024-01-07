@@ -91,9 +91,9 @@ Comment out the lines ``var velocity = Vector2.UP.rotated(rotation) * speed`` an
 
  .. code-tab:: csharp C#
 
-    // var velocity = Vector2.Up.Rotated(Rotation) * _speed;
+    //var velocity = Vector2.Up.Rotated(Rotation) * _speed;
 
-    // Position += velocity * (float)delta;
+    //Position += velocity * (float)delta;
 
 This will ignore the code that moved the icon's position in a circles without user input from the previous exercise.
 
