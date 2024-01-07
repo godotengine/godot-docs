@@ -24,3 +24,4 @@ where appropriate.
    scripting_first_script
    scripting_player_input
    signals
+   debugger
