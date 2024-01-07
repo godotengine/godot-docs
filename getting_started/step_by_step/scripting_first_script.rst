@@ -85,6 +85,11 @@ other options set to their default values and click the Create button to create 
 
 .. image:: img/scripting_first_script_attach_node_script.webp
 
+.. note::
+
+    C# script names need to match their class name. In this case, you should name the
+    file ``MySprite2D.cs``.
+
 The Script workspace should appear with your new ``sprite_2d.gd`` file open and
 the following line of code:
 
