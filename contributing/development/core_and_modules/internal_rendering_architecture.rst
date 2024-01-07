@@ -415,7 +415,7 @@ used to calculate particle collisions in 2D.
 
 **2D SDF generation GLSL shader:**
 
-- `https://github.com/godotengine/godot/blob/4.0/servers/rendering/renderer_rd/shaders/canvas_sdf.glsl <servers/rendering/renderer_rd/shaders/canvas_sdf.glsl>`__
+- `servers/rendering/renderer_rd/shaders/canvas_sdf.glsl <https://github.com/godotengine/godot/blob/4.0/servers/rendering/renderer_rd/shaders/canvas_sdf.glsl>`__
 
 3D rendering techniques
 -----------------------
