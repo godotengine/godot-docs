@@ -229,87 +229,144 @@ There are some common user problems and important caveats to consider when creat
     Remove the geometry that is on the ground inside the other geometry. If that is not possible, add smaller "dummy" geometry inside with as few triangles as possible so the cells
     are occupied with something.
 
+Navigation mesh script templates
+--------------------------------
+
+The following script uses the NavigationServer to parse source geometry from the scene tree, bakes a navigation mesh, and updates a navigation region with the updated navigation mesh.
+
 .. tabs::
  .. code-tab:: gdscript 2D GDScript
 
     extends Node2D
 
-    func parse_and_bake_navigation_mesh_and_create_region() -> void:
-        # Note, the navigation mesh is not baked here, it only holds the parse parameters.
-        var navigation_mesh: NavigationPolygon = NavigationPolygon.new()
-        # Create the source geometry that will hold the parsed data.
-        var source_geometry := NavigationMeshSourceGeometryData2D.new()
-        # The Node where the parsing should start traversing the SceneTree.
+    var navigation_mesh: NavigationPolygon
+    var source_geometry : NavigationMeshSourceGeometryData2D
+    var callback_parsing : Callable
+    var callback_baking : Callable
+    var region_rid: RID
+
+    func _ready() -> void:
+        navigation_mesh = NavigationPolygon.new()
+        navigation_mesh.agent_radius = 10.0
+        source_geometry = NavigationMeshSourceGeometryData2D.new()
+        callback_parsing = on_parsing_done
+        callback_baking = on_baking_done
+        region_rid = NavigationServer2D.region_create()
+
+        # Enable the region and set it to the default navigation map.
+        NavigationServer2D.region_set_enabled(region_rid, true)
+        NavigationServer2D.region_set_map(region_rid, get_world_2d().get_navigation_map())
+
+        # Some mega-nodes like TileMap are often not ready on the first frame.
+        # Also the parsing needs to happen on the main-thread.
+        # So do a deferred call to avoid common parsing issues.
+        parse_source_geometry.call_deferred()
+
+    func parse_source_geometry() -> void:
+        source_geometry.clear()
         var root_node: Node2D = self
 
+        # Parse the obstruction outlines from all child nodes of the root node by default.
         NavigationServer2D.parse_source_geometry_data(
             navigation_mesh,
             source_geometry,
-            root_node
+            root_node,
+            callback_parsing
         )
 
-        # Bake the navigation mesh with the source geometry data.
+    func on_parsing_done() -> void:
+        # If we did not parse a TileMap with navigation mesh cells we may now only
+        # have obstruction outlines so add at least one traversable outline
+        # so the obstructions outlines have something to "cut" into.
+        source_geometry.add_traversable_outline(PackedVector2Array([
+            Vector2(0.0, 0.0),
+            Vector2(500.0, 0.0),
+            Vector2(500.0, 500.0),
+            Vector2(0.0, 500.0)
+        ]))
+
+        # Bake the navigation mesh on a thread with the source geometry data.
         NavigationServer2D.bake_from_source_geometry_data_async(
             navigation_mesh,
-            source_geometry
+            source_geometry,
+            callback_baking
         )
 
-        # Create a new navigation region and update the region with prepared navigation mesh.
-        var region_rid: RID = NavigationServer2D.region_create()
+    func on_baking_done() -> void:
+        # Update the region with the updated navigation mesh.
         NavigationServer2D.region_set_navigation_polygon(region_rid, navigation_mesh)
-        NavigationServer2D.region_set_enabled(region_rid, true)
-        NavigationServer2D.region_set_map(region_rid, get_world_2d().get_navigation_map())
 
  .. code-tab:: gdscript 3D GDScript
 
     extends Node3D
 
-    func parse_and_bake_navigation_mesh_and_create_region() -> void:
-        # Note, the navigation mesh is not baked here, it only holds the parse parameters.
-        var navigation_mesh: NavigationMesh = NavigationMesh.new()
-        # Create the source geometry that will hold the parsed data.
-        var source_geometry := NavigationMeshSourceGeometryData3D.new()
-        # The Node where the parsing should start traversing the SceneTree.
-        var root_node: Node3D = self
+    var navigation_mesh: NavigationMesh
+    var source_geometry : NavigationMeshSourceGeometryData3D
+    var callback_parsing : Callable
+    var callback_baking : Callable
+    var region_rid: RID
 
-        NavigationServer3D.parse_source_geometry_data(
-            navigation_mesh,
-            source_geometry,
-            root_node
-        )
+    func _ready() -> void:
+        navigation_mesh = NavigationMesh.new()
+        navigation_mesh.agent_radius = 0.5
+        source_geometry = NavigationMeshSourceGeometryData3D.new()
+        callback_parsing = on_parsing_done
+        callback_baking = on_baking_done
+        region_rid = NavigationServer3D.region_create()
 
-        # Bake the navigation mesh with the source geometry data.
-        NavigationServer3D.bake_from_source_geometry_data_async(
-            navigation_mesh,
-            source_geometry
-        )
-
-        # Create a new navigation region and update the region with prepared navigation mesh.
-        var region_rid: RID = NavigationServer3D.region_create()
-        NavigationServer3D.region_set_navigation_mesh(region_rid, navigation_mesh)
+        # Enable the region and set it to the default navigation map.
         NavigationServer3D.region_set_enabled(region_rid, true)
         NavigationServer3D.region_set_map(region_rid, get_world_3d().get_navigation_map())
 
-Navigation mesh script templates
---------------------------------
+        # Some mega-nodes like GridMap are often not ready on the first frame.
+        # Also the parsing needs to happen on the main-thread.
+        # So do a deferred call to avoid common parsing issues.
+        parse_source_geometry.call_deferred()
 
-The following script creates a new navigation region and fills it with procedurally generated navigation mesh data.
+    func parse_source_geometry() -> void:
+        source_geometry.clear()
+        var root_node: Node3D = self
+
+        # Parse the geometry from all mesh child nodes of the root node by default.
+        NavigationServer3D.parse_source_geometry_data(
+            navigation_mesh,
+            source_geometry,
+            root_node,
+            callback_parsing
+        )
+
+    func on_parsing_done() -> void:
+        # Bake the navigation mesh on a thread with the source geometry data.
+        NavigationServer3D.bake_from_source_geometry_data_async(
+            navigation_mesh,
+            source_geometry,
+            callback_baking
+        )
+
+    func on_baking_done() -> void:
+        # Update the region with the updated navigation mesh.
+        NavigationServer3D.region_set_navigation_mesh(region_rid, navigation_mesh)
+
+The following script uses the NavigationServer to update a navigation region with procedurally generated navigation mesh data.
 
 .. tabs::
  .. code-tab:: gdscript 2D GDScript
 
     extends Node2D
 
+    var navigation_mesh: NavigationPolygon
+    var region_rid: RID
+
     func _ready() -> void:
-        var new_2d_region_rid: RID = NavigationServer2D.region_create()
+        navigation_mesh = NavigationPolygon.new()
+        region_rid = NavigationServer2D.region_create()
 
-        var default_2d_map_rid: RID = get_world_2d().get_navigation_map()
-        NavigationServer2D.region_set_map(new_2d_region_rid, default_2d_map_rid)
-
-        var new_navigation_mesh: NavigationPolygon = NavigationPolygon.new()
+        # Enable the region and set it to the default navigation map.
+        NavigationServer2D.region_set_enabled(region_rid, true)
+        NavigationServer2D.region_set_map(region_rid, get_world_2d().get_navigation_map())
 
         # Add vertices for a convex polygon.
-        new_navigation_mesh.vertices = PackedVector2Array([
+        navigation_mesh.vertices = PackedVector2Array([
             Vector2(0.0, 0.0),
             Vector2(100.0, 0.0),
             Vector2(100.0, 100.0),
@@ -317,7 +374,7 @@ The following script creates a new navigation region and fills it with procedura
         ])
 
         # Add indices for the polygon.
-        new_navigation_mesh.add_polygon(
+        navigation_mesh.add_polygon(
             PackedInt32Array([0, 1, 2, 3])
         )
 
@@ -327,16 +384,19 @@ The following script creates a new navigation region and fills it with procedura
 
     extends Node3D
 
+    var navigation_mesh: NavigationMesh
+    var region_rid: RID
+
     func _ready() -> void:
-        var new_3d_region_rid: RID = NavigationServer3D.region_create()
+        navigation_mesh = NavigationMesh.new()
+        region_rid = NavigationServer3D.region_create()
 
-        var default_3d_map_rid: RID = get_world_3d().get_navigation_map()
-        NavigationServer3D.region_set_map(new_3d_region_rid, default_3d_map_rid)
-
-        var new_navigation_mesh: NavigationMesh = NavigationMesh.new()
+        # Enable the region and set it to the default navigation map.
+        NavigationServer3D.region_set_enabled(region_rid, true)
+        NavigationServer3D.region_set_map(region_rid, get_world_3d().get_navigation_map())
 
         # Add vertices for a convex polygon.
-        new_navigation_mesh.vertices = PackedVector3Array([
+        navigation_mesh.vertices = PackedVector3Array([
             Vector3(-1.0, 0.0, 1.0),
             Vector3(1.0, 0.0, 1.0),
             Vector3(1.0, 0.0, -1.0),
@@ -344,8 +404,8 @@ The following script creates a new navigation region and fills it with procedura
         ])
 
         # Add indices for the polygon.
-        new_navigation_mesh.add_polygon(
+        navigation_mesh.add_polygon(
             PackedInt32Array([0, 1, 2, 3])
         )
 
-        NavigationServer3D.region_set_navigation_mesh(new_3d_region_rid, new_navigation_mesh)
+        NavigationServer3D.region_set_navigation_mesh(new_3d_region_rid, navigation_mesh)
