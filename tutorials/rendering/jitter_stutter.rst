@@ -98,6 +98,18 @@ games, will usually not exhibit this problem anyway).
 For fullscreen, Windows gives special priority to the game so stutter is no
 longer visible and very rare. This is how most games are played.
 
+.. tip::
+
+    Games should use the **Exclusive Fullscreen** window mode, as opposed to
+    **Fullscreen** which is designed to prevent Windows from automatically
+    treating the window as if it was exclusive fullscreen.
+
+    **Fullscreen** is meant to be used by GUI applications that want to use
+    per-pixel transparency without a risk of having it disabled by the OS. It
+    achieves this by leaving a 1-pixel line at the bottom of the screen. By
+    contrast, **Exclusive Fullscreen** uses the actual screen size and allows
+    Windows to reduce jitter and input lag for fullscreen games.
+
 Linux
 ^^^^^
 
