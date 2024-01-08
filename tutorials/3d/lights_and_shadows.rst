@@ -160,6 +160,13 @@ at the cost of decreased performance.
     all" settings. To achieve the best visuals, you may need to use different
     shadow bias values on a per-light basis.
 
+**Note on Appearance Changes**: When enabling shadows on a light, be aware that the light's 
+appearance might change compared to when it's rendered without shadows in the compatibility 
+renderer. Due to limitations with older mobile devices, shadows are implemented using a multi-pass 
+rendering approach so lights with shadows are rendered in sRGB space instead of linear space. 
+This change in rendering space can sometimes drastically alter the light's appearance. To achieve a similar 
+appearance to an unshadowed light, you may need to adjust the light's energy setting. 
+
 Directional light
 -----------------
 
