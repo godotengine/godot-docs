@@ -396,6 +396,79 @@ if you prefer a more readable and reliable, but more verbose syntax.
 ``UNSAFE_*`` warnings make unsafe operations more noticeable, than unsafe lines.
 Currently, ``UNSAFE_*`` warnings do not cover all cases that unsafe lines cover.
 
+Common unsafe operations and their safe counterparts
+----------------------------------------------------
+
+``UNSAFE_PROPERTY_ACCESS`` and ``UNSAFE_METHOD_ACCESS`` warnings
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+In this example, we aim to set a property and call a method on an object
+that has a script attached with ``class_name MyScript`` and that ``extends
+Node2D``. If we have a reference to the object as a ``Node2D`` (for instance,
+as it was passed to us by the physics system), we can first check if the
+property and method exist and then set and call them if they do::
+    
+    if "some_property" in node_2d:
+        node_2d.some_property = 20  # Produces UNSAFE_PROPERTY_ACCESS warning.
+    
+    if node_2d.has_method("some_function"):
+        node_2d.some_function()  # Produces UNSAFE_METHOD_ACCESS warning.
+
+However, this code will produce ``UNSAFE_PROPERTY_ACCESS`` and
+``UNSAFE_METHOD_ACCESS`` warnings as the property and method are not present
+in the referenced type - in this case a ``Node2D``. To make these operations
+safe, you can first check if the object is of type ``MyScript`` using the
+``is`` keyword and then declare a variable with the type ``MyScript`` on
+which you can set its properties and call its methods::
+    
+    if node_2d is MyScript:
+        var my_script: MyScript = node_2d
+        my_script.some_property = 20
+        my_script.some_function()
+
+Alternatively, you can declare a variable and use the ``as`` operator to try
+to cast the object. You'll then want to check whether the cast was successful
+by confirming that the variable was assigned::
+
+    var my_script := node_2d as MyScript
+    if my_script != null:
+        my_script.some_property = 20
+        my_script.some_function()
+
+``UNSAFE_CAST`` warning
+~~~~~~~~~~~~~~~~~~~~~~~
+
+In this example, we would like the label connected to an object entering our
+collision area to show the area's name. Once the object enters the collision
+area, the physics system sends a signal with a ``Node2D`` object, and the most
+straightforward (but not statically typed) solution to do what we want could
+be achieved like this::
+    
+    func _on_body_entered(body: Node2D) -> void:
+        body.label.text = name  # Produces UNSAFE_PROPERTY_ACCESS warning.
+
+This piece of code produces an ``UNSAFE_PROPERTY_ACCESS`` warning because
+``label`` is not defined in ``Node2D``. To solve this, we could first check if the
+``label`` property exist and cast it to type ``Label`` before settings its text
+property like so::
+
+    func _on_body_entered(body: Node2D) -> void:
+        if "label" in body:
+            (body.label as Label).text = name  # Produces UNSAFE_CAST warning.
+
+However, this produces an ``UNSAFE_CAST`` warning because ``body.label`` is of a
+``Variant`` type. To safely get the property in the type you want, you can use the
+``Object.get()`` method which returns the object as a ``Variant`` value or returns
+``null`` if the property doesn't exist. You can then determine whether the
+property contains an object of the right type using the ``is`` keyword, and
+finally declare a statically typed variable with the object::
+
+    func _on_body_entered(body: Node2D) -> void:
+        var label_variant: Variant = body.get("label")
+        if label_variant is Label:
+            var label: Label = label_variant
+            label.text = name
+
 Cases where you can't specify types
 -----------------------------------
 
