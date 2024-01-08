@@ -51,3 +51,71 @@ The visibility of the debug can also be controlled in the Editor 3D Viewport giz
 A navigation link does not provide any automated movement through the link. Instead, when
 an agent reaches the position of a link, game code needs to react (e.g. through area triggers) and provide means for the agent
 to move through the link to end up at the links other position (e.g. through teleport or animation) to continue along the path.
+
+Navigation link script templates
+--------------------------------
+
+The following script uses the NavigationServer to create a new navigation link.
+
+.. tabs::
+ .. code-tab:: gdscript 2D GDScript
+
+    extends Node2D
+
+    var link_rid: RID
+    var link_start_position: Vector2
+    var link_end_position: Vector2
+
+    func _ready() -> void:
+        link_rid = NavigationServer2D.link_create()
+
+        var link_owner_id: int = get_instance_id()
+        var link_enter_cost: float = 1.0
+        var link_travel_cost: float = 1.0
+        var link_navigation_layers: int = 1
+        var link_bidirectional: bool = true
+
+        NavigationServer2D.link_set_owner_id(link_rid, link_owner_id)
+        NavigationServer2D.link_set_enter_cost(link_rid, link_enter_cost)
+        NavigationServer2D.link_set_travel_cost(link_rid, link_travel_cost)
+        NavigationServer2D.link_set_navigation_layers(link_rid, link_navigation_layers)
+        NavigationServer2D.link_set_bidirectional(link_rid, link_bidirectional)
+
+        # Enable the link and set it to the default navigation map.
+        NavigationServer2D.link_set_enabled(link_rid, true)
+        NavigationServer2D.link_set_map(link_rid, get_world_2d().get_navigation_map())
+
+        # Move the 2 link positions to their intended global positions.
+        NavigationServer2D.link_set_start_position(link_rid, link_start_position)
+        NavigationServer2D.link_set_end_position(link_rid, link_end_position)
+
+ .. code-tab:: gdscript 3D GDScript
+
+    extends Node3D
+
+    var link_rid: RID
+    var link_start_position: Vector3
+    var link_end_position: Vector3
+
+    func _ready() -> void:
+        link_rid = NavigationServer3D.link_create()
+
+        var link_owner_id: int = get_instance_id()
+        var link_enter_cost: float = 1.0
+        var link_travel_cost: float = 1.0
+        var link_navigation_layers: int = 1
+        var link_bidirectional: bool = true
+
+        NavigationServer3D.link_set_owner_id(link_rid, link_owner_id)
+        NavigationServer3D.link_set_enter_cost(link_rid, link_enter_cost)
+        NavigationServer3D.link_set_travel_cost(link_rid, link_travel_cost)
+        NavigationServer3D.link_set_navigation_layers(link_rid, link_navigation_layers)
+        NavigationServer3D.link_set_bidirectional(link_rid, link_bidirectional)
+
+        # Enable the link and set it to the default navigation map.
+        NavigationServer3D.link_set_enabled(link_rid, true)
+        NavigationServer3D.link_set_map(link_rid, get_world_3d().get_navigation_map())
+
+        # Move the 2 link positions to their intended global positions.
+        NavigationServer3D.link_set_start_position(link_rid, link_start_position)
+        NavigationServer3D.link_set_end_position(link_rid, link_end_position)
