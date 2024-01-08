@@ -1347,6 +1347,12 @@ Lambda functions can be named for debugging purposes::
     var lambda = func my_lambda(x):
         print(x)
 
+Note that if you want to return a value from a lambda, an explicit ``return``
+is required (you can't omit ``return``)::
+
+    var lambda = func(x): return x ** 2
+    print(lambda.call(2)) # Prints `4`.
+
 Lambda functions capture the local environment. Local variables are passed by value, so they won't be updated in the lambda if changed in the local function::
 
     var x = 42
