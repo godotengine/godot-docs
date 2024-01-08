@@ -328,6 +328,22 @@ that have a pixel art UI, so that the visible area in the 3D viewport doesn't
 reduce in size (which occurs when using ``canvas_items`` or ``viewport`` stretch
 mode with the ``integer`` scale mode).
 
+.. tip::
+
+    Games should use the **Exclusive Fullscreen** window mode, as opposed to
+    **Fullscreen** which is designed to prevent Windows from automatically
+    treating the window as if it was exclusive fullscreen.
+
+    **Fullscreen** is meant to be used by GUI applications that want to use
+    per-pixel transparency without a risk of having it disabled by the OS. It
+    achieves this by leaving a 1-pixel line at the bottom of the screen. By
+    contrast, **Exclusive Fullscreen** uses the actual screen size and allows
+    Windows to reduce jitter and input lag for fullscreen games.
+
+    When using integer scaling, this is particularly important as the 1-pixel
+    height reduction from the **Fullscreen** mode can cause integer scaling to
+    use a smaller scale factor than expected.
+
 Common use case scenarios
 -------------------------
 
