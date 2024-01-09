@@ -39,9 +39,8 @@ Installing the vendors plugin
 .. warning::
     The Android plugin structure has been restructured in Godot 4.2, and the loader plugin was renamed to vendors plugin as it now includes more than just loaders.
     If you've previously installed the loader plugin you need to delete it from the `android/plugins` folder.
-    The loader plugin available in the asset library is still the old one, it will be updated to the new vendor plugin after 4.2 is released.
 
-The vendors plugin can be downloaded from the asset library, search for OpenXR and install the plugin:
+The vendors plugin can be downloaded from the asset library, search for "OpenXR vendors" and install the plugin:
 
 .. image:: img/openxr_loader_asset_lib.webp
 
@@ -49,7 +48,7 @@ You will find the installed files inside the **addons** folder.
 
 Alternatively you can manually install the vendors plugin by downloading the v2.x version of the plugin `from the release page here <https://github.com/GodotVR/godot_openxr_vendors/releases>`__.
 
-You will need to copy the `assets/addons/godotopenxrvendors` folder from the zip file into your projects `assets/addons` folder.
+You will need to copy the `assets/addons/godotopenxrvendors` folder from the zip file into your projects `addons` folder.
 
 You can find the main repository of the vendors plugin `here <https://github.com/GodotVR/godot_openxr_vendors>`__.
 
@@ -94,9 +93,7 @@ Now you can repeat the same process for the other devices.
 
 .. warning::
     While the Mobile Vulkan renderer has many optimizations targeted at mobile devices, we're still working out the kinks.
-    It is highly advisable to use the OpenGL renderer for the time being when targeting Android based XR devices.
-
-    Note that we are awaiting driver updates on various devices before Vulkan support will work on these.
+    It is highly advisable to use the compatibility renderer (OpenGL) for the time being when targeting Android based XR devices.
 
 Running on your device from the Godot editor
 --------------------------------------------
