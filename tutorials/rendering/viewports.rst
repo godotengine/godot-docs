@@ -123,7 +123,8 @@ capture nodes which are their children in the graph.
 
 .. note::
 
-    This behavior only occurs when the SubViewport has its own :ref:`World3D <class_World3D>` to guide its rendering. Otherwise, ``MeshB`` will continue up the graph, and be rendered on the first viewport which does have an assigned :ref:`World3D <class_World3D>`; in this case, the Root :ref:`Viewport <class_Viewport>`.
+    This behavior only occurs when the SubViewport has its own :ref:`World3D <class_World3D>` to guide its rendering. Otherwise, ``MeshB`` will continue up the graph,
+    and be rendered on the first viewport which does have an assigned :ref:`World3D <class_World3D>`; in this case, the Root :ref:`Viewport <class_Viewport>`.
 
 
 
