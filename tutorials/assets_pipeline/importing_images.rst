@@ -28,7 +28,8 @@ Godot can import the following image formats:
 - SVG (``.svg``)
   - SVGs are rasterized using `ThorVG <https://www.thorvg.org/>`__
   when importing them. `Support is limited <https://www.thorvg.org/about#:~:text=among%20the%20svg%20tiny%20specs%2C%20yet%20unsupported%20features%20in%20the%20thorvg%20are%20the%20following>`__;
-  complex vectors may not render correctly.
+  complex vectors may not render correctly. :ref:`Text must be converted to paths <doc_importing_images_svg_text>`;
+  otherwise, it won't appear in the rasterized image.
   You can check whether ThorVG can render a certain vector correctly using its
   `web-based viewer <https://www.thorvg.org/viewer>`__.
   For complex vectors, rendering them to PNGs using `Inkscape <https://inkscape.org/>`__
@@ -477,6 +478,60 @@ Changing this import option only has an effect if a texture is detected as being
 used in 3D. Changing this to **Disabled** then reimporting will not change the
 existing compress mode on a texture (if it's detected to be used in 3D), but
 choosing **VRAM Compressed** or **Basis Universal** will.
+
+SVG > Scale
+^^^^^^^^^^^
+
+*This is only available for SVG images.*
+
+The scale the SVG should be rendered at, with ``1.0`` being the original design
+size. Higher values result in a larger image. Note that unlike font
+oversampling, this affects the physical size the SVG is rendered at in 2D. See
+also **Editor > Scale With Editor Scale** below.
+
+.. _doc_importing_images_editor_import_options:
+
+Editor > Scale With Editor Scale
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+*This is only available for SVG images.*
+
+If true, scales the imported image to match the editor's display scale factor.
+This should be enabled for editor plugin icons and custom class icons, but
+should be left disabled otherwise.
+
+Editor > Convert Colors With Editor Theme
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+*This is only available for SVG images.*
+
+If checked, converts the imported image's colors to match the editor's icon and
+font color palette. This assumes the image uses the exact same colors as
+:ref:`Godot's own color palette for editor icons <doc_editor_icons>`, with the
+source file designed for a dark editor theme. This should be enabled for editor
+plugin icons and custom class icons, but should be left disabled otherwise.
+
+.. _doc_importing_images_svg_text:
+
+Importing SVG images with text
+------------------------------
+
+As the SVG library used in Godot doesn't support rasterizing text found in SVG
+images, text must be converted to a path first. Otherwise, text won't appear in
+the rasterized image.
+
+There are two ways to achieve this in a non-destructive manner, so you can keep
+editing the original text afterwards:
+
+- Select your text object in Inkscape, then duplicate it in place by pressing
+  :kbd:`Ctrl + D` and use **Path > Object to Path**. Hide the original text
+  object afterwards using the **Layers and Objects** dock.
+- Use the Inkscape command line to export a SVG from another SVG file with text
+  converted to paths:
+
+::
+
+    inkscape --export-text-to-path --export-filename svg_with_text_converted_to_path.svg svg_with_text.svg
 
 Best practices
 --------------

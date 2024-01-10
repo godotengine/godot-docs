@@ -1756,6 +1756,14 @@ class will then appear with its new icon in the editor::
 
 .. image:: img/class_name_editor_register_example.png
 
+.. tip::
+
+    SVG images that are used as custom node icons should have the
+    **Editor > Scale With Editor Scale** and **Editor > Convert Icons With Editor Theme**
+    :ref:`import options <doc_importing_images_editor_import_options>` enabled. This allows
+    icons to follow the editor's scale and theming settings if the icons are designed with
+    the same color palette as Godot's own icons.
+
 Here's a class file example:
 
 ::
