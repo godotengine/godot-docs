@@ -115,7 +115,7 @@ ImmediateMesh
 ImmediateMesh is a mesh that uses an immediate mode style interface (like
 SurfaceTool) to draw objects. The difference between ImmediateMesh and the
 SurfaceTool is that ImmediateMesh is drawn directly with code dynamically, while
-the SurfaceTool is used to generated a Mesh that you can do whatever you want
+the SurfaceTool is used to generate a Mesh that you can do whatever you want
 with.
 
 ImmediateMesh is useful for prototyping because of its straightforward API, but
