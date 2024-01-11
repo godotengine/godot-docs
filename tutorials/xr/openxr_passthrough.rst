@@ -15,12 +15,12 @@ Passthrough extension
 ---------------------
 
 OpenXR has a vendor extension for passthrough submitted by Meta.
-Currently this extension is only supported on Quest and PICO but may be adopted by other headsets in the future.
+Currently, this extension is only supported on Quest and PICO but may be adopted by other headsets in the future.
 
 :ref:`XRInterface <class_xrinterface>` has entry points for passthrough so different interfaces can implement this feature.
-For :ref:`OpenXRInterface <class_openxrinterface>` the meta passthrough extension is implemented here.
+For :ref:`OpenXRInterface <class_openxrinterface>` is the Meta passthrough extension previously mentioned.
 
-In code you can call ``is_passthrough_supported`` to check if this extension is available.
+In code, you can call ``is_passthrough_supported`` to check if this extension is available.
 If so you can simply enable passthrough by calling ``start_passthrough``.
 You can call ``stop_passthrough`` to disable passthrough.
 
