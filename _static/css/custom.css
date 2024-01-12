@@ -766,6 +766,11 @@ html.writer-html5 .rst-content table.docutils th {
 .wy-table-responsive table.wrap-normal th {
     white-space: normal;
 }
+/* Properties' name must not be streched */
+.classref-reftable-group#properties td:nth-child(2),
+.classref-reftable-group#properties th:nth-child(2) {
+    white-space: nowrap;
+}
 
 /* Make sure line blocks don't stretch tables */
 .wy-table-responsive table .line-block {
