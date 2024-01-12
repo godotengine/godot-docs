@@ -82,7 +82,7 @@ to instance.
 
     extends Node
 
-    @export var mob_scene: PackedScene
+    @export var mob_scene: PackedScene.new()
     var score
 
  .. code-tab:: csharp
