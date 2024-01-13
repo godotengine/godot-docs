@@ -542,7 +542,7 @@ Vertical BGR subpixel layout.
 
 :ref:`FontLCDSubpixelLayout<enum_TextServer_FontLCDSubpixelLayout>` **FONT_LCD_SUBPIXEL_LAYOUT_MAX** = ``5``
 
-
+Represents the size of the :ref:`FontLCDSubpixelLayout<enum_TextServer_FontLCDSubpixelLayout>` enum.
 
 .. rst-class:: classref-item-separator
 
@@ -952,7 +952,7 @@ Determines whether the ellipsis at the end of the text is enforced and may not b
 
 :ref:`TextOverrunFlag<enum_TextServer_TextOverrunFlag>` **OVERRUN_JUSTIFICATION_AWARE** = ``16``
 
-
+Accounts for the text being justified before attempting to trim it (see :ref:`JustificationFlag<enum_TextServer_JustificationFlag>`).
 
 .. rst-class:: classref-item-separator
 
@@ -1380,7 +1380,7 @@ Spacing at the bottom of the line.
 
 :ref:`SpacingType<enum_TextServer_SpacingType>` **SPACING_MAX** = ``4``
 
-
+Represents the size of the :ref:`SpacingType<enum_TextServer_SpacingType>` enum.
 
 .. rst-class:: classref-item-separator
 

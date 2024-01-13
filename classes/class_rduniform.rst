@@ -105,9 +105,7 @@ Method Descriptions
 
 void **add_id** **(** :ref:`RID<class_RID>` id **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Binds the given id to the uniform. The data associated with the id is then used when the uniform is passed to a shader.
 
 .. rst-class:: classref-item-separator
 
@@ -119,9 +117,7 @@ void **add_id** **(** :ref:`RID<class_RID>` id **)**
 
 void **clear_ids** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Unbinds all ids currently bound to the uniform.
 
 .. rst-class:: classref-item-separator
 
@@ -133,9 +129,7 @@ void **clear_ids** **(** **)**
 
 :ref:`RID[]<class_RID>` **get_ids** **(** **)** |const|
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Returns an array of all ids currently bound to the uniform.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

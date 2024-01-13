@@ -1651,7 +1651,7 @@ Finds the first ancestor of this node whose :ref:`name<class_Node_property_name>
 
 :ref:`Node<class_Node>` **get_child** **(** :ref:`int<class_int>` idx, :ref:`bool<class_bool>` include_internal=false **)** |const|
 
-Fetches a child node by its index. Each child node has an index relative its siblings (see :ref:`get_index<class_Node_method_get_index>`). The first child is at index 0. Negative values can also be used to start from the end of the list. This method can be used in combination with :ref:`get_child_count<class_Node_method_get_child_count>` to iterate over this node's children.
+Fetches a child node by its index. Each child node has an index relative its siblings (see :ref:`get_index<class_Node_method_get_index>`). The first child is at index 0. Negative values can also be used to start from the end of the list. This method can be used in combination with :ref:`get_child_count<class_Node_method_get_child_count>` to iterate over this node's children. If no child exists at the given index, this method returns ``null`` and an error is generated.
 
 If ``include_internal`` is ``false``, internal children are ignored (see :ref:`add_child<class_Node_method_add_child>`'s ``internal`` parameter).
 
@@ -2445,7 +2445,7 @@ Removes the node from the given ``group``. Does nothing if the node is not in th
 
 void **reparent** **(** :ref:`Node<class_Node>` new_parent, :ref:`bool<class_bool>` keep_global_transform=true **)**
 
-Changes the parent of this **Node** to the ``new_parent``. The node needs to already have a parent.
+Changes the parent of this **Node** to the ``new_parent``. The node needs to already have a parent. The node's :ref:`owner<class_Node_property_owner>` is preserved if its owner is still reachable from the new location (i.e., the node is still a descendant of the new parent after the operation).
 
 If ``keep_global_transform`` is ``true``, the node's global transform will be preserved if supported. :ref:`Node2D<class_Node2D>`, :ref:`Node3D<class_Node3D>` and :ref:`Control<class_Control>` support this argument (but :ref:`Control<class_Control>` keeps only position).
 

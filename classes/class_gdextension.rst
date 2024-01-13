@@ -12,9 +12,25 @@ GDExtension
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-.. container:: contribute
+A native library for GDExtension.
 
-	There is currently no description for this class. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+.. rst-class:: classref-introduction-group
+
+Description
+-----------
+
+The **GDExtension** resource type represents a `shared library <https://en.wikipedia.org/wiki/Shared_library>`__ which can expand the functionality of the engine. The :ref:`GDExtensionManager<class_GDExtensionManager>` singleton is responsible for loading, reloading, and unloading **GDExtension** resources.
+
+\ **Note:** GDExtension itself is not a scripting language and has no relation to :ref:`GDScript<class_GDScript>` resources.
+
+.. rst-class:: classref-introduction-group
+
+Tutorials
+---------
+
+- :doc:`GDExtension overview <../tutorials/scripting/gdextension/what_is_gdextension>`
+
+- :doc:`GDExtension example in C++ <../tutorials/scripting/gdextension/gdextension_cpp_example>`
 
 .. rst-class:: classref-reftable-group
 
@@ -57,7 +73,7 @@ enum **InitializationLevel**:
 
 :ref:`InitializationLevel<enum_GDExtension_InitializationLevel>` **INITIALIZATION_LEVEL_CORE** = ``0``
 
-
+The library is initialized at the same time as the core features of the engine.
 
 .. _class_GDExtension_constant_INITIALIZATION_LEVEL_SERVERS:
 
@@ -65,7 +81,7 @@ enum **InitializationLevel**:
 
 :ref:`InitializationLevel<enum_GDExtension_InitializationLevel>` **INITIALIZATION_LEVEL_SERVERS** = ``1``
 
-
+The library is initialized at the same time as the engine's servers (such as :ref:`RenderingServer<class_RenderingServer>` or :ref:`PhysicsServer3D<class_PhysicsServer3D>`).
 
 .. _class_GDExtension_constant_INITIALIZATION_LEVEL_SCENE:
 
@@ -73,7 +89,7 @@ enum **InitializationLevel**:
 
 :ref:`InitializationLevel<enum_GDExtension_InitializationLevel>` **INITIALIZATION_LEVEL_SCENE** = ``2``
 
-
+The library is initialized at the same time as the engine's scene-related classes.
 
 .. _class_GDExtension_constant_INITIALIZATION_LEVEL_EDITOR:
 
@@ -81,7 +97,7 @@ enum **InitializationLevel**:
 
 :ref:`InitializationLevel<enum_GDExtension_InitializationLevel>` **INITIALIZATION_LEVEL_EDITOR** = ``3``
 
-
+The library is initialized at the same time as the engine's editor classes. Only happens when loading the GDExtension in the editor.
 
 .. rst-class:: classref-section-separator
 
@@ -98,9 +114,9 @@ Method Descriptions
 
 void **close_library** **(** **)**
 
-.. container:: contribute
+Closes the current library.
 
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+\ **Note:** You normally should not call this method directly. This is handled automatically by :ref:`GDExtensionManager.unload_extension<class_GDExtensionManager_method_unload_extension>`.
 
 .. rst-class:: classref-item-separator
 
@@ -112,9 +128,7 @@ void **close_library** **(** **)**
 
 :ref:`InitializationLevel<enum_GDExtension_InitializationLevel>` **get_minimum_library_initialization_level** **(** **)** |const|
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Returns the lowest level required for this extension to be properly initialized (see the :ref:`InitializationLevel<enum_GDExtension_InitializationLevel>` enum).
 
 .. rst-class:: classref-item-separator
 
@@ -126,9 +140,9 @@ void **close_library** **(** **)**
 
 void **initialize_library** **(** :ref:`InitializationLevel<enum_GDExtension_InitializationLevel>` level **)**
 
-.. container:: contribute
+Initializes the library bound to this GDextension at the given initialization ``level``.
 
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+\ **Note:** You normally should not call this method directly. This is handled automatically by :ref:`GDExtensionManager.load_extension<class_GDExtensionManager_method_load_extension>`.
 
 .. rst-class:: classref-item-separator
 
@@ -140,9 +154,7 @@ void **initialize_library** **(** :ref:`InitializationLevel<enum_GDExtension_Ini
 
 :ref:`bool<class_bool>` **is_library_open** **(** **)** |const|
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Returns ``true`` if this extension's library has been opened.
 
 .. rst-class:: classref-item-separator
 
@@ -154,9 +166,9 @@ void **initialize_library** **(** :ref:`InitializationLevel<enum_GDExtension_Ini
 
 :ref:`Error<enum_@GlobalScope_Error>` **open_library** **(** :ref:`String<class_String>` path, :ref:`String<class_String>` entry_symbol **)**
 
-.. container:: contribute
+Opens the library at the specified ``path``.
 
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+\ **Note:** You normally should not call this method directly. This is handled automatically by :ref:`GDExtensionManager.load_extension<class_GDExtensionManager_method_load_extension>`.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

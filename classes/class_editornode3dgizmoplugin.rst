@@ -39,6 +39,8 @@ Methods
    :widths: auto
 
    +-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                                | :ref:`_begin_handle_action<class_EditorNode3DGizmoPlugin_private_method__begin_handle_action>` **(** :ref:`EditorNode3DGizmo<class_EditorNode3DGizmo>` gizmo, :ref:`int<class_int>` handle_id, :ref:`bool<class_bool>` secondary **)** |virtual|                                                                 |
+   +-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                             | :ref:`_can_be_hidden<class_EditorNode3DGizmoPlugin_private_method__can_be_hidden>` **(** **)** |virtual| |const|                                                                                                                                                                                                 |
    +-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                | :ref:`_commit_handle<class_EditorNode3DGizmoPlugin_private_method__commit_handle>` **(** :ref:`EditorNode3DGizmo<class_EditorNode3DGizmo>` gizmo, :ref:`int<class_int>` handle_id, :ref:`bool<class_bool>` secondary, :ref:`Variant<class_Variant>` restore, :ref:`bool<class_bool>` cancel **)** |virtual|      |
@@ -92,6 +94,20 @@ Methods
 
 Method Descriptions
 -------------------
+
+.. _class_EditorNode3DGizmoPlugin_private_method__begin_handle_action:
+
+.. rst-class:: classref-method
+
+void **_begin_handle_action** **(** :ref:`EditorNode3DGizmo<class_EditorNode3DGizmo>` gizmo, :ref:`int<class_int>` handle_id, :ref:`bool<class_bool>` secondary **)** |virtual|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
+
+----
 
 .. _class_EditorNode3DGizmoPlugin_private_method__can_be_hidden:
 
