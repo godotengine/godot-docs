@@ -10,6 +10,7 @@ Basic Tutorial
 
    setting_up_xr
    deploying_to_android
+   a_better_xr_start_script
    introducing_xr_tools
    basic_xr_locomotion
 
