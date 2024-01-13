@@ -113,8 +113,7 @@ received input, in order:
    In the case of a 3D scene if a :ref:`Camera3D <class_Camera3D>` is assigned to the Viewport, a ray
    to the physics world (in the ray direction from the click) will be cast. If this ray hits an object,
    it will call the :ref:`CollisionObject3D._input_event() <class_CollisionObject3D_private_method__input_event>`
-   function in the relevant physics object (bodies receive this callback by default, but areas do
-   not. This can be configured through :ref:`Area3D <class_Area3D>` properties).
+   function in the relevant physics object.
    In the case of a 2D scene, conceptually the same happens with :ref:`CollisionObject2D._input_event() <class_CollisionObject2D_private_method__input_event>`.
 
 When sending events to its child and descendant nodes, the viewport will do so, as depicted in
