@@ -135,7 +135,7 @@ Troubleshooting
 xcode-select points at wrong SDK location
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-xcode-select is a tool that comes with XCode and among other things points at iOS development SDKs on your mac.
+xcode-select is a tool that comes with Xcode and among other things points at iOS SDKs on your Mac.
 If you have Xcode installed, opened it, agreed to the license agreement, and installed the command line tools, 
 xcode-select should point at the right location for the iPhone SDK. 
 If it somehow doesn't, Godot will fail exporting to iOS with an error that may look like this:
