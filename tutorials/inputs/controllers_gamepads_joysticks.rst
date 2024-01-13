@@ -293,6 +293,10 @@ First, check that your controller is recognized by other applications. You can
 use the `Gamepad Tester <https://gamepad-tester.com/>`__ website to confirm that
 your controller is recognized.
 
+On Windows Godot only supports up to 4 controllers at a time. This is
+because Godot uses the XInput API, which is limited to supporting 4 controllers
+at once. Additional controllers above this limit are ignored by Godot.
+
 My controller has incorrectly mapped buttons or axes.
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
