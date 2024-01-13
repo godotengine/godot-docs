@@ -66,6 +66,35 @@
   {% endif %}
 
   {% block body %}{% endblock %}
+
+{% if (not meta or meta.get('allow_comments') != 'False') and godot_show_article_comments %}
+<hr>
+<h2>User-contributed notes</h2>
+<p>
+  <em>Please read the <a href="https://github.com/godotengine/godot-docs-user-notes/discussions/1">User-contributed notes policy</a> before submitting a comment.</em>
+</p>
+{# Use https://giscus.app/ to regenerate the script tag if needed. #}
+{# data-term is set to be language-independent and version-independent, so that comments can be centralized for each page. #}
+{# This increases the likelihood that users will encounter comments on less frequently visited pages. #}
+<script src="https://giscus.app/client.js"
+  data-repo="godotengine/godot-docs-user-notes"
+  data-repo-id="R_kgDOKuNx0w"
+  data-category="User-contributed notes"
+  data-category-id="DIC_kwDOKuNx084CbANb"
+  data-mapping="specific"
+  data-term="{{ pagename }}"
+  data-strict="1"
+  data-reactions-enabled="0"
+  data-emit-metadata="0"
+  data-input-position="bottom"
+  data-theme="preferred_color_scheme"
+  data-lang="en"
+  data-loading="lazy"
+  crossorigin="anonymous"
+  async></script>
+<br>
+{% endif %}
+
 {%- if self.comments()|trim %}
   <div class="articleComments">
     {%- block comments %}{% endblock %}

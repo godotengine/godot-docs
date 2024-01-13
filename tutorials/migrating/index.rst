@@ -1,3 +1,5 @@
+:allow_comments: False
+
 Migrating to a new version
 ==========================
 

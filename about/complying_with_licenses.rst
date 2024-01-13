@@ -1,3 +1,5 @@
+:allow_comments: False
+
 .. _doc_complying_with_licenses:
 
 Complying with licenses

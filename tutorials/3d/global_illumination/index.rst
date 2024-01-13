@@ -1,3 +1,5 @@
+:allow_comments: False
+
 .. _doc_global_illumination:
 
 Global illumination

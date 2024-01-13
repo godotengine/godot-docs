@@ -1,3 +1,4 @@
+:allow_comments: False
 :article_outdated: True
 
 .. _doc_platform_html5:

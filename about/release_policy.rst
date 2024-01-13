@@ -1,3 +1,5 @@
+:allow_comments: False
+
 .. _doc_release_policy:
 
 Godot release policy
