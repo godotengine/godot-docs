@@ -199,12 +199,22 @@ must have the same name. When using ``add_child()`` for nodes which are expected
 .. warning:: 
 
     If a function is annotated with ``@rpc`` on the client script (resp. server script),
-    then this function must also be declared on the server script (resp. client script),
-    and both must have the same signature, **even if this function is not currently used**.
+    then this function must also be declared on the server script (resp. client script).
+    Both RPCs must have the same signature which is evaluated with a checksum of **all RPCs**.
+    All RPCs in a script are checked at once, and all RPCs must be declared on both the client
+    scripts and the server scripts, **even functions that are currently not in use**.
 
-    If these conditions are not fulfilled, the script may print an error or
-    cause unwanted behavior. See further explanation and troubleshooting on
-    `this post <https://github.com/godotengine/godot/issues/57869#issuecomment-1034215138>`__.
+    The signature of the RPC includes the ``@rpc()`` declaration, the function, return type,
+    AND the nodepath. If an RPC resides in a script attached to ``/root/Main/Node1``, then it
+    must reside in precisely the same path and node on both the client script and the server
+    script. Function arguments (example: ``func sendstuff():`` and ``func sendstuff(arg1, arg2):``
+    **will pass** signature matching).
+
+    If these conditions are not met (if all RPCs do not pass signature matching), the script may print an
+    error or cause unwanted behavior. The error message may be unrelated to the RPC function you are
+    currently building and testing.
+
+    See further explanation and troubleshooting on `this post <https://github.com/godotengine/godot/issues/57869#issuecomment-1034215138>`__.
 
 The annotation can take a number of arguments, which have default values. ``@rpc`` is equivalent to:
 
