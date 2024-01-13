@@ -37,22 +37,57 @@ Supported platforms
    - If you have more than one device connected, Godot will ask you which device
      the project should be exported to.
 
+- **iOS:** Exports the project with debugging enabled and runs it on the
+  connected device or simulator.
+
+   - Make sure to follow the steps described in :ref:`doc_exporting_for_ios`.
+     Otherwise, the one-click deploy button won't appear.
+
+   - For each new bundle identifier, export the project, open it in the
+     Xcode, and build at least once to create new provisioning profile or
+     create a provisioning profile in the Apple Developer account dashboard.
+
+   - If you have more than one device connected, Godot will ask you which device
+     the project should be exported to.
+
+- **Desktop platforms:** Exports the project with debugging enabled and runs it
+  on the remove computer via SSH.
+
 - **HTML5:** Starts a local web server and runs the exported project by opening
   the default web browser.
-
-Support for more platforms such as iOS is planned.
 
 Using one-click deploy
 ----------------------
 
-- If deploying to Android, enable developer mode on your mobile device
-  then enable USB debugging in the device's settings.
-- After enabling USB debugging, connect the device to your PC using an USB cable.
-
+- **Android:**
+   - Enable developer mode on your mobile device
+     then enable USB debugging in the device's settings.
+   - After enabling USB debugging, connect the device to your PC using a USB
+     cable.
    - For advanced users, it should also be possible to use wireless ADB.
 
+- **iOS:**
+   - Install Xcode, accept Xcode license and login with your Apple Developer
+     account.
+   - If you are using Xcode 14 or earlier, install `ios-deploy <https://github.com/ios-control/ios-deploy>`__
+     and set path to `ios-deploy` in the Editor Settings (see `Export ⇾ iOS ⇾ iOS Deploy`).
+   - For running on device:
+      - Pair your mobile device with a Mac.
+      - Enable developer mode on your device.
+      - Device can be connected via USB or local network.
+      - Make sure the device is on the same local network and a correct network
+        interface is selected in the editor settings (see `Network ⇾ Debug ⇾ Remote Host`).
+        By default, the editor is listening for `localhost` connections only.
+   - For running in simulator:
+      - Install and start simulator from the Xcode.
+   - Device screen should be unlocked.
+
+- **Desktop platforms:**
+   - Enable `SSH Remote Deploy` and configure connection settings in the project
+     export setting.
+
 - Make sure there is an export preset marked as **Runnable** for the target
-  platform (Android or HTML5).
+  platform (Android, iOS or HTML5).
 - If everything is configured correctly and with no errors, platform-specific
   icons will appear in the top-right corner of the editor.
 - Click the button to export to the desired platform in one click.
