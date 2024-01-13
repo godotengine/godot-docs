@@ -264,14 +264,14 @@ Depending on where your Godot binary is located and what your current
 working directory is, you may need to set the path to your project
 for any of the following commands to work correctly.
 
-This can be done by giving the path to the ``project.godot`` file
+When running the editor, this can be done by giving the path to the ``project.godot`` file
 of your project as either the first argument, like this:
 
 ::
 
     godot path_to_your_project/project.godot [other] [commands] [and] [args]
 
-Or by using the ``--path`` argument:
+For all commands, this can be done by using the ``--path`` argument:
 
 ::
 
@@ -282,6 +282,17 @@ For example, the full command for exporting your game (as explained below) might
 ::
 
     godot --headless --path path_to_your_project --export-release my_export_preset_name game.exe
+
+When starting from a subdirectory of your project, use the ``--upwards`` argument for Godot to 
+automatically find the ``project.godot`` file by recursively searching the parent directories.
+
+For example, running a scene (as explained below) nested in a subdirectory might look like this 
+when your working directory is in the same path:
+
+::
+
+    godot --upwards nested_scene.tscn 
+
 
 ..
 
@@ -307,12 +318,14 @@ Running the editor
 ------------------
 
 Running the editor is done by executing Godot with the ``-e`` flag. This
-must be done from within the project directory or a subdirectory,
+must be done from within the project directory or by setting the project path as explained above,
 otherwise the command is ignored and the Project Manager appears.
 
 ::
 
     godot -e
+
+When passing in the full path to the ``project.godot`` file, the ``-e`` flag may be omitted.
 
 If a scene has been created and saved, it can be edited later by running
 the same code with that scene as argument.
@@ -335,15 +348,15 @@ Otherwise, an error will be thrown upon opening the project.
 Running the game
 ----------------
 
-To run the game, simply execute Godot within the project directory or
-subdirectory.
+To run the game, execute Godot within the project directory or with the project path as explained above.  
 
 ::
 
     godot
 
-When a specific scene needs to be tested, pass that scene to the command
-line.
+Note that passing in the ``project.godot`` file will always run the editor instead of running the game.
+
+When a specific scene needs to be tested, pass that scene to the command line.
 
 ::
 
