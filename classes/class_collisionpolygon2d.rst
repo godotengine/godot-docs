@@ -166,6 +166,8 @@ The margin used for one-way collision (in pixels). Higher values will make the s
 
 The polygon's list of vertices. Each point will be connected to the next, and the final point will be connected to the first.
 
+\ **Note:** The returned vertices are in the local coordinate space of the given **CollisionPolygon2D**.
+
 \ **Warning:** The returned value is a clone of the :ref:`PackedVector2Array<class_PackedVector2Array>`, not a reference.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`

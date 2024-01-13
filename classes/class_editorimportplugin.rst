@@ -155,6 +155,8 @@ Methods
    :widths: auto
 
    +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`_can_import_threaded<class_EditorImportPlugin_private_method__can_import_threaded>` **(** **)** |virtual| |const|                                                                                                                                                                                              |
+   +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Dictionary[]<class_Dictionary>`             | :ref:`_get_import_options<class_EditorImportPlugin_private_method__get_import_options>` **(** :ref:`String<class_String>` path, :ref:`int<class_int>` preset_index **)** |virtual| |const|                                                                                                                           |
    +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`_get_import_order<class_EditorImportPlugin_private_method__get_import_order>` **(** **)** |virtual| |const|                                                                                                                                                                                                    |
@@ -190,6 +192,20 @@ Methods
 
 Method Descriptions
 -------------------
+
+.. _class_EditorImportPlugin_private_method__can_import_threaded:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **_can_import_threaded** **(** **)** |virtual| |const|
+
+Tells whether this importer can be run in parallel on threads, or, on the contrary, it's only safe for the editor to call it from the main thread, for one file at a time.
+
+If this method is not overridden, it will return ``true`` by default (i.e., safe for parallel importing).
+
+.. rst-class:: classref-item-separator
+
+----
 
 .. _class_EditorImportPlugin_private_method__get_import_options:
 

@@ -73,6 +73,8 @@ Methods
    +--------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Quaternion<class_Quaternion>`                                      | :ref:`get_hand_joint_rotation<class_OpenXRInterface_method_get_hand_joint_rotation>` **(** :ref:`Hand<enum_OpenXRInterface_Hand>` hand, :ref:`HandJoints<enum_OpenXRInterface_HandJoints>` joint **)** |const|                 |
    +--------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`HandTrackedSource<enum_OpenXRInterface_HandTrackedSource>`         | :ref:`get_hand_tracking_source<class_OpenXRInterface_method_get_hand_tracking_source>` **(** :ref:`Hand<enum_OpenXRInterface_Hand>` hand **)** |const|                                                                         |
+   +--------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`HandMotionRange<enum_OpenXRInterface_HandMotionRange>`             | :ref:`get_motion_range<class_OpenXRInterface_method_get_motion_range>` **(** :ref:`Hand<enum_OpenXRInterface_Hand>` hand **)** |const|                                                                                         |
    +--------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                                  | :ref:`is_action_set_active<class_OpenXRInterface_method_is_action_set_active>` **(** :ref:`String<class_String>` name **)** |const|                                                                                            |
@@ -208,7 +210,7 @@ enum **HandMotionRange**:
 
 :ref:`HandMotionRange<enum_OpenXRInterface_HandMotionRange>` **HAND_MOTION_RANGE_UNOBSTRUCTED** = ``0``
 
-
+Full hand range, if user closes their hands, we make a full fist.
 
 .. _class_OpenXRInterface_constant_HAND_MOTION_RANGE_CONFORM_TO_CONTROLLER:
 
@@ -216,7 +218,7 @@ enum **HandMotionRange**:
 
 :ref:`HandMotionRange<enum_OpenXRInterface_HandMotionRange>` **HAND_MOTION_RANGE_CONFORM_TO_CONTROLLER** = ``1``
 
-
+Conform to controller, if user closes their hands, the tracked data conforms to the shape of the controller.
 
 .. _class_OpenXRInterface_constant_HAND_MOTION_RANGE_MAX:
 
@@ -224,7 +226,49 @@ enum **HandMotionRange**:
 
 :ref:`HandMotionRange<enum_OpenXRInterface_HandMotionRange>` **HAND_MOTION_RANGE_MAX** = ``2``
 
+Maximum value for the motion range enum.
 
+.. rst-class:: classref-item-separator
+
+----
+
+.. _enum_OpenXRInterface_HandTrackedSource:
+
+.. rst-class:: classref-enumeration
+
+enum **HandTrackedSource**:
+
+.. _class_OpenXRInterface_constant_HAND_TRACKED_SOURCE_UNKNOWN:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`HandTrackedSource<enum_OpenXRInterface_HandTrackedSource>` **HAND_TRACKED_SOURCE_UNKNOWN** = ``0``
+
+The source of hand tracking data is unknown (the extension is likely unsupported).
+
+.. _class_OpenXRInterface_constant_HAND_TRACKED_SOURCE_UNOBSTRUCTED:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`HandTrackedSource<enum_OpenXRInterface_HandTrackedSource>` **HAND_TRACKED_SOURCE_UNOBSTRUCTED** = ``1``
+
+The source of hand tracking is unobstructed, this means that an accurate method of hand tracking is used, e.g. optical hand tracking, data gloves, etc.
+
+.. _class_OpenXRInterface_constant_HAND_TRACKED_SOURCE_CONTROLLER:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`HandTrackedSource<enum_OpenXRInterface_HandTrackedSource>` **HAND_TRACKED_SOURCE_CONTROLLER** = ``2``
+
+The source of hand tracking is a controller, bone positions are inferred from controller inputs.
+
+.. _class_OpenXRInterface_constant_HAND_TRACKED_SOURCE_MAX:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`HandTrackedSource<enum_OpenXRInterface_HandTrackedSource>` **HAND_TRACKED_SOURCE_MAX** = ``3``
+
+Maximum value for the hand tracked source enum.
 
 .. rst-class:: classref-item-separator
 
@@ -695,6 +739,18 @@ If handtracking is enabled, returns the radius of a joint (``joint``) of a hand 
 :ref:`Quaternion<class_Quaternion>` **get_hand_joint_rotation** **(** :ref:`Hand<enum_OpenXRInterface_Hand>` hand, :ref:`HandJoints<enum_OpenXRInterface_HandJoints>` joint **)** |const|
 
 If handtracking is enabled, returns the rotation of a joint (``joint``) of a hand (``hand``) as provided by OpenXR.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_OpenXRInterface_method_get_hand_tracking_source:
+
+.. rst-class:: classref-method
+
+:ref:`HandTrackedSource<enum_OpenXRInterface_HandTrackedSource>` **get_hand_tracking_source** **(** :ref:`Hand<enum_OpenXRInterface_Hand>` hand **)** |const|
+
+If handtracking is enabled and hand tracking source is supported, gets the source of the hand tracking data for ``hand``.
 
 .. rst-class:: classref-item-separator
 

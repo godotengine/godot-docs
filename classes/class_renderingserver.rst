@@ -5242,7 +5242,7 @@ enum **Features**:
 
 :ref:`Features<enum_RenderingServer_Features>` **FEATURE_SHADERS** = ``0``
 
-Hardware supports shaders. This enum is currently unused in Godot 3.x.
+*Deprecated.* This constant has not been used since Godot 3.0.
 
 .. _class_RenderingServer_constant_FEATURE_MULTITHREADED:
 
@@ -5250,7 +5250,7 @@ Hardware supports shaders. This enum is currently unused in Godot 3.x.
 
 :ref:`Features<enum_RenderingServer_Features>` **FEATURE_MULTITHREADED** = ``1``
 
-Hardware supports multithreading. This enum is currently unused in Godot 3.x.
+*Deprecated.* This constant has not been used since Godot 3.0.
 
 .. rst-class:: classref-section-separator
 
@@ -7606,7 +7606,7 @@ Returns ``true`` if changes have been made to the RenderingServer's data. :ref:`
 
 :ref:`bool<class_bool>` **has_feature** **(** :ref:`Features<enum_RenderingServer_Features>` feature **)** |const|
 
-Not yet implemented. Always returns ``false``.
+*Deprecated.* This method has not been used since Godot 3.0. Always returns false.
 
 .. rst-class:: classref-item-separator
 
