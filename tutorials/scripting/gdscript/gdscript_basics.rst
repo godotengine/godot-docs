@@ -976,7 +976,7 @@ value upon initialization.
     var a # Data type is 'null' by default.
     var b = 5
     var c = 3.8
-    var d = b + c # Variables are always initialized in order.
+    var d = b + c # Variables are always initialized in direct order (see below).
 
 Variables can optionally have a type specification. When a type is specified,
 the variable will be forced to have always that same type, and trying to assign
@@ -1017,6 +1017,49 @@ Valid types are:
 
     You can turn off this check, or make it only a warning, by changing it in
     the project settings. See :ref:`doc_gdscript_warning_system` for details.
+
+Initialization order
+^^^^^^^^^^^^^^^^^^^^
+
+Member variables are initialized in the following order:
+
+1. Depending on the variable's static type, the variable is either ``null``
+   (untyped variables and objects) or has a default value of the type
+   (``0`` for ``int``, ``false`` for ``bool``, etc.).
+2. The specified values are assigned in the order of the variables in the script,
+   from top to bottom.
+   - *(Only for ``Node``-derived classes)* If the ``@onready`` annotation is applied to a variable, its initialization is deferred to step 5.
+3. If defined, the ``_init()`` method is called.
+4. When instantiating scenes and resources, the exported values are assigned.
+5. *(Only for ``Node``-derived classes)* ``@onready`` variables are initialized.
+6. *(Only for ``Node``-derived classes)* If defined, the ``_ready()`` method is called.
+
+.. warning::
+
+    You can specify a complex expression as a variable initializer, including function calls.
+    Make sure the variables are initialized in the correct order, otherwise your values
+    may be overwritten. For example::
+
+        var a: int = proxy("a", 1)
+        var b: int = proxy("b", 2)
+        var _data: Dictionary = {}
+
+        func proxy(key: String, value: int):
+            _data[key] = value
+            print(_data)
+            return value
+
+        func _init() -> void:
+            print(_data)
+
+    Will print::
+
+        { "a": 1 }
+        { "a": 1, "b": 2 }
+        {  }
+
+    To fix this, move the ``_data`` variable definition above the ``a`` definition
+    or remove the empty dictionary assignment (``= {}``).
 
 Static variables
 ^^^^^^^^^^^^^^^^
