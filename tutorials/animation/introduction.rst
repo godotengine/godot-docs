@@ -259,6 +259,9 @@ values. This can be:
    could use the Capture mode to move a node that's located anywhere
    to a specific location.
 
+.. note:: Capture mode is currently broken in Godot >= 4.2.dev6. This regression is being worked on.
+
+
 .. figure:: img/animation_track_rate.webp
    :alt: Track mode
 
