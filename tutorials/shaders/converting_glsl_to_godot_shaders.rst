@@ -75,6 +75,7 @@ Macros
 ^^^^^^
 
 The :ref:`Godot shader preprocessor<doc_shader_preprocessor>` supports the following macros:
+
 * ``#define`` / ``#undef``
 * ``#if``, ``#elif``, ``#else``, ``#endif``, ``defined()``, ``#ifdef``, ``#ifndef``
 * ``#include`` (only ``.gdshaderinc`` files and with a maximum depth of 25)
