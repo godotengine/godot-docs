@@ -82,6 +82,11 @@ the timeline.
 Let's insert our first keys. Here, we will animate both the position and the
 rotation of the ``Character`` node.
 
+.. warning::
+    It is important to create keyframes from the ``Character`` node and not the root
+    ``Player`` node. Using the root of the player scene causes animations to override
+    user input and will prevent the player from being able to move.
+
 Select the ``Character`` and in the *Inspector* expand the *Transform* section. Click the key icon next to *Position*, and *Rotation*.
 
 |image10|
