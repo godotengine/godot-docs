@@ -71,6 +71,14 @@ to set up your own Godot Android plugin project.
 To provide further understanding, here is a break-down of the steps used to create the project template:
 
 1. Create an Android library module using `these instructions <https://developer.android.com/studio/projects/android-library>`_
+1.a. remove version name and version code from the build.gradle.kts as those attributes are not necessary for library modules 
+    android{
+        defaultConfig{ }
+    }
+1.b. delete .import files in your Android studio-generated app
+    res>drawable>mipmap>ic_launcher.webp and ic_launcher_round.webp
+**they will be regenerated after the build but cannot build with them in there**
+
 
 2. Add the Godot Android library as a dependency by updating the module's ``gradle`` `build file <https://github.com/m4gr3d/Godot-Android-Plugin-Template/blob/main/plugin/build.gradle.kts#L42>`_::
 
