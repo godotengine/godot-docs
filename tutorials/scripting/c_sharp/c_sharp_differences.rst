@@ -854,5 +854,8 @@ Example:
 
 .. code-block:: csharp
 
-  await ToSignal(timer, "timeout");
-  GD.Print("After timeout");
+  public async Task SomeFunction()
+  {
+      await ToSignal(timer, Timer.SignalName.Timeout);
+      GD.Print("After timeout");
+  }
