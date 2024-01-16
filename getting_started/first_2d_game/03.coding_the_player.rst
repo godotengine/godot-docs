@@ -441,7 +441,6 @@ starting a new game.
     {
         Position = position;
         Show();
-        GetNode<CollisionShape2D>("CollisionShape2D").Disabled = false;
     }
 
 With the player working, we'll work on the enemy in the next lesson.
