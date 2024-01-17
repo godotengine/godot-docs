@@ -145,8 +145,8 @@ Your path should look like this.
 |image18|
 
 To sample random positions on it, we need a :ref:`PathFollow3D <class_PathFollow3D>` node. Add a
-:ref:`PathFollow3D <class_PathFollow3D>` as a child of the ``Path3D``. Rename the two nodes to ``SpawnPath`` and
-``SpawnLocation``, respectively. It's more descriptive of what we'll use them for.
+:ref:`PathFollow3D <class_PathFollow3D>` as a child of the ``Path3D``. Rename the two nodes to ``SpawnLocation`` and
+``SpawnPath``, respectively. It's more descriptive of what we'll use them for.
 
 |image19|
 
