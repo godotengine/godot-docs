@@ -185,9 +185,7 @@ The physics layers this SoftBody3D **scans**. Collision objects can scan one or 
 - void **set_damping_coefficient** **(** :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_damping_coefficient** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+The body's damping coefficient. Higher values will slow down the body more noticeably when forces are applied.
 
 .. rst-class:: classref-item-separator
 
@@ -221,9 +219,9 @@ Defines the behavior in physics when :ref:`Node.process_mode<class_Node_property
 - void **set_drag_coefficient** **(** :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_drag_coefficient** **(** **)**
 
-.. container:: contribute
+The body's drag coefficient. Higher values increase this body's air resistance.
 
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+\ **Note:** This value is currently unused by Godot's default physics implementation.
 
 .. rst-class:: classref-item-separator
 
@@ -274,9 +272,7 @@ Higher values will result in a stiffer body, while lower values will increase th
 - void **set_pressure_coefficient** **(** :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_pressure_coefficient** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+The pressure coefficient of this soft body. Simulate pressure build-up from inside this body. Higher values increase the strength of this effect.
 
 .. rst-class:: classref-item-separator
 
@@ -392,9 +388,7 @@ Returns whether or not the specified layer of the :ref:`collision_mask<class_Sof
 
 :ref:`RID<class_RID>` **get_physics_rid** **(** **)** |const|
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Returns the internal :ref:`RID<class_RID>` used by the :ref:`PhysicsServer3D<class_PhysicsServer3D>` for this body.
 
 .. rst-class:: classref-item-separator
 

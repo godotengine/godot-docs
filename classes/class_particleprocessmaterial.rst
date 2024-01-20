@@ -456,6 +456,10 @@ Use with :ref:`set_particle_flag<class_ParticleProcessMaterial_method_set_partic
 
 :ref:`ParticleFlags<enum_ParticleProcessMaterial_ParticleFlags>` **PARTICLE_FLAG_DAMPING_AS_FRICTION** = ``3``
 
+.. container:: contribute
+
+	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 
 
 .. _class_ParticleProcessMaterial_constant_PARTICLE_FLAG_MAX:
@@ -556,6 +560,10 @@ enum **SubEmitterMode**:
 
 :ref:`SubEmitterMode<enum_ParticleProcessMaterial_SubEmitterMode>` **SUB_EMITTER_DISABLED** = ``0``
 
+.. container:: contribute
+
+	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 
 
 .. _class_ParticleProcessMaterial_constant_SUB_EMITTER_CONSTANT:
@@ -563,6 +571,10 @@ enum **SubEmitterMode**:
 .. rst-class:: classref-enumeration-constant
 
 :ref:`SubEmitterMode<enum_ParticleProcessMaterial_SubEmitterMode>` **SUB_EMITTER_CONSTANT** = ``1``
+
+.. container:: contribute
+
+	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 
 
@@ -572,6 +584,10 @@ enum **SubEmitterMode**:
 
 :ref:`SubEmitterMode<enum_ParticleProcessMaterial_SubEmitterMode>` **SUB_EMITTER_AT_END** = ``2``
 
+.. container:: contribute
+
+	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 
 
 .. _class_ParticleProcessMaterial_constant_SUB_EMITTER_AT_COLLISION:
@@ -579,6 +595,10 @@ enum **SubEmitterMode**:
 .. rst-class:: classref-enumeration-constant
 
 :ref:`SubEmitterMode<enum_ParticleProcessMaterial_SubEmitterMode>` **SUB_EMITTER_AT_COLLISION** = ``3``
+
+.. container:: contribute
+
+	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 
 

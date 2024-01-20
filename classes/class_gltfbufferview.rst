@@ -12,14 +12,23 @@ GLTFBufferView
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-.. container:: contribute
+Represents a GLTF buffer view.
 
-	There is currently no description for this class. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+.. rst-class:: classref-introduction-group
+
+Description
+-----------
+
+GLTFBufferView is a data structure representing GLTF a ``bufferView`` that would be found in the ``"bufferViews"`` array. A buffer is a blob of binary data. A buffer view is a slice of a buffer that can be used to identify and extract data from the buffer.
+
+Most custom uses of buffers only need to use the :ref:`buffer<class_GLTFBufferView_property_buffer>`, :ref:`byte_length<class_GLTFBufferView_property_byte_length>`, and :ref:`byte_offset<class_GLTFBufferView_property_byte_offset>`. The :ref:`byte_stride<class_GLTFBufferView_property_byte_stride>` and :ref:`indices<class_GLTFBufferView_property_indices>` properties are for more advanced use cases such as interleaved mesh data encoded for the GPU.
 
 .. rst-class:: classref-introduction-group
 
 Tutorials
 ---------
+
+- `Buffers, BufferViews, and Accessors in Khronos glTF specification <https://github.com/KhronosGroup/glTF-Tutorials/blob/master/gltfTutorial/gltfTutorial_005_BuffersBufferViewsAccessors.md>`__
 
 - :doc:`Runtime file loading and saving <../tutorials/io/runtime_file_loading_and_saving>`
 
@@ -43,6 +52,18 @@ Properties
    | :ref:`bool<class_bool>` | :ref:`indices<class_GLTFBufferView_property_indices>`         | ``false`` |
    +-------------------------+---------------------------------------------------------------+-----------+
 
+.. rst-class:: classref-reftable-group
+
+Methods
+-------
+
+.. table::
+   :widths: auto
+
+   +-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PackedByteArray<class_PackedByteArray>` | :ref:`load_buffer_view_data<class_GLTFBufferView_method_load_buffer_view_data>` **(** :ref:`GLTFState<class_GLTFState>` state **)** |const| |
+   +-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+
 .. rst-class:: classref-section-separator
 
 ----
@@ -63,9 +84,7 @@ Property Descriptions
 - void **set_buffer** **(** :ref:`int<class_int>` value **)**
 - :ref:`int<class_int>` **get_buffer** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+The index of the buffer this buffer view is referencing. If ``-1``, this buffer view is not referencing any buffer.
 
 .. rst-class:: classref-item-separator
 
@@ -82,9 +101,7 @@ Property Descriptions
 - void **set_byte_length** **(** :ref:`int<class_int>` value **)**
 - :ref:`int<class_int>` **get_byte_length** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+The length, in bytes, of this buffer view. If ``0``, this buffer view is empty.
 
 .. rst-class:: classref-item-separator
 
@@ -101,9 +118,7 @@ Property Descriptions
 - void **set_byte_offset** **(** :ref:`int<class_int>` value **)**
 - :ref:`int<class_int>` **get_byte_offset** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+The offset, in bytes, from the start of the buffer to the start of this buffer view.
 
 .. rst-class:: classref-item-separator
 
@@ -120,9 +135,7 @@ Property Descriptions
 - void **set_byte_stride** **(** :ref:`int<class_int>` value **)**
 - :ref:`int<class_int>` **get_byte_stride** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+The stride, in bytes, between interleaved data. If ``-1``, this buffer view is not interleaved.
 
 .. rst-class:: classref-item-separator
 
@@ -139,9 +152,24 @@ Property Descriptions
 - void **set_indices** **(** :ref:`bool<class_bool>` value **)**
 - :ref:`bool<class_bool>` **get_indices** **(** **)**
 
-.. container:: contribute
+True if the GLTFBufferView's OpenGL GPU buffer type is an ``ELEMENT_ARRAY_BUFFER`` used for vertex indices (integer constant ``34963``). False if the buffer type is ``ARRAY_BUFFER`` used for vertex attributes (integer constant ``34962``) or when any other value. See `Buffers, BufferViews, and Accessors <https://github.com/KhronosGroup/glTF-Tutorials/blob/master/gltfTutorial/gltfTutorial_005_BuffersBufferViewsAccessors.md>`__ for possible values. This property is set but never used, setting this property will do nothing.
 
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
+
+Method Descriptions
+-------------------
+
+.. _class_GLTFBufferView_method_load_buffer_view_data:
+
+.. rst-class:: classref-method
+
+:ref:`PackedByteArray<class_PackedByteArray>` **load_buffer_view_data** **(** :ref:`GLTFState<class_GLTFState>` state **)** |const|
+
+Loads the buffer view data from the buffer referenced by this buffer view in the given :ref:`GLTFState<class_GLTFState>`. Interleaved data with a byte stride is not yet supported by this method. The data is returned as a :ref:`PackedByteArray<class_PackedByteArray>`.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

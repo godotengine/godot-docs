@@ -78,6 +78,10 @@ enum **CacheMode**:
 
 :ref:`CacheMode<enum_ResourceFormatLoader_CacheMode>` **CACHE_MODE_IGNORE** = ``0``
 
+.. container:: contribute
+
+	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 
 
 .. _class_ResourceFormatLoader_constant_CACHE_MODE_REUSE:
@@ -86,6 +90,10 @@ enum **CacheMode**:
 
 :ref:`CacheMode<enum_ResourceFormatLoader_CacheMode>` **CACHE_MODE_REUSE** = ``1``
 
+.. container:: contribute
+
+	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 
 
 .. _class_ResourceFormatLoader_constant_CACHE_MODE_REPLACE:
@@ -93,6 +101,10 @@ enum **CacheMode**:
 .. rst-class:: classref-enumeration-constant
 
 :ref:`CacheMode<enum_ResourceFormatLoader_CacheMode>` **CACHE_MODE_REPLACE** = ``2``
+
+.. container:: contribute
+
+	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 
 

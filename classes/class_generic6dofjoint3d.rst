@@ -312,6 +312,10 @@ The maximum force the linear motor will apply while trying to reach the velocity
 
 :ref:`Param<enum_Generic6DOFJoint3D_Param>` **PARAM_LINEAR_SPRING_STIFFNESS** = ``7``
 
+.. container:: contribute
+
+	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 
 
 .. _class_Generic6DOFJoint3D_constant_PARAM_LINEAR_SPRING_DAMPING:
@@ -320,6 +324,10 @@ The maximum force the linear motor will apply while trying to reach the velocity
 
 :ref:`Param<enum_Generic6DOFJoint3D_Param>` **PARAM_LINEAR_SPRING_DAMPING** = ``8``
 
+.. container:: contribute
+
+	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 
 
 .. _class_Generic6DOFJoint3D_constant_PARAM_LINEAR_SPRING_EQUILIBRIUM_POINT:
@@ -327,6 +335,10 @@ The maximum force the linear motor will apply while trying to reach the velocity
 .. rst-class:: classref-enumeration-constant
 
 :ref:`Param<enum_Generic6DOFJoint3D_Param>` **PARAM_LINEAR_SPRING_EQUILIBRIUM_POINT** = ``9``
+
+.. container:: contribute
+
+	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 
 
@@ -408,6 +420,10 @@ Maximum acceleration for the motor at the axes.
 
 :ref:`Param<enum_Generic6DOFJoint3D_Param>` **PARAM_ANGULAR_SPRING_STIFFNESS** = ``19``
 
+.. container:: contribute
+
+	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 
 
 .. _class_Generic6DOFJoint3D_constant_PARAM_ANGULAR_SPRING_DAMPING:
@@ -416,6 +432,10 @@ Maximum acceleration for the motor at the axes.
 
 :ref:`Param<enum_Generic6DOFJoint3D_Param>` **PARAM_ANGULAR_SPRING_DAMPING** = ``20``
 
+.. container:: contribute
+
+	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 
 
 .. _class_Generic6DOFJoint3D_constant_PARAM_ANGULAR_SPRING_EQUILIBRIUM_POINT:
@@ -423,6 +443,10 @@ Maximum acceleration for the motor at the axes.
 .. rst-class:: classref-enumeration-constant
 
 :ref:`Param<enum_Generic6DOFJoint3D_Param>` **PARAM_ANGULAR_SPRING_EQUILIBRIUM_POINT** = ``21``
+
+.. container:: contribute
+
+	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 
 
@@ -466,6 +490,10 @@ If enabled, rotational motion is possible within the given limits.
 
 :ref:`Flag<enum_Generic6DOFJoint3D_Flag>` **FLAG_ENABLE_LINEAR_SPRING** = ``3``
 
+.. container:: contribute
+
+	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 
 
 .. _class_Generic6DOFJoint3D_constant_FLAG_ENABLE_ANGULAR_SPRING:
@@ -473,6 +501,10 @@ If enabled, rotational motion is possible within the given limits.
 .. rst-class:: classref-enumeration-constant
 
 :ref:`Flag<enum_Generic6DOFJoint3D_Flag>` **FLAG_ENABLE_ANGULAR_SPRING** = ``2``
+
+.. container:: contribute
+
+	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 
 

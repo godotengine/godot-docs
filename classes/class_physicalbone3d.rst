@@ -132,6 +132,10 @@ enum **JointType**:
 
 :ref:`JointType<enum_PhysicalBone3D_JointType>` **JOINT_TYPE_NONE** = ``0``
 
+.. container:: contribute
+
+	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 
 
 .. _class_PhysicalBone3D_constant_JOINT_TYPE_PIN:
@@ -139,6 +143,10 @@ enum **JointType**:
 .. rst-class:: classref-enumeration-constant
 
 :ref:`JointType<enum_PhysicalBone3D_JointType>` **JOINT_TYPE_PIN** = ``1``
+
+.. container:: contribute
+
+	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 
 
@@ -148,6 +156,10 @@ enum **JointType**:
 
 :ref:`JointType<enum_PhysicalBone3D_JointType>` **JOINT_TYPE_CONE** = ``2``
 
+.. container:: contribute
+
+	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 
 
 .. _class_PhysicalBone3D_constant_JOINT_TYPE_HINGE:
@@ -155,6 +167,10 @@ enum **JointType**:
 .. rst-class:: classref-enumeration-constant
 
 :ref:`JointType<enum_PhysicalBone3D_JointType>` **JOINT_TYPE_HINGE** = ``3``
+
+.. container:: contribute
+
+	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 
 
@@ -164,6 +180,10 @@ enum **JointType**:
 
 :ref:`JointType<enum_PhysicalBone3D_JointType>` **JOINT_TYPE_SLIDER** = ``4``
 
+.. container:: contribute
+
+	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 
 
 .. _class_PhysicalBone3D_constant_JOINT_TYPE_6DOF:
@@ -171,6 +191,10 @@ enum **JointType**:
 .. rst-class:: classref-enumeration-constant
 
 :ref:`JointType<enum_PhysicalBone3D_JointType>` **JOINT_TYPE_6DOF** = ``5``
+
+.. container:: contribute
+
+	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 
 

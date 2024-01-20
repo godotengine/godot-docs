@@ -2931,6 +2931,10 @@ flags **StorageBufferUsage**:
 
 :ref:`StorageBufferUsage<enum_RenderingDevice_StorageBufferUsage>` **STORAGE_BUFFER_USAGE_DISPATCH_INDIRECT** = ``1``
 
+.. container:: contribute
+
+	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 
 
 .. rst-class:: classref-item-separator
@@ -3761,6 +3765,10 @@ flags **PipelineDynamicStateFlags**:
 
 :ref:`PipelineDynamicStateFlags<enum_RenderingDevice_PipelineDynamicStateFlags>` **DYNAMIC_STATE_LINE_WIDTH** = ``1``
 
+.. container:: contribute
+
+	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 
 
 .. _class_RenderingDevice_constant_DYNAMIC_STATE_DEPTH_BIAS:
@@ -3768,6 +3776,10 @@ flags **PipelineDynamicStateFlags**:
 .. rst-class:: classref-enumeration-constant
 
 :ref:`PipelineDynamicStateFlags<enum_RenderingDevice_PipelineDynamicStateFlags>` **DYNAMIC_STATE_DEPTH_BIAS** = ``2``
+
+.. container:: contribute
+
+	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 
 
@@ -3777,6 +3789,10 @@ flags **PipelineDynamicStateFlags**:
 
 :ref:`PipelineDynamicStateFlags<enum_RenderingDevice_PipelineDynamicStateFlags>` **DYNAMIC_STATE_BLEND_CONSTANTS** = ``4``
 
+.. container:: contribute
+
+	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 
 
 .. _class_RenderingDevice_constant_DYNAMIC_STATE_DEPTH_BOUNDS:
@@ -3784,6 +3800,10 @@ flags **PipelineDynamicStateFlags**:
 .. rst-class:: classref-enumeration-constant
 
 :ref:`PipelineDynamicStateFlags<enum_RenderingDevice_PipelineDynamicStateFlags>` **DYNAMIC_STATE_DEPTH_BOUNDS** = ``8``
+
+.. container:: contribute
+
+	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 
 
@@ -3793,6 +3813,10 @@ flags **PipelineDynamicStateFlags**:
 
 :ref:`PipelineDynamicStateFlags<enum_RenderingDevice_PipelineDynamicStateFlags>` **DYNAMIC_STATE_STENCIL_COMPARE_MASK** = ``16``
 
+.. container:: contribute
+
+	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 
 
 .. _class_RenderingDevice_constant_DYNAMIC_STATE_STENCIL_WRITE_MASK:
@@ -3801,6 +3825,10 @@ flags **PipelineDynamicStateFlags**:
 
 :ref:`PipelineDynamicStateFlags<enum_RenderingDevice_PipelineDynamicStateFlags>` **DYNAMIC_STATE_STENCIL_WRITE_MASK** = ``32``
 
+.. container:: contribute
+
+	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 
 
 .. _class_RenderingDevice_constant_DYNAMIC_STATE_STENCIL_REFERENCE:
@@ -3808,6 +3836,10 @@ flags **PipelineDynamicStateFlags**:
 .. rst-class:: classref-enumeration-constant
 
 :ref:`PipelineDynamicStateFlags<enum_RenderingDevice_PipelineDynamicStateFlags>` **DYNAMIC_STATE_STENCIL_REFERENCE** = ``64``
+
+.. container:: contribute
+
+	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 
 

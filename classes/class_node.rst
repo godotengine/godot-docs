@@ -524,6 +524,10 @@ flags **ProcessThreadMessages**:
 
 :ref:`ProcessThreadMessages<enum_Node_ProcessThreadMessages>` **FLAG_PROCESS_THREAD_MESSAGES** = ``1``
 
+.. container:: contribute
+
+	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 
 
 .. _class_Node_constant_FLAG_PROCESS_THREAD_MESSAGES_PHYSICS:
@@ -532,6 +536,10 @@ flags **ProcessThreadMessages**:
 
 :ref:`ProcessThreadMessages<enum_Node_ProcessThreadMessages>` **FLAG_PROCESS_THREAD_MESSAGES_PHYSICS** = ``2``
 
+.. container:: contribute
+
+	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 
 
 .. _class_Node_constant_FLAG_PROCESS_THREAD_MESSAGES_ALL:
@@ -539,6 +547,10 @@ flags **ProcessThreadMessages**:
 .. rst-class:: classref-enumeration-constant
 
 :ref:`ProcessThreadMessages<enum_Node_ProcessThreadMessages>` **FLAG_PROCESS_THREAD_MESSAGES_ALL** = ``3``
+
+.. container:: contribute
+
+	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 
 

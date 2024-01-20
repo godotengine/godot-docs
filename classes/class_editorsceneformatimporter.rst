@@ -60,6 +60,10 @@ Constants
 
 **IMPORT_SCENE** = ``1``
 
+.. container:: contribute
+
+	There is currently no description for this constant. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 
 
 .. _class_EditorSceneFormatImporter_constant_IMPORT_ANIMATION:
@@ -67,6 +71,10 @@ Constants
 .. rst-class:: classref-constant
 
 **IMPORT_ANIMATION** = ``2``
+
+.. container:: contribute
+
+	There is currently no description for this constant. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 
 
@@ -76,6 +84,10 @@ Constants
 
 **IMPORT_FAIL_ON_MISSING_DEPENDENCIES** = ``4``
 
+.. container:: contribute
+
+	There is currently no description for this constant. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 
 
 .. _class_EditorSceneFormatImporter_constant_IMPORT_GENERATE_TANGENT_ARRAYS:
@@ -83,6 +95,10 @@ Constants
 .. rst-class:: classref-constant
 
 **IMPORT_GENERATE_TANGENT_ARRAYS** = ``8``
+
+.. container:: contribute
+
+	There is currently no description for this constant. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 
 
@@ -92,6 +108,10 @@ Constants
 
 **IMPORT_USE_NAMED_SKIN_BINDS** = ``16``
 
+.. container:: contribute
+
+	There is currently no description for this constant. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 
 
 .. _class_EditorSceneFormatImporter_constant_IMPORT_DISCARD_MESHES_AND_MATERIALS:
@@ -100,6 +120,10 @@ Constants
 
 **IMPORT_DISCARD_MESHES_AND_MATERIALS** = ``32``
 
+.. container:: contribute
+
+	There is currently no description for this constant. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 
 
 .. _class_EditorSceneFormatImporter_constant_IMPORT_FORCE_DISABLE_MESH_COMPRESSION:
@@ -107,6 +131,10 @@ Constants
 .. rst-class:: classref-constant
 
 **IMPORT_FORCE_DISABLE_MESH_COMPRESSION** = ``64``
+
+.. container:: contribute
+
+	There is currently no description for this constant. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 
 

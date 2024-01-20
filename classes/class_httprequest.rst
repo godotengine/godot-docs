@@ -290,6 +290,10 @@ Request successful.
 
 :ref:`Result<enum_HTTPRequest_Result>` **RESULT_CHUNKED_BODY_SIZE_MISMATCH** = ``1``
 
+.. container:: contribute
+
+	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 
 
 .. _class_HTTPRequest_constant_RESULT_CANT_CONNECT:
@@ -345,6 +349,10 @@ Request exceeded its maximum size limit, see :ref:`body_size_limit<class_HTTPReq
 .. rst-class:: classref-enumeration-constant
 
 :ref:`Result<enum_HTTPRequest_Result>` **RESULT_BODY_DECOMPRESS_FAILED** = ``8``
+
+.. container:: contribute
+
+	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 
 

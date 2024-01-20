@@ -77,6 +77,8 @@ Methods
    +-------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                  | :ref:`add_used_extension<class_GLTFState_method_add_used_extension>` **(** :ref:`String<class_String>` extension_name, :ref:`bool<class_bool>` required **)**                        |
    +-------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                                 | :ref:`append_data_to_buffers<class_GLTFState_method_append_data_to_buffers>` **(** :ref:`PackedByteArray<class_PackedByteArray>` data, :ref:`bool<class_bool>` deduplication **)**   |
+   +-------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`GLTFAccessor[]<class_GLTFAccessor>`             | :ref:`get_accessors<class_GLTFState_method_get_accessors>` **(** **)**                                                                                                               |
    +-------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Variant<class_Variant>`                         | :ref:`get_additional_data<class_GLTFState_method_get_additional_data>` **(** :ref:`StringName<class_StringName>` extension_name **)**                                                |
@@ -434,6 +436,18 @@ Method Descriptions
 void **add_used_extension** **(** :ref:`String<class_String>` extension_name, :ref:`bool<class_bool>` required **)**
 
 Appends an extension to the list of extensions used by this GLTF file during serialization. If ``required`` is true, the extension will also be added to the list of required extensions. Do not run this in :ref:`GLTFDocumentExtension._export_post<class_GLTFDocumentExtension_private_method__export_post>`, as that stage is too late to add extensions. The final list is sorted alphabetically.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_GLTFState_method_append_data_to_buffers:
+
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **append_data_to_buffers** **(** :ref:`PackedByteArray<class_PackedByteArray>` data, :ref:`bool<class_bool>` deduplication **)**
+
+Appends the given byte array data to the buffers and creates a :ref:`GLTFBufferView<class_GLTFBufferView>` for it. The index of the destination :ref:`GLTFBufferView<class_GLTFBufferView>` is returned. If ``deduplication`` is true, the buffers will first be searched for duplicate data, otherwise new bytes will always be appended.
 
 .. rst-class:: classref-item-separator
 

@@ -936,7 +936,7 @@ Returns a random value from the target array. Prints an error and returns ``null
 
 :ref:`Variant<class_Variant>` **pop_at** **(** :ref:`int<class_int>` position **)**
 
-Removes and returns the element of the array at index ``position``. If negative, ``position`` is considered relative to the end of the array. Leaves the array untouched and returns ``null`` if the array is empty or if it's accessed out of bounds. An error message is printed when the array is accessed out of bounds, but not when the array is empty.
+Removes and returns the element of the array at index ``position``. If negative, ``position`` is considered relative to the end of the array. Leaves the array unchanged and returns ``null`` if the array is empty or if it's accessed out of bounds. An error message is printed when the array is accessed out of bounds, but not when the array is empty.
 
 \ **Note:** On large arrays, this method can be slower than :ref:`pop_back<class_Array_method_pop_back>` as it will reindex the array's elements that are located after the removed element. The larger the array and the lower the index of the removed element, the slower :ref:`pop_at<class_Array_method_pop_at>` will be.
 

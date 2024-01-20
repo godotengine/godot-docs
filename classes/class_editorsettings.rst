@@ -339,9 +339,11 @@ Properties
    +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Color<class_Color>`     | :ref:`interface/theme/accent_color<class_EditorSettings_property_interface/theme/accent_color>`                                                                                     |
    +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`float<class_float>`     | :ref:`interface/theme/additional_spacing<class_EditorSettings_property_interface/theme/additional_spacing>`                                                                         |
+   | :ref:`int<class_int>`         | :ref:`interface/theme/additional_spacing<class_EditorSettings_property_interface/theme/additional_spacing>`                                                                         |
    +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Color<class_Color>`     | :ref:`interface/theme/base_color<class_EditorSettings_property_interface/theme/base_color>`                                                                                         |
+   +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`         | :ref:`interface/theme/base_spacing<class_EditorSettings_property_interface/theme/base_spacing>`                                                                                     |
    +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`         | :ref:`interface/theme/border_size<class_EditorSettings_property_interface/theme/border_size>`                                                                                       |
    +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -360,6 +362,8 @@ Properties
    | :ref:`String<class_String>`   | :ref:`interface/theme/preset<class_EditorSettings_property_interface/theme/preset>`                                                                                                 |
    +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`     | :ref:`interface/theme/relationship_line_opacity<class_EditorSettings_property_interface/theme/relationship_line_opacity>`                                                           |
+   +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`   | :ref:`interface/theme/spacing_preset<class_EditorSettings_property_interface/theme/spacing_preset>`                                                                                 |
    +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`       | :ref:`interface/touchscreen/enable_long_press_as_right_click<class_EditorSettings_property_interface/touchscreen/enable_long_press_as_right_click>`                                 |
    +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -2469,9 +2473,11 @@ The color to use for "highlighted" user interface elements in the editor (presse
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **interface/theme/additional_spacing**
+:ref:`int<class_int>` **interface/theme/additional_spacing**
 
-The spacing to add for buttons and list items in the editor (in pixels). Increasing this value is useful to improve usability on touch screens, at the cost of reducing the amount of usable screen real estate.
+The extra spacing to add to various GUI elements in the editor (in pixels). Increasing this value is useful to improve usability on touch screens, at the cost of reducing the amount of usable screen real estate.
+
+ See also :ref:`interface/theme/spacing_preset<class_EditorSettings_property_interface/theme/spacing_preset>`.
 
 .. rst-class:: classref-item-separator
 
@@ -2484,6 +2490,18 @@ The spacing to add for buttons and list items in the editor (in pixels). Increas
 :ref:`Color<class_Color>` **interface/theme/base_color**
 
 The base color to use for user interface elements in the editor. Secondary colors (such as darker/lighter variants) are derived from this color.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSettings_property_interface/theme/base_spacing:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **interface/theme/base_spacing**
+
+The base spacing used by various GUI elements in the editor (in pixels). See also :ref:`interface/theme/spacing_preset<class_EditorSettings_property_interface/theme/spacing_preset>`.
 
 .. rst-class:: classref-item-separator
 
@@ -2600,6 +2618,18 @@ The editor theme preset to use.
 :ref:`float<class_float>` **interface/theme/relationship_line_opacity**
 
 The opacity to use when drawing relationship lines in the editor's :ref:`Tree<class_Tree>`-based GUIs (such as the Scene tree dock).
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSettings_property_interface/theme/spacing_preset:
+
+.. rst-class:: classref-property
+
+:ref:`String<class_String>` **interface/theme/spacing_preset**
+
+The editor theme spacing preset to use. See also :ref:`interface/theme/base_spacing<class_EditorSettings_property_interface/theme/base_spacing>` and :ref:`interface/theme/additional_spacing<class_EditorSettings_property_interface/theme/additional_spacing>`.
 
 .. rst-class:: classref-item-separator
 
