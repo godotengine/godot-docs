@@ -95,11 +95,11 @@ Select the ``Character`` and in the *Inspector* expand the *Transform* section. 
 
 For this tutorial, just create RESET Track(s) which is the default choice
 
-Two tracks appear in the editor with a small inline icon representing each keyframe.
+Two tracks appear in the editor with a diamond icon representing each keyframe.
 
 |image11|
 
-You can click and drag on the keyframe markers to move them in time. Move the
+You can click and drag on the diamonds to move them in time. Move the
 position key to ``0.3`` seconds and the rotation key to ``0.1`` seconds.
 
 |image12|
