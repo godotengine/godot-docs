@@ -176,7 +176,7 @@ does not affect the lighting at all and can be anywhere.
 .. image:: img/light_directional.png
 
 Every face whose front-side is hit by the light rays is lit, while the others
-stay dark. Unlike most other light types directional lights, don't have specific
+stay dark. Unlike most other light types, directional lights don't have specific
 parameters.
 
 The directional light also offers a **Angular Distance** property, which
