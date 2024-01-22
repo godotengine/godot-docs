@@ -18,6 +18,8 @@ The following two scripts will be used as references throughout this page.
 
     var my_field: String = "foo"
 
+    signal my_signal
+
     func print_node_name(node: Node) -> void:
         print(node.get_name())
 
@@ -29,6 +31,9 @@ The following two scripts will be used as references throughout this page.
         for i in range(n):
             print(msg)
 
+    func my_signal_handler():
+        print("The signal handler was called!")
+
  .. code-tab:: csharp
 
     using Godot;
@@ -36,6 +41,8 @@ The following two scripts will be used as references throughout this page.
     public partial class MyCSharpNode : Node
     {
         public string myField = "bar";
+
+        [Signal] public delegate void MySignal();
 
         public void PrintNodeName(Node node)
         {
@@ -56,6 +63,11 @@ The following two scripts will be used as references throughout this page.
             {
                 GD.Print(msg);
             }
+        }
+
+        public void MySignalHandler()
+        {
+            GD.Print("The signal handler was called!");
         }
     }
 
@@ -185,6 +197,31 @@ to said method.
     you'll need to cast it as ``object``.
     Otherwise, each element of your array will be treated as a single argument
     and the function signature won't match.
+
+.. _connecting_to_signals_cross_language:
+
+Connecting to signals
+---------------------
+
+Connecting to C# signals from GDScript
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Connecting to a C# signal from GDScript is the same as connecting to a signal
+defined in GDScript:
+
+.. code-block:: gdscript
+
+    my_csharp_node.MySignal.connect(my_signal_handler)
+
+Connecting to GDScript signals from C#
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Connecting to a GDScript signal from C# only works with the ``Connect`` method
+because no C# static types exist for signals defined by GDScript:
+
+.. code-block:: csharp
+
+    myGDScriptNode.Connect("my_signal", Callable.From(mySignalHandler));
 
 Inheritance
 -----------
