@@ -132,7 +132,7 @@ Linking
 """""""
 
 Whenever you link to a member of another class, you need to specify the class name.
-For links to the same class, the class name is optional and can be omitted.
+For links to the same class or to :ref:`class_@GlobalScope`, the class name is optional and can be omitted.
 
 +-------------------------------+-----------------------------------------+----------------------------------------------------------------------+
 | Tag and Description           | Example                                 | Result                                                               |
