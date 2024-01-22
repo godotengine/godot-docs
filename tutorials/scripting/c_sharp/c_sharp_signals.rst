@@ -36,13 +36,11 @@ In addition, you can always access signal names associated with a node type thro
 .. warning::
 
     While all engine signals connected as events are automatically disconnected when nodes are freed, custom
-    signals connected using ``+=`` aren't. Meaning that you will need to manually disconnect (using ``-=``)
+    signals connected using ``+=`` aren't. This means you will need to manually disconnect (using ``-=``)
     all the custom signals you connected as C# events (using ``+=``).
 
     An alternative to manually disconnecting using ``-=`` is to
     :ref:`use Connect <using_connect_and_disconnect>` rather than ``+=``.
-
-    See `Godot issue #70414 <https://github.com/godotengine/godot/issues/70414>`_.
 
 Custom signals as C# events
 ---------------------------
