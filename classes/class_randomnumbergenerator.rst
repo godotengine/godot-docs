@@ -23,7 +23,7 @@ RandomNumberGenerator is a class for generating pseudo-random numbers. It curren
 
 \ **Note:** The underlying algorithm is an implementation detail and should not be depended upon.
 
-To generate a random float number (within a given range) based on a time-dependant seed:
+To generate a random float number (within a given range) based on a time-dependent seed:
 
 ::
 

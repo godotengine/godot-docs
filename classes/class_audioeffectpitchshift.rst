@@ -163,7 +163,7 @@ The oversampling factor to use. Higher values result in better quality, but are 
 - void **set_pitch_scale** **(** :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_pitch_scale** **(** **)**
 
-The pitch scale to use. ``1.0`` is the default pitch and plays sounds unaltered. :ref:`pitch_scale<class_AudioEffectPitchShift_property_pitch_scale>` can range from ``0.0`` (infinitely low pitch, inaudible) to ``16`` (16 times higher than the initial pitch).
+The pitch scale to use. ``1.0`` is the default pitch and plays sounds unaffected. :ref:`pitch_scale<class_AudioEffectPitchShift_property_pitch_scale>` can range from ``0.0`` (infinitely low pitch, inaudible) to ``16`` (16 times higher than the initial pitch).
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

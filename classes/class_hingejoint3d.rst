@@ -122,6 +122,10 @@ The speed with which the rotation across the axis perpendicular to the hinge get
 
 :ref:`Param<enum_HingeJoint3D_Param>` **PARAM_LIMIT_SOFTNESS** = ``4``
 
+.. container:: contribute
+
+	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 
 
 .. _class_HingeJoint3D_constant_PARAM_LIMIT_RELAXATION:

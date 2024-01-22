@@ -88,6 +88,10 @@ This action provides a :ref:`Vector2<class_Vector2>` value and can be bound to e
 
 :ref:`ActionType<enum_OpenXRAction_ActionType>` **OPENXR_ACTION_POSE** = ``3``
 
+.. container:: contribute
+
+	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 
 
 .. rst-class:: classref-section-separator

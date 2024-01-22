@@ -25,6 +25,8 @@ If the skeleton is a hand (one of the hand bones is the root node of the skeleto
 
 If the hand bones are part of a full skeleton, then the root of the hand will keep its location with the assumption that IK is used to position the hand and arm.
 
+By default the skeleton hand bones are repositioned to match the size of the tracked hand. To preserve the modeled bone sizes change :ref:`bone_update<class_OpenXRHand_property_bone_update>` to apply rotation only.
+
 .. rst-class:: classref-reftable-group
 
 Properties
@@ -33,6 +35,8 @@ Properties
 .. table::
    :widths: auto
 
+   +-------------------------------------------------+---------------------------------------------------------------+------------------+
+   | :ref:`BoneUpdate<enum_OpenXRHand_BoneUpdate>`   | :ref:`bone_update<class_OpenXRHand_property_bone_update>`     | ``0``            |
    +-------------------------------------------------+---------------------------------------------------------------+------------------+
    | :ref:`Hands<enum_OpenXRHand_Hands>`             | :ref:`hand<class_OpenXRHand_property_hand>`                   | ``0``            |
    +-------------------------------------------------+---------------------------------------------------------------+------------------+
@@ -150,6 +154,40 @@ A :ref:`SkeletonProfileHumanoid<class_SkeletonProfileHumanoid>` compliant skelet
 
 Maximum supported hands.
 
+.. rst-class:: classref-item-separator
+
+----
+
+.. _enum_OpenXRHand_BoneUpdate:
+
+.. rst-class:: classref-enumeration
+
+enum **BoneUpdate**:
+
+.. _class_OpenXRHand_constant_BONE_UPDATE_FULL:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`BoneUpdate<enum_OpenXRHand_BoneUpdate>` **BONE_UPDATE_FULL** = ``0``
+
+The skeletons bones are fully updated (both position and rotation) to match the tracked bones.
+
+.. _class_OpenXRHand_constant_BONE_UPDATE_ROTATION_ONLY:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`BoneUpdate<enum_OpenXRHand_BoneUpdate>` **BONE_UPDATE_ROTATION_ONLY** = ``1``
+
+The skeletons bones are only rotated to align with the tracked bones, preserving bone length.
+
+.. _class_OpenXRHand_constant_BONE_UPDATE_MAX:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`BoneUpdate<enum_OpenXRHand_BoneUpdate>` **BONE_UPDATE_MAX** = ``2``
+
+Maximum supported bone update mode.
+
 .. rst-class:: classref-section-separator
 
 ----
@@ -158,6 +196,23 @@ Maximum supported hands.
 
 Property Descriptions
 ---------------------
+
+.. _class_OpenXRHand_property_bone_update:
+
+.. rst-class:: classref-property
+
+:ref:`BoneUpdate<enum_OpenXRHand_BoneUpdate>` **bone_update** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_bone_update** **(** :ref:`BoneUpdate<enum_OpenXRHand_BoneUpdate>` value **)**
+- :ref:`BoneUpdate<enum_OpenXRHand_BoneUpdate>` **get_bone_update** **(** **)**
+
+Specify the type of updates to perform on the bone.
+
+.. rst-class:: classref-item-separator
+
+----
 
 .. _class_OpenXRHand_property_hand:
 

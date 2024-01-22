@@ -88,6 +88,10 @@ enum **CompressionMode**:
 
 :ref:`CompressionMode<enum_PortableCompressedTexture2D_CompressionMode>` **COMPRESSION_MODE_LOSSLESS** = ``0``
 
+.. container:: contribute
+
+	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 
 
 .. _class_PortableCompressedTexture2D_constant_COMPRESSION_MODE_LOSSY:
@@ -95,6 +99,10 @@ enum **CompressionMode**:
 .. rst-class:: classref-enumeration-constant
 
 :ref:`CompressionMode<enum_PortableCompressedTexture2D_CompressionMode>` **COMPRESSION_MODE_LOSSY** = ``1``
+
+.. container:: contribute
+
+	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 
 
@@ -104,6 +112,10 @@ enum **CompressionMode**:
 
 :ref:`CompressionMode<enum_PortableCompressedTexture2D_CompressionMode>` **COMPRESSION_MODE_BASIS_UNIVERSAL** = ``2``
 
+.. container:: contribute
+
+	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 
 
 .. _class_PortableCompressedTexture2D_constant_COMPRESSION_MODE_S3TC:
@@ -111,6 +123,10 @@ enum **CompressionMode**:
 .. rst-class:: classref-enumeration-constant
 
 :ref:`CompressionMode<enum_PortableCompressedTexture2D_CompressionMode>` **COMPRESSION_MODE_S3TC** = ``3``
+
+.. container:: contribute
+
+	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 
 
@@ -120,6 +136,10 @@ enum **CompressionMode**:
 
 :ref:`CompressionMode<enum_PortableCompressedTexture2D_CompressionMode>` **COMPRESSION_MODE_ETC2** = ``4``
 
+.. container:: contribute
+
+	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 
 
 .. _class_PortableCompressedTexture2D_constant_COMPRESSION_MODE_BPTC:
@@ -127,6 +147,10 @@ enum **CompressionMode**:
 .. rst-class:: classref-enumeration-constant
 
 :ref:`CompressionMode<enum_PortableCompressedTexture2D_CompressionMode>` **COMPRESSION_MODE_BPTC** = ``5``
+
+.. container:: contribute
+
+	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 
 

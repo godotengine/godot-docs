@@ -146,7 +146,7 @@ Seeking to the beginning is treated as seeking to the beginning of the animation
 
 :ref:`StateMachineType<enum_AnimationNodeStateMachine_StateMachineType>` **STATE_MACHINE_TYPE_GROUPED** = ``2``
 
-This is a grouped state machine that can be controlled from a parent state machine. It does not work on standalone. There must be a state machine with :ref:`state_machine_type<class_AnimationNodeStateMachine_property_state_machine_type>` of :ref:`STATE_MACHINE_TYPE_ROOT<class_AnimationNodeStateMachine_constant_STATE_MACHINE_TYPE_ROOT>` or :ref:`STATE_MACHINE_TYPE_NESTED<class_AnimationNodeStateMachine_constant_STATE_MACHINE_TYPE_NESTED>` in the parent or ancestor.
+This is a grouped state machine that can be controlled from a parent state machine. It does not work independently. There must be a state machine with :ref:`state_machine_type<class_AnimationNodeStateMachine_property_state_machine_type>` of :ref:`STATE_MACHINE_TYPE_ROOT<class_AnimationNodeStateMachine_constant_STATE_MACHINE_TYPE_ROOT>` or :ref:`STATE_MACHINE_TYPE_NESTED<class_AnimationNodeStateMachine_constant_STATE_MACHINE_TYPE_NESTED>` in the parent or ancestor.
 
 .. rst-class:: classref-section-separator
 

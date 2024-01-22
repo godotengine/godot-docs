@@ -81,6 +81,10 @@ Digital distortion effect which cuts off peaks at the top and bottom of the wave
 
 :ref:`Mode<enum_AudioEffectDistortion_Mode>` **MODE_ATAN** = ``1``
 
+.. container:: contribute
+
+	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
 
 
 .. _class_AudioEffectDistortion_constant_MODE_LOFI:

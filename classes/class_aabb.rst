@@ -17,13 +17,13 @@ A 3D axis-aligned bounding box.
 Description
 -----------
 
-**AABB** consists of a position, a size, and several utility functions. It is typically used for fast overlap tests.
+The **AABB** built-in :ref:`Variant<class_Variant>` type represents an axis-aligned bounding box in a 3D space. It is defined by its :ref:`position<class_AABB_property_position>` and :ref:`size<class_AABB_property_size>`, which are :ref:`Vector3<class_Vector3>`. It is frequently used for fast overlap tests (see :ref:`intersects<class_AABB_method_intersects>`). Although **AABB** itself is axis-aligned, it can be combined with :ref:`Transform3D<class_Transform3D>` to represent a rotated or skewed bounding box.
 
-It uses floating-point coordinates. The 2D counterpart to **AABB** is :ref:`Rect2<class_Rect2>`.
+It uses floating-point coordinates. The 2D counterpart to **AABB** is :ref:`Rect2<class_Rect2>`. There is no version of **AABB** that uses integer coordinates.
 
-Negative values for :ref:`size<class_AABB_property_size>` are not supported and will not work for most methods. Use :ref:`abs<class_AABB_method_abs>` to get an AABB with a positive size.
+\ **Note:** Negative values for :ref:`size<class_AABB_property_size>` are not supported. With negative size, most **AABB** methods do not work correctly. Use :ref:`abs<class_AABB_method_abs>` to get an equivalent **AABB** with a non-negative size.
 
-\ **Note:** Unlike :ref:`Rect2<class_Rect2>`, **AABB** does not have a variant that uses integer coordinates.
+\ **Note:** In a boolean context, a **AABB** evaluates to ``false`` if both :ref:`position<class_AABB_property_position>` and :ref:`size<class_AABB_property_size>` are zero (equal to :ref:`Vector3.ZERO<class_Vector3_constant_ZERO>`). Otherwise, it always evaluates to ``true``.
 
 .. note::
 
@@ -163,7 +163,7 @@ Property Descriptions
 
 :ref:`Vector3<class_Vector3>` **end** = ``Vector3(0, 0, 0)``
 
-Ending corner. This is calculated as ``position + size``. Setting this value will change the size.
+The ending point. This is usually the corner on the top-right and forward of the bounding box, and is equivalent to ``position + size``. Setting this point affects the :ref:`size<class_AABB_property_size>`.
 
 .. rst-class:: classref-item-separator
 
@@ -175,7 +175,7 @@ Ending corner. This is calculated as ``position + size``. Setting this value wil
 
 :ref:`Vector3<class_Vector3>` **position** = ``Vector3(0, 0, 0)``
 
-Beginning corner. Typically has values lower than :ref:`end<class_AABB_property_end>`.
+The origin point. This is usually the corner on the bottom-left and back of the bounding box.
 
 .. rst-class:: classref-item-separator
 
@@ -187,9 +187,9 @@ Beginning corner. Typically has values lower than :ref:`end<class_AABB_property_
 
 :ref:`Vector3<class_Vector3>` **size** = ``Vector3(0, 0, 0)``
 
-Size from :ref:`position<class_AABB_property_position>` to :ref:`end<class_AABB_property_end>`. Typically, all components are positive.
+The bounding box's width, height, and depth starting from :ref:`position<class_AABB_property_position>`. Setting this value also affects the :ref:`end<class_AABB_property_end>` point.
 
-If the size is negative, you can use :ref:`abs<class_AABB_method_abs>` to fix it.
+\ **Note:** It's recommended setting the width, height, and depth to non-negative values. This is because most methods in Godot assume that the :ref:`position<class_AABB_property_position>` is the bottom-left-back corner, and the :ref:`end<class_AABB_property_end>` is the top-right-forward corner. To get an equivalent bounding box with non-negative size, use :ref:`abs<class_AABB_method_abs>`.
 
 .. rst-class:: classref-section-separator
 
@@ -206,7 +206,7 @@ Constructor Descriptions
 
 :ref:`AABB<class_AABB>` **AABB** **(** **)**
 
-Constructs a default-initialized **AABB** with default (zero) values of :ref:`position<class_AABB_property_position>` and :ref:`size<class_AABB_property_size>`.
+Constructs an **AABB** with its :ref:`position<class_AABB_property_position>` and :ref:`size<class_AABB_property_size>` set to :ref:`Vector3.ZERO<class_Vector3_constant_ZERO>`.
 
 .. rst-class:: classref-item-separator
 
@@ -226,7 +226,7 @@ Constructs an **AABB** as a copy of the given **AABB**.
 
 :ref:`AABB<class_AABB>` **AABB** **(** :ref:`Vector3<class_Vector3>` position, :ref:`Vector3<class_Vector3>` size **)**
 
-Constructs an **AABB** from a position and size.
+Constructs an **AABB** by ``position`` and ``size``.
 
 .. rst-class:: classref-section-separator
 
@@ -243,7 +243,28 @@ Method Descriptions
 
 :ref:`AABB<class_AABB>` **abs** **(** **)** |const|
 
-Returns an AABB with equivalent position and size, modified so that the most-negative corner is the origin and the size is positive.
+Returns an **AABB** equivalent to this bounding box, with its width, height, and depth modified to be non-negative values.
+
+
+.. tabs::
+
+ .. code-tab:: gdscript
+
+    var box = AABB(Vector3(5, 0, 5), Vector3(-20, -10, -5))
+    var absolute = box.abs()
+    print(absolute.position) # Prints (-15, -10, 0)
+    print(absolute.size)     # Prints (20, 10, 5)
+
+ .. code-tab:: csharp
+
+    var box = new Aabb(new Vector3(5, 0, 5), new Vector3(-20, -10, -5));
+    var absolute = box.Abs();
+    GD.Print(absolute.Position); // Prints (-15, -10, 0)
+    GD.Print(absolute.Size);     // Prints (20, 10, 5)
+
+
+
+\ **Note:** It's recommended to use this method when :ref:`size<class_AABB_property_size>` is negative, as most other methods in Godot assume that the :ref:`size<class_AABB_property_size>`'s components are greater than ``0``.
 
 .. rst-class:: classref-item-separator
 
@@ -255,7 +276,32 @@ Returns an AABB with equivalent position and size, modified so that the most-neg
 
 :ref:`bool<class_bool>` **encloses** **(** :ref:`AABB<class_AABB>` with **)** |const|
 
-Returns ``true`` if this **AABB** completely encloses another one.
+Returns ``true`` if this bounding box *completely* encloses the ``with`` box. The edges of both boxes are included.
+
+
+.. tabs::
+
+ .. code-tab:: gdscript
+
+    var a = AABB(Vector3(0, 0, 0), Vector3(4, 4, 4))
+    var b = AABB(Vector3(1, 1, 1), Vector3(3, 3, 3))
+    var c = AABB(Vector3(2, 2, 2), Vector3(8, 8, 8))
+    
+    print(a.encloses(a)) # Prints true
+    print(a.encloses(b)) # Prints true
+    print(a.encloses(c)) # Prints false
+
+ .. code-tab:: csharp
+
+    var a = new Aabb(new Vector3(0, 0, 0), new Vector3(4, 4, 4));
+    var b = new Aabb(new Vector3(1, 1, 1), new Vector3(3, 3, 3));
+    var c = new Aabb(new Vector3(2, 2, 2), new Vector3(8, 8, 8));
+    
+    GD.Print(a.Encloses(a)); // Prints True
+    GD.Print(a.Encloses(b)); // Prints True
+    GD.Print(a.Encloses(c)); // Prints False
+
+
 
 .. rst-class:: classref-item-separator
 
@@ -267,26 +313,34 @@ Returns ``true`` if this **AABB** completely encloses another one.
 
 :ref:`AABB<class_AABB>` **expand** **(** :ref:`Vector3<class_Vector3>` to_point **)** |const|
 
-Returns a copy of this **AABB** expanded to include a given point.
-
-\ **Example:**\ 
+Returns a copy of this bounding box expanded to align the edges with the given ``to_point``, if necessary.
 
 
 .. tabs::
 
  .. code-tab:: gdscript
 
-    # position (-3, 2, 0), size (1, 1, 1)
-    var box = AABB(Vector3(-3, 2, 0), Vector3(1, 1, 1))
-    # position (-3, -1, 0), size (3, 4, 2), so we fit both the original AABB and Vector3(0, -1, 2)
-    var box2 = box.expand(Vector3(0, -1, 2))
+    var box = AABB(Vector3(0, 0, 0), Vector3(5, 2, 5))
+    
+    box = box.expand(Vector3(10, 0, 0))
+    print(box.position) # Prints (0, 0, 0)
+    print(box.size)     # Prints (10, 2, 5)
+    
+    box = box.expand(Vector3(-5, 0, 5))
+    print(box.position) # Prints (-5, 0, 0)
+    print(box.size)     # Prints (15, 2, 5)
 
  .. code-tab:: csharp
 
-    // position (-3, 2, 0), size (1, 1, 1)
-    var box = new Aabb(new Vector3(-3, 2, 0), new Vector3(1, 1, 1));
-    // position (-3, -1, 0), size (3, 4, 2), so we fit both the original AABB and Vector3(0, -1, 2)
-    var box2 = box.Expand(new Vector3(0, -1, 2));
+    var box = new Aabb(new Vector3(0, 0, 0), new Vector3(5, 2, 5));
+    
+    box = box.Expand(new Vector3(10, 0, 0));
+    GD.Print(box.Position); // Prints (0, 0, 0)
+    GD.Print(box.Size);     // Prints (10, 2, 5)
+    
+    box = box.Expand(new Vector3(-5, 0, 5));
+    GD.Print(box.Position); // Prints (-5, 0, 0)
+    GD.Print(box.Size);     // Prints (15, 2, 5)
 
 
 
@@ -300,7 +354,7 @@ Returns a copy of this **AABB** expanded to include a given point.
 
 :ref:`Vector3<class_Vector3>` **get_center** **(** **)** |const|
 
-Returns the center of the **AABB**, which is equal to :ref:`position<class_AABB_property_position>` + (:ref:`size<class_AABB_property_size>` / 2).
+Returns the center point of the bounding box. This is the same as ``position + (size / 2.0)``.
 
 .. rst-class:: classref-item-separator
 
@@ -312,7 +366,7 @@ Returns the center of the **AABB**, which is equal to :ref:`position<class_AABB_
 
 :ref:`Vector3<class_Vector3>` **get_endpoint** **(** :ref:`int<class_int>` idx **)** |const|
 
-Gets the position of the 8 endpoints of the **AABB** in space.
+Returns the position of one of the 8 vertices that compose this bounding box. With a ``idx`` of ``0`` this is the same as :ref:`position<class_AABB_property_position>`, and a ``idx`` of ``7`` is the same as :ref:`end<class_AABB_property_end>`.
 
 .. rst-class:: classref-item-separator
 
@@ -324,7 +378,30 @@ Gets the position of the 8 endpoints of the **AABB** in space.
 
 :ref:`Vector3<class_Vector3>` **get_longest_axis** **(** **)** |const|
 
-Returns the normalized longest axis of the **AABB**.
+Returns the longest normalized axis of this bounding box's :ref:`size<class_AABB_property_size>`, as a :ref:`Vector3<class_Vector3>` (:ref:`Vector3.RIGHT<class_Vector3_constant_RIGHT>`, :ref:`Vector3.UP<class_Vector3_constant_UP>`, or :ref:`Vector3.BACK<class_Vector3_constant_BACK>`).
+
+
+.. tabs::
+
+ .. code-tab:: gdscript
+
+    var box = AABB(Vector3(0, 0, 0), Vector3(2, 4, 8))
+    
+    print(box.get_longest_axis())       # Prints (0, 0, 1)
+    print(box.get_longest_axis_index()) # Prints 2
+    print(box.get_longest_axis_size())  # Prints 8
+
+ .. code-tab:: csharp
+
+    var box = new Aabb(new Vector3(0, 0, 0), new Vector3(2, 4, 8));
+    
+    GD.Print(box.GetLongestAxis());      // Prints (0, 0, 1)
+    GD.Print(box.GetLongestAxisIndex()); // Prints 2
+    GD.Print(box.GetLongestAxisSize());  // Prints 8
+
+
+
+See also :ref:`get_longest_axis_index<class_AABB_method_get_longest_axis_index>` and :ref:`get_longest_axis_size<class_AABB_method_get_longest_axis_size>`.
 
 .. rst-class:: classref-item-separator
 
@@ -336,7 +413,9 @@ Returns the normalized longest axis of the **AABB**.
 
 :ref:`int<class_int>` **get_longest_axis_index** **(** **)** |const|
 
-Returns the index of the longest axis of the **AABB** (according to :ref:`Vector3<class_Vector3>`'s ``AXIS_*`` constants).
+Returns the index to the longest axis of this bounding box's :ref:`size<class_AABB_property_size>` (see :ref:`Vector3.AXIS_X<class_Vector3_constant_AXIS_X>`, :ref:`Vector3.AXIS_Y<class_Vector3_constant_AXIS_Y>`, and :ref:`Vector3.AXIS_Z<class_Vector3_constant_AXIS_Z>`).
+
+For an example, see :ref:`get_longest_axis<class_AABB_method_get_longest_axis>`.
 
 .. rst-class:: classref-item-separator
 
@@ -348,7 +427,9 @@ Returns the index of the longest axis of the **AABB** (according to :ref:`Vector
 
 :ref:`float<class_float>` **get_longest_axis_size** **(** **)** |const|
 
-Returns the scalar length of the longest axis of the **AABB**.
+Returns the longest dimension of this bounding box's :ref:`size<class_AABB_property_size>`.
+
+For an example, see :ref:`get_longest_axis<class_AABB_method_get_longest_axis>`.
 
 .. rst-class:: classref-item-separator
 
@@ -360,7 +441,30 @@ Returns the scalar length of the longest axis of the **AABB**.
 
 :ref:`Vector3<class_Vector3>` **get_shortest_axis** **(** **)** |const|
 
-Returns the normalized shortest axis of the **AABB**.
+Returns the shortest normaalized axis of this bounding box's :ref:`size<class_AABB_property_size>`, as a :ref:`Vector3<class_Vector3>` (:ref:`Vector3.RIGHT<class_Vector3_constant_RIGHT>`, :ref:`Vector3.UP<class_Vector3_constant_UP>`, or :ref:`Vector3.BACK<class_Vector3_constant_BACK>`).
+
+
+.. tabs::
+
+ .. code-tab:: gdscript
+
+    var box = AABB(Vector3(0, 0, 0), Vector3(2, 4, 8))
+    
+    print(box.get_shortest_axis())       # Prints (1, 0, 0)
+    print(box.get_shortest_axis_index()) # Prints 0
+    print(box.get_shortest_axis_size())  # Prints 2
+
+ .. code-tab:: csharp
+
+    var box = new Aabb(new Vector3(0, 0, 0), new Vector3(2, 4, 8));
+    
+    GD.Print(box.GetShortestAxis());      // Prints (1, 0, 0)
+    GD.Print(box.GetShortestAxisIndex()); // Prints 0
+    GD.Print(box.GetShortestAxisSize());  // Prints 2
+
+
+
+See also :ref:`get_shortest_axis_index<class_AABB_method_get_shortest_axis_index>` and :ref:`get_shortest_axis_size<class_AABB_method_get_shortest_axis_size>`.
 
 .. rst-class:: classref-item-separator
 
@@ -372,7 +476,9 @@ Returns the normalized shortest axis of the **AABB**.
 
 :ref:`int<class_int>` **get_shortest_axis_index** **(** **)** |const|
 
-Returns the index of the shortest axis of the **AABB** (according to :ref:`Vector3<class_Vector3>`::AXIS\* enum).
+Returns the index to the shortest axis of this bounding box's :ref:`size<class_AABB_property_size>` (see :ref:`Vector3.AXIS_X<class_Vector3_constant_AXIS_X>`, :ref:`Vector3.AXIS_Y<class_Vector3_constant_AXIS_Y>`, and :ref:`Vector3.AXIS_Z<class_Vector3_constant_AXIS_Z>`).
+
+For an example, see :ref:`get_shortest_axis<class_AABB_method_get_shortest_axis>`.
 
 .. rst-class:: classref-item-separator
 
@@ -384,7 +490,9 @@ Returns the index of the shortest axis of the **AABB** (according to :ref:`Vecto
 
 :ref:`float<class_float>` **get_shortest_axis_size** **(** **)** |const|
 
-Returns the scalar length of the shortest axis of the **AABB**.
+Returns the shortest dimension of this bounding box's :ref:`size<class_AABB_property_size>`.
+
+For an example, see :ref:`get_shortest_axis<class_AABB_method_get_shortest_axis>`.
 
 .. rst-class:: classref-item-separator
 
@@ -396,7 +504,7 @@ Returns the scalar length of the shortest axis of the **AABB**.
 
 :ref:`Vector3<class_Vector3>` **get_support** **(** :ref:`Vector3<class_Vector3>` dir **)** |const|
 
-Returns the vertex of the AABB that's the farthest in a given direction. This point is commonly known as the support point in collision detection algorithms.
+Returns the vertex's position of this bounding box that's the farthest in the given direction. This point is commonly known as the support point in collision detection algorithms.
 
 .. rst-class:: classref-item-separator
 
@@ -408,7 +516,7 @@ Returns the vertex of the AABB that's the farthest in a given direction. This po
 
 :ref:`float<class_float>` **get_volume** **(** **)** |const|
 
-Returns the volume of the **AABB**.
+Returns the bounding box's volume. This is equivalent to ``size.x * size.y * size.z``. See also :ref:`has_volume<class_AABB_method_has_volume>`.
 
 .. rst-class:: classref-item-separator
 
@@ -420,7 +528,32 @@ Returns the volume of the **AABB**.
 
 :ref:`AABB<class_AABB>` **grow** **(** :ref:`float<class_float>` by **)** |const|
 
-Returns a copy of the **AABB** grown a given number of units towards all the sides.
+Returns a copy of this bounding box extended on all sides by the given amount ``by``. A negative amount shrinks the box instead.
+
+
+.. tabs::
+
+ .. code-tab:: gdscript
+
+    var a = AABB(Vector3(4, 4, 4), Vector3(8, 8, 8)).grow(4)
+    print(a.position) # Prints (0, 0, 0)
+    print(a.size)     # Prints (16, 16, 16)
+    
+    var b = AABB(Vector3(0, 0, 0), Vector3(8, 4, 2)).grow(2)
+    print(b.position) # Prints (-2, -2, -2)
+    print(b.size)     # Prints (12, 8, 6)
+
+ .. code-tab:: csharp
+
+    var a = new Aabb(new Vector3(4, 4, 4), new Vector3(8, 8, 8)).Grow(4);
+    GD.Print(a.Position); // Prints (0, 0, 0)
+    GD.Print(a.Size);     // Prints (16, 16, 16)
+    
+    var b = new Aabb(new Vector3(0, 0, 0), new Vector3(8, 4, 2)).Grow(2);
+    GD.Print(b.Position); // Prints (-2, -2, -2)
+    GD.Print(b.Size);     // Prints (12, 8, 6)
+
+
 
 .. rst-class:: classref-item-separator
 
@@ -432,9 +565,9 @@ Returns a copy of the **AABB** grown a given number of units towards all the sid
 
 :ref:`bool<class_bool>` **has_point** **(** :ref:`Vector3<class_Vector3>` point **)** |const|
 
-Returns ``true`` if the **AABB** contains a point. Points on the faces of the AABB are considered included, though float-point precision errors may impact the accuracy of such checks.
+Returns ``true`` if the bounding box contains the given ``point``. By convention, points exactly on the right, top, and front sides are **not** included.
 
-\ **Note:** This method is not reliable for **AABB** with a *negative size*. Use :ref:`abs<class_AABB_method_abs>` to get a positive sized equivalent **AABB** to check for contained points.
+\ **Note:** This method is not reliable for **AABB** with a *negative* :ref:`size<class_AABB_property_size>`. Use :ref:`abs<class_AABB_method_abs>` first to get a valid bounding box.
 
 .. rst-class:: classref-item-separator
 
@@ -446,7 +579,7 @@ Returns ``true`` if the **AABB** contains a point. Points on the faces of the AA
 
 :ref:`bool<class_bool>` **has_surface** **(** **)** |const|
 
-Returns ``true`` if the **AABB** has a surface or a length, and ``false`` if the **AABB** is empty (all components of :ref:`size<class_AABB_property_size>` are zero or negative).
+Returns ``true`` if this bounding box has a surface or a length, that is, at least one component of :ref:`size<class_AABB_property_size>` is greater than ``0``. Otherwise, returns ``false``.
 
 .. rst-class:: classref-item-separator
 
@@ -458,7 +591,7 @@ Returns ``true`` if the **AABB** has a surface or a length, and ``false`` if the
 
 :ref:`bool<class_bool>` **has_volume** **(** **)** |const|
 
-Returns ``true`` if the **AABB** has a volume, and ``false`` if the **AABB** is flat, empty, or has a negative :ref:`size<class_AABB_property_size>`.
+Returns ``true`` if this bounding box's width, height, and depth are all positive. See also :ref:`get_volume<class_AABB_method_get_volume>`.
 
 .. rst-class:: classref-item-separator
 
@@ -470,7 +603,32 @@ Returns ``true`` if the **AABB** has a volume, and ``false`` if the **AABB** is 
 
 :ref:`AABB<class_AABB>` **intersection** **(** :ref:`AABB<class_AABB>` with **)** |const|
 
-Returns the intersection between two **AABB**. An empty AABB (size ``(0, 0, 0)``) is returned on failure.
+Returns the intersection between this bounding box and ``with``. If the boxes do not intersect, returns an empty **AABB**. If the boxes intersect at the edge, returns a flat **AABB** with no volume (see :ref:`has_surface<class_AABB_method_has_surface>` and :ref:`has_volume<class_AABB_method_has_volume>`).
+
+
+.. tabs::
+
+ .. code-tab:: gdscript
+
+    var box1 = AABB(Vector3(0, 0, 0), Vector3(5, 2, 8))
+    var box2 = AABB(Vector3(2, 0, 2), Vector3(8, 4, 4))
+    
+    var intersection = box1.intersection(box2)
+    print(intersection.position) # Prints (2, 0, 2)
+    print(intersection.size)     # Prints (3, 2, 4)
+
+ .. code-tab:: csharp
+
+    var box1 = new Aabb(new Vector3(0, 0, 0), new Vector3(5, 2, 8));
+    var box2 = new Aabb(new Vector3(2, 0, 2), new Vector3(8, 4, 4));
+    
+    var intersection = box1.Intersection(box2);
+    GD.Print(intersection.Position); // Prints (2, 0, 2)
+    GD.Print(intersection.Size);     // Prints (3, 2, 4)
+
+
+
+\ **Note:** If you only need to know whether two bounding boxes are intersecting, use :ref:`intersects<class_AABB_method_intersects>`, instead.
 
 .. rst-class:: classref-item-separator
 
@@ -482,7 +640,7 @@ Returns the intersection between two **AABB**. An empty AABB (size ``(0, 0, 0)``
 
 :ref:`bool<class_bool>` **intersects** **(** :ref:`AABB<class_AABB>` with **)** |const|
 
-Returns ``true`` if the **AABB** overlaps with another.
+Returns ``true`` if this bounding box overlaps with the box ``with``. The edges of both boxes are *always* excluded.
 
 .. rst-class:: classref-item-separator
 
@@ -494,7 +652,7 @@ Returns ``true`` if the **AABB** overlaps with another.
 
 :ref:`bool<class_bool>` **intersects_plane** **(** :ref:`Plane<class_Plane>` plane **)** |const|
 
-Returns ``true`` if the **AABB** is on both sides of a plane.
+Returns ``true`` if this bounding box is on both sides of the given ``plane``.
 
 .. rst-class:: classref-item-separator
 
@@ -506,7 +664,9 @@ Returns ``true`` if the **AABB** is on both sides of a plane.
 
 :ref:`Variant<class_Variant>` **intersects_ray** **(** :ref:`Vector3<class_Vector3>` from, :ref:`Vector3<class_Vector3>` dir **)** |const|
 
-Returns the point of intersection of the given ray with this **AABB** or ``null`` if there is no intersection. Ray length is infinite.
+Returns the first point where this bounding box and the given ray intersect, as a :ref:`Vector3<class_Vector3>`. If no intersection occurs, returns ``null``.
+
+The ray begin at ``from``, faces ``dir`` and extends towards infinity.
 
 .. rst-class:: classref-item-separator
 
@@ -518,7 +678,9 @@ Returns the point of intersection of the given ray with this **AABB** or ``null`
 
 :ref:`Variant<class_Variant>` **intersects_segment** **(** :ref:`Vector3<class_Vector3>` from, :ref:`Vector3<class_Vector3>` to **)** |const|
 
-Returns the point of intersection between ``from`` and ``to`` with this **AABB** or ``null`` if there is no intersection.
+Returns the first point where this bounding box and the given segment intersect, as a :ref:`Vector3<class_Vector3>`. If no intersection occurs, returns ``null``.
+
+The segment begins at ``from`` and ends at ``to``.
 
 .. rst-class:: classref-item-separator
 
@@ -530,7 +692,7 @@ Returns the point of intersection between ``from`` and ``to`` with this **AABB**
 
 :ref:`bool<class_bool>` **is_equal_approx** **(** :ref:`AABB<class_AABB>` aabb **)** |const|
 
-Returns ``true`` if this **AABB** and ``aabb`` are approximately equal, by calling :ref:`@GlobalScope.is_equal_approx<class_@GlobalScope_method_is_equal_approx>` on each component.
+Returns ``true`` if this bounding box and ``aabb`` are approximately equal, by calling :ref:`Vector2.is_equal_approx<class_Vector2_method_is_equal_approx>` on the :ref:`position<class_AABB_property_position>` and the :ref:`size<class_AABB_property_size>`.
 
 .. rst-class:: classref-item-separator
 
@@ -542,7 +704,7 @@ Returns ``true`` if this **AABB** and ``aabb`` are approximately equal, by calli
 
 :ref:`bool<class_bool>` **is_finite** **(** **)** |const|
 
-Returns ``true`` if this **AABB** is finite, by calling :ref:`@GlobalScope.is_finite<class_@GlobalScope_method_is_finite>` on each component.
+Returns ``true`` if this bounding box's values are finite, by calling :ref:`Vector2.is_finite<class_Vector2_method_is_finite>` on the :ref:`position<class_AABB_property_position>` and the :ref:`size<class_AABB_property_size>`.
 
 .. rst-class:: classref-item-separator
 
@@ -554,7 +716,7 @@ Returns ``true`` if this **AABB** is finite, by calling :ref:`@GlobalScope.is_fi
 
 :ref:`AABB<class_AABB>` **merge** **(** :ref:`AABB<class_AABB>` with **)** |const|
 
-Returns a larger **AABB** that contains both this **AABB** and ``with``.
+Returns an **AABB** that encloses both this bounding box and ``with`` around the edges. See also :ref:`encloses<class_AABB_method_encloses>`.
 
 .. rst-class:: classref-section-separator
 
@@ -571,7 +733,7 @@ Operator Descriptions
 
 :ref:`bool<class_bool>` **operator !=** **(** :ref:`AABB<class_AABB>` right **)**
 
-Returns ``true`` if the AABBs are not equal.
+Returns ``true`` if the :ref:`position<class_AABB_property_position>` or :ref:`size<class_AABB_property_size>` of both bounding boxes are not equal.
 
 \ **Note:** Due to floating-point precision errors, consider using :ref:`is_equal_approx<class_AABB_method_is_equal_approx>` instead, which is more reliable.
 
@@ -601,7 +763,7 @@ For transforming by inverse of an affine transformation (e.g. with scaling) ``tr
 
 :ref:`bool<class_bool>` **operator ==** **(** :ref:`AABB<class_AABB>` right **)**
 
-Returns ``true`` if the AABBs are exactly equal.
+Returns ``true`` if both :ref:`position<class_AABB_property_position>` and :ref:`size<class_AABB_property_size>` of the bounding boxes are exactly equal, respectively.
 
 \ **Note:** Due to floating-point precision errors, consider using :ref:`is_equal_approx<class_AABB_method_is_equal_approx>` instead, which is more reliable.
 

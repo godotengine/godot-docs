@@ -401,7 +401,7 @@ Removes the index array by expanding the vertex array.
 
 Generates a LOD for a given ``nd_threshold`` in linear units (square root of quadric error metric), using at most ``target_index_count`` indices.
 
-\ *Deprecated.* Unused internally and neglects to preserve normals or UVs. Consider using :ref:`ImporterMesh.generate_lods<class_ImporterMesh_method_generate_lods>` instead.
+\ *Deprecated.* Unused internally and fails to preserve normals or UVs. Consider using :ref:`ImporterMesh.generate_lods<class_ImporterMesh_method_generate_lods>` instead.
 
 .. rst-class:: classref-item-separator
 

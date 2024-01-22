@@ -2242,7 +2242,7 @@ If ``true``, text-to-speech support is enabled, see :ref:`DisplayServer.tts_get_
 
 :ref:`int<class_int>` **audio/video/video_delay_compensation_ms** = ``0``
 
-Setting to hardcode audio delay when playing video. Best to leave this untouched unless you know what you are doing.
+Setting to hardcode audio delay when playing video. Best to leave this unchanged unless you know what you are doing.
 
 .. rst-class:: classref-item-separator
 
@@ -9100,7 +9100,7 @@ Controls the maximum number of physics steps that can be simulated each rendered
 
 :ref:`float<class_float>` **physics/common/physics_jitter_fix** = ``0.5``
 
-Controls how much physics ticks are synchronized with real time. For 0 or less, the ticks are synchronized. Such values are recommended for network games, where clock synchronization matters. Higher values cause higher deviation of in-game clock and real clock, but allows smoothing out framerate jitters. The default value of 0.5 should be fine for most; values above 2 could cause the game to react to dropped frames with a noticeable delay and are not recommended.
+Controls how much physics ticks are synchronized with real time. For 0 or less, the ticks are synchronized. Such values are recommended for network games, where clock synchronization matters. Higher values cause higher deviation of in-game clock and real clock, but allows smoothing out framerate jitters. The default value of 0.5 should be good enough for most; values above 2 could cause the game to react to dropped frames with a noticeable delay and are not recommended.
 
 \ **Note:** For best results, when using a custom physics interpolation solution, the physics jitter fix should be disabled by setting :ref:`physics/common/physics_jitter_fix<class_ProjectSettings_property_physics/common/physics_jitter_fix>` to ``0``.
 
@@ -10362,9 +10362,7 @@ Max number of positional lights renderable in a frame. If more lights than this 
 
 :ref:`int<class_int>` **rendering/limits/spatial_indexer/threaded_cull_minimum_instances** = ``1000``
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+The minimum number of instances that must be present in a scene to enable culling computations on multiple threads. If a scene has fewer instances than this number, culling is done on a single thread.
 
 .. rst-class:: classref-item-separator
 

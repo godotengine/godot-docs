@@ -51,6 +51,8 @@ Methods
    +-------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                             | :ref:`_get_length<class_AudioStream_private_method__get_length>` **(** **)** |virtual| |const|                     |
    +-------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Dictionary[]<class_Dictionary>`                 | :ref:`_get_parameter_list<class_AudioStream_private_method__get_parameter_list>` **(** **)** |virtual| |const|     |
+   +-------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                           | :ref:`_get_stream_name<class_AudioStream_private_method__get_stream_name>` **(** **)** |virtual| |const|           |
    +-------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
    | :ref:`AudioStreamPlayback<class_AudioStreamPlayback>` | :ref:`_instantiate_playback<class_AudioStream_private_method__instantiate_playback>` **(** **)** |virtual| |const| |
@@ -63,6 +65,23 @@ Methods
    +-------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                               | :ref:`is_monophonic<class_AudioStream_method_is_monophonic>` **(** **)** |const|                                   |
    +-------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
+
+Signals
+-------
+
+.. _class_AudioStream_signal_parameter_list_changed:
+
+.. rst-class:: classref-signal
+
+**parameter_list_changed** **(** **)**
+
+Signal to be emitted to notify when the parameter list changed.
 
 .. rst-class:: classref-section-separator
 
@@ -110,6 +129,18 @@ Method Descriptions
 .. container:: contribute
 
 	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_AudioStream_private_method__get_parameter_list:
+
+.. rst-class:: classref-method
+
+:ref:`Dictionary[]<class_Dictionary>` **_get_parameter_list** **(** **)** |virtual| |const|
+
+Return the controllable parameters of this stream. This array contains dictionaries with a property info description format (see :ref:`Object.get_property_list<class_Object_method_get_property_list>`). Additionally, the default value for this parameter must be added tho each dictionary in "default_value" field.
 
 .. rst-class:: classref-item-separator
 

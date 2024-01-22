@@ -1134,7 +1134,7 @@ Allow moving caret, selecting and removing the individual composite character co
 
 If ``true``, a right-click moves the caret at the mouse position before displaying the context menu.
 
-If ``false``, the context menu disregards mouse location.
+If ``false``, the context menu ignores mouse location.
 
 .. rst-class:: classref-item-separator
 
