@@ -89,6 +89,17 @@ export for that platform until they resolve it:
 At that time, the user is expected to come back to the documentation and follow
 instructions on how to properly set up that platform.
 
+The buttons at the bottom of the menu allow you to export the project in a few
+different ways:
+
+- Export All: Export the project as a playable build (Godot executable and project data)
+  for all the presets defined. All presets must have an **Export Path** defined for this
+  to work.
+- Export Project: Export the project as a playable build
+  (Godot executable and project data) for the selected preset.
+- Export PCK/ZIP: Export the project resources as a PCK or ZIP package.
+  This is not a playable build, it only exports the project data without a Godot executable.
+
 Export templates
 ~~~~~~~~~~~~~~~~
 
