@@ -99,6 +99,7 @@ The bindings below are developed and maintained by the community:
 - `Haxe <https://hxgodot.github.io/>`__
 - `Rust <https://github.com/godot-rust/gdext>`__
 - `Swift <https://github.com/migueldeicaza/SwiftGodot>`__
+- `Go <https://github.com/grow-graphics/gd>`__
 
 .. note::
 
