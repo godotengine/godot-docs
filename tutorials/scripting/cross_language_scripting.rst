@@ -42,7 +42,7 @@ The following two scripts will be used as references throughout this page.
     {
         public string myField = "bar";
 
-        [Signal] public delegate void MySignal();
+        [Signal] public delegate void MySignalEventHandler();
 
         public void PrintNodeName(Node node)
         {
