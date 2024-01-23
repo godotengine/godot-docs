@@ -40,7 +40,7 @@ Download and install the Android SDK.
     - CMake version 3.10.2.4988404
     - NDK version r23c (23.2.8568313)
 
-- Alternatively, you can install the Android SDK using the `command line tools <https://developer.android.com/studio/#command-tools>`__.
+- Alternatively, you can install the Android SDK using the `command line tools <https://developer.android.com/studio/#command-line-tools-only>`__.
 
   - Once the command line tools are installed, run the `sdkmanager <https://developer.android.com/studio/command-line/sdkmanager>`__ command to complete the setup process:
 
