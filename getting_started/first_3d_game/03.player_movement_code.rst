@@ -139,7 +139,8 @@ call its ``normalized()`` method.
 
        if direction != Vector3.ZERO:
            direction = direction.normalized()
-           $Pivot.look_at(position + direction, Vector3.UP)
+           # Setting the basis property will affect the rotation of the node.
+           $Pivot.basis = Basis.looking_at(direction)
 
  .. code-tab:: csharp
 
@@ -150,26 +151,16 @@ call its ``normalized()`` method.
         if (direction != Vector3.Zero)
         {
             direction = direction.Normalized();
-            GetNode<Node3D>("Pivot").LookAt(Position + direction, Vector3.Up);
+            // Setting the basis property will affect the rotation of the node.
+            GetNode<Node3D>("Pivot").Basis = Basis.LookingAt(direction);
         }
     }
 
 Here, we only normalize the vector if the direction has a length greater than
 zero, which means the player is pressing a direction key.
 
-In this case, we also get the ``Pivot`` node and call its ``look_at()`` method.
-This method takes a position in space to look at in global coordinates and the
-up direction. In this case, we can use the ``Vector3.UP`` constant.
-
-.. note::
-
-    A node's local coordinates, like ``position``, are relative to their
-    parent. Global coordinates, like ``global_position`` are relative to the world's main axes you can see
-    in the viewport instead.
-
-In 3D, the property that contains a node's position is ``position``. By
-adding the ``direction`` to it, we get a position to look at that's one meter
-away from the ``Player``.
+We compute the direction the ``$Pivot`` is looking by creating a :ref:`Basis <class_Basis>`
+that looks in the ``direction`` direction.
 
 Then, we update the velocity. We have to calculate the ground velocity and the
 fall speed separately. Be sure to go back one tab so the lines are inside the
@@ -274,7 +265,7 @@ Here is the complete ``Player.gd`` code for reference.
 
         if direction != Vector3.ZERO:
             direction = direction.normalized()
-            $Pivot.look_at(position + direction, Vector3.UP)
+            $Pivot.basis = Basis.looking_at(direction)
 
         # Ground Velocity
         target_velocity.x = direction.x * speed
@@ -327,7 +318,7 @@ Here is the complete ``Player.gd`` code for reference.
             if (direction != Vector3.Zero)
             {
                 direction = direction.Normalized();
-                GetNode<Node3D>("Pivot").LookAt(Position + direction, Vector3.Up);
+                GetNode<Node3D>("Pivot").Basis = Basis.LookingAt(direction);
             }
 
             // Ground velocity
