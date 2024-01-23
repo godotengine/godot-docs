@@ -56,7 +56,7 @@ Creating the PO template
 ------------------------
 
 Automatic generation using the editor
--------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Since Godot 4.0, the editor can generate a PO template automatically from
 specified scene and GDScript files. This POT generation also supports translation
@@ -89,7 +89,7 @@ You can then move over to
     update translations for outdated strings.
 
 Manual creation
----------------
+^^^^^^^^^^^^^^^
 
 If the automatic generation approach doesn't work out for your needs, you can
 create a PO template by hand in a text editor. This file can be placed anywhere
