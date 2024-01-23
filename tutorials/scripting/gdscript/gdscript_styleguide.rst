@@ -477,9 +477,9 @@ comments from disabled code.
 
 .. note::
 
-    In the script editor, to toggle the selected code commented, press
-    :kbd:`Ctrl + K`. This feature adds a single ``#`` sign at the start
-    of the selected lines.
+    In the script editor, to toggle commenting of the selected code, press
+    :kbd:`Ctrl + K`. This feature adds/removes a single ``#`` sign before any
+    code on the selected lines.
 
 Whitespace
 ~~~~~~~~~~
