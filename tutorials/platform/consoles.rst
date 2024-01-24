@@ -79,9 +79,11 @@ Following is the list of providers:
   Switch, Xbox One, Playstation 4 & Playstation 5 porting and publishing of Godot games.
 - `Tuanisapps <https://www.tuanisapps.com/>`_ offers
   Switch porting and publishing of Godot games.
+- `Seaven Studio <https://www.seaven-studio.com/>`_ offers
+  Switch, Xbox One, Xbox Series, PlayStation 4 & PlayStation 5 porting of Godot games.
 
 
 If your company offers porting, or porting *and* publishing services for Godot games,
 feel free to
-`open an issue or pull request <https://github.com/godotengine/godot-docs>`_
+`contact the Godot Foundation <https://godot.foundation/#contact>`_
 to add your company to the list above.
