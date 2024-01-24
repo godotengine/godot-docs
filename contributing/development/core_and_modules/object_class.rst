@@ -80,7 +80,7 @@ Default values for arguments can be passed as parameters at the end:
     ClassDB::bind_method(D_METHOD("methodname", "arg1name", "arg2name", "arg3name"), &MyCustomType::method, DEFVAL(-1), DEFVAL(-2)); // Default values for arg2name (-1) and arg3name (-2).
 
 Default values must be provided in the same order as they are declared,
-skipping requried arguments and then providing default values for the optional ones.
+skipping required arguments and then providing default values for the optional ones.
 This matches the syntax for declaring methods in C++.
 
 ``D_METHOD`` is a macro that converts "methodname" to a StringName for more
