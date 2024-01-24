@@ -116,12 +116,6 @@ In the ``launch.json`` file, make sure the ``program`` parameter in the relevant
 changing it to the path of the executable or by defining a ``GODOT4`` environment variable that points to the
 executable. Now, when you start the debugger in Visual Studio Code, your Godot project will run.
 
-.. note::
-
-    There is also a `C# Tools for Godot <https://marketplace.visualstudio.com/items?itemName=neikeq.godot-csharp-vscode>`__
-    Visual Studio Code extension, that is meant to make this setup easier and to provide further useful tools.
-    But it is not yet updated to work with Godot 4.
-
 Visual Studio (Windows only)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
