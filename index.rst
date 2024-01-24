@@ -80,6 +80,7 @@ the ``GodotEngine.epub`` file in an e-book reader application.
 
    about/introduction
    about/list_of_features
+   about/system_requirements
    about/faq
    about/complying_with_licenses
    about/release_policy
