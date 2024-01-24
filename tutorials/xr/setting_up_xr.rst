@@ -39,7 +39,8 @@ While in Godot 3 most things worked out of the box, Godot 4 needs a little more 
     As Godot 4 is still in development, many post process effects have not yet been updated to support stereoscopic rendering. Using these will have adverse effects.
 
 .. note::
-    Godot also has the choice between a desktop and mobile Vulkan renderer. There are a number of optimisations added to the mobile renderer that benefit XR applications. You may wish to enable this even on desktop.
+    Godot 4 has 3 renderer options, Compatibility, Mobile, and Forward+. In the future XR desktop projects should use Forward+, and projects for stand-alone headsets
+    should use Mobile. However Compatibility is the recommended renderer for now due to it having the best XR performance.
 
 OpenXR
 ------
