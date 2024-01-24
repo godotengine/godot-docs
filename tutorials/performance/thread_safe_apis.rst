@@ -60,6 +60,10 @@ To make rendering thread-safe, set the **Rendering > Driver > Thread Model** pro
 Note that the Multi-Threaded thread model has several known bugs, so it may not be usable
 in all scenarios.
 
+You should avoid calling functions involving direct interaction with the GPU on other threads, such as creating new textures
+or modifying and retrieving image data, these operations can lead to performance stalls because they require synchronization 
+with the :ref:`RenderingServer<class_RenderingServer>`, as data needs to be transmitted to or updated on the GPU.
+
 GDScript arrays, dictionaries
 -----------------------------
 
