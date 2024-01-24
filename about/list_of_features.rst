@@ -16,24 +16,30 @@ This page aims to list **all** features currently supported by Godot.
 Platforms
 ---------
 
+.. seealso::
+
+    See :ref:`doc_system_requirements` for hardware and software version requirements.
+
 **Can run both the editor and exported projects:**
 
-- Windows 7 and later (64-bit and 32-bit).
-- macOS 10.12 and later (64-bit, x86 and ARM).
-- Linux (64-bit, x86 and ARM).
+- Windows (x86, 64-bit and 32-bit).
+- macOS (x86 and ARM, 64-bit only).
+- Linux (x86 and ARM, 64-bit and 32-bit).
 
    - Binaries are statically linked and can run on any distribution if compiled
      on an old enough base distribution.
-   - Official binaries are compiled on Ubuntu 14.04.
-   - 32-bit binaries can be compiled from source.
+   - Official binaries are compiled using the
+     `Godot Engine buildroot <https://github.com/godotengine/buildroot>`__,
+     allowing for binaries that work across common Linux distributions
+     (including LTS variants).
 
-- Android 6.0 and later (editor support is experimental).
+- Android (editor support is experimental).
 - :ref:`Web browsers <doc_using_the_web_editor>`. Experimental in 4.0,
   using Godot 3.x is recommended instead when targeting HTML5.
 
 **Runs exported projects:**
 
-- iOS 11.0 and later.
+- iOS.
 - :ref:`Consoles <doc_consoles>`.
 
 Godot aims to be as platform-independent as possible and can be
