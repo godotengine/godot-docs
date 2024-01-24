@@ -153,11 +153,11 @@ property to the value in the saved scene.
 
 Rerun the game and notice how this ball now falls much faster than the others.
 
-.. note:: If you change a value on the ``PhysicsMaterial`` of one instance, it
-          will affect all the others. This is because ``PhysicsMaterial`` is a
-          resource, and resources are shared between instances. To make a
-          resource unique for one instance, right-click on it in the Inspector
-          and click Make Unique in the contextual menu.
+.. note:: You may notice you are unable to change the values of the ``PhysicsMaterial``
+          of the ball. This is because ``PhysicsMaterial`` is a resource, and needs
+          to be made unique before you can edit it in a scene that is linking to its
+          original scene. To make a resource unique for one instance, right-click on
+          it in the Inspector and click Make Unique in the contextual menu.
 
           Resources are another essential building block of Godot games we will
           cover in a later lesson.
