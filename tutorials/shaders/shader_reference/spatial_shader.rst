@@ -387,9 +387,6 @@ render_mode to ``unshaded``. If no light function is written, Godot will use the
 properties written to in the fragment function to calculate the lighting for you (subject to
 the render_mode).
 
-To write a light function, assign something to ``DIFFUSE_LIGHT`` or ``SPECULAR_LIGHT``. Assigning nothing
-means no light is processed.
-
 The light function is called for every light in every pixel. It is called within a loop for
 each light type.
 
