@@ -71,13 +71,17 @@ Registering functions is one:
 
 .. code-block:: cpp
 
-    ClassDB::bind_method(D_METHOD("methodname", "arg1name", "arg2name"), &MyCustomMethod);
+    ClassDB::bind_method(D_METHOD("methodname", "arg1name", "arg2name", "arg3name"), &MyCustomType::method);
 
-Default values for arguments can be passed in reverse order:
+Default values for arguments can be passed as parameters at the end:
 
 .. code-block:: cpp
 
-    ClassDB::bind_method(D_METHOD("methodname", "arg1name", "arg2name"), &MyCustomType::method, DEFVAL(-1)); // default value for arg2name
+    ClassDB::bind_method(D_METHOD("methodname", "arg1name", "arg2name", "arg3name"), &MyCustomType::method, DEFVAL(-1), DEFVAL(-2)); // Default values for arg2name (-1) and arg3name (-2).
+
+Default values must be provided in the same order as they are declared,
+skipping required arguments and then providing default values for the optional ones.
+This matches the syntax for declaring methods in C++.
 
 ``D_METHOD`` is a macro that converts "methodname" to a StringName for more
 efficiency. Argument names are used for introspection, but when
@@ -142,7 +146,7 @@ For example:
 
     PropertyInfo(Variant::INT, "amount", PROPERTY_HINT_RANGE, "0,49,1", PROPERTY_USAGE_EDITOR)
 
-This is an integer property named "amount". The hint is a range, and the range 
+This is an integer property named "amount". The hint is a range, and the range
 goes from 0 to 49 in steps of 1 (integers). It is only usable for the editor
 (editing the value visually) but won't be serialized.
 
