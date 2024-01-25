@@ -91,6 +91,14 @@ reliability.
     See :ref:`doc_collision_shapes_3d` for a comprehensive overview of collision
     shapes.
 
+Create Occluder (-occ, -occonly)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+If a mesh is imported with the ``-occ`` suffix an :ref:`class_occluder3D` node
+will be created based on the geometry of the mesh, it does not replace the mesh.
+A mesh node with the ``-occonly`` suffix will be converted to an
+:ref:`class_occluder3D` on import.
+
 Create navigation (-navmesh)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
