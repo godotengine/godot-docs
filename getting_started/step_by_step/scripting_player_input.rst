@@ -79,7 +79,7 @@ right arrows on the keyboard or left and right on a gamepad's D-pad.
 Finally, we use the ``direction`` as a multiplier when we update the node's
 ``rotation``: ``rotation += angular_speed * direction * delta``.
 
-Comment out the lines ``var velocity = Vector2.UP.rotated(rotation) * speed`` and ``position += velocity * delta`` with the code below:
+Comment out the lines ``var velocity = Vector2.UP.rotated(rotation) * speed`` and ``position += velocity * delta`` like this:
 
 .. tabs::
 
