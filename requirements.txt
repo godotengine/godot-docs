@@ -26,3 +26,6 @@ sphinxcontrib-htmlhelp==2.0.1
 sphinxcontrib-qthelp==1.0.3
 sphinxcontrib-serializinghtml==1.1.5
 sphinxcontrib-devhelp==1.0.2
+
+# Required by sphinx-tabs 3.4.0 to avoid getting too new of a version
+jinja2<3.1.0
