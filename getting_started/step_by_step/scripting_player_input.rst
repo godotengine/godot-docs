@@ -95,7 +95,7 @@ Comment out the lines ``var velocity = Vector2.UP.rotated(rotation) * speed`` an
 
     //Position += velocity * (float)delta;
 
-This will ignore the code that moved the icon's position in a circles without user input from the previous exercise.
+This will ignore the code that moved the icon's position in a circle without user input from the previous exercise.
 
 If you run the scene with this code, the icon should rotate when you press
 :kbd:`Left` and :kbd:`Right`.
@@ -104,7 +104,7 @@ Moving when pressing "up"
 -------------------------
 
 To only move when pressing a key, we need to modify the code that calculates the
-velocity. Replace the line starting with ``var velocity`` with the code below.
+velocity. Uncomment the code and replace the line starting with ``var velocity`` with the code below.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
