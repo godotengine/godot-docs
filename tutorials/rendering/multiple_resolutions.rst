@@ -72,6 +72,14 @@ that are different from this base size. Godot offers many ways to
 control how the viewport will be resized and stretched to different
 screen sizes.
 
+.. note::
+
+   On this page, *window* refers to the screen area alloted to your game
+   by the system, while *viewport* refers to the root object (accessible 
+   from ``get_tree().root``) which the game controls to fill this screen area.
+   This viewport is a :ref:`Window <class_Window>` instance. Recall from the
+   :ref:`introduction <doc_viewports>` that *all* Window objects are viewports.
+
 To configure the stretch base size at runtime from a script, use the
 ``get_tree().root.content_scale_size`` property (see
 :ref:`Window.content_scale_size <class_Window_property_content_scale_size>`).
