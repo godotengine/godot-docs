@@ -125,13 +125,9 @@ Stretch Mode
 ^^^^^^^^^^^^
 
 The **Stretch Mode** setting defines how the base size is stretched to fit
-the resolution of the window or screen.
-
-.. image:: img/stretch.png
-
-The animations below use a "base size" of just 16×9 pixels to
-demonstrate the effect of different stretch modes. A single sprite, also
-16×9 pixels in size, covers the entire viewport, and a diagonal
+the resolution of the window or screen. The animations below use a "base size"
+of just 16×9 pixels to demonstrate the effect of different stretch modes. A single
+sprite, also16×9 pixels in size, covers the entire viewport, and a diagonal
 :ref:`Line2D <class_Line2D>` is added on top of it:
 
 .. image:: img/stretch_demo_scene.png
