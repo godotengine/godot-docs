@@ -55,6 +55,8 @@ If you are building Godot from source, make sure to follow the steps to enable
 .NET support in your build as outlined in the :ref:`doc_compiling_with_dotnet`
 page.
 
+.. _doc_c_sharp_setup_external_editor:
+
 Configuring an external editor
 ------------------------------
 

@@ -5,6 +5,11 @@ Using an external text editor
 
 This page explains how to code using an external text editor.
 
+.. note::
+
+    To code C# in an external editor, see
+    :ref:`the C# guide to configure an external editor <doc_c_sharp_setup_external_editor>`.
+
 Godot can be used with an external text editor, such as Sublime Text or Visual
 Studio Code. Browse to the relevant editor settings:
 **Editor > Editor Settings > Text Editor > External**
