@@ -6,7 +6,7 @@ SPHINXSOURCEDIR ?= .
 SPHINXBUILDDIR  ?= _build
 SPHINXPAPER     ?=
 FILELIST        ?=
-SPHINXJOBS 	?= 4
+SPHINXJOBS 	    ?= 4
 
 # User-friendly check for sphinx-build
 ifneq ($(shell which $(SPHINXBUILD) >/dev/null 2>&1; echo $$?), 0)
