@@ -81,6 +81,33 @@ be accessed directly in GDScript:
 
    PlayerVariables.health -= 10
 
+The **Enable** column has no effect in C# code. However, if the singleton is a
+C# script, a similar effect can be achieved by including a static property
+called ``Instance`` and assigning it in ``_Ready()``:
+
+.. tabs::
+ .. code-tab:: csharp
+
+    public partial class PlayerVariables : Node
+    {
+        public static PlayerVariables Instance { get; private set; }
+
+        public int Health { get; set; }
+
+        public override void _Ready()
+        {
+            Instance = this;
+        }
+    }
+
+This allows the singleton to be accessed from C# code without ``GetNode()`` and
+without a typecast:
+
+.. tabs::
+ .. code-tab:: csharp
+
+    PlayerVariables.Instance.Health -= 10;
+
 Note that autoload objects (scripts and/or scenes) are accessed just like any
 other node in the scene tree. In fact, if you look at the running scene tree,
 you'll see the autoloaded nodes appear:
