@@ -19,7 +19,7 @@ Represents a GLTF physics shape.
 Description
 -----------
 
-Represents a physics shape as defined by the ``OMI_collider`` GLTF extension. This class is an intermediary between the GLTF data and Godot's nodes, and it's abstracted in a way that allows adding support for different GLTF physics extensions in the future.
+Represents a physics shape as defined by the ``OMI_physics_shape`` or ``OMI_collider`` GLTF extensions. This class is an intermediary between the GLTF data and Godot's nodes, and it's abstracted in a way that allows adding support for different GLTF physics extensions in the future.
 
 .. rst-class:: classref-introduction-group
 
@@ -28,7 +28,9 @@ Tutorials
 
 - :doc:`Runtime file loading and saving <../tutorials/io/runtime_file_loading_and_saving>`
 
-- `OMI_collider GLTF extension <https://github.com/omigroup/gltf-extensions/tree/main/extensions/2.0/OMI_collider>`__
+- `OMI_physics_shape GLTF extension <https://github.com/omigroup/gltf-extensions/tree/main/extensions/2.0/OMI_physics_shape>`__
+
+- `OMI_collider GLTF extension <https://github.com/omigroup/gltf-extensions/tree/main/extensions/2.0/Archived/OMI_collider>`__
 
 .. rst-class:: classref-reftable-group
 
@@ -237,7 +239,7 @@ Create a new GLTFPhysicsShape instance from the given Godot :ref:`CollisionShape
 
 :ref:`Dictionary<class_Dictionary>` **to_dictionary** **(** **)** |const|
 
-Serializes this GLTFPhysicsShape instance into a :ref:`Dictionary<class_Dictionary>`.
+Serializes this GLTFPhysicsShape instance into a :ref:`Dictionary<class_Dictionary>` in the format defined by ``OMI_physics_shape``.
 
 .. rst-class:: classref-item-separator
 

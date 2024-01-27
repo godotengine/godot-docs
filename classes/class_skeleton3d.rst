@@ -155,9 +155,7 @@ Signals
 
 **bone_enabled_changed** **(** :ref:`int<class_int>` bone_idx **)**
 
-.. container:: contribute
-
-	There is currently no description for this signal. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Emitted when the bone at ``bone_idx`` is toggled with :ref:`set_bone_enabled<class_Skeleton3D_method_set_bone_enabled>`. Use :ref:`is_bone_enabled<class_Skeleton3D_method_is_bone_enabled>` to check the new value.
 
 .. rst-class:: classref-item-separator
 
@@ -181,9 +179,7 @@ This signal is emitted when one of the bones in the Skeleton3D node have changed
 
 **pose_updated** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this signal. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Emitted when the pose is updated, after :ref:`NOTIFICATION_UPDATE_SKELETON<class_Skeleton3D_constant_NOTIFICATION_UPDATE_SKELETON>` is received.
 
 .. rst-class:: classref-item-separator
 
@@ -195,9 +191,7 @@ This signal is emitted when one of the bones in the Skeleton3D node have changed
 
 **show_rest_only_changed** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this signal. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Emitted when the value of :ref:`show_rest_only<class_Skeleton3D_property_show_rest_only>` changes.
 
 .. rst-class:: classref-section-separator
 
@@ -214,11 +208,9 @@ Constants
 
 **NOTIFICATION_UPDATE_SKELETON** = ``50``
 
-.. container:: contribute
+Notification received when this skeleton's pose needs to be updated.
 
-	There is currently no description for this constant. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
-
-
+This notification is received *before* the related :ref:`pose_updated<class_Skeleton3D_signal_pose_updated>` signal.
 
 .. rst-class:: classref-section-separator
 
@@ -278,9 +270,7 @@ Multiplies the 3D position track animation.
 - void **set_show_rest_only** **(** :ref:`bool<class_bool>` value **)**
 - :ref:`bool<class_bool>` **is_show_rest_only** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+If ``true``, forces the bones in their default rest pose, regardless of their values. In the editor, this also prevents the bones from being edited.
 
 .. rst-class:: classref-section-separator
 

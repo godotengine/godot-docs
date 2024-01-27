@@ -542,8 +542,6 @@ Returns the current engine version information in a Dictionary.
 
 \ ``hash``     - Holds the full Git commit hash as a String
 
-\ ``year``     - Holds the year the version was released in as an int
-
 \ ``string``   - ``major`` + ``minor`` + ``patch`` + ``status`` + ``build`` in a single String
 
 The ``hex`` value is encoded as follows, from left to right: one byte for the major, one byte for the minor, one byte for the patch version. For example, "3.1.12" would be ``0x03010C``. **Note:** It's still an int internally, and printing it will give you its decimal representation, which is not particularly meaningful. Use hexadecimal literals for easy version comparisons from code:

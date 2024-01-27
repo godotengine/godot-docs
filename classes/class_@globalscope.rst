@@ -7285,6 +7285,8 @@ Encodes a :ref:`Variant<class_Variant>` value to a byte array, without encoding 
 
 \ **Note:** If you need object serialization, see :ref:`var_to_bytes_with_objects<class_@GlobalScope_method_var_to_bytes_with_objects>`.
 
+\ **Note:** Encoding :ref:`Callable<class_Callable>` is not supported and will result in an empty value, regardless of the data.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -7296,6 +7298,8 @@ Encodes a :ref:`Variant<class_Variant>` value to a byte array, without encoding 
 :ref:`PackedByteArray<class_PackedByteArray>` **var_to_bytes_with_objects** **(** :ref:`Variant<class_Variant>` variable **)**
 
 Encodes a :ref:`Variant<class_Variant>` value to a byte array. Encoding objects is allowed (and can potentially include executable code). Deserialization can be done with :ref:`bytes_to_var_with_objects<class_@GlobalScope_method_bytes_to_var_with_objects>`.
+
+\ **Note:** Encoding :ref:`Callable<class_Callable>` is not supported and will result in an empty value, regardless of the data.
 
 .. rst-class:: classref-item-separator
 

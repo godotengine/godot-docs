@@ -2350,7 +2350,7 @@ If canvas item redraw debugging is active, this will be the time the flash will 
 
 :ref:`bool<class_bool>` **debug/file_logging/enable_file_logging** = ``false``
 
-If ``true``, logs all output to files.
+If ``true``, logs all output and error messages to files. See also :ref:`debug/file_logging/log_path<class_ProjectSettings_property_debug/file_logging/log_path>`, :ref:`debug/file_logging/max_log_files<class_ProjectSettings_property_debug/file_logging/max_log_files>`, and :ref:`application/run/flush_stdout_on_print<class_ProjectSettings_property_application/run/flush_stdout_on_print>`.
 
 .. rst-class:: classref-item-separator
 
@@ -2376,6 +2376,8 @@ Desktop override for :ref:`debug/file_logging/enable_file_logging<class_ProjectS
 
 Path at which to store log files for the project. Using a path under ``user://`` is recommended.
 
+This can be specified manually on the command line using the ``--log-file <file>`` :doc:`command line argument <../tutorials/editor/command_line_tutorial>`. If this command line argument is specified, log rotation is automatically disabled (see :ref:`debug/file_logging/max_log_files<class_ProjectSettings_property_debug/file_logging/max_log_files>`).
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -2386,7 +2388,9 @@ Path at which to store log files for the project. Using a path under ``user://``
 
 :ref:`int<class_int>` **debug/file_logging/max_log_files** = ``5``
 
-Specifies the maximum number of log files allowed (used for rotation).
+Specifies the maximum number of log files allowed (used for rotation). Set to ``1`` to disable log file rotation.
+
+If the ``--log-file <file>`` :doc:`command line argument <../tutorials/editor/command_line_tutorial>` is used, log rotation is always disabled.
 
 .. rst-class:: classref-item-separator
 

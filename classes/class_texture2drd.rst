@@ -32,7 +32,7 @@ Properties
    +-------------------------+------------------------------------------------------------------+----------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>` | resource_local_to_scene                                          | ``false`` (overrides :ref:`Resource<class_Resource_property_resource_local_to_scene>`) |
    +-------------------------+------------------------------------------------------------------+----------------------------------------------------------------------------------------+
-   | :ref:`RID<class_RID>`   | :ref:`texture_rd_rid<class_Texture2DRD_property_texture_rd_rid>` | ``RID()``                                                                              |
+   | :ref:`RID<class_RID>`   | :ref:`texture_rd_rid<class_Texture2DRD_property_texture_rd_rid>` |                                                                                        |
    +-------------------------+------------------------------------------------------------------+----------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
@@ -48,7 +48,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`RID<class_RID>` **texture_rd_rid** = ``RID()``
+:ref:`RID<class_RID>` **texture_rd_rid**
 
 .. rst-class:: classref-property-setget
 
