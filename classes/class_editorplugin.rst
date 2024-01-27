@@ -217,7 +217,7 @@ Emitted when any project setting has changed.
 
 **resource_saved** **(** :ref:`Resource<class_Resource>` resource **)**
 
-Emitted when the given ``resource`` was saved on disc.
+Emitted when the given ``resource`` was saved on disc. See also :ref:`scene_saved<class_EditorPlugin_signal_scene_saved>`.
 
 .. rst-class:: classref-item-separator
 
@@ -241,7 +241,19 @@ Emitted when the scene is changed in the editor. The argument will return the ro
 
 **scene_closed** **(** :ref:`String<class_String>` filepath **)**
 
-Emitted when user closes a scene. The argument is file path to a closed scene.
+Emitted when user closes a scene. The argument is a file path to the closed scene.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorPlugin_signal_scene_saved:
+
+.. rst-class:: classref-signal
+
+**scene_saved** **(** :ref:`String<class_String>` filepath **)**
+
+Emitted when a scene was saved on disc. The argument is a file path to the saved scene. See also :ref:`resource_saved<class_EditorPlugin_signal_resource_saved>`.
 
 .. rst-class:: classref-section-separator
 

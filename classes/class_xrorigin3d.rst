@@ -21,11 +21,11 @@ Description
 
 This is a special node within the AR/VR system that maps the physical location of the center of our tracking space to the virtual location within our game world.
 
-There should be only one of these nodes in your scene and you must have one. All the XRCamera3D, XRController3D and XRAnchor3D nodes should be direct children of this node for spatial tracking to work correctly.
+Multiple origin points can be added to the scene tree, but only one can used at a time. All the :ref:`XRCamera3D<class_XRCamera3D>`, :ref:`XRController3D<class_XRController3D>`, and :ref:`XRAnchor3D<class_XRAnchor3D>` nodes should be direct children of this node for spatial tracking to work correctly.
 
 It is the position of this node that you update when your character needs to move through your game world while we're not moving in the real world. Movement in the real world is always in relation to this origin point.
 
-For example, if your character is driving a car, the XROrigin3D node should be a child node of this car. Or, if you're implementing a teleport system to move your character, you should change the position of this node.
+For example, if your character is driving a car, the **XROrigin3D** node should be a child node of this car. Or, if you're implementing a teleport system to move your character, you should change the position of this node.
 
 .. rst-class:: classref-introduction-group
 
@@ -68,7 +68,7 @@ Property Descriptions
 - void **set_current** **(** :ref:`bool<class_bool>` value **)**
 - :ref:`bool<class_bool>` **is_current** **(** **)**
 
-Is this XROrigin3D node the current origin used by the :ref:`XRServer<class_XRServer>`?
+If ``true``, this origin node is currently being used by the :ref:`XRServer<class_XRServer>`. Only one origin point can be used at a time.
 
 .. rst-class:: classref-item-separator
 
@@ -85,9 +85,7 @@ Is this XROrigin3D node the current origin used by the :ref:`XRServer<class_XRSe
 - void **set_world_scale** **(** :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_world_scale** **(** **)**
 
-Allows you to adjust the scale to your game's units. Most AR/VR platforms assume a scale of 1 game world unit = 1 real world meter.
-
-\ **Note:** This method is a passthrough to the :ref:`XRServer<class_XRServer>` itself.
+The scale of the game world compared to the real world. This is the same as :ref:`XRServer.world_scale<class_XRServer_property_world_scale>`. By default, most AR/VR platforms assume that 1 game unit corresponds to 1 real world meter.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

@@ -103,6 +103,8 @@ Emitted when :ref:`animation<class_AnimatedSprite3D_property_animation>` changes
 
 Emitted when the animation reaches the end, or the start if it is played in reverse. When the animation finishes, it pauses the playback.
 
+\ **Note:** This signal is not emitted if an animation is looping.
+
 .. rst-class:: classref-item-separator
 
 ----

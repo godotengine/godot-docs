@@ -122,6 +122,18 @@ If you are registering multiple properties/method which depend on one another, b
 
 .. rst-class:: classref-reftable-group
 
+Properties
+----------
+
+.. table::
+   :widths: auto
+
+   +-----------------------+-----------------------------------------------------+-------+
+   | :ref:`int<class_int>` | :ref:`max_steps<class_UndoRedo_property_max_steps>` | ``0`` |
+   +-----------------------+-----------------------------------------------------+-------+
+
+.. rst-class:: classref-reftable-group
+
 Methods
 -------
 
@@ -227,6 +239,28 @@ Makes so that the action's "undo" operations are from the first action created a
 :ref:`MergeMode<enum_UndoRedo_MergeMode>` **MERGE_ALL** = ``2``
 
 Makes subsequent actions with the same name be merged into one.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
+
+Property Descriptions
+---------------------
+
+.. _class_UndoRedo_property_max_steps:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **max_steps** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_max_steps** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_max_steps** **(** **)**
+
+The maximum number of steps that can be stored in the undo/redo history. If the number of stored steps exceeds this limit, older steps are removed from history and can no longer be reached by calling :ref:`undo<class_UndoRedo_method_undo>`. A value of ``0`` or lower means no limit.
 
 .. rst-class:: classref-section-separator
 

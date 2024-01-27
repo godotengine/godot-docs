@@ -29,9 +29,9 @@ Properties
 .. table::
    :widths: auto
 
-   +-----------------------+------------------------------------------------------------------+-----------+
-   | :ref:`RID<class_RID>` | :ref:`texture_rd_rid<class_Texture3DRD_property_texture_rd_rid>` | ``RID()`` |
-   +-----------------------+------------------------------------------------------------------+-----------+
+   +-----------------------+------------------------------------------------------------------+
+   | :ref:`RID<class_RID>` | :ref:`texture_rd_rid<class_Texture3DRD_property_texture_rd_rid>` |
+   +-----------------------+------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -46,7 +46,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`RID<class_RID>` **texture_rd_rid** = ``RID()``
+:ref:`RID<class_RID>` **texture_rd_rid**
 
 .. rst-class:: classref-property-setget
 
