@@ -16,8 +16,8 @@ want to activate or deactivate particle systems dynamically.
 The ``Amount`` property controls the maximum number of particles visible at any given time. Increase the
 value to spawn more particles at the cost of performance.
 
-The ``Amount Ratio`` property is the radio of particles compared to the ammount that will be emitted.
-If it's less than ``1.0`` the ammount of particles emitted through the lifetime will be the ``Ammount`` *
+The ``Amount Ratio`` property is the ratio of particles compared to the amount that will be emitted.
+If it's less than ``1.0``, the amount of particles emitted through the lifetime will be the ``Amount`` *
 ``Amount Ratio``. Changing this value while emitted doesn't affect already created particles and doesn't
 cause the particle system to restart. It's useful for making effects where the number of emitted particles
 varies over time.
