@@ -74,7 +74,7 @@ screen sizes.
 
 .. note::
 
-   On this page, *window* refers to the screen area alloted to your game
+   On this page, *window* refers to the screen area allotted to your game
    by the system, while *viewport* refers to the root object (accessible 
    from ``get_tree().root``) which the game controls to fill this screen area.
    This viewport is a :ref:`Window <class_Window>` instance. Recall from the
