@@ -22,7 +22,7 @@ endif
 PAPEROPT_a4         = -D latex_paper_size=a4
 PAPEROPT_letter     = -D latex_paper_size=letter
 COMMONSPHINXOPTS    = $(PAPEROPT_$(SPHINXPAPER)) $(SPHINXOPTS) '$(SPHINXSOURCEDIR)'
-DEFAULTSPHINXOPTS   =  -d $(SPHINXBUILDDIR)/doctrees -j $(SPHINXJOBS) $(COMMONSPHINXOPTS)
+DEFAULTSPHINXOPTS   = -d $(SPHINXBUILDDIR)/doctrees -j $(SPHINXJOBS) $(COMMONSPHINXOPTS)
 
 .PHONY: help clean
 
