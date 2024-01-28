@@ -360,7 +360,8 @@ article ol,
 }
 
 body,
-.rst-content table.docutils thead {
+.rst-content table.docutils thead,
+.rst-content table.docutils caption {
     color: var(--body-color);
 }
 
