@@ -22,6 +22,7 @@ make the most of your time learning it.
    :name: toc-learn-introduction
 
    introduction_to_godot
+   learn_to_code_with_gdscript
    key_concepts_overview
    first_look_at_the_editor
    learning_new_features
