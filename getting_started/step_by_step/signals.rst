@@ -442,7 +442,7 @@ reaches 0.
 Your signals work the same way as built-in ones: they appear in the Node tab and
 you can connect to them like any other.
 
-.. image:: img/signals_17_custom_signal.png
+.. image:: img/signals_17_custom_signal.webp
 
 To emit a signal in your scripts, call ``emit()`` on the signal.
 
@@ -472,7 +472,7 @@ names between parentheses:
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    extends Node
+    extends Node2D
 
     signal health_changed(old_value, new_value)
 
