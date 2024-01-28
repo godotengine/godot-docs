@@ -53,8 +53,10 @@ Supported platforms
 - **Desktop platforms:** Exports the project with debugging enabled and runs it
   on the remove computer via SSH.
 
-- **HTML5:** Starts a local web server and runs the exported project by opening
-  the default web browser.
+- **Web:** Starts a local web server and runs the exported project by opening
+  the default web browser. This is only accessible on ``localhost`` by default.
+  See :ref:`Troubleshooting <doc_one-click_deploy_troubleshooting_web>`
+  for making the exported project accessible on remote devices.
 
 Using one-click deploy
 ----------------------
@@ -87,7 +89,7 @@ Using one-click deploy
      export setting.
 
 - Make sure there is an export preset marked as **Runnable** for the target
-  platform (Android, iOS or HTML5).
+  platform (Android, iOS or Web).
 - If everything is configured correctly and with no errors, platform-specific
   icons will appear in the top-right corner of the editor.
 - Click the button to export to the desired platform in one click.
@@ -117,3 +119,43 @@ To resolve this:
 - On Linux, you may be missing the required
   `udev rules <https://github.com/M0Rf30/android-udev-rules>`__
   for your device to be recognized.
+
+.. _doc_one-click_deploy_troubleshooting_web:
+
+Web
+^^^
+
+By default, the web server started by the editor is only accessible from
+``localhost``. This means the web server can't be reached by other devices on
+the local network or the Internet (if port forwarding is set up on the router).
+This is done for security reasons, as you may not want other devices to be able
+to access the exported project while you're testing it. Binding to ``localhost``
+also prevents a firewall popup from appearing when you use one-click deploy for
+the web platform.
+
+To make the local web server accessible over the local network, you'll need to
+change the **Export > Web > HTTP Host** editor setting to ``0.0.0.0``. You will
+also need to enable **Export > Web > Use TLS** as SharedArrayBuffer requires the
+use of a secure connection to work, *unless* connecting to ``localhost``.
+However, since other clients will be connecting to a remote device, the use of
+TLS is absolutely required here.
+
+To make the local web server accessible over the Internet, you'll also need to
+forward the **Export > Web > HTTP Port** port specified in the Editor Settings
+(``8060`` by default) in TCP on your router. This is usually done by accessing
+your router's web interface then adding a NAT rule for the port in question. For
+IPv6 connections, you should allow the port in the router's IPv6 firewall
+instead. Like for local network devices, you will also need to enable **Export >
+Web > Use TLS**.
+
+.. note::
+
+    When **Use TLS** is enabled, you will get a warning from your web browser as
+    Godot will use a temporary self-signed certificate. You can safely ignore it
+    and bypass the warning by clicking **Advanced** and then **Proceed to
+    (address)**.
+
+    If you have a SSL/TLS certificate that is trusted by browsers, you can specify
+    the paths to the key and certificate files in the **Export > Web > TLS Key**
+    and **Export > Web > TLS Certificate**. This will only work if the project
+    is accessed through a domain name that is part of the TLS certificate.
