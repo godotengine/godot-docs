@@ -151,8 +151,7 @@ data:
        metadata: Variant() # metadata of collider
     }
 
-The data is similar in 3D space, using Vector3 coordinates. Note that to enable collisions
-with Area3D, the boolean parameter ``collide_with_areas`` must be set to ``true``.
+The data is similar in 3D space, using Vector3 coordinates. Here an example assuming that `$Camera3D` is the main camera node:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -160,16 +159,14 @@ with Area3D, the boolean parameter ``collide_with_areas`` must be set to ``true`
         const RAY_LENGTH = 1000
 
         func _physics_process(delta):
-            var space_state = get_world_3d().direct_space_state
-            var cam = $Camera3D
-            var mousepos = get_viewport().get_mouse_position()
+        	var params = PhysicsRayQueryParameters3D.new()
+        	params.from = $Camera3D.origin
+        	params.to = $Camera3D.project_position(
+        							get_viewport().get_mouse_position(), 
+        							RAY_LENGTH )
+        	var result = get_world_3d().direct_space_state.intersect_ray(params)
 
-            var origin = cam.project_ray_origin(mousepos)
-            var end = origin + cam.project_ray_normal(mousepos) * RAY_LENGTH
-            var query = PhysicsRayQueryParameters3D.create(origin, end)
-            query.collide_with_areas = true
-
-            var result = space_state.intersect_ray(query)
+Note that to enable collisions with Area3D, the boolean parameter ``params.collide_with_areas`` must be set to ``true``.
 
 Collision exceptions
 --------------------
