@@ -73,14 +73,41 @@ Properties with a backing field use the default value of the backing field.
 
 .. code-block:: csharp
 
-    private string _greeting = "Hello World";
+    private int _number = 2;
 
     [Export]
-    public string GreetingWithBackingField
+    public int NumberWithBackingField
     {
-        get => _greeting;
-        set => _greeting = value;
+        get => _number;
+        set => _number = value;
     }
+
+.. note::
+
+    A property's ``get`` is not actually executed to determine the default
+    value. Instead, Godot analyzes the C# source code. This works fine for most
+    cases, such as the examples on this page. However, some properties are too
+    complex for the analyzer to understand.
+
+    For example, the following property attempts to use math to display the
+    default value as ``5`` in the property editor, but it doesn't work:
+
+    .. code-block:: csharp
+
+        [Export]
+        public int NumberWithBackingField
+        {
+            get => _number + 3;
+            set => _number = value - 3;
+        }
+
+        private int _number = 2;
+
+    The analyzer doesn't understand this code and falls back to the default
+    value for ``int``, ``0``. However, when running the scene or inspecting a
+    node with an attached tool script, ``_number`` will be ``2``, and
+    ``NumberWithBackingField`` will return ``5``. This difference may cause
+    confusing behavior. To avoid this, don't use complex properties.
 
 Any type of ``Resource`` or ``Node`` can be exported. The property editor shows
 a user-friendly assignment dialog for these types. This can be used instead of
