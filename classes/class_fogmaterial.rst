@@ -7,8 +7,8 @@
 
 .. _class_FogMaterial:
 
-FogMaterial
-===========
+`FogMaterial <https://github.com/godotengine/godot/blob/master/editor/plugins/material_editor_plugin.h#L190>`_
+==============================================================================================================
 
 **Inherits:** :ref:`Material<class_Material>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

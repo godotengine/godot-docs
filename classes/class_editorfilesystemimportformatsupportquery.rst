@@ -7,8 +7,8 @@
 
 .. _class_EditorFileSystemImportFormatSupportQuery:
 
-EditorFileSystemImportFormatSupportQuery
-========================================
+`EditorFileSystemImportFormatSupportQuery <https://github.com/godotengine/godot/blob/master/editor/editor_file_system.h#L114>`_
+===============================================================================================================================
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

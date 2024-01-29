@@ -7,8 +7,8 @@
 
 .. _class_PopupPanel:
 
-PopupPanel
-==========
+`PopupPanel <https://github.com/godotengine/godot/blob/master/scene/gui/popup.h#L71>`_
+======================================================================================
 
 **Inherits:** :ref:`Popup<class_Popup>` **<** :ref:`Window<class_Window>` **<** :ref:`Viewport<class_Viewport>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 

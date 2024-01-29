@@ -7,8 +7,8 @@
 
 .. _class_CameraFeed:
 
-CameraFeed
-==========
+`CameraFeed <https://github.com/godotengine/godot/blob/master/modules/camera/camera_win.cpp#L45>`_
+==================================================================================================
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

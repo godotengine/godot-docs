@@ -7,8 +7,8 @@
 
 .. _class_JNISingleton:
 
-JNISingleton
-============
+`JNISingleton <https://github.com/godotengine/godot/blob/master/platform/android/api/jni_singleton.h#L41>`_
+===========================================================================================================
 
 **Inherits:** :ref:`Object<class_Object>`
 

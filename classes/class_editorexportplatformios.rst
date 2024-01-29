@@ -7,8 +7,8 @@
 
 .. _class_EditorExportPlatformIOS:
 
-EditorExportPlatformIOS
-=======================
+`EditorExportPlatformIOS <https://github.com/godotengine/godot/blob/master/platform/ios/export/export_plugin.h#L58>`_
+=====================================================================================================================
 
 **Inherits:** :ref:`EditorExportPlatform<class_EditorExportPlatform>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

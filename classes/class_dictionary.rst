@@ -7,8 +7,8 @@
 
 .. _class_Dictionary:
 
-Dictionary
-==========
+`Dictionary <https://github.com/godotengine/godot/blob/master/core/variant/dictionary.h#L42>`_
+==============================================================================================
 
 A built-in data structure that holds key-value pairs.
 

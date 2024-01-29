@@ -7,8 +7,8 @@
 
 .. _class_FontVariation:
 
-FontVariation
-=============
+`FontVariation <https://github.com/godotengine/godot/blob/master/scene/resources/font.h#L386>`_
+===============================================================================================
 
 **Inherits:** :ref:`Font<class_Font>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

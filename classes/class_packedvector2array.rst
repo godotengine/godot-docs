@@ -7,8 +7,8 @@
 
 .. _class_PackedVector2Array:
 
-PackedVector2Array
-==================
+`PackedVector2Array <https://github.com/godotengine/godot/blob/master/core/variant/variant.h#L75>`_
+===================================================================================================
 
 A packed array of :ref:`Vector2<class_Vector2>`\ s.
 

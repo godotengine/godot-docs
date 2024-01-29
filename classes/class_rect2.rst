@@ -7,8 +7,8 @@
 
 .. _class_Rect2:
 
-Rect2
-=====
+`Rect2 <https://github.com/godotengine/godot/blob/master/core/math/rect2.h#L41>`_
+=================================================================================
 
 A 2D axis-aligned bounding box using floating-point coordinates.
 

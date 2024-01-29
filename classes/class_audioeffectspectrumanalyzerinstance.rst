@@ -7,8 +7,8 @@
 
 .. _class_AudioEffectSpectrumAnalyzerInstance:
 
-AudioEffectSpectrumAnalyzerInstance
-===================================
+`AudioEffectSpectrumAnalyzerInstance <https://github.com/godotengine/godot/blob/master/servers/audio/effects/audio_effect_spectrum_analyzer.h#L38>`_
+====================================================================================================================================================
 
 **Inherits:** :ref:`AudioEffectInstance<class_AudioEffectInstance>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

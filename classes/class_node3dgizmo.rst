@@ -7,8 +7,8 @@
 
 .. _class_Node3DGizmo:
 
-Node3DGizmo
-===========
+`Node3DGizmo <https://github.com/godotengine/godot/blob/master/scene/3d/node_3d.h#L37>`_
+========================================================================================
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

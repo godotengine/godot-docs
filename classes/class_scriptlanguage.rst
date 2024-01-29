@@ -7,8 +7,8 @@
 
 .. _class_ScriptLanguage:
 
-ScriptLanguage
-==============
+`ScriptLanguage <https://github.com/godotengine/godot/blob/master/core/object/script_language.h#L193>`_
+=======================================================================================================
 
 **Inherits:** :ref:`Object<class_Object>`
 

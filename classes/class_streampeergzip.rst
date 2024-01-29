@@ -7,8 +7,8 @@
 
 .. _class_StreamPeerGZIP:
 
-StreamPeerGZIP
-==============
+`StreamPeerGZIP <https://github.com/godotengine/godot/blob/master/core/io/stream_peer_gzip.h#L40>`_
+===================================================================================================
 
 **Inherits:** :ref:`StreamPeer<class_StreamPeer>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

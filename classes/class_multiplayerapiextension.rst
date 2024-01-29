@@ -7,8 +7,8 @@
 
 .. _class_MultiplayerAPIExtension:
 
-MultiplayerAPIExtension
-=======================
+`MultiplayerAPIExtension <https://github.com/godotengine/godot/blob/master/scene/main/multiplayer_api.h#L84>`_
+==============================================================================================================
 
 **Inherits:** :ref:`MultiplayerAPI<class_MultiplayerAPI>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

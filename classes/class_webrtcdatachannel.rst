@@ -7,8 +7,8 @@
 
 .. _class_WebRTCDataChannel:
 
-WebRTCDataChannel
-=================
+`WebRTCDataChannel <https://github.com/godotengine/godot/blob/master/modules/webrtc/webrtc_data_channel.h#L36>`_
+================================================================================================================
 
 **Inherits:** :ref:`PacketPeer<class_PacketPeer>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

@@ -7,8 +7,8 @@
 
 .. _class_PhysicalBone3D:
 
-PhysicalBone3D
-==============
+`PhysicalBone3D <https://github.com/godotengine/godot/blob/master/editor/plugins/physical_bone_3d_editor_plugin.h#L39>`_
+========================================================================================================================
 
 **Inherits:** :ref:`PhysicsBody3D<class_PhysicsBody3D>` **<** :ref:`CollisionObject3D<class_CollisionObject3D>` **<** :ref:`Node3D<class_Node3D>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 

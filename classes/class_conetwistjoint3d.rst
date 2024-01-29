@@ -7,8 +7,8 @@
 
 .. _class_ConeTwistJoint3D:
 
-ConeTwistJoint3D
-================
+`ConeTwistJoint3D <https://github.com/godotengine/godot/blob/master/scene/3d/joint_3d.h#L198>`_
+===============================================================================================
 
 **Inherits:** :ref:`Joint3D<class_Joint3D>` **<** :ref:`Node3D<class_Node3D>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 

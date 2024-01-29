@@ -7,8 +7,8 @@
 
 .. _class_TabContainer:
 
-TabContainer
-============
+`TabContainer <https://github.com/godotengine/godot/blob/master/scene/gui/tab_container.h#L38>`_
+================================================================================================
 
 **Inherits:** :ref:`Container<class_Container>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 

@@ -7,8 +7,8 @@
 
 .. _class_EditorExportPlatformWindows:
 
-EditorExportPlatformWindows
-===========================
+`EditorExportPlatformWindows <https://github.com/godotengine/godot/blob/master/platform/windows/export/export_plugin.h#L45>`_
+=============================================================================================================================
 
 **Inherits:** :ref:`EditorExportPlatformPC<class_EditorExportPlatformPC>` **<** :ref:`EditorExportPlatform<class_EditorExportPlatform>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

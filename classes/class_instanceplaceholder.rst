@@ -7,8 +7,8 @@
 
 .. _class_InstancePlaceholder:
 
-InstancePlaceholder
-===================
+`InstancePlaceholder <https://github.com/godotengine/godot/blob/master/scene/main/instance_placeholder.h#L38>`_
+===============================================================================================================
 
 **Inherits:** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 

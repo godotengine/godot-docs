@@ -7,8 +7,8 @@
 
 .. _class_AnimationNodeStateMachinePlayback:
 
-AnimationNodeStateMachinePlayback
-=================================
+`AnimationNodeStateMachinePlayback <https://github.com/godotengine/godot/blob/master/scene/animation/animation_node_state_machine.h#L223>`_
+===========================================================================================================================================
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

@@ -7,8 +7,8 @@
 
 .. _class_AudioStreamPlayer2D:
 
-AudioStreamPlayer2D
-===================
+`AudioStreamPlayer2D <https://github.com/godotengine/godot/blob/master/scene/2d/audio_stream_player_2d.h#L41>`_
+===============================================================================================================
 
 **Inherits:** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 

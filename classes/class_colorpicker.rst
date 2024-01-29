@@ -7,8 +7,8 @@
 
 .. _class_ColorPicker:
 
-ColorPicker
-===========
+`ColorPicker <https://github.com/godotengine/godot/blob/master/scene/gui/color_picker.h#L81>`_
+==============================================================================================
 
 **Inherits:** :ref:`VBoxContainer<class_VBoxContainer>` **<** :ref:`BoxContainer<class_BoxContainer>` **<** :ref:`Container<class_Container>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 

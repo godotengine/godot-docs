@@ -7,8 +7,8 @@
 
 .. _class_TileSet:
 
-TileSet
-=======
+`TileSet <https://github.com/godotengine/godot/blob/master/editor/plugins/tiles/tiles_editor_plugin.h#L144>`_
+=============================================================================================================
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

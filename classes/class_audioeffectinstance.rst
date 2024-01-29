@@ -7,8 +7,8 @@
 
 .. _class_AudioEffectInstance:
 
-AudioEffectInstance
-===================
+`AudioEffectInstance <https://github.com/godotengine/godot/blob/master/servers/audio/audio_effect.h#L39>`_
+==========================================================================================================
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

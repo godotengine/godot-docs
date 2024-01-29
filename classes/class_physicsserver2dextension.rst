@@ -7,8 +7,8 @@
 
 .. _class_PhysicsServer2DExtension:
 
-PhysicsServer2DExtension
-========================
+`PhysicsServer2DExtension <https://github.com/godotengine/godot/blob/master/servers/extensions/physics_server_2d_extension.h#L188>`_
+====================================================================================================================================
 
 **Inherits:** :ref:`PhysicsServer2D<class_PhysicsServer2D>` **<** :ref:`Object<class_Object>`
 

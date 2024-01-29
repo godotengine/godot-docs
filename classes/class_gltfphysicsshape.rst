@@ -7,8 +7,8 @@
 
 .. _class_GLTFPhysicsShape:
 
-GLTFPhysicsShape
-================
+`GLTFPhysicsShape <https://github.com/godotengine/godot/blob/master/modules/gltf/extensions/physics/gltf_physics_shape.h#L43>`_
+===============================================================================================================================
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

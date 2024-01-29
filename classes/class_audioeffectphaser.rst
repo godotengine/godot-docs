@@ -7,8 +7,8 @@
 
 .. _class_AudioEffectPhaser:
 
-AudioEffectPhaser
-=================
+`AudioEffectPhaser <https://github.com/godotengine/godot/blob/master/servers/audio/effects/audio_effect_phaser.h#L38>`_
+=======================================================================================================================
 
 **Inherits:** :ref:`AudioEffect<class_AudioEffect>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

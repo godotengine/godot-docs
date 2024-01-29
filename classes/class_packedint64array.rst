@@ -7,8 +7,8 @@
 
 .. _class_PackedInt64Array:
 
-PackedInt64Array
-================
+`PackedInt64Array <https://github.com/godotengine/godot/blob/master/core/variant/variant.h#L70>`_
+=================================================================================================
 
 A packed array of 64-bit integers.
 

@@ -7,8 +7,8 @@
 
 .. _class_Vector4i:
 
-Vector4i
-========
+`Vector4i <https://github.com/godotengine/godot/blob/master/core/math/vector4i.h#L40>`_
+=======================================================================================
 
 A 4D vector using integer coordinates.
 

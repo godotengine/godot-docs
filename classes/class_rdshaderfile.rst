@@ -7,8 +7,8 @@
 
 .. _class_RDShaderFile:
 
-RDShaderFile
-============
+`RDShaderFile <https://github.com/godotengine/godot/blob/master/servers/rendering/rendering_device_binds.h#L332>`_
+==================================================================================================================
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

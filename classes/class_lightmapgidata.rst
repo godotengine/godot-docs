@@ -7,8 +7,8 @@
 
 .. _class_LightmapGIData:
 
-LightmapGIData
-==============
+`LightmapGIData <https://github.com/godotengine/godot/blob/master/scene/3d/lightmap_gi.h#L42>`_
+===============================================================================================
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

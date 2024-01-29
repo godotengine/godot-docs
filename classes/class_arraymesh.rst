@@ -7,8 +7,8 @@
 
 .. _class_ArrayMesh:
 
-ArrayMesh
-=========
+`ArrayMesh <https://github.com/godotengine/godot/blob/master/scene/resources/mesh.cpp#L2037>`_
+==============================================================================================
 
 **Inherits:** :ref:`Mesh<class_Mesh>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

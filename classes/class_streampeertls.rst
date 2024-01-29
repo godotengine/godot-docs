@@ -7,8 +7,8 @@
 
 .. _class_StreamPeerTLS:
 
-StreamPeerTLS
-=============
+`StreamPeerTLS <https://github.com/godotengine/godot/blob/master/core/io/stream_peer_tls.h#L37>`_
+=================================================================================================
 
 **Inherits:** :ref:`StreamPeer<class_StreamPeer>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

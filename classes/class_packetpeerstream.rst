@@ -7,8 +7,8 @@
 
 .. _class_PacketPeerStream:
 
-PacketPeerStream
-================
+`PacketPeerStream <https://github.com/godotengine/godot/blob/master/core/io/packet_peer.h#L97>`_
+================================================================================================
 
 **Inherits:** :ref:`PacketPeer<class_PacketPeer>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

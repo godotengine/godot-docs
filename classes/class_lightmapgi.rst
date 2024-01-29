@@ -7,8 +7,8 @@
 
 .. _class_LightmapGI:
 
-LightmapGI
-==========
+`LightmapGI <https://github.com/godotengine/godot/blob/master/editor/plugins/lightmap_gi_editor_plugin.h#L41>`_
+===============================================================================================================
 
 **Inherits:** :ref:`VisualInstance3D<class_VisualInstance3D>` **<** :ref:`Node3D<class_Node3D>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 

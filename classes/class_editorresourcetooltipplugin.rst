@@ -7,8 +7,8 @@
 
 .. _class_EditorResourceTooltipPlugin:
 
-EditorResourceTooltipPlugin
-===========================
+`EditorResourceTooltipPlugin <https://github.com/godotengine/godot/blob/master/editor/plugins/editor_resource_tooltip_plugins.h#L43>`_
+======================================================================================================================================
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

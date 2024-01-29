@@ -7,8 +7,8 @@
 
 .. _class_CameraAttributesPhysical:
 
-CameraAttributesPhysical
-========================
+`CameraAttributesPhysical <https://github.com/godotengine/godot/blob/master/scene/resources/camera_attributes.h#L129>`_
+=======================================================================================================================
 
 **Inherits:** :ref:`CameraAttributes<class_CameraAttributes>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

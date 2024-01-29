@@ -7,8 +7,8 @@
 
 .. _class_AnimationNodeStateMachine:
 
-AnimationNodeStateMachine
-=========================
+`AnimationNodeStateMachine <https://github.com/godotengine/godot/blob/master/editor/plugins/animation_state_machine_editor.h#L45>`_
+===================================================================================================================================
 
 **Inherits:** :ref:`AnimationRootNode<class_AnimationRootNode>` **<** :ref:`AnimationNode<class_AnimationNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

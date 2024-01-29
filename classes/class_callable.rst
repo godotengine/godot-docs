@@ -7,8 +7,8 @@
 
 .. _class_Callable:
 
-Callable
-========
+`Callable <https://github.com/godotengine/godot/blob/master/core/variant/callable.h#L49>`_
+==========================================================================================
 
 A built-in type representing a method or a standalone function.
 

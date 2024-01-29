@@ -7,8 +7,8 @@
 
 .. _class_AudioStreamOggVorbis:
 
-AudioStreamOggVorbis
-====================
+`AudioStreamOggVorbis <https://github.com/godotengine/godot/blob/master/modules/vorbis/audio_stream_ogg_vorbis.h#L107>`_
+========================================================================================================================
 
 **Inherits:** :ref:`AudioStream<class_AudioStream>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

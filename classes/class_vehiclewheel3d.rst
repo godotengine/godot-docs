@@ -7,8 +7,8 @@
 
 .. _class_VehicleWheel3D:
 
-VehicleWheel3D
-==============
+`VehicleWheel3D <https://github.com/godotengine/godot/blob/master/editor/plugins/gizmos/vehicle_body_3d_gizmo_plugin.h#L36>`_
+=============================================================================================================================
 
 **Inherits:** :ref:`Node3D<class_Node3D>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 

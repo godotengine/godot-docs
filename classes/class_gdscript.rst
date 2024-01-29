@@ -7,8 +7,8 @@
 
 .. _class_GDScript:
 
-GDScript
-========
+`GDScript <https://github.com/godotengine/godot/blob/master/modules/gdscript/gdscript.cpp#L2331>`_
+==================================================================================================
 
 **Inherits:** :ref:`Script<class_Script>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

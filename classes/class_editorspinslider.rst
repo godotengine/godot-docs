@@ -7,8 +7,8 @@
 
 .. _class_EditorSpinSlider:
 
-EditorSpinSlider
-================
+`EditorSpinSlider <https://github.com/godotengine/godot/blob/master/editor/gui/editor_spin_slider.h#L38>`_
+==========================================================================================================
 
 **Inherits:** :ref:`Range<class_Range>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 

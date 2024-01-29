@@ -7,8 +7,8 @@
 
 .. _class_VisualShaderNodeVaryingGetter:
 
-VisualShaderNodeVaryingGetter
-=============================
+`VisualShaderNodeVaryingGetter <https://github.com/godotengine/godot/blob/master/scene/resources/visual_shader.h#L891>`_
+========================================================================================================================
 
 **Inherits:** :ref:`VisualShaderNodeVarying<class_VisualShaderNodeVarying>` **<** :ref:`VisualShaderNode<class_VisualShaderNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

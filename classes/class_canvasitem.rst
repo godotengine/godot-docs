@@ -7,8 +7,8 @@
 
 .. _class_CanvasItem:
 
-CanvasItem
-==========
+`CanvasItem <https://github.com/godotengine/godot/blob/master/editor/plugins/canvas_item_editor_plugin.h#L54>`_
+===============================================================================================================
 
 **Inherits:** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 

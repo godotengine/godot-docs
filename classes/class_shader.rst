@@ -7,8 +7,8 @@
 
 .. _class_Shader:
 
-Shader
-======
+`Shader <https://github.com/godotengine/godot/blob/master/drivers/d3d12/d3d12_context.h#L94>`_
+==============================================================================================
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

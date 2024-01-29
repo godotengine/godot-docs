@@ -7,8 +7,8 @@
 
 .. _class_XRPositionalTracker:
 
-XRPositionalTracker
-===================
+`XRPositionalTracker <https://github.com/godotengine/godot/blob/master/servers/xr/xr_positional_tracker.h#L45>`_
+================================================================================================================
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

@@ -7,8 +7,8 @@
 
 .. _class_VehicleBody3D:
 
-VehicleBody3D
-=============
+`VehicleBody3D <https://github.com/godotengine/godot/blob/master/scene/3d/vehicle_body_3d.h#L155>`_
+===================================================================================================
 
 **Inherits:** :ref:`RigidBody3D<class_RigidBody3D>` **<** :ref:`PhysicsBody3D<class_PhysicsBody3D>` **<** :ref:`CollisionObject3D<class_CollisionObject3D>` **<** :ref:`Node3D<class_Node3D>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 

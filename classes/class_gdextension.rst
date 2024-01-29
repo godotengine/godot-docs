@@ -7,8 +7,8 @@
 
 .. _class_GDExtension:
 
-GDExtension
-===========
+`GDExtension <https://github.com/godotengine/godot/blob/master/core/extension/extension_api_dump.h#L38>`_
+=========================================================================================================
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

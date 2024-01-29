@@ -7,8 +7,8 @@
 
 .. _class_FogVolume:
 
-FogVolume
-=========
+`FogVolume <https://github.com/godotengine/godot/blob/master/editor/plugins/gizmos/fog_volume_gizmo_plugin.h#L36>`_
+===================================================================================================================
 
 **Inherits:** :ref:`VisualInstance3D<class_VisualInstance3D>` **<** :ref:`Node3D<class_Node3D>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 

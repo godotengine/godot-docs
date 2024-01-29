@@ -7,8 +7,8 @@
 
 .. _class_XMLParser:
 
-XMLParser
-=========
+`XMLParser <https://github.com/godotengine/godot/blob/master/core/io/xml_parser.h#L43>`_
+========================================================================================
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

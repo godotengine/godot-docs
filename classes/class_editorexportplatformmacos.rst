@@ -7,8 +7,8 @@
 
 .. _class_EditorExportPlatformMacOS:
 
-EditorExportPlatformMacOS
-=========================
+`EditorExportPlatformMacOS <https://github.com/godotengine/godot/blob/master/platform/macos/export/export_plugin.h#L57>`_
+=========================================================================================================================
 
 **Inherits:** :ref:`EditorExportPlatform<class_EditorExportPlatform>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

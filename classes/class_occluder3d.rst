@@ -7,8 +7,8 @@
 
 .. _class_Occluder3D:
 
-Occluder3D
-==========
+`Occluder3D <https://github.com/godotengine/godot/blob/master/scene/3d/occluder_instance_3d.h#L36>`_
+====================================================================================================
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

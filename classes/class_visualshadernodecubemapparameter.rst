@@ -7,8 +7,8 @@
 
 .. _class_VisualShaderNodeCubemapParameter:
 
-VisualShaderNodeCubemapParameter
-================================
+`VisualShaderNodeCubemapParameter <https://github.com/godotengine/godot/blob/master/scene/resources/visual_shader_nodes.h#L2555>`_
+==================================================================================================================================
 
 **Inherits:** :ref:`VisualShaderNodeTextureParameter<class_VisualShaderNodeTextureParameter>` **<** :ref:`VisualShaderNodeParameter<class_VisualShaderNodeParameter>` **<** :ref:`VisualShaderNode<class_VisualShaderNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

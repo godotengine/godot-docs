@@ -7,8 +7,8 @@
 
 .. _class_BoneMap:
 
-BoneMap
-=======
+`BoneMap <https://github.com/godotengine/godot/blob/master/editor/plugins/bone_map_editor_plugin.h#L52>`_
+=========================================================================================================
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

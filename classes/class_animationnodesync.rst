@@ -7,8 +7,8 @@
 
 .. _class_AnimationNodeSync:
 
-AnimationNodeSync
-=================
+`AnimationNodeSync <https://github.com/godotengine/godot/blob/master/scene/animation/animation_blend_tree.h#L80>`_
+==================================================================================================================
 
 **Inherits:** :ref:`AnimationNode<class_AnimationNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

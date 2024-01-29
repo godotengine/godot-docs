@@ -7,8 +7,8 @@
 
 .. _class_CircleShape2D:
 
-CircleShape2D
-=============
+`CircleShape2D <https://github.com/godotengine/godot/blob/master/scene/resources/circle_shape_2d.h#L36>`_
+=========================================================================================================
 
 **Inherits:** :ref:`Shape2D<class_Shape2D>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

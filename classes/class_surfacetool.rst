@@ -7,8 +7,8 @@
 
 .. _class_SurfaceTool:
 
-SurfaceTool
-===========
+`SurfaceTool <https://github.com/godotengine/godot/blob/master/scene/resources/surface_tool.h#L38>`_
+====================================================================================================
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

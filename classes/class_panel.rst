@@ -7,8 +7,8 @@
 
 .. _class_Panel:
 
-Panel
-=====
+`Panel <https://github.com/godotengine/godot/blob/master/scene/gui/panel.h#L36>`_
+=================================================================================
 
 **Inherits:** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 

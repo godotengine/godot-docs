@@ -7,8 +7,8 @@
 
 .. _class_GeometryInstance3D:
 
-GeometryInstance3D
-==================
+`GeometryInstance3D <https://github.com/godotengine/godot/blob/master/scene/3d/visual_instance_3d.h#L83>`_
+==========================================================================================================
 
 **Inherits:** :ref:`VisualInstance3D<class_VisualInstance3D>` **<** :ref:`Node3D<class_Node3D>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 

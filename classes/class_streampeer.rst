@@ -7,8 +7,8 @@
 
 .. _class_StreamPeer:
 
-StreamPeer
-==========
+`StreamPeer <https://github.com/godotengine/godot/blob/master/core/io/stream_peer.h#L40>`_
+==========================================================================================
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

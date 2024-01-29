@@ -7,8 +7,8 @@
 
 .. _class_ButtonGroup:
 
-ButtonGroup
-===========
+`ButtonGroup <https://github.com/godotengine/godot/blob/master/scene/gui/base_button.h#L151>`_
+==============================================================================================
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

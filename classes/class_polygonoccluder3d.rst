@@ -7,8 +7,8 @@
 
 .. _class_PolygonOccluder3D:
 
-PolygonOccluder3D
-=================
+`PolygonOccluder3D <https://github.com/godotengine/godot/blob/master/scene/3d/occluder_instance_3d.h#L143>`_
+============================================================================================================
 
 **Inherits:** :ref:`Occluder3D<class_Occluder3D>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

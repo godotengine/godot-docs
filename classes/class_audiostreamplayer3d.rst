@@ -7,8 +7,8 @@
 
 .. _class_AudioStreamPlayer3D:
 
-AudioStreamPlayer3D
-===================
+`AudioStreamPlayer3D <https://github.com/godotengine/godot/blob/master/editor/plugins/gizmos/audio_stream_player_3d_gizmo_plugin.h#L36>`_
+=========================================================================================================================================
 
 **Inherits:** :ref:`Node3D<class_Node3D>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 

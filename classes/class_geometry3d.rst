@@ -7,8 +7,8 @@
 
 .. _class_Geometry3D:
 
-Geometry3D
-==========
+`Geometry3D <https://github.com/godotengine/godot/blob/master/core/core_bind.h#L314>`_
+======================================================================================
 
 **Inherits:** :ref:`Object<class_Object>`
 

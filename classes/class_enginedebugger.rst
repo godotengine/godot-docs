@@ -7,8 +7,8 @@
 
 .. _class_EngineDebugger:
 
-EngineDebugger
-==============
+`EngineDebugger <https://github.com/godotengine/godot/blob/master/core/core_bind.h#L536>`_
+==========================================================================================
 
 **Inherits:** :ref:`Object<class_Object>`
 

@@ -7,8 +7,8 @@
 
 .. _class_GLTFTextureSampler:
 
-GLTFTextureSampler
-==================
+`GLTFTextureSampler <https://github.com/godotengine/godot/blob/master/modules/gltf/structures/gltf_texture_sampler.h#L36>`_
+===========================================================================================================================
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

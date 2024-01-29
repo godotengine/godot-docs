@@ -7,8 +7,8 @@
 
 .. _class_Mutex:
 
-Mutex
-=====
+`Mutex <https://github.com/godotengine/godot/blob/master/core/core_bind.h#L369>`_
+=================================================================================
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

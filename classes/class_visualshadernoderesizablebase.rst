@@ -7,8 +7,8 @@
 
 .. _class_VisualShaderNodeResizableBase:
 
-VisualShaderNodeResizableBase
-=============================
+`VisualShaderNodeResizableBase <https://github.com/godotengine/godot/blob/master/scene/resources/visual_shader.h#L665>`_
+========================================================================================================================
 
 **Inherits:** :ref:`VisualShaderNode<class_VisualShaderNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

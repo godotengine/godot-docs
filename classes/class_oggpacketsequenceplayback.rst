@@ -7,8 +7,8 @@
 
 .. _class_OggPacketSequencePlayback:
 
-OggPacketSequencePlayback
-=========================
+`OggPacketSequencePlayback <https://github.com/godotengine/godot/blob/master/modules/ogg/ogg_packet_sequence.h#L94>`_
+=====================================================================================================================
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

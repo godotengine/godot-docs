@@ -7,8 +7,8 @@
 
 .. _class_VisualShaderNodeRotationByAxis:
 
-VisualShaderNodeRotationByAxis
-==============================
+`VisualShaderNodeRotationByAxis <https://github.com/godotengine/godot/blob/master/scene/resources/visual_shader_nodes.h#L2954>`_
+================================================================================================================================
 
 **Inherits:** :ref:`VisualShaderNode<class_VisualShaderNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

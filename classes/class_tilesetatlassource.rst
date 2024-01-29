@@ -7,8 +7,8 @@
 
 .. _class_TileSetAtlasSource:
 
-TileSetAtlasSource
-==================
+`TileSetAtlasSource <https://github.com/godotengine/godot/blob/master/editor/plugins/tiles/tile_set_atlas_source_editor.h#L45>`_
+================================================================================================================================
 
 **Inherits:** :ref:`TileSetSource<class_TileSetSource>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

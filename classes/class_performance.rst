@@ -7,8 +7,8 @@
 
 .. _class_Performance:
 
-Performance
-===========
+`Performance <https://github.com/godotengine/godot/blob/master/main/performance.h#L43>`_
+========================================================================================
 
 **Inherits:** :ref:`Object<class_Object>`
 

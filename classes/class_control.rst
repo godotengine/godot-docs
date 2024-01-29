@@ -7,8 +7,8 @@
 
 .. _class_Control:
 
-Control
-=======
+`Control <https://github.com/godotengine/godot/blob/master/editor/plugins/control_editor_plugin.h#L52>`_
+========================================================================================================
 
 **Inherits:** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 

@@ -7,8 +7,8 @@
 
 .. _class_TubeTrailMesh:
 
-TubeTrailMesh
-=============
+`TubeTrailMesh <https://github.com/godotengine/godot/blob/master/scene/resources/primitive_meshes.h#L425>`_
+===========================================================================================================
 
 **Inherits:** :ref:`PrimitiveMesh<class_PrimitiveMesh>` **<** :ref:`Mesh<class_Mesh>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

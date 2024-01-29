@@ -7,8 +7,8 @@
 
 .. _class_AStarGrid2D:
 
-AStarGrid2D
-===========
+`AStarGrid2D <https://github.com/godotengine/godot/blob/master/core/math/a_star_grid_2d.h#L39>`_
+================================================================================================
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

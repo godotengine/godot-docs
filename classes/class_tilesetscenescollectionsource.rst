@@ -7,8 +7,8 @@
 
 .. _class_TileSetScenesCollectionSource:
 
-TileSetScenesCollectionSource
-=============================
+`TileSetScenesCollectionSource <https://github.com/godotengine/godot/blob/master/editor/plugins/tiles/tile_set_scenes_collection_source_editor.h#L43>`_
+=======================================================================================================================================================
 
 **Inherits:** :ref:`TileSetSource<class_TileSetSource>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

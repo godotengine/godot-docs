@@ -7,8 +7,8 @@
 
 .. _class_ConfigFile:
 
-ConfigFile
-==========
+`ConfigFile <https://github.com/godotengine/godot/blob/master/core/io/config_file.h#L39>`_
+==========================================================================================
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

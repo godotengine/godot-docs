@@ -7,8 +7,8 @@
 
 .. _class_DisplayServer:
 
-DisplayServer
-=============
+`DisplayServer <https://github.com/godotengine/godot/blob/master/platform/android/display_server_android.h#L41>`_
+=================================================================================================================
 
 **Inherits:** :ref:`Object<class_Object>`
 

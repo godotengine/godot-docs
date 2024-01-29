@@ -7,8 +7,8 @@
 
 .. _class_EditorExportPlugin:
 
-EditorExportPlugin
-==================
+`EditorExportPlugin <https://github.com/godotengine/godot/blob/master/editor/export/editor_export_plugin.h#L40>`_
+=================================================================================================================
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

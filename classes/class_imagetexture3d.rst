@@ -7,8 +7,8 @@
 
 .. _class_ImageTexture3D:
 
-ImageTexture3D
-==============
+`ImageTexture3D <https://github.com/godotengine/godot/blob/master/scene/resources/image_texture.h#L129>`_
+=========================================================================================================
 
 **Inherits:** :ref:`Texture3D<class_Texture3D>` **<** :ref:`Texture<class_Texture>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

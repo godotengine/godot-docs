@@ -7,8 +7,8 @@
 
 .. _class_Material:
 
-Material
-========
+`Material <https://github.com/godotengine/godot/blob/master/drivers/gles3/storage/material_storage.h#L90>`_
+===========================================================================================================
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

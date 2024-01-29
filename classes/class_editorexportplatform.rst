@@ -7,8 +7,8 @@
 
 .. _class_EditorExportPlatform:
 
-EditorExportPlatform
-====================
+`EditorExportPlatform <https://github.com/godotengine/godot/blob/master/editor/export/editor_export_platform.h#L49>`_
+=====================================================================================================================
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

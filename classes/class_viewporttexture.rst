@@ -7,8 +7,8 @@
 
 .. _class_ViewportTexture:
 
-ViewportTexture
-===============
+`ViewportTexture <https://github.com/godotengine/godot/blob/master/scene/main/viewport.h#L55>`_
+===============================================================================================
 
 **Inherits:** :ref:`Texture2D<class_Texture2D>` **<** :ref:`Texture<class_Texture>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

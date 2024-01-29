@@ -7,8 +7,8 @@
 
 .. _class_ShapeCast2D:
 
-ShapeCast2D
-===========
+`ShapeCast2D <https://github.com/godotengine/godot/blob/master/scene/2d/shape_cast_2d.h#L40>`_
+==============================================================================================
 
 **Inherits:** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 

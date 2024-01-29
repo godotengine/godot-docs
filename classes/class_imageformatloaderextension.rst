@@ -7,8 +7,8 @@
 
 .. _class_ImageFormatLoaderExtension:
 
-ImageFormatLoaderExtension
-==========================
+`ImageFormatLoaderExtension <https://github.com/godotengine/godot/blob/master/core/io/image_loader.h#L71>`_
+===========================================================================================================
 
 **Inherits:** :ref:`ImageFormatLoader<class_ImageFormatLoader>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

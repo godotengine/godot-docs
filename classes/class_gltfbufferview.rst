@@ -7,8 +7,8 @@
 
 .. _class_GLTFBufferView:
 
-GLTFBufferView
-==============
+`GLTFBufferView <https://github.com/godotengine/godot/blob/master/modules/gltf/structures/gltf_buffer_view.h#L38>`_
+===================================================================================================================
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

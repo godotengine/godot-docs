@@ -7,8 +7,8 @@
 
 .. _class_MultiplayerSpawner:
 
-MultiplayerSpawner
-==================
+`MultiplayerSpawner <https://github.com/godotengine/godot/blob/master/modules/multiplayer/multiplayer_spawner.h#L41>`_
+======================================================================================================================
 
 **Inherits:** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 

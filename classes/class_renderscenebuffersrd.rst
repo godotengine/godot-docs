@@ -7,8 +7,8 @@
 
 .. _class_RenderSceneBuffersRD:
 
-RenderSceneBuffersRD
-====================
+`RenderSceneBuffersRD <https://github.com/godotengine/godot/blob/master/servers/rendering/renderer_rd/storage_rd/render_scene_buffers_rd.h#L64>`_
+=================================================================================================================================================
 
 **Inherits:** :ref:`RenderSceneBuffers<class_RenderSceneBuffers>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

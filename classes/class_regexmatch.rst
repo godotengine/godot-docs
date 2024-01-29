@@ -7,8 +7,8 @@
 
 .. _class_RegExMatch:
 
-RegExMatch
-==========
+`RegExMatch <https://github.com/godotengine/godot/blob/master/modules/regex/regex.h#L42>`_
+==========================================================================================
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

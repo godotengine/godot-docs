@@ -7,8 +7,8 @@
 
 .. _class_PackedDataContainerRef:
 
-PackedDataContainerRef
-======================
+`PackedDataContainerRef <https://github.com/godotengine/godot/blob/master/core/io/packed_data_container.h#L83>`_
+================================================================================================================
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

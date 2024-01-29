@@ -7,8 +7,8 @@
 
 .. _class_BoneAttachment3D:
 
-BoneAttachment3D
-================
+`BoneAttachment3D <https://github.com/godotengine/godot/blob/master/scene/3d/bone_attachment_3d.h#L39>`_
+========================================================================================================
 
 **Inherits:** :ref:`Node3D<class_Node3D>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 

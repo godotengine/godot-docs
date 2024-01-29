@@ -7,8 +7,8 @@
 
 .. _class_EditorProperty:
 
-EditorProperty
-==============
+`EditorProperty <https://github.com/godotengine/godot/blob/master/editor/editor_inspector.h#L51>`_
+==================================================================================================
 
 **Inherits:** :ref:`Container<class_Container>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 

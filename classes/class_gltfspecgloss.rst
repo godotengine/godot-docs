@@ -7,8 +7,8 @@
 
 .. _class_GLTFSpecGloss:
 
-GLTFSpecGloss
-=============
+`GLTFSpecGloss <https://github.com/godotengine/godot/blob/master/modules/gltf/extensions/gltf_spec_gloss.h#L43>`_
+=================================================================================================================
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

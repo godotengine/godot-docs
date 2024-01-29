@@ -7,8 +7,8 @@
 
 .. _class_RID:
 
-RID
-===
+`RID <https://github.com/godotengine/godot/blob/master/core/templates/rid.h#L38>`_
+==================================================================================
 
 A handle for a :ref:`Resource<class_Resource>`'s unique identifier.
 

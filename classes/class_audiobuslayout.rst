@@ -7,8 +7,8 @@
 
 .. _class_AudioBusLayout:
 
-AudioBusLayout
-==============
+`AudioBusLayout <https://github.com/godotengine/godot/blob/master/servers/audio_server.h#L445>`_
+================================================================================================
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

@@ -7,8 +7,8 @@
 
 .. _class_Shortcut:
 
-Shortcut
-========
+`Shortcut <https://github.com/godotengine/godot/blob/master/core/input/shortcut.h#L37>`_
+========================================================================================
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

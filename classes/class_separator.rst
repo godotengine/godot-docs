@@ -7,8 +7,8 @@
 
 .. _class_Separator:
 
-Separator
-=========
+`Separator <https://github.com/godotengine/godot/blob/master/scene/gui/separator.h#L35>`_
+=========================================================================================
 
 **Inherits:** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 

@@ -7,8 +7,8 @@
 
 .. _class_KinematicCollision2D:
 
-KinematicCollision2D
-====================
+`KinematicCollision2D <https://github.com/godotengine/godot/blob/master/scene/2d/physics_body_2d.h#L464>`_
+==========================================================================================================
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

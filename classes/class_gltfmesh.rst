@@ -7,8 +7,8 @@
 
 .. _class_GLTFMesh:
 
-GLTFMesh
-========
+`GLTFMesh <https://github.com/godotengine/godot/blob/master/modules/gltf/structures/gltf_mesh.h#L38>`_
+======================================================================================================
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

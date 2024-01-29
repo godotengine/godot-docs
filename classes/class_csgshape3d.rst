@@ -7,8 +7,8 @@
 
 .. _class_CSGShape3D:
 
-CSGShape3D
-==========
+`CSGShape3D <https://github.com/godotengine/godot/blob/master/modules/csg/csg_shape.h#L42>`_
+============================================================================================
 
 **Inherits:** :ref:`GeometryInstance3D<class_GeometryInstance3D>` **<** :ref:`VisualInstance3D<class_VisualInstance3D>` **<** :ref:`Node3D<class_Node3D>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 

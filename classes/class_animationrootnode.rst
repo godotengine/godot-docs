@@ -7,8 +7,8 @@
 
 .. _class_AnimationRootNode:
 
-AnimationRootNode
-=================
+`AnimationRootNode <https://github.com/godotengine/godot/blob/master/scene/animation/animation_tree.h#L163>`_
+=============================================================================================================
 
 **Inherits:** :ref:`AnimationNode<class_AnimationNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

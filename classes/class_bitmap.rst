@@ -7,8 +7,8 @@
 
 .. _class_BitMap:
 
-BitMap
-======
+`BitMap <https://github.com/godotengine/godot/blob/master/editor/plugins/bit_map_editor_plugin.h#L40>`_
+=======================================================================================================
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

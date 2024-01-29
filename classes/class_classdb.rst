@@ -7,8 +7,8 @@
 
 .. _class_ClassDB:
 
-ClassDB
-=======
+`ClassDB <https://github.com/godotengine/godot/blob/master/core/core_bind.h#L423>`_
+===================================================================================
 
 **Inherits:** :ref:`Object<class_Object>`
 

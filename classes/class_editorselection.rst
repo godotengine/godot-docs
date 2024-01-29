@@ -7,8 +7,8 @@
 
 .. _class_EditorSelection:
 
-EditorSelection
-===============
+`EditorSelection <https://github.com/godotengine/godot/blob/master/editor/editor_data.h#L46>`_
+==============================================================================================
 
 **Inherits:** :ref:`Object<class_Object>`
 

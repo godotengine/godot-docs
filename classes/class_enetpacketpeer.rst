@@ -7,8 +7,8 @@
 
 .. _class_ENetPacketPeer:
 
-ENetPacketPeer
-==============
+`ENetPacketPeer <https://github.com/godotengine/godot/blob/master/modules/enet/enet_packet_peer.h#L38>`_
+========================================================================================================
 
 **Inherits:** :ref:`PacketPeer<class_PacketPeer>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

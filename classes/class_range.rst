@@ -7,8 +7,8 @@
 
 .. _class_Range:
 
-Range
-=====
+`Range <https://github.com/godotengine/godot/blob/master/modules/gdscript/language_server/godot_lsp.h#L112>`_
+=============================================================================================================
 
 **Inherits:** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 

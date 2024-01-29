@@ -7,8 +7,8 @@
 
 .. _class_ScriptLanguageExtension:
 
-ScriptLanguageExtension
-=======================
+`ScriptLanguageExtension <https://github.com/godotengine/godot/blob/master/core/object/script_language_extension.h#L208>`_
+==========================================================================================================================
 
 **Inherits:** :ref:`ScriptLanguage<class_ScriptLanguage>` **<** :ref:`Object<class_Object>`
 

@@ -7,8 +7,8 @@
 
 .. _class_InputEventMouseMotion:
 
-InputEventMouseMotion
-=====================
+`InputEventMouseMotion <https://github.com/godotengine/godot/blob/master/core/input/input_event.h#L263>`_
+=========================================================================================================
 
 **Inherits:** :ref:`InputEventMouse<class_InputEventMouse>` **<** :ref:`InputEventWithModifiers<class_InputEventWithModifiers>` **<** :ref:`InputEventFromWindow<class_InputEventFromWindow>` **<** :ref:`InputEvent<class_InputEvent>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

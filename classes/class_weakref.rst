@@ -7,8 +7,8 @@
 
 .. _class_WeakRef:
 
-WeakRef
-=======
+`WeakRef <https://github.com/godotengine/godot/blob/master/core/object/ref_counted.h#L226>`_
+============================================================================================
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

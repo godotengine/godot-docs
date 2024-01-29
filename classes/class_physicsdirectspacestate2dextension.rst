@@ -7,8 +7,8 @@
 
 .. _class_PhysicsDirectSpaceState2DExtension:
 
-PhysicsDirectSpaceState2DExtension
-==================================
+`PhysicsDirectSpaceState2DExtension <https://github.com/godotengine/godot/blob/master/servers/extensions/physics_server_2d_extension.h#L121>`_
+==============================================================================================================================================
 
 **Inherits:** :ref:`PhysicsDirectSpaceState2D<class_PhysicsDirectSpaceState2D>` **<** :ref:`Object<class_Object>`
 

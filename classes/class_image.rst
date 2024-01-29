@@ -7,8 +7,8 @@
 
 .. _class_Image:
 
-Image
-=====
+`Image <https://github.com/godotengine/godot/blob/master/core/io/image.h#L58>`_
+===============================================================================
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

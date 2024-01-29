@@ -7,8 +7,8 @@
 
 .. _class_PhysicalBone2D:
 
-PhysicalBone2D
-==============
+`PhysicalBone2D <https://github.com/godotengine/godot/blob/master/scene/2d/physical_bone_2d.h#L39>`_
+====================================================================================================
 
 **Inherits:** :ref:`RigidBody2D<class_RigidBody2D>` **<** :ref:`PhysicsBody2D<class_PhysicsBody2D>` **<** :ref:`CollisionObject2D<class_CollisionObject2D>` **<** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 

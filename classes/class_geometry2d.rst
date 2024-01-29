@@ -7,8 +7,8 @@
 
 .. _class_Geometry2D:
 
-Geometry2D
-==========
+`Geometry2D <https://github.com/godotengine/godot/blob/master/core/core_bind.h#L250>`_
+======================================================================================
 
 **Inherits:** :ref:`Object<class_Object>`
 

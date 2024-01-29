@@ -7,8 +7,8 @@
 
 .. _class_ImageFormatLoader:
 
-ImageFormatLoader
-=================
+`ImageFormatLoader <https://github.com/godotengine/godot/blob/master/core/io/image_loader.h#L45>`_
+==================================================================================================
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

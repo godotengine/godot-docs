@@ -7,8 +7,8 @@
 
 .. _class_ShaderGlobalsOverride:
 
-ShaderGlobalsOverride
-=====================
+`ShaderGlobalsOverride <https://github.com/godotengine/godot/blob/master/scene/main/shader_globals_override.h#L36>`_
+====================================================================================================================
 
 **Inherits:** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 

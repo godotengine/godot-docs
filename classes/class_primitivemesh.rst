@@ -7,8 +7,8 @@
 
 .. _class_PrimitiveMesh:
 
-PrimitiveMesh
-=============
+`PrimitiveMesh <https://github.com/godotengine/godot/blob/master/scene/resources/primitive_meshes.h#L45>`_
+==========================================================================================================
 
 **Inherits:** :ref:`Mesh<class_Mesh>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

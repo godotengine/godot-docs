@@ -7,8 +7,8 @@
 
 .. _class_Popup:
 
-Popup
-=====
+`Popup <https://github.com/godotengine/godot/blob/master/scene/gui/popup.h#L40>`_
+=================================================================================
 
 **Inherits:** :ref:`Window<class_Window>` **<** :ref:`Viewport<class_Viewport>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 

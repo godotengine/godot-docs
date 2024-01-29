@@ -7,8 +7,8 @@
 
 .. _class_XRServer:
 
-XRServer
-========
+`XRServer <https://github.com/godotengine/godot/blob/master/servers/xr_server.h#L55>`_
+======================================================================================
 
 **Inherits:** :ref:`Object<class_Object>`
 

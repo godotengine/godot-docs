@@ -7,8 +7,8 @@
 
 .. _class_VisualShaderNodeTexture3D:
 
-VisualShaderNodeTexture3D
-=========================
+`VisualShaderNodeTexture3D <https://github.com/godotengine/godot/blob/master/scene/resources/visual_shader_nodes.h#L574>`_
+==========================================================================================================================
 
 **Inherits:** :ref:`VisualShaderNodeSample3D<class_VisualShaderNodeSample3D>` **<** :ref:`VisualShaderNode<class_VisualShaderNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

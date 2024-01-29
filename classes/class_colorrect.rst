@@ -7,8 +7,8 @@
 
 .. _class_ColorRect:
 
-ColorRect
-=========
+`ColorRect <https://github.com/godotengine/godot/blob/master/scene/gui/color_rect.h#L36>`_
+==========================================================================================
 
 **Inherits:** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 

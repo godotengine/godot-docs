@@ -7,8 +7,8 @@
 
 .. _class_OpenXRInteractionProfileMetadata:
 
-OpenXRInteractionProfileMetadata
-================================
+`OpenXRInteractionProfileMetadata <https://github.com/godotengine/godot/blob/master/modules/openxr/action_map/openxr_interaction_profile_metadata.h#L61>`_
+==========================================================================================================================================================
 
 **Inherits:** :ref:`Object<class_Object>`
 

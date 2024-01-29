@@ -7,8 +7,8 @@
 
 .. _class_GLTFDocumentExtensionConvertImporterMesh:
 
-GLTFDocumentExtensionConvertImporterMesh
-========================================
+`GLTFDocumentExtensionConvertImporterMesh <https://github.com/godotengine/godot/blob/master/modules/gltf/extensions/gltf_document_extension_convert_importer_mesh.h#L36>`_
+==========================================================================================================================================================================
 
 **Inherits:** :ref:`GLTFDocumentExtension<class_GLTFDocumentExtension>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

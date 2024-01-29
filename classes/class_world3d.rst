@@ -7,8 +7,8 @@
 
 .. _class_World3D:
 
-World3D
-=======
+`World3D <https://github.com/godotengine/godot/blob/master/scene/resources/world_3d.h#L44>`_
+============================================================================================
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

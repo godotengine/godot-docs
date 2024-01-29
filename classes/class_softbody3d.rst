@@ -7,8 +7,8 @@
 
 .. _class_SoftBody3D:
 
-SoftBody3D
-==========
+`SoftBody3D <https://github.com/godotengine/godot/blob/master/editor/plugins/gizmos/soft_body_3d_gizmo_plugin.h#L36>`_
+======================================================================================================================
 
 **Inherits:** :ref:`MeshInstance3D<class_MeshInstance3D>` **<** :ref:`GeometryInstance3D<class_GeometryInstance3D>` **<** :ref:`VisualInstance3D<class_VisualInstance3D>` **<** :ref:`Node3D<class_Node3D>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 

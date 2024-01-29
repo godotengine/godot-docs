@@ -7,8 +7,8 @@
 
 .. _class_XRPose:
 
-XRPose
-======
+`XRPose <https://github.com/godotengine/godot/blob/master/servers/xr/xr_pose.h#L36>`_
+=====================================================================================
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

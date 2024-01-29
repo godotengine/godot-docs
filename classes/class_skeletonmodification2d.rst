@@ -7,8 +7,8 @@
 
 .. _class_SkeletonModification2D:
 
-SkeletonModification2D
-======================
+`SkeletonModification2D <https://github.com/godotengine/godot/blob/master/scene/resources/skeleton_modification_2d.h#L44>`_
+===========================================================================================================================
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

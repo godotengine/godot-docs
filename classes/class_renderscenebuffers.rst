@@ -7,8 +7,8 @@
 
 .. _class_RenderSceneBuffers:
 
-RenderSceneBuffers
-==================
+`RenderSceneBuffers <https://github.com/godotengine/godot/blob/master/drivers/gles3/storage/render_scene_buffers_gles3.h#L40>`_
+===============================================================================================================================
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

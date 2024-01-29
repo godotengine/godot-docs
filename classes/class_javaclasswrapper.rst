@@ -7,8 +7,8 @@
 
 .. _class_JavaClassWrapper:
 
-JavaClassWrapper
-================
+`JavaClassWrapper <https://github.com/godotengine/godot/blob/master/platform/android/api/java_class_wrapper.h#L206>`_
+=====================================================================================================================
 
 **Inherits:** :ref:`Object<class_Object>`
 

@@ -7,8 +7,8 @@
 
 .. _class_PlaceholderCubemapArray:
 
-PlaceholderCubemapArray
-=======================
+`PlaceholderCubemapArray <https://github.com/godotengine/godot/blob/master/scene/resources/placeholder_textures.h#L125>`_
+=========================================================================================================================
 
 **Inherits:** :ref:`PlaceholderTextureLayered<class_PlaceholderTextureLayered>` **<** :ref:`TextureLayered<class_TextureLayered>` **<** :ref:`Texture<class_Texture>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

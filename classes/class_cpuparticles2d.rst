@@ -7,8 +7,8 @@
 
 .. _class_CPUParticles2D:
 
-CPUParticles2D
-==============
+`CPUParticles2D <https://github.com/godotengine/godot/blob/master/editor/plugins/cpu_particles_2d_editor_plugin.h#L46>`_
+========================================================================================================================
 
 **Inherits:** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 

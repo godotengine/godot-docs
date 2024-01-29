@@ -7,8 +7,8 @@
 
 .. _class_StyleBox:
 
-StyleBox
-========
+`StyleBox <https://github.com/godotengine/godot/blob/master/editor/plugins/style_box_editor_plugin.h#L41>`_
+===========================================================================================================
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

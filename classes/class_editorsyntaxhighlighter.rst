@@ -7,8 +7,8 @@
 
 .. _class_EditorSyntaxHighlighter:
 
-EditorSyntaxHighlighter
-=======================
+`EditorSyntaxHighlighter <https://github.com/godotengine/godot/blob/master/editor/plugins/script_editor_plugin.h#L53>`_
+=======================================================================================================================
 
 **Inherits:** :ref:`SyntaxHighlighter<class_SyntaxHighlighter>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

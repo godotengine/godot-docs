@@ -7,8 +7,8 @@
 
 .. _class_AudioEffectNotchFilter:
 
-AudioEffectNotchFilter
-======================
+`AudioEffectNotchFilter <https://github.com/godotengine/godot/blob/master/servers/audio/effects/audio_effect_filter.h#L138>`_
+=============================================================================================================================
 
 **Inherits:** :ref:`AudioEffectFilter<class_AudioEffectFilter>` **<** :ref:`AudioEffect<class_AudioEffect>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

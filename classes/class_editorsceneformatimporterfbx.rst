@@ -7,8 +7,8 @@
 
 .. _class_EditorSceneFormatImporterFBX:
 
-EditorSceneFormatImporterFBX
-============================
+`EditorSceneFormatImporterFBX <https://github.com/godotengine/godot/blob/master/modules/gltf/editor/editor_scene_importer_fbx.h#L43>`_
+======================================================================================================================================
 
 **Inherits:** :ref:`EditorSceneFormatImporter<class_EditorSceneFormatImporter>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

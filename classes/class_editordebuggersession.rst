@@ -7,8 +7,8 @@
 
 .. _class_EditorDebuggerSession:
 
-EditorDebuggerSession
-=====================
+`EditorDebuggerSession <https://github.com/godotengine/godot/blob/master/editor/plugins/editor_debugger_plugin.h#L38>`_
+=======================================================================================================================
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

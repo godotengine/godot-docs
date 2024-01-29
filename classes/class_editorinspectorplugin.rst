@@ -7,8 +7,8 @@
 
 .. _class_EditorInspectorPlugin:
 
-EditorInspectorPlugin
-=====================
+`EditorInspectorPlugin <https://github.com/godotengine/godot/blob/master/editor/editor_inspector.h#L216>`_
+==========================================================================================================
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

@@ -7,8 +7,8 @@
 
 .. _class_NavigationAgent3D:
 
-NavigationAgent3D
-=================
+`NavigationAgent3D <https://github.com/godotengine/godot/blob/master/scene/3d/navigation_agent_3d.h#L40>`_
+==========================================================================================================
 
 **Inherits:** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 

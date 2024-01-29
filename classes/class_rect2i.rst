@@ -7,8 +7,8 @@
 
 .. _class_Rect2i:
 
-Rect2i
-======
+`Rect2i <https://github.com/godotengine/godot/blob/master/core/math/rect2i.h#L40>`_
+===================================================================================
 
 A 2D axis-aligned bounding box using integer coordinates.
 

@@ -7,8 +7,8 @@
 
 .. _class_HashingContext:
 
-HashingContext
-==============
+`HashingContext <https://github.com/godotengine/godot/blob/master/core/crypto/hashing_context.h#L36>`_
+======================================================================================================
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

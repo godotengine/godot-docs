@@ -7,8 +7,8 @@
 
 .. _class_EditorCommandPalette:
 
-EditorCommandPalette
-====================
+`EditorCommandPalette <https://github.com/godotengine/godot/blob/master/editor/editor_command_palette.h#L39>`_
+==============================================================================================================
 
 **Inherits:** :ref:`ConfirmationDialog<class_ConfirmationDialog>` **<** :ref:`AcceptDialog<class_AcceptDialog>` **<** :ref:`Window<class_Window>` **<** :ref:`Viewport<class_Viewport>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 

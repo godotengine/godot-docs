@@ -7,8 +7,8 @@
 
 .. _class_SubViewport:
 
-SubViewport
-===========
+`SubViewport <https://github.com/godotengine/godot/blob/master/editor/plugins/sub_viewport_preview_editor_plugin.h#L46>`_
+=========================================================================================================================
 
 **Inherits:** :ref:`Viewport<class_Viewport>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 

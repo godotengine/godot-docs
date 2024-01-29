@@ -7,8 +7,8 @@
 
 .. _class_SceneMultiplayer:
 
-SceneMultiplayer
-================
+`SceneMultiplayer <https://github.com/godotengine/godot/blob/master/modules/multiplayer/scene_multiplayer.h#L65>`_
+==================================================================================================================
 
 **Inherits:** :ref:`MultiplayerAPI<class_MultiplayerAPI>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

@@ -7,8 +7,8 @@
 
 .. _class_NoiseTexture3D:
 
-NoiseTexture3D
-==============
+`NoiseTexture3D <https://github.com/godotengine/godot/blob/master/modules/noise/noise_texture_3d.h#L39>`_
+=========================================================================================================
 
 **Inherits:** :ref:`Texture3D<class_Texture3D>` **<** :ref:`Texture<class_Texture>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

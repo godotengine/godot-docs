@@ -7,8 +7,8 @@
 
 .. _class_GraphNode:
 
-GraphNode
-=========
+`GraphNode <https://github.com/godotengine/godot/blob/master/scene/gui/graph_node.h#L38>`_
+==========================================================================================
 
 **Inherits:** :ref:`GraphElement<class_GraphElement>` **<** :ref:`Container<class_Container>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 

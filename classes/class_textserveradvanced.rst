@@ -7,8 +7,8 @@
 
 .. _class_TextServerAdvanced:
 
-TextServerAdvanced
-==================
+`TextServerAdvanced <https://github.com/godotengine/godot/blob/master/modules/text_server_adv/text_server_adv.h#L132>`_
+=======================================================================================================================
 
 **Inherits:** :ref:`TextServerExtension<class_TextServerExtension>` **<** :ref:`TextServer<class_TextServer>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

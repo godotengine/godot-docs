@@ -7,8 +7,8 @@
 
 .. _class_VoxelGI:
 
-VoxelGI
-=======
+`VoxelGI <https://github.com/godotengine/godot/blob/master/editor/plugins/voxel_gi_editor_plugin.h#L42>`_
+=========================================================================================================
 
 **Inherits:** :ref:`VisualInstance3D<class_VisualInstance3D>` **<** :ref:`Node3D<class_Node3D>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 

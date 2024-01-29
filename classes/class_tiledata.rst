@@ -7,8 +7,8 @@
 
 .. _class_TileData:
 
-TileData
-========
+`TileData <https://github.com/godotengine/godot/blob/master/editor/plugins/tiles/tile_data_editors.h#L46>`_
+===========================================================================================================
 
 **Inherits:** :ref:`Object<class_Object>`
 

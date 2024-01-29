@@ -7,8 +7,8 @@
 
 .. _class_VisualShaderNodeBooleanConstant:
 
-VisualShaderNodeBooleanConstant
-===============================
+`VisualShaderNodeBooleanConstant <https://github.com/godotengine/godot/blob/master/scene/resources/visual_shader_nodes.h#L197>`_
+================================================================================================================================
 
 **Inherits:** :ref:`VisualShaderNodeConstant<class_VisualShaderNodeConstant>` **<** :ref:`VisualShaderNode<class_VisualShaderNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

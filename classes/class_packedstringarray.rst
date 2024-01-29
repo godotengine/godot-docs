@@ -7,8 +7,8 @@
 
 .. _class_PackedStringArray:
 
-PackedStringArray
-=================
+`PackedStringArray <https://github.com/godotengine/godot/blob/master/core/variant/variant.h#L74>`_
+==================================================================================================
 
 A packed array of :ref:`String<class_String>`\ s.
 

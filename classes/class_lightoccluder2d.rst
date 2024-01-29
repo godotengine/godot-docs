@@ -7,8 +7,8 @@
 
 .. _class_LightOccluder2D:
 
-LightOccluder2D
-===============
+`LightOccluder2D <https://github.com/godotengine/godot/blob/master/editor/plugins/light_occluder_2d_editor_plugin.h#L37>`_
+==========================================================================================================================
 
 **Inherits:** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 

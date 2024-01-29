@@ -7,8 +7,8 @@
 
 .. _class_OpenXRAPIExtension:
 
-OpenXRAPIExtension
-==================
+`OpenXRAPIExtension <https://github.com/godotengine/godot/blob/master/modules/openxr/openxr_api_extension.h#L41>`_
+==================================================================================================================
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

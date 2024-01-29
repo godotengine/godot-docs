@@ -7,8 +7,8 @@
 
 .. _class_TextureProgressBar:
 
-TextureProgressBar
-==================
+`TextureProgressBar <https://github.com/godotengine/godot/blob/master/scene/gui/texture_progress_bar.h#L36>`_
+=============================================================================================================
 
 **Inherits:** :ref:`Range<class_Range>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 

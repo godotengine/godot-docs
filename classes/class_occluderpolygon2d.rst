@@ -7,8 +7,8 @@
 
 .. _class_OccluderPolygon2D:
 
-OccluderPolygon2D
-=================
+`OccluderPolygon2D <https://github.com/godotengine/godot/blob/master/scene/2d/light_occluder_2d.h#L36>`_
+========================================================================================================
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

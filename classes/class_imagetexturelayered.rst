@@ -7,8 +7,8 @@
 
 .. _class_ImageTextureLayered:
 
-ImageTextureLayered
-===================
+`ImageTextureLayered <https://github.com/godotengine/godot/blob/master/scene/resources/image_texture.h#L89>`_
+=============================================================================================================
 
 **Inherits:** :ref:`TextureLayered<class_TextureLayered>` **<** :ref:`Texture<class_Texture>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

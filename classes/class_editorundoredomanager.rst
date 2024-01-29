@@ -7,8 +7,8 @@
 
 .. _class_EditorUndoRedoManager:
 
-EditorUndoRedoManager
-=====================
+`EditorUndoRedoManager <https://github.com/godotengine/godot/blob/master/editor/editor_undo_redo_manager.h#L38>`_
+=================================================================================================================
 
 **Inherits:** :ref:`Object<class_Object>`
 

@@ -7,8 +7,8 @@
 
 .. _class_QuadMesh:
 
-QuadMesh
-========
+`QuadMesh <https://github.com/godotengine/godot/blob/master/scene/resources/primitive_meshes.h#L289>`_
+======================================================================================================
 
 **Inherits:** :ref:`PlaneMesh<class_PlaneMesh>` **<** :ref:`PrimitiveMesh<class_PrimitiveMesh>` **<** :ref:`Mesh<class_Mesh>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

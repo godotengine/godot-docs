@@ -7,8 +7,8 @@
 
 .. _class_EngineProfiler:
 
-EngineProfiler
-==============
+`EngineProfiler <https://github.com/godotengine/godot/blob/master/core/debugger/engine_profiler.h#L37>`_
+========================================================================================================
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

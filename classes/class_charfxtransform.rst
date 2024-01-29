@@ -7,8 +7,8 @@
 
 .. _class_CharFXTransform:
 
-CharFXTransform
-===============
+`CharFXTransform <https://github.com/godotengine/godot/blob/master/scene/gui/rich_text_effect.h#L37>`_
+======================================================================================================
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

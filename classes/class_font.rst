@@ -7,8 +7,8 @@
 
 .. _class_Font:
 
-Font
-====
+`Font <https://github.com/godotengine/godot/blob/master/editor/plugins/font_config_plugin.h#L220>`_
+===================================================================================================
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

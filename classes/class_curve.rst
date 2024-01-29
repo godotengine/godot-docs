@@ -7,8 +7,8 @@
 
 .. _class_Curve:
 
-Curve
-=====
+`Curve <https://github.com/godotengine/godot/blob/master/editor/import/3d/collada.h#L164>`_
+===========================================================================================
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

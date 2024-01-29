@@ -7,8 +7,8 @@
 
 .. _class_PathFollow2D:
 
-PathFollow2D
-============
+`PathFollow2D <https://github.com/godotengine/godot/blob/master/scene/2d/path_2d.h#L63>`_
+=========================================================================================
 
 **Inherits:** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 

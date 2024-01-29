@@ -7,8 +7,8 @@
 
 .. _class_EditorScenePostImport:
 
-EditorScenePostImport
-=====================
+`EditorScenePostImport <https://github.com/godotengine/godot/blob/master/editor/import/3d/resource_importer_scene.h#L87>`_
+==========================================================================================================================
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

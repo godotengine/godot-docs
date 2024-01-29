@@ -7,8 +7,8 @@
 
 .. _class_ResourceImporterDynamicFont:
 
-ResourceImporterDynamicFont
-===========================
+`ResourceImporterDynamicFont <https://github.com/godotengine/godot/blob/master/editor/import/resource_importer_dynamic_font.h#L36>`_
+====================================================================================================================================
 
 **Inherits:** :ref:`ResourceImporter<class_ResourceImporter>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

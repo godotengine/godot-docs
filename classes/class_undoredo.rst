@@ -7,8 +7,8 @@
 
 .. _class_UndoRedo:
 
-UndoRedo
-========
+`UndoRedo <https://github.com/godotengine/godot/blob/master/core/object/undo_redo.h#L37>`_
+==========================================================================================
 
 **Inherits:** :ref:`Object<class_Object>`
 

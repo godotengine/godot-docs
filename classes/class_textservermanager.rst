@@ -7,8 +7,8 @@
 
 .. _class_TextServerManager:
 
-TextServerManager
-=================
+`TextServerManager <https://github.com/godotengine/godot/blob/master/servers/text_server.h#L580>`_
+==================================================================================================
 
 **Inherits:** :ref:`Object<class_Object>`
 

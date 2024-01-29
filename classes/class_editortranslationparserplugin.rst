@@ -7,8 +7,8 @@
 
 .. _class_EditorTranslationParserPlugin:
 
-EditorTranslationParserPlugin
-=============================
+`EditorTranslationParserPlugin <https://github.com/godotengine/godot/blob/master/editor/editor_translation_parser.h#L39>`_
+==========================================================================================================================
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

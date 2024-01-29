@@ -7,8 +7,8 @@
 
 .. _class_AudioStream:
 
-AudioStream
-===========
+`AudioStream <https://github.com/godotengine/godot/blob/master/editor/audio_stream_preview.h#L39>`_
+===================================================================================================
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

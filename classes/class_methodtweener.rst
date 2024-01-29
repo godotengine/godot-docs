@@ -7,8 +7,8 @@
 
 .. _class_MethodTweener:
 
-MethodTweener
-=============
+`MethodTweener <https://github.com/godotengine/godot/blob/master/scene/animation/tween.h#L268>`_
+================================================================================================
 
 **Inherits:** :ref:`Tweener<class_Tweener>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

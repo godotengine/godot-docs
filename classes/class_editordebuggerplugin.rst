@@ -7,8 +7,8 @@
 
 .. _class_EditorDebuggerPlugin:
 
-EditorDebuggerPlugin
-====================
+`EditorDebuggerPlugin <https://github.com/godotengine/godot/blob/master/editor/plugins/editor_debugger_plugin.h#L69>`_
+======================================================================================================================
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

@@ -7,8 +7,8 @@
 
 .. _class_InputEventScreenTouch:
 
-InputEventScreenTouch
-=====================
+`InputEventScreenTouch <https://github.com/godotengine/godot/blob/master/core/input/input_event.h#L357>`_
+=========================================================================================================
 
 **Inherits:** :ref:`InputEventFromWindow<class_InputEventFromWindow>` **<** :ref:`InputEvent<class_InputEvent>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

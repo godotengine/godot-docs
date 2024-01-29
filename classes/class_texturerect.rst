@@ -7,8 +7,8 @@
 
 .. _class_TextureRect:
 
-TextureRect
-===========
+`TextureRect <https://github.com/godotengine/godot/blob/master/scene/gui/texture_rect.h#L36>`_
+==============================================================================================
 
 **Inherits:** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 

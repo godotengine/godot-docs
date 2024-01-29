@@ -7,8 +7,8 @@
 
 .. _class_FileAccess:
 
-FileAccess
-==========
+`FileAccess <https://github.com/godotengine/godot/blob/master/core/io/file_access.h#L45>`_
+==========================================================================================
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

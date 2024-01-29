@@ -7,8 +7,8 @@
 
 .. _class_JavaScriptObject:
 
-JavaScriptObject
-================
+`JavaScriptObject <https://github.com/godotengine/godot/blob/master/platform/web/javascript_bridge_singleton.cpp#L64>`_
+=======================================================================================================================
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

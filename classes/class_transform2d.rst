@@ -7,8 +7,8 @@
 
 .. _class_Transform2D:
 
-Transform2D
-===========
+`Transform2D <https://github.com/godotengine/godot/blob/master/core/math/transform_2d.h#L41>`_
+==============================================================================================
 
 A 2×3 matrix representing a 2D transformation.
 

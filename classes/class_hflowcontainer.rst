@@ -7,8 +7,8 @@
 
 .. _class_HFlowContainer:
 
-HFlowContainer
-==============
+`HFlowContainer <https://github.com/godotengine/godot/blob/master/scene/gui/flow_container.h#L84>`_
+===================================================================================================
 
 **Inherits:** :ref:`FlowContainer<class_FlowContainer>` **<** :ref:`Container<class_Container>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 

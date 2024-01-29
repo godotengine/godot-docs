@@ -7,8 +7,8 @@
 
 .. _class_CheckBox:
 
-CheckBox
-========
+`CheckBox <https://github.com/godotengine/godot/blob/master/scene/gui/check_box.h#L36>`_
+========================================================================================
 
 **Inherits:** :ref:`Button<class_Button>` **<** :ref:`BaseButton<class_BaseButton>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 

@@ -7,8 +7,8 @@
 
 .. _class_GPUParticlesCollisionHeightField3D:
 
-GPUParticlesCollisionHeightField3D
-==================================
+`GPUParticlesCollisionHeightField3D <https://github.com/godotengine/godot/blob/master/scene/3d/gpu_particles_collision_3d.h#L208>`_
+===================================================================================================================================
 
 **Inherits:** :ref:`GPUParticlesCollision3D<class_GPUParticlesCollision3D>` **<** :ref:`VisualInstance3D<class_VisualInstance3D>` **<** :ref:`Node3D<class_Node3D>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 

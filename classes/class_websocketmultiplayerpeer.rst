@@ -7,8 +7,8 @@
 
 .. _class_WebSocketMultiplayerPeer:
 
-WebSocketMultiplayerPeer
-========================
+`WebSocketMultiplayerPeer <https://github.com/godotengine/godot/blob/master/modules/websocket/websocket_multiplayer_peer.h#L42>`_
+=================================================================================================================================
 
 **Inherits:** :ref:`MultiplayerPeer<class_MultiplayerPeer>` **<** :ref:`PacketPeer<class_PacketPeer>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

@@ -7,8 +7,8 @@
 
 .. _class_ConfirmationDialog:
 
-ConfirmationDialog
-==================
+`ConfirmationDialog <https://github.com/godotengine/godot/blob/master/scene/gui/dialogs.h#L116>`_
+=================================================================================================
 
 **Inherits:** :ref:`AcceptDialog<class_AcceptDialog>` **<** :ref:`Window<class_Window>` **<** :ref:`Viewport<class_Viewport>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 

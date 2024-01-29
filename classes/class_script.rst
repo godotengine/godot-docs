@@ -7,8 +7,8 @@
 
 .. _class_Script:
 
-Script
-======
+`Script <https://github.com/godotengine/godot/blob/master/core/doc_data.h#L37>`_
+================================================================================
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

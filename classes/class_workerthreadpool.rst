@@ -7,8 +7,8 @@
 
 .. _class_WorkerThreadPool:
 
-WorkerThreadPool
-================
+`WorkerThreadPool <https://github.com/godotengine/godot/blob/master/core/object/worker_thread_pool.h#L46>`_
+===========================================================================================================
 
 **Inherits:** :ref:`Object<class_Object>`
 

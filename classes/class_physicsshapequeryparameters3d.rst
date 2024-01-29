@@ -7,8 +7,8 @@
 
 .. _class_PhysicsShapeQueryParameters3D:
 
-PhysicsShapeQueryParameters3D
-=============================
+`PhysicsShapeQueryParameters3D <https://github.com/godotengine/godot/blob/master/servers/physics_server_3d.h#L881>`_
+====================================================================================================================
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

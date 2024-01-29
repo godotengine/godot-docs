@@ -7,8 +7,8 @@
 
 .. _class_PCKPacker:
 
-PCKPacker
-=========
+`PCKPacker <https://github.com/godotengine/godot/blob/master/core/io/pck_packer.h#L38>`_
+========================================================================================
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

@@ -7,8 +7,8 @@
 
 .. _class_CharacterBody3D:
 
-CharacterBody3D
-===============
+`CharacterBody3D <https://github.com/godotengine/godot/blob/master/scene/3d/physics_body_3d.h#L345>`_
+=====================================================================================================
 
 **Inherits:** :ref:`PhysicsBody3D<class_PhysicsBody3D>` **<** :ref:`CollisionObject3D<class_CollisionObject3D>` **<** :ref:`Node3D<class_Node3D>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 

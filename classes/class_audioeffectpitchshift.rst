@@ -7,8 +7,8 @@
 
 .. _class_AudioEffectPitchShift:
 
-AudioEffectPitchShift
-=====================
+`AudioEffectPitchShift <https://github.com/godotengine/godot/blob/master/servers/audio/effects/audio_effect_pitch_shift.h#L73>`_
+================================================================================================================================
 
 **Inherits:** :ref:`AudioEffect<class_AudioEffect>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

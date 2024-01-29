@@ -7,8 +7,8 @@
 
 .. _class_RDShaderSPIRV:
 
-RDShaderSPIRV
-=============
+`RDShaderSPIRV <https://github.com/godotengine/godot/blob/master/servers/rendering/rendering_device_binds.h#L269>`_
+===================================================================================================================
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

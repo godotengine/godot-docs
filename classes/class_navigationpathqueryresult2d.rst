@@ -7,8 +7,8 @@
 
 .. _class_NavigationPathQueryResult2D:
 
-NavigationPathQueryResult2D
-===========================
+`NavigationPathQueryResult2D <https://github.com/godotengine/godot/blob/master/servers/navigation/navigation_path_query_result_2d.h#L37>`_
+==========================================================================================================================================
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

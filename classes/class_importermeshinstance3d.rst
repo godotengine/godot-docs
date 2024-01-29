@@ -7,8 +7,8 @@
 
 .. _class_ImporterMeshInstance3D:
 
-ImporterMeshInstance3D
-======================
+`ImporterMeshInstance3D <https://github.com/godotengine/godot/blob/master/scene/3d/importer_mesh_instance_3d.h#L41>`_
+=====================================================================================================================
 
 **Inherits:** :ref:`Node3D<class_Node3D>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 

@@ -7,8 +7,8 @@
 
 .. _class_MissingResource:
 
-MissingResource
-===============
+`MissingResource <https://github.com/godotengine/godot/blob/master/core/io/missing_resource.h#L39>`_
+====================================================================================================
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

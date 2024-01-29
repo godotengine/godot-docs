@@ -7,8 +7,8 @@
 
 .. _class_OpenXRActionMap:
 
-OpenXRActionMap
-===============
+`OpenXRActionMap <https://github.com/godotengine/godot/blob/master/modules/openxr/action_map/openxr_action_map.h#L40>`_
+=======================================================================================================================
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

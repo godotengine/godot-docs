@@ -7,8 +7,8 @@
 
 .. _class_EditorExportPlatformLinuxBSD:
 
-EditorExportPlatformLinuxBSD
-============================
+`EditorExportPlatformLinuxBSD <https://github.com/godotengine/godot/blob/master/platform/linuxbsd/export/export_plugin.h#L39>`_
+===============================================================================================================================
 
 **Inherits:** :ref:`EditorExportPlatformPC<class_EditorExportPlatformPC>` **<** :ref:`EditorExportPlatform<class_EditorExportPlatform>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

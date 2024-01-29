@@ -7,8 +7,8 @@
 
 .. _class_Light3D:
 
-Light3D
-=======
+`Light3D <https://github.com/godotengine/godot/blob/master/editor/plugins/gizmos/light_3d_gizmo_plugin.h#L36>`_
+===============================================================================================================
 
 **Inherits:** :ref:`VisualInstance3D<class_VisualInstance3D>` **<** :ref:`Node3D<class_Node3D>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 

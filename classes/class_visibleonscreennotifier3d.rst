@@ -7,8 +7,8 @@
 
 .. _class_VisibleOnScreenNotifier3D:
 
-VisibleOnScreenNotifier3D
-=========================
+`VisibleOnScreenNotifier3D <https://github.com/godotengine/godot/blob/master/editor/plugins/gizmos/visible_on_screen_notifier_3d_gizmo_plugin.h#L36>`_
+======================================================================================================================================================
 
 **Inherits:** :ref:`VisualInstance3D<class_VisualInstance3D>` **<** :ref:`Node3D<class_Node3D>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 

@@ -7,8 +7,8 @@
 
 .. _class_SkeletonProfileHumanoid:
 
-SkeletonProfileHumanoid
-=======================
+`SkeletonProfileHumanoid <https://github.com/godotengine/godot/blob/master/scene/resources/skeleton_profile.h#L130>`_
+=====================================================================================================================
 
 **Inherits:** :ref:`SkeletonProfile<class_SkeletonProfile>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

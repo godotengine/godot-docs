@@ -7,8 +7,8 @@
 
 .. _class_StreamPeerTCP:
 
-StreamPeerTCP
-=============
+`StreamPeerTCP <https://github.com/godotengine/godot/blob/master/core/io/stream_peer_tcp.h#L39>`_
+=================================================================================================
 
 **Inherits:** :ref:`StreamPeer<class_StreamPeer>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

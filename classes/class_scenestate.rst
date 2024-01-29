@@ -7,8 +7,8 @@
 
 .. _class_SceneState:
 
-SceneState
-==========
+`SceneState <https://github.com/godotengine/godot/blob/master/drivers/gles3/rasterizer_scene_gles3.h#L360>`_
+============================================================================================================
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

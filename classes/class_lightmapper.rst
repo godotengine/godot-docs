@@ -7,8 +7,8 @@
 
 .. _class_Lightmapper:
 
-Lightmapper
-===========
+`Lightmapper <https://github.com/godotengine/godot/blob/master/modules/lightmapper_rd/lightmapper_rd.h#L40>`_
+=============================================================================================================
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

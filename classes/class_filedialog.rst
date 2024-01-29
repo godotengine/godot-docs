@@ -7,8 +7,8 @@
 
 .. _class_FileDialog:
 
-FileDialog
-==========
+`FileDialog <https://github.com/godotengine/godot/blob/master/platform/linuxbsd/freedesktop_portal_desktop.h#L59>`_
+===================================================================================================================
 
 **Inherits:** :ref:`ConfirmationDialog<class_ConfirmationDialog>` **<** :ref:`AcceptDialog<class_AcceptDialog>` **<** :ref:`Window<class_Window>` **<** :ref:`Viewport<class_Viewport>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 

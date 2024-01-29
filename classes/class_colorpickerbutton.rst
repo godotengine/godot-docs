@@ -7,8 +7,8 @@
 
 .. _class_ColorPickerButton:
 
-ColorPickerButton
-=================
+`ColorPickerButton <https://github.com/godotengine/godot/blob/master/scene/gui/color_picker.h#L378>`_
+=====================================================================================================
 
 **Inherits:** :ref:`Button<class_Button>` **<** :ref:`BaseButton<class_BaseButton>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 

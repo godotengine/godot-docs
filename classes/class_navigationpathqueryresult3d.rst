@@ -7,8 +7,8 @@
 
 .. _class_NavigationPathQueryResult3D:
 
-NavigationPathQueryResult3D
-===========================
+`NavigationPathQueryResult3D <https://github.com/godotengine/godot/blob/master/servers/navigation/navigation_path_query_result_3d.h#L38>`_
+==========================================================================================================================================
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

@@ -7,8 +7,8 @@
 
 .. _class_ResourceImporterTextureAtlas:
 
-ResourceImporterTextureAtlas
-============================
+`ResourceImporterTextureAtlas <https://github.com/godotengine/godot/blob/master/editor/import/resource_importer_texture_atlas.h#L36>`_
+======================================================================================================================================
 
 **Inherits:** :ref:`ResourceImporter<class_ResourceImporter>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

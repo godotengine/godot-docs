@@ -7,8 +7,8 @@
 
 .. _class_GLTFLight:
 
-GLTFLight
-=========
+`GLTFLight <https://github.com/godotengine/godot/blob/master/modules/gltf/extensions/gltf_light.h#L40>`_
+========================================================================================================
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

@@ -7,8 +7,8 @@
 
 .. _class_NavigationMeshSourceGeometryData2D:
 
-NavigationMeshSourceGeometryData2D
-==================================
+`NavigationMeshSourceGeometryData2D <https://github.com/godotengine/godot/blob/master/scene/resources/navigation_mesh_source_geometry_data_2d.h#L37>`_
+======================================================================================================================================================
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

@@ -7,8 +7,8 @@
 
 .. _class_NavigationPolygon:
 
-NavigationPolygon
-=================
+`NavigationPolygon <https://github.com/godotengine/godot/blob/master/editor/plugins/navigation_polygon_editor_plugin.h#L43>`_
+=============================================================================================================================
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

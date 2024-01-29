@@ -7,8 +7,8 @@
 
 .. _class_RefCounted:
 
-RefCounted
-==========
+`RefCounted <https://github.com/godotengine/godot/blob/master/core/object/ref_counted.h#L37>`_
+==============================================================================================
 
 **Inherits:** :ref:`Object<class_Object>`
 

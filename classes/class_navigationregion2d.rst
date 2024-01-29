@@ -7,8 +7,8 @@
 
 .. _class_NavigationRegion2D:
 
-NavigationRegion2D
-==================
+`NavigationRegion2D <https://github.com/godotengine/godot/blob/master/scene/2d/navigation_region_2d.h#L36>`_
+============================================================================================================
 
 **Inherits:** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 

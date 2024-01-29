@@ -7,8 +7,8 @@
 
 .. _class_VoxelGIData:
 
-VoxelGIData
-===========
+`VoxelGIData <https://github.com/godotengine/godot/blob/master/scene/3d/voxel_gi.h#L38>`_
+=========================================================================================
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

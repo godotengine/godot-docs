@@ -7,8 +7,8 @@
 
 .. _class_WebRTCPeerConnectionExtension:
 
-WebRTCPeerConnectionExtension
-=============================
+`WebRTCPeerConnectionExtension <https://github.com/godotengine/godot/blob/master/modules/webrtc/webrtc_peer_connection_extension.h#L40>`_
+=========================================================================================================================================
 
 **Inherits:** :ref:`WebRTCPeerConnection<class_WebRTCPeerConnection>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

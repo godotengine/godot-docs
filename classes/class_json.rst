@@ -7,8 +7,8 @@
 
 .. _class_JSON:
 
-JSON
-====
+`JSON <https://github.com/godotengine/godot/blob/master/core/io/json.h#L39>`_
+=============================================================================
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

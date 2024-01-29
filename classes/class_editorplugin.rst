@@ -7,8 +7,8 @@
 
 .. _class_EditorPlugin:
 
-EditorPlugin
-============
+`EditorPlugin <https://github.com/godotengine/godot/blob/master/editor/editor_node.h#L917>`_
+============================================================================================
 
 **Inherits:** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 

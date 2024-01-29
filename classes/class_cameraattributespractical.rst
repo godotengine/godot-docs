@@ -7,8 +7,8 @@
 
 .. _class_CameraAttributesPractical:
 
-CameraAttributesPractical
-=========================
+`CameraAttributesPractical <https://github.com/godotengine/godot/blob/master/scene/resources/camera_attributes.h#L78>`_
+=======================================================================================================================
 
 **Inherits:** :ref:`CameraAttributes<class_CameraAttributes>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

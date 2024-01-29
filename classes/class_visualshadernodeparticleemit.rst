@@ -7,8 +7,8 @@
 
 .. _class_VisualShaderNodeParticleEmit:
 
-VisualShaderNodeParticleEmit
-============================
+`VisualShaderNodeParticleEmit <https://github.com/godotengine/godot/blob/master/scene/resources/visual_shader_particle_nodes.h#L40>`_
+=====================================================================================================================================
 
 **Inherits:** :ref:`VisualShaderNode<class_VisualShaderNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

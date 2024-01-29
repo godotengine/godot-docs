@@ -7,8 +7,8 @@
 
 .. _class_CryptoKey:
 
-CryptoKey
-=========
+`CryptoKey <https://github.com/godotengine/godot/blob/master/core/crypto/crypto.h#L40>`_
+========================================================================================
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

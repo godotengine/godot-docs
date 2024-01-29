@@ -7,8 +7,8 @@
 
 .. _class_Input:
 
-Input
-=====
+`Input <https://github.com/godotengine/godot/blob/master/core/input/input.h#L41>`_
+==================================================================================
 
 **Inherits:** :ref:`Object<class_Object>`
 

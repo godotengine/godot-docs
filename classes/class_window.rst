@@ -7,8 +7,8 @@
 
 .. _class_Window:
 
-Window
-======
+`Window <https://github.com/godotengine/godot/blob/master/drivers/d3d12/d3d12_context.h#L147>`_
+===============================================================================================
 
 **Inherits:** :ref:`Viewport<class_Viewport>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 

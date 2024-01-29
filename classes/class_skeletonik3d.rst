@@ -7,8 +7,8 @@
 
 .. _class_SkeletonIK3D:
 
-SkeletonIK3D
-============
+`SkeletonIK3D <https://github.com/godotengine/godot/blob/master/editor/plugins/skeleton_ik_3d_editor_plugin.h#L39>`_
+====================================================================================================================
 
 **Inherits:** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 

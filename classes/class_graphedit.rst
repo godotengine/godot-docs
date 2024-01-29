@@ -7,8 +7,8 @@
 
 .. _class_GraphEdit:
 
-GraphEdit
-=========
+`GraphEdit <https://github.com/godotengine/godot/blob/master/scene/gui/graph_edit.h#L48>`_
+==========================================================================================
 
 **Inherits:** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 

@@ -7,8 +7,8 @@
 
 .. _class_EditorNode3DGizmoPlugin:
 
-EditorNode3DGizmoPlugin
-=======================
+`EditorNode3DGizmoPlugin <https://github.com/godotengine/godot/blob/master/editor/plugins/node_3d_editor_gizmos.h#L145>`_
+=========================================================================================================================
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

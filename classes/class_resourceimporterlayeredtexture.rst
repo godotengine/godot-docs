@@ -7,8 +7,8 @@
 
 .. _class_ResourceImporterLayeredTexture:
 
-ResourceImporterLayeredTexture
-==============================
+`ResourceImporterLayeredTexture <https://github.com/godotengine/godot/blob/master/editor/import/resource_importer_layered_texture.h#L60>`_
+==========================================================================================================================================
 
 **Inherits:** :ref:`ResourceImporter<class_ResourceImporter>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

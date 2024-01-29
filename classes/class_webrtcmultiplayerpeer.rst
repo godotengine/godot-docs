@@ -7,8 +7,8 @@
 
 .. _class_WebRTCMultiplayerPeer:
 
-WebRTCMultiplayerPeer
-=====================
+`WebRTCMultiplayerPeer <https://github.com/godotengine/godot/blob/master/modules/webrtc/webrtc_multiplayer_peer.h#L38>`_
+========================================================================================================================
 
 **Inherits:** :ref:`MultiplayerPeer<class_MultiplayerPeer>` **<** :ref:`PacketPeer<class_PacketPeer>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

@@ -7,8 +7,8 @@
 
 .. _class_Vector4:
 
-Vector4
-=======
+`Vector4 <https://github.com/godotengine/godot/blob/master/core/math/vector4.h#L39>`_
+=====================================================================================
 
 A 4D vector using floating point coordinates.
 

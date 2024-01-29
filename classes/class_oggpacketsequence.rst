@@ -7,8 +7,8 @@
 
 .. _class_OggPacketSequence:
 
-OggPacketSequence
-=================
+`OggPacketSequence <https://github.com/godotengine/godot/blob/master/modules/ogg/ogg_packet_sequence.h#L42>`_
+=============================================================================================================
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

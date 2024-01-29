@@ -7,8 +7,8 @@
 
 .. _class_SpriteFrames:
 
-SpriteFrames
-============
+`SpriteFrames <https://github.com/godotengine/godot/blob/master/editor/plugins/sprite_frames_editor_plugin.h#L60>`_
+===================================================================================================================
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

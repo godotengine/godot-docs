@@ -7,8 +7,8 @@
 
 .. _class_MeshConvexDecompositionSettings:
 
-MeshConvexDecompositionSettings
-===============================
+`MeshConvexDecompositionSettings <https://github.com/godotengine/godot/blob/master/scene/resources/mesh.h#L208>`_
+=================================================================================================================
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

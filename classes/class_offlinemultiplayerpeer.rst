@@ -7,8 +7,8 @@
 
 .. _class_OfflineMultiplayerPeer:
 
-OfflineMultiplayerPeer
-======================
+`OfflineMultiplayerPeer <https://github.com/godotengine/godot/blob/master/modules/multiplayer/scene_multiplayer.h#L40>`_
+========================================================================================================================
 
 **Inherits:** :ref:`MultiplayerPeer<class_MultiplayerPeer>` **<** :ref:`PacketPeer<class_PacketPeer>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

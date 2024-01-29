@@ -7,8 +7,8 @@
 
 .. _class_MeshDataTool:
 
-MeshDataTool
-============
+`MeshDataTool <https://github.com/godotengine/godot/blob/master/scene/resources/mesh_data_tool.h#L36>`_
+=======================================================================================================
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

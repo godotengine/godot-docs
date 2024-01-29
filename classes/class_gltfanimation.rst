@@ -7,8 +7,8 @@
 
 .. _class_GLTFAnimation:
 
-GLTFAnimation
-=============
+`GLTFAnimation <https://github.com/godotengine/godot/blob/master/modules/gltf/structures/gltf_animation.h#L36>`_
+================================================================================================================
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

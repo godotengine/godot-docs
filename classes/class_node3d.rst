@@ -7,8 +7,8 @@
 
 .. _class_Node3D:
 
-Node3D
-======
+`Node3D <https://github.com/godotengine/godot/blob/master/editor/plugins/node_3d_editor_plugin.h#L103>`_
+========================================================================================================
 
 **Inherits:** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 

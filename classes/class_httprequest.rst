@@ -7,8 +7,8 @@
 
 .. _class_HTTPRequest:
 
-HTTPRequest
-===========
+`HTTPRequest <https://github.com/godotengine/godot/blob/master/scene/main/http_request.h#L42>`_
+===============================================================================================
 
 **Inherits:** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 

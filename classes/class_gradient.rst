@@ -7,8 +7,8 @@
 
 .. _class_Gradient:
 
-Gradient
-========
+`Gradient <https://github.com/godotengine/godot/blob/master/editor/plugins/gradient_editor_plugin.h#L42>`_
+==========================================================================================================
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

@@ -7,8 +7,8 @@
 
 .. _class_GLTFSkeleton:
 
-GLTFSkeleton
-============
+`GLTFSkeleton <https://github.com/godotengine/godot/blob/master/modules/gltf/structures/gltf_skeleton.h#L38>`_
+==============================================================================================================
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

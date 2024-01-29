@@ -7,8 +7,8 @@
 
 .. _class_TileSetSource:
 
-TileSetSource
-=============
+`TileSetSource <https://github.com/godotengine/godot/blob/master/scene/resources/tile_set.h#L552>`_
+===================================================================================================
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

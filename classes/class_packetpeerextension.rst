@@ -7,8 +7,8 @@
 
 .. _class_PacketPeerExtension:
 
-PacketPeerExtension
-===================
+`PacketPeerExtension <https://github.com/godotengine/godot/blob/master/core/io/packet_peer.h#L80>`_
+===================================================================================================
 
 **Inherits:** :ref:`PacketPeer<class_PacketPeer>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

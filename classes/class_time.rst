@@ -7,8 +7,8 @@
 
 .. _class_Time:
 
-Time
-====
+`Time <https://github.com/godotengine/godot/blob/master/core/os/os.h#L217>`_
+============================================================================
 
 **Inherits:** :ref:`Object<class_Object>`
 

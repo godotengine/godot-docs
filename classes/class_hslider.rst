@@ -7,8 +7,8 @@
 
 .. _class_HSlider:
 
-HSlider
-=======
+`HSlider <https://github.com/godotengine/godot/blob/master/scene/gui/slider.h#L99>`_
+====================================================================================
 
 **Inherits:** :ref:`Slider<class_Slider>` **<** :ref:`Range<class_Range>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 

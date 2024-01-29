@@ -7,8 +7,8 @@
 
 .. _class_TCPServer:
 
-TCPServer
-=========
+`TCPServer <https://github.com/godotengine/godot/blob/master/core/io/tcp_server.h#L39>`_
+========================================================================================
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

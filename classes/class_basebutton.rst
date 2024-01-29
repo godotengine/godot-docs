@@ -7,8 +7,8 @@
 
 .. _class_BaseButton:
 
-BaseButton
-==========
+`BaseButton <https://github.com/godotengine/godot/blob/master/scene/gui/base_button.h#L39>`_
+============================================================================================
 
 **Inherits:** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 

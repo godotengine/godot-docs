@@ -7,8 +7,8 @@
 
 .. _class_Environment:
 
-Environment
-===========
+`Environment <https://github.com/godotengine/godot/blob/master/scene/resources/environment.h#L38>`_
+===================================================================================================
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

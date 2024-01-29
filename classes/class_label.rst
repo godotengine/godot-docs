@@ -7,8 +7,8 @@
 
 .. _class_Label:
 
-Label
-=====
+`Label <https://github.com/godotengine/godot/blob/master/editor/plugins/gizmos/label_3d_gizmo_plugin.h#L36>`_
+=============================================================================================================
 
 **Inherits:** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 

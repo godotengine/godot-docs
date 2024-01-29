@@ -7,8 +7,8 @@
 
 .. _class_CSGPrimitive3D:
 
-CSGPrimitive3D
-==============
+`CSGPrimitive3D <https://github.com/godotengine/godot/blob/master/modules/csg/csg_shape.h#L180>`_
+=================================================================================================
 
 **Inherits:** :ref:`CSGShape3D<class_CSGShape3D>` **<** :ref:`GeometryInstance3D<class_GeometryInstance3D>` **<** :ref:`VisualInstance3D<class_VisualInstance3D>` **<** :ref:`Node3D<class_Node3D>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 

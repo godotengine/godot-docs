@@ -7,8 +7,8 @@
 
 .. _class_PackedFloat32Array:
 
-PackedFloat32Array
-==================
+`PackedFloat32Array <https://github.com/godotengine/godot/blob/master/core/variant/variant.h#L71>`_
+===================================================================================================
 
 A packed array of 32-bit floating-point values.
 

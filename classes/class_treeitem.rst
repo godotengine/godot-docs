@@ -7,8 +7,8 @@
 
 .. _class_TreeItem:
 
-TreeItem
-========
+`TreeItem <https://github.com/godotengine/godot/blob/master/scene/gui/tree.h#L44>`_
+===================================================================================
 
 **Inherits:** :ref:`Object<class_Object>`
 

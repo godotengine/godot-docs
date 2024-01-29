@@ -7,8 +7,8 @@
 
 .. _class_AnimatableBody2D:
 
-AnimatableBody2D
-================
+`AnimatableBody2D <https://github.com/godotengine/godot/blob/master/scene/2d/physics_body_2d.h#L91>`_
+=====================================================================================================
 
 **Inherits:** :ref:`StaticBody2D<class_StaticBody2D>` **<** :ref:`PhysicsBody2D<class_PhysicsBody2D>` **<** :ref:`CollisionObject2D<class_CollisionObject2D>` **<** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 

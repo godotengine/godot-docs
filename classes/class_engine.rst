@@ -7,8 +7,8 @@
 
 .. _class_Engine:
 
-Engine
-======
+`Engine <https://github.com/godotengine/godot/blob/master/core/core_bind.h#L467>`_
+==================================================================================
 
 **Inherits:** :ref:`Object<class_Object>`
 

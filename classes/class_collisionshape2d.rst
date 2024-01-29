@@ -7,8 +7,8 @@
 
 .. _class_CollisionShape2D:
 
-CollisionShape2D
-================
+`CollisionShape2D <https://github.com/godotengine/godot/blob/master/editor/plugins/collision_shape_2d_editor_plugin.h#L39>`_
+============================================================================================================================
 
 **Inherits:** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 

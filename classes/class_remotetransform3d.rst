@@ -7,8 +7,8 @@
 
 .. _class_RemoteTransform3D:
 
-RemoteTransform3D
-=================
+`RemoteTransform3D <https://github.com/godotengine/godot/blob/master/scene/3d/remote_transform_3d.h#L36>`_
+==========================================================================================================
 
 **Inherits:** :ref:`Node3D<class_Node3D>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 

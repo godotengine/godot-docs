@@ -7,8 +7,8 @@
 
 .. _class_NavigationAgent2D:
 
-NavigationAgent2D
-=================
+`NavigationAgent2D <https://github.com/godotengine/godot/blob/master/scene/2d/navigation_agent_2d.h#L40>`_
+==========================================================================================================
 
 **Inherits:** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 

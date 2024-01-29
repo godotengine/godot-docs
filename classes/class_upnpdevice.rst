@@ -7,8 +7,8 @@
 
 .. _class_UPNPDevice:
 
-UPNPDevice
-==========
+`UPNPDevice <https://github.com/godotengine/godot/blob/master/modules/upnp/upnp_device.h#L36>`_
+===============================================================================================
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

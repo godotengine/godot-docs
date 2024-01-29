@@ -7,8 +7,8 @@
 
 .. _class_PhysicsPointQueryParameters3D:
 
-PhysicsPointQueryParameters3D
-=============================
+`PhysicsPointQueryParameters3D <https://github.com/godotengine/godot/blob/master/servers/physics_server_3d.h#L854>`_
+====================================================================================================================
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

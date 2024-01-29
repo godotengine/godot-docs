@@ -7,8 +7,8 @@
 
 .. _class_Mesh:
 
-Mesh
-====
+`Mesh <https://github.com/godotengine/godot/blob/master/core/math/geometry_3d.h#L554>`_
+=======================================================================================
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

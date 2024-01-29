@@ -7,8 +7,8 @@
 
 .. _class_AudioStreamPlaybackResampled:
 
-AudioStreamPlaybackResampled
-============================
+`AudioStreamPlaybackResampled <https://github.com/godotengine/godot/blob/master/servers/audio/audio_stream.h#L79>`_
+===================================================================================================================
 
 **Inherits:** :ref:`AudioStreamPlayback<class_AudioStreamPlayback>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

@@ -7,8 +7,8 @@
 
 .. _class_MeshLibrary:
 
-MeshLibrary
-===========
+`MeshLibrary <https://github.com/godotengine/godot/blob/master/editor/plugins/mesh_library_editor_plugin.h#L41>`_
+=================================================================================================================
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

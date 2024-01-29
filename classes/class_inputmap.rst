@@ -7,8 +7,8 @@
 
 .. _class_InputMap:
 
-InputMap
-========
+`InputMap <https://github.com/godotengine/godot/blob/master/core/input/input_map.h#L42>`_
+=========================================================================================
 
 **Inherits:** :ref:`Object<class_Object>`
 

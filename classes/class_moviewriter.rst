@@ -7,8 +7,8 @@
 
 .. _class_MovieWriter:
 
-MovieWriter
-===========
+`MovieWriter <https://github.com/godotengine/godot/blob/master/servers/movie_writer/movie_writer.h#L38>`_
+=========================================================================================================
 
 **Inherits:** :ref:`Object<class_Object>`
 

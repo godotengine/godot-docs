@@ -7,8 +7,8 @@
 
 .. _class_EditorFileDialog:
 
-EditorFileDialog
-================
+`EditorFileDialog <https://github.com/godotengine/godot/blob/master/editor/gui/editor_file_dialog.h#L44>`_
+==========================================================================================================
 
 **Inherits:** :ref:`ConfirmationDialog<class_ConfirmationDialog>` **<** :ref:`AcceptDialog<class_AcceptDialog>` **<** :ref:`Window<class_Window>` **<** :ref:`Viewport<class_Viewport>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 

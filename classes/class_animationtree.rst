@@ -7,8 +7,8 @@
 
 .. _class_AnimationTree:
 
-AnimationTree
-=============
+`AnimationTree <https://github.com/godotengine/godot/blob/master/editor/plugins/animation_tree_editor_plugin.h#L42>`_
+=====================================================================================================================
 
 **Inherits:** :ref:`AnimationMixer<class_AnimationMixer>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 

@@ -7,8 +7,8 @@
 
 .. _class_EditorExportPlatformAndroid:
 
-EditorExportPlatformAndroid
-===========================
+`EditorExportPlatformAndroid <https://github.com/godotengine/godot/blob/master/platform/android/export/export_plugin.h#L68>`_
+=============================================================================================================================
 
 **Inherits:** :ref:`EditorExportPlatform<class_EditorExportPlatform>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

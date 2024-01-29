@@ -7,8 +7,8 @@
 
 .. _class_CodeEdit:
 
-CodeEdit
-========
+`CodeEdit <https://github.com/godotengine/godot/blob/master/scene/gui/code_edit.h#L37>`_
+========================================================================================
 
 **Inherits:** :ref:`TextEdit<class_TextEdit>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 

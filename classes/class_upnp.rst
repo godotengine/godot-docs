@@ -7,8 +7,8 @@
 
 .. _class_UPNP:
 
-UPNP
-====
+`UPNP <https://github.com/godotengine/godot/blob/master/modules/upnp/upnp.h#L40>`_
+==================================================================================
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

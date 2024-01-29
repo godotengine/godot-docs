@@ -7,8 +7,8 @@
 
 .. _class_UDPServer:
 
-UDPServer
-=========
+`UDPServer <https://github.com/godotengine/godot/blob/master/core/io/udp_server.h#L37>`_
+========================================================================================
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

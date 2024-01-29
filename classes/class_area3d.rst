@@ -7,8 +7,8 @@
 
 .. _class_Area3D:
 
-Area3D
-======
+`Area3D <https://github.com/godotengine/godot/blob/master/scene/3d/area_3d.h#L38>`_
+===================================================================================
 
 **Inherits:** :ref:`CollisionObject3D<class_CollisionObject3D>` **<** :ref:`Node3D<class_Node3D>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 

@@ -7,8 +7,8 @@
 
 .. _class_PopupMenu:
 
-PopupMenu
-=========
+`PopupMenu <https://github.com/godotengine/godot/blob/master/scene/gui/popup_menu.h#L40>`_
+==========================================================================================
 
 **Inherits:** :ref:`Popup<class_Popup>` **<** :ref:`Window<class_Window>` **<** :ref:`Viewport<class_Viewport>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 

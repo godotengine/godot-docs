@@ -7,8 +7,8 @@
 
 .. _class_Transform3D:
 
-Transform3D
-===========
+`Transform3D <https://github.com/godotengine/godot/blob/master/core/math/transform_2d.h#L41>`_
+==============================================================================================
 
 A 3×4 matrix representing a 3D transformation.
 

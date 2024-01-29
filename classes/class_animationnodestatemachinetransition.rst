@@ -7,8 +7,8 @@
 
 .. _class_AnimationNodeStateMachineTransition:
 
-AnimationNodeStateMachineTransition
-===================================
+`AnimationNodeStateMachineTransition <https://github.com/godotengine/godot/blob/master/scene/animation/animation_node_state_machine.h#L37>`_
+============================================================================================================================================
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

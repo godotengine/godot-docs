@@ -7,8 +7,8 @@
 
 .. _class_Expression:
 
-Expression
-==========
+`Expression <https://github.com/godotengine/godot/blob/master/core/math/expression.h#L36>`_
+===========================================================================================
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

@@ -7,8 +7,8 @@
 
 .. _class_VisibleOnScreenEnabler3D:
 
-VisibleOnScreenEnabler3D
-========================
+`VisibleOnScreenEnabler3D <https://github.com/godotengine/godot/blob/master/scene/3d/visible_on_screen_notifier_3d.h#L66>`_
+===========================================================================================================================
 
 **Inherits:** :ref:`VisibleOnScreenNotifier3D<class_VisibleOnScreenNotifier3D>` **<** :ref:`VisualInstance3D<class_VisualInstance3D>` **<** :ref:`Node3D<class_Node3D>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 

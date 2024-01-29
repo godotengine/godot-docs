@@ -7,8 +7,8 @@
 
 .. _class_TextServerDummy:
 
-TextServerDummy
-===============
+`TextServerDummy <https://github.com/godotengine/godot/blob/master/servers/text/text_server_dummy.h#L38>`_
+==========================================================================================================
 
 **Inherits:** :ref:`TextServerExtension<class_TextServerExtension>` **<** :ref:`TextServer<class_TextServer>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

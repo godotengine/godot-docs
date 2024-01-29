@@ -7,8 +7,8 @@
 
 .. _class_NavigationMesh:
 
-NavigationMesh
-==============
+`NavigationMesh <https://github.com/godotengine/godot/blob/master/modules/navigation/navigation_mesh_generator.h#L41>`_
+=======================================================================================================================
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

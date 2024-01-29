@@ -7,8 +7,8 @@
 
 .. _class_Quaternion:
 
-Quaternion
-==========
+`Quaternion <https://github.com/godotengine/godot/blob/master/core/math/quaternion.h#L39>`_
+===========================================================================================
 
 A unit quaternion used for representing 3D rotations.
 

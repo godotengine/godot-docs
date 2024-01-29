@@ -7,8 +7,8 @@
 
 .. _class_AnimationNodeOneShot:
 
-AnimationNodeOneShot
-====================
+`AnimationNodeOneShot <https://github.com/godotengine/godot/blob/master/scene/animation/animation_blend_tree.h#L95>`_
+=====================================================================================================================
 
 **Inherits:** :ref:`AnimationNodeSync<class_AnimationNodeSync>` **<** :ref:`AnimationNode<class_AnimationNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

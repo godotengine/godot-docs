@@ -7,8 +7,8 @@
 
 .. _class_XROrigin3D:
 
-XROrigin3D
-==========
+`XROrigin3D <https://github.com/godotengine/godot/blob/master/scene/3d/xr_nodes.h#L182>`_
+=========================================================================================
 
 **Inherits:** :ref:`Node3D<class_Node3D>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 

@@ -7,8 +7,8 @@
 
 .. _class_PlaceholderMesh:
 
-PlaceholderMesh
-===============
+`PlaceholderMesh <https://github.com/godotengine/godot/blob/master/scene/resources/mesh.h#L403>`_
+=================================================================================================
 
 **Inherits:** :ref:`Mesh<class_Mesh>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

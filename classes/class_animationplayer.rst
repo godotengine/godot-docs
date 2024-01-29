@@ -7,8 +7,8 @@
 
 .. _class_AnimationPlayer:
 
-AnimationPlayer
-===============
+`AnimationPlayer <https://github.com/godotengine/godot/blob/master/editor/plugins/animation_player_editor_plugin.h#L47>`_
+=========================================================================================================================
 
 **Inherits:** :ref:`AnimationMixer<class_AnimationMixer>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 

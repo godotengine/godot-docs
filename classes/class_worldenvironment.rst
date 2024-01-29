@@ -7,8 +7,8 @@
 
 .. _class_WorldEnvironment:
 
-WorldEnvironment
-================
+`WorldEnvironment <https://github.com/godotengine/godot/blob/master/scene/3d/world_environment.h#L38>`_
+=======================================================================================================
 
 **Inherits:** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 

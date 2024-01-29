@@ -7,8 +7,8 @@
 
 .. _class_VSplitContainer:
 
-VSplitContainer
-===============
+`VSplitContainer <https://github.com/godotengine/godot/blob/master/scene/gui/split_container.h#L127>`_
+======================================================================================================
 
 **Inherits:** :ref:`SplitContainer<class_SplitContainer>` **<** :ref:`Container<class_Container>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 

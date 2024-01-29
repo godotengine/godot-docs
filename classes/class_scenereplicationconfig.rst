@@ -7,8 +7,8 @@
 
 .. _class_SceneReplicationConfig:
 
-SceneReplicationConfig
-======================
+`SceneReplicationConfig <https://github.com/godotengine/godot/blob/master/modules/multiplayer/scene_replication_config.h#L37>`_
+===============================================================================================================================
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

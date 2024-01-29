@@ -7,8 +7,8 @@
 
 .. _class_Animation:
 
-Animation
-=========
+`Animation <https://github.com/godotengine/godot/blob/master/editor/animation_bezier_editor.h#L39>`_
+====================================================================================================
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

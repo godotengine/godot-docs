@@ -7,8 +7,8 @@
 
 .. _class_PackedInt32Array:
 
-PackedInt32Array
-================
+`PackedInt32Array <https://github.com/godotengine/godot/blob/master/core/variant/variant.h#L69>`_
+=================================================================================================
 
 A packed array of 32-bit integers.
 

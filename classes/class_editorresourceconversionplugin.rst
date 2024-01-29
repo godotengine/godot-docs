@@ -7,8 +7,8 @@
 
 .. _class_EditorResourceConversionPlugin:
 
-EditorResourceConversionPlugin
-==============================
+`EditorResourceConversionPlugin <https://github.com/godotengine/godot/blob/master/editor/plugins/editor_resource_conversion_plugin.h#L37>`_
+===========================================================================================================================================
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

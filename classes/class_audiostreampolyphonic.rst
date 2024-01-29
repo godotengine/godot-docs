@@ -7,8 +7,8 @@
 
 .. _class_AudioStreamPolyphonic:
 
-AudioStreamPolyphonic
-=====================
+`AudioStreamPolyphonic <https://github.com/godotengine/godot/blob/master/scene/resources/audio_stream_polyphonic.h#L37>`_
+=========================================================================================================================
 
 **Inherits:** :ref:`AudioStream<class_AudioStream>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

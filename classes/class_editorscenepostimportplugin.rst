@@ -7,8 +7,8 @@
 
 .. _class_EditorScenePostImportPlugin:
 
-EditorScenePostImportPlugin
-===========================
+`EditorScenePostImportPlugin <https://github.com/godotengine/godot/blob/master/editor/import/3d/resource_importer_scene.h#L104>`_
+=================================================================================================================================
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

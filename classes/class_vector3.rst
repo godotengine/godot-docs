@@ -7,8 +7,8 @@
 
 .. _class_Vector3:
 
-Vector3
-=======
+`Vector3 <https://github.com/godotengine/godot/blob/master/core/math/vector3.h#L42>`_
+=====================================================================================
 
 A 3D vector using floating point coordinates.
 

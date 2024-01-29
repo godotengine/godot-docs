@@ -7,8 +7,8 @@
 
 .. _class_GPUParticlesAttractorBox3D:
 
-GPUParticlesAttractorBox3D
-==========================
+`GPUParticlesAttractorBox3D <https://github.com/godotengine/godot/blob/master/scene/3d/gpu_particles_collision_3d.h#L313>`_
+===========================================================================================================================
 
 **Inherits:** :ref:`GPUParticlesAttractor3D<class_GPUParticlesAttractor3D>` **<** :ref:`VisualInstance3D<class_VisualInstance3D>` **<** :ref:`Node3D<class_Node3D>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 

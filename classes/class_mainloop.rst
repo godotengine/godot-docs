@@ -7,8 +7,8 @@
 
 .. _class_MainLoop:
 
-MainLoop
-========
+`MainLoop <https://github.com/godotengine/godot/blob/master/core/os/main_loop.h#L38>`_
+======================================================================================
 
 **Inherits:** :ref:`Object<class_Object>`
 

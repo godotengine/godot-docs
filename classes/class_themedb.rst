@@ -7,8 +7,8 @@
 
 .. _class_ThemeDB:
 
-ThemeDB
-=======
+`ThemeDB <https://github.com/godotengine/godot/blob/master/scene/theme/theme_db.h#L70>`_
+========================================================================================
 
 **Inherits:** :ref:`Object<class_Object>`
 

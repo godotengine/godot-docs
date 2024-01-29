@@ -7,8 +7,8 @@
 
 .. _class_SkeletonModification2DPhysicalBones:
 
-SkeletonModification2DPhysicalBones
-===================================
+`SkeletonModification2DPhysicalBones <https://github.com/godotengine/godot/blob/master/scene/resources/skeleton_modification_2d_physicalbones.h#L41>`_
+======================================================================================================================================================
 
 **Inherits:** :ref:`SkeletonModification2D<class_SkeletonModification2D>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

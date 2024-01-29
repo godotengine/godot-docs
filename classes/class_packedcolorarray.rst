@@ -7,8 +7,8 @@
 
 .. _class_PackedColorArray:
 
-PackedColorArray
-================
+`PackedColorArray <https://github.com/godotengine/godot/blob/master/core/variant/variant.h#L77>`_
+=================================================================================================
 
 A packed array of :ref:`Color<class_Color>`\ s.
 

@@ -7,8 +7,8 @@
 
 .. _class_SkinReference:
 
-SkinReference
-=============
+`SkinReference <https://github.com/godotengine/godot/blob/master/scene/3d/skeleton_3d.h#L42>`_
+==============================================================================================
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

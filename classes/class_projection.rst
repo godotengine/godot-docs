@@ -7,8 +7,8 @@
 
 .. _class_Projection:
 
-Projection
-==========
+`Projection <https://github.com/godotengine/godot/blob/master/core/math/projection.h#L46>`_
+===========================================================================================
 
 A 4×4 matrix for 3D projective transformations.
 

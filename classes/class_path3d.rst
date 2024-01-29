@@ -7,8 +7,8 @@
 
 .. _class_Path3D:
 
-Path3D
-======
+`Path3D <https://github.com/godotengine/godot/blob/master/editor/plugins/path_3d_editor_plugin.h#L42>`_
+=======================================================================================================
 
 **Inherits:** :ref:`Node3D<class_Node3D>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 

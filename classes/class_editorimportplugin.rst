@@ -7,8 +7,8 @@
 
 .. _class_EditorImportPlugin:
 
-EditorImportPlugin
-==================
+`EditorImportPlugin <https://github.com/godotengine/godot/blob/master/editor/import/editor_import_plugin.h#L37>`_
+=================================================================================================================
 
 **Inherits:** :ref:`ResourceImporter<class_ResourceImporter>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

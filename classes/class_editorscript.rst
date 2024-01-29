@@ -7,8 +7,8 @@
 
 .. _class_EditorScript:
 
-EditorScript
-============
+`EditorScript <https://github.com/godotengine/godot/blob/master/editor/editor_resource_picker.h#L145>`_
+=======================================================================================================
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

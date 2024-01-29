@@ -7,8 +7,8 @@
 
 .. _class_World2D:
 
-World2D
-=======
+`World2D <https://github.com/godotengine/godot/blob/master/scene/resources/world_2d.h#L42>`_
+============================================================================================
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

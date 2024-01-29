@@ -7,8 +7,8 @@
 
 .. _class_EditorResourcePreviewGenerator:
 
-EditorResourcePreviewGenerator
-==============================
+`EditorResourcePreviewGenerator <https://github.com/godotengine/godot/blob/master/editor/editor_resource_preview.h#L42>`_
+=========================================================================================================================
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

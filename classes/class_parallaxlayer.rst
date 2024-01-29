@@ -7,8 +7,8 @@
 
 .. _class_ParallaxLayer:
 
-ParallaxLayer
-=============
+`ParallaxLayer <https://github.com/godotengine/godot/blob/master/scene/2d/parallax_layer.h#L36>`_
+=================================================================================================
 
 **Inherits:** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 

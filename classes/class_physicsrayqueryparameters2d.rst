@@ -7,8 +7,8 @@
 
 .. _class_PhysicsRayQueryParameters2D:
 
-PhysicsRayQueryParameters2D
-===========================
+`PhysicsRayQueryParameters2D <https://github.com/godotengine/godot/blob/master/servers/physics_server_2d.h#L616>`_
+==================================================================================================================
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

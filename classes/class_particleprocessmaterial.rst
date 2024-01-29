@@ -7,8 +7,8 @@
 
 .. _class_ParticleProcessMaterial:
 
-ParticleProcessMaterial
-=======================
+`ParticleProcessMaterial <https://github.com/godotengine/godot/blob/master/drivers/gles3/storage/material_storage.h#L394>`_
+===========================================================================================================================
 
 **Inherits:** :ref:`Material<class_Material>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

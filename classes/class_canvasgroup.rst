@@ -7,8 +7,8 @@
 
 .. _class_CanvasGroup:
 
-CanvasGroup
-===========
+`CanvasGroup <https://github.com/godotengine/godot/blob/master/scene/2d/canvas_group.h#L36>`_
+=============================================================================================
 
 **Inherits:** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 

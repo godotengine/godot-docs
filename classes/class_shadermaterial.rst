@@ -7,8 +7,8 @@
 
 .. _class_ShaderMaterial:
 
-ShaderMaterial
-==============
+`ShaderMaterial <https://github.com/godotengine/godot/blob/master/scene/resources/material.h#L93>`_
+===================================================================================================
 
 **Inherits:** :ref:`Material<class_Material>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

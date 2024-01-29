@@ -7,8 +7,8 @@
 
 .. _class_NodePath:
 
-NodePath
-========
+`NodePath <https://github.com/godotengine/godot/blob/master/core/string/node_path.h#L37>`_
+==========================================================================================
 
 A pre-parsed scene tree path.
 

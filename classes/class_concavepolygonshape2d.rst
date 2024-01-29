@@ -7,8 +7,8 @@
 
 .. _class_ConcavePolygonShape2D:
 
-ConcavePolygonShape2D
-=====================
+`ConcavePolygonShape2D <https://github.com/godotengine/godot/blob/master/scene/resources/concave_polygon_shape_2d.h#L36>`_
+==========================================================================================================================
 
 **Inherits:** :ref:`Shape2D<class_Shape2D>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

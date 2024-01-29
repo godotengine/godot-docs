@@ -7,8 +7,8 @@
 
 .. _class_OS:
 
-OS
-==
+`OS <https://github.com/godotengine/godot/blob/master/core/core_bind.h#L119>`_
+==============================================================================
 
 **Inherits:** :ref:`Object<class_Object>`
 

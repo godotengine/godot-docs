@@ -7,8 +7,8 @@
 
 .. _class_SkeletonModificationStack2D:
 
-SkeletonModificationStack2D
-===========================
+`SkeletonModificationStack2D <https://github.com/godotengine/godot/blob/master/scene/resources/skeleton_modification_stack_2d.h#L45>`_
+======================================================================================================================================
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

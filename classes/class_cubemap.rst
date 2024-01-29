@@ -7,8 +7,8 @@
 
 .. _class_Cubemap:
 
-Cubemap
-=======
+`Cubemap <https://github.com/godotengine/godot/blob/master/scene/resources/image_texture.h#L180>`_
+==================================================================================================
 
 **Inherits:** :ref:`ImageTextureLayered<class_ImageTextureLayered>` **<** :ref:`TextureLayered<class_TextureLayered>` **<** :ref:`Texture<class_Texture>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

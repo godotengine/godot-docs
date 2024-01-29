@@ -7,8 +7,8 @@
 
 .. _class_Skeleton3D:
 
-Skeleton3D
-==========
+`Skeleton3D <https://github.com/godotengine/godot/blob/master/editor/plugins/skeleton_3d_editor_plugin.h#L96>`_
+===============================================================================================================
 
 **Inherits:** :ref:`Node3D<class_Node3D>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 

@@ -7,8 +7,8 @@
 
 .. _class_FastNoiseLite:
 
-FastNoiseLite
-=============
+`FastNoiseLite <https://github.com/godotengine/godot/blob/master/modules/noise/fastnoise_lite.h#L44>`_
+======================================================================================================
 
 **Inherits:** :ref:`Noise<class_Noise>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

@@ -7,8 +7,8 @@
 
 .. _class_TextLine:
 
-TextLine
-========
+`TextLine <https://github.com/godotengine/godot/blob/master/scene/resources/text_line.h#L39>`_
+==============================================================================================
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

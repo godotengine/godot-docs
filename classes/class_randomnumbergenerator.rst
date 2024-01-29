@@ -7,8 +7,8 @@
 
 .. _class_RandomNumberGenerator:
 
-RandomNumberGenerator
-=====================
+`RandomNumberGenerator <https://github.com/godotengine/godot/blob/master/core/math/random_number_generator.h#L37>`_
+===================================================================================================================
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

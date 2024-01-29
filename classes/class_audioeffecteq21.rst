@@ -7,8 +7,8 @@
 
 .. _class_AudioEffectEQ21:
 
-AudioEffectEQ21
-===============
+`AudioEffectEQ21 <https://github.com/godotengine/godot/blob/master/servers/audio/effects/audio_effect_eq.h#L93>`_
+=================================================================================================================
 
 **Inherits:** :ref:`AudioEffectEQ<class_AudioEffectEQ>` **<** :ref:`AudioEffect<class_AudioEffect>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

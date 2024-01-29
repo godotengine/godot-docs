@@ -7,8 +7,8 @@
 
 .. _class_PhysicsDirectBodyState2D:
 
-PhysicsDirectBodyState2D
-========================
+`PhysicsDirectBodyState2D <https://github.com/godotengine/godot/blob/master/servers/physics_server_2d.h#L42>`_
+==============================================================================================================
 
 **Inherits:** :ref:`Object<class_Object>`
 

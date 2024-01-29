@@ -7,8 +7,8 @@
 
 .. _class_OptimizedTranslation:
 
-OptimizedTranslation
-====================
+`OptimizedTranslation <https://github.com/godotengine/godot/blob/master/core/string/optimized_translation.h#L36>`_
+==================================================================================================================
 
 **Inherits:** :ref:`Translation<class_Translation>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

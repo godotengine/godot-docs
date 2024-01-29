@@ -7,8 +7,8 @@
 
 .. _class_ScriptEditor:
 
-ScriptEditor
-============
+`ScriptEditor <https://github.com/godotengine/godot/blob/master/editor/debugger/script_editor_debugger.h#L60>`_
+===============================================================================================================
 
 **Inherits:** :ref:`PanelContainer<class_PanelContainer>` **<** :ref:`Container<class_Container>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 

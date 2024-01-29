@@ -7,8 +7,8 @@
 
 .. _class_ProjectSettings:
 
-ProjectSettings
-===============
+`ProjectSettings <https://github.com/godotengine/godot/blob/master/core/config/project_settings.h#L43>`_
+========================================================================================================
 
 **Inherits:** :ref:`Object<class_Object>`
 

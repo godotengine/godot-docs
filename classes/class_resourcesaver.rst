@@ -7,8 +7,8 @@
 
 .. _class_ResourceSaver:
 
-ResourceSaver
-=============
+`ResourceSaver <https://github.com/godotengine/godot/blob/master/core/core_bind.h#L90>`_
+========================================================================================
 
 **Inherits:** :ref:`Object<class_Object>`
 

@@ -7,8 +7,8 @@
 
 .. _class_PolygonPathFinder:
 
-PolygonPathFinder
-=================
+`PolygonPathFinder <https://github.com/godotengine/godot/blob/master/scene/resources/polygon_path_finder.h#L36>`_
+=================================================================================================================
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

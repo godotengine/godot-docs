@@ -7,8 +7,8 @@
 
 .. _class_InputEventFromWindow:
 
-InputEventFromWindow
-====================
+`InputEventFromWindow <https://github.com/godotengine/godot/blob/master/core/input/input_event.h#L96>`_
+=======================================================================================================
 
 **Inherits:** :ref:`InputEvent<class_InputEvent>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

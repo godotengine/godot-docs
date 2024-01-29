@@ -7,8 +7,8 @@
 
 .. _class_TouchScreenButton:
 
-TouchScreenButton
-=================
+`TouchScreenButton <https://github.com/godotengine/godot/blob/master/scene/2d/touch_screen_button.h#L39>`_
+==========================================================================================================
 
 **Inherits:** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 

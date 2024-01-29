@@ -7,8 +7,8 @@
 
 .. _class_Tween:
 
-Tween
-=====
+`Tween <https://github.com/godotengine/godot/blob/master/scene/animation/tween.h#L39>`_
+=======================================================================================
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

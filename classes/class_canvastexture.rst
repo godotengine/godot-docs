@@ -7,8 +7,8 @@
 
 .. _class_CanvasTexture:
 
-CanvasTexture
-=============
+`CanvasTexture <https://github.com/godotengine/godot/blob/master/drivers/gles3/storage/texture_storage.h#L132>`_
+================================================================================================================
 
 **Inherits:** :ref:`Texture2D<class_Texture2D>` **<** :ref:`Texture<class_Texture>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

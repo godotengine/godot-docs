@@ -7,8 +7,8 @@
 
 .. _class_MultiplayerPeer:
 
-MultiplayerPeer
-===============
+`MultiplayerPeer <https://github.com/godotengine/godot/blob/master/scene/main/multiplayer_peer.h#L40>`_
+=======================================================================================================
 
 **Inherits:** :ref:`PacketPeer<class_PacketPeer>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

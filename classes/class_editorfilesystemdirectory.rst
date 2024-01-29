@@ -7,8 +7,8 @@
 
 .. _class_EditorFileSystemDirectory:
 
-EditorFileSystemDirectory
-=========================
+`EditorFileSystemDirectory <https://github.com/godotengine/godot/blob/master/editor/editor_file_system.h#L44>`_
+===============================================================================================================
 
 **Inherits:** :ref:`Object<class_Object>`
 

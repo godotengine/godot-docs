@@ -7,8 +7,8 @@
 
 .. _class_CodeHighlighter:
 
-CodeHighlighter
-===============
+`CodeHighlighter <https://github.com/godotengine/godot/blob/master/scene/resources/syntax_highlighter.h#L74>`_
+==============================================================================================================
 
 **Inherits:** :ref:`SyntaxHighlighter<class_SyntaxHighlighter>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

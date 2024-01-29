@@ -7,8 +7,8 @@
 
 .. _class_VisualShaderNodeStep:
 
-VisualShaderNodeStep
-====================
+`VisualShaderNodeStep <https://github.com/godotengine/godot/blob/master/scene/resources/visual_shader_nodes.h#L1679>`_
+======================================================================================================================
 
 **Inherits:** :ref:`VisualShaderNode<class_VisualShaderNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

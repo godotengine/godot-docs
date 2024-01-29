@@ -7,8 +7,8 @@
 
 .. _class_CanvasItemMaterial:
 
-CanvasItemMaterial
-==================
+`CanvasItemMaterial <https://github.com/godotengine/godot/blob/master/editor/plugins/material_editor_plugin.h#L154>`_
+=====================================================================================================================
 
 **Inherits:** :ref:`Material<class_Material>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

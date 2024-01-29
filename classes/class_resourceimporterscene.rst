@@ -7,8 +7,8 @@
 
 .. _class_ResourceImporterScene:
 
-ResourceImporterScene
-=====================
+`ResourceImporterScene <https://github.com/godotengine/godot/blob/master/editor/import/3d/resource_importer_scene.h#L159>`_
+===========================================================================================================================
 
 **Inherits:** :ref:`ResourceImporter<class_ResourceImporter>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

@@ -7,8 +7,8 @@
 
 .. _class_RenderSceneBuffersExtension:
 
-RenderSceneBuffersExtension
-===========================
+`RenderSceneBuffersExtension <https://github.com/godotengine/godot/blob/master/servers/rendering/storage/render_scene_buffers.h#L115>`_
+=======================================================================================================================================
 
 **Inherits:** :ref:`RenderSceneBuffers<class_RenderSceneBuffers>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

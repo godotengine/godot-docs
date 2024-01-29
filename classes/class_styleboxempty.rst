@@ -7,8 +7,8 @@
 
 .. _class_StyleBoxEmpty:
 
-StyleBoxEmpty
-=============
+`StyleBoxEmpty <https://github.com/godotengine/godot/blob/master/scene/resources/style_box.h#L77>`_
+===================================================================================================
 
 **Inherits:** :ref:`StyleBox<class_StyleBox>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

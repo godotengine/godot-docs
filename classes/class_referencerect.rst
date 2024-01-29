@@ -7,8 +7,8 @@
 
 .. _class_ReferenceRect:
 
-ReferenceRect
-=============
+`ReferenceRect <https://github.com/godotengine/godot/blob/master/scene/gui/reference_rect.h#L36>`_
+==================================================================================================
 
 **Inherits:** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 

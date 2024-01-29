@@ -7,8 +7,8 @@
 
 .. _class_Basis:
 
-Basis
-=====
+`Basis <https://github.com/godotengine/godot/blob/master/core/math/basis.h#L37>`_
+=================================================================================
 
 A 3×3 matrix for representing 3D rotation and scale.
 

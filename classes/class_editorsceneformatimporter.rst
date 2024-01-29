@@ -7,8 +7,8 @@
 
 .. _class_EditorSceneFormatImporter:
 
-EditorSceneFormatImporter
-=========================
+`EditorSceneFormatImporter <https://github.com/godotengine/godot/blob/master/editor/import/3d/editor_import_collada.h#L36>`_
+============================================================================================================================
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

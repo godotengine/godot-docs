@@ -7,8 +7,8 @@
 
 .. _class_PhysicsBody2D:
 
-PhysicsBody2D
-=============
+`PhysicsBody2D <https://github.com/godotengine/godot/blob/master/scene/2d/physics_body_2d.h#L41>`_
+==================================================================================================
 
 **Inherits:** :ref:`CollisionObject2D<class_CollisionObject2D>` **<** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 

@@ -7,8 +7,8 @@
 
 .. _class_VideoStreamPlayer:
 
-VideoStreamPlayer
-=================
+`VideoStreamPlayer <https://github.com/godotengine/godot/blob/master/scene/gui/video_stream_player.h#L41>`_
+===========================================================================================================
 
 **Inherits:** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 

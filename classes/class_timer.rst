@@ -7,8 +7,8 @@
 
 .. _class_Timer:
 
-Timer
-=====
+`Timer <https://github.com/godotengine/godot/blob/master/scene/main/timer.h#L36>`_
+==================================================================================
 
 **Inherits:** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 

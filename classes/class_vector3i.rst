@@ -7,8 +7,8 @@
 
 .. _class_Vector3i:
 
-Vector3i
-========
+`Vector3i <https://github.com/godotengine/godot/blob/master/core/math/vector3i.h#L40>`_
+=======================================================================================
 
 A 3D vector using integer coordinates.
 

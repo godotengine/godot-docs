@@ -7,8 +7,8 @@
 
 .. _class_MultiplayerSynchronizer:
 
-MultiplayerSynchronizer
-=======================
+`MultiplayerSynchronizer <https://github.com/godotengine/godot/blob/master/modules/multiplayer/multiplayer_synchronizer.h#L38>`_
+================================================================================================================================
 
 **Inherits:** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 

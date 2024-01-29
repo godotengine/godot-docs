@@ -7,8 +7,8 @@
 
 .. _class_PhysicsTestMotionParameters2D:
 
-PhysicsTestMotionParameters2D
-=============================
+`PhysicsTestMotionParameters2D <https://github.com/godotengine/godot/blob/master/servers/physics_server_2d.h#L721>`_
+====================================================================================================================
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

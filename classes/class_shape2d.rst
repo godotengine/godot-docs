@@ -7,8 +7,8 @@
 
 .. _class_Shape2D:
 
-Shape2D
-=======
+`Shape2D <https://github.com/godotengine/godot/blob/master/scene/resources/shape_2d.h#L36>`_
+============================================================================================
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

@@ -7,8 +7,8 @@
 
 .. _class_StreamPeerBuffer:
 
-StreamPeerBuffer
-================
+`StreamPeerBuffer <https://github.com/godotengine/godot/blob/master/core/io/stream_peer.h#L121>`_
+=================================================================================================
 
 **Inherits:** :ref:`StreamPeer<class_StreamPeer>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

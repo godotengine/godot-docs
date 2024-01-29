@@ -7,8 +7,8 @@
 
 .. _class_AudioStreamWAV:
 
-AudioStreamWAV
-==============
+`AudioStreamWAV <https://github.com/godotengine/godot/blob/master/scene/resources/audio_stream_wav.h#L83>`_
+===========================================================================================================
 
 **Inherits:** :ref:`AudioStream<class_AudioStream>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

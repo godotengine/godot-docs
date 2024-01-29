@@ -7,8 +7,8 @@
 
 .. _class_PacketPeerDTLS:
 
-PacketPeerDTLS
-==============
+`PacketPeerDTLS <https://github.com/godotengine/godot/blob/master/core/io/packet_peer_dtls.h#L37>`_
+===================================================================================================
 
 **Inherits:** :ref:`PacketPeer<class_PacketPeer>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

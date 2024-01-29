@@ -7,8 +7,8 @@
 
 .. _class_ResourceUID:
 
-ResourceUID
-===========
+`ResourceUID <https://github.com/godotengine/godot/blob/master/core/io/resource_uid.h#L38>`_
+============================================================================================
 
 **Inherits:** :ref:`Object<class_Object>`
 

@@ -7,8 +7,8 @@
 
 .. _class_ResourcePreloader:
 
-ResourcePreloader
-=================
+`ResourcePreloader <https://github.com/godotengine/godot/blob/master/editor/plugins/resource_preloader_editor_plugin.h#L42>`_
+=============================================================================================================================
 
 **Inherits:** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 

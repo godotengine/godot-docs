@@ -7,8 +7,8 @@
 
 .. _class_Curve3D:
 
-Curve3D
-=======
+`Curve3D <https://github.com/godotengine/godot/blob/master/scene/resources/curve.h#L251>`_
+==========================================================================================
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

@@ -7,8 +7,8 @@
 
 .. _class_Slider:
 
-Slider
-======
+`Slider <https://github.com/godotengine/godot/blob/master/scene/3d/joint_3d.h#L152>`_
+=====================================================================================
 
 **Inherits:** :ref:`Range<class_Range>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 

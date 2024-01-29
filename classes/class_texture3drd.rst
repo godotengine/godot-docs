@@ -7,8 +7,8 @@
 
 .. _class_Texture3DRD:
 
-Texture3DRD
-===========
+`Texture3DRD <https://github.com/godotengine/godot/blob/master/scene/resources/texture_rd.h#L125>`_
+===================================================================================================
 
 **Inherits:** :ref:`Texture3D<class_Texture3D>` **<** :ref:`Texture<class_Texture>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

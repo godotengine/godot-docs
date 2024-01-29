@@ -7,8 +7,8 @@
 
 .. _class_EditorPaths:
 
-EditorPaths
-===========
+`EditorPaths <https://github.com/godotengine/godot/blob/master/editor/editor_paths.h#L38>`_
+===========================================================================================
 
 **Inherits:** :ref:`Object<class_Object>`
 

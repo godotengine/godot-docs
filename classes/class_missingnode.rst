@@ -7,8 +7,8 @@
 
 .. _class_MissingNode:
 
-MissingNode
-===========
+`MissingNode <https://github.com/godotengine/godot/blob/master/scene/main/missing_node.h#L37>`_
+===============================================================================================
 
 **Inherits:** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 

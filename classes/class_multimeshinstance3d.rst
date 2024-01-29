@@ -7,8 +7,8 @@
 
 .. _class_MultiMeshInstance3D:
 
-MultiMeshInstance3D
-===================
+`MultiMeshInstance3D <https://github.com/godotengine/godot/blob/master/scene/3d/multimesh_instance_3d.h#L37>`_
+==============================================================================================================
 
 **Inherits:** :ref:`GeometryInstance3D<class_GeometryInstance3D>` **<** :ref:`VisualInstance3D<class_VisualInstance3D>` **<** :ref:`Node3D<class_Node3D>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 

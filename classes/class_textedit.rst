@@ -7,8 +7,8 @@
 
 .. _class_TextEdit:
 
-TextEdit
-========
+`TextEdit <https://github.com/godotengine/godot/blob/master/editor/plugins/text_editor.h#L38>`_
+===============================================================================================
 
 **Inherits:** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 

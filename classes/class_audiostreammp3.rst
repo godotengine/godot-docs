@@ -7,8 +7,8 @@
 
 .. _class_AudioStreamMP3:
 
-AudioStreamMP3
-==============
+`AudioStreamMP3 <https://github.com/godotengine/godot/blob/master/modules/minimp3/audio_stream_mp3.h#L84>`_
+===========================================================================================================
 
 **Inherits:** :ref:`AudioStream<class_AudioStream>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

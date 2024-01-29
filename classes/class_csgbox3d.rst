@@ -7,8 +7,8 @@
 
 .. _class_CSGBox3D:
 
-CSGBox3D
-========
+`CSGBox3D <https://github.com/godotengine/godot/blob/master/modules/csg/csg_shape.h#L248>`_
+===========================================================================================
 
 **Inherits:** :ref:`CSGPrimitive3D<class_CSGPrimitive3D>` **<** :ref:`CSGShape3D<class_CSGShape3D>` **<** :ref:`GeometryInstance3D<class_GeometryInstance3D>` **<** :ref:`VisualInstance3D<class_VisualInstance3D>` **<** :ref:`Node3D<class_Node3D>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 

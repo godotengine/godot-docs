@@ -7,8 +7,8 @@
 
 .. _class_Texture2DArrayRD:
 
-Texture2DArrayRD
-================
+`Texture2DArrayRD <https://github.com/godotengine/godot/blob/master/scene/resources/texture_rd.h#L101>`_
+========================================================================================================
 
 **Inherits:** :ref:`TextureLayeredRD<class_TextureLayeredRD>` **<** :ref:`TextureLayered<class_TextureLayered>` **<** :ref:`Texture<class_Texture>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

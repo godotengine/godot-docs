@@ -7,8 +7,8 @@
 
 .. _class_EditorResourcePicker:
 
-EditorResourcePicker
-====================
+`EditorResourcePicker <https://github.com/godotengine/godot/blob/master/editor/editor_resource_picker.h#L45>`_
+==============================================================================================================
 
 **Inherits:** :ref:`HBoxContainer<class_HBoxContainer>` **<** :ref:`BoxContainer<class_BoxContainer>` **<** :ref:`Container<class_Container>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 

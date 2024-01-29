@@ -7,8 +7,8 @@
 
 .. _class_EditorSettings:
 
-EditorSettings
-==============
+`EditorSettings <https://github.com/godotengine/godot/blob/master/editor/editor_settings.h#L42>`_
+=================================================================================================
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

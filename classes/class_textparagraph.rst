@@ -7,8 +7,8 @@
 
 .. _class_TextParagraph:
 
-TextParagraph
-=============
+`TextParagraph <https://github.com/godotengine/godot/blob/master/scene/resources/text_paragraph.h#L40>`_
+========================================================================================================
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

@@ -7,8 +7,8 @@
 
 .. _class_DirAccess:
 
-DirAccess
-=========
+`DirAccess <https://github.com/godotengine/godot/blob/master/core/io/dir_access.h#L39>`_
+========================================================================================
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

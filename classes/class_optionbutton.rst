@@ -7,8 +7,8 @@
 
 .. _class_OptionButton:
 
-OptionButton
-============
+`OptionButton <https://github.com/godotengine/godot/blob/master/scene/gui/option_button.h#L37>`_
+================================================================================================
 
 **Inherits:** :ref:`Button<class_Button>` **<** :ref:`BaseButton<class_BaseButton>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 

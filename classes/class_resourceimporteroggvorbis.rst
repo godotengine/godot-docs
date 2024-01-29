@@ -7,8 +7,8 @@
 
 .. _class_ResourceImporterOggVorbis:
 
-ResourceImporterOggVorbis
-=========================
+`ResourceImporterOggVorbis <https://github.com/godotengine/godot/blob/master/modules/vorbis/resource_importer_ogg_vorbis.h#L38>`_
+=================================================================================================================================
 
 **Inherits:** :ref:`ResourceImporter<class_ResourceImporter>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

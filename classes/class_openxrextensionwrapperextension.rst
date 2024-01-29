@@ -7,8 +7,8 @@
 
 .. _class_OpenXRExtensionWrapperExtension:
 
-OpenXRExtensionWrapperExtension
-===============================
+`OpenXRExtensionWrapperExtension <https://github.com/godotengine/godot/blob/master/modules/openxr/extensions/openxr_extension_wrapper_extension.h#L42>`_
+========================================================================================================================================================
 
 **Inherits:** :ref:`Object<class_Object>`
 

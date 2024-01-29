@@ -7,8 +7,8 @@
 
 .. _class_ParallaxBackground:
 
-ParallaxBackground
-==================
+`ParallaxBackground <https://github.com/godotengine/godot/blob/master/scene/2d/parallax_background.h#L36>`_
+===========================================================================================================
 
 **Inherits:** :ref:`CanvasLayer<class_CanvasLayer>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 

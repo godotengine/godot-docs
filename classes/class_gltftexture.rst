@@ -7,8 +7,8 @@
 
 .. _class_GLTFTexture:
 
-GLTFTexture
-===========
+`GLTFTexture <https://github.com/godotengine/godot/blob/master/modules/gltf/structures/gltf_texture.h#L38>`_
+============================================================================================================
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

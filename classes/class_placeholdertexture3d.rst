@@ -7,8 +7,8 @@
 
 .. _class_PlaceholderTexture3D:
 
-PlaceholderTexture3D
-====================
+`PlaceholderTexture3D <https://github.com/godotengine/godot/blob/master/scene/resources/placeholder_textures.h#L59>`_
+=====================================================================================================================
 
 **Inherits:** :ref:`Texture3D<class_Texture3D>` **<** :ref:`Texture<class_Texture>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

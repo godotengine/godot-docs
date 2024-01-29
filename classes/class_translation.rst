@@ -7,8 +7,8 @@
 
 .. _class_Translation:
 
-Translation
-===========
+`Translation <https://github.com/godotengine/godot/blob/master/core/io/translation_loader_po.h#L38>`_
+=====================================================================================================
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

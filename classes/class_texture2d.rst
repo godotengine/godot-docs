@@ -7,8 +7,8 @@
 
 .. _class_Texture2D:
 
-Texture2D
-=========
+`Texture2D <https://github.com/godotengine/godot/blob/master/scene/resources/image_texture.h#L167>`_
+====================================================================================================
 
 **Inherits:** :ref:`Texture<class_Texture>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

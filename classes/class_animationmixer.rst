@@ -7,8 +7,8 @@
 
 .. _class_AnimationMixer:
 
-AnimationMixer
-==============
+`AnimationMixer <https://github.com/godotengine/godot/blob/master/scene/animation/animation_mixer.h#L41>`_
+==========================================================================================================
 
 **Inherits:** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 

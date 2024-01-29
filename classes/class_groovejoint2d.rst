@@ -7,8 +7,8 @@
 
 .. _class_GrooveJoint2D:
 
-GrooveJoint2D
-=============
+`GrooveJoint2D <https://github.com/godotengine/godot/blob/master/scene/2d/joint_2d.h#L117>`_
+============================================================================================
 
 **Inherits:** :ref:`Joint2D<class_Joint2D>` **<** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 

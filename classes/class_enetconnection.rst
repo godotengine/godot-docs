@@ -7,8 +7,8 @@
 
 .. _class_ENetConnection:
 
-ENetConnection
-==============
+`ENetConnection <https://github.com/godotengine/godot/blob/master/modules/enet/enet_connection.h#L44>`_
+=======================================================================================================
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

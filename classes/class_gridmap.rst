@@ -7,8 +7,8 @@
 
 .. _class_GridMap:
 
-GridMap
-=======
+`GridMap <https://github.com/godotengine/godot/blob/master/modules/gridmap/grid_map.h#L43>`_
+============================================================================================
 
 **Inherits:** :ref:`Node3D<class_Node3D>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 

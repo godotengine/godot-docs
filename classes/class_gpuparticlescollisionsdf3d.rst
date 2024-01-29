@@ -7,8 +7,8 @@
 
 .. _class_GPUParticlesCollisionSDF3D:
 
-GPUParticlesCollisionSDF3D
-==========================
+`GPUParticlesCollisionSDF3D <https://github.com/godotengine/godot/blob/master/editor/plugins/gpu_particles_collision_sdf_editor_plugin.h#L42>`_
+===============================================================================================================================================
 
 **Inherits:** :ref:`GPUParticlesCollision3D<class_GPUParticlesCollision3D>` **<** :ref:`VisualInstance3D<class_VisualInstance3D>` **<** :ref:`Node3D<class_Node3D>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 

@@ -7,8 +7,8 @@
 
 .. _class_RenderingServer:
 
-RenderingServer
-===============
+`RenderingServer <https://github.com/godotengine/godot/blob/master/servers/rendering_server.h#L47>`_
+====================================================================================================
 
 **Inherits:** :ref:`Object<class_Object>`
 

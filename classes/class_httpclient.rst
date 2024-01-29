@@ -7,8 +7,8 @@
 
 .. _class_HTTPClient:
 
-HTTPClient
-==========
+`HTTPClient <https://github.com/godotengine/godot/blob/master/core/io/http_client.h#L40>`_
+==========================================================================================
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

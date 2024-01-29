@@ -7,8 +7,8 @@
 
 .. _class_PhysicsMaterial:
 
-PhysicsMaterial
-===============
+`PhysicsMaterial <https://github.com/godotengine/godot/blob/master/scene/resources/physics_material.h#L37>`_
+============================================================================================================
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

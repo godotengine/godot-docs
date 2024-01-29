@@ -7,8 +7,8 @@
 
 .. _class_NavigationPathQueryParameters3D:
 
-NavigationPathQueryParameters3D
-===============================
+`NavigationPathQueryParameters3D <https://github.com/godotengine/godot/blob/master/servers/navigation/navigation_path_query_parameters_3d.h#L37>`_
+==================================================================================================================================================
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

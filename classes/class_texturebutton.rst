@@ -7,8 +7,8 @@
 
 .. _class_TextureButton:
 
-TextureButton
-=============
+`TextureButton <https://github.com/godotengine/godot/blob/master/scene/gui/texture_button.h#L36>`_
+==================================================================================================
 
 **Inherits:** :ref:`BaseButton<class_BaseButton>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 

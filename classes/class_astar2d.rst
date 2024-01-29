@@ -7,8 +7,8 @@
 
 .. _class_AStar2D:
 
-AStar2D
-=======
+`AStar2D <https://github.com/godotengine/godot/blob/master/core/math/a_star.h#L159>`_
+=====================================================================================
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

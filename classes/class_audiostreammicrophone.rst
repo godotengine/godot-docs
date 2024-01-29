@@ -7,8 +7,8 @@
 
 .. _class_AudioStreamMicrophone:
 
-AudioStreamMicrophone
-=====================
+`AudioStreamMicrophone <https://github.com/godotengine/godot/blob/master/servers/audio/audio_stream.h#L169>`_
+=============================================================================================================
 
 **Inherits:** :ref:`AudioStream<class_AudioStream>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

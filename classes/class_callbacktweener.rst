@@ -7,8 +7,8 @@
 
 .. _class_CallbackTweener:
 
-CallbackTweener
-===============
+`CallbackTweener <https://github.com/godotengine/godot/blob/master/scene/animation/tween.h#L246>`_
+==================================================================================================
 
 **Inherits:** :ref:`Tweener<class_Tweener>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

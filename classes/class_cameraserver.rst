@@ -7,8 +7,8 @@
 
 .. _class_CameraServer:
 
-CameraServer
-============
+`CameraServer <https://github.com/godotengine/godot/blob/master/servers/camera_server.h#L49>`_
+==============================================================================================
 
 **Inherits:** :ref:`Object<class_Object>`
 

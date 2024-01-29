@@ -7,8 +7,8 @@
 
 .. _class_Color:
 
-Color
-=====
+`Color <https://github.com/godotengine/godot/blob/master/core/math/color.h#L38>`_
+=================================================================================
 
 A color represented in RGBA format.
 

@@ -7,8 +7,8 @@
 
 .. _class_GDExtensionManager:
 
-GDExtensionManager
-==================
+`GDExtensionManager <https://github.com/godotengine/godot/blob/master/core/extension/gdextension_manager.h#L36>`_
+=================================================================================================================
 
 **Inherits:** :ref:`Object<class_Object>`
 

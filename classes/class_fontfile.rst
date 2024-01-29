@@ -7,8 +7,8 @@
 
 .. _class_FontFile:
 
-FontFile
-========
+`FontFile <https://github.com/godotengine/godot/blob/master/scene/resources/font.h#L178>`_
+==========================================================================================
 
 **Inherits:** :ref:`Font<class_Font>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

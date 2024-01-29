@@ -7,8 +7,8 @@
 
 .. _class_RDPipelineRasterizationState:
 
-RDPipelineRasterizationState
-============================
+`RDPipelineRasterizationState <https://github.com/godotengine/godot/blob/master/servers/rendering/rendering_device_binds.h#L516>`_
+==================================================================================================================================
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

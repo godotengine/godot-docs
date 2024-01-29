@@ -7,8 +7,8 @@
 
 .. _class_Shape3D:
 
-Shape3D
-=======
+`Shape3D <https://github.com/godotengine/godot/blob/master/scene/resources/shape_3d.h#L38>`_
+============================================================================================
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

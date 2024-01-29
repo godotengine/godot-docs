@@ -7,8 +7,8 @@
 
 .. _class_JavaClass:
 
-JavaClass
-=========
+`JavaClass <https://github.com/godotengine/godot/blob/master/platform/android/api/java_class_wrapper.h#L45>`_
+=============================================================================================================
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

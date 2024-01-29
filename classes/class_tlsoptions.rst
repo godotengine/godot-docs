@@ -7,8 +7,8 @@
 
 .. _class_TLSOptions:
 
-TLSOptions
-==========
+`TLSOptions <https://github.com/godotengine/godot/blob/master/core/crypto/crypto.h#L72>`_
+=========================================================================================
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

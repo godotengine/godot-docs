@@ -7,8 +7,8 @@
 
 .. _class_Plane:
 
-Plane
-=====
+`Plane <https://github.com/godotengine/godot/blob/master/core/math/plane.h#L38>`_
+=================================================================================
 
 A plane in Hessian normal form.
 

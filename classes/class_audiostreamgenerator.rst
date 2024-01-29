@@ -7,8 +7,8 @@
 
 .. _class_AudioStreamGenerator:
 
-AudioStreamGenerator
-====================
+`AudioStreamGenerator <https://github.com/godotengine/godot/blob/master/servers/audio/effects/audio_stream_generator.h#L37>`_
+=============================================================================================================================
 
 **Inherits:** :ref:`AudioStream<class_AudioStream>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

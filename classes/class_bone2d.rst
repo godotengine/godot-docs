@@ -7,8 +7,8 @@
 
 .. _class_Bone2D:
 
-Bone2D
-======
+`Bone2D <https://github.com/godotengine/godot/blob/master/scene/2d/skeleton_2d.h#L39>`_
+=======================================================================================
 
 **Inherits:** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 

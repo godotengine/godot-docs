@@ -7,8 +7,8 @@
 
 .. _class_VisualShaderNodeParticleBoxEmitter:
 
-VisualShaderNodeParticleBoxEmitter
-==================================
+`VisualShaderNodeParticleBoxEmitter <https://github.com/godotengine/godot/blob/master/scene/resources/visual_shader_particle_nodes.h#L79>`_
+===========================================================================================================================================
 
 **Inherits:** :ref:`VisualShaderNodeParticleEmitter<class_VisualShaderNodeParticleEmitter>` **<** :ref:`VisualShaderNode<class_VisualShaderNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

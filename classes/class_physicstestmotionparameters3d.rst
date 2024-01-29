@@ -7,8 +7,8 @@
 
 .. _class_PhysicsTestMotionParameters3D:
 
-PhysicsTestMotionParameters3D
-=============================
+`PhysicsTestMotionParameters3D <https://github.com/godotengine/godot/blob/master/servers/physics_server_3d.h#L922>`_
+====================================================================================================================
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

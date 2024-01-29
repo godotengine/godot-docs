@@ -7,8 +7,8 @@
 
 .. _class_PackedScene:
 
-PackedScene
-===========
+`PackedScene <https://github.com/godotengine/godot/blob/master/editor/plugins/packed_scene_editor_plugin.h#L38>`_
+=================================================================================================================
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

@@ -7,8 +7,8 @@
 
 .. _class_CollisionObject2D:
 
-CollisionObject2D
-=================
+`CollisionObject2D <https://github.com/godotengine/godot/blob/master/scene/2d/collision_object_2d.h#L39>`_
+==========================================================================================================
 
 **Inherits:** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 

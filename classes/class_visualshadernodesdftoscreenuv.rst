@@ -7,8 +7,8 @@
 
 .. _class_VisualShaderNodeSDFToScreenUV:
 
-VisualShaderNodeSDFToScreenUV
-=============================
+`VisualShaderNodeSDFToScreenUV <https://github.com/godotengine/godot/blob/master/scene/resources/visual_shader_sdf_nodes.h#L36>`_
+=================================================================================================================================
 
 **Inherits:** :ref:`VisualShaderNode<class_VisualShaderNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

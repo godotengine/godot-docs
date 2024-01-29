@@ -7,8 +7,8 @@
 
 .. _class_RenderingDevice:
 
-RenderingDevice
-===============
+`RenderingDevice <https://github.com/godotengine/godot/blob/master/drivers/d3d12/rendering_device_driver_d3d12.h#L73>`_
+=======================================================================================================================
 
 **Inherits:** :ref:`Object<class_Object>`
 

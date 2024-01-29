@@ -7,8 +7,8 @@
 
 .. _class_Texture:
 
-Texture
-=======
+`Texture <https://github.com/godotengine/godot/blob/master/drivers/d3d12/rendering_device_driver_d3d12.h#L228>`_
+================================================================================================================
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

@@ -7,8 +7,8 @@
 
 .. _class_Vector2i:
 
-Vector2i
-========
+`Vector2i <https://github.com/godotengine/godot/blob/master/core/math/vector2i.h#L40>`_
+=======================================================================================
 
 A 2D vector using integer coordinates.
 

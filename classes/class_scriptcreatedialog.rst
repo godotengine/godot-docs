@@ -7,8 +7,8 @@
 
 .. _class_ScriptCreateDialog:
 
-ScriptCreateDialog
-==================
+`ScriptCreateDialog <https://github.com/godotengine/godot/blob/master/editor/script_create_dialog.h#L45>`_
+==========================================================================================================
 
 **Inherits:** :ref:`ConfirmationDialog<class_ConfirmationDialog>` **<** :ref:`AcceptDialog<class_AcceptDialog>` **<** :ref:`Window<class_Window>` **<** :ref:`Viewport<class_Viewport>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 

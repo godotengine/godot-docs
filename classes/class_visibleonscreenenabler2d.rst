@@ -7,8 +7,8 @@
 
 .. _class_VisibleOnScreenEnabler2D:
 
-VisibleOnScreenEnabler2D
-========================
+`VisibleOnScreenEnabler2D <https://github.com/godotengine/godot/blob/master/scene/2d/visible_on_screen_notifier_2d.h#L70>`_
+===========================================================================================================================
 
 **Inherits:** :ref:`VisibleOnScreenNotifier2D<class_VisibleOnScreenNotifier2D>` **<** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 

@@ -7,8 +7,8 @@
 
 .. _class_XRController3D:
 
-XRController3D
-==============
+`XRController3D <https://github.com/godotengine/godot/blob/master/scene/3d/xr_nodes.h#L124>`_
+=============================================================================================
 
 **Inherits:** :ref:`XRNode3D<class_XRNode3D>` **<** :ref:`Node3D<class_Node3D>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 

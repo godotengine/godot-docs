@@ -7,8 +7,8 @@
 
 .. _class_VScrollBar:
 
-VScrollBar
-==========
+`VScrollBar <https://github.com/godotengine/godot/blob/master/scene/gui/scroll_bar.h#L137>`_
+============================================================================================
 
 **Inherits:** :ref:`ScrollBar<class_ScrollBar>` **<** :ref:`Range<class_Range>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 

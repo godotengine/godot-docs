@@ -7,8 +7,8 @@
 
 .. _class_RichTextEffect:
 
-RichTextEffect
-==============
+`RichTextEffect <https://github.com/godotengine/godot/blob/master/scene/gui/rich_text_effect.h#L101>`_
+======================================================================================================
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

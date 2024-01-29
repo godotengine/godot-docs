@@ -7,8 +7,8 @@
 
 .. _class_OpenXRHand:
 
-OpenXRHand
-==========
+`OpenXRHand <https://github.com/godotengine/godot/blob/master/modules/openxr/extensions/openxr_hand_tracking_extension.h#L38>`_
+===============================================================================================================================
 
 **Inherits:** :ref:`Node3D<class_Node3D>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 

@@ -7,8 +7,8 @@
 
 .. _class_GLTFState:
 
-GLTFState
-=========
+`GLTFState <https://github.com/godotengine/godot/blob/master/modules/gltf/gltf_state.h#L46>`_
+=============================================================================================
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

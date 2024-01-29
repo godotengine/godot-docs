@@ -7,8 +7,8 @@
 
 .. _class_LineEdit:
 
-LineEdit
-========
+`LineEdit <https://github.com/godotengine/godot/blob/master/scene/gui/line_edit.h#L37>`_
+========================================================================================
 
 **Inherits:** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 

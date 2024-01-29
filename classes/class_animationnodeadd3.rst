@@ -7,8 +7,8 @@
 
 .. _class_AnimationNodeAdd3:
 
-AnimationNodeAdd3
-=================
+`AnimationNodeAdd3 <https://github.com/godotengine/godot/blob/master/scene/animation/animation_blend_tree.h#L192>`_
+===================================================================================================================
 
 **Inherits:** :ref:`AnimationNodeSync<class_AnimationNodeSync>` **<** :ref:`AnimationNode<class_AnimationNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

@@ -7,8 +7,8 @@
 
 .. _class_OccluderInstance3D:
 
-OccluderInstance3D
-==================
+`OccluderInstance3D <https://github.com/godotengine/godot/blob/master/editor/plugins/occluder_instance_3d_editor_plugin.h#L40>`_
+================================================================================================================================
 
 **Inherits:** :ref:`Node3D<class_Node3D>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 

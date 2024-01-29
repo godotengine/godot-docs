@@ -7,8 +7,8 @@
 
 .. _class_VBoxContainer:
 
-VBoxContainer
-=============
+`VBoxContainer <https://github.com/godotengine/godot/blob/master/scene/gui/box_container.h#L89>`_
+=================================================================================================
 
 **Inherits:** :ref:`BoxContainer<class_BoxContainer>` **<** :ref:`Container<class_Container>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 

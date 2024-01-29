@@ -7,8 +7,8 @@
 
 .. _class_TranslationServer:
 
-TranslationServer
-=================
+`TranslationServer <https://github.com/godotengine/godot/blob/master/core/string/translation.h#L73>`_
+=====================================================================================================
 
 **Inherits:** :ref:`Object<class_Object>`
 

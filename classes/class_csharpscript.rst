@@ -7,8 +7,8 @@
 
 .. _class_CSharpScript:
 
-CSharpScript
-============
+`CSharpScript <https://github.com/godotengine/godot/blob/master/modules/mono/csharp_script.h#L58>`_
+===================================================================================================
 
 **Inherits:** :ref:`Script<class_Script>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

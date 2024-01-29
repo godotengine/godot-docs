@@ -7,8 +7,8 @@
 
 .. _class_TriangleMesh:
 
-TriangleMesh
-============
+`TriangleMesh <https://github.com/godotengine/godot/blob/master/core/math/triangle_mesh.h#L37>`_
+================================================================================================
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

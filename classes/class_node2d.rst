@@ -7,8 +7,8 @@
 
 .. _class_Node2D:
 
-Node2D
-======
+`Node2D <https://github.com/godotengine/godot/blob/master/scene/2d/node_2d.h#L36>`_
+===================================================================================
 
 **Inherits:** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 

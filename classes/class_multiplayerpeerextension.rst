@@ -7,8 +7,8 @@
 
 .. _class_MultiplayerPeerExtension:
 
-MultiplayerPeerExtension
-========================
+`MultiplayerPeerExtension <https://github.com/godotengine/godot/blob/master/scene/main/multiplayer_peer.h#L103>`_
+=================================================================================================================
 
 **Inherits:** :ref:`MultiplayerPeer<class_MultiplayerPeer>` **<** :ref:`PacketPeer<class_PacketPeer>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

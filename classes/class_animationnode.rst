@@ -7,8 +7,8 @@
 
 .. _class_AnimationNode:
 
-AnimationNode
-=============
+`AnimationNode <https://github.com/godotengine/godot/blob/master/editor/plugins/animation_blend_space_1d_editor.h#L48>`_
+========================================================================================================================
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

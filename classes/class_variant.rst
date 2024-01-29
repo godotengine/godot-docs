@@ -7,8 +7,8 @@
 
 .. _class_Variant:
 
-Variant
-=======
+`Variant <https://github.com/godotengine/godot/blob/master/core/variant/variant.h#L79>`_
+========================================================================================
 
 The most important data type in Godot.
 

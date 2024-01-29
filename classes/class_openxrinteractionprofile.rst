@@ -7,8 +7,8 @@
 
 .. _class_OpenXRInteractionProfile:
 
-OpenXRInteractionProfile
-========================
+`OpenXRInteractionProfile <https://github.com/godotengine/godot/blob/master/modules/openxr/action_map/openxr_interaction_profile.h#L70>`_
+=========================================================================================================================================
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

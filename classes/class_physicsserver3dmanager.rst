@@ -7,8 +7,8 @@
 
 .. _class_PhysicsServer3DManager:
 
-PhysicsServer3DManager
-======================
+`PhysicsServer3DManager <https://github.com/godotengine/godot/blob/master/servers/physics_server_3d.h#L987>`_
+=============================================================================================================
 
 **Inherits:** :ref:`Object<class_Object>`
 

@@ -7,8 +7,8 @@
 
 .. _class_TextureCubemapArrayRD:
 
-TextureCubemapArrayRD
-=====================
+`TextureCubemapArrayRD <https://github.com/godotengine/godot/blob/master/scene/resources/texture_rd.h#L117>`_
+=============================================================================================================
 
 **Inherits:** :ref:`TextureLayeredRD<class_TextureLayeredRD>` **<** :ref:`TextureLayered<class_TextureLayered>` **<** :ref:`Texture<class_Texture>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

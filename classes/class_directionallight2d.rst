@@ -7,8 +7,8 @@
 
 .. _class_DirectionalLight2D:
 
-DirectionalLight2D
-==================
+`DirectionalLight2D <https://github.com/godotengine/godot/blob/master/scene/2d/light_2d.h#L182>`_
+=================================================================================================
 
 **Inherits:** :ref:`Light2D<class_Light2D>` **<** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 

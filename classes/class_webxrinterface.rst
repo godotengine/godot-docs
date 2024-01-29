@@ -7,8 +7,8 @@
 
 .. _class_WebXRInterface:
 
-WebXRInterface
-==============
+`WebXRInterface <https://github.com/godotengine/godot/blob/master/modules/webxr/webxr_interface.h#L41>`_
+========================================================================================================
 
 **Inherits:** :ref:`XRInterface<class_XRInterface>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

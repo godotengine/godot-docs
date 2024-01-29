@@ -7,8 +7,8 @@
 
 .. _class_StringName:
 
-StringName
-==========
+`StringName <https://github.com/godotengine/godot/blob/master/core/string/string_name.h#L47>`_
+==============================================================================================
 
 A built-in type for unique strings.
 

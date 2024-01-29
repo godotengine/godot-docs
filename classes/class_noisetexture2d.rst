@@ -7,8 +7,8 @@
 
 .. _class_NoiseTexture2D:
 
-NoiseTexture2D
-==============
+`NoiseTexture2D <https://github.com/godotengine/godot/blob/master/modules/noise/noise_texture_2d.h#L39>`_
+=========================================================================================================
 
 **Inherits:** :ref:`Texture2D<class_Texture2D>` **<** :ref:`Texture<class_Texture>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

@@ -7,8 +7,8 @@
 
 .. _class_PhysicsDirectSpaceState3DExtension:
 
-PhysicsDirectSpaceState3DExtension
-==================================
+`PhysicsDirectSpaceState3DExtension <https://github.com/godotengine/godot/blob/master/servers/extensions/physics_server_3d_extension.h#L123>`_
+==============================================================================================================================================
 
 **Inherits:** :ref:`PhysicsDirectSpaceState3D<class_PhysicsDirectSpaceState3D>` **<** :ref:`Object<class_Object>`
 

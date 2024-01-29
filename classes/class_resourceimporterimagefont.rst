@@ -7,8 +7,8 @@
 
 .. _class_ResourceImporterImageFont:
 
-ResourceImporterImageFont
-=========================
+`ResourceImporterImageFont <https://github.com/godotengine/godot/blob/master/editor/import/resource_importer_imagefont.h#L38>`_
+===============================================================================================================================
 
 **Inherits:** :ref:`ResourceImporter<class_ResourceImporter>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

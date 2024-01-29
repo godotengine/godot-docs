@@ -7,8 +7,8 @@
 
 .. _class_PhysicsServer2D:
 
-PhysicsServer2D
-===============
+`PhysicsServer2D <https://github.com/godotengine/godot/blob/master/servers/physics_server_2d.h#L207>`_
+======================================================================================================
 
 **Inherits:** :ref:`Object<class_Object>`
 

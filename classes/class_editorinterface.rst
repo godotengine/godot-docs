@@ -7,8 +7,8 @@
 
 .. _class_EditorInterface:
 
-EditorInterface
-===============
+`EditorInterface <https://github.com/godotengine/godot/blob/master/editor/editor_interface.h#L58>`_
+===================================================================================================
 
 **Inherits:** :ref:`Object<class_Object>`
 

@@ -7,8 +7,8 @@
 
 .. _class_IP:
 
-IP
-==
+`IP <https://github.com/godotengine/godot/blob/master/core/io/ip.h#L42>`_
+=========================================================================
 
 **Inherits:** :ref:`Object<class_Object>`
 

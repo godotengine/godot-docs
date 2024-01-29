@@ -7,8 +7,8 @@
 
 .. _class_GLTFDocument:
 
-GLTFDocument
-============
+`GLTFDocument <https://github.com/godotengine/godot/blob/master/modules/gltf/gltf_document.h#L38>`_
+===================================================================================================
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

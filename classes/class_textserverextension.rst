@@ -7,8 +7,8 @@
 
 .. _class_TextServerExtension:
 
-TextServerExtension
-===================
+`TextServerExtension <https://github.com/godotengine/godot/blob/master/servers/text/text_server_extension.h#L40>`_
+==================================================================================================================
 
 **Inherits:** :ref:`TextServer<class_TextServer>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

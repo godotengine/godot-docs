@@ -7,8 +7,8 @@
 
 .. _class_Array:
 
-Array
-=====
+`Array <https://github.com/godotengine/godot/blob/master/core/variant/array.h#L44>`_
+====================================================================================
 
 A built-in data structure that holds a sequence of elements.
 

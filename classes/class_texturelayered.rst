@@ -7,8 +7,8 @@
 
 .. _class_TextureLayered:
 
-TextureLayered
-==============
+`TextureLayered <https://github.com/godotengine/godot/blob/master/editor/plugins/texture_layered_editor_plugin.h#L40>`_
+=======================================================================================================================
 
 **Inherits:** :ref:`Texture<class_Texture>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

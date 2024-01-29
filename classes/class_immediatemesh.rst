@@ -7,8 +7,8 @@
 
 .. _class_ImmediateMesh:
 
-ImmediateMesh
-=============
+`ImmediateMesh <https://github.com/godotengine/godot/blob/master/scene/resources/immediate_mesh.h#L37>`_
+========================================================================================================
 
 **Inherits:** :ref:`Mesh<class_Mesh>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

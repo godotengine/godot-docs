@@ -7,8 +7,8 @@
 
 .. _class_MobileVRInterface:
 
-MobileVRInterface
-=================
+`MobileVRInterface <https://github.com/godotengine/godot/blob/master/modules/mobile_vr/mobile_vr_interface.h#L48>`_
+===================================================================================================================
 
 **Inherits:** :ref:`XRInterface<class_XRInterface>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

@@ -7,8 +7,8 @@
 
 .. _class_NavigationObstacle3D:
 
-NavigationObstacle3D
-====================
+`NavigationObstacle3D <https://github.com/godotengine/godot/blob/master/editor/plugins/navigation_obstacle_3d_editor_plugin.h#L45>`_
+====================================================================================================================================
 
 **Inherits:** :ref:`Node3D<class_Node3D>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 

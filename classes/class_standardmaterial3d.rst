@@ -7,8 +7,8 @@
 
 .. _class_StandardMaterial3D:
 
-StandardMaterial3D
-==================
+`StandardMaterial3D <https://github.com/godotengine/godot/blob/master/editor/plugins/material_editor_plugin.h#L127>`_
+=====================================================================================================================
 
 **Inherits:** :ref:`BaseMaterial3D<class_BaseMaterial3D>` **<** :ref:`Material<class_Material>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

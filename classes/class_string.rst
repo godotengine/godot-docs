@@ -7,8 +7,8 @@
 
 .. _class_String:
 
-String
-======
+`String <https://github.com/godotengine/godot/blob/master/core/string/ustring.h#L183>`_
+=======================================================================================
 
 A built-in type for strings.
 

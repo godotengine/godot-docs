@@ -7,8 +7,8 @@
 
 .. _class_NavigationServer2D:
 
-NavigationServer2D
-==================
+`NavigationServer2D <https://github.com/godotengine/godot/blob/master/servers/navigation_server_2d.h#L47>`_
+===========================================================================================================
 
 **Inherits:** :ref:`Object<class_Object>`
 

@@ -7,8 +7,8 @@
 
 .. _class_AnimationNodeBlendSpace2D:
 
-AnimationNodeBlendSpace2D
-=========================
+`AnimationNodeBlendSpace2D <https://github.com/godotengine/godot/blob/master/editor/plugins/animation_blend_space_2d_editor.h#L48>`_
+====================================================================================================================================
 
 **Inherits:** :ref:`AnimationRootNode<class_AnimationRootNode>` **<** :ref:`AnimationNode<class_AnimationNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

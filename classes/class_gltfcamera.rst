@@ -7,8 +7,8 @@
 
 .. _class_GLTFCamera:
 
-GLTFCamera
-==========
+`GLTFCamera <https://github.com/godotengine/godot/blob/master/modules/gltf/structures/gltf_camera.h#L41>`_
+==========================================================================================================
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

@@ -7,8 +7,8 @@
 
 .. _class_GPUParticlesCollisionSphere3D:
 
-GPUParticlesCollisionSphere3D
-=============================
+`GPUParticlesCollisionSphere3D <https://github.com/godotengine/godot/blob/master/scene/3d/gpu_particles_collision_3d.h#L56>`_
+=============================================================================================================================
 
 **Inherits:** :ref:`GPUParticlesCollision3D<class_GPUParticlesCollision3D>` **<** :ref:`VisualInstance3D<class_VisualInstance3D>` **<** :ref:`Node3D<class_Node3D>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 

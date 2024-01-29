@@ -7,8 +7,8 @@
 
 .. _class_SceneTree:
 
-SceneTree
-=========
+`SceneTree <https://github.com/godotengine/godot/blob/master/editor/scene_tree_dock.h#L53>`_
+============================================================================================
 
 **Inherits:** :ref:`MainLoop<class_MainLoop>` **<** :ref:`Object<class_Object>`
 

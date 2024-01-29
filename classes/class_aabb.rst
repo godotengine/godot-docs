@@ -7,8 +7,8 @@
 
 .. _class_AABB:
 
-AABB
-====
+`AABB <https://github.com/godotengine/godot/blob/master/core/math/aabb.h#L44>`_
+===============================================================================
 
 A 3D axis-aligned bounding box.
 

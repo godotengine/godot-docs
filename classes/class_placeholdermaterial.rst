@@ -7,8 +7,8 @@
 
 .. _class_PlaceholderMaterial:
 
-PlaceholderMaterial
-===================
+`PlaceholderMaterial <https://github.com/godotengine/godot/blob/master/scene/resources/material.h#L821>`_
+=========================================================================================================
 
 **Inherits:** :ref:`Material<class_Material>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

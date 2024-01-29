@@ -7,8 +7,8 @@
 
 .. _class_Resource:
 
-Resource
-========
+`Resource <https://github.com/godotengine/godot/blob/master/core/core_bind.h#L50>`_
+===================================================================================
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

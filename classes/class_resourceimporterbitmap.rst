@@ -7,8 +7,8 @@
 
 .. _class_ResourceImporterBitMap:
 
-ResourceImporterBitMap
-======================
+`ResourceImporterBitMap <https://github.com/godotengine/godot/blob/master/editor/import/resource_importer_bitmask.h#L36>`_
+==========================================================================================================================
 
 **Inherits:** :ref:`ResourceImporter<class_ResourceImporter>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

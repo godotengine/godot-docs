@@ -7,8 +7,8 @@
 
 .. _class_TextServer:
 
-TextServer
-==========
+`TextServer <https://github.com/godotengine/godot/blob/master/modules/text_server_adv/text_server_adv.h#L132>`_
+===============================================================================================================
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

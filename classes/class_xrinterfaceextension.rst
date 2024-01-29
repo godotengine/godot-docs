@@ -7,8 +7,8 @@
 
 .. _class_XRInterfaceExtension:
 
-XRInterfaceExtension
-====================
+`XRInterfaceExtension <https://github.com/godotengine/godot/blob/master/servers/xr/xr_interface_extension.h#L36>`_
+==================================================================================================================
 
 **Inherits:** :ref:`XRInterface<class_XRInterface>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

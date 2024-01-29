@@ -7,8 +7,8 @@
 
 .. _class_LabelSettings:
 
-LabelSettings
-=============
+`LabelSettings <https://github.com/godotengine/godot/blob/master/scene/resources/label_settings.h#L39>`_
+========================================================================================================
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

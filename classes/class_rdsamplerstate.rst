@@ -7,8 +7,8 @@
 
 .. _class_RDSamplerState:
 
-RDSamplerState
-==============
+`RDSamplerState <https://github.com/godotengine/godot/blob/master/servers/rendering/rendering_device_binds.h#L162>`_
+====================================================================================================================
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

@@ -7,8 +7,8 @@
 
 .. _class_EditorSceneFormatImporterGLTF:
 
-EditorSceneFormatImporterGLTF
-=============================
+`EditorSceneFormatImporterGLTF <https://github.com/godotengine/godot/blob/master/modules/gltf/editor/editor_scene_importer_gltf.h#L41>`_
+========================================================================================================================================
 
 **Inherits:** :ref:`EditorSceneFormatImporter<class_EditorSceneFormatImporter>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

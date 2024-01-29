@@ -7,8 +7,8 @@
 
 .. _class_Tree:
 
-Tree
-====
+`Tree <https://github.com/godotengine/godot/blob/master/editor/editor_help_search.h#L70>`_
+==========================================================================================
 
 **Inherits:** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 

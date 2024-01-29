@@ -7,8 +7,8 @@
 
 .. _class_ResourceImporterMP3:
 
-ResourceImporterMP3
-===================
+`ResourceImporterMP3 <https://github.com/godotengine/godot/blob/master/modules/minimp3/resource_importer_mp3.h#L38>`_
+=====================================================================================================================
 
 **Inherits:** :ref:`ResourceImporter<class_ResourceImporter>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

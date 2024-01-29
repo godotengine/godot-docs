@@ -7,8 +7,8 @@
 
 .. _class_VideoStreamTheora:
 
-VideoStreamTheora
-=================
+`VideoStreamTheora <https://github.com/godotengine/godot/blob/master/modules/theora/video_stream_theora.h#L155>`_
+=================================================================================================================
 
 **Inherits:** :ref:`VideoStream<class_VideoStream>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

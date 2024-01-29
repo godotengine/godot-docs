@@ -7,8 +7,8 @@
 
 .. _class_OpenXRInterface:
 
-OpenXRInterface
-===============
+`OpenXRInterface <https://github.com/godotengine/godot/blob/master/modules/openxr/openxr_interface.h#L45>`_
+===========================================================================================================
 
 **Inherits:** :ref:`XRInterface<class_XRInterface>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

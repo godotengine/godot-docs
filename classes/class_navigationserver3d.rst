@@ -7,8 +7,8 @@
 
 .. _class_NavigationServer3D:
 
-NavigationServer3D
-==================
+`NavigationServer3D <https://github.com/godotengine/godot/blob/master/servers/navigation_server_3d.h#L49>`_
+===========================================================================================================
 
 **Inherits:** :ref:`Object<class_Object>`
 

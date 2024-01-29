@@ -7,8 +7,8 @@
 
 .. _class_GPUParticlesCollision3D:
 
-GPUParticlesCollision3D
-=======================
+`GPUParticlesCollision3D <https://github.com/godotengine/godot/blob/master/editor/plugins/gizmos/gpu_particles_collision_3d_gizmo_plugin.h#L38>`_
+=================================================================================================================================================
 
 **Inherits:** :ref:`VisualInstance3D<class_VisualInstance3D>` **<** :ref:`Node3D<class_Node3D>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 

@@ -7,8 +7,8 @@
 
 .. _class_AudioStreamGeneratorPlayback:
 
-AudioStreamGeneratorPlayback
-============================
+`AudioStreamGeneratorPlayback <https://github.com/godotengine/godot/blob/master/servers/audio/effects/audio_stream_generator.h#L61>`_
+=====================================================================================================================================
 
 **Inherits:** :ref:`AudioStreamPlaybackResampled<class_AudioStreamPlaybackResampled>` **<** :ref:`AudioStreamPlayback<class_AudioStreamPlayback>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

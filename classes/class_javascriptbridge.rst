@@ -7,8 +7,8 @@
 
 .. _class_JavaScriptBridge:
 
-JavaScriptBridge
-================
+`JavaScriptBridge <https://github.com/godotengine/godot/blob/master/platform/web/api/javascript_bridge_singleton.h#L47>`_
+=========================================================================================================================
 
 **Inherits:** :ref:`Object<class_Object>`
 

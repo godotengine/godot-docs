@@ -7,8 +7,8 @@
 
 .. _class_ResourceFormatSaver:
 
-ResourceFormatSaver
-===================
+`ResourceFormatSaver <https://github.com/godotengine/godot/blob/master/core/crypto/crypto.h#L162>`_
+===================================================================================================
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

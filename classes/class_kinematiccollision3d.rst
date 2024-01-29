@@ -7,8 +7,8 @@
 
 .. _class_KinematicCollision3D:
 
-KinematicCollision3D
-====================
+`KinematicCollision3D <https://github.com/godotengine/godot/blob/master/scene/3d/physics_body_3d.h#L498>`_
+==========================================================================================================
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

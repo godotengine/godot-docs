@@ -7,8 +7,8 @@
 
 .. _class_PathFollow3D:
 
-PathFollow3D
-============
+`PathFollow3D <https://github.com/godotengine/godot/blob/master/scene/3d/path_3d.h#L63>`_
+=========================================================================================
 
 **Inherits:** :ref:`Node3D<class_Node3D>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 

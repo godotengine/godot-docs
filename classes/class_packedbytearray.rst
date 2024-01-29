@@ -7,8 +7,8 @@
 
 .. _class_PackedByteArray:
 
-PackedByteArray
-===============
+`PackedByteArray <https://github.com/godotengine/godot/blob/master/core/variant/variant.h#L68>`_
+================================================================================================
 
 A packed array of bytes.
 

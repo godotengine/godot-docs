@@ -7,8 +7,8 @@
 
 .. _class_AnimationLibrary:
 
-AnimationLibrary
-================
+`AnimationLibrary <https://github.com/godotengine/godot/blob/master/editor/plugins/animation_library_editor.h#L43>`_
+====================================================================================================================
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

@@ -7,8 +7,8 @@
 
 .. _class_HMACContext:
 
-HMACContext
-===========
+`HMACContext <https://github.com/godotengine/godot/blob/master/core/crypto/crypto.h#L106>`_
+===========================================================================================
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

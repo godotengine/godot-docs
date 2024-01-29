@@ -7,8 +7,8 @@
 
 .. _class_MeshInstance3D:
 
-MeshInstance3D
-==============
+`MeshInstance3D <https://github.com/godotengine/godot/blob/master/editor/plugins/mesh_instance_3d_editor_plugin.cpp#L421>`_
+===========================================================================================================================
 
 **Inherits:** :ref:`GeometryInstance3D<class_GeometryInstance3D>` **<** :ref:`VisualInstance3D<class_VisualInstance3D>` **<** :ref:`Node3D<class_Node3D>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 

@@ -7,8 +7,8 @@
 
 .. _class_WebSocketPeer:
 
-WebSocketPeer
-=============
+`WebSocketPeer <https://github.com/godotengine/godot/blob/master/modules/websocket/websocket_peer.h#L38>`_
+==========================================================================================================
 
 **Inherits:** :ref:`PacketPeer<class_PacketPeer>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

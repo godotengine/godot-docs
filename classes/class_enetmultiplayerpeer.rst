@@ -7,8 +7,8 @@
 
 .. _class_ENetMultiplayerPeer:
 
-ENetMultiplayerPeer
-===================
+`ENetMultiplayerPeer <https://github.com/godotengine/godot/blob/master/modules/enet/enet_multiplayer_peer.h#L41>`_
+==================================================================================================================
 
 **Inherits:** :ref:`MultiplayerPeer<class_MultiplayerPeer>` **<** :ref:`PacketPeer<class_PacketPeer>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

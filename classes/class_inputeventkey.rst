@@ -7,8 +7,8 @@
 
 .. _class_InputEventKey:
 
-InputEventKey
-=============
+`InputEventKey <https://github.com/godotengine/godot/blob/master/core/input/input_event.h#L153>`_
+=================================================================================================
 
 **Inherits:** :ref:`InputEventWithModifiers<class_InputEventWithModifiers>` **<** :ref:`InputEventFromWindow<class_InputEventFromWindow>` **<** :ref:`InputEvent<class_InputEvent>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

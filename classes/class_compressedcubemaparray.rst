@@ -7,8 +7,8 @@
 
 .. _class_CompressedCubemapArray:
 
-CompressedCubemapArray
-======================
+`CompressedCubemapArray <https://github.com/godotengine/godot/blob/master/scene/resources/compressed_texture.h#L202>`_
+======================================================================================================================
 
 **Inherits:** :ref:`CompressedTextureLayered<class_CompressedTextureLayered>` **<** :ref:`TextureLayered<class_TextureLayered>` **<** :ref:`Texture<class_Texture>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

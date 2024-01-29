@@ -7,8 +7,8 @@
 
 .. _class_ItemList:
 
-ItemList
-========
+`ItemList <https://github.com/godotengine/godot/blob/master/scene/gui/item_list.h#L38>`_
+========================================================================================
 
 **Inherits:** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 

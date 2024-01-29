@@ -7,8 +7,8 @@
 
 .. _class_Vector2:
 
-Vector2
-=======
+`Vector2 <https://github.com/godotengine/godot/blob/master/core/math/vector2.h#L40>`_
+=====================================================================================
 
 A 2D vector using floating point coordinates.
 

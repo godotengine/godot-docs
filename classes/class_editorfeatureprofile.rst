@@ -7,8 +7,8 @@
 
 .. _class_EditorFeatureProfile:
 
-EditorFeatureProfile
-====================
+`EditorFeatureProfile <https://github.com/godotengine/godot/blob/master/editor/editor_feature_profile.h#L45>`_
+==============================================================================================================
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

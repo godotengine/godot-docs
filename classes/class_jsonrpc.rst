@@ -7,8 +7,8 @@
 
 .. _class_JSONRPC:
 
-JSONRPC
-=======
+`JSONRPC <https://github.com/godotengine/godot/blob/master/modules/jsonrpc/jsonrpc.h#L37>`_
+===========================================================================================
 
 **Inherits:** :ref:`Object<class_Object>`
 

@@ -7,8 +7,8 @@
 
 .. _class_RootMotionView:
 
-RootMotionView
-==============
+`RootMotionView <https://github.com/godotengine/godot/blob/master/scene/animation/root_motion_view.h#L36>`_
+===========================================================================================================
 
 **Inherits:** :ref:`VisualInstance3D<class_VisualInstance3D>` **<** :ref:`Node3D<class_Node3D>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 

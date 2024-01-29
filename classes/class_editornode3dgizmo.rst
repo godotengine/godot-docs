@@ -7,8 +7,8 @@
 
 .. _class_EditorNode3DGizmo:
 
-EditorNode3DGizmo
-=================
+`EditorNode3DGizmo <https://github.com/godotengine/godot/blob/master/editor/plugins/node_3d_editor_gizmos.h#L43>`_
+==================================================================================================================
 
 **Inherits:** :ref:`Node3DGizmo<class_Node3DGizmo>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

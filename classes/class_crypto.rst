@@ -7,8 +7,8 @@
 
 .. _class_Crypto:
 
-Crypto
-======
+`Crypto <https://github.com/godotengine/godot/blob/master/core/crypto/crypto.h#L40>`_
+=====================================================================================
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

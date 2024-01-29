@@ -7,8 +7,8 @@
 
 .. _class_AudioServer:
 
-AudioServer
-===========
+`AudioServer <https://github.com/godotengine/godot/blob/master/servers/audio_server.h#L157>`_
+=============================================================================================
 
 **Inherits:** :ref:`Object<class_Object>`
 

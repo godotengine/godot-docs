@@ -7,8 +7,8 @@
 
 .. _class_Noise:
 
-Noise
-=====
+`Noise <https://github.com/godotengine/godot/blob/master/modules/noise/noise.h#L37>`_
+=====================================================================================
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

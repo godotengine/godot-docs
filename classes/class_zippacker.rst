@@ -7,8 +7,8 @@
 
 .. _class_ZIPPacker:
 
-ZIPPacker
-=========
+`ZIPPacker <https://github.com/godotengine/godot/blob/master/modules/zip/zip_packer.h#L39>`_
+============================================================================================
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

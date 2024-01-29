@@ -7,8 +7,8 @@
 
 .. _class_VisualShaderNodeColorParameter:
 
-VisualShaderNodeColorParameter
-==============================
+`VisualShaderNodeColorParameter <https://github.com/godotengine/godot/blob/master/scene/resources/visual_shader_nodes.h#L2174>`_
+================================================================================================================================
 
 **Inherits:** :ref:`VisualShaderNodeParameter<class_VisualShaderNodeParameter>` **<** :ref:`VisualShaderNode<class_VisualShaderNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

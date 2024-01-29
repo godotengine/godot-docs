@@ -7,8 +7,8 @@
 
 .. _class_TabBar:
 
-TabBar
-======
+`TabBar <https://github.com/godotengine/godot/blob/master/scene/gui/tab_bar.h#L37>`_
+====================================================================================
 
 **Inherits:** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 

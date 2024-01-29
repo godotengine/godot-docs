@@ -7,8 +7,8 @@
 
 .. _class_EditorVCSInterface:
 
-EditorVCSInterface
-==================
+`EditorVCSInterface <https://github.com/godotengine/godot/blob/master/editor/editor_vcs_interface.h#L40>`_
+==========================================================================================================
 
 **Inherits:** :ref:`Object<class_Object>`
 

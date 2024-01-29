@@ -7,8 +7,8 @@
 
 .. _class_ResourceImporterOBJ:
 
-ResourceImporterOBJ
-===================
+`ResourceImporterOBJ <https://github.com/godotengine/godot/blob/master/editor/import/3d/resource_importer_obj.h#L47>`_
+======================================================================================================================
 
 **Inherits:** :ref:`ResourceImporter<class_ResourceImporter>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

@@ -7,8 +7,8 @@
 
 .. _class_GPUParticles3D:
 
-GPUParticles3D
-==============
+`GPUParticles3D <https://github.com/godotengine/godot/blob/master/editor/plugins/gpu_particles_3d_editor_plugin.h#L44>`_
+========================================================================================================================
 
 **Inherits:** :ref:`GeometryInstance3D<class_GeometryInstance3D>` **<** :ref:`VisualInstance3D<class_VisualInstance3D>` **<** :ref:`Node3D<class_Node3D>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 

@@ -7,8 +7,8 @@
 
 .. _class_RenderSceneBuffersConfiguration:
 
-RenderSceneBuffersConfiguration
-===============================
+`RenderSceneBuffersConfiguration <https://github.com/godotengine/godot/blob/master/servers/rendering/storage/render_scene_buffers.h#L37>`_
+==========================================================================================================================================
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

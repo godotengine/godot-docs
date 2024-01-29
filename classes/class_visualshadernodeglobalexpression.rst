@@ -7,8 +7,8 @@
 
 .. _class_VisualShaderNodeGlobalExpression:
 
-VisualShaderNodeGlobalExpression
-================================
+`VisualShaderNodeGlobalExpression <https://github.com/godotengine/godot/blob/master/scene/resources/visual_shader.h#L804>`_
+===========================================================================================================================
 
 **Inherits:** :ref:`VisualShaderNodeExpression<class_VisualShaderNodeExpression>` **<** :ref:`VisualShaderNodeGroupBase<class_VisualShaderNodeGroupBase>` **<** :ref:`VisualShaderNodeResizableBase<class_VisualShaderNodeResizableBase>` **<** :ref:`VisualShaderNode<class_VisualShaderNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

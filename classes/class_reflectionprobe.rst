@@ -7,8 +7,8 @@
 
 .. _class_ReflectionProbe:
 
-ReflectionProbe
-===============
+`ReflectionProbe <https://github.com/godotengine/godot/blob/master/drivers/gles3/storage/light_storage.h#L115>`_
+================================================================================================================
 
 **Inherits:** :ref:`VisualInstance3D<class_VisualInstance3D>` **<** :ref:`Node3D<class_Node3D>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 

@@ -7,8 +7,8 @@
 
 .. _class_Node:
 
-Node
-====
+`Node <https://github.com/godotengine/godot/blob/master/core/math/dynamic_bvh.h#L181>`_
+=======================================================================================
 
 **Inherits:** :ref:`Object<class_Object>`
 

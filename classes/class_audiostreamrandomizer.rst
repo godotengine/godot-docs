@@ -7,8 +7,8 @@
 
 .. _class_AudioStreamRandomizer:
 
-AudioStreamRandomizer
-=====================
+`AudioStreamRandomizer <https://github.com/godotengine/godot/blob/master/editor/plugins/audio_stream_randomizer_editor_plugin.h#L37>`_
+======================================================================================================================================
 
 **Inherits:** :ref:`AudioStream<class_AudioStream>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

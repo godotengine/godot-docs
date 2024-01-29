@@ -7,8 +7,8 @@
 
 .. _class_BoxShape3D:
 
-BoxShape3D
-==========
+`BoxShape3D <https://github.com/godotengine/godot/blob/master/scene/resources/box_shape_3d.h#L36>`_
+===================================================================================================
 
 **Inherits:** :ref:`Shape3D<class_Shape3D>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

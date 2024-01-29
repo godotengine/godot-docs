@@ -7,8 +7,8 @@
 
 .. _class_CanvasLayer:
 
-CanvasLayer
-===========
+`CanvasLayer <https://github.com/godotengine/godot/blob/master/scene/main/canvas_layer.h#L37>`_
+===============================================================================================
 
 **Inherits:** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 

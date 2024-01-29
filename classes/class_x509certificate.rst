@@ -7,8 +7,8 @@
 
 .. _class_X509Certificate:
 
-X509Certificate
-===============
+`X509Certificate <https://github.com/godotengine/godot/blob/master/core/crypto/crypto.h#L56>`_
+==============================================================================================
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

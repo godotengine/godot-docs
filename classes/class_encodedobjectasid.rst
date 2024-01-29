@@ -7,8 +7,8 @@
 
 .. _class_EncodedObjectAsID:
 
-EncodedObjectAsID
-=================
+`EncodedObjectAsID <https://github.com/godotengine/godot/blob/master/core/io/marshalls.h#L200>`_
+================================================================================================
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

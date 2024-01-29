@@ -7,8 +7,8 @@
 
 .. _class_AnimationNodeBlendTree:
 
-AnimationNodeBlendTree
-======================
+`AnimationNodeBlendTree <https://github.com/godotengine/godot/blob/master/editor/plugins/animation_blend_tree_editor_plugin.h#L51>`_
+====================================================================================================================================
 
 **Inherits:** :ref:`AnimationRootNode<class_AnimationRootNode>` **<** :ref:`AnimationNode<class_AnimationNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

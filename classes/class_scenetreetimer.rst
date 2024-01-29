@@ -7,8 +7,8 @@
 
 .. _class_SceneTreeTimer:
 
-SceneTreeTimer
-==============
+`SceneTreeTimer <https://github.com/godotengine/godot/blob/master/scene/main/scene_tree.h#L52>`_
+================================================================================================
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

@@ -7,8 +7,8 @@
 
 .. _class_PhysicsPointQueryParameters2D:
 
-PhysicsPointQueryParameters2D
-=============================
+`PhysicsPointQueryParameters2D <https://github.com/godotengine/godot/blob/master/servers/physics_server_2d.h#L650>`_
+====================================================================================================================
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

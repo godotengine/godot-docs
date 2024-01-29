@@ -7,8 +7,8 @@
 
 .. _class_ResourceFormatLoader:
 
-ResourceFormatLoader
-====================
+`ResourceFormatLoader <https://github.com/godotengine/godot/blob/master/core/crypto/crypto.h#L154>`_
+====================================================================================================
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

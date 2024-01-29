@@ -7,8 +7,8 @@
 
 .. _class_CameraAttributes:
 
-CameraAttributes
-================
+`CameraAttributes <https://github.com/godotengine/godot/blob/master/drivers/gles3/rasterizer_scene_gles3.h#L551>`_
+==================================================================================================================
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

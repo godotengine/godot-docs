@@ -7,8 +7,8 @@
 
 .. _class_RichTextLabel:
 
-RichTextLabel
-=============
+`RichTextLabel <https://github.com/godotengine/godot/blob/master/scene/gui/rich_text_label.h#L42>`_
+===================================================================================================
 
 **Inherits:** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 

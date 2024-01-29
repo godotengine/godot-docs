@@ -7,8 +7,8 @@
 
 .. _class_GLTFDocumentExtension:
 
-GLTFDocumentExtension
-=====================
+`GLTFDocumentExtension <https://github.com/godotengine/godot/blob/master/modules/gltf/extensions/gltf_document_extension.h#L38>`_
+=================================================================================================================================
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

@@ -7,8 +7,8 @@
 
 .. _class_VisualShaderNode:
 
-VisualShaderNode
-================
+`VisualShaderNode <https://github.com/godotengine/godot/blob/master/editor/plugins/visual_shader_editor_plugin.cpp#L6274>`_
+===========================================================================================================================
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 

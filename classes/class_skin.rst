@@ -7,8 +7,8 @@
 
 .. _class_Skin:
 
-Skin
-====
+`Skin <https://github.com/godotengine/godot/blob/master/editor/import/3d/collada.h#L181>`_
+==========================================================================================
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
