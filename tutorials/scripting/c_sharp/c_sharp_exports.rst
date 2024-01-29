@@ -71,7 +71,9 @@ Exported members can specify a default value; otherwise, the `default value of t
         set => _greeting = value;
     }
 
-Resources and nodes can be exported.
+Resources and nodes can be exported. The property editor shows a user-friendly
+assignment dialog for these types. This can be used instead of ``GD.Load`` and
+``GetNode``.
 
 .. code-block:: csharp
 
@@ -80,6 +82,17 @@ Resources and nodes can be exported.
 
     [Export]
     public Node Node { get; set; }
+
+Exporting a specific type of resource or node lets the property editor show a
+filtered list of possibilities.
+
+.. code-block:: csharp
+
+    [Export]
+    public PackedScene PackedScene { get; set; }
+
+    [Export]
+    public RigidBody2D RigidBody2D { get; set; }
 
 Grouping exports
 ----------------
