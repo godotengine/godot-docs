@@ -48,22 +48,33 @@ Exporting can work with fields and properties.
 
 Exported members can specify a default value; otherwise, the `default value of the type <https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/default-values>`_ is used instead.
 
+An ``int`` like ``_number`` defaults to ``0``. ``_text`` defaults to null
+because ``string`` is a reference type.
+
 .. code-block:: csharp
 
     [Export]
-    private int _number; // Defaults to '0'
+    private int _number;
 
     [Export]
-    private string _text; // Defaults to 'null' because it's a reference type
+    private string _text;
+
+Default values can be specified for fields and properties.
+
+.. code-block:: csharp
 
     [Export]
-    private string _greeting = "Hello World"; // Exported field specifies a default value
+    private string _greeting = "Hello World";
 
     [Export]
-    public string Greeting { get; set; } = "Hello World"; // Exported property specifies a default value
+    public string Greeting { get; set; } = "Hello World";
 
-    // This property uses `_greeting` as its backing field, so the default value
-    // will be the default value of the `_greeting` field.
+Properties with a backing field use the default value of the backing field.
+
+.. code-block:: csharp
+
+    private string _greeting = "Hello World";
+
     [Export]
     public string GreetingWithBackingField
     {
@@ -301,9 +312,11 @@ their values are limited to the members of the enum type.
 The editor will create a widget in the Inspector, allowing to select none, one,
 or multiple of the enum members. The value will be stored as an integer.
 
+A flags enum uses powers of 2 for the values of the enum members. Members that
+combine multiple flags using logical OR (``|``) are also possible.
+
 .. code-block:: csharp
 
-    // Use power of 2 values for the values of the enum members.
     [Flags]
     public enum MyEnum
     {
@@ -312,7 +325,6 @@ or multiple of the enum members. The value will be stored as an integer.
         Earth = 1 << 3,
         Wind = 1 << 4,
 
-        // A combination of flags is also possible.
         FireAndWater = Fire | Water,
     }
 
@@ -320,12 +332,11 @@ or multiple of the enum members. The value will be stored as an integer.
     public SpellElements MySpellElements { get; set; }
 
 Integers used as bit flags can store multiple ``true``/``false`` (boolean)
-values in one property. By using the ``Flags`` property hint, they
-can be set from the editor.
+values in one property. By using the ``Flags`` property hint, any of the given
+flags can be set from the editor.
 
 .. code-block:: csharp
 
-    // Set any of the given flags from the editor.
     [Export(PropertyHint.Flags, "Fire,Water,Earth,Wind")]
     public int SpellElements { get; set; } = 0;
 
