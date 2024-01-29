@@ -264,6 +264,7 @@ Manager.
 
     Using Clang appears to be a requirement for OpenBSD, otherwise fonts
     would not build.
+    For RISC-V architecture devices, use the Clang compiler instead of the GCC compiler.
 
 .. note:: If you are compiling Godot for production use, then you can
           make the final executable smaller and faster by adding the
