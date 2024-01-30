@@ -15,6 +15,10 @@ In some cases it's necessary to use the older
 :ref:`Disconnect()<class_object_method_disconnect>` APIs.
 See :ref:`using_connect_and_disconnect` for more details.
 
+If you encounter a ``System.ObjectDisposedException`` while handling a signal,
+you might be missing a signal disconnection. See
+:ref:`disconnecting_automatically_when_the_receiver_is_freed` for more details.
+
 Signals as C# events
 --------------------
 
@@ -32,15 +36,6 @@ In addition, you can always access signal names associated with a node type thro
 .. code-block:: csharp
 
     await ToSignal(GetTree(), SceneTree.SignalName.ProcessFrame);
-
-.. warning::
-
-    While all engine signals connected as events are automatically disconnected when nodes are freed, custom
-    signals connected using ``+=`` aren't. This means you will need to manually disconnect (using ``-=``)
-    all the custom signals you connected as C# events (using ``+=``).
-
-    An alternative to manually disconnecting using ``-=`` is to
-    :ref:`use Connect <using_connect_and_disconnect>` rather than ``+=``.
 
 Custom signals as C# events
 ---------------------------
@@ -183,4 +178,168 @@ does nothing.
     public void OnButtonPressed()
     {
         GD.Print("Greetings!");
+    }
+
+.. _disconnecting_automatically_when_the_receiver_is_freed:
+
+Disconnecting automatically when the receiver is freed
+------------------------------------------------------
+
+Normally, when any ``GodotObject`` is freed (such as any ``Node``), Godot
+automatically disconnects all connections associated with that object. This
+happens for both signal emitters and signal receivers.
+
+For example, a node with this code will print "Hello!" when the button is
+pressed, then free itself. Freeing the node disconnects the signal, so pressing
+the button again doesn't do anything:
+
+.. code-block:: csharp
+
+    public override void _Ready()
+    {
+        Button myButton = GetNode<Button>("../MyButton");
+        myButton.Pressed += SayHello;
+    }
+
+    private void SayHello()
+    {
+        GD.Print("Hello!");
+        Free();
+    }
+
+When a signal receiver is freed while the signal emitter is still alive, in some
+cases automatic disconnection won't happen:
+
+- The signal is connected to a lambda expression that captures a variable.
+- The signal is a custom signal.
+
+The following sections explain these cases in more detail and include
+suggestions for how to disconnect manually.
+
+.. note::
+
+    Automatic disconnection is totally reliable if a signal emitter is freed
+    before any of its receivers are freed. With a project style that prefers
+    this pattern, the above limits may not be a concern.
+
+No automatic disconnection: a lambda expression that captures a variable
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If you connect to a lambda expression that captures variables, Godot can't tell
+that the lambda is associated with the instance that created it. This causes
+this example to have potentially unexpected behavior:
+
+.. code-block:: csharp
+
+    Timer myTimer = GetNode<Timer>("../Timer");
+    int x = 0;
+    myTimer.Timeout += () =>
+    {
+        x++; // This lambda expression captures x.
+        GD.Print($"Tick {x} my name is {Name}");
+        if (x == 3)
+        {
+            GD.Print("Time's up!");
+            Free();
+        }
+    };
+
+.. code-block:: text
+
+    Tick 1, my name is ExampleNode
+    Tick 2, my name is ExampleNode
+    Tick 3, my name is ExampleNode
+    Time's up!
+    [...] System.ObjectDisposedException: Cannot access a disposed object.
+
+On tick 4, the lambda expression tries to access the ``Name`` property of the
+node, but the node has already been freed. This causes the exception.
+
+To disconnect, keep a reference to the delegate created by the lambda expression
+and pass that to ``-=``. For example, this node connects and disconnects using
+the ``_EnterTree`` and ``_ExitTree`` lifecycle methods:
+
+.. code-block:: csharp
+
+    [Export]
+    public Timer MyTimer { get; set; }
+
+    private Action _tick;
+
+    public override void _EnterTree()
+    {
+        int x = 0;
+        _tick = () =>
+        {
+            x++;
+            GD.Print($"Tick {x} my name is {Name}");
+            if (x == 3)
+            {
+                GD.Print("Time's up!");
+                Free();
+            }
+        };
+        MyTimer.Timeout += _tick;
+    }
+
+    public override void _ExitTree()
+    {
+        MyTimer.Timeout -= _tick;
+    }
+
+In this example, ``Free`` causes the node to leave the tree, which calls
+``_ExitTree``. ``_ExitTree`` disconnects the signal, so ``_tick`` is never
+called again.
+
+The lifecycle methods to use depend on what the node does. Another option is to
+connect to signals in ``_Ready`` and disconnect in ``Dispose``.
+
+.. note::
+
+    Godot uses `Delegate.Target <https://learn.microsoft.com/en-us/dotnet/api/system.delegate.target>`_
+    to determine what instance a delegate is associated with. When a lambda
+    expression doesn't capture a variable, the generated delegate's ``Target``
+    is the instance that created the delegate. When a variable is captured, the
+    ``Target`` instead points at a generated type that stores the captured
+    variable. This is what breaks the association. If you want to see if a
+    delegate will be automatically cleaned up, try checking its ``Target``.
+
+    ``Callable.From`` doesn't affect the ``Delegate.Target``, so connecting a
+    lambda that captures variables using ``Connect`` doesn't work any better
+    than ``+=``.
+
+No automatic disconnection: a custom signal
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Connecting to a custom signal using ``+=`` doesn't disconnect automatically when
+the receiving node is freed.
+
+To disconnect, use ``-=`` at an appropriate time. For example:
+
+.. code-block:: csharp
+
+    [Export]
+    public MyClass Target { get; set; }
+
+    public override void _EnterTree()
+    {
+        Target.MySignal += OnMySignal;
+    }
+
+    public override void _ExitTree()
+    {
+        Target.MySignal -= OnMySignal;
+    }
+
+Another solution is to use ``Connect``, which does disconnect automatically with
+custom signals:
+
+.. code-block:: csharp
+
+    [Export]
+    public MyClass Target { get; set; }
+
+    public override void _EnterTree()
+    {
+        Target.Connect(MyClass.SignalName.MySignal, Callable.From(OnMySignal));
     }
