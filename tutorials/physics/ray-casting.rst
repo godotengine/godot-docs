@@ -159,12 +159,12 @@ The data is similar in 3D space, using Vector3 coordinates. Here an example assu
         const RAY_LENGTH = 1000
 
         func _physics_process(delta):
-        	var params = PhysicsRayQueryParameters3D.new()
-        	params.from = $Camera3D.origin
-        	params.to = $Camera3D.project_position(
-        							get_viewport().get_mouse_position(), 
-        							RAY_LENGTH )
-        	var result = get_world_3d().direct_space_state.intersect_ray(params)
+            var params = PhysicsRayQueryParameters3D.new()
+            params.from = $Camera3D.origin
+            params.to = $Camera3D.project_position(
+                    get_viewport().get_mouse_position(),
+                    RAY_LENGTH)
+            var result = get_world_3d().direct_space_state.intersect_ray(params)
 
 Note that to enable collisions with Area3D, the boolean parameter ``params.collide_with_areas`` must be set to ``true``.
 
