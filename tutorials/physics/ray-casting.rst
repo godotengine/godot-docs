@@ -151,7 +151,7 @@ data:
        metadata: Variant() # metadata of collider
     }
 
-The data is similar in 3D space, using Vector3 coordinates. Here an example assuming that `$Camera3D` is the main camera node:
+The data is similar in 3D space, using Vector3 coordinates. Here an example assuming that ``$Camera3D`` is the main camera node:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
