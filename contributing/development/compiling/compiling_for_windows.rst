@@ -16,7 +16,7 @@ Requirements
 For compiling under Windows, the following is required:
 
 - `Visual Studio Community <https://www.visualstudio.com/vs/community/>`_,
-  version 2017 or later. VS 2019 is recommended.
+  version 2019 or later. Visual Studio 2022 is recommended.
   **Make sure to read "Installing Visual Studio caveats" below or you
   will have to run/download the installer again.**
 - `MinGW-w64 <https://mingw-w64.org/>`_ with GCC can be used as an alternative to
@@ -123,10 +123,19 @@ use MinGW, pass ``use_mingw=yes`` to the SCons command line. Note that MSVC
 builds cannot be performed from the MSYS2 or MinGW shells. Use either
 ``cmd.exe`` or PowerShell instead.
 
-During development, using the Visual Studio compiler is usually a better idea,
-as it links the Godot binary much faster than MinGW. However, MinGW can
-produce more optimized binaries using link-time optimization (see below),
-making it a better choice for production use.
+.. tip::
+
+    During development, using the Visual Studio compiler is usually a better
+    idea, as it links the Godot binary much faster than MinGW. However, MinGW
+    can produce more optimized binaries using link-time optimization (see
+    below), making it a better choice for production use. This is particularly
+    the case for the GDScript VM which performs much better with MinGW compared
+    to MSVC. Therefore, it's recommended to use MinGW to produce builds that you
+    distribute to players.
+
+    All official Godot binaries are built in
+    `custom containers <https://github.com/godotengine/build-containers>`__
+    using MinGW.
 
 Running SCons
 ~~~~~~~~~~~~~
@@ -168,7 +177,7 @@ Compiling with support for Direct3D 12
 --------------------------------------
 
 By default, builds of Godot do not contain support for the Direct3D 12 graphics
-API. 
+API.
 
 To compile Godot with Direct3D 12 support you need at least the following:
 
@@ -176,7 +185,7 @@ To compile Godot with Direct3D 12 support you need at least the following:
   The zip folder will be named "dxc\_" followed by the date of release. Download
   it anywhere, unzip it and remember the path to the unzipped folder, you will
   need it below.
-- `godot-nir-static library <https://github.com/godotengine/godot-nir-static/releases/>`_. 
+- `godot-nir-static library <https://github.com/godotengine/godot-nir-static/releases/>`_.
   We compile the Mesa libraries you will need into a static library. Download it
   anywhere, unzip it and remember the path to the unzipped folder, you will
   need it below.
@@ -189,14 +198,14 @@ To compile Godot with Direct3D 12 support you need at least the following:
           2. Clone the `godot-nir-static <https://github.com/godotengine/godot-nir-static>`_
              directory and navigate to it.
           3. Run the following::
-            
+
               git submodule update --init
               ./update_mesa.sh
               scons
 
              If you are buildng with MinGW, add ``use_mingw=yes`` to the ``scons``
              command, you can also specify build architecture using ``arch={architecture}``.
-             
+
              Mesa static library should be built using the same compiler you are
              using for building Godot.
 
@@ -215,7 +224,7 @@ Optionally, you can compile with the following for additional features:
   will be taken to a NuGet package page where you can click "Download package"
   to get it. Once downloaded, change the file extension to .zip and unzip the
   file to some path.
-  
+
 .. note:: If you use a preview version of the Agility SDK, remember to enable
           developer mode in Windows; otherwise it won't be used.
 
@@ -235,8 +244,8 @@ look for the additional libraries:
 
 .. code-block:: doscon
 
-    C:\godot> scons platform=windows d3d12=yes dxc_path=<...> mesa_libs=<...> 
-    
+    C:\godot> scons platform=windows d3d12=yes dxc_path=<...> mesa_libs=<...>
+
 Or, with all options enabled:
 
 .. code-block:: doscon
@@ -276,10 +285,10 @@ By default, Godot is built with dynamically linked ANGLE, you can use it by plac
 
 To compile Godot with statically linked ANGLE:
 
-- Download pre-built static libraries from `godot-angle-static library <https://github.com/godotengine/godot-angle-static/releases>`_, and unzip them. 
+- Download pre-built static libraries from `godot-angle-static library <https://github.com/godotengine/godot-angle-static/releases>`_, and unzip them.
 - When building Godot, add ``angle_libs={path}`` to tell SCons where to look for the ANGLE libraries::
-    
-    scons platform=windows angle_libs=<...> 
+
+    scons platform=windows angle_libs=<...>
 
 .. note:: You can optionally build the godot-angle-static libraries yourself with
           the following steps:
@@ -287,9 +296,9 @@ To compile Godot with statically linked ANGLE:
           1. Clone the `godot-angle-static <https://github.com/godotengine/godot-angle-static>`_
              directory and navigate to it.
           2. Run the following command::
-            
+
               scons
-            
+
              If you are buildng with MinGW, add ``use_mingw=yes`` to the command,
              you can also specify build architecture using ``arch={architecture}``.
 
