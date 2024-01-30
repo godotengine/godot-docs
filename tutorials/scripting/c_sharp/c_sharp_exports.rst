@@ -15,7 +15,7 @@ Exporting is done by using the ``[Export]`` attribute.
     public partial class ExportExample : Node3D
     {
         [Export]
-        private int Number = 5;
+        public int Number { get; set; } = 5;
     }
 
 In that example the value ``5`` will be saved, and after building the current project
@@ -36,7 +36,7 @@ Exporting can only be done with :ref:`Variant-compatible <doc_c_sharp_variant>` 
 Basic use
 ---------
 
-Exporting can work with fields and properties.
+Exporting works with fields and properties. They can have any access modifier.
 
 .. code-block:: csharp
 
@@ -54,10 +54,10 @@ because ``string`` is a reference type.
 .. code-block:: csharp
 
     [Export]
-    private int _number;
+    public int Number { get; set; }
 
     [Export]
-    private string _text;
+    public string Text { get; set; }
 
 Default values can be specified for fields and properties.
 
@@ -132,7 +132,7 @@ list with the ``[ExportCategory]`` attribute.
 
     [ExportCategory("Extra Category")]
     [Export]
-    private bool Flag { get; set; } = false;
+    public bool Flag { get; set; } = false;
 
 .. note::
 
@@ -245,14 +245,14 @@ Regular color given as red-green-blue-alpha value.
 .. code-block:: csharp
 
     [Export]
-    private Color Color { get; set; }
+    public Color Color { get; set; }
 
 Color given as red-green-blue value (alpha will always be 1).
 
 .. code-block:: csharp
 
     [Export(PropertyHint.ColorNoAlpha)]
-    private Color Color { get; set; }
+    public Color Color { get; set; }
 
 .. _doc_c_sharp_exports_nodes:
 
@@ -273,11 +273,11 @@ Exporting NodePaths like in Godot 3.x is still possible, in case you need it:
 .. code-block:: csharp
 
     [Export]
-    private NodePath _nodePath;
+    public NodePath NodePath { get; set; }
 
     public override void _Ready()
     {
-        var node = GetNode(_nodePath);
+        var node = GetNode(NodePath);
     }
 
 Resources
@@ -286,7 +286,7 @@ Resources
 .. code-block:: csharp
 
     [Export]
-    private Resource Resource;
+    public Resource Resource { get; set; }
 
 In the Inspector, you can then drag and drop a resource file
 from the FileSystem dock into the variable slot.
@@ -298,7 +298,7 @@ Therefore, if you specify a type derived from Resource such as:
 .. code-block:: csharp
 
     [Export]
-    private AnimationNode Resource;
+    public AnimationNode AnimationNode { get; set; }
 
 The drop-down menu will be limited to AnimationNode and all
 its inherited classes. Custom resource classes can also be used,
@@ -447,8 +447,8 @@ Exporting Godot arrays
     [Export]
     public Godot.Collections.Array Array { get; set; }
 
-Using the generic ``Godot.Collections.Array<T>`` allows to specify the type of the
-array elements which will be used as a hint for the editor. The Inspector will
+Using the generic ``Godot.Collections.Array<T>`` allows specifying the type of the
+array elements, which will be used as a hint for the editor. The Inspector will
 restrict the elements to the specified type.
 
 .. code-block:: csharp
@@ -456,7 +456,7 @@ restrict the elements to the specified type.
     [Export]
     public Godot.Collections.Array<string> Array { get; set; }
 
-The default value of Godot arrays is null, a different default can be specified:
+The default value of Godot arrays is null. A different default can be specified:
 
 .. code-block:: csharp
 
@@ -487,8 +487,8 @@ Exporting Godot dictionaries
     [Export]
     public Godot.Collections.Dictionary Dictionary { get; set; }
 
-Using the generic ``Godot.Collections.Dictionary<TKey, TValue>`` allows to specify
-the type of the key and value elements of the dictionary.
+Using the generic ``Godot.Collections.Dictionary<TKey, TValue>`` allows specifying
+the types of the key and value elements of the dictionary.
 
 .. note::
 
@@ -501,7 +501,7 @@ the type of the key and value elements of the dictionary.
     [Export]
     public Godot.Collections.Dictionary<string, int> Dictionary { get; set; }
 
-The default value of Godot dictionaries is null, a different default can be specified:
+The default value of Godot dictionaries is null. A different default can be specified:
 
 .. code-block:: csharp
 
@@ -526,7 +526,7 @@ C# arrays can exported as long as the element type is a :ref:`Variant-compatible
     [Export]
     public NodePath[] NodePaths { get; set; }
 
-The default value of C# arrays is null, a different default can be specified:
+The default value of C# arrays is null. A different default can be specified:
 
 .. code-block:: csharp
 
