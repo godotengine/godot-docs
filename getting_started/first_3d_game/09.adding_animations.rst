@@ -102,7 +102,7 @@ position key to ``0.3`` seconds and the rotation key to ``0.1`` seconds.
 Move the time cursor to ``0.5`` seconds by clicking and dragging on the gray
 timeline.
 
-.. image:: img/09.adding_animations/timeline_05_click.webp
+|timeline_05_click|
 
 In the *Inspector*, set the *Position*'s *Y* axis to ``0.65`` meters and the *Rotation*' *X* axis to ``8``.
 
@@ -110,7 +110,7 @@ In the *Inspector*, set the *Position*'s *Y* axis to ``0.65`` meters and the *Ro
 
 Create a keyframe for both properties
 
-.. image:: img/09.adding_animations/second_keys_both.webp
+|second_keys_both|
 
 Now, move the position keyframe to ``0.7``
 seconds by dragging it on the timeline.
@@ -129,7 +129,7 @@ Move the time cursor to the end of the animation, at ``1.2`` seconds. Set the Y
 position to about ``0.35`` and the X rotation to ``-9`` degrees. Once again,
 create a key for both properties.
 
-.. image:: img/09.adding_animations/animation_final_keyframes.webp
+|animation_final_keyframes|
 
 You can preview the result by clicking the play button or pressing :kbd:`Shift + D`.
 Click the stop button or press :kbd:`S` to stop playback.
@@ -628,3 +628,6 @@ And the *Mob*'s script.
 .. |image20| image:: img/09.adding_animations/19.ease_in_second_translation_key.png
 .. |image21| image:: img/09.adding_animations/20.float_animation.gif
 .. |image22| image:: img/09.adding_animations/21.script_icon.png
+.. |animation_final_keyframes| image:: img/09.adding_animations/animation_final_keyframes.webp
+.. |second_keys_both| image:: img/09.adding_animations/second_keys_both.webp
+.. |timeline_05_click| image:: img/09.adding_animations/timeline_05_click.webp
