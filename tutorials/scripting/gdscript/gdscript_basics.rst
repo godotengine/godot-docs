@@ -2013,7 +2013,7 @@ function.
 Classes as resources
 ^^^^^^^^^^^^^^^^^^^^
 
-Classes stored as files are treated as :ref:`resources <class_GDScript>`. They
+Classes stored as files are treated as :ref:`GDScripts <class_GDScript>`. They
 must be loaded from disk to access them in other classes. This is done using
 either the ``load`` or ``preload`` functions (see below). Instancing of a loaded
 class resource is done by calling the ``new`` function on the class object::
