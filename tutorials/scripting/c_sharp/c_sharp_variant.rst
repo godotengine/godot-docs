@@ -9,17 +9,67 @@ For a detailed explanation of Variant in general, see the :ref:`Variant <class_V
 We recommend avoiding ``Godot.Variant`` unless it is necessary to interact with untyped engine APIs.
 Take advantage of C#'s type safety when possible.
 
-Any of ``Variant.As{TYPE}`` methods or the generic ``Variant.As<T>`` method can be used to convert
-a ``Godot.Variant`` to a C# type. Since the ``Godot.Variant`` type contains implicit conversions
-defined for all the supported types, calling these methods directly is usually not necessary.
+Converting from a supported type to ``Godot.Variant`` can be done using implicit conversions. Also
+available are ``CreateFrom`` method overloads and the generic ``Variant.From<T>`` methods.
 
-Use ``CreateFrom`` method overloads or the generic ``Variant.From<T>`` method to convert a C# type
-to a ``Godot.Variant``.
+.. code-block:: csharp
+
+    int x = 42;
+    Godot.Variant number = x;
+    Godot.Variant hello = "Hello, World!";
+
+    Godot.Variant number2 = Godot.Variant.CreateFrom(x);
+    Godot.Variant number3 = Godot.Variant.From(x);
+
+Implicit conversions to ``Godot.Variant`` make passing variants as method arguments very convenient.
+For example, ``final_val`` of :ref:`tween_property<class_Tween_method_tween_property>`.
+
+.. code-block:: csharp
+
+    Tween tween = CreateTween();
+    tween.TweenProperty(GetNode("Sprite"), "modulate", Colors.Red, 1.0f);
+
+Converting from ``Godot.Variant`` to a supported type can be done using explicit conversions. Also
+available are ``Variant.As{TYPE}`` methods or the generic ``Variant.As<T>`` method.
+
+.. code-block:: csharp
+
+    int cSharpNumber = (int)number;
+    string cSharpHello = (string)hello;
+
+    int cSharpNumber2 = number.As<int>();
+    string cSharpHello2 = hello.AsString();
+
+.. note::
+
+    All methods of converting from ``Godot.Variant`` to a C# type behave the same way. If conversion
+    is not possible, the default value of the target type or an empty array is returned. An
+    exception is not thrown.
+
+A matching type is not necessary for a conversion to succeed. For example, all variants are
+convertible to ``string``.
+
+.. code-block:: csharp
+
+    string s = Variant.From(new Vector3(1, 3, 9)).As<string>();
+    GD.Print(s); // (1, 3, 9)
+
+Some C# types are not directly represented by ``Variant.Type``. The ``Variant.As{TYPE}`` method uses
+a more specific name to represent them.
+
+.. code-block:: csharp
+
+    int cSharpNumber3 = number.AsInt32();
+
+To convert ``Godot.Variant`` to a C# ``object`` without specifying a more specific target type, use
+the ``Variant.Obj`` property. This can be used to compare two variants that both have unknown types
+using the equality operator ``==``. When possible, prefer more specific conversions. ``Variant.Obj``
+may result in unnecessary boxing of value types.
 
 .. note::
 
     Since the Variant type in C# is a struct, it can't be null. To create a "null"
-    Variant use the ``default`` keyword or the parameterless constructor.
+    Variant, use the ``default`` keyword or ``Godot.Variant`` parameterless constructor.
 
 Variant-compatible types
 ------------------------
@@ -79,7 +129,7 @@ Variant.Type             C# Type
 
     Godot uses 64-bit integers and floats in Variant. Smaller integer and float types
     such as ``int``, ``short`` and ``float`` are supported since they can fit in the
-    bigger type. Be aware that an implicit conversion is performed so using the wrong
+    bigger type. Be aware that when a conversion is performed, using the wrong
     type will result in potential precision loss.
 
 .. warning::
