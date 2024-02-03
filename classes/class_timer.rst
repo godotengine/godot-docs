@@ -85,7 +85,7 @@ Signals
 
 **timeout** **(** **)**
 
-Emitted when the timer reaches 0.
+Emitted when the timer reaches the end.
 
 .. rst-class:: classref-section-separator
 
@@ -108,7 +108,7 @@ enum **TimerProcessCallback**:
 
 :ref:`TimerProcessCallback<enum_Timer_TimerProcessCallback>` **TIMER_PROCESS_PHYSICS** = ``0``
 
-Update the timer during physics frames (see :ref:`Node.NOTIFICATION_INTERNAL_PHYSICS_PROCESS<class_Node_constant_NOTIFICATION_INTERNAL_PHYSICS_PROCESS>`).
+Update the timer every physics process frame (see :ref:`Node.NOTIFICATION_INTERNAL_PHYSICS_PROCESS<class_Node_constant_NOTIFICATION_INTERNAL_PHYSICS_PROCESS>`).
 
 .. _class_Timer_constant_TIMER_PROCESS_IDLE:
 
@@ -116,7 +116,7 @@ Update the timer during physics frames (see :ref:`Node.NOTIFICATION_INTERNAL_PHY
 
 :ref:`TimerProcessCallback<enum_Timer_TimerProcessCallback>` **TIMER_PROCESS_IDLE** = ``1``
 
-Update the timer during process frames (see :ref:`Node.NOTIFICATION_INTERNAL_PROCESS<class_Node_constant_NOTIFICATION_INTERNAL_PROCESS>`).
+Update the timer every process (rendered) frame (see :ref:`Node.NOTIFICATION_INTERNAL_PROCESS<class_Node_constant_NOTIFICATION_INTERNAL_PROCESS>`).
 
 .. rst-class:: classref-section-separator
 
@@ -138,9 +138,9 @@ Property Descriptions
 - void **set_autostart** **(** :ref:`bool<class_bool>` value **)**
 - :ref:`bool<class_bool>` **has_autostart** **(** **)**
 
-If ``true``, the timer will automatically start when entering the scene tree.
+If ``true``, the timer will start immediately when it enters the scene tree.
 
-\ **Note:** This property is automatically set to ``false`` after the timer enters the scene tree and starts.
+\ **Note:** After the timer enters the tree, this property is automatically set to ``false``.
 
 .. rst-class:: classref-item-separator
 
@@ -157,7 +157,7 @@ If ``true``, the timer will automatically start when entering the scene tree.
 - void **set_one_shot** **(** :ref:`bool<class_bool>` value **)**
 - :ref:`bool<class_bool>` **is_one_shot** **(** **)**
 
-If ``true``, the timer will stop when reaching 0. If ``false``, it will restart.
+If ``true``, the timer will stop after reaching the end. Otherwise, as by default, the timer will automatically restart.
 
 .. rst-class:: classref-item-separator
 
@@ -174,7 +174,7 @@ If ``true``, the timer will stop when reaching 0. If ``false``, it will restart.
 - void **set_paused** **(** :ref:`bool<class_bool>` value **)**
 - :ref:`bool<class_bool>` **is_paused** **(** **)**
 
-If ``true``, the timer is paused and will not process until it is unpaused again, even if :ref:`start<class_Timer_method_start>` is called.
+If ``true``, the timer is paused. A paused timer does not process until this property is set back to ``false``, even when :ref:`start<class_Timer_method_start>` is called.
 
 .. rst-class:: classref-item-separator
 
@@ -191,7 +191,7 @@ If ``true``, the timer is paused and will not process until it is unpaused again
 - void **set_timer_process_callback** **(** :ref:`TimerProcessCallback<enum_Timer_TimerProcessCallback>` value **)**
 - :ref:`TimerProcessCallback<enum_Timer_TimerProcessCallback>` **get_timer_process_callback** **(** **)**
 
-Processing callback. See :ref:`TimerProcessCallback<enum_Timer_TimerProcessCallback>`.
+Specifies when the timer is updated during the main loop (see :ref:`TimerProcessCallback<enum_Timer_TimerProcessCallback>`).
 
 .. rst-class:: classref-item-separator
 
@@ -207,9 +207,9 @@ Processing callback. See :ref:`TimerProcessCallback<enum_Timer_TimerProcessCallb
 
 - :ref:`float<class_float>` **get_time_left** **(** **)**
 
-The timer's remaining time in seconds. Returns 0 if the timer is inactive.
+The timer's remaining time in seconds. This is always ``0`` if the timer is stopped.
 
-\ **Note:** This value is read-only and cannot be set. It is based on :ref:`wait_time<class_Timer_property_wait_time>`, which can be set using :ref:`start<class_Timer_method_start>`.
+\ **Note:** This property is read-only and cannot be modified. It is based on :ref:`wait_time<class_Timer_property_wait_time>`.
 
 .. rst-class:: classref-item-separator
 
@@ -226,9 +226,9 @@ The timer's remaining time in seconds. Returns 0 if the timer is inactive.
 - void **set_wait_time** **(** :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_wait_time** **(** **)**
 
-The wait time in seconds.
+The time required for the timer to end, in seconds. This property can also be set every time :ref:`start<class_Timer_method_start>` is called.
 
-\ **Note:** Timers can only emit once per rendered frame at most (or once per physics frame if :ref:`process_callback<class_Timer_property_process_callback>` is :ref:`TIMER_PROCESS_PHYSICS<class_Timer_constant_TIMER_PROCESS_PHYSICS>`). This means very low wait times (lower than 0.05 seconds) will behave in significantly different ways depending on the rendered framerate. For very low wait times, it is recommended to use a process loop in a script instead of using a Timer node. Timers are affected by :ref:`Engine.time_scale<class_Engine_property_time_scale>`, a higher scale means quicker timeouts, and vice versa.
+\ **Note:** Timers can only process once per physics or process frame (depending on the :ref:`process_callback<class_Timer_property_process_callback>`). An unstable framerate may cause the timer to end inconsistently, which is especially noticeable if the wait time is lower than roughly ``0.05`` seconds. For very short timers, it is recommended to write your own code instead of using a **Timer** node. Timers are also affected by :ref:`Engine.time_scale<class_Engine_property_time_scale>`.
 
 .. rst-class:: classref-section-separator
 
@@ -245,7 +245,7 @@ Method Descriptions
 
 :ref:`bool<class_bool>` **is_stopped** **(** **)** |const|
 
-Returns ``true`` if the timer is stopped.
+Returns ``true`` if the timer is stopped or has not started.
 
 .. rst-class:: classref-item-separator
 
@@ -257,9 +257,9 @@ Returns ``true`` if the timer is stopped.
 
 void **start** **(** :ref:`float<class_float>` time_sec=-1 **)**
 
-Starts the timer. Sets :ref:`wait_time<class_Timer_property_wait_time>` to ``time_sec`` if ``time_sec > 0``. This also resets the remaining time to :ref:`wait_time<class_Timer_property_wait_time>`.
+Starts the timer, if it was not started already. Fails if the timer is not inside the tree. If ``time_sec`` is greater than ``0``, this value is used for the :ref:`wait_time<class_Timer_property_wait_time>`.
 
-\ **Note:** This method will not resume a paused timer. See :ref:`paused<class_Timer_property_paused>`.
+\ **Note:** This method does not resume a paused timer. See :ref:`paused<class_Timer_property_paused>`.
 
 .. rst-class:: classref-item-separator
 

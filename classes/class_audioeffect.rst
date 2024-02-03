@@ -14,19 +14,23 @@ AudioEffect
 
 **Inherited By:** :ref:`AudioEffectAmplify<class_AudioEffectAmplify>`, :ref:`AudioEffectCapture<class_AudioEffectCapture>`, :ref:`AudioEffectChorus<class_AudioEffectChorus>`, :ref:`AudioEffectCompressor<class_AudioEffectCompressor>`, :ref:`AudioEffectDelay<class_AudioEffectDelay>`, :ref:`AudioEffectDistortion<class_AudioEffectDistortion>`, :ref:`AudioEffectEQ<class_AudioEffectEQ>`, :ref:`AudioEffectFilter<class_AudioEffectFilter>`, :ref:`AudioEffectLimiter<class_AudioEffectLimiter>`, :ref:`AudioEffectPanner<class_AudioEffectPanner>`, :ref:`AudioEffectPhaser<class_AudioEffectPhaser>`, :ref:`AudioEffectPitchShift<class_AudioEffectPitchShift>`, :ref:`AudioEffectRecord<class_AudioEffectRecord>`, :ref:`AudioEffectReverb<class_AudioEffectReverb>`, :ref:`AudioEffectSpectrumAnalyzer<class_AudioEffectSpectrumAnalyzer>`, :ref:`AudioEffectStereoEnhance<class_AudioEffectStereoEnhance>`
 
-Audio effect for audio.
+Base class for audio effect resources.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-Base resource for audio bus. Applies an audio effect on the bus that the resource is applied on.
+The base :ref:`Resource<class_Resource>` for every audio effect. In the editor, an audio effect can be added to the current bus layout through the Audio panel. At run-time, it is also possible to manipulate audio effects through :ref:`AudioServer.add_bus_effect<class_AudioServer_method_add_bus_effect>`, :ref:`AudioServer.remove_bus_effect<class_AudioServer_method_remove_bus_effect>`, and :ref:`AudioServer.get_bus_effect<class_AudioServer_method_get_bus_effect>`.
+
+When applied on a bus, an audio effect creates a corresponding :ref:`AudioEffectInstance<class_AudioEffectInstance>`. The instance is directly responsible for manipulating the sound, based on the original audio effect's properties.
 
 .. rst-class:: classref-introduction-group
 
 Tutorials
 ---------
+
+- :doc:`Audio buses <../tutorials/audio/audio_buses>`
 
 - `Audio Mic Record Demo <https://godotengine.org/asset-library/asset/527>`__
 
@@ -57,9 +61,21 @@ Method Descriptions
 
 :ref:`AudioEffectInstance<class_AudioEffectInstance>` **_instantiate** **(** **)** |virtual|
 
-.. container:: contribute
+Override this method to customize the :ref:`AudioEffectInstance<class_AudioEffectInstance>` created when this effect is applied on a bus in the editor's Audio panel, or through :ref:`AudioServer.add_bus_effect<class_AudioServer_method_add_bus_effect>`.
 
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+::
+
+    extends AudioEffect
+    
+    @export var strength = 4.0
+    
+    func _instantiate():
+        var effect = CustomAudioEffectInstance.new()
+        effect.base = self
+    
+        return effect
+
+\ **Note:** It is recommended to keep a reference to the original **AudioEffect** in the new instance. Depending on the implementation this allows the effect instance to listen for changes at run-time and be modified accordingly.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

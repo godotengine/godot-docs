@@ -14,9 +14,21 @@ AudioEffectInstance
 
 **Inherited By:** :ref:`AudioEffectSpectrumAnalyzerInstance<class_AudioEffectSpectrumAnalyzerInstance>`
 
-.. container:: contribute
+Manipulates the audio it receives for a given effect.
 
-	There is currently no description for this class. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+.. rst-class:: classref-introduction-group
+
+Description
+-----------
+
+An audio effect instance manipulates the audio it receives for a given effect. This instance is automatically created by an :ref:`AudioEffect<class_AudioEffect>` when it is added to a bus, and should usually not be created directly. If necessary, it can be fetched at run-time with :ref:`AudioServer.get_bus_effect_instance<class_AudioServer_method_get_bus_effect_instance>`.
+
+.. rst-class:: classref-introduction-group
+
+Tutorials
+---------
+
+- :doc:`Audio buses <../tutorials/audio/audio_buses>`
 
 .. rst-class:: classref-reftable-group
 
@@ -47,9 +59,9 @@ Method Descriptions
 
 void **_process** **(** const void* src_buffer, AudioFrame* dst_buffer, :ref:`int<class_int>` frame_count **)** |virtual|
 
-.. container:: contribute
+Called by the :ref:`AudioServer<class_AudioServer>` to process this effect. When :ref:`_process_silence<class_AudioEffectInstance_private_method__process_silence>` is not overridden or it returns ``false``, this method is called only when the bus is active.
 
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+\ **Note:** It is not useful to override this method in GDScript or C#. Only GDExtension can take advantage of it.
 
 .. rst-class:: classref-item-separator
 
@@ -61,9 +73,9 @@ void **_process** **(** const void* src_buffer, AudioFrame* dst_buffer, :ref:`in
 
 :ref:`bool<class_bool>` **_process_silence** **(** **)** |virtual| |const|
 
-.. container:: contribute
+Override this method to customize the processing behavior of this effect instance.
 
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Should return ``true`` to force the :ref:`AudioServer<class_AudioServer>` to always call :ref:`_process<class_AudioEffectInstance_private_method__process>`, even if the bus has been muted or cannot otherwise be heard.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

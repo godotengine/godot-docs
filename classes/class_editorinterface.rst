@@ -112,6 +112,8 @@ Methods
    +-----------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                      | :ref:`inspect_object<class_EditorInterface_method_inspect_object>` **(** :ref:`Object<class_Object>` object, :ref:`String<class_String>` for_property="", :ref:`bool<class_bool>` inspector_only=false **)**                                           |
    +-----------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                   | :ref:`is_multi_window_enabled<class_EditorInterface_method_is_multi_window_enabled>` **(** **)** |const|                                                                                                                                               |
+   +-----------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                   | :ref:`is_playing_scene<class_EditorInterface_method_is_playing_scene>` **(** **)** |const|                                                                                                                                                             |
    +-----------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                   | :ref:`is_plugin_enabled<class_EditorInterface_method_is_plugin_enabled>` **(** :ref:`String<class_String>` plugin **)** |const|                                                                                                                        |
@@ -329,6 +331,8 @@ Returns the edited (current) scene's root :ref:`Node<class_Node>`.
 
 Returns the editor control responsible for main screen plugins and tools. Use it with plugins that implement :ref:`EditorPlugin._has_main_screen<class_EditorPlugin_private_method__has_main_screen>`.
 
+\ **Note:** This node is a :ref:`VBoxContainer<class_VBoxContainer>`, which means that if you add a :ref:`Control<class_Control>` child to it, you need to set the child's :ref:`Control.size_flags_vertical<class_Control_property_size_flags_vertical>` to :ref:`Control.SIZE_EXPAND_FILL<class_Control_constant_SIZE_EXPAND_FILL>` to make it use the full available space.
+
 \ **Warning:** Removing and freeing this node will render a part of the editor useless and may cause a crash.
 
 .. rst-class:: classref-item-separator
@@ -532,6 +536,24 @@ Returns the editor's :ref:`EditorSelection<class_EditorSelection>` instance.
 void **inspect_object** **(** :ref:`Object<class_Object>` object, :ref:`String<class_String>` for_property="", :ref:`bool<class_bool>` inspector_only=false **)**
 
 Shows the given property on the given ``object`` in the editor's Inspector dock. If ``inspector_only`` is ``true``, plugins will not attempt to edit ``object``.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorInterface_method_is_multi_window_enabled:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **is_multi_window_enabled** **(** **)** |const|
+
+Returns ``true`` if multiple window support is enabled in the editor. Multiple window support is enabled if *all* of these statements are true:
+
+- :ref:`EditorSettings.interface/multi_window/enable<class_EditorSettings_property_interface/multi_window/enable>` is ``true``.
+
+- :ref:`EditorSettings.interface/editor/single_window_mode<class_EditorSettings_property_interface/editor/single_window_mode>` is ``false``.
+
+- :ref:`Viewport.gui_embed_subwindows<class_Viewport_property_gui_embed_subwindows>` is ``false``. This is forced to ``true`` on platforms that don't support multiple windows such as Web, or when the ``--single-window`` :doc:`command line argument <../tutorials/editor/command_line_tutorial>` is used.
 
 .. rst-class:: classref-item-separator
 

@@ -38,11 +38,13 @@ Properties
 .. table::
    :widths: auto
 
-   +--------------------------------------------------------+----------------------------------------------------------+-----------+
-   | :ref:`AlignmentMode<enum_FlowContainer_AlignmentMode>` | :ref:`alignment<class_FlowContainer_property_alignment>` | ``0``     |
-   +--------------------------------------------------------+----------------------------------------------------------+-----------+
-   | :ref:`bool<class_bool>`                                | :ref:`vertical<class_FlowContainer_property_vertical>`   | ``false`` |
-   +--------------------------------------------------------+----------------------------------------------------------+-----------+
+   +--------------------------------------------------------+----------------------------------------------------------------+-----------+
+   | :ref:`AlignmentMode<enum_FlowContainer_AlignmentMode>` | :ref:`alignment<class_FlowContainer_property_alignment>`       | ``0``     |
+   +--------------------------------------------------------+----------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`                                | :ref:`reverse_fill<class_FlowContainer_property_reverse_fill>` | ``false`` |
+   +--------------------------------------------------------+----------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`                                | :ref:`vertical<class_FlowContainer_property_vertical>`         | ``false`` |
+   +--------------------------------------------------------+----------------------------------------------------------------+-----------+
 
 .. rst-class:: classref-reftable-group
 
@@ -130,6 +132,25 @@ Property Descriptions
 - :ref:`AlignmentMode<enum_FlowContainer_AlignmentMode>` **get_alignment** **(** **)**
 
 The alignment of the container's children (must be one of :ref:`ALIGNMENT_BEGIN<class_FlowContainer_constant_ALIGNMENT_BEGIN>`, :ref:`ALIGNMENT_CENTER<class_FlowContainer_constant_ALIGNMENT_CENTER>`, or :ref:`ALIGNMENT_END<class_FlowContainer_constant_ALIGNMENT_END>`).
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_FlowContainer_property_reverse_fill:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **reverse_fill** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_reverse_fill** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_reverse_fill** **(** **)**
+
+If ``true``, reverses fill direction. Horizontal **FlowContainer**\ s will fill rows bottom to top, vertical **FlowContainer**\ s will fill columns right to left.
+
+When using a vertical **FlowContainer** with a right to left :ref:`Control.layout_direction<class_Control_property_layout_direction>`, columns will fill left to right instead.
 
 .. rst-class:: classref-item-separator
 

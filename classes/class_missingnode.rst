@@ -19,7 +19,9 @@ An internal editor class intended for keeping the data of unrecognized nodes.
 Description
 -----------
 
-This is an internal editor class intended for keeping data of nodes of unknown type (most likely this type was supplied by an extension that is no longer loaded). It can't be manually instantiated or placed in the scene. Ignore it if you don't know what it is.
+This is an internal editor class intended for keeping data of nodes of unknown type (most likely this type was supplied by an extension that is no longer loaded). It can't be manually instantiated or placed in a scene.
+
+\ **Warning:** Ignore missing nodes unless you know what you are doing. Existing properties on a missing node can be freely modified in code, regardless of the type they are intended to be.
 
 .. rst-class:: classref-reftable-group
 
@@ -55,7 +57,7 @@ Property Descriptions
 - void **set_original_class** **(** :ref:`String<class_String>` value **)**
 - :ref:`String<class_String>` **get_original_class** **(** **)**
 
-Returns the name of the type this node was originally.
+The name of the class this node was supposed to be (see :ref:`Object.get_class<class_Object_method_get_class>`).
 
 .. rst-class:: classref-item-separator
 
@@ -72,9 +74,7 @@ Returns the name of the type this node was originally.
 - void **set_recording_properties** **(** :ref:`bool<class_bool>` value **)**
 - :ref:`bool<class_bool>` **is_recording_properties** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+If set to ``true``, allows new properties to be added on top of the existing ones with :ref:`Object.set<class_Object_method_set>`.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

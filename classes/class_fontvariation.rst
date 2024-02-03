@@ -64,6 +64,8 @@ Properties
    +---------------------------------------+--------------------------------------------------------------------------------+-----------------------------------+
    | :ref:`Font<class_Font>`               | :ref:`base_font<class_FontVariation_property_base_font>`                       |                                   |
    +---------------------------------------+--------------------------------------------------------------------------------+-----------------------------------+
+   | :ref:`float<class_float>`             | :ref:`baseline_offset<class_FontVariation_property_baseline_offset>`           | ``0.0``                           |
+   +---------------------------------------+--------------------------------------------------------------------------------+-----------------------------------+
    | :ref:`Dictionary<class_Dictionary>`   | :ref:`opentype_features<class_FontVariation_property_opentype_features>`       | ``{}``                            |
    +---------------------------------------+--------------------------------------------------------------------------------+-----------------------------------+
    | :ref:`int<class_int>`                 | :ref:`spacing_bottom<class_FontVariation_property_spacing_bottom>`             | ``0``                             |
@@ -116,6 +118,23 @@ Property Descriptions
 - :ref:`Font<class_Font>` **get_base_font** **(** **)**
 
 Base font used to create a variation. If not set, default :ref:`Theme<class_Theme>` font is used.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_FontVariation_property_baseline_offset:
+
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **baseline_offset** = ``0.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_baseline_offset** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_baseline_offset** **(** **)**
+
+Extra baseline offset (as a fraction of font height).
 
 .. rst-class:: classref-item-separator
 

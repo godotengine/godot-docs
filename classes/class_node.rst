@@ -1112,7 +1112,7 @@ The owner of this node. The owner must be an ancestor of this node. When packing
 - void **set_process_mode** **(** :ref:`ProcessMode<enum_Node_ProcessMode>` value **)**
 - :ref:`ProcessMode<enum_Node_ProcessMode>` **get_process_mode** **(** **)**
 
-The node's processing behavior (see :ref:`ProcessMode<enum_Node_ProcessMode>`). To check if the node is able to process, with the current mode and :ref:`SceneTree.paused<class_SceneTree_property_paused>`, use :ref:`can_process<class_Node_method_can_process>`.
+The node's processing behavior (see :ref:`ProcessMode<enum_Node_ProcessMode>`). To check if the node can process in its current mode, use :ref:`can_process<class_Node_method_can_process>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1552,7 +1552,19 @@ This function ensures that the calling of this function will succeed, no matter 
 
 :ref:`bool<class_bool>` **can_process** **(** **)** |const|
 
-Returns ``true`` if the node can receive processing notifications and input callbacks (:ref:`NOTIFICATION_PROCESS<class_Node_constant_NOTIFICATION_PROCESS>`, :ref:`_input<class_Node_private_method__input>`, etc) from the :ref:`SceneTree<class_SceneTree>` and :ref:`Viewport<class_Viewport>`. The value depends on both the current :ref:`process_mode<class_Node_property_process_mode>` and :ref:`SceneTree.paused<class_SceneTree_property_paused>`. Returns ``false`` if the node is not inside the tree.
+Returns ``true`` if the node can receive processing notifications and input callbacks (:ref:`NOTIFICATION_PROCESS<class_Node_constant_NOTIFICATION_PROCESS>`, :ref:`_input<class_Node_private_method__input>`, etc) from the :ref:`SceneTree<class_SceneTree>` and :ref:`Viewport<class_Viewport>`. The returned value depends on :ref:`process_mode<class_Node_property_process_mode>`:
+
+- If set to :ref:`PROCESS_MODE_PAUSABLE<class_Node_constant_PROCESS_MODE_PAUSABLE>`, returns ``true`` when the game is processing, i.e. :ref:`SceneTree.paused<class_SceneTree_property_paused>` is ``false``;
+
+- If set to :ref:`PROCESS_MODE_WHEN_PAUSED<class_Node_constant_PROCESS_MODE_WHEN_PAUSED>`, returns ``true`` when the game is paused, i.e. :ref:`SceneTree.paused<class_SceneTree_property_paused>` is ``true``;
+
+- If set to :ref:`PROCESS_MODE_ALWAYS<class_Node_constant_PROCESS_MODE_ALWAYS>`, always returns ``true``;
+
+- If set to :ref:`PROCESS_MODE_DISABLED<class_Node_constant_PROCESS_MODE_DISABLED>`, always returns ``false``;
+
+- If set to :ref:`PROCESS_MODE_INHERIT<class_Node_constant_PROCESS_MODE_INHERIT>`, use the parent node's :ref:`process_mode<class_Node_property_process_mode>` to determine the result.
+
+If the node is not inside the tree, returns ``false`` no matter the value of :ref:`process_mode<class_Node_property_process_mode>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1564,7 +1576,7 @@ Returns ``true`` if the node can receive processing notifications and input call
 
 :ref:`Tween<class_Tween>` **create_tween** **(** **)**
 
-Creates a new :ref:`Tween<class_Tween>` and binds it to this node. Fails if the node is not inside the tree.
+Creates a new :ref:`Tween<class_Tween>` and binds it to this node.
 
 This is the equivalent of doing:
 
@@ -1581,7 +1593,9 @@ This is the equivalent of doing:
 
 
 
-The Tween will start automatically on the next process frame or physics frame (depending on :ref:`TweenProcessMode<enum_Tween_TweenProcessMode>`).
+The Tween will start automatically on the next process frame or physics frame (depending on :ref:`TweenProcessMode<enum_Tween_TweenProcessMode>`). See :ref:`Tween.bind_node<class_Tween_method_bind_node>` for more info on Tweens bound to nodes.
+
+\ **Note:** The method can still be used when the node is not inside :ref:`SceneTree<class_SceneTree>`. It can fail in an unlikely case of using a custom :ref:`MainLoop<class_MainLoop>`.
 
 .. rst-class:: classref-item-separator
 
@@ -2605,7 +2619,7 @@ If ``recursive`` is ``true``, the given peer is recursively set as the authority
 
 void **set_physics_process** **(** :ref:`bool<class_bool>` enable **)**
 
-If set to ``true``, enables physics (fixed framerate) processing. When a node is being processed, it will receive a :ref:`NOTIFICATION_PHYSICS_PROCESS<class_Node_constant_NOTIFICATION_PHYSICS_PROCESS>` at a fixed (usually 60 FPS, see :ref:`Engine.physics_ticks_per_second<class_Engine_property_physics_ticks_per_second>` to change) interval (and the :ref:`_physics_process<class_Node_private_method__physics_process>` callback will be called if exists). Enabled automatically if :ref:`_physics_process<class_Node_private_method__physics_process>` is overridden.
+If set to ``true``, enables physics (fixed framerate) processing. When a node is being processed, it will receive a :ref:`NOTIFICATION_PHYSICS_PROCESS<class_Node_constant_NOTIFICATION_PHYSICS_PROCESS>` at a fixed (usually 60 FPS, see :ref:`Engine.physics_ticks_per_second<class_Engine_property_physics_ticks_per_second>` to change) interval (and the :ref:`_physics_process<class_Node_private_method__physics_process>` callback will be called if it exists). Enabled automatically if :ref:`_physics_process<class_Node_private_method__physics_process>` is overridden.
 
 .. rst-class:: classref-item-separator
 
@@ -2631,7 +2645,9 @@ If set to ``true``, enables internal physics for this node. Internal physics pro
 
 void **set_process** **(** :ref:`bool<class_bool>` enable **)**
 
-If set to ``true``, enables processing. When a node is being processed, it will receive a :ref:`NOTIFICATION_PROCESS<class_Node_constant_NOTIFICATION_PROCESS>` on every drawn frame (and the :ref:`_process<class_Node_private_method__process>` callback will be called if exists). Enabled automatically if :ref:`_process<class_Node_private_method__process>` is overridden.
+If set to ``true``, enables processing. When a node is being processed, it will receive a :ref:`NOTIFICATION_PROCESS<class_Node_constant_NOTIFICATION_PROCESS>` on every drawn frame (and the :ref:`_process<class_Node_private_method__process>` callback will be called if it exists). Enabled automatically if :ref:`_process<class_Node_private_method__process>` is overridden.
+
+\ **Note:** This method only affects the :ref:`_process<class_Node_private_method__process>` callback, i.e. it has no effect on other callbacks like :ref:`_physics_process<class_Node_private_method__physics_process>`. If you want to disable all processing for the node, set :ref:`process_mode<class_Node_property_process_mode>` to :ref:`PROCESS_MODE_DISABLED<class_Node_constant_PROCESS_MODE_DISABLED>`.
 
 .. rst-class:: classref-item-separator
 
