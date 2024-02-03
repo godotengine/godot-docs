@@ -221,7 +221,7 @@ because no C# static types exist for signals defined by GDScript:
 
 .. code-block:: csharp
 
-    myGDScriptNode.Connect("my_signal", Callable.From(mySignalHandler));
+    myGDScriptNode.Connect("my_signal", Callable.From(MySignalHandler));
 
 Inheritance
 -----------

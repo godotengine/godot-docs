@@ -48,8 +48,8 @@ Exporting works with fields and properties. They can have any access modifier.
 
 Exported members can specify a default value; otherwise, the `default value of the type <https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/default-values>`_ is used instead.
 
-An ``int`` like ``_number`` defaults to ``0``. ``_text`` defaults to null
-because ``string`` is a reference type.
+An ``int`` like ``Number`` defaults to ``0``. ``Text`` defaults to null because
+``string`` is a reference type.
 
 .. code-block:: csharp
 
