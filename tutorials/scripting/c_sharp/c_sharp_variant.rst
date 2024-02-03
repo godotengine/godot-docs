@@ -10,7 +10,7 @@ We recommend avoiding ``Godot.Variant`` unless it is necessary to interact with 
 Take advantage of C#'s type safety when possible.
 
 Converting from a Variant-compatible C# type to ``Godot.Variant`` can be done using implicit
-conversions. Also available are ``CreateFrom`` method overloads and the generic ``Variant.From<T>``
+conversions. There are also ``CreateFrom`` method overloads and the generic ``Variant.From<T>``
 methods. Only the syntax is different: the behavior is the same.
 
 .. code-block:: csharp
@@ -31,9 +31,9 @@ specifying the final color of the tween is a ``Godot.Variant``.
     Tween tween = CreateTween();
     tween.TweenProperty(GetNode("Sprite"), "modulate", Colors.Red, 1.0f);
 
-Converting from ``Godot.Variant`` to a C# type can be done using explicit conversions. Also
-available are ``Variant.As{TYPE}`` methods or the generic ``Variant.As<T>`` method. All of these
-behave the same.
+Converting from ``Godot.Variant`` to a C# type can be done using explicit conversions. There are
+also ``Variant.As{TYPE}`` methods and the generic ``Variant.As<T>`` method. All of these behave the
+same.
 
 .. code-block:: csharp
 
@@ -70,7 +70,7 @@ acceptable, consider using a ``Variant.As<GodotObject>() is MyNode n`` type patt
 .. note::
 
     Since the Variant type in C# is a struct, it can't be null. To create a "null"
-    Variant, use the ``default`` keyword or ``Godot.Variant`` parameterless constructor.
+    Variant, use the ``default`` keyword or the ``Godot.Variant`` parameterless constructor.
 
 Variant-compatible types
 ------------------------
