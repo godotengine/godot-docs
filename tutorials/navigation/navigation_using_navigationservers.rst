@@ -41,30 +41,8 @@ Synchronization for the NavigationServer happens in the middle of the physics fr
     The important takeaway is that most NavigationServer changes take effect after the next physics frame and not immediately.
     This includes all changes made by navigation related nodes in the scene tree or through scripts.
 
-The following functions will be executed in the synchronization phase only:
-
-- ``map_set_active()``
-- ``map_set_up()``
-- ``map_set_cell_size()``
-- ``map_set_edge_connection_margin()``
-- ``region_set_map()``
-- ``region_set_transform()``
-- ``region_set_enter_cost()``
-- ``region_set_travel_cost()``
-- ``region_set_navigation_layers()``
-- ``region_set_navigation_mesh()``
-- ``agent_set_map()``
-- ``agent_set_neighbor_dist()``
-- ``agent_set_max_neighbors()``
-- ``agent_set_time_horizon()``
-- ``agent_set_radius()``
-- ``agent_set_max_speed()``
-- ``agent_set_velocity()``
-- ``agent_set_target_velocity()``
-- ``agent_set_position()``
-- ``agent_set_ignore_y()``
-- ``agent_set_callback()``
-- ``free()``
+.. note::
+    All setters and delete functions require synchronization.
 
 2D and 3D NavigationServer differences
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -175,7 +153,7 @@ The simplified order of execution for NavigationAgents that use avoidance:
 
 - physics frame starts.
 - ``_physics_process(delta)``.
-- ``set_velocity()`` on NavigationAgent Node.
+- ``velocity`` property is set on NavigationAgent Node.
 - Agent sends velocity and position to NavigationServer.
 - NavigationServer waits for synchronization.
 - NavigationServer synchronizes and computes avoidance velocities for all registered avoidance agents.
