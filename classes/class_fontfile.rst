@@ -146,6 +146,8 @@ Methods
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                         | :ref:`get_embolden<class_FontFile_method_get_embolden>` **(** :ref:`int<class_int>` cache_index **)** |const|                                                                                                                                          |
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`                         | :ref:`get_extra_baseline_offset<class_FontFile_method_get_extra_baseline_offset>` **(** :ref:`int<class_int>` cache_index **)** |const|                                                                                                                |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`get_extra_spacing<class_FontFile_method_get_extra_spacing>` **(** :ref:`int<class_int>` cache_index, :ref:`SpacingType<enum_TextServer_SpacingType>` spacing **)** |const|                                                                       |
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`get_face_index<class_FontFile_method_get_face_index>` **(** :ref:`int<class_int>` cache_index **)** |const|                                                                                                                                      |
@@ -221,6 +223,8 @@ Methods
    | void                                              | :ref:`set_cache_underline_thickness<class_FontFile_method_set_cache_underline_thickness>` **(** :ref:`int<class_int>` cache_index, :ref:`int<class_int>` size, :ref:`float<class_float>` underline_thickness **)**                                     |
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                              | :ref:`set_embolden<class_FontFile_method_set_embolden>` **(** :ref:`int<class_int>` cache_index, :ref:`float<class_float>` strength **)**                                                                                                              |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                              | :ref:`set_extra_baseline_offset<class_FontFile_method_set_extra_baseline_offset>` **(** :ref:`int<class_int>` cache_index, :ref:`float<class_float>` baseline_offset **)**                                                                             |
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                              | :ref:`set_extra_spacing<class_FontFile_method_set_extra_spacing>` **(** :ref:`int<class_int>` cache_index, :ref:`SpacingType<enum_TextServer_SpacingType>` spacing, :ref:`int<class_int>` value **)**                                                  |
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -752,6 +756,18 @@ Returns embolden strength, if is not equal to zero, emboldens the font outlines.
 
 ----
 
+.. _class_FontFile_method_get_extra_baseline_offset:
+
+.. rst-class:: classref-method
+
+:ref:`float<class_float>` **get_extra_baseline_offset** **(** :ref:`int<class_int>` cache_index **)** |const|
+
+Returns extra baseline offset (as a fraction of font height).
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_FontFile_method_get_extra_spacing:
 
 .. rst-class:: classref-method
@@ -1213,6 +1229,18 @@ Sets thickness of the underline in pixels.
 void **set_embolden** **(** :ref:`int<class_int>` cache_index, :ref:`float<class_float>` strength **)**
 
 Sets embolden strength, if is not equal to zero, emboldens the font outlines. Negative values reduce the outline thickness.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_FontFile_method_set_extra_baseline_offset:
+
+.. rst-class:: classref-method
+
+void **set_extra_baseline_offset** **(** :ref:`int<class_int>` cache_index, :ref:`float<class_float>` baseline_offset **)**
+
+Sets extra baseline offset (as a fraction of font height).
 
 .. rst-class:: classref-item-separator
 

@@ -43,7 +43,9 @@ Properties
    +---------------------------------------------------+-----------------------------------------------------------------------------------------------+-----------+
    | :ref:`bool<class_bool>`                           | :ref:`clip_tabs<class_TabContainer_property_clip_tabs>`                                       | ``true``  |
    +---------------------------------------------------+-----------------------------------------------------------------------------------------------+-----------+
-   | :ref:`int<class_int>`                             | :ref:`current_tab<class_TabContainer_property_current_tab>`                                   | ``0``     |
+   | :ref:`int<class_int>`                             | :ref:`current_tab<class_TabContainer_property_current_tab>`                                   | ``-1``    |
+   +---------------------------------------------------+-----------------------------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`                           | :ref:`deselect_enabled<class_TabContainer_property_deselect_enabled>`                         | ``false`` |
    +---------------------------------------------------+-----------------------------------------------------------------------------------------------+-----------+
    | :ref:`bool<class_bool>`                           | :ref:`drag_to_rearrange_enabled<class_TabContainer_property_drag_to_rearrange_enabled>`       | ``false`` |
    +---------------------------------------------------+-----------------------------------------------------------------------------------------------+-----------+
@@ -353,7 +355,7 @@ If ``true``, tabs overflowing this node's width will be hidden, displaying two n
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **current_tab** = ``0``
+:ref:`int<class_int>` **current_tab** = ``-1``
 
 .. rst-class:: classref-property-setget
 
@@ -361,6 +363,27 @@ If ``true``, tabs overflowing this node's width will be hidden, displaying two n
 - :ref:`int<class_int>` **get_current_tab** **(** **)**
 
 The current tab index. When set, this index's :ref:`Control<class_Control>` node's ``visible`` property is set to ``true`` and all others are set to ``false``.
+
+A value of ``-1`` means that no tab is selected.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_TabContainer_property_deselect_enabled:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **deselect_enabled** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_deselect_enabled** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **get_deselect_enabled** **(** **)**
+
+If ``true``, all tabs can be deselected so that no tab is selected. Click on the :ref:`current_tab<class_TabContainer_property_current_tab>` to deselect it.
+
+Only the tab header will be shown if no tabs are selected.
 
 .. rst-class:: classref-item-separator
 

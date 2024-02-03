@@ -168,7 +168,7 @@ The mipmap LOD bias to use. Positive values will make the sampler blurrier at a 
 - void **set_mag_filter** **(** :ref:`SamplerFilter<enum_RenderingDevice_SamplerFilter>` value **)**
 - :ref:`SamplerFilter<enum_RenderingDevice_SamplerFilter>` **get_mag_filter** **(** **)**
 
-The sampler's magnification filter.
+The sampler's magnification filter. It is the filtering method used when sampling texels that appear bigger than on-screen pixels.
 
 .. rst-class:: classref-item-separator
 
@@ -202,9 +202,7 @@ The maximum mipmap LOD bias to display (lowest resolution). Only effective if th
 - void **set_min_filter** **(** :ref:`SamplerFilter<enum_RenderingDevice_SamplerFilter>` value **)**
 - :ref:`SamplerFilter<enum_RenderingDevice_SamplerFilter>` **get_min_filter** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+The sampler's minification filter. It is the filtering method used when sampling texels that appear smaller than on-screen pixels.
 
 .. rst-class:: classref-item-separator
 
@@ -306,9 +304,7 @@ The repeat mode to use along the W axis of UV coordinates. This affects the retu
 - void **set_unnormalized_uvw** **(** :ref:`bool<class_bool>` value **)**
 - :ref:`bool<class_bool>` **get_unnormalized_uvw** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+If ``true``, the texture will be sampled with coordinates ranging from 0 to the texture's resolution. Otherwise, the coordinates will be normalized and range from 0 to 1.
 
 .. rst-class:: classref-item-separator
 

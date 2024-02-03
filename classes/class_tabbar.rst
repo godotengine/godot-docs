@@ -32,7 +32,9 @@ Properties
    +-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+---------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                               | :ref:`clip_tabs<class_TabBar_property_clip_tabs>`                                 | ``true``                                                            |
    +-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+---------------------------------------------------------------------+
-   | :ref:`int<class_int>`                                                 | :ref:`current_tab<class_TabBar_property_current_tab>`                             | ``0``                                                               |
+   | :ref:`int<class_int>`                                                 | :ref:`current_tab<class_TabBar_property_current_tab>`                             | ``-1``                                                              |
+   +-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+---------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                               | :ref:`deselect_enabled<class_TabBar_property_deselect_enabled>`                   | ``false``                                                           |
    +-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+---------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                               | :ref:`drag_to_rearrange_enabled<class_TabBar_property_drag_to_rearrange_enabled>` | ``false``                                                           |
    +-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+---------------------------------------------------------------------+
@@ -418,14 +420,31 @@ If ``true``, tabs overflowing this node's width will be hidden, displaying two n
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **current_tab** = ``0``
+:ref:`int<class_int>` **current_tab** = ``-1``
 
 .. rst-class:: classref-property-setget
 
 - void **set_current_tab** **(** :ref:`int<class_int>` value **)**
 - :ref:`int<class_int>` **get_current_tab** **(** **)**
 
-Select tab at index ``tab_idx``.
+The index of the current selected tab. A value of ``-1`` means that no tab is selected and can only be set when :ref:`deselect_enabled<class_TabBar_property_deselect_enabled>` is ``true`` or if all tabs are hidden or disabled.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_TabBar_property_deselect_enabled:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **deselect_enabled** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_deselect_enabled** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **get_deselect_enabled** **(** **)**
+
+If ``true``, all tabs can be deselected so that no tab is selected. Click on the current tab to deselect it.
 
 .. rst-class:: classref-item-separator
 

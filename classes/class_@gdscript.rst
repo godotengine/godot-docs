@@ -662,7 +662,7 @@ Add a custom icon to the current script. The icon specified at ``icon_path`` is 
 
 \ **Note:** As annotations describe their subject, the :ref:`@icon<class_@GDScript_annotation_@icon>` annotation must be placed before the class definition and inheritance.
 
-\ **Note:** Unlike most other annotations, the argument of the :ref:`@icon<class_@GDScript_annotation_@icon>` annotation must be a string literal (constant expressions are not supported).
+\ **Note:** Unlike other annotations, the argument of the :ref:`@icon<class_@GDScript_annotation_@icon>` annotation must be a string literal (constant expressions are not supported).
 
 .. rst-class:: classref-item-separator
 
@@ -743,20 +743,6 @@ Mark the current script as a tool script, allowing it to be loaded and executed 
     extends Node
 
 \ **Note:** As annotations describe their subject, the :ref:`@tool<class_@GDScript_annotation_@tool>` annotation must be placed before the class definition and inheritance.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_@GDScript_annotation_@uid:
-
-.. rst-class:: classref-annotation
-
-**@uid** **(** :ref:`String<class_String>` uid **)**
-
-Stores information about UID of this script. This annotation is auto-generated when saving the script and must not be modified manually. Only applies to scripts saved as separate files (i.e. not built-in).
-
-\ **Note:** Unlike most other annotations, the argument of the :ref:`@uid<class_@GDScript_annotation_@uid>` annotation must be a string literal (constant expressions are not supported).
 
 .. rst-class:: classref-item-separator
 

@@ -418,7 +418,7 @@ Display server supports touchscreen input. **Windows, Linux (X11), Android, iOS,
 
 :ref:`Feature<enum_DisplayServer_Feature>` **FEATURE_MOUSE** = ``3``
 
-Display server supports mouse input. **Windows, macOS, Linux (X11), Android, Web**
+Display server supports mouse input. **Windows, macOS, Linux (X11/Wayland), Android, Web**
 
 .. _class_DisplayServer_constant_FEATURE_MOUSE_WARP:
 
@@ -426,7 +426,7 @@ Display server supports mouse input. **Windows, macOS, Linux (X11), Android, Web
 
 :ref:`Feature<enum_DisplayServer_Feature>` **FEATURE_MOUSE_WARP** = ``4``
 
-Display server supports warping mouse coordinates to keep the mouse cursor constrained within an area, but looping when one of the edges is reached. **Windows, macOS, Linux (X11)**
+Display server supports warping mouse coordinates to keep the mouse cursor constrained within an area, but looping when one of the edges is reached. **Windows, macOS, Linux (X11/Wayland)**
 
 .. _class_DisplayServer_constant_FEATURE_CLIPBOARD:
 
@@ -434,7 +434,7 @@ Display server supports warping mouse coordinates to keep the mouse cursor const
 
 :ref:`Feature<enum_DisplayServer_Feature>` **FEATURE_CLIPBOARD** = ``5``
 
-Display server supports setting and getting clipboard data. See also :ref:`FEATURE_CLIPBOARD_PRIMARY<class_DisplayServer_constant_FEATURE_CLIPBOARD_PRIMARY>`. **Windows, macOS, Linux (X11), Android, iOS, Web**
+Display server supports setting and getting clipboard data. See also :ref:`FEATURE_CLIPBOARD_PRIMARY<class_DisplayServer_constant_FEATURE_CLIPBOARD_PRIMARY>`. **Windows, macOS, Linux (X11/Wayland), Android, iOS, Web**
 
 .. _class_DisplayServer_constant_FEATURE_VIRTUAL_KEYBOARD:
 
@@ -450,7 +450,7 @@ Display server supports popping up a virtual keyboard when requested to input te
 
 :ref:`Feature<enum_DisplayServer_Feature>` **FEATURE_CURSOR_SHAPE** = ``7``
 
-Display server supports setting the mouse cursor shape to be different from the default. **Windows, macOS, Linux (X11), Android, Web**
+Display server supports setting the mouse cursor shape to be different from the default. **Windows, macOS, Linux (X11/Wayland), Android, Web**
 
 .. _class_DisplayServer_constant_FEATURE_CUSTOM_CURSOR_SHAPE:
 
@@ -458,7 +458,7 @@ Display server supports setting the mouse cursor shape to be different from the 
 
 :ref:`Feature<enum_DisplayServer_Feature>` **FEATURE_CUSTOM_CURSOR_SHAPE** = ``8``
 
-Display server supports setting the mouse cursor shape to a custom image. **Windows, macOS, Linux (X11), Web**
+Display server supports setting the mouse cursor shape to a custom image. **Windows, macOS, Linux (X11/Wayland), Web**
 
 .. _class_DisplayServer_constant_FEATURE_NATIVE_DIALOG:
 
@@ -482,7 +482,7 @@ Display server supports `Input Method Editor <https://en.wikipedia.org/wiki/Inpu
 
 :ref:`Feature<enum_DisplayServer_Feature>` **FEATURE_WINDOW_TRANSPARENCY** = ``11``
 
-Display server supports windows can use per-pixel transparency to make windows behind them partially or fully visible. **Windows, macOS, Linux (X11)**
+Display server supports windows can use per-pixel transparency to make windows behind them partially or fully visible. **Windows, macOS, Linux (X11/Wayland)**
 
 .. _class_DisplayServer_constant_FEATURE_HIDPI:
 
@@ -490,7 +490,7 @@ Display server supports windows can use per-pixel transparency to make windows b
 
 :ref:`Feature<enum_DisplayServer_Feature>` **FEATURE_HIDPI** = ``12``
 
-Display server supports querying the operating system's display scale factor. This allows for *reliable* automatic hiDPI display detection, as opposed to guessing based on the screen resolution and reported display DPI (which can be unreliable due to broken monitor EDID). **Windows, macOS**
+Display server supports querying the operating system's display scale factor. This allows for *reliable* automatic hiDPI display detection, as opposed to guessing based on the screen resolution and reported display DPI (which can be unreliable due to broken monitor EDID). **Windows, Linux (Wayland), macOS**
 
 .. _class_DisplayServer_constant_FEATURE_ICON:
 
@@ -522,7 +522,7 @@ Display server supports changing the screen orientation. **Android, iOS**
 
 :ref:`Feature<enum_DisplayServer_Feature>` **FEATURE_SWAP_BUFFERS** = ``16``
 
-Display server supports V-Sync status can be changed from the default (which is forced to be enabled platforms not supporting this feature). **Windows, macOS, Linux (X11)**
+Display server supports V-Sync status can be changed from the default (which is forced to be enabled platforms not supporting this feature). **Windows, macOS, Linux (X11/Wayland)**
 
 .. _class_DisplayServer_constant_FEATURE_CLIPBOARD_PRIMARY:
 
@@ -530,7 +530,7 @@ Display server supports V-Sync status can be changed from the default (which is 
 
 :ref:`Feature<enum_DisplayServer_Feature>` **FEATURE_CLIPBOARD_PRIMARY** = ``18``
 
-Display server supports Primary clipboard can be used. This is a different clipboard from :ref:`FEATURE_CLIPBOARD<class_DisplayServer_constant_FEATURE_CLIPBOARD>`. **Linux (X11)**
+Display server supports Primary clipboard can be used. This is a different clipboard from :ref:`FEATURE_CLIPBOARD<class_DisplayServer_constant_FEATURE_CLIPBOARD>`. **Linux (X11/Wayland)**
 
 .. _class_DisplayServer_constant_FEATURE_TEXT_TO_SPEECH:
 
@@ -538,7 +538,7 @@ Display server supports Primary clipboard can be used. This is a different clipb
 
 :ref:`Feature<enum_DisplayServer_Feature>` **FEATURE_TEXT_TO_SPEECH** = ``19``
 
-Display server supports text-to-speech. See ``tts_*`` methods. **Windows, macOS, Linux (X11), Android, iOS, Web**
+Display server supports text-to-speech. See ``tts_*`` methods. **Windows, macOS, Linux (X11/Wayland), Android, iOS, Web**
 
 .. _class_DisplayServer_constant_FEATURE_EXTEND_TO_TITLE:
 
@@ -1066,7 +1066,7 @@ The window background can be transparent.
 
 \ **Note:** This flag has no effect if :ref:`ProjectSettings.display/window/per_pixel_transparency/allowed<class_ProjectSettings_property_display/window/per_pixel_transparency/allowed>` is set to ``false``.
 
-\ **Note:** Transparency support is implemented on Linux (X11), macOS and Windows, but availability might vary depending on GPU driver, display manager, and compositor capabilities.
+\ **Note:** Transparency support is implemented on Linux (X11/Wayland), macOS, and Windows, but availability might vary depending on GPU driver, display manager, and compositor capabilities.
 
 .. _class_DisplayServer_constant_WINDOW_FLAG_NO_FOCUS:
 
@@ -1302,7 +1302,7 @@ OpenGL context (only with the GL Compatibility renderer):
 
 - Windows: ``HGLRC`` for the window (native GL), or ``EGLContext`` for the window (ANGLE).
 
-- Linux: ``GLXContext*`` for the window.
+- Linux (X11): ``GLXContext*`` for the window.
 
 - macOS: ``NSOpenGLContext*`` for the window (native GL), or ``EGLContext`` for the window (ANGLE).
 
@@ -1367,6 +1367,8 @@ Constants
 
 Represents the screen containing the mouse pointer.
 
+\ **Note:** On Linux (Wayland), this constant always represents the screen at index ``0``.
+
 .. _class_DisplayServer_constant_SCREEN_WITH_KEYBOARD_FOCUS:
 
 .. rst-class:: classref-constant
@@ -1374,6 +1376,8 @@ Represents the screen containing the mouse pointer.
 **SCREEN_WITH_KEYBOARD_FOCUS** = ``-3``
 
 Represents the screen containing the window with the keyboard focus.
+
+\ **Note:** On Linux (Wayland), this constant always represents the screen at index ``0``.
 
 .. _class_DisplayServer_constant_SCREEN_PRIMARY:
 
@@ -1383,6 +1387,8 @@ Represents the screen containing the window with the keyboard focus.
 
 Represents the primary screen.
 
+\ **Note:** On Linux (Wayland), this constant always represents the screen at index ``0``.
+
 .. _class_DisplayServer_constant_SCREEN_OF_MAIN_WINDOW:
 
 .. rst-class:: classref-constant
@@ -1390,6 +1396,8 @@ Represents the primary screen.
 **SCREEN_OF_MAIN_WINDOW** = ``-1``
 
 Represents the screen where the main window is located. This is usually the default value in functions that allow specifying one of several screens.
+
+\ **Note:** On Linux (Wayland), this constant always represents the screen at index ``0``.
 
 .. _class_DisplayServer_constant_MAIN_WINDOW_ID:
 
@@ -1448,7 +1456,7 @@ Returns the user's clipboard as an image if possible.
 
 Returns the user's `primary <https://unix.stackexchange.com/questions/139191/whats-the-difference-between-primary-selection-and-clipboard-buffer>`__ clipboard as a string if possible. This is the clipboard that is set when the user selects text in any application, rather than when pressing :kbd:`Ctrl + C`. The clipboard data can then be pasted by clicking the middle mouse button in any application that supports the primary clipboard mechanism.
 
-\ **Note:** This method is only implemented on Linux (X11).
+\ **Note:** This method is only implemented on Linux (X11/Wayland).
 
 .. rst-class:: classref-item-separator
 
@@ -1498,7 +1506,7 @@ void **clipboard_set_primary** **(** :ref:`String<class_String>` clipboard_prima
 
 Sets the user's `primary <https://unix.stackexchange.com/questions/139191/whats-the-difference-between-primary-selection-and-clipboard-buffer>`__ clipboard content to the given string. This is the clipboard that is set when the user selects text in any application, rather than when pressing :kbd:`Ctrl + C`. The clipboard data can then be pasted by clicking the middle mouse button in any application that supports the primary clipboard mechanism.
 
-\ **Note:** This method is only implemented on Linux (X11).
+\ **Note:** This method is only implemented on Linux (X11/Wayland).
 
 .. rst-class:: classref-item-separator
 
@@ -1592,7 +1600,7 @@ Displays OS native dialog for selecting files or directories in the file system.
 
 Callbacks have the following arguments: ``status: bool, selected_paths: PackedStringArray, selected_filter_index: int``.
 
-\ **Note:** This method is implemented if the display server has the :ref:`FEATURE_NATIVE_DIALOG<class_DisplayServer_constant_FEATURE_NATIVE_DIALOG>` feature, i.e. Linux, Windows, and macOS.
+\ **Note:** This method is implemented if the display server has the :ref:`FEATURE_NATIVE_DIALOG<class_DisplayServer_constant_FEATURE_NATIVE_DIALOG>` feature. Supported platforms include Linux (X11 and Wayland), Windows, and macOS.
 
 \ **Note:** ``current_directory`` might be ignored.
 
@@ -1624,11 +1632,11 @@ Displays OS native dialog for selecting files or directories in the file system 
 
 Callbacks have the following arguments: ``status: bool, selected_paths: PackedStringArray, selected_filter_index: int, selected_option: Dictionary``.
 
-\ **Note:** This method is implemented if the display server has the :ref:`FEATURE_NATIVE_DIALOG<class_DisplayServer_constant_FEATURE_NATIVE_DIALOG>` feature, i.e. Linux, Windows, and macOS.
+\ **Note:** This method is implemented if the display server has the :ref:`FEATURE_NATIVE_DIALOG<class_DisplayServer_constant_FEATURE_NATIVE_DIALOG>` feature. Supported platforms include Linux (X11 and Wayland), Windows, and macOS.
 
 \ **Note:** ``current_directory`` might be ignored.
 
-\ **Note:** On Linux, ``show_hidden`` is ignored.
+\ **Note:** On Linux (X11), ``show_hidden`` is ignored.
 
 \ **Note:** On macOS, native file dialogs have no title.
 
@@ -1710,9 +1718,9 @@ Returns the index of the screen containing the window with the keyboard focus, o
 
 :ref:`String<class_String>` **get_name** **(** **)** |const|
 
-Returns the name of the **DisplayServer** currently in use. Most operating systems only have a single **DisplayServer**, but Linux has access to more than one **DisplayServer** (although only X11 is currently implemented in Godot).
+Returns the name of the **DisplayServer** currently in use. Most operating systems only have a single **DisplayServer**, but Linux has access to more than one **DisplayServer** (currently X11 and Wayland).
 
-The names of built-in display servers are ``Windows``, ``macOS``, ``X11`` (Linux), ``Android``, ``iOS``, ``web`` (HTML5) and ``headless`` (when started with the ``--headless`` :doc:`command line argument <../tutorials/editor/command_line_tutorial>`).
+The names of built-in display servers are ``Windows``, ``macOS``, ``X11`` (Linux), ``Wayland`` (Linux), ``Android``, ``iOS``, ``web`` (HTML5), and ``headless`` (when started with the ``--headless`` :doc:`command line argument <../tutorials/editor/command_line_tutorial>`).
 
 .. rst-class:: classref-item-separator
 
@@ -2707,7 +2715,7 @@ Returns the composition string contained within the `Input Method Editor <https:
 
 Returns ``true`` if OS is using dark mode.
 
-\ **Note:** This method is implemented on Android, iOS, macOS, Windows, and Linux (X11).
+\ **Note:** This method is implemented on Android, iOS, macOS, Windows, and Linux (X11/Wayland).
 
 .. rst-class:: classref-item-separator
 
@@ -2721,7 +2729,7 @@ Returns ``true`` if OS is using dark mode.
 
 Returns ``true`` if OS supports dark mode.
 
-\ **Note:** This method is implemented on Android, iOS, macOS, Windows, and Linux (X11).
+\ **Note:** This method is implemented on Android, iOS, macOS, Windows, and Linux (X11/Wayland).
 
 .. rst-class:: classref-item-separator
 
@@ -2747,7 +2755,7 @@ Returns ``true`` if touch events are available (Android or iOS), the capability 
 
 Returns active keyboard layout index.
 
-\ **Note:** This method is implemented on Linux (X11), macOS and Windows.
+\ **Note:** This method is implemented on Linux (X11/Wayland), macOS, and Windows.
 
 .. rst-class:: classref-item-separator
 
@@ -2761,7 +2769,7 @@ Returns active keyboard layout index.
 
 Converts a physical (US QWERTY) ``keycode`` to one in the active keyboard layout.
 
-\ **Note:** This method is implemented on Linux (X11), macOS and Windows.
+\ **Note:** This method is implemented on Linux (X11/Wayland), macOS and Windows.
 
 .. rst-class:: classref-item-separator
 
@@ -2775,7 +2783,7 @@ Converts a physical (US QWERTY) ``keycode`` to one in the active keyboard layout
 
 Converts a physical (US QWERTY) ``keycode`` to localized label printed on the key in the active keyboard layout.
 
-\ **Note:** This method is implemented on Linux (X11), macOS and Windows.
+\ **Note:** This method is implemented on Linux (X11/Wayland), macOS and Windows.
 
 .. rst-class:: classref-item-separator
 
@@ -2789,7 +2797,7 @@ Converts a physical (US QWERTY) ``keycode`` to localized label printed on the ke
 
 Returns the number of keyboard layouts.
 
-\ **Note:** This method is implemented on Linux (X11), macOS and Windows.
+\ **Note:** This method is implemented on Linux (X11/Wayland), macOS and Windows.
 
 .. rst-class:: classref-item-separator
 
@@ -2803,7 +2811,7 @@ Returns the number of keyboard layouts.
 
 Returns the ISO-639/BCP-47 language code of the keyboard layout at position ``index``.
 
-\ **Note:** This method is implemented on Linux (X11), macOS and Windows.
+\ **Note:** This method is implemented on Linux (X11/Wayland), macOS and Windows.
 
 .. rst-class:: classref-item-separator
 
@@ -2817,7 +2825,7 @@ Returns the ISO-639/BCP-47 language code of the keyboard layout at position ``in
 
 Returns the localized name of the keyboard layout at position ``index``.
 
-\ **Note:** This method is implemented on Linux (X11), macOS and Windows.
+\ **Note:** This method is implemented on Linux (X11/Wayland), macOS and Windows.
 
 .. rst-class:: classref-item-separator
 
@@ -2831,7 +2839,7 @@ void **keyboard_set_current_layout** **(** :ref:`int<class_int>` index **)**
 
 Sets the active keyboard layout.
 
-\ **Note:** This method is implemented on Linux (X11), macOS and Windows.
+\ **Note:** This method is implemented on Linux (X11/Wayland), macOS and Windows.
 
 .. rst-class:: classref-item-separator
 
@@ -2918,7 +2926,7 @@ Returns the dots per inch density of the specified screen. If ``screen`` is :ref
      xxhdpi - 480 dpi
     xxxhdpi - 640 dpi
 
-\ **Note:** This method is implemented on Android, Linux (X11), macOS and Windows. Returns ``72`` on unsupported platforms.
+\ **Note:** This method is implemented on Android, Linux (X11/Wayland), macOS and Windows. Returns ``72`` on unsupported platforms.
 
 .. rst-class:: classref-item-separator
 
@@ -3004,6 +3012,8 @@ Returns the screen's top-left corner position in pixels. On multi-monitor setups
     +-------------+ +-------+
 
 See also :ref:`screen_get_size<class_DisplayServer_method_screen_get_size>`.
+
+\ **Note:** On Linux (Wayland) this method always returns ``(0, 0)``.
 
 .. rst-class:: classref-item-separator
 
@@ -3215,7 +3225,7 @@ Each :ref:`Dictionary<class_Dictionary>` contains two :ref:`String<class_String>
 
 Note that Godot depends on system libraries for text-to-speech functionality. These libraries are installed by default on Windows and macOS, but not on all Linux distributions. If they are not present, this method will return an empty list. This applies to both Godot users on Linux, as well as end-users on Linux running Godot games that use text-to-speech.
 
-\ **Note:** This method is implemented on Android, iOS, Web, Linux (X11), macOS, and Windows.
+\ **Note:** This method is implemented on Android, iOS, Web, Linux (X11/Wayland), macOS, and Windows.
 
 \ **Note:** :ref:`ProjectSettings.audio/general/text_to_speech<class_ProjectSettings_property_audio/general/text_to_speech>` should be ``true`` to use text-to-speech.
 
@@ -3231,7 +3241,7 @@ Note that Godot depends on system libraries for text-to-speech functionality. Th
 
 Returns an :ref:`PackedStringArray<class_PackedStringArray>` of voice identifiers for the ``language``.
 
-\ **Note:** This method is implemented on Android, iOS, Web, Linux (X11), macOS, and Windows.
+\ **Note:** This method is implemented on Android, iOS, Web, Linux (X11/Wayland), macOS, and Windows.
 
 \ **Note:** :ref:`ProjectSettings.audio/general/text_to_speech<class_ProjectSettings_property_audio/general/text_to_speech>` should be ``true`` to use text-to-speech.
 
@@ -3247,7 +3257,7 @@ Returns an :ref:`PackedStringArray<class_PackedStringArray>` of voice identifier
 
 Returns ``true`` if the synthesizer is in a paused state.
 
-\ **Note:** This method is implemented on Android, iOS, Web, Linux (X11), macOS, and Windows.
+\ **Note:** This method is implemented on Android, iOS, Web, Linux (X11/Wayland), macOS, and Windows.
 
 \ **Note:** :ref:`ProjectSettings.audio/general/text_to_speech<class_ProjectSettings_property_audio/general/text_to_speech>` should be ``true`` to use text-to-speech.
 
@@ -3263,7 +3273,7 @@ Returns ``true`` if the synthesizer is in a paused state.
 
 Returns ``true`` if the synthesizer is generating speech, or have utterance waiting in the queue.
 
-\ **Note:** This method is implemented on Android, iOS, Web, Linux (X11), macOS, and Windows.
+\ **Note:** This method is implemented on Android, iOS, Web, Linux (X11/Wayland), macOS, and Windows.
 
 \ **Note:** :ref:`ProjectSettings.audio/general/text_to_speech<class_ProjectSettings_property_audio/general/text_to_speech>` should be ``true`` to use text-to-speech.
 
@@ -3279,7 +3289,7 @@ void **tts_pause** **(** **)**
 
 Puts the synthesizer into a paused state.
 
-\ **Note:** This method is implemented on Android, iOS, Web, Linux (X11), macOS, and Windows.
+\ **Note:** This method is implemented on Android, iOS, Web, Linux (X11/Wayland), macOS, and Windows.
 
 \ **Note:** :ref:`ProjectSettings.audio/general/text_to_speech<class_ProjectSettings_property_audio/general/text_to_speech>` should be ``true`` to use text-to-speech.
 
@@ -3295,7 +3305,7 @@ void **tts_resume** **(** **)**
 
 Resumes the synthesizer if it was paused.
 
-\ **Note:** This method is implemented on Android, iOS, Web, Linux (X11), macOS, and Windows.
+\ **Note:** This method is implemented on Android, iOS, Web, Linux (X11/Wayland), macOS, and Windows.
 
 \ **Note:** :ref:`ProjectSettings.audio/general/text_to_speech<class_ProjectSettings_property_audio/general/text_to_speech>` should be ``true`` to use text-to-speech.
 
@@ -3317,7 +3327,7 @@ Adds a callback, which is called when the utterance has started, finished, cance
 
 \ **Note:** The granularity of the boundary callbacks is engine dependent.
 
-\ **Note:** This method is implemented on Android, iOS, Web, Linux (X11), macOS, and Windows.
+\ **Note:** This method is implemented on Android, iOS, Web, Linux (X11/Wayland), macOS, and Windows.
 
 \ **Note:** :ref:`ProjectSettings.audio/general/text_to_speech<class_ProjectSettings_property_audio/general/text_to_speech>` should be ``true`` to use text-to-speech.
 
@@ -3343,11 +3353,11 @@ Adds an utterance to the queue. If ``interrupt`` is ``true``, the queue is clear
 
 - ``utterance_id`` is passed as a parameter to the callback functions.
 
-\ **Note:** On Windows and Linux (X11), utterance ``text`` can use SSML markup. SSML support is engine and voice dependent. If the engine does not support SSML, you should strip out all XML markup before calling :ref:`tts_speak<class_DisplayServer_method_tts_speak>`.
+\ **Note:** On Windows and Linux (X11/Wayland), utterance ``text`` can use SSML markup. SSML support is engine and voice dependent. If the engine does not support SSML, you should strip out all XML markup before calling :ref:`tts_speak<class_DisplayServer_method_tts_speak>`.
 
 \ **Note:** The granularity of pitch, rate, and volume is engine and voice dependent. Values may be truncated.
 
-\ **Note:** This method is implemented on Android, iOS, Web, Linux (X11), macOS, and Windows.
+\ **Note:** This method is implemented on Android, iOS, Web, Linux (X11/Wayland), macOS, and Windows.
 
 \ **Note:** :ref:`ProjectSettings.audio/general/text_to_speech<class_ProjectSettings_property_audio/general/text_to_speech>` should be ``true`` to use text-to-speech.
 
@@ -3363,7 +3373,7 @@ void **tts_stop** **(** **)**
 
 Stops synthesis in progress and removes all utterances from the queue.
 
-\ **Note:** This method is implemented on Android, iOS, Web, Linux (X11), macOS, and Windows.
+\ **Note:** This method is implemented on Android, iOS, Web, Linux (X11/Linux), macOS, and Windows.
 
 \ **Note:** :ref:`ProjectSettings.audio/general/text_to_speech<class_ProjectSettings_property_audio/general/text_to_speech>` should be ``true`` to use text-to-speech.
 
@@ -3429,7 +3439,7 @@ void **warp_mouse** **(** :ref:`Vector2i<class_Vector2i>` position **)**
 
 Sets the mouse cursor position to the given ``position`` relative to an origin at the upper left corner of the currently focused game Window Manager window.
 
-\ **Note:** :ref:`warp_mouse<class_DisplayServer_method_warp_mouse>` is only supported on Windows, macOS and Linux. It has no effect on Android, iOS and Web.
+\ **Note:** :ref:`warp_mouse<class_DisplayServer_method_warp_mouse>` is only supported on Windows, macOS, and Linux (X11/Wayland). It has no effect on Android, iOS, and Web.
 
 .. rst-class:: classref-item-separator
 
@@ -3539,7 +3549,7 @@ Returns the mode of the given window.
 
 Returns internal structure pointers for use in plugins.
 
-\ **Note:** This method is implemented on Android, Linux (X11), macOS and Windows.
+\ **Note:** This method is implemented on Android, Linux (X11/Wayland), macOS, and Windows.
 
 .. rst-class:: classref-item-separator
 
@@ -3741,7 +3751,7 @@ Sets the ``callback`` that should be called when files are dropped from the oper
 
 \ **Warning:** Advanced users only! Adding such a callback to a :ref:`Window<class_Window>` node will override its default implementation, which can introduce bugs.
 
-\ **Note:** This method is implemented on Windows, macOS, Linux (X11) and Web.
+\ **Note:** This method is implemented on Windows, macOS, Linux (X11/Wayland), and Web.
 
 .. rst-class:: classref-item-separator
 
@@ -3952,6 +3962,8 @@ Sets the position of the given window to ``position``. On multi-monitor setups, 
 See also :ref:`window_get_position<class_DisplayServer_method_window_get_position>` and :ref:`window_set_size<class_DisplayServer_method_window_set_size>`.
 
 \ **Note:** It's recommended to change this value using :ref:`Window.position<class_Window_property_position>` instead.
+
+\ **Note:** On Linux (Wayland): this method is a no-op.
 
 .. rst-class:: classref-item-separator
 

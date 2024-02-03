@@ -351,11 +351,13 @@ Combined with :ref:`_set<class_Object_private_method__set>` and :ref:`_get_prope
 
 :ref:`Dictionary[]<class_Dictionary>` **_get_property_list** **(** **)** |virtual|
 
-Override this method to customize how script properties should be handled by the engine.
+Override this method to provide a custom list of additional properties to handle by the engine.
 
 Should return a property list, as an :ref:`Array<class_Array>` of dictionaries. The result is added to the array of :ref:`get_property_list<class_Object_method_get_property_list>`, and should be formatted in the same way. Each :ref:`Dictionary<class_Dictionary>` must at least contain the ``name`` and ``type`` entries.
 
-The example below displays ``hammer_type`` in the Inspector dock, only if ``holding_hammer`` is ``true``:
+You can use :ref:`_property_can_revert<class_Object_private_method__property_can_revert>` and :ref:`_property_get_revert<class_Object_private_method__property_get_revert>` to customize the default values of the properties added by this method.
+
+The example below displays a list of numbers shown as words going from ``ZERO`` to ``FIVE``, with ``number_count`` controlling the size of the list:
 
 
 .. tabs::
@@ -363,79 +365,107 @@ The example below displays ``hammer_type`` in the Inspector dock, only if ``hold
  .. code-tab:: gdscript
 
     @tool
-    extends Node2D
+    extends Node
     
-    @export var holding_hammer = false:
-        set(value):
-            holding_hammer = value
+    @export var number_count = 3:
+        set(nc):
+            number_count = nc
+            numbers.resize(number_count)
             notify_property_list_changed()
-    var hammer_type = 0
+    
+    var numbers = PackedInt32Array([0, 0, 0])
     
     func _get_property_list():
-        # By default, `hammer_type` is not visible in the editor.
-        var property_usage = PROPERTY_USAGE_NO_EDITOR
-    
-        if holding_hammer:
-            property_usage = PROPERTY_USAGE_DEFAULT
-    
         var properties = []
-        properties.append({
-            "name": "hammer_type",
-            "type": TYPE_INT,
-            "usage": property_usage, # See above assignment.
-            "hint": PROPERTY_HINT_ENUM,
-            "hint_string": "Wooden,Iron,Golden,Enchanted"
-        })
+    
+        for i in range(number_count):
+            properties.append({
+                "name": "number_%d" % i,
+                "type": TYPE_INT,
+                "hint": PROPERTY_HINT_ENUM,
+                "hint_string": "ZERO,ONE,TWO,THREE,FOUR,FIVE",
+            })
     
         return properties
+    
+    func _get(property):
+        if property.begins_with("number_"):
+            var index = property.get_slice("_", 1).to_int()
+            return numbers[index]
+    
+    func _set(property, value):
+        if property.begins_with("number_"):
+            var index = property.get_slice("_", 1).to_int()
+            numbers[index] = value
+            return true
+        return false
 
  .. code-tab:: csharp
 
     [Tool]
-    public partial class MyNode2D : Node2D
+    public partial class MyNode : Node
     {
-        private bool _holdingHammer;
+        private int _numberCount;
     
         [Export]
-        public bool HoldingHammer
+        public int NumberCount
         {
-            get => _holdingHammer;
+            get => _numberCount;
             set
             {
-                _holdingHammer = value;
+                _numberCount = value;
+                _numbers.Resize(_numberCount);
                 NotifyPropertyListChanged();
             }
         }
     
-        public int HammerType { get; set; }
+        private List<int> _numbers = new();
     
         public override Godot.Collections.Array<Godot.Collections.Dictionary> _GetPropertyList()
         {
-            // By default, `HammerType` is not visible in the editor.
-            var propertyUsage = PropertyUsageFlags.NoEditor;
+            var properties = new Godot.Collections.Array<Godot.Collections.Dictionary>();
     
-            if (HoldingHammer)
+            for (int i = 0; i < _numberCount; i++)
             {
-                propertyUsage = PropertyUsageFlags.Default;
+                properties.Add(new Godot.Collections.Dictionary()
+                {
+                    { "name", $"number_{i}" },
+                    { "type", (int)Variant.Type.Int },
+                    { "hint", (int)PropertyHint.Enum },
+                    { "hint_string", "Zero,One,Two,Three,Four,Five" },
+                });
             }
     
-            var properties = new Godot.Collections.Array<Godot.Collections.Dictionary>();
-            properties.Add(new Godot.Collections.Dictionary()
-            {
-                { "name", "HammerType" },
-                { "type", (int)Variant.Type.Int },
-                { "usage", (int)propertyUsage }, // See above assignment.
-                { "hint", (int)PropertyHint.Enum },
-                { "hint_string", "Wooden,Iron,Golden,Enchanted" }
-            });
-    
             return properties;
+        }
+    
+        public override Variant _Get(StringName property)
+        {
+            string propertyName = property.ToString();
+            if (propertyName.StartsWith("number_"))
+            {
+                int index = int.Parse(propertyName.Substring("number_".Length));
+                return _numbers[index];
+            }
+            return default;
+        }
+    
+        public override bool _Set(StringName property, Variant value)
+        {
+            string propertyName = property.ToString();
+            if (propertyName.StartsWith("number_"))
+            {
+                int index = int.Parse(propertyName.Substring("number_".Length));
+                numbers[index] = value.As<int>();
+                return true;
+            }
+            return false;
         }
     }
 
 
 
-\ **Note:** This method is intended for advanced purposes. For most common use cases, the scripting languages offer easier ways to handle properties. See :ref:`@GDScript.@export<class_@GDScript_annotation_@export>`, :ref:`@GDScript.@export_enum<class_@GDScript_annotation_@export_enum>`, :ref:`@GDScript.@export_group<class_@GDScript_annotation_@export_group>`, etc.
+\ **Note:** This method is intended for advanced purposes. For most common use cases, the scripting languages offer easier ways to handle properties. See :ref:`@GDScript.@export<class_@GDScript_annotation_@export>`, :ref:`@GDScript.@export_enum<class_@GDScript_annotation_@export_enum>`, :ref:`@GDScript.@export_group<class_@GDScript_annotation_@export_group>`, etc. If you want to customize exported properties, use :ref:`_validate_property<class_Object_private_method__validate_property>`.
 
 \ **Note:** If the object's script is not :ref:`@GDScript.@tool<class_@GDScript_annotation_@tool>`, this method will not be called in the editor.
 
@@ -610,7 +640,7 @@ Override this method to customize the return value of :ref:`to_string<class_Obje
 
 void **_validate_property** **(** :ref:`Dictionary<class_Dictionary>` property **)** |virtual|
 
-Override this method to customize existing properties. Every property info goes through this method. The dictionary contents is the same as in :ref:`_get_property_list<class_Object_private_method__get_property_list>`.
+Override this method to customize existing properties. Every property info goes through this method, except properties added with :ref:`_get_property_list<class_Object_private_method__get_property_list>`. The dictionary contents is the same as in :ref:`_get_property_list<class_Object_private_method__get_property_list>`.
 
 
 .. tabs::

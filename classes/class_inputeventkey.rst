@@ -40,19 +40,21 @@ Properties
 .. table::
    :widths: auto
 
-   +-----------------------------------+------------------------------------------------------------------------+-----------+
-   | :ref:`bool<class_bool>`           | :ref:`echo<class_InputEventKey_property_echo>`                         | ``false`` |
-   +-----------------------------------+------------------------------------------------------------------------+-----------+
-   | :ref:`Key<enum_@GlobalScope_Key>` | :ref:`key_label<class_InputEventKey_property_key_label>`               | ``0``     |
-   +-----------------------------------+------------------------------------------------------------------------+-----------+
-   | :ref:`Key<enum_@GlobalScope_Key>` | :ref:`keycode<class_InputEventKey_property_keycode>`                   | ``0``     |
-   +-----------------------------------+------------------------------------------------------------------------+-----------+
-   | :ref:`Key<enum_@GlobalScope_Key>` | :ref:`physical_keycode<class_InputEventKey_property_physical_keycode>` | ``0``     |
-   +-----------------------------------+------------------------------------------------------------------------+-----------+
-   | :ref:`bool<class_bool>`           | :ref:`pressed<class_InputEventKey_property_pressed>`                   | ``false`` |
-   +-----------------------------------+------------------------------------------------------------------------+-----------+
-   | :ref:`int<class_int>`             | :ref:`unicode<class_InputEventKey_property_unicode>`                   | ``0``     |
-   +-----------------------------------+------------------------------------------------------------------------+-----------+
+   +---------------------------------------------------+------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`                           | :ref:`echo<class_InputEventKey_property_echo>`                         | ``false`` |
+   +---------------------------------------------------+------------------------------------------------------------------------+-----------+
+   | :ref:`Key<enum_@GlobalScope_Key>`                 | :ref:`key_label<class_InputEventKey_property_key_label>`               | ``0``     |
+   +---------------------------------------------------+------------------------------------------------------------------------+-----------+
+   | :ref:`Key<enum_@GlobalScope_Key>`                 | :ref:`keycode<class_InputEventKey_property_keycode>`                   | ``0``     |
+   +---------------------------------------------------+------------------------------------------------------------------------+-----------+
+   | :ref:`KeyLocation<enum_@GlobalScope_KeyLocation>` | :ref:`location<class_InputEventKey_property_location>`                 | ``0``     |
+   +---------------------------------------------------+------------------------------------------------------------------------+-----------+
+   | :ref:`Key<enum_@GlobalScope_Key>`                 | :ref:`physical_keycode<class_InputEventKey_property_physical_keycode>` | ``0``     |
+   +---------------------------------------------------+------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`                           | :ref:`pressed<class_InputEventKey_property_pressed>`                   | ``false`` |
+   +---------------------------------------------------+------------------------------------------------------------------------+-----------+
+   | :ref:`int<class_int>`                             | :ref:`unicode<class_InputEventKey_property_unicode>`                   | ``0``     |
+   +---------------------------------------------------+------------------------------------------------------------------------+-----------+
 
 .. rst-class:: classref-reftable-group
 
@@ -66,6 +68,8 @@ Methods
    | :ref:`String<class_String>`       | :ref:`as_text_key_label<class_InputEventKey_method_as_text_key_label>` **(** **)** |const|                                     |
    +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`       | :ref:`as_text_keycode<class_InputEventKey_method_as_text_keycode>` **(** **)** |const|                                         |
+   +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`       | :ref:`as_text_location<class_InputEventKey_method_as_text_location>` **(** **)** |const|                                       |
    +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`       | :ref:`as_text_physical_keycode<class_InputEventKey_method_as_text_physical_keycode>` **(** **)** |const|                       |
    +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
@@ -151,6 +155,23 @@ To get a human-readable representation of the **InputEventKey**, use ``OS.get_ke
         | Q   | | Q   | - "Q" - keycode
         |   Й | |  ض | - "Й" and "ض" - key_label
         +-----+ +-----+
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_InputEventKey_property_location:
+
+.. rst-class:: classref-property
+
+:ref:`KeyLocation<enum_@GlobalScope_KeyLocation>` **location** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_location** **(** :ref:`KeyLocation<enum_@GlobalScope_KeyLocation>` value **)**
+- :ref:`KeyLocation<enum_@GlobalScope_KeyLocation>` **get_location** **(** **)**
+
+Represents the location of a key which has both left and right versions, such as :kbd:`Shift` or :kbd:`Alt`.
 
 .. rst-class:: classref-item-separator
 
@@ -256,6 +277,18 @@ Returns a :ref:`String<class_String>` representation of the event's :ref:`key_la
 :ref:`String<class_String>` **as_text_keycode** **(** **)** |const|
 
 Returns a :ref:`String<class_String>` representation of the event's :ref:`keycode<class_InputEventKey_property_keycode>` and modifiers.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_InputEventKey_method_as_text_location:
+
+.. rst-class:: classref-method
+
+:ref:`String<class_String>` **as_text_location** **(** **)** |const|
+
+Returns a :ref:`String<class_String>` representation of the event's :ref:`location<class_InputEventKey_property_location>`. This will be a blank string if the event is not specific to a location.
 
 .. rst-class:: classref-item-separator
 

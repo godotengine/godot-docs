@@ -59,6 +59,8 @@ Methods
    +-------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                  | :ref:`center_on_hmd<class_XRServer_method_center_on_hmd>` **(** :ref:`RotationMode<enum_XRServer_RotationMode>` rotation_mode, :ref:`bool<class_bool>` keep_height **)** |
    +-------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Transform3D<class_Transform3D>`                 | :ref:`clear_reference_frame<class_XRServer_method_clear_reference_frame>` **(** **)** |const|                                                                            |
+   +-------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`XRInterface<class_XRInterface>`                 | :ref:`find_interface<class_XRServer_method_find_interface>` **(** :ref:`String<class_String>` name **)** |const|                                                         |
    +-------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Transform3D<class_Transform3D>`                 | :ref:`get_hmd_transform<class_XRServer_method_get_hmd_transform>` **(** **)**                                                                                            |
@@ -358,6 +360,18 @@ This method allows you to center your tracker on the location of the HMD. It wil
 For this method to produce usable results, tracking information must be available. This often takes a few frames after starting your game.
 
 You should call this method after a few seconds have passed. For example, when the user requests a realignment of the display holding a designated button on a controller for a short period of time, or when implementing a teleport mechanism.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_XRServer_method_clear_reference_frame:
+
+.. rst-class:: classref-method
+
+:ref:`Transform3D<class_Transform3D>` **clear_reference_frame** **(** **)** |const|
+
+Clears the reference frame that was set by previous calls to :ref:`center_on_hmd<class_XRServer_method_center_on_hmd>`.
 
 .. rst-class:: classref-item-separator
 
