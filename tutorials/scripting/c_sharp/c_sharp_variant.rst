@@ -62,7 +62,7 @@ Converting to the correct type avoids complicated behavior and should be preferr
 The ``Variant.Obj`` property returns a C# ``object`` with the correct value for any variant. This
 may be useful when the type of Variant is completely unknown. However, when possible, prefer more
 specific conversions. ``Variant.Obj`` evaluates a ``switch`` on ``Variant.VariantType`` and it may
-not be necessary. Also, if the result is a value type, it may be boxed when it normally wouldn't be.
+not be necessary. Also, if the result is a value type, it is boxed.
 
 For example, if the potential for ``Variant.As<MyNode>()`` to throw a invalid cast exception isn't
 acceptable, consider using a ``Variant.As<GodotObject>() is MyNode n`` type pattern instead.
