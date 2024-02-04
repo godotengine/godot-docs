@@ -53,17 +53,7 @@ into your language, or talk to us on the ``#documentation`` channel on the
 Offline documentation
 ---------------------
 
-To browse the documentation offline, you can use the mirror of the documentation
-hosted on `DevDocs <https://devdocs.io/godot/>`__. To enable offline browsing on
-DevDocs, you need to:
-
-- Click the three dots in the top-left corner, choose **Preferences**.
-- Enable the desired version of the Godot documentation by checking the box
-  next to it in the sidebar.
-- Click the three dots in the top-left corner, choose **Offline data**.
-- Click the **Install** link next to the Godot documentation.
-
-You can also `download an HTML copy <https://nightly.link/godotengine/godot-docs/workflows/build_offline_docs/master/godot-docs-html-master.zip>`__
+To browse the documentation offline, you can `download an HTML copy <https://nightly.link/godotengine/godot-docs/workflows/build_offline_docs/master/godot-docs-html-master.zip>`__
 for offline reading (updated every Monday). Extract the ZIP archive then open
 the top-level ``index.html`` in a web browser.
 
