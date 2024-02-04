@@ -810,7 +810,7 @@ Variant
 -------
 
 ``Godot.Variant`` is used to represent Godot's native :ref:`Variant <class_Variant>` type.
-Any Variant-compatible type can be converted from/to it.
+Any :ref:`Variant-compatible type <c_sharp_variant_compatible_types>` can be converted from/to it.
 
 See also: :ref:`doc_c_sharp_variant`.
 
