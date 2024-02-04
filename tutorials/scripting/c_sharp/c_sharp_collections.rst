@@ -77,15 +77,15 @@ In C#, packed arrays are replaced by ``System.Array``:
 ======================  ==============================================================
 GDScript                C#
 ======================  ==============================================================
+``PackedByteArray``     ``byte[]``
 ``PackedInt32Array``    ``int[]``
 ``PackedInt64Array``    ``long[]``
-``PackedByteArray``     ``byte[]``
 ``PackedFloat32Array``  ``float[]``
 ``PackedFloat64Array``  ``double[]``
 ``PackedStringArray``   ``string[]``
-``PackedColorArray``    ``Color[]``
 ``PackedVector2Array``  ``Vector2[]``
 ``PackedVector3Array``  ``Vector3[]``
+``PackedColorArray``    ``Color[]``
 ======================  ==============================================================
 
 Other C# arrays are not supported by the Godot C# API since a packed array equivalent
