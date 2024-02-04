@@ -98,7 +98,7 @@ your custom signal names are listed under the nested ``SignalName`` class.
 
 In contrast with other C# events, you cannot use ``Invoke`` to raise events tied to Godot signals.
 
-Signals support arguments of any :ref:`Variant-compatible <doc_c_sharp_variant>` type.
+Signals support arguments of any :ref:`Variant-compatible type <c_sharp_variant_compatible_types>`.
 
 Consequently, any ``Node`` or ``RefCounted`` will be compatible automatically, but custom data objects will need
 to inherit from ``GodotObject`` or one of its subclasses.

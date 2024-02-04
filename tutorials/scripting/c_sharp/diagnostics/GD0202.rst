@@ -16,8 +16,8 @@ Cause
 -----
 
 An unsupported type is specified for a parameter of a delegate annotated with
-the ``[Signal]`` attribute when a :ref:`Variant-compatible <doc_c_sharp_variant>`
-type is expected.
+the ``[Signal]`` attribute when a
+:ref:`Variant-compatible type <c_sharp_variant_compatible_types>` is expected.
 
 Rule description
 ----------------
