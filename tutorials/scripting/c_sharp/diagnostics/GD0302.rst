@@ -14,8 +14,9 @@ Cause
 -----
 
 A generic type is specified for a generic type argument when a
-:ref:`Variant-compatible <doc_c_sharp_variant>` type is expected, but the
-specified generic type is not annotated with the ``[MustBeVariant]`` attribute.
+:ref:`Variant-compatible type <c_sharp_variant_compatible_types>` is expected,
+but the specified generic type is not annotated with the ``[MustBeVariant]``
+attribute.
 
 Rule description
 ----------------

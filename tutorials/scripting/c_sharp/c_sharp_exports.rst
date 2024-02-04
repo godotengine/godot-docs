@@ -26,7 +26,7 @@ them visible and editable in the editor. This way, artists and game designers
 can modify values that later influence how the program runs. For this, a
 special export syntax is provided.
 
-Exporting can only be done with :ref:`Variant-compatible <doc_c_sharp_variant>` types.
+Exporting can only be done with :ref:`c_sharp_variant_compatible_types`.
 
 .. note::
 
@@ -543,7 +543,7 @@ The default value of Godot dictionaries is null. A different default can be spec
 Exporting C# arrays
 ^^^^^^^^^^^^^^^^^^^
 
-C# arrays can exported as long as the element type is a :ref:`Variant-compatible <doc_c_sharp_variant>` type.
+C# arrays can exported as long as the element type is a :ref:`Variant-compatible type <c_sharp_variant_compatible_types>`.
 
 .. code-block:: csharp
 

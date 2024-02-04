@@ -5,7 +5,8 @@ C# Variant
 
 For a detailed explanation of Variant in general, see the :ref:`Variant <class_Variant>` documentation page.
 
-``Godot.Variant`` is used to represent Godot's native :ref:`Variant <class_Variant>` type. Any Variant-compatible type can be converted from/to it.
+``Godot.Variant`` is used to represent Godot's native :ref:`Variant <class_Variant>` type. Any
+:ref:`Variant-compatible type <c_sharp_variant_compatible_types>` can be converted from/to it.
 We recommend avoiding ``Godot.Variant`` unless it is necessary to interact with untyped engine APIs.
 Take advantage of C#'s type safety when possible.
 
@@ -21,8 +22,13 @@ to a ``Godot.Variant``.
     Since the Variant type in C# is a struct, it can't be null. To create a "null"
     Variant use the ``default`` keyword or the parameterless constructor.
 
+.. _c_sharp_variant_compatible_types:
+
 Variant-compatible types
 ------------------------
+
+A Variant-compatible type can be converted to and from a ``Godot.Variant``.
+These C# types are Variant-compatible:
 
 * All the `built-in value types <https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/built-in-types-table>`_,
   except ``decimal``, ``nint`` and ``nuint``.
