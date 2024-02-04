@@ -223,7 +223,8 @@ Textures used in 2D don't have mipmaps enabled by default, which means only 3D
 rendering is affected unless you enabled mipmaps on 2D textures in the Import
 dock.
 
-The formula used to determine the texture mipmap bias is: TODO
+The formula used to determine the texture mipmap bias is:
+``log2f(min(scaling_3d_scale, 1.0)) + custom_texture_mipmap_bias``
 
 To counteract the blurriness added by some antialiasing methods, Godot also adds
 a ``-0.25`` offset when FXAA is enabled, and a ``-0.5`` offset when TAA is
