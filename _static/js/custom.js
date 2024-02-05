@@ -487,6 +487,11 @@ $(document).ready(() => {
 
   // Giscus
   registerGiscus();
+
+  // Fixes "Loading a page with some google context breaks the CSS"
+  if (window.scrollX != 0) {
+    window.scrollTo(0, window.scrollY);
+  }
 });
 
 // Override the default implementation from doctools.js to avoid this behavior.
