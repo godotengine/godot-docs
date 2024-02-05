@@ -96,7 +96,7 @@ option is currently inherited, you must tick the box next to it first.
 - **Strip Visuals:** Export this resource, with visual files (textures and materials)
   replaced by placeholder classes. Placeholder classes store the image size
   (as it's sometimes used to position elements in a 2D scene), but nothing else.
-- **Keep:** Export this resource as usual, with visual files interact.
+- **Keep:** Export this resource as usual, with visual files intact.
 - **Remove:** The file is not included in the PCK. This is useful to ignore
   scenes and resources that only the client needs. If you do so, make sure the
   server doesn't reference these client-only scenes and resources in any way.
