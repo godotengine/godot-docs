@@ -33,6 +33,12 @@ templates are determined per each OS:
 -  Linux: ``$HOME/.config/godot/script_templates/``
 -  macOS: ``$HOME/Library/Application Support/Godot/script_templates/``
 
+If you're getting Godot from somewhere other than the official website, such
+as Steam, the folder might be in a different location. You can find it using
+the Godot editor. Go to ``Editor > Open Editor Data/Settings Folder`` and it
+will open a folder in your file browser, inside that folder is the
+``script_templates`` folder.
+
 If no ``script_templates`` is detected, Godot will create a default set of
 built-in templates automatically, so this logic can be used to reset the default
 templates in case you've accidentally overwritten them.
