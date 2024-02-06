@@ -13,6 +13,7 @@ jobs:
       matrix:
         branch:
           - master
+          - stable
           - 3.6
     steps:
       - uses: actions/checkout@v4
