@@ -122,7 +122,9 @@ to the ``Mob`` and add this code:
         QueueFree();
     }
 
-This completes the `Mob` scene.
+This completes the `Mob` scene. If you test it now you will see that it is still
+not moving. We will create velocity for it when we know where it is coming from on 
+screen.
 
 With the player and enemies ready, in the next part, we'll bring them together
 in a new scene. We'll make enemies spawn randomly around the game board and move
