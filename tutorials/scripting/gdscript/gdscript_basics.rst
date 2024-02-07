@@ -242,8 +242,8 @@ The following is the list of supported operators and their precedence.
 +---------------------------------------+-----------------------------------------------------------------------------+
 | ``await x``                           | `Awaiting for signals or coroutines`_                                       |
 +---------------------------------------+-----------------------------------------------------------------------------+
-| ``x is Node``                         | Type checking                                                               |
-|                                       |                                                                             |
+| | ``x is Node``                       | Type checking                                                               |
+| | ``x is not Node``                   |                                                                             |
 |                                       | See also :ref:`is_instance_of() <class_@GDScript_method_is_instance_of>`    |
 |                                       | function.                                                                   |
 +---------------------------------------+-----------------------------------------------------------------------------+
