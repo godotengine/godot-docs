@@ -24,6 +24,8 @@ In Godot debug builds the navigation debug can also be toggled through the Navig
     NavigationServer2D.set_debug_enabled(false)
     NavigationServer3D.set_debug_enabled(true)
 
+Debug visualizations only show for :ref:`NavigationRegion2D<class_NavigationRegion2D>` and :ref:`NavigationRegion3D<class_NavigationRegion3D>`. Navigation regions created via :ref:`NavigationServer2D<class_NavigationServer2D>` or :ref:`NavigationServer3D<class_NavigationServer3D>` APIs do not interact with the navigation debug tools. If using a :ref:`NavigationPolygon<class_NavigationPolygon>` or :ref:`NavigationMesh<class_NavigationMesh>` created at runtime, the navigation mesh must be updated on the respective 2D or 3D Node after mesh data is set or after baking to update the debug visualization. 
+
 Navigation debug settings
 -------------------------
 
