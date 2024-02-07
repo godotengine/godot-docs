@@ -724,17 +724,21 @@ We suggest to organize GDScript code this way:
     06. enums
     07. constants
     08. @export variables
-    09. public variables
-    10. private variables
-    11. @onready variables
+    09. static public variables
+    10. static private variables
+    11. public variables
+    12. private variables
+    13. @onready variables
 
-    12. optional built-in virtual _init method
-    13. optional built-in virtual _enter_tree() method
-    14. built-in virtual _ready method
-    15. remaining built-in virtual methods
-    16. public methods
-    17. private methods
-    18. subclasses
+    14. optional built-in virtual _init method
+    15. optional built-in virtual _enter_tree() method
+    16. built-in virtual _ready method
+    17. remaining built-in virtual methods
+    18. static public methods
+    19. static private methods
+    20. public methods
+    21. private methods
+    22. subclasses
 
 We optimized the order to make it easy to read the code from top to bottom, to
 help developers reading the code for the first time understand how it works, and
