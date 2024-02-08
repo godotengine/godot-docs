@@ -135,7 +135,7 @@ varying by the deviation (1.0 by default):
 
  .. code-tab:: csharp
 
-    // Prints a normally distributed floating-point number between 0.0 and 1.0.
+    // Prints a random floating-point number from a normal distribution with a mean 0.0 and deviation 1.0.
     GD.Print(GD.Randfn(0.0, 1.0));
 
 :ref:`randf_range() <class_@GlobalScope_method_randf_range>` takes two arguments
@@ -307,9 +307,9 @@ We can apply similar logic from arrays to dictionaries as well:
 
     private Godot.Collections.Dictionary<string, Godot.Collections.Dictionary<string, int>> _metals = new()
     {
-        {"copper", new Godot.Collections.Dictionary{{"quantity", 50}, {"price", 50}}},
-        {"silver", new Godot.Collections.Dictionary{{"quantity", 20}, {"price", 150}}},
-        {"gold", new Godot.Collections.Dictionary{{"quantity", 3}, {"price", 500}}}
+        {"copper", new Godot.Collections.Dictionary<string, int>{{"quantity", 50}, {"price", 50}}},
+        {"silver", new Godot.Collections.Dictionary<string, int>{{"quantity", 20}, {"price", 150}}},
+        {"gold", new Godot.Collections.Dictionary<string, int>{{"quantity", 3}, {"price", 500}}},
     };
 
     public override void _Ready()
@@ -320,9 +320,9 @@ We can apply similar logic from arrays to dictionaries as well:
         }
     }
 
-    public Godot.Collections.Dictionary GetMetal()
+    public Godot.Collections.Dictionary<string, int> GetMetal()
     {
-        var (_, randomMetal) = _metals.ElementAt(GD.Randi() % metals.Count);
+        var (_, randomMetal) = _metals.ElementAt((int)(GD.Randi() % _metals.Count));
         // Returns a random metal value dictionary every time the code runs.
         // The same metal may be selected multiple times in succession.
         return randomMetal;
