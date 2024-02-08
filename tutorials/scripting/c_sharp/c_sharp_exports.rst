@@ -293,7 +293,18 @@ Since Godot 4.0, nodes can be directly exported without having to use NodePaths.
     [Export]
     public Node Node { get; set; }
 
-Custom node classes can also be used, see :ref:`doc_c_sharp_global_classes`.
+A specific type of node can also be directly exported. The list of nodes shown
+after pressing "Assign" in the inspector is filtered to the specified type, and
+only a correct node can be assigned.
+
+.. code-block:: csharp
+
+    [Export]
+    public Sprite2D Sprite2D { get; set; }
+
+Custom node classes can also be exported directly. The filtering behavior
+depends on whether the custom class is a
+:ref:`global class <doc_c_sharp_global_classes>`.
 
 Exporting NodePaths like in Godot 3.x is still possible, in case you need it:
 
