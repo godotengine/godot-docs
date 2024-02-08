@@ -715,7 +715,7 @@ We suggest to organize GDScript code this way:
 
 ::
 
-    01. @tool
+    01. @tool, @icon, @static_unload
     02. class_name
     03. extends
     04. # docstring
@@ -724,21 +724,28 @@ We suggest to organize GDScript code this way:
     06. enums
     07. constants
     08. @export variables
-    09. static public variables
-    10. static private variables
-    11. public variables
-    12. private variables
-    13. @onready variables
+    09. static variables
+    10. variables
+    11. @onready variables
 
-    14. optional built-in virtual _init method
-    15. optional built-in virtual _enter_tree() method
-    16. built-in virtual _ready method
-    17. remaining built-in virtual methods
-    18. static public methods
-    19. static private methods
-    20. public methods
-    21. private methods
+    12. static methods
+    13. overrided methods from Godot base class:
+        1. _init()
+        2. _enter_tree() 
+        3. _ready()
+        4. _process()
+        5. _physics_process()
+        6. remaining methods
+    14. overrided methods from custom inherited base class
+    17. methods
     22. subclasses
+
+And put the class methods and variables in the following order depending their access modifiers:
+
+::
+   
+    1. public
+    2. private
 
 We optimized the order to make it easy to read the code from top to bottom, to
 help developers reading the code for the first time understand how it works, and
