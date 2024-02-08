@@ -1458,7 +1458,7 @@ self
 ^^^^
 
 ``self`` can be used to refer to the current instance and is often equivalent to directly referring to symbols available in
-current script, however, while may seem surprising, it also allows you to access properties, methods and other names in
+the current script, however, while it may seem surprising, it also allows you to access properties, methods, and other names in
 subclasses of the current script.
 
 ::
