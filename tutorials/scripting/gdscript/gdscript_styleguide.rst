@@ -723,8 +723,8 @@ We suggest to organize GDScript code this way:
     05. signals
     06. enums
     07. constants
-    08. @export variables
-    09. static variables
+    08. static variables
+    09. @export variables
     10. variables
     11. @onready variables
 
@@ -737,8 +737,8 @@ We suggest to organize GDScript code this way:
         5. _physics_process()
         6. remaining methods
     14. overrided methods from custom inherited base class
-    17. methods
-    22. subclasses
+    15. methods
+    16. subclasses
 
 And put the class methods and variables in the following order depending their access modifiers:
 
