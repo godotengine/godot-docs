@@ -185,7 +185,7 @@ in case you want to take a look under the hood.
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 | as         | Cast the value to a given type if possible.                                                                                                       |
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| self       | Refers to current class instance.                                                                                                                 |
+| self       | See `self`_.                                                                                                                                      |
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 | signal     | Defines a signal.                                                                                                                                 |
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1293,9 +1293,9 @@ Functions
 
 Functions always belong to a `class <Classes_>`_. The scope priority for
 variable look-up is: local → class member → global. The ``self`` variable is
-always available and is provided as an option for accessing class members, but
-is not always required (and should *not* be sent as the function's first
-argument, unlike Python).
+always available and is provided as an option for accessing class members
+(see `self`_), but is not always required (and should *not* be sent as the
+function's first argument, unlike Python).
 
 ::
 
@@ -1453,6 +1453,32 @@ Here are some examples of expressions::
 
 Identifiers, attributes, and subscripts are valid assignment targets. Other expressions cannot be on the left side of
 an assignment.
+
+self
+""""
+
+``self`` can be used to refer to the current instance and is often equivalent to directly referring to symbols available in
+current script, however, while may seem surprising, it also allows you to access properties, methods and other names in
+subclasses of current script.
+
+::
+
+    class_name MyClass extends Node
+
+    func _ready() -> void:
+        print(self.b)
+
+``b`` is not defined in ``MyClass``, but we (through, e.g., :doc:`documenting our code <gdscript_documentation_comments>`)
+can assume that it will exist in subclasses of ``MyClass``. For example:
+
+::
+
+    extends MyClass
+
+    var b = "Hello from subclass!"
+
+Will print "Hello from subclass!" when added to the scene, but if we forgot to define ``b`` or used ``MyClass`` directly,
+it would result in an error.
 
 if/else/elif
 ^^^^^^^^^^^^
