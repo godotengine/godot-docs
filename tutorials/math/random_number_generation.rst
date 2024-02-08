@@ -436,7 +436,7 @@ ends up empty. When that happens, you reinitialize it to its default value:
 
     private Godot.Collections.Array<string> _fruits = new() { "apple", "orange", "pear", "banana" };
     // A copy of the fruits array so we can restore the original value into `fruits`.
-    private Godot.Collections.Array _fruitsFull;
+    private Godot.Collections.Array<string> _fruitsFull;
 
     public override void _Ready()
     {
@@ -459,12 +459,12 @@ ends up empty. When that happens, you reinitialize it to its default value:
         }
 
         // Get a random fruit, since we shuffled the array,
-        var randomFruit = _fruits[0];
+        string randomFruit = _fruits[0];
         // and remove it from the `_fruits` array.
         _fruits.RemoveAt(0);
         // Returns "apple", "orange", "pear", or "banana" every time the code runs, removing it from the array.
         // When all fruit are removed, it refills the array.
-        return randomFruit.AsString();
+        return randomFruit;
     }
 
 When running the above code, there is a chance to get the same fruit twice in a
