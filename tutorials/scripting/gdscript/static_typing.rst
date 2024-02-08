@@ -185,13 +185,12 @@ type-safe. As you can mix and match typed and dynamic code, at times,
 Godot doesn't have enough information to know if an instruction will trigger
 an error or not at runtime.
 
-This happens when you get a child node. Let's take a timer for example:
-with dynamic code, you can get the node with ``$Timer``. GDScript
-supports `duck-typing <https://stackoverflow.com/a/4205163/8125343>`__,
-so even if your timer is of type ``Timer``, it is also a ``Node`` and an
-``Object``, two classes it extends. With dynamic GDScript, you also
-don't care about the node's type as long as it has the methods you need
-to call.
+When acquiring a child node, such as a timer, dynamic code allows you to reference
+it with ``$Timer``. In GDScript, `duck-typing <https://stackoverflow.com/a/4205163/8125343>`__
+is supported, meaning that Godot doesn't strictly validate an object's **type** for operations. 
+Instead, it checks if the object **implements** specific methods individually. Therefore, you
+don't necessarily need to concern yourself with the node's exact type; as long as it provides
+the required methods, your code will function correctly.
 
 You can use casting to tell Godot the type you expect when you get a
 node: ``($Timer as Timer)``, ``($Player as CharacterBody2D)``, etc.
