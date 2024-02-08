@@ -1455,11 +1455,11 @@ Identifiers, attributes, and subscripts are valid assignment targets. Other expr
 an assignment.
 
 self
-""""
+^^^^
 
 ``self`` can be used to refer to the current instance and is often equivalent to directly referring to symbols available in
 current script, however, while may seem surprising, it also allows you to access properties, methods and other names in
-subclasses of current script.
+subclasses of the current script.
 
 ::
 
@@ -1468,7 +1468,7 @@ subclasses of current script.
     func _ready() -> void:
         print(self.damage)
 
-``damage`` is not defined in ``Weapon``, but we (through, e.g., :doc:`documenting our code <gdscript_documentation_comments>`)
+``damage`` is not defined in ``Weapon``, but we (through, e.g., :ref:`documenting our code <doc_gdscript_documentation_comments>`)
 can assume that it will exist in subclasses of ``Weapon``. For example:
 
 ::
