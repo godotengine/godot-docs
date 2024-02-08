@@ -1463,22 +1463,22 @@ subclasses of current script.
 
 ::
 
-    class_name MyClass extends Node
+    class_name Weapon extends Node
 
     func _ready() -> void:
-        print(self.b)
+        print(self.damage)
 
-``b`` is not defined in ``MyClass``, but we (through, e.g., :doc:`documenting our code <gdscript_documentation_comments>`)
-can assume that it will exist in subclasses of ``MyClass``. For example:
+``damage`` is not defined in ``Weapon``, but we (through, e.g., :doc:`documenting our code <gdscript_documentation_comments>`)
+can assume that it will exist in subclasses of ``Weapon``. For example:
 
 ::
 
-    extends MyClass
+    extends Weapon
 
-    var b = "Hello from subclass!"
+    var damage := 10
 
-Will print "Hello from subclass!" when added to the scene, but if we forgot to define ``b`` or used ``MyClass`` directly,
-it would result in an error.
+Will print "10" when added to the scene, but if we forgot to define ``damage`` on our subclass or
+used ``Weapon`` directly, that would result in an error.
 
 if/else/elif
 ^^^^^^^^^^^^
