@@ -508,7 +508,7 @@ terrain. Godot provides :ref:`class_fastnoiselite` for this, which supports
     public override void _Ready()
     {
         // Configure the FastNoiseLite instance.
-        _noise.NoiseType = NoiseTypeEnum.SimplexSmooth;
+        _noise.NoiseType = FastNoiseLite.NoiseTypeEnum.SimplexSmooth;
         _noise.Seed = (int)GD.Randi();
         _noise.FractalOctaves = 4;
         _noise.Frequency = 1.0f / 20.0f;
