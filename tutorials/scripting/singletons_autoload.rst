@@ -73,21 +73,8 @@ in top-to-bottom order.
 
 .. image:: img/autoload_example.webp
 
-This means that any node can access a singleton named "PlayerVariables" with:
-
-.. tabs::
- .. code-tab:: gdscript GDScript
-
-   var player_vars = get_node("/root/PlayerVariables")
-   player_vars.health -= 10
-
- .. code-tab:: csharp
-
-    var playerVariables = GetNode<PlayerVariables>("/root/PlayerVariables");
-    playerVariables.Health -= 10; // Instance field.
-
 If the **Enable** column is checked (which is the default), then the singleton can
-be accessed directly in GDScript, without requiring ``get_node()``:
+be accessed directly in GDScript:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
