@@ -107,7 +107,7 @@ Alternatively, set it using a function:
 
     public override void _Ready()
     {
-        SetCustomMinimumSize(new Vector2(20, 20));
+        CustomMinimumSize = new Vector2(20, 20);
     }
 
 Input
