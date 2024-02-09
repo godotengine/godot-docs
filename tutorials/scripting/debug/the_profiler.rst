@@ -59,8 +59,8 @@ The main measurements are frame time, physics frame, idle time, and physics time
 - **Physics time** is the time Godot took to update physics tasks, like
   `_physics_process` and built-in nodes set to **Physics** update.
 
-.. note:: In Godot 3, **Frame Time** includes rendering time. Say you find a
-          mysterious spike of lag in your game, but your physics and scripts are
+.. note:: **Frame Time** includes rendering time. Say you find a mysterious
+          spike of lag in your game, but your physics and scripts are
           all running fast. The delay could be due to the appearance of
           particles or visual effects!
 
