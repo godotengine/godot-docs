@@ -136,7 +136,7 @@ Godot comes with a built-in class reference.
 You can search for information about a class, method, property, constant, or
 signal by any one of the following methods:
 
-* Pressing :kbd:`F1` (or :kbd:`Alt + Space` on macOS, or :kbd:`fn + F1` for laptops with a :kbd:`fn` key) anywhere in the editor.
+* Pressing :kbd:`F1` (or :kbd:`Opt + Space` on macOS, or :kbd:`fn + F1` for laptops with a :kbd:`fn` key) anywhere in the editor.
 * Clicking the "Search Help" button in the top-right of the Script main screen.
 * Clicking on the Help menu and Search Help.
 * Clicking while pressing the :kbd:`Ctrl` key on a class name, function name,

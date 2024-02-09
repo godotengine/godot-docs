@@ -497,11 +497,12 @@ out form (:kbd:`Control`/:kbd:`Command`). For combinations, use the ``+`` symbol
 with a space on either side of the symbol.
 
 Make sure to mention shortcuts that differ on macOS compared to other platforms.
-On macOS, ``Cmd`` often replaces ``Ctrl`` in keyboard shortcuts.
+You can find a list of all shortcuts, including what they are on macOS, on
+:ref:`this page <doc_default_key_mapping>`.
 
 Try to integrate the shortcut into sentences the best you can. Here are some
 examples with the ``:kbd:`` tag left as-is for better visibility:
 
-- Press ``:kbd:`Ctrl + Alt + T``` to toggle the panel (``:kbd:`Cmd + Alt + T``` on macOS).
+- Press ``:kbd:`Ctrl + Alt + T``` to toggle the panel (``:kbd:`Opt + Cmd + T``` on macOS).
 - Press ``:kbd:`Space``` and hold the left mouse button to pan in the 2D editor.
 - Press ``:kbd:`Shift + Up Arrow``` to move the node upwards by 8 pixels.
