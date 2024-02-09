@@ -1458,7 +1458,9 @@ self
 ^^^^
 
 ``self`` can be used to refer to the current instance and is often equivalent to directly referring to symbols available in
-the current script, however, it also allows you to access properties, methods, and other names in subclasses of the current script.
+the current script, however, while this is generally considered a bad practice, ``self`` also allows you to access properties,
+methods, and other names that are defined dynamically (i.e. are expected to exist in subtypes of the current script, or are
+provided using :ref:`_get<class_Object_private_method__get>`).
 
 ::
 
@@ -1467,17 +1469,16 @@ the current script, however, it also allows you to access properties, methods, a
     func _ready() -> void:
         print(self.damage)
 
-``damage`` is not defined in ``Weapon``, but we (through, e.g., :ref:`documenting our code <doc_gdscript_documentation_comments>`)
-can assume that it will exist in subclasses of ``Weapon``. For example:
+``damage`` is not defined in ``Weapon``, but using ``self`` we can assume that it will exist at runtime. For example:
 
 ::
 
-    extends Weapon
+    class_name Pistol extends Weapon
 
     var damage := 10
 
-Will print "10" when added to the scene, but if we forgot to define ``damage`` on our subclass or
-used ``Weapon`` directly, that would result in an error.
+Here we provide ``damage`` in our subtype of ``Weapon``, therefore it will print "10" when added to the scene, but if
+we forgot to define ``damage`` on our subtype or used ``Weapon`` directly, that would result in an error.
 
 if/else/elif
 ^^^^^^^^^^^^
