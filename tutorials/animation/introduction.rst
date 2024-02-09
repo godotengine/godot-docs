@@ -240,7 +240,7 @@ in the next chapter.
 Track settings
 ~~~~~~~~~~~~~~
 
-Each track has a settings panel at the end, where you can set its update
+Each property track has a settings panel at the end, where you can set its update
 mode, track interpolation, and loop mode.
 
 .. figure:: img/animation_track_settings.webp
