@@ -335,7 +335,7 @@ The ``visible`` property is a boolean that controls the visibility of our node.
 The line ``visible = not visible`` toggles the value. If ``visible`` is
 ``true``, it becomes ``false``, and vice-versa.
 
-If you run the scene now, you will see that the sprite blinks on and off, at one
+If you run the Node2D scene now, you will see that the sprite blinks on and off, at one
 second intervals.
 
 Complete script
