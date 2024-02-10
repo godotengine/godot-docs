@@ -281,6 +281,14 @@ Notification received when the object is initialized, before its script is attac
 
 Notification received when the object is about to be deleted. Can act as the deconstructor of some programming languages.
 
+.. _class_Object_constant_NOTIFICATION_EXTENSION_RELOADED:
+
+.. rst-class:: classref-constant
+
+**NOTIFICATION_EXTENSION_RELOADED** = ``2``
+
+Notification received when the object finishes hot reloading. This notification is only sent for extensions classes and derived.
+
 .. rst-class:: classref-section-separator
 
 ----

@@ -30,7 +30,7 @@ Used in scripting by :ref:`EditorExportPlugin<class_EditorExportPlugin>` to conf
 Tutorials
 ---------
 
-- `$DOCS_URL/tutorials/platform/consoles.html <Console support in Godot>`__
+- :doc:`Console support in Godot <../tutorials/platform/consoles>`
 
 .. rst-class:: classref-reftable-group
 

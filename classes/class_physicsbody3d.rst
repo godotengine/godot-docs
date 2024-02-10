@@ -69,6 +69,8 @@ Methods
    +---------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`PhysicsBody3D[]<class_PhysicsBody3D>`             | :ref:`get_collision_exceptions<class_PhysicsBody3D_method_get_collision_exceptions>` **(** **)**                                                                                                                                                                                                                                                                      |
    +---------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector3<class_Vector3>`                           | :ref:`get_gravity<class_PhysicsBody3D_method_get_gravity>` **(** **)** |const|                                                                                                                                                                                                                                                                                        |
+   +---------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`KinematicCollision3D<class_KinematicCollision3D>` | :ref:`move_and_collide<class_PhysicsBody3D_method_move_and_collide>` **(** :ref:`Vector3<class_Vector3>` motion, :ref:`bool<class_bool>` test_only=false, :ref:`float<class_float>` safe_margin=0.001, :ref:`bool<class_bool>` recovery_as_collision=false, :ref:`int<class_int>` max_collisions=1 **)**                                                              |
    +---------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                    | :ref:`remove_collision_exception_with<class_PhysicsBody3D_method_remove_collision_exception_with>` **(** :ref:`Node<class_Node>` body **)**                                                                                                                                                                                                                           |
@@ -225,6 +227,18 @@ Returns ``true`` if the specified linear or rotational ``axis`` is locked.
 :ref:`PhysicsBody3D[]<class_PhysicsBody3D>` **get_collision_exceptions** **(** **)**
 
 Returns an array of nodes that were added as collision exceptions for this body.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_PhysicsBody3D_method_get_gravity:
+
+.. rst-class:: classref-method
+
+:ref:`Vector3<class_Vector3>` **get_gravity** **(** **)** |const|
+
+Returns the gravity vector computed from all sources that can affect the body, including all gravity overrides from :ref:`Area3D<class_Area3D>` nodes and the global world gravity.
 
 .. rst-class:: classref-item-separator
 

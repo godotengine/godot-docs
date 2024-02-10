@@ -139,6 +139,8 @@ Methods
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                               | :ref:`get_process_info<class_NavigationServer3D_method_get_process_info>` **(** :ref:`ProcessInfo<enum_NavigationServer3D_ProcessInfo>` process_info **)** |const|                                                                                                                                                                                                      |
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                             | :ref:`is_baking_navigation_mesh<class_NavigationServer3D_method_is_baking_navigation_mesh>` **(** :ref:`NavigationMesh<class_NavigationMesh>` navigation_mesh **)** |const|                                                                                                                                                                                             |
+   +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`RID<class_RID>`                               | :ref:`link_create<class_NavigationServer3D_method_link_create>` **(** **)**                                                                                                                                                                                                                                                                                             |
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                             | :ref:`link_get_enabled<class_NavigationServer3D_method_link_get_enabled>` **(** :ref:`RID<class_RID>` link **)** |const|                                                                                                                                                                                                                                                |
@@ -984,6 +986,18 @@ Returns all created navigation map :ref:`RID<class_RID>`\ s on the NavigationSer
 :ref:`int<class_int>` **get_process_info** **(** :ref:`ProcessInfo<enum_NavigationServer3D_ProcessInfo>` process_info **)** |const|
 
 Returns information about the current state of the NavigationServer. See :ref:`ProcessInfo<enum_NavigationServer3D_ProcessInfo>` for a list of available states.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_NavigationServer3D_method_is_baking_navigation_mesh:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **is_baking_navigation_mesh** **(** :ref:`NavigationMesh<class_NavigationMesh>` navigation_mesh **)** |const|
+
+Returns ``true`` when the provided navigation mesh is being baked on a background thread.
 
 .. rst-class:: classref-item-separator
 

@@ -55,6 +55,8 @@ Methods
    +---------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`PhysicsBody2D[]<class_PhysicsBody2D>`             | :ref:`get_collision_exceptions<class_PhysicsBody2D_method_get_collision_exceptions>` **(** **)**                                                                                                                                                                                                                             |
    +---------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector2<class_Vector2>`                           | :ref:`get_gravity<class_PhysicsBody2D_method_get_gravity>` **(** **)** |const|                                                                                                                                                                                                                                               |
+   +---------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`KinematicCollision2D<class_KinematicCollision2D>` | :ref:`move_and_collide<class_PhysicsBody2D_method_move_and_collide>` **(** :ref:`Vector2<class_Vector2>` motion, :ref:`bool<class_bool>` test_only=false, :ref:`float<class_float>` safe_margin=0.08, :ref:`bool<class_bool>` recovery_as_collision=false **)**                                                              |
    +---------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                    | :ref:`remove_collision_exception_with<class_PhysicsBody2D_method_remove_collision_exception_with>` **(** :ref:`Node<class_Node>` body **)**                                                                                                                                                                                  |
@@ -90,6 +92,18 @@ Adds a body to the list of bodies that this body can't collide with.
 :ref:`PhysicsBody2D[]<class_PhysicsBody2D>` **get_collision_exceptions** **(** **)**
 
 Returns an array of nodes that were added as collision exceptions for this body.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_PhysicsBody2D_method_get_gravity:
+
+.. rst-class:: classref-method
+
+:ref:`Vector2<class_Vector2>` **get_gravity** **(** **)** |const|
+
+Returns the gravity vector computed from all sources that can affect the body, including all gravity overrides from :ref:`Area2D<class_Area2D>` nodes and the global world gravity.
 
 .. rst-class:: classref-item-separator
 

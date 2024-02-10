@@ -29,21 +29,23 @@ Properties
 .. table::
    :widths: auto
 
-   +-----------------------------+-----------------------------------------------------------------+-----------+
-   | :ref:`bool<class_bool>`     | :ref:`checkable<class_EditorProperty_property_checkable>`       | ``false`` |
-   +-----------------------------+-----------------------------------------------------------------+-----------+
-   | :ref:`bool<class_bool>`     | :ref:`checked<class_EditorProperty_property_checked>`           | ``false`` |
-   +-----------------------------+-----------------------------------------------------------------+-----------+
-   | :ref:`bool<class_bool>`     | :ref:`deletable<class_EditorProperty_property_deletable>`       | ``false`` |
-   +-----------------------------+-----------------------------------------------------------------+-----------+
-   | :ref:`bool<class_bool>`     | :ref:`draw_warning<class_EditorProperty_property_draw_warning>` | ``false`` |
-   +-----------------------------+-----------------------------------------------------------------+-----------+
-   | :ref:`bool<class_bool>`     | :ref:`keying<class_EditorProperty_property_keying>`             | ``false`` |
-   +-----------------------------+-----------------------------------------------------------------+-----------+
-   | :ref:`String<class_String>` | :ref:`label<class_EditorProperty_property_label>`               | ``""``    |
-   +-----------------------------+-----------------------------------------------------------------+-----------+
-   | :ref:`bool<class_bool>`     | :ref:`read_only<class_EditorProperty_property_read_only>`       | ``false`` |
-   +-----------------------------+-----------------------------------------------------------------+-----------+
+   +-----------------------------+-----------------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`     | :ref:`checkable<class_EditorProperty_property_checkable>`                         | ``false`` |
+   +-----------------------------+-----------------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`     | :ref:`checked<class_EditorProperty_property_checked>`                             | ``false`` |
+   +-----------------------------+-----------------------------------------------------------------------------------+-----------+
+   | :ref:`String<class_String>` | :ref:`configuration_warning<class_EditorProperty_property_configuration_warning>` | ``""``    |
+   +-----------------------------+-----------------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`     | :ref:`deletable<class_EditorProperty_property_deletable>`                         | ``false`` |
+   +-----------------------------+-----------------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`     | :ref:`draw_warning<class_EditorProperty_property_draw_warning>`                   | ``false`` |
+   +-----------------------------+-----------------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`     | :ref:`keying<class_EditorProperty_property_keying>`                               | ``false`` |
+   +-----------------------------+-----------------------------------------------------------------------------------+-----------+
+   | :ref:`String<class_String>` | :ref:`label<class_EditorProperty_property_label>`                                 | ``""``    |
+   +-----------------------------+-----------------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`     | :ref:`read_only<class_EditorProperty_property_read_only>`                         | ``false`` |
+   +-----------------------------+-----------------------------------------------------------------------------------+-----------+
 
 .. rst-class:: classref-reftable-group
 
@@ -248,6 +250,23 @@ Used by the inspector, set to ``true`` when the property is checkable.
 - :ref:`bool<class_bool>` **is_checked** **(** **)**
 
 Used by the inspector, set to ``true`` when the property is checked.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorProperty_property_configuration_warning:
+
+.. rst-class:: classref-property
+
+:ref:`String<class_String>` **configuration_warning** = ``""``
+
+.. rst-class:: classref-property-setget
+
+- void **set_configuration_warning** **(** :ref:`String<class_String>` value **)**
+- :ref:`String<class_String>` **get_configuration_warning** **(** **)**
+
+Used by the inspector, set to show a configuration warning on the property.
 
 .. rst-class:: classref-item-separator
 

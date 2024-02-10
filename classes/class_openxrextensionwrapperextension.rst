@@ -30,6 +30,8 @@ Methods
    :widths: auto
 
    +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                               | :ref:`_get_composition_layer<class_OpenXRExtensionWrapperExtension_private_method__get_composition_layer>` **(** **)** |virtual|                                                                                                      |
+   +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Dictionary<class_Dictionary>`                 | :ref:`_get_requested_extensions<class_OpenXRExtensionWrapperExtension_private_method__get_requested_extensions>` **(** **)** |virtual|                                                                                                |
    +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                | :ref:`_on_before_instance_created<class_OpenXRExtensionWrapperExtension_private_method__on_before_instance_created>` **(** **)** |virtual|                                                                                            |
@@ -89,6 +91,18 @@ Methods
 
 Method Descriptions
 -------------------
+
+.. _class_OpenXRExtensionWrapperExtension_private_method__get_composition_layer:
+
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **_get_composition_layer** **(** **)** |virtual|
+
+Returns a pointer to a ``XrCompositionLayerBaseHeader`` struct to provide a composition layer. This will only be called if the extension previously registered itself with :ref:`OpenXRAPIExtension.register_composition_layer_provider<class_OpenXRAPIExtension_method_register_composition_layer_provider>`.
+
+.. rst-class:: classref-item-separator
+
+----
 
 .. _class_OpenXRExtensionWrapperExtension_private_method__get_requested_extensions:
 

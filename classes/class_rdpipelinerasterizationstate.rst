@@ -90,9 +90,7 @@ The cull mode to use when drawing polygons, which determines whether front faces
 - void **set_depth_bias_clamp** **(** :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_depth_bias_clamp** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+A limit for how much each depth value can be offset. If negative, it serves as a minimum value, but if positive, it serves as a maximum value.
 
 .. rst-class:: classref-item-separator
 
@@ -109,9 +107,7 @@ The cull mode to use when drawing polygons, which determines whether front faces
 - void **set_depth_bias_constant_factor** **(** :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_depth_bias_constant_factor** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+A constant offset added to each depth value. Applied after :ref:`depth_bias_slope_factor<class_RDPipelineRasterizationState_property_depth_bias_slope_factor>`.
 
 .. rst-class:: classref-item-separator
 
@@ -128,9 +124,7 @@ The cull mode to use when drawing polygons, which determines whether front faces
 - void **set_depth_bias_enabled** **(** :ref:`bool<class_bool>` value **)**
 - :ref:`bool<class_bool>` **get_depth_bias_enabled** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+If ``true``, each generated depth value will by offset by some amount. The specific amount is generated per polygon based on the values of :ref:`depth_bias_slope_factor<class_RDPipelineRasterizationState_property_depth_bias_slope_factor>` and :ref:`depth_bias_constant_factor<class_RDPipelineRasterizationState_property_depth_bias_constant_factor>`.
 
 .. rst-class:: classref-item-separator
 
@@ -147,9 +141,7 @@ The cull mode to use when drawing polygons, which determines whether front faces
 - void **set_depth_bias_slope_factor** **(** :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_depth_bias_slope_factor** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+A constant scale applied to the slope of each polygons' depth. Applied before :ref:`depth_bias_constant_factor<class_RDPipelineRasterizationState_property_depth_bias_constant_factor>`.
 
 .. rst-class:: classref-item-separator
 
@@ -183,9 +175,7 @@ If ``true``, primitives are discarded immediately before the rasterization stage
 - void **set_enable_depth_clamp** **(** :ref:`bool<class_bool>` value **)**
 - :ref:`bool<class_bool>` **get_enable_depth_clamp** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+If ``true``, clamps depth values according to the minimum and maximum depth of the associated viewport.
 
 .. rst-class:: classref-item-separator
 

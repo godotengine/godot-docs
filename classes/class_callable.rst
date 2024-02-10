@@ -242,10 +242,22 @@ void **call_deferred** **(** ... **)** |vararg| |const|
 
 Calls the method represented by this **Callable** in deferred mode, i.e. at the end of the current frame. Arguments can be passed and should match the method's signature.
 
-::
+
+.. tabs::
+
+ .. code-tab:: gdscript
 
     func _ready():
         grab_focus.call_deferred()
+
+ .. code-tab:: csharp
+
+    public override void _Ready()
+    {
+        Callable.From(GrabFocus).CallDeferred();
+    }
+
+
 
 See also :ref:`Object.call_deferred<class_Object_method_call_deferred>`.
 
