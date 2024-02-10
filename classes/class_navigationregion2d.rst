@@ -87,6 +87,8 @@ Methods
    +-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`RID<class_RID>`   | :ref:`get_rid<class_NavigationRegion2D_method_get_rid>` **(** **)** |const|                                                                                                 |
    +-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | :ref:`is_baking<class_NavigationRegion2D_method_is_baking>` **(** **)** |const|                                                                                             |
+   +-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                    | :ref:`set_avoidance_layer_value<class_NavigationRegion2D_method_set_avoidance_layer_value>` **(** :ref:`int<class_int>` layer_number, :ref:`bool<class_bool>` value **)**   |
    +-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                    | :ref:`set_navigation_layer_value<class_NavigationRegion2D_method_set_navigation_layer_value>` **(** :ref:`int<class_int>` layer_number, :ref:`bool<class_bool>` value **)** |
@@ -344,6 +346,18 @@ Returns the :ref:`RID<class_RID>` of this region on the :ref:`NavigationServer2D
 :ref:`RID<class_RID>` **get_rid** **(** **)** |const|
 
 Returns the :ref:`RID<class_RID>` of this region on the :ref:`NavigationServer2D<class_NavigationServer2D>`. Combined with :ref:`NavigationServer2D.map_get_closest_point_owner<class_NavigationServer2D_method_map_get_closest_point_owner>` can be used to identify the **NavigationRegion2D** closest to a point on the merged navigation map.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_NavigationRegion2D_method_is_baking:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **is_baking** **(** **)** |const|
+
+Returns ``true`` when the :ref:`NavigationPolygon<class_NavigationPolygon>` is being baked on a background thread.
 
 .. rst-class:: classref-item-separator
 

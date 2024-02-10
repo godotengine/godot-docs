@@ -114,9 +114,13 @@ The spotlight's *angular* attenuation curve. See also :ref:`spot_attenuation<cla
 - void **set_param** **(** :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_param** **(** **)**
 
-The spotlight's light energy (drop-off) attenuation curve. A number of presets are available in the **Inspector** by right-clicking the curve. Zero and negative values are allowed but can produce unusual effects. See also :ref:`spot_angle_attenuation<class_SpotLight3D_property_spot_angle_attenuation>`.
+Controls the distance attenuation function for spotlights.
 
-\ **Note:** Very high :ref:`spot_attenuation<class_SpotLight3D_property_spot_attenuation>` values (typically above 10) can impact performance negatively if the light is made to use a larger :ref:`spot_range<class_SpotLight3D_property_spot_range>` to compensate. This is because culling opportunities will become less common and shading costs will be increased (as the light will cover more pixels on screen while resulting in the same amount of brightness). To improve performance, use the lowest :ref:`spot_attenuation<class_SpotLight3D_property_spot_attenuation>` value possible for the visuals you're trying to achieve.
+A value of ``0.0`` smoothly attenuates light at the edge of the range. A value of ``1.0`` approaches a physical lighting model. A value of ``0.5`` approximates linear attenuation.
+
+\ **Note:** Setting it to ``1.0`` may result in distant objects receiving minimal light, even within range. For example, with a range of ``4096``, an object at ``100`` units receives less than ``0.1`` energy.
+
+\ **Note:** Using negative or values higher than ``10.0`` may lead to unexpected results.
 
 .. rst-class:: classref-item-separator
 

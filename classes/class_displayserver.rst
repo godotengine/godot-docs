@@ -466,7 +466,7 @@ Display server supports setting the mouse cursor shape to a custom image. **Wind
 
 :ref:`Feature<enum_DisplayServer_Feature>` **FEATURE_NATIVE_DIALOG** = ``9``
 
-Display server supports spawning dialogs using the operating system's native look-and-feel. **macOS**
+Display server supports spawning dialogs using the operating system's native look-and-feel. **Windows, macOS, Linux (X11/Wayland)**
 
 .. _class_DisplayServer_constant_FEATURE_IME:
 

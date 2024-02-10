@@ -3862,6 +3862,8 @@ Main window content is expanded to the full size of the window. Unlike a borderl
 
 Main window initial position (in virtual desktop coordinates), this setting is used only if :ref:`display/window/size/initial_position_type<class_ProjectSettings_property_display/window/size/initial_position_type>` is set to "Absolute" (``0``).
 
+\ **Note:** This setting only affects the exported project, or when the project is run from the command line. In the editor, the value of :ref:`EditorSettings.run/window_placement/rect_custom_position<class_EditorSettings_property_run/window_placement/rect_custom_position>` is used instead.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -3880,6 +3882,8 @@ Main window initial position.
 
 \ ``2`` - "Other Screen Center", :ref:`display/window/size/initial_screen<class_ProjectSettings_property_display/window/size/initial_screen>` is used to set the screen.
 
+\ **Note:** This setting only affects the exported project, or when the project is run from the command line. In the editor, the value of :ref:`EditorSettings.run/window_placement/rect<class_EditorSettings_property_run/window_placement/rect>` is used instead.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -3891,6 +3895,8 @@ Main window initial position.
 :ref:`int<class_int>` **display/window/size/initial_screen** = ``0``
 
 Main window initial screen, this setting is used only if :ref:`display/window/size/initial_position_type<class_ProjectSettings_property_display/window/size/initial_position_type>` is set to "Other Screen Center" (``2``).
+
+\ **Note:** This setting only affects the exported project, or when the project is run from the command line. In the editor, the value of :ref:`EditorSettings.run/window_placement/screen<class_EditorSettings_property_run/window_placement/screen>` is used instead.
 
 .. rst-class:: classref-item-separator
 
@@ -4086,7 +4092,7 @@ If ``true`` subwindows are embedded in the main window.
 
 :ref:`int<class_int>` **display/window/vsync/vsync_mode** = ``1``
 
-Sets the V-Sync mode for the main game window.
+Sets the V-Sync mode for the main game window. The editor's own V-Sync mode can be set using :ref:`EditorSettings.interface/editor/vsync_mode<class_EditorSettings_property_interface/editor/vsync_mode>`.
 
 See :ref:`VSyncMode<enum_DisplayServer_VSyncMode>` for possible values and how they affect the behavior of your application.
 
@@ -8730,9 +8736,15 @@ If in doubt, leave this setting empty.
 
 :ref:`float<class_float>` **physics/2d/default_angular_damp** = ``1.0``
 
-The default angular damp in 2D.
+The default rotational motion damping in 2D. Damping is used to gradually slow down physical objects over time. RigidBodies will fall back to this value when combining their own damping values and no area damping value is present.
 
-\ **Note:** Good values are in the range ``0`` to ``1``. At value ``0`` objects will keep moving with the same velocity. Values greater than ``1`` will aim to reduce the velocity to ``0`` in less than a second e.g. a value of ``2`` will aim to reduce the velocity to ``0`` in half a second. A value equal to or greater than the physics frame rate (:ref:`physics/common/physics_ticks_per_second<class_ProjectSettings_property_physics/common/physics_ticks_per_second>`, ``60`` by default) will bring the object to a stop in one iteration.
+Suggested values are in the range ``0`` to ``30``. At value ``0`` objects will keep moving with the same velocity. Greater values will stop the object faster. A value equal to or greater than the physics tick rate (:ref:`physics/common/physics_ticks_per_second<class_ProjectSettings_property_physics/common/physics_ticks_per_second>`) will bring the object to a stop in one iteration.
+
+\ **Note:** Godot damping calculations are velocity-dependent, meaning bodies moving faster will take a longer time to come to rest. They do not simulate inertia, friction, or air resistance. Therefore heavier or larger bodies will lose speed at the same proportional rate as lighter or smaller bodies.
+
+During each physics tick, Godot will multiply the linear velocity of RigidBodies by ``1.0 - combined_damp / physics_ticks_per_second``. By default, bodies combine damp factors: ``combined_damp`` is the sum of the damp value of the body and this value or the area's value the body is in. See :ref:`DampMode<enum_RigidBody2D_DampMode>`.
+
+\ **Warning:** Godot's damping calculations are simulation tick rate dependent. Changing :ref:`physics/common/physics_ticks_per_second<class_ProjectSettings_property_physics/common/physics_ticks_per_second>` may significantly change the outcomes and feel of your simulation. This is true for the entire range of damping values greater than 0. To get back to a similar feel, you also need to change your damp values. This needed change is not proportional and differs from case to case.
 
 .. rst-class:: classref-item-separator
 
@@ -8802,9 +8814,15 @@ The default gravity direction in 2D.
 
 :ref:`float<class_float>` **physics/2d/default_linear_damp** = ``0.1``
 
-The default linear damp in 2D.
+The default linear motion damping in 2D. Damping is used to gradually slow down physical objects over time. RigidBodies will fall back to this value when combining their own damping values and no area damping value is present.
 
-\ **Note:** Good values are in the range ``0`` to ``1``. At value ``0`` objects will keep moving with the same velocity. Values greater than ``1`` will aim to reduce the velocity to ``0`` in less than a second e.g. a value of ``2`` will aim to reduce the velocity to ``0`` in half a second. A value equal to or greater than the physics frame rate (:ref:`physics/common/physics_ticks_per_second<class_ProjectSettings_property_physics/common/physics_ticks_per_second>`, ``60`` by default) will bring the object to a stop in one iteration.
+Suggested values are in the range ``0`` to ``30``. At value ``0`` objects will keep moving with the same velocity. Greater values will stop the object faster. A value equal to or greater than the physics tick rate (:ref:`physics/common/physics_ticks_per_second<class_ProjectSettings_property_physics/common/physics_ticks_per_second>`) will bring the object to a stop in one iteration.
+
+\ **Note:** Godot damping calculations are velocity-dependent, meaning bodies moving faster will take a longer time to come to rest. They do not simulate inertia, friction, or air resistance. Therefore heavier or larger bodies will lose speed at the same proportional rate as lighter or smaller bodies.
+
+During each physics tick, Godot will multiply the linear velocity of RigidBodies by ``1.0 - combined_damp / physics_ticks_per_second``, where ``combined_damp`` is the sum of the linear damp of the body and this value, or the area's value the body is in, assuming the body defaults to combine damp values. See :ref:`DampMode<enum_RigidBody2D_DampMode>`.
+
+\ **Warning:** Godot's damping calculations are simulation tick rate dependent. Changing :ref:`physics/common/physics_ticks_per_second<class_ProjectSettings_property_physics/common/physics_ticks_per_second>` may significantly change the outcomes and feel of your simulation. This is true for the entire range of damping values greater than 0. To get back to a similar feel, you also need to change your damp values. This needed change is not proportional and differs from case to case.
 
 .. rst-class:: classref-item-separator
 
@@ -8954,9 +8972,15 @@ Time (in seconds) of inactivity before which a 2D physics body will put to sleep
 
 :ref:`float<class_float>` **physics/3d/default_angular_damp** = ``0.1``
 
-The default angular damp in 3D.
+The default rotational motion damping in 3D. Damping is used to gradually slow down physical objects over time. RigidBodies will fall back to this value when combining their own damping values and no area damping value is present.
 
-\ **Note:** Good values are in the range ``0`` to ``1``. At value ``0`` objects will keep moving with the same velocity. Values greater than ``1`` will aim to reduce the velocity to ``0`` in less than a second e.g. a value of ``2`` will aim to reduce the velocity to ``0`` in half a second. A value equal to or greater than the physics frame rate (:ref:`physics/common/physics_ticks_per_second<class_ProjectSettings_property_physics/common/physics_ticks_per_second>`, ``60`` by default) will bring the object to a stop in one iteration.
+Suggested values are in the range ``0`` to ``30``. At value ``0`` objects will keep moving with the same velocity. Greater values will stop the object faster. A value equal to or greater than the physics tick rate (:ref:`physics/common/physics_ticks_per_second<class_ProjectSettings_property_physics/common/physics_ticks_per_second>`) will bring the object to a stop in one iteration.
+
+\ **Note:** Godot damping calculations are velocity-dependent, meaning bodies moving faster will take a longer time to come to rest. They do not simulate inertia, friction, or air resistance. Therefore heavier or larger bodies will lose speed at the same proportional rate as lighter or smaller bodies.
+
+During each physics tick, Godot will multiply the angular velocity of RigidBodies by ``1.0 - combined_damp / physics_ticks_per_second``. By default, bodies combine damp factors: ``combined_damp`` is the sum of the damp value of the body and this value or the area's value the body is in. See :ref:`DampMode<enum_RigidBody3D_DampMode>`.
+
+\ **Warning:** Godot's damping calculations are simulation tick rate dependent. Changing :ref:`physics/common/physics_ticks_per_second<class_ProjectSettings_property_physics/common/physics_ticks_per_second>` may significantly change the outcomes and feel of your simulation. This is true for the entire range of damping values greater than 0. To get back to a similar feel, you also need to change your damp values. This needed change is not proportional and differs from case to case.
 
 .. rst-class:: classref-item-separator
 
@@ -9026,9 +9050,15 @@ The default gravity direction in 3D.
 
 :ref:`float<class_float>` **physics/3d/default_linear_damp** = ``0.1``
 
-The default linear damp in 3D.
+The default linear motion damping in 3D. Damping is used to gradually slow down physical objects over time. RigidBodies will fall back to this value when combining their own damping values and no area damping value is present.
 
-\ **Note:** Good values are in the range ``0`` to ``1``. At value ``0`` objects will keep moving with the same velocity. Values greater than ``1`` will aim to reduce the velocity to ``0`` in less than a second e.g. a value of ``2`` will aim to reduce the velocity to ``0`` in half a second. A value equal to or greater than the physics frame rate (:ref:`physics/common/physics_ticks_per_second<class_ProjectSettings_property_physics/common/physics_ticks_per_second>`, ``60`` by default) will bring the object to a stop in one iteration.
+Suggested values are in the range ``0`` to ``30``. At value ``0`` objects will keep moving with the same velocity. Greater values will stop the object faster. A value equal to or greater than the physics tick rate (:ref:`physics/common/physics_ticks_per_second<class_ProjectSettings_property_physics/common/physics_ticks_per_second>`) will bring the object to a stop in one iteration.
+
+\ **Note:** Godot damping calculations are velocity-dependent, meaning bodies moving faster will take a longer time to come to rest. They do not simulate inertia, friction, or air resistance. Therefore heavier or larger bodies will lose speed at the same proportional rate as lighter or smaller bodies.
+
+During each physics tick, Godot will multiply the linear velocity of RigidBodies by ``1.0 - combined_damp / physics_ticks_per_second``. By default, bodies combine damp factors: ``combined_damp`` is the sum of the damp value of the body and this value or the area's value the body is in. See :ref:`DampMode<enum_RigidBody3D_DampMode>`.
+
+\ **Warning:** Godot's damping calculations are simulation tick rate dependent. Changing :ref:`physics/common/physics_ticks_per_second<class_ProjectSettings_property_physics/common/physics_ticks_per_second>` may significantly change the outcomes and feel of your simulation. This is true for the entire range of damping values greater than 0. To get back to a similar feel, you also need to change your damp values. This needed change is not proportional and differs from case to case.
 
 .. rst-class:: classref-item-separator
 
@@ -11295,9 +11325,7 @@ The texture *must* use a lossless compression format so that colors can be match
 
 :ref:`float<class_float>` **threading/worker_pool/low_priority_thread_ratio** = ``0.3``
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+The ratio of :ref:`WorkerThreadPool<class_WorkerThreadPool>`'s threads that will be reserved for low-priority tasks. For example, if 10 threads are available and this value is set to ``0.3``, 3 of the worker threads will be reserved for low-priority tasks. The actual value won't exceed the number of CPU cores minus one, and if possible, at least one worker thread will be dedicated to low-priority tasks.
 
 .. rst-class:: classref-item-separator
 
@@ -11333,7 +11361,7 @@ Action map configuration to load by default.
 
 :ref:`bool<class_bool>` **xr/openxr/enabled** = ``false``
 
-If ``true`` Godot will setup and initialize OpenXR on startup.
+If ``true``, Godot will setup and initialize OpenXR on startup.
 
 .. rst-class:: classref-item-separator
 

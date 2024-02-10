@@ -129,6 +129,8 @@ Methods
    +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`RID[]<class_RID>`                             | :ref:`get_maps<class_NavigationServer2D_method_get_maps>` **(** **)** |const|                                                                                                                                                                                                                                                                                                    |
    +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                             | :ref:`is_baking_navigation_polygon<class_NavigationServer2D_method_is_baking_navigation_polygon>` **(** :ref:`NavigationPolygon<class_NavigationPolygon>` navigation_polygon **)** |const|                                                                                                                                                                                       |
+   +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`RID<class_RID>`                               | :ref:`link_create<class_NavigationServer2D_method_link_create>` **(** **)**                                                                                                                                                                                                                                                                                                      |
    +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                             | :ref:`link_get_enabled<class_NavigationServer2D_method_link_get_enabled>` **(** :ref:`RID<class_RID>` link **)** |const|                                                                                                                                                                                                                                                         |
@@ -787,6 +789,18 @@ Returns ``true`` when the NavigationServer has debug enabled.
 :ref:`RID[]<class_RID>` **get_maps** **(** **)** |const|
 
 Returns all created navigation map :ref:`RID<class_RID>`\ s on the NavigationServer. This returns both 2D and 3D created navigation maps as there is technically no distinction between them.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_NavigationServer2D_method_is_baking_navigation_polygon:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **is_baking_navigation_polygon** **(** :ref:`NavigationPolygon<class_NavigationPolygon>` navigation_polygon **)** |const|
+
+Returns ``true`` when the provided navigation polygon is being baked on a background thread.
 
 .. rst-class:: classref-item-separator
 

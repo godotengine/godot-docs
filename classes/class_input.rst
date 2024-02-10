@@ -97,6 +97,8 @@ Methods
    +-------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Vector2<class_Vector2>`                                           | :ref:`get_joy_vibration_strength<class_Input_method_get_joy_vibration_strength>` **(** :ref:`int<class_int>` device **)**                                                                                                                                                                                    |
    +-------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector2<class_Vector2>`                                           | :ref:`get_last_mouse_screen_velocity<class_Input_method_get_last_mouse_screen_velocity>` **(** **)**                                                                                                                                                                                                         |
+   +-------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Vector2<class_Vector2>`                                           | :ref:`get_last_mouse_velocity<class_Input_method_get_last_mouse_velocity>` **(** **)**                                                                                                                                                                                                                       |
    +-------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Vector3<class_Vector3>`                                           | :ref:`get_magnetometer<class_Input_method_get_magnetometer>` **(** **)** |const|                                                                                                                                                                                                                             |
@@ -705,6 +707,18 @@ Returns the duration of the current vibration effect in seconds.
 :ref:`Vector2<class_Vector2>` **get_joy_vibration_strength** **(** :ref:`int<class_int>` device **)**
 
 Returns the strength of the joypad vibration: x is the strength of the weak motor, and y is the strength of the strong motor.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Input_method_get_last_mouse_screen_velocity:
+
+.. rst-class:: classref-method
+
+:ref:`Vector2<class_Vector2>` **get_last_mouse_screen_velocity** **(** **)**
+
+Returns the last mouse velocity in screen coordinates. To provide a precise and jitter-free velocity, mouse velocity is only calculated every 0.1s. Therefore, mouse velocity will lag mouse movements.
 
 .. rst-class:: classref-item-separator
 

@@ -19,7 +19,7 @@ Description
 
 **StringName**\ s are immutable strings designed for general-purpose representation of unique names (also called "string interning"). Two **StringName**\ s with the same value are the same object. Comparing them is extremely fast compared to regular :ref:`String<class_String>`\ s.
 
-You will usually just pass a :ref:`String<class_String>` to methods expecting a **StringName** and it will be automatically converted, but you may occasionally want to construct a **StringName** ahead of time with the **StringName** constructor or, in GDScript, the literal syntax ``&"example"``.
+You will usually pass a :ref:`String<class_String>` to methods expecting a **StringName** and it will be automatically converted (often at compile time), but in rare cases you can construct a **StringName** ahead of time with the **StringName** constructor or, in GDScript, the literal syntax ``&"example"``. Manually constructing a **StringName** allows you to control when the conversion from :ref:`String<class_String>` occurs or to use the literal and prevent conversions entirely.
 
 See also :ref:`NodePath<class_NodePath>`, which is a similar concept specifically designed to store pre-parsed scene tree paths.
 

@@ -586,6 +586,8 @@ Is ``true`` if this interface has been initialized.
 
 Is ``true`` if passthrough is enabled.
 
+\ *Deprecated.* Check if :ref:`environment_blend_mode<class_XRInterface_property_environment_blend_mode>` is :ref:`XR_ENV_BLEND_MODE_ALPHA_BLEND<class_XRInterface_constant_XR_ENV_BLEND_MODE_ALPHA_BLEND>`, instead.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -597,6 +599,8 @@ Is ``true`` if passthrough is enabled.
 :ref:`bool<class_bool>` **is_passthrough_supported** **(** **)**
 
 Is ``true`` if this interface supports passthrough.
+
+\ *Deprecated.* Check that :ref:`XR_ENV_BLEND_MODE_ALPHA_BLEND<class_XRInterface_constant_XR_ENV_BLEND_MODE_ALPHA_BLEND>` is supported using :ref:`get_supported_environment_blend_modes<class_XRInterface_method_get_supported_environment_blend_modes>`, instead.
 
 .. rst-class:: classref-item-separator
 
@@ -656,6 +660,8 @@ Starts passthrough, will return ``false`` if passthrough couldn't be started.
 
 \ **Note:** The viewport used for XR must have a transparent background, otherwise passthrough may not properly render.
 
+\ *Deprecated.* Set the :ref:`environment_blend_mode<class_XRInterface_property_environment_blend_mode>` to :ref:`XR_ENV_BLEND_MODE_ALPHA_BLEND<class_XRInterface_constant_XR_ENV_BLEND_MODE_ALPHA_BLEND>`, instead.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -667,6 +673,8 @@ Starts passthrough, will return ``false`` if passthrough couldn't be started.
 void **stop_passthrough** **(** **)**
 
 Stops passthrough.
+
+\ *Deprecated.* Set the :ref:`environment_blend_mode<class_XRInterface_property_environment_blend_mode>` to :ref:`XR_ENV_BLEND_MODE_OPAQUE<class_XRInterface_constant_XR_ENV_BLEND_MODE_OPAQUE>`, instead.
 
 .. rst-class:: classref-item-separator
 
