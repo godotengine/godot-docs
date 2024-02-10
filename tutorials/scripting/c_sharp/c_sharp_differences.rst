@@ -8,8 +8,22 @@ This is a (incomplete) list of API differences between C# and GDScript.
 General differences
 -------------------
 
-As explained in the :ref:`doc_c_sharp`, C# generally uses ``PascalCase`` instead
-of the ``snake_case`` used in GDScript and C++.
+As explained in :ref:`doc_c_sharp_general_differences`, ``PascalCase`` is used
+to access Godot APIs in C# instead of the ``snake_case`` used by GDScript and
+C++. Where possible, fields and getters/setters have been converted to
+properties. In general, the C# Godot API strives to be as idiomatic as is
+reasonably possible. See the :ref:`doc_c_sharp_styleguide`, which we encourage
+you to also use for your own C# code.
+
+In GDScript, the setters/getters of a property can be called directly, although
+this is not encouraged. In C#, only the property is defined. For example, to
+translate the GDScript code ``x.set_name("Friend")`` to C#, write
+``x.Name = "Friend";``.
+
+A C# IDE will provide intellisense, which is extremely useful when figuring out
+renamed C# APIs. The built-in Godot script editor has no support for C#
+intellisense, and it also doesn't provide many other C# development tools that
+are considered essential. See :ref:`doc_c_sharp_setup_external_editor`.
 
 Global scope
 ------------
