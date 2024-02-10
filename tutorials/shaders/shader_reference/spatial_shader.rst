@@ -158,6 +158,9 @@ shader, this value can be used as desired.
 +----------------------------------------+--------------------------------------------------------+
 | in mat4 **INV_VIEW_MATRIX**            | View space to world space transform.                   |
 +----------------------------------------+--------------------------------------------------------+
+| in mat4 **MAIN_CAM_INV_VIEW_MATRIX**   | View space to world space transform of camera used to  |
+|                                        | draw the current viewport.                             |
++----------------------------------------+--------------------------------------------------------+
 | in mat4 **INV_PROJECTION_MATRIX**      | Clip space to view space transform.                    |
 +----------------------------------------+--------------------------------------------------------+
 | in vec3 **NODE_POSITION_WORLD**        | Node world space position.                             |
