@@ -260,11 +260,15 @@ For example, both the ``Mob`` and the ``Player`` scenes have a ``Pivot`` and a
 ``Character`` node, so we can reuse animations between them.
 
 Open the *Player* scene, select the AnimationPlayer node and open the "float"
-animation. Next, click on **Animation > Copy**. Then open ``mob.tscn``,
-create an AnimationPlayer child node and select it. Click **Animation > Paste**
-and make sure that the button with an "A+" icon (Autoplay on Load) and the
-looping arrows (Animation looping) are also turned on in the animation editor
-in the bottom panel. That's it; all monsters will now play the float animation.
+animation. Next, click on **Edit (Next to A+ button) > Copy Tracks**. 
+
+Then open ``mob.tscn``, create an AnimationPlayer child node and select it. In the animation dock below, create new animation with **Animation > New**, and name it ``float_mob``. 
+Now for the magic, click **Edit > Paste Tracks**.
+
+Enable "A+" Autoplay on Load icon, and the looping arrows (Animation looping) in the animation editor just below. 
+The animation duration should be set to ``1.2``, same as previous ``float``.
+
+That's it; all monsters will now play the float animation.
 
 We can change the playback speed based on the creature's ``random_speed``. Open
 the *Mob*'s script and at the end of the ``initialize()`` function, add the
