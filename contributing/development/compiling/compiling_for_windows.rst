@@ -181,10 +181,6 @@ API.
 
 To compile Godot with Direct3D 12 support you need at least the following:
 
-- `The DirectX Shader Compiler <https://github.com/Microsoft/DirectXShaderCompiler/releases>`_.
-  The zip folder will be named "dxc\_" followed by the date of release. Download
-  it anywhere, unzip it and remember the path to the unzipped folder, you will
-  need it below.
 - `godot-nir-static library <https://github.com/godotengine/godot-nir-static/releases/>`_.
   We compile the Mesa libraries you will need into a static library. Download it
   anywhere, unzip it and remember the path to the unzipped folder, you will
@@ -211,6 +207,10 @@ To compile Godot with Direct3D 12 support you need at least the following:
 
 Optionally, you can compile with the following for additional features:
 
+- `The DirectX Shader Compiler <https://github.com/Microsoft/DirectXShaderCompiler/releases>`_
+  can be using for shader validation. To use it, download the latest release
+  anywhere, unzip it and remember the path to the unzipped folder. The zip
+  folder will be named "dxc\_" followed by the date of release.
 - `PIX <https://devblogs.microsoft.com/pix/download>`_ is a performance tuning
   and debugging application for Direct3D12 applications. If you compile-in
   support for it, you can get much more detailed information through PIX that
@@ -244,29 +244,32 @@ look for the additional libraries:
 
 .. code-block:: doscon
 
-    C:\godot> scons platform=windows d3d12=yes dxc_path=<...> mesa_libs=<...>
+    C:\godot> scons platform=windows d3d12=yes mesa_libs=<...>
 
 Or, with all options enabled:
 
 .. code-block:: doscon
 
-    C:\godot> scons platform=windows d3d12=yes dxc_path=<...> mesa_libs=<...> agility_sdk_path=<...> pix_path=<...>
+    C:\godot> scons platform=windows d3d12=yes mesa_libs=<...> dxc_path=<...> agility_sdk_path=<...> pix_path=<...>
 
-.. note:: The build process will copy ``dxil.dll`` from the ``bin/<arch>/``
-          directory in the DXC folder to the Godot binary directory and the
-          appropriate ``bin/<arch>`` file in the Godot binary directory.
-          Direct3D 12-enabled Godot packages for distribution to end users must
-          include the ``dxil.dll`` (and relevant folders if using multi-arch),
-          both for the editor and games. At runtime, the renderer will try to
-          load the DLL from the arch-specific folders, and will fall back to the
-          same directory as the Godot executable if the appropriate arch isn't
-          found.
+.. note:: If ``dxc_path`` is set, the build process will copy ``dxil.dll``
+          from the ``bin/<arch>/`` directory in the DXC folder to the Godot
+          binary directory and the appropriate ``bin/<arch>`` file in the Godot
+          binary directory. At runtime, the renderer will try to load the DLL
+          from the arch-specific folders, and will fall back to the same
+          directory as the Godot executable if the appropriate arch isn't
+          found. If ``dxil.dll`` is not found, no shader validation is performed
+          and built-in shader code signing is used.
 
 .. note:: For the Agility SDK's DLLs you have to explicitly choose the kind of
           workflow. Single-arch is the default (DLLs copied to ``bin/``). If you
           pass ``agility_sdk_multi_arch=yes`` to SCons, you'll opt-in for
           multi-arch. DLLs will be copied to the appropriate ``bin/<arch>/``
           subdirectories and at runtime the right one will be loaded.
+
+.. note:: By default, version 610 of Agility SDK is expected, in can be overridden
+          by the ``rendering/rendering_device/d3d12/agility_sdk_version`` project
+          setting.
 
 Compiling with ANGLE support
 ----------------------------
