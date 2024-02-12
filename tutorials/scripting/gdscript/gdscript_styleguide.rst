@@ -290,6 +290,15 @@ Surround functions and class definitions with two blank lines:
 
 Use one blank line inside functions to separate logical sections.
 
+::
+
+    class_name Weapon
+    extends Resource
+
+
+    var power := 10.0
+    # ...
+
 .. note::
 
     We use a single line between classes and function definitions in the class reference and
