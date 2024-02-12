@@ -268,7 +268,7 @@ Now for the magic, click **Edit > Paste Tracks**.
 Enable "A+" Autoplay on Load icon, and the looping arrows (Animation looping) in the animation editor just below. 
 The animation duration should be set to ``1.2``, same as previous ``float``.
 
-|image23|
+.. image:: img/09.adding_animations/animation_copy_tracks.webp
 
 That's it; all monsters will now play the float animation.
 
@@ -634,7 +634,6 @@ And the *Mob*'s script.
 .. |image20| image:: img/09.adding_animations/19.ease_in_second_translation_key.png
 .. |image21| image:: img/09.adding_animations/20.float_animation.gif
 .. |image22| image:: img/09.adding_animations/21.script_icon.png
-.. |image23| image:: img/09.adding_animations/22.update_tracks.png
 .. |animation_final_keyframes| image:: img/09.adding_animations/animation_final_keyframes.webp
 .. |second_keys_both| image:: img/09.adding_animations/second_keys_both.webp
 .. |timeline_05_click| image:: img/09.adding_animations/timeline_05_click.webp
