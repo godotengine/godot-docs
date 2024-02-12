@@ -740,7 +740,7 @@ We suggest to organize GDScript code this way:
     15. methods
     16. subclasses
 
-And put the class methods and variables in the following order depending their access modifiers:
+And put the class methods and variables in the following order depending on their access modifiers:
 
 ::
    
