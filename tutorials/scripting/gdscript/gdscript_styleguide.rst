@@ -729,7 +729,7 @@ We suggest to organize GDScript code this way:
     11. @onready variables
 
     12. static methods
-    13. overrided methods from Godot base class:
+    13. overridden methods from Godot base class:
         1. _init()
         2. _enter_tree() 
         3. _ready()
