@@ -57,7 +57,7 @@ Registering as virtual is the same but it can't be instanced.
 
 .. code-block:: cpp
 
-    ClassDB::register_virtual_class<MyCustomClass>()
+    ClassDB::register_abstract_class<MyCustomClass>()
 
 Object-derived classes can override the static function
 ``static void _bind_methods()``. When one class is registered, this
