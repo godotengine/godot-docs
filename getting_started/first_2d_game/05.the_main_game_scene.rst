@@ -14,8 +14,7 @@ Click the **Instance** button (represented by a chain link icon) and select your
 
 .. image:: img/instance_scene.webp
 
-Now, add the following nodes as children of ``Main``, and name them as shown
-(values are in seconds):
+Now, add the following nodes as children of ``Main``, and name them as shown:
 
 - :ref:`Timer <class_Timer>` (named ``MobTimer``) - to control how often mobs
   spawn
@@ -26,7 +25,7 @@ Now, add the following nodes as children of ``Main``, and name them as shown
 - :ref:`Marker2D <class_Marker2D>` (named ``StartPosition``) - to indicate
   the player's start position
 
-Set the ``Wait Time`` property of each of the ``Timer`` nodes as follows:
+Set the ``Wait Time`` property of each of the ``Timer`` nodes as follows (values are in seconds):
 
 - ``MobTimer``: ``0.5``
 - ``ScoreTimer``: ``1``
