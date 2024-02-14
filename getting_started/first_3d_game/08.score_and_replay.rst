@@ -1,5 +1,3 @@
-:article_outdated: True
-
 .. _doc_first_3d_game_score_and_replay:
 
 Score and replay
@@ -12,8 +10,7 @@ We have to keep track of the current score in a variable and display it on
 screen using a minimal interface. We will use a text label to do that.
 
 In the main scene, add a new child node :ref:`Control <class_Control>` to ``Main`` and name it
-``UserInterface``. You will automatically be taken to the 2D screen, where you can
-edit your User Interface (UI).
+``UserInterface``. Ensure you are on the 2D screen, where you can edit your User Interface (UI).
 
 Add a :ref:`Label <class_Label>` node and name it ``ScoreLabel``
 
@@ -54,7 +51,8 @@ of how all the built-in UI widgets will look with your theme resource.
 
 |image6|
 
-By default, a theme only has one property, the *Default Font*.
+By default, a theme only has a few properties: *Default Base Scale*, *Default Font*
+and *Default Font Size*.
 
 .. seealso::
 
@@ -62,8 +60,8 @@ By default, a theme only has one property, the *Default Font*.
     interfaces, but that is beyond the scope of this series. To learn more about
     creating and editing themes, see :ref:`doc_gui_skinning`.
 
-This one expects a font file like the ones you have on your computer. Two common
-font file formats are TrueType Font (TTF) and OpenType Font (OTF).
+The *Default Font* expects a font file like the ones you have on your computer.
+Two common font file formats are TrueType Font (TTF) and OpenType Font (OTF).
 
 In the *FileSystem* dock, expand the ``fonts`` directory and click and drag the
 ``Montserrat-Medium.ttf`` file we included in the project onto the *Default Font*.

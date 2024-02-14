@@ -1,5 +1,3 @@
-:article_outdated: True
-
 .. _doc_first_3d_game_character_animation:
 
 Character animation
@@ -45,7 +43,7 @@ time in seconds.
 We want the animation to start playback automatically at the start of the game.
 Also, it should loop.
 
-To do so, you can click the button with an "A+" icon in the animation toolbar
+To do so, you can click the button with an "A>" icon in the animation toolbar
 and the looping arrows, respectively.
 
 |image5|
@@ -104,7 +102,11 @@ timeline.
 
 |timeline_05_click|
 
-In the *Inspector*, set the *Position*'s *Y* axis to ``0.65`` meters and the *Rotation*' *X* axis to ``8``.
+In the *Inspector*, set the *Position*'s *Y* axis to ``0.65`` meters and the
+*Rotation*' *X* axis to ``8``.
+
+If you don't see the properties in the *Inspector* panel, first click on the
+``Character`` node again in the *Scene* dock.
 
 |image13|
 
@@ -259,16 +261,22 @@ node structure, you can copy them to different scenes.
 For example, both the ``Mob`` and the ``Player`` scenes have a ``Pivot`` and a
 ``Character`` node, so we can reuse animations between them.
 
-Open the *Player* scene, select the AnimationPlayer node and open the "float"
-animation. Next, click on **Animation > Copy**. Then open ``mob.tscn``,
-create an AnimationPlayer child node and select it. Click **Animation > Paste**
-and make sure that the button with an "A+" icon (Autoplay on Load) and the
-looping arrows (Animation looping) are also turned on in the animation editor
-in the bottom panel. That's it; all monsters will now play the float animation.
+Open the *Player* scene, select the AnimationPlayer node and then click on
+**Animation > Manage Animations...**. Click the *Copy animation to clipboard* button
+(two small squares) alongside the *float* animation. Click OK to close the window.
+
+Then open ``mob.tscn``, create an :ref:`AnimationPlayer <class_AnimationPlayer>` child
+node and select it. Click **Animation > Manage Animations**, then **Add Library**. You
+should see the message "Global library will be created." Leave the text field blank and
+click OK. Click the *Paste* icon (clipboard) and it should appear in the window. Click OK
+to close the window.
+
+Next, make sure that the button with an "A>" icon (Autoplay on Load) and the looping
+arrows (Animation looping) are also turned on in the animation editor in the bottom panel.
+That's it; all monsters will now play the float animation.
 
 We can change the playback speed based on the creature's ``random_speed``. Open
-the *Mob*'s script and at the end of the ``initialize()`` function, add the
-following line.
+the *Mob*'s script and at the end of the ``initialize()`` function, add the following line.
 
 .. tabs::
  .. code-tab:: gdscript GDScript

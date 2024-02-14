@@ -1,5 +1,3 @@
-:article_outdated: True
-
 .. _doc_first_3d_game_player_movement:
 
 Moving the player with code
@@ -10,7 +8,8 @@ part to move the character.
 
 Right-click the ``Player`` node and select *Attach Script* to add a new script to
 it. In the popup, set the *Template* to *Empty* before pressing the *Create*
-button.
+button. We set it to *Empty* because we want to write our own code for
+player movement.
 
 |image0|
 
@@ -365,12 +364,14 @@ Adding a camera
 
 Let's add the camera next. Like we did with our *Player*\ 's *Pivot*, we're
 going to create a basic rig. Right-click on the ``Main`` node again and select
-*Add Child Node*. Create a new :ref:`Marker3D <class_Marker3D>`, and name it ``CameraPivot``. Select ``CameraPivot`` and add a child node :ref:`Camera3D <class_Camera3D>` to it. Your scene tree should look like this.
+*Add Child Node*. Create a new :ref:`Marker3D <class_Marker3D>`, and name it ``CameraPivot``.
+Select ``CameraPivot`` and add a child node :ref:`Camera3D <class_Camera3D>` to it.
+Your scene tree should look similar to this.
 
 |image3|
 
-Notice the *Preview* checkbox that appears in the top-left when you have the
-*Camera* selected. You can click it to preview the in-game camera projection.
+Notice the *Preview* checkbox that appears in the top-left of the 3D view when you
+have the *Camera* selected. You can click it to preview the in-game camera projection.
 
 |image4|
 
@@ -385,13 +386,13 @@ You can also press :kbd:`Ctrl + 2` (:kbd:`Cmd + 2` on macOS).
 
 |image5|
 
-On the bottom view, select your :ref:`Camera3D <class_Camera3D>` and turn on camera Preview by clicking
-the checkbox.
+On the bottom view, select your :ref:`Camera3D <class_Camera3D>` and turn on camera
+Preview by clicking the checkbox.
 
 |image6|
 
-In the top view, move the camera about ``19`` units on the Z axis (the blue
-one).
+In the top view, make sure your *Camera3D* is selected and move the camera about
+``19`` units on the Z axis (drag the blue arrow).
 
 |image7|
 

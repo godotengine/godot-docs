@@ -1,5 +1,4 @@
 :allow_comments: False
-:article_outdated: True
 
 .. _doc_your_first_3d_game:
 
