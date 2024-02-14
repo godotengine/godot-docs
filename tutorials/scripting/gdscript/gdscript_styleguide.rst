@@ -725,7 +725,7 @@ We suggest to organize GDScript code this way:
     07. constants
     08. static variables
     09. @export variables
-    10. variables
+    10. remaining variables
     11. @onready variables
 
     12. static methods
