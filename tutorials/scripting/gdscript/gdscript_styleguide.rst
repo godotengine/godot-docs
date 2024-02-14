@@ -737,7 +737,7 @@ We suggest to organize GDScript code this way:
         4. _process()
         5. _physics_process()
         6. remaining methods
-    14. overridden methods from custom inherited base class
+    14. overridden custom methods
     15. remaining methods
     16. subclasses
 
