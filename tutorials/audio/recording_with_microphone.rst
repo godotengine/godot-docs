@@ -28,6 +28,8 @@ An ``AudioStreamPlayer`` named ``AudioStreamRecord`` is used for recording.
 
 .. image:: img/record_stream_player.png
 
+.. note:: For microphone recording to work, the following option is turned on **Project Settings -> Audio -> Driver -> Enable Input**. To view this option **Advanced Settings** should be turned on.
+
 .. tabs::
  .. code-tab:: gdscript GDScript
 
