@@ -1,5 +1,3 @@
-:article_outdated: True
-
 .. _doc_first_3d_game_player_scene_and_input:
 
 Player scene and input actions
@@ -72,12 +70,12 @@ It will be the shape the physics engine uses to collide with the environment, so
 we want it to better fit the 3D model. Shrink it a bit by dragging the orange
 dot in the viewport. My sphere has a radius of about ``0.8`` meters.
 
-Then, move the shape up so its bottom roughly aligns with the grid's plane.
+Then, move the collision shape up so its bottom roughly aligns with the grid's plane.
 
 |image4|
 
-You can toggle the model's visibility by clicking the eye icon next to the
-``Character`` or the ``Pivot`` nodes.
+To make moving the shape easier, you can toggle the model's visibility by clicking
+the eye icon next to the ``Character`` or the ``Pivot`` nodes.
 
 |image5|
 
@@ -106,7 +104,9 @@ can bind keys to these actions.
 |image7|
 
 Godot projects come with some predefined actions designed for user interface
-design, which we could use here. But we're defining our own to support gamepads.
+design (see above screenshot). These will become visible if you enable the
+*Show Built-in Actions* toggle. We could use these here, but instead we're
+defining our own to support gamepads. Leave *Show Built-in Actions* disabled.
 
 We're going to name our actions ``move_left``, ``move_right``, ``move_forward``,
 ``move_back``, and ``jump``.
