@@ -162,7 +162,7 @@ Close the window or press :kbd:`F8` (:kbd:`Cmd + .` on macOS) to quit the runnin
 Setting the main scene
 ----------------------
 
-To run our test scene, we used the Play Scene button. Another button next to it
+To run our test scene, we used the Run Current Scene button. Another button next to it
 allows you to set and run the project's main scene. You can press :kbd:`F5`
 (:kbd:`Cmd + B` on macOS) to do so.
 
