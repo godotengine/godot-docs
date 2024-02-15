@@ -129,7 +129,7 @@ the expense of memory and some minor operational efficiency.
 
     - HashMaps maintain gaps of unused memory interspersed in the table
       on purpose to reduce hash collisions and maintain the speed of
-      accesses. This is why it constantly increases in size quadratically by
+      accesses. This is why it constantly increases in size exponentially by
       powers of 2.
 
 As one might be able to tell, Dictionaries specialize in tasks that Arrays
