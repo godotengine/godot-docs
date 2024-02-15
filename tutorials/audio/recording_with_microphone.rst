@@ -12,7 +12,7 @@ A simple demo is included in the official demo projects and will be used as
 support for this tutorial:
 `<https://github.com/godotengine/godot-demo-projects/tree/master/audio/mic_record>`_.
 
-You will need to enable audio input in the project settings, or you'll just get empty audio files.
+You will need to enable audio input in the project settings ``Project Settings -> Audio -> Driver -> Enable Input``, or you'll just get empty audio files.
 
 The structure of the demo
 -------------------------
@@ -27,8 +27,6 @@ An ``AudioStreamPlayer`` named ``AudioStreamRecord`` is used for recording.
 .. image:: img/record_bus.png
 
 .. image:: img/record_stream_player.png
-
-.. note:: For microphone recording to work, the following option is turned on **Project Settings -> Audio -> Driver -> Enable Input**. You have to also enable **Advanced Settings** to view this option.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
