@@ -212,6 +212,8 @@ class reference pages for
 
     *"Cannot find class XXX for script res://XXX.cs"*
 
+.. _doc_c_sharp_general_differences:
+
 General differences between C# and GDScript
 -------------------------------------------
 

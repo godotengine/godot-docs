@@ -4,8 +4,13 @@ C# global classes
 =================
 
 Global classes (also known as named scripts) are types registered in Godot's editor so they can be used
-more conveniently. These classes show up in the *Add Node* and *Create Resource* dialogs,
-and :ref:`exported properties <doc_c_sharp_exports>` are restricted to instances of the global class or derived classes.
+more conveniently.
+
+- Global classes show up in the *Add Node* and *Create Resource* dialogs.
+- If an :ref:`exported property <doc_c_sharp_exports>` is a global class, the
+  inspector restricts assignment, allowing only instances of that global class
+  or any derived classes.
+
 Global classes are registered with the ``[GlobalClass]`` attribute.
 
 .. code-block:: csharp
@@ -21,8 +26,33 @@ The ``MyNode`` type will be registered as a global class with the same name as t
 
 .. image:: img/globalclasses_addnode.webp
 
-The ``[Icon]`` attribute also allows to provide the path to an icon so it can
-be used as the class' icon in the editor.
+The *Select a Node* window for the ``MyNode`` exported property filters the list
+of nodes in the scene to match the assignment restriction.
+
+.. code-block:: csharp
+
+    public partial class Main : Node
+    {
+        [Export]
+        public MyNode MyNode { get; set; }
+    }
+
+.. image:: img/globalclasses_exportednode.webp
+
+If a custom type isn't registered as a global class, the assignment is
+restricted to the Godot type the custom type is based on. For example, inspector
+assignments to an export of the type ``MySimpleSprite2D`` are restricted to
+``Sprite2D`` and derived types.
+
+.. code-block:: csharp
+
+    public partial class MySimpleSprite2D : Sprite2D
+    {
+    }
+
+When combined with the ``[GlobalClass]`` attribute, the ``[Icon]`` attribute
+allows providing a path to an icon to show when the class is displayed in the
+editor.
 
 .. code-block:: csharp
 
