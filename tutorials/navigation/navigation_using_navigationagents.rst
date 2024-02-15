@@ -131,6 +131,11 @@ NavigationObstacles can be used to add some environment constrains to the avoida
 
     Avoidance does not affect the pathfinding. It should be seen as an additional option for constantly moving objects that cannot be (re)baked to a navigation mesh efficiently in order to move around them.
 
+.. note::
+
+    RVO avoidance makes implicit assumptions about natural agent behavior. E.g. that agents move on reasonable passing sides that can be assigned when they encounter each other.
+    This means that very clinical avoidance test scenarios will commonly fail. E.g. agents moved directly against each other with perfect opposite velocities will fail because the agents can not get their passing sides assigned.
+
 Using the NavigationAgent ``enable_avoidance`` property is the preferred option
 to toggle avoidance. The following code snippets can be used to
 toggle avoidance on agents, create or delete avoidance callbacks or switch avoidance modes.
