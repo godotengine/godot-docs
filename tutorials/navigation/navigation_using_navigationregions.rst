@@ -36,38 +36,45 @@ Creating new navigation regions
 
 New NavigationRegion nodes will automatically register to the default world navigation map for their 2D/3D dimension.
 
-The region RID can then be obtained from NavigationRegion Nodes with ``get_region_rid()``.
+The region RID can then be obtained from NavigationRegion Nodes with ``get_rid()``.
 
 .. tabs::
- .. code-tab:: gdscript GDScript
+ .. code-tab:: gdscript 2D GDScript
+
+    extends NavigationRegion2D
+
+    var navigationserver_region_rid: RID = get_rid()
+
+ .. code-tab:: gdscript 3D GDScript
 
     extends NavigationRegion3D
 
-    var navigationserver_region_rid: RID = get_region_rid()
+    var navigationserver_region_rid: RID = get_rid()
 
 New regions can also be created with the NavigationServer API and added to any existing map.
 
 If regions are created with the NavigationServer API directly they need to be assigned a navigation map manually.
 
 .. tabs::
- .. code-tab:: gdscript GDScript
+ .. code-tab:: gdscript 2D GDScript
 
     extends Node2D
 
-    var new_2d_region_rid: RID = NavigationServer2D.region_create()
-    var default_2d_map_rid: RID = get_world_2d().get_navigation_map()
-    NavigationServer2D.region_set_map(new_2d_region_rid, default_2d_map_rid)
+    func _ready() -> void:
+        var new_region_rid: RID = NavigationServer2D.region_create()
+        var default_map_rid: RID = get_world_2d().get_navigation_map()
+        NavigationServer2D.region_set_map(new_region_rid, default_map_rid)
 
-.. tabs::
- .. code-tab:: gdscript GDScript
+ .. code-tab:: gdscript 3D GDScript
 
     extends Node3D
 
-    var new_3d_region_rid: RID = NavigationServer3D.region_create()
-    var default_3d_map_rid: RID = get_world_3d().get_navigation_map()
-    NavigationServer3D.region_set_map(new_3d_region_rid, default_3d_map_rid)
+    func _ready() -> void:
+        var new_region_rid: RID = NavigationServer3D.region_create()
+        var default_map_rid: RID = get_world_3d().get_navigation_map()
+        NavigationServer3D.region_set_map(new_region_rid, default_map_rid)
 
 .. note::
 
-    NavigationRegions can only be assigned to a single NavigationMap.
-    If an existing region is assigned to a new map it will leave the old map.
+    Navigation regions can only be assigned to a single navigation map.
+    If an existing region is assigned to a new navigation map it will leave the old map.
