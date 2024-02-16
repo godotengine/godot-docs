@@ -1,13 +1,14 @@
 :article_outdated: True
 
-.. _doc_platform_html5:
+.. _doc_platform_web:
 
-HTML5
-=====
+Web
+===
 
 .. toctree::
    :maxdepth: 1
    :name: toc-learn-features-platform-html5
 
+   javascript_bridge
    html5_shell_classref
    customizing_html5_shell
