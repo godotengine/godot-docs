@@ -272,7 +272,7 @@ RenderingDevice presents a similar level of abstraction as Metal or WebGPU.
 
 **Vulkan RenderingDevice implementation:**
 
-- `drivers/vulkan/rendering_device_driver_vulkan.cpp <https://github.com/godotengine/godot/blob/4.2/drivers/vulkan/rendering_device_driver_vulkan.cpp>`__
+- `drivers/vulkan/rendering_device_vulkan.cpp <https://github.com/godotengine/godot/blob/4.2/drivers/vulkan/rendering_device_vulkan.cpp>`__
 
 **Direct3D 12 RenderingDevice implementation:**
 
