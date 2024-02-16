@@ -216,9 +216,6 @@ Leaving the screen
 We still have to destroy the mobs when they leave the screen. To do so, we'll
 connect our :ref:`VisibleOnScreenNotifier3D <class_VisibleOnScreenNotifier3D>` node's ``screen_exited`` signal to the ``Mob``.
 
-Head back to the 3D viewport by clicking on the *3D* label at the top of the
-editor. You can also press :kbd:`Ctrl + F2` (:kbd:`Alt + 2` on macOS).
-
 |image8|
 
 Select the :ref:`VisibleOnScreenNotifier3D <class_VisibleOnScreenNotifier3D>` node and on the right side of the interface,
@@ -230,7 +227,7 @@ Connect the signal to the ``Mob``
 
 |image10|
 
-This will take you back to the script editor and add a new function for you,
+This will add a new function for you in your mob script,
 ``_on_visible_on_screen_notifier_3d_screen_exited()``. From it, call the ``queue_free()``
 method. This function destroy the instance it's called on.
 
