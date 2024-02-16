@@ -266,14 +266,15 @@ Manager.
     would not build.
     For RISC-V architecture devices, use the Clang compiler instead of the GCC compiler.
 
-.. note:: If you are compiling Godot for production use, then you can
-          make the final executable smaller and faster by adding the
-          SCons options ``target=template_release production=yes``.
+.. tip:: If you are compiling Godot for production use, you can
+         make the final executable smaller and faster by adding the
+         SCons option ``production=yes``. This enables additional compiler
+         optimizations and link-time optimization.
 
-          If you are compiling Godot with GCC, you can make the binary
-          even smaller and faster by adding the SCons option ``lto=full``.
-          As link-time optimization is a memory-intensive process,
-          this will require about 7 GB of available RAM while compiling.
+         LTO takes some time to run and requires about 7 GB of available RAM
+         while compiling. If you're running out of memory with the above option,
+         use ``production=yes lto=none`` or ``production=yes lto=thin`` for a
+         lightweight but less effective form of LTO.
 
 .. note:: If you want to use separate editor settings for your own Godot builds
           and official releases, you can enable
