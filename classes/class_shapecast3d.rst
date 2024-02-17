@@ -503,7 +503,9 @@ Removes a collision exception so the shape does report collisions with the speci
 
 void **resource_changed** **(** :ref:`Resource<class_Resource>` resource **)**
 
-*Obsoleted.* Use :ref:`Resource.changed<class_Resource_signal_changed>` instead.
+**Deprecated:** Use :ref:`Resource.changed<class_Resource_signal_changed>` instead.
+
+This method does nothing.
 
 .. rst-class:: classref-item-separator
 

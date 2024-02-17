@@ -10,6 +10,8 @@
 NavigationObstacle3D
 ====================
 
+**Experimental:** This class may be changed or removed in future versions.
+
 **Inherits:** :ref:`Node3D<class_Node3D>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
 3D Obstacle used in navigation to constrain avoidance controlled agents outside or inside an area.

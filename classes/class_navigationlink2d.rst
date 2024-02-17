@@ -10,6 +10,8 @@
 NavigationLink2D
 ================
 
+**Experimental:** This class may be changed or removed in future versions.
+
 **Inherits:** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
 A link between two positions on :ref:`NavigationRegion2D<class_NavigationRegion2D>`\ s that agents can be routed through.

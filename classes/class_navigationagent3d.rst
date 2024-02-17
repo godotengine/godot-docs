@@ -10,6 +10,8 @@
 NavigationAgent3D
 =================
 
+**Experimental:** This class may be changed or removed in future versions.
+
 **Inherits:** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
 A 3D agent used to pathfind to a position while avoiding obstacles.

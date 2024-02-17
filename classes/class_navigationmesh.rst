@@ -10,6 +10,8 @@
 NavigationMesh
 ==============
 
+**Experimental:** This class may be changed or removed in future versions.
+
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
 A navigation mesh that defines traversable areas and obstacles.

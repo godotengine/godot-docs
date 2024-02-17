@@ -10,6 +10,8 @@
 NavigationObstacle2D
 ====================
 
+**Experimental:** This class may be changed or removed in future versions.
+
 **Inherits:** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
 2D Obstacle used in navigation to constrain avoidance controlled agents outside or inside an area.

@@ -113,6 +113,8 @@ Method Descriptions
 
 :ref:`bool<class_bool>` **_propagate_input_event** **(** :ref:`InputEvent<class_InputEvent>` event **)** |virtual| |const|
 
+**Experimental:** This method may be changed or removed in future versions.
+
 Virtual method to be implemented by the user. If it returns ``true``, the ``event`` is propagated to :ref:`SubViewport<class_SubViewport>` children. Propagation doesn't happen if it returns ``false``. If the function is not implemented, all events are propagated to SubViewports.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`

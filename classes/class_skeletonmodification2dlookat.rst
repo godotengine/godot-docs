@@ -10,6 +10,8 @@
 SkeletonModification2DLookAt
 ============================
 
+**Experimental:** This class may be changed or removed in future versions.
+
 **Inherits:** :ref:`SkeletonModification2D<class_SkeletonModification2D>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
 A modification that rotates a :ref:`Bone2D<class_Bone2D>` node to look at a target.

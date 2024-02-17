@@ -10,6 +10,8 @@
 NavigationPolygon
 =================
 
+**Experimental:** This class may be changed or removed in future versions.
+
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
 A 2D navigation mesh that describes a traversable surface for pathfinding.
@@ -578,9 +580,9 @@ Returns a :ref:`PackedVector2Array<class_PackedVector2Array>` containing all the
 
 void **make_polygons_from_outlines** **(** **)**
 
-Creates polygons from the outlines added in the editor or by script.
+**Deprecated:** Use :ref:`NavigationServer2D.parse_source_geometry_data<class_NavigationServer2D_method_parse_source_geometry_data>` and :ref:`NavigationServer2D.bake_from_source_geometry_data<class_NavigationServer2D_method_bake_from_source_geometry_data>` instead.
 
-\ *Deprecated.* This function is deprecated, and might be removed in a future release. Use :ref:`NavigationServer2D.parse_source_geometry_data<class_NavigationServer2D_method_parse_source_geometry_data>` and :ref:`NavigationServer2D.bake_from_source_geometry_data<class_NavigationServer2D_method_bake_from_source_geometry_data>` instead.
+Creates polygons from the outlines added in the editor or by script.
 
 .. rst-class:: classref-item-separator
 

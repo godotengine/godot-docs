@@ -10,7 +10,7 @@
 TileMap
 =======
 
-**Inherits:** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+**Inherits:** :ref:`TileMapLayerGroup<class_TileMapLayerGroup>` **<** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
 Node for 2D tile-based maps.
 
@@ -60,8 +60,6 @@ Properties
    | :ref:`VisibilityMode<enum_TileMap_VisibilityMode>` | :ref:`navigation_visibility_mode<class_TileMap_property_navigation_visibility_mode>` | ``0``     |
    +----------------------------------------------------+--------------------------------------------------------------------------------------+-----------+
    | :ref:`int<class_int>`                              | :ref:`rendering_quadrant_size<class_TileMap_property_rendering_quadrant_size>`       | ``16``    |
-   +----------------------------------------------------+--------------------------------------------------------------------------------------+-----------+
-   | :ref:`TileSet<class_TileSet>`                      | :ref:`tile_set<class_TileMap_property_tile_set>`                                     |           |
    +----------------------------------------------------+--------------------------------------------------------------------------------------+-----------+
 
 .. rst-class:: classref-reftable-group
@@ -309,23 +307,6 @@ The quadrant size does not apply on Y-sorted layers, as tiles are be grouped by 
 
 \ **Note:** As quadrants are created according to the map's coordinate system, the quadrant's "square shape" might not look like square in the TileMap's local coordinate system.
 
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_TileMap_property_tile_set:
-
-.. rst-class:: classref-property
-
-:ref:`TileSet<class_TileSet>` **tile_set**
-
-.. rst-class:: classref-property-setget
-
-- void **set_tileset** **(** :ref:`TileSet<class_TileSet>` value **)**
-- :ref:`TileSet<class_TileSet>` **get_tileset** **(** **)**
-
-The assigned :ref:`TileSet<class_TileSet>`.
-
 .. rst-class:: classref-section-separator
 
 ----
@@ -439,7 +420,11 @@ Clears cells that do not exist in the tileset.
 
 void **force_update** **(** :ref:`int<class_int>` layer=-1 **)**
 
-*Deprecated.* See :ref:`notify_runtime_tile_data_update<class_TileMap_method_notify_runtime_tile_data_update>` and :ref:`update_internals<class_TileMap_method_update_internals>`.
+**Deprecated:** Use :ref:`notify_runtime_tile_data_update<class_TileMap_method_notify_runtime_tile_data_update>` and/or :ref:`update_internals<class_TileMap_method_update_internals>` instead.
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 .. rst-class:: classref-item-separator
 
@@ -630,6 +615,8 @@ Returns the number of layers in the TileMap.
 .. rst-class:: classref-method
 
 :ref:`RID<class_RID>` **get_navigation_map** **(** :ref:`int<class_int>` layer **)** |const|
+
+**Deprecated:** This method may be changed or removed in future versions.
 
 See :ref:`get_layer_navigation_map<class_TileMap_method_get_layer_navigation_map>`.
 
@@ -1020,6 +1007,8 @@ If ``layer`` is negative, the layers are accessed from the last one.
 .. rst-class:: classref-method
 
 void **set_navigation_map** **(** :ref:`int<class_int>` layer, :ref:`RID<class_RID>` map **)**
+
+**Deprecated:** This method may be changed or removed in future versions.
 
 See :ref:`set_layer_navigation_map<class_TileMap_method_set_layer_navigation_map>`.
 

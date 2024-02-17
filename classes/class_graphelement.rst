@@ -10,6 +10,8 @@
 GraphElement
 ============
 
+**Experimental:** This class may be changed or removed in future versions.
+
 **Inherits:** :ref:`Container<class_Container>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
 **Inherited By:** :ref:`GraphNode<class_GraphNode>`

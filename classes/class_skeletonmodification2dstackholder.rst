@@ -10,6 +10,8 @@
 SkeletonModification2DStackHolder
 =================================
 
+**Experimental:** This class may be changed or removed in future versions.
+
 **Inherits:** :ref:`SkeletonModification2D<class_SkeletonModification2D>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
 A modification that holds and executes a :ref:`SkeletonModificationStack2D<class_SkeletonModificationStack2D>`.

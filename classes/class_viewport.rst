@@ -99,6 +99,8 @@ Properties
    +-----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+----------------+
    | :ref:`bool<class_bool>`                                                                       | :ref:`physics_object_picking<class_Viewport_property_physics_object_picking>`                         | ``false``      |
    +-----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+----------------+
+   | :ref:`bool<class_bool>`                                                                       | :ref:`physics_object_picking_first_only<class_Viewport_property_physics_object_picking_first_only>`   | ``false``      |
+   +-----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+----------------+
    | :ref:`bool<class_bool>`                                                                       | :ref:`physics_object_picking_sort<class_Viewport_property_physics_object_picking_sort>`               | ``false``      |
    +-----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+----------------+
    | :ref:`bool<class_bool>`                                                                       | :ref:`positional_shadow_atlas_16_bits<class_Viewport_property_positional_shadow_atlas_16_bits>`       | ``true``       |
@@ -1428,6 +1430,27 @@ If ``true``, the objects rendered by viewport become subjects of mouse picking p
 
 ----
 
+.. _class_Viewport_property_physics_object_picking_first_only:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **physics_object_picking_first_only** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_physics_object_picking_first_only** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **get_physics_object_picking_first_only** **(** **)**
+
+If ``true``, the input_event signal will only be sent to one physics object in the mouse picking process. If you want to get the top object only, you must also enable :ref:`physics_object_picking_sort<class_Viewport_property_physics_object_picking_sort>`.
+
+If ``false``, an input_event signal will be sent to all physics objects in the mouse picking process.
+
+This applies to 2D CanvasItem object picking only.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_Viewport_property_physics_object_picking_sort:
 
 .. rst-class:: classref-property
@@ -2229,6 +2252,8 @@ Helper method which calls the ``set_text()`` method on the currently focused :re
 
 void **push_unhandled_input** **(** :ref:`InputEvent<class_InputEvent>` event, :ref:`bool<class_bool>` in_local_coords=false **)**
 
+**Deprecated:** Use :ref:`push_input<class_Viewport_method_push_input>` instead.
+
 Triggers the given :ref:`InputEvent<class_InputEvent>` in this **Viewport**. This can be used to pass input events between viewports, or to locally apply inputs that were sent over the network or saved to a file.
 
 If ``in_local_coords`` is ``false``, the event's position is in the embedder's coordinates and will be converted to viewport coordinates. If ``in_local_coords`` is ``true``, the event's position is in viewport coordinates.
@@ -2248,8 +2273,6 @@ If an earlier method marks the input as handled via :ref:`set_input_as_handled<c
 If none of the methods handle the event and :ref:`physics_object_picking<class_Viewport_property_physics_object_picking>` is ``true``, the event is used for physics object picking.
 
 \ **Note:** This method doesn't propagate input events to embedded :ref:`Window<class_Window>`\ s or :ref:`SubViewport<class_SubViewport>`\ s.
-
-\ *Deprecated.* Use :ref:`push_input<class_Viewport_method_push_input>` instead.
 
 .. rst-class:: classref-item-separator
 

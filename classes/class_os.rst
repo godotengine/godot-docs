@@ -416,7 +416,7 @@ Crashes the engine (or the editor if called within a ``@tool`` script). See also
 
 Creates a new instance of Godot that runs independently. The ``arguments`` are used in the given order and separated by a space.
 
-If the process is successfully created, the method will return the new process ID, which you can use to monitor the process (and potentially terminate it with :ref:`kill<class_OS_method_kill>`). If the process cannot be created, the method will return ``-1``.
+If the process is successfully created, this method returns the new process' ID, which you can use to monitor the process (and potentially terminate it with :ref:`kill<class_OS_method_kill>`). If the process cannot be created, this method returns ``-1``.
 
 See :ref:`create_process<class_OS_method_create_process>` if you wish to run a different process.
 
@@ -936,7 +936,7 @@ Returns the name of the host platform.
 
 - On iOS, this is ``"iOS"``.
 
-- On the web, this is ``"Web"``.
+- On Web, this is ``"Web"``.
 
 \ **Note:** Custom builds of the engine may support additional platforms, such as consoles, possibly returning other names.
 
@@ -1259,7 +1259,7 @@ Returns ``true`` if the feature for the given feature tag is supported in the cu
 
 \ **Note:** Tag names are case-sensitive.
 
-\ **Note:** On the Web platform, one of the following additional tags is defined to indicate host platform: ``web_android``, ``web_ios``, ``web_linuxbsd``, ``web_macos``, or ``web_windows``.
+\ **Note:** On the Web platform, one of the following additional tags is defined to indicate the host platform: ``web_android``, ``web_ios``, ``web_linuxbsd``, ``web_macos``, or ``web_windows``.
 
 .. rst-class:: classref-item-separator
 
@@ -1450,6 +1450,8 @@ Initializes the singleton for the system MIDI driver, allowing Godot to receive 
 Reads a user input string from the standard input (usually the terminal). This operation is *blocking*, which causes the window to freeze if :ref:`read_string_from_stdin<class_OS_method_read_string_from_stdin>` is called on the main thread. The thread calling :ref:`read_string_from_stdin<class_OS_method_read_string_from_stdin>` will block until the program receives a line break in standard input (usually by the user pressing :kbd:`Enter`).
 
 \ **Note:** This method is implemented on Linux, macOS and Windows.
+
+\ **Note:** On exported Windows builds, run the console wrapper executable to access the terminal. Otherwise, the standard input will not work correctly. If you need a single executable with console support, use a custom build compiled with the ``windows_subsystem=console`` flag.
 
 .. rst-class:: classref-item-separator
 

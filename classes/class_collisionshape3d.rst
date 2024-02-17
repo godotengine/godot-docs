@@ -130,7 +130,9 @@ Sets the collision shape's shape to the addition of all its convexed :ref:`MeshI
 
 void **resource_changed** **(** :ref:`Resource<class_Resource>` resource **)**
 
-*Obsoleted.* Use :ref:`Resource.changed<class_Resource_signal_changed>` instead.
+**Deprecated:** Use :ref:`Resource.changed<class_Resource_signal_changed>` instead.
+
+This method does nothing.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

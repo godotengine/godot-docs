@@ -229,6 +229,7 @@ Nodes
     class_spritebase3d
     class_staticbody2d
     class_staticbody3d
+    class_statusindicator
     class_subviewport
     class_subviewportcontainer
     class_tabbar
@@ -238,6 +239,7 @@ Nodes
     class_textureprogressbar
     class_texturerect
     class_tilemap
+    class_tilemaplayergroup
     class_timer
     class_touchscreenbutton
     class_tree

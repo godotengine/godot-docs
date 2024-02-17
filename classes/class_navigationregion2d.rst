@@ -10,6 +10,8 @@
 NavigationRegion2D
 ==================
 
+**Experimental:** This class may be changed or removed in future versions.
+
 **Inherits:** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
 A traversable 2D region that :ref:`NavigationAgent2D<class_NavigationAgent2D>`\ s can use for pathfinding.
@@ -331,9 +333,9 @@ Returns the current navigation map :ref:`RID<class_RID>` used by this region.
 
 :ref:`RID<class_RID>` **get_region_rid** **(** **)** |const|
 
-Returns the :ref:`RID<class_RID>` of this region on the :ref:`NavigationServer2D<class_NavigationServer2D>`.
+**Deprecated:** Use :ref:`get_rid<class_NavigationRegion2D_method_get_rid>` instead.
 
-\ *Deprecated.* Use :ref:`get_rid<class_NavigationRegion2D_method_get_rid>` instead.
+Returns the :ref:`RID<class_RID>` of this region on the :ref:`NavigationServer2D<class_NavigationServer2D>`.
 
 .. rst-class:: classref-item-separator
 

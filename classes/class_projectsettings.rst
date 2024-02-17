@@ -47,6 +47,10 @@ Properties
    :widths: auto
 
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`animation/warnings/check_angle_interpolation_type_conflicting<class_ProjectSettings_property_animation/warnings/check_angle_interpolation_type_conflicting>`                                         | ``true``                                                                                         |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`animation/warnings/check_invalid_track_paths<class_ProjectSettings_property_animation/warnings/check_invalid_track_paths>`                                                                           | ``true``                                                                                         |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`Color<class_Color>`                         | :ref:`application/boot_splash/bg_color<class_ProjectSettings_property_application/boot_splash/bg_color>`                                                                                                   | ``Color(0.14, 0.14, 0.14, 1)``                                                                   |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`application/boot_splash/fullsize<class_ProjectSettings_property_application/boot_splash/fullsize>`                                                                                                   | ``true``                                                                                         |
@@ -106,6 +110,8 @@ Properties
    | :ref:`String<class_String>`                       | :ref:`application/run/main_scene<class_ProjectSettings_property_application/run/main_scene>`                                                                                                               | ``""``                                                                                           |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`application/run/max_fps<class_ProjectSettings_property_application/run/max_fps>`                                                                                                                     | ``0``                                                                                            |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`application/run/print_header<class_ProjectSettings_property_application/run/print_header>`                                                                                                           | ``true``                                                                                         |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                         | :ref:`audio/buses/channel_disable_threshold_db<class_ProjectSettings_property_audio/buses/channel_disable_threshold_db>`                                                                                   | ``-60.0``                                                                                        |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
@@ -441,6 +447,8 @@ Properties
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`editor/export/convert_text_resources_to_binary<class_ProjectSettings_property_editor/export/convert_text_resources_to_binary>`                                                                       | ``true``                                                                                         |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`editor/import/atlas_max_width<class_ProjectSettings_property_editor/import/atlas_max_width>`                                                                                                         | ``2048``                                                                                         |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`editor/import/reimport_missing_imported_files<class_ProjectSettings_property_editor/import/reimport_missing_imported_files>`                                                                         | ``true``                                                                                         |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`editor/import/use_multiple_threads<class_ProjectSettings_property_editor/import/use_multiple_threads>`                                                                                               | ``true``                                                                                         |
@@ -688,6 +696,8 @@ Properties
    | :ref:`bool<class_bool>`                           | :ref:`input_devices/pointing/android/enable_long_press_as_right_click<class_ProjectSettings_property_input_devices/pointing/android/enable_long_press_as_right_click>`                                     | ``false``                                                                                        |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`input_devices/pointing/android/enable_pan_and_scale_gestures<class_ProjectSettings_property_input_devices/pointing/android/enable_pan_and_scale_gestures>`                                           | ``false``                                                                                        |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`input_devices/pointing/android/rotary_input_scroll_axis<class_ProjectSettings_property_input_devices/pointing/android/rotary_input_scroll_axis>`                                                     | ``1``                                                                                            |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`input_devices/pointing/emulate_mouse_from_touch<class_ProjectSettings_property_input_devices/pointing/emulate_mouse_from_touch>`                                                                     | ``true``                                                                                         |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
@@ -1143,6 +1153,8 @@ Properties
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`Vector3<class_Vector3>`                     | :ref:`navigation/3d/default_up<class_ProjectSettings_property_navigation/3d/default_up>`                                                                                                                   | ``Vector3(0, 1, 0)``                                                                             |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`                         | :ref:`navigation/3d/merge_rasterizer_cell_scale<class_ProjectSettings_property_navigation/3d/merge_rasterizer_cell_scale>`                                                                                 | ``1.0``                                                                                          |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`navigation/3d/use_edge_connections<class_ProjectSettings_property_navigation/3d/use_edge_connections>`                                                                                               | ``true``                                                                                         |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`navigation/avoidance/thread_model/avoidance_use_high_priority_threads<class_ProjectSettings_property_navigation/avoidance/thread_model/avoidance_use_high_priority_threads>`                         | ``true``                                                                                         |
@@ -1491,6 +1503,10 @@ Properties
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`rendering/rendering_device/staging_buffer/texture_upload_region_size_px<class_ProjectSettings_property_rendering/rendering_device/staging_buffer/texture_upload_region_size_px>`                     | ``64``                                                                                           |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`rendering/rendering_device/vsync/frame_queue_size<class_ProjectSettings_property_rendering/rendering_device/vsync/frame_queue_size>`                                                                 | ``2``                                                                                            |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`rendering/rendering_device/vsync/swapchain_image_count<class_ProjectSettings_property_rendering/rendering_device/vsync/swapchain_image_count>`                                                       | ``3``                                                                                            |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`rendering/rendering_device/vulkan/max_descriptors_per_pool<class_ProjectSettings_property_rendering/rendering_device/vulkan/max_descriptors_per_pool>`                                               | ``64``                                                                                           |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                         | :ref:`rendering/scaling_3d/fsr_sharpness<class_ProjectSettings_property_rendering/scaling_3d/fsr_sharpness>`                                                                                               | ``0.2``                                                                                          |
@@ -1651,6 +1667,30 @@ Emitted when any setting is changed, up to once per process frame.
 
 Property Descriptions
 ---------------------
+
+.. _class_ProjectSettings_property_animation/warnings/check_angle_interpolation_type_conflicting:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **animation/warnings/check_angle_interpolation_type_conflicting** = ``true``
+
+If ``true``, :ref:`AnimationMixer<class_AnimationMixer>` prints the warning of interpolation being forced to choose the shortest rotation path due to multiple angle interpolation types being mixed in the :ref:`AnimationMixer<class_AnimationMixer>` cache.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_animation/warnings/check_invalid_track_paths:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **animation/warnings/check_invalid_track_paths** = ``true``
+
+If ``true``, :ref:`AnimationMixer<class_AnimationMixer>` prints the warning of no matching object of the track path in the scene.
+
+.. rst-class:: classref-item-separator
+
+----
 
 .. _class_ProjectSettings_property_application/boot_splash/bg_color:
 
@@ -2057,6 +2097,18 @@ See also :ref:`physics/common/physics_ticks_per_second<class_ProjectSettings_pro
 This setting can be overridden using the ``--max-fps <fps>`` command line argument (including with a value of ``0`` for unlimited framerate).
 
 \ **Note:** This property is only read when the project starts. To change the rendering FPS cap at runtime, set :ref:`Engine.max_fps<class_Engine_property_max_fps>` instead.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_application/run/print_header:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **application/run/print_header** = ``true``
+
+If ``true``, the engine header is printed in the console on startup. This header describes the current version of the engine, as well as the renderer being used. This behavior can also be disabled on the command line with the ``--no-header`` option.
 
 .. rst-class:: classref-item-separator
 
@@ -4158,6 +4210,18 @@ If ``true``, text resources are converted to a binary format on export. This dec
 
 ----
 
+.. _class_ProjectSettings_property_editor/import/atlas_max_width:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **editor/import/atlas_max_width** = ``2048``
+
+The maximum width to use when importing textures as an atlas. The value will be rounded to the nearest power of two when used. Use this to prevent imported textures from growing too large in the other direction.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_ProjectSettings_property_editor/import/reimport_missing_imported_files:
 
 .. rst-class:: classref-property
@@ -5831,6 +5895,18 @@ If ``true``, long press events on an Android touchscreen are transformed into ri
 :ref:`bool<class_bool>` **input_devices/pointing/android/enable_pan_and_scale_gestures** = ``false``
 
 If ``true``, multi-touch pan and scale gestures are enabled on Android devices.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_input_devices/pointing/android/rotary_input_scroll_axis:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **input_devices/pointing/android/rotary_input_scroll_axis** = ``1``
+
+On Wear OS devices, defines which axis of the mouse wheel rotary input is mapped to. This rotary input is usually performed by rotating the physical or virtual (touch-based) bezel on a smartwatch.
 
 .. rst-class:: classref-item-separator
 
@@ -8572,6 +8648,18 @@ Default up orientation for 3D navigation maps. See :ref:`NavigationServer3D.map_
 
 ----
 
+.. _class_ProjectSettings_property_navigation/3d/merge_rasterizer_cell_scale:
+
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **navigation/3d/merge_rasterizer_cell_scale** = ``1.0``
+
+Default merge rasterizer cell scale for 3D navigation maps. See :ref:`NavigationServer3D.map_set_merge_rasterizer_cell_scale<class_NavigationServer3D_method_map_set_merge_rasterizer_cell_scale>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_ProjectSettings_property_navigation/3d/use_edge_connections:
 
 .. rst-class:: classref-property
@@ -10915,6 +11003,46 @@ Determines at which interval pipeline cache is saved to disk. The lower the valu
 .. container:: contribute
 
 	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_rendering/rendering_device/vsync/frame_queue_size:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **rendering/rendering_device/vsync/frame_queue_size** = ``2``
+
+The number of frames to track on the CPU side before stalling to wait for the GPU.
+
+Try the `V-Sync Simulator <https://darksylinc.github.io/vsync_simulator/>`__, an interactive interface that simulates presentation to better understand how it is affected by different variables under various conditions.
+
+\ **Note:** This property is only read when the project starts. There is currently no way to change this value at run-time.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_rendering/rendering_device/vsync/swapchain_image_count:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **rendering/rendering_device/vsync/swapchain_image_count** = ``3``
+
+The number of images the swapchain will consist of (back buffers + front buffer).
+
+\ ``2`` corresponds to double-buffering and ``3`` to triple-buffering.
+
+Double-buffering may give you the lowest lag/latency but if V-Sync is on and the system can't render at 60 fps, the framerate will go down in multiples of it (e.g. 30 fps, 15, 7.5, etc.). Triple buffering gives you higher framerate (specially if the system can't reach a constant 60 fps) at the cost of up to 1 frame of latency, with :ref:`DisplayServer.VSYNC_ENABLED<class_DisplayServer_constant_VSYNC_ENABLED>` (FIFO).
+
+Use double-buffering with :ref:`DisplayServer.VSYNC_ENABLED<class_DisplayServer_constant_VSYNC_ENABLED>`. Triple-buffering is a must if you plan on using :ref:`DisplayServer.VSYNC_MAILBOX<class_DisplayServer_constant_VSYNC_MAILBOX>` mode.
+
+Try the `V-Sync Simulator <https://darksylinc.github.io/vsync_simulator/>`__, an interactive interface that simulates presentation to better understand how it is affected by different variables under various conditions.
+
+\ **Note:** This property is only read when the project starts. There is currently no way to change this value at run-time.
+
+\ **Note:** Some platforms may restrict the actual value.
 
 .. rst-class:: classref-item-separator
 

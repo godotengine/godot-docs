@@ -10,6 +10,8 @@
 SkeletonModification2DFABRIK
 ============================
 
+**Experimental:** This class may be changed or removed in future versions.
+
 **Inherits:** :ref:`SkeletonModification2D<class_SkeletonModification2D>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
 A modification that uses FABRIK to manipulate a series of :ref:`Bone2D<class_Bone2D>` nodes to reach a target.

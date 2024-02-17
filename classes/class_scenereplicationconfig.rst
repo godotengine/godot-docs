@@ -178,9 +178,9 @@ Returns whether the property identified by the given ``path`` is configured to b
 
 :ref:`bool<class_bool>` **property_get_sync** **(** :ref:`NodePath<class_NodePath>` path **)**
 
-Returns whether the property identified by the given ``path`` is configured to be synchronized on process.
+**Deprecated:** Use :ref:`property_get_replication_mode<class_SceneReplicationConfig_method_property_get_replication_mode>` instead.
 
-\ *Deprecated.* Use :ref:`property_get_replication_mode<class_SceneReplicationConfig_method_property_get_replication_mode>` instead.
+Returns whether the property identified by the given ``path`` is configured to be synchronized on process.
 
 .. rst-class:: classref-item-separator
 
@@ -192,9 +192,9 @@ Returns whether the property identified by the given ``path`` is configured to b
 
 :ref:`bool<class_bool>` **property_get_watch** **(** :ref:`NodePath<class_NodePath>` path **)**
 
-Returns whether the property identified by the given ``path`` is configured to be reliably synchronized when changes are detected on process.
+**Deprecated:** Use :ref:`property_get_replication_mode<class_SceneReplicationConfig_method_property_get_replication_mode>` instead.
 
-\ *Deprecated.* Use :ref:`property_get_replication_mode<class_SceneReplicationConfig_method_property_get_replication_mode>` instead.
+Returns whether the property identified by the given ``path`` is configured to be reliably synchronized when changes are detected on process.
 
 .. rst-class:: classref-item-separator
 
@@ -230,9 +230,9 @@ Sets whether the property identified by the given ``path`` is configured to be s
 
 void **property_set_sync** **(** :ref:`NodePath<class_NodePath>` path, :ref:`bool<class_bool>` enabled **)**
 
-Sets whether the property identified by the given ``path`` is configured to be synchronized on process.
+**Deprecated:** Use :ref:`property_set_replication_mode<class_SceneReplicationConfig_method_property_set_replication_mode>` with :ref:`REPLICATION_MODE_ALWAYS<class_SceneReplicationConfig_constant_REPLICATION_MODE_ALWAYS>` instead.
 
-\ *Deprecated.* Use :ref:`property_set_replication_mode<class_SceneReplicationConfig_method_property_set_replication_mode>` with :ref:`REPLICATION_MODE_ALWAYS<class_SceneReplicationConfig_constant_REPLICATION_MODE_ALWAYS>` instead.
+Sets whether the property identified by the given ``path`` is configured to be synchronized on process.
 
 .. rst-class:: classref-item-separator
 
@@ -244,9 +244,9 @@ Sets whether the property identified by the given ``path`` is configured to be s
 
 void **property_set_watch** **(** :ref:`NodePath<class_NodePath>` path, :ref:`bool<class_bool>` enabled **)**
 
-Sets whether the property identified by the given ``path`` is configured to be reliably synchronized when changes are detected on process.
+**Deprecated:** Use :ref:`property_set_replication_mode<class_SceneReplicationConfig_method_property_set_replication_mode>` with :ref:`REPLICATION_MODE_ON_CHANGE<class_SceneReplicationConfig_constant_REPLICATION_MODE_ON_CHANGE>` instead.
 
-\ *Deprecated.* Use :ref:`property_set_replication_mode<class_SceneReplicationConfig_method_property_set_replication_mode>` with :ref:`REPLICATION_MODE_ON_CHANGE<class_SceneReplicationConfig_constant_REPLICATION_MODE_ON_CHANGE>` instead.
+Sets whether the property identified by the given ``path`` is configured to be reliably synchronized when changes are detected on process.
 
 .. rst-class:: classref-item-separator
 

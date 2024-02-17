@@ -54,13 +54,9 @@ Properties
    +-----------------------------+-----------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>` | :ref:`ssh_remote_deploy/run_script<class_EditorExportPlatformLinuxBSD_property_ssh_remote_deploy/run_script>`         |
    +-----------------------------+-----------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`     | :ref:`texture_format/bptc<class_EditorExportPlatformLinuxBSD_property_texture_format/bptc>`                           |
+   | :ref:`bool<class_bool>`     | :ref:`texture_format/etc2_astc<class_EditorExportPlatformLinuxBSD_property_texture_format/etc2_astc>`                 |
    +-----------------------------+-----------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`     | :ref:`texture_format/etc<class_EditorExportPlatformLinuxBSD_property_texture_format/etc>`                             |
-   +-----------------------------+-----------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`     | :ref:`texture_format/etc2<class_EditorExportPlatformLinuxBSD_property_texture_format/etc2>`                           |
-   +-----------------------------+-----------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`     | :ref:`texture_format/s3tc<class_EditorExportPlatformLinuxBSD_property_texture_format/s3tc>`                           |
+   | :ref:`bool<class_bool>`     | :ref:`texture_format/s3tc_bptc<class_EditorExportPlatformLinuxBSD_property_texture_format/s3tc_bptc>`                 |
    +-----------------------------+-----------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
@@ -240,49 +236,25 @@ The following variables can be used in the script:
 
 ----
 
-.. _class_EditorExportPlatformLinuxBSD_property_texture_format/bptc:
+.. _class_EditorExportPlatformLinuxBSD_property_texture_format/etc2_astc:
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **texture_format/bptc**
+:ref:`bool<class_bool>` **texture_format/etc2_astc**
 
-If ``true``, project textures are exported in the BPTC format.
+If ``true``, project textures are exported in the ETC2/ASTC format.
 
 .. rst-class:: classref-item-separator
 
 ----
 
-.. _class_EditorExportPlatformLinuxBSD_property_texture_format/etc:
+.. _class_EditorExportPlatformLinuxBSD_property_texture_format/s3tc_bptc:
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **texture_format/etc**
+:ref:`bool<class_bool>` **texture_format/s3tc_bptc**
 
-If ``true``, project textures are exported in the ETC format.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_EditorExportPlatformLinuxBSD_property_texture_format/etc2:
-
-.. rst-class:: classref-property
-
-:ref:`bool<class_bool>` **texture_format/etc2**
-
-If ``true``, project textures are exported in the ETC2 format.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_EditorExportPlatformLinuxBSD_property_texture_format/s3tc:
-
-.. rst-class:: classref-property
-
-:ref:`bool<class_bool>` **texture_format/s3tc**
-
-If ``true``, project textures are exported in the S3TC format.
+If ``true``, project textures are exported in the S3TC/BPTC format.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

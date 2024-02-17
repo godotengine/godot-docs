@@ -171,7 +171,7 @@ Methods
    +------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                    | :ref:`sampler_is_format_supported_for_filter<class_RenderingDevice_method_sampler_is_format_supported_for_filter>` **(** :ref:`DataFormat<enum_RenderingDevice_DataFormat>` format, :ref:`SamplerFilter<enum_RenderingDevice_SamplerFilter>` sampler_filter **)** |const|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
    +------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                                      | :ref:`screen_get_framebuffer_format<class_RenderingDevice_method_screen_get_framebuffer_format>` **(** **)** |const|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+   | :ref:`int<class_int>`                                      | :ref:`screen_get_framebuffer_format<class_RenderingDevice_method_screen_get_framebuffer_format>` **(** :ref:`int<class_int>` screen=0 **)** |const|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
    +------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                                      | :ref:`screen_get_height<class_RenderingDevice_method_screen_get_height>` **(** :ref:`int<class_int>` screen=0 **)** |const|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
    +------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -439,7 +439,13 @@ Buffer of any kind of (storage, vertex, etc.).
 
 :ref:`DriverResource<enum_RenderingDevice_DriverResource>` **DRIVER_RESOURCE_VULKAN_DEVICE** = ``0``
 
-*Deprecated.* Use :ref:`DRIVER_RESOURCE_LOGICAL_DEVICE<class_RenderingDevice_constant_DRIVER_RESOURCE_LOGICAL_DEVICE>`.
+**Deprecated:** Use :ref:`DRIVER_RESOURCE_LOGICAL_DEVICE<class_RenderingDevice_constant_DRIVER_RESOURCE_LOGICAL_DEVICE>` instead.
+
+.. container:: contribute
+
+	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+
 
 .. _class_RenderingDevice_constant_DRIVER_RESOURCE_VULKAN_PHYSICAL_DEVICE:
 
@@ -447,7 +453,13 @@ Buffer of any kind of (storage, vertex, etc.).
 
 :ref:`DriverResource<enum_RenderingDevice_DriverResource>` **DRIVER_RESOURCE_VULKAN_PHYSICAL_DEVICE** = ``1``
 
-*Deprecated.* Use :ref:`DRIVER_RESOURCE_PHYSICAL_DEVICE<class_RenderingDevice_constant_DRIVER_RESOURCE_PHYSICAL_DEVICE>`.
+**Deprecated:** Use :ref:`DRIVER_RESOURCE_PHYSICAL_DEVICE<class_RenderingDevice_constant_DRIVER_RESOURCE_PHYSICAL_DEVICE>` instead.
+
+.. container:: contribute
+
+	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+
 
 .. _class_RenderingDevice_constant_DRIVER_RESOURCE_VULKAN_INSTANCE:
 
@@ -455,7 +467,13 @@ Buffer of any kind of (storage, vertex, etc.).
 
 :ref:`DriverResource<enum_RenderingDevice_DriverResource>` **DRIVER_RESOURCE_VULKAN_INSTANCE** = ``2``
 
-*Deprecated.* Use :ref:`DRIVER_RESOURCE_TOPMOST_OBJECT<class_RenderingDevice_constant_DRIVER_RESOURCE_TOPMOST_OBJECT>`.
+**Deprecated:** Use :ref:`DRIVER_RESOURCE_TOPMOST_OBJECT<class_RenderingDevice_constant_DRIVER_RESOURCE_TOPMOST_OBJECT>` instead.
+
+.. container:: contribute
+
+	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+
 
 .. _class_RenderingDevice_constant_DRIVER_RESOURCE_VULKAN_QUEUE:
 
@@ -463,7 +481,13 @@ Buffer of any kind of (storage, vertex, etc.).
 
 :ref:`DriverResource<enum_RenderingDevice_DriverResource>` **DRIVER_RESOURCE_VULKAN_QUEUE** = ``3``
 
-*Deprecated.* Use :ref:`DRIVER_RESOURCE_COMMAND_QUEUE<class_RenderingDevice_constant_DRIVER_RESOURCE_COMMAND_QUEUE>`.
+**Deprecated:** Use :ref:`DRIVER_RESOURCE_COMMAND_QUEUE<class_RenderingDevice_constant_DRIVER_RESOURCE_COMMAND_QUEUE>` instead.
+
+.. container:: contribute
+
+	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+
 
 .. _class_RenderingDevice_constant_DRIVER_RESOURCE_VULKAN_QUEUE_FAMILY_INDEX:
 
@@ -471,7 +495,13 @@ Buffer of any kind of (storage, vertex, etc.).
 
 :ref:`DriverResource<enum_RenderingDevice_DriverResource>` **DRIVER_RESOURCE_VULKAN_QUEUE_FAMILY_INDEX** = ``4``
 
-*Deprecated.* Use :ref:`DRIVER_RESOURCE_QUEUE_FAMILY<class_RenderingDevice_constant_DRIVER_RESOURCE_QUEUE_FAMILY>`.
+**Deprecated:** Use :ref:`DRIVER_RESOURCE_QUEUE_FAMILY<class_RenderingDevice_constant_DRIVER_RESOURCE_QUEUE_FAMILY>` instead.
+
+.. container:: contribute
+
+	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+
 
 .. _class_RenderingDevice_constant_DRIVER_RESOURCE_VULKAN_IMAGE:
 
@@ -479,7 +509,13 @@ Buffer of any kind of (storage, vertex, etc.).
 
 :ref:`DriverResource<enum_RenderingDevice_DriverResource>` **DRIVER_RESOURCE_VULKAN_IMAGE** = ``5``
 
-*Deprecated.* Use :ref:`DRIVER_RESOURCE_TEXTURE<class_RenderingDevice_constant_DRIVER_RESOURCE_TEXTURE>`.
+**Deprecated:** Use :ref:`DRIVER_RESOURCE_TEXTURE<class_RenderingDevice_constant_DRIVER_RESOURCE_TEXTURE>` instead.
+
+.. container:: contribute
+
+	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+
 
 .. _class_RenderingDevice_constant_DRIVER_RESOURCE_VULKAN_IMAGE_VIEW:
 
@@ -487,7 +523,13 @@ Buffer of any kind of (storage, vertex, etc.).
 
 :ref:`DriverResource<enum_RenderingDevice_DriverResource>` **DRIVER_RESOURCE_VULKAN_IMAGE_VIEW** = ``6``
 
-*Deprecated.* Use :ref:`DRIVER_RESOURCE_TEXTURE_VIEW<class_RenderingDevice_constant_DRIVER_RESOURCE_TEXTURE_VIEW>`.
+**Deprecated:** Use :ref:`DRIVER_RESOURCE_TEXTURE_VIEW<class_RenderingDevice_constant_DRIVER_RESOURCE_TEXTURE_VIEW>` instead.
+
+.. container:: contribute
+
+	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+
 
 .. _class_RenderingDevice_constant_DRIVER_RESOURCE_VULKAN_IMAGE_NATIVE_TEXTURE_FORMAT:
 
@@ -495,7 +537,13 @@ Buffer of any kind of (storage, vertex, etc.).
 
 :ref:`DriverResource<enum_RenderingDevice_DriverResource>` **DRIVER_RESOURCE_VULKAN_IMAGE_NATIVE_TEXTURE_FORMAT** = ``7``
 
-*Deprecated.* Use :ref:`DRIVER_RESOURCE_TEXTURE_DATA_FORMAT<class_RenderingDevice_constant_DRIVER_RESOURCE_TEXTURE_DATA_FORMAT>`.
+**Deprecated:** Use :ref:`DRIVER_RESOURCE_TEXTURE_DATA_FORMAT<class_RenderingDevice_constant_DRIVER_RESOURCE_TEXTURE_DATA_FORMAT>` instead.
+
+.. container:: contribute
+
+	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+
 
 .. _class_RenderingDevice_constant_DRIVER_RESOURCE_VULKAN_SAMPLER:
 
@@ -503,7 +551,13 @@ Buffer of any kind of (storage, vertex, etc.).
 
 :ref:`DriverResource<enum_RenderingDevice_DriverResource>` **DRIVER_RESOURCE_VULKAN_SAMPLER** = ``8``
 
-*Deprecated.* Use :ref:`DRIVER_RESOURCE_SAMPLER<class_RenderingDevice_constant_DRIVER_RESOURCE_SAMPLER>`.
+**Deprecated:** Use :ref:`DRIVER_RESOURCE_SAMPLER<class_RenderingDevice_constant_DRIVER_RESOURCE_SAMPLER>` instead.
+
+.. container:: contribute
+
+	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+
 
 .. _class_RenderingDevice_constant_DRIVER_RESOURCE_VULKAN_DESCRIPTOR_SET:
 
@@ -511,7 +565,13 @@ Buffer of any kind of (storage, vertex, etc.).
 
 :ref:`DriverResource<enum_RenderingDevice_DriverResource>` **DRIVER_RESOURCE_VULKAN_DESCRIPTOR_SET** = ``9``
 
-*Deprecated.* Use :ref:`DRIVER_RESOURCE_UNIFORM_SET<class_RenderingDevice_constant_DRIVER_RESOURCE_UNIFORM_SET>`.
+**Deprecated:** Use :ref:`DRIVER_RESOURCE_UNIFORM_SET<class_RenderingDevice_constant_DRIVER_RESOURCE_UNIFORM_SET>` instead.
+
+.. container:: contribute
+
+	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+
 
 .. _class_RenderingDevice_constant_DRIVER_RESOURCE_VULKAN_BUFFER:
 
@@ -519,7 +579,13 @@ Buffer of any kind of (storage, vertex, etc.).
 
 :ref:`DriverResource<enum_RenderingDevice_DriverResource>` **DRIVER_RESOURCE_VULKAN_BUFFER** = ``10``
 
-*Deprecated.* Use :ref:`DRIVER_RESOURCE_BUFFER<class_RenderingDevice_constant_DRIVER_RESOURCE_BUFFER>`.
+**Deprecated:** Use :ref:`DRIVER_RESOURCE_BUFFER<class_RenderingDevice_constant_DRIVER_RESOURCE_BUFFER>` instead.
+
+.. container:: contribute
+
+	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+
 
 .. _class_RenderingDevice_constant_DRIVER_RESOURCE_VULKAN_COMPUTE_PIPELINE:
 
@@ -527,7 +593,13 @@ Buffer of any kind of (storage, vertex, etc.).
 
 :ref:`DriverResource<enum_RenderingDevice_DriverResource>` **DRIVER_RESOURCE_VULKAN_COMPUTE_PIPELINE** = ``11``
 
-*Deprecated.* Use :ref:`DRIVER_RESOURCE_COMPUTE_PIPELINE<class_RenderingDevice_constant_DRIVER_RESOURCE_COMPUTE_PIPELINE>`.
+**Deprecated:** Use :ref:`DRIVER_RESOURCE_COMPUTE_PIPELINE<class_RenderingDevice_constant_DRIVER_RESOURCE_COMPUTE_PIPELINE>` instead.
+
+.. container:: contribute
+
+	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+
 
 .. _class_RenderingDevice_constant_DRIVER_RESOURCE_VULKAN_RENDER_PIPELINE:
 
@@ -535,7 +607,13 @@ Buffer of any kind of (storage, vertex, etc.).
 
 :ref:`DriverResource<enum_RenderingDevice_DriverResource>` **DRIVER_RESOURCE_VULKAN_RENDER_PIPELINE** = ``12``
 
-*Deprecated.* Use :ref:`DRIVER_RESOURCE_RENDER_PIPELINE<class_RenderingDevice_constant_DRIVER_RESOURCE_RENDER_PIPELINE>`.
+**Deprecated:** Use :ref:`DRIVER_RESOURCE_RENDER_PIPELINE<class_RenderingDevice_constant_DRIVER_RESOURCE_RENDER_PIPELINE>` instead.
+
+.. container:: contribute
+
+	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+
 
 .. rst-class:: classref-item-separator
 
@@ -3891,7 +3969,13 @@ Represents the size of the :ref:`InitialAction<enum_RenderingDevice_InitialActio
 
 :ref:`InitialAction<enum_RenderingDevice_InitialAction>` **INITIAL_ACTION_CLEAR_REGION** = ``1``
 
-*Deprecated.* Use :ref:`INITIAL_ACTION_CLEAR<class_RenderingDevice_constant_INITIAL_ACTION_CLEAR>` instead.
+**Deprecated:** Use :ref:`INITIAL_ACTION_CLEAR<class_RenderingDevice_constant_INITIAL_ACTION_CLEAR>` instead.
+
+.. container:: contribute
+
+	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+
 
 .. _class_RenderingDevice_constant_INITIAL_ACTION_CLEAR_REGION_CONTINUE:
 
@@ -3899,7 +3983,13 @@ Represents the size of the :ref:`InitialAction<enum_RenderingDevice_InitialActio
 
 :ref:`InitialAction<enum_RenderingDevice_InitialAction>` **INITIAL_ACTION_CLEAR_REGION_CONTINUE** = ``1``
 
-*Deprecated.* Use :ref:`INITIAL_ACTION_LOAD<class_RenderingDevice_constant_INITIAL_ACTION_LOAD>` instead.
+**Deprecated:** Use :ref:`INITIAL_ACTION_LOAD<class_RenderingDevice_constant_INITIAL_ACTION_LOAD>` instead.
+
+.. container:: contribute
+
+	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+
 
 .. _class_RenderingDevice_constant_INITIAL_ACTION_KEEP:
 
@@ -3907,7 +3997,13 @@ Represents the size of the :ref:`InitialAction<enum_RenderingDevice_InitialActio
 
 :ref:`InitialAction<enum_RenderingDevice_InitialAction>` **INITIAL_ACTION_KEEP** = ``0``
 
-*Deprecated.* Use :ref:`INITIAL_ACTION_LOAD<class_RenderingDevice_constant_INITIAL_ACTION_LOAD>` instead.
+**Deprecated:** Use :ref:`INITIAL_ACTION_LOAD<class_RenderingDevice_constant_INITIAL_ACTION_LOAD>` instead.
+
+.. container:: contribute
+
+	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+
 
 .. _class_RenderingDevice_constant_INITIAL_ACTION_DROP:
 
@@ -3915,7 +4011,13 @@ Represents the size of the :ref:`InitialAction<enum_RenderingDevice_InitialActio
 
 :ref:`InitialAction<enum_RenderingDevice_InitialAction>` **INITIAL_ACTION_DROP** = ``2``
 
-*Deprecated.* Use :ref:`INITIAL_ACTION_DISCARD<class_RenderingDevice_constant_INITIAL_ACTION_DISCARD>` instead.
+**Deprecated:** Use :ref:`INITIAL_ACTION_DISCARD<class_RenderingDevice_constant_INITIAL_ACTION_DISCARD>` instead.
+
+.. container:: contribute
+
+	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+
 
 .. _class_RenderingDevice_constant_INITIAL_ACTION_CONTINUE:
 
@@ -3923,7 +4025,13 @@ Represents the size of the :ref:`InitialAction<enum_RenderingDevice_InitialActio
 
 :ref:`InitialAction<enum_RenderingDevice_InitialAction>` **INITIAL_ACTION_CONTINUE** = ``0``
 
-*Deprecated.* Use :ref:`INITIAL_ACTION_LOAD<class_RenderingDevice_constant_INITIAL_ACTION_LOAD>` instead.
+**Deprecated:** Use :ref:`INITIAL_ACTION_LOAD<class_RenderingDevice_constant_INITIAL_ACTION_LOAD>` instead.
+
+.. container:: contribute
+
+	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+
 
 .. rst-class:: classref-item-separator
 
@@ -3965,7 +4073,13 @@ Represents the size of the :ref:`FinalAction<enum_RenderingDevice_FinalAction>` 
 
 :ref:`FinalAction<enum_RenderingDevice_FinalAction>` **FINAL_ACTION_READ** = ``0``
 
-*Deprecated.* Use :ref:`FINAL_ACTION_STORE<class_RenderingDevice_constant_FINAL_ACTION_STORE>` instead.
+**Deprecated:** Use :ref:`FINAL_ACTION_STORE<class_RenderingDevice_constant_FINAL_ACTION_STORE>` instead.
+
+.. container:: contribute
+
+	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+
 
 .. _class_RenderingDevice_constant_FINAL_ACTION_CONTINUE:
 
@@ -3973,7 +4087,13 @@ Represents the size of the :ref:`FinalAction<enum_RenderingDevice_FinalAction>` 
 
 :ref:`FinalAction<enum_RenderingDevice_FinalAction>` **FINAL_ACTION_CONTINUE** = ``0``
 
-*Deprecated.* Use :ref:`FINAL_ACTION_STORE<class_RenderingDevice_constant_FINAL_ACTION_STORE>` instead.
+**Deprecated:** Use :ref:`FINAL_ACTION_STORE<class_RenderingDevice_constant_FINAL_ACTION_STORE>` instead.
+
+.. container:: contribute
+
+	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+
 
 .. rst-class:: classref-item-separator
 
@@ -4513,7 +4633,11 @@ Method Descriptions
 
 void **barrier** **(** |bitfield|\<:ref:`BarrierMask<enum_RenderingDevice_BarrierMask>`\> from=32767, |bitfield|\<:ref:`BarrierMask<enum_RenderingDevice_BarrierMask>`\> to=32767 **)**
 
-*Deprecated.* Barriers are automatically inserted by RenderingDevice.
+**Deprecated:** Barriers are automatically inserted by RenderingDevice.
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 .. rst-class:: classref-item-separator
 
@@ -4779,7 +4903,11 @@ Ends the command buffer debug label region started by a :ref:`draw_command_begin
 
 void **draw_command_insert_label** **(** :ref:`String<class_String>` name, :ref:`Color<class_Color>` color **)**
 
-*Deprecated.* Inserting labels no longer applies due to command reordering.
+**Deprecated:** Inserting labels no longer applies due to command reordering.
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 .. rst-class:: classref-item-separator
 
@@ -4840,7 +4968,11 @@ High-level variant of :ref:`draw_list_begin<class_RenderingDevice_method_draw_li
 
 :ref:`PackedInt64Array<class_PackedInt64Array>` **draw_list_begin_split** **(** :ref:`RID<class_RID>` framebuffer, :ref:`int<class_int>` splits, :ref:`InitialAction<enum_RenderingDevice_InitialAction>` initial_color_action, :ref:`FinalAction<enum_RenderingDevice_FinalAction>` final_color_action, :ref:`InitialAction<enum_RenderingDevice_InitialAction>` initial_depth_action, :ref:`FinalAction<enum_RenderingDevice_FinalAction>` final_depth_action, :ref:`PackedColorArray<class_PackedColorArray>` clear_color_values=PackedColorArray(), :ref:`float<class_float>` clear_depth=1.0, :ref:`int<class_int>` clear_stencil=0, :ref:`Rect2<class_Rect2>` region=Rect2(0, 0, 0, 0), :ref:`RID[]<class_RID>` storage_textures=[] **)**
 
-*Deprecated.* Split draw lists are used automatically by RenderingDevice.
+**Deprecated:** Split draw lists are used automatically by RenderingDevice.
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 .. rst-class:: classref-item-separator
 
@@ -4986,7 +5118,11 @@ Switches to the next draw pass.
 
 :ref:`PackedInt64Array<class_PackedInt64Array>` **draw_list_switch_to_next_pass_split** **(** :ref:`int<class_int>` splits **)**
 
-*Deprecated.* Split draw lists are used automatically by RenderingDevice.
+**Deprecated:** Split draw lists are used automatically by RenderingDevice.
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 .. rst-class:: classref-item-separator
 
@@ -5126,7 +5262,11 @@ Tries to free an object in the RenderingDevice. To avoid memory leaks, this shou
 
 void **full_barrier** **(** **)**
 
-*Deprecated.* Barriers are automatically inserted by RenderingDevice.
+**Deprecated:** Barriers are automatically inserted by RenderingDevice.
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 .. rst-class:: classref-item-separator
 
@@ -5362,9 +5502,9 @@ Returns ``true`` if implementation supports using a texture of ``format`` with t
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **screen_get_framebuffer_format** **(** **)** |const|
+:ref:`int<class_int>` **screen_get_framebuffer_format** **(** :ref:`int<class_int>` screen=0 **)** |const|
 
-Returns the screen's framebuffer format.
+Returns the framebuffer format of the given screen.
 
 \ **Note:** Only the main **RenderingDevice** returned by :ref:`RenderingServer.get_rendering_device<class_RenderingServer_method_get_rendering_device>` has a format. If called on a local **RenderingDevice**, this method prints an error and returns :ref:`INVALID_ID<class_RenderingDevice_constant_INVALID_ID>`.
 
@@ -5680,11 +5820,11 @@ Returns the data format used to create this texture.
 
 :ref:`int<class_int>` **texture_get_native_handle** **(** :ref:`RID<class_RID>` texture **)**
 
+**Deprecated:** Use :ref:`get_driver_resource<class_RenderingDevice_method_get_driver_resource>` with :ref:`DRIVER_RESOURCE_TEXTURE<class_RenderingDevice_constant_DRIVER_RESOURCE_TEXTURE>` instead.
+
 Returns the internal graphics handle for this texture object. For use when communicating with third-party APIs mostly with GDExtension.
 
 \ **Note:** This function returns a ``uint64_t`` which internally maps to a ``GLuint`` (OpenGL) or ``VkImage`` (Vulkan).
-
-\ *Deprecated.* Use :ref:`get_driver_resource<class_RenderingDevice_method_get_driver_resource>` with :ref:`DRIVER_RESOURCE_TEXTURE<class_RenderingDevice_constant_DRIVER_RESOURCE_TEXTURE>` instead.
 
 .. rst-class:: classref-item-separator
 

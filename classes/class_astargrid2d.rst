@@ -452,9 +452,9 @@ The region of grid cells available for pathfinding. If changed, :ref:`update<cla
 - void **set_size** **(** :ref:`Vector2i<class_Vector2i>` value **)**
 - :ref:`Vector2i<class_Vector2i>` **get_size** **(** **)**
 
-The size of the grid (number of cells of size :ref:`cell_size<class_AStarGrid2D_property_cell_size>` on each axis). If changed, :ref:`update<class_AStarGrid2D_method_update>` needs to be called before finding the next path.
+**Deprecated:** Use :ref:`region<class_AStarGrid2D_property_region>` instead.
 
-\ *Deprecated.* Use :ref:`region<class_AStarGrid2D_property_region>` instead.
+The size of the grid (number of cells of size :ref:`cell_size<class_AStarGrid2D_property_cell_size>` on each axis). If changed, :ref:`update<class_AStarGrid2D_method_update>` needs to be called before finding the next path.
 
 .. rst-class:: classref-section-separator
 

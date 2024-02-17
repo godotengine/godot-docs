@@ -109,9 +109,9 @@ Emitted when the resource changes, usually when one of its properties is modifie
 
 **setup_local_to_scene_requested** **(** **)**
 
-Emitted by a newly duplicated resource with :ref:`resource_local_to_scene<class_Resource_property_resource_local_to_scene>` set to ``true``. 
+**Deprecated:** This signal is only emitted when the resource is created. Override :ref:`_setup_local_to_scene<class_Resource_private_method__setup_local_to_scene>` instead.
 
-\ *Deprecated.* This signal is only emitted when the resource is created. Override :ref:`_setup_local_to_scene<class_Resource_private_method__setup_local_to_scene>` instead.
+Emitted by a newly duplicated resource with :ref:`resource_local_to_scene<class_Resource_property_resource_local_to_scene>` set to ``true``.
 
 .. rst-class:: classref-section-separator
 
@@ -289,9 +289,9 @@ Returns the :ref:`RID<class_RID>` of this resource (or an empty RID). Many resou
 
 void **setup_local_to_scene** **(** **)**
 
-Calls :ref:`_setup_local_to_scene<class_Resource_private_method__setup_local_to_scene>`. If :ref:`resource_local_to_scene<class_Resource_property_resource_local_to_scene>` is set to ``true``, this method is automatically called from :ref:`PackedScene.instantiate<class_PackedScene_method_instantiate>` by the newly duplicated resource within the scene instance.
+**Deprecated:** This method should only be called internally. Override :ref:`_setup_local_to_scene<class_Resource_private_method__setup_local_to_scene>` instead.
 
-\ *Deprecated.* This method should only be called internally. Override :ref:`_setup_local_to_scene<class_Resource_private_method__setup_local_to_scene>` instead.
+Calls :ref:`_setup_local_to_scene<class_Resource_private_method__setup_local_to_scene>`. If :ref:`resource_local_to_scene<class_Resource_property_resource_local_to_scene>` is set to ``true``, this method is automatically called from :ref:`PackedScene.instantiate<class_PackedScene_method_instantiate>` by the newly duplicated resource within the scene instance.
 
 .. rst-class:: classref-item-separator
 

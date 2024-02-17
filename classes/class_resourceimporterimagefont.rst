@@ -39,6 +39,8 @@ Properties
    :widths: auto
 
    +---------------------------------------------------+------------------------------------------------------------------------------------+-------------------------+
+   | :ref:`int<class_int>`                             | :ref:`ascent<class_ResourceImporterImageFont_property_ascent>`                     | ``0``                   |
+   +---------------------------------------------------+------------------------------------------------------------------------------------+-------------------------+
    | :ref:`Rect2i<class_Rect2i>`                       | :ref:`character_margin<class_ResourceImporterImageFont_property_character_margin>` | ``Rect2i(0, 0, 0, 0)``  |
    +---------------------------------------------------+------------------------------------------------------------------------------------+-------------------------+
    | :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`character_ranges<class_ResourceImporterImageFont_property_character_ranges>` | ``PackedStringArray()`` |
@@ -47,9 +49,13 @@ Properties
    +---------------------------------------------------+------------------------------------------------------------------------------------+-------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`compress<class_ResourceImporterImageFont_property_compress>`                 | ``true``                |
    +---------------------------------------------------+------------------------------------------------------------------------------------+-------------------------+
+   | :ref:`int<class_int>`                             | :ref:`descent<class_ResourceImporterImageFont_property_descent>`                   | ``0``                   |
+   +---------------------------------------------------+------------------------------------------------------------------------------------+-------------------------+
    | :ref:`Array<class_Array>`                         | :ref:`fallbacks<class_ResourceImporterImageFont_property_fallbacks>`               | ``[]``                  |
    +---------------------------------------------------+------------------------------------------------------------------------------------+-------------------------+
    | :ref:`Rect2i<class_Rect2i>`                       | :ref:`image_margin<class_ResourceImporterImageFont_property_image_margin>`         | ``Rect2i(0, 0, 0, 0)``  |
+   +---------------------------------------------------+------------------------------------------------------------------------------------+-------------------------+
+   | :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`kerning_pairs<class_ResourceImporterImageFont_property_kerning_pairs>`       | ``PackedStringArray()`` |
    +---------------------------------------------------+------------------------------------------------------------------------------------+-------------------------+
    | :ref:`int<class_int>`                             | :ref:`rows<class_ResourceImporterImageFont_property_rows>`                         | ``1``                   |
    +---------------------------------------------------+------------------------------------------------------------------------------------+-------------------------+
@@ -64,6 +70,18 @@ Properties
 
 Property Descriptions
 ---------------------
+
+.. _class_ResourceImporterImageFont_property_ascent:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **ascent** = ``0``
+
+Font ascent (number of pixels above the baseline). If set to ``0``, half of the character height is used.
+
+.. rst-class:: classref-item-separator
+
+----
 
 .. _class_ResourceImporterImageFont_property_character_margin:
 
@@ -83,9 +101,11 @@ Margin applied around every imported glyph. If your font image contains guides (
 
 :ref:`PackedStringArray<class_PackedStringArray>` **character_ranges** = ``PackedStringArray()``
 
-The character ranges to import from the font image. This is an array that maps each position on the image (in tile coordinates, not pixels). The font atlas is traversed from left to right and top to bottom. Characters can be specified with decimal numbers (127), hexadecimal numbers (``0x007f``) or between single quotes (``'~'``). Ranges can be specified with a hyphen between characters.
+The character ranges to import from the font image. This is an array that maps each position on the image (in tile coordinates, not pixels). The font atlas is traversed from left to right and top to bottom. Characters can be specified with decimal numbers (127), hexadecimal numbers (``0x007f``, or ``U+007f``) or between single quotes (``'~'``). Ranges can be specified with a hyphen between characters.
 
-For instance, ``0-127`` (or ``0x0000-0x007f``) denotes the full ASCII range. As another example, ``' '-'~'`` is equivalent to ``32-127`` and denotes the range of printable (visible) ASCII characters.
+For example, ``0-127`` represents the full ASCII range. It can also be written as ``0x0000-0x007f`` (or ``U+0000-U+007f``). As another example, ``' '-'~'`` is equivalent to ``32-127`` and represents the range of printable (visible) ASCII characters.
+
+For any range, the character advance and offset can be customized by appending three space-separated integer values (additional advance, x offset, y offset) to the end. For example ``'a'-'b' 4 5 2`` sets the advance to ``char_width + 4`` and offset to ``Vector2(5, 2)`` for both `a` and `b` characters.
 
 Make sure :ref:`character_ranges<class_ResourceImporterImageFont_property_character_ranges>` doesn't exceed the number of :ref:`columns<class_ResourceImporterImageFont_property_columns>` \* :ref:`rows<class_ResourceImporterImageFont_property_rows>` defined. Otherwise, the font will fail to import.
 
@@ -117,6 +137,18 @@ If ``true``, uses lossless compression for the resulting font.
 
 ----
 
+.. _class_ResourceImporterImageFont_property_descent:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **descent** = ``0``
+
+Font descent (number of pixels below the baseline). If set to ``0``, half of the character height is used.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_ResourceImporterImageFont_property_fallbacks:
 
 .. rst-class:: classref-property
@@ -136,6 +168,20 @@ List of font fallbacks to use if a glyph isn't found in this bitmap font. Fonts 
 :ref:`Rect2i<class_Rect2i>` **image_margin** = ``Rect2i(0, 0, 0, 0)``
 
 Margin to cut on the sides of the entire image. This can be used to cut parts of the image that contain attribution information or similar.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ResourceImporterImageFont_property_kerning_pairs:
+
+.. rst-class:: classref-property
+
+:ref:`PackedStringArray<class_PackedStringArray>` **kerning_pairs** = ``PackedStringArray()``
+
+Kerning pairs for the font. Kerning pair adjust the spacing between two characters.
+
+Each string consist of three space separated values: "from" string, "to" string and integer offset. Each combination form the two string for a kerning pair, e.g, ``ab cd -3`` will create kerning pairs ``ac``, ``ad``, ``bc``, and ``bd`` with offset ``-3``.
 
 .. rst-class:: classref-item-separator
 

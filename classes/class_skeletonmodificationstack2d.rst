@@ -10,6 +10,8 @@
 SkeletonModificationStack2D
 ===========================
 
+**Experimental:** This class may be changed or removed in future versions.
+
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
 A resource that holds a stack of :ref:`SkeletonModification2D<class_SkeletonModification2D>`\ s.

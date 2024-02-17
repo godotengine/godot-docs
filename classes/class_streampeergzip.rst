@@ -10,6 +10,8 @@
 StreamPeerGZIP
 ==============
 
+**Experimental:** This class may be changed or removed in future versions.
+
 **Inherits:** :ref:`StreamPeer<class_StreamPeer>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
 A stream peer that handles GZIP and deflate compression/decompression.

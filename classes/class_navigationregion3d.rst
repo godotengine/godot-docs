@@ -10,6 +10,8 @@
 NavigationRegion3D
 ==================
 
+**Experimental:** This class may be changed or removed in future versions.
+
 **Inherits:** :ref:`Node3D<class_Node3D>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
 A traversable 3D region that :ref:`NavigationAgent3D<class_NavigationAgent3D>`\ s can use for pathfinding.
@@ -275,9 +277,9 @@ Returns the current navigation map :ref:`RID<class_RID>` used by this region.
 
 :ref:`RID<class_RID>` **get_region_rid** **(** **)** |const|
 
-Returns the :ref:`RID<class_RID>` of this region on the :ref:`NavigationServer3D<class_NavigationServer3D>`.
+**Deprecated:** Use :ref:`get_rid<class_NavigationRegion3D_method_get_rid>` instead.
 
-\ *Deprecated.* Use :ref:`get_rid<class_NavigationRegion3D_method_get_rid>` instead.
+Returns the :ref:`RID<class_RID>` of this region on the :ref:`NavigationServer3D<class_NavigationServer3D>`.
 
 .. rst-class:: classref-item-separator
 

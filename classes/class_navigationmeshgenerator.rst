@@ -10,6 +10,8 @@
 NavigationMeshGenerator
 =======================
 
+**Deprecated:** This class may be changed or removed in future versions.
+
 **Inherits:** :ref:`Object<class_Object>`
 
 Helper class for creating and clearing navigation meshes.
@@ -68,6 +70,8 @@ Method Descriptions
 .. rst-class:: classref-method
 
 void **bake** **(** :ref:`NavigationMesh<class_NavigationMesh>` navigation_mesh, :ref:`Node<class_Node>` root_node **)**
+
+**Deprecated:** This method may be changed or removed in future versions.
 
 The bake function is deprecated due to core threading changes. To upgrade existing code, first create a :ref:`NavigationMeshSourceGeometryData3D<class_NavigationMeshSourceGeometryData3D>` resource. Use this resource with :ref:`parse_source_geometry_data<class_NavigationMeshGenerator_method_parse_source_geometry_data>` to parse the SceneTree for nodes that should contribute to the navigation mesh baking. The SceneTree parsing needs to happen on the main thread. After the parsing is finished use the resource with :ref:`bake_from_source_geometry_data<class_NavigationMeshGenerator_method_bake_from_source_geometry_data>` to bake a navigation mesh.
 

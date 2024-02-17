@@ -180,7 +180,7 @@ Specific to the macOS platform.
 
 Notification received from the OS when the application is resumed.
 
-Specific to the Android platform.
+Specific to the Android and iOS platforms.
 
 .. _class_MainLoop_constant_NOTIFICATION_APPLICATION_PAUSED:
 
@@ -190,7 +190,9 @@ Specific to the Android platform.
 
 Notification received from the OS when the application is paused.
 
-Specific to the Android platform.
+Specific to the Android and iOS platforms.
+
+\ **Note:** On iOS, you only have approximately 5 seconds to finish a task started by this signal. If you go over this allotment, iOS will kill the app instead of pausing it.
 
 .. _class_MainLoop_constant_NOTIFICATION_APPLICATION_FOCUS_IN:
 
@@ -200,7 +202,7 @@ Specific to the Android platform.
 
 Notification received from the OS when the application is focused, i.e. when changing the focus from the OS desktop or a thirdparty application to any open window of the Godot instance.
 
-Implemented on desktop platforms.
+Implemented on desktop and mobile platforms.
 
 .. _class_MainLoop_constant_NOTIFICATION_APPLICATION_FOCUS_OUT:
 
@@ -210,7 +212,7 @@ Implemented on desktop platforms.
 
 Notification received from the OS when the application is defocused, i.e. when changing the focus from any open window of the Godot instance to the OS desktop or a thirdparty application.
 
-Implemented on desktop platforms.
+Implemented on desktop and mobile platforms.
 
 .. _class_MainLoop_constant_NOTIFICATION_TEXT_SERVER_CHANGED:
 
