@@ -258,7 +258,7 @@ Returns the average font ascent (number of pixels above the baseline).
 
 :ref:`Vector2<class_Vector2>` **get_char_size** **(** :ref:`int<class_int>` char, :ref:`int<class_int>` font_size **)** |const|
 
-Returns the size of a character, optionally taking kerning into account if the next character is provided.
+Returns the size of a character. Does not take kerning into account.
 
 \ **Note:** Do not use this function to calculate width of the string character by character, use :ref:`get_string_size<class_Font_method_get_string_size>` or :ref:`TextLine<class_TextLine>` instead. The height returned is the font height (see also :ref:`get_height<class_Font_method_get_height>`) and has no relation to the glyph height.
 
