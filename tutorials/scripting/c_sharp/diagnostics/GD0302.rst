@@ -1,5 +1,5 @@
-GD0302: The generic type parameter must be annotated with the MustBeVariant attribute
-=====================================================================================
+GD0302: The generic type parameter must be annotated with the '[MustBeVariant]' attribute
+=========================================================================================
 
 ====================================  ======================================
                                       Value
