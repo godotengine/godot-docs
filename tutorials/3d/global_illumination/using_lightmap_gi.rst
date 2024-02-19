@@ -138,7 +138,7 @@ Godot has an option to unwrap meshes and visualize the UV channels. After
 selecting a MeshInstance3D node, it can be found in the **Mesh** menu at the top
 of the 3D editor viewport:
 
-.. image:: img/lightmap_gi_mesh_menu.png
+.. image:: img/lightmap_gi_mesh_menu.webp
 
 This will generate a second set of UV2 coordinates which can be used for baking.
 It will also set the texture size automatically.
@@ -154,12 +154,12 @@ it unwrapped before import can be faster.
 
 Simply do an unwrap on the second UV2 layer.
 
-.. image:: img/lightmap_gi_blender.png
+.. image:: img/lightmap_gi_blender.webp
 
 Then import the 3D scene normally. Remember you will need to set the texture
 size on the mesh after import.
 
-.. image:: img/lightmap_gi_lmsize.png
+.. image:: img/lightmap_gi_lmsize.webp
 
 If you use external meshes on import, the size will be kept. Be wary that most
 unwrappers in 3D modeling software are not quality-oriented, as they are meant
@@ -198,7 +198,7 @@ Checking UV2
 In the **Mesh** menu mentioned before, the UV2 texture coordinates can be visualized.
 If something is failing, double-check that the meshes have these UV2 coordinates:
 
-.. image:: img/lightmap_gi_uvchannel.png
+.. image:: img/lightmap_gi_uvchannel.webp
 
 Setting up the scene
 --------------------
@@ -207,7 +207,7 @@ Before anything is done, a **LightmapGI** node needs to be added to a scene.
 This will enable light baking on all nodes (and sub-nodes) in that scene, even
 on instanced scenes.
 
-.. image:: img/lightmap_gi_scene.png
+.. image:: img/lightmap_gi_scene.webp
 
 A sub-scene can be instanced several times, as this is supported by the baker.
 Each instance will be assigned a lightmap of its own. To avoid issues with
@@ -221,7 +221,7 @@ For a **MeshInstance3D** node to take part in the baking process, it needs to ha
 its bake mode set to **Static**. Meshes that have their bake mode set to **Disabled**
 or **Dynamic** will be ignored by the lightmapper.
 
-.. image:: img/lightmap_gi_use.png
+.. image:: img/lightmap_gi_use.webp
 
 When auto-generating lightmaps on scene import, this is enabled automatically.
 
@@ -235,7 +235,7 @@ that light will be baked.
 Lights can be disabled (no bake) or be fully baked (direct and indirect). This
 can be controlled from the **Bake Mode** menu in lights:
 
-.. image:: img/lightmap_gi_bake_mode.png
+.. image:: img/lightmap_gi_bake_mode.webp
 
 The modes are:
 
@@ -298,7 +298,7 @@ Baking
 To begin the bake process, click the **Bake Lightmaps** button at the top of the
 3D editor viewport when selecting the LightmapGI node:
 
-.. image:: img/lightmap_gi_bake.png
+.. image:: img/lightmap_gi_bake.webp
 
 This can take from seconds to minutes (or hours) depending on scene size, bake
 method and quality selected.
