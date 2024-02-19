@@ -2094,9 +2094,9 @@ Centers a native window on the current screen and an embedded window on its embe
 
 void **move_to_foreground** **(** **)**
 
-Moves the **Window** on top of other windows and focuses it.
+**Deprecated:** Use :ref:`grab_focus<class_Window_method_grab_focus>` instead.
 
-\ *Deprecated.* Use :ref:`grab_focus<class_Window_method_grab_focus>` instead.
+Moves the **Window** on top of other windows and focuses it.
 
 .. rst-class:: classref-item-separator
 

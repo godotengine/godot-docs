@@ -148,9 +148,13 @@ Methods
    +---------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                              | :ref:`adjust_viewport_to_caret<class_TextEdit_method_adjust_viewport_to_caret>` **(** :ref:`int<class_int>` caret_index=0 **)**                                                                                                                                       |
    +---------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                              | :ref:`apply_ime<class_TextEdit_method_apply_ime>` **(** **)**                                                                                                                                                                                                         |
+   +---------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                              | :ref:`backspace<class_TextEdit_method_backspace>` **(** :ref:`int<class_int>` caret_index=-1 **)**                                                                                                                                                                    |
    +---------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                              | :ref:`begin_complex_operation<class_TextEdit_method_begin_complex_operation>` **(** **)**                                                                                                                                                                             |
+   +---------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                              | :ref:`cancel_ime<class_TextEdit_method_cancel_ime>` **(** **)**                                                                                                                                                                                                       |
    +---------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                              | :ref:`center_viewport_to_caret<class_TextEdit_method_center_viewport_to_caret>` **(** :ref:`int<class_int>` caret_index=0 **)**                                                                                                                                       |
    +---------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1822,6 +1826,18 @@ Adjust the viewport so the caret is visible.
 
 ----
 
+.. _class_TextEdit_method_apply_ime:
+
+.. rst-class:: classref-method
+
+void **apply_ime** **(** **)**
+
+Applies text from the `Input Method Editor <https://en.wikipedia.org/wiki/Input_method>`__ (IME) to each caret and closes the IME if it is open.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_TextEdit_method_backspace:
 
 .. rst-class:: classref-method
@@ -1841,6 +1857,18 @@ Called when the user presses the backspace key. Can be overridden with :ref:`_ba
 void **begin_complex_operation** **(** **)**
 
 Starts a multipart edit. All edits will be treated as one action until :ref:`end_complex_operation<class_TextEdit_method_end_complex_operation>` is called.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_TextEdit_method_cancel_ime:
+
+.. rst-class:: classref-method
+
+void **cancel_ime** **(** **)**
+
+Closes the `Input Method Editor <https://en.wikipedia.org/wiki/Input_method>`__ (IME) if it is open. Any text in the IME will be lost.
 
 .. rst-class:: classref-item-separator
 
@@ -2697,7 +2725,7 @@ Returns a :ref:`String<class_String>` text with the word under the caret's locat
 
 :ref:`bool<class_bool>` **has_ime_text** **(** **)** |const|
 
-Returns if the user has IME text.
+Returns ``true`` if the user has text in the `Input Method Editor <https://en.wikipedia.org/wiki/Input_method>`__ (IME).
 
 .. rst-class:: classref-item-separator
 

@@ -46,11 +46,15 @@ Methods
    +-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                                    | :ref:`clipboard_set_primary<class_DisplayServer_method_clipboard_set_primary>` **(** :ref:`String<class_String>` clipboard_primary **)**                                                                                                                                                                                                                                                                                                                                                                                    |
    +-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                                                   | :ref:`create_status_indicator<class_DisplayServer_method_create_status_indicator>` **(** :ref:`Image<class_Image>` icon, :ref:`String<class_String>` tooltip, :ref:`Callable<class_Callable>` callback **)**                                                                                                                                                                                                                                                                                                                |
+   +-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`CursorShape<enum_DisplayServer_CursorShape>`                      | :ref:`cursor_get_shape<class_DisplayServer_method_cursor_get_shape>` **(** **)** |const|                                                                                                                                                                                                                                                                                                                                                                                                                                    |
    +-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                                    | :ref:`cursor_set_custom_image<class_DisplayServer_method_cursor_set_custom_image>` **(** :ref:`Resource<class_Resource>` cursor, :ref:`CursorShape<enum_DisplayServer_CursorShape>` shape=0, :ref:`Vector2<class_Vector2>` hotspot=Vector2(0, 0) **)**                                                                                                                                                                                                                                                                      |
    +-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                                    | :ref:`cursor_set_shape<class_DisplayServer_method_cursor_set_shape>` **(** :ref:`CursorShape<enum_DisplayServer_CursorShape>` shape **)**                                                                                                                                                                                                                                                                                                                                                                                   |
+   +-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                                                    | :ref:`delete_status_indicator<class_DisplayServer_method_delete_status_indicator>` **(** :ref:`int<class_int>` id **)**                                                                                                                                                                                                                                                                                                                                                                                                     |
    +-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Error<enum_@GlobalScope_Error>`                                   | :ref:`dialog_input_text<class_DisplayServer_method_dialog_input_text>` **(** :ref:`String<class_String>` title, :ref:`String<class_String>` description, :ref:`String<class_String>` existing_text, :ref:`Callable<class_Callable>` callback **)**                                                                                                                                                                                                                                                                          |
    +-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -65,6 +69,8 @@ Methods
    | void                                                                    | :ref:`force_process_and_drop_events<class_DisplayServer_method_force_process_and_drop_events>` **(** **)**                                                                                                                                                                                                                                                                                                                                                                                                                  |
    +-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Color<class_Color>`                                               | :ref:`get_accent_color<class_DisplayServer_method_get_accent_color>` **(** **)** |const|                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+   +-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Color<class_Color>`                                               | :ref:`get_base_color<class_DisplayServer_method_get_base_color>` **(** **)** |const|                                                                                                                                                                                                                                                                                                                                                                                                                                        |
    +-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Rect2[]<class_Rect2>`                                             | :ref:`get_display_cutouts<class_DisplayServer_method_get_display_cutouts>` **(** **)** |const|                                                                                                                                                                                                                                                                                                                                                                                                                              |
    +-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -186,6 +192,8 @@ Methods
    +-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                                 | :ref:`has_feature<class_DisplayServer_method_has_feature>` **(** :ref:`Feature<enum_DisplayServer_Feature>` feature **)** |const|                                                                                                                                                                                                                                                                                                                                                                                           |
    +-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                                                    | :ref:`help_set_search_callbacks<class_DisplayServer_method_help_set_search_callbacks>` **(** :ref:`Callable<class_Callable>` search_callback, :ref:`Callable<class_Callable>` action_callback **)**                                                                                                                                                                                                                                                                                                                         |
+   +-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Vector2i<class_Vector2i>`                                         | :ref:`ime_get_selection<class_DisplayServer_method_ime_get_selection>` **(** **)** |const|                                                                                                                                                                                                                                                                                                                                                                                                                                  |
    +-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                                             | :ref:`ime_get_text<class_DisplayServer_method_ime_get_text>` **(** **)** |const|                                                                                                                                                                                                                                                                                                                                                                                                                                            |
@@ -249,6 +257,14 @@ Methods
    | void                                                                    | :ref:`set_icon<class_DisplayServer_method_set_icon>` **(** :ref:`Image<class_Image>` image **)**                                                                                                                                                                                                                                                                                                                                                                                                                            |
    +-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                                    | :ref:`set_native_icon<class_DisplayServer_method_set_native_icon>` **(** :ref:`String<class_String>` filename **)**                                                                                                                                                                                                                                                                                                                                                                                                         |
+   +-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                                                    | :ref:`set_system_theme_change_callback<class_DisplayServer_method_set_system_theme_change_callback>` **(** :ref:`Callable<class_Callable>` callable **)**                                                                                                                                                                                                                                                                                                                                                                   |
+   +-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                                                    | :ref:`status_indicator_set_callback<class_DisplayServer_method_status_indicator_set_callback>` **(** :ref:`int<class_int>` id, :ref:`Callable<class_Callable>` callback **)**                                                                                                                                                                                                                                                                                                                                               |
+   +-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                                                    | :ref:`status_indicator_set_icon<class_DisplayServer_method_status_indicator_set_icon>` **(** :ref:`int<class_int>` id, :ref:`Image<class_Image>` icon **)**                                                                                                                                                                                                                                                                                                                                                                 |
+   +-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                                                    | :ref:`status_indicator_set_tooltip<class_DisplayServer_method_status_indicator_set_tooltip>` **(** :ref:`int<class_int>` id, :ref:`String<class_String>` tooltip **)**                                                                                                                                                                                                                                                                                                                                                      |
    +-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                                             | :ref:`tablet_get_current_driver<class_DisplayServer_method_tablet_get_current_driver>` **(** **)** |const|                                                                                                                                                                                                                                                                                                                                                                                                                  |
    +-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -555,6 +571,22 @@ Display server supports expanding window content to the title. See :ref:`WINDOW_
 :ref:`Feature<enum_DisplayServer_Feature>` **FEATURE_SCREEN_CAPTURE** = ``21``
 
 Display server supports reading screen pixels. See :ref:`screen_get_pixel<class_DisplayServer_method_screen_get_pixel>`.
+
+.. _class_DisplayServer_constant_FEATURE_STATUS_INDICATOR:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Feature<enum_DisplayServer_Feature>` **FEATURE_STATUS_INDICATOR** = ``22``
+
+Display server supports application status indicators.
+
+.. _class_DisplayServer_constant_FEATURE_NATIVE_HELP:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Feature<enum_DisplayServer_Feature>` **FEATURE_NATIVE_HELP** = ``23``
+
+Display server supports native help system search callbacks. See :ref:`help_set_search_callbacks<class_DisplayServer_method_help_set_search_callbacks>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1415,6 +1447,14 @@ The ID of the main window spawned by the engine, which can be passed to methods 
 
 The ID that refers to a nonexistent window. This is returned by some **DisplayServer** methods if no window matches the requested result.
 
+.. _class_DisplayServer_constant_INVALID_INDICATOR_ID:
+
+.. rst-class:: classref-constant
+
+**INVALID_INDICATOR_ID** = ``-1``
+
+The ID that refers to a nonexistent application status indicator.
+
 .. rst-class:: classref-section-separator
 
 ----
@@ -1512,6 +1552,18 @@ Sets the user's `primary <https://unix.stackexchange.com/questions/139191/whats-
 
 ----
 
+.. _class_DisplayServer_method_create_status_indicator:
+
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **create_status_indicator** **(** :ref:`Image<class_Image>` icon, :ref:`String<class_String>` tooltip, :ref:`Callable<class_Callable>` callback **)**
+
+Creates a new application status indicator with the specified icon, tooltip, and activation callback.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_DisplayServer_method_cursor_get_shape:
 
 .. rst-class:: classref-method
@@ -1543,6 +1595,18 @@ Sets a custom mouse cursor image for the defined ``shape``. This means the user'
 void **cursor_set_shape** **(** :ref:`CursorShape<enum_DisplayServer_CursorShape>` shape **)**
 
 Sets the default mouse cursor shape. The cursor's appearance will vary depending on the user's operating system and mouse cursor theme. See also :ref:`cursor_get_shape<class_DisplayServer_method_cursor_get_shape>` and :ref:`cursor_set_custom_image<class_DisplayServer_method_cursor_set_custom_image>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_DisplayServer_method_delete_status_indicator:
+
+.. rst-class:: classref-method
+
+void **delete_status_indicator** **(** :ref:`int<class_int>` id **)**
+
+Removes the application status indicator.
 
 .. rst-class:: classref-item-separator
 
@@ -1600,7 +1664,7 @@ Displays OS native dialog for selecting files or directories in the file system.
 
 Callbacks have the following arguments: ``status: bool, selected_paths: PackedStringArray, selected_filter_index: int``.
 
-\ **Note:** This method is implemented if the display server has the :ref:`FEATURE_NATIVE_DIALOG<class_DisplayServer_constant_FEATURE_NATIVE_DIALOG>` feature. Supported platforms include Linux (X11 and Wayland), Windows, and macOS.
+\ **Note:** This method is implemented if the display server has the :ref:`FEATURE_NATIVE_DIALOG<class_DisplayServer_constant_FEATURE_NATIVE_DIALOG>` feature. Supported platforms include Linux (X11/Wayland), Windows, and macOS.
 
 \ **Note:** ``current_directory`` might be ignored.
 
@@ -1632,7 +1696,7 @@ Displays OS native dialog for selecting files or directories in the file system 
 
 Callbacks have the following arguments: ``status: bool, selected_paths: PackedStringArray, selected_filter_index: int, selected_option: Dictionary``.
 
-\ **Note:** This method is implemented if the display server has the :ref:`FEATURE_NATIVE_DIALOG<class_DisplayServer_constant_FEATURE_NATIVE_DIALOG>` feature. Supported platforms include Linux (X11 and Wayland), Windows, and macOS.
+\ **Note:** This method is implemented if the display server has the :ref:`FEATURE_NATIVE_DIALOG<class_DisplayServer_constant_FEATURE_NATIVE_DIALOG>` feature. Supported platforms include Linux (X11/Wayland), Windows, and macOS.
 
 \ **Note:** ``current_directory`` might be ignored.
 
@@ -1667,6 +1731,20 @@ Forces window manager processing while ignoring all :ref:`InputEvent<class_Input
 :ref:`Color<class_Color>` **get_accent_color** **(** **)** |const|
 
 Returns OS theme accent color. Returns ``Color(0, 0, 0, 0)``, if accent color is unknown.
+
+\ **Note:** This method is implemented on macOS and Windows.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_DisplayServer_method_get_base_color:
+
+.. rst-class:: classref-method
+
+:ref:`Color<class_Color>` **get_base_color** **(** **)** |const|
+
+Returns the OS theme base color (default control background). Returns ``Color(0, 0, 0, 0)`` if the base color is unknown.
 
 \ **Note:** This method is implemented on macOS and Windows.
 
@@ -2679,6 +2757,24 @@ Returns ``true`` if the specified ``feature`` is supported by the current **Disp
 
 ----
 
+.. _class_DisplayServer_method_help_set_search_callbacks:
+
+.. rst-class:: classref-method
+
+void **help_set_search_callbacks** **(** :ref:`Callable<class_Callable>` search_callback, :ref:`Callable<class_Callable>` action_callback **)**
+
+Sets native help system search callbacks.
+
+\ ``search_callback`` has the following arguments: ``String search_string, int result_limit`` and return a :ref:`Dictionary<class_Dictionary>` with "key, display name" pairs for the search results. Called when the user enters search terms in the ``Help`` menu.
+
+\ ``action_callback`` has the following arguments: ``String key``. Called when the user selects a search result in the ``Help`` menu.
+
+\ **Note:** This method is implemented only on macOS.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_DisplayServer_method_ime_get_selection:
 
 .. rst-class:: classref-method
@@ -3138,6 +3234,56 @@ Sets the window icon (usually displayed in the top-left corner) with an :ref:`Im
 void **set_native_icon** **(** :ref:`String<class_String>` filename **)**
 
 Sets the window icon (usually displayed in the top-left corner) in the operating system's *native* format. The file at ``filename`` must be in ``.ico`` format on Windows or ``.icns`` on macOS. By using specially crafted ``.ico`` or ``.icns`` icons, :ref:`set_native_icon<class_DisplayServer_method_set_native_icon>` allows specifying different icons depending on the size the icon is displayed at. This size is determined by the operating system and user preferences (including the display scale factor). To use icons in other formats, use :ref:`set_icon<class_DisplayServer_method_set_icon>` instead.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_DisplayServer_method_set_system_theme_change_callback:
+
+.. rst-class:: classref-method
+
+void **set_system_theme_change_callback** **(** :ref:`Callable<class_Callable>` callable **)**
+
+Sets the ``callable`` that should be called when system theme settings are changed. Callback method should have zero arguments.
+
+\ **Note:** This method is implemented on Android, iOS, macOS, Windows, and Linux (X11/Wayland).
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_DisplayServer_method_status_indicator_set_callback:
+
+.. rst-class:: classref-method
+
+void **status_indicator_set_callback** **(** :ref:`int<class_int>` id, :ref:`Callable<class_Callable>` callback **)**
+
+Sets the application status indicator activation callback.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_DisplayServer_method_status_indicator_set_icon:
+
+.. rst-class:: classref-method
+
+void **status_indicator_set_icon** **(** :ref:`int<class_int>` id, :ref:`Image<class_Image>` icon **)**
+
+Sets the application status indicator icon.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_DisplayServer_method_status_indicator_set_tooltip:
+
+.. rst-class:: classref-method
+
+void **status_indicator_set_tooltip** **(** :ref:`int<class_int>` id, :ref:`String<class_String>` tooltip **)**
+
+Sets the application status indicator tooltip.
 
 .. rst-class:: classref-item-separator
 

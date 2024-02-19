@@ -10,6 +10,8 @@
 NavigationLink3D
 ================
 
+**Experimental:** This class may be changed or removed in future versions.
+
 **Inherits:** :ref:`Node3D<class_Node3D>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
 A link between two positions on :ref:`NavigationRegion3D<class_NavigationRegion3D>`\ s that agents can be routed through.

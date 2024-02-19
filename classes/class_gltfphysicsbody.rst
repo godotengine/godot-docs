@@ -181,6 +181,8 @@ The inertia orientation of the physics body. This defines the rotation of the in
 - void **set_inertia_tensor** **(** :ref:`Basis<class_Basis>` value **)**
 - :ref:`Basis<class_Basis>` **get_inertia_tensor** **(** **)**
 
+**Deprecated:** This property may be changed or removed in future versions.
+
 The inertia tensor of the physics body, in kilogram meter squared (kg⋅m²). This is only used when the body type is "rigid" or "vehicle".
 
 When converted to a Godot :ref:`RigidBody3D<class_RigidBody3D>` node, if this value is zero, then the inertia will be calculated automatically.

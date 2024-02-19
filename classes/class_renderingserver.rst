@@ -597,6 +597,8 @@ Methods
    +----------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`PackedFloat32Array<class_PackedFloat32Array>`                              | :ref:`multimesh_get_buffer<class_RenderingServer_method_multimesh_get_buffer>` **(** :ref:`RID<class_RID>` multimesh **)** |const|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
    +----------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`AABB<class_AABB>`                                                          | :ref:`multimesh_get_custom_aabb<class_RenderingServer_method_multimesh_get_custom_aabb>` **(** :ref:`RID<class_RID>` multimesh **)** |const|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+   +----------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                                                            | :ref:`multimesh_get_instance_count<class_RenderingServer_method_multimesh_get_instance_count>` **(** :ref:`RID<class_RID>` multimesh **)** |const|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
    +----------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`RID<class_RID>`                                                            | :ref:`multimesh_get_mesh<class_RenderingServer_method_multimesh_get_mesh>` **(** :ref:`RID<class_RID>` multimesh **)** |const|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
@@ -620,6 +622,8 @@ Methods
    | void                                                                             | :ref:`multimesh_instance_set_transform_2d<class_RenderingServer_method_multimesh_instance_set_transform_2d>` **(** :ref:`RID<class_RID>` multimesh, :ref:`int<class_int>` index, :ref:`Transform2D<class_Transform2D>` transform **)**                                                                                                                                                                                                                                                                                                                                                                                                                                             |
    +----------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                                             | :ref:`multimesh_set_buffer<class_RenderingServer_method_multimesh_set_buffer>` **(** :ref:`RID<class_RID>` multimesh, :ref:`PackedFloat32Array<class_PackedFloat32Array>` buffer **)**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+   +----------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                                                             | :ref:`multimesh_set_custom_aabb<class_RenderingServer_method_multimesh_set_custom_aabb>` **(** :ref:`RID<class_RID>` multimesh, :ref:`AABB<class_AABB>` aabb **)**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
    +----------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                                             | :ref:`multimesh_set_mesh<class_RenderingServer_method_multimesh_set_mesh>` **(** :ref:`RID<class_RID>` multimesh, :ref:`RID<class_RID>` mesh **)**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
    +----------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -5360,7 +5364,13 @@ enum **Features**:
 
 :ref:`Features<enum_RenderingServer_Features>` **FEATURE_SHADERS** = ``0``
 
-*Deprecated.* This constant has not been used since Godot 3.0.
+**Deprecated:** This constant has not been used since Godot 3.0.
+
+.. container:: contribute
+
+	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+
 
 .. _class_RenderingServer_constant_FEATURE_MULTITHREADED:
 
@@ -5368,7 +5378,13 @@ enum **Features**:
 
 :ref:`Features<enum_RenderingServer_Features>` **FEATURE_MULTITHREADED** = ``1``
 
-*Deprecated.* This constant has not been used since Godot 3.0.
+**Deprecated:** This constant has not been used since Godot 3.0.
+
+.. container:: contribute
+
+	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+
 
 .. rst-class:: classref-section-separator
 
@@ -5425,7 +5441,9 @@ The maximum number of glow levels that can be used with the glow post-processing
 
 **MAX_CURSORS** = ``8``
 
-*Deprecated.* This constant is unused internally.
+**Deprecated:** This constant may be changed or removed in future versions.
+
+This constant is unused internally.
 
 .. _class_RenderingServer_constant_MAX_2D_DIRECTIONAL_LIGHTS:
 
@@ -7744,7 +7762,9 @@ Returns ``true`` if changes have been made to the RenderingServer's data. :ref:`
 
 :ref:`bool<class_bool>` **has_feature** **(** :ref:`Features<enum_RenderingServer_Features>` feature **)** |const|
 
-*Deprecated.* This method has not been used since Godot 3.0. Always returns false.
+**Deprecated:** This method has not been used since Godot 3.0.
+
+Always returns false.
 
 .. rst-class:: classref-item-separator
 
@@ -8956,6 +8976,18 @@ Returns the MultiMesh data (such as instance transforms, colors, etc). See :ref:
 
 ----
 
+.. _class_RenderingServer_method_multimesh_get_custom_aabb:
+
+.. rst-class:: classref-method
+
+:ref:`AABB<class_AABB>` **multimesh_get_custom_aabb** **(** :ref:`RID<class_RID>` multimesh **)** |const|
+
+Returns the custom AABB defined for this MultiMesh resource.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_RenderingServer_method_multimesh_get_instance_count:
 
 .. rst-class:: classref-method
@@ -9110,6 +9142,18 @@ The per-instance data size and expected data order is:
       - Position + Vertex color: 16 floats (12 floats for Transform3D, 4 floats for Color)
       - Position + Custom data: 16 floats (12 floats for Transform3D, 4 floats of custom data)
       - Position + Vertex color + Custom data: 20 floats (12 floats for Transform3D, 4 floats for Color, 4 floats of custom data)
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_RenderingServer_method_multimesh_set_custom_aabb:
+
+.. rst-class:: classref-method
+
+void **multimesh_set_custom_aabb** **(** :ref:`RID<class_RID>` multimesh, :ref:`AABB<class_AABB>` aabb **)**
+
+Sets the custom AABB for this MultiMesh resource.
 
 .. rst-class:: classref-item-separator
 
@@ -10591,7 +10635,9 @@ Returns a texture :ref:`RID<class_RID>` that can be used with :ref:`RenderingDev
 
 :ref:`RID<class_RID>` **texture_proxy_create** **(** :ref:`RID<class_RID>` base **)**
 
-*Deprecated.* ProxyTexture was removed in Godot 4, so this method does nothing when called and always returns a null :ref:`RID<class_RID>`.
+**Deprecated:** ProxyTexture was removed in Godot 4.
+
+This method does nothing when called and always returns a null :ref:`RID<class_RID>`.
 
 .. rst-class:: classref-item-separator
 
@@ -10603,7 +10649,9 @@ Returns a texture :ref:`RID<class_RID>` that can be used with :ref:`RenderingDev
 
 void **texture_proxy_update** **(** :ref:`RID<class_RID>` texture, :ref:`RID<class_RID>` proxy_to **)**
 
-*Deprecated.* ProxyTexture was removed in Godot 4, so this method cannot be used anymore.
+**Deprecated:** ProxyTexture was removed in Godot 4.
+
+This method should not be used.
 
 .. rst-class:: classref-item-separator
 

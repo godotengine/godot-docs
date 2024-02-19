@@ -252,7 +252,7 @@ Returns the id of the system, which is a `XrSystemId <https://registry.khronos.o
 
 :ref:`OpenXRAlphaBlendModeSupport<enum_OpenXRAPIExtension_OpenXRAlphaBlendModeSupport>` **is_environment_blend_mode_alpha_supported** **(** **)**
 
-Returns :ref:`OpenXRAlphaBlendModeSupport<enum_OpenXRAPIExtension_OpenXRAlphaBlendModeSupport>` denoting if :ref:`XRInterface.XR_ENV_BLEND_MODE_ALPHA_BLEND<class_XRInterface_constant_XR_ENV_BLEND_MODE_ALPHA_BLEND>` is really support, emulated or not supported at all.
+Returns :ref:`OpenXRAlphaBlendModeSupport<enum_OpenXRAPIExtension_OpenXRAlphaBlendModeSupport>` denoting if :ref:`XRInterface.XR_ENV_BLEND_MODE_ALPHA_BLEND<class_XRInterface_constant_XR_ENV_BLEND_MODE_ALPHA_BLEND>` is really supported, emulated or not supported at all.
 
 .. rst-class:: classref-item-separator
 

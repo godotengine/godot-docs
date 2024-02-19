@@ -83,6 +83,8 @@ Properties
    +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`       | :ref:`docks/scene_tree/auto_expand_to_selected<class_EditorSettings_property_docks/scene_tree/auto_expand_to_selected>`                                                             |
    +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`docks/scene_tree/center_node_on_reparent<class_EditorSettings_property_docks/scene_tree/center_node_on_reparent>`                                                             |
+   +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`       | :ref:`docks/scene_tree/start_create_dialog_fully_expanded<class_EditorSettings_property_docks/scene_tree/start_create_dialog_fully_expanded>`                                       |
    +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Color<class_Color>`     | :ref:`editors/2d/bone_color1<class_EditorSettings_property_editors/2d/bone_color1>`                                                                                                 |
@@ -308,6 +310,8 @@ Properties
    | :ref:`bool<class_bool>`       | :ref:`interface/editor/separate_distraction_mode<class_EditorSettings_property_interface/editor/separate_distraction_mode>`                                                         |
    +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`         | :ref:`interface/editor/show_internal_errors_in_toast_notifications<class_EditorSettings_property_interface/editor/show_internal_errors_in_toast_notifications>`                     |
+   +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`         | :ref:`interface/editor/show_update_spinner<class_EditorSettings_property_interface/editor/show_update_spinner>`                                                                     |
    +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`       | :ref:`interface/editor/single_window_mode<class_EditorSettings_property_interface/editor/single_window_mode>`                                                                       |
    +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -818,6 +822,18 @@ The tint intensity to use for the subresources background in the Inspector dock.
 :ref:`bool<class_bool>` **docks/scene_tree/auto_expand_to_selected**
 
 If ``true``, the scene tree dock will automatically unfold nodes when a node that has folded parents is selected.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSettings_property_docks/scene_tree/center_node_on_reparent:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **docks/scene_tree/center_node_on_reparent**
+
+If ``true``, new node created when reparenting node(s) will be positioned at the average position of the selected node(s).
 
 .. rst-class:: classref-item-separator
 
@@ -2285,7 +2301,23 @@ If ``true``, the editor's Script tab will have a separate distraction mode setti
 
 If enabled, displays internal engine errors in toast notifications (toggleable by clicking the "bell" icon at the bottom of the editor). No matter the value of this setting, non-internal engine errors will always be visible in toast notifications.
 
-The default **Auto** value will only enable this if the editor was compiled with the ``dev=yes`` option (the default is ``dev=no``).
+The default **Auto** value will only enable this if the editor was compiled with the ``dev_build=yes`` SCons option (the default is ``dev_build=no``).
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSettings_property_interface/editor/show_update_spinner:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **interface/editor/show_update_spinner**
+
+If enabled, displays an icon in the top-right corner of the editor that spins when the editor redraws a frame. This can be used to diagnose situations where the engine is constantly redrawing, which should be avoided as this increases CPU and GPU utilization for no good reason. To further troubleshoot these situations, start the editor with the ``--debug-canvas-item-redraw`` :doc:`command line argument <../tutorials/editor/command_line_tutorial>`.
+
+Consider enabling this if you are developing editor plugins to ensure they only make the editor redraw when required.
+
+The default **Auto** value will only enable this if the editor was compiled with the ``dev_build=yes`` SCons option (the default is ``dev_build=no``).
 
 .. rst-class:: classref-item-separator
 

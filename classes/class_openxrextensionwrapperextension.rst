@@ -34,6 +34,8 @@ Methods
    +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Dictionary<class_Dictionary>`                 | :ref:`_get_requested_extensions<class_OpenXRExtensionWrapperExtension_private_method__get_requested_extensions>` **(** **)** |virtual|                                                                                                |
    +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PackedStringArray<class_PackedStringArray>`   | :ref:`_get_suggested_tracker_names<class_OpenXRExtensionWrapperExtension_private_method__get_suggested_tracker_names>` **(** **)** |virtual|                                                                                          |
+   +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                | :ref:`_on_before_instance_created<class_OpenXRExtensionWrapperExtension_private_method__on_before_instance_created>` **(** **)** |virtual|                                                                                            |
    +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                             | :ref:`_on_event_polled<class_OpenXRExtensionWrapperExtension_private_method__on_event_polled>` **(** const void* event **)** |virtual|                                                                                                |
@@ -115,6 +117,18 @@ Returns a :ref:`Dictionary<class_Dictionary>` of OpenXR extensions related to th
 - If the ``bool *`` is a ``nullptr`` this extension is mandatory.
 
 - If the ``bool *`` points to a boolean, the boolean will be updated to ``true`` if the extension is enabled.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_OpenXRExtensionWrapperExtension_private_method__get_suggested_tracker_names:
+
+.. rst-class:: classref-method
+
+:ref:`PackedStringArray<class_PackedStringArray>` **_get_suggested_tracker_names** **(** **)** |virtual|
+
+Returns a :ref:`PackedStringArray<class_PackedStringArray>` of positional tracker names that are used within the extension wrapper.
 
 .. rst-class:: classref-item-separator
 

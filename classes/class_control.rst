@@ -1103,6 +1103,8 @@ See also :ref:`NOTIFICATION_MOUSE_EXIT_SELF<class_Control_constant_NOTIFICATION_
 
 **NOTIFICATION_MOUSE_ENTER_SELF** = ``60``
 
+**Experimental:** This constant may be changed or removed in future versions.
+
 Sent when the mouse cursor enters the control's visible area, that is not occluded behind other Controls or Windows, provided its :ref:`mouse_filter<class_Control_property_mouse_filter>` lets the event reach it and regardless if it's currently focused or not.
 
 \ **Note:** :ref:`CanvasItem.z_index<class_CanvasItem_property_z_index>` doesn't affect which Control receives the notification.
@@ -1114,6 +1116,8 @@ See also :ref:`NOTIFICATION_MOUSE_ENTER<class_Control_constant_NOTIFICATION_MOUS
 .. rst-class:: classref-constant
 
 **NOTIFICATION_MOUSE_EXIT_SELF** = ``61``
+
+**Experimental:** This constant may be changed or removed in future versions.
 
 Sent when the mouse cursor leaves the control's visible area, that is not occluded behind other Controls or Windows, provided its :ref:`mouse_filter<class_Control_property_mouse_filter>` lets the event reach it and regardless if it's currently focused or not.
 

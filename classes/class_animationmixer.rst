@@ -66,6 +66,8 @@ Methods
    +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                              | :ref:`advance<class_AnimationMixer_method_advance>` **(** :ref:`float<class_float>` delta **)**                                                                                                                                                                                                                |
    +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                              | :ref:`capture<class_AnimationMixer_method_capture>` **(** :ref:`StringName<class_StringName>` name, :ref:`float<class_float>` duration, :ref:`TransitionType<enum_Tween_TransitionType>` trans_type=0, :ref:`EaseType<enum_Tween_EaseType>` ease_type=0 **)**                                                  |
+   +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                              | :ref:`clear_caches<class_AnimationMixer_method_clear_caches>` **(** **)**                                                                                                                                                                                                                                      |
    +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`StringName<class_StringName>`               | :ref:`find_animation<class_AnimationMixer_method_find_animation>` **(** :ref:`Animation<class_Animation>` animation **)** |const|                                                                                                                                                                              |
@@ -442,6 +444,22 @@ Adds ``library`` to the animation player, under the key ``name``.
 void **advance** **(** :ref:`float<class_float>` delta **)**
 
 Manually advance the animations by the specified time (in seconds).
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_AnimationMixer_method_capture:
+
+.. rst-class:: classref-method
+
+void **capture** **(** :ref:`StringName<class_StringName>` name, :ref:`float<class_float>` duration, :ref:`TransitionType<enum_Tween_TransitionType>` trans_type=0, :ref:`EaseType<enum_Tween_EaseType>` ease_type=0 **)**
+
+If the animation track specified by ``name`` has an option :ref:`Animation.UPDATE_CAPTURE<class_Animation_constant_UPDATE_CAPTURE>`, stores current values of the objects indicated by the track path as a cache. If there is already a captured cache, the old cache is discarded.
+
+After this it will interpolate with current animation blending result during the playback process for the time specified by ``duration``, working like a crossfade.
+
+You can specify ``trans_type`` as the curve for the interpolation. For better results, it may be appropriate to specify :ref:`Tween.TRANS_LINEAR<class_Tween_constant_TRANS_LINEAR>` for cases where the first key of the track begins with a non-zero value or where the key value does not change, and :ref:`Tween.TRANS_QUAD<class_Tween_constant_TRANS_QUAD>` for cases where the key value changes linearly.
 
 .. rst-class:: classref-item-separator
 

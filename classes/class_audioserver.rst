@@ -744,9 +744,9 @@ Sets the volume of the bus at index ``bus_idx`` to ``volume_db``.
 
 void **set_enable_tagging_used_audio_streams** **(** :ref:`bool<class_bool>` enable **)**
 
-.. container:: contribute
+If set to ``true``, all instances of :ref:`AudioStreamPlayback<class_AudioStreamPlayback>` will call :ref:`AudioStreamPlayback._tag_used_streams<class_AudioStreamPlayback_private_method__tag_used_streams>` every mix step.
 
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+\ **Note:** This is enabled by default in the editor, as it is used by editor plugins for the audio stream previews.
 
 .. rst-class:: classref-item-separator
 

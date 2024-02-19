@@ -203,9 +203,9 @@ Emitted when user changes the workspace (**2D**, **3D**, **Script**, **AssetLib*
 
 **project_settings_changed** **(** **)**
 
-Emitted when any project setting has changed.
+**Deprecated:** Use :ref:`ProjectSettings.settings_changed<class_ProjectSettings_signal_settings_changed>` instead.
 
-\ *Deprecated.* Use :ref:`ProjectSettings.settings_changed<class_ProjectSettings_signal_settings_changed>` instead.
+Emitted when any project setting has changed.
 
 .. rst-class:: classref-item-separator
 
@@ -1339,9 +1339,9 @@ The callback should have 4 arguments: :ref:`Object<class_Object>` ``undo_redo``,
 
 :ref:`EditorInterface<class_EditorInterface>` **get_editor_interface** **(** **)**
 
-Returns the :ref:`EditorInterface<class_EditorInterface>` singleton instance.
+**Deprecated:** :ref:`EditorInterface<class_EditorInterface>` is a global singleton and can be accessed directly by its name.
 
-\ *Deprecated.* :ref:`EditorInterface<class_EditorInterface>` is a global singleton and can be accessed directly by its name.
+Returns the :ref:`EditorInterface<class_EditorInterface>` singleton instance.
 
 .. rst-class:: classref-item-separator
 

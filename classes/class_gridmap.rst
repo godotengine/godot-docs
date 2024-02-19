@@ -624,7 +624,9 @@ Returns the position of a grid cell in the GridMap's local coordinate space. To 
 
 void **resource_changed** **(** :ref:`Resource<class_Resource>` resource **)**
 
-*Obsoleted.* Use :ref:`Resource.changed<class_Resource_signal_changed>` instead.
+**Deprecated:** Use :ref:`Resource.changed<class_Resource_signal_changed>` instead.
+
+This method does nothing.
 
 .. rst-class:: classref-item-separator
 

@@ -33,6 +33,8 @@ Methods
    +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`_can_inherit_from_file<class_ScriptLanguageExtension_private_method__can_inherit_from_file>` **(** **)** |virtual| |const|                                                                                                                                                                                                                         |
    +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`_can_make_function<class_ScriptLanguageExtension_private_method__can_make_function>` **(** **)** |virtual| |const|                                                                                                                                                                                                                                 |
+   +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Dictionary<class_Dictionary>`               | :ref:`_complete_code<class_ScriptLanguageExtension_private_method__complete_code>` **(** :ref:`String<class_String>` code, :ref:`String<class_String>` path, :ref:`Object<class_Object>` owner **)** |virtual| |const|                                                                                                                                   |
    +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Object<class_Object>`                       | :ref:`_create_script<class_ScriptLanguageExtension_private_method__create_script>` **(** **)** |virtual| |const|                                                                                                                                                                                                                                         |
@@ -522,6 +524,20 @@ void **_add_named_global_constant** **(** :ref:`StringName<class_StringName>` na
 
 ----
 
+.. _class_ScriptLanguageExtension_private_method__can_make_function:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **_can_make_function** **(** **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_ScriptLanguageExtension_private_method__complete_code:
 
 .. rst-class:: classref-method
@@ -932,7 +948,11 @@ void **_frame** **(** **)** |virtual|
 
 :ref:`bool<class_bool>` **_has_named_classes** **(** **)** |virtual| |const|
 
-*Deprecated.* This method is not called by the engine.
+**Deprecated:** This method is not called by the engine.
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 .. rst-class:: classref-item-separator
 

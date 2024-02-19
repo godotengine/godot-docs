@@ -10,6 +10,8 @@
 NavigationMeshSourceGeometryData2D
 ==================================
 
+**Experimental:** This class may be changed or removed in future versions.
+
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
 Container for parsed source geometry data used in navigation mesh baking.

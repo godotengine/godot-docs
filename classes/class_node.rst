@@ -12,7 +12,7 @@ Node
 
 **Inherits:** :ref:`Object<class_Object>`
 
-**Inherited By:** :ref:`AnimationMixer<class_AnimationMixer>`, :ref:`AudioStreamPlayer<class_AudioStreamPlayer>`, :ref:`CanvasItem<class_CanvasItem>`, :ref:`CanvasLayer<class_CanvasLayer>`, :ref:`EditorFileSystem<class_EditorFileSystem>`, :ref:`EditorPlugin<class_EditorPlugin>`, :ref:`EditorResourcePreview<class_EditorResourcePreview>`, :ref:`HTTPRequest<class_HTTPRequest>`, :ref:`InstancePlaceholder<class_InstancePlaceholder>`, :ref:`MissingNode<class_MissingNode>`, :ref:`MultiplayerSpawner<class_MultiplayerSpawner>`, :ref:`MultiplayerSynchronizer<class_MultiplayerSynchronizer>`, :ref:`NavigationAgent2D<class_NavigationAgent2D>`, :ref:`NavigationAgent3D<class_NavigationAgent3D>`, :ref:`Node3D<class_Node3D>`, :ref:`ResourcePreloader<class_ResourcePreloader>`, :ref:`ShaderGlobalsOverride<class_ShaderGlobalsOverride>`, :ref:`SkeletonIK3D<class_SkeletonIK3D>`, :ref:`Timer<class_Timer>`, :ref:`Viewport<class_Viewport>`, :ref:`WorldEnvironment<class_WorldEnvironment>`
+**Inherited By:** :ref:`AnimationMixer<class_AnimationMixer>`, :ref:`AudioStreamPlayer<class_AudioStreamPlayer>`, :ref:`CanvasItem<class_CanvasItem>`, :ref:`CanvasLayer<class_CanvasLayer>`, :ref:`EditorFileSystem<class_EditorFileSystem>`, :ref:`EditorPlugin<class_EditorPlugin>`, :ref:`EditorResourcePreview<class_EditorResourcePreview>`, :ref:`HTTPRequest<class_HTTPRequest>`, :ref:`InstancePlaceholder<class_InstancePlaceholder>`, :ref:`MissingNode<class_MissingNode>`, :ref:`MultiplayerSpawner<class_MultiplayerSpawner>`, :ref:`MultiplayerSynchronizer<class_MultiplayerSynchronizer>`, :ref:`NavigationAgent2D<class_NavigationAgent2D>`, :ref:`NavigationAgent3D<class_NavigationAgent3D>`, :ref:`Node3D<class_Node3D>`, :ref:`ResourcePreloader<class_ResourcePreloader>`, :ref:`ShaderGlobalsOverride<class_ShaderGlobalsOverride>`, :ref:`SkeletonIK3D<class_SkeletonIK3D>`, :ref:`StatusIndicator<class_StatusIndicator>`, :ref:`Timer<class_Timer>`, :ref:`Viewport<class_Viewport>`, :ref:`WorldEnvironment<class_WorldEnvironment>`
 
 Base class for all scene objects.
 
@@ -524,11 +524,7 @@ flags **ProcessThreadMessages**:
 
 :ref:`ProcessThreadMessages<enum_Node_ProcessThreadMessages>` **FLAG_PROCESS_THREAD_MESSAGES** = ``1``
 
-.. container:: contribute
-
-	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
-
-
+Allows this node to process threaded messages created with :ref:`call_deferred_thread_group<class_Node_method_call_deferred_thread_group>` right before :ref:`_process<class_Node_private_method__process>` is called.
 
 .. _class_Node_constant_FLAG_PROCESS_THREAD_MESSAGES_PHYSICS:
 
@@ -536,11 +532,7 @@ flags **ProcessThreadMessages**:
 
 :ref:`ProcessThreadMessages<enum_Node_ProcessThreadMessages>` **FLAG_PROCESS_THREAD_MESSAGES_PHYSICS** = ``2``
 
-.. container:: contribute
-
-	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
-
-
+Allows this node to process threaded messages created with :ref:`call_deferred_thread_group<class_Node_method_call_deferred_thread_group>` right before :ref:`_physics_process<class_Node_private_method__physics_process>` is called.
 
 .. _class_Node_constant_FLAG_PROCESS_THREAD_MESSAGES_ALL:
 
@@ -548,11 +540,7 @@ flags **ProcessThreadMessages**:
 
 :ref:`ProcessThreadMessages<enum_Node_ProcessThreadMessages>` **FLAG_PROCESS_THREAD_MESSAGES_ALL** = ``3``
 
-.. container:: contribute
-
-	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
-
-
+Allows this node to process threaded messages created with :ref:`call_deferred_thread_group<class_Node_method_call_deferred_thread_group>` right before either :ref:`_process<class_Node_private_method__process>` or :ref:`_physics_process<class_Node_private_method__physics_process>` are called.
 
 .. rst-class:: classref-item-separator
 
@@ -586,7 +574,7 @@ Duplicate the node's groups.
 
 :ref:`DuplicateFlags<enum_Node_DuplicateFlags>` **DUPLICATE_SCRIPTS** = ``4``
 
-Duplicate the node's script (including the ancestor's script, if combined with :ref:`DUPLICATE_USE_INSTANTIATION<class_Node_constant_DUPLICATE_USE_INSTANTIATION>`).
+Duplicate the node's script (also overriding the duplicated children's scripts, if combined with :ref:`DUPLICATE_USE_INSTANTIATION<class_Node_constant_DUPLICATE_USE_INSTANTIATION>`).
 
 .. _class_Node_constant_DUPLICATE_USE_INSTANTIATION:
 
@@ -665,7 +653,9 @@ This notification is received *after* the related :ref:`tree_exiting<class_Node_
 
 **NOTIFICATION_MOVED_IN_PARENT** = ``12``
 
-*Deprecated.* This notification is no longer emitted. Use :ref:`NOTIFICATION_CHILD_ORDER_CHANGED<class_Node_constant_NOTIFICATION_CHILD_ORDER_CHANGED>` instead.
+**Deprecated:** Use :ref:`NOTIFICATION_CHILD_ORDER_CHANGED<class_Node_constant_NOTIFICATION_CHILD_ORDER_CHANGED>` instead.
+
+This notification is no longer emitted.
 
 .. _class_Node_constant_NOTIFICATION_READY:
 
@@ -979,7 +969,7 @@ Implemented only on macOS.
 
 Notification received from the OS when the application is resumed.
 
-Implemented only on Android.
+Specific to the Android and iOS platforms.
 
 .. _class_Node_constant_NOTIFICATION_APPLICATION_PAUSED:
 
@@ -989,7 +979,9 @@ Implemented only on Android.
 
 Notification received from the OS when the application is paused.
 
-Implemented only on Android.
+Specific to the Android and iOS platforms.
+
+\ **Note:** On iOS, you only have approximately 5 seconds to finish a task started by this signal. If you go over this allotment, iOS will kill the app instead of pausing it.
 
 .. _class_Node_constant_NOTIFICATION_APPLICATION_FOCUS_IN:
 
@@ -997,9 +989,9 @@ Implemented only on Android.
 
 **NOTIFICATION_APPLICATION_FOCUS_IN** = ``2016``
 
-Notification received from the OS when the application is focused, i.e. when changing the focus from the OS desktop or a third-party application to any open window of the Godot instance.
+Notification received from the OS when the application is focused, i.e. when changing the focus from the OS desktop or a thirdparty application to any open window of the Godot instance.
 
-Implemented on desktop platforms.
+Implemented on desktop and mobile platforms.
 
 .. _class_Node_constant_NOTIFICATION_APPLICATION_FOCUS_OUT:
 
@@ -1007,9 +999,9 @@ Implemented on desktop platforms.
 
 **NOTIFICATION_APPLICATION_FOCUS_OUT** = ``2017``
 
-Notification received from the OS when the application is defocused, i.e. when changing the focus from any open window of the Godot instance to the OS desktop or a third-party application.
+Notification received from the OS when the application is defocused, i.e. when changing the focus from any open window of the Godot instance to the OS desktop or a thirdparty application.
 
-Implemented on desktop platforms.
+Implemented on desktop and mobile platforms.
 
 .. _class_Node_constant_NOTIFICATION_TEXT_SERVER_CHANGED:
 
@@ -1076,7 +1068,7 @@ The :ref:`MultiplayerAPI<class_MultiplayerAPI>` instance associated with this no
 
 The name of the node. This name must be unique among the siblings (other child nodes from the same parent). When set to an existing sibling's name, the node is automatically renamed.
 
-\ **Note:** When changing the name, the following characters will be removed: (``.`` ``:`` ``@`` ``/`` ``"`` ``%``). In particular, the ``@`` character is reserved for auto-generated names. See also :ref:`String.validate_node_name<class_String_method_validate_node_name>`.
+\ **Note:** When changing the name, the following characters will be replaced with an underscore: (``.`` ``:`` ``@`` ``/`` ``"`` ``%``). In particular, the ``@`` character is reserved for auto-generated names. See also :ref:`String.validate_node_name<class_String_method_validate_node_name>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1961,7 +1953,7 @@ Returns the node's absolute path, relative to the :ref:`SceneTree.root<class_Sce
 
 :ref:`NodePath<class_NodePath>` **get_path_to** **(** :ref:`Node<class_Node>` node, :ref:`bool<class_bool>` use_unique_path=false **)** |const|
 
-Returns the relative :ref:`NodePath<class_NodePath>` from this node to the specified ``node``. Both nodes must be in the same :ref:`SceneTree<class_SceneTree>`, otherwise this method fails and returns an empty :ref:`NodePath<class_NodePath>`.
+Returns the relative :ref:`NodePath<class_NodePath>` from this node to the specified ``node``. Both nodes must be in the same :ref:`SceneTree<class_SceneTree>` or scene hierarchy, otherwise this method fails and returns an empty :ref:`NodePath<class_NodePath>`.
 
 If ``use_unique_path`` is ``true``, returns the shortest path accounting for this node's unique name (see :ref:`unique_name_in_owner<class_Node_property_unique_name_in_owner>`).
 
@@ -2627,7 +2619,9 @@ If ``recursive`` is ``true``, the given peer is recursively set as the authority
 
 void **set_physics_process** **(** :ref:`bool<class_bool>` enable **)**
 
-If set to ``true``, enables physics (fixed framerate) processing. When a node is being processed, it will receive a :ref:`NOTIFICATION_PHYSICS_PROCESS<class_Node_constant_NOTIFICATION_PHYSICS_PROCESS>` at a fixed (usually 60 FPS, see :ref:`Engine.physics_ticks_per_second<class_Engine_property_physics_ticks_per_second>` to change) interval (and the :ref:`_physics_process<class_Node_private_method__physics_process>` callback will be called if it exists). Enabled automatically if :ref:`_physics_process<class_Node_private_method__physics_process>` is overridden.
+If set to ``true``, enables physics (fixed framerate) processing. When a node is being processed, it will receive a :ref:`NOTIFICATION_PHYSICS_PROCESS<class_Node_constant_NOTIFICATION_PHYSICS_PROCESS>` at a fixed (usually 60 FPS, see :ref:`Engine.physics_ticks_per_second<class_Engine_property_physics_ticks_per_second>` to change) interval (and the :ref:`_physics_process<class_Node_private_method__physics_process>` callback will be called if it exists).
+
+\ **Note:** If :ref:`_physics_process<class_Node_private_method__physics_process>` is overridden, this will be automatically enabled before :ref:`_ready<class_Node_private_method__ready>` is called.
 
 .. rst-class:: classref-item-separator
 
@@ -2653,7 +2647,9 @@ If set to ``true``, enables internal physics for this node. Internal physics pro
 
 void **set_process** **(** :ref:`bool<class_bool>` enable **)**
 
-If set to ``true``, enables processing. When a node is being processed, it will receive a :ref:`NOTIFICATION_PROCESS<class_Node_constant_NOTIFICATION_PROCESS>` on every drawn frame (and the :ref:`_process<class_Node_private_method__process>` callback will be called if it exists). Enabled automatically if :ref:`_process<class_Node_private_method__process>` is overridden.
+If set to ``true``, enables processing. When a node is being processed, it will receive a :ref:`NOTIFICATION_PROCESS<class_Node_constant_NOTIFICATION_PROCESS>` on every drawn frame (and the :ref:`_process<class_Node_private_method__process>` callback will be called if it exists).
+
+\ **Note:** If :ref:`_process<class_Node_private_method__process>` is overridden, this will be automatically enabled before :ref:`_ready<class_Node_private_method__ready>` is called.
 
 \ **Note:** This method only affects the :ref:`_process<class_Node_private_method__process>` callback, i.e. it has no effect on other callbacks like :ref:`_physics_process<class_Node_private_method__physics_process>`. If you want to disable all processing for the node, set :ref:`process_mode<class_Node_property_process_mode>` to :ref:`PROCESS_MODE_DISABLED<class_Node_constant_PROCESS_MODE_DISABLED>`.
 
@@ -2667,7 +2663,9 @@ If set to ``true``, enables processing. When a node is being processed, it will 
 
 void **set_process_input** **(** :ref:`bool<class_bool>` enable **)**
 
-If set to ``true``, enables input processing. This is not required for GUI controls! Enabled automatically if :ref:`_input<class_Node_private_method__input>` is overridden.
+If set to ``true``, enables input processing.
+
+\ **Note:** If :ref:`_input<class_Node_private_method__input>` is overridden, this will be automatically enabled before :ref:`_ready<class_Node_private_method__ready>` is called. Input processing is also already enabled for GUI controls, such as :ref:`Button<class_Button>` and :ref:`TextEdit<class_TextEdit>`.
 
 .. rst-class:: classref-item-separator
 
@@ -2693,7 +2691,9 @@ If set to ``true``, enables internal processing for this node. Internal processi
 
 void **set_process_shortcut_input** **(** :ref:`bool<class_bool>` enable **)**
 
-If set to ``true``, enables shortcut processing for this node. Enabled automatically if :ref:`_shortcut_input<class_Node_private_method__shortcut_input>` is overridden.
+If set to ``true``, enables shortcut processing for this node.
+
+\ **Note:** If :ref:`_shortcut_input<class_Node_private_method__shortcut_input>` is overridden, this will be automatically enabled before :ref:`_ready<class_Node_private_method__ready>` is called.
 
 .. rst-class:: classref-item-separator
 
@@ -2705,7 +2705,9 @@ If set to ``true``, enables shortcut processing for this node. Enabled automatic
 
 void **set_process_unhandled_input** **(** :ref:`bool<class_bool>` enable **)**
 
-If set to ``true``, enables unhandled input processing. This is not required for GUI controls! It enables the node to receive all input that was not previously handled (usually by a :ref:`Control<class_Control>`). Enabled automatically if :ref:`_unhandled_input<class_Node_private_method__unhandled_input>` is overridden.
+If set to ``true``, enables unhandled input processing. It enables the node to receive all input that was not previously handled (usually by a :ref:`Control<class_Control>`).
+
+\ **Note:** If :ref:`_unhandled_input<class_Node_private_method__unhandled_input>` is overridden, this will be automatically enabled before :ref:`_ready<class_Node_private_method__ready>` is called. Unhandled input processing is also already enabled for GUI controls, such as :ref:`Button<class_Button>` and :ref:`TextEdit<class_TextEdit>`.
 
 .. rst-class:: classref-item-separator
 
@@ -2717,7 +2719,9 @@ If set to ``true``, enables unhandled input processing. This is not required for
 
 void **set_process_unhandled_key_input** **(** :ref:`bool<class_bool>` enable **)**
 
-If set to ``true``, enables unhandled key input processing. Enabled automatically if :ref:`_unhandled_key_input<class_Node_private_method__unhandled_key_input>` is overridden.
+If set to ``true``, enables unhandled key input processing.
+
+\ **Note:** If :ref:`_unhandled_key_input<class_Node_private_method__unhandled_key_input>` is overridden, this will be automatically enabled before :ref:`_ready<class_Node_private_method__ready>` is called.
 
 .. rst-class:: classref-item-separator
 

@@ -31,19 +31,21 @@ Methods
 .. table::
    :widths: auto
 
-   +-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`PropertyTweener<class_PropertyTweener>` | :ref:`as_relative<class_PropertyTweener_method_as_relative>` **(** **)**                                                    |
-   +-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`PropertyTweener<class_PropertyTweener>` | :ref:`from<class_PropertyTweener_method_from>` **(** :ref:`Variant<class_Variant>` value **)**                              |
-   +-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`PropertyTweener<class_PropertyTweener>` | :ref:`from_current<class_PropertyTweener_method_from_current>` **(** **)**                                                  |
-   +-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`PropertyTweener<class_PropertyTweener>` | :ref:`set_delay<class_PropertyTweener_method_set_delay>` **(** :ref:`float<class_float>` delay **)**                        |
-   +-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`PropertyTweener<class_PropertyTweener>` | :ref:`set_ease<class_PropertyTweener_method_set_ease>` **(** :ref:`EaseType<enum_Tween_EaseType>` ease **)**                |
-   +-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`PropertyTweener<class_PropertyTweener>` | :ref:`set_trans<class_PropertyTweener_method_set_trans>` **(** :ref:`TransitionType<enum_Tween_TransitionType>` trans **)** |
-   +-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+   +-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PropertyTweener<class_PropertyTweener>` | :ref:`as_relative<class_PropertyTweener_method_as_relative>` **(** **)**                                                                             |
+   +-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PropertyTweener<class_PropertyTweener>` | :ref:`from<class_PropertyTweener_method_from>` **(** :ref:`Variant<class_Variant>` value **)**                                                       |
+   +-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PropertyTweener<class_PropertyTweener>` | :ref:`from_current<class_PropertyTweener_method_from_current>` **(** **)**                                                                           |
+   +-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PropertyTweener<class_PropertyTweener>` | :ref:`set_custom_interpolator<class_PropertyTweener_method_set_custom_interpolator>` **(** :ref:`Callable<class_Callable>` interpolator_method **)** |
+   +-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PropertyTweener<class_PropertyTweener>` | :ref:`set_delay<class_PropertyTweener_method_set_delay>` **(** :ref:`float<class_float>` delay **)**                                                 |
+   +-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PropertyTweener<class_PropertyTweener>` | :ref:`set_ease<class_PropertyTweener_method_set_ease>` **(** :ref:`EaseType<enum_Tween_EaseType>` ease **)**                                         |
+   +-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PropertyTweener<class_PropertyTweener>` | :ref:`set_trans<class_PropertyTweener_method_set_trans>` **(** :ref:`TransitionType<enum_Tween_TransitionType>` trans **)**                          |
+   +-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -104,6 +106,32 @@ Makes the **PropertyTweener** use the current property value (i.e. at the time o
 
     tween.tween_property(self, "position", Vector2(200, 100), 1).from(position)
     tween.tween_property(self, "position", Vector2(200, 100), 1).from_current()
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_PropertyTweener_method_set_custom_interpolator:
+
+.. rst-class:: classref-method
+
+:ref:`PropertyTweener<class_PropertyTweener>` **set_custom_interpolator** **(** :ref:`Callable<class_Callable>` interpolator_method **)**
+
+Allows interpolating the value with a custom easing function. The provided ``interpolator_method`` will be called with a value ranging from ``0.0`` to ``1.0`` and is expected to return a value within the same range (values outside the range can be used for overshoot). The return value of the method is then used for interpolation between initial and final value. Note that the parameter passed to the method is still subject to the tweener's own easing.
+
+\ **Example:**\ 
+
+::
+
+    @export var curve: Curve
+    
+    func _ready():
+        var tween = create_tween()
+        # Interpolate the value using a custom curve.
+        tween.tween_property(self, "position:x", 300, 1).as_relative().set_custom_interpolator(tween_curve)
+    
+    func tween_curve(v):
+        return curve.sample_baked(v)
 
 .. rst-class:: classref-item-separator
 

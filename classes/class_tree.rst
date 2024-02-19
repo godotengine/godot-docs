@@ -708,7 +708,7 @@ This controls the drop sections, i.e. the decision and drawing of possible drop 
 - void **set_enable_recursive_folding** **(** :ref:`bool<class_bool>` value **)**
 - :ref:`bool<class_bool>` **is_recursive_folding_enabled** **(** **)**
 
-If ``true``, recursive folding is enabled for this **Tree**. Holding down Shift while clicking the fold arrow collapses or uncollapses the :ref:`TreeItem<class_TreeItem>` and all its descendants.
+If ``true``, recursive folding is enabled for this **Tree**. Holding down :kbd:`Shift` while clicking the fold arrow or using ``ui_right``/``ui_left`` shortcuts collapses or uncollapses the :ref:`TreeItem<class_TreeItem>` and all its descendants.
 
 .. rst-class:: classref-item-separator
 

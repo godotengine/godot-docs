@@ -349,9 +349,9 @@ Returns the bone index that matches ``name`` as its name.
 
 void **force_update_all_bone_transforms** **(** **)**
 
-Force updates the bone transforms/poses for all bones in the skeleton.
+**Deprecated:** Do not use this method.
 
-\ *Deprecated.* Do not use.
+Force updates the bone transforms/poses for all bones in the skeleton.
 
 .. rst-class:: classref-item-separator
 

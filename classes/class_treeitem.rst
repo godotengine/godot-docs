@@ -1346,11 +1346,11 @@ Sets the given column's custom color.
 
 void **set_custom_draw** **(** :ref:`int<class_int>` column, :ref:`Object<class_Object>` object, :ref:`StringName<class_StringName>` callback **)**
 
+**Deprecated:** Use :ref:`set_custom_draw_callback<class_TreeItem_method_set_custom_draw_callback>` instead.
+
 Sets the given column's custom draw callback to ``callback`` method on ``object``.
 
 The ``callback`` should accept two arguments: the **TreeItem** that is drawn and its position and size as a :ref:`Rect2<class_Rect2>`.
-
-\ *Deprecated.* Use :ref:`set_custom_draw_callback<class_TreeItem_method_set_custom_draw_callback>` instead.
 
 .. rst-class:: classref-item-separator
 

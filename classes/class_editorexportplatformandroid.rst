@@ -54,7 +54,13 @@ Properties
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                       | :ref:`custom_template/release<class_EditorExportPlatformAndroid_property_custom_template/release>`                                               |
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                       | :ref:`gradle_build/android_source_template<class_EditorExportPlatformAndroid_property_gradle_build/android_source_template>`                     |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`gradle_build/compress_native_libraries<class_EditorExportPlatformAndroid_property_gradle_build/compress_native_libraries>`                 |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`gradle_build/export_format<class_EditorExportPlatformAndroid_property_gradle_build/export_format>`                                         |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                       | :ref:`gradle_build/gradle_build_directory<class_EditorExportPlatformAndroid_property_gradle_build/gradle_build_directory>`                       |
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                       | :ref:`gradle_build/min_sdk<class_EditorExportPlatformAndroid_property_gradle_build/min_sdk>`                                                     |
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -526,7 +532,9 @@ A list of additional command line arguments, exported project will receive when 
 
 :ref:`String<class_String>` **custom_template/debug**
 
-Path to the custom export template. If left empty, default template is used.
+Path to an APK file to use as a custom export template for debug exports. If left empty, default template is used.
+
+\ **Note:** This is only used if :ref:`gradle_build/use_gradle_build<class_EditorExportPlatformAndroid_property_gradle_build/use_gradle_build>` is disabled.
 
 .. rst-class:: classref-item-separator
 
@@ -538,7 +546,35 @@ Path to the custom export template. If left empty, default template is used.
 
 :ref:`String<class_String>` **custom_template/release**
 
-Path to the custom export template. If left empty, default template is used.
+Path to an APK file to use as a custom export template for release exports. If left empty, default template is used.
+
+\ **Note:** This is only used if :ref:`gradle_build/use_gradle_build<class_EditorExportPlatformAndroid_property_gradle_build/use_gradle_build>` is disabled.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformAndroid_property_gradle_build/android_source_template:
+
+.. rst-class:: classref-property
+
+:ref:`String<class_String>` **gradle_build/android_source_template**
+
+Path to a ZIP file holding the source for the export template used in a Gradle build. If left empty, the default template is used.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformAndroid_property_gradle_build/compress_native_libraries:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **gradle_build/compress_native_libraries**
+
+If ``true``, native libraries are compressed when performing a Gradle build.
+
+\ **Note:** Although your binary may be smaller, your application may load slower because the native libraries are not loaded directly from the binary at runtime.
 
 .. rst-class:: classref-item-separator
 
@@ -551,6 +587,18 @@ Path to the custom export template. If left empty, default template is used.
 :ref:`int<class_int>` **gradle_build/export_format**
 
 Export format for Gradle build.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformAndroid_property_gradle_build/gradle_build_directory:
+
+.. rst-class:: classref-property
+
+:ref:`String<class_String>` **gradle_build/gradle_build_directory**
+
+Path to the Gradle build directory. If left empty, then ``res://android`` will be used.
 
 .. rst-class:: classref-item-separator
 

@@ -114,9 +114,9 @@ Adds ``node`` as a child of the root node in the editor context.
 
 :ref:`EditorInterface<class_EditorInterface>` **get_editor_interface** **(** **)** |const|
 
-Returns the :ref:`EditorInterface<class_EditorInterface>` singleton instance.
+**Deprecated:** :ref:`EditorInterface<class_EditorInterface>` is a global singleton and can be accessed directly by its name.
 
-\ *Deprecated.* :ref:`EditorInterface<class_EditorInterface>` is a global singleton and can be accessed directly by its name.
+Returns the :ref:`EditorInterface<class_EditorInterface>` singleton instance.
 
 .. rst-class:: classref-item-separator
 

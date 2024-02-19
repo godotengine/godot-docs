@@ -98,9 +98,9 @@ Method Descriptions
 
 :ref:`int<class_int>` **_get_beat_count** **(** **)** |virtual| |const|
 
-.. container:: contribute
+Overridable method. Should return the total number of beats of this audio stream. Used by the engine to determine the position of every beat.
 
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Ideally, the returned value should be based off the stream's sample rate (:ref:`AudioStreamWAV.mix_rate<class_AudioStreamWAV_property_mix_rate>`, for example).
 
 .. rst-class:: classref-item-separator
 
@@ -112,9 +112,9 @@ Method Descriptions
 
 :ref:`float<class_float>` **_get_bpm** **(** **)** |virtual| |const|
 
-.. container:: contribute
+Overridable method. Should return the tempo of this audio stream, in beats per minute (BPM). Used by the engine to determine the position of every beat.
 
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Ideally, the returned value should be based off the stream's sample rate (:ref:`AudioStreamWAV.mix_rate<class_AudioStreamWAV_property_mix_rate>`, for example).
 
 .. rst-class:: classref-item-separator
 
@@ -126,9 +126,7 @@ Method Descriptions
 
 :ref:`float<class_float>` **_get_length** **(** **)** |virtual| |const|
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Override this method to customize the returned value of :ref:`get_length<class_AudioStream_method_get_length>`. Should return the length of this audio stream, in seconds.
 
 .. rst-class:: classref-item-separator
 
@@ -152,9 +150,7 @@ Return the controllable parameters of this stream. This array contains dictionar
 
 :ref:`String<class_String>` **_get_stream_name** **(** **)** |virtual| |const|
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Override this method to customize the name assigned to this audio stream. Unused by the engine.
 
 .. rst-class:: classref-item-separator
 
@@ -166,9 +162,7 @@ Return the controllable parameters of this stream. This array contains dictionar
 
 :ref:`AudioStreamPlayback<class_AudioStreamPlayback>` **_instantiate_playback** **(** **)** |virtual| |const|
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Override this method to customize the returned value of :ref:`instantiate_playback<class_AudioStream_method_instantiate_playback>`. Should returned a new :ref:`AudioStreamPlayback<class_AudioStreamPlayback>` created when the stream is played (such as by an :ref:`AudioStreamPlayer<class_AudioStreamPlayer>`)..
 
 .. rst-class:: classref-item-separator
 
@@ -180,9 +174,7 @@ Return the controllable parameters of this stream. This array contains dictionar
 
 :ref:`bool<class_bool>` **_is_monophonic** **(** **)** |virtual| |const|
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Override this method to customize the returned value of :ref:`is_monophonic<class_AudioStream_method_is_monophonic>`. Should return ``true`` if this audio stream only supports one channel.
 
 .. rst-class:: classref-item-separator
 
@@ -206,7 +198,7 @@ Returns the length of the audio stream in seconds.
 
 :ref:`AudioStreamPlayback<class_AudioStreamPlayback>` **instantiate_playback** **(** **)**
 
-Returns an AudioStreamPlayback. Useful for when you want to extend :ref:`_instantiate_playback<class_AudioStream_private_method__instantiate_playback>` but call :ref:`instantiate_playback<class_AudioStream_method_instantiate_playback>` from an internally held AudioStream subresource. An example of this can be found in the source files for ``AudioStreamRandomPitch::instantiate_playback``.
+Returns a newly created :ref:`AudioStreamPlayback<class_AudioStreamPlayback>` intended to play this audio stream. Useful for when you want to extend :ref:`_instantiate_playback<class_AudioStream_private_method__instantiate_playback>` but call :ref:`instantiate_playback<class_AudioStream_method_instantiate_playback>` from an internally held AudioStream subresource. An example of this can be found in the source code for ``AudioStreamRandomPitch::instantiate_playback``.
 
 .. rst-class:: classref-item-separator
 
@@ -218,7 +210,7 @@ Returns an AudioStreamPlayback. Useful for when you want to extend :ref:`_instan
 
 :ref:`bool<class_bool>` **is_monophonic** **(** **)** |const|
 
-Returns true if this audio stream only supports monophonic playback, or false if the audio stream supports polyphony.
+Returns ``true`` if this audio stream only supports one channel (*monophony*), or ``false`` if the audio stream supports two or more channels (*polyphony*).
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

@@ -399,9 +399,9 @@ Removes the index array by expanding the vertex array.
 
 :ref:`PackedInt32Array<class_PackedInt32Array>` **generate_lod** **(** :ref:`float<class_float>` nd_threshold, :ref:`int<class_int>` target_index_count=3 **)**
 
-Generates a LOD for a given ``nd_threshold`` in linear units (square root of quadric error metric), using at most ``target_index_count`` indices.
+**Deprecated:** Unused internally and fails to preserve normals or UVs. Consider using :ref:`ImporterMesh.generate_lods<class_ImporterMesh_method_generate_lods>` instead.
 
-\ *Deprecated.* Unused internally and fails to preserve normals or UVs. Consider using :ref:`ImporterMesh.generate_lods<class_ImporterMesh_method_generate_lods>` instead.
+Generates a LOD for a given ``nd_threshold`` in linear units (square root of quadric error metric), using at most ``target_index_count`` indices.
 
 .. rst-class:: classref-item-separator
 

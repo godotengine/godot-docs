@@ -77,6 +77,8 @@ Methods
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Dictionary[]<class_Dictionary>`             | :ref:`_get_export_options<class_EditorExportPlugin_private_method__get_export_options>` **(** :ref:`EditorExportPlatform<class_EditorExportPlatform>` platform **)** |virtual| |const|                                                                                              |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Dictionary<class_Dictionary>`               | :ref:`_get_export_options_overrides<class_EditorExportPlugin_private_method__get_export_options_overrides>` **(** :ref:`EditorExportPlatform<class_EditorExportPlatform>` platform **)** |virtual| |const|                                                                          |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                       | :ref:`_get_name<class_EditorExportPlugin_private_method__get_name>` **(** **)** |virtual| |const|                                                                                                                                                                                   |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`_should_update_export_options<class_EditorExportPlugin_private_method__should_update_export_options>` **(** :ref:`EditorExportPlatform<class_EditorExportPlatform>` platform **)** |virtual| |const|                                                                          |
@@ -382,6 +384,36 @@ Each element in the return value is a :ref:`Dictionary<class_Dictionary>` with t
 - ``default_value``: The default value for this option.
 
 - ``update_visibility``: An optional boolean value. If set to ``true``, the preset will emit :ref:`Object.property_list_changed<class_Object_signal_property_list_changed>` when the option is changed.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlugin_private_method__get_export_options_overrides:
+
+.. rst-class:: classref-method
+
+:ref:`Dictionary<class_Dictionary>` **_get_export_options_overrides** **(** :ref:`EditorExportPlatform<class_EditorExportPlatform>` platform **)** |virtual| |const|
+
+Return a :ref:`Dictionary<class_Dictionary>` of override values for export options, that will be used instead of user-provided values. Overridden options will be hidden from the user interface.
+
+::
+
+    class MyExportPlugin extends EditorExportPlugin:
+        func _get_name() -> String:
+            return "MyExportPlugin"
+    
+        func _supports_platform(platform) -> bool:
+            if platform is EditorExportPlatformPC:
+                # Run on all desktop platforms including Windows, MacOS and Linux.
+                return true
+            return false
+    
+        func _get_export_options_overrides(platform) -> Dictionary:
+            # Override "Embed PCK" to always be enabled.
+            return {
+                "binary_format/embed_pck": true,
+            }
 
 .. rst-class:: classref-item-separator
 

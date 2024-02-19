@@ -10,6 +10,8 @@
 AnimatedTexture
 ===============
 
+**Deprecated:** This class may be changed or removed in future versions.
+
 **Inherits:** :ref:`Texture2D<class_Texture2D>` **<** :ref:`Texture<class_Texture>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
 Proxy texture for simple frame-based animations.
@@ -28,8 +30,6 @@ The playback of the animation is controlled by the :ref:`speed_scale<class_Anima
 \ **Note:** AnimatedTexture doesn't support using :ref:`AtlasTexture<class_AtlasTexture>`\ s. Each frame needs to be a separate :ref:`Texture2D<class_Texture2D>`.
 
 \ **Warning:** The current implementation is not efficient for the modern renderers.
-
-\ *Deprecated.* This class is deprecated, and might be removed in a future release.
 
 .. rst-class:: classref-reftable-group
 

@@ -392,7 +392,7 @@ Update at the keyframes.
 
 :ref:`UpdateMode<enum_Animation_UpdateMode>` **UPDATE_CAPTURE** = ``2``
 
-Same as linear interpolation, but also interpolates from the current value (i.e. dynamically at runtime) if the first key isn't at 0 seconds.
+Same as :ref:`UPDATE_CONTINUOUS<class_Animation_constant_UPDATE_CONTINUOUS>` but works as a flag to capture the value of the current object and perform interpolation in some methods. See also :ref:`AnimationMixer.capture<class_AnimationMixer_method_capture>` and :ref:`AnimationPlayer.play_with_capture<class_AnimationPlayer_method_play_with_capture>`.
 
 .. rst-class:: classref-item-separator
 

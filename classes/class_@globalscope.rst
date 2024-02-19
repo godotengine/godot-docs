@@ -3744,7 +3744,13 @@ Examples:
 
 :ref:`PropertyHint<enum_@GlobalScope_PropertyHint>` **PROPERTY_HINT_NODE_PATH_TO_EDITED_NODE** = ``24``
 
-*Deprecated.* This hint is not used anywhere and will be removed in the future.
+**Deprecated:** This hint is not used anywhere and will be removed in the future.
+
+.. container:: contribute
+
+	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+
 
 .. _class_@GlobalScope_constant_PROPERTY_HINT_OBJECT_TOO_BIG:
 
@@ -3784,9 +3790,13 @@ Hints that a :ref:`String<class_String>` property is a path to a file. Editing i
 
 :ref:`PropertyHint<enum_@GlobalScope_PropertyHint>` **PROPERTY_HINT_INT_IS_OBJECTID** = ``29``
 
-Hints that an :ref:`int<class_int>` property is an object ID.
+**Deprecated:** This hint is not used anywhere and will be removed in the future.
 
-\ *Deprecated.* This hint is not used anywhere and will be removed in the future.
+.. container:: contribute
+
+	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+
 
 .. _class_@GlobalScope_constant_PROPERTY_HINT_INT_IS_POINTER:
 
@@ -3988,9 +3998,13 @@ If this property is modified, all inspector fields will be refreshed.
 
 :ref:`PropertyUsageFlags<enum_@GlobalScope_PropertyUsageFlags>` **PROPERTY_USAGE_SCRIPT_DEFAULT_VALUE** = ``32768``
 
-Signifies a default value from a placeholder script instance.
+**Deprecated:** This hint is not used anywhere and will be removed in the future.
 
-\ *Deprecated.* This hint is not used anywhere and will be removed in the future.
+.. container:: contribute
+
+	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+
 
 .. _class_@GlobalScope_constant_PROPERTY_USAGE_CLASS_IS_ENUM:
 
@@ -4070,9 +4084,13 @@ Inserting an animation key frame of this property will automatically increment t
 
 :ref:`PropertyUsageFlags<enum_@GlobalScope_PropertyUsageFlags>` **PROPERTY_USAGE_DEFERRED_SET_RESOURCE** = ``33554432``
 
-When loading, the resource for this property can be set at the end of loading.
+**Deprecated:** This hint is not used anywhere and will be removed in the future.
 
-\ *Deprecated.* This hint is not used anywhere and will be removed in the future.
+.. container:: contribute
+
+	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+
 
 .. _class_@GlobalScope_constant_PROPERTY_USAGE_EDITOR_INSTANTIATE_OBJECT:
 
