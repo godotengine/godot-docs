@@ -35,12 +35,14 @@ Tags
 | Description       | No tag. Use one blank line to separate the description |
 |                   | from the brief.                                        |
 +-------------------+--------------------------------------------------------+
-| Tutorial          | | ``@tutorial:``                                       |
-|                   | | ``@tutorial(The Title Here):``                       |
+| Tutorial          | | ``@tutorial: https://example.com``                   |
+|                   | | ``@tutorial(The Title Here): https://example.com``   |
 +-------------------+--------------------------------------------------------+
-| Deprecated        | ``@deprecated``                                        |
+| Deprecated        | | ``@deprecated``                                      |
+|                   | | ``@deprecated: Use [AnotherClass] instead.``         |
 +-------------------+--------------------------------------------------------+
-| Experimental      | ``@experimental``                                      |
+| Experimental      | | ``@experimental``                                    |
+|                   | | ``@experimental: This class is unstable.``           |
 +-------------------+--------------------------------------------------------+
 
 For example::
@@ -51,8 +53,8 @@ For example::
     ## The description of the script, what it can do,
     ## and any further detail.
     ##
-    ## @tutorial:            https://the/tutorial1/url.com
-    ## @tutorial(Tutorial2): https://the/tutorial2/url.com
+    ## @tutorial:             https://example.com/tutorial_1
+    ## @tutorial(Tutorial 2): https://example.com/tutorial_2
     ## @experimental
 
 .. warning::
@@ -86,18 +88,20 @@ the double hash symbol ``##`` to be considered as part of the documentation.
 Tags
 ~~~~
 
-+--------------+-------------------+
-| Description  | No tag.           |
-+--------------+-------------------+
-| Deprecated   | ``@deprecated``   |
-+--------------+-------------------+
-| Experimental | ``@experimental`` |
-+--------------+-------------------+
++--------------+--------------------------------------------------+
+| Description  | No tag.                                          |
++--------------+--------------------------------------------------+
+| Deprecated   | | ``@deprecated``                                |
+|              | | ``@deprecated: Use [member another] instead.`` |
++--------------+--------------------------------------------------+
+| Experimental | | ``@experimental``                              |
+|              | | ``@experimental: This method is incomplete.``  |
++--------------+--------------------------------------------------+
 
 For example::
 
     ## The description of the variable.
-    ## @deprecated
+    ## @deprecated: Use [member other_var] instead.
     var my_var
 
 Alternatively, you can use inline documentation comments::
@@ -134,8 +138,8 @@ Complete script example
     ## The description of the script, what it can do,
     ## and any further detail.
     ##
-    ## @tutorial:            https://the/tutorial1/url.com
-    ## @tutorial(Tutorial2): https://the/tutorial2/url.com
+    ## @tutorial:             https://example.com/tutorial_1
+    ## @tutorial(Tutorial 2): https://example.com/tutorial_2
     ## @experimental
 
     ## The description of a constant.
@@ -186,7 +190,7 @@ Complete script example
     ## The same rules apply here. The documentation must
     ## immediately precede the class definition.
     ##
-    ## @tutorial: https://the/tutorial/url.com
+    ## @tutorial: https://example.com/tutorial
     ## @experimental
     class Inner:
 
@@ -202,9 +206,10 @@ Complete script example
 
 You can mark a class or any of its members as deprecated or experimental.
 This will add the corresponding indicator in the built-in documentation viewer.
+Optionally, you can provide a short message explaining why the API is not recommended.
 This can be especially useful for plugin and library creators.
 
-.. image:: img/deprecated_and_experimental_marks.webp
+.. image:: img/deprecated_and_experimental_tags.webp
 
 - **Deprecated** marks a non-recommended API that is subject to removal or incompatible change
   in a future major release. Usually the API is kept for backwards compatibility.
