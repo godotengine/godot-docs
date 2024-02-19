@@ -336,14 +336,14 @@ call when child objects are loaded. You will also need a way to link
 children to parents as the :ref:`NodePath
 <class_nodepath>` will likely be invalid.
 
-JSON vs binary serialization
-----------------------------
+JSON serialization alternatives
+-------------------------------
 
 For simple game state, JSON may work and it generates human-readable files that are easy to debug.
 
 But JSON has many limitations. If you need to store more complex game state or
-a lot of it, :ref:`binary serialization<doc_binary_serialization_api>`
-may be a better approach.
+a lot of it, :ref:`binary serialization<doc_binary_serialization_api>` or
+:ref:`scene serialization<doc_resources>` may be a better approach (see below for ideas).
 
 JSON limitations
 ~~~~~~~~~~~~~~~~
@@ -381,3 +381,130 @@ method in your class. You can also check how property usage is configured by
 calling ``Object._get_property_list``.
 See :ref:`PropertyUsageFlags<enum_@GlobalScope_PropertyUsageFlags>` for the
 possible usage flags.
+
+Scene serialization
+~~~~~~~~~~~~~~~~~~~
+
+An alternative solution to both the approaches above, which avoids issues of
+manual serialization logic for common types, is to make use of Godot's own
+scene serialization logic.
+
+Think of the save game state as a "scene" you save and load at runtime,
+but which only happens to contain logic related to the save state. You can construct a
+:ref:`class_Node` specifically containing the state you wish to persist. For example:
+
+.. tabs::
+ .. code-tab:: gdscript GDScript
+
+    class_name PersistenceStore
+    extends Node
+
+    @export var data: Array
+
+The specific contents of this class are unimportant, but you must:
+
+  * derive from :ref:`class_Node` so it can be added to a :ref:`class_PackedScene`
+  * use ``@export`` to mark which fields will be saved and loaded
+
+In this example, ``data`` could be an array of dictionaries populated with relevant save state, as detailed above.
+Such state can contain complex data structures built on :ref:`class_Variant` and built-in or custom types based on
+:ref:`class_Resource`.  Such state can even refer to content "outside" the save state by :ref:`class_NodePath`
+(such as recording that "Enemy01" in this level has been killed).
+
+Save and load an instance of this node into a dynamically-created :ref:`class_PackedScene`.
+By saving or loading this resource, Godot will take care of serializing everything for you.
+Note that using ``.tscn`` or ``.scn`` extensions is mandatory for the :ref:`class_PackedScene`
+serialization to be used.
+
+.. tabs::
+ .. code-tab:: gdscript GDScript
+
+    ## Save a persistence store to a .tscn or .scn file,
+    ## for example "user://savegame.tscn"
+    func save_state_file(store: PersistenceStore, path: String):
+      var rsrc := PackedScene.new()
+
+      var result = rsrc.pack(store)
+      if result != OK:
+        ...
+        return
+
+      var err = ResourceSaver.save(rsrc, path)
+      if err != OK:
+        ...
+        return
+
+    ## Load a persistence store to a .tscn or .scn file,
+    ## for example "user://savegame.tscn"
+    func load_state_file(path: String) -> PersistenceStore:
+      if not ResourceLoader.exists(path):
+        # check before using .load() to avoid error log reports
+        ...
+        return null
+
+      var rsrc = ResourceLoader.load(path)
+      if not rsrc:
+        ...
+        return null
+
+      var store = rsrc.instantiate()
+      if not store is PersistenceStore:
+        # This can happen if the .gd script hosting this class has been renamed or moved
+        ...
+        return null
+
+      return store
+
+Caveats
+^^^^^^^
+
+* Packed scenes can be fragile
+
+This approach means that references to the top-level ``.gd`` scripts used by your ``PersistenceStore``
+and any :ref:`class_NodePath` references embedded in your state will be reflected in these files,
+which makes them susceptible to compatibility issues as your project evolves.
+
+For example, note the ``ext_resource`` entries and the ``NodePath`` reference in this sample ``savegame.tscn`` file:
+
+.. code-block::
+
+    [gd_scene load_steps=3 format=3]
+
+    [ext_resource type="Script" path="res://core/persistent_store.gd" id="1_hm1eb"]
+    [ext_resource type="Script" path="res://content/my_custom_resource.gd" id="2_caiob"]
+
+    [node name="" type="Node"]
+    script = ExtResource("1_hm1eb")
+    data = [{
+    ...
+    "name": "Enemy02",
+    "health": 123,
+    "location": Vector2(1, 4),
+    "color": Color(1, 0.75, 0.25, 1),
+    "parent": NodePath("Enemies"),
+    ...
+    }]
+
+Storing direct ``NodePath`` or ``res://`` references in the save games is also a stumbling block, if you move these around later.
+
+* Text scenes are not secure
+
+Storing save games as ``.tscn`` instead of ``.scn`` also means users may be able to break or
+take advantage of the game by manually editing the file.
+
+Depending on what content you expose, they may be able to change the type of an enemy, add or remove nodes, or
+do other things which would have deeper ramifications than if they edited some primitive values in a JSON save game file.
+It's up to you how important this is.
+
+Summary
+^^^^^^^
+
+If you take care to mitigate these issues, typically by fixing up references to the "outside world"
+at save and load time, and validating sensitive data appropriately, you can avoid a lot of manual serialization
+work for the bulk of the data.
+
+Finally, this approach may be useful during early stages of game development, when you do not know what the
+final product will need. (You will be breaking and rearranging things on a regular basis and save games will have a
+short shelf life anyway!)
+
+See the :ref:`Resources tutorial section<doc_resources>` for more details.
