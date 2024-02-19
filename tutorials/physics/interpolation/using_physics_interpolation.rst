@@ -56,13 +56,30 @@ As a rough guide:
 Call reset_physics_interpolation() when teleporting objects
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Most of the time, interpolation is what you want between two physics ticks. However, there is one situation in which it may *not* be what you want. That is when you are initially placing objects, or moving them to a new location. Here, you don't want a smooth motion between the two - you want an instantaneous move.
+Most of the time, interpolation is what you want between two physics ticks. However, there is one situation in which it may *not* be what you want. That is when you are initially placing objects, or moving them to a new location. Here, you don't want a smooth motion between where the object was (e.g. the origin) and the initial position - you want an instantaneous move.
 
-The solution to this is to call the :ref:`Node.reset_physics_interpolation<class_Node_method_reset_physics_interpolation>` function. You should call this function on a Node *after* setting the position/transform. The rest is done for you automatically.
+The solution to this is to call the :ref:`Node.reset_physics_interpolation<class_Node_method_reset_physics_interpolation>` function. What this function does under the hood is set the internally stored *previous transform* of the object to be equal to the *current transform*. This ensures that when interpolating between these two equal transforms, there will be no movement.
 
-Even if you forget to call this, it is not usually a problem in most situations (especially at high tick rates). This is something you can easily leave to the polishing phase of your game. The worst that will happen is seeing a streaking motion for a frame or so when you move them - you will know when you need it!
+Even if you forget to call this, it will usually not be a problem in most situations (especially at high tick rates). This is something you can easily leave to the polishing phase of your game. The worst that will happen is seeing a streaking motion for a frame or so when you move them - you will know when you need it!
 
-.. important:: You should call ``reset_physics_interpolation()`` *after* setting the new position, rather than before. Otherwise, you will still see the unwanted streaking motion.
+There are actually two ways to use ``reset_physics_interpolation()``:
+
+*Standing start (e.g. player)*
+
+1) Set the initial transform
+2) Call ``reset_physics_interpolation()``
+
+The previous and current transforms will be identical, resulting in no initial movement.
+
+*Moving start (e.g. bullet)*
+
+1) Set the initial transform
+2) Call ``reset_physics_interpolation()``
+3) Immediately set the transform expected after the first tick of motion
+
+The previous transform will be the starting position, and the current transform will act as though a tick of simulation has already taken place. This will immediately start moving the object, instead of having a tick delay standing still.
+
+.. important:: Make sure you set the transform and call ``reset_physics_interpolation()`` in the correct order as shown above, otherwise you will see unwanted "streaking".
 
 Testing and debugging tips
 --------------------------
