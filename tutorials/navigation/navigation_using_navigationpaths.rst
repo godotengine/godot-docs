@@ -33,34 +33,43 @@ Outside of grids due to polygons often covering large open areas with a single, 
 
 
 .. tabs::
- .. code-tab:: gdscript GDScript
+ .. code-tab:: gdscript 2D GDScript
 
     extends Node2D
-     # basic query for a navigation path in 2D using the default navigation map
-    var default_2d_map_rid: RID = get_world_2d().get_navigation_map()
-    var start_position: Vector2 = Vector2(0.0, 0.0)
-    var target_position: Vector2 = Vector2(5.0, 0.0)
-    var path: PackedVector2Array = NavigationServer2D.map_get_path(
-        default_2d_map_rid,
-        start_position,
-        target_position,
-        true
-    )
 
-.. tabs::
- .. code-tab:: gdscript GDScript
+    # Basic query for a navigation path using the default navigation map.
+
+    func get_navigation_path(p_start_position: Vector2, p_target_position: Vector2) -> PackedVector2Array:
+        if not is_inside_tree():
+            return PackedVector2Array()
+
+        var default_map_rid: RID = get_world_2d().get_navigation_map()
+        var path: PackedVector2Array = NavigationServer2D.map_get_path(
+            default_map_rid,
+            p_start_position,
+            p_target_position,
+            true
+        )
+        return path
+
+ .. code-tab:: gdscript 3D GDScript
 
     extends Node3D
-    # basic query for a navigation path in 3D using the default navigation map
-    var default_3d_map_rid: RID = get_world_3d().get_navigation_map()
-    var start_position: Vector3 = Vector3(0.0, 0.0, 0.0)
-    var target_position: Vector3 = Vector3(5.0, 0.0, 3.0)
-    var path: PackedVector3Array = NavigationServer3D.map_get_path(
-        default_3d_map_rid,
-        start_position,
-        target_position,
-        true
-    )
+
+    # Basic query for a navigation path using the default navigation map.
+
+    func get_navigation_path(p_start_position: Vector3, p_target_position: Vector3) -> PackedVector3Array:
+        if not is_inside_tree():
+            return PackedVector3Array()
+
+        var default_map_rid: RID = get_world_3d().get_navigation_map()
+        var path: PackedVector3Array = NavigationServer3D.map_get_path(
+            default_map_rid,
+            p_start_position,
+            p_target_position,
+            true
+        )
+        return path
 
 A returned ``path`` by the NavigationServer will be a ``PackedVector2Array`` for 2D or a ``PackedVector3Array`` for 3D.
 These are just a memory-optimized ``Array`` of vector positions.
