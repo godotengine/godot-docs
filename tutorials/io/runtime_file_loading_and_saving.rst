@@ -47,7 +47,7 @@ filesystem for reading and writing:
 
 ::
 
-     func save_file(content):
+    func save_file(content):
         var file = FileAccess.open("/path/to/file.txt", FileAccess.WRITE)
         file.store_string(content)
 
