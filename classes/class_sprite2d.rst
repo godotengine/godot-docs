@@ -371,7 +371,7 @@ Returns a :ref:`Rect2<class_Rect2>` representing the Sprite2D's boundary in loca
 
 :ref:`bool<class_bool>` **is_pixel_opaque** **(** :ref:`Vector2<class_Vector2>` pos **)** |const|
 
-Returns ``true``, if the pixel at the given position is opaque and ``false`` in other case.
+Returns ``true``, if the pixel at the given position in local coordinates is opaque and ``false`` in other case.
 
 \ **Note:** It also returns ``false``, if the sprite's texture is ``null`` or if the given position is invalid.
 
