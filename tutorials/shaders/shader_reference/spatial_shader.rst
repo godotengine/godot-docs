@@ -254,7 +254,7 @@ these properties, and if you don't write to them, Godot will optimize away the c
 | in vec4 **FRAGCOORD**                  | Coordinate of pixel center in screen space. ``xy`` specifies position in window, ``z``           |
 |                                        | specifies fragment depth if ``DEPTH`` is not used. Origin is lower-left.                         |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
-| in bool **FRONT_FACING**               | ``true`` if current face if front face.                                                          |
+| in bool **FRONT_FACING**               | ``true`` if current face is front face.                                                          |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
 | in vec3 **VIEW**                       | Normalized vector from fragment position to camera (in view space). This is the same for both    |
 |                                        | perspective and orthogonal cameras.                                                              |
