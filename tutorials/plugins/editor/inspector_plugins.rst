@@ -39,7 +39,7 @@ you should remove the instance you have added by calling
 ``remove_inspector_plugin()``.
 
 .. note:: Here, you are loading a script and not a packed scene. Therefore you
-          should use ``new()`` instead of ``instance()``.
+          should use ``new()`` instead of ``instantiate()``.
 
 .. tabs::
   .. code-tab:: gdscript GDScript
