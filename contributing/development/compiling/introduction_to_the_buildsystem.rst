@@ -237,7 +237,7 @@ Several compiler optimization levels can be chosen from:
   build times, but the slowest execution times.
 - ``optimize=custom`` *(advanced users only)*: Do not pass optimization
   arguments to the C/C++ compilers. You will have to pass arguments manually
-  using the ``CFLAGS``, ``CCFLAGS`` and ``CXXFLAGS`` SCons options.
+  using the ``cflags``, ``ccflags`` and ``cxxflags`` SCons options.
 
 Architecture
 ------------
