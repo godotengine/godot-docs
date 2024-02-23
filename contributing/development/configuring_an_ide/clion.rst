@@ -87,7 +87,7 @@ Ignoring object and library files
 
 After building Godot in CLion, you may see the object and library files showing up in the **Project** view.
 
-.. figure:: img/clion-object-library-files-in-project-view.png
+.. figure:: img/clion-object-library-files-in-project-view.webp
    :align: center
 
 You can configure CLion to ignore those files:
@@ -95,7 +95,7 @@ You can configure CLion to ignore those files:
 - Open CLion and navigate to **Preferences > Editor > File Types > Ignored Files and Folders**
 - Click the **+** button to add ``*.o`` and ``*.a`` to the list. In Windows, you would add ``*.obj`` and ``*.dll``.
 
-.. figure:: img/clion-ignore-object-library-files.png
+.. figure:: img/clion-ignore-object-library-files.webp
    :align: center
 
 Now, the files should be ignored in the Project view.
