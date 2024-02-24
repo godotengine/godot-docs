@@ -53,11 +53,11 @@ Methods
 .. table::
    :widths: auto
 
-   +-----------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`String<class_String>` | :ref:`get_stage_source<class_RDShaderSource_method_get_stage_source>` **(** :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>` stage **)** |const|                             |
-   +-----------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                        | :ref:`set_stage_source<class_RDShaderSource_method_set_stage_source>` **(** :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>` stage, :ref:`String<class_String>` source **)** |
-   +-----------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +-----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>` | :ref:`get_stage_source<class_RDShaderSource_method_get_stage_source>`\ (\ stage\: :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>`\ ) |const|                               |
+   +-----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                      | :ref:`set_stage_source<class_RDShaderSource_method_set_stage_source>`\ (\ stage\: :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>`, source\: :ref:`String<class_String>`\ ) |
+   +-----------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -76,8 +76,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_language** **(** :ref:`ShaderLanguage<enum_RenderingDevice_ShaderLanguage>` value **)**
-- :ref:`ShaderLanguage<enum_RenderingDevice_ShaderLanguage>` **get_language** **(** **)**
+- |void| **set_language**\ (\ value\: :ref:`ShaderLanguage<enum_RenderingDevice_ShaderLanguage>`\ )
+- :ref:`ShaderLanguage<enum_RenderingDevice_ShaderLanguage>` **get_language**\ (\ )
 
 The language the shader is written in.
 
@@ -93,8 +93,8 @@ The language the shader is written in.
 
 .. rst-class:: classref-property-setget
 
-- void **set_stage_source** **(** :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>` stage, :ref:`String<class_String>` source **)**
-- :ref:`String<class_String>` **get_stage_source** **(** :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>` stage **)** |const|
+- |void| **set_stage_source**\ (\ stage\: :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>`, source\: :ref:`String<class_String>`\ )
+- :ref:`String<class_String>` **get_stage_source**\ (\ stage\: :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>`\ ) |const|
 
 Source code for the shader's compute stage.
 
@@ -110,8 +110,8 @@ Source code for the shader's compute stage.
 
 .. rst-class:: classref-property-setget
 
-- void **set_stage_source** **(** :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>` stage, :ref:`String<class_String>` source **)**
-- :ref:`String<class_String>` **get_stage_source** **(** :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>` stage **)** |const|
+- |void| **set_stage_source**\ (\ stage\: :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>`, source\: :ref:`String<class_String>`\ )
+- :ref:`String<class_String>` **get_stage_source**\ (\ stage\: :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>`\ ) |const|
 
 Source code for the shader's fragment stage.
 
@@ -127,8 +127,8 @@ Source code for the shader's fragment stage.
 
 .. rst-class:: classref-property-setget
 
-- void **set_stage_source** **(** :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>` stage, :ref:`String<class_String>` source **)**
-- :ref:`String<class_String>` **get_stage_source** **(** :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>` stage **)** |const|
+- |void| **set_stage_source**\ (\ stage\: :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>`, source\: :ref:`String<class_String>`\ )
+- :ref:`String<class_String>` **get_stage_source**\ (\ stage\: :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>`\ ) |const|
 
 Source code for the shader's tessellation control stage.
 
@@ -144,8 +144,8 @@ Source code for the shader's tessellation control stage.
 
 .. rst-class:: classref-property-setget
 
-- void **set_stage_source** **(** :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>` stage, :ref:`String<class_String>` source **)**
-- :ref:`String<class_String>` **get_stage_source** **(** :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>` stage **)** |const|
+- |void| **set_stage_source**\ (\ stage\: :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>`, source\: :ref:`String<class_String>`\ )
+- :ref:`String<class_String>` **get_stage_source**\ (\ stage\: :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>`\ ) |const|
 
 Source code for the shader's tessellation evaluation stage.
 
@@ -161,8 +161,8 @@ Source code for the shader's tessellation evaluation stage.
 
 .. rst-class:: classref-property-setget
 
-- void **set_stage_source** **(** :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>` stage, :ref:`String<class_String>` source **)**
-- :ref:`String<class_String>` **get_stage_source** **(** :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>` stage **)** |const|
+- |void| **set_stage_source**\ (\ stage\: :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>`, source\: :ref:`String<class_String>`\ )
+- :ref:`String<class_String>` **get_stage_source**\ (\ stage\: :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>`\ ) |const|
 
 Source code for the shader's vertex stage.
 
@@ -179,7 +179,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **get_stage_source** **(** :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>` stage **)** |const|
+:ref:`String<class_String>` **get_stage_source**\ (\ stage\: :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>`\ ) |const|
 
 Returns source code for the specified shader ``stage``. Equivalent to getting one of :ref:`source_compute<class_RDShaderSource_property_source_compute>`, :ref:`source_fragment<class_RDShaderSource_property_source_fragment>`, :ref:`source_tesselation_control<class_RDShaderSource_property_source_tesselation_control>`, :ref:`source_tesselation_evaluation<class_RDShaderSource_property_source_tesselation_evaluation>` or :ref:`source_vertex<class_RDShaderSource_property_source_vertex>`.
 
@@ -191,7 +191,7 @@ Returns source code for the specified shader ``stage``. Equivalent to getting on
 
 .. rst-class:: classref-method
 
-void **set_stage_source** **(** :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>` stage, :ref:`String<class_String>` source **)**
+|void| **set_stage_source**\ (\ stage\: :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>`, source\: :ref:`String<class_String>`\ )
 
 Sets ``source`` code for the specified shader ``stage``. Equivalent to setting one of :ref:`source_compute<class_RDShaderSource_property_source_compute>`, :ref:`source_fragment<class_RDShaderSource_property_source_fragment>`, :ref:`source_tesselation_control<class_RDShaderSource_property_source_tesselation_control>`, :ref:`source_tesselation_evaluation<class_RDShaderSource_property_source_tesselation_evaluation>` or :ref:`source_vertex<class_RDShaderSource_property_source_vertex>`.
 
@@ -202,3 +202,4 @@ Sets ``source`` code for the specified shader ``stage``. Equivalent to setting o
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

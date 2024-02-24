@@ -31,27 +31,27 @@ Methods
 .. table::
    :widths: auto
 
-   +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`             | :ref:`get_cell_alternative_tile<class_TileMapPattern_method_get_cell_alternative_tile>` **(** :ref:`Vector2i<class_Vector2i>` coords **)** |const|                                                                                                     |
-   +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Vector2i<class_Vector2i>`   | :ref:`get_cell_atlas_coords<class_TileMapPattern_method_get_cell_atlas_coords>` **(** :ref:`Vector2i<class_Vector2i>` coords **)** |const|                                                                                                             |
-   +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`             | :ref:`get_cell_source_id<class_TileMapPattern_method_get_cell_source_id>` **(** :ref:`Vector2i<class_Vector2i>` coords **)** |const|                                                                                                                   |
-   +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Vector2i<class_Vector2i>`   | :ref:`get_size<class_TileMapPattern_method_get_size>` **(** **)** |const|                                                                                                                                                                              |
-   +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Vector2i[]<class_Vector2i>` | :ref:`get_used_cells<class_TileMapPattern_method_get_used_cells>` **(** **)** |const|                                                                                                                                                                  |
-   +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`           | :ref:`has_cell<class_TileMapPattern_method_has_cell>` **(** :ref:`Vector2i<class_Vector2i>` coords **)** |const|                                                                                                                                       |
-   +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`           | :ref:`is_empty<class_TileMapPattern_method_is_empty>` **(** **)** |const|                                                                                                                                                                              |
-   +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                              | :ref:`remove_cell<class_TileMapPattern_method_remove_cell>` **(** :ref:`Vector2i<class_Vector2i>` coords, :ref:`bool<class_bool>` update_size **)**                                                                                                    |
-   +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                              | :ref:`set_cell<class_TileMapPattern_method_set_cell>` **(** :ref:`Vector2i<class_Vector2i>` coords, :ref:`int<class_int>` source_id=-1, :ref:`Vector2i<class_Vector2i>` atlas_coords=Vector2i(-1, -1), :ref:`int<class_int>` alternative_tile=-1 **)** |
-   +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                              | :ref:`set_size<class_TileMapPattern_method_set_size>` **(** :ref:`Vector2i<class_Vector2i>` size **)**                                                                                                                                                 |
-   +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +--------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                                        | :ref:`get_cell_alternative_tile<class_TileMapPattern_method_get_cell_alternative_tile>`\ (\ coords\: :ref:`Vector2i<class_Vector2i>`\ ) |const|                                                                                                                 |
+   +--------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector2i<class_Vector2i>`                              | :ref:`get_cell_atlas_coords<class_TileMapPattern_method_get_cell_atlas_coords>`\ (\ coords\: :ref:`Vector2i<class_Vector2i>`\ ) |const|                                                                                                                         |
+   +--------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                                        | :ref:`get_cell_source_id<class_TileMapPattern_method_get_cell_source_id>`\ (\ coords\: :ref:`Vector2i<class_Vector2i>`\ ) |const|                                                                                                                               |
+   +--------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector2i<class_Vector2i>`                              | :ref:`get_size<class_TileMapPattern_method_get_size>`\ (\ ) |const|                                                                                                                                                                                             |
+   +--------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Array<class_Array>`\[:ref:`Vector2i<class_Vector2i>`\] | :ref:`get_used_cells<class_TileMapPattern_method_get_used_cells>`\ (\ ) |const|                                                                                                                                                                                 |
+   +--------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                      | :ref:`has_cell<class_TileMapPattern_method_has_cell>`\ (\ coords\: :ref:`Vector2i<class_Vector2i>`\ ) |const|                                                                                                                                                   |
+   +--------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                      | :ref:`is_empty<class_TileMapPattern_method_is_empty>`\ (\ ) |const|                                                                                                                                                                                             |
+   +--------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                       | :ref:`remove_cell<class_TileMapPattern_method_remove_cell>`\ (\ coords\: :ref:`Vector2i<class_Vector2i>`, update_size\: :ref:`bool<class_bool>`\ )                                                                                                              |
+   +--------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                       | :ref:`set_cell<class_TileMapPattern_method_set_cell>`\ (\ coords\: :ref:`Vector2i<class_Vector2i>`, source_id\: :ref:`int<class_int>` = -1, atlas_coords\: :ref:`Vector2i<class_Vector2i>` = Vector2i(-1, -1), alternative_tile\: :ref:`int<class_int>` = -1\ ) |
+   +--------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                       | :ref:`set_size<class_TileMapPattern_method_set_size>`\ (\ size\: :ref:`Vector2i<class_Vector2i>`\ )                                                                                                                                                             |
+   +--------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -66,7 +66,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_cell_alternative_tile** **(** :ref:`Vector2i<class_Vector2i>` coords **)** |const|
+:ref:`int<class_int>` **get_cell_alternative_tile**\ (\ coords\: :ref:`Vector2i<class_Vector2i>`\ ) |const|
 
 Returns the tile alternative ID of the cell at ``coords``.
 
@@ -78,7 +78,7 @@ Returns the tile alternative ID of the cell at ``coords``.
 
 .. rst-class:: classref-method
 
-:ref:`Vector2i<class_Vector2i>` **get_cell_atlas_coords** **(** :ref:`Vector2i<class_Vector2i>` coords **)** |const|
+:ref:`Vector2i<class_Vector2i>` **get_cell_atlas_coords**\ (\ coords\: :ref:`Vector2i<class_Vector2i>`\ ) |const|
 
 Returns the tile atlas coordinates ID of the cell at ``coords``.
 
@@ -90,7 +90,7 @@ Returns the tile atlas coordinates ID of the cell at ``coords``.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_cell_source_id** **(** :ref:`Vector2i<class_Vector2i>` coords **)** |const|
+:ref:`int<class_int>` **get_cell_source_id**\ (\ coords\: :ref:`Vector2i<class_Vector2i>`\ ) |const|
 
 Returns the tile source ID of the cell at ``coords``.
 
@@ -102,7 +102,7 @@ Returns the tile source ID of the cell at ``coords``.
 
 .. rst-class:: classref-method
 
-:ref:`Vector2i<class_Vector2i>` **get_size** **(** **)** |const|
+:ref:`Vector2i<class_Vector2i>` **get_size**\ (\ ) |const|
 
 Returns the size, in cells, of the pattern.
 
@@ -114,7 +114,7 @@ Returns the size, in cells, of the pattern.
 
 .. rst-class:: classref-method
 
-:ref:`Vector2i[]<class_Vector2i>` **get_used_cells** **(** **)** |const|
+:ref:`Array<class_Array>`\[:ref:`Vector2i<class_Vector2i>`\] **get_used_cells**\ (\ ) |const|
 
 Returns the list of used cell coordinates in the pattern.
 
@@ -126,7 +126,7 @@ Returns the list of used cell coordinates in the pattern.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **has_cell** **(** :ref:`Vector2i<class_Vector2i>` coords **)** |const|
+:ref:`bool<class_bool>` **has_cell**\ (\ coords\: :ref:`Vector2i<class_Vector2i>`\ ) |const|
 
 Returns whether the pattern has a tile at the given coordinates.
 
@@ -138,7 +138,7 @@ Returns whether the pattern has a tile at the given coordinates.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_empty** **(** **)** |const|
+:ref:`bool<class_bool>` **is_empty**\ (\ ) |const|
 
 Returns whether the pattern is empty or not.
 
@@ -150,7 +150,7 @@ Returns whether the pattern is empty or not.
 
 .. rst-class:: classref-method
 
-void **remove_cell** **(** :ref:`Vector2i<class_Vector2i>` coords, :ref:`bool<class_bool>` update_size **)**
+|void| **remove_cell**\ (\ coords\: :ref:`Vector2i<class_Vector2i>`, update_size\: :ref:`bool<class_bool>`\ )
 
 Remove the cell at the given coordinates.
 
@@ -162,7 +162,7 @@ Remove the cell at the given coordinates.
 
 .. rst-class:: classref-method
 
-void **set_cell** **(** :ref:`Vector2i<class_Vector2i>` coords, :ref:`int<class_int>` source_id=-1, :ref:`Vector2i<class_Vector2i>` atlas_coords=Vector2i(-1, -1), :ref:`int<class_int>` alternative_tile=-1 **)**
+|void| **set_cell**\ (\ coords\: :ref:`Vector2i<class_Vector2i>`, source_id\: :ref:`int<class_int>` = -1, atlas_coords\: :ref:`Vector2i<class_Vector2i>` = Vector2i(-1, -1), alternative_tile\: :ref:`int<class_int>` = -1\ )
 
 Sets the tile identifiers for the cell at coordinates ``coords``. See :ref:`TileMap.set_cell<class_TileMap_method_set_cell>`.
 
@@ -174,7 +174,7 @@ Sets the tile identifiers for the cell at coordinates ``coords``. See :ref:`Tile
 
 .. rst-class:: classref-method
 
-void **set_size** **(** :ref:`Vector2i<class_Vector2i>` size **)**
+|void| **set_size**\ (\ size\: :ref:`Vector2i<class_Vector2i>`\ )
 
 Sets the size of the pattern.
 
@@ -185,3 +185,4 @@ Sets the size of the pattern.
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

@@ -58,11 +58,11 @@ Methods
 .. table::
    :widths: auto
 
-   +-------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+
-   | |bitfield|\<:ref:`KeyModifierMask<enum_@GlobalScope_KeyModifierMask>`\> | :ref:`get_modifiers_mask<class_InputEventWithModifiers_method_get_modifiers_mask>` **(** **)** |const|                       |
-   +-------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                                                 | :ref:`is_command_or_control_pressed<class_InputEventWithModifiers_method_is_command_or_control_pressed>` **(** **)** |const| |
-   +-------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+
+   +-------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+
+   | |bitfield|\[:ref:`KeyModifierMask<enum_@GlobalScope_KeyModifierMask>`\] | :ref:`get_modifiers_mask<class_InputEventWithModifiers_method_get_modifiers_mask>`\ (\ ) |const|                       |
+   +-------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                                 | :ref:`is_command_or_control_pressed<class_InputEventWithModifiers_method_is_command_or_control_pressed>`\ (\ ) |const| |
+   +-------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -81,8 +81,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_alt_pressed** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_alt_pressed** **(** **)**
+- |void| **set_alt_pressed**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_alt_pressed**\ (\ )
 
 State of the :kbd:`Alt` modifier.
 
@@ -98,8 +98,8 @@ State of the :kbd:`Alt` modifier.
 
 .. rst-class:: classref-property-setget
 
-- void **set_command_or_control_autoremap** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_command_or_control_autoremap** **(** **)**
+- |void| **set_command_or_control_autoremap**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_command_or_control_autoremap**\ (\ )
 
 Automatically use :kbd:`Meta` (:kbd:`Cmd`) on macOS and :kbd:`Ctrl` on other platforms. If ``true``, :ref:`ctrl_pressed<class_InputEventWithModifiers_property_ctrl_pressed>` and :ref:`meta_pressed<class_InputEventWithModifiers_property_meta_pressed>` cannot be set.
 
@@ -115,8 +115,8 @@ Automatically use :kbd:`Meta` (:kbd:`Cmd`) on macOS and :kbd:`Ctrl` on other pla
 
 .. rst-class:: classref-property-setget
 
-- void **set_ctrl_pressed** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_ctrl_pressed** **(** **)**
+- |void| **set_ctrl_pressed**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_ctrl_pressed**\ (\ )
 
 State of the :kbd:`Ctrl` modifier.
 
@@ -132,8 +132,8 @@ State of the :kbd:`Ctrl` modifier.
 
 .. rst-class:: classref-property-setget
 
-- void **set_meta_pressed** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_meta_pressed** **(** **)**
+- |void| **set_meta_pressed**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_meta_pressed**\ (\ )
 
 State of the :kbd:`Meta` modifier. On Windows and Linux, this represents the Windows key (sometimes called "meta" or "super" on Linux). On macOS, this represents the Command key.
 
@@ -149,8 +149,8 @@ State of the :kbd:`Meta` modifier. On Windows and Linux, this represents the Win
 
 .. rst-class:: classref-property-setget
 
-- void **set_shift_pressed** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_shift_pressed** **(** **)**
+- |void| **set_shift_pressed**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_shift_pressed**\ (\ )
 
 State of the :kbd:`Shift` modifier.
 
@@ -167,7 +167,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-|bitfield|\<:ref:`KeyModifierMask<enum_@GlobalScope_KeyModifierMask>`\> **get_modifiers_mask** **(** **)** |const|
+|bitfield|\[:ref:`KeyModifierMask<enum_@GlobalScope_KeyModifierMask>`\] **get_modifiers_mask**\ (\ ) |const|
 
 Returns the keycode combination of modifier keys.
 
@@ -179,7 +179,7 @@ Returns the keycode combination of modifier keys.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_command_or_control_pressed** **(** **)** |const|
+:ref:`bool<class_bool>` **is_command_or_control_pressed**\ (\ ) |const|
 
 On macOS, returns ``true`` if :kbd:`Meta` (:kbd:`Cmd`) is pressed.
 
@@ -192,3 +192,4 @@ On other platforms, returns ``true`` if :kbd:`Ctrl` is pressed.
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

@@ -61,15 +61,15 @@ Methods
 .. table::
    :widths: auto
 
-   +-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`PackedByteArray<class_PackedByteArray>` | :ref:`get_stage_bytecode<class_RDShaderSPIRV_method_get_stage_bytecode>` **(** :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>` stage **)** |const|                                                 |
-   +-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`String<class_String>`                   | :ref:`get_stage_compile_error<class_RDShaderSPIRV_method_get_stage_compile_error>` **(** :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>` stage **)** |const|                                       |
-   +-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                          | :ref:`set_stage_bytecode<class_RDShaderSPIRV_method_set_stage_bytecode>` **(** :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>` stage, :ref:`PackedByteArray<class_PackedByteArray>` bytecode **)** |
-   +-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                          | :ref:`set_stage_compile_error<class_RDShaderSPIRV_method_set_stage_compile_error>` **(** :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>` stage, :ref:`String<class_String>` compile_error **)**    |
-   +-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PackedByteArray<class_PackedByteArray>` | :ref:`get_stage_bytecode<class_RDShaderSPIRV_method_get_stage_bytecode>`\ (\ stage\: :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>`\ ) |const|                                                   |
+   +-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                   | :ref:`get_stage_compile_error<class_RDShaderSPIRV_method_get_stage_compile_error>`\ (\ stage\: :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>`\ ) |const|                                         |
+   +-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                        | :ref:`set_stage_bytecode<class_RDShaderSPIRV_method_set_stage_bytecode>`\ (\ stage\: :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>`, bytecode\: :ref:`PackedByteArray<class_PackedByteArray>`\ ) |
+   +-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                        | :ref:`set_stage_compile_error<class_RDShaderSPIRV_method_set_stage_compile_error>`\ (\ stage\: :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>`, compile_error\: :ref:`String<class_String>`\ )    |
+   +-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -88,8 +88,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_stage_bytecode** **(** :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>` stage, :ref:`PackedByteArray<class_PackedByteArray>` bytecode **)**
-- :ref:`PackedByteArray<class_PackedByteArray>` **get_stage_bytecode** **(** :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>` stage **)** |const|
+- |void| **set_stage_bytecode**\ (\ stage\: :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>`, bytecode\: :ref:`PackedByteArray<class_PackedByteArray>`\ )
+- :ref:`PackedByteArray<class_PackedByteArray>` **get_stage_bytecode**\ (\ stage\: :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>`\ ) |const|
 
 The SPIR-V bytecode for the compute shader stage.
 
@@ -105,8 +105,8 @@ The SPIR-V bytecode for the compute shader stage.
 
 .. rst-class:: classref-property-setget
 
-- void **set_stage_bytecode** **(** :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>` stage, :ref:`PackedByteArray<class_PackedByteArray>` bytecode **)**
-- :ref:`PackedByteArray<class_PackedByteArray>` **get_stage_bytecode** **(** :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>` stage **)** |const|
+- |void| **set_stage_bytecode**\ (\ stage\: :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>`, bytecode\: :ref:`PackedByteArray<class_PackedByteArray>`\ )
+- :ref:`PackedByteArray<class_PackedByteArray>` **get_stage_bytecode**\ (\ stage\: :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>`\ ) |const|
 
 The SPIR-V bytecode for the fragment shader stage.
 
@@ -122,8 +122,8 @@ The SPIR-V bytecode for the fragment shader stage.
 
 .. rst-class:: classref-property-setget
 
-- void **set_stage_bytecode** **(** :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>` stage, :ref:`PackedByteArray<class_PackedByteArray>` bytecode **)**
-- :ref:`PackedByteArray<class_PackedByteArray>` **get_stage_bytecode** **(** :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>` stage **)** |const|
+- |void| **set_stage_bytecode**\ (\ stage\: :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>`, bytecode\: :ref:`PackedByteArray<class_PackedByteArray>`\ )
+- :ref:`PackedByteArray<class_PackedByteArray>` **get_stage_bytecode**\ (\ stage\: :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>`\ ) |const|
 
 The SPIR-V bytecode for the tessellation control shader stage.
 
@@ -139,8 +139,8 @@ The SPIR-V bytecode for the tessellation control shader stage.
 
 .. rst-class:: classref-property-setget
 
-- void **set_stage_bytecode** **(** :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>` stage, :ref:`PackedByteArray<class_PackedByteArray>` bytecode **)**
-- :ref:`PackedByteArray<class_PackedByteArray>` **get_stage_bytecode** **(** :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>` stage **)** |const|
+- |void| **set_stage_bytecode**\ (\ stage\: :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>`, bytecode\: :ref:`PackedByteArray<class_PackedByteArray>`\ )
+- :ref:`PackedByteArray<class_PackedByteArray>` **get_stage_bytecode**\ (\ stage\: :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>`\ ) |const|
 
 The SPIR-V bytecode for the tessellation evaluation shader stage.
 
@@ -156,8 +156,8 @@ The SPIR-V bytecode for the tessellation evaluation shader stage.
 
 .. rst-class:: classref-property-setget
 
-- void **set_stage_bytecode** **(** :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>` stage, :ref:`PackedByteArray<class_PackedByteArray>` bytecode **)**
-- :ref:`PackedByteArray<class_PackedByteArray>` **get_stage_bytecode** **(** :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>` stage **)** |const|
+- |void| **set_stage_bytecode**\ (\ stage\: :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>`, bytecode\: :ref:`PackedByteArray<class_PackedByteArray>`\ )
+- :ref:`PackedByteArray<class_PackedByteArray>` **get_stage_bytecode**\ (\ stage\: :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>`\ ) |const|
 
 The SPIR-V bytecode for the vertex shader stage.
 
@@ -173,8 +173,8 @@ The SPIR-V bytecode for the vertex shader stage.
 
 .. rst-class:: classref-property-setget
 
-- void **set_stage_compile_error** **(** :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>` stage, :ref:`String<class_String>` compile_error **)**
-- :ref:`String<class_String>` **get_stage_compile_error** **(** :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>` stage **)** |const|
+- |void| **set_stage_compile_error**\ (\ stage\: :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>`, compile_error\: :ref:`String<class_String>`\ )
+- :ref:`String<class_String>` **get_stage_compile_error**\ (\ stage\: :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>`\ ) |const|
 
 The compilation error message for the compute shader stage (set by the SPIR-V compiler and Godot). If empty, shader compilation was successful.
 
@@ -190,8 +190,8 @@ The compilation error message for the compute shader stage (set by the SPIR-V co
 
 .. rst-class:: classref-property-setget
 
-- void **set_stage_compile_error** **(** :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>` stage, :ref:`String<class_String>` compile_error **)**
-- :ref:`String<class_String>` **get_stage_compile_error** **(** :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>` stage **)** |const|
+- |void| **set_stage_compile_error**\ (\ stage\: :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>`, compile_error\: :ref:`String<class_String>`\ )
+- :ref:`String<class_String>` **get_stage_compile_error**\ (\ stage\: :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>`\ ) |const|
 
 The compilation error message for the fragment shader stage (set by the SPIR-V compiler and Godot). If empty, shader compilation was successful.
 
@@ -207,8 +207,8 @@ The compilation error message for the fragment shader stage (set by the SPIR-V c
 
 .. rst-class:: classref-property-setget
 
-- void **set_stage_compile_error** **(** :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>` stage, :ref:`String<class_String>` compile_error **)**
-- :ref:`String<class_String>` **get_stage_compile_error** **(** :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>` stage **)** |const|
+- |void| **set_stage_compile_error**\ (\ stage\: :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>`, compile_error\: :ref:`String<class_String>`\ )
+- :ref:`String<class_String>` **get_stage_compile_error**\ (\ stage\: :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>`\ ) |const|
 
 The compilation error message for the tessellation control shader stage (set by the SPIR-V compiler and Godot). If empty, shader compilation was successful.
 
@@ -224,8 +224,8 @@ The compilation error message for the tessellation control shader stage (set by 
 
 .. rst-class:: classref-property-setget
 
-- void **set_stage_compile_error** **(** :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>` stage, :ref:`String<class_String>` compile_error **)**
-- :ref:`String<class_String>` **get_stage_compile_error** **(** :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>` stage **)** |const|
+- |void| **set_stage_compile_error**\ (\ stage\: :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>`, compile_error\: :ref:`String<class_String>`\ )
+- :ref:`String<class_String>` **get_stage_compile_error**\ (\ stage\: :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>`\ ) |const|
 
 The compilation error message for the tessellation evaluation shader stage (set by the SPIR-V compiler and Godot). If empty, shader compilation was successful.
 
@@ -241,8 +241,8 @@ The compilation error message for the tessellation evaluation shader stage (set 
 
 .. rst-class:: classref-property-setget
 
-- void **set_stage_compile_error** **(** :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>` stage, :ref:`String<class_String>` compile_error **)**
-- :ref:`String<class_String>` **get_stage_compile_error** **(** :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>` stage **)** |const|
+- |void| **set_stage_compile_error**\ (\ stage\: :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>`, compile_error\: :ref:`String<class_String>`\ )
+- :ref:`String<class_String>` **get_stage_compile_error**\ (\ stage\: :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>`\ ) |const|
 
 The compilation error message for the vertex shader stage (set by the SPIR-V compiler and Godot). If empty, shader compilation was successful.
 
@@ -259,7 +259,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`PackedByteArray<class_PackedByteArray>` **get_stage_bytecode** **(** :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>` stage **)** |const|
+:ref:`PackedByteArray<class_PackedByteArray>` **get_stage_bytecode**\ (\ stage\: :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>`\ ) |const|
 
 Equivalent to getting one of :ref:`bytecode_compute<class_RDShaderSPIRV_property_bytecode_compute>`, :ref:`bytecode_fragment<class_RDShaderSPIRV_property_bytecode_fragment>`, :ref:`bytecode_tesselation_control<class_RDShaderSPIRV_property_bytecode_tesselation_control>`, :ref:`bytecode_tesselation_evaluation<class_RDShaderSPIRV_property_bytecode_tesselation_evaluation>`, :ref:`bytecode_vertex<class_RDShaderSPIRV_property_bytecode_vertex>`.
 
@@ -271,7 +271,7 @@ Equivalent to getting one of :ref:`bytecode_compute<class_RDShaderSPIRV_property
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **get_stage_compile_error** **(** :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>` stage **)** |const|
+:ref:`String<class_String>` **get_stage_compile_error**\ (\ stage\: :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>`\ ) |const|
 
 Returns the compilation error message for the given shader ``stage``. Equivalent to getting one of :ref:`compile_error_compute<class_RDShaderSPIRV_property_compile_error_compute>`, :ref:`compile_error_fragment<class_RDShaderSPIRV_property_compile_error_fragment>`, :ref:`compile_error_tesselation_control<class_RDShaderSPIRV_property_compile_error_tesselation_control>`, :ref:`compile_error_tesselation_evaluation<class_RDShaderSPIRV_property_compile_error_tesselation_evaluation>`, :ref:`compile_error_vertex<class_RDShaderSPIRV_property_compile_error_vertex>`.
 
@@ -283,7 +283,7 @@ Returns the compilation error message for the given shader ``stage``. Equivalent
 
 .. rst-class:: classref-method
 
-void **set_stage_bytecode** **(** :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>` stage, :ref:`PackedByteArray<class_PackedByteArray>` bytecode **)**
+|void| **set_stage_bytecode**\ (\ stage\: :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>`, bytecode\: :ref:`PackedByteArray<class_PackedByteArray>`\ )
 
 Sets the SPIR-V ``bytecode`` for the given shader ``stage``. Equivalent to setting one of :ref:`bytecode_compute<class_RDShaderSPIRV_property_bytecode_compute>`, :ref:`bytecode_fragment<class_RDShaderSPIRV_property_bytecode_fragment>`, :ref:`bytecode_tesselation_control<class_RDShaderSPIRV_property_bytecode_tesselation_control>`, :ref:`bytecode_tesselation_evaluation<class_RDShaderSPIRV_property_bytecode_tesselation_evaluation>`, :ref:`bytecode_vertex<class_RDShaderSPIRV_property_bytecode_vertex>`.
 
@@ -295,7 +295,7 @@ Sets the SPIR-V ``bytecode`` for the given shader ``stage``. Equivalent to setti
 
 .. rst-class:: classref-method
 
-void **set_stage_compile_error** **(** :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>` stage, :ref:`String<class_String>` compile_error **)**
+|void| **set_stage_compile_error**\ (\ stage\: :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>`, compile_error\: :ref:`String<class_String>`\ )
 
 Sets the compilation error message for the given shader ``stage`` to ``compile_error``. Equivalent to setting one of :ref:`compile_error_compute<class_RDShaderSPIRV_property_compile_error_compute>`, :ref:`compile_error_fragment<class_RDShaderSPIRV_property_compile_error_fragment>`, :ref:`compile_error_tesselation_control<class_RDShaderSPIRV_property_compile_error_tesselation_control>`, :ref:`compile_error_tesselation_evaluation<class_RDShaderSPIRV_property_compile_error_tesselation_evaluation>`, :ref:`compile_error_vertex<class_RDShaderSPIRV_property_compile_error_vertex>`.
 
@@ -306,3 +306,4 @@ Sets the compilation error message for the given shader ``stage`` to ``compile_e
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

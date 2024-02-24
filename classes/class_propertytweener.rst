@@ -31,21 +31,21 @@ Methods
 .. table::
    :widths: auto
 
-   +-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`PropertyTweener<class_PropertyTweener>` | :ref:`as_relative<class_PropertyTweener_method_as_relative>` **(** **)**                                                                             |
-   +-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`PropertyTweener<class_PropertyTweener>` | :ref:`from<class_PropertyTweener_method_from>` **(** :ref:`Variant<class_Variant>` value **)**                                                       |
-   +-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`PropertyTweener<class_PropertyTweener>` | :ref:`from_current<class_PropertyTweener_method_from_current>` **(** **)**                                                                           |
-   +-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`PropertyTweener<class_PropertyTweener>` | :ref:`set_custom_interpolator<class_PropertyTweener_method_set_custom_interpolator>` **(** :ref:`Callable<class_Callable>` interpolator_method **)** |
-   +-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`PropertyTweener<class_PropertyTweener>` | :ref:`set_delay<class_PropertyTweener_method_set_delay>` **(** :ref:`float<class_float>` delay **)**                                                 |
-   +-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`PropertyTweener<class_PropertyTweener>` | :ref:`set_ease<class_PropertyTweener_method_set_ease>` **(** :ref:`EaseType<enum_Tween_EaseType>` ease **)**                                         |
-   +-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`PropertyTweener<class_PropertyTweener>` | :ref:`set_trans<class_PropertyTweener_method_set_trans>` **(** :ref:`TransitionType<enum_Tween_TransitionType>` trans **)**                          |
-   +-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PropertyTweener<class_PropertyTweener>` | :ref:`as_relative<class_PropertyTweener_method_as_relative>`\ (\ )                                                                                |
+   +-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PropertyTweener<class_PropertyTweener>` | :ref:`from<class_PropertyTweener_method_from>`\ (\ value\: :ref:`Variant<class_Variant>`\ )                                                       |
+   +-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PropertyTweener<class_PropertyTweener>` | :ref:`from_current<class_PropertyTweener_method_from_current>`\ (\ )                                                                              |
+   +-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PropertyTweener<class_PropertyTweener>` | :ref:`set_custom_interpolator<class_PropertyTweener_method_set_custom_interpolator>`\ (\ interpolator_method\: :ref:`Callable<class_Callable>`\ ) |
+   +-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PropertyTweener<class_PropertyTweener>` | :ref:`set_delay<class_PropertyTweener_method_set_delay>`\ (\ delay\: :ref:`float<class_float>`\ )                                                 |
+   +-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PropertyTweener<class_PropertyTweener>` | :ref:`set_ease<class_PropertyTweener_method_set_ease>`\ (\ ease\: :ref:`EaseType<enum_Tween_EaseType>`\ )                                         |
+   +-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PropertyTweener<class_PropertyTweener>` | :ref:`set_trans<class_PropertyTweener_method_set_trans>`\ (\ trans\: :ref:`TransitionType<enum_Tween_TransitionType>`\ )                          |
+   +-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -60,7 +60,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`PropertyTweener<class_PropertyTweener>` **as_relative** **(** **)**
+:ref:`PropertyTweener<class_PropertyTweener>` **as_relative**\ (\ )
 
 When called, the final value will be used as a relative value instead.
 
@@ -79,7 +79,7 @@ When called, the final value will be used as a relative value instead.
 
 .. rst-class:: classref-method
 
-:ref:`PropertyTweener<class_PropertyTweener>` **from** **(** :ref:`Variant<class_Variant>` value **)**
+:ref:`PropertyTweener<class_PropertyTweener>` **from**\ (\ value\: :ref:`Variant<class_Variant>`\ )
 
 Sets a custom initial value to the **PropertyTweener**.
 
@@ -98,7 +98,7 @@ Sets a custom initial value to the **PropertyTweener**.
 
 .. rst-class:: classref-method
 
-:ref:`PropertyTweener<class_PropertyTweener>` **from_current** **(** **)**
+:ref:`PropertyTweener<class_PropertyTweener>` **from_current**\ (\ )
 
 Makes the **PropertyTweener** use the current property value (i.e. at the time of creating this **PropertyTweener**) as a starting point. This is equivalent of using :ref:`from<class_PropertyTweener_method_from>` with the current value. These two calls will do the same:
 
@@ -115,7 +115,7 @@ Makes the **PropertyTweener** use the current property value (i.e. at the time o
 
 .. rst-class:: classref-method
 
-:ref:`PropertyTweener<class_PropertyTweener>` **set_custom_interpolator** **(** :ref:`Callable<class_Callable>` interpolator_method **)**
+:ref:`PropertyTweener<class_PropertyTweener>` **set_custom_interpolator**\ (\ interpolator_method\: :ref:`Callable<class_Callable>`\ )
 
 Allows interpolating the value with a custom easing function. The provided ``interpolator_method`` will be called with a value ranging from ``0.0`` to ``1.0`` and is expected to return a value within the same range (values outside the range can be used for overshoot). The return value of the method is then used for interpolation between initial and final value. Note that the parameter passed to the method is still subject to the tweener's own easing.
 
@@ -141,7 +141,7 @@ Allows interpolating the value with a custom easing function. The provided ``int
 
 .. rst-class:: classref-method
 
-:ref:`PropertyTweener<class_PropertyTweener>` **set_delay** **(** :ref:`float<class_float>` delay **)**
+:ref:`PropertyTweener<class_PropertyTweener>` **set_delay**\ (\ delay\: :ref:`float<class_float>`\ )
 
 Sets the time in seconds after which the **PropertyTweener** will start interpolating. By default there's no delay.
 
@@ -153,7 +153,7 @@ Sets the time in seconds after which the **PropertyTweener** will start interpol
 
 .. rst-class:: classref-method
 
-:ref:`PropertyTweener<class_PropertyTweener>` **set_ease** **(** :ref:`EaseType<enum_Tween_EaseType>` ease **)**
+:ref:`PropertyTweener<class_PropertyTweener>` **set_ease**\ (\ ease\: :ref:`EaseType<enum_Tween_EaseType>`\ )
 
 Sets the type of used easing from :ref:`EaseType<enum_Tween_EaseType>`. If not set, the default easing is used from the :ref:`Tween<class_Tween>` that contains this Tweener.
 
@@ -165,7 +165,7 @@ Sets the type of used easing from :ref:`EaseType<enum_Tween_EaseType>`. If not s
 
 .. rst-class:: classref-method
 
-:ref:`PropertyTweener<class_PropertyTweener>` **set_trans** **(** :ref:`TransitionType<enum_Tween_TransitionType>` trans **)**
+:ref:`PropertyTweener<class_PropertyTweener>` **set_trans**\ (\ trans\: :ref:`TransitionType<enum_Tween_TransitionType>`\ )
 
 Sets the type of used transition from :ref:`TransitionType<enum_Tween_TransitionType>`. If not set, the default transition is used from the :ref:`Tween<class_Tween>` that contains this Tweener.
 
@@ -176,3 +176,4 @@ Sets the type of used transition from :ref:`TransitionType<enum_Tween_Transition
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

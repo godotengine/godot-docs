@@ -61,19 +61,19 @@ Methods
 .. table::
    :widths: auto
 
-   +-------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                      | :ref:`add_filter<class_EditorFileDialog_method_add_filter>` **(** :ref:`String<class_String>` filter, :ref:`String<class_String>` description="" **)** |
-   +-------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                      | :ref:`add_side_menu<class_EditorFileDialog_method_add_side_menu>` **(** :ref:`Control<class_Control>` menu, :ref:`String<class_String>` title="" **)** |
-   +-------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                      | :ref:`clear_filters<class_EditorFileDialog_method_clear_filters>` **(** **)**                                                                          |
-   +-------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`LineEdit<class_LineEdit>`           | :ref:`get_line_edit<class_EditorFileDialog_method_get_line_edit>` **(** **)**                                                                          |
-   +-------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`VBoxContainer<class_VBoxContainer>` | :ref:`get_vbox<class_EditorFileDialog_method_get_vbox>` **(** **)**                                                                                    |
-   +-------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                      | :ref:`invalidate<class_EditorFileDialog_method_invalidate>` **(** **)**                                                                                |
-   +-------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +-------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                    | :ref:`add_filter<class_EditorFileDialog_method_add_filter>`\ (\ filter\: :ref:`String<class_String>`, description\: :ref:`String<class_String>` = ""\ ) |
+   +-------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                    | :ref:`add_side_menu<class_EditorFileDialog_method_add_side_menu>`\ (\ menu\: :ref:`Control<class_Control>`, title\: :ref:`String<class_String>` = ""\ ) |
+   +-------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                    | :ref:`clear_filters<class_EditorFileDialog_method_clear_filters>`\ (\ )                                                                                 |
+   +-------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`LineEdit<class_LineEdit>`           | :ref:`get_line_edit<class_EditorFileDialog_method_get_line_edit>`\ (\ )                                                                                 |
+   +-------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`VBoxContainer<class_VBoxContainer>` | :ref:`get_vbox<class_EditorFileDialog_method_get_vbox>`\ (\ )                                                                                           |
+   +-------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                    | :ref:`invalidate<class_EditorFileDialog_method_invalidate>`\ (\ )                                                                                       |
+   +-------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -88,7 +88,7 @@ Signals
 
 .. rst-class:: classref-signal
 
-**dir_selected** **(** :ref:`String<class_String>` dir **)**
+**dir_selected**\ (\ dir\: :ref:`String<class_String>`\ )
 
 Emitted when a directory is selected.
 
@@ -100,7 +100,7 @@ Emitted when a directory is selected.
 
 .. rst-class:: classref-signal
 
-**file_selected** **(** :ref:`String<class_String>` path **)**
+**file_selected**\ (\ path\: :ref:`String<class_String>`\ )
 
 Emitted when a file is selected.
 
@@ -112,7 +112,7 @@ Emitted when a file is selected.
 
 .. rst-class:: classref-signal
 
-**files_selected** **(** :ref:`PackedStringArray<class_PackedStringArray>` paths **)**
+**files_selected**\ (\ paths\: :ref:`PackedStringArray<class_PackedStringArray>`\ )
 
 Emitted when multiple files are selected.
 
@@ -248,8 +248,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_access** **(** :ref:`Access<enum_EditorFileDialog_Access>` value **)**
-- :ref:`Access<enum_EditorFileDialog_Access>` **get_access** **(** **)**
+- |void| **set_access**\ (\ value\: :ref:`Access<enum_EditorFileDialog_Access>`\ )
+- :ref:`Access<enum_EditorFileDialog_Access>` **get_access**\ (\ )
 
 The location from which the user may select a file, including ``res://``, ``user://``, and the local file system.
 
@@ -265,8 +265,8 @@ The location from which the user may select a file, including ``res://``, ``user
 
 .. rst-class:: classref-property-setget
 
-- void **set_current_dir** **(** :ref:`String<class_String>` value **)**
-- :ref:`String<class_String>` **get_current_dir** **(** **)**
+- |void| **set_current_dir**\ (\ value\: :ref:`String<class_String>`\ )
+- :ref:`String<class_String>` **get_current_dir**\ (\ )
 
 The currently occupied directory.
 
@@ -282,8 +282,8 @@ The currently occupied directory.
 
 .. rst-class:: classref-property-setget
 
-- void **set_current_file** **(** :ref:`String<class_String>` value **)**
-- :ref:`String<class_String>` **get_current_file** **(** **)**
+- |void| **set_current_file**\ (\ value\: :ref:`String<class_String>`\ )
+- :ref:`String<class_String>` **get_current_file**\ (\ )
 
 The currently selected file.
 
@@ -299,8 +299,8 @@ The currently selected file.
 
 .. rst-class:: classref-property-setget
 
-- void **set_current_path** **(** :ref:`String<class_String>` value **)**
-- :ref:`String<class_String>` **get_current_path** **(** **)**
+- |void| **set_current_path**\ (\ value\: :ref:`String<class_String>`\ )
+- :ref:`String<class_String>` **get_current_path**\ (\ )
 
 The file system path in the address bar.
 
@@ -316,8 +316,8 @@ The file system path in the address bar.
 
 .. rst-class:: classref-property-setget
 
-- void **set_disable_overwrite_warning** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_overwrite_warning_disabled** **(** **)**
+- |void| **set_disable_overwrite_warning**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_overwrite_warning_disabled**\ (\ )
 
 If ``true``, the **EditorFileDialog** will not warn the user before overwriting files.
 
@@ -333,8 +333,8 @@ If ``true``, the **EditorFileDialog** will not warn the user before overwriting 
 
 .. rst-class:: classref-property-setget
 
-- void **set_display_mode** **(** :ref:`DisplayMode<enum_EditorFileDialog_DisplayMode>` value **)**
-- :ref:`DisplayMode<enum_EditorFileDialog_DisplayMode>` **get_display_mode** **(** **)**
+- |void| **set_display_mode**\ (\ value\: :ref:`DisplayMode<enum_EditorFileDialog_DisplayMode>`\ )
+- :ref:`DisplayMode<enum_EditorFileDialog_DisplayMode>` **get_display_mode**\ (\ )
 
 The view format in which the **EditorFileDialog** displays resources to the user.
 
@@ -350,8 +350,8 @@ The view format in which the **EditorFileDialog** displays resources to the user
 
 .. rst-class:: classref-property-setget
 
-- void **set_file_mode** **(** :ref:`FileMode<enum_EditorFileDialog_FileMode>` value **)**
-- :ref:`FileMode<enum_EditorFileDialog_FileMode>` **get_file_mode** **(** **)**
+- |void| **set_file_mode**\ (\ value\: :ref:`FileMode<enum_EditorFileDialog_FileMode>`\ )
+- :ref:`FileMode<enum_EditorFileDialog_FileMode>` **get_file_mode**\ (\ )
 
 The dialog's open or save mode, which affects the selection behavior. See :ref:`FileMode<enum_EditorFileDialog_FileMode>`.
 
@@ -367,8 +367,8 @@ The dialog's open or save mode, which affects the selection behavior. See :ref:`
 
 .. rst-class:: classref-property-setget
 
-- void **set_filters** **(** :ref:`PackedStringArray<class_PackedStringArray>` value **)**
-- :ref:`PackedStringArray<class_PackedStringArray>` **get_filters** **(** **)**
+- |void| **set_filters**\ (\ value\: :ref:`PackedStringArray<class_PackedStringArray>`\ )
+- :ref:`PackedStringArray<class_PackedStringArray>` **get_filters**\ (\ )
 
 The available file type filters. For example, this shows only ``.png`` and ``.gd`` files: ``set_filters(PackedStringArray(["*.png ; PNG Images","*.gd ; GDScript Files"]))``. Multiple file types can also be specified in a single filter. ``"*.png, *.jpg, *.jpeg ; Supported Images"`` will show both PNG and JPEG files when selected.
 
@@ -384,8 +384,8 @@ The available file type filters. For example, this shows only ``.png`` and ``.gd
 
 .. rst-class:: classref-property-setget
 
-- void **set_show_hidden_files** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_showing_hidden_files** **(** **)**
+- |void| **set_show_hidden_files**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_showing_hidden_files**\ (\ )
 
 If ``true``, hidden files and directories will be visible in the **EditorFileDialog**. This property is synchronized with :ref:`EditorSettings.filesystem/file_dialog/show_hidden_files<class_EditorSettings_property_filesystem/file_dialog/show_hidden_files>`.
 
@@ -402,7 +402,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-void **add_filter** **(** :ref:`String<class_String>` filter, :ref:`String<class_String>` description="" **)**
+|void| **add_filter**\ (\ filter\: :ref:`String<class_String>`, description\: :ref:`String<class_String>` = ""\ )
 
 Adds a comma-delimited file name ``filter`` option to the **EditorFileDialog** with an optional ``description``, which restricts what files can be picked.
 
@@ -418,7 +418,7 @@ For example, a ``filter`` of ``"*.tscn, *.scn"`` and a ``description`` of ``"Sce
 
 .. rst-class:: classref-method
 
-void **add_side_menu** **(** :ref:`Control<class_Control>` menu, :ref:`String<class_String>` title="" **)**
+|void| **add_side_menu**\ (\ menu\: :ref:`Control<class_Control>`, title\: :ref:`String<class_String>` = ""\ )
 
 Adds the given ``menu`` to the side of the file dialog with the given ``title`` text on top. Only one side menu is allowed.
 
@@ -430,7 +430,7 @@ Adds the given ``menu`` to the side of the file dialog with the given ``title`` 
 
 .. rst-class:: classref-method
 
-void **clear_filters** **(** **)**
+|void| **clear_filters**\ (\ )
 
 Removes all filters except for "All Files (\*)".
 
@@ -442,7 +442,7 @@ Removes all filters except for "All Files (\*)".
 
 .. rst-class:: classref-method
 
-:ref:`LineEdit<class_LineEdit>` **get_line_edit** **(** **)**
+:ref:`LineEdit<class_LineEdit>` **get_line_edit**\ (\ )
 
 Returns the LineEdit for the selected file.
 
@@ -456,7 +456,7 @@ Returns the LineEdit for the selected file.
 
 .. rst-class:: classref-method
 
-:ref:`VBoxContainer<class_VBoxContainer>` **get_vbox** **(** **)**
+:ref:`VBoxContainer<class_VBoxContainer>` **get_vbox**\ (\ )
 
 Returns the :ref:`VBoxContainer<class_VBoxContainer>` used to display the file system.
 
@@ -470,7 +470,7 @@ Returns the :ref:`VBoxContainer<class_VBoxContainer>` used to display the file s
 
 .. rst-class:: classref-method
 
-void **invalidate** **(** **)**
+|void| **invalidate**\ (\ )
 
 Notify the **EditorFileDialog** that its view of the data is no longer accurate. Updates the view contents on next view update.
 
@@ -481,3 +481,4 @@ Notify the **EditorFileDialog** that its view of the data is no longer accurate.
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

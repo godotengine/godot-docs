@@ -45,15 +45,15 @@ Methods
 .. table::
    :widths: auto
 
-   +---------------------------------------------------+-------------------------------------------------------------------------------+
-   | :ref:`FeedDataType<enum_CameraFeed_FeedDataType>` | :ref:`get_datatype<class_CameraFeed_method_get_datatype>` **(** **)** |const| |
-   +---------------------------------------------------+-------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                             | :ref:`get_id<class_CameraFeed_method_get_id>` **(** **)** |const|             |
-   +---------------------------------------------------+-------------------------------------------------------------------------------+
-   | :ref:`String<class_String>`                       | :ref:`get_name<class_CameraFeed_method_get_name>` **(** **)** |const|         |
-   +---------------------------------------------------+-------------------------------------------------------------------------------+
-   | :ref:`FeedPosition<enum_CameraFeed_FeedPosition>` | :ref:`get_position<class_CameraFeed_method_get_position>` **(** **)** |const| |
-   +---------------------------------------------------+-------------------------------------------------------------------------------+
+   +---------------------------------------------------+-------------------------------------------------------------------------+
+   | :ref:`FeedDataType<enum_CameraFeed_FeedDataType>` | :ref:`get_datatype<class_CameraFeed_method_get_datatype>`\ (\ ) |const| |
+   +---------------------------------------------------+-------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`get_id<class_CameraFeed_method_get_id>`\ (\ ) |const|             |
+   +---------------------------------------------------+-------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                       | :ref:`get_name<class_CameraFeed_method_get_name>`\ (\ ) |const|         |
+   +---------------------------------------------------+-------------------------------------------------------------------------+
+   | :ref:`FeedPosition<enum_CameraFeed_FeedPosition>` | :ref:`get_position<class_CameraFeed_method_get_position>`\ (\ ) |const| |
+   +---------------------------------------------------+-------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -153,8 +153,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_active** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_active** **(** **)**
+- |void| **set_active**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_active**\ (\ )
 
 If ``true``, the feed is active.
 
@@ -170,8 +170,8 @@ If ``true``, the feed is active.
 
 .. rst-class:: classref-property-setget
 
-- void **set_transform** **(** :ref:`Transform2D<class_Transform2D>` value **)**
-- :ref:`Transform2D<class_Transform2D>` **get_transform** **(** **)**
+- |void| **set_transform**\ (\ value\: :ref:`Transform2D<class_Transform2D>`\ )
+- :ref:`Transform2D<class_Transform2D>` **get_transform**\ (\ )
 
 The transform applied to the camera's image.
 
@@ -188,7 +188,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`FeedDataType<enum_CameraFeed_FeedDataType>` **get_datatype** **(** **)** |const|
+:ref:`FeedDataType<enum_CameraFeed_FeedDataType>` **get_datatype**\ (\ ) |const|
 
 Returns feed image data type.
 
@@ -200,7 +200,7 @@ Returns feed image data type.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_id** **(** **)** |const|
+:ref:`int<class_int>` **get_id**\ (\ ) |const|
 
 Returns the unique ID for this feed.
 
@@ -212,7 +212,7 @@ Returns the unique ID for this feed.
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **get_name** **(** **)** |const|
+:ref:`String<class_String>` **get_name**\ (\ ) |const|
 
 Returns the camera's name.
 
@@ -224,7 +224,7 @@ Returns the camera's name.
 
 .. rst-class:: classref-method
 
-:ref:`FeedPosition<enum_CameraFeed_FeedPosition>` **get_position** **(** **)** |const|
+:ref:`FeedPosition<enum_CameraFeed_FeedPosition>` **get_position**\ (\ ) |const|
 
 Returns the position of camera on the device.
 
@@ -235,3 +235,4 @@ Returns the position of camera on the device.
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

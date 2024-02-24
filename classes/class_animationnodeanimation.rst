@@ -94,8 +94,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_animation** **(** :ref:`StringName<class_StringName>` value **)**
-- :ref:`StringName<class_StringName>` **get_animation** **(** **)**
+- |void| **set_animation**\ (\ value\: :ref:`StringName<class_StringName>`\ )
+- :ref:`StringName<class_StringName>` **get_animation**\ (\ )
 
 Animation to use as an output. It is one of the animations provided by :ref:`AnimationTree.anim_player<class_AnimationTree_property_anim_player>`.
 
@@ -111,8 +111,8 @@ Animation to use as an output. It is one of the animations provided by :ref:`Ani
 
 .. rst-class:: classref-property-setget
 
-- void **set_play_mode** **(** :ref:`PlayMode<enum_AnimationNodeAnimation_PlayMode>` value **)**
-- :ref:`PlayMode<enum_AnimationNodeAnimation_PlayMode>` **get_play_mode** **(** **)**
+- |void| **set_play_mode**\ (\ value\: :ref:`PlayMode<enum_AnimationNodeAnimation_PlayMode>`\ )
+- :ref:`PlayMode<enum_AnimationNodeAnimation_PlayMode>` **get_play_mode**\ (\ )
 
 Determines the playback direction of the animation.
 
@@ -123,3 +123,4 @@ Determines the playback direction of the animation.
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

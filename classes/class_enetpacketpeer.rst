@@ -40,37 +40,37 @@ Methods
 .. table::
    :widths: auto
 
-   +-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                           | :ref:`get_channels<class_ENetPacketPeer_method_get_channels>` **(** **)** |const|                                                                                                            |
-   +-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`String<class_String>`                     | :ref:`get_remote_address<class_ENetPacketPeer_method_get_remote_address>` **(** **)** |const|                                                                                                |
-   +-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                           | :ref:`get_remote_port<class_ENetPacketPeer_method_get_remote_port>` **(** **)** |const|                                                                                                      |
-   +-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`PeerState<enum_ENetPacketPeer_PeerState>` | :ref:`get_state<class_ENetPacketPeer_method_get_state>` **(** **)** |const|                                                                                                                  |
-   +-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`float<class_float>`                       | :ref:`get_statistic<class_ENetPacketPeer_method_get_statistic>` **(** :ref:`PeerStatistic<enum_ENetPacketPeer_PeerStatistic>` statistic **)**                                                |
-   +-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                         | :ref:`is_active<class_ENetPacketPeer_method_is_active>` **(** **)** |const|                                                                                                                  |
-   +-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                            | :ref:`peer_disconnect<class_ENetPacketPeer_method_peer_disconnect>` **(** :ref:`int<class_int>` data=0 **)**                                                                                 |
-   +-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                            | :ref:`peer_disconnect_later<class_ENetPacketPeer_method_peer_disconnect_later>` **(** :ref:`int<class_int>` data=0 **)**                                                                     |
-   +-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                            | :ref:`peer_disconnect_now<class_ENetPacketPeer_method_peer_disconnect_now>` **(** :ref:`int<class_int>` data=0 **)**                                                                         |
-   +-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                            | :ref:`ping<class_ENetPacketPeer_method_ping>` **(** **)**                                                                                                                                    |
-   +-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                            | :ref:`ping_interval<class_ENetPacketPeer_method_ping_interval>` **(** :ref:`int<class_int>` ping_interval **)**                                                                              |
-   +-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                            | :ref:`reset<class_ENetPacketPeer_method_reset>` **(** **)**                                                                                                                                  |
-   +-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Error<enum_@GlobalScope_Error>`           | :ref:`send<class_ENetPacketPeer_method_send>` **(** :ref:`int<class_int>` channel, :ref:`PackedByteArray<class_PackedByteArray>` packet, :ref:`int<class_int>` flags **)**                   |
-   +-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                            | :ref:`set_timeout<class_ENetPacketPeer_method_set_timeout>` **(** :ref:`int<class_int>` timeout, :ref:`int<class_int>` timeout_min, :ref:`int<class_int>` timeout_max **)**                  |
-   +-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                            | :ref:`throttle_configure<class_ENetPacketPeer_method_throttle_configure>` **(** :ref:`int<class_int>` interval, :ref:`int<class_int>` acceleration, :ref:`int<class_int>` deceleration **)** |
-   +-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                           | :ref:`get_channels<class_ENetPacketPeer_method_get_channels>`\ (\ ) |const|                                                                                                                   |
+   +-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                     | :ref:`get_remote_address<class_ENetPacketPeer_method_get_remote_address>`\ (\ ) |const|                                                                                                       |
+   +-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                           | :ref:`get_remote_port<class_ENetPacketPeer_method_get_remote_port>`\ (\ ) |const|                                                                                                             |
+   +-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PeerState<enum_ENetPacketPeer_PeerState>` | :ref:`get_state<class_ENetPacketPeer_method_get_state>`\ (\ ) |const|                                                                                                                         |
+   +-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`                       | :ref:`get_statistic<class_ENetPacketPeer_method_get_statistic>`\ (\ statistic\: :ref:`PeerStatistic<enum_ENetPacketPeer_PeerStatistic>`\ )                                                    |
+   +-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                         | :ref:`is_active<class_ENetPacketPeer_method_is_active>`\ (\ ) |const|                                                                                                                         |
+   +-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                          | :ref:`peer_disconnect<class_ENetPacketPeer_method_peer_disconnect>`\ (\ data\: :ref:`int<class_int>` = 0\ )                                                                                   |
+   +-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                          | :ref:`peer_disconnect_later<class_ENetPacketPeer_method_peer_disconnect_later>`\ (\ data\: :ref:`int<class_int>` = 0\ )                                                                       |
+   +-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                          | :ref:`peer_disconnect_now<class_ENetPacketPeer_method_peer_disconnect_now>`\ (\ data\: :ref:`int<class_int>` = 0\ )                                                                           |
+   +-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                          | :ref:`ping<class_ENetPacketPeer_method_ping>`\ (\ )                                                                                                                                           |
+   +-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                          | :ref:`ping_interval<class_ENetPacketPeer_method_ping_interval>`\ (\ ping_interval\: :ref:`int<class_int>`\ )                                                                                  |
+   +-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                          | :ref:`reset<class_ENetPacketPeer_method_reset>`\ (\ )                                                                                                                                         |
+   +-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>`           | :ref:`send<class_ENetPacketPeer_method_send>`\ (\ channel\: :ref:`int<class_int>`, packet\: :ref:`PackedByteArray<class_PackedByteArray>`, flags\: :ref:`int<class_int>`\ )                   |
+   +-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                          | :ref:`set_timeout<class_ENetPacketPeer_method_set_timeout>`\ (\ timeout\: :ref:`int<class_int>`, timeout_min\: :ref:`int<class_int>`, timeout_max\: :ref:`int<class_int>`\ )                  |
+   +-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                          | :ref:`throttle_configure<class_ENetPacketPeer_method_throttle_configure>`\ (\ interval\: :ref:`int<class_int>`, acceleration\: :ref:`int<class_int>`, deceleration\: :ref:`int<class_int>`\ ) |
+   +-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -351,7 +351,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_channels** **(** **)** |const|
+:ref:`int<class_int>` **get_channels**\ (\ ) |const|
 
 Returns the number of channels allocated for communication with peer.
 
@@ -363,7 +363,7 @@ Returns the number of channels allocated for communication with peer.
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **get_remote_address** **(** **)** |const|
+:ref:`String<class_String>` **get_remote_address**\ (\ ) |const|
 
 Returns the IP address of this peer.
 
@@ -375,7 +375,7 @@ Returns the IP address of this peer.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_remote_port** **(** **)** |const|
+:ref:`int<class_int>` **get_remote_port**\ (\ ) |const|
 
 Returns the remote port of this peer.
 
@@ -387,7 +387,7 @@ Returns the remote port of this peer.
 
 .. rst-class:: classref-method
 
-:ref:`PeerState<enum_ENetPacketPeer_PeerState>` **get_state** **(** **)** |const|
+:ref:`PeerState<enum_ENetPacketPeer_PeerState>` **get_state**\ (\ ) |const|
 
 Returns the current peer state. See :ref:`PeerState<enum_ENetPacketPeer_PeerState>`.
 
@@ -399,7 +399,7 @@ Returns the current peer state. See :ref:`PeerState<enum_ENetPacketPeer_PeerStat
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **get_statistic** **(** :ref:`PeerStatistic<enum_ENetPacketPeer_PeerStatistic>` statistic **)**
+:ref:`float<class_float>` **get_statistic**\ (\ statistic\: :ref:`PeerStatistic<enum_ENetPacketPeer_PeerStatistic>`\ )
 
 Returns the requested ``statistic`` for this peer. See :ref:`PeerStatistic<enum_ENetPacketPeer_PeerStatistic>`.
 
@@ -411,7 +411,7 @@ Returns the requested ``statistic`` for this peer. See :ref:`PeerStatistic<enum_
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_active** **(** **)** |const|
+:ref:`bool<class_bool>` **is_active**\ (\ ) |const|
 
 Returns ``true`` if the peer is currently active (i.e. the associated :ref:`ENetConnection<class_ENetConnection>` is still valid).
 
@@ -423,7 +423,7 @@ Returns ``true`` if the peer is currently active (i.e. the associated :ref:`ENet
 
 .. rst-class:: classref-method
 
-void **peer_disconnect** **(** :ref:`int<class_int>` data=0 **)**
+|void| **peer_disconnect**\ (\ data\: :ref:`int<class_int>` = 0\ )
 
 Request a disconnection from a peer. An :ref:`ENetConnection.EVENT_DISCONNECT<class_ENetConnection_constant_EVENT_DISCONNECT>` will be generated during :ref:`ENetConnection.service<class_ENetConnection_method_service>` once the disconnection is complete.
 
@@ -435,7 +435,7 @@ Request a disconnection from a peer. An :ref:`ENetConnection.EVENT_DISCONNECT<cl
 
 .. rst-class:: classref-method
 
-void **peer_disconnect_later** **(** :ref:`int<class_int>` data=0 **)**
+|void| **peer_disconnect_later**\ (\ data\: :ref:`int<class_int>` = 0\ )
 
 Request a disconnection from a peer, but only after all queued outgoing packets are sent. An :ref:`ENetConnection.EVENT_DISCONNECT<class_ENetConnection_constant_EVENT_DISCONNECT>` will be generated during :ref:`ENetConnection.service<class_ENetConnection_method_service>` once the disconnection is complete.
 
@@ -447,7 +447,7 @@ Request a disconnection from a peer, but only after all queued outgoing packets 
 
 .. rst-class:: classref-method
 
-void **peer_disconnect_now** **(** :ref:`int<class_int>` data=0 **)**
+|void| **peer_disconnect_now**\ (\ data\: :ref:`int<class_int>` = 0\ )
 
 Force an immediate disconnection from a peer. No :ref:`ENetConnection.EVENT_DISCONNECT<class_ENetConnection_constant_EVENT_DISCONNECT>` will be generated. The foreign peer is not guaranteed to receive the disconnect notification, and is reset immediately upon return from this function.
 
@@ -459,7 +459,7 @@ Force an immediate disconnection from a peer. No :ref:`ENetConnection.EVENT_DISC
 
 .. rst-class:: classref-method
 
-void **ping** **(** **)**
+|void| **ping**\ (\ )
 
 Sends a ping request to a peer. ENet automatically pings all connected peers at regular intervals, however, this function may be called to ensure more frequent ping requests.
 
@@ -471,7 +471,7 @@ Sends a ping request to a peer. ENet automatically pings all connected peers at 
 
 .. rst-class:: classref-method
 
-void **ping_interval** **(** :ref:`int<class_int>` ping_interval **)**
+|void| **ping_interval**\ (\ ping_interval\: :ref:`int<class_int>`\ )
 
 Sets the ``ping_interval`` in milliseconds at which pings will be sent to a peer. Pings are used both to monitor the liveness of the connection and also to dynamically adjust the throttle during periods of low traffic so that the throttle has reasonable responsiveness during traffic spikes. The default ping interval is ``500`` milliseconds.
 
@@ -483,7 +483,7 @@ Sets the ``ping_interval`` in milliseconds at which pings will be sent to a peer
 
 .. rst-class:: classref-method
 
-void **reset** **(** **)**
+|void| **reset**\ (\ )
 
 Forcefully disconnects a peer. The foreign host represented by the peer is not notified of the disconnection and will timeout on its connection to the local host.
 
@@ -495,7 +495,7 @@ Forcefully disconnects a peer. The foreign host represented by the peer is not n
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **send** **(** :ref:`int<class_int>` channel, :ref:`PackedByteArray<class_PackedByteArray>` packet, :ref:`int<class_int>` flags **)**
+:ref:`Error<enum_@GlobalScope_Error>` **send**\ (\ channel\: :ref:`int<class_int>`, packet\: :ref:`PackedByteArray<class_PackedByteArray>`, flags\: :ref:`int<class_int>`\ )
 
 Queues a ``packet`` to be sent over the specified ``channel``. See ``FLAG_*`` constants for available packet flags.
 
@@ -507,7 +507,7 @@ Queues a ``packet`` to be sent over the specified ``channel``. See ``FLAG_*`` co
 
 .. rst-class:: classref-method
 
-void **set_timeout** **(** :ref:`int<class_int>` timeout, :ref:`int<class_int>` timeout_min, :ref:`int<class_int>` timeout_max **)**
+|void| **set_timeout**\ (\ timeout\: :ref:`int<class_int>`, timeout_min\: :ref:`int<class_int>`, timeout_max\: :ref:`int<class_int>`\ )
 
 Sets the timeout parameters for a peer. The timeout parameters control how and when a peer will timeout from a failure to acknowledge reliable traffic. Timeout values are expressed in milliseconds.
 
@@ -521,7 +521,7 @@ The ``timeout`` is a factor that, multiplied by a value based on the average rou
 
 .. rst-class:: classref-method
 
-void **throttle_configure** **(** :ref:`int<class_int>` interval, :ref:`int<class_int>` acceleration, :ref:`int<class_int>` deceleration **)**
+|void| **throttle_configure**\ (\ interval\: :ref:`int<class_int>`, acceleration\: :ref:`int<class_int>`, deceleration\: :ref:`int<class_int>`\ )
 
 Configures throttle parameter for a peer.
 
@@ -540,3 +540,4 @@ Intermediate values for the throttle represent intermediate probabilities betwee
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

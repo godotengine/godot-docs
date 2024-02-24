@@ -68,29 +68,29 @@ Methods
 .. table::
    :widths: auto
 
-   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                              | :ref:`add_blend_point<class_AnimationNodeBlendSpace2D_method_add_blend_point>` **(** :ref:`AnimationRootNode<class_AnimationRootNode>` node, :ref:`Vector2<class_Vector2>` pos, :ref:`int<class_int>` at_index=-1 **)** |
-   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                              | :ref:`add_triangle<class_AnimationNodeBlendSpace2D_method_add_triangle>` **(** :ref:`int<class_int>` x, :ref:`int<class_int>` y, :ref:`int<class_int>` z, :ref:`int<class_int>` at_index=-1 **)**                       |
-   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                             | :ref:`get_blend_point_count<class_AnimationNodeBlendSpace2D_method_get_blend_point_count>` **(** **)** |const|                                                                                                          |
-   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`AnimationRootNode<class_AnimationRootNode>` | :ref:`get_blend_point_node<class_AnimationNodeBlendSpace2D_method_get_blend_point_node>` **(** :ref:`int<class_int>` point **)** |const|                                                                                |
-   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Vector2<class_Vector2>`                     | :ref:`get_blend_point_position<class_AnimationNodeBlendSpace2D_method_get_blend_point_position>` **(** :ref:`int<class_int>` point **)** |const|                                                                        |
-   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                             | :ref:`get_triangle_count<class_AnimationNodeBlendSpace2D_method_get_triangle_count>` **(** **)** |const|                                                                                                                |
-   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                             | :ref:`get_triangle_point<class_AnimationNodeBlendSpace2D_method_get_triangle_point>` **(** :ref:`int<class_int>` triangle, :ref:`int<class_int>` point **)**                                                            |
-   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                              | :ref:`remove_blend_point<class_AnimationNodeBlendSpace2D_method_remove_blend_point>` **(** :ref:`int<class_int>` point **)**                                                                                            |
-   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                              | :ref:`remove_triangle<class_AnimationNodeBlendSpace2D_method_remove_triangle>` **(** :ref:`int<class_int>` triangle **)**                                                                                               |
-   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                              | :ref:`set_blend_point_node<class_AnimationNodeBlendSpace2D_method_set_blend_point_node>` **(** :ref:`int<class_int>` point, :ref:`AnimationRootNode<class_AnimationRootNode>` node **)**                                |
-   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                              | :ref:`set_blend_point_position<class_AnimationNodeBlendSpace2D_method_set_blend_point_position>` **(** :ref:`int<class_int>` point, :ref:`Vector2<class_Vector2>` pos **)**                                             |
-   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                            | :ref:`add_blend_point<class_AnimationNodeBlendSpace2D_method_add_blend_point>`\ (\ node\: :ref:`AnimationRootNode<class_AnimationRootNode>`, pos\: :ref:`Vector2<class_Vector2>`, at_index\: :ref:`int<class_int>` = -1\ ) |
+   +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                            | :ref:`add_triangle<class_AnimationNodeBlendSpace2D_method_add_triangle>`\ (\ x\: :ref:`int<class_int>`, y\: :ref:`int<class_int>`, z\: :ref:`int<class_int>`, at_index\: :ref:`int<class_int>` = -1\ )                     |
+   +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`get_blend_point_count<class_AnimationNodeBlendSpace2D_method_get_blend_point_count>`\ (\ ) |const|                                                                                                                   |
+   +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`AnimationRootNode<class_AnimationRootNode>` | :ref:`get_blend_point_node<class_AnimationNodeBlendSpace2D_method_get_blend_point_node>`\ (\ point\: :ref:`int<class_int>`\ ) |const|                                                                                      |
+   +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector2<class_Vector2>`                     | :ref:`get_blend_point_position<class_AnimationNodeBlendSpace2D_method_get_blend_point_position>`\ (\ point\: :ref:`int<class_int>`\ ) |const|                                                                              |
+   +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`get_triangle_count<class_AnimationNodeBlendSpace2D_method_get_triangle_count>`\ (\ ) |const|                                                                                                                         |
+   +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`get_triangle_point<class_AnimationNodeBlendSpace2D_method_get_triangle_point>`\ (\ triangle\: :ref:`int<class_int>`, point\: :ref:`int<class_int>`\ )                                                                |
+   +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                            | :ref:`remove_blend_point<class_AnimationNodeBlendSpace2D_method_remove_blend_point>`\ (\ point\: :ref:`int<class_int>`\ )                                                                                                  |
+   +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                            | :ref:`remove_triangle<class_AnimationNodeBlendSpace2D_method_remove_triangle>`\ (\ triangle\: :ref:`int<class_int>`\ )                                                                                                     |
+   +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                            | :ref:`set_blend_point_node<class_AnimationNodeBlendSpace2D_method_set_blend_point_node>`\ (\ point\: :ref:`int<class_int>`, node\: :ref:`AnimationRootNode<class_AnimationRootNode>`\ )                                    |
+   +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                            | :ref:`set_blend_point_position<class_AnimationNodeBlendSpace2D_method_set_blend_point_position>`\ (\ point\: :ref:`int<class_int>`, pos\: :ref:`Vector2<class_Vector2>`\ )                                                 |
+   +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -105,7 +105,7 @@ Signals
 
 .. rst-class:: classref-signal
 
-**triangles_updated** **(** **)**
+**triangles_updated**\ (\ )
 
 Emitted every time the blend space's triangles are created, removed, or when one of their vertices changes position.
 
@@ -165,8 +165,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_auto_triangles** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **get_auto_triangles** **(** **)**
+- |void| **set_auto_triangles**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_auto_triangles**\ (\ )
 
 If ``true``, the blend space is triangulated automatically. The mesh updates every time you add or remove points with :ref:`add_blend_point<class_AnimationNodeBlendSpace2D_method_add_blend_point>` and :ref:`remove_blend_point<class_AnimationNodeBlendSpace2D_method_remove_blend_point>`.
 
@@ -182,8 +182,8 @@ If ``true``, the blend space is triangulated automatically. The mesh updates eve
 
 .. rst-class:: classref-property-setget
 
-- void **set_blend_mode** **(** :ref:`BlendMode<enum_AnimationNodeBlendSpace2D_BlendMode>` value **)**
-- :ref:`BlendMode<enum_AnimationNodeBlendSpace2D_BlendMode>` **get_blend_mode** **(** **)**
+- |void| **set_blend_mode**\ (\ value\: :ref:`BlendMode<enum_AnimationNodeBlendSpace2D_BlendMode>`\ )
+- :ref:`BlendMode<enum_AnimationNodeBlendSpace2D_BlendMode>` **get_blend_mode**\ (\ )
 
 Controls the interpolation between animations. See :ref:`BlendMode<enum_AnimationNodeBlendSpace2D_BlendMode>` constants.
 
@@ -199,8 +199,8 @@ Controls the interpolation between animations. See :ref:`BlendMode<enum_Animatio
 
 .. rst-class:: classref-property-setget
 
-- void **set_max_space** **(** :ref:`Vector2<class_Vector2>` value **)**
-- :ref:`Vector2<class_Vector2>` **get_max_space** **(** **)**
+- |void| **set_max_space**\ (\ value\: :ref:`Vector2<class_Vector2>`\ )
+- :ref:`Vector2<class_Vector2>` **get_max_space**\ (\ )
 
 The blend space's X and Y axes' upper limit for the points' position. See :ref:`add_blend_point<class_AnimationNodeBlendSpace2D_method_add_blend_point>`.
 
@@ -216,8 +216,8 @@ The blend space's X and Y axes' upper limit for the points' position. See :ref:`
 
 .. rst-class:: classref-property-setget
 
-- void **set_min_space** **(** :ref:`Vector2<class_Vector2>` value **)**
-- :ref:`Vector2<class_Vector2>` **get_min_space** **(** **)**
+- |void| **set_min_space**\ (\ value\: :ref:`Vector2<class_Vector2>`\ )
+- :ref:`Vector2<class_Vector2>` **get_min_space**\ (\ )
 
 The blend space's X and Y axes' lower limit for the points' position. See :ref:`add_blend_point<class_AnimationNodeBlendSpace2D_method_add_blend_point>`.
 
@@ -233,8 +233,8 @@ The blend space's X and Y axes' lower limit for the points' position. See :ref:`
 
 .. rst-class:: classref-property-setget
 
-- void **set_snap** **(** :ref:`Vector2<class_Vector2>` value **)**
-- :ref:`Vector2<class_Vector2>` **get_snap** **(** **)**
+- |void| **set_snap**\ (\ value\: :ref:`Vector2<class_Vector2>`\ )
+- :ref:`Vector2<class_Vector2>` **get_snap**\ (\ )
 
 Position increment to snap to when moving a point.
 
@@ -250,8 +250,8 @@ Position increment to snap to when moving a point.
 
 .. rst-class:: classref-property-setget
 
-- void **set_use_sync** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_using_sync** **(** **)**
+- |void| **set_use_sync**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_using_sync**\ (\ )
 
 If ``false``, the blended animations' frame are stopped when the blend value is ``0``.
 
@@ -269,8 +269,8 @@ If ``true``, forcing the blended animations to advance frame.
 
 .. rst-class:: classref-property-setget
 
-- void **set_x_label** **(** :ref:`String<class_String>` value **)**
-- :ref:`String<class_String>` **get_x_label** **(** **)**
+- |void| **set_x_label**\ (\ value\: :ref:`String<class_String>`\ )
+- :ref:`String<class_String>` **get_x_label**\ (\ )
 
 Name of the blend space's X axis.
 
@@ -286,8 +286,8 @@ Name of the blend space's X axis.
 
 .. rst-class:: classref-property-setget
 
-- void **set_y_label** **(** :ref:`String<class_String>` value **)**
-- :ref:`String<class_String>` **get_y_label** **(** **)**
+- |void| **set_y_label**\ (\ value\: :ref:`String<class_String>`\ )
+- :ref:`String<class_String>` **get_y_label**\ (\ )
 
 Name of the blend space's Y axis.
 
@@ -304,7 +304,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-void **add_blend_point** **(** :ref:`AnimationRootNode<class_AnimationRootNode>` node, :ref:`Vector2<class_Vector2>` pos, :ref:`int<class_int>` at_index=-1 **)**
+|void| **add_blend_point**\ (\ node\: :ref:`AnimationRootNode<class_AnimationRootNode>`, pos\: :ref:`Vector2<class_Vector2>`, at_index\: :ref:`int<class_int>` = -1\ )
 
 Adds a new point that represents a ``node`` at the position set by ``pos``. You can insert it at a specific index using the ``at_index`` argument. If you use the default value for ``at_index``, the point is inserted at the end of the blend points array.
 
@@ -316,7 +316,7 @@ Adds a new point that represents a ``node`` at the position set by ``pos``. You 
 
 .. rst-class:: classref-method
 
-void **add_triangle** **(** :ref:`int<class_int>` x, :ref:`int<class_int>` y, :ref:`int<class_int>` z, :ref:`int<class_int>` at_index=-1 **)**
+|void| **add_triangle**\ (\ x\: :ref:`int<class_int>`, y\: :ref:`int<class_int>`, z\: :ref:`int<class_int>`, at_index\: :ref:`int<class_int>` = -1\ )
 
 Creates a new triangle using three points ``x``, ``y``, and ``z``. Triangles can overlap. You can insert the triangle at a specific index using the ``at_index`` argument. If you use the default value for ``at_index``, the point is inserted at the end of the blend points array.
 
@@ -328,7 +328,7 @@ Creates a new triangle using three points ``x``, ``y``, and ``z``. Triangles can
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_blend_point_count** **(** **)** |const|
+:ref:`int<class_int>` **get_blend_point_count**\ (\ ) |const|
 
 Returns the number of points in the blend space.
 
@@ -340,7 +340,7 @@ Returns the number of points in the blend space.
 
 .. rst-class:: classref-method
 
-:ref:`AnimationRootNode<class_AnimationRootNode>` **get_blend_point_node** **(** :ref:`int<class_int>` point **)** |const|
+:ref:`AnimationRootNode<class_AnimationRootNode>` **get_blend_point_node**\ (\ point\: :ref:`int<class_int>`\ ) |const|
 
 Returns the :ref:`AnimationRootNode<class_AnimationRootNode>` referenced by the point at index ``point``.
 
@@ -352,7 +352,7 @@ Returns the :ref:`AnimationRootNode<class_AnimationRootNode>` referenced by the 
 
 .. rst-class:: classref-method
 
-:ref:`Vector2<class_Vector2>` **get_blend_point_position** **(** :ref:`int<class_int>` point **)** |const|
+:ref:`Vector2<class_Vector2>` **get_blend_point_position**\ (\ point\: :ref:`int<class_int>`\ ) |const|
 
 Returns the position of the point at index ``point``.
 
@@ -364,7 +364,7 @@ Returns the position of the point at index ``point``.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_triangle_count** **(** **)** |const|
+:ref:`int<class_int>` **get_triangle_count**\ (\ ) |const|
 
 Returns the number of triangles in the blend space.
 
@@ -376,7 +376,7 @@ Returns the number of triangles in the blend space.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_triangle_point** **(** :ref:`int<class_int>` triangle, :ref:`int<class_int>` point **)**
+:ref:`int<class_int>` **get_triangle_point**\ (\ triangle\: :ref:`int<class_int>`, point\: :ref:`int<class_int>`\ )
 
 Returns the position of the point at index ``point`` in the triangle of index ``triangle``.
 
@@ -388,7 +388,7 @@ Returns the position of the point at index ``point`` in the triangle of index ``
 
 .. rst-class:: classref-method
 
-void **remove_blend_point** **(** :ref:`int<class_int>` point **)**
+|void| **remove_blend_point**\ (\ point\: :ref:`int<class_int>`\ )
 
 Removes the point at index ``point`` from the blend space.
 
@@ -400,7 +400,7 @@ Removes the point at index ``point`` from the blend space.
 
 .. rst-class:: classref-method
 
-void **remove_triangle** **(** :ref:`int<class_int>` triangle **)**
+|void| **remove_triangle**\ (\ triangle\: :ref:`int<class_int>`\ )
 
 Removes the triangle at index ``triangle`` from the blend space.
 
@@ -412,7 +412,7 @@ Removes the triangle at index ``triangle`` from the blend space.
 
 .. rst-class:: classref-method
 
-void **set_blend_point_node** **(** :ref:`int<class_int>` point, :ref:`AnimationRootNode<class_AnimationRootNode>` node **)**
+|void| **set_blend_point_node**\ (\ point\: :ref:`int<class_int>`, node\: :ref:`AnimationRootNode<class_AnimationRootNode>`\ )
 
 Changes the :ref:`AnimationNode<class_AnimationNode>` referenced by the point at index ``point``.
 
@@ -424,7 +424,7 @@ Changes the :ref:`AnimationNode<class_AnimationNode>` referenced by the point at
 
 .. rst-class:: classref-method
 
-void **set_blend_point_position** **(** :ref:`int<class_int>` point, :ref:`Vector2<class_Vector2>` pos **)**
+|void| **set_blend_point_position**\ (\ point\: :ref:`int<class_int>`, pos\: :ref:`Vector2<class_Vector2>`\ )
 
 Updates the position of the point at index ``point`` on the blend axis.
 
@@ -435,3 +435,4 @@ Updates the position of the point at index ``point`` on the blend axis.
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

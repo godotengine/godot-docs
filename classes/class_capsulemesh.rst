@@ -56,8 +56,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_height** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_height** **(** **)**
+- |void| **set_height**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_height**\ (\ )
 
 Total height of the capsule mesh (including the hemispherical ends).
 
@@ -73,8 +73,8 @@ Total height of the capsule mesh (including the hemispherical ends).
 
 .. rst-class:: classref-property-setget
 
-- void **set_radial_segments** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_radial_segments** **(** **)**
+- |void| **set_radial_segments**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_radial_segments**\ (\ )
 
 Number of radial segments on the capsule mesh.
 
@@ -90,8 +90,8 @@ Number of radial segments on the capsule mesh.
 
 .. rst-class:: classref-property-setget
 
-- void **set_radius** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_radius** **(** **)**
+- |void| **set_radius**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_radius**\ (\ )
 
 Radius of the capsule mesh.
 
@@ -107,8 +107,8 @@ Radius of the capsule mesh.
 
 .. rst-class:: classref-property-setget
 
-- void **set_rings** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_rings** **(** **)**
+- |void| **set_rings**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_rings**\ (\ )
 
 Number of rings along the height of the capsule.
 
@@ -119,3 +119,4 @@ Number of rings along the height of the capsule.
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

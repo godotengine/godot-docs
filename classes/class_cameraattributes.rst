@@ -66,8 +66,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_auto_exposure_enabled** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_auto_exposure_enabled** **(** **)**
+- |void| **set_auto_exposure_enabled**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_auto_exposure_enabled**\ (\ )
 
 If ``true``, enables the tonemapping auto exposure mode of the scene renderer. If ``true``, the renderer will automatically determine the exposure setting to adapt to the scene's illumination and the observed light.
 
@@ -83,8 +83,8 @@ If ``true``, enables the tonemapping auto exposure mode of the scene renderer. I
 
 .. rst-class:: classref-property-setget
 
-- void **set_auto_exposure_scale** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_auto_exposure_scale** **(** **)**
+- |void| **set_auto_exposure_scale**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_auto_exposure_scale**\ (\ )
 
 The scale of the auto exposure effect. Affects the intensity of auto exposure.
 
@@ -100,8 +100,8 @@ The scale of the auto exposure effect. Affects the intensity of auto exposure.
 
 .. rst-class:: classref-property-setget
 
-- void **set_auto_exposure_speed** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_auto_exposure_speed** **(** **)**
+- |void| **set_auto_exposure_speed**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_auto_exposure_speed**\ (\ )
 
 The speed of the auto exposure effect. Affects the time needed for the camera to perform auto exposure.
 
@@ -117,8 +117,8 @@ The speed of the auto exposure effect. Affects the time needed for the camera to
 
 .. rst-class:: classref-property-setget
 
-- void **set_exposure_multiplier** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_exposure_multiplier** **(** **)**
+- |void| **set_exposure_multiplier**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_exposure_multiplier**\ (\ )
 
 Multiplier for the exposure amount. A higher value results in a brighter image.
 
@@ -134,8 +134,8 @@ Multiplier for the exposure amount. A higher value results in a brighter image.
 
 .. rst-class:: classref-property-setget
 
-- void **set_exposure_sensitivity** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_exposure_sensitivity** **(** **)**
+- |void| **set_exposure_sensitivity**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_exposure_sensitivity**\ (\ )
 
 Sensitivity of camera sensors, measured in ISO. A higher sensitivity results in a brighter image. Only available when :ref:`ProjectSettings.rendering/lights_and_shadows/use_physical_light_units<class_ProjectSettings_property_rendering/lights_and_shadows/use_physical_light_units>` is enabled. When :ref:`auto_exposure_enabled<class_CameraAttributes_property_auto_exposure_enabled>` this can be used as a method of exposure compensation, doubling the value will increase the exposure value (measured in EV100) by 1 stop.
 
@@ -146,3 +146,4 @@ Sensitivity of camera sensors, measured in ISO. A higher sensitivity results in 
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

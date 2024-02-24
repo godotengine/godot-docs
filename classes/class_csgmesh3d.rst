@@ -61,8 +61,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_material** **(** :ref:`Material<class_Material>` value **)**
-- :ref:`Material<class_Material>` **get_material** **(** **)**
+- |void| **set_material**\ (\ value\: :ref:`Material<class_Material>`\ )
+- :ref:`Material<class_Material>` **get_material**\ (\ )
 
 The :ref:`Material<class_Material>` used in drawing the CSG shape.
 
@@ -78,8 +78,8 @@ The :ref:`Material<class_Material>` used in drawing the CSG shape.
 
 .. rst-class:: classref-property-setget
 
-- void **set_mesh** **(** :ref:`Mesh<class_Mesh>` value **)**
-- :ref:`Mesh<class_Mesh>` **get_mesh** **(** **)**
+- |void| **set_mesh**\ (\ value\: :ref:`Mesh<class_Mesh>`\ )
+- :ref:`Mesh<class_Mesh>` **get_mesh**\ (\ )
 
 The :ref:`Mesh<class_Mesh>` resource to use as a CSG shape.
 
@@ -94,3 +94,4 @@ The :ref:`Mesh<class_Mesh>` resource to use as a CSG shape.
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

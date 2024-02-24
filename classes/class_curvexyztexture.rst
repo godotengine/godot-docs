@@ -60,8 +60,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_curve_x** **(** :ref:`Curve<class_Curve>` value **)**
-- :ref:`Curve<class_Curve>` **get_curve_x** **(** **)**
+- |void| **set_curve_x**\ (\ value\: :ref:`Curve<class_Curve>`\ )
+- :ref:`Curve<class_Curve>` **get_curve_x**\ (\ )
 
 The :ref:`Curve<class_Curve>` that is rendered onto the texture's red channel.
 
@@ -77,8 +77,8 @@ The :ref:`Curve<class_Curve>` that is rendered onto the texture's red channel.
 
 .. rst-class:: classref-property-setget
 
-- void **set_curve_y** **(** :ref:`Curve<class_Curve>` value **)**
-- :ref:`Curve<class_Curve>` **get_curve_y** **(** **)**
+- |void| **set_curve_y**\ (\ value\: :ref:`Curve<class_Curve>`\ )
+- :ref:`Curve<class_Curve>` **get_curve_y**\ (\ )
 
 The :ref:`Curve<class_Curve>` that is rendered onto the texture's green channel.
 
@@ -94,8 +94,8 @@ The :ref:`Curve<class_Curve>` that is rendered onto the texture's green channel.
 
 .. rst-class:: classref-property-setget
 
-- void **set_curve_z** **(** :ref:`Curve<class_Curve>` value **)**
-- :ref:`Curve<class_Curve>` **get_curve_z** **(** **)**
+- |void| **set_curve_z**\ (\ value\: :ref:`Curve<class_Curve>`\ )
+- :ref:`Curve<class_Curve>` **get_curve_z**\ (\ )
 
 The :ref:`Curve<class_Curve>` that is rendered onto the texture's blue channel.
 
@@ -111,8 +111,8 @@ The :ref:`Curve<class_Curve>` that is rendered onto the texture's blue channel.
 
 .. rst-class:: classref-property-setget
 
-- void **set_width** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_width** **(** **)**
+- |void| **set_width**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_width**\ (\ )
 
 The width of the texture (in pixels). Higher values make it possible to represent high-frequency data better (such as sudden direction changes), at the cost of increased generation time and memory usage.
 
@@ -123,3 +123,4 @@ The width of the texture (in pixels). Higher values make it possible to represen
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

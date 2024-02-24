@@ -103,19 +103,19 @@ Methods
 .. table::
    :widths: auto
 
-   +-------------------------------+----------------------------------------------------------------------------------------------------------+
-   | :ref:`Area3D[]<class_Area3D>` | :ref:`get_overlapping_areas<class_Area3D_method_get_overlapping_areas>` **(** **)** |const|              |
-   +-------------------------------+----------------------------------------------------------------------------------------------------------+
-   | :ref:`Node3D[]<class_Node3D>` | :ref:`get_overlapping_bodies<class_Area3D_method_get_overlapping_bodies>` **(** **)** |const|            |
-   +-------------------------------+----------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`       | :ref:`has_overlapping_areas<class_Area3D_method_has_overlapping_areas>` **(** **)** |const|              |
-   +-------------------------------+----------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`       | :ref:`has_overlapping_bodies<class_Area3D_method_has_overlapping_bodies>` **(** **)** |const|            |
-   +-------------------------------+----------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`       | :ref:`overlaps_area<class_Area3D_method_overlaps_area>` **(** :ref:`Node<class_Node>` area **)** |const| |
-   +-------------------------------+----------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`       | :ref:`overlaps_body<class_Area3D_method_overlaps_body>` **(** :ref:`Node<class_Node>` body **)** |const| |
-   +-------------------------------+----------------------------------------------------------------------------------------------------------+
+   +----------------------------------------------------------+-------------------------------------------------------------------------------------------------------+
+   | :ref:`Array<class_Array>`\[:ref:`Area3D<class_Area3D>`\] | :ref:`get_overlapping_areas<class_Area3D_method_get_overlapping_areas>`\ (\ ) |const|                 |
+   +----------------------------------------------------------+-------------------------------------------------------------------------------------------------------+
+   | :ref:`Array<class_Array>`\[:ref:`Node3D<class_Node3D>`\] | :ref:`get_overlapping_bodies<class_Area3D_method_get_overlapping_bodies>`\ (\ ) |const|               |
+   +----------------------------------------------------------+-------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                  | :ref:`has_overlapping_areas<class_Area3D_method_has_overlapping_areas>`\ (\ ) |const|                 |
+   +----------------------------------------------------------+-------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                  | :ref:`has_overlapping_bodies<class_Area3D_method_has_overlapping_bodies>`\ (\ ) |const|               |
+   +----------------------------------------------------------+-------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                  | :ref:`overlaps_area<class_Area3D_method_overlaps_area>`\ (\ area\: :ref:`Node<class_Node>`\ ) |const| |
+   +----------------------------------------------------------+-------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                  | :ref:`overlaps_body<class_Area3D_method_overlaps_body>`\ (\ body\: :ref:`Node<class_Node>`\ ) |const| |
+   +----------------------------------------------------------+-------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -130,7 +130,7 @@ Signals
 
 .. rst-class:: classref-signal
 
-**area_entered** **(** :ref:`Area3D<class_Area3D>` area **)**
+**area_entered**\ (\ area\: :ref:`Area3D<class_Area3D>`\ )
 
 Emitted when the received ``area`` enters this area. Requires :ref:`monitoring<class_Area3D_property_monitoring>` to be set to ``true``.
 
@@ -142,7 +142,7 @@ Emitted when the received ``area`` enters this area. Requires :ref:`monitoring<c
 
 .. rst-class:: classref-signal
 
-**area_exited** **(** :ref:`Area3D<class_Area3D>` area **)**
+**area_exited**\ (\ area\: :ref:`Area3D<class_Area3D>`\ )
 
 Emitted when the received ``area`` exits this area. Requires :ref:`monitoring<class_Area3D_property_monitoring>` to be set to ``true``.
 
@@ -154,7 +154,7 @@ Emitted when the received ``area`` exits this area. Requires :ref:`monitoring<cl
 
 .. rst-class:: classref-signal
 
-**area_shape_entered** **(** :ref:`RID<class_RID>` area_rid, :ref:`Area3D<class_Area3D>` area, :ref:`int<class_int>` area_shape_index, :ref:`int<class_int>` local_shape_index **)**
+**area_shape_entered**\ (\ area_rid\: :ref:`RID<class_RID>`, area\: :ref:`Area3D<class_Area3D>`, area_shape_index\: :ref:`int<class_int>`, local_shape_index\: :ref:`int<class_int>`\ )
 
 Emitted when a :ref:`Shape3D<class_Shape3D>` of the received ``area`` enters a shape of this area. Requires :ref:`monitoring<class_Area3D_property_monitoring>` to be set to ``true``.
 
@@ -183,7 +183,7 @@ Emitted when a :ref:`Shape3D<class_Shape3D>` of the received ``area`` enters a s
 
 .. rst-class:: classref-signal
 
-**area_shape_exited** **(** :ref:`RID<class_RID>` area_rid, :ref:`Area3D<class_Area3D>` area, :ref:`int<class_int>` area_shape_index, :ref:`int<class_int>` local_shape_index **)**
+**area_shape_exited**\ (\ area_rid\: :ref:`RID<class_RID>`, area\: :ref:`Area3D<class_Area3D>`, area_shape_index\: :ref:`int<class_int>`, local_shape_index\: :ref:`int<class_int>`\ )
 
 Emitted when a :ref:`Shape3D<class_Shape3D>` of the received ``area`` exits a shape of this area. Requires :ref:`monitoring<class_Area3D_property_monitoring>` to be set to ``true``.
 
@@ -197,7 +197,7 @@ See also :ref:`area_shape_entered<class_Area3D_signal_area_shape_entered>`.
 
 .. rst-class:: classref-signal
 
-**body_entered** **(** :ref:`Node3D<class_Node3D>` body **)**
+**body_entered**\ (\ body\: :ref:`Node3D<class_Node3D>`\ )
 
 Emitted when the received ``body`` enters this area. ``body`` can be a :ref:`PhysicsBody3D<class_PhysicsBody3D>` or a :ref:`GridMap<class_GridMap>`. :ref:`GridMap<class_GridMap>`\ s are detected if their :ref:`MeshLibrary<class_MeshLibrary>` has collision shapes configured. Requires :ref:`monitoring<class_Area3D_property_monitoring>` to be set to ``true``.
 
@@ -209,7 +209,7 @@ Emitted when the received ``body`` enters this area. ``body`` can be a :ref:`Phy
 
 .. rst-class:: classref-signal
 
-**body_exited** **(** :ref:`Node3D<class_Node3D>` body **)**
+**body_exited**\ (\ body\: :ref:`Node3D<class_Node3D>`\ )
 
 Emitted when the received ``body`` exits this area. ``body`` can be a :ref:`PhysicsBody3D<class_PhysicsBody3D>` or a :ref:`GridMap<class_GridMap>`. :ref:`GridMap<class_GridMap>`\ s are detected if their :ref:`MeshLibrary<class_MeshLibrary>` has collision shapes configured. Requires :ref:`monitoring<class_Area3D_property_monitoring>` to be set to ``true``.
 
@@ -221,7 +221,7 @@ Emitted when the received ``body`` exits this area. ``body`` can be a :ref:`Phys
 
 .. rst-class:: classref-signal
 
-**body_shape_entered** **(** :ref:`RID<class_RID>` body_rid, :ref:`Node3D<class_Node3D>` body, :ref:`int<class_int>` body_shape_index, :ref:`int<class_int>` local_shape_index **)**
+**body_shape_entered**\ (\ body_rid\: :ref:`RID<class_RID>`, body\: :ref:`Node3D<class_Node3D>`, body_shape_index\: :ref:`int<class_int>`, local_shape_index\: :ref:`int<class_int>`\ )
 
 Emitted when a :ref:`Shape3D<class_Shape3D>` of the received ``body`` enters a shape of this area. ``body`` can be a :ref:`PhysicsBody3D<class_PhysicsBody3D>` or a :ref:`GridMap<class_GridMap>`. :ref:`GridMap<class_GridMap>`\ s are detected if their :ref:`MeshLibrary<class_MeshLibrary>` has collision shapes configured. Requires :ref:`monitoring<class_Area3D_property_monitoring>` to be set to ``true``.
 
@@ -250,7 +250,7 @@ Emitted when a :ref:`Shape3D<class_Shape3D>` of the received ``body`` enters a s
 
 .. rst-class:: classref-signal
 
-**body_shape_exited** **(** :ref:`RID<class_RID>` body_rid, :ref:`Node3D<class_Node3D>` body, :ref:`int<class_int>` body_shape_index, :ref:`int<class_int>` local_shape_index **)**
+**body_shape_exited**\ (\ body_rid\: :ref:`RID<class_RID>`, body\: :ref:`Node3D<class_Node3D>`, body_shape_index\: :ref:`int<class_int>`, local_shape_index\: :ref:`int<class_int>`\ )
 
 Emitted when a :ref:`Shape3D<class_Shape3D>` of the received ``body`` exits a shape of this area. ``body`` can be a :ref:`PhysicsBody3D<class_PhysicsBody3D>` or a :ref:`GridMap<class_GridMap>`. :ref:`GridMap<class_GridMap>`\ s are detected if their :ref:`MeshLibrary<class_MeshLibrary>` has collision shapes configured. Requires :ref:`monitoring<class_Area3D_property_monitoring>` to be set to ``true``.
 
@@ -328,8 +328,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_angular_damp** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_angular_damp** **(** **)**
+- |void| **set_angular_damp**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_angular_damp**\ (\ )
 
 The rate at which objects stop spinning in this area. Represents the angular velocity lost per second.
 
@@ -347,8 +347,8 @@ See :ref:`ProjectSettings.physics/3d/default_angular_damp<class_ProjectSettings_
 
 .. rst-class:: classref-property-setget
 
-- void **set_angular_damp_space_override_mode** **(** :ref:`SpaceOverride<enum_Area3D_SpaceOverride>` value **)**
-- :ref:`SpaceOverride<enum_Area3D_SpaceOverride>` **get_angular_damp_space_override_mode** **(** **)**
+- |void| **set_angular_damp_space_override_mode**\ (\ value\: :ref:`SpaceOverride<enum_Area3D_SpaceOverride>`\ )
+- :ref:`SpaceOverride<enum_Area3D_SpaceOverride>` **get_angular_damp_space_override_mode**\ (\ )
 
 Override mode for angular damping calculations within this area. See :ref:`SpaceOverride<enum_Area3D_SpaceOverride>` for possible values.
 
@@ -364,8 +364,8 @@ Override mode for angular damping calculations within this area. See :ref:`Space
 
 .. rst-class:: classref-property-setget
 
-- void **set_audio_bus_name** **(** :ref:`StringName<class_StringName>` value **)**
-- :ref:`StringName<class_StringName>` **get_audio_bus_name** **(** **)**
+- |void| **set_audio_bus_name**\ (\ value\: :ref:`StringName<class_StringName>`\ )
+- :ref:`StringName<class_StringName>` **get_audio_bus_name**\ (\ )
 
 The name of the area's audio bus.
 
@@ -381,8 +381,8 @@ The name of the area's audio bus.
 
 .. rst-class:: classref-property-setget
 
-- void **set_audio_bus_override** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_overriding_audio_bus** **(** **)**
+- |void| **set_audio_bus_override**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_overriding_audio_bus**\ (\ )
 
 If ``true``, the area's audio bus overrides the default audio bus.
 
@@ -398,8 +398,8 @@ If ``true``, the area's audio bus overrides the default audio bus.
 
 .. rst-class:: classref-property-setget
 
-- void **set_gravity** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_gravity** **(** **)**
+- |void| **set_gravity**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_gravity**\ (\ )
 
 The area's gravity intensity (in meters per second squared). This value multiplies the gravity direction. This is useful to alter the force of gravity without altering its direction.
 
@@ -415,8 +415,8 @@ The area's gravity intensity (in meters per second squared). This value multipli
 
 .. rst-class:: classref-property-setget
 
-- void **set_gravity_direction** **(** :ref:`Vector3<class_Vector3>` value **)**
-- :ref:`Vector3<class_Vector3>` **get_gravity_direction** **(** **)**
+- |void| **set_gravity_direction**\ (\ value\: :ref:`Vector3<class_Vector3>`\ )
+- :ref:`Vector3<class_Vector3>` **get_gravity_direction**\ (\ )
 
 The area's gravity vector (not normalized).
 
@@ -432,8 +432,8 @@ The area's gravity vector (not normalized).
 
 .. rst-class:: classref-property-setget
 
-- void **set_gravity_is_point** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_gravity_a_point** **(** **)**
+- |void| **set_gravity_is_point**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_gravity_a_point**\ (\ )
 
 If ``true``, gravity is calculated from a point (set via :ref:`gravity_point_center<class_Area3D_property_gravity_point_center>`). See also :ref:`gravity_space_override<class_Area3D_property_gravity_space_override>`.
 
@@ -449,8 +449,8 @@ If ``true``, gravity is calculated from a point (set via :ref:`gravity_point_cen
 
 .. rst-class:: classref-property-setget
 
-- void **set_gravity_point_center** **(** :ref:`Vector3<class_Vector3>` value **)**
-- :ref:`Vector3<class_Vector3>` **get_gravity_point_center** **(** **)**
+- |void| **set_gravity_point_center**\ (\ value\: :ref:`Vector3<class_Vector3>`\ )
+- :ref:`Vector3<class_Vector3>` **get_gravity_point_center**\ (\ )
 
 If gravity is a point (see :ref:`gravity_point<class_Area3D_property_gravity_point>`), this will be the point of attraction.
 
@@ -466,8 +466,8 @@ If gravity is a point (see :ref:`gravity_point<class_Area3D_property_gravity_poi
 
 .. rst-class:: classref-property-setget
 
-- void **set_gravity_point_unit_distance** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_gravity_point_unit_distance** **(** **)**
+- |void| **set_gravity_point_unit_distance**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_gravity_point_unit_distance**\ (\ )
 
 The distance at which the gravity strength is equal to :ref:`gravity<class_Area3D_property_gravity>`. For example, on a planet 100 meters in radius with a surface gravity of 4.0 m/s², set the :ref:`gravity<class_Area3D_property_gravity>` to 4.0 and the unit distance to 100.0. The gravity will have falloff according to the inverse square law, so in the example, at 200 meters from the center the gravity will be 1.0 m/s² (twice the distance, 1/4th the gravity), at 50 meters it will be 16.0 m/s² (half the distance, 4x the gravity), and so on.
 
@@ -485,8 +485,8 @@ The above is true only when the unit distance is a positive number. When this is
 
 .. rst-class:: classref-property-setget
 
-- void **set_gravity_space_override_mode** **(** :ref:`SpaceOverride<enum_Area3D_SpaceOverride>` value **)**
-- :ref:`SpaceOverride<enum_Area3D_SpaceOverride>` **get_gravity_space_override_mode** **(** **)**
+- |void| **set_gravity_space_override_mode**\ (\ value\: :ref:`SpaceOverride<enum_Area3D_SpaceOverride>`\ )
+- :ref:`SpaceOverride<enum_Area3D_SpaceOverride>` **get_gravity_space_override_mode**\ (\ )
 
 Override mode for gravity calculations within this area. See :ref:`SpaceOverride<enum_Area3D_SpaceOverride>` for possible values.
 
@@ -502,8 +502,8 @@ Override mode for gravity calculations within this area. See :ref:`SpaceOverride
 
 .. rst-class:: classref-property-setget
 
-- void **set_linear_damp** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_linear_damp** **(** **)**
+- |void| **set_linear_damp**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_linear_damp**\ (\ )
 
 The rate at which objects stop moving in this area. Represents the linear velocity lost per second.
 
@@ -521,8 +521,8 @@ See :ref:`ProjectSettings.physics/3d/default_linear_damp<class_ProjectSettings_p
 
 .. rst-class:: classref-property-setget
 
-- void **set_linear_damp_space_override_mode** **(** :ref:`SpaceOverride<enum_Area3D_SpaceOverride>` value **)**
-- :ref:`SpaceOverride<enum_Area3D_SpaceOverride>` **get_linear_damp_space_override_mode** **(** **)**
+- |void| **set_linear_damp_space_override_mode**\ (\ value\: :ref:`SpaceOverride<enum_Area3D_SpaceOverride>`\ )
+- :ref:`SpaceOverride<enum_Area3D_SpaceOverride>` **get_linear_damp_space_override_mode**\ (\ )
 
 Override mode for linear damping calculations within this area. See :ref:`SpaceOverride<enum_Area3D_SpaceOverride>` for possible values.
 
@@ -538,8 +538,8 @@ Override mode for linear damping calculations within this area. See :ref:`SpaceO
 
 .. rst-class:: classref-property-setget
 
-- void **set_monitorable** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_monitorable** **(** **)**
+- |void| **set_monitorable**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_monitorable**\ (\ )
 
 If ``true``, other monitoring areas can detect this area.
 
@@ -555,8 +555,8 @@ If ``true``, other monitoring areas can detect this area.
 
 .. rst-class:: classref-property-setget
 
-- void **set_monitoring** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_monitoring** **(** **)**
+- |void| **set_monitoring**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_monitoring**\ (\ )
 
 If ``true``, the area detects bodies or areas entering and exiting it.
 
@@ -572,8 +572,8 @@ If ``true``, the area detects bodies or areas entering and exiting it.
 
 .. rst-class:: classref-property-setget
 
-- void **set_priority** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_priority** **(** **)**
+- |void| **set_priority**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_priority**\ (\ )
 
 The area's priority. Higher priority areas are processed first. The :ref:`World3D<class_World3D>`'s physics is always processed last, after all areas.
 
@@ -589,8 +589,8 @@ The area's priority. Higher priority areas are processed first. The :ref:`World3
 
 .. rst-class:: classref-property-setget
 
-- void **set_reverb_amount** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_reverb_amount** **(** **)**
+- |void| **set_reverb_amount**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_reverb_amount**\ (\ )
 
 The degree to which this area applies reverb to its associated audio. Ranges from ``0`` to ``1`` with ``0.1`` precision.
 
@@ -606,8 +606,8 @@ The degree to which this area applies reverb to its associated audio. Ranges fro
 
 .. rst-class:: classref-property-setget
 
-- void **set_use_reverb_bus** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_using_reverb_bus** **(** **)**
+- |void| **set_use_reverb_bus**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_using_reverb_bus**\ (\ )
 
 If ``true``, the area applies reverb to its associated audio.
 
@@ -623,8 +623,8 @@ If ``true``, the area applies reverb to its associated audio.
 
 .. rst-class:: classref-property-setget
 
-- void **set_reverb_bus_name** **(** :ref:`StringName<class_StringName>` value **)**
-- :ref:`StringName<class_StringName>` **get_reverb_bus_name** **(** **)**
+- |void| **set_reverb_bus_name**\ (\ value\: :ref:`StringName<class_StringName>`\ )
+- :ref:`StringName<class_StringName>` **get_reverb_bus_name**\ (\ )
 
 The name of the reverb bus to use for this area's associated audio.
 
@@ -640,8 +640,8 @@ The name of the reverb bus to use for this area's associated audio.
 
 .. rst-class:: classref-property-setget
 
-- void **set_reverb_uniformity** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_reverb_uniformity** **(** **)**
+- |void| **set_reverb_uniformity**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_reverb_uniformity**\ (\ )
 
 The degree to which this area's reverb is a uniform effect. Ranges from ``0`` to ``1`` with ``0.1`` precision.
 
@@ -657,8 +657,8 @@ The degree to which this area's reverb is a uniform effect. Ranges from ``0`` to
 
 .. rst-class:: classref-property-setget
 
-- void **set_wind_attenuation_factor** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_wind_attenuation_factor** **(** **)**
+- |void| **set_wind_attenuation_factor**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_wind_attenuation_factor**\ (\ )
 
 The exponential rate at which wind force decreases with distance from its origin.
 
@@ -674,8 +674,8 @@ The exponential rate at which wind force decreases with distance from its origin
 
 .. rst-class:: classref-property-setget
 
-- void **set_wind_force_magnitude** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_wind_force_magnitude** **(** **)**
+- |void| **set_wind_force_magnitude**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_wind_force_magnitude**\ (\ )
 
 The magnitude of area-specific wind force.
 
@@ -691,8 +691,8 @@ The magnitude of area-specific wind force.
 
 .. rst-class:: classref-property-setget
 
-- void **set_wind_source_path** **(** :ref:`NodePath<class_NodePath>` value **)**
-- :ref:`NodePath<class_NodePath>` **get_wind_source_path** **(** **)**
+- |void| **set_wind_source_path**\ (\ value\: :ref:`NodePath<class_NodePath>`\ )
+- :ref:`NodePath<class_NodePath>` **get_wind_source_path**\ (\ )
 
 The :ref:`Node3D<class_Node3D>` which is used to specify the direction and origin of an area-specific wind force. The direction is opposite to the z-axis of the :ref:`Node3D<class_Node3D>`'s local transform, and its origin is the origin of the :ref:`Node3D<class_Node3D>`'s local transform.
 
@@ -709,7 +709,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Area3D[]<class_Area3D>` **get_overlapping_areas** **(** **)** |const|
+:ref:`Array<class_Array>`\[:ref:`Area3D<class_Area3D>`\] **get_overlapping_areas**\ (\ ) |const|
 
 Returns a list of intersecting **Area3D**\ s. The overlapping area's :ref:`CollisionObject3D.collision_layer<class_CollisionObject3D_property_collision_layer>` must be part of this area's :ref:`CollisionObject3D.collision_mask<class_CollisionObject3D_property_collision_mask>` in order to be detected.
 
@@ -723,7 +723,7 @@ For performance reasons (collisions are all processed at the same time) this lis
 
 .. rst-class:: classref-method
 
-:ref:`Node3D[]<class_Node3D>` **get_overlapping_bodies** **(** **)** |const|
+:ref:`Array<class_Array>`\[:ref:`Node3D<class_Node3D>`\] **get_overlapping_bodies**\ (\ ) |const|
 
 Returns a list of intersecting :ref:`PhysicsBody3D<class_PhysicsBody3D>`\ s and :ref:`GridMap<class_GridMap>`\ s. The overlapping body's :ref:`CollisionObject3D.collision_layer<class_CollisionObject3D_property_collision_layer>` must be part of this area's :ref:`CollisionObject3D.collision_mask<class_CollisionObject3D_property_collision_mask>` in order to be detected.
 
@@ -737,7 +737,7 @@ For performance reasons (collisions are all processed at the same time) this lis
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **has_overlapping_areas** **(** **)** |const|
+:ref:`bool<class_bool>` **has_overlapping_areas**\ (\ ) |const|
 
 Returns ``true`` if intersecting any **Area3D**\ s, otherwise returns ``false``. The overlapping area's :ref:`CollisionObject3D.collision_layer<class_CollisionObject3D_property_collision_layer>` must be part of this area's :ref:`CollisionObject3D.collision_mask<class_CollisionObject3D_property_collision_mask>` in order to be detected.
 
@@ -751,7 +751,7 @@ For performance reasons (collisions are all processed at the same time) the list
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **has_overlapping_bodies** **(** **)** |const|
+:ref:`bool<class_bool>` **has_overlapping_bodies**\ (\ ) |const|
 
 Returns ``true`` if intersecting any :ref:`PhysicsBody3D<class_PhysicsBody3D>`\ s or :ref:`GridMap<class_GridMap>`\ s, otherwise returns ``false``. The overlapping body's :ref:`CollisionObject3D.collision_layer<class_CollisionObject3D_property_collision_layer>` must be part of this area's :ref:`CollisionObject3D.collision_mask<class_CollisionObject3D_property_collision_mask>` in order to be detected.
 
@@ -765,7 +765,7 @@ For performance reasons (collisions are all processed at the same time) the list
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **overlaps_area** **(** :ref:`Node<class_Node>` area **)** |const|
+:ref:`bool<class_bool>` **overlaps_area**\ (\ area\: :ref:`Node<class_Node>`\ ) |const|
 
 Returns ``true`` if the given **Area3D** intersects or overlaps this **Area3D**, ``false`` otherwise.
 
@@ -779,7 +779,7 @@ Returns ``true`` if the given **Area3D** intersects or overlaps this **Area3D**,
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **overlaps_body** **(** :ref:`Node<class_Node>` body **)** |const|
+:ref:`bool<class_bool>` **overlaps_body**\ (\ body\: :ref:`Node<class_Node>`\ ) |const|
 
 Returns ``true`` if the given physics body intersects or overlaps this **Area3D**, ``false`` otherwise.
 
@@ -794,3 +794,4 @@ The ``body`` argument can either be a :ref:`PhysicsBody3D<class_PhysicsBody3D>` 
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

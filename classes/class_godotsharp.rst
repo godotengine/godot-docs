@@ -31,9 +31,9 @@ Methods
 .. table::
    :widths: auto
 
-   +-------------------------+-------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>` | :ref:`is_runtime_initialized<class_GodotSharp_method_is_runtime_initialized>` **(** **)** |
-   +-------------------------+-------------------------------------------------------------------------------------------+
+   +-------------------------+-------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | :ref:`is_runtime_initialized<class_GodotSharp_method_is_runtime_initialized>`\ (\ ) |
+   +-------------------------+-------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -48,7 +48,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_runtime_initialized** **(** **)**
+:ref:`bool<class_bool>` **is_runtime_initialized**\ (\ )
 
 Returns ``true`` if the .NET runtime is initialized, ``false`` otherwise.
 
@@ -59,3 +59,4 @@ Returns ``true`` if the .NET runtime is initialized, ``false`` otherwise.
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

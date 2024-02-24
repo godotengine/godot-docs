@@ -63,27 +63,27 @@ Methods
 .. table::
    :widths: auto
 
-   +------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void | :ref:`clear_surfaces<class_ImmediateMesh_method_clear_surfaces>` **(** **)**                                                                                                      |
-   +------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void | :ref:`surface_add_vertex<class_ImmediateMesh_method_surface_add_vertex>` **(** :ref:`Vector3<class_Vector3>` vertex **)**                                                         |
-   +------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void | :ref:`surface_add_vertex_2d<class_ImmediateMesh_method_surface_add_vertex_2d>` **(** :ref:`Vector2<class_Vector2>` vertex **)**                                                   |
-   +------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void | :ref:`surface_begin<class_ImmediateMesh_method_surface_begin>` **(** :ref:`PrimitiveType<enum_Mesh_PrimitiveType>` primitive, :ref:`Material<class_Material>` material=null **)** |
-   +------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void | :ref:`surface_end<class_ImmediateMesh_method_surface_end>` **(** **)**                                                                                                            |
-   +------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void | :ref:`surface_set_color<class_ImmediateMesh_method_surface_set_color>` **(** :ref:`Color<class_Color>` color **)**                                                                |
-   +------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void | :ref:`surface_set_normal<class_ImmediateMesh_method_surface_set_normal>` **(** :ref:`Vector3<class_Vector3>` normal **)**                                                         |
-   +------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void | :ref:`surface_set_tangent<class_ImmediateMesh_method_surface_set_tangent>` **(** :ref:`Plane<class_Plane>` tangent **)**                                                          |
-   +------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void | :ref:`surface_set_uv<class_ImmediateMesh_method_surface_set_uv>` **(** :ref:`Vector2<class_Vector2>` uv **)**                                                                     |
-   +------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void | :ref:`surface_set_uv2<class_ImmediateMesh_method_surface_set_uv2>` **(** :ref:`Vector2<class_Vector2>` uv2 **)**                                                                  |
-   +------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void| | :ref:`clear_surfaces<class_ImmediateMesh_method_clear_surfaces>`\ (\ )                                                                                                             |
+   +--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void| | :ref:`surface_add_vertex<class_ImmediateMesh_method_surface_add_vertex>`\ (\ vertex\: :ref:`Vector3<class_Vector3>`\ )                                                             |
+   +--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void| | :ref:`surface_add_vertex_2d<class_ImmediateMesh_method_surface_add_vertex_2d>`\ (\ vertex\: :ref:`Vector2<class_Vector2>`\ )                                                       |
+   +--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void| | :ref:`surface_begin<class_ImmediateMesh_method_surface_begin>`\ (\ primitive\: :ref:`PrimitiveType<enum_Mesh_PrimitiveType>`, material\: :ref:`Material<class_Material>` = null\ ) |
+   +--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void| | :ref:`surface_end<class_ImmediateMesh_method_surface_end>`\ (\ )                                                                                                                   |
+   +--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void| | :ref:`surface_set_color<class_ImmediateMesh_method_surface_set_color>`\ (\ color\: :ref:`Color<class_Color>`\ )                                                                    |
+   +--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void| | :ref:`surface_set_normal<class_ImmediateMesh_method_surface_set_normal>`\ (\ normal\: :ref:`Vector3<class_Vector3>`\ )                                                             |
+   +--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void| | :ref:`surface_set_tangent<class_ImmediateMesh_method_surface_set_tangent>`\ (\ tangent\: :ref:`Plane<class_Plane>`\ )                                                              |
+   +--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void| | :ref:`surface_set_uv<class_ImmediateMesh_method_surface_set_uv>`\ (\ uv\: :ref:`Vector2<class_Vector2>`\ )                                                                         |
+   +--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void| | :ref:`surface_set_uv2<class_ImmediateMesh_method_surface_set_uv2>`\ (\ uv2\: :ref:`Vector2<class_Vector2>`\ )                                                                      |
+   +--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -98,7 +98,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-void **clear_surfaces** **(** **)**
+|void| **clear_surfaces**\ (\ )
 
 Clear all surfaces.
 
@@ -110,7 +110,7 @@ Clear all surfaces.
 
 .. rst-class:: classref-method
 
-void **surface_add_vertex** **(** :ref:`Vector3<class_Vector3>` vertex **)**
+|void| **surface_add_vertex**\ (\ vertex\: :ref:`Vector3<class_Vector3>`\ )
 
 Add a 3D vertex using the current attributes previously set.
 
@@ -122,7 +122,7 @@ Add a 3D vertex using the current attributes previously set.
 
 .. rst-class:: classref-method
 
-void **surface_add_vertex_2d** **(** :ref:`Vector2<class_Vector2>` vertex **)**
+|void| **surface_add_vertex_2d**\ (\ vertex\: :ref:`Vector2<class_Vector2>`\ )
 
 Add a 2D vertex using the current attributes previously set.
 
@@ -134,7 +134,7 @@ Add a 2D vertex using the current attributes previously set.
 
 .. rst-class:: classref-method
 
-void **surface_begin** **(** :ref:`PrimitiveType<enum_Mesh_PrimitiveType>` primitive, :ref:`Material<class_Material>` material=null **)**
+|void| **surface_begin**\ (\ primitive\: :ref:`PrimitiveType<enum_Mesh_PrimitiveType>`, material\: :ref:`Material<class_Material>` = null\ )
 
 Begin a new surface.
 
@@ -146,7 +146,7 @@ Begin a new surface.
 
 .. rst-class:: classref-method
 
-void **surface_end** **(** **)**
+|void| **surface_end**\ (\ )
 
 End and commit current surface. Note that surface being created will not be visible until this function is called.
 
@@ -158,7 +158,7 @@ End and commit current surface. Note that surface being created will not be visi
 
 .. rst-class:: classref-method
 
-void **surface_set_color** **(** :ref:`Color<class_Color>` color **)**
+|void| **surface_set_color**\ (\ color\: :ref:`Color<class_Color>`\ )
 
 Set the color attribute that will be pushed with the next vertex.
 
@@ -170,7 +170,7 @@ Set the color attribute that will be pushed with the next vertex.
 
 .. rst-class:: classref-method
 
-void **surface_set_normal** **(** :ref:`Vector3<class_Vector3>` normal **)**
+|void| **surface_set_normal**\ (\ normal\: :ref:`Vector3<class_Vector3>`\ )
 
 Set the normal attribute that will be pushed with the next vertex.
 
@@ -182,7 +182,7 @@ Set the normal attribute that will be pushed with the next vertex.
 
 .. rst-class:: classref-method
 
-void **surface_set_tangent** **(** :ref:`Plane<class_Plane>` tangent **)**
+|void| **surface_set_tangent**\ (\ tangent\: :ref:`Plane<class_Plane>`\ )
 
 Set the tangent attribute that will be pushed with the next vertex.
 
@@ -194,7 +194,7 @@ Set the tangent attribute that will be pushed with the next vertex.
 
 .. rst-class:: classref-method
 
-void **surface_set_uv** **(** :ref:`Vector2<class_Vector2>` uv **)**
+|void| **surface_set_uv**\ (\ uv\: :ref:`Vector2<class_Vector2>`\ )
 
 Set the UV attribute that will be pushed with the next vertex.
 
@@ -206,7 +206,7 @@ Set the UV attribute that will be pushed with the next vertex.
 
 .. rst-class:: classref-method
 
-void **surface_set_uv2** **(** :ref:`Vector2<class_Vector2>` uv2 **)**
+|void| **surface_set_uv2**\ (\ uv2\: :ref:`Vector2<class_Vector2>`\ )
 
 Set the UV2 attribute that will be pushed with the next vertex.
 
@@ -217,3 +217,4 @@ Set the UV2 attribute that will be pushed with the next vertex.
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

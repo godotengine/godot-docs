@@ -61,8 +61,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_pan_pullout** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_pan_pullout** **(** **)**
+- |void| **set_pan_pullout**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_pan_pullout**\ (\ )
 
 Values greater than 1.0 increase intensity of any panning on audio passing through this effect, whereas values less than 1.0 will decrease the panning intensity. A value of 0.0 will downmix audio to mono.
 
@@ -78,8 +78,8 @@ Values greater than 1.0 increase intensity of any panning on audio passing throu
 
 .. rst-class:: classref-property-setget
 
-- void **set_surround** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_surround** **(** **)**
+- |void| **set_surround**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_surround**\ (\ )
 
 .. container:: contribute
 
@@ -97,8 +97,8 @@ Values greater than 1.0 increase intensity of any panning on audio passing throu
 
 .. rst-class:: classref-property-setget
 
-- void **set_time_pullout** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_time_pullout** **(** **)**
+- |void| **set_time_pullout**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_time_pullout**\ (\ )
 
 .. container:: contribute
 
@@ -111,3 +111,4 @@ Values greater than 1.0 increase intensity of any panning on audio passing throu
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

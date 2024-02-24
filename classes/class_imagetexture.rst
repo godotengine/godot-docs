@@ -76,17 +76,17 @@ Methods
 .. table::
    :widths: auto
 
-   +-----------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`ImageTexture<class_ImageTexture>` | :ref:`create_from_image<class_ImageTexture_method_create_from_image>` **(** :ref:`Image<class_Image>` image **)** |static| |
-   +-----------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Format<enum_Image_Format>`        | :ref:`get_format<class_ImageTexture_method_get_format>` **(** **)** |const|                                                |
-   +-----------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
-   | void                                    | :ref:`set_image<class_ImageTexture_method_set_image>` **(** :ref:`Image<class_Image>` image **)**                          |
-   +-----------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
-   | void                                    | :ref:`set_size_override<class_ImageTexture_method_set_size_override>` **(** :ref:`Vector2i<class_Vector2i>` size **)**     |
-   +-----------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
-   | void                                    | :ref:`update<class_ImageTexture_method_update>` **(** :ref:`Image<class_Image>` image **)**                                |
-   +-----------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
+   +-----------------------------------------+-------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`ImageTexture<class_ImageTexture>` | :ref:`create_from_image<class_ImageTexture_method_create_from_image>`\ (\ image\: :ref:`Image<class_Image>`\ ) |static| |
+   +-----------------------------------------+-------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Format<enum_Image_Format>`        | :ref:`get_format<class_ImageTexture_method_get_format>`\ (\ ) |const|                                                   |
+   +-----------------------------------------+-------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                  | :ref:`set_image<class_ImageTexture_method_set_image>`\ (\ image\: :ref:`Image<class_Image>`\ )                          |
+   +-----------------------------------------+-------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                  | :ref:`set_size_override<class_ImageTexture_method_set_size_override>`\ (\ size\: :ref:`Vector2i<class_Vector2i>`\ )     |
+   +-----------------------------------------+-------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                  | :ref:`update<class_ImageTexture_method_update>`\ (\ image\: :ref:`Image<class_Image>`\ )                                |
+   +-----------------------------------------+-------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -101,7 +101,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`ImageTexture<class_ImageTexture>` **create_from_image** **(** :ref:`Image<class_Image>` image **)** |static|
+:ref:`ImageTexture<class_ImageTexture>` **create_from_image**\ (\ image\: :ref:`Image<class_Image>`\ ) |static|
 
 Creates a new **ImageTexture** and initializes it by allocating and setting the data from an :ref:`Image<class_Image>`.
 
@@ -113,7 +113,7 @@ Creates a new **ImageTexture** and initializes it by allocating and setting the 
 
 .. rst-class:: classref-method
 
-:ref:`Format<enum_Image_Format>` **get_format** **(** **)** |const|
+:ref:`Format<enum_Image_Format>` **get_format**\ (\ ) |const|
 
 Returns the format of the texture, one of :ref:`Format<enum_Image_Format>`.
 
@@ -125,7 +125,7 @@ Returns the format of the texture, one of :ref:`Format<enum_Image_Format>`.
 
 .. rst-class:: classref-method
 
-void **set_image** **(** :ref:`Image<class_Image>` image **)**
+|void| **set_image**\ (\ image\: :ref:`Image<class_Image>`\ )
 
 Replaces the texture's data with a new :ref:`Image<class_Image>`. This will re-allocate new memory for the texture.
 
@@ -139,7 +139,7 @@ If you want to update the image, but don't need to change its parameters (format
 
 .. rst-class:: classref-method
 
-void **set_size_override** **(** :ref:`Vector2i<class_Vector2i>` size **)**
+|void| **set_size_override**\ (\ size\: :ref:`Vector2i<class_Vector2i>`\ )
 
 Resizes the texture to the specified dimensions.
 
@@ -151,7 +151,7 @@ Resizes the texture to the specified dimensions.
 
 .. rst-class:: classref-method
 
-void **update** **(** :ref:`Image<class_Image>` image **)**
+|void| **update**\ (\ image\: :ref:`Image<class_Image>`\ )
 
 Replaces the texture's data with a new :ref:`Image<class_Image>`.
 
@@ -166,3 +166,4 @@ Use this method over :ref:`set_image<class_ImageTexture_method_set_image>` if yo
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

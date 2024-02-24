@@ -48,7 +48,7 @@ Properties
    +--------------------------------------------------------+----------------------------------------------------------+------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                | :ref:`rounded<class_Range_property_rounded>`             | ``false``                                                                    |
    +--------------------------------------------------------+----------------------------------------------------------+------------------------------------------------------------------------------+
-   | |bitfield|\<:ref:`SizeFlags<enum_Control_SizeFlags>`\> | size_flags_vertical                                      | ``0`` (overrides :ref:`Control<class_Control_property_size_flags_vertical>`) |
+   | |bitfield|\[:ref:`SizeFlags<enum_Control_SizeFlags>`\] | size_flags_vertical                                      | ``0`` (overrides :ref:`Control<class_Control_property_size_flags_vertical>`) |
    +--------------------------------------------------------+----------------------------------------------------------+------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                              | :ref:`step<class_Range_property_step>`                   | ``0.01``                                                                     |
    +--------------------------------------------------------+----------------------------------------------------------+------------------------------------------------------------------------------+
@@ -63,15 +63,15 @@ Methods
 .. table::
    :widths: auto
 
-   +------+----------------------------------------------------------------------------------------------------------------------------+
-   | void | :ref:`_value_changed<class_Range_private_method__value_changed>` **(** :ref:`float<class_float>` new_value **)** |virtual| |
-   +------+----------------------------------------------------------------------------------------------------------------------------+
-   | void | :ref:`set_value_no_signal<class_Range_method_set_value_no_signal>` **(** :ref:`float<class_float>` value **)**             |
-   +------+----------------------------------------------------------------------------------------------------------------------------+
-   | void | :ref:`share<class_Range_method_share>` **(** :ref:`Node<class_Node>` with **)**                                            |
-   +------+----------------------------------------------------------------------------------------------------------------------------+
-   | void | :ref:`unshare<class_Range_method_unshare>` **(** **)**                                                                     |
-   +------+----------------------------------------------------------------------------------------------------------------------------+
+   +--------+-------------------------------------------------------------------------------------------------------------------------+
+   | |void| | :ref:`_value_changed<class_Range_private_method__value_changed>`\ (\ new_value\: :ref:`float<class_float>`\ ) |virtual| |
+   +--------+-------------------------------------------------------------------------------------------------------------------------+
+   | |void| | :ref:`set_value_no_signal<class_Range_method_set_value_no_signal>`\ (\ value\: :ref:`float<class_float>`\ )             |
+   +--------+-------------------------------------------------------------------------------------------------------------------------+
+   | |void| | :ref:`share<class_Range_method_share>`\ (\ with\: :ref:`Node<class_Node>`\ )                                            |
+   +--------+-------------------------------------------------------------------------------------------------------------------------+
+   | |void| | :ref:`unshare<class_Range_method_unshare>`\ (\ )                                                                        |
+   +--------+-------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -86,7 +86,7 @@ Signals
 
 .. rst-class:: classref-signal
 
-**changed** **(** **)**
+**changed**\ (\ )
 
 Emitted when :ref:`min_value<class_Range_property_min_value>`, :ref:`max_value<class_Range_property_max_value>`, :ref:`page<class_Range_property_page>`, or :ref:`step<class_Range_property_step>` change.
 
@@ -98,7 +98,7 @@ Emitted when :ref:`min_value<class_Range_property_min_value>`, :ref:`max_value<c
 
 .. rst-class:: classref-signal
 
-**value_changed** **(** :ref:`float<class_float>` value **)**
+**value_changed**\ (\ value\: :ref:`float<class_float>`\ )
 
 Emitted when :ref:`value<class_Range_property_value>` changes. When used on a :ref:`Slider<class_Slider>`, this is called continuously while dragging (potentially every frame). If you are performing an expensive operation in a function connected to :ref:`value_changed<class_Range_signal_value_changed>`, consider using a *debouncing* :ref:`Timer<class_Timer>` to call the function less often.
 
@@ -121,8 +121,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_allow_greater** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_greater_allowed** **(** **)**
+- |void| **set_allow_greater**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_greater_allowed**\ (\ )
 
 If ``true``, :ref:`value<class_Range_property_value>` may be greater than :ref:`max_value<class_Range_property_max_value>`.
 
@@ -138,8 +138,8 @@ If ``true``, :ref:`value<class_Range_property_value>` may be greater than :ref:`
 
 .. rst-class:: classref-property-setget
 
-- void **set_allow_lesser** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_lesser_allowed** **(** **)**
+- |void| **set_allow_lesser**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_lesser_allowed**\ (\ )
 
 If ``true``, :ref:`value<class_Range_property_value>` may be less than :ref:`min_value<class_Range_property_min_value>`.
 
@@ -155,8 +155,8 @@ If ``true``, :ref:`value<class_Range_property_value>` may be less than :ref:`min
 
 .. rst-class:: classref-property-setget
 
-- void **set_exp_ratio** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_ratio_exp** **(** **)**
+- |void| **set_exp_ratio**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_ratio_exp**\ (\ )
 
 If ``true``, and :ref:`min_value<class_Range_property_min_value>` is greater than 0, :ref:`value<class_Range_property_value>` will be represented exponentially rather than linearly.
 
@@ -172,8 +172,8 @@ If ``true``, and :ref:`min_value<class_Range_property_min_value>` is greater tha
 
 .. rst-class:: classref-property-setget
 
-- void **set_max** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_max** **(** **)**
+- |void| **set_max**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_max**\ (\ )
 
 Maximum value. Range is clamped if :ref:`value<class_Range_property_value>` is greater than :ref:`max_value<class_Range_property_max_value>`.
 
@@ -189,8 +189,8 @@ Maximum value. Range is clamped if :ref:`value<class_Range_property_value>` is g
 
 .. rst-class:: classref-property-setget
 
-- void **set_min** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_min** **(** **)**
+- |void| **set_min**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_min**\ (\ )
 
 Minimum value. Range is clamped if :ref:`value<class_Range_property_value>` is less than :ref:`min_value<class_Range_property_min_value>`.
 
@@ -206,8 +206,8 @@ Minimum value. Range is clamped if :ref:`value<class_Range_property_value>` is l
 
 .. rst-class:: classref-property-setget
 
-- void **set_page** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_page** **(** **)**
+- |void| **set_page**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_page**\ (\ )
 
 Page size. Used mainly for :ref:`ScrollBar<class_ScrollBar>`. ScrollBar's length is its size multiplied by :ref:`page<class_Range_property_page>` over the difference between :ref:`min_value<class_Range_property_min_value>` and :ref:`max_value<class_Range_property_max_value>`.
 
@@ -223,8 +223,8 @@ Page size. Used mainly for :ref:`ScrollBar<class_ScrollBar>`. ScrollBar's length
 
 .. rst-class:: classref-property-setget
 
-- void **set_as_ratio** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_as_ratio** **(** **)**
+- |void| **set_as_ratio**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_as_ratio**\ (\ )
 
 The value mapped between 0 and 1.
 
@@ -240,8 +240,8 @@ The value mapped between 0 and 1.
 
 .. rst-class:: classref-property-setget
 
-- void **set_use_rounded_values** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_using_rounded_values** **(** **)**
+- |void| **set_use_rounded_values**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_using_rounded_values**\ (\ )
 
 If ``true``, :ref:`value<class_Range_property_value>` will always be rounded to the nearest integer.
 
@@ -257,8 +257,8 @@ If ``true``, :ref:`value<class_Range_property_value>` will always be rounded to 
 
 .. rst-class:: classref-property-setget
 
-- void **set_step** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_step** **(** **)**
+- |void| **set_step**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_step**\ (\ )
 
 If greater than 0, :ref:`value<class_Range_property_value>` will always be rounded to a multiple of this property's value. If :ref:`rounded<class_Range_property_rounded>` is also ``true``, :ref:`value<class_Range_property_value>` will first be rounded to a multiple of this property's value, then rounded to the nearest integer.
 
@@ -274,8 +274,8 @@ If greater than 0, :ref:`value<class_Range_property_value>` will always be round
 
 .. rst-class:: classref-property-setget
 
-- void **set_value** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_value** **(** **)**
+- |void| **set_value**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_value**\ (\ )
 
 Range's current value. Changing this property (even via code) will trigger :ref:`value_changed<class_Range_signal_value_changed>` signal. Use :ref:`set_value_no_signal<class_Range_method_set_value_no_signal>` if you want to avoid it.
 
@@ -292,7 +292,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-void **_value_changed** **(** :ref:`float<class_float>` new_value **)** |virtual|
+|void| **_value_changed**\ (\ new_value\: :ref:`float<class_float>`\ ) |virtual|
 
 Called when the **Range**'s value is changed (following the same conditions as :ref:`value_changed<class_Range_signal_value_changed>`).
 
@@ -304,7 +304,7 @@ Called when the **Range**'s value is changed (following the same conditions as :
 
 .. rst-class:: classref-method
 
-void **set_value_no_signal** **(** :ref:`float<class_float>` value **)**
+|void| **set_value_no_signal**\ (\ value\: :ref:`float<class_float>`\ )
 
 Sets the **Range**'s current value to the specified ``value``, without emitting the :ref:`value_changed<class_Range_signal_value_changed>` signal.
 
@@ -316,7 +316,7 @@ Sets the **Range**'s current value to the specified ``value``, without emitting 
 
 .. rst-class:: classref-method
 
-void **share** **(** :ref:`Node<class_Node>` with **)**
+|void| **share**\ (\ with\: :ref:`Node<class_Node>`\ )
 
 Binds two **Range**\ s together along with any ranges previously grouped with either of them. When any of range's member variables change, it will share the new value with all other ranges in its group.
 
@@ -328,7 +328,7 @@ Binds two **Range**\ s together along with any ranges previously grouped with ei
 
 .. rst-class:: classref-method
 
-void **unshare** **(** **)**
+|void| **unshare**\ (\ )
 
 Stops the **Range** from sharing its member variables with any other.
 
@@ -339,3 +339,4 @@ Stops the **Range** from sharing its member variables with any other.
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

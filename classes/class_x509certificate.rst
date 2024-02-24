@@ -38,15 +38,15 @@ Methods
 .. table::
    :widths: auto
 
-   +---------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Error<enum_@GlobalScope_Error>` | :ref:`load<class_X509Certificate_method_load>` **(** :ref:`String<class_String>` path **)**                           |
-   +---------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Error<enum_@GlobalScope_Error>` | :ref:`load_from_string<class_X509Certificate_method_load_from_string>` **(** :ref:`String<class_String>` string **)** |
-   +---------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Error<enum_@GlobalScope_Error>` | :ref:`save<class_X509Certificate_method_save>` **(** :ref:`String<class_String>` path **)**                           |
-   +---------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
-   | :ref:`String<class_String>`           | :ref:`save_to_string<class_X509Certificate_method_save_to_string>` **(** **)**                                        |
-   +---------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
+   +---------------------------------------+--------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>` | :ref:`load<class_X509Certificate_method_load>`\ (\ path\: :ref:`String<class_String>`\ )                           |
+   +---------------------------------------+--------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>` | :ref:`load_from_string<class_X509Certificate_method_load_from_string>`\ (\ string\: :ref:`String<class_String>`\ ) |
+   +---------------------------------------+--------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>` | :ref:`save<class_X509Certificate_method_save>`\ (\ path\: :ref:`String<class_String>`\ )                           |
+   +---------------------------------------+--------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`           | :ref:`save_to_string<class_X509Certificate_method_save_to_string>`\ (\ )                                           |
+   +---------------------------------------+--------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -61,7 +61,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **load** **(** :ref:`String<class_String>` path **)**
+:ref:`Error<enum_@GlobalScope_Error>` **load**\ (\ path\: :ref:`String<class_String>`\ )
 
 Loads a certificate from ``path`` ("\*.crt" file).
 
@@ -73,7 +73,7 @@ Loads a certificate from ``path`` ("\*.crt" file).
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **load_from_string** **(** :ref:`String<class_String>` string **)**
+:ref:`Error<enum_@GlobalScope_Error>` **load_from_string**\ (\ string\: :ref:`String<class_String>`\ )
 
 Loads a certificate from the given ``string``.
 
@@ -85,7 +85,7 @@ Loads a certificate from the given ``string``.
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **save** **(** :ref:`String<class_String>` path **)**
+:ref:`Error<enum_@GlobalScope_Error>` **save**\ (\ path\: :ref:`String<class_String>`\ )
 
 Saves a certificate to the given ``path`` (should be a "\*.crt" file).
 
@@ -97,7 +97,7 @@ Saves a certificate to the given ``path`` (should be a "\*.crt" file).
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **save_to_string** **(** **)**
+:ref:`String<class_String>` **save_to_string**\ (\ )
 
 Returns a string representation of the certificate, or an empty string if the certificate is invalid.
 
@@ -108,3 +108,4 @@ Returns a string representation of the certificate, or an empty string if the ce
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

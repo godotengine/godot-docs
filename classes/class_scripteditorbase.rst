@@ -29,11 +29,11 @@ Methods
 .. table::
    :widths: auto
 
-   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                          | :ref:`add_syntax_highlighter<class_ScriptEditorBase_method_add_syntax_highlighter>` **(** :ref:`EditorSyntaxHighlighter<class_EditorSyntaxHighlighter>` highlighter **)** |
-   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Control<class_Control>` | :ref:`get_base_editor<class_ScriptEditorBase_method_get_base_editor>` **(** **)** |const|                                                                                 |
-   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                        | :ref:`add_syntax_highlighter<class_ScriptEditorBase_method_add_syntax_highlighter>`\ (\ highlighter\: :ref:`EditorSyntaxHighlighter<class_EditorSyntaxHighlighter>`\ ) |
+   +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Control<class_Control>` | :ref:`get_base_editor<class_ScriptEditorBase_method_get_base_editor>`\ (\ ) |const|                                                                                    |
+   +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -48,7 +48,7 @@ Signals
 
 .. rst-class:: classref-signal
 
-**edited_script_changed** **(** **)**
+**edited_script_changed**\ (\ )
 
 Emitted after script validation.
 
@@ -60,7 +60,7 @@ Emitted after script validation.
 
 .. rst-class:: classref-signal
 
-**go_to_help** **(** :ref:`String<class_String>` what **)**
+**go_to_help**\ (\ what\: :ref:`String<class_String>`\ )
 
 Emitted when the user requests a specific documentation page.
 
@@ -72,7 +72,7 @@ Emitted when the user requests a specific documentation page.
 
 .. rst-class:: classref-signal
 
-**go_to_method** **(** :ref:`Object<class_Object>` script, :ref:`String<class_String>` method **)**
+**go_to_method**\ (\ script\: :ref:`Object<class_Object>`, method\: :ref:`String<class_String>`\ )
 
 Emitted when the user requests to view a specific method of a script, similar to :ref:`request_open_script_at_line<class_ScriptEditorBase_signal_request_open_script_at_line>`.
 
@@ -84,7 +84,7 @@ Emitted when the user requests to view a specific method of a script, similar to
 
 .. rst-class:: classref-signal
 
-**name_changed** **(** **)**
+**name_changed**\ (\ )
 
 Emitted after script validation or when the edited resource has changed.
 
@@ -96,7 +96,7 @@ Emitted after script validation or when the edited resource has changed.
 
 .. rst-class:: classref-signal
 
-**replace_in_files_requested** **(** :ref:`String<class_String>` text **)**
+**replace_in_files_requested**\ (\ text\: :ref:`String<class_String>`\ )
 
 Emitted when the user request to find and replace text in the file system.
 
@@ -108,7 +108,7 @@ Emitted when the user request to find and replace text in the file system.
 
 .. rst-class:: classref-signal
 
-**request_help** **(** :ref:`String<class_String>` topic **)**
+**request_help**\ (\ topic\: :ref:`String<class_String>`\ )
 
 Emitted when the user requests contextual help.
 
@@ -120,7 +120,7 @@ Emitted when the user requests contextual help.
 
 .. rst-class:: classref-signal
 
-**request_open_script_at_line** **(** :ref:`Object<class_Object>` script, :ref:`int<class_int>` line **)**
+**request_open_script_at_line**\ (\ script\: :ref:`Object<class_Object>`, line\: :ref:`int<class_int>`\ )
 
 Emitted when the user requests to view a specific line of a script, similar to :ref:`go_to_method<class_ScriptEditorBase_signal_go_to_method>`.
 
@@ -132,7 +132,7 @@ Emitted when the user requests to view a specific line of a script, similar to :
 
 .. rst-class:: classref-signal
 
-**request_save_history** **(** **)**
+**request_save_history**\ (\ )
 
 Emitted when the user contextual goto and the item is in the same script.
 
@@ -144,7 +144,7 @@ Emitted when the user contextual goto and the item is in the same script.
 
 .. rst-class:: classref-signal
 
-**search_in_files_requested** **(** :ref:`String<class_String>` text **)**
+**search_in_files_requested**\ (\ text\: :ref:`String<class_String>`\ )
 
 Emitted when the user request to search text in the file system.
 
@@ -161,7 +161,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-void **add_syntax_highlighter** **(** :ref:`EditorSyntaxHighlighter<class_EditorSyntaxHighlighter>` highlighter **)**
+|void| **add_syntax_highlighter**\ (\ highlighter\: :ref:`EditorSyntaxHighlighter<class_EditorSyntaxHighlighter>`\ )
 
 Adds a :ref:`EditorSyntaxHighlighter<class_EditorSyntaxHighlighter>` to the open script.
 
@@ -173,7 +173,7 @@ Adds a :ref:`EditorSyntaxHighlighter<class_EditorSyntaxHighlighter>` to the open
 
 .. rst-class:: classref-method
 
-:ref:`Control<class_Control>` **get_base_editor** **(** **)** |const|
+:ref:`Control<class_Control>` **get_base_editor**\ (\ ) |const|
 
 Returns the underlying :ref:`Control<class_Control>` used for editing scripts. For text scripts, this is a :ref:`CodeEdit<class_CodeEdit>`.
 
@@ -184,3 +184,4 @@ Returns the underlying :ref:`Control<class_Control>` used for editing scripts. F
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

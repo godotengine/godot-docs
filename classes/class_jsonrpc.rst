@@ -29,21 +29,21 @@ Methods
 .. table::
    :widths: auto
 
-   +-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Dictionary<class_Dictionary>` | :ref:`make_notification<class_JSONRPC_method_make_notification>` **(** :ref:`String<class_String>` method, :ref:`Variant<class_Variant>` params **)**                                           |
-   +-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Dictionary<class_Dictionary>` | :ref:`make_request<class_JSONRPC_method_make_request>` **(** :ref:`String<class_String>` method, :ref:`Variant<class_Variant>` params, :ref:`Variant<class_Variant>` id **)**                   |
-   +-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Dictionary<class_Dictionary>` | :ref:`make_response<class_JSONRPC_method_make_response>` **(** :ref:`Variant<class_Variant>` result, :ref:`Variant<class_Variant>` id **)**                                                     |
-   +-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Dictionary<class_Dictionary>` | :ref:`make_response_error<class_JSONRPC_method_make_response_error>` **(** :ref:`int<class_int>` code, :ref:`String<class_String>` message, :ref:`Variant<class_Variant>` id=null **)** |const| |
-   +-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Variant<class_Variant>`       | :ref:`process_action<class_JSONRPC_method_process_action>` **(** :ref:`Variant<class_Variant>` action, :ref:`bool<class_bool>` recurse=false **)**                                              |
-   +-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`String<class_String>`         | :ref:`process_string<class_JSONRPC_method_process_string>` **(** :ref:`String<class_String>` action **)**                                                                                       |
-   +-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                | :ref:`set_scope<class_JSONRPC_method_set_scope>` **(** :ref:`String<class_String>` scope, :ref:`Object<class_Object>` target **)**                                                              |
-   +-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Dictionary<class_Dictionary>` | :ref:`make_notification<class_JSONRPC_method_make_notification>`\ (\ method\: :ref:`String<class_String>`, params\: :ref:`Variant<class_Variant>`\ )                                               |
+   +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Dictionary<class_Dictionary>` | :ref:`make_request<class_JSONRPC_method_make_request>`\ (\ method\: :ref:`String<class_String>`, params\: :ref:`Variant<class_Variant>`, id\: :ref:`Variant<class_Variant>`\ )                     |
+   +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Dictionary<class_Dictionary>` | :ref:`make_response<class_JSONRPC_method_make_response>`\ (\ result\: :ref:`Variant<class_Variant>`, id\: :ref:`Variant<class_Variant>`\ )                                                         |
+   +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Dictionary<class_Dictionary>` | :ref:`make_response_error<class_JSONRPC_method_make_response_error>`\ (\ code\: :ref:`int<class_int>`, message\: :ref:`String<class_String>`, id\: :ref:`Variant<class_Variant>` = null\ ) |const| |
+   +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Variant<class_Variant>`       | :ref:`process_action<class_JSONRPC_method_process_action>`\ (\ action\: :ref:`Variant<class_Variant>`, recurse\: :ref:`bool<class_bool>` = false\ )                                                |
+   +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`         | :ref:`process_string<class_JSONRPC_method_process_string>`\ (\ action\: :ref:`String<class_String>`\ )                                                                                             |
+   +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                              | :ref:`set_scope<class_JSONRPC_method_set_scope>`\ (\ scope\: :ref:`String<class_String>`, target\: :ref:`Object<class_Object>`\ )                                                                  |
+   +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -129,7 +129,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Dictionary<class_Dictionary>` **make_notification** **(** :ref:`String<class_String>` method, :ref:`Variant<class_Variant>` params **)**
+:ref:`Dictionary<class_Dictionary>` **make_notification**\ (\ method\: :ref:`String<class_String>`, params\: :ref:`Variant<class_Variant>`\ )
 
 Returns a dictionary in the form of a JSON-RPC notification. Notifications are one-shot messages which do not expect a response.
 
@@ -145,7 +145,7 @@ Returns a dictionary in the form of a JSON-RPC notification. Notifications are o
 
 .. rst-class:: classref-method
 
-:ref:`Dictionary<class_Dictionary>` **make_request** **(** :ref:`String<class_String>` method, :ref:`Variant<class_Variant>` params, :ref:`Variant<class_Variant>` id **)**
+:ref:`Dictionary<class_Dictionary>` **make_request**\ (\ method\: :ref:`String<class_String>`, params\: :ref:`Variant<class_Variant>`, id\: :ref:`Variant<class_Variant>`\ )
 
 Returns a dictionary in the form of a JSON-RPC request. Requests are sent to a server with the expectation of a response. The ID field is used for the server to specify which exact request it is responding to.
 
@@ -163,7 +163,7 @@ Returns a dictionary in the form of a JSON-RPC request. Requests are sent to a s
 
 .. rst-class:: classref-method
 
-:ref:`Dictionary<class_Dictionary>` **make_response** **(** :ref:`Variant<class_Variant>` result, :ref:`Variant<class_Variant>` id **)**
+:ref:`Dictionary<class_Dictionary>` **make_response**\ (\ result\: :ref:`Variant<class_Variant>`, id\: :ref:`Variant<class_Variant>`\ )
 
 When a server has received and processed a request, it is expected to send a response. If you did not want a response then you need to have sent a Notification instead.
 
@@ -179,7 +179,7 @@ When a server has received and processed a request, it is expected to send a res
 
 .. rst-class:: classref-method
 
-:ref:`Dictionary<class_Dictionary>` **make_response_error** **(** :ref:`int<class_int>` code, :ref:`String<class_String>` message, :ref:`Variant<class_Variant>` id=null **)** |const|
+:ref:`Dictionary<class_Dictionary>` **make_response_error**\ (\ code\: :ref:`int<class_int>`, message\: :ref:`String<class_String>`, id\: :ref:`Variant<class_Variant>` = null\ ) |const|
 
 Creates a response which indicates a previous reply has failed in some way.
 
@@ -197,7 +197,7 @@ Creates a response which indicates a previous reply has failed in some way.
 
 .. rst-class:: classref-method
 
-:ref:`Variant<class_Variant>` **process_action** **(** :ref:`Variant<class_Variant>` action, :ref:`bool<class_bool>` recurse=false **)**
+:ref:`Variant<class_Variant>` **process_action**\ (\ action\: :ref:`Variant<class_Variant>`, recurse\: :ref:`bool<class_bool>` = false\ )
 
 Given a Dictionary which takes the form of a JSON-RPC request: unpack the request and run it. Methods are resolved by looking at the field called "method" and looking for an equivalently named function in the JSONRPC object. If one is found that method is called.
 
@@ -213,7 +213,7 @@ To add new supported methods extend the JSONRPC class and call :ref:`process_act
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **process_string** **(** :ref:`String<class_String>` action **)**
+:ref:`String<class_String>` **process_string**\ (\ action\: :ref:`String<class_String>`\ )
 
 .. container:: contribute
 
@@ -227,7 +227,7 @@ To add new supported methods extend the JSONRPC class and call :ref:`process_act
 
 .. rst-class:: classref-method
 
-void **set_scope** **(** :ref:`String<class_String>` scope, :ref:`Object<class_Object>` target **)**
+|void| **set_scope**\ (\ scope\: :ref:`String<class_String>`, target\: :ref:`Object<class_Object>`\ )
 
 .. container:: contribute
 
@@ -240,3 +240,4 @@ void **set_scope** **(** :ref:`String<class_String>` scope, :ref:`Object<class_O
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

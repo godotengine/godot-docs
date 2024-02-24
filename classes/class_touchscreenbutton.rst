@@ -61,9 +61,9 @@ Methods
 .. table::
    :widths: auto
 
-   +-------------------------+----------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>` | :ref:`is_pressed<class_TouchScreenButton_method_is_pressed>` **(** **)** |const| |
-   +-------------------------+----------------------------------------------------------------------------------+
+   +-------------------------+----------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | :ref:`is_pressed<class_TouchScreenButton_method_is_pressed>`\ (\ ) |const| |
+   +-------------------------+----------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -78,7 +78,7 @@ Signals
 
 .. rst-class:: classref-signal
 
-**pressed** **(** **)**
+**pressed**\ (\ )
 
 Emitted when the button is pressed (down).
 
@@ -90,7 +90,7 @@ Emitted when the button is pressed (down).
 
 .. rst-class:: classref-signal
 
-**released** **(** **)**
+**released**\ (\ )
 
 Emitted when the button is released (up).
 
@@ -142,8 +142,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_action** **(** :ref:`String<class_String>` value **)**
-- :ref:`String<class_String>` **get_action** **(** **)**
+- |void| **set_action**\ (\ value\: :ref:`String<class_String>`\ )
+- :ref:`String<class_String>` **get_action**\ (\ )
 
 The button's action. Actions can be handled with :ref:`InputEventAction<class_InputEventAction>`.
 
@@ -159,8 +159,8 @@ The button's action. Actions can be handled with :ref:`InputEventAction<class_In
 
 .. rst-class:: classref-property-setget
 
-- void **set_bitmask** **(** :ref:`BitMap<class_BitMap>` value **)**
-- :ref:`BitMap<class_BitMap>` **get_bitmask** **(** **)**
+- |void| **set_bitmask**\ (\ value\: :ref:`BitMap<class_BitMap>`\ )
+- :ref:`BitMap<class_BitMap>` **get_bitmask**\ (\ )
 
 The button's bitmask.
 
@@ -176,8 +176,8 @@ The button's bitmask.
 
 .. rst-class:: classref-property-setget
 
-- void **set_passby_press** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_passby_press_enabled** **(** **)**
+- |void| **set_passby_press**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_passby_press_enabled**\ (\ )
 
 If ``true``, the :ref:`pressed<class_TouchScreenButton_signal_pressed>` and :ref:`released<class_TouchScreenButton_signal_released>` signals are emitted whenever a pressed finger goes in and out of the button, even if the pressure started outside the active area of the button.
 
@@ -195,8 +195,8 @@ If ``true``, the :ref:`pressed<class_TouchScreenButton_signal_pressed>` and :ref
 
 .. rst-class:: classref-property-setget
 
-- void **set_shape** **(** :ref:`Shape2D<class_Shape2D>` value **)**
-- :ref:`Shape2D<class_Shape2D>` **get_shape** **(** **)**
+- |void| **set_shape**\ (\ value\: :ref:`Shape2D<class_Shape2D>`\ )
+- :ref:`Shape2D<class_Shape2D>` **get_shape**\ (\ )
 
 The button's shape.
 
@@ -212,8 +212,8 @@ The button's shape.
 
 .. rst-class:: classref-property-setget
 
-- void **set_shape_centered** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_shape_centered** **(** **)**
+- |void| **set_shape_centered**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_shape_centered**\ (\ )
 
 If ``true``, the button's shape is centered in the provided texture. If no texture is used, this property has no effect.
 
@@ -229,8 +229,8 @@ If ``true``, the button's shape is centered in the provided texture. If no textu
 
 .. rst-class:: classref-property-setget
 
-- void **set_shape_visible** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_shape_visible** **(** **)**
+- |void| **set_shape_visible**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_shape_visible**\ (\ )
 
 If ``true``, the button's shape is visible in the editor.
 
@@ -246,8 +246,8 @@ If ``true``, the button's shape is visible in the editor.
 
 .. rst-class:: classref-property-setget
 
-- void **set_texture_normal** **(** :ref:`Texture2D<class_Texture2D>` value **)**
-- :ref:`Texture2D<class_Texture2D>` **get_texture_normal** **(** **)**
+- |void| **set_texture_normal**\ (\ value\: :ref:`Texture2D<class_Texture2D>`\ )
+- :ref:`Texture2D<class_Texture2D>` **get_texture_normal**\ (\ )
 
 The button's texture for the normal state.
 
@@ -263,8 +263,8 @@ The button's texture for the normal state.
 
 .. rst-class:: classref-property-setget
 
-- void **set_texture_pressed** **(** :ref:`Texture2D<class_Texture2D>` value **)**
-- :ref:`Texture2D<class_Texture2D>` **get_texture_pressed** **(** **)**
+- |void| **set_texture_pressed**\ (\ value\: :ref:`Texture2D<class_Texture2D>`\ )
+- :ref:`Texture2D<class_Texture2D>` **get_texture_pressed**\ (\ )
 
 The button's texture for the pressed state.
 
@@ -280,8 +280,8 @@ The button's texture for the pressed state.
 
 .. rst-class:: classref-property-setget
 
-- void **set_visibility_mode** **(** :ref:`VisibilityMode<enum_TouchScreenButton_VisibilityMode>` value **)**
-- :ref:`VisibilityMode<enum_TouchScreenButton_VisibilityMode>` **get_visibility_mode** **(** **)**
+- |void| **set_visibility_mode**\ (\ value\: :ref:`VisibilityMode<enum_TouchScreenButton_VisibilityMode>`\ )
+- :ref:`VisibilityMode<enum_TouchScreenButton_VisibilityMode>` **get_visibility_mode**\ (\ )
 
 The button's visibility mode. See :ref:`VisibilityMode<enum_TouchScreenButton_VisibilityMode>` for possible values.
 
@@ -298,7 +298,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_pressed** **(** **)** |const|
+:ref:`bool<class_bool>` **is_pressed**\ (\ ) |const|
 
 Returns ``true`` if this button is currently pressed.
 
@@ -309,3 +309,4 @@ Returns ``true`` if this button is currently pressed.
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

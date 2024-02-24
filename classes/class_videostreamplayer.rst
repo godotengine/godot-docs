@@ -72,19 +72,19 @@ Methods
 .. table::
    :widths: auto
 
-   +-----------------------------------+------------------------------------------------------------------------------------------------+
-   | :ref:`float<class_float>`         | :ref:`get_stream_length<class_VideoStreamPlayer_method_get_stream_length>` **(** **)** |const| |
-   +-----------------------------------+------------------------------------------------------------------------------------------------+
-   | :ref:`String<class_String>`       | :ref:`get_stream_name<class_VideoStreamPlayer_method_get_stream_name>` **(** **)** |const|     |
-   +-----------------------------------+------------------------------------------------------------------------------------------------+
-   | :ref:`Texture2D<class_Texture2D>` | :ref:`get_video_texture<class_VideoStreamPlayer_method_get_video_texture>` **(** **)** |const| |
-   +-----------------------------------+------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`           | :ref:`is_playing<class_VideoStreamPlayer_method_is_playing>` **(** **)** |const|               |
-   +-----------------------------------+------------------------------------------------------------------------------------------------+
-   | void                              | :ref:`play<class_VideoStreamPlayer_method_play>` **(** **)**                                   |
-   +-----------------------------------+------------------------------------------------------------------------------------------------+
-   | void                              | :ref:`stop<class_VideoStreamPlayer_method_stop>` **(** **)**                                   |
-   +-----------------------------------+------------------------------------------------------------------------------------------------+
+   +-----------------------------------+------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`         | :ref:`get_stream_length<class_VideoStreamPlayer_method_get_stream_length>`\ (\ ) |const| |
+   +-----------------------------------+------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`       | :ref:`get_stream_name<class_VideoStreamPlayer_method_get_stream_name>`\ (\ ) |const|     |
+   +-----------------------------------+------------------------------------------------------------------------------------------+
+   | :ref:`Texture2D<class_Texture2D>` | :ref:`get_video_texture<class_VideoStreamPlayer_method_get_video_texture>`\ (\ ) |const| |
+   +-----------------------------------+------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`           | :ref:`is_playing<class_VideoStreamPlayer_method_is_playing>`\ (\ ) |const|               |
+   +-----------------------------------+------------------------------------------------------------------------------------------+
+   | |void|                            | :ref:`play<class_VideoStreamPlayer_method_play>`\ (\ )                                   |
+   +-----------------------------------+------------------------------------------------------------------------------------------+
+   | |void|                            | :ref:`stop<class_VideoStreamPlayer_method_stop>`\ (\ )                                   |
+   +-----------------------------------+------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -99,7 +99,7 @@ Signals
 
 .. rst-class:: classref-signal
 
-**finished** **(** **)**
+**finished**\ (\ )
 
 Emitted when playback is finished.
 
@@ -120,8 +120,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_audio_track** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_audio_track** **(** **)**
+- |void| **set_audio_track**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_audio_track**\ (\ )
 
 The embedded audio track to play.
 
@@ -137,8 +137,8 @@ The embedded audio track to play.
 
 .. rst-class:: classref-property-setget
 
-- void **set_autoplay** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **has_autoplay** **(** **)**
+- |void| **set_autoplay**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **has_autoplay**\ (\ )
 
 If ``true``, playback starts when the scene loads.
 
@@ -154,8 +154,8 @@ If ``true``, playback starts when the scene loads.
 
 .. rst-class:: classref-property-setget
 
-- void **set_buffering_msec** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_buffering_msec** **(** **)**
+- |void| **set_buffering_msec**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_buffering_msec**\ (\ )
 
 Amount of time in milliseconds to store in buffer while playing.
 
@@ -171,8 +171,8 @@ Amount of time in milliseconds to store in buffer while playing.
 
 .. rst-class:: classref-property-setget
 
-- void **set_bus** **(** :ref:`StringName<class_StringName>` value **)**
-- :ref:`StringName<class_StringName>` **get_bus** **(** **)**
+- |void| **set_bus**\ (\ value\: :ref:`StringName<class_StringName>`\ )
+- :ref:`StringName<class_StringName>` **get_bus**\ (\ )
 
 Audio bus to use for sound playback.
 
@@ -188,8 +188,8 @@ Audio bus to use for sound playback.
 
 .. rst-class:: classref-property-setget
 
-- void **set_expand** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **has_expand** **(** **)**
+- |void| **set_expand**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **has_expand**\ (\ )
 
 If ``true``, the video scales to the control size. Otherwise, the control minimum size will be automatically adjusted to match the video stream's dimensions.
 
@@ -205,8 +205,8 @@ If ``true``, the video scales to the control size. Otherwise, the control minimu
 
 .. rst-class:: classref-property-setget
 
-- void **set_loop** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **has_loop** **(** **)**
+- |void| **set_loop**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **has_loop**\ (\ )
 
 If ``true``, the video restarts when it reaches its end.
 
@@ -222,8 +222,8 @@ If ``true``, the video restarts when it reaches its end.
 
 .. rst-class:: classref-property-setget
 
-- void **set_paused** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_paused** **(** **)**
+- |void| **set_paused**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_paused**\ (\ )
 
 If ``true``, the video is paused.
 
@@ -239,8 +239,8 @@ If ``true``, the video is paused.
 
 .. rst-class:: classref-property-setget
 
-- void **set_stream** **(** :ref:`VideoStream<class_VideoStream>` value **)**
-- :ref:`VideoStream<class_VideoStream>` **get_stream** **(** **)**
+- |void| **set_stream**\ (\ value\: :ref:`VideoStream<class_VideoStream>`\ )
+- :ref:`VideoStream<class_VideoStream>` **get_stream**\ (\ )
 
 The assigned video stream. See description for supported formats.
 
@@ -256,8 +256,8 @@ The assigned video stream. See description for supported formats.
 
 .. rst-class:: classref-property-setget
 
-- void **set_stream_position** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_stream_position** **(** **)**
+- |void| **set_stream_position**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_stream_position**\ (\ )
 
 The current position of the stream, in seconds.
 
@@ -275,8 +275,8 @@ The current position of the stream, in seconds.
 
 .. rst-class:: classref-property-setget
 
-- void **set_volume** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_volume** **(** **)**
+- |void| **set_volume**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_volume**\ (\ )
 
 Audio volume as a linear value.
 
@@ -292,8 +292,8 @@ Audio volume as a linear value.
 
 .. rst-class:: classref-property-setget
 
-- void **set_volume_db** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_volume_db** **(** **)**
+- |void| **set_volume_db**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_volume_db**\ (\ )
 
 Audio volume in dB.
 
@@ -310,7 +310,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **get_stream_length** **(** **)** |const|
+:ref:`float<class_float>` **get_stream_length**\ (\ ) |const|
 
 The length of the current stream, in seconds.
 
@@ -324,7 +324,7 @@ The length of the current stream, in seconds.
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **get_stream_name** **(** **)** |const|
+:ref:`String<class_String>` **get_stream_name**\ (\ ) |const|
 
 Returns the video stream's name, or ``"<No Stream>"`` if no video stream is assigned.
 
@@ -336,7 +336,7 @@ Returns the video stream's name, or ``"<No Stream>"`` if no video stream is assi
 
 .. rst-class:: classref-method
 
-:ref:`Texture2D<class_Texture2D>` **get_video_texture** **(** **)** |const|
+:ref:`Texture2D<class_Texture2D>` **get_video_texture**\ (\ ) |const|
 
 Returns the current frame as a :ref:`Texture2D<class_Texture2D>`.
 
@@ -348,7 +348,7 @@ Returns the current frame as a :ref:`Texture2D<class_Texture2D>`.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_playing** **(** **)** |const|
+:ref:`bool<class_bool>` **is_playing**\ (\ ) |const|
 
 Returns ``true`` if the video is playing.
 
@@ -362,7 +362,7 @@ Returns ``true`` if the video is playing.
 
 .. rst-class:: classref-method
 
-void **play** **(** **)**
+|void| **play**\ (\ )
 
 Starts the video playback from the beginning. If the video is paused, this will not unpause the video.
 
@@ -374,7 +374,7 @@ Starts the video playback from the beginning. If the video is paused, this will 
 
 .. rst-class:: classref-method
 
-void **stop** **(** **)**
+|void| **stop**\ (\ )
 
 Stops the video playback and sets the stream position to 0.
 
@@ -387,3 +387,4 @@ Stops the video playback and sets the stream position to 0.
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

@@ -54,9 +54,9 @@ Methods
 .. table::
    :widths: auto
 
-   +-----------------------+--------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>` | :ref:`get_line_count<class_FlowContainer_method_get_line_count>` **(** **)** |const| |
-   +-----------------------+--------------------------------------------------------------------------------------+
+   +-----------------------+--------------------------------------------------------------------------------+
+   | :ref:`int<class_int>` | :ref:`get_line_count<class_FlowContainer_method_get_line_count>`\ (\ ) |const| |
+   +-----------------------+--------------------------------------------------------------------------------+
 
 .. rst-class:: classref-reftable-group
 
@@ -128,8 +128,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_alignment** **(** :ref:`AlignmentMode<enum_FlowContainer_AlignmentMode>` value **)**
-- :ref:`AlignmentMode<enum_FlowContainer_AlignmentMode>` **get_alignment** **(** **)**
+- |void| **set_alignment**\ (\ value\: :ref:`AlignmentMode<enum_FlowContainer_AlignmentMode>`\ )
+- :ref:`AlignmentMode<enum_FlowContainer_AlignmentMode>` **get_alignment**\ (\ )
 
 The alignment of the container's children (must be one of :ref:`ALIGNMENT_BEGIN<class_FlowContainer_constant_ALIGNMENT_BEGIN>`, :ref:`ALIGNMENT_CENTER<class_FlowContainer_constant_ALIGNMENT_CENTER>`, or :ref:`ALIGNMENT_END<class_FlowContainer_constant_ALIGNMENT_END>`).
 
@@ -145,8 +145,8 @@ The alignment of the container's children (must be one of :ref:`ALIGNMENT_BEGIN<
 
 .. rst-class:: classref-property-setget
 
-- void **set_reverse_fill** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_reverse_fill** **(** **)**
+- |void| **set_reverse_fill**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_reverse_fill**\ (\ )
 
 If ``true``, reverses fill direction. Horizontal **FlowContainer**\ s will fill rows bottom to top, vertical **FlowContainer**\ s will fill columns right to left.
 
@@ -164,8 +164,8 @@ When using a vertical **FlowContainer** with a right to left :ref:`Control.layou
 
 .. rst-class:: classref-property-setget
 
-- void **set_vertical** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_vertical** **(** **)**
+- |void| **set_vertical**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_vertical**\ (\ )
 
 If ``true``, the **FlowContainer** will arrange its children vertically, rather than horizontally.
 
@@ -184,7 +184,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_line_count** **(** **)** |const|
+:ref:`int<class_int>` **get_line_count**\ (\ ) |const|
 
 Returns the current line count.
 
@@ -224,3 +224,4 @@ The vertical separation of children nodes.
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

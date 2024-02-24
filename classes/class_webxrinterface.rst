@@ -129,6 +129,8 @@ Properties
    :widths: auto
 
    +-----------------------------+-------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>` | :ref:`enabled_features<class_WebXRInterface_property_enabled_features>`                               |
+   +-----------------------------+-------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>` | :ref:`optional_features<class_WebXRInterface_property_optional_features>`                             |
    +-----------------------------+-------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>` | :ref:`reference_space_type<class_WebXRInterface_property_reference_space_type>`                       |
@@ -150,21 +152,21 @@ Methods
 .. table::
    :widths: auto
 
-   +---------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Array<class_Array>`                               | :ref:`get_available_display_refresh_rates<class_WebXRInterface_method_get_available_display_refresh_rates>` **(** **)** |const|                                 |
-   +---------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`float<class_float>`                               | :ref:`get_display_refresh_rate<class_WebXRInterface_method_get_display_refresh_rate>` **(** **)** |const|                                                       |
-   +---------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`TargetRayMode<enum_WebXRInterface_TargetRayMode>` | :ref:`get_input_source_target_ray_mode<class_WebXRInterface_method_get_input_source_target_ray_mode>` **(** :ref:`int<class_int>` input_source_id **)** |const| |
-   +---------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`XRPositionalTracker<class_XRPositionalTracker>`   | :ref:`get_input_source_tracker<class_WebXRInterface_method_get_input_source_tracker>` **(** :ref:`int<class_int>` input_source_id **)** |const|                 |
-   +---------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                                 | :ref:`is_input_source_active<class_WebXRInterface_method_is_input_source_active>` **(** :ref:`int<class_int>` input_source_id **)** |const|                     |
-   +---------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                                    | :ref:`is_session_supported<class_WebXRInterface_method_is_session_supported>` **(** :ref:`String<class_String>` session_mode **)**                              |
-   +---------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                                    | :ref:`set_display_refresh_rate<class_WebXRInterface_method_set_display_refresh_rate>` **(** :ref:`float<class_float>` refresh_rate **)**                        |
-   +---------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +---------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Array<class_Array>`                               | :ref:`get_available_display_refresh_rates<class_WebXRInterface_method_get_available_display_refresh_rates>`\ (\ ) |const|                                    |
+   +---------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`                               | :ref:`get_display_refresh_rate<class_WebXRInterface_method_get_display_refresh_rate>`\ (\ ) |const|                                                          |
+   +---------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`TargetRayMode<enum_WebXRInterface_TargetRayMode>` | :ref:`get_input_source_target_ray_mode<class_WebXRInterface_method_get_input_source_target_ray_mode>`\ (\ input_source_id\: :ref:`int<class_int>`\ ) |const| |
+   +---------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`XRPositionalTracker<class_XRPositionalTracker>`   | :ref:`get_input_source_tracker<class_WebXRInterface_method_get_input_source_tracker>`\ (\ input_source_id\: :ref:`int<class_int>`\ ) |const|                 |
+   +---------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                 | :ref:`is_input_source_active<class_WebXRInterface_method_is_input_source_active>`\ (\ input_source_id\: :ref:`int<class_int>`\ ) |const|                     |
+   +---------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                  | :ref:`is_session_supported<class_WebXRInterface_method_is_session_supported>`\ (\ session_mode\: :ref:`String<class_String>`\ )                              |
+   +---------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                  | :ref:`set_display_refresh_rate<class_WebXRInterface_method_set_display_refresh_rate>`\ (\ refresh_rate\: :ref:`float<class_float>`\ )                        |
+   +---------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -179,7 +181,7 @@ Signals
 
 .. rst-class:: classref-signal
 
-**display_refresh_rate_changed** **(** **)**
+**display_refresh_rate_changed**\ (\ )
 
 Emitted after the display's refresh rate has changed.
 
@@ -191,7 +193,7 @@ Emitted after the display's refresh rate has changed.
 
 .. rst-class:: classref-signal
 
-**reference_space_reset** **(** **)**
+**reference_space_reset**\ (\ )
 
 Emitted to indicate that the reference space has been reset or reconfigured.
 
@@ -207,7 +209,7 @@ See `WebXR's XRReferenceSpace reset event <https://developer.mozilla.org/en-US/d
 
 .. rst-class:: classref-signal
 
-**select** **(** :ref:`int<class_int>` input_source_id **)**
+**select**\ (\ input_source_id\: :ref:`int<class_int>`\ )
 
 Emitted after one of the input sources has finished its "primary action".
 
@@ -221,7 +223,7 @@ Use :ref:`get_input_source_tracker<class_WebXRInterface_method_get_input_source_
 
 .. rst-class:: classref-signal
 
-**selectend** **(** :ref:`int<class_int>` input_source_id **)**
+**selectend**\ (\ input_source_id\: :ref:`int<class_int>`\ )
 
 Emitted when one of the input sources has finished its "primary action".
 
@@ -235,7 +237,7 @@ Use :ref:`get_input_source_tracker<class_WebXRInterface_method_get_input_source_
 
 .. rst-class:: classref-signal
 
-**selectstart** **(** :ref:`int<class_int>` input_source_id **)**
+**selectstart**\ (\ input_source_id\: :ref:`int<class_int>`\ )
 
 Emitted when one of the input source has started its "primary action".
 
@@ -249,7 +251,7 @@ Use :ref:`get_input_source_tracker<class_WebXRInterface_method_get_input_source_
 
 .. rst-class:: classref-signal
 
-**session_ended** **(** **)**
+**session_ended**\ (\ )
 
 Emitted when the user ends the WebXR session (which can be done using UI from the browser or device).
 
@@ -263,7 +265,7 @@ At this point, you should do ``get_viewport().use_xr = false`` to instruct Godot
 
 .. rst-class:: classref-signal
 
-**session_failed** **(** :ref:`String<class_String>` message **)**
+**session_failed**\ (\ message\: :ref:`String<class_String>`\ )
 
 Emitted by :ref:`XRInterface.initialize<class_XRInterface_method_initialize>` if the session fails to start.
 
@@ -277,7 +279,7 @@ Emitted by :ref:`XRInterface.initialize<class_XRInterface_method_initialize>` if
 
 .. rst-class:: classref-signal
 
-**session_started** **(** **)**
+**session_started**\ (\ )
 
 Emitted by :ref:`XRInterface.initialize<class_XRInterface_method_initialize>` if the session is successfully started.
 
@@ -291,7 +293,7 @@ At this point, it's safe to do ``get_viewport().use_xr = true`` to instruct Godo
 
 .. rst-class:: classref-signal
 
-**session_supported** **(** :ref:`String<class_String>` session_mode, :ref:`bool<class_bool>` supported **)**
+**session_supported**\ (\ session_mode\: :ref:`String<class_String>`, supported\: :ref:`bool<class_bool>`\ )
 
 Emitted by :ref:`is_session_supported<class_WebXRInterface_method_is_session_supported>` to indicate if the given ``session_mode`` is supported or not.
 
@@ -303,7 +305,7 @@ Emitted by :ref:`is_session_supported<class_WebXRInterface_method_is_session_sup
 
 .. rst-class:: classref-signal
 
-**squeeze** **(** :ref:`int<class_int>` input_source_id **)**
+**squeeze**\ (\ input_source_id\: :ref:`int<class_int>`\ )
 
 Emitted after one of the input sources has finished its "primary squeeze action".
 
@@ -317,7 +319,7 @@ Use :ref:`get_input_source_tracker<class_WebXRInterface_method_get_input_source_
 
 .. rst-class:: classref-signal
 
-**squeezeend** **(** :ref:`int<class_int>` input_source_id **)**
+**squeezeend**\ (\ input_source_id\: :ref:`int<class_int>`\ )
 
 Emitted when one of the input sources has finished its "primary squeeze action".
 
@@ -331,7 +333,7 @@ Use :ref:`get_input_source_tracker<class_WebXRInterface_method_get_input_source_
 
 .. rst-class:: classref-signal
 
-**squeezestart** **(** :ref:`int<class_int>` input_source_id **)**
+**squeezestart**\ (\ input_source_id\: :ref:`int<class_int>`\ )
 
 Emitted when one of the input sources has started its "primary squeeze action".
 
@@ -345,7 +347,7 @@ Use :ref:`get_input_source_tracker<class_WebXRInterface_method_get_input_source_
 
 .. rst-class:: classref-signal
 
-**visibility_state_changed** **(** **)**
+**visibility_state_changed**\ (\ )
 
 Emitted when :ref:`visibility_state<class_WebXRInterface_property_visibility_state>` has changed.
 
@@ -405,6 +407,24 @@ Target ray from touch screen, mouse or other tactile input device.
 Property Descriptions
 ---------------------
 
+.. _class_WebXRInterface_property_enabled_features:
+
+.. rst-class:: classref-property
+
+:ref:`String<class_String>` **enabled_features**
+
+.. rst-class:: classref-property-setget
+
+- :ref:`String<class_String>` **get_enabled_features**\ (\ )
+
+A comma-separated list of features that were successfully enabled by :ref:`XRInterface.initialize<class_XRInterface_method_initialize>` when setting up the WebXR session.
+
+This may include features requested by setting :ref:`required_features<class_WebXRInterface_property_required_features>` and :ref:`optional_features<class_WebXRInterface_property_optional_features>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_WebXRInterface_property_optional_features:
 
 .. rst-class:: classref-property
@@ -413,8 +433,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_optional_features** **(** :ref:`String<class_String>` value **)**
-- :ref:`String<class_String>` **get_optional_features** **(** **)**
+- |void| **set_optional_features**\ (\ value\: :ref:`String<class_String>`\ )
+- :ref:`String<class_String>` **get_optional_features**\ (\ )
 
 A comma-seperated list of optional features used by :ref:`XRInterface.initialize<class_XRInterface_method_initialize>` when setting up the WebXR session.
 
@@ -436,7 +456,7 @@ Possible values come from `WebXR's XRReferenceSpaceType <https://developer.mozil
 
 .. rst-class:: classref-property-setget
 
-- :ref:`String<class_String>` **get_reference_space_type** **(** **)**
+- :ref:`String<class_String>` **get_reference_space_type**\ (\ )
 
 The reference space type (from the list of requested types set in the :ref:`requested_reference_space_types<class_WebXRInterface_property_requested_reference_space_types>` property), that was ultimately used by :ref:`XRInterface.initialize<class_XRInterface_method_initialize>` when setting up the WebXR session.
 
@@ -454,8 +474,8 @@ Possible values come from `WebXR's XRReferenceSpaceType <https://developer.mozil
 
 .. rst-class:: classref-property-setget
 
-- void **set_requested_reference_space_types** **(** :ref:`String<class_String>` value **)**
-- :ref:`String<class_String>` **get_requested_reference_space_types** **(** **)**
+- |void| **set_requested_reference_space_types**\ (\ value\: :ref:`String<class_String>`\ )
+- :ref:`String<class_String>` **get_requested_reference_space_types**\ (\ )
 
 A comma-seperated list of reference space types used by :ref:`XRInterface.initialize<class_XRInterface_method_initialize>` when setting up the WebXR session.
 
@@ -477,8 +497,8 @@ Possible values come from `WebXR's XRReferenceSpaceType <https://developer.mozil
 
 .. rst-class:: classref-property-setget
 
-- void **set_required_features** **(** :ref:`String<class_String>` value **)**
-- :ref:`String<class_String>` **get_required_features** **(** **)**
+- |void| **set_required_features**\ (\ value\: :ref:`String<class_String>`\ )
+- :ref:`String<class_String>` **get_required_features**\ (\ )
 
 A comma-seperated list of required features used by :ref:`XRInterface.initialize<class_XRInterface_method_initialize>` when setting up the WebXR session.
 
@@ -500,8 +520,8 @@ Possible values come from `WebXR's XRReferenceSpaceType <https://developer.mozil
 
 .. rst-class:: classref-property-setget
 
-- void **set_session_mode** **(** :ref:`String<class_String>` value **)**
-- :ref:`String<class_String>` **get_session_mode** **(** **)**
+- |void| **set_session_mode**\ (\ value\: :ref:`String<class_String>`\ )
+- :ref:`String<class_String>` **get_session_mode**\ (\ )
 
 The session mode used by :ref:`XRInterface.initialize<class_XRInterface_method_initialize>` when setting up the WebXR session.
 
@@ -521,7 +541,7 @@ Possible values come from `WebXR's XRSessionMode <https://developer.mozilla.org/
 
 .. rst-class:: classref-property-setget
 
-- :ref:`String<class_String>` **get_visibility_state** **(** **)**
+- :ref:`String<class_String>` **get_visibility_state**\ (\ )
 
 Indicates if the WebXR session's imagery is visible to the user.
 
@@ -540,7 +560,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Array<class_Array>` **get_available_display_refresh_rates** **(** **)** |const|
+:ref:`Array<class_Array>` **get_available_display_refresh_rates**\ (\ ) |const|
 
 Returns display refresh rates supported by the current HMD. Only returned if this feature is supported by the web browser and after the interface has been initialized.
 
@@ -552,7 +572,7 @@ Returns display refresh rates supported by the current HMD. Only returned if thi
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **get_display_refresh_rate** **(** **)** |const|
+:ref:`float<class_float>` **get_display_refresh_rate**\ (\ ) |const|
 
 Returns the display refresh rate for the current HMD. Not supported on all HMDs and browsers. It may not report an accurate value until after using :ref:`set_display_refresh_rate<class_WebXRInterface_method_set_display_refresh_rate>`.
 
@@ -564,7 +584,7 @@ Returns the display refresh rate for the current HMD. Not supported on all HMDs 
 
 .. rst-class:: classref-method
 
-:ref:`TargetRayMode<enum_WebXRInterface_TargetRayMode>` **get_input_source_target_ray_mode** **(** :ref:`int<class_int>` input_source_id **)** |const|
+:ref:`TargetRayMode<enum_WebXRInterface_TargetRayMode>` **get_input_source_target_ray_mode**\ (\ input_source_id\: :ref:`int<class_int>`\ ) |const|
 
 Returns the target ray mode for the given ``input_source_id``.
 
@@ -578,7 +598,7 @@ This can help interpret the input coming from that input source. See `XRInputSou
 
 .. rst-class:: classref-method
 
-:ref:`XRPositionalTracker<class_XRPositionalTracker>` **get_input_source_tracker** **(** :ref:`int<class_int>` input_source_id **)** |const|
+:ref:`XRPositionalTracker<class_XRPositionalTracker>` **get_input_source_tracker**\ (\ input_source_id\: :ref:`int<class_int>`\ ) |const|
 
 Gets an :ref:`XRPositionalTracker<class_XRPositionalTracker>` for the given ``input_source_id``.
 
@@ -606,7 +626,7 @@ Use this method to get information about the input source that triggered one of 
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_input_source_active** **(** :ref:`int<class_int>` input_source_id **)** |const|
+:ref:`bool<class_bool>` **is_input_source_active**\ (\ input_source_id\: :ref:`int<class_int>`\ ) |const|
 
 Returns ``true`` if there is an active input source with the given ``input_source_id``.
 
@@ -618,7 +638,7 @@ Returns ``true`` if there is an active input source with the given ``input_sourc
 
 .. rst-class:: classref-method
 
-void **is_session_supported** **(** :ref:`String<class_String>` session_mode **)**
+|void| **is_session_supported**\ (\ session_mode\: :ref:`String<class_String>`\ )
 
 Checks if the given ``session_mode`` is supported by the user's browser.
 
@@ -634,7 +654,7 @@ This method returns nothing, instead it emits the :ref:`session_supported<class_
 
 .. rst-class:: classref-method
 
-void **set_display_refresh_rate** **(** :ref:`float<class_float>` refresh_rate **)**
+|void| **set_display_refresh_rate**\ (\ refresh_rate\: :ref:`float<class_float>`\ )
 
 Sets the display refresh rate for the current HMD. Not supported on all HMDs and browsers. It won't take effect right away until after :ref:`display_refresh_rate_changed<class_WebXRInterface_signal_display_refresh_rate_changed>` is emitted.
 
@@ -645,3 +665,4 @@ Sets the display refresh rate for the current HMD. Not supported on all HMDs and
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

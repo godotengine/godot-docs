@@ -52,9 +52,9 @@ Methods
 .. table::
    :widths: auto
 
-   +------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void | :ref:`set_arrays<class_ArrayOccluder3D_method_set_arrays>` **(** :ref:`PackedVector3Array<class_PackedVector3Array>` vertices, :ref:`PackedInt32Array<class_PackedInt32Array>` indices **)** |
-   +------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void| | :ref:`set_arrays<class_ArrayOccluder3D_method_set_arrays>`\ (\ vertices\: :ref:`PackedVector3Array<class_PackedVector3Array>`, indices\: :ref:`PackedInt32Array<class_PackedInt32Array>`\ ) |
+   +--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -73,8 +73,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_indices** **(** :ref:`PackedInt32Array<class_PackedInt32Array>` value **)**
-- :ref:`PackedInt32Array<class_PackedInt32Array>` **get_indices** **(** **)**
+- |void| **set_indices**\ (\ value\: :ref:`PackedInt32Array<class_PackedInt32Array>`\ )
+- :ref:`PackedInt32Array<class_PackedInt32Array>` **get_indices**\ (\ )
 
 The occluder's index position. Indices determine which points from the :ref:`vertices<class_ArrayOccluder3D_property_vertices>` array should be drawn, and in which order.
 
@@ -92,8 +92,8 @@ The occluder's index position. Indices determine which points from the :ref:`ver
 
 .. rst-class:: classref-property-setget
 
-- void **set_vertices** **(** :ref:`PackedVector3Array<class_PackedVector3Array>` value **)**
-- :ref:`PackedVector3Array<class_PackedVector3Array>` **get_vertices** **(** **)**
+- |void| **set_vertices**\ (\ value\: :ref:`PackedVector3Array<class_PackedVector3Array>`\ )
+- :ref:`PackedVector3Array<class_PackedVector3Array>` **get_vertices**\ (\ )
 
 The occluder's vertex positions in local 3D coordinates.
 
@@ -112,7 +112,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-void **set_arrays** **(** :ref:`PackedVector3Array<class_PackedVector3Array>` vertices, :ref:`PackedInt32Array<class_PackedInt32Array>` indices **)**
+|void| **set_arrays**\ (\ vertices\: :ref:`PackedVector3Array<class_PackedVector3Array>`, indices\: :ref:`PackedInt32Array<class_PackedInt32Array>`\ )
 
 Sets :ref:`indices<class_ArrayOccluder3D_property_indices>` and :ref:`vertices<class_ArrayOccluder3D_property_vertices>`, while updating the final occluder only once after both values are set.
 
@@ -123,3 +123,4 @@ Sets :ref:`indices<class_ArrayOccluder3D_property_indices>` and :ref:`vertices<c
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

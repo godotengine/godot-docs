@@ -148,7 +148,7 @@ No hints are added to the uniform declaration.
 
 :ref:`TextureType<enum_VisualShaderNodeTexture_TextureType>` **TYPE_COLOR** = ``1``
 
-Adds ``hint_albedo`` as hint to the uniform declaration for proper sRGB to linear conversion.
+Adds ``source_color`` as hint to the uniform declaration for proper sRGB to linear conversion.
 
 .. _class_VisualShaderNodeTexture_constant_TYPE_NORMAL_MAP:
 
@@ -183,8 +183,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_source** **(** :ref:`Source<enum_VisualShaderNodeTexture_Source>` value **)**
-- :ref:`Source<enum_VisualShaderNodeTexture_Source>` **get_source** **(** **)**
+- |void| **set_source**\ (\ value\: :ref:`Source<enum_VisualShaderNodeTexture_Source>`\ )
+- :ref:`Source<enum_VisualShaderNodeTexture_Source>` **get_source**\ (\ )
 
 Determines the source for the lookup. See :ref:`Source<enum_VisualShaderNodeTexture_Source>` for options.
 
@@ -200,8 +200,8 @@ Determines the source for the lookup. See :ref:`Source<enum_VisualShaderNodeText
 
 .. rst-class:: classref-property-setget
 
-- void **set_texture** **(** :ref:`Texture2D<class_Texture2D>` value **)**
-- :ref:`Texture2D<class_Texture2D>` **get_texture** **(** **)**
+- |void| **set_texture**\ (\ value\: :ref:`Texture2D<class_Texture2D>`\ )
+- :ref:`Texture2D<class_Texture2D>` **get_texture**\ (\ )
 
 The source texture, if needed for the selected :ref:`source<class_VisualShaderNodeTexture_property_source>`.
 
@@ -217,8 +217,8 @@ The source texture, if needed for the selected :ref:`source<class_VisualShaderNo
 
 .. rst-class:: classref-property-setget
 
-- void **set_texture_type** **(** :ref:`TextureType<enum_VisualShaderNodeTexture_TextureType>` value **)**
-- :ref:`TextureType<enum_VisualShaderNodeTexture_TextureType>` **get_texture_type** **(** **)**
+- |void| **set_texture_type**\ (\ value\: :ref:`TextureType<enum_VisualShaderNodeTexture_TextureType>`\ )
+- :ref:`TextureType<enum_VisualShaderNodeTexture_TextureType>` **get_texture_type**\ (\ )
 
 Specifies the type of the texture if :ref:`source<class_VisualShaderNodeTexture_property_source>` is set to :ref:`SOURCE_TEXTURE<class_VisualShaderNodeTexture_constant_SOURCE_TEXTURE>`. See :ref:`TextureType<enum_VisualShaderNodeTexture_TextureType>` for options.
 
@@ -229,3 +229,4 @@ Specifies the type of the texture if :ref:`source<class_VisualShaderNodeTexture_
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

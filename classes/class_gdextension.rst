@@ -40,11 +40,11 @@ Methods
 .. table::
    :widths: auto
 
-   +------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`InitializationLevel<enum_GDExtension_InitializationLevel>` | :ref:`get_minimum_library_initialization_level<class_GDExtension_method_get_minimum_library_initialization_level>` **(** **)** |const| |
-   +------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                                          | :ref:`is_library_open<class_GDExtension_method_is_library_open>` **(** **)** |const|                                                   |
-   +------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
+   +------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`InitializationLevel<enum_GDExtension_InitializationLevel>` | :ref:`get_minimum_library_initialization_level<class_GDExtension_method_get_minimum_library_initialization_level>`\ (\ ) |const| |
+   +------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                          | :ref:`is_library_open<class_GDExtension_method_is_library_open>`\ (\ ) |const|                                                   |
+   +------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -106,7 +106,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`InitializationLevel<enum_GDExtension_InitializationLevel>` **get_minimum_library_initialization_level** **(** **)** |const|
+:ref:`InitializationLevel<enum_GDExtension_InitializationLevel>` **get_minimum_library_initialization_level**\ (\ ) |const|
 
 Returns the lowest level required for this extension to be properly initialized (see the :ref:`InitializationLevel<enum_GDExtension_InitializationLevel>` enum).
 
@@ -118,7 +118,7 @@ Returns the lowest level required for this extension to be properly initialized 
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_library_open** **(** **)** |const|
+:ref:`bool<class_bool>` **is_library_open**\ (\ ) |const|
 
 Returns ``true`` if this extension's library has been opened.
 
@@ -129,3 +129,4 @@ Returns ``true`` if this extension's library has been opened.
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

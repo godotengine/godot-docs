@@ -47,13 +47,13 @@ Methods
 .. table::
    :widths: auto
 
-   +-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`TLSOptions<class_TLSOptions>` | :ref:`client<class_TLSOptions_method_client>` **(** :ref:`X509Certificate<class_X509Certificate>` trusted_chain=null, :ref:`String<class_String>` common_name_override="" **)** |static| |
-   +-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`TLSOptions<class_TLSOptions>` | :ref:`client_unsafe<class_TLSOptions_method_client_unsafe>` **(** :ref:`X509Certificate<class_X509Certificate>` trusted_chain=null **)** |static|                                        |
-   +-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`TLSOptions<class_TLSOptions>` | :ref:`server<class_TLSOptions_method_server>` **(** :ref:`CryptoKey<class_CryptoKey>` key, :ref:`X509Certificate<class_X509Certificate>` certificate **)** |static|                      |
-   +-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +-------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`TLSOptions<class_TLSOptions>` | :ref:`client<class_TLSOptions_method_client>`\ (\ trusted_chain\: :ref:`X509Certificate<class_X509Certificate>` = null, common_name_override\: :ref:`String<class_String>` = ""\ ) |static| |
+   +-------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`TLSOptions<class_TLSOptions>` | :ref:`client_unsafe<class_TLSOptions_method_client_unsafe>`\ (\ trusted_chain\: :ref:`X509Certificate<class_X509Certificate>` = null\ ) |static|                                            |
+   +-------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`TLSOptions<class_TLSOptions>` | :ref:`server<class_TLSOptions_method_server>`\ (\ key\: :ref:`CryptoKey<class_CryptoKey>`, certificate\: :ref:`X509Certificate<class_X509Certificate>`\ ) |static|                          |
+   +-------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -68,7 +68,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`TLSOptions<class_TLSOptions>` **client** **(** :ref:`X509Certificate<class_X509Certificate>` trusted_chain=null, :ref:`String<class_String>` common_name_override="" **)** |static|
+:ref:`TLSOptions<class_TLSOptions>` **client**\ (\ trusted_chain\: :ref:`X509Certificate<class_X509Certificate>` = null, common_name_override\: :ref:`String<class_String>` = ""\ ) |static|
 
 Creates a TLS client configuration which validates certificates and their common names (fully qualified domain names).
 
@@ -84,7 +84,7 @@ You can specify a custom ``trusted_chain`` of certification authorities (the def
 
 .. rst-class:: classref-method
 
-:ref:`TLSOptions<class_TLSOptions>` **client_unsafe** **(** :ref:`X509Certificate<class_X509Certificate>` trusted_chain=null **)** |static|
+:ref:`TLSOptions<class_TLSOptions>` **client_unsafe**\ (\ trusted_chain\: :ref:`X509Certificate<class_X509Certificate>` = null\ ) |static|
 
 Creates an **unsafe** TLS client configuration where certificate validation is optional. You can optionally provide a valid ``trusted_chain``, but the common name of the certificates will never be checked. Using this configuration for purposes other than testing **is not recommended**.
 
@@ -98,7 +98,7 @@ Creates an **unsafe** TLS client configuration where certificate validation is o
 
 .. rst-class:: classref-method
 
-:ref:`TLSOptions<class_TLSOptions>` **server** **(** :ref:`CryptoKey<class_CryptoKey>` key, :ref:`X509Certificate<class_X509Certificate>` certificate **)** |static|
+:ref:`TLSOptions<class_TLSOptions>` **server**\ (\ key\: :ref:`CryptoKey<class_CryptoKey>`, certificate\: :ref:`X509Certificate<class_X509Certificate>`\ ) |static|
 
 Creates a TLS server configuration using the provided ``key`` and ``certificate``.
 
@@ -111,3 +111,4 @@ Creates a TLS server configuration using the provided ``key`` and ``certificate`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

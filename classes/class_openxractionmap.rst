@@ -47,29 +47,29 @@ Methods
 .. table::
    :widths: auto
 
-   +-----------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                                            | :ref:`add_action_set<class_OpenXRActionMap_method_add_action_set>` **(** :ref:`OpenXRActionSet<class_OpenXRActionSet>` action_set **)**                                                    |
-   +-----------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                                            | :ref:`add_interaction_profile<class_OpenXRActionMap_method_add_interaction_profile>` **(** :ref:`OpenXRInteractionProfile<class_OpenXRInteractionProfile>` interaction_profile **)**       |
-   +-----------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                                            | :ref:`create_default_action_sets<class_OpenXRActionMap_method_create_default_action_sets>` **(** **)**                                                                                     |
-   +-----------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`OpenXRActionSet<class_OpenXRActionSet>`                   | :ref:`find_action_set<class_OpenXRActionMap_method_find_action_set>` **(** :ref:`String<class_String>` name **)** |const|                                                                  |
-   +-----------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`OpenXRInteractionProfile<class_OpenXRInteractionProfile>` | :ref:`find_interaction_profile<class_OpenXRActionMap_method_find_interaction_profile>` **(** :ref:`String<class_String>` name **)** |const|                                                |
-   +-----------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`OpenXRActionSet<class_OpenXRActionSet>`                   | :ref:`get_action_set<class_OpenXRActionMap_method_get_action_set>` **(** :ref:`int<class_int>` idx **)** |const|                                                                           |
-   +-----------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                                           | :ref:`get_action_set_count<class_OpenXRActionMap_method_get_action_set_count>` **(** **)** |const|                                                                                         |
-   +-----------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`OpenXRInteractionProfile<class_OpenXRInteractionProfile>` | :ref:`get_interaction_profile<class_OpenXRActionMap_method_get_interaction_profile>` **(** :ref:`int<class_int>` idx **)** |const|                                                         |
-   +-----------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                                           | :ref:`get_interaction_profile_count<class_OpenXRActionMap_method_get_interaction_profile_count>` **(** **)** |const|                                                                       |
-   +-----------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                                            | :ref:`remove_action_set<class_OpenXRActionMap_method_remove_action_set>` **(** :ref:`OpenXRActionSet<class_OpenXRActionSet>` action_set **)**                                              |
-   +-----------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                                            | :ref:`remove_interaction_profile<class_OpenXRActionMap_method_remove_interaction_profile>` **(** :ref:`OpenXRInteractionProfile<class_OpenXRInteractionProfile>` interaction_profile **)** |
-   +-----------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                          | :ref:`add_action_set<class_OpenXRActionMap_method_add_action_set>`\ (\ action_set\: :ref:`OpenXRActionSet<class_OpenXRActionSet>`\ )                                                    |
+   +-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                          | :ref:`add_interaction_profile<class_OpenXRActionMap_method_add_interaction_profile>`\ (\ interaction_profile\: :ref:`OpenXRInteractionProfile<class_OpenXRInteractionProfile>`\ )       |
+   +-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                          | :ref:`create_default_action_sets<class_OpenXRActionMap_method_create_default_action_sets>`\ (\ )                                                                                        |
+   +-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`OpenXRActionSet<class_OpenXRActionSet>`                   | :ref:`find_action_set<class_OpenXRActionMap_method_find_action_set>`\ (\ name\: :ref:`String<class_String>`\ ) |const|                                                                  |
+   +-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`OpenXRInteractionProfile<class_OpenXRInteractionProfile>` | :ref:`find_interaction_profile<class_OpenXRActionMap_method_find_interaction_profile>`\ (\ name\: :ref:`String<class_String>`\ ) |const|                                                |
+   +-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`OpenXRActionSet<class_OpenXRActionSet>`                   | :ref:`get_action_set<class_OpenXRActionMap_method_get_action_set>`\ (\ idx\: :ref:`int<class_int>`\ ) |const|                                                                           |
+   +-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                                           | :ref:`get_action_set_count<class_OpenXRActionMap_method_get_action_set_count>`\ (\ ) |const|                                                                                            |
+   +-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`OpenXRInteractionProfile<class_OpenXRInteractionProfile>` | :ref:`get_interaction_profile<class_OpenXRActionMap_method_get_interaction_profile>`\ (\ idx\: :ref:`int<class_int>`\ ) |const|                                                         |
+   +-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                                           | :ref:`get_interaction_profile_count<class_OpenXRActionMap_method_get_interaction_profile_count>`\ (\ ) |const|                                                                          |
+   +-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                          | :ref:`remove_action_set<class_OpenXRActionMap_method_remove_action_set>`\ (\ action_set\: :ref:`OpenXRActionSet<class_OpenXRActionSet>`\ )                                              |
+   +-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                          | :ref:`remove_interaction_profile<class_OpenXRActionMap_method_remove_interaction_profile>`\ (\ interaction_profile\: :ref:`OpenXRInteractionProfile<class_OpenXRInteractionProfile>`\ ) |
+   +-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -88,8 +88,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_action_sets** **(** :ref:`Array<class_Array>` value **)**
-- :ref:`Array<class_Array>` **get_action_sets** **(** **)**
+- |void| **set_action_sets**\ (\ value\: :ref:`Array<class_Array>`\ )
+- :ref:`Array<class_Array>` **get_action_sets**\ (\ )
 
 Collection of :ref:`OpenXRActionSet<class_OpenXRActionSet>`\ s that are part of this action map.
 
@@ -105,8 +105,8 @@ Collection of :ref:`OpenXRActionSet<class_OpenXRActionSet>`\ s that are part of 
 
 .. rst-class:: classref-property-setget
 
-- void **set_interaction_profiles** **(** :ref:`Array<class_Array>` value **)**
-- :ref:`Array<class_Array>` **get_interaction_profiles** **(** **)**
+- |void| **set_interaction_profiles**\ (\ value\: :ref:`Array<class_Array>`\ )
+- :ref:`Array<class_Array>` **get_interaction_profiles**\ (\ )
 
 Collection of :ref:`OpenXRInteractionProfile<class_OpenXRInteractionProfile>`\ s that are part of this action map.
 
@@ -123,7 +123,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-void **add_action_set** **(** :ref:`OpenXRActionSet<class_OpenXRActionSet>` action_set **)**
+|void| **add_action_set**\ (\ action_set\: :ref:`OpenXRActionSet<class_OpenXRActionSet>`\ )
 
 Add an action set.
 
@@ -135,7 +135,7 @@ Add an action set.
 
 .. rst-class:: classref-method
 
-void **add_interaction_profile** **(** :ref:`OpenXRInteractionProfile<class_OpenXRInteractionProfile>` interaction_profile **)**
+|void| **add_interaction_profile**\ (\ interaction_profile\: :ref:`OpenXRInteractionProfile<class_OpenXRInteractionProfile>`\ )
 
 Add an interaction profile.
 
@@ -147,7 +147,7 @@ Add an interaction profile.
 
 .. rst-class:: classref-method
 
-void **create_default_action_sets** **(** **)**
+|void| **create_default_action_sets**\ (\ )
 
 Setup this action set with our default actions.
 
@@ -159,7 +159,7 @@ Setup this action set with our default actions.
 
 .. rst-class:: classref-method
 
-:ref:`OpenXRActionSet<class_OpenXRActionSet>` **find_action_set** **(** :ref:`String<class_String>` name **)** |const|
+:ref:`OpenXRActionSet<class_OpenXRActionSet>` **find_action_set**\ (\ name\: :ref:`String<class_String>`\ ) |const|
 
 Retrieve an action set by name.
 
@@ -171,7 +171,7 @@ Retrieve an action set by name.
 
 .. rst-class:: classref-method
 
-:ref:`OpenXRInteractionProfile<class_OpenXRInteractionProfile>` **find_interaction_profile** **(** :ref:`String<class_String>` name **)** |const|
+:ref:`OpenXRInteractionProfile<class_OpenXRInteractionProfile>` **find_interaction_profile**\ (\ name\: :ref:`String<class_String>`\ ) |const|
 
 Find an interaction profile by its name (path).
 
@@ -183,7 +183,7 @@ Find an interaction profile by its name (path).
 
 .. rst-class:: classref-method
 
-:ref:`OpenXRActionSet<class_OpenXRActionSet>` **get_action_set** **(** :ref:`int<class_int>` idx **)** |const|
+:ref:`OpenXRActionSet<class_OpenXRActionSet>` **get_action_set**\ (\ idx\: :ref:`int<class_int>`\ ) |const|
 
 Retrieve the action set at this index.
 
@@ -195,7 +195,7 @@ Retrieve the action set at this index.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_action_set_count** **(** **)** |const|
+:ref:`int<class_int>` **get_action_set_count**\ (\ ) |const|
 
 Retrieve the number of actions sets in our action map.
 
@@ -207,7 +207,7 @@ Retrieve the number of actions sets in our action map.
 
 .. rst-class:: classref-method
 
-:ref:`OpenXRInteractionProfile<class_OpenXRInteractionProfile>` **get_interaction_profile** **(** :ref:`int<class_int>` idx **)** |const|
+:ref:`OpenXRInteractionProfile<class_OpenXRInteractionProfile>` **get_interaction_profile**\ (\ idx\: :ref:`int<class_int>`\ ) |const|
 
 Get the interaction profile at this index.
 
@@ -219,7 +219,7 @@ Get the interaction profile at this index.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_interaction_profile_count** **(** **)** |const|
+:ref:`int<class_int>` **get_interaction_profile_count**\ (\ ) |const|
 
 Retrieve the number of interaction profiles in our action map.
 
@@ -231,7 +231,7 @@ Retrieve the number of interaction profiles in our action map.
 
 .. rst-class:: classref-method
 
-void **remove_action_set** **(** :ref:`OpenXRActionSet<class_OpenXRActionSet>` action_set **)**
+|void| **remove_action_set**\ (\ action_set\: :ref:`OpenXRActionSet<class_OpenXRActionSet>`\ )
 
 Remove an action set.
 
@@ -243,7 +243,7 @@ Remove an action set.
 
 .. rst-class:: classref-method
 
-void **remove_interaction_profile** **(** :ref:`OpenXRInteractionProfile<class_OpenXRInteractionProfile>` interaction_profile **)**
+|void| **remove_interaction_profile**\ (\ interaction_profile\: :ref:`OpenXRInteractionProfile<class_OpenXRInteractionProfile>`\ )
 
 Remove an interaction profile.
 
@@ -254,3 +254,4 @@ Remove an interaction profile.
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

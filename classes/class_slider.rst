@@ -86,7 +86,7 @@ Signals
 
 .. rst-class:: classref-signal
 
-**drag_ended** **(** :ref:`bool<class_bool>` value_changed **)**
+**drag_ended**\ (\ value_changed\: :ref:`bool<class_bool>`\ )
 
 Emitted when dragging stops. If ``value_changed`` is true, :ref:`Range.value<class_Range_property_value>` is different from the value when you started the dragging.
 
@@ -98,7 +98,7 @@ Emitted when dragging stops. If ``value_changed`` is true, :ref:`Range.value<cla
 
 .. rst-class:: classref-signal
 
-**drag_started** **(** **)**
+**drag_started**\ (\ )
 
 Emitted when dragging is started. This is emitted before the corresponding :ref:`Range.value_changed<class_Range_signal_value_changed>` signal.
 
@@ -119,8 +119,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_editable** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_editable** **(** **)**
+- |void| **set_editable**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_editable**\ (\ )
 
 If ``true``, the slider can be interacted with. If ``false``, the value can be changed only by code.
 
@@ -136,8 +136,8 @@ If ``true``, the slider can be interacted with. If ``false``, the value can be c
 
 .. rst-class:: classref-property-setget
 
-- void **set_scrollable** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_scrollable** **(** **)**
+- |void| **set_scrollable**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_scrollable**\ (\ )
 
 If ``true``, the value can be changed using the mouse wheel.
 
@@ -153,8 +153,8 @@ If ``true``, the value can be changed using the mouse wheel.
 
 .. rst-class:: classref-property-setget
 
-- void **set_ticks** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_ticks** **(** **)**
+- |void| **set_ticks**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_ticks**\ (\ )
 
 Number of ticks displayed on the slider, including border ticks. Ticks are uniformly-distributed value markers.
 
@@ -170,8 +170,8 @@ Number of ticks displayed on the slider, including border ticks. Ticks are unifo
 
 .. rst-class:: classref-property-setget
 
-- void **set_ticks_on_borders** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **get_ticks_on_borders** **(** **)**
+- |void| **set_ticks_on_borders**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_ticks_on_borders**\ (\ )
 
 If ``true``, the slider will display ticks for minimum and maximum values.
 
@@ -295,3 +295,4 @@ The background for the whole slider. Affects the height or width of the :ref:`gr
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

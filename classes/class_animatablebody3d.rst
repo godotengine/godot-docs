@@ -63,8 +63,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_sync_to_physics** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_sync_to_physics_enabled** **(** **)**
+- |void| **set_sync_to_physics**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_sync_to_physics_enabled**\ (\ )
 
 If ``true``, the body's movement will be synchronized to the physics frame. This is useful when animating movement via :ref:`AnimationPlayer<class_AnimationPlayer>`, for example on moving platforms. Do **not** use together with :ref:`PhysicsBody3D.move_and_collide<class_PhysicsBody3D_method_move_and_collide>`.
 
@@ -75,3 +75,4 @@ If ``true``, the body's movement will be synchronized to the physics frame. This
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

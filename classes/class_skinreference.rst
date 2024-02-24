@@ -24,11 +24,11 @@ Methods
 .. table::
    :widths: auto
 
-   +-------------------------+----------------------------------------------------------------------------------+
-   | :ref:`RID<class_RID>`   | :ref:`get_skeleton<class_SkinReference_method_get_skeleton>` **(** **)** |const| |
-   +-------------------------+----------------------------------------------------------------------------------+
-   | :ref:`Skin<class_Skin>` | :ref:`get_skin<class_SkinReference_method_get_skin>` **(** **)** |const|         |
-   +-------------------------+----------------------------------------------------------------------------------+
+   +-------------------------+----------------------------------------------------------------------------+
+   | :ref:`RID<class_RID>`   | :ref:`get_skeleton<class_SkinReference_method_get_skeleton>`\ (\ ) |const| |
+   +-------------------------+----------------------------------------------------------------------------+
+   | :ref:`Skin<class_Skin>` | :ref:`get_skin<class_SkinReference_method_get_skin>`\ (\ ) |const|         |
+   +-------------------------+----------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -43,7 +43,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`RID<class_RID>` **get_skeleton** **(** **)** |const|
+:ref:`RID<class_RID>` **get_skeleton**\ (\ ) |const|
 
 .. container:: contribute
 
@@ -57,7 +57,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Skin<class_Skin>` **get_skin** **(** **)** |const|
+:ref:`Skin<class_Skin>` **get_skin**\ (\ ) |const|
 
 .. container:: contribute
 
@@ -70,3 +70,4 @@ Method Descriptions
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

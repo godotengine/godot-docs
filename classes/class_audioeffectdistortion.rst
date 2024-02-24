@@ -128,8 +128,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_drive** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_drive** **(** **)**
+- |void| **set_drive**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_drive**\ (\ )
 
 Distortion power. Value can range from 0 to 1.
 
@@ -145,8 +145,8 @@ Distortion power. Value can range from 0 to 1.
 
 .. rst-class:: classref-property-setget
 
-- void **set_keep_hf_hz** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_keep_hf_hz** **(** **)**
+- |void| **set_keep_hf_hz**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_keep_hf_hz**\ (\ )
 
 High-pass filter, in Hz. Frequencies higher than this value will not be affected by the distortion. Value can range from 1 to 20000.
 
@@ -162,8 +162,8 @@ High-pass filter, in Hz. Frequencies higher than this value will not be affected
 
 .. rst-class:: classref-property-setget
 
-- void **set_mode** **(** :ref:`Mode<enum_AudioEffectDistortion_Mode>` value **)**
-- :ref:`Mode<enum_AudioEffectDistortion_Mode>` **get_mode** **(** **)**
+- |void| **set_mode**\ (\ value\: :ref:`Mode<enum_AudioEffectDistortion_Mode>`\ )
+- :ref:`Mode<enum_AudioEffectDistortion_Mode>` **get_mode**\ (\ )
 
 Distortion type.
 
@@ -179,8 +179,8 @@ Distortion type.
 
 .. rst-class:: classref-property-setget
 
-- void **set_post_gain** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_post_gain** **(** **)**
+- |void| **set_post_gain**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_post_gain**\ (\ )
 
 Increases or decreases the volume after the effect, in decibels. Value can range from -80 to 24.
 
@@ -196,8 +196,8 @@ Increases or decreases the volume after the effect, in decibels. Value can range
 
 .. rst-class:: classref-property-setget
 
-- void **set_pre_gain** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_pre_gain** **(** **)**
+- |void| **set_pre_gain**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_pre_gain**\ (\ )
 
 Increases or decreases the volume before the effect, in decibels. Value can range from -60 to 60.
 
@@ -208,3 +208,4 @@ Increases or decreases the volume before the effect, in decibels. Value can rang
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

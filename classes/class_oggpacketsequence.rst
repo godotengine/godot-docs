@@ -29,13 +29,13 @@ Properties
 .. table::
    :widths: auto
 
-   +-------------------------------------------------+------------------------------------------------------------------------------+------------------------+
-   | :ref:`PackedInt64Array<class_PackedInt64Array>` | :ref:`granule_positions<class_OggPacketSequence_property_granule_positions>` | ``PackedInt64Array()`` |
-   +-------------------------------------------------+------------------------------------------------------------------------------+------------------------+
-   | :ref:`Array[]<class_Array>`                     | :ref:`packet_data<class_OggPacketSequence_property_packet_data>`             | ``[]``                 |
-   +-------------------------------------------------+------------------------------------------------------------------------------+------------------------+
-   | :ref:`float<class_float>`                       | :ref:`sampling_rate<class_OggPacketSequence_property_sampling_rate>`         | ``0.0``                |
-   +-------------------------------------------------+------------------------------------------------------------------------------+------------------------+
+   +--------------------------------------------------------+------------------------------------------------------------------------------+------------------------+
+   | :ref:`PackedInt64Array<class_PackedInt64Array>`        | :ref:`granule_positions<class_OggPacketSequence_property_granule_positions>` | ``PackedInt64Array()`` |
+   +--------------------------------------------------------+------------------------------------------------------------------------------+------------------------+
+   | :ref:`Array<class_Array>`\[:ref:`Array<class_Array>`\] | :ref:`packet_data<class_OggPacketSequence_property_packet_data>`             | ``[]``                 |
+   +--------------------------------------------------------+------------------------------------------------------------------------------+------------------------+
+   | :ref:`float<class_float>`                              | :ref:`sampling_rate<class_OggPacketSequence_property_sampling_rate>`         | ``0.0``                |
+   +--------------------------------------------------------+------------------------------------------------------------------------------+------------------------+
 
 .. rst-class:: classref-reftable-group
 
@@ -45,9 +45,9 @@ Methods
 .. table::
    :widths: auto
 
-   +---------------------------+----------------------------------------------------------------------------------+
-   | :ref:`float<class_float>` | :ref:`get_length<class_OggPacketSequence_method_get_length>` **(** **)** |const| |
-   +---------------------------+----------------------------------------------------------------------------------+
+   +---------------------------+----------------------------------------------------------------------------+
+   | :ref:`float<class_float>` | :ref:`get_length<class_OggPacketSequence_method_get_length>`\ (\ ) |const| |
+   +---------------------------+----------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -66,8 +66,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_packet_granule_positions** **(** :ref:`PackedInt64Array<class_PackedInt64Array>` value **)**
-- :ref:`PackedInt64Array<class_PackedInt64Array>` **get_packet_granule_positions** **(** **)**
+- |void| **set_packet_granule_positions**\ (\ value\: :ref:`PackedInt64Array<class_PackedInt64Array>`\ )
+- :ref:`PackedInt64Array<class_PackedInt64Array>` **get_packet_granule_positions**\ (\ )
 
 Contains the granule positions for each page in this packet sequence.
 
@@ -79,12 +79,12 @@ Contains the granule positions for each page in this packet sequence.
 
 .. rst-class:: classref-property
 
-:ref:`Array[]<class_Array>` **packet_data** = ``[]``
+:ref:`Array<class_Array>`\[:ref:`Array<class_Array>`\] **packet_data** = ``[]``
 
 .. rst-class:: classref-property-setget
 
-- void **set_packet_data** **(** :ref:`Array[]<class_Array>` value **)**
-- :ref:`Array[]<class_Array>` **get_packet_data** **(** **)**
+- |void| **set_packet_data**\ (\ value\: :ref:`Array<class_Array>`\[:ref:`Array<class_Array>`\]\ )
+- :ref:`Array<class_Array>`\[:ref:`Array<class_Array>`\] **get_packet_data**\ (\ )
 
 Contains the raw packets that make up this OggPacketSequence.
 
@@ -100,8 +100,8 @@ Contains the raw packets that make up this OggPacketSequence.
 
 .. rst-class:: classref-property-setget
 
-- void **set_sampling_rate** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_sampling_rate** **(** **)**
+- |void| **set_sampling_rate**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_sampling_rate**\ (\ )
 
 Holds sample rate information about this sequence. Must be set by another class that actually understands the codec.
 
@@ -118,7 +118,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **get_length** **(** **)** |const|
+:ref:`float<class_float>` **get_length**\ (\ ) |const|
 
 The length of this stream, in seconds.
 
@@ -129,3 +129,4 @@ The length of this stream, in seconds.
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

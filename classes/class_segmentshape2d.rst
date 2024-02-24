@@ -52,8 +52,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_a** **(** :ref:`Vector2<class_Vector2>` value **)**
-- :ref:`Vector2<class_Vector2>` **get_a** **(** **)**
+- |void| **set_a**\ (\ value\: :ref:`Vector2<class_Vector2>`\ )
+- :ref:`Vector2<class_Vector2>` **get_a**\ (\ )
 
 The segment's first point position.
 
@@ -69,8 +69,8 @@ The segment's first point position.
 
 .. rst-class:: classref-property-setget
 
-- void **set_b** **(** :ref:`Vector2<class_Vector2>` value **)**
-- :ref:`Vector2<class_Vector2>` **get_b** **(** **)**
+- |void| **set_b**\ (\ value\: :ref:`Vector2<class_Vector2>`\ )
+- :ref:`Vector2<class_Vector2>` **get_b**\ (\ )
 
 The segment's second point position.
 
@@ -81,3 +81,4 @@ The segment's second point position.
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

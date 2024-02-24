@@ -50,8 +50,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_parameter_name** **(** :ref:`String<class_String>` value **)**
-- :ref:`String<class_String>` **get_parameter_name** **(** **)**
+- |void| **set_parameter_name**\ (\ value\: :ref:`String<class_String>`\ )
+- :ref:`String<class_String>` **get_parameter_name**\ (\ )
 
 The name of the parameter which this reference points to.
 
@@ -62,3 +62,4 @@ The name of the parameter which this reference points to.
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

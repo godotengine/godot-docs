@@ -193,8 +193,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_function** **(** :ref:`Function<enum_VisualShaderNodeDerivativeFunc_Function>` value **)**
-- :ref:`Function<enum_VisualShaderNodeDerivativeFunc_Function>` **get_function** **(** **)**
+- |void| **set_function**\ (\ value\: :ref:`Function<enum_VisualShaderNodeDerivativeFunc_Function>`\ )
+- :ref:`Function<enum_VisualShaderNodeDerivativeFunc_Function>` **get_function**\ (\ )
 
 A derivative function type. See :ref:`Function<enum_VisualShaderNodeDerivativeFunc_Function>` for options.
 
@@ -210,8 +210,8 @@ A derivative function type. See :ref:`Function<enum_VisualShaderNodeDerivativeFu
 
 .. rst-class:: classref-property-setget
 
-- void **set_op_type** **(** :ref:`OpType<enum_VisualShaderNodeDerivativeFunc_OpType>` value **)**
-- :ref:`OpType<enum_VisualShaderNodeDerivativeFunc_OpType>` **get_op_type** **(** **)**
+- |void| **set_op_type**\ (\ value\: :ref:`OpType<enum_VisualShaderNodeDerivativeFunc_OpType>`\ )
+- :ref:`OpType<enum_VisualShaderNodeDerivativeFunc_OpType>` **get_op_type**\ (\ )
 
 A type of operands and returned value. See :ref:`OpType<enum_VisualShaderNodeDerivativeFunc_OpType>` for options.
 
@@ -227,8 +227,8 @@ A type of operands and returned value. See :ref:`OpType<enum_VisualShaderNodeDer
 
 .. rst-class:: classref-property-setget
 
-- void **set_precision** **(** :ref:`Precision<enum_VisualShaderNodeDerivativeFunc_Precision>` value **)**
-- :ref:`Precision<enum_VisualShaderNodeDerivativeFunc_Precision>` **get_precision** **(** **)**
+- |void| **set_precision**\ (\ value\: :ref:`Precision<enum_VisualShaderNodeDerivativeFunc_Precision>`\ )
+- :ref:`Precision<enum_VisualShaderNodeDerivativeFunc_Precision>` **get_precision**\ (\ )
 
 Sets the level of precision to use for the derivative function. See :ref:`Precision<enum_VisualShaderNodeDerivativeFunc_Precision>` for options. When using the GL Compatibility renderer, this setting has no effect.
 
@@ -239,3 +239,4 @@ Sets the level of precision to use for the derivative function. See :ref:`Precis
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

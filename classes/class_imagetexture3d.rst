@@ -31,11 +31,11 @@ Methods
 .. table::
    :widths: auto
 
-   +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Error<enum_@GlobalScope_Error>` | :ref:`create<class_ImageTexture3D_method_create>` **(** :ref:`Format<enum_Image_Format>` format, :ref:`int<class_int>` width, :ref:`int<class_int>` height, :ref:`int<class_int>` depth, :ref:`bool<class_bool>` use_mipmaps, :ref:`Image[]<class_Image>` data **)** |
-   +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                  | :ref:`update<class_ImageTexture3D_method_update>` **(** :ref:`Image[]<class_Image>` data **)**                                                                                                                                                                       |
-   +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>` | :ref:`create<class_ImageTexture3D_method_create>`\ (\ format\: :ref:`Format<enum_Image_Format>`, width\: :ref:`int<class_int>`, height\: :ref:`int<class_int>`, depth\: :ref:`int<class_int>`, use_mipmaps\: :ref:`bool<class_bool>`, data\: :ref:`Array<class_Array>`\[:ref:`Image<class_Image>`\]\ ) |
+   +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                | :ref:`update<class_ImageTexture3D_method_update>`\ (\ data\: :ref:`Array<class_Array>`\[:ref:`Image<class_Image>`\]\ )                                                                                                                                                                                 |
+   +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -50,7 +50,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **create** **(** :ref:`Format<enum_Image_Format>` format, :ref:`int<class_int>` width, :ref:`int<class_int>` height, :ref:`int<class_int>` depth, :ref:`bool<class_bool>` use_mipmaps, :ref:`Image[]<class_Image>` data **)**
+:ref:`Error<enum_@GlobalScope_Error>` **create**\ (\ format\: :ref:`Format<enum_Image_Format>`, width\: :ref:`int<class_int>`, height\: :ref:`int<class_int>`, depth\: :ref:`int<class_int>`, use_mipmaps\: :ref:`bool<class_bool>`, data\: :ref:`Array<class_Array>`\[:ref:`Image<class_Image>`\]\ )
 
 Creates the **ImageTexture3D** with specified ``width``, ``height``, and ``depth``. See :ref:`Format<enum_Image_Format>` for ``format`` options. If ``use_mipmaps`` is ``true``, then generate mipmaps for the **ImageTexture3D**.
 
@@ -62,7 +62,7 @@ Creates the **ImageTexture3D** with specified ``width``, ``height``, and ``depth
 
 .. rst-class:: classref-method
 
-void **update** **(** :ref:`Image[]<class_Image>` data **)**
+|void| **update**\ (\ data\: :ref:`Array<class_Array>`\[:ref:`Image<class_Image>`\]\ )
 
 Replaces the texture's existing data with the layers specified in ``data``. The size of ``data`` must match the parameters that were used for :ref:`create<class_ImageTexture3D_method_create>`. In other words, the texture cannot be resized or have its format changed by calling :ref:`update<class_ImageTexture3D_method_update>`.
 
@@ -73,3 +73,4 @@ Replaces the texture's existing data with the layers specified in ``data``. The 
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

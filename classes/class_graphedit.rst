@@ -95,55 +95,55 @@ Methods
 .. table::
    :widths: auto
 
-   +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`PackedVector2Array<class_PackedVector2Array>` | :ref:`_get_connection_line<class_GraphEdit_private_method__get_connection_line>` **(** :ref:`Vector2<class_Vector2>` from_position, :ref:`Vector2<class_Vector2>` to_position **)** |virtual| |const|                                                                                   |
-   +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                             | :ref:`_is_in_input_hotzone<class_GraphEdit_private_method__is_in_input_hotzone>` **(** :ref:`Object<class_Object>` in_node, :ref:`int<class_int>` in_port, :ref:`Vector2<class_Vector2>` mouse_position **)** |virtual|                                                                 |
-   +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                             | :ref:`_is_in_output_hotzone<class_GraphEdit_private_method__is_in_output_hotzone>` **(** :ref:`Object<class_Object>` in_node, :ref:`int<class_int>` in_port, :ref:`Vector2<class_Vector2>` mouse_position **)** |virtual|                                                               |
-   +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                             | :ref:`_is_node_hover_valid<class_GraphEdit_private_method__is_node_hover_valid>` **(** :ref:`StringName<class_StringName>` from_node, :ref:`int<class_int>` from_port, :ref:`StringName<class_StringName>` to_node, :ref:`int<class_int>` to_port **)** |virtual|                       |
-   +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                                | :ref:`add_valid_connection_type<class_GraphEdit_method_add_valid_connection_type>` **(** :ref:`int<class_int>` from_type, :ref:`int<class_int>` to_type **)**                                                                                                                           |
-   +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                                | :ref:`add_valid_left_disconnect_type<class_GraphEdit_method_add_valid_left_disconnect_type>` **(** :ref:`int<class_int>` type **)**                                                                                                                                                     |
-   +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                                | :ref:`add_valid_right_disconnect_type<class_GraphEdit_method_add_valid_right_disconnect_type>` **(** :ref:`int<class_int>` type **)**                                                                                                                                                   |
-   +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                                | :ref:`arrange_nodes<class_GraphEdit_method_arrange_nodes>` **(** **)**                                                                                                                                                                                                                  |
-   +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                                | :ref:`clear_connections<class_GraphEdit_method_clear_connections>` **(** **)**                                                                                                                                                                                                          |
-   +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Error<enum_@GlobalScope_Error>`               | :ref:`connect_node<class_GraphEdit_method_connect_node>` **(** :ref:`StringName<class_StringName>` from_node, :ref:`int<class_int>` from_port, :ref:`StringName<class_StringName>` to_node, :ref:`int<class_int>` to_port **)**                                                         |
-   +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                                | :ref:`disconnect_node<class_GraphEdit_method_disconnect_node>` **(** :ref:`StringName<class_StringName>` from_node, :ref:`int<class_int>` from_port, :ref:`StringName<class_StringName>` to_node, :ref:`int<class_int>` to_port **)**                                                   |
-   +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                                | :ref:`force_connection_drag_end<class_GraphEdit_method_force_connection_drag_end>` **(** **)**                                                                                                                                                                                          |
-   +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Dictionary<class_Dictionary>`                 | :ref:`get_closest_connection_at_point<class_GraphEdit_method_get_closest_connection_at_point>` **(** :ref:`Vector2<class_Vector2>` point, :ref:`float<class_float>` max_distance=4.0 **)** |const|                                                                                      |
-   +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`PackedVector2Array<class_PackedVector2Array>` | :ref:`get_connection_line<class_GraphEdit_method_get_connection_line>` **(** :ref:`Vector2<class_Vector2>` from_node, :ref:`Vector2<class_Vector2>` to_node **)** |const|                                                                                                               |
-   +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Dictionary[]<class_Dictionary>`               | :ref:`get_connection_list<class_GraphEdit_method_get_connection_list>` **(** **)** |const|                                                                                                                                                                                              |
-   +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Dictionary[]<class_Dictionary>`               | :ref:`get_connections_intersecting_with_rect<class_GraphEdit_method_get_connections_intersecting_with_rect>` **(** :ref:`Rect2<class_Rect2>` rect **)** |const|                                                                                                                         |
-   +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`HBoxContainer<class_HBoxContainer>`           | :ref:`get_menu_hbox<class_GraphEdit_method_get_menu_hbox>` **(** **)**                                                                                                                                                                                                                  |
-   +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                             | :ref:`is_node_connected<class_GraphEdit_method_is_node_connected>` **(** :ref:`StringName<class_StringName>` from_node, :ref:`int<class_int>` from_port, :ref:`StringName<class_StringName>` to_node, :ref:`int<class_int>` to_port **)**                                               |
-   +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                             | :ref:`is_valid_connection_type<class_GraphEdit_method_is_valid_connection_type>` **(** :ref:`int<class_int>` from_type, :ref:`int<class_int>` to_type **)** |const|                                                                                                                     |
-   +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                                | :ref:`remove_valid_connection_type<class_GraphEdit_method_remove_valid_connection_type>` **(** :ref:`int<class_int>` from_type, :ref:`int<class_int>` to_type **)**                                                                                                                     |
-   +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                                | :ref:`remove_valid_left_disconnect_type<class_GraphEdit_method_remove_valid_left_disconnect_type>` **(** :ref:`int<class_int>` type **)**                                                                                                                                               |
-   +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                                | :ref:`remove_valid_right_disconnect_type<class_GraphEdit_method_remove_valid_right_disconnect_type>` **(** :ref:`int<class_int>` type **)**                                                                                                                                             |
-   +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                                | :ref:`set_connection_activity<class_GraphEdit_method_set_connection_activity>` **(** :ref:`StringName<class_StringName>` from_node, :ref:`int<class_int>` from_port, :ref:`StringName<class_StringName>` to_node, :ref:`int<class_int>` to_port, :ref:`float<class_float>` amount **)** |
-   +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                                | :ref:`set_selected<class_GraphEdit_method_set_selected>` **(** :ref:`Node<class_Node>` node **)**                                                                                                                                                                                       |
-   +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PackedVector2Array<class_PackedVector2Array>`              | :ref:`_get_connection_line<class_GraphEdit_private_method__get_connection_line>`\ (\ from_position\: :ref:`Vector2<class_Vector2>`, to_position\: :ref:`Vector2<class_Vector2>`\ ) |virtual| |const|                                                                                         |
+   +------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                          | :ref:`_is_in_input_hotzone<class_GraphEdit_private_method__is_in_input_hotzone>`\ (\ in_node\: :ref:`Object<class_Object>`, in_port\: :ref:`int<class_int>`, mouse_position\: :ref:`Vector2<class_Vector2>`\ ) |virtual|                                                                     |
+   +------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                          | :ref:`_is_in_output_hotzone<class_GraphEdit_private_method__is_in_output_hotzone>`\ (\ in_node\: :ref:`Object<class_Object>`, in_port\: :ref:`int<class_int>`, mouse_position\: :ref:`Vector2<class_Vector2>`\ ) |virtual|                                                                   |
+   +------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                          | :ref:`_is_node_hover_valid<class_GraphEdit_private_method__is_node_hover_valid>`\ (\ from_node\: :ref:`StringName<class_StringName>`, from_port\: :ref:`int<class_int>`, to_node\: :ref:`StringName<class_StringName>`, to_port\: :ref:`int<class_int>`\ ) |virtual|                         |
+   +------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                           | :ref:`add_valid_connection_type<class_GraphEdit_method_add_valid_connection_type>`\ (\ from_type\: :ref:`int<class_int>`, to_type\: :ref:`int<class_int>`\ )                                                                                                                                 |
+   +------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                           | :ref:`add_valid_left_disconnect_type<class_GraphEdit_method_add_valid_left_disconnect_type>`\ (\ type\: :ref:`int<class_int>`\ )                                                                                                                                                             |
+   +------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                           | :ref:`add_valid_right_disconnect_type<class_GraphEdit_method_add_valid_right_disconnect_type>`\ (\ type\: :ref:`int<class_int>`\ )                                                                                                                                                           |
+   +------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                           | :ref:`arrange_nodes<class_GraphEdit_method_arrange_nodes>`\ (\ )                                                                                                                                                                                                                             |
+   +------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                           | :ref:`clear_connections<class_GraphEdit_method_clear_connections>`\ (\ )                                                                                                                                                                                                                     |
+   +------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>`                            | :ref:`connect_node<class_GraphEdit_method_connect_node>`\ (\ from_node\: :ref:`StringName<class_StringName>`, from_port\: :ref:`int<class_int>`, to_node\: :ref:`StringName<class_StringName>`, to_port\: :ref:`int<class_int>`\ )                                                           |
+   +------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                           | :ref:`disconnect_node<class_GraphEdit_method_disconnect_node>`\ (\ from_node\: :ref:`StringName<class_StringName>`, from_port\: :ref:`int<class_int>`, to_node\: :ref:`StringName<class_StringName>`, to_port\: :ref:`int<class_int>`\ )                                                     |
+   +------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                           | :ref:`force_connection_drag_end<class_GraphEdit_method_force_connection_drag_end>`\ (\ )                                                                                                                                                                                                     |
+   +------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Dictionary<class_Dictionary>`                              | :ref:`get_closest_connection_at_point<class_GraphEdit_method_get_closest_connection_at_point>`\ (\ point\: :ref:`Vector2<class_Vector2>`, max_distance\: :ref:`float<class_float>` = 4.0\ ) |const|                                                                                          |
+   +------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PackedVector2Array<class_PackedVector2Array>`              | :ref:`get_connection_line<class_GraphEdit_method_get_connection_line>`\ (\ from_node\: :ref:`Vector2<class_Vector2>`, to_node\: :ref:`Vector2<class_Vector2>`\ ) |const|                                                                                                                     |
+   +------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Array<class_Array>`\[:ref:`Dictionary<class_Dictionary>`\] | :ref:`get_connection_list<class_GraphEdit_method_get_connection_list>`\ (\ ) |const|                                                                                                                                                                                                         |
+   +------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Array<class_Array>`\[:ref:`Dictionary<class_Dictionary>`\] | :ref:`get_connections_intersecting_with_rect<class_GraphEdit_method_get_connections_intersecting_with_rect>`\ (\ rect\: :ref:`Rect2<class_Rect2>`\ ) |const|                                                                                                                                 |
+   +------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`HBoxContainer<class_HBoxContainer>`                        | :ref:`get_menu_hbox<class_GraphEdit_method_get_menu_hbox>`\ (\ )                                                                                                                                                                                                                             |
+   +------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                          | :ref:`is_node_connected<class_GraphEdit_method_is_node_connected>`\ (\ from_node\: :ref:`StringName<class_StringName>`, from_port\: :ref:`int<class_int>`, to_node\: :ref:`StringName<class_StringName>`, to_port\: :ref:`int<class_int>`\ )                                                 |
+   +------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                          | :ref:`is_valid_connection_type<class_GraphEdit_method_is_valid_connection_type>`\ (\ from_type\: :ref:`int<class_int>`, to_type\: :ref:`int<class_int>`\ ) |const|                                                                                                                           |
+   +------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                           | :ref:`remove_valid_connection_type<class_GraphEdit_method_remove_valid_connection_type>`\ (\ from_type\: :ref:`int<class_int>`, to_type\: :ref:`int<class_int>`\ )                                                                                                                           |
+   +------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                           | :ref:`remove_valid_left_disconnect_type<class_GraphEdit_method_remove_valid_left_disconnect_type>`\ (\ type\: :ref:`int<class_int>`\ )                                                                                                                                                       |
+   +------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                           | :ref:`remove_valid_right_disconnect_type<class_GraphEdit_method_remove_valid_right_disconnect_type>`\ (\ type\: :ref:`int<class_int>`\ )                                                                                                                                                     |
+   +------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                           | :ref:`set_connection_activity<class_GraphEdit_method_set_connection_activity>`\ (\ from_node\: :ref:`StringName<class_StringName>`, from_port\: :ref:`int<class_int>`, to_node\: :ref:`StringName<class_StringName>`, to_port\: :ref:`int<class_int>`, amount\: :ref:`float<class_float>`\ ) |
+   +------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                           | :ref:`set_selected<class_GraphEdit_method_set_selected>`\ (\ node\: :ref:`Node<class_Node>`\ )                                                                                                                                                                                               |
+   +------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-reftable-group
 
@@ -206,7 +206,7 @@ Signals
 
 .. rst-class:: classref-signal
 
-**begin_node_move** **(** **)**
+**begin_node_move**\ (\ )
 
 Emitted at the beginning of a :ref:`GraphElement<class_GraphElement>`'s movement.
 
@@ -218,7 +218,7 @@ Emitted at the beginning of a :ref:`GraphElement<class_GraphElement>`'s movement
 
 .. rst-class:: classref-signal
 
-**connection_drag_ended** **(** **)**
+**connection_drag_ended**\ (\ )
 
 Emitted at the end of a connection drag.
 
@@ -230,7 +230,7 @@ Emitted at the end of a connection drag.
 
 .. rst-class:: classref-signal
 
-**connection_drag_started** **(** :ref:`StringName<class_StringName>` from_node, :ref:`int<class_int>` from_port, :ref:`bool<class_bool>` is_output **)**
+**connection_drag_started**\ (\ from_node\: :ref:`StringName<class_StringName>`, from_port\: :ref:`int<class_int>`, is_output\: :ref:`bool<class_bool>`\ )
 
 Emitted at the beginning of a connection drag.
 
@@ -242,7 +242,7 @@ Emitted at the beginning of a connection drag.
 
 .. rst-class:: classref-signal
 
-**connection_from_empty** **(** :ref:`StringName<class_StringName>` to_node, :ref:`int<class_int>` to_port, :ref:`Vector2<class_Vector2>` release_position **)**
+**connection_from_empty**\ (\ to_node\: :ref:`StringName<class_StringName>`, to_port\: :ref:`int<class_int>`, release_position\: :ref:`Vector2<class_Vector2>`\ )
 
 Emitted when user drags a connection from an input port into the empty space of the graph.
 
@@ -254,7 +254,7 @@ Emitted when user drags a connection from an input port into the empty space of 
 
 .. rst-class:: classref-signal
 
-**connection_request** **(** :ref:`StringName<class_StringName>` from_node, :ref:`int<class_int>` from_port, :ref:`StringName<class_StringName>` to_node, :ref:`int<class_int>` to_port **)**
+**connection_request**\ (\ from_node\: :ref:`StringName<class_StringName>`, from_port\: :ref:`int<class_int>`, to_node\: :ref:`StringName<class_StringName>`, to_port\: :ref:`int<class_int>`\ )
 
 Emitted to the GraphEdit when the connection between the ``from_port`` of the ``from_node`` :ref:`GraphNode<class_GraphNode>` and the ``to_port`` of the ``to_node`` :ref:`GraphNode<class_GraphNode>` is attempted to be created.
 
@@ -266,7 +266,7 @@ Emitted to the GraphEdit when the connection between the ``from_port`` of the ``
 
 .. rst-class:: classref-signal
 
-**connection_to_empty** **(** :ref:`StringName<class_StringName>` from_node, :ref:`int<class_int>` from_port, :ref:`Vector2<class_Vector2>` release_position **)**
+**connection_to_empty**\ (\ from_node\: :ref:`StringName<class_StringName>`, from_port\: :ref:`int<class_int>`, release_position\: :ref:`Vector2<class_Vector2>`\ )
 
 Emitted when user drags a connection from an output port into the empty space of the graph.
 
@@ -278,7 +278,7 @@ Emitted when user drags a connection from an output port into the empty space of
 
 .. rst-class:: classref-signal
 
-**copy_nodes_request** **(** **)**
+**copy_nodes_request**\ (\ )
 
 Emitted when this **GraphEdit** captures a ``ui_copy`` action (:kbd:`Ctrl + C` by default). In general, this signal indicates that the selected :ref:`GraphElement<class_GraphElement>`\ s should be copied.
 
@@ -290,7 +290,7 @@ Emitted when this **GraphEdit** captures a ``ui_copy`` action (:kbd:`Ctrl + C` b
 
 .. rst-class:: classref-signal
 
-**delete_nodes_request** **(** :ref:`StringName[]<class_StringName>` nodes **)**
+**delete_nodes_request**\ (\ nodes\: :ref:`Array<class_Array>`\[:ref:`StringName<class_StringName>`\]\ )
 
 Emitted when this **GraphEdit** captures a ``ui_graph_delete`` action (:kbd:`Delete` by default).
 
@@ -304,7 +304,7 @@ Emitted when this **GraphEdit** captures a ``ui_graph_delete`` action (:kbd:`Del
 
 .. rst-class:: classref-signal
 
-**disconnection_request** **(** :ref:`StringName<class_StringName>` from_node, :ref:`int<class_int>` from_port, :ref:`StringName<class_StringName>` to_node, :ref:`int<class_int>` to_port **)**
+**disconnection_request**\ (\ from_node\: :ref:`StringName<class_StringName>`, from_port\: :ref:`int<class_int>`, to_node\: :ref:`StringName<class_StringName>`, to_port\: :ref:`int<class_int>`\ )
 
 Emitted to the GraphEdit when the connection between ``from_port`` of ``from_node`` :ref:`GraphNode<class_GraphNode>` and ``to_port`` of ``to_node`` :ref:`GraphNode<class_GraphNode>` is attempted to be removed.
 
@@ -316,7 +316,7 @@ Emitted to the GraphEdit when the connection between ``from_port`` of ``from_nod
 
 .. rst-class:: classref-signal
 
-**duplicate_nodes_request** **(** **)**
+**duplicate_nodes_request**\ (\ )
 
 Emitted when this **GraphEdit** captures a ``ui_graph_duplicate`` action (:kbd:`Ctrl + D` by default). In general, this signal indicates that the selected :ref:`GraphElement<class_GraphElement>`\ s should be duplicated.
 
@@ -328,7 +328,7 @@ Emitted when this **GraphEdit** captures a ``ui_graph_duplicate`` action (:kbd:`
 
 .. rst-class:: classref-signal
 
-**end_node_move** **(** **)**
+**end_node_move**\ (\ )
 
 Emitted at the end of a :ref:`GraphElement<class_GraphElement>`'s movement.
 
@@ -340,7 +340,7 @@ Emitted at the end of a :ref:`GraphElement<class_GraphElement>`'s movement.
 
 .. rst-class:: classref-signal
 
-**node_deselected** **(** :ref:`Node<class_Node>` node **)**
+**node_deselected**\ (\ node\: :ref:`Node<class_Node>`\ )
 
 Emitted when the given :ref:`GraphElement<class_GraphElement>` node is deselected.
 
@@ -352,7 +352,7 @@ Emitted when the given :ref:`GraphElement<class_GraphElement>` node is deselecte
 
 .. rst-class:: classref-signal
 
-**node_selected** **(** :ref:`Node<class_Node>` node **)**
+**node_selected**\ (\ node\: :ref:`Node<class_Node>`\ )
 
 Emitted when the given :ref:`GraphElement<class_GraphElement>` node is selected.
 
@@ -364,7 +364,7 @@ Emitted when the given :ref:`GraphElement<class_GraphElement>` node is selected.
 
 .. rst-class:: classref-signal
 
-**paste_nodes_request** **(** **)**
+**paste_nodes_request**\ (\ )
 
 Emitted when this **GraphEdit** captures a ``ui_paste`` action (:kbd:`Ctrl + V` by default). In general, this signal indicates that previously copied :ref:`GraphElement<class_GraphElement>`\ s should be pasted.
 
@@ -376,7 +376,7 @@ Emitted when this **GraphEdit** captures a ``ui_paste`` action (:kbd:`Ctrl + V` 
 
 .. rst-class:: classref-signal
 
-**popup_request** **(** :ref:`Vector2<class_Vector2>` position **)**
+**popup_request**\ (\ position\: :ref:`Vector2<class_Vector2>`\ )
 
 Emitted when a popup is requested. Happens on right-clicking in the GraphEdit. ``position`` is the position of the mouse pointer when the signal is sent.
 
@@ -388,7 +388,7 @@ Emitted when a popup is requested. Happens on right-clicking in the GraphEdit. `
 
 .. rst-class:: classref-signal
 
-**scroll_offset_changed** **(** :ref:`Vector2<class_Vector2>` offset **)**
+**scroll_offset_changed**\ (\ offset\: :ref:`Vector2<class_Vector2>`\ )
 
 Emitted when the scroll offset is changed by the user. It will not be emitted when changed in code.
 
@@ -466,8 +466,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_connection_lines_antialiased** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_connection_lines_antialiased** **(** **)**
+- |void| **set_connection_lines_antialiased**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_connection_lines_antialiased**\ (\ )
 
 If ``true``, the lines between nodes will use antialiasing.
 
@@ -483,8 +483,8 @@ If ``true``, the lines between nodes will use antialiasing.
 
 .. rst-class:: classref-property-setget
 
-- void **set_connection_lines_curvature** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_connection_lines_curvature** **(** **)**
+- |void| **set_connection_lines_curvature**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_connection_lines_curvature**\ (\ )
 
 The curvature of the lines between the nodes. 0 results in straight lines.
 
@@ -500,8 +500,8 @@ The curvature of the lines between the nodes. 0 results in straight lines.
 
 .. rst-class:: classref-property-setget
 
-- void **set_connection_lines_thickness** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_connection_lines_thickness** **(** **)**
+- |void| **set_connection_lines_thickness**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_connection_lines_thickness**\ (\ )
 
 The thickness of the lines between the nodes.
 
@@ -517,8 +517,8 @@ The thickness of the lines between the nodes.
 
 .. rst-class:: classref-property-setget
 
-- void **set_grid_pattern** **(** :ref:`GridPattern<enum_GraphEdit_GridPattern>` value **)**
-- :ref:`GridPattern<enum_GraphEdit_GridPattern>` **get_grid_pattern** **(** **)**
+- |void| **set_grid_pattern**\ (\ value\: :ref:`GridPattern<enum_GraphEdit_GridPattern>`\ )
+- :ref:`GridPattern<enum_GraphEdit_GridPattern>` **get_grid_pattern**\ (\ )
 
 The pattern used for drawing the grid.
 
@@ -534,8 +534,8 @@ The pattern used for drawing the grid.
 
 .. rst-class:: classref-property-setget
 
-- void **set_minimap_enabled** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_minimap_enabled** **(** **)**
+- |void| **set_minimap_enabled**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_minimap_enabled**\ (\ )
 
 If ``true``, the minimap is visible.
 
@@ -551,8 +551,8 @@ If ``true``, the minimap is visible.
 
 .. rst-class:: classref-property-setget
 
-- void **set_minimap_opacity** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_minimap_opacity** **(** **)**
+- |void| **set_minimap_opacity**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_minimap_opacity**\ (\ )
 
 The opacity of the minimap rectangle.
 
@@ -568,8 +568,8 @@ The opacity of the minimap rectangle.
 
 .. rst-class:: classref-property-setget
 
-- void **set_minimap_size** **(** :ref:`Vector2<class_Vector2>` value **)**
-- :ref:`Vector2<class_Vector2>` **get_minimap_size** **(** **)**
+- |void| **set_minimap_size**\ (\ value\: :ref:`Vector2<class_Vector2>`\ )
+- :ref:`Vector2<class_Vector2>` **get_minimap_size**\ (\ )
 
 The size of the minimap rectangle. The map itself is based on the size of the grid area and is scaled to fit this rectangle.
 
@@ -585,8 +585,8 @@ The size of the minimap rectangle. The map itself is based on the size of the gr
 
 .. rst-class:: classref-property-setget
 
-- void **set_panning_scheme** **(** :ref:`PanningScheme<enum_GraphEdit_PanningScheme>` value **)**
-- :ref:`PanningScheme<enum_GraphEdit_PanningScheme>` **get_panning_scheme** **(** **)**
+- |void| **set_panning_scheme**\ (\ value\: :ref:`PanningScheme<enum_GraphEdit_PanningScheme>`\ )
+- :ref:`PanningScheme<enum_GraphEdit_PanningScheme>` **get_panning_scheme**\ (\ )
 
 Defines the control scheme for panning with mouse wheel.
 
@@ -602,8 +602,8 @@ Defines the control scheme for panning with mouse wheel.
 
 .. rst-class:: classref-property-setget
 
-- void **set_right_disconnects** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_right_disconnects_enabled** **(** **)**
+- |void| **set_right_disconnects**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_right_disconnects_enabled**\ (\ )
 
 If ``true``, enables disconnection of existing connections in the GraphEdit by dragging the right end.
 
@@ -619,8 +619,8 @@ If ``true``, enables disconnection of existing connections in the GraphEdit by d
 
 .. rst-class:: classref-property-setget
 
-- void **set_scroll_offset** **(** :ref:`Vector2<class_Vector2>` value **)**
-- :ref:`Vector2<class_Vector2>` **get_scroll_offset** **(** **)**
+- |void| **set_scroll_offset**\ (\ value\: :ref:`Vector2<class_Vector2>`\ )
+- :ref:`Vector2<class_Vector2>` **get_scroll_offset**\ (\ )
 
 The scroll offset.
 
@@ -636,8 +636,8 @@ The scroll offset.
 
 .. rst-class:: classref-property-setget
 
-- void **set_show_arrange_button** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_showing_arrange_button** **(** **)**
+- |void| **set_show_arrange_button**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_showing_arrange_button**\ (\ )
 
 If ``true``, the button to automatically arrange graph nodes is visible.
 
@@ -653,8 +653,8 @@ If ``true``, the button to automatically arrange graph nodes is visible.
 
 .. rst-class:: classref-property-setget
 
-- void **set_show_grid** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_showing_grid** **(** **)**
+- |void| **set_show_grid**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_showing_grid**\ (\ )
 
 If ``true``, the grid is visible.
 
@@ -670,8 +670,8 @@ If ``true``, the grid is visible.
 
 .. rst-class:: classref-property-setget
 
-- void **set_show_grid_buttons** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_showing_grid_buttons** **(** **)**
+- |void| **set_show_grid_buttons**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_showing_grid_buttons**\ (\ )
 
 If ``true``, buttons that allow to configure grid and snapping options are visible.
 
@@ -687,8 +687,8 @@ If ``true``, buttons that allow to configure grid and snapping options are visib
 
 .. rst-class:: classref-property-setget
 
-- void **set_show_menu** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_showing_menu** **(** **)**
+- |void| **set_show_menu**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_showing_menu**\ (\ )
 
 If ``true``, the menu toolbar is visible.
 
@@ -704,8 +704,8 @@ If ``true``, the menu toolbar is visible.
 
 .. rst-class:: classref-property-setget
 
-- void **set_show_minimap_button** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_showing_minimap_button** **(** **)**
+- |void| **set_show_minimap_button**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_showing_minimap_button**\ (\ )
 
 If ``true``, the button to toggle the minimap is visible.
 
@@ -721,8 +721,8 @@ If ``true``, the button to toggle the minimap is visible.
 
 .. rst-class:: classref-property-setget
 
-- void **set_show_zoom_buttons** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_showing_zoom_buttons** **(** **)**
+- |void| **set_show_zoom_buttons**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_showing_zoom_buttons**\ (\ )
 
 If ``true``, buttons that allow to change and reset the zoom level are visible.
 
@@ -738,8 +738,8 @@ If ``true``, buttons that allow to change and reset the zoom level are visible.
 
 .. rst-class:: classref-property-setget
 
-- void **set_show_zoom_label** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_showing_zoom_label** **(** **)**
+- |void| **set_show_zoom_label**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_showing_zoom_label**\ (\ )
 
 If ``true``, the label with the current zoom level is visible. The zoom level is displayed in percents.
 
@@ -755,8 +755,8 @@ If ``true``, the label with the current zoom level is visible. The zoom level is
 
 .. rst-class:: classref-property-setget
 
-- void **set_snapping_distance** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_snapping_distance** **(** **)**
+- |void| **set_snapping_distance**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_snapping_distance**\ (\ )
 
 The snapping distance in pixels, also determines the grid line distance.
 
@@ -772,8 +772,8 @@ The snapping distance in pixels, also determines the grid line distance.
 
 .. rst-class:: classref-property-setget
 
-- void **set_snapping_enabled** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_snapping_enabled** **(** **)**
+- |void| **set_snapping_enabled**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_snapping_enabled**\ (\ )
 
 If ``true``, enables snapping.
 
@@ -789,8 +789,8 @@ If ``true``, enables snapping.
 
 .. rst-class:: classref-property-setget
 
-- void **set_zoom** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_zoom** **(** **)**
+- |void| **set_zoom**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_zoom**\ (\ )
 
 The current zoom value.
 
@@ -806,8 +806,8 @@ The current zoom value.
 
 .. rst-class:: classref-property-setget
 
-- void **set_zoom_max** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_zoom_max** **(** **)**
+- |void| **set_zoom_max**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_zoom_max**\ (\ )
 
 The upper zoom limit.
 
@@ -823,8 +823,8 @@ The upper zoom limit.
 
 .. rst-class:: classref-property-setget
 
-- void **set_zoom_min** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_zoom_min** **(** **)**
+- |void| **set_zoom_min**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_zoom_min**\ (\ )
 
 The lower zoom limit.
 
@@ -840,8 +840,8 @@ The lower zoom limit.
 
 .. rst-class:: classref-property-setget
 
-- void **set_zoom_step** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_zoom_step** **(** **)**
+- |void| **set_zoom_step**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_zoom_step**\ (\ )
 
 The step of each zoom level.
 
@@ -858,7 +858,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`PackedVector2Array<class_PackedVector2Array>` **_get_connection_line** **(** :ref:`Vector2<class_Vector2>` from_position, :ref:`Vector2<class_Vector2>` to_position **)** |virtual| |const|
+:ref:`PackedVector2Array<class_PackedVector2Array>` **_get_connection_line**\ (\ from_position\: :ref:`Vector2<class_Vector2>`, to_position\: :ref:`Vector2<class_Vector2>`\ ) |virtual| |const|
 
 Virtual method which can be overridden to customize how connections are drawn.
 
@@ -870,7 +870,7 @@ Virtual method which can be overridden to customize how connections are drawn.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **_is_in_input_hotzone** **(** :ref:`Object<class_Object>` in_node, :ref:`int<class_int>` in_port, :ref:`Vector2<class_Vector2>` mouse_position **)** |virtual|
+:ref:`bool<class_bool>` **_is_in_input_hotzone**\ (\ in_node\: :ref:`Object<class_Object>`, in_port\: :ref:`int<class_int>`, mouse_position\: :ref:`Vector2<class_Vector2>`\ ) |virtual|
 
 Returns whether the ``mouse_position`` is in the input hot zone.
 
@@ -895,7 +895,7 @@ Below is a sample code to help get started:
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **_is_in_output_hotzone** **(** :ref:`Object<class_Object>` in_node, :ref:`int<class_int>` in_port, :ref:`Vector2<class_Vector2>` mouse_position **)** |virtual|
+:ref:`bool<class_bool>` **_is_in_output_hotzone**\ (\ in_node\: :ref:`Object<class_Object>`, in_port\: :ref:`int<class_int>`, mouse_position\: :ref:`Vector2<class_Vector2>`\ ) |virtual|
 
 Returns whether the ``mouse_position`` is in the output hot zone. For more information on hot zones, see :ref:`_is_in_input_hotzone<class_GraphEdit_private_method__is_in_input_hotzone>`.
 
@@ -918,7 +918,7 @@ Below is a sample code to help get started:
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **_is_node_hover_valid** **(** :ref:`StringName<class_StringName>` from_node, :ref:`int<class_int>` from_port, :ref:`StringName<class_StringName>` to_node, :ref:`int<class_int>` to_port **)** |virtual|
+:ref:`bool<class_bool>` **_is_node_hover_valid**\ (\ from_node\: :ref:`StringName<class_StringName>`, from_port\: :ref:`int<class_int>`, to_node\: :ref:`StringName<class_StringName>`, to_port\: :ref:`int<class_int>`\ ) |virtual|
 
 This virtual method can be used to insert additional error detection while the user is dragging a connection over a valid port.
 
@@ -951,7 +951,7 @@ In this example a connection to same node is suppressed:
 
 .. rst-class:: classref-method
 
-void **add_valid_connection_type** **(** :ref:`int<class_int>` from_type, :ref:`int<class_int>` to_type **)**
+|void| **add_valid_connection_type**\ (\ from_type\: :ref:`int<class_int>`, to_type\: :ref:`int<class_int>`\ )
 
 Allows the connection between two different port types. The port type is defined individually for the left and the right port of each slot with the :ref:`GraphNode.set_slot<class_GraphNode_method_set_slot>` method.
 
@@ -965,7 +965,7 @@ See also :ref:`is_valid_connection_type<class_GraphEdit_method_is_valid_connecti
 
 .. rst-class:: classref-method
 
-void **add_valid_left_disconnect_type** **(** :ref:`int<class_int>` type **)**
+|void| **add_valid_left_disconnect_type**\ (\ type\: :ref:`int<class_int>`\ )
 
 Allows to disconnect nodes when dragging from the left port of the :ref:`GraphNode<class_GraphNode>`'s slot if it has the specified type. See also :ref:`remove_valid_left_disconnect_type<class_GraphEdit_method_remove_valid_left_disconnect_type>`.
 
@@ -977,7 +977,7 @@ Allows to disconnect nodes when dragging from the left port of the :ref:`GraphNo
 
 .. rst-class:: classref-method
 
-void **add_valid_right_disconnect_type** **(** :ref:`int<class_int>` type **)**
+|void| **add_valid_right_disconnect_type**\ (\ type\: :ref:`int<class_int>`\ )
 
 Allows to disconnect nodes when dragging from the right port of the :ref:`GraphNode<class_GraphNode>`'s slot if it has the specified type. See also :ref:`remove_valid_right_disconnect_type<class_GraphEdit_method_remove_valid_right_disconnect_type>`.
 
@@ -989,7 +989,7 @@ Allows to disconnect nodes when dragging from the right port of the :ref:`GraphN
 
 .. rst-class:: classref-method
 
-void **arrange_nodes** **(** **)**
+|void| **arrange_nodes**\ (\ )
 
 Rearranges selected nodes in a layout with minimum crossings between connections and uniform horizontal and vertical gap between nodes.
 
@@ -1001,7 +1001,7 @@ Rearranges selected nodes in a layout with minimum crossings between connections
 
 .. rst-class:: classref-method
 
-void **clear_connections** **(** **)**
+|void| **clear_connections**\ (\ )
 
 Removes all connections between nodes.
 
@@ -1013,7 +1013,7 @@ Removes all connections between nodes.
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **connect_node** **(** :ref:`StringName<class_StringName>` from_node, :ref:`int<class_int>` from_port, :ref:`StringName<class_StringName>` to_node, :ref:`int<class_int>` to_port **)**
+:ref:`Error<enum_@GlobalScope_Error>` **connect_node**\ (\ from_node\: :ref:`StringName<class_StringName>`, from_port\: :ref:`int<class_int>`, to_node\: :ref:`StringName<class_StringName>`, to_port\: :ref:`int<class_int>`\ )
 
 Create a connection between the ``from_port`` of the ``from_node`` :ref:`GraphNode<class_GraphNode>` and the ``to_port`` of the ``to_node`` :ref:`GraphNode<class_GraphNode>`. If the connection already exists, no connection is created.
 
@@ -1025,7 +1025,7 @@ Create a connection between the ``from_port`` of the ``from_node`` :ref:`GraphNo
 
 .. rst-class:: classref-method
 
-void **disconnect_node** **(** :ref:`StringName<class_StringName>` from_node, :ref:`int<class_int>` from_port, :ref:`StringName<class_StringName>` to_node, :ref:`int<class_int>` to_port **)**
+|void| **disconnect_node**\ (\ from_node\: :ref:`StringName<class_StringName>`, from_port\: :ref:`int<class_int>`, to_node\: :ref:`StringName<class_StringName>`, to_port\: :ref:`int<class_int>`\ )
 
 Removes the connection between the ``from_port`` of the ``from_node`` :ref:`GraphNode<class_GraphNode>` and the ``to_port`` of the ``to_node`` :ref:`GraphNode<class_GraphNode>`. If the connection does not exist, no connection is removed.
 
@@ -1037,7 +1037,7 @@ Removes the connection between the ``from_port`` of the ``from_node`` :ref:`Grap
 
 .. rst-class:: classref-method
 
-void **force_connection_drag_end** **(** **)**
+|void| **force_connection_drag_end**\ (\ )
 
 Ends the creation of the current connection. In other words, if you are dragging a connection you can use this method to abort the process and remove the line that followed your cursor.
 
@@ -1053,7 +1053,7 @@ This is best used together with :ref:`connection_drag_started<class_GraphEdit_si
 
 .. rst-class:: classref-method
 
-:ref:`Dictionary<class_Dictionary>` **get_closest_connection_at_point** **(** :ref:`Vector2<class_Vector2>` point, :ref:`float<class_float>` max_distance=4.0 **)** |const|
+:ref:`Dictionary<class_Dictionary>` **get_closest_connection_at_point**\ (\ point\: :ref:`Vector2<class_Vector2>`, max_distance\: :ref:`float<class_float>` = 4.0\ ) |const|
 
 Returns the closest connection to the given point in screen space. If no connection is found within ``max_distance`` pixels, an empty :ref:`Dictionary<class_Dictionary>` is returned.
 
@@ -1078,7 +1078,7 @@ For example, getting a connection at a given mouse position can be achieved like
 
 .. rst-class:: classref-method
 
-:ref:`PackedVector2Array<class_PackedVector2Array>` **get_connection_line** **(** :ref:`Vector2<class_Vector2>` from_node, :ref:`Vector2<class_Vector2>` to_node **)** |const|
+:ref:`PackedVector2Array<class_PackedVector2Array>` **get_connection_line**\ (\ from_node\: :ref:`Vector2<class_Vector2>`, to_node\: :ref:`Vector2<class_Vector2>`\ ) |const|
 
 Returns the points which would make up a connection between ``from_node`` and ``to_node``.
 
@@ -1090,7 +1090,7 @@ Returns the points which would make up a connection between ``from_node`` and ``
 
 .. rst-class:: classref-method
 
-:ref:`Dictionary[]<class_Dictionary>` **get_connection_list** **(** **)** |const|
+:ref:`Array<class_Array>`\[:ref:`Dictionary<class_Dictionary>`\] **get_connection_list**\ (\ ) |const|
 
 Returns an :ref:`Array<class_Array>` containing the list of connections. A connection consists in a structure of the form ``{ from_port: 0, from_node: "GraphNode name 0", to_port: 1, to_node: "GraphNode name 1" }``.
 
@@ -1102,7 +1102,7 @@ Returns an :ref:`Array<class_Array>` containing the list of connections. A conne
 
 .. rst-class:: classref-method
 
-:ref:`Dictionary[]<class_Dictionary>` **get_connections_intersecting_with_rect** **(** :ref:`Rect2<class_Rect2>` rect **)** |const|
+:ref:`Array<class_Array>`\[:ref:`Dictionary<class_Dictionary>`\] **get_connections_intersecting_with_rect**\ (\ rect\: :ref:`Rect2<class_Rect2>`\ ) |const|
 
 Returns an :ref:`Array<class_Array>` containing the list of connections that intersect with the given :ref:`Rect2<class_Rect2>`. A connection consists in a structure of the form ``{ from_port: 0, from_node: "GraphNode name 0", to_port: 1, to_node: "GraphNode name 1" }``.
 
@@ -1114,7 +1114,7 @@ Returns an :ref:`Array<class_Array>` containing the list of connections that int
 
 .. rst-class:: classref-method
 
-:ref:`HBoxContainer<class_HBoxContainer>` **get_menu_hbox** **(** **)**
+:ref:`HBoxContainer<class_HBoxContainer>` **get_menu_hbox**\ (\ )
 
 Gets the :ref:`HBoxContainer<class_HBoxContainer>` that contains the zooming and grid snap controls in the top left of the graph. You can use this method to reposition the toolbar or to add your own custom controls to it.
 
@@ -1128,7 +1128,7 @@ Gets the :ref:`HBoxContainer<class_HBoxContainer>` that contains the zooming and
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_node_connected** **(** :ref:`StringName<class_StringName>` from_node, :ref:`int<class_int>` from_port, :ref:`StringName<class_StringName>` to_node, :ref:`int<class_int>` to_port **)**
+:ref:`bool<class_bool>` **is_node_connected**\ (\ from_node\: :ref:`StringName<class_StringName>`, from_port\: :ref:`int<class_int>`, to_node\: :ref:`StringName<class_StringName>`, to_port\: :ref:`int<class_int>`\ )
 
 Returns ``true`` if the ``from_port`` of the ``from_node`` :ref:`GraphNode<class_GraphNode>` is connected to the ``to_port`` of the ``to_node`` :ref:`GraphNode<class_GraphNode>`.
 
@@ -1140,7 +1140,7 @@ Returns ``true`` if the ``from_port`` of the ``from_node`` :ref:`GraphNode<class
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_valid_connection_type** **(** :ref:`int<class_int>` from_type, :ref:`int<class_int>` to_type **)** |const|
+:ref:`bool<class_bool>` **is_valid_connection_type**\ (\ from_type\: :ref:`int<class_int>`, to_type\: :ref:`int<class_int>`\ ) |const|
 
 Returns whether it's possible to make a connection between two different port types. The port type is defined individually for the left and the right port of each slot with the :ref:`GraphNode.set_slot<class_GraphNode_method_set_slot>` method.
 
@@ -1154,7 +1154,7 @@ See also :ref:`add_valid_connection_type<class_GraphEdit_method_add_valid_connec
 
 .. rst-class:: classref-method
 
-void **remove_valid_connection_type** **(** :ref:`int<class_int>` from_type, :ref:`int<class_int>` to_type **)**
+|void| **remove_valid_connection_type**\ (\ from_type\: :ref:`int<class_int>`, to_type\: :ref:`int<class_int>`\ )
 
 Disallows the connection between two different port types previously allowed by :ref:`add_valid_connection_type<class_GraphEdit_method_add_valid_connection_type>`. The port type is defined individually for the left and the right port of each slot with the :ref:`GraphNode.set_slot<class_GraphNode_method_set_slot>` method.
 
@@ -1168,7 +1168,7 @@ See also :ref:`is_valid_connection_type<class_GraphEdit_method_is_valid_connecti
 
 .. rst-class:: classref-method
 
-void **remove_valid_left_disconnect_type** **(** :ref:`int<class_int>` type **)**
+|void| **remove_valid_left_disconnect_type**\ (\ type\: :ref:`int<class_int>`\ )
 
 Disallows to disconnect nodes when dragging from the left port of the :ref:`GraphNode<class_GraphNode>`'s slot if it has the specified type. Use this to disable disconnection previously allowed with :ref:`add_valid_left_disconnect_type<class_GraphEdit_method_add_valid_left_disconnect_type>`.
 
@@ -1180,7 +1180,7 @@ Disallows to disconnect nodes when dragging from the left port of the :ref:`Grap
 
 .. rst-class:: classref-method
 
-void **remove_valid_right_disconnect_type** **(** :ref:`int<class_int>` type **)**
+|void| **remove_valid_right_disconnect_type**\ (\ type\: :ref:`int<class_int>`\ )
 
 Disallows to disconnect nodes when dragging from the right port of the :ref:`GraphNode<class_GraphNode>`'s slot if it has the specified type. Use this to disable disconnection previously allowed with :ref:`add_valid_right_disconnect_type<class_GraphEdit_method_add_valid_right_disconnect_type>`.
 
@@ -1192,7 +1192,7 @@ Disallows to disconnect nodes when dragging from the right port of the :ref:`Gra
 
 .. rst-class:: classref-method
 
-void **set_connection_activity** **(** :ref:`StringName<class_StringName>` from_node, :ref:`int<class_int>` from_port, :ref:`StringName<class_StringName>` to_node, :ref:`int<class_int>` to_port, :ref:`float<class_float>` amount **)**
+|void| **set_connection_activity**\ (\ from_node\: :ref:`StringName<class_StringName>`, from_port\: :ref:`int<class_int>`, to_node\: :ref:`StringName<class_StringName>`, to_port\: :ref:`int<class_int>`, amount\: :ref:`float<class_float>`\ )
 
 Sets the coloration of the connection between ``from_node``'s ``from_port`` and ``to_node``'s ``to_port`` with the color provided in the :ref:`activity<class_GraphEdit_theme_color_activity>` theme property. The color is linearly interpolated between the connection color and the activity color using ``amount`` as weight.
 
@@ -1204,7 +1204,7 @@ Sets the coloration of the connection between ``from_node``'s ``from_port`` and 
 
 .. rst-class:: classref-method
 
-void **set_selected** **(** :ref:`Node<class_Node>` node **)**
+|void| **set_selected**\ (\ node\: :ref:`Node<class_Node>`\ )
 
 Sets the specified ``node`` as the one selected.
 
@@ -1450,3 +1450,4 @@ The background drawn under the grid.
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

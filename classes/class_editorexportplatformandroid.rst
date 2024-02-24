@@ -1452,7 +1452,7 @@ Array of custom permission strings.
 
 :ref:`bool<class_bool>` **permissions/delete_cache_files**
 
-Deprecated.
+**Deprecated:** This property may be changed or removed in future versions.
 
 .. rst-class:: classref-item-separator
 
@@ -1596,7 +1596,7 @@ Allows an application to find out the space used by any package. See `GET_PACKAG
 
 :ref:`bool<class_bool>` **permissions/get_tasks**
 
-Deprecated in API level 21.
+**Deprecated:** Deprecated in API level 21.
 
 .. rst-class:: classref-item-separator
 
@@ -1872,9 +1872,9 @@ Allows applications to perform I/O operations over NFC. See `NFC <https://develo
 
 :ref:`bool<class_bool>` **permissions/persistent_activity**
 
-Allow an application to make its activities persistent.
+**Deprecated:** Deprecated in API level 15.
 
-Deprecated in API level 15.
+Allow an application to make its activities persistent.
 
 .. rst-class:: classref-item-separator
 
@@ -1886,9 +1886,9 @@ Deprecated in API level 15.
 
 :ref:`bool<class_bool>` **permissions/process_outgoing_calls**
 
-Allows an application to see the number being dialed during an outgoing call with the option to redirect the call to a different number or abort the call altogether. See `PROCESS_OUTGOING_CALLS <https://developer.android.com/reference/android/Manifest.permission#PROCESS_OUTGOING_CALLS>`__.
+**Deprecated:** Deprecated in API level 29.
 
-Deprecated in API level 29.
+Allows an application to see the number being dialed during an outgoing call with the option to redirect the call to a different number or abort the call altogether. See `PROCESS_OUTGOING_CALLS <https://developer.android.com/reference/android/Manifest.permission#PROCESS_OUTGOING_CALLS>`__.
 
 .. rst-class:: classref-item-separator
 
@@ -1936,9 +1936,9 @@ Allows an application to read the user's contacts data. See `READ_CONTACTS <http
 
 :ref:`bool<class_bool>` **permissions/read_external_storage**
 
-Allows an application to read from external storage. See `READ_EXTERNAL_STORAGE <https://developer.android.com/reference/android/Manifest.permission#READ_EXTERNAL_STORAGE>`__.
+**Deprecated:** Deprecated in API level 33.
 
-Deprecated in API level 33.
+Allows an application to read from external storage. See `READ_EXTERNAL_STORAGE <https://developer.android.com/reference/android/Manifest.permission#READ_EXTERNAL_STORAGE>`__.
 
 .. rst-class:: classref-item-separator
 
@@ -1974,7 +1974,7 @@ Allows an application to read (but not write) the user's browsing history and bo
 
 :ref:`bool<class_bool>` **permissions/read_input_state**
 
-Deprecated in API level 16.
+**Deprecated:** Deprecated in API level 16.
 
 .. rst-class:: classref-item-separator
 
@@ -2166,7 +2166,7 @@ Allows an application to change the Z-order of tasks. See `REORDER_TASKS <https:
 
 :ref:`bool<class_bool>` **permissions/restart_packages**
 
-Deprecated in API level 15.
+**Deprecated:** Deprecated in API level 15.
 
 .. rst-class:: classref-item-separator
 
@@ -2286,7 +2286,7 @@ Allows low-level access to setting the pointer speed.
 
 :ref:`bool<class_bool>` **permissions/set_preferred_applications**
 
-Deprecated in API level 15.
+**Deprecated:** Deprecated in API level 15.
 
 .. rst-class:: classref-item-separator
 
@@ -2394,7 +2394,7 @@ Allows an application to allow access the subscribed feeds ContentProvider.
 
 :ref:`bool<class_bool>` **permissions/subscribed_feeds_write**
 
-Deprecated.
+**Deprecated:** This property may be changed or removed in future versions.
 
 .. rst-class:: classref-item-separator
 
@@ -2430,7 +2430,7 @@ Allows using the device's IR transmitter, if available. See `TRANSMIT_IR <https:
 
 :ref:`bool<class_bool>` **permissions/uninstall_shortcut**
 
-Deprecated.
+**Deprecated:** This property may be changed or removed in future versions.
 
 .. rst-class:: classref-item-separator
 
@@ -2777,3 +2777,4 @@ Application version visible to the user. Falls back to :ref:`ProjectSettings.app
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

@@ -49,9 +49,9 @@ Methods
 .. table::
    :widths: auto
 
-   +-------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>` | :ref:`_propagate_input_event<class_SubViewportContainer_private_method__propagate_input_event>` **(** :ref:`InputEvent<class_InputEvent>` event **)** |virtual| |const| |
-   +-------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +-------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | :ref:`_propagate_input_event<class_SubViewportContainer_private_method__propagate_input_event>`\ (\ event\: :ref:`InputEvent<class_InputEvent>`\ ) |virtual| |const| |
+   +-------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -70,8 +70,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_stretch** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_stretch_enabled** **(** **)**
+- |void| **set_stretch**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_stretch_enabled**\ (\ )
 
 If ``true``, the sub-viewport will be automatically resized to the control's size.
 
@@ -89,8 +89,8 @@ If ``true``, the sub-viewport will be automatically resized to the control's siz
 
 .. rst-class:: classref-property-setget
 
-- void **set_stretch_shrink** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_stretch_shrink** **(** **)**
+- |void| **set_stretch_shrink**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_stretch_shrink**\ (\ )
 
 Divides the sub-viewport's effective resolution by this value while preserving its scale. This can be used to speed up rendering.
 
@@ -111,7 +111,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **_propagate_input_event** **(** :ref:`InputEvent<class_InputEvent>` event **)** |virtual| |const|
+:ref:`bool<class_bool>` **_propagate_input_event**\ (\ event\: :ref:`InputEvent<class_InputEvent>`\ ) |virtual| |const|
 
 **Experimental:** This method may be changed or removed in future versions.
 
@@ -124,3 +124,4 @@ Virtual method to be implemented by the user. If it returns ``true``, the ``even
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

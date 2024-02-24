@@ -51,15 +51,15 @@ Methods
 .. table::
    :widths: auto
 
-   +-----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`       | :ref:`add_port_mapping<class_UPNPDevice_method_add_port_mapping>` **(** :ref:`int<class_int>` port, :ref:`int<class_int>` port_internal=0, :ref:`String<class_String>` desc="", :ref:`String<class_String>` proto="UDP", :ref:`int<class_int>` duration=0 **)** |const| |
-   +-----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`       | :ref:`delete_port_mapping<class_UPNPDevice_method_delete_port_mapping>` **(** :ref:`int<class_int>` port, :ref:`String<class_String>` proto="UDP" **)** |const|                                                                                                         |
-   +-----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`     | :ref:`is_valid_gateway<class_UPNPDevice_method_is_valid_gateway>` **(** **)** |const|                                                                                                                                                                                   |
-   +-----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`String<class_String>` | :ref:`query_external_address<class_UPNPDevice_method_query_external_address>` **(** **)** |const|                                                                                                                                                                       |
-   +-----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +-----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`       | :ref:`add_port_mapping<class_UPNPDevice_method_add_port_mapping>`\ (\ port\: :ref:`int<class_int>`, port_internal\: :ref:`int<class_int>` = 0, desc\: :ref:`String<class_String>` = "", proto\: :ref:`String<class_String>` = "UDP", duration\: :ref:`int<class_int>` = 0\ ) |const| |
+   +-----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`       | :ref:`delete_port_mapping<class_UPNPDevice_method_delete_port_mapping>`\ (\ port\: :ref:`int<class_int>`, proto\: :ref:`String<class_String>` = "UDP"\ ) |const|                                                                                                                     |
+   +-----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`     | :ref:`is_valid_gateway<class_UPNPDevice_method_is_valid_gateway>`\ (\ ) |const|                                                                                                                                                                                                      |
+   +-----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>` | :ref:`query_external_address<class_UPNPDevice_method_query_external_address>`\ (\ ) |const|                                                                                                                                                                                          |
+   +-----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -173,8 +173,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_description_url** **(** :ref:`String<class_String>` value **)**
-- :ref:`String<class_String>` **get_description_url** **(** **)**
+- |void| **set_description_url**\ (\ value\: :ref:`String<class_String>`\ )
+- :ref:`String<class_String>` **get_description_url**\ (\ )
 
 URL to the device description.
 
@@ -190,8 +190,8 @@ URL to the device description.
 
 .. rst-class:: classref-property-setget
 
-- void **set_igd_control_url** **(** :ref:`String<class_String>` value **)**
-- :ref:`String<class_String>` **get_igd_control_url** **(** **)**
+- |void| **set_igd_control_url**\ (\ value\: :ref:`String<class_String>`\ )
+- :ref:`String<class_String>` **get_igd_control_url**\ (\ )
 
 IDG control URL.
 
@@ -207,8 +207,8 @@ IDG control URL.
 
 .. rst-class:: classref-property-setget
 
-- void **set_igd_our_addr** **(** :ref:`String<class_String>` value **)**
-- :ref:`String<class_String>` **get_igd_our_addr** **(** **)**
+- |void| **set_igd_our_addr**\ (\ value\: :ref:`String<class_String>`\ )
+- :ref:`String<class_String>` **get_igd_our_addr**\ (\ )
 
 Address of the local machine in the network connecting it to this **UPNPDevice**.
 
@@ -224,8 +224,8 @@ Address of the local machine in the network connecting it to this **UPNPDevice**
 
 .. rst-class:: classref-property-setget
 
-- void **set_igd_service_type** **(** :ref:`String<class_String>` value **)**
-- :ref:`String<class_String>` **get_igd_service_type** **(** **)**
+- |void| **set_igd_service_type**\ (\ value\: :ref:`String<class_String>`\ )
+- :ref:`String<class_String>` **get_igd_service_type**\ (\ )
 
 IGD service type.
 
@@ -241,8 +241,8 @@ IGD service type.
 
 .. rst-class:: classref-property-setget
 
-- void **set_igd_status** **(** :ref:`IGDStatus<enum_UPNPDevice_IGDStatus>` value **)**
-- :ref:`IGDStatus<enum_UPNPDevice_IGDStatus>` **get_igd_status** **(** **)**
+- |void| **set_igd_status**\ (\ value\: :ref:`IGDStatus<enum_UPNPDevice_IGDStatus>`\ )
+- :ref:`IGDStatus<enum_UPNPDevice_IGDStatus>` **get_igd_status**\ (\ )
 
 IGD status. See :ref:`IGDStatus<enum_UPNPDevice_IGDStatus>`.
 
@@ -258,8 +258,8 @@ IGD status. See :ref:`IGDStatus<enum_UPNPDevice_IGDStatus>`.
 
 .. rst-class:: classref-property-setget
 
-- void **set_service_type** **(** :ref:`String<class_String>` value **)**
-- :ref:`String<class_String>` **get_service_type** **(** **)**
+- |void| **set_service_type**\ (\ value\: :ref:`String<class_String>`\ )
+- :ref:`String<class_String>` **get_service_type**\ (\ )
 
 Service type.
 
@@ -276,7 +276,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **add_port_mapping** **(** :ref:`int<class_int>` port, :ref:`int<class_int>` port_internal=0, :ref:`String<class_String>` desc="", :ref:`String<class_String>` proto="UDP", :ref:`int<class_int>` duration=0 **)** |const|
+:ref:`int<class_int>` **add_port_mapping**\ (\ port\: :ref:`int<class_int>`, port_internal\: :ref:`int<class_int>` = 0, desc\: :ref:`String<class_String>` = "", proto\: :ref:`String<class_String>` = "UDP", duration\: :ref:`int<class_int>` = 0\ ) |const|
 
 Adds a port mapping to forward the given external port on this **UPNPDevice** for the given protocol to the local machine. See :ref:`UPNP.add_port_mapping<class_UPNP_method_add_port_mapping>`.
 
@@ -288,7 +288,7 @@ Adds a port mapping to forward the given external port on this **UPNPDevice** fo
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **delete_port_mapping** **(** :ref:`int<class_int>` port, :ref:`String<class_String>` proto="UDP" **)** |const|
+:ref:`int<class_int>` **delete_port_mapping**\ (\ port\: :ref:`int<class_int>`, proto\: :ref:`String<class_String>` = "UDP"\ ) |const|
 
 Deletes the port mapping identified by the given port and protocol combination on this device. See :ref:`UPNP.delete_port_mapping<class_UPNP_method_delete_port_mapping>`.
 
@@ -300,7 +300,7 @@ Deletes the port mapping identified by the given port and protocol combination o
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_valid_gateway** **(** **)** |const|
+:ref:`bool<class_bool>` **is_valid_gateway**\ (\ ) |const|
 
 Returns ``true`` if this is a valid IGD (InternetGatewayDevice) which potentially supports port forwarding.
 
@@ -312,7 +312,7 @@ Returns ``true`` if this is a valid IGD (InternetGatewayDevice) which potentiall
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **query_external_address** **(** **)** |const|
+:ref:`String<class_String>` **query_external_address**\ (\ ) |const|
 
 Returns the external IP address of this **UPNPDevice** or an empty string.
 
@@ -323,3 +323,4 @@ Returns the external IP address of this **UPNPDevice** or an empty string.
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

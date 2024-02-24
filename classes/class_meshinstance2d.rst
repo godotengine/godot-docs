@@ -55,7 +55,7 @@ Signals
 
 .. rst-class:: classref-signal
 
-**texture_changed** **(** **)**
+**texture_changed**\ (\ )
 
 Emitted when the :ref:`texture<class_MeshInstance2D_property_texture>` is changed.
 
@@ -76,8 +76,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_mesh** **(** :ref:`Mesh<class_Mesh>` value **)**
-- :ref:`Mesh<class_Mesh>` **get_mesh** **(** **)**
+- |void| **set_mesh**\ (\ value\: :ref:`Mesh<class_Mesh>`\ )
+- :ref:`Mesh<class_Mesh>` **get_mesh**\ (\ )
 
 The :ref:`Mesh<class_Mesh>` that will be drawn by the **MeshInstance2D**.
 
@@ -93,8 +93,8 @@ The :ref:`Mesh<class_Mesh>` that will be drawn by the **MeshInstance2D**.
 
 .. rst-class:: classref-property-setget
 
-- void **set_texture** **(** :ref:`Texture2D<class_Texture2D>` value **)**
-- :ref:`Texture2D<class_Texture2D>` **get_texture** **(** **)**
+- |void| **set_texture**\ (\ value\: :ref:`Texture2D<class_Texture2D>`\ )
+- :ref:`Texture2D<class_Texture2D>` **get_texture**\ (\ )
 
 The :ref:`Texture2D<class_Texture2D>` that will be used if using the default :ref:`CanvasItemMaterial<class_CanvasItemMaterial>`. Can be accessed as ``TEXTURE`` in CanvasItem shader.
 
@@ -105,3 +105,4 @@ The :ref:`Texture2D<class_Texture2D>` that will be used if using the default :re
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

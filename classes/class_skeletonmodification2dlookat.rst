@@ -47,27 +47,27 @@ Methods
 .. table::
    :widths: auto
 
-   +---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`float<class_float>` | :ref:`get_additional_rotation<class_SkeletonModification2DLookAt_method_get_additional_rotation>` **(** **)** |const|                                |
-   +---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`   | :ref:`get_constraint_angle_invert<class_SkeletonModification2DLookAt_method_get_constraint_angle_invert>` **(** **)** |const|                        |
-   +---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`float<class_float>` | :ref:`get_constraint_angle_max<class_SkeletonModification2DLookAt_method_get_constraint_angle_max>` **(** **)** |const|                              |
-   +---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`float<class_float>` | :ref:`get_constraint_angle_min<class_SkeletonModification2DLookAt_method_get_constraint_angle_min>` **(** **)** |const|                              |
-   +---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`   | :ref:`get_enable_constraint<class_SkeletonModification2DLookAt_method_get_enable_constraint>` **(** **)** |const|                                    |
-   +---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                      | :ref:`set_additional_rotation<class_SkeletonModification2DLookAt_method_set_additional_rotation>` **(** :ref:`float<class_float>` rotation **)**     |
-   +---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                      | :ref:`set_constraint_angle_invert<class_SkeletonModification2DLookAt_method_set_constraint_angle_invert>` **(** :ref:`bool<class_bool>` invert **)** |
-   +---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                      | :ref:`set_constraint_angle_max<class_SkeletonModification2DLookAt_method_set_constraint_angle_max>` **(** :ref:`float<class_float>` angle_max **)**  |
-   +---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                      | :ref:`set_constraint_angle_min<class_SkeletonModification2DLookAt_method_set_constraint_angle_min>` **(** :ref:`float<class_float>` angle_min **)**  |
-   +---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                      | :ref:`set_enable_constraint<class_SkeletonModification2DLookAt_method_set_enable_constraint>` **(** :ref:`bool<class_bool>` enable_constraint **)**  |
-   +---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +---------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>` | :ref:`get_additional_rotation<class_SkeletonModification2DLookAt_method_get_additional_rotation>`\ (\ ) |const|                                   |
+   +---------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`   | :ref:`get_constraint_angle_invert<class_SkeletonModification2DLookAt_method_get_constraint_angle_invert>`\ (\ ) |const|                           |
+   +---------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>` | :ref:`get_constraint_angle_max<class_SkeletonModification2DLookAt_method_get_constraint_angle_max>`\ (\ ) |const|                                 |
+   +---------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>` | :ref:`get_constraint_angle_min<class_SkeletonModification2DLookAt_method_get_constraint_angle_min>`\ (\ ) |const|                                 |
+   +---------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`   | :ref:`get_enable_constraint<class_SkeletonModification2DLookAt_method_get_enable_constraint>`\ (\ ) |const|                                       |
+   +---------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                    | :ref:`set_additional_rotation<class_SkeletonModification2DLookAt_method_set_additional_rotation>`\ (\ rotation\: :ref:`float<class_float>`\ )     |
+   +---------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                    | :ref:`set_constraint_angle_invert<class_SkeletonModification2DLookAt_method_set_constraint_angle_invert>`\ (\ invert\: :ref:`bool<class_bool>`\ ) |
+   +---------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                    | :ref:`set_constraint_angle_max<class_SkeletonModification2DLookAt_method_set_constraint_angle_max>`\ (\ angle_max\: :ref:`float<class_float>`\ )  |
+   +---------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                    | :ref:`set_constraint_angle_min<class_SkeletonModification2DLookAt_method_set_constraint_angle_min>`\ (\ angle_min\: :ref:`float<class_float>`\ )  |
+   +---------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                    | :ref:`set_enable_constraint<class_SkeletonModification2DLookAt_method_set_enable_constraint>`\ (\ enable_constraint\: :ref:`bool<class_bool>`\ )  |
+   +---------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -86,8 +86,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_bone2d_node** **(** :ref:`NodePath<class_NodePath>` value **)**
-- :ref:`NodePath<class_NodePath>` **get_bone2d_node** **(** **)**
+- |void| **set_bone2d_node**\ (\ value\: :ref:`NodePath<class_NodePath>`\ )
+- :ref:`NodePath<class_NodePath>` **get_bone2d_node**\ (\ )
 
 The :ref:`Bone2D<class_Bone2D>` node that the modification will operate on.
 
@@ -103,8 +103,8 @@ The :ref:`Bone2D<class_Bone2D>` node that the modification will operate on.
 
 .. rst-class:: classref-property-setget
 
-- void **set_bone_index** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_bone_index** **(** **)**
+- |void| **set_bone_index**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_bone_index**\ (\ )
 
 The index of the :ref:`Bone2D<class_Bone2D>` node that the modification will operate on.
 
@@ -120,8 +120,8 @@ The index of the :ref:`Bone2D<class_Bone2D>` node that the modification will ope
 
 .. rst-class:: classref-property-setget
 
-- void **set_target_node** **(** :ref:`NodePath<class_NodePath>` value **)**
-- :ref:`NodePath<class_NodePath>` **get_target_node** **(** **)**
+- |void| **set_target_node**\ (\ value\: :ref:`NodePath<class_NodePath>`\ )
+- :ref:`NodePath<class_NodePath>` **get_target_node**\ (\ )
 
 The NodePath to the node that is the target for the LookAt modification. This node is what the modification will rotate the :ref:`Bone2D<class_Bone2D>` to.
 
@@ -138,7 +138,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **get_additional_rotation** **(** **)** |const|
+:ref:`float<class_float>` **get_additional_rotation**\ (\ ) |const|
 
 Returns the amount of additional rotation that is applied after the LookAt modification executes.
 
@@ -150,7 +150,7 @@ Returns the amount of additional rotation that is applied after the LookAt modif
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **get_constraint_angle_invert** **(** **)** |const|
+:ref:`bool<class_bool>` **get_constraint_angle_invert**\ (\ ) |const|
 
 Returns whether the constraints to this modification are inverted or not.
 
@@ -162,7 +162,7 @@ Returns whether the constraints to this modification are inverted or not.
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **get_constraint_angle_max** **(** **)** |const|
+:ref:`float<class_float>` **get_constraint_angle_max**\ (\ ) |const|
 
 Returns the constraint's maximum allowed angle.
 
@@ -174,7 +174,7 @@ Returns the constraint's maximum allowed angle.
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **get_constraint_angle_min** **(** **)** |const|
+:ref:`float<class_float>` **get_constraint_angle_min**\ (\ ) |const|
 
 Returns the constraint's minimum allowed angle.
 
@@ -186,7 +186,7 @@ Returns the constraint's minimum allowed angle.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **get_enable_constraint** **(** **)** |const|
+:ref:`bool<class_bool>` **get_enable_constraint**\ (\ ) |const|
 
 Returns ``true`` if the LookAt modification is using constraints.
 
@@ -198,7 +198,7 @@ Returns ``true`` if the LookAt modification is using constraints.
 
 .. rst-class:: classref-method
 
-void **set_additional_rotation** **(** :ref:`float<class_float>` rotation **)**
+|void| **set_additional_rotation**\ (\ rotation\: :ref:`float<class_float>`\ )
 
 Sets the amount of additional rotation that is to be applied after executing the modification. This allows for offsetting the results by the inputted rotation amount.
 
@@ -210,7 +210,7 @@ Sets the amount of additional rotation that is to be applied after executing the
 
 .. rst-class:: classref-method
 
-void **set_constraint_angle_invert** **(** :ref:`bool<class_bool>` invert **)**
+|void| **set_constraint_angle_invert**\ (\ invert\: :ref:`bool<class_bool>`\ )
 
 When ``true``, the modification will use an inverted joint constraint.
 
@@ -224,7 +224,7 @@ An inverted joint constraint only constraints the :ref:`Bone2D<class_Bone2D>` to
 
 .. rst-class:: classref-method
 
-void **set_constraint_angle_max** **(** :ref:`float<class_float>` angle_max **)**
+|void| **set_constraint_angle_max**\ (\ angle_max\: :ref:`float<class_float>`\ )
 
 Sets the constraint's maximum allowed angle.
 
@@ -236,7 +236,7 @@ Sets the constraint's maximum allowed angle.
 
 .. rst-class:: classref-method
 
-void **set_constraint_angle_min** **(** :ref:`float<class_float>` angle_min **)**
+|void| **set_constraint_angle_min**\ (\ angle_min\: :ref:`float<class_float>`\ )
 
 Sets the constraint's minimum allowed angle.
 
@@ -248,7 +248,7 @@ Sets the constraint's minimum allowed angle.
 
 .. rst-class:: classref-method
 
-void **set_enable_constraint** **(** :ref:`bool<class_bool>` enable_constraint **)**
+|void| **set_enable_constraint**\ (\ enable_constraint\: :ref:`bool<class_bool>`\ )
 
 Sets whether this modification will use constraints or not. When ``true``, constraints will be applied when solving the LookAt modification.
 
@@ -259,3 +259,4 @@ Sets whether this modification will use constraints or not. When ``true``, const
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

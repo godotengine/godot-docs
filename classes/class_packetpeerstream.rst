@@ -56,8 +56,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_input_buffer_max_size** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_input_buffer_max_size** **(** **)**
+- |void| **set_input_buffer_max_size**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_input_buffer_max_size**\ (\ )
 
 .. container:: contribute
 
@@ -75,8 +75,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_output_buffer_max_size** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_output_buffer_max_size** **(** **)**
+- |void| **set_output_buffer_max_size**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_output_buffer_max_size**\ (\ )
 
 .. container:: contribute
 
@@ -94,8 +94,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_stream_peer** **(** :ref:`StreamPeer<class_StreamPeer>` value **)**
-- :ref:`StreamPeer<class_StreamPeer>` **get_stream_peer** **(** **)**
+- |void| **set_stream_peer**\ (\ value\: :ref:`StreamPeer<class_StreamPeer>`\ )
+- :ref:`StreamPeer<class_StreamPeer>` **get_stream_peer**\ (\ )
 
 The wrapped :ref:`StreamPeer<class_StreamPeer>` object.
 
@@ -106,3 +106,4 @@ The wrapped :ref:`StreamPeer<class_StreamPeer>` object.
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

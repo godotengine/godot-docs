@@ -54,8 +54,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_original_class** **(** :ref:`String<class_String>` value **)**
-- :ref:`String<class_String>` **get_original_class** **(** **)**
+- |void| **set_original_class**\ (\ value\: :ref:`String<class_String>`\ )
+- :ref:`String<class_String>` **get_original_class**\ (\ )
 
 The name of the class this resource was supposed to be (see :ref:`Object.get_class<class_Object_method_get_class>`).
 
@@ -71,8 +71,8 @@ The name of the class this resource was supposed to be (see :ref:`Object.get_cla
 
 .. rst-class:: classref-property-setget
 
-- void **set_recording_properties** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_recording_properties** **(** **)**
+- |void| **set_recording_properties**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_recording_properties**\ (\ )
 
 If set to ``true``, allows new properties to be added on top of the existing ones with :ref:`Object.set<class_Object_method_set>`.
 
@@ -83,3 +83,4 @@ If set to ``true``, allows new properties to be added on top of the existing one
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

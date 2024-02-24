@@ -64,17 +64,17 @@ Methods
 .. table::
    :widths: auto
 
-   +-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>` | :ref:`get_avoidance_layer_value<class_NavigationObstacle2D_method_get_avoidance_layer_value>` **(** :ref:`int<class_int>` layer_number **)** |const|                        |
-   +-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`RID<class_RID>`   | :ref:`get_navigation_map<class_NavigationObstacle2D_method_get_navigation_map>` **(** **)** |const|                                                                         |
-   +-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`RID<class_RID>`   | :ref:`get_rid<class_NavigationObstacle2D_method_get_rid>` **(** **)** |const|                                                                                               |
-   +-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                    | :ref:`set_avoidance_layer_value<class_NavigationObstacle2D_method_set_avoidance_layer_value>` **(** :ref:`int<class_int>` layer_number, :ref:`bool<class_bool>` value **)** |
-   +-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                    | :ref:`set_navigation_map<class_NavigationObstacle2D_method_set_navigation_map>` **(** :ref:`RID<class_RID>` navigation_map **)**                                            |
-   +-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +-------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | :ref:`get_avoidance_layer_value<class_NavigationObstacle2D_method_get_avoidance_layer_value>`\ (\ layer_number\: :ref:`int<class_int>`\ ) |const|                          |
+   +-------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`RID<class_RID>`   | :ref:`get_navigation_map<class_NavigationObstacle2D_method_get_navigation_map>`\ (\ ) |const|                                                                              |
+   +-------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`RID<class_RID>`   | :ref:`get_rid<class_NavigationObstacle2D_method_get_rid>`\ (\ ) |const|                                                                                                    |
+   +-------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                  | :ref:`set_avoidance_layer_value<class_NavigationObstacle2D_method_set_avoidance_layer_value>`\ (\ layer_number\: :ref:`int<class_int>`, value\: :ref:`bool<class_bool>`\ ) |
+   +-------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                  | :ref:`set_navigation_map<class_NavigationObstacle2D_method_set_navigation_map>`\ (\ navigation_map\: :ref:`RID<class_RID>`\ )                                              |
+   +-------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -93,8 +93,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_avoidance_enabled** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **get_avoidance_enabled** **(** **)**
+- |void| **set_avoidance_enabled**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_avoidance_enabled**\ (\ )
 
 If ``true`` the obstacle affects avoidance using agents.
 
@@ -110,8 +110,8 @@ If ``true`` the obstacle affects avoidance using agents.
 
 .. rst-class:: classref-property-setget
 
-- void **set_avoidance_layers** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_avoidance_layers** **(** **)**
+- |void| **set_avoidance_layers**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_avoidance_layers**\ (\ )
 
 A bitfield determining the avoidance layers for this obstacle. Agents with a matching bit on the their avoidance mask will avoid this obstacle.
 
@@ -127,8 +127,8 @@ A bitfield determining the avoidance layers for this obstacle. Agents with a mat
 
 .. rst-class:: classref-property-setget
 
-- void **set_radius** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_radius** **(** **)**
+- |void| **set_radius**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_radius**\ (\ )
 
 Sets the avoidance radius for the obstacle.
 
@@ -144,8 +144,8 @@ Sets the avoidance radius for the obstacle.
 
 .. rst-class:: classref-property-setget
 
-- void **set_velocity** **(** :ref:`Vector2<class_Vector2>` value **)**
-- :ref:`Vector2<class_Vector2>` **get_velocity** **(** **)**
+- |void| **set_velocity**\ (\ value\: :ref:`Vector2<class_Vector2>`\ )
+- :ref:`Vector2<class_Vector2>` **get_velocity**\ (\ )
 
 Sets the wanted velocity for the obstacle so other agent's can better predict the obstacle if it is moved with a velocity regularly (every frame) instead of warped to a new position. Does only affect avoidance for the obstacles :ref:`radius<class_NavigationObstacle2D_property_radius>`. Does nothing for the obstacles static vertices.
 
@@ -161,8 +161,8 @@ Sets the wanted velocity for the obstacle so other agent's can better predict th
 
 .. rst-class:: classref-property-setget
 
-- void **set_vertices** **(** :ref:`PackedVector2Array<class_PackedVector2Array>` value **)**
-- :ref:`PackedVector2Array<class_PackedVector2Array>` **get_vertices** **(** **)**
+- |void| **set_vertices**\ (\ value\: :ref:`PackedVector2Array<class_PackedVector2Array>`\ )
+- :ref:`PackedVector2Array<class_PackedVector2Array>` **get_vertices**\ (\ )
 
 The outline vertices of the obstacle. If the vertices are winded in clockwise order agents will be pushed in by the obstacle, else they will be pushed out. Outlines can not be crossed or overlap. Should the vertices using obstacle be warped to a new position agent's can not predict this movement and may get trapped inside the obstacle.
 
@@ -179,7 +179,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **get_avoidance_layer_value** **(** :ref:`int<class_int>` layer_number **)** |const|
+:ref:`bool<class_bool>` **get_avoidance_layer_value**\ (\ layer_number\: :ref:`int<class_int>`\ ) |const|
 
 Returns whether or not the specified layer of the :ref:`avoidance_layers<class_NavigationObstacle2D_property_avoidance_layers>` bitmask is enabled, given a ``layer_number`` between 1 and 32.
 
@@ -191,7 +191,7 @@ Returns whether or not the specified layer of the :ref:`avoidance_layers<class_N
 
 .. rst-class:: classref-method
 
-:ref:`RID<class_RID>` **get_navigation_map** **(** **)** |const|
+:ref:`RID<class_RID>` **get_navigation_map**\ (\ ) |const|
 
 Returns the :ref:`RID<class_RID>` of the navigation map for this NavigationObstacle node. This function returns always the map set on the NavigationObstacle node and not the map of the abstract obstacle on the NavigationServer. If the obstacle map is changed directly with the NavigationServer API the NavigationObstacle node will not be aware of the map change. Use :ref:`set_navigation_map<class_NavigationObstacle2D_method_set_navigation_map>` to change the navigation map for the NavigationObstacle and also update the obstacle on the NavigationServer.
 
@@ -203,7 +203,7 @@ Returns the :ref:`RID<class_RID>` of the navigation map for this NavigationObsta
 
 .. rst-class:: classref-method
 
-:ref:`RID<class_RID>` **get_rid** **(** **)** |const|
+:ref:`RID<class_RID>` **get_rid**\ (\ ) |const|
 
 Returns the :ref:`RID<class_RID>` of this obstacle on the :ref:`NavigationServer2D<class_NavigationServer2D>`.
 
@@ -215,7 +215,7 @@ Returns the :ref:`RID<class_RID>` of this obstacle on the :ref:`NavigationServer
 
 .. rst-class:: classref-method
 
-void **set_avoidance_layer_value** **(** :ref:`int<class_int>` layer_number, :ref:`bool<class_bool>` value **)**
+|void| **set_avoidance_layer_value**\ (\ layer_number\: :ref:`int<class_int>`, value\: :ref:`bool<class_bool>`\ )
 
 Based on ``value``, enables or disables the specified layer in the :ref:`avoidance_layers<class_NavigationObstacle2D_property_avoidance_layers>` bitmask, given a ``layer_number`` between 1 and 32.
 
@@ -227,7 +227,7 @@ Based on ``value``, enables or disables the specified layer in the :ref:`avoidan
 
 .. rst-class:: classref-method
 
-void **set_navigation_map** **(** :ref:`RID<class_RID>` navigation_map **)**
+|void| **set_navigation_map**\ (\ navigation_map\: :ref:`RID<class_RID>`\ )
 
 Sets the :ref:`RID<class_RID>` of the navigation map this NavigationObstacle node should use and also updates the ``obstacle`` on the NavigationServer.
 
@@ -238,3 +238,4 @@ Sets the :ref:`RID<class_RID>` of the navigation map this NavigationObstacle nod
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

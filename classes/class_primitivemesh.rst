@@ -51,11 +51,11 @@ Methods
 .. table::
    :widths: auto
 
-   +---------------------------+----------------------------------------------------------------------------------------------------------------+
-   | :ref:`Array<class_Array>` | :ref:`_create_mesh_array<class_PrimitiveMesh_private_method__create_mesh_array>` **(** **)** |virtual| |const| |
-   +---------------------------+----------------------------------------------------------------------------------------------------------------+
-   | :ref:`Array<class_Array>` | :ref:`get_mesh_arrays<class_PrimitiveMesh_method_get_mesh_arrays>` **(** **)** |const|                         |
-   +---------------------------+----------------------------------------------------------------------------------------------------------------+
+   +---------------------------+----------------------------------------------------------------------------------------------------------+
+   | :ref:`Array<class_Array>` | :ref:`_create_mesh_array<class_PrimitiveMesh_private_method__create_mesh_array>`\ (\ ) |virtual| |const| |
+   +---------------------------+----------------------------------------------------------------------------------------------------------+
+   | :ref:`Array<class_Array>` | :ref:`get_mesh_arrays<class_PrimitiveMesh_method_get_mesh_arrays>`\ (\ ) |const|                         |
+   +---------------------------+----------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -74,8 +74,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_add_uv2** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **get_add_uv2** **(** **)**
+- |void| **set_add_uv2**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_add_uv2**\ (\ )
 
 If set, generates UV2 UV coordinates applying a padding using the :ref:`uv2_padding<class_PrimitiveMesh_property_uv2_padding>` setting. UV2 is needed for lightmapping.
 
@@ -91,8 +91,8 @@ If set, generates UV2 UV coordinates applying a padding using the :ref:`uv2_padd
 
 .. rst-class:: classref-property-setget
 
-- void **set_custom_aabb** **(** :ref:`AABB<class_AABB>` value **)**
-- :ref:`AABB<class_AABB>` **get_custom_aabb** **(** **)**
+- |void| **set_custom_aabb**\ (\ value\: :ref:`AABB<class_AABB>`\ )
+- :ref:`AABB<class_AABB>` **get_custom_aabb**\ (\ )
 
 Overrides the :ref:`AABB<class_AABB>` with one defined by user for use with frustum culling. Especially useful to avoid unexpected culling when using a shader to offset vertices.
 
@@ -108,8 +108,8 @@ Overrides the :ref:`AABB<class_AABB>` with one defined by user for use with frus
 
 .. rst-class:: classref-property-setget
 
-- void **set_flip_faces** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **get_flip_faces** **(** **)**
+- |void| **set_flip_faces**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_flip_faces**\ (\ )
 
 If set, the order of the vertices in each triangle are reversed resulting in the backside of the mesh being drawn.
 
@@ -127,8 +127,8 @@ This gives the same result as using :ref:`BaseMaterial3D.CULL_FRONT<class_BaseMa
 
 .. rst-class:: classref-property-setget
 
-- void **set_material** **(** :ref:`Material<class_Material>` value **)**
-- :ref:`Material<class_Material>` **get_material** **(** **)**
+- |void| **set_material**\ (\ value\: :ref:`Material<class_Material>`\ )
+- :ref:`Material<class_Material>` **get_material**\ (\ )
 
 The current :ref:`Material<class_Material>` of the primitive mesh.
 
@@ -144,8 +144,8 @@ The current :ref:`Material<class_Material>` of the primitive mesh.
 
 .. rst-class:: classref-property-setget
 
-- void **set_uv2_padding** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_uv2_padding** **(** **)**
+- |void| **set_uv2_padding**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_uv2_padding**\ (\ )
 
 If :ref:`add_uv2<class_PrimitiveMesh_property_add_uv2>` is set, specifies the padding in pixels applied along seams of the mesh. Lower padding values allow making better use of the lightmap texture (resulting in higher texel density), but may introduce visible lightmap bleeding along edges.
 
@@ -164,7 +164,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Array<class_Array>` **_create_mesh_array** **(** **)** |virtual| |const|
+:ref:`Array<class_Array>` **_create_mesh_array**\ (\ ) |virtual| |const|
 
 Override this method to customize how this primitive mesh should be generated. Should return an :ref:`Array<class_Array>` where each element is another Array of values required for the mesh (see the :ref:`ArrayType<enum_Mesh_ArrayType>` constants).
 
@@ -176,7 +176,7 @@ Override this method to customize how this primitive mesh should be generated. S
 
 .. rst-class:: classref-method
 
-:ref:`Array<class_Array>` **get_mesh_arrays** **(** **)** |const|
+:ref:`Array<class_Array>` **get_mesh_arrays**\ (\ ) |const|
 
 Returns mesh arrays used to constitute surface of :ref:`Mesh<class_Mesh>`. The result can be passed to :ref:`ArrayMesh.add_surface_from_arrays<class_ArrayMesh_method_add_surface_from_arrays>` to create a new surface. For example:
 
@@ -204,3 +204,4 @@ Returns mesh arrays used to constitute surface of :ref:`Mesh<class_Mesh>`. The r
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

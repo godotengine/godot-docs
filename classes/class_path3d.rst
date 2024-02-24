@@ -48,7 +48,7 @@ Signals
 
 .. rst-class:: classref-signal
 
-**curve_changed** **(** **)**
+**curve_changed**\ (\ )
 
 Emitted when the :ref:`curve<class_Path3D_property_curve>` changes.
 
@@ -69,8 +69,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_curve** **(** :ref:`Curve3D<class_Curve3D>` value **)**
-- :ref:`Curve3D<class_Curve3D>` **get_curve** **(** **)**
+- |void| **set_curve**\ (\ value\: :ref:`Curve3D<class_Curve3D>`\ )
+- :ref:`Curve3D<class_Curve3D>` **get_curve**\ (\ )
 
 A :ref:`Curve3D<class_Curve3D>` describing the path.
 
@@ -81,3 +81,4 @@ A :ref:`Curve3D<class_Curve3D>` describing the path.
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

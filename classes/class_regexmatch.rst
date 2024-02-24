@@ -45,15 +45,15 @@ Methods
 .. table::
    :widths: auto
 
-   +-----------------------------+----------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`       | :ref:`get_end<class_RegExMatch_method_get_end>` **(** :ref:`Variant<class_Variant>` name=0 **)** |const|       |
-   +-----------------------------+----------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`       | :ref:`get_group_count<class_RegExMatch_method_get_group_count>` **(** **)** |const|                            |
-   +-----------------------------+----------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`       | :ref:`get_start<class_RegExMatch_method_get_start>` **(** :ref:`Variant<class_Variant>` name=0 **)** |const|   |
-   +-----------------------------+----------------------------------------------------------------------------------------------------------------+
-   | :ref:`String<class_String>` | :ref:`get_string<class_RegExMatch_method_get_string>` **(** :ref:`Variant<class_Variant>` name=0 **)** |const| |
-   +-----------------------------+----------------------------------------------------------------------------------------------------------------+
+   +-----------------------------+---------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`       | :ref:`get_end<class_RegExMatch_method_get_end>`\ (\ name\: :ref:`Variant<class_Variant>` = 0\ ) |const|       |
+   +-----------------------------+---------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`       | :ref:`get_group_count<class_RegExMatch_method_get_group_count>`\ (\ ) |const|                                 |
+   +-----------------------------+---------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`       | :ref:`get_start<class_RegExMatch_method_get_start>`\ (\ name\: :ref:`Variant<class_Variant>` = 0\ ) |const|   |
+   +-----------------------------+---------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>` | :ref:`get_string<class_RegExMatch_method_get_string>`\ (\ name\: :ref:`Variant<class_Variant>` = 0\ ) |const| |
+   +-----------------------------+---------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -72,7 +72,7 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- :ref:`Dictionary<class_Dictionary>` **get_names** **(** **)**
+- :ref:`Dictionary<class_Dictionary>` **get_names**\ (\ )
 
 A dictionary of named groups and its corresponding group number. Only groups that were matched are included. If multiple groups have the same name, that name would refer to the first matching one.
 
@@ -88,7 +88,7 @@ A dictionary of named groups and its corresponding group number. Only groups tha
 
 .. rst-class:: classref-property-setget
 
-- :ref:`PackedStringArray<class_PackedStringArray>` **get_strings** **(** **)**
+- :ref:`PackedStringArray<class_PackedStringArray>` **get_strings**\ (\ )
 
 An :ref:`Array<class_Array>` of the match and its capturing groups.
 
@@ -104,7 +104,7 @@ An :ref:`Array<class_Array>` of the match and its capturing groups.
 
 .. rst-class:: classref-property-setget
 
-- :ref:`String<class_String>` **get_subject** **(** **)**
+- :ref:`String<class_String>` **get_subject**\ (\ )
 
 The source string used with the search pattern to find this matching result.
 
@@ -121,7 +121,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_end** **(** :ref:`Variant<class_Variant>` name=0 **)** |const|
+:ref:`int<class_int>` **get_end**\ (\ name\: :ref:`Variant<class_Variant>` = 0\ ) |const|
 
 Returns the end position of the match within the source string. The end position of capturing groups can be retrieved by providing its group number as an integer or its string name (if it's a named group). The default value of 0 refers to the whole pattern.
 
@@ -135,7 +135,7 @@ Returns -1 if the group did not match or doesn't exist.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_group_count** **(** **)** |const|
+:ref:`int<class_int>` **get_group_count**\ (\ ) |const|
 
 Returns the number of capturing groups.
 
@@ -147,7 +147,7 @@ Returns the number of capturing groups.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_start** **(** :ref:`Variant<class_Variant>` name=0 **)** |const|
+:ref:`int<class_int>` **get_start**\ (\ name\: :ref:`Variant<class_Variant>` = 0\ ) |const|
 
 Returns the starting position of the match within the source string. The starting position of capturing groups can be retrieved by providing its group number as an integer or its string name (if it's a named group). The default value of 0 refers to the whole pattern.
 
@@ -161,7 +161,7 @@ Returns -1 if the group did not match or doesn't exist.
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **get_string** **(** :ref:`Variant<class_Variant>` name=0 **)** |const|
+:ref:`String<class_String>` **get_string**\ (\ name\: :ref:`Variant<class_Variant>` = 0\ ) |const|
 
 Returns the substring of the match from the source string. Capturing groups can be retrieved by providing its group number as an integer or its string name (if it's a named group). The default value of 0 refers to the whole pattern.
 
@@ -174,3 +174,4 @@ Returns an empty string if the group did not match or doesn't exist.
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

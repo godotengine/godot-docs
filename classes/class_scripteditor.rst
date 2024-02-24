@@ -31,23 +31,23 @@ Methods
 .. table::
    :widths: auto
 
-   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`ScriptEditorBase<class_ScriptEditorBase>`   | :ref:`get_current_editor<class_ScriptEditor_method_get_current_editor>` **(** **)** |const|                                                                                                |
-   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Script<class_Script>`                       | :ref:`get_current_script<class_ScriptEditor_method_get_current_script>` **(** **)**                                                                                                        |
-   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`ScriptEditorBase[]<class_ScriptEditorBase>` | :ref:`get_open_script_editors<class_ScriptEditor_method_get_open_script_editors>` **(** **)** |const|                                                                                      |
-   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Script[]<class_Script>`                     | :ref:`get_open_scripts<class_ScriptEditor_method_get_open_scripts>` **(** **)** |const|                                                                                                    |
-   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                              | :ref:`goto_line<class_ScriptEditor_method_goto_line>` **(** :ref:`int<class_int>` line_number **)**                                                                                        |
-   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                              | :ref:`open_script_create_dialog<class_ScriptEditor_method_open_script_create_dialog>` **(** :ref:`String<class_String>` base_name, :ref:`String<class_String>` base_path **)**             |
-   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                              | :ref:`register_syntax_highlighter<class_ScriptEditor_method_register_syntax_highlighter>` **(** :ref:`EditorSyntaxHighlighter<class_EditorSyntaxHighlighter>` syntax_highlighter **)**     |
-   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                              | :ref:`unregister_syntax_highlighter<class_ScriptEditor_method_unregister_syntax_highlighter>` **(** :ref:`EditorSyntaxHighlighter<class_EditorSyntaxHighlighter>` syntax_highlighter **)** |
-   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`ScriptEditorBase<class_ScriptEditorBase>`                              | :ref:`get_current_editor<class_ScriptEditor_method_get_current_editor>`\ (\ ) |const|                                                                                                   |
+   +------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Script<class_Script>`                                                  | :ref:`get_current_script<class_ScriptEditor_method_get_current_script>`\ (\ )                                                                                                           |
+   +------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Array<class_Array>`\[:ref:`ScriptEditorBase<class_ScriptEditorBase>`\] | :ref:`get_open_script_editors<class_ScriptEditor_method_get_open_script_editors>`\ (\ ) |const|                                                                                         |
+   +------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Array<class_Array>`\[:ref:`Script<class_Script>`\]                     | :ref:`get_open_scripts<class_ScriptEditor_method_get_open_scripts>`\ (\ ) |const|                                                                                                       |
+   +------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                                       | :ref:`goto_line<class_ScriptEditor_method_goto_line>`\ (\ line_number\: :ref:`int<class_int>`\ )                                                                                        |
+   +------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                                       | :ref:`open_script_create_dialog<class_ScriptEditor_method_open_script_create_dialog>`\ (\ base_name\: :ref:`String<class_String>`, base_path\: :ref:`String<class_String>`\ )           |
+   +------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                                       | :ref:`register_syntax_highlighter<class_ScriptEditor_method_register_syntax_highlighter>`\ (\ syntax_highlighter\: :ref:`EditorSyntaxHighlighter<class_EditorSyntaxHighlighter>`\ )     |
+   +------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                                       | :ref:`unregister_syntax_highlighter<class_ScriptEditor_method_unregister_syntax_highlighter>`\ (\ syntax_highlighter\: :ref:`EditorSyntaxHighlighter<class_EditorSyntaxHighlighter>`\ ) |
+   +------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -62,7 +62,7 @@ Signals
 
 .. rst-class:: classref-signal
 
-**editor_script_changed** **(** :ref:`Script<class_Script>` script **)**
+**editor_script_changed**\ (\ script\: :ref:`Script<class_Script>`\ )
 
 Emitted when user changed active script. Argument is a freshly activated :ref:`Script<class_Script>`.
 
@@ -74,7 +74,7 @@ Emitted when user changed active script. Argument is a freshly activated :ref:`S
 
 .. rst-class:: classref-signal
 
-**script_close** **(** :ref:`Script<class_Script>` script **)**
+**script_close**\ (\ script\: :ref:`Script<class_Script>`\ )
 
 Emitted when editor is about to close the active script. Argument is a :ref:`Script<class_Script>` that is going to be closed.
 
@@ -91,7 +91,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`ScriptEditorBase<class_ScriptEditorBase>` **get_current_editor** **(** **)** |const|
+:ref:`ScriptEditorBase<class_ScriptEditorBase>` **get_current_editor**\ (\ ) |const|
 
 Returns the :ref:`ScriptEditorBase<class_ScriptEditorBase>` object that the user is currently editing.
 
@@ -103,7 +103,7 @@ Returns the :ref:`ScriptEditorBase<class_ScriptEditorBase>` object that the user
 
 .. rst-class:: classref-method
 
-:ref:`Script<class_Script>` **get_current_script** **(** **)**
+:ref:`Script<class_Script>` **get_current_script**\ (\ )
 
 Returns a :ref:`Script<class_Script>` that is currently active in editor.
 
@@ -115,7 +115,7 @@ Returns a :ref:`Script<class_Script>` that is currently active in editor.
 
 .. rst-class:: classref-method
 
-:ref:`ScriptEditorBase[]<class_ScriptEditorBase>` **get_open_script_editors** **(** **)** |const|
+:ref:`Array<class_Array>`\[:ref:`ScriptEditorBase<class_ScriptEditorBase>`\] **get_open_script_editors**\ (\ ) |const|
 
 Returns an array with all :ref:`ScriptEditorBase<class_ScriptEditorBase>` objects which are currently open in editor.
 
@@ -127,7 +127,7 @@ Returns an array with all :ref:`ScriptEditorBase<class_ScriptEditorBase>` object
 
 .. rst-class:: classref-method
 
-:ref:`Script[]<class_Script>` **get_open_scripts** **(** **)** |const|
+:ref:`Array<class_Array>`\[:ref:`Script<class_Script>`\] **get_open_scripts**\ (\ ) |const|
 
 Returns an array with all :ref:`Script<class_Script>` objects which are currently open in editor.
 
@@ -139,7 +139,7 @@ Returns an array with all :ref:`Script<class_Script>` objects which are currentl
 
 .. rst-class:: classref-method
 
-void **goto_line** **(** :ref:`int<class_int>` line_number **)**
+|void| **goto_line**\ (\ line_number\: :ref:`int<class_int>`\ )
 
 Goes to the specified line in the current script.
 
@@ -151,7 +151,7 @@ Goes to the specified line in the current script.
 
 .. rst-class:: classref-method
 
-void **open_script_create_dialog** **(** :ref:`String<class_String>` base_name, :ref:`String<class_String>` base_path **)**
+|void| **open_script_create_dialog**\ (\ base_name\: :ref:`String<class_String>`, base_path\: :ref:`String<class_String>`\ )
 
 Opens the script create dialog. The script will extend ``base_name``. The file extension can be omitted from ``base_path``. It will be added based on the selected scripting language.
 
@@ -163,7 +163,7 @@ Opens the script create dialog. The script will extend ``base_name``. The file e
 
 .. rst-class:: classref-method
 
-void **register_syntax_highlighter** **(** :ref:`EditorSyntaxHighlighter<class_EditorSyntaxHighlighter>` syntax_highlighter **)**
+|void| **register_syntax_highlighter**\ (\ syntax_highlighter\: :ref:`EditorSyntaxHighlighter<class_EditorSyntaxHighlighter>`\ )
 
 Registers the :ref:`EditorSyntaxHighlighter<class_EditorSyntaxHighlighter>` to the editor, the :ref:`EditorSyntaxHighlighter<class_EditorSyntaxHighlighter>` will be available on all open scripts.
 
@@ -177,7 +177,7 @@ Registers the :ref:`EditorSyntaxHighlighter<class_EditorSyntaxHighlighter>` to t
 
 .. rst-class:: classref-method
 
-void **unregister_syntax_highlighter** **(** :ref:`EditorSyntaxHighlighter<class_EditorSyntaxHighlighter>` syntax_highlighter **)**
+|void| **unregister_syntax_highlighter**\ (\ syntax_highlighter\: :ref:`EditorSyntaxHighlighter<class_EditorSyntaxHighlighter>`\ )
 
 Unregisters the :ref:`EditorSyntaxHighlighter<class_EditorSyntaxHighlighter>` from the editor.
 
@@ -190,3 +190,4 @@ Unregisters the :ref:`EditorSyntaxHighlighter<class_EditorSyntaxHighlighter>` fr
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

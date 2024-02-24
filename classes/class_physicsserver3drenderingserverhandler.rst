@@ -22,19 +22,19 @@ Methods
 .. table::
    :widths: auto
 
-   +------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void | :ref:`_set_aabb<class_PhysicsServer3DRenderingServerHandler_private_method__set_aabb>` **(** :ref:`AABB<class_AABB>` aabb **)** |virtual|                                              |
-   +------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void | :ref:`_set_normal<class_PhysicsServer3DRenderingServerHandler_private_method__set_normal>` **(** :ref:`int<class_int>` vertex_id, :ref:`Vector3<class_Vector3>` normal **)** |virtual| |
-   +------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void | :ref:`_set_vertex<class_PhysicsServer3DRenderingServerHandler_private_method__set_vertex>` **(** :ref:`int<class_int>` vertex_id, :ref:`Vector3<class_Vector3>` vertex **)** |virtual| |
-   +------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void | :ref:`set_aabb<class_PhysicsServer3DRenderingServerHandler_method_set_aabb>` **(** :ref:`AABB<class_AABB>` aabb **)**                                                                  |
-   +------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void | :ref:`set_normal<class_PhysicsServer3DRenderingServerHandler_method_set_normal>` **(** :ref:`int<class_int>` vertex_id, :ref:`Vector3<class_Vector3>` normal **)**                     |
-   +------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void | :ref:`set_vertex<class_PhysicsServer3DRenderingServerHandler_method_set_vertex>` **(** :ref:`int<class_int>` vertex_id, :ref:`Vector3<class_Vector3>` vertex **)**                     |
-   +------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void| | :ref:`_set_aabb<class_PhysicsServer3DRenderingServerHandler_private_method__set_aabb>`\ (\ aabb\: :ref:`AABB<class_AABB>`\ ) |virtual|                                                |
+   +--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void| | :ref:`_set_normal<class_PhysicsServer3DRenderingServerHandler_private_method__set_normal>`\ (\ vertex_id\: :ref:`int<class_int>`, normal\: :ref:`Vector3<class_Vector3>`\ ) |virtual| |
+   +--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void| | :ref:`_set_vertex<class_PhysicsServer3DRenderingServerHandler_private_method__set_vertex>`\ (\ vertex_id\: :ref:`int<class_int>`, vertex\: :ref:`Vector3<class_Vector3>`\ ) |virtual| |
+   +--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void| | :ref:`set_aabb<class_PhysicsServer3DRenderingServerHandler_method_set_aabb>`\ (\ aabb\: :ref:`AABB<class_AABB>`\ )                                                                    |
+   +--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void| | :ref:`set_normal<class_PhysicsServer3DRenderingServerHandler_method_set_normal>`\ (\ vertex_id\: :ref:`int<class_int>`, normal\: :ref:`Vector3<class_Vector3>`\ )                     |
+   +--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void| | :ref:`set_vertex<class_PhysicsServer3DRenderingServerHandler_method_set_vertex>`\ (\ vertex_id\: :ref:`int<class_int>`, vertex\: :ref:`Vector3<class_Vector3>`\ )                     |
+   +--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -49,7 +49,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-void **_set_aabb** **(** :ref:`AABB<class_AABB>` aabb **)** |virtual|
+|void| **_set_aabb**\ (\ aabb\: :ref:`AABB<class_AABB>`\ ) |virtual|
 
 Called by the :ref:`PhysicsServer3D<class_PhysicsServer3D>` to set the bounding box for the :ref:`SoftBody3D<class_SoftBody3D>`.
 
@@ -61,7 +61,7 @@ Called by the :ref:`PhysicsServer3D<class_PhysicsServer3D>` to set the bounding 
 
 .. rst-class:: classref-method
 
-void **_set_normal** **(** :ref:`int<class_int>` vertex_id, :ref:`Vector3<class_Vector3>` normal **)** |virtual|
+|void| **_set_normal**\ (\ vertex_id\: :ref:`int<class_int>`, normal\: :ref:`Vector3<class_Vector3>`\ ) |virtual|
 
 Called by the :ref:`PhysicsServer3D<class_PhysicsServer3D>` to set the normal for the :ref:`SoftBody3D<class_SoftBody3D>` vertex at the index specified by ``vertex_id``.
 
@@ -75,7 +75,7 @@ Called by the :ref:`PhysicsServer3D<class_PhysicsServer3D>` to set the normal fo
 
 .. rst-class:: classref-method
 
-void **_set_vertex** **(** :ref:`int<class_int>` vertex_id, :ref:`Vector3<class_Vector3>` vertex **)** |virtual|
+|void| **_set_vertex**\ (\ vertex_id\: :ref:`int<class_int>`, vertex\: :ref:`Vector3<class_Vector3>`\ ) |virtual|
 
 Called by the :ref:`PhysicsServer3D<class_PhysicsServer3D>` to set the position for the :ref:`SoftBody3D<class_SoftBody3D>` vertex at the index specified by ``vertex_id``.
 
@@ -89,7 +89,7 @@ Called by the :ref:`PhysicsServer3D<class_PhysicsServer3D>` to set the position 
 
 .. rst-class:: classref-method
 
-void **set_aabb** **(** :ref:`AABB<class_AABB>` aabb **)**
+|void| **set_aabb**\ (\ aabb\: :ref:`AABB<class_AABB>`\ )
 
 Sets the bounding box for the :ref:`SoftBody3D<class_SoftBody3D>`.
 
@@ -101,7 +101,7 @@ Sets the bounding box for the :ref:`SoftBody3D<class_SoftBody3D>`.
 
 .. rst-class:: classref-method
 
-void **set_normal** **(** :ref:`int<class_int>` vertex_id, :ref:`Vector3<class_Vector3>` normal **)**
+|void| **set_normal**\ (\ vertex_id\: :ref:`int<class_int>`, normal\: :ref:`Vector3<class_Vector3>`\ )
 
 Sets the normal for the :ref:`SoftBody3D<class_SoftBody3D>` vertex at the index specified by ``vertex_id``.
 
@@ -113,7 +113,7 @@ Sets the normal for the :ref:`SoftBody3D<class_SoftBody3D>` vertex at the index 
 
 .. rst-class:: classref-method
 
-void **set_vertex** **(** :ref:`int<class_int>` vertex_id, :ref:`Vector3<class_Vector3>` vertex **)**
+|void| **set_vertex**\ (\ vertex_id\: :ref:`int<class_int>`, vertex\: :ref:`Vector3<class_Vector3>`\ )
 
 Sets the position for the :ref:`SoftBody3D<class_SoftBody3D>` vertex at the index specified by ``vertex_id``.
 
@@ -124,3 +124,4 @@ Sets the position for the :ref:`SoftBody3D<class_SoftBody3D>` vertex at the inde
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

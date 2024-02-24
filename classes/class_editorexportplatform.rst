@@ -40,9 +40,9 @@ Methods
 .. table::
    :widths: auto
 
-   +-----------------------------+---------------------------------------------------------------------------------------+
-   | :ref:`String<class_String>` | :ref:`get_os_name<class_EditorExportPlatform_method_get_os_name>` **(** **)** |const| |
-   +-----------------------------+---------------------------------------------------------------------------------------+
+   +-----------------------------+---------------------------------------------------------------------------------+
+   | :ref:`String<class_String>` | :ref:`get_os_name<class_EditorExportPlatform_method_get_os_name>`\ (\ ) |const| |
+   +-----------------------------+---------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -57,7 +57,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **get_os_name** **(** **)** |const|
+:ref:`String<class_String>` **get_os_name**\ (\ ) |const|
 
 Returns the name of the export operating system handled by this **EditorExportPlatform** class, as a friendly string. Possible return values are ``Windows``, ``Linux``, ``macOS``, ``Android``, ``iOS``, and ``Web``.
 
@@ -68,3 +68,4 @@ Returns the name of the export operating system handled by this **EditorExportPl
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

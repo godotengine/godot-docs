@@ -84,8 +84,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_as_normal_map** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_normal_map** **(** **)**
+- |void| **set_as_normal_map**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_normal_map**\ (\ )
 
 If ``true``, the resulting texture contains a normal map created from the original noise interpreted as a bump map.
 
@@ -101,8 +101,8 @@ If ``true``, the resulting texture contains a normal map created from the origin
 
 .. rst-class:: classref-property-setget
 
-- void **set_bump_strength** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_bump_strength** **(** **)**
+- |void| **set_bump_strength**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_bump_strength**\ (\ )
 
 Strength of the bump maps used in this texture. A higher value will make the bump maps appear larger while a lower value will make them appear softer.
 
@@ -118,8 +118,8 @@ Strength of the bump maps used in this texture. A higher value will make the bum
 
 .. rst-class:: classref-property-setget
 
-- void **set_color_ramp** **(** :ref:`Gradient<class_Gradient>` value **)**
-- :ref:`Gradient<class_Gradient>` **get_color_ramp** **(** **)**
+- |void| **set_color_ramp**\ (\ value\: :ref:`Gradient<class_Gradient>`\ )
+- :ref:`Gradient<class_Gradient>` **get_color_ramp**\ (\ )
 
 A :ref:`Gradient<class_Gradient>` which is used to map the luminance of each pixel to a color value.
 
@@ -135,8 +135,8 @@ A :ref:`Gradient<class_Gradient>` which is used to map the luminance of each pix
 
 .. rst-class:: classref-property-setget
 
-- void **set_generate_mipmaps** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_generating_mipmaps** **(** **)**
+- |void| **set_generate_mipmaps**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_generating_mipmaps**\ (\ )
 
 Determines whether mipmaps are generated for this texture. Enabling this results in less texture aliasing in the distance, at the cost of increasing memory usage by roughly 33% and making the noise texture generation take longer.
 
@@ -154,8 +154,8 @@ Determines whether mipmaps are generated for this texture. Enabling this results
 
 .. rst-class:: classref-property-setget
 
-- void **set_height** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_height** **(** **)**
+- |void| **set_height**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_height**\ (\ )
 
 Height of the generated texture (in pixels).
 
@@ -171,8 +171,8 @@ Height of the generated texture (in pixels).
 
 .. rst-class:: classref-property-setget
 
-- void **set_in_3d_space** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_in_3d_space** **(** **)**
+- |void| **set_in_3d_space**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_in_3d_space**\ (\ )
 
 Determines whether the noise image is calculated in 3D space. May result in reduced contrast.
 
@@ -188,8 +188,8 @@ Determines whether the noise image is calculated in 3D space. May result in redu
 
 .. rst-class:: classref-property-setget
 
-- void **set_invert** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **get_invert** **(** **)**
+- |void| **set_invert**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_invert**\ (\ )
 
 If ``true``, inverts the noise texture. White becomes black, black becomes white.
 
@@ -205,8 +205,8 @@ If ``true``, inverts the noise texture. White becomes black, black becomes white
 
 .. rst-class:: classref-property-setget
 
-- void **set_noise** **(** :ref:`Noise<class_Noise>` value **)**
-- :ref:`Noise<class_Noise>` **get_noise** **(** **)**
+- |void| **set_noise**\ (\ value\: :ref:`Noise<class_Noise>`\ )
+- :ref:`Noise<class_Noise>` **get_noise**\ (\ )
 
 The instance of the :ref:`Noise<class_Noise>` object.
 
@@ -222,8 +222,8 @@ The instance of the :ref:`Noise<class_Noise>` object.
 
 .. rst-class:: classref-property-setget
 
-- void **set_normalize** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_normalized** **(** **)**
+- |void| **set_normalize**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_normalized**\ (\ )
 
 If ``true``, the noise image coming from the noise generator is normalized to the range ``0.0`` to ``1.0``.
 
@@ -241,8 +241,8 @@ Turning normalization off can affect the contrast and allows you to generate non
 
 .. rst-class:: classref-property-setget
 
-- void **set_seamless** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **get_seamless** **(** **)**
+- |void| **set_seamless**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_seamless**\ (\ )
 
 If ``true``, a seamless texture is requested from the :ref:`Noise<class_Noise>` resource.
 
@@ -262,8 +262,8 @@ If ``true``, a seamless texture is requested from the :ref:`Noise<class_Noise>` 
 
 .. rst-class:: classref-property-setget
 
-- void **set_seamless_blend_skirt** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_seamless_blend_skirt** **(** **)**
+- |void| **set_seamless_blend_skirt**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_seamless_blend_skirt**\ (\ )
 
 Used for the default/fallback implementation of the seamless texture generation. It determines the distance over which the seams are blended. High values may result in less details and contrast. See :ref:`Noise<class_Noise>` for further details.
 
@@ -281,8 +281,8 @@ Used for the default/fallback implementation of the seamless texture generation.
 
 .. rst-class:: classref-property-setget
 
-- void **set_width** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_width** **(** **)**
+- |void| **set_width**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_width**\ (\ )
 
 Width of the generated texture (in pixels).
 
@@ -293,3 +293,4 @@ Width of the generated texture (in pixels).
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

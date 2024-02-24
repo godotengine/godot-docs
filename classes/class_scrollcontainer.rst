@@ -66,13 +66,13 @@ Methods
 .. table::
    :widths: auto
 
-   +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                | :ref:`ensure_control_visible<class_ScrollContainer_method_ensure_control_visible>` **(** :ref:`Control<class_Control>` control **)** |
-   +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`HScrollBar<class_HScrollBar>` | :ref:`get_h_scroll_bar<class_ScrollContainer_method_get_h_scroll_bar>` **(** **)**                                                   |
-   +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`VScrollBar<class_VScrollBar>` | :ref:`get_v_scroll_bar<class_ScrollContainer_method_get_v_scroll_bar>` **(** **)**                                                   |
-   +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+   +-------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                              | :ref:`ensure_control_visible<class_ScrollContainer_method_ensure_control_visible>`\ (\ control\: :ref:`Control<class_Control>`\ ) |
+   +-------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`HScrollBar<class_HScrollBar>` | :ref:`get_h_scroll_bar<class_ScrollContainer_method_get_h_scroll_bar>`\ (\ )                                                      |
+   +-------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`VScrollBar<class_VScrollBar>` | :ref:`get_v_scroll_bar<class_ScrollContainer_method_get_v_scroll_bar>`\ (\ )                                                      |
+   +-------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-reftable-group
 
@@ -99,7 +99,7 @@ Signals
 
 .. rst-class:: classref-signal
 
-**scroll_ended** **(** **)**
+**scroll_ended**\ (\ )
 
 Emitted when scrolling stops when dragging the scrollable area *with a touch event*. This signal is *not* emitted when scrolling by dragging the scrollbar, scrolling with the mouse wheel or scrolling with keyboard/gamepad events.
 
@@ -113,7 +113,7 @@ Emitted when scrolling stops when dragging the scrollable area *with a touch eve
 
 .. rst-class:: classref-signal
 
-**scroll_started** **(** **)**
+**scroll_started**\ (\ )
 
 Emitted when scrolling starts when dragging the scrollable area w\ *ith a touch event*. This signal is *not* emitted when scrolling by dragging the scrollbar, scrolling with the mouse wheel or scrolling with keyboard/gamepad events.
 
@@ -183,8 +183,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_follow_focus** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_following_focus** **(** **)**
+- |void| **set_follow_focus**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_following_focus**\ (\ )
 
 If ``true``, the ScrollContainer will automatically scroll to focused children (including indirect children) to make sure they are fully visible.
 
@@ -200,8 +200,8 @@ If ``true``, the ScrollContainer will automatically scroll to focused children (
 
 .. rst-class:: classref-property-setget
 
-- void **set_horizontal_scroll_mode** **(** :ref:`ScrollMode<enum_ScrollContainer_ScrollMode>` value **)**
-- :ref:`ScrollMode<enum_ScrollContainer_ScrollMode>` **get_horizontal_scroll_mode** **(** **)**
+- |void| **set_horizontal_scroll_mode**\ (\ value\: :ref:`ScrollMode<enum_ScrollContainer_ScrollMode>`\ )
+- :ref:`ScrollMode<enum_ScrollContainer_ScrollMode>` **get_horizontal_scroll_mode**\ (\ )
 
 Controls whether horizontal scrollbar can be used and when it should be visible. See :ref:`ScrollMode<enum_ScrollContainer_ScrollMode>` for options.
 
@@ -217,8 +217,8 @@ Controls whether horizontal scrollbar can be used and when it should be visible.
 
 .. rst-class:: classref-property-setget
 
-- void **set_deadzone** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_deadzone** **(** **)**
+- |void| **set_deadzone**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_deadzone**\ (\ )
 
 Deadzone for touch scrolling. Lower deadzone makes the scrolling more sensitive.
 
@@ -234,8 +234,8 @@ Deadzone for touch scrolling. Lower deadzone makes the scrolling more sensitive.
 
 .. rst-class:: classref-property-setget
 
-- void **set_h_scroll** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_h_scroll** **(** **)**
+- |void| **set_h_scroll**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_h_scroll**\ (\ )
 
 The current horizontal scroll value.
 
@@ -258,8 +258,8 @@ The current horizontal scroll value.
 
 .. rst-class:: classref-property-setget
 
-- void **set_horizontal_custom_step** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_horizontal_custom_step** **(** **)**
+- |void| **set_horizontal_custom_step**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_horizontal_custom_step**\ (\ )
 
 Overrides the :ref:`ScrollBar.custom_step<class_ScrollBar_property_custom_step>` used when clicking the internal scroll bar's horizontal increment and decrement buttons or when using arrow keys when the :ref:`ScrollBar<class_ScrollBar>` is focused.
 
@@ -275,8 +275,8 @@ Overrides the :ref:`ScrollBar.custom_step<class_ScrollBar_property_custom_step>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_v_scroll** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_v_scroll** **(** **)**
+- |void| **set_v_scroll**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_v_scroll**\ (\ )
 
 The current vertical scroll value.
 
@@ -299,8 +299,8 @@ The current vertical scroll value.
 
 .. rst-class:: classref-property-setget
 
-- void **set_vertical_custom_step** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_vertical_custom_step** **(** **)**
+- |void| **set_vertical_custom_step**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_vertical_custom_step**\ (\ )
 
 Overrides the :ref:`ScrollBar.custom_step<class_ScrollBar_property_custom_step>` used when clicking the internal scroll bar's vertical increment and decrement buttons or when using arrow keys when the :ref:`ScrollBar<class_ScrollBar>` is focused.
 
@@ -316,8 +316,8 @@ Overrides the :ref:`ScrollBar.custom_step<class_ScrollBar_property_custom_step>`
 
 .. rst-class:: classref-property-setget
 
-- void **set_vertical_scroll_mode** **(** :ref:`ScrollMode<enum_ScrollContainer_ScrollMode>` value **)**
-- :ref:`ScrollMode<enum_ScrollContainer_ScrollMode>` **get_vertical_scroll_mode** **(** **)**
+- |void| **set_vertical_scroll_mode**\ (\ value\: :ref:`ScrollMode<enum_ScrollContainer_ScrollMode>`\ )
+- :ref:`ScrollMode<enum_ScrollContainer_ScrollMode>` **get_vertical_scroll_mode**\ (\ )
 
 Controls whether vertical scrollbar can be used and when it should be visible. See :ref:`ScrollMode<enum_ScrollContainer_ScrollMode>` for options.
 
@@ -334,7 +334,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-void **ensure_control_visible** **(** :ref:`Control<class_Control>` control **)**
+|void| **ensure_control_visible**\ (\ control\: :ref:`Control<class_Control>`\ )
 
 Ensures the given ``control`` is visible (must be a direct or indirect child of the ScrollContainer). Used by :ref:`follow_focus<class_ScrollContainer_property_follow_focus>`.
 
@@ -354,7 +354,7 @@ Ensures the given ``control`` is visible (must be a direct or indirect child of 
 
 .. rst-class:: classref-method
 
-:ref:`HScrollBar<class_HScrollBar>` **get_h_scroll_bar** **(** **)**
+:ref:`HScrollBar<class_HScrollBar>` **get_h_scroll_bar**\ (\ )
 
 Returns the horizontal scrollbar :ref:`HScrollBar<class_HScrollBar>` of this **ScrollContainer**.
 
@@ -368,7 +368,7 @@ Returns the horizontal scrollbar :ref:`HScrollBar<class_HScrollBar>` of this **S
 
 .. rst-class:: classref-method
 
-:ref:`VScrollBar<class_VScrollBar>` **get_v_scroll_bar** **(** **)**
+:ref:`VScrollBar<class_VScrollBar>` **get_v_scroll_bar**\ (\ )
 
 Returns the vertical scrollbar :ref:`VScrollBar<class_VScrollBar>` of this **ScrollContainer**.
 
@@ -398,3 +398,4 @@ The background :ref:`StyleBox<class_StyleBox>` of the **ScrollContainer**.
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

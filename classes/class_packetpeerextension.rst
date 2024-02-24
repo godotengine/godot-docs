@@ -24,15 +24,15 @@ Methods
 .. table::
    :widths: auto
 
-   +---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                 | :ref:`_get_available_packet_count<class_PacketPeerExtension_private_method__get_available_packet_count>` **(** **)** |virtual| |const|                      |
-   +---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                 | :ref:`_get_max_packet_size<class_PacketPeerExtension_private_method__get_max_packet_size>` **(** **)** |virtual| |const|                                    |
-   +---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Error<enum_@GlobalScope_Error>` | :ref:`_get_packet<class_PacketPeerExtension_private_method__get_packet>` **(** const uint8_t ** r_buffer, int32_t* r_buffer_size **)** |virtual|            |
-   +---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Error<enum_@GlobalScope_Error>` | :ref:`_put_packet<class_PacketPeerExtension_private_method__put_packet>` **(** const uint8_t* p_buffer, :ref:`int<class_int>` p_buffer_size **)** |virtual| |
-   +---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                 | :ref:`_get_available_packet_count<class_PacketPeerExtension_private_method__get_available_packet_count>`\ (\ ) |virtual| |const|                               |
+   +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                 | :ref:`_get_max_packet_size<class_PacketPeerExtension_private_method__get_max_packet_size>`\ (\ ) |virtual| |const|                                             |
+   +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>` | :ref:`_get_packet<class_PacketPeerExtension_private_method__get_packet>`\ (\ r_buffer\: ``const uint8_t **``, r_buffer_size\: ``int32_t*``\ ) |virtual|        |
+   +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>` | :ref:`_put_packet<class_PacketPeerExtension_private_method__put_packet>`\ (\ p_buffer\: ``const uint8_t*``, p_buffer_size\: :ref:`int<class_int>`\ ) |virtual| |
+   +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -47,7 +47,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **_get_available_packet_count** **(** **)** |virtual| |const|
+:ref:`int<class_int>` **_get_available_packet_count**\ (\ ) |virtual| |const|
 
 .. container:: contribute
 
@@ -61,7 +61,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **_get_max_packet_size** **(** **)** |virtual| |const|
+:ref:`int<class_int>` **_get_max_packet_size**\ (\ ) |virtual| |const|
 
 .. container:: contribute
 
@@ -75,7 +75,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **_get_packet** **(** const uint8_t ** r_buffer, int32_t* r_buffer_size **)** |virtual|
+:ref:`Error<enum_@GlobalScope_Error>` **_get_packet**\ (\ r_buffer\: ``const uint8_t **``, r_buffer_size\: ``int32_t*``\ ) |virtual|
 
 .. container:: contribute
 
@@ -89,7 +89,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **_put_packet** **(** const uint8_t* p_buffer, :ref:`int<class_int>` p_buffer_size **)** |virtual|
+:ref:`Error<enum_@GlobalScope_Error>` **_put_packet**\ (\ p_buffer\: ``const uint8_t*``, p_buffer_size\: :ref:`int<class_int>`\ ) |virtual|
 
 .. container:: contribute
 
@@ -102,3 +102,4 @@ Method Descriptions
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

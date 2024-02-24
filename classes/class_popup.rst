@@ -70,7 +70,7 @@ Signals
 
 .. rst-class:: classref-signal
 
-**popup_hide** **(** **)**
+**popup_hide**\ (\ )
 
 Emitted when the popup is hidden.
 
@@ -98,3 +98,4 @@ Default :ref:`StyleBox<class_StyleBox>` for the **Popup**.
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

@@ -93,8 +93,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_closed** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_closed** **(** **)**
+- |void| **set_closed**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_closed**\ (\ )
 
 If ``true``, closes the polygon. A closed OccluderPolygon2D occludes the light coming from any direction. An opened OccluderPolygon2D occludes the light only at its outline's direction.
 
@@ -110,8 +110,8 @@ If ``true``, closes the polygon. A closed OccluderPolygon2D occludes the light c
 
 .. rst-class:: classref-property-setget
 
-- void **set_cull_mode** **(** :ref:`CullMode<enum_OccluderPolygon2D_CullMode>` value **)**
-- :ref:`CullMode<enum_OccluderPolygon2D_CullMode>` **get_cull_mode** **(** **)**
+- |void| **set_cull_mode**\ (\ value\: :ref:`CullMode<enum_OccluderPolygon2D_CullMode>`\ )
+- :ref:`CullMode<enum_OccluderPolygon2D_CullMode>` **get_cull_mode**\ (\ )
 
 The culling mode to use.
 
@@ -127,8 +127,8 @@ The culling mode to use.
 
 .. rst-class:: classref-property-setget
 
-- void **set_polygon** **(** :ref:`PackedVector2Array<class_PackedVector2Array>` value **)**
-- :ref:`PackedVector2Array<class_PackedVector2Array>` **get_polygon** **(** **)**
+- |void| **set_polygon**\ (\ value\: :ref:`PackedVector2Array<class_PackedVector2Array>`\ )
+- :ref:`PackedVector2Array<class_PackedVector2Array>` **get_polygon**\ (\ )
 
 A :ref:`Vector2<class_Vector2>` array with the index for polygon's vertices positions.
 
@@ -141,3 +141,4 @@ A :ref:`Vector2<class_Vector2>` array with the index for polygon's vertices posi
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

@@ -50,13 +50,13 @@ Methods
 .. table::
    :widths: auto
 
-   +-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`StringName<class_StringName>` | :ref:`find_profile_bone_name<class_BoneMap_method_find_profile_bone_name>` **(** :ref:`StringName<class_StringName>` skeleton_bone_name **)** |const|                                                |
-   +-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`StringName<class_StringName>` | :ref:`get_skeleton_bone_name<class_BoneMap_method_get_skeleton_bone_name>` **(** :ref:`StringName<class_StringName>` profile_bone_name **)** |const|                                                 |
-   +-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                | :ref:`set_skeleton_bone_name<class_BoneMap_method_set_skeleton_bone_name>` **(** :ref:`StringName<class_StringName>` profile_bone_name, :ref:`StringName<class_StringName>` skeleton_bone_name **)** |
-   +-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +-------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`StringName<class_StringName>` | :ref:`find_profile_bone_name<class_BoneMap_method_find_profile_bone_name>`\ (\ skeleton_bone_name\: :ref:`StringName<class_StringName>`\ ) |const|                                                  |
+   +-------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`StringName<class_StringName>` | :ref:`get_skeleton_bone_name<class_BoneMap_method_get_skeleton_bone_name>`\ (\ profile_bone_name\: :ref:`StringName<class_StringName>`\ ) |const|                                                   |
+   +-------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                              | :ref:`set_skeleton_bone_name<class_BoneMap_method_set_skeleton_bone_name>`\ (\ profile_bone_name\: :ref:`StringName<class_StringName>`, skeleton_bone_name\: :ref:`StringName<class_StringName>`\ ) |
+   +-------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -71,7 +71,7 @@ Signals
 
 .. rst-class:: classref-signal
 
-**bone_map_updated** **(** **)**
+**bone_map_updated**\ (\ )
 
 This signal is emitted when change the key value in the **BoneMap**. This is used to validate mapping and to update **BoneMap** editor.
 
@@ -83,7 +83,7 @@ This signal is emitted when change the key value in the **BoneMap**. This is use
 
 .. rst-class:: classref-signal
 
-**profile_updated** **(** **)**
+**profile_updated**\ (\ )
 
 This signal is emitted when change the value in profile or change the reference of profile. This is used to update key names in the **BoneMap** and to redraw the **BoneMap** editor.
 
@@ -104,8 +104,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_profile** **(** :ref:`SkeletonProfile<class_SkeletonProfile>` value **)**
-- :ref:`SkeletonProfile<class_SkeletonProfile>` **get_profile** **(** **)**
+- |void| **set_profile**\ (\ value\: :ref:`SkeletonProfile<class_SkeletonProfile>`\ )
+- :ref:`SkeletonProfile<class_SkeletonProfile>` **get_profile**\ (\ )
 
 A :ref:`SkeletonProfile<class_SkeletonProfile>` of the mapping target. Key names in the **BoneMap** are synchronized with it.
 
@@ -122,7 +122,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`StringName<class_StringName>` **find_profile_bone_name** **(** :ref:`StringName<class_StringName>` skeleton_bone_name **)** |const|
+:ref:`StringName<class_StringName>` **find_profile_bone_name**\ (\ skeleton_bone_name\: :ref:`StringName<class_StringName>`\ ) |const|
 
 Returns a profile bone name having ``skeleton_bone_name``. If not found, an empty :ref:`StringName<class_StringName>` will be returned.
 
@@ -136,7 +136,7 @@ In the retargeting process, the returned bone name is the bone name of the targe
 
 .. rst-class:: classref-method
 
-:ref:`StringName<class_StringName>` **get_skeleton_bone_name** **(** :ref:`StringName<class_StringName>` profile_bone_name **)** |const|
+:ref:`StringName<class_StringName>` **get_skeleton_bone_name**\ (\ profile_bone_name\: :ref:`StringName<class_StringName>`\ ) |const|
 
 Returns a skeleton bone name is mapped to ``profile_bone_name``.
 
@@ -150,7 +150,7 @@ In the retargeting process, the returned bone name is the bone name of the sourc
 
 .. rst-class:: classref-method
 
-void **set_skeleton_bone_name** **(** :ref:`StringName<class_StringName>` profile_bone_name, :ref:`StringName<class_StringName>` skeleton_bone_name **)**
+|void| **set_skeleton_bone_name**\ (\ profile_bone_name\: :ref:`StringName<class_StringName>`, skeleton_bone_name\: :ref:`StringName<class_StringName>`\ )
 
 Maps a skeleton bone name to ``profile_bone_name``.
 
@@ -163,3 +163,4 @@ In the retargeting process, the setting bone name is the bone name of the source
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

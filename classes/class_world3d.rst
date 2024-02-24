@@ -69,8 +69,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_camera_attributes** **(** :ref:`CameraAttributes<class_CameraAttributes>` value **)**
-- :ref:`CameraAttributes<class_CameraAttributes>` **get_camera_attributes** **(** **)**
+- |void| **set_camera_attributes**\ (\ value\: :ref:`CameraAttributes<class_CameraAttributes>`\ )
+- :ref:`CameraAttributes<class_CameraAttributes>` **get_camera_attributes**\ (\ )
 
 The default :ref:`CameraAttributes<class_CameraAttributes>` resource to use if none set on the :ref:`Camera3D<class_Camera3D>`.
 
@@ -86,7 +86,7 @@ The default :ref:`CameraAttributes<class_CameraAttributes>` resource to use if n
 
 .. rst-class:: classref-property-setget
 
-- :ref:`PhysicsDirectSpaceState3D<class_PhysicsDirectSpaceState3D>` **get_direct_space_state** **(** **)**
+- :ref:`PhysicsDirectSpaceState3D<class_PhysicsDirectSpaceState3D>` **get_direct_space_state**\ (\ )
 
 Direct access to the world's physics 3D space state. Used for querying current and potential collisions. When using multi-threaded physics, access is limited to :ref:`Node._physics_process<class_Node_private_method__physics_process>` in the main thread.
 
@@ -102,8 +102,8 @@ Direct access to the world's physics 3D space state. Used for querying current a
 
 .. rst-class:: classref-property-setget
 
-- void **set_environment** **(** :ref:`Environment<class_Environment>` value **)**
-- :ref:`Environment<class_Environment>` **get_environment** **(** **)**
+- |void| **set_environment**\ (\ value\: :ref:`Environment<class_Environment>`\ )
+- :ref:`Environment<class_Environment>` **get_environment**\ (\ )
 
 The World3D's :ref:`Environment<class_Environment>`.
 
@@ -119,8 +119,8 @@ The World3D's :ref:`Environment<class_Environment>`.
 
 .. rst-class:: classref-property-setget
 
-- void **set_fallback_environment** **(** :ref:`Environment<class_Environment>` value **)**
-- :ref:`Environment<class_Environment>` **get_fallback_environment** **(** **)**
+- |void| **set_fallback_environment**\ (\ value\: :ref:`Environment<class_Environment>`\ )
+- :ref:`Environment<class_Environment>` **get_fallback_environment**\ (\ )
 
 The World3D's fallback environment will be used if :ref:`environment<class_World3D_property_environment>` fails or is missing.
 
@@ -136,7 +136,7 @@ The World3D's fallback environment will be used if :ref:`environment<class_World
 
 .. rst-class:: classref-property-setget
 
-- :ref:`RID<class_RID>` **get_navigation_map** **(** **)**
+- :ref:`RID<class_RID>` **get_navigation_map**\ (\ )
 
 The :ref:`RID<class_RID>` of this world's navigation map. Used by the :ref:`NavigationServer3D<class_NavigationServer3D>`.
 
@@ -152,7 +152,7 @@ The :ref:`RID<class_RID>` of this world's navigation map. Used by the :ref:`Navi
 
 .. rst-class:: classref-property-setget
 
-- :ref:`RID<class_RID>` **get_scenario** **(** **)**
+- :ref:`RID<class_RID>` **get_scenario**\ (\ )
 
 The World3D's visual scenario.
 
@@ -168,7 +168,7 @@ The World3D's visual scenario.
 
 .. rst-class:: classref-property-setget
 
-- :ref:`RID<class_RID>` **get_space** **(** **)**
+- :ref:`RID<class_RID>` **get_space**\ (\ )
 
 The World3D's physics space.
 
@@ -179,3 +179,4 @@ The World3D's physics space.
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

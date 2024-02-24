@@ -50,19 +50,19 @@ Methods
 .. table::
    :widths: auto
 
-   +---------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                                    | :ref:`add_collision_exception_with<class_PhysicsBody2D_method_add_collision_exception_with>` **(** :ref:`Node<class_Node>` body **)**                                                                                                                                                                                        |
-   +---------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`PhysicsBody2D[]<class_PhysicsBody2D>`             | :ref:`get_collision_exceptions<class_PhysicsBody2D_method_get_collision_exceptions>` **(** **)**                                                                                                                                                                                                                             |
-   +---------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Vector2<class_Vector2>`                           | :ref:`get_gravity<class_PhysicsBody2D_method_get_gravity>` **(** **)** |const|                                                                                                                                                                                                                                               |
-   +---------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`KinematicCollision2D<class_KinematicCollision2D>` | :ref:`move_and_collide<class_PhysicsBody2D_method_move_and_collide>` **(** :ref:`Vector2<class_Vector2>` motion, :ref:`bool<class_bool>` test_only=false, :ref:`float<class_float>` safe_margin=0.08, :ref:`bool<class_bool>` recovery_as_collision=false **)**                                                              |
-   +---------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                                    | :ref:`remove_collision_exception_with<class_PhysicsBody2D_method_remove_collision_exception_with>` **(** :ref:`Node<class_Node>` body **)**                                                                                                                                                                                  |
-   +---------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                                 | :ref:`test_move<class_PhysicsBody2D_method_test_move>` **(** :ref:`Transform2D<class_Transform2D>` from, :ref:`Vector2<class_Vector2>` motion, :ref:`KinematicCollision2D<class_KinematicCollision2D>` collision=null, :ref:`float<class_float>` safe_margin=0.08, :ref:`bool<class_bool>` recovery_as_collision=false **)** |
-   +---------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                                 | :ref:`add_collision_exception_with<class_PhysicsBody2D_method_add_collision_exception_with>`\ (\ body\: :ref:`Node<class_Node>`\ )                                                                                                                                                                                                      |
+   +------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Array<class_Array>`\[:ref:`PhysicsBody2D<class_PhysicsBody2D>`\] | :ref:`get_collision_exceptions<class_PhysicsBody2D_method_get_collision_exceptions>`\ (\ )                                                                                                                                                                                                                                              |
+   +------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector2<class_Vector2>`                                          | :ref:`get_gravity<class_PhysicsBody2D_method_get_gravity>`\ (\ ) |const|                                                                                                                                                                                                                                                                |
+   +------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`KinematicCollision2D<class_KinematicCollision2D>`                | :ref:`move_and_collide<class_PhysicsBody2D_method_move_and_collide>`\ (\ motion\: :ref:`Vector2<class_Vector2>`, test_only\: :ref:`bool<class_bool>` = false, safe_margin\: :ref:`float<class_float>` = 0.08, recovery_as_collision\: :ref:`bool<class_bool>` = false\ )                                                                |
+   +------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                                 | :ref:`remove_collision_exception_with<class_PhysicsBody2D_method_remove_collision_exception_with>`\ (\ body\: :ref:`Node<class_Node>`\ )                                                                                                                                                                                                |
+   +------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                                | :ref:`test_move<class_PhysicsBody2D_method_test_move>`\ (\ from\: :ref:`Transform2D<class_Transform2D>`, motion\: :ref:`Vector2<class_Vector2>`, collision\: :ref:`KinematicCollision2D<class_KinematicCollision2D>` = null, safe_margin\: :ref:`float<class_float>` = 0.08, recovery_as_collision\: :ref:`bool<class_bool>` = false\ ) |
+   +------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -77,7 +77,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-void **add_collision_exception_with** **(** :ref:`Node<class_Node>` body **)**
+|void| **add_collision_exception_with**\ (\ body\: :ref:`Node<class_Node>`\ )
 
 Adds a body to the list of bodies that this body can't collide with.
 
@@ -89,7 +89,7 @@ Adds a body to the list of bodies that this body can't collide with.
 
 .. rst-class:: classref-method
 
-:ref:`PhysicsBody2D[]<class_PhysicsBody2D>` **get_collision_exceptions** **(** **)**
+:ref:`Array<class_Array>`\[:ref:`PhysicsBody2D<class_PhysicsBody2D>`\] **get_collision_exceptions**\ (\ )
 
 Returns an array of nodes that were added as collision exceptions for this body.
 
@@ -101,7 +101,7 @@ Returns an array of nodes that were added as collision exceptions for this body.
 
 .. rst-class:: classref-method
 
-:ref:`Vector2<class_Vector2>` **get_gravity** **(** **)** |const|
+:ref:`Vector2<class_Vector2>` **get_gravity**\ (\ ) |const|
 
 Returns the gravity vector computed from all sources that can affect the body, including all gravity overrides from :ref:`Area2D<class_Area2D>` nodes and the global world gravity.
 
@@ -113,7 +113,7 @@ Returns the gravity vector computed from all sources that can affect the body, i
 
 .. rst-class:: classref-method
 
-:ref:`KinematicCollision2D<class_KinematicCollision2D>` **move_and_collide** **(** :ref:`Vector2<class_Vector2>` motion, :ref:`bool<class_bool>` test_only=false, :ref:`float<class_float>` safe_margin=0.08, :ref:`bool<class_bool>` recovery_as_collision=false **)**
+:ref:`KinematicCollision2D<class_KinematicCollision2D>` **move_and_collide**\ (\ motion\: :ref:`Vector2<class_Vector2>`, test_only\: :ref:`bool<class_bool>` = false, safe_margin\: :ref:`float<class_float>` = 0.08, recovery_as_collision\: :ref:`bool<class_bool>` = false\ )
 
 Moves the body along the vector ``motion``. In order to be frame rate independent in :ref:`Node._physics_process<class_Node_private_method__physics_process>` or :ref:`Node._process<class_Node_private_method__process>`, ``motion`` should be computed using ``delta``.
 
@@ -133,7 +133,7 @@ If ``recovery_as_collision`` is ``true``, any depenetration from the recovery ph
 
 .. rst-class:: classref-method
 
-void **remove_collision_exception_with** **(** :ref:`Node<class_Node>` body **)**
+|void| **remove_collision_exception_with**\ (\ body\: :ref:`Node<class_Node>`\ )
 
 Removes a body from the list of bodies that this body can't collide with.
 
@@ -145,7 +145,7 @@ Removes a body from the list of bodies that this body can't collide with.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **test_move** **(** :ref:`Transform2D<class_Transform2D>` from, :ref:`Vector2<class_Vector2>` motion, :ref:`KinematicCollision2D<class_KinematicCollision2D>` collision=null, :ref:`float<class_float>` safe_margin=0.08, :ref:`bool<class_bool>` recovery_as_collision=false **)**
+:ref:`bool<class_bool>` **test_move**\ (\ from\: :ref:`Transform2D<class_Transform2D>`, motion\: :ref:`Vector2<class_Vector2>`, collision\: :ref:`KinematicCollision2D<class_KinematicCollision2D>` = null, safe_margin\: :ref:`float<class_float>` = 0.08, recovery_as_collision\: :ref:`bool<class_bool>` = false\ )
 
 Checks for collisions without moving the body. In order to be frame rate independent in :ref:`Node._physics_process<class_Node_private_method__physics_process>` or :ref:`Node._process<class_Node_private_method__process>`, ``motion`` should be computed using ``delta``.
 
@@ -164,3 +164,4 @@ If ``recovery_as_collision`` is ``true``, any depenetration from the recovery ph
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

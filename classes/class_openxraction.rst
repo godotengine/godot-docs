@@ -111,8 +111,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_action_type** **(** :ref:`ActionType<enum_OpenXRAction_ActionType>` value **)**
-- :ref:`ActionType<enum_OpenXRAction_ActionType>` **get_action_type** **(** **)**
+- |void| **set_action_type**\ (\ value\: :ref:`ActionType<enum_OpenXRAction_ActionType>`\ )
+- :ref:`ActionType<enum_OpenXRAction_ActionType>` **get_action_type**\ (\ )
 
 The type of action.
 
@@ -128,8 +128,8 @@ The type of action.
 
 .. rst-class:: classref-property-setget
 
-- void **set_localized_name** **(** :ref:`String<class_String>` value **)**
-- :ref:`String<class_String>` **get_localized_name** **(** **)**
+- |void| **set_localized_name**\ (\ value\: :ref:`String<class_String>`\ )
+- :ref:`String<class_String>` **get_localized_name**\ (\ )
 
 The localized description of this action.
 
@@ -145,8 +145,8 @@ The localized description of this action.
 
 .. rst-class:: classref-property-setget
 
-- void **set_toplevel_paths** **(** :ref:`PackedStringArray<class_PackedStringArray>` value **)**
-- :ref:`PackedStringArray<class_PackedStringArray>` **get_toplevel_paths** **(** **)**
+- |void| **set_toplevel_paths**\ (\ value\: :ref:`PackedStringArray<class_PackedStringArray>`\ )
+- :ref:`PackedStringArray<class_PackedStringArray>` **get_toplevel_paths**\ (\ )
 
 A collections of toplevel paths to which this action can be bound.
 
@@ -157,3 +157,4 @@ A collections of toplevel paths to which this action can be bound.
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

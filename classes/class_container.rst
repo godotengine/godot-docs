@@ -50,15 +50,15 @@ Methods
 .. table::
    :widths: auto
 
-   +-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`PackedInt32Array<class_PackedInt32Array>` | :ref:`_get_allowed_size_flags_horizontal<class_Container_private_method__get_allowed_size_flags_horizontal>` **(** **)** |virtual| |const|         |
-   +-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`PackedInt32Array<class_PackedInt32Array>` | :ref:`_get_allowed_size_flags_vertical<class_Container_private_method__get_allowed_size_flags_vertical>` **(** **)** |virtual| |const|             |
-   +-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                            | :ref:`fit_child_in_rect<class_Container_method_fit_child_in_rect>` **(** :ref:`Control<class_Control>` child, :ref:`Rect2<class_Rect2>` rect **)** |
-   +-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                            | :ref:`queue_sort<class_Container_method_queue_sort>` **(** **)**                                                                                   |
-   +-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+   +-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PackedInt32Array<class_PackedInt32Array>` | :ref:`_get_allowed_size_flags_horizontal<class_Container_private_method__get_allowed_size_flags_horizontal>`\ (\ ) |virtual| |const|              |
+   +-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PackedInt32Array<class_PackedInt32Array>` | :ref:`_get_allowed_size_flags_vertical<class_Container_private_method__get_allowed_size_flags_vertical>`\ (\ ) |virtual| |const|                  |
+   +-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                          | :ref:`fit_child_in_rect<class_Container_method_fit_child_in_rect>`\ (\ child\: :ref:`Control<class_Control>`, rect\: :ref:`Rect2<class_Rect2>`\ ) |
+   +-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                          | :ref:`queue_sort<class_Container_method_queue_sort>`\ (\ )                                                                                        |
+   +-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -73,7 +73,7 @@ Signals
 
 .. rst-class:: classref-signal
 
-**pre_sort_children** **(** **)**
+**pre_sort_children**\ (\ )
 
 Emitted when children are going to be sorted.
 
@@ -85,7 +85,7 @@ Emitted when children are going to be sorted.
 
 .. rst-class:: classref-signal
 
-**sort_children** **(** **)**
+**sort_children**\ (\ )
 
 Emitted when sorting the children is needed.
 
@@ -127,7 +127,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`PackedInt32Array<class_PackedInt32Array>` **_get_allowed_size_flags_horizontal** **(** **)** |virtual| |const|
+:ref:`PackedInt32Array<class_PackedInt32Array>` **_get_allowed_size_flags_horizontal**\ (\ ) |virtual| |const|
 
 Implement to return a list of allowed horizontal :ref:`SizeFlags<enum_Control_SizeFlags>` for child nodes. This doesn't technically prevent the usages of any other size flags, if your implementation requires that. This only limits the options available to the user in the Inspector dock.
 
@@ -141,7 +141,7 @@ Implement to return a list of allowed horizontal :ref:`SizeFlags<enum_Control_Si
 
 .. rst-class:: classref-method
 
-:ref:`PackedInt32Array<class_PackedInt32Array>` **_get_allowed_size_flags_vertical** **(** **)** |virtual| |const|
+:ref:`PackedInt32Array<class_PackedInt32Array>` **_get_allowed_size_flags_vertical**\ (\ ) |virtual| |const|
 
 Implement to return a list of allowed vertical :ref:`SizeFlags<enum_Control_SizeFlags>` for child nodes. This doesn't technically prevent the usages of any other size flags, if your implementation requires that. This only limits the options available to the user in the Inspector dock.
 
@@ -155,7 +155,7 @@ Implement to return a list of allowed vertical :ref:`SizeFlags<enum_Control_Size
 
 .. rst-class:: classref-method
 
-void **fit_child_in_rect** **(** :ref:`Control<class_Control>` child, :ref:`Rect2<class_Rect2>` rect **)**
+|void| **fit_child_in_rect**\ (\ child\: :ref:`Control<class_Control>`, rect\: :ref:`Rect2<class_Rect2>`\ )
 
 Fit a child control in a given rect. This is mainly a helper for creating custom container classes.
 
@@ -167,7 +167,7 @@ Fit a child control in a given rect. This is mainly a helper for creating custom
 
 .. rst-class:: classref-method
 
-void **queue_sort** **(** **)**
+|void| **queue_sort**\ (\ )
 
 Queue resort of the contained children. This is called automatically anyway, but can be called upon request.
 
@@ -178,3 +178,4 @@ Queue resort of the contained children. This is called automatically anyway, but
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

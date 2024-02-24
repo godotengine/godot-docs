@@ -63,8 +63,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_points** **(** :ref:`PackedVector3Array<class_PackedVector3Array>` value **)**
-- :ref:`PackedVector3Array<class_PackedVector3Array>` **get_points** **(** **)**
+- |void| **set_points**\ (\ value\: :ref:`PackedVector3Array<class_PackedVector3Array>`\ )
+- :ref:`PackedVector3Array<class_PackedVector3Array>` **get_points**\ (\ )
 
 The list of 3D points forming the convex polygon shape.
 
@@ -75,3 +75,4 @@ The list of 3D points forming the convex polygon shape.
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

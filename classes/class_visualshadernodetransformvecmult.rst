@@ -105,8 +105,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_operator** **(** :ref:`Operator<enum_VisualShaderNodeTransformVecMult_Operator>` value **)**
-- :ref:`Operator<enum_VisualShaderNodeTransformVecMult_Operator>` **get_operator** **(** **)**
+- |void| **set_operator**\ (\ value\: :ref:`Operator<enum_VisualShaderNodeTransformVecMult_Operator>`\ )
+- :ref:`Operator<enum_VisualShaderNodeTransformVecMult_Operator>` **get_operator**\ (\ )
 
 The multiplication type to be performed. See :ref:`Operator<enum_VisualShaderNodeTransformVecMult_Operator>` for options.
 
@@ -117,3 +117,4 @@ The multiplication type to be performed. See :ref:`Operator<enum_VisualShaderNod
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

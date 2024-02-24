@@ -58,11 +58,11 @@ Methods
 .. table::
    :widths: auto
 
-   +---------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`AudioStreamOggVorbis<class_AudioStreamOggVorbis>` | :ref:`load_from_buffer<class_AudioStreamOggVorbis_method_load_from_buffer>` **(** :ref:`PackedByteArray<class_PackedByteArray>` buffer **)** |static| |
-   +---------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`AudioStreamOggVorbis<class_AudioStreamOggVorbis>` | :ref:`load_from_file<class_AudioStreamOggVorbis_method_load_from_file>` **(** :ref:`String<class_String>` path **)** |static|                         |
-   +---------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +---------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`AudioStreamOggVorbis<class_AudioStreamOggVorbis>` | :ref:`load_from_buffer<class_AudioStreamOggVorbis_method_load_from_buffer>`\ (\ buffer\: :ref:`PackedByteArray<class_PackedByteArray>`\ ) |static| |
+   +---------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`AudioStreamOggVorbis<class_AudioStreamOggVorbis>` | :ref:`load_from_file<class_AudioStreamOggVorbis_method_load_from_file>`\ (\ path\: :ref:`String<class_String>`\ ) |static|                         |
+   +---------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -81,8 +81,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_bar_beats** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_bar_beats** **(** **)**
+- |void| **set_bar_beats**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_bar_beats**\ (\ )
 
 .. container:: contribute
 
@@ -100,8 +100,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_beat_count** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_beat_count** **(** **)**
+- |void| **set_beat_count**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_beat_count**\ (\ )
 
 .. container:: contribute
 
@@ -119,8 +119,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_bpm** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_bpm** **(** **)**
+- |void| **set_bpm**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_bpm**\ (\ )
 
 .. container:: contribute
 
@@ -138,8 +138,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_loop** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **has_loop** **(** **)**
+- |void| **set_loop**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **has_loop**\ (\ )
 
 If ``true``, the audio will play again from the specified :ref:`loop_offset<class_AudioStreamOggVorbis_property_loop_offset>` once it is done playing. Useful for ambient sounds and background music.
 
@@ -155,8 +155,8 @@ If ``true``, the audio will play again from the specified :ref:`loop_offset<clas
 
 .. rst-class:: classref-property-setget
 
-- void **set_loop_offset** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_loop_offset** **(** **)**
+- |void| **set_loop_offset**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_loop_offset**\ (\ )
 
 Time in seconds at which the stream starts after being looped.
 
@@ -172,8 +172,8 @@ Time in seconds at which the stream starts after being looped.
 
 .. rst-class:: classref-property-setget
 
-- void **set_packet_sequence** **(** :ref:`OggPacketSequence<class_OggPacketSequence>` value **)**
-- :ref:`OggPacketSequence<class_OggPacketSequence>` **get_packet_sequence** **(** **)**
+- |void| **set_packet_sequence**\ (\ value\: :ref:`OggPacketSequence<class_OggPacketSequence>`\ )
+- :ref:`OggPacketSequence<class_OggPacketSequence>` **get_packet_sequence**\ (\ )
 
 Contains the raw Ogg data for this stream.
 
@@ -190,7 +190,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`AudioStreamOggVorbis<class_AudioStreamOggVorbis>` **load_from_buffer** **(** :ref:`PackedByteArray<class_PackedByteArray>` buffer **)** |static|
+:ref:`AudioStreamOggVorbis<class_AudioStreamOggVorbis>` **load_from_buffer**\ (\ buffer\: :ref:`PackedByteArray<class_PackedByteArray>`\ ) |static|
 
 Creates a new AudioStreamOggVorbis instance from the given buffer. The buffer must contain Ogg Vorbis data.
 
@@ -202,7 +202,7 @@ Creates a new AudioStreamOggVorbis instance from the given buffer. The buffer mu
 
 .. rst-class:: classref-method
 
-:ref:`AudioStreamOggVorbis<class_AudioStreamOggVorbis>` **load_from_file** **(** :ref:`String<class_String>` path **)** |static|
+:ref:`AudioStreamOggVorbis<class_AudioStreamOggVorbis>` **load_from_file**\ (\ path\: :ref:`String<class_String>`\ ) |static|
 
 Creates a new AudioStreamOggVorbis instance from the given file path. The file must be in Ogg Vorbis format.
 
@@ -213,3 +213,4 @@ Creates a new AudioStreamOggVorbis instance from the given file path. The file m
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

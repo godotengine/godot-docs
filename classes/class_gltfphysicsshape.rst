@@ -64,15 +64,15 @@ Methods
 .. table::
    :widths: auto
 
-   +-------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`GLTFPhysicsShape<class_GLTFPhysicsShape>` | :ref:`from_dictionary<class_GLTFPhysicsShape_method_from_dictionary>` **(** :ref:`Dictionary<class_Dictionary>` dictionary **)** |static| |
-   +-------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`GLTFPhysicsShape<class_GLTFPhysicsShape>` | :ref:`from_node<class_GLTFPhysicsShape_method_from_node>` **(** :ref:`CollisionShape3D<class_CollisionShape3D>` shape_node **)** |static| |
-   +-------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Dictionary<class_Dictionary>`             | :ref:`to_dictionary<class_GLTFPhysicsShape_method_to_dictionary>` **(** **)** |const|                                                     |
-   +-------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`CollisionShape3D<class_CollisionShape3D>` | :ref:`to_node<class_GLTFPhysicsShape_method_to_node>` **(** :ref:`bool<class_bool>` cache_shapes=false **)**                              |
-   +-------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+   +-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`GLTFPhysicsShape<class_GLTFPhysicsShape>` | :ref:`from_dictionary<class_GLTFPhysicsShape_method_from_dictionary>`\ (\ dictionary\: :ref:`Dictionary<class_Dictionary>`\ ) |static| |
+   +-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`GLTFPhysicsShape<class_GLTFPhysicsShape>` | :ref:`from_node<class_GLTFPhysicsShape_method_from_node>`\ (\ shape_node\: :ref:`CollisionShape3D<class_CollisionShape3D>`\ ) |static| |
+   +-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Dictionary<class_Dictionary>`             | :ref:`to_dictionary<class_GLTFPhysicsShape_method_to_dictionary>`\ (\ ) |const|                                                        |
+   +-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`CollisionShape3D<class_CollisionShape3D>` | :ref:`to_node<class_GLTFPhysicsShape_method_to_node>`\ (\ cache_shapes\: :ref:`bool<class_bool>` = false\ )                            |
+   +-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -91,8 +91,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_height** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_height** **(** **)**
+- |void| **set_height**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_height**\ (\ )
 
 The height of the shape, in meters. This is only used when the shape type is "capsule" or "cylinder". This value should not be negative, and for "capsule" it should be at least twice the radius.
 
@@ -108,8 +108,8 @@ The height of the shape, in meters. This is only used when the shape type is "ca
 
 .. rst-class:: classref-property-setget
 
-- void **set_importer_mesh** **(** :ref:`ImporterMesh<class_ImporterMesh>` value **)**
-- :ref:`ImporterMesh<class_ImporterMesh>` **get_importer_mesh** **(** **)**
+- |void| **set_importer_mesh**\ (\ value\: :ref:`ImporterMesh<class_ImporterMesh>`\ )
+- :ref:`ImporterMesh<class_ImporterMesh>` **get_importer_mesh**\ (\ )
 
 The :ref:`ImporterMesh<class_ImporterMesh>` resource of the shape. This is only used when the shape type is "hull" (convex hull) or "trimesh" (concave trimesh).
 
@@ -125,8 +125,8 @@ The :ref:`ImporterMesh<class_ImporterMesh>` resource of the shape. This is only 
 
 .. rst-class:: classref-property-setget
 
-- void **set_is_trigger** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **get_is_trigger** **(** **)**
+- |void| **set_is_trigger**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_is_trigger**\ (\ )
 
 If ``true``, indicates that this shape is a trigger. For Godot, this means that the shape should be a child of an Area3D node.
 
@@ -144,8 +144,8 @@ This is the only variable not used in the :ref:`to_node<class_GLTFPhysicsShape_m
 
 .. rst-class:: classref-property-setget
 
-- void **set_mesh_index** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_mesh_index** **(** **)**
+- |void| **set_mesh_index**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_mesh_index**\ (\ )
 
 The index of the shape's mesh in the GLTF file. This is only used when the shape type is "hull" (convex hull) or "trimesh" (concave trimesh).
 
@@ -161,8 +161,8 @@ The index of the shape's mesh in the GLTF file. This is only used when the shape
 
 .. rst-class:: classref-property-setget
 
-- void **set_radius** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_radius** **(** **)**
+- |void| **set_radius**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_radius**\ (\ )
 
 The radius of the shape, in meters. This is only used when the shape type is "capsule", "cylinder", or "sphere". This value should not be negative.
 
@@ -178,8 +178,8 @@ The radius of the shape, in meters. This is only used when the shape type is "ca
 
 .. rst-class:: classref-property-setget
 
-- void **set_shape_type** **(** :ref:`String<class_String>` value **)**
-- :ref:`String<class_String>` **get_shape_type** **(** **)**
+- |void| **set_shape_type**\ (\ value\: :ref:`String<class_String>`\ )
+- :ref:`String<class_String>` **get_shape_type**\ (\ )
 
 The type of shape this shape represents. Valid values are "box", "capsule", "cylinder", "sphere", "hull", and "trimesh".
 
@@ -195,8 +195,8 @@ The type of shape this shape represents. Valid values are "box", "capsule", "cyl
 
 .. rst-class:: classref-property-setget
 
-- void **set_size** **(** :ref:`Vector3<class_Vector3>` value **)**
-- :ref:`Vector3<class_Vector3>` **get_size** **(** **)**
+- |void| **set_size**\ (\ value\: :ref:`Vector3<class_Vector3>`\ )
+- :ref:`Vector3<class_Vector3>` **get_size**\ (\ )
 
 The size of the shape, in meters. This is only used when the shape type is "box", and it represents the "diameter" of the box. This value should not be negative.
 
@@ -213,7 +213,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`GLTFPhysicsShape<class_GLTFPhysicsShape>` **from_dictionary** **(** :ref:`Dictionary<class_Dictionary>` dictionary **)** |static|
+:ref:`GLTFPhysicsShape<class_GLTFPhysicsShape>` **from_dictionary**\ (\ dictionary\: :ref:`Dictionary<class_Dictionary>`\ ) |static|
 
 Creates a new GLTFPhysicsShape instance by parsing the given :ref:`Dictionary<class_Dictionary>`.
 
@@ -225,7 +225,7 @@ Creates a new GLTFPhysicsShape instance by parsing the given :ref:`Dictionary<cl
 
 .. rst-class:: classref-method
 
-:ref:`GLTFPhysicsShape<class_GLTFPhysicsShape>` **from_node** **(** :ref:`CollisionShape3D<class_CollisionShape3D>` shape_node **)** |static|
+:ref:`GLTFPhysicsShape<class_GLTFPhysicsShape>` **from_node**\ (\ shape_node\: :ref:`CollisionShape3D<class_CollisionShape3D>`\ ) |static|
 
 Create a new GLTFPhysicsShape instance from the given Godot :ref:`CollisionShape3D<class_CollisionShape3D>` node.
 
@@ -237,7 +237,7 @@ Create a new GLTFPhysicsShape instance from the given Godot :ref:`CollisionShape
 
 .. rst-class:: classref-method
 
-:ref:`Dictionary<class_Dictionary>` **to_dictionary** **(** **)** |const|
+:ref:`Dictionary<class_Dictionary>` **to_dictionary**\ (\ ) |const|
 
 Serializes this GLTFPhysicsShape instance into a :ref:`Dictionary<class_Dictionary>` in the format defined by ``OMI_physics_shape``.
 
@@ -249,7 +249,7 @@ Serializes this GLTFPhysicsShape instance into a :ref:`Dictionary<class_Dictiona
 
 .. rst-class:: classref-method
 
-:ref:`CollisionShape3D<class_CollisionShape3D>` **to_node** **(** :ref:`bool<class_bool>` cache_shapes=false **)**
+:ref:`CollisionShape3D<class_CollisionShape3D>` **to_node**\ (\ cache_shapes\: :ref:`bool<class_bool>` = false\ )
 
 Converts this GLTFPhysicsShape instance into a Godot :ref:`CollisionShape3D<class_CollisionShape3D>` node.
 
@@ -260,3 +260,4 @@ Converts this GLTFPhysicsShape instance into a Godot :ref:`CollisionShape3D<clas
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

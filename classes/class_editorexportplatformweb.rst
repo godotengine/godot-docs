@@ -155,9 +155,9 @@ For more information, see the :doc:`Customizing HTML5 Shell <../tutorials/platfo
 
 :ref:`bool<class_bool>` **html/experimental_virtual_keyboard**
 
-If ``true``, embeds support for a virtual keyboard into the web page, which is shown when necessary on touchscreen devices.
+**Experimental:** This property may be changed or removed in future versions.
 
-\ **Warning:** This feature is experimental and may be changed in a future release.
+If ``true``, embeds support for a virtual keyboard into the web page, which is shown when necessary on touchscreen devices.
 
 .. rst-class:: classref-item-separator
 
@@ -384,3 +384,4 @@ If ``true`` allows textures to be optimized for mobile through the ETC2 algorith
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

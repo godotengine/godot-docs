@@ -44,27 +44,27 @@ Methods
 .. table::
    :widths: auto
 
-   +-------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                                 | :ref:`_get_beat_count<class_AudioStream_private_method__get_beat_count>` **(** **)** |virtual| |const|             |
-   +-------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
-   | :ref:`float<class_float>`                             | :ref:`_get_bpm<class_AudioStream_private_method__get_bpm>` **(** **)** |virtual| |const|                           |
-   +-------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
-   | :ref:`float<class_float>`                             | :ref:`_get_length<class_AudioStream_private_method__get_length>` **(** **)** |virtual| |const|                     |
-   +-------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Dictionary[]<class_Dictionary>`                 | :ref:`_get_parameter_list<class_AudioStream_private_method__get_parameter_list>` **(** **)** |virtual| |const|     |
-   +-------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
-   | :ref:`String<class_String>`                           | :ref:`_get_stream_name<class_AudioStream_private_method__get_stream_name>` **(** **)** |virtual| |const|           |
-   +-------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
-   | :ref:`AudioStreamPlayback<class_AudioStreamPlayback>` | :ref:`_instantiate_playback<class_AudioStream_private_method__instantiate_playback>` **(** **)** |virtual| |const| |
-   +-------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                               | :ref:`_is_monophonic<class_AudioStream_private_method__is_monophonic>` **(** **)** |virtual| |const|               |
-   +-------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
-   | :ref:`float<class_float>`                             | :ref:`get_length<class_AudioStream_method_get_length>` **(** **)** |const|                                         |
-   +-------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
-   | :ref:`AudioStreamPlayback<class_AudioStreamPlayback>` | :ref:`instantiate_playback<class_AudioStream_method_instantiate_playback>` **(** **)**                             |
-   +-------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                               | :ref:`is_monophonic<class_AudioStream_method_is_monophonic>` **(** **)** |const|                                   |
-   +-------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
+   +------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                                            | :ref:`_get_beat_count<class_AudioStream_private_method__get_beat_count>`\ (\ ) |virtual| |const|             |
+   +------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`                                        | :ref:`_get_bpm<class_AudioStream_private_method__get_bpm>`\ (\ ) |virtual| |const|                           |
+   +------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`                                        | :ref:`_get_length<class_AudioStream_private_method__get_length>`\ (\ ) |virtual| |const|                     |
+   +------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------+
+   | :ref:`Array<class_Array>`\[:ref:`Dictionary<class_Dictionary>`\] | :ref:`_get_parameter_list<class_AudioStream_private_method__get_parameter_list>`\ (\ ) |virtual| |const|     |
+   +------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                                      | :ref:`_get_stream_name<class_AudioStream_private_method__get_stream_name>`\ (\ ) |virtual| |const|           |
+   +------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------+
+   | :ref:`AudioStreamPlayback<class_AudioStreamPlayback>`            | :ref:`_instantiate_playback<class_AudioStream_private_method__instantiate_playback>`\ (\ ) |virtual| |const| |
+   +------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                          | :ref:`_is_monophonic<class_AudioStream_private_method__is_monophonic>`\ (\ ) |virtual| |const|               |
+   +------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`                                        | :ref:`get_length<class_AudioStream_method_get_length>`\ (\ ) |const|                                         |
+   +------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------+
+   | :ref:`AudioStreamPlayback<class_AudioStreamPlayback>`            | :ref:`instantiate_playback<class_AudioStream_method_instantiate_playback>`\ (\ )                             |
+   +------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                          | :ref:`is_monophonic<class_AudioStream_method_is_monophonic>`\ (\ ) |const|                                   |
+   +------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -79,7 +79,7 @@ Signals
 
 .. rst-class:: classref-signal
 
-**parameter_list_changed** **(** **)**
+**parameter_list_changed**\ (\ )
 
 Signal to be emitted to notify when the parameter list changed.
 
@@ -96,7 +96,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **_get_beat_count** **(** **)** |virtual| |const|
+:ref:`int<class_int>` **_get_beat_count**\ (\ ) |virtual| |const|
 
 Overridable method. Should return the total number of beats of this audio stream. Used by the engine to determine the position of every beat.
 
@@ -110,7 +110,7 @@ Ideally, the returned value should be based off the stream's sample rate (:ref:`
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **_get_bpm** **(** **)** |virtual| |const|
+:ref:`float<class_float>` **_get_bpm**\ (\ ) |virtual| |const|
 
 Overridable method. Should return the tempo of this audio stream, in beats per minute (BPM). Used by the engine to determine the position of every beat.
 
@@ -124,7 +124,7 @@ Ideally, the returned value should be based off the stream's sample rate (:ref:`
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **_get_length** **(** **)** |virtual| |const|
+:ref:`float<class_float>` **_get_length**\ (\ ) |virtual| |const|
 
 Override this method to customize the returned value of :ref:`get_length<class_AudioStream_method_get_length>`. Should return the length of this audio stream, in seconds.
 
@@ -136,7 +136,7 @@ Override this method to customize the returned value of :ref:`get_length<class_A
 
 .. rst-class:: classref-method
 
-:ref:`Dictionary[]<class_Dictionary>` **_get_parameter_list** **(** **)** |virtual| |const|
+:ref:`Array<class_Array>`\[:ref:`Dictionary<class_Dictionary>`\] **_get_parameter_list**\ (\ ) |virtual| |const|
 
 Return the controllable parameters of this stream. This array contains dictionaries with a property info description format (see :ref:`Object.get_property_list<class_Object_method_get_property_list>`). Additionally, the default value for this parameter must be added tho each dictionary in "default_value" field.
 
@@ -148,7 +148,7 @@ Return the controllable parameters of this stream. This array contains dictionar
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **_get_stream_name** **(** **)** |virtual| |const|
+:ref:`String<class_String>` **_get_stream_name**\ (\ ) |virtual| |const|
 
 Override this method to customize the name assigned to this audio stream. Unused by the engine.
 
@@ -160,7 +160,7 @@ Override this method to customize the name assigned to this audio stream. Unused
 
 .. rst-class:: classref-method
 
-:ref:`AudioStreamPlayback<class_AudioStreamPlayback>` **_instantiate_playback** **(** **)** |virtual| |const|
+:ref:`AudioStreamPlayback<class_AudioStreamPlayback>` **_instantiate_playback**\ (\ ) |virtual| |const|
 
 Override this method to customize the returned value of :ref:`instantiate_playback<class_AudioStream_method_instantiate_playback>`. Should returned a new :ref:`AudioStreamPlayback<class_AudioStreamPlayback>` created when the stream is played (such as by an :ref:`AudioStreamPlayer<class_AudioStreamPlayer>`)..
 
@@ -172,7 +172,7 @@ Override this method to customize the returned value of :ref:`instantiate_playba
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **_is_monophonic** **(** **)** |virtual| |const|
+:ref:`bool<class_bool>` **_is_monophonic**\ (\ ) |virtual| |const|
 
 Override this method to customize the returned value of :ref:`is_monophonic<class_AudioStream_method_is_monophonic>`. Should return ``true`` if this audio stream only supports one channel.
 
@@ -184,7 +184,7 @@ Override this method to customize the returned value of :ref:`is_monophonic<clas
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **get_length** **(** **)** |const|
+:ref:`float<class_float>` **get_length**\ (\ ) |const|
 
 Returns the length of the audio stream in seconds.
 
@@ -196,7 +196,7 @@ Returns the length of the audio stream in seconds.
 
 .. rst-class:: classref-method
 
-:ref:`AudioStreamPlayback<class_AudioStreamPlayback>` **instantiate_playback** **(** **)**
+:ref:`AudioStreamPlayback<class_AudioStreamPlayback>` **instantiate_playback**\ (\ )
 
 Returns a newly created :ref:`AudioStreamPlayback<class_AudioStreamPlayback>` intended to play this audio stream. Useful for when you want to extend :ref:`_instantiate_playback<class_AudioStream_private_method__instantiate_playback>` but call :ref:`instantiate_playback<class_AudioStream_method_instantiate_playback>` from an internally held AudioStream subresource. An example of this can be found in the source code for ``AudioStreamRandomPitch::instantiate_playback``.
 
@@ -208,7 +208,7 @@ Returns a newly created :ref:`AudioStreamPlayback<class_AudioStreamPlayback>` in
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_monophonic** **(** **)** |const|
+:ref:`bool<class_bool>` **is_monophonic**\ (\ ) |const|
 
 Returns ``true`` if this audio stream only supports one channel (*monophony*), or ``false`` if the audio stream supports two or more channels (*polyphony*).
 
@@ -219,3 +219,4 @@ Returns ``true`` if this audio stream only supports one channel (*monophony*), o
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

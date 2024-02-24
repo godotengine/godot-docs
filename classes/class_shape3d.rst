@@ -54,9 +54,9 @@ Methods
 .. table::
    :widths: auto
 
-   +-----------------------------------+------------------------------------------------------------------------+
-   | :ref:`ArrayMesh<class_ArrayMesh>` | :ref:`get_debug_mesh<class_Shape3D_method_get_debug_mesh>` **(** **)** |
-   +-----------------------------------+------------------------------------------------------------------------+
+   +-----------------------------------+------------------------------------------------------------------+
+   | :ref:`ArrayMesh<class_ArrayMesh>` | :ref:`get_debug_mesh<class_Shape3D_method_get_debug_mesh>`\ (\ ) |
+   +-----------------------------------+------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -75,8 +75,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_custom_solver_bias** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_custom_solver_bias** **(** **)**
+- |void| **set_custom_solver_bias**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_custom_solver_bias**\ (\ )
 
 The shape's custom solver bias. Defines how much bodies react to enforce contact separation when this shape is involved.
 
@@ -94,8 +94,8 @@ When set to ``0``, the default value from :ref:`ProjectSettings.physics/3d/solve
 
 .. rst-class:: classref-property-setget
 
-- void **set_margin** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_margin** **(** **)**
+- |void| **set_margin**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_margin**\ (\ )
 
 The collision margin for the shape. This is not used in Godot Physics.
 
@@ -114,7 +114,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`ArrayMesh<class_ArrayMesh>` **get_debug_mesh** **(** **)**
+:ref:`ArrayMesh<class_ArrayMesh>` **get_debug_mesh**\ (\ )
 
 Returns the :ref:`ArrayMesh<class_ArrayMesh>` used to draw the debug collision for this **Shape3D**.
 
@@ -125,3 +125,4 @@ Returns the :ref:`ArrayMesh<class_ArrayMesh>` used to draw the debug collision f
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

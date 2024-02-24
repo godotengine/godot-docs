@@ -45,19 +45,19 @@ Methods
 .. table::
    :widths: auto
 
-   +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                         | :ref:`get_available_packet_count<class_PacketPeer_method_get_available_packet_count>` **(** **)** |const|                                 |
-   +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`PackedByteArray<class_PackedByteArray>` | :ref:`get_packet<class_PacketPeer_method_get_packet>` **(** **)**                                                                         |
-   +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Error<enum_@GlobalScope_Error>`         | :ref:`get_packet_error<class_PacketPeer_method_get_packet_error>` **(** **)** |const|                                                     |
-   +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Variant<class_Variant>`                 | :ref:`get_var<class_PacketPeer_method_get_var>` **(** :ref:`bool<class_bool>` allow_objects=false **)**                                   |
-   +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Error<enum_@GlobalScope_Error>`         | :ref:`put_packet<class_PacketPeer_method_put_packet>` **(** :ref:`PackedByteArray<class_PackedByteArray>` buffer **)**                    |
-   +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Error<enum_@GlobalScope_Error>`         | :ref:`put_var<class_PacketPeer_method_put_var>` **(** :ref:`Variant<class_Variant>` var, :ref:`bool<class_bool>` full_objects=false **)** |
-   +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+   +-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                         | :ref:`get_available_packet_count<class_PacketPeer_method_get_available_packet_count>`\ (\ ) |const|                                        |
+   +-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PackedByteArray<class_PackedByteArray>` | :ref:`get_packet<class_PacketPeer_method_get_packet>`\ (\ )                                                                                |
+   +-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>`         | :ref:`get_packet_error<class_PacketPeer_method_get_packet_error>`\ (\ ) |const|                                                            |
+   +-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Variant<class_Variant>`                 | :ref:`get_var<class_PacketPeer_method_get_var>`\ (\ allow_objects\: :ref:`bool<class_bool>` = false\ )                                     |
+   +-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>`         | :ref:`put_packet<class_PacketPeer_method_put_packet>`\ (\ buffer\: :ref:`PackedByteArray<class_PackedByteArray>`\ )                        |
+   +-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>`         | :ref:`put_var<class_PacketPeer_method_put_var>`\ (\ var\: :ref:`Variant<class_Variant>`, full_objects\: :ref:`bool<class_bool>` = false\ ) |
+   +-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -76,8 +76,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_encode_buffer_max_size** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_encode_buffer_max_size** **(** **)**
+- |void| **set_encode_buffer_max_size**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_encode_buffer_max_size**\ (\ )
 
 Maximum buffer size allowed when encoding :ref:`Variant<class_Variant>`\ s. Raise this value to support heavier memory allocations.
 
@@ -96,7 +96,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_available_packet_count** **(** **)** |const|
+:ref:`int<class_int>` **get_available_packet_count**\ (\ ) |const|
 
 Returns the number of packets currently available in the ring-buffer.
 
@@ -108,7 +108,7 @@ Returns the number of packets currently available in the ring-buffer.
 
 .. rst-class:: classref-method
 
-:ref:`PackedByteArray<class_PackedByteArray>` **get_packet** **(** **)**
+:ref:`PackedByteArray<class_PackedByteArray>` **get_packet**\ (\ )
 
 Gets a raw packet.
 
@@ -120,7 +120,7 @@ Gets a raw packet.
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **get_packet_error** **(** **)** |const|
+:ref:`Error<enum_@GlobalScope_Error>` **get_packet_error**\ (\ ) |const|
 
 Returns the error state of the last packet received (via :ref:`get_packet<class_PacketPeer_method_get_packet>` and :ref:`get_var<class_PacketPeer_method_get_var>`).
 
@@ -132,7 +132,7 @@ Returns the error state of the last packet received (via :ref:`get_packet<class_
 
 .. rst-class:: classref-method
 
-:ref:`Variant<class_Variant>` **get_var** **(** :ref:`bool<class_bool>` allow_objects=false **)**
+:ref:`Variant<class_Variant>` **get_var**\ (\ allow_objects\: :ref:`bool<class_bool>` = false\ )
 
 Gets a Variant. If ``allow_objects`` is ``true``, decoding objects is allowed.
 
@@ -148,7 +148,7 @@ Internally, this uses the same decoding mechanism as the :ref:`@GlobalScope.byte
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **put_packet** **(** :ref:`PackedByteArray<class_PackedByteArray>` buffer **)**
+:ref:`Error<enum_@GlobalScope_Error>` **put_packet**\ (\ buffer\: :ref:`PackedByteArray<class_PackedByteArray>`\ )
 
 Sends a raw packet.
 
@@ -160,7 +160,7 @@ Sends a raw packet.
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **put_var** **(** :ref:`Variant<class_Variant>` var, :ref:`bool<class_bool>` full_objects=false **)**
+:ref:`Error<enum_@GlobalScope_Error>` **put_var**\ (\ var\: :ref:`Variant<class_Variant>`, full_objects\: :ref:`bool<class_bool>` = false\ )
 
 Sends a :ref:`Variant<class_Variant>` as a packet. If ``full_objects`` is ``true``, encoding objects is allowed (and can potentially include code).
 
@@ -173,3 +173,4 @@ Internally, this uses the same encoding mechanism as the :ref:`@GlobalScope.var_
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

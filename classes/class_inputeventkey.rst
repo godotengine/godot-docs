@@ -64,21 +64,21 @@ Methods
 .. table::
    :widths: auto
 
-   +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`String<class_String>`       | :ref:`as_text_key_label<class_InputEventKey_method_as_text_key_label>` **(** **)** |const|                                     |
-   +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`String<class_String>`       | :ref:`as_text_keycode<class_InputEventKey_method_as_text_keycode>` **(** **)** |const|                                         |
-   +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`String<class_String>`       | :ref:`as_text_location<class_InputEventKey_method_as_text_location>` **(** **)** |const|                                       |
-   +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`String<class_String>`       | :ref:`as_text_physical_keycode<class_InputEventKey_method_as_text_physical_keycode>` **(** **)** |const|                       |
-   +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Key<enum_@GlobalScope_Key>` | :ref:`get_key_label_with_modifiers<class_InputEventKey_method_get_key_label_with_modifiers>` **(** **)** |const|               |
-   +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Key<enum_@GlobalScope_Key>` | :ref:`get_keycode_with_modifiers<class_InputEventKey_method_get_keycode_with_modifiers>` **(** **)** |const|                   |
-   +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Key<enum_@GlobalScope_Key>` | :ref:`get_physical_keycode_with_modifiers<class_InputEventKey_method_get_physical_keycode_with_modifiers>` **(** **)** |const| |
-   +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+   +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`       | :ref:`as_text_key_label<class_InputEventKey_method_as_text_key_label>`\ (\ ) |const|                                     |
+   +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`       | :ref:`as_text_keycode<class_InputEventKey_method_as_text_keycode>`\ (\ ) |const|                                         |
+   +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`       | :ref:`as_text_location<class_InputEventKey_method_as_text_location>`\ (\ ) |const|                                       |
+   +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`       | :ref:`as_text_physical_keycode<class_InputEventKey_method_as_text_physical_keycode>`\ (\ ) |const|                       |
+   +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Key<enum_@GlobalScope_Key>` | :ref:`get_key_label_with_modifiers<class_InputEventKey_method_get_key_label_with_modifiers>`\ (\ ) |const|               |
+   +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Key<enum_@GlobalScope_Key>` | :ref:`get_keycode_with_modifiers<class_InputEventKey_method_get_keycode_with_modifiers>`\ (\ ) |const|                   |
+   +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Key<enum_@GlobalScope_Key>` | :ref:`get_physical_keycode_with_modifiers<class_InputEventKey_method_get_physical_keycode_with_modifiers>`\ (\ ) |const| |
+   +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -97,8 +97,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_echo** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_echo** **(** **)**
+- |void| **set_echo**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_echo**\ (\ )
 
 If ``true``, the key was already pressed before this event. It means the user is holding the key down.
 
@@ -114,8 +114,8 @@ If ``true``, the key was already pressed before this event. It means the user is
 
 .. rst-class:: classref-property-setget
 
-- void **set_key_label** **(** :ref:`Key<enum_@GlobalScope_Key>` value **)**
-- :ref:`Key<enum_@GlobalScope_Key>` **get_key_label** **(** **)**
+- |void| **set_key_label**\ (\ value\: :ref:`Key<enum_@GlobalScope_Key>`\ )
+- :ref:`Key<enum_@GlobalScope_Key>` **get_key_label**\ (\ )
 
 Represents the localized label printed on the key in the current keyboard layout, which corresponds to one of the :ref:`Key<enum_@GlobalScope_Key>` constants or any valid Unicode character.
 
@@ -142,8 +142,8 @@ To get a human-readable representation of the **InputEventKey**, use ``OS.get_ke
 
 .. rst-class:: classref-property-setget
 
-- void **set_keycode** **(** :ref:`Key<enum_@GlobalScope_Key>` value **)**
-- :ref:`Key<enum_@GlobalScope_Key>` **get_keycode** **(** **)**
+- |void| **set_keycode**\ (\ value\: :ref:`Key<enum_@GlobalScope_Key>`\ )
+- :ref:`Key<enum_@GlobalScope_Key>` **get_keycode**\ (\ )
 
 Latin label printed on the key in the current keyboard layout, which corresponds to one of the :ref:`Key<enum_@GlobalScope_Key>` constants.
 
@@ -168,8 +168,8 @@ To get a human-readable representation of the **InputEventKey**, use ``OS.get_ke
 
 .. rst-class:: classref-property-setget
 
-- void **set_location** **(** :ref:`KeyLocation<enum_@GlobalScope_KeyLocation>` value **)**
-- :ref:`KeyLocation<enum_@GlobalScope_KeyLocation>` **get_location** **(** **)**
+- |void| **set_location**\ (\ value\: :ref:`KeyLocation<enum_@GlobalScope_KeyLocation>`\ )
+- :ref:`KeyLocation<enum_@GlobalScope_KeyLocation>` **get_location**\ (\ )
 
 Represents the location of a key which has both left and right versions, such as :kbd:`Shift` or :kbd:`Alt`.
 
@@ -185,8 +185,8 @@ Represents the location of a key which has both left and right versions, such as
 
 .. rst-class:: classref-property-setget
 
-- void **set_physical_keycode** **(** :ref:`Key<enum_@GlobalScope_Key>` value **)**
-- :ref:`Key<enum_@GlobalScope_Key>` **get_physical_keycode** **(** **)**
+- |void| **set_physical_keycode**\ (\ value\: :ref:`Key<enum_@GlobalScope_Key>`\ )
+- :ref:`Key<enum_@GlobalScope_Key>` **get_physical_keycode**\ (\ )
 
 Represents the physical location of a key on the 101/102-key US QWERTY keyboard, which corresponds to one of the :ref:`Key<enum_@GlobalScope_Key>` constants.
 
@@ -227,8 +227,8 @@ To get a human-readable representation of the **InputEventKey**, use :ref:`OS.ge
 
 .. rst-class:: classref-property-setget
 
-- void **set_pressed** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_pressed** **(** **)**
+- |void| **set_pressed**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_pressed**\ (\ )
 
 If ``true``, the key's state is pressed. If ``false``, the key's state is released.
 
@@ -244,8 +244,8 @@ If ``true``, the key's state is pressed. If ``false``, the key's state is releas
 
 .. rst-class:: classref-property-setget
 
-- void **set_unicode** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_unicode** **(** **)**
+- |void| **set_unicode**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_unicode**\ (\ )
 
 The key Unicode character code (when relevant), shifted by modifier keys. Unicode character codes for composite characters and complex scripts may not be available unless IME input mode is active. See :ref:`Window.set_ime_active<class_Window_method_set_ime_active>` for more information.
 
@@ -262,7 +262,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **as_text_key_label** **(** **)** |const|
+:ref:`String<class_String>` **as_text_key_label**\ (\ ) |const|
 
 Returns a :ref:`String<class_String>` representation of the event's :ref:`key_label<class_InputEventKey_property_key_label>` and modifiers.
 
@@ -274,7 +274,7 @@ Returns a :ref:`String<class_String>` representation of the event's :ref:`key_la
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **as_text_keycode** **(** **)** |const|
+:ref:`String<class_String>` **as_text_keycode**\ (\ ) |const|
 
 Returns a :ref:`String<class_String>` representation of the event's :ref:`keycode<class_InputEventKey_property_keycode>` and modifiers.
 
@@ -286,7 +286,7 @@ Returns a :ref:`String<class_String>` representation of the event's :ref:`keycod
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **as_text_location** **(** **)** |const|
+:ref:`String<class_String>` **as_text_location**\ (\ ) |const|
 
 Returns a :ref:`String<class_String>` representation of the event's :ref:`location<class_InputEventKey_property_location>`. This will be a blank string if the event is not specific to a location.
 
@@ -298,7 +298,7 @@ Returns a :ref:`String<class_String>` representation of the event's :ref:`locati
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **as_text_physical_keycode** **(** **)** |const|
+:ref:`String<class_String>` **as_text_physical_keycode**\ (\ ) |const|
 
 Returns a :ref:`String<class_String>` representation of the event's :ref:`physical_keycode<class_InputEventKey_property_physical_keycode>` and modifiers.
 
@@ -310,7 +310,7 @@ Returns a :ref:`String<class_String>` representation of the event's :ref:`physic
 
 .. rst-class:: classref-method
 
-:ref:`Key<enum_@GlobalScope_Key>` **get_key_label_with_modifiers** **(** **)** |const|
+:ref:`Key<enum_@GlobalScope_Key>` **get_key_label_with_modifiers**\ (\ ) |const|
 
 Returns the localized key label combined with modifier keys such as :kbd:`Shift` or :kbd:`Alt`. See also :ref:`InputEventWithModifiers<class_InputEventWithModifiers>`.
 
@@ -324,7 +324,7 @@ To get a human-readable representation of the **InputEventKey** with modifiers, 
 
 .. rst-class:: classref-method
 
-:ref:`Key<enum_@GlobalScope_Key>` **get_keycode_with_modifiers** **(** **)** |const|
+:ref:`Key<enum_@GlobalScope_Key>` **get_keycode_with_modifiers**\ (\ ) |const|
 
 Returns the Latin keycode combined with modifier keys such as :kbd:`Shift` or :kbd:`Alt`. See also :ref:`InputEventWithModifiers<class_InputEventWithModifiers>`.
 
@@ -338,7 +338,7 @@ To get a human-readable representation of the **InputEventKey** with modifiers, 
 
 .. rst-class:: classref-method
 
-:ref:`Key<enum_@GlobalScope_Key>` **get_physical_keycode_with_modifiers** **(** **)** |const|
+:ref:`Key<enum_@GlobalScope_Key>` **get_physical_keycode_with_modifiers**\ (\ ) |const|
 
 Returns the physical keycode combined with modifier keys such as :kbd:`Shift` or :kbd:`Alt`. See also :ref:`InputEventWithModifiers<class_InputEventWithModifiers>`.
 
@@ -351,3 +351,4 @@ To get a human-readable representation of the **InputEventKey** with modifiers, 
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

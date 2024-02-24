@@ -54,8 +54,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_mesh** **(** :ref:`Mesh<class_Mesh>` value **)**
-- :ref:`Mesh<class_Mesh>` **get_mesh** **(** **)**
+- |void| **set_mesh**\ (\ value\: :ref:`Mesh<class_Mesh>`\ )
+- :ref:`Mesh<class_Mesh>` **get_mesh**\ (\ )
 
 The :ref:`Mesh<class_Mesh>` that defines emission shape.
 
@@ -71,8 +71,8 @@ The :ref:`Mesh<class_Mesh>` that defines emission shape.
 
 .. rst-class:: classref-property-setget
 
-- void **set_surface_index** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_surface_index** **(** **)**
+- |void| **set_surface_index**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_surface_index**\ (\ )
 
 Index of the surface that emits particles. :ref:`use_all_surfaces<class_VisualShaderNodeParticleMeshEmitter_property_use_all_surfaces>` must be ``false`` for this to take effect.
 
@@ -88,8 +88,8 @@ Index of the surface that emits particles. :ref:`use_all_surfaces<class_VisualSh
 
 .. rst-class:: classref-property-setget
 
-- void **set_use_all_surfaces** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_use_all_surfaces** **(** **)**
+- |void| **set_use_all_surfaces**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_use_all_surfaces**\ (\ )
 
 If ``true``, the particles will emit from all surfaces of the mesh.
 
@@ -100,3 +100,4 @@ If ``true``, the particles will emit from all surfaces of the mesh.
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

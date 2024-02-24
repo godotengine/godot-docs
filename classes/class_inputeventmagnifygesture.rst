@@ -59,8 +59,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_factor** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_factor** **(** **)**
+- |void| **set_factor**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_factor**\ (\ )
 
 The amount (or delta) of the event. This value is closer to ``1.0`` the slower the gesture is performed.
 
@@ -71,3 +71,4 @@ The amount (or delta) of the event. This value is closer to ``1.0`` the slower t
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

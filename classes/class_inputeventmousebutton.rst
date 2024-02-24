@@ -72,8 +72,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_button_index** **(** :ref:`MouseButton<enum_@GlobalScope_MouseButton>` value **)**
-- :ref:`MouseButton<enum_@GlobalScope_MouseButton>` **get_button_index** **(** **)**
+- |void| **set_button_index**\ (\ value\: :ref:`MouseButton<enum_@GlobalScope_MouseButton>`\ )
+- :ref:`MouseButton<enum_@GlobalScope_MouseButton>` **get_button_index**\ (\ )
 
 The mouse button identifier, one of the :ref:`MouseButton<enum_@GlobalScope_MouseButton>` button or button wheel constants.
 
@@ -89,8 +89,8 @@ The mouse button identifier, one of the :ref:`MouseButton<enum_@GlobalScope_Mous
 
 .. rst-class:: classref-property-setget
 
-- void **set_canceled** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_canceled** **(** **)**
+- |void| **set_canceled**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_canceled**\ (\ )
 
 If ``true``, the mouse button event has been canceled.
 
@@ -106,8 +106,8 @@ If ``true``, the mouse button event has been canceled.
 
 .. rst-class:: classref-property-setget
 
-- void **set_double_click** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_double_click** **(** **)**
+- |void| **set_double_click**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_double_click**\ (\ )
 
 If ``true``, the mouse button's state is a double-click.
 
@@ -123,8 +123,8 @@ If ``true``, the mouse button's state is a double-click.
 
 .. rst-class:: classref-property-setget
 
-- void **set_factor** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_factor** **(** **)**
+- |void| **set_factor**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_factor**\ (\ )
 
 The amount (or delta) of the event. When used for high-precision scroll events, this indicates the scroll amount (vertical or horizontal). This is only supported on some platforms; the reported sensitivity varies depending on the platform. May be ``0`` if not supported.
 
@@ -140,8 +140,8 @@ The amount (or delta) of the event. When used for high-precision scroll events, 
 
 .. rst-class:: classref-property-setget
 
-- void **set_pressed** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_pressed** **(** **)**
+- |void| **set_pressed**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_pressed**\ (\ )
 
 If ``true``, the mouse button's state is pressed. If ``false``, the mouse button's state is released.
 
@@ -152,3 +152,4 @@ If ``true``, the mouse button's state is pressed. If ``false``, the mouse button
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

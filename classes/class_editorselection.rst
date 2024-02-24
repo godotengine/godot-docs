@@ -31,17 +31,17 @@ Methods
 .. table::
    :widths: auto
 
-   +---------------------------+--------------------------------------------------------------------------------------------------------------------+
-   | void                      | :ref:`add_node<class_EditorSelection_method_add_node>` **(** :ref:`Node<class_Node>` node **)**                    |
-   +---------------------------+--------------------------------------------------------------------------------------------------------------------+
-   | void                      | :ref:`clear<class_EditorSelection_method_clear>` **(** **)**                                                       |
-   +---------------------------+--------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Node[]<class_Node>` | :ref:`get_selected_nodes<class_EditorSelection_method_get_selected_nodes>` **(** **)**                             |
-   +---------------------------+--------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Node[]<class_Node>` | :ref:`get_transformable_selected_nodes<class_EditorSelection_method_get_transformable_selected_nodes>` **(** **)** |
-   +---------------------------+--------------------------------------------------------------------------------------------------------------------+
-   | void                      | :ref:`remove_node<class_EditorSelection_method_remove_node>` **(** :ref:`Node<class_Node>` node **)**              |
-   +---------------------------+--------------------------------------------------------------------------------------------------------------------+
+   +------------------------------------------------------+--------------------------------------------------------------------------------------------------------------+
+   | |void|                                               | :ref:`add_node<class_EditorSelection_method_add_node>`\ (\ node\: :ref:`Node<class_Node>`\ )                 |
+   +------------------------------------------------------+--------------------------------------------------------------------------------------------------------------+
+   | |void|                                               | :ref:`clear<class_EditorSelection_method_clear>`\ (\ )                                                       |
+   +------------------------------------------------------+--------------------------------------------------------------------------------------------------------------+
+   | :ref:`Array<class_Array>`\[:ref:`Node<class_Node>`\] | :ref:`get_selected_nodes<class_EditorSelection_method_get_selected_nodes>`\ (\ )                             |
+   +------------------------------------------------------+--------------------------------------------------------------------------------------------------------------+
+   | :ref:`Array<class_Array>`\[:ref:`Node<class_Node>`\] | :ref:`get_transformable_selected_nodes<class_EditorSelection_method_get_transformable_selected_nodes>`\ (\ ) |
+   +------------------------------------------------------+--------------------------------------------------------------------------------------------------------------+
+   | |void|                                               | :ref:`remove_node<class_EditorSelection_method_remove_node>`\ (\ node\: :ref:`Node<class_Node>`\ )           |
+   +------------------------------------------------------+--------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -56,7 +56,7 @@ Signals
 
 .. rst-class:: classref-signal
 
-**selection_changed** **(** **)**
+**selection_changed**\ (\ )
 
 Emitted when the selection changes.
 
@@ -73,7 +73,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-void **add_node** **(** :ref:`Node<class_Node>` node **)**
+|void| **add_node**\ (\ node\: :ref:`Node<class_Node>`\ )
 
 Adds a node to the selection.
 
@@ -87,7 +87,7 @@ Adds a node to the selection.
 
 .. rst-class:: classref-method
 
-void **clear** **(** **)**
+|void| **clear**\ (\ )
 
 Clear the selection.
 
@@ -99,7 +99,7 @@ Clear the selection.
 
 .. rst-class:: classref-method
 
-:ref:`Node[]<class_Node>` **get_selected_nodes** **(** **)**
+:ref:`Array<class_Array>`\[:ref:`Node<class_Node>`\] **get_selected_nodes**\ (\ )
 
 Gets the list of selected nodes.
 
@@ -111,7 +111,7 @@ Gets the list of selected nodes.
 
 .. rst-class:: classref-method
 
-:ref:`Node[]<class_Node>` **get_transformable_selected_nodes** **(** **)**
+:ref:`Array<class_Array>`\[:ref:`Node<class_Node>`\] **get_transformable_selected_nodes**\ (\ )
 
 Gets the list of selected nodes, optimized for transform operations (i.e. moving them, rotating, etc). This list avoids situations where a node is selected and also child/grandchild.
 
@@ -123,7 +123,7 @@ Gets the list of selected nodes, optimized for transform operations (i.e. moving
 
 .. rst-class:: classref-method
 
-void **remove_node** **(** :ref:`Node<class_Node>` node **)**
+|void| **remove_node**\ (\ node\: :ref:`Node<class_Node>`\ )
 
 Removes a node from the selection.
 
@@ -134,3 +134,4 @@ Removes a node from the selection.
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

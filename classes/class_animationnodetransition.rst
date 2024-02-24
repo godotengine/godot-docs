@@ -95,15 +95,15 @@ Methods
 .. table::
    :widths: auto
 
-   +-------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>` | :ref:`is_input_reset<class_AnimationNodeTransition_method_is_input_reset>` **(** :ref:`int<class_int>` input **)** |const|                                               |
-   +-------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>` | :ref:`is_input_set_as_auto_advance<class_AnimationNodeTransition_method_is_input_set_as_auto_advance>` **(** :ref:`int<class_int>` input **)** |const|                   |
-   +-------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                    | :ref:`set_input_as_auto_advance<class_AnimationNodeTransition_method_set_input_as_auto_advance>` **(** :ref:`int<class_int>` input, :ref:`bool<class_bool>` enable **)** |
-   +-------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                    | :ref:`set_input_reset<class_AnimationNodeTransition_method_set_input_reset>` **(** :ref:`int<class_int>` input, :ref:`bool<class_bool>` enable **)**                     |
-   +-------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +-------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | :ref:`is_input_reset<class_AnimationNodeTransition_method_is_input_reset>`\ (\ input\: :ref:`int<class_int>`\ ) |const|                                                 |
+   +-------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | :ref:`is_input_set_as_auto_advance<class_AnimationNodeTransition_method_is_input_set_as_auto_advance>`\ (\ input\: :ref:`int<class_int>`\ ) |const|                     |
+   +-------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                  | :ref:`set_input_as_auto_advance<class_AnimationNodeTransition_method_set_input_as_auto_advance>`\ (\ input\: :ref:`int<class_int>`, enable\: :ref:`bool<class_bool>`\ ) |
+   +-------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                  | :ref:`set_input_reset<class_AnimationNodeTransition_method_set_input_reset>`\ (\ input\: :ref:`int<class_int>`, enable\: :ref:`bool<class_bool>`\ )                     |
+   +-------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -122,8 +122,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_allow_transition_to_self** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_allow_transition_to_self** **(** **)**
+- |void| **set_allow_transition_to_self**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_allow_transition_to_self**\ (\ )
 
 If ``true``, allows transition to the self state. When the reset option is enabled in input, the animation is restarted. If ``false``, nothing happens on the transition to the self state.
 
@@ -139,8 +139,8 @@ If ``true``, allows transition to the self state. When the reset option is enabl
 
 .. rst-class:: classref-property-setget
 
-- void **set_input_count** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_input_count** **(** **)**
+- |void| **set_input_count**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_input_count**\ (\ )
 
 The number of enabled input ports for this animation node.
 
@@ -156,8 +156,8 @@ The number of enabled input ports for this animation node.
 
 .. rst-class:: classref-property-setget
 
-- void **set_xfade_curve** **(** :ref:`Curve<class_Curve>` value **)**
-- :ref:`Curve<class_Curve>` **get_xfade_curve** **(** **)**
+- |void| **set_xfade_curve**\ (\ value\: :ref:`Curve<class_Curve>`\ )
+- :ref:`Curve<class_Curve>` **get_xfade_curve**\ (\ )
 
 Determines how cross-fading between animations is eased. If empty, the transition will be linear.
 
@@ -173,8 +173,8 @@ Determines how cross-fading between animations is eased. If empty, the transitio
 
 .. rst-class:: classref-property-setget
 
-- void **set_xfade_time** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_xfade_time** **(** **)**
+- |void| **set_xfade_time**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_xfade_time**\ (\ )
 
 Cross-fading time (in seconds) between each animation connected to the inputs.
 
@@ -191,7 +191,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_input_reset** **(** :ref:`int<class_int>` input **)** |const|
+:ref:`bool<class_bool>` **is_input_reset**\ (\ input\: :ref:`int<class_int>`\ ) |const|
 
 Returns whether the animation restarts when the animation transitions from the other animation.
 
@@ -203,7 +203,7 @@ Returns whether the animation restarts when the animation transitions from the o
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_input_set_as_auto_advance** **(** :ref:`int<class_int>` input **)** |const|
+:ref:`bool<class_bool>` **is_input_set_as_auto_advance**\ (\ input\: :ref:`int<class_int>`\ ) |const|
 
 Returns ``true`` if auto-advance is enabled for the given ``input`` index.
 
@@ -215,7 +215,7 @@ Returns ``true`` if auto-advance is enabled for the given ``input`` index.
 
 .. rst-class:: classref-method
 
-void **set_input_as_auto_advance** **(** :ref:`int<class_int>` input, :ref:`bool<class_bool>` enable **)**
+|void| **set_input_as_auto_advance**\ (\ input\: :ref:`int<class_int>`, enable\: :ref:`bool<class_bool>`\ )
 
 Enables or disables auto-advance for the given ``input`` index. If enabled, state changes to the next input after playing the animation once. If enabled for the last input state, it loops to the first.
 
@@ -227,7 +227,7 @@ Enables or disables auto-advance for the given ``input`` index. If enabled, stat
 
 .. rst-class:: classref-method
 
-void **set_input_reset** **(** :ref:`int<class_int>` input, :ref:`bool<class_bool>` enable **)**
+|void| **set_input_reset**\ (\ input\: :ref:`int<class_int>`, enable\: :ref:`bool<class_bool>`\ )
 
 If ``true``, the destination animation is restarted when the animation transitions.
 
@@ -238,3 +238,4 @@ If ``true``, the destination animation is restarted when the animation transitio
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

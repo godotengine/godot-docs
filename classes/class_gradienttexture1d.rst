@@ -56,8 +56,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_gradient** **(** :ref:`Gradient<class_Gradient>` value **)**
-- :ref:`Gradient<class_Gradient>` **get_gradient** **(** **)**
+- |void| **set_gradient**\ (\ value\: :ref:`Gradient<class_Gradient>`\ )
+- :ref:`Gradient<class_Gradient>` **get_gradient**\ (\ )
 
 The :ref:`Gradient<class_Gradient>` used to fill the texture.
 
@@ -73,8 +73,8 @@ The :ref:`Gradient<class_Gradient>` used to fill the texture.
 
 .. rst-class:: classref-property-setget
 
-- void **set_use_hdr** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_using_hdr** **(** **)**
+- |void| **set_use_hdr**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_using_hdr**\ (\ )
 
 If ``true``, the generated texture will support high dynamic range (:ref:`Image.FORMAT_RGBAF<class_Image_constant_FORMAT_RGBAF>` format). This allows for glow effects to work if :ref:`Environment.glow_enabled<class_Environment_property_glow_enabled>` is ``true``. If ``false``, the generated texture will use low dynamic range; overbright colors will be clamped (:ref:`Image.FORMAT_RGBA8<class_Image_constant_FORMAT_RGBA8>` format).
 
@@ -90,8 +90,8 @@ If ``true``, the generated texture will support high dynamic range (:ref:`Image.
 
 .. rst-class:: classref-property-setget
 
-- void **set_width** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_width** **(** **)**
+- |void| **set_width**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_width**\ (\ )
 
 The number of color samples that will be obtained from the :ref:`Gradient<class_Gradient>`.
 
@@ -102,3 +102,4 @@ The number of color samples that will be obtained from the :ref:`Gradient<class_
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

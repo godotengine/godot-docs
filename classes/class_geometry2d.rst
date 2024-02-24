@@ -29,53 +29,53 @@ Methods
 .. table::
    :widths: auto
 
-   +-------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`PackedVector2Array[]<class_PackedVector2Array>` | :ref:`clip_polygons<class_Geometry2D_method_clip_polygons>` **(** :ref:`PackedVector2Array<class_PackedVector2Array>` polygon_a, :ref:`PackedVector2Array<class_PackedVector2Array>` polygon_b **)**                                                                                                 |
-   +-------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`PackedVector2Array[]<class_PackedVector2Array>` | :ref:`clip_polyline_with_polygon<class_Geometry2D_method_clip_polyline_with_polygon>` **(** :ref:`PackedVector2Array<class_PackedVector2Array>` polyline, :ref:`PackedVector2Array<class_PackedVector2Array>` polygon **)**                                                                          |
-   +-------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`PackedVector2Array<class_PackedVector2Array>`   | :ref:`convex_hull<class_Geometry2D_method_convex_hull>` **(** :ref:`PackedVector2Array<class_PackedVector2Array>` points **)**                                                                                                                                                                       |
-   +-------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`PackedVector2Array[]<class_PackedVector2Array>` | :ref:`decompose_polygon_in_convex<class_Geometry2D_method_decompose_polygon_in_convex>` **(** :ref:`PackedVector2Array<class_PackedVector2Array>` polygon **)**                                                                                                                                      |
-   +-------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`PackedVector2Array[]<class_PackedVector2Array>` | :ref:`exclude_polygons<class_Geometry2D_method_exclude_polygons>` **(** :ref:`PackedVector2Array<class_PackedVector2Array>` polygon_a, :ref:`PackedVector2Array<class_PackedVector2Array>` polygon_b **)**                                                                                           |
-   +-------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Vector2<class_Vector2>`                         | :ref:`get_closest_point_to_segment<class_Geometry2D_method_get_closest_point_to_segment>` **(** :ref:`Vector2<class_Vector2>` point, :ref:`Vector2<class_Vector2>` s1, :ref:`Vector2<class_Vector2>` s2 **)**                                                                                        |
-   +-------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Vector2<class_Vector2>`                         | :ref:`get_closest_point_to_segment_uncapped<class_Geometry2D_method_get_closest_point_to_segment_uncapped>` **(** :ref:`Vector2<class_Vector2>` point, :ref:`Vector2<class_Vector2>` s1, :ref:`Vector2<class_Vector2>` s2 **)**                                                                      |
-   +-------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`PackedVector2Array<class_PackedVector2Array>`   | :ref:`get_closest_points_between_segments<class_Geometry2D_method_get_closest_points_between_segments>` **(** :ref:`Vector2<class_Vector2>` p1, :ref:`Vector2<class_Vector2>` q1, :ref:`Vector2<class_Vector2>` p2, :ref:`Vector2<class_Vector2>` q2 **)**                                           |
-   +-------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`PackedVector2Array[]<class_PackedVector2Array>` | :ref:`intersect_polygons<class_Geometry2D_method_intersect_polygons>` **(** :ref:`PackedVector2Array<class_PackedVector2Array>` polygon_a, :ref:`PackedVector2Array<class_PackedVector2Array>` polygon_b **)**                                                                                       |
-   +-------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`PackedVector2Array[]<class_PackedVector2Array>` | :ref:`intersect_polyline_with_polygon<class_Geometry2D_method_intersect_polyline_with_polygon>` **(** :ref:`PackedVector2Array<class_PackedVector2Array>` polyline, :ref:`PackedVector2Array<class_PackedVector2Array>` polygon **)**                                                                |
-   +-------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                               | :ref:`is_point_in_circle<class_Geometry2D_method_is_point_in_circle>` **(** :ref:`Vector2<class_Vector2>` point, :ref:`Vector2<class_Vector2>` circle_position, :ref:`float<class_float>` circle_radius **)**                                                                                        |
-   +-------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                               | :ref:`is_point_in_polygon<class_Geometry2D_method_is_point_in_polygon>` **(** :ref:`Vector2<class_Vector2>` point, :ref:`PackedVector2Array<class_PackedVector2Array>` polygon **)**                                                                                                                 |
-   +-------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                               | :ref:`is_polygon_clockwise<class_Geometry2D_method_is_polygon_clockwise>` **(** :ref:`PackedVector2Array<class_PackedVector2Array>` polygon **)**                                                                                                                                                    |
-   +-------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Variant<class_Variant>`                         | :ref:`line_intersects_line<class_Geometry2D_method_line_intersects_line>` **(** :ref:`Vector2<class_Vector2>` from_a, :ref:`Vector2<class_Vector2>` dir_a, :ref:`Vector2<class_Vector2>` from_b, :ref:`Vector2<class_Vector2>` dir_b **)**                                                           |
-   +-------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Dictionary<class_Dictionary>`                   | :ref:`make_atlas<class_Geometry2D_method_make_atlas>` **(** :ref:`PackedVector2Array<class_PackedVector2Array>` sizes **)**                                                                                                                                                                          |
-   +-------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`PackedVector2Array[]<class_PackedVector2Array>` | :ref:`merge_polygons<class_Geometry2D_method_merge_polygons>` **(** :ref:`PackedVector2Array<class_PackedVector2Array>` polygon_a, :ref:`PackedVector2Array<class_PackedVector2Array>` polygon_b **)**                                                                                               |
-   +-------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`PackedVector2Array[]<class_PackedVector2Array>` | :ref:`offset_polygon<class_Geometry2D_method_offset_polygon>` **(** :ref:`PackedVector2Array<class_PackedVector2Array>` polygon, :ref:`float<class_float>` delta, :ref:`PolyJoinType<enum_Geometry2D_PolyJoinType>` join_type=0 **)**                                                                |
-   +-------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`PackedVector2Array[]<class_PackedVector2Array>` | :ref:`offset_polyline<class_Geometry2D_method_offset_polyline>` **(** :ref:`PackedVector2Array<class_PackedVector2Array>` polyline, :ref:`float<class_float>` delta, :ref:`PolyJoinType<enum_Geometry2D_PolyJoinType>` join_type=0, :ref:`PolyEndType<enum_Geometry2D_PolyEndType>` end_type=3 **)** |
-   +-------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                               | :ref:`point_is_inside_triangle<class_Geometry2D_method_point_is_inside_triangle>` **(** :ref:`Vector2<class_Vector2>` point, :ref:`Vector2<class_Vector2>` a, :ref:`Vector2<class_Vector2>` b, :ref:`Vector2<class_Vector2>` c **)** |const|                                                         |
-   +-------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`float<class_float>`                             | :ref:`segment_intersects_circle<class_Geometry2D_method_segment_intersects_circle>` **(** :ref:`Vector2<class_Vector2>` segment_from, :ref:`Vector2<class_Vector2>` segment_to, :ref:`Vector2<class_Vector2>` circle_position, :ref:`float<class_float>` circle_radius **)**                         |
-   +-------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Variant<class_Variant>`                         | :ref:`segment_intersects_segment<class_Geometry2D_method_segment_intersects_segment>` **(** :ref:`Vector2<class_Vector2>` from_a, :ref:`Vector2<class_Vector2>` to_a, :ref:`Vector2<class_Vector2>` from_b, :ref:`Vector2<class_Vector2>` to_b **)**                                                 |
-   +-------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`PackedInt32Array<class_PackedInt32Array>`       | :ref:`triangulate_delaunay<class_Geometry2D_method_triangulate_delaunay>` **(** :ref:`PackedVector2Array<class_PackedVector2Array>` points **)**                                                                                                                                                     |
-   +-------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`PackedInt32Array<class_PackedInt32Array>`       | :ref:`triangulate_polygon<class_Geometry2D_method_triangulate_polygon>` **(** :ref:`PackedVector2Array<class_PackedVector2Array>` polygon **)**                                                                                                                                                      |
-   +-------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +----------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Array<class_Array>`\[:ref:`PackedVector2Array<class_PackedVector2Array>`\] | :ref:`clip_polygons<class_Geometry2D_method_clip_polygons>`\ (\ polygon_a\: :ref:`PackedVector2Array<class_PackedVector2Array>`, polygon_b\: :ref:`PackedVector2Array<class_PackedVector2Array>`\ )                                                                                                         |
+   +----------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Array<class_Array>`\[:ref:`PackedVector2Array<class_PackedVector2Array>`\] | :ref:`clip_polyline_with_polygon<class_Geometry2D_method_clip_polyline_with_polygon>`\ (\ polyline\: :ref:`PackedVector2Array<class_PackedVector2Array>`, polygon\: :ref:`PackedVector2Array<class_PackedVector2Array>`\ )                                                                                  |
+   +----------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PackedVector2Array<class_PackedVector2Array>`                              | :ref:`convex_hull<class_Geometry2D_method_convex_hull>`\ (\ points\: :ref:`PackedVector2Array<class_PackedVector2Array>`\ )                                                                                                                                                                                 |
+   +----------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Array<class_Array>`\[:ref:`PackedVector2Array<class_PackedVector2Array>`\] | :ref:`decompose_polygon_in_convex<class_Geometry2D_method_decompose_polygon_in_convex>`\ (\ polygon\: :ref:`PackedVector2Array<class_PackedVector2Array>`\ )                                                                                                                                                |
+   +----------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Array<class_Array>`\[:ref:`PackedVector2Array<class_PackedVector2Array>`\] | :ref:`exclude_polygons<class_Geometry2D_method_exclude_polygons>`\ (\ polygon_a\: :ref:`PackedVector2Array<class_PackedVector2Array>`, polygon_b\: :ref:`PackedVector2Array<class_PackedVector2Array>`\ )                                                                                                   |
+   +----------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector2<class_Vector2>`                                                    | :ref:`get_closest_point_to_segment<class_Geometry2D_method_get_closest_point_to_segment>`\ (\ point\: :ref:`Vector2<class_Vector2>`, s1\: :ref:`Vector2<class_Vector2>`, s2\: :ref:`Vector2<class_Vector2>`\ )                                                                                              |
+   +----------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector2<class_Vector2>`                                                    | :ref:`get_closest_point_to_segment_uncapped<class_Geometry2D_method_get_closest_point_to_segment_uncapped>`\ (\ point\: :ref:`Vector2<class_Vector2>`, s1\: :ref:`Vector2<class_Vector2>`, s2\: :ref:`Vector2<class_Vector2>`\ )                                                                            |
+   +----------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PackedVector2Array<class_PackedVector2Array>`                              | :ref:`get_closest_points_between_segments<class_Geometry2D_method_get_closest_points_between_segments>`\ (\ p1\: :ref:`Vector2<class_Vector2>`, q1\: :ref:`Vector2<class_Vector2>`, p2\: :ref:`Vector2<class_Vector2>`, q2\: :ref:`Vector2<class_Vector2>`\ )                                               |
+   +----------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Array<class_Array>`\[:ref:`PackedVector2Array<class_PackedVector2Array>`\] | :ref:`intersect_polygons<class_Geometry2D_method_intersect_polygons>`\ (\ polygon_a\: :ref:`PackedVector2Array<class_PackedVector2Array>`, polygon_b\: :ref:`PackedVector2Array<class_PackedVector2Array>`\ )                                                                                               |
+   +----------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Array<class_Array>`\[:ref:`PackedVector2Array<class_PackedVector2Array>`\] | :ref:`intersect_polyline_with_polygon<class_Geometry2D_method_intersect_polyline_with_polygon>`\ (\ polyline\: :ref:`PackedVector2Array<class_PackedVector2Array>`, polygon\: :ref:`PackedVector2Array<class_PackedVector2Array>`\ )                                                                        |
+   +----------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                                          | :ref:`is_point_in_circle<class_Geometry2D_method_is_point_in_circle>`\ (\ point\: :ref:`Vector2<class_Vector2>`, circle_position\: :ref:`Vector2<class_Vector2>`, circle_radius\: :ref:`float<class_float>`\ )                                                                                              |
+   +----------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                                          | :ref:`is_point_in_polygon<class_Geometry2D_method_is_point_in_polygon>`\ (\ point\: :ref:`Vector2<class_Vector2>`, polygon\: :ref:`PackedVector2Array<class_PackedVector2Array>`\ )                                                                                                                         |
+   +----------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                                          | :ref:`is_polygon_clockwise<class_Geometry2D_method_is_polygon_clockwise>`\ (\ polygon\: :ref:`PackedVector2Array<class_PackedVector2Array>`\ )                                                                                                                                                              |
+   +----------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Variant<class_Variant>`                                                    | :ref:`line_intersects_line<class_Geometry2D_method_line_intersects_line>`\ (\ from_a\: :ref:`Vector2<class_Vector2>`, dir_a\: :ref:`Vector2<class_Vector2>`, from_b\: :ref:`Vector2<class_Vector2>`, dir_b\: :ref:`Vector2<class_Vector2>`\ )                                                               |
+   +----------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Dictionary<class_Dictionary>`                                              | :ref:`make_atlas<class_Geometry2D_method_make_atlas>`\ (\ sizes\: :ref:`PackedVector2Array<class_PackedVector2Array>`\ )                                                                                                                                                                                    |
+   +----------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Array<class_Array>`\[:ref:`PackedVector2Array<class_PackedVector2Array>`\] | :ref:`merge_polygons<class_Geometry2D_method_merge_polygons>`\ (\ polygon_a\: :ref:`PackedVector2Array<class_PackedVector2Array>`, polygon_b\: :ref:`PackedVector2Array<class_PackedVector2Array>`\ )                                                                                                       |
+   +----------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Array<class_Array>`\[:ref:`PackedVector2Array<class_PackedVector2Array>`\] | :ref:`offset_polygon<class_Geometry2D_method_offset_polygon>`\ (\ polygon\: :ref:`PackedVector2Array<class_PackedVector2Array>`, delta\: :ref:`float<class_float>`, join_type\: :ref:`PolyJoinType<enum_Geometry2D_PolyJoinType>` = 0\ )                                                                    |
+   +----------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Array<class_Array>`\[:ref:`PackedVector2Array<class_PackedVector2Array>`\] | :ref:`offset_polyline<class_Geometry2D_method_offset_polyline>`\ (\ polyline\: :ref:`PackedVector2Array<class_PackedVector2Array>`, delta\: :ref:`float<class_float>`, join_type\: :ref:`PolyJoinType<enum_Geometry2D_PolyJoinType>` = 0, end_type\: :ref:`PolyEndType<enum_Geometry2D_PolyEndType>` = 3\ ) |
+   +----------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                                          | :ref:`point_is_inside_triangle<class_Geometry2D_method_point_is_inside_triangle>`\ (\ point\: :ref:`Vector2<class_Vector2>`, a\: :ref:`Vector2<class_Vector2>`, b\: :ref:`Vector2<class_Vector2>`, c\: :ref:`Vector2<class_Vector2>`\ ) |const|                                                             |
+   +----------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`                                                        | :ref:`segment_intersects_circle<class_Geometry2D_method_segment_intersects_circle>`\ (\ segment_from\: :ref:`Vector2<class_Vector2>`, segment_to\: :ref:`Vector2<class_Vector2>`, circle_position\: :ref:`Vector2<class_Vector2>`, circle_radius\: :ref:`float<class_float>`\ )                             |
+   +----------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Variant<class_Variant>`                                                    | :ref:`segment_intersects_segment<class_Geometry2D_method_segment_intersects_segment>`\ (\ from_a\: :ref:`Vector2<class_Vector2>`, to_a\: :ref:`Vector2<class_Vector2>`, from_b\: :ref:`Vector2<class_Vector2>`, to_b\: :ref:`Vector2<class_Vector2>`\ )                                                     |
+   +----------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PackedInt32Array<class_PackedInt32Array>`                                  | :ref:`triangulate_delaunay<class_Geometry2D_method_triangulate_delaunay>`\ (\ points\: :ref:`PackedVector2Array<class_PackedVector2Array>`\ )                                                                                                                                                               |
+   +----------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PackedInt32Array<class_PackedInt32Array>`                                  | :ref:`triangulate_polygon<class_Geometry2D_method_triangulate_polygon>`\ (\ polygon\: :ref:`PackedVector2Array<class_PackedVector2Array>`\ )                                                                                                                                                                |
+   +----------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -221,7 +221,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`PackedVector2Array[]<class_PackedVector2Array>` **clip_polygons** **(** :ref:`PackedVector2Array<class_PackedVector2Array>` polygon_a, :ref:`PackedVector2Array<class_PackedVector2Array>` polygon_b **)**
+:ref:`Array<class_Array>`\[:ref:`PackedVector2Array<class_PackedVector2Array>`\] **clip_polygons**\ (\ polygon_a\: :ref:`PackedVector2Array<class_PackedVector2Array>`, polygon_b\: :ref:`PackedVector2Array<class_PackedVector2Array>`\ )
 
 Clips ``polygon_a`` against ``polygon_b`` and returns an array of clipped polygons. This performs :ref:`OPERATION_DIFFERENCE<class_Geometry2D_constant_OPERATION_DIFFERENCE>` between polygons. Returns an empty array if ``polygon_b`` completely overlaps ``polygon_a``.
 
@@ -235,7 +235,7 @@ If ``polygon_b`` is enclosed by ``polygon_a``, returns an outer polygon (boundar
 
 .. rst-class:: classref-method
 
-:ref:`PackedVector2Array[]<class_PackedVector2Array>` **clip_polyline_with_polygon** **(** :ref:`PackedVector2Array<class_PackedVector2Array>` polyline, :ref:`PackedVector2Array<class_PackedVector2Array>` polygon **)**
+:ref:`Array<class_Array>`\[:ref:`PackedVector2Array<class_PackedVector2Array>`\] **clip_polyline_with_polygon**\ (\ polyline\: :ref:`PackedVector2Array<class_PackedVector2Array>`, polygon\: :ref:`PackedVector2Array<class_PackedVector2Array>`\ )
 
 Clips ``polyline`` against ``polygon`` and returns an array of clipped polylines. This performs :ref:`OPERATION_DIFFERENCE<class_Geometry2D_constant_OPERATION_DIFFERENCE>` between the polyline and the polygon. This operation can be thought of as cutting a line with a closed shape.
 
@@ -247,7 +247,7 @@ Clips ``polyline`` against ``polygon`` and returns an array of clipped polylines
 
 .. rst-class:: classref-method
 
-:ref:`PackedVector2Array<class_PackedVector2Array>` **convex_hull** **(** :ref:`PackedVector2Array<class_PackedVector2Array>` points **)**
+:ref:`PackedVector2Array<class_PackedVector2Array>` **convex_hull**\ (\ points\: :ref:`PackedVector2Array<class_PackedVector2Array>`\ )
 
 Given an array of :ref:`Vector2<class_Vector2>`\ s, returns the convex hull as a list of points in counterclockwise order. The last point is the same as the first one.
 
@@ -259,7 +259,7 @@ Given an array of :ref:`Vector2<class_Vector2>`\ s, returns the convex hull as a
 
 .. rst-class:: classref-method
 
-:ref:`PackedVector2Array[]<class_PackedVector2Array>` **decompose_polygon_in_convex** **(** :ref:`PackedVector2Array<class_PackedVector2Array>` polygon **)**
+:ref:`Array<class_Array>`\[:ref:`PackedVector2Array<class_PackedVector2Array>`\] **decompose_polygon_in_convex**\ (\ polygon\: :ref:`PackedVector2Array<class_PackedVector2Array>`\ )
 
 Decomposes the ``polygon`` into multiple convex hulls and returns an array of :ref:`PackedVector2Array<class_PackedVector2Array>`.
 
@@ -271,7 +271,7 @@ Decomposes the ``polygon`` into multiple convex hulls and returns an array of :r
 
 .. rst-class:: classref-method
 
-:ref:`PackedVector2Array[]<class_PackedVector2Array>` **exclude_polygons** **(** :ref:`PackedVector2Array<class_PackedVector2Array>` polygon_a, :ref:`PackedVector2Array<class_PackedVector2Array>` polygon_b **)**
+:ref:`Array<class_Array>`\[:ref:`PackedVector2Array<class_PackedVector2Array>`\] **exclude_polygons**\ (\ polygon_a\: :ref:`PackedVector2Array<class_PackedVector2Array>`, polygon_b\: :ref:`PackedVector2Array<class_PackedVector2Array>`\ )
 
 Mutually excludes common area defined by intersection of ``polygon_a`` and ``polygon_b`` (see :ref:`intersect_polygons<class_Geometry2D_method_intersect_polygons>`) and returns an array of excluded polygons. This performs :ref:`OPERATION_XOR<class_Geometry2D_constant_OPERATION_XOR>` between polygons. In other words, returns all but common area between polygons.
 
@@ -285,7 +285,7 @@ The operation may result in an outer polygon (boundary) and inner polygon (hole)
 
 .. rst-class:: classref-method
 
-:ref:`Vector2<class_Vector2>` **get_closest_point_to_segment** **(** :ref:`Vector2<class_Vector2>` point, :ref:`Vector2<class_Vector2>` s1, :ref:`Vector2<class_Vector2>` s2 **)**
+:ref:`Vector2<class_Vector2>` **get_closest_point_to_segment**\ (\ point\: :ref:`Vector2<class_Vector2>`, s1\: :ref:`Vector2<class_Vector2>`, s2\: :ref:`Vector2<class_Vector2>`\ )
 
 Returns the 2D point on the 2D segment (``s1``, ``s2``) that is closest to ``point``. The returned point will always be inside the specified segment.
 
@@ -297,7 +297,7 @@ Returns the 2D point on the 2D segment (``s1``, ``s2``) that is closest to ``poi
 
 .. rst-class:: classref-method
 
-:ref:`Vector2<class_Vector2>` **get_closest_point_to_segment_uncapped** **(** :ref:`Vector2<class_Vector2>` point, :ref:`Vector2<class_Vector2>` s1, :ref:`Vector2<class_Vector2>` s2 **)**
+:ref:`Vector2<class_Vector2>` **get_closest_point_to_segment_uncapped**\ (\ point\: :ref:`Vector2<class_Vector2>`, s1\: :ref:`Vector2<class_Vector2>`, s2\: :ref:`Vector2<class_Vector2>`\ )
 
 Returns the 2D point on the 2D line defined by (``s1``, ``s2``) that is closest to ``point``. The returned point can be inside the segment (``s1``, ``s2``) or outside of it, i.e. somewhere on the line extending from the segment.
 
@@ -309,7 +309,7 @@ Returns the 2D point on the 2D line defined by (``s1``, ``s2``) that is closest 
 
 .. rst-class:: classref-method
 
-:ref:`PackedVector2Array<class_PackedVector2Array>` **get_closest_points_between_segments** **(** :ref:`Vector2<class_Vector2>` p1, :ref:`Vector2<class_Vector2>` q1, :ref:`Vector2<class_Vector2>` p2, :ref:`Vector2<class_Vector2>` q2 **)**
+:ref:`PackedVector2Array<class_PackedVector2Array>` **get_closest_points_between_segments**\ (\ p1\: :ref:`Vector2<class_Vector2>`, q1\: :ref:`Vector2<class_Vector2>`, p2\: :ref:`Vector2<class_Vector2>`, q2\: :ref:`Vector2<class_Vector2>`\ )
 
 Given the two 2D segments (``p1``, ``q1``) and (``p2``, ``q2``), finds those two points on the two segments that are closest to each other. Returns a :ref:`PackedVector2Array<class_PackedVector2Array>` that contains this point on (``p1``, ``q1``) as well the accompanying point on (``p2``, ``q2``).
 
@@ -321,7 +321,7 @@ Given the two 2D segments (``p1``, ``q1``) and (``p2``, ``q2``), finds those two
 
 .. rst-class:: classref-method
 
-:ref:`PackedVector2Array[]<class_PackedVector2Array>` **intersect_polygons** **(** :ref:`PackedVector2Array<class_PackedVector2Array>` polygon_a, :ref:`PackedVector2Array<class_PackedVector2Array>` polygon_b **)**
+:ref:`Array<class_Array>`\[:ref:`PackedVector2Array<class_PackedVector2Array>`\] **intersect_polygons**\ (\ polygon_a\: :ref:`PackedVector2Array<class_PackedVector2Array>`, polygon_b\: :ref:`PackedVector2Array<class_PackedVector2Array>`\ )
 
 Intersects ``polygon_a`` with ``polygon_b`` and returns an array of intersected polygons. This performs :ref:`OPERATION_INTERSECTION<class_Geometry2D_constant_OPERATION_INTERSECTION>` between polygons. In other words, returns common area shared by polygons. Returns an empty array if no intersection occurs.
 
@@ -335,7 +335,7 @@ The operation may result in an outer polygon (boundary) and inner polygon (hole)
 
 .. rst-class:: classref-method
 
-:ref:`PackedVector2Array[]<class_PackedVector2Array>` **intersect_polyline_with_polygon** **(** :ref:`PackedVector2Array<class_PackedVector2Array>` polyline, :ref:`PackedVector2Array<class_PackedVector2Array>` polygon **)**
+:ref:`Array<class_Array>`\[:ref:`PackedVector2Array<class_PackedVector2Array>`\] **intersect_polyline_with_polygon**\ (\ polyline\: :ref:`PackedVector2Array<class_PackedVector2Array>`, polygon\: :ref:`PackedVector2Array<class_PackedVector2Array>`\ )
 
 Intersects ``polyline`` with ``polygon`` and returns an array of intersected polylines. This performs :ref:`OPERATION_INTERSECTION<class_Geometry2D_constant_OPERATION_INTERSECTION>` between the polyline and the polygon. This operation can be thought of as chopping a line with a closed shape.
 
@@ -347,7 +347,7 @@ Intersects ``polyline`` with ``polygon`` and returns an array of intersected pol
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_point_in_circle** **(** :ref:`Vector2<class_Vector2>` point, :ref:`Vector2<class_Vector2>` circle_position, :ref:`float<class_float>` circle_radius **)**
+:ref:`bool<class_bool>` **is_point_in_circle**\ (\ point\: :ref:`Vector2<class_Vector2>`, circle_position\: :ref:`Vector2<class_Vector2>`, circle_radius\: :ref:`float<class_float>`\ )
 
 Returns ``true`` if ``point`` is inside the circle or if it's located exactly *on* the circle's boundary, otherwise returns ``false``.
 
@@ -359,7 +359,7 @@ Returns ``true`` if ``point`` is inside the circle or if it's located exactly *o
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_point_in_polygon** **(** :ref:`Vector2<class_Vector2>` point, :ref:`PackedVector2Array<class_PackedVector2Array>` polygon **)**
+:ref:`bool<class_bool>` **is_point_in_polygon**\ (\ point\: :ref:`Vector2<class_Vector2>`, polygon\: :ref:`PackedVector2Array<class_PackedVector2Array>`\ )
 
 Returns ``true`` if ``point`` is inside ``polygon`` or if it's located exactly *on* polygon's boundary, otherwise returns ``false``.
 
@@ -371,7 +371,7 @@ Returns ``true`` if ``point`` is inside ``polygon`` or if it's located exactly *
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_polygon_clockwise** **(** :ref:`PackedVector2Array<class_PackedVector2Array>` polygon **)**
+:ref:`bool<class_bool>` **is_polygon_clockwise**\ (\ polygon\: :ref:`PackedVector2Array<class_PackedVector2Array>`\ )
 
 Returns ``true`` if ``polygon``'s vertices are ordered in clockwise order, otherwise returns ``false``.
 
@@ -383,7 +383,7 @@ Returns ``true`` if ``polygon``'s vertices are ordered in clockwise order, other
 
 .. rst-class:: classref-method
 
-:ref:`Variant<class_Variant>` **line_intersects_line** **(** :ref:`Vector2<class_Vector2>` from_a, :ref:`Vector2<class_Vector2>` dir_a, :ref:`Vector2<class_Vector2>` from_b, :ref:`Vector2<class_Vector2>` dir_b **)**
+:ref:`Variant<class_Variant>` **line_intersects_line**\ (\ from_a\: :ref:`Vector2<class_Vector2>`, dir_a\: :ref:`Vector2<class_Vector2>`, from_b\: :ref:`Vector2<class_Vector2>`, dir_b\: :ref:`Vector2<class_Vector2>`\ )
 
 Checks if the two lines (``from_a``, ``dir_a``) and (``from_b``, ``dir_b``) intersect. If yes, return the point of intersection as :ref:`Vector2<class_Vector2>`. If no intersection takes place, returns ``null``.
 
@@ -397,7 +397,7 @@ Checks if the two lines (``from_a``, ``dir_a``) and (``from_b``, ``dir_b``) inte
 
 .. rst-class:: classref-method
 
-:ref:`Dictionary<class_Dictionary>` **make_atlas** **(** :ref:`PackedVector2Array<class_PackedVector2Array>` sizes **)**
+:ref:`Dictionary<class_Dictionary>` **make_atlas**\ (\ sizes\: :ref:`PackedVector2Array<class_PackedVector2Array>`\ )
 
 Given an array of :ref:`Vector2<class_Vector2>`\ s representing tiles, builds an atlas. The returned dictionary has two keys: ``points`` is a :ref:`PackedVector2Array<class_PackedVector2Array>` that specifies the positions of each tile, ``size`` contains the overall size of the whole atlas as :ref:`Vector2i<class_Vector2i>`.
 
@@ -409,7 +409,7 @@ Given an array of :ref:`Vector2<class_Vector2>`\ s representing tiles, builds an
 
 .. rst-class:: classref-method
 
-:ref:`PackedVector2Array[]<class_PackedVector2Array>` **merge_polygons** **(** :ref:`PackedVector2Array<class_PackedVector2Array>` polygon_a, :ref:`PackedVector2Array<class_PackedVector2Array>` polygon_b **)**
+:ref:`Array<class_Array>`\[:ref:`PackedVector2Array<class_PackedVector2Array>`\] **merge_polygons**\ (\ polygon_a\: :ref:`PackedVector2Array<class_PackedVector2Array>`, polygon_b\: :ref:`PackedVector2Array<class_PackedVector2Array>`\ )
 
 Merges (combines) ``polygon_a`` and ``polygon_b`` and returns an array of merged polygons. This performs :ref:`OPERATION_UNION<class_Geometry2D_constant_OPERATION_UNION>` between polygons.
 
@@ -423,7 +423,7 @@ The operation may result in an outer polygon (boundary) and multiple inner polyg
 
 .. rst-class:: classref-method
 
-:ref:`PackedVector2Array[]<class_PackedVector2Array>` **offset_polygon** **(** :ref:`PackedVector2Array<class_PackedVector2Array>` polygon, :ref:`float<class_float>` delta, :ref:`PolyJoinType<enum_Geometry2D_PolyJoinType>` join_type=0 **)**
+:ref:`Array<class_Array>`\[:ref:`PackedVector2Array<class_PackedVector2Array>`\] **offset_polygon**\ (\ polygon\: :ref:`PackedVector2Array<class_PackedVector2Array>`, delta\: :ref:`float<class_float>`, join_type\: :ref:`PolyJoinType<enum_Geometry2D_PolyJoinType>` = 0\ )
 
 Inflates or deflates ``polygon`` by ``delta`` units (pixels). If ``delta`` is positive, makes the polygon grow outward. If ``delta`` is negative, shrinks the polygon inward. Returns an array of polygons because inflating/deflating may result in multiple discrete polygons. Returns an empty array if ``delta`` is negative and the absolute value of it approximately exceeds the minimum bounding rectangle dimensions of the polygon.
 
@@ -460,7 +460,7 @@ The operation may result in an outer polygon (boundary) and inner polygon (hole)
 
 .. rst-class:: classref-method
 
-:ref:`PackedVector2Array[]<class_PackedVector2Array>` **offset_polyline** **(** :ref:`PackedVector2Array<class_PackedVector2Array>` polyline, :ref:`float<class_float>` delta, :ref:`PolyJoinType<enum_Geometry2D_PolyJoinType>` join_type=0, :ref:`PolyEndType<enum_Geometry2D_PolyEndType>` end_type=3 **)**
+:ref:`Array<class_Array>`\[:ref:`PackedVector2Array<class_PackedVector2Array>`\] **offset_polyline**\ (\ polyline\: :ref:`PackedVector2Array<class_PackedVector2Array>`, delta\: :ref:`float<class_float>`, join_type\: :ref:`PolyJoinType<enum_Geometry2D_PolyJoinType>` = 0, end_type\: :ref:`PolyEndType<enum_Geometry2D_PolyEndType>` = 3\ )
 
 Inflates or deflates ``polyline`` by ``delta`` units (pixels), producing polygons. If ``delta`` is positive, makes the polyline grow outward. Returns an array of polygons because inflating/deflating may result in multiple discrete polygons. If ``delta`` is negative, returns an empty array.
 
@@ -478,7 +478,7 @@ The operation may result in an outer polygon (boundary) and inner polygon (hole)
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **point_is_inside_triangle** **(** :ref:`Vector2<class_Vector2>` point, :ref:`Vector2<class_Vector2>` a, :ref:`Vector2<class_Vector2>` b, :ref:`Vector2<class_Vector2>` c **)** |const|
+:ref:`bool<class_bool>` **point_is_inside_triangle**\ (\ point\: :ref:`Vector2<class_Vector2>`, a\: :ref:`Vector2<class_Vector2>`, b\: :ref:`Vector2<class_Vector2>`, c\: :ref:`Vector2<class_Vector2>`\ ) |const|
 
 Returns if ``point`` is inside the triangle specified by ``a``, ``b`` and ``c``.
 
@@ -490,7 +490,7 @@ Returns if ``point`` is inside the triangle specified by ``a``, ``b`` and ``c``.
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **segment_intersects_circle** **(** :ref:`Vector2<class_Vector2>` segment_from, :ref:`Vector2<class_Vector2>` segment_to, :ref:`Vector2<class_Vector2>` circle_position, :ref:`float<class_float>` circle_radius **)**
+:ref:`float<class_float>` **segment_intersects_circle**\ (\ segment_from\: :ref:`Vector2<class_Vector2>`, segment_to\: :ref:`Vector2<class_Vector2>`, circle_position\: :ref:`Vector2<class_Vector2>`, circle_radius\: :ref:`float<class_float>`\ )
 
 Given the 2D segment (``segment_from``, ``segment_to``), returns the position on the segment (as a number between 0 and 1) at which the segment hits the circle that is located at position ``circle_position`` and has radius ``circle_radius``. If the segment does not intersect the circle, -1 is returned (this is also the case if the line extending the segment would intersect the circle, but the segment does not).
 
@@ -502,7 +502,7 @@ Given the 2D segment (``segment_from``, ``segment_to``), returns the position on
 
 .. rst-class:: classref-method
 
-:ref:`Variant<class_Variant>` **segment_intersects_segment** **(** :ref:`Vector2<class_Vector2>` from_a, :ref:`Vector2<class_Vector2>` to_a, :ref:`Vector2<class_Vector2>` from_b, :ref:`Vector2<class_Vector2>` to_b **)**
+:ref:`Variant<class_Variant>` **segment_intersects_segment**\ (\ from_a\: :ref:`Vector2<class_Vector2>`, to_a\: :ref:`Vector2<class_Vector2>`, from_b\: :ref:`Vector2<class_Vector2>`, to_b\: :ref:`Vector2<class_Vector2>`\ )
 
 Checks if the two segments (``from_a``, ``to_a``) and (``from_b``, ``to_b``) intersect. If yes, return the point of intersection as :ref:`Vector2<class_Vector2>`. If no intersection takes place, returns ``null``.
 
@@ -514,7 +514,7 @@ Checks if the two segments (``from_a``, ``to_a``) and (``from_b``, ``to_b``) int
 
 .. rst-class:: classref-method
 
-:ref:`PackedInt32Array<class_PackedInt32Array>` **triangulate_delaunay** **(** :ref:`PackedVector2Array<class_PackedVector2Array>` points **)**
+:ref:`PackedInt32Array<class_PackedInt32Array>` **triangulate_delaunay**\ (\ points\: :ref:`PackedVector2Array<class_PackedVector2Array>`\ )
 
 Triangulates the area specified by discrete set of ``points`` such that no point is inside the circumcircle of any resulting triangle. Returns a :ref:`PackedInt32Array<class_PackedInt32Array>` where each triangle consists of three consecutive point indices into ``points`` (i.e. the returned array will have ``n * 3`` elements, with ``n`` being the number of found triangles). If the triangulation did not succeed, an empty :ref:`PackedInt32Array<class_PackedInt32Array>` is returned.
 
@@ -526,7 +526,7 @@ Triangulates the area specified by discrete set of ``points`` such that no point
 
 .. rst-class:: classref-method
 
-:ref:`PackedInt32Array<class_PackedInt32Array>` **triangulate_polygon** **(** :ref:`PackedVector2Array<class_PackedVector2Array>` polygon **)**
+:ref:`PackedInt32Array<class_PackedInt32Array>` **triangulate_polygon**\ (\ polygon\: :ref:`PackedVector2Array<class_PackedVector2Array>`\ )
 
 Triangulates the polygon specified by the points in ``polygon``. Returns a :ref:`PackedInt32Array<class_PackedInt32Array>` where each triangle consists of three consecutive point indices into ``polygon`` (i.e. the returned array will have ``n * 3`` elements, with ``n`` being the number of found triangles). Output triangles will always be counter clockwise, and the contour will be flipped if it's clockwise. If the triangulation did not succeed, an empty :ref:`PackedInt32Array<class_PackedInt32Array>` is returned.
 
@@ -537,3 +537,4 @@ Triangulates the polygon specified by the points in ``polygon``. Returns a :ref:
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

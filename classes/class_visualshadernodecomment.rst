@@ -52,8 +52,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_description** **(** :ref:`String<class_String>` value **)**
-- :ref:`String<class_String>` **get_description** **(** **)**
+- |void| **set_description**\ (\ value\: :ref:`String<class_String>`\ )
+- :ref:`String<class_String>` **get_description**\ (\ )
 
 An additional description which placed below the title.
 
@@ -69,8 +69,8 @@ An additional description which placed below the title.
 
 .. rst-class:: classref-property-setget
 
-- void **set_title** **(** :ref:`String<class_String>` value **)**
-- :ref:`String<class_String>` **get_title** **(** **)**
+- |void| **set_title**\ (\ value\: :ref:`String<class_String>`\ )
+- :ref:`String<class_String>` **get_title**\ (\ )
 
 A title of the node.
 
@@ -81,3 +81,4 @@ A title of the node.
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

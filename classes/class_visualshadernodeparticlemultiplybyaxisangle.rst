@@ -50,8 +50,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_degrees_mode** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_degrees_mode** **(** **)**
+- |void| **set_degrees_mode**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_degrees_mode**\ (\ )
 
 If ``true``, the angle will be interpreted in degrees instead of radians.
 
@@ -62,3 +62,4 @@ If ``true``, the angle will be interpreted in degrees instead of radians.
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

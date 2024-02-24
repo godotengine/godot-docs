@@ -110,29 +110,29 @@ Methods
 .. table::
    :widths: auto
 
-   +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                          | :ref:`align<class_Camera2D_method_align>` **(** **)**                                                                                                       |
-   +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                          | :ref:`force_update_scroll<class_Camera2D_method_force_update_scroll>` **(** **)**                                                                           |
-   +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`float<class_float>`     | :ref:`get_drag_margin<class_Camera2D_method_get_drag_margin>` **(** :ref:`Side<enum_@GlobalScope_Side>` margin **)** |const|                                |
-   +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`         | :ref:`get_limit<class_Camera2D_method_get_limit>` **(** :ref:`Side<enum_@GlobalScope_Side>` margin **)** |const|                                            |
-   +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Vector2<class_Vector2>` | :ref:`get_screen_center_position<class_Camera2D_method_get_screen_center_position>` **(** **)** |const|                                                     |
-   +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Vector2<class_Vector2>` | :ref:`get_target_position<class_Camera2D_method_get_target_position>` **(** **)** |const|                                                                   |
-   +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`       | :ref:`is_current<class_Camera2D_method_is_current>` **(** **)** |const|                                                                                     |
-   +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                          | :ref:`make_current<class_Camera2D_method_make_current>` **(** **)**                                                                                         |
-   +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                          | :ref:`reset_smoothing<class_Camera2D_method_reset_smoothing>` **(** **)**                                                                                   |
-   +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                          | :ref:`set_drag_margin<class_Camera2D_method_set_drag_margin>` **(** :ref:`Side<enum_@GlobalScope_Side>` margin, :ref:`float<class_float>` drag_margin **)** |
-   +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                          | :ref:`set_limit<class_Camera2D_method_set_limit>` **(** :ref:`Side<enum_@GlobalScope_Side>` margin, :ref:`int<class_int>` limit **)**                       |
-   +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                        | :ref:`align<class_Camera2D_method_align>`\ (\ )                                                                                                            |
+   +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                        | :ref:`force_update_scroll<class_Camera2D_method_force_update_scroll>`\ (\ )                                                                                |
+   +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`     | :ref:`get_drag_margin<class_Camera2D_method_get_drag_margin>`\ (\ margin\: :ref:`Side<enum_@GlobalScope_Side>`\ ) |const|                                  |
+   +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`         | :ref:`get_limit<class_Camera2D_method_get_limit>`\ (\ margin\: :ref:`Side<enum_@GlobalScope_Side>`\ ) |const|                                              |
+   +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector2<class_Vector2>` | :ref:`get_screen_center_position<class_Camera2D_method_get_screen_center_position>`\ (\ ) |const|                                                          |
+   +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector2<class_Vector2>` | :ref:`get_target_position<class_Camera2D_method_get_target_position>`\ (\ ) |const|                                                                        |
+   +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`is_current<class_Camera2D_method_is_current>`\ (\ ) |const|                                                                                          |
+   +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                        | :ref:`make_current<class_Camera2D_method_make_current>`\ (\ )                                                                                              |
+   +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                        | :ref:`reset_smoothing<class_Camera2D_method_reset_smoothing>`\ (\ )                                                                                        |
+   +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                        | :ref:`set_drag_margin<class_Camera2D_method_set_drag_margin>`\ (\ margin\: :ref:`Side<enum_@GlobalScope_Side>`, drag_margin\: :ref:`float<class_float>`\ ) |
+   +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                        | :ref:`set_limit<class_Camera2D_method_set_limit>`\ (\ margin\: :ref:`Side<enum_@GlobalScope_Side>`, limit\: :ref:`int<class_int>`\ )                       |
+   +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -208,8 +208,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_anchor_mode** **(** :ref:`AnchorMode<enum_Camera2D_AnchorMode>` value **)**
-- :ref:`AnchorMode<enum_Camera2D_AnchorMode>` **get_anchor_mode** **(** **)**
+- |void| **set_anchor_mode**\ (\ value\: :ref:`AnchorMode<enum_Camera2D_AnchorMode>`\ )
+- :ref:`AnchorMode<enum_Camera2D_AnchorMode>` **get_anchor_mode**\ (\ )
 
 The Camera2D's anchor point. See :ref:`AnchorMode<enum_Camera2D_AnchorMode>` constants.
 
@@ -225,8 +225,8 @@ The Camera2D's anchor point. See :ref:`AnchorMode<enum_Camera2D_AnchorMode>` con
 
 .. rst-class:: classref-property-setget
 
-- void **set_custom_viewport** **(** :ref:`Node<class_Node>` value **)**
-- :ref:`Node<class_Node>` **get_custom_viewport** **(** **)**
+- |void| **set_custom_viewport**\ (\ value\: :ref:`Node<class_Node>`\ )
+- :ref:`Node<class_Node>` **get_custom_viewport**\ (\ )
 
 The custom :ref:`Viewport<class_Viewport>` node attached to the **Camera2D**. If ``null`` or not a :ref:`Viewport<class_Viewport>`, uses the default viewport instead.
 
@@ -242,8 +242,8 @@ The custom :ref:`Viewport<class_Viewport>` node attached to the **Camera2D**. If
 
 .. rst-class:: classref-property-setget
 
-- void **set_drag_margin** **(** :ref:`Side<enum_@GlobalScope_Side>` margin, :ref:`float<class_float>` drag_margin **)**
-- :ref:`float<class_float>` **get_drag_margin** **(** :ref:`Side<enum_@GlobalScope_Side>` margin **)** |const|
+- |void| **set_drag_margin**\ (\ margin\: :ref:`Side<enum_@GlobalScope_Side>`, drag_margin\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_drag_margin**\ (\ margin\: :ref:`Side<enum_@GlobalScope_Side>`\ ) |const|
 
 Bottom margin needed to drag the camera. A value of ``1`` makes the camera move only when reaching the bottom edge of the screen.
 
@@ -259,8 +259,8 @@ Bottom margin needed to drag the camera. A value of ``1`` makes the camera move 
 
 .. rst-class:: classref-property-setget
 
-- void **set_drag_horizontal_enabled** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_drag_horizontal_enabled** **(** **)**
+- |void| **set_drag_horizontal_enabled**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_drag_horizontal_enabled**\ (\ )
 
 If ``true``, the camera only moves when reaching the horizontal (left and right) drag margins. If ``false``, the camera moves horizontally regardless of margins.
 
@@ -276,8 +276,8 @@ If ``true``, the camera only moves when reaching the horizontal (left and right)
 
 .. rst-class:: classref-property-setget
 
-- void **set_drag_horizontal_offset** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_drag_horizontal_offset** **(** **)**
+- |void| **set_drag_horizontal_offset**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_drag_horizontal_offset**\ (\ )
 
 The relative horizontal drag offset of the camera between the right (``-1``) and left (``1``) drag margins.
 
@@ -295,8 +295,8 @@ The relative horizontal drag offset of the camera between the right (``-1``) and
 
 .. rst-class:: classref-property-setget
 
-- void **set_drag_margin** **(** :ref:`Side<enum_@GlobalScope_Side>` margin, :ref:`float<class_float>` drag_margin **)**
-- :ref:`float<class_float>` **get_drag_margin** **(** :ref:`Side<enum_@GlobalScope_Side>` margin **)** |const|
+- |void| **set_drag_margin**\ (\ margin\: :ref:`Side<enum_@GlobalScope_Side>`, drag_margin\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_drag_margin**\ (\ margin\: :ref:`Side<enum_@GlobalScope_Side>`\ ) |const|
 
 Left margin needed to drag the camera. A value of ``1`` makes the camera move only when reaching the left edge of the screen.
 
@@ -312,8 +312,8 @@ Left margin needed to drag the camera. A value of ``1`` makes the camera move on
 
 .. rst-class:: classref-property-setget
 
-- void **set_drag_margin** **(** :ref:`Side<enum_@GlobalScope_Side>` margin, :ref:`float<class_float>` drag_margin **)**
-- :ref:`float<class_float>` **get_drag_margin** **(** :ref:`Side<enum_@GlobalScope_Side>` margin **)** |const|
+- |void| **set_drag_margin**\ (\ margin\: :ref:`Side<enum_@GlobalScope_Side>`, drag_margin\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_drag_margin**\ (\ margin\: :ref:`Side<enum_@GlobalScope_Side>`\ ) |const|
 
 Right margin needed to drag the camera. A value of ``1`` makes the camera move only when reaching the right edge of the screen.
 
@@ -329,8 +329,8 @@ Right margin needed to drag the camera. A value of ``1`` makes the camera move o
 
 .. rst-class:: classref-property-setget
 
-- void **set_drag_margin** **(** :ref:`Side<enum_@GlobalScope_Side>` margin, :ref:`float<class_float>` drag_margin **)**
-- :ref:`float<class_float>` **get_drag_margin** **(** :ref:`Side<enum_@GlobalScope_Side>` margin **)** |const|
+- |void| **set_drag_margin**\ (\ margin\: :ref:`Side<enum_@GlobalScope_Side>`, drag_margin\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_drag_margin**\ (\ margin\: :ref:`Side<enum_@GlobalScope_Side>`\ ) |const|
 
 Top margin needed to drag the camera. A value of ``1`` makes the camera move only when reaching the top edge of the screen.
 
@@ -346,8 +346,8 @@ Top margin needed to drag the camera. A value of ``1`` makes the camera move onl
 
 .. rst-class:: classref-property-setget
 
-- void **set_drag_vertical_enabled** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_drag_vertical_enabled** **(** **)**
+- |void| **set_drag_vertical_enabled**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_drag_vertical_enabled**\ (\ )
 
 If ``true``, the camera only moves when reaching the vertical (top and bottom) drag margins. If ``false``, the camera moves vertically regardless of the drag margins.
 
@@ -363,8 +363,8 @@ If ``true``, the camera only moves when reaching the vertical (top and bottom) d
 
 .. rst-class:: classref-property-setget
 
-- void **set_drag_vertical_offset** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_drag_vertical_offset** **(** **)**
+- |void| **set_drag_vertical_offset**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_drag_vertical_offset**\ (\ )
 
 The relative vertical drag offset of the camera between the bottom (``-1``) and top (``1``) drag margins.
 
@@ -382,8 +382,8 @@ The relative vertical drag offset of the camera between the bottom (``-1``) and 
 
 .. rst-class:: classref-property-setget
 
-- void **set_margin_drawing_enabled** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_margin_drawing_enabled** **(** **)**
+- |void| **set_margin_drawing_enabled**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_margin_drawing_enabled**\ (\ )
 
 If ``true``, draws the camera's drag margin rectangle in the editor.
 
@@ -399,8 +399,8 @@ If ``true``, draws the camera's drag margin rectangle in the editor.
 
 .. rst-class:: classref-property-setget
 
-- void **set_limit_drawing_enabled** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_limit_drawing_enabled** **(** **)**
+- |void| **set_limit_drawing_enabled**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_limit_drawing_enabled**\ (\ )
 
 If ``true``, draws the camera's limits rectangle in the editor.
 
@@ -416,8 +416,8 @@ If ``true``, draws the camera's limits rectangle in the editor.
 
 .. rst-class:: classref-property-setget
 
-- void **set_screen_drawing_enabled** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_screen_drawing_enabled** **(** **)**
+- |void| **set_screen_drawing_enabled**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_screen_drawing_enabled**\ (\ )
 
 If ``true``, draws the camera's screen rectangle in the editor.
 
@@ -433,8 +433,8 @@ If ``true``, draws the camera's screen rectangle in the editor.
 
 .. rst-class:: classref-property-setget
 
-- void **set_enabled** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_enabled** **(** **)**
+- |void| **set_enabled**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_enabled**\ (\ )
 
 Controls whether the camera can be active or not. If ``true``, the **Camera2D** will become the main camera when it enters the scene tree and there is no active camera currently (see :ref:`Viewport.get_camera_2d<class_Viewport_method_get_camera_2d>`).
 
@@ -452,8 +452,8 @@ When the camera is currently active and :ref:`enabled<class_Camera2D_property_en
 
 .. rst-class:: classref-property-setget
 
-- void **set_ignore_rotation** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_ignoring_rotation** **(** **)**
+- |void| **set_ignore_rotation**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_ignoring_rotation**\ (\ )
 
 If ``true``, the camera's rendered view is not affected by its :ref:`Node2D.rotation<class_Node2D_property_rotation>` and :ref:`Node2D.global_rotation<class_Node2D_property_global_rotation>`.
 
@@ -469,8 +469,8 @@ If ``true``, the camera's rendered view is not affected by its :ref:`Node2D.rota
 
 .. rst-class:: classref-property-setget
 
-- void **set_limit** **(** :ref:`Side<enum_@GlobalScope_Side>` margin, :ref:`int<class_int>` limit **)**
-- :ref:`int<class_int>` **get_limit** **(** :ref:`Side<enum_@GlobalScope_Side>` margin **)** |const|
+- |void| **set_limit**\ (\ margin\: :ref:`Side<enum_@GlobalScope_Side>`, limit\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_limit**\ (\ margin\: :ref:`Side<enum_@GlobalScope_Side>`\ ) |const|
 
 Bottom scroll limit in pixels. The camera stops moving when reaching this value, but :ref:`offset<class_Camera2D_property_offset>` can push the view past the limit.
 
@@ -486,8 +486,8 @@ Bottom scroll limit in pixels. The camera stops moving when reaching this value,
 
 .. rst-class:: classref-property-setget
 
-- void **set_limit** **(** :ref:`Side<enum_@GlobalScope_Side>` margin, :ref:`int<class_int>` limit **)**
-- :ref:`int<class_int>` **get_limit** **(** :ref:`Side<enum_@GlobalScope_Side>` margin **)** |const|
+- |void| **set_limit**\ (\ margin\: :ref:`Side<enum_@GlobalScope_Side>`, limit\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_limit**\ (\ margin\: :ref:`Side<enum_@GlobalScope_Side>`\ ) |const|
 
 Left scroll limit in pixels. The camera stops moving when reaching this value, but :ref:`offset<class_Camera2D_property_offset>` can push the view past the limit.
 
@@ -503,8 +503,8 @@ Left scroll limit in pixels. The camera stops moving when reaching this value, b
 
 .. rst-class:: classref-property-setget
 
-- void **set_limit** **(** :ref:`Side<enum_@GlobalScope_Side>` margin, :ref:`int<class_int>` limit **)**
-- :ref:`int<class_int>` **get_limit** **(** :ref:`Side<enum_@GlobalScope_Side>` margin **)** |const|
+- |void| **set_limit**\ (\ margin\: :ref:`Side<enum_@GlobalScope_Side>`, limit\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_limit**\ (\ margin\: :ref:`Side<enum_@GlobalScope_Side>`\ ) |const|
 
 Right scroll limit in pixels. The camera stops moving when reaching this value, but :ref:`offset<class_Camera2D_property_offset>` can push the view past the limit.
 
@@ -520,8 +520,8 @@ Right scroll limit in pixels. The camera stops moving when reaching this value, 
 
 .. rst-class:: classref-property-setget
 
-- void **set_limit_smoothing_enabled** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_limit_smoothing_enabled** **(** **)**
+- |void| **set_limit_smoothing_enabled**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_limit_smoothing_enabled**\ (\ )
 
 If ``true``, the camera smoothly stops when reaches its limits.
 
@@ -541,8 +541,8 @@ This property has no effect if :ref:`position_smoothing_enabled<class_Camera2D_p
 
 .. rst-class:: classref-property-setget
 
-- void **set_limit** **(** :ref:`Side<enum_@GlobalScope_Side>` margin, :ref:`int<class_int>` limit **)**
-- :ref:`int<class_int>` **get_limit** **(** :ref:`Side<enum_@GlobalScope_Side>` margin **)** |const|
+- |void| **set_limit**\ (\ margin\: :ref:`Side<enum_@GlobalScope_Side>`, limit\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_limit**\ (\ margin\: :ref:`Side<enum_@GlobalScope_Side>`\ ) |const|
 
 Top scroll limit in pixels. The camera stops moving when reaching this value, but :ref:`offset<class_Camera2D_property_offset>` can push the view past the limit.
 
@@ -558,8 +558,8 @@ Top scroll limit in pixels. The camera stops moving when reaching this value, bu
 
 .. rst-class:: classref-property-setget
 
-- void **set_offset** **(** :ref:`Vector2<class_Vector2>` value **)**
-- :ref:`Vector2<class_Vector2>` **get_offset** **(** **)**
+- |void| **set_offset**\ (\ value\: :ref:`Vector2<class_Vector2>`\ )
+- :ref:`Vector2<class_Vector2>` **get_offset**\ (\ )
 
 The camera's relative offset. Useful for looking around or camera shake animations. The offsetted camera can go past the limits defined in :ref:`limit_top<class_Camera2D_property_limit_top>`, :ref:`limit_bottom<class_Camera2D_property_limit_bottom>`, :ref:`limit_left<class_Camera2D_property_limit_left>` and :ref:`limit_right<class_Camera2D_property_limit_right>`.
 
@@ -575,8 +575,8 @@ The camera's relative offset. Useful for looking around or camera shake animatio
 
 .. rst-class:: classref-property-setget
 
-- void **set_position_smoothing_enabled** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_position_smoothing_enabled** **(** **)**
+- |void| **set_position_smoothing_enabled**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_position_smoothing_enabled**\ (\ )
 
 If ``true``, the camera's view smoothly moves towards its target position at :ref:`position_smoothing_speed<class_Camera2D_property_position_smoothing_speed>`.
 
@@ -592,8 +592,8 @@ If ``true``, the camera's view smoothly moves towards its target position at :re
 
 .. rst-class:: classref-property-setget
 
-- void **set_position_smoothing_speed** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_position_smoothing_speed** **(** **)**
+- |void| **set_position_smoothing_speed**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_position_smoothing_speed**\ (\ )
 
 Speed in pixels per second of the camera's smoothing effect when :ref:`position_smoothing_enabled<class_Camera2D_property_position_smoothing_enabled>` is ``true``.
 
@@ -609,8 +609,8 @@ Speed in pixels per second of the camera's smoothing effect when :ref:`position_
 
 .. rst-class:: classref-property-setget
 
-- void **set_process_callback** **(** :ref:`Camera2DProcessCallback<enum_Camera2D_Camera2DProcessCallback>` value **)**
-- :ref:`Camera2DProcessCallback<enum_Camera2D_Camera2DProcessCallback>` **get_process_callback** **(** **)**
+- |void| **set_process_callback**\ (\ value\: :ref:`Camera2DProcessCallback<enum_Camera2D_Camera2DProcessCallback>`\ )
+- :ref:`Camera2DProcessCallback<enum_Camera2D_Camera2DProcessCallback>` **get_process_callback**\ (\ )
 
 The camera's process callback. See :ref:`Camera2DProcessCallback<enum_Camera2D_Camera2DProcessCallback>`.
 
@@ -626,8 +626,8 @@ The camera's process callback. See :ref:`Camera2DProcessCallback<enum_Camera2D_C
 
 .. rst-class:: classref-property-setget
 
-- void **set_rotation_smoothing_enabled** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_rotation_smoothing_enabled** **(** **)**
+- |void| **set_rotation_smoothing_enabled**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_rotation_smoothing_enabled**\ (\ )
 
 If ``true``, the camera's view smoothly rotates, via asymptotic smoothing, to align with its target rotation at :ref:`rotation_smoothing_speed<class_Camera2D_property_rotation_smoothing_speed>`.
 
@@ -645,8 +645,8 @@ If ``true``, the camera's view smoothly rotates, via asymptotic smoothing, to al
 
 .. rst-class:: classref-property-setget
 
-- void **set_rotation_smoothing_speed** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_rotation_smoothing_speed** **(** **)**
+- |void| **set_rotation_smoothing_speed**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_rotation_smoothing_speed**\ (\ )
 
 The angular, asymptotic speed of the camera's rotation smoothing effect when :ref:`rotation_smoothing_enabled<class_Camera2D_property_rotation_smoothing_enabled>` is ``true``.
 
@@ -662,8 +662,8 @@ The angular, asymptotic speed of the camera's rotation smoothing effect when :re
 
 .. rst-class:: classref-property-setget
 
-- void **set_zoom** **(** :ref:`Vector2<class_Vector2>` value **)**
-- :ref:`Vector2<class_Vector2>` **get_zoom** **(** **)**
+- |void| **set_zoom**\ (\ value\: :ref:`Vector2<class_Vector2>`\ )
+- :ref:`Vector2<class_Vector2>` **get_zoom**\ (\ )
 
 The camera's zoom. A zoom of ``Vector(2, 2)`` doubles the size seen in the viewport. A zoom of ``Vector(0.5, 0.5)`` halves the size seen in the viewport.
 
@@ -682,7 +682,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-void **align** **(** **)**
+|void| **align**\ (\ )
 
 Aligns the camera to the tracked node.
 
@@ -694,7 +694,7 @@ Aligns the camera to the tracked node.
 
 .. rst-class:: classref-method
 
-void **force_update_scroll** **(** **)**
+|void| **force_update_scroll**\ (\ )
 
 Forces the camera to update scroll immediately.
 
@@ -706,7 +706,7 @@ Forces the camera to update scroll immediately.
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **get_drag_margin** **(** :ref:`Side<enum_@GlobalScope_Side>` margin **)** |const|
+:ref:`float<class_float>` **get_drag_margin**\ (\ margin\: :ref:`Side<enum_@GlobalScope_Side>`\ ) |const|
 
 Returns the specified :ref:`Side<enum_@GlobalScope_Side>`'s margin. See also :ref:`drag_bottom_margin<class_Camera2D_property_drag_bottom_margin>`, :ref:`drag_top_margin<class_Camera2D_property_drag_top_margin>`, :ref:`drag_left_margin<class_Camera2D_property_drag_left_margin>`, and :ref:`drag_right_margin<class_Camera2D_property_drag_right_margin>`.
 
@@ -718,7 +718,7 @@ Returns the specified :ref:`Side<enum_@GlobalScope_Side>`'s margin. See also :re
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_limit** **(** :ref:`Side<enum_@GlobalScope_Side>` margin **)** |const|
+:ref:`int<class_int>` **get_limit**\ (\ margin\: :ref:`Side<enum_@GlobalScope_Side>`\ ) |const|
 
 Returns the camera limit for the specified :ref:`Side<enum_@GlobalScope_Side>`. See also :ref:`limit_bottom<class_Camera2D_property_limit_bottom>`, :ref:`limit_top<class_Camera2D_property_limit_top>`, :ref:`limit_left<class_Camera2D_property_limit_left>`, and :ref:`limit_right<class_Camera2D_property_limit_right>`.
 
@@ -730,7 +730,7 @@ Returns the camera limit for the specified :ref:`Side<enum_@GlobalScope_Side>`. 
 
 .. rst-class:: classref-method
 
-:ref:`Vector2<class_Vector2>` **get_screen_center_position** **(** **)** |const|
+:ref:`Vector2<class_Vector2>` **get_screen_center_position**\ (\ ) |const|
 
 Returns the center of the screen from this camera's point of view, in global coordinates.
 
@@ -744,7 +744,7 @@ Returns the center of the screen from this camera's point of view, in global coo
 
 .. rst-class:: classref-method
 
-:ref:`Vector2<class_Vector2>` **get_target_position** **(** **)** |const|
+:ref:`Vector2<class_Vector2>` **get_target_position**\ (\ ) |const|
 
 Returns this camera's target position, in global coordinates.
 
@@ -758,7 +758,7 @@ Returns this camera's target position, in global coordinates.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_current** **(** **)** |const|
+:ref:`bool<class_bool>` **is_current**\ (\ ) |const|
 
 Returns ``true`` if this **Camera2D** is the active camera (see :ref:`Viewport.get_camera_2d<class_Viewport_method_get_camera_2d>`).
 
@@ -770,7 +770,7 @@ Returns ``true`` if this **Camera2D** is the active camera (see :ref:`Viewport.g
 
 .. rst-class:: classref-method
 
-void **make_current** **(** **)**
+|void| **make_current**\ (\ )
 
 Forces this **Camera2D** to become the current active one. :ref:`enabled<class_Camera2D_property_enabled>` must be ``true``.
 
@@ -782,7 +782,7 @@ Forces this **Camera2D** to become the current active one. :ref:`enabled<class_C
 
 .. rst-class:: classref-method
 
-void **reset_smoothing** **(** **)**
+|void| **reset_smoothing**\ (\ )
 
 Sets the camera's position immediately to its current smoothing destination.
 
@@ -796,7 +796,7 @@ This method has no effect if :ref:`position_smoothing_enabled<class_Camera2D_pro
 
 .. rst-class:: classref-method
 
-void **set_drag_margin** **(** :ref:`Side<enum_@GlobalScope_Side>` margin, :ref:`float<class_float>` drag_margin **)**
+|void| **set_drag_margin**\ (\ margin\: :ref:`Side<enum_@GlobalScope_Side>`, drag_margin\: :ref:`float<class_float>`\ )
 
 Sets the specified :ref:`Side<enum_@GlobalScope_Side>`'s margin. See also :ref:`drag_bottom_margin<class_Camera2D_property_drag_bottom_margin>`, :ref:`drag_top_margin<class_Camera2D_property_drag_top_margin>`, :ref:`drag_left_margin<class_Camera2D_property_drag_left_margin>`, and :ref:`drag_right_margin<class_Camera2D_property_drag_right_margin>`.
 
@@ -808,7 +808,7 @@ Sets the specified :ref:`Side<enum_@GlobalScope_Side>`'s margin. See also :ref:`
 
 .. rst-class:: classref-method
 
-void **set_limit** **(** :ref:`Side<enum_@GlobalScope_Side>` margin, :ref:`int<class_int>` limit **)**
+|void| **set_limit**\ (\ margin\: :ref:`Side<enum_@GlobalScope_Side>`, limit\: :ref:`int<class_int>`\ )
 
 Sets the camera limit for the specified :ref:`Side<enum_@GlobalScope_Side>`. See also :ref:`limit_bottom<class_Camera2D_property_limit_bottom>`, :ref:`limit_top<class_Camera2D_property_limit_top>`, :ref:`limit_left<class_Camera2D_property_limit_left>`, and :ref:`limit_right<class_Camera2D_property_limit_right>`.
 
@@ -819,3 +819,4 @@ Sets the camera limit for the specified :ref:`Side<enum_@GlobalScope_Side>`. See
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

@@ -37,9 +37,9 @@ Methods
 .. table::
    :widths: auto
 
-   +---------------------------------+---------------------------------------------------------------------------------------------+
-   | :ref:`Resource<class_Resource>` | :ref:`create_placeholder<class_CubemapArray_method_create_placeholder>` **(** **)** |const| |
-   +---------------------------------+---------------------------------------------------------------------------------------------+
+   +---------------------------------+---------------------------------------------------------------------------------------+
+   | :ref:`Resource<class_Resource>` | :ref:`create_placeholder<class_CubemapArray_method_create_placeholder>`\ (\ ) |const| |
+   +---------------------------------+---------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -54,7 +54,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Resource<class_Resource>` **create_placeholder** **(** **)** |const|
+:ref:`Resource<class_Resource>` **create_placeholder**\ (\ ) |const|
 
 Creates a placeholder version of this resource (:ref:`PlaceholderCubemapArray<class_PlaceholderCubemapArray>`).
 
@@ -65,3 +65,4 @@ Creates a placeholder version of this resource (:ref:`PlaceholderCubemapArray<cl
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

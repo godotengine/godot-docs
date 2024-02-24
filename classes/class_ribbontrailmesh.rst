@@ -102,8 +102,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_curve** **(** :ref:`Curve<class_Curve>` value **)**
-- :ref:`Curve<class_Curve>` **get_curve** **(** **)**
+- |void| **set_curve**\ (\ value\: :ref:`Curve<class_Curve>`\ )
+- :ref:`Curve<class_Curve>` **get_curve**\ (\ )
 
 Determines the size of the ribbon along its length. The size of a particular section segment is obtained by multiplying the baseline :ref:`size<class_RibbonTrailMesh_property_size>` by the value of this curve at the given distance. For values smaller than ``0``, the faces will be inverted.
 
@@ -119,8 +119,8 @@ Determines the size of the ribbon along its length. The size of a particular sec
 
 .. rst-class:: classref-property-setget
 
-- void **set_section_length** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_section_length** **(** **)**
+- |void| **set_section_length**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_section_length**\ (\ )
 
 The length of a section of the ribbon.
 
@@ -136,8 +136,8 @@ The length of a section of the ribbon.
 
 .. rst-class:: classref-property-setget
 
-- void **set_section_segments** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_section_segments** **(** **)**
+- |void| **set_section_segments**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_section_segments**\ (\ )
 
 The number of segments in a section. The :ref:`curve<class_RibbonTrailMesh_property_curve>` is sampled on each segment to determine its size. Higher values result in a more detailed ribbon at the cost of performance.
 
@@ -153,8 +153,8 @@ The number of segments in a section. The :ref:`curve<class_RibbonTrailMesh_prope
 
 .. rst-class:: classref-property-setget
 
-- void **set_sections** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_sections** **(** **)**
+- |void| **set_sections**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_sections**\ (\ )
 
 The total number of sections on the ribbon.
 
@@ -170,8 +170,8 @@ The total number of sections on the ribbon.
 
 .. rst-class:: classref-property-setget
 
-- void **set_shape** **(** :ref:`Shape<enum_RibbonTrailMesh_Shape>` value **)**
-- :ref:`Shape<enum_RibbonTrailMesh_Shape>` **get_shape** **(** **)**
+- |void| **set_shape**\ (\ value\: :ref:`Shape<enum_RibbonTrailMesh_Shape>`\ )
+- :ref:`Shape<enum_RibbonTrailMesh_Shape>` **get_shape**\ (\ )
 
 Determines the shape of the ribbon.
 
@@ -187,8 +187,8 @@ Determines the shape of the ribbon.
 
 .. rst-class:: classref-property-setget
 
-- void **set_size** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_size** **(** **)**
+- |void| **set_size**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_size**\ (\ )
 
 The baseline size of the ribbon. The size of a particular section segment is obtained by multiplying this size by the value of the :ref:`curve<class_RibbonTrailMesh_property_curve>` at the given distance.
 
@@ -199,3 +199,4 @@ The baseline size of the ribbon. The size of a particular section segment is obt
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

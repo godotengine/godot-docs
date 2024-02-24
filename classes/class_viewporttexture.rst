@@ -67,8 +67,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_viewport_path_in_scene** **(** :ref:`NodePath<class_NodePath>` value **)**
-- :ref:`NodePath<class_NodePath>` **get_viewport_path_in_scene** **(** **)**
+- |void| **set_viewport_path_in_scene**\ (\ value\: :ref:`NodePath<class_NodePath>`\ )
+- :ref:`NodePath<class_NodePath>` **get_viewport_path_in_scene**\ (\ )
 
 The path to the :ref:`Viewport<class_Viewport>` node to display. This is relative to the scene root, not to the node that uses the texture.
 
@@ -81,3 +81,4 @@ The path to the :ref:`Viewport<class_Viewport>` node to display. This is relativ
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

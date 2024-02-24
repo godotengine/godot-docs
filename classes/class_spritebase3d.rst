@@ -81,15 +81,15 @@ Methods
 .. table::
    :widths: auto
 
-   +-----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`TriangleMesh<class_TriangleMesh>` | :ref:`generate_triangle_mesh<class_SpriteBase3D_method_generate_triangle_mesh>` **(** **)** |const|                                                           |
-   +-----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                 | :ref:`get_draw_flag<class_SpriteBase3D_method_get_draw_flag>` **(** :ref:`DrawFlags<enum_SpriteBase3D_DrawFlags>` flag **)** |const|                          |
-   +-----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Rect2<class_Rect2>`               | :ref:`get_item_rect<class_SpriteBase3D_method_get_item_rect>` **(** **)** |const|                                                                             |
-   +-----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                    | :ref:`set_draw_flag<class_SpriteBase3D_method_set_draw_flag>` **(** :ref:`DrawFlags<enum_SpriteBase3D_DrawFlags>` flag, :ref:`bool<class_bool>` enabled **)** |
-   +-----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +-----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`TriangleMesh<class_TriangleMesh>` | :ref:`generate_triangle_mesh<class_SpriteBase3D_method_generate_triangle_mesh>`\ (\ ) |const|                                                                |
+   +-----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                 | :ref:`get_draw_flag<class_SpriteBase3D_method_get_draw_flag>`\ (\ flag\: :ref:`DrawFlags<enum_SpriteBase3D_DrawFlags>`\ ) |const|                            |
+   +-----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Rect2<class_Rect2>`               | :ref:`get_item_rect<class_SpriteBase3D_method_get_item_rect>`\ (\ ) |const|                                                                                  |
+   +-----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                  | :ref:`set_draw_flag<class_SpriteBase3D_method_set_draw_flag>`\ (\ flag\: :ref:`DrawFlags<enum_SpriteBase3D_DrawFlags>`, enabled\: :ref:`bool<class_bool>`\ ) |
+   +-----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -213,8 +213,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_alpha_antialiasing_edge** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_alpha_antialiasing_edge** **(** **)**
+- |void| **set_alpha_antialiasing_edge**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_alpha_antialiasing_edge**\ (\ )
 
 Threshold at which antialiasing will be applied on the alpha channel.
 
@@ -230,8 +230,8 @@ Threshold at which antialiasing will be applied on the alpha channel.
 
 .. rst-class:: classref-property-setget
 
-- void **set_alpha_antialiasing** **(** :ref:`AlphaAntiAliasing<enum_BaseMaterial3D_AlphaAntiAliasing>` value **)**
-- :ref:`AlphaAntiAliasing<enum_BaseMaterial3D_AlphaAntiAliasing>` **get_alpha_antialiasing** **(** **)**
+- |void| **set_alpha_antialiasing**\ (\ value\: :ref:`AlphaAntiAliasing<enum_BaseMaterial3D_AlphaAntiAliasing>`\ )
+- :ref:`AlphaAntiAliasing<enum_BaseMaterial3D_AlphaAntiAliasing>` **get_alpha_antialiasing**\ (\ )
 
 The type of alpha antialiasing to apply. See :ref:`AlphaAntiAliasing<enum_BaseMaterial3D_AlphaAntiAliasing>`.
 
@@ -247,8 +247,8 @@ The type of alpha antialiasing to apply. See :ref:`AlphaAntiAliasing<enum_BaseMa
 
 .. rst-class:: classref-property-setget
 
-- void **set_alpha_cut_mode** **(** :ref:`AlphaCutMode<enum_SpriteBase3D_AlphaCutMode>` value **)**
-- :ref:`AlphaCutMode<enum_SpriteBase3D_AlphaCutMode>` **get_alpha_cut_mode** **(** **)**
+- |void| **set_alpha_cut_mode**\ (\ value\: :ref:`AlphaCutMode<enum_SpriteBase3D_AlphaCutMode>`\ )
+- :ref:`AlphaCutMode<enum_SpriteBase3D_AlphaCutMode>` **get_alpha_cut_mode**\ (\ )
 
 The alpha cutting mode to use for the sprite. See :ref:`AlphaCutMode<enum_SpriteBase3D_AlphaCutMode>` for possible values.
 
@@ -264,8 +264,8 @@ The alpha cutting mode to use for the sprite. See :ref:`AlphaCutMode<enum_Sprite
 
 .. rst-class:: classref-property-setget
 
-- void **set_alpha_hash_scale** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_alpha_hash_scale** **(** **)**
+- |void| **set_alpha_hash_scale**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_alpha_hash_scale**\ (\ )
 
 The hashing scale for Alpha Hash. Recommended values between ``0`` and ``2``.
 
@@ -281,8 +281,8 @@ The hashing scale for Alpha Hash. Recommended values between ``0`` and ``2``.
 
 .. rst-class:: classref-property-setget
 
-- void **set_alpha_scissor_threshold** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_alpha_scissor_threshold** **(** **)**
+- |void| **set_alpha_scissor_threshold**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_alpha_scissor_threshold**\ (\ )
 
 Threshold at which the alpha scissor will discard values.
 
@@ -298,8 +298,8 @@ Vector3.Axis **axis** = ``2``
 
 .. rst-class:: classref-property-setget
 
-- void **set_axis** **(** Vector3.Axis value **)**
-- Vector3.Axis **get_axis** **(** **)**
+- |void| **set_axis**\ (\ value\: Vector3.Axis\ )
+- Vector3.Axis **get_axis**\ (\ )
 
 The direction in which the front of the texture faces.
 
@@ -315,8 +315,8 @@ The direction in which the front of the texture faces.
 
 .. rst-class:: classref-property-setget
 
-- void **set_billboard_mode** **(** :ref:`BillboardMode<enum_BaseMaterial3D_BillboardMode>` value **)**
-- :ref:`BillboardMode<enum_BaseMaterial3D_BillboardMode>` **get_billboard_mode** **(** **)**
+- |void| **set_billboard_mode**\ (\ value\: :ref:`BillboardMode<enum_BaseMaterial3D_BillboardMode>`\ )
+- :ref:`BillboardMode<enum_BaseMaterial3D_BillboardMode>` **get_billboard_mode**\ (\ )
 
 The billboard mode to use for the sprite. See :ref:`BillboardMode<enum_BaseMaterial3D_BillboardMode>` for possible values.
 
@@ -334,8 +334,8 @@ The billboard mode to use for the sprite. See :ref:`BillboardMode<enum_BaseMater
 
 .. rst-class:: classref-property-setget
 
-- void **set_centered** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_centered** **(** **)**
+- |void| **set_centered**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_centered**\ (\ )
 
 If ``true``, texture will be centered.
 
@@ -351,8 +351,8 @@ If ``true``, texture will be centered.
 
 .. rst-class:: classref-property-setget
 
-- void **set_draw_flag** **(** :ref:`DrawFlags<enum_SpriteBase3D_DrawFlags>` flag, :ref:`bool<class_bool>` enabled **)**
-- :ref:`bool<class_bool>` **get_draw_flag** **(** :ref:`DrawFlags<enum_SpriteBase3D_DrawFlags>` flag **)** |const|
+- |void| **set_draw_flag**\ (\ flag\: :ref:`DrawFlags<enum_SpriteBase3D_DrawFlags>`, enabled\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_draw_flag**\ (\ flag\: :ref:`DrawFlags<enum_SpriteBase3D_DrawFlags>`\ ) |const|
 
 If ``true``, texture can be seen from the back as well, if ``false``, it is invisible when looking at it from behind.
 
@@ -368,8 +368,8 @@ If ``true``, texture can be seen from the back as well, if ``false``, it is invi
 
 .. rst-class:: classref-property-setget
 
-- void **set_draw_flag** **(** :ref:`DrawFlags<enum_SpriteBase3D_DrawFlags>` flag, :ref:`bool<class_bool>` enabled **)**
-- :ref:`bool<class_bool>` **get_draw_flag** **(** :ref:`DrawFlags<enum_SpriteBase3D_DrawFlags>` flag **)** |const|
+- |void| **set_draw_flag**\ (\ flag\: :ref:`DrawFlags<enum_SpriteBase3D_DrawFlags>`, enabled\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_draw_flag**\ (\ flag\: :ref:`DrawFlags<enum_SpriteBase3D_DrawFlags>`\ ) |const|
 
 If ``true``, the label is rendered at the same size regardless of distance.
 
@@ -385,8 +385,8 @@ If ``true``, the label is rendered at the same size regardless of distance.
 
 .. rst-class:: classref-property-setget
 
-- void **set_flip_h** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_flipped_h** **(** **)**
+- |void| **set_flip_h**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_flipped_h**\ (\ )
 
 If ``true``, texture is flipped horizontally.
 
@@ -402,8 +402,8 @@ If ``true``, texture is flipped horizontally.
 
 .. rst-class:: classref-property-setget
 
-- void **set_flip_v** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_flipped_v** **(** **)**
+- |void| **set_flip_v**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_flipped_v**\ (\ )
 
 If ``true``, texture is flipped vertically.
 
@@ -419,8 +419,8 @@ If ``true``, texture is flipped vertically.
 
 .. rst-class:: classref-property-setget
 
-- void **set_modulate** **(** :ref:`Color<class_Color>` value **)**
-- :ref:`Color<class_Color>` **get_modulate** **(** **)**
+- |void| **set_modulate**\ (\ value\: :ref:`Color<class_Color>`\ )
+- :ref:`Color<class_Color>` **get_modulate**\ (\ )
 
 A color value used to *multiply* the texture's colors. Can be used for mood-coloring or to simulate the color of ambient light.
 
@@ -440,8 +440,8 @@ A color value used to *multiply* the texture's colors. Can be used for mood-colo
 
 .. rst-class:: classref-property-setget
 
-- void **set_draw_flag** **(** :ref:`DrawFlags<enum_SpriteBase3D_DrawFlags>` flag, :ref:`bool<class_bool>` enabled **)**
-- :ref:`bool<class_bool>` **get_draw_flag** **(** :ref:`DrawFlags<enum_SpriteBase3D_DrawFlags>` flag **)** |const|
+- |void| **set_draw_flag**\ (\ flag\: :ref:`DrawFlags<enum_SpriteBase3D_DrawFlags>`, enabled\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_draw_flag**\ (\ flag\: :ref:`DrawFlags<enum_SpriteBase3D_DrawFlags>`\ ) |const|
 
 If ``true``, depth testing is disabled and the object will be drawn in render order.
 
@@ -457,8 +457,8 @@ If ``true``, depth testing is disabled and the object will be drawn in render or
 
 .. rst-class:: classref-property-setget
 
-- void **set_offset** **(** :ref:`Vector2<class_Vector2>` value **)**
-- :ref:`Vector2<class_Vector2>` **get_offset** **(** **)**
+- |void| **set_offset**\ (\ value\: :ref:`Vector2<class_Vector2>`\ )
+- :ref:`Vector2<class_Vector2>` **get_offset**\ (\ )
 
 The texture's drawing offset.
 
@@ -474,8 +474,8 @@ The texture's drawing offset.
 
 .. rst-class:: classref-property-setget
 
-- void **set_pixel_size** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_pixel_size** **(** **)**
+- |void| **set_pixel_size**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_pixel_size**\ (\ )
 
 The size of one pixel's width on the sprite to scale it in 3D.
 
@@ -491,8 +491,8 @@ The size of one pixel's width on the sprite to scale it in 3D.
 
 .. rst-class:: classref-property-setget
 
-- void **set_render_priority** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_render_priority** **(** **)**
+- |void| **set_render_priority**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_render_priority**\ (\ )
 
 Sets the render priority for the sprite. Higher priority objects will be sorted in front of lower priority objects.
 
@@ -512,8 +512,8 @@ Sets the render priority for the sprite. Higher priority objects will be sorted 
 
 .. rst-class:: classref-property-setget
 
-- void **set_draw_flag** **(** :ref:`DrawFlags<enum_SpriteBase3D_DrawFlags>` flag, :ref:`bool<class_bool>` enabled **)**
-- :ref:`bool<class_bool>` **get_draw_flag** **(** :ref:`DrawFlags<enum_SpriteBase3D_DrawFlags>` flag **)** |const|
+- |void| **set_draw_flag**\ (\ flag\: :ref:`DrawFlags<enum_SpriteBase3D_DrawFlags>`, enabled\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_draw_flag**\ (\ flag\: :ref:`DrawFlags<enum_SpriteBase3D_DrawFlags>`\ ) |const|
 
 If ``true``, the :ref:`Light3D<class_Light3D>` in the :ref:`Environment<class_Environment>` has effects on the sprite.
 
@@ -529,8 +529,8 @@ If ``true``, the :ref:`Light3D<class_Light3D>` in the :ref:`Environment<class_En
 
 .. rst-class:: classref-property-setget
 
-- void **set_texture_filter** **(** :ref:`TextureFilter<enum_BaseMaterial3D_TextureFilter>` value **)**
-- :ref:`TextureFilter<enum_BaseMaterial3D_TextureFilter>` **get_texture_filter** **(** **)**
+- |void| **set_texture_filter**\ (\ value\: :ref:`TextureFilter<enum_BaseMaterial3D_TextureFilter>`\ )
+- :ref:`TextureFilter<enum_BaseMaterial3D_TextureFilter>` **get_texture_filter**\ (\ )
 
 Filter flags for the texture. See :ref:`TextureFilter<enum_BaseMaterial3D_TextureFilter>` for options.
 
@@ -548,8 +548,8 @@ Filter flags for the texture. See :ref:`TextureFilter<enum_BaseMaterial3D_Textur
 
 .. rst-class:: classref-property-setget
 
-- void **set_draw_flag** **(** :ref:`DrawFlags<enum_SpriteBase3D_DrawFlags>` flag, :ref:`bool<class_bool>` enabled **)**
-- :ref:`bool<class_bool>` **get_draw_flag** **(** :ref:`DrawFlags<enum_SpriteBase3D_DrawFlags>` flag **)** |const|
+- |void| **set_draw_flag**\ (\ flag\: :ref:`DrawFlags<enum_SpriteBase3D_DrawFlags>`, enabled\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_draw_flag**\ (\ flag\: :ref:`DrawFlags<enum_SpriteBase3D_DrawFlags>`\ ) |const|
 
 If ``true``, the texture's transparency and the opacity are used to make those parts of the sprite invisible.
 
@@ -566,7 +566,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`TriangleMesh<class_TriangleMesh>` **generate_triangle_mesh** **(** **)** |const|
+:ref:`TriangleMesh<class_TriangleMesh>` **generate_triangle_mesh**\ (\ ) |const|
 
 Returns a :ref:`TriangleMesh<class_TriangleMesh>` with the sprite's vertices following its current configuration (such as its :ref:`axis<class_SpriteBase3D_property_axis>` and :ref:`pixel_size<class_SpriteBase3D_property_pixel_size>`).
 
@@ -578,7 +578,7 @@ Returns a :ref:`TriangleMesh<class_TriangleMesh>` with the sprite's vertices fol
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **get_draw_flag** **(** :ref:`DrawFlags<enum_SpriteBase3D_DrawFlags>` flag **)** |const|
+:ref:`bool<class_bool>` **get_draw_flag**\ (\ flag\: :ref:`DrawFlags<enum_SpriteBase3D_DrawFlags>`\ ) |const|
 
 Returns the value of the specified flag.
 
@@ -590,7 +590,7 @@ Returns the value of the specified flag.
 
 .. rst-class:: classref-method
 
-:ref:`Rect2<class_Rect2>` **get_item_rect** **(** **)** |const|
+:ref:`Rect2<class_Rect2>` **get_item_rect**\ (\ ) |const|
 
 Returns the rectangle representing this sprite.
 
@@ -602,7 +602,7 @@ Returns the rectangle representing this sprite.
 
 .. rst-class:: classref-method
 
-void **set_draw_flag** **(** :ref:`DrawFlags<enum_SpriteBase3D_DrawFlags>` flag, :ref:`bool<class_bool>` enabled **)**
+|void| **set_draw_flag**\ (\ flag\: :ref:`DrawFlags<enum_SpriteBase3D_DrawFlags>`, enabled\: :ref:`bool<class_bool>`\ )
 
 If ``true``, the specified flag will be enabled. See :ref:`DrawFlags<enum_SpriteBase3D_DrawFlags>` for a list of flags.
 
@@ -613,3 +613,4 @@ If ``true``, the specified flag will be enabled. See :ref:`DrawFlags<enum_Sprite
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

@@ -62,8 +62,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_atlas** **(** :ref:`Texture2D<class_Texture2D>` value **)**
-- :ref:`Texture2D<class_Texture2D>` **get_atlas** **(** **)**
+- |void| **set_atlas**\ (\ value\: :ref:`Texture2D<class_Texture2D>`\ )
+- :ref:`Texture2D<class_Texture2D>` **get_atlas**\ (\ )
 
 The texture that contains the atlas. Can be any type inheriting from :ref:`Texture2D<class_Texture2D>`, including another **AtlasTexture**.
 
@@ -79,8 +79,8 @@ The texture that contains the atlas. Can be any type inheriting from :ref:`Textu
 
 .. rst-class:: classref-property-setget
 
-- void **set_filter_clip** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **has_filter_clip** **(** **)**
+- |void| **set_filter_clip**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **has_filter_clip**\ (\ )
 
 If ``true``, the area outside of the :ref:`region<class_AtlasTexture_property_region>` is clipped to avoid bleeding of the surrounding texture pixels.
 
@@ -96,8 +96,8 @@ If ``true``, the area outside of the :ref:`region<class_AtlasTexture_property_re
 
 .. rst-class:: classref-property-setget
 
-- void **set_margin** **(** :ref:`Rect2<class_Rect2>` value **)**
-- :ref:`Rect2<class_Rect2>` **get_margin** **(** **)**
+- |void| **set_margin**\ (\ value\: :ref:`Rect2<class_Rect2>`\ )
+- :ref:`Rect2<class_Rect2>` **get_margin**\ (\ )
 
 The margin around the :ref:`region<class_AtlasTexture_property_region>`. Useful for small adjustments. If the :ref:`Rect2.size<class_Rect2_property_size>` of this property ("w" and "h" in the editor) is set, the drawn texture is resized to fit within the margin.
 
@@ -113,8 +113,8 @@ The margin around the :ref:`region<class_AtlasTexture_property_region>`. Useful 
 
 .. rst-class:: classref-property-setget
 
-- void **set_region** **(** :ref:`Rect2<class_Rect2>` value **)**
-- :ref:`Rect2<class_Rect2>` **get_region** **(** **)**
+- |void| **set_region**\ (\ value\: :ref:`Rect2<class_Rect2>`\ )
+- :ref:`Rect2<class_Rect2>` **get_region**\ (\ )
 
 The region used to draw the :ref:`atlas<class_AtlasTexture_property_atlas>`.
 
@@ -125,3 +125,4 @@ The region used to draw the :ref:`atlas<class_AtlasTexture_property_atlas>`.
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

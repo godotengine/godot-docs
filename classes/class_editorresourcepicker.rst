@@ -51,15 +51,15 @@ Methods
 .. table::
    :widths: auto
 
-   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                           | :ref:`_handle_menu_selected<class_EditorResourcePicker_private_method__handle_menu_selected>` **(** :ref:`int<class_int>` id **)** |virtual|          |
-   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                              | :ref:`_set_create_options<class_EditorResourcePicker_private_method__set_create_options>` **(** :ref:`Object<class_Object>` menu_node **)** |virtual| |
-   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`get_allowed_types<class_EditorResourcePicker_method_get_allowed_types>` **(** **)** |const|                                                     |
-   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                              | :ref:`set_toggle_pressed<class_EditorResourcePicker_method_set_toggle_pressed>` **(** :ref:`bool<class_bool>` pressed **)**                           |
-   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`_handle_menu_selected<class_EditorResourcePicker_private_method__handle_menu_selected>`\ (\ id\: :ref:`int<class_int>`\ ) |virtual|          |
+   +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                            | :ref:`_set_create_options<class_EditorResourcePicker_private_method__set_create_options>`\ (\ menu_node\: :ref:`Object<class_Object>`\ ) |virtual| |
+   +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`get_allowed_types<class_EditorResourcePicker_method_get_allowed_types>`\ (\ ) |const|                                                        |
+   +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                            | :ref:`set_toggle_pressed<class_EditorResourcePicker_method_set_toggle_pressed>`\ (\ pressed\: :ref:`bool<class_bool>`\ )                           |
+   +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -74,7 +74,7 @@ Signals
 
 .. rst-class:: classref-signal
 
-**resource_changed** **(** :ref:`Resource<class_Resource>` resource **)**
+**resource_changed**\ (\ resource\: :ref:`Resource<class_Resource>`\ )
 
 Emitted when the value of the edited resource was changed.
 
@@ -86,7 +86,7 @@ Emitted when the value of the edited resource was changed.
 
 .. rst-class:: classref-signal
 
-**resource_selected** **(** :ref:`Resource<class_Resource>` resource, :ref:`bool<class_bool>` inspect **)**
+**resource_selected**\ (\ resource\: :ref:`Resource<class_Resource>`, inspect\: :ref:`bool<class_bool>`\ )
 
 Emitted when the resource value was set and user clicked to edit it. When ``inspect`` is ``true``, the signal was caused by the context menu "Edit" or "Inspect" option.
 
@@ -107,8 +107,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_base_type** **(** :ref:`String<class_String>` value **)**
-- :ref:`String<class_String>` **get_base_type** **(** **)**
+- |void| **set_base_type**\ (\ value\: :ref:`String<class_String>`\ )
+- :ref:`String<class_String>` **get_base_type**\ (\ )
 
 The base type of allowed resource types. Can be a comma-separated list of several options.
 
@@ -124,8 +124,8 @@ The base type of allowed resource types. Can be a comma-separated list of severa
 
 .. rst-class:: classref-property-setget
 
-- void **set_editable** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_editable** **(** **)**
+- |void| **set_editable**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_editable**\ (\ )
 
 If ``true``, the value can be selected and edited.
 
@@ -141,8 +141,8 @@ If ``true``, the value can be selected and edited.
 
 .. rst-class:: classref-property-setget
 
-- void **set_edited_resource** **(** :ref:`Resource<class_Resource>` value **)**
-- :ref:`Resource<class_Resource>` **get_edited_resource** **(** **)**
+- |void| **set_edited_resource**\ (\ value\: :ref:`Resource<class_Resource>`\ )
+- :ref:`Resource<class_Resource>` **get_edited_resource**\ (\ )
 
 The edited resource value.
 
@@ -158,8 +158,8 @@ The edited resource value.
 
 .. rst-class:: classref-property-setget
 
-- void **set_toggle_mode** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_toggle_mode** **(** **)**
+- |void| **set_toggle_mode**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_toggle_mode**\ (\ )
 
 If ``true``, the main button with the resource preview works in the toggle mode. Use :ref:`set_toggle_pressed<class_EditorResourcePicker_method_set_toggle_pressed>` to manually set the state.
 
@@ -176,7 +176,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **_handle_menu_selected** **(** :ref:`int<class_int>` id **)** |virtual|
+:ref:`bool<class_bool>` **_handle_menu_selected**\ (\ id\: :ref:`int<class_int>`\ ) |virtual|
 
 This virtual method can be implemented to handle context menu items not handled by default. See :ref:`_set_create_options<class_EditorResourcePicker_private_method__set_create_options>`.
 
@@ -188,7 +188,7 @@ This virtual method can be implemented to handle context menu items not handled 
 
 .. rst-class:: classref-method
 
-void **_set_create_options** **(** :ref:`Object<class_Object>` menu_node **)** |virtual|
+|void| **_set_create_options**\ (\ menu_node\: :ref:`Object<class_Object>`\ ) |virtual|
 
 This virtual method is called when updating the context menu of **EditorResourcePicker**. Implement this method to override the "New ..." items with your own options. ``menu_node`` is a reference to the :ref:`PopupMenu<class_PopupMenu>` node.
 
@@ -202,7 +202,7 @@ This virtual method is called when updating the context menu of **EditorResource
 
 .. rst-class:: classref-method
 
-:ref:`PackedStringArray<class_PackedStringArray>` **get_allowed_types** **(** **)** |const|
+:ref:`PackedStringArray<class_PackedStringArray>` **get_allowed_types**\ (\ ) |const|
 
 Returns a list of all allowed types and subtypes corresponding to the :ref:`base_type<class_EditorResourcePicker_property_base_type>`. If the :ref:`base_type<class_EditorResourcePicker_property_base_type>` is empty, an empty list is returned.
 
@@ -214,7 +214,7 @@ Returns a list of all allowed types and subtypes corresponding to the :ref:`base
 
 .. rst-class:: classref-method
 
-void **set_toggle_pressed** **(** :ref:`bool<class_bool>` pressed **)**
+|void| **set_toggle_pressed**\ (\ pressed\: :ref:`bool<class_bool>`\ )
 
 Sets the toggle mode state for the main button. Works only if :ref:`toggle_mode<class_EditorResourcePicker_property_toggle_mode>` is set to ``true``.
 
@@ -225,3 +225,4 @@ Sets the toggle mode state for the main button. Works only if :ref:`toggle_mode<
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

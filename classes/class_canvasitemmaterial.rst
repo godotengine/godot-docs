@@ -149,8 +149,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_blend_mode** **(** :ref:`BlendMode<enum_CanvasItemMaterial_BlendMode>` value **)**
-- :ref:`BlendMode<enum_CanvasItemMaterial_BlendMode>` **get_blend_mode** **(** **)**
+- |void| **set_blend_mode**\ (\ value\: :ref:`BlendMode<enum_CanvasItemMaterial_BlendMode>`\ )
+- :ref:`BlendMode<enum_CanvasItemMaterial_BlendMode>` **get_blend_mode**\ (\ )
 
 The manner in which a material's rendering is applied to underlying textures.
 
@@ -166,8 +166,8 @@ The manner in which a material's rendering is applied to underlying textures.
 
 .. rst-class:: classref-property-setget
 
-- void **set_light_mode** **(** :ref:`LightMode<enum_CanvasItemMaterial_LightMode>` value **)**
-- :ref:`LightMode<enum_CanvasItemMaterial_LightMode>` **get_light_mode** **(** **)**
+- |void| **set_light_mode**\ (\ value\: :ref:`LightMode<enum_CanvasItemMaterial_LightMode>`\ )
+- :ref:`LightMode<enum_CanvasItemMaterial_LightMode>` **get_light_mode**\ (\ )
 
 The manner in which material reacts to lighting.
 
@@ -183,8 +183,8 @@ The manner in which material reacts to lighting.
 
 .. rst-class:: classref-property-setget
 
-- void **set_particles_anim_h_frames** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_particles_anim_h_frames** **(** **)**
+- |void| **set_particles_anim_h_frames**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_particles_anim_h_frames**\ (\ )
 
 The number of columns in the spritesheet assigned as :ref:`Texture2D<class_Texture2D>` for a :ref:`GPUParticles2D<class_GPUParticles2D>` or :ref:`CPUParticles2D<class_CPUParticles2D>`.
 
@@ -202,8 +202,8 @@ The number of columns in the spritesheet assigned as :ref:`Texture2D<class_Textu
 
 .. rst-class:: classref-property-setget
 
-- void **set_particles_anim_loop** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **get_particles_anim_loop** **(** **)**
+- |void| **set_particles_anim_loop**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_particles_anim_loop**\ (\ )
 
 If ``true``, the particles animation will loop.
 
@@ -221,8 +221,8 @@ If ``true``, the particles animation will loop.
 
 .. rst-class:: classref-property-setget
 
-- void **set_particles_anim_v_frames** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_particles_anim_v_frames** **(** **)**
+- |void| **set_particles_anim_v_frames**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_particles_anim_v_frames**\ (\ )
 
 The number of rows in the spritesheet assigned as :ref:`Texture2D<class_Texture2D>` for a :ref:`GPUParticles2D<class_GPUParticles2D>` or :ref:`CPUParticles2D<class_CPUParticles2D>`.
 
@@ -240,8 +240,8 @@ The number of rows in the spritesheet assigned as :ref:`Texture2D<class_Texture2
 
 .. rst-class:: classref-property-setget
 
-- void **set_particles_animation** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **get_particles_animation** **(** **)**
+- |void| **set_particles_animation**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_particles_animation**\ (\ )
 
 If ``true``, enable spritesheet-based animation features when assigned to :ref:`GPUParticles2D<class_GPUParticles2D>` and :ref:`CPUParticles2D<class_CPUParticles2D>` nodes. The :ref:`ParticleProcessMaterial.anim_speed_max<class_ParticleProcessMaterial_property_anim_speed_max>` or :ref:`CPUParticles2D.anim_speed_max<class_CPUParticles2D_property_anim_speed_max>` should also be set to a positive value for the animation to play.
 
@@ -254,3 +254,4 @@ This property (and other ``particles_anim_*`` properties that depend on it) has 
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

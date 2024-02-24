@@ -128,8 +128,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_buffer_length** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_buffer_length** **(** **)**
+- |void| **set_buffer_length**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_buffer_length**\ (\ )
 
 The length of the buffer to keep (in seconds). Higher values keep data around for longer, but require more memory.
 
@@ -145,8 +145,8 @@ The length of the buffer to keep (in seconds). Higher values keep data around fo
 
 .. rst-class:: classref-property-setget
 
-- void **set_fft_size** **(** :ref:`FFTSize<enum_AudioEffectSpectrumAnalyzer_FFTSize>` value **)**
-- :ref:`FFTSize<enum_AudioEffectSpectrumAnalyzer_FFTSize>` **get_fft_size** **(** **)**
+- |void| **set_fft_size**\ (\ value\: :ref:`FFTSize<enum_AudioEffectSpectrumAnalyzer_FFTSize>`\ )
+- :ref:`FFTSize<enum_AudioEffectSpectrumAnalyzer_FFTSize>` **get_fft_size**\ (\ )
 
 The size of the `Fast Fourier transform <https://en.wikipedia.org/wiki/Fast_Fourier_transform>`__ buffer. Higher values smooth out the spectrum analysis over time, but have greater latency. The effects of this higher latency are especially noticeable with sudden amplitude changes.
 
@@ -162,8 +162,8 @@ The size of the `Fast Fourier transform <https://en.wikipedia.org/wiki/Fast_Four
 
 .. rst-class:: classref-property-setget
 
-- void **set_tap_back_pos** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_tap_back_pos** **(** **)**
+- |void| **set_tap_back_pos**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_tap_back_pos**\ (\ )
 
 .. container:: contribute
 
@@ -176,3 +176,4 @@ The size of the `Fast Fourier transform <https://en.wikipedia.org/wiki/Fast_Four
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

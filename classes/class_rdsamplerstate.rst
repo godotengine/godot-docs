@@ -78,8 +78,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_anisotropy_max** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_anisotropy_max** **(** **)**
+- |void| **set_anisotropy_max**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_anisotropy_max**\ (\ )
 
 Maximum anisotropy that can be used when sampling. Only effective if :ref:`use_anisotropy<class_RDSamplerState_property_use_anisotropy>` is ``true``. Higher values result in a sharper sampler at oblique angles, at the cost of performance (due to memory bandwidth). This value may be limited by the graphics hardware in use. Most graphics hardware only supports values up to ``16.0``.
 
@@ -97,8 +97,8 @@ If :ref:`anisotropy_max<class_RDSamplerState_property_anisotropy_max>` is ``1.0`
 
 .. rst-class:: classref-property-setget
 
-- void **set_border_color** **(** :ref:`SamplerBorderColor<enum_RenderingDevice_SamplerBorderColor>` value **)**
-- :ref:`SamplerBorderColor<enum_RenderingDevice_SamplerBorderColor>` **get_border_color** **(** **)**
+- |void| **set_border_color**\ (\ value\: :ref:`SamplerBorderColor<enum_RenderingDevice_SamplerBorderColor>`\ )
+- :ref:`SamplerBorderColor<enum_RenderingDevice_SamplerBorderColor>` **get_border_color**\ (\ )
 
 The border color that will be returned when sampling outside the sampler's bounds and the :ref:`repeat_u<class_RDSamplerState_property_repeat_u>`, :ref:`repeat_v<class_RDSamplerState_property_repeat_v>` or :ref:`repeat_w<class_RDSamplerState_property_repeat_w>` modes have repeating disabled.
 
@@ -114,8 +114,8 @@ The border color that will be returned when sampling outside the sampler's bound
 
 .. rst-class:: classref-property-setget
 
-- void **set_compare_op** **(** :ref:`CompareOperator<enum_RenderingDevice_CompareOperator>` value **)**
-- :ref:`CompareOperator<enum_RenderingDevice_CompareOperator>` **get_compare_op** **(** **)**
+- |void| **set_compare_op**\ (\ value\: :ref:`CompareOperator<enum_RenderingDevice_CompareOperator>`\ )
+- :ref:`CompareOperator<enum_RenderingDevice_CompareOperator>` **get_compare_op**\ (\ )
 
 The compare operation to use. Only effective if :ref:`enable_compare<class_RDSamplerState_property_enable_compare>` is ``true``.
 
@@ -131,8 +131,8 @@ The compare operation to use. Only effective if :ref:`enable_compare<class_RDSam
 
 .. rst-class:: classref-property-setget
 
-- void **set_enable_compare** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **get_enable_compare** **(** **)**
+- |void| **set_enable_compare**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_enable_compare**\ (\ )
 
 If ``true``, returned values will be based on the comparison operation defined in :ref:`compare_op<class_RDSamplerState_property_compare_op>`. This is a hardware-based approach and is therefore faster than performing this manually in a shader. For example, compare operations are used for shadow map rendering by comparing depth values from a shadow sampler.
 
@@ -148,8 +148,8 @@ If ``true``, returned values will be based on the comparison operation defined i
 
 .. rst-class:: classref-property-setget
 
-- void **set_lod_bias** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_lod_bias** **(** **)**
+- |void| **set_lod_bias**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_lod_bias**\ (\ )
 
 The mipmap LOD bias to use. Positive values will make the sampler blurrier at a given distance, while negative values will make the sampler sharper at a given distance (at the risk of looking grainy). Recommended values are between ``-0.5`` and ``0.0``. Only effective if the sampler has mipmaps available.
 
@@ -165,8 +165,8 @@ The mipmap LOD bias to use. Positive values will make the sampler blurrier at a 
 
 .. rst-class:: classref-property-setget
 
-- void **set_mag_filter** **(** :ref:`SamplerFilter<enum_RenderingDevice_SamplerFilter>` value **)**
-- :ref:`SamplerFilter<enum_RenderingDevice_SamplerFilter>` **get_mag_filter** **(** **)**
+- |void| **set_mag_filter**\ (\ value\: :ref:`SamplerFilter<enum_RenderingDevice_SamplerFilter>`\ )
+- :ref:`SamplerFilter<enum_RenderingDevice_SamplerFilter>` **get_mag_filter**\ (\ )
 
 The sampler's magnification filter. It is the filtering method used when sampling texels that appear bigger than on-screen pixels.
 
@@ -182,8 +182,8 @@ The sampler's magnification filter. It is the filtering method used when samplin
 
 .. rst-class:: classref-property-setget
 
-- void **set_max_lod** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_max_lod** **(** **)**
+- |void| **set_max_lod**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_max_lod**\ (\ )
 
 The maximum mipmap LOD bias to display (lowest resolution). Only effective if the sampler has mipmaps available.
 
@@ -199,8 +199,8 @@ The maximum mipmap LOD bias to display (lowest resolution). Only effective if th
 
 .. rst-class:: classref-property-setget
 
-- void **set_min_filter** **(** :ref:`SamplerFilter<enum_RenderingDevice_SamplerFilter>` value **)**
-- :ref:`SamplerFilter<enum_RenderingDevice_SamplerFilter>` **get_min_filter** **(** **)**
+- |void| **set_min_filter**\ (\ value\: :ref:`SamplerFilter<enum_RenderingDevice_SamplerFilter>`\ )
+- :ref:`SamplerFilter<enum_RenderingDevice_SamplerFilter>` **get_min_filter**\ (\ )
 
 The sampler's minification filter. It is the filtering method used when sampling texels that appear smaller than on-screen pixels.
 
@@ -216,8 +216,8 @@ The sampler's minification filter. It is the filtering method used when sampling
 
 .. rst-class:: classref-property-setget
 
-- void **set_min_lod** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_min_lod** **(** **)**
+- |void| **set_min_lod**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_min_lod**\ (\ )
 
 The minimum mipmap LOD bias to display (highest resolution). Only effective if the sampler has mipmaps available.
 
@@ -233,8 +233,8 @@ The minimum mipmap LOD bias to display (highest resolution). Only effective if t
 
 .. rst-class:: classref-property-setget
 
-- void **set_mip_filter** **(** :ref:`SamplerFilter<enum_RenderingDevice_SamplerFilter>` value **)**
-- :ref:`SamplerFilter<enum_RenderingDevice_SamplerFilter>` **get_mip_filter** **(** **)**
+- |void| **set_mip_filter**\ (\ value\: :ref:`SamplerFilter<enum_RenderingDevice_SamplerFilter>`\ )
+- :ref:`SamplerFilter<enum_RenderingDevice_SamplerFilter>` **get_mip_filter**\ (\ )
 
 The filtering method to use for mipmaps.
 
@@ -250,8 +250,8 @@ The filtering method to use for mipmaps.
 
 .. rst-class:: classref-property-setget
 
-- void **set_repeat_u** **(** :ref:`SamplerRepeatMode<enum_RenderingDevice_SamplerRepeatMode>` value **)**
-- :ref:`SamplerRepeatMode<enum_RenderingDevice_SamplerRepeatMode>` **get_repeat_u** **(** **)**
+- |void| **set_repeat_u**\ (\ value\: :ref:`SamplerRepeatMode<enum_RenderingDevice_SamplerRepeatMode>`\ )
+- :ref:`SamplerRepeatMode<enum_RenderingDevice_SamplerRepeatMode>` **get_repeat_u**\ (\ )
 
 The repeat mode to use along the U axis of UV coordinates. This affects the returned values if sampling outside the UV bounds.
 
@@ -267,8 +267,8 @@ The repeat mode to use along the U axis of UV coordinates. This affects the retu
 
 .. rst-class:: classref-property-setget
 
-- void **set_repeat_v** **(** :ref:`SamplerRepeatMode<enum_RenderingDevice_SamplerRepeatMode>` value **)**
-- :ref:`SamplerRepeatMode<enum_RenderingDevice_SamplerRepeatMode>` **get_repeat_v** **(** **)**
+- |void| **set_repeat_v**\ (\ value\: :ref:`SamplerRepeatMode<enum_RenderingDevice_SamplerRepeatMode>`\ )
+- :ref:`SamplerRepeatMode<enum_RenderingDevice_SamplerRepeatMode>` **get_repeat_v**\ (\ )
 
 The repeat mode to use along the V axis of UV coordinates. This affects the returned values if sampling outside the UV bounds.
 
@@ -284,8 +284,8 @@ The repeat mode to use along the V axis of UV coordinates. This affects the retu
 
 .. rst-class:: classref-property-setget
 
-- void **set_repeat_w** **(** :ref:`SamplerRepeatMode<enum_RenderingDevice_SamplerRepeatMode>` value **)**
-- :ref:`SamplerRepeatMode<enum_RenderingDevice_SamplerRepeatMode>` **get_repeat_w** **(** **)**
+- |void| **set_repeat_w**\ (\ value\: :ref:`SamplerRepeatMode<enum_RenderingDevice_SamplerRepeatMode>`\ )
+- :ref:`SamplerRepeatMode<enum_RenderingDevice_SamplerRepeatMode>` **get_repeat_w**\ (\ )
 
 The repeat mode to use along the W axis of UV coordinates. This affects the returned values if sampling outside the UV bounds. Only effective for 3D samplers.
 
@@ -301,8 +301,8 @@ The repeat mode to use along the W axis of UV coordinates. This affects the retu
 
 .. rst-class:: classref-property-setget
 
-- void **set_unnormalized_uvw** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **get_unnormalized_uvw** **(** **)**
+- |void| **set_unnormalized_uvw**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_unnormalized_uvw**\ (\ )
 
 If ``true``, the texture will be sampled with coordinates ranging from 0 to the texture's resolution. Otherwise, the coordinates will be normalized and range from 0 to 1.
 
@@ -318,8 +318,8 @@ If ``true``, the texture will be sampled with coordinates ranging from 0 to the 
 
 .. rst-class:: classref-property-setget
 
-- void **set_use_anisotropy** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **get_use_anisotropy** **(** **)**
+- |void| **set_use_anisotropy**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_use_anisotropy**\ (\ )
 
 If ``true``, perform anisotropic sampling. See :ref:`anisotropy_max<class_RDSamplerState_property_anisotropy_max>`.
 
@@ -330,3 +330,4 @@ If ``true``, perform anisotropic sampling. See :ref:`anisotropy_max<class_RDSamp
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

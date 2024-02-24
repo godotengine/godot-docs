@@ -79,8 +79,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_color_attachments** **(** :ref:`PackedInt32Array<class_PackedInt32Array>` value **)**
-- :ref:`PackedInt32Array<class_PackedInt32Array>` **get_color_attachments** **(** **)**
+- |void| **set_color_attachments**\ (\ value\: :ref:`PackedInt32Array<class_PackedInt32Array>`\ )
+- :ref:`PackedInt32Array<class_PackedInt32Array>` **get_color_attachments**\ (\ )
 
 Color attachments in order starting from 0. If this attachment is not used by the shader, pass ATTACHMENT_UNUSED to skip.
 
@@ -96,8 +96,8 @@ Color attachments in order starting from 0. If this attachment is not used by th
 
 .. rst-class:: classref-property-setget
 
-- void **set_depth_attachment** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_depth_attachment** **(** **)**
+- |void| **set_depth_attachment**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_depth_attachment**\ (\ )
 
 Depth attachment. ATTACHMENT_UNUSED should be used if no depth buffer is required for this pass.
 
@@ -113,8 +113,8 @@ Depth attachment. ATTACHMENT_UNUSED should be used if no depth buffer is require
 
 .. rst-class:: classref-property-setget
 
-- void **set_input_attachments** **(** :ref:`PackedInt32Array<class_PackedInt32Array>` value **)**
-- :ref:`PackedInt32Array<class_PackedInt32Array>` **get_input_attachments** **(** **)**
+- |void| **set_input_attachments**\ (\ value\: :ref:`PackedInt32Array<class_PackedInt32Array>`\ )
+- :ref:`PackedInt32Array<class_PackedInt32Array>` **get_input_attachments**\ (\ )
 
 Used for multipass framebuffers (more than one render pass). Converts an attachment to an input. Make sure to also supply it properly in the :ref:`RDUniform<class_RDUniform>` for the uniform set.
 
@@ -130,8 +130,8 @@ Used for multipass framebuffers (more than one render pass). Converts an attachm
 
 .. rst-class:: classref-property-setget
 
-- void **set_preserve_attachments** **(** :ref:`PackedInt32Array<class_PackedInt32Array>` value **)**
-- :ref:`PackedInt32Array<class_PackedInt32Array>` **get_preserve_attachments** **(** **)**
+- |void| **set_preserve_attachments**\ (\ value\: :ref:`PackedInt32Array<class_PackedInt32Array>`\ )
+- :ref:`PackedInt32Array<class_PackedInt32Array>` **get_preserve_attachments**\ (\ )
 
 Attachments to preserve in this pass (otherwise they are erased).
 
@@ -147,8 +147,8 @@ Attachments to preserve in this pass (otherwise they are erased).
 
 .. rst-class:: classref-property-setget
 
-- void **set_resolve_attachments** **(** :ref:`PackedInt32Array<class_PackedInt32Array>` value **)**
-- :ref:`PackedInt32Array<class_PackedInt32Array>` **get_resolve_attachments** **(** **)**
+- |void| **set_resolve_attachments**\ (\ value\: :ref:`PackedInt32Array<class_PackedInt32Array>`\ )
+- :ref:`PackedInt32Array<class_PackedInt32Array>` **get_resolve_attachments**\ (\ )
 
 If the color attachments are multisampled, non-multisampled resolve attachments can be provided.
 
@@ -159,3 +159,4 @@ If the color attachments are multisampled, non-multisampled resolve attachments 
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

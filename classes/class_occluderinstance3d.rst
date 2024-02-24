@@ -62,11 +62,11 @@ Methods
 .. table::
    :widths: auto
 
-   +-------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>` | :ref:`get_bake_mask_value<class_OccluderInstance3D_method_get_bake_mask_value>` **(** :ref:`int<class_int>` layer_number **)** |const|                        |
-   +-------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                    | :ref:`set_bake_mask_value<class_OccluderInstance3D_method_set_bake_mask_value>` **(** :ref:`int<class_int>` layer_number, :ref:`bool<class_bool>` value **)** |
-   +-------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +-------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | :ref:`get_bake_mask_value<class_OccluderInstance3D_method_get_bake_mask_value>`\ (\ layer_number\: :ref:`int<class_int>`\ ) |const|                          |
+   +-------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                  | :ref:`set_bake_mask_value<class_OccluderInstance3D_method_set_bake_mask_value>`\ (\ layer_number\: :ref:`int<class_int>`, value\: :ref:`bool<class_bool>`\ ) |
+   +-------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -85,8 +85,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_bake_mask** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_bake_mask** **(** **)**
+- |void| **set_bake_mask**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_bake_mask**\ (\ )
 
 The visual layers to account for when baking for occluders. Only :ref:`MeshInstance3D<class_MeshInstance3D>`\ s whose :ref:`VisualInstance3D.layers<class_VisualInstance3D_property_layers>` match with this :ref:`bake_mask<class_OccluderInstance3D_property_bake_mask>` will be included in the generated occluder mesh. By default, all objects with *opaque* materials are taken into account for the occluder baking.
 
@@ -104,8 +104,8 @@ To improve performance and avoid artifacts, it is recommended to exclude dynamic
 
 .. rst-class:: classref-property-setget
 
-- void **set_bake_simplification_distance** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_bake_simplification_distance** **(** **)**
+- |void| **set_bake_simplification_distance**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_bake_simplification_distance**\ (\ )
 
 The simplification distance to use for simplifying the generated occluder polygon (in 3D units). Higher values result in a less detailed occluder mesh, which improves performance but reduces culling accuracy.
 
@@ -127,8 +127,8 @@ Setting this to ``0.0`` disables simplification entirely, but vertices in the ex
 
 .. rst-class:: classref-property-setget
 
-- void **set_occluder** **(** :ref:`Occluder3D<class_Occluder3D>` value **)**
-- :ref:`Occluder3D<class_Occluder3D>` **get_occluder** **(** **)**
+- |void| **set_occluder**\ (\ value\: :ref:`Occluder3D<class_Occluder3D>`\ )
+- :ref:`Occluder3D<class_Occluder3D>` **get_occluder**\ (\ )
 
 The occluder resource for this **OccluderInstance3D**. You can generate an occluder resource by selecting an **OccluderInstance3D** node then using the **Bake Occluders** button at the top of the editor.
 
@@ -149,7 +149,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **get_bake_mask_value** **(** :ref:`int<class_int>` layer_number **)** |const|
+:ref:`bool<class_bool>` **get_bake_mask_value**\ (\ layer_number\: :ref:`int<class_int>`\ ) |const|
 
 Returns whether or not the specified layer of the :ref:`bake_mask<class_OccluderInstance3D_property_bake_mask>` is enabled, given a ``layer_number`` between 1 and 32.
 
@@ -161,7 +161,7 @@ Returns whether or not the specified layer of the :ref:`bake_mask<class_Occluder
 
 .. rst-class:: classref-method
 
-void **set_bake_mask_value** **(** :ref:`int<class_int>` layer_number, :ref:`bool<class_bool>` value **)**
+|void| **set_bake_mask_value**\ (\ layer_number\: :ref:`int<class_int>`, value\: :ref:`bool<class_bool>`\ )
 
 Based on ``value``, enables or disables the specified layer in the :ref:`bake_mask<class_OccluderInstance3D_property_bake_mask>`, given a ``layer_number`` between 1 and 32.
 
@@ -172,3 +172,4 @@ Based on ``value``, enables or disables the specified layer in the :ref:`bake_ma
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

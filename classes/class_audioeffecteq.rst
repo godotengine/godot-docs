@@ -40,13 +40,13 @@ Methods
 .. table::
    :widths: auto
 
-   +---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`     | :ref:`get_band_count<class_AudioEffectEQ_method_get_band_count>` **(** **)** |const|                                                                 |
-   +---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`float<class_float>` | :ref:`get_band_gain_db<class_AudioEffectEQ_method_get_band_gain_db>` **(** :ref:`int<class_int>` band_idx **)** |const|                              |
-   +---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                      | :ref:`set_band_gain_db<class_AudioEffectEQ_method_set_band_gain_db>` **(** :ref:`int<class_int>` band_idx, :ref:`float<class_float>` volume_db **)** |
-   +---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +---------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`     | :ref:`get_band_count<class_AudioEffectEQ_method_get_band_count>`\ (\ ) |const|                                                                      |
+   +---------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>` | :ref:`get_band_gain_db<class_AudioEffectEQ_method_get_band_gain_db>`\ (\ band_idx\: :ref:`int<class_int>`\ ) |const|                                |
+   +---------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                    | :ref:`set_band_gain_db<class_AudioEffectEQ_method_set_band_gain_db>`\ (\ band_idx\: :ref:`int<class_int>`, volume_db\: :ref:`float<class_float>`\ ) |
+   +---------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -61,7 +61,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_band_count** **(** **)** |const|
+:ref:`int<class_int>` **get_band_count**\ (\ ) |const|
 
 Returns the number of bands of the equalizer.
 
@@ -73,7 +73,7 @@ Returns the number of bands of the equalizer.
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **get_band_gain_db** **(** :ref:`int<class_int>` band_idx **)** |const|
+:ref:`float<class_float>` **get_band_gain_db**\ (\ band_idx\: :ref:`int<class_int>`\ ) |const|
 
 Returns the band's gain at the specified index, in dB.
 
@@ -85,7 +85,7 @@ Returns the band's gain at the specified index, in dB.
 
 .. rst-class:: classref-method
 
-void **set_band_gain_db** **(** :ref:`int<class_int>` band_idx, :ref:`float<class_float>` volume_db **)**
+|void| **set_band_gain_db**\ (\ band_idx\: :ref:`int<class_int>`, volume_db\: :ref:`float<class_float>`\ )
 
 Sets band's gain at the specified index, in dB.
 
@@ -96,3 +96,4 @@ Sets band's gain at the specified index, in dB.
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

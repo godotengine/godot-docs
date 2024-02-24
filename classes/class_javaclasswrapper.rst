@@ -24,9 +24,9 @@ Methods
 .. table::
    :widths: auto
 
-   +-----------------------------------+----------------------------------------------------------------------------------------------+
-   | :ref:`JavaClass<class_JavaClass>` | :ref:`wrap<class_JavaClassWrapper_method_wrap>` **(** :ref:`String<class_String>` name **)** |
-   +-----------------------------------+----------------------------------------------------------------------------------------------+
+   +-----------------------------------+-------------------------------------------------------------------------------------------+
+   | :ref:`JavaClass<class_JavaClass>` | :ref:`wrap<class_JavaClassWrapper_method_wrap>`\ (\ name\: :ref:`String<class_String>`\ ) |
+   +-----------------------------------+-------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -41,7 +41,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`JavaClass<class_JavaClass>` **wrap** **(** :ref:`String<class_String>` name **)**
+:ref:`JavaClass<class_JavaClass>` **wrap**\ (\ name\: :ref:`String<class_String>`\ )
 
 .. container:: contribute
 
@@ -54,3 +54,4 @@ Method Descriptions
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

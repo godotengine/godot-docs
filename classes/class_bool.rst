@@ -81,15 +81,15 @@ Constructors
 .. table::
    :widths: auto
 
-   +-------------------------+-------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>` | :ref:`bool<class_bool_constructor_bool>` **(** **)**                                |
-   +-------------------------+-------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>` | :ref:`bool<class_bool_constructor_bool>` **(** :ref:`bool<class_bool>` from **)**   |
-   +-------------------------+-------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>` | :ref:`bool<class_bool_constructor_bool>` **(** :ref:`float<class_float>` from **)** |
-   +-------------------------+-------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>` | :ref:`bool<class_bool_constructor_bool>` **(** :ref:`int<class_int>` from **)**     |
-   +-------------------------+-------------------------------------------------------------------------------------+
+   +-------------------------+----------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | :ref:`bool<class_bool_constructor_bool>`\ (\ )                                   |
+   +-------------------------+----------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | :ref:`bool<class_bool_constructor_bool>`\ (\ from\: :ref:`bool<class_bool>`\ )   |
+   +-------------------------+----------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | :ref:`bool<class_bool_constructor_bool>`\ (\ from\: :ref:`float<class_float>`\ ) |
+   +-------------------------+----------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | :ref:`bool<class_bool_constructor_bool>`\ (\ from\: :ref:`int<class_int>`\ )     |
+   +-------------------------+----------------------------------------------------------------------------------+
 
 .. rst-class:: classref-reftable-group
 
@@ -99,15 +99,15 @@ Operators
 .. table::
    :widths: auto
 
-   +-------------------------+--------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>` | :ref:`operator !=<class_bool_operator_neq_bool>` **(** :ref:`bool<class_bool>` right **)** |
-   +-------------------------+--------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>` | :ref:`operator \<<class_bool_operator_lt_bool>` **(** :ref:`bool<class_bool>` right **)**  |
-   +-------------------------+--------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>` | :ref:`operator ==<class_bool_operator_eq_bool>` **(** :ref:`bool<class_bool>` right **)**  |
-   +-------------------------+--------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>` | :ref:`operator ><class_bool_operator_gt_bool>` **(** :ref:`bool<class_bool>` right **)**   |
-   +-------------------------+--------------------------------------------------------------------------------------------+
+   +-------------------------+-----------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | :ref:`operator !=<class_bool_operator_neq_bool>`\ (\ right\: :ref:`bool<class_bool>`\ ) |
+   +-------------------------+-----------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | :ref:`operator \<<class_bool_operator_lt_bool>`\ (\ right\: :ref:`bool<class_bool>`\ )  |
+   +-------------------------+-----------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | :ref:`operator ==<class_bool_operator_eq_bool>`\ (\ right\: :ref:`bool<class_bool>`\ )  |
+   +-------------------------+-----------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | :ref:`operator ><class_bool_operator_gt_bool>`\ (\ right\: :ref:`bool<class_bool>`\ )   |
+   +-------------------------+-----------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -122,7 +122,7 @@ Constructor Descriptions
 
 .. rst-class:: classref-constructor
 
-:ref:`bool<class_bool>` **bool** **(** **)**
+:ref:`bool<class_bool>` **bool**\ (\ )
 
 Constructs a **bool** set to ``false``.
 
@@ -132,7 +132,7 @@ Constructs a **bool** set to ``false``.
 
 .. rst-class:: classref-constructor
 
-:ref:`bool<class_bool>` **bool** **(** :ref:`bool<class_bool>` from **)**
+:ref:`bool<class_bool>` **bool**\ (\ from\: :ref:`bool<class_bool>`\ )
 
 Constructs a **bool** as a copy of the given **bool**.
 
@@ -142,7 +142,7 @@ Constructs a **bool** as a copy of the given **bool**.
 
 .. rst-class:: classref-constructor
 
-:ref:`bool<class_bool>` **bool** **(** :ref:`float<class_float>` from **)**
+:ref:`bool<class_bool>` **bool**\ (\ from\: :ref:`float<class_float>`\ )
 
 Cast a :ref:`float<class_float>` value to a boolean value. Returns ``false`` if ``from`` is equal to ``0.0`` (including ``-0.0``), and ``true`` for all other values (including :ref:`@GDScript.INF<class_@GDScript_constant_INF>` and :ref:`@GDScript.NAN<class_@GDScript_constant_NAN>`).
 
@@ -152,7 +152,7 @@ Cast a :ref:`float<class_float>` value to a boolean value. Returns ``false`` if 
 
 .. rst-class:: classref-constructor
 
-:ref:`bool<class_bool>` **bool** **(** :ref:`int<class_int>` from **)**
+:ref:`bool<class_bool>` **bool**\ (\ from\: :ref:`int<class_int>`\ )
 
 Cast an :ref:`int<class_int>` value to a boolean value. Returns ``false`` if ``from`` is equal to ``0``, and ``true`` for all other values.
 
@@ -169,7 +169,7 @@ Operator Descriptions
 
 .. rst-class:: classref-operator
 
-:ref:`bool<class_bool>` **operator !=** **(** :ref:`bool<class_bool>` right **)**
+:ref:`bool<class_bool>` **operator !=**\ (\ right\: :ref:`bool<class_bool>`\ )
 
 Returns ``true`` if the two booleans are not equal. That is, one is ``true`` and the other is ``false``. This operation can be seen as a logical XOR.
 
@@ -181,7 +181,7 @@ Returns ``true`` if the two booleans are not equal. That is, one is ``true`` and
 
 .. rst-class:: classref-operator
 
-:ref:`bool<class_bool>` **operator <** **(** :ref:`bool<class_bool>` right **)**
+:ref:`bool<class_bool>` **operator <**\ (\ right\: :ref:`bool<class_bool>`\ )
 
 Returns ``true`` if the left operand is ``false`` and the right operand is ``true``.
 
@@ -193,7 +193,7 @@ Returns ``true`` if the left operand is ``false`` and the right operand is ``tru
 
 .. rst-class:: classref-operator
 
-:ref:`bool<class_bool>` **operator ==** **(** :ref:`bool<class_bool>` right **)**
+:ref:`bool<class_bool>` **operator ==**\ (\ right\: :ref:`bool<class_bool>`\ )
 
 Returns ``true`` if the two booleans are equal. That is, both are ``true`` or both are ``false``. This operation can be seen as a logical EQ or XNOR.
 
@@ -205,7 +205,7 @@ Returns ``true`` if the two booleans are equal. That is, both are ``true`` or bo
 
 .. rst-class:: classref-operator
 
-:ref:`bool<class_bool>` **operator >** **(** :ref:`bool<class_bool>` right **)**
+:ref:`bool<class_bool>` **operator >**\ (\ right\: :ref:`bool<class_bool>`\ )
 
 Returns ``true`` if the left operand is ``true`` and the right operand is ``false``.
 
@@ -216,3 +216,4 @@ Returns ``true`` if the left operand is ``true`` and the right operand is ``fals
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

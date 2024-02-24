@@ -54,8 +54,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_format** **(** :ref:`DataFormat<enum_RenderingDevice_DataFormat>` value **)**
-- :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **get_format** **(** **)**
+- |void| **set_format**\ (\ value\: :ref:`DataFormat<enum_RenderingDevice_DataFormat>`\ )
+- :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **get_format**\ (\ )
 
 The attachment's data format.
 
@@ -71,8 +71,8 @@ The attachment's data format.
 
 .. rst-class:: classref-property-setget
 
-- void **set_samples** **(** :ref:`TextureSamples<enum_RenderingDevice_TextureSamples>` value **)**
-- :ref:`TextureSamples<enum_RenderingDevice_TextureSamples>` **get_samples** **(** **)**
+- |void| **set_samples**\ (\ value\: :ref:`TextureSamples<enum_RenderingDevice_TextureSamples>`\ )
+- :ref:`TextureSamples<enum_RenderingDevice_TextureSamples>` **get_samples**\ (\ )
 
 The number of samples used when sampling the attachment.
 
@@ -88,8 +88,8 @@ The number of samples used when sampling the attachment.
 
 .. rst-class:: classref-property-setget
 
-- void **set_usage_flags** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_usage_flags** **(** **)**
+- |void| **set_usage_flags**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_usage_flags**\ (\ )
 
 The attachment's usage flags, which determine what can be done with it.
 
@@ -100,3 +100,4 @@ The attachment's usage flags, which determine what can be done with it.
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

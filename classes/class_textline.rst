@@ -36,7 +36,7 @@ Properties
    +---------------------------------------------------------------------------+-----------------------------------------------------------------------------+-----------+
    | :ref:`String<class_String>`                                               | :ref:`ellipsis_char<class_TextLine_property_ellipsis_char>`                 | ``"…"``   |
    +---------------------------------------------------------------------------+-----------------------------------------------------------------------------+-----------+
-   | |bitfield|\<:ref:`JustificationFlag<enum_TextServer_JustificationFlag>`\> | :ref:`flags<class_TextLine_property_flags>`                                 | ``3``     |
+   | |bitfield|\[:ref:`JustificationFlag<enum_TextServer_JustificationFlag>`\] | :ref:`flags<class_TextLine_property_flags>`                                 | ``3``     |
    +---------------------------------------------------------------------------+-----------------------------------------------------------------------------+-----------+
    | :ref:`Orientation<enum_TextServer_Orientation>`                           | :ref:`orientation<class_TextLine_property_orientation>`                     | ``0``     |
    +---------------------------------------------------------------------------+-----------------------------------------------------------------------------+-----------+
@@ -57,43 +57,43 @@ Methods
 .. table::
    :widths: auto
 
-   +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`       | :ref:`add_object<class_TextLine_method_add_object>` **(** :ref:`Variant<class_Variant>` key, :ref:`Vector2<class_Vector2>` size, :ref:`InlineAlignment<enum_@GlobalScope_InlineAlignment>` inline_align=5, :ref:`int<class_int>` length=1, :ref:`float<class_float>` baseline=0.0 **)** |
-   +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`       | :ref:`add_string<class_TextLine_method_add_string>` **(** :ref:`String<class_String>` text, :ref:`Font<class_Font>` font, :ref:`int<class_int>` font_size, :ref:`String<class_String>` language="", :ref:`Variant<class_Variant>` meta=null **)**                                       |
-   +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                          | :ref:`clear<class_TextLine_method_clear>` **(** **)**                                                                                                                                                                                                                                   |
-   +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                          | :ref:`draw<class_TextLine_method_draw>` **(** :ref:`RID<class_RID>` canvas, :ref:`Vector2<class_Vector2>` pos, :ref:`Color<class_Color>` color=Color(1, 1, 1, 1) **)** |const|                                                                                                          |
-   +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                          | :ref:`draw_outline<class_TextLine_method_draw_outline>` **(** :ref:`RID<class_RID>` canvas, :ref:`Vector2<class_Vector2>` pos, :ref:`int<class_int>` outline_size=1, :ref:`Color<class_Color>` color=Color(1, 1, 1, 1) **)** |const|                                                    |
-   +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`float<class_float>`     | :ref:`get_line_ascent<class_TextLine_method_get_line_ascent>` **(** **)** |const|                                                                                                                                                                                                       |
-   +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`float<class_float>`     | :ref:`get_line_descent<class_TextLine_method_get_line_descent>` **(** **)** |const|                                                                                                                                                                                                     |
-   +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`float<class_float>`     | :ref:`get_line_underline_position<class_TextLine_method_get_line_underline_position>` **(** **)** |const|                                                                                                                                                                               |
-   +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`float<class_float>`     | :ref:`get_line_underline_thickness<class_TextLine_method_get_line_underline_thickness>` **(** **)** |const|                                                                                                                                                                             |
-   +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`float<class_float>`     | :ref:`get_line_width<class_TextLine_method_get_line_width>` **(** **)** |const|                                                                                                                                                                                                         |
-   +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Rect2<class_Rect2>`     | :ref:`get_object_rect<class_TextLine_method_get_object_rect>` **(** :ref:`Variant<class_Variant>` key **)** |const|                                                                                                                                                                     |
-   +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Array<class_Array>`     | :ref:`get_objects<class_TextLine_method_get_objects>` **(** **)** |const|                                                                                                                                                                                                               |
-   +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`RID<class_RID>`         | :ref:`get_rid<class_TextLine_method_get_rid>` **(** **)** |const|                                                                                                                                                                                                                       |
-   +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Vector2<class_Vector2>` | :ref:`get_size<class_TextLine_method_get_size>` **(** **)** |const|                                                                                                                                                                                                                     |
-   +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`         | :ref:`hit_test<class_TextLine_method_hit_test>` **(** :ref:`float<class_float>` coords **)** |const|                                                                                                                                                                                    |
-   +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`       | :ref:`resize_object<class_TextLine_method_resize_object>` **(** :ref:`Variant<class_Variant>` key, :ref:`Vector2<class_Vector2>` size, :ref:`InlineAlignment<enum_@GlobalScope_InlineAlignment>` inline_align=5, :ref:`float<class_float>` baseline=0.0 **)**                           |
-   +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                          | :ref:`set_bidi_override<class_TextLine_method_set_bidi_override>` **(** :ref:`Array<class_Array>` override **)**                                                                                                                                                                        |
-   +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                          | :ref:`tab_align<class_TextLine_method_tab_align>` **(** :ref:`PackedFloat32Array<class_PackedFloat32Array>` tab_stops **)**                                                                                                                                                             |
-   +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`add_object<class_TextLine_method_add_object>`\ (\ key\: :ref:`Variant<class_Variant>`, size\: :ref:`Vector2<class_Vector2>`, inline_align\: :ref:`InlineAlignment<enum_@GlobalScope_InlineAlignment>` = 5, length\: :ref:`int<class_int>` = 1, baseline\: :ref:`float<class_float>` = 0.0\ ) |
+   +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`add_string<class_TextLine_method_add_string>`\ (\ text\: :ref:`String<class_String>`, font\: :ref:`Font<class_Font>`, font_size\: :ref:`int<class_int>`, language\: :ref:`String<class_String>` = "", meta\: :ref:`Variant<class_Variant>` = null\ )                                         |
+   +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                        | :ref:`clear<class_TextLine_method_clear>`\ (\ )                                                                                                                                                                                                                                                    |
+   +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                        | :ref:`draw<class_TextLine_method_draw>`\ (\ canvas\: :ref:`RID<class_RID>`, pos\: :ref:`Vector2<class_Vector2>`, color\: :ref:`Color<class_Color>` = Color(1, 1, 1, 1)\ ) |const|                                                                                                                  |
+   +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                        | :ref:`draw_outline<class_TextLine_method_draw_outline>`\ (\ canvas\: :ref:`RID<class_RID>`, pos\: :ref:`Vector2<class_Vector2>`, outline_size\: :ref:`int<class_int>` = 1, color\: :ref:`Color<class_Color>` = Color(1, 1, 1, 1)\ ) |const|                                                        |
+   +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`     | :ref:`get_line_ascent<class_TextLine_method_get_line_ascent>`\ (\ ) |const|                                                                                                                                                                                                                        |
+   +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`     | :ref:`get_line_descent<class_TextLine_method_get_line_descent>`\ (\ ) |const|                                                                                                                                                                                                                      |
+   +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`     | :ref:`get_line_underline_position<class_TextLine_method_get_line_underline_position>`\ (\ ) |const|                                                                                                                                                                                                |
+   +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`     | :ref:`get_line_underline_thickness<class_TextLine_method_get_line_underline_thickness>`\ (\ ) |const|                                                                                                                                                                                              |
+   +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`     | :ref:`get_line_width<class_TextLine_method_get_line_width>`\ (\ ) |const|                                                                                                                                                                                                                          |
+   +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Rect2<class_Rect2>`     | :ref:`get_object_rect<class_TextLine_method_get_object_rect>`\ (\ key\: :ref:`Variant<class_Variant>`\ ) |const|                                                                                                                                                                                   |
+   +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Array<class_Array>`     | :ref:`get_objects<class_TextLine_method_get_objects>`\ (\ ) |const|                                                                                                                                                                                                                                |
+   +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`RID<class_RID>`         | :ref:`get_rid<class_TextLine_method_get_rid>`\ (\ ) |const|                                                                                                                                                                                                                                        |
+   +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector2<class_Vector2>` | :ref:`get_size<class_TextLine_method_get_size>`\ (\ ) |const|                                                                                                                                                                                                                                      |
+   +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`         | :ref:`hit_test<class_TextLine_method_hit_test>`\ (\ coords\: :ref:`float<class_float>`\ ) |const|                                                                                                                                                                                                  |
+   +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`resize_object<class_TextLine_method_resize_object>`\ (\ key\: :ref:`Variant<class_Variant>`, size\: :ref:`Vector2<class_Vector2>`, inline_align\: :ref:`InlineAlignment<enum_@GlobalScope_InlineAlignment>` = 5, baseline\: :ref:`float<class_float>` = 0.0\ )                               |
+   +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                        | :ref:`set_bidi_override<class_TextLine_method_set_bidi_override>`\ (\ override\: :ref:`Array<class_Array>`\ )                                                                                                                                                                                      |
+   +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                        | :ref:`tab_align<class_TextLine_method_tab_align>`\ (\ tab_stops\: :ref:`PackedFloat32Array<class_PackedFloat32Array>`\ )                                                                                                                                                                           |
+   +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -112,8 +112,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_horizontal_alignment** **(** :ref:`HorizontalAlignment<enum_@GlobalScope_HorizontalAlignment>` value **)**
-- :ref:`HorizontalAlignment<enum_@GlobalScope_HorizontalAlignment>` **get_horizontal_alignment** **(** **)**
+- |void| **set_horizontal_alignment**\ (\ value\: :ref:`HorizontalAlignment<enum_@GlobalScope_HorizontalAlignment>`\ )
+- :ref:`HorizontalAlignment<enum_@GlobalScope_HorizontalAlignment>` **get_horizontal_alignment**\ (\ )
 
 Sets text alignment within the line as if the line was horizontal.
 
@@ -129,8 +129,8 @@ Sets text alignment within the line as if the line was horizontal.
 
 .. rst-class:: classref-property-setget
 
-- void **set_direction** **(** :ref:`Direction<enum_TextServer_Direction>` value **)**
-- :ref:`Direction<enum_TextServer_Direction>` **get_direction** **(** **)**
+- |void| **set_direction**\ (\ value\: :ref:`Direction<enum_TextServer_Direction>`\ )
+- :ref:`Direction<enum_TextServer_Direction>` **get_direction**\ (\ )
 
 Text writing direction.
 
@@ -146,8 +146,8 @@ Text writing direction.
 
 .. rst-class:: classref-property-setget
 
-- void **set_ellipsis_char** **(** :ref:`String<class_String>` value **)**
-- :ref:`String<class_String>` **get_ellipsis_char** **(** **)**
+- |void| **set_ellipsis_char**\ (\ value\: :ref:`String<class_String>`\ )
+- :ref:`String<class_String>` **get_ellipsis_char**\ (\ )
 
 Ellipsis character used for text clipping.
 
@@ -159,12 +159,12 @@ Ellipsis character used for text clipping.
 
 .. rst-class:: classref-property
 
-|bitfield|\<:ref:`JustificationFlag<enum_TextServer_JustificationFlag>`\> **flags** = ``3``
+|bitfield|\[:ref:`JustificationFlag<enum_TextServer_JustificationFlag>`\] **flags** = ``3``
 
 .. rst-class:: classref-property-setget
 
-- void **set_flags** **(** |bitfield|\<:ref:`JustificationFlag<enum_TextServer_JustificationFlag>`\> value **)**
-- |bitfield|\<:ref:`JustificationFlag<enum_TextServer_JustificationFlag>`\> **get_flags** **(** **)**
+- |void| **set_flags**\ (\ value\: |bitfield|\[:ref:`JustificationFlag<enum_TextServer_JustificationFlag>`\]\ )
+- |bitfield|\[:ref:`JustificationFlag<enum_TextServer_JustificationFlag>`\] **get_flags**\ (\ )
 
 Line alignment rules. For more info see :ref:`TextServer<class_TextServer>`.
 
@@ -180,8 +180,8 @@ Line alignment rules. For more info see :ref:`TextServer<class_TextServer>`.
 
 .. rst-class:: classref-property-setget
 
-- void **set_orientation** **(** :ref:`Orientation<enum_TextServer_Orientation>` value **)**
-- :ref:`Orientation<enum_TextServer_Orientation>` **get_orientation** **(** **)**
+- |void| **set_orientation**\ (\ value\: :ref:`Orientation<enum_TextServer_Orientation>`\ )
+- :ref:`Orientation<enum_TextServer_Orientation>` **get_orientation**\ (\ )
 
 Text orientation.
 
@@ -197,8 +197,8 @@ Text orientation.
 
 .. rst-class:: classref-property-setget
 
-- void **set_preserve_control** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **get_preserve_control** **(** **)**
+- |void| **set_preserve_control**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_preserve_control**\ (\ )
 
 If set to ``true`` text will display control characters.
 
@@ -214,8 +214,8 @@ If set to ``true`` text will display control characters.
 
 .. rst-class:: classref-property-setget
 
-- void **set_preserve_invalid** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **get_preserve_invalid** **(** **)**
+- |void| **set_preserve_invalid**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_preserve_invalid**\ (\ )
 
 If set to ``true`` text will display invalid characters.
 
@@ -231,8 +231,8 @@ If set to ``true`` text will display invalid characters.
 
 .. rst-class:: classref-property-setget
 
-- void **set_text_overrun_behavior** **(** :ref:`OverrunBehavior<enum_TextServer_OverrunBehavior>` value **)**
-- :ref:`OverrunBehavior<enum_TextServer_OverrunBehavior>` **get_text_overrun_behavior** **(** **)**
+- |void| **set_text_overrun_behavior**\ (\ value\: :ref:`OverrunBehavior<enum_TextServer_OverrunBehavior>`\ )
+- :ref:`OverrunBehavior<enum_TextServer_OverrunBehavior>` **get_text_overrun_behavior**\ (\ )
 
 Sets the clipping behavior when the text exceeds the text line's set width. See :ref:`OverrunBehavior<enum_TextServer_OverrunBehavior>` for a description of all modes.
 
@@ -248,8 +248,8 @@ Sets the clipping behavior when the text exceeds the text line's set width. See 
 
 .. rst-class:: classref-property-setget
 
-- void **set_width** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_width** **(** **)**
+- |void| **set_width**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_width**\ (\ )
 
 Text line width.
 
@@ -266,7 +266,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **add_object** **(** :ref:`Variant<class_Variant>` key, :ref:`Vector2<class_Vector2>` size, :ref:`InlineAlignment<enum_@GlobalScope_InlineAlignment>` inline_align=5, :ref:`int<class_int>` length=1, :ref:`float<class_float>` baseline=0.0 **)**
+:ref:`bool<class_bool>` **add_object**\ (\ key\: :ref:`Variant<class_Variant>`, size\: :ref:`Vector2<class_Vector2>`, inline_align\: :ref:`InlineAlignment<enum_@GlobalScope_InlineAlignment>` = 5, length\: :ref:`int<class_int>` = 1, baseline\: :ref:`float<class_float>` = 0.0\ )
 
 Adds inline object to the text buffer, ``key`` must be unique. In the text, object is represented as ``length`` object replacement characters.
 
@@ -278,7 +278,7 @@ Adds inline object to the text buffer, ``key`` must be unique. In the text, obje
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **add_string** **(** :ref:`String<class_String>` text, :ref:`Font<class_Font>` font, :ref:`int<class_int>` font_size, :ref:`String<class_String>` language="", :ref:`Variant<class_Variant>` meta=null **)**
+:ref:`bool<class_bool>` **add_string**\ (\ text\: :ref:`String<class_String>`, font\: :ref:`Font<class_Font>`, font_size\: :ref:`int<class_int>`, language\: :ref:`String<class_String>` = "", meta\: :ref:`Variant<class_Variant>` = null\ )
 
 Adds text span and font to draw it.
 
@@ -290,7 +290,7 @@ Adds text span and font to draw it.
 
 .. rst-class:: classref-method
 
-void **clear** **(** **)**
+|void| **clear**\ (\ )
 
 Clears text line (removes text and inline objects).
 
@@ -302,7 +302,7 @@ Clears text line (removes text and inline objects).
 
 .. rst-class:: classref-method
 
-void **draw** **(** :ref:`RID<class_RID>` canvas, :ref:`Vector2<class_Vector2>` pos, :ref:`Color<class_Color>` color=Color(1, 1, 1, 1) **)** |const|
+|void| **draw**\ (\ canvas\: :ref:`RID<class_RID>`, pos\: :ref:`Vector2<class_Vector2>`, color\: :ref:`Color<class_Color>` = Color(1, 1, 1, 1)\ ) |const|
 
 Draw text into a canvas item at a given position, with ``color``. ``pos`` specifies the top left corner of the bounding box.
 
@@ -314,7 +314,7 @@ Draw text into a canvas item at a given position, with ``color``. ``pos`` specif
 
 .. rst-class:: classref-method
 
-void **draw_outline** **(** :ref:`RID<class_RID>` canvas, :ref:`Vector2<class_Vector2>` pos, :ref:`int<class_int>` outline_size=1, :ref:`Color<class_Color>` color=Color(1, 1, 1, 1) **)** |const|
+|void| **draw_outline**\ (\ canvas\: :ref:`RID<class_RID>`, pos\: :ref:`Vector2<class_Vector2>`, outline_size\: :ref:`int<class_int>` = 1, color\: :ref:`Color<class_Color>` = Color(1, 1, 1, 1)\ ) |const|
 
 Draw text into a canvas item at a given position, with ``color``. ``pos`` specifies the top left corner of the bounding box.
 
@@ -326,7 +326,7 @@ Draw text into a canvas item at a given position, with ``color``. ``pos`` specif
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **get_line_ascent** **(** **)** |const|
+:ref:`float<class_float>` **get_line_ascent**\ (\ ) |const|
 
 Returns the text ascent (number of pixels above the baseline for horizontal layout or to the left of baseline for vertical).
 
@@ -338,7 +338,7 @@ Returns the text ascent (number of pixels above the baseline for horizontal layo
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **get_line_descent** **(** **)** |const|
+:ref:`float<class_float>` **get_line_descent**\ (\ ) |const|
 
 Returns the text descent (number of pixels below the baseline for horizontal layout or to the right of baseline for vertical).
 
@@ -350,7 +350,7 @@ Returns the text descent (number of pixels below the baseline for horizontal lay
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **get_line_underline_position** **(** **)** |const|
+:ref:`float<class_float>` **get_line_underline_position**\ (\ ) |const|
 
 Returns pixel offset of the underline below the baseline.
 
@@ -362,7 +362,7 @@ Returns pixel offset of the underline below the baseline.
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **get_line_underline_thickness** **(** **)** |const|
+:ref:`float<class_float>` **get_line_underline_thickness**\ (\ ) |const|
 
 Returns thickness of the underline.
 
@@ -374,7 +374,7 @@ Returns thickness of the underline.
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **get_line_width** **(** **)** |const|
+:ref:`float<class_float>` **get_line_width**\ (\ ) |const|
 
 Returns width (for horizontal layout) or height (for vertical) of the text.
 
@@ -386,7 +386,7 @@ Returns width (for horizontal layout) or height (for vertical) of the text.
 
 .. rst-class:: classref-method
 
-:ref:`Rect2<class_Rect2>` **get_object_rect** **(** :ref:`Variant<class_Variant>` key **)** |const|
+:ref:`Rect2<class_Rect2>` **get_object_rect**\ (\ key\: :ref:`Variant<class_Variant>`\ ) |const|
 
 Returns bounding rectangle of the inline object.
 
@@ -398,7 +398,7 @@ Returns bounding rectangle of the inline object.
 
 .. rst-class:: classref-method
 
-:ref:`Array<class_Array>` **get_objects** **(** **)** |const|
+:ref:`Array<class_Array>` **get_objects**\ (\ ) |const|
 
 Returns array of inline objects.
 
@@ -410,7 +410,7 @@ Returns array of inline objects.
 
 .. rst-class:: classref-method
 
-:ref:`RID<class_RID>` **get_rid** **(** **)** |const|
+:ref:`RID<class_RID>` **get_rid**\ (\ ) |const|
 
 Returns TextServer buffer RID.
 
@@ -422,7 +422,7 @@ Returns TextServer buffer RID.
 
 .. rst-class:: classref-method
 
-:ref:`Vector2<class_Vector2>` **get_size** **(** **)** |const|
+:ref:`Vector2<class_Vector2>` **get_size**\ (\ ) |const|
 
 Returns size of the bounding box of the text.
 
@@ -434,7 +434,7 @@ Returns size of the bounding box of the text.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **hit_test** **(** :ref:`float<class_float>` coords **)** |const|
+:ref:`int<class_int>` **hit_test**\ (\ coords\: :ref:`float<class_float>`\ ) |const|
 
 Returns caret character offset at the specified pixel offset at the baseline. This function always returns a valid position.
 
@@ -446,7 +446,7 @@ Returns caret character offset at the specified pixel offset at the baseline. Th
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **resize_object** **(** :ref:`Variant<class_Variant>` key, :ref:`Vector2<class_Vector2>` size, :ref:`InlineAlignment<enum_@GlobalScope_InlineAlignment>` inline_align=5, :ref:`float<class_float>` baseline=0.0 **)**
+:ref:`bool<class_bool>` **resize_object**\ (\ key\: :ref:`Variant<class_Variant>`, size\: :ref:`Vector2<class_Vector2>`, inline_align\: :ref:`InlineAlignment<enum_@GlobalScope_InlineAlignment>` = 5, baseline\: :ref:`float<class_float>` = 0.0\ )
 
 Sets new size and alignment of embedded object.
 
@@ -458,7 +458,7 @@ Sets new size and alignment of embedded object.
 
 .. rst-class:: classref-method
 
-void **set_bidi_override** **(** :ref:`Array<class_Array>` override **)**
+|void| **set_bidi_override**\ (\ override\: :ref:`Array<class_Array>`\ )
 
 Overrides BiDi for the structured text.
 
@@ -472,7 +472,7 @@ Override ranges should cover full source text without overlaps. BiDi algorithm w
 
 .. rst-class:: classref-method
 
-void **tab_align** **(** :ref:`PackedFloat32Array<class_PackedFloat32Array>` tab_stops **)**
+|void| **tab_align**\ (\ tab_stops\: :ref:`PackedFloat32Array<class_PackedFloat32Array>`\ )
 
 Aligns text to the given tab-stops.
 
@@ -483,3 +483,4 @@ Aligns text to the given tab-stops.
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

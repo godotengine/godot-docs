@@ -93,9 +93,9 @@ Methods
 .. table::
    :widths: auto
 
-   +------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void | :ref:`set_spacing<class_FontVariation_method_set_spacing>` **(** :ref:`SpacingType<enum_TextServer_SpacingType>` spacing, :ref:`int<class_int>` value **)** |
-   +------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +--------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void| | :ref:`set_spacing<class_FontVariation_method_set_spacing>`\ (\ spacing\: :ref:`SpacingType<enum_TextServer_SpacingType>`, value\: :ref:`int<class_int>`\ ) |
+   +--------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -114,8 +114,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_base_font** **(** :ref:`Font<class_Font>` value **)**
-- :ref:`Font<class_Font>` **get_base_font** **(** **)**
+- |void| **set_base_font**\ (\ value\: :ref:`Font<class_Font>`\ )
+- :ref:`Font<class_Font>` **get_base_font**\ (\ )
 
 Base font used to create a variation. If not set, default :ref:`Theme<class_Theme>` font is used.
 
@@ -131,8 +131,8 @@ Base font used to create a variation. If not set, default :ref:`Theme<class_Them
 
 .. rst-class:: classref-property-setget
 
-- void **set_baseline_offset** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_baseline_offset** **(** **)**
+- |void| **set_baseline_offset**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_baseline_offset**\ (\ )
 
 Extra baseline offset (as a fraction of font height).
 
@@ -148,8 +148,8 @@ Extra baseline offset (as a fraction of font height).
 
 .. rst-class:: classref-property-setget
 
-- void **set_opentype_features** **(** :ref:`Dictionary<class_Dictionary>` value **)**
-- :ref:`Dictionary<class_Dictionary>` **get_opentype_features** **(** **)**
+- |void| **set_opentype_features**\ (\ value\: :ref:`Dictionary<class_Dictionary>`\ )
+- :ref:`Dictionary<class_Dictionary>` **get_opentype_features**\ (\ )
 
 A set of OpenType feature tags. More info: `OpenType feature tags <https://docs.microsoft.com/en-us/typography/opentype/spec/featuretags>`__.
 
@@ -165,8 +165,8 @@ A set of OpenType feature tags. More info: `OpenType feature tags <https://docs.
 
 .. rst-class:: classref-property-setget
 
-- void **set_spacing** **(** :ref:`SpacingType<enum_TextServer_SpacingType>` spacing, :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_spacing** **(** **)**
+- |void| **set_spacing**\ (\ spacing\: :ref:`SpacingType<enum_TextServer_SpacingType>`, value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_spacing**\ (\ )
 
 Extra spacing at the bottom of the line in pixels.
 
@@ -182,8 +182,8 @@ Extra spacing at the bottom of the line in pixels.
 
 .. rst-class:: classref-property-setget
 
-- void **set_spacing** **(** :ref:`SpacingType<enum_TextServer_SpacingType>` spacing, :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_spacing** **(** **)**
+- |void| **set_spacing**\ (\ spacing\: :ref:`SpacingType<enum_TextServer_SpacingType>`, value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_spacing**\ (\ )
 
 Extra spacing between graphical glyphs.
 
@@ -199,8 +199,8 @@ Extra spacing between graphical glyphs.
 
 .. rst-class:: classref-property-setget
 
-- void **set_spacing** **(** :ref:`SpacingType<enum_TextServer_SpacingType>` spacing, :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_spacing** **(** **)**
+- |void| **set_spacing**\ (\ spacing\: :ref:`SpacingType<enum_TextServer_SpacingType>`, value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_spacing**\ (\ )
 
 Extra width of the space glyphs.
 
@@ -216,8 +216,8 @@ Extra width of the space glyphs.
 
 .. rst-class:: classref-property-setget
 
-- void **set_spacing** **(** :ref:`SpacingType<enum_TextServer_SpacingType>` spacing, :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_spacing** **(** **)**
+- |void| **set_spacing**\ (\ spacing\: :ref:`SpacingType<enum_TextServer_SpacingType>`, value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_spacing**\ (\ )
 
 Extra spacing at the top of the line in pixels.
 
@@ -233,8 +233,8 @@ Extra spacing at the top of the line in pixels.
 
 .. rst-class:: classref-property-setget
 
-- void **set_variation_embolden** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_variation_embolden** **(** **)**
+- |void| **set_variation_embolden**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_variation_embolden**\ (\ )
 
 If is not equal to zero, emboldens the font outlines. Negative values reduce the outline thickness.
 
@@ -252,8 +252,8 @@ If is not equal to zero, emboldens the font outlines. Negative values reduce the
 
 .. rst-class:: classref-property-setget
 
-- void **set_variation_face_index** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_variation_face_index** **(** **)**
+- |void| **set_variation_face_index**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_variation_face_index**\ (\ )
 
 Active face index in the TrueType / OpenType collection file.
 
@@ -269,8 +269,8 @@ Active face index in the TrueType / OpenType collection file.
 
 .. rst-class:: classref-property-setget
 
-- void **set_variation_opentype** **(** :ref:`Dictionary<class_Dictionary>` value **)**
-- :ref:`Dictionary<class_Dictionary>` **get_variation_opentype** **(** **)**
+- |void| **set_variation_opentype**\ (\ value\: :ref:`Dictionary<class_Dictionary>`\ )
+- :ref:`Dictionary<class_Dictionary>` **get_variation_opentype**\ (\ )
 
 Font OpenType variation coordinates. More info: `OpenType variation tags <https://docs.microsoft.com/en-us/typography/opentype/spec/dvaraxisreg>`__.
 
@@ -290,8 +290,8 @@ Font OpenType variation coordinates. More info: `OpenType variation tags <https:
 
 .. rst-class:: classref-property-setget
 
-- void **set_variation_transform** **(** :ref:`Transform2D<class_Transform2D>` value **)**
-- :ref:`Transform2D<class_Transform2D>` **get_variation_transform** **(** **)**
+- |void| **set_variation_transform**\ (\ value\: :ref:`Transform2D<class_Transform2D>`\ )
+- :ref:`Transform2D<class_Transform2D>` **get_variation_transform**\ (\ )
 
 2D transform, applied to the font outlines, can be used for slanting, flipping and rotating glyphs.
 
@@ -310,7 +310,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-void **set_spacing** **(** :ref:`SpacingType<enum_TextServer_SpacingType>` spacing, :ref:`int<class_int>` value **)**
+|void| **set_spacing**\ (\ spacing\: :ref:`SpacingType<enum_TextServer_SpacingType>`, value\: :ref:`int<class_int>`\ )
 
 Sets the spacing for ``spacing`` (see :ref:`SpacingType<enum_TextServer_SpacingType>`) to ``value`` in pixels (not relative to the font size).
 
@@ -321,3 +321,4 @@ Sets the spacing for ``spacing`` (see :ref:`SpacingType<enum_TextServer_SpacingT
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

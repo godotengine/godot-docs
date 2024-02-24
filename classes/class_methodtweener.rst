@@ -33,13 +33,13 @@ Methods
 .. table::
    :widths: auto
 
-   +-------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`MethodTweener<class_MethodTweener>` | :ref:`set_delay<class_MethodTweener_method_set_delay>` **(** :ref:`float<class_float>` delay **)**                        |
-   +-------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`MethodTweener<class_MethodTweener>` | :ref:`set_ease<class_MethodTweener_method_set_ease>` **(** :ref:`EaseType<enum_Tween_EaseType>` ease **)**                |
-   +-------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`MethodTweener<class_MethodTweener>` | :ref:`set_trans<class_MethodTweener_method_set_trans>` **(** :ref:`TransitionType<enum_Tween_TransitionType>` trans **)** |
-   +-------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
+   +-------------------------------------------+------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`MethodTweener<class_MethodTweener>` | :ref:`set_delay<class_MethodTweener_method_set_delay>`\ (\ delay\: :ref:`float<class_float>`\ )                        |
+   +-------------------------------------------+------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`MethodTweener<class_MethodTweener>` | :ref:`set_ease<class_MethodTweener_method_set_ease>`\ (\ ease\: :ref:`EaseType<enum_Tween_EaseType>`\ )                |
+   +-------------------------------------------+------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`MethodTweener<class_MethodTweener>` | :ref:`set_trans<class_MethodTweener_method_set_trans>`\ (\ trans\: :ref:`TransitionType<enum_Tween_TransitionType>`\ ) |
+   +-------------------------------------------+------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -54,7 +54,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`MethodTweener<class_MethodTweener>` **set_delay** **(** :ref:`float<class_float>` delay **)**
+:ref:`MethodTweener<class_MethodTweener>` **set_delay**\ (\ delay\: :ref:`float<class_float>`\ )
 
 Sets the time in seconds after which the **MethodTweener** will start interpolating. By default there's no delay.
 
@@ -66,7 +66,7 @@ Sets the time in seconds after which the **MethodTweener** will start interpolat
 
 .. rst-class:: classref-method
 
-:ref:`MethodTweener<class_MethodTweener>` **set_ease** **(** :ref:`EaseType<enum_Tween_EaseType>` ease **)**
+:ref:`MethodTweener<class_MethodTweener>` **set_ease**\ (\ ease\: :ref:`EaseType<enum_Tween_EaseType>`\ )
 
 Sets the type of used easing from :ref:`EaseType<enum_Tween_EaseType>`. If not set, the default easing is used from the :ref:`Tween<class_Tween>` that contains this Tweener.
 
@@ -78,7 +78,7 @@ Sets the type of used easing from :ref:`EaseType<enum_Tween_EaseType>`. If not s
 
 .. rst-class:: classref-method
 
-:ref:`MethodTweener<class_MethodTweener>` **set_trans** **(** :ref:`TransitionType<enum_Tween_TransitionType>` trans **)**
+:ref:`MethodTweener<class_MethodTweener>` **set_trans**\ (\ trans\: :ref:`TransitionType<enum_Tween_TransitionType>`\ )
 
 Sets the type of used transition from :ref:`TransitionType<enum_Tween_TransitionType>`. If not set, the default transition is used from the :ref:`Tween<class_Tween>` that contains this Tweener.
 
@@ -89,3 +89,4 @@ Sets the type of used transition from :ref:`TransitionType<enum_Tween_Transition
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

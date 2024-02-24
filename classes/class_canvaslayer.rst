@@ -76,15 +76,15 @@ Methods
 .. table::
    :widths: auto
 
-   +---------------------------------------+----------------------------------------------------------------------------------------------+
-   | :ref:`RID<class_RID>`                 | :ref:`get_canvas<class_CanvasLayer_method_get_canvas>` **(** **)** |const|                   |
-   +---------------------------------------+----------------------------------------------------------------------------------------------+
-   | :ref:`Transform2D<class_Transform2D>` | :ref:`get_final_transform<class_CanvasLayer_method_get_final_transform>` **(** **)** |const| |
-   +---------------------------------------+----------------------------------------------------------------------------------------------+
-   | void                                  | :ref:`hide<class_CanvasLayer_method_hide>` **(** **)**                                       |
-   +---------------------------------------+----------------------------------------------------------------------------------------------+
-   | void                                  | :ref:`show<class_CanvasLayer_method_show>` **(** **)**                                       |
-   +---------------------------------------+----------------------------------------------------------------------------------------------+
+   +---------------------------------------+----------------------------------------------------------------------------------------+
+   | :ref:`RID<class_RID>`                 | :ref:`get_canvas<class_CanvasLayer_method_get_canvas>`\ (\ ) |const|                   |
+   +---------------------------------------+----------------------------------------------------------------------------------------+
+   | :ref:`Transform2D<class_Transform2D>` | :ref:`get_final_transform<class_CanvasLayer_method_get_final_transform>`\ (\ ) |const| |
+   +---------------------------------------+----------------------------------------------------------------------------------------+
+   | |void|                                | :ref:`hide<class_CanvasLayer_method_hide>`\ (\ )                                       |
+   +---------------------------------------+----------------------------------------------------------------------------------------+
+   | |void|                                | :ref:`show<class_CanvasLayer_method_show>`\ (\ )                                       |
+   +---------------------------------------+----------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -99,7 +99,7 @@ Signals
 
 .. rst-class:: classref-signal
 
-**visibility_changed** **(** **)**
+**visibility_changed**\ (\ )
 
 Emitted when visibility of the layer is changed. See :ref:`visible<class_CanvasLayer_property_visible>`.
 
@@ -120,8 +120,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_custom_viewport** **(** :ref:`Node<class_Node>` value **)**
-- :ref:`Node<class_Node>` **get_custom_viewport** **(** **)**
+- |void| **set_custom_viewport**\ (\ value\: :ref:`Node<class_Node>`\ )
+- :ref:`Node<class_Node>` **get_custom_viewport**\ (\ )
 
 The custom :ref:`Viewport<class_Viewport>` node assigned to the **CanvasLayer**. If ``null``, uses the default viewport instead.
 
@@ -137,8 +137,8 @@ The custom :ref:`Viewport<class_Viewport>` node assigned to the **CanvasLayer**.
 
 .. rst-class:: classref-property-setget
 
-- void **set_follow_viewport** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_following_viewport** **(** **)**
+- |void| **set_follow_viewport**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_following_viewport**\ (\ )
 
 If enabled, the **CanvasLayer** will use the viewport's transform, so it will move when camera moves instead of being anchored in a fixed position on the screen.
 
@@ -156,8 +156,8 @@ Together with :ref:`follow_viewport_scale<class_CanvasLayer_property_follow_view
 
 .. rst-class:: classref-property-setget
 
-- void **set_follow_viewport_scale** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_follow_viewport_scale** **(** **)**
+- |void| **set_follow_viewport_scale**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_follow_viewport_scale**\ (\ )
 
 Scales the layer when using :ref:`follow_viewport_enabled<class_CanvasLayer_property_follow_viewport_enabled>`. Layers moving into the foreground should have increasing scales, while layers moving into the background should have decreasing scales.
 
@@ -173,8 +173,8 @@ Scales the layer when using :ref:`follow_viewport_enabled<class_CanvasLayer_prop
 
 .. rst-class:: classref-property-setget
 
-- void **set_layer** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_layer** **(** **)**
+- |void| **set_layer**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_layer**\ (\ )
 
 Layer index for draw order. Lower values are drawn behind higher values.
 
@@ -192,8 +192,8 @@ Layer index for draw order. Lower values are drawn behind higher values.
 
 .. rst-class:: classref-property-setget
 
-- void **set_offset** **(** :ref:`Vector2<class_Vector2>` value **)**
-- :ref:`Vector2<class_Vector2>` **get_offset** **(** **)**
+- |void| **set_offset**\ (\ value\: :ref:`Vector2<class_Vector2>`\ )
+- :ref:`Vector2<class_Vector2>` **get_offset**\ (\ )
 
 The layer's base offset.
 
@@ -209,8 +209,8 @@ The layer's base offset.
 
 .. rst-class:: classref-property-setget
 
-- void **set_rotation** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_rotation** **(** **)**
+- |void| **set_rotation**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_rotation**\ (\ )
 
 The layer's rotation in radians.
 
@@ -226,8 +226,8 @@ The layer's rotation in radians.
 
 .. rst-class:: classref-property-setget
 
-- void **set_scale** **(** :ref:`Vector2<class_Vector2>` value **)**
-- :ref:`Vector2<class_Vector2>` **get_scale** **(** **)**
+- |void| **set_scale**\ (\ value\: :ref:`Vector2<class_Vector2>`\ )
+- :ref:`Vector2<class_Vector2>` **get_scale**\ (\ )
 
 The layer's scale.
 
@@ -243,8 +243,8 @@ The layer's scale.
 
 .. rst-class:: classref-property-setget
 
-- void **set_transform** **(** :ref:`Transform2D<class_Transform2D>` value **)**
-- :ref:`Transform2D<class_Transform2D>` **get_transform** **(** **)**
+- |void| **set_transform**\ (\ value\: :ref:`Transform2D<class_Transform2D>`\ )
+- :ref:`Transform2D<class_Transform2D>` **get_transform**\ (\ )
 
 The layer's transform.
 
@@ -260,8 +260,8 @@ The layer's transform.
 
 .. rst-class:: classref-property-setget
 
-- void **set_visible** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_visible** **(** **)**
+- |void| **set_visible**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_visible**\ (\ )
 
 If ``false``, any :ref:`CanvasItem<class_CanvasItem>` under this **CanvasLayer** will be hidden.
 
@@ -280,7 +280,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`RID<class_RID>` **get_canvas** **(** **)** |const|
+:ref:`RID<class_RID>` **get_canvas**\ (\ ) |const|
 
 Returns the RID of the canvas used by this layer.
 
@@ -292,7 +292,7 @@ Returns the RID of the canvas used by this layer.
 
 .. rst-class:: classref-method
 
-:ref:`Transform2D<class_Transform2D>` **get_final_transform** **(** **)** |const|
+:ref:`Transform2D<class_Transform2D>` **get_final_transform**\ (\ ) |const|
 
 Returns the transform from the **CanvasLayer**\ s coordinate system to the :ref:`Viewport<class_Viewport>`\ s coordinate system.
 
@@ -304,7 +304,7 @@ Returns the transform from the **CanvasLayer**\ s coordinate system to the :ref:
 
 .. rst-class:: classref-method
 
-void **hide** **(** **)**
+|void| **hide**\ (\ )
 
 Hides any :ref:`CanvasItem<class_CanvasItem>` under this **CanvasLayer**. This is equivalent to setting :ref:`visible<class_CanvasLayer_property_visible>` to ``false``.
 
@@ -316,7 +316,7 @@ Hides any :ref:`CanvasItem<class_CanvasItem>` under this **CanvasLayer**. This i
 
 .. rst-class:: classref-method
 
-void **show** **(** **)**
+|void| **show**\ (\ )
 
 Shows any :ref:`CanvasItem<class_CanvasItem>` under this **CanvasLayer**. This is equivalent to setting :ref:`visible<class_CanvasLayer_property_visible>` to ``true``.
 
@@ -327,3 +327,4 @@ Shows any :ref:`CanvasItem<class_CanvasItem>` under this **CanvasLayer**. This i
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

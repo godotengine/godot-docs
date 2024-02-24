@@ -53,23 +53,23 @@ Methods
 .. table::
    :widths: auto
 
-   +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`NodePath<class_NodePath>` | :ref:`get_fabrik_joint_bone2d_node<class_SkeletonModification2DFABRIK_method_get_fabrik_joint_bone2d_node>` **(** :ref:`int<class_int>` joint_idx **)** |const|                                                      |
-   +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`           | :ref:`get_fabrik_joint_bone_index<class_SkeletonModification2DFABRIK_method_get_fabrik_joint_bone_index>` **(** :ref:`int<class_int>` joint_idx **)** |const|                                                        |
-   +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Vector2<class_Vector2>`   | :ref:`get_fabrik_joint_magnet_position<class_SkeletonModification2DFABRIK_method_get_fabrik_joint_magnet_position>` **(** :ref:`int<class_int>` joint_idx **)** |const|                                              |
-   +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`         | :ref:`get_fabrik_joint_use_target_rotation<class_SkeletonModification2DFABRIK_method_get_fabrik_joint_use_target_rotation>` **(** :ref:`int<class_int>` joint_idx **)** |const|                                      |
-   +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                            | :ref:`set_fabrik_joint_bone2d_node<class_SkeletonModification2DFABRIK_method_set_fabrik_joint_bone2d_node>` **(** :ref:`int<class_int>` joint_idx, :ref:`NodePath<class_NodePath>` bone2d_nodepath **)**             |
-   +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                            | :ref:`set_fabrik_joint_bone_index<class_SkeletonModification2DFABRIK_method_set_fabrik_joint_bone_index>` **(** :ref:`int<class_int>` joint_idx, :ref:`int<class_int>` bone_idx **)**                                |
-   +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                            | :ref:`set_fabrik_joint_magnet_position<class_SkeletonModification2DFABRIK_method_set_fabrik_joint_magnet_position>` **(** :ref:`int<class_int>` joint_idx, :ref:`Vector2<class_Vector2>` magnet_position **)**       |
-   +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                            | :ref:`set_fabrik_joint_use_target_rotation<class_SkeletonModification2DFABRIK_method_set_fabrik_joint_use_target_rotation>` **(** :ref:`int<class_int>` joint_idx, :ref:`bool<class_bool>` use_target_rotation **)** |
-   +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +---------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`NodePath<class_NodePath>` | :ref:`get_fabrik_joint_bone2d_node<class_SkeletonModification2DFABRIK_method_get_fabrik_joint_bone2d_node>`\ (\ joint_idx\: :ref:`int<class_int>`\ ) |const|                                                        |
+   +---------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`           | :ref:`get_fabrik_joint_bone_index<class_SkeletonModification2DFABRIK_method_get_fabrik_joint_bone_index>`\ (\ joint_idx\: :ref:`int<class_int>`\ ) |const|                                                          |
+   +---------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector2<class_Vector2>`   | :ref:`get_fabrik_joint_magnet_position<class_SkeletonModification2DFABRIK_method_get_fabrik_joint_magnet_position>`\ (\ joint_idx\: :ref:`int<class_int>`\ ) |const|                                                |
+   +---------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`         | :ref:`get_fabrik_joint_use_target_rotation<class_SkeletonModification2DFABRIK_method_get_fabrik_joint_use_target_rotation>`\ (\ joint_idx\: :ref:`int<class_int>`\ ) |const|                                        |
+   +---------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                          | :ref:`set_fabrik_joint_bone2d_node<class_SkeletonModification2DFABRIK_method_set_fabrik_joint_bone2d_node>`\ (\ joint_idx\: :ref:`int<class_int>`, bone2d_nodepath\: :ref:`NodePath<class_NodePath>`\ )             |
+   +---------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                          | :ref:`set_fabrik_joint_bone_index<class_SkeletonModification2DFABRIK_method_set_fabrik_joint_bone_index>`\ (\ joint_idx\: :ref:`int<class_int>`, bone_idx\: :ref:`int<class_int>`\ )                                |
+   +---------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                          | :ref:`set_fabrik_joint_magnet_position<class_SkeletonModification2DFABRIK_method_set_fabrik_joint_magnet_position>`\ (\ joint_idx\: :ref:`int<class_int>`, magnet_position\: :ref:`Vector2<class_Vector2>`\ )       |
+   +---------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                          | :ref:`set_fabrik_joint_use_target_rotation<class_SkeletonModification2DFABRIK_method_set_fabrik_joint_use_target_rotation>`\ (\ joint_idx\: :ref:`int<class_int>`, use_target_rotation\: :ref:`bool<class_bool>`\ ) |
+   +---------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -88,8 +88,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_fabrik_data_chain_length** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_fabrik_data_chain_length** **(** **)**
+- |void| **set_fabrik_data_chain_length**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_fabrik_data_chain_length**\ (\ )
 
 The number of FABRIK joints in the FABRIK modification.
 
@@ -105,8 +105,8 @@ The number of FABRIK joints in the FABRIK modification.
 
 .. rst-class:: classref-property-setget
 
-- void **set_target_node** **(** :ref:`NodePath<class_NodePath>` value **)**
-- :ref:`NodePath<class_NodePath>` **get_target_node** **(** **)**
+- |void| **set_target_node**\ (\ value\: :ref:`NodePath<class_NodePath>`\ )
+- :ref:`NodePath<class_NodePath>` **get_target_node**\ (\ )
 
 The NodePath to the node that is the target for the FABRIK modification. This node is what the FABRIK chain will attempt to rotate the bone chain to.
 
@@ -123,7 +123,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`NodePath<class_NodePath>` **get_fabrik_joint_bone2d_node** **(** :ref:`int<class_int>` joint_idx **)** |const|
+:ref:`NodePath<class_NodePath>` **get_fabrik_joint_bone2d_node**\ (\ joint_idx\: :ref:`int<class_int>`\ ) |const|
 
 Returns the :ref:`Bone2D<class_Bone2D>` node assigned to the FABRIK joint at ``joint_idx``.
 
@@ -135,7 +135,7 @@ Returns the :ref:`Bone2D<class_Bone2D>` node assigned to the FABRIK joint at ``j
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_fabrik_joint_bone_index** **(** :ref:`int<class_int>` joint_idx **)** |const|
+:ref:`int<class_int>` **get_fabrik_joint_bone_index**\ (\ joint_idx\: :ref:`int<class_int>`\ ) |const|
 
 Returns the index of the :ref:`Bone2D<class_Bone2D>` node assigned to the FABRIK joint at ``joint_idx``.
 
@@ -147,7 +147,7 @@ Returns the index of the :ref:`Bone2D<class_Bone2D>` node assigned to the FABRIK
 
 .. rst-class:: classref-method
 
-:ref:`Vector2<class_Vector2>` **get_fabrik_joint_magnet_position** **(** :ref:`int<class_int>` joint_idx **)** |const|
+:ref:`Vector2<class_Vector2>` **get_fabrik_joint_magnet_position**\ (\ joint_idx\: :ref:`int<class_int>`\ ) |const|
 
 Returns the magnet position vector for the joint at ``joint_idx``.
 
@@ -159,7 +159,7 @@ Returns the magnet position vector for the joint at ``joint_idx``.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **get_fabrik_joint_use_target_rotation** **(** :ref:`int<class_int>` joint_idx **)** |const|
+:ref:`bool<class_bool>` **get_fabrik_joint_use_target_rotation**\ (\ joint_idx\: :ref:`int<class_int>`\ ) |const|
 
 Returns whether the joint is using the target's rotation rather than allowing FABRIK to rotate the joint. This option only applies to the tip/final joint in the chain.
 
@@ -171,7 +171,7 @@ Returns whether the joint is using the target's rotation rather than allowing FA
 
 .. rst-class:: classref-method
 
-void **set_fabrik_joint_bone2d_node** **(** :ref:`int<class_int>` joint_idx, :ref:`NodePath<class_NodePath>` bone2d_nodepath **)**
+|void| **set_fabrik_joint_bone2d_node**\ (\ joint_idx\: :ref:`int<class_int>`, bone2d_nodepath\: :ref:`NodePath<class_NodePath>`\ )
 
 Sets the :ref:`Bone2D<class_Bone2D>` node assigned to the FABRIK joint at ``joint_idx``.
 
@@ -183,7 +183,7 @@ Sets the :ref:`Bone2D<class_Bone2D>` node assigned to the FABRIK joint at ``join
 
 .. rst-class:: classref-method
 
-void **set_fabrik_joint_bone_index** **(** :ref:`int<class_int>` joint_idx, :ref:`int<class_int>` bone_idx **)**
+|void| **set_fabrik_joint_bone_index**\ (\ joint_idx\: :ref:`int<class_int>`, bone_idx\: :ref:`int<class_int>`\ )
 
 Sets the bone index, ``bone_idx``, of the FABRIK joint at ``joint_idx``. When possible, this will also update the ``bone2d_node`` of the FABRIK joint based on data provided by the linked skeleton.
 
@@ -195,7 +195,7 @@ Sets the bone index, ``bone_idx``, of the FABRIK joint at ``joint_idx``. When po
 
 .. rst-class:: classref-method
 
-void **set_fabrik_joint_magnet_position** **(** :ref:`int<class_int>` joint_idx, :ref:`Vector2<class_Vector2>` magnet_position **)**
+|void| **set_fabrik_joint_magnet_position**\ (\ joint_idx\: :ref:`int<class_int>`, magnet_position\: :ref:`Vector2<class_Vector2>`\ )
 
 Sets the magnet position vector for the joint at ``joint_idx``.
 
@@ -207,7 +207,7 @@ Sets the magnet position vector for the joint at ``joint_idx``.
 
 .. rst-class:: classref-method
 
-void **set_fabrik_joint_use_target_rotation** **(** :ref:`int<class_int>` joint_idx, :ref:`bool<class_bool>` use_target_rotation **)**
+|void| **set_fabrik_joint_use_target_rotation**\ (\ joint_idx\: :ref:`int<class_int>`, use_target_rotation\: :ref:`bool<class_bool>`\ )
 
 Sets whether the joint at ``joint_idx`` will use the target node's rotation rather than letting FABRIK rotate the node.
 
@@ -220,3 +220,4 @@ Sets whether the joint at ``joint_idx`` will use the target node's rotation rath
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

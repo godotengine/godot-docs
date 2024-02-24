@@ -53,17 +53,17 @@ Methods
 .. table::
    :widths: auto
 
-   +-------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Error<enum_@GlobalScope_Error>`     | :ref:`create_client<class_WebSocketMultiplayerPeer_method_create_client>` **(** :ref:`String<class_String>` url, :ref:`TLSOptions<class_TLSOptions>` tls_client_options=null **)**                                          |
-   +-------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Error<enum_@GlobalScope_Error>`     | :ref:`create_server<class_WebSocketMultiplayerPeer_method_create_server>` **(** :ref:`int<class_int>` port, :ref:`String<class_String>` bind_address="*", :ref:`TLSOptions<class_TLSOptions>` tls_server_options=null **)** |
-   +-------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`WebSocketPeer<class_WebSocketPeer>` | :ref:`get_peer<class_WebSocketMultiplayerPeer_method_get_peer>` **(** :ref:`int<class_int>` peer_id **)** |const|                                                                                                           |
-   +-------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`String<class_String>`               | :ref:`get_peer_address<class_WebSocketMultiplayerPeer_method_get_peer_address>` **(** :ref:`int<class_int>` id **)** |const|                                                                                                |
-   +-------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                     | :ref:`get_peer_port<class_WebSocketMultiplayerPeer_method_get_peer_port>` **(** :ref:`int<class_int>` id **)** |const|                                                                                                      |
-   +-------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +-------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>`     | :ref:`create_client<class_WebSocketMultiplayerPeer_method_create_client>`\ (\ url\: :ref:`String<class_String>`, tls_client_options\: :ref:`TLSOptions<class_TLSOptions>` = null\ )                                              |
+   +-------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>`     | :ref:`create_server<class_WebSocketMultiplayerPeer_method_create_server>`\ (\ port\: :ref:`int<class_int>`, bind_address\: :ref:`String<class_String>` = "*", tls_server_options\: :ref:`TLSOptions<class_TLSOptions>` = null\ ) |
+   +-------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`WebSocketPeer<class_WebSocketPeer>` | :ref:`get_peer<class_WebSocketMultiplayerPeer_method_get_peer>`\ (\ peer_id\: :ref:`int<class_int>`\ ) |const|                                                                                                                   |
+   +-------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`               | :ref:`get_peer_address<class_WebSocketMultiplayerPeer_method_get_peer_address>`\ (\ id\: :ref:`int<class_int>`\ ) |const|                                                                                                        |
+   +-------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                     | :ref:`get_peer_port<class_WebSocketMultiplayerPeer_method_get_peer_port>`\ (\ id\: :ref:`int<class_int>`\ ) |const|                                                                                                              |
+   +-------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -82,8 +82,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_handshake_headers** **(** :ref:`PackedStringArray<class_PackedStringArray>` value **)**
-- :ref:`PackedStringArray<class_PackedStringArray>` **get_handshake_headers** **(** **)**
+- |void| **set_handshake_headers**\ (\ value\: :ref:`PackedStringArray<class_PackedStringArray>`\ )
+- :ref:`PackedStringArray<class_PackedStringArray>` **get_handshake_headers**\ (\ )
 
 The extra headers to use during handshake. See :ref:`WebSocketPeer.handshake_headers<class_WebSocketPeer_property_handshake_headers>` for more details.
 
@@ -99,8 +99,8 @@ The extra headers to use during handshake. See :ref:`WebSocketPeer.handshake_hea
 
 .. rst-class:: classref-property-setget
 
-- void **set_handshake_timeout** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_handshake_timeout** **(** **)**
+- |void| **set_handshake_timeout**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_handshake_timeout**\ (\ )
 
 The maximum time each peer can stay in a connecting state before being dropped.
 
@@ -116,8 +116,8 @@ The maximum time each peer can stay in a connecting state before being dropped.
 
 .. rst-class:: classref-property-setget
 
-- void **set_inbound_buffer_size** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_inbound_buffer_size** **(** **)**
+- |void| **set_inbound_buffer_size**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_inbound_buffer_size**\ (\ )
 
 The inbound buffer size for connected peers. See :ref:`WebSocketPeer.inbound_buffer_size<class_WebSocketPeer_property_inbound_buffer_size>` for more details.
 
@@ -133,8 +133,8 @@ The inbound buffer size for connected peers. See :ref:`WebSocketPeer.inbound_buf
 
 .. rst-class:: classref-property-setget
 
-- void **set_max_queued_packets** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_max_queued_packets** **(** **)**
+- |void| **set_max_queued_packets**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_max_queued_packets**\ (\ )
 
 The maximum number of queued packets for connected peers. See :ref:`WebSocketPeer.max_queued_packets<class_WebSocketPeer_property_max_queued_packets>` for more details.
 
@@ -150,8 +150,8 @@ The maximum number of queued packets for connected peers. See :ref:`WebSocketPee
 
 .. rst-class:: classref-property-setget
 
-- void **set_outbound_buffer_size** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_outbound_buffer_size** **(** **)**
+- |void| **set_outbound_buffer_size**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_outbound_buffer_size**\ (\ )
 
 The outbound buffer size for connected peers. See :ref:`WebSocketPeer.outbound_buffer_size<class_WebSocketPeer_property_outbound_buffer_size>` for more details.
 
@@ -167,8 +167,8 @@ The outbound buffer size for connected peers. See :ref:`WebSocketPeer.outbound_b
 
 .. rst-class:: classref-property-setget
 
-- void **set_supported_protocols** **(** :ref:`PackedStringArray<class_PackedStringArray>` value **)**
-- :ref:`PackedStringArray<class_PackedStringArray>` **get_supported_protocols** **(** **)**
+- |void| **set_supported_protocols**\ (\ value\: :ref:`PackedStringArray<class_PackedStringArray>`\ )
+- :ref:`PackedStringArray<class_PackedStringArray>` **get_supported_protocols**\ (\ )
 
 The supported WebSocket sub-protocols. See :ref:`WebSocketPeer.supported_protocols<class_WebSocketPeer_property_supported_protocols>` for more details.
 
@@ -185,7 +185,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **create_client** **(** :ref:`String<class_String>` url, :ref:`TLSOptions<class_TLSOptions>` tls_client_options=null **)**
+:ref:`Error<enum_@GlobalScope_Error>` **create_client**\ (\ url\: :ref:`String<class_String>`, tls_client_options\: :ref:`TLSOptions<class_TLSOptions>` = null\ )
 
 Starts a new multiplayer client connecting to the given ``url``. TLS certificates will be verified against the hostname when connecting using the ``wss://`` protocol. You can pass the optional ``tls_client_options`` parameter to customize the trusted certification authorities, or disable the common name verification. See :ref:`TLSOptions.client<class_TLSOptions_method_client>` and :ref:`TLSOptions.client_unsafe<class_TLSOptions_method_client_unsafe>`.
 
@@ -199,7 +199,7 @@ Starts a new multiplayer client connecting to the given ``url``. TLS certificate
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **create_server** **(** :ref:`int<class_int>` port, :ref:`String<class_String>` bind_address="*", :ref:`TLSOptions<class_TLSOptions>` tls_server_options=null **)**
+:ref:`Error<enum_@GlobalScope_Error>` **create_server**\ (\ port\: :ref:`int<class_int>`, bind_address\: :ref:`String<class_String>` = "*", tls_server_options\: :ref:`TLSOptions<class_TLSOptions>` = null\ )
 
 Starts a new multiplayer server listening on the given ``port``. You can optionally specify a ``bind_address``, and provide valid ``tls_server_options`` to use TLS. See :ref:`TLSOptions.server<class_TLSOptions_method_server>`.
 
@@ -211,7 +211,7 @@ Starts a new multiplayer server listening on the given ``port``. You can optiona
 
 .. rst-class:: classref-method
 
-:ref:`WebSocketPeer<class_WebSocketPeer>` **get_peer** **(** :ref:`int<class_int>` peer_id **)** |const|
+:ref:`WebSocketPeer<class_WebSocketPeer>` **get_peer**\ (\ peer_id\: :ref:`int<class_int>`\ ) |const|
 
 Returns the :ref:`WebSocketPeer<class_WebSocketPeer>` associated to the given ``peer_id``.
 
@@ -223,7 +223,7 @@ Returns the :ref:`WebSocketPeer<class_WebSocketPeer>` associated to the given ``
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **get_peer_address** **(** :ref:`int<class_int>` id **)** |const|
+:ref:`String<class_String>` **get_peer_address**\ (\ id\: :ref:`int<class_int>`\ ) |const|
 
 Returns the IP address of the given peer.
 
@@ -235,7 +235,7 @@ Returns the IP address of the given peer.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_peer_port** **(** :ref:`int<class_int>` id **)** |const|
+:ref:`int<class_int>` **get_peer_port**\ (\ id\: :ref:`int<class_int>`\ ) |const|
 
 Returns the remote port of the given peer.
 
@@ -246,3 +246,4 @@ Returns the remote port of the given peer.
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

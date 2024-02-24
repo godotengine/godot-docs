@@ -177,8 +177,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_process_mode** **(** :ref:`ProcessMode<enum_Sky_ProcessMode>` value **)**
-- :ref:`ProcessMode<enum_Sky_ProcessMode>` **get_process_mode** **(** **)**
+- |void| **set_process_mode**\ (\ value\: :ref:`ProcessMode<enum_Sky_ProcessMode>`\ )
+- :ref:`ProcessMode<enum_Sky_ProcessMode>` **get_process_mode**\ (\ )
 
 Sets the method for generating the radiance map from the sky. The radiance map is a cubemap with increasingly blurry versions of the sky corresponding to different levels of roughness. Radiance maps can be expensive to calculate. See :ref:`ProcessMode<enum_Sky_ProcessMode>` for options.
 
@@ -194,8 +194,8 @@ Sets the method for generating the radiance map from the sky. The radiance map i
 
 .. rst-class:: classref-property-setget
 
-- void **set_radiance_size** **(** :ref:`RadianceSize<enum_Sky_RadianceSize>` value **)**
-- :ref:`RadianceSize<enum_Sky_RadianceSize>` **get_radiance_size** **(** **)**
+- |void| **set_radiance_size**\ (\ value\: :ref:`RadianceSize<enum_Sky_RadianceSize>`\ )
+- :ref:`RadianceSize<enum_Sky_RadianceSize>` **get_radiance_size**\ (\ )
 
 The **Sky**'s radiance map size. The higher the radiance map size, the more detailed the lighting from the **Sky** will be.
 
@@ -215,8 +215,8 @@ See :ref:`RadianceSize<enum_Sky_RadianceSize>` constants for values.
 
 .. rst-class:: classref-property-setget
 
-- void **set_material** **(** :ref:`Material<class_Material>` value **)**
-- :ref:`Material<class_Material>` **get_material** **(** **)**
+- |void| **set_material**\ (\ value\: :ref:`Material<class_Material>`\ )
+- :ref:`Material<class_Material>` **get_material**\ (\ )
 
 :ref:`Material<class_Material>` used to draw the background. Can be :ref:`PanoramaSkyMaterial<class_PanoramaSkyMaterial>`, :ref:`ProceduralSkyMaterial<class_ProceduralSkyMaterial>`, :ref:`PhysicalSkyMaterial<class_PhysicalSkyMaterial>`, or even a :ref:`ShaderMaterial<class_ShaderMaterial>` if you want to use your own custom shader.
 
@@ -227,3 +227,4 @@ See :ref:`RadianceSize<enum_Sky_RadianceSize>` constants for values.
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

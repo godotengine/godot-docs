@@ -29,17 +29,17 @@ Properties
 .. table::
    :widths: auto
 
-   +-------------------------------+----------------------------------------------------------------------------------------------+----------------------+
-   | :ref:`bool<class_bool>`       | :ref:`collide_with_areas<class_PhysicsPointQueryParameters3D_property_collide_with_areas>`   | ``false``            |
-   +-------------------------------+----------------------------------------------------------------------------------------------+----------------------+
-   | :ref:`bool<class_bool>`       | :ref:`collide_with_bodies<class_PhysicsPointQueryParameters3D_property_collide_with_bodies>` | ``true``             |
-   +-------------------------------+----------------------------------------------------------------------------------------------+----------------------+
-   | :ref:`int<class_int>`         | :ref:`collision_mask<class_PhysicsPointQueryParameters3D_property_collision_mask>`           | ``4294967295``       |
-   +-------------------------------+----------------------------------------------------------------------------------------------+----------------------+
-   | :ref:`RID[]<class_RID>`       | :ref:`exclude<class_PhysicsPointQueryParameters3D_property_exclude>`                         | ``[]``               |
-   +-------------------------------+----------------------------------------------------------------------------------------------+----------------------+
-   | :ref:`Vector3<class_Vector3>` | :ref:`position<class_PhysicsPointQueryParameters3D_property_position>`                       | ``Vector3(0, 0, 0)`` |
-   +-------------------------------+----------------------------------------------------------------------------------------------+----------------------+
+   +----------------------------------------------------+----------------------------------------------------------------------------------------------+----------------------+
+   | :ref:`bool<class_bool>`                            | :ref:`collide_with_areas<class_PhysicsPointQueryParameters3D_property_collide_with_areas>`   | ``false``            |
+   +----------------------------------------------------+----------------------------------------------------------------------------------------------+----------------------+
+   | :ref:`bool<class_bool>`                            | :ref:`collide_with_bodies<class_PhysicsPointQueryParameters3D_property_collide_with_bodies>` | ``true``             |
+   +----------------------------------------------------+----------------------------------------------------------------------------------------------+----------------------+
+   | :ref:`int<class_int>`                              | :ref:`collision_mask<class_PhysicsPointQueryParameters3D_property_collision_mask>`           | ``4294967295``       |
+   +----------------------------------------------------+----------------------------------------------------------------------------------------------+----------------------+
+   | :ref:`Array<class_Array>`\[:ref:`RID<class_RID>`\] | :ref:`exclude<class_PhysicsPointQueryParameters3D_property_exclude>`                         | ``[]``               |
+   +----------------------------------------------------+----------------------------------------------------------------------------------------------+----------------------+
+   | :ref:`Vector3<class_Vector3>`                      | :ref:`position<class_PhysicsPointQueryParameters3D_property_position>`                       | ``Vector3(0, 0, 0)`` |
+   +----------------------------------------------------+----------------------------------------------------------------------------------------------+----------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -58,8 +58,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_collide_with_areas** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_collide_with_areas_enabled** **(** **)**
+- |void| **set_collide_with_areas**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_collide_with_areas_enabled**\ (\ )
 
 If ``true``, the query will take :ref:`Area3D<class_Area3D>`\ s into account.
 
@@ -75,8 +75,8 @@ If ``true``, the query will take :ref:`Area3D<class_Area3D>`\ s into account.
 
 .. rst-class:: classref-property-setget
 
-- void **set_collide_with_bodies** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_collide_with_bodies_enabled** **(** **)**
+- |void| **set_collide_with_bodies**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_collide_with_bodies_enabled**\ (\ )
 
 If ``true``, the query will take :ref:`PhysicsBody3D<class_PhysicsBody3D>`\ s into account.
 
@@ -92,8 +92,8 @@ If ``true``, the query will take :ref:`PhysicsBody3D<class_PhysicsBody3D>`\ s in
 
 .. rst-class:: classref-property-setget
 
-- void **set_collision_mask** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_collision_mask** **(** **)**
+- |void| **set_collision_mask**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_collision_mask**\ (\ )
 
 The physics layers the query will detect (as a bitmask). By default, all collision layers are detected. See `Collision layers and masks <../tutorials/physics/physics_introduction.html#collision-layers-and-masks>`__ in the documentation for more information.
 
@@ -105,12 +105,12 @@ The physics layers the query will detect (as a bitmask). By default, all collisi
 
 .. rst-class:: classref-property
 
-:ref:`RID[]<class_RID>` **exclude** = ``[]``
+:ref:`Array<class_Array>`\[:ref:`RID<class_RID>`\] **exclude** = ``[]``
 
 .. rst-class:: classref-property-setget
 
-- void **set_exclude** **(** :ref:`RID[]<class_RID>` value **)**
-- :ref:`RID[]<class_RID>` **get_exclude** **(** **)**
+- |void| **set_exclude**\ (\ value\: :ref:`Array<class_Array>`\[:ref:`RID<class_RID>`\]\ )
+- :ref:`Array<class_Array>`\[:ref:`RID<class_RID>`\] **get_exclude**\ (\ )
 
 The list of object :ref:`RID<class_RID>`\ s that will be excluded from collisions. Use :ref:`CollisionObject3D.get_rid<class_CollisionObject3D_method_get_rid>` to get the :ref:`RID<class_RID>` associated with a :ref:`CollisionObject3D<class_CollisionObject3D>`-derived node.
 
@@ -126,8 +126,8 @@ The list of object :ref:`RID<class_RID>`\ s that will be excluded from collision
 
 .. rst-class:: classref-property-setget
 
-- void **set_position** **(** :ref:`Vector3<class_Vector3>` value **)**
-- :ref:`Vector3<class_Vector3>` **get_position** **(** **)**
+- |void| **set_position**\ (\ value\: :ref:`Vector3<class_Vector3>`\ )
+- :ref:`Vector3<class_Vector3>` **get_position**\ (\ )
 
 The position being queried for, in global coordinates.
 
@@ -138,3 +138,4 @@ The position being queried for, in global coordinates.
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`
