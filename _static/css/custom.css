@@ -7,21 +7,31 @@
 
 @font-face {
     font-family: "JetBrains Mono";
-    src: url('fonts/JetBrainsMono-Regular.woff2');
     font-weight: 400;
     font-style: normal;
+    font-display: swap;
+    src: url("fonts/JetBrainsMono-Regular.woff2");
 }
 @font-face {
     font-family: "JetBrains Mono";
-    src: url('fonts/JetBrainsMono-Medium.woff2');
     font-weight: 600;
     font-style: normal;
+    font-display: swap;
+    src: url("fonts/JetBrainsMono-Medium.woff2");
 }
 @font-face {
     font-family: "JetBrains Mono";
-    src: url('fonts/JetBrainsMono-Bold.woff2');
     font-weight: 700;
     font-style: normal;
+    font-display: swap;
+    src: url("fonts/JetBrainsMono-Bold.woff2");
+}
+@font-face {
+    font-family: "Montserrat";
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+    src: url("fonts/Montserrat-Bold.woff2");
 }
 
  /* Default (light) theme colors */
@@ -148,6 +158,7 @@
     --footer-color: #808080;
 
     --system-font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --header-font-family: "Montserrat", var(--system-font-family);
     --monospace-font-family: "JetBrains Mono", SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, Courier, monospace;
 }
 
@@ -279,25 +290,15 @@
 }
 
 body,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
 input[type="text"],
 input[type="button"],
 input[type="reset"],
 input[type="submit"],
 textarea,
-legend,
 .btn,
-.rst-content .toctree-wrapper p.caption,
 .rst-versions {
     /* Use a system font stack for better performance (no Web fonts required) */
     font-family: var(--system-font-family);
-    /* Some fonts that we use (namely JetBrains Mono) can come with ligatures. It's better to opt-in if needed. */
-    font-variant-ligatures: none;
 }
 
 h1,
@@ -308,8 +309,8 @@ h5,
 h6,
 legend,
 .rst-content .toctree-wrapper p.caption {
-    /* Use a lighter font for headers (Medium instead of Bold) */
-    font-weight: 500;
+    /* Use the same font as the godotengine.org website. */
+    font-family: var(--header-font-family);
 }
 
 /* See <https://github.com/godotengine/godot-docs/pull/5876> for context. */
@@ -500,6 +501,7 @@ html.writer-html5 .rst-content dl[class]:not(.option-list):not(.field-list):not(
 html.writer-html5 .rst-content dl[class]:not(.option-list):not(.field-list):not(.footnote):not(.glossary):not(.simple).method > dt,
 html.writer-html5 .rst-content dl[class]:not(.option-list):not(.field-list):not(.footnote):not(.glossary):not(.simple).attribute > dt {
     font-family: var(--monospace-font-family);
+    font-variant-ligatures: none;
     font-size: 90%;
     font-weight: normal;
     margin-bottom: 16px;
@@ -559,6 +561,7 @@ html.writer-html5 .rst-content dl[class]:not(.option-list):not(.field-list):not(
 }
 html.writer-html5 .rst-content dl.field-list > dd strong {
     font-family: var(--monospace-font-family);
+    font-variant-ligatures: none;
 }
 
 footer {
@@ -811,6 +814,7 @@ code,
 .rst-content code {
     font-size: .875em;
     font-family: var(--monospace-font-family);
+    font-variant-ligatures: none;
     background-color: var(--code-background-color);
     border: none;
     border-radius: 4px;
@@ -839,6 +843,7 @@ code,
     font-size: 14px;
     line-height: 1.5;
     font-family: var(--monospace-font-family);
+    font-variant-ligatures: none;
 }
 
 /* Code tab display tweaks */
@@ -1107,6 +1112,7 @@ kbd.compound > .kbd,
 .classref-descriptions-group > p.classref-enumeration-constant {
     color: var(--classref-secondary-color);
     font-family: var(--monospace-font-family);
+    font-variant-ligatures: none;
     font-size: 110%;
     font-weight: 600;
     margin-bottom: 18px;
@@ -1203,6 +1209,7 @@ p + .classref-constant {
 
 .classref-property-setget p {
     font-family: var(--monospace-font-family);
+    font-variant-ligatures: none;
     font-size: 100%;
     line-height: 22px;
 }
