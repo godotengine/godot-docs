@@ -47,15 +47,15 @@ Methods
 .. table::
    :widths: auto
 
-   +---------------------------+----------------------------------------------------------------------------------------------------------------------+
-   | void                      | :ref:`add_excluded_object<class_SpringArm3D_method_add_excluded_object>` **(** :ref:`RID<class_RID>` RID **)**       |
-   +---------------------------+----------------------------------------------------------------------------------------------------------------------+
-   | void                      | :ref:`clear_excluded_objects<class_SpringArm3D_method_clear_excluded_objects>` **(** **)**                           |
-   +---------------------------+----------------------------------------------------------------------------------------------------------------------+
-   | :ref:`float<class_float>` | :ref:`get_hit_length<class_SpringArm3D_method_get_hit_length>` **(** **)**                                           |
-   +---------------------------+----------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`   | :ref:`remove_excluded_object<class_SpringArm3D_method_remove_excluded_object>` **(** :ref:`RID<class_RID>` RID **)** |
-   +---------------------------+----------------------------------------------------------------------------------------------------------------------+
+   +---------------------------+-------------------------------------------------------------------------------------------------------------------+
+   | |void|                    | :ref:`add_excluded_object<class_SpringArm3D_method_add_excluded_object>`\ (\ RID\: :ref:`RID<class_RID>`\ )       |
+   +---------------------------+-------------------------------------------------------------------------------------------------------------------+
+   | |void|                    | :ref:`clear_excluded_objects<class_SpringArm3D_method_clear_excluded_objects>`\ (\ )                              |
+   +---------------------------+-------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>` | :ref:`get_hit_length<class_SpringArm3D_method_get_hit_length>`\ (\ )                                              |
+   +---------------------------+-------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`   | :ref:`remove_excluded_object<class_SpringArm3D_method_remove_excluded_object>`\ (\ RID\: :ref:`RID<class_RID>`\ ) |
+   +---------------------------+-------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -74,8 +74,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_collision_mask** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_collision_mask** **(** **)**
+- |void| **set_collision_mask**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_collision_mask**\ (\ )
 
 The layers against which the collision check shall be done. See `Collision layers and masks <../tutorials/physics/physics_introduction.html#collision-layers-and-masks>`__ in the documentation for more information.
 
@@ -91,8 +91,8 @@ The layers against which the collision check shall be done. See `Collision layer
 
 .. rst-class:: classref-property-setget
 
-- void **set_margin** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_margin** **(** **)**
+- |void| **set_margin**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_margin**\ (\ )
 
 When the collision check is made, a candidate length for the SpringArm3D is given.
 
@@ -112,8 +112,8 @@ This margin is useful for when the SpringArm3D has a :ref:`Camera3D<class_Camera
 
 .. rst-class:: classref-property-setget
 
-- void **set_shape** **(** :ref:`Shape3D<class_Shape3D>` value **)**
-- :ref:`Shape3D<class_Shape3D>` **get_shape** **(** **)**
+- |void| **set_shape**\ (\ value\: :ref:`Shape3D<class_Shape3D>`\ )
+- :ref:`Shape3D<class_Shape3D>` **get_shape**\ (\ )
 
 The :ref:`Shape3D<class_Shape3D>` to use for the SpringArm3D.
 
@@ -131,8 +131,8 @@ When the shape is set, the SpringArm3D will cast the :ref:`Shape3D<class_Shape3D
 
 .. rst-class:: classref-property-setget
 
-- void **set_length** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_length** **(** **)**
+- |void| **set_length**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_length**\ (\ )
 
 The maximum extent of the SpringArm3D. This is used as a length for both the ray and the shape cast used internally to calculate the desired position of the SpringArm3D's child nodes.
 
@@ -151,7 +151,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-void **add_excluded_object** **(** :ref:`RID<class_RID>` RID **)**
+|void| **add_excluded_object**\ (\ RID\: :ref:`RID<class_RID>`\ )
 
 Adds the :ref:`PhysicsBody3D<class_PhysicsBody3D>` object with the given :ref:`RID<class_RID>` to the list of :ref:`PhysicsBody3D<class_PhysicsBody3D>` objects excluded from the collision check.
 
@@ -163,7 +163,7 @@ Adds the :ref:`PhysicsBody3D<class_PhysicsBody3D>` object with the given :ref:`R
 
 .. rst-class:: classref-method
 
-void **clear_excluded_objects** **(** **)**
+|void| **clear_excluded_objects**\ (\ )
 
 Clears the list of :ref:`PhysicsBody3D<class_PhysicsBody3D>` objects excluded from the collision check.
 
@@ -175,7 +175,7 @@ Clears the list of :ref:`PhysicsBody3D<class_PhysicsBody3D>` objects excluded fr
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **get_hit_length** **(** **)**
+:ref:`float<class_float>` **get_hit_length**\ (\ )
 
 Returns the spring arm's current length.
 
@@ -187,7 +187,7 @@ Returns the spring arm's current length.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **remove_excluded_object** **(** :ref:`RID<class_RID>` RID **)**
+:ref:`bool<class_bool>` **remove_excluded_object**\ (\ RID\: :ref:`RID<class_RID>`\ )
 
 Removes the given :ref:`RID<class_RID>` from the list of :ref:`PhysicsBody3D<class_PhysicsBody3D>` objects excluded from the collision check.
 
@@ -198,3 +198,4 @@ Removes the given :ref:`RID<class_RID>` from the list of :ref:`PhysicsBody3D<cla
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

@@ -146,8 +146,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_alignment_horizontal** **(** :ref:`AlignmentMode<enum_AspectRatioContainer_AlignmentMode>` value **)**
-- :ref:`AlignmentMode<enum_AspectRatioContainer_AlignmentMode>` **get_alignment_horizontal** **(** **)**
+- |void| **set_alignment_horizontal**\ (\ value\: :ref:`AlignmentMode<enum_AspectRatioContainer_AlignmentMode>`\ )
+- :ref:`AlignmentMode<enum_AspectRatioContainer_AlignmentMode>` **get_alignment_horizontal**\ (\ )
 
 Specifies the horizontal relative position of child controls.
 
@@ -163,8 +163,8 @@ Specifies the horizontal relative position of child controls.
 
 .. rst-class:: classref-property-setget
 
-- void **set_alignment_vertical** **(** :ref:`AlignmentMode<enum_AspectRatioContainer_AlignmentMode>` value **)**
-- :ref:`AlignmentMode<enum_AspectRatioContainer_AlignmentMode>` **get_alignment_vertical** **(** **)**
+- |void| **set_alignment_vertical**\ (\ value\: :ref:`AlignmentMode<enum_AspectRatioContainer_AlignmentMode>`\ )
+- :ref:`AlignmentMode<enum_AspectRatioContainer_AlignmentMode>` **get_alignment_vertical**\ (\ )
 
 Specifies the vertical relative position of child controls.
 
@@ -180,8 +180,8 @@ Specifies the vertical relative position of child controls.
 
 .. rst-class:: classref-property-setget
 
-- void **set_ratio** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_ratio** **(** **)**
+- |void| **set_ratio**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_ratio**\ (\ )
 
 The aspect ratio to enforce on child controls. This is the width divided by the height. The ratio depends on the :ref:`stretch_mode<class_AspectRatioContainer_property_stretch_mode>`.
 
@@ -197,8 +197,8 @@ The aspect ratio to enforce on child controls. This is the width divided by the 
 
 .. rst-class:: classref-property-setget
 
-- void **set_stretch_mode** **(** :ref:`StretchMode<enum_AspectRatioContainer_StretchMode>` value **)**
-- :ref:`StretchMode<enum_AspectRatioContainer_StretchMode>` **get_stretch_mode** **(** **)**
+- |void| **set_stretch_mode**\ (\ value\: :ref:`StretchMode<enum_AspectRatioContainer_StretchMode>`\ )
+- :ref:`StretchMode<enum_AspectRatioContainer_StretchMode>` **get_stretch_mode**\ (\ )
 
 The stretch mode used to align child controls.
 
@@ -209,3 +209,4 @@ The stretch mode used to align child controls.
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

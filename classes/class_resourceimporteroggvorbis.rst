@@ -60,11 +60,11 @@ Methods
 .. table::
    :widths: auto
 
-   +---------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`AudioStreamOggVorbis<class_AudioStreamOggVorbis>` | :ref:`load_from_buffer<class_ResourceImporterOggVorbis_method_load_from_buffer>` **(** :ref:`PackedByteArray<class_PackedByteArray>` buffer **)** |static| |
-   +---------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`AudioStreamOggVorbis<class_AudioStreamOggVorbis>` | :ref:`load_from_file<class_ResourceImporterOggVorbis_method_load_from_file>` **(** :ref:`String<class_String>` path **)** |static|                         |
-   +---------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +---------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`AudioStreamOggVorbis<class_AudioStreamOggVorbis>` | :ref:`load_from_buffer<class_ResourceImporterOggVorbis_method_load_from_buffer>`\ (\ buffer\: :ref:`PackedByteArray<class_PackedByteArray>`\ ) |static| |
+   +---------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`AudioStreamOggVorbis<class_AudioStreamOggVorbis>` | :ref:`load_from_file<class_ResourceImporterOggVorbis_method_load_from_file>`\ (\ path\: :ref:`String<class_String>`\ ) |static|                         |
+   +---------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -156,7 +156,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`AudioStreamOggVorbis<class_AudioStreamOggVorbis>` **load_from_buffer** **(** :ref:`PackedByteArray<class_PackedByteArray>` buffer **)** |static|
+:ref:`AudioStreamOggVorbis<class_AudioStreamOggVorbis>` **load_from_buffer**\ (\ buffer\: :ref:`PackedByteArray<class_PackedByteArray>`\ ) |static|
 
 This method loads audio data from a PackedByteArray buffer into an AudioStreamOggVorbis object.
 
@@ -168,7 +168,7 @@ This method loads audio data from a PackedByteArray buffer into an AudioStreamOg
 
 .. rst-class:: classref-method
 
-:ref:`AudioStreamOggVorbis<class_AudioStreamOggVorbis>` **load_from_file** **(** :ref:`String<class_String>` path **)** |static|
+:ref:`AudioStreamOggVorbis<class_AudioStreamOggVorbis>` **load_from_file**\ (\ path\: :ref:`String<class_String>`\ ) |static|
 
 This method loads audio data from a file into an AudioStreamOggVorbis object. The file path is provided as a string.
 
@@ -179,3 +179,4 @@ This method loads audio data from a file into an AudioStreamOggVorbis object. Th
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

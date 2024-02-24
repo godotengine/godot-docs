@@ -39,19 +39,19 @@ Methods
 .. table::
    :widths: auto
 
-   +---------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`           | :ref:`get_alternative_tile_id<class_TileSetSource_method_get_alternative_tile_id>` **(** :ref:`Vector2i<class_Vector2i>` atlas_coords, :ref:`int<class_int>` index **)** |const|      |
-   +---------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`           | :ref:`get_alternative_tiles_count<class_TileSetSource_method_get_alternative_tiles_count>` **(** :ref:`Vector2i<class_Vector2i>` atlas_coords **)** |const|                           |
-   +---------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Vector2i<class_Vector2i>` | :ref:`get_tile_id<class_TileSetSource_method_get_tile_id>` **(** :ref:`int<class_int>` index **)** |const|                                                                            |
-   +---------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`           | :ref:`get_tiles_count<class_TileSetSource_method_get_tiles_count>` **(** **)** |const|                                                                                                |
-   +---------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`         | :ref:`has_alternative_tile<class_TileSetSource_method_has_alternative_tile>` **(** :ref:`Vector2i<class_Vector2i>` atlas_coords, :ref:`int<class_int>` alternative_tile **)** |const| |
-   +---------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`         | :ref:`has_tile<class_TileSetSource_method_has_tile>` **(** :ref:`Vector2i<class_Vector2i>` atlas_coords **)** |const|                                                                 |
-   +---------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +---------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`           | :ref:`get_alternative_tile_id<class_TileSetSource_method_get_alternative_tile_id>`\ (\ atlas_coords\: :ref:`Vector2i<class_Vector2i>`, index\: :ref:`int<class_int>`\ ) |const|      |
+   +---------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`           | :ref:`get_alternative_tiles_count<class_TileSetSource_method_get_alternative_tiles_count>`\ (\ atlas_coords\: :ref:`Vector2i<class_Vector2i>`\ ) |const|                             |
+   +---------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector2i<class_Vector2i>` | :ref:`get_tile_id<class_TileSetSource_method_get_tile_id>`\ (\ index\: :ref:`int<class_int>`\ ) |const|                                                                              |
+   +---------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`           | :ref:`get_tiles_count<class_TileSetSource_method_get_tiles_count>`\ (\ ) |const|                                                                                                     |
+   +---------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`         | :ref:`has_alternative_tile<class_TileSetSource_method_has_alternative_tile>`\ (\ atlas_coords\: :ref:`Vector2i<class_Vector2i>`, alternative_tile\: :ref:`int<class_int>`\ ) |const| |
+   +---------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`         | :ref:`has_tile<class_TileSetSource_method_has_tile>`\ (\ atlas_coords\: :ref:`Vector2i<class_Vector2i>`\ ) |const|                                                                   |
+   +---------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -66,7 +66,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_alternative_tile_id** **(** :ref:`Vector2i<class_Vector2i>` atlas_coords, :ref:`int<class_int>` index **)** |const|
+:ref:`int<class_int>` **get_alternative_tile_id**\ (\ atlas_coords\: :ref:`Vector2i<class_Vector2i>`, index\: :ref:`int<class_int>`\ ) |const|
 
 Returns the alternative ID for the tile with coordinates ID ``atlas_coords`` at index ``index``.
 
@@ -78,7 +78,7 @@ Returns the alternative ID for the tile with coordinates ID ``atlas_coords`` at 
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_alternative_tiles_count** **(** :ref:`Vector2i<class_Vector2i>` atlas_coords **)** |const|
+:ref:`int<class_int>` **get_alternative_tiles_count**\ (\ atlas_coords\: :ref:`Vector2i<class_Vector2i>`\ ) |const|
 
 Returns the number of alternatives tiles for the coordinates ID ``atlas_coords``.
 
@@ -94,7 +94,7 @@ Returns -1 if there is not tile at the given coords.
 
 .. rst-class:: classref-method
 
-:ref:`Vector2i<class_Vector2i>` **get_tile_id** **(** :ref:`int<class_int>` index **)** |const|
+:ref:`Vector2i<class_Vector2i>` **get_tile_id**\ (\ index\: :ref:`int<class_int>`\ ) |const|
 
 Returns the tile coordinates ID of the tile with index ``index``.
 
@@ -106,7 +106,7 @@ Returns the tile coordinates ID of the tile with index ``index``.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_tiles_count** **(** **)** |const|
+:ref:`int<class_int>` **get_tiles_count**\ (\ ) |const|
 
 Returns how many tiles this atlas source defines (not including alternative tiles).
 
@@ -118,7 +118,7 @@ Returns how many tiles this atlas source defines (not including alternative tile
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **has_alternative_tile** **(** :ref:`Vector2i<class_Vector2i>` atlas_coords, :ref:`int<class_int>` alternative_tile **)** |const|
+:ref:`bool<class_bool>` **has_alternative_tile**\ (\ atlas_coords\: :ref:`Vector2i<class_Vector2i>`, alternative_tile\: :ref:`int<class_int>`\ ) |const|
 
 Returns if the base tile at coordinates ``atlas_coords`` has an alternative with ID ``alternative_tile``.
 
@@ -130,7 +130,7 @@ Returns if the base tile at coordinates ``atlas_coords`` has an alternative with
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **has_tile** **(** :ref:`Vector2i<class_Vector2i>` atlas_coords **)** |const|
+:ref:`bool<class_bool>` **has_tile**\ (\ atlas_coords\: :ref:`Vector2i<class_Vector2i>`\ ) |const|
 
 Returns if this atlas has a tile with coordinates ID ``atlas_coords``.
 
@@ -141,3 +141,4 @@ Returns if this atlas has a tile with coordinates ID ``atlas_coords``.
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

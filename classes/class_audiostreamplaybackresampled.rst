@@ -26,13 +26,13 @@ Methods
 .. table::
    :widths: auto
 
-   +---------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`float<class_float>` | :ref:`_get_stream_sampling_rate<class_AudioStreamPlaybackResampled_private_method__get_stream_sampling_rate>` **(** **)** |virtual| |const|                             |
-   +---------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`     | :ref:`_mix_resampled<class_AudioStreamPlaybackResampled_private_method__mix_resampled>` **(** AudioFrame* dst_buffer, :ref:`int<class_int>` frame_count **)** |virtual| |
-   +---------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                      | :ref:`begin_resample<class_AudioStreamPlaybackResampled_method_begin_resample>` **(** **)**                                                                             |
-   +---------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>` | :ref:`_get_stream_sampling_rate<class_AudioStreamPlaybackResampled_private_method__get_stream_sampling_rate>`\ (\ ) |virtual| |const|                                      |
+   +---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`     | :ref:`_mix_resampled<class_AudioStreamPlaybackResampled_private_method__mix_resampled>`\ (\ dst_buffer\: ``AudioFrame*``, frame_count\: :ref:`int<class_int>`\ ) |virtual| |
+   +---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                    | :ref:`begin_resample<class_AudioStreamPlaybackResampled_method_begin_resample>`\ (\ )                                                                                      |
+   +---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -47,7 +47,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **_get_stream_sampling_rate** **(** **)** |virtual| |const|
+:ref:`float<class_float>` **_get_stream_sampling_rate**\ (\ ) |virtual| |const|
 
 .. container:: contribute
 
@@ -61,7 +61,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **_mix_resampled** **(** AudioFrame* dst_buffer, :ref:`int<class_int>` frame_count **)** |virtual|
+:ref:`int<class_int>` **_mix_resampled**\ (\ dst_buffer\: ``AudioFrame*``, frame_count\: :ref:`int<class_int>`\ ) |virtual|
 
 .. container:: contribute
 
@@ -75,7 +75,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-void **begin_resample** **(** **)**
+|void| **begin_resample**\ (\ )
 
 .. container:: contribute
 
@@ -88,3 +88,4 @@ void **begin_resample** **(** **)**
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

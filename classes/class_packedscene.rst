@@ -128,15 +128,15 @@ Methods
 .. table::
    :widths: auto
 
-   +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`               | :ref:`can_instantiate<class_PackedScene_method_can_instantiate>` **(** **)** |const|                                                         |
-   +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`SceneState<class_SceneState>`   | :ref:`get_state<class_PackedScene_method_get_state>` **(** **)** |const|                                                                     |
-   +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Node<class_Node>`               | :ref:`instantiate<class_PackedScene_method_instantiate>` **(** :ref:`GenEditState<enum_PackedScene_GenEditState>` edit_state=0 **)** |const| |
-   +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Error<enum_@GlobalScope_Error>` | :ref:`pack<class_PackedScene_method_pack>` **(** :ref:`Node<class_Node>` path **)**                                                          |
-   +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+   +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`               | :ref:`can_instantiate<class_PackedScene_method_can_instantiate>`\ (\ ) |const|                                                              |
+   +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`SceneState<class_SceneState>`   | :ref:`get_state<class_PackedScene_method_get_state>`\ (\ ) |const|                                                                          |
+   +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Node<class_Node>`               | :ref:`instantiate<class_PackedScene_method_instantiate>`\ (\ edit_state\: :ref:`GenEditState<enum_PackedScene_GenEditState>` = 0\ ) |const| |
+   +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>` | :ref:`pack<class_PackedScene_method_pack>`\ (\ path\: :ref:`Node<class_Node>`\ )                                                            |
+   +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -223,7 +223,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **can_instantiate** **(** **)** |const|
+:ref:`bool<class_bool>` **can_instantiate**\ (\ ) |const|
 
 Returns ``true`` if the scene file has nodes.
 
@@ -235,7 +235,7 @@ Returns ``true`` if the scene file has nodes.
 
 .. rst-class:: classref-method
 
-:ref:`SceneState<class_SceneState>` **get_state** **(** **)** |const|
+:ref:`SceneState<class_SceneState>` **get_state**\ (\ ) |const|
 
 Returns the :ref:`SceneState<class_SceneState>` representing the scene file contents.
 
@@ -247,7 +247,7 @@ Returns the :ref:`SceneState<class_SceneState>` representing the scene file cont
 
 .. rst-class:: classref-method
 
-:ref:`Node<class_Node>` **instantiate** **(** :ref:`GenEditState<enum_PackedScene_GenEditState>` edit_state=0 **)** |const|
+:ref:`Node<class_Node>` **instantiate**\ (\ edit_state\: :ref:`GenEditState<enum_PackedScene_GenEditState>` = 0\ ) |const|
 
 Instantiates the scene's node hierarchy. Triggers child scene instantiation(s). Triggers a :ref:`Node.NOTIFICATION_SCENE_INSTANTIATED<class_Node_constant_NOTIFICATION_SCENE_INSTANTIATED>` notification on the root node.
 
@@ -259,7 +259,7 @@ Instantiates the scene's node hierarchy. Triggers child scene instantiation(s). 
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **pack** **(** :ref:`Node<class_Node>` path **)**
+:ref:`Error<enum_@GlobalScope_Error>` **pack**\ (\ path\: :ref:`Node<class_Node>`\ )
 
 Pack will ignore any sub-nodes not owned by given node. See :ref:`Node.owner<class_Node_property_owner>`.
 
@@ -270,3 +270,4 @@ Pack will ignore any sub-nodes not owned by given node. See :ref:`Node.owner<cla
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

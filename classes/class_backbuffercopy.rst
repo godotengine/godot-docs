@@ -93,8 +93,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_copy_mode** **(** :ref:`CopyMode<enum_BackBufferCopy_CopyMode>` value **)**
-- :ref:`CopyMode<enum_BackBufferCopy_CopyMode>` **get_copy_mode** **(** **)**
+- |void| **set_copy_mode**\ (\ value\: :ref:`CopyMode<enum_BackBufferCopy_CopyMode>`\ )
+- :ref:`CopyMode<enum_BackBufferCopy_CopyMode>` **get_copy_mode**\ (\ )
 
 Buffer mode. See :ref:`CopyMode<enum_BackBufferCopy_CopyMode>` constants.
 
@@ -110,8 +110,8 @@ Buffer mode. See :ref:`CopyMode<enum_BackBufferCopy_CopyMode>` constants.
 
 .. rst-class:: classref-property-setget
 
-- void **set_rect** **(** :ref:`Rect2<class_Rect2>` value **)**
-- :ref:`Rect2<class_Rect2>` **get_rect** **(** **)**
+- |void| **set_rect**\ (\ value\: :ref:`Rect2<class_Rect2>`\ )
+- :ref:`Rect2<class_Rect2>` **get_rect**\ (\ )
 
 The area covered by the **BackBufferCopy**. Only used if :ref:`copy_mode<class_BackBufferCopy_property_copy_mode>` is :ref:`COPY_MODE_RECT<class_BackBufferCopy_constant_COPY_MODE_RECT>`.
 
@@ -122,3 +122,4 @@ The area covered by the **BackBufferCopy**. Only used if :ref:`copy_mode<class_B
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

@@ -75,8 +75,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_clear_margin** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_clear_margin** **(** **)**
+- |void| **set_clear_margin**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_clear_margin**\ (\ )
 
 Sets the size of the margin used to expand the clearing rect of this **CanvasGroup**. This expands the area of the backbuffer that will be used by the **CanvasGroup**. A smaller margin will reduce the area of the backbuffer used which can increase performance, however if :ref:`use_mipmaps<class_CanvasGroup_property_use_mipmaps>` is enabled, a small margin may result in mipmap errors at the edge of the **CanvasGroup**. Accordingly, this should be left as small as possible, but should be increased if artifacts appear along the edges of the canvas group.
 
@@ -92,8 +92,8 @@ Sets the size of the margin used to expand the clearing rect of this **CanvasGro
 
 .. rst-class:: classref-property-setget
 
-- void **set_fit_margin** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_fit_margin** **(** **)**
+- |void| **set_fit_margin**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_fit_margin**\ (\ )
 
 Sets the size of a margin used to expand the drawable rect of this **CanvasGroup**. The size of the **CanvasGroup** is determined by fitting a rect around its children then expanding that rect by :ref:`fit_margin<class_CanvasGroup_property_fit_margin>`. This increases both the backbuffer area used and the area covered by the **CanvasGroup** both of which can reduce performance. This should be kept as small as possible and should only be expanded when an increased size is needed (e.g. for custom shader effects).
 
@@ -109,8 +109,8 @@ Sets the size of a margin used to expand the drawable rect of this **CanvasGroup
 
 .. rst-class:: classref-property-setget
 
-- void **set_use_mipmaps** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_using_mipmaps** **(** **)**
+- |void| **set_use_mipmaps**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_using_mipmaps**\ (\ )
 
 If ``true``, calculates mipmaps for the backbuffer before drawing the **CanvasGroup** so that mipmaps can be used in a custom :ref:`ShaderMaterial<class_ShaderMaterial>` attached to the **CanvasGroup**. Generating mipmaps has a performance cost so this should not be enabled unless required.
 
@@ -121,3 +121,4 @@ If ``true``, calculates mipmaps for the backbuffer before drawing the **CanvasGr
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

@@ -10,6 +10,8 @@
 OpenXRHand
 ==========
 
+**Deprecated:** Use :ref:`XRHandModifier3D<class_XRHandModifier3D>` instead.
+
 **Inherits:** :ref:`Node3D<class_Node3D>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
 Node supporting hand and finger tracking in OpenXR.
@@ -205,8 +207,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_bone_update** **(** :ref:`BoneUpdate<enum_OpenXRHand_BoneUpdate>` value **)**
-- :ref:`BoneUpdate<enum_OpenXRHand_BoneUpdate>` **get_bone_update** **(** **)**
+- |void| **set_bone_update**\ (\ value\: :ref:`BoneUpdate<enum_OpenXRHand_BoneUpdate>`\ )
+- :ref:`BoneUpdate<enum_OpenXRHand_BoneUpdate>` **get_bone_update**\ (\ )
 
 Specify the type of updates to perform on the bone.
 
@@ -222,8 +224,8 @@ Specify the type of updates to perform on the bone.
 
 .. rst-class:: classref-property-setget
 
-- void **set_hand** **(** :ref:`Hands<enum_OpenXRHand_Hands>` value **)**
-- :ref:`Hands<enum_OpenXRHand_Hands>` **get_hand** **(** **)**
+- |void| **set_hand**\ (\ value\: :ref:`Hands<enum_OpenXRHand_Hands>`\ )
+- :ref:`Hands<enum_OpenXRHand_Hands>` **get_hand**\ (\ )
 
 Specifies whether this node tracks the left or right hand of the player.
 
@@ -239,8 +241,8 @@ Specifies whether this node tracks the left or right hand of the player.
 
 .. rst-class:: classref-property-setget
 
-- void **set_hand_skeleton** **(** :ref:`NodePath<class_NodePath>` value **)**
-- :ref:`NodePath<class_NodePath>` **get_hand_skeleton** **(** **)**
+- |void| **set_hand_skeleton**\ (\ value\: :ref:`NodePath<class_NodePath>`\ )
+- :ref:`NodePath<class_NodePath>` **get_hand_skeleton**\ (\ )
 
 Set a :ref:`Skeleton3D<class_Skeleton3D>` node for which the pose positions will be updated.
 
@@ -256,8 +258,8 @@ Set a :ref:`Skeleton3D<class_Skeleton3D>` node for which the pose positions will
 
 .. rst-class:: classref-property-setget
 
-- void **set_motion_range** **(** :ref:`MotionRange<enum_OpenXRHand_MotionRange>` value **)**
-- :ref:`MotionRange<enum_OpenXRHand_MotionRange>` **get_motion_range** **(** **)**
+- |void| **set_motion_range**\ (\ value\: :ref:`MotionRange<enum_OpenXRHand_MotionRange>`\ )
+- :ref:`MotionRange<enum_OpenXRHand_MotionRange>` **get_motion_range**\ (\ )
 
 Set the motion range (if supported) limiting the hand motion.
 
@@ -273,8 +275,8 @@ Set the motion range (if supported) limiting the hand motion.
 
 .. rst-class:: classref-property-setget
 
-- void **set_skeleton_rig** **(** :ref:`SkeletonRig<enum_OpenXRHand_SkeletonRig>` value **)**
-- :ref:`SkeletonRig<enum_OpenXRHand_SkeletonRig>` **get_skeleton_rig** **(** **)**
+- |void| **set_skeleton_rig**\ (\ value\: :ref:`SkeletonRig<enum_OpenXRHand_SkeletonRig>`\ )
+- :ref:`SkeletonRig<enum_OpenXRHand_SkeletonRig>` **get_skeleton_rig**\ (\ )
 
 Set the type of skeleton rig the :ref:`hand_skeleton<class_OpenXRHand_property_hand_skeleton>` is compliant with.
 
@@ -285,3 +287,4 @@ Set the type of skeleton rig the :ref:`hand_skeleton<class_OpenXRHand_property_h
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

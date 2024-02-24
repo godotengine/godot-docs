@@ -107,8 +107,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_billboard_type** **(** :ref:`BillboardType<enum_VisualShaderNodeBillboard_BillboardType>` value **)**
-- :ref:`BillboardType<enum_VisualShaderNodeBillboard_BillboardType>` **get_billboard_type** **(** **)**
+- |void| **set_billboard_type**\ (\ value\: :ref:`BillboardType<enum_VisualShaderNodeBillboard_BillboardType>`\ )
+- :ref:`BillboardType<enum_VisualShaderNodeBillboard_BillboardType>` **get_billboard_type**\ (\ )
 
 Controls how the object faces the camera. See :ref:`BillboardType<enum_VisualShaderNodeBillboard_BillboardType>`.
 
@@ -124,8 +124,8 @@ Controls how the object faces the camera. See :ref:`BillboardType<enum_VisualSha
 
 .. rst-class:: classref-property-setget
 
-- void **set_keep_scale_enabled** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_keep_scale_enabled** **(** **)**
+- |void| **set_keep_scale_enabled**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_keep_scale_enabled**\ (\ )
 
 If ``true``, the shader will keep the scale set for the mesh. Otherwise, the scale is lost when billboarding.
 
@@ -136,3 +136,4 @@ If ``true``, the shader will keep the scale set for the mesh. Otherwise, the sca
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

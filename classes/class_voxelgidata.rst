@@ -62,21 +62,21 @@ Methods
 .. table::
    :widths: auto
 
-   +-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                            | :ref:`allocate<class_VoxelGIData_method_allocate>` **(** :ref:`Transform3D<class_Transform3D>` to_cell_xform, :ref:`AABB<class_AABB>` aabb, :ref:`Vector3<class_Vector3>` octree_size, :ref:`PackedByteArray<class_PackedByteArray>` octree_cells, :ref:`PackedByteArray<class_PackedByteArray>` data_cells, :ref:`PackedByteArray<class_PackedByteArray>` distance_field, :ref:`PackedInt32Array<class_PackedInt32Array>` level_counts **)** |
-   +-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`AABB<class_AABB>`                         | :ref:`get_bounds<class_VoxelGIData_method_get_bounds>` **(** **)** |const|                                                                                                                                                                                                                                                                                                                                                                    |
-   +-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`PackedByteArray<class_PackedByteArray>`   | :ref:`get_data_cells<class_VoxelGIData_method_get_data_cells>` **(** **)** |const|                                                                                                                                                                                                                                                                                                                                                            |
-   +-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`PackedInt32Array<class_PackedInt32Array>` | :ref:`get_level_counts<class_VoxelGIData_method_get_level_counts>` **(** **)** |const|                                                                                                                                                                                                                                                                                                                                                        |
-   +-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`PackedByteArray<class_PackedByteArray>`   | :ref:`get_octree_cells<class_VoxelGIData_method_get_octree_cells>` **(** **)** |const|                                                                                                                                                                                                                                                                                                                                                        |
-   +-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Vector3<class_Vector3>`                   | :ref:`get_octree_size<class_VoxelGIData_method_get_octree_size>` **(** **)** |const|                                                                                                                                                                                                                                                                                                                                                          |
-   +-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Transform3D<class_Transform3D>`           | :ref:`get_to_cell_xform<class_VoxelGIData_method_get_to_cell_xform>` **(** **)** |const|                                                                                                                                                                                                                                                                                                                                                      |
-   +-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                          | :ref:`allocate<class_VoxelGIData_method_allocate>`\ (\ to_cell_xform\: :ref:`Transform3D<class_Transform3D>`, aabb\: :ref:`AABB<class_AABB>`, octree_size\: :ref:`Vector3<class_Vector3>`, octree_cells\: :ref:`PackedByteArray<class_PackedByteArray>`, data_cells\: :ref:`PackedByteArray<class_PackedByteArray>`, distance_field\: :ref:`PackedByteArray<class_PackedByteArray>`, level_counts\: :ref:`PackedInt32Array<class_PackedInt32Array>`\ ) |
+   +-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`AABB<class_AABB>`                         | :ref:`get_bounds<class_VoxelGIData_method_get_bounds>`\ (\ ) |const|                                                                                                                                                                                                                                                                                                                                                                                   |
+   +-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PackedByteArray<class_PackedByteArray>`   | :ref:`get_data_cells<class_VoxelGIData_method_get_data_cells>`\ (\ ) |const|                                                                                                                                                                                                                                                                                                                                                                           |
+   +-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PackedInt32Array<class_PackedInt32Array>` | :ref:`get_level_counts<class_VoxelGIData_method_get_level_counts>`\ (\ ) |const|                                                                                                                                                                                                                                                                                                                                                                       |
+   +-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PackedByteArray<class_PackedByteArray>`   | :ref:`get_octree_cells<class_VoxelGIData_method_get_octree_cells>`\ (\ ) |const|                                                                                                                                                                                                                                                                                                                                                                       |
+   +-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector3<class_Vector3>`                   | :ref:`get_octree_size<class_VoxelGIData_method_get_octree_size>`\ (\ ) |const|                                                                                                                                                                                                                                                                                                                                                                         |
+   +-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Transform3D<class_Transform3D>`           | :ref:`get_to_cell_xform<class_VoxelGIData_method_get_to_cell_xform>`\ (\ ) |const|                                                                                                                                                                                                                                                                                                                                                                     |
+   +-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -95,8 +95,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_bias** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_bias** **(** **)**
+- |void| **set_bias**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_bias**\ (\ )
 
 The normal bias to use for indirect lighting and reflections. Higher values reduce self-reflections visible in non-rough materials, at the cost of more visible light leaking and flatter-looking indirect lighting. To prioritize hiding self-reflections over lighting quality, set :ref:`bias<class_VoxelGIData_property_bias>` to ``0.0`` and :ref:`normal_bias<class_VoxelGIData_property_normal_bias>` to a value between ``1.0`` and ``2.0``.
 
@@ -112,8 +112,8 @@ The normal bias to use for indirect lighting and reflections. Higher values redu
 
 .. rst-class:: classref-property-setget
 
-- void **set_dynamic_range** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_dynamic_range** **(** **)**
+- |void| **set_dynamic_range**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_dynamic_range**\ (\ )
 
 The dynamic range to use (``1.0`` represents a low dynamic range scene brightness). Higher values can be used to provide brighter indirect lighting, at the cost of more visible color banding in dark areas (both in indirect lighting and reflections). To avoid color banding, it's recommended to use the lowest value that does not result in visible light clipping.
 
@@ -129,8 +129,8 @@ The dynamic range to use (``1.0`` represents a low dynamic range scene brightnes
 
 .. rst-class:: classref-property-setget
 
-- void **set_energy** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_energy** **(** **)**
+- |void| **set_energy**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_energy**\ (\ )
 
 The energy of the indirect lighting and reflections produced by the :ref:`VoxelGI<class_VoxelGI>` node. Higher values result in brighter indirect lighting. If indirect lighting looks too flat, try decreasing :ref:`propagation<class_VoxelGIData_property_propagation>` while increasing :ref:`energy<class_VoxelGIData_property_energy>` at the same time. See also :ref:`use_two_bounces<class_VoxelGIData_property_use_two_bounces>` which influences the indirect lighting's effective brightness.
 
@@ -146,8 +146,8 @@ The energy of the indirect lighting and reflections produced by the :ref:`VoxelG
 
 .. rst-class:: classref-property-setget
 
-- void **set_interior** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_interior** **(** **)**
+- |void| **set_interior**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_interior**\ (\ )
 
 If ``true``, :ref:`Environment<class_Environment>` lighting is ignored by the :ref:`VoxelGI<class_VoxelGI>` node. If ``false``, :ref:`Environment<class_Environment>` lighting is taken into account by the :ref:`VoxelGI<class_VoxelGI>` node. :ref:`Environment<class_Environment>` lighting updates in real-time, which means it can be changed without having to bake the :ref:`VoxelGI<class_VoxelGI>` node again.
 
@@ -163,8 +163,8 @@ If ``true``, :ref:`Environment<class_Environment>` lighting is ignored by the :r
 
 .. rst-class:: classref-property-setget
 
-- void **set_normal_bias** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_normal_bias** **(** **)**
+- |void| **set_normal_bias**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_normal_bias**\ (\ )
 
 The normal bias to use for indirect lighting and reflections. Higher values reduce self-reflections visible in non-rough materials, at the cost of more visible light leaking and flatter-looking indirect lighting. See also :ref:`bias<class_VoxelGIData_property_bias>`. To prioritize hiding self-reflections over lighting quality, set :ref:`bias<class_VoxelGIData_property_bias>` to ``0.0`` and :ref:`normal_bias<class_VoxelGIData_property_normal_bias>` to a value between ``1.0`` and ``2.0``.
 
@@ -180,8 +180,8 @@ The normal bias to use for indirect lighting and reflections. Higher values redu
 
 .. rst-class:: classref-property-setget
 
-- void **set_propagation** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_propagation** **(** **)**
+- |void| **set_propagation**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_propagation**\ (\ )
 
 The multiplier to use when light bounces off a surface. Higher values result in brighter indirect lighting. If indirect lighting looks too flat, try decreasing :ref:`propagation<class_VoxelGIData_property_propagation>` while increasing :ref:`energy<class_VoxelGIData_property_energy>` at the same time. See also :ref:`use_two_bounces<class_VoxelGIData_property_use_two_bounces>` which influences the indirect lighting's effective brightness.
 
@@ -197,8 +197,8 @@ The multiplier to use when light bounces off a surface. Higher values result in 
 
 .. rst-class:: classref-property-setget
 
-- void **set_use_two_bounces** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_using_two_bounces** **(** **)**
+- |void| **set_use_two_bounces**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_using_two_bounces**\ (\ )
 
 If ``true``, performs two bounces of indirect lighting instead of one. This makes indirect lighting look more natural and brighter at a small performance cost. The second bounce is also visible in reflections. If the scene appears too bright after enabling :ref:`use_two_bounces<class_VoxelGIData_property_use_two_bounces>`, adjust :ref:`propagation<class_VoxelGIData_property_propagation>` and :ref:`energy<class_VoxelGIData_property_energy>`.
 
@@ -215,7 +215,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-void **allocate** **(** :ref:`Transform3D<class_Transform3D>` to_cell_xform, :ref:`AABB<class_AABB>` aabb, :ref:`Vector3<class_Vector3>` octree_size, :ref:`PackedByteArray<class_PackedByteArray>` octree_cells, :ref:`PackedByteArray<class_PackedByteArray>` data_cells, :ref:`PackedByteArray<class_PackedByteArray>` distance_field, :ref:`PackedInt32Array<class_PackedInt32Array>` level_counts **)**
+|void| **allocate**\ (\ to_cell_xform\: :ref:`Transform3D<class_Transform3D>`, aabb\: :ref:`AABB<class_AABB>`, octree_size\: :ref:`Vector3<class_Vector3>`, octree_cells\: :ref:`PackedByteArray<class_PackedByteArray>`, data_cells\: :ref:`PackedByteArray<class_PackedByteArray>`, distance_field\: :ref:`PackedByteArray<class_PackedByteArray>`, level_counts\: :ref:`PackedInt32Array<class_PackedInt32Array>`\ )
 
 .. container:: contribute
 
@@ -229,7 +229,7 @@ void **allocate** **(** :ref:`Transform3D<class_Transform3D>` to_cell_xform, :re
 
 .. rst-class:: classref-method
 
-:ref:`AABB<class_AABB>` **get_bounds** **(** **)** |const|
+:ref:`AABB<class_AABB>` **get_bounds**\ (\ ) |const|
 
 Returns the bounds of the baked voxel data as an :ref:`AABB<class_AABB>`, which should match :ref:`VoxelGI.size<class_VoxelGI_property_size>` after being baked (which only contains the size as a :ref:`Vector3<class_Vector3>`).
 
@@ -243,7 +243,7 @@ Returns the bounds of the baked voxel data as an :ref:`AABB<class_AABB>`, which 
 
 .. rst-class:: classref-method
 
-:ref:`PackedByteArray<class_PackedByteArray>` **get_data_cells** **(** **)** |const|
+:ref:`PackedByteArray<class_PackedByteArray>` **get_data_cells**\ (\ ) |const|
 
 .. container:: contribute
 
@@ -257,7 +257,7 @@ Returns the bounds of the baked voxel data as an :ref:`AABB<class_AABB>`, which 
 
 .. rst-class:: classref-method
 
-:ref:`PackedInt32Array<class_PackedInt32Array>` **get_level_counts** **(** **)** |const|
+:ref:`PackedInt32Array<class_PackedInt32Array>` **get_level_counts**\ (\ ) |const|
 
 .. container:: contribute
 
@@ -271,7 +271,7 @@ Returns the bounds of the baked voxel data as an :ref:`AABB<class_AABB>`, which 
 
 .. rst-class:: classref-method
 
-:ref:`PackedByteArray<class_PackedByteArray>` **get_octree_cells** **(** **)** |const|
+:ref:`PackedByteArray<class_PackedByteArray>` **get_octree_cells**\ (\ ) |const|
 
 .. container:: contribute
 
@@ -285,7 +285,7 @@ Returns the bounds of the baked voxel data as an :ref:`AABB<class_AABB>`, which 
 
 .. rst-class:: classref-method
 
-:ref:`Vector3<class_Vector3>` **get_octree_size** **(** **)** |const|
+:ref:`Vector3<class_Vector3>` **get_octree_size**\ (\ ) |const|
 
 .. container:: contribute
 
@@ -299,7 +299,7 @@ Returns the bounds of the baked voxel data as an :ref:`AABB<class_AABB>`, which 
 
 .. rst-class:: classref-method
 
-:ref:`Transform3D<class_Transform3D>` **get_to_cell_xform** **(** **)** |const|
+:ref:`Transform3D<class_Transform3D>` **get_to_cell_xform**\ (\ ) |const|
 
 .. container:: contribute
 
@@ -312,3 +312,4 @@ Returns the bounds of the baked voxel data as an :ref:`AABB<class_AABB>`, which 
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

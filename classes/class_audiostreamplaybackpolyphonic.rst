@@ -29,17 +29,17 @@ Methods
 .. table::
    :widths: auto
 
-   +-------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>` | :ref:`is_stream_playing<class_AudioStreamPlaybackPolyphonic_method_is_stream_playing>` **(** :ref:`int<class_int>` stream **)** |const|                                                                                                                        |
-   +-------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`   | :ref:`play_stream<class_AudioStreamPlaybackPolyphonic_method_play_stream>` **(** :ref:`AudioStream<class_AudioStream>` stream, :ref:`float<class_float>` from_offset=0, :ref:`float<class_float>` volume_db=0, :ref:`float<class_float>` pitch_scale=1.0 **)** |
-   +-------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                    | :ref:`set_stream_pitch_scale<class_AudioStreamPlaybackPolyphonic_method_set_stream_pitch_scale>` **(** :ref:`int<class_int>` stream, :ref:`float<class_float>` pitch_scale **)**                                                                               |
-   +-------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                    | :ref:`set_stream_volume<class_AudioStreamPlaybackPolyphonic_method_set_stream_volume>` **(** :ref:`int<class_int>` stream, :ref:`float<class_float>` volume_db **)**                                                                                           |
-   +-------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                    | :ref:`stop_stream<class_AudioStreamPlaybackPolyphonic_method_stop_stream>` **(** :ref:`int<class_int>` stream **)**                                                                                                                                            |
-   +-------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +-------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | :ref:`is_stream_playing<class_AudioStreamPlaybackPolyphonic_method_is_stream_playing>`\ (\ stream\: :ref:`int<class_int>`\ ) |const|                                                                                                                                    |
+   +-------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`   | :ref:`play_stream<class_AudioStreamPlaybackPolyphonic_method_play_stream>`\ (\ stream\: :ref:`AudioStream<class_AudioStream>`, from_offset\: :ref:`float<class_float>` = 0, volume_db\: :ref:`float<class_float>` = 0, pitch_scale\: :ref:`float<class_float>` = 1.0\ ) |
+   +-------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                  | :ref:`set_stream_pitch_scale<class_AudioStreamPlaybackPolyphonic_method_set_stream_pitch_scale>`\ (\ stream\: :ref:`int<class_int>`, pitch_scale\: :ref:`float<class_float>`\ )                                                                                         |
+   +-------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                  | :ref:`set_stream_volume<class_AudioStreamPlaybackPolyphonic_method_set_stream_volume>`\ (\ stream\: :ref:`int<class_int>`, volume_db\: :ref:`float<class_float>`\ )                                                                                                     |
+   +-------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                  | :ref:`stop_stream<class_AudioStreamPlaybackPolyphonic_method_stop_stream>`\ (\ stream\: :ref:`int<class_int>`\ )                                                                                                                                                        |
+   +-------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -71,7 +71,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_stream_playing** **(** :ref:`int<class_int>` stream **)** |const|
+:ref:`bool<class_bool>` **is_stream_playing**\ (\ stream\: :ref:`int<class_int>`\ ) |const|
 
 Return true whether the stream associated with an integer ID is still playing. Check :ref:`play_stream<class_AudioStreamPlaybackPolyphonic_method_play_stream>` for information on when this ID becomes invalid.
 
@@ -83,7 +83,7 @@ Return true whether the stream associated with an integer ID is still playing. C
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **play_stream** **(** :ref:`AudioStream<class_AudioStream>` stream, :ref:`float<class_float>` from_offset=0, :ref:`float<class_float>` volume_db=0, :ref:`float<class_float>` pitch_scale=1.0 **)**
+:ref:`int<class_int>` **play_stream**\ (\ stream\: :ref:`AudioStream<class_AudioStream>`, from_offset\: :ref:`float<class_float>` = 0, volume_db\: :ref:`float<class_float>` = 0, pitch_scale\: :ref:`float<class_float>` = 1.0\ )
 
 Play an :ref:`AudioStream<class_AudioStream>` at a given offset, volume and pitch scale. Playback starts immediately.
 
@@ -101,7 +101,7 @@ This function returns :ref:`INVALID_ID<class_AudioStreamPlaybackPolyphonic_const
 
 .. rst-class:: classref-method
 
-void **set_stream_pitch_scale** **(** :ref:`int<class_int>` stream, :ref:`float<class_float>` pitch_scale **)**
+|void| **set_stream_pitch_scale**\ (\ stream\: :ref:`int<class_int>`, pitch_scale\: :ref:`float<class_float>`\ )
 
 Change the stream pitch scale. The ``stream`` argument is an integer ID returned by :ref:`play_stream<class_AudioStreamPlaybackPolyphonic_method_play_stream>`.
 
@@ -113,7 +113,7 @@ Change the stream pitch scale. The ``stream`` argument is an integer ID returned
 
 .. rst-class:: classref-method
 
-void **set_stream_volume** **(** :ref:`int<class_int>` stream, :ref:`float<class_float>` volume_db **)**
+|void| **set_stream_volume**\ (\ stream\: :ref:`int<class_int>`, volume_db\: :ref:`float<class_float>`\ )
 
 Change the stream volume (in db). The ``stream`` argument is an integer ID returned by :ref:`play_stream<class_AudioStreamPlaybackPolyphonic_method_play_stream>`.
 
@@ -125,7 +125,7 @@ Change the stream volume (in db). The ``stream`` argument is an integer ID retur
 
 .. rst-class:: classref-method
 
-void **stop_stream** **(** :ref:`int<class_int>` stream **)**
+|void| **stop_stream**\ (\ stream\: :ref:`int<class_int>`\ )
 
 Stop a stream. The ``stream`` argument is an integer ID returned by :ref:`play_stream<class_AudioStreamPlaybackPolyphonic_method_play_stream>`, which becomes invalid after calling this function.
 
@@ -136,3 +136,4 @@ Stop a stream. The ``stream`` argument is an integer ID returned by :ref:`play_s
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

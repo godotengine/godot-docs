@@ -73,7 +73,7 @@ Signals
 
 .. rst-class:: classref-signal
 
-**timeout** **(** **)**
+**timeout**\ (\ )
 
 Emitted when the timer reaches 0.
 
@@ -94,8 +94,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_time_left** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_time_left** **(** **)**
+- |void| **set_time_left**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_time_left**\ (\ )
 
 The time remaining (in seconds).
 
@@ -106,3 +106,4 @@ The time remaining (in seconds).
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

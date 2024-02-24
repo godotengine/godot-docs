@@ -43,7 +43,7 @@ Properties
    +-----------------------------------------------------+----------------------------------------------------------------------------------+--------------------------+
    | :ref:`PackedInt64Array<class_PackedInt64Array>`     | :ref:`path_owner_ids<class_NavigationPathQueryResult3D_property_path_owner_ids>` | ``PackedInt64Array()``   |
    +-----------------------------------------------------+----------------------------------------------------------------------------------+--------------------------+
-   | :ref:`RID[]<class_RID>`                             | :ref:`path_rids<class_NavigationPathQueryResult3D_property_path_rids>`           | ``[]``                   |
+   | :ref:`Array<class_Array>`\[:ref:`RID<class_RID>`\]  | :ref:`path_rids<class_NavigationPathQueryResult3D_property_path_rids>`           | ``[]``                   |
    +-----------------------------------------------------+----------------------------------------------------------------------------------+--------------------------+
    | :ref:`PackedInt32Array<class_PackedInt32Array>`     | :ref:`path_types<class_NavigationPathQueryResult3D_property_path_types>`         | ``PackedInt32Array()``   |
    +-----------------------------------------------------+----------------------------------------------------------------------------------+--------------------------+
@@ -56,9 +56,9 @@ Methods
 .. table::
    :widths: auto
 
-   +------+--------------------------------------------------------------------------+
-   | void | :ref:`reset<class_NavigationPathQueryResult3D_method_reset>` **(** **)** |
-   +------+--------------------------------------------------------------------------+
+   +--------+--------------------------------------------------------------------+
+   | |void| | :ref:`reset<class_NavigationPathQueryResult3D_method_reset>`\ (\ ) |
+   +--------+--------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -108,8 +108,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_path** **(** :ref:`PackedVector3Array<class_PackedVector3Array>` value **)**
-- :ref:`PackedVector3Array<class_PackedVector3Array>` **get_path** **(** **)**
+- |void| **set_path**\ (\ value\: :ref:`PackedVector3Array<class_PackedVector3Array>`\ )
+- :ref:`PackedVector3Array<class_PackedVector3Array>` **get_path**\ (\ )
 
 The resulting path array from the navigation query. All path array positions are in global coordinates. Without customized query parameters this is the same path as returned by :ref:`NavigationServer3D.map_get_path<class_NavigationServer3D_method_map_get_path>`.
 
@@ -125,8 +125,8 @@ The resulting path array from the navigation query. All path array positions are
 
 .. rst-class:: classref-property-setget
 
-- void **set_path_owner_ids** **(** :ref:`PackedInt64Array<class_PackedInt64Array>` value **)**
-- :ref:`PackedInt64Array<class_PackedInt64Array>` **get_path_owner_ids** **(** **)**
+- |void| **set_path_owner_ids**\ (\ value\: :ref:`PackedInt64Array<class_PackedInt64Array>`\ )
+- :ref:`PackedInt64Array<class_PackedInt64Array>` **get_path_owner_ids**\ (\ )
 
 The ``ObjectID``\ s of the :ref:`Object<class_Object>`\ s which manage the regions and links each point of the path goes through.
 
@@ -138,12 +138,12 @@ The ``ObjectID``\ s of the :ref:`Object<class_Object>`\ s which manage the regio
 
 .. rst-class:: classref-property
 
-:ref:`RID[]<class_RID>` **path_rids** = ``[]``
+:ref:`Array<class_Array>`\[:ref:`RID<class_RID>`\] **path_rids** = ``[]``
 
 .. rst-class:: classref-property-setget
 
-- void **set_path_rids** **(** :ref:`RID[]<class_RID>` value **)**
-- :ref:`RID[]<class_RID>` **get_path_rids** **(** **)**
+- |void| **set_path_rids**\ (\ value\: :ref:`Array<class_Array>`\[:ref:`RID<class_RID>`\]\ )
+- :ref:`Array<class_Array>`\[:ref:`RID<class_RID>`\] **get_path_rids**\ (\ )
 
 The :ref:`RID<class_RID>`\ s of the regions and links that each point of the path goes through.
 
@@ -159,8 +159,8 @@ The :ref:`RID<class_RID>`\ s of the regions and links that each point of the pat
 
 .. rst-class:: classref-property-setget
 
-- void **set_path_types** **(** :ref:`PackedInt32Array<class_PackedInt32Array>` value **)**
-- :ref:`PackedInt32Array<class_PackedInt32Array>` **get_path_types** **(** **)**
+- |void| **set_path_types**\ (\ value\: :ref:`PackedInt32Array<class_PackedInt32Array>`\ )
+- :ref:`PackedInt32Array<class_PackedInt32Array>` **get_path_types**\ (\ )
 
 The type of navigation primitive (region or link) that each point of the path goes through.
 
@@ -177,7 +177,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-void **reset** **(** **)**
+|void| **reset**\ (\ )
 
 Reset the result object to its initial state. This is useful to reuse the object across multiple queries.
 
@@ -188,3 +188,4 @@ Reset the result object to its initial state. This is useful to reuse the object
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

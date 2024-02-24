@@ -53,35 +53,35 @@ Methods
 .. table::
    :widths: auto
 
-   +---------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                      | :ref:`add_color_region<class_CodeHighlighter_method_add_color_region>` **(** :ref:`String<class_String>` start_key, :ref:`String<class_String>` end_key, :ref:`Color<class_Color>` color, :ref:`bool<class_bool>` line_only=false **)** |
-   +---------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                      | :ref:`add_keyword_color<class_CodeHighlighter_method_add_keyword_color>` **(** :ref:`String<class_String>` keyword, :ref:`Color<class_Color>` color **)**                                                                               |
-   +---------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                      | :ref:`add_member_keyword_color<class_CodeHighlighter_method_add_member_keyword_color>` **(** :ref:`String<class_String>` member_keyword, :ref:`Color<class_Color>` color **)**                                                          |
-   +---------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                      | :ref:`clear_color_regions<class_CodeHighlighter_method_clear_color_regions>` **(** **)**                                                                                                                                                |
-   +---------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                      | :ref:`clear_keyword_colors<class_CodeHighlighter_method_clear_keyword_colors>` **(** **)**                                                                                                                                              |
-   +---------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                      | :ref:`clear_member_keyword_colors<class_CodeHighlighter_method_clear_member_keyword_colors>` **(** **)**                                                                                                                                |
-   +---------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Color<class_Color>` | :ref:`get_keyword_color<class_CodeHighlighter_method_get_keyword_color>` **(** :ref:`String<class_String>` keyword **)** |const|                                                                                                        |
-   +---------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Color<class_Color>` | :ref:`get_member_keyword_color<class_CodeHighlighter_method_get_member_keyword_color>` **(** :ref:`String<class_String>` member_keyword **)** |const|                                                                                   |
-   +---------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`   | :ref:`has_color_region<class_CodeHighlighter_method_has_color_region>` **(** :ref:`String<class_String>` start_key **)** |const|                                                                                                        |
-   +---------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`   | :ref:`has_keyword_color<class_CodeHighlighter_method_has_keyword_color>` **(** :ref:`String<class_String>` keyword **)** |const|                                                                                                        |
-   +---------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`   | :ref:`has_member_keyword_color<class_CodeHighlighter_method_has_member_keyword_color>` **(** :ref:`String<class_String>` member_keyword **)** |const|                                                                                   |
-   +---------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                      | :ref:`remove_color_region<class_CodeHighlighter_method_remove_color_region>` **(** :ref:`String<class_String>` start_key **)**                                                                                                          |
-   +---------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                      | :ref:`remove_keyword_color<class_CodeHighlighter_method_remove_keyword_color>` **(** :ref:`String<class_String>` keyword **)**                                                                                                          |
-   +---------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                      | :ref:`remove_member_keyword_color<class_CodeHighlighter_method_remove_member_keyword_color>` **(** :ref:`String<class_String>` member_keyword **)**                                                                                     |
-   +---------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                    | :ref:`add_color_region<class_CodeHighlighter_method_add_color_region>`\ (\ start_key\: :ref:`String<class_String>`, end_key\: :ref:`String<class_String>`, color\: :ref:`Color<class_Color>`, line_only\: :ref:`bool<class_bool>` = false\ ) |
+   +---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                    | :ref:`add_keyword_color<class_CodeHighlighter_method_add_keyword_color>`\ (\ keyword\: :ref:`String<class_String>`, color\: :ref:`Color<class_Color>`\ )                                                                                     |
+   +---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                    | :ref:`add_member_keyword_color<class_CodeHighlighter_method_add_member_keyword_color>`\ (\ member_keyword\: :ref:`String<class_String>`, color\: :ref:`Color<class_Color>`\ )                                                                |
+   +---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                    | :ref:`clear_color_regions<class_CodeHighlighter_method_clear_color_regions>`\ (\ )                                                                                                                                                           |
+   +---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                    | :ref:`clear_keyword_colors<class_CodeHighlighter_method_clear_keyword_colors>`\ (\ )                                                                                                                                                         |
+   +---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                    | :ref:`clear_member_keyword_colors<class_CodeHighlighter_method_clear_member_keyword_colors>`\ (\ )                                                                                                                                           |
+   +---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Color<class_Color>` | :ref:`get_keyword_color<class_CodeHighlighter_method_get_keyword_color>`\ (\ keyword\: :ref:`String<class_String>`\ ) |const|                                                                                                                |
+   +---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Color<class_Color>` | :ref:`get_member_keyword_color<class_CodeHighlighter_method_get_member_keyword_color>`\ (\ member_keyword\: :ref:`String<class_String>`\ ) |const|                                                                                           |
+   +---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`   | :ref:`has_color_region<class_CodeHighlighter_method_has_color_region>`\ (\ start_key\: :ref:`String<class_String>`\ ) |const|                                                                                                                |
+   +---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`   | :ref:`has_keyword_color<class_CodeHighlighter_method_has_keyword_color>`\ (\ keyword\: :ref:`String<class_String>`\ ) |const|                                                                                                                |
+   +---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`   | :ref:`has_member_keyword_color<class_CodeHighlighter_method_has_member_keyword_color>`\ (\ member_keyword\: :ref:`String<class_String>`\ ) |const|                                                                                           |
+   +---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                    | :ref:`remove_color_region<class_CodeHighlighter_method_remove_color_region>`\ (\ start_key\: :ref:`String<class_String>`\ )                                                                                                                  |
+   +---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                    | :ref:`remove_keyword_color<class_CodeHighlighter_method_remove_keyword_color>`\ (\ keyword\: :ref:`String<class_String>`\ )                                                                                                                  |
+   +---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                    | :ref:`remove_member_keyword_color<class_CodeHighlighter_method_remove_member_keyword_color>`\ (\ member_keyword\: :ref:`String<class_String>`\ )                                                                                             |
+   +---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -100,8 +100,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_color_regions** **(** :ref:`Dictionary<class_Dictionary>` value **)**
-- :ref:`Dictionary<class_Dictionary>` **get_color_regions** **(** **)**
+- |void| **set_color_regions**\ (\ value\: :ref:`Dictionary<class_Dictionary>`\ )
+- :ref:`Dictionary<class_Dictionary>` **get_color_regions**\ (\ )
 
 Sets the color regions. All existing regions will be removed. The :ref:`Dictionary<class_Dictionary>` key is the region start and end key, separated by a space. The value is the region color.
 
@@ -117,8 +117,8 @@ Sets the color regions. All existing regions will be removed. The :ref:`Dictiona
 
 .. rst-class:: classref-property-setget
 
-- void **set_function_color** **(** :ref:`Color<class_Color>` value **)**
-- :ref:`Color<class_Color>` **get_function_color** **(** **)**
+- |void| **set_function_color**\ (\ value\: :ref:`Color<class_Color>`\ )
+- :ref:`Color<class_Color>` **get_function_color**\ (\ )
 
 Sets color for functions. A function is a non-keyword string followed by a '('.
 
@@ -134,8 +134,8 @@ Sets color for functions. A function is a non-keyword string followed by a '('.
 
 .. rst-class:: classref-property-setget
 
-- void **set_keyword_colors** **(** :ref:`Dictionary<class_Dictionary>` value **)**
-- :ref:`Dictionary<class_Dictionary>` **get_keyword_colors** **(** **)**
+- |void| **set_keyword_colors**\ (\ value\: :ref:`Dictionary<class_Dictionary>`\ )
+- :ref:`Dictionary<class_Dictionary>` **get_keyword_colors**\ (\ )
 
 Sets the keyword colors. All existing keywords will be removed. The :ref:`Dictionary<class_Dictionary>` key is the keyword. The value is the keyword color.
 
@@ -151,8 +151,8 @@ Sets the keyword colors. All existing keywords will be removed. The :ref:`Dictio
 
 .. rst-class:: classref-property-setget
 
-- void **set_member_keyword_colors** **(** :ref:`Dictionary<class_Dictionary>` value **)**
-- :ref:`Dictionary<class_Dictionary>` **get_member_keyword_colors** **(** **)**
+- |void| **set_member_keyword_colors**\ (\ value\: :ref:`Dictionary<class_Dictionary>`\ )
+- :ref:`Dictionary<class_Dictionary>` **get_member_keyword_colors**\ (\ )
 
 Sets the member keyword colors. All existing member keyword will be removed. The :ref:`Dictionary<class_Dictionary>` key is the member keyword. The value is the member keyword color.
 
@@ -168,8 +168,8 @@ Sets the member keyword colors. All existing member keyword will be removed. The
 
 .. rst-class:: classref-property-setget
 
-- void **set_member_variable_color** **(** :ref:`Color<class_Color>` value **)**
-- :ref:`Color<class_Color>` **get_member_variable_color** **(** **)**
+- |void| **set_member_variable_color**\ (\ value\: :ref:`Color<class_Color>`\ )
+- :ref:`Color<class_Color>` **get_member_variable_color**\ (\ )
 
 Sets color for member variables. A member variable is non-keyword, non-function string proceeded with a '.'.
 
@@ -185,8 +185,8 @@ Sets color for member variables. A member variable is non-keyword, non-function 
 
 .. rst-class:: classref-property-setget
 
-- void **set_number_color** **(** :ref:`Color<class_Color>` value **)**
-- :ref:`Color<class_Color>` **get_number_color** **(** **)**
+- |void| **set_number_color**\ (\ value\: :ref:`Color<class_Color>`\ )
+- :ref:`Color<class_Color>` **get_number_color**\ (\ )
 
 Sets the color for numbers.
 
@@ -202,8 +202,8 @@ Sets the color for numbers.
 
 .. rst-class:: classref-property-setget
 
-- void **set_symbol_color** **(** :ref:`Color<class_Color>` value **)**
-- :ref:`Color<class_Color>` **get_symbol_color** **(** **)**
+- |void| **set_symbol_color**\ (\ value\: :ref:`Color<class_Color>`\ )
+- :ref:`Color<class_Color>` **get_symbol_color**\ (\ )
 
 Sets the color for symbols.
 
@@ -220,7 +220,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-void **add_color_region** **(** :ref:`String<class_String>` start_key, :ref:`String<class_String>` end_key, :ref:`Color<class_Color>` color, :ref:`bool<class_bool>` line_only=false **)**
+|void| **add_color_region**\ (\ start_key\: :ref:`String<class_String>`, end_key\: :ref:`String<class_String>`, color\: :ref:`Color<class_Color>`, line_only\: :ref:`bool<class_bool>` = false\ )
 
 Adds a color region such as comments or strings.
 
@@ -236,7 +236,7 @@ Both the start and end keys must be symbols. Only the start key has to be unique
 
 .. rst-class:: classref-method
 
-void **add_keyword_color** **(** :ref:`String<class_String>` keyword, :ref:`Color<class_Color>` color **)**
+|void| **add_keyword_color**\ (\ keyword\: :ref:`String<class_String>`, color\: :ref:`Color<class_Color>`\ )
 
 Sets the color for a keyword.
 
@@ -250,7 +250,7 @@ The keyword cannot contain any symbols except '\_'.
 
 .. rst-class:: classref-method
 
-void **add_member_keyword_color** **(** :ref:`String<class_String>` member_keyword, :ref:`Color<class_Color>` color **)**
+|void| **add_member_keyword_color**\ (\ member_keyword\: :ref:`String<class_String>`, color\: :ref:`Color<class_Color>`\ )
 
 Sets the color for a member keyword.
 
@@ -266,7 +266,7 @@ It will not be highlighted if preceded by a '.'.
 
 .. rst-class:: classref-method
 
-void **clear_color_regions** **(** **)**
+|void| **clear_color_regions**\ (\ )
 
 Removes all color regions.
 
@@ -278,7 +278,7 @@ Removes all color regions.
 
 .. rst-class:: classref-method
 
-void **clear_keyword_colors** **(** **)**
+|void| **clear_keyword_colors**\ (\ )
 
 Removes all keywords.
 
@@ -290,7 +290,7 @@ Removes all keywords.
 
 .. rst-class:: classref-method
 
-void **clear_member_keyword_colors** **(** **)**
+|void| **clear_member_keyword_colors**\ (\ )
 
 Removes all member keywords.
 
@@ -302,7 +302,7 @@ Removes all member keywords.
 
 .. rst-class:: classref-method
 
-:ref:`Color<class_Color>` **get_keyword_color** **(** :ref:`String<class_String>` keyword **)** |const|
+:ref:`Color<class_Color>` **get_keyword_color**\ (\ keyword\: :ref:`String<class_String>`\ ) |const|
 
 Returns the color for a keyword.
 
@@ -314,7 +314,7 @@ Returns the color for a keyword.
 
 .. rst-class:: classref-method
 
-:ref:`Color<class_Color>` **get_member_keyword_color** **(** :ref:`String<class_String>` member_keyword **)** |const|
+:ref:`Color<class_Color>` **get_member_keyword_color**\ (\ member_keyword\: :ref:`String<class_String>`\ ) |const|
 
 Returns the color for a member keyword.
 
@@ -326,7 +326,7 @@ Returns the color for a member keyword.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **has_color_region** **(** :ref:`String<class_String>` start_key **)** |const|
+:ref:`bool<class_bool>` **has_color_region**\ (\ start_key\: :ref:`String<class_String>`\ ) |const|
 
 Returns ``true`` if the start key exists, else ``false``.
 
@@ -338,7 +338,7 @@ Returns ``true`` if the start key exists, else ``false``.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **has_keyword_color** **(** :ref:`String<class_String>` keyword **)** |const|
+:ref:`bool<class_bool>` **has_keyword_color**\ (\ keyword\: :ref:`String<class_String>`\ ) |const|
 
 Returns ``true`` if the keyword exists, else ``false``.
 
@@ -350,7 +350,7 @@ Returns ``true`` if the keyword exists, else ``false``.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **has_member_keyword_color** **(** :ref:`String<class_String>` member_keyword **)** |const|
+:ref:`bool<class_bool>` **has_member_keyword_color**\ (\ member_keyword\: :ref:`String<class_String>`\ ) |const|
 
 Returns ``true`` if the member keyword exists, else ``false``.
 
@@ -362,7 +362,7 @@ Returns ``true`` if the member keyword exists, else ``false``.
 
 .. rst-class:: classref-method
 
-void **remove_color_region** **(** :ref:`String<class_String>` start_key **)**
+|void| **remove_color_region**\ (\ start_key\: :ref:`String<class_String>`\ )
 
 Removes the color region that uses that start key.
 
@@ -374,7 +374,7 @@ Removes the color region that uses that start key.
 
 .. rst-class:: classref-method
 
-void **remove_keyword_color** **(** :ref:`String<class_String>` keyword **)**
+|void| **remove_keyword_color**\ (\ keyword\: :ref:`String<class_String>`\ )
 
 Removes the keyword.
 
@@ -386,7 +386,7 @@ Removes the keyword.
 
 .. rst-class:: classref-method
 
-void **remove_member_keyword_color** **(** :ref:`String<class_String>` member_keyword **)**
+|void| **remove_member_keyword_color**\ (\ member_keyword\: :ref:`String<class_String>`\ )
 
 Removes the member keyword.
 
@@ -397,3 +397,4 @@ Removes the member keyword.
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

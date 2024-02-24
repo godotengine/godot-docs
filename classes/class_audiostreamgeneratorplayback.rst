@@ -38,19 +38,19 @@ Methods
 .. table::
    :widths: auto
 
-   +-------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>` | :ref:`can_push_buffer<class_AudioStreamGeneratorPlayback_method_can_push_buffer>` **(** :ref:`int<class_int>` amount **)** |const|               |
-   +-------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                    | :ref:`clear_buffer<class_AudioStreamGeneratorPlayback_method_clear_buffer>` **(** **)**                                                          |
-   +-------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`   | :ref:`get_frames_available<class_AudioStreamGeneratorPlayback_method_get_frames_available>` **(** **)** |const|                                  |
-   +-------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`   | :ref:`get_skips<class_AudioStreamGeneratorPlayback_method_get_skips>` **(** **)** |const|                                                        |
-   +-------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>` | :ref:`push_buffer<class_AudioStreamGeneratorPlayback_method_push_buffer>` **(** :ref:`PackedVector2Array<class_PackedVector2Array>` frames **)** |
-   +-------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>` | :ref:`push_frame<class_AudioStreamGeneratorPlayback_method_push_frame>` **(** :ref:`Vector2<class_Vector2>` frame **)**                          |
-   +-------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+   +-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | :ref:`can_push_buffer<class_AudioStreamGeneratorPlayback_method_can_push_buffer>`\ (\ amount\: :ref:`int<class_int>`\ ) |const|               |
+   +-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                  | :ref:`clear_buffer<class_AudioStreamGeneratorPlayback_method_clear_buffer>`\ (\ )                                                             |
+   +-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`   | :ref:`get_frames_available<class_AudioStreamGeneratorPlayback_method_get_frames_available>`\ (\ ) |const|                                     |
+   +-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`   | :ref:`get_skips<class_AudioStreamGeneratorPlayback_method_get_skips>`\ (\ ) |const|                                                           |
+   +-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | :ref:`push_buffer<class_AudioStreamGeneratorPlayback_method_push_buffer>`\ (\ frames\: :ref:`PackedVector2Array<class_PackedVector2Array>`\ ) |
+   +-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | :ref:`push_frame<class_AudioStreamGeneratorPlayback_method_push_frame>`\ (\ frame\: :ref:`Vector2<class_Vector2>`\ )                          |
+   +-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -65,7 +65,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **can_push_buffer** **(** :ref:`int<class_int>` amount **)** |const|
+:ref:`bool<class_bool>` **can_push_buffer**\ (\ amount\: :ref:`int<class_int>`\ ) |const|
 
 Returns ``true`` if a buffer of the size ``amount`` can be pushed to the audio sample data buffer without overflowing it, ``false`` otherwise.
 
@@ -77,7 +77,7 @@ Returns ``true`` if a buffer of the size ``amount`` can be pushed to the audio s
 
 .. rst-class:: classref-method
 
-void **clear_buffer** **(** **)**
+|void| **clear_buffer**\ (\ )
 
 Clears the audio sample data buffer.
 
@@ -89,7 +89,7 @@ Clears the audio sample data buffer.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_frames_available** **(** **)** |const|
+:ref:`int<class_int>` **get_frames_available**\ (\ ) |const|
 
 Returns the number of frames that can be pushed to the audio sample data buffer without overflowing it. If the result is ``0``, the buffer is full.
 
@@ -101,7 +101,7 @@ Returns the number of frames that can be pushed to the audio sample data buffer 
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_skips** **(** **)** |const|
+:ref:`int<class_int>` **get_skips**\ (\ ) |const|
 
 Returns the number of times the playback skipped due to a buffer underrun in the audio sample data. This value is reset at the start of the playback.
 
@@ -113,7 +113,7 @@ Returns the number of times the playback skipped due to a buffer underrun in the
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **push_buffer** **(** :ref:`PackedVector2Array<class_PackedVector2Array>` frames **)**
+:ref:`bool<class_bool>` **push_buffer**\ (\ frames\: :ref:`PackedVector2Array<class_PackedVector2Array>`\ )
 
 Pushes several audio data frames to the buffer. This is usually more efficient than :ref:`push_frame<class_AudioStreamGeneratorPlayback_method_push_frame>` in C# and compiled languages via GDExtension, but :ref:`push_buffer<class_AudioStreamGeneratorPlayback_method_push_buffer>` may be *less* efficient in GDScript.
 
@@ -125,7 +125,7 @@ Pushes several audio data frames to the buffer. This is usually more efficient t
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **push_frame** **(** :ref:`Vector2<class_Vector2>` frame **)**
+:ref:`bool<class_bool>` **push_frame**\ (\ frame\: :ref:`Vector2<class_Vector2>`\ )
 
 Pushes a single audio data frame to the buffer. This is usually less efficient than :ref:`push_buffer<class_AudioStreamGeneratorPlayback_method_push_buffer>` in C# and compiled languages via GDExtension, but :ref:`push_frame<class_AudioStreamGeneratorPlayback_method_push_frame>` may be *more* efficient in GDScript.
 
@@ -136,3 +136,4 @@ Pushes a single audio data frame to the buffer. This is usually less efficient t
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

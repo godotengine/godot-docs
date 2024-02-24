@@ -31,13 +31,13 @@ Methods
 .. table::
    :widths: auto
 
-   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`       | :ref:`_handles<class_EditorResourceTooltipPlugin_private_method__handles>` **(** :ref:`String<class_String>` type **)** |virtual| |const|                                                                                                               |
-   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Control<class_Control>` | :ref:`_make_tooltip_for_path<class_EditorResourceTooltipPlugin_private_method__make_tooltip_for_path>` **(** :ref:`String<class_String>` path, :ref:`Dictionary<class_Dictionary>` metadata, :ref:`Control<class_Control>` base **)** |virtual| |const| |
-   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                          | :ref:`request_thumbnail<class_EditorResourceTooltipPlugin_method_request_thumbnail>` **(** :ref:`String<class_String>` path, :ref:`TextureRect<class_TextureRect>` control **)** |const|                                                                |
-   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`_handles<class_EditorResourceTooltipPlugin_private_method__handles>`\ (\ type\: :ref:`String<class_String>`\ ) |virtual| |const|                                                                                                                   |
+   +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Control<class_Control>` | :ref:`_make_tooltip_for_path<class_EditorResourceTooltipPlugin_private_method__make_tooltip_for_path>`\ (\ path\: :ref:`String<class_String>`, metadata\: :ref:`Dictionary<class_Dictionary>`, base\: :ref:`Control<class_Control>`\ ) |virtual| |const| |
+   +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                        | :ref:`request_thumbnail<class_EditorResourceTooltipPlugin_method_request_thumbnail>`\ (\ path\: :ref:`String<class_String>`, control\: :ref:`TextureRect<class_TextureRect>`\ ) |const|                                                                  |
+   +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -52,7 +52,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **_handles** **(** :ref:`String<class_String>` type **)** |virtual| |const|
+:ref:`bool<class_bool>` **_handles**\ (\ type\: :ref:`String<class_String>`\ ) |virtual| |const|
 
 Return ``true`` if the plugin is going to handle the given :ref:`Resource<class_Resource>` ``type``.
 
@@ -64,7 +64,7 @@ Return ``true`` if the plugin is going to handle the given :ref:`Resource<class_
 
 .. rst-class:: classref-method
 
-:ref:`Control<class_Control>` **_make_tooltip_for_path** **(** :ref:`String<class_String>` path, :ref:`Dictionary<class_Dictionary>` metadata, :ref:`Control<class_Control>` base **)** |virtual| |const|
+:ref:`Control<class_Control>` **_make_tooltip_for_path**\ (\ path\: :ref:`String<class_String>`, metadata\: :ref:`Dictionary<class_Dictionary>`, base\: :ref:`Control<class_Control>`\ ) |virtual| |const|
 
 Create and return a tooltip that will be displayed when the user hovers a resource under the given ``path`` in filesystem dock.
 
@@ -92,7 +92,7 @@ The ``metadata`` dictionary is provided by preview generator (see :ref:`EditorRe
 
 .. rst-class:: classref-method
 
-void **request_thumbnail** **(** :ref:`String<class_String>` path, :ref:`TextureRect<class_TextureRect>` control **)** |const|
+|void| **request_thumbnail**\ (\ path\: :ref:`String<class_String>`, control\: :ref:`TextureRect<class_TextureRect>`\ ) |const|
 
 Requests a thumbnail for the given :ref:`TextureRect<class_TextureRect>`. The thumbnail is created asynchronously by :ref:`EditorResourcePreview<class_EditorResourcePreview>` and automatically set when available.
 
@@ -103,3 +103,4 @@ Requests a thumbnail for the given :ref:`TextureRect<class_TextureRect>`. The th
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

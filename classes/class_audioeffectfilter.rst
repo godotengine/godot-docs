@@ -128,8 +128,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_cutoff** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_cutoff** **(** **)**
+- |void| **set_cutoff**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_cutoff**\ (\ )
 
 Threshold frequency for the filter, in Hz.
 
@@ -145,8 +145,8 @@ Threshold frequency for the filter, in Hz.
 
 .. rst-class:: classref-property-setget
 
-- void **set_db** **(** :ref:`FilterDB<enum_AudioEffectFilter_FilterDB>` value **)**
-- :ref:`FilterDB<enum_AudioEffectFilter_FilterDB>` **get_db** **(** **)**
+- |void| **set_db**\ (\ value\: :ref:`FilterDB<enum_AudioEffectFilter_FilterDB>`\ )
+- :ref:`FilterDB<enum_AudioEffectFilter_FilterDB>` **get_db**\ (\ )
 
 .. container:: contribute
 
@@ -164,8 +164,8 @@ Threshold frequency for the filter, in Hz.
 
 .. rst-class:: classref-property-setget
 
-- void **set_gain** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_gain** **(** **)**
+- |void| **set_gain**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_gain**\ (\ )
 
 Gain amount of the frequencies after the filter.
 
@@ -181,8 +181,8 @@ Gain amount of the frequencies after the filter.
 
 .. rst-class:: classref-property-setget
 
-- void **set_resonance** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_resonance** **(** **)**
+- |void| **set_resonance**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_resonance**\ (\ )
 
 Amount of boost in the frequency range near the cutoff frequency.
 
@@ -193,3 +193,4 @@ Amount of boost in the frequency range near the cutoff frequency.
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

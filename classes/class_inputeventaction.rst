@@ -67,8 +67,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_action** **(** :ref:`StringName<class_StringName>` value **)**
-- :ref:`StringName<class_StringName>` **get_action** **(** **)**
+- |void| **set_action**\ (\ value\: :ref:`StringName<class_StringName>`\ )
+- :ref:`StringName<class_StringName>` **get_action**\ (\ )
 
 The action's name. Actions are accessed via this :ref:`String<class_String>`.
 
@@ -84,8 +84,8 @@ The action's name. Actions are accessed via this :ref:`String<class_String>`.
 
 .. rst-class:: classref-property-setget
 
-- void **set_pressed** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_pressed** **(** **)**
+- |void| **set_pressed**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_pressed**\ (\ )
 
 If ``true``, the action's state is pressed. If ``false``, the action's state is released.
 
@@ -101,8 +101,8 @@ If ``true``, the action's state is pressed. If ``false``, the action's state is 
 
 .. rst-class:: classref-property-setget
 
-- void **set_strength** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_strength** **(** **)**
+- |void| **set_strength**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_strength**\ (\ )
 
 The action's strength between 0 and 1. This value is considered as equal to 0 if pressed is ``false``. The event strength allows faking analog joypad motion events, by specifying how strongly the joypad axis is bent or pressed.
 
@@ -113,3 +113,4 @@ The action's strength between 0 and 1. This value is considered as equal to 0 if
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

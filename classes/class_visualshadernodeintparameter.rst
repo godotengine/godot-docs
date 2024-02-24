@@ -107,8 +107,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_default_value** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_default_value** **(** **)**
+- |void| **set_default_value**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_default_value**\ (\ )
 
 Default value of this parameter, which will be used if not set externally. :ref:`default_value_enabled<class_VisualShaderNodeIntParameter_property_default_value_enabled>` must be enabled; defaults to ``0`` otherwise.
 
@@ -124,8 +124,8 @@ Default value of this parameter, which will be used if not set externally. :ref:
 
 .. rst-class:: classref-property-setget
 
-- void **set_default_value_enabled** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_default_value_enabled** **(** **)**
+- |void| **set_default_value_enabled**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_default_value_enabled**\ (\ )
 
 If ``true``, the node will have a custom default value.
 
@@ -141,8 +141,8 @@ If ``true``, the node will have a custom default value.
 
 .. rst-class:: classref-property-setget
 
-- void **set_hint** **(** :ref:`Hint<enum_VisualShaderNodeIntParameter_Hint>` value **)**
-- :ref:`Hint<enum_VisualShaderNodeIntParameter_Hint>` **get_hint** **(** **)**
+- |void| **set_hint**\ (\ value\: :ref:`Hint<enum_VisualShaderNodeIntParameter_Hint>`\ )
+- :ref:`Hint<enum_VisualShaderNodeIntParameter_Hint>` **get_hint**\ (\ )
 
 Range hint of this node. Use it to customize valid parameter range.
 
@@ -158,8 +158,8 @@ Range hint of this node. Use it to customize valid parameter range.
 
 .. rst-class:: classref-property-setget
 
-- void **set_max** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_max** **(** **)**
+- |void| **set_max**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_max**\ (\ )
 
 The maximum value this parameter can take. :ref:`hint<class_VisualShaderNodeIntParameter_property_hint>` must be either :ref:`HINT_RANGE<class_VisualShaderNodeIntParameter_constant_HINT_RANGE>` or :ref:`HINT_RANGE_STEP<class_VisualShaderNodeIntParameter_constant_HINT_RANGE_STEP>` for this to take effect.
 
@@ -175,8 +175,8 @@ The maximum value this parameter can take. :ref:`hint<class_VisualShaderNodeIntP
 
 .. rst-class:: classref-property-setget
 
-- void **set_min** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_min** **(** **)**
+- |void| **set_min**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_min**\ (\ )
 
 The minimum value this parameter can take. :ref:`hint<class_VisualShaderNodeIntParameter_property_hint>` must be either :ref:`HINT_RANGE<class_VisualShaderNodeIntParameter_constant_HINT_RANGE>` or :ref:`HINT_RANGE_STEP<class_VisualShaderNodeIntParameter_constant_HINT_RANGE_STEP>` for this to take effect.
 
@@ -192,8 +192,8 @@ The minimum value this parameter can take. :ref:`hint<class_VisualShaderNodeIntP
 
 .. rst-class:: classref-property-setget
 
-- void **set_step** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_step** **(** **)**
+- |void| **set_step**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_step**\ (\ )
 
 The step between parameter's values. Forces the parameter to be a multiple of the given value. :ref:`hint<class_VisualShaderNodeIntParameter_property_hint>` must be :ref:`HINT_RANGE_STEP<class_VisualShaderNodeIntParameter_constant_HINT_RANGE_STEP>` for this to take effect.
 
@@ -204,3 +204,4 @@ The step between parameter's values. Forces the parameter to be a multiple of th
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

@@ -47,9 +47,9 @@ Methods
 .. table::
    :widths: auto
 
-   +------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void | :ref:`set_point_cloud<class_ConvexPolygonShape2D_method_set_point_cloud>` **(** :ref:`PackedVector2Array<class_PackedVector2Array>` point_cloud **)** |
-   +------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +--------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void| | :ref:`set_point_cloud<class_ConvexPolygonShape2D_method_set_point_cloud>`\ (\ point_cloud\: :ref:`PackedVector2Array<class_PackedVector2Array>`\ ) |
+   +--------+----------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -68,8 +68,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_points** **(** :ref:`PackedVector2Array<class_PackedVector2Array>` value **)**
-- :ref:`PackedVector2Array<class_PackedVector2Array>` **get_points** **(** **)**
+- |void| **set_points**\ (\ value\: :ref:`PackedVector2Array<class_PackedVector2Array>`\ )
+- :ref:`PackedVector2Array<class_PackedVector2Array>` **get_points**\ (\ )
 
 The polygon's list of vertices that form a convex hull. Can be in either clockwise or counterclockwise order.
 
@@ -88,7 +88,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-void **set_point_cloud** **(** :ref:`PackedVector2Array<class_PackedVector2Array>` point_cloud **)**
+|void| **set_point_cloud**\ (\ point_cloud\: :ref:`PackedVector2Array<class_PackedVector2Array>`\ )
 
 Based on the set of points provided, this assigns the :ref:`points<class_ConvexPolygonShape2D_property_points>` property using the convex hull algorithm, removing all unneeded points. See :ref:`Geometry2D.convex_hull<class_Geometry2D_method_convex_hull>` for details.
 
@@ -99,3 +99,4 @@ Based on the set of points provided, this assigns the :ref:`points<class_ConvexP
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

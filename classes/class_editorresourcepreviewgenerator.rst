@@ -29,17 +29,17 @@ Methods
 .. table::
    :widths: auto
 
-   +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`           | :ref:`_can_generate_small_preview<class_EditorResourcePreviewGenerator_private_method__can_generate_small_preview>` **(** **)** |virtual| |const|                                                                                                      |
-   +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Texture2D<class_Texture2D>` | :ref:`_generate<class_EditorResourcePreviewGenerator_private_method__generate>` **(** :ref:`Resource<class_Resource>` resource, :ref:`Vector2i<class_Vector2i>` size, :ref:`Dictionary<class_Dictionary>` metadata **)** |virtual| |const|             |
-   +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Texture2D<class_Texture2D>` | :ref:`_generate_from_path<class_EditorResourcePreviewGenerator_private_method__generate_from_path>` **(** :ref:`String<class_String>` path, :ref:`Vector2i<class_Vector2i>` size, :ref:`Dictionary<class_Dictionary>` metadata **)** |virtual| |const| |
-   +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`           | :ref:`_generate_small_preview_automatically<class_EditorResourcePreviewGenerator_private_method__generate_small_preview_automatically>` **(** **)** |virtual| |const|                                                                                  |
-   +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`           | :ref:`_handles<class_EditorResourcePreviewGenerator_private_method__handles>` **(** :ref:`String<class_String>` type **)** |virtual| |const|                                                                                                           |
-   +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`           | :ref:`_can_generate_small_preview<class_EditorResourcePreviewGenerator_private_method__can_generate_small_preview>`\ (\ ) |virtual| |const|                                                                                                             |
+   +-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Texture2D<class_Texture2D>` | :ref:`_generate<class_EditorResourcePreviewGenerator_private_method__generate>`\ (\ resource\: :ref:`Resource<class_Resource>`, size\: :ref:`Vector2i<class_Vector2i>`, metadata\: :ref:`Dictionary<class_Dictionary>`\ ) |virtual| |const|             |
+   +-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Texture2D<class_Texture2D>` | :ref:`_generate_from_path<class_EditorResourcePreviewGenerator_private_method__generate_from_path>`\ (\ path\: :ref:`String<class_String>`, size\: :ref:`Vector2i<class_Vector2i>`, metadata\: :ref:`Dictionary<class_Dictionary>`\ ) |virtual| |const| |
+   +-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`           | :ref:`_generate_small_preview_automatically<class_EditorResourcePreviewGenerator_private_method__generate_small_preview_automatically>`\ (\ ) |virtual| |const|                                                                                         |
+   +-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`           | :ref:`_handles<class_EditorResourcePreviewGenerator_private_method__handles>`\ (\ type\: :ref:`String<class_String>`\ ) |virtual| |const|                                                                                                               |
+   +-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -54,7 +54,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **_can_generate_small_preview** **(** **)** |virtual| |const|
+:ref:`bool<class_bool>` **_can_generate_small_preview**\ (\ ) |virtual| |const|
 
 If this function returns ``true``, the generator will call :ref:`_generate<class_EditorResourcePreviewGenerator_private_method__generate>` or :ref:`_generate_from_path<class_EditorResourcePreviewGenerator_private_method__generate_from_path>` for small previews as well.
 
@@ -68,7 +68,7 @@ By default, it returns ``false``.
 
 .. rst-class:: classref-method
 
-:ref:`Texture2D<class_Texture2D>` **_generate** **(** :ref:`Resource<class_Resource>` resource, :ref:`Vector2i<class_Vector2i>` size, :ref:`Dictionary<class_Dictionary>` metadata **)** |virtual| |const|
+:ref:`Texture2D<class_Texture2D>` **_generate**\ (\ resource\: :ref:`Resource<class_Resource>`, size\: :ref:`Vector2i<class_Vector2i>`, metadata\: :ref:`Dictionary<class_Dictionary>`\ ) |virtual| |const|
 
 Generate a preview from a given resource with the specified size. This must always be implemented.
 
@@ -86,7 +86,7 @@ Care must be taken because this function is always called from a thread (not the
 
 .. rst-class:: classref-method
 
-:ref:`Texture2D<class_Texture2D>` **_generate_from_path** **(** :ref:`String<class_String>` path, :ref:`Vector2i<class_Vector2i>` size, :ref:`Dictionary<class_Dictionary>` metadata **)** |virtual| |const|
+:ref:`Texture2D<class_Texture2D>` **_generate_from_path**\ (\ path\: :ref:`String<class_String>`, size\: :ref:`Vector2i<class_Vector2i>`, metadata\: :ref:`Dictionary<class_Dictionary>`\ ) |virtual| |const|
 
 Generate a preview directly from a path with the specified size. Implementing this is optional, as default code will load and call :ref:`_generate<class_EditorResourcePreviewGenerator_private_method__generate>`.
 
@@ -104,7 +104,7 @@ Care must be taken because this function is always called from a thread (not the
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **_generate_small_preview_automatically** **(** **)** |virtual| |const|
+:ref:`bool<class_bool>` **_generate_small_preview_automatically**\ (\ ) |virtual| |const|
 
 If this function returns ``true``, the generator will automatically generate the small previews from the normal preview texture generated by the methods :ref:`_generate<class_EditorResourcePreviewGenerator_private_method__generate>` or :ref:`_generate_from_path<class_EditorResourcePreviewGenerator_private_method__generate_from_path>`.
 
@@ -118,7 +118,7 @@ By default, it returns ``false``.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **_handles** **(** :ref:`String<class_String>` type **)** |virtual| |const|
+:ref:`bool<class_bool>` **_handles**\ (\ type\: :ref:`String<class_String>`\ ) |virtual| |const|
 
 Returns ``true`` if your generator supports the resource of type ``type``.
 
@@ -129,3 +129,4 @@ Returns ``true`` if your generator supports the resource of type ``type``.
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

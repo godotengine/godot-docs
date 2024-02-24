@@ -31,11 +31,11 @@ Methods
 .. table::
    :widths: auto
 
-   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`String<class_String>`                       | :ref:`_get_name<class_EditorSyntaxHighlighter_private_method__get_name>` **(** **)** |virtual| |const|                               |
-   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`_get_supported_languages<class_EditorSyntaxHighlighter_private_method__get_supported_languages>` **(** **)** |virtual| |const| |
-   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                       | :ref:`_get_name<class_EditorSyntaxHighlighter_private_method__get_name>`\ (\ ) |virtual| |const|                               |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`_get_supported_languages<class_EditorSyntaxHighlighter_private_method__get_supported_languages>`\ (\ ) |virtual| |const| |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -50,7 +50,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **_get_name** **(** **)** |virtual| |const|
+:ref:`String<class_String>` **_get_name**\ (\ ) |virtual| |const|
 
 Virtual method which can be overridden to return the syntax highlighter name.
 
@@ -62,7 +62,7 @@ Virtual method which can be overridden to return the syntax highlighter name.
 
 .. rst-class:: classref-method
 
-:ref:`PackedStringArray<class_PackedStringArray>` **_get_supported_languages** **(** **)** |virtual| |const|
+:ref:`PackedStringArray<class_PackedStringArray>` **_get_supported_languages**\ (\ ) |virtual| |const|
 
 Virtual method which can be overridden to return the supported language names.
 
@@ -73,3 +73,4 @@ Virtual method which can be overridden to return the supported language names.
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

@@ -87,8 +87,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_buffer_view** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_buffer_view** **(** **)**
+- |void| **set_buffer_view**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_buffer_view**\ (\ )
 
 The index of the buffer view this accessor is referencing. If ``-1``, this accessor is not referencing any buffer view.
 
@@ -104,8 +104,8 @@ The index of the buffer view this accessor is referencing. If ``-1``, this acces
 
 .. rst-class:: classref-property-setget
 
-- void **set_byte_offset** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_byte_offset** **(** **)**
+- |void| **set_byte_offset**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_byte_offset**\ (\ )
 
 .. container:: contribute
 
@@ -123,8 +123,8 @@ The index of the buffer view this accessor is referencing. If ``-1``, this acces
 
 .. rst-class:: classref-property-setget
 
-- void **set_component_type** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_component_type** **(** **)**
+- |void| **set_component_type**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_component_type**\ (\ )
 
 .. container:: contribute
 
@@ -142,8 +142,8 @@ The index of the buffer view this accessor is referencing. If ``-1``, this acces
 
 .. rst-class:: classref-property-setget
 
-- void **set_count** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_count** **(** **)**
+- |void| **set_count**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_count**\ (\ )
 
 .. container:: contribute
 
@@ -161,8 +161,8 @@ The index of the buffer view this accessor is referencing. If ``-1``, this acces
 
 .. rst-class:: classref-property-setget
 
-- void **set_max** **(** :ref:`PackedFloat64Array<class_PackedFloat64Array>` value **)**
-- :ref:`PackedFloat64Array<class_PackedFloat64Array>` **get_max** **(** **)**
+- |void| **set_max**\ (\ value\: :ref:`PackedFloat64Array<class_PackedFloat64Array>`\ )
+- :ref:`PackedFloat64Array<class_PackedFloat64Array>` **get_max**\ (\ )
 
 .. container:: contribute
 
@@ -180,8 +180,8 @@ The index of the buffer view this accessor is referencing. If ``-1``, this acces
 
 .. rst-class:: classref-property-setget
 
-- void **set_min** **(** :ref:`PackedFloat64Array<class_PackedFloat64Array>` value **)**
-- :ref:`PackedFloat64Array<class_PackedFloat64Array>` **get_min** **(** **)**
+- |void| **set_min**\ (\ value\: :ref:`PackedFloat64Array<class_PackedFloat64Array>`\ )
+- :ref:`PackedFloat64Array<class_PackedFloat64Array>` **get_min**\ (\ )
 
 .. container:: contribute
 
@@ -199,8 +199,8 @@ The index of the buffer view this accessor is referencing. If ``-1``, this acces
 
 .. rst-class:: classref-property-setget
 
-- void **set_normalized** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **get_normalized** **(** **)**
+- |void| **set_normalized**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_normalized**\ (\ )
 
 .. container:: contribute
 
@@ -218,8 +218,8 @@ The index of the buffer view this accessor is referencing. If ``-1``, this acces
 
 .. rst-class:: classref-property-setget
 
-- void **set_sparse_count** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_sparse_count** **(** **)**
+- |void| **set_sparse_count**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_sparse_count**\ (\ )
 
 .. container:: contribute
 
@@ -237,8 +237,8 @@ The index of the buffer view this accessor is referencing. If ``-1``, this acces
 
 .. rst-class:: classref-property-setget
 
-- void **set_sparse_indices_buffer_view** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_sparse_indices_buffer_view** **(** **)**
+- |void| **set_sparse_indices_buffer_view**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_sparse_indices_buffer_view**\ (\ )
 
 .. container:: contribute
 
@@ -256,8 +256,8 @@ The index of the buffer view this accessor is referencing. If ``-1``, this acces
 
 .. rst-class:: classref-property-setget
 
-- void **set_sparse_indices_byte_offset** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_sparse_indices_byte_offset** **(** **)**
+- |void| **set_sparse_indices_byte_offset**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_sparse_indices_byte_offset**\ (\ )
 
 .. container:: contribute
 
@@ -275,8 +275,8 @@ The index of the buffer view this accessor is referencing. If ``-1``, this acces
 
 .. rst-class:: classref-property-setget
 
-- void **set_sparse_indices_component_type** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_sparse_indices_component_type** **(** **)**
+- |void| **set_sparse_indices_component_type**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_sparse_indices_component_type**\ (\ )
 
 .. container:: contribute
 
@@ -294,8 +294,8 @@ The index of the buffer view this accessor is referencing. If ``-1``, this acces
 
 .. rst-class:: classref-property-setget
 
-- void **set_sparse_values_buffer_view** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_sparse_values_buffer_view** **(** **)**
+- |void| **set_sparse_values_buffer_view**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_sparse_values_buffer_view**\ (\ )
 
 .. container:: contribute
 
@@ -313,8 +313,8 @@ The index of the buffer view this accessor is referencing. If ``-1``, this acces
 
 .. rst-class:: classref-property-setget
 
-- void **set_sparse_values_byte_offset** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_sparse_values_byte_offset** **(** **)**
+- |void| **set_sparse_values_byte_offset**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_sparse_values_byte_offset**\ (\ )
 
 .. container:: contribute
 
@@ -332,8 +332,8 @@ The index of the buffer view this accessor is referencing. If ``-1``, this acces
 
 .. rst-class:: classref-property-setget
 
-- void **set_type** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_type** **(** **)**
+- |void| **set_type**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_type**\ (\ )
 
 .. container:: contribute
 
@@ -346,3 +346,4 @@ The index of the buffer view this accessor is referencing. If ``-1``, this acces
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

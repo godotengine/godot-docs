@@ -73,8 +73,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_damping** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_damping** **(** **)**
+- |void| **set_damping**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_damping**\ (\ )
 
 Defines how reflective the imaginary room's walls are. Value can range from 0 to 1.
 
@@ -90,8 +90,8 @@ Defines how reflective the imaginary room's walls are. Value can range from 0 to
 
 .. rst-class:: classref-property-setget
 
-- void **set_dry** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_dry** **(** **)**
+- |void| **set_dry**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_dry**\ (\ )
 
 Output percent of original sound. At 0, only modified sound is outputted. Value can range from 0 to 1.
 
@@ -107,8 +107,8 @@ Output percent of original sound. At 0, only modified sound is outputted. Value 
 
 .. rst-class:: classref-property-setget
 
-- void **set_hpf** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_hpf** **(** **)**
+- |void| **set_hpf**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_hpf**\ (\ )
 
 High-pass filter passes signals with a frequency higher than a certain cutoff frequency and attenuates signals with frequencies lower than the cutoff frequency. Value can range from 0 to 1.
 
@@ -124,8 +124,8 @@ High-pass filter passes signals with a frequency higher than a certain cutoff fr
 
 .. rst-class:: classref-property-setget
 
-- void **set_predelay_feedback** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_predelay_feedback** **(** **)**
+- |void| **set_predelay_feedback**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_predelay_feedback**\ (\ )
 
 Output percent of predelay. Value can range from 0 to 1.
 
@@ -141,8 +141,8 @@ Output percent of predelay. Value can range from 0 to 1.
 
 .. rst-class:: classref-property-setget
 
-- void **set_predelay_msec** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_predelay_msec** **(** **)**
+- |void| **set_predelay_msec**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_predelay_msec**\ (\ )
 
 Time between the original signal and the early reflections of the reverb signal, in milliseconds.
 
@@ -158,8 +158,8 @@ Time between the original signal and the early reflections of the reverb signal,
 
 .. rst-class:: classref-property-setget
 
-- void **set_room_size** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_room_size** **(** **)**
+- |void| **set_room_size**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_room_size**\ (\ )
 
 Dimensions of simulated room. Bigger means more echoes. Value can range from 0 to 1.
 
@@ -175,8 +175,8 @@ Dimensions of simulated room. Bigger means more echoes. Value can range from 0 t
 
 .. rst-class:: classref-property-setget
 
-- void **set_spread** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_spread** **(** **)**
+- |void| **set_spread**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_spread**\ (\ )
 
 Widens or narrows the stereo image of the reverb tail. 1 means fully widens. Value can range from 0 to 1.
 
@@ -192,8 +192,8 @@ Widens or narrows the stereo image of the reverb tail. 1 means fully widens. Val
 
 .. rst-class:: classref-property-setget
 
-- void **set_wet** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_wet** **(** **)**
+- |void| **set_wet**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_wet**\ (\ )
 
 Output percent of modified sound. At 0, only original sound is outputted. Value can range from 0 to 1.
 
@@ -204,3 +204,4 @@ Output percent of modified sound. At 0, only original sound is outputted. Value 
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

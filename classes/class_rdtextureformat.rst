@@ -44,7 +44,7 @@ Properties
    +------------------------------------------------------------------------------+------------------------------------------------------------------+-------+
    | :ref:`TextureType<enum_RenderingDevice_TextureType>`                         | :ref:`texture_type<class_RDTextureFormat_property_texture_type>` | ``1`` |
    +------------------------------------------------------------------------------+------------------------------------------------------------------+-------+
-   | |bitfield|\<:ref:`TextureUsageBits<enum_RenderingDevice_TextureUsageBits>`\> | :ref:`usage_bits<class_RDTextureFormat_property_usage_bits>`     | ``0`` |
+   | |bitfield|\[:ref:`TextureUsageBits<enum_RenderingDevice_TextureUsageBits>`\] | :ref:`usage_bits<class_RDTextureFormat_property_usage_bits>`     | ``0`` |
    +------------------------------------------------------------------------------+------------------------------------------------------------------+-------+
    | :ref:`int<class_int>`                                                        | :ref:`width<class_RDTextureFormat_property_width>`               | ``1`` |
    +------------------------------------------------------------------------------+------------------------------------------------------------------+-------+
@@ -57,11 +57,11 @@ Methods
 .. table::
    :widths: auto
 
-   +------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void | :ref:`add_shareable_format<class_RDTextureFormat_method_add_shareable_format>` **(** :ref:`DataFormat<enum_RenderingDevice_DataFormat>` format **)**       |
-   +------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void | :ref:`remove_shareable_format<class_RDTextureFormat_method_remove_shareable_format>` **(** :ref:`DataFormat<enum_RenderingDevice_DataFormat>` format **)** |
-   +------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +--------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void| | :ref:`add_shareable_format<class_RDTextureFormat_method_add_shareable_format>`\ (\ format\: :ref:`DataFormat<enum_RenderingDevice_DataFormat>`\ )       |
+   +--------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void| | :ref:`remove_shareable_format<class_RDTextureFormat_method_remove_shareable_format>`\ (\ format\: :ref:`DataFormat<enum_RenderingDevice_DataFormat>`\ ) |
+   +--------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -80,8 +80,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_array_layers** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_array_layers** **(** **)**
+- |void| **set_array_layers**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_array_layers**\ (\ )
 
 The number of layers in the texture. Only relevant for 2D texture arrays.
 
@@ -97,8 +97,8 @@ The number of layers in the texture. Only relevant for 2D texture arrays.
 
 .. rst-class:: classref-property-setget
 
-- void **set_depth** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_depth** **(** **)**
+- |void| **set_depth**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_depth**\ (\ )
 
 The texture's depth (in pixels). This is always ``1`` for 2D textures.
 
@@ -114,8 +114,8 @@ The texture's depth (in pixels). This is always ``1`` for 2D textures.
 
 .. rst-class:: classref-property-setget
 
-- void **set_format** **(** :ref:`DataFormat<enum_RenderingDevice_DataFormat>` value **)**
-- :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **get_format** **(** **)**
+- |void| **set_format**\ (\ value\: :ref:`DataFormat<enum_RenderingDevice_DataFormat>`\ )
+- :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **get_format**\ (\ )
 
 The texture's pixel data format.
 
@@ -131,8 +131,8 @@ The texture's pixel data format.
 
 .. rst-class:: classref-property-setget
 
-- void **set_height** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_height** **(** **)**
+- |void| **set_height**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_height**\ (\ )
 
 The texture's height (in pixels).
 
@@ -148,8 +148,8 @@ The texture's height (in pixels).
 
 .. rst-class:: classref-property-setget
 
-- void **set_mipmaps** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_mipmaps** **(** **)**
+- |void| **set_mipmaps**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_mipmaps**\ (\ )
 
 The number of mipmaps available in the texture.
 
@@ -165,8 +165,8 @@ The number of mipmaps available in the texture.
 
 .. rst-class:: classref-property-setget
 
-- void **set_samples** **(** :ref:`TextureSamples<enum_RenderingDevice_TextureSamples>` value **)**
-- :ref:`TextureSamples<enum_RenderingDevice_TextureSamples>` **get_samples** **(** **)**
+- |void| **set_samples**\ (\ value\: :ref:`TextureSamples<enum_RenderingDevice_TextureSamples>`\ )
+- :ref:`TextureSamples<enum_RenderingDevice_TextureSamples>` **get_samples**\ (\ )
 
 The number of samples used when sampling the texture.
 
@@ -182,8 +182,8 @@ The number of samples used when sampling the texture.
 
 .. rst-class:: classref-property-setget
 
-- void **set_texture_type** **(** :ref:`TextureType<enum_RenderingDevice_TextureType>` value **)**
-- :ref:`TextureType<enum_RenderingDevice_TextureType>` **get_texture_type** **(** **)**
+- |void| **set_texture_type**\ (\ value\: :ref:`TextureType<enum_RenderingDevice_TextureType>`\ )
+- :ref:`TextureType<enum_RenderingDevice_TextureType>` **get_texture_type**\ (\ )
 
 The texture type.
 
@@ -195,12 +195,12 @@ The texture type.
 
 .. rst-class:: classref-property
 
-|bitfield|\<:ref:`TextureUsageBits<enum_RenderingDevice_TextureUsageBits>`\> **usage_bits** = ``0``
+|bitfield|\[:ref:`TextureUsageBits<enum_RenderingDevice_TextureUsageBits>`\] **usage_bits** = ``0``
 
 .. rst-class:: classref-property-setget
 
-- void **set_usage_bits** **(** |bitfield|\<:ref:`TextureUsageBits<enum_RenderingDevice_TextureUsageBits>`\> value **)**
-- |bitfield|\<:ref:`TextureUsageBits<enum_RenderingDevice_TextureUsageBits>`\> **get_usage_bits** **(** **)**
+- |void| **set_usage_bits**\ (\ value\: |bitfield|\[:ref:`TextureUsageBits<enum_RenderingDevice_TextureUsageBits>`\]\ )
+- |bitfield|\[:ref:`TextureUsageBits<enum_RenderingDevice_TextureUsageBits>`\] **get_usage_bits**\ (\ )
 
 The texture's usage bits, which determine what can be done using the texture.
 
@@ -216,8 +216,8 @@ The texture's usage bits, which determine what can be done using the texture.
 
 .. rst-class:: classref-property-setget
 
-- void **set_width** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_width** **(** **)**
+- |void| **set_width**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_width**\ (\ )
 
 The texture's width (in pixels).
 
@@ -234,7 +234,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-void **add_shareable_format** **(** :ref:`DataFormat<enum_RenderingDevice_DataFormat>` format **)**
+|void| **add_shareable_format**\ (\ format\: :ref:`DataFormat<enum_RenderingDevice_DataFormat>`\ )
 
 .. container:: contribute
 
@@ -248,7 +248,7 @@ void **add_shareable_format** **(** :ref:`DataFormat<enum_RenderingDevice_DataFo
 
 .. rst-class:: classref-method
 
-void **remove_shareable_format** **(** :ref:`DataFormat<enum_RenderingDevice_DataFormat>` format **)**
+|void| **remove_shareable_format**\ (\ format\: :ref:`DataFormat<enum_RenderingDevice_DataFormat>`\ )
 
 .. container:: contribute
 
@@ -261,3 +261,4 @@ void **remove_shareable_format** **(** :ref:`DataFormat<enum_RenderingDevice_Dat
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

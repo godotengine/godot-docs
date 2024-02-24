@@ -75,8 +75,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_pen_inverted** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **get_pen_inverted** **(** **)**
+- |void| **set_pen_inverted**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_pen_inverted**\ (\ )
 
 Returns ``true`` when using the eraser end of a stylus pen.
 
@@ -94,8 +94,8 @@ Returns ``true`` when using the eraser end of a stylus pen.
 
 .. rst-class:: classref-property-setget
 
-- void **set_pressure** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_pressure** **(** **)**
+- |void| **set_pressure**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_pressure**\ (\ )
 
 Represents the pressure the user puts on the pen. Ranges from ``0.0`` to ``1.0``.
 
@@ -111,8 +111,8 @@ Represents the pressure the user puts on the pen. Ranges from ``0.0`` to ``1.0``
 
 .. rst-class:: classref-property-setget
 
-- void **set_relative** **(** :ref:`Vector2<class_Vector2>` value **)**
-- :ref:`Vector2<class_Vector2>` **get_relative** **(** **)**
+- |void| **set_relative**\ (\ value\: :ref:`Vector2<class_Vector2>`\ )
+- :ref:`Vector2<class_Vector2>` **get_relative**\ (\ )
 
 The mouse position relative to the previous position (position at the last frame).
 
@@ -132,8 +132,8 @@ The mouse position relative to the previous position (position at the last frame
 
 .. rst-class:: classref-property-setget
 
-- void **set_screen_relative** **(** :ref:`Vector2<class_Vector2>` value **)**
-- :ref:`Vector2<class_Vector2>` **get_screen_relative** **(** **)**
+- |void| **set_screen_relative**\ (\ value\: :ref:`Vector2<class_Vector2>`\ )
+- :ref:`Vector2<class_Vector2>` **get_screen_relative**\ (\ )
 
 The unscaled mouse position relative to the previous position in the coordinate system of the screen (position at the last frame).
 
@@ -151,8 +151,8 @@ The unscaled mouse position relative to the previous position in the coordinate 
 
 .. rst-class:: classref-property-setget
 
-- void **set_screen_velocity** **(** :ref:`Vector2<class_Vector2>` value **)**
-- :ref:`Vector2<class_Vector2>` **get_screen_velocity** **(** **)**
+- |void| **set_screen_velocity**\ (\ value\: :ref:`Vector2<class_Vector2>`\ )
+- :ref:`Vector2<class_Vector2>` **get_screen_velocity**\ (\ )
 
 The unscaled mouse velocity in pixels per second in screen coordinates. This velocity is *not* scaled according to the content scale factor or calls to :ref:`InputEvent.xformed_by<class_InputEvent_method_xformed_by>`. This should be preferred over :ref:`velocity<class_InputEventMouseMotion_property_velocity>` for mouse aiming when using the :ref:`Input.MOUSE_MODE_CAPTURED<class_Input_constant_MOUSE_MODE_CAPTURED>` mouse mode, regardless of the project's stretch mode.
 
@@ -168,8 +168,8 @@ The unscaled mouse velocity in pixels per second in screen coordinates. This vel
 
 .. rst-class:: classref-property-setget
 
-- void **set_tilt** **(** :ref:`Vector2<class_Vector2>` value **)**
-- :ref:`Vector2<class_Vector2>` **get_tilt** **(** **)**
+- |void| **set_tilt**\ (\ value\: :ref:`Vector2<class_Vector2>`\ )
+- :ref:`Vector2<class_Vector2>` **get_tilt**\ (\ )
 
 Represents the angles of tilt of the pen. Positive X-coordinate value indicates a tilt to the right. Positive Y-coordinate value indicates a tilt toward the user. Ranges from ``-1.0`` to ``1.0`` for both axes.
 
@@ -185,8 +185,8 @@ Represents the angles of tilt of the pen. Positive X-coordinate value indicates 
 
 .. rst-class:: classref-property-setget
 
-- void **set_velocity** **(** :ref:`Vector2<class_Vector2>` value **)**
-- :ref:`Vector2<class_Vector2>` **get_velocity** **(** **)**
+- |void| **set_velocity**\ (\ value\: :ref:`Vector2<class_Vector2>`\ )
+- :ref:`Vector2<class_Vector2>` **get_velocity**\ (\ )
 
 The mouse velocity in pixels per second.
 
@@ -199,3 +199,4 @@ The mouse velocity in pixels per second.
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

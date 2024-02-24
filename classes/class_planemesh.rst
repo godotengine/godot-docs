@@ -101,8 +101,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_center_offset** **(** :ref:`Vector3<class_Vector3>` value **)**
-- :ref:`Vector3<class_Vector3>` **get_center_offset** **(** **)**
+- |void| **set_center_offset**\ (\ value\: :ref:`Vector3<class_Vector3>`\ )
+- :ref:`Vector3<class_Vector3>` **get_center_offset**\ (\ )
 
 Offset of the generated plane. Useful for particles.
 
@@ -118,8 +118,8 @@ Offset of the generated plane. Useful for particles.
 
 .. rst-class:: classref-property-setget
 
-- void **set_orientation** **(** :ref:`Orientation<enum_PlaneMesh_Orientation>` value **)**
-- :ref:`Orientation<enum_PlaneMesh_Orientation>` **get_orientation** **(** **)**
+- |void| **set_orientation**\ (\ value\: :ref:`Orientation<enum_PlaneMesh_Orientation>`\ )
+- :ref:`Orientation<enum_PlaneMesh_Orientation>` **get_orientation**\ (\ )
 
 Direction that the **PlaneMesh** is facing. See :ref:`Orientation<enum_PlaneMesh_Orientation>` for options.
 
@@ -135,8 +135,8 @@ Direction that the **PlaneMesh** is facing. See :ref:`Orientation<enum_PlaneMesh
 
 .. rst-class:: classref-property-setget
 
-- void **set_size** **(** :ref:`Vector2<class_Vector2>` value **)**
-- :ref:`Vector2<class_Vector2>` **get_size** **(** **)**
+- |void| **set_size**\ (\ value\: :ref:`Vector2<class_Vector2>`\ )
+- :ref:`Vector2<class_Vector2>` **get_size**\ (\ )
 
 Size of the generated plane.
 
@@ -152,8 +152,8 @@ Size of the generated plane.
 
 .. rst-class:: classref-property-setget
 
-- void **set_subdivide_depth** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_subdivide_depth** **(** **)**
+- |void| **set_subdivide_depth**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_subdivide_depth**\ (\ )
 
 Number of subdivision along the Z axis.
 
@@ -169,8 +169,8 @@ Number of subdivision along the Z axis.
 
 .. rst-class:: classref-property-setget
 
-- void **set_subdivide_width** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_subdivide_width** **(** **)**
+- |void| **set_subdivide_width**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_subdivide_width**\ (\ )
 
 Number of subdivision along the X axis.
 
@@ -181,3 +181,4 @@ Number of subdivision along the X axis.
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

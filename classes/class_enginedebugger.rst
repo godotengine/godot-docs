@@ -29,29 +29,29 @@ Methods
 .. table::
    :widths: auto
 
-   +-------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>` | :ref:`has_capture<class_EngineDebugger_method_has_capture>` **(** :ref:`StringName<class_StringName>` name **)**                                                                                 |
-   +-------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>` | :ref:`has_profiler<class_EngineDebugger_method_has_profiler>` **(** :ref:`StringName<class_StringName>` name **)**                                                                               |
-   +-------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>` | :ref:`is_active<class_EngineDebugger_method_is_active>` **(** **)**                                                                                                                              |
-   +-------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>` | :ref:`is_profiling<class_EngineDebugger_method_is_profiling>` **(** :ref:`StringName<class_StringName>` name **)**                                                                               |
-   +-------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                    | :ref:`profiler_add_frame_data<class_EngineDebugger_method_profiler_add_frame_data>` **(** :ref:`StringName<class_StringName>` name, :ref:`Array<class_Array>` data **)**                         |
-   +-------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                    | :ref:`profiler_enable<class_EngineDebugger_method_profiler_enable>` **(** :ref:`StringName<class_StringName>` name, :ref:`bool<class_bool>` enable, :ref:`Array<class_Array>` arguments=[] **)** |
-   +-------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                    | :ref:`register_message_capture<class_EngineDebugger_method_register_message_capture>` **(** :ref:`StringName<class_StringName>` name, :ref:`Callable<class_Callable>` callable **)**             |
-   +-------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                    | :ref:`register_profiler<class_EngineDebugger_method_register_profiler>` **(** :ref:`StringName<class_StringName>` name, :ref:`EngineProfiler<class_EngineProfiler>` profiler **)**               |
-   +-------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                    | :ref:`send_message<class_EngineDebugger_method_send_message>` **(** :ref:`String<class_String>` message, :ref:`Array<class_Array>` data **)**                                                    |
-   +-------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                    | :ref:`unregister_message_capture<class_EngineDebugger_method_unregister_message_capture>` **(** :ref:`StringName<class_StringName>` name **)**                                                   |
-   +-------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                    | :ref:`unregister_profiler<class_EngineDebugger_method_unregister_profiler>` **(** :ref:`StringName<class_StringName>` name **)**                                                                 |
-   +-------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | :ref:`has_capture<class_EngineDebugger_method_has_capture>`\ (\ name\: :ref:`StringName<class_StringName>`\ )                                                                                       |
+   +-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | :ref:`has_profiler<class_EngineDebugger_method_has_profiler>`\ (\ name\: :ref:`StringName<class_StringName>`\ )                                                                                     |
+   +-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | :ref:`is_active<class_EngineDebugger_method_is_active>`\ (\ )                                                                                                                                       |
+   +-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | :ref:`is_profiling<class_EngineDebugger_method_is_profiling>`\ (\ name\: :ref:`StringName<class_StringName>`\ )                                                                                     |
+   +-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                  | :ref:`profiler_add_frame_data<class_EngineDebugger_method_profiler_add_frame_data>`\ (\ name\: :ref:`StringName<class_StringName>`, data\: :ref:`Array<class_Array>`\ )                             |
+   +-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                  | :ref:`profiler_enable<class_EngineDebugger_method_profiler_enable>`\ (\ name\: :ref:`StringName<class_StringName>`, enable\: :ref:`bool<class_bool>`, arguments\: :ref:`Array<class_Array>` = []\ ) |
+   +-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                  | :ref:`register_message_capture<class_EngineDebugger_method_register_message_capture>`\ (\ name\: :ref:`StringName<class_StringName>`, callable\: :ref:`Callable<class_Callable>`\ )                 |
+   +-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                  | :ref:`register_profiler<class_EngineDebugger_method_register_profiler>`\ (\ name\: :ref:`StringName<class_StringName>`, profiler\: :ref:`EngineProfiler<class_EngineProfiler>`\ )                   |
+   +-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                  | :ref:`send_message<class_EngineDebugger_method_send_message>`\ (\ message\: :ref:`String<class_String>`, data\: :ref:`Array<class_Array>`\ )                                                        |
+   +-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                  | :ref:`unregister_message_capture<class_EngineDebugger_method_unregister_message_capture>`\ (\ name\: :ref:`StringName<class_StringName>`\ )                                                         |
+   +-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                  | :ref:`unregister_profiler<class_EngineDebugger_method_unregister_profiler>`\ (\ name\: :ref:`StringName<class_StringName>`\ )                                                                       |
+   +-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -66,7 +66,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **has_capture** **(** :ref:`StringName<class_StringName>` name **)**
+:ref:`bool<class_bool>` **has_capture**\ (\ name\: :ref:`StringName<class_StringName>`\ )
 
 Returns ``true`` if a capture with the given name is present otherwise ``false``.
 
@@ -78,7 +78,7 @@ Returns ``true`` if a capture with the given name is present otherwise ``false``
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **has_profiler** **(** :ref:`StringName<class_StringName>` name **)**
+:ref:`bool<class_bool>` **has_profiler**\ (\ name\: :ref:`StringName<class_StringName>`\ )
 
 Returns ``true`` if a profiler with the given name is present otherwise ``false``.
 
@@ -90,7 +90,7 @@ Returns ``true`` if a profiler with the given name is present otherwise ``false`
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_active** **(** **)**
+:ref:`bool<class_bool>` **is_active**\ (\ )
 
 Returns ``true`` if the debugger is active otherwise ``false``.
 
@@ -102,7 +102,7 @@ Returns ``true`` if the debugger is active otherwise ``false``.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_profiling** **(** :ref:`StringName<class_StringName>` name **)**
+:ref:`bool<class_bool>` **is_profiling**\ (\ name\: :ref:`StringName<class_StringName>`\ )
 
 Returns ``true`` if a profiler with the given name is present and active otherwise ``false``.
 
@@ -114,7 +114,7 @@ Returns ``true`` if a profiler with the given name is present and active otherwi
 
 .. rst-class:: classref-method
 
-void **profiler_add_frame_data** **(** :ref:`StringName<class_StringName>` name, :ref:`Array<class_Array>` data **)**
+|void| **profiler_add_frame_data**\ (\ name\: :ref:`StringName<class_StringName>`, data\: :ref:`Array<class_Array>`\ )
 
 Calls the ``add`` callable of the profiler with given ``name`` and ``data``.
 
@@ -126,7 +126,7 @@ Calls the ``add`` callable of the profiler with given ``name`` and ``data``.
 
 .. rst-class:: classref-method
 
-void **profiler_enable** **(** :ref:`StringName<class_StringName>` name, :ref:`bool<class_bool>` enable, :ref:`Array<class_Array>` arguments=[] **)**
+|void| **profiler_enable**\ (\ name\: :ref:`StringName<class_StringName>`, enable\: :ref:`bool<class_bool>`, arguments\: :ref:`Array<class_Array>` = []\ )
 
 Calls the ``toggle`` callable of the profiler with given ``name`` and ``arguments``. Enables/Disables the same profiler depending on ``enable`` argument.
 
@@ -138,7 +138,7 @@ Calls the ``toggle`` callable of the profiler with given ``name`` and ``argument
 
 .. rst-class:: classref-method
 
-void **register_message_capture** **(** :ref:`StringName<class_StringName>` name, :ref:`Callable<class_Callable>` callable **)**
+|void| **register_message_capture**\ (\ name\: :ref:`StringName<class_StringName>`, callable\: :ref:`Callable<class_Callable>`\ )
 
 Registers a message capture with given ``name``. If ``name`` is "my_message" then messages starting with "my_message:" will be called with the given callable.
 
@@ -152,7 +152,7 @@ Callable must accept a message string and a data array as argument. If the messa
 
 .. rst-class:: classref-method
 
-void **register_profiler** **(** :ref:`StringName<class_StringName>` name, :ref:`EngineProfiler<class_EngineProfiler>` profiler **)**
+|void| **register_profiler**\ (\ name\: :ref:`StringName<class_StringName>`, profiler\: :ref:`EngineProfiler<class_EngineProfiler>`\ )
 
 Registers a profiler with the given ``name``. See :ref:`EngineProfiler<class_EngineProfiler>` for more information.
 
@@ -164,7 +164,7 @@ Registers a profiler with the given ``name``. See :ref:`EngineProfiler<class_Eng
 
 .. rst-class:: classref-method
 
-void **send_message** **(** :ref:`String<class_String>` message, :ref:`Array<class_Array>` data **)**
+|void| **send_message**\ (\ message\: :ref:`String<class_String>`, data\: :ref:`Array<class_Array>`\ )
 
 Sends a message with given ``message`` and ``data`` array.
 
@@ -176,7 +176,7 @@ Sends a message with given ``message`` and ``data`` array.
 
 .. rst-class:: classref-method
 
-void **unregister_message_capture** **(** :ref:`StringName<class_StringName>` name **)**
+|void| **unregister_message_capture**\ (\ name\: :ref:`StringName<class_StringName>`\ )
 
 Unregisters the message capture with given ``name``.
 
@@ -188,7 +188,7 @@ Unregisters the message capture with given ``name``.
 
 .. rst-class:: classref-method
 
-void **unregister_profiler** **(** :ref:`StringName<class_StringName>` name **)**
+|void| **unregister_profiler**\ (\ name\: :ref:`StringName<class_StringName>`\ )
 
 Unregisters a profiler with given ``name``.
 
@@ -199,3 +199,4 @@ Unregisters a profiler with given ``name``.
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

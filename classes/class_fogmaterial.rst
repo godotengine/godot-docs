@@ -62,8 +62,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_albedo** **(** :ref:`Color<class_Color>` value **)**
-- :ref:`Color<class_Color>` **get_albedo** **(** **)**
+- |void| **set_albedo**\ (\ value\: :ref:`Color<class_Color>`\ )
+- :ref:`Color<class_Color>` **get_albedo**\ (\ )
 
 The single-scattering :ref:`Color<class_Color>` of the :ref:`FogVolume<class_FogVolume>`. Internally, :ref:`albedo<class_FogMaterial_property_albedo>` is converted into single-scattering, which is additively blended with other :ref:`FogVolume<class_FogVolume>`\ s and the :ref:`Environment.volumetric_fog_albedo<class_Environment_property_volumetric_fog_albedo>`.
 
@@ -79,8 +79,8 @@ The single-scattering :ref:`Color<class_Color>` of the :ref:`FogVolume<class_Fog
 
 .. rst-class:: classref-property-setget
 
-- void **set_density** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_density** **(** **)**
+- |void| **set_density**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_density**\ (\ )
 
 The density of the :ref:`FogVolume<class_FogVolume>`. Denser objects are more opaque, but may suffer from under-sampling artifacts that look like stripes. Negative values can be used to subtract fog from other :ref:`FogVolume<class_FogVolume>`\ s or global volumetric fog.
 
@@ -98,8 +98,8 @@ The density of the :ref:`FogVolume<class_FogVolume>`. Denser objects are more op
 
 .. rst-class:: classref-property-setget
 
-- void **set_density_texture** **(** :ref:`Texture3D<class_Texture3D>` value **)**
-- :ref:`Texture3D<class_Texture3D>` **get_density_texture** **(** **)**
+- |void| **set_density_texture**\ (\ value\: :ref:`Texture3D<class_Texture3D>`\ )
+- :ref:`Texture3D<class_Texture3D>` **get_density_texture**\ (\ )
 
 The 3D texture that is used to scale the :ref:`density<class_FogMaterial_property_density>` of the :ref:`FogVolume<class_FogVolume>`. This can be used to vary fog density within the :ref:`FogVolume<class_FogVolume>` with any kind of static pattern. For animated effects, consider using a custom :doc:`fog shader <../tutorials/shaders/shader_reference/fog_shader>`.
 
@@ -115,8 +115,8 @@ The 3D texture that is used to scale the :ref:`density<class_FogMaterial_propert
 
 .. rst-class:: classref-property-setget
 
-- void **set_edge_fade** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_edge_fade** **(** **)**
+- |void| **set_edge_fade**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_edge_fade**\ (\ )
 
 The hardness of the edges of the :ref:`FogVolume<class_FogVolume>`. A higher value will result in softer edges, while a lower value will result in harder edges.
 
@@ -132,8 +132,8 @@ The hardness of the edges of the :ref:`FogVolume<class_FogVolume>`. A higher val
 
 .. rst-class:: classref-property-setget
 
-- void **set_emission** **(** :ref:`Color<class_Color>` value **)**
-- :ref:`Color<class_Color>` **get_emission** **(** **)**
+- |void| **set_emission**\ (\ value\: :ref:`Color<class_Color>`\ )
+- :ref:`Color<class_Color>` **get_emission**\ (\ )
 
 The :ref:`Color<class_Color>` of the light emitted by the :ref:`FogVolume<class_FogVolume>`. Emitted light will not cast light or shadows on other objects, but can be useful for modulating the :ref:`Color<class_Color>` of the :ref:`FogVolume<class_FogVolume>` independently from light sources.
 
@@ -149,8 +149,8 @@ The :ref:`Color<class_Color>` of the light emitted by the :ref:`FogVolume<class_
 
 .. rst-class:: classref-property-setget
 
-- void **set_height_falloff** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_height_falloff** **(** **)**
+- |void| **set_height_falloff**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_height_falloff**\ (\ )
 
 The rate by which the height-based fog decreases in density as height increases in world space. A high falloff will result in a sharp transition, while a low falloff will result in a smoother transition. A value of ``0.0`` results in uniform-density fog. The height threshold is determined by the height of the associated :ref:`FogVolume<class_FogVolume>`.
 
@@ -161,3 +161,4 @@ The rate by which the height-based fog decreases in density as height increases 
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

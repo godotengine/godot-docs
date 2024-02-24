@@ -83,8 +83,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_dry** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_dry** **(** **)**
+- |void| **set_dry**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_dry**\ (\ )
 
 Output percent of original sound. At 0, only delayed sounds are output. Value can range from 0 to 1.
 
@@ -100,8 +100,8 @@ Output percent of original sound. At 0, only delayed sounds are output. Value ca
 
 .. rst-class:: classref-property-setget
 
-- void **set_feedback_active** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_feedback_active** **(** **)**
+- |void| **set_feedback_active**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_feedback_active**\ (\ )
 
 If ``true``, feedback is enabled.
 
@@ -117,8 +117,8 @@ If ``true``, feedback is enabled.
 
 .. rst-class:: classref-property-setget
 
-- void **set_feedback_delay_ms** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_feedback_delay_ms** **(** **)**
+- |void| **set_feedback_delay_ms**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_feedback_delay_ms**\ (\ )
 
 Feedback delay time in milliseconds.
 
@@ -134,8 +134,8 @@ Feedback delay time in milliseconds.
 
 .. rst-class:: classref-property-setget
 
-- void **set_feedback_level_db** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_feedback_level_db** **(** **)**
+- |void| **set_feedback_level_db**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_feedback_level_db**\ (\ )
 
 Sound level for feedback.
 
@@ -151,8 +151,8 @@ Sound level for feedback.
 
 .. rst-class:: classref-property-setget
 
-- void **set_feedback_lowpass** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_feedback_lowpass** **(** **)**
+- |void| **set_feedback_lowpass**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_feedback_lowpass**\ (\ )
 
 Low-pass filter for feedback, in Hz. Frequencies below this value are filtered out of the source signal.
 
@@ -168,8 +168,8 @@ Low-pass filter for feedback, in Hz. Frequencies below this value are filtered o
 
 .. rst-class:: classref-property-setget
 
-- void **set_tap1_active** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_tap1_active** **(** **)**
+- |void| **set_tap1_active**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_tap1_active**\ (\ )
 
 If ``true``, the first tap will be enabled.
 
@@ -185,8 +185,8 @@ If ``true``, the first tap will be enabled.
 
 .. rst-class:: classref-property-setget
 
-- void **set_tap1_delay_ms** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_tap1_delay_ms** **(** **)**
+- |void| **set_tap1_delay_ms**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_tap1_delay_ms**\ (\ )
 
 First tap delay time in milliseconds.
 
@@ -202,8 +202,8 @@ First tap delay time in milliseconds.
 
 .. rst-class:: classref-property-setget
 
-- void **set_tap1_level_db** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_tap1_level_db** **(** **)**
+- |void| **set_tap1_level_db**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_tap1_level_db**\ (\ )
 
 Sound level for the first tap.
 
@@ -219,8 +219,8 @@ Sound level for the first tap.
 
 .. rst-class:: classref-property-setget
 
-- void **set_tap1_pan** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_tap1_pan** **(** **)**
+- |void| **set_tap1_pan**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_tap1_pan**\ (\ )
 
 Pan position for the first tap. Value can range from -1 (fully left) to 1 (fully right).
 
@@ -236,8 +236,8 @@ Pan position for the first tap. Value can range from -1 (fully left) to 1 (fully
 
 .. rst-class:: classref-property-setget
 
-- void **set_tap2_active** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_tap2_active** **(** **)**
+- |void| **set_tap2_active**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_tap2_active**\ (\ )
 
 If ``true``, the second tap will be enabled.
 
@@ -253,8 +253,8 @@ If ``true``, the second tap will be enabled.
 
 .. rst-class:: classref-property-setget
 
-- void **set_tap2_delay_ms** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_tap2_delay_ms** **(** **)**
+- |void| **set_tap2_delay_ms**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_tap2_delay_ms**\ (\ )
 
 Second tap delay time in milliseconds.
 
@@ -270,8 +270,8 @@ Second tap delay time in milliseconds.
 
 .. rst-class:: classref-property-setget
 
-- void **set_tap2_level_db** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_tap2_level_db** **(** **)**
+- |void| **set_tap2_level_db**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_tap2_level_db**\ (\ )
 
 Sound level for the second tap.
 
@@ -287,8 +287,8 @@ Sound level for the second tap.
 
 .. rst-class:: classref-property-setget
 
-- void **set_tap2_pan** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_tap2_pan** **(** **)**
+- |void| **set_tap2_pan**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_tap2_pan**\ (\ )
 
 Pan position for the second tap. Value can range from -1 (fully left) to 1 (fully right).
 
@@ -299,3 +299,4 @@ Pan position for the second tap. Value can range from -1 (fully left) to 1 (full
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

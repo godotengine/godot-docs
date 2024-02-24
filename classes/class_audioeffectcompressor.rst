@@ -81,8 +81,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_attack_us** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_attack_us** **(** **)**
+- |void| **set_attack_us**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_attack_us**\ (\ )
 
 Compressor's reaction time when the signal exceeds the threshold, in microseconds. Value can range from 20 to 2000.
 
@@ -98,8 +98,8 @@ Compressor's reaction time when the signal exceeds the threshold, in microsecond
 
 .. rst-class:: classref-property-setget
 
-- void **set_gain** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_gain** **(** **)**
+- |void| **set_gain**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_gain**\ (\ )
 
 Gain applied to the output signal.
 
@@ -115,8 +115,8 @@ Gain applied to the output signal.
 
 .. rst-class:: classref-property-setget
 
-- void **set_mix** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_mix** **(** **)**
+- |void| **set_mix**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_mix**\ (\ )
 
 Balance between original signal and effect signal. Value can range from 0 (totally dry) to 1 (totally wet).
 
@@ -132,8 +132,8 @@ Balance between original signal and effect signal. Value can range from 0 (total
 
 .. rst-class:: classref-property-setget
 
-- void **set_ratio** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_ratio** **(** **)**
+- |void| **set_ratio**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_ratio**\ (\ )
 
 Amount of compression applied to the audio once it passes the threshold level. The higher the ratio, the more the loud parts of the audio will be compressed. Value can range from 1 to 48.
 
@@ -149,8 +149,8 @@ Amount of compression applied to the audio once it passes the threshold level. T
 
 .. rst-class:: classref-property-setget
 
-- void **set_release_ms** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_release_ms** **(** **)**
+- |void| **set_release_ms**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_release_ms**\ (\ )
 
 Compressor's delay time to stop reducing the signal after the signal level falls below the threshold, in milliseconds. Value can range from 20 to 2000.
 
@@ -166,8 +166,8 @@ Compressor's delay time to stop reducing the signal after the signal level falls
 
 .. rst-class:: classref-property-setget
 
-- void **set_sidechain** **(** :ref:`StringName<class_StringName>` value **)**
-- :ref:`StringName<class_StringName>` **get_sidechain** **(** **)**
+- |void| **set_sidechain**\ (\ value\: :ref:`StringName<class_StringName>`\ )
+- :ref:`StringName<class_StringName>` **get_sidechain**\ (\ )
 
 Reduce the sound level using another audio bus for threshold detection.
 
@@ -183,8 +183,8 @@ Reduce the sound level using another audio bus for threshold detection.
 
 .. rst-class:: classref-property-setget
 
-- void **set_threshold** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_threshold** **(** **)**
+- |void| **set_threshold**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_threshold**\ (\ )
 
 The level above which compression is applied to the audio. Value can range from -60 to 0.
 
@@ -195,3 +195,4 @@ The level above which compression is applied to the audio. Value can range from 
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

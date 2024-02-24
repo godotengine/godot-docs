@@ -95,8 +95,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_enable_mode** **(** :ref:`EnableMode<enum_VisibleOnScreenEnabler2D_EnableMode>` value **)**
-- :ref:`EnableMode<enum_VisibleOnScreenEnabler2D_EnableMode>` **get_enable_mode** **(** **)**
+- |void| **set_enable_mode**\ (\ value\: :ref:`EnableMode<enum_VisibleOnScreenEnabler2D_EnableMode>`\ )
+- :ref:`EnableMode<enum_VisibleOnScreenEnabler2D_EnableMode>` **get_enable_mode**\ (\ )
 
 Determines how the target node is enabled. Corresponds to :ref:`ProcessMode<enum_Node_ProcessMode>`. When the node is disabled, it always uses :ref:`Node.PROCESS_MODE_DISABLED<class_Node_constant_PROCESS_MODE_DISABLED>`.
 
@@ -112,8 +112,8 @@ Determines how the target node is enabled. Corresponds to :ref:`ProcessMode<enum
 
 .. rst-class:: classref-property-setget
 
-- void **set_enable_node_path** **(** :ref:`NodePath<class_NodePath>` value **)**
-- :ref:`NodePath<class_NodePath>` **get_enable_node_path** **(** **)**
+- |void| **set_enable_node_path**\ (\ value\: :ref:`NodePath<class_NodePath>`\ )
+- :ref:`NodePath<class_NodePath>` **get_enable_node_path**\ (\ )
 
 The path to the target node, relative to the **VisibleOnScreenEnabler2D**. The target node is cached; it's only assigned when setting this property (if the **VisibleOnScreenEnabler2D** is inside the scene tree) and every time the **VisibleOnScreenEnabler2D** enters the scene tree. If the path is empty, no node will be affected. If the path is invalid, an error is also generated.
 
@@ -124,3 +124,4 @@ The path to the target node, relative to the **VisibleOnScreenEnabler2D**. The t
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

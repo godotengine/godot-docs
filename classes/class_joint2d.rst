@@ -49,9 +49,9 @@ Methods
 .. table::
    :widths: auto
 
-   +-----------------------+------------------------------------------------------------------+
-   | :ref:`RID<class_RID>` | :ref:`get_rid<class_Joint2D_method_get_rid>` **(** **)** |const| |
-   +-----------------------+------------------------------------------------------------------+
+   +-----------------------+------------------------------------------------------------+
+   | :ref:`RID<class_RID>` | :ref:`get_rid<class_Joint2D_method_get_rid>`\ (\ ) |const| |
+   +-----------------------+------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -70,8 +70,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_bias** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_bias** **(** **)**
+- |void| **set_bias**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_bias**\ (\ )
 
 When :ref:`node_a<class_Joint2D_property_node_a>` and :ref:`node_b<class_Joint2D_property_node_b>` move in different directions the :ref:`bias<class_Joint2D_property_bias>` controls how fast the joint pulls them back to their original position. The lower the :ref:`bias<class_Joint2D_property_bias>` the more the two bodies can pull on the joint.
 
@@ -89,8 +89,8 @@ When set to ``0``, the default value from :ref:`ProjectSettings.physics/2d/solve
 
 .. rst-class:: classref-property-setget
 
-- void **set_exclude_nodes_from_collision** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **get_exclude_nodes_from_collision** **(** **)**
+- |void| **set_exclude_nodes_from_collision**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_exclude_nodes_from_collision**\ (\ )
 
 If ``true``, :ref:`node_a<class_Joint2D_property_node_a>` and :ref:`node_b<class_Joint2D_property_node_b>` can not collide.
 
@@ -106,8 +106,8 @@ If ``true``, :ref:`node_a<class_Joint2D_property_node_a>` and :ref:`node_b<class
 
 .. rst-class:: classref-property-setget
 
-- void **set_node_a** **(** :ref:`NodePath<class_NodePath>` value **)**
-- :ref:`NodePath<class_NodePath>` **get_node_a** **(** **)**
+- |void| **set_node_a**\ (\ value\: :ref:`NodePath<class_NodePath>`\ )
+- :ref:`NodePath<class_NodePath>` **get_node_a**\ (\ )
 
 The first body attached to the joint. Must derive from :ref:`PhysicsBody2D<class_PhysicsBody2D>`.
 
@@ -123,8 +123,8 @@ The first body attached to the joint. Must derive from :ref:`PhysicsBody2D<class
 
 .. rst-class:: classref-property-setget
 
-- void **set_node_b** **(** :ref:`NodePath<class_NodePath>` value **)**
-- :ref:`NodePath<class_NodePath>` **get_node_b** **(** **)**
+- |void| **set_node_b**\ (\ value\: :ref:`NodePath<class_NodePath>`\ )
+- :ref:`NodePath<class_NodePath>` **get_node_b**\ (\ )
 
 The second body attached to the joint. Must derive from :ref:`PhysicsBody2D<class_PhysicsBody2D>`.
 
@@ -141,7 +141,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`RID<class_RID>` **get_rid** **(** **)** |const|
+:ref:`RID<class_RID>` **get_rid**\ (\ ) |const|
 
 Returns the joint's :ref:`RID<class_RID>`.
 
@@ -152,3 +152,4 @@ Returns the joint's :ref:`RID<class_RID>`.
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

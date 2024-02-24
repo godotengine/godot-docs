@@ -54,8 +54,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_tileset** **(** :ref:`TileSet<class_TileSet>` value **)**
-- :ref:`TileSet<class_TileSet>` **get_tileset** **(** **)**
+- |void| **set_tileset**\ (\ value\: :ref:`TileSet<class_TileSet>`\ )
+- :ref:`TileSet<class_TileSet>` **get_tileset**\ (\ )
 
 The assigned :ref:`TileSet<class_TileSet>`. This TileSet will be applied to all child layers.
 
@@ -66,3 +66,4 @@ The assigned :ref:`TileSet<class_TileSet>`. This TileSet will be applied to all 
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

@@ -64,11 +64,11 @@ Methods
 .. table::
    :widths: auto
 
-   +------+----------------------------------------------------------------------------------------------------------------------------------------------+
-   | void | :ref:`bake<class_VoxelGI_method_bake>` **(** :ref:`Node<class_Node>` from_node=null, :ref:`bool<class_bool>` create_visual_debug=false **)** |
-   +------+----------------------------------------------------------------------------------------------------------------------------------------------+
-   | void | :ref:`debug_bake<class_VoxelGI_method_debug_bake>` **(** **)**                                                                               |
-   +------+----------------------------------------------------------------------------------------------------------------------------------------------+
+   +--------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void| | :ref:`bake<class_VoxelGI_method_bake>`\ (\ from_node\: :ref:`Node<class_Node>` = null, create_visual_debug\: :ref:`bool<class_bool>` = false\ ) |
+   +--------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void| | :ref:`debug_bake<class_VoxelGI_method_debug_bake>`\ (\ )                                                                                        |
+   +--------+-------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -142,8 +142,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_camera_attributes** **(** :ref:`CameraAttributes<class_CameraAttributes>` value **)**
-- :ref:`CameraAttributes<class_CameraAttributes>` **get_camera_attributes** **(** **)**
+- |void| **set_camera_attributes**\ (\ value\: :ref:`CameraAttributes<class_CameraAttributes>`\ )
+- :ref:`CameraAttributes<class_CameraAttributes>` **get_camera_attributes**\ (\ )
 
 The :ref:`CameraAttributes<class_CameraAttributes>` resource that specifies exposure levels to bake at. Auto-exposure and non exposure properties will be ignored. Exposure settings should be used to reduce the dynamic range present when baking. If exposure is too high, the **VoxelGI** will have banding artifacts or may have over-exposure artifacts.
 
@@ -159,8 +159,8 @@ The :ref:`CameraAttributes<class_CameraAttributes>` resource that specifies expo
 
 .. rst-class:: classref-property-setget
 
-- void **set_probe_data** **(** :ref:`VoxelGIData<class_VoxelGIData>` value **)**
-- :ref:`VoxelGIData<class_VoxelGIData>` **get_probe_data** **(** **)**
+- |void| **set_probe_data**\ (\ value\: :ref:`VoxelGIData<class_VoxelGIData>`\ )
+- :ref:`VoxelGIData<class_VoxelGIData>` **get_probe_data**\ (\ )
 
 The :ref:`VoxelGIData<class_VoxelGIData>` resource that holds the data for this **VoxelGI**.
 
@@ -176,8 +176,8 @@ The :ref:`VoxelGIData<class_VoxelGIData>` resource that holds the data for this 
 
 .. rst-class:: classref-property-setget
 
-- void **set_size** **(** :ref:`Vector3<class_Vector3>` value **)**
-- :ref:`Vector3<class_Vector3>` **get_size** **(** **)**
+- |void| **set_size**\ (\ value\: :ref:`Vector3<class_Vector3>`\ )
+- :ref:`Vector3<class_Vector3>` **get_size**\ (\ )
 
 The size of the area covered by the **VoxelGI**. If you make the size larger without increasing the subdivisions with :ref:`subdiv<class_VoxelGI_property_subdiv>`, the size of each cell will increase and result in lower detailed lighting.
 
@@ -195,8 +195,8 @@ The size of the area covered by the **VoxelGI**. If you make the size larger wit
 
 .. rst-class:: classref-property-setget
 
-- void **set_subdiv** **(** :ref:`Subdiv<enum_VoxelGI_Subdiv>` value **)**
-- :ref:`Subdiv<enum_VoxelGI_Subdiv>` **get_subdiv** **(** **)**
+- |void| **set_subdiv**\ (\ value\: :ref:`Subdiv<enum_VoxelGI_Subdiv>`\ )
+- :ref:`Subdiv<enum_VoxelGI_Subdiv>` **get_subdiv**\ (\ )
 
 Number of times to subdivide the grid that the **VoxelGI** operates on. A higher number results in finer detail and thus higher visual quality, while lower numbers result in better performance.
 
@@ -213,7 +213,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-void **bake** **(** :ref:`Node<class_Node>` from_node=null, :ref:`bool<class_bool>` create_visual_debug=false **)**
+|void| **bake**\ (\ from_node\: :ref:`Node<class_Node>` = null, create_visual_debug\: :ref:`bool<class_bool>` = false\ )
 
 Bakes the effect from all :ref:`GeometryInstance3D<class_GeometryInstance3D>`\ s marked with :ref:`GeometryInstance3D.GI_MODE_STATIC<class_GeometryInstance3D_constant_GI_MODE_STATIC>` and :ref:`Light3D<class_Light3D>`\ s marked with either :ref:`Light3D.BAKE_STATIC<class_Light3D_constant_BAKE_STATIC>` or :ref:`Light3D.BAKE_DYNAMIC<class_Light3D_constant_BAKE_DYNAMIC>`. If ``create_visual_debug`` is ``true``, after baking the light, this will generate a :ref:`MultiMesh<class_MultiMesh>` that has a cube representing each solid cell with each cube colored to the cell's albedo color. This can be used to visualize the **VoxelGI**'s data and debug any issues that may be occurring.
 
@@ -229,7 +229,7 @@ Bakes the effect from all :ref:`GeometryInstance3D<class_GeometryInstance3D>`\ s
 
 .. rst-class:: classref-method
 
-void **debug_bake** **(** **)**
+|void| **debug_bake**\ (\ )
 
 Calls :ref:`bake<class_VoxelGI_method_bake>` with ``create_visual_debug`` enabled.
 
@@ -240,3 +240,4 @@ Calls :ref:`bake<class_VoxelGI_method_bake>` with ``create_visual_debug`` enable
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

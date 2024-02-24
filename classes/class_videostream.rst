@@ -52,9 +52,9 @@ Methods
 .. table::
    :widths: auto
 
-   +-------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
-   | :ref:`VideoStreamPlayback<class_VideoStreamPlayback>` | :ref:`_instantiate_playback<class_VideoStream_private_method__instantiate_playback>` **(** **)** |virtual| |
-   +-------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
+   +-------------------------------------------------------+------------------------------------------------------------------------------------------------------+
+   | :ref:`VideoStreamPlayback<class_VideoStreamPlayback>` | :ref:`_instantiate_playback<class_VideoStream_private_method__instantiate_playback>`\ (\ ) |virtual| |
+   +-------------------------------------------------------+------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -73,8 +73,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_file** **(** :ref:`String<class_String>` value **)**
-- :ref:`String<class_String>` **get_file** **(** **)**
+- |void| **set_file**\ (\ value\: :ref:`String<class_String>`\ )
+- :ref:`String<class_String>` **get_file**\ (\ )
 
 The video file path or URI that this **VideoStream** resource handles.
 
@@ -93,7 +93,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`VideoStreamPlayback<class_VideoStreamPlayback>` **_instantiate_playback** **(** **)** |virtual|
+:ref:`VideoStreamPlayback<class_VideoStreamPlayback>` **_instantiate_playback**\ (\ ) |virtual|
 
 Called when the video starts playing, to initialize and return a subclass of :ref:`VideoStreamPlayback<class_VideoStreamPlayback>`.
 
@@ -104,3 +104,4 @@ Called when the video starts playing, to initialize and return a subclass of :re
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

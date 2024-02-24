@@ -29,21 +29,21 @@ Properties
 .. table::
    :widths: auto
 
-   +-------------------------------+--------------------------------------------------------------------------------------------+-------------------+
-   | :ref:`bool<class_bool>`       | :ref:`collide_with_areas<class_PhysicsRayQueryParameters2D_property_collide_with_areas>`   | ``false``         |
-   +-------------------------------+--------------------------------------------------------------------------------------------+-------------------+
-   | :ref:`bool<class_bool>`       | :ref:`collide_with_bodies<class_PhysicsRayQueryParameters2D_property_collide_with_bodies>` | ``true``          |
-   +-------------------------------+--------------------------------------------------------------------------------------------+-------------------+
-   | :ref:`int<class_int>`         | :ref:`collision_mask<class_PhysicsRayQueryParameters2D_property_collision_mask>`           | ``4294967295``    |
-   +-------------------------------+--------------------------------------------------------------------------------------------+-------------------+
-   | :ref:`RID[]<class_RID>`       | :ref:`exclude<class_PhysicsRayQueryParameters2D_property_exclude>`                         | ``[]``            |
-   +-------------------------------+--------------------------------------------------------------------------------------------+-------------------+
-   | :ref:`Vector2<class_Vector2>` | :ref:`from<class_PhysicsRayQueryParameters2D_property_from>`                               | ``Vector2(0, 0)`` |
-   +-------------------------------+--------------------------------------------------------------------------------------------+-------------------+
-   | :ref:`bool<class_bool>`       | :ref:`hit_from_inside<class_PhysicsRayQueryParameters2D_property_hit_from_inside>`         | ``false``         |
-   +-------------------------------+--------------------------------------------------------------------------------------------+-------------------+
-   | :ref:`Vector2<class_Vector2>` | :ref:`to<class_PhysicsRayQueryParameters2D_property_to>`                                   | ``Vector2(0, 0)`` |
-   +-------------------------------+--------------------------------------------------------------------------------------------+-------------------+
+   +----------------------------------------------------+--------------------------------------------------------------------------------------------+-------------------+
+   | :ref:`bool<class_bool>`                            | :ref:`collide_with_areas<class_PhysicsRayQueryParameters2D_property_collide_with_areas>`   | ``false``         |
+   +----------------------------------------------------+--------------------------------------------------------------------------------------------+-------------------+
+   | :ref:`bool<class_bool>`                            | :ref:`collide_with_bodies<class_PhysicsRayQueryParameters2D_property_collide_with_bodies>` | ``true``          |
+   +----------------------------------------------------+--------------------------------------------------------------------------------------------+-------------------+
+   | :ref:`int<class_int>`                              | :ref:`collision_mask<class_PhysicsRayQueryParameters2D_property_collision_mask>`           | ``4294967295``    |
+   +----------------------------------------------------+--------------------------------------------------------------------------------------------+-------------------+
+   | :ref:`Array<class_Array>`\[:ref:`RID<class_RID>`\] | :ref:`exclude<class_PhysicsRayQueryParameters2D_property_exclude>`                         | ``[]``            |
+   +----------------------------------------------------+--------------------------------------------------------------------------------------------+-------------------+
+   | :ref:`Vector2<class_Vector2>`                      | :ref:`from<class_PhysicsRayQueryParameters2D_property_from>`                               | ``Vector2(0, 0)`` |
+   +----------------------------------------------------+--------------------------------------------------------------------------------------------+-------------------+
+   | :ref:`bool<class_bool>`                            | :ref:`hit_from_inside<class_PhysicsRayQueryParameters2D_property_hit_from_inside>`         | ``false``         |
+   +----------------------------------------------------+--------------------------------------------------------------------------------------------+-------------------+
+   | :ref:`Vector2<class_Vector2>`                      | :ref:`to<class_PhysicsRayQueryParameters2D_property_to>`                                   | ``Vector2(0, 0)`` |
+   +----------------------------------------------------+--------------------------------------------------------------------------------------------+-------------------+
 
 .. rst-class:: classref-reftable-group
 
@@ -53,9 +53,9 @@ Methods
 .. table::
    :widths: auto
 
-   +-----------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`PhysicsRayQueryParameters2D<class_PhysicsRayQueryParameters2D>` | :ref:`create<class_PhysicsRayQueryParameters2D_method_create>` **(** :ref:`Vector2<class_Vector2>` from, :ref:`Vector2<class_Vector2>` to, :ref:`int<class_int>` collision_mask=4294967295, :ref:`RID[]<class_RID>` exclude=[] **)** |static| |
-   +-----------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +-----------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PhysicsRayQueryParameters2D<class_PhysicsRayQueryParameters2D>` | :ref:`create<class_PhysicsRayQueryParameters2D_method_create>`\ (\ from\: :ref:`Vector2<class_Vector2>`, to\: :ref:`Vector2<class_Vector2>`, collision_mask\: :ref:`int<class_int>` = 4294967295, exclude\: :ref:`Array<class_Array>`\[:ref:`RID<class_RID>`\] = []\ ) |static| |
+   +-----------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -74,8 +74,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_collide_with_areas** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_collide_with_areas_enabled** **(** **)**
+- |void| **set_collide_with_areas**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_collide_with_areas_enabled**\ (\ )
 
 If ``true``, the query will take :ref:`Area2D<class_Area2D>`\ s into account.
 
@@ -91,8 +91,8 @@ If ``true``, the query will take :ref:`Area2D<class_Area2D>`\ s into account.
 
 .. rst-class:: classref-property-setget
 
-- void **set_collide_with_bodies** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_collide_with_bodies_enabled** **(** **)**
+- |void| **set_collide_with_bodies**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_collide_with_bodies_enabled**\ (\ )
 
 If ``true``, the query will take :ref:`PhysicsBody2D<class_PhysicsBody2D>`\ s into account.
 
@@ -108,8 +108,8 @@ If ``true``, the query will take :ref:`PhysicsBody2D<class_PhysicsBody2D>`\ s in
 
 .. rst-class:: classref-property-setget
 
-- void **set_collision_mask** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_collision_mask** **(** **)**
+- |void| **set_collision_mask**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_collision_mask**\ (\ )
 
 The physics layers the query will detect (as a bitmask). By default, all collision layers are detected. See `Collision layers and masks <../tutorials/physics/physics_introduction.html#collision-layers-and-masks>`__ in the documentation for more information.
 
@@ -121,12 +121,12 @@ The physics layers the query will detect (as a bitmask). By default, all collisi
 
 .. rst-class:: classref-property
 
-:ref:`RID[]<class_RID>` **exclude** = ``[]``
+:ref:`Array<class_Array>`\[:ref:`RID<class_RID>`\] **exclude** = ``[]``
 
 .. rst-class:: classref-property-setget
 
-- void **set_exclude** **(** :ref:`RID[]<class_RID>` value **)**
-- :ref:`RID[]<class_RID>` **get_exclude** **(** **)**
+- |void| **set_exclude**\ (\ value\: :ref:`Array<class_Array>`\[:ref:`RID<class_RID>`\]\ )
+- :ref:`Array<class_Array>`\[:ref:`RID<class_RID>`\] **get_exclude**\ (\ )
 
 The list of object :ref:`RID<class_RID>`\ s that will be excluded from collisions. Use :ref:`CollisionObject2D.get_rid<class_CollisionObject2D_method_get_rid>` to get the :ref:`RID<class_RID>` associated with a :ref:`CollisionObject2D<class_CollisionObject2D>`-derived node.
 
@@ -142,8 +142,8 @@ The list of object :ref:`RID<class_RID>`\ s that will be excluded from collision
 
 .. rst-class:: classref-property-setget
 
-- void **set_from** **(** :ref:`Vector2<class_Vector2>` value **)**
-- :ref:`Vector2<class_Vector2>` **get_from** **(** **)**
+- |void| **set_from**\ (\ value\: :ref:`Vector2<class_Vector2>`\ )
+- :ref:`Vector2<class_Vector2>` **get_from**\ (\ )
 
 The starting point of the ray being queried for, in global coordinates.
 
@@ -159,8 +159,8 @@ The starting point of the ray being queried for, in global coordinates.
 
 .. rst-class:: classref-property-setget
 
-- void **set_hit_from_inside** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_hit_from_inside_enabled** **(** **)**
+- |void| **set_hit_from_inside**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_hit_from_inside_enabled**\ (\ )
 
 If ``true``, the query will detect a hit when starting inside shapes. In this case the collision normal will be ``Vector2(0, 0)``. Does not affect concave polygon shapes.
 
@@ -176,8 +176,8 @@ If ``true``, the query will detect a hit when starting inside shapes. In this ca
 
 .. rst-class:: classref-property-setget
 
-- void **set_to** **(** :ref:`Vector2<class_Vector2>` value **)**
-- :ref:`Vector2<class_Vector2>` **get_to** **(** **)**
+- |void| **set_to**\ (\ value\: :ref:`Vector2<class_Vector2>`\ )
+- :ref:`Vector2<class_Vector2>` **get_to**\ (\ )
 
 The ending point of the ray being queried for, in global coordinates.
 
@@ -194,7 +194,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`PhysicsRayQueryParameters2D<class_PhysicsRayQueryParameters2D>` **create** **(** :ref:`Vector2<class_Vector2>` from, :ref:`Vector2<class_Vector2>` to, :ref:`int<class_int>` collision_mask=4294967295, :ref:`RID[]<class_RID>` exclude=[] **)** |static|
+:ref:`PhysicsRayQueryParameters2D<class_PhysicsRayQueryParameters2D>` **create**\ (\ from\: :ref:`Vector2<class_Vector2>`, to\: :ref:`Vector2<class_Vector2>`, collision_mask\: :ref:`int<class_int>` = 4294967295, exclude\: :ref:`Array<class_Array>`\[:ref:`RID<class_RID>`\] = []\ ) |static|
 
 Returns a new, pre-configured **PhysicsRayQueryParameters2D** object. Use it to quickly create query parameters using the most common options.
 
@@ -210,3 +210,4 @@ Returns a new, pre-configured **PhysicsRayQueryParameters2D** object. Use it to 
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

@@ -74,8 +74,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_display_to_lens** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_display_to_lens** **(** **)**
+- |void| **set_display_to_lens**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_display_to_lens**\ (\ )
 
 The distance between the display and the lenses inside of the device in centimeters.
 
@@ -91,8 +91,8 @@ The distance between the display and the lenses inside of the device in centimet
 
 .. rst-class:: classref-property-setget
 
-- void **set_display_width** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_display_width** **(** **)**
+- |void| **set_display_width**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_display_width**\ (\ )
 
 The width of the display in centimeters.
 
@@ -108,8 +108,8 @@ The width of the display in centimeters.
 
 .. rst-class:: classref-property-setget
 
-- void **set_eye_height** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_eye_height** **(** **)**
+- |void| **set_eye_height**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_eye_height**\ (\ )
 
 The height at which the camera is placed in relation to the ground (i.e. :ref:`XROrigin3D<class_XROrigin3D>` node).
 
@@ -125,8 +125,8 @@ The height at which the camera is placed in relation to the ground (i.e. :ref:`X
 
 .. rst-class:: classref-property-setget
 
-- void **set_iod** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_iod** **(** **)**
+- |void| **set_iod**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_iod**\ (\ )
 
 The interocular distance, also known as the interpupillary distance. The distance between the pupils of the left and right eye.
 
@@ -142,8 +142,8 @@ The interocular distance, also known as the interpupillary distance. The distanc
 
 .. rst-class:: classref-property-setget
 
-- void **set_k1** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_k1** **(** **)**
+- |void| **set_k1**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_k1**\ (\ )
 
 The k1 lens factor is one of the two constants that define the strength of the lens used and directly influences the lens distortion effect.
 
@@ -159,8 +159,8 @@ The k1 lens factor is one of the two constants that define the strength of the l
 
 .. rst-class:: classref-property-setget
 
-- void **set_k2** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_k2** **(** **)**
+- |void| **set_k2**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_k2**\ (\ )
 
 The k2 lens factor, see k1.
 
@@ -176,8 +176,8 @@ The k2 lens factor, see k1.
 
 .. rst-class:: classref-property-setget
 
-- void **set_oversample** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_oversample** **(** **)**
+- |void| **set_oversample**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_oversample**\ (\ )
 
 The oversample setting. Because of the lens distortion we have to render our buffers at a higher resolution then the screen can natively handle. A value between 1.5 and 2.0 often provides good results but at the cost of performance.
 
@@ -188,3 +188,4 @@ The oversample setting. Because of the lens distortion we have to render our buf
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

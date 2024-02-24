@@ -75,17 +75,17 @@ Methods
    :widths: auto
 
    +-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                    | :ref:`_integrate_forces<class_PhysicalBone3D_private_method__integrate_forces>` **(** :ref:`PhysicsDirectBodyState3D<class_PhysicsDirectBodyState3D>` state **)** |virtual| |
+   | |void|                  | :ref:`_integrate_forces<class_PhysicalBone3D_private_method__integrate_forces>`\ (\ state\: :ref:`PhysicsDirectBodyState3D<class_PhysicsDirectBodyState3D>`\ ) |virtual|    |
    +-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                    | :ref:`apply_central_impulse<class_PhysicalBone3D_method_apply_central_impulse>` **(** :ref:`Vector3<class_Vector3>` impulse **)**                                           |
+   | |void|                  | :ref:`apply_central_impulse<class_PhysicalBone3D_method_apply_central_impulse>`\ (\ impulse\: :ref:`Vector3<class_Vector3>`\ )                                              |
    +-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                    | :ref:`apply_impulse<class_PhysicalBone3D_method_apply_impulse>` **(** :ref:`Vector3<class_Vector3>` impulse, :ref:`Vector3<class_Vector3>` position=Vector3(0, 0, 0) **)**  |
+   | |void|                  | :ref:`apply_impulse<class_PhysicalBone3D_method_apply_impulse>`\ (\ impulse\: :ref:`Vector3<class_Vector3>`, position\: :ref:`Vector3<class_Vector3>` = Vector3(0, 0, 0)\ ) |
    +-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`   | :ref:`get_bone_id<class_PhysicalBone3D_method_get_bone_id>` **(** **)** |const|                                                                                             |
+   | :ref:`int<class_int>`   | :ref:`get_bone_id<class_PhysicalBone3D_method_get_bone_id>`\ (\ ) |const|                                                                                                   |
    +-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>` | :ref:`get_simulate_physics<class_PhysicalBone3D_method_get_simulate_physics>` **(** **)**                                                                                   |
+   | :ref:`bool<class_bool>` | :ref:`get_simulate_physics<class_PhysicalBone3D_method_get_simulate_physics>`\ (\ )                                                                                         |
    +-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>` | :ref:`is_simulating_physics<class_PhysicalBone3D_method_is_simulating_physics>` **(** **)**                                                                                 |
+   | :ref:`bool<class_bool>` | :ref:`is_simulating_physics<class_PhysicalBone3D_method_is_simulating_physics>`\ (\ )                                                                                       |
    +-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
@@ -218,8 +218,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_angular_damp** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_angular_damp** **(** **)**
+- |void| **set_angular_damp**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_angular_damp**\ (\ )
 
 Damps the body's rotation. By default, the body will use the **Default Angular Damp** in **Project > Project Settings > Physics > 3d** or any value override set by an :ref:`Area3D<class_Area3D>` the body is in. Depending on :ref:`angular_damp_mode<class_PhysicalBone3D_property_angular_damp_mode>`, you can set :ref:`angular_damp<class_PhysicalBone3D_property_angular_damp>` to be added to or to replace the body's damping value.
 
@@ -237,8 +237,8 @@ See :ref:`ProjectSettings.physics/3d/default_angular_damp<class_ProjectSettings_
 
 .. rst-class:: classref-property-setget
 
-- void **set_angular_damp_mode** **(** :ref:`DampMode<enum_PhysicalBone3D_DampMode>` value **)**
-- :ref:`DampMode<enum_PhysicalBone3D_DampMode>` **get_angular_damp_mode** **(** **)**
+- |void| **set_angular_damp_mode**\ (\ value\: :ref:`DampMode<enum_PhysicalBone3D_DampMode>`\ )
+- :ref:`DampMode<enum_PhysicalBone3D_DampMode>` **get_angular_damp_mode**\ (\ )
 
 Defines how :ref:`angular_damp<class_PhysicalBone3D_property_angular_damp>` is applied. See :ref:`DampMode<enum_PhysicalBone3D_DampMode>` for possible values.
 
@@ -254,8 +254,8 @@ Defines how :ref:`angular_damp<class_PhysicalBone3D_property_angular_damp>` is a
 
 .. rst-class:: classref-property-setget
 
-- void **set_angular_velocity** **(** :ref:`Vector3<class_Vector3>` value **)**
-- :ref:`Vector3<class_Vector3>` **get_angular_velocity** **(** **)**
+- |void| **set_angular_velocity**\ (\ value\: :ref:`Vector3<class_Vector3>`\ )
+- :ref:`Vector3<class_Vector3>` **get_angular_velocity**\ (\ )
 
 The PhysicalBone3D's rotational velocity in *radians* per second.
 
@@ -271,8 +271,8 @@ The PhysicalBone3D's rotational velocity in *radians* per second.
 
 .. rst-class:: classref-property-setget
 
-- void **set_body_offset** **(** :ref:`Transform3D<class_Transform3D>` value **)**
-- :ref:`Transform3D<class_Transform3D>` **get_body_offset** **(** **)**
+- |void| **set_body_offset**\ (\ value\: :ref:`Transform3D<class_Transform3D>`\ )
+- :ref:`Transform3D<class_Transform3D>` **get_body_offset**\ (\ )
 
 Sets the body's transform.
 
@@ -288,8 +288,8 @@ Sets the body's transform.
 
 .. rst-class:: classref-property-setget
 
-- void **set_bounce** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_bounce** **(** **)**
+- |void| **set_bounce**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_bounce**\ (\ )
 
 The body's bounciness. Values range from ``0`` (no bounce) to ``1`` (full bounciness).
 
@@ -305,8 +305,8 @@ The body's bounciness. Values range from ``0`` (no bounce) to ``1`` (full bounci
 
 .. rst-class:: classref-property-setget
 
-- void **set_can_sleep** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_able_to_sleep** **(** **)**
+- |void| **set_can_sleep**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_able_to_sleep**\ (\ )
 
 If ``true``, the body is deactivated when there is no movement, so it will not take part in the simulation until it is awakened by an external force.
 
@@ -322,8 +322,8 @@ If ``true``, the body is deactivated when there is no movement, so it will not t
 
 .. rst-class:: classref-property-setget
 
-- void **set_use_custom_integrator** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_using_custom_integrator** **(** **)**
+- |void| **set_use_custom_integrator**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_using_custom_integrator**\ (\ )
 
 If ``true``, internal force integration will be disabled (like gravity or air friction) for this body. Other than collision response, the body will only move as determined by the :ref:`_integrate_forces<class_PhysicalBone3D_private_method__integrate_forces>` function, if defined.
 
@@ -339,8 +339,8 @@ If ``true``, internal force integration will be disabled (like gravity or air fr
 
 .. rst-class:: classref-property-setget
 
-- void **set_friction** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_friction** **(** **)**
+- |void| **set_friction**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_friction**\ (\ )
 
 The body's friction, from ``0`` (frictionless) to ``1`` (max friction).
 
@@ -356,8 +356,8 @@ The body's friction, from ``0`` (frictionless) to ``1`` (max friction).
 
 .. rst-class:: classref-property-setget
 
-- void **set_gravity_scale** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_gravity_scale** **(** **)**
+- |void| **set_gravity_scale**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_gravity_scale**\ (\ )
 
 This is multiplied by the global 3D gravity setting found in **Project > Project Settings > Physics > 3d** to produce the body's gravity. For example, a value of 1 will be normal gravity, 2 will apply double gravity, and 0.5 will apply half gravity to this object.
 
@@ -373,8 +373,8 @@ This is multiplied by the global 3D gravity setting found in **Project > Project
 
 .. rst-class:: classref-property-setget
 
-- void **set_joint_offset** **(** :ref:`Transform3D<class_Transform3D>` value **)**
-- :ref:`Transform3D<class_Transform3D>` **get_joint_offset** **(** **)**
+- |void| **set_joint_offset**\ (\ value\: :ref:`Transform3D<class_Transform3D>`\ )
+- :ref:`Transform3D<class_Transform3D>` **get_joint_offset**\ (\ )
 
 Sets the joint's transform.
 
@@ -390,8 +390,8 @@ Sets the joint's transform.
 
 .. rst-class:: classref-property-setget
 
-- void **set_joint_rotation** **(** :ref:`Vector3<class_Vector3>` value **)**
-- :ref:`Vector3<class_Vector3>` **get_joint_rotation** **(** **)**
+- |void| **set_joint_rotation**\ (\ value\: :ref:`Vector3<class_Vector3>`\ )
+- :ref:`Vector3<class_Vector3>` **get_joint_rotation**\ (\ )
 
 Sets the joint's rotation in radians.
 
@@ -407,8 +407,8 @@ Sets the joint's rotation in radians.
 
 .. rst-class:: classref-property-setget
 
-- void **set_joint_type** **(** :ref:`JointType<enum_PhysicalBone3D_JointType>` value **)**
-- :ref:`JointType<enum_PhysicalBone3D_JointType>` **get_joint_type** **(** **)**
+- |void| **set_joint_type**\ (\ value\: :ref:`JointType<enum_PhysicalBone3D_JointType>`\ )
+- :ref:`JointType<enum_PhysicalBone3D_JointType>` **get_joint_type**\ (\ )
 
 Sets the joint type. See :ref:`JointType<enum_PhysicalBone3D_JointType>` for possible values.
 
@@ -424,8 +424,8 @@ Sets the joint type. See :ref:`JointType<enum_PhysicalBone3D_JointType>` for pos
 
 .. rst-class:: classref-property-setget
 
-- void **set_linear_damp** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_linear_damp** **(** **)**
+- |void| **set_linear_damp**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_linear_damp**\ (\ )
 
 Damps the body's movement. By default, the body will use the **Default Linear Damp** in **Project > Project Settings > Physics > 3d** or any value override set by an :ref:`Area3D<class_Area3D>` the body is in. Depending on :ref:`linear_damp_mode<class_PhysicalBone3D_property_linear_damp_mode>`, you can set :ref:`linear_damp<class_PhysicalBone3D_property_linear_damp>` to be added to or to replace the body's damping value.
 
@@ -443,8 +443,8 @@ See :ref:`ProjectSettings.physics/3d/default_linear_damp<class_ProjectSettings_p
 
 .. rst-class:: classref-property-setget
 
-- void **set_linear_damp_mode** **(** :ref:`DampMode<enum_PhysicalBone3D_DampMode>` value **)**
-- :ref:`DampMode<enum_PhysicalBone3D_DampMode>` **get_linear_damp_mode** **(** **)**
+- |void| **set_linear_damp_mode**\ (\ value\: :ref:`DampMode<enum_PhysicalBone3D_DampMode>`\ )
+- :ref:`DampMode<enum_PhysicalBone3D_DampMode>` **get_linear_damp_mode**\ (\ )
 
 Defines how :ref:`linear_damp<class_PhysicalBone3D_property_linear_damp>` is applied. See :ref:`DampMode<enum_PhysicalBone3D_DampMode>` for possible values.
 
@@ -460,8 +460,8 @@ Defines how :ref:`linear_damp<class_PhysicalBone3D_property_linear_damp>` is app
 
 .. rst-class:: classref-property-setget
 
-- void **set_linear_velocity** **(** :ref:`Vector3<class_Vector3>` value **)**
-- :ref:`Vector3<class_Vector3>` **get_linear_velocity** **(** **)**
+- |void| **set_linear_velocity**\ (\ value\: :ref:`Vector3<class_Vector3>`\ )
+- :ref:`Vector3<class_Vector3>` **get_linear_velocity**\ (\ )
 
 The body's linear velocity in units per second. Can be used sporadically, but **don't set this every frame**, because physics may run in another thread and runs at a different granularity. Use :ref:`_integrate_forces<class_PhysicalBone3D_private_method__integrate_forces>` as your process loop for precise control of the body state.
 
@@ -477,8 +477,8 @@ The body's linear velocity in units per second. Can be used sporadically, but **
 
 .. rst-class:: classref-property-setget
 
-- void **set_mass** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_mass** **(** **)**
+- |void| **set_mass**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_mass**\ (\ )
 
 The body's mass.
 
@@ -495,7 +495,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-void **_integrate_forces** **(** :ref:`PhysicsDirectBodyState3D<class_PhysicsDirectBodyState3D>` state **)** |virtual|
+|void| **_integrate_forces**\ (\ state\: :ref:`PhysicsDirectBodyState3D<class_PhysicsDirectBodyState3D>`\ ) |virtual|
 
 Called during physics processing, allowing you to read and safely modify the simulation state for the object. By default, it works in addition to the usual physics behavior, but the :ref:`custom_integrator<class_PhysicalBone3D_property_custom_integrator>` property allows you to disable the default behavior and do fully custom force integration for a body.
 
@@ -507,7 +507,7 @@ Called during physics processing, allowing you to read and safely modify the sim
 
 .. rst-class:: classref-method
 
-void **apply_central_impulse** **(** :ref:`Vector3<class_Vector3>` impulse **)**
+|void| **apply_central_impulse**\ (\ impulse\: :ref:`Vector3<class_Vector3>`\ )
 
 .. container:: contribute
 
@@ -521,7 +521,7 @@ void **apply_central_impulse** **(** :ref:`Vector3<class_Vector3>` impulse **)**
 
 .. rst-class:: classref-method
 
-void **apply_impulse** **(** :ref:`Vector3<class_Vector3>` impulse, :ref:`Vector3<class_Vector3>` position=Vector3(0, 0, 0) **)**
+|void| **apply_impulse**\ (\ impulse\: :ref:`Vector3<class_Vector3>`, position\: :ref:`Vector3<class_Vector3>` = Vector3(0, 0, 0)\ )
 
 .. container:: contribute
 
@@ -535,7 +535,7 @@ void **apply_impulse** **(** :ref:`Vector3<class_Vector3>` impulse, :ref:`Vector
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_bone_id** **(** **)** |const|
+:ref:`int<class_int>` **get_bone_id**\ (\ ) |const|
 
 .. container:: contribute
 
@@ -549,7 +549,7 @@ void **apply_impulse** **(** :ref:`Vector3<class_Vector3>` impulse, :ref:`Vector
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **get_simulate_physics** **(** **)**
+:ref:`bool<class_bool>` **get_simulate_physics**\ (\ )
 
 .. container:: contribute
 
@@ -563,7 +563,7 @@ void **apply_impulse** **(** :ref:`Vector3<class_Vector3>` impulse, :ref:`Vector
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_simulating_physics** **(** **)**
+:ref:`bool<class_bool>` **is_simulating_physics**\ (\ )
 
 .. container:: contribute
 
@@ -576,3 +576,4 @@ void **apply_impulse** **(** :ref:`Vector3<class_Vector3>` impulse, :ref:`Vector
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

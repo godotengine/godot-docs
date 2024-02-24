@@ -41,7 +41,7 @@ Properties
    +------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+-------------------+
    | :ref:`RID<class_RID>`                                                                          | :ref:`map<class_NavigationPathQueryParameters2D_property_map>`                                     | ``RID()``         |
    +------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+-------------------+
-   | |bitfield|\<:ref:`PathMetadataFlags<enum_NavigationPathQueryParameters2D_PathMetadataFlags>`\> | :ref:`metadata_flags<class_NavigationPathQueryParameters2D_property_metadata_flags>`               | ``7``             |
+   | |bitfield|\[:ref:`PathMetadataFlags<enum_NavigationPathQueryParameters2D_PathMetadataFlags>`\] | :ref:`metadata_flags<class_NavigationPathQueryParameters2D_property_metadata_flags>`               | ``7``             |
    +------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+-------------------+
    | :ref:`int<class_int>`                                                                          | :ref:`navigation_layers<class_NavigationPathQueryParameters2D_property_navigation_layers>`         | ``1``             |
    +------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+-------------------+
@@ -170,8 +170,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_map** **(** :ref:`RID<class_RID>` value **)**
-- :ref:`RID<class_RID>` **get_map** **(** **)**
+- |void| **set_map**\ (\ value\: :ref:`RID<class_RID>`\ )
+- :ref:`RID<class_RID>` **get_map**\ (\ )
 
 The navigation map :ref:`RID<class_RID>` used in the path query.
 
@@ -183,12 +183,12 @@ The navigation map :ref:`RID<class_RID>` used in the path query.
 
 .. rst-class:: classref-property
 
-|bitfield|\<:ref:`PathMetadataFlags<enum_NavigationPathQueryParameters2D_PathMetadataFlags>`\> **metadata_flags** = ``7``
+|bitfield|\[:ref:`PathMetadataFlags<enum_NavigationPathQueryParameters2D_PathMetadataFlags>`\] **metadata_flags** = ``7``
 
 .. rst-class:: classref-property-setget
 
-- void **set_metadata_flags** **(** |bitfield|\<:ref:`PathMetadataFlags<enum_NavigationPathQueryParameters2D_PathMetadataFlags>`\> value **)**
-- |bitfield|\<:ref:`PathMetadataFlags<enum_NavigationPathQueryParameters2D_PathMetadataFlags>`\> **get_metadata_flags** **(** **)**
+- |void| **set_metadata_flags**\ (\ value\: |bitfield|\[:ref:`PathMetadataFlags<enum_NavigationPathQueryParameters2D_PathMetadataFlags>`\]\ )
+- |bitfield|\[:ref:`PathMetadataFlags<enum_NavigationPathQueryParameters2D_PathMetadataFlags>`\] **get_metadata_flags**\ (\ )
 
 Additional information to include with the navigation path.
 
@@ -204,8 +204,8 @@ Additional information to include with the navigation path.
 
 .. rst-class:: classref-property-setget
 
-- void **set_navigation_layers** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_navigation_layers** **(** **)**
+- |void| **set_navigation_layers**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_navigation_layers**\ (\ )
 
 The navigation layers the query will use (as a bitmask).
 
@@ -221,8 +221,8 @@ The navigation layers the query will use (as a bitmask).
 
 .. rst-class:: classref-property-setget
 
-- void **set_path_postprocessing** **(** :ref:`PathPostProcessing<enum_NavigationPathQueryParameters2D_PathPostProcessing>` value **)**
-- :ref:`PathPostProcessing<enum_NavigationPathQueryParameters2D_PathPostProcessing>` **get_path_postprocessing** **(** **)**
+- |void| **set_path_postprocessing**\ (\ value\: :ref:`PathPostProcessing<enum_NavigationPathQueryParameters2D_PathPostProcessing>`\ )
+- :ref:`PathPostProcessing<enum_NavigationPathQueryParameters2D_PathPostProcessing>` **get_path_postprocessing**\ (\ )
 
 The path postprocessing applied to the raw path corridor found by the :ref:`pathfinding_algorithm<class_NavigationPathQueryParameters2D_property_pathfinding_algorithm>`.
 
@@ -238,8 +238,8 @@ The path postprocessing applied to the raw path corridor found by the :ref:`path
 
 .. rst-class:: classref-property-setget
 
-- void **set_pathfinding_algorithm** **(** :ref:`PathfindingAlgorithm<enum_NavigationPathQueryParameters2D_PathfindingAlgorithm>` value **)**
-- :ref:`PathfindingAlgorithm<enum_NavigationPathQueryParameters2D_PathfindingAlgorithm>` **get_pathfinding_algorithm** **(** **)**
+- |void| **set_pathfinding_algorithm**\ (\ value\: :ref:`PathfindingAlgorithm<enum_NavigationPathQueryParameters2D_PathfindingAlgorithm>`\ )
+- :ref:`PathfindingAlgorithm<enum_NavigationPathQueryParameters2D_PathfindingAlgorithm>` **get_pathfinding_algorithm**\ (\ )
 
 The pathfinding algorithm used in the path query.
 
@@ -255,8 +255,8 @@ The pathfinding algorithm used in the path query.
 
 .. rst-class:: classref-property-setget
 
-- void **set_start_position** **(** :ref:`Vector2<class_Vector2>` value **)**
-- :ref:`Vector2<class_Vector2>` **get_start_position** **(** **)**
+- |void| **set_start_position**\ (\ value\: :ref:`Vector2<class_Vector2>`\ )
+- :ref:`Vector2<class_Vector2>` **get_start_position**\ (\ )
 
 The pathfinding start position in global coordinates.
 
@@ -272,8 +272,8 @@ The pathfinding start position in global coordinates.
 
 .. rst-class:: classref-property-setget
 
-- void **set_target_position** **(** :ref:`Vector2<class_Vector2>` value **)**
-- :ref:`Vector2<class_Vector2>` **get_target_position** **(** **)**
+- |void| **set_target_position**\ (\ value\: :ref:`Vector2<class_Vector2>`\ )
+- :ref:`Vector2<class_Vector2>` **get_target_position**\ (\ )
 
 The pathfinding target position in global coordinates.
 
@@ -284,3 +284,4 @@ The pathfinding target position in global coordinates.
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

@@ -43,15 +43,15 @@ Methods
 .. table::
    :widths: auto
 
-   +-------------------------+-------------------------------------------------------------------------------------------------------------+
-   | void                    | :ref:`add_path<class_OpenXRIPBinding_method_add_path>` **(** :ref:`String<class_String>` path **)**         |
-   +-------------------------+-------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`   | :ref:`get_path_count<class_OpenXRIPBinding_method_get_path_count>` **(** **)** |const|                      |
-   +-------------------------+-------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>` | :ref:`has_path<class_OpenXRIPBinding_method_has_path>` **(** :ref:`String<class_String>` path **)** |const| |
-   +-------------------------+-------------------------------------------------------------------------------------------------------------+
-   | void                    | :ref:`remove_path<class_OpenXRIPBinding_method_remove_path>` **(** :ref:`String<class_String>` path **)**   |
-   +-------------------------+-------------------------------------------------------------------------------------------------------------+
+   +-------------------------+----------------------------------------------------------------------------------------------------------+
+   | |void|                  | :ref:`add_path<class_OpenXRIPBinding_method_add_path>`\ (\ path\: :ref:`String<class_String>`\ )         |
+   +-------------------------+----------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`   | :ref:`get_path_count<class_OpenXRIPBinding_method_get_path_count>`\ (\ ) |const|                         |
+   +-------------------------+----------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | :ref:`has_path<class_OpenXRIPBinding_method_has_path>`\ (\ path\: :ref:`String<class_String>`\ ) |const| |
+   +-------------------------+----------------------------------------------------------------------------------------------------------+
+   | |void|                  | :ref:`remove_path<class_OpenXRIPBinding_method_remove_path>`\ (\ path\: :ref:`String<class_String>`\ )   |
+   +-------------------------+----------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -70,8 +70,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_action** **(** :ref:`OpenXRAction<class_OpenXRAction>` value **)**
-- :ref:`OpenXRAction<class_OpenXRAction>` **get_action** **(** **)**
+- |void| **set_action**\ (\ value\: :ref:`OpenXRAction<class_OpenXRAction>`\ )
+- :ref:`OpenXRAction<class_OpenXRAction>` **get_action**\ (\ )
 
 :ref:`OpenXRAction<class_OpenXRAction>` that is bound to these paths.
 
@@ -87,8 +87,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_paths** **(** :ref:`PackedStringArray<class_PackedStringArray>` value **)**
-- :ref:`PackedStringArray<class_PackedStringArray>` **get_paths** **(** **)**
+- |void| **set_paths**\ (\ value\: :ref:`PackedStringArray<class_PackedStringArray>`\ )
+- :ref:`PackedStringArray<class_PackedStringArray>` **get_paths**\ (\ )
 
 Paths that define the inputs or outputs bound on the device.
 
@@ -105,7 +105,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-void **add_path** **(** :ref:`String<class_String>` path **)**
+|void| **add_path**\ (\ path\: :ref:`String<class_String>`\ )
 
 Add an input/output path to this binding.
 
@@ -117,7 +117,7 @@ Add an input/output path to this binding.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_path_count** **(** **)** |const|
+:ref:`int<class_int>` **get_path_count**\ (\ ) |const|
 
 Get the number of input/output paths in this binding.
 
@@ -129,7 +129,7 @@ Get the number of input/output paths in this binding.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **has_path** **(** :ref:`String<class_String>` path **)** |const|
+:ref:`bool<class_bool>` **has_path**\ (\ path\: :ref:`String<class_String>`\ ) |const|
 
 Returns ``true`` if this input/output path is part of this binding.
 
@@ -141,7 +141,7 @@ Returns ``true`` if this input/output path is part of this binding.
 
 .. rst-class:: classref-method
 
-void **remove_path** **(** :ref:`String<class_String>` path **)**
+|void| **remove_path**\ (\ path\: :ref:`String<class_String>`\ )
 
 Removes this input/output path from this binding.
 
@@ -152,3 +152,4 @@ Removes this input/output path from this binding.
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

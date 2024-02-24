@@ -69,8 +69,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_inner_radius** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_inner_radius** **(** **)**
+- |void| **set_inner_radius**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_inner_radius**\ (\ )
 
 The inner radius of the torus.
 
@@ -86,8 +86,8 @@ The inner radius of the torus.
 
 .. rst-class:: classref-property-setget
 
-- void **set_material** **(** :ref:`Material<class_Material>` value **)**
-- :ref:`Material<class_Material>` **get_material** **(** **)**
+- |void| **set_material**\ (\ value\: :ref:`Material<class_Material>`\ )
+- :ref:`Material<class_Material>` **get_material**\ (\ )
 
 The material used to render the torus.
 
@@ -103,8 +103,8 @@ The material used to render the torus.
 
 .. rst-class:: classref-property-setget
 
-- void **set_outer_radius** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_outer_radius** **(** **)**
+- |void| **set_outer_radius**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_outer_radius**\ (\ )
 
 The outer radius of the torus.
 
@@ -120,8 +120,8 @@ The outer radius of the torus.
 
 .. rst-class:: classref-property-setget
 
-- void **set_ring_sides** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_ring_sides** **(** **)**
+- |void| **set_ring_sides**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_ring_sides**\ (\ )
 
 The number of edges each ring of the torus is constructed of.
 
@@ -137,8 +137,8 @@ The number of edges each ring of the torus is constructed of.
 
 .. rst-class:: classref-property-setget
 
-- void **set_sides** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_sides** **(** **)**
+- |void| **set_sides**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_sides**\ (\ )
 
 The number of slices the torus is constructed of.
 
@@ -154,8 +154,8 @@ The number of slices the torus is constructed of.
 
 .. rst-class:: classref-property-setget
 
-- void **set_smooth_faces** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **get_smooth_faces** **(** **)**
+- |void| **set_smooth_faces**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_smooth_faces**\ (\ )
 
 If ``true`` the normals of the torus are set to give a smooth effect making the torus seem rounded. If ``false`` the torus will have a flat shaded look.
 
@@ -166,3 +166,4 @@ If ``true`` the normals of the torus are set to give a smooth effect making the 
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

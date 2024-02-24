@@ -63,8 +63,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_mag_filter** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_mag_filter** **(** **)**
+- |void| **set_mag_filter**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_mag_filter**\ (\ )
 
 Texture's magnification filter, used when texture appears larger on screen than the source image.
 
@@ -80,8 +80,8 @@ Texture's magnification filter, used when texture appears larger on screen than 
 
 .. rst-class:: classref-property-setget
 
-- void **set_min_filter** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_min_filter** **(** **)**
+- |void| **set_min_filter**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_min_filter**\ (\ )
 
 Texture's minification filter, used when the texture appears smaller on screen than the source image.
 
@@ -97,8 +97,8 @@ Texture's minification filter, used when the texture appears smaller on screen t
 
 .. rst-class:: classref-property-setget
 
-- void **set_wrap_s** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_wrap_s** **(** **)**
+- |void| **set_wrap_s**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_wrap_s**\ (\ )
 
 Wrapping mode to use for S-axis (horizontal) texture coordinates.
 
@@ -114,8 +114,8 @@ Wrapping mode to use for S-axis (horizontal) texture coordinates.
 
 .. rst-class:: classref-property-setget
 
-- void **set_wrap_t** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_wrap_t** **(** **)**
+- |void| **set_wrap_t**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_wrap_t**\ (\ )
 
 Wrapping mode to use for T-axis (vertical) texture coordinates.
 
@@ -126,3 +126,4 @@ Wrapping mode to use for T-axis (vertical) texture coordinates.
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

@@ -45,11 +45,11 @@ Methods
 .. table::
    :widths: auto
 
-   +---------------------------------------+------------------------------------------------------------------------------------+
-   | :ref:`BaseButton[]<class_BaseButton>` | :ref:`get_buttons<class_ButtonGroup_method_get_buttons>` **(** **)**               |
-   +---------------------------------------+------------------------------------------------------------------------------------+
-   | :ref:`BaseButton<class_BaseButton>`   | :ref:`get_pressed_button<class_ButtonGroup_method_get_pressed_button>` **(** **)** |
-   +---------------------------------------+------------------------------------------------------------------------------------+
+   +------------------------------------------------------------------+------------------------------------------------------------------------------+
+   | :ref:`Array<class_Array>`\[:ref:`BaseButton<class_BaseButton>`\] | :ref:`get_buttons<class_ButtonGroup_method_get_buttons>`\ (\ )               |
+   +------------------------------------------------------------------+------------------------------------------------------------------------------+
+   | :ref:`BaseButton<class_BaseButton>`                              | :ref:`get_pressed_button<class_ButtonGroup_method_get_pressed_button>`\ (\ ) |
+   +------------------------------------------------------------------+------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -64,7 +64,7 @@ Signals
 
 .. rst-class:: classref-signal
 
-**pressed** **(** :ref:`BaseButton<class_BaseButton>` button **)**
+**pressed**\ (\ button\: :ref:`BaseButton<class_BaseButton>`\ )
 
 Emitted when one of the buttons of the group is pressed.
 
@@ -85,8 +85,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_allow_unpress** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_allow_unpress** **(** **)**
+- |void| **set_allow_unpress**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_allow_unpress**\ (\ )
 
 If ``true``, it is possible to unpress all buttons in this **ButtonGroup**.
 
@@ -103,7 +103,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`BaseButton[]<class_BaseButton>` **get_buttons** **(** **)**
+:ref:`Array<class_Array>`\[:ref:`BaseButton<class_BaseButton>`\] **get_buttons**\ (\ )
 
 Returns an :ref:`Array<class_Array>` of :ref:`Button<class_Button>`\ s who have this as their **ButtonGroup** (see :ref:`BaseButton.button_group<class_BaseButton_property_button_group>`).
 
@@ -115,7 +115,7 @@ Returns an :ref:`Array<class_Array>` of :ref:`Button<class_Button>`\ s who have 
 
 .. rst-class:: classref-method
 
-:ref:`BaseButton<class_BaseButton>` **get_pressed_button** **(** **)**
+:ref:`BaseButton<class_BaseButton>` **get_pressed_button**\ (\ )
 
 Returns the current pressed button.
 
@@ -126,3 +126,4 @@ Returns the current pressed button.
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

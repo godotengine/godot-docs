@@ -52,19 +52,19 @@ Methods
 .. table::
    :widths: auto
 
-   +---------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Error<enum_@GlobalScope_Error>`       | :ref:`add_mesh_peer<class_ENetMultiplayerPeer_method_add_mesh_peer>` **(** :ref:`int<class_int>` peer_id, :ref:`ENetConnection<class_ENetConnection>` host **)**                                                                                                                                         |
-   +---------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Error<enum_@GlobalScope_Error>`       | :ref:`create_client<class_ENetMultiplayerPeer_method_create_client>` **(** :ref:`String<class_String>` address, :ref:`int<class_int>` port, :ref:`int<class_int>` channel_count=0, :ref:`int<class_int>` in_bandwidth=0, :ref:`int<class_int>` out_bandwidth=0, :ref:`int<class_int>` local_port=0 **)** |
-   +---------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Error<enum_@GlobalScope_Error>`       | :ref:`create_mesh<class_ENetMultiplayerPeer_method_create_mesh>` **(** :ref:`int<class_int>` unique_id **)**                                                                                                                                                                                             |
-   +---------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Error<enum_@GlobalScope_Error>`       | :ref:`create_server<class_ENetMultiplayerPeer_method_create_server>` **(** :ref:`int<class_int>` port, :ref:`int<class_int>` max_clients=32, :ref:`int<class_int>` max_channels=0, :ref:`int<class_int>` in_bandwidth=0, :ref:`int<class_int>` out_bandwidth=0 **)**                                     |
-   +---------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`ENetPacketPeer<class_ENetPacketPeer>` | :ref:`get_peer<class_ENetMultiplayerPeer_method_get_peer>` **(** :ref:`int<class_int>` id **)** |const|                                                                                                                                                                                                  |
-   +---------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                        | :ref:`set_bind_ip<class_ENetMultiplayerPeer_method_set_bind_ip>` **(** :ref:`String<class_String>` ip **)**                                                                                                                                                                                              |
-   +---------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +---------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>`       | :ref:`add_mesh_peer<class_ENetMultiplayerPeer_method_add_mesh_peer>`\ (\ peer_id\: :ref:`int<class_int>`, host\: :ref:`ENetConnection<class_ENetConnection>`\ )                                                                                                                                                         |
+   +---------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>`       | :ref:`create_client<class_ENetMultiplayerPeer_method_create_client>`\ (\ address\: :ref:`String<class_String>`, port\: :ref:`int<class_int>`, channel_count\: :ref:`int<class_int>` = 0, in_bandwidth\: :ref:`int<class_int>` = 0, out_bandwidth\: :ref:`int<class_int>` = 0, local_port\: :ref:`int<class_int>` = 0\ ) |
+   +---------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>`       | :ref:`create_mesh<class_ENetMultiplayerPeer_method_create_mesh>`\ (\ unique_id\: :ref:`int<class_int>`\ )                                                                                                                                                                                                               |
+   +---------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>`       | :ref:`create_server<class_ENetMultiplayerPeer_method_create_server>`\ (\ port\: :ref:`int<class_int>`, max_clients\: :ref:`int<class_int>` = 32, max_channels\: :ref:`int<class_int>` = 0, in_bandwidth\: :ref:`int<class_int>` = 0, out_bandwidth\: :ref:`int<class_int>` = 0\ )                                       |
+   +---------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`ENetPacketPeer<class_ENetPacketPeer>` | :ref:`get_peer<class_ENetMultiplayerPeer_method_get_peer>`\ (\ id\: :ref:`int<class_int>`\ ) |const|                                                                                                                                                                                                                    |
+   +---------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                      | :ref:`set_bind_ip<class_ENetMultiplayerPeer_method_set_bind_ip>`\ (\ ip\: :ref:`String<class_String>`\ )                                                                                                                                                                                                                |
+   +---------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -83,7 +83,7 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- :ref:`ENetConnection<class_ENetConnection>` **get_host** **(** **)**
+- :ref:`ENetConnection<class_ENetConnection>` **get_host**\ (\ )
 
 The underlying :ref:`ENetConnection<class_ENetConnection>` created after :ref:`create_client<class_ENetMultiplayerPeer_method_create_client>` and :ref:`create_server<class_ENetMultiplayerPeer_method_create_server>`.
 
@@ -100,7 +100,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **add_mesh_peer** **(** :ref:`int<class_int>` peer_id, :ref:`ENetConnection<class_ENetConnection>` host **)**
+:ref:`Error<enum_@GlobalScope_Error>` **add_mesh_peer**\ (\ peer_id\: :ref:`int<class_int>`, host\: :ref:`ENetConnection<class_ENetConnection>`\ )
 
 Add a new remote peer with the given ``peer_id`` connected to the given ``host``.
 
@@ -114,7 +114,7 @@ Add a new remote peer with the given ``peer_id`` connected to the given ``host``
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **create_client** **(** :ref:`String<class_String>` address, :ref:`int<class_int>` port, :ref:`int<class_int>` channel_count=0, :ref:`int<class_int>` in_bandwidth=0, :ref:`int<class_int>` out_bandwidth=0, :ref:`int<class_int>` local_port=0 **)**
+:ref:`Error<enum_@GlobalScope_Error>` **create_client**\ (\ address\: :ref:`String<class_String>`, port\: :ref:`int<class_int>`, channel_count\: :ref:`int<class_int>` = 0, in_bandwidth\: :ref:`int<class_int>` = 0, out_bandwidth\: :ref:`int<class_int>` = 0, local_port\: :ref:`int<class_int>` = 0\ )
 
 Create client that connects to a server at ``address`` using specified ``port``. The given address needs to be either a fully qualified domain name (e.g. ``"www.example.com"``) or an IP address in IPv4 or IPv6 format (e.g. ``"192.168.1.1"``). The ``port`` is the port the server is listening on. The ``channel_count`` parameter can be used to specify the number of ENet channels allocated for the connection. The ``in_bandwidth`` and ``out_bandwidth`` parameters can be used to limit the incoming and outgoing bandwidth to the given number of bytes per second. The default of 0 means unlimited bandwidth. Note that ENet will strategically drop packets on specific sides of a connection between peers to ensure the peer's bandwidth is not overwhelmed. The bandwidth parameters also determine the window size of a connection which limits the amount of reliable packets that may be in transit at any given time. Returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` if a client was created, :ref:`@GlobalScope.ERR_ALREADY_IN_USE<class_@GlobalScope_constant_ERR_ALREADY_IN_USE>` if this ENetMultiplayerPeer instance already has an open connection (in which case you need to call :ref:`MultiplayerPeer.close<class_MultiplayerPeer_method_close>` first) or :ref:`@GlobalScope.ERR_CANT_CREATE<class_@GlobalScope_constant_ERR_CANT_CREATE>` if the client could not be created. If ``local_port`` is specified, the client will also listen to the given port; this is useful for some NAT traversal techniques.
 
@@ -126,7 +126,7 @@ Create client that connects to a server at ``address`` using specified ``port``.
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **create_mesh** **(** :ref:`int<class_int>` unique_id **)**
+:ref:`Error<enum_@GlobalScope_Error>` **create_mesh**\ (\ unique_id\: :ref:`int<class_int>`\ )
 
 Initialize this :ref:`MultiplayerPeer<class_MultiplayerPeer>` in mesh mode. The provided ``unique_id`` will be used as the local peer network unique ID once assigned as the :ref:`MultiplayerAPI.multiplayer_peer<class_MultiplayerAPI_property_multiplayer_peer>`. In the mesh configuration you will need to set up each new peer manually using :ref:`ENetConnection<class_ENetConnection>` before calling :ref:`add_mesh_peer<class_ENetMultiplayerPeer_method_add_mesh_peer>`. While this technique is more advanced, it allows for better control over the connection process (e.g. when dealing with NAT punch-through) and for better distribution of the network load (which would otherwise be more taxing on the server).
 
@@ -138,7 +138,7 @@ Initialize this :ref:`MultiplayerPeer<class_MultiplayerPeer>` in mesh mode. The 
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **create_server** **(** :ref:`int<class_int>` port, :ref:`int<class_int>` max_clients=32, :ref:`int<class_int>` max_channels=0, :ref:`int<class_int>` in_bandwidth=0, :ref:`int<class_int>` out_bandwidth=0 **)**
+:ref:`Error<enum_@GlobalScope_Error>` **create_server**\ (\ port\: :ref:`int<class_int>`, max_clients\: :ref:`int<class_int>` = 32, max_channels\: :ref:`int<class_int>` = 0, in_bandwidth\: :ref:`int<class_int>` = 0, out_bandwidth\: :ref:`int<class_int>` = 0\ )
 
 Create server that listens to connections via ``port``. The port needs to be an available, unused port between 0 and 65535. Note that ports below 1024 are privileged and may require elevated permissions depending on the platform. To change the interface the server listens on, use :ref:`set_bind_ip<class_ENetMultiplayerPeer_method_set_bind_ip>`. The default IP is the wildcard ``"*"``, which listens on all available interfaces. ``max_clients`` is the maximum number of clients that are allowed at once, any number up to 4095 may be used, although the achievable number of simultaneous clients may be far lower and depends on the application. For additional details on the bandwidth parameters, see :ref:`create_client<class_ENetMultiplayerPeer_method_create_client>`. Returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` if a server was created, :ref:`@GlobalScope.ERR_ALREADY_IN_USE<class_@GlobalScope_constant_ERR_ALREADY_IN_USE>` if this ENetMultiplayerPeer instance already has an open connection (in which case you need to call :ref:`MultiplayerPeer.close<class_MultiplayerPeer_method_close>` first) or :ref:`@GlobalScope.ERR_CANT_CREATE<class_@GlobalScope_constant_ERR_CANT_CREATE>` if the server could not be created.
 
@@ -150,7 +150,7 @@ Create server that listens to connections via ``port``. The port needs to be an 
 
 .. rst-class:: classref-method
 
-:ref:`ENetPacketPeer<class_ENetPacketPeer>` **get_peer** **(** :ref:`int<class_int>` id **)** |const|
+:ref:`ENetPacketPeer<class_ENetPacketPeer>` **get_peer**\ (\ id\: :ref:`int<class_int>`\ ) |const|
 
 Returns the :ref:`ENetPacketPeer<class_ENetPacketPeer>` associated to the given ``id``.
 
@@ -162,7 +162,7 @@ Returns the :ref:`ENetPacketPeer<class_ENetPacketPeer>` associated to the given 
 
 .. rst-class:: classref-method
 
-void **set_bind_ip** **(** :ref:`String<class_String>` ip **)**
+|void| **set_bind_ip**\ (\ ip\: :ref:`String<class_String>`\ )
 
 The IP used when creating a server. This is set to the wildcard ``"*"`` by default, which binds to all available interfaces. The given IP needs to be in IPv4 or IPv6 address format, for example: ``"192.168.1.1"``.
 
@@ -173,3 +173,4 @@ The IP used when creating a server. This is set to the wildcard ``"*"`` by defau
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

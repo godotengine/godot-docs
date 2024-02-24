@@ -60,31 +60,31 @@ Methods
 .. table::
    :widths: auto
 
-   +---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                            | :ref:`create_convex_collision<class_MeshInstance3D_method_create_convex_collision>` **(** :ref:`bool<class_bool>` clean=true, :ref:`bool<class_bool>` simplify=false **)**                                      |
-   +---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                            | :ref:`create_debug_tangents<class_MeshInstance3D_method_create_debug_tangents>` **(** **)**                                                                                                                     |
-   +---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                            | :ref:`create_multiple_convex_collisions<class_MeshInstance3D_method_create_multiple_convex_collisions>` **(** :ref:`MeshConvexDecompositionSettings<class_MeshConvexDecompositionSettings>` settings=null **)** |
-   +---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                            | :ref:`create_trimesh_collision<class_MeshInstance3D_method_create_trimesh_collision>` **(** **)**                                                                                                               |
-   +---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`           | :ref:`find_blend_shape_by_name<class_MeshInstance3D_method_find_blend_shape_by_name>` **(** :ref:`StringName<class_StringName>` name **)**                                                                      |
-   +---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Material<class_Material>` | :ref:`get_active_material<class_MeshInstance3D_method_get_active_material>` **(** :ref:`int<class_int>` surface **)** |const|                                                                                   |
-   +---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`           | :ref:`get_blend_shape_count<class_MeshInstance3D_method_get_blend_shape_count>` **(** **)** |const|                                                                                                             |
-   +---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`float<class_float>`       | :ref:`get_blend_shape_value<class_MeshInstance3D_method_get_blend_shape_value>` **(** :ref:`int<class_int>` blend_shape_idx **)** |const|                                                                       |
-   +---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Material<class_Material>` | :ref:`get_surface_override_material<class_MeshInstance3D_method_get_surface_override_material>` **(** :ref:`int<class_int>` surface **)** |const|                                                               |
-   +---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`           | :ref:`get_surface_override_material_count<class_MeshInstance3D_method_get_surface_override_material_count>` **(** **)** |const|                                                                                 |
-   +---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                            | :ref:`set_blend_shape_value<class_MeshInstance3D_method_set_blend_shape_value>` **(** :ref:`int<class_int>` blend_shape_idx, :ref:`float<class_float>` value **)**                                              |
-   +---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                            | :ref:`set_surface_override_material<class_MeshInstance3D_method_set_surface_override_material>` **(** :ref:`int<class_int>` surface, :ref:`Material<class_Material>` material **)**                             |
-   +---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                          | :ref:`create_convex_collision<class_MeshInstance3D_method_create_convex_collision>`\ (\ clean\: :ref:`bool<class_bool>` = true, simplify\: :ref:`bool<class_bool>` = false\ )                                  |
+   +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                          | :ref:`create_debug_tangents<class_MeshInstance3D_method_create_debug_tangents>`\ (\ )                                                                                                                          |
+   +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                          | :ref:`create_multiple_convex_collisions<class_MeshInstance3D_method_create_multiple_convex_collisions>`\ (\ settings\: :ref:`MeshConvexDecompositionSettings<class_MeshConvexDecompositionSettings>` = null\ ) |
+   +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                          | :ref:`create_trimesh_collision<class_MeshInstance3D_method_create_trimesh_collision>`\ (\ )                                                                                                                    |
+   +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`           | :ref:`find_blend_shape_by_name<class_MeshInstance3D_method_find_blend_shape_by_name>`\ (\ name\: :ref:`StringName<class_StringName>`\ )                                                                        |
+   +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Material<class_Material>` | :ref:`get_active_material<class_MeshInstance3D_method_get_active_material>`\ (\ surface\: :ref:`int<class_int>`\ ) |const|                                                                                     |
+   +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`           | :ref:`get_blend_shape_count<class_MeshInstance3D_method_get_blend_shape_count>`\ (\ ) |const|                                                                                                                  |
+   +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`       | :ref:`get_blend_shape_value<class_MeshInstance3D_method_get_blend_shape_value>`\ (\ blend_shape_idx\: :ref:`int<class_int>`\ ) |const|                                                                         |
+   +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Material<class_Material>` | :ref:`get_surface_override_material<class_MeshInstance3D_method_get_surface_override_material>`\ (\ surface\: :ref:`int<class_int>`\ ) |const|                                                                 |
+   +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`           | :ref:`get_surface_override_material_count<class_MeshInstance3D_method_get_surface_override_material_count>`\ (\ ) |const|                                                                                      |
+   +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                          | :ref:`set_blend_shape_value<class_MeshInstance3D_method_set_blend_shape_value>`\ (\ blend_shape_idx\: :ref:`int<class_int>`, value\: :ref:`float<class_float>`\ )                                              |
+   +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                          | :ref:`set_surface_override_material<class_MeshInstance3D_method_set_surface_override_material>`\ (\ surface\: :ref:`int<class_int>`, material\: :ref:`Material<class_Material>`\ )                             |
+   +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -103,8 +103,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_mesh** **(** :ref:`Mesh<class_Mesh>` value **)**
-- :ref:`Mesh<class_Mesh>` **get_mesh** **(** **)**
+- |void| **set_mesh**\ (\ value\: :ref:`Mesh<class_Mesh>`\ )
+- :ref:`Mesh<class_Mesh>` **get_mesh**\ (\ )
 
 The :ref:`Mesh<class_Mesh>` resource for the instance.
 
@@ -120,8 +120,8 @@ The :ref:`Mesh<class_Mesh>` resource for the instance.
 
 .. rst-class:: classref-property-setget
 
-- void **set_skeleton_path** **(** :ref:`NodePath<class_NodePath>` value **)**
-- :ref:`NodePath<class_NodePath>` **get_skeleton_path** **(** **)**
+- |void| **set_skeleton_path**\ (\ value\: :ref:`NodePath<class_NodePath>`\ )
+- :ref:`NodePath<class_NodePath>` **get_skeleton_path**\ (\ )
 
 :ref:`NodePath<class_NodePath>` to the :ref:`Skeleton3D<class_Skeleton3D>` associated with the instance.
 
@@ -137,8 +137,8 @@ The :ref:`Mesh<class_Mesh>` resource for the instance.
 
 .. rst-class:: classref-property-setget
 
-- void **set_skin** **(** :ref:`Skin<class_Skin>` value **)**
-- :ref:`Skin<class_Skin>` **get_skin** **(** **)**
+- |void| **set_skin**\ (\ value\: :ref:`Skin<class_Skin>`\ )
+- :ref:`Skin<class_Skin>` **get_skin**\ (\ )
 
 The :ref:`Skin<class_Skin>` to be used by this instance.
 
@@ -155,7 +155,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-void **create_convex_collision** **(** :ref:`bool<class_bool>` clean=true, :ref:`bool<class_bool>` simplify=false **)**
+|void| **create_convex_collision**\ (\ clean\: :ref:`bool<class_bool>` = true, simplify\: :ref:`bool<class_bool>` = false\ )
 
 This helper creates a :ref:`StaticBody3D<class_StaticBody3D>` child node with a :ref:`ConvexPolygonShape3D<class_ConvexPolygonShape3D>` collision shape calculated from the mesh geometry. It's mainly used for testing.
 
@@ -171,7 +171,7 @@ If ``simplify`` is ``true``, the geometry can be further simplified to reduce th
 
 .. rst-class:: classref-method
 
-void **create_debug_tangents** **(** **)**
+|void| **create_debug_tangents**\ (\ )
 
 This helper creates a **MeshInstance3D** child node with gizmos at every vertex calculated from the mesh geometry. It's mainly used for testing.
 
@@ -183,7 +183,7 @@ This helper creates a **MeshInstance3D** child node with gizmos at every vertex 
 
 .. rst-class:: classref-method
 
-void **create_multiple_convex_collisions** **(** :ref:`MeshConvexDecompositionSettings<class_MeshConvexDecompositionSettings>` settings=null **)**
+|void| **create_multiple_convex_collisions**\ (\ settings\: :ref:`MeshConvexDecompositionSettings<class_MeshConvexDecompositionSettings>` = null\ )
 
 This helper creates a :ref:`StaticBody3D<class_StaticBody3D>` child node with multiple :ref:`ConvexPolygonShape3D<class_ConvexPolygonShape3D>` collision shapes calculated from the mesh geometry via convex decomposition. The convex decomposition operation can be controlled with parameters from the optional ``settings``.
 
@@ -195,7 +195,7 @@ This helper creates a :ref:`StaticBody3D<class_StaticBody3D>` child node with mu
 
 .. rst-class:: classref-method
 
-void **create_trimesh_collision** **(** **)**
+|void| **create_trimesh_collision**\ (\ )
 
 This helper creates a :ref:`StaticBody3D<class_StaticBody3D>` child node with a :ref:`ConcavePolygonShape3D<class_ConcavePolygonShape3D>` collision shape calculated from the mesh geometry. It's mainly used for testing.
 
@@ -207,7 +207,7 @@ This helper creates a :ref:`StaticBody3D<class_StaticBody3D>` child node with a 
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **find_blend_shape_by_name** **(** :ref:`StringName<class_StringName>` name **)**
+:ref:`int<class_int>` **find_blend_shape_by_name**\ (\ name\: :ref:`StringName<class_StringName>`\ )
 
 Returns the index of the blend shape with the given ``name``. Returns ``-1`` if no blend shape with this name exists, including when :ref:`mesh<class_MeshInstance3D_property_mesh>` is ``null``.
 
@@ -219,7 +219,7 @@ Returns the index of the blend shape with the given ``name``. Returns ``-1`` if 
 
 .. rst-class:: classref-method
 
-:ref:`Material<class_Material>` **get_active_material** **(** :ref:`int<class_int>` surface **)** |const|
+:ref:`Material<class_Material>` **get_active_material**\ (\ surface\: :ref:`int<class_int>`\ ) |const|
 
 Returns the :ref:`Material<class_Material>` that will be used by the :ref:`Mesh<class_Mesh>` when drawing. This can return the :ref:`GeometryInstance3D.material_override<class_GeometryInstance3D_property_material_override>`, the surface override :ref:`Material<class_Material>` defined in this **MeshInstance3D**, or the surface :ref:`Material<class_Material>` defined in the :ref:`mesh<class_MeshInstance3D_property_mesh>`. For example, if :ref:`GeometryInstance3D.material_override<class_GeometryInstance3D_property_material_override>` is used, all surfaces will return the override material.
 
@@ -233,7 +233,7 @@ Returns ``null`` if no material is active, including when :ref:`mesh<class_MeshI
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_blend_shape_count** **(** **)** |const|
+:ref:`int<class_int>` **get_blend_shape_count**\ (\ ) |const|
 
 Returns the number of blend shapes available. Produces an error if :ref:`mesh<class_MeshInstance3D_property_mesh>` is ``null``.
 
@@ -245,7 +245,7 @@ Returns the number of blend shapes available. Produces an error if :ref:`mesh<cl
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **get_blend_shape_value** **(** :ref:`int<class_int>` blend_shape_idx **)** |const|
+:ref:`float<class_float>` **get_blend_shape_value**\ (\ blend_shape_idx\: :ref:`int<class_int>`\ ) |const|
 
 Returns the value of the blend shape at the given ``blend_shape_idx``. Returns ``0.0`` and produces an error if :ref:`mesh<class_MeshInstance3D_property_mesh>` is ``null`` or doesn't have a blend shape at that index.
 
@@ -257,7 +257,7 @@ Returns the value of the blend shape at the given ``blend_shape_idx``. Returns `
 
 .. rst-class:: classref-method
 
-:ref:`Material<class_Material>` **get_surface_override_material** **(** :ref:`int<class_int>` surface **)** |const|
+:ref:`Material<class_Material>` **get_surface_override_material**\ (\ surface\: :ref:`int<class_int>`\ ) |const|
 
 Returns the override :ref:`Material<class_Material>` for the specified ``surface`` of the :ref:`Mesh<class_Mesh>` resource. See also :ref:`get_surface_override_material_count<class_MeshInstance3D_method_get_surface_override_material_count>`.
 
@@ -271,7 +271,7 @@ Returns the override :ref:`Material<class_Material>` for the specified ``surface
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_surface_override_material_count** **(** **)** |const|
+:ref:`int<class_int>` **get_surface_override_material_count**\ (\ ) |const|
 
 Returns the number of surface override materials. This is equivalent to :ref:`Mesh.get_surface_count<class_Mesh_method_get_surface_count>`. See also :ref:`get_surface_override_material<class_MeshInstance3D_method_get_surface_override_material>`.
 
@@ -283,7 +283,7 @@ Returns the number of surface override materials. This is equivalent to :ref:`Me
 
 .. rst-class:: classref-method
 
-void **set_blend_shape_value** **(** :ref:`int<class_int>` blend_shape_idx, :ref:`float<class_float>` value **)**
+|void| **set_blend_shape_value**\ (\ blend_shape_idx\: :ref:`int<class_int>`, value\: :ref:`float<class_float>`\ )
 
 Sets the value of the blend shape at ``blend_shape_idx`` to ``value``. Produces an error if :ref:`mesh<class_MeshInstance3D_property_mesh>` is ``null`` or doesn't have a blend shape at that index.
 
@@ -295,7 +295,7 @@ Sets the value of the blend shape at ``blend_shape_idx`` to ``value``. Produces 
 
 .. rst-class:: classref-method
 
-void **set_surface_override_material** **(** :ref:`int<class_int>` surface, :ref:`Material<class_Material>` material **)**
+|void| **set_surface_override_material**\ (\ surface\: :ref:`int<class_int>`, material\: :ref:`Material<class_Material>`\ )
 
 Sets the override ``material`` for the specified ``surface`` of the :ref:`Mesh<class_Mesh>` resource. This material is associated with this **MeshInstance3D** rather than with :ref:`mesh<class_MeshInstance3D_property_mesh>`.
 
@@ -308,3 +308,4 @@ Sets the override ``material`` for the specified ``surface`` of the :ref:`Mesh<c
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

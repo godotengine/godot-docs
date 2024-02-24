@@ -80,8 +80,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_energy_multiplier** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_energy_multiplier** **(** **)**
+- |void| **set_energy_multiplier**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_energy_multiplier**\ (\ )
 
 The sky's overall brightness multiplier. Higher values result in a brighter sky.
 
@@ -97,8 +97,8 @@ The sky's overall brightness multiplier. Higher values result in a brighter sky.
 
 .. rst-class:: classref-property-setget
 
-- void **set_ground_bottom_color** **(** :ref:`Color<class_Color>` value **)**
-- :ref:`Color<class_Color>` **get_ground_bottom_color** **(** **)**
+- |void| **set_ground_bottom_color**\ (\ value\: :ref:`Color<class_Color>`\ )
+- :ref:`Color<class_Color>` **get_ground_bottom_color**\ (\ )
 
 Color of the ground at the bottom. Blends with :ref:`ground_horizon_color<class_ProceduralSkyMaterial_property_ground_horizon_color>`.
 
@@ -114,8 +114,8 @@ Color of the ground at the bottom. Blends with :ref:`ground_horizon_color<class_
 
 .. rst-class:: classref-property-setget
 
-- void **set_ground_curve** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_ground_curve** **(** **)**
+- |void| **set_ground_curve**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_ground_curve**\ (\ )
 
 How quickly the :ref:`ground_horizon_color<class_ProceduralSkyMaterial_property_ground_horizon_color>` fades into the :ref:`ground_bottom_color<class_ProceduralSkyMaterial_property_ground_bottom_color>`.
 
@@ -131,8 +131,8 @@ How quickly the :ref:`ground_horizon_color<class_ProceduralSkyMaterial_property_
 
 .. rst-class:: classref-property-setget
 
-- void **set_ground_energy_multiplier** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_ground_energy_multiplier** **(** **)**
+- |void| **set_ground_energy_multiplier**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_ground_energy_multiplier**\ (\ )
 
 Multiplier for ground color. A higher value will make the ground brighter.
 
@@ -148,8 +148,8 @@ Multiplier for ground color. A higher value will make the ground brighter.
 
 .. rst-class:: classref-property-setget
 
-- void **set_ground_horizon_color** **(** :ref:`Color<class_Color>` value **)**
-- :ref:`Color<class_Color>` **get_ground_horizon_color** **(** **)**
+- |void| **set_ground_horizon_color**\ (\ value\: :ref:`Color<class_Color>`\ )
+- :ref:`Color<class_Color>` **get_ground_horizon_color**\ (\ )
 
 Color of the ground at the horizon. Blends with :ref:`ground_bottom_color<class_ProceduralSkyMaterial_property_ground_bottom_color>`.
 
@@ -165,8 +165,8 @@ Color of the ground at the horizon. Blends with :ref:`ground_bottom_color<class_
 
 .. rst-class:: classref-property-setget
 
-- void **set_sky_cover** **(** :ref:`Texture2D<class_Texture2D>` value **)**
-- :ref:`Texture2D<class_Texture2D>` **get_sky_cover** **(** **)**
+- |void| **set_sky_cover**\ (\ value\: :ref:`Texture2D<class_Texture2D>`\ )
+- :ref:`Texture2D<class_Texture2D>` **get_sky_cover**\ (\ )
 
 The sky cover texture to use. This texture must use an equirectangular projection (similar to :ref:`PanoramaSkyMaterial<class_PanoramaSkyMaterial>`). The texture's colors will be *added* to the existing sky color, and will be multiplied by :ref:`sky_energy_multiplier<class_ProceduralSkyMaterial_property_sky_energy_multiplier>` and :ref:`sky_cover_modulate<class_ProceduralSkyMaterial_property_sky_cover_modulate>`. This is mainly suited to displaying stars at night, but it can also be used to display clouds at day or night (with a non-physically-accurate look).
 
@@ -182,8 +182,8 @@ The sky cover texture to use. This texture must use an equirectangular projectio
 
 .. rst-class:: classref-property-setget
 
-- void **set_sky_cover_modulate** **(** :ref:`Color<class_Color>` value **)**
-- :ref:`Color<class_Color>` **get_sky_cover_modulate** **(** **)**
+- |void| **set_sky_cover_modulate**\ (\ value\: :ref:`Color<class_Color>`\ )
+- :ref:`Color<class_Color>` **get_sky_cover_modulate**\ (\ )
 
 The tint to apply to the :ref:`sky_cover<class_ProceduralSkyMaterial_property_sky_cover>` texture. This can be used to change the sky cover's colors or opacity independently of the sky energy, which is useful for day/night or weather transitions. Only effective if a texture is defined in :ref:`sky_cover<class_ProceduralSkyMaterial_property_sky_cover>`.
 
@@ -199,8 +199,8 @@ The tint to apply to the :ref:`sky_cover<class_ProceduralSkyMaterial_property_sk
 
 .. rst-class:: classref-property-setget
 
-- void **set_sky_curve** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_sky_curve** **(** **)**
+- |void| **set_sky_curve**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_sky_curve**\ (\ )
 
 How quickly the :ref:`sky_horizon_color<class_ProceduralSkyMaterial_property_sky_horizon_color>` fades into the :ref:`sky_top_color<class_ProceduralSkyMaterial_property_sky_top_color>`.
 
@@ -216,8 +216,8 @@ How quickly the :ref:`sky_horizon_color<class_ProceduralSkyMaterial_property_sky
 
 .. rst-class:: classref-property-setget
 
-- void **set_sky_energy_multiplier** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_sky_energy_multiplier** **(** **)**
+- |void| **set_sky_energy_multiplier**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_sky_energy_multiplier**\ (\ )
 
 Multiplier for sky color. A higher value will make the sky brighter.
 
@@ -233,8 +233,8 @@ Multiplier for sky color. A higher value will make the sky brighter.
 
 .. rst-class:: classref-property-setget
 
-- void **set_sky_horizon_color** **(** :ref:`Color<class_Color>` value **)**
-- :ref:`Color<class_Color>` **get_sky_horizon_color** **(** **)**
+- |void| **set_sky_horizon_color**\ (\ value\: :ref:`Color<class_Color>`\ )
+- :ref:`Color<class_Color>` **get_sky_horizon_color**\ (\ )
 
 Color of the sky at the horizon. Blends with :ref:`sky_top_color<class_ProceduralSkyMaterial_property_sky_top_color>`.
 
@@ -250,8 +250,8 @@ Color of the sky at the horizon. Blends with :ref:`sky_top_color<class_Procedura
 
 .. rst-class:: classref-property-setget
 
-- void **set_sky_top_color** **(** :ref:`Color<class_Color>` value **)**
-- :ref:`Color<class_Color>` **get_sky_top_color** **(** **)**
+- |void| **set_sky_top_color**\ (\ value\: :ref:`Color<class_Color>`\ )
+- :ref:`Color<class_Color>` **get_sky_top_color**\ (\ )
 
 Color of the sky at the top. Blends with :ref:`sky_horizon_color<class_ProceduralSkyMaterial_property_sky_horizon_color>`.
 
@@ -267,8 +267,8 @@ Color of the sky at the top. Blends with :ref:`sky_horizon_color<class_Procedura
 
 .. rst-class:: classref-property-setget
 
-- void **set_sun_angle_max** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_sun_angle_max** **(** **)**
+- |void| **set_sun_angle_max**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_sun_angle_max**\ (\ )
 
 Distance from center of sun where it fades out completely.
 
@@ -284,8 +284,8 @@ Distance from center of sun where it fades out completely.
 
 .. rst-class:: classref-property-setget
 
-- void **set_sun_curve** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_sun_curve** **(** **)**
+- |void| **set_sun_curve**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_sun_curve**\ (\ )
 
 How quickly the sun fades away between the edge of the sun disk and :ref:`sun_angle_max<class_ProceduralSkyMaterial_property_sun_angle_max>`.
 
@@ -301,8 +301,8 @@ How quickly the sun fades away between the edge of the sun disk and :ref:`sun_an
 
 .. rst-class:: classref-property-setget
 
-- void **set_use_debanding** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **get_use_debanding** **(** **)**
+- |void| **set_use_debanding**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_use_debanding**\ (\ )
 
 If ``true``, enables debanding. Debanding adds a small amount of noise which helps reduce banding that appears from the smooth changes in color in the sky.
 
@@ -313,3 +313,4 @@ If ``true``, enables debanding. Debanding adds a small amount of noise which hel
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

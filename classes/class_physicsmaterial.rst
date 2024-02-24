@@ -56,8 +56,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_absorbent** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_absorbent** **(** **)**
+- |void| **set_absorbent**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_absorbent**\ (\ )
 
 If ``true``, subtracts the bounciness from the colliding object's bounciness instead of adding it.
 
@@ -73,8 +73,8 @@ If ``true``, subtracts the bounciness from the colliding object's bounciness ins
 
 .. rst-class:: classref-property-setget
 
-- void **set_bounce** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_bounce** **(** **)**
+- |void| **set_bounce**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_bounce**\ (\ )
 
 The body's bounciness. Values range from ``0`` (no bounce) to ``1`` (full bounciness).
 
@@ -90,8 +90,8 @@ The body's bounciness. Values range from ``0`` (no bounce) to ``1`` (full bounci
 
 .. rst-class:: classref-property-setget
 
-- void **set_friction** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_friction** **(** **)**
+- |void| **set_friction**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_friction**\ (\ )
 
 The body's friction. Values range from ``0`` (frictionless) to ``1`` (maximum friction).
 
@@ -107,8 +107,8 @@ The body's friction. Values range from ``0`` (frictionless) to ``1`` (maximum fr
 
 .. rst-class:: classref-property-setget
 
-- void **set_rough** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_rough** **(** **)**
+- |void| **set_rough**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_rough**\ (\ )
 
 If ``true``, the physics engine will use the friction of the object marked as "rough" when two objects collide. If ``false``, the physics engine will use the lowest friction of all colliding objects instead. If ``true`` for both colliding objects, the physics engine will use the highest friction.
 
@@ -119,3 +119,4 @@ If ``true``, the physics engine will use the friction of the object marked as "r
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

@@ -50,8 +50,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_texture** **(** :ref:`Texture3D<class_Texture3D>` value **)**
-- :ref:`Texture3D<class_Texture3D>` **get_texture** **(** **)**
+- |void| **set_texture**\ (\ value\: :ref:`Texture3D<class_Texture3D>`\ )
+- :ref:`Texture3D<class_Texture3D>` **get_texture**\ (\ )
 
 A source texture. Used if :ref:`VisualShaderNodeSample3D.source<class_VisualShaderNodeSample3D_property_source>` is set to :ref:`VisualShaderNodeSample3D.SOURCE_TEXTURE<class_VisualShaderNodeSample3D_constant_SOURCE_TEXTURE>`.
 
@@ -62,3 +62,4 @@ A source texture. Used if :ref:`VisualShaderNodeSample3D.source<class_VisualShad
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

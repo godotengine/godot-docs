@@ -43,13 +43,13 @@ Methods
 .. table::
    :widths: auto
 
-   +-------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`RDShaderSPIRV<class_RDShaderSPIRV>` | :ref:`get_spirv<class_RDShaderFile_method_get_spirv>` **(** :ref:`StringName<class_StringName>` version=&"" **)** |const|                                                   |
-   +-------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`StringName[]<class_StringName>`     | :ref:`get_version_list<class_RDShaderFile_method_get_version_list>` **(** **)** |const|                                                                                     |
-   +-------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                      | :ref:`set_bytecode<class_RDShaderFile_method_set_bytecode>` **(** :ref:`RDShaderSPIRV<class_RDShaderSPIRV>` bytecode, :ref:`StringName<class_StringName>` version=&"" **)** |
-   +-------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`RDShaderSPIRV<class_RDShaderSPIRV>`                        | :ref:`get_spirv<class_RDShaderFile_method_get_spirv>`\ (\ version\: :ref:`StringName<class_StringName>` = &""\ ) |const|                                                     |
+   +------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Array<class_Array>`\[:ref:`StringName<class_StringName>`\] | :ref:`get_version_list<class_RDShaderFile_method_get_version_list>`\ (\ ) |const|                                                                                            |
+   +------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                           | :ref:`set_bytecode<class_RDShaderFile_method_set_bytecode>`\ (\ bytecode\: :ref:`RDShaderSPIRV<class_RDShaderSPIRV>`, version\: :ref:`StringName<class_StringName>` = &""\ ) |
+   +------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -68,8 +68,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_base_error** **(** :ref:`String<class_String>` value **)**
-- :ref:`String<class_String>` **get_base_error** **(** **)**
+- |void| **set_base_error**\ (\ value\: :ref:`String<class_String>`\ )
+- :ref:`String<class_String>` **get_base_error**\ (\ )
 
 The base compilation error message, which indicates errors not related to a specific shader stage if non-empty. If empty, shader compilation is not necessarily successful (check :ref:`RDShaderSPIRV<class_RDShaderSPIRV>`'s error message members).
 
@@ -86,7 +86,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`RDShaderSPIRV<class_RDShaderSPIRV>` **get_spirv** **(** :ref:`StringName<class_StringName>` version=&"" **)** |const|
+:ref:`RDShaderSPIRV<class_RDShaderSPIRV>` **get_spirv**\ (\ version\: :ref:`StringName<class_StringName>` = &""\ ) |const|
 
 Returns the SPIR-V intermediate representation for the specified shader ``version``.
 
@@ -98,7 +98,7 @@ Returns the SPIR-V intermediate representation for the specified shader ``versio
 
 .. rst-class:: classref-method
 
-:ref:`StringName[]<class_StringName>` **get_version_list** **(** **)** |const|
+:ref:`Array<class_Array>`\[:ref:`StringName<class_StringName>`\] **get_version_list**\ (\ ) |const|
 
 Returns the list of compiled versions for this shader.
 
@@ -110,7 +110,7 @@ Returns the list of compiled versions for this shader.
 
 .. rst-class:: classref-method
 
-void **set_bytecode** **(** :ref:`RDShaderSPIRV<class_RDShaderSPIRV>` bytecode, :ref:`StringName<class_StringName>` version=&"" **)**
+|void| **set_bytecode**\ (\ bytecode\: :ref:`RDShaderSPIRV<class_RDShaderSPIRV>`, version\: :ref:`StringName<class_StringName>` = &""\ )
 
 Sets the SPIR-V ``bytecode`` that will be compiled for the specified ``version``.
 
@@ -121,3 +121,4 @@ Sets the SPIR-V ``bytecode`` that will be compiled for the specified ``version``
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

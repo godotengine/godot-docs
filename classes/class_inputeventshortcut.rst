@@ -50,8 +50,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_shortcut** **(** :ref:`Shortcut<class_Shortcut>` value **)**
-- :ref:`Shortcut<class_Shortcut>` **get_shortcut** **(** **)**
+- |void| **set_shortcut**\ (\ value\: :ref:`Shortcut<class_Shortcut>`\ )
+- :ref:`Shortcut<class_Shortcut>` **get_shortcut**\ (\ )
 
 The :ref:`Shortcut<class_Shortcut>` represented by this event. Its :ref:`Shortcut.matches_event<class_Shortcut_method_matches_event>` method will always return ``true`` for this event.
 
@@ -62,3 +62,4 @@ The :ref:`Shortcut<class_Shortcut>` represented by this event. Its :ref:`Shortcu
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

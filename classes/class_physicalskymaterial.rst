@@ -74,8 +74,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_energy_multiplier** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_energy_multiplier** **(** **)**
+- |void| **set_energy_multiplier**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_energy_multiplier**\ (\ )
 
 The sky's overall brightness multiplier. Higher values result in a brighter sky.
 
@@ -91,8 +91,8 @@ The sky's overall brightness multiplier. Higher values result in a brighter sky.
 
 .. rst-class:: classref-property-setget
 
-- void **set_ground_color** **(** :ref:`Color<class_Color>` value **)**
-- :ref:`Color<class_Color>` **get_ground_color** **(** **)**
+- |void| **set_ground_color**\ (\ value\: :ref:`Color<class_Color>`\ )
+- :ref:`Color<class_Color>` **get_ground_color**\ (\ )
 
 Modulates the :ref:`Color<class_Color>` on the bottom half of the sky to represent the ground.
 
@@ -108,8 +108,8 @@ Modulates the :ref:`Color<class_Color>` on the bottom half of the sky to represe
 
 .. rst-class:: classref-property-setget
 
-- void **set_mie_coefficient** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_mie_coefficient** **(** **)**
+- |void| **set_mie_coefficient**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_mie_coefficient**\ (\ )
 
 Controls the strength of `Mie scattering <https://en.wikipedia.org/wiki/Mie_scattering>`__ for the sky. Mie scattering results from light colliding with larger particles (like water). On earth, Mie scattering results in a whitish color around the sun and horizon.
 
@@ -125,8 +125,8 @@ Controls the strength of `Mie scattering <https://en.wikipedia.org/wiki/Mie_scat
 
 .. rst-class:: classref-property-setget
 
-- void **set_mie_color** **(** :ref:`Color<class_Color>` value **)**
-- :ref:`Color<class_Color>` **get_mie_color** **(** **)**
+- |void| **set_mie_color**\ (\ value\: :ref:`Color<class_Color>`\ )
+- :ref:`Color<class_Color>` **get_mie_color**\ (\ )
 
 Controls the :ref:`Color<class_Color>` of the `Mie scattering <https://en.wikipedia.org/wiki/Mie_scattering>`__ effect. While not physically accurate, this allows for the creation of alien-looking planets.
 
@@ -142,8 +142,8 @@ Controls the :ref:`Color<class_Color>` of the `Mie scattering <https://en.wikipe
 
 .. rst-class:: classref-property-setget
 
-- void **set_mie_eccentricity** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_mie_eccentricity** **(** **)**
+- |void| **set_mie_eccentricity**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_mie_eccentricity**\ (\ )
 
 Controls the direction of the `Mie scattering <https://en.wikipedia.org/wiki/Mie_scattering>`__. A value of ``1`` means that when light hits a particle it's passing through straight forward. A value of ``-1`` means that all light is scatter backwards.
 
@@ -159,8 +159,8 @@ Controls the direction of the `Mie scattering <https://en.wikipedia.org/wiki/Mie
 
 .. rst-class:: classref-property-setget
 
-- void **set_night_sky** **(** :ref:`Texture2D<class_Texture2D>` value **)**
-- :ref:`Texture2D<class_Texture2D>` **get_night_sky** **(** **)**
+- |void| **set_night_sky**\ (\ value\: :ref:`Texture2D<class_Texture2D>`\ )
+- :ref:`Texture2D<class_Texture2D>` **get_night_sky**\ (\ )
 
 :ref:`Texture2D<class_Texture2D>` for the night sky. This is added to the sky, so if it is bright enough, it may be visible during the day.
 
@@ -176,8 +176,8 @@ Controls the direction of the `Mie scattering <https://en.wikipedia.org/wiki/Mie
 
 .. rst-class:: classref-property-setget
 
-- void **set_rayleigh_coefficient** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_rayleigh_coefficient** **(** **)**
+- |void| **set_rayleigh_coefficient**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_rayleigh_coefficient**\ (\ )
 
 Controls the strength of the `Rayleigh scattering <https://en.wikipedia.org/wiki/Rayleigh_scattering>`__. Rayleigh scattering results from light colliding with small particles. It is responsible for the blue color of the sky.
 
@@ -193,8 +193,8 @@ Controls the strength of the `Rayleigh scattering <https://en.wikipedia.org/wiki
 
 .. rst-class:: classref-property-setget
 
-- void **set_rayleigh_color** **(** :ref:`Color<class_Color>` value **)**
-- :ref:`Color<class_Color>` **get_rayleigh_color** **(** **)**
+- |void| **set_rayleigh_color**\ (\ value\: :ref:`Color<class_Color>`\ )
+- :ref:`Color<class_Color>` **get_rayleigh_color**\ (\ )
 
 Controls the :ref:`Color<class_Color>` of the `Rayleigh scattering <https://en.wikipedia.org/wiki/Rayleigh_scattering>`__. While not physically accurate, this allows for the creation of alien-looking planets. For example, setting this to a red :ref:`Color<class_Color>` results in a Mars-looking atmosphere with a corresponding blue sunset.
 
@@ -210,8 +210,8 @@ Controls the :ref:`Color<class_Color>` of the `Rayleigh scattering <https://en.w
 
 .. rst-class:: classref-property-setget
 
-- void **set_sun_disk_scale** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_sun_disk_scale** **(** **)**
+- |void| **set_sun_disk_scale**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_sun_disk_scale**\ (\ )
 
 Sets the size of the sun disk. Default value is based on Sol's perceived size from Earth.
 
@@ -227,8 +227,8 @@ Sets the size of the sun disk. Default value is based on Sol's perceived size fr
 
 .. rst-class:: classref-property-setget
 
-- void **set_turbidity** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_turbidity** **(** **)**
+- |void| **set_turbidity**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_turbidity**\ (\ )
 
 Sets the thickness of the atmosphere. High turbidity creates a foggy-looking atmosphere, while a low turbidity results in a clearer atmosphere.
 
@@ -244,8 +244,8 @@ Sets the thickness of the atmosphere. High turbidity creates a foggy-looking atm
 
 .. rst-class:: classref-property-setget
 
-- void **set_use_debanding** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **get_use_debanding** **(** **)**
+- |void| **set_use_debanding**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_use_debanding**\ (\ )
 
 If ``true``, enables debanding. Debanding adds a small amount of noise which helps reduce banding that appears from the smooth changes in color in the sky.
 
@@ -256,3 +256,4 @@ If ``true``, enables debanding. Debanding adds a small amount of noise which hel
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

@@ -40,7 +40,7 @@ Properties
    +------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+-----------+
    | :ref:`TextureSamples<enum_RenderingDevice_TextureSamples>` | :ref:`sample_count<class_RDPipelineMultisampleState_property_sample_count>`                         | ``0``     |
    +------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+-----------+
-   | :ref:`int[]<class_int>`                                    | :ref:`sample_masks<class_RDPipelineMultisampleState_property_sample_masks>`                         | ``[]``    |
+   | :ref:`Array<class_Array>`\[:ref:`int<class_int>`\]         | :ref:`sample_masks<class_RDPipelineMultisampleState_property_sample_masks>`                         | ``[]``    |
    +------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+-----------+
 
 .. rst-class:: classref-section-separator
@@ -60,8 +60,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_enable_alpha_to_coverage** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **get_enable_alpha_to_coverage** **(** **)**
+- |void| **set_enable_alpha_to_coverage**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_enable_alpha_to_coverage**\ (\ )
 
 If ``true``, alpha to coverage is enabled. This generates a temporary coverage value based on the alpha component of the fragment's first color output. This allows alpha transparency to make use of multisample antialiasing.
 
@@ -77,8 +77,8 @@ If ``true``, alpha to coverage is enabled. This generates a temporary coverage v
 
 .. rst-class:: classref-property-setget
 
-- void **set_enable_alpha_to_one** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **get_enable_alpha_to_one** **(** **)**
+- |void| **set_enable_alpha_to_one**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_enable_alpha_to_one**\ (\ )
 
 If ``true``, alpha is forced to either ``0.0`` or ``1.0``. This allows hardening the edges of antialiased alpha transparencies. Only relevant if :ref:`enable_alpha_to_coverage<class_RDPipelineMultisampleState_property_enable_alpha_to_coverage>` is ``true``.
 
@@ -94,8 +94,8 @@ If ``true``, alpha is forced to either ``0.0`` or ``1.0``. This allows hardening
 
 .. rst-class:: classref-property-setget
 
-- void **set_enable_sample_shading** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **get_enable_sample_shading** **(** **)**
+- |void| **set_enable_sample_shading**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_enable_sample_shading**\ (\ )
 
 If ``true``, enables per-sample shading which replaces MSAA by SSAA. This provides higher quality antialiasing that works with transparent (alpha scissor) edges. This has a very high performance cost. See also :ref:`min_sample_shading<class_RDPipelineMultisampleState_property_min_sample_shading>`. See the `per-sample shading Vulkan documentation <https://registry.khronos.org/vulkan/specs/1.3-extensions/html/vkspec.html#primsrast-sampleshading>`__ for more details.
 
@@ -111,8 +111,8 @@ If ``true``, enables per-sample shading which replaces MSAA by SSAA. This provid
 
 .. rst-class:: classref-property-setget
 
-- void **set_min_sample_shading** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_min_sample_shading** **(** **)**
+- |void| **set_min_sample_shading**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_min_sample_shading**\ (\ )
 
 The multiplier of :ref:`sample_count<class_RDPipelineMultisampleState_property_sample_count>` that determines how many samples are performed for each fragment. Must be between ``0.0`` and ``1.0`` (inclusive). Only effective if :ref:`enable_sample_shading<class_RDPipelineMultisampleState_property_enable_sample_shading>` is ``true``. If :ref:`min_sample_shading<class_RDPipelineMultisampleState_property_min_sample_shading>` is ``1.0``, fragment invocation must only read from the coverage index sample. Tile image access must not be used if :ref:`enable_sample_shading<class_RDPipelineMultisampleState_property_enable_sample_shading>` is *not* ``1.0``.
 
@@ -128,8 +128,8 @@ The multiplier of :ref:`sample_count<class_RDPipelineMultisampleState_property_s
 
 .. rst-class:: classref-property-setget
 
-- void **set_sample_count** **(** :ref:`TextureSamples<enum_RenderingDevice_TextureSamples>` value **)**
-- :ref:`TextureSamples<enum_RenderingDevice_TextureSamples>` **get_sample_count** **(** **)**
+- |void| **set_sample_count**\ (\ value\: :ref:`TextureSamples<enum_RenderingDevice_TextureSamples>`\ )
+- :ref:`TextureSamples<enum_RenderingDevice_TextureSamples>` **get_sample_count**\ (\ )
 
 The number of MSAA samples (or SSAA samples if :ref:`enable_sample_shading<class_RDPipelineMultisampleState_property_enable_sample_shading>` is ``true``) to perform. Higher values result in better antialiasing, at the cost of performance.
 
@@ -141,12 +141,12 @@ The number of MSAA samples (or SSAA samples if :ref:`enable_sample_shading<class
 
 .. rst-class:: classref-property
 
-:ref:`int[]<class_int>` **sample_masks** = ``[]``
+:ref:`Array<class_Array>`\[:ref:`int<class_int>`\] **sample_masks** = ``[]``
 
 .. rst-class:: classref-property-setget
 
-- void **set_sample_masks** **(** :ref:`int[]<class_int>` value **)**
-- :ref:`int[]<class_int>` **get_sample_masks** **(** **)**
+- |void| **set_sample_masks**\ (\ value\: :ref:`Array<class_Array>`\[:ref:`int<class_int>`\]\ )
+- :ref:`Array<class_Array>`\[:ref:`int<class_int>`\] **get_sample_masks**\ (\ )
 
 The sample mask array. See the `sample mask Vulkan documentation <https://registry.khronos.org/vulkan/specs/1.3-extensions/html/vkspec.html#fragops-samplemask>`__ for more details.
 
@@ -157,3 +157,4 @@ The sample mask array. See the `sample mask Vulkan documentation <https://regist
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

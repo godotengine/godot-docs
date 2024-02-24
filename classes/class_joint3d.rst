@@ -56,9 +56,9 @@ Methods
 .. table::
    :widths: auto
 
-   +-----------------------+------------------------------------------------------------------+
-   | :ref:`RID<class_RID>` | :ref:`get_rid<class_Joint3D_method_get_rid>` **(** **)** |const| |
-   +-----------------------+------------------------------------------------------------------+
+   +-----------------------+------------------------------------------------------------+
+   | :ref:`RID<class_RID>` | :ref:`get_rid<class_Joint3D_method_get_rid>`\ (\ ) |const| |
+   +-----------------------+------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -77,8 +77,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_exclude_nodes_from_collision** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **get_exclude_nodes_from_collision** **(** **)**
+- |void| **set_exclude_nodes_from_collision**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_exclude_nodes_from_collision**\ (\ )
 
 If ``true``, the two bodies of the nodes are not able to collide with each other.
 
@@ -94,8 +94,8 @@ If ``true``, the two bodies of the nodes are not able to collide with each other
 
 .. rst-class:: classref-property-setget
 
-- void **set_node_a** **(** :ref:`NodePath<class_NodePath>` value **)**
-- :ref:`NodePath<class_NodePath>` **get_node_a** **(** **)**
+- |void| **set_node_a**\ (\ value\: :ref:`NodePath<class_NodePath>`\ )
+- :ref:`NodePath<class_NodePath>` **get_node_a**\ (\ )
 
 The node attached to the first side (A) of the joint.
 
@@ -111,8 +111,8 @@ The node attached to the first side (A) of the joint.
 
 .. rst-class:: classref-property-setget
 
-- void **set_node_b** **(** :ref:`NodePath<class_NodePath>` value **)**
-- :ref:`NodePath<class_NodePath>` **get_node_b** **(** **)**
+- |void| **set_node_b**\ (\ value\: :ref:`NodePath<class_NodePath>`\ )
+- :ref:`NodePath<class_NodePath>` **get_node_b**\ (\ )
 
 The node attached to the second side (B) of the joint.
 
@@ -128,8 +128,8 @@ The node attached to the second side (B) of the joint.
 
 .. rst-class:: classref-property-setget
 
-- void **set_solver_priority** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_solver_priority** **(** **)**
+- |void| **set_solver_priority**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_solver_priority**\ (\ )
 
 The priority used to define which solver is executed first for multiple joints. The lower the value, the higher the priority.
 
@@ -146,7 +146,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`RID<class_RID>` **get_rid** **(** **)** |const|
+:ref:`RID<class_RID>` **get_rid**\ (\ ) |const|
 
 Returns the joint's :ref:`RID<class_RID>`.
 
@@ -157,3 +157,4 @@ Returns the joint's :ref:`RID<class_RID>`.
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

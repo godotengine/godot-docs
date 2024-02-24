@@ -64,15 +64,15 @@ Methods
 .. table::
    :widths: auto
 
-   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`GLTFPhysicsBody<class_GLTFPhysicsBody>`     | :ref:`from_dictionary<class_GLTFPhysicsBody_method_from_dictionary>` **(** :ref:`Dictionary<class_Dictionary>` dictionary **)** |static|  |
-   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`GLTFPhysicsBody<class_GLTFPhysicsBody>`     | :ref:`from_node<class_GLTFPhysicsBody_method_from_node>` **(** :ref:`CollisionObject3D<class_CollisionObject3D>` body_node **)** |static| |
-   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Dictionary<class_Dictionary>`               | :ref:`to_dictionary<class_GLTFPhysicsBody_method_to_dictionary>` **(** **)** |const|                                                      |
-   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`CollisionObject3D<class_CollisionObject3D>` | :ref:`to_node<class_GLTFPhysicsBody_method_to_node>` **(** **)** |const|                                                                  |
-   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+   +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`GLTFPhysicsBody<class_GLTFPhysicsBody>`     | :ref:`from_dictionary<class_GLTFPhysicsBody_method_from_dictionary>`\ (\ dictionary\: :ref:`Dictionary<class_Dictionary>`\ ) |static|  |
+   +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`GLTFPhysicsBody<class_GLTFPhysicsBody>`     | :ref:`from_node<class_GLTFPhysicsBody_method_from_node>`\ (\ body_node\: :ref:`CollisionObject3D<class_CollisionObject3D>`\ ) |static| |
+   +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Dictionary<class_Dictionary>`               | :ref:`to_dictionary<class_GLTFPhysicsBody_method_to_dictionary>`\ (\ ) |const|                                                         |
+   +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`CollisionObject3D<class_CollisionObject3D>` | :ref:`to_node<class_GLTFPhysicsBody_method_to_node>`\ (\ ) |const|                                                                     |
+   +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -91,8 +91,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_angular_velocity** **(** :ref:`Vector3<class_Vector3>` value **)**
-- :ref:`Vector3<class_Vector3>` **get_angular_velocity** **(** **)**
+- |void| **set_angular_velocity**\ (\ value\: :ref:`Vector3<class_Vector3>`\ )
+- :ref:`Vector3<class_Vector3>` **get_angular_velocity**\ (\ )
 
 The angular velocity of the physics body, in radians per second. This is only used when the body type is "rigid" or "vehicle".
 
@@ -108,8 +108,8 @@ The angular velocity of the physics body, in radians per second. This is only us
 
 .. rst-class:: classref-property-setget
 
-- void **set_body_type** **(** :ref:`String<class_String>` value **)**
-- :ref:`String<class_String>` **get_body_type** **(** **)**
+- |void| **set_body_type**\ (\ value\: :ref:`String<class_String>`\ )
+- :ref:`String<class_String>` **get_body_type**\ (\ )
 
 The type of the body. When importing, this controls what type of :ref:`CollisionObject3D<class_CollisionObject3D>` node Godot should generate. Valid values are "static", "animatable", "character", "rigid", "vehicle", and "trigger". When exporting, this will be squashed down to one of "static", "kinematic", or "dynamic" motion types, or the "trigger" property.
 
@@ -125,8 +125,8 @@ The type of the body. When importing, this controls what type of :ref:`Collision
 
 .. rst-class:: classref-property-setget
 
-- void **set_center_of_mass** **(** :ref:`Vector3<class_Vector3>` value **)**
-- :ref:`Vector3<class_Vector3>` **get_center_of_mass** **(** **)**
+- |void| **set_center_of_mass**\ (\ value\: :ref:`Vector3<class_Vector3>`\ )
+- :ref:`Vector3<class_Vector3>` **get_center_of_mass**\ (\ )
 
 The center of mass of the body, in meters. This is in local space relative to the body. By default, the center of the mass is the body's origin.
 
@@ -142,8 +142,8 @@ The center of mass of the body, in meters. This is in local space relative to th
 
 .. rst-class:: classref-property-setget
 
-- void **set_inertia_diagonal** **(** :ref:`Vector3<class_Vector3>` value **)**
-- :ref:`Vector3<class_Vector3>` **get_inertia_diagonal** **(** **)**
+- |void| **set_inertia_diagonal**\ (\ value\: :ref:`Vector3<class_Vector3>`\ )
+- :ref:`Vector3<class_Vector3>` **get_inertia_diagonal**\ (\ )
 
 The inertia strength of the physics body, in kilogram meter squared (kg⋅m²). This represents the inertia around the principle axes, the diagonal of the inertia tensor matrix. This is only used when the body type is "rigid" or "vehicle".
 
@@ -161,8 +161,8 @@ When converted to a Godot :ref:`RigidBody3D<class_RigidBody3D>` node, if this va
 
 .. rst-class:: classref-property-setget
 
-- void **set_inertia_orientation** **(** :ref:`Quaternion<class_Quaternion>` value **)**
-- :ref:`Quaternion<class_Quaternion>` **get_inertia_orientation** **(** **)**
+- |void| **set_inertia_orientation**\ (\ value\: :ref:`Quaternion<class_Quaternion>`\ )
+- :ref:`Quaternion<class_Quaternion>` **get_inertia_orientation**\ (\ )
 
 The inertia orientation of the physics body. This defines the rotation of the inertia's principle axes relative to the object's local axes. This is only used when the body type is "rigid" or "vehicle" and :ref:`inertia_diagonal<class_GLTFPhysicsBody_property_inertia_diagonal>` is set to a non-zero value.
 
@@ -178,8 +178,8 @@ The inertia orientation of the physics body. This defines the rotation of the in
 
 .. rst-class:: classref-property-setget
 
-- void **set_inertia_tensor** **(** :ref:`Basis<class_Basis>` value **)**
-- :ref:`Basis<class_Basis>` **get_inertia_tensor** **(** **)**
+- |void| **set_inertia_tensor**\ (\ value\: :ref:`Basis<class_Basis>`\ )
+- :ref:`Basis<class_Basis>` **get_inertia_tensor**\ (\ )
 
 **Deprecated:** This property may be changed or removed in future versions.
 
@@ -199,8 +199,8 @@ When converted to a Godot :ref:`RigidBody3D<class_RigidBody3D>` node, if this va
 
 .. rst-class:: classref-property-setget
 
-- void **set_linear_velocity** **(** :ref:`Vector3<class_Vector3>` value **)**
-- :ref:`Vector3<class_Vector3>` **get_linear_velocity** **(** **)**
+- |void| **set_linear_velocity**\ (\ value\: :ref:`Vector3<class_Vector3>`\ )
+- :ref:`Vector3<class_Vector3>` **get_linear_velocity**\ (\ )
 
 The linear velocity of the physics body, in meters per second. This is only used when the body type is "rigid" or "vehicle".
 
@@ -216,8 +216,8 @@ The linear velocity of the physics body, in meters per second. This is only used
 
 .. rst-class:: classref-property-setget
 
-- void **set_mass** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_mass** **(** **)**
+- |void| **set_mass**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_mass**\ (\ )
 
 The mass of the physics body, in kilograms. This is only used when the body type is "rigid" or "vehicle".
 
@@ -234,7 +234,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`GLTFPhysicsBody<class_GLTFPhysicsBody>` **from_dictionary** **(** :ref:`Dictionary<class_Dictionary>` dictionary **)** |static|
+:ref:`GLTFPhysicsBody<class_GLTFPhysicsBody>` **from_dictionary**\ (\ dictionary\: :ref:`Dictionary<class_Dictionary>`\ ) |static|
 
 Creates a new GLTFPhysicsBody instance by parsing the given :ref:`Dictionary<class_Dictionary>` in the ``OMI_physics_body`` GLTF extension format.
 
@@ -246,7 +246,7 @@ Creates a new GLTFPhysicsBody instance by parsing the given :ref:`Dictionary<cla
 
 .. rst-class:: classref-method
 
-:ref:`GLTFPhysicsBody<class_GLTFPhysicsBody>` **from_node** **(** :ref:`CollisionObject3D<class_CollisionObject3D>` body_node **)** |static|
+:ref:`GLTFPhysicsBody<class_GLTFPhysicsBody>` **from_node**\ (\ body_node\: :ref:`CollisionObject3D<class_CollisionObject3D>`\ ) |static|
 
 Create a new GLTFPhysicsBody instance from the given Godot :ref:`CollisionObject3D<class_CollisionObject3D>` node.
 
@@ -258,7 +258,7 @@ Create a new GLTFPhysicsBody instance from the given Godot :ref:`CollisionObject
 
 .. rst-class:: classref-method
 
-:ref:`Dictionary<class_Dictionary>` **to_dictionary** **(** **)** |const|
+:ref:`Dictionary<class_Dictionary>` **to_dictionary**\ (\ ) |const|
 
 Serializes this GLTFPhysicsBody instance into a :ref:`Dictionary<class_Dictionary>`. It will be in the format expected by the ``OMI_physics_body`` GLTF extension.
 
@@ -270,7 +270,7 @@ Serializes this GLTFPhysicsBody instance into a :ref:`Dictionary<class_Dictionar
 
 .. rst-class:: classref-method
 
-:ref:`CollisionObject3D<class_CollisionObject3D>` **to_node** **(** **)** |const|
+:ref:`CollisionObject3D<class_CollisionObject3D>` **to_node**\ (\ ) |const|
 
 Converts this GLTFPhysicsBody instance into a Godot :ref:`CollisionObject3D<class_CollisionObject3D>` node.
 
@@ -281,3 +281,4 @@ Converts this GLTFPhysicsBody instance into a Godot :ref:`CollisionObject3D<clas
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

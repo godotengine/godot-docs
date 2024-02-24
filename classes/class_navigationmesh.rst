@@ -98,27 +98,27 @@ Methods
 .. table::
    :widths: auto
 
-   +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                                | :ref:`add_polygon<class_NavigationMesh_method_add_polygon>` **(** :ref:`PackedInt32Array<class_PackedInt32Array>` polygon **)**                                     |
-   +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                                | :ref:`clear<class_NavigationMesh_method_clear>` **(** **)**                                                                                                         |
-   +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                                | :ref:`clear_polygons<class_NavigationMesh_method_clear_polygons>` **(** **)**                                                                                       |
-   +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                                | :ref:`create_from_mesh<class_NavigationMesh_method_create_from_mesh>` **(** :ref:`Mesh<class_Mesh>` mesh **)**                                                      |
-   +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                             | :ref:`get_collision_mask_value<class_NavigationMesh_method_get_collision_mask_value>` **(** :ref:`int<class_int>` layer_number **)** |const|                        |
-   +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`PackedInt32Array<class_PackedInt32Array>`     | :ref:`get_polygon<class_NavigationMesh_method_get_polygon>` **(** :ref:`int<class_int>` idx **)**                                                                   |
-   +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                               | :ref:`get_polygon_count<class_NavigationMesh_method_get_polygon_count>` **(** **)** |const|                                                                         |
-   +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`PackedVector3Array<class_PackedVector3Array>` | :ref:`get_vertices<class_NavigationMesh_method_get_vertices>` **(** **)** |const|                                                                                   |
-   +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                                | :ref:`set_collision_mask_value<class_NavigationMesh_method_set_collision_mask_value>` **(** :ref:`int<class_int>` layer_number, :ref:`bool<class_bool>` value **)** |
-   +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                                | :ref:`set_vertices<class_NavigationMesh_method_set_vertices>` **(** :ref:`PackedVector3Array<class_PackedVector3Array>` vertices **)**                              |
-   +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                              | :ref:`add_polygon<class_NavigationMesh_method_add_polygon>`\ (\ polygon\: :ref:`PackedInt32Array<class_PackedInt32Array>`\ )                                       |
+   +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                              | :ref:`clear<class_NavigationMesh_method_clear>`\ (\ )                                                                                                              |
+   +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                              | :ref:`clear_polygons<class_NavigationMesh_method_clear_polygons>`\ (\ )                                                                                            |
+   +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                              | :ref:`create_from_mesh<class_NavigationMesh_method_create_from_mesh>`\ (\ mesh\: :ref:`Mesh<class_Mesh>`\ )                                                        |
+   +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                             | :ref:`get_collision_mask_value<class_NavigationMesh_method_get_collision_mask_value>`\ (\ layer_number\: :ref:`int<class_int>`\ ) |const|                          |
+   +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PackedInt32Array<class_PackedInt32Array>`     | :ref:`get_polygon<class_NavigationMesh_method_get_polygon>`\ (\ idx\: :ref:`int<class_int>`\ )                                                                     |
+   +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                               | :ref:`get_polygon_count<class_NavigationMesh_method_get_polygon_count>`\ (\ ) |const|                                                                              |
+   +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PackedVector3Array<class_PackedVector3Array>` | :ref:`get_vertices<class_NavigationMesh_method_get_vertices>`\ (\ ) |const|                                                                                        |
+   +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                              | :ref:`set_collision_mask_value<class_NavigationMesh_method_set_collision_mask_value>`\ (\ layer_number\: :ref:`int<class_int>`, value\: :ref:`bool<class_bool>`\ ) |
+   +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                              | :ref:`set_vertices<class_NavigationMesh_method_set_vertices>`\ (\ vertices\: :ref:`PackedVector3Array<class_PackedVector3Array>`\ )                                |
+   +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -268,8 +268,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_agent_height** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_agent_height** **(** **)**
+- |void| **set_agent_height**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_agent_height**\ (\ )
 
 The minimum floor to ceiling height that will still allow the floor area to be considered walkable.
 
@@ -287,8 +287,8 @@ The minimum floor to ceiling height that will still allow the floor area to be c
 
 .. rst-class:: classref-property-setget
 
-- void **set_agent_max_climb** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_agent_max_climb** **(** **)**
+- |void| **set_agent_max_climb**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_agent_max_climb**\ (\ )
 
 The minimum ledge height that is considered to still be traversable.
 
@@ -306,8 +306,8 @@ The minimum ledge height that is considered to still be traversable.
 
 .. rst-class:: classref-property-setget
 
-- void **set_agent_max_slope** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_agent_max_slope** **(** **)**
+- |void| **set_agent_max_slope**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_agent_max_slope**\ (\ )
 
 The maximum slope that is considered walkable, in degrees.
 
@@ -323,8 +323,8 @@ The maximum slope that is considered walkable, in degrees.
 
 .. rst-class:: classref-property-setget
 
-- void **set_agent_radius** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_agent_radius** **(** **)**
+- |void| **set_agent_radius**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_agent_radius**\ (\ )
 
 The distance to erode/shrink the walkable area of the heightfield away from obstructions.
 
@@ -342,8 +342,8 @@ The distance to erode/shrink the walkable area of the heightfield away from obst
 
 .. rst-class:: classref-property-setget
 
-- void **set_border_size** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_border_size** **(** **)**
+- |void| **set_border_size**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_border_size**\ (\ )
 
 The size of the non-navigable border around the bake bounding area.
 
@@ -363,8 +363,8 @@ In conjunction with the :ref:`filter_baking_aabb<class_NavigationMesh_property_f
 
 .. rst-class:: classref-property-setget
 
-- void **set_cell_height** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_cell_height** **(** **)**
+- |void| **set_cell_height**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_cell_height**\ (\ )
 
 The cell height used to rasterize the navigation mesh vertices on the Y axis. Must match with the cell height on the navigation map.
 
@@ -380,8 +380,8 @@ The cell height used to rasterize the navigation mesh vertices on the Y axis. Mu
 
 .. rst-class:: classref-property-setget
 
-- void **set_cell_size** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_cell_size** **(** **)**
+- |void| **set_cell_size**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_cell_size**\ (\ )
 
 The cell size used to rasterize the navigation mesh vertices on the XZ plane. Must match with the cell size on the navigation map.
 
@@ -397,8 +397,8 @@ The cell size used to rasterize the navigation mesh vertices on the XZ plane. Mu
 
 .. rst-class:: classref-property-setget
 
-- void **set_detail_sample_distance** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_detail_sample_distance** **(** **)**
+- |void| **set_detail_sample_distance**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_detail_sample_distance**\ (\ )
 
 The sampling distance to use when generating the detail mesh, in cell unit.
 
@@ -414,8 +414,8 @@ The sampling distance to use when generating the detail mesh, in cell unit.
 
 .. rst-class:: classref-property-setget
 
-- void **set_detail_sample_max_error** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_detail_sample_max_error** **(** **)**
+- |void| **set_detail_sample_max_error**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_detail_sample_max_error**\ (\ )
 
 The maximum distance the detail mesh surface should deviate from heightfield, in cell unit.
 
@@ -431,8 +431,8 @@ The maximum distance the detail mesh surface should deviate from heightfield, in
 
 .. rst-class:: classref-property-setget
 
-- void **set_edge_max_error** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_edge_max_error** **(** **)**
+- |void| **set_edge_max_error**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_edge_max_error**\ (\ )
 
 The maximum distance a simplified contour's border edges should deviate the original raw contour.
 
@@ -448,8 +448,8 @@ The maximum distance a simplified contour's border edges should deviate the orig
 
 .. rst-class:: classref-property-setget
 
-- void **set_edge_max_length** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_edge_max_length** **(** **)**
+- |void| **set_edge_max_length**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_edge_max_length**\ (\ )
 
 The maximum allowed length for contour edges along the border of the mesh. A value of ``0.0`` disables this feature.
 
@@ -467,8 +467,8 @@ The maximum allowed length for contour edges along the border of the mesh. A val
 
 .. rst-class:: classref-property-setget
 
-- void **set_filter_baking_aabb** **(** :ref:`AABB<class_AABB>` value **)**
-- :ref:`AABB<class_AABB>` **get_filter_baking_aabb** **(** **)**
+- |void| **set_filter_baking_aabb**\ (\ value\: :ref:`AABB<class_AABB>`\ )
+- :ref:`AABB<class_AABB>` **get_filter_baking_aabb**\ (\ )
 
 If the baking :ref:`AABB<class_AABB>` has a volume the navigation mesh baking will be restricted to its enclosing area.
 
@@ -484,8 +484,8 @@ If the baking :ref:`AABB<class_AABB>` has a volume the navigation mesh baking wi
 
 .. rst-class:: classref-property-setget
 
-- void **set_filter_baking_aabb_offset** **(** :ref:`Vector3<class_Vector3>` value **)**
-- :ref:`Vector3<class_Vector3>` **get_filter_baking_aabb_offset** **(** **)**
+- |void| **set_filter_baking_aabb_offset**\ (\ value\: :ref:`Vector3<class_Vector3>`\ )
+- :ref:`Vector3<class_Vector3>` **get_filter_baking_aabb_offset**\ (\ )
 
 The position offset applied to the :ref:`filter_baking_aabb<class_NavigationMesh_property_filter_baking_aabb>` :ref:`AABB<class_AABB>`.
 
@@ -501,8 +501,8 @@ The position offset applied to the :ref:`filter_baking_aabb<class_NavigationMesh
 
 .. rst-class:: classref-property-setget
 
-- void **set_filter_ledge_spans** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **get_filter_ledge_spans** **(** **)**
+- |void| **set_filter_ledge_spans**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_filter_ledge_spans**\ (\ )
 
 If ``true``, marks spans that are ledges as non-walkable.
 
@@ -518,8 +518,8 @@ If ``true``, marks spans that are ledges as non-walkable.
 
 .. rst-class:: classref-property-setget
 
-- void **set_filter_low_hanging_obstacles** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **get_filter_low_hanging_obstacles** **(** **)**
+- |void| **set_filter_low_hanging_obstacles**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_filter_low_hanging_obstacles**\ (\ )
 
 If ``true``, marks non-walkable spans as walkable if their maximum is within :ref:`agent_max_climb<class_NavigationMesh_property_agent_max_climb>` of a walkable neighbor.
 
@@ -535,8 +535,8 @@ If ``true``, marks non-walkable spans as walkable if their maximum is within :re
 
 .. rst-class:: classref-property-setget
 
-- void **set_filter_walkable_low_height_spans** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **get_filter_walkable_low_height_spans** **(** **)**
+- |void| **set_filter_walkable_low_height_spans**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_filter_walkable_low_height_spans**\ (\ )
 
 If ``true``, marks walkable spans as not walkable if the clearance above the span is less than :ref:`agent_height<class_NavigationMesh_property_agent_height>`.
 
@@ -552,8 +552,8 @@ If ``true``, marks walkable spans as not walkable if the clearance above the spa
 
 .. rst-class:: classref-property-setget
 
-- void **set_collision_mask** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_collision_mask** **(** **)**
+- |void| **set_collision_mask**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_collision_mask**\ (\ )
 
 The physics layers to scan for static colliders.
 
@@ -571,8 +571,8 @@ Only used when :ref:`geometry_parsed_geometry_type<class_NavigationMesh_property
 
 .. rst-class:: classref-property-setget
 
-- void **set_parsed_geometry_type** **(** :ref:`ParsedGeometryType<enum_NavigationMesh_ParsedGeometryType>` value **)**
-- :ref:`ParsedGeometryType<enum_NavigationMesh_ParsedGeometryType>` **get_parsed_geometry_type** **(** **)**
+- |void| **set_parsed_geometry_type**\ (\ value\: :ref:`ParsedGeometryType<enum_NavigationMesh_ParsedGeometryType>`\ )
+- :ref:`ParsedGeometryType<enum_NavigationMesh_ParsedGeometryType>` **get_parsed_geometry_type**\ (\ )
 
 Determines which type of nodes will be parsed as geometry. See :ref:`ParsedGeometryType<enum_NavigationMesh_ParsedGeometryType>` for possible values.
 
@@ -588,8 +588,8 @@ Determines which type of nodes will be parsed as geometry. See :ref:`ParsedGeome
 
 .. rst-class:: classref-property-setget
 
-- void **set_source_geometry_mode** **(** :ref:`SourceGeometryMode<enum_NavigationMesh_SourceGeometryMode>` value **)**
-- :ref:`SourceGeometryMode<enum_NavigationMesh_SourceGeometryMode>` **get_source_geometry_mode** **(** **)**
+- |void| **set_source_geometry_mode**\ (\ value\: :ref:`SourceGeometryMode<enum_NavigationMesh_SourceGeometryMode>`\ )
+- :ref:`SourceGeometryMode<enum_NavigationMesh_SourceGeometryMode>` **get_source_geometry_mode**\ (\ )
 
 The source of the geometry used when baking. See :ref:`SourceGeometryMode<enum_NavigationMesh_SourceGeometryMode>` for possible values.
 
@@ -605,8 +605,8 @@ The source of the geometry used when baking. See :ref:`SourceGeometryMode<enum_N
 
 .. rst-class:: classref-property-setget
 
-- void **set_source_group_name** **(** :ref:`StringName<class_StringName>` value **)**
-- :ref:`StringName<class_StringName>` **get_source_group_name** **(** **)**
+- |void| **set_source_group_name**\ (\ value\: :ref:`StringName<class_StringName>`\ )
+- :ref:`StringName<class_StringName>` **get_source_group_name**\ (\ )
 
 The name of the group to scan for geometry.
 
@@ -624,8 +624,8 @@ Only used when :ref:`geometry_source_geometry_mode<class_NavigationMesh_property
 
 .. rst-class:: classref-property-setget
 
-- void **set_region_merge_size** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_region_merge_size** **(** **)**
+- |void| **set_region_merge_size**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_region_merge_size**\ (\ )
 
 Any regions with a size smaller than this will be merged with larger regions if possible.
 
@@ -643,8 +643,8 @@ Any regions with a size smaller than this will be merged with larger regions if 
 
 .. rst-class:: classref-property-setget
 
-- void **set_region_min_size** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_region_min_size** **(** **)**
+- |void| **set_region_min_size**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_region_min_size**\ (\ )
 
 The minimum size of a region for it to be created.
 
@@ -662,8 +662,8 @@ The minimum size of a region for it to be created.
 
 .. rst-class:: classref-property-setget
 
-- void **set_sample_partition_type** **(** :ref:`SamplePartitionType<enum_NavigationMesh_SamplePartitionType>` value **)**
-- :ref:`SamplePartitionType<enum_NavigationMesh_SamplePartitionType>` **get_sample_partition_type** **(** **)**
+- |void| **set_sample_partition_type**\ (\ value\: :ref:`SamplePartitionType<enum_NavigationMesh_SamplePartitionType>`\ )
+- :ref:`SamplePartitionType<enum_NavigationMesh_SamplePartitionType>` **get_sample_partition_type**\ (\ )
 
 Partitioning algorithm for creating the navigation mesh polys. See :ref:`SamplePartitionType<enum_NavigationMesh_SamplePartitionType>` for possible values.
 
@@ -679,8 +679,8 @@ Partitioning algorithm for creating the navigation mesh polys. See :ref:`SampleP
 
 .. rst-class:: classref-property-setget
 
-- void **set_vertices_per_polygon** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_vertices_per_polygon** **(** **)**
+- |void| **set_vertices_per_polygon**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_vertices_per_polygon**\ (\ )
 
 The maximum number of vertices allowed for polygons generated during the contour to polygon conversion process.
 
@@ -697,7 +697,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-void **add_polygon** **(** :ref:`PackedInt32Array<class_PackedInt32Array>` polygon **)**
+|void| **add_polygon**\ (\ polygon\: :ref:`PackedInt32Array<class_PackedInt32Array>`\ )
 
 Adds a polygon using the indices of the vertices you get when calling :ref:`get_vertices<class_NavigationMesh_method_get_vertices>`.
 
@@ -709,7 +709,7 @@ Adds a polygon using the indices of the vertices you get when calling :ref:`get_
 
 .. rst-class:: classref-method
 
-void **clear** **(** **)**
+|void| **clear**\ (\ )
 
 Clears the internal arrays for vertices and polygon indices.
 
@@ -721,7 +721,7 @@ Clears the internal arrays for vertices and polygon indices.
 
 .. rst-class:: classref-method
 
-void **clear_polygons** **(** **)**
+|void| **clear_polygons**\ (\ )
 
 Clears the array of polygons, but it doesn't clear the array of vertices.
 
@@ -733,7 +733,7 @@ Clears the array of polygons, but it doesn't clear the array of vertices.
 
 .. rst-class:: classref-method
 
-void **create_from_mesh** **(** :ref:`Mesh<class_Mesh>` mesh **)**
+|void| **create_from_mesh**\ (\ mesh\: :ref:`Mesh<class_Mesh>`\ )
 
 Initializes the navigation mesh by setting the vertices and indices according to a :ref:`Mesh<class_Mesh>`.
 
@@ -747,7 +747,7 @@ Initializes the navigation mesh by setting the vertices and indices according to
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **get_collision_mask_value** **(** :ref:`int<class_int>` layer_number **)** |const|
+:ref:`bool<class_bool>` **get_collision_mask_value**\ (\ layer_number\: :ref:`int<class_int>`\ ) |const|
 
 Returns whether or not the specified layer of the :ref:`geometry_collision_mask<class_NavigationMesh_property_geometry_collision_mask>` is enabled, given a ``layer_number`` between 1 and 32.
 
@@ -759,7 +759,7 @@ Returns whether or not the specified layer of the :ref:`geometry_collision_mask<
 
 .. rst-class:: classref-method
 
-:ref:`PackedInt32Array<class_PackedInt32Array>` **get_polygon** **(** :ref:`int<class_int>` idx **)**
+:ref:`PackedInt32Array<class_PackedInt32Array>` **get_polygon**\ (\ idx\: :ref:`int<class_int>`\ )
 
 Returns a :ref:`PackedInt32Array<class_PackedInt32Array>` containing the indices of the vertices of a created polygon.
 
@@ -771,7 +771,7 @@ Returns a :ref:`PackedInt32Array<class_PackedInt32Array>` containing the indices
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_polygon_count** **(** **)** |const|
+:ref:`int<class_int>` **get_polygon_count**\ (\ ) |const|
 
 Returns the number of polygons in the navigation mesh.
 
@@ -783,7 +783,7 @@ Returns the number of polygons in the navigation mesh.
 
 .. rst-class:: classref-method
 
-:ref:`PackedVector3Array<class_PackedVector3Array>` **get_vertices** **(** **)** |const|
+:ref:`PackedVector3Array<class_PackedVector3Array>` **get_vertices**\ (\ ) |const|
 
 Returns a :ref:`PackedVector3Array<class_PackedVector3Array>` containing all the vertices being used to create the polygons.
 
@@ -795,7 +795,7 @@ Returns a :ref:`PackedVector3Array<class_PackedVector3Array>` containing all the
 
 .. rst-class:: classref-method
 
-void **set_collision_mask_value** **(** :ref:`int<class_int>` layer_number, :ref:`bool<class_bool>` value **)**
+|void| **set_collision_mask_value**\ (\ layer_number\: :ref:`int<class_int>`, value\: :ref:`bool<class_bool>`\ )
 
 Based on ``value``, enables or disables the specified layer in the :ref:`geometry_collision_mask<class_NavigationMesh_property_geometry_collision_mask>`, given a ``layer_number`` between 1 and 32.
 
@@ -807,7 +807,7 @@ Based on ``value``, enables or disables the specified layer in the :ref:`geometr
 
 .. rst-class:: classref-method
 
-void **set_vertices** **(** :ref:`PackedVector3Array<class_PackedVector3Array>` vertices **)**
+|void| **set_vertices**\ (\ vertices\: :ref:`PackedVector3Array<class_PackedVector3Array>`\ )
 
 Sets the vertices that can be then indexed to create polygons with the :ref:`add_polygon<class_NavigationMesh_method_add_polygon>` method.
 
@@ -818,3 +818,4 @@ Sets the vertices that can be then indexed to create polygons with the :ref:`add
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

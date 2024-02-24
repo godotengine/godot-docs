@@ -141,8 +141,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_language** **(** :ref:`String<class_String>` value **)**
-- :ref:`String<class_String>` **get_language** **(** **)**
+- |void| **set_language**\ (\ value\: :ref:`String<class_String>`\ )
+- :ref:`String<class_String>` **get_language**\ (\ )
 
 Language code used for line-breaking and text shaping algorithms, if left empty current locale is used instead.
 
@@ -158,8 +158,8 @@ Language code used for line-breaking and text shaping algorithms, if left empty 
 
 .. rst-class:: classref-property-setget
 
-- void **set_structured_text_bidi_override** **(** :ref:`StructuredTextParser<enum_TextServer_StructuredTextParser>` value **)**
-- :ref:`StructuredTextParser<enum_TextServer_StructuredTextParser>` **get_structured_text_bidi_override** **(** **)**
+- |void| **set_structured_text_bidi_override**\ (\ value\: :ref:`StructuredTextParser<enum_TextServer_StructuredTextParser>`\ )
+- :ref:`StructuredTextParser<enum_TextServer_StructuredTextParser>` **get_structured_text_bidi_override**\ (\ )
 
 Set BiDi algorithm override for the structured text.
 
@@ -175,8 +175,8 @@ Set BiDi algorithm override for the structured text.
 
 .. rst-class:: classref-property-setget
 
-- void **set_structured_text_bidi_override_options** **(** :ref:`Array<class_Array>` value **)**
-- :ref:`Array<class_Array>` **get_structured_text_bidi_override_options** **(** **)**
+- |void| **set_structured_text_bidi_override_options**\ (\ value\: :ref:`Array<class_Array>`\ )
+- :ref:`Array<class_Array>` **get_structured_text_bidi_override_options**\ (\ )
 
 Set additional options for BiDi override.
 
@@ -192,8 +192,8 @@ Set additional options for BiDi override.
 
 .. rst-class:: classref-property-setget
 
-- void **set_text** **(** :ref:`String<class_String>` value **)**
-- :ref:`String<class_String>` **get_text** **(** **)**
+- |void| **set_text**\ (\ value\: :ref:`String<class_String>`\ )
+- :ref:`String<class_String>` **get_text**\ (\ )
 
 The button's text that will be displayed inside the button's area.
 
@@ -209,8 +209,8 @@ The button's text that will be displayed inside the button's area.
 
 .. rst-class:: classref-property-setget
 
-- void **set_text_direction** **(** :ref:`TextDirection<enum_Control_TextDirection>` value **)**
-- :ref:`TextDirection<enum_Control_TextDirection>` **get_text_direction** **(** **)**
+- |void| **set_text_direction**\ (\ value\: :ref:`TextDirection<enum_Control_TextDirection>`\ )
+- :ref:`TextDirection<enum_Control_TextDirection>` **get_text_direction**\ (\ )
 
 Base text writing direction.
 
@@ -226,8 +226,8 @@ Base text writing direction.
 
 .. rst-class:: classref-property-setget
 
-- void **set_underline_mode** **(** :ref:`UnderlineMode<enum_LinkButton_UnderlineMode>` value **)**
-- :ref:`UnderlineMode<enum_LinkButton_UnderlineMode>` **get_underline_mode** **(** **)**
+- |void| **set_underline_mode**\ (\ value\: :ref:`UnderlineMode<enum_LinkButton_UnderlineMode>`\ )
+- :ref:`UnderlineMode<enum_LinkButton_UnderlineMode>` **get_underline_mode**\ (\ )
 
 The underline mode to use for the text. See :ref:`UnderlineMode<enum_LinkButton_UnderlineMode>` for the available modes.
 
@@ -243,8 +243,8 @@ The underline mode to use for the text. See :ref:`UnderlineMode<enum_LinkButton_
 
 .. rst-class:: classref-property-setget
 
-- void **set_uri** **(** :ref:`String<class_String>` value **)**
-- :ref:`String<class_String>` **get_uri** **(** **)**
+- |void| **set_uri**\ (\ value\: :ref:`String<class_String>`\ )
+- :ref:`String<class_String>` **get_uri**\ (\ )
 
 The `URI <https://en.wikipedia.org/wiki/Uniform_Resource_Identifier>`__ for this **LinkButton**. If set to a valid URI, pressing the button opens the URI using the operating system's default program for the protocol (via :ref:`OS.shell_open<class_OS_method_shell_open>`). HTTP and HTTPS URLs open the default web browser.
 
@@ -425,3 +425,4 @@ Font size of the **LinkButton**'s text.
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

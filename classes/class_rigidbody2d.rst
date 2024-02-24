@@ -104,33 +104,33 @@ Methods
 .. table::
    :widths: auto
 
-   +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                          | :ref:`_integrate_forces<class_RigidBody2D_private_method__integrate_forces>` **(** :ref:`PhysicsDirectBodyState2D<class_PhysicsDirectBodyState2D>` state **)** |virtual|     |
-   +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                          | :ref:`add_constant_central_force<class_RigidBody2D_method_add_constant_central_force>` **(** :ref:`Vector2<class_Vector2>` force **)**                                       |
-   +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                          | :ref:`add_constant_force<class_RigidBody2D_method_add_constant_force>` **(** :ref:`Vector2<class_Vector2>` force, :ref:`Vector2<class_Vector2>` position=Vector2(0, 0) **)** |
-   +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                          | :ref:`add_constant_torque<class_RigidBody2D_method_add_constant_torque>` **(** :ref:`float<class_float>` torque **)**                                                        |
-   +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                          | :ref:`apply_central_force<class_RigidBody2D_method_apply_central_force>` **(** :ref:`Vector2<class_Vector2>` force **)**                                                     |
-   +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                          | :ref:`apply_central_impulse<class_RigidBody2D_method_apply_central_impulse>` **(** :ref:`Vector2<class_Vector2>` impulse=Vector2(0, 0) **)**                                 |
-   +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                          | :ref:`apply_force<class_RigidBody2D_method_apply_force>` **(** :ref:`Vector2<class_Vector2>` force, :ref:`Vector2<class_Vector2>` position=Vector2(0, 0) **)**               |
-   +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                          | :ref:`apply_impulse<class_RigidBody2D_method_apply_impulse>` **(** :ref:`Vector2<class_Vector2>` impulse, :ref:`Vector2<class_Vector2>` position=Vector2(0, 0) **)**         |
-   +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                          | :ref:`apply_torque<class_RigidBody2D_method_apply_torque>` **(** :ref:`float<class_float>` torque **)**                                                                      |
-   +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                          | :ref:`apply_torque_impulse<class_RigidBody2D_method_apply_torque_impulse>` **(** :ref:`float<class_float>` torque **)**                                                      |
-   +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Node2D[]<class_Node2D>` | :ref:`get_colliding_bodies<class_RigidBody2D_method_get_colliding_bodies>` **(** **)** |const|                                                                               |
-   +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`         | :ref:`get_contact_count<class_RigidBody2D_method_get_contact_count>` **(** **)** |const|                                                                                     |
-   +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                          | :ref:`set_axis_velocity<class_RigidBody2D_method_set_axis_velocity>` **(** :ref:`Vector2<class_Vector2>` axis_velocity **)**                                                 |
-   +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +----------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                   | :ref:`_integrate_forces<class_RigidBody2D_private_method__integrate_forces>`\ (\ state\: :ref:`PhysicsDirectBodyState2D<class_PhysicsDirectBodyState2D>`\ ) |virtual|         |
+   +----------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                   | :ref:`add_constant_central_force<class_RigidBody2D_method_add_constant_central_force>`\ (\ force\: :ref:`Vector2<class_Vector2>`\ )                                           |
+   +----------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                   | :ref:`add_constant_force<class_RigidBody2D_method_add_constant_force>`\ (\ force\: :ref:`Vector2<class_Vector2>`, position\: :ref:`Vector2<class_Vector2>` = Vector2(0, 0)\ ) |
+   +----------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                   | :ref:`add_constant_torque<class_RigidBody2D_method_add_constant_torque>`\ (\ torque\: :ref:`float<class_float>`\ )                                                            |
+   +----------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                   | :ref:`apply_central_force<class_RigidBody2D_method_apply_central_force>`\ (\ force\: :ref:`Vector2<class_Vector2>`\ )                                                         |
+   +----------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                   | :ref:`apply_central_impulse<class_RigidBody2D_method_apply_central_impulse>`\ (\ impulse\: :ref:`Vector2<class_Vector2>` = Vector2(0, 0)\ )                                   |
+   +----------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                   | :ref:`apply_force<class_RigidBody2D_method_apply_force>`\ (\ force\: :ref:`Vector2<class_Vector2>`, position\: :ref:`Vector2<class_Vector2>` = Vector2(0, 0)\ )               |
+   +----------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                   | :ref:`apply_impulse<class_RigidBody2D_method_apply_impulse>`\ (\ impulse\: :ref:`Vector2<class_Vector2>`, position\: :ref:`Vector2<class_Vector2>` = Vector2(0, 0)\ )         |
+   +----------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                   | :ref:`apply_torque<class_RigidBody2D_method_apply_torque>`\ (\ torque\: :ref:`float<class_float>`\ )                                                                          |
+   +----------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                   | :ref:`apply_torque_impulse<class_RigidBody2D_method_apply_torque_impulse>`\ (\ torque\: :ref:`float<class_float>`\ )                                                          |
+   +----------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Array<class_Array>`\[:ref:`Node2D<class_Node2D>`\] | :ref:`get_colliding_bodies<class_RigidBody2D_method_get_colliding_bodies>`\ (\ ) |const|                                                                                      |
+   +----------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                                    | :ref:`get_contact_count<class_RigidBody2D_method_get_contact_count>`\ (\ ) |const|                                                                                            |
+   +----------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                   | :ref:`set_axis_velocity<class_RigidBody2D_method_set_axis_velocity>`\ (\ axis_velocity\: :ref:`Vector2<class_Vector2>`\ )                                                     |
+   +----------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -145,7 +145,7 @@ Signals
 
 .. rst-class:: classref-signal
 
-**body_entered** **(** :ref:`Node<class_Node>` body **)**
+**body_entered**\ (\ body\: :ref:`Node<class_Node>`\ )
 
 Emitted when a collision with another :ref:`PhysicsBody2D<class_PhysicsBody2D>` or :ref:`TileMap<class_TileMap>` occurs. Requires :ref:`contact_monitor<class_RigidBody2D_property_contact_monitor>` to be set to ``true`` and :ref:`max_contacts_reported<class_RigidBody2D_property_max_contacts_reported>` to be set high enough to detect all the collisions. :ref:`TileMap<class_TileMap>`\ s are detected if the :ref:`TileSet<class_TileSet>` has Collision :ref:`Shape2D<class_Shape2D>`\ s.
 
@@ -159,7 +159,7 @@ Emitted when a collision with another :ref:`PhysicsBody2D<class_PhysicsBody2D>` 
 
 .. rst-class:: classref-signal
 
-**body_exited** **(** :ref:`Node<class_Node>` body **)**
+**body_exited**\ (\ body\: :ref:`Node<class_Node>`\ )
 
 Emitted when the collision with another :ref:`PhysicsBody2D<class_PhysicsBody2D>` or :ref:`TileMap<class_TileMap>` ends. Requires :ref:`contact_monitor<class_RigidBody2D_property_contact_monitor>` to be set to ``true`` and :ref:`max_contacts_reported<class_RigidBody2D_property_max_contacts_reported>` to be set high enough to detect all the collisions. :ref:`TileMap<class_TileMap>`\ s are detected if the :ref:`TileSet<class_TileSet>` has Collision :ref:`Shape2D<class_Shape2D>`\ s.
 
@@ -173,7 +173,7 @@ Emitted when the collision with another :ref:`PhysicsBody2D<class_PhysicsBody2D>
 
 .. rst-class:: classref-signal
 
-**body_shape_entered** **(** :ref:`RID<class_RID>` body_rid, :ref:`Node<class_Node>` body, :ref:`int<class_int>` body_shape_index, :ref:`int<class_int>` local_shape_index **)**
+**body_shape_entered**\ (\ body_rid\: :ref:`RID<class_RID>`, body\: :ref:`Node<class_Node>`, body_shape_index\: :ref:`int<class_int>`, local_shape_index\: :ref:`int<class_int>`\ )
 
 Emitted when one of this RigidBody2D's :ref:`Shape2D<class_Shape2D>`\ s collides with another :ref:`PhysicsBody2D<class_PhysicsBody2D>` or :ref:`TileMap<class_TileMap>`'s :ref:`Shape2D<class_Shape2D>`\ s. Requires :ref:`contact_monitor<class_RigidBody2D_property_contact_monitor>` to be set to ``true`` and :ref:`max_contacts_reported<class_RigidBody2D_property_max_contacts_reported>` to be set high enough to detect all the collisions. :ref:`TileMap<class_TileMap>`\ s are detected if the :ref:`TileSet<class_TileSet>` has Collision :ref:`Shape2D<class_Shape2D>`\ s.
 
@@ -193,7 +193,7 @@ Emitted when one of this RigidBody2D's :ref:`Shape2D<class_Shape2D>`\ s collides
 
 .. rst-class:: classref-signal
 
-**body_shape_exited** **(** :ref:`RID<class_RID>` body_rid, :ref:`Node<class_Node>` body, :ref:`int<class_int>` body_shape_index, :ref:`int<class_int>` local_shape_index **)**
+**body_shape_exited**\ (\ body_rid\: :ref:`RID<class_RID>`, body\: :ref:`Node<class_Node>`, body_shape_index\: :ref:`int<class_int>`, local_shape_index\: :ref:`int<class_int>`\ )
 
 Emitted when the collision between one of this RigidBody2D's :ref:`Shape2D<class_Shape2D>`\ s and another :ref:`PhysicsBody2D<class_PhysicsBody2D>` or :ref:`TileMap<class_TileMap>`'s :ref:`Shape2D<class_Shape2D>`\ s ends. Requires :ref:`contact_monitor<class_RigidBody2D_property_contact_monitor>` to be set to ``true`` and :ref:`max_contacts_reported<class_RigidBody2D_property_max_contacts_reported>` to be set high enough to detect all the collisions. :ref:`TileMap<class_TileMap>`\ s are detected if the :ref:`TileSet<class_TileSet>` has Collision :ref:`Shape2D<class_Shape2D>`\ s.
 
@@ -213,7 +213,7 @@ Emitted when the collision between one of this RigidBody2D's :ref:`Shape2D<class
 
 .. rst-class:: classref-signal
 
-**sleeping_state_changed** **(** **)**
+**sleeping_state_changed**\ (\ )
 
 Emitted when the physics engine changes the body's sleeping state.
 
@@ -353,8 +353,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_angular_damp** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_angular_damp** **(** **)**
+- |void| **set_angular_damp**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_angular_damp**\ (\ )
 
 Damps the body's rotation. By default, the body will use the **Default Angular Damp** in **Project > Project Settings > Physics > 2d** or any value override set by an :ref:`Area2D<class_Area2D>` the body is in. Depending on :ref:`angular_damp_mode<class_RigidBody2D_property_angular_damp_mode>`, you can set :ref:`angular_damp<class_RigidBody2D_property_angular_damp>` to be added to or to replace the body's damping value.
 
@@ -372,8 +372,8 @@ See :ref:`ProjectSettings.physics/2d/default_angular_damp<class_ProjectSettings_
 
 .. rst-class:: classref-property-setget
 
-- void **set_angular_damp_mode** **(** :ref:`DampMode<enum_RigidBody2D_DampMode>` value **)**
-- :ref:`DampMode<enum_RigidBody2D_DampMode>` **get_angular_damp_mode** **(** **)**
+- |void| **set_angular_damp_mode**\ (\ value\: :ref:`DampMode<enum_RigidBody2D_DampMode>`\ )
+- :ref:`DampMode<enum_RigidBody2D_DampMode>` **get_angular_damp_mode**\ (\ )
 
 Defines how :ref:`angular_damp<class_RigidBody2D_property_angular_damp>` is applied. See :ref:`DampMode<enum_RigidBody2D_DampMode>` for possible values.
 
@@ -389,8 +389,8 @@ Defines how :ref:`angular_damp<class_RigidBody2D_property_angular_damp>` is appl
 
 .. rst-class:: classref-property-setget
 
-- void **set_angular_velocity** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_angular_velocity** **(** **)**
+- |void| **set_angular_velocity**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_angular_velocity**\ (\ )
 
 The body's rotational velocity in *radians* per second.
 
@@ -406,8 +406,8 @@ The body's rotational velocity in *radians* per second.
 
 .. rst-class:: classref-property-setget
 
-- void **set_can_sleep** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_able_to_sleep** **(** **)**
+- |void| **set_can_sleep**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_able_to_sleep**\ (\ )
 
 If ``true``, the body can enter sleep mode when there is no movement. See :ref:`sleeping<class_RigidBody2D_property_sleeping>`.
 
@@ -423,8 +423,8 @@ If ``true``, the body can enter sleep mode when there is no movement. See :ref:`
 
 .. rst-class:: classref-property-setget
 
-- void **set_center_of_mass** **(** :ref:`Vector2<class_Vector2>` value **)**
-- :ref:`Vector2<class_Vector2>` **get_center_of_mass** **(** **)**
+- |void| **set_center_of_mass**\ (\ value\: :ref:`Vector2<class_Vector2>`\ )
+- :ref:`Vector2<class_Vector2>` **get_center_of_mass**\ (\ )
 
 The body's custom center of mass, relative to the body's origin position, when :ref:`center_of_mass_mode<class_RigidBody2D_property_center_of_mass_mode>` is set to :ref:`CENTER_OF_MASS_MODE_CUSTOM<class_RigidBody2D_constant_CENTER_OF_MASS_MODE_CUSTOM>`. This is the balanced point of the body, where applied forces only cause linear acceleration. Applying forces outside of the center of mass causes angular acceleration.
 
@@ -442,8 +442,8 @@ When :ref:`center_of_mass_mode<class_RigidBody2D_property_center_of_mass_mode>` 
 
 .. rst-class:: classref-property-setget
 
-- void **set_center_of_mass_mode** **(** :ref:`CenterOfMassMode<enum_RigidBody2D_CenterOfMassMode>` value **)**
-- :ref:`CenterOfMassMode<enum_RigidBody2D_CenterOfMassMode>` **get_center_of_mass_mode** **(** **)**
+- |void| **set_center_of_mass_mode**\ (\ value\: :ref:`CenterOfMassMode<enum_RigidBody2D_CenterOfMassMode>`\ )
+- :ref:`CenterOfMassMode<enum_RigidBody2D_CenterOfMassMode>` **get_center_of_mass_mode**\ (\ )
 
 Defines the way the body's center of mass is set. See :ref:`CenterOfMassMode<enum_RigidBody2D_CenterOfMassMode>` for possible values.
 
@@ -459,8 +459,8 @@ Defines the way the body's center of mass is set. See :ref:`CenterOfMassMode<enu
 
 .. rst-class:: classref-property-setget
 
-- void **set_constant_force** **(** :ref:`Vector2<class_Vector2>` value **)**
-- :ref:`Vector2<class_Vector2>` **get_constant_force** **(** **)**
+- |void| **set_constant_force**\ (\ value\: :ref:`Vector2<class_Vector2>`\ )
+- :ref:`Vector2<class_Vector2>` **get_constant_force**\ (\ )
 
 The body's total constant positional forces applied during each physics update.
 
@@ -478,8 +478,8 @@ See :ref:`add_constant_force<class_RigidBody2D_method_add_constant_force>` and :
 
 .. rst-class:: classref-property-setget
 
-- void **set_constant_torque** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_constant_torque** **(** **)**
+- |void| **set_constant_torque**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_constant_torque**\ (\ )
 
 The body's total constant rotational forces applied during each physics update.
 
@@ -497,8 +497,8 @@ See :ref:`add_constant_torque<class_RigidBody2D_method_add_constant_torque>`.
 
 .. rst-class:: classref-property-setget
 
-- void **set_contact_monitor** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_contact_monitor_enabled** **(** **)**
+- |void| **set_contact_monitor**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_contact_monitor_enabled**\ (\ )
 
 If ``true``, the RigidBody2D will emit signals when it collides with another body.
 
@@ -516,8 +516,8 @@ If ``true``, the RigidBody2D will emit signals when it collides with another bod
 
 .. rst-class:: classref-property-setget
 
-- void **set_continuous_collision_detection_mode** **(** :ref:`CCDMode<enum_RigidBody2D_CCDMode>` value **)**
-- :ref:`CCDMode<enum_RigidBody2D_CCDMode>` **get_continuous_collision_detection_mode** **(** **)**
+- |void| **set_continuous_collision_detection_mode**\ (\ value\: :ref:`CCDMode<enum_RigidBody2D_CCDMode>`\ )
+- :ref:`CCDMode<enum_RigidBody2D_CCDMode>` **get_continuous_collision_detection_mode**\ (\ )
 
 Continuous collision detection mode.
 
@@ -535,8 +535,8 @@ Continuous collision detection tries to predict where a moving body will collide
 
 .. rst-class:: classref-property-setget
 
-- void **set_use_custom_integrator** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_using_custom_integrator** **(** **)**
+- |void| **set_use_custom_integrator**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_using_custom_integrator**\ (\ )
 
 If ``true``, internal force integration is disabled for this body. Aside from collision response, the body will only move as determined by the :ref:`_integrate_forces<class_RigidBody2D_private_method__integrate_forces>` function.
 
@@ -552,8 +552,8 @@ If ``true``, internal force integration is disabled for this body. Aside from co
 
 .. rst-class:: classref-property-setget
 
-- void **set_freeze_enabled** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_freeze_enabled** **(** **)**
+- |void| **set_freeze_enabled**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_freeze_enabled**\ (\ )
 
 If ``true``, the body is frozen. Gravity and forces are not applied anymore.
 
@@ -573,8 +573,8 @@ For a body that is always frozen, use :ref:`StaticBody2D<class_StaticBody2D>` or
 
 .. rst-class:: classref-property-setget
 
-- void **set_freeze_mode** **(** :ref:`FreezeMode<enum_RigidBody2D_FreezeMode>` value **)**
-- :ref:`FreezeMode<enum_RigidBody2D_FreezeMode>` **get_freeze_mode** **(** **)**
+- |void| **set_freeze_mode**\ (\ value\: :ref:`FreezeMode<enum_RigidBody2D_FreezeMode>`\ )
+- :ref:`FreezeMode<enum_RigidBody2D_FreezeMode>` **get_freeze_mode**\ (\ )
 
 The body's freeze mode. Can be used to set the body's behavior when :ref:`freeze<class_RigidBody2D_property_freeze>` is enabled. See :ref:`FreezeMode<enum_RigidBody2D_FreezeMode>` for possible values.
 
@@ -592,8 +592,8 @@ For a body that is always frozen, use :ref:`StaticBody2D<class_StaticBody2D>` or
 
 .. rst-class:: classref-property-setget
 
-- void **set_gravity_scale** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_gravity_scale** **(** **)**
+- |void| **set_gravity_scale**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_gravity_scale**\ (\ )
 
 Multiplies the gravity applied to the body. The body's gravity is calculated from the **Default Gravity** value in **Project > Project Settings > Physics > 2d** and/or any additional gravity vector applied by :ref:`Area2D<class_Area2D>`\ s.
 
@@ -609,8 +609,8 @@ Multiplies the gravity applied to the body. The body's gravity is calculated fro
 
 .. rst-class:: classref-property-setget
 
-- void **set_inertia** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_inertia** **(** **)**
+- |void| **set_inertia**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_inertia**\ (\ )
 
 The body's moment of inertia. This is like mass, but for rotation: it determines how much torque it takes to rotate the body. The moment of inertia is usually computed automatically from the mass and the shapes, but this property allows you to set a custom value.
 
@@ -656,8 +656,8 @@ If set to ``0``, inertia is automatically computed (default value).
 
 .. rst-class:: classref-property-setget
 
-- void **set_linear_damp** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_linear_damp** **(** **)**
+- |void| **set_linear_damp**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_linear_damp**\ (\ )
 
 Damps the body's movement. By default, the body will use the **Default Linear Damp** in **Project > Project Settings > Physics > 2d** or any value override set by an :ref:`Area2D<class_Area2D>` the body is in. Depending on :ref:`linear_damp_mode<class_RigidBody2D_property_linear_damp_mode>`, you can set :ref:`linear_damp<class_RigidBody2D_property_linear_damp>` to be added to or to replace the body's damping value.
 
@@ -675,8 +675,8 @@ See :ref:`ProjectSettings.physics/2d/default_linear_damp<class_ProjectSettings_p
 
 .. rst-class:: classref-property-setget
 
-- void **set_linear_damp_mode** **(** :ref:`DampMode<enum_RigidBody2D_DampMode>` value **)**
-- :ref:`DampMode<enum_RigidBody2D_DampMode>` **get_linear_damp_mode** **(** **)**
+- |void| **set_linear_damp_mode**\ (\ value\: :ref:`DampMode<enum_RigidBody2D_DampMode>`\ )
+- :ref:`DampMode<enum_RigidBody2D_DampMode>` **get_linear_damp_mode**\ (\ )
 
 Defines how :ref:`linear_damp<class_RigidBody2D_property_linear_damp>` is applied. See :ref:`DampMode<enum_RigidBody2D_DampMode>` for possible values.
 
@@ -692,8 +692,8 @@ Defines how :ref:`linear_damp<class_RigidBody2D_property_linear_damp>` is applie
 
 .. rst-class:: classref-property-setget
 
-- void **set_linear_velocity** **(** :ref:`Vector2<class_Vector2>` value **)**
-- :ref:`Vector2<class_Vector2>` **get_linear_velocity** **(** **)**
+- |void| **set_linear_velocity**\ (\ value\: :ref:`Vector2<class_Vector2>`\ )
+- :ref:`Vector2<class_Vector2>` **get_linear_velocity**\ (\ )
 
 The body's linear velocity in pixels per second. Can be used sporadically, but **don't set this every frame**, because physics may run in another thread and runs at a different granularity. Use :ref:`_integrate_forces<class_RigidBody2D_private_method__integrate_forces>` as your process loop for precise control of the body state.
 
@@ -709,8 +709,8 @@ The body's linear velocity in pixels per second. Can be used sporadically, but *
 
 .. rst-class:: classref-property-setget
 
-- void **set_lock_rotation_enabled** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_lock_rotation_enabled** **(** **)**
+- |void| **set_lock_rotation_enabled**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_lock_rotation_enabled**\ (\ )
 
 If ``true``, the body cannot rotate. Gravity and forces only apply linear movement.
 
@@ -726,8 +726,8 @@ If ``true``, the body cannot rotate. Gravity and forces only apply linear moveme
 
 .. rst-class:: classref-property-setget
 
-- void **set_mass** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_mass** **(** **)**
+- |void| **set_mass**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_mass**\ (\ )
 
 The body's mass.
 
@@ -743,8 +743,8 @@ The body's mass.
 
 .. rst-class:: classref-property-setget
 
-- void **set_max_contacts_reported** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_max_contacts_reported** **(** **)**
+- |void| **set_max_contacts_reported**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_max_contacts_reported**\ (\ )
 
 The maximum number of contacts that will be recorded. Requires a value greater than 0 and :ref:`contact_monitor<class_RigidBody2D_property_contact_monitor>` to be set to ``true`` to start to register contacts. Use :ref:`get_contact_count<class_RigidBody2D_method_get_contact_count>` to retrieve the count or :ref:`get_colliding_bodies<class_RigidBody2D_method_get_colliding_bodies>` to retrieve bodies that have been collided with.
 
@@ -762,8 +762,8 @@ The maximum number of contacts that will be recorded. Requires a value greater t
 
 .. rst-class:: classref-property-setget
 
-- void **set_physics_material_override** **(** :ref:`PhysicsMaterial<class_PhysicsMaterial>` value **)**
-- :ref:`PhysicsMaterial<class_PhysicsMaterial>` **get_physics_material_override** **(** **)**
+- |void| **set_physics_material_override**\ (\ value\: :ref:`PhysicsMaterial<class_PhysicsMaterial>`\ )
+- :ref:`PhysicsMaterial<class_PhysicsMaterial>` **get_physics_material_override**\ (\ )
 
 The physics material override for the body.
 
@@ -781,8 +781,8 @@ If a material is assigned to this property, it will be used instead of any other
 
 .. rst-class:: classref-property-setget
 
-- void **set_sleeping** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_sleeping** **(** **)**
+- |void| **set_sleeping**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_sleeping**\ (\ )
 
 If ``true``, the body will not move and will not calculate forces until woken up by another body through, for example, a collision, or by using the :ref:`apply_impulse<class_RigidBody2D_method_apply_impulse>` or :ref:`apply_force<class_RigidBody2D_method_apply_force>` methods.
 
@@ -799,7 +799,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-void **_integrate_forces** **(** :ref:`PhysicsDirectBodyState2D<class_PhysicsDirectBodyState2D>` state **)** |virtual|
+|void| **_integrate_forces**\ (\ state\: :ref:`PhysicsDirectBodyState2D<class_PhysicsDirectBodyState2D>`\ ) |virtual|
 
 Allows you to read and safely modify the simulation state for the object. Use this instead of :ref:`Node._physics_process<class_Node_private_method__physics_process>` if you need to directly change the body's ``position`` or other physics properties. By default, it works in addition to the usual physics behavior, but :ref:`custom_integrator<class_RigidBody2D_property_custom_integrator>` allows you to disable the default behavior and write custom force integration for a body.
 
@@ -811,7 +811,7 @@ Allows you to read and safely modify the simulation state for the object. Use th
 
 .. rst-class:: classref-method
 
-void **add_constant_central_force** **(** :ref:`Vector2<class_Vector2>` force **)**
+|void| **add_constant_central_force**\ (\ force\: :ref:`Vector2<class_Vector2>`\ )
 
 Adds a constant directional force without affecting rotation that keeps being applied over time until cleared with ``constant_force = Vector2(0, 0)``.
 
@@ -825,7 +825,7 @@ This is equivalent to using :ref:`add_constant_force<class_RigidBody2D_method_ad
 
 .. rst-class:: classref-method
 
-void **add_constant_force** **(** :ref:`Vector2<class_Vector2>` force, :ref:`Vector2<class_Vector2>` position=Vector2(0, 0) **)**
+|void| **add_constant_force**\ (\ force\: :ref:`Vector2<class_Vector2>`, position\: :ref:`Vector2<class_Vector2>` = Vector2(0, 0)\ )
 
 Adds a constant positioned force to the body that keeps being applied over time until cleared with ``constant_force = Vector2(0, 0)``.
 
@@ -839,7 +839,7 @@ Adds a constant positioned force to the body that keeps being applied over time 
 
 .. rst-class:: classref-method
 
-void **add_constant_torque** **(** :ref:`float<class_float>` torque **)**
+|void| **add_constant_torque**\ (\ torque\: :ref:`float<class_float>`\ )
 
 Adds a constant rotational force without affecting position that keeps being applied over time until cleared with ``constant_torque = 0``.
 
@@ -851,7 +851,7 @@ Adds a constant rotational force without affecting position that keeps being app
 
 .. rst-class:: classref-method
 
-void **apply_central_force** **(** :ref:`Vector2<class_Vector2>` force **)**
+|void| **apply_central_force**\ (\ force\: :ref:`Vector2<class_Vector2>`\ )
 
 Applies a directional force without affecting rotation. A force is time dependent and meant to be applied every physics update.
 
@@ -865,7 +865,7 @@ This is equivalent to using :ref:`apply_force<class_RigidBody2D_method_apply_for
 
 .. rst-class:: classref-method
 
-void **apply_central_impulse** **(** :ref:`Vector2<class_Vector2>` impulse=Vector2(0, 0) **)**
+|void| **apply_central_impulse**\ (\ impulse\: :ref:`Vector2<class_Vector2>` = Vector2(0, 0)\ )
 
 Applies a directional impulse without affecting rotation.
 
@@ -881,7 +881,7 @@ This is equivalent to using :ref:`apply_impulse<class_RigidBody2D_method_apply_i
 
 .. rst-class:: classref-method
 
-void **apply_force** **(** :ref:`Vector2<class_Vector2>` force, :ref:`Vector2<class_Vector2>` position=Vector2(0, 0) **)**
+|void| **apply_force**\ (\ force\: :ref:`Vector2<class_Vector2>`, position\: :ref:`Vector2<class_Vector2>` = Vector2(0, 0)\ )
 
 Applies a positioned force to the body. A force is time dependent and meant to be applied every physics update.
 
@@ -895,7 +895,7 @@ Applies a positioned force to the body. A force is time dependent and meant to b
 
 .. rst-class:: classref-method
 
-void **apply_impulse** **(** :ref:`Vector2<class_Vector2>` impulse, :ref:`Vector2<class_Vector2>` position=Vector2(0, 0) **)**
+|void| **apply_impulse**\ (\ impulse\: :ref:`Vector2<class_Vector2>`, position\: :ref:`Vector2<class_Vector2>` = Vector2(0, 0)\ )
 
 Applies a positioned impulse to the body.
 
@@ -911,7 +911,7 @@ An impulse is time-independent! Applying an impulse every frame would result in 
 
 .. rst-class:: classref-method
 
-void **apply_torque** **(** :ref:`float<class_float>` torque **)**
+|void| **apply_torque**\ (\ torque\: :ref:`float<class_float>`\ )
 
 Applies a rotational force without affecting position. A force is time dependent and meant to be applied every physics update.
 
@@ -925,7 +925,7 @@ Applies a rotational force without affecting position. A force is time dependent
 
 .. rst-class:: classref-method
 
-void **apply_torque_impulse** **(** :ref:`float<class_float>` torque **)**
+|void| **apply_torque_impulse**\ (\ torque\: :ref:`float<class_float>`\ )
 
 Applies a rotational impulse to the body without affecting the position.
 
@@ -941,7 +941,7 @@ An impulse is time-independent! Applying an impulse every frame would result in 
 
 .. rst-class:: classref-method
 
-:ref:`Node2D[]<class_Node2D>` **get_colliding_bodies** **(** **)** |const|
+:ref:`Array<class_Array>`\[:ref:`Node2D<class_Node2D>`\] **get_colliding_bodies**\ (\ ) |const|
 
 Returns a list of the bodies colliding with this one. Requires :ref:`contact_monitor<class_RigidBody2D_property_contact_monitor>` to be set to ``true`` and :ref:`max_contacts_reported<class_RigidBody2D_property_max_contacts_reported>` to be set high enough to detect all the collisions.
 
@@ -955,7 +955,7 @@ Returns a list of the bodies colliding with this one. Requires :ref:`contact_mon
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_contact_count** **(** **)** |const|
+:ref:`int<class_int>` **get_contact_count**\ (\ ) |const|
 
 Returns the number of contacts this body has with other bodies. By default, this returns 0 unless bodies are configured to monitor contacts (see :ref:`contact_monitor<class_RigidBody2D_property_contact_monitor>`).
 
@@ -969,7 +969,7 @@ Returns the number of contacts this body has with other bodies. By default, this
 
 .. rst-class:: classref-method
 
-void **set_axis_velocity** **(** :ref:`Vector2<class_Vector2>` axis_velocity **)**
+|void| **set_axis_velocity**\ (\ axis_velocity\: :ref:`Vector2<class_Vector2>`\ )
 
 Sets the body's velocity on the given axis. The velocity in the given vector axis will be set as the given vector length. This is useful for jumping behavior.
 
@@ -980,3 +980,4 @@ Sets the body's velocity on the given axis. The velocity in the given vector axi
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

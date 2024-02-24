@@ -29,19 +29,19 @@ Properties
 .. table::
    :widths: auto
 
-   +-------------------------------+----------------------------------------------------------------------------------------------+-------------------+
-   | :ref:`int<class_int>`         | :ref:`canvas_instance_id<class_PhysicsPointQueryParameters2D_property_canvas_instance_id>`   | ``0``             |
-   +-------------------------------+----------------------------------------------------------------------------------------------+-------------------+
-   | :ref:`bool<class_bool>`       | :ref:`collide_with_areas<class_PhysicsPointQueryParameters2D_property_collide_with_areas>`   | ``false``         |
-   +-------------------------------+----------------------------------------------------------------------------------------------+-------------------+
-   | :ref:`bool<class_bool>`       | :ref:`collide_with_bodies<class_PhysicsPointQueryParameters2D_property_collide_with_bodies>` | ``true``          |
-   +-------------------------------+----------------------------------------------------------------------------------------------+-------------------+
-   | :ref:`int<class_int>`         | :ref:`collision_mask<class_PhysicsPointQueryParameters2D_property_collision_mask>`           | ``4294967295``    |
-   +-------------------------------+----------------------------------------------------------------------------------------------+-------------------+
-   | :ref:`RID[]<class_RID>`       | :ref:`exclude<class_PhysicsPointQueryParameters2D_property_exclude>`                         | ``[]``            |
-   +-------------------------------+----------------------------------------------------------------------------------------------+-------------------+
-   | :ref:`Vector2<class_Vector2>` | :ref:`position<class_PhysicsPointQueryParameters2D_property_position>`                       | ``Vector2(0, 0)`` |
-   +-------------------------------+----------------------------------------------------------------------------------------------+-------------------+
+   +----------------------------------------------------+----------------------------------------------------------------------------------------------+-------------------+
+   | :ref:`int<class_int>`                              | :ref:`canvas_instance_id<class_PhysicsPointQueryParameters2D_property_canvas_instance_id>`   | ``0``             |
+   +----------------------------------------------------+----------------------------------------------------------------------------------------------+-------------------+
+   | :ref:`bool<class_bool>`                            | :ref:`collide_with_areas<class_PhysicsPointQueryParameters2D_property_collide_with_areas>`   | ``false``         |
+   +----------------------------------------------------+----------------------------------------------------------------------------------------------+-------------------+
+   | :ref:`bool<class_bool>`                            | :ref:`collide_with_bodies<class_PhysicsPointQueryParameters2D_property_collide_with_bodies>` | ``true``          |
+   +----------------------------------------------------+----------------------------------------------------------------------------------------------+-------------------+
+   | :ref:`int<class_int>`                              | :ref:`collision_mask<class_PhysicsPointQueryParameters2D_property_collision_mask>`           | ``4294967295``    |
+   +----------------------------------------------------+----------------------------------------------------------------------------------------------+-------------------+
+   | :ref:`Array<class_Array>`\[:ref:`RID<class_RID>`\] | :ref:`exclude<class_PhysicsPointQueryParameters2D_property_exclude>`                         | ``[]``            |
+   +----------------------------------------------------+----------------------------------------------------------------------------------------------+-------------------+
+   | :ref:`Vector2<class_Vector2>`                      | :ref:`position<class_PhysicsPointQueryParameters2D_property_position>`                       | ``Vector2(0, 0)`` |
+   +----------------------------------------------------+----------------------------------------------------------------------------------------------+-------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -60,8 +60,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_canvas_instance_id** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_canvas_instance_id** **(** **)**
+- |void| **set_canvas_instance_id**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_canvas_instance_id**\ (\ )
 
 If different from ``0``, restricts the query to a specific canvas layer specified by its instance ID. See :ref:`Object.get_instance_id<class_Object_method_get_instance_id>`.
 
@@ -79,8 +79,8 @@ If ``0``, restricts the query to the Viewport's default canvas layer.
 
 .. rst-class:: classref-property-setget
 
-- void **set_collide_with_areas** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_collide_with_areas_enabled** **(** **)**
+- |void| **set_collide_with_areas**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_collide_with_areas_enabled**\ (\ )
 
 If ``true``, the query will take :ref:`Area2D<class_Area2D>`\ s into account.
 
@@ -96,8 +96,8 @@ If ``true``, the query will take :ref:`Area2D<class_Area2D>`\ s into account.
 
 .. rst-class:: classref-property-setget
 
-- void **set_collide_with_bodies** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_collide_with_bodies_enabled** **(** **)**
+- |void| **set_collide_with_bodies**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_collide_with_bodies_enabled**\ (\ )
 
 If ``true``, the query will take :ref:`PhysicsBody2D<class_PhysicsBody2D>`\ s into account.
 
@@ -113,8 +113,8 @@ If ``true``, the query will take :ref:`PhysicsBody2D<class_PhysicsBody2D>`\ s in
 
 .. rst-class:: classref-property-setget
 
-- void **set_collision_mask** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_collision_mask** **(** **)**
+- |void| **set_collision_mask**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_collision_mask**\ (\ )
 
 The physics layers the query will detect (as a bitmask). By default, all collision layers are detected. See `Collision layers and masks <../tutorials/physics/physics_introduction.html#collision-layers-and-masks>`__ in the documentation for more information.
 
@@ -126,12 +126,12 @@ The physics layers the query will detect (as a bitmask). By default, all collisi
 
 .. rst-class:: classref-property
 
-:ref:`RID[]<class_RID>` **exclude** = ``[]``
+:ref:`Array<class_Array>`\[:ref:`RID<class_RID>`\] **exclude** = ``[]``
 
 .. rst-class:: classref-property-setget
 
-- void **set_exclude** **(** :ref:`RID[]<class_RID>` value **)**
-- :ref:`RID[]<class_RID>` **get_exclude** **(** **)**
+- |void| **set_exclude**\ (\ value\: :ref:`Array<class_Array>`\[:ref:`RID<class_RID>`\]\ )
+- :ref:`Array<class_Array>`\[:ref:`RID<class_RID>`\] **get_exclude**\ (\ )
 
 The list of object :ref:`RID<class_RID>`\ s that will be excluded from collisions. Use :ref:`CollisionObject2D.get_rid<class_CollisionObject2D_method_get_rid>` to get the :ref:`RID<class_RID>` associated with a :ref:`CollisionObject2D<class_CollisionObject2D>`-derived node.
 
@@ -147,8 +147,8 @@ The list of object :ref:`RID<class_RID>`\ s that will be excluded from collision
 
 .. rst-class:: classref-property-setget
 
-- void **set_position** **(** :ref:`Vector2<class_Vector2>` value **)**
-- :ref:`Vector2<class_Vector2>` **get_position** **(** **)**
+- |void| **set_position**\ (\ value\: :ref:`Vector2<class_Vector2>`\ )
+- :ref:`Vector2<class_Vector2>` **get_position**\ (\ )
 
 The position being queried for, in global coordinates.
 
@@ -159,3 +159,4 @@ The position being queried for, in global coordinates.
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

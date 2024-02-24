@@ -241,8 +241,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_condition** **(** :ref:`Condition<enum_VisualShaderNodeCompare_Condition>` value **)**
-- :ref:`Condition<enum_VisualShaderNodeCompare_Condition>` **get_condition** **(** **)**
+- |void| **set_condition**\ (\ value\: :ref:`Condition<enum_VisualShaderNodeCompare_Condition>`\ )
+- :ref:`Condition<enum_VisualShaderNodeCompare_Condition>` **get_condition**\ (\ )
 
 Extra condition which is applied if :ref:`type<class_VisualShaderNodeCompare_property_type>` is set to :ref:`CTYPE_VECTOR_3D<class_VisualShaderNodeCompare_constant_CTYPE_VECTOR_3D>`.
 
@@ -258,8 +258,8 @@ Extra condition which is applied if :ref:`type<class_VisualShaderNodeCompare_pro
 
 .. rst-class:: classref-property-setget
 
-- void **set_function** **(** :ref:`Function<enum_VisualShaderNodeCompare_Function>` value **)**
-- :ref:`Function<enum_VisualShaderNodeCompare_Function>` **get_function** **(** **)**
+- |void| **set_function**\ (\ value\: :ref:`Function<enum_VisualShaderNodeCompare_Function>`\ )
+- :ref:`Function<enum_VisualShaderNodeCompare_Function>` **get_function**\ (\ )
 
 A comparison function. See :ref:`Function<enum_VisualShaderNodeCompare_Function>` for options.
 
@@ -275,8 +275,8 @@ A comparison function. See :ref:`Function<enum_VisualShaderNodeCompare_Function>
 
 .. rst-class:: classref-property-setget
 
-- void **set_comparison_type** **(** :ref:`ComparisonType<enum_VisualShaderNodeCompare_ComparisonType>` value **)**
-- :ref:`ComparisonType<enum_VisualShaderNodeCompare_ComparisonType>` **get_comparison_type** **(** **)**
+- |void| **set_comparison_type**\ (\ value\: :ref:`ComparisonType<enum_VisualShaderNodeCompare_ComparisonType>`\ )
+- :ref:`ComparisonType<enum_VisualShaderNodeCompare_ComparisonType>` **get_comparison_type**\ (\ )
 
 The type to be used in the comparison. See :ref:`ComparisonType<enum_VisualShaderNodeCompare_ComparisonType>` for options.
 
@@ -287,3 +287,4 @@ The type to be used in the comparison. See :ref:`ComparisonType<enum_VisualShade
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

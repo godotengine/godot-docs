@@ -60,15 +60,19 @@ Methods
 .. table::
    :widths: auto
 
-   +-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`GLTFLight<class_GLTFLight>`   | :ref:`from_dictionary<class_GLTFLight_method_from_dictionary>` **(** :ref:`Dictionary<class_Dictionary>` dictionary **)** |static| |
-   +-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`GLTFLight<class_GLTFLight>`   | :ref:`from_node<class_GLTFLight_method_from_node>` **(** :ref:`Light3D<class_Light3D>` light_node **)** |static|                   |
-   +-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Dictionary<class_Dictionary>` | :ref:`to_dictionary<class_GLTFLight_method_to_dictionary>` **(** **)** |const|                                                     |
-   +-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Light3D<class_Light3D>`       | :ref:`to_node<class_GLTFLight_method_to_node>` **(** **)** |const|                                                                 |
-   +-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
+   +-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`GLTFLight<class_GLTFLight>`   | :ref:`from_dictionary<class_GLTFLight_method_from_dictionary>`\ (\ dictionary\: :ref:`Dictionary<class_Dictionary>`\ ) |static|                                                     |
+   +-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`GLTFLight<class_GLTFLight>`   | :ref:`from_node<class_GLTFLight_method_from_node>`\ (\ light_node\: :ref:`Light3D<class_Light3D>`\ ) |static|                                                                       |
+   +-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Variant<class_Variant>`       | :ref:`get_additional_data<class_GLTFLight_method_get_additional_data>`\ (\ extension_name\: :ref:`StringName<class_StringName>`\ )                                                  |
+   +-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                              | :ref:`set_additional_data<class_GLTFLight_method_set_additional_data>`\ (\ extension_name\: :ref:`StringName<class_StringName>`, additional_data\: :ref:`Variant<class_Variant>`\ ) |
+   +-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Dictionary<class_Dictionary>` | :ref:`to_dictionary<class_GLTFLight_method_to_dictionary>`\ (\ ) |const|                                                                                                            |
+   +-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Light3D<class_Light3D>`       | :ref:`to_node<class_GLTFLight_method_to_node>`\ (\ ) |const|                                                                                                                        |
+   +-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -87,8 +91,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_color** **(** :ref:`Color<class_Color>` value **)**
-- :ref:`Color<class_Color>` **get_color** **(** **)**
+- |void| **set_color**\ (\ value\: :ref:`Color<class_Color>`\ )
+- :ref:`Color<class_Color>` **get_color**\ (\ )
 
 The :ref:`Color<class_Color>` of the light. Defaults to white. A black color causes the light to have no effect.
 
@@ -104,8 +108,8 @@ The :ref:`Color<class_Color>` of the light. Defaults to white. A black color cau
 
 .. rst-class:: classref-property-setget
 
-- void **set_inner_cone_angle** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_inner_cone_angle** **(** **)**
+- |void| **set_inner_cone_angle**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_inner_cone_angle**\ (\ )
 
 The inner angle of the cone in a spotlight. Must be less than or equal to the outer cone angle.
 
@@ -123,8 +127,8 @@ Within this angle, the light is at full brightness. Between the inner and outer 
 
 .. rst-class:: classref-property-setget
 
-- void **set_intensity** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_intensity** **(** **)**
+- |void| **set_intensity**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_intensity**\ (\ )
 
 The intensity of the light. This is expressed in candelas (lumens per steradian) for point and spot lights, and lux (lumens per m²) for directional lights. When creating a Godot light, this value is converted to a unitless multiplier.
 
@@ -140,8 +144,8 @@ The intensity of the light. This is expressed in candelas (lumens per steradian)
 
 .. rst-class:: classref-property-setget
 
-- void **set_light_type** **(** :ref:`String<class_String>` value **)**
-- :ref:`String<class_String>` **get_light_type** **(** **)**
+- |void| **set_light_type**\ (\ value\: :ref:`String<class_String>`\ )
+- :ref:`String<class_String>` **get_light_type**\ (\ )
 
 The type of the light. The values accepted by Godot are "point", "spot", and "directional", which correspond to Godot's :ref:`OmniLight3D<class_OmniLight3D>`, :ref:`SpotLight3D<class_SpotLight3D>`, and :ref:`DirectionalLight3D<class_DirectionalLight3D>` respectively.
 
@@ -157,8 +161,8 @@ The type of the light. The values accepted by Godot are "point", "spot", and "di
 
 .. rst-class:: classref-property-setget
 
-- void **set_outer_cone_angle** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_outer_cone_angle** **(** **)**
+- |void| **set_outer_cone_angle**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_outer_cone_angle**\ (\ )
 
 The outer angle of the cone in a spotlight. Must be greater than or equal to the inner angle.
 
@@ -176,8 +180,8 @@ At this angle, the light drops off to zero brightness. Between the inner and out
 
 .. rst-class:: classref-property-setget
 
-- void **set_range** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_range** **(** **)**
+- |void| **set_range**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_range**\ (\ )
 
 The range of the light, beyond which the light has no effect. GLTF lights with no range defined behave like physical lights (which have infinite range). When creating a Godot light, the range is clamped to 4096.
 
@@ -194,7 +198,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`GLTFLight<class_GLTFLight>` **from_dictionary** **(** :ref:`Dictionary<class_Dictionary>` dictionary **)** |static|
+:ref:`GLTFLight<class_GLTFLight>` **from_dictionary**\ (\ dictionary\: :ref:`Dictionary<class_Dictionary>`\ ) |static|
 
 Creates a new GLTFLight instance by parsing the given :ref:`Dictionary<class_Dictionary>`.
 
@@ -206,9 +210,37 @@ Creates a new GLTFLight instance by parsing the given :ref:`Dictionary<class_Dic
 
 .. rst-class:: classref-method
 
-:ref:`GLTFLight<class_GLTFLight>` **from_node** **(** :ref:`Light3D<class_Light3D>` light_node **)** |static|
+:ref:`GLTFLight<class_GLTFLight>` **from_node**\ (\ light_node\: :ref:`Light3D<class_Light3D>`\ ) |static|
 
 Create a new GLTFLight instance from the given Godot :ref:`Light3D<class_Light3D>` node.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_GLTFLight_method_get_additional_data:
+
+.. rst-class:: classref-method
+
+:ref:`Variant<class_Variant>` **get_additional_data**\ (\ extension_name\: :ref:`StringName<class_StringName>`\ )
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_GLTFLight_method_set_additional_data:
+
+.. rst-class:: classref-method
+
+|void| **set_additional_data**\ (\ extension_name\: :ref:`StringName<class_StringName>`, additional_data\: :ref:`Variant<class_Variant>`\ )
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 .. rst-class:: classref-item-separator
 
@@ -218,7 +250,7 @@ Create a new GLTFLight instance from the given Godot :ref:`Light3D<class_Light3D
 
 .. rst-class:: classref-method
 
-:ref:`Dictionary<class_Dictionary>` **to_dictionary** **(** **)** |const|
+:ref:`Dictionary<class_Dictionary>` **to_dictionary**\ (\ ) |const|
 
 Serializes this GLTFLight instance into a :ref:`Dictionary<class_Dictionary>`.
 
@@ -230,7 +262,7 @@ Serializes this GLTFLight instance into a :ref:`Dictionary<class_Dictionary>`.
 
 .. rst-class:: classref-method
 
-:ref:`Light3D<class_Light3D>` **to_node** **(** **)** |const|
+:ref:`Light3D<class_Light3D>` **to_node**\ (\ ) |const|
 
 Converts this GLTFLight instance into a Godot :ref:`Light3D<class_Light3D>` node.
 
@@ -241,3 +273,4 @@ Converts this GLTFLight instance into a Godot :ref:`Light3D<class_Light3D>` node
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

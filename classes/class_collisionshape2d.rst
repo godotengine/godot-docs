@@ -71,8 +71,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_debug_color** **(** :ref:`Color<class_Color>` value **)**
-- :ref:`Color<class_Color>` **get_debug_color** **(** **)**
+- |void| **set_debug_color**\ (\ value\: :ref:`Color<class_Color>`\ )
+- :ref:`Color<class_Color>` **get_debug_color**\ (\ )
 
 The collision shape debug color.
 
@@ -90,8 +90,8 @@ The collision shape debug color.
 
 .. rst-class:: classref-property-setget
 
-- void **set_disabled** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_disabled** **(** **)**
+- |void| **set_disabled**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_disabled**\ (\ )
 
 A disabled collision shape has no effect in the world. This property should be changed with :ref:`Object.set_deferred<class_Object_method_set_deferred>`.
 
@@ -107,8 +107,8 @@ A disabled collision shape has no effect in the world. This property should be c
 
 .. rst-class:: classref-property-setget
 
-- void **set_one_way_collision** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_one_way_collision_enabled** **(** **)**
+- |void| **set_one_way_collision**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_one_way_collision_enabled**\ (\ )
 
 Sets whether this collision shape should only detect collision on one side (top or bottom).
 
@@ -126,8 +126,8 @@ Sets whether this collision shape should only detect collision on one side (top 
 
 .. rst-class:: classref-property-setget
 
-- void **set_one_way_collision_margin** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_one_way_collision_margin** **(** **)**
+- |void| **set_one_way_collision_margin**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_one_way_collision_margin**\ (\ )
 
 The margin used for one-way collision (in pixels). Higher values will make the shape thicker, and work better for colliders that enter the shape at a high velocity.
 
@@ -143,8 +143,8 @@ The margin used for one-way collision (in pixels). Higher values will make the s
 
 .. rst-class:: classref-property-setget
 
-- void **set_shape** **(** :ref:`Shape2D<class_Shape2D>` value **)**
-- :ref:`Shape2D<class_Shape2D>` **get_shape** **(** **)**
+- |void| **set_shape**\ (\ value\: :ref:`Shape2D<class_Shape2D>`\ )
+- :ref:`Shape2D<class_Shape2D>` **get_shape**\ (\ )
 
 The actual shape owned by this collision shape.
 
@@ -155,3 +155,4 @@ The actual shape owned by this collision shape.
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

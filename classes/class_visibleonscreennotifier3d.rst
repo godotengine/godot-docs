@@ -47,9 +47,9 @@ Methods
 .. table::
    :widths: auto
 
-   +-------------------------+----------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>` | :ref:`is_on_screen<class_VisibleOnScreenNotifier3D_method_is_on_screen>` **(** **)** |const| |
-   +-------------------------+----------------------------------------------------------------------------------------------+
+   +-------------------------+----------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | :ref:`is_on_screen<class_VisibleOnScreenNotifier3D_method_is_on_screen>`\ (\ ) |const| |
+   +-------------------------+----------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -64,7 +64,7 @@ Signals
 
 .. rst-class:: classref-signal
 
-**screen_entered** **(** **)**
+**screen_entered**\ (\ )
 
 Emitted when the **VisibleOnScreenNotifier3D** enters the screen.
 
@@ -76,7 +76,7 @@ Emitted when the **VisibleOnScreenNotifier3D** enters the screen.
 
 .. rst-class:: classref-signal
 
-**screen_exited** **(** **)**
+**screen_exited**\ (\ )
 
 Emitted when the **VisibleOnScreenNotifier3D** exits the screen.
 
@@ -97,8 +97,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_aabb** **(** :ref:`AABB<class_AABB>` value **)**
-- :ref:`AABB<class_AABB>` **get_aabb** **(** **)**
+- |void| **set_aabb**\ (\ value\: :ref:`AABB<class_AABB>`\ )
+- :ref:`AABB<class_AABB>` **get_aabb**\ (\ )
 
 The **VisibleOnScreenNotifier3D**'s bounding box.
 
@@ -115,7 +115,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_on_screen** **(** **)** |const|
+:ref:`bool<class_bool>` **is_on_screen**\ (\ ) |const|
 
 Returns ``true`` if the bounding box is on the screen.
 
@@ -128,3 +128,4 @@ Returns ``true`` if the bounding box is on the screen.
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

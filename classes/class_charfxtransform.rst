@@ -83,8 +83,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_color** **(** :ref:`Color<class_Color>` value **)**
-- :ref:`Color<class_Color>` **get_color** **(** **)**
+- |void| **set_color**\ (\ value\: :ref:`Color<class_Color>`\ )
+- :ref:`Color<class_Color>` **get_color**\ (\ )
 
 The color the character will be drawn with.
 
@@ -100,8 +100,8 @@ The color the character will be drawn with.
 
 .. rst-class:: classref-property-setget
 
-- void **set_elapsed_time** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_elapsed_time** **(** **)**
+- |void| **set_elapsed_time**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_elapsed_time**\ (\ )
 
 The time elapsed since the :ref:`RichTextLabel<class_RichTextLabel>` was added to the scene tree (in seconds). Time stops when the :ref:`RichTextLabel<class_RichTextLabel>` is paused (see :ref:`Node.process_mode<class_Node_property_process_mode>`). Resets when the text in the :ref:`RichTextLabel<class_RichTextLabel>` is changed.
 
@@ -119,8 +119,8 @@ The time elapsed since the :ref:`RichTextLabel<class_RichTextLabel>` was added t
 
 .. rst-class:: classref-property-setget
 
-- void **set_environment** **(** :ref:`Dictionary<class_Dictionary>` value **)**
-- :ref:`Dictionary<class_Dictionary>` **get_environment** **(** **)**
+- |void| **set_environment**\ (\ value\: :ref:`Dictionary<class_Dictionary>`\ )
+- :ref:`Dictionary<class_Dictionary>` **get_environment**\ (\ )
 
 Contains the arguments passed in the opening BBCode tag. By default, arguments are strings; if their contents match a type such as :ref:`bool<class_bool>`, :ref:`int<class_int>` or :ref:`float<class_float>`, they will be converted automatically. Color codes in the form ``#rrggbb`` or ``#rgb`` will be converted to an opaque :ref:`Color<class_Color>`. String arguments may not contain spaces, even if they're quoted. If present, quotes will also be present in the final string.
 
@@ -142,8 +142,8 @@ For example, the opening BBCode tag ``[example foo=hello bar=true baz=42 color=#
 
 .. rst-class:: classref-property-setget
 
-- void **set_font** **(** :ref:`RID<class_RID>` value **)**
-- :ref:`RID<class_RID>` **get_font** **(** **)**
+- |void| **set_font**\ (\ value\: :ref:`RID<class_RID>`\ )
+- :ref:`RID<class_RID>` **get_font**\ (\ )
 
 Font resource used to render glyph.
 
@@ -159,8 +159,8 @@ Font resource used to render glyph.
 
 .. rst-class:: classref-property-setget
 
-- void **set_glyph_count** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_glyph_count** **(** **)**
+- |void| **set_glyph_count**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_glyph_count**\ (\ )
 
 Number of glyphs in the grapheme cluster. This value is set in the first glyph of a cluster. Setting this property won't affect drawing.
 
@@ -176,8 +176,8 @@ Number of glyphs in the grapheme cluster. This value is set in the first glyph o
 
 .. rst-class:: classref-property-setget
 
-- void **set_glyph_flags** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_glyph_flags** **(** **)**
+- |void| **set_glyph_flags**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_glyph_flags**\ (\ )
 
 Glyph flags. See :ref:`GraphemeFlag<enum_TextServer_GraphemeFlag>` for more info. Setting this property won't affect drawing.
 
@@ -193,8 +193,8 @@ Glyph flags. See :ref:`GraphemeFlag<enum_TextServer_GraphemeFlag>` for more info
 
 .. rst-class:: classref-property-setget
 
-- void **set_glyph_index** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_glyph_index** **(** **)**
+- |void| **set_glyph_index**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_glyph_index**\ (\ )
 
 Font specific glyph index.
 
@@ -210,8 +210,8 @@ Font specific glyph index.
 
 .. rst-class:: classref-property-setget
 
-- void **set_offset** **(** :ref:`Vector2<class_Vector2>` value **)**
-- :ref:`Vector2<class_Vector2>` **get_offset** **(** **)**
+- |void| **set_offset**\ (\ value\: :ref:`Vector2<class_Vector2>`\ )
+- :ref:`Vector2<class_Vector2>` **get_offset**\ (\ )
 
 The position offset the character will be drawn with (in pixels).
 
@@ -227,8 +227,8 @@ The position offset the character will be drawn with (in pixels).
 
 .. rst-class:: classref-property-setget
 
-- void **set_outline** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_outline** **(** **)**
+- |void| **set_outline**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_outline**\ (\ )
 
 If ``true``, FX transform is called for outline drawing. Setting this property won't affect drawing.
 
@@ -244,8 +244,8 @@ If ``true``, FX transform is called for outline drawing. Setting this property w
 
 .. rst-class:: classref-property-setget
 
-- void **set_range** **(** :ref:`Vector2i<class_Vector2i>` value **)**
-- :ref:`Vector2i<class_Vector2i>` **get_range** **(** **)**
+- |void| **set_range**\ (\ value\: :ref:`Vector2i<class_Vector2i>`\ )
+- :ref:`Vector2i<class_Vector2i>` **get_range**\ (\ )
 
 Absolute character range in the string, corresponding to the glyph. Setting this property won't affect drawing.
 
@@ -261,8 +261,8 @@ Absolute character range in the string, corresponding to the glyph. Setting this
 
 .. rst-class:: classref-property-setget
 
-- void **set_relative_index** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_relative_index** **(** **)**
+- |void| **set_relative_index**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_relative_index**\ (\ )
 
 The character offset of the glyph, relative to the current :ref:`RichTextEffect<class_RichTextEffect>` custom block. Setting this property won't affect drawing.
 
@@ -278,8 +278,8 @@ The character offset of the glyph, relative to the current :ref:`RichTextEffect<
 
 .. rst-class:: classref-property-setget
 
-- void **set_transform** **(** :ref:`Transform2D<class_Transform2D>` value **)**
-- :ref:`Transform2D<class_Transform2D>` **get_transform** **(** **)**
+- |void| **set_transform**\ (\ value\: :ref:`Transform2D<class_Transform2D>`\ )
+- :ref:`Transform2D<class_Transform2D>` **get_transform**\ (\ )
 
 The current transform of the current glyph. It can be overridden (for example, by driving the position and rotation from a curve). You can also alter the existing value to apply transforms on top of other effects.
 
@@ -295,8 +295,8 @@ The current transform of the current glyph. It can be overridden (for example, b
 
 .. rst-class:: classref-property-setget
 
-- void **set_visibility** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_visible** **(** **)**
+- |void| **set_visibility**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_visible**\ (\ )
 
 If ``true``, the character will be drawn. If ``false``, the character will be hidden. Characters around hidden characters will reflow to take the space of hidden characters. If this is not desired, set their :ref:`color<class_CharFXTransform_property_color>` to ``Color(1, 1, 1, 0)`` instead.
 
@@ -307,3 +307,4 @@ If ``true``, the character will be drawn. If ``false``, the character will be hi
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

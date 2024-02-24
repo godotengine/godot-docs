@@ -64,8 +64,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_scroll_base_offset** **(** :ref:`Vector2<class_Vector2>` value **)**
-- :ref:`Vector2<class_Vector2>` **get_scroll_base_offset** **(** **)**
+- |void| **set_scroll_base_offset**\ (\ value\: :ref:`Vector2<class_Vector2>`\ )
+- :ref:`Vector2<class_Vector2>` **get_scroll_base_offset**\ (\ )
 
 The base position offset for all :ref:`ParallaxLayer<class_ParallaxLayer>` children.
 
@@ -81,8 +81,8 @@ The base position offset for all :ref:`ParallaxLayer<class_ParallaxLayer>` child
 
 .. rst-class:: classref-property-setget
 
-- void **set_scroll_base_scale** **(** :ref:`Vector2<class_Vector2>` value **)**
-- :ref:`Vector2<class_Vector2>` **get_scroll_base_scale** **(** **)**
+- |void| **set_scroll_base_scale**\ (\ value\: :ref:`Vector2<class_Vector2>`\ )
+- :ref:`Vector2<class_Vector2>` **get_scroll_base_scale**\ (\ )
 
 The base motion scale for all :ref:`ParallaxLayer<class_ParallaxLayer>` children.
 
@@ -98,8 +98,8 @@ The base motion scale for all :ref:`ParallaxLayer<class_ParallaxLayer>` children
 
 .. rst-class:: classref-property-setget
 
-- void **set_ignore_camera_zoom** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_ignore_camera_zoom** **(** **)**
+- |void| **set_ignore_camera_zoom**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_ignore_camera_zoom**\ (\ )
 
 If ``true``, elements in :ref:`ParallaxLayer<class_ParallaxLayer>` child aren't affected by the zoom level of the camera.
 
@@ -115,8 +115,8 @@ If ``true``, elements in :ref:`ParallaxLayer<class_ParallaxLayer>` child aren't 
 
 .. rst-class:: classref-property-setget
 
-- void **set_limit_begin** **(** :ref:`Vector2<class_Vector2>` value **)**
-- :ref:`Vector2<class_Vector2>` **get_limit_begin** **(** **)**
+- |void| **set_limit_begin**\ (\ value\: :ref:`Vector2<class_Vector2>`\ )
+- :ref:`Vector2<class_Vector2>` **get_limit_begin**\ (\ )
 
 Top-left limits for scrolling to begin. If the camera is outside of this limit, the background will stop scrolling. Must be lower than :ref:`scroll_limit_end<class_ParallaxBackground_property_scroll_limit_end>` to work.
 
@@ -132,8 +132,8 @@ Top-left limits for scrolling to begin. If the camera is outside of this limit, 
 
 .. rst-class:: classref-property-setget
 
-- void **set_limit_end** **(** :ref:`Vector2<class_Vector2>` value **)**
-- :ref:`Vector2<class_Vector2>` **get_limit_end** **(** **)**
+- |void| **set_limit_end**\ (\ value\: :ref:`Vector2<class_Vector2>`\ )
+- :ref:`Vector2<class_Vector2>` **get_limit_end**\ (\ )
 
 Bottom-right limits for scrolling to end. If the camera is outside of this limit, the background will stop scrolling. Must be higher than :ref:`scroll_limit_begin<class_ParallaxBackground_property_scroll_limit_begin>` to work.
 
@@ -149,8 +149,8 @@ Bottom-right limits for scrolling to end. If the camera is outside of this limit
 
 .. rst-class:: classref-property-setget
 
-- void **set_scroll_offset** **(** :ref:`Vector2<class_Vector2>` value **)**
-- :ref:`Vector2<class_Vector2>` **get_scroll_offset** **(** **)**
+- |void| **set_scroll_offset**\ (\ value\: :ref:`Vector2<class_Vector2>`\ )
+- :ref:`Vector2<class_Vector2>` **get_scroll_offset**\ (\ )
 
 The ParallaxBackground's scroll value. Calculated automatically when using a :ref:`Camera2D<class_Camera2D>`, but can be used to manually manage scrolling when no camera is present.
 
@@ -161,3 +161,4 @@ The ParallaxBackground's scroll value. Calculated automatically when using a :re
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

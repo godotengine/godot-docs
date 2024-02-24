@@ -71,8 +71,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_constant_angular_velocity** **(** :ref:`Vector3<class_Vector3>` value **)**
-- :ref:`Vector3<class_Vector3>` **get_constant_angular_velocity** **(** **)**
+- |void| **set_constant_angular_velocity**\ (\ value\: :ref:`Vector3<class_Vector3>`\ )
+- :ref:`Vector3<class_Vector3>` **get_constant_angular_velocity**\ (\ )
 
 The body's constant angular velocity. This does not rotate the body, but affects touching bodies, as if it were rotating.
 
@@ -88,8 +88,8 @@ The body's constant angular velocity. This does not rotate the body, but affects
 
 .. rst-class:: classref-property-setget
 
-- void **set_constant_linear_velocity** **(** :ref:`Vector3<class_Vector3>` value **)**
-- :ref:`Vector3<class_Vector3>` **get_constant_linear_velocity** **(** **)**
+- |void| **set_constant_linear_velocity**\ (\ value\: :ref:`Vector3<class_Vector3>`\ )
+- :ref:`Vector3<class_Vector3>` **get_constant_linear_velocity**\ (\ )
 
 The body's constant linear velocity. This does not move the body, but affects touching bodies, as if it were moving.
 
@@ -105,8 +105,8 @@ The body's constant linear velocity. This does not move the body, but affects to
 
 .. rst-class:: classref-property-setget
 
-- void **set_physics_material_override** **(** :ref:`PhysicsMaterial<class_PhysicsMaterial>` value **)**
-- :ref:`PhysicsMaterial<class_PhysicsMaterial>` **get_physics_material_override** **(** **)**
+- |void| **set_physics_material_override**\ (\ value\: :ref:`PhysicsMaterial<class_PhysicsMaterial>`\ )
+- :ref:`PhysicsMaterial<class_PhysicsMaterial>` **get_physics_material_override**\ (\ )
 
 The physics material override for the body.
 
@@ -119,3 +119,4 @@ If a material is assigned to this property, it will be used instead of any other
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

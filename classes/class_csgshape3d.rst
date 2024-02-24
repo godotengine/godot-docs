@@ -64,19 +64,19 @@ Methods
 .. table::
    :widths: auto
 
-   +---------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`   | :ref:`get_collision_layer_value<class_CSGShape3D_method_get_collision_layer_value>` **(** :ref:`int<class_int>` layer_number **)** |const|                        |
-   +---------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`   | :ref:`get_collision_mask_value<class_CSGShape3D_method_get_collision_mask_value>` **(** :ref:`int<class_int>` layer_number **)** |const|                          |
-   +---------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Array<class_Array>` | :ref:`get_meshes<class_CSGShape3D_method_get_meshes>` **(** **)** |const|                                                                                         |
-   +---------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`   | :ref:`is_root_shape<class_CSGShape3D_method_is_root_shape>` **(** **)** |const|                                                                                   |
-   +---------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                      | :ref:`set_collision_layer_value<class_CSGShape3D_method_set_collision_layer_value>` **(** :ref:`int<class_int>` layer_number, :ref:`bool<class_bool>` value **)** |
-   +---------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                      | :ref:`set_collision_mask_value<class_CSGShape3D_method_set_collision_mask_value>` **(** :ref:`int<class_int>` layer_number, :ref:`bool<class_bool>` value **)**   |
-   +---------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`   | :ref:`get_collision_layer_value<class_CSGShape3D_method_get_collision_layer_value>`\ (\ layer_number\: :ref:`int<class_int>`\ ) |const|                          |
+   +---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`   | :ref:`get_collision_mask_value<class_CSGShape3D_method_get_collision_mask_value>`\ (\ layer_number\: :ref:`int<class_int>`\ ) |const|                            |
+   +---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Array<class_Array>` | :ref:`get_meshes<class_CSGShape3D_method_get_meshes>`\ (\ ) |const|                                                                                              |
+   +---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`   | :ref:`is_root_shape<class_CSGShape3D_method_is_root_shape>`\ (\ ) |const|                                                                                        |
+   +---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                    | :ref:`set_collision_layer_value<class_CSGShape3D_method_set_collision_layer_value>`\ (\ layer_number\: :ref:`int<class_int>`, value\: :ref:`bool<class_bool>`\ ) |
+   +---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                    | :ref:`set_collision_mask_value<class_CSGShape3D_method_set_collision_mask_value>`\ (\ layer_number\: :ref:`int<class_int>`, value\: :ref:`bool<class_bool>`\ )   |
+   +---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -134,8 +134,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_calculate_tangents** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_calculating_tangents** **(** **)**
+- |void| **set_calculate_tangents**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_calculating_tangents**\ (\ )
 
 Calculate tangents for the CSG shape which allows the use of normal maps. This is only applied on the root shape, this setting is ignored on any child.
 
@@ -151,8 +151,8 @@ Calculate tangents for the CSG shape which allows the use of normal maps. This i
 
 .. rst-class:: classref-property-setget
 
-- void **set_collision_layer** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_collision_layer** **(** **)**
+- |void| **set_collision_layer**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_collision_layer**\ (\ )
 
 The physics layers this area is in.
 
@@ -172,8 +172,8 @@ A contact is detected if object A is in any of the layers that object B scans, o
 
 .. rst-class:: classref-property-setget
 
-- void **set_collision_mask** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_collision_mask** **(** **)**
+- |void| **set_collision_mask**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_collision_mask**\ (\ )
 
 The physics layers this CSG shape scans for collisions. Only effective if :ref:`use_collision<class_CSGShape3D_property_use_collision>` is ``true``. See `Collision layers and masks <../tutorials/physics/physics_introduction.html#collision-layers-and-masks>`__ in the documentation for more information.
 
@@ -189,8 +189,8 @@ The physics layers this CSG shape scans for collisions. Only effective if :ref:`
 
 .. rst-class:: classref-property-setget
 
-- void **set_collision_priority** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_collision_priority** **(** **)**
+- |void| **set_collision_priority**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_collision_priority**\ (\ )
 
 The priority used to solve colliding when occurring penetration. Only effective if :ref:`use_collision<class_CSGShape3D_property_use_collision>` is ``true``. The higher the priority is, the lower the penetration into the object will be. This can for example be used to prevent the player from breaking through the boundaries of a level.
 
@@ -206,8 +206,8 @@ The priority used to solve colliding when occurring penetration. Only effective 
 
 .. rst-class:: classref-property-setget
 
-- void **set_operation** **(** :ref:`Operation<enum_CSGShape3D_Operation>` value **)**
-- :ref:`Operation<enum_CSGShape3D_Operation>` **get_operation** **(** **)**
+- |void| **set_operation**\ (\ value\: :ref:`Operation<enum_CSGShape3D_Operation>`\ )
+- :ref:`Operation<enum_CSGShape3D_Operation>` **get_operation**\ (\ )
 
 The operation that is performed on this shape. This is ignored for the first CSG child node as the operation is between this node and the previous child of this nodes parent.
 
@@ -223,8 +223,8 @@ The operation that is performed on this shape. This is ignored for the first CSG
 
 .. rst-class:: classref-property-setget
 
-- void **set_snap** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_snap** **(** **)**
+- |void| **set_snap**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_snap**\ (\ )
 
 Snap makes the mesh vertices snap to a given distance so that the faces of two meshes can be perfectly aligned. A lower value results in greater precision but may be harder to adjust.
 
@@ -240,8 +240,8 @@ Snap makes the mesh vertices snap to a given distance so that the faces of two m
 
 .. rst-class:: classref-property-setget
 
-- void **set_use_collision** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_using_collision** **(** **)**
+- |void| **set_use_collision**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_using_collision**\ (\ )
 
 Adds a collision shape to the physics engine for our CSG shape. This will always act like a static body. Note that the collision shape is still active even if the CSG shape itself is hidden. See also :ref:`collision_mask<class_CSGShape3D_property_collision_mask>` and :ref:`collision_priority<class_CSGShape3D_property_collision_priority>`.
 
@@ -258,7 +258,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **get_collision_layer_value** **(** :ref:`int<class_int>` layer_number **)** |const|
+:ref:`bool<class_bool>` **get_collision_layer_value**\ (\ layer_number\: :ref:`int<class_int>`\ ) |const|
 
 Returns whether or not the specified layer of the :ref:`collision_layer<class_CSGShape3D_property_collision_layer>` is enabled, given a ``layer_number`` between 1 and 32.
 
@@ -270,7 +270,7 @@ Returns whether or not the specified layer of the :ref:`collision_layer<class_CS
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **get_collision_mask_value** **(** :ref:`int<class_int>` layer_number **)** |const|
+:ref:`bool<class_bool>` **get_collision_mask_value**\ (\ layer_number\: :ref:`int<class_int>`\ ) |const|
 
 Returns whether or not the specified layer of the :ref:`collision_mask<class_CSGShape3D_property_collision_mask>` is enabled, given a ``layer_number`` between 1 and 32.
 
@@ -282,7 +282,7 @@ Returns whether or not the specified layer of the :ref:`collision_mask<class_CSG
 
 .. rst-class:: classref-method
 
-:ref:`Array<class_Array>` **get_meshes** **(** **)** |const|
+:ref:`Array<class_Array>` **get_meshes**\ (\ ) |const|
 
 Returns an :ref:`Array<class_Array>` with two elements, the first is the :ref:`Transform3D<class_Transform3D>` of this node and the second is the root :ref:`Mesh<class_Mesh>` of this node. Only works when this node is the root shape.
 
@@ -294,7 +294,7 @@ Returns an :ref:`Array<class_Array>` with two elements, the first is the :ref:`T
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_root_shape** **(** **)** |const|
+:ref:`bool<class_bool>` **is_root_shape**\ (\ ) |const|
 
 Returns ``true`` if this is a root shape and is thus the object that is rendered.
 
@@ -306,7 +306,7 @@ Returns ``true`` if this is a root shape and is thus the object that is rendered
 
 .. rst-class:: classref-method
 
-void **set_collision_layer_value** **(** :ref:`int<class_int>` layer_number, :ref:`bool<class_bool>` value **)**
+|void| **set_collision_layer_value**\ (\ layer_number\: :ref:`int<class_int>`, value\: :ref:`bool<class_bool>`\ )
 
 Based on ``value``, enables or disables the specified layer in the :ref:`collision_layer<class_CSGShape3D_property_collision_layer>`, given a ``layer_number`` between 1 and 32.
 
@@ -318,7 +318,7 @@ Based on ``value``, enables or disables the specified layer in the :ref:`collisi
 
 .. rst-class:: classref-method
 
-void **set_collision_mask_value** **(** :ref:`int<class_int>` layer_number, :ref:`bool<class_bool>` value **)**
+|void| **set_collision_mask_value**\ (\ layer_number\: :ref:`int<class_int>`, value\: :ref:`bool<class_bool>`\ )
 
 Based on ``value``, enables or disables the specified layer in the :ref:`collision_mask<class_CSGShape3D_property_collision_mask>`, given a ``layer_number`` between 1 and 32.
 
@@ -329,3 +329,4 @@ Based on ``value``, enables or disables the specified layer in the :ref:`collisi
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

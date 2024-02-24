@@ -75,8 +75,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_param** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_param** **(** **)**
+- |void| **set_param**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_param**\ (\ )
 
 The spotlight's angle in degrees.
 
@@ -94,8 +94,8 @@ The spotlight's angle in degrees.
 
 .. rst-class:: classref-property-setget
 
-- void **set_param** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_param** **(** **)**
+- |void| **set_param**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_param**\ (\ )
 
 The spotlight's *angular* attenuation curve. See also :ref:`spot_attenuation<class_SpotLight3D_property_spot_attenuation>`.
 
@@ -111,8 +111,8 @@ The spotlight's *angular* attenuation curve. See also :ref:`spot_attenuation<cla
 
 .. rst-class:: classref-property-setget
 
-- void **set_param** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_param** **(** **)**
+- |void| **set_param**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_param**\ (\ )
 
 Controls the distance attenuation function for spotlights.
 
@@ -134,8 +134,8 @@ A value of ``0.0`` smoothly attenuates light at the edge of the range. A value o
 
 .. rst-class:: classref-property-setget
 
-- void **set_param** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_param** **(** **)**
+- |void| **set_param**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_param**\ (\ )
 
 The maximal range that can be reached by the spotlight. Note that the effectively lit area may appear to be smaller depending on the :ref:`spot_attenuation<class_SpotLight3D_property_spot_attenuation>` in use. No matter the :ref:`spot_attenuation<class_SpotLight3D_property_spot_attenuation>` in use, the light will never reach anything outside this range.
 
@@ -148,3 +148,4 @@ The maximal range that can be reached by the spotlight. Note that the effectivel
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

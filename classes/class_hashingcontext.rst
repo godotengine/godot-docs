@@ -84,13 +84,13 @@ Methods
 .. table::
    :widths: auto
 
-   +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------+
-   | :ref:`PackedByteArray<class_PackedByteArray>` | :ref:`finish<class_HashingContext_method_finish>` **(** **)**                                                     |
-   +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Error<enum_@GlobalScope_Error>`         | :ref:`start<class_HashingContext_method_start>` **(** :ref:`HashType<enum_HashingContext_HashType>` type **)**    |
-   +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Error<enum_@GlobalScope_Error>`         | :ref:`update<class_HashingContext_method_update>` **(** :ref:`PackedByteArray<class_PackedByteArray>` chunk **)** |
-   +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------+
+   +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------+
+   | :ref:`PackedByteArray<class_PackedByteArray>` | :ref:`finish<class_HashingContext_method_finish>`\ (\ )                                                        |
+   +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>`         | :ref:`start<class_HashingContext_method_start>`\ (\ type\: :ref:`HashType<enum_HashingContext_HashType>`\ )    |
+   +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>`         | :ref:`update<class_HashingContext_method_update>`\ (\ chunk\: :ref:`PackedByteArray<class_PackedByteArray>`\ ) |
+   +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -144,7 +144,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`PackedByteArray<class_PackedByteArray>` **finish** **(** **)**
+:ref:`PackedByteArray<class_PackedByteArray>` **finish**\ (\ )
 
 Closes the current context, and return the computed hash.
 
@@ -156,7 +156,7 @@ Closes the current context, and return the computed hash.
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **start** **(** :ref:`HashType<enum_HashingContext_HashType>` type **)**
+:ref:`Error<enum_@GlobalScope_Error>` **start**\ (\ type\: :ref:`HashType<enum_HashingContext_HashType>`\ )
 
 Starts a new hash computation of the given ``type`` (e.g. :ref:`HASH_SHA256<class_HashingContext_constant_HASH_SHA256>` to start computation of a SHA-256).
 
@@ -168,7 +168,7 @@ Starts a new hash computation of the given ``type`` (e.g. :ref:`HASH_SHA256<clas
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **update** **(** :ref:`PackedByteArray<class_PackedByteArray>` chunk **)**
+:ref:`Error<enum_@GlobalScope_Error>` **update**\ (\ chunk\: :ref:`PackedByteArray<class_PackedByteArray>`\ )
 
 Updates the computation with the given ``chunk`` of data.
 
@@ -179,3 +179,4 @@ Updates the computation with the given ``chunk`` of data.
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

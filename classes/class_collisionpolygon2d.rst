@@ -91,8 +91,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_build_mode** **(** :ref:`BuildMode<enum_CollisionPolygon2D_BuildMode>` value **)**
-- :ref:`BuildMode<enum_CollisionPolygon2D_BuildMode>` **get_build_mode** **(** **)**
+- |void| **set_build_mode**\ (\ value\: :ref:`BuildMode<enum_CollisionPolygon2D_BuildMode>`\ )
+- :ref:`BuildMode<enum_CollisionPolygon2D_BuildMode>` **get_build_mode**\ (\ )
 
 Collision build mode. Use one of the :ref:`BuildMode<enum_CollisionPolygon2D_BuildMode>` constants.
 
@@ -108,8 +108,8 @@ Collision build mode. Use one of the :ref:`BuildMode<enum_CollisionPolygon2D_Bui
 
 .. rst-class:: classref-property-setget
 
-- void **set_disabled** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_disabled** **(** **)**
+- |void| **set_disabled**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_disabled**\ (\ )
 
 If ``true``, no collisions will be detected.
 
@@ -125,8 +125,8 @@ If ``true``, no collisions will be detected.
 
 .. rst-class:: classref-property-setget
 
-- void **set_one_way_collision** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_one_way_collision_enabled** **(** **)**
+- |void| **set_one_way_collision**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_one_way_collision_enabled**\ (\ )
 
 If ``true``, only edges that face up, relative to **CollisionPolygon2D**'s rotation, will collide with other objects.
 
@@ -144,8 +144,8 @@ If ``true``, only edges that face up, relative to **CollisionPolygon2D**'s rotat
 
 .. rst-class:: classref-property-setget
 
-- void **set_one_way_collision_margin** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_one_way_collision_margin** **(** **)**
+- |void| **set_one_way_collision_margin**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_one_way_collision_margin**\ (\ )
 
 The margin used for one-way collision (in pixels). Higher values will make the shape thicker, and work better for colliders that enter the polygon at a high velocity.
 
@@ -161,8 +161,8 @@ The margin used for one-way collision (in pixels). Higher values will make the s
 
 .. rst-class:: classref-property-setget
 
-- void **set_polygon** **(** :ref:`PackedVector2Array<class_PackedVector2Array>` value **)**
-- :ref:`PackedVector2Array<class_PackedVector2Array>` **get_polygon** **(** **)**
+- |void| **set_polygon**\ (\ value\: :ref:`PackedVector2Array<class_PackedVector2Array>`\ )
+- :ref:`PackedVector2Array<class_PackedVector2Array>` **get_polygon**\ (\ )
 
 The polygon's list of vertices. Each point will be connected to the next, and the final point will be connected to the first.
 
@@ -177,3 +177,4 @@ The polygon's list of vertices. Each point will be connected to the next, and th
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

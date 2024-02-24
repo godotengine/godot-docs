@@ -21,7 +21,7 @@ Description
 
 AudioEffectCapture is an AudioEffect which copies all audio frames from the attached audio effect bus into its internal ring buffer.
 
-Application code should consume these audio frames from this ring buffer using :ref:`get_buffer<class_AudioEffectCapture_method_get_buffer>` and process it as needed, for example to capture data from an :ref:`AudioStreamMicrophone<class_AudioStreamMicrophone>`, implement application-defined effects, or to transmit audio over the network. When capturing audio data from a microphone, the format of the samples will be stereo 32-bit floating point PCM.
+Application code should consume these audio frames from this ring buffer using :ref:`get_buffer<class_AudioEffectCapture_method_get_buffer>` and process it as needed, for example to capture data from an :ref:`AudioStreamMicrophone<class_AudioStreamMicrophone>`, implement application-defined effects, or to transmit audio over the network. When capturing audio data from a microphone, the format of the samples will be stereo 32-bit floating-point PCM.
 
 Unlike :ref:`AudioEffectRecord<class_AudioEffectRecord>`, this effect only returns the raw audio samples instead of encoding them into an :ref:`AudioStream<class_AudioStream>`.
 
@@ -52,21 +52,21 @@ Methods
 .. table::
    :widths: auto
 
-   +-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                             | :ref:`can_get_buffer<class_AudioEffectCapture_method_can_get_buffer>` **(** :ref:`int<class_int>` frames **)** |const| |
-   +-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+
-   | void                                                | :ref:`clear_buffer<class_AudioEffectCapture_method_clear_buffer>` **(** **)**                                          |
-   +-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`PackedVector2Array<class_PackedVector2Array>` | :ref:`get_buffer<class_AudioEffectCapture_method_get_buffer>` **(** :ref:`int<class_int>` frames **)**                 |
-   +-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                               | :ref:`get_buffer_length_frames<class_AudioEffectCapture_method_get_buffer_length_frames>` **(** **)** |const|          |
-   +-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                               | :ref:`get_discarded_frames<class_AudioEffectCapture_method_get_discarded_frames>` **(** **)** |const|                  |
-   +-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                               | :ref:`get_frames_available<class_AudioEffectCapture_method_get_frames_available>` **(** **)** |const|                  |
-   +-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                               | :ref:`get_pushed_frames<class_AudioEffectCapture_method_get_pushed_frames>` **(** **)** |const|                        |
-   +-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+
+   +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                             | :ref:`can_get_buffer<class_AudioEffectCapture_method_can_get_buffer>`\ (\ frames\: :ref:`int<class_int>`\ ) |const| |
+   +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------+
+   | |void|                                              | :ref:`clear_buffer<class_AudioEffectCapture_method_clear_buffer>`\ (\ )                                             |
+   +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PackedVector2Array<class_PackedVector2Array>` | :ref:`get_buffer<class_AudioEffectCapture_method_get_buffer>`\ (\ frames\: :ref:`int<class_int>`\ )                 |
+   +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                               | :ref:`get_buffer_length_frames<class_AudioEffectCapture_method_get_buffer_length_frames>`\ (\ ) |const|             |
+   +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                               | :ref:`get_discarded_frames<class_AudioEffectCapture_method_get_discarded_frames>`\ (\ ) |const|                     |
+   +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                               | :ref:`get_frames_available<class_AudioEffectCapture_method_get_frames_available>`\ (\ ) |const|                     |
+   +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                               | :ref:`get_pushed_frames<class_AudioEffectCapture_method_get_pushed_frames>`\ (\ ) |const|                           |
+   +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -85,8 +85,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_buffer_length** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_buffer_length** **(** **)**
+- |void| **set_buffer_length**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_buffer_length**\ (\ )
 
 Length of the internal ring buffer, in seconds. Setting the buffer length will have no effect if already initialized.
 
@@ -103,7 +103,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **can_get_buffer** **(** :ref:`int<class_int>` frames **)** |const|
+:ref:`bool<class_bool>` **can_get_buffer**\ (\ frames\: :ref:`int<class_int>`\ ) |const|
 
 Returns ``true`` if at least ``frames`` audio frames are available to read in the internal ring buffer.
 
@@ -115,9 +115,11 @@ Returns ``true`` if at least ``frames`` audio frames are available to read in th
 
 .. rst-class:: classref-method
 
-void **clear_buffer** **(** **)**
+|void| **clear_buffer**\ (\ )
 
 Clears the internal ring buffer.
+
+\ **Note:** Calling this during a capture can cause the loss of samples which causes popping in the playback.
 
 .. rst-class:: classref-item-separator
 
@@ -127,11 +129,13 @@ Clears the internal ring buffer.
 
 .. rst-class:: classref-method
 
-:ref:`PackedVector2Array<class_PackedVector2Array>` **get_buffer** **(** :ref:`int<class_int>` frames **)**
+:ref:`PackedVector2Array<class_PackedVector2Array>` **get_buffer**\ (\ frames\: :ref:`int<class_int>`\ )
 
 Gets the next ``frames`` audio samples from the internal ring buffer.
 
 Returns a :ref:`PackedVector2Array<class_PackedVector2Array>` containing exactly ``frames`` audio samples if available, or an empty :ref:`PackedVector2Array<class_PackedVector2Array>` if insufficient data was available.
+
+The samples are signed floating-point PCM between ``-1`` and ``1``. You will have to scale them if you want to use them as 8 or 16-bit integer samples. (``v = 0x7fff * samples[0].x``)
 
 .. rst-class:: classref-item-separator
 
@@ -141,7 +145,7 @@ Returns a :ref:`PackedVector2Array<class_PackedVector2Array>` containing exactly
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_buffer_length_frames** **(** **)** |const|
+:ref:`int<class_int>` **get_buffer_length_frames**\ (\ ) |const|
 
 Returns the total size of the internal ring buffer in frames.
 
@@ -153,7 +157,7 @@ Returns the total size of the internal ring buffer in frames.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_discarded_frames** **(** **)** |const|
+:ref:`int<class_int>` **get_discarded_frames**\ (\ ) |const|
 
 Returns the number of audio frames discarded from the audio bus due to full buffer.
 
@@ -165,7 +169,7 @@ Returns the number of audio frames discarded from the audio bus due to full buff
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_frames_available** **(** **)** |const|
+:ref:`int<class_int>` **get_frames_available**\ (\ ) |const|
 
 Returns the number of frames available to read using :ref:`get_buffer<class_AudioEffectCapture_method_get_buffer>`.
 
@@ -177,7 +181,7 @@ Returns the number of frames available to read using :ref:`get_buffer<class_Audi
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_pushed_frames** **(** **)** |const|
+:ref:`int<class_int>` **get_pushed_frames**\ (\ ) |const|
 
 Returns the number of audio frames inserted from the audio bus.
 
@@ -188,3 +192,4 @@ Returns the number of audio frames inserted from the audio bus.
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

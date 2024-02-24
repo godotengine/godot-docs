@@ -51,23 +51,23 @@ Methods
 .. table::
    :widths: auto
 
-   +---------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`NodePath<class_NodePath>` | :ref:`get_joint_one_bone2d_node<class_SkeletonModification2DTwoBoneIK_method_get_joint_one_bone2d_node>` **(** **)** |const|                                     |
-   +---------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`           | :ref:`get_joint_one_bone_idx<class_SkeletonModification2DTwoBoneIK_method_get_joint_one_bone_idx>` **(** **)** |const|                                           |
-   +---------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`NodePath<class_NodePath>` | :ref:`get_joint_two_bone2d_node<class_SkeletonModification2DTwoBoneIK_method_get_joint_two_bone2d_node>` **(** **)** |const|                                     |
-   +---------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`           | :ref:`get_joint_two_bone_idx<class_SkeletonModification2DTwoBoneIK_method_get_joint_two_bone_idx>` **(** **)** |const|                                           |
-   +---------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                            | :ref:`set_joint_one_bone2d_node<class_SkeletonModification2DTwoBoneIK_method_set_joint_one_bone2d_node>` **(** :ref:`NodePath<class_NodePath>` bone2d_node **)** |
-   +---------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                            | :ref:`set_joint_one_bone_idx<class_SkeletonModification2DTwoBoneIK_method_set_joint_one_bone_idx>` **(** :ref:`int<class_int>` bone_idx **)**                    |
-   +---------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                            | :ref:`set_joint_two_bone2d_node<class_SkeletonModification2DTwoBoneIK_method_set_joint_two_bone2d_node>` **(** :ref:`NodePath<class_NodePath>` bone2d_node **)** |
-   +---------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                            | :ref:`set_joint_two_bone_idx<class_SkeletonModification2DTwoBoneIK_method_set_joint_two_bone_idx>` **(** :ref:`int<class_int>` bone_idx **)**                    |
-   +---------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +---------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`NodePath<class_NodePath>` | :ref:`get_joint_one_bone2d_node<class_SkeletonModification2DTwoBoneIK_method_get_joint_one_bone2d_node>`\ (\ ) |const|                                        |
+   +---------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`           | :ref:`get_joint_one_bone_idx<class_SkeletonModification2DTwoBoneIK_method_get_joint_one_bone_idx>`\ (\ ) |const|                                              |
+   +---------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`NodePath<class_NodePath>` | :ref:`get_joint_two_bone2d_node<class_SkeletonModification2DTwoBoneIK_method_get_joint_two_bone2d_node>`\ (\ ) |const|                                        |
+   +---------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`           | :ref:`get_joint_two_bone_idx<class_SkeletonModification2DTwoBoneIK_method_get_joint_two_bone_idx>`\ (\ ) |const|                                              |
+   +---------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                          | :ref:`set_joint_one_bone2d_node<class_SkeletonModification2DTwoBoneIK_method_set_joint_one_bone2d_node>`\ (\ bone2d_node\: :ref:`NodePath<class_NodePath>`\ ) |
+   +---------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                          | :ref:`set_joint_one_bone_idx<class_SkeletonModification2DTwoBoneIK_method_set_joint_one_bone_idx>`\ (\ bone_idx\: :ref:`int<class_int>`\ )                    |
+   +---------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                          | :ref:`set_joint_two_bone2d_node<class_SkeletonModification2DTwoBoneIK_method_set_joint_two_bone2d_node>`\ (\ bone2d_node\: :ref:`NodePath<class_NodePath>`\ ) |
+   +---------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                          | :ref:`set_joint_two_bone_idx<class_SkeletonModification2DTwoBoneIK_method_set_joint_two_bone_idx>`\ (\ bone_idx\: :ref:`int<class_int>`\ )                    |
+   +---------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -86,8 +86,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_flip_bend_direction** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **get_flip_bend_direction** **(** **)**
+- |void| **set_flip_bend_direction**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_flip_bend_direction**\ (\ )
 
 If ``true``, the bones in the modification will blend outward as opposed to inwards when contracting. If ``false``, the bones will bend inwards when contracting.
 
@@ -103,8 +103,8 @@ If ``true``, the bones in the modification will blend outward as opposed to inwa
 
 .. rst-class:: classref-property-setget
 
-- void **set_target_maximum_distance** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_target_maximum_distance** **(** **)**
+- |void| **set_target_maximum_distance**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_target_maximum_distance**\ (\ )
 
 The maximum distance the target can be at. If the target is farther than this distance, the modification will solve as if it's at this maximum distance. When set to ``0``, the modification will solve without distance constraints.
 
@@ -120,8 +120,8 @@ The maximum distance the target can be at. If the target is farther than this di
 
 .. rst-class:: classref-property-setget
 
-- void **set_target_minimum_distance** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_target_minimum_distance** **(** **)**
+- |void| **set_target_minimum_distance**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_target_minimum_distance**\ (\ )
 
 The minimum distance the target can be at. If the target is closer than this distance, the modification will solve as if it's at this minimum distance. When set to ``0``, the modification will solve without distance constraints.
 
@@ -137,8 +137,8 @@ The minimum distance the target can be at. If the target is closer than this dis
 
 .. rst-class:: classref-property-setget
 
-- void **set_target_node** **(** :ref:`NodePath<class_NodePath>` value **)**
-- :ref:`NodePath<class_NodePath>` **get_target_node** **(** **)**
+- |void| **set_target_node**\ (\ value\: :ref:`NodePath<class_NodePath>`\ )
+- :ref:`NodePath<class_NodePath>` **get_target_node**\ (\ )
 
 The NodePath to the node that is the target for the TwoBoneIK modification. This node is what the modification will use when bending the :ref:`Bone2D<class_Bone2D>` nodes.
 
@@ -155,7 +155,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`NodePath<class_NodePath>` **get_joint_one_bone2d_node** **(** **)** |const|
+:ref:`NodePath<class_NodePath>` **get_joint_one_bone2d_node**\ (\ ) |const|
 
 Returns the :ref:`Bone2D<class_Bone2D>` node that is being used as the first bone in the TwoBoneIK modification.
 
@@ -167,7 +167,7 @@ Returns the :ref:`Bone2D<class_Bone2D>` node that is being used as the first bon
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_joint_one_bone_idx** **(** **)** |const|
+:ref:`int<class_int>` **get_joint_one_bone_idx**\ (\ ) |const|
 
 Returns the index of the :ref:`Bone2D<class_Bone2D>` node that is being used as the first bone in the TwoBoneIK modification.
 
@@ -179,7 +179,7 @@ Returns the index of the :ref:`Bone2D<class_Bone2D>` node that is being used as 
 
 .. rst-class:: classref-method
 
-:ref:`NodePath<class_NodePath>` **get_joint_two_bone2d_node** **(** **)** |const|
+:ref:`NodePath<class_NodePath>` **get_joint_two_bone2d_node**\ (\ ) |const|
 
 Returns the :ref:`Bone2D<class_Bone2D>` node that is being used as the second bone in the TwoBoneIK modification.
 
@@ -191,7 +191,7 @@ Returns the :ref:`Bone2D<class_Bone2D>` node that is being used as the second bo
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_joint_two_bone_idx** **(** **)** |const|
+:ref:`int<class_int>` **get_joint_two_bone_idx**\ (\ ) |const|
 
 Returns the index of the :ref:`Bone2D<class_Bone2D>` node that is being used as the second bone in the TwoBoneIK modification.
 
@@ -203,7 +203,7 @@ Returns the index of the :ref:`Bone2D<class_Bone2D>` node that is being used as 
 
 .. rst-class:: classref-method
 
-void **set_joint_one_bone2d_node** **(** :ref:`NodePath<class_NodePath>` bone2d_node **)**
+|void| **set_joint_one_bone2d_node**\ (\ bone2d_node\: :ref:`NodePath<class_NodePath>`\ )
 
 Sets the :ref:`Bone2D<class_Bone2D>` node that is being used as the first bone in the TwoBoneIK modification.
 
@@ -215,7 +215,7 @@ Sets the :ref:`Bone2D<class_Bone2D>` node that is being used as the first bone i
 
 .. rst-class:: classref-method
 
-void **set_joint_one_bone_idx** **(** :ref:`int<class_int>` bone_idx **)**
+|void| **set_joint_one_bone_idx**\ (\ bone_idx\: :ref:`int<class_int>`\ )
 
 Sets the index of the :ref:`Bone2D<class_Bone2D>` node that is being used as the first bone in the TwoBoneIK modification.
 
@@ -227,7 +227,7 @@ Sets the index of the :ref:`Bone2D<class_Bone2D>` node that is being used as the
 
 .. rst-class:: classref-method
 
-void **set_joint_two_bone2d_node** **(** :ref:`NodePath<class_NodePath>` bone2d_node **)**
+|void| **set_joint_two_bone2d_node**\ (\ bone2d_node\: :ref:`NodePath<class_NodePath>`\ )
 
 Sets the :ref:`Bone2D<class_Bone2D>` node that is being used as the second bone in the TwoBoneIK modification.
 
@@ -239,7 +239,7 @@ Sets the :ref:`Bone2D<class_Bone2D>` node that is being used as the second bone 
 
 .. rst-class:: classref-method
 
-void **set_joint_two_bone_idx** **(** :ref:`int<class_int>` bone_idx **)**
+|void| **set_joint_two_bone_idx**\ (\ bone_idx\: :ref:`int<class_int>`\ )
 
 Sets the index of the :ref:`Bone2D<class_Bone2D>` node that is being used as the second bone in the TwoBoneIK modification.
 
@@ -250,3 +250,4 @@ Sets the index of the :ref:`Bone2D<class_Bone2D>` node that is being used as the
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

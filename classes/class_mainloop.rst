@@ -54,6 +54,7 @@ Here is an example script implementing a simple **MainLoop**:
 
     using Godot;
     
+    [GlobalClass]
     public partial class CustomMainLoop : MainLoop
     {
         private double _timeElapsed = 0;
@@ -88,15 +89,15 @@ Methods
 .. table::
    :widths: auto
 
-   +-------------------------+-------------------------------------------------------------------------------------------------------------------------------+
-   | void                    | :ref:`_finalize<class_MainLoop_private_method__finalize>` **(** **)** |virtual|                                               |
-   +-------------------------+-------------------------------------------------------------------------------------------------------------------------------+
-   | void                    | :ref:`_initialize<class_MainLoop_private_method__initialize>` **(** **)** |virtual|                                           |
-   +-------------------------+-------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>` | :ref:`_physics_process<class_MainLoop_private_method__physics_process>` **(** :ref:`float<class_float>` delta **)** |virtual| |
-   +-------------------------+-------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>` | :ref:`_process<class_MainLoop_private_method__process>` **(** :ref:`float<class_float>` delta **)** |virtual|                 |
-   +-------------------------+-------------------------------------------------------------------------------------------------------------------------------+
+   +-------------------------+----------------------------------------------------------------------------------------------------------------------------+
+   | |void|                  | :ref:`_finalize<class_MainLoop_private_method__finalize>`\ (\ ) |virtual|                                                  |
+   +-------------------------+----------------------------------------------------------------------------------------------------------------------------+
+   | |void|                  | :ref:`_initialize<class_MainLoop_private_method__initialize>`\ (\ ) |virtual|                                              |
+   +-------------------------+----------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | :ref:`_physics_process<class_MainLoop_private_method__physics_process>`\ (\ delta\: :ref:`float<class_float>`\ ) |virtual| |
+   +-------------------------+----------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | :ref:`_process<class_MainLoop_private_method__process>`\ (\ delta\: :ref:`float<class_float>`\ ) |virtual|                 |
+   +-------------------------+----------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -111,7 +112,7 @@ Signals
 
 .. rst-class:: classref-signal
 
-**on_request_permissions_result** **(** :ref:`String<class_String>` permission, :ref:`bool<class_bool>` granted **)**
+**on_request_permissions_result**\ (\ permission\: :ref:`String<class_String>`, granted\: :ref:`bool<class_bool>`\ )
 
 Emitted when a user responds to a permission request.
 
@@ -235,7 +236,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-void **_finalize** **(** **)** |virtual|
+|void| **_finalize**\ (\ ) |virtual|
 
 Called before the program exits.
 
@@ -247,7 +248,7 @@ Called before the program exits.
 
 .. rst-class:: classref-method
 
-void **_initialize** **(** **)** |virtual|
+|void| **_initialize**\ (\ ) |virtual|
 
 Called once during initialization.
 
@@ -259,7 +260,7 @@ Called once during initialization.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **_physics_process** **(** :ref:`float<class_float>` delta **)** |virtual|
+:ref:`bool<class_bool>` **_physics_process**\ (\ delta\: :ref:`float<class_float>`\ ) |virtual|
 
 Called each physics frame with the time since the last physics frame as argument (``delta``, in seconds). Equivalent to :ref:`Node._physics_process<class_Node_private_method__physics_process>`.
 
@@ -273,7 +274,7 @@ If implemented, the method must return a boolean value. ``true`` ends the main l
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **_process** **(** :ref:`float<class_float>` delta **)** |virtual|
+:ref:`bool<class_bool>` **_process**\ (\ delta\: :ref:`float<class_float>`\ ) |virtual|
 
 Called each process (idle) frame with the time since the last process frame as argument (in seconds). Equivalent to :ref:`Node._process<class_Node_private_method__process>`.
 
@@ -286,3 +287,4 @@ If implemented, the method must return a boolean value. ``true`` ends the main l
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

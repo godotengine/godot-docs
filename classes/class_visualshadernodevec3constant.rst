@@ -50,8 +50,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_constant** **(** :ref:`Vector3<class_Vector3>` value **)**
-- :ref:`Vector3<class_Vector3>` **get_constant** **(** **)**
+- |void| **set_constant**\ (\ value\: :ref:`Vector3<class_Vector3>`\ )
+- :ref:`Vector3<class_Vector3>` **get_constant**\ (\ )
 
 A :ref:`Vector3<class_Vector3>` constant which represents the state of this node.
 
@@ -62,3 +62,4 @@ A :ref:`Vector3<class_Vector3>` constant which represents the state of this node
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

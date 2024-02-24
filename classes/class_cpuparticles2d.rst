@@ -178,27 +178,27 @@ Methods
 .. table::
    :widths: auto
 
-   +---------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                      | :ref:`convert_from_particles<class_CPUParticles2D_method_convert_from_particles>` **(** :ref:`Node<class_Node>` particles **)**                                                           |
-   +---------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Curve<class_Curve>` | :ref:`get_param_curve<class_CPUParticles2D_method_get_param_curve>` **(** :ref:`Parameter<enum_CPUParticles2D_Parameter>` param **)** |const|                                             |
-   +---------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`float<class_float>` | :ref:`get_param_max<class_CPUParticles2D_method_get_param_max>` **(** :ref:`Parameter<enum_CPUParticles2D_Parameter>` param **)** |const|                                                 |
-   +---------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`float<class_float>` | :ref:`get_param_min<class_CPUParticles2D_method_get_param_min>` **(** :ref:`Parameter<enum_CPUParticles2D_Parameter>` param **)** |const|                                                 |
-   +---------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`   | :ref:`get_particle_flag<class_CPUParticles2D_method_get_particle_flag>` **(** :ref:`ParticleFlags<enum_CPUParticles2D_ParticleFlags>` particle_flag **)** |const|                         |
-   +---------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                      | :ref:`restart<class_CPUParticles2D_method_restart>` **(** **)**                                                                                                                           |
-   +---------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                      | :ref:`set_param_curve<class_CPUParticles2D_method_set_param_curve>` **(** :ref:`Parameter<enum_CPUParticles2D_Parameter>` param, :ref:`Curve<class_Curve>` curve **)**                    |
-   +---------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                      | :ref:`set_param_max<class_CPUParticles2D_method_set_param_max>` **(** :ref:`Parameter<enum_CPUParticles2D_Parameter>` param, :ref:`float<class_float>` value **)**                        |
-   +---------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                      | :ref:`set_param_min<class_CPUParticles2D_method_set_param_min>` **(** :ref:`Parameter<enum_CPUParticles2D_Parameter>` param, :ref:`float<class_float>` value **)**                        |
-   +---------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                      | :ref:`set_particle_flag<class_CPUParticles2D_method_set_particle_flag>` **(** :ref:`ParticleFlags<enum_CPUParticles2D_ParticleFlags>` particle_flag, :ref:`bool<class_bool>` enable **)** |
-   +---------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                    | :ref:`convert_from_particles<class_CPUParticles2D_method_convert_from_particles>`\ (\ particles\: :ref:`Node<class_Node>`\ )                                                             |
+   +---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Curve<class_Curve>` | :ref:`get_param_curve<class_CPUParticles2D_method_get_param_curve>`\ (\ param\: :ref:`Parameter<enum_CPUParticles2D_Parameter>`\ ) |const|                                               |
+   +---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>` | :ref:`get_param_max<class_CPUParticles2D_method_get_param_max>`\ (\ param\: :ref:`Parameter<enum_CPUParticles2D_Parameter>`\ ) |const|                                                   |
+   +---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>` | :ref:`get_param_min<class_CPUParticles2D_method_get_param_min>`\ (\ param\: :ref:`Parameter<enum_CPUParticles2D_Parameter>`\ ) |const|                                                   |
+   +---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`   | :ref:`get_particle_flag<class_CPUParticles2D_method_get_particle_flag>`\ (\ particle_flag\: :ref:`ParticleFlags<enum_CPUParticles2D_ParticleFlags>`\ ) |const|                           |
+   +---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                    | :ref:`restart<class_CPUParticles2D_method_restart>`\ (\ )                                                                                                                                |
+   +---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                    | :ref:`set_param_curve<class_CPUParticles2D_method_set_param_curve>`\ (\ param\: :ref:`Parameter<enum_CPUParticles2D_Parameter>`, curve\: :ref:`Curve<class_Curve>`\ )                    |
+   +---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                    | :ref:`set_param_max<class_CPUParticles2D_method_set_param_max>`\ (\ param\: :ref:`Parameter<enum_CPUParticles2D_Parameter>`, value\: :ref:`float<class_float>`\ )                        |
+   +---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                    | :ref:`set_param_min<class_CPUParticles2D_method_set_param_min>`\ (\ param\: :ref:`Parameter<enum_CPUParticles2D_Parameter>`, value\: :ref:`float<class_float>`\ )                        |
+   +---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                    | :ref:`set_particle_flag<class_CPUParticles2D_method_set_particle_flag>`\ (\ particle_flag\: :ref:`ParticleFlags<enum_CPUParticles2D_ParticleFlags>`, enable\: :ref:`bool<class_bool>`\ ) |
+   +---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -213,7 +213,7 @@ Signals
 
 .. rst-class:: classref-signal
 
-**finished** **(** **)**
+**finished**\ (\ )
 
 Emitted when all active particles have finished processing. When :ref:`one_shot<class_CPUParticles2D_property_one_shot>` is disabled, particles will process continuously, so this is never emitted.
 
@@ -487,8 +487,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_amount** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_amount** **(** **)**
+- |void| **set_amount**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_amount**\ (\ )
 
 Number of particles emitted in one emission cycle.
 
@@ -504,8 +504,8 @@ Number of particles emitted in one emission cycle.
 
 .. rst-class:: classref-property-setget
 
-- void **set_param_curve** **(** :ref:`Parameter<enum_CPUParticles2D_Parameter>` param, :ref:`Curve<class_Curve>` curve **)**
-- :ref:`Curve<class_Curve>` **get_param_curve** **(** :ref:`Parameter<enum_CPUParticles2D_Parameter>` param **)** |const|
+- |void| **set_param_curve**\ (\ param\: :ref:`Parameter<enum_CPUParticles2D_Parameter>`, curve\: :ref:`Curve<class_Curve>`\ )
+- :ref:`Curve<class_Curve>` **get_param_curve**\ (\ param\: :ref:`Parameter<enum_CPUParticles2D_Parameter>`\ ) |const|
 
 Each particle's rotation will be animated along this :ref:`Curve<class_Curve>`.
 
@@ -521,8 +521,8 @@ Each particle's rotation will be animated along this :ref:`Curve<class_Curve>`.
 
 .. rst-class:: classref-property-setget
 
-- void **set_param_max** **(** :ref:`Parameter<enum_CPUParticles2D_Parameter>` param, :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_param_max** **(** :ref:`Parameter<enum_CPUParticles2D_Parameter>` param **)** |const|
+- |void| **set_param_max**\ (\ param\: :ref:`Parameter<enum_CPUParticles2D_Parameter>`, value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_param_max**\ (\ param\: :ref:`Parameter<enum_CPUParticles2D_Parameter>`\ ) |const|
 
 Maximum initial rotation applied to each particle, in degrees.
 
@@ -538,8 +538,8 @@ Maximum initial rotation applied to each particle, in degrees.
 
 .. rst-class:: classref-property-setget
 
-- void **set_param_min** **(** :ref:`Parameter<enum_CPUParticles2D_Parameter>` param, :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_param_min** **(** :ref:`Parameter<enum_CPUParticles2D_Parameter>` param **)** |const|
+- |void| **set_param_min**\ (\ param\: :ref:`Parameter<enum_CPUParticles2D_Parameter>`, value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_param_min**\ (\ param\: :ref:`Parameter<enum_CPUParticles2D_Parameter>`\ ) |const|
 
 Minimum equivalent of :ref:`angle_max<class_CPUParticles2D_property_angle_max>`.
 
@@ -555,8 +555,8 @@ Minimum equivalent of :ref:`angle_max<class_CPUParticles2D_property_angle_max>`.
 
 .. rst-class:: classref-property-setget
 
-- void **set_param_curve** **(** :ref:`Parameter<enum_CPUParticles2D_Parameter>` param, :ref:`Curve<class_Curve>` curve **)**
-- :ref:`Curve<class_Curve>` **get_param_curve** **(** :ref:`Parameter<enum_CPUParticles2D_Parameter>` param **)** |const|
+- |void| **set_param_curve**\ (\ param\: :ref:`Parameter<enum_CPUParticles2D_Parameter>`, curve\: :ref:`Curve<class_Curve>`\ )
+- :ref:`Curve<class_Curve>` **get_param_curve**\ (\ param\: :ref:`Parameter<enum_CPUParticles2D_Parameter>`\ ) |const|
 
 Each particle's angular velocity will vary along this :ref:`Curve<class_Curve>`.
 
@@ -572,8 +572,8 @@ Each particle's angular velocity will vary along this :ref:`Curve<class_Curve>`.
 
 .. rst-class:: classref-property-setget
 
-- void **set_param_max** **(** :ref:`Parameter<enum_CPUParticles2D_Parameter>` param, :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_param_max** **(** :ref:`Parameter<enum_CPUParticles2D_Parameter>` param **)** |const|
+- |void| **set_param_max**\ (\ param\: :ref:`Parameter<enum_CPUParticles2D_Parameter>`, value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_param_max**\ (\ param\: :ref:`Parameter<enum_CPUParticles2D_Parameter>`\ ) |const|
 
 Maximum initial angular velocity (rotation speed) applied to each particle in *degrees* per second.
 
@@ -589,8 +589,8 @@ Maximum initial angular velocity (rotation speed) applied to each particle in *d
 
 .. rst-class:: classref-property-setget
 
-- void **set_param_min** **(** :ref:`Parameter<enum_CPUParticles2D_Parameter>` param, :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_param_min** **(** :ref:`Parameter<enum_CPUParticles2D_Parameter>` param **)** |const|
+- |void| **set_param_min**\ (\ param\: :ref:`Parameter<enum_CPUParticles2D_Parameter>`, value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_param_min**\ (\ param\: :ref:`Parameter<enum_CPUParticles2D_Parameter>`\ ) |const|
 
 Minimum equivalent of :ref:`angular_velocity_max<class_CPUParticles2D_property_angular_velocity_max>`.
 
@@ -606,8 +606,8 @@ Minimum equivalent of :ref:`angular_velocity_max<class_CPUParticles2D_property_a
 
 .. rst-class:: classref-property-setget
 
-- void **set_param_curve** **(** :ref:`Parameter<enum_CPUParticles2D_Parameter>` param, :ref:`Curve<class_Curve>` curve **)**
-- :ref:`Curve<class_Curve>` **get_param_curve** **(** :ref:`Parameter<enum_CPUParticles2D_Parameter>` param **)** |const|
+- |void| **set_param_curve**\ (\ param\: :ref:`Parameter<enum_CPUParticles2D_Parameter>`, curve\: :ref:`Curve<class_Curve>`\ )
+- :ref:`Curve<class_Curve>` **get_param_curve**\ (\ param\: :ref:`Parameter<enum_CPUParticles2D_Parameter>`\ ) |const|
 
 Each particle's animation offset will vary along this :ref:`Curve<class_Curve>`.
 
@@ -623,8 +623,8 @@ Each particle's animation offset will vary along this :ref:`Curve<class_Curve>`.
 
 .. rst-class:: classref-property-setget
 
-- void **set_param_max** **(** :ref:`Parameter<enum_CPUParticles2D_Parameter>` param, :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_param_max** **(** :ref:`Parameter<enum_CPUParticles2D_Parameter>` param **)** |const|
+- |void| **set_param_max**\ (\ param\: :ref:`Parameter<enum_CPUParticles2D_Parameter>`, value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_param_max**\ (\ param\: :ref:`Parameter<enum_CPUParticles2D_Parameter>`\ ) |const|
 
 Maximum animation offset that corresponds to frame index in the texture. ``0`` is the first frame, ``1`` is the last one. See :ref:`CanvasItemMaterial.particles_animation<class_CanvasItemMaterial_property_particles_animation>`.
 
@@ -640,8 +640,8 @@ Maximum animation offset that corresponds to frame index in the texture. ``0`` i
 
 .. rst-class:: classref-property-setget
 
-- void **set_param_min** **(** :ref:`Parameter<enum_CPUParticles2D_Parameter>` param, :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_param_min** **(** :ref:`Parameter<enum_CPUParticles2D_Parameter>` param **)** |const|
+- |void| **set_param_min**\ (\ param\: :ref:`Parameter<enum_CPUParticles2D_Parameter>`, value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_param_min**\ (\ param\: :ref:`Parameter<enum_CPUParticles2D_Parameter>`\ ) |const|
 
 Minimum equivalent of :ref:`anim_offset_max<class_CPUParticles2D_property_anim_offset_max>`.
 
@@ -657,8 +657,8 @@ Minimum equivalent of :ref:`anim_offset_max<class_CPUParticles2D_property_anim_o
 
 .. rst-class:: classref-property-setget
 
-- void **set_param_curve** **(** :ref:`Parameter<enum_CPUParticles2D_Parameter>` param, :ref:`Curve<class_Curve>` curve **)**
-- :ref:`Curve<class_Curve>` **get_param_curve** **(** :ref:`Parameter<enum_CPUParticles2D_Parameter>` param **)** |const|
+- |void| **set_param_curve**\ (\ param\: :ref:`Parameter<enum_CPUParticles2D_Parameter>`, curve\: :ref:`Curve<class_Curve>`\ )
+- :ref:`Curve<class_Curve>` **get_param_curve**\ (\ param\: :ref:`Parameter<enum_CPUParticles2D_Parameter>`\ ) |const|
 
 Each particle's animation speed will vary along this :ref:`Curve<class_Curve>`.
 
@@ -674,8 +674,8 @@ Each particle's animation speed will vary along this :ref:`Curve<class_Curve>`.
 
 .. rst-class:: classref-property-setget
 
-- void **set_param_max** **(** :ref:`Parameter<enum_CPUParticles2D_Parameter>` param, :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_param_max** **(** :ref:`Parameter<enum_CPUParticles2D_Parameter>` param **)** |const|
+- |void| **set_param_max**\ (\ param\: :ref:`Parameter<enum_CPUParticles2D_Parameter>`, value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_param_max**\ (\ param\: :ref:`Parameter<enum_CPUParticles2D_Parameter>`\ ) |const|
 
 Maximum particle animation speed. Animation speed of ``1`` means that the particles will make full ``0`` to ``1`` offset cycle during lifetime, ``2`` means ``2`` cycles etc.
 
@@ -693,8 +693,8 @@ With animation speed greater than ``1``, remember to enable :ref:`CanvasItemMate
 
 .. rst-class:: classref-property-setget
 
-- void **set_param_min** **(** :ref:`Parameter<enum_CPUParticles2D_Parameter>` param, :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_param_min** **(** :ref:`Parameter<enum_CPUParticles2D_Parameter>` param **)** |const|
+- |void| **set_param_min**\ (\ param\: :ref:`Parameter<enum_CPUParticles2D_Parameter>`, value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_param_min**\ (\ param\: :ref:`Parameter<enum_CPUParticles2D_Parameter>`\ ) |const|
 
 Minimum equivalent of :ref:`anim_speed_max<class_CPUParticles2D_property_anim_speed_max>`.
 
@@ -710,8 +710,8 @@ Minimum equivalent of :ref:`anim_speed_max<class_CPUParticles2D_property_anim_sp
 
 .. rst-class:: classref-property-setget
 
-- void **set_color** **(** :ref:`Color<class_Color>` value **)**
-- :ref:`Color<class_Color>` **get_color** **(** **)**
+- |void| **set_color**\ (\ value\: :ref:`Color<class_Color>`\ )
+- :ref:`Color<class_Color>` **get_color**\ (\ )
 
 Each particle's initial color. If :ref:`texture<class_CPUParticles2D_property_texture>` is defined, it will be multiplied by this color.
 
@@ -727,8 +727,8 @@ Each particle's initial color. If :ref:`texture<class_CPUParticles2D_property_te
 
 .. rst-class:: classref-property-setget
 
-- void **set_color_initial_ramp** **(** :ref:`Gradient<class_Gradient>` value **)**
-- :ref:`Gradient<class_Gradient>` **get_color_initial_ramp** **(** **)**
+- |void| **set_color_initial_ramp**\ (\ value\: :ref:`Gradient<class_Gradient>`\ )
+- :ref:`Gradient<class_Gradient>` **get_color_initial_ramp**\ (\ )
 
 Each particle's initial color will vary along this :ref:`GradientTexture1D<class_GradientTexture1D>` (multiplied with :ref:`color<class_CPUParticles2D_property_color>`).
 
@@ -744,8 +744,8 @@ Each particle's initial color will vary along this :ref:`GradientTexture1D<class
 
 .. rst-class:: classref-property-setget
 
-- void **set_color_ramp** **(** :ref:`Gradient<class_Gradient>` value **)**
-- :ref:`Gradient<class_Gradient>` **get_color_ramp** **(** **)**
+- |void| **set_color_ramp**\ (\ value\: :ref:`Gradient<class_Gradient>`\ )
+- :ref:`Gradient<class_Gradient>` **get_color_ramp**\ (\ )
 
 Each particle's color will vary along this :ref:`Gradient<class_Gradient>` (multiplied with :ref:`color<class_CPUParticles2D_property_color>`).
 
@@ -761,8 +761,8 @@ Each particle's color will vary along this :ref:`Gradient<class_Gradient>` (mult
 
 .. rst-class:: classref-property-setget
 
-- void **set_param_curve** **(** :ref:`Parameter<enum_CPUParticles2D_Parameter>` param, :ref:`Curve<class_Curve>` curve **)**
-- :ref:`Curve<class_Curve>` **get_param_curve** **(** :ref:`Parameter<enum_CPUParticles2D_Parameter>` param **)** |const|
+- |void| **set_param_curve**\ (\ param\: :ref:`Parameter<enum_CPUParticles2D_Parameter>`, curve\: :ref:`Curve<class_Curve>`\ )
+- :ref:`Curve<class_Curve>` **get_param_curve**\ (\ param\: :ref:`Parameter<enum_CPUParticles2D_Parameter>`\ ) |const|
 
 Damping will vary along this :ref:`Curve<class_Curve>`.
 
@@ -778,8 +778,8 @@ Damping will vary along this :ref:`Curve<class_Curve>`.
 
 .. rst-class:: classref-property-setget
 
-- void **set_param_max** **(** :ref:`Parameter<enum_CPUParticles2D_Parameter>` param, :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_param_max** **(** :ref:`Parameter<enum_CPUParticles2D_Parameter>` param **)** |const|
+- |void| **set_param_max**\ (\ param\: :ref:`Parameter<enum_CPUParticles2D_Parameter>`, value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_param_max**\ (\ param\: :ref:`Parameter<enum_CPUParticles2D_Parameter>`\ ) |const|
 
 The maximum rate at which particles lose velocity. For example value of ``100`` means that the particle will go from ``100`` velocity to ``0`` in ``1`` second.
 
@@ -795,8 +795,8 @@ The maximum rate at which particles lose velocity. For example value of ``100`` 
 
 .. rst-class:: classref-property-setget
 
-- void **set_param_min** **(** :ref:`Parameter<enum_CPUParticles2D_Parameter>` param, :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_param_min** **(** :ref:`Parameter<enum_CPUParticles2D_Parameter>` param **)** |const|
+- |void| **set_param_min**\ (\ param\: :ref:`Parameter<enum_CPUParticles2D_Parameter>`, value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_param_min**\ (\ param\: :ref:`Parameter<enum_CPUParticles2D_Parameter>`\ ) |const|
 
 Minimum equivalent of :ref:`damping_max<class_CPUParticles2D_property_damping_max>`.
 
@@ -812,8 +812,8 @@ Minimum equivalent of :ref:`damping_max<class_CPUParticles2D_property_damping_ma
 
 .. rst-class:: classref-property-setget
 
-- void **set_direction** **(** :ref:`Vector2<class_Vector2>` value **)**
-- :ref:`Vector2<class_Vector2>` **get_direction** **(** **)**
+- |void| **set_direction**\ (\ value\: :ref:`Vector2<class_Vector2>`\ )
+- :ref:`Vector2<class_Vector2>` **get_direction**\ (\ )
 
 Unit vector specifying the particles' emission direction.
 
@@ -829,8 +829,8 @@ Unit vector specifying the particles' emission direction.
 
 .. rst-class:: classref-property-setget
 
-- void **set_draw_order** **(** :ref:`DrawOrder<enum_CPUParticles2D_DrawOrder>` value **)**
-- :ref:`DrawOrder<enum_CPUParticles2D_DrawOrder>` **get_draw_order** **(** **)**
+- |void| **set_draw_order**\ (\ value\: :ref:`DrawOrder<enum_CPUParticles2D_DrawOrder>`\ )
+- :ref:`DrawOrder<enum_CPUParticles2D_DrawOrder>` **get_draw_order**\ (\ )
 
 Particle draw order. Uses :ref:`DrawOrder<enum_CPUParticles2D_DrawOrder>` values.
 
@@ -846,8 +846,8 @@ Particle draw order. Uses :ref:`DrawOrder<enum_CPUParticles2D_DrawOrder>` values
 
 .. rst-class:: classref-property-setget
 
-- void **set_emission_colors** **(** :ref:`PackedColorArray<class_PackedColorArray>` value **)**
-- :ref:`PackedColorArray<class_PackedColorArray>` **get_emission_colors** **(** **)**
+- |void| **set_emission_colors**\ (\ value\: :ref:`PackedColorArray<class_PackedColorArray>`\ )
+- :ref:`PackedColorArray<class_PackedColorArray>` **get_emission_colors**\ (\ )
 
 Sets the :ref:`Color<class_Color>`\ s to modulate particles by when using :ref:`EMISSION_SHAPE_POINTS<class_CPUParticles2D_constant_EMISSION_SHAPE_POINTS>` or :ref:`EMISSION_SHAPE_DIRECTED_POINTS<class_CPUParticles2D_constant_EMISSION_SHAPE_DIRECTED_POINTS>`.
 
@@ -863,8 +863,8 @@ Sets the :ref:`Color<class_Color>`\ s to modulate particles by when using :ref:`
 
 .. rst-class:: classref-property-setget
 
-- void **set_emission_normals** **(** :ref:`PackedVector2Array<class_PackedVector2Array>` value **)**
-- :ref:`PackedVector2Array<class_PackedVector2Array>` **get_emission_normals** **(** **)**
+- |void| **set_emission_normals**\ (\ value\: :ref:`PackedVector2Array<class_PackedVector2Array>`\ )
+- :ref:`PackedVector2Array<class_PackedVector2Array>` **get_emission_normals**\ (\ )
 
 Sets the direction the particles will be emitted in when using :ref:`EMISSION_SHAPE_DIRECTED_POINTS<class_CPUParticles2D_constant_EMISSION_SHAPE_DIRECTED_POINTS>`.
 
@@ -880,8 +880,8 @@ Sets the direction the particles will be emitted in when using :ref:`EMISSION_SH
 
 .. rst-class:: classref-property-setget
 
-- void **set_emission_points** **(** :ref:`PackedVector2Array<class_PackedVector2Array>` value **)**
-- :ref:`PackedVector2Array<class_PackedVector2Array>` **get_emission_points** **(** **)**
+- |void| **set_emission_points**\ (\ value\: :ref:`PackedVector2Array<class_PackedVector2Array>`\ )
+- :ref:`PackedVector2Array<class_PackedVector2Array>` **get_emission_points**\ (\ )
 
 Sets the initial positions to spawn particles when using :ref:`EMISSION_SHAPE_POINTS<class_CPUParticles2D_constant_EMISSION_SHAPE_POINTS>` or :ref:`EMISSION_SHAPE_DIRECTED_POINTS<class_CPUParticles2D_constant_EMISSION_SHAPE_DIRECTED_POINTS>`.
 
@@ -897,8 +897,8 @@ Sets the initial positions to spawn particles when using :ref:`EMISSION_SHAPE_PO
 
 .. rst-class:: classref-property-setget
 
-- void **set_emission_rect_extents** **(** :ref:`Vector2<class_Vector2>` value **)**
-- :ref:`Vector2<class_Vector2>` **get_emission_rect_extents** **(** **)**
+- |void| **set_emission_rect_extents**\ (\ value\: :ref:`Vector2<class_Vector2>`\ )
+- :ref:`Vector2<class_Vector2>` **get_emission_rect_extents**\ (\ )
 
 The rectangle's extents if :ref:`emission_shape<class_CPUParticles2D_property_emission_shape>` is set to :ref:`EMISSION_SHAPE_RECTANGLE<class_CPUParticles2D_constant_EMISSION_SHAPE_RECTANGLE>`.
 
@@ -914,8 +914,8 @@ The rectangle's extents if :ref:`emission_shape<class_CPUParticles2D_property_em
 
 .. rst-class:: classref-property-setget
 
-- void **set_emission_shape** **(** :ref:`EmissionShape<enum_CPUParticles2D_EmissionShape>` value **)**
-- :ref:`EmissionShape<enum_CPUParticles2D_EmissionShape>` **get_emission_shape** **(** **)**
+- |void| **set_emission_shape**\ (\ value\: :ref:`EmissionShape<enum_CPUParticles2D_EmissionShape>`\ )
+- :ref:`EmissionShape<enum_CPUParticles2D_EmissionShape>` **get_emission_shape**\ (\ )
 
 Particles will be emitted inside this region. See :ref:`EmissionShape<enum_CPUParticles2D_EmissionShape>` for possible values.
 
@@ -931,8 +931,8 @@ Particles will be emitted inside this region. See :ref:`EmissionShape<enum_CPUPa
 
 .. rst-class:: classref-property-setget
 
-- void **set_emission_sphere_radius** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_emission_sphere_radius** **(** **)**
+- |void| **set_emission_sphere_radius**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_emission_sphere_radius**\ (\ )
 
 The sphere's radius if :ref:`emission_shape<class_CPUParticles2D_property_emission_shape>` is set to :ref:`EMISSION_SHAPE_SPHERE<class_CPUParticles2D_constant_EMISSION_SHAPE_SPHERE>`.
 
@@ -948,8 +948,8 @@ The sphere's radius if :ref:`emission_shape<class_CPUParticles2D_property_emissi
 
 .. rst-class:: classref-property-setget
 
-- void **set_emitting** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_emitting** **(** **)**
+- |void| **set_emitting**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_emitting**\ (\ )
 
 If ``true``, particles are being emitted. :ref:`emitting<class_CPUParticles2D_property_emitting>` can be used to start and stop particles from emitting. However, if :ref:`one_shot<class_CPUParticles2D_property_one_shot>` is ``true`` setting :ref:`emitting<class_CPUParticles2D_property_emitting>` to ``true`` will not restart the emission cycle until after all active particles finish processing. You can use the :ref:`finished<class_CPUParticles2D_signal_finished>` signal to be notified once all active particles finish processing.
 
@@ -965,8 +965,8 @@ If ``true``, particles are being emitted. :ref:`emitting<class_CPUParticles2D_pr
 
 .. rst-class:: classref-property-setget
 
-- void **set_explosiveness_ratio** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_explosiveness_ratio** **(** **)**
+- |void| **set_explosiveness_ratio**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_explosiveness_ratio**\ (\ )
 
 How rapidly particles in an emission cycle are emitted. If greater than ``0``, there will be a gap in emissions before the next cycle begins.
 
@@ -982,8 +982,8 @@ How rapidly particles in an emission cycle are emitted. If greater than ``0``, t
 
 .. rst-class:: classref-property-setget
 
-- void **set_fixed_fps** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_fixed_fps** **(** **)**
+- |void| **set_fixed_fps**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_fixed_fps**\ (\ )
 
 The particle system's frame rate is fixed to a value. For example, changing the value to 2 will make the particles render at 2 frames per second. Note this does not slow down the simulation of the particle system itself.
 
@@ -999,8 +999,8 @@ The particle system's frame rate is fixed to a value. For example, changing the 
 
 .. rst-class:: classref-property-setget
 
-- void **set_fractional_delta** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **get_fractional_delta** **(** **)**
+- |void| **set_fractional_delta**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_fractional_delta**\ (\ )
 
 If ``true``, results in fractional delta calculation which has a smoother particles display effect.
 
@@ -1016,8 +1016,8 @@ If ``true``, results in fractional delta calculation which has a smoother partic
 
 .. rst-class:: classref-property-setget
 
-- void **set_gravity** **(** :ref:`Vector2<class_Vector2>` value **)**
-- :ref:`Vector2<class_Vector2>` **get_gravity** **(** **)**
+- |void| **set_gravity**\ (\ value\: :ref:`Vector2<class_Vector2>`\ )
+- :ref:`Vector2<class_Vector2>` **get_gravity**\ (\ )
 
 Gravity applied to every particle.
 
@@ -1033,8 +1033,8 @@ Gravity applied to every particle.
 
 .. rst-class:: classref-property-setget
 
-- void **set_param_curve** **(** :ref:`Parameter<enum_CPUParticles2D_Parameter>` param, :ref:`Curve<class_Curve>` curve **)**
-- :ref:`Curve<class_Curve>` **get_param_curve** **(** :ref:`Parameter<enum_CPUParticles2D_Parameter>` param **)** |const|
+- |void| **set_param_curve**\ (\ param\: :ref:`Parameter<enum_CPUParticles2D_Parameter>`, curve\: :ref:`Curve<class_Curve>`\ )
+- :ref:`Curve<class_Curve>` **get_param_curve**\ (\ param\: :ref:`Parameter<enum_CPUParticles2D_Parameter>`\ ) |const|
 
 Each particle's hue will vary along this :ref:`Curve<class_Curve>`.
 
@@ -1050,8 +1050,8 @@ Each particle's hue will vary along this :ref:`Curve<class_Curve>`.
 
 .. rst-class:: classref-property-setget
 
-- void **set_param_max** **(** :ref:`Parameter<enum_CPUParticles2D_Parameter>` param, :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_param_max** **(** :ref:`Parameter<enum_CPUParticles2D_Parameter>` param **)** |const|
+- |void| **set_param_max**\ (\ param\: :ref:`Parameter<enum_CPUParticles2D_Parameter>`, value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_param_max**\ (\ param\: :ref:`Parameter<enum_CPUParticles2D_Parameter>`\ ) |const|
 
 Maximum initial hue variation applied to each particle. It will shift the particle color's hue.
 
@@ -1067,8 +1067,8 @@ Maximum initial hue variation applied to each particle. It will shift the partic
 
 .. rst-class:: classref-property-setget
 
-- void **set_param_min** **(** :ref:`Parameter<enum_CPUParticles2D_Parameter>` param, :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_param_min** **(** :ref:`Parameter<enum_CPUParticles2D_Parameter>` param **)** |const|
+- |void| **set_param_min**\ (\ param\: :ref:`Parameter<enum_CPUParticles2D_Parameter>`, value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_param_min**\ (\ param\: :ref:`Parameter<enum_CPUParticles2D_Parameter>`\ ) |const|
 
 Minimum equivalent of :ref:`hue_variation_max<class_CPUParticles2D_property_hue_variation_max>`.
 
@@ -1084,8 +1084,8 @@ Minimum equivalent of :ref:`hue_variation_max<class_CPUParticles2D_property_hue_
 
 .. rst-class:: classref-property-setget
 
-- void **set_param_max** **(** :ref:`Parameter<enum_CPUParticles2D_Parameter>` param, :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_param_max** **(** :ref:`Parameter<enum_CPUParticles2D_Parameter>` param **)** |const|
+- |void| **set_param_max**\ (\ param\: :ref:`Parameter<enum_CPUParticles2D_Parameter>`, value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_param_max**\ (\ param\: :ref:`Parameter<enum_CPUParticles2D_Parameter>`\ ) |const|
 
 Maximum initial velocity magnitude for each particle. Direction comes from :ref:`direction<class_CPUParticles2D_property_direction>` and :ref:`spread<class_CPUParticles2D_property_spread>`.
 
@@ -1101,8 +1101,8 @@ Maximum initial velocity magnitude for each particle. Direction comes from :ref:
 
 .. rst-class:: classref-property-setget
 
-- void **set_param_min** **(** :ref:`Parameter<enum_CPUParticles2D_Parameter>` param, :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_param_min** **(** :ref:`Parameter<enum_CPUParticles2D_Parameter>` param **)** |const|
+- |void| **set_param_min**\ (\ param\: :ref:`Parameter<enum_CPUParticles2D_Parameter>`, value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_param_min**\ (\ param\: :ref:`Parameter<enum_CPUParticles2D_Parameter>`\ ) |const|
 
 Minimum equivalent of :ref:`initial_velocity_max<class_CPUParticles2D_property_initial_velocity_max>`.
 
@@ -1118,8 +1118,8 @@ Minimum equivalent of :ref:`initial_velocity_max<class_CPUParticles2D_property_i
 
 .. rst-class:: classref-property-setget
 
-- void **set_lifetime** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_lifetime** **(** **)**
+- |void| **set_lifetime**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_lifetime**\ (\ )
 
 Amount of time each particle will exist.
 
@@ -1135,8 +1135,8 @@ Amount of time each particle will exist.
 
 .. rst-class:: classref-property-setget
 
-- void **set_lifetime_randomness** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_lifetime_randomness** **(** **)**
+- |void| **set_lifetime_randomness**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_lifetime_randomness**\ (\ )
 
 Particle lifetime randomness ratio.
 
@@ -1152,8 +1152,8 @@ Particle lifetime randomness ratio.
 
 .. rst-class:: classref-property-setget
 
-- void **set_param_curve** **(** :ref:`Parameter<enum_CPUParticles2D_Parameter>` param, :ref:`Curve<class_Curve>` curve **)**
-- :ref:`Curve<class_Curve>` **get_param_curve** **(** :ref:`Parameter<enum_CPUParticles2D_Parameter>` param **)** |const|
+- |void| **set_param_curve**\ (\ param\: :ref:`Parameter<enum_CPUParticles2D_Parameter>`, curve\: :ref:`Curve<class_Curve>`\ )
+- :ref:`Curve<class_Curve>` **get_param_curve**\ (\ param\: :ref:`Parameter<enum_CPUParticles2D_Parameter>`\ ) |const|
 
 Each particle's linear acceleration will vary along this :ref:`Curve<class_Curve>`.
 
@@ -1169,8 +1169,8 @@ Each particle's linear acceleration will vary along this :ref:`Curve<class_Curve
 
 .. rst-class:: classref-property-setget
 
-- void **set_param_max** **(** :ref:`Parameter<enum_CPUParticles2D_Parameter>` param, :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_param_max** **(** :ref:`Parameter<enum_CPUParticles2D_Parameter>` param **)** |const|
+- |void| **set_param_max**\ (\ param\: :ref:`Parameter<enum_CPUParticles2D_Parameter>`, value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_param_max**\ (\ param\: :ref:`Parameter<enum_CPUParticles2D_Parameter>`\ ) |const|
 
 Maximum linear acceleration applied to each particle in the direction of motion.
 
@@ -1186,8 +1186,8 @@ Maximum linear acceleration applied to each particle in the direction of motion.
 
 .. rst-class:: classref-property-setget
 
-- void **set_param_min** **(** :ref:`Parameter<enum_CPUParticles2D_Parameter>` param, :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_param_min** **(** :ref:`Parameter<enum_CPUParticles2D_Parameter>` param **)** |const|
+- |void| **set_param_min**\ (\ param\: :ref:`Parameter<enum_CPUParticles2D_Parameter>`, value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_param_min**\ (\ param\: :ref:`Parameter<enum_CPUParticles2D_Parameter>`\ ) |const|
 
 Minimum equivalent of :ref:`linear_accel_max<class_CPUParticles2D_property_linear_accel_max>`.
 
@@ -1203,8 +1203,8 @@ Minimum equivalent of :ref:`linear_accel_max<class_CPUParticles2D_property_linea
 
 .. rst-class:: classref-property-setget
 
-- void **set_use_local_coordinates** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **get_use_local_coordinates** **(** **)**
+- |void| **set_use_local_coordinates**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_use_local_coordinates**\ (\ )
 
 If ``true``, particles use the parent node's coordinate space (known as local coordinates). This will cause particles to move and rotate along the **CPUParticles2D** node (and its parents) when it is moved or rotated. If ``false``, particles use global coordinates; they will not move or rotate along the **CPUParticles2D** node (and its parents) when it is moved or rotated.
 
@@ -1220,8 +1220,8 @@ If ``true``, particles use the parent node's coordinate space (known as local co
 
 .. rst-class:: classref-property-setget
 
-- void **set_one_shot** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **get_one_shot** **(** **)**
+- |void| **set_one_shot**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_one_shot**\ (\ )
 
 If ``true``, only one emission cycle occurs. If set ``true`` during a cycle, emission will stop at the cycle's end.
 
@@ -1237,8 +1237,8 @@ If ``true``, only one emission cycle occurs. If set ``true`` during a cycle, emi
 
 .. rst-class:: classref-property-setget
 
-- void **set_param_curve** **(** :ref:`Parameter<enum_CPUParticles2D_Parameter>` param, :ref:`Curve<class_Curve>` curve **)**
-- :ref:`Curve<class_Curve>` **get_param_curve** **(** :ref:`Parameter<enum_CPUParticles2D_Parameter>` param **)** |const|
+- |void| **set_param_curve**\ (\ param\: :ref:`Parameter<enum_CPUParticles2D_Parameter>`, curve\: :ref:`Curve<class_Curve>`\ )
+- :ref:`Curve<class_Curve>` **get_param_curve**\ (\ param\: :ref:`Parameter<enum_CPUParticles2D_Parameter>`\ ) |const|
 
 Each particle's orbital velocity will vary along this :ref:`Curve<class_Curve>`.
 
@@ -1254,8 +1254,8 @@ Each particle's orbital velocity will vary along this :ref:`Curve<class_Curve>`.
 
 .. rst-class:: classref-property-setget
 
-- void **set_param_max** **(** :ref:`Parameter<enum_CPUParticles2D_Parameter>` param, :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_param_max** **(** :ref:`Parameter<enum_CPUParticles2D_Parameter>` param **)** |const|
+- |void| **set_param_max**\ (\ param\: :ref:`Parameter<enum_CPUParticles2D_Parameter>`, value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_param_max**\ (\ param\: :ref:`Parameter<enum_CPUParticles2D_Parameter>`\ ) |const|
 
 Maximum orbital velocity applied to each particle. Makes the particles circle around origin. Specified in number of full rotations around origin per second.
 
@@ -1271,8 +1271,8 @@ Maximum orbital velocity applied to each particle. Makes the particles circle ar
 
 .. rst-class:: classref-property-setget
 
-- void **set_param_min** **(** :ref:`Parameter<enum_CPUParticles2D_Parameter>` param, :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_param_min** **(** :ref:`Parameter<enum_CPUParticles2D_Parameter>` param **)** |const|
+- |void| **set_param_min**\ (\ param\: :ref:`Parameter<enum_CPUParticles2D_Parameter>`, value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_param_min**\ (\ param\: :ref:`Parameter<enum_CPUParticles2D_Parameter>`\ ) |const|
 
 Minimum equivalent of :ref:`orbit_velocity_max<class_CPUParticles2D_property_orbit_velocity_max>`.
 
@@ -1288,8 +1288,8 @@ Minimum equivalent of :ref:`orbit_velocity_max<class_CPUParticles2D_property_orb
 
 .. rst-class:: classref-property-setget
 
-- void **set_particle_flag** **(** :ref:`ParticleFlags<enum_CPUParticles2D_ParticleFlags>` particle_flag, :ref:`bool<class_bool>` enable **)**
-- :ref:`bool<class_bool>` **get_particle_flag** **(** :ref:`ParticleFlags<enum_CPUParticles2D_ParticleFlags>` particle_flag **)** |const|
+- |void| **set_particle_flag**\ (\ particle_flag\: :ref:`ParticleFlags<enum_CPUParticles2D_ParticleFlags>`, enable\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_particle_flag**\ (\ particle_flag\: :ref:`ParticleFlags<enum_CPUParticles2D_ParticleFlags>`\ ) |const|
 
 Align Y axis of particle with the direction of its velocity.
 
@@ -1305,8 +1305,8 @@ Align Y axis of particle with the direction of its velocity.
 
 .. rst-class:: classref-property-setget
 
-- void **set_pre_process_time** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_pre_process_time** **(** **)**
+- |void| **set_pre_process_time**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_pre_process_time**\ (\ )
 
 Particle system starts as if it had already run for this many seconds.
 
@@ -1322,8 +1322,8 @@ Particle system starts as if it had already run for this many seconds.
 
 .. rst-class:: classref-property-setget
 
-- void **set_param_curve** **(** :ref:`Parameter<enum_CPUParticles2D_Parameter>` param, :ref:`Curve<class_Curve>` curve **)**
-- :ref:`Curve<class_Curve>` **get_param_curve** **(** :ref:`Parameter<enum_CPUParticles2D_Parameter>` param **)** |const|
+- |void| **set_param_curve**\ (\ param\: :ref:`Parameter<enum_CPUParticles2D_Parameter>`, curve\: :ref:`Curve<class_Curve>`\ )
+- :ref:`Curve<class_Curve>` **get_param_curve**\ (\ param\: :ref:`Parameter<enum_CPUParticles2D_Parameter>`\ ) |const|
 
 Each particle's radial acceleration will vary along this :ref:`Curve<class_Curve>`.
 
@@ -1339,8 +1339,8 @@ Each particle's radial acceleration will vary along this :ref:`Curve<class_Curve
 
 .. rst-class:: classref-property-setget
 
-- void **set_param_max** **(** :ref:`Parameter<enum_CPUParticles2D_Parameter>` param, :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_param_max** **(** :ref:`Parameter<enum_CPUParticles2D_Parameter>` param **)** |const|
+- |void| **set_param_max**\ (\ param\: :ref:`Parameter<enum_CPUParticles2D_Parameter>`, value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_param_max**\ (\ param\: :ref:`Parameter<enum_CPUParticles2D_Parameter>`\ ) |const|
 
 Maximum radial acceleration applied to each particle. Makes particle accelerate away from the origin or towards it if negative.
 
@@ -1356,8 +1356,8 @@ Maximum radial acceleration applied to each particle. Makes particle accelerate 
 
 .. rst-class:: classref-property-setget
 
-- void **set_param_min** **(** :ref:`Parameter<enum_CPUParticles2D_Parameter>` param, :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_param_min** **(** :ref:`Parameter<enum_CPUParticles2D_Parameter>` param **)** |const|
+- |void| **set_param_min**\ (\ param\: :ref:`Parameter<enum_CPUParticles2D_Parameter>`, value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_param_min**\ (\ param\: :ref:`Parameter<enum_CPUParticles2D_Parameter>`\ ) |const|
 
 Minimum equivalent of :ref:`radial_accel_max<class_CPUParticles2D_property_radial_accel_max>`.
 
@@ -1373,8 +1373,8 @@ Minimum equivalent of :ref:`radial_accel_max<class_CPUParticles2D_property_radia
 
 .. rst-class:: classref-property-setget
 
-- void **set_randomness_ratio** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_randomness_ratio** **(** **)**
+- |void| **set_randomness_ratio**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_randomness_ratio**\ (\ )
 
 Emission lifetime randomness ratio.
 
@@ -1390,8 +1390,8 @@ Emission lifetime randomness ratio.
 
 .. rst-class:: classref-property-setget
 
-- void **set_param_curve** **(** :ref:`Parameter<enum_CPUParticles2D_Parameter>` param, :ref:`Curve<class_Curve>` curve **)**
-- :ref:`Curve<class_Curve>` **get_param_curve** **(** :ref:`Parameter<enum_CPUParticles2D_Parameter>` param **)** |const|
+- |void| **set_param_curve**\ (\ param\: :ref:`Parameter<enum_CPUParticles2D_Parameter>`, curve\: :ref:`Curve<class_Curve>`\ )
+- :ref:`Curve<class_Curve>` **get_param_curve**\ (\ param\: :ref:`Parameter<enum_CPUParticles2D_Parameter>`\ ) |const|
 
 Each particle's scale will vary along this :ref:`Curve<class_Curve>`.
 
@@ -1407,8 +1407,8 @@ Each particle's scale will vary along this :ref:`Curve<class_Curve>`.
 
 .. rst-class:: classref-property-setget
 
-- void **set_param_max** **(** :ref:`Parameter<enum_CPUParticles2D_Parameter>` param, :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_param_max** **(** :ref:`Parameter<enum_CPUParticles2D_Parameter>` param **)** |const|
+- |void| **set_param_max**\ (\ param\: :ref:`Parameter<enum_CPUParticles2D_Parameter>`, value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_param_max**\ (\ param\: :ref:`Parameter<enum_CPUParticles2D_Parameter>`\ ) |const|
 
 Maximum initial scale applied to each particle.
 
@@ -1424,8 +1424,8 @@ Maximum initial scale applied to each particle.
 
 .. rst-class:: classref-property-setget
 
-- void **set_param_min** **(** :ref:`Parameter<enum_CPUParticles2D_Parameter>` param, :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_param_min** **(** :ref:`Parameter<enum_CPUParticles2D_Parameter>` param **)** |const|
+- |void| **set_param_min**\ (\ param\: :ref:`Parameter<enum_CPUParticles2D_Parameter>`, value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_param_min**\ (\ param\: :ref:`Parameter<enum_CPUParticles2D_Parameter>`\ ) |const|
 
 Minimum equivalent of :ref:`scale_amount_max<class_CPUParticles2D_property_scale_amount_max>`.
 
@@ -1441,8 +1441,8 @@ Minimum equivalent of :ref:`scale_amount_max<class_CPUParticles2D_property_scale
 
 .. rst-class:: classref-property-setget
 
-- void **set_scale_curve_x** **(** :ref:`Curve<class_Curve>` value **)**
-- :ref:`Curve<class_Curve>` **get_scale_curve_x** **(** **)**
+- |void| **set_scale_curve_x**\ (\ value\: :ref:`Curve<class_Curve>`\ )
+- :ref:`Curve<class_Curve>` **get_scale_curve_x**\ (\ )
 
 Each particle's horizontal scale will vary along this :ref:`Curve<class_Curve>`.
 
@@ -1460,8 +1460,8 @@ Each particle's horizontal scale will vary along this :ref:`Curve<class_Curve>`.
 
 .. rst-class:: classref-property-setget
 
-- void **set_scale_curve_y** **(** :ref:`Curve<class_Curve>` value **)**
-- :ref:`Curve<class_Curve>` **get_scale_curve_y** **(** **)**
+- |void| **set_scale_curve_y**\ (\ value\: :ref:`Curve<class_Curve>`\ )
+- :ref:`Curve<class_Curve>` **get_scale_curve_y**\ (\ )
 
 Each particle's vertical scale will vary along this :ref:`Curve<class_Curve>`.
 
@@ -1479,8 +1479,8 @@ Each particle's vertical scale will vary along this :ref:`Curve<class_Curve>`.
 
 .. rst-class:: classref-property-setget
 
-- void **set_speed_scale** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_speed_scale** **(** **)**
+- |void| **set_speed_scale**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_speed_scale**\ (\ )
 
 Particle system's running speed scaling ratio. A value of ``0`` can be used to pause the particles.
 
@@ -1496,8 +1496,8 @@ Particle system's running speed scaling ratio. A value of ``0`` can be used to p
 
 .. rst-class:: classref-property-setget
 
-- void **set_split_scale** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **get_split_scale** **(** **)**
+- |void| **set_split_scale**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_split_scale**\ (\ )
 
 If ``true``, the scale curve will be split into x and y components. See :ref:`scale_curve_x<class_CPUParticles2D_property_scale_curve_x>` and :ref:`scale_curve_y<class_CPUParticles2D_property_scale_curve_y>`.
 
@@ -1513,8 +1513,8 @@ If ``true``, the scale curve will be split into x and y components. See :ref:`sc
 
 .. rst-class:: classref-property-setget
 
-- void **set_spread** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_spread** **(** **)**
+- |void| **set_spread**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_spread**\ (\ )
 
 Each particle's initial direction range from ``+spread`` to ``-spread`` degrees.
 
@@ -1530,8 +1530,8 @@ Each particle's initial direction range from ``+spread`` to ``-spread`` degrees.
 
 .. rst-class:: classref-property-setget
 
-- void **set_param_curve** **(** :ref:`Parameter<enum_CPUParticles2D_Parameter>` param, :ref:`Curve<class_Curve>` curve **)**
-- :ref:`Curve<class_Curve>` **get_param_curve** **(** :ref:`Parameter<enum_CPUParticles2D_Parameter>` param **)** |const|
+- |void| **set_param_curve**\ (\ param\: :ref:`Parameter<enum_CPUParticles2D_Parameter>`, curve\: :ref:`Curve<class_Curve>`\ )
+- :ref:`Curve<class_Curve>` **get_param_curve**\ (\ param\: :ref:`Parameter<enum_CPUParticles2D_Parameter>`\ ) |const|
 
 Each particle's tangential acceleration will vary along this :ref:`Curve<class_Curve>`.
 
@@ -1547,8 +1547,8 @@ Each particle's tangential acceleration will vary along this :ref:`Curve<class_C
 
 .. rst-class:: classref-property-setget
 
-- void **set_param_max** **(** :ref:`Parameter<enum_CPUParticles2D_Parameter>` param, :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_param_max** **(** :ref:`Parameter<enum_CPUParticles2D_Parameter>` param **)** |const|
+- |void| **set_param_max**\ (\ param\: :ref:`Parameter<enum_CPUParticles2D_Parameter>`, value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_param_max**\ (\ param\: :ref:`Parameter<enum_CPUParticles2D_Parameter>`\ ) |const|
 
 Maximum tangential acceleration applied to each particle. Tangential acceleration is perpendicular to the particle's velocity giving the particles a swirling motion.
 
@@ -1564,8 +1564,8 @@ Maximum tangential acceleration applied to each particle. Tangential acceleratio
 
 .. rst-class:: classref-property-setget
 
-- void **set_param_min** **(** :ref:`Parameter<enum_CPUParticles2D_Parameter>` param, :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_param_min** **(** :ref:`Parameter<enum_CPUParticles2D_Parameter>` param **)** |const|
+- |void| **set_param_min**\ (\ param\: :ref:`Parameter<enum_CPUParticles2D_Parameter>`, value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_param_min**\ (\ param\: :ref:`Parameter<enum_CPUParticles2D_Parameter>`\ ) |const|
 
 Minimum equivalent of :ref:`tangential_accel_max<class_CPUParticles2D_property_tangential_accel_max>`.
 
@@ -1581,8 +1581,8 @@ Minimum equivalent of :ref:`tangential_accel_max<class_CPUParticles2D_property_t
 
 .. rst-class:: classref-property-setget
 
-- void **set_texture** **(** :ref:`Texture2D<class_Texture2D>` value **)**
-- :ref:`Texture2D<class_Texture2D>` **get_texture** **(** **)**
+- |void| **set_texture**\ (\ value\: :ref:`Texture2D<class_Texture2D>`\ )
+- :ref:`Texture2D<class_Texture2D>` **get_texture**\ (\ )
 
 Particle texture. If ``null``, particles will be squares.
 
@@ -1599,7 +1599,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-void **convert_from_particles** **(** :ref:`Node<class_Node>` particles **)**
+|void| **convert_from_particles**\ (\ particles\: :ref:`Node<class_Node>`\ )
 
 Sets this node's properties to match a given :ref:`GPUParticles2D<class_GPUParticles2D>` node with an assigned :ref:`ParticleProcessMaterial<class_ParticleProcessMaterial>`.
 
@@ -1611,7 +1611,7 @@ Sets this node's properties to match a given :ref:`GPUParticles2D<class_GPUParti
 
 .. rst-class:: classref-method
 
-:ref:`Curve<class_Curve>` **get_param_curve** **(** :ref:`Parameter<enum_CPUParticles2D_Parameter>` param **)** |const|
+:ref:`Curve<class_Curve>` **get_param_curve**\ (\ param\: :ref:`Parameter<enum_CPUParticles2D_Parameter>`\ ) |const|
 
 Returns the :ref:`Curve<class_Curve>` of the parameter specified by :ref:`Parameter<enum_CPUParticles2D_Parameter>`.
 
@@ -1623,7 +1623,7 @@ Returns the :ref:`Curve<class_Curve>` of the parameter specified by :ref:`Parame
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **get_param_max** **(** :ref:`Parameter<enum_CPUParticles2D_Parameter>` param **)** |const|
+:ref:`float<class_float>` **get_param_max**\ (\ param\: :ref:`Parameter<enum_CPUParticles2D_Parameter>`\ ) |const|
 
 Returns the maximum value range for the given parameter.
 
@@ -1635,7 +1635,7 @@ Returns the maximum value range for the given parameter.
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **get_param_min** **(** :ref:`Parameter<enum_CPUParticles2D_Parameter>` param **)** |const|
+:ref:`float<class_float>` **get_param_min**\ (\ param\: :ref:`Parameter<enum_CPUParticles2D_Parameter>`\ ) |const|
 
 Returns the minimum value range for the given parameter.
 
@@ -1647,7 +1647,7 @@ Returns the minimum value range for the given parameter.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **get_particle_flag** **(** :ref:`ParticleFlags<enum_CPUParticles2D_ParticleFlags>` particle_flag **)** |const|
+:ref:`bool<class_bool>` **get_particle_flag**\ (\ particle_flag\: :ref:`ParticleFlags<enum_CPUParticles2D_ParticleFlags>`\ ) |const|
 
 Returns the enabled state of the given flag (see :ref:`ParticleFlags<enum_CPUParticles2D_ParticleFlags>` for options).
 
@@ -1659,7 +1659,7 @@ Returns the enabled state of the given flag (see :ref:`ParticleFlags<enum_CPUPar
 
 .. rst-class:: classref-method
 
-void **restart** **(** **)**
+|void| **restart**\ (\ )
 
 Restarts the particle emitter.
 
@@ -1671,7 +1671,7 @@ Restarts the particle emitter.
 
 .. rst-class:: classref-method
 
-void **set_param_curve** **(** :ref:`Parameter<enum_CPUParticles2D_Parameter>` param, :ref:`Curve<class_Curve>` curve **)**
+|void| **set_param_curve**\ (\ param\: :ref:`Parameter<enum_CPUParticles2D_Parameter>`, curve\: :ref:`Curve<class_Curve>`\ )
 
 Sets the :ref:`Curve<class_Curve>` of the parameter specified by :ref:`Parameter<enum_CPUParticles2D_Parameter>`.
 
@@ -1683,7 +1683,7 @@ Sets the :ref:`Curve<class_Curve>` of the parameter specified by :ref:`Parameter
 
 .. rst-class:: classref-method
 
-void **set_param_max** **(** :ref:`Parameter<enum_CPUParticles2D_Parameter>` param, :ref:`float<class_float>` value **)**
+|void| **set_param_max**\ (\ param\: :ref:`Parameter<enum_CPUParticles2D_Parameter>`, value\: :ref:`float<class_float>`\ )
 
 Sets the maximum value for the given parameter.
 
@@ -1695,7 +1695,7 @@ Sets the maximum value for the given parameter.
 
 .. rst-class:: classref-method
 
-void **set_param_min** **(** :ref:`Parameter<enum_CPUParticles2D_Parameter>` param, :ref:`float<class_float>` value **)**
+|void| **set_param_min**\ (\ param\: :ref:`Parameter<enum_CPUParticles2D_Parameter>`, value\: :ref:`float<class_float>`\ )
 
 Sets the minimum value for the given parameter.
 
@@ -1707,7 +1707,7 @@ Sets the minimum value for the given parameter.
 
 .. rst-class:: classref-method
 
-void **set_particle_flag** **(** :ref:`ParticleFlags<enum_CPUParticles2D_ParticleFlags>` particle_flag, :ref:`bool<class_bool>` enable **)**
+|void| **set_particle_flag**\ (\ particle_flag\: :ref:`ParticleFlags<enum_CPUParticles2D_ParticleFlags>`, enable\: :ref:`bool<class_bool>`\ )
 
 Enables or disables the given flag (see :ref:`ParticleFlags<enum_CPUParticles2D_ParticleFlags>` for options).
 
@@ -1718,3 +1718,4 @@ Enables or disables the given flag (see :ref:`ParticleFlags<enum_CPUParticles2D_
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

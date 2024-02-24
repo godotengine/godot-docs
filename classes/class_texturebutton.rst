@@ -150,8 +150,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_flip_h** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_flipped_h** **(** **)**
+- |void| **set_flip_h**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_flipped_h**\ (\ )
 
 If ``true``, texture is flipped horizontally.
 
@@ -167,8 +167,8 @@ If ``true``, texture is flipped horizontally.
 
 .. rst-class:: classref-property-setget
 
-- void **set_flip_v** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_flipped_v** **(** **)**
+- |void| **set_flip_v**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_flipped_v**\ (\ )
 
 If ``true``, texture is flipped vertically.
 
@@ -184,8 +184,8 @@ If ``true``, texture is flipped vertically.
 
 .. rst-class:: classref-property-setget
 
-- void **set_ignore_texture_size** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **get_ignore_texture_size** **(** **)**
+- |void| **set_ignore_texture_size**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_ignore_texture_size**\ (\ )
 
 If ``true``, the size of the texture won't be considered for minimum size calculation, so the **TextureButton** can be shrunk down past the texture size.
 
@@ -201,8 +201,8 @@ If ``true``, the size of the texture won't be considered for minimum size calcul
 
 .. rst-class:: classref-property-setget
 
-- void **set_stretch_mode** **(** :ref:`StretchMode<enum_TextureButton_StretchMode>` value **)**
-- :ref:`StretchMode<enum_TextureButton_StretchMode>` **get_stretch_mode** **(** **)**
+- |void| **set_stretch_mode**\ (\ value\: :ref:`StretchMode<enum_TextureButton_StretchMode>`\ )
+- :ref:`StretchMode<enum_TextureButton_StretchMode>` **get_stretch_mode**\ (\ )
 
 Controls the texture's behavior when you resize the node's bounding rectangle. See the :ref:`StretchMode<enum_TextureButton_StretchMode>` constants for available options.
 
@@ -218,8 +218,8 @@ Controls the texture's behavior when you resize the node's bounding rectangle. S
 
 .. rst-class:: classref-property-setget
 
-- void **set_click_mask** **(** :ref:`BitMap<class_BitMap>` value **)**
-- :ref:`BitMap<class_BitMap>` **get_click_mask** **(** **)**
+- |void| **set_click_mask**\ (\ value\: :ref:`BitMap<class_BitMap>`\ )
+- :ref:`BitMap<class_BitMap>` **get_click_mask**\ (\ )
 
 Pure black and white :ref:`BitMap<class_BitMap>` image to use for click detection. On the mask, white pixels represent the button's clickable area. Use it to create buttons with curved shapes.
 
@@ -235,8 +235,8 @@ Pure black and white :ref:`BitMap<class_BitMap>` image to use for click detectio
 
 .. rst-class:: classref-property-setget
 
-- void **set_texture_disabled** **(** :ref:`Texture2D<class_Texture2D>` value **)**
-- :ref:`Texture2D<class_Texture2D>` **get_texture_disabled** **(** **)**
+- |void| **set_texture_disabled**\ (\ value\: :ref:`Texture2D<class_Texture2D>`\ )
+- :ref:`Texture2D<class_Texture2D>` **get_texture_disabled**\ (\ )
 
 Texture to display when the node is disabled. See :ref:`BaseButton.disabled<class_BaseButton_property_disabled>`.
 
@@ -252,8 +252,8 @@ Texture to display when the node is disabled. See :ref:`BaseButton.disabled<clas
 
 .. rst-class:: classref-property-setget
 
-- void **set_texture_focused** **(** :ref:`Texture2D<class_Texture2D>` value **)**
-- :ref:`Texture2D<class_Texture2D>` **get_texture_focused** **(** **)**
+- |void| **set_texture_focused**\ (\ value\: :ref:`Texture2D<class_Texture2D>`\ )
+- :ref:`Texture2D<class_Texture2D>` **get_texture_focused**\ (\ )
 
 Texture to display when the node has mouse or keyboard focus. :ref:`texture_focused<class_TextureButton_property_texture_focused>` is displayed *over* the base texture, so a partially transparent texture should be used to ensure the base texture remains visible. A texture that represents an outline or an underline works well for this purpose. To disable the focus visual effect, assign a fully transparent texture of any size. Note that disabling the focus visual effect will harm keyboard/controller navigation usability, so this is not recommended for accessibility reasons.
 
@@ -269,8 +269,8 @@ Texture to display when the node has mouse or keyboard focus. :ref:`texture_focu
 
 .. rst-class:: classref-property-setget
 
-- void **set_texture_hover** **(** :ref:`Texture2D<class_Texture2D>` value **)**
-- :ref:`Texture2D<class_Texture2D>` **get_texture_hover** **(** **)**
+- |void| **set_texture_hover**\ (\ value\: :ref:`Texture2D<class_Texture2D>`\ )
+- :ref:`Texture2D<class_Texture2D>` **get_texture_hover**\ (\ )
 
 Texture to display when the mouse hovers the node.
 
@@ -286,8 +286,8 @@ Texture to display when the mouse hovers the node.
 
 .. rst-class:: classref-property-setget
 
-- void **set_texture_normal** **(** :ref:`Texture2D<class_Texture2D>` value **)**
-- :ref:`Texture2D<class_Texture2D>` **get_texture_normal** **(** **)**
+- |void| **set_texture_normal**\ (\ value\: :ref:`Texture2D<class_Texture2D>`\ )
+- :ref:`Texture2D<class_Texture2D>` **get_texture_normal**\ (\ )
 
 Texture to display by default, when the node is **not** in the disabled, hover or pressed state. This texture is still displayed in the focused state, with :ref:`texture_focused<class_TextureButton_property_texture_focused>` drawn on top.
 
@@ -303,8 +303,8 @@ Texture to display by default, when the node is **not** in the disabled, hover o
 
 .. rst-class:: classref-property-setget
 
-- void **set_texture_pressed** **(** :ref:`Texture2D<class_Texture2D>` value **)**
-- :ref:`Texture2D<class_Texture2D>` **get_texture_pressed** **(** **)**
+- |void| **set_texture_pressed**\ (\ value\: :ref:`Texture2D<class_Texture2D>`\ )
+- :ref:`Texture2D<class_Texture2D>` **get_texture_pressed**\ (\ )
 
 Texture to display on mouse down over the node, if the node has keyboard focus and the player presses the Enter key or if the player presses the :ref:`BaseButton.shortcut<class_BaseButton_property_shortcut>` key.
 
@@ -315,3 +315,4 @@ Texture to display on mouse down over the node, if the node has keyboard focus a
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

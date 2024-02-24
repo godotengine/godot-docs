@@ -60,19 +60,19 @@ Methods
 .. table::
    :widths: auto
 
-   +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Variant<class_Variant>` | :ref:`get_input<class_XRPositionalTracker_method_get_input>` **(** :ref:`StringName<class_StringName>` name **)** |const|                                                                                                                                                                                                                      |
-   +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`XRPose<class_XRPose>`   | :ref:`get_pose<class_XRPositionalTracker_method_get_pose>` **(** :ref:`StringName<class_StringName>` name **)** |const|                                                                                                                                                                                                                        |
-   +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`       | :ref:`has_pose<class_XRPositionalTracker_method_has_pose>` **(** :ref:`StringName<class_StringName>` name **)** |const|                                                                                                                                                                                                                        |
-   +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                          | :ref:`invalidate_pose<class_XRPositionalTracker_method_invalidate_pose>` **(** :ref:`StringName<class_StringName>` name **)**                                                                                                                                                                                                                  |
-   +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                          | :ref:`set_input<class_XRPositionalTracker_method_set_input>` **(** :ref:`StringName<class_StringName>` name, :ref:`Variant<class_Variant>` value **)**                                                                                                                                                                                         |
-   +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                          | :ref:`set_pose<class_XRPositionalTracker_method_set_pose>` **(** :ref:`StringName<class_StringName>` name, :ref:`Transform3D<class_Transform3D>` transform, :ref:`Vector3<class_Vector3>` linear_velocity, :ref:`Vector3<class_Vector3>` angular_velocity, :ref:`TrackingConfidence<enum_XRPose_TrackingConfidence>` tracking_confidence **)** |
-   +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Variant<class_Variant>` | :ref:`get_input<class_XRPositionalTracker_method_get_input>`\ (\ name\: :ref:`StringName<class_StringName>`\ ) |const|                                                                                                                                                                                                                              |
+   +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`XRPose<class_XRPose>`   | :ref:`get_pose<class_XRPositionalTracker_method_get_pose>`\ (\ name\: :ref:`StringName<class_StringName>`\ ) |const|                                                                                                                                                                                                                                |
+   +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`has_pose<class_XRPositionalTracker_method_has_pose>`\ (\ name\: :ref:`StringName<class_StringName>`\ ) |const|                                                                                                                                                                                                                                |
+   +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                        | :ref:`invalidate_pose<class_XRPositionalTracker_method_invalidate_pose>`\ (\ name\: :ref:`StringName<class_StringName>`\ )                                                                                                                                                                                                                          |
+   +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                        | :ref:`set_input<class_XRPositionalTracker_method_set_input>`\ (\ name\: :ref:`StringName<class_StringName>`, value\: :ref:`Variant<class_Variant>`\ )                                                                                                                                                                                               |
+   +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                        | :ref:`set_pose<class_XRPositionalTracker_method_set_pose>`\ (\ name\: :ref:`StringName<class_StringName>`, transform\: :ref:`Transform3D<class_Transform3D>`, linear_velocity\: :ref:`Vector3<class_Vector3>`, angular_velocity\: :ref:`Vector3<class_Vector3>`, tracking_confidence\: :ref:`TrackingConfidence<enum_XRPose_TrackingConfidence>`\ ) |
+   +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -87,7 +87,7 @@ Signals
 
 .. rst-class:: classref-signal
 
-**button_pressed** **(** :ref:`String<class_String>` name **)**
+**button_pressed**\ (\ name\: :ref:`String<class_String>`\ )
 
 Emitted when a button on this tracker is pressed. Note that many XR runtimes allow other inputs to be mapped to buttons.
 
@@ -99,7 +99,7 @@ Emitted when a button on this tracker is pressed. Note that many XR runtimes all
 
 .. rst-class:: classref-signal
 
-**button_released** **(** :ref:`String<class_String>` name **)**
+**button_released**\ (\ name\: :ref:`String<class_String>`\ )
 
 Emitted when a button on this tracker is released.
 
@@ -111,7 +111,7 @@ Emitted when a button on this tracker is released.
 
 .. rst-class:: classref-signal
 
-**input_float_changed** **(** :ref:`String<class_String>` name, :ref:`float<class_float>` value **)**
+**input_float_changed**\ (\ name\: :ref:`String<class_String>`, value\: :ref:`float<class_float>`\ )
 
 Emitted when a trigger or similar input on this tracker changes value.
 
@@ -123,7 +123,7 @@ Emitted when a trigger or similar input on this tracker changes value.
 
 .. rst-class:: classref-signal
 
-**input_vector2_changed** **(** :ref:`String<class_String>` name, :ref:`Vector2<class_Vector2>` vector **)**
+**input_vector2_changed**\ (\ name\: :ref:`String<class_String>`, vector\: :ref:`Vector2<class_Vector2>`\ )
 
 Emitted when a thumbstick or thumbpad on this tracker moves.
 
@@ -135,7 +135,7 @@ Emitted when a thumbstick or thumbpad on this tracker moves.
 
 .. rst-class:: classref-signal
 
-**pose_changed** **(** :ref:`XRPose<class_XRPose>` pose **)**
+**pose_changed**\ (\ pose\: :ref:`XRPose<class_XRPose>`\ )
 
 Emitted when the state of a pose tracked by this tracker changes.
 
@@ -147,7 +147,7 @@ Emitted when the state of a pose tracked by this tracker changes.
 
 .. rst-class:: classref-signal
 
-**pose_lost_tracking** **(** :ref:`XRPose<class_XRPose>` pose **)**
+**pose_lost_tracking**\ (\ pose\: :ref:`XRPose<class_XRPose>`\ )
 
 Emitted when a pose tracked by this tracker stops getting updated tracking data.
 
@@ -159,7 +159,7 @@ Emitted when a pose tracked by this tracker stops getting updated tracking data.
 
 .. rst-class:: classref-signal
 
-**profile_changed** **(** :ref:`String<class_String>` role **)**
+**profile_changed**\ (\ role\: :ref:`String<class_String>`\ )
 
 Emitted when the profile of our tracker changes.
 
@@ -219,8 +219,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_tracker_desc** **(** :ref:`String<class_String>` value **)**
-- :ref:`String<class_String>` **get_tracker_desc** **(** **)**
+- |void| **set_tracker_desc**\ (\ value\: :ref:`String<class_String>`\ )
+- :ref:`String<class_String>` **get_tracker_desc**\ (\ )
 
 The description of this tracker.
 
@@ -236,8 +236,8 @@ The description of this tracker.
 
 .. rst-class:: classref-property-setget
 
-- void **set_tracker_hand** **(** :ref:`TrackerHand<enum_XRPositionalTracker_TrackerHand>` value **)**
-- :ref:`TrackerHand<enum_XRPositionalTracker_TrackerHand>` **get_tracker_hand** **(** **)**
+- |void| **set_tracker_hand**\ (\ value\: :ref:`TrackerHand<enum_XRPositionalTracker_TrackerHand>`\ )
+- :ref:`TrackerHand<enum_XRPositionalTracker_TrackerHand>` **get_tracker_hand**\ (\ )
 
 Defines which hand this tracker relates to.
 
@@ -253,8 +253,8 @@ Defines which hand this tracker relates to.
 
 .. rst-class:: classref-property-setget
 
-- void **set_tracker_name** **(** :ref:`StringName<class_StringName>` value **)**
-- :ref:`StringName<class_StringName>` **get_tracker_name** **(** **)**
+- |void| **set_tracker_name**\ (\ value\: :ref:`StringName<class_StringName>`\ )
+- :ref:`StringName<class_StringName>` **get_tracker_name**\ (\ )
 
 The unique name of this tracker. The trackers that are available differ between various XR runtimes and can often be configured by the user. Godot maintains a number of reserved names that it expects the :ref:`XRInterface<class_XRInterface>` to implement if applicable:
 
@@ -274,8 +274,8 @@ The unique name of this tracker. The trackers that are available differ between 
 
 .. rst-class:: classref-property-setget
 
-- void **set_tracker_profile** **(** :ref:`String<class_String>` value **)**
-- :ref:`String<class_String>` **get_tracker_profile** **(** **)**
+- |void| **set_tracker_profile**\ (\ value\: :ref:`String<class_String>`\ )
+- :ref:`String<class_String>` **get_tracker_profile**\ (\ )
 
 The profile associated with this tracker, interface dependent but will indicate the type of controller being tracked.
 
@@ -291,8 +291,8 @@ The profile associated with this tracker, interface dependent but will indicate 
 
 .. rst-class:: classref-property-setget
 
-- void **set_tracker_type** **(** :ref:`TrackerType<enum_XRServer_TrackerType>` value **)**
-- :ref:`TrackerType<enum_XRServer_TrackerType>` **get_tracker_type** **(** **)**
+- |void| **set_tracker_type**\ (\ value\: :ref:`TrackerType<enum_XRServer_TrackerType>`\ )
+- :ref:`TrackerType<enum_XRServer_TrackerType>` **get_tracker_type**\ (\ )
 
 The type of tracker.
 
@@ -309,7 +309,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Variant<class_Variant>` **get_input** **(** :ref:`StringName<class_StringName>` name **)** |const|
+:ref:`Variant<class_Variant>` **get_input**\ (\ name\: :ref:`StringName<class_StringName>`\ ) |const|
 
 Returns an input for this tracker. It can return a boolean, float or :ref:`Vector2<class_Vector2>` value depending on whether the input is a button, trigger or thumbstick/thumbpad.
 
@@ -321,7 +321,7 @@ Returns an input for this tracker. It can return a boolean, float or :ref:`Vecto
 
 .. rst-class:: classref-method
 
-:ref:`XRPose<class_XRPose>` **get_pose** **(** :ref:`StringName<class_StringName>` name **)** |const|
+:ref:`XRPose<class_XRPose>` **get_pose**\ (\ name\: :ref:`StringName<class_StringName>`\ ) |const|
 
 Returns the current :ref:`XRPose<class_XRPose>` state object for the bound ``name`` pose.
 
@@ -333,7 +333,7 @@ Returns the current :ref:`XRPose<class_XRPose>` state object for the bound ``nam
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **has_pose** **(** :ref:`StringName<class_StringName>` name **)** |const|
+:ref:`bool<class_bool>` **has_pose**\ (\ name\: :ref:`StringName<class_StringName>`\ ) |const|
 
 Returns ``true`` if the tracker is available and is currently tracking the bound ``name`` pose.
 
@@ -345,7 +345,7 @@ Returns ``true`` if the tracker is available and is currently tracking the bound
 
 .. rst-class:: classref-method
 
-void **invalidate_pose** **(** :ref:`StringName<class_StringName>` name **)**
+|void| **invalidate_pose**\ (\ name\: :ref:`StringName<class_StringName>`\ )
 
 Marks this pose as invalid, we don't clear the last reported state but it allows users to decide if trackers need to be hidden if we lose tracking or just remain at their last known position.
 
@@ -357,7 +357,7 @@ Marks this pose as invalid, we don't clear the last reported state but it allows
 
 .. rst-class:: classref-method
 
-void **set_input** **(** :ref:`StringName<class_StringName>` name, :ref:`Variant<class_Variant>` value **)**
+|void| **set_input**\ (\ name\: :ref:`StringName<class_StringName>`, value\: :ref:`Variant<class_Variant>`\ )
 
 Changes the value for the given input. This method is called by a :ref:`XRInterface<class_XRInterface>` implementation and should not be used directly.
 
@@ -369,7 +369,7 @@ Changes the value for the given input. This method is called by a :ref:`XRInterf
 
 .. rst-class:: classref-method
 
-void **set_pose** **(** :ref:`StringName<class_StringName>` name, :ref:`Transform3D<class_Transform3D>` transform, :ref:`Vector3<class_Vector3>` linear_velocity, :ref:`Vector3<class_Vector3>` angular_velocity, :ref:`TrackingConfidence<enum_XRPose_TrackingConfidence>` tracking_confidence **)**
+|void| **set_pose**\ (\ name\: :ref:`StringName<class_StringName>`, transform\: :ref:`Transform3D<class_Transform3D>`, linear_velocity\: :ref:`Vector3<class_Vector3>`, angular_velocity\: :ref:`Vector3<class_Vector3>`, tracking_confidence\: :ref:`TrackingConfidence<enum_XRPose_TrackingConfidence>`\ )
 
 Sets the transform, linear velocity, angular velocity and tracking confidence for the given pose. This method is called by a :ref:`XRInterface<class_XRInterface>` implementation and should not be used directly.
 
@@ -380,3 +380,4 @@ Sets the transform, linear velocity, angular velocity and tracking confidence fo
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

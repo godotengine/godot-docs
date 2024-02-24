@@ -58,8 +58,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_energy_multiplier** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_energy_multiplier** **(** **)**
+- |void| **set_energy_multiplier**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_energy_multiplier**\ (\ )
 
 The sky's overall brightness multiplier. Higher values result in a brighter sky.
 
@@ -75,8 +75,8 @@ The sky's overall brightness multiplier. Higher values result in a brighter sky.
 
 .. rst-class:: classref-property-setget
 
-- void **set_filtering_enabled** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_filtering_enabled** **(** **)**
+- |void| **set_filtering_enabled**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_filtering_enabled**\ (\ )
 
 A boolean value to determine if the background texture should be filtered or not.
 
@@ -92,8 +92,8 @@ A boolean value to determine if the background texture should be filtered or not
 
 .. rst-class:: classref-property-setget
 
-- void **set_panorama** **(** :ref:`Texture2D<class_Texture2D>` value **)**
-- :ref:`Texture2D<class_Texture2D>` **get_panorama** **(** **)**
+- |void| **set_panorama**\ (\ value\: :ref:`Texture2D<class_Texture2D>`\ )
+- :ref:`Texture2D<class_Texture2D>` **get_panorama**\ (\ )
 
 :ref:`Texture2D<class_Texture2D>` to be applied to the **PanoramaSkyMaterial**.
 
@@ -104,3 +104,4 @@ A boolean value to determine if the background texture should be filtered or not
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

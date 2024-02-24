@@ -90,11 +90,11 @@ Methods
 .. table::
    :widths: auto
 
-   +-----------------------------+----------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Object<class_Object>` | :ref:`_post_import<class_EditorScenePostImport_private_method__post_import>` **(** :ref:`Node<class_Node>` scene **)** |virtual| |
-   +-----------------------------+----------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`String<class_String>` | :ref:`get_source_file<class_EditorScenePostImport_method_get_source_file>` **(** **)** |const|                                   |
-   +-----------------------------+----------------------------------------------------------------------------------------------------------------------------------+
+   +-----------------------------+-------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Object<class_Object>` | :ref:`_post_import<class_EditorScenePostImport_private_method__post_import>`\ (\ scene\: :ref:`Node<class_Node>`\ ) |virtual| |
+   +-----------------------------+-------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>` | :ref:`get_source_file<class_EditorScenePostImport_method_get_source_file>`\ (\ ) |const|                                      |
+   +-----------------------------+-------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -109,7 +109,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Object<class_Object>` **_post_import** **(** :ref:`Node<class_Node>` scene **)** |virtual|
+:ref:`Object<class_Object>` **_post_import**\ (\ scene\: :ref:`Node<class_Node>`\ ) |virtual|
 
 Called after the scene was imported. This method must return the modified version of the scene.
 
@@ -121,7 +121,7 @@ Called after the scene was imported. This method must return the modified versio
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **get_source_file** **(** **)** |const|
+:ref:`String<class_String>` **get_source_file**\ (\ ) |const|
 
 Returns the source file path which got imported (e.g. ``res://scene.dae``).
 
@@ -132,3 +132,4 @@ Returns the source file path which got imported (e.g. ``res://scene.dae``).
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

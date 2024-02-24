@@ -59,15 +59,15 @@ Methods
 .. table::
    :widths: auto
 
-   +---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`   | :ref:`get_flag<class_HingeJoint3D_method_get_flag>` **(** :ref:`Flag<enum_HingeJoint3D_Flag>` flag **)** |const|                               |
-   +---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`float<class_float>` | :ref:`get_param<class_HingeJoint3D_method_get_param>` **(** :ref:`Param<enum_HingeJoint3D_Param>` param **)** |const|                          |
-   +---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                      | :ref:`set_flag<class_HingeJoint3D_method_set_flag>` **(** :ref:`Flag<enum_HingeJoint3D_Flag>` flag, :ref:`bool<class_bool>` enabled **)**      |
-   +---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                      | :ref:`set_param<class_HingeJoint3D_method_set_param>` **(** :ref:`Param<enum_HingeJoint3D_Param>` param, :ref:`float<class_float>` value **)** |
-   +---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
+   +---------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`   | :ref:`get_flag<class_HingeJoint3D_method_get_flag>`\ (\ flag\: :ref:`Flag<enum_HingeJoint3D_Flag>`\ ) |const|                                 |
+   +---------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>` | :ref:`get_param<class_HingeJoint3D_method_get_param>`\ (\ param\: :ref:`Param<enum_HingeJoint3D_Param>`\ ) |const|                            |
+   +---------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                    | :ref:`set_flag<class_HingeJoint3D_method_set_flag>`\ (\ flag\: :ref:`Flag<enum_HingeJoint3D_Flag>`, enabled\: :ref:`bool<class_bool>`\ )      |
+   +---------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                    | :ref:`set_param<class_HingeJoint3D_method_set_param>`\ (\ param\: :ref:`Param<enum_HingeJoint3D_Param>`, value\: :ref:`float<class_float>`\ ) |
+   +---------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -211,8 +211,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_param** **(** :ref:`Param<enum_HingeJoint3D_Param>` param, :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_param** **(** :ref:`Param<enum_HingeJoint3D_Param>` param **)** |const|
+- |void| **set_param**\ (\ param\: :ref:`Param<enum_HingeJoint3D_Param>`, value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_param**\ (\ param\: :ref:`Param<enum_HingeJoint3D_Param>`\ ) |const|
 
 The speed with which the rotation across the axis perpendicular to the hinge gets corrected.
 
@@ -228,8 +228,8 @@ The speed with which the rotation across the axis perpendicular to the hinge get
 
 .. rst-class:: classref-property-setget
 
-- void **set_flag** **(** :ref:`Flag<enum_HingeJoint3D_Flag>` flag, :ref:`bool<class_bool>` enabled **)**
-- :ref:`bool<class_bool>` **get_flag** **(** :ref:`Flag<enum_HingeJoint3D_Flag>` flag **)** |const|
+- |void| **set_flag**\ (\ flag\: :ref:`Flag<enum_HingeJoint3D_Flag>`, enabled\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_flag**\ (\ flag\: :ref:`Flag<enum_HingeJoint3D_Flag>`\ ) |const|
 
 If ``true``, the hinges maximum and minimum rotation, defined by :ref:`angular_limit/lower<class_HingeJoint3D_property_angular_limit/lower>` and :ref:`angular_limit/upper<class_HingeJoint3D_property_angular_limit/upper>` has effects.
 
@@ -245,8 +245,8 @@ If ``true``, the hinges maximum and minimum rotation, defined by :ref:`angular_l
 
 .. rst-class:: classref-property-setget
 
-- void **set_param** **(** :ref:`Param<enum_HingeJoint3D_Param>` param, :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_param** **(** :ref:`Param<enum_HingeJoint3D_Param>` param **)** |const|
+- |void| **set_param**\ (\ param\: :ref:`Param<enum_HingeJoint3D_Param>`, value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_param**\ (\ param\: :ref:`Param<enum_HingeJoint3D_Param>`\ ) |const|
 
 The minimum rotation. Only active if :ref:`angular_limit/enable<class_HingeJoint3D_property_angular_limit/enable>` is ``true``.
 
@@ -262,8 +262,8 @@ The minimum rotation. Only active if :ref:`angular_limit/enable<class_HingeJoint
 
 .. rst-class:: classref-property-setget
 
-- void **set_param** **(** :ref:`Param<enum_HingeJoint3D_Param>` param, :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_param** **(** :ref:`Param<enum_HingeJoint3D_Param>` param **)** |const|
+- |void| **set_param**\ (\ param\: :ref:`Param<enum_HingeJoint3D_Param>`, value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_param**\ (\ param\: :ref:`Param<enum_HingeJoint3D_Param>`\ ) |const|
 
 The lower this value, the more the rotation gets slowed down.
 
@@ -279,8 +279,8 @@ The lower this value, the more the rotation gets slowed down.
 
 .. rst-class:: classref-property-setget
 
-- void **set_param** **(** :ref:`Param<enum_HingeJoint3D_Param>` param, :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_param** **(** :ref:`Param<enum_HingeJoint3D_Param>` param **)** |const|
+- |void| **set_param**\ (\ param\: :ref:`Param<enum_HingeJoint3D_Param>`, value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_param**\ (\ param\: :ref:`Param<enum_HingeJoint3D_Param>`\ ) |const|
 
 .. container:: contribute
 
@@ -298,8 +298,8 @@ The lower this value, the more the rotation gets slowed down.
 
 .. rst-class:: classref-property-setget
 
-- void **set_param** **(** :ref:`Param<enum_HingeJoint3D_Param>` param, :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_param** **(** :ref:`Param<enum_HingeJoint3D_Param>` param **)** |const|
+- |void| **set_param**\ (\ param\: :ref:`Param<enum_HingeJoint3D_Param>`, value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_param**\ (\ param\: :ref:`Param<enum_HingeJoint3D_Param>`\ ) |const|
 
 The maximum rotation. Only active if :ref:`angular_limit/enable<class_HingeJoint3D_property_angular_limit/enable>` is ``true``.
 
@@ -315,8 +315,8 @@ The maximum rotation. Only active if :ref:`angular_limit/enable<class_HingeJoint
 
 .. rst-class:: classref-property-setget
 
-- void **set_flag** **(** :ref:`Flag<enum_HingeJoint3D_Flag>` flag, :ref:`bool<class_bool>` enabled **)**
-- :ref:`bool<class_bool>` **get_flag** **(** :ref:`Flag<enum_HingeJoint3D_Flag>` flag **)** |const|
+- |void| **set_flag**\ (\ flag\: :ref:`Flag<enum_HingeJoint3D_Flag>`, enabled\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_flag**\ (\ flag\: :ref:`Flag<enum_HingeJoint3D_Flag>`\ ) |const|
 
 When activated, a motor turns the hinge.
 
@@ -332,8 +332,8 @@ When activated, a motor turns the hinge.
 
 .. rst-class:: classref-property-setget
 
-- void **set_param** **(** :ref:`Param<enum_HingeJoint3D_Param>` param, :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_param** **(** :ref:`Param<enum_HingeJoint3D_Param>` param **)** |const|
+- |void| **set_param**\ (\ param\: :ref:`Param<enum_HingeJoint3D_Param>`, value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_param**\ (\ param\: :ref:`Param<enum_HingeJoint3D_Param>`\ ) |const|
 
 Maximum acceleration for the motor.
 
@@ -349,8 +349,8 @@ Maximum acceleration for the motor.
 
 .. rst-class:: classref-property-setget
 
-- void **set_param** **(** :ref:`Param<enum_HingeJoint3D_Param>` param, :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_param** **(** :ref:`Param<enum_HingeJoint3D_Param>` param **)** |const|
+- |void| **set_param**\ (\ param\: :ref:`Param<enum_HingeJoint3D_Param>`, value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_param**\ (\ param\: :ref:`Param<enum_HingeJoint3D_Param>`\ ) |const|
 
 Target speed for the motor.
 
@@ -366,8 +366,8 @@ Target speed for the motor.
 
 .. rst-class:: classref-property-setget
 
-- void **set_param** **(** :ref:`Param<enum_HingeJoint3D_Param>` param, :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_param** **(** :ref:`Param<enum_HingeJoint3D_Param>` param **)** |const|
+- |void| **set_param**\ (\ param\: :ref:`Param<enum_HingeJoint3D_Param>`, value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_param**\ (\ param\: :ref:`Param<enum_HingeJoint3D_Param>`\ ) |const|
 
 The speed with which the two bodies get pulled together when they move in different directions.
 
@@ -384,7 +384,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **get_flag** **(** :ref:`Flag<enum_HingeJoint3D_Flag>` flag **)** |const|
+:ref:`bool<class_bool>` **get_flag**\ (\ flag\: :ref:`Flag<enum_HingeJoint3D_Flag>`\ ) |const|
 
 Returns the value of the specified flag.
 
@@ -396,7 +396,7 @@ Returns the value of the specified flag.
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **get_param** **(** :ref:`Param<enum_HingeJoint3D_Param>` param **)** |const|
+:ref:`float<class_float>` **get_param**\ (\ param\: :ref:`Param<enum_HingeJoint3D_Param>`\ ) |const|
 
 Returns the value of the specified parameter.
 
@@ -408,7 +408,7 @@ Returns the value of the specified parameter.
 
 .. rst-class:: classref-method
 
-void **set_flag** **(** :ref:`Flag<enum_HingeJoint3D_Flag>` flag, :ref:`bool<class_bool>` enabled **)**
+|void| **set_flag**\ (\ flag\: :ref:`Flag<enum_HingeJoint3D_Flag>`, enabled\: :ref:`bool<class_bool>`\ )
 
 If ``true``, enables the specified flag.
 
@@ -420,7 +420,7 @@ If ``true``, enables the specified flag.
 
 .. rst-class:: classref-method
 
-void **set_param** **(** :ref:`Param<enum_HingeJoint3D_Param>` param, :ref:`float<class_float>` value **)**
+|void| **set_param**\ (\ param\: :ref:`Param<enum_HingeJoint3D_Param>`, value\: :ref:`float<class_float>`\ )
 
 Sets the value of the specified parameter.
 
@@ -431,3 +431,4 @@ Sets the value of the specified parameter.
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

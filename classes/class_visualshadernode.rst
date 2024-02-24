@@ -50,21 +50,21 @@ Methods
 .. table::
    :widths: auto
 
-   +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                          | :ref:`clear_default_input_values<class_VisualShaderNode_method_clear_default_input_values>` **(** **)**                                                                                                                    |
-   +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`         | :ref:`get_default_input_port<class_VisualShaderNode_method_get_default_input_port>` **(** :ref:`PortType<enum_VisualShaderNode_PortType>` type **)** |const|                                                               |
-   +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Array<class_Array>`     | :ref:`get_default_input_values<class_VisualShaderNode_method_get_default_input_values>` **(** **)** |const|                                                                                                                |
-   +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Variant<class_Variant>` | :ref:`get_input_port_default_value<class_VisualShaderNode_method_get_input_port_default_value>` **(** :ref:`int<class_int>` port **)** |const|                                                                             |
-   +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                          | :ref:`remove_input_port_default_value<class_VisualShaderNode_method_remove_input_port_default_value>` **(** :ref:`int<class_int>` port **)**                                                                               |
-   +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                          | :ref:`set_default_input_values<class_VisualShaderNode_method_set_default_input_values>` **(** :ref:`Array<class_Array>` values **)**                                                                                       |
-   +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                          | :ref:`set_input_port_default_value<class_VisualShaderNode_method_set_input_port_default_value>` **(** :ref:`int<class_int>` port, :ref:`Variant<class_Variant>` value, :ref:`Variant<class_Variant>` prev_value=null **)** |
-   +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                        | :ref:`clear_default_input_values<class_VisualShaderNode_method_clear_default_input_values>`\ (\ )                                                                                                                             |
+   +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`         | :ref:`get_default_input_port<class_VisualShaderNode_method_get_default_input_port>`\ (\ type\: :ref:`PortType<enum_VisualShaderNode_PortType>`\ ) |const|                                                                     |
+   +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Array<class_Array>`     | :ref:`get_default_input_values<class_VisualShaderNode_method_get_default_input_values>`\ (\ ) |const|                                                                                                                         |
+   +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Variant<class_Variant>` | :ref:`get_input_port_default_value<class_VisualShaderNode_method_get_input_port_default_value>`\ (\ port\: :ref:`int<class_int>`\ ) |const|                                                                                   |
+   +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                        | :ref:`remove_input_port_default_value<class_VisualShaderNode_method_remove_input_port_default_value>`\ (\ port\: :ref:`int<class_int>`\ )                                                                                     |
+   +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                        | :ref:`set_default_input_values<class_VisualShaderNode_method_set_default_input_values>`\ (\ values\: :ref:`Array<class_Array>`\ )                                                                                             |
+   +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                        | :ref:`set_input_port_default_value<class_VisualShaderNode_method_set_input_port_default_value>`\ (\ port\: :ref:`int<class_int>`, value\: :ref:`Variant<class_Variant>`, prev_value\: :ref:`Variant<class_Variant>` = null\ ) |
+   +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -178,8 +178,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_output_port_for_preview** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_output_port_for_preview** **(** **)**
+- |void| **set_output_port_for_preview**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_output_port_for_preview**\ (\ )
 
 Sets the output port index which will be showed for preview. If set to ``-1`` no port will be open for preview.
 
@@ -196,7 +196,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-void **clear_default_input_values** **(** **)**
+|void| **clear_default_input_values**\ (\ )
 
 Clears the default input ports value.
 
@@ -208,7 +208,7 @@ Clears the default input ports value.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_default_input_port** **(** :ref:`PortType<enum_VisualShaderNode_PortType>` type **)** |const|
+:ref:`int<class_int>` **get_default_input_port**\ (\ type\: :ref:`PortType<enum_VisualShaderNode_PortType>`\ ) |const|
 
 Returns the input port which should be connected by default when this node is created as a result of dragging a connection from an existing node to the empty space on the graph.
 
@@ -220,7 +220,7 @@ Returns the input port which should be connected by default when this node is cr
 
 .. rst-class:: classref-method
 
-:ref:`Array<class_Array>` **get_default_input_values** **(** **)** |const|
+:ref:`Array<class_Array>` **get_default_input_values**\ (\ ) |const|
 
 Returns an :ref:`Array<class_Array>` containing default values for all of the input ports of the node in the form ``[index0, value0, index1, value1, ...]``.
 
@@ -232,7 +232,7 @@ Returns an :ref:`Array<class_Array>` containing default values for all of the in
 
 .. rst-class:: classref-method
 
-:ref:`Variant<class_Variant>` **get_input_port_default_value** **(** :ref:`int<class_int>` port **)** |const|
+:ref:`Variant<class_Variant>` **get_input_port_default_value**\ (\ port\: :ref:`int<class_int>`\ ) |const|
 
 Returns the default value of the input ``port``.
 
@@ -244,7 +244,7 @@ Returns the default value of the input ``port``.
 
 .. rst-class:: classref-method
 
-void **remove_input_port_default_value** **(** :ref:`int<class_int>` port **)**
+|void| **remove_input_port_default_value**\ (\ port\: :ref:`int<class_int>`\ )
 
 Removes the default value of the input ``port``.
 
@@ -256,7 +256,7 @@ Removes the default value of the input ``port``.
 
 .. rst-class:: classref-method
 
-void **set_default_input_values** **(** :ref:`Array<class_Array>` values **)**
+|void| **set_default_input_values**\ (\ values\: :ref:`Array<class_Array>`\ )
 
 Sets the default input ports values using an :ref:`Array<class_Array>` of the form ``[index0, value0, index1, value1, ...]``. For example: ``[0, Vector3(0, 0, 0), 1, Vector3(0, 0, 0)]``.
 
@@ -268,7 +268,7 @@ Sets the default input ports values using an :ref:`Array<class_Array>` of the fo
 
 .. rst-class:: classref-method
 
-void **set_input_port_default_value** **(** :ref:`int<class_int>` port, :ref:`Variant<class_Variant>` value, :ref:`Variant<class_Variant>` prev_value=null **)**
+|void| **set_input_port_default_value**\ (\ port\: :ref:`int<class_int>`, value\: :ref:`Variant<class_Variant>`, prev_value\: :ref:`Variant<class_Variant>` = null\ )
 
 Sets the default ``value`` for the selected input ``port``.
 
@@ -279,3 +279,4 @@ Sets the default ``value`` for the selected input ``port``.
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

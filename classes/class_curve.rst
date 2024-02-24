@@ -49,43 +49,43 @@ Methods
 .. table::
    :widths: auto
 
-   +--------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                      | :ref:`add_point<class_Curve_method_add_point>` **(** :ref:`Vector2<class_Vector2>` position, :ref:`float<class_float>` left_tangent=0, :ref:`float<class_float>` right_tangent=0, :ref:`TangentMode<enum_Curve_TangentMode>` left_mode=0, :ref:`TangentMode<enum_Curve_TangentMode>` right_mode=0 **)** |
-   +--------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                       | :ref:`bake<class_Curve_method_bake>` **(** **)**                                                                                                                                                                                                                                                        |
-   +--------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                       | :ref:`clean_dupes<class_Curve_method_clean_dupes>` **(** **)**                                                                                                                                                                                                                                          |
-   +--------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                       | :ref:`clear_points<class_Curve_method_clear_points>` **(** **)**                                                                                                                                                                                                                                        |
-   +--------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`TangentMode<enum_Curve_TangentMode>` | :ref:`get_point_left_mode<class_Curve_method_get_point_left_mode>` **(** :ref:`int<class_int>` index **)** |const|                                                                                                                                                                                      |
-   +--------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`float<class_float>`                  | :ref:`get_point_left_tangent<class_Curve_method_get_point_left_tangent>` **(** :ref:`int<class_int>` index **)** |const|                                                                                                                                                                                |
-   +--------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Vector2<class_Vector2>`              | :ref:`get_point_position<class_Curve_method_get_point_position>` **(** :ref:`int<class_int>` index **)** |const|                                                                                                                                                                                        |
-   +--------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`TangentMode<enum_Curve_TangentMode>` | :ref:`get_point_right_mode<class_Curve_method_get_point_right_mode>` **(** :ref:`int<class_int>` index **)** |const|                                                                                                                                                                                    |
-   +--------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`float<class_float>`                  | :ref:`get_point_right_tangent<class_Curve_method_get_point_right_tangent>` **(** :ref:`int<class_int>` index **)** |const|                                                                                                                                                                              |
-   +--------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                       | :ref:`remove_point<class_Curve_method_remove_point>` **(** :ref:`int<class_int>` index **)**                                                                                                                                                                                                            |
-   +--------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`float<class_float>`                  | :ref:`sample<class_Curve_method_sample>` **(** :ref:`float<class_float>` offset **)** |const|                                                                                                                                                                                                           |
-   +--------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`float<class_float>`                  | :ref:`sample_baked<class_Curve_method_sample_baked>` **(** :ref:`float<class_float>` offset **)** |const|                                                                                                                                                                                               |
-   +--------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                       | :ref:`set_point_left_mode<class_Curve_method_set_point_left_mode>` **(** :ref:`int<class_int>` index, :ref:`TangentMode<enum_Curve_TangentMode>` mode **)**                                                                                                                                             |
-   +--------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                       | :ref:`set_point_left_tangent<class_Curve_method_set_point_left_tangent>` **(** :ref:`int<class_int>` index, :ref:`float<class_float>` tangent **)**                                                                                                                                                     |
-   +--------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                      | :ref:`set_point_offset<class_Curve_method_set_point_offset>` **(** :ref:`int<class_int>` index, :ref:`float<class_float>` offset **)**                                                                                                                                                                  |
-   +--------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                       | :ref:`set_point_right_mode<class_Curve_method_set_point_right_mode>` **(** :ref:`int<class_int>` index, :ref:`TangentMode<enum_Curve_TangentMode>` mode **)**                                                                                                                                           |
-   +--------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                       | :ref:`set_point_right_tangent<class_Curve_method_set_point_right_tangent>` **(** :ref:`int<class_int>` index, :ref:`float<class_float>` tangent **)**                                                                                                                                                   |
-   +--------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                       | :ref:`set_point_value<class_Curve_method_set_point_value>` **(** :ref:`int<class_int>` index, :ref:`float<class_float>` y **)**                                                                                                                                                                         |
-   +--------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +--------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                      | :ref:`add_point<class_Curve_method_add_point>`\ (\ position\: :ref:`Vector2<class_Vector2>`, left_tangent\: :ref:`float<class_float>` = 0, right_tangent\: :ref:`float<class_float>` = 0, left_mode\: :ref:`TangentMode<enum_Curve_TangentMode>` = 0, right_mode\: :ref:`TangentMode<enum_Curve_TangentMode>` = 0\ ) |
+   +--------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                     | :ref:`bake<class_Curve_method_bake>`\ (\ )                                                                                                                                                                                                                                                                           |
+   +--------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                     | :ref:`clean_dupes<class_Curve_method_clean_dupes>`\ (\ )                                                                                                                                                                                                                                                             |
+   +--------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                     | :ref:`clear_points<class_Curve_method_clear_points>`\ (\ )                                                                                                                                                                                                                                                           |
+   +--------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`TangentMode<enum_Curve_TangentMode>` | :ref:`get_point_left_mode<class_Curve_method_get_point_left_mode>`\ (\ index\: :ref:`int<class_int>`\ ) |const|                                                                                                                                                                                                      |
+   +--------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`                  | :ref:`get_point_left_tangent<class_Curve_method_get_point_left_tangent>`\ (\ index\: :ref:`int<class_int>`\ ) |const|                                                                                                                                                                                                |
+   +--------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector2<class_Vector2>`              | :ref:`get_point_position<class_Curve_method_get_point_position>`\ (\ index\: :ref:`int<class_int>`\ ) |const|                                                                                                                                                                                                        |
+   +--------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`TangentMode<enum_Curve_TangentMode>` | :ref:`get_point_right_mode<class_Curve_method_get_point_right_mode>`\ (\ index\: :ref:`int<class_int>`\ ) |const|                                                                                                                                                                                                    |
+   +--------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`                  | :ref:`get_point_right_tangent<class_Curve_method_get_point_right_tangent>`\ (\ index\: :ref:`int<class_int>`\ ) |const|                                                                                                                                                                                              |
+   +--------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                     | :ref:`remove_point<class_Curve_method_remove_point>`\ (\ index\: :ref:`int<class_int>`\ )                                                                                                                                                                                                                            |
+   +--------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`                  | :ref:`sample<class_Curve_method_sample>`\ (\ offset\: :ref:`float<class_float>`\ ) |const|                                                                                                                                                                                                                           |
+   +--------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`                  | :ref:`sample_baked<class_Curve_method_sample_baked>`\ (\ offset\: :ref:`float<class_float>`\ ) |const|                                                                                                                                                                                                               |
+   +--------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                     | :ref:`set_point_left_mode<class_Curve_method_set_point_left_mode>`\ (\ index\: :ref:`int<class_int>`, mode\: :ref:`TangentMode<enum_Curve_TangentMode>`\ )                                                                                                                                                           |
+   +--------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                     | :ref:`set_point_left_tangent<class_Curve_method_set_point_left_tangent>`\ (\ index\: :ref:`int<class_int>`, tangent\: :ref:`float<class_float>`\ )                                                                                                                                                                   |
+   +--------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                      | :ref:`set_point_offset<class_Curve_method_set_point_offset>`\ (\ index\: :ref:`int<class_int>`, offset\: :ref:`float<class_float>`\ )                                                                                                                                                                                |
+   +--------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                     | :ref:`set_point_right_mode<class_Curve_method_set_point_right_mode>`\ (\ index\: :ref:`int<class_int>`, mode\: :ref:`TangentMode<enum_Curve_TangentMode>`\ )                                                                                                                                                         |
+   +--------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                     | :ref:`set_point_right_tangent<class_Curve_method_set_point_right_tangent>`\ (\ index\: :ref:`int<class_int>`, tangent\: :ref:`float<class_float>`\ )                                                                                                                                                                 |
+   +--------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                     | :ref:`set_point_value<class_Curve_method_set_point_value>`\ (\ index\: :ref:`int<class_int>`, y\: :ref:`float<class_float>`\ )                                                                                                                                                                                       |
+   +--------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -100,7 +100,7 @@ Signals
 
 .. rst-class:: classref-signal
 
-**range_changed** **(** **)**
+**range_changed**\ (\ )
 
 Emitted when :ref:`max_value<class_Curve_property_max_value>` or :ref:`min_value<class_Curve_property_min_value>` is changed.
 
@@ -160,8 +160,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_bake_resolution** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_bake_resolution** **(** **)**
+- |void| **set_bake_resolution**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_bake_resolution**\ (\ )
 
 The number of points to include in the baked (i.e. cached) curve data.
 
@@ -177,8 +177,8 @@ The number of points to include in the baked (i.e. cached) curve data.
 
 .. rst-class:: classref-property-setget
 
-- void **set_max_value** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_max_value** **(** **)**
+- |void| **set_max_value**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_max_value**\ (\ )
 
 The maximum value the curve can reach.
 
@@ -194,8 +194,8 @@ The maximum value the curve can reach.
 
 .. rst-class:: classref-property-setget
 
-- void **set_min_value** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_min_value** **(** **)**
+- |void| **set_min_value**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_min_value**\ (\ )
 
 The minimum value the curve can reach.
 
@@ -211,8 +211,8 @@ The minimum value the curve can reach.
 
 .. rst-class:: classref-property-setget
 
-- void **set_point_count** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_point_count** **(** **)**
+- |void| **set_point_count**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_point_count**\ (\ )
 
 The number of points describing the curve.
 
@@ -229,7 +229,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **add_point** **(** :ref:`Vector2<class_Vector2>` position, :ref:`float<class_float>` left_tangent=0, :ref:`float<class_float>` right_tangent=0, :ref:`TangentMode<enum_Curve_TangentMode>` left_mode=0, :ref:`TangentMode<enum_Curve_TangentMode>` right_mode=0 **)**
+:ref:`int<class_int>` **add_point**\ (\ position\: :ref:`Vector2<class_Vector2>`, left_tangent\: :ref:`float<class_float>` = 0, right_tangent\: :ref:`float<class_float>` = 0, left_mode\: :ref:`TangentMode<enum_Curve_TangentMode>` = 0, right_mode\: :ref:`TangentMode<enum_Curve_TangentMode>` = 0\ )
 
 Adds a point to the curve. For each side, if the ``*_mode`` is :ref:`TANGENT_LINEAR<class_Curve_constant_TANGENT_LINEAR>`, the ``*_tangent`` angle (in degrees) uses the slope of the curve halfway to the adjacent point. Allows custom assignments to the ``*_tangent`` angle if ``*_mode`` is set to :ref:`TANGENT_FREE<class_Curve_constant_TANGENT_FREE>`.
 
@@ -241,7 +241,7 @@ Adds a point to the curve. For each side, if the ``*_mode`` is :ref:`TANGENT_LIN
 
 .. rst-class:: classref-method
 
-void **bake** **(** **)**
+|void| **bake**\ (\ )
 
 Recomputes the baked cache of points for the curve.
 
@@ -253,7 +253,7 @@ Recomputes the baked cache of points for the curve.
 
 .. rst-class:: classref-method
 
-void **clean_dupes** **(** **)**
+|void| **clean_dupes**\ (\ )
 
 Removes duplicate points, i.e. points that are less than 0.00001 units (engine epsilon value) away from their neighbor on the curve.
 
@@ -265,7 +265,7 @@ Removes duplicate points, i.e. points that are less than 0.00001 units (engine e
 
 .. rst-class:: classref-method
 
-void **clear_points** **(** **)**
+|void| **clear_points**\ (\ )
 
 Removes all points from the curve.
 
@@ -277,7 +277,7 @@ Removes all points from the curve.
 
 .. rst-class:: classref-method
 
-:ref:`TangentMode<enum_Curve_TangentMode>` **get_point_left_mode** **(** :ref:`int<class_int>` index **)** |const|
+:ref:`TangentMode<enum_Curve_TangentMode>` **get_point_left_mode**\ (\ index\: :ref:`int<class_int>`\ ) |const|
 
 Returns the left :ref:`TangentMode<enum_Curve_TangentMode>` for the point at ``index``.
 
@@ -289,7 +289,7 @@ Returns the left :ref:`TangentMode<enum_Curve_TangentMode>` for the point at ``i
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **get_point_left_tangent** **(** :ref:`int<class_int>` index **)** |const|
+:ref:`float<class_float>` **get_point_left_tangent**\ (\ index\: :ref:`int<class_int>`\ ) |const|
 
 Returns the left tangent angle (in degrees) for the point at ``index``.
 
@@ -301,7 +301,7 @@ Returns the left tangent angle (in degrees) for the point at ``index``.
 
 .. rst-class:: classref-method
 
-:ref:`Vector2<class_Vector2>` **get_point_position** **(** :ref:`int<class_int>` index **)** |const|
+:ref:`Vector2<class_Vector2>` **get_point_position**\ (\ index\: :ref:`int<class_int>`\ ) |const|
 
 Returns the curve coordinates for the point at ``index``.
 
@@ -313,7 +313,7 @@ Returns the curve coordinates for the point at ``index``.
 
 .. rst-class:: classref-method
 
-:ref:`TangentMode<enum_Curve_TangentMode>` **get_point_right_mode** **(** :ref:`int<class_int>` index **)** |const|
+:ref:`TangentMode<enum_Curve_TangentMode>` **get_point_right_mode**\ (\ index\: :ref:`int<class_int>`\ ) |const|
 
 Returns the right :ref:`TangentMode<enum_Curve_TangentMode>` for the point at ``index``.
 
@@ -325,7 +325,7 @@ Returns the right :ref:`TangentMode<enum_Curve_TangentMode>` for the point at ``
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **get_point_right_tangent** **(** :ref:`int<class_int>` index **)** |const|
+:ref:`float<class_float>` **get_point_right_tangent**\ (\ index\: :ref:`int<class_int>`\ ) |const|
 
 Returns the right tangent angle (in degrees) for the point at ``index``.
 
@@ -337,7 +337,7 @@ Returns the right tangent angle (in degrees) for the point at ``index``.
 
 .. rst-class:: classref-method
 
-void **remove_point** **(** :ref:`int<class_int>` index **)**
+|void| **remove_point**\ (\ index\: :ref:`int<class_int>`\ )
 
 Removes the point at ``index`` from the curve.
 
@@ -349,7 +349,7 @@ Removes the point at ``index`` from the curve.
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **sample** **(** :ref:`float<class_float>` offset **)** |const|
+:ref:`float<class_float>` **sample**\ (\ offset\: :ref:`float<class_float>`\ ) |const|
 
 Returns the Y value for the point that would exist at the X position ``offset`` along the curve.
 
@@ -361,7 +361,7 @@ Returns the Y value for the point that would exist at the X position ``offset`` 
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **sample_baked** **(** :ref:`float<class_float>` offset **)** |const|
+:ref:`float<class_float>` **sample_baked**\ (\ offset\: :ref:`float<class_float>`\ ) |const|
 
 Returns the Y value for the point that would exist at the X position ``offset`` along the curve using the baked cache. Bakes the curve's points if not already baked.
 
@@ -373,7 +373,7 @@ Returns the Y value for the point that would exist at the X position ``offset`` 
 
 .. rst-class:: classref-method
 
-void **set_point_left_mode** **(** :ref:`int<class_int>` index, :ref:`TangentMode<enum_Curve_TangentMode>` mode **)**
+|void| **set_point_left_mode**\ (\ index\: :ref:`int<class_int>`, mode\: :ref:`TangentMode<enum_Curve_TangentMode>`\ )
 
 Sets the left :ref:`TangentMode<enum_Curve_TangentMode>` for the point at ``index`` to ``mode``.
 
@@ -385,7 +385,7 @@ Sets the left :ref:`TangentMode<enum_Curve_TangentMode>` for the point at ``inde
 
 .. rst-class:: classref-method
 
-void **set_point_left_tangent** **(** :ref:`int<class_int>` index, :ref:`float<class_float>` tangent **)**
+|void| **set_point_left_tangent**\ (\ index\: :ref:`int<class_int>`, tangent\: :ref:`float<class_float>`\ )
 
 Sets the left tangent angle for the point at ``index`` to ``tangent``.
 
@@ -397,7 +397,7 @@ Sets the left tangent angle for the point at ``index`` to ``tangent``.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **set_point_offset** **(** :ref:`int<class_int>` index, :ref:`float<class_float>` offset **)**
+:ref:`int<class_int>` **set_point_offset**\ (\ index\: :ref:`int<class_int>`, offset\: :ref:`float<class_float>`\ )
 
 Sets the offset from ``0.5``.
 
@@ -409,7 +409,7 @@ Sets the offset from ``0.5``.
 
 .. rst-class:: classref-method
 
-void **set_point_right_mode** **(** :ref:`int<class_int>` index, :ref:`TangentMode<enum_Curve_TangentMode>` mode **)**
+|void| **set_point_right_mode**\ (\ index\: :ref:`int<class_int>`, mode\: :ref:`TangentMode<enum_Curve_TangentMode>`\ )
 
 Sets the right :ref:`TangentMode<enum_Curve_TangentMode>` for the point at ``index`` to ``mode``.
 
@@ -421,7 +421,7 @@ Sets the right :ref:`TangentMode<enum_Curve_TangentMode>` for the point at ``ind
 
 .. rst-class:: classref-method
 
-void **set_point_right_tangent** **(** :ref:`int<class_int>` index, :ref:`float<class_float>` tangent **)**
+|void| **set_point_right_tangent**\ (\ index\: :ref:`int<class_int>`, tangent\: :ref:`float<class_float>`\ )
 
 Sets the right tangent angle for the point at ``index`` to ``tangent``.
 
@@ -433,7 +433,7 @@ Sets the right tangent angle for the point at ``index`` to ``tangent``.
 
 .. rst-class:: classref-method
 
-void **set_point_value** **(** :ref:`int<class_int>` index, :ref:`float<class_float>` y **)**
+|void| **set_point_value**\ (\ index\: :ref:`int<class_int>`, y\: :ref:`float<class_float>`\ )
 
 Assigns the vertical position ``y`` to the point at ``index``.
 
@@ -444,3 +444,4 @@ Assigns the vertical position ``y`` to the point at ``index``.
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

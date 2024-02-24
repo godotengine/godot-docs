@@ -62,13 +62,13 @@ Methods
 .. table::
    :widths: auto
 
-   +-------------------------+------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>` | :ref:`is_stopped<class_Timer_method_is_stopped>` **(** **)** |const|                     |
-   +-------------------------+------------------------------------------------------------------------------------------+
-   | void                    | :ref:`start<class_Timer_method_start>` **(** :ref:`float<class_float>` time_sec=-1 **)** |
-   +-------------------------+------------------------------------------------------------------------------------------+
-   | void                    | :ref:`stop<class_Timer_method_stop>` **(** **)**                                         |
-   +-------------------------+------------------------------------------------------------------------------------------+
+   +-------------------------+-----------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | :ref:`is_stopped<class_Timer_method_is_stopped>`\ (\ ) |const|                          |
+   +-------------------------+-----------------------------------------------------------------------------------------+
+   | |void|                  | :ref:`start<class_Timer_method_start>`\ (\ time_sec\: :ref:`float<class_float>` = -1\ ) |
+   +-------------------------+-----------------------------------------------------------------------------------------+
+   | |void|                  | :ref:`stop<class_Timer_method_stop>`\ (\ )                                              |
+   +-------------------------+-----------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -83,7 +83,7 @@ Signals
 
 .. rst-class:: classref-signal
 
-**timeout** **(** **)**
+**timeout**\ (\ )
 
 Emitted when the timer reaches the end.
 
@@ -135,8 +135,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_autostart** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **has_autostart** **(** **)**
+- |void| **set_autostart**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **has_autostart**\ (\ )
 
 If ``true``, the timer will start immediately when it enters the scene tree.
 
@@ -154,8 +154,8 @@ If ``true``, the timer will start immediately when it enters the scene tree.
 
 .. rst-class:: classref-property-setget
 
-- void **set_one_shot** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_one_shot** **(** **)**
+- |void| **set_one_shot**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_one_shot**\ (\ )
 
 If ``true``, the timer will stop after reaching the end. Otherwise, as by default, the timer will automatically restart.
 
@@ -171,8 +171,8 @@ If ``true``, the timer will stop after reaching the end. Otherwise, as by defaul
 
 .. rst-class:: classref-property-setget
 
-- void **set_paused** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_paused** **(** **)**
+- |void| **set_paused**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_paused**\ (\ )
 
 If ``true``, the timer is paused. A paused timer does not process until this property is set back to ``false``, even when :ref:`start<class_Timer_method_start>` is called.
 
@@ -188,8 +188,8 @@ If ``true``, the timer is paused. A paused timer does not process until this pro
 
 .. rst-class:: classref-property-setget
 
-- void **set_timer_process_callback** **(** :ref:`TimerProcessCallback<enum_Timer_TimerProcessCallback>` value **)**
-- :ref:`TimerProcessCallback<enum_Timer_TimerProcessCallback>` **get_timer_process_callback** **(** **)**
+- |void| **set_timer_process_callback**\ (\ value\: :ref:`TimerProcessCallback<enum_Timer_TimerProcessCallback>`\ )
+- :ref:`TimerProcessCallback<enum_Timer_TimerProcessCallback>` **get_timer_process_callback**\ (\ )
 
 Specifies when the timer is updated during the main loop (see :ref:`TimerProcessCallback<enum_Timer_TimerProcessCallback>`).
 
@@ -205,7 +205,7 @@ Specifies when the timer is updated during the main loop (see :ref:`TimerProcess
 
 .. rst-class:: classref-property-setget
 
-- :ref:`float<class_float>` **get_time_left** **(** **)**
+- :ref:`float<class_float>` **get_time_left**\ (\ )
 
 The timer's remaining time in seconds. This is always ``0`` if the timer is stopped.
 
@@ -223,8 +223,8 @@ The timer's remaining time in seconds. This is always ``0`` if the timer is stop
 
 .. rst-class:: classref-property-setget
 
-- void **set_wait_time** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_wait_time** **(** **)**
+- |void| **set_wait_time**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_wait_time**\ (\ )
 
 The time required for the timer to end, in seconds. This property can also be set every time :ref:`start<class_Timer_method_start>` is called.
 
@@ -243,7 +243,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_stopped** **(** **)** |const|
+:ref:`bool<class_bool>` **is_stopped**\ (\ ) |const|
 
 Returns ``true`` if the timer is stopped or has not started.
 
@@ -255,7 +255,7 @@ Returns ``true`` if the timer is stopped or has not started.
 
 .. rst-class:: classref-method
 
-void **start** **(** :ref:`float<class_float>` time_sec=-1 **)**
+|void| **start**\ (\ time_sec\: :ref:`float<class_float>` = -1\ )
 
 Starts the timer, if it was not started already. Fails if the timer is not inside the tree. If ``time_sec`` is greater than ``0``, this value is used for the :ref:`wait_time<class_Timer_property_wait_time>`.
 
@@ -269,7 +269,7 @@ Starts the timer, if it was not started already. Fails if the timer is not insid
 
 .. rst-class:: classref-method
 
-void **stop** **(** **)**
+|void| **stop**\ (\ )
 
 Stops the timer.
 
@@ -280,3 +280,4 @@ Stops the timer.
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

@@ -80,19 +80,19 @@ Methods
 .. table::
    :widths: auto
 
-   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                          | :ref:`add_point<class_Line2D_method_add_point>` **(** :ref:`Vector2<class_Vector2>` position, :ref:`int<class_int>` index=-1 **)**                |
-   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                          | :ref:`clear_points<class_Line2D_method_clear_points>` **(** **)**                                                                                 |
-   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`         | :ref:`get_point_count<class_Line2D_method_get_point_count>` **(** **)** |const|                                                                   |
-   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Vector2<class_Vector2>` | :ref:`get_point_position<class_Line2D_method_get_point_position>` **(** :ref:`int<class_int>` index **)** |const|                                 |
-   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                          | :ref:`remove_point<class_Line2D_method_remove_point>` **(** :ref:`int<class_int>` index **)**                                                     |
-   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                          | :ref:`set_point_position<class_Line2D_method_set_point_position>` **(** :ref:`int<class_int>` index, :ref:`Vector2<class_Vector2>` position **)** |
-   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+   +-------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                        | :ref:`add_point<class_Line2D_method_add_point>`\ (\ position\: :ref:`Vector2<class_Vector2>`, index\: :ref:`int<class_int>` = -1\ )              |
+   +-------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                        | :ref:`clear_points<class_Line2D_method_clear_points>`\ (\ )                                                                                      |
+   +-------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`         | :ref:`get_point_count<class_Line2D_method_get_point_count>`\ (\ ) |const|                                                                        |
+   +-------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector2<class_Vector2>` | :ref:`get_point_position<class_Line2D_method_get_point_position>`\ (\ index\: :ref:`int<class_int>`\ ) |const|                                   |
+   +-------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                        | :ref:`remove_point<class_Line2D_method_remove_point>`\ (\ index\: :ref:`int<class_int>`\ )                                                       |
+   +-------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                        | :ref:`set_point_position<class_Line2D_method_set_point_position>`\ (\ index\: :ref:`int<class_int>`, position\: :ref:`Vector2<class_Vector2>`\ ) |
+   +-------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -218,8 +218,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_antialiased** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **get_antialiased** **(** **)**
+- |void| **set_antialiased**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_antialiased**\ (\ )
 
 If ``true``, the polyline's border will be anti-aliased.
 
@@ -237,8 +237,8 @@ If ``true``, the polyline's border will be anti-aliased.
 
 .. rst-class:: classref-property-setget
 
-- void **set_begin_cap_mode** **(** :ref:`LineCapMode<enum_Line2D_LineCapMode>` value **)**
-- :ref:`LineCapMode<enum_Line2D_LineCapMode>` **get_begin_cap_mode** **(** **)**
+- |void| **set_begin_cap_mode**\ (\ value\: :ref:`LineCapMode<enum_Line2D_LineCapMode>`\ )
+- :ref:`LineCapMode<enum_Line2D_LineCapMode>` **get_begin_cap_mode**\ (\ )
 
 The style of the beginning of the polyline, if :ref:`closed<class_Line2D_property_closed>` is ``false``. Use :ref:`LineCapMode<enum_Line2D_LineCapMode>` constants.
 
@@ -254,8 +254,8 @@ The style of the beginning of the polyline, if :ref:`closed<class_Line2D_propert
 
 .. rst-class:: classref-property-setget
 
-- void **set_closed** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_closed** **(** **)**
+- |void| **set_closed**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_closed**\ (\ )
 
 If ``true`` and the polyline has more than 2 points, the last point and the first one will be connected by a segment.
 
@@ -275,8 +275,8 @@ If ``true`` and the polyline has more than 2 points, the last point and the firs
 
 .. rst-class:: classref-property-setget
 
-- void **set_default_color** **(** :ref:`Color<class_Color>` value **)**
-- :ref:`Color<class_Color>` **get_default_color** **(** **)**
+- |void| **set_default_color**\ (\ value\: :ref:`Color<class_Color>`\ )
+- :ref:`Color<class_Color>` **get_default_color**\ (\ )
 
 The color of the polyline. Will not be used if a gradient is set.
 
@@ -292,8 +292,8 @@ The color of the polyline. Will not be used if a gradient is set.
 
 .. rst-class:: classref-property-setget
 
-- void **set_end_cap_mode** **(** :ref:`LineCapMode<enum_Line2D_LineCapMode>` value **)**
-- :ref:`LineCapMode<enum_Line2D_LineCapMode>` **get_end_cap_mode** **(** **)**
+- |void| **set_end_cap_mode**\ (\ value\: :ref:`LineCapMode<enum_Line2D_LineCapMode>`\ )
+- :ref:`LineCapMode<enum_Line2D_LineCapMode>` **get_end_cap_mode**\ (\ )
 
 The style of the end of the polyline, if :ref:`closed<class_Line2D_property_closed>` is ``false``. Use :ref:`LineCapMode<enum_Line2D_LineCapMode>` constants.
 
@@ -309,8 +309,8 @@ The style of the end of the polyline, if :ref:`closed<class_Line2D_property_clos
 
 .. rst-class:: classref-property-setget
 
-- void **set_gradient** **(** :ref:`Gradient<class_Gradient>` value **)**
-- :ref:`Gradient<class_Gradient>` **get_gradient** **(** **)**
+- |void| **set_gradient**\ (\ value\: :ref:`Gradient<class_Gradient>`\ )
+- :ref:`Gradient<class_Gradient>` **get_gradient**\ (\ )
 
 The gradient is drawn through the whole line from start to finish. The :ref:`default_color<class_Line2D_property_default_color>` will not be used if this property is set.
 
@@ -326,8 +326,8 @@ The gradient is drawn through the whole line from start to finish. The :ref:`def
 
 .. rst-class:: classref-property-setget
 
-- void **set_joint_mode** **(** :ref:`LineJointMode<enum_Line2D_LineJointMode>` value **)**
-- :ref:`LineJointMode<enum_Line2D_LineJointMode>` **get_joint_mode** **(** **)**
+- |void| **set_joint_mode**\ (\ value\: :ref:`LineJointMode<enum_Line2D_LineJointMode>`\ )
+- :ref:`LineJointMode<enum_Line2D_LineJointMode>` **get_joint_mode**\ (\ )
 
 The style of the connections between segments of the polyline. Use :ref:`LineJointMode<enum_Line2D_LineJointMode>` constants.
 
@@ -343,8 +343,8 @@ The style of the connections between segments of the polyline. Use :ref:`LineJoi
 
 .. rst-class:: classref-property-setget
 
-- void **set_points** **(** :ref:`PackedVector2Array<class_PackedVector2Array>` value **)**
-- :ref:`PackedVector2Array<class_PackedVector2Array>` **get_points** **(** **)**
+- |void| **set_points**\ (\ value\: :ref:`PackedVector2Array<class_PackedVector2Array>`\ )
+- :ref:`PackedVector2Array<class_PackedVector2Array>` **get_points**\ (\ )
 
 The points of the polyline, interpreted in local 2D coordinates. Segments are drawn between the adjacent points in this array.
 
@@ -360,8 +360,8 @@ The points of the polyline, interpreted in local 2D coordinates. Segments are dr
 
 .. rst-class:: classref-property-setget
 
-- void **set_round_precision** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_round_precision** **(** **)**
+- |void| **set_round_precision**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_round_precision**\ (\ )
 
 The smoothness used for rounded joints and caps. Higher values result in smoother corners, but are more demanding to render and update.
 
@@ -377,8 +377,8 @@ The smoothness used for rounded joints and caps. Higher values result in smoothe
 
 .. rst-class:: classref-property-setget
 
-- void **set_sharp_limit** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_sharp_limit** **(** **)**
+- |void| **set_sharp_limit**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_sharp_limit**\ (\ )
 
 Determines the miter limit of the polyline. Normally, when :ref:`joint_mode<class_Line2D_property_joint_mode>` is set to :ref:`LINE_JOINT_SHARP<class_Line2D_constant_LINE_JOINT_SHARP>`, sharp angles fall back to using the logic of :ref:`LINE_JOINT_BEVEL<class_Line2D_constant_LINE_JOINT_BEVEL>` joints to prevent very long miters. Higher values of this property mean that the fallback to a bevel joint will happen at sharper angles.
 
@@ -394,8 +394,8 @@ Determines the miter limit of the polyline. Normally, when :ref:`joint_mode<clas
 
 .. rst-class:: classref-property-setget
 
-- void **set_texture** **(** :ref:`Texture2D<class_Texture2D>` value **)**
-- :ref:`Texture2D<class_Texture2D>` **get_texture** **(** **)**
+- |void| **set_texture**\ (\ value\: :ref:`Texture2D<class_Texture2D>`\ )
+- :ref:`Texture2D<class_Texture2D>` **get_texture**\ (\ )
 
 The texture used for the polyline. Uses :ref:`texture_mode<class_Line2D_property_texture_mode>` for drawing style.
 
@@ -411,8 +411,8 @@ The texture used for the polyline. Uses :ref:`texture_mode<class_Line2D_property
 
 .. rst-class:: classref-property-setget
 
-- void **set_texture_mode** **(** :ref:`LineTextureMode<enum_Line2D_LineTextureMode>` value **)**
-- :ref:`LineTextureMode<enum_Line2D_LineTextureMode>` **get_texture_mode** **(** **)**
+- |void| **set_texture_mode**\ (\ value\: :ref:`LineTextureMode<enum_Line2D_LineTextureMode>`\ )
+- :ref:`LineTextureMode<enum_Line2D_LineTextureMode>` **get_texture_mode**\ (\ )
 
 The style to render the :ref:`texture<class_Line2D_property_texture>` of the polyline. Use :ref:`LineTextureMode<enum_Line2D_LineTextureMode>` constants.
 
@@ -428,8 +428,8 @@ The style to render the :ref:`texture<class_Line2D_property_texture>` of the pol
 
 .. rst-class:: classref-property-setget
 
-- void **set_width** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_width** **(** **)**
+- |void| **set_width**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_width**\ (\ )
 
 The polyline's width.
 
@@ -445,8 +445,8 @@ The polyline's width.
 
 .. rst-class:: classref-property-setget
 
-- void **set_curve** **(** :ref:`Curve<class_Curve>` value **)**
-- :ref:`Curve<class_Curve>` **get_curve** **(** **)**
+- |void| **set_curve**\ (\ value\: :ref:`Curve<class_Curve>`\ )
+- :ref:`Curve<class_Curve>` **get_curve**\ (\ )
 
 The polyline's width curve. The width of the polyline over its length will be equivalent to the value of the width curve over its domain.
 
@@ -463,7 +463,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-void **add_point** **(** :ref:`Vector2<class_Vector2>` position, :ref:`int<class_int>` index=-1 **)**
+|void| **add_point**\ (\ position\: :ref:`Vector2<class_Vector2>`, index\: :ref:`int<class_int>` = -1\ )
 
 Adds a point with the specified ``position`` relative to the polyline's own position. If no ``index`` is provided, the new point will be added to the end of the points array.
 
@@ -477,7 +477,7 @@ If ``index`` is given, the new point is inserted before the existing point ident
 
 .. rst-class:: classref-method
 
-void **clear_points** **(** **)**
+|void| **clear_points**\ (\ )
 
 Removes all points from the polyline, making it empty.
 
@@ -489,7 +489,7 @@ Removes all points from the polyline, making it empty.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_point_count** **(** **)** |const|
+:ref:`int<class_int>` **get_point_count**\ (\ ) |const|
 
 Returns the number of points in the polyline.
 
@@ -501,7 +501,7 @@ Returns the number of points in the polyline.
 
 .. rst-class:: classref-method
 
-:ref:`Vector2<class_Vector2>` **get_point_position** **(** :ref:`int<class_int>` index **)** |const|
+:ref:`Vector2<class_Vector2>` **get_point_position**\ (\ index\: :ref:`int<class_int>`\ ) |const|
 
 Returns the position of the point at index ``index``.
 
@@ -513,7 +513,7 @@ Returns the position of the point at index ``index``.
 
 .. rst-class:: classref-method
 
-void **remove_point** **(** :ref:`int<class_int>` index **)**
+|void| **remove_point**\ (\ index\: :ref:`int<class_int>`\ )
 
 Removes the point at index ``index`` from the polyline.
 
@@ -525,7 +525,7 @@ Removes the point at index ``index`` from the polyline.
 
 .. rst-class:: classref-method
 
-void **set_point_position** **(** :ref:`int<class_int>` index, :ref:`Vector2<class_Vector2>` position **)**
+|void| **set_point_position**\ (\ index\: :ref:`int<class_int>`, position\: :ref:`Vector2<class_Vector2>`\ )
 
 Overwrites the position of the point at the given ``index`` with the supplied ``position``.
 
@@ -536,3 +536,4 @@ Overwrites the position of the point at the given ``index`` with the supplied ``
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

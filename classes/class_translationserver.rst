@@ -50,49 +50,49 @@ Methods
 .. table::
    :widths: auto
 
-   +---------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                              | :ref:`add_translation<class_TranslationServer_method_add_translation>` **(** :ref:`Translation<class_Translation>` translation **)**                                                                                                                                  |
-   +---------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                              | :ref:`clear<class_TranslationServer_method_clear>` **(** **)**                                                                                                                                                                                                        |
-   +---------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                             | :ref:`compare_locales<class_TranslationServer_method_compare_locales>` **(** :ref:`String<class_String>` locale_a, :ref:`String<class_String>` locale_b **)** |const|                                                                                                 |
-   +---------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`get_all_countries<class_TranslationServer_method_get_all_countries>` **(** **)** |const|                                                                                                                                                                        |
-   +---------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`get_all_languages<class_TranslationServer_method_get_all_languages>` **(** **)** |const|                                                                                                                                                                        |
-   +---------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`get_all_scripts<class_TranslationServer_method_get_all_scripts>` **(** **)** |const|                                                                                                                                                                            |
-   +---------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`String<class_String>`                       | :ref:`get_country_name<class_TranslationServer_method_get_country_name>` **(** :ref:`String<class_String>` country **)** |const|                                                                                                                                      |
-   +---------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`String<class_String>`                       | :ref:`get_language_name<class_TranslationServer_method_get_language_name>` **(** :ref:`String<class_String>` language **)** |const|                                                                                                                                   |
-   +---------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`get_loaded_locales<class_TranslationServer_method_get_loaded_locales>` **(** **)** |const|                                                                                                                                                                      |
-   +---------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`String<class_String>`                       | :ref:`get_locale<class_TranslationServer_method_get_locale>` **(** **)** |const|                                                                                                                                                                                      |
-   +---------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`String<class_String>`                       | :ref:`get_locale_name<class_TranslationServer_method_get_locale_name>` **(** :ref:`String<class_String>` locale **)** |const|                                                                                                                                         |
-   +---------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`String<class_String>`                       | :ref:`get_script_name<class_TranslationServer_method_get_script_name>` **(** :ref:`String<class_String>` script **)** |const|                                                                                                                                         |
-   +---------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`String<class_String>`                       | :ref:`get_tool_locale<class_TranslationServer_method_get_tool_locale>` **(** **)**                                                                                                                                                                                    |
-   +---------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Translation<class_Translation>`             | :ref:`get_translation_object<class_TranslationServer_method_get_translation_object>` **(** :ref:`String<class_String>` locale **)**                                                                                                                                   |
-   +---------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`StringName<class_StringName>`               | :ref:`pseudolocalize<class_TranslationServer_method_pseudolocalize>` **(** :ref:`StringName<class_StringName>` message **)** |const|                                                                                                                                  |
-   +---------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                              | :ref:`reload_pseudolocalization<class_TranslationServer_method_reload_pseudolocalization>` **(** **)**                                                                                                                                                                |
-   +---------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                              | :ref:`remove_translation<class_TranslationServer_method_remove_translation>` **(** :ref:`Translation<class_Translation>` translation **)**                                                                                                                            |
-   +---------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                              | :ref:`set_locale<class_TranslationServer_method_set_locale>` **(** :ref:`String<class_String>` locale **)**                                                                                                                                                           |
-   +---------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`String<class_String>`                       | :ref:`standardize_locale<class_TranslationServer_method_standardize_locale>` **(** :ref:`String<class_String>` locale **)** |const|                                                                                                                                   |
-   +---------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`StringName<class_StringName>`               | :ref:`translate<class_TranslationServer_method_translate>` **(** :ref:`StringName<class_StringName>` message, :ref:`StringName<class_StringName>` context="" **)** |const|                                                                                            |
-   +---------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`StringName<class_StringName>`               | :ref:`translate_plural<class_TranslationServer_method_translate_plural>` **(** :ref:`StringName<class_StringName>` message, :ref:`StringName<class_StringName>` plural_message, :ref:`int<class_int>` n, :ref:`StringName<class_StringName>` context="" **)** |const| |
-   +---------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +---------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                            | :ref:`add_translation<class_TranslationServer_method_add_translation>`\ (\ translation\: :ref:`Translation<class_Translation>`\ )                                                                                                                                           |
+   +---------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                            | :ref:`clear<class_TranslationServer_method_clear>`\ (\ )                                                                                                                                                                                                                    |
+   +---------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`compare_locales<class_TranslationServer_method_compare_locales>`\ (\ locale_a\: :ref:`String<class_String>`, locale_b\: :ref:`String<class_String>`\ ) |const|                                                                                                        |
+   +---------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`get_all_countries<class_TranslationServer_method_get_all_countries>`\ (\ ) |const|                                                                                                                                                                                    |
+   +---------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`get_all_languages<class_TranslationServer_method_get_all_languages>`\ (\ ) |const|                                                                                                                                                                                    |
+   +---------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`get_all_scripts<class_TranslationServer_method_get_all_scripts>`\ (\ ) |const|                                                                                                                                                                                        |
+   +---------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                       | :ref:`get_country_name<class_TranslationServer_method_get_country_name>`\ (\ country\: :ref:`String<class_String>`\ ) |const|                                                                                                                                               |
+   +---------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                       | :ref:`get_language_name<class_TranslationServer_method_get_language_name>`\ (\ language\: :ref:`String<class_String>`\ ) |const|                                                                                                                                            |
+   +---------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`get_loaded_locales<class_TranslationServer_method_get_loaded_locales>`\ (\ ) |const|                                                                                                                                                                                  |
+   +---------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                       | :ref:`get_locale<class_TranslationServer_method_get_locale>`\ (\ ) |const|                                                                                                                                                                                                  |
+   +---------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                       | :ref:`get_locale_name<class_TranslationServer_method_get_locale_name>`\ (\ locale\: :ref:`String<class_String>`\ ) |const|                                                                                                                                                  |
+   +---------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                       | :ref:`get_script_name<class_TranslationServer_method_get_script_name>`\ (\ script\: :ref:`String<class_String>`\ ) |const|                                                                                                                                                  |
+   +---------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                       | :ref:`get_tool_locale<class_TranslationServer_method_get_tool_locale>`\ (\ )                                                                                                                                                                                                |
+   +---------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Translation<class_Translation>`             | :ref:`get_translation_object<class_TranslationServer_method_get_translation_object>`\ (\ locale\: :ref:`String<class_String>`\ )                                                                                                                                            |
+   +---------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`StringName<class_StringName>`               | :ref:`pseudolocalize<class_TranslationServer_method_pseudolocalize>`\ (\ message\: :ref:`StringName<class_StringName>`\ ) |const|                                                                                                                                           |
+   +---------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                            | :ref:`reload_pseudolocalization<class_TranslationServer_method_reload_pseudolocalization>`\ (\ )                                                                                                                                                                            |
+   +---------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                            | :ref:`remove_translation<class_TranslationServer_method_remove_translation>`\ (\ translation\: :ref:`Translation<class_Translation>`\ )                                                                                                                                     |
+   +---------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                            | :ref:`set_locale<class_TranslationServer_method_set_locale>`\ (\ locale\: :ref:`String<class_String>`\ )                                                                                                                                                                    |
+   +---------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                       | :ref:`standardize_locale<class_TranslationServer_method_standardize_locale>`\ (\ locale\: :ref:`String<class_String>`\ ) |const|                                                                                                                                            |
+   +---------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`StringName<class_StringName>`               | :ref:`translate<class_TranslationServer_method_translate>`\ (\ message\: :ref:`StringName<class_StringName>`, context\: :ref:`StringName<class_StringName>` = &""\ ) |const|                                                                                                |
+   +---------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`StringName<class_StringName>`               | :ref:`translate_plural<class_TranslationServer_method_translate_plural>`\ (\ message\: :ref:`StringName<class_StringName>`, plural_message\: :ref:`StringName<class_StringName>`, n\: :ref:`int<class_int>`, context\: :ref:`StringName<class_StringName>` = &""\ ) |const| |
+   +---------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -111,8 +111,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_pseudolocalization_enabled** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_pseudolocalization_enabled** **(** **)**
+- |void| **set_pseudolocalization_enabled**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_pseudolocalization_enabled**\ (\ )
 
 If ``true``, enables the use of pseudolocalization. See :ref:`ProjectSettings.internationalization/pseudolocalization/use_pseudolocalization<class_ProjectSettings_property_internationalization/pseudolocalization/use_pseudolocalization>` for details.
 
@@ -129,7 +129,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-void **add_translation** **(** :ref:`Translation<class_Translation>` translation **)**
+|void| **add_translation**\ (\ translation\: :ref:`Translation<class_Translation>`\ )
 
 Adds a :ref:`Translation<class_Translation>` resource.
 
@@ -141,7 +141,7 @@ Adds a :ref:`Translation<class_Translation>` resource.
 
 .. rst-class:: classref-method
 
-void **clear** **(** **)**
+|void| **clear**\ (\ )
 
 Clears the server from all translations.
 
@@ -153,7 +153,7 @@ Clears the server from all translations.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **compare_locales** **(** :ref:`String<class_String>` locale_a, :ref:`String<class_String>` locale_b **)** |const|
+:ref:`int<class_int>` **compare_locales**\ (\ locale_a\: :ref:`String<class_String>`, locale_b\: :ref:`String<class_String>`\ ) |const|
 
 Compares two locales and returns a similarity score between ``0`` (no match) and ``10`` (full match).
 
@@ -165,7 +165,7 @@ Compares two locales and returns a similarity score between ``0`` (no match) and
 
 .. rst-class:: classref-method
 
-:ref:`PackedStringArray<class_PackedStringArray>` **get_all_countries** **(** **)** |const|
+:ref:`PackedStringArray<class_PackedStringArray>` **get_all_countries**\ (\ ) |const|
 
 Returns an array of known country codes.
 
@@ -177,7 +177,7 @@ Returns an array of known country codes.
 
 .. rst-class:: classref-method
 
-:ref:`PackedStringArray<class_PackedStringArray>` **get_all_languages** **(** **)** |const|
+:ref:`PackedStringArray<class_PackedStringArray>` **get_all_languages**\ (\ ) |const|
 
 Returns array of known language codes.
 
@@ -189,7 +189,7 @@ Returns array of known language codes.
 
 .. rst-class:: classref-method
 
-:ref:`PackedStringArray<class_PackedStringArray>` **get_all_scripts** **(** **)** |const|
+:ref:`PackedStringArray<class_PackedStringArray>` **get_all_scripts**\ (\ ) |const|
 
 Returns an array of known script codes.
 
@@ -201,7 +201,7 @@ Returns an array of known script codes.
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **get_country_name** **(** :ref:`String<class_String>` country **)** |const|
+:ref:`String<class_String>` **get_country_name**\ (\ country\: :ref:`String<class_String>`\ ) |const|
 
 Returns a readable country name for the ``country`` code.
 
@@ -213,7 +213,7 @@ Returns a readable country name for the ``country`` code.
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **get_language_name** **(** :ref:`String<class_String>` language **)** |const|
+:ref:`String<class_String>` **get_language_name**\ (\ language\: :ref:`String<class_String>`\ ) |const|
 
 Returns a readable language name for the ``language`` code.
 
@@ -225,7 +225,7 @@ Returns a readable language name for the ``language`` code.
 
 .. rst-class:: classref-method
 
-:ref:`PackedStringArray<class_PackedStringArray>` **get_loaded_locales** **(** **)** |const|
+:ref:`PackedStringArray<class_PackedStringArray>` **get_loaded_locales**\ (\ ) |const|
 
 Returns an array of all loaded locales of the project.
 
@@ -237,7 +237,7 @@ Returns an array of all loaded locales of the project.
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **get_locale** **(** **)** |const|
+:ref:`String<class_String>` **get_locale**\ (\ ) |const|
 
 Returns the current locale of the project.
 
@@ -251,7 +251,7 @@ See also :ref:`OS.get_locale<class_OS_method_get_locale>` and :ref:`OS.get_local
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **get_locale_name** **(** :ref:`String<class_String>` locale **)** |const|
+:ref:`String<class_String>` **get_locale_name**\ (\ locale\: :ref:`String<class_String>`\ ) |const|
 
 Returns a locale's language and its variant (e.g. ``"en_US"`` would return ``"English (United States)"``).
 
@@ -263,7 +263,7 @@ Returns a locale's language and its variant (e.g. ``"en_US"`` would return ``"En
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **get_script_name** **(** :ref:`String<class_String>` script **)** |const|
+:ref:`String<class_String>` **get_script_name**\ (\ script\: :ref:`String<class_String>`\ ) |const|
 
 Returns a readable script name for the ``script`` code.
 
@@ -275,7 +275,7 @@ Returns a readable script name for the ``script`` code.
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **get_tool_locale** **(** **)**
+:ref:`String<class_String>` **get_tool_locale**\ (\ )
 
 Returns the current locale of the editor.
 
@@ -289,7 +289,7 @@ Returns the current locale of the editor.
 
 .. rst-class:: classref-method
 
-:ref:`Translation<class_Translation>` **get_translation_object** **(** :ref:`String<class_String>` locale **)**
+:ref:`Translation<class_Translation>` **get_translation_object**\ (\ locale\: :ref:`String<class_String>`\ )
 
 Returns the :ref:`Translation<class_Translation>` instance based on the ``locale`` passed in.
 
@@ -303,7 +303,7 @@ It will return ``null`` if there is no :ref:`Translation<class_Translation>` ins
 
 .. rst-class:: classref-method
 
-:ref:`StringName<class_StringName>` **pseudolocalize** **(** :ref:`StringName<class_StringName>` message **)** |const|
+:ref:`StringName<class_StringName>` **pseudolocalize**\ (\ message\: :ref:`StringName<class_StringName>`\ ) |const|
 
 Returns the pseudolocalized string based on the ``message`` passed in.
 
@@ -315,7 +315,7 @@ Returns the pseudolocalized string based on the ``message`` passed in.
 
 .. rst-class:: classref-method
 
-void **reload_pseudolocalization** **(** **)**
+|void| **reload_pseudolocalization**\ (\ )
 
 Reparses the pseudolocalization options and reloads the translation.
 
@@ -327,7 +327,7 @@ Reparses the pseudolocalization options and reloads the translation.
 
 .. rst-class:: classref-method
 
-void **remove_translation** **(** :ref:`Translation<class_Translation>` translation **)**
+|void| **remove_translation**\ (\ translation\: :ref:`Translation<class_Translation>`\ )
 
 Removes the given translation from the server.
 
@@ -339,7 +339,7 @@ Removes the given translation from the server.
 
 .. rst-class:: classref-method
 
-void **set_locale** **(** :ref:`String<class_String>` locale **)**
+|void| **set_locale**\ (\ locale\: :ref:`String<class_String>`\ )
 
 Sets the locale of the project. The ``locale`` string will be standardized to match known locales (e.g. ``en-US`` would be matched to ``en_US``).
 
@@ -353,7 +353,7 @@ If translations have been loaded beforehand for the new locale, they will be app
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **standardize_locale** **(** :ref:`String<class_String>` locale **)** |const|
+:ref:`String<class_String>` **standardize_locale**\ (\ locale\: :ref:`String<class_String>`\ ) |const|
 
 Returns a ``locale`` string standardized to match known locales (e.g. ``en-US`` would be matched to ``en_US``).
 
@@ -365,7 +365,7 @@ Returns a ``locale`` string standardized to match known locales (e.g. ``en-US`` 
 
 .. rst-class:: classref-method
 
-:ref:`StringName<class_StringName>` **translate** **(** :ref:`StringName<class_StringName>` message, :ref:`StringName<class_StringName>` context="" **)** |const|
+:ref:`StringName<class_StringName>` **translate**\ (\ message\: :ref:`StringName<class_StringName>`, context\: :ref:`StringName<class_StringName>` = &""\ ) |const|
 
 Returns the current locale's translation for the given message (key) and context.
 
@@ -377,7 +377,7 @@ Returns the current locale's translation for the given message (key) and context
 
 .. rst-class:: classref-method
 
-:ref:`StringName<class_StringName>` **translate_plural** **(** :ref:`StringName<class_StringName>` message, :ref:`StringName<class_StringName>` plural_message, :ref:`int<class_int>` n, :ref:`StringName<class_StringName>` context="" **)** |const|
+:ref:`StringName<class_StringName>` **translate_plural**\ (\ message\: :ref:`StringName<class_StringName>`, plural_message\: :ref:`StringName<class_StringName>`, n\: :ref:`int<class_int>`, context\: :ref:`StringName<class_StringName>` = &""\ ) |const|
 
 Returns the current locale's translation for the given message (key), plural message and context.
 
@@ -390,3 +390,4 @@ The number ``n`` is the number or quantity of the plural object. It will be used
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

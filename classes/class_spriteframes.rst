@@ -29,41 +29,41 @@ Methods
 .. table::
    :widths: auto
 
-   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                              | :ref:`add_animation<class_SpriteFrames_method_add_animation>` **(** :ref:`StringName<class_StringName>` anim **)**                                                                                                                  |
-   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                              | :ref:`add_frame<class_SpriteFrames_method_add_frame>` **(** :ref:`StringName<class_StringName>` anim, :ref:`Texture2D<class_Texture2D>` texture, :ref:`float<class_float>` duration=1.0, :ref:`int<class_int>` at_position=-1 **)** |
-   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                              | :ref:`clear<class_SpriteFrames_method_clear>` **(** :ref:`StringName<class_StringName>` anim **)**                                                                                                                                  |
-   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                              | :ref:`clear_all<class_SpriteFrames_method_clear_all>` **(** **)**                                                                                                                                                                   |
-   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                           | :ref:`get_animation_loop<class_SpriteFrames_method_get_animation_loop>` **(** :ref:`StringName<class_StringName>` anim **)** |const|                                                                                                |
-   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`get_animation_names<class_SpriteFrames_method_get_animation_names>` **(** **)** |const|                                                                                                                                       |
-   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`float<class_float>`                         | :ref:`get_animation_speed<class_SpriteFrames_method_get_animation_speed>` **(** :ref:`StringName<class_StringName>` anim **)** |const|                                                                                              |
-   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                             | :ref:`get_frame_count<class_SpriteFrames_method_get_frame_count>` **(** :ref:`StringName<class_StringName>` anim **)** |const|                                                                                                      |
-   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`float<class_float>`                         | :ref:`get_frame_duration<class_SpriteFrames_method_get_frame_duration>` **(** :ref:`StringName<class_StringName>` anim, :ref:`int<class_int>` idx **)** |const|                                                                     |
-   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Texture2D<class_Texture2D>`                 | :ref:`get_frame_texture<class_SpriteFrames_method_get_frame_texture>` **(** :ref:`StringName<class_StringName>` anim, :ref:`int<class_int>` idx **)** |const|                                                                       |
-   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                           | :ref:`has_animation<class_SpriteFrames_method_has_animation>` **(** :ref:`StringName<class_StringName>` anim **)** |const|                                                                                                          |
-   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                              | :ref:`remove_animation<class_SpriteFrames_method_remove_animation>` **(** :ref:`StringName<class_StringName>` anim **)**                                                                                                            |
-   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                              | :ref:`remove_frame<class_SpriteFrames_method_remove_frame>` **(** :ref:`StringName<class_StringName>` anim, :ref:`int<class_int>` idx **)**                                                                                         |
-   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                              | :ref:`rename_animation<class_SpriteFrames_method_rename_animation>` **(** :ref:`StringName<class_StringName>` anim, :ref:`StringName<class_StringName>` newname **)**                                                               |
-   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                              | :ref:`set_animation_loop<class_SpriteFrames_method_set_animation_loop>` **(** :ref:`StringName<class_StringName>` anim, :ref:`bool<class_bool>` loop **)**                                                                          |
-   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                              | :ref:`set_animation_speed<class_SpriteFrames_method_set_animation_speed>` **(** :ref:`StringName<class_StringName>` anim, :ref:`float<class_float>` fps **)**                                                                       |
-   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                              | :ref:`set_frame<class_SpriteFrames_method_set_frame>` **(** :ref:`StringName<class_StringName>` anim, :ref:`int<class_int>` idx, :ref:`Texture2D<class_Texture2D>` texture, :ref:`float<class_float>` duration=1.0 **)**            |
-   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                            | :ref:`add_animation<class_SpriteFrames_method_add_animation>`\ (\ anim\: :ref:`StringName<class_StringName>`\ )                                                                                                                            |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                            | :ref:`add_frame<class_SpriteFrames_method_add_frame>`\ (\ anim\: :ref:`StringName<class_StringName>`, texture\: :ref:`Texture2D<class_Texture2D>`, duration\: :ref:`float<class_float>` = 1.0, at_position\: :ref:`int<class_int>` = -1\ ) |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                            | :ref:`clear<class_SpriteFrames_method_clear>`\ (\ anim\: :ref:`StringName<class_StringName>`\ )                                                                                                                                            |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                            | :ref:`clear_all<class_SpriteFrames_method_clear_all>`\ (\ )                                                                                                                                                                                |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`get_animation_loop<class_SpriteFrames_method_get_animation_loop>`\ (\ anim\: :ref:`StringName<class_StringName>`\ ) |const|                                                                                                          |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`get_animation_names<class_SpriteFrames_method_get_animation_names>`\ (\ ) |const|                                                                                                                                                    |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`                         | :ref:`get_animation_speed<class_SpriteFrames_method_get_animation_speed>`\ (\ anim\: :ref:`StringName<class_StringName>`\ ) |const|                                                                                                        |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`get_frame_count<class_SpriteFrames_method_get_frame_count>`\ (\ anim\: :ref:`StringName<class_StringName>`\ ) |const|                                                                                                                |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`                         | :ref:`get_frame_duration<class_SpriteFrames_method_get_frame_duration>`\ (\ anim\: :ref:`StringName<class_StringName>`, idx\: :ref:`int<class_int>`\ ) |const|                                                                             |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Texture2D<class_Texture2D>`                 | :ref:`get_frame_texture<class_SpriteFrames_method_get_frame_texture>`\ (\ anim\: :ref:`StringName<class_StringName>`, idx\: :ref:`int<class_int>`\ ) |const|                                                                               |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`has_animation<class_SpriteFrames_method_has_animation>`\ (\ anim\: :ref:`StringName<class_StringName>`\ ) |const|                                                                                                                    |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                            | :ref:`remove_animation<class_SpriteFrames_method_remove_animation>`\ (\ anim\: :ref:`StringName<class_StringName>`\ )                                                                                                                      |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                            | :ref:`remove_frame<class_SpriteFrames_method_remove_frame>`\ (\ anim\: :ref:`StringName<class_StringName>`, idx\: :ref:`int<class_int>`\ )                                                                                                 |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                            | :ref:`rename_animation<class_SpriteFrames_method_rename_animation>`\ (\ anim\: :ref:`StringName<class_StringName>`, newname\: :ref:`StringName<class_StringName>`\ )                                                                       |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                            | :ref:`set_animation_loop<class_SpriteFrames_method_set_animation_loop>`\ (\ anim\: :ref:`StringName<class_StringName>`, loop\: :ref:`bool<class_bool>`\ )                                                                                  |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                            | :ref:`set_animation_speed<class_SpriteFrames_method_set_animation_speed>`\ (\ anim\: :ref:`StringName<class_StringName>`, fps\: :ref:`float<class_float>`\ )                                                                               |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                            | :ref:`set_frame<class_SpriteFrames_method_set_frame>`\ (\ anim\: :ref:`StringName<class_StringName>`, idx\: :ref:`int<class_int>`, texture\: :ref:`Texture2D<class_Texture2D>`, duration\: :ref:`float<class_float>` = 1.0\ )              |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -78,7 +78,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-void **add_animation** **(** :ref:`StringName<class_StringName>` anim **)**
+|void| **add_animation**\ (\ anim\: :ref:`StringName<class_StringName>`\ )
 
 Adds a new ``anim`` animation to the library.
 
@@ -90,7 +90,7 @@ Adds a new ``anim`` animation to the library.
 
 .. rst-class:: classref-method
 
-void **add_frame** **(** :ref:`StringName<class_StringName>` anim, :ref:`Texture2D<class_Texture2D>` texture, :ref:`float<class_float>` duration=1.0, :ref:`int<class_int>` at_position=-1 **)**
+|void| **add_frame**\ (\ anim\: :ref:`StringName<class_StringName>`, texture\: :ref:`Texture2D<class_Texture2D>`, duration\: :ref:`float<class_float>` = 1.0, at_position\: :ref:`int<class_int>` = -1\ )
 
 Adds a frame to the ``anim`` animation. If ``at_position`` is ``-1``, the frame will be added to the end of the animation.
 
@@ -102,7 +102,7 @@ Adds a frame to the ``anim`` animation. If ``at_position`` is ``-1``, the frame 
 
 .. rst-class:: classref-method
 
-void **clear** **(** :ref:`StringName<class_StringName>` anim **)**
+|void| **clear**\ (\ anim\: :ref:`StringName<class_StringName>`\ )
 
 Removes all frames from the ``anim`` animation.
 
@@ -114,7 +114,7 @@ Removes all frames from the ``anim`` animation.
 
 .. rst-class:: classref-method
 
-void **clear_all** **(** **)**
+|void| **clear_all**\ (\ )
 
 Removes all animations. An empty ``default`` animation will be created.
 
@@ -126,7 +126,7 @@ Removes all animations. An empty ``default`` animation will be created.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **get_animation_loop** **(** :ref:`StringName<class_StringName>` anim **)** |const|
+:ref:`bool<class_bool>` **get_animation_loop**\ (\ anim\: :ref:`StringName<class_StringName>`\ ) |const|
 
 Returns ``true`` if the given animation is configured to loop when it finishes playing. Otherwise, returns ``false``.
 
@@ -138,7 +138,7 @@ Returns ``true`` if the given animation is configured to loop when it finishes p
 
 .. rst-class:: classref-method
 
-:ref:`PackedStringArray<class_PackedStringArray>` **get_animation_names** **(** **)** |const|
+:ref:`PackedStringArray<class_PackedStringArray>` **get_animation_names**\ (\ ) |const|
 
 Returns an array containing the names associated to each animation. Values are placed in alphabetical order.
 
@@ -150,7 +150,7 @@ Returns an array containing the names associated to each animation. Values are p
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **get_animation_speed** **(** :ref:`StringName<class_StringName>` anim **)** |const|
+:ref:`float<class_float>` **get_animation_speed**\ (\ anim\: :ref:`StringName<class_StringName>`\ ) |const|
 
 Returns the speed in frames per second for the ``anim`` animation.
 
@@ -162,7 +162,7 @@ Returns the speed in frames per second for the ``anim`` animation.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_frame_count** **(** :ref:`StringName<class_StringName>` anim **)** |const|
+:ref:`int<class_int>` **get_frame_count**\ (\ anim\: :ref:`StringName<class_StringName>`\ ) |const|
 
 Returns the number of frames for the ``anim`` animation.
 
@@ -174,7 +174,7 @@ Returns the number of frames for the ``anim`` animation.
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **get_frame_duration** **(** :ref:`StringName<class_StringName>` anim, :ref:`int<class_int>` idx **)** |const|
+:ref:`float<class_float>` **get_frame_duration**\ (\ anim\: :ref:`StringName<class_StringName>`, idx\: :ref:`int<class_int>`\ ) |const|
 
 Returns a relative duration of the frame ``idx`` in the ``anim`` animation (defaults to ``1.0``). For example, a frame with a duration of ``2.0`` is displayed twice as long as a frame with a duration of ``1.0``. You can calculate the absolute duration (in seconds) of a frame using the following formula:
 
@@ -192,7 +192,7 @@ In this example, ``playing_speed`` refers to either :ref:`AnimatedSprite2D.get_p
 
 .. rst-class:: classref-method
 
-:ref:`Texture2D<class_Texture2D>` **get_frame_texture** **(** :ref:`StringName<class_StringName>` anim, :ref:`int<class_int>` idx **)** |const|
+:ref:`Texture2D<class_Texture2D>` **get_frame_texture**\ (\ anim\: :ref:`StringName<class_StringName>`, idx\: :ref:`int<class_int>`\ ) |const|
 
 Returns the texture of the frame ``idx`` in the ``anim`` animation.
 
@@ -204,7 +204,7 @@ Returns the texture of the frame ``idx`` in the ``anim`` animation.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **has_animation** **(** :ref:`StringName<class_StringName>` anim **)** |const|
+:ref:`bool<class_bool>` **has_animation**\ (\ anim\: :ref:`StringName<class_StringName>`\ ) |const|
 
 Returns ``true`` if the ``anim`` animation exists.
 
@@ -216,7 +216,7 @@ Returns ``true`` if the ``anim`` animation exists.
 
 .. rst-class:: classref-method
 
-void **remove_animation** **(** :ref:`StringName<class_StringName>` anim **)**
+|void| **remove_animation**\ (\ anim\: :ref:`StringName<class_StringName>`\ )
 
 Removes the ``anim`` animation.
 
@@ -228,7 +228,7 @@ Removes the ``anim`` animation.
 
 .. rst-class:: classref-method
 
-void **remove_frame** **(** :ref:`StringName<class_StringName>` anim, :ref:`int<class_int>` idx **)**
+|void| **remove_frame**\ (\ anim\: :ref:`StringName<class_StringName>`, idx\: :ref:`int<class_int>`\ )
 
 Removes the ``anim`` animation's frame ``idx``.
 
@@ -240,7 +240,7 @@ Removes the ``anim`` animation's frame ``idx``.
 
 .. rst-class:: classref-method
 
-void **rename_animation** **(** :ref:`StringName<class_StringName>` anim, :ref:`StringName<class_StringName>` newname **)**
+|void| **rename_animation**\ (\ anim\: :ref:`StringName<class_StringName>`, newname\: :ref:`StringName<class_StringName>`\ )
 
 Changes the ``anim`` animation's name to ``newname``.
 
@@ -252,7 +252,7 @@ Changes the ``anim`` animation's name to ``newname``.
 
 .. rst-class:: classref-method
 
-void **set_animation_loop** **(** :ref:`StringName<class_StringName>` anim, :ref:`bool<class_bool>` loop **)**
+|void| **set_animation_loop**\ (\ anim\: :ref:`StringName<class_StringName>`, loop\: :ref:`bool<class_bool>`\ )
 
 If ``loop`` is ``true``, the ``anim`` animation will loop when it reaches the end, or the start if it is played in reverse.
 
@@ -264,7 +264,7 @@ If ``loop`` is ``true``, the ``anim`` animation will loop when it reaches the en
 
 .. rst-class:: classref-method
 
-void **set_animation_speed** **(** :ref:`StringName<class_StringName>` anim, :ref:`float<class_float>` fps **)**
+|void| **set_animation_speed**\ (\ anim\: :ref:`StringName<class_StringName>`, fps\: :ref:`float<class_float>`\ )
 
 Sets the speed for the ``anim`` animation in frames per second.
 
@@ -276,7 +276,7 @@ Sets the speed for the ``anim`` animation in frames per second.
 
 .. rst-class:: classref-method
 
-void **set_frame** **(** :ref:`StringName<class_StringName>` anim, :ref:`int<class_int>` idx, :ref:`Texture2D<class_Texture2D>` texture, :ref:`float<class_float>` duration=1.0 **)**
+|void| **set_frame**\ (\ anim\: :ref:`StringName<class_StringName>`, idx\: :ref:`int<class_int>`, texture\: :ref:`Texture2D<class_Texture2D>`, duration\: :ref:`float<class_float>` = 1.0\ )
 
 Sets the ``texture`` and the ``duration`` of the frame ``idx`` in the ``anim`` animation.
 
@@ -287,3 +287,4 @@ Sets the ``texture`` and the ``duration`` of the frame ``idx`` in the ``anim`` a
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

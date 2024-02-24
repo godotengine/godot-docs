@@ -90,8 +90,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_back_op_compare** **(** :ref:`CompareOperator<enum_RenderingDevice_CompareOperator>` value **)**
-- :ref:`CompareOperator<enum_RenderingDevice_CompareOperator>` **get_back_op_compare** **(** **)**
+- |void| **set_back_op_compare**\ (\ value\: :ref:`CompareOperator<enum_RenderingDevice_CompareOperator>`\ )
+- :ref:`CompareOperator<enum_RenderingDevice_CompareOperator>` **get_back_op_compare**\ (\ )
 
 The method used for comparing the previous back stencil value and :ref:`back_op_reference<class_RDPipelineDepthStencilState_property_back_op_reference>`.
 
@@ -107,8 +107,8 @@ The method used for comparing the previous back stencil value and :ref:`back_op_
 
 .. rst-class:: classref-property-setget
 
-- void **set_back_op_compare_mask** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_back_op_compare_mask** **(** **)**
+- |void| **set_back_op_compare_mask**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_back_op_compare_mask**\ (\ )
 
 Selects which bits from the back stencil value will be compared.
 
@@ -124,8 +124,8 @@ Selects which bits from the back stencil value will be compared.
 
 .. rst-class:: classref-property-setget
 
-- void **set_back_op_depth_fail** **(** :ref:`StencilOperation<enum_RenderingDevice_StencilOperation>` value **)**
-- :ref:`StencilOperation<enum_RenderingDevice_StencilOperation>` **get_back_op_depth_fail** **(** **)**
+- |void| **set_back_op_depth_fail**\ (\ value\: :ref:`StencilOperation<enum_RenderingDevice_StencilOperation>`\ )
+- :ref:`StencilOperation<enum_RenderingDevice_StencilOperation>` **get_back_op_depth_fail**\ (\ )
 
 The operation to perform on the stencil buffer for back pixels that pass the stencil test but fail the depth test.
 
@@ -141,8 +141,8 @@ The operation to perform on the stencil buffer for back pixels that pass the ste
 
 .. rst-class:: classref-property-setget
 
-- void **set_back_op_fail** **(** :ref:`StencilOperation<enum_RenderingDevice_StencilOperation>` value **)**
-- :ref:`StencilOperation<enum_RenderingDevice_StencilOperation>` **get_back_op_fail** **(** **)**
+- |void| **set_back_op_fail**\ (\ value\: :ref:`StencilOperation<enum_RenderingDevice_StencilOperation>`\ )
+- :ref:`StencilOperation<enum_RenderingDevice_StencilOperation>` **get_back_op_fail**\ (\ )
 
 The operation to perform on the stencil buffer for back pixels that fail the stencil test
 
@@ -158,8 +158,8 @@ The operation to perform on the stencil buffer for back pixels that fail the ste
 
 .. rst-class:: classref-property-setget
 
-- void **set_back_op_pass** **(** :ref:`StencilOperation<enum_RenderingDevice_StencilOperation>` value **)**
-- :ref:`StencilOperation<enum_RenderingDevice_StencilOperation>` **get_back_op_pass** **(** **)**
+- |void| **set_back_op_pass**\ (\ value\: :ref:`StencilOperation<enum_RenderingDevice_StencilOperation>`\ )
+- :ref:`StencilOperation<enum_RenderingDevice_StencilOperation>` **get_back_op_pass**\ (\ )
 
 The operation to perform on the stencil buffer for back pixels that pass the stencil test.
 
@@ -175,8 +175,8 @@ The operation to perform on the stencil buffer for back pixels that pass the ste
 
 .. rst-class:: classref-property-setget
 
-- void **set_back_op_reference** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_back_op_reference** **(** **)**
+- |void| **set_back_op_reference**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_back_op_reference**\ (\ )
 
 The value the previous back stencil value will be compared to.
 
@@ -192,8 +192,8 @@ The value the previous back stencil value will be compared to.
 
 .. rst-class:: classref-property-setget
 
-- void **set_back_op_write_mask** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_back_op_write_mask** **(** **)**
+- |void| **set_back_op_write_mask**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_back_op_write_mask**\ (\ )
 
 Selects which bits from the back stencil value will be changed.
 
@@ -209,8 +209,8 @@ Selects which bits from the back stencil value will be changed.
 
 .. rst-class:: classref-property-setget
 
-- void **set_depth_compare_operator** **(** :ref:`CompareOperator<enum_RenderingDevice_CompareOperator>` value **)**
-- :ref:`CompareOperator<enum_RenderingDevice_CompareOperator>` **get_depth_compare_operator** **(** **)**
+- |void| **set_depth_compare_operator**\ (\ value\: :ref:`CompareOperator<enum_RenderingDevice_CompareOperator>`\ )
+- :ref:`CompareOperator<enum_RenderingDevice_CompareOperator>` **get_depth_compare_operator**\ (\ )
 
 The method used for comparing the previous and current depth values.
 
@@ -226,8 +226,8 @@ The method used for comparing the previous and current depth values.
 
 .. rst-class:: classref-property-setget
 
-- void **set_depth_range_max** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_depth_range_max** **(** **)**
+- |void| **set_depth_range_max**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_depth_range_max**\ (\ )
 
 The maximum depth that returns true for :ref:`enable_depth_range<class_RDPipelineDepthStencilState_property_enable_depth_range>`.
 
@@ -243,8 +243,8 @@ The maximum depth that returns true for :ref:`enable_depth_range<class_RDPipelin
 
 .. rst-class:: classref-property-setget
 
-- void **set_depth_range_min** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_depth_range_min** **(** **)**
+- |void| **set_depth_range_min**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_depth_range_min**\ (\ )
 
 The minimum depth that returns true for :ref:`enable_depth_range<class_RDPipelineDepthStencilState_property_enable_depth_range>`.
 
@@ -260,8 +260,8 @@ The minimum depth that returns true for :ref:`enable_depth_range<class_RDPipelin
 
 .. rst-class:: classref-property-setget
 
-- void **set_enable_depth_range** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **get_enable_depth_range** **(** **)**
+- |void| **set_enable_depth_range**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_enable_depth_range**\ (\ )
 
 If ``true``, each depth value will be tested to see if it is between :ref:`depth_range_min<class_RDPipelineDepthStencilState_property_depth_range_min>` and :ref:`depth_range_max<class_RDPipelineDepthStencilState_property_depth_range_max>`. If it is outside of these values, it is discarded.
 
@@ -277,8 +277,8 @@ If ``true``, each depth value will be tested to see if it is between :ref:`depth
 
 .. rst-class:: classref-property-setget
 
-- void **set_enable_depth_test** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **get_enable_depth_test** **(** **)**
+- |void| **set_enable_depth_test**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_enable_depth_test**\ (\ )
 
 If ``true``, enables depth testing which allows objects to be automatically occluded by other objects based on their depth. This also allows objects to be partially occluded by other objects. If ``false``, objects will appear in the order they were drawn (like in Godot's 2D renderer).
 
@@ -294,8 +294,8 @@ If ``true``, enables depth testing which allows objects to be automatically occl
 
 .. rst-class:: classref-property-setget
 
-- void **set_enable_depth_write** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **get_enable_depth_write** **(** **)**
+- |void| **set_enable_depth_write**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_enable_depth_write**\ (\ )
 
 If ``true``, writes to the depth buffer whenever the depth test returns true. Only works when enable_depth_test is also true.
 
@@ -311,8 +311,8 @@ If ``true``, writes to the depth buffer whenever the depth test returns true. On
 
 .. rst-class:: classref-property-setget
 
-- void **set_enable_stencil** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **get_enable_stencil** **(** **)**
+- |void| **set_enable_stencil**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_enable_stencil**\ (\ )
 
 If ``true``, enables stencil testing. There are separate stencil buffers for front-facing triangles and back-facing triangles. See properties that begin with "front_op" and properties with "back_op" for each.
 
@@ -328,8 +328,8 @@ If ``true``, enables stencil testing. There are separate stencil buffers for fro
 
 .. rst-class:: classref-property-setget
 
-- void **set_front_op_compare** **(** :ref:`CompareOperator<enum_RenderingDevice_CompareOperator>` value **)**
-- :ref:`CompareOperator<enum_RenderingDevice_CompareOperator>` **get_front_op_compare** **(** **)**
+- |void| **set_front_op_compare**\ (\ value\: :ref:`CompareOperator<enum_RenderingDevice_CompareOperator>`\ )
+- :ref:`CompareOperator<enum_RenderingDevice_CompareOperator>` **get_front_op_compare**\ (\ )
 
 The method used for comparing the previous front stencil value and :ref:`front_op_reference<class_RDPipelineDepthStencilState_property_front_op_reference>`.
 
@@ -345,8 +345,8 @@ The method used for comparing the previous front stencil value and :ref:`front_o
 
 .. rst-class:: classref-property-setget
 
-- void **set_front_op_compare_mask** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_front_op_compare_mask** **(** **)**
+- |void| **set_front_op_compare_mask**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_front_op_compare_mask**\ (\ )
 
 Selects which bits from the front stencil value will be compared.
 
@@ -362,8 +362,8 @@ Selects which bits from the front stencil value will be compared.
 
 .. rst-class:: classref-property-setget
 
-- void **set_front_op_depth_fail** **(** :ref:`StencilOperation<enum_RenderingDevice_StencilOperation>` value **)**
-- :ref:`StencilOperation<enum_RenderingDevice_StencilOperation>` **get_front_op_depth_fail** **(** **)**
+- |void| **set_front_op_depth_fail**\ (\ value\: :ref:`StencilOperation<enum_RenderingDevice_StencilOperation>`\ )
+- :ref:`StencilOperation<enum_RenderingDevice_StencilOperation>` **get_front_op_depth_fail**\ (\ )
 
 The operation to perform on the stencil buffer for front pixels that pass the stencil test but fail the depth test.
 
@@ -379,8 +379,8 @@ The operation to perform on the stencil buffer for front pixels that pass the st
 
 .. rst-class:: classref-property-setget
 
-- void **set_front_op_fail** **(** :ref:`StencilOperation<enum_RenderingDevice_StencilOperation>` value **)**
-- :ref:`StencilOperation<enum_RenderingDevice_StencilOperation>` **get_front_op_fail** **(** **)**
+- |void| **set_front_op_fail**\ (\ value\: :ref:`StencilOperation<enum_RenderingDevice_StencilOperation>`\ )
+- :ref:`StencilOperation<enum_RenderingDevice_StencilOperation>` **get_front_op_fail**\ (\ )
 
 The operation to perform on the stencil buffer for front pixels that fail the stencil test.
 
@@ -396,8 +396,8 @@ The operation to perform on the stencil buffer for front pixels that fail the st
 
 .. rst-class:: classref-property-setget
 
-- void **set_front_op_pass** **(** :ref:`StencilOperation<enum_RenderingDevice_StencilOperation>` value **)**
-- :ref:`StencilOperation<enum_RenderingDevice_StencilOperation>` **get_front_op_pass** **(** **)**
+- |void| **set_front_op_pass**\ (\ value\: :ref:`StencilOperation<enum_RenderingDevice_StencilOperation>`\ )
+- :ref:`StencilOperation<enum_RenderingDevice_StencilOperation>` **get_front_op_pass**\ (\ )
 
 The operation to perform on the stencil buffer for front pixels that pass the stencil test.
 
@@ -413,8 +413,8 @@ The operation to perform on the stencil buffer for front pixels that pass the st
 
 .. rst-class:: classref-property-setget
 
-- void **set_front_op_reference** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_front_op_reference** **(** **)**
+- |void| **set_front_op_reference**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_front_op_reference**\ (\ )
 
 The value the previous front stencil value will be compared to.
 
@@ -430,8 +430,8 @@ The value the previous front stencil value will be compared to.
 
 .. rst-class:: classref-property-setget
 
-- void **set_front_op_write_mask** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_front_op_write_mask** **(** **)**
+- |void| **set_front_op_write_mask**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_front_op_write_mask**\ (\ )
 
 Selects which bits from the front stencil value will be changed.
 
@@ -442,3 +442,4 @@ Selects which bits from the front stencil value will be changed.
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

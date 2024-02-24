@@ -31,33 +31,33 @@ Methods
 .. table::
    :widths: auto
 
-   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`float<class_float>`     | :ref:`get_angle<class_KinematicCollision2D_method_get_angle>` **(** :ref:`Vector2<class_Vector2>` up_direction=Vector2(0, -1) **)** |const| |
-   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Object<class_Object>`   | :ref:`get_collider<class_KinematicCollision2D_method_get_collider>` **(** **)** |const|                                                     |
-   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`         | :ref:`get_collider_id<class_KinematicCollision2D_method_get_collider_id>` **(** **)** |const|                                               |
-   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`RID<class_RID>`         | :ref:`get_collider_rid<class_KinematicCollision2D_method_get_collider_rid>` **(** **)** |const|                                             |
-   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Object<class_Object>`   | :ref:`get_collider_shape<class_KinematicCollision2D_method_get_collider_shape>` **(** **)** |const|                                         |
-   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`         | :ref:`get_collider_shape_index<class_KinematicCollision2D_method_get_collider_shape_index>` **(** **)** |const|                             |
-   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Vector2<class_Vector2>` | :ref:`get_collider_velocity<class_KinematicCollision2D_method_get_collider_velocity>` **(** **)** |const|                                   |
-   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`float<class_float>`     | :ref:`get_depth<class_KinematicCollision2D_method_get_depth>` **(** **)** |const|                                                           |
-   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Object<class_Object>`   | :ref:`get_local_shape<class_KinematicCollision2D_method_get_local_shape>` **(** **)** |const|                                               |
-   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Vector2<class_Vector2>` | :ref:`get_normal<class_KinematicCollision2D_method_get_normal>` **(** **)** |const|                                                         |
-   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Vector2<class_Vector2>` | :ref:`get_position<class_KinematicCollision2D_method_get_position>` **(** **)** |const|                                                     |
-   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Vector2<class_Vector2>` | :ref:`get_remainder<class_KinematicCollision2D_method_get_remainder>` **(** **)** |const|                                                   |
-   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Vector2<class_Vector2>` | :ref:`get_travel<class_KinematicCollision2D_method_get_travel>` **(** **)** |const|                                                         |
-   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+   +-------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`     | :ref:`get_angle<class_KinematicCollision2D_method_get_angle>`\ (\ up_direction\: :ref:`Vector2<class_Vector2>` = Vector2(0, -1)\ ) |const| |
+   +-------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Object<class_Object>`   | :ref:`get_collider<class_KinematicCollision2D_method_get_collider>`\ (\ ) |const|                                                          |
+   +-------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`         | :ref:`get_collider_id<class_KinematicCollision2D_method_get_collider_id>`\ (\ ) |const|                                                    |
+   +-------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`RID<class_RID>`         | :ref:`get_collider_rid<class_KinematicCollision2D_method_get_collider_rid>`\ (\ ) |const|                                                  |
+   +-------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Object<class_Object>`   | :ref:`get_collider_shape<class_KinematicCollision2D_method_get_collider_shape>`\ (\ ) |const|                                              |
+   +-------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`         | :ref:`get_collider_shape_index<class_KinematicCollision2D_method_get_collider_shape_index>`\ (\ ) |const|                                  |
+   +-------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector2<class_Vector2>` | :ref:`get_collider_velocity<class_KinematicCollision2D_method_get_collider_velocity>`\ (\ ) |const|                                        |
+   +-------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`     | :ref:`get_depth<class_KinematicCollision2D_method_get_depth>`\ (\ ) |const|                                                                |
+   +-------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Object<class_Object>`   | :ref:`get_local_shape<class_KinematicCollision2D_method_get_local_shape>`\ (\ ) |const|                                                    |
+   +-------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector2<class_Vector2>` | :ref:`get_normal<class_KinematicCollision2D_method_get_normal>`\ (\ ) |const|                                                              |
+   +-------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector2<class_Vector2>` | :ref:`get_position<class_KinematicCollision2D_method_get_position>`\ (\ ) |const|                                                          |
+   +-------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector2<class_Vector2>` | :ref:`get_remainder<class_KinematicCollision2D_method_get_remainder>`\ (\ ) |const|                                                        |
+   +-------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector2<class_Vector2>` | :ref:`get_travel<class_KinematicCollision2D_method_get_travel>`\ (\ ) |const|                                                              |
+   +-------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -72,7 +72,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **get_angle** **(** :ref:`Vector2<class_Vector2>` up_direction=Vector2(0, -1) **)** |const|
+:ref:`float<class_float>` **get_angle**\ (\ up_direction\: :ref:`Vector2<class_Vector2>` = Vector2(0, -1)\ ) |const|
 
 Returns the collision angle according to ``up_direction``, which is :ref:`Vector2.UP<class_Vector2_constant_UP>` by default. This value is always positive.
 
@@ -84,7 +84,7 @@ Returns the collision angle according to ``up_direction``, which is :ref:`Vector
 
 .. rst-class:: classref-method
 
-:ref:`Object<class_Object>` **get_collider** **(** **)** |const|
+:ref:`Object<class_Object>` **get_collider**\ (\ ) |const|
 
 Returns the colliding body's attached :ref:`Object<class_Object>`.
 
@@ -96,7 +96,7 @@ Returns the colliding body's attached :ref:`Object<class_Object>`.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_collider_id** **(** **)** |const|
+:ref:`int<class_int>` **get_collider_id**\ (\ ) |const|
 
 Returns the unique instance ID of the colliding body's attached :ref:`Object<class_Object>`. See :ref:`Object.get_instance_id<class_Object_method_get_instance_id>`.
 
@@ -108,7 +108,7 @@ Returns the unique instance ID of the colliding body's attached :ref:`Object<cla
 
 .. rst-class:: classref-method
 
-:ref:`RID<class_RID>` **get_collider_rid** **(** **)** |const|
+:ref:`RID<class_RID>` **get_collider_rid**\ (\ ) |const|
 
 Returns the colliding body's :ref:`RID<class_RID>` used by the :ref:`PhysicsServer2D<class_PhysicsServer2D>`.
 
@@ -120,7 +120,7 @@ Returns the colliding body's :ref:`RID<class_RID>` used by the :ref:`PhysicsServ
 
 .. rst-class:: classref-method
 
-:ref:`Object<class_Object>` **get_collider_shape** **(** **)** |const|
+:ref:`Object<class_Object>` **get_collider_shape**\ (\ ) |const|
 
 Returns the colliding body's shape.
 
@@ -132,7 +132,7 @@ Returns the colliding body's shape.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_collider_shape_index** **(** **)** |const|
+:ref:`int<class_int>` **get_collider_shape_index**\ (\ ) |const|
 
 Returns the colliding body's shape index. See :ref:`CollisionObject2D<class_CollisionObject2D>`.
 
@@ -144,7 +144,7 @@ Returns the colliding body's shape index. See :ref:`CollisionObject2D<class_Coll
 
 .. rst-class:: classref-method
 
-:ref:`Vector2<class_Vector2>` **get_collider_velocity** **(** **)** |const|
+:ref:`Vector2<class_Vector2>` **get_collider_velocity**\ (\ ) |const|
 
 Returns the colliding body's velocity.
 
@@ -156,7 +156,7 @@ Returns the colliding body's velocity.
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **get_depth** **(** **)** |const|
+:ref:`float<class_float>` **get_depth**\ (\ ) |const|
 
 Returns the colliding body's length of overlap along the collision normal.
 
@@ -168,7 +168,7 @@ Returns the colliding body's length of overlap along the collision normal.
 
 .. rst-class:: classref-method
 
-:ref:`Object<class_Object>` **get_local_shape** **(** **)** |const|
+:ref:`Object<class_Object>` **get_local_shape**\ (\ ) |const|
 
 Returns the moving object's colliding shape.
 
@@ -180,7 +180,7 @@ Returns the moving object's colliding shape.
 
 .. rst-class:: classref-method
 
-:ref:`Vector2<class_Vector2>` **get_normal** **(** **)** |const|
+:ref:`Vector2<class_Vector2>` **get_normal**\ (\ ) |const|
 
 Returns the colliding body's shape's normal at the point of collision.
 
@@ -192,7 +192,7 @@ Returns the colliding body's shape's normal at the point of collision.
 
 .. rst-class:: classref-method
 
-:ref:`Vector2<class_Vector2>` **get_position** **(** **)** |const|
+:ref:`Vector2<class_Vector2>` **get_position**\ (\ ) |const|
 
 Returns the point of collision in global coordinates.
 
@@ -204,7 +204,7 @@ Returns the point of collision in global coordinates.
 
 .. rst-class:: classref-method
 
-:ref:`Vector2<class_Vector2>` **get_remainder** **(** **)** |const|
+:ref:`Vector2<class_Vector2>` **get_remainder**\ (\ ) |const|
 
 Returns the moving object's remaining movement vector.
 
@@ -216,7 +216,7 @@ Returns the moving object's remaining movement vector.
 
 .. rst-class:: classref-method
 
-:ref:`Vector2<class_Vector2>` **get_travel** **(** **)** |const|
+:ref:`Vector2<class_Vector2>` **get_travel**\ (\ ) |const|
 
 Returns the moving object's travel before collision.
 
@@ -227,3 +227,4 @@ Returns the moving object's travel before collision.
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`

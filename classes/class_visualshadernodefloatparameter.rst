@@ -107,8 +107,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_default_value** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_default_value** **(** **)**
+- |void| **set_default_value**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_default_value**\ (\ )
 
 A default value to be assigned within the shader.
 
@@ -124,8 +124,8 @@ A default value to be assigned within the shader.
 
 .. rst-class:: classref-property-setget
 
-- void **set_default_value_enabled** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_default_value_enabled** **(** **)**
+- |void| **set_default_value_enabled**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_default_value_enabled**\ (\ )
 
 Enables usage of the :ref:`default_value<class_VisualShaderNodeFloatParameter_property_default_value>`.
 
@@ -141,8 +141,8 @@ Enables usage of the :ref:`default_value<class_VisualShaderNodeFloatParameter_pr
 
 .. rst-class:: classref-property-setget
 
-- void **set_hint** **(** :ref:`Hint<enum_VisualShaderNodeFloatParameter_Hint>` value **)**
-- :ref:`Hint<enum_VisualShaderNodeFloatParameter_Hint>` **get_hint** **(** **)**
+- |void| **set_hint**\ (\ value\: :ref:`Hint<enum_VisualShaderNodeFloatParameter_Hint>`\ )
+- :ref:`Hint<enum_VisualShaderNodeFloatParameter_Hint>` **get_hint**\ (\ )
 
 A hint applied to the uniform, which controls the values it can take when set through the Inspector.
 
@@ -158,8 +158,8 @@ A hint applied to the uniform, which controls the values it can take when set th
 
 .. rst-class:: classref-property-setget
 
-- void **set_max** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_max** **(** **)**
+- |void| **set_max**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_max**\ (\ )
 
 Minimum value for range hints. Used if :ref:`hint<class_VisualShaderNodeFloatParameter_property_hint>` is set to :ref:`HINT_RANGE<class_VisualShaderNodeFloatParameter_constant_HINT_RANGE>` or :ref:`HINT_RANGE_STEP<class_VisualShaderNodeFloatParameter_constant_HINT_RANGE_STEP>`.
 
@@ -175,8 +175,8 @@ Minimum value for range hints. Used if :ref:`hint<class_VisualShaderNodeFloatPar
 
 .. rst-class:: classref-property-setget
 
-- void **set_min** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_min** **(** **)**
+- |void| **set_min**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_min**\ (\ )
 
 Maximum value for range hints. Used if :ref:`hint<class_VisualShaderNodeFloatParameter_property_hint>` is set to :ref:`HINT_RANGE<class_VisualShaderNodeFloatParameter_constant_HINT_RANGE>` or :ref:`HINT_RANGE_STEP<class_VisualShaderNodeFloatParameter_constant_HINT_RANGE_STEP>`.
 
@@ -192,8 +192,8 @@ Maximum value for range hints. Used if :ref:`hint<class_VisualShaderNodeFloatPar
 
 .. rst-class:: classref-property-setget
 
-- void **set_step** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_step** **(** **)**
+- |void| **set_step**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_step**\ (\ )
 
 Step (increment) value for the range hint with step. Used if :ref:`hint<class_VisualShaderNodeFloatParameter_property_hint>` is set to :ref:`HINT_RANGE_STEP<class_VisualShaderNodeFloatParameter_constant_HINT_RANGE_STEP>`.
 
@@ -204,3 +204,4 @@ Step (increment) value for the range hint with step. Used if :ref:`hint<class_Vi
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`
