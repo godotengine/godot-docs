@@ -28,21 +28,21 @@ General Editor Actions
 +-----------------------+-------------------------------+------------------------------+----------------------------------+
 | Action name           | Windows, Linux                | macOS                        | Editor setting                   |
 +=======================+===============================+==============================+==================================+
-| Open 2D Editor        | :kbd:`Ctrl + F1`              | :kbd:`Cmd + Ctrl + 1`        | ``editor/editor_2d``             |
+| Open 2D Editor        | :kbd:`Ctrl + F1`              | :kbd:`Ctrl + Cmd + 1`        | ``editor/editor_2d``             |
 +-----------------------+-------------------------------+------------------------------+----------------------------------+
-| Open 3D Editor        | :kbd:`Ctrl + F2`              | :kbd:`Cmd + Ctrl + 2`        | ``editor/editor_3d``             |
+| Open 3D Editor        | :kbd:`Ctrl + F2`              | :kbd:`Ctrl + Cmd + 2`        | ``editor/editor_3d``             |
 +-----------------------+-------------------------------+------------------------------+----------------------------------+
-| Open Script Editor    | :kbd:`Ctrl + F3`              | :kbd:`Cmd + Ctrl + 3`        | ``editor/editor_script``         |
+| Open Script Editor    | :kbd:`Ctrl + F3`              | :kbd:`Ctrl + Cmd + 3`        | ``editor/editor_script``         |
 +-----------------------+-------------------------------+------------------------------+----------------------------------+
-| Search Help           | :kbd:`F1`                     | :kbd:`Alt + Space`           | ``editor/editor_help``           |
+| Search Help           | :kbd:`F1`                     | :kbd:`Opt + Space`           | ``editor/editor_help``           |
 +-----------------------+-------------------------------+------------------------------+----------------------------------+
-| Distraction Free Mode | :kbd:`Ctrl + Shift + F11`     | :kbd:`Cmd + Ctrl + D`        | ``editor/distraction_free_mode`` |
+| Distraction Free Mode | :kbd:`Ctrl + Shift + F11`     | :kbd:`Ctrl + Cmd + D`        | ``editor/distraction_free_mode`` |
 +-----------------------+-------------------------------+------------------------------+----------------------------------+
 | Next tab              | :kbd:`Ctrl + Tab`             | :kbd:`Cmd + Tab`             | ``editor/next_tab``              |
 +-----------------------+-------------------------------+------------------------------+----------------------------------+
 | Previous tab          | :kbd:`Ctrl + Shift + Tab`     | :kbd:`Cmd + Shift + Tab`     | ``editor/prev_tab``              |
 +-----------------------+-------------------------------+------------------------------+----------------------------------+
-| Filter Files          | :kbd:`Ctrl + Alt + P`         | :kbd:`Cmd + Alt + P`         | ``editor/filter_files``          |
+| Filter Files          | :kbd:`Ctrl + Alt + P`         | :kbd:`Opt + Cmd + P`         | ``editor/filter_files``          |
 +-----------------------+-------------------------------+------------------------------+----------------------------------+
 | Open Scene            | :kbd:`Ctrl + O`               | :kbd:`Cmd + O`               | ``editor/open_scene``            |
 +-----------------------+-------------------------------+------------------------------+----------------------------------+
@@ -54,13 +54,13 @@ General Editor Actions
 +-----------------------+-------------------------------+------------------------------+----------------------------------+
 | Save Scene As         | :kbd:`Ctrl + Shift + S`       | :kbd:`Cmd + Shift + S`       | ``editor/save_scene_as``         |
 +-----------------------+-------------------------------+------------------------------+----------------------------------+
-| Save All Scenes       | :kbd:`Ctrl + Shift + Alt + S` | :kbd:`Cmd + Shift + Alt + S` | ``editor/save_all_scenes``       |
+| Save All Scenes       | :kbd:`Ctrl + Shift + Alt + S` | :kbd:`Cmd + Shift + Opt + S` | ``editor/save_all_scenes``       |
 +-----------------------+-------------------------------+------------------------------+----------------------------------+
-| Quick Open            | :kbd:`Shift + Alt + O`        | :kbd:`Shift + Alt + O`       | ``editor/quick_open``            |
+| Quick Open            | :kbd:`Shift + Alt + O`        | :kbd:`Ctrl + Cmd + O`        | ``editor/quick_open``            |
 +-----------------------+-------------------------------+------------------------------+----------------------------------+
 | Quick Open Scene      | :kbd:`Ctrl + Shift + O`       | :kbd:`Cmd + Shift + O`       | ``editor/quick_open_scene``      |
 +-----------------------+-------------------------------+------------------------------+----------------------------------+
-| Quick Open Script     | :kbd:`Ctrl + Alt + O`         | :kbd:`Cmd + Alt + O`         | ``editor/quick_open_script``     |
+| Quick Open Script     | :kbd:`Ctrl + Alt + O`         | :kbd:`Opt + Cmd + O`         | ``editor/quick_open_script``     |
 +-----------------------+-------------------------------+------------------------------+----------------------------------+
 | Undo                  | :kbd:`Ctrl + Z`               | :kbd:`Cmd + Z`               | ``editor/undo``                  |
 +-----------------------+-------------------------------+------------------------------+----------------------------------+
@@ -68,15 +68,15 @@ General Editor Actions
 +-----------------------+-------------------------------+------------------------------+----------------------------------+
 | Quit                  | :kbd:`Ctrl + Q`               | :kbd:`Cmd + Q`               | ``editor/file_quit``             |
 +-----------------------+-------------------------------+------------------------------+----------------------------------+
-| Quit to Project List  | :kbd:`Ctrl + Shift + Q`       | :kbd:`Shift + Alt + Q`       | ``editor/quit_to_project_list``  |
+| Quit to Project List  | :kbd:`Ctrl + Shift + Q`       | :kbd:`Ctrl + Opt + Cmd + Q`  | ``editor/quit_to_project_list``  |
 +-----------------------+-------------------------------+------------------------------+----------------------------------+
 | Take Screenshot       | :kbd:`Ctrl + F12`             | :kbd:`Cmd + F12`             | ``editor/take_screenshot``       |
 +-----------------------+-------------------------------+------------------------------+----------------------------------+
-| Toggle Fullscreen     | :kbd:`Shift + F11`            | :kbd:`Cmd + Ctrl + F`        | ``editor/fullscreen_mode``       |
+| Toggle Fullscreen     | :kbd:`Shift + F11`            | :kbd:`Ctrl + Cmd + F`        | ``editor/fullscreen_mode``       |
 +-----------------------+-------------------------------+------------------------------+----------------------------------+
 | Play                  | :kbd:`F5`                     | :kbd:`Cmd + B`               | ``editor/play``                  |
 +-----------------------+-------------------------------+------------------------------+----------------------------------+
-| Pause Scene           | :kbd:`F7`                     | :kbd:`Cmd + Ctrl + Y`        | ``editor/pause_scene``           |
+| Pause Scene           | :kbd:`F7`                     | :kbd:`Ctrl + Cmd + Y`        | ``editor/pause_scene``           |
 +-----------------------+-------------------------------+------------------------------+----------------------------------+
 | Stop                  | :kbd:`F8`                     | :kbd:`Cmd + .`               | ``editor/stop``                  |
 +-----------------------+-------------------------------+------------------------------+----------------------------------+
@@ -162,7 +162,7 @@ General Editor Actions
 +------------------------------------+-----------------------+----------------------+--------------------------------------------------+
 | Freelook Speed Modifier            | :kbd:`Shift`          | :kbd:`Shift`         | ``spatial_editor/freelook_speed_modifier``       |
 +------------------------------------+-----------------------+----------------------+--------------------------------------------------+
-| Freelook Slow Modifier             | :kbd:`Alt`            | :kbd:`Alt`           | ``spatial_editor/freelook_slow_modifier``        |
+| Freelook Slow Modifier             | :kbd:`Alt`            | :kbd:`Opt`           | ``spatial_editor/freelook_slow_modifier``        |
 +------------------------------------+-----------------------+----------------------+--------------------------------------------------+
 | Select Mode                        | :kbd:`Q`              | :kbd:`Q`             | ``spatial_editor/tool_select``                   |
 +------------------------------------+-----------------------+----------------------+--------------------------------------------------+
@@ -180,15 +180,15 @@ General Editor Actions
 +------------------------------------+-----------------------+----------------------+--------------------------------------------------+
 | Top View                           | :kbd:`Num 7`          | :kbd:`Num 7`         | ``spatial_editor/top_view``                      |
 +------------------------------------+-----------------------+----------------------+--------------------------------------------------+
-| Bottom View                        | :kbd:`Alt + Num 7`    | :kbd:`Alt + Num 7`   | ``spatial_editor/bottom_view``                   |
+| Bottom View                        | :kbd:`Alt + Num 7`    | :kbd:`Opt + Num 7`   | ``spatial_editor/bottom_view``                   |
 +------------------------------------+-----------------------+----------------------+--------------------------------------------------+
 | Front View                         | :kbd:`Num 1`          | :kbd:`Num 1`         | ``spatial_editor/front_view``                    |
 +------------------------------------+-----------------------+----------------------+--------------------------------------------------+
-| Rear View                          | :kbd:`Alt + Num 1`    | :kbd:`Alt + Num 1`   | ``spatial_editor/rear_view``                     |
+| Rear View                          | :kbd:`Alt + Num 1`    | :kbd:`Opt + Num 1`   | ``spatial_editor/rear_view``                     |
 +------------------------------------+-----------------------+----------------------+--------------------------------------------------+
 | Right View                         | :kbd:`Num 3`          | :kbd:`Num 3`         | ``spatial_editor/right_view``                    |
 +------------------------------------+-----------------------+----------------------+--------------------------------------------------+
-| Left View                          | :kbd:`Alt + Num 3`    | :kbd:`Alt + Num 3`   | ``spatial_editor/left_view``                     |
+| Left View                          | :kbd:`Alt + Num 3`    | :kbd:`Opt + Num 3`   | ``spatial_editor/left_view``                     |
 +------------------------------------+-----------------------+----------------------+--------------------------------------------------+
 | Switch Perspective/Orthogonal View | :kbd:`Num 5`          | :kbd:`Num 5`         | ``spatial_editor/switch_perspective_orthogonal`` |
 +------------------------------------+-----------------------+----------------------+--------------------------------------------------+
@@ -198,19 +198,19 @@ General Editor Actions
 +------------------------------------+-----------------------+----------------------+--------------------------------------------------+
 | Focus Selection                    | :kbd:`F`              | :kbd:`F`             | ``spatial_editor/focus_selection``               |
 +------------------------------------+-----------------------+----------------------+--------------------------------------------------+
-| Align Transform with View          | :kbd:`Ctrl + Alt + M` | :kbd:`Cmd + Alt + M` | ``spatial_editor/align_transform_with_view``     |
+| Align Transform with View          | :kbd:`Ctrl + Alt + M` | :kbd:`Opt + Cmd + M` | ``spatial_editor/align_transform_with_view``     |
 +------------------------------------+-----------------------+----------------------+--------------------------------------------------+
-| Align Rotation with View           | :kbd:`Ctrl + Alt + F` | :kbd:`Cmd + Alt + F` | ``spatial_editor/align_rotation_with_view``      |
+| Align Rotation with View           | :kbd:`Ctrl + Alt + F` | :kbd:`Opt + Cmd + F` | ``spatial_editor/align_rotation_with_view``      |
 +------------------------------------+-----------------------+----------------------+--------------------------------------------------+
 | 1 Viewport                         | :kbd:`Ctrl + 1`       | :kbd:`Cmd + 1`       | ``spatial_editor/1_viewport``                    |
 +------------------------------------+-----------------------+----------------------+--------------------------------------------------+
 | 2 Viewports                        | :kbd:`Ctrl + 2`       | :kbd:`Cmd + 2`       | ``spatial_editor/2_viewports``                   |
 +------------------------------------+-----------------------+----------------------+--------------------------------------------------+
-| 2 Viewports (Alt)                  | :kbd:`Ctrl + Alt + 2` | :kbd:`Cmd + Alt + 2` | ``spatial_editor/2_viewports_alt``               |
+| 2 Viewports (Alt)                  | :kbd:`Ctrl + Alt + 2` | :kbd:`Opt + Cmd + 2` | ``spatial_editor/2_viewports_alt``               |
 +------------------------------------+-----------------------+----------------------+--------------------------------------------------+
 | 3 Viewports                        | :kbd:`Ctrl + 3`       | :kbd:`Cmd + 3`       | ``spatial_editor/3_viewports``                   |
 +------------------------------------+-----------------------+----------------------+--------------------------------------------------+
-| 3 Viewports (Alt)                  | :kbd:`Ctrl + Alt + 3` | :kbd:`Cmd + Alt + 3` | ``spatial_editor/3_viewports_alt``               |
+| 3 Viewports (Alt)                  | :kbd:`Ctrl + Alt + 3` | :kbd:`Opt + Cmd + 3` | ``spatial_editor/3_viewports_alt``               |
 +------------------------------------+-----------------------+----------------------+--------------------------------------------------+
 | 4 Viewports                        | :kbd:`Ctrl + 4`       | :kbd:`Cmd + 4`       | ``spatial_editor/4_viewports``                   |
 +------------------------------------+-----------------------+----------------------+--------------------------------------------------+
@@ -237,7 +237,7 @@ Text Editor
 +---------------------------+--------------------------+----------------------------+-------------------------------------------------+
 | Find in Files             | :kbd:`Ctrl + Shift + F`  | :kbd:`Cmd + Shift + F`     | ``script_text_editor/find_in_files``            |
 +---------------------------+--------------------------+----------------------------+-------------------------------------------------+
-| Replace                   | :kbd:`Ctrl + R`          | :kbd:`Alt + Cmd + F`       | ``script_text_editor/replace``                  |
+| Replace                   | :kbd:`Ctrl + R`          | :kbd:`Opt + Cmd + F`       | ``script_text_editor/replace``                  |
 +---------------------------+--------------------------+----------------------------+-------------------------------------------------+
 | Replace in Files          | :kbd:`Ctrl + Shift + R`  | :kbd:`Cmd + Shift + R`     | ``script_text_editor/replace_in_files``         |
 +---------------------------+--------------------------+----------------------------+-------------------------------------------------+
@@ -245,9 +245,9 @@ Text Editor
 +---------------------------+--------------------------+----------------------------+-------------------------------------------------+
 | Redo                      | :kbd:`Ctrl + Y`          | :kbd:`Cmd + Y`             | ``script_text_editor/redo``                     |
 +---------------------------+--------------------------+----------------------------+-------------------------------------------------+
-| Move Up                   | :kbd:`Alt + Up Arrow`    | :kbd:`Alt + Up Arrow`      | ``script_text_editor/move_up``                  |
+| Move Up                   | :kbd:`Alt + Up Arrow`    | :kbd:`Opt + Up Arrow`      | ``script_text_editor/move_up``                  |
 +---------------------------+--------------------------+----------------------------+-------------------------------------------------+
-| Move Down                 | :kbd:`Alt + Down Arrow`  | :kbd:`Alt + Down Arrow`    | ``script_text_editor/move_down``                |
+| Move Down                 | :kbd:`Alt + Down Arrow`  | :kbd:`Opt + Down Arrow`    | ``script_text_editor/move_down``                |
 +---------------------------+--------------------------+----------------------------+-------------------------------------------------+
 | Delete Line               | :kbd:`Ctrl + Shift + K`  | :kbd:`Cmd + Shift + K`     | ``script_text_editor/delete_line``              |
 +---------------------------+--------------------------+----------------------------+-------------------------------------------------+
@@ -261,7 +261,7 @@ Text Editor
 +---------------------------+--------------------------+----------------------------+-------------------------------------------------+
 | Evaluate Selection        | :kbd:`Ctrl + Shift + E`  | :kbd:`Cmd + Shift + E`     | ``script_text_editor/evaluate_selection``       |
 +---------------------------+--------------------------+----------------------------+-------------------------------------------------+
-| Trim Trailing Whitespace  | :kbd:`Ctrl + Alt + T`    | :kbd:`Cmd + Alt + T`       | ``script_text_editor/trim_trailing_whitespace`` |
+| Trim Trailing Whitespace  | :kbd:`Ctrl + Alt + T`    | :kbd:`Opt + Cmd + T`       | ``script_text_editor/trim_trailing_whitespace`` |
 +---------------------------+--------------------------+----------------------------+-------------------------------------------------+
 | Uppercase                 | :kbd:`Shift + F4`        | :kbd:`Shift + F4`          | ``script_text_editor/convert_to_uppercase``     |
 +---------------------------+--------------------------+----------------------------+-------------------------------------------------+
@@ -275,7 +275,7 @@ Text Editor
 +---------------------------+--------------------------+----------------------------+-------------------------------------------------+
 | Auto Indent               | :kbd:`Ctrl + I`          | :kbd:`Cmd + I`             | ``script_text_editor/auto_indent``              |
 +---------------------------+--------------------------+----------------------------+-------------------------------------------------+
-| Toggle Bookmark           | :kbd:`Ctrl + Alt + B`    | :kbd:`Cmd + Alt + B`       | ``script_text_editor/toggle_bookmark``          |
+| Toggle Bookmark           | :kbd:`Ctrl + Alt + B`    | :kbd:`Opt + Cmd + B`       | ``script_text_editor/toggle_bookmark``          |
 +---------------------------+--------------------------+----------------------------+-------------------------------------------------+
 | Go to Next Bookmark       | :kbd:`Ctrl + B`          | :kbd:`Cmd + B`             | ``script_text_editor/goto_next_bookmark``       |
 +---------------------------+--------------------------+----------------------------+-------------------------------------------------+
@@ -293,7 +293,7 @@ Text Editor
 +---------------------------+--------------------------+----------------------------+-------------------------------------------------+
 | Go to Previous Breakpoint | :kbd:`Ctrl + ,`          | :kbd:`Cmd + ,`             | ``script_text_editor/goto_previous_breakpoint`` |
 +---------------------------+--------------------------+----------------------------+-------------------------------------------------+
-| Contextual Help           | :kbd:`Alt + F1`          | :kbd:`Alt + Shift + Space` | ``script_text_editor/contextual_help``          |
+| Contextual Help           | :kbd:`Alt + F1`          | :kbd:`Shift + Opt + Space` | ``script_text_editor/contextual_help``          |
 +---------------------------+--------------------------+----------------------------+-------------------------------------------------+
 
 Script Editor
@@ -310,9 +310,9 @@ Script Editor
 +----------------------+---------------------------------+---------------------------------+----------------------------------------+
 | Find in Files        | :kbd:`Ctrl + Shift + F`         | :kbd:`Cmd + Shift + F`          | ``script_editor/find_in_files``        |
 +----------------------+---------------------------------+---------------------------------+----------------------------------------+
-| Move Up              | :kbd:`Shift + Alt + Up Arrow`   | :kbd:`Shift + Alt + Up Arrow`   | ``script_editor/window_move_up``       |
+| Move Up              | :kbd:`Shift + Alt + Up Arrow`   | :kbd:`Shift + Opt + Up Arrow`   | ``script_editor/window_move_up``       |
 +----------------------+---------------------------------+---------------------------------+----------------------------------------+
-| Move Down            | :kbd:`Shift + Alt + Down Arrow` | :kbd:`Shift + Alt + Down Arrow` | ``script_editor/window_move_down``     |
+| Move Down            | :kbd:`Shift + Alt + Down Arrow` | :kbd:`Shift + Opt + Down Arrow` | ``script_editor/window_move_down``     |
 +----------------------+---------------------------------+---------------------------------+----------------------------------------+
 | Next Script          | :kbd:`Ctrl + Shift + .`         | :kbd:`Cmd + Shift + .`          | ``script_editor/next_script``          |
 +----------------------+---------------------------------+---------------------------------+----------------------------------------+
@@ -320,15 +320,15 @@ Script Editor
 +----------------------+---------------------------------+---------------------------------+----------------------------------------+
 | Reopen Closed Script | :kbd:`Ctrl + Shift + T`         | :kbd:`Cmd + Shift + T`          | ``script_editor/reopen_closed_script`` |
 +----------------------+---------------------------------+---------------------------------+----------------------------------------+
-| Save                 | :kbd:`Ctrl + Alt + S`           | :kbd:`Cmd + Alt + S`            | ``script_editor/save``                 |
+| Save                 | :kbd:`Ctrl + Alt + S`           | :kbd:`Opt + Cmd + S`            | ``script_editor/save``                 |
 +----------------------+---------------------------------+---------------------------------+----------------------------------------+
 | Save All             | :kbd:`Ctrl + Shift + Alt + S`   | :kbd:`Cmd + Shift + Alt + S`    | ``script_editor/save_all``             |
 +----------------------+---------------------------------+---------------------------------+----------------------------------------+
 | Soft Reload Script   | :kbd:`Ctrl + Shift + R`         | :kbd:`Cmd + Shift + R`          | ``script_editor/reload_script_soft``   |
 +----------------------+---------------------------------+---------------------------------+----------------------------------------+
-| History Previous     | :kbd:`Alt + Left Arrow`         | :kbd:`Alt + Left Arrow`         | ``script_editor/history_previous``     |
+| History Previous     | :kbd:`Alt + Left Arrow`         | :kbd:`Opt + Left Arrow`         | ``script_editor/history_previous``     |
 +----------------------+---------------------------------+---------------------------------+----------------------------------------+
-| History Next         | :kbd:`Alt + Right Arrow`        | :kbd:`Alt + Right Arrow`        | ``script_editor/history_next``         |
+| History Next         | :kbd:`Alt + Right Arrow`        | :kbd:`Opt + Right Arrow`        | ``script_editor/history_next``         |
 +----------------------+---------------------------------+---------------------------------+----------------------------------------+
 | Close                | :kbd:`Ctrl + W`                 | :kbd:`Cmd + W`                  | ``script_editor/close_file``           |
 +----------------------+---------------------------------+---------------------------------+----------------------------------------+
@@ -373,19 +373,19 @@ File Dialog
 +---------------------+--------------------------+--------------------------+-------------------------------------+
 | Action name         | Windows, Linux           | macOS                    | Editor setting                      |
 +=====================+==========================+==========================+=====================================+
-| Go Back             | :kbd:`Alt + Left Arrow`  | :kbd:`Alt + Left Arrow`  | ``file_dialog/go_back``             |
+| Go Back             | :kbd:`Alt + Left Arrow`  | :kbd:`Opt + Left Arrow`  | ``file_dialog/go_back``             |
 +---------------------+--------------------------+--------------------------+-------------------------------------+
-| Go Forward          | :kbd:`Alt + Right Arrow` | :kbd:`Alt + Right Arrow` | ``file_dialog/go_forward``          |
+| Go Forward          | :kbd:`Alt + Right Arrow` | :kbd:`Opt + Right Arrow` | ``file_dialog/go_forward``          |
 +---------------------+--------------------------+--------------------------+-------------------------------------+
-| Go Up               | :kbd:`Alt + Up Arrow`    | :kbd:`Alt + Up Arrow`    | ``file_dialog/go_up``               |
+| Go Up               | :kbd:`Alt + Up Arrow`    | :kbd:`Opt + Up Arrow`    | ``file_dialog/go_up``               |
 +---------------------+--------------------------+--------------------------+-------------------------------------+
 | Refresh             | :kbd:`F5`                | :kbd:`F5`                | ``file_dialog/refresh``             |
 +---------------------+--------------------------+--------------------------+-------------------------------------+
 | Toggle Hidden Files | :kbd:`Ctrl + H`          | :kbd:`Cmd + H`           | ``file_dialog/toggle_hidden_files`` |
 +---------------------+--------------------------+--------------------------+-------------------------------------+
-| Toggle Favorite     | :kbd:`Alt + F`           | :kbd:`Alt + F`           | ``file_dialog/toggle_favorite``     |
+| Toggle Favorite     | :kbd:`Alt + F`           | :kbd:`Opt + F`           | ``file_dialog/toggle_favorite``     |
 +---------------------+--------------------------+--------------------------+-------------------------------------+
-| Toggle Mode         | :kbd:`Alt + V`           | :kbd:`Alt + V`           | ``file_dialog/toggle_mode``         |
+| Toggle Mode         | :kbd:`Alt + V`           | :kbd:`Opt + V`           | ``file_dialog/toggle_mode``         |
 +---------------------+--------------------------+--------------------------+-------------------------------------+
 | Create Folder       | :kbd:`Ctrl + N`          | :kbd:`Cmd + N`           | ``file_dialog/create_folder``       |
 +---------------------+--------------------------+--------------------------+-------------------------------------+
