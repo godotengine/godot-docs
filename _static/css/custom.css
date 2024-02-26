@@ -671,6 +671,7 @@ footer {
 }
 
 .wy-body-for-nav {
+    position: relative;
     background-color: var(--content-wrap-background-color);
 }
 
