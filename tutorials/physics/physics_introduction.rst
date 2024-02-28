@@ -457,7 +457,7 @@ the ground (including slopes) and jump when standing on the ground:
             velocity.x -= run_speed
 
     func _physics_process(delta):
-        velocity.y += gravity * delta
+        velocity.y += gravity
         get_input()
         move_and_slide()
 
