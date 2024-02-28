@@ -160,7 +160,7 @@ Creating your own resources
 Like any Object in Godot, users can also script Resources. Resource scripts
 inherit the ability to freely translate between object properties and serialized
 text or binary data (\*.tres, \*.res). They also inherit the reference-counting
-memory management from the Reference type.
+memory management from the RefCounted type.
 
 This comes with many distinct advantages over alternative data
 structures, such as JSON, CSV, or custom TXT files. Users can only import these
