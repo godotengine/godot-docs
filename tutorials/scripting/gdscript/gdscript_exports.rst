@@ -368,6 +368,28 @@ Packed type arrays also work, but only initialized empty:
     @export var vector3s = PackedVector3Array()
     @export var strings = PackedStringArray()
 
+``@export_storage``
+-------------------
+
+By default, exporting a property has two effects:
+
+1. makes the property stored in the scene/resource file (:ref:`PROPERTY_USAGE_STORAGE <class_@GlobalScope_constant_PROPERTY_USAGE_STORAGE>`);
+2. adds a field to the Inspector (:ref:`PROPERTY_USAGE_EDITOR <class_@GlobalScope_constant_PROPERTY_USAGE_EDITOR>`).
+
+However, sometimes you may want to make a property serializable, but not display it
+in the editor to prevent unintentional changes and cluttering the interface.
+
+To do this you can use :ref:`@export_storage <class_@GDScript_annotation_@export_storage>`.
+This can be useful for :ref:`@tool <class_@GDScript_annotation_@tool>` scripts.
+Also the property value is copied when :ref:`Resource.duplicate() <class_Resource_method_duplicate>`
+or :ref:`Node.duplicate() <class_Node_method_duplicate>` is called, unlike non-exported variables.
+
+::
+
+    var a # Not stored in the file, not displayed in the editor.
+    @export_storage var b # Stored in the file, not displayed in the editor.
+    @export var c: int # Stored in the file, displayed in the editor.
+
 Setting exported variables from a tool script
 ---------------------------------------------
 
@@ -394,5 +416,5 @@ described in :ref:`doc_accessing_data_or_logic_from_object`.
 .. seealso:: For binding properties using the above methods in C++, see
              :ref:`doc_binding_properties_using_set_get_property_list`.
 
-.. warning:: The script must operate in the ``tool`` mode so the above methods
+.. warning:: The script must operate in the ``@tool`` mode so the above methods
              can work from within the editor.
