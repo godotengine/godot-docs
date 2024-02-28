@@ -11,3 +11,4 @@ Physics Interpolation
    physics_interpolation_introduction
    using_physics_interpolation
    advanced_physics_interpolation
+   2d_and_3d_physics_interpolation
