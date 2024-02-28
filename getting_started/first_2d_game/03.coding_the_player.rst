@@ -275,7 +275,7 @@ movement. Let's place this code at the end of the ``_process()`` function:
         if velocity.x != 0:
             $AnimatedSprite2D.animation = "walk"
             $AnimatedSprite2D.flip_v = false
-            # See the note below about boolean assignment.
+            # See the note below about the following boolean assignment.
             $AnimatedSprite2D.flip_h = velocity.x < 0
         elif velocity.y != 0:
             $AnimatedSprite2D.animation = "up"
@@ -287,7 +287,7 @@ movement. Let's place this code at the end of the ``_process()`` function:
         {
             animatedSprite2D.Animation = "walk";
             animatedSprite2D.FlipV = false;
-            // See the note below about boolean assignment.
+            // See the note below about the following boolean assignment.
             animatedSprite2D.FlipH = velocity.X < 0;
         }
         else if (velocity.Y != 0)
