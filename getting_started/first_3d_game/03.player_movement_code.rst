@@ -161,7 +161,7 @@ zero, which means the player is pressing a direction key.
 We compute the direction the ``$Pivot`` is looking by creating a :ref:`Basis <class_Basis>`
 that looks in the ``direction`` direction.
 
-Then, we update the velocity. We have to calculate the ground velocity and the
+Then, we update the velocity and position. We have to calculate the ground velocity and the
 fall speed separately. Be sure to go back one tab so the lines are inside the
 ``_physics_process()`` function but outside the condition we just wrote above.
 
@@ -183,6 +183,7 @@ fall speed separately. Be sure to go back one tab so the lines are inside the
 
         # Moving the Character
         velocity = target_velocity
+        position += delta * velocity
         move_and_slide()
 
  .. code-tab:: csharp
@@ -392,7 +393,7 @@ Preview by clicking the checkbox.
 |image6|
 
 In the top view, make sure your *Camera3D* is selected and move the camera about
-``19`` units on the Z axis (drag the blue arrow).
+``19`` units on the Z axis (drag the blue arrow) then ``9`` units on the Y axis (drag the green arrow).
 
 |image7|
 
