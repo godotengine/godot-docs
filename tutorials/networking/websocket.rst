@@ -1,4 +1,4 @@
-:article_outdated: True
+:article_outdated: False
 
 .. _doc_websocket:
 
@@ -36,61 +36,50 @@ This example will show you how to create a WebSocket connection to a remote serv
 
 ::
 
-    extends Node
+	extends Node
 
     # The URL we will connect to
-    export var websocket_url = "wss://libwebsockets.org"
+	@export var websocket_url = "wss://ws.postman-echo.com/raw"
 
-    # Our WebSocketClient instance
-    var _client = WebSocketClient.new()
+	var socket = WebSocketPeer.new()
 
-    func _ready():
-        # Connect base signals to get notified of connection open, close, and errors.
-        _client.connection_closed.connect(_closed)
-        _client.connection_error.connect(_closed)
-        _client.connection_established.connect(_connected)
-        # This signal is emitted when not using the Multiplayer API every time
-        # a full packet is received.
-        # Alternatively, you could check get_peer(1).get_available_packets() in a loop.
-        _client.data_received.connect(_on_data)
 
-        # Initiate connection to the given URL.
-        var err = _client.connect_to_url(websocket_url, ["lws-mirror-protocol"])
-        if err != OK:
-            print("Unable to connect")
-            set_process(false)
+	func _ready():
+		socket.connect_to_url(websocket_url)
 
-    func _closed(was_clean = false):
-        # was_clean will tell you if the disconnection was correctly notified
-        # by the remote peer before closing the socket.
-        print("Closed, clean: ", was_clean)
-        set_process(false)
+		# Send a message every 5 seconds.
+		var timer = Timer.new()
+		timer.wait_time = 5.0
+		timer.timeout.connect(_send_message)
+		add_child(timer)
+		timer.start()
 
-    func _connected(proto = ""):
-        # This is called on connection, "proto" will be the selected WebSocket
-        # sub-protocol (which is optional)
-        print("Connected with protocol: ", proto)
-        # You MUST always use get_peer(1).put_packet to send data to server,
-        # and not put_packet directly when not using the MultiplayerAPI.
-        _client.get_peer(1).put_packet("Test packet".to_utf8())
 
-    func _on_data():
-        # Print the received packet, you MUST always use get_peer(1).get_packet
-        # to receive data from server, and not get_packet directly when not
-        # using the MultiplayerAPI.
-        print("Got data from server: ", _client.get_peer(1).get_packet().get_string_from_utf8())
+	func _send_message():
+		socket.send_text("Hello websockets!")
 
-    func _process(delta):
-        # Call this in _process or _physics_process. Data transfer, and signals
-        # emission will only happen when calling this function.
-        _client.poll()
 
-This will print:
+	func _process(delta):
+		socket.poll()
+		var state = socket.get_ready_state()
+		if state == WebSocketPeer.STATE_OPEN:
+			while socket.get_available_packet_count():
+				print("Packet: ", socket.get_packet().get_string_from_utf8())
+		elif state == WebSocketPeer.STATE_CLOSING:
+			# Keep polling to achieve proper close.
+			pass
+		elif state == WebSocketPeer.STATE_CLOSED:
+			var code = socket.get_close_code()
+			var reason = socket.get_close_reason()
+			print("WebSocket closed with code: %d, reason %s. Clean: %s" % [code, reason, code != -1])
+			set_process(false) # Stop processing.
+
+
+This will send a message every 5 seconds that will be echoed back
 
 ::
 
-    Connected with protocol:
-    Got data from server: Test packet
+    Packet: Hello websockets!
 
 Minimal server example
 ^^^^^^^^^^^^^^^^^^^^^^
@@ -99,63 +88,75 @@ This example will show you how to create a WebSocket server that listens for rem
 
 ::
 
-    extends Node
+	extends Node
 
-    # The port we will listen to
-    const PORT = 9080
-    # Our WebSocketServer instance
-    var _server = WebSocketServer.new()
+	# The port we will listen to.
+	const PORT = 9080
 
-    func _ready():
-        # Connect base signals to get notified of new client connections,
-        # disconnections, and disconnect requests.
-        _server.client_connected.connect(_connected)
-        _server.client_disconnected.connect(_disconnected)
-        _server.client_close_request.connect(_close_request)
-        # This signal is emitted when not using the Multiplayer API every time a
-        # full packet is received.
-        # Alternatively, you could check get_peer(PEER_ID).get_available_packets()
-        # in a loop for each connected peer.
-        _server.data_received.connect(_on_data)
-        # Start listening on the given port.
-        var err = _server.listen(PORT)
-        if err != OK:
-            print("Unable to start server")
-            set_process(false)
+	# Our WebSocketServer instance.
+	var _server = WebSocketMultiplayerPeer.new()
 
-    func _connected(id, proto):
-        # This is called when a new peer connects, "id" will be the assigned peer id,
-        # "proto" will be the selected WebSocket sub-protocol (which is optional)
-        print("Client %d connected with protocol: %s" % [id, proto])
+	# Keeps track of the connected peer IDs.
+	var peer_ids: Array[int] = []
 
-    func _close_request(id, code, reason):
-        # This is called when a client notifies that it wishes to close the connection,
-        # providing a reason string and close code.
-        print("Client %d disconnecting with code: %d, reason: %s" % [id, code, reason])
 
-    func _disconnected(id, was_clean = false):
-        # This is called when a client disconnects, "id" will be the one of the
-        # disconnecting client, "was_clean" will tell you if the disconnection
-        # was correctly notified by the remote peer before closing the socket.
-        print("Client %d disconnected, clean: %s" % [id, str(was_clean)])
+	func _ready():
+		# Connect base signals to get notified of new client connections,
+		# and disconnections.
+		_server.peer_connected.connect(_connected)
+		_server.peer_disconnected.connect(_disconnected)
 
-    func _on_data(id):
-        # Print the received packet, you MUST always use get_peer(id).get_packet to receive data,
-        # and not get_packet directly when not using the MultiplayerAPI.
-        var pkt = _server.get_peer(id).get_packet()
-        print("Got data from client %d: %s ... echoing" % [id, pkt.get_string_from_utf8()])
-        _server.get_peer(id).put_packet(pkt)
+		# Start listening on the given port.
+		var err = _server.create_server(PORT)
+		if err != OK:
+			print("Unable to start server")
+			set_process(false)
 
-    func _process(delta):
-        # Call this in _process or _physics_process.
-        # Data transfer, and signals emission will only happen when calling this function.
-        _server.poll()
+
+	func _connected(id):
+		peer_ids.append(id)
+
+		# This is called when a new peer connects, "id" will be the assigned peer id.
+		print("Peer %d connected" % id)
+
+
+	func _disconnected(id):
+		peer_ids.erase(id)
+
+		# This is called when a client disconnects, "id" will be the one of the
+		# disconnecting client.
+		var peer = _server.get_peer(id)
+		var code = peer.get_close_code()
+		var reason = peer.get_close_reason()
+		print("Peer %s closed with code: %d, reason %s. Clean: %s" % [id, code, reason, code != -1])
+
+
+	func _process(delta):
+		# Call this in _process or _physics_process.
+		# Data transfer, and signals emission will only happen when calling this function.
+		_server.poll()
+
+		for peer_id in peer_ids:
+			var peer = _server.get_peer(peer_id)
+			peer.poll()
+
+			var peer_state = peer.get_ready_state()
+			if peer_state == WebSocketPeer.STATE_OPEN:
+				while peer.get_available_packet_count():
+					var packet_text = peer.get_packet().get_string_from_utf8()
+					print("Got data from peer %d: %s ... echoing" % [peer_id, packet_text])
+
+					# Echo the packet back.
+					peer.send_text(packet_text)
+			elif peer_state == WebSocketPeer.STATE_CLOSING:
+				# Keep polling to achieve proper close.
+				pass
 
 This will print (when a client connects) something similar to this:
 
 ::
 
-    Client 1348090059 connected with protocol: selected-protocol
+    Client 1348090059 connected
     Got data from client 1348090059: Test packet ... echoing
 
 Advanced chat demo
