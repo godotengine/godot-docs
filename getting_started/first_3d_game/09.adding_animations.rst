@@ -43,7 +43,7 @@ time in seconds.
 We want the animation to start playback automatically at the start of the game.
 Also, it should loop.
 
-To do so, you can click the button with an "A>" icon in the animation toolbar
+To do so, you can click the autoplay button (|Autoplay|) in the animation toolbar
 and the looping arrows, respectively.
 
 |image5|
@@ -271,7 +271,7 @@ should see the message "Global library will be created." Leave the text field bl
 click OK. Click the *Paste* icon (clipboard) and it should appear in the window. Click OK
 to close the window.
 
-Next, make sure that the button with an "A>" icon (Autoplay on Load) and the looping
+Next, make sure that the autoplay button (|Autoplay|) and the looping
 arrows (Animation looping) are also turned on in the animation editor in the bottom panel.
 That's it; all monsters will now play the float animation.
 
@@ -639,3 +639,4 @@ And the *Mob*'s script.
 .. |animation_final_keyframes| image:: img/09.adding_animations/animation_final_keyframes.webp
 .. |second_keys_both| image:: img/09.adding_animations/second_keys_both.webp
 .. |timeline_05_click| image:: img/09.adding_animations/timeline_05_click.webp
+.. |Autoplay| image:: img/09.adding_animations/

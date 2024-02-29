@@ -269,6 +269,20 @@ what the *PathFollow* node's ``progress_ratio`` expects:
 The path we have set is around the camera's viewport, so any random value between 0 and 1
 is a random position alongside the edges of the viewport!
 
+Note that if you remove the ``Player`` from the main scene, the following line
+
+.. tabs::
+   .. code-tab:: gdscript GDScript
+
+    var player_position = $Player.position
+
+   .. code-tab:: csharp
+
+    Vector3 playerPosition = GetNode<Player>("Player").Position;
+
+
+gives an error because there is no $Player!
+
 Here is the complete ``main.gd`` script so far, for reference.
 
 .. tabs::
