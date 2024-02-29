@@ -71,6 +71,8 @@ Following is the list of providers:
   Switch and Playstation 4 porting and publishing of Godot games.
 - `Pineapple Works <https://pineapple.works/>`_ offers
   Switch, Xbox One & Xbox Series X/S (GDK) porting and publishing of Godot games (GDScript/C#).
+- `FIXER Group <https://fixer.group/>`_ offers
+  Switch, Xbox One and Xbox Series X/S porting, publishing and marketing of Godot games.
 - `RAWRLAB games <https://www.rawrlab.com/>`_ offers
   Switch porting of Godot games.
 - `mazette! games <https://mazette.games/>`_ offers
