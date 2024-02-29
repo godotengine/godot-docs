@@ -18,7 +18,7 @@ sphinx-copybutton==0.5.1
 # Custom 404 error page (more useful than the default).
 sphinx-notfound-page==0.8.3
 # Adds Open Graph tags in the HTML `<head>` tag.
-sphinxext-opengraph==0.7.5
+sphinxext-opengraph==0.9.1
 
 # These get pulled in by Sphinx, we need to pin these as higher versions require Sphinx 5.0+.
 sphinxcontrib-applehelp==1.0.4
