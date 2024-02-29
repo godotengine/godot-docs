@@ -167,13 +167,13 @@ Exporting from the command line
 -------------------------------
 
 In production, it is useful to automate builds, and Godot supports this
-with the ``--export`` and ``--export-debug`` command line parameters.
+with the ``--export-release`` and ``--export-debug`` command line parameters.
 Exporting from the command line still requires an export preset to define
 the export parameters. A basic invocation of the command would be:
 
 .. code-block:: shell
 
-    godot --export "Windows Desktop" some_name.exe
+    godot --export-release "Windows Desktop" some_name.exe
 
 This will export to ``some_name.exe``, assuming there is a preset
 called "Windows Desktop" and the template can be found. (The export preset name
@@ -199,13 +199,13 @@ When doing so, the export preset name must still be specified on the command lin
 
     godot --export-pack "Windows Desktop" some_name.pck
 
-It is often useful to combine the ``--export`` flag with the ``--path``
+It is often useful to combine the ``--export-release`` flag with the ``--path``
 flag, so that you do not need to ``cd`` to the project folder before running
 the command:
 
 .. code-block:: shell
 
-    godot --path /path/to/project --export "Windows Desktop" some_name.exe
+    godot --path /path/to/project --export-release "Windows Desktop" some_name.exe
 
 .. seealso::
 
