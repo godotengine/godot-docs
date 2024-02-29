@@ -326,6 +326,18 @@ Contact monitoring via signals can be enabled via the :ref:`contact_monitor <cla
 property. See :ref:`RigidBody2D <class_RigidBody2D>` for the list of available
 signals.
 
+.. note::
+
+    Rigid bodies do not detect collisions with ``Area2D`` nodes. If you need a rigid body
+    to detect collisions with ``Area2D``, consider using the ``body`` argument in the ``Area2D``
+    ``_on_body_entered(body)`` signal to emit a signal from the rigid body: 
+
+.. tabs::
+ .. code-tab:: gdscript GDScript
+ 
+    func _on_Area2DName_body_entered(body):
+        body.emit_signal("body_entered", self)
+
 CharacterBody2D
 ---------------
 
