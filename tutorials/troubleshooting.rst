@@ -120,6 +120,16 @@ default values in the NVIDIA Control Panel.
 To disable this overlay on Linux, open ``nvidia-settings``, go to **X Screen 0 >
 OpenGL Settings** then uncheck **Enable Graphics API Visual Indicator**.
 
+A microphone or "refresh" icon appears in the bottom-right corner of the Project Manager and editor window
+----------------------------------------------------------------------------------------------------------
+
+This is caused by the NVIDIA graphics driver injecting an overlay to display
+instant replay information on ShadowPlay recording. This overlay can only be
+seen on Windows, as Linux does not have support for ShadowPlay.
+
+To disable this overlay, press :kbd:`Alt + Z` (default shortcut for the NVIDIA overlay)
+and disable **Settings > HUD Layout > Status Indicator** in the NVIDIA overlay.
+
 The editor or project appears overly sharp or blurry
 ----------------------------------------------------
 
