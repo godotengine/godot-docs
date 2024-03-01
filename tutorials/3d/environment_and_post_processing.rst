@@ -552,8 +552,15 @@ illumination for off-screen elements (unlike :abbr:`SSIL (Screen-Space Indirect 
 Glow
 ^^^^
 
-*This feature is only available when using the Forward+ and Mobile backends, not
-Compatibility.*
+.. note::
+
+    When using the Compatibility rendering method, glow uses a different
+    implementation with some properties being unavailable and hidden from the
+    inspector: **Levels**, **Normalized**, **Strength**, **Blend Mode**,
+    **Mix**, **Map**, and **Map Strength**.
+
+    This implementation is optimized to run on low-end devices and is less
+    flexible as a result.
 
 In photography and film, when light amount exceeds the maximum *luminance*
 (brightness) supported by the media, it generally bleeds outwards to darker
