@@ -209,6 +209,8 @@ Properties
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`editors/panning/warped_mouse_panning<class_EditorSettings_property_editors/panning/warped_mouse_panning>`                                                                     |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`                         | :ref:`editors/polygon_editor/auto_bake_delay<class_EditorSettings_property_editors/polygon_editor/auto_bake_delay>`                                                                 |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`editors/polygon_editor/point_grab_radius<class_EditorSettings_property_editors/polygon_editor/point_grab_radius>`                                                             |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`editors/polygon_editor/show_previous_outline<class_EditorSettings_property_editors/polygon_editor/show_previous_outline>`                                                     |
@@ -1690,6 +1692,18 @@ Controls whether the mouse wheel scroll zooms or pans in subeditors. The list of
 :ref:`bool<class_bool>` **editors/panning/warped_mouse_panning**
 
 If ``true``, warps the mouse around the 2D viewport while panning in the 2D editor. This makes it possible to pan over a large area without having to exit panning and adjust the mouse cursor.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSettings_property_editors/polygon_editor/auto_bake_delay:
+
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **editors/polygon_editor/auto_bake_delay**
+
+The delay in seconds until more complex and performance costly polygon editors commit their outlines, e.g. the 2D navigation polygon editor rebakes the navigation mesh polygons. A negative value stops the auto bake.
 
 .. rst-class:: classref-item-separator
 

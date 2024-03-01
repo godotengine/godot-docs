@@ -620,6 +620,24 @@ See also :ref:`@GlobalScope.PROPERTY_HINT_RANGE<class_@GlobalScope_constant_PROP
 
 ----
 
+.. _class_@GDScript_annotation_@export_storage:
+
+.. rst-class:: classref-annotation
+
+**@export_storage**\ (\ )
+
+Export a property with :ref:`@GlobalScope.PROPERTY_USAGE_STORAGE<class_@GlobalScope_constant_PROPERTY_USAGE_STORAGE>` flag. The property is not displayed in the editor, but it is serialized and stored in the scene or resource file. This can be useful for :ref:`@tool<class_@GDScript_annotation_@tool>` scripts. Also the property value is copied when :ref:`Resource.duplicate<class_Resource_method_duplicate>` or :ref:`Node.duplicate<class_Node_method_duplicate>` is called, unlike non-exported variables.
+
+::
+
+    var a # Not stored in the file, not displayed in the editor.
+    @export_storage var b # Stored in the file, not displayed in the editor.
+    @export var c: int # Stored in the file, displayed in the editor.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_@GDScript_annotation_@export_subgroup:
 
 .. rst-class:: classref-annotation

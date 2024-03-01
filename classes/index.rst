@@ -262,6 +262,7 @@ Nodes
     class_window
     class_worldenvironment
     class_xranchor3d
+    class_xrbodymodifier3d
     class_xrcamera3d
     class_xrcontroller3d
     class_xrfacemodifier3d
@@ -934,6 +935,7 @@ Other objects
     class_webxrinterface
     class_workerthreadpool
     class_xmlparser
+    class_xrbodytracker
     class_xrfacetracker
     class_xrhandtracker
     class_xrinterface

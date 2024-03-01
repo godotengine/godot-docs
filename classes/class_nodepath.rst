@@ -92,27 +92,29 @@ Methods
 .. table::
    :widths: auto
 
-   +-------------------------------------+--------------------------------------------------------------------------------------------------+
-   | :ref:`NodePath<class_NodePath>`     | :ref:`get_as_property_path<class_NodePath_method_get_as_property_path>`\ (\ ) |const|            |
-   +-------------------------------------+--------------------------------------------------------------------------------------------------+
-   | :ref:`StringName<class_StringName>` | :ref:`get_concatenated_names<class_NodePath_method_get_concatenated_names>`\ (\ ) |const|        |
-   +-------------------------------------+--------------------------------------------------------------------------------------------------+
-   | :ref:`StringName<class_StringName>` | :ref:`get_concatenated_subnames<class_NodePath_method_get_concatenated_subnames>`\ (\ ) |const|  |
-   +-------------------------------------+--------------------------------------------------------------------------------------------------+
-   | :ref:`StringName<class_StringName>` | :ref:`get_name<class_NodePath_method_get_name>`\ (\ idx\: :ref:`int<class_int>`\ ) |const|       |
-   +-------------------------------------+--------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`               | :ref:`get_name_count<class_NodePath_method_get_name_count>`\ (\ ) |const|                        |
-   +-------------------------------------+--------------------------------------------------------------------------------------------------+
-   | :ref:`StringName<class_StringName>` | :ref:`get_subname<class_NodePath_method_get_subname>`\ (\ idx\: :ref:`int<class_int>`\ ) |const| |
-   +-------------------------------------+--------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`               | :ref:`get_subname_count<class_NodePath_method_get_subname_count>`\ (\ ) |const|                  |
-   +-------------------------------------+--------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`               | :ref:`hash<class_NodePath_method_hash>`\ (\ ) |const|                                            |
-   +-------------------------------------+--------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`             | :ref:`is_absolute<class_NodePath_method_is_absolute>`\ (\ ) |const|                              |
-   +-------------------------------------+--------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`             | :ref:`is_empty<class_NodePath_method_is_empty>`\ (\ ) |const|                                    |
-   +-------------------------------------+--------------------------------------------------------------------------------------------------+
+   +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`NodePath<class_NodePath>`     | :ref:`get_as_property_path<class_NodePath_method_get_as_property_path>`\ (\ ) |const|                                            |
+   +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`StringName<class_StringName>` | :ref:`get_concatenated_names<class_NodePath_method_get_concatenated_names>`\ (\ ) |const|                                        |
+   +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`StringName<class_StringName>` | :ref:`get_concatenated_subnames<class_NodePath_method_get_concatenated_subnames>`\ (\ ) |const|                                  |
+   +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`StringName<class_StringName>` | :ref:`get_name<class_NodePath_method_get_name>`\ (\ idx\: :ref:`int<class_int>`\ ) |const|                                       |
+   +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`               | :ref:`get_name_count<class_NodePath_method_get_name_count>`\ (\ ) |const|                                                        |
+   +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`StringName<class_StringName>` | :ref:`get_subname<class_NodePath_method_get_subname>`\ (\ idx\: :ref:`int<class_int>`\ ) |const|                                 |
+   +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`               | :ref:`get_subname_count<class_NodePath_method_get_subname_count>`\ (\ ) |const|                                                  |
+   +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`               | :ref:`hash<class_NodePath_method_hash>`\ (\ ) |const|                                                                            |
+   +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`             | :ref:`is_absolute<class_NodePath_method_is_absolute>`\ (\ ) |const|                                                              |
+   +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`             | :ref:`is_empty<class_NodePath_method_is_empty>`\ (\ ) |const|                                                                    |
+   +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`NodePath<class_NodePath>`     | :ref:`slice<class_NodePath_method_slice>`\ (\ begin\: :ref:`int<class_int>`, end\: :ref:`int<class_int>` = 2147483647\ ) |const| |
+   +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-reftable-group
 
@@ -394,6 +396,22 @@ Returns ``true`` if the node path is absolute. Unlike a relative path, an absolu
 :ref:`bool<class_bool>` **is_empty**\ (\ ) |const|
 
 Returns ``true`` if the node path has been constructed from an empty :ref:`String<class_String>` (``""``).
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_NodePath_method_slice:
+
+.. rst-class:: classref-method
+
+:ref:`NodePath<class_NodePath>` **slice**\ (\ begin\: :ref:`int<class_int>`, end\: :ref:`int<class_int>` = 2147483647\ ) |const|
+
+Returns the slice of the **NodePath**, from ``begin`` (inclusive) to ``end`` (exclusive), as a new **NodePath**.
+
+The absolute value of ``begin`` and ``end`` will be clamped to the sum of :ref:`get_name_count<class_NodePath_method_get_name_count>` and :ref:`get_subname_count<class_NodePath_method_get_subname_count>`, so the default value for ``end`` makes it slice to the end of the **NodePath** by default (i.e. ``path.slice(1)`` is a shorthand for ``path.slice(1, path.get_name_count() + path.get_subname_count())``).
+
+If either ``begin`` or ``end`` are negative, they will be relative to the end of the **NodePath** (i.e. ``path.slice(0, -2)`` is a shorthand for ``path.slice(0, path.get_name_count() + path.get_subname_count() - 2)``).
 
 .. rst-class:: classref-section-separator
 

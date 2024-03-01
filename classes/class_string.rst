@@ -1355,8 +1355,8 @@ Converts the given ``number`` to a string representation, in scientific notation
  .. code-tab:: gdscript
 
     var n = -5.2e8
-    print(n)                       # Prints -520000000
-    print(String.NumScientific(n)) # Prints -5.2e+08
+    print(n)                        # Prints -520000000
+    print(String.num_scientific(n)) # Prints -5.2e+08
 
  .. code-tab:: csharp
 

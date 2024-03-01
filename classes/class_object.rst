@@ -782,7 +782,7 @@ Calls the ``method`` on the object and returns the result. This method supports 
 
 Calls the ``method`` on the object during idle time. Always returns null, **not** the method's result.
 
-Idle time happens mainly at the end of process and physics frames. In it, deferred calls will be run until there are none left, which means you can defer calls from other deferred calls and they'll still be run in the current idle time cycle. If not done carefully, this can result in infinite recursion without causing a stack overflow, which will hang the game similarly to an infinite loop.
+Idle time happens mainly at the end of process and physics frames. In it, deferred calls will be run until there are none left, which means you can defer calls from other deferred calls and they'll still be run in the current idle time cycle. This means you should not call a method deferred from itself (or from a method called by it), as this causes infinite recursion the same way as if you had called the method directly.
 
 This method supports a variable number of arguments, so parameters can be passed as a comma separated list.
 

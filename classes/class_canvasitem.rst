@@ -525,7 +525,7 @@ Property Descriptions
 - |void| **set_clip_children_mode**\ (\ value\: :ref:`ClipChildrenMode<enum_CanvasItem_ClipChildrenMode>`\ )
 - :ref:`ClipChildrenMode<enum_CanvasItem_ClipChildrenMode>` **get_clip_children_mode**\ (\ )
 
-Allows the current node to clip children nodes, essentially acting as a mask.
+Allows the current node to clip child nodes, essentially acting as a mask.
 
 .. rst-class:: classref-item-separator
 
@@ -1484,7 +1484,7 @@ Transformations issued by ``event``'s inputs are applied in local space instead 
 
 Moves this node to display on top of its siblings.
 
-Internally, the node is moved to the bottom of parent's children list. The method has no effect on nodes without a parent.
+Internally, the node is moved to the bottom of parent's child list. The method has no effect on nodes without a parent.
 
 .. rst-class:: classref-item-separator
 

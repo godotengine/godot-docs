@@ -19,11 +19,11 @@ Manages the game loop via a hierarchy of nodes.
 Description
 -----------
 
-As one of the most important classes, the **SceneTree** manages the hierarchy of nodes in a scene as well as scenes themselves. Nodes can be added, retrieved and removed. The whole scene tree (and thus the current scene) can be paused. Scenes can be loaded, switched and reloaded.
+As one of the most important classes, the **SceneTree** manages the hierarchy of nodes in a scene, as well as scenes themselves. Nodes can be added, fetched and removed. The whole scene tree (and thus the current scene) can be paused. Scenes can be loaded, switched and reloaded.
 
-You can also use the **SceneTree** to organize your nodes into groups: every node can be assigned as many groups as you want to create, e.g. an "enemy" group. You can then iterate these groups or even call methods and set properties on all the group's members at once.
+You can also use the **SceneTree** to organize your nodes into **groups**: every node can be added to as many groups as you want to create, e.g. an "enemy" group. You can then iterate these groups or even call methods and set properties on all the nodes belonging to any given group.
 
-\ **SceneTree** is the default :ref:`MainLoop<class_MainLoop>` implementation used by scenes, and is thus in charge of the game loop.
+\ **SceneTree** is the default :ref:`MainLoop<class_MainLoop>` implementation used by the engine, and is thus in charge of the game loop.
 
 .. rst-class:: classref-introduction-group
 
@@ -135,7 +135,7 @@ Signals
 
 **node_added**\ (\ node\: :ref:`Node<class_Node>`\ )
 
-Emitted whenever a node is added to the **SceneTree**.
+Emitted when the ``node`` enters this tree.
 
 .. rst-class:: classref-item-separator
 
@@ -147,7 +147,7 @@ Emitted whenever a node is added to the **SceneTree**.
 
 **node_configuration_warning_changed**\ (\ node\: :ref:`Node<class_Node>`\ )
 
-Emitted when a node's configuration changed. Only emitted in ``tool`` mode.
+Emitted when the ``node``'s :ref:`Node.update_configuration_warnings<class_Node_method_update_configuration_warnings>` is called. Only emitted in the editor.
 
 .. rst-class:: classref-item-separator
 
@@ -159,7 +159,7 @@ Emitted when a node's configuration changed. Only emitted in ``tool`` mode.
 
 **node_removed**\ (\ node\: :ref:`Node<class_Node>`\ )
 
-Emitted whenever a node is removed from the **SceneTree**.
+Emitted when the ``node`` exits this tree.
 
 .. rst-class:: classref-item-separator
 
@@ -171,7 +171,7 @@ Emitted whenever a node is removed from the **SceneTree**.
 
 **node_renamed**\ (\ node\: :ref:`Node<class_Node>`\ )
 
-Emitted whenever a node is renamed.
+Emitted when the ``node``'s :ref:`Node.name<class_Node_property_name>` is changed.
 
 .. rst-class:: classref-item-separator
 
@@ -183,7 +183,7 @@ Emitted whenever a node is renamed.
 
 **physics_frame**\ (\ )
 
-Emitted immediately before :ref:`Node._physics_process<class_Node_private_method__physics_process>` is called on every node in the **SceneTree**.
+Emitted immediately before :ref:`Node._physics_process<class_Node_private_method__physics_process>` is called on every node in this tree.
 
 .. rst-class:: classref-item-separator
 
@@ -195,7 +195,7 @@ Emitted immediately before :ref:`Node._physics_process<class_Node_private_method
 
 **process_frame**\ (\ )
 
-Emitted immediately before :ref:`Node._process<class_Node_private_method__process>` is called on every node in the **SceneTree**.
+Emitted immediately before :ref:`Node._process<class_Node_private_method__process>` is called on every node in this tree.
 
 .. rst-class:: classref-item-separator
 
@@ -207,7 +207,7 @@ Emitted immediately before :ref:`Node._process<class_Node_private_method__proces
 
 **tree_changed**\ (\ )
 
-Emitted whenever the **SceneTree** hierarchy changed (children being moved or renamed, etc.).
+Emitted any time the tree's hierarchy changes (nodes being moved, renamed, etc).
 
 .. rst-class:: classref-item-separator
 
@@ -219,7 +219,7 @@ Emitted whenever the **SceneTree** hierarchy changed (children being moved or re
 
 **tree_process_mode_changed**\ (\ )
 
-This signal is only emitted in the editor, it allows the editor to update the visibility of disabled nodes. Emitted whenever any node's :ref:`Node.process_mode<class_Node_property_process_mode>` is changed.
+Emitted when the :ref:`Node.process_mode<class_Node_property_process_mode>` of any node inside the tree is changed. Only emitted in the editor, to update the visibility of disabled nodes.
 
 .. rst-class:: classref-section-separator
 
@@ -242,7 +242,7 @@ enum **GroupCallFlags**:
 
 :ref:`GroupCallFlags<enum_SceneTree_GroupCallFlags>` **GROUP_CALL_DEFAULT** = ``0``
 
-Call a group with no flags (default).
+Call nodes within a group with no special behavior (default).
 
 .. _class_SceneTree_constant_GROUP_CALL_REVERSE:
 
@@ -250,7 +250,7 @@ Call a group with no flags (default).
 
 :ref:`GroupCallFlags<enum_SceneTree_GroupCallFlags>` **GROUP_CALL_REVERSE** = ``1``
 
-Call a group in reverse scene order.
+Call nodes within a group in reverse tree hierarchy order (all nested children are called before their respective parent nodes).
 
 .. _class_SceneTree_constant_GROUP_CALL_DEFERRED:
 
@@ -258,7 +258,7 @@ Call a group in reverse scene order.
 
 :ref:`GroupCallFlags<enum_SceneTree_GroupCallFlags>` **GROUP_CALL_DEFERRED** = ``2``
 
-Call a group at the end of the current frame (process or physics).
+Call nodes within a group at the end of the current frame (can be either process or physics frame), similar to :ref:`Object.call_deferred<class_Object_method_call_deferred>`.
 
 .. _class_SceneTree_constant_GROUP_CALL_UNIQUE:
 
@@ -266,9 +266,9 @@ Call a group at the end of the current frame (process or physics).
 
 :ref:`GroupCallFlags<enum_SceneTree_GroupCallFlags>` **GROUP_CALL_UNIQUE** = ``4``
 
-Call a group only once even if the call is executed many times.
+Call nodes within a group only once, even if the call is executed many times in the same frame. Must be combined with :ref:`GROUP_CALL_DEFERRED<class_SceneTree_constant_GROUP_CALL_DEFERRED>` to work.
 
-\ **Note:** Arguments are not taken into account when deciding whether the call is unique or not. Therefore when the same method is called with different arguments, only the first call will be performed.
+\ **Note:** Different arguments are not taken into account. Therefore, when the same call is executed with different arguments, only the first call will be performed.
 
 .. rst-class:: classref-section-separator
 
@@ -309,9 +309,9 @@ For mobile platforms, see :ref:`quit_on_go_back<class_SceneTree_property_quit_on
 - |void| **set_current_scene**\ (\ value\: :ref:`Node<class_Node>`\ )
 - :ref:`Node<class_Node>` **get_current_scene**\ (\ )
 
-Returns the root node of the currently running scene, regardless of its structure.
+The root node of the currently loaded main scene, usually as a direct child of :ref:`root<class_SceneTree_property_root>`. See also :ref:`change_scene_to_file<class_SceneTree_method_change_scene_to_file>`, :ref:`change_scene_to_packed<class_SceneTree_method_change_scene_to_packed>`, and :ref:`reload_current_scene<class_SceneTree_method_reload_current_scene>`.
 
-\ **Warning:** Setting this directly might not work as expected, and will *not* add or remove any nodes from the tree, consider using :ref:`change_scene_to_file<class_SceneTree_method_change_scene_to_file>` or :ref:`change_scene_to_packed<class_SceneTree_method_change_scene_to_packed>` instead.
+\ **Warning:** Setting this property directly may not work as expected, as it does *not* add or remove any nodes from this tree.
 
 .. rst-class:: classref-item-separator
 
@@ -385,7 +385,9 @@ If ``true``, curves from :ref:`Path2D<class_Path2D>` and :ref:`Path3D<class_Path
 - |void| **set_edited_scene_root**\ (\ value\: :ref:`Node<class_Node>`\ )
 - :ref:`Node<class_Node>` **get_edited_scene_root**\ (\ )
 
-The root of the edited scene.
+The root of the scene currently being edited in the editor. This is usually a direct child of :ref:`root<class_SceneTree_property_root>`.
+
+\ **Note:** This property does nothing in release builds.
 
 .. rst-class:: classref-item-separator
 
@@ -421,11 +423,11 @@ If ``false``, you need to manually call :ref:`MultiplayerAPI.poll<class_Multipla
 - |void| **set_pause**\ (\ value\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **is_paused**\ (\ )
 
-If ``true``, the **SceneTree** is paused. Doing so will have the following behavior:
+If ``true``, the scene tree is considered paused. This causes the following behavior:
 
-- 2D and 3D physics will be stopped. This includes signals and collision detection.
+- 2D and 3D physics will be stopped, as well as collision detection and related signals.
 
-- :ref:`Node._process<class_Node_private_method__process>`, :ref:`Node._physics_process<class_Node_private_method__physics_process>` and :ref:`Node._input<class_Node_private_method__input>` will not be called anymore in nodes.
+- Depending on each node's :ref:`Node.process_mode<class_Node_property_process_mode>`, their :ref:`Node._process<class_Node_private_method__process>`, :ref:`Node._physics_process<class_Node_private_method__physics_process>` and :ref:`Node._input<class_Node_private_method__input>` callback methods may not called anymore.
 
 .. rst-class:: classref-item-separator
 
@@ -460,7 +462,9 @@ To handle 'Go Back' button when this option is disabled, use :ref:`DisplayServer
 
 - :ref:`Window<class_Window>` **get_root**\ (\ )
 
-The **SceneTree**'s root :ref:`Window<class_Window>`.
+The tree's root :ref:`Window<class_Window>`. This is top-most :ref:`Node<class_Node>` of the scene tree, and is always present. An absolute :ref:`NodePath<class_NodePath>` always starts from this node. Children of the root node may include the loaded :ref:`current_scene<class_SceneTree_property_current_scene>`, as well as any :doc:`AutoLoad <../tutorials/scripting/singletons_autoload>` configured in the Project Settings.
+
+\ **Warning:** Do not delete this node. This will result in unstable behavior, followed by a crash.
 
 .. rst-class:: classref-section-separator
 
@@ -477,9 +481,11 @@ Method Descriptions
 
 |void| **call_group**\ (\ group\: :ref:`StringName<class_StringName>`, method\: :ref:`StringName<class_StringName>`, ...\ ) |vararg|
 
-Calls ``method`` on each member of the given group. You can pass arguments to ``method`` by specifying them at the end of the method call. If a node doesn't have the given method or the argument list does not match (either in count or in types), it will be skipped.
+Calls ``method`` on each node inside this tree added to the given ``group``. You can pass arguments to ``method`` by specifying them at the end of this method call. Nodes that cannot call ``method`` (either because the method doesn't exist or the arguments do not match) are ignored. See also :ref:`set_group<class_SceneTree_method_set_group>` and :ref:`notify_group<class_SceneTree_method_notify_group>`.
 
-\ **Note:** :ref:`call_group<class_SceneTree_method_call_group>` will call methods immediately on all members at once, which can cause stuttering if an expensive method is called on lots of members.
+\ **Note:** This method acts immediately on all selected nodes at once, which may cause stuttering in some performance-intensive situations.
+
+\ **Note:** In C#, ``method`` must be in snake_case when referring to built-in Godot methods. Prefer using the names exposed in the ``MethodName`` class to avoid allocating a new :ref:`StringName<class_StringName>` on each call.
 
 .. rst-class:: classref-item-separator
 
@@ -491,14 +497,16 @@ Calls ``method`` on each member of the given group. You can pass arguments to ``
 
 |void| **call_group_flags**\ (\ flags\: :ref:`int<class_int>`, group\: :ref:`StringName<class_StringName>`, method\: :ref:`StringName<class_StringName>`, ...\ ) |vararg|
 
-Calls ``method`` on each member of the given group, respecting the given :ref:`GroupCallFlags<enum_SceneTree_GroupCallFlags>`. You can pass arguments to ``method`` by specifying them at the end of the method call. If a node doesn't have the given method or the argument list does not match (either in count or in types), it will be skipped.
+Calls the given ``method`` on each node inside this tree added to the given ``group``. Use ``flags`` to customize this method's behavior (see :ref:`GroupCallFlags<enum_SceneTree_GroupCallFlags>`). Additional arguments for ``method`` can be passed at the end of this method. Nodes that cannot call ``method`` (either because the method doesn't exist or the arguments do not match) are ignored.
 
 ::
 
-    # Call the method in a deferred manner and in reverse order.
-    get_tree().call_group_flags(SceneTree.GROUP_CALL_DEFERRED | SceneTree.GROUP_CALL_REVERSE)
+    # Calls "hide" to all nodes of the "enemies" group, at the end of the frame and in reverse tree order.
+    get_tree().call_group_flags(
+            SceneTree.GROUP_CALL_DEFERRED | SceneTree.GROUP_CALL_REVERSE,
+            "enemies", "hide")
 
-\ **Note:** Group call flags are used to control the method calling behavior. By default, methods will be called immediately in a way similar to :ref:`call_group<class_SceneTree_method_call_group>`. However, if the :ref:`GROUP_CALL_DEFERRED<class_SceneTree_constant_GROUP_CALL_DEFERRED>` flag is present in the ``flags`` argument, methods will be called at the end of the frame in a way similar to :ref:`Object.set_deferred<class_Object_method_set_deferred>`.
+\ **Note:** In C#, ``method`` must be in snake_case when referring to built-in Godot methods. Prefer using the names exposed in the ``MethodName`` class to avoid allocating a new :ref:`StringName<class_StringName>` on each call.
 
 .. rst-class:: classref-item-separator
 
@@ -548,15 +556,15 @@ This ensures that both scenes aren't running at the same time, while still freei
 
 :ref:`SceneTreeTimer<class_SceneTreeTimer>` **create_timer**\ (\ time_sec\: :ref:`float<class_float>`, process_always\: :ref:`bool<class_bool>` = true, process_in_physics\: :ref:`bool<class_bool>` = false, ignore_time_scale\: :ref:`bool<class_bool>` = false\ )
 
-Returns a :ref:`SceneTreeTimer<class_SceneTreeTimer>` which will emit :ref:`SceneTreeTimer.timeout<class_SceneTreeTimer_signal_timeout>` after the given time in seconds elapsed in this **SceneTree**.
+Returns a new :ref:`SceneTreeTimer<class_SceneTreeTimer>`. After ``time_sec`` in seconds have passed, the timer will emit :ref:`SceneTreeTimer.timeout<class_SceneTreeTimer_signal_timeout>` and will be automatically freed.
 
-If ``process_always`` is set to ``false``, pausing the **SceneTree** will also pause the timer.
+If ``process_always`` is ``false``, the timer will be paused when setting :ref:`paused<class_SceneTree_property_paused>` to ``true``.
 
-If ``process_in_physics`` is set to ``true``, will update the :ref:`SceneTreeTimer<class_SceneTreeTimer>` during the physics frame instead of the process frame (fixed framerate processing).
+If ``process_in_physics`` is ``true``, the timer will update at the end of the physics frame, instead of the process frame.
 
-If ``ignore_time_scale`` is set to ``true``, will ignore :ref:`Engine.time_scale<class_Engine_property_time_scale>` and update the :ref:`SceneTreeTimer<class_SceneTreeTimer>` with the actual frame delta.
+If ``ignore_time_scale`` is ``true``, the timer will ignore :ref:`Engine.time_scale<class_Engine_property_time_scale>` and update with the real, elapsed time.
 
-Commonly used to create a one-shot delay timer as in the following example:
+This method is commonly used to create a one-shot delay timer, as in the following example:
 
 
 .. tabs::
@@ -579,9 +587,7 @@ Commonly used to create a one-shot delay timer as in the following example:
 
 
 
-The timer will be automatically freed after its time elapses.
-
-\ **Note:** The timer is processed after all of the nodes in the current frame, i.e. node's :ref:`Node._process<class_Node_private_method__process>` method would be called before the timer (or :ref:`Node._physics_process<class_Node_private_method__physics_process>` if ``process_in_physics`` is set to ``true``).
+\ **Note:** The timer is always updated *after* all of the nodes in the tree. A node's :ref:`Node._process<class_Node_private_method__process>` method would be called before the timer updates (or :ref:`Node._physics_process<class_Node_private_method__physics_process>` if ``process_in_physics`` is set to ``true``).
 
 .. rst-class:: classref-item-separator
 
@@ -593,9 +599,9 @@ The timer will be automatically freed after its time elapses.
 
 :ref:`Tween<class_Tween>` **create_tween**\ (\ )
 
-Creates and returns a new :ref:`Tween<class_Tween>`. The Tween will start automatically on the next process frame or physics frame (depending on :ref:`TweenProcessMode<enum_Tween_TweenProcessMode>`).
+Creates and returns a new :ref:`Tween<class_Tween>` processed in this tree. The Tween will start automatically on the next process frame or physics frame (depending on its :ref:`TweenProcessMode<enum_Tween_TweenProcessMode>`).
 
-\ **Note:** When creating a :ref:`Tween<class_Tween>` using this method, the :ref:`Tween<class_Tween>` will not be tied to the :ref:`Node<class_Node>` that called it. It will continue to animate even if the :ref:`Node<class_Node>` is freed, but it will automatically finish if there's nothing left to animate. If you want the :ref:`Tween<class_Tween>` to be automatically killed when the :ref:`Node<class_Node>` is freed, use :ref:`Node.create_tween<class_Node_method_create_tween>` or :ref:`Tween.bind_node<class_Tween_method_bind_node>`.
+\ **Note:** A :ref:`Tween<class_Tween>` created using this method is not bound to any :ref:`Node<class_Node>`. It may keep working until there is nothing left to animate. If you want the :ref:`Tween<class_Tween>` to be automatically killed when the :ref:`Node<class_Node>` is freed, use :ref:`Node.create_tween<class_Node_method_create_tween>` or :ref:`Tween.bind_node<class_Tween_method_bind_node>`.
 
 .. rst-class:: classref-item-separator
 
@@ -607,7 +613,7 @@ Creates and returns a new :ref:`Tween<class_Tween>`. The Tween will start automa
 
 :ref:`Node<class_Node>` **get_first_node_in_group**\ (\ group\: :ref:`StringName<class_StringName>`\ )
 
-Returns the first node in the specified group, or ``null`` if the group is empty or does not exist.
+Returns the first :ref:`Node<class_Node>` found inside the tree, that has been added to the given ``group``, in scene hierarchy order. Returns ``null`` if no match is found. See also :ref:`get_nodes_in_group<class_SceneTree_method_get_nodes_in_group>`.
 
 .. rst-class:: classref-item-separator
 
@@ -619,7 +625,7 @@ Returns the first node in the specified group, or ``null`` if the group is empty
 
 :ref:`int<class_int>` **get_frame**\ (\ ) |const|
 
-Returns the current frame number, i.e. the total frame count since the application started.
+Returns how many frames have been processed, since the application started. This is *not* a measurement of elapsed time.
 
 .. rst-class:: classref-item-separator
 
@@ -643,7 +649,7 @@ Searches for the :ref:`MultiplayerAPI<class_MultiplayerAPI>` configured for the 
 
 :ref:`int<class_int>` **get_node_count**\ (\ ) |const|
 
-Returns the number of nodes in this **SceneTree**.
+Returns the number of nodes inside this tree.
 
 .. rst-class:: classref-item-separator
 
@@ -667,7 +673,7 @@ Returns the number of nodes assigned to the given group.
 
 :ref:`Array<class_Array>`\[:ref:`Node<class_Node>`\] **get_nodes_in_group**\ (\ group\: :ref:`StringName<class_StringName>`\ )
 
-Returns a list of all nodes assigned to the given group.
+Returns an :ref:`Array<class_Array>` containing all nodes inside this tree, that have been added to the given ``group``, in scene hierarchy order.
 
 .. rst-class:: classref-item-separator
 
@@ -679,7 +685,7 @@ Returns a list of all nodes assigned to the given group.
 
 :ref:`Array<class_Array>`\[:ref:`Tween<class_Tween>`\] **get_processed_tweens**\ (\ )
 
-Returns an array of currently existing :ref:`Tween<class_Tween>`\ s in the **SceneTree** (both running and paused).
+Returns an :ref:`Array<class_Array>` of currently existing :ref:`Tween<class_Tween>`\ s in the tree, including paused tweens.
 
 .. rst-class:: classref-item-separator
 
@@ -691,9 +697,7 @@ Returns an array of currently existing :ref:`Tween<class_Tween>`\ s in the **Sce
 
 :ref:`bool<class_bool>` **has_group**\ (\ name\: :ref:`StringName<class_StringName>`\ ) |const|
 
-Returns ``true`` if the given group exists.
-
-A group exists if any :ref:`Node<class_Node>` in the tree belongs to it (see :ref:`Node.add_to_group<class_Node_method_add_to_group>`). Groups without nodes are removed automatically.
+Returns ``true`` if a node added to the given group ``name`` exists in the tree.
 
 .. rst-class:: classref-item-separator
 
@@ -705,9 +709,9 @@ A group exists if any :ref:`Node<class_Node>` in the tree belongs to it (see :re
 
 |void| **notify_group**\ (\ group\: :ref:`StringName<class_StringName>`, notification\: :ref:`int<class_int>`\ )
 
-Sends the given notification to all members of the ``group``.
+Calls :ref:`Object.notification<class_Object_method_notification>` with the given ``notification`` to all nodes inside this tree added to the ``group``. See also :ref:`call_group<class_SceneTree_method_call_group>` and :ref:`set_group<class_SceneTree_method_set_group>`.
 
-\ **Note:** :ref:`notify_group<class_SceneTree_method_notify_group>` will immediately notify all members at once, which can cause stuttering if an expensive method is called as a result of sending the notification to lots of members.
+\ **Note:** This method acts immediately on all selected nodes at once, which may cause stuttering in some performance-intensive situations.
 
 .. rst-class:: classref-item-separator
 
@@ -719,9 +723,7 @@ Sends the given notification to all members of the ``group``.
 
 |void| **notify_group_flags**\ (\ call_flags\: :ref:`int<class_int>`, group\: :ref:`StringName<class_StringName>`, notification\: :ref:`int<class_int>`\ )
 
-Sends the given notification to all members of the ``group``, respecting the given :ref:`GroupCallFlags<enum_SceneTree_GroupCallFlags>`.
-
-\ **Note:** Group call flags are used to control the notification sending behavior. By default, notifications will be sent immediately in a way similar to :ref:`notify_group<class_SceneTree_method_notify_group>`. However, if the :ref:`GROUP_CALL_DEFERRED<class_SceneTree_constant_GROUP_CALL_DEFERRED>` flag is present in the ``call_flags`` argument, notifications will be sent at the end of the current frame in a way similar to using ``Object.call_deferred("notification", ...)``.
+Calls :ref:`Object.notification<class_Object_method_notification>` with the given ``notification`` to all nodes inside this tree added to the ``group``. Use ``call_flags`` to customize this method's behavior (see :ref:`GroupCallFlags<enum_SceneTree_GroupCallFlags>`).
 
 .. rst-class:: classref-item-separator
 
@@ -733,7 +735,7 @@ Sends the given notification to all members of the ``group``, respecting the giv
 
 |void| **queue_delete**\ (\ obj\: :ref:`Object<class_Object>`\ )
 
-Queues the given object for deletion, delaying the call to :ref:`Object.free<class_Object_method_free>` to the end of the current frame.
+Queues the given ``obj`` to be deleted, calling its :ref:`Object.free<class_Object_method_free>` at the end of the current frame. This method is similar to :ref:`Node.queue_free<class_Node_method_queue_free>`.
 
 .. rst-class:: classref-item-separator
 
@@ -745,13 +747,11 @@ Queues the given object for deletion, delaying the call to :ref:`Object.free<cla
 
 |void| **quit**\ (\ exit_code\: :ref:`int<class_int>` = 0\ )
 
-Quits the application at the end of the current iteration. Argument ``exit_code`` can optionally be given (defaulting to 0) to customize the exit status code.
+Quits the application at the end of the current iteration, with the given ``exit_code``.
 
-By convention, an exit code of ``0`` indicates success whereas a non-zero exit code indicates an error.
+By convention, an exit code of ``0`` indicates success, whereas any other exit code indicates an error. For portability reasons, it should be between ``0`` and ``125`` (inclusive).
 
-For portability reasons, the exit code should be set between 0 and 125 (inclusive).
-
-\ **Note:** On iOS this method doesn't work. Instead, as recommended by the iOS Human Interface Guidelines, the user is expected to close apps via the Home button.
+\ **Note:** On iOS this method doesn't work. Instead, as recommended by the `iOS Human Interface Guidelines <https://developer.apple.com/library/archive/qa/qa1561/_index.html>`__, the user is expected to close apps via the Home button.
 
 .. rst-class:: classref-item-separator
 
@@ -763,9 +763,9 @@ For portability reasons, the exit code should be set between 0 and 125 (inclusiv
 
 :ref:`Error<enum_@GlobalScope_Error>` **reload_current_scene**\ (\ )
 
-Reloads the currently active scene.
+Reloads the currently active scene, replacing :ref:`current_scene<class_SceneTree_property_current_scene>` with a new instance of its original :ref:`PackedScene<class_PackedScene>`.
 
-Returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` on success, :ref:`@GlobalScope.ERR_UNCONFIGURED<class_@GlobalScope_constant_ERR_UNCONFIGURED>` if no :ref:`current_scene<class_SceneTree_property_current_scene>` was defined yet, :ref:`@GlobalScope.ERR_CANT_OPEN<class_@GlobalScope_constant_ERR_CANT_OPEN>` if :ref:`current_scene<class_SceneTree_property_current_scene>` cannot be loaded into a :ref:`PackedScene<class_PackedScene>`, or :ref:`@GlobalScope.ERR_CANT_CREATE<class_@GlobalScope_constant_ERR_CANT_CREATE>` if the scene cannot be instantiated.
+Returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` on success, :ref:`@GlobalScope.ERR_UNCONFIGURED<class_@GlobalScope_constant_ERR_UNCONFIGURED>` if no :ref:`current_scene<class_SceneTree_property_current_scene>` is defined, :ref:`@GlobalScope.ERR_CANT_OPEN<class_@GlobalScope_constant_ERR_CANT_OPEN>` if :ref:`current_scene<class_SceneTree_property_current_scene>` cannot be loaded into a :ref:`PackedScene<class_PackedScene>`, or :ref:`@GlobalScope.ERR_CANT_CREATE<class_@GlobalScope_constant_ERR_CANT_CREATE>` if the scene cannot be instantiated.
 
 .. rst-class:: classref-item-separator
 
@@ -777,9 +777,11 @@ Returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` on success, :ref:
 
 |void| **set_group**\ (\ group\: :ref:`StringName<class_StringName>`, property\: :ref:`String<class_String>`, value\: :ref:`Variant<class_Variant>`\ )
 
-Sets the given ``property`` to ``value`` on all members of the given group.
+Sets the given ``property`` to ``value`` on all nodes inside this tree added to the given ``group``. Nodes that do not have the ``property`` are ignored. See also :ref:`call_group<class_SceneTree_method_call_group>` and :ref:`notify_group<class_SceneTree_method_notify_group>`.
 
-\ **Note:** :ref:`set_group<class_SceneTree_method_set_group>` will set the property immediately on all members at once, which can cause stuttering if a property with an expensive setter is set on lots of members.
+\ **Note:** This method acts immediately on all selected nodes at once, which may cause stuttering in some performance-intensive situations.
+
+\ **Note:** In C#, ``property`` must be in snake_case when referring to built-in Godot properties. Prefer using the names exposed in the ``PropertyName`` class to avoid allocating a new :ref:`StringName<class_StringName>` on each call.
 
 .. rst-class:: classref-item-separator
 
@@ -791,9 +793,9 @@ Sets the given ``property`` to ``value`` on all members of the given group.
 
 |void| **set_group_flags**\ (\ call_flags\: :ref:`int<class_int>`, group\: :ref:`StringName<class_StringName>`, property\: :ref:`String<class_String>`, value\: :ref:`Variant<class_Variant>`\ )
 
-Sets the given ``property`` to ``value`` on all members of the given group, respecting the given :ref:`GroupCallFlags<enum_SceneTree_GroupCallFlags>`.
+Sets the given ``property`` to ``value`` on all nodes inside this tree added to the given ``group``. Nodes that do not have the ``property`` are ignored. Use ``call_flags`` to customize this method's behavior (see :ref:`GroupCallFlags<enum_SceneTree_GroupCallFlags>`).
 
-\ **Note:** Group call flags are used to control the property setting behavior. By default, properties will be set immediately in a way similar to :ref:`set_group<class_SceneTree_method_set_group>`. However, if the :ref:`GROUP_CALL_DEFERRED<class_SceneTree_constant_GROUP_CALL_DEFERRED>` flag is present in the ``call_flags`` argument, properties will be set at the end of the frame in a way similar to :ref:`Object.call_deferred<class_Object_method_call_deferred>`.
+\ **Note:** In C#, ``property`` must be in snake_case when referring to built-in Godot properties. Prefer using the names exposed in the ``PropertyName`` class to avoid allocating a new :ref:`StringName<class_StringName>` on each call.
 
 .. rst-class:: classref-item-separator
 

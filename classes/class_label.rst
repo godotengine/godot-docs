@@ -116,7 +116,7 @@ Theme Properties
    +---------------------------------+----------------------------------------------------------------------------+-----------------------+
    | :ref:`Color<class_Color>`       | :ref:`font_color<class_Label_theme_color_font_color>`                      | ``Color(1, 1, 1, 1)`` |
    +---------------------------------+----------------------------------------------------------------------------+-----------------------+
-   | :ref:`Color<class_Color>`       | :ref:`font_outline_color<class_Label_theme_color_font_outline_color>`      | ``Color(1, 1, 1, 1)`` |
+   | :ref:`Color<class_Color>`       | :ref:`font_outline_color<class_Label_theme_color_font_outline_color>`      | ``Color(0, 0, 0, 1)`` |
    +---------------------------------+----------------------------------------------------------------------------+-----------------------+
    | :ref:`Color<class_Color>`       | :ref:`font_shadow_color<class_Label_theme_color_font_shadow_color>`        | ``Color(0, 0, 0, 0)`` |
    +---------------------------------+----------------------------------------------------------------------------+-----------------------+
@@ -580,7 +580,7 @@ Default text :ref:`Color<class_Color>` of the **Label**.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Color<class_Color>` **font_outline_color** = ``Color(1, 1, 1, 1)``
+:ref:`Color<class_Color>` **font_outline_color** = ``Color(0, 0, 0, 1)``
 
 The color of text outline.
 
