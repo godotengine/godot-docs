@@ -21,7 +21,7 @@ Abstract base class for viewports. Encapsulates drawing and interaction with a g
 Description
 -----------
 
-A Viewport creates a different view into the screen, or a sub-view inside another viewport. Children 2D Nodes will display on it, and children Camera3D 3D nodes will render on it too.
+A **Viewport** creates a different view into the screen, or a sub-view inside another viewport. Child 2D nodes will display on it, and child Camera3D 3D nodes will render on it too.
 
 Optionally, a viewport can have its own 2D or 3D world, so it doesn't share what it draws with other viewports.
 
@@ -236,6 +236,8 @@ Signals
 **gui_focus_changed**\ (\ node\: :ref:`Control<class_Control>`\ )
 
 Emitted when a Control node grabs keyboard focus.
+
+\ **Note:** A Control node losing focus doesn't cause this signal to be emitted.
 
 .. rst-class:: classref-item-separator
 

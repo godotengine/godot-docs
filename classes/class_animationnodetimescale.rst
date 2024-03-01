@@ -19,7 +19,7 @@ A time-scaling animation node used in :ref:`AnimationTree<class_AnimationTree>`.
 Description
 -----------
 
-Allows to scale the speed of the animation (or reverse it) in any children :ref:`AnimationNode<class_AnimationNode>`\ s. Setting it to ``0.0`` will pause the animation.
+Allows to scale the speed of the animation (or reverse it) in any child :ref:`AnimationNode<class_AnimationNode>`\ s. Setting it to ``0.0`` will pause the animation.
 
 .. rst-class:: classref-introduction-group
 

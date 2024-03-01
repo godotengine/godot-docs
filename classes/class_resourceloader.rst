@@ -129,7 +129,7 @@ enum **CacheMode**:
 
 :ref:`CacheMode<enum_ResourceLoader_CacheMode>` **CACHE_MODE_IGNORE** = ``0``
 
-The resource is always loaded from disk, even if a cache entry exists for its path, and the newly loaded copy will not be cached. Instances loaded with this mode will exist independently.
+Neither the main resource (the one requested to be loaded) nor any of its subresources are retrieved from cache nor stored into it. Dependencies (external resources) are loaded with :ref:`CACHE_MODE_REUSE<class_ResourceLoader_constant_CACHE_MODE_REUSE>`.
 
 .. _class_ResourceLoader_constant_CACHE_MODE_REUSE:
 
@@ -137,7 +137,7 @@ The resource is always loaded from disk, even if a cache entry exists for its pa
 
 :ref:`CacheMode<enum_ResourceLoader_CacheMode>` **CACHE_MODE_REUSE** = ``1``
 
-If a resource is cached, returns the cached reference. Otherwise it's loaded from disk.
+The main resource (the one requested to be loaded), its subresources, and its dependencies (external resources) are retrieved from cache if present, instead of loaded. Those not cached are loaded and then stored into the cache. The same rules are propagated recursively down the tree of dependencies (external resources).
 
 .. _class_ResourceLoader_constant_CACHE_MODE_REPLACE:
 
@@ -145,7 +145,23 @@ If a resource is cached, returns the cached reference. Otherwise it's loaded fro
 
 :ref:`CacheMode<enum_ResourceLoader_CacheMode>` **CACHE_MODE_REPLACE** = ``2``
 
-The resource is always loaded from disk, even if a cache entry exists for its path. The cached entry will be replaced by the newly loaded copy.
+Like :ref:`CACHE_MODE_REUSE<class_ResourceLoader_constant_CACHE_MODE_REUSE>`, but the cache is checked for the main resource (the one requested to be loaded) as well as for each of its subresources. Those already in the cache, as long as the loaded and cached types match, have their data refreshed from storage into the already existing instances. Otherwise, they are recreated as completely new objects.
+
+.. _class_ResourceLoader_constant_CACHE_MODE_IGNORE_DEEP:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`CacheMode<enum_ResourceLoader_CacheMode>` **CACHE_MODE_IGNORE_DEEP** = ``3``
+
+Like :ref:`CACHE_MODE_IGNORE<class_ResourceLoader_constant_CACHE_MODE_IGNORE>`, but propagated recursively down the tree of dependencies (external resources).
+
+.. _class_ResourceLoader_constant_CACHE_MODE_REPLACE_DEEP:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`CacheMode<enum_ResourceLoader_CacheMode>` **CACHE_MODE_REPLACE_DEEP** = ``4``
+
+Like :ref:`CACHE_MODE_REPLACE<class_ResourceLoader_constant_CACHE_MODE_REPLACE>`, but propagated recursively down the tree of dependencies (external resources).
 
 .. rst-class:: classref-section-separator
 

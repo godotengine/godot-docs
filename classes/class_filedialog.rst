@@ -112,6 +112,8 @@ Theme Properties
    +-----------------------------------+------------------------------------------------------------------------------+--------------------------+
    | :ref:`Texture2D<class_Texture2D>` | :ref:`back_folder<class_FileDialog_theme_icon_back_folder>`                  |                          |
    +-----------------------------------+------------------------------------------------------------------------------+--------------------------+
+   | :ref:`Texture2D<class_Texture2D>` | :ref:`create_folder<class_FileDialog_theme_icon_create_folder>`              |                          |
+   +-----------------------------------+------------------------------------------------------------------------------+--------------------------+
    | :ref:`Texture2D<class_Texture2D>` | :ref:`file<class_FileDialog_theme_icon_file>`                                |                          |
    +-----------------------------------+------------------------------------------------------------------------------+--------------------------+
    | :ref:`Texture2D<class_Texture2D>` | :ref:`folder<class_FileDialog_theme_icon_folder>`                            |                          |
@@ -684,6 +686,18 @@ The color modulation applied to the folder icon.
 :ref:`Texture2D<class_Texture2D>` **back_folder**
 
 Custom icon for the back arrow.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_FileDialog_theme_icon_create_folder:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`Texture2D<class_Texture2D>` **create_folder**
+
+Custom icon for the create folder button.
 
 .. rst-class:: classref-item-separator
 

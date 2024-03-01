@@ -17,11 +17,15 @@ A unit quaternion used for representing 3D rotations.
 Description
 -----------
 
-Quaternions are similar to :ref:`Basis<class_Basis>`, which implements the matrix representation of rotations. Unlike :ref:`Basis<class_Basis>`, which stores rotation, scale, and shearing, quaternions only store rotation.
+The **Quaternion** built-in :ref:`Variant<class_Variant>` type is a 4D data structure that represents rotation in the form of a `Hamilton convention quaternion <https://en.wikipedia.org/wiki/Quaternions_and_spatial_rotation>`__. Compared to the :ref:`Basis<class_Basis>` type which can store both rotation and scale, quaternions can *only* store rotation.
 
-Quaternions can be parametrized using both an axis-angle pair or Euler angles. Due to their compactness and the way they are stored in memory, certain operations (obtaining axis-angle and performing SLERP, in particular) are more efficient and robust against floating-point errors.
+A **Quaternion** is composed by 4 floating-point components: :ref:`w<class_Quaternion_property_w>`, :ref:`x<class_Quaternion_property_x>`, :ref:`y<class_Quaternion_property_y>`, and :ref:`z<class_Quaternion_property_z>`. These components are very compact in memory, and because of this some operations are more efficient and less likely to cause floating-point errors. Methods such as :ref:`get_angle<class_Quaternion_method_get_angle>`, :ref:`get_axis<class_Quaternion_method_get_axis>`, and :ref:`slerp<class_Quaternion_method_slerp>` are faster than their :ref:`Basis<class_Basis>` counterparts.
 
-\ **Note:** Quaternions need to be normalized before being used for rotation.
+For a great introduction to quaternions, see `this video by 3Blue1Brown <https://www.youtube.com/watch?v=d4EgbgTm0Bg>`__. You do not need to know the math behind quaternions, as Godot provides several helper methods that handle it for you. These include :ref:`slerp<class_Quaternion_method_slerp>` and :ref:`spherical_cubic_interpolate<class_Quaternion_method_spherical_cubic_interpolate>`, as well as the ``*`` operator.
+
+\ **Note:** Quaternions must be normalized before being used for rotation (see :ref:`normalized<class_Quaternion_method_normalized>`).
+
+\ **Note:** Similarly to :ref:`Vector2<class_Vector2>` and :ref:`Vector3<class_Vector3>`, the components of a quaternion use 32-bit precision by default, unlike :ref:`float<class_float>` which is always 64-bit. If double precision is needed, compile the engine with the option ``precision=double``.
 
 .. note::
 
@@ -32,9 +36,15 @@ Quaternions can be parametrized using both an axis-angle pair or Euler angles. D
 Tutorials
 ---------
 
+- `3Blue1Brown's video on Quaternions <https://www.youtube.com/watch?v=d4EgbgTm0Bg>`__
+
+- `Online Quaternion Visualization <https://quaternions.online/>`__
+
 - `Using 3D transforms <../tutorials/3d/using_transforms.html#interpolating-with-quaternions>`__
 
 - `Third Person Shooter Demo <https://godotengine.org/asset-library/asset/678>`__
+
+- `Advanced Quaternion Visualization <https://iwatake2222.github.io/rotation_master/rotation_master.html>`__
 
 .. rst-class:: classref-reftable-group
 
@@ -175,7 +185,9 @@ Constants
 
 **IDENTITY** = ``Quaternion(0, 0, 0, 1)``
 
-The identity quaternion, representing no rotation. Equivalent to an identity :ref:`Basis<class_Basis>` matrix. If a vector is transformed by an identity quaternion, it will not change.
+The identity quaternion, representing no rotation. This has the same rotation as :ref:`Basis.IDENTITY<class_Basis_constant_IDENTITY>`.
+
+If a :ref:`Vector3<class_Vector3>` is rotated (multiplied) by this quaternion, it does not change.
 
 .. rst-class:: classref-section-separator
 
@@ -192,9 +204,9 @@ Property Descriptions
 
 :ref:`float<class_float>` **w** = ``1.0``
 
-W component of the quaternion (real part).
+W component of the quaternion. This is the "real" part.
 
-Quaternion components should usually not be manipulated directly.
+\ **Note:** Quaternion components should usually not be manipulated directly.
 
 .. rst-class:: classref-item-separator
 
@@ -206,9 +218,9 @@ Quaternion components should usually not be manipulated directly.
 
 :ref:`float<class_float>` **x** = ``0.0``
 
-X component of the quaternion (imaginary ``i`` axis part).
+X component of the quaternion. This is the value along the "imaginary" ``i`` axis.
 
-Quaternion components should usually not be manipulated directly.
+\ **Note:** Quaternion components should usually not be manipulated directly.
 
 .. rst-class:: classref-item-separator
 
@@ -220,9 +232,9 @@ Quaternion components should usually not be manipulated directly.
 
 :ref:`float<class_float>` **y** = ``0.0``
 
-Y component of the quaternion (imaginary ``j`` axis part).
+Y component of the quaternion. This is the value along the "imaginary" ``j`` axis.
 
-Quaternion components should usually not be manipulated directly.
+\ **Note:** Quaternion components should usually not be manipulated directly.
 
 .. rst-class:: classref-item-separator
 
@@ -234,9 +246,9 @@ Quaternion components should usually not be manipulated directly.
 
 :ref:`float<class_float>` **z** = ``0.0``
 
-Z component of the quaternion (imaginary ``k`` axis part).
+Z component of the quaternion. This is the value along the "imaginary" ``k`` axis.
 
-Quaternion components should usually not be manipulated directly.
+\ **Note:** Quaternion components should usually not be manipulated directly.
 
 .. rst-class:: classref-section-separator
 
@@ -253,7 +265,7 @@ Constructor Descriptions
 
 :ref:`Quaternion<class_Quaternion>` **Quaternion**\ (\ )
 
-Constructs a default-initialized quaternion with all components set to ``0``.
+Constructs a **Quaternion** identical to the :ref:`IDENTITY<class_Quaternion_constant_IDENTITY>`.
 
 .. rst-class:: classref-item-separator
 
@@ -273,7 +285,7 @@ Constructs a **Quaternion** as a copy of the given **Quaternion**.
 
 :ref:`Quaternion<class_Quaternion>` **Quaternion**\ (\ arc_from\: :ref:`Vector3<class_Vector3>`, arc_to\: :ref:`Vector3<class_Vector3>`\ )
 
-Constructs a quaternion representing the shortest arc between two points on the surface of a sphere with a radius of ``1.0``.
+Constructs a **Quaternion** representing the shortest arc between ``arc_from`` and ``arc_to``. These can be imagined as two points intersecting a sphere's surface, with a radius of ``1.0``.
 
 .. rst-class:: classref-item-separator
 
@@ -283,7 +295,7 @@ Constructs a quaternion representing the shortest arc between two points on the 
 
 :ref:`Quaternion<class_Quaternion>` **Quaternion**\ (\ axis\: :ref:`Vector3<class_Vector3>`, angle\: :ref:`float<class_float>`\ )
 
-Constructs a quaternion that will rotate around the given axis by the specified angle. The axis must be a normalized vector.
+Constructs a **Quaternion** representing rotation around the ``axis`` by the given ``angle``, in radians. The axis must be a normalized vector.
 
 .. rst-class:: classref-item-separator
 
@@ -293,7 +305,9 @@ Constructs a quaternion that will rotate around the given axis by the specified 
 
 :ref:`Quaternion<class_Quaternion>` **Quaternion**\ (\ from\: :ref:`Basis<class_Basis>`\ )
 
-Constructs a quaternion from the given :ref:`Basis<class_Basis>`.
+Constructs a **Quaternion** from the given rotation :ref:`Basis<class_Basis>`.
+
+This constructor is faster than :ref:`Basis.get_rotation_quaternion<class_Basis_method_get_rotation_quaternion>`, but the given basis must be *orthonormalized* (see :ref:`Basis.orthonormalized<class_Basis_method_orthonormalized>`). Otherwise, the constructor fails and returns :ref:`IDENTITY<class_Quaternion_constant_IDENTITY>`.
 
 .. rst-class:: classref-item-separator
 
@@ -303,7 +317,9 @@ Constructs a quaternion from the given :ref:`Basis<class_Basis>`.
 
 :ref:`Quaternion<class_Quaternion>` **Quaternion**\ (\ x\: :ref:`float<class_float>`, y\: :ref:`float<class_float>`, z\: :ref:`float<class_float>`, w\: :ref:`float<class_float>`\ )
 
-Constructs a quaternion defined by the given values.
+Constructs a **Quaternion** defined by the given values.
+
+\ **Note:** Only normalized quaternions represent rotation; if these values are not normalized, the new **Quaternion** will not be a valid rotation.
 
 .. rst-class:: classref-section-separator
 
@@ -334,7 +350,9 @@ Returns the angle between this quaternion and ``to``. This is the magnitude of t
 
 :ref:`float<class_float>` **dot**\ (\ with\: :ref:`Quaternion<class_Quaternion>`\ ) |const|
 
-Returns the dot product of two quaternions.
+Returns the dot product between this quaternion and ``with``.
+
+This is equivalent to ``(quat.x * with.x) + (quat.y * with.y) + (quat.z * with.z) + (quat.w * with.w)``.
 
 .. rst-class:: classref-item-separator
 
@@ -358,7 +376,7 @@ Returns the exponential of this quaternion. The rotation axis of the result is t
 
 :ref:`Quaternion<class_Quaternion>` **from_euler**\ (\ euler\: :ref:`Vector3<class_Vector3>`\ ) |static|
 
-Constructs a Quaternion from Euler angles in YXZ rotation order.
+Constructs a new **Quaternion** from the given :ref:`Vector3<class_Vector3>` of `Euler angles <https://en.wikipedia.org/wiki/Euler_angles>`__, in radians. This method always uses the YXZ convention (:ref:`@GlobalScope.EULER_ORDER_YXZ<class_@GlobalScope_constant_EULER_ORDER_YXZ>`).
 
 .. rst-class:: classref-item-separator
 
@@ -396,7 +414,9 @@ Returns the rotation axis of the rotation represented by this quaternion.
 
 :ref:`Vector3<class_Vector3>` **get_euler**\ (\ order\: :ref:`int<class_int>` = 2\ ) |const|
 
-Returns the quaternion's rotation in the form of Euler angles. The Euler order depends on the ``order`` parameter, for example using the YXZ convention: since this method decomposes, first Z, then X, and Y last. See the :ref:`EulerOrder<enum_@GlobalScope_EulerOrder>` enum for possible values. The returned vector contains the rotation angles in the format (X angle, Y angle, Z angle).
+Returns this quaternion's rotation as a :ref:`Vector3<class_Vector3>` of `Euler angles <https://en.wikipedia.org/wiki/Euler_angles>`__, in radians.
+
+The order of each consecutive rotation can be changed with ``order`` (see :ref:`EulerOrder<enum_@GlobalScope_EulerOrder>` constants). By default, the YXZ convention is used (:ref:`@GlobalScope.EULER_ORDER_YXZ<class_@GlobalScope_constant_EULER_ORDER_YXZ>`): Z (roll) is calculated first, then X (pitch), and lastly Y (yaw). When using the opposite method :ref:`from_euler<class_Quaternion_method_from_euler>`, this order is reversed.
 
 .. rst-class:: classref-item-separator
 
@@ -408,7 +428,7 @@ Returns the quaternion's rotation in the form of Euler angles. The Euler order d
 
 :ref:`Quaternion<class_Quaternion>` **inverse**\ (\ ) |const|
 
-Returns the inverse of the quaternion.
+Returns the inverse version of this quaternion, inverting the sign of every component except :ref:`w<class_Quaternion_property_w>`.
 
 .. rst-class:: classref-item-separator
 
@@ -444,7 +464,7 @@ Returns ``true`` if this quaternion is finite, by calling :ref:`@GlobalScope.is_
 
 :ref:`bool<class_bool>` **is_normalized**\ (\ ) |const|
 
-Returns whether the quaternion is normalized or not.
+Returns ``true`` if this quaternion is normalized. See also :ref:`normalized<class_Quaternion_method_normalized>`.
 
 .. rst-class:: classref-item-separator
 
@@ -456,7 +476,7 @@ Returns whether the quaternion is normalized or not.
 
 :ref:`float<class_float>` **length**\ (\ ) |const|
 
-Returns the length of the quaternion.
+Returns this quaternion's length, also called magnitude.
 
 .. rst-class:: classref-item-separator
 
@@ -468,7 +488,9 @@ Returns the length of the quaternion.
 
 :ref:`float<class_float>` **length_squared**\ (\ ) |const|
 
-Returns the length of the quaternion, squared.
+Returns this quaternion's length, squared.
+
+\ **Note:** This method is faster than :ref:`length<class_Quaternion_method_length>`, so prefer it if you only need to compare quaternion lengths.
 
 .. rst-class:: classref-item-separator
 
@@ -480,7 +502,7 @@ Returns the length of the quaternion, squared.
 
 :ref:`Quaternion<class_Quaternion>` **log**\ (\ ) |const|
 
-Returns the logarithm of this quaternion. The vector part of the result is the rotation axis of this quaternion multiplied by its rotation angle, the real part of the result is zero.
+Returns the logarithm of this quaternion. Multiplies this quaternion's rotation axis by its rotation angle, and stores the result in the returned quaternion's vector part (:ref:`x<class_Quaternion_property_x>`, :ref:`y<class_Quaternion_property_y>`, and :ref:`z<class_Quaternion_property_z>`). The returned quaternion's real part (:ref:`w<class_Quaternion_property_w>`) is always ``0.0``.
 
 .. rst-class:: classref-item-separator
 
@@ -492,7 +514,7 @@ Returns the logarithm of this quaternion. The vector part of the result is the r
 
 :ref:`Quaternion<class_Quaternion>` **normalized**\ (\ ) |const|
 
-Returns a copy of the quaternion, normalized to unit length.
+Returns a copy of this quaternion, normalized so that its length is ``1.0``. See also :ref:`is_normalized<class_Quaternion_method_is_normalized>`.
 
 .. rst-class:: classref-item-separator
 
@@ -504,9 +526,7 @@ Returns a copy of the quaternion, normalized to unit length.
 
 :ref:`Quaternion<class_Quaternion>` **slerp**\ (\ to\: :ref:`Quaternion<class_Quaternion>`, weight\: :ref:`float<class_float>`\ ) |const|
 
-Returns the result of the spherical linear interpolation between this quaternion and ``to`` by amount ``weight``.
-
-\ **Note:** Both quaternions must be normalized.
+Performs a spherical-linear interpolation with the ``to`` quaternion, given a ``weight`` and returns the result. Both this quaternion and ``to`` must be normalized.
 
 .. rst-class:: classref-item-separator
 
@@ -518,7 +538,7 @@ Returns the result of the spherical linear interpolation between this quaternion
 
 :ref:`Quaternion<class_Quaternion>` **slerpni**\ (\ to\: :ref:`Quaternion<class_Quaternion>`, weight\: :ref:`float<class_float>`\ ) |const|
 
-Returns the result of the spherical linear interpolation between this quaternion and ``to`` by amount ``weight``, but without checking if the rotation path is not bigger than 90 degrees.
+Performs a spherical-linear interpolation with the ``to`` quaternion, given a ``weight`` and returns the result. Unlike :ref:`slerp<class_Quaternion_method_slerp>`, this method does not check if the rotation path is smaller than 90 degrees. Both this quaternion and ``to`` must be normalized.
 
 .. rst-class:: classref-item-separator
 
@@ -561,7 +581,7 @@ Operator Descriptions
 
 :ref:`bool<class_bool>` **operator !=**\ (\ right\: :ref:`Quaternion<class_Quaternion>`\ )
 
-Returns ``true`` if the quaternions are not equal.
+Returns ``true`` if the components of both quaternions are not exactly equal.
 
 \ **Note:** Due to floating-point precision errors, consider using :ref:`is_equal_approx<class_Quaternion_method_is_equal_approx>` instead, which is more reliable.
 
@@ -575,7 +595,7 @@ Returns ``true`` if the quaternions are not equal.
 
 :ref:`Quaternion<class_Quaternion>` **operator ***\ (\ right\: :ref:`Quaternion<class_Quaternion>`\ )
 
-Composes these two quaternions by multiplying them together. This has the effect of rotating the second quaternion (the child) by the first quaternion (the parent).
+Composes (multiplies) two quaternions. This rotates the ``right`` quaternion (the child) by this quaternion (the parent).
 
 .. rst-class:: classref-item-separator
 
@@ -587,7 +607,7 @@ Composes these two quaternions by multiplying them together. This has the effect
 
 :ref:`Vector3<class_Vector3>` **operator ***\ (\ right\: :ref:`Vector3<class_Vector3>`\ )
 
-Rotates (multiplies) the :ref:`Vector3<class_Vector3>` by the given **Quaternion**.
+Rotates (multiplies) the ``right`` vector by this quaternion, returning a :ref:`Vector3<class_Vector3>`.
 
 .. rst-class:: classref-item-separator
 
@@ -599,7 +619,9 @@ Rotates (multiplies) the :ref:`Vector3<class_Vector3>` by the given **Quaternion
 
 :ref:`Quaternion<class_Quaternion>` **operator ***\ (\ right\: :ref:`float<class_float>`\ )
 
-Multiplies each component of the **Quaternion** by the given value. This operation is not meaningful on its own, but it can be used as a part of a larger expression.
+Multiplies each component of the **Quaternion** by the right :ref:`float<class_float>` value.
+
+This operation is not meaningful on its own, but it can be used as a part of a larger expression.
 
 .. rst-class:: classref-item-separator
 
@@ -611,7 +633,9 @@ Multiplies each component of the **Quaternion** by the given value. This operati
 
 :ref:`Quaternion<class_Quaternion>` **operator ***\ (\ right\: :ref:`int<class_int>`\ )
 
-Multiplies each component of the **Quaternion** by the given value. This operation is not meaningful on its own, but it can be used as a part of a larger expression.
+Multiplies each component of the **Quaternion** by the right :ref:`int<class_int>` value.
+
+This operation is not meaningful on its own, but it can be used as a part of a larger expression.
 
 .. rst-class:: classref-item-separator
 
@@ -623,7 +647,9 @@ Multiplies each component of the **Quaternion** by the given value. This operati
 
 :ref:`Quaternion<class_Quaternion>` **operator +**\ (\ right\: :ref:`Quaternion<class_Quaternion>`\ )
 
-Adds each component of the left **Quaternion** to the right **Quaternion**. This operation is not meaningful on its own, but it can be used as a part of a larger expression, such as approximating an intermediate rotation between two nearby rotations.
+Adds each component of the left **Quaternion** to the right **Quaternion**.
+
+This operation is not meaningful on its own, but it can be used as a part of a larger expression, such as approximating an intermediate rotation between two nearby rotations.
 
 .. rst-class:: classref-item-separator
 
@@ -635,7 +661,9 @@ Adds each component of the left **Quaternion** to the right **Quaternion**. This
 
 :ref:`Quaternion<class_Quaternion>` **operator -**\ (\ right\: :ref:`Quaternion<class_Quaternion>`\ )
 
-Subtracts each component of the left **Quaternion** by the right **Quaternion**. This operation is not meaningful on its own, but it can be used as a part of a larger expression.
+Subtracts each component of the left **Quaternion** by the right **Quaternion**.
+
+This operation is not meaningful on its own, but it can be used as a part of a larger expression.
 
 .. rst-class:: classref-item-separator
 
@@ -647,7 +675,9 @@ Subtracts each component of the left **Quaternion** by the right **Quaternion**.
 
 :ref:`Quaternion<class_Quaternion>` **operator /**\ (\ right\: :ref:`float<class_float>`\ )
 
-Divides each component of the **Quaternion** by the given value. This operation is not meaningful on its own, but it can be used as a part of a larger expression.
+Divides each component of the **Quaternion** by the right :ref:`float<class_float>` value.
+
+This operation is not meaningful on its own, but it can be used as a part of a larger expression.
 
 .. rst-class:: classref-item-separator
 
@@ -659,7 +689,9 @@ Divides each component of the **Quaternion** by the given value. This operation 
 
 :ref:`Quaternion<class_Quaternion>` **operator /**\ (\ right\: :ref:`int<class_int>`\ )
 
-Divides each component of the **Quaternion** by the given value. This operation is not meaningful on its own, but it can be used as a part of a larger expression.
+Divides each component of the **Quaternion** by the right :ref:`int<class_int>` value.
+
+This operation is not meaningful on its own, but it can be used as a part of a larger expression.
 
 .. rst-class:: classref-item-separator
 
@@ -671,7 +703,7 @@ Divides each component of the **Quaternion** by the given value. This operation 
 
 :ref:`bool<class_bool>` **operator ==**\ (\ right\: :ref:`Quaternion<class_Quaternion>`\ )
 
-Returns ``true`` if the quaternions are exactly equal.
+Returns ``true`` if the components of both quaternions are exactly equal.
 
 \ **Note:** Due to floating-point precision errors, consider using :ref:`is_equal_approx<class_Quaternion_method_is_equal_approx>` instead, which is more reliable.
 
@@ -685,7 +717,9 @@ Returns ``true`` if the quaternions are exactly equal.
 
 :ref:`float<class_float>` **operator []**\ (\ index\: :ref:`int<class_int>`\ )
 
-Access quaternion components using their index. ``q[0]`` is equivalent to ``q.x``, ``q[1]`` is equivalent to ``q.y``, ``q[2]`` is equivalent to ``q.z``, and ``q[3]`` is equivalent to ``q.w``.
+Accesses each component of this quaternion by their index.
+
+Index ``0`` is the same as :ref:`x<class_Quaternion_property_x>`, index ``1`` is the same as :ref:`y<class_Quaternion_property_y>`, index ``2`` is the same as :ref:`z<class_Quaternion_property_z>`, and index ``3`` is the same as :ref:`w<class_Quaternion_property_w>`.
 
 .. rst-class:: classref-item-separator
 
@@ -709,7 +743,7 @@ Returns the same value as if the ``+`` was not there. Unary ``+`` does nothing, 
 
 :ref:`Quaternion<class_Quaternion>` **operator unary-**\ (\ )
 
-Returns the negative value of the **Quaternion**. This is the same as writing ``Quaternion(-q.x, -q.y, -q.z, -q.w)``. This operation results in a quaternion that represents the same rotation.
+Returns the negative value of the **Quaternion**. This is the same as multiplying all components by ``-1``. This operation results in a quaternion that represents the same rotation.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

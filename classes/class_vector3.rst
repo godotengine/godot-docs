@@ -892,7 +892,9 @@ Returns a vector composed of the :ref:`@GlobalScope.fposmod<class_@GlobalScope_m
 
 :ref:`Vector3<class_Vector3>` **project**\ (\ b\: :ref:`Vector3<class_Vector3>`\ ) |const|
 
-Returns the result of projecting the vector onto the given vector ``b``.
+Returns a new vector resulting from projecting this vector onto the given vector ``b``. The resulting new vector is parallel to ``b``. See also :ref:`slide<class_Vector3_method_slide>`.
+
+\ **Note:** If the vector ``b`` is a zero vector, the components of the resulting new vector will be :ref:`@GDScript.NAN<class_@GDScript_constant_NAN>`.
 
 .. rst-class:: classref-item-separator
 
@@ -978,7 +980,9 @@ This method also handles interpolating the lengths if the input vectors have dif
 
 :ref:`Vector3<class_Vector3>` **slide**\ (\ n\: :ref:`Vector3<class_Vector3>`\ ) |const|
 
-Returns a new vector slid along a plane defined by the given normal.
+Returns a new vector resulting from sliding this vector along a plane with normal ``n``. The resulting new vector is perpendicular to ``n``, and is equivalent to this vector minus its projection on ``n``. See also :ref:`project<class_Vector3_method_project>`.
+
+\ **Note:** The vector ``n`` must be normalized. See also :ref:`normalized<class_Vector3_method_normalized>`.
 
 .. rst-class:: classref-item-separator
 

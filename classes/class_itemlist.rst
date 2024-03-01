@@ -184,7 +184,7 @@ Theme Properties
    +---------------------------------+----------------------------------------------------------------------------+--------------------------------+
    | :ref:`Color<class_Color>`       | :ref:`font_hovered_color<class_ItemList_theme_color_font_hovered_color>`   | ``Color(0.95, 0.95, 0.95, 1)`` |
    +---------------------------------+----------------------------------------------------------------------------+--------------------------------+
-   | :ref:`Color<class_Color>`       | :ref:`font_outline_color<class_ItemList_theme_color_font_outline_color>`   | ``Color(1, 1, 1, 1)``          |
+   | :ref:`Color<class_Color>`       | :ref:`font_outline_color<class_ItemList_theme_color_font_outline_color>`   | ``Color(0, 0, 0, 1)``          |
    +---------------------------------+----------------------------------------------------------------------------+--------------------------------+
    | :ref:`Color<class_Color>`       | :ref:`font_selected_color<class_ItemList_theme_color_font_selected_color>` | ``Color(1, 1, 1, 1)``          |
    +---------------------------------+----------------------------------------------------------------------------+--------------------------------+
@@ -198,7 +198,7 @@ Theme Properties
    +---------------------------------+----------------------------------------------------------------------------+--------------------------------+
    | :ref:`int<class_int>`           | :ref:`outline_size<class_ItemList_theme_constant_outline_size>`            | ``0``                          |
    +---------------------------------+----------------------------------------------------------------------------+--------------------------------+
-   | :ref:`int<class_int>`           | :ref:`v_separation<class_ItemList_theme_constant_v_separation>`            | ``2``                          |
+   | :ref:`int<class_int>`           | :ref:`v_separation<class_ItemList_theme_constant_v_separation>`            | ``4``                          |
    +---------------------------------+----------------------------------------------------------------------------+--------------------------------+
    | :ref:`Font<class_Font>`         | :ref:`font<class_ItemList_theme_font_font>`                                |                                |
    +---------------------------------+----------------------------------------------------------------------------+--------------------------------+
@@ -1198,7 +1198,7 @@ Text :ref:`Color<class_Color>` used when the item is hovered and not selected ye
 
 .. rst-class:: classref-themeproperty
 
-:ref:`Color<class_Color>` **font_outline_color** = ``Color(1, 1, 1, 1)``
+:ref:`Color<class_Color>` **font_outline_color** = ``Color(0, 0, 0, 1)``
 
 The tint of text outline of the item.
 
@@ -1284,7 +1284,7 @@ The size of the item text outline.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`int<class_int>` **v_separation** = ``2``
+:ref:`int<class_int>` **v_separation** = ``4``
 
 The vertical spacing between items.
 

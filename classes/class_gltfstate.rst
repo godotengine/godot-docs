@@ -42,31 +42,33 @@ Properties
 .. table::
    :widths: auto
 
-   +----------------------------------------------------------------------------+----------------------------------------------------------------------------+------------------------+
-   | :ref:`String<class_String>`                                                | :ref:`base_path<class_GLTFState_property_base_path>`                       | ``""``                 |
-   +----------------------------------------------------------------------------+----------------------------------------------------------------------------+------------------------+
-   | :ref:`Array<class_Array>`\[:ref:`PackedByteArray<class_PackedByteArray>`\] | :ref:`buffers<class_GLTFState_property_buffers>`                           | ``[]``                 |
-   +----------------------------------------------------------------------------+----------------------------------------------------------------------------+------------------------+
-   | :ref:`String<class_String>`                                                | :ref:`copyright<class_GLTFState_property_copyright>`                       | ``""``                 |
-   +----------------------------------------------------------------------------+----------------------------------------------------------------------------+------------------------+
-   | :ref:`bool<class_bool>`                                                    | :ref:`create_animations<class_GLTFState_property_create_animations>`       | ``true``               |
-   +----------------------------------------------------------------------------+----------------------------------------------------------------------------+------------------------+
-   | :ref:`String<class_String>`                                                | :ref:`filename<class_GLTFState_property_filename>`                         | ``""``                 |
-   +----------------------------------------------------------------------------+----------------------------------------------------------------------------+------------------------+
-   | :ref:`PackedByteArray<class_PackedByteArray>`                              | :ref:`glb_data<class_GLTFState_property_glb_data>`                         | ``PackedByteArray()``  |
-   +----------------------------------------------------------------------------+----------------------------------------------------------------------------+------------------------+
-   | :ref:`Dictionary<class_Dictionary>`                                        | :ref:`json<class_GLTFState_property_json>`                                 | ``{}``                 |
-   +----------------------------------------------------------------------------+----------------------------------------------------------------------------+------------------------+
-   | :ref:`int<class_int>`                                                      | :ref:`major_version<class_GLTFState_property_major_version>`               | ``0``                  |
-   +----------------------------------------------------------------------------+----------------------------------------------------------------------------+------------------------+
-   | :ref:`int<class_int>`                                                      | :ref:`minor_version<class_GLTFState_property_minor_version>`               | ``0``                  |
-   +----------------------------------------------------------------------------+----------------------------------------------------------------------------+------------------------+
-   | :ref:`PackedInt32Array<class_PackedInt32Array>`                            | :ref:`root_nodes<class_GLTFState_property_root_nodes>`                     | ``PackedInt32Array()`` |
-   +----------------------------------------------------------------------------+----------------------------------------------------------------------------+------------------------+
-   | :ref:`String<class_String>`                                                | :ref:`scene_name<class_GLTFState_property_scene_name>`                     | ``""``                 |
-   +----------------------------------------------------------------------------+----------------------------------------------------------------------------+------------------------+
-   | :ref:`bool<class_bool>`                                                    | :ref:`use_named_skin_binds<class_GLTFState_property_use_named_skin_binds>` | ``false``              |
-   +----------------------------------------------------------------------------+----------------------------------------------------------------------------+------------------------+
+   +----------------------------------------------------------------------------+------------------------------------------------------------------------------------+------------------------+
+   | :ref:`String<class_String>`                                                | :ref:`base_path<class_GLTFState_property_base_path>`                               | ``""``                 |
+   +----------------------------------------------------------------------------+------------------------------------------------------------------------------------+------------------------+
+   | :ref:`Array<class_Array>`\[:ref:`PackedByteArray<class_PackedByteArray>`\] | :ref:`buffers<class_GLTFState_property_buffers>`                                   | ``[]``                 |
+   +----------------------------------------------------------------------------+------------------------------------------------------------------------------------+------------------------+
+   | :ref:`String<class_String>`                                                | :ref:`copyright<class_GLTFState_property_copyright>`                               | ``""``                 |
+   +----------------------------------------------------------------------------+------------------------------------------------------------------------------------+------------------------+
+   | :ref:`bool<class_bool>`                                                    | :ref:`create_animations<class_GLTFState_property_create_animations>`               | ``true``               |
+   +----------------------------------------------------------------------------+------------------------------------------------------------------------------------+------------------------+
+   | :ref:`String<class_String>`                                                | :ref:`filename<class_GLTFState_property_filename>`                                 | ``""``                 |
+   +----------------------------------------------------------------------------+------------------------------------------------------------------------------------+------------------------+
+   | :ref:`PackedByteArray<class_PackedByteArray>`                              | :ref:`glb_data<class_GLTFState_property_glb_data>`                                 | ``PackedByteArray()``  |
+   +----------------------------------------------------------------------------+------------------------------------------------------------------------------------+------------------------+
+   | :ref:`bool<class_bool>`                                                    | :ref:`import_as_skeleton_bones<class_GLTFState_property_import_as_skeleton_bones>` | ``false``              |
+   +----------------------------------------------------------------------------+------------------------------------------------------------------------------------+------------------------+
+   | :ref:`Dictionary<class_Dictionary>`                                        | :ref:`json<class_GLTFState_property_json>`                                         | ``{}``                 |
+   +----------------------------------------------------------------------------+------------------------------------------------------------------------------------+------------------------+
+   | :ref:`int<class_int>`                                                      | :ref:`major_version<class_GLTFState_property_major_version>`                       | ``0``                  |
+   +----------------------------------------------------------------------------+------------------------------------------------------------------------------------+------------------------+
+   | :ref:`int<class_int>`                                                      | :ref:`minor_version<class_GLTFState_property_minor_version>`                       | ``0``                  |
+   +----------------------------------------------------------------------------+------------------------------------------------------------------------------------+------------------------+
+   | :ref:`PackedInt32Array<class_PackedInt32Array>`                            | :ref:`root_nodes<class_GLTFState_property_root_nodes>`                             | ``PackedInt32Array()`` |
+   +----------------------------------------------------------------------------+------------------------------------------------------------------------------------+------------------------+
+   | :ref:`String<class_String>`                                                | :ref:`scene_name<class_GLTFState_property_scene_name>`                             | ``""``                 |
+   +----------------------------------------------------------------------------+------------------------------------------------------------------------------------+------------------------+
+   | :ref:`bool<class_bool>`                                                    | :ref:`use_named_skin_binds<class_GLTFState_property_use_named_skin_binds>`         | ``false``              |
+   +----------------------------------------------------------------------------+------------------------------------------------------------------------------------+------------------------+
 
 .. rst-class:: classref-reftable-group
 
@@ -308,9 +310,24 @@ The file name associated with this GLTF data. If it ends with ``.gltf``, this is
 - |void| **set_glb_data**\ (\ value\: :ref:`PackedByteArray<class_PackedByteArray>`\ )
 - :ref:`PackedByteArray<class_PackedByteArray>` **get_glb_data**\ (\ )
 
-.. container:: contribute
+The binary buffer attached to a .glb file.
 
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_GLTFState_property_import_as_skeleton_bones:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **import_as_skeleton_bones** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_import_as_skeleton_bones**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_import_as_skeleton_bones**\ (\ )
+
+True to force all GLTFNodes in the document to be bones of a single Skeleton3D godot node.
 
 .. rst-class:: classref-item-separator
 
@@ -327,9 +344,7 @@ The file name associated with this GLTF data. If it ends with ``.gltf``, this is
 - |void| **set_json**\ (\ value\: :ref:`Dictionary<class_Dictionary>`\ )
 - :ref:`Dictionary<class_Dictionary>` **get_json**\ (\ )
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+The original raw JSON document corresponding to this GLTFState.
 
 .. rst-class:: classref-item-separator
 

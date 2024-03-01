@@ -17,7 +17,7 @@ A built-in type representing a method or a standalone function.
 Description
 -----------
 
-**Callable** is a built-in :ref:`Variant<class_Variant>` type that represents a function. It can either be a method within an :ref:`Object<class_Object>` instance, or a standalone function not related to any object, like a lambda function. Like all :ref:`Variant<class_Variant>` types, it can be stored in variables and passed to other functions. It is most commonly used for signal callbacks.
+**Callable** is a built-in :ref:`Variant<class_Variant>` type that represents a function. It can either be a method within an :ref:`Object<class_Object>` instance, or a custom callable used for different purposes (see :ref:`is_custom<class_Callable_method_is_custom>`). Like all :ref:`Variant<class_Variant>` types, it can be stored in variables and passed to other functions. It is most commonly used for signal callbacks.
 
 \ **Example:**\ 
 
@@ -68,6 +68,26 @@ In GDScript, it's possible to create lambda functions within a method. Lambda fu
         # Prints "Attack!", when the button_pressed signal is emitted.
         button_pressed.connect(func(): print("Attack!"))
 
+In GDScript, you can access methods and global functions as **Callable**\ s:
+
+::
+
+    tween.tween_callback(node.queue_free)  # Object methods.
+    tween.tween_callback(array.clear)  # Methods of built-in types.
+    tween.tween_callback(print.bind("Test"))  # Global functions.
+
+\ **Note:** :ref:`Dictionary<class_Dictionary>` does not support the above due to ambiguity with keys.
+
+::
+
+    var dictionary = {"hello": "world"}
+    
+    # This will not work, `clear` is treated as a key.
+    tween.tween_callback(dictionary.clear)
+    
+    # This will work.
+    tween.tween_callback(Callable.create(dictionary, "clear"))
+
 .. note::
 
 	There are notable differences when using this API with C#. See :ref:`doc_c_sharp_differences` for more information.
@@ -96,43 +116,45 @@ Methods
 .. table::
    :widths: auto
 
-   +-------------------------------------+----------------------------------------------------------------------------------------------------------+
-   | :ref:`Callable<class_Callable>`     | :ref:`bind<class_Callable_method_bind>`\ (\ ...\ ) |vararg| |const|                                      |
-   +-------------------------------------+----------------------------------------------------------------------------------------------------------+
-   | :ref:`Callable<class_Callable>`     | :ref:`bindv<class_Callable_method_bindv>`\ (\ arguments\: :ref:`Array<class_Array>`\ )                   |
-   +-------------------------------------+----------------------------------------------------------------------------------------------------------+
-   | :ref:`Variant<class_Variant>`       | :ref:`call<class_Callable_method_call>`\ (\ ...\ ) |vararg| |const|                                      |
-   +-------------------------------------+----------------------------------------------------------------------------------------------------------+
-   | |void|                              | :ref:`call_deferred<class_Callable_method_call_deferred>`\ (\ ...\ ) |vararg| |const|                    |
-   +-------------------------------------+----------------------------------------------------------------------------------------------------------+
-   | :ref:`Variant<class_Variant>`       | :ref:`callv<class_Callable_method_callv>`\ (\ arguments\: :ref:`Array<class_Array>`\ ) |const|           |
-   +-------------------------------------+----------------------------------------------------------------------------------------------------------+
-   | :ref:`Array<class_Array>`           | :ref:`get_bound_arguments<class_Callable_method_get_bound_arguments>`\ (\ ) |const|                      |
-   +-------------------------------------+----------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`               | :ref:`get_bound_arguments_count<class_Callable_method_get_bound_arguments_count>`\ (\ ) |const|          |
-   +-------------------------------------+----------------------------------------------------------------------------------------------------------+
-   | :ref:`StringName<class_StringName>` | :ref:`get_method<class_Callable_method_get_method>`\ (\ ) |const|                                        |
-   +-------------------------------------+----------------------------------------------------------------------------------------------------------+
-   | :ref:`Object<class_Object>`         | :ref:`get_object<class_Callable_method_get_object>`\ (\ ) |const|                                        |
-   +-------------------------------------+----------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`               | :ref:`get_object_id<class_Callable_method_get_object_id>`\ (\ ) |const|                                  |
-   +-------------------------------------+----------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`               | :ref:`hash<class_Callable_method_hash>`\ (\ ) |const|                                                    |
-   +-------------------------------------+----------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`             | :ref:`is_custom<class_Callable_method_is_custom>`\ (\ ) |const|                                          |
-   +-------------------------------------+----------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`             | :ref:`is_null<class_Callable_method_is_null>`\ (\ ) |const|                                              |
-   +-------------------------------------+----------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`             | :ref:`is_standard<class_Callable_method_is_standard>`\ (\ ) |const|                                      |
-   +-------------------------------------+----------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`             | :ref:`is_valid<class_Callable_method_is_valid>`\ (\ ) |const|                                            |
-   +-------------------------------------+----------------------------------------------------------------------------------------------------------+
-   | |void|                              | :ref:`rpc<class_Callable_method_rpc>`\ (\ ...\ ) |vararg| |const|                                        |
-   +-------------------------------------+----------------------------------------------------------------------------------------------------------+
-   | |void|                              | :ref:`rpc_id<class_Callable_method_rpc_id>`\ (\ peer_id\: :ref:`int<class_int>`, ...\ ) |vararg| |const| |
-   +-------------------------------------+----------------------------------------------------------------------------------------------------------+
-   | :ref:`Callable<class_Callable>`     | :ref:`unbind<class_Callable_method_unbind>`\ (\ argcount\: :ref:`int<class_int>`\ ) |const|              |
-   +-------------------------------------+----------------------------------------------------------------------------------------------------------+
+   +-------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Callable<class_Callable>`     | :ref:`bind<class_Callable_method_bind>`\ (\ ...\ ) |vararg| |const|                                                                               |
+   +-------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Callable<class_Callable>`     | :ref:`bindv<class_Callable_method_bindv>`\ (\ arguments\: :ref:`Array<class_Array>`\ )                                                            |
+   +-------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Variant<class_Variant>`       | :ref:`call<class_Callable_method_call>`\ (\ ...\ ) |vararg| |const|                                                                               |
+   +-------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                              | :ref:`call_deferred<class_Callable_method_call_deferred>`\ (\ ...\ ) |vararg| |const|                                                             |
+   +-------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Variant<class_Variant>`       | :ref:`callv<class_Callable_method_callv>`\ (\ arguments\: :ref:`Array<class_Array>`\ ) |const|                                                    |
+   +-------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Callable<class_Callable>`     | :ref:`create<class_Callable_method_create>`\ (\ variant\: :ref:`Variant<class_Variant>`, method\: :ref:`StringName<class_StringName>`\ ) |static| |
+   +-------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Array<class_Array>`           | :ref:`get_bound_arguments<class_Callable_method_get_bound_arguments>`\ (\ ) |const|                                                               |
+   +-------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`               | :ref:`get_bound_arguments_count<class_Callable_method_get_bound_arguments_count>`\ (\ ) |const|                                                   |
+   +-------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`StringName<class_StringName>` | :ref:`get_method<class_Callable_method_get_method>`\ (\ ) |const|                                                                                 |
+   +-------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Object<class_Object>`         | :ref:`get_object<class_Callable_method_get_object>`\ (\ ) |const|                                                                                 |
+   +-------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`               | :ref:`get_object_id<class_Callable_method_get_object_id>`\ (\ ) |const|                                                                           |
+   +-------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`               | :ref:`hash<class_Callable_method_hash>`\ (\ ) |const|                                                                                             |
+   +-------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`             | :ref:`is_custom<class_Callable_method_is_custom>`\ (\ ) |const|                                                                                   |
+   +-------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`             | :ref:`is_null<class_Callable_method_is_null>`\ (\ ) |const|                                                                                       |
+   +-------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`             | :ref:`is_standard<class_Callable_method_is_standard>`\ (\ ) |const|                                                                               |
+   +-------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`             | :ref:`is_valid<class_Callable_method_is_valid>`\ (\ ) |const|                                                                                     |
+   +-------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                              | :ref:`rpc<class_Callable_method_rpc>`\ (\ ...\ ) |vararg| |const|                                                                                 |
+   +-------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                              | :ref:`rpc_id<class_Callable_method_rpc_id>`\ (\ peer_id\: :ref:`int<class_int>`, ...\ ) |vararg| |const|                                          |
+   +-------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Callable<class_Callable>`     | :ref:`unbind<class_Callable_method_unbind>`\ (\ argcount\: :ref:`int<class_int>`\ ) |const|                                                       |
+   +-------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-reftable-group
 
@@ -184,6 +206,8 @@ Constructs a **Callable** as a copy of the given **Callable**.
 :ref:`Callable<class_Callable>` **Callable**\ (\ object\: :ref:`Object<class_Object>`, method\: :ref:`StringName<class_StringName>`\ )
 
 Creates a new **Callable** for the method named ``method`` in the specified ``object``.
+
+\ **Note:** For methods of built-in :ref:`Variant<class_Variant>` types, use :ref:`create<class_Callable_method_create>` instead.
 
 .. rst-class:: classref-section-separator
 
@@ -259,6 +283,8 @@ Calls the method represented by this **Callable** in deferred mode, i.e. at the 
 
 
 
+\ **Note:** Deferred calls are processed at idle time. Idle time happens mainly at the end of process and physics frames. In it, deferred calls will be run until there are none left, which means you can defer calls from other deferred calls and they'll still be run in the current idle time cycle. This means you should not call a method deferred from itself (or from a method called by it), as this causes infinite recursion the same way as if you had called the method directly.
+
 See also :ref:`Object.call_deferred<class_Object_method_call_deferred>`.
 
 .. rst-class:: classref-item-separator
@@ -272,6 +298,20 @@ See also :ref:`Object.call_deferred<class_Object_method_call_deferred>`.
 :ref:`Variant<class_Variant>` **callv**\ (\ arguments\: :ref:`Array<class_Array>`\ ) |const|
 
 Calls the method represented by this **Callable**. Unlike :ref:`call<class_Callable_method_call>`, this method expects all arguments to be contained inside the ``arguments`` :ref:`Array<class_Array>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Callable_method_create:
+
+.. rst-class:: classref-method
+
+:ref:`Callable<class_Callable>` **create**\ (\ variant\: :ref:`Variant<class_Variant>`, method\: :ref:`StringName<class_StringName>`\ ) |static|
+
+Creates a new **Callable** for the method named ``method`` in the specified ``variant``. To represent a method of a built-in :ref:`Variant<class_Variant>` type, a custom callable is used (see :ref:`is_custom<class_Callable_method_is_custom>`). If ``variant`` is :ref:`Object<class_Object>`, then a standard callable will be created instead.
+
+\ **Note:** This method is always necessary for the :ref:`Dictionary<class_Dictionary>` type, as property syntax is used to access its entries. You may also use this method when ``variant``'s type is not known in advance (for polymorphism).
 
 .. rst-class:: classref-item-separator
 
@@ -357,7 +397,15 @@ Returns the 32-bit hash value of this **Callable**'s object.
 
 :ref:`bool<class_bool>` **is_custom**\ (\ ) |const|
 
-Returns ``true`` if this **Callable** is a custom callable. Custom callables are created from :ref:`bind<class_Callable_method_bind>` or :ref:`unbind<class_Callable_method_unbind>`. In GDScript, lambda functions are also custom callables.
+Returns ``true`` if this **Callable** is a custom callable. Custom callables are used:
+
+- for binding/unbinding arguments (see :ref:`bind<class_Callable_method_bind>` and :ref:`unbind<class_Callable_method_unbind>`);
+
+- for representing methods of built-in :ref:`Variant<class_Variant>` types (see :ref:`create<class_Callable_method_create>`);
+
+- for representing global, lambda, and RPC functions in GDScript;
+
+- for other purposes in the core, GDExtension, and C#.
 
 .. rst-class:: classref-item-separator
 
