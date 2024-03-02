@@ -1479,9 +1479,7 @@ the current script, however, ``self`` also allows you to access properties, meth
             call(&"collect")
 
 ``size`` nor ``collect()`` are defined in the base ``Item`` class, but if they are defined at runtime, our code will
-react appropriately. For example:
-
-::
+react appropriately. For example::
 
     class_name Potion extends Item
 
