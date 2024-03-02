@@ -1582,9 +1582,9 @@ Returns the default mouse cursor shape set by :ref:`cursor_set_shape<class_Displ
 
 |void| **cursor_set_custom_image**\ (\ cursor\: :ref:`Resource<class_Resource>`, shape\: :ref:`CursorShape<enum_DisplayServer_CursorShape>` = 0, hotspot\: :ref:`Vector2<class_Vector2>` = Vector2(0, 0)\ )
 
-Sets a custom mouse cursor image for the defined ``shape``. This means the user's operating system and mouse cursor theme will no longer influence the mouse cursor's appearance. The image must be ``256x256`` or smaller for correct appearance. ``hotspot`` can optionally be set to define the area where the cursor will click. By default, ``hotspot`` is set to ``Vector2(0, 0)``, which is the top-left corner of the image. See also :ref:`cursor_set_shape<class_DisplayServer_method_cursor_set_shape>`.
+Sets a custom mouse cursor image for the given ``shape``. This means the user's operating system and mouse cursor theme will no longer influence the mouse cursor's appearance.
 
-\ ``cursor`` can be either :ref:`Texture2D<class_Texture2D>` or :ref:`Image<class_Image>`.
+\ ``cursor`` can be either a :ref:`Texture2D<class_Texture2D>` or an :ref:`Image<class_Image>`, and it should not be larger than 256×256 to display correctly. Optionally, ``hotspot`` can be set to offset the image's position relative to the click point. By default, ``hotspot`` is set to the top-left corner of the image. See also :ref:`cursor_set_shape<class_DisplayServer_method_cursor_set_shape>`.
 
 .. rst-class:: classref-item-separator
 

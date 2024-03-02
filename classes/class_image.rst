@@ -513,7 +513,7 @@ The `S3TC <https://en.wikipedia.org/wiki/S3_Texture_Compression>`__ texture form
 
 :ref:`Format<enum_Image_Format>` **FORMAT_ASTC_4x4** = ``35``
 
-`Adaptive Scalable Texture Compression <https://en.wikipedia.org/wiki/Adaptive_scalable_texture_compression>`__. This implements the 4x4 (high quality) mode.
+`Adaptive Scalable Texture Compression <https://en.wikipedia.org/wiki/Adaptive_scalable_texture_compression>`__. This implements the 4×4 (high quality) mode.
 
 .. _class_Image_constant_FORMAT_ASTC_4x4_HDR:
 
@@ -529,7 +529,7 @@ Same format as :ref:`FORMAT_ASTC_4x4<class_Image_constant_FORMAT_ASTC_4x4>`, but
 
 :ref:`Format<enum_Image_Format>` **FORMAT_ASTC_8x8** = ``37``
 
-`Adaptive Scalable Texture Compression <https://en.wikipedia.org/wiki/Adaptive_scalable_texture_compression>`__. This implements the 8x8 (low quality) mode.
+`Adaptive Scalable Texture Compression <https://en.wikipedia.org/wiki/Adaptive_scalable_texture_compression>`__. This implements the 8×8 (low quality) mode.
 
 .. _class_Image_constant_FORMAT_ASTC_8x8_HDR:
 
@@ -805,7 +805,7 @@ enum **ASTCFormat**:
 
 :ref:`ASTCFormat<enum_Image_ASTCFormat>` **ASTC_FORMAT_4x4** = ``0``
 
-Hint to indicate that the high quality 4x4 ASTC compression format should be used.
+Hint to indicate that the high quality 4×4 ASTC compression format should be used.
 
 .. _class_Image_constant_ASTC_FORMAT_8x8:
 
@@ -813,7 +813,7 @@ Hint to indicate that the high quality 4x4 ASTC compression format should be use
 
 :ref:`ASTCFormat<enum_Image_ASTCFormat>` **ASTC_FORMAT_8x8** = ``1``
 
-Hint to indicate that the low quality 8x8 ASTC compression format should be used.
+Hint to indicate that the low quality 8×8 ASTC compression format should be used.
 
 .. rst-class:: classref-section-separator
 

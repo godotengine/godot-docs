@@ -276,7 +276,7 @@ Cross cursor. Typically appears over regions in which a drawing operation can be
 
 :ref:`CursorShape<enum_Input_CursorShape>` **CURSOR_WAIT** = ``4``
 
-Wait cursor. Indicates that the application is busy performing an operation. This cursor shape denotes that the application isn't usable during the operation (e.g. something is blocking its main thread).
+Wait cursor. Indicates that the application is busy performing an operation, and that it cannot be used during the operation (e.g. something is blocking its main thread).
 
 .. _class_Input_constant_CURSOR_BUSY:
 
@@ -284,7 +284,7 @@ Wait cursor. Indicates that the application is busy performing an operation. Thi
 
 :ref:`CursorShape<enum_Input_CursorShape>` **CURSOR_BUSY** = ``5``
 
-Busy cursor. Indicates that the application is busy performing an operation. This cursor shape denotes that the application is still usable during the operation.
+Busy cursor. Indicates that the application is busy performing an operation, and that it is still usable during the operation.
 
 .. _class_Input_constant_CURSOR_DRAG:
 

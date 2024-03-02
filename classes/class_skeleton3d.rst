@@ -167,7 +167,7 @@ Emitted when the bone at ``bone_idx`` is toggled with :ref:`set_bone_enabled<cla
 
 **bone_pose_changed**\ (\ bone_idx\: :ref:`int<class_int>`\ )
 
-This signal is emitted when one of the bones in the Skeleton3D node have changed their pose. This is used to inform nodes that rely on bone positions that one of the bones in the Skeleton3D have changed their transform/pose.
+Emitted when the bone at ``bone_idx`` changes its transform/pose. This can be used to update other nodes that rely on bone positions.
 
 .. rst-class:: classref-item-separator
 

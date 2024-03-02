@@ -22,7 +22,7 @@ An input field for numbers.
 Description
 -----------
 
-**SpinBox** is a numerical input text field. It allows entering integers and floating point numbers.
+**SpinBox** is a numerical input text field. It allows entering integers and floating-point numbers.
 
 \ **Example:**\ 
 

@@ -9202,7 +9202,7 @@ Calculates and returns the axis-aligned bounding box that encloses all instances
 
 :ref:`PackedFloat32Array<class_PackedFloat32Array>` **multimesh_get_buffer**\ (\ multimesh\: :ref:`RID<class_RID>`\ ) |const|
 
-Returns the MultiMesh data (such as instance transforms, colors, etc). See :ref:`multimesh_set_buffer<class_RenderingServer_method_multimesh_set_buffer>` for a description of the returned data.
+Returns the MultiMesh data (such as instance transforms, colors, etc.). See :ref:`multimesh_set_buffer<class_RenderingServer_method_multimesh_set_buffer>` for details on the returned data.
 
 \ **Note:** If the buffer is in the engine's internal cache, it will have to be fetched from GPU memory and possibly decompressed. This means :ref:`multimesh_get_buffer<class_RenderingServer_method_multimesh_get_buffer>` is potentially a slow operation and should be avoided whenever possible.
 
@@ -11126,7 +11126,7 @@ Returns the viewport's last rendered frame.
 
 |void| **viewport_remove_canvas**\ (\ viewport\: :ref:`RID<class_RID>`, canvas\: :ref:`RID<class_RID>`\ )
 
-Detaches a viewport from a canvas and vice versa.
+Detaches a viewport from a canvas.
 
 .. rst-class:: classref-item-separator
 

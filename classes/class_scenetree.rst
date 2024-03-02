@@ -207,7 +207,7 @@ Emitted immediately before :ref:`Node._process<class_Node_private_method__proces
 
 **tree_changed**\ (\ )
 
-Emitted any time the tree's hierarchy changes (nodes being moved, renamed, etc).
+Emitted any time the tree's hierarchy changes (nodes being moved, renamed, etc.).
 
 .. rst-class:: classref-item-separator
 

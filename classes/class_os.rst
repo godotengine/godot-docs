@@ -1163,7 +1163,7 @@ Returns a string that is unique to the device.
 
 \ **Note:** This string may change without notice if the user reinstalls their operating system, upgrades it, or modifies their hardware. This means it should generally not be used to encrypt persistent data, as the data saved before an unexpected ID change would become inaccessible. The returned string may also be falsified using external programs, so do not rely on the string returned by this method for security purposes.
 
-\ **Note:** On Web, returns an empty string and generates an error, as this method cannot be implemented for security concerns.
+\ **Note:** On Web, returns an empty string and generates an error, as this method cannot be implemented for security reasons.
 
 .. rst-class:: classref-item-separator
 

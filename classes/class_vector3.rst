@@ -10,7 +10,7 @@
 Vector3
 =======
 
-A 3D vector using floating point coordinates.
+A 3D vector using floating-point coordinates.
 
 .. rst-class:: classref-introduction-group
 

@@ -453,7 +453,7 @@ The option is local to the location of the code completion query - e.g. a local 
 
 :ref:`CodeCompletionLocation<enum_CodeEdit_CodeCompletionLocation>` **LOCATION_PARENT_MASK** = ``256``
 
-The option is from the containing class or a parent class, relative to the location of the code completion query. Perform a bitwise OR with the class depth (e.g. 0 for the local class, 1 for the parent, 2 for the grandparent, etc) to store the depth of an option in the class or a parent class.
+The option is from the containing class or a parent class, relative to the location of the code completion query. Perform a bitwise OR with the class depth (e.g. ``0`` for the local class, ``1`` for the parent, ``2`` for the grandparent, etc.) to store the depth of an option in the class or a parent class.
 
 .. _class_CodeEdit_constant_LOCATION_OTHER_USER_CODE:
 
@@ -899,11 +899,9 @@ Submits an item to the queue of potential candidates for the autocomplete menu. 
 
 |void| **add_comment_delimiter**\ (\ start_key\: :ref:`String<class_String>`, end_key\: :ref:`String<class_String>`, line_only\: :ref:`bool<class_bool>` = false\ )
 
-Adds a comment delimiter.
+Adds a comment delimiter from ``start_key`` to ``end_key``. Both keys should be symbols, and ``start_key`` must not be shared with other delimiters.
 
-Both the start and end keys must be symbols. Only the start key has to be unique.
-
-\ ``line_only`` denotes if the region should continue until the end of the line or carry over on to the next line. If the end key is blank this is automatically set to ``true``.
+If ``line_only`` is ``true`` or ``end_key`` is an empty :ref:`String<class_String>`, the region does not carry over to the next line.
 
 .. rst-class:: classref-item-separator
 
@@ -915,11 +913,9 @@ Both the start and end keys must be symbols. Only the start key has to be unique
 
 |void| **add_string_delimiter**\ (\ start_key\: :ref:`String<class_String>`, end_key\: :ref:`String<class_String>`, line_only\: :ref:`bool<class_bool>` = false\ )
 
-Adds a string delimiter.
+Defines a string delimiter from ``start_key`` to ``end_key``. Both keys should be symbols, and ``start_key`` must not be shared with other delimiters.
 
-Both the start and end keys must be symbols. Only the start key has to be unique.
-
-\ ``line_only`` denotes if the region should continue until the end of the line or carry over on to the next line. If the end key is blank this is automatically set to ``true``.
+If ``line_only`` is ``true`` or ``end_key`` is an empty :ref:`String<class_String>`, the region does not carry over to the next line.
 
 .. rst-class:: classref-item-separator
 

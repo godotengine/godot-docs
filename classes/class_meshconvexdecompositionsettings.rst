@@ -108,7 +108,7 @@ Property Descriptions
 - |void| **set_convex_hull_approximation**\ (\ value\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **get_convex_hull_approximation**\ (\ )
 
-If enabled uses approximation for computing convex hulls.
+If ``true``, uses approximation for computing convex hulls.
 
 .. rst-class:: classref-item-separator
 
@@ -227,7 +227,7 @@ Mode for the approximate convex decomposition.
 - |void| **set_normalize_mesh**\ (\ value\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **get_normalize_mesh**\ (\ )
 
-If enabled normalizes the mesh before applying the convex decomposition.
+If ``true``, normalizes the mesh before applying the convex decomposition.
 
 .. rst-class:: classref-item-separator
 
@@ -261,7 +261,7 @@ Controls the granularity of the search for the "best" clipping plane. Ranges fro
 - |void| **set_project_hull_vertices**\ (\ value\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **get_project_hull_vertices**\ (\ )
 
-If enabled projects output convex hull vertices onto original source mesh to increase floating point accuracy of the results.
+If ``true``, projects output convex hull vertices onto the original source mesh to increase floating-point accuracy of the results.
 
 .. rst-class:: classref-item-separator
 

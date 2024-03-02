@@ -101,7 +101,7 @@ Tracking information may be inaccurate or estimated. For example, with inside ou
 
 :ref:`TrackingConfidence<enum_XRPose_TrackingConfidence>` **XR_TRACKING_CONFIDENCE_HIGH** = ``2``
 
-Tracking information is deemed accurate and up to date.
+Tracking information is considered accurate and up to date.
 
 .. rst-class:: classref-section-separator
 

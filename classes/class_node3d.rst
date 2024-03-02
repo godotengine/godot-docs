@@ -293,7 +293,7 @@ Property Descriptions
 - |void| **set_basis**\ (\ value\: :ref:`Basis<class_Basis>`\ )
 - :ref:`Basis<class_Basis>` **get_basis**\ (\ )
 
-Direct access to the 3x3 basis of the :ref:`transform<class_Node3D_property_transform>` property.
+Basis of the :ref:`transform<class_Node3D_property_transform>` property. Represents the rotation, scale, and shear of this node.
 
 .. rst-class:: classref-item-separator
 

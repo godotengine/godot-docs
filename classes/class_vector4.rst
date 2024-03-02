@@ -10,7 +10,7 @@
 Vector4
 =======
 
-A 4D vector using floating point coordinates.
+A 4D vector using floating-point coordinates.
 
 .. rst-class:: classref-introduction-group
 

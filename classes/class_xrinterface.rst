@@ -438,7 +438,7 @@ Returns a combination of :ref:`Capabilities<enum_XRInterface_Capabilities>` flag
 
 :ref:`StringName<class_StringName>` **get_name**\ (\ ) |const|
 
-Returns the name of this interface (OpenXR, OpenVR, OpenHMD, ARKit, etc).
+Returns the name of this interface (``"OpenXR"``, ``"OpenVR"``, ``"OpenHMD"``, ``"ARKit"``, etc.).
 
 .. rst-class:: classref-item-separator
 
@@ -450,7 +450,7 @@ Returns the name of this interface (OpenXR, OpenVR, OpenHMD, ARKit, etc).
 
 :ref:`PackedVector3Array<class_PackedVector3Array>` **get_play_area**\ (\ ) |const|
 
-Returns an array of vectors that denotes the physical play area mapped to the virtual space around the :ref:`XROrigin3D<class_XROrigin3D>` point. The points form a convex polygon that can be used to react to or visualize the play area. This returns an empty array if this feature is not supported or if the information is not yet available.
+Returns an array of vectors that represent the physical play area mapped to the virtual space around the :ref:`XROrigin3D<class_XROrigin3D>` point. The points form a convex polygon that can be used to react to or visualize the play area. This returns an empty array if this feature is not supported or if the information is not yet available.
 
 .. rst-class:: classref-item-separator
 

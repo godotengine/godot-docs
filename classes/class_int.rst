@@ -21,7 +21,7 @@ Signed 64-bit integer type. This means that it can take values from ``-2^63`` to
 
 \ **int**\ s can be automatically converted to :ref:`float<class_float>`\ s when necessary, for example when passing them as arguments in functions. The :ref:`float<class_float>` will be as close to the original integer as possible.
 
-Likewise, :ref:`float<class_float>`\ s can be automatically converted into **int**\ s. This will truncate the :ref:`float<class_float>`, discarding anything after the floating point.
+Likewise, :ref:`float<class_float>`\ s can be automatically converted into **int**\ s. This will truncate the :ref:`float<class_float>`, discarding anything after the floating-point.
 
 \ **Note:** In a boolean context, an **int** will evaluate to ``false`` if it equals ``0``, and to ``true`` otherwise.
 

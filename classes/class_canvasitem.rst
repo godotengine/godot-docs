@@ -388,7 +388,7 @@ Texture will repeat normally.
 
 :ref:`TextureRepeat<enum_CanvasItem_TextureRepeat>` **TEXTURE_REPEAT_MIRROR** = ``3``
 
-Texture will repeat in a 2x2 tiled mode, where elements at even positions are mirrored.
+Texture will repeat in a 2×2 tiled mode, where elements at even positions are mirrored.
 
 .. _class_CanvasItem_constant_TEXTURE_REPEAT_MAX:
 

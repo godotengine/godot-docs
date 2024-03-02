@@ -320,7 +320,7 @@ Constants
 
 **NODE_ID_INVALID** = ``-1``
 
-Denotes invalid **VisualShader** node.
+Indicates an invalid **VisualShader** node.
 
 .. _class_VisualShader_constant_NODE_ID_OUTPUT:
 
@@ -328,7 +328,7 @@ Denotes invalid **VisualShader** node.
 
 **NODE_ID_OUTPUT** = ``0``
 
-Denotes output node of **VisualShader**.
+Indicates an output node of **VisualShader**.
 
 .. rst-class:: classref-section-separator
 

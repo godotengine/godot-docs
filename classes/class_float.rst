@@ -10,7 +10,7 @@
 float
 =====
 
-A built-in type for floating point numbers.
+A built-in type for floating-point numbers.
 
 .. rst-class:: classref-introduction-group
 

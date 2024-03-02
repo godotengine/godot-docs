@@ -351,9 +351,7 @@ Vertex argument must be either 0, 1, or 2 because faces contain three vertices.
 
 :ref:`int<class_int>` **get_format**\ (\ ) |const|
 
-Returns the :ref:`Mesh<class_Mesh>`'s format. Format is an integer made up of :ref:`Mesh<class_Mesh>` format flags combined together. For example, a mesh containing both vertices and normals would return a format of ``3`` because :ref:`Mesh.ARRAY_FORMAT_VERTEX<class_Mesh_constant_ARRAY_FORMAT_VERTEX>` is ``1`` and :ref:`Mesh.ARRAY_FORMAT_NORMAL<class_Mesh_constant_ARRAY_FORMAT_NORMAL>` is ``2``.
-
-See :ref:`ArrayFormat<enum_Mesh_ArrayFormat>` for a list of format flags.
+Returns the :ref:`Mesh<class_Mesh>`'s format as a combination of the :ref:`ArrayFormat<enum_Mesh_ArrayFormat>` flags. For example, a mesh containing both vertices and normals would return a format of ``3`` because :ref:`Mesh.ARRAY_FORMAT_VERTEX<class_Mesh_constant_ARRAY_FORMAT_VERTEX>` is ``1`` and :ref:`Mesh.ARRAY_FORMAT_NORMAL<class_Mesh_constant_ARRAY_FORMAT_NORMAL>` is ``2``.
 
 .. rst-class:: classref-item-separator
 

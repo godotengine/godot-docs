@@ -27,7 +27,7 @@ In GDScript, resources can loaded from disk by their :ref:`resource_path<class_R
 
 The engine keeps a global cache of all loaded resources, referenced by paths (see :ref:`ResourceLoader.has_cached<class_ResourceLoader_method_has_cached>`). A resource will be cached when loaded for the first time and removed from cache once all references are released. When a resource is cached, subsequent loads using its path will return the cached reference.
 
-\ **Note:** In C#, resources will not be freed instantly after they are no longer in use. Instead, garbage collection will run periodically and will free resources that are no longer in use. This means that unused resources will linger on for a while before being removed.
+\ **Note:** In C#, resources will not be freed instantly after they are no longer in use. Instead, garbage collection will run periodically and will free resources that are no longer in use. This means that unused resources will remain in memory for a while before being removed.
 
 .. rst-class:: classref-introduction-group
 
