@@ -891,7 +891,7 @@ If ``layer`` is negative, the layers are accessed from the last one.
 
 |void| **set_layer_enabled**\ (\ layer\: :ref:`int<class_int>`, enabled\: :ref:`bool<class_bool>`\ )
 
-Enables or disables the layer ``layer``. A disabled layer is not processed at all (no rendering, no physics, etc...).
+Enables or disables the layer ``layer``. A disabled layer is not processed at all (no rendering, no physics, etc.).
 
 If ``layer`` is negative, the layers are accessed from the last one.
 

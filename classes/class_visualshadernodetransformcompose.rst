@@ -19,7 +19,7 @@ Composes a :ref:`Transform3D<class_Transform3D>` from four :ref:`Vector3<class_V
 Description
 -----------
 
-Creates a 4x4 transform matrix using four vectors of type ``vec3``. Each vector is one row in the matrix and the last column is a ``vec4(0, 0, 0, 1)``.
+Creates a 4×4 transform matrix using four vectors of type ``vec3``. Each vector is one row in the matrix and the last column is a ``vec4(0, 0, 0, 1)``.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

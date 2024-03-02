@@ -835,7 +835,7 @@ Override this method in your plugin to return a :ref:`Texture2D<class_Texture2D>
 
 For main screen plugins, this appears at the top of the screen, to the right of the "2D", "3D", "Script", and "AssetLib" buttons.
 
-Ideally, the plugin icon should be white with a transparent background and 16x16 pixels in size.
+Ideally, the plugin icon should be white with a transparent background and 16×16 pixels in size.
 
 
 .. tabs::
@@ -1093,7 +1093,9 @@ Adds a script at ``path`` to the Autoload list as ``name``.
 
 :ref:`Button<class_Button>` **add_control_to_bottom_panel**\ (\ control\: :ref:`Control<class_Control>`, title\: :ref:`String<class_String>`\ )
 
-Adds a control to the bottom panel (together with Output, Debug, Animation, etc). Returns a reference to the button added. It's up to you to hide/show the button when needed. When your plugin is deactivated, make sure to remove your custom control with :ref:`remove_control_from_bottom_panel<class_EditorPlugin_method_remove_control_from_bottom_panel>` and free it with :ref:`Node.queue_free<class_Node_method_queue_free>`.
+Adds a control to the bottom panel (together with **Output**, **Debug**, **Animation**, etc.). Returns the button added to the tab bar. It's up to you to manage the button's visibility as needed.
+
+When your plugin is deactivated, make sure to remove your custom control with :ref:`remove_control_from_bottom_panel<class_EditorPlugin_method_remove_control_from_bottom_panel>` and free it with :ref:`Node.queue_free<class_Node_method_queue_free>`.
 
 .. rst-class:: classref-item-separator
 

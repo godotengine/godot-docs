@@ -101,7 +101,7 @@ Clear the selection.
 
 :ref:`Array<class_Array>`\[:ref:`Node<class_Node>`\] **get_selected_nodes**\ (\ )
 
-Gets the list of selected nodes.
+Returns the list of selected nodes.
 
 .. rst-class:: classref-item-separator
 
@@ -113,7 +113,7 @@ Gets the list of selected nodes.
 
 :ref:`Array<class_Array>`\[:ref:`Node<class_Node>`\] **get_transformable_selected_nodes**\ (\ )
 
-Gets the list of selected nodes, optimized for transform operations (i.e. moving them, rotating, etc). This list avoids situations where a node is selected and also child/grandchild.
+Returns the list of selected nodes, optimized for transform operations (i.e. moving them, rotating, etc.). This list can be used to avoid situations where a node is selected and is also a child/grandchild.
 
 .. rst-class:: classref-item-separator
 

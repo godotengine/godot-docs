@@ -19,11 +19,20 @@ A countdown timer.
 Description
 -----------
 
-Counts down a specified interval and emits a signal on reaching 0. Can be set to repeat or "one-shot" mode.
+The **Timer** node is a countdown timer and is the simplest way to handle time-based logic in the engine. When a timer reaches the end of its :ref:`wait_time<class_Timer_property_wait_time>`, it will emit the :ref:`timeout<class_Timer_signal_timeout>` signal.
 
-\ **Note:** Timers are affected by :ref:`Engine.time_scale<class_Engine_property_time_scale>`, a higher scale means quicker timeouts, and vice versa.
+After a timer enters the tree, it can be manually started with :ref:`start<class_Timer_method_start>`. A timer node is also started automatically if :ref:`autostart<class_Timer_property_autostart>` is ``true``.
+
+Without requiring much code, a timer node can be added and configured in the editor. The :ref:`timeout<class_Timer_signal_timeout>` signal it emits can also be connected through the Node dock in the editor:
+
+::
+
+    func _on_timer_timeout():
+        print("Time to attack!")
 
 \ **Note:** To create a one-shot timer without instantiating a node, use :ref:`SceneTree.create_timer<class_SceneTree_method_create_timer>`.
+
+\ **Note:** Timers are affected by :ref:`Engine.time_scale<class_Engine_property_time_scale>`. The higher the time scale, the sooner timers will end. How often a timer processes may depend on the framerate or :ref:`Engine.physics_ticks_per_second<class_Engine_property_physics_ticks_per_second>`.
 
 .. rst-class:: classref-introduction-group
 

@@ -19,7 +19,7 @@ Multiplies a :ref:`Transform3D<class_Transform3D>` and a :ref:`Vector3<class_Vec
 Description
 -----------
 
-A multiplication operation on a transform (4x4 matrix) and a vector, with support for different multiplication operators.
+A multiplication operation on a transform (4×4 matrix) and a vector, with support for different multiplication operators.
 
 .. rst-class:: classref-reftable-group
 

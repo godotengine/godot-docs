@@ -62,7 +62,7 @@ Comparison with ``INF`` (Infinity).
 
 :ref:`Function<enum_VisualShaderNodeIs_Function>` **FUNC_IS_NAN** = ``1``
 
-Comparison with ``NaN`` (Not a Number; denotes invalid numeric results, e.g. division by zero).
+Comparison with ``NaN`` (Not a Number; indicates invalid numeric results, such as division by zero).
 
 .. _class_VisualShaderNodeIs_constant_FUNC_MAX:
 

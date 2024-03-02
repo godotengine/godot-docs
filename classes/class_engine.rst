@@ -123,19 +123,19 @@ Property Descriptions
 - |void| **set_max_fps**\ (\ value\: :ref:`int<class_int>`\ )
 - :ref:`int<class_int>` **get_max_fps**\ (\ )
 
-The maximum number of frames per second (FPS) that can be rendered. A value of ``0`` means the framerate is uncapped.
+The maximum number of frames that can be rendered every second (FPS). A value of ``0`` means the framerate is uncapped.
 
 Limiting the FPS can be useful to reduce the host machine's power consumption, which reduces heat, noise emissions, and improves battery life.
 
-If :ref:`ProjectSettings.display/window/vsync/vsync_mode<class_ProjectSettings_property_display/window/vsync/vsync_mode>` is ``Enabled`` or ``Adaptive``, the setting takes precedence and the max FPS number cannot exceed the monitor's refresh rate.
+If :ref:`ProjectSettings.display/window/vsync/vsync_mode<class_ProjectSettings_property_display/window/vsync/vsync_mode>` is **Enabled** or **Adaptive**, the setting takes precedence and the max FPS number cannot exceed the monitor's refresh rate.
 
-If :ref:`ProjectSettings.display/window/vsync/vsync_mode<class_ProjectSettings_property_display/window/vsync/vsync_mode>` is ``Enabled``, on monitors with variable refresh rate enabled (G-Sync/FreeSync), using a FPS limit a few frames lower than the monitor's refresh rate will `reduce input lag while avoiding tearing <https://blurbusters.com/howto-low-lag-vsync-on/>`__.
+If :ref:`ProjectSettings.display/window/vsync/vsync_mode<class_ProjectSettings_property_display/window/vsync/vsync_mode>` is **Enabled**, on monitors with variable refresh rate enabled (G-Sync/FreeSync), using a FPS limit a few frames lower than the monitor's refresh rate will `reduce input lag while avoiding tearing <https://blurbusters.com/howto-low-lag-vsync-on/>`__.
 
 See also :ref:`physics_ticks_per_second<class_Engine_property_physics_ticks_per_second>` and :ref:`ProjectSettings.application/run/max_fps<class_ProjectSettings_property_application/run/max_fps>`.
 
 \ **Note:** The actual number of frames per second may still be below this value if the CPU or GPU cannot keep up with the project's logic and rendering.
 
-\ **Note:** If :ref:`ProjectSettings.display/window/vsync/vsync_mode<class_ProjectSettings_property_display/window/vsync/vsync_mode>` is ``Disabled``, limiting the FPS to a high value that can be consistently reached on the system can reduce input lag compared to an uncapped framerate. Since this works by ensuring the GPU load is lower than 100%, this latency reduction is only effective in GPU-bottlenecked scenarios, not CPU-bottlenecked scenarios.
+\ **Note:** If :ref:`ProjectSettings.display/window/vsync/vsync_mode<class_ProjectSettings_property_display/window/vsync/vsync_mode>` is **Disabled**, limiting the FPS to a high value that can be consistently reached on the system can reduce input lag compared to an uncapped framerate. Since this works by ensuring the GPU load is lower than 100%, this latency reduction is only effective in GPU-bottlenecked scenarios, not CPU-bottlenecked scenarios.
 
 .. rst-class:: classref-item-separator
 

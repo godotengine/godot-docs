@@ -269,7 +269,7 @@ Unimplemented. This currently has no effect when changed.
 
 :ref:`bool<class_bool>` **process/fix_alpha_border** = ``true``
 
-If ``true``, puts pixels of the same surrounding color in transition from transparent to opaque areas. For textures displayed with bilinear filtering, this helps mitigate the outline effect when exporting images from an image editor.
+If ``true``, puts pixels of the same surrounding color in transition from transparent to opaque areas. For textures displayed with bilinear filtering, this helps to reduce the outline effect when exporting images from an image editor.
 
 It's recommended to leave this enabled (as it is by default), unless this causes issues for a particular image.
 

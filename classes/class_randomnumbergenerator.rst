@@ -207,7 +207,9 @@ Returns a pseudo-random float between ``from`` and ``to`` (inclusive).
 
 :ref:`float<class_float>` **randfn**\ (\ mean\: :ref:`float<class_float>` = 0.0, deviation\: :ref:`float<class_float>` = 1.0\ )
 
-Returns a `normally-distributed <https://en.wikipedia.org/wiki/Normal_distribution>`__ pseudo-random number, using Box-Muller transform with the specified ``mean`` and a standard ``deviation``. This is also called Gaussian distribution.
+Returns a `normally-distributed <https://en.wikipedia.org/wiki/Normal_distribution>`__, pseudo-random floating-point number from the specified ``mean`` and a standard ``deviation``. This is also known as a Gaussian distribution.
+
+\ **Note:** This method uses the `Box-Muller transform <https://en.wikipedia.org/wiki/Box%E2%80%93Muller_transform>`__ algorithm.
 
 .. rst-class:: classref-item-separator
 

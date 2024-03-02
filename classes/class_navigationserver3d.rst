@@ -23,7 +23,7 @@ Description
 
 NavigationServer3D is the server that handles navigation maps, regions and agents. It does not handle A\* navigation from :ref:`AStar3D<class_AStar3D>`.
 
-Maps are made up of regions, which are made of navigation meshes. Together, they define the navigable areas in the 3D world.
+Maps are divided into regions, which are composed of navigation meshes. Together, they define the navigable areas in the 3D world.
 
 \ **Note:** Most **NavigationServer3D** changes take effect after the next physics frame and not immediately. This includes all changes made to maps, regions or agents by navigation-related nodes in the scene tree or made through scripts.
 
@@ -761,7 +761,7 @@ Set the agent's ``avoidance_mask`` bitmask.
 
 Set the agent's ``avoidance_priority`` with a ``priority`` between 0.0 (lowest priority) to 1.0 (highest priority).
 
-The specified ``agent`` does not adjust the velocity for other agents that would match the ``avoidance_mask`` but have a lower `` avoidance_priority``. This in turn makes the other agents with lower priority adjust their velocities even more to avoid collision with this agent.
+The specified ``agent`` does not adjust the velocity for other agents that would match the ``avoidance_mask`` but have a lower ``avoidance_priority``. This in turn makes the other agents with lower priority adjust their velocities even more to avoid collision with this agent.
 
 .. rst-class:: classref-item-separator
 

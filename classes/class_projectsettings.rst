@@ -2770,7 +2770,7 @@ When enabled, using a property, enum, or function that was renamed since Godot 3
 
 :ref:`int<class_int>` **debug/gdscript/warnings/return_value_discarded** = ``0``
 
-When set to ``warn`` or ``error``, produces a warning or an error respectively when calling a function without using its return value (by assigning it to a variable or using it as a function argument). Such return values are sometimes used to denote possible errors using the :ref:`Error<enum_@GlobalScope_Error>` enum.
+When set to ``warn`` or ``error``, produces a warning or an error respectively when calling a function without using its return value (by assigning it to a variable or using it as a function argument). These return values are sometimes used to indicate possible errors using the :ref:`Error<enum_@GlobalScope_Error>` enum.
 
 .. rst-class:: classref-item-separator
 
@@ -3144,7 +3144,7 @@ If ``true``, enables specific shader warnings (see ``debug/shader_language/warni
 
 :ref:`bool<class_bool>` **debug/shader_language/warnings/float_comparison** = ``true``
 
-When set to ``true``, produces a warning when two floating point numbers are compared directly with the ``==`` operator or the ``!=`` operator.
+When set to ``true``, produces a warning when two floating-point numbers are compared directly with the ``==`` operator or the ``!=`` operator.
 
 .. rst-class:: classref-item-separator
 
@@ -6118,7 +6118,7 @@ Root node default layout direction.
 
 Specifies the :ref:`TextServer<class_TextServer>` to use. If left empty, the default will be used.
 
-"ICU / HarfBuzz / Graphite" is the most advanced text driver, supporting right-to-left typesetting and complex scripts (for languages like Arabic, Hebrew, etc). The "Fallback" text driver does not support right-to-left typesetting and complex scripts.
+"ICU / HarfBuzz / Graphite" is the most advanced text driver, supporting right-to-left typesetting and complex scripts (for languages like Arabic, Hebrew, etc.). The "Fallback" text driver does not support right-to-left typesetting and complex scripts.
 
 \ **Note:** The driver in use can be overridden at runtime via the ``--text-driver`` :doc:`command line argument <../tutorials/editor/command_line_tutorial>`.
 
@@ -11340,7 +11340,7 @@ If ``true``, the texture importer will import lossless textures using the PNG fo
 
 :ref:`bool<class_bool>` **rendering/textures/vram_compression/import_etc2_astc** = ``false``
 
-If ``true``, the texture importer will import VRAM-compressed textures using the Ericsson Texture Compression 2 algorithm for lower quality textures and normal maps and Adaptable Scalable Texture Compression algorithm for high quality textures (in 4x4 block size).
+If ``true``, the texture importer will import VRAM-compressed textures using the Ericsson Texture Compression 2 algorithm for lower quality textures and normal maps and Adaptable Scalable Texture Compression algorithm for high quality textures (in 4×4 block size).
 
 \ **Note:** This setting is an override. The texture importer will always import the format the host platform needs, even if this is set to ``false``.
 
@@ -11438,16 +11438,16 @@ The texture *must* use a lossless compression format so that colors can be match
 
 ::
 
-    - 1x1 = rgb(0, 0, 0)     - #000000
-    - 1x2 = rgb(0, 85, 0)    - #005500
-    - 2x1 = rgb(85, 0, 0)    - #550000
-    - 2x2 = rgb(85, 85, 0)   - #555500
-    - 2x4 = rgb(85, 170, 0)  - #55aa00
-    - 4x2 = rgb(170, 85, 0)  - #aa5500
-    - 4x4 = rgb(170, 170, 0) - #aaaa00
-    - 4x8 = rgb(170, 255, 0) - #aaff00 - Not supported on most hardware
-    - 8x4 = rgb(255, 170, 0) - #ffaa00 - Not supported on most hardware
-    - 8x8 = rgb(255, 255, 0) - #ffff00 - Not supported on most hardware
+    - 1×1 = rgb(0, 0, 0)     - #000000
+    - 1×2 = rgb(0, 85, 0)    - #005500
+    - 2×1 = rgb(85, 0, 0)    - #550000
+    - 2×2 = rgb(85, 85, 0)   - #555500
+    - 2×4 = rgb(85, 170, 0)  - #55aa00
+    - 4×2 = rgb(170, 85, 0)  - #aa5500
+    - 4×4 = rgb(170, 170, 0) - #aaaa00
+    - 4×8 = rgb(170, 255, 0) - #aaff00 - Not supported on most hardware
+    - 8×4 = rgb(255, 170, 0) - #ffaa00 - Not supported on most hardware
+    - 8×8 = rgb(255, 255, 0) - #ffff00 - Not supported on most hardware
 
 .. rst-class:: classref-item-separator
 

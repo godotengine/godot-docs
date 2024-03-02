@@ -349,9 +349,9 @@ If ``true`` enables :ref:`GDExtension<class_GDExtension>` support for this web b
 
 :ref:`bool<class_bool>` **variant/thread_support**
 
-If enabled, the exported game will support threads. It requires `a "cross-origin isolated" website <https://web.dev/articles/coop-coep>`__, which can be difficult to setup and brings some limitations (e.g. not being able to communicate with third-party websites).
+If ``true``, the exported game will support threads. It requires `a "cross-origin isolated" website <https://web.dev/articles/coop-coep>`__, which may be difficult to set up and is limited for security reasons (such as not being able to communicate with third-party websites).
 
-If disabled, the exported game will not support threads. As a result, it is more prone to performance and audio issues, but will only require to be run on a HTTPS website.
+If ``false``, the exported game will not support threads. As a result, it is more prone to performance and audio issues, but will only require to be run on a HTTPS website.
 
 .. rst-class:: classref-item-separator
 

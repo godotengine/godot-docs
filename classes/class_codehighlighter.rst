@@ -222,11 +222,9 @@ Method Descriptions
 
 |void| **add_color_region**\ (\ start_key\: :ref:`String<class_String>`, end_key\: :ref:`String<class_String>`, color\: :ref:`Color<class_Color>`, line_only\: :ref:`bool<class_bool>` = false\ )
 
-Adds a color region such as comments or strings.
+Adds a color region (such as for comments or strings) from ``start_key`` to ``end_key``. Both keys should be symbols, and ``start_key`` must not be shared with other delimiters.
 
-Both the start and end keys must be symbols. Only the start key has to be unique.
-
-\ ``line_only`` denotes if the region should continue until the end of the line or carry over on to the next line. If the end key is blank this is automatically set to ``true``.
+If ``line_only`` is ``true`` or ``end_key`` is an empty :ref:`String<class_String>`, the region does not carry over to the next line.
 
 .. rst-class:: classref-item-separator
 

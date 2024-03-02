@@ -19,7 +19,7 @@ Decomposes a :ref:`Transform3D<class_Transform3D>` into four :ref:`Vector3<class
 Description
 -----------
 
-Takes a 4x4 transform matrix and decomposes it into four ``vec3`` values, one from each row of the matrix.
+Takes a 4×4 transform matrix and decomposes it into four ``vec3`` values, one from each row of the matrix.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

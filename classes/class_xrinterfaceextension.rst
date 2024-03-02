@@ -221,7 +221,7 @@ Returns the name of this interface.
 
 :ref:`PackedVector3Array<class_PackedVector3Array>` **_get_play_area**\ (\ ) |virtual| |const|
 
-Returns an :ref:`PackedVector3Array<class_PackedVector3Array>` that denotes the play areas boundaries (if applicable).
+Returns a :ref:`PackedVector3Array<class_PackedVector3Array>` that represents the play areas boundaries (if applicable).
 
 .. rst-class:: classref-item-separator
 

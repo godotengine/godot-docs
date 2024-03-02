@@ -10,7 +10,7 @@
 Vector2
 =======
 
-A 2D vector using floating point coordinates.
+A 2D vector using floating-point coordinates.
 
 .. rst-class:: classref-introduction-group
 

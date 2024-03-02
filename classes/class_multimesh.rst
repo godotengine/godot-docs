@@ -430,7 +430,7 @@ For the color to take effect, ensure that :ref:`use_colors<class_MultiMesh_prope
 
 |void| **set_instance_custom_data**\ (\ instance\: :ref:`int<class_int>`, custom_data\: :ref:`Color<class_Color>`\ )
 
-Sets custom data for a specific instance. Although :ref:`Color<class_Color>` is used, it is just a container for 4 floating point numbers.
+Sets custom data for a specific instance. ``custom_data`` is a :ref:`Color<class_Color>` type only to contain 4 floating-point numbers.
 
 For the custom data to be used, ensure that :ref:`use_custom_data<class_MultiMesh_property_use_custom_data>` is ``true``.
 
