@@ -55,6 +55,19 @@ If you are building Godot from source, make sure to follow the steps to enable
 .NET support in your build as outlined in the :ref:`doc_compiling_with_dotnet`
 page.
 
+Linux and \*BSD
+~~~~~~~~~~~~~~~
+
+On Linux and BSD systems you may have to link the .NET library path and "dotnet" executable. Example for Ubuntu 22.04 and Bash::
+
+    sudo ln -sT ~/.dotnet /usr/share/dotnet
+    sudo ln -sT ~/.dotnet/dotnet /usr/bin/dotnet
+
+Export .NET path in your shell:
+``~/.bashrc``::
+
+    export DOTNET_ROOT=$HOME/.dotnet
+
 .. _doc_c_sharp_setup_external_editor:
 
 Configuring an external editor
@@ -91,6 +104,56 @@ In Rider:
 
 - Set **MSBuild version** to **.NET Core**.
 - Install the **Godot support** plugin.
+
+Create a New Solution in Rider
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+1. Start by creating a new solution in Rider. Navigate to the appropriate option and select it.
+
+   .. image:: img/rider_new_solution.webp
+      :alt: New Solution in Rider
+
+2. Choose the "Class Library" option from the list of templates.
+
+   .. image:: img/rider_choose_class_library.webp
+      :alt: Choose Class Library
+
+3. You can optionally select the "Put solution and project in the same directory" checkbox for your convenience.
+
+   .. image:: img/rider_solution_and_project_same_dir.webp
+      :alt: Solution and Project in Same Directory
+
+Setting Up Godot with Rider Solution
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+1. In Godot, create a new project in the same directory you used for Rider. Ignore the warning about not empty path.
+
+   .. image:: img/rider_godot_new_project.webp
+      :alt: New Project in Godot
+
+2. Make sure to set the Version Control Metadata to "None", because Rider has initialized it already.
+
+Testing and Troubleshooting
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+1. Test your setup with a simple "Hello World" class. Remember to attach the script to a Node for it to run properly.
+
+   .. image:: img/rider_test_hello_world.webp
+      :alt: Test Hello World
+
+2. If you encounter a Mono error in Godot, such as:
+
+   ``Duplicate 'global::System.Runtime.Versioning.TargetFrameworkAttribute'``
+
+   This issue can be resolved by going back to Rider and excluding the `obj` folder from the project.
+
+   .. image:: img/rider_godot_mono_duplicate_error.webp
+      :alt: Mono Error in Godot
+
+   To exclude the `obj` folder, open its context menu under "Solution" tree view:
+
+   .. image:: img/rider_exclude_obj.gif
+      :alt: Exclude obj Folder
 
 Visual Studio Code
 ~~~~~~~~~~~~~~~~~~
