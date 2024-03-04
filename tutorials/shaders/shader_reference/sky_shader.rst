@@ -174,7 +174,8 @@ There are 4 ``LIGHTX`` lights, accessed as ``LIGHT0``, ``LIGHT1``, ``LIGHT2``, a
 +---------------------------------+--------------------------------------------------------------------------------------------------------------------------+
 | in vec3 **LIGHTX_COLOR**        | Color of ``LIGHTX``.                                                                                                     |
 +---------------------------------+--------------------------------------------------------------------------------------------------------------------------+
-| in float **LIGHTX_SIZE**        | Angular diameter of ``LIGHTX`` in the sky. Expressed in degrees. For reference, the sun from earth is about 0.5 degrees. |
+| in float **LIGHTX_SIZE**        | Angular diameter of ``LIGHTX`` in the sky. Expressed in radians. For reference, the sun from earth is about .0087 radians|
+|                                 | (0.5 degrees).                                                                                                           |
 +---------------------------------+--------------------------------------------------------------------------------------------------------------------------+
 | in float **PI**                 | A ``PI`` constant (``3.141592``).                                                                                        |
 |                                 | A ratio of a circle's circumference to its diameter and amount of radians in half turn.                                  |
