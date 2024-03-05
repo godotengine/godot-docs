@@ -144,6 +144,11 @@ Tools must be disabled in order to use this flag, as the editor is not designed
 to operate without 3D support. Without it, the binary size can be reduced
 by about 15%.
 
+.. note::
+
+    Disabling 3D support also disables all navigation. This includes 2D navigation,
+    as it uses the 3D navigation system internally.
+
 Disabling advanced GUI objects
 ------------------------------
 
