@@ -81,3 +81,21 @@ You can now build, run, debug, profile, and Valgrind check the Godot editor via 
    :align: center
 
 When playing a scene, the Godot editor will spawn a separate process. You can debug this process in CLion by going to **Run > Attach to process...**, typing ``godot``, and selecting the Godot process with the highest **pid** (process ID), which will usually be the running project.
+
+Ignoring object and library files
+-----------------------------------
+
+After building Godot in CLion, you may see the object and library files showing up in the **Project** view.
+
+.. figure:: img/clion-object-library-files-in-project-view.webp
+   :align: center
+
+You can configure CLion to ignore those files:
+
+- Open CLion and navigate to **Preferences > Editor > File Types > Ignored Files and Folders**
+- Click the **+** button to add ``*.o`` and ``*.a`` to the list. In Windows, you would add ``*.obj`` and ``*.dll``.
+
+.. figure:: img/clion-ignore-object-library-files.webp
+   :align: center
+
+Now, the files should be ignored in the Project view.
