@@ -429,7 +429,9 @@ without writing much code.
 
 .. warning:: ``move_and_slide()`` automatically includes the timestep in its
              calculation, so you should **not** multiply the velocity vector
-             by ``delta``.
+             by ``delta``. This does **not** apply to ``gravity`` as it is an
+             acceleration and is time dependent, and needs to be scaled by
+             ``delta``.
 
 For example, use the following code to make a character that can walk along
 the ground (including slopes) and jump when standing on the ground:
