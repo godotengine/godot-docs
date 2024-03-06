@@ -159,7 +159,7 @@ it to the ``NORMALMAP`` property. Godot will handle converting it for use in 2D 
 | Built-in                                    | Description                                                   |
 +=============================================+===============================================================+
 | in vec4 **FRAGCOORD**                       | Coordinate of pixel center. In screen space. ``xy`` specifies |
-|                                             | position in window. Origin is lower-left.                     |
+|                                             | position in window. Origin is upper-left.                     |
 +---------------------------------------------+---------------------------------------------------------------+
 | in vec2 **SCREEN_PIXEL_SIZE**               | Size of individual pixels. Equal to inverse of resolution.    |
 +---------------------------------------------+---------------------------------------------------------------+
