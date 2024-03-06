@@ -4,8 +4,8 @@ Change scenes manually
 ======================
 
 Sometimes it helps to have more control over how one swaps scenes around.
-As mentioned above, a :ref:`Viewport <class_Viewport>`'s child nodes
-will render to the image it generates. This holds true even for nodes outside
+A :ref:`Viewport <class_Viewport>`'s child nodes will render to the image
+it generates, this holds true even for nodes outside
 of the "current" scene. Autoloads fall into this category, but so do
 scenes which one instances and adds to the tree at runtime:
 
