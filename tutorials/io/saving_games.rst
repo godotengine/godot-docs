@@ -141,7 +141,7 @@ way to pull the data out of the file as well.
     # Go through everything in the persist category and ask them to return a
     # dict of relevant variables.
     func save_game():
-        var save_game = FileAccess.open("user://savegame.save", FileAccess.WRITE)
+        var save_file = FileAccess.open("user://savegame.save", FileAccess.WRITE)
         var save_nodes = get_tree().get_nodes_in_group("Persist")
         for node in save_nodes:
             # Check the node is an instanced scene so it can be instanced again during load.
@@ -161,7 +161,7 @@ way to pull the data out of the file as well.
             var json_string = JSON.stringify(node_data)
 
             # Store the save dictionary as a new line in the save file.
-            save_game.store_line(json_string)
+            save_file.store_line(json_string)
 
  .. code-tab:: csharp
 
@@ -171,7 +171,7 @@ way to pull the data out of the file as well.
     // dict of relevant variables.
     public void SaveGame()
     {
-        using var saveGame = FileAccess.Open("user://savegame.save", FileAccess.ModeFlags.Write);
+        using var saveFile = FileAccess.Open("user://savegame.save", FileAccess.ModeFlags.Write);
 
         var saveNodes = GetTree().GetNodesInGroup("Persist");
         foreach (Node saveNode in saveNodes)
@@ -197,7 +197,7 @@ way to pull the data out of the file as well.
             var jsonString = Json.Stringify(nodeData);
 
             // Store the save dictionary as a new line in the save file.
-            saveGame.StoreLine(jsonString);
+            saveFile.StoreLine(jsonString);
         }
     }
 
@@ -228,9 +228,9 @@ load function:
 
         # Load the file line by line and process that dictionary to restore
         # the object it represents.
-        var save_game = FileAccess.open("user://savegame.save", FileAccess.READ)
-        while save_game.get_position() < save_game.get_length():
-            var json_string = save_game.get_line()
+        var save_file = FileAccess.open("user://savegame.save", FileAccess.READ)
+        while save_file.get_position() < save_file.get_length():
+            var json_string = save_file.get_line()
 
             # Creates the helper class to interact with JSON
             var json = JSON.new()
@@ -278,11 +278,11 @@ load function:
 
         // Load the file line by line and process that dictionary to restore the object
         // it represents.
-        using var saveGame = FileAccess.Open("user://savegame.save", FileAccess.ModeFlags.Read);
+        using var saveFile = FileAccess.Open("user://savegame.save", FileAccess.ModeFlags.Read);
 
-        while (saveGame.GetPosition() < saveGame.GetLength())
+        while (saveFile.GetPosition() < saveFile.GetLength())
         {
-            var jsonString = saveGame.GetLine();
+            var jsonString = saveFile.GetLine();
 
             // Creates the helper class to interact with JSON
             var json = new Json();
