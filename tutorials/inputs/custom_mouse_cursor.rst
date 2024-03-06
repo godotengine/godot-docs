@@ -7,8 +7,8 @@ You might want to change the appearance of the mouse cursor in your game in
 order to suit the overall design. There are two ways to customize the mouse
 cursor:
 
-1. Using project settings
-2. Using a script
+1. :ref:`Using project settings`
+2. :ref:`Using a script`
 
 Using project settings is a simpler (but more limited) way to customize the mouse cursor.
 The second way is more customizable, but involves scripting:
