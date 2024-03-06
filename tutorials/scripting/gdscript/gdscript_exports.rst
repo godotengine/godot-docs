@@ -368,6 +368,15 @@ Packed type arrays also work, but only initialized empty:
     @export var vector3s = PackedVector3Array()
     @export var strings = PackedStringArray()
 
+Other export variants can also be used when exporting arrays:
+
+::
+
+    @export_range(-360f, 360f, 0.001f, "radians") var laser_angles: Array[float] = []
+    @export_file("*.json") var skill_trees: Array[String] = []
+    @export_color_no_alpha var hair_colors = PackedColorArray()
+    @export_enum("Espresso", "Mocha", "Latte", "Capuccino") var barista_suggestions: Array[String] = []
+
 ``@export_storage``
 -------------------
 
