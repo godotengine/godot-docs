@@ -855,16 +855,16 @@ native or user class, or enum. Nested array types (like ``Array[Array[int]]``) a
     :ref:`Array.assign() <class_Array_method_assign>` method::
 
         var a: Array[Node2D] = [Node2D.new()]
-
         # (OK) You can add the value to the array because `Node2D` extends `Node`.
+   
         var b: Array[Node] = [a[0]]
-
         # (Error) You cannot assign an `Array[Node2D]` to an `Array[Node]` variable.
-        b = a
 
+        b = a
         # (OK) But you can use the `assign()` method instead. Unlike the `=` operator,
-        # the `assign()` method copies the contents of the array, not the reference.
+
         b.assign(a)
+        # the `assign()` method copies the contents of the array, not the reference.
 
     The only exception was made for the ``Array`` (``Array[Variant]``) type, for user convenience
     and compatibility with old code. However, operations on untyped arrays are considered unsafe.
