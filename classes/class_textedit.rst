@@ -75,6 +75,8 @@ Properties
    +-------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                           | :ref:`highlight_current_line<class_TextEdit_property_highlight_current_line>`                               | ``false``                                                                           |
    +-------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                           | :ref:`indent_wrapped_lines<class_TextEdit_property_indent_wrapped_lines>`                                   | ``false``                                                                           |
+   +-------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                                       | :ref:`language<class_TextEdit_property_language>`                                                           | ``""``                                                                              |
    +-------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                           | :ref:`middle_mouse_paste_enabled<class_TextEdit_property_middle_mouse_paste_enabled>`                       | ``true``                                                                            |
@@ -1329,6 +1331,23 @@ If ``true``, all occurrences of the selected text will be highlighted.
 - :ref:`bool<class_bool>` **is_highlight_current_line_enabled**\ (\ )
 
 If ``true``, the line containing the cursor is highlighted.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_TextEdit_property_indent_wrapped_lines:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **indent_wrapped_lines** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_indent_wrapped_lines**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_indent_wrapped_lines**\ (\ )
+
+If ``true``, all wrapped lines are indented to the same amount as the unwrapped line.
 
 .. rst-class:: classref-item-separator
 

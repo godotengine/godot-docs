@@ -276,7 +276,9 @@ Returns the contents of a text node. This method will raise an error if the curr
 
 :ref:`String<class_String>` **get_node_name**\ (\ ) |const|
 
-Returns the name of an element node. This method will raise an error if the currently parsed node is not of :ref:`NODE_ELEMENT<class_XMLParser_constant_NODE_ELEMENT>` or :ref:`NODE_ELEMENT_END<class_XMLParser_constant_NODE_ELEMENT_END>` type.
+Returns the name of a node. This method will raise an error if the currently parsed node is a text node.
+
+\ **Note:** The content of a :ref:`NODE_CDATA<class_XMLParser_constant_NODE_CDATA>` node and the comment string of a :ref:`NODE_COMMENT<class_XMLParser_constant_NODE_COMMENT>` node are also considered names.
 
 .. rst-class:: classref-item-separator
 

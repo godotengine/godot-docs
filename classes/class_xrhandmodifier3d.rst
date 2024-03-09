@@ -21,6 +21,10 @@ Description
 
 This node uses hand tracking data from a :ref:`XRHandTracker<class_XRHandTracker>` to animate the skeleton of a hand mesh.
 
+This node positions itself at the :ref:`XRHandTracker.HAND_JOINT_PALM<class_XRHandTracker_constant_HAND_JOINT_PALM>` position and scales itself to :ref:`XRServer.world_scale<class_XRServer_property_world_scale>`. Adding the hand model as a child of this node will result in the model being positioned and scaled correctly for XR experiences.
+
+The hand tracking position-data is scaled by :ref:`Skeleton3D.motion_scale<class_Skeleton3D_property_motion_scale>` when applied to the skeleton, which can be used to adjust the tracked hand to match the scale of the hand model.
+
 .. rst-class:: classref-introduction-group
 
 Tutorials

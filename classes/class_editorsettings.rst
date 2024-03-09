@@ -467,6 +467,8 @@ Properties
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                       | :ref:`project_manager/default_renderer<class_EditorSettings_property_project_manager/default_renderer>`                                                                             |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`project_manager/directory_naming_convention<class_EditorSettings_property_project_manager/directory_naming_convention>`                                                       |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`project_manager/sorting_order<class_EditorSettings_property_project_manager/sorting_order>`                                                                                   |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`run/auto_save/save_before_running<class_EditorSettings_property_run/auto_save/save_before_running>`                                                                           |
@@ -540,6 +542,8 @@ Properties
    | :ref:`bool<class_bool>`                           | :ref:`text_editor/behavior/files/trim_trailing_whitespace_on_save<class_EditorSettings_property_text_editor/behavior/files/trim_trailing_whitespace_on_save>`                       |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`text_editor/behavior/indent/auto_indent<class_EditorSettings_property_text_editor/behavior/indent/auto_indent>`                                                               |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`text_editor/behavior/indent/indent_wrapped_lines<class_EditorSettings_property_text_editor/behavior/indent/indent_wrapped_lines>`                                             |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`text_editor/behavior/indent/size<class_EditorSettings_property_text_editor/behavior/indent/size>`                                                                             |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -2529,9 +2533,9 @@ The subpixel positioning mode to use when rendering editor font glyphs. This aff
 
 :ref:`bool<class_bool>` **interface/editor/localize_settings**
 
-If ``true``, setting names in the Editor Settings are localized when possible. This is disabled by default, since localization can make it difficult to look up setting names online.
+If ``true``, setting names in the editor are localized when possible.
 
-\ **Note:** This setting does not control property name localization in the inspector. To show translated property names in the inspector, set :ref:`interface/inspector/default_property_name_style<class_EditorSettings_property_interface/inspector/default_property_name_style>` to **Localized**.
+\ **Note:** This setting affects most :ref:`EditorInspector<class_EditorInspector>`\ s in the editor UI, primarily Project Settings and Editor Settings. To control names displayed in the Inspector dock, use :ref:`interface/inspector/default_property_name_style<class_EditorSettings_property_interface/inspector/default_property_name_style>` instead.
 
 .. rst-class:: classref-item-separator
 
@@ -2817,15 +2821,15 @@ The floating-point precision to use for properties that don't define an explicit
 
 :ref:`int<class_int>` **interface/inspector/default_property_name_style**
 
-The property name style to display in the inspector.
+The default property name style to display in the Inspector dock. This style can be temporarily adjusted in the Inspector dock's menu.
 
-- **Raw:** Displays properties as they are defined in the script (typically in ``snake_case`` for GDScript and ``PascalCase`` for C#).
+- **Raw:** Displays properties in ``snake_case``.
 
-- **Capitalized:** Displays properties using :ref:`String.capitalize<class_String_method_capitalize>`.
+- **Capitalized:** Displays properties capitalized.
 
 - **Localized:** Displays the localized string for the current editor language if a translation is available for the given property. If no translation is available, falls back to **Capitalized**.
 
-\ **Note:** This setting does not control editor setting name display. To display translated editor setting names, enable :ref:`interface/editor/localize_settings<class_EditorSettings_property_interface/editor/localize_settings>` instead.
+\ **Note:** To display translated setting names in Project Settings and Editor Settings, use :ref:`interface/editor/localize_settings<class_EditorSettings_property_interface/editor/localize_settings>` instead.
 
 .. rst-class:: classref-item-separator
 
@@ -3379,6 +3383,18 @@ The renderer type that will be checked off by default when creating a new projec
 
 ----
 
+.. _class_EditorSettings_property_project_manager/directory_naming_convention:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **project_manager/directory_naming_convention**
+
+Directory naming convention for the project manager. Options are "No convention" (project name is directory name), "kebab-case" (default), "snake_case", "camelCase", "PascalCase", or "Title Case".
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_EditorSettings_property_project_manager/sorting_order:
 
 .. rst-class:: classref-property
@@ -3820,6 +3836,18 @@ If ``true``, trims trailing whitespace when saving a script. Trailing whitespace
 :ref:`bool<class_bool>` **text_editor/behavior/indent/auto_indent**
 
 If ``true``, automatically indents code when pressing the :kbd:`Enter` key based on blocks above the new line.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSettings_property_text_editor/behavior/indent/indent_wrapped_lines:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **text_editor/behavior/indent/indent_wrapped_lines**
+
+If ``true``, all wrapped lines are indented to the same amount as the unwrapped line.
 
 .. rst-class:: classref-item-separator
 
