@@ -37,7 +37,7 @@ We will now use a signal to make our Godot icon from the previous lesson
 Scene setup
 -----------
 
-To add a button to our game, we will create a new main scene which will include
+To add a button to our game, we will create a new scene which will include
 both a :ref:`Button <class_button>` and the ``sprite_2d.tscn`` scene we created in
 the :ref:`doc_scripting_first_script` lesson.
 
@@ -108,7 +108,7 @@ The dock displays a list of signals available on the selected node.
 
 Double-click the "pressed" signal to open the node connection window.
 
-.. image:: img/signals_12_node_connection.png
+.. image:: img/signals_12_node_connection.webp
 
 There, you can connect the signal to the Sprite2D node. The node needs a
 receiver method, a function that Godot will call when the Button emits the
