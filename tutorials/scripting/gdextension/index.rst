@@ -9,3 +9,4 @@ GDExtension
 
    what_is_gdextension
    gdextension_cpp_example
+   using_godot_cpp_template

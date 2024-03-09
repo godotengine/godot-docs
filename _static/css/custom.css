@@ -1779,7 +1779,7 @@ p + .classref-constant {
 }
 
 /* Tutorial */
-.tutorial .steps .comment {
+/* .tutorial .steps .comment {
     position: relative;
     padding-top: 1rem;
     padding-bottom: 1rem;
@@ -1834,10 +1834,10 @@ p + .classref-constant {
 
 .tutorial .display .content {
     display: none;
-}
+} */
 
 @media only screen and (min-width: 1036px) {
-    .tutorial {
+    /* .tutorial {
         display: grid;
         position: relative;
         top: 0;
@@ -1874,9 +1874,9 @@ p + .classref-constant {
         justify-content: center;
         width: 100%;
         height: 100%;
-    }
+    } */
 
-    .tutorial .step-context .literal-block-wrapper {
+    /* .tutorial .step-context .literal-block-wrapper {
         position: relative;
         width: 100%;
         height: 100%;
@@ -1898,8 +1898,17 @@ p + .classref-constant {
         width: 100%;
     }
 
-    .tutorial .step-context .literal-block-wrapper .code-block-caption + div .highlight {
+    .tutorial .step-context .literal-block-wrapper .code-block-caption + div .highlight,
+    .tutorial .step-context .literal-block-wrapper .code-block-caption + div .highlight pre {
         height: 100%;
+    } */
+/*
+    .tutorial .step-context .sphinx-tabs {
+        width: 100%;
+        height: 100%;
+        padding-top: 1em;
+        padding-bottom: 1em;
+        margin-bottom: 0;
     }
 
     .tutorial .top {
@@ -1921,11 +1930,45 @@ p + .classref-constant {
 
     .tutorial .steps .step-display {
         display: none;
+    } */
+}
+
+@media only screen and (min-width: 1036px) and (max-width: 1200px) {
+    /* .tutorial {
+        grid-template-columns:
+            200px 1fr;
+    } */
+}
+
+
+/**
+ * This class is converted from .tutorial by Javascript.
+ * If Javascript is turned off, the tutorial will not
+ * change from it's default .tutorial value and these styles
+ * will not be applied.
+ */
+.tutorial-dynamic {
+    display: block;
+}
+
+@media only screen and (min-width: 1036px) {
+    .tutorial-dynamic {
+        display: grid;
+        position: relative;
+        top: 0;
+        left: 0;
+        grid-template-areas:
+            "top    display"
+            "steps  display"
+            "bottom display";
+        grid-template-columns:
+            1fr 2fr;
+        gap: 1rem;
     }
 }
 
 @media only screen and (min-width: 1036px) and (max-width: 1200px) {
-    .tutorial {
+    .tutorial-dynamic {
         grid-template-columns:
             200px 1fr;
     }

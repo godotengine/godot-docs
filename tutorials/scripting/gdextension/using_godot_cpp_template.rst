@@ -1,4 +1,4 @@
-.. _doc_using_godot-cpp-template:
+.. _doc_using_godot_cpp_template:
 
 Using the godot-cpp-template
 ============================
@@ -26,13 +26,22 @@ Introduction
 
         .. container:: step-context
 
-            .. code-block:: cpp
-                :caption: src/test.cpp
-                :name: intro-step2-code
-                :linenos:
-                :emphasize-lines: 1
+            .. tabs::
+                .. code-tab:: cpp
+                    :name: intro-step2-code
+                    :linenos:
+                    :emphasize-lines: 1
 
-                #include <godot_cpp/classes/node.hpp>
+                    #include <godot_cpp/classes/node.hpp>
+
+                .. code-tab:: gdscript GDScript
+                    :caption: src/test.gd
+                    :name: intro-step2-code
+                    :linenos:
+                    :emphasize-lines: 1
+
+                    func _ready():
+                        print("Hello, World!")
 
     .. compound:: Step 3
 

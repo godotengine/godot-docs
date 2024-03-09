@@ -495,145 +495,275 @@ Documentation.highlightSearchWords = function() {
 }
 
 // Tutorial
+/** @type {{ STATIC: "STATIC", INTERACTIVE: "INTERACTIVE" } as const} */
+const TutorialViewType = {
+  STATIC: "STATIC",
+  INTERACTIVE: "INTERACTIVE"
+};
+const TUTORIAL_VIEW_INTERACTIVE_MIN_SIZE = 1036;
+/** @type {{ COMPOUND: "COMPOUND", COMMENT: "COMMENT" } as const} */
+const TutorialStepType = {
+  COMPOUND: "COMPOUND",
+  COMMENT: "COMMENT"
+};
+
+/** @type {() => (typeof TutorialViewType)[keyof typeof TutorialViewType]} */
+function getTutorialViewType() {
+  return window.innerWidth < TUTORIAL_VIEW_INTERACTIVE_MIN_SIZE
+    ? "STATIC"
+    : "INTERACTIVE";
+}
+
+/** @type {(tutorial: HTMLDivElement) => void} */
+function setupTutorial(tutorial) {
+  tutorial.classList.remove("tutorial");
+  tutorial.classList.add("tutorial-dynamic");
+
+  /**
+   * Boolean set each screen refresh to know if the screen has been resized.
+   */
+  let resized = false;
+
+  /**
+   * Current view type
+   * @type {(typeof TutorialViewType)[keyof typeof TutorialViewType]}
+   */
+  let currentViewType;
+
+  /** @type {Array<HTMLElement>} */
+  const tutorialChildren = Array.from(tutorial.children);
+  /**
+   * @typedef {{ type: (typeof TutorialStepType)[keyof typeof TutorialStepType] }} StepBase
+   * @typedef {StepBase & { type: "COMPOUND", first: HTMLDivElement, middle: HTMLDivElement, last: HTMLDivElement }} StepCompound
+   * @typedef {StepBase & { type: "COMMENT", comment: HTMLDivElement }} StepComment
+   */
+  const steps = tutorialChildren.map((step) => {
+    const type = step.classList.contains("compound")
+      ? "COMPOUND"
+      : "COMMENT";
+
+    if (type === "COMMENT") {
+      const comment = document.createElement("div");
+      comment.append(...Array.from(step.children));
+      /** @type {StepComment} */
+      const returnVal = {
+        type,
+        comment
+      };
+      return returnVal;
+    }
+
+    // Type is "COMPOUND".
+    const first = step.querySelector(".compound-first");
+    if (first == null) throw new Error("error while parsing step: first is null");
+    const middle = step.querySelector(".compound-middle");
+    if (middle == null) throw new Error("error while parsing step: middle is null");
+    const last = step.querySelector(".compound-last");
+    if (last == null) throw new Error("error while parsing step: last is null");
+    /** @type {StepCompound} */
+    const returnVal = {
+      type,
+      first,
+      middle,
+      last
+    };
+    return returnVal;
+  });
+
+  // Intersection observer
+  /** @type {Map<HTMLElement, IntersectionObserverEntry>} */
+  const observedEntries = new Map();
+  /** @type {HTMLDivElement | null} */
+  let activeEntry = null;
+
+  /** @type {IntersectionObserverInit} */
+  const observerOptions = {
+    root: null,
+  };
+  /** @type {IntersectionObserverCallback} */
+  const observerCallback = (entries, observer) => {
+    for (const entry of entries) {
+      if (observedEntries.has(entry.target)) {
+        observedEntries.delete(entry.target);
+      }
+      if (entry.isIntersecting) {
+        observedEntries.set(entry.target, entry);
+      }
+    }
+  };
+  /** @type {IntersectionObserver} */
+  const observer = new IntersectionObserver(observerCallback, observerOptions);
+  /** @type {NodeListOf<HTMLDivElement>} */
+  const compounds = tutorial.querySelectorAll(".steps .compound");
+  for (const compound of Array.from(compounds)) {
+    observer.observe(compound);
+  }
+
+  /** @type {(entry: HTMLDivElement) => void} */
+  const switchEntry = (entry) => {
+    if (entry === activeEntry || entry == null) {
+      return;
+    }
+
+    if (activeEntry !== null) {
+      activeEntry.classList.remove("active");
+    }
+    entry.classList.add("active");
+    activeEntry = entry;
+
+    // Remove the current element
+    for (const child of Array.from(content.children)) {
+      child.remove();
+    }
+
+    // Add the current element
+    /** @type {HTMLDivElement | null} */
+    const originalContext = entry.querySelector(".step-context");
+    if (originalContext == null) {
+      return;
+    }
+    /** @type {HTMLElement} */
+    const clonedContext = content.appendChild(originalContext.cloneNode(true));
+    clonedContext.classList.remove("compound-last", "docutils", "container");
+    clonedContext.hidden = false;
+  };
+
+  /** @type {FrameRequestCallback} */
+  const animationFrameRequest = (_time) => {
+    window.requestAnimationFrame(animationFrameRequest);
+
+    if (resized) {
+      handleResize();
+      resized = false;
+    }
+
+    if (observedEntries.size === 0) {
+      return;
+    }
+
+    /** @type {Array<{ entry: IntersectionObserverEntry, distance: number }>} */
+    let entries = [];
+    const clientHeight = document.documentElement.clientHeight;
+    const clientHeightQuarter = clientHeight / 4;
+    for (const [target, entry] of Array.from(observedEntries)) {
+      const entryCenter = (entry.target.getBoundingClientRect().bottom + entry.target.getBoundingClientRect().top) / 2;
+      const entryDistance = Math.abs(entryCenter - clientHeightQuarter);
+      entries.push({ entry, distance: entryDistance });
+    }
+    entries = entries.sort((a, b) => {
+      return a.distance - b.distance;
+    });
+
+    if (entries.length > 0) {
+      const firstEntry = entries[0];
+      switchEntry(firstEntry.entry.target);
+    } else {
+      switchEntry(null);
+    }
+  };
+  window.requestAnimationFrame(animationFrameRequest);
+
+  window.addEventListener("resize", () => {
+    resized = true;
+  });
+  const handleResize = () => {
+    const oldViewType = currentViewType;
+    currentViewType = getTutorialViewType();
+    if (oldViewType !== currentViewType) {
+      onViewTypeChange();
+    }
+  };
+  const onViewTypeChange = () => {
+    // Rebuild the layout.
+    clearLayout();
+
+    // switch (currentViewType) {
+    //   case "STATIC": {
+    //     buildStaticLayout(steps);
+    //   } break;
+
+    //   case "INTERACTIVE": {
+    //     buildInteractiveLayout(steps);
+    //   } break;
+    // }
+
+    buildStaticLayout();
+  };
+
+  const clearLayout = () => {
+    for (const child of Array.from(tutorial.children)) {
+      tutorial.removeChild(child);
+    }
+
+    tutorial.classList.remove("static");
+    tutorial.classList.remove("interactive");
+    observedEntries.clear();
+  };
+
+  const buildStaticLayout = () => {
+    tutorial.classList.add("static");
+
+    for (const step of steps) {
+      const stepContainer = document.createElement("div");
+      stepContainer.classList.add("step-container");
+
+      if (step.type === "COMMENT") {
+        stepContainer.classList.add("step-comment");
+        stepContainer.append(step.comment);
+      } else {
+        stepContainer.classList.add("step-compound");
+
+        const stepTextContainer = document.createElement("div");
+        stepTextContainer.classList.add("step-compound-box");
+        stepTextContainer.append(step.first, step.middle);
+        stepContainer.append(stepTextContainer);
+
+        const stepContentContainer = document.createElement("div");
+        stepContentContainer.classList.add("step-compound-content");
+        stepContentContainer.append(step.last);
+        stepContainer.append(stepContentContainer);
+      }
+
+      tutorial.append(stepContainer);
+    }
+  };
+
+  const buildInteractiveLayout = () => {
+    tutorial.classList.add("interactive");
+
+    for (const step of steps) {
+      const stepContainer = document.createElement("div");
+      stepContainer.classList.add("step-container");
+
+      if (step.type === "COMMENT") {
+        stepContainer.classList.add("step-comment");
+        stepContainer.append(step.comment);
+      } else {
+        stepContainer.classList.add("step-compound");
+
+        const stepTextContainer = document.createElement("div");
+        stepTextContainer.classList.add("step-compound-box");
+        stepTextContainer.append(step.first, step.middle);
+        stepContainer.append(stepTextContainer);
+
+        const stepContentContainer = document.createElement("div");
+        stepContentContainer.classList.add("step-compound-content");
+        stepContentContainer.append(step.last);
+        stepContainer.append(stepContentContainer);
+      }
+
+      tutorial.append(stepContainer);
+    }
+  };
+
+  switchEntry((tutorial.querySelectorAll(".steps .compound") ?? [null])[0]);
+  handleResize();
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   /** @type {NodeListOf<HTMLDivElement>} */
   const tutorials = document.querySelectorAll(".tutorial");
   for (const tutorial of Array.from(tutorials)) {
-    /**
-     * The left column
-     */
-    const steps = document.createElement("div");
-    steps.classList.add("steps");
-    steps.append(...Array.from(tutorial.children));
-    tutorial.append(steps);
-
-    /**
-     * The right column
-     * @type {HTMLDivElement}
-     */
-    const display = tutorial.appendChild(document.createElement("div"));
-    display.classList.add("display");
-
-    /**
-     * Top spacer
-     * @type {HTMLDivElement}
-     */
-    const top = tutorial.appendChild(document.createElement("div"));
-    top.classList.add("top");
-
-    /**
-     * Bottom spacer
-     * @type {HTMLDivElement}
-     */
-    const bottom = tutorial.appendChild(document.createElement("div"));
-    bottom.classList.add("bottom");
-
-    /**
-     * Content of the right column
-     * @type {HTMLDivElement}
-     */
-    const content = display.appendChild(document.createElement("div"));
-    content.classList.add("content");
-
-    /** @type {NodeListOf<HTMLDivElement>} */
-    const compoundSteps = tutorial.querySelectorAll(".steps .compound");
-    for (const compoundStep of Array.from(compoundSteps)) {
-      /** @type {HTMLDivElement | null} */
-      const stepContext = compoundStep.querySelector(".step-context");
-      if (stepContext == null) {
-        continue;
-      }
-
-      /** @type {HTMLDivElement} */
-      const clonedStepContext = stepContext.cloneNode(true);
-      clonedStepContext.classList.add("step-display");
-      compoundStep.after(clonedStepContext);
-    }
-
-    // Intersection observer
-    /** @type {Map<HTMLElement, IntersectionObserverEntry>} */
-    const observedEntries = new Map();
-    /** @type {HTMLDivElement | null} */
-    let activeEntry = null;
-
-    /** @type {IntersectionObserverInit} */
-    const observerOptions = {
-      root: null,
-    };
-    /** @type {IntersectionObserverCallback} */
-    const observerCallback = (entries, observer) => {
-      for (const entry of entries) {
-        if (observedEntries.has(entry.target)) {
-          observedEntries.delete(entry.target);
-        }
-        if (entry.isIntersecting) {
-          observedEntries.set(entry.target, entry);
-        }
-      }
-    };
-    /** @type {IntersectionObserver} */
-    const observer = new IntersectionObserver(observerCallback, observerOptions);
-    /** @type {NodeListOf<HTMLDivElement>} */
-    const compounds = tutorial.querySelectorAll(".steps .compound");
-    for (const compound of Array.from(compounds)) {
-      observer.observe(compound);
-    }
-
-    /** @type {(entry: HTMLDivElement) => void} */
-    const switchEntry = (entry) => {
-      if (entry === activeEntry || entry == null) {
-        return;
-      }
-
-      if (activeEntry !== null) {
-        activeEntry.classList.remove("active");
-      }
-      entry.classList.add("active");
-      activeEntry = entry;
-
-      // Remove the current element
-      for (const child of Array.from(content.children)) {
-        child.remove();
-      }
-
-      // Add the current element
-      /** @type {HTMLDivElement | null} */
-      const originalContext = entry.querySelector(".step-context");
-      if (originalContext == null) {
-        return;
-      }
-      /** @type {HTMLElement} */
-      const clonedContext = content.appendChild(originalContext.cloneNode(true));
-      clonedContext.classList.remove("compound-last", "docutils", "container");
-      clonedContext.hidden = false;
-    };
-
-    /** @type {FrameRequestCallback} */
-    const animationFrameRequest = (_time) => {
-      window.requestAnimationFrame(animationFrameRequest);
-
-      if (observedEntries.size === 0) {
-        return;
-      }
-
-      /** @type {Array<{ entry: IntersectionObserverEntry, distance: number }>} */
-      let entries = [];
-      const clientHeight = document.documentElement.clientHeight;
-      const clientHeightQuarter = clientHeight / 4;
-      for (const [target, entry] of Array.from(observedEntries)) {
-        const entryCenter = (entry.target.getBoundingClientRect().bottom + entry.target.getBoundingClientRect().top) / 2;
-        const entryDistance = Math.abs(entryCenter - clientHeightQuarter);
-        entries.push({ entry, distance: entryDistance });
-      }
-      entries = entries.sort((a, b) => {
-        return a.distance - b.distance;
-      });
-
-      const firstEntry = entries[0];
-      switchEntry(firstEntry.entry.target);
-    };
-    window.requestAnimationFrame(animationFrameRequest);
-
-    switchEntry((tutorial.querySelectorAll(".steps .compound") ?? [null])[0]);
+    setupTutorial(tutorial);
   }
 });
