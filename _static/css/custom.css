@@ -1963,7 +1963,36 @@ p + .classref-constant {
             "bottom display";
         grid-template-columns:
             1fr 2fr;
+        grid-template-rows:
+            100px
+            auto
+            calc(100vh - 1rem);
         gap: 1rem;
+    }
+
+    .tutorial-dynamic .top-container {
+        grid-area: top;
+    }
+
+    .tutorial-dynamic .steps-container {
+        grid-area: steps;
+    }
+
+    .tutorial-dynamic .bottom-container {
+        grid-area: bottom;
+    }
+
+    .tutorial-dynamic .display-container {
+        grid-area: display;
+    }
+
+    /* Let's hide non-active content. */
+    .tutorial-dynamic .display-container .step-compound-content {
+        /* display: none; */
+        position: sticky;
+        top: 0;
+        left: 0;
+        height: 100vh;
     }
 }
 

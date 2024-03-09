@@ -533,11 +533,11 @@ function setupTutorial(tutorial) {
   /** @type {Array<HTMLElement>} */
   const tutorialChildren = Array.from(tutorial.children);
   /**
-   * @typedef {{ type: (typeof TutorialStepType)[keyof typeof TutorialStepType] }} StepBase
+   * @typedef {{ type: (typeof TutorialStepType)[keyof typeof TutorialStepType], index: number }} StepBase
    * @typedef {StepBase & { type: "COMPOUND", first: HTMLDivElement, middle: HTMLDivElement, last: HTMLDivElement }} StepCompound
    * @typedef {StepBase & { type: "COMMENT", comment: HTMLDivElement }} StepComment
    */
-  const steps = tutorialChildren.map((step) => {
+  const steps = tutorialChildren.map((step, index) => {
     const type = step.classList.contains("compound")
       ? "COMPOUND"
       : "COMMENT";
@@ -548,6 +548,7 @@ function setupTutorial(tutorial) {
       /** @type {StepComment} */
       const returnVal = {
         type,
+        index,
         comment
       };
       return returnVal;
@@ -563,6 +564,7 @@ function setupTutorial(tutorial) {
     /** @type {StepCompound} */
     const returnVal = {
       type,
+      index,
       first,
       middle,
       last
@@ -601,6 +603,7 @@ function setupTutorial(tutorial) {
 
   /** @type {(entry: HTMLDivElement) => void} */
   const switchEntry = (entry) => {
+    console.log("switchEntry", entry);
     if (entry === activeEntry || entry == null) {
       return;
     }
@@ -610,22 +613,6 @@ function setupTutorial(tutorial) {
     }
     entry.classList.add("active");
     activeEntry = entry;
-
-    // Remove the current element
-    for (const child of Array.from(content.children)) {
-      child.remove();
-    }
-
-    // Add the current element
-    /** @type {HTMLDivElement | null} */
-    const originalContext = entry.querySelector(".step-context");
-    if (originalContext == null) {
-      return;
-    }
-    /** @type {HTMLElement} */
-    const clonedContext = content.appendChild(originalContext.cloneNode(true));
-    clonedContext.classList.remove("compound-last", "docutils", "container");
-    clonedContext.hidden = false;
   };
 
   /** @type {FrameRequestCallback} */
@@ -677,17 +664,15 @@ function setupTutorial(tutorial) {
     // Rebuild the layout.
     clearLayout();
 
-    // switch (currentViewType) {
-    //   case "STATIC": {
-    //     buildStaticLayout(steps);
-    //   } break;
+    switch (currentViewType) {
+      case "STATIC": {
+        buildStaticLayout(steps);
+      } break;
 
-    //   case "INTERACTIVE": {
-    //     buildInteractiveLayout(steps);
-    //   } break;
-    // }
-
-    buildStaticLayout();
+      case "INTERACTIVE": {
+        buildInteractiveLayout(steps);
+      } break;
+    }
   };
 
   const clearLayout = () => {
@@ -731,14 +716,28 @@ function setupTutorial(tutorial) {
   const buildInteractiveLayout = () => {
     tutorial.classList.add("interactive");
 
+    const topContainer = document.createElement("div");
+    topContainer.classList.add("top-container");
+
+    const stepsContainer = document.createElement("div");
+    stepsContainer.classList.add("steps-container");
+
+    const bottomContainer = document.createElement("div");
+    bottomContainer.classList.add("bottom-container");
+
+    const displayContainer = document.createElement("div");
+    displayContainer.classList.add("display-container");
+
     for (const step of steps) {
       const stepContainer = document.createElement("div");
       stepContainer.classList.add("step-container");
+      stepContainer.dataset["stepIndex"] = step.index;
 
       if (step.type === "COMMENT") {
         stepContainer.classList.add("step-comment");
         stepContainer.append(step.comment);
       } else {
+        // Step is of type "COMPOUND".
         stepContainer.classList.add("step-compound");
 
         const stepTextContainer = document.createElement("div");
@@ -746,14 +745,20 @@ function setupTutorial(tutorial) {
         stepTextContainer.append(step.first, step.middle);
         stepContainer.append(stepTextContainer);
 
+        // Instead of adding "step-compound-content" to the `stepContainer`
+        // (which is being added in `stepsContainer`), let's put it in
+        // `displayContainer` instead.
         const stepContentContainer = document.createElement("div");
         stepContentContainer.classList.add("step-compound-content");
+        stepContentContainer.dataset["stepIndex"] = step.index;
         stepContentContainer.append(step.last);
-        stepContainer.append(stepContentContainer);
+        displayContainer.append(stepContentContainer);
       }
 
-      tutorial.append(stepContainer);
+      stepsContainer.append(stepContainer);
     }
+
+    tutorial.append(topContainer, stepsContainer, bottomContainer, displayContainer);
   };
 
   switchEntry((tutorial.querySelectorAll(".steps .compound") ?? [null])[0]);
