@@ -18,6 +18,69 @@ ScriptLanguage
 
 	There is currently no description for this class. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
+
+Enumerations
+------------
+
+.. _enum_ScriptLanguage_ScriptNameCasing:
+
+.. rst-class:: classref-enumeration
+
+enum **ScriptNameCasing**:
+
+.. _class_ScriptLanguage_constant_SCRIPT_NAME_CASING_AUTO:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ScriptNameCasing<enum_ScriptLanguage_ScriptNameCasing>` **SCRIPT_NAME_CASING_AUTO** = ``0``
+
+.. container:: contribute
+
+	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+
+
+.. _class_ScriptLanguage_constant_SCRIPT_NAME_CASING_PASCAL_CASE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ScriptNameCasing<enum_ScriptLanguage_ScriptNameCasing>` **SCRIPT_NAME_CASING_PASCAL_CASE** = ``1``
+
+.. container:: contribute
+
+	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+
+
+.. _class_ScriptLanguage_constant_SCRIPT_NAME_CASING_SNAKE_CASE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ScriptNameCasing<enum_ScriptLanguage_ScriptNameCasing>` **SCRIPT_NAME_CASING_SNAKE_CASE** = ``2``
+
+.. container:: contribute
+
+	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+
+
+.. _class_ScriptLanguage_constant_SCRIPT_NAME_CASING_KEBAB_CASE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ScriptNameCasing<enum_ScriptLanguage_ScriptNameCasing>` **SCRIPT_NAME_CASING_KEBAB_CASE** = ``3``
+
+.. container:: contribute
+
+	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+
+
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

@@ -77,6 +77,8 @@ Properties
    +---------------------------------------------------------------+-------------------------------------------------------------------------------------+
    | :ref:`Marshalls<class_Marshalls>`                             | :ref:`Marshalls<class_@GlobalScope_property_Marshalls>`                             |
    +---------------------------------------------------------------+-------------------------------------------------------------------------------------+
+   | :ref:`NativeMenu<class_NativeMenu>`                           | :ref:`NativeMenu<class_@GlobalScope_property_NativeMenu>`                           |
+   +---------------------------------------------------------------+-------------------------------------------------------------------------------------+
    | :ref:`NavigationMeshGenerator<class_NavigationMeshGenerator>` | :ref:`NavigationMeshGenerator<class_@GlobalScope_property_NavigationMeshGenerator>` |
    +---------------------------------------------------------------+-------------------------------------------------------------------------------------+
    | :ref:`NavigationServer2D<class_NavigationServer2D>`           | :ref:`NavigationServer2D<class_@GlobalScope_property_NavigationServer2D>`           |
@@ -4952,6 +4954,20 @@ The :ref:`JavaScriptBridge<class_JavaScriptBridge>` singleton.
 :ref:`Marshalls<class_Marshalls>` **Marshalls**
 
 The :ref:`Marshalls<class_Marshalls>` singleton.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_@GlobalScope_property_NativeMenu:
+
+.. rst-class:: classref-property
+
+:ref:`NativeMenu<class_NativeMenu>` **NativeMenu**
+
+The :ref:`NativeMenu<class_NativeMenu>` singleton.
+
+\ **Note:** Only implemented on macOS.
 
 .. rst-class:: classref-item-separator
 

@@ -175,6 +175,7 @@ Nodes
     class_optionbutton
     class_panel
     class_panelcontainer
+    class_parallax2d
     class_parallaxbackground
     class_parallaxlayer
     class_path2d
@@ -782,6 +783,7 @@ Other objects
     class_multiplayerpeer
     class_multiplayerpeerextension
     class_mutex
+    class_nativemenu
     class_navigationmeshgenerator
     class_navigationpathqueryparameters2d
     class_navigationpathqueryparameters3d

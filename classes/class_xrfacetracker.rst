@@ -10,6 +10,8 @@
 XRFaceTracker
 =============
 
+**Experimental:** This class may be changed or removed in future versions.
+
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
 A tracked face.

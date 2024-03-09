@@ -10,6 +10,8 @@
 XRBodyModifier3D
 ================
 
+**Experimental:** This class may be changed or removed in future versions.
+
 **Inherits:** :ref:`Node3D<class_Node3D>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
 A node for driving body meshes from :ref:`XRBodyTracker<class_XRBodyTracker>` data.
@@ -20,6 +22,10 @@ Description
 -----------
 
 This node uses body tracking data from a :ref:`XRBodyTracker<class_XRBodyTracker>` to animate the skeleton of a body mesh.
+
+This node positions itself at the :ref:`XRBodyTracker.JOINT_ROOT<class_XRBodyTracker_constant_JOINT_ROOT>` position and scales itself to :ref:`XRServer.world_scale<class_XRServer_property_world_scale>`. Adding the body model as a child of this node will result in the model being positioned and scaled correctly for XR experiences.
+
+The body tracking position-data is scaled by :ref:`Skeleton3D.motion_scale<class_Skeleton3D_property_motion_scale>` when applied to the skeleton, which can be used to adjust the tracked body to match the scale of the body model.
 
 .. rst-class:: classref-introduction-group
 

@@ -10,6 +10,8 @@
 XRFaceModifier3D
 ================
 
+**Experimental:** This class may be changed or removed in future versions.
+
 **Inherits:** :ref:`Node3D<class_Node3D>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
 A node for driving standard face meshes from :ref:`XRFaceTracker<class_XRFaceTracker>` weights.

@@ -46,13 +46,15 @@ Properties
 .. table::
    :widths: auto
 
-   +-----------------------------+---------------------------------------------------------------------------------+-----------+
-   | :ref:`bool<class_bool>`     | :ref:`resource_local_to_scene<class_Resource_property_resource_local_to_scene>` | ``false`` |
-   +-----------------------------+---------------------------------------------------------------------------------+-----------+
-   | :ref:`String<class_String>` | :ref:`resource_name<class_Resource_property_resource_name>`                     | ``""``    |
-   +-----------------------------+---------------------------------------------------------------------------------+-----------+
-   | :ref:`String<class_String>` | :ref:`resource_path<class_Resource_property_resource_path>`                     | ``""``    |
-   +-----------------------------+---------------------------------------------------------------------------------+-----------+
+   +-----------------------------+-----------------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`     | :ref:`resource_local_to_scene<class_Resource_property_resource_local_to_scene>`   | ``false`` |
+   +-----------------------------+-----------------------------------------------------------------------------------+-----------+
+   | :ref:`String<class_String>` | :ref:`resource_name<class_Resource_property_resource_name>`                       | ``""``    |
+   +-----------------------------+-----------------------------------------------------------------------------------+-----------+
+   | :ref:`String<class_String>` | :ref:`resource_path<class_Resource_property_resource_path>`                       | ``""``    |
+   +-----------------------------+-----------------------------------------------------------------------------------+-----------+
+   | :ref:`String<class_String>` | :ref:`resource_scene_unique_id<class_Resource_property_resource_scene_unique_id>` |           |
+   +-----------------------------+-----------------------------------------------------------------------------------+-----------+
 
 .. rst-class:: classref-reftable-group
 
@@ -70,6 +72,8 @@ Methods
    | :ref:`Resource<class_Resource>` | :ref:`duplicate<class_Resource_method_duplicate>`\ (\ subresources\: :ref:`bool<class_bool>` = false\ ) |const| |
    +---------------------------------+-----------------------------------------------------------------------------------------------------------------+
    | |void|                          | :ref:`emit_changed<class_Resource_method_emit_changed>`\ (\ )                                                   |
+   +---------------------------------+-----------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`     | :ref:`generate_scene_unique_id<class_Resource_method_generate_scene_unique_id>`\ (\ ) |static|                  |
    +---------------------------------+-----------------------------------------------------------------------------------------------------------------+
    | :ref:`Node<class_Node>`         | :ref:`get_local_scene<class_Resource_method_get_local_scene>`\ (\ ) |const|                                     |
    +---------------------------------+-----------------------------------------------------------------------------------------------------------------+
@@ -175,6 +179,29 @@ The unique path to this resource. If it has been saved to disk, the value will b
 
 \ **Note:** Setting this property manually may fail if a resource with the same path has already been previously loaded. If necessary, use :ref:`take_over_path<class_Resource_method_take_over_path>`.
 
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Resource_property_resource_scene_unique_id:
+
+.. rst-class:: classref-property
+
+:ref:`String<class_String>` **resource_scene_unique_id**
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_scene_unique_id**\ (\ value\: :ref:`String<class_String>`\ )
+- :ref:`String<class_String>` **get_scene_unique_id**\ (\ )
+
+An unique identifier relative to the this resource's scene. If left empty, the ID is automatically generated when this resource is saved inside a :ref:`PackedScene<class_PackedScene>`. If the resource is not inside a scene, this property is empty by default.
+
+\ **Note:** When the :ref:`PackedScene<class_PackedScene>` is saved, if multiple resources in the same scene use the same ID, only the earliest resource in the scene hierarchy keeps the original ID. The other resources are assigned new IDs from :ref:`generate_scene_unique_id<class_Resource_method_generate_scene_unique_id>`.
+
+\ **Note:** Setting this property does not emit the :ref:`changed<class_Resource_signal_changed>` signal.
+
+\ **Warning:** When setting, the ID must only consist of letters, numbers, and underscores. Otherwise, it will fail and default to a randomly generated ID.
+
 .. rst-class:: classref-section-separator
 
 ----
@@ -254,6 +281,18 @@ Emits the :ref:`changed<class_Resource_signal_changed>` signal. This method is c
             if damage != new_value:
                 damage = new_value
                 emit_changed()
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Resource_method_generate_scene_unique_id:
+
+.. rst-class:: classref-method
+
+:ref:`String<class_String>` **generate_scene_unique_id**\ (\ ) |static|
+
+Generates a unique identifier for a resource to be contained inside a :ref:`PackedScene<class_PackedScene>`, based on the current date, time, and a random value. The returned string is only composed of letters (``a`` to ``y``) and numbers (``0`` to ``8``). See also :ref:`resource_scene_unique_id<class_Resource_property_resource_scene_unique_id>`.
 
 .. rst-class:: classref-item-separator
 

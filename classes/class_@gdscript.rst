@@ -194,13 +194,30 @@ See also :ref:`@GlobalScope.PROPERTY_USAGE_CATEGORY<class_@GlobalScope_constant_
 
 **@export_color_no_alpha**\ (\ )
 
-Export a :ref:`Color<class_Color>` property without allowing its transparency (:ref:`Color.a<class_Color_property_a>`) to be edited.
+Export a :ref:`Color<class_Color>`, :ref:`Array<class_Array>`\ \[:ref:`Color<class_Color>`\ \], or :ref:`PackedColorArray<class_PackedColorArray>` property without allowing its transparency (:ref:`Color.a<class_Color_property_a>`) to be edited.
 
 See also :ref:`@GlobalScope.PROPERTY_HINT_COLOR_NO_ALPHA<class_@GlobalScope_constant_PROPERTY_HINT_COLOR_NO_ALPHA>`.
 
 ::
 
     @export_color_no_alpha var dye_color: Color
+    @export_color_no_alpha var dye_colors: Array[Color]
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_@GDScript_annotation_@export_custom:
+
+.. rst-class:: classref-annotation
+
+**@export_custom**\ (\ hint\: :ref:`PropertyHint<enum_@GlobalScope_PropertyHint>`, hint_string\: :ref:`String<class_String>`, usage\: |bitfield|\[:ref:`PropertyUsageFlags<enum_@GlobalScope_PropertyUsageFlags>`\] = 6\ )
+
+Allows you to set a custom hint, hint string, and usage flags for the exported property. Note that there's no validation done in GDScript, it will just pass the hint along to the editor.
+
+::
+
+    @export_custom(PROPERTY_HINT_NONE, "suffix:m") var suffix: Vector3
 
 .. rst-class:: classref-item-separator
 
@@ -212,13 +229,14 @@ See also :ref:`@GlobalScope.PROPERTY_HINT_COLOR_NO_ALPHA<class_@GlobalScope_cons
 
 **@export_dir**\ (\ )
 
-Export a :ref:`String<class_String>` property as a path to a directory. The path will be limited to the project folder and its subfolders. See :ref:`@export_global_dir<class_@GDScript_annotation_@export_global_dir>` to allow picking from the entire filesystem.
+Export a :ref:`String<class_String>`, :ref:`Array<class_Array>`\ \[:ref:`String<class_String>`\ \], or :ref:`PackedStringArray<class_PackedStringArray>` property as a path to a directory. The path will be limited to the project folder and its subfolders. See :ref:`@export_global_dir<class_@GDScript_annotation_@export_global_dir>` to allow picking from the entire filesystem.
 
 See also :ref:`@GlobalScope.PROPERTY_HINT_DIR<class_@GlobalScope_constant_PROPERTY_HINT_DIR>`.
 
 ::
 
     @export_dir var sprite_folder_path: String
+    @export_dir var sprite_folder_paths: Array[String]
 
 .. rst-class:: classref-item-separator
 
@@ -230,7 +248,7 @@ See also :ref:`@GlobalScope.PROPERTY_HINT_DIR<class_@GlobalScope_constant_PROPER
 
 **@export_enum**\ (\ names\: :ref:`String<class_String>`, ...\ ) |vararg|
 
-Export an :ref:`int<class_int>` or :ref:`String<class_String>` property as an enumerated list of options. If the property is an :ref:`int<class_int>`, then the index of the value is stored, in the same order the values are provided. You can add explicit values using a colon. If the property is a :ref:`String<class_String>`, then the value is stored.
+Export an :ref:`int<class_int>`, :ref:`String<class_String>`, :ref:`Array<class_Array>`\ \[:ref:`int<class_int>`\ \], :ref:`Array<class_Array>`\ \[:ref:`String<class_String>`\ \], :ref:`PackedByteArray<class_PackedByteArray>`, :ref:`PackedInt32Array<class_PackedInt32Array>`, :ref:`PackedInt64Array<class_PackedInt64Array>`, or :ref:`PackedStringArray<class_PackedStringArray>` property as an enumerated list of options (or an array of options). If the property is an :ref:`int<class_int>`, then the index of the value is stored, in the same order the values are provided. You can add explicit values using a colon. If the property is a :ref:`String<class_String>`, then the value is stored.
 
 See also :ref:`@GlobalScope.PROPERTY_HINT_ENUM<class_@GlobalScope_constant_PROPERTY_HINT_ENUM>`.
 
@@ -239,6 +257,9 @@ See also :ref:`@GlobalScope.PROPERTY_HINT_ENUM<class_@GlobalScope_constant_PROPE
     @export_enum("Warrior", "Magician", "Thief") var character_class: int
     @export_enum("Slow:30", "Average:60", "Very Fast:200") var character_speed: int
     @export_enum("Rebecca", "Mary", "Leah") var character_name: String
+    
+    @export_enum("Sword", "Spear", "Mace") var character_items: Array[int]
+    @export_enum("double_jump", "climb", "dash") var character_skills: Array[String]
 
 If you want to set an initial value, you must specify it explicitly:
 
@@ -252,6 +273,9 @@ If you want to use named GDScript enums, then use :ref:`@export<class_@GDScript_
 
     enum CharacterName {REBECCA, MARY, LEAH}
     @export var character_name: CharacterName
+    
+    enum CharacterItem {SWORD, SPEAR, MACE}
+    @export var character_items: Array[CharacterItem]
 
 .. rst-class:: classref-item-separator
 
@@ -272,6 +296,7 @@ See also :ref:`@GlobalScope.PROPERTY_HINT_EXP_EASING<class_@GlobalScope_constant
     @export_exp_easing var transition_speed
     @export_exp_easing("attenuation") var fading_attenuation
     @export_exp_easing("positive_only") var effect_power
+    @export_exp_easing var speeds: Array[float]
 
 .. rst-class:: classref-item-separator
 
@@ -283,7 +308,7 @@ See also :ref:`@GlobalScope.PROPERTY_HINT_EXP_EASING<class_@GlobalScope_constant
 
 **@export_file**\ (\ filter\: :ref:`String<class_String>` = "", ...\ ) |vararg|
 
-Export a :ref:`String<class_String>` property as a path to a file. The path will be limited to the project folder and its subfolders. See :ref:`@export_global_file<class_@GDScript_annotation_@export_global_file>` to allow picking from the entire filesystem.
+Export a :ref:`String<class_String>`, :ref:`Array<class_Array>`\ \[:ref:`String<class_String>`\ \], or :ref:`PackedStringArray<class_PackedStringArray>` property as a path to a file. The path will be limited to the project folder and its subfolders. See :ref:`@export_global_file<class_@GDScript_annotation_@export_global_file>` to allow picking from the entire filesystem.
 
 If ``filter`` is provided, only matching files will be available for picking.
 
@@ -293,6 +318,7 @@ See also :ref:`@GlobalScope.PROPERTY_HINT_FILE<class_@GlobalScope_constant_PROPE
 
     @export_file var sound_effect_path: String
     @export_file("*.txt") var notes_path: String
+    @export_file var level_paths: Array[String]
 
 .. rst-class:: classref-item-separator
 
@@ -333,6 +359,12 @@ You can also combine several flags:
 
     @export_flags("A:16", "B", "C") var x
 
+You can also use the annotation on :ref:`Array<class_Array>`\ \[:ref:`int<class_int>`\ \], :ref:`PackedByteArray<class_PackedByteArray>`, :ref:`PackedInt32Array<class_PackedInt32Array>`, and :ref:`PackedInt64Array<class_PackedInt64Array>`\ 
+
+::
+
+    @export_flags("Fire", "Water", "Earth", "Wind") var phase_elements: Array[int]
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -350,6 +382,7 @@ See also :ref:`@GlobalScope.PROPERTY_HINT_LAYERS_2D_NAVIGATION<class_@GlobalScop
 ::
 
     @export_flags_2d_navigation var navigation_layers: int
+    @export_flags_2d_navigation var navigation_layers_array: Array[int]
 
 .. rst-class:: classref-item-separator
 
@@ -368,6 +401,7 @@ See also :ref:`@GlobalScope.PROPERTY_HINT_LAYERS_2D_PHYSICS<class_@GlobalScope_c
 ::
 
     @export_flags_2d_physics var physics_layers: int
+    @export_flags_2d_physics var physics_layers_array: Array[int]
 
 .. rst-class:: classref-item-separator
 
@@ -386,6 +420,7 @@ See also :ref:`@GlobalScope.PROPERTY_HINT_LAYERS_2D_RENDER<class_@GlobalScope_co
 ::
 
     @export_flags_2d_render var render_layers: int
+    @export_flags_2d_render var render_layers_array: Array[int]
 
 .. rst-class:: classref-item-separator
 
@@ -404,6 +439,7 @@ See also :ref:`@GlobalScope.PROPERTY_HINT_LAYERS_3D_NAVIGATION<class_@GlobalScop
 ::
 
     @export_flags_3d_navigation var navigation_layers: int
+    @export_flags_3d_navigation var navigation_layers_array: Array[int]
 
 .. rst-class:: classref-item-separator
 
@@ -422,6 +458,7 @@ See also :ref:`@GlobalScope.PROPERTY_HINT_LAYERS_3D_PHYSICS<class_@GlobalScope_c
 ::
 
     @export_flags_3d_physics var physics_layers: int
+    @export_flags_3d_physics var physics_layers_array: Array[int]
 
 .. rst-class:: classref-item-separator
 
@@ -440,6 +477,7 @@ See also :ref:`@GlobalScope.PROPERTY_HINT_LAYERS_3D_RENDER<class_@GlobalScope_co
 ::
 
     @export_flags_3d_render var render_layers: int
+    @export_flags_3d_render var render_layers_array: Array[int]
 
 .. rst-class:: classref-item-separator
 
@@ -458,6 +496,7 @@ See also :ref:`@GlobalScope.PROPERTY_HINT_LAYERS_AVOIDANCE<class_@GlobalScope_co
 ::
 
     @export_flags_avoidance var avoidance_layers: int
+    @export_flags_avoidance var avoidance_layers_array: Array[int]
 
 .. rst-class:: classref-item-separator
 
@@ -469,13 +508,14 @@ See also :ref:`@GlobalScope.PROPERTY_HINT_LAYERS_AVOIDANCE<class_@GlobalScope_co
 
 **@export_global_dir**\ (\ )
 
-Export a :ref:`String<class_String>` property as an absolute path to a directory. The path can be picked from the entire filesystem. See :ref:`@export_dir<class_@GDScript_annotation_@export_dir>` to limit it to the project folder and its subfolders.
+Export a :ref:`String<class_String>`, :ref:`Array<class_Array>`\ \[:ref:`String<class_String>`\ \], or :ref:`PackedStringArray<class_PackedStringArray>` property as an absolute path to a directory. The path can be picked from the entire filesystem. See :ref:`@export_dir<class_@GDScript_annotation_@export_dir>` to limit it to the project folder and its subfolders.
 
 See also :ref:`@GlobalScope.PROPERTY_HINT_GLOBAL_DIR<class_@GlobalScope_constant_PROPERTY_HINT_GLOBAL_DIR>`.
 
 ::
 
     @export_global_dir var sprite_folder_path: String
+    @export_global_dir var sprite_folder_paths: Array[String]
 
 .. rst-class:: classref-item-separator
 
@@ -487,7 +527,7 @@ See also :ref:`@GlobalScope.PROPERTY_HINT_GLOBAL_DIR<class_@GlobalScope_constant
 
 **@export_global_file**\ (\ filter\: :ref:`String<class_String>` = "", ...\ ) |vararg|
 
-Export a :ref:`String<class_String>` property as an absolute path to a file. The path can be picked from the entire filesystem. See :ref:`@export_file<class_@GDScript_annotation_@export_file>` to limit it to the project folder and its subfolders.
+Export a :ref:`String<class_String>`, :ref:`Array<class_Array>`\ \[:ref:`String<class_String>`\ \], or :ref:`PackedStringArray<class_PackedStringArray>` property as an absolute path to a file. The path can be picked from the entire filesystem. See :ref:`@export_file<class_@GDScript_annotation_@export_file>` to limit it to the project folder and its subfolders.
 
 If ``filter`` is provided, only matching files will be available for picking.
 
@@ -497,6 +537,7 @@ See also :ref:`@GlobalScope.PROPERTY_HINT_GLOBAL_FILE<class_@GlobalScope_constan
 
     @export_global_file var sound_effect_path: String
     @export_global_file("*.txt") var notes_path: String
+    @export_global_file var multiple_paths: Array[String]
 
 .. rst-class:: classref-item-separator
 
@@ -539,13 +580,14 @@ See also :ref:`@GlobalScope.PROPERTY_USAGE_GROUP<class_@GlobalScope_constant_PRO
 
 **@export_multiline**\ (\ )
 
-Export a :ref:`String<class_String>` property with a large :ref:`TextEdit<class_TextEdit>` widget instead of a :ref:`LineEdit<class_LineEdit>`. This adds support for multiline content and makes it easier to edit large amount of text stored in the property.
+Export a :ref:`String<class_String>`, :ref:`Array<class_Array>`\ \[:ref:`String<class_String>`\ \], :ref:`PackedStringArray<class_PackedStringArray>`, :ref:`Dictionary<class_Dictionary>` or :ref:`Array<class_Array>`\ \[:ref:`Dictionary<class_Dictionary>`\ \] property with a large :ref:`TextEdit<class_TextEdit>` widget instead of a :ref:`LineEdit<class_LineEdit>`. This adds support for multiline content and makes it easier to edit large amount of text stored in the property.
 
 See also :ref:`@GlobalScope.PROPERTY_HINT_MULTILINE_TEXT<class_@GlobalScope_constant_PROPERTY_HINT_MULTILINE_TEXT>`.
 
 ::
 
     @export_multiline var character_biography
+    @export_multiline var npc_dialogs: Array[String]
 
 .. rst-class:: classref-item-separator
 
@@ -557,13 +599,14 @@ See also :ref:`@GlobalScope.PROPERTY_HINT_MULTILINE_TEXT<class_@GlobalScope_cons
 
 **@export_node_path**\ (\ type\: :ref:`String<class_String>` = "", ...\ ) |vararg|
 
-Export a :ref:`NodePath<class_NodePath>` property with a filter for allowed node types.
+Export a :ref:`NodePath<class_NodePath>` or :ref:`Array<class_Array>`\ \[:ref:`NodePath<class_NodePath>`\ \] property with a filter for allowed node types.
 
 See also :ref:`@GlobalScope.PROPERTY_HINT_NODE_PATH_VALID_TYPES<class_@GlobalScope_constant_PROPERTY_HINT_NODE_PATH_VALID_TYPES>`.
 
 ::
 
     @export_node_path("Button", "TouchScreenButton") var some_button
+    @export_node_path("Button", "TouchScreenButton") var many_buttons: Array[NodePath]
 
 \ **Note:** The type must be a native class or a globally registered script (using the ``class_name`` keyword) that inherits :ref:`Node<class_Node>`.
 
@@ -577,13 +620,14 @@ See also :ref:`@GlobalScope.PROPERTY_HINT_NODE_PATH_VALID_TYPES<class_@GlobalSco
 
 **@export_placeholder**\ (\ placeholder\: :ref:`String<class_String>`\ )
 
-Export a :ref:`String<class_String>` property with a placeholder text displayed in the editor widget when no value is present.
+Export a :ref:`String<class_String>`, :ref:`Array<class_Array>`\ \[:ref:`String<class_String>`\ \], or :ref:`PackedStringArray<class_PackedStringArray>` property with a placeholder text displayed in the editor widget when no value is present.
 
 See also :ref:`@GlobalScope.PROPERTY_HINT_PLACEHOLDER_TEXT<class_@GlobalScope_constant_PROPERTY_HINT_PLACEHOLDER_TEXT>`.
 
 ::
 
     @export_placeholder("Name in lowercase") var character_id: String
+    @export_placeholder("Name in lowercase") var friend_ids: Array[String]
 
 .. rst-class:: classref-item-separator
 
@@ -595,7 +639,7 @@ See also :ref:`@GlobalScope.PROPERTY_HINT_PLACEHOLDER_TEXT<class_@GlobalScope_co
 
 **@export_range**\ (\ min\: :ref:`float<class_float>`, max\: :ref:`float<class_float>`, step\: :ref:`float<class_float>` = 1.0, extra_hints\: :ref:`String<class_String>` = "", ...\ ) |vararg|
 
-Export an :ref:`int<class_int>` or :ref:`float<class_float>` property as a range value. The range must be defined by ``min`` and ``max``, as well as an optional ``step`` and a variety of extra hints. The ``step`` defaults to ``1`` for integer properties. For floating-point numbers this value depends on your :ref:`EditorSettings.interface/inspector/default_float_step<class_EditorSettings_property_interface/inspector/default_float_step>` setting.
+Export an :ref:`int<class_int>`, :ref:`float<class_float>`, :ref:`Array<class_Array>`\ \[:ref:`int<class_int>`\ \], :ref:`Array<class_Array>`\ \[:ref:`float<class_float>`\ \], :ref:`PackedByteArray<class_PackedByteArray>`, :ref:`PackedInt32Array<class_PackedInt32Array>`, :ref:`PackedInt64Array<class_PackedInt64Array>`, :ref:`PackedFloat32Array<class_PackedFloat32Array>`, or :ref:`PackedFloat64Array<class_PackedFloat64Array>` property as a range value. The range must be defined by ``min`` and ``max``, as well as an optional ``step`` and a variety of extra hints. The ``step`` defaults to ``1`` for integer properties. For floating-point numbers this value depends on your :ref:`EditorSettings.interface/inspector/default_float_step<class_EditorSettings_property_interface/inspector/default_float_step>` setting.
 
 If hints ``"or_greater"`` and ``"or_less"`` are provided, the editor widget will not cap the value at range boundaries. The ``"exp"`` hint will make the edited values on range to change exponentially. The ``"hide_slider"`` hint will hide the slider element of the editor widget.
 
@@ -608,6 +652,7 @@ See also :ref:`@GlobalScope.PROPERTY_HINT_RANGE<class_@GlobalScope_constant_PROP
     @export_range(0, 20) var number
     @export_range(-10, 20) var number
     @export_range(-10, 20, 0.2) var number: float
+    @export_range(0, 20) var numbers: Array[float]
     
     @export_range(0, 100, 1, "or_greater") var power_percent
     @export_range(0, 100, 1, "or_greater", "or_less") var health_delta
@@ -910,7 +955,7 @@ Returns an array of dictionaries representing the current call stack. See also :
 
 Starting from ``_ready()``, ``bar()`` would print:
 
-::
+.. code::
 
     [{function:bar, line:12, source:res://script.gd}, {function:foo, line:9, source:res://script.gd}, {function:_ready, line:6, source:res://script.gd}]
 
@@ -942,7 +987,7 @@ Returns the passed ``instance`` converted to a Dictionary. Can be useful for ser
 
 Prints out:
 
-::
+.. code::
 
     [@subpath, @path, foo]
     [, res://test.gd, bar]
@@ -1060,7 +1105,7 @@ Like :ref:`@GlobalScope.print<class_@GlobalScope_method_print>`, but includes th
 
 The output in the console may look like the following:
 
-::
+.. code::
 
     Test print
     At: res://test.gd:15:_process()
@@ -1081,7 +1126,7 @@ Prints a stack trace at the current code location. See also :ref:`get_stack<clas
 
 The output in the console may look like the following:
 
-::
+.. code::
 
     Frame 0 - res://test.gd:16 in function '_process'
 
@@ -1130,7 +1175,7 @@ To iterate over an :ref:`Array<class_Array>` backwards, use:
 
 Output:
 
-::
+.. code::
 
     9
     6
@@ -1145,7 +1190,7 @@ To iterate over :ref:`float<class_float>`, convert them in the loop.
 
 Output:
 
-::
+.. code::
 
     0.3
     0.2

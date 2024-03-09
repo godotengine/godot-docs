@@ -107,6 +107,18 @@ Emitted when a trigger or similar input on this controller changes value.
 
 Emitted when a thumbstick or thumbpad on this controller is moved.
 
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_XRController3D_signal_profile_changed:
+
+.. rst-class:: classref-signal
+
+**profile_changed**\ (\ role\: :ref:`String<class_String>`\ )
+
+Emitted when the interaction profile on this controller is changed.
+
 .. rst-class:: classref-section-separator
 
 ----

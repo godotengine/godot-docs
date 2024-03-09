@@ -1075,6 +1075,8 @@ If set above ``0.0``, renders the scene's directional light(s) in the fog color 
 
 The glow blending mode.
 
+\ **Note:** :ref:`glow_blend_mode<class_Environment_property_glow_blend_mode>` has no effect when using the Compatibility rendering method, due to this rendering method using a simpler glow implementation optimized for low-end devices.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -1107,9 +1109,11 @@ The bloom's intensity. If set to a value higher than ``0``, this will make glow 
 - |void| **set_glow_enabled**\ (\ value\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **is_glow_enabled**\ (\ )
 
-If ``true``, the glow effect is enabled.
+If ``true``, the glow effect is enabled. This simulates real world eye/camera behavior where bright pixels bleed onto surrounding pixels.
 
-\ **Note:** Glow is only supported in the Forward+ and Mobile rendering methods, not Compatibility. When using the Mobile rendering method, glow will look different due to the lower dynamic range available in the Mobile rendering method.
+\ **Note:** When using the Mobile rendering method, glow looks different due to the lower dynamic range available in the Mobile rendering method.
+
+\ **Note:** When using the Compatibility rendering method, glow uses a different implementation with some properties being unavailable and hidden from the inspector: ``glow_levels/*``, :ref:`glow_normalized<class_Environment_property_glow_normalized>`, :ref:`glow_strength<class_Environment_property_glow_strength>`, :ref:`glow_blend_mode<class_Environment_property_glow_blend_mode>`, :ref:`glow_mix<class_Environment_property_glow_mix>`, :ref:`glow_map<class_Environment_property_glow_map>`, and :ref:`glow_map_strength<class_Environment_property_glow_map_strength>`. This implementation is optimized to run on low-end devices and is less flexible as a result.
 
 .. rst-class:: classref-item-separator
 
@@ -1196,6 +1200,8 @@ The overall brightness multiplier of the glow effect. When using the Mobile rend
 
 The intensity of the 1st level of glow. This is the most "local" level (least blurry).
 
+\ **Note:** :ref:`glow_levels/1<class_Environment_property_glow_levels/1>` has no effect when using the Compatibility rendering method, due to this rendering method using a simpler glow implementation optimized for low-end devices.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -1212,6 +1218,8 @@ The intensity of the 1st level of glow. This is the most "local" level (least bl
 - :ref:`float<class_float>` **get_glow_level**\ (\ idx\: :ref:`int<class_int>`\ ) |const|
 
 The intensity of the 2nd level of glow.
+
+\ **Note:** :ref:`glow_levels/2<class_Environment_property_glow_levels/2>` has no effect when using the Compatibility rendering method, due to this rendering method using a simpler glow implementation optimized for low-end devices.
 
 .. rst-class:: classref-item-separator
 
@@ -1230,6 +1238,8 @@ The intensity of the 2nd level of glow.
 
 The intensity of the 3rd level of glow.
 
+\ **Note:** :ref:`glow_levels/3<class_Environment_property_glow_levels/3>` has no effect when using the Compatibility rendering method, due to this rendering method using a simpler glow implementation optimized for low-end devices.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -1246,6 +1256,8 @@ The intensity of the 3rd level of glow.
 - :ref:`float<class_float>` **get_glow_level**\ (\ idx\: :ref:`int<class_int>`\ ) |const|
 
 The intensity of the 4th level of glow.
+
+\ **Note:** :ref:`glow_levels/4<class_Environment_property_glow_levels/4>` has no effect when using the Compatibility rendering method, due to this rendering method using a simpler glow implementation optimized for low-end devices.
 
 .. rst-class:: classref-item-separator
 
@@ -1264,6 +1276,8 @@ The intensity of the 4th level of glow.
 
 The intensity of the 5th level of glow.
 
+\ **Note:** :ref:`glow_levels/5<class_Environment_property_glow_levels/5>` has no effect when using the Compatibility rendering method, due to this rendering method using a simpler glow implementation optimized for low-end devices.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -1281,6 +1295,8 @@ The intensity of the 5th level of glow.
 
 The intensity of the 6th level of glow.
 
+\ **Note:** :ref:`glow_levels/6<class_Environment_property_glow_levels/6>` has no effect when using the Compatibility rendering method, due to this rendering method using a simpler glow implementation optimized for low-end devices.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -1297,6 +1313,8 @@ The intensity of the 6th level of glow.
 - :ref:`float<class_float>` **get_glow_level**\ (\ idx\: :ref:`int<class_int>`\ ) |const|
 
 The intensity of the 7th level of glow. This is the most "global" level (blurriest).
+
+\ **Note:** :ref:`glow_levels/7<class_Environment_property_glow_levels/7>` has no effect when using the Compatibility rendering method, due to this rendering method using a simpler glow implementation optimized for low-end devices.
 
 .. rst-class:: classref-item-separator
 
@@ -1317,6 +1335,8 @@ The texture that should be used as a glow map to *multiply* the resulting glow c
 
 \ **Note:** The texture will be stretched to fit the screen. Therefore, it's recommended to use a texture with an aspect ratio that matches your project's base aspect ratio (typically 16:9).
 
+\ **Note:** :ref:`glow_map<class_Environment_property_glow_map>` has no effect when using the Compatibility rendering method, due to this rendering method using a simpler glow implementation optimized for low-end devices.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -1333,6 +1353,8 @@ The texture that should be used as a glow map to *multiply* the resulting glow c
 - :ref:`float<class_float>` **get_glow_map_strength**\ (\ )
 
 How strong of an impact the :ref:`glow_map<class_Environment_property_glow_map>` should have on the overall glow effect. A strength of ``0.0`` means the glow map has no effect on the overall glow effect. A strength of ``1.0`` means the glow has a full effect on the overall glow effect (and can turn off glow entirely in specific areas of the screen if the glow map has black areas).
+
+\ **Note:** :ref:`glow_map_strength<class_Environment_property_glow_map_strength>` has no effect when using the Compatibility rendering method, due to this rendering method using a simpler glow implementation optimized for low-end devices.
 
 .. rst-class:: classref-item-separator
 
@@ -1351,6 +1373,8 @@ How strong of an impact the :ref:`glow_map<class_Environment_property_glow_map>`
 
 When using the :ref:`GLOW_BLEND_MODE_MIX<class_Environment_constant_GLOW_BLEND_MODE_MIX>` :ref:`glow_blend_mode<class_Environment_property_glow_blend_mode>`, this controls how much the source image is blended with the glow layer. A value of ``0.0`` makes the glow rendering invisible, while a value of ``1.0`` is equivalent to :ref:`GLOW_BLEND_MODE_REPLACE<class_Environment_constant_GLOW_BLEND_MODE_REPLACE>`.
 
+\ **Note:** :ref:`glow_mix<class_Environment_property_glow_mix>` has no effect when using the Compatibility rendering method, due to this rendering method using a simpler glow implementation optimized for low-end devices.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -1368,6 +1392,8 @@ When using the :ref:`GLOW_BLEND_MODE_MIX<class_Environment_constant_GLOW_BLEND_M
 
 If ``true``, glow levels will be normalized so that summed together their intensities equal ``1.0``.
 
+\ **Note:** :ref:`glow_normalized<class_Environment_property_glow_normalized>` has no effect when using the Compatibility rendering method, due to this rendering method using a simpler glow implementation optimized for low-end devices.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -1384,6 +1410,8 @@ If ``true``, glow levels will be normalized so that summed together their intens
 - :ref:`float<class_float>` **get_glow_strength**\ (\ )
 
 The strength of the glow effect. This applies as the glow is blurred across the screen and increases the distance and intensity of the blur. When using the Mobile rendering method, this should be increased to compensate for the lower dynamic range.
+
+\ **Note:** :ref:`glow_strength<class_Environment_property_glow_strength>` has no effect when using the Compatibility rendering method, due to this rendering method using a simpler glow implementation optimized for low-end devices.
 
 .. rst-class:: classref-item-separator
 

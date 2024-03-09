@@ -56,6 +56,8 @@ Methods
    +---------------------------+----------------------------------------------------------------------------------------------------------+
    | :ref:`Array<class_Array>` | :ref:`get_mesh_arrays<class_PrimitiveMesh_method_get_mesh_arrays>`\ (\ ) |const|                         |
    +---------------------------+----------------------------------------------------------------------------------------------------------+
+   | |void|                    | :ref:`request_update<class_PrimitiveMesh_method_request_update>`\ (\ )                                   |
+   +---------------------------+----------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -196,6 +198,18 @@ Returns mesh arrays used to constitute surface of :ref:`Mesh<class_Mesh>`. The r
     arrMesh.AddSurfaceFromArrays(Mesh.PrimitiveType.Triangles, c.GetMeshArrays());
 
 
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_PrimitiveMesh_method_request_update:
+
+.. rst-class:: classref-method
+
+|void| **request_update**\ (\ )
+
+Request an update of this primitive mesh based on its properties.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

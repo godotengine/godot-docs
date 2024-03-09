@@ -111,6 +111,8 @@ Methods
    +------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                          | :ref:`_overrides_external_editor<class_ScriptLanguageExtension_private_method__overrides_external_editor>`\ (\ ) |virtual|                                                                                                                                                                                                                                      |
    +------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`ScriptNameCasing<enum_ScriptLanguage_ScriptNameCasing>`    | :ref:`_preferred_file_name_casing<class_ScriptLanguageExtension_private_method__preferred_file_name_casing>`\ (\ ) |virtual| |const|                                                                                                                                                                                                                            |
+   +------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                                            | :ref:`_profiling_get_accumulated_data<class_ScriptLanguageExtension_private_method__profiling_get_accumulated_data>`\ (\ info_array\: ``ScriptLanguageExtensionProfilingInfo*``, info_max\: :ref:`int<class_int>`\ ) |virtual|                                                                                                                                  |
    +------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                                            | :ref:`_profiling_get_frame_data<class_ScriptLanguageExtension_private_method__profiling_get_frame_data>`\ (\ info_array\: ``ScriptLanguageExtensionProfilingInfo*``, info_max\: :ref:`int<class_int>`\ ) |virtual|                                                                                                                                              |
@@ -1057,6 +1059,20 @@ Returns the line where the function is defined in the code, or ``-1`` if the fun
 .. rst-class:: classref-method
 
 :ref:`bool<class_bool>` **_overrides_external_editor**\ (\ ) |virtual|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ScriptLanguageExtension_private_method__preferred_file_name_casing:
+
+.. rst-class:: classref-method
+
+:ref:`ScriptNameCasing<enum_ScriptLanguage_ScriptNameCasing>` **_preferred_file_name_casing**\ (\ ) |virtual| |const|
 
 .. container:: contribute
 

@@ -56,6 +56,8 @@ Properties
    +-----------------------------------------------------------------+-----------------------------------------------------------------------------------+--------------------------+
    | :ref:`bool<class_bool>`                                         | :ref:`extend_to_title<class_Window_property_extend_to_title>`                     | ``false``                |
    +-----------------------------------------------------------------+-----------------------------------------------------------------------------------+--------------------------+
+   | :ref:`bool<class_bool>`                                         | :ref:`force_native<class_Window_property_force_native>`                           | ``false``                |
+   +-----------------------------------------------------------------+-----------------------------------------------------------------------------------+--------------------------+
    | :ref:`WindowInitialPosition<enum_Window_WindowInitialPosition>` | :ref:`initial_position<class_Window_property_initial_position>`                   | ``0``                    |
    +-----------------------------------------------------------------+-----------------------------------------------------------------------------------+--------------------------+
    | :ref:`bool<class_bool>`                                         | :ref:`keep_title_visible<class_Window_property_keep_title_visible>`               | ``false``                |
@@ -1071,6 +1073,23 @@ If ``true``, the **Window** contents is expanded to the full size of the window,
 \ **Note:** This property is implemented only on macOS.
 
 \ **Note:** This property only works with native windows.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Window_property_force_native:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **force_native** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_force_native**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_force_native**\ (\ )
+
+If ``true``, native window will be used regardless of parent viewport and project settings.
 
 .. rst-class:: classref-item-separator
 

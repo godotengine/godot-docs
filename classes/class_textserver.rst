@@ -800,6 +800,14 @@ Should be used only in conjunction with :ref:`BREAK_WORD_BOUND<class_TextServer_
 
 Remove edge spaces from the broken line segments.
 
+.. _class_TextServer_constant_BREAK_TRIM_INDENT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`LineBreakFlag<enum_TextServer_LineBreakFlag>` **BREAK_TRIM_INDENT** = ``32``
+
+Subtract first line indentation width from all lines after the first one.
+
 .. rst-class:: classref-item-separator
 
 ----

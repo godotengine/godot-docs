@@ -475,6 +475,8 @@ Properties
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`editor/naming/scene_name_casing<class_ProjectSettings_property_editor/naming/scene_name_casing>`                                                                                                     | ``2``                                                                                            |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`editor/naming/script_name_casing<class_ProjectSettings_property_editor/naming/script_name_casing>`                                                                                                   | ``0``                                                                                            |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                       | :ref:`editor/run/main_run_args<class_ProjectSettings_property_editor/run/main_run_args>`                                                                                                                   | ``""``                                                                                           |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`editor/script/search_in_file_extensions<class_ProjectSettings_property_editor/script/search_in_file_extensions>`                                                                                     | ``PackedStringArray("gd", "gdshader")``                                                          |
@@ -4366,7 +4368,7 @@ The format of the default signal callback name when a signal connects to the sam
 
 :ref:`int<class_int>` **editor/naming/node_name_casing** = ``0``
 
-When creating node names automatically, set the type of casing in this project. This is mostly an editor setting.
+When creating node names automatically, set the type of casing to use in this project. This is mostly an editor setting.
 
 .. rst-class:: classref-item-separator
 
@@ -4390,7 +4392,19 @@ What to use to separate node name from number. This is mostly an editor setting.
 
 :ref:`int<class_int>` **editor/naming/scene_name_casing** = ``2``
 
-When generating file names from scene root node, set the type of casing in this project. This is mostly an editor setting.
+When generating scene file names from scene root node, set the type of casing to use in this project. This is mostly an editor setting.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_editor/naming/script_name_casing:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **editor/naming/script_name_casing** = ``0``
+
+When generating script file names from the selected node, set the type of casing to use in this project. This is mostly an editor setting.
 
 .. rst-class:: classref-item-separator
 
