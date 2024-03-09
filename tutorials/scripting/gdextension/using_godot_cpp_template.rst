@@ -49,15 +49,16 @@ Introduction
 
         .. container:: step-context
 
-            .. code-block:: cpp
-                :caption: src/test.cpp
-                :name: intro-step3-code
-                :linenos:
-                :emphasize-lines: 3
+            .. tabs::
+                .. code-tab:: cpp
+                    :caption: src/test.cpp
+                    :name: intro-step3-code
+                    :linenos:
+                    :emphasize-lines: 3
 
-                #include <godot_cpp/classes/node.hpp>
+                    #include <godot_cpp/classes/node.hpp>
 
-                using namepsace Godot;
+                    using namepsace Godot;
 
     .. compound:: Step 4
 
@@ -65,18 +66,19 @@ Introduction
 
         .. container:: step-context
 
-            .. code-block:: cpp
-                :caption: src/test.cpp
-                :name: intro-step4-code
-                :linenos:
-                :emphasize-lines: 5-6
+            .. tabs::
+                .. code-tab:: cpp
+                    :caption: src/test.cpp
+                    :name: intro-step4-code
+                    :linenos:
+                    :emphasize-lines: 5-6
 
-                #include <godot_cpp/classes/node.hpp>
+                    #include <godot_cpp/classes/node.hpp>
 
-                using namepsace Godot;
+                    using namepsace Godot;
 
-                class Test : public Node {
-                };
+                    class Test : public Node {
+                    };
 
     .. container:: comment
 
@@ -88,19 +90,20 @@ Introduction
 
         .. container:: step-context
 
-            .. code-block:: cpp
-                :caption: src/test.cpp
-                :name: intro-step5-code
-                :linenos:
-                :emphasize-lines: 6
+            .. tabs::
+                .. code-tab:: cpp
+                    :caption: src/test.cpp
+                    :name: intro-step5-code
+                    :linenos:
+                    :emphasize-lines: 6
 
-                #include <godot_cpp/classes/node.hpp>
+                    #include <godot_cpp/classes/node.hpp>
 
-                using namepsace Godot;
+                    using namepsace Godot;
 
-                class Test : public Node {
-                    GDCLASS(Test, Node);
-                };
+                    class Test : public Node {
+                        GDCLASS(Test, Node);
+                    };
 
     .. compound:: Step 6
 
@@ -108,20 +111,21 @@ Introduction
 
         .. container:: step-context
 
-            .. code-block:: cpp
-                :caption: src/test.cpp
-                :name: intro-step6-code
-                :linenos:
-                :emphasize-lines: 8-10
+            .. tabs::
+                .. code-tab:: cpp
+                    :caption: src/test.cpp
+                    :name: intro-step6-code
+                    :linenos:
+                    :emphasize-lines: 8-10
 
-                #include <godot_cpp/classes/node.hpp>
+                    #include <godot_cpp/classes/node.hpp>
 
-                using namepsace Godot;
+                    using namepsace Godot;
 
-                class Test : public Node {
-                    GDCLASS(Test, Node);
+                    class Test : public Node {
+                        GDCLASS(Test, Node);
 
-                public:
-                    Test();
-                    ~Test();
-                };
+                    public:
+                        Test();
+                        ~Test();
+                    };
