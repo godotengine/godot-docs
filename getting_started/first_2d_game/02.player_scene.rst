@@ -60,7 +60,8 @@ appearance and animations for our player. Notice that there is a warning symbol
 next to the node. An ``AnimatedSprite2D`` requires a :ref:`SpriteFrames
 <class_SpriteFrames>` resource, which is a list of the animations it can
 display. To create one, find the ``Sprite Frames`` property under the ``Animation`` tab in the Inspector and click
-"[empty]" -> "New SpriteFrames". Click again to open the "SpriteFrames" panel:
+"[empty]" -> "New SpriteFrames". Click on the ``SpriteFrames`` you just
+created to open the "SpriteFrames" panel:
 
 .. image:: img/spriteframes_panel.webp
 
