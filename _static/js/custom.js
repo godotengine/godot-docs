@@ -595,16 +595,10 @@ function setupTutorial(tutorial) {
   };
   /** @type {IntersectionObserver} */
   const observer = new IntersectionObserver(observerCallback, observerOptions);
-  /** @type {NodeListOf<HTMLDivElement>} */
-  const compounds = tutorial.querySelectorAll(".steps .compound");
-  for (const compound of Array.from(compounds)) {
-    observer.observe(compound);
-  }
 
   /** @type {(entry: HTMLDivElement) => void} */
   const switchEntry = (entry) => {
-    console.log("switchEntry", entry);
-    if (entry === activeEntry || entry == null) {
+    if (entry === activeEntry || entry == null || currentViewType !== "INTERACTIVE") {
       return;
     }
 
@@ -613,6 +607,17 @@ function setupTutorial(tutorial) {
     }
     entry.classList.add("active");
     activeEntry = entry;
+
+    // Let's activate the correct display content.
+    const entryIndex = entry.dataset["stepIndex"];
+    const displayContainerSteps = tutorial.querySelectorAll(".display-container .step-compound-content");
+    for (const displayContainerStep of Array.from(displayContainerSteps)) {
+      if (displayContainerStep.dataset["stepIndex"] === entryIndex) {
+        displayContainerStep.classList.add("active");
+      } else {
+        displayContainerStep.classList.remove("active");
+      }
+    }
   };
 
   /** @type {FrameRequestCallback} */
@@ -682,6 +687,7 @@ function setupTutorial(tutorial) {
 
     tutorial.classList.remove("static");
     tutorial.classList.remove("interactive");
+    observer.disconnect();
     observedEntries.clear();
   };
 
@@ -753,6 +759,9 @@ function setupTutorial(tutorial) {
         stepContentContainer.dataset["stepIndex"] = step.index;
         stepContentContainer.append(step.last);
         displayContainer.append(stepContentContainer);
+
+        // Only observe "COMPOUND" steps.
+        observer.observe(stepContainer);
       }
 
       stepsContainer.append(stepContainer);
@@ -761,7 +770,7 @@ function setupTutorial(tutorial) {
     tutorial.append(topContainer, stepsContainer, bottomContainer, displayContainer);
   };
 
-  switchEntry((tutorial.querySelectorAll(".steps .compound") ?? [null])[0]);
+  // Initialize the display.
   handleResize();
 }
 

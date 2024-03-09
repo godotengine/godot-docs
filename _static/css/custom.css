@@ -1966,7 +1966,7 @@ p + .classref-constant {
         grid-template-rows:
             100px
             auto
-            calc(100vh - 1rem);
+            75vh;
         gap: 1rem;
     }
 
@@ -1976,6 +1976,9 @@ p + .classref-constant {
 
     .tutorial-dynamic .steps-container {
         grid-area: steps;
+        display: flex;
+        flex-direction: column;
+        gap: 100px;
     }
 
     .tutorial-dynamic .bottom-container {
@@ -1986,13 +1989,99 @@ p + .classref-constant {
         grid-area: display;
     }
 
-    /* Let's hide non-active content. */
+    /* Steps container. */
+    .tutorial-dynamic .steps-container .step-container {
+        position: relative;
+        min-height: 200px;
+    }
+
+    .tutorial-dynamic .steps-container .step-container.step-compound {
+        border-radius: 4px;
+        box-shadow: 0px 3px 9px 0px rgb(0 0 0 / 29%);
+        padding-left: 25px;
+        background-color: var(--content-wrap-background-color);
+    }
+
+    .tutorial-dynamic .steps-container .step-container.step-compound .step-compound-box {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .tutorial-dynamic .steps-container .step-container.step-compound .step-compound-box .compound-first {
+        line-height: auto;
+        margin: 0;
+        font-size: large;
+        font-family: var(--header-font-family);
+        margin-top: 1rem;
+    }
+
+    .tutorial-dynamic .steps-container .step-container.step-compound .step-compound-box .compound-middle {
+        flex-grow: 1;
+    }
+
+    /* Display container. */
+
     .tutorial-dynamic .display-container .step-compound-content {
-        /* display: none; */
         position: sticky;
         top: 0;
         left: 0;
         height: 100vh;
+        /* box-shadow: 0px 3px 9px 0px rgb(0 0 0 / 29%); */
+
+        /* Let's hide non-active content. */
+        display: none;
+    }
+
+    .tutorial-dynamic .display-container .step-compound-content.active {
+        /* Let's display the active content. */
+        display: block;
+    }
+
+    .tutorial-dynamic .display-container .step-compound-content .step-context,
+    .tutorial-dynamic .display-container .step-compound-content .step-context .sphinx-tabs {
+        height: 100%;
+    }
+
+    .tutorial-dynamic .display-container .step-compound-content .step-context {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+
+    .tutorial-dynamic .display-container .step-compound-content .step-context > * {
+        width: 100%;
+        height: 100%;
+    }
+
+    .tutorial-dynamic .display-container .step-compound-content .step-context > img {
+        object-fit: contain;
+    }
+
+    .tutorial-dynamic .display-container .step-compound-content .step-context > .sphinx-tabs {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .tutorial-dynamic .display-container .step-compound-content .step-context > .sphinx-tabs .sphinx-tabs-panel {
+        flex-grow: 1;
+    }
+
+    .tutorial-dynamic .display-container .step-compound-content .step-context > .sphinx-tabs .sphinx-tabs-panel .literal-block-wrapper {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+
+    .tutorial-dynamic .display-container .step-compound-content .step-context > .sphinx-tabs .sphinx-tabs-panel .literal-block-wrapper div[class^="highlight-"] {
+        flex-grow: 1;
+    }
+
+    .tutorial-dynamic .display-container .step-compound-content .step-context > .sphinx-tabs .sphinx-tabs-panel > div[class^="highlight-"],
+    .tutorial-dynamic .display-container .step-compound-content .step-context > .sphinx-tabs .sphinx-tabs-panel div[class^="highlight-"] .highlight {
+        height: 100%;
     }
 }
 
