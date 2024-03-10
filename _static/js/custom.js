@@ -825,6 +825,10 @@ function setupTutorial(tutorial) {
     const displayContainer = document.createElement("div");
     displayContainer.classList.add("display-container");
 
+    const displaySticky = document.createElement("div");
+    displaySticky.classList.add("display-sticky");
+    displayContainer.append(displaySticky);
+
     for (const step of steps) {
       const stepContainer = document.createElement("div");
       stepContainer.classList.add("step-container");
@@ -851,7 +855,7 @@ function setupTutorial(tutorial) {
           stepContentContainer.classList.add("step-compound-content");
           stepContentContainer.dataset["stepIndex"] = step.index;
           stepContentContainer.append(step.last);
-          displayContainer.append(stepContentContainer);
+          displaySticky.append(stepContentContainer);
 
           // Only observe "COMPOUND" steps.
           observer.observe(stepContainer);

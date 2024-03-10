@@ -2077,17 +2077,24 @@ p + .classref-constant {
     background-color: var(--content-wrap-background-color);
 }
 
-.tutorial-js.dynamic .steps-container .step-container.step-compound.active::after {
+.tutorial-js.dynamic .steps-container .step-container.step-compound::after {
     content: "";
     display: block;
     position: absolute;
     background-color: var(--navbar-background-color);
+    opacity: 0;
     height: 100%;
     width: 15px;
     top: 0;
     left: 0;
     border-top-left-radius: 4px;
     border-bottom-left-radius: 4px;
+    transition: opacity 0.3s ease-in-out;
+}
+
+
+.tutorial-js.dynamic .steps-container .step-container.step-compound.active::after {
+    opacity: 1;
 }
 
 .tutorial-js.dynamic .steps-container .step-container.step-compound .step-compound-box {
@@ -2108,20 +2115,31 @@ p + .classref-constant {
 }
 
 /* Display container. */
-.tutorial-js.dynamic .display-container .step-compound-content {
+.tutorial-js.dynamic .display-container .display-sticky {
     position: sticky;
+    display: flow-root;
     top: 0;
     left: 0;
+    width: 100%;
     height: 100vh;
-    /* box-shadow: 0px 3px 9px 0px rgb(0 0 0 / 29%); */
+}
+
+.tutorial-js.dynamic .display-container .step-compound-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
 
     /* Let's hide non-active content. */
-    display: none;
+    opacity: 0;
+
+    transition: opacity 0.3s ease-in-out;
 }
 
 .tutorial-js.dynamic .display-container .step-compound-content.active {
     /* Let's display the active content. */
-    display: block;
+    opacity: 1;
 }
 
 .tutorial-js.dynamic .display-container .step-compound-content .step-context,
@@ -2154,12 +2172,17 @@ p + .classref-constant {
 
 .tutorial-js.dynamic .display-container .step-compound-content .step-context > .sphinx-tabs .sphinx-tabs-panel {
     flex-grow: 1;
+    overflow: hidden;
 }
 
 .tutorial-js.dynamic .display-container .step-compound-content .step-context > .sphinx-tabs .sphinx-tabs-panel .literal-block-wrapper {
     display: flex;
     flex-direction: column;
     height: 100%;
+}
+
+.tutorial-js.dynamic .display-container .step-compound-content .step-context > .sphinx-tabs .sphinx-tabs-panel div[class^="highlight-"] {
+    overflow: scroll;
 }
 
 .tutorial-js.dynamic .display-container .step-compound-content .step-context > .sphinx-tabs .sphinx-tabs-panel .literal-block-wrapper div[class^="highlight-"] {
