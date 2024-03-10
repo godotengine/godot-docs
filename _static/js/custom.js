@@ -495,12 +495,12 @@ Documentation.highlightSearchWords = function() {
 }
 
 // Tutorial
-/** @type {{ STATIC: "STATIC", INTERACTIVE: "INTERACTIVE" } as const} */
+/** @type {{ STATIC: "STATIC", DYNAMIC: "DYNAMIC" } as const} */
 const TutorialViewType = {
   STATIC: "STATIC",
-  INTERACTIVE: "INTERACTIVE"
+  DYNAMIC: "DYNAMIC"
 };
-const TUTORIAL_VIEW_INTERACTIVE_MIN_SIZE = 1036;
+const TUTORIAL_VIEW_DYNAMIC_MIN_SIZE = 1036;
 /** @type {{ COMPOUND: "COMPOUND", COMMENT: "COMMENT" } as const} */
 const TutorialStepType = {
   COMPOUND: "COMPOUND",
@@ -509,15 +509,15 @@ const TutorialStepType = {
 
 /** @type {() => (typeof TutorialViewType)[keyof typeof TutorialViewType]} */
 function getTutorialViewType() {
-  return window.innerWidth < TUTORIAL_VIEW_INTERACTIVE_MIN_SIZE
+  return window.innerWidth < TUTORIAL_VIEW_DYNAMIC_MIN_SIZE
     ? "STATIC"
-    : "INTERACTIVE";
+    : "DYNAMIC";
 }
 
 /** @type {(tutorial: HTMLDivElement) => void} */
 function setupTutorial(tutorial) {
   tutorial.classList.remove("tutorial");
-  tutorial.classList.add("tutorial-dynamic");
+  tutorial.classList.add("tutorial-js");
 
   /**
    * Boolean set each screen refresh to know if the screen has been resized.
@@ -598,7 +598,7 @@ function setupTutorial(tutorial) {
 
   /** @type {(entry: HTMLDivElement) => void} */
   const switchEntry = (entry) => {
-    if (entry === activeEntry || entry == null || currentViewType !== "INTERACTIVE") {
+    if (entry === activeEntry || entry == null || currentViewType !== "DYNAMIC") {
       return;
     }
 
@@ -674,8 +674,8 @@ function setupTutorial(tutorial) {
         buildStaticLayout(steps);
       } break;
 
-      case "INTERACTIVE": {
-        buildInteractiveLayout(steps);
+      case "DYNAMIC": {
+        buildDynamicLayout(steps);
       } break;
     }
   };
@@ -686,7 +686,7 @@ function setupTutorial(tutorial) {
     }
 
     tutorial.classList.remove("static");
-    tutorial.classList.remove("interactive");
+    tutorial.classList.remove("dynamic");
     observer.disconnect();
     observedEntries.clear();
   };
@@ -719,8 +719,8 @@ function setupTutorial(tutorial) {
     }
   };
 
-  const buildInteractiveLayout = () => {
-    tutorial.classList.add("interactive");
+  const buildDynamicLayout = () => {
+    tutorial.classList.add("dynamic");
 
     const topContainer = document.createElement("div");
     topContainer.classList.add("top-container");
