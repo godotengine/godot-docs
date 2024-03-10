@@ -244,7 +244,7 @@ Let's code the mob spawning logic. We're going to:
 
  .. code-tab:: csharp
 
-    // We also specified this function name in PascalCase in the editor's connection window
+    // We also specified this function name in PascalCase in the editor's connection window.
     private void OnMobTimerTimeout()
     {
         // Create a new instance of the Mob scene.

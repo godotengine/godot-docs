@@ -6,6 +6,17 @@ Moving the player with code
 It's time to code! We're going to use the input actions we created in the last
 part to move the character.
 
+.. note:: For this project, we will be following the Godot naming conventions.
+
+          - **GDScript**: Classes (nodes) use PascalCase, variables and
+            functions use snake_case, and constants use ALL_CAPS (See
+            :ref:`doc_gdscript_styleguide`).
+
+          - **C#**: Classes, export variables and methods use PascalCase,
+            private fields use _camelCase, local variables and parameters use
+            camelCase (See :ref:`doc_c_sharp_styleguide`). Be careful to type
+            the method names precisely when connecting signals.
+
 Right-click the ``Player`` node and select *Attach Script* to add a new script to
 it. In the popup, set the *Template* to *Empty* before pressing the *Create*
 button. We set it to *Empty* because we want to write our own code for
