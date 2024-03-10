@@ -156,7 +156,7 @@ the ``not`` keyword to invert the value.
 
  .. code-tab:: csharp C#
 
-    private void OnButtonPressed()
+    private void _on_button_pressed()
     {
         SetProcess(!IsProcessing());
     }
@@ -221,7 +221,7 @@ Your complete ``sprite_2d.gd`` code should look like the following.
             Position += velocity * (float)delta;
         }
 
-        private void OnButtonPressed()
+        private void _on_button_pressed()
         {
             SetProcess(!IsProcessing());
         }
@@ -326,7 +326,7 @@ bottom of our script and use it to toggle our sprite's visibility.
 
  .. code-tab:: csharp C#
 
-    private void OnTimerTimeout()
+    private void _on_timer_timeout()
     {
         Visible = !Visible;
     }
@@ -393,12 +393,12 @@ Here is the complete ``sprite_2d.gd`` file for reference.
             Position += velocity * (float)delta;
         }
 
-        private void OnButtonPressed()
+        private void _on_button_pressed()
         {
             SetProcess(!IsProcessing());
         }
 
-        private void OnTimerTimeout()
+        private void _on_timer_timeout()
         {
             Visible = !Visible;
         }
