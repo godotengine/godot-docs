@@ -32,6 +32,17 @@ the bar to reflect the change. To do so, in Godot, you would use signals.
 We will now use a signal to make our Godot icon from the previous lesson
 (:ref:`doc_scripting_player_input`) move and stop by pressing a button.
 
+.. note:: For this project, we will be following the Godot naming conventions.
+
+          - **GDScript**: Classes (nodes) use PascalCase, variables and
+            functions use snake_case, and constants use ALL_CAPS (See
+            :ref:`doc_gdscript_styleguide`).
+
+          - **C#**: Classes, export variables and methods use PascalCase,
+            private fields use _camelCase, local variables and parameters use
+            camelCase (See :ref:`doc_c_sharp_styleguide`). Be careful to type
+            the method names precisely when connecting signals.
+
 .. Example
 
 Scene setup
@@ -156,6 +167,7 @@ the ``not`` keyword to invert the value.
 
  .. code-tab:: csharp C#
 
+    // We also specified this function name in PascalCase in the editor's connection window.
     private void OnButtonPressed()
     {
         SetProcess(!IsProcessing());
@@ -221,6 +233,7 @@ Your complete ``sprite_2d.gd`` code should look like the following.
             Position += velocity * (float)delta;
         }
 
+        // We also specified this function name in PascalCase in the editor's connection window.
         private void OnButtonPressed()
         {
             SetProcess(!IsProcessing());
@@ -393,6 +406,7 @@ Here is the complete ``sprite_2d.gd`` file for reference.
             Position += velocity * (float)delta;
         }
 
+        // We also specified this function name in PascalCase in the editor's connection window.
         private void OnButtonPressed()
         {
             SetProcess(!IsProcessing());

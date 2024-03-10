@@ -168,11 +168,13 @@ the other two timers. ``ScoreTimer`` will increment the score by 1.
 
  .. code-tab:: csharp
 
+    // We also specified this function name in PascalCase in the editor's connection window.
     private void OnScoreTimerTimeout()
     {
         _score++;
     }
 
+    // We also specified this function name in PascalCase in the editor's connection window.
     private void OnStartTimerTimeout()
     {
         GetNode<Timer>("MobTimer").Start();
@@ -219,6 +221,7 @@ Note that a new instance must be added to the scene using ``add_child()``.
 
  .. code-tab:: csharp
 
+    // We also specified this function name in PascalCase in the editor's connection window.
     private void OnMobTimerTimeout()
     {
         // Note: Normally it is best to use explicit types rather than the `var`

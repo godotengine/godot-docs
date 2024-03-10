@@ -241,7 +241,7 @@ method. This function destroys the instance it's called on.
 
  .. code-tab:: csharp
 
-    // We also specified this function name in PascalCase in the editor's connection window
+    // We also specified this function name in PascalCase in the editor's connection window.
     private void OnVisibilityNotifierScreenExited()
     {
         QueueFree();
@@ -323,7 +323,7 @@ Here is the complete ``Mob.gd`` script for reference.
             Velocity = Velocity.Rotated(Vector3.Up, Rotation.Y);
         }
 
-        // We also specified this function name in PascalCase in the editor's connection window
+        // We also specified this function name in PascalCase in the editor's connection window.
         private void OnVisibilityNotifierScreenExited()
         {
             QueueFree();
