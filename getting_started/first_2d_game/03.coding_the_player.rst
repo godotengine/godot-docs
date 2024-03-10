@@ -407,6 +407,7 @@ Next, add this code to the function:
 
  .. code-tab:: csharp
 
+    // We also specified this function name in PascalCase in the editor's connection window.
     private void OnBodyEntered(Node2D body)
     {
         Hide(); // Player disappears after being hit.
