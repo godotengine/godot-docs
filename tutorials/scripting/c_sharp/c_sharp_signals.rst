@@ -113,7 +113,7 @@ Sometimes you'll want to bind values to a signal when the connection is establis
 (or in addition to) when the signal is emitted. To do so, you can use an anonymous function like in
 the following example.
 
-Here, the :ref:`Button.Pressed <class_BaseButton_signal_pressed>` signal do not take any argument. But we
+Here, the :ref:`Button.Pressed <class_BaseButton_signal_pressed>` signal does not take any argument. But we
 want to use the same ``ModifyValue`` for both the "plus" and "minus" buttons. So we bind the
 modifier value at the time we're connecting the signals.
 
