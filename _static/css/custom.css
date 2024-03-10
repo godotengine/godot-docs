@@ -1933,12 +1933,12 @@ p + .classref-constant {
     } */
 }
 
-@media only screen and (min-width: 1036px) and (max-width: 1200px) {
-    /* .tutorial {
+/* @media only screen and (min-width: 1036px) and (max-width: 1200px) {
+    .tutorial {
         grid-template-columns:
             200px 1fr;
-    } */
-}
+    }
+} */
 
 /**
  * Tutorial (non-dynamic)
@@ -2019,16 +2019,22 @@ p + .classref-constant {
     top: 0;
     left: 0;
     grid-template-areas:
+        "toggle toggle"
         "top    display"
         "steps  display"
         "bottom display";
     grid-template-columns:
         1fr 2fr;
     grid-template-rows:
+        auto
         100px
         auto
         75vh;
     gap: 1rem;
+}
+
+.tutorial-js.dynamic .toggle-container {
+    grid-area: toggle;
 }
 
 .tutorial-js.dynamic .top-container {
@@ -2169,5 +2175,23 @@ p + .classref-constant {
     .tutorial-js.dynamic {
         grid-template-columns:
             200px 1fr;
+    }
+}
+
+/**
+ * Toggle container.
+ */
+.tutorial-js .toggle-container {
+    display: none;
+}
+
+@media only screen and (min-width: 1036px) {
+    .tutorial-js .toggle-container {
+        display: flex;
+        flex-direction: row;
+        gap: 1em;
+        justify-content: end;
+        font-size: small;
+        color: var(--kbd-text-color);
     }
 }

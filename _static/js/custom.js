@@ -494,28 +494,67 @@ Documentation.highlightSearchWords = function() {
   // Nope.
 }
 
+// ========
 // Tutorial
-/** @type {{ STATIC: "STATIC", DYNAMIC: "DYNAMIC" } as const} */
-const TutorialViewType = {
+// ========
+const TUTORIAL_VIEW_DYNAMIC_MIN_SIZE = 1036;
+const TUTORIAL_VIEW_TYPE_LOCAL_STORAGE_KEY = "tutorialViewType";
+const TUTORIAL_VIEW_TYPE_CHANGE_EVENT = "godottutorialviewchange";
+
+const TutorialToggleLabelI18n = Object.freeze({
+  "en": "Dynamic view"
+});
+
+const TutorialViewType = Object.freeze({
   STATIC: "STATIC",
   DYNAMIC: "DYNAMIC"
-};
-const TUTORIAL_VIEW_DYNAMIC_MIN_SIZE = 1036;
-/** @type {{ COMPOUND: "COMPOUND", COMMENT: "COMMENT" } as const} */
-const TutorialStepType = {
+});
+
+const TutorialStepType = Object.freeze({
   COMPOUND: "COMPOUND",
   COMMENT: "COMMENT"
-};
+});
 
 /** @type {() => (typeof TutorialViewType)[keyof typeof TutorialViewType]} */
 function getTutorialViewType() {
+  const localStorageType = localStorage.getItem(TUTORIAL_VIEW_TYPE_LOCAL_STORAGE_KEY);
+  if (localStorageType === "STATIC") {
+    return "STATIC";
+  }
+
   return window.innerWidth < TUTORIAL_VIEW_DYNAMIC_MIN_SIZE
     ? "STATIC"
     : "DYNAMIC";
 }
 
+function getTutorialToggleLabel() {
+  let documentLang = document.documentElement.lang ?? "en";
+  let label = TutorialToggleLabelI18n[documentLang];
+  if (label != null) {
+    return label;
+  }
+
+  // Check if the lang is in the `xx-XX` format.
+  if (documentLang.charAt(2) !== "-") {
+    // Let's return the default value.
+    return TutorialToggleLabelI18n.en;
+  }
+
+  label = TutorialToggleLabelI18n[documentLang.substring(0, 1)];
+  if (label != null) {
+    return label;
+  }
+
+  return TutorialToggleLabelI18n.en;
+}
+
+let nextTutorialId = 0;
+
 /** @type {(tutorial: HTMLDivElement) => void} */
 function setupTutorial(tutorial) {
+  let tutorialId = nextTutorialId;
+  nextTutorialId++;
+
   tutorial.classList.remove("tutorial");
   tutorial.classList.add("tutorial-js");
 
@@ -593,8 +632,38 @@ function setupTutorial(tutorial) {
       }
     }
   };
-  /** @type {IntersectionObserver} */
+
   const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+  /**
+   * Toggle that handles the static/dynamic style.
+   */
+  const toggle = document.createElement("input");
+  {
+    /** @type {(typeof TutorialViewType)[keyof typeof TutorialViewType] | null} */
+    let localStorageValue = localStorage.getItem(TUTORIAL_VIEW_TYPE_LOCAL_STORAGE_KEY);
+    if (localStorageValue == null) {
+      localStorageValue = TutorialViewType.DYNAMIC;
+      localStorage.setItem(TUTORIAL_VIEW_TYPE_LOCAL_STORAGE_KEY, localStorageValue);
+    }
+
+    toggle.id = `godot-tutorial-${tutorialId}`;
+    toggle.type = "checkbox";
+    toggle.checked = localStorageValue === "DYNAMIC";
+    toggle.addEventListener("change", () => {
+      if (toggle.checked) {
+        currentViewType = TutorialViewType.DYNAMIC;
+      } else {
+        currentViewType = TutorialViewType.STATIC;
+      }
+
+      localStorage.setItem(TUTORIAL_VIEW_TYPE_LOCAL_STORAGE_KEY, currentViewType);
+      window.dispatchEvent(new CustomEvent(TUTORIAL_VIEW_TYPE_CHANGE_EVENT, { detail: { viewType: currentViewType, source: tutorial } }));
+      onViewTypeChange();
+
+      toggle.scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" });
+    });
+  }
 
   /** @type {(entry: HTMLDivElement) => void} */
   const switchEntry = (entry) => {
@@ -658,6 +727,7 @@ function setupTutorial(tutorial) {
   window.addEventListener("resize", () => {
     resized = true;
   });
+
   const handleResize = () => {
     const oldViewType = currentViewType;
     currentViewType = getTutorialViewType();
@@ -665,7 +735,10 @@ function setupTutorial(tutorial) {
       onViewTypeChange();
     }
   };
+
   const onViewTypeChange = () => {
+    toggle.checked = currentViewType === "DYNAMIC";
+
     // Rebuild the layout.
     clearLayout();
 
@@ -689,6 +762,20 @@ function setupTutorial(tutorial) {
     tutorial.classList.remove("dynamic");
     observer.disconnect();
     observedEntries.clear();
+
+    buildToggleContainer();
+  };
+
+  const buildToggleContainer = () => {
+    const toggleContainer = document.createElement("div");
+    toggleContainer.classList.add("toggle-container");
+
+    const label = document.createElement("label");
+    label.htmlFor = toggle.id;
+    label.innerText = getTutorialToggleLabel();
+
+    toggleContainer.append(label, toggle);
+    tutorial.append(toggleContainer);
   };
 
   const buildStaticLayout = () => {
@@ -698,21 +785,25 @@ function setupTutorial(tutorial) {
       const stepContainer = document.createElement("div");
       stepContainer.classList.add("step-container");
 
-      if (step.type === "COMMENT") {
-        stepContainer.classList.add("step-comment");
-        stepContainer.append(step.comment);
-      } else {
-        stepContainer.classList.add("step-compound");
+      switch (step.type) {
+        case "COMMENT": {
+          stepContainer.classList.add("step-comment");
+          stepContainer.append(step.comment);
+        } break;
 
-        const stepTextContainer = document.createElement("div");
-        stepTextContainer.classList.add("step-compound-box");
-        stepTextContainer.append(step.first, step.middle);
-        stepContainer.append(stepTextContainer);
+        case "COMPOUND": {
+          stepContainer.classList.add("step-compound");
 
-        const stepContentContainer = document.createElement("div");
-        stepContentContainer.classList.add("step-compound-content");
-        stepContentContainer.append(step.last);
-        stepContainer.append(stepContentContainer);
+          const stepTextContainer = document.createElement("div");
+          stepTextContainer.classList.add("step-compound-box");
+          stepTextContainer.append(step.first, step.middle);
+          stepContainer.append(stepTextContainer);
+
+          const stepContentContainer = document.createElement("div");
+          stepContentContainer.classList.add("step-compound-content");
+          stepContentContainer.append(step.last);
+          stepContainer.append(stepContentContainer);
+        } break;
       }
 
       tutorial.append(stepContainer);
@@ -739,29 +830,32 @@ function setupTutorial(tutorial) {
       stepContainer.classList.add("step-container");
       stepContainer.dataset["stepIndex"] = step.index;
 
-      if (step.type === "COMMENT") {
-        stepContainer.classList.add("step-comment");
-        stepContainer.append(step.comment);
-      } else {
-        // Step is of type "COMPOUND".
-        stepContainer.classList.add("step-compound");
+      switch (step.type) {
+        case "COMMENT": {
+          stepContainer.classList.add("step-comment");
+          stepContainer.append(step.comment);
+        } break;
 
-        const stepTextContainer = document.createElement("div");
-        stepTextContainer.classList.add("step-compound-box");
-        stepTextContainer.append(step.first, step.middle);
-        stepContainer.append(stepTextContainer);
+        case "COMPOUND": {
+          stepContainer.classList.add("step-compound");
 
-        // Instead of adding "step-compound-content" to the `stepContainer`
-        // (which is being added in `stepsContainer`), let's put it in
-        // `displayContainer` instead.
-        const stepContentContainer = document.createElement("div");
-        stepContentContainer.classList.add("step-compound-content");
-        stepContentContainer.dataset["stepIndex"] = step.index;
-        stepContentContainer.append(step.last);
-        displayContainer.append(stepContentContainer);
+          const stepTextContainer = document.createElement("div");
+          stepTextContainer.classList.add("step-compound-box");
+          stepTextContainer.append(step.first, step.middle);
+          stepContainer.append(stepTextContainer);
 
-        // Only observe "COMPOUND" steps.
-        observer.observe(stepContainer);
+          // Instead of adding "step-compound-content" to the `stepContainer`
+          // (which is being added in `stepsContainer`), let's put it in
+          // `displayContainer` instead.
+          const stepContentContainer = document.createElement("div");
+          stepContentContainer.classList.add("step-compound-content");
+          stepContentContainer.dataset["stepIndex"] = step.index;
+          stepContentContainer.append(step.last);
+          displayContainer.append(stepContentContainer);
+
+          // Only observe "COMPOUND" steps.
+          observer.observe(stepContainer);
+        } break;
       }
 
       stepsContainer.append(stepContainer);
@@ -769,6 +863,26 @@ function setupTutorial(tutorial) {
 
     tutorial.append(topContainer, stepsContainer, bottomContainer, displayContainer);
   };
+
+  /** @type {(event: CustomEvent) => void} */
+  const tutorialViewTypeChangeEventListener = (event) => {
+    const {
+      viewType,
+      source
+    } = event.detail;
+
+    if (source === tutorial) {
+      return;
+    }
+
+    const oldViewType = currentViewType;
+    currentViewType = viewType;
+
+    if (oldViewType !== currentViewType) {
+      onViewTypeChange();
+    }
+  };
+  window.addEventListener(TUTORIAL_VIEW_TYPE_CHANGE_EVENT, tutorialViewTypeChangeEventListener);
 
   // Initialize the display.
   handleResize();
