@@ -803,6 +803,13 @@ function setupTutorial(tutorial) {
           stepContentContainer.classList.add("step-compound-content");
           stepContentContainer.append(step.last);
           stepContainer.append(stepContentContainer);
+
+          // Resets the "scrolled" tag, as there's no scroll anymore.
+          /** @type {HTMLDivElement[]} */
+          const scrollableAreas = stepContentContainer.querySelectorAll("div[class^='highlight-'] .highlight");
+          for (const scrollableArea of scrollableAreas) {
+            delete scrollableArea.dataset["scrolled"];
+          }
         } break;
       }
 
@@ -856,6 +863,65 @@ function setupTutorial(tutorial) {
           stepContentContainer.dataset["stepIndex"] = step.index;
           stepContentContainer.append(step.last);
           displaySticky.append(stepContentContainer);
+
+          // Scroll to the mean of the highlighted lines.
+          requestAnimationFrame(() => {
+            /** @type {HTMLDivElement | null} */
+            const scrollContainer = stepContentContainer.querySelector("div[class^='highlight-']");
+            if (scrollContainer == null) {
+              return;
+            }
+
+            /** @type {HTMLDivElement | null} */
+            const scrollableArea = scrollContainer.querySelector(".highlight");
+            if (scrollableArea == null) {
+              throw new Error("scrollableArea is null");
+            }
+
+            // Return early if the container has been already "scrolled".
+            if (scrollableArea.dataset["scrolled"] != null) {
+              return;
+            }
+            scrollableArea.dataset["scrolled"] = "scrolled";
+
+            // If the browser has remembered the scroll before a refresh, the `scrollTop`
+            // value will not be 0.
+            // @TODO: Fix (if possible) the bug where the browser remembers that the
+            //        scroll was at 0. Currently, we just ignore it and reset the scroll
+            //        to the mean.
+            if (scrollableArea.scrollTop !== 0) {
+              return;
+            }
+
+            const { top: scrollableTop, height: scrollableHeight } = scrollableArea.getBoundingClientRect();
+
+            /** @type {[smallest: number, highest: number]} */
+            let positions = [0, 0];
+            /** @type {HTMLDivElement | null} */
+            const codeTab = stepContentContainer.querySelector(".sphinx-tabs");
+
+            if (codeTab == null) {
+              return;
+            }
+
+            /** @type {HTMLSpanElement[]} */
+            const highlightedLines = Array.from(codeTab.querySelectorAll(".highlight .hll"));
+            if (highlightedLines.length === 0) {
+              return;
+            }
+
+            for (const highlightedLine of highlightedLines) {
+              const { top, height } = highlightedLine.getBoundingClientRect();
+              positions = [
+                Math.min(positions[0], top),
+                Math.max(positions[1], top + height)
+              ];
+            }
+
+            const mean = (positions[0] + positions[1]) / 2;
+            const targetScrollTop = Math.max((mean - scrollableTop) + (scrollContainer.clientHeight / 2), scrollableHeight);
+            scrollableArea.scrollTo({ top: targetScrollTop });
+          });
 
           // Only observe "COMPOUND" steps.
           observer.observe(stepContainer);
