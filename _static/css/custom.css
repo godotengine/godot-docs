@@ -2133,6 +2133,7 @@ p + .classref-constant {
 
     /* Let's hide non-active content. */
     opacity: 0;
+    pointer-events: none;
 
     transition: opacity 0.3s ease-in-out;
 }
@@ -2140,6 +2141,7 @@ p + .classref-constant {
 .tutorial-js.dynamic .display-container .step-compound-content.active {
     /* Let's display the active content. */
     opacity: 1;
+    pointer-events: all;
 }
 
 .tutorial-js.dynamic .display-container .step-compound-content .step-context,
