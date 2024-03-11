@@ -98,12 +98,12 @@ return ``true`` if this plugin should handle the object or its properties.
 .. note:: This includes any :ref:`class_Resource` attached to the object.
 
 You can implement four other methods to add controls to the inspector at
-specific positions. The ``parse_begin()`` and ``parse_end()`` methods are called
+specific positions. The ``_parse_begin()`` and ``_parse_end()`` methods are called
 only once at the beginning and the end of parsing for each object, respectively.
 They can add controls at the top or bottom of the inspector layout by calling
 ``add_custom_control()``.
 
-As the editor parses the object, it calls the ``parse_category()`` and
+As the editor parses the object, it calls the ``_parse_category()`` and
 ``_parse_property()`` methods. There, in addition to ``add_custom_control()``,
 you can call both ``add_property_editor()`` and
 ``add_property_editor_for_multiple_properties()``. Use these last two methods to
