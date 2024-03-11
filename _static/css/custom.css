@@ -2092,7 +2092,6 @@ p + .classref-constant {
     transition: opacity 0.3s ease-in-out;
 }
 
-
 .tutorial-js.dynamic .steps-container .step-container.step-compound.active::after {
     opacity: 1;
 }
