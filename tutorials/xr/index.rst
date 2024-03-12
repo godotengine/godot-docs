@@ -3,6 +3,9 @@
 XR
 ==
 
+This section of the manual covers everything related to XR (
+Virtual Reality and Augmented Reality).
+
 Basic Tutorial
 --------------
 
@@ -27,8 +30,3 @@ Advanced topics
    xr_room_scale
    openxr_hand_tracking
    openxr_passthrough
-
-.. note::
-
-   Documentation for XR in Godot 4.0 XR is still a work in progress.
-   Please check back in the future.
