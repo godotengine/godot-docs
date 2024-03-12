@@ -56,6 +56,8 @@ Some example **Exec Flags** for various editors include:
 +---------------------+-----------------------------------------------------+
 | Sublime Text        | ``{project} {file}:{line}:{column}``                |
 +---------------------+-----------------------------------------------------+
+| Visual Studio       | ``/edit "file"``                                    |
++---------------------+-----------------------------------------------------+
 
 .. note::
 
@@ -64,6 +66,10 @@ Some example **Exec Flags** for various editors include:
 
     For Emacs, you can call ``emacsclient`` instead of ``emacs`` if
     you use the server mode.
+
+    For Visual Studio, you will have to open the solution file ``.sln``
+    manually to get access to the IDE features. It does not support
+    opening a file on a specific line in the same command. 
 
 Using External Editor in Debugger
 ---------------------------------
