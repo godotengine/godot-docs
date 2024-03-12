@@ -68,8 +68,7 @@ Some example **Exec Flags** for various editors include:
     you use the server mode.
 
     For Visual Studio, you will have to open the solution file ``.sln``
-    manually to get access to the IDE features. It does not support
-    opening a file on a specific line in the same command. 
+    manually to get access to the IDE features. Additionally, it will not go to a specific line.
 
 Using External Editor in Debugger
 ---------------------------------
