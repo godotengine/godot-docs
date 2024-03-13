@@ -53,13 +53,37 @@ set up clang-format locally to check and automatically fix all your commits.
     These guidelines only cover code formatting. See :ref:`doc_cpp_usage_guidelines`
     for a list of language features that are permitted in pull requests.
 
+
 Using clang-format locally
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-First of all, you will need to install clang-format. As of now, you need to use
-**clang-format 13** to be compatible with Godot's format. Later versions might
+You need to use **clang-format 17** to be compatible with Godot's format. Later versions might
 be suitable, but previous versions may not support all used options, or format
 some things differently, leading to style issues in pull requests.
+
+Pre-commit hook
+^^^^^^^^^^^^^^^
+
+For ease of use, we provide hooks for Git with the `pre-commit <https://pre-commit.com/>`__
+Python framework that will run clang-format automatically on all your commits with the 
+correct version of clang-format.
+To set up:
+
+::
+
+  pip install pre-commit
+  pre-commit install
+
+
+You can also run the hook manually with ``pre-commit run``.
+
+.. note:: 
+
+    Previously, we supplied a hook in the folder ``misc/hooks``. If you copied the
+    script manually, these hooks should still work, but symlinks will be broken.
+    If you are using the new system, run ``rm .git/hooks/*`` to remove the old hooks
+    that are no longer needed.
+
 
 Installation
 ^^^^^^^^^^^^
@@ -74,7 +98,7 @@ Here's how to install clang-format:
 - macOS and Windows: You can download precompiled binaries from the
   `LLVM website <https://releases.llvm.org/download.html>`__. You may need to add
   the path to the binary's folder to your system's ``PATH`` environment
-  variable to be able to call ``clang-format`` out of the box.
+  variable to be able to call clang-format out of the box.
 
 You then have different possibilities to apply clang-format to your changes:
 
@@ -95,20 +119,6 @@ command:
   you don't run clang-format on compiled objects (.o and .a files) that are
   in Godot's tree. So better use ``core/*.{cpp,h}`` than ``core/*``.
 
-Pre-commit hook
-^^^^^^^^^^^^^^^
-
-For ease of use, we provide a pre-commit hook for Git that will run
-clang-format automatically on all your commits to check them, and let you apply
-its changes in the final commit.
-
-This "hook" is a script that can be found in ``misc/hooks``, refer to that
-folder's README.md for installation instructions.
-
-If your clang-format is not in the ``PATH``, you may have to edit the
-``pre-commit-clang-format`` to point to the correct binary for it to work.
-The hook was tested on Linux and macOS, but should also work in the Git Shell
-on Windows.
 
 IDE plugin
 ^^^^^^^^^^
@@ -292,15 +302,29 @@ command:
 - The path can point to several files, either one after the other or using
   wildcards like in a typical Unix shell.
 
+
 Pre-commit hook
-^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~
 
-For ease of use, we provide a pre-commit hook for Git that will run
-black automatically on all your commits to check them, and let you apply
-its changes in the final commit.
+For ease of use, we provide hooks for Git with the `pre-commit <https://pre-commit.com/>`__
+Python framework that will run ``black`` automatically on all your commits with the 
+correct version of ``black``.
+To set up:
 
-This "hook" is a script which can be found in ``misc/hooks``. Refer to that
-folder's ``README.md`` for installation instructions.
+::
+
+  pip install pre-commit
+  pre-commit install
+
+
+You can also run the hook manually with ``pre-commit run``.
+
+.. note:: 
+
+    Previously, we supplied a hook in the folder ``misc/hooks``. If you copied the
+    script manually, these hooks should still work, but symlinks will be broken.
+    If you are using the new system, run ``rm .git/hooks/*`` to remove the old hooks
+    that are no longer needed.
 
 
 Editor integration
