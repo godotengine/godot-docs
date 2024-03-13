@@ -639,4 +639,4 @@ And the *Mob*'s script.
 .. |animation_final_keyframes| image:: img/09.adding_animations/animation_final_keyframes.webp
 .. |second_keys_both| image:: img/09.adding_animations/second_keys_both.webp
 .. |timeline_05_click| image:: img/09.adding_animations/timeline_05_click.webp
-.. |Autoplay| image:: img/09.adding_animations/
+.. |Autoplay| image:: img/09.adding_animations/autoplay_button.webp
