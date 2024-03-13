@@ -244,46 +244,49 @@ Shading
 Shading mode
 ~~~~~~~~~~~~
 
-Godot has a more or less uniform cost per pixel thanks to depth pre-pass. All
-lighting calculations are made by running the lighting shader on every pixel.
+Godot has a more or less uniform cost per pixel thanks to the depth pre-pass.
+All lighting calculations are made by running the lighting shader on every
+pixel.
 
 As these calculations are costly, performance can be brought down considerably
 in some corner cases such as drawing several layers of transparency (which is
-common in particle systems). Switching to per-vertex lighting may help in these
-cases.
+common in particle systems). Switching to the **Unshaded** shading mode may help improve
+performance in these cases, especially when the camera is close to particles.
 
-Additionally, on low-end or mobile devices, switching to vertex lighting
+Additionally, on low-end or mobile devices, switching to unshaded rendering
 can considerably increase rendering performance.
 
-.. image:: img/spatial_material2.png
-
-Keep in mind that when vertex lighting is enabled, only directional lighting
-can produce shadows (for performance reasons).
-
-However, in some cases you might want to show just the albedo (color) and
-ignore the rest. To do this you can set the shading mode to unshaded
-
 .. image:: img/spatial_material26.png
+
+Keep in mind that when unshaded rendering is enabled, lights will not affect the
+material at all.
+
+.. note::
+
+    **Per-Vertex** shading is listed as an option in the shading mode property.
+    However, per-vertex shading is currently unimplemented and will act
+    identical to per-pixel shading.
+
+    Support for per-vertex shading is planned to be reimplemented in a future
+    Godot release.
 
 Diffuse Mode
 ~~~~~~~~~~~~
 
 Specifies the algorithm used by diffuse scattering of light when hitting
-the object. The default is *Burley*. Other modes are also available:
+the object. The default is **Burley**. Other modes are also available:
 
 * **Burley:** Default mode, the original Disney Principled PBS diffuse algorithm.
 * **Lambert:** Is not affected by roughness.
 * **Lambert Wrap:** Extends Lambert to cover more than 90 degrees when
   roughness increases. Works great for hair and simulating cheap
   subsurface scattering. This implementation is energy conserving.
-* **Oren Nayar:** This implementation aims to take microsurfacing into account
-  (via roughness). Works well for clay-like materials and some types of cloth.
 * **Toon:** Provides a hard cut for lighting, with smoothing affected by roughness.
   It is recommended you disable sky contribution from your environment's
   ambient light settings or disable ambient light in the StandardMaterial3D
   to achieve a better effect.
 
-.. image:: img/spatial_material6.png
+.. image:: img/spatial_material6.webp
 
 Specular Mode
 ~~~~~~~~~~~~~
