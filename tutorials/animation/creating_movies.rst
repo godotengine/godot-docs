@@ -351,8 +351,10 @@ Some common post-processing steps are listed below.
 
 .. _doc_creating_movies_converting_avi:
 
-Converting AVI video to MP4
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Converting AVI video to another format
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**MP4:**
 
 While some platforms such as YouTube support uploading the AVI file directly, many
 others will require a conversion step beforehand. `HandBrake <https://handbrake.fr/>`__
@@ -376,10 +378,28 @@ times), add ``-preset veryslow`` before ``-crf 15`` in the above command. On the
 contrary, ``-preset veryfast`` can be used to achieve faster encoding at the
 cost of a worse size/quality ratio.
 
+**Animated WebP:**
+
+To create an animated WebP that can be used on web pages that only accept images
+and not video uploads, use the following command with ``-r`` specifying the
+output image framerate (which can be lower than the input video framerate to
+reduce file size):
+
+::
+
+    ffmpeg -i input.avi -quality 75 -r 60 -loop 0 output.webp
+
+The ``-quality`` parameter is a value between ``0`` and ``100``. To get a smaller
+file at the cost of quality, *decrease* the quality value in the above command.
+``-loop 0`` instructs FFmpeg to create a WebP that loops forever. If not
+specified, the animated WebP will play once and won't loop when viewed.
+
 .. _doc_creating_movies_converting_image_sequence:
 
 Converting PNG image sequence + WAV audio to a video
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**MP4:**
 
 If you chose to record a PNG image sequence with a WAV file beside it,
 you need to convert it to a video before you can use it elsewhere.
@@ -398,6 +418,8 @@ or sped up, and audio will be out of sync with the video.
 
     ffmpeg -r 60 -i input%08d.png -i input.wav -crf 15 output.mp4
 
+**WebM:**
+
 If you recorded a PNG image sequence with transparency enabled, you need to use
 a video format that supports storing transparency. MP4/H.264 doesn't support
 storing transparency, so you can use WebM/VP9 as an alternative:
@@ -405,6 +427,34 @@ storing transparency, so you can use WebM/VP9 as an alternative:
 ::
 
     ffmpeg -r 60 -i input%08d.png -i input.wav -c:v libvpx-vp9 -crf 15 -pix_fmt yuva420p output.webm
+
+**Animated WebP:**
+
+To create an animated WebP that can be used on web pages that only accept images
+and not video uploads, use the following command with ``-r`` specifying the
+FPS specified during recording:
+
+::
+
+    ffmpeg -r 60 -i input%08d.png -quality 75 -loop 0 output.webp
+
+The ``-quality`` parameter is a value between ``0`` and ``100``. To get a smaller
+file at the cost of quality, *decrease* the quality value in the above command.
+``-loop 0`` instructs FFmpeg to create a WebP that loops forever. If not
+specified, the animated WebP will play once and won't loop when viewed.
+
+To use lossless compression instead of the default lossy compression, use the
+following command instead:
+
+::
+
+    ffmpeg -r 60 -i input%08d.png -lossless 1 -loop 0 output.webp
+
+Lossless compression results in much larger files, but with the same quality as
+the original PNG images. To get a smaller file with the same quality at the cost
+of slower encoding times, add ``-quality 100`` after ``-lossless 1`` in the
+above command. On the contrary, ``-quality 0`` can be used to achieve faster
+encoding at the cost of a worse size/quality ratio.
 
 .. _doc_creating_movies_motion_blur:
 
