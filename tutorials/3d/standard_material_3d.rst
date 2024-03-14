@@ -701,9 +701,28 @@ Keep in mind enabling proximity fade or distance fade with **Pixel Alpha** mode
 enables alpha blending. Alpha blending is more GPU-intensive and can cause
 transparency sorting issues. Alpha blending also disables many material
 features such as the ability to cast shadows.
-To hide a character when they get too close to the camera, consider using
-**Pixel Dither** or better, **Object Dither** (which is even faster than
-**Pixel Dither**).
+
+.. note::
+
+    To hide a character when they get too close to the camera, consider using
+    **Pixel Dither** or better, **Object Dither** (which is even faster than
+    **Pixel Dither**).
+
+**Pixel Alpha** mode: The actual transparency of a pixel of the object changes
+with distance to the camera. This is the most effect, but forces the material
+into the transparency pipeline (which leads, for example, to no shadows).
+
+.. image:: img/standart_material_distance_fade_pixel_alpha_mode.webp
+
+**Pixel Dither** mode: What this does is sort of approximate the transparency
+by only having a fraction of the pixels rendered.
+
+.. image:: img/standart_material_distance_fade_pixel_dither_mode.webp
+
+**Object Dither** mode: Like the previous mode, but the calculated transparency
+is the same across the entire object's surface.
+
+.. image:: img/standart_material_distance_fade_object_dither_mode.webp
 
 Material Settings
 -----------------
