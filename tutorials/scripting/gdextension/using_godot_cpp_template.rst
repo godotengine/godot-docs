@@ -92,20 +92,18 @@ Introduction
 
         .. container:: step-content
 
-            .. tabs::
-                .. code-tab:: cpp
-                    :caption: src/test.cpp
-                    :name: intro-step5-code
-                    :linenos:
-                    :emphasize-lines: 6
+            .. code-block:: cpp
+                :name: intro-step5-code
+                :linenos:
+                :emphasize-lines: 6
 
-                    #include <godot_cpp/classes/node.hpp>
+                #include <godot_cpp/classes/node.hpp>
 
-                    using namepsace Godot;
+                using namepsace Godot;
 
-                    class Test : public Node {
-                        GDCLASS(Test, Node);
-                    };
+                class Test : public Node {
+                    GDCLASS(Test, Node);
+                };
 
     .. admonition:: Step 6
 
@@ -124,6 +122,173 @@ Introduction
                 #include <godot_cpp/classes/node.hpp>
 
                 using namepsace Godot;
+
+                class Test : public Node {
+                    GDCLASS(Test, Node);
+
+                public:
+                    Test();
+                    ~Test();
+                };
+
+    .. admonition:: Step 7
+
+        Test 7
+
+        Yeah yeah.
+
+        Yeah yeah.
+
+        Yeah yeah.
+
+        Yeah yeah.
+
+        .. container:: step-content
+
+            .. code-block:: cpp
+                :name: intro-step6-code
+                :linenos:
+                :emphasize-lines: 8-10
+
+                #include <godot_cpp/classes/node.hpp>
+
+                using namepsace Godot;
+
+                class Test : public Node {
+                    GDCLASS(Test, Node);
+
+                public:
+                    Test();
+                    ~Test();
+                };
+
+                class Test : public Node {
+                    GDCLASS(Test, Node);
+
+                public:
+                    Test();
+                    ~Test();
+                };
+
+                class Test : public Node {
+                    GDCLASS(Test, Node);
+
+                public:
+                    Test();
+                    ~Test();
+                };
+
+                class Test : public Node {
+                    GDCLASS(Test, Node);
+
+                public:
+                    Test();
+                    ~Test();
+                };
+
+                class Test : public Node {
+                    GDCLASS(Test, Node);
+
+                public:
+                    Test();
+                    ~Test();
+                };
+
+                class Test : public Node {
+                    GDCLASS(Test, Node);
+
+                public:
+                    Test();
+                    ~Test();
+                };
+
+                class Test : public Node {
+                    GDCLASS(Test, Node);
+
+                public:
+                    Test();
+                    ~Test();
+                };
+
+                class Test : public Node {
+                    GDCLASS(Test, Node);
+
+                public:
+                    Test();
+                    ~Test();
+                };
+
+                class Test : public Node {
+                    GDCLASS(Test, Node);
+
+                public:
+                    Test();
+                    ~Test();
+                };
+
+                class Test : public Node {
+                    GDCLASS(Test, Node);
+
+                public:
+                    Test();
+                    ~Test();
+                };
+
+                class Test : public Node {
+                    GDCLASS(Test, Node);
+
+                public:
+                    Test();
+                    ~Test();
+                };
+
+                class Test : public Node {
+                    GDCLASS(Test, Node);
+
+                public:
+                    Test();
+                    ~Test();
+                };
+
+                class Test : public Node {
+                    GDCLASS(Test, Node);
+
+                public:
+                    Test();
+                    ~Test();
+                };
+
+                class Test : public Node {
+                    GDCLASS(Test, Node);
+
+                public:
+                    Test();
+                    ~Test();
+                };
+
+                class Test : public Node {
+                    GDCLASS(Test, Node);
+
+                public:
+                    Test();
+                    ~Test();
+                };
+
+                class Test : public Node {
+                    GDCLASS(Test, Node);
+
+                public:
+                    Test();
+                    ~Test();
+                };
+
+                class Test : public Node {
+                    GDCLASS(Test, Node);
+
+                public:
+                    Test();
+                    ~Test();
+                };
 
                 class Test : public Node {
                     GDCLASS(Test, Node);

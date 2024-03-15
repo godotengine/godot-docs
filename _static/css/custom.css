@@ -2189,9 +2189,22 @@ p + .classref-constant {
     object-fit: contain;
 }
 
+
+.tutorial-js.dynamic .display-container .step-admonition-content .step-content > .literal-block-wrapper,
 .tutorial-js.dynamic .display-container .step-admonition-content .step-content > .sphinx-tabs {
     display: flex;
     flex-direction: column;
+}
+
+.tutorial-js.dynamic .display-container .step-admonition-content .step-content > div[class^="highlight-"],
+.tutorial-js.dynamic .display-container .step-admonition-content .step-content > .literal-block-wrapper div[class^="highlight-"] {
+    flex-grow: 1;
+    overflow: hidden;
+}
+
+.tutorial-js.dynamic .display-container .step-admonition-content .step-content > div[class^="highlight-"] .highlight,
+.tutorial-js.dynamic .display-container .step-admonition-content .step-content > .literal-block-wrapper div[class^="highlight-"] .highlight {
+    height: 100%;
 }
 
 .tutorial-js.dynamic .display-container .step-admonition-content .step-content > .sphinx-tabs .sphinx-tabs-panel {
