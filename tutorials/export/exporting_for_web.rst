@@ -57,6 +57,8 @@ If a runnable web export template is available, a button appears between the
 *Stop scene* and *Play edited Scene* buttons in the editor to quickly open the
 game in the default browser for testing.
 
+If your project uses GDExtension **Extension Support** needs to be enabled.
+
 If you plan to use :ref:`VRAM compression <doc_importing_images>` make sure that
 **Vram Texture Compression** is enabled for the targeted platforms (enabling
 both **For Desktop** and **For Mobile** will result in a bigger, but more
