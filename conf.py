@@ -120,7 +120,7 @@ supported_languages = {
 # RTD normalized their language codes to ll-cc (e.g. zh-cn),
 # but Sphinx did not and still uses ll_CC (e.g. zh_CN).
 # `language` is the Sphinx configuration so it needs to be converted back.
-language = os.getenv("READTHEDOCS_LANGUAGE", "en")
+language = os.getenv("READTHEDOCS_LANGUAGE", "zh_CN")
 if "-" in language:
     (lang_name, lang_country) = language.split("-")
     language = lang_name + "_" + lang_country.upper()
@@ -131,7 +131,7 @@ if not language in supported_languages.keys():
     print(
         "The configured language is either wrong, or it should be added to supported_languages in conf.py. Falling back to 'en'."
     )
-    language = "en"
+    language = "zh_CN"
 
 is_i18n = tags.has("i18n")  # noqa: F821
 print("Build language: {}, i18n tag: {}".format(language, is_i18n))
@@ -185,7 +185,7 @@ html_context = {
     "godot_docs_title": supported_languages[language],
     "godot_docs_basepath": "https://docs.godotengine.org/",
     "godot_docs_suffix": ".html",
-    "godot_default_lang": "en",
+    "godot_default_lang": "zh_CN",
     "godot_canonical_version": "stable",
     # Distinguish local development website from production website.
     # This prevents people from looking for changes on the production website after making local changes :)
