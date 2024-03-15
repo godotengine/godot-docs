@@ -573,41 +573,55 @@ function setupTutorial(tutorial) {
   const tutorialChildren = Array.from(tutorial.children);
   /**
    * @typedef {{ type: (typeof TutorialStepType)[keyof typeof TutorialStepType], index: number }} StepBase
-   * @typedef {StepBase & { type: "COMPOUND", first: HTMLDivElement, middle: HTMLDivElement, last: HTMLDivElement }} StepCompound
+   * @typedef {StepBase & { type: "COMPOUND", title: HTMLDivElement, description: HTMLDivElement, content: HTMLDivElement }} StepAdmonition
    * @typedef {StepBase & { type: "COMMENT", comment: HTMLDivElement }} StepComment
    */
   const steps = tutorialChildren.map((step, index) => {
-    const type = step.classList.contains("compound")
-      ? "COMPOUND"
+    const type = step.classList.contains("admonition")
+      ? "ADMONITION"
       : "COMMENT";
 
-    if (type === "COMMENT") {
-      const comment = document.createElement("div");
-      comment.append(...Array.from(step.children));
-      /** @type {StepComment} */
-      const returnVal = {
-        type,
-        index,
-        comment
-      };
-      return returnVal;
+    /** @type {StepComment | StepAdmonition} */
+    let returnVal;
+
+    switch (type) {
+      case "COMMENT": {
+        const comment = document.createElement("div");
+        comment.append(...Array.from(step.children));
+        /** @type {StepComment} */
+        returnVal = {
+          type,
+          index,
+          comment
+        };
+      } break;
+
+      case "ADMONITION": {
+        const title = step.querySelector(".admonition-title");
+        if (title == null) throw new Error("error while parsing step: title is null");
+        title.classList.add("step-title");
+        title.remove();
+
+        const content = step.querySelector(".step-content");
+        if (content == null) throw new Error("error while parsing step: content is null");
+        content.remove();
+
+        const description = document.createElement("div");
+        description.classList.add("step-description");
+        description.append(...Array.from(step.children))
+
+        const context = step.query
+        /** @type {StepAdmonition} */
+        returnVal = {
+          type,
+          index,
+          title,
+          description,
+          content
+        };
+      } break;
     }
 
-    // Type is "COMPOUND".
-    const first = step.querySelector(".compound-first");
-    if (first == null) throw new Error("error while parsing step: first is null");
-    const middle = step.querySelector(".compound-middle");
-    if (middle == null) throw new Error("error while parsing step: middle is null");
-    const last = step.querySelector(".compound-last");
-    if (last == null) throw new Error("error while parsing step: last is null");
-    /** @type {StepCompound} */
-    const returnVal = {
-      type,
-      index,
-      first,
-      middle,
-      last
-    };
     return returnVal;
   });
 
@@ -679,7 +693,7 @@ function setupTutorial(tutorial) {
 
     // Let's activate the correct display content.
     const entryIndex = entry.dataset["stepIndex"];
-    const displayContainerSteps = tutorial.querySelectorAll(".display-container .step-compound-content");
+    const displayContainerSteps = tutorial.querySelectorAll(".display-container .step-admonition-content");
     for (const displayContainerStep of Array.from(displayContainerSteps)) {
       if (displayContainerStep.dataset["stepIndex"] === entryIndex) {
         displayContainerStep.classList.add("active");
@@ -791,17 +805,17 @@ function setupTutorial(tutorial) {
           stepContainer.append(step.comment);
         } break;
 
-        case "COMPOUND": {
-          stepContainer.classList.add("step-compound");
+        case "ADMONITION": {
+          stepContainer.classList.add("step-admonition");
 
           const stepTextContainer = document.createElement("div");
-          stepTextContainer.classList.add("step-compound-box");
-          stepTextContainer.append(step.first, step.middle);
+          stepTextContainer.classList.add("step-admonition-box");
+          stepTextContainer.append(step.title, step.description);
           stepContainer.append(stepTextContainer);
 
           const stepContentContainer = document.createElement("div");
-          stepContentContainer.classList.add("step-compound-content");
-          stepContentContainer.append(step.last);
+          stepContentContainer.classList.add("step-admonition-content");
+          stepContentContainer.append(step.content);
           stepContainer.append(stepContentContainer);
 
           // Resets the "scrolled" tag, as there's no scroll anymore.
@@ -847,21 +861,21 @@ function setupTutorial(tutorial) {
           stepContainer.append(step.comment);
         } break;
 
-        case "COMPOUND": {
-          stepContainer.classList.add("step-compound");
+        case "ADMONITION": {
+          stepContainer.classList.add("step-admonition");
 
           const stepTextContainer = document.createElement("div");
-          stepTextContainer.classList.add("step-compound-box");
-          stepTextContainer.append(step.first, step.middle);
+          stepTextContainer.classList.add("step-admonition-box");
+          stepTextContainer.append(step.title, step.description);
           stepContainer.append(stepTextContainer);
 
-          // Instead of adding "step-compound-content" to the `stepContainer`
+          // Instead of adding "step-admonition-content" to the `stepContainer`
           // (which is being added in `stepsContainer`), let's put it in
           // `displayContainer` instead.
           const stepContentContainer = document.createElement("div");
-          stepContentContainer.classList.add("step-compound-content");
+          stepContentContainer.classList.add("step-admonition-content");
           stepContentContainer.dataset["stepIndex"] = step.index;
-          stepContentContainer.append(step.last);
+          stepContentContainer.append(step.content);
           displaySticky.append(stepContentContainer);
 
           // Scroll to the mean of the highlighted lines.

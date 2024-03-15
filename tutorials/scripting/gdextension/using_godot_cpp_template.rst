@@ -8,11 +8,13 @@ Introduction
 
 .. container:: tutorial
 
-    .. compound:: Step 1
+    .. admonition:: Step 1
 
         Test 1
 
-        .. container:: step-context
+        Yo!
+
+        .. container:: step-content
 
             .. image:: img/icu_data.png
 
@@ -20,11 +22,11 @@ Introduction
 
         Hello. This is a comment inbetween two steps.
 
-    .. compound:: Step 2
+    .. admonition:: Step 2
 
         Test 2
 
-        .. container:: step-context
+        .. container:: step-content
 
             .. tabs::
                 .. code-tab:: cpp
@@ -43,11 +45,11 @@ Introduction
                     func _ready():
                         print("Hello, World!")
 
-    .. compound:: Step 3
+    .. admonition:: Step 3
 
         Test 3
 
-        .. container:: step-context
+        .. container:: step-content
 
             .. tabs::
                 .. code-tab:: cpp
@@ -60,11 +62,11 @@ Introduction
 
                     using namepsace Godot;
 
-    .. compound:: Step 4
+    .. admonition:: Step 4
 
         Test 4
 
-        .. container:: step-context
+        .. container:: step-content
 
             .. tabs::
                 .. code-tab:: cpp
@@ -84,11 +86,11 @@ Introduction
 
         Hello again! This is another comment.
 
-    .. compound:: Step 5
+    .. admonition:: Step 5
 
         Test 5
 
-        .. container:: step-context
+        .. container:: step-content
 
             .. tabs::
                 .. code-tab:: cpp
@@ -105,30 +107,31 @@ Introduction
                         GDCLASS(Test, Node);
                     };
 
-    .. compound:: Step 6
+    .. admonition:: Step 6
 
         Test 6
 
-        .. container:: step-context
+        Yeah yeah.
 
-            .. tabs::
-                .. code-tab:: cpp
-                    :caption: src/test.cpp
-                    :name: intro-step6-code
-                    :linenos:
-                    :emphasize-lines: 8-10
+        .. container:: step-content
 
-                    #include <godot_cpp/classes/node.hpp>
+            .. code-block:: cpp
+                :caption: src/test.cpp
+                :name: intro-step6-code
+                :linenos:
+                :emphasize-lines: 8-10
 
-                    using namepsace Godot;
+                #include <godot_cpp/classes/node.hpp>
 
-                    class Test : public Node {
-                        GDCLASS(Test, Node);
+                using namepsace Godot;
 
-                    public:
-                        Test();
-                        ~Test();
-                    };
+                class Test : public Node {
+                    GDCLASS(Test, Node);
+
+                public:
+                    Test();
+                    ~Test();
+                };
 
 
 Introduction 2
@@ -136,11 +139,11 @@ Introduction 2
 
 .. container:: tutorial
 
-    .. compound:: Step 1
+    .. admonition:: Step 1
 
         Test 1
 
-        .. container:: step-context
+        .. container:: step-content
 
             .. image:: img/icu_data.png
 
@@ -148,15 +151,15 @@ Introduction 2
 
         Hello. This is a comment inbetween two steps.
 
-    .. compound:: Step 2
+    .. admonition:: Step 2
 
         Test 2
 
-        .. container:: step-context
+        .. container:: step-content
 
             .. tabs::
                 .. code-tab:: cpp
-                    :name: intro-step2-code
+                    :name: intro2-step2-code
                     :linenos:
                     :emphasize-lines: 1
 
@@ -171,11 +174,11 @@ Introduction 2
                     func _ready():
                         print("Hello, World!")
 
-    .. compound:: Step 3
+    .. admonition:: Step 3
 
         Test 3
 
-        .. container:: step-context
+        .. container:: step-content
 
             .. tabs::
                 .. code-tab:: cpp
@@ -188,11 +191,11 @@ Introduction 2
 
                     using namepsace Godot;
 
-    .. compound:: Step 4
+    .. admonition:: Step 4
 
         Test 4
 
-        .. container:: step-context
+        .. container:: step-content
 
             .. tabs::
                 .. code-tab:: cpp
@@ -212,11 +215,11 @@ Introduction 2
 
         Hello again! This is another comment.
 
-    .. compound:: Step 5
+    .. admonition:: Step 5
 
         Test 5
 
-        .. container:: step-context
+        .. container:: step-content
 
             .. tabs::
                 .. code-tab:: cpp
@@ -233,11 +236,11 @@ Introduction 2
                         GDCLASS(Test, Node);
                     };
 
-    .. compound:: Step 6
+    .. admonition:: Step 6
 
         Test 6
 
-        .. container:: step-context
+        .. container:: step-content
 
             .. tabs::
                 .. code-tab:: cpp

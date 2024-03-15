@@ -1822,7 +1822,7 @@ p + .classref-constant {
     margin: 0;
 }
 
-.tutorial .steps .compound .step-context {
+.tutorial .steps .compound .step-content {
     display: none;
 }
 
@@ -1868,7 +1868,7 @@ p + .classref-constant {
         height: 100vh;
     }
 
-    .tutorial .step-context {
+    .tutorial .step-content {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -1876,7 +1876,7 @@ p + .classref-constant {
         height: 100%;
     } */
 
-    /* .tutorial .step-context .literal-block-wrapper {
+    /* .tutorial .step-content .literal-block-wrapper {
         position: relative;
         width: 100%;
         height: 100%;
@@ -1888,22 +1888,22 @@ p + .classref-constant {
         grid-template-rows: auto 1fr;
     }
 
-    .tutorial .step-context .literal-block-wrapper .code-block-caption {
+    .tutorial .step-content .literal-block-wrapper .code-block-caption {
         grid-area: caption;
         width: 100%;
     }
 
-    .tutorial .step-context .literal-block-wrapper .code-block-caption + div {
+    .tutorial .step-content .literal-block-wrapper .code-block-caption + div {
         grid-area: code;
         width: 100%;
     }
 
-    .tutorial .step-context .literal-block-wrapper .code-block-caption + div .highlight,
-    .tutorial .step-context .literal-block-wrapper .code-block-caption + div .highlight pre {
+    .tutorial .step-content .literal-block-wrapper .code-block-caption + div .highlight,
+    .tutorial .step-content .literal-block-wrapper .code-block-caption + div .highlight pre {
         height: 100%;
     } */
 /*
-    .tutorial .step-context .sphinx-tabs {
+    .tutorial .step-content .sphinx-tabs {
         width: 100%;
         height: 100%;
         padding-top: 1em;
@@ -1971,13 +1971,36 @@ p + .classref-constant {
     display: none;
 }
 
+/* Step box. */
+.tutorial-js .step-container .step-admonition-box {
+    padding: 1em 1em 1em 0;
+}
+
 /* Step title. */
-.tutorial-js .step-compound-box .compound-first {
+.tutorial-js .step-admonition-box .admonition-title {
     line-height: auto;
     margin: 0;
+    margin-bottom: 1em;
+    padding: 0;
     font-size: large;
     font-family: var(--header-font-family);
-    margin-top: 1rem;
+    background-color: transparent;
+    color: var(--body-color);
+}
+
+.tutorial-js .step-admonition-box .admonition-title::before {
+    margin: 0;
+    content: "";
+}
+
+/* Step description. */
+.tutorial-js .step-admonition-box .step-description p {
+    line-height: normal;
+    margin-bottom: 0.5em;
+}
+
+.tutorial-js .step-admonition-box .step-description p:last-child {
+    margin-bottom: 0;
 }
 
 /**
@@ -1996,17 +2019,17 @@ p + .classref-constant {
     position: relative;
 }
 
-.tutorial-js.static .step-container.step-compound {
+.tutorial-js.static .step-container.step-admonition {
     display: flex;
     flex-direction: column;
     gap: 1rem;
 }
 
-.tutorial-js.static .step-container.step-compound .step-compound-box {
+.tutorial-js.static .step-container.step-admonition .step-admonition-box {
     position: relative;
+    padding-left: 1em;
     border-radius: 4px;
     box-shadow: 0px 3px 9px 0px rgb(0 0 0 / 29%);
-    padding-left: 25px;
     background-color: var(--content-wrap-background-color);
 }
 
@@ -2070,14 +2093,14 @@ p + .classref-constant {
     padding: 1rem;
 }
 
-.tutorial-js.dynamic .steps-container .step-container.step-compound {
+.tutorial-js.dynamic .steps-container .step-container.step-admonition {
     border-radius: 4px;
     box-shadow: 0px 3px 9px 0px rgb(0 0 0 / 29%);
     padding-left: 25px;
     background-color: var(--content-wrap-background-color);
 }
 
-.tutorial-js.dynamic .steps-container .step-container.step-compound::after {
+.tutorial-js.dynamic .steps-container .step-container.step-admonition::after {
     content: "";
     display: block;
     position: absolute;
@@ -2092,16 +2115,16 @@ p + .classref-constant {
     transition: opacity 0.3s ease-in-out;
 }
 
-.tutorial-js.dynamic .steps-container .step-container.step-compound.active::after {
+.tutorial-js.dynamic .steps-container .step-container.step-admonition.active::after {
     opacity: 1;
 }
 
-.tutorial-js.dynamic .steps-container .step-container.step-compound .step-compound-box {
+.tutorial-js.dynamic .steps-container .step-container.step-admonition .step-admonition-box {
     display: flex;
     flex-direction: column;
 }
 
-.tutorial-js.dynamic .steps-container .step-container.step-compound .step-compound-box .compound-first {
+.tutorial-js.dynamic .steps-container .step-container.step-admonition .step-admonition-box .compound-first {
     line-height: auto;
     margin: 0;
     font-size: large;
@@ -2109,7 +2132,7 @@ p + .classref-constant {
     margin-top: 1rem;
 }
 
-.tutorial-js.dynamic .steps-container .step-container.step-compound .step-compound-box .compound-middle {
+.tutorial-js.dynamic .steps-container .step-container.step-admonition .step-admonition-box .compound-middle {
     flex-grow: 1;
 }
 
@@ -2123,7 +2146,7 @@ p + .classref-constant {
     height: 100vh;
 }
 
-.tutorial-js.dynamic .display-container .step-compound-content {
+.tutorial-js.dynamic .display-container .step-admonition-content {
     position: absolute;
     top: 0;
     left: 0;
@@ -2137,18 +2160,18 @@ p + .classref-constant {
     transition: opacity 0.3s ease-in-out;
 }
 
-.tutorial-js.dynamic .display-container .step-compound-content.active {
+.tutorial-js.dynamic .display-container .step-admonition-content.active {
     /* Let's display the active content. */
     opacity: 1;
     pointer-events: all;
 }
 
-.tutorial-js.dynamic .display-container .step-compound-content .step-context,
-.tutorial-js.dynamic .display-container .step-compound-content .step-context .sphinx-tabs {
+.tutorial-js.dynamic .display-container .step-admonition-content .step-content,
+.tutorial-js.dynamic .display-container .step-admonition-content .step-content .sphinx-tabs {
     height: 100%;
 }
 
-.tutorial-js.dynamic .display-container .step-compound-content .step-context {
+.tutorial-js.dynamic .display-container .step-admonition-content .step-content {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -2157,41 +2180,41 @@ p + .classref-constant {
     padding-bottom: 1rem;
 }
 
-.tutorial-js.dynamic .display-container .step-compound-content .step-context > * {
+.tutorial-js.dynamic .display-container .step-admonition-content .step-content > * {
     width: 100%;
     height: 100%;
 }
 
-.tutorial-js.dynamic .display-container .step-compound-content .step-context > img {
+.tutorial-js.dynamic .display-container .step-admonition-content .step-content > img {
     object-fit: contain;
 }
 
-.tutorial-js.dynamic .display-container .step-compound-content .step-context > .sphinx-tabs {
+.tutorial-js.dynamic .display-container .step-admonition-content .step-content > .sphinx-tabs {
     display: flex;
     flex-direction: column;
 }
 
-.tutorial-js.dynamic .display-container .step-compound-content .step-context > .sphinx-tabs .sphinx-tabs-panel {
+.tutorial-js.dynamic .display-container .step-admonition-content .step-content > .sphinx-tabs .sphinx-tabs-panel {
     flex-grow: 1;
     overflow: hidden;
 }
 
-.tutorial-js.dynamic .display-container .step-compound-content .step-context > .sphinx-tabs .sphinx-tabs-panel .literal-block-wrapper {
+.tutorial-js.dynamic .display-container .step-admonition-content .step-content > .sphinx-tabs .sphinx-tabs-panel .literal-block-wrapper {
     display: flex;
     flex-direction: column;
     height: 100%;
 }
 
-.tutorial-js.dynamic .display-container .step-compound-content .step-context > .sphinx-tabs .sphinx-tabs-panel div[class^="highlight-"] {
-    overflow: scroll;
+.tutorial-js.dynamic .display-container .step-admonition-content .step-content > .sphinx-tabs .sphinx-tabs-panel div[class^="highlight-"] {
+    overflow: auto;
 }
 
-.tutorial-js.dynamic .display-container .step-compound-content .step-context > .sphinx-tabs .sphinx-tabs-panel .literal-block-wrapper div[class^="highlight-"] {
+.tutorial-js.dynamic .display-container .step-admonition-content .step-content > .sphinx-tabs .sphinx-tabs-panel .literal-block-wrapper div[class^="highlight-"] {
     flex-grow: 1;
 }
 
-.tutorial-js.dynamic .display-container .step-compound-content .step-context > .sphinx-tabs .sphinx-tabs-panel > div[class^="highlight-"],
-.tutorial-js.dynamic .display-container .step-compound-content .step-context > .sphinx-tabs .sphinx-tabs-panel div[class^="highlight-"] .highlight {
+.tutorial-js.dynamic .display-container .step-admonition-content .step-content > .sphinx-tabs .sphinx-tabs-panel > div[class^="highlight-"],
+.tutorial-js.dynamic .display-container .step-admonition-content .step-content > .sphinx-tabs .sphinx-tabs-panel div[class^="highlight-"] .highlight {
     height: 100%;
 }
 
