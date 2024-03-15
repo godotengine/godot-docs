@@ -65,8 +65,8 @@ Pre-commit hook
 ^^^^^^^^^^^^^^^
 
 For ease of use, we provide hooks for Git with the `pre-commit <https://pre-commit.com/>`__
-Python framework that will run clang-format automatically on all your commits with the 
-correct version of clang-format.
+Python framework that will run ``clang-format`` automatically on all your commits with the 
+correct version of ``clang-format``.
 To set up:
 
 ::
@@ -307,8 +307,8 @@ Pre-commit hook
 ~~~~~~~~~~~~~~~
 
 For ease of use, we provide hooks for Git with the `pre-commit <https://pre-commit.com/>`__
-Python framework that will run black automatically on all your commits with the 
-correct version of black.
+Python framework that will run ``black`` automatically on all your commits with the 
+correct version of ``black``.
 To set up:
 
 ::
