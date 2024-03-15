@@ -115,6 +115,12 @@ select the relevant type of resource desired then click **Reimport**:
 
 .. image:: img/import_process_changing_import_type.webp
 
+Select ``Keep File (exported as is)`` as resource type to skip file import, files
+with this resource type will be preserved as is during project export.
+
+Select ``Skip File (not exported)`` as resource type to skip file import and ignore
+file during project export.
+
 Changing default import parameters
 ----------------------------------
 
