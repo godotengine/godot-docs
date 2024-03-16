@@ -519,6 +519,7 @@ Some notable renames you will need to perform in shaders are:
 - Texture filter and repeat modes are now set on individual uniforms, rather
   than the texture files themselves.
 - ``hint_albedo`` is now ``source_color``.
+- ``hint_color`` is now ``source_color``.
 - :ref:`Built in matrix variables were renamed. <doc_spatial_shader>`
 - Particles shaders no longer use the ``vertex()`` processor function. Instead
   they use ``start()`` and ``process()``.
