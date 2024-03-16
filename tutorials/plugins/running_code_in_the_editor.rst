@@ -105,18 +105,20 @@ Here is how a ``_process()`` function might look for you:
         // Code to execute both in editor and in game.
     }
 
-.. note::
+Important information
+---------------------
 
-    Modifications in the editor are permanent. For example, in the following
-    case, when we remove the script, the node will keep its rotation. Be careful
-    to avoid making unwanted modifications.
+Any other GDScript that your tool script uses must *also* be a tool. Any
+GDScript without ``@tool`` used by the editor will act like an empty file!
 
-.. note::
+Extending a ``@tool`` script does not automatically make the extending script
+a ``@tool``. Omitting ``@tool`` from the extending script will disable tool
+behavior from the super class. Therefore the extending script should also
+specify the ``@tool`` annotation.
 
-    Extending a ``@tool`` script does not automatically make the extending script
-    a ``@tool``. Omitting ``@tool`` from the extending script will disable tool
-    behavior from the super class. Therefore the extending script should also
-    specify the ``@tool`` annotation.
+Modifications in the editor are permanent. For example, in the next
+section when we remove the script, the node will keep its rotation. Be careful
+to avoid making unwanted modifications.
 
 Try ``@tool`` out
 -----------------
