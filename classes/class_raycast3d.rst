@@ -410,6 +410,8 @@ Returns whether or not the specified layer of the :ref:`collision_mask<class_Ray
 
 Returns the normal of the intersecting object's shape at the collision point, or ``Vector3(0, 0, 0)`` if the ray starts inside the shape and :ref:`hit_from_inside<class_RayCast3D_property_hit_from_inside>` is ``true``.
 
+\ **Note:** Check that :ref:`is_colliding<class_RayCast3D_method_is_colliding>` returns ``true`` before calling this method to ensure the returned normal is valid and up-to-date.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -420,9 +422,9 @@ Returns the normal of the intersecting object's shape at the collision point, or
 
 :ref:`Vector3<class_Vector3>` **get_collision_point**\ (\ ) |const|
 
-Returns the collision point at which the ray intersects the closest object. If :ref:`hit_from_inside<class_RayCast3D_property_hit_from_inside>` is ``true`` and the ray starts inside of a collision shape, this function will return the origin point of the ray.
+Returns the collision point at which the ray intersects the closest object, in the global coordinate system. If :ref:`hit_from_inside<class_RayCast3D_property_hit_from_inside>` is ``true`` and the ray starts inside of a collision shape, this function will return the origin point of the ray.
 
-\ **Note:** This point is in the **global** coordinate system.
+\ **Note:** Check that :ref:`is_colliding<class_RayCast3D_method_is_colliding>` returns ``true`` before calling this method to ensure the returned point is valid and up-to-date.
 
 .. rst-class:: classref-item-separator
 

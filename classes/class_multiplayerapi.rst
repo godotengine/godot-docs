@@ -257,7 +257,7 @@ Returns the peer IDs of all connected peers of this MultiplayerAPI's :ref:`multi
 
 Returns the sender's peer ID for the RPC currently being executed.
 
-\ **Note:** If not inside an RPC this method will return 0.
+\ **Note:** This method returns ``0`` when called outside of an RPC. As such, the original peer ID may be lost when code execution is delayed (such as with GDScript's ``await`` keyword).
 
 .. rst-class:: classref-item-separator
 

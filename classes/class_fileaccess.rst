@@ -840,7 +840,7 @@ Returns the next bits from the file as a floating-point number.
 
 :ref:`String<class_String>` **get_sha256**\ (\ path\: :ref:`String<class_String>`\ ) |static|
 
-Returns a SHA-256 :ref:`String<class_String>` representing the file at the given path or an empty :ref:`String<class_String>` on failure.
+Returns an SHA-256 :ref:`String<class_String>` representing the file at the given path or an empty :ref:`String<class_String>` on failure.
 
 .. rst-class:: classref-item-separator
 

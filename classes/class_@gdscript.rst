@@ -788,6 +788,10 @@ The order of ``mode``, ``sync`` and ``transfer_mode`` does not matter, but value
 
 Make a script with static variables to not persist after all references are lost. If the script is loaded again the static variables will revert to their default values.
 
+\ **Note:** As annotations describe their subject, the :ref:`@static_unload<class_@GDScript_annotation_@static_unload>` annotation must be placed before the class definition and inheritance.
+
+\ **Warning:** Currently, due to a bug, scripts are never freed, even if :ref:`@static_unload<class_@GDScript_annotation_@static_unload>` annotation is used.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -877,6 +881,8 @@ An optional ``message`` can be shown in addition to the generic "Assertion faile
     assert(speed >= 0 and speed < 20) # You can also combine the two conditional statements in one check.
     assert(speed < 20, "the speed limit is 20") # Show a message.
 
+\ **Note:** :ref:`assert<class_@GDScript_method_assert>` is a keyword, not a function. So you cannot access it as a :ref:`Callable<class_Callable>` or use it inside expressions.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -955,7 +961,7 @@ Returns an array of dictionaries representing the current call stack. See also :
 
 Starting from ``_ready()``, ``bar()`` would print:
 
-.. code::
+.. code:: text
 
     [{function:bar, line:12, source:res://script.gd}, {function:foo, line:9, source:res://script.gd}, {function:_ready, line:6, source:res://script.gd}]
 
@@ -987,7 +993,7 @@ Returns the passed ``instance`` converted to a Dictionary. Can be useful for ser
 
 Prints out:
 
-.. code::
+.. code:: text
 
     [@subpath, @path, foo]
     [, res://test.gd, bar]
@@ -1010,7 +1016,7 @@ Returns ``true`` if ``value`` is an instance of ``type``. The ``type`` value mus
 
 - A :ref:`Script<class_Script>` (you can use any class, including inner one).
 
-Unlike the right operand of the ``is`` operator, ``type`` can be a non-constant value. The ``is`` operator supports more features (such as typed arrays) and is more performant. Use the operator instead of this method if you do not need dynamic type checking.
+Unlike the right operand of the ``is`` operator, ``type`` can be a non-constant value. The ``is`` operator supports more features (such as typed arrays). Use the operator instead of this method if you do not need dynamic type checking.
 
 Examples:
 
@@ -1091,6 +1097,8 @@ Returns a :ref:`Resource<class_Resource>` from the filesystem located at ``path`
     # Create instance of a scene.
     var diamond = preload("res://diamond.tscn").instantiate()
 
+\ **Note:** :ref:`preload<class_@GDScript_method_preload>` is a keyword, not a function. So you cannot access it as a :ref:`Callable<class_Callable>`.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -1105,7 +1113,7 @@ Like :ref:`@GlobalScope.print<class_@GlobalScope_method_print>`, but includes th
 
 The output in the console may look like the following:
 
-.. code::
+.. code:: text
 
     Test print
     At: res://test.gd:15:_process()
@@ -1126,7 +1134,7 @@ Prints a stack trace at the current code location. See also :ref:`get_stack<clas
 
 The output in the console may look like the following:
 
-.. code::
+.. code:: text
 
     Frame 0 - res://test.gd:16 in function '_process'
 
@@ -1175,7 +1183,7 @@ To iterate over an :ref:`Array<class_Array>` backwards, use:
 
 Output:
 
-.. code::
+.. code:: text
 
     9
     6
@@ -1190,7 +1198,7 @@ To iterate over :ref:`float<class_float>`, convert them in the loop.
 
 Output:
 
-.. code::
+.. code:: text
 
     0.3
     0.2

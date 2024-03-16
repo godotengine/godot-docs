@@ -21,7 +21,7 @@ Description
 
 Ogg Vorbis is a lossy audio format, with better audio quality compared to :ref:`ResourceImporterMP3<class_ResourceImporterMP3>` at a given bitrate.
 
-In most cases, it's recommended to use Ogg Vorbis over MP3. However, if you're using a MP3 sound source with no higher quality source available, then it's recommended to use the MP3 file directly to avoid double lossy compression.
+In most cases, it's recommended to use Ogg Vorbis over MP3. However, if you're using an MP3 sound source with no higher quality source available, then it's recommended to use the MP3 file directly to avoid double lossy compression.
 
 Ogg Vorbis requires more CPU to decode than :ref:`ResourceImporterWAV<class_ResourceImporterWAV>`. If you need to play a lot of simultaneous sounds, it's recommended to use WAV for those sounds instead, especially if targeting low-end devices.
 

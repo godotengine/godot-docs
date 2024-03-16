@@ -129,7 +129,7 @@ Limiting the FPS can be useful to reduce the host machine's power consumption, w
 
 If :ref:`ProjectSettings.display/window/vsync/vsync_mode<class_ProjectSettings_property_display/window/vsync/vsync_mode>` is **Enabled** or **Adaptive**, the setting takes precedence and the max FPS number cannot exceed the monitor's refresh rate.
 
-If :ref:`ProjectSettings.display/window/vsync/vsync_mode<class_ProjectSettings_property_display/window/vsync/vsync_mode>` is **Enabled**, on monitors with variable refresh rate enabled (G-Sync/FreeSync), using a FPS limit a few frames lower than the monitor's refresh rate will `reduce input lag while avoiding tearing <https://blurbusters.com/howto-low-lag-vsync-on/>`__.
+If :ref:`ProjectSettings.display/window/vsync/vsync_mode<class_ProjectSettings_property_display/window/vsync/vsync_mode>` is **Enabled**, on monitors with variable refresh rate enabled (G-Sync/FreeSync), using an FPS limit a few frames lower than the monitor's refresh rate will `reduce input lag while avoiding tearing <https://blurbusters.com/howto-low-lag-vsync-on/>`__.
 
 See also :ref:`physics_ticks_per_second<class_Engine_property_physics_ticks_per_second>` and :ref:`ProjectSettings.application/run/max_fps<class_ProjectSettings_property_application/run/max_fps>`.
 
@@ -280,7 +280,7 @@ To detect whether the current build is 64-bit, you can use the fact that all 64-
 
 
 
-\ **Note:** This method does *not* return the name of the system's CPU architecture (like :ref:`OS.get_processor_name<class_OS_method_get_processor_name>`). For example, when running a ``x86_32`` Godot binary on a ``x86_64`` system, the returned value will still be ``"x86_32"``.
+\ **Note:** This method does *not* return the name of the system's CPU architecture (like :ref:`OS.get_processor_name<class_OS_method_get_processor_name>`). For example, when running an ``x86_32`` Godot binary on an ``x86_64`` system, the returned value will still be ``"x86_32"``.
 
 .. rst-class:: classref-item-separator
 

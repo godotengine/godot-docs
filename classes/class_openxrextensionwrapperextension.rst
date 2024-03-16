@@ -30,7 +30,11 @@ Methods
    :widths: auto
 
    +-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                               | :ref:`_get_composition_layer<class_OpenXRExtensionWrapperExtension_private_method__get_composition_layer>`\ (\ ) |virtual|                                                                                                               |
+   | :ref:`int<class_int>`                               | :ref:`_get_composition_layer<class_OpenXRExtensionWrapperExtension_private_method__get_composition_layer>`\ (\ index\: :ref:`int<class_int>`\ ) |virtual|                                                                                |
+   +-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                               | :ref:`_get_composition_layer_count<class_OpenXRExtensionWrapperExtension_private_method__get_composition_layer_count>`\ (\ ) |virtual|                                                                                                   |
+   +-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                               | :ref:`_get_composition_layer_order<class_OpenXRExtensionWrapperExtension_private_method__get_composition_layer_order>`\ (\ index\: :ref:`int<class_int>`\ ) |virtual|                                                                    |
    +-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Dictionary<class_Dictionary>`                 | :ref:`_get_requested_extensions<class_OpenXRExtensionWrapperExtension_private_method__get_requested_extensions>`\ (\ ) |virtual|                                                                                                         |
    +-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -98,9 +102,39 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **_get_composition_layer**\ (\ ) |virtual|
+:ref:`int<class_int>` **_get_composition_layer**\ (\ index\: :ref:`int<class_int>`\ ) |virtual|
 
-Returns a pointer to a ``XrCompositionLayerBaseHeader`` struct to provide a composition layer. This will only be called if the extension previously registered itself with :ref:`OpenXRAPIExtension.register_composition_layer_provider<class_OpenXRAPIExtension_method_register_composition_layer_provider>`.
+Returns a pointer to an ``XrCompositionLayerBaseHeader`` struct to provide the given composition layer.
+
+This will only be called if the extension previously registered itself with :ref:`OpenXRAPIExtension.register_composition_layer_provider<class_OpenXRAPIExtension_method_register_composition_layer_provider>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_OpenXRExtensionWrapperExtension_private_method__get_composition_layer_count:
+
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **_get_composition_layer_count**\ (\ ) |virtual|
+
+Returns the number of composition layers this extension wrapper provides via :ref:`_get_composition_layer<class_OpenXRExtensionWrapperExtension_private_method__get_composition_layer>`.
+
+This will only be called if the extension previously registered itself with :ref:`OpenXRAPIExtension.register_composition_layer_provider<class_OpenXRAPIExtension_method_register_composition_layer_provider>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_OpenXRExtensionWrapperExtension_private_method__get_composition_layer_order:
+
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **_get_composition_layer_order**\ (\ index\: :ref:`int<class_int>`\ ) |virtual|
+
+Returns an integer that will be used to sort the given composition layer provided via :ref:`_get_composition_layer<class_OpenXRExtensionWrapperExtension_private_method__get_composition_layer>`. Lower numbers will move the layer to the front of the list, and higher numbers to the end. The default projection layer has an order of ``0``, so layers provided by this method should probably be above or below (but not exactly) ``0``.
+
+This will only be called if the extension previously registered itself with :ref:`OpenXRAPIExtension.register_composition_layer_provider<class_OpenXRAPIExtension_method_register_composition_layer_provider>`.
 
 .. rst-class:: classref-item-separator
 

@@ -2060,7 +2060,7 @@ The default exposure used for tonemapping. Higher values result in a brighter im
 - |void| **set_tonemapper**\ (\ value\: :ref:`ToneMapper<enum_Environment_ToneMapper>`\ )
 - :ref:`ToneMapper<enum_Environment_ToneMapper>` **get_tonemapper**\ (\ )
 
-The tonemapping mode to use. Tonemapping is the process that "converts" HDR values to be suitable for rendering on a LDR display. (Godot doesn't support rendering on HDR displays yet.)
+The tonemapping mode to use. Tonemapping is the process that "converts" HDR values to be suitable for rendering on an LDR display. (Godot doesn't support rendering on HDR displays yet.)
 
 .. rst-class:: classref-item-separator
 

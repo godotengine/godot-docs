@@ -12,7 +12,7 @@ GLTFMesh
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-GLTFMesh represents an GLTF mesh.
+GLTFMesh represents a GLTF mesh.
 
 .. rst-class:: classref-introduction-group
 

@@ -34,7 +34,7 @@ The :ref:`HashType<enum_HashingContext_HashType>` enum shows the supported hashi
         # Check that file exists.
         if not FileAccess.file_exists(path):
             return
-        # Start a SHA-256 context.
+        # Start an SHA-256 context.
         var ctx = HashingContext.new()
         ctx.start(HashingContext.HASH_SHA256)
         # Open the file to hash.
@@ -58,7 +58,7 @@ The :ref:`HashType<enum_HashingContext_HashType>` enum shows the supported hashi
         {
             return;
         }
-        // Start a SHA-256 context.
+        // Start an SHA-256 context.
         var ctx = new HashingContext();
         ctx.Start(HashingContext.HashType.Sha256);
         // Open the file to hash.
@@ -158,7 +158,7 @@ Closes the current context, and return the computed hash.
 
 :ref:`Error<enum_@GlobalScope_Error>` **start**\ (\ type\: :ref:`HashType<enum_HashingContext_HashType>`\ )
 
-Starts a new hash computation of the given ``type`` (e.g. :ref:`HASH_SHA256<class_HashingContext_constant_HASH_SHA256>` to start computation of a SHA-256).
+Starts a new hash computation of the given ``type`` (e.g. :ref:`HASH_SHA256<class_HashingContext_constant_HASH_SHA256>` to start computation of an SHA-256).
 
 .. rst-class:: classref-item-separator
 

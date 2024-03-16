@@ -78,6 +78,8 @@ Properties
    +-----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+-----------------------+
    | :ref:`PackedByteArray<class_PackedByteArray>`                   | :ref:`data<class_FontFile_property_data>`                                                             | ``PackedByteArray()`` |
    +-----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`bool<class_bool>`                                         | :ref:`disable_embedded_bitmaps<class_FontFile_property_disable_embedded_bitmaps>`                     | ``true``              |
+   +-----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+-----------------------+
    | :ref:`int<class_int>`                                           | :ref:`fixed_size<class_FontFile_property_fixed_size>`                                                 | ``0``                 |
    +-----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+-----------------------+
    | :ref:`FixedSizeScaleMode<enum_TextServer_FixedSizeScaleMode>`   | :ref:`fixed_size_scale_mode<class_FontFile_property_fixed_size_scale_mode>`                           | ``0``                 |
@@ -310,6 +312,23 @@ Font anti-aliasing mode.
 - :ref:`PackedByteArray<class_PackedByteArray>` **get_data**\ (\ )
 
 Contents of the dynamic font source file.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_FontFile_property_disable_embedded_bitmaps:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **disable_embedded_bitmaps** = ``true``
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_disable_embedded_bitmaps**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_disable_embedded_bitmaps**\ (\ )
+
+If set to ``true``, embedded font bitmap loading is disabled (bitmap-only and color fonts ignore this property).
 
 .. rst-class:: classref-item-separator
 
@@ -614,7 +633,7 @@ Removes all font cache entries.
 
 |void| **clear_glyphs**\ (\ cache_index\: :ref:`int<class_int>`, size\: :ref:`Vector2i<class_Vector2i>`\ )
 
-Removes all rendered glyphs information from the cache entry.
+Removes all rendered glyph information from the cache entry.
 
 \ **Note:** This function will not remove textures associated with the glyphs, use :ref:`remove_texture<class_FontFile_method_remove_texture>` to remove them manually.
 
@@ -1398,7 +1417,7 @@ Sets array containing glyph packing data.
 
 |void| **set_transform**\ (\ cache_index\: :ref:`int<class_int>`, transform\: :ref:`Transform2D<class_Transform2D>`\ )
 
-Sets 2D transform, applied to the font outlines, can be used for slanting, flipping and rotating glyphs.
+Sets 2D transform, applied to the font outlines, can be used for slanting, flipping, and rotating glyphs.
 
 .. rst-class:: classref-item-separator
 

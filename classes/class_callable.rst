@@ -129,6 +129,8 @@ Methods
    +-------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Callable<class_Callable>`     | :ref:`create<class_Callable_method_create>`\ (\ variant\: :ref:`Variant<class_Variant>`, method\: :ref:`StringName<class_StringName>`\ ) |static| |
    +-------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`               | :ref:`get_argument_count<class_Callable_method_get_argument_count>`\ (\ ) |const|                                                                 |
+   +-------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Array<class_Array>`           | :ref:`get_bound_arguments<class_Callable_method_get_bound_arguments>`\ (\ ) |const|                                                               |
    +-------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`               | :ref:`get_bound_arguments_count<class_Callable_method_get_bound_arguments_count>`\ (\ ) |const|                                                   |
@@ -312,6 +314,18 @@ Calls the method represented by this **Callable**. Unlike :ref:`call<class_Calla
 Creates a new **Callable** for the method named ``method`` in the specified ``variant``. To represent a method of a built-in :ref:`Variant<class_Variant>` type, a custom callable is used (see :ref:`is_custom<class_Callable_method_is_custom>`). If ``variant`` is :ref:`Object<class_Object>`, then a standard callable will be created instead.
 
 \ **Note:** This method is always necessary for the :ref:`Dictionary<class_Dictionary>` type, as property syntax is used to access its entries. You may also use this method when ``variant``'s type is not known in advance (for polymorphism).
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Callable_method_get_argument_count:
+
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **get_argument_count**\ (\ ) |const|
+
+Returns the total number of arguments this **Callable** should take, including optional arguments. This means that any arguments bound with :ref:`bind<class_Callable_method_bind>` are *subtracted* from the result, and any arguments unbound with :ref:`unbind<class_Callable_method_unbind>` are *added* to the result.
 
 .. rst-class:: classref-item-separator
 

@@ -25,7 +25,7 @@ This class conforms with as many of the ISO 8601 standards as possible. All date
 
 Conversion methods assume "the same timezone", and do not handle timezone conversions or DST automatically. Leap seconds are also not handled, they must be done manually if desired. Suffixes such as "Z" are not handled, you need to strip them away manually.
 
-When getting time information from the system, the time can either be in the local timezone or UTC depending on the ``utc`` parameter. However, the :ref:`get_unix_time_from_system<class_Time_method_get_unix_time_from_system>` method always returns the time in UTC.
+When getting time information from the system, the time can either be in the local timezone or UTC depending on the ``utc`` parameter. However, the :ref:`get_unix_time_from_system<class_Time_method_get_unix_time_from_system>` method always uses UTC as it returns the seconds passed since the `Unix epoch <https://en.wikipedia.org/wiki/Unix_time>`__.
 
 \ **Important:** The ``_from_system`` methods use the system clock that the user can manually set. **Never use** this method for precise time calculation since its results are subject to automatic adjustments by the user or the operating system. **Always use** :ref:`get_ticks_usec<class_Time_method_get_ticks_usec>` or :ref:`get_ticks_msec<class_Time_method_get_ticks_msec>` for precise time calculation instead, since they are guaranteed to be monotonic (i.e. never decrease).
 
@@ -559,7 +559,7 @@ Converts the given ISO 8601 date and/or time string to a Unix timestamp. The str
 
 :ref:`float<class_float>` **get_unix_time_from_system**\ (\ ) |const|
 
-Returns the current Unix timestamp in seconds based on the system time in UTC. This method is implemented by the operating system and always returns the time in UTC.
+Returns the current Unix timestamp in seconds based on the system time in UTC. This method is implemented by the operating system and always returns the time in UTC. The Unix timestamp is the number of seconds passed since 1970-01-01 at 00:00:00, the `Unix epoch <https://en.wikipedia.org/wiki/Unix_time>`__.
 
 \ **Note:** Unlike other methods that use integer timestamps, this method returns the timestamp as a :ref:`float<class_float>` for sub-second precision.
 
