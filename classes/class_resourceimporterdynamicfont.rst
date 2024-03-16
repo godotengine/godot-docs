@@ -47,6 +47,8 @@ Properties
    +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------+-----------+
    | :ref:`bool<class_bool>`             | :ref:`compress<class_ResourceImporterDynamicFont_property_compress>`                                                     | ``true``  |
    +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`             | :ref:`disable_embedded_bitmaps<class_ResourceImporterDynamicFont_property_disable_embedded_bitmaps>`                     | ``true``  |
+   +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------+-----------+
    | :ref:`Array<class_Array>`           | :ref:`fallbacks<class_ResourceImporterDynamicFont_property_fallbacks>`                                                   | ``[]``    |
    +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------+-----------+
    | :ref:`bool<class_bool>`             | :ref:`force_autohinter<class_ResourceImporterDynamicFont_property_force_autohinter>`                                     | ``false`` |
@@ -122,6 +124,18 @@ The font antialiasing method to use.
 :ref:`bool<class_bool>` **compress** = ``true``
 
 If ``true``, uses lossless compression for the resulting font.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ResourceImporterDynamicFont_property_disable_embedded_bitmaps:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **disable_embedded_bitmaps** = ``true``
+
+If set to ``true``, embedded font bitmap loading is disabled (bitmap-only and color fonts ignore this property).
 
 .. rst-class:: classref-item-separator
 

@@ -203,7 +203,7 @@ Generates an RSA :ref:`CryptoKey<class_CryptoKey>` that can be used for creating
 
 Generates a self-signed :ref:`X509Certificate<class_X509Certificate>` from the given :ref:`CryptoKey<class_CryptoKey>` and ``issuer_name``. The certificate validity will be defined by ``not_before`` and ``not_after`` (first valid date and last valid date). The ``issuer_name`` must contain at least "CN=" (common name, i.e. the domain name), "O=" (organization, i.e. your company name), "C=" (country, i.e. 2 lettered ISO-3166 code of the country the organization is based in).
 
-A small example to generate an RSA key and a X509 self-signed certificate.
+A small example to generate an RSA key and an X509 self-signed certificate.
 
 
 .. tabs::

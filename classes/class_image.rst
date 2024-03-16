@@ -1458,7 +1458,7 @@ Loads an image from the UTF-8 binary contents of an **uncompressed** SVG file (*
 
 :ref:`Error<enum_@GlobalScope_Error>` **load_svg_from_string**\ (\ svg_str\: :ref:`String<class_String>`, scale\: :ref:`float<class_float>` = 1.0\ )
 
-Loads an image from the string contents of a SVG file (**.svg**).
+Loads an image from the string contents of an SVG file (**.svg**).
 
 \ **Note:** This method is only available in engine builds with the SVG module enabled. By default, the SVG module is enabled, but it can be disabled at build-time using the ``module_svg_enabled=no`` SCons option.
 

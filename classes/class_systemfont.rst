@@ -42,6 +42,8 @@ Properties
    +-----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+-------------------------+
    | :ref:`FontAntialiasing<enum_TextServer_FontAntialiasing>`       | :ref:`antialiasing<class_SystemFont_property_antialiasing>`                                             | ``1``                   |
    +-----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+-------------------------+
+   | :ref:`bool<class_bool>`                                         | :ref:`disable_embedded_bitmaps<class_SystemFont_property_disable_embedded_bitmaps>`                     | ``true``                |
+   +-----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+-------------------------+
    | :ref:`bool<class_bool>`                                         | :ref:`font_italic<class_SystemFont_property_font_italic>`                                               | ``false``               |
    +-----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+-------------------------+
    | :ref:`PackedStringArray<class_PackedStringArray>`               | :ref:`font_names<class_SystemFont_property_font_names>`                                                 | ``PackedStringArray()`` |
@@ -105,6 +107,23 @@ If set to ``true``, system fonts can be automatically used as fallbacks.
 - :ref:`FontAntialiasing<enum_TextServer_FontAntialiasing>` **get_antialiasing**\ (\ )
 
 Font anti-aliasing mode.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_SystemFont_property_disable_embedded_bitmaps:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **disable_embedded_bitmaps** = ``true``
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_disable_embedded_bitmaps**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_disable_embedded_bitmaps**\ (\ )
+
+If set to ``true``, embedded font bitmap loading is disabled (bitmap-only and color fonts ignore this property).
 
 .. rst-class:: classref-item-separator
 

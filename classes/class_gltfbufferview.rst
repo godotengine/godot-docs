@@ -40,17 +40,19 @@ Properties
 .. table::
    :widths: auto
 
-   +-------------------------+---------------------------------------------------------------+-----------+
-   | :ref:`int<class_int>`   | :ref:`buffer<class_GLTFBufferView_property_buffer>`           | ``-1``    |
-   +-------------------------+---------------------------------------------------------------+-----------+
-   | :ref:`int<class_int>`   | :ref:`byte_length<class_GLTFBufferView_property_byte_length>` | ``0``     |
-   +-------------------------+---------------------------------------------------------------+-----------+
-   | :ref:`int<class_int>`   | :ref:`byte_offset<class_GLTFBufferView_property_byte_offset>` | ``0``     |
-   +-------------------------+---------------------------------------------------------------+-----------+
-   | :ref:`int<class_int>`   | :ref:`byte_stride<class_GLTFBufferView_property_byte_stride>` | ``-1``    |
-   +-------------------------+---------------------------------------------------------------+-----------+
-   | :ref:`bool<class_bool>` | :ref:`indices<class_GLTFBufferView_property_indices>`         | ``false`` |
-   +-------------------------+---------------------------------------------------------------+-----------+
+   +-------------------------+---------------------------------------------------------------------------+-----------+
+   | :ref:`int<class_int>`   | :ref:`buffer<class_GLTFBufferView_property_buffer>`                       | ``-1``    |
+   +-------------------------+---------------------------------------------------------------------------+-----------+
+   | :ref:`int<class_int>`   | :ref:`byte_length<class_GLTFBufferView_property_byte_length>`             | ``0``     |
+   +-------------------------+---------------------------------------------------------------------------+-----------+
+   | :ref:`int<class_int>`   | :ref:`byte_offset<class_GLTFBufferView_property_byte_offset>`             | ``0``     |
+   +-------------------------+---------------------------------------------------------------------------+-----------+
+   | :ref:`int<class_int>`   | :ref:`byte_stride<class_GLTFBufferView_property_byte_stride>`             | ``-1``    |
+   +-------------------------+---------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>` | :ref:`indices<class_GLTFBufferView_property_indices>`                     | ``false`` |
+   +-------------------------+---------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>` | :ref:`vertex_attributes<class_GLTFBufferView_property_vertex_attributes>` | ``false`` |
+   +-------------------------+---------------------------------------------------------------------------+-----------+
 
 .. rst-class:: classref-reftable-group
 
@@ -152,7 +154,24 @@ The stride, in bytes, between interleaved data. If ``-1``, this buffer view is n
 - |void| **set_indices**\ (\ value\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **get_indices**\ (\ )
 
-True if the GLTFBufferView's OpenGL GPU buffer type is an ``ELEMENT_ARRAY_BUFFER`` used for vertex indices (integer constant ``34963``). False if the buffer type is ``ARRAY_BUFFER`` used for vertex attributes (integer constant ``34962``) or when any other value. See `Buffers, BufferViews, and Accessors <https://github.com/KhronosGroup/glTF-Tutorials/blob/master/gltfTutorial/gltfTutorial_005_BuffersBufferViewsAccessors.md>`__ for possible values. This property is set but never used, setting this property will do nothing.
+True if the GLTFBufferView's OpenGL GPU buffer type is an ``ELEMENT_ARRAY_BUFFER`` used for vertex indices (integer constant ``34963``). False if the buffer type is any other value. See `Buffers, BufferViews, and Accessors <https://github.com/KhronosGroup/glTF-Tutorials/blob/master/gltfTutorial/gltfTutorial_005_BuffersBufferViewsAccessors.md>`__ for possible values. This property is set on import and used on export.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_GLTFBufferView_property_vertex_attributes:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **vertex_attributes** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_vertex_attributes**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_vertex_attributes**\ (\ )
+
+True if the GLTFBufferView's OpenGL GPU buffer type is an ``ARRAY_BUFFER`` used for vertex attributes (integer constant ``34962``). False if the buffer type is any other value. See `Buffers, BufferViews, and Accessors <https://github.com/KhronosGroup/glTF-Tutorials/blob/master/gltfTutorial/gltfTutorial_005_BuffersBufferViewsAccessors.md>`__ for possible values. This property is set on import and used on export.
 
 .. rst-class:: classref-section-separator
 

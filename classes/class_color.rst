@@ -1757,7 +1757,7 @@ Constructs a color from an `OK HSL profile <https://bottosson.github.io/posts/co
 
 :ref:`Color<class_Color>` **from_rgbe9995**\ (\ rgbe\: :ref:`int<class_int>`\ ) |static|
 
-Decodes a **Color** from a RGBE9995 format integer. See :ref:`Image.FORMAT_RGBE9995<class_Image_constant_FORMAT_RGBE9995>`.
+Decodes a **Color** from an RGBE9995 format integer. See :ref:`Image.FORMAT_RGBE9995<class_Image_constant_FORMAT_RGBE9995>`.
 
 .. rst-class:: classref-item-separator
 
