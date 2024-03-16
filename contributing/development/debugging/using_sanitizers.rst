@@ -140,6 +140,40 @@ slower, while also multiplying memory usage by an approximately 8× factor.
     the address, memory and thread sanitizers are mutually exclusive. This means
     you can only use one of those sanitizers in a given binary.
 
+.. note::
+
+    In Linux, if you stumble upon the following error:
+
+    ``FATAL: ThreadSanitizer: unexpected memory mapping``
+
+    You may need to temporarily lower the Address Space Layout Randomization (ASLR) entropy in your system with:
+
+    .. code:: sh
+
+        sudo sysctl vm.mmap_rnd_bits=28
+
+    Or preferably disable it entirely with:
+
+    .. code:: sh
+
+        sudo sysctl kernel.randomize_va_space=0
+
+    And as soon as you are done with thread sanitizer, increase the ASLR entropy with:
+
+    .. code:: sh
+
+        sudo sysctl vm.mmap_rnd_bits=32
+
+    Or re-enable ASLR with:
+
+    .. code:: sh
+
+        sudo sysctl kernel.randomize_va_space=2
+
+    Rebooting your machine will also revert the ASLR state to its default values.
+
+    It's important to revert the changes as soon as possible because lowering the ASLR entropy or disabling ASLR entirely can be a security risk.
+
 Undefined behavior sanitizer (UBSAN)
 ------------------------------------
 
