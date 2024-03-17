@@ -308,7 +308,7 @@ One statement per line
 ~~~~~~~~~~~~~~~~~~~~~~
 
 Avoid combining multiple statements on a single line, including conditional
-statements, to adhere to GDScript style guidelines for readability.
+statements, to adhere to the GDScript style guidelines for readability.
 
 **Good**:
 
