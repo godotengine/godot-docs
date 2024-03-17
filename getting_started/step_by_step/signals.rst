@@ -128,6 +128,10 @@ methods "_on_node_name_signal_name". Here, it'll be "_on_button_pressed".
    toggle the mode in the window's bottom-right by clicking the Advanced
    button.
 
+.. note:: If you are using an external editor (such as VS Code) this 
+automatic code generation might not work. In this case you need to to connect 
+the signal via code as explained in the next section.
+
 Click the Connect button to complete the signal connection and jump to the
 Script workspace. You should see the new method with a connection icon in the
 left margin.
