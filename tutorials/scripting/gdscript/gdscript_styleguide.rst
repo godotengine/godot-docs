@@ -307,8 +307,8 @@ editor. For example, when looking at a differential revision.
 One statement per line
 ~~~~~~~~~~~~~~~~~~~~~~
 
-Never combine multiple statements on a single line. No, C programmers,
-not even with a single line conditional statement.
+Avoid combining multiple statements on a single line, including conditional
+statements, to adhere to GDScript style guidelines for readability.
 
 **Good**:
 
