@@ -152,6 +152,14 @@ with the following commands (assuming a universal build, otherwise replace the
     cp bin/godot.macos.template_debug.universal macos_template.app/Contents/MacOS/godot_macos_debug.universal
     chmod +x macos_template.app/Contents/MacOS/godot_macos*
 
+For a binary compiled with double precision, (for example `scons platform=macos arch=arm64 precision=double`) the following will work:
+
+    cp -r misc/dist/macos_tools.app ./Godot.app
+    mkdir -p Godot.app/Contents/MacOS
+    cp bin/godot.macos.editor.double.arm64 Godot.app/Contents/MacOS/Godot
+    chmod +x Godot.app/Contents/MacOS/Godot
+    codesign --force --timestamp --options=runtime --entitlements misc/dist/macos/editor.entitlements -s - Godot.app
+
 .. note::
 
     If you are building the ``master`` branch, you also need to include support
