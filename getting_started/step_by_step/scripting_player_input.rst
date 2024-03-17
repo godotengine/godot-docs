@@ -82,11 +82,10 @@ Finally, we use the ``direction`` as a multiplier when we update the node's
 Comment out the lines ``var velocity = Vector2.UP.rotated(rotation) * speed`` and ``position += velocity * delta`` like this:
 
 .. tabs::
-
  .. code-tab:: gdscript GDScript
 
     #var velocity = Vector2.UP.rotated(rotation) * speed
-	
+
     #position += velocity * delta
 
  .. code-tab:: csharp C#
