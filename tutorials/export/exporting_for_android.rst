@@ -30,7 +30,7 @@ Download and install the Android SDK.
 
     - Android SDK Platform-Tools version 30.0.5 or later
     - Android SDK Build-Tools version 30.0.3
-    - Android SDK Platform 31
+    - Android SDK Platform 33
     - Android SDK Command-line Tools (latest)
     - CMake version 3.10.2.4988404
     - NDK version r23c (23.2.8568313)
