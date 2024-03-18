@@ -91,7 +91,16 @@ We introduce a few new variables to our script as well:
 Our updated ready function
 --------------------------
 
-The ready function mostly remains the same but we hook up a number of signals that will be emitted by the :ref:`XRInterface <class_xrinterface>`.
+We add a few things to the ready function.
+
+If we're using the mobile or forward+ renderer we set the viewports ``vrs_mode`` to ``VRS_XR``.
+On platforms that support this, this will enable foveated rendering.
+
+If we're using the compatibility renderer, we check if the OpenXR foveated rendering settings
+are configured and if not, we output a warning.
+See :ref:`OpenXR Settings <doc_openxr_settings>` for further details.
+
+We hook up a number of signals that will be emitted by the :ref:`XRInterface <class_xrinterface>`.
 We'll provide more detail about these signals as we implement them.
 
 We also quit our application if we couldn't successfully initialise OpenXR.
@@ -119,12 +128,18 @@ it is nicer to exit on failure than to hang the system.
             # Make sure v-sync is off, v-sync is handled by OpenXR
             DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_DISABLED)
 
+            # Enable VRS
+            if RenderingServer.get_rendering_device():
+                vp.vrs_mode = Viewport.VRS_XR
+            elif int(ProjectSettings.get_setting("xr/openxr/foveation_level")) == 0:
+                push_warning("OpenXR: Recommend setting Foveation level to High in Project Settings")
+
             # Connect the OpenXR events
-            xr_interface.connect("session_begun", _on_openxr_session_begun)
-            xr_interface.connect("session_visible", _on_openxr_visible_state)
-            xr_interface.connect("session_focussed", _on_openxr_focused_state)
-            xr_interface.connect("session_stopping", _on_openxr_stopping)
-            xr_interface.connect("pose_recentered", _on_openxr_pose_recentered)
+            xr_interface.session_begun.connect(_on_openxr_session_begun)
+            xr_interface.session_visible.connect(_on_openxr_visible_state)
+            xr_interface.session_focussed.connect(_on_openxr_focused_state)
+            xr_interface.session_stopping.connect(_on_openxr_stopping)
+            xr_interface.pose_recentered.connect(_on_openxr_pose_recentered)
         else:
             # We couldn't start OpenXR.
             print("OpenXR not instantiated!")
@@ -152,6 +167,12 @@ it is nicer to exit on failure than to hang the system.
 
                 // Make sure v-sync is off, v-sync is handled by OpenXR
                 DisplayServer.WindowSetVsyncMode(DisplayServer.VSyncMode.Disabled);
+
+                // Enable VRS
+                if (RenderingServer.GetRenderingDevice() != null)
+                    vp.VrsMode = Viewport.VrsModeEnum.XR;
+                else if ((int)ProjectSettings.GetSetting("xr/openxr/foveation_level") == 0)
+                    GD.PushWarning("OpenXR: Recommend setting Foveation level to High in Project Settings");
 
                 // Connect the OpenXR events
                 _xrInterface.SessionBegun += OnOpenXRSessionBegun;
