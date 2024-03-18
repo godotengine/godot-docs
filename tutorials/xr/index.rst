@@ -26,6 +26,7 @@ Advanced topics
    :maxdepth: 1
    :name: openxr-advanced-topics
 
+   openxr_settings
    xr_action_map
    xr_room_scale
    openxr_hand_tracking
