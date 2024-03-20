@@ -1777,3 +1777,481 @@ p + .classref-constant {
 #godot-giscus {
     margin-bottom: 1em;
 }
+
+/* Tutorial */
+/* .tutorial .steps .comment {
+    position: relative;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.tutorial .steps .comment p:last-of-type {
+    margin: 0;
+}
+
+.tutorial .steps .compound {
+    position: relative;
+    min-height: 200px;
+    border-radius: 4px;
+    box-shadow: 0px 3px 9px 0px rgb(0 0 0 / 29%);
+    padding-left: 25px;
+    background-color: var(--content-wrap-background-color);
+}
+
+.tutorial .steps .compound.active::after {
+    content: "";
+    display: block;
+    position: absolute;
+    background-color: var(--navbar-background-color);
+    height: 100%;
+    width: 15px;
+    top: 0;
+    left: 0;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+
+.tutorial .steps .compound .compound-first {
+    padding-top: 1rem;
+    line-height: normal;
+    font-weight: bold;
+}
+
+.tutorial .steps .compound .compound-middle {
+    line-height: normal;
+    margin: 0;
+}
+
+.tutorial .steps .compound .step-content {
+    display: none;
+}
+
+.tutorial .steps .step-display {
+    display: block;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.tutorial .display .content {
+    display: none;
+} */
+
+@media only screen and (min-width: 1036px) {
+    /* .tutorial {
+        display: grid;
+        position: relative;
+        top: 0;
+        left: 0;
+        grid-template-areas:
+            "top    display"
+            "steps  display"
+            "bottom display";
+        grid-template-columns:
+            1fr 2fr;
+        gap: 1rem;
+    }
+
+    .tutorial .display {
+        grid-area: display;
+        height: 100%;
+        display: flex;
+        align-items: end;
+    }
+
+    .tutorial .display .content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: sticky;
+        bottom: 0;
+        width: 100%;
+        height: 100vh;
+    }
+
+    .tutorial .step-content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+    } */
+
+    /* .tutorial .step-content .literal-block-wrapper {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-template-areas:
+            "caption"
+            "code";
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr;
+    }
+
+    .tutorial .step-content .literal-block-wrapper .code-block-caption {
+        grid-area: caption;
+        width: 100%;
+    }
+
+    .tutorial .step-content .literal-block-wrapper .code-block-caption + div {
+        grid-area: code;
+        width: 100%;
+    }
+
+    .tutorial .step-content .literal-block-wrapper .code-block-caption + div .highlight,
+    .tutorial .step-content .literal-block-wrapper .code-block-caption + div .highlight pre {
+        height: 100%;
+    } */
+/*
+    .tutorial .step-content .sphinx-tabs {
+        width: 100%;
+        height: 100%;
+        padding-top: 1em;
+        padding-bottom: 1em;
+        margin-bottom: 0;
+    }
+
+    .tutorial .top {
+        grid-area: top;
+        height: 100px;
+    }
+
+    .tutorial .bottom {
+        grid-area: bottom;
+        height: calc(100vh - 1rem);
+    }
+
+    .tutorial .steps {
+        grid-area: steps;
+        display: flex;
+        flex-direction: column;
+        gap: 100px;
+    }
+
+    .tutorial .steps .step-display {
+        display: none;
+    } */
+}
+
+/* @media only screen and (min-width: 1036px) and (max-width: 1200px) {
+    .tutorial {
+        grid-template-columns:
+            200px 1fr;
+    }
+} */
+
+/**
+ * Tutorial (non-dynamic)
+ */
+.tutorial {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.tutorial .compound-first {
+    line-height: auto;
+    margin: 0;
+    font-size: large;
+    font-family: var(--header-font-family);
+    margin-top: 1rem;
+}
+
+
+/**
+ * Tutorial (dynamic)
+ *
+ * This class is converted from .tutorial by Javascript.
+ * If Javascript is turned off, the tutorial will not
+ * change from it's default .tutorial value and these styles
+ * will not be applied.
+ */
+.tutorial-js {
+    /* Makes sure that there's no inbetween state. */
+    display: none;
+}
+
+/* Step box. */
+.tutorial-js .step-container .step-admonition-box {
+    padding: 1em 1em 1em 0;
+}
+
+/* Step title. */
+.tutorial-js .step-admonition-box .admonition-title {
+    line-height: auto;
+    margin: 0;
+    margin-bottom: 1em;
+    padding: 0;
+    font-size: large;
+    font-family: var(--header-font-family);
+    background-color: transparent;
+    color: var(--body-color);
+}
+
+.tutorial-js .step-admonition-box .admonition-title::before {
+    margin: 0;
+    content: "";
+}
+
+/* Step description. */
+.tutorial-js .step-admonition-box .step-description p {
+    line-height: normal;
+    margin-bottom: 0.5em;
+}
+
+.tutorial-js .step-admonition-box .step-description p:last-child {
+    margin-bottom: 0;
+}
+
+/**
+ * STATIC
+ */
+.tutorial-js.static {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.tutorial-js.static .step-container.step-comment > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+}
+
+.tutorial-js.static .step-container.step-admonition {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.tutorial-js.static .step-container.step-admonition .step-admonition-box {
+    position: relative;
+    padding-left: 1em;
+    border-radius: 4px;
+    box-shadow: 0px 3px 9px 0px rgb(0 0 0 / 29%);
+    background-color: var(--content-wrap-background-color);
+}
+
+/**
+ * INTERACTIVE
+ */
+.tutorial-js.dynamic {
+    display: grid;
+    position: relative;
+    top: 0;
+    left: 0;
+    grid-template-areas:
+        "toggle toggle"
+        "top    display"
+        "steps  display"
+        "bottom display";
+    grid-template-columns:
+        1fr 2fr;
+    grid-template-rows:
+        auto
+        100px
+        auto
+        75vh;
+    gap: 1rem;
+}
+
+.tutorial-js.dynamic .toggle-container {
+    grid-area: toggle;
+}
+
+.tutorial-js.dynamic .top-container {
+    grid-area: top;
+}
+
+.tutorial-js.dynamic .steps-container {
+    grid-area: steps;
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+}
+
+.tutorial-js.dynamic .bottom-container {
+    grid-area: bottom;
+}
+
+.tutorial-js.dynamic .display-container {
+    grid-area: display;
+}
+
+/* Steps container. */
+.tutorial-js.dynamic .steps-container .step-container {
+    position: relative;
+    min-height: 200px;
+}
+
+.tutorial-js.dynamic .steps-container .step-container.step-comment > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    padding: 1rem;
+}
+
+.tutorial-js.dynamic .steps-container .step-container.step-admonition {
+    border-radius: 4px;
+    box-shadow: 0px 3px 9px 0px rgb(0 0 0 / 29%);
+    padding-left: 25px;
+    background-color: var(--content-wrap-background-color);
+}
+
+.tutorial-js.dynamic .steps-container .step-container.step-admonition::after {
+    content: "";
+    display: block;
+    position: absolute;
+    background-color: var(--navbar-background-color);
+    opacity: 0;
+    height: 100%;
+    width: 15px;
+    top: 0;
+    left: 0;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.tutorial-js.dynamic .steps-container .step-container.step-admonition.active::after {
+    opacity: 1;
+}
+
+.tutorial-js.dynamic .steps-container .step-container.step-admonition .step-admonition-box {
+    display: flex;
+    flex-direction: column;
+}
+
+.tutorial-js.dynamic .steps-container .step-container.step-admonition .step-admonition-box .compound-first {
+    line-height: auto;
+    margin: 0;
+    font-size: large;
+    font-family: var(--header-font-family);
+    margin-top: 1rem;
+}
+
+.tutorial-js.dynamic .steps-container .step-container.step-admonition .step-admonition-box .compound-middle {
+    flex-grow: 1;
+}
+
+/* Display container. */
+.tutorial-js.dynamic .display-container .display-sticky {
+    position: sticky;
+    display: flow-root;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+}
+
+.tutorial-js.dynamic .display-container .step-admonition-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+
+    /* Let's hide non-active content. */
+    opacity: 0;
+    pointer-events: none;
+
+    transition: opacity 0.3s ease-in-out;
+}
+
+.tutorial-js.dynamic .display-container .step-admonition-content.active {
+    /* Let's display the active content. */
+    opacity: 1;
+    pointer-events: all;
+}
+
+.tutorial-js.dynamic .display-container .step-admonition-content .step-content,
+.tutorial-js.dynamic .display-container .step-admonition-content .step-content .sphinx-tabs {
+    height: 100%;
+}
+
+.tutorial-js.dynamic .display-container .step-admonition-content .step-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.tutorial-js.dynamic .display-container .step-admonition-content .step-content > * {
+    width: 100%;
+    height: 100%;
+}
+
+.tutorial-js.dynamic .display-container .step-admonition-content .step-content > img {
+    object-fit: contain;
+}
+
+
+.tutorial-js.dynamic .display-container .step-admonition-content .step-content > .literal-block-wrapper,
+.tutorial-js.dynamic .display-container .step-admonition-content .step-content > .sphinx-tabs {
+    display: flex;
+    flex-direction: column;
+}
+
+.tutorial-js.dynamic .display-container .step-admonition-content .step-content > div[class^="highlight-"],
+.tutorial-js.dynamic .display-container .step-admonition-content .step-content > .literal-block-wrapper div[class^="highlight-"] {
+    flex-grow: 1;
+    overflow: hidden;
+}
+
+.tutorial-js.dynamic .display-container .step-admonition-content .step-content > div[class^="highlight-"] .highlight,
+.tutorial-js.dynamic .display-container .step-admonition-content .step-content > .literal-block-wrapper div[class^="highlight-"] .highlight {
+    height: 100%;
+}
+
+.tutorial-js.dynamic .display-container .step-admonition-content .step-content > .sphinx-tabs .sphinx-tabs-panel {
+    flex-grow: 1;
+    overflow: hidden;
+}
+
+.tutorial-js.dynamic .display-container .step-admonition-content .step-content > .sphinx-tabs .sphinx-tabs-panel .literal-block-wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.tutorial-js.dynamic .display-container .step-admonition-content .step-content > .sphinx-tabs .sphinx-tabs-panel div[class^="highlight-"] {
+    overflow: auto;
+}
+
+.tutorial-js.dynamic .display-container .step-admonition-content .step-content > .sphinx-tabs .sphinx-tabs-panel .literal-block-wrapper div[class^="highlight-"] {
+    flex-grow: 1;
+}
+
+.tutorial-js.dynamic .display-container .step-admonition-content .step-content > .sphinx-tabs .sphinx-tabs-panel > div[class^="highlight-"],
+.tutorial-js.dynamic .display-container .step-admonition-content .step-content > .sphinx-tabs .sphinx-tabs-panel div[class^="highlight-"] .highlight {
+    height: 100%;
+}
+
+@media only screen and (min-width: 1036px) and (max-width: 1200px) {
+    .tutorial-js.dynamic {
+        grid-template-columns:
+            200px 1fr;
+    }
+}
+
+/**
+ * Toggle container.
+ */
+.tutorial-js .toggle-container {
+    display: none;
+}
+
+@media only screen and (min-width: 1036px) {
+    .tutorial-js .toggle-container {
+        display: flex;
+        flex-direction: row;
+        gap: 1em;
+        justify-content: end;
+        font-size: small;
+        color: var(--kbd-text-color);
+    }
+}
