@@ -30,7 +30,7 @@ build that includes debugging symbols. Official binaries do not include debuggin
 symbols, since these would make the download size significantly larger.
 
 To get profiling data that best matches the production environment (but with debugging symbols),
-you should compile binaries with the ``production=yes debug_symbols=yes`` SCons options.
+you should compile binaries with the ``production=yes debug_symbols=embedded`` SCons options.
 
 It is possible to run a profiler on less optimized builds (e.g. ``target=template_debug`` without LTO),
 but results will naturally be less representative of real world conditions.

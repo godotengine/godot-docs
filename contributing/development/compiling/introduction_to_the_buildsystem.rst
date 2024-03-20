@@ -161,7 +161,7 @@ Godot provides two aliases for this purpose:
 
 You can manually override options from those aliases by specifying them on the
 same command line with different values. For example, you can use ``scons
-production=yes debug_symbols=yes`` to create production-optimized binaries with
+production=yes debug_symbols=embedded`` to create production-optimized binaries with
 debugging symbols included.
 
 Dev build
@@ -194,7 +194,7 @@ Debugging symbols
 -----------------
 
 By default, ``debug_symbols=no`` is used, which means **no** debugging symbols
-are included in compiled binaries. Use ``debug_symbols=yes`` to include debug
+are included in compiled binaries. Use ``debug_symbols=embedded`` to include debug
 symbols within compiled binaries, which allows debuggers and profilers to work
 correctly. Debugging symbols are also required for Godot's crash stacktraces to
 display with references to source code files and lines.
@@ -204,11 +204,11 @@ than the binaries themselves). As a result, official binaries currently do not
 include debugging symbols. This means you need to compile Godot yourself to have
 access to debugging symbols.
 
-When using ``debug_symbols=yes``, you can also use
-``separate_debug_symbols=yes`` to put debug information in a separate file with
-a ``.debug`` suffix. This allows distributing both files independently. Note
-that on Windows, when compiling with MSVC, debugging information is *always*
-written to a separate ``.pdb`` file regardless of ``separate_debug_symbols``.
+If you prefer, you can use ``debug_symbols=separate`` to put debug information in a
+separate file with a ``.debug`` suffix. This allows distributing both files
+independently. Note that on Windows, when compiling with MSVC, debugging information
+is *always* written to a separate ``.pdb`` file, even if you pass
+``debug_symbols=embedded``.
 
 .. tip::
 
