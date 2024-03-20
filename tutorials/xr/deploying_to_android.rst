@@ -62,6 +62,12 @@ Enable the **GodotOpenXRVendors** plugin.
 
 .. image:: img/xr_enable_vendors_plugin.webp
 
+.. note::
+    This is no longer required from vendors plugin 2.0.3 onwards as it now uses GDExtension.
+    The plugin will not be shown in this list.
+    You can verify it is installed correctly by checking if the export presets contain
+    the entries described below.
+
 Creating the export presets
 ---------------------------
 You will need to setup a separate export preset for each device, as each device will need its own loader included.
