@@ -47,8 +47,8 @@ With the Skeleton node selected, first set up a new :ref:`class_bonemap` and :re
 Godot has a preset called :ref:`class_skeletonprofilehumanoid` for humanoid models.
 This tutorial proceeds with the assumption that you are using :ref:`class_skeletonprofilehumanoid`.
 
-.. note:: If you need a profile for a model such as a beast or creature, you can export
-          a :ref:`class_skeletonprofile` from SkeletonEditor with some information converted from Skeleton.
+.. note:: If you need a profile that is different from :ref:`class_skeletonprofilehumanoid`, you can export
+          a :ref:`class_skeletonprofile` from the editor by selecting a Skeleton3D and using the **Skeleton3D** menu in the 3D viewport's toolbar.
 
 When you use :ref:`class_skeletonprofilehumanoid`, auto-mapping will be performed when the
 :ref:`class_skeletonprofile` is set. If the auto-mapping does not work well, you can map bones manually.
