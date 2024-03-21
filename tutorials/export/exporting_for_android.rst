@@ -146,6 +146,7 @@ keystore file; such file can be generated like this:
     keytool -v -genkey -keystore mygame.keystore -alias mygame -keyalg RSA -validity 10000
 
 This keystore and key are used to verify your developer identity, remember the password and keep it in a safe place!
+It is suggested to use only upper and lowercase letters and numbers. Special characters may cause errors.
 Use Google's Android Developer guides to learn more about `APK signing <https://developer.android.com/studio/publish/app-signing>`__.
 
 Now fill in the following forms in your Android Export Presets:
