@@ -278,8 +278,8 @@ See :ref:`doc_data_paths` for more information.
 If *true* portable operation is desired (e.g. for use on an USB stick),
 follow the steps in :ref:`doc_data_paths_self_contained_mode`.
 
-Why does Godot use Vulkan or OpenGL instead of Direct3D?
---------------------------------------------------------
+Why does Godot prioritize Vulkan and OpenGL over Direct3D?
+----------------------------------------------------------
 
 Godot aims for cross-platform compatibility and open standards first and
 foremost. OpenGL and Vulkan are the technologies that are both open and
@@ -287,14 +287,11 @@ available on (nearly) all platforms. Thanks to this design decision, a project
 developed with Godot on Windows will run out of the box on Linux, macOS, and
 more.
 
-Since Godot only has a few people working on its renderer, we would prefer
-having fewer rendering backends to maintain. On top of that, using a single API
-on all platforms allows for greater consistency with fewer platform-specific
-issues.
-
-In the long term, we may develop a Direct3D 12 renderer for Godot (mainly for
-Xbox), but Vulkan and OpenGL will remain the default rendering
-backends on all platforms, including Windows.
+While Vulkan and OpenGL remain our primary focus for their open standard and 
+cross-platform benefits, Godot 4.3 introduced experimental support for Direct3D 12. 
+This addition aims to enhance performance and compatibility on platforms where 
+Direct3D 12 is prevalent, such as Windows and Xbox. However, Vulkan and OpenGL 
+will continue as the default rendering backends on all platforms, including Windows.
 
 Why does Godot aim to keep its core feature set small?
 ------------------------------------------------------
