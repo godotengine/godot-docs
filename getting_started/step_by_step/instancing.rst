@@ -20,7 +20,7 @@ and bounce on walls, a :ref:`Sprite2D <class_Sprite2D>` node, and a
 
 .. image:: img/instancing_ball_scene.webp
 
-Once you saved a scene, it works as a blueprint: you can reproduce it in other
+Once you have saved a scene, it works as a blueprint: you can reproduce it in other
 scenes as many times as you'd like. Replicating an object from a template like
 this is called **instancing**.
 
