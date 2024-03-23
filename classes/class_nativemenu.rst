@@ -329,7 +329,7 @@ An ``accelerator`` can optionally be defined, which is a keyboard shortcut that 
 
 \ **Note:** This method is implemented on macOS and Windows.
 
-\ **Note:** ``accelerator`` and ``key_callback`` are ignored on Windows.
+\ **Note:** On Windows, ``accelerator`` and ``key_callback`` are ignored.
 
 .. rst-class:: classref-item-separator
 
@@ -351,7 +351,7 @@ An ``accelerator`` can optionally be defined, which is a keyboard shortcut that 
 
 \ **Note:** This method is implemented on macOS and Windows.
 
-\ **Note:** ``accelerator`` and ``key_callback`` are ignored on Windows.
+\ **Note:** On Windows, ``accelerator`` and ``key_callback`` are ignored.
 
 .. rst-class:: classref-item-separator
 
@@ -373,7 +373,7 @@ An ``accelerator`` can optionally be defined, which is a keyboard shortcut that 
 
 \ **Note:** This method is implemented on macOS and Windows.
 
-\ **Note:** ``accelerator`` and ``key_callback`` are ignored on Windows.
+\ **Note:** On Windows, ``accelerator`` and ``key_callback`` are ignored.
 
 .. rst-class:: classref-item-separator
 
@@ -397,7 +397,7 @@ An ``accelerator`` can optionally be defined, which is a keyboard shortcut that 
 
 \ **Note:** This method is implemented on macOS and Windows.
 
-\ **Note:** ``accelerator`` and ``key_callback`` are ignored on Windows.
+\ **Note:** On Windows, ``accelerator`` and ``key_callback`` are ignored.
 
 .. rst-class:: classref-item-separator
 
@@ -419,7 +419,7 @@ An ``accelerator`` can optionally be defined, which is a keyboard shortcut that 
 
 \ **Note:** This method is implemented on macOS and Windows.
 
-\ **Note:** ``accelerator`` and ``key_callback`` are ignored on Windows.
+\ **Note:** On Windows, ``accelerator`` and ``key_callback`` are ignored.
 
 .. rst-class:: classref-item-separator
 
@@ -445,7 +445,7 @@ An ``accelerator`` can optionally be defined, which is a keyboard shortcut that 
 
 \ **Note:** This method is implemented on macOS and Windows.
 
-\ **Note:** ``accelerator`` and ``key_callback`` are ignored on Windows.
+\ **Note:** On Windows, ``accelerator`` and ``key_callback`` are ignored.
 
 .. rst-class:: classref-item-separator
 
@@ -469,7 +469,7 @@ An ``accelerator`` can optionally be defined, which is a keyboard shortcut that 
 
 \ **Note:** This method is implemented on macOS and Windows.
 
-\ **Note:** ``accelerator`` and ``key_callback`` are ignored on Windows.
+\ **Note:** On Windows, ``accelerator`` and ``key_callback`` are ignored.
 
 .. rst-class:: classref-item-separator
 
@@ -997,7 +997,7 @@ Removes the item at index ``idx`` from the global menu ``rid``.
 
 |void| **set_interface_direction**\ (\ rid\: :ref:`RID<class_RID>`, is_rtl\: :ref:`bool<class_bool>`\ )
 
-Sets the menu text layout directtion.
+Sets the menu text layout direction from right-to-left if ``is_rtl`` is ``true``.
 
 \ **Note:** This method is implemented on macOS and Windows.
 
