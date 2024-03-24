@@ -553,7 +553,7 @@ Returns an array with the IDs of the points that form the path found by AStar2D 
 
 Returns an array with the points that are in the path found by **AStarGrid2D** between the given points. The array is ordered from the starting point to the ending point of the path.
 
-\ **Note:** This method is not thread-safe. If called from a :ref:`Thread<class_Thread>`, it will return an empty :ref:`PackedVector3Array<class_PackedVector3Array>` and will print an error message.
+\ **Note:** This method is not thread-safe. If called from a :ref:`Thread<class_Thread>`, it will return an empty :ref:`PackedVector2Array<class_PackedVector2Array>` and will print an error message.
 
 .. rst-class:: classref-item-separator
 
