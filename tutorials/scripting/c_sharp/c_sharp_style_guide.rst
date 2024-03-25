@@ -20,9 +20,10 @@ of the language, we encourage you to do the same, especially if you do not have 
 Language specification
 ----------------------
 
-Godot currently uses **C# version 7.0** in its engine and example source code. So, before we move to
-a newer version, care must be taken to avoid mixing language features only available in C# 7.1 or
-later.
+Godot currently uses **C# version 10.0** in its engine and example source code,
+as this is the version supported by .NET 6.0 (the current baseline requirement).
+So, before we move to a newer version, care must be taken to avoid mixing
+language features only available in C# 11.0 or later.
 
 For detailed information on C# features in different versions, please see
 `What's New in C# <https://docs.microsoft.com/en-us/dotnet/csharp/whats-new/>`_.
