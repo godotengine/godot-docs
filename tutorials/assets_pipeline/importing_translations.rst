@@ -57,8 +57,9 @@ CSV files must be formatted as follows:
 +--------+----------+----------+----------+
 
 The "lang" tags must represent a language, which must be one of the :ref:`valid
-locales <doc_locales>` supported by the engine. The "KEY" tags must be
-unique and represent a string universally (they are usually in
+locales <doc_locales>` supported by the engine, or they must start with an underscore (`_`), 
+which means the related column is served as comment and won't be imported. 
+The "KEY" tags must be unique and represent a string universally (they are usually in
 uppercase, to differentiate from other strings). These keys will be replaced at
 runtime by the matching translated string. Note that the case is important,
 "KEY1" and "Key1" will be different keys.
