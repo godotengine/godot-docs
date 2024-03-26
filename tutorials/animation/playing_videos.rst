@@ -229,6 +229,8 @@ static scenes).
 
     ffmpeg -i input.mp4 -q:v 6 -q:a 6 output.ogv
 
+Otherwise, there's a GUI tool `here<https://github.com/hislittlecuzin/FFMPEG-GUI-For-Godot>`__ made in Godot to make this easier.
+
 FFmpeg: Resize the video then convert it
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
