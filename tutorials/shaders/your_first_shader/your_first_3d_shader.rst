@@ -1,5 +1,7 @@
 .. _doc_your_first_spatial_shader:
 
+:article_outdated: True
+
 Your first 3D shader
 ====================
 
