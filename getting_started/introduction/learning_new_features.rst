@@ -56,7 +56,7 @@ A class reference's page tells you:
           <https://github.com/godotengine/godot-docs/issues>`_ GitHub repository
           to report it.
 
-You can Ctrl-click any underlined text like the name of a class, property,
+You can Ctrl-click (Cmd-click on MacOS) any underlined text like the name of a class, property,
 method, signal, or constant to jump to it.
 
 Learning to think like a programmer
