@@ -199,6 +199,15 @@ When doing so, the export preset name must still be specified on the command lin
 
     godot --export-pack "Windows Desktop" some_name.pck
 
+You can also configure it to export an *additional* PCK/ZIP file, meaning a
+non-main pack file, which will exclude any project data that's only relevant for
+the main pack file, such as the project icon, splash screen, among other things.
+These packs may be better suited for things like a patch, mod or DLC.
+
+.. code-block:: shell
+
+    godot --export-additional-pack "Windows Desktop" some_name.pck
+
 It is often useful to combine the ``--export`` flag with the ``--path``
 flag, so that you do not need to ``cd`` to the project folder before running
 the command:

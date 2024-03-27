@@ -201,6 +201,9 @@ given build type.
 | ``--export-pack <preset> <path>``                                | |editor| Like ``--export-release``, but only export the game pack for the given preset. The ``<path>`` extension determines whether it will be in PCK   |
 |                                                                  | or ZIP format.                                                                                                                                          |
 +------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| ``--export-additional-pack <preset> <path>``                     | |editor| Like ``--export-pack``, but excludes data that's only relevant for a main pack, such as the project icon, splash screen, among other things.   |
+|                                                                  | The ``<path>`` extension determines whether it will be in PCK or ZIP format.                                                                            |
++------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
 | ``--convert-3to4 [<max_file_kb>] [<max_line_size>]``             | |editor| Convert project from Godot 3.x to Godot 4.x.                                                                                                   |
 +------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
 | ``--validate-conversion-3to4 [<max_file_kb>] [<max_line_size>]`` | |editor| Show what elements will be renamed when converting project from Godot 3.x to Godot 4.x.                                                        |
@@ -411,6 +414,13 @@ To export only a PCK file, use the ``--export-pack`` option followed by the
 preset name and output path, with the file extension, instead of
 ``--export-release`` or ``--export-debug``. The output path extension determines
 the package's format, either PCK or ZIP.
+
+To export a PCK file for something like a patch, mod or DLC, use the
+``--export-additional-pack`` option followed by the preset name and output path,
+with the file extension. The output path extension determines the package's
+format, either PCK or ZIP. This kind of pack will exclude project data that's
+only relevant for main pack files, such as project icon, splash screen, among
+other things.
 
 .. warning::
 
