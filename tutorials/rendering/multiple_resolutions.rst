@@ -59,7 +59,7 @@ Base size
 A base size for the window can be specified in the Project Settings under
 **Display → Window**.
 
-.. image:: img/screenres.png
+.. image:: img/screenres.webp
 
 However, what it does is not completely obvious; the engine will *not*
 attempt to switch the monitor to this resolution. Rather, think of this
@@ -127,20 +127,16 @@ Stretch settings
 
 Stretch settings are located in the project settings and provide several options:
 
-.. image:: img/stretchsettings.png
+.. image:: img/stretchsettings.webp
 
 Stretch Mode
 ^^^^^^^^^^^^
 
 The **Stretch Mode** setting defines how the base size is stretched to fit
-the resolution of the window or screen.
-
-.. image:: img/stretch.png
-
-The animations below use a "base size" of just 16×9 pixels to
-demonstrate the effect of different stretch modes. A single sprite, also
-16×9 pixels in size, covers the entire viewport, and a diagonal
-:ref:`Line2D <class_Line2D>` is added on top of it:
+the resolution of the window or screen. The animations below use a "base
+size" of just 16×9 pixels to demonstrate the effect of different stretch
+modes. A single sprite, also 16×9 pixels in size, covers the entire viewport,
+and a diagonal :ref:`Line2D <class_Line2D>` is added on top of it:
 
 .. image:: img/stretch_demo_scene.png
 
@@ -467,7 +463,7 @@ Non-game application
 - Keep the stretch mode to its default value, ``disabled``.
 - Keep the stretch aspect to its default value, ``ignore``
   (its value won't be used since the stretch mode is ``disabled``).
-- You can define a minimum window size by setting ``OS.min_window_size`` in a
+- You can define a minimum window size by calling ``get_window().set_min_size()`` in a
   script's ``_ready()`` function. This prevents the user from resizing the application
   below a certain size, which could break the UI layout.
 
