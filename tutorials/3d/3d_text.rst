@@ -45,7 +45,7 @@ Advantages
 - Label3D can use bitmap fonts and dynamic fonts (with and without
   :abbr:`MSDF (Multi-channel Signed Distance Font)` or mipmaps). This makes it
   more flexible on that aspect compared to TextMesh, especially for rendering
-  fonts with self-intersecting outlines.
+  fonts with self-intersecting outlines or colored fonts (emoji).
 
 .. seealso::
 
@@ -69,6 +69,10 @@ cast shadows, but some transparency sorting issues will remain.
 
 See :ref:`Transparency sorting <doc_3d_rendering_limitations_transparency_sorting>`
 section in the 3D rendering limitations page for more information.
+
+Text rendering quality can also suffer when the Label3D is viewed at a distance. To improve
+text rendering quality, :ref:`enable mipmaps on the font <doc_using_fonts_mipmaps>` or
+:ref:`switch the font to use MSDF rendering <doc_using_fonts_msdf>`.
 
 TextMesh
 --------
@@ -111,6 +115,10 @@ There are some limitations to TextMesh:
   If you notice rendering issues on fonts downloaded from websites such as
   Google Fonts, try downloading the font from the font author's official
   website instead.
+- Antialiasing the text rendering requires a full-scene antialiasing method to
+  be enabled such as MSAA, FXAA and temporal antialiasing (TAA). If no
+  antialiasing method is enabled, text will appear grainy, especially at a
+  distance. See :ref:`doc_3d_antialiasing` for more information.
 
 Projected Label node (or any other Control)
 -------------------------------------------
