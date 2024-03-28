@@ -106,6 +106,38 @@ to inherit from ``GodotObject`` or one of its subclasses.
         public string MySecondString { get; set; }
     }
 
+Composing signals using Interfaces
+----------------------------------
+
+You might want to re-use signals in some classes for the sake of composability. You can do this via defining your signals in interfaces and implementing the appropriate interface.
+Using this, it should also ease the refactoring of your signals later on as there's one source of truth by using this pattern.
+
+Here we can use the signals ``OnHealthChanged`` and ``OnSpellCast`` inside ``Warrior``, inherited from ``IHealth`` and ``ISpell`` respectively.
+
+.. code-block:: csharp
+
+    public interface IHealth
+    {
+        [Signal]
+        public delegate void OnHealthChangedEventHandler(int health);
+    }
+
+    public interface ISpell
+    {
+        [Signal]
+        public delegate void OnSpellCastEventHandler(int spellId);
+    }
+
+    public partial class Warrior : Node, IHealth, ISpell
+    {
+        public override void _Ready()
+        {
+            OnHealthChanged += (int health) => GD.Print($"{nameof(OnHealthChanged)} {health}");
+            OnSpellCast += (int spellId) => GD.Print($"{nameof(OnSpellCast)} {spellId}");
+        }
+    }
+
+
 Bound values
 ------------
 
