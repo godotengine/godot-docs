@@ -58,3 +58,9 @@ At the exception of the `classes/` folder, all the content of this repository is
 See [LICENSE.txt](/LICENSE.txt) for details.
 
 The files in the `classes/` folder are derived from [Godot's main source repository](https://github.com/godotengine/godot) and are distributed under the MIT license, with the same authors as above.
+
+## Contributors
+
+[![Contributors image](https://contrib.rocks/image?repo=godotengine/godot-docs&max=2000&columns=15)](https://github.com/godotengine/godot-docs/graphs/contributors)
+
+Made with [contrib.rocks](https://contrib.rocks).
