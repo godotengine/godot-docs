@@ -18,6 +18,7 @@ extensions = [
     "notfound.extension",
     "sphinxext.opengraph",
     "sphinx_copybutton",
+    "sphinxcontrib.video",
 ]
 
 # Warning when the Sphinx Tabs extension is used with unknown

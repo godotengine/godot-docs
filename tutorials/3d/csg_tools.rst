@@ -25,7 +25,11 @@ Interior environments can be created by using inverted primitives.
           `TrenchBroom <https://kristianduske.com/trenchbroom/>`__ and import
           them in Godot.
 
-.. image:: img/csg.gif
+.. video:: video/csg_tools.webm
+   :alt: CSG being used to subtract a torus shape from a box
+   :autoplay:
+   :loop:
+   :muted:
 
 .. seealso::
 
