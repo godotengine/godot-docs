@@ -72,7 +72,7 @@ editor, click the curve icon to the right of the animation track.
 .. image:: img/bezier_curve_icon.webp
 
 In the editor, keys are represented by filled diamonds and the outlined
-diamonds connected to them by a line control curve's shape. 
+diamonds connected to them by a line control curve's shape.
 
 .. tip::
 
