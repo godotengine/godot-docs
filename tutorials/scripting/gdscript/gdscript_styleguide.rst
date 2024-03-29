@@ -369,8 +369,8 @@ Backslashes:
 ::
 
     if $Sprite.animation == "back_crouch" \
-    or $Sprite.animation == "front_crouch" \
-    or $Sprite.animation == "horizontal_crouch":
+        or $Sprite.animation == "front_crouch" \
+        or $Sprite.animation == "horizontal_crouch":
         do_something()
 
 **Good**:
