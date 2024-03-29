@@ -355,6 +355,24 @@ When wrapping a conditional expression over multiple lines, the ``and``/``or``
 keywords should be placed at the beginning of the line continuation, not at the
 end of the previous line.
 
+Parentheses:
+
+::
+
+    if ($Sprite.animation == "back_crouch"
+    or $Sprite.animation == "front_crouch"
+    or $Sprite.animation == "horizontal_crouch"):
+        do_something()
+
+Backslashes:
+
+::
+
+    if $Sprite.animation == "back_crouch" \
+    or $Sprite.animation == "front_crouch" \
+    or $Sprite.animation == "horizontal_crouch":
+        do_something()
+
 **Good**:
 
 .. rst-class:: code-example-good
