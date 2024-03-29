@@ -185,7 +185,7 @@ Add the code below to ``HUD`` to update the score
     }
 
 Connect the ``pressed()`` signal of ``StartButton`` and the ``timeout()``
-signal of ``MessageTimer``, and add the following code to the new functions:
+signal of ``MessageTimer`` to the HUD node, and add the following code to the new functions:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
