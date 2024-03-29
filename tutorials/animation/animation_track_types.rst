@@ -72,7 +72,14 @@ editor, click the curve icon to the right of the animation track.
 .. image:: img/bezier_curve_icon.webp
 
 In the editor, keys are represented by filled diamonds and the outlined
-diamonds connected to them by a line control curve's shape.
+diamonds connected to them by a line control curve's shape. 
+
+.. tip::
+
+    For better precision while manually working with curves, you might want to alter
+    the zoom levels of the editor. You can do this with your mouse wheel, or using
+    the track on the bottom right of the editor to zoom in on the time axis, 
+    or with :kbd:`Ctrl + Alt + Mouse wheel` to zoom in the values range of the animation.
 
 .. image:: img/bezier_curves.webp
 
