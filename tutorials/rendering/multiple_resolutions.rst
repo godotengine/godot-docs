@@ -84,7 +84,7 @@ To configure the stretch base size at runtime from a script, use the
 ``get_tree().root.content_scale_size`` property (see
 :ref:`Window.content_scale_size <class_Window_property_content_scale_size>`).
 Changing this value can indirectly change the size of 2D elements. However, to
-provide an user-accessible scaling option, using
+provide a user-accessible scaling option, using
 :ref:`doc_multiple_resolutions_stretch_scale` is recommended as it's easier to
 adjust.
 

@@ -69,7 +69,7 @@ Desktop or laptop PC - Minimum
 
     Vulkan drivers for these Windows versions are known to have issues with
     memory leaks. As a result, it's recommended to stick to the Compatibility
-    rendering method when running Godot on an Windows version older than 10.
+    rendering method when running Godot on a Windows version older than 10.
 
 Mobile device (smartphone/tablet) - Minimum
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -252,7 +252,7 @@ Desktop or laptop PC - Minimum
 
     Vulkan drivers for these Windows versions are known to have issues with
     memory leaks. As a result, it's recommended to stick to the Compatibility
-    rendering method when running Godot on an Windows version older than 10.
+    rendering method when running Godot on a Windows version older than 10.
 
 Mobile device (smartphone/tablet) - Minimum
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

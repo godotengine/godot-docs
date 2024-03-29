@@ -64,6 +64,6 @@ file when the ``escn`` file opens in Godot.
 
 .. image:: img/external_mat_option.jpg
 
-``.material`` file can be assigned to any material slot to be a external resource.
+``.material`` file can be assigned to any material slot to be an external resource.
 
 .. image:: img/gd_dot_material.jpg

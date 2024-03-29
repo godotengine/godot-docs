@@ -118,7 +118,7 @@ access and integrity.
       access.
 
 There are also cases where one may wish to have many scenes present at the same
-time. Perhaps one is adding their own singleton at runtime, or preserving a
+time. Perhaps one is adding their own singleton at runtime, or preserving
 a scene's data between scene changes (adding the scene to the root node).
 
 .. tabs::

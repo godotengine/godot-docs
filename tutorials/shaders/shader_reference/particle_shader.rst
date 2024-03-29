@@ -66,13 +66,13 @@ Global built-ins are available everywhere, including custom functions.
 | in float **TAU**  | A ``TAU`` constant (``6.283185``).                                                     |
 |                   | An equivalent of ``PI * 2`` and amount of radians in full turn.                        |
 +-------------------+----------------------------------------------------------------------------------------+
-| in float **E**    | A ``E`` constant (``2.718281``). Euler's number and a base of the natural logarithm.   |
+| in float **E**    | An ``E`` constant (``2.718281``). Euler's number and a base of the natural logarithm.  |
 +-------------------+----------------------------------------------------------------------------------------+
 
 Start and Process built-ins
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-These properties can be accessed from both the ``start()`` and ``process()`` functions. 
+These properties can be accessed from both the ``start()`` and ``process()`` functions.
 
 +------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
 | Function                           | Description                                                                                                                             |

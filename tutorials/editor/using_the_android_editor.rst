@@ -4,7 +4,7 @@ Using the Android editor
 ========================
 
 In 2023, `we added <https://godotengine.org/article/android_godot_editor_play_store_beta_release/>`__
-a `Android port of the editor <https://godotengine.org/download/android/>`__
+an `Android port of the editor <https://godotengine.org/download/android/>`__
 that can be used to work on new or existing projects on Android devices.
 
 .. note::
@@ -45,7 +45,7 @@ Here are the known limitations and issues of the Android editor:
 - UX not optimized for Android phones form-factor
 - `Android Go devices <https://developer.android.com/guide/topics/androidgo>`__ lacks
   the *All files access* permission required for device read/write access.
-  As a workaround, when using a Android Go device, it's recommended to create new projects only in the Android *Documents* or *Downloads* directories.
+  As a workaround, when using an Android Go device, it's recommended to create new projects only in the Android *Documents* or *Downloads* directories.
 - The editor doesn't properly resume when *Don't keep activities* is enabled in the *Developer Options*
 
 .. seealso::
