@@ -40,7 +40,7 @@ Social networks and other sites
 - `YouTube <https://www.youtube.com/c/GodotEngineOfficial>`_
 - `Steam <https://steamcommunity.com/app/404790>`_
 - `itch.io <https://godotengine.itch.io/godot>`_
-- `linkin.bio <https://linkin.bio/godot>`_
+- `Links <https://links.godotengine.org>`_
 
 Language-based communities
 --------------------------
