@@ -256,7 +256,7 @@ Waits for a packet to arrive on the bound address. See :ref:`bind<class_PacketPe
 
  .. code-tab:: csharp
 
-    var socket = new PacketPeerUDP();
+    var socket = new PacketPeerUdp();
     // Server
     socket.SetDestAddress("127.0.0.1", 789);
     socket.PutPacket("Time to stop".ToAsciiBuffer());

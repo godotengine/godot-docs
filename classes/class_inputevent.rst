@@ -90,6 +90,23 @@ Methods
 
 .. rst-class:: classref-descriptions-group
 
+Constants
+---------
+
+.. _class_InputEvent_constant_DEVICE_ID_EMULATION:
+
+.. rst-class:: classref-constant
+
+**DEVICE_ID_EMULATION** = ``-1``
+
+Device ID used for emulated mouse input from a touchscreen, or for emulated touch input from a mouse. This can be used to distinguish emulated mouse input from physical mouse input, or emulated touch input from physical touch input.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
+
 Property Descriptions
 ---------------------
 
@@ -106,7 +123,7 @@ Property Descriptions
 
 The event's device ID.
 
-\ **Note:** This device ID will always be ``-1`` for emulated mouse input from a touchscreen. This can be used to distinguish emulated mouse input from physical mouse input.
+\ **Note:** :ref:`device<class_InputEvent_property_device>` can be negative for special use cases that don't refer to devices physically present on the system. See :ref:`DEVICE_ID_EMULATION<class_InputEvent_constant_DEVICE_ID_EMULATION>`.
 
 .. rst-class:: classref-section-separator
 

@@ -59,6 +59,8 @@ Properties
    +-----------------------------+------------------------------------------------------------------------------+-----------+
    | :ref:`bool<class_bool>`     | :ref:`paused<class_SceneTree_property_paused>`                               | ``false`` |
    +-----------------------------+------------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`     | :ref:`physics_interpolation<class_SceneTree_property_physics_interpolation>` | ``false`` |
+   +-----------------------------+------------------------------------------------------------------------------+-----------+
    | :ref:`bool<class_bool>`     | :ref:`quit_on_go_back<class_SceneTree_property_quit_on_go_back>`             | ``true``  |
    +-----------------------------+------------------------------------------------------------------------------+-----------+
    | :ref:`Window<class_Window>` | :ref:`root<class_SceneTree_property_root>`                                   |           |
@@ -428,6 +430,25 @@ If ``true``, the scene tree is considered paused. This causes the following beha
 - 2D and 3D physics will be stopped, as well as collision detection and related signals.
 
 - Depending on each node's :ref:`Node.process_mode<class_Node_property_process_mode>`, their :ref:`Node._process<class_Node_private_method__process>`, :ref:`Node._physics_process<class_Node_private_method__physics_process>` and :ref:`Node._input<class_Node_private_method__input>` callback methods may not called anymore.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_SceneTree_property_physics_interpolation:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **physics_interpolation** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_physics_interpolation_enabled**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_physics_interpolation_enabled**\ (\ )
+
+If ``true``, the renderer will interpolate the transforms of physics objects between the last two transforms, so that smooth motion is seen even when physics ticks do not coincide with rendered frames.
+
+The default value of this property is controlled by :ref:`ProjectSettings.physics/common/physics_interpolation<class_ProjectSettings_property_physics/common/physics_interpolation>`.
 
 .. rst-class:: classref-item-separator
 

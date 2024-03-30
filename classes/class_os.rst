@@ -71,6 +71,8 @@ Methods
    +---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`execute<class_OS_method_execute>`\ (\ path\: :ref:`String<class_String>`, arguments\: :ref:`PackedStringArray<class_PackedStringArray>`, output\: :ref:`Array<class_Array>` = [], read_stderr\: :ref:`bool<class_bool>` = false, open_console\: :ref:`bool<class_bool>` = false\ )                                                                                                    |
    +---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Dictionary<class_Dictionary>`               | :ref:`execute_with_pipe<class_OS_method_execute_with_pipe>`\ (\ path\: :ref:`String<class_String>`, arguments\: :ref:`PackedStringArray<class_PackedStringArray>`\ )                                                                                                                                                                                                                        |
+   +---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Key<enum_@GlobalScope_Key>`                 | :ref:`find_keycode_from_string<class_OS_method_find_keycode_from_string>`\ (\ string\: :ref:`String<class_String>`\ ) |const|                                                                                                                                                                                                                                                               |
    +---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                       | :ref:`get_cache_dir<class_OS_method_get_cache_dir>`\ (\ ) |const|                                                                                                                                                                                                                                                                                                                           |
@@ -432,11 +434,11 @@ See :ref:`create_process<class_OS_method_create_process>` if you wish to run a d
 
 :ref:`int<class_int>` **create_process**\ (\ path\: :ref:`String<class_String>`, arguments\: :ref:`PackedStringArray<class_PackedStringArray>`, open_console\: :ref:`bool<class_bool>` = false\ )
 
-Creates a new process that runs independently of Godot. It will not terminate when Godot terminates. The path specified in ``path`` must exist and be executable file or macOS .app bundle. Platform path resolution will be used. The ``arguments`` are used in the given order and separated by a space.
+Creates a new process that runs independently of Godot. It will not terminate when Godot terminates. The path specified in ``path`` must exist and be an executable file or macOS ``.app`` bundle. The path is resolved based on the current platform. The ``arguments`` are used in the given order and separated by a space.
 
 On Windows, if ``open_console`` is ``true`` and the process is a console app, a new terminal window will be opened.
 
-If the process is successfully created, this method returns its process ID, which you can use to monitor the process (and potentially terminate it with :ref:`kill<class_OS_method_kill>`). Otherwise this method returns ``-1``.
+If the process is successfully created, this method returns its process ID, which you can use to monitor the process (and potentially terminate it with :ref:`kill<class_OS_method_kill>`). Otherwise, this method returns ``-1``.
 
 For example, running another instance of the project:
 
@@ -455,7 +457,7 @@ For example, running another instance of the project:
 
 See :ref:`execute<class_OS_method_execute>` if you wish to run an external command and retrieve the results.
 
-\ **Note:** This method is implemented on Android, iOS, Linux, macOS and Windows.
+\ **Note:** This method is implemented on Android, Linux, macOS, and Windows.
 
 \ **Note:** On macOS, sandboxed applications are limited to run only embedded helper executables, specified during export or system .app bundle, system .app bundles will ignore arguments.
 
@@ -545,7 +547,7 @@ If you wish to access a shell built-in or execute a composite command, a platfor
 
 
 
-\ **Note:** This method is implemented on Android, iOS, Linux, macOS and Windows.
+\ **Note:** This method is implemented on Android, Linux, macOS, and Windows.
 
 \ **Note:** To execute a Windows command interpreter built-in command, specify ``cmd.exe`` in ``path``, ``/c`` as the first argument, and the desired command as the second argument.
 
@@ -556,6 +558,36 @@ If you wish to access a shell built-in or execute a composite command, a platfor
 \ **Note:** On macOS, sandboxed applications are limited to run only embedded helper executables, specified during export.
 
 \ **Note:** On Android, system commands such as ``dumpsys`` can only be run on a rooted device.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_OS_method_execute_with_pipe:
+
+.. rst-class:: classref-method
+
+:ref:`Dictionary<class_Dictionary>` **execute_with_pipe**\ (\ path\: :ref:`String<class_String>`, arguments\: :ref:`PackedStringArray<class_PackedStringArray>`\ )
+
+Creates a new process that runs independently of Godot with redirected IO. It will not terminate when Godot terminates. The path specified in ``path`` must exist and be an executable file or macOS ``.app`` bundle. The path is resolved based on the current platform. The ``arguments`` are used in the given order and separated by a space.
+
+If the process cannot be created, this method returns an empty :ref:`Dictionary<class_Dictionary>`. Otherwise, this method returns a :ref:`Dictionary<class_Dictionary>` with the following keys:
+
+- ``"stdio"`` - :ref:`FileAccess<class_FileAccess>` to access the process stdin and stdout pipes (read/write).
+
+- ``"stderr"`` - :ref:`FileAccess<class_FileAccess>` to access the process stderr pipe (read only).
+
+- ``"pid"`` - Process ID as an :ref:`int<class_int>`, which you can use to monitor the process (and potentially terminate it with :ref:`kill<class_OS_method_kill>`).
+
+\ **Note:** This method is implemented on Android, Linux, macOS, and Windows.
+
+\ **Note:** To execute a Windows command interpreter built-in command, specify ``cmd.exe`` in ``path``, ``/c`` as the first argument, and the desired command as the second argument.
+
+\ **Note:** To execute a PowerShell built-in command, specify ``powershell.exe`` in ``path``, ``-Command`` as the first argument, and the desired command as the second argument.
+
+\ **Note:** To execute a Unix shell built-in command, specify shell executable name in ``path``, ``-c`` as the first argument, and the desired command as the second argument.
+
+\ **Note:** On macOS, sandboxed applications are limited to run only embedded helper executables, specified during export or system .app bundle, system .app bundles will ignore arguments.
 
 .. rst-class:: classref-item-separator
 

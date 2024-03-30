@@ -96,6 +96,8 @@ Properties
    +---------------------------------------------------+-----------------------------------------------------------------------------------------------+-----------+
    | :ref:`float<class_float>`                         | :ref:`autorestart_random_delay<class_AnimationNodeOneShot_property_autorestart_random_delay>` | ``0.0``   |
    +---------------------------------------------------+-----------------------------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`                           | :ref:`break_loop_at_end<class_AnimationNodeOneShot_property_break_loop_at_end>`               | ``false`` |
+   +---------------------------------------------------+-----------------------------------------------------------------------------------------------+-----------+
    | :ref:`Curve<class_Curve>`                         | :ref:`fadein_curve<class_AnimationNodeOneShot_property_fadein_curve>`                         |           |
    +---------------------------------------------------+-----------------------------------------------------------------------------------------------+-----------+
    | :ref:`float<class_float>`                         | :ref:`fadein_time<class_AnimationNodeOneShot_property_fadein_time>`                           | ``0.0``   |
@@ -242,6 +244,23 @@ If :ref:`autorestart<class_AnimationNodeOneShot_property_autorestart>` is ``true
 
 ----
 
+.. _class_AnimationNodeOneShot_property_break_loop_at_end:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **break_loop_at_end** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_break_loop_at_end**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_loop_broken_at_end**\ (\ )
+
+If ``true``, breaks the loop at the end of the loop cycle for transition, even if the animation is looping.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_AnimationNodeOneShot_property_fadein_curve:
 
 .. rst-class:: classref-property
@@ -271,6 +290,8 @@ Determines how cross-fading between animations is eased. If empty, the transitio
 - :ref:`float<class_float>` **get_fadein_time**\ (\ )
 
 The fade-in duration. For example, setting this to ``1.0`` for a 5 second length animation will produce a cross-fade that starts at 0 second and ends at 1 second during the animation.
+
+\ **Note:** **AnimationNodeOneShot** transitions the current state after the end of the fading. When :ref:`AnimationNodeOutput<class_AnimationNodeOutput>` is considered as the most upstream, so the :ref:`fadein_time<class_AnimationNodeOneShot_property_fadein_time>` is scaled depending on the downstream delta. For example, if this value is set to ``1.0`` and a :ref:`AnimationNodeTimeScale<class_AnimationNodeTimeScale>` with a value of ``2.0`` is chained downstream, the actual processing time will be 0.5 second.
 
 .. rst-class:: classref-item-separator
 
@@ -305,6 +326,8 @@ Determines how cross-fading between animations is eased. If empty, the transitio
 - :ref:`float<class_float>` **get_fadeout_time**\ (\ )
 
 The fade-out duration. For example, setting this to ``1.0`` for a 5 second length animation will produce a cross-fade that starts at 4 second and ends at 5 second during the animation.
+
+\ **Note:** **AnimationNodeOneShot** transitions the current state after the end of the fading. When :ref:`AnimationNodeOutput<class_AnimationNodeOutput>` is considered as the most upstream, so the :ref:`fadeout_time<class_AnimationNodeOneShot_property_fadeout_time>` is scaled depending on the downstream delta. For example, if this value is set to ``1.0`` and an :ref:`AnimationNodeTimeScale<class_AnimationNodeTimeScale>` with a value of ``2.0`` is chained downstream, the actual processing time will be 0.5 second.
 
 .. rst-class:: classref-item-separator
 

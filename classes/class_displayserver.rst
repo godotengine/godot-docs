@@ -484,7 +484,7 @@ Display server supports setting the mouse cursor shape to a custom image. **Wind
 
 :ref:`Feature<enum_DisplayServer_Feature>` **FEATURE_NATIVE_DIALOG** = ``9``
 
-Display server supports spawning dialogs using the operating system's native look-and-feel. **Windows, macOS, Linux (X11/Wayland)**
+Display server supports spawning text dialogs using the operating system's native look-and-feel. See :ref:`dialog_show<class_DisplayServer_method_dialog_show>`. **Windows, macOS**
 
 .. _class_DisplayServer_constant_FEATURE_IME:
 
@@ -589,6 +589,22 @@ Display server supports application status indicators.
 :ref:`Feature<enum_DisplayServer_Feature>` **FEATURE_NATIVE_HELP** = ``23``
 
 Display server supports native help system search callbacks. See :ref:`help_set_search_callbacks<class_DisplayServer_method_help_set_search_callbacks>`.
+
+.. _class_DisplayServer_constant_FEATURE_NATIVE_DIALOG_INPUT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Feature<enum_DisplayServer_Feature>` **FEATURE_NATIVE_DIALOG_INPUT** = ``24``
+
+Display server supports spawning text input dialogs using the operating system's native look-and-feel. See :ref:`dialog_input_text<class_DisplayServer_method_dialog_input_text>`. **Windows, macOS**
+
+.. _class_DisplayServer_constant_FEATURE_NATIVE_DIALOG_FILE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Feature<enum_DisplayServer_Feature>` **FEATURE_NATIVE_DIALOG_FILE** = ``25``
+
+Display server supports spawning dialogs for selecting files or directories using the operating system's native look-and-feel. See :ref:`file_dialog_show<class_DisplayServer_method_file_dialog_show>` and :ref:`file_dialog_with_options_show<class_DisplayServer_method_file_dialog_with_options_show>`. **Windows, macOS, Linux (X11/Wayland)**
 
 .. rst-class:: classref-item-separator
 
@@ -1624,7 +1640,7 @@ Removes the application status indicator.
 
 Shows a text input dialog which uses the operating system's native look-and-feel. ``callback`` should accept a single :ref:`String<class_String>` parameter which contains the text field's contents.
 
-\ **Note:** This method is implemented only on macOS and Windows.
+\ **Note:** This method is implemented if the display server has the :ref:`FEATURE_NATIVE_DIALOG_INPUT<class_DisplayServer_constant_FEATURE_NATIVE_DIALOG_INPUT>` feature. Supported platforms include macOS and Windows.
 
 .. rst-class:: classref-item-separator
 
@@ -1638,7 +1654,7 @@ Shows a text input dialog which uses the operating system's native look-and-feel
 
 Shows a text dialog which uses the operating system's native look-and-feel. ``callback`` should accept a single :ref:`int<class_int>` parameter which corresponds to the index of the pressed button.
 
-\ **Note:** This method is implemented only on macOS and Windows.
+\ **Note:** This method is implemented if the display server has the :ref:`FEATURE_NATIVE_DIALOG<class_DisplayServer_constant_FEATURE_NATIVE_DIALOG>` feature. Supported platforms include macOS and Windows.
 
 .. rst-class:: classref-item-separator
 
@@ -1670,7 +1686,7 @@ Each filter string in the ``filters`` array should be formatted like this: ``*.t
 
 Callbacks have the following arguments: ``status: bool, selected_paths: PackedStringArray, selected_filter_index: int``.
 
-\ **Note:** This method is implemented if the display server has the :ref:`FEATURE_NATIVE_DIALOG<class_DisplayServer_constant_FEATURE_NATIVE_DIALOG>` feature. Supported platforms include Linux (X11/Wayland), Windows, and macOS.
+\ **Note:** This method is implemented if the display server has the :ref:`FEATURE_NATIVE_DIALOG_FILE<class_DisplayServer_constant_FEATURE_NATIVE_DIALOG_FILE>` feature. Supported platforms include Linux (X11/Wayland), Windows, and macOS.
 
 \ **Note:** ``current_directory`` might be ignored.
 
@@ -1704,7 +1720,7 @@ Each filter string in the ``filters`` array should be formatted like this: ``*.t
 
 Callbacks have the following arguments: ``status: bool, selected_paths: PackedStringArray, selected_filter_index: int, selected_option: Dictionary``.
 
-\ **Note:** This method is implemented if the display server has the :ref:`FEATURE_NATIVE_DIALOG<class_DisplayServer_constant_FEATURE_NATIVE_DIALOG>` feature. Supported platforms include Linux (X11/Wayland), Windows, and macOS.
+\ **Note:** This method is implemented if the display server has the :ref:`FEATURE_NATIVE_DIALOG_FILE<class_DisplayServer_constant_FEATURE_NATIVE_DIALOG_FILE>` feature. Supported platforms include Linux (X11/Wayland), Windows, and macOS.
 
 \ **Note:** ``current_directory`` might be ignored.
 
@@ -2299,7 +2315,7 @@ Returns the horizontal offset of the item at the given ``idx``.
 
 **Deprecated:** Use :ref:`NativeMenu<class_NativeMenu>` or :ref:`PopupMenu<class_PopupMenu>` instead.
 
-Returns the index of the item with the specified ``tag``. Index is automatically assigned to each item by the engine. Index can not be set manually.
+Returns the index of the item with the specified ``tag``. Indices are automatically assigned to each item by the engine, and cannot be set manually.
 
 \ **Note:** This method is implemented only on macOS.
 
@@ -2315,7 +2331,7 @@ Returns the index of the item with the specified ``tag``. Index is automatically
 
 **Deprecated:** Use :ref:`NativeMenu<class_NativeMenu>` or :ref:`PopupMenu<class_PopupMenu>` instead.
 
-Returns the index of the item with the specified ``text``. Index is automatically assigned to each item by the engine. Index can not be set manually.
+Returns the index of the item with the specified ``text``. Indices are automatically assigned to each item by the engine, and cannot be set manually.
 
 \ **Note:** This method is implemented only on macOS.
 
