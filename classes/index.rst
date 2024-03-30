@@ -320,6 +320,7 @@ Resources
     class_audioeffecteq21
     class_audioeffecteq6
     class_audioeffectfilter
+    class_audioeffecthardlimiter
     class_audioeffecthighpassfilter
     class_audioeffecthighshelffilter
     class_audioeffectlimiter

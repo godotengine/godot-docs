@@ -33,7 +33,7 @@ The **PCKPacker** is used to create packages that can be loaded into a running p
 
  .. code-tab:: csharp
 
-    var packer = new PCKPacker();
+    var packer = new PckPacker();
     packer.PckStart("test.pck");
     packer.AddFile("res://text.txt", "text.txt");
     packer.Flush();

@@ -679,6 +679,8 @@ Properties
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`Dictionary<class_Dictionary>`               | :ref:`input/ui_text_select_word_under_caret.macos<class_ProjectSettings_property_input/ui_text_select_word_under_caret.macos>`                                                                             |                                                                                                  |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`Dictionary<class_Dictionary>`               | :ref:`input/ui_text_skip_selection_for_next_occurrence<class_ProjectSettings_property_input/ui_text_skip_selection_for_next_occurrence>`                                                                   |                                                                                                  |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`Dictionary<class_Dictionary>`               | :ref:`input/ui_text_submit<class_ProjectSettings_property_input/ui_text_submit>`                                                                                                                           |                                                                                                  |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`Dictionary<class_Dictionary>`               | :ref:`input/ui_text_toggle_insert_mode<class_ProjectSettings_property_input/ui_text_toggle_insert_mode>`                                                                                                   |                                                                                                  |
@@ -1167,6 +1169,8 @@ Properties
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`navigation/baking/thread_model/baking_use_multiple_threads<class_ProjectSettings_property_navigation/baking/thread_model/baking_use_multiple_threads>`                                               | ``true``                                                                                         |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`navigation/baking/use_crash_prevention_checks<class_ProjectSettings_property_navigation/baking/use_crash_prevention_checks>`                                                                         | ``true``                                                                                         |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`network/limits/debugger/max_chars_per_second<class_ProjectSettings_property_network/limits/debugger/max_chars_per_second>`                                                                           | ``32768``                                                                                        |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`network/limits/debugger/max_errors_per_second<class_ProjectSettings_property_network/limits/debugger/max_errors_per_second>`                                                                         | ``400``                                                                                          |
@@ -1244,6 +1248,8 @@ Properties
    | :ref:`bool<class_bool>`                           | :ref:`physics/common/enable_object_picking<class_ProjectSettings_property_physics/common/enable_object_picking>`                                                                                           | ``true``                                                                                         |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`physics/common/max_physics_steps_per_frame<class_ProjectSettings_property_physics/common/max_physics_steps_per_frame>`                                                                               | ``8``                                                                                            |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`physics/common/physics_interpolation<class_ProjectSettings_property_physics/common/physics_interpolation>`                                                                                           | ``false``                                                                                        |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                         | :ref:`physics/common/physics_jitter_fix<class_ProjectSettings_property_physics/common/physics_jitter_fix>`                                                                                                 | ``0.5``                                                                                          |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
@@ -5782,6 +5788,24 @@ macOS specific override for the shortcut to select the word currently under the 
 
 ----
 
+.. _class_ProjectSettings_property_input/ui_text_skip_selection_for_next_occurrence:
+
+.. rst-class:: classref-property
+
+:ref:`Dictionary<class_Dictionary>` **input/ui_text_skip_selection_for_next_occurrence**
+
+If no selection is currently active with the last caret in text fields, searches for the next occurrence of the the word currently under the caret and moves the caret to the next occurrence. The action can be performed sequentially for other occurrences of the word under the last caret.
+
+If a selection is currently active with the last caret in text fields, searches for the next occurrence of the selection, adds a caret, selects the next occurrence then deselects the previous selection and its associated caret. The action can be performed sequentially for other occurrences of the selection of the last caret.
+
+The viewport is adjusted to the latest newly added caret.
+
+\ **Note:** Default ``ui_*`` actions cannot be removed as they are necessary for the internal logic of several :ref:`Control<class_Control>`\ s. The events assigned to the action can however be modified.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_ProjectSettings_property_input/ui_text_submit:
 
 .. rst-class:: classref-property
@@ -8742,6 +8766,18 @@ If enabled the async navmesh baking uses multiple threads.
 
 ----
 
+.. _class_ProjectSettings_property_navigation/baking/use_crash_prevention_checks:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **navigation/baking/use_crash_prevention_checks** = ``true``
+
+If enabled, and baking would potentially lead to an engine crash, the baking will be interrupted and an error message with explanation will be raised.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_ProjectSettings_property_network/limits/debugger/max_chars_per_second:
 
 .. rst-class:: classref-property
@@ -9324,6 +9360,24 @@ Controls the maximum number of physics steps that can be simulated each rendered
 
 ----
 
+.. _class_ProjectSettings_property_physics/common/physics_interpolation:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **physics/common/physics_interpolation** = ``false``
+
+If ``true``, the renderer will interpolate the transforms of physics objects between the last two transforms, so that smooth motion is seen even when physics ticks do not coincide with rendered frames. See also :ref:`Node.physics_interpolation_mode<class_Node_property_physics_interpolation_mode>` and :ref:`Node.reset_physics_interpolation<class_Node_method_reset_physics_interpolation>`.
+
+\ **Note:** If ``true``, the physics jitter fix should be disabled by setting :ref:`physics/common/physics_jitter_fix<class_ProjectSettings_property_physics/common/physics_jitter_fix>` to ``0.0``.
+
+\ **Note:** This property is only read when the project starts. To toggle physics interpolation at runtime, set :ref:`SceneTree.physics_interpolation<class_SceneTree_property_physics_interpolation>` instead.
+
+\ **Note:** This feature is currently only implemented in the 2D renderer.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_ProjectSettings_property_physics/common/physics_jitter_fix:
 
 .. rst-class:: classref-property
@@ -9332,7 +9386,7 @@ Controls the maximum number of physics steps that can be simulated each rendered
 
 Controls how much physics ticks are synchronized with real time. For 0 or less, the ticks are synchronized. Such values are recommended for network games, where clock synchronization matters. Higher values cause higher deviation of in-game clock and real clock, but allows smoothing out framerate jitters. The default value of 0.5 should be good enough for most; values above 2 could cause the game to react to dropped frames with a noticeable delay and are not recommended.
 
-\ **Note:** For best results, when using a custom physics interpolation solution, the physics jitter fix should be disabled by setting :ref:`physics/common/physics_jitter_fix<class_ProjectSettings_property_physics/common/physics_jitter_fix>` to ``0``.
+\ **Note:** When using a physics interpolation solution (such as enabling :ref:`physics/common/physics_interpolation<class_ProjectSettings_property_physics/common/physics_interpolation>` or using a custom solution), the physics jitter fix should be disabled by setting :ref:`physics/common/physics_jitter_fix<class_ProjectSettings_property_physics/common/physics_jitter_fix>` to ``0.0``.
 
 \ **Note:** This property is only read when the project starts. To change the physics jitter fix at runtime, set :ref:`Engine.physics_jitter_fix<class_Engine_property_physics_jitter_fix>` instead.
 

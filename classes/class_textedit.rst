@@ -403,6 +403,8 @@ Methods
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                            | :ref:`set_tooltip_request_func<class_TextEdit_method_set_tooltip_request_func>`\ (\ callback\: :ref:`Callable<class_Callable>`\ )                                                                                                                                                  |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                            | :ref:`skip_selection_for_next_occurrence<class_TextEdit_method_skip_selection_for_next_occurrence>`\ (\ )                                                                                                                                                                          |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                            | :ref:`start_action<class_TextEdit_method_start_action>`\ (\ action\: :ref:`EditAction<enum_TextEdit_EditAction>`\ )                                                                                                                                                                |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                            | :ref:`swap_lines<class_TextEdit_method_swap_lines>`\ (\ from_line\: :ref:`int<class_int>`, to_line\: :ref:`int<class_int>`\ )                                                                                                                                                      |
@@ -3441,6 +3443,18 @@ Sets the tab size for the **TextEdit** to use.
 |void| **set_tooltip_request_func**\ (\ callback\: :ref:`Callable<class_Callable>`\ )
 
 Provide custom tooltip text. The callback method must take the following args: ``hovered_word: String``.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_TextEdit_method_skip_selection_for_next_occurrence:
+
+.. rst-class:: classref-method
+
+|void| **skip_selection_for_next_occurrence**\ (\ )
+
+Moves a selection and a caret for the next occurrence of the current selection. If there is no active selection, moves to the next occurrence of the word under caret.
 
 .. rst-class:: classref-item-separator
 

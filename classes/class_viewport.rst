@@ -514,11 +514,7 @@ enum **RenderInfoType**:
 
 :ref:`RenderInfoType<enum_Viewport_RenderInfoType>` **RENDER_INFO_TYPE_VISIBLE** = ``0``
 
-.. container:: contribute
-
-	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
-
-
+Visible render pass (excluding shadows).
 
 .. _class_Viewport_constant_RENDER_INFO_TYPE_SHADOW:
 
@@ -526,23 +522,23 @@ enum **RenderInfoType**:
 
 :ref:`RenderInfoType<enum_Viewport_RenderInfoType>` **RENDER_INFO_TYPE_SHADOW** = ``1``
 
-.. container:: contribute
+Shadow render pass. Objects will be rendered several times depending on the number of amounts of lights with shadows and the number of directional shadow splits.
 
-	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+.. _class_Viewport_constant_RENDER_INFO_TYPE_CANVAS:
 
+.. rst-class:: classref-enumeration-constant
 
+:ref:`RenderInfoType<enum_Viewport_RenderInfoType>` **RENDER_INFO_TYPE_CANVAS** = ``2``
+
+Canvas item rendering. This includes all 2D rendering.
 
 .. _class_Viewport_constant_RENDER_INFO_TYPE_MAX:
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`RenderInfoType<enum_Viewport_RenderInfoType>` **RENDER_INFO_TYPE_MAX** = ``2``
+:ref:`RenderInfoType<enum_Viewport_RenderInfoType>` **RENDER_INFO_TYPE_MAX** = ``3``
 
-.. container:: contribute
-
-	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
-
-
+Represents the size of the :ref:`RenderInfoType<enum_Viewport_RenderInfoType>` enum.
 
 .. rst-class:: classref-item-separator
 

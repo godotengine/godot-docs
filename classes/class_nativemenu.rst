@@ -84,6 +84,8 @@ Methods
    +-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`RID<class_RID>`             | :ref:`create_menu<class_NativeMenu_method_create_menu>`\ (\ )                                                                                                                                                                                                                                                                                                                                                                                                                         |
    +-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`             | :ref:`find_item_index_with_submenu<class_NativeMenu_method_find_item_index_with_submenu>`\ (\ rid\: :ref:`RID<class_RID>`, submenu_rid\: :ref:`RID<class_RID>`\ ) |const|                                                                                                                                                                                                                                                                                                             |
+   +-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`             | :ref:`find_item_index_with_tag<class_NativeMenu_method_find_item_index_with_tag>`\ (\ rid\: :ref:`RID<class_RID>`, tag\: :ref:`Variant<class_Variant>`\ ) |const|                                                                                                                                                                                                                                                                                                                     |
    +-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`             | :ref:`find_item_index_with_text<class_NativeMenu_method_find_item_index_with_text>`\ (\ rid\: :ref:`RID<class_RID>`, text\: :ref:`String<class_String>`\ ) |const|                                                                                                                                                                                                                                                                                                                    |
@@ -535,13 +537,27 @@ Creates a new global menu object.
 
 ----
 
+.. _class_NativeMenu_method_find_item_index_with_submenu:
+
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **find_item_index_with_submenu**\ (\ rid\: :ref:`RID<class_RID>`, submenu_rid\: :ref:`RID<class_RID>`\ ) |const|
+
+Returns the index of the item with the submenu specified by ``submenu_rid``. Indices are automatically assigned to each item by the engine, and cannot be set manually.
+
+\ **Note:** This method is implemented on macOS and Windows.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_NativeMenu_method_find_item_index_with_tag:
 
 .. rst-class:: classref-method
 
 :ref:`int<class_int>` **find_item_index_with_tag**\ (\ rid\: :ref:`RID<class_RID>`, tag\: :ref:`Variant<class_Variant>`\ ) |const|
 
-Returns the index of the item with the specified ``tag``. Index is automatically assigned to each item by the engine. Index can not be set manually.
+Returns the index of the item with the specified ``tag``. Indices are automatically assigned to each item by the engine, and cannot be set manually.
 
 \ **Note:** This method is implemented on macOS and Windows.
 
@@ -555,7 +571,7 @@ Returns the index of the item with the specified ``tag``. Index is automatically
 
 :ref:`int<class_int>` **find_item_index_with_text**\ (\ rid\: :ref:`RID<class_RID>`, text\: :ref:`String<class_String>`\ ) |const|
 
-Returns the index of the item with the specified ``text``. Index is automatically assigned to each item by the engine. Index can not be set manually.
+Returns the index of the item with the specified ``text``. Indices are automatically assigned to each item by the engine, and cannot be set manually.
 
 \ **Note:** This method is implemented on macOS and Windows.
 

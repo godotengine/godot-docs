@@ -904,6 +904,42 @@ The velocity that the joint's linear motor will attempt to reach.
 
 The maximum force that the linear motor can apply while trying to reach the target velocity.
 
+.. _class_PhysicsServer3D_constant_G6DOF_JOINT_LINEAR_SPRING_STIFFNESS:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`G6DOFJointAxisParam<enum_PhysicsServer3D_G6DOFJointAxisParam>` **G6DOF_JOINT_LINEAR_SPRING_STIFFNESS** = ``7``
+
+.. container:: contribute
+
+	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+
+
+.. _class_PhysicsServer3D_constant_G6DOF_JOINT_LINEAR_SPRING_DAMPING:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`G6DOFJointAxisParam<enum_PhysicsServer3D_G6DOFJointAxisParam>` **G6DOF_JOINT_LINEAR_SPRING_DAMPING** = ``8``
+
+.. container:: contribute
+
+	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+
+
+.. _class_PhysicsServer3D_constant_G6DOF_JOINT_LINEAR_SPRING_EQUILIBRIUM_POINT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`G6DOFJointAxisParam<enum_PhysicsServer3D_G6DOFJointAxisParam>` **G6DOF_JOINT_LINEAR_SPRING_EQUILIBRIUM_POINT** = ``9``
+
+.. container:: contribute
+
+	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+
+
 .. _class_PhysicsServer3D_constant_G6DOF_JOINT_ANGULAR_LOWER_LIMIT:
 
 .. rst-class:: classref-enumeration-constant
@@ -976,6 +1012,50 @@ Target speed for the motor at the axes.
 
 Maximum acceleration for the motor at the axes.
 
+.. _class_PhysicsServer3D_constant_G6DOF_JOINT_ANGULAR_SPRING_STIFFNESS:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`G6DOFJointAxisParam<enum_PhysicsServer3D_G6DOFJointAxisParam>` **G6DOF_JOINT_ANGULAR_SPRING_STIFFNESS** = ``19``
+
+.. container:: contribute
+
+	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+
+
+.. _class_PhysicsServer3D_constant_G6DOF_JOINT_ANGULAR_SPRING_DAMPING:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`G6DOFJointAxisParam<enum_PhysicsServer3D_G6DOFJointAxisParam>` **G6DOF_JOINT_ANGULAR_SPRING_DAMPING** = ``20``
+
+.. container:: contribute
+
+	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+
+
+.. _class_PhysicsServer3D_constant_G6DOF_JOINT_ANGULAR_SPRING_EQUILIBRIUM_POINT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`G6DOFJointAxisParam<enum_PhysicsServer3D_G6DOFJointAxisParam>` **G6DOF_JOINT_ANGULAR_SPRING_EQUILIBRIUM_POINT** = ``21``
+
+.. container:: contribute
+
+	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+
+
+.. _class_PhysicsServer3D_constant_G6DOF_JOINT_MAX:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`G6DOFJointAxisParam<enum_PhysicsServer3D_G6DOFJointAxisParam>` **G6DOF_JOINT_MAX** = ``22``
+
+Represents the size of the :ref:`G6DOFJointAxisParam<enum_PhysicsServer3D_G6DOFJointAxisParam>` enum.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -1002,6 +1082,30 @@ If set, linear motion is possible within the given limits.
 
 If set, rotational motion is possible.
 
+.. _class_PhysicsServer3D_constant_G6DOF_JOINT_FLAG_ENABLE_ANGULAR_SPRING:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`G6DOFJointAxisFlag<enum_PhysicsServer3D_G6DOFJointAxisFlag>` **G6DOF_JOINT_FLAG_ENABLE_ANGULAR_SPRING** = ``2``
+
+.. container:: contribute
+
+	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+
+
+.. _class_PhysicsServer3D_constant_G6DOF_JOINT_FLAG_ENABLE_LINEAR_SPRING:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`G6DOFJointAxisFlag<enum_PhysicsServer3D_G6DOFJointAxisFlag>` **G6DOF_JOINT_FLAG_ENABLE_LINEAR_SPRING** = ``3``
+
+.. container:: contribute
+
+	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+
+
 .. _class_PhysicsServer3D_constant_G6DOF_JOINT_FLAG_ENABLE_MOTOR:
 
 .. rst-class:: classref-enumeration-constant
@@ -1017,6 +1121,14 @@ If set, there is a rotational motor across these axes.
 :ref:`G6DOFJointAxisFlag<enum_PhysicsServer3D_G6DOFJointAxisFlag>` **G6DOF_JOINT_FLAG_ENABLE_LINEAR_MOTOR** = ``5``
 
 If set, there is a linear motor on this axis that targets a specific velocity.
+
+.. _class_PhysicsServer3D_constant_G6DOF_JOINT_FLAG_MAX:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`G6DOFJointAxisFlag<enum_PhysicsServer3D_G6DOFJointAxisFlag>` **G6DOF_JOINT_FLAG_MAX** = ``6``
+
+Represents the size of the :ref:`G6DOFJointAxisFlag<enum_PhysicsServer3D_G6DOFJointAxisFlag>` enum.
 
 .. rst-class:: classref-item-separator
 
@@ -2899,7 +3011,7 @@ Destroys any of the objects created by PhysicsServer3D. If the :ref:`RID<class_R
 
 :ref:`bool<class_bool>` **generic_6dof_joint_get_flag**\ (\ joint\: :ref:`RID<class_RID>`, axis\: Vector3.Axis, flag\: :ref:`G6DOFJointAxisFlag<enum_PhysicsServer3D_G6DOFJointAxisFlag>`\ ) |const|
 
-Gets a generic_6_DOF_joint flag (see :ref:`G6DOFJointAxisFlag<enum_PhysicsServer3D_G6DOFJointAxisFlag>` constants).
+Returns the value of a generic 6DOF joint flag. See :ref:`G6DOFJointAxisFlag<enum_PhysicsServer3D_G6DOFJointAxisFlag>` for the list of available flags.
 
 .. rst-class:: classref-item-separator
 
@@ -2911,7 +3023,7 @@ Gets a generic_6_DOF_joint flag (see :ref:`G6DOFJointAxisFlag<enum_PhysicsServer
 
 :ref:`float<class_float>` **generic_6dof_joint_get_param**\ (\ joint\: :ref:`RID<class_RID>`, axis\: Vector3.Axis, param\: :ref:`G6DOFJointAxisParam<enum_PhysicsServer3D_G6DOFJointAxisParam>`\ ) |const|
 
-Gets a generic_6_DOF_joint parameter (see :ref:`G6DOFJointAxisParam<enum_PhysicsServer3D_G6DOFJointAxisParam>` constants).
+Returns the value of a generic 6DOF joint parameter. See :ref:`G6DOFJointAxisParam<enum_PhysicsServer3D_G6DOFJointAxisParam>` for the list of available parameters.
 
 .. rst-class:: classref-item-separator
 
@@ -2923,7 +3035,7 @@ Gets a generic_6_DOF_joint parameter (see :ref:`G6DOFJointAxisParam<enum_Physics
 
 |void| **generic_6dof_joint_set_flag**\ (\ joint\: :ref:`RID<class_RID>`, axis\: Vector3.Axis, flag\: :ref:`G6DOFJointAxisFlag<enum_PhysicsServer3D_G6DOFJointAxisFlag>`, enable\: :ref:`bool<class_bool>`\ )
 
-Sets a generic_6_DOF_joint flag (see :ref:`G6DOFJointAxisFlag<enum_PhysicsServer3D_G6DOFJointAxisFlag>` constants).
+Sets the value of a given generic 6DOF joint flag. See :ref:`G6DOFJointAxisFlag<enum_PhysicsServer3D_G6DOFJointAxisFlag>` for the list of available flags.
 
 .. rst-class:: classref-item-separator
 
@@ -2935,7 +3047,7 @@ Sets a generic_6_DOF_joint flag (see :ref:`G6DOFJointAxisFlag<enum_PhysicsServer
 
 |void| **generic_6dof_joint_set_param**\ (\ joint\: :ref:`RID<class_RID>`, axis\: Vector3.Axis, param\: :ref:`G6DOFJointAxisParam<enum_PhysicsServer3D_G6DOFJointAxisParam>`, value\: :ref:`float<class_float>`\ )
 
-Sets a generic_6_DOF_joint parameter (see :ref:`G6DOFJointAxisParam<enum_PhysicsServer3D_G6DOFJointAxisParam>` constants).
+Sets the value of a given generic 6DOF joint parameter. See :ref:`G6DOFJointAxisParam<enum_PhysicsServer3D_G6DOFJointAxisParam>` for the list of available parameters.
 
 .. rst-class:: classref-item-separator
 
@@ -3111,9 +3223,7 @@ Returns whether the bodies attached to the :ref:`Joint3D<class_Joint3D>` will co
 
 |void| **joint_make_generic_6dof**\ (\ joint\: :ref:`RID<class_RID>`, body_A\: :ref:`RID<class_RID>`, local_ref_A\: :ref:`Transform3D<class_Transform3D>`, body_B\: :ref:`RID<class_RID>`, local_ref_B\: :ref:`Transform3D<class_Transform3D>`\ )
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Make the joint a generic six degrees of freedom (6DOF) joint. Use :ref:`generic_6dof_joint_set_flag<class_PhysicsServer3D_method_generic_6dof_joint_set_flag>` and :ref:`generic_6dof_joint_set_param<class_PhysicsServer3D_method_generic_6dof_joint_set_param>` to set the joint's flags and parameters respectively.
 
 .. rst-class:: classref-item-separator
 
