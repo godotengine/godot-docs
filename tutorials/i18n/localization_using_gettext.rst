@@ -207,7 +207,7 @@ it can be worth it to use binary (compiled) MO message files instead of text-bas
 PO files. Binary MO files are smaller and faster to read than the equivalent
 PO files.
 
-You can generate a MO file with the command below:
+You can generate an MO file with the command below:
 
 .. code-block:: shell
 
@@ -218,7 +218,7 @@ the PO file. This MO file can then be loaded in Godot as described above.
 
 The original PO file should be kept in version control so you can update
 your translation in the future. In case you lose the original PO file and
-wish to decompile a MO file into a text-based PO file, you can do so with:
+wish to decompile an MO file into a text-based PO file, you can do so with:
 
 .. code-block:: shell
 

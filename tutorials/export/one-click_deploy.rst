@@ -155,7 +155,7 @@ Web > Use TLS**.
     and bypass the warning by clicking **Advanced** and then **Proceed to
     (address)**.
 
-    If you have a SSL/TLS certificate that is trusted by browsers, you can specify
+    If you have an SSL/TLS certificate that is trusted by browsers, you can specify
     the paths to the key and certificate files in the **Export > Web > TLS Key**
     and **Export > Web > TLS Certificate**. This will only work if the project
     is accessed through a domain name that is part of the TLS certificate.

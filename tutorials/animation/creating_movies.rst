@@ -359,7 +359,7 @@ others will require a conversion step beforehand. `HandBrake <https://handbrake.
 (GUI) and `FFmpeg <https://ffmpeg.org/>`__ (CLI) are popular open source tools
 for this purpose. FFmpeg has a steeper learning curve, but it's more powerful.
 
-The command below converts an AVI video to a MP4 (H.264) video with a Constant
+The command below converts an AVI video to an MP4 (H.264) video with a Constant
 Rate Factor (CRF) of 15. This results in a relatively large file, but is
 well-suited for platforms that will re-encode your videos to reduce their size
 (such as most video sharing websites):

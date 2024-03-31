@@ -46,7 +46,7 @@ Open the ``PlaneMesh`` properties and set the size(x: 0.5 y: 1) then set ``Subdi
 
 Add a :ref:`BoneAttachment3D <class_BoneAttachment3D>` node under the skeleton node and select the Neck bone to attach the cloak to the character skeleton.
 
-.. note:: ``BoneAttachment3D`` node is to attach objects to a bone of a armature. The attached object will follow the bone's movement, weapon of a character can be attached this way.
+.. note:: ``BoneAttachment3D`` node is to attach objects to a bone of an armature. The attached object will follow the bone's movement, weapon of a character can be attached this way.
 
 .. image:: img/softbody_cloak_bone_attach.png
 

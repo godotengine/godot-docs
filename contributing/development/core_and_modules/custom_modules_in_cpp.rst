@@ -148,7 +148,7 @@ These files should contain the following:
        // Nothing to do here in this example.
     }
 
-Next, we need to create a ``SCsub`` file so the build system compiles
+Next, we need to create an ``SCsub`` file so the build system compiles
 this module:
 
 .. code-block:: python

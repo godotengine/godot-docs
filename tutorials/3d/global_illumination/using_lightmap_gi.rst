@@ -78,7 +78,7 @@ Setting up
 ----------
 
 First of all, before the lightmapper can do anything, the objects to be baked need
-an UV2 layer and a texture size. An UV2 layer is a set of secondary texture coordinates
+a UV2 layer and a texture size. A UV2 layer is a set of secondary texture coordinates
 that ensures any face in the object has its own place in the UV map. Faces must
 not share pixels in the texture.
 

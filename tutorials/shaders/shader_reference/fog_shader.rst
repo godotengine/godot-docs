@@ -16,13 +16,13 @@ camera.
 Fog shaders are a special form of compute shader that is called once for
 every froxel that is touched by an axis aligned bounding box of the associated
 :ref:`FogVolume <class_FogVolume>`. This means that froxels that just barely
-touch a given :ref:`FogVolume <class_FogVolume>` will still be used. 
+touch a given :ref:`FogVolume <class_FogVolume>` will still be used.
 
 Built-ins
 ^^^^^^^^^
 
 Values marked as "in" are read-only. Values marked as "out" are for optional
-writing and will not necessarily contain sensible values. Samplers cannot be 
+writing and will not necessarily contain sensible values. Samplers cannot be
 written to so they are not marked.
 
 
@@ -43,7 +43,7 @@ Global built-ins are available everywhere, including in custom functions.
 | in float **TAU**                | A ``TAU`` constant (``6.283185``).                                                      |
 |                                 | An equivalent of ``PI * 2`` and amount of radians in full turn.                         |
 +---------------------------------+-----------------------------------------------------------------------------------------+
-| in float **E**                  | A ``E`` constant (``2.718281``).                                                        |
+| in float **E**                  | An ``E`` constant (``2.718281``).                                                       |
 |                                 | Euler's number and a base of the natural logarithm.                                     |
 +---------------------------------+-----------------------------------------------------------------------------------------+
 

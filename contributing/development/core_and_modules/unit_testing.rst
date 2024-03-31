@@ -202,7 +202,7 @@ macros which allow to log test output in a format written by doctest.
 +----------------+-----------------------------------------------------------------------------------------------------------+
 
 Different reporters can be chosen at run-time. For instance, here's how the
-output can be redirected to a XML file:
+output can be redirected to an XML file:
 
 .. code-block:: shell
 

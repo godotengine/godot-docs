@@ -275,7 +275,7 @@ data directory. This is usually a good approach, but this means configuration fi
 will not carry across machines if you copy the folder containing the Godot executable.
 See :ref:`doc_data_paths` for more information.
 
-If *true* portable operation is desired (e.g. for use on an USB stick),
+If *true* portable operation is desired (e.g. for use on a USB stick),
 follow the steps in :ref:`doc_data_paths_self_contained_mode`.
 
 Why does Godot prioritize Vulkan and OpenGL over Direct3D?
@@ -287,10 +287,10 @@ available on (nearly) all platforms. Thanks to this design decision, a project
 developed with Godot on Windows will run out of the box on Linux, macOS, and
 more.
 
-While Vulkan and OpenGL remain our primary focus for their open standard and 
-cross-platform benefits, Godot 4.3 introduced experimental support for Direct3D 12. 
-This addition aims to enhance performance and compatibility on platforms where 
-Direct3D 12 is prevalent, such as Windows and Xbox. However, Vulkan and OpenGL 
+While Vulkan and OpenGL remain our primary focus for their open standard and
+cross-platform benefits, Godot 4.3 introduced experimental support for Direct3D 12.
+This addition aims to enhance performance and compatibility on platforms where
+Direct3D 12 is prevalent, such as Windows and Xbox. However, Vulkan and OpenGL
 will continue as the default rendering backends on all platforms, including Windows.
 
 Why does Godot aim to keep its core feature set small?

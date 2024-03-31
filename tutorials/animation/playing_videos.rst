@@ -185,7 +185,7 @@ of disk space.
 (GUI) and `FFmpeg <https://ffmpeg.org/>`__ (CLI) are popular open source tools
 for this purpose. FFmpeg has a steeper learning curve, but it's more powerful.
 
-Here are example FFmpeg commands to convert a MP4 video to Ogg Theora. Since
+Here are example FFmpeg commands to convert an MP4 video to Ogg Theora. Since
 FFmpeg supports a lot of input formats, you should be able to use the commands
 below with almost any input video format (AVI, MOV, WebM, …).
 
@@ -297,13 +297,13 @@ To implement the chroma key effect, follow these steps:
        COLOR = vec4(color.rgb, fade_factor);
    }
 
-The shader uses the distance calculation to identify pixels close to the chroma key color and discards them, 
-effectively removing the selected color. Pixels that are slightly further away from the chroma key color are 
-faded based on the fade_factor, blending them smoothly with the surrounding colors. 
-This process creates the desired chroma key effect, making it appear as if the background has been replaced with 
+The shader uses the distance calculation to identify pixels close to the chroma key color and discards them,
+effectively removing the selected color. Pixels that are slightly further away from the chroma key color are
+faded based on the fade_factor, blending them smoothly with the surrounding colors.
+This process creates the desired chroma key effect, making it appear as if the background has been replaced with
 another image or video.
 
-The code above represents a simple demonstration of the Chroma Key shader, 
+The code above represents a simple demonstration of the Chroma Key shader,
 and users can customize it according to their specific requirements.
 
 UI Controls
@@ -338,11 +338,11 @@ also make sure that the range of the sliders are appropriate, our settings are :
 Signal Handling
 ^^^^^^^^^^^^^^^^
 
-Connect the appropriate signal from the UI elements to the `Control` node's script. 
-you created in the `Control` node's script to control the chroma key effect. 
-These signal handlers will update the shader's uniform variables 
+Connect the appropriate signal from the UI elements to the `Control` node's script.
+you created in the `Control` node's script to control the chroma key effect.
+These signal handlers will update the shader's uniform variables
 in response to user input.
 
-Save and run the scene to see the chroma key effect in action! With the provided UI controls, 
-you can now adjust the chroma key color, pickup range, and fade amount in real-time, achieving the desired 
+Save and run the scene to see the chroma key effect in action! With the provided UI controls,
+you can now adjust the chroma key color, pickup range, and fade amount in real-time, achieving the desired
 chroma key functionality for your video content.
