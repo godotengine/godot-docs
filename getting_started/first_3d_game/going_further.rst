@@ -17,7 +17,7 @@ Where should you begin? Below, you'll find a few pages to start exploring and
 build upon what you've learned so far.
 
 But before that, here's a link to download a completed version of the project:
-`<https://github.com/godotengine/godot-demo-projects/tree/master/3d/squash_the_creeps>`_.
+`<https://github.com/godotengine/godot-demo-projects/releases>`_.
 
 Exploring the manual
 --------------------
