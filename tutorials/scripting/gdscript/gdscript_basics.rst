@@ -330,7 +330,7 @@ The following is the list of supported operators and their precedence.
     3. For negative values, the ``%`` operator and ``fmod()`` use `truncation <https://en.wikipedia.org/wiki/Truncation>`_ instead of rounding towards negative infinity.
        This means that the remainder has a sign. If you need the remainder in a mathematical sense, use the :ref:`posmod() <class_@GlobalScope_method_posmod>` and
        :ref:`fposmod() <class_@GlobalScope_method_fposmod>` functions instead.
-    4. All operators are `left-associative <https://en.wikipedia.org/wiki/Operator_associativity>`_ including the ``**`` operator. This means that ``2 ** 2 ** 3`` is
+    4. All operators are `left-associative <https://en.wikipedia.org/wiki/Operator_associativity>`_, including the ``**`` operator. This means that ``2 ** 2 ** 3`` is
        equal to ``(2 ** 2) ** 3``. Use parentheses to explicitly specify precedence you need, for example ``2 ** (2 ** 3)``.
     5. The ``==`` and ``!=`` operators sometimes allow you to compare values of different types (for example, ``1 == 1.0`` is true), but in other cases it can cause
        a runtime error. If you're not sure about the types of the operands, you can safely use the :ref:`is_same() <class_@GlobalScope_method_is_same>` function
