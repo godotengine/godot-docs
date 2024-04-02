@@ -28,7 +28,7 @@ node for everything 3D.
 
 Node3Ds have a local transform, which is relative to the parent
 node (as long as the parent node is also of **or inherits from** the type
-Node3D). This transform can be accessed as a 4×3
+Node3D). This transform can be accessed as a 3×4
 :ref:`Transform3D <class_Transform3D>`, or as 3 :ref:`Vector3 <class_Vector3>`
 members representing location, Euler rotation (X, Y and Z angles) and
 scale.
