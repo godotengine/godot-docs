@@ -59,7 +59,7 @@ a Git submodule:
     mkdir gdextension_cpp_example
     cd gdextension_cpp_example
     git init
-    git submodule add -b 4.1 https://github.com/godotengine/godot-cpp
+    git submodule add -b 4.2 https://github.com/godotengine/godot-cpp
     cd godot-cpp
     git submodule update --init
 
@@ -69,7 +69,7 @@ Alternatively, you can also clone it to the project folder:
 
     mkdir gdextension_cpp_example
     cd gdextension_cpp_example
-    git clone -b 4.1 https://github.com/godotengine/godot-cpp
+    git clone -b 4.2 https://github.com/godotengine/godot-cpp
 
 .. note::
 
@@ -363,7 +363,7 @@ loaded for each platform and the entry function for the module. It is called ``g
     [configuration]
 
     entry_symbol = "example_library_init"
-    compatibility_minimum = "4.1"
+    compatibility_minimum = "4.2"
 
     [libraries]
 
