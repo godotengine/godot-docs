@@ -25,7 +25,7 @@ Base class for all UI-related nodes. **Control** features a bounding rectangle t
 
 For more information on Godot's UI system, anchors, offsets, and containers, see the related tutorials in the manual. To build flexible UIs, you'll need a mix of UI elements that inherit from **Control** and :ref:`Container<class_Container>` nodes.
 
-\ **User Interface nodes and input**\ 
+\ **User Interface nodes and input**\
 
 Godot propagates input events via viewports. Each :ref:`Viewport<class_Viewport>` is responsible for propagating :ref:`InputEvent<class_InputEvent>`\ s to their child nodes. As the :ref:`SceneTree.root<class_SceneTree_property_root>` is a :ref:`Window<class_Window>`, this already happens automatically for all UI elements in your game.
 
@@ -37,7 +37,7 @@ Only one **Control** node can be in focus. Only the node in focus will receive e
 
 Sets :ref:`mouse_filter<class_Control_property_mouse_filter>` to :ref:`MOUSE_FILTER_IGNORE<class_Control_constant_MOUSE_FILTER_IGNORE>` to tell a **Control** node to ignore mouse or touch events. You'll need it if you place an icon on top of a button.
 
-\ :ref:`Theme<class_Theme>` resources change the Control's appearance. If you change the :ref:`Theme<class_Theme>` on a **Control** node, it affects all of its children. To override some of the theme's parameters, call one of the ``add_theme_*_override`` methods, like :ref:`add_theme_font_override<class_Control_method_add_theme_font_override>`. You can override the theme with the Inspector.
+\ :ref:`Theme<class_Theme>` resources change the Control's appearance. If you change the :ref:`Theme<class_Theme>` on a **Control** node, it affects all of its direct and indirect children (as long as a chain of controls is uninterrupted). To override some of the theme's parameters, call one of the ``add_theme_*_override`` methods, like :ref:`add_theme_font_override<class_Control_method_add_theme_font_override>`. You can override the theme with the Inspector.
 
 \ **Note:** Theme items are *not* :ref:`Object<class_Object>` properties. This means you can't access their values using :ref:`Object.get<class_Object_method_get>` and :ref:`Object.set<class_Object_method_set>`. Instead, use the ``get_theme_*`` and ``add_theme_*_override`` methods provided by this class.
 
@@ -1968,7 +1968,7 @@ Godot calls this method to pass you the ``data`` from a control's :ref:`_get_dra
 
     func _can_drop_data(position, data):
         return typeof(data) == TYPE_DICTIONARY and data.has("color")
-    
+
     func _drop_data(position, data):
         var color = data["color"]
 
@@ -1978,7 +1978,7 @@ Godot calls this method to pass you the ``data`` from a control's :ref:`_get_dra
     {
         return data.VariantType == Variant.Type.Dictionary && dict.AsGodotDictionary().ContainsKey("color");
     }
-    
+
     public override void _DropData(Vector2 atPosition, Variant data)
     {
         Color color = data.AsGodotDictionary()["color"].AsColor();
@@ -2063,7 +2063,7 @@ Virtual method to be implemented by the user. Returns the tooltip text for the p
 
 Virtual method to be implemented by the user. Use this method to process and accept inputs on UI elements. See :ref:`accept_event<class_Control_method_accept_event>`.
 
-\ **Example usage for clicking a control:**\ 
+\ **Example usage for clicking a control:**\
 
 
 .. tabs::
@@ -2140,7 +2140,7 @@ The returned node will be added as child to a :ref:`PopupPanel<class_PopupPanel>
 
 \ **Note:** The node (and any relevant children) should be :ref:`CanvasItem.visible<class_CanvasItem_property_visible>` when returned, otherwise, the viewport that instantiates it will not be able to calculate its minimum size reliably.
 
-\ **Example of usage with a custom-constructed node:**\ 
+\ **Example of usage with a custom-constructed node:**\
 
 
 .. tabs::
@@ -2163,7 +2163,7 @@ The returned node will be added as child to a :ref:`PopupPanel<class_PopupPanel>
 
 
 
-\ **Example of usage with a custom scene instance:**\ 
+\ **Example of usage with a custom scene instance:**\
 
 
 .. tabs::
@@ -2228,7 +2228,7 @@ Creates a local override for a theme :ref:`Color<class_Color>` with the specifie
 
 See also :ref:`get_theme_color<class_Control_method_get_theme_color>`.
 
-\ **Example of overriding a label's color and resetting it later:**\ 
+\ **Example of overriding a label's color and resetting it later:**\
 
 
 .. tabs::
@@ -2323,7 +2323,7 @@ Creates a local override for a theme :ref:`StyleBox<class_StyleBox>` with the sp
 
 See also :ref:`get_theme_stylebox<class_Control_method_get_theme_stylebox>`.
 
-\ **Example of modifying a property in a StyleBox by duplicating it:**\ 
+\ **Example of modifying a property in a StyleBox by duplicating it:**\
 
 
 .. tabs::
@@ -2598,7 +2598,7 @@ Returns the position of this **Control** in global screen coordinates (i.e. taki
 
 Equals to :ref:`global_position<class_Control_property_global_position>` if the window is embedded (see :ref:`Viewport.gui_embed_subwindows<class_Viewport_property_gui_embed_subwindows>`).
 
-\ **Example usage for showing a popup:**\ 
+\ **Example usage for showing a popup:**\
 
 ::
 
@@ -3216,7 +3216,7 @@ Shows the given control at the mouse pointer. A good time to call this method is
  .. code-tab:: gdscript
 
     @export var color = Color(1, 0, 0, 1)
-    
+
     func _get_drag_data(position):
         # Use a control that is not in the tree
         var cpb = ColorPickerButton.new()
@@ -3229,7 +3229,7 @@ Shows the given control at the mouse pointer. A good time to call this method is
 
     [Export]
     private Color _color = new Color(1, 0, 0, 1);
-    
+
     public override Variant _GetDragData(Vector2 atPosition)
     {
         // Use a control that is not in the tree
