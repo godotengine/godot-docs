@@ -224,9 +224,9 @@ in case you want to take a look under the hood.
 Operators
 ~~~~~~~~~
 
-The following is the list of supported operators and their precedence. All operators are `left-associative <https://en.wikipedia.org/wiki/Operator_associativity>`_,
+The following is the list of supported operators and their precedence. All binary operators are `left-associative <https://en.wikipedia.org/wiki/Operator_associativity>`_,
 including the ``**`` operator. This means that ``2 ** 2 ** 3`` is equal to ``(2 ** 2) ** 3``. Use parentheses to explicitly specify precedence you need, for
-example ``2 ** (2 ** 3)``.
+example ``2 ** (2 ** 3)``. The ternary ``if/else`` operator is right-associative.
 
 +---------------------------------------+-----------------------------------------------------------------------------+
 | **Operator**                          | **Description**                                                             |
