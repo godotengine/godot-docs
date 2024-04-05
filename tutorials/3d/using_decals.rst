@@ -192,6 +192,34 @@ Cull Mask
   so you can ensure that dynamic objects don't accidentally receive a Decal
   intended for the terrain under them.
 
+Decal rendering order
+---------------------
+
+By default, decals are ordered based on the size of their :abbr:`AABB
+(Axis-Aligned Bounding Box)` and the distance to the camera. AABBs that are
+closer to the camera are rendered first, which means that decal rendering order
+can sometimes appear to change depending on camera position if some decals are
+positioned at the same location.
+
+To resolve this, you can adjust the **Sorting Offset** property in the
+VisualInstance3D section of the Decal node inspector. This offset is not a
+strict priority order, but a *guideline* that the renderer will use as the AABB
+size still affects how decal sorting works. Therefore, higher values will
+*always* result in the decal being drawn above other decals with a lower sorting
+offset.
+
+If you want to ensure a decal is always rendered on top of other decals,
+you need to set its **Sorting Offset** property to a positive value greater than
+the AABB length of the largest decal that may overlap it. To make this decal
+drawn behind other decals instead, set the **Sorting Offset** to the same
+negative value.
+
+.. figure:: img/decals_sorting_offset.webp
+   :align: center
+   :alt: VisualInstance3D Sorting Offset comparison on Decals
+
+   VisualInstance3D Sorting Offset comparison on Decals
+
 Tweaking performance and quality
 --------------------------------
 
