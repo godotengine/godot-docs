@@ -1018,6 +1018,10 @@ Per-instance uniforms
 
     Per-instance uniforms are only available in ``spatial`` (3D) shaders.
 
+.. note::
+
+    Per-instance uniforms are not supported when using the Compatibility renderer.
+
 Sometimes, you want to modify a parameter on each node using the material. As an
 example, in a forest full of trees, when you want each tree to have a slightly
 different color that is editable by hand. Without per-instance uniforms, this
