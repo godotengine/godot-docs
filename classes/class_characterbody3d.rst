@@ -502,7 +502,7 @@ Returns the floor's collision angle at the last collision point according to ``u
 
 :ref:`Vector3<class_Vector3>` **get_floor_normal**\ (\ ) |const|
 
-Returns the surface normal of the floor at the last collision point. Only valid after calling :ref:`move_and_slide<class_CharacterBody3D_method_move_and_slide>` and when :ref:`is_on_floor<class_CharacterBody3D_method_is_on_floor>` returns ``true``.
+Returns the collision normal of the floor at the last collision point. Only valid after calling :ref:`move_and_slide<class_CharacterBody3D_method_move_and_slide>` and when :ref:`is_on_floor<class_CharacterBody3D_method_is_on_floor>` returns ``true``. Note that this is not always the same as the surface normal.
 
 .. rst-class:: classref-item-separator
 
