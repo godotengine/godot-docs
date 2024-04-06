@@ -201,7 +201,7 @@ Base placeholders
 +==========================+====================================================+
 | ``_BINDINGS_NAMESPACE_`` | The name of the Godot namespace (used in C# only). |
 +--------------------------+----------------------------------------------------+
-| ``_CLASS_``              | The name of the new class (used in C# only).       |
+| ``_CLASS_``              | The name of the new class.                         |
 +--------------------------+----------------------------------------------------+
 | ``_BASE_``               | The base type a new script inherits from.          |
 +--------------------------+----------------------------------------------------+
