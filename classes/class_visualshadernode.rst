@@ -38,9 +38,11 @@ Properties
 .. table::
    :widths: auto
 
-   +-----------------------+-----------------------------------------------------------------------------------------+--------+
-   | :ref:`int<class_int>` | :ref:`output_port_for_preview<class_VisualShaderNode_property_output_port_for_preview>` | ``-1`` |
-   +-----------------------+-----------------------------------------------------------------------------------------+--------+
+   +-----------------------+---------------------------------------------------------------------------------------------+--------+
+   | :ref:`int<class_int>` | :ref:`linked_parent_graph_frame<class_VisualShaderNode_property_linked_parent_graph_frame>` | ``-1`` |
+   +-----------------------+---------------------------------------------------------------------------------------------+--------+
+   | :ref:`int<class_int>` | :ref:`output_port_for_preview<class_VisualShaderNode_property_output_port_for_preview>`     | ``-1`` |
+   +-----------------------+---------------------------------------------------------------------------------------------+--------+
 
 .. rst-class:: classref-reftable-group
 
@@ -169,6 +171,23 @@ Represents the size of the :ref:`PortType<enum_VisualShaderNode_PortType>` enum.
 
 Property Descriptions
 ---------------------
+
+.. _class_VisualShaderNode_property_linked_parent_graph_frame:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **linked_parent_graph_frame** = ``-1``
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_frame**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_frame**\ (\ )
+
+Represents the index of the frame this node is linked to. If set to ``-1`` the node is not linked to any frame.
+
+.. rst-class:: classref-item-separator
+
+----
 
 .. _class_VisualShaderNode_property_output_port_for_preview:
 

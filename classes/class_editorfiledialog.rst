@@ -48,6 +48,8 @@ Properties
    +-------------------------------------------------------+---------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
    | :ref:`PackedStringArray<class_PackedStringArray>`     | :ref:`filters<class_EditorFileDialog_property_filters>`                                     | ``PackedStringArray()``                                                                  |
    +-------------------------------------------------------+---------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                                 | :ref:`option_count<class_EditorFileDialog_property_option_count>`                           | ``0``                                                                                    |
+   +-------------------------------------------------------+---------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                               | :ref:`show_hidden_files<class_EditorFileDialog_property_show_hidden_files>`                 | ``false``                                                                                |
    +-------------------------------------------------------+---------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                           | title                                                                                       | ``"Save a File"`` (overrides :ref:`Window<class_Window_property_title>`)                 |
@@ -61,19 +63,35 @@ Methods
 .. table::
    :widths: auto
 
-   +-------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | |void|                                    | :ref:`add_filter<class_EditorFileDialog_method_add_filter>`\ (\ filter\: :ref:`String<class_String>`, description\: :ref:`String<class_String>` = ""\ ) |
-   +-------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | |void|                                    | :ref:`add_side_menu<class_EditorFileDialog_method_add_side_menu>`\ (\ menu\: :ref:`Control<class_Control>`, title\: :ref:`String<class_String>` = ""\ ) |
-   +-------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | |void|                                    | :ref:`clear_filters<class_EditorFileDialog_method_clear_filters>`\ (\ )                                                                                 |
-   +-------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`LineEdit<class_LineEdit>`           | :ref:`get_line_edit<class_EditorFileDialog_method_get_line_edit>`\ (\ )                                                                                 |
-   +-------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`VBoxContainer<class_VBoxContainer>` | :ref:`get_vbox<class_EditorFileDialog_method_get_vbox>`\ (\ )                                                                                           |
-   +-------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | |void|                                    | :ref:`invalidate<class_EditorFileDialog_method_invalidate>`\ (\ )                                                                                       |
-   +-------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                            | :ref:`add_filter<class_EditorFileDialog_method_add_filter>`\ (\ filter\: :ref:`String<class_String>`, description\: :ref:`String<class_String>` = ""\ )                                                        |
+   +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                            | :ref:`add_option<class_EditorFileDialog_method_add_option>`\ (\ name\: :ref:`String<class_String>`, values\: :ref:`PackedStringArray<class_PackedStringArray>`, default_value_index\: :ref:`int<class_int>`\ ) |
+   +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                            | :ref:`add_side_menu<class_EditorFileDialog_method_add_side_menu>`\ (\ menu\: :ref:`Control<class_Control>`, title\: :ref:`String<class_String>` = ""\ )                                                        |
+   +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                            | :ref:`clear_filters<class_EditorFileDialog_method_clear_filters>`\ (\ )                                                                                                                                        |
+   +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`LineEdit<class_LineEdit>`                   | :ref:`get_line_edit<class_EditorFileDialog_method_get_line_edit>`\ (\ )                                                                                                                                        |
+   +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`get_option_default<class_EditorFileDialog_method_get_option_default>`\ (\ option\: :ref:`int<class_int>`\ ) |const|                                                                                      |
+   +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                       | :ref:`get_option_name<class_EditorFileDialog_method_get_option_name>`\ (\ option\: :ref:`int<class_int>`\ ) |const|                                                                                            |
+   +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`get_option_values<class_EditorFileDialog_method_get_option_values>`\ (\ option\: :ref:`int<class_int>`\ ) |const|                                                                                        |
+   +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Dictionary<class_Dictionary>`               | :ref:`get_selected_options<class_EditorFileDialog_method_get_selected_options>`\ (\ ) |const|                                                                                                                  |
+   +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`VBoxContainer<class_VBoxContainer>`         | :ref:`get_vbox<class_EditorFileDialog_method_get_vbox>`\ (\ )                                                                                                                                                  |
+   +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                            | :ref:`invalidate<class_EditorFileDialog_method_invalidate>`\ (\ )                                                                                                                                              |
+   +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                            | :ref:`set_option_default<class_EditorFileDialog_method_set_option_default>`\ (\ option\: :ref:`int<class_int>`, default_value_index\: :ref:`int<class_int>`\ )                                                 |
+   +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                            | :ref:`set_option_name<class_EditorFileDialog_method_set_option_name>`\ (\ option\: :ref:`int<class_int>`, name\: :ref:`String<class_String>`\ )                                                                |
+   +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                            | :ref:`set_option_values<class_EditorFileDialog_method_set_option_values>`\ (\ option\: :ref:`int<class_int>`, values\: :ref:`PackedStringArray<class_PackedStringArray>`\ )                                    |
+   +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -376,6 +394,23 @@ The available file type filters. For example, this shows only ``.png`` and ``.gd
 
 ----
 
+.. _class_EditorFileDialog_property_option_count:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **option_count** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_option_count**\ (\ value\: :ref:`int<class_int>`\ )
+- :ref:`int<class_int>` **get_option_count**\ (\ )
+
+The number of additional :ref:`OptionButton<class_OptionButton>`\ s and :ref:`CheckBox<class_CheckBox>`\ es in the dialog.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_EditorFileDialog_property_show_hidden_files:
 
 .. rst-class:: classref-property
@@ -409,6 +444,20 @@ Adds a comma-delimited file name ``filter`` option to the **EditorFileDialog** w
 A ``filter`` should be of the form ``"filename.extension"``, where filename and extension can be ``*`` to match any string. Filters starting with ``.`` (i.e. empty filenames) are not allowed.
 
 For example, a ``filter`` of ``"*.tscn, *.scn"`` and a ``description`` of ``"Scenes"`` results in filter text "Scenes (\*.tscn, \*.scn)".
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorFileDialog_method_add_option:
+
+.. rst-class:: classref-method
+
+|void| **add_option**\ (\ name\: :ref:`String<class_String>`, values\: :ref:`PackedStringArray<class_PackedStringArray>`, default_value_index\: :ref:`int<class_int>`\ )
+
+Adds an additional :ref:`OptionButton<class_OptionButton>` to the file dialog. If ``values`` is empty, a :ref:`CheckBox<class_CheckBox>` is added instead.
+
+\ ``default_value_index`` should be an index of the value in the ``values``. If ``values`` is empty it should be either ``1`` (checked), or ``0`` (unchecked).
 
 .. rst-class:: classref-item-separator
 
@@ -452,6 +501,54 @@ Returns the LineEdit for the selected file.
 
 ----
 
+.. _class_EditorFileDialog_method_get_option_default:
+
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **get_option_default**\ (\ option\: :ref:`int<class_int>`\ ) |const|
+
+Returns the default value index of the :ref:`OptionButton<class_OptionButton>` or :ref:`CheckBox<class_CheckBox>` with index ``option``.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorFileDialog_method_get_option_name:
+
+.. rst-class:: classref-method
+
+:ref:`String<class_String>` **get_option_name**\ (\ option\: :ref:`int<class_int>`\ ) |const|
+
+Returns the name of the :ref:`OptionButton<class_OptionButton>` or :ref:`CheckBox<class_CheckBox>` with index ``option``.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorFileDialog_method_get_option_values:
+
+.. rst-class:: classref-method
+
+:ref:`PackedStringArray<class_PackedStringArray>` **get_option_values**\ (\ option\: :ref:`int<class_int>`\ ) |const|
+
+Returns an array of values of the :ref:`OptionButton<class_OptionButton>` with index ``option``.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorFileDialog_method_get_selected_options:
+
+.. rst-class:: classref-method
+
+:ref:`Dictionary<class_Dictionary>` **get_selected_options**\ (\ ) |const|
+
+Returns a :ref:`Dictionary<class_Dictionary>` with the selected values of the additional :ref:`OptionButton<class_OptionButton>`\ s and/or :ref:`CheckBox<class_CheckBox>`\ es. :ref:`Dictionary<class_Dictionary>` keys are names and values are selected value indices.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_EditorFileDialog_method_get_vbox:
 
 .. rst-class:: classref-method
@@ -473,6 +570,42 @@ Returns the :ref:`VBoxContainer<class_VBoxContainer>` used to display the file s
 |void| **invalidate**\ (\ )
 
 Notify the **EditorFileDialog** that its view of the data is no longer accurate. Updates the view contents on next view update.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorFileDialog_method_set_option_default:
+
+.. rst-class:: classref-method
+
+|void| **set_option_default**\ (\ option\: :ref:`int<class_int>`, default_value_index\: :ref:`int<class_int>`\ )
+
+Sets the default value index of the :ref:`OptionButton<class_OptionButton>` or :ref:`CheckBox<class_CheckBox>` with index ``option``.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorFileDialog_method_set_option_name:
+
+.. rst-class:: classref-method
+
+|void| **set_option_name**\ (\ option\: :ref:`int<class_int>`, name\: :ref:`String<class_String>`\ )
+
+Sets the name of the :ref:`OptionButton<class_OptionButton>` or :ref:`CheckBox<class_CheckBox>` with index ``option``.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorFileDialog_method_set_option_values:
+
+.. rst-class:: classref-method
+
+|void| **set_option_values**\ (\ option\: :ref:`int<class_int>`, values\: :ref:`PackedStringArray<class_PackedStringArray>`\ )
+
+Sets the option values of the :ref:`OptionButton<class_OptionButton>` with index ``option``.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

@@ -221,6 +221,8 @@ Properties
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Color<class_Color>`                         | :ref:`editors/tiles_editor/grid_color<class_EditorSettings_property_editors/tiles_editor/grid_color>`                                                                                                             |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`editors/tiles_editor/highlight_selected_layer<class_EditorSettings_property_editors/tiles_editor/highlight_selected_layer>`                                                                                 |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Color<class_Color>`                         | :ref:`editors/visual_editors/category_colors/color_color<class_EditorSettings_property_editors/visual_editors/category_colors/color_color>`                                                                       |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Color<class_Color>`                         | :ref:`editors/visual_editors/category_colors/conditional_color<class_EditorSettings_property_editors/visual_editors/category_colors/conditional_color>`                                                           |
@@ -368,6 +370,8 @@ Properties
    | :ref:`bool<class_bool>`                           | :ref:`interface/editor/update_continuously<class_EditorSettings_property_interface/editor/update_continuously>`                                                                                                   |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`interface/editor/use_embedded_menu<class_EditorSettings_property_interface/editor/use_embedded_menu>`                                                                                                       |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`interface/editor/use_native_file_dialogs<class_EditorSettings_property_interface/editor/use_native_file_dialogs>`                                                                                           |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`interface/editor/vsync_mode<class_EditorSettings_property_interface/editor/vsync_mode>`                                                                                                                     |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1781,6 +1785,18 @@ The color to use for the TileMap editor's grid.
 
 ----
 
+.. _class_EditorSettings_property_editors/tiles_editor/highlight_selected_layer:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **editors/tiles_editor/highlight_selected_layer**
+
+Highlight the currently selected TileMapLayer by dimming the other ones in the scene.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_EditorSettings_property_editors/visual_editors/category_colors/color_color:
 
 .. rst-class:: classref-property
@@ -2752,6 +2768,18 @@ If ``true``, redraws the editor every frame even if nothing has changed on scree
 If ``true``, editor main menu is using embedded :ref:`MenuBar<class_MenuBar>` instead of system global menu.
 
 Specific to the macOS platform.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSettings_property_interface/editor/use_native_file_dialogs:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **interface/editor/use_native_file_dialogs**
+
+If ``true``, editor UI uses OS native file/directory selection dialogs.
 
 .. rst-class:: classref-item-separator
 

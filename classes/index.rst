@@ -119,6 +119,7 @@ Nodes
     class_gpuparticlescollisionsphere3d
     class_graphedit
     class_graphelement
+    class_graphframe
     class_graphnode
     class_gridcontainer
     class_gridmap
@@ -171,6 +172,10 @@ Nodes
     class_node3d
     class_occluderinstance3d
     class_omnilight3d
+    class_openxrcompositionlayer
+    class_openxrcompositionlayercylinder
+    class_openxrcompositionlayerequirect
+    class_openxrcompositionlayerquad
     class_openxrhand
     class_optionbutton
     class_panel
@@ -184,6 +189,7 @@ Nodes
     class_pathfollow3d
     class_physicalbone2d
     class_physicalbone3d
+    class_physicalbonesimulator3d
     class_physicsbody2d
     class_physicsbody3d
     class_pinjoint2d
@@ -218,6 +224,7 @@ Nodes
     class_skeleton2d
     class_skeleton3d
     class_skeletonik3d
+    class_skeletonmodifier3d
     class_slider
     class_sliderjoint3d
     class_softbody3d
@@ -240,7 +247,7 @@ Nodes
     class_textureprogressbar
     class_texturerect
     class_tilemap
-    class_tilemaplayergroup
+    class_tilemaplayer
     class_timer
     class_touchscreenbutton
     class_tree
@@ -571,7 +578,6 @@ Resources
     class_visualshadernodecolorfunc
     class_visualshadernodecolorop
     class_visualshadernodecolorparameter
-    class_visualshadernodecomment
     class_visualshadernodecompare
     class_visualshadernodeconstant
     class_visualshadernodecubemap
@@ -589,6 +595,7 @@ Resources
     class_visualshadernodefloatfunc
     class_visualshadernodefloatop
     class_visualshadernodefloatparameter
+    class_visualshadernodeframe
     class_visualshadernodefresnel
     class_visualshadernodeglobalexpression
     class_visualshadernodegroupbase

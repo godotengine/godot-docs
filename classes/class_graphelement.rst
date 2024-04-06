@@ -14,7 +14,7 @@ GraphElement
 
 **Inherits:** :ref:`Container<class_Container>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Inherited By:** :ref:`GraphNode<class_GraphNode>`
+**Inherited By:** :ref:`GraphFrame<class_GraphFrame>`, :ref:`GraphNode<class_GraphNode>`
 
 A container that represents a basic element that can be placed inside a :ref:`GraphEdit<class_GraphEdit>` control.
 
@@ -138,11 +138,23 @@ Emitted when displaying the GraphElement over other ones is requested. Happens o
 
 ----
 
+.. _class_GraphElement_signal_resize_end:
+
+.. rst-class:: classref-signal
+
+**resize_end**\ (\ new_size\: :ref:`Vector2<class_Vector2>`\ )
+
+Emitted when releasing the mouse button after dragging the resizer handle (see :ref:`resizable<class_GraphElement_property_resizable>`).
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_GraphElement_signal_resize_request:
 
 .. rst-class:: classref-signal
 
-**resize_request**\ (\ new_minsize\: :ref:`Vector2<class_Vector2>`\ )
+**resize_request**\ (\ new_size\: :ref:`Vector2<class_Vector2>`\ )
 
 Emitted when resizing the GraphElement is requested. Happens on dragging the resizer handle (see :ref:`resizable<class_GraphElement_property_resizable>`).
 
@@ -202,7 +214,7 @@ The offset of the GraphElement, relative to the scroll offset of the :ref:`Graph
 
 If ``true``, the user can resize the GraphElement.
 
-\ **Note:** Dragging the handle will only emit the :ref:`resize_request<class_GraphElement_signal_resize_request>` signal, the GraphElement needs to be resized manually.
+\ **Note:** Dragging the handle will only emit the :ref:`resize_request<class_GraphElement_signal_resize_request>` and :ref:`resize_end<class_GraphElement_signal_resize_end>` signals, the GraphElement needs to be resized manually.
 
 .. rst-class:: classref-item-separator
 
