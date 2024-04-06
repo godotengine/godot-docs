@@ -12,7 +12,7 @@ XRBodyModifier3D
 
 **Experimental:** This class may be changed or removed in future versions.
 
-**Inherits:** :ref:`Node3D<class_Node3D>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+**Inherits:** :ref:`SkeletonModifier3D<class_SkeletonModifier3D>` **<** :ref:`Node3D<class_Node3D>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
 A node for driving body meshes from :ref:`XRBodyTracker<class_XRBodyTracker>` data.
 
@@ -50,8 +50,6 @@ Properties
    | :ref:`BoneUpdate<enum_XRBodyModifier3D_BoneUpdate>`               | :ref:`bone_update<class_XRBodyModifier3D_property_bone_update>`             | ``0``             |
    +-------------------------------------------------------------------+-----------------------------------------------------------------------------+-------------------+
    | :ref:`bool<class_bool>`                                           | :ref:`show_when_tracked<class_XRBodyModifier3D_property_show_when_tracked>` | ``true``          |
-   +-------------------------------------------------------------------+-----------------------------------------------------------------------------+-------------------+
-   | :ref:`NodePath<class_NodePath>`                                   | :ref:`target<class_XRBodyModifier3D_property_target>`                       | ``NodePath("")``  |
    +-------------------------------------------------------------------+-----------------------------------------------------------------------------+-------------------+
 
 .. rst-class:: classref-section-separator
@@ -199,23 +197,6 @@ Specifies the type of updates to perform on the bones.
 - :ref:`bool<class_bool>` **get_show_when_tracked**\ (\ )
 
 If true then the nodes visibility is determined by whether tracking data is available.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_XRBodyModifier3D_property_target:
-
-.. rst-class:: classref-property
-
-:ref:`NodePath<class_NodePath>` **target** = ``NodePath("")``
-
-.. rst-class:: classref-property-setget
-
-- |void| **set_target**\ (\ value\: :ref:`NodePath<class_NodePath>`\ )
-- :ref:`NodePath<class_NodePath>` **get_target**\ (\ )
-
-A :ref:`NodePath<class_NodePath>` to a :ref:`Skeleton3D<class_Skeleton3D>` to animate.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

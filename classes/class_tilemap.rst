@@ -13,7 +13,9 @@
 TileMap
 =======
 
-**Inherits:** :ref:`TileMapLayerGroup<class_TileMapLayerGroup>` **<** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+**Deprecated:** Use multiple :ref:`TileMapLayer<class_TileMapLayer>` nodes instead.
+
+**Inherits:** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
 Node for 2D tile-based maps.
 
@@ -63,6 +65,8 @@ Properties
    | :ref:`VisibilityMode<enum_TileMap_VisibilityMode>` | :ref:`navigation_visibility_mode<class_TileMap_property_navigation_visibility_mode>` | ``0``     |
    +----------------------------------------------------+--------------------------------------------------------------------------------------+-----------+
    | :ref:`int<class_int>`                              | :ref:`rendering_quadrant_size<class_TileMap_property_rendering_quadrant_size>`       | ``16``    |
+   +----------------------------------------------------+--------------------------------------------------------------------------------------+-----------+
+   | :ref:`TileSet<class_TileSet>`                      | :ref:`tile_set<class_TileMap_property_tile_set>`                                     |           |
    +----------------------------------------------------+--------------------------------------------------------------------------------------+-----------+
 
 .. rst-class:: classref-reftable-group
@@ -310,6 +314,23 @@ The quadrant size does not apply on Y-sorted layers, as tiles are be grouped by 
 
 \ **Note:** As quadrants are created according to the map's coordinate system, the quadrant's "square shape" might not look like square in the TileMap's local coordinate system.
 
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_TileMap_property_tile_set:
+
+.. rst-class:: classref-property
+
+:ref:`TileSet<class_TileSet>` **tile_set**
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_tileset**\ (\ value\: :ref:`TileSet<class_TileSet>`\ )
+- :ref:`TileSet<class_TileSet>` **get_tileset**\ (\ )
+
+The :ref:`TileSet<class_TileSet>` used by this **TileMap**. The textures, collisions, and additional behavior of all available tiles are stored here.
+
 .. rst-class:: classref-section-separator
 
 ----
@@ -437,7 +458,9 @@ Forces the TileMap and the layer ``layer`` to update.
 
 :ref:`int<class_int>` **get_cell_alternative_tile**\ (\ layer\: :ref:`int<class_int>`, coords\: :ref:`Vector2i<class_Vector2i>`, use_proxies\: :ref:`bool<class_bool>` = false\ ) |const|
 
-Returns the tile alternative ID of the cell on layer ``layer`` at ``coords``. If ``use_proxies`` is ``false``, ignores the :ref:`TileSet<class_TileSet>`'s tile proxies, returning the raw alternative identifier. See :ref:`TileSet.map_tile_proxy<class_TileSet_method_map_tile_proxy>`.
+Returns the tile alternative ID of the cell on layer ``layer`` at ``coords``.
+
+If ``use_proxies`` is ``false``, ignores the :ref:`TileSet<class_TileSet>`'s tile proxies, returning the raw alternative identifier. See :ref:`TileSet.map_tile_proxy<class_TileSet_method_map_tile_proxy>`.
 
 If ``layer`` is negative, the layers are accessed from the last one.
 
@@ -453,7 +476,7 @@ If ``layer`` is negative, the layers are accessed from the last one.
 
 Returns the tile atlas coordinates ID of the cell on layer ``layer`` at coordinates ``coords``. Returns ``Vector2i(-1, -1)`` if the cell does not exist.
 
-If ``use_proxies`` is ``false``, ignores the :ref:`TileSet<class_TileSet>`'s tile proxies, returning the raw alternative identifier. See :ref:`TileSet.map_tile_proxy<class_TileSet_method_map_tile_proxy>`.
+If ``use_proxies`` is ``false``, ignores the :ref:`TileSet<class_TileSet>`'s tile proxies, returning the raw atlas coordinate identifier. See :ref:`TileSet.map_tile_proxy<class_TileSet_method_map_tile_proxy>`.
 
 If ``layer`` is negative, the layers are accessed from the last one.
 
@@ -469,7 +492,7 @@ If ``layer`` is negative, the layers are accessed from the last one.
 
 Returns the tile source ID of the cell on layer ``layer`` at coordinates ``coords``. Returns ``-1`` if the cell does not exist.
 
-If ``use_proxies`` is ``false``, ignores the :ref:`TileSet<class_TileSet>`'s tile proxies, returning the raw alternative identifier. See :ref:`TileSet.map_tile_proxy<class_TileSet_method_map_tile_proxy>`.
+If ``use_proxies`` is ``false``, ignores the :ref:`TileSet<class_TileSet>`'s tile proxies, returning the raw source identifier. See :ref:`TileSet.map_tile_proxy<class_TileSet_method_map_tile_proxy>`.
 
 If ``layer`` is negative, the layers are accessed from the last one.
 
@@ -487,8 +510,6 @@ Returns the :ref:`TileData<class_TileData>` object associated with the given cel
 
 If ``layer`` is negative, the layers are accessed from the last one.
 
-If ``use_proxies`` is ``false``, ignores the :ref:`TileSet<class_TileSet>`'s tile proxies, returning the raw alternative identifier. See :ref:`TileSet.map_tile_proxy<class_TileSet_method_map_tile_proxy>`.
-
 ::
 
     func get_clicked_tile_power():
@@ -498,6 +519,8 @@ If ``use_proxies`` is ``false``, ignores the :ref:`TileSet<class_TileSet>`'s til
             return data.get_custom_data("power")
         else:
             return 0
+
+If ``use_proxies`` is ``false``, ignores the :ref:`TileSet<class_TileSet>`'s tile proxies. See :ref:`TileSet.map_tile_proxy<class_TileSet_method_map_tile_proxy>`.
 
 .. rst-class:: classref-item-separator
 

@@ -48,7 +48,7 @@ Signals
 
 .. rst-class:: classref-signal
 
-**pressed**\ (\ mouse_button\: :ref:`int<class_int>`, position\: :ref:`Vector2i<class_Vector2i>`\ )
+**pressed**\ (\ mouse_button\: :ref:`int<class_int>`, mouse_position\: :ref:`Vector2i<class_Vector2i>`\ )
 
 Emitted when the status indicator is pressed.
 
