@@ -130,7 +130,8 @@ it manually with the following code:
     void vertex() {
         VERTEX = (MODELVIEW_MATRIX * vec4(VERTEX, 1.0)).xyz;
         NORMAL = normalize((MODELVIEW_MATRIX * vec4(NORMAL, 0.0)).xyz);
-        // same as above for binormal and tangent, if normal mapping is used
+        BINORMAL = normalize((MODELVIEW_MATRIX * vec4(BINORMAL, 0.0)).xyz);
+        TANGENT = normalize((MODELVIEW_MATRIX * vec4(TANGENT, 0.0)).xyz);
     }
 
 Other built-ins, such as UV, UV2 and COLOR, are also passed through to the fragment function if not modified.
