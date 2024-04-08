@@ -65,7 +65,7 @@ initialize it:
      .. code-tab:: csharp
 
        // Parent
-       Callable.From(ObjectWithMethod.MethodOnTheObject)
+       Callable.From(ObjectWithMethod.MethodOnTheObject);
 
        // Child
        EmitSignal("SignalName"); // Triggers parent-defined behavior.
