@@ -6521,7 +6521,7 @@ Prints one or more arguments to strings in the best way possible to standard err
 
 |void| **printraw**\ (\ ...\ ) |vararg|
 
-Prints one or more arguments to strings in the best way possible to the OS terminal. Unlike :ref:`print<class_@GlobalScope_method_print>`, no newline is automatically added at the end.
+Prints one or more arguments to strings in the best way possible to the OS terminal (NOTE: The OS terminal is NOT the Editor's Console, the output can be seen using "Godot_version_console.exe"). Unlike :ref:`print<class_@GlobalScope_method_print>`, no newline is automatically added at the end.
 
 
 .. tabs::
