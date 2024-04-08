@@ -1,5 +1,7 @@
 .. _doc_your_second_spatial_shader:
 
+:article_outdated: True
+
 Your second 3D shader
 =====================
 
