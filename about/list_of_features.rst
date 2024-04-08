@@ -291,7 +291,7 @@ Rendering
 - Does not rely on run-time mesh generation. This means decals can be used on
   complex skinned meshes with no performance penalty, even if the decal moves every frame.
 - Support for nearest, bilinear, trilinear or anisotropic texture filtering (configured globally).
-- Optional distance fade system to fade distant lights and their shadows, improving performance.
+- Optional distance fade system to fade distant decals, improving performance.
 - When using the Forward+ backend (default on desktop), decals are
   rendered with clustered forward optimizations to decrease their individual cost.
   Clustered rendering also lifts any limits on the number of decals that can be used on a mesh.
