@@ -18,7 +18,7 @@ the first node under ``Main`` so that it will be drawn behind the other nodes.
 select "Layout" -> "Anchors Preset" -> "Full Rect" either in the toolbar at the top of the viewport or in the inspector so that it covers the screen.
 
 You could also add a background image, if you have one, by using a
-``TextureRect`` node instead.
+:ref:`TextureRect <class_TextureRect>` node instead.
 
 Sound effects
 ~~~~~~~~~~~~~
