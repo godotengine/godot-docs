@@ -429,13 +429,21 @@ A string enclosed in quotes of one type (for example ``"``) can contain quotes o
 two consecutive quotes of the same type (unless they are adjacent to the string edges).
 
 **Raw string literals** always encode the string as it appears in the source code.
-This is especially useful for regular expressions. Raw strings do not process escape sequences,
-but you can "escape" a quote or backslash (they replace themselves).
+This is especially useful for regular expressions. A raw string literal doesn't process escape sequences,
+however it does recognize ``\\`` and ``\"`` (``\'``) and replaces them with themselves.
+Thus, a string can have a quote that matches the opening one, but only if it's preceded by a backslash.
 
 ::
 
     print("\tchar=\"\\t\"")  # Prints `    char="\t"`.
     print(r"\tchar=\"\\t\"") # Prints `\tchar=\"\\t\"`.
+
+.. note::
+
+    Some strings cannot be represented using raw string literals: you cannot have an odd number
+    of backslashes at the end of a string or have an unescaped opening quote inside the string.
+    However, in practice this doesn't matter since you can use a different quote type
+    or use concatenation with a regular string literal.
 
 GDScript also supports :ref:`format strings <doc_gdscript_printf>`.
 
