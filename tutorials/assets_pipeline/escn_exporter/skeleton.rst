@@ -21,9 +21,9 @@ that the skeleton is reset to its T-pose or default rest pose.
 Bone Weights
 ------------
 
-Blender put rigged mesh vertices which has no bone weights at its original
+Blender puts rigged mesh vertices which have no bone weights at their original
 position, but these vertices would be placed at (0, 0, 0) in Godot, making the mesh
-deformed. Therefore, the exporter would raise an error for any vertex with no bone weights
+deformed. Therefore, the exporter will raise an error for any vertex with no bone weights
 detected in a rigged mesh.
 
 Non-Deform Bone
