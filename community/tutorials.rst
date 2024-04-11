@@ -35,6 +35,7 @@ Video tutorials
 - `Pigdev <https://www.youtube.com/@pigdev>`_ (2D, GDScript)
 - `Queble <https://www.youtube.com/@queblegamedevelopment4143>`_ (2D, GDScript)
 - `Quiver <https://quiver.dev/>`_ (2D, GDScript)
+- `Zenva <https://www.youtube.com/watch?v=TiVdV4lMDnE&list=PLnEt5PBXuAmsMmS2w-mwnT1bk0JN2YyYM>`_ (2D and 3D, GDScript and C#)
 
 Text tutorials
 --------------
@@ -43,6 +44,7 @@ Text tutorials
 - `GDScript website by Andrew Wilkes <https://gdscript.com>`__
 - `Godot Recipes by KidsCanCode <https://kidscancode.org/godot_recipes/4.x/>`__
 - `Godot Tutorials by SomethingLikeGames <https://www.somethinglikegames.de/en/tags/godot-engine/>`__
+- `GameDev Academy by Zenva <https://gamedevacademy.org/category/godot-tutorials/godot-4/>`__
 - `Game Dev Artisan website <https://gamedevartisan.com/>`__
 - `Night Quest Games Blog <https://www.nightquestgames.com/blog-articles/>`__
 
