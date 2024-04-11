@@ -120,6 +120,20 @@ framework in Godot, as well as any Common Language Infrastructure-compliant
 programming language, such as F#, Boo, or ClojureCLR. However, C# is the only
 officially supported .NET option.
 
+.. note:: If you would like to debug your C# scripts using Visual Studio, open
+          the .sln file that is generated after opening the first C# script in
+          the editor.  In the Debug menu, go to the Debug Properties menu item
+          for your project.  Click the 'Create a new profile' button and choose
+          'Executable'.  In the 'Executable' field, browse to the path of the 
+          C# version of the Godot editor.  It must be the path to the main Godot
+          executable, not the 'console' version.  For the 'Command Line Arguments'
+          field, type '--path . --verbose'.  For the 'Working Directory', type a
+          single period, '.', meaning the current directory.  Also check the 'Enable 
+          native code debugging' checkbox.  You may now close this window, click 
+          downward arrow on the debug profile dropdown, and select your new launch
+          profile.  Hit the green start button, and your game will begin playing
+          in debug mode.
+
 .. note:: GDScript code itself doesn't execute as fast as compiled C# or C++.
           However, most script code calls functions written with fast algorithms
           in C++ code inside the engine. In many cases, writing gameplay logic
