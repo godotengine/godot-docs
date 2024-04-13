@@ -53,8 +53,6 @@ now mature, you will find fewer learning resources for it compared to
 GDScript. That's why we recommend C# mainly to users who already have experience
 with the language. 
 
-.. seealso:: To learn more about C#, head to the :ref:`C# basics <doc_c_sharp>` page.
-
 Let's look at each language's features, as well as its pros and cons.
 
 GDScript
@@ -134,6 +132,8 @@ officially supported .NET option.
     platform. To use C# on that platform, consider Godot 3 instead.
     Android and iOS platform support is available as of Godot 4.2, but is
     experimental and :ref:`some limitations apply <doc_c_sharp_platforms>`.
+
+.. seealso:: To learn more about C#, head to the :ref:`C# basics <doc_c_sharp>` page.
 
 C++ via GDExtension
 ~~~~~~~~~~~~~~~~~~~

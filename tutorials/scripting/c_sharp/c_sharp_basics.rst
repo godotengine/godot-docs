@@ -136,14 +136,11 @@ Here is an example ``launch.json``:
 
 For this launch configuration to work, you need to either setup a GODOT4
 environment variable that points to the Godot executable, or replace ``program`` 
-parameter with the path to the Godot executable. On mac or linux, this can be 
-done by adding the following to your .zshrc, .bashrc, or .bash_profile file:
-
-.. code-block:: bash
-    
-    export GODOT4="/Applications/Godot.app/Contents/MacOS/Godot"
+parameter with the path to the Godot executable.
 
 Here is an example ``tasks.json``:
+
+.. code-block:: json
 
     {
         "version": "2.0.0",
@@ -155,15 +152,7 @@ Here is an example ``tasks.json``:
                 "args": [
                     "build"
                 ],
-                "problemMatcher": "$msCompile",
-                "presentation": {
-                    "echo": true,
-                    "reveal": "silent",
-                    "focus": false,
-                    "panel": "shared",
-                    "showReuseMessage": true,
-                    "clear": false
-                }
+                "problemMatcher": "$msCompile"
             }
         ]
     }
@@ -199,9 +188,9 @@ To debug your C# scripts using Visual Studio, open the .sln file that is generat
 after opening the first C# script in the editor.  In the **Debug** menu, go to the 
 **Debug Properties** menu item for your project.  Click the **Create a new profile** 
 button and choose **Executable**.  In the **Executable** field, browse to the path 
-of the C# version of the Godot editor. It must be the path to the main Godot 
-executable, not the 'console' version.  For the **Command Line Arguments** field, 
-type ``--path . --verbose``.  For the **Working Directory**, type a single period, 
+of the C# version of the Godot editor, or type ``%GODOT4%`` if you have created an
+environment variable for the Godot executable path. It must be the path to the main Godot 
+executable, not the 'console' version.  For the **Working Directory**, type a single period, 
 ``.``, meaning the current directory. Also check the **Enable native code debugging** 
 checkbox.  You may now close this window, click downward arrow on the debug profile 
 dropdown, and select your new launch profile.  Hit the green start button, and your 
