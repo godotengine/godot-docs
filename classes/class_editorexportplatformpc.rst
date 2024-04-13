@@ -16,6 +16,22 @@ EditorExportPlatformPC
 
 Base class for the desktop platform exporter (Windows and Linux/BSD).
 
+.. rst-class:: classref-introduction-group
+
+Description
+-----------
+
+The base class for the desktop platform exporters. These include Windows and Linux/BSD, but not macOS. See the classes inheriting this one for more details.
+
+.. rst-class:: classref-introduction-group
+
+Tutorials
+---------
+
+- :doc:`Exporting for Windows <../tutorials/export/exporting_for_windows>`
+
+- :doc:`Exporting for Linux <../tutorials/export/exporting_for_linux>`
+
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

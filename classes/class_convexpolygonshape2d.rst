@@ -75,6 +75,8 @@ The polygon's list of vertices that form a convex hull. Can be in either clockwi
 
 \ **Warning:** Only set this property to a list of points that actually form a convex hull. Use :ref:`set_point_cloud<class_ConvexPolygonShape2D_method_set_point_cloud>` to generate the convex hull of an arbitrary set of points.
 
+**Note:** The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedVector2Array<class_PackedVector2Array>` for more details.
+
 .. rst-class:: classref-section-separator
 
 ----

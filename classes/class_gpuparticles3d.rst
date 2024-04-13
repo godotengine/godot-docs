@@ -32,7 +32,7 @@ Tutorials
 
 - :doc:`Controlling thousands of fish with Particles <../tutorials/performance/vertex_animation/controlling_thousands_of_fish>`
 
-- `Third Person Shooter Demo <https://godotengine.org/asset-library/asset/678>`__
+- `Third Person Shooter (TPS) Demo <https://godotengine.org/asset-library/asset/2710>`__
 
 .. rst-class:: classref-reftable-group
 
@@ -137,9 +137,11 @@ Signals
 
 **finished**\ (\ )
 
-Emitted when all active particles have finished processing. When :ref:`one_shot<class_GPUParticles3D_property_one_shot>` is disabled, particles will process continuously, so this is never emitted.
+Emitted when all active particles have finished processing. To immediately emit new particles, call :ref:`restart<class_GPUParticles3D_method_restart>`.
 
-\ **Note:** Due to the particles being computed on the GPU there might be a delay before the signal gets emitted.
+Never emitted when :ref:`one_shot<class_GPUParticles3D_property_one_shot>` is disabled, as particles will be emitted and processed continuously.
+
+\ **Note:** For :ref:`one_shot<class_GPUParticles3D_property_one_shot>` emitters, due to the particles being computed on the GPU, there may be a short period after receiving the signal during which setting :ref:`emitting<class_GPUParticles3D_property_emitting>` to ``true`` will not restart the emission cycle. This delay is avoided by instead calling :ref:`restart<class_GPUParticles3D_method_restart>`.
 
 .. rst-class:: classref-section-separator
 
@@ -513,7 +515,11 @@ The number of draw passes when rendering particles.
 - |void| **set_emitting**\ (\ value\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **is_emitting**\ (\ )
 
-If ``true``, particles are being emitted. :ref:`emitting<class_GPUParticles3D_property_emitting>` can be used to start and stop particles from emitting. However, if :ref:`one_shot<class_GPUParticles3D_property_one_shot>` is ``true`` setting :ref:`emitting<class_GPUParticles3D_property_emitting>` to ``true`` will not restart the emission cycle until after all active particles finish processing. You can use the :ref:`finished<class_GPUParticles3D_signal_finished>` signal to be notified once all active particles finish processing.
+If ``true``, particles are being emitted. :ref:`emitting<class_GPUParticles3D_property_emitting>` can be used to start and stop particles from emitting. However, if :ref:`one_shot<class_GPUParticles3D_property_one_shot>` is ``true`` setting :ref:`emitting<class_GPUParticles3D_property_emitting>` to ``true`` will not restart the emission cycle unless all active particles have finished processing. Use the :ref:`finished<class_GPUParticles3D_signal_finished>` signal to be notified once all active particles finish processing.
+
+\ **Note:** For :ref:`one_shot<class_GPUParticles3D_property_one_shot>` emitters, due to the particles being computed on the GPU, there may be a short period after receiving the :ref:`finished<class_GPUParticles3D_signal_finished>` signal during which setting this to ``true`` will not restart the emission cycle.
+
+\ **Tip:** If your :ref:`one_shot<class_GPUParticles3D_property_one_shot>` emitter needs to immediately restart emitting particles once :ref:`finished<class_GPUParticles3D_signal_finished>` signal is received, consider calling :ref:`restart<class_GPUParticles3D_method_restart>` instead of setting :ref:`emitting<class_GPUParticles3D_property_emitting>`.
 
 .. rst-class:: classref-item-separator
 
@@ -883,7 +889,9 @@ Returns the :ref:`Mesh<class_Mesh>` that is drawn at index ``pass``.
 
 |void| **restart**\ (\ )
 
-Restarts the particle emission, clearing existing particles.
+Restarts the particle emission cycle, clearing existing particles. To avoid particles vanishing from the viewport, wait for the :ref:`finished<class_GPUParticles3D_signal_finished>` signal before calling.
+
+\ **Note:** The :ref:`finished<class_GPUParticles3D_signal_finished>` signal is only emitted by :ref:`one_shot<class_GPUParticles3D_property_one_shot>` emitters.
 
 .. rst-class:: classref-item-separator
 

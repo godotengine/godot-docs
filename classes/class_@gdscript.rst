@@ -1070,7 +1070,7 @@ Returns a :ref:`Resource<class_Resource>` from the filesystem located at the abs
     # Load a scene called "main" located in the root of the project directory and cache it in a variable.
     var main = load("res://main.tscn") # main will contain a PackedScene resource.
 
-\ **Important:** The path must be absolute. A relative path will always return ``null``.
+\ **Important:** Relative paths are *not* relative to the script calling this method, instead it is prefixed with ``"res://"``. Loading from relative paths might not work as expected.
 
 This function is a simplified version of :ref:`ResourceLoader.load<class_ResourceLoader_method_load>`, which can be used for more advanced scenarios.
 

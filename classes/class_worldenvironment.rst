@@ -35,11 +35,9 @@ Tutorials
 
 - :doc:`Environment and post-processing <../tutorials/3d/environment_and_post_processing>`
 
-- `3D Material Testers Demo <https://godotengine.org/asset-library/asset/123>`__
+- `3D Material Testers Demo <https://godotengine.org/asset-library/asset/2742>`__
 
-- `2D HDR Demo <https://godotengine.org/asset-library/asset/110>`__
-
-- `Third Person Shooter Demo <https://godotengine.org/asset-library/asset/678>`__
+- `Third Person Shooter (TPS) Demo <https://godotengine.org/asset-library/asset/2710>`__
 
 .. rst-class:: classref-reftable-group
 

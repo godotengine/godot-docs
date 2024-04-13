@@ -136,9 +136,7 @@ Method Descriptions
 
 |void| **_add_constant_central_force**\ (\ force\: :ref:`Vector2<class_Vector2>`\ ) |virtual|
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsDirectBodyState2D.add_constant_central_force<class_PhysicsDirectBodyState2D_method_add_constant_central_force>`.
 
 .. rst-class:: classref-item-separator
 
@@ -150,9 +148,7 @@ Method Descriptions
 
 |void| **_add_constant_force**\ (\ force\: :ref:`Vector2<class_Vector2>`, position\: :ref:`Vector2<class_Vector2>`\ ) |virtual|
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsDirectBodyState2D.add_constant_force<class_PhysicsDirectBodyState2D_method_add_constant_force>`.
 
 .. rst-class:: classref-item-separator
 
@@ -164,9 +160,7 @@ Method Descriptions
 
 |void| **_add_constant_torque**\ (\ torque\: :ref:`float<class_float>`\ ) |virtual|
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsDirectBodyState2D.add_constant_torque<class_PhysicsDirectBodyState2D_method_add_constant_torque>`.
 
 .. rst-class:: classref-item-separator
 
@@ -178,9 +172,7 @@ Method Descriptions
 
 |void| **_apply_central_force**\ (\ force\: :ref:`Vector2<class_Vector2>`\ ) |virtual|
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsDirectBodyState2D.apply_central_force<class_PhysicsDirectBodyState2D_method_apply_central_force>`.
 
 .. rst-class:: classref-item-separator
 
@@ -192,9 +184,7 @@ Method Descriptions
 
 |void| **_apply_central_impulse**\ (\ impulse\: :ref:`Vector2<class_Vector2>`\ ) |virtual|
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsDirectBodyState2D.apply_central_impulse<class_PhysicsDirectBodyState2D_method_apply_central_impulse>`.
 
 .. rst-class:: classref-item-separator
 
@@ -206,9 +196,7 @@ Method Descriptions
 
 |void| **_apply_force**\ (\ force\: :ref:`Vector2<class_Vector2>`, position\: :ref:`Vector2<class_Vector2>`\ ) |virtual|
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsDirectBodyState2D.apply_force<class_PhysicsDirectBodyState2D_method_apply_force>`.
 
 .. rst-class:: classref-item-separator
 
@@ -220,9 +208,7 @@ Method Descriptions
 
 |void| **_apply_impulse**\ (\ impulse\: :ref:`Vector2<class_Vector2>`, position\: :ref:`Vector2<class_Vector2>`\ ) |virtual|
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsDirectBodyState2D.apply_impulse<class_PhysicsDirectBodyState2D_method_apply_impulse>`.
 
 .. rst-class:: classref-item-separator
 
@@ -234,9 +220,7 @@ Method Descriptions
 
 |void| **_apply_torque**\ (\ torque\: :ref:`float<class_float>`\ ) |virtual|
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsDirectBodyState2D.apply_torque<class_PhysicsDirectBodyState2D_method_apply_torque>`.
 
 .. rst-class:: classref-item-separator
 
@@ -248,9 +232,7 @@ Method Descriptions
 
 |void| **_apply_torque_impulse**\ (\ impulse\: :ref:`float<class_float>`\ ) |virtual|
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsDirectBodyState2D.apply_torque_impulse<class_PhysicsDirectBodyState2D_method_apply_torque_impulse>`.
 
 .. rst-class:: classref-item-separator
 
@@ -262,9 +244,7 @@ Method Descriptions
 
 :ref:`float<class_float>` **_get_angular_velocity**\ (\ ) |virtual| |const|
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Implement to override the behavior of :ref:`PhysicsDirectBodyState2D.angular_velocity<class_PhysicsDirectBodyState2D_property_angular_velocity>` and its respective getter.
 
 .. rst-class:: classref-item-separator
 
@@ -276,9 +256,7 @@ Method Descriptions
 
 :ref:`Vector2<class_Vector2>` **_get_center_of_mass**\ (\ ) |virtual| |const|
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Implement to override the behavior of :ref:`PhysicsDirectBodyState2D.center_of_mass<class_PhysicsDirectBodyState2D_property_center_of_mass>` and its respective getter.
 
 .. rst-class:: classref-item-separator
 
@@ -290,9 +268,7 @@ Method Descriptions
 
 :ref:`Vector2<class_Vector2>` **_get_center_of_mass_local**\ (\ ) |virtual| |const|
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Implement to override the behavior of :ref:`PhysicsDirectBodyState2D.center_of_mass_local<class_PhysicsDirectBodyState2D_property_center_of_mass_local>` and its respective getter.
 
 .. rst-class:: classref-item-separator
 
@@ -304,9 +280,7 @@ Method Descriptions
 
 :ref:`Vector2<class_Vector2>` **_get_constant_force**\ (\ ) |virtual| |const|
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsDirectBodyState2D.get_constant_force<class_PhysicsDirectBodyState2D_method_get_constant_force>`.
 
 .. rst-class:: classref-item-separator
 
@@ -318,9 +292,7 @@ Method Descriptions
 
 :ref:`float<class_float>` **_get_constant_torque**\ (\ ) |virtual| |const|
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsDirectBodyState2D.get_constant_torque<class_PhysicsDirectBodyState2D_method_get_constant_torque>`.
 
 .. rst-class:: classref-item-separator
 
@@ -332,9 +304,7 @@ Method Descriptions
 
 :ref:`RID<class_RID>` **_get_contact_collider**\ (\ contact_idx\: :ref:`int<class_int>`\ ) |virtual| |const|
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsDirectBodyState2D.get_contact_collider<class_PhysicsDirectBodyState2D_method_get_contact_collider>`.
 
 .. rst-class:: classref-item-separator
 
@@ -346,9 +316,7 @@ Method Descriptions
 
 :ref:`int<class_int>` **_get_contact_collider_id**\ (\ contact_idx\: :ref:`int<class_int>`\ ) |virtual| |const|
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsDirectBodyState2D.get_contact_collider_id<class_PhysicsDirectBodyState2D_method_get_contact_collider_id>`.
 
 .. rst-class:: classref-item-separator
 
@@ -360,9 +328,7 @@ Method Descriptions
 
 :ref:`Object<class_Object>` **_get_contact_collider_object**\ (\ contact_idx\: :ref:`int<class_int>`\ ) |virtual| |const|
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsDirectBodyState2D.get_contact_collider_object<class_PhysicsDirectBodyState2D_method_get_contact_collider_object>`.
 
 .. rst-class:: classref-item-separator
 
@@ -374,9 +340,7 @@ Method Descriptions
 
 :ref:`Vector2<class_Vector2>` **_get_contact_collider_position**\ (\ contact_idx\: :ref:`int<class_int>`\ ) |virtual| |const|
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsDirectBodyState2D.get_contact_collider_position<class_PhysicsDirectBodyState2D_method_get_contact_collider_position>`.
 
 .. rst-class:: classref-item-separator
 
@@ -388,9 +352,7 @@ Method Descriptions
 
 :ref:`int<class_int>` **_get_contact_collider_shape**\ (\ contact_idx\: :ref:`int<class_int>`\ ) |virtual| |const|
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsDirectBodyState2D.get_contact_collider_shape<class_PhysicsDirectBodyState2D_method_get_contact_collider_shape>`.
 
 .. rst-class:: classref-item-separator
 
@@ -402,9 +364,7 @@ Method Descriptions
 
 :ref:`Vector2<class_Vector2>` **_get_contact_collider_velocity_at_position**\ (\ contact_idx\: :ref:`int<class_int>`\ ) |virtual| |const|
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsDirectBodyState2D.get_contact_collider_velocity_at_position<class_PhysicsDirectBodyState2D_method_get_contact_collider_velocity_at_position>`.
 
 .. rst-class:: classref-item-separator
 
@@ -416,9 +376,7 @@ Method Descriptions
 
 :ref:`int<class_int>` **_get_contact_count**\ (\ ) |virtual| |const|
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsDirectBodyState2D.get_contact_count<class_PhysicsDirectBodyState2D_method_get_contact_count>`.
 
 .. rst-class:: classref-item-separator
 
@@ -430,9 +388,7 @@ Method Descriptions
 
 :ref:`Vector2<class_Vector2>` **_get_contact_impulse**\ (\ contact_idx\: :ref:`int<class_int>`\ ) |virtual| |const|
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsDirectBodyState2D.get_contact_impulse<class_PhysicsDirectBodyState2D_method_get_contact_impulse>`.
 
 .. rst-class:: classref-item-separator
 
@@ -444,9 +400,7 @@ Method Descriptions
 
 :ref:`Vector2<class_Vector2>` **_get_contact_local_normal**\ (\ contact_idx\: :ref:`int<class_int>`\ ) |virtual| |const|
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsDirectBodyState2D.get_contact_local_normal<class_PhysicsDirectBodyState2D_method_get_contact_local_normal>`.
 
 .. rst-class:: classref-item-separator
 
@@ -458,9 +412,7 @@ Method Descriptions
 
 :ref:`Vector2<class_Vector2>` **_get_contact_local_position**\ (\ contact_idx\: :ref:`int<class_int>`\ ) |virtual| |const|
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsDirectBodyState2D.get_contact_local_position<class_PhysicsDirectBodyState2D_method_get_contact_local_position>`.
 
 .. rst-class:: classref-item-separator
 
@@ -472,9 +424,7 @@ Method Descriptions
 
 :ref:`int<class_int>` **_get_contact_local_shape**\ (\ contact_idx\: :ref:`int<class_int>`\ ) |virtual| |const|
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsDirectBodyState2D.get_contact_local_shape<class_PhysicsDirectBodyState2D_method_get_contact_local_shape>`.
 
 .. rst-class:: classref-item-separator
 
@@ -486,9 +436,7 @@ Method Descriptions
 
 :ref:`Vector2<class_Vector2>` **_get_contact_local_velocity_at_position**\ (\ contact_idx\: :ref:`int<class_int>`\ ) |virtual| |const|
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsDirectBodyState2D.get_contact_local_velocity_at_position<class_PhysicsDirectBodyState2D_method_get_contact_local_velocity_at_position>`.
 
 .. rst-class:: classref-item-separator
 
@@ -500,9 +448,7 @@ Method Descriptions
 
 :ref:`float<class_float>` **_get_inverse_inertia**\ (\ ) |virtual| |const|
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Implement to override the behavior of :ref:`PhysicsDirectBodyState2D.inverse_inertia<class_PhysicsDirectBodyState2D_property_inverse_inertia>` and its respective getter.
 
 .. rst-class:: classref-item-separator
 
@@ -514,9 +460,7 @@ Method Descriptions
 
 :ref:`float<class_float>` **_get_inverse_mass**\ (\ ) |virtual| |const|
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Implement to override the behavior of :ref:`PhysicsDirectBodyState2D.inverse_mass<class_PhysicsDirectBodyState2D_property_inverse_mass>` and its respective getter.
 
 .. rst-class:: classref-item-separator
 
@@ -528,9 +472,7 @@ Method Descriptions
 
 :ref:`Vector2<class_Vector2>` **_get_linear_velocity**\ (\ ) |virtual| |const|
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Implement to override the behavior of :ref:`PhysicsDirectBodyState2D.linear_velocity<class_PhysicsDirectBodyState2D_property_linear_velocity>` and its respective getter.
 
 .. rst-class:: classref-item-separator
 
@@ -542,9 +484,7 @@ Method Descriptions
 
 :ref:`PhysicsDirectSpaceState2D<class_PhysicsDirectSpaceState2D>` **_get_space_state**\ (\ ) |virtual|
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsDirectBodyState2D.get_space_state<class_PhysicsDirectBodyState2D_method_get_space_state>`.
 
 .. rst-class:: classref-item-separator
 
@@ -556,9 +496,7 @@ Method Descriptions
 
 :ref:`float<class_float>` **_get_step**\ (\ ) |virtual| |const|
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Implement to override the behavior of :ref:`PhysicsDirectBodyState2D.step<class_PhysicsDirectBodyState2D_property_step>` and its respective getter.
 
 .. rst-class:: classref-item-separator
 
@@ -570,9 +508,7 @@ Method Descriptions
 
 :ref:`float<class_float>` **_get_total_angular_damp**\ (\ ) |virtual| |const|
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Implement to override the behavior of :ref:`PhysicsDirectBodyState2D.total_angular_damp<class_PhysicsDirectBodyState2D_property_total_angular_damp>` and its respective getter.
 
 .. rst-class:: classref-item-separator
 
@@ -584,9 +520,7 @@ Method Descriptions
 
 :ref:`Vector2<class_Vector2>` **_get_total_gravity**\ (\ ) |virtual| |const|
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Implement to override the behavior of :ref:`PhysicsDirectBodyState2D.total_gravity<class_PhysicsDirectBodyState2D_property_total_gravity>` and its respective getter.
 
 .. rst-class:: classref-item-separator
 
@@ -598,9 +532,7 @@ Method Descriptions
 
 :ref:`float<class_float>` **_get_total_linear_damp**\ (\ ) |virtual| |const|
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Implement to override the behavior of :ref:`PhysicsDirectBodyState2D.total_linear_damp<class_PhysicsDirectBodyState2D_property_total_linear_damp>` and its respective getter.
 
 .. rst-class:: classref-item-separator
 
@@ -612,9 +544,7 @@ Method Descriptions
 
 :ref:`Transform2D<class_Transform2D>` **_get_transform**\ (\ ) |virtual| |const|
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Implement to override the behavior of :ref:`PhysicsDirectBodyState2D.transform<class_PhysicsDirectBodyState2D_property_transform>` and its respective getter.
 
 .. rst-class:: classref-item-separator
 
@@ -626,9 +556,7 @@ Method Descriptions
 
 :ref:`Vector2<class_Vector2>` **_get_velocity_at_local_position**\ (\ local_position\: :ref:`Vector2<class_Vector2>`\ ) |virtual| |const|
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsDirectBodyState2D.get_velocity_at_local_position<class_PhysicsDirectBodyState2D_method_get_velocity_at_local_position>`.
 
 .. rst-class:: classref-item-separator
 
@@ -640,9 +568,7 @@ Method Descriptions
 
 |void| **_integrate_forces**\ (\ ) |virtual|
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsDirectBodyState2D.integrate_forces<class_PhysicsDirectBodyState2D_method_integrate_forces>`.
 
 .. rst-class:: classref-item-separator
 
@@ -654,9 +580,7 @@ Method Descriptions
 
 :ref:`bool<class_bool>` **_is_sleeping**\ (\ ) |virtual| |const|
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Implement to override the behavior of :ref:`PhysicsDirectBodyState2D.sleeping<class_PhysicsDirectBodyState2D_property_sleeping>` and its respective getter.
 
 .. rst-class:: classref-item-separator
 
@@ -668,9 +592,7 @@ Method Descriptions
 
 |void| **_set_angular_velocity**\ (\ velocity\: :ref:`float<class_float>`\ ) |virtual|
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Implement to override the behavior of :ref:`PhysicsDirectBodyState2D.angular_velocity<class_PhysicsDirectBodyState2D_property_angular_velocity>` and its respective setter.
 
 .. rst-class:: classref-item-separator
 
@@ -682,9 +604,7 @@ Method Descriptions
 
 |void| **_set_constant_force**\ (\ force\: :ref:`Vector2<class_Vector2>`\ ) |virtual|
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsDirectBodyState2D.set_constant_force<class_PhysicsDirectBodyState2D_method_set_constant_force>`.
 
 .. rst-class:: classref-item-separator
 
@@ -696,9 +616,7 @@ Method Descriptions
 
 |void| **_set_constant_torque**\ (\ torque\: :ref:`float<class_float>`\ ) |virtual|
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overridable version of :ref:`PhysicsDirectBodyState2D.set_constant_torque<class_PhysicsDirectBodyState2D_method_set_constant_torque>`.
 
 .. rst-class:: classref-item-separator
 
@@ -710,9 +628,7 @@ Method Descriptions
 
 |void| **_set_linear_velocity**\ (\ velocity\: :ref:`Vector2<class_Vector2>`\ ) |virtual|
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Implement to override the behavior of :ref:`PhysicsDirectBodyState2D.linear_velocity<class_PhysicsDirectBodyState2D_property_linear_velocity>` and its respective setter.
 
 .. rst-class:: classref-item-separator
 
@@ -724,9 +640,7 @@ Method Descriptions
 
 |void| **_set_sleep_state**\ (\ enabled\: :ref:`bool<class_bool>`\ ) |virtual|
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Implement to override the behavior of :ref:`PhysicsDirectBodyState2D.sleeping<class_PhysicsDirectBodyState2D_property_sleeping>` and its respective setter.
 
 .. rst-class:: classref-item-separator
 
@@ -738,9 +652,7 @@ Method Descriptions
 
 |void| **_set_transform**\ (\ transform\: :ref:`Transform2D<class_Transform2D>`\ ) |virtual|
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Implement to override the behavior of :ref:`PhysicsDirectBodyState2D.transform<class_PhysicsDirectBodyState2D_property_transform>` and its respective setter.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

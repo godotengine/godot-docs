@@ -28,11 +28,11 @@ Tutorials
 
 - :doc:`Physics introduction <../tutorials/physics/physics_introduction>`
 
-- `2D Dodge The Creeps Demo <https://godotengine.org/asset-library/asset/515>`__
+- `2D Dodge The Creeps Demo <https://godotengine.org/asset-library/asset/2712>`__
 
-- `2D Pong Demo <https://godotengine.org/asset-library/asset/121>`__
+- `2D Pong Demo <https://godotengine.org/asset-library/asset/2728>`__
 
-- `2D Kinematic Character Demo <https://godotengine.org/asset-library/asset/113>`__
+- `2D Kinematic Character Demo <https://godotengine.org/asset-library/asset/2719>`__
 
 .. rst-class:: classref-reftable-group
 

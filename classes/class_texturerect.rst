@@ -26,7 +26,7 @@ A control that displays a texture, for example an icon inside a GUI. The texture
 Tutorials
 ---------
 
-- `3D Voxel Demo <https://godotengine.org/asset-library/asset/676>`__
+- `3D Voxel Demo <https://godotengine.org/asset-library/asset/2755>`__
 
 .. rst-class:: classref-reftable-group
 

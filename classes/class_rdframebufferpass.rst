@@ -84,6 +84,8 @@ Property Descriptions
 
 Color attachments in order starting from 0. If this attachment is not used by the shader, pass ATTACHMENT_UNUSED to skip.
 
+**Note:** The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedInt32Array<class_PackedInt32Array>` for more details.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -118,6 +120,8 @@ Depth attachment. ATTACHMENT_UNUSED should be used if no depth buffer is require
 
 Used for multipass framebuffers (more than one render pass). Converts an attachment to an input. Make sure to also supply it properly in the :ref:`RDUniform<class_RDUniform>` for the uniform set.
 
+**Note:** The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedInt32Array<class_PackedInt32Array>` for more details.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -135,6 +139,8 @@ Used for multipass framebuffers (more than one render pass). Converts an attachm
 
 Attachments to preserve in this pass (otherwise they are erased).
 
+**Note:** The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedInt32Array<class_PackedInt32Array>` for more details.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -151,6 +157,8 @@ Attachments to preserve in this pass (otherwise they are erased).
 - :ref:`PackedInt32Array<class_PackedInt32Array>` **get_resolve_attachments**\ (\ )
 
 If the color attachments are multisampled, non-multisampled resolve attachments can be provided.
+
+**Note:** The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedInt32Array<class_PackedInt32Array>` for more details.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

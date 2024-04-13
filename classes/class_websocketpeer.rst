@@ -215,6 +215,8 @@ The extra HTTP headers to be sent during the WebSocket handshake.
 
 \ **Note:** Not supported in Web exports due to browsers' restrictions.
 
+**Note:** The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedStringArray<class_PackedStringArray>` for more details.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -282,6 +284,8 @@ The size of the input buffer in bytes (roughly the maximum amount of memory that
 - :ref:`PackedStringArray<class_PackedStringArray>` **get_supported_protocols**\ (\ )
 
 The WebSocket sub-protocols allowed during the WebSocket handshake.
+
+**Note:** The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedStringArray<class_PackedStringArray>` for more details.
 
 .. rst-class:: classref-section-separator
 

@@ -1886,7 +1886,7 @@ Returns ``true`` if positions of **OK** and **Cancel** buttons are swapped in di
 
 Returns the ID of the window at the specified screen ``position`` (in pixels). On multi-monitor setups, the screen position is relative to the virtual desktop area. On multi-monitor setups with different screen resolutions or orientations, the origin may be located outside any display like this:
 
-::
+.. code:: text
 
     * (0, 0)        +-------+
                     |       |
@@ -1933,7 +1933,7 @@ An ``accelerator`` can optionally be defined, which is a keyboard shortcut that 
 
 \ **Supported system menu IDs:**\ 
 
-::
+.. code:: text
 
     "_main" - Main menu (macOS).
     "_dock" - Dock popup menu (macOS).
@@ -1965,7 +1965,7 @@ An ``accelerator`` can optionally be defined, which is a keyboard shortcut that 
 
 \ **Supported system menu IDs:**\ 
 
-::
+.. code:: text
 
     "_main" - Main menu (macOS).
     "_dock" - Dock popup menu (macOS).
@@ -1997,7 +1997,7 @@ An ``accelerator`` can optionally be defined, which is a keyboard shortcut that 
 
 \ **Supported system menu IDs:**\ 
 
-::
+.. code:: text
 
     "_main" - Main menu (macOS).
     "_dock" - Dock popup menu (macOS).
@@ -2031,7 +2031,7 @@ An ``accelerator`` can optionally be defined, which is a keyboard shortcut that 
 
 \ **Supported system menu IDs:**\ 
 
-::
+.. code:: text
 
     "_main" - Main menu (macOS).
     "_dock" - Dock popup menu (macOS).
@@ -2063,7 +2063,7 @@ An ``accelerator`` can optionally be defined, which is a keyboard shortcut that 
 
 \ **Supported system menu IDs:**\ 
 
-::
+.. code:: text
 
     "_main" - Main menu (macOS).
     "_dock" - Dock popup menu (macOS).
@@ -2099,7 +2099,7 @@ An ``accelerator`` can optionally be defined, which is a keyboard shortcut that 
 
 \ **Supported system menu IDs:**\ 
 
-::
+.. code:: text
 
     "_main" - Main menu (macOS).
     "_dock" - Dock popup menu (macOS).
@@ -2133,7 +2133,7 @@ An ``accelerator`` can optionally be defined, which is a keyboard shortcut that 
 
 \ **Supported system menu IDs:**\ 
 
-::
+.. code:: text
 
     "_main" - Main menu (macOS).
     "_dock" - Dock popup menu (macOS).
@@ -2161,7 +2161,7 @@ Returns index of the inserted item, it's not guaranteed to be the same as ``inde
 
 \ **Supported system menu IDs:**\ 
 
-::
+.. code:: text
 
     "_main" - Main menu (macOS).
     "_dock" - Dock popup menu (macOS).
@@ -2189,7 +2189,7 @@ Returns index of the inserted item, it's not guaranteed to be the same as ``inde
 
 \ **Supported system menu IDs:**\ 
 
-::
+.. code:: text
 
     "_main" - Main menu (macOS).
     "_dock" - Dock popup menu (macOS).
@@ -2215,7 +2215,7 @@ Removes all items from the global menu with ID ``menu_root``.
 
 \ **Supported system menu IDs:**\ 
 
-::
+.. code:: text
 
     "_main" - Main menu (macOS).
     "_dock" - Dock popup menu (macOS).
@@ -3135,7 +3135,7 @@ Returns the dots per inch density of the specified screen. If ``screen`` is :ref
 
 \ **Note:** On Android devices, the actual screen densities are grouped into six generalized densities:
 
-::
+.. code:: text
 
        ldpi - 120 dpi
        mdpi - 160 dpi
@@ -3220,7 +3220,7 @@ Returns color of the display pixel at the ``position``.
 
 Returns the screen's top-left corner position in pixels. On multi-monitor setups, the screen position is relative to the virtual desktop area. On multi-monitor setups with different screen resolutions or orientations, the origin may be located outside any display like this:
 
-::
+.. code:: text
 
     * (0, 0)        +-------+
                     |       |
@@ -4222,7 +4222,7 @@ Sets the bounding box of control, or menu item that was used to open the popup w
 
 Sets the position of the given window to ``position``. On multi-monitor setups, the screen position is relative to the virtual desktop area. On multi-monitor setups with different screen resolutions or orientations, the origin may be located outside any display like this:
 
-::
+.. code:: text
 
     * (0, 0)        +-------+
                     |       |

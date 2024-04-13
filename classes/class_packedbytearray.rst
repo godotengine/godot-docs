@@ -21,6 +21,8 @@ An array specifically designed to hold bytes. Packs data tightly, so it saves me
 
 \ **PackedByteArray** also provides methods to encode/decode various types to/from bytes. The way values are encoded is an implementation detail and shouldn't be relied upon when interacting with external apps.
 
+\ **Note:** Packed arrays are always passed by reference. To get a copy of an array that can be modified independently of the original array, use :ref:`duplicate<class_PackedByteArray_method_duplicate>`. This is *not* the case for built-in properties and methods. The returned packed array of these are a copies, and changing it will *not* affect the original value. To update a built-in property you need to modify the returned array, and then assign it to the property again.
+
 .. note::
 
 	There are notable differences when using this API with C#. See :ref:`doc_c_sharp_differences` for more information.

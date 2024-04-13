@@ -1326,7 +1326,7 @@ Constant to set/get the priority (order of processing) of an area.
 
 :ref:`AreaParameter<enum_PhysicsServer3D_AreaParameter>` **AREA_PARAM_WIND_FORCE_MAGNITUDE** = ``10``
 
-Constant to set/get the magnitude of area-specific wind force.
+Constant to set/get the magnitude of area-specific wind force. This wind force only applies to :ref:`SoftBody3D<class_SoftBody3D>` nodes. Other physics bodies are currently not affected by wind.
 
 .. _class_PhysicsServer3D_constant_AREA_PARAM_WIND_SOURCE:
 
@@ -2587,7 +2587,7 @@ If ``true``, the continuous collision detection mode is enabled.
 
 :ref:`bool<class_bool>` **body_is_omitting_force_integration**\ (\ body\: :ref:`RID<class_RID>`\ ) |const|
 
-Returns whether a body uses a callback function to calculate its own physics (see :ref:`body_set_force_integration_callback<class_PhysicsServer3D_method_body_set_force_integration_callback>`).
+Returns ``true`` if the body is omitting the standard force integration. See :ref:`body_set_omit_force_integration<class_PhysicsServer3D_method_body_set_omit_force_integration>`.
 
 .. rst-class:: classref-item-separator
 
@@ -2741,11 +2741,17 @@ Continuous collision detection tries to predict where a moving body will collide
 
 |void| **body_set_force_integration_callback**\ (\ body\: :ref:`RID<class_RID>`, callable\: :ref:`Callable<class_Callable>`, userdata\: :ref:`Variant<class_Variant>` = null\ )
 
-Sets the function used to calculate physics for an object, if that object allows it (see :ref:`body_set_omit_force_integration<class_PhysicsServer3D_method_body_set_omit_force_integration>`). The force integration function takes 2 arguments:
+Sets the body's custom force integration callback function to ``callable``. Use an empty :ref:`Callable<class_Callable>` (``Callable()``) to clear the custom callback.
 
-- ``state`` — :ref:`PhysicsDirectBodyState3D<class_PhysicsDirectBodyState3D>` used to retrieve and modify the body's state.
+The function ``callable`` will be called every physics tick, before the standard force integration (see :ref:`body_set_omit_force_integration<class_PhysicsServer3D_method_body_set_omit_force_integration>`). It can be used for example to update the body's linear and angular velocity based on contact with other bodies.
 
-- ``userdata`` — optional user data passed to :ref:`body_set_force_integration_callback<class_PhysicsServer3D_method_body_set_force_integration_callback>`.
+If ``userdata`` is not ``null``, the function ``callable`` must take the following two parameters:
+
+1. ``state``: a :ref:`PhysicsDirectBodyState3D<class_PhysicsDirectBodyState3D>`, used to retrieve and modify the body's state,
+
+2. ``userdata``: a :ref:`Variant<class_Variant>`; its value will be the ``userdata`` passed into this method.
+
+If ``userdata`` is ``null``, then ``callable`` must take only the ``state`` parameter.
 
 .. rst-class:: classref-item-separator
 
@@ -2781,7 +2787,9 @@ Sets the body mode, from one of the :ref:`BodyMode<enum_PhysicsServer3D_BodyMode
 
 |void| **body_set_omit_force_integration**\ (\ body\: :ref:`RID<class_RID>`, enable\: :ref:`bool<class_bool>`\ )
 
-Sets whether a body uses a callback function to calculate its own physics (see :ref:`body_set_force_integration_callback<class_PhysicsServer3D_method_body_set_force_integration_callback>`).
+Sets whether the body omits the standard force integration. If ``enable`` is ``true``, the body will not automatically use applied forces, torques, and damping to update the body's linear and angular velocity. In this case, :ref:`body_set_force_integration_callback<class_PhysicsServer3D_method_body_set_force_integration_callback>` can be used to manually update the linear and angular velocity instead.
+
+This method is called when the property :ref:`RigidBody3D.custom_integrator<class_RigidBody3D_property_custom_integrator>` is set.
 
 .. rst-class:: classref-item-separator
 

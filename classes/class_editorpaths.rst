@@ -73,7 +73,7 @@ Returns the absolute path to the user's cache folder. This folder should be used
 
 \ **Default paths per platform:**\ 
 
-::
+.. code:: text
 
     - Windows: %LOCALAPPDATA%\Godot\
     - macOS: ~/Library/Caches/Godot/
@@ -93,7 +93,7 @@ Returns the absolute path to the user's configuration folder. This folder should
 
 \ **Default paths per platform:**\ 
 
-::
+.. code:: text
 
     - Windows: %APPDATA%\Godot\                    (same as `get_data_dir()`)
     - macOS: ~/Library/Application Support/Godot/  (same as `get_data_dir()`)
@@ -113,7 +113,7 @@ Returns the absolute path to the user's data folder. This folder should be used 
 
 \ **Default paths per platform:**\ 
 
-::
+.. code:: text
 
     - Windows: %APPDATA%\Godot\                    (same as `get_config_dir()`)
     - macOS: ~/Library/Application Support/Godot/  (same as `get_config_dir()`)

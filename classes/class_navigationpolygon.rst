@@ -76,9 +76,9 @@ Adding vertices and polygon indices manually.
 Tutorials
 ---------
 
-- `2D Navigation Demo <https://godotengine.org/asset-library/asset/117>`__
-
 - :doc:`Using NavigationMeshes <../tutorials/navigation/navigation_using_navigationmeshes>`
+
+- `Navigation Polygon 2D Demo <https://godotengine.org/asset-library/asset/2722>`__
 
 .. rst-class:: classref-reftable-group
 

@@ -38,11 +38,11 @@ Tutorials
 
 - :doc:`Using 3D transforms <../tutorials/3d/using_transforms>`
 
-- `Matrix Transform Demo <https://godotengine.org/asset-library/asset/584>`__
+- `Matrix Transform Demo <https://godotengine.org/asset-library/asset/2787>`__
 
-- `3D Platformer Demo <https://godotengine.org/asset-library/asset/125>`__
+- `3D Platformer Demo <https://godotengine.org/asset-library/asset/2748>`__
 
-- `2.5D Demo <https://godotengine.org/asset-library/asset/583>`__
+- `2.5D Game Demo <https://godotengine.org/asset-library/asset/2783>`__
 
 .. rst-class:: classref-reftable-group
 

@@ -21,7 +21,7 @@ Description
 
 This helper class can be used to store :ref:`Variant<class_Variant>` values on the filesystem using INI-style formatting. The stored values are identified by a section and a key:
 
-::
+.. code:: text
 
     [section]
     some_key=42

@@ -225,7 +225,7 @@ The offset applied to each vertex.
 
 The polygon's list of vertices. The final point will be connected to the first.
 
-\ **Note:** This returns a copy of the :ref:`PackedVector2Array<class_PackedVector2Array>` rather than a reference.
+**Note:** The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedVector2Array<class_PackedVector2Array>` for more details.
 
 .. rst-class:: classref-item-separator
 
@@ -346,6 +346,8 @@ Amount to multiply the :ref:`uv<class_Polygon2D_property_uv>` coordinates when u
 
 Texture coordinates for each vertex of the polygon. There should be one UV value per polygon vertex. If there are fewer, undefined vertices will use ``Vector2(0, 0)``.
 
+**Note:** The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedVector2Array<class_PackedVector2Array>` for more details.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -362,6 +364,8 @@ Texture coordinates for each vertex of the polygon. There should be one UV value
 - :ref:`PackedColorArray<class_PackedColorArray>` **get_vertex_colors**\ (\ )
 
 Color for each vertex. Colors are interpolated between vertices, resulting in smooth gradients. There should be one per polygon vertex. If there are fewer, undefined vertices will use :ref:`color<class_Polygon2D_property_color>`.
+
+**Note:** The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedColorArray<class_PackedColorArray>` for more details.
 
 .. rst-class:: classref-section-separator
 
