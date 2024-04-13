@@ -54,7 +54,7 @@ Offline documentation
 ---------------------
 
 To browse the documentation offline, you can `download an HTML copy <https://nightly.link/godotengine/godot-docs/workflows/build_offline_docs/master/godot-docs-html-master.zip>`__
-for offline reading (updated every Monday). Extract the ZIP archive then open
+(`stable <https://nightly.link/godotengine/godot-docs/workflows/build_offline_docs/master/godot-docs-html-stable.zip>`__) for offline reading (updated every Monday). Extract the ZIP archive then open
 the top-level ``index.html`` in a web browser.
 
 For mobile devices or e-readers, you can also `download an ePub copy <https://nightly.link/godotengine/godot-docs/workflows/build_offline_docs/master/godot-docs-epub-master.zip>`__
