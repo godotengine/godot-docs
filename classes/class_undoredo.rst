@@ -230,7 +230,7 @@ Makes "do"/"undo" operations stay in separate actions.
 
 :ref:`MergeMode<enum_UndoRedo_MergeMode>` **MERGE_ENDS** = ``1``
 
-Makes so that the action's "undo" operations are from the first action created and the "do" operations are from the last subsequent action with the same name.
+Merges this action with the previous one if they have the same name. Keeps only the first action's "undo" operations and the last action's "do" operations. Useful for sequential changes to a single value.
 
 .. _class_UndoRedo_constant_MERGE_ALL:
 
@@ -238,7 +238,7 @@ Makes so that the action's "undo" operations are from the first action created a
 
 :ref:`MergeMode<enum_UndoRedo_MergeMode>` **MERGE_ALL** = ``2``
 
-Makes subsequent actions with the same name be merged into one.
+Merges this action with the previous one if they have the same name.
 
 .. rst-class:: classref-section-separator
 
@@ -301,7 +301,9 @@ Register a ``property`` that would change its value to ``value`` when the action
 
 |void| **add_do_reference**\ (\ object\: :ref:`Object<class_Object>`\ )
 
-Register a reference for "do" that will be erased if the "do" history is lost. This is useful mostly for new nodes created for the "do" call. Do not use for resources.
+Register a reference to an object that will be erased if the "do" history is deleted. This is useful for objects added by the "do" action and removed by the "undo" action.
+
+When the "do" history is deleted, if the object is a :ref:`RefCounted<class_RefCounted>`, it will be unreferenced. Otherwise, it will be freed. Do not use for resources.
 
 ::
 
@@ -346,7 +348,9 @@ Register a ``property`` that would change its value to ``value`` when the action
 
 |void| **add_undo_reference**\ (\ object\: :ref:`Object<class_Object>`\ )
 
-Register a reference for "undo" that will be erased if the "undo" history is lost. This is useful mostly for nodes removed with the "do" call (not the "undo" call!).
+Register a reference to an object that will be erased if the "undo" history is deleted. This is useful for objects added by the "undo" action and removed by the "do" action.
+
+When the "undo" history is deleted, if the object is a :ref:`RefCounted<class_RefCounted>`, it will be unreferenced. Otherwise, it will be freed. Do not use for resources.
 
 ::
 

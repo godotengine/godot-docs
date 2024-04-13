@@ -32,7 +32,7 @@ Tutorials
 
 - :doc:`Mouse and input coordinates <../tutorials/inputs/mouse_and_input_coordinates>`
 
-- `3D Voxel Demo <https://godotengine.org/asset-library/asset/676>`__
+- `3D Voxel Demo <https://godotengine.org/asset-library/asset/2755>`__
 
 .. rst-class:: classref-reftable-group
 

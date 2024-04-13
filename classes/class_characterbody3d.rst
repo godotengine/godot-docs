@@ -30,13 +30,13 @@ Tutorials
 
 - :doc:`Kinematic character (2D) <../tutorials/physics/kinematic_character_2d>`
 
-- `3D Kinematic Character Demo <https://godotengine.org/asset-library/asset/126>`__
+- `3D Kinematic Character Demo <https://godotengine.org/asset-library/asset/2739>`__
 
-- `3D Platformer Demo <https://godotengine.org/asset-library/asset/125>`__
+- `3D Platformer Demo <https://godotengine.org/asset-library/asset/2748>`__
 
-- `3D Voxel Demo <https://godotengine.org/asset-library/asset/676>`__
+- `3D Voxel Demo <https://godotengine.org/asset-library/asset/2755>`__
 
-- `Third Person Shooter Demo <https://godotengine.org/asset-library/asset/678>`__
+- `Third Person Shooter (TPS) Demo <https://godotengine.org/asset-library/asset/2710>`__
 
 .. rst-class:: classref-reftable-group
 
@@ -502,7 +502,9 @@ Returns the floor's collision angle at the last collision point according to ``u
 
 :ref:`Vector3<class_Vector3>` **get_floor_normal**\ (\ ) |const|
 
-Returns the surface normal of the floor at the last collision point. Only valid after calling :ref:`move_and_slide<class_CharacterBody3D_method_move_and_slide>` and when :ref:`is_on_floor<class_CharacterBody3D_method_is_on_floor>` returns ``true``.
+Returns the collision normal of the floor at the last collision point. Only valid after calling :ref:`move_and_slide<class_CharacterBody3D_method_move_and_slide>` and when :ref:`is_on_floor<class_CharacterBody3D_method_is_on_floor>` returns ``true``.
+
+\ **Warning:** The collision normal is not always the same as the surface normal.
 
 .. rst-class:: classref-item-separator
 
@@ -610,7 +612,9 @@ Returns the number of times the body collided and changed direction during the l
 
 :ref:`Vector3<class_Vector3>` **get_wall_normal**\ (\ ) |const|
 
-Returns the surface normal of the wall at the last collision point. Only valid after calling :ref:`move_and_slide<class_CharacterBody3D_method_move_and_slide>` and when :ref:`is_on_wall<class_CharacterBody3D_method_is_on_wall>` returns ``true``.
+Returns the collision normal of the wall at the last collision point. Only valid after calling :ref:`move_and_slide<class_CharacterBody3D_method_move_and_slide>` and when :ref:`is_on_wall<class_CharacterBody3D_method_is_on_wall>` returns ``true``.
+
+\ **Warning:** The collision normal is not always the same as the surface normal.
 
 .. rst-class:: classref-item-separator
 

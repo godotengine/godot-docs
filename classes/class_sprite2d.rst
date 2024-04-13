@@ -26,7 +26,7 @@ A node that displays a 2D texture. The texture displayed can be a region from a 
 Tutorials
 ---------
 
-- `Instancing Demo <https://godotengine.org/asset-library/asset/148>`__
+- `Instancing Demo <https://godotengine.org/asset-library/asset/2716>`__
 
 .. rst-class:: classref-reftable-group
 

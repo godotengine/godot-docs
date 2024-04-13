@@ -28,7 +28,7 @@ Tutorials
 
 - :doc:`2D Sprite animation <../tutorials/2d/2d_sprite_animation>`
 
-- `2D Dodge The Creeps Demo <https://godotengine.org/asset-library/asset/515>`__
+- `2D Dodge The Creeps Demo <https://godotengine.org/asset-library/asset/2712>`__
 
 .. rst-class:: classref-reftable-group
 

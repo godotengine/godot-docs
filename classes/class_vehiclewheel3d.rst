@@ -28,7 +28,7 @@ A node used as a child of a :ref:`VehicleBody3D<class_VehicleBody3D>` parent to 
 Tutorials
 ---------
 
-- `3D Truck Town Demo <https://godotengine.org/asset-library/asset/524>`__
+- `3D Truck Town Demo <https://godotengine.org/asset-library/asset/2752>`__
 
 .. rst-class:: classref-reftable-group
 

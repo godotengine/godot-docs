@@ -146,7 +146,7 @@ Property Descriptions
 
 Additional data added to the root ``<dict>`` section of the `Info.plist <https://developer.apple.com/documentation/bundleresources/information_property_list>`__ file. The value should be an XML section with pairs of key-value elements, e.g.:
 
-::
+.. code:: text
 
     <key>key_name</key>
     <string>value</string>

@@ -311,6 +311,27 @@ Returns the :ref:`RID<class_RID>` of the first object that the ray intersects, o
 
 Returns the shape ID of the first object that the ray intersects, or ``0`` if no object is intersecting the ray (i.e. :ref:`is_colliding<class_RayCast2D_method_is_colliding>` returns ``false``).
 
+To get the intersected shape node, for a :ref:`CollisionObject2D<class_CollisionObject2D>` target, use:
+
+
+.. tabs::
+
+ .. code-tab:: gdscript
+
+    var target = get_collider() # A CollisionObject2D.
+    var shape_id = get_collider_shape() # The shape index in the collider.
+    var owner_id = target.shape_find_owner(shape_id) # The owner ID in the collider.
+    var shape = target.shape_owner_get_owner(owner_id)
+
+ .. code-tab:: csharp
+
+    var target = (CollisionObject2D)GetCollider(); // A CollisionObject2D.
+    var shapeId = GetColliderShape(); // The shape index in the collider.
+    var ownerId = target.ShapeFindOwner(shapeId); // The owner ID in the collider.
+    var shape = target.ShapeOwnerGetOwner(ownerId);
+
+
+
 .. rst-class:: classref-item-separator
 
 ----

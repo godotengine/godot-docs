@@ -26,9 +26,9 @@ A library of meshes. Contains a list of :ref:`Mesh<class_Mesh>` resources, each 
 Tutorials
 ---------
 
-- `3D Kinematic Character Demo <https://godotengine.org/asset-library/asset/126>`__
+- `3D Kinematic Character Demo <https://godotengine.org/asset-library/asset/2739>`__
 
-- `3D Platformer Demo <https://godotengine.org/asset-library/asset/125>`__
+- `3D Platformer Demo <https://godotengine.org/asset-library/asset/2748>`__
 
 .. rst-class:: classref-reftable-group
 

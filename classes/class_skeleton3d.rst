@@ -30,9 +30,7 @@ Note that "global pose" below refers to the overall transform of the bone with r
 Tutorials
 ---------
 
-- `3D Inverse Kinematics Demo <https://godotengine.org/asset-library/asset/523>`__
-
-- `Third Person Shooter Demo <https://godotengine.org/asset-library/asset/678>`__
+- `Third Person Shooter (TPS) Demo <https://godotengine.org/asset-library/asset/2710>`__
 
 .. rst-class:: classref-reftable-group
 

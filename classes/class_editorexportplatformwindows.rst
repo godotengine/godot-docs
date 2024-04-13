@@ -16,6 +16,13 @@ Exporter for Windows.
 
 .. rst-class:: classref-introduction-group
 
+Description
+-----------
+
+The Windows exporter customizes how a Windows build is handled. In the editor's "Export" window, it is created when adding a new "Windows" preset.
+
+.. rst-class:: classref-introduction-group
+
 Tutorials
 ---------
 
@@ -317,6 +324,8 @@ If ``true``, project resources are embedded into the executable.
 :ref:`PackedStringArray<class_PackedStringArray>` **codesign/custom_options**
 
 Array of the additional command line arguments passed to the code signing tool. See `Sign Tool <https://learn.microsoft.com/en-us/dotnet/framework/tools/signtool-exe>`__.
+
+**Note:** The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedStringArray<class_PackedStringArray>` for more details.
 
 .. rst-class:: classref-item-separator
 

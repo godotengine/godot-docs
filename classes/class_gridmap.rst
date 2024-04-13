@@ -39,9 +39,9 @@ Tutorials
 
 - :doc:`Using gridmaps <../tutorials/3d/using_gridmaps>`
 
-- `3D Platformer Demo <https://godotengine.org/asset-library/asset/125>`__
+- `3D Platformer Demo <https://godotengine.org/asset-library/asset/2748>`__
 
-- `3D Kinematic Character Demo <https://godotengine.org/asset-library/asset/126>`__
+- `3D Kinematic Character Demo <https://godotengine.org/asset-library/asset/2739>`__
 
 .. rst-class:: classref-reftable-group
 

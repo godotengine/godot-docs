@@ -49,9 +49,11 @@ Methods
 .. table::
    :widths: auto
 
-   +-------------------------+-------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>` | :ref:`is_natively_supported<class_OpenXRCompositionLayer_method_is_natively_supported>`\ (\ ) |const| |
-   +-------------------------+-------------------------------------------------------------------------------------------------------+
+   +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector2<class_Vector2>` | :ref:`intersects_ray<class_OpenXRCompositionLayer_method_intersects_ray>`\ (\ origin\: :ref:`Vector3<class_Vector3>`, direction\: :ref:`Vector3<class_Vector3>`\ ) |const| |
+   +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`is_natively_supported<class_OpenXRCompositionLayer_method_is_natively_supported>`\ (\ ) |const|                                                                      |
+   +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -121,6 +123,20 @@ The sort order for this composition layer. Higher numbers will be shown in front
 
 Method Descriptions
 -------------------
+
+.. _class_OpenXRCompositionLayer_method_intersects_ray:
+
+.. rst-class:: classref-method
+
+:ref:`Vector2<class_Vector2>` **intersects_ray**\ (\ origin\: :ref:`Vector3<class_Vector3>`, direction\: :ref:`Vector3<class_Vector3>`\ ) |const|
+
+Returns UV coordinates where the given ray intersects with the composition layer. ``origin`` and ``direction`` must be in global space.
+
+Returns ``Vector2(-1.0, -1.0)`` if the ray doesn't intersect.
+
+.. rst-class:: classref-item-separator
+
+----
 
 .. _class_OpenXRCompositionLayer_method_is_natively_supported:
 

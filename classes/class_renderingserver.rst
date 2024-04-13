@@ -8492,7 +8492,7 @@ Sets the override material of a specific surface. Equivalent to :ref:`MeshInstan
 
 |void| **instance_set_transform**\ (\ instance\: :ref:`RID<class_RID>`, transform\: :ref:`Transform3D<class_Transform3D>`\ )
 
-Sets the world space transform of the instance. Equivalent to :ref:`Node3D.transform<class_Node3D_property_transform>`.
+Sets the world space transform of the instance. Equivalent to :ref:`Node3D.global_transform<class_Node3D_property_global_transform>`.
 
 .. rst-class:: classref-item-separator
 
@@ -9518,7 +9518,7 @@ Set the entire data to use for drawing the ``multimesh`` at once to ``buffer`` (
 
 The per-instance data size and expected data order is:
 
-::
+.. code:: text
 
     2D:
       - Position: 8 floats (8 floats for Transform2D)

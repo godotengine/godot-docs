@@ -36,7 +36,7 @@ Tutorials
 
 - :doc:`Using Voxel global illumination <../tutorials/3d/global_illumination/using_voxel_gi>`
 
-- `Third Person Shooter Demo <https://godotengine.org/asset-library/asset/678>`__
+- `Third Person Shooter (TPS) Demo <https://godotengine.org/asset-library/asset/2710>`__
 
 .. rst-class:: classref-reftable-group
 

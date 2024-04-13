@@ -171,6 +171,8 @@ Contains the audio data in bytes.
 
 \ **Note:** This property expects signed PCM8 data. To convert unsigned PCM8 to signed PCM8, subtract 128 from each byte.
 
+**Note:** The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedByteArray<class_PackedByteArray>` for more details.
+
 .. rst-class:: classref-item-separator
 
 ----

@@ -253,7 +253,7 @@ Methods
    +------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                           | :ref:`reparent<class_Node_method_reparent>`\ (\ new_parent\: :ref:`Node<class_Node>`, keep_global_transform\: :ref:`bool<class_bool>` = true\ )                                                                                         |
    +------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | |void|                                                           | :ref:`replace_by<class_Node_method_replace_by>`\ (\ node\: :ref:`Node<class_Node>`, keep_groups\: :ref:`bool<class_bool>` = false, keep_children\: :ref:`bool<class_bool>` = true\ )                                                    |
+   | |void|                                                           | :ref:`replace_by<class_Node_method_replace_by>`\ (\ node\: :ref:`Node<class_Node>`, keep_groups\: :ref:`bool<class_bool>` = false\ )                                                                                                    |
    +------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                           | :ref:`request_ready<class_Node_method_request_ready>`\ (\ )                                                                                                                                                                             |
    +------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1986,7 +1986,7 @@ Fetches a node. The :ref:`NodePath<class_NodePath>` can either be a relative pat
 
 \ **Example:** Assume this method is called from the Character node, inside the following tree:
 
-::
+.. code:: text
 
      ┖╴root
         ┠╴Character (you are here!)
@@ -2191,9 +2191,9 @@ Returns the :ref:`SceneTree<class_SceneTree>` that contains this node. If this n
 
 Returns the tree as a :ref:`String<class_String>`. Used mainly for debugging purposes. This version displays the path relative to the current node, and is good for copy/pasting into the :ref:`get_node<class_Node_method_get_node>` function. It also can be used in game UI/UX.
 
-\ **Example output:**\ 
+May print, for example:
 
-::
+.. code:: text
 
     TheGame
     TheGame/Menu
@@ -2214,9 +2214,9 @@ Returns the tree as a :ref:`String<class_String>`. Used mainly for debugging pur
 
 Similar to :ref:`get_tree_string<class_Node_method_get_tree_string>`, this returns the tree as a :ref:`String<class_String>`. This version displays a more graphical representation similar to what is displayed in the Scene Dock. It is useful for inspecting larger trees.
 
-\ **Example output:**\ 
+May print, for example:
 
-::
+.. code:: text
 
      ┖╴TheGame
         ┠╴Menu
@@ -2561,9 +2561,9 @@ Prints all orphan nodes (nodes outside the :ref:`SceneTree<class_SceneTree>`). U
 
 Prints the node and its children to the console, recursively. The node does not have to be inside the tree. This method outputs :ref:`NodePath<class_NodePath>`\ s relative to this node, and is good for copy/pasting into :ref:`get_node<class_Node_method_get_node>`. See also :ref:`print_tree_pretty<class_Node_method_print_tree_pretty>`.
 
-\ **Example output:**\ 
+May print, for example:
 
-::
+.. code:: text
 
     .
     Menu
@@ -2584,9 +2584,9 @@ Prints the node and its children to the console, recursively. The node does not 
 
 Prints the node and its children to the console, recursively. The node does not have to be inside the tree. Similar to :ref:`print_tree<class_Node_method_print_tree>`, but the graphical representation looks like what is displayed in the editor's Scene dock. It is useful for inspecting larger trees.
 
-\ **Example output:**\ 
+May print, for example:
 
-::
+.. code:: text
 
      ┖╴TheGame
         ┠╴Menu
@@ -2685,9 +2685,9 @@ If ``keep_global_transform`` is ``true``, the node's global transform will be pr
 
 .. rst-class:: classref-method
 
-|void| **replace_by**\ (\ node\: :ref:`Node<class_Node>`, keep_groups\: :ref:`bool<class_bool>` = false, keep_children\: :ref:`bool<class_bool>` = true\ )
+|void| **replace_by**\ (\ node\: :ref:`Node<class_Node>`, keep_groups\: :ref:`bool<class_bool>` = false\ )
 
-Replaces this node by the given ``node``. If ``keep_children`` is ``true`` all children of this node are moved to ``node``.
+Replaces this node by the given ``node``. All children of this node are moved to ``node``.
 
 If ``keep_groups`` is ``true``, the ``node`` is added to the same groups that the replaced node is in (see :ref:`add_to_group<class_Node_method_add_to_group>`).
 
