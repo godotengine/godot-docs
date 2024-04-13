@@ -41,15 +41,20 @@ of the screen. This is why the QuadMesh needs to have height and width of ``2``.
 Godot handles the transform from model to view space to clip space behind the scenes,
 so we need to nullify the effects of Godot's transformations. We do this by setting the
 ``POSITION`` built-in to our desired position. ``POSITION`` bypasses the built-in transformations
-and sets the vertex position directly.
+and sets the vertex position in clip space directly.
 
 .. code-block:: glsl
 
   shader_type spatial;
 
   void vertex() {
-    POSITION = vec4(VERTEX, 1.0);
+    POSITION = vec4(VERTEX.xy, 1.0, 1.0);
   }
+
+.. note:: In versions of Godot earlier than 4.3, this code recommended using ``POSITION = vec4(VERTEX, 1.0);``
+          which implicitly assumed the clip-space near plane was at ``0.0``.
+          That code is now incorrect and will not work in versions 4.3+ as we
+          use a "reversed-z" depth buffer now where the near plane is at ``1.0``.
 
 Even with this vertex shader, the quad keeps disappearing. This is due to frustum
 culling, which is done on the CPU. Frustum culling uses the camera matrix and the
