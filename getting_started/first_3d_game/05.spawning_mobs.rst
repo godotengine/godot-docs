@@ -198,7 +198,7 @@ In the *Inspector*, set its *Wait Time* to ``0.5`` seconds and turn on
 |image22|
 
 Timers emit a ``timeout`` signal every time they reach the end of their *Wait
-Time*. By default, they restart automatically, emitting the signal in a cycle.
+Time*. Check ``Autostart`` is ``on`` to emit the signal in a cycle.
 We can connect to this signal from the *Main* node to spawn monsters every
 ``0.5`` seconds.
 
