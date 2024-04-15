@@ -594,7 +594,7 @@ Overridable version of :ref:`PhysicsServer2D.area_set_param<class_PhysicsServer2
 
 If set to ``true``, allows the area with the given :ref:`RID<class_RID>` to detect mouse inputs when the mouse cursor is hovering on it.
 
-Overridable version of :ref:`PhysicsServer2D<class_PhysicsServer2D>`'s internal ``area_set_pickable`` method. Corresponds to :ref:`PhysicsBody2D.input_pickable<class_PhysicsBody2D_property_input_pickable>`.
+Overridable version of :ref:`PhysicsServer2D<class_PhysicsServer2D>`'s internal ``area_set_pickable`` method. Corresponds to :ref:`CollisionObject2D.input_pickable<class_CollisionObject2D_property_input_pickable>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1300,7 +1300,7 @@ Overridable version of :ref:`PhysicsServer2D.body_set_param<class_PhysicsServer2
 
 If set to ``true``, allows the body with the given :ref:`RID<class_RID>` to detect mouse inputs when the mouse cursor is hovering on it.
 
-Overridable version of :ref:`PhysicsServer2D<class_PhysicsServer2D>`'s internal ``body_set_pickable`` method. Corresponds to :ref:`PhysicsBody2D.input_pickable<class_PhysicsBody2D_property_input_pickable>`.
+Overridable version of :ref:`PhysicsServer2D<class_PhysicsServer2D>`'s internal ``body_set_pickable`` method. Corresponds to :ref:`CollisionObject2D.input_pickable<class_CollisionObject2D_property_input_pickable>`.
 
 .. rst-class:: classref-item-separator
 
