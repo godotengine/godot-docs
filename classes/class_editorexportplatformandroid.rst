@@ -270,6 +270,8 @@ Properties
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`permissions/persistent_activity<class_EditorExportPlatformAndroid_property_permissions/persistent_activity>`                               |
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`permissions/post_notifications<class_EditorExportPlatformAndroid_property_permissions/post_notifications>`                                 |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`permissions/process_outgoing_calls<class_EditorExportPlatformAndroid_property_permissions/process_outgoing_calls>`                         |
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`permissions/read_calendar<class_EditorExportPlatformAndroid_property_permissions/read_calendar>`                                           |
@@ -446,9 +448,9 @@ Array of random bytes that the licensing Policy uses to create an `Obfuscator <h
 
 :ref:`bool<class_bool>` **apk_expansion/enable**
 
-If ``true``, project resources are stored in the separate APK expansion file, instead APK.
+If ``true``, project resources are stored in the separate APK expansion file, instead of the APK.
 
-\ **Note:** APK expansion should be enabled to use PCK encryption.
+\ **Note:** APK expansion should be enabled to use PCK encryption. See `APK Expansion Files <https://developer.android.com/google/play/expansion-files>`__
 
 .. rst-class:: classref-item-separator
 
@@ -460,7 +462,7 @@ If ``true``, project resources are stored in the separate APK expansion file, in
 
 :ref:`String<class_String>` **apk_expansion/public_key**
 
-Base64 encoded RSA public key for your publisher account, available from the profile page on the "Play Console".
+Base64 encoded RSA public key for your publisher account, available from the profile page on the "Google Play Console".
 
 .. rst-class:: classref-item-separator
 
@@ -520,7 +522,7 @@ If ``true``, ``x86_64`` binaries are included into exported project.
 
 :ref:`String<class_String>` **command_line/extra_args**
 
-A list of additional command line arguments, exported project will receive when started.
+A list of additional command line arguments, separated by space, which the exported project will receive when started.
 
 .. rst-class:: classref-item-separator
 
@@ -586,7 +588,7 @@ If ``true``, native libraries are compressed when performing a Gradle build.
 
 :ref:`int<class_int>` **gradle_build/export_format**
 
-Export format for Gradle build.
+Application export format (\*.apk or \*.aab).
 
 .. rst-class:: classref-item-separator
 
@@ -610,7 +612,7 @@ Path to the Gradle build directory. If left empty, then ``res://android`` will b
 
 :ref:`String<class_String>` **gradle_build/min_sdk**
 
-Minimal Android SDK version for Gradle build.
+Minimum Android API level required for the application to run (used during Gradle build). See `android:minSdkVersion <https://developer.android.com/guide/topics/manifest/uses-sdk-element#uses>`__.
 
 .. rst-class:: classref-item-separator
 
@@ -622,7 +624,7 @@ Minimal Android SDK version for Gradle build.
 
 :ref:`String<class_String>` **gradle_build/target_sdk**
 
-Target Android SDK version for Gradle build.
+The Android API level on which the application is designed to run (used during Gradle build). See `android:targetSdkVersion <https://developer.android.com/guide/topics/manifest/uses-sdk-element#uses>`__.
 
 .. rst-class:: classref-item-separator
 
@@ -748,7 +750,7 @@ Can be overridden with the environment variable ``GODOT_ANDROID_KEYSTORE_RELEASE
 
 :ref:`String<class_String>` **launcher_icons/adaptive_background_432x432**
 
-Background layer of the application adaptive icon file.
+Background layer of the application adaptive icon file. See `Design adaptive icons <https://developer.android.com/develop/ui/views/launch/icon_design_adaptive#design-adaptive-icons>`__.
 
 .. rst-class:: classref-item-separator
 
@@ -760,7 +762,7 @@ Background layer of the application adaptive icon file.
 
 :ref:`String<class_String>` **launcher_icons/adaptive_foreground_432x432**
 
-Foreground layer of the application adaptive icon file.
+Foreground layer of the application adaptive icon file. See `Design adaptive icons <https://developer.android.com/develop/ui/views/launch/icon_design_adaptive#design-adaptive-icons>`__.
 
 .. rst-class:: classref-item-separator
 
@@ -784,7 +786,7 @@ Application icon file. If left empty, it will fallback to :ref:`ProjectSettings.
 
 :ref:`int<class_int>` **package/app_category**
 
-Application category for the Play Store.
+Application category for the Google Play Store. Only define this if your application fits one of the categories well. See `android:appCategory <https://developer.android.com/guide/topics/manifest/application-element#appCategory>`__.
 
 .. rst-class:: classref-item-separator
 
@@ -796,7 +798,7 @@ Application category for the Play Store.
 
 :ref:`bool<class_bool>` **package/exclude_from_recents**
 
-If ``true``, task initiated by main activity will be excluded from the list of recently used applications.
+If ``true``, task initiated by main activity will be excluded from the list of recently used applications. See `android:excludeFromRecents <https://developer.android.com/guide/topics/manifest/activity-element#exclude>`__.
 
 .. rst-class:: classref-item-separator
 
@@ -820,7 +822,7 @@ Name of the application.
 
 :ref:`bool<class_bool>` **package/retain_data_on_uninstall**
 
-If ``true``, when the user uninstalls an app, a prompt to keep the app's data will be shown.
+If ``true``, when the user uninstalls an app, a prompt to keep the app's data will be shown. See `android:hasFragileUserData <https://developer.android.com/guide/topics/manifest/application-element#fragileuserdata>`__.
 
 .. rst-class:: classref-item-separator
 
@@ -1442,6 +1444,8 @@ Allows enabling/disabling location update notifications from the radio. See `CON
 
 Array of custom permission strings.
 
+**Note:** The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedStringArray<class_PackedStringArray>` for more details.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -1874,7 +1878,19 @@ Allows applications to perform I/O operations over NFC. See `NFC <https://develo
 
 **Deprecated:** Deprecated in API level 15.
 
-Allow an application to make its activities persistent.
+Allows an application to make its activities persistent.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformAndroid_property_permissions/post_notifications:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **permissions/post_notifications**
+
+Allows an application to post notifications. Added in API level 33. See `Notification runtime permission <https://developer.android.com/develop/ui/views/notifications/notification-permission>`__.
 
 .. rst-class:: classref-item-separator
 
@@ -2766,9 +2782,7 @@ Application version visible to the user. Falls back to :ref:`ProjectSettings.app
 
 :ref:`int<class_int>` **xr_features/xr_mode**
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+The extended reality (XR) mode for this application.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

@@ -148,6 +148,13 @@ editor, click the curve icon to the right of the animation track.
 In the editor, keys are represented by filled diamonds and the outlined
 diamonds connected to them by a line control curve's shape.
 
+.. tip::
+
+    For better precision while manually working with curves, you might want to alter
+    the zoom levels of the editor. The slider on the bottom right of the editor can be used to
+    zoom in and out on the time axis, you can also do that with :kbd:`Ctrl + Shift + Mouse wheel`.
+    Using :kbd:`Ctrl + Alt + Mouse wheel` will zoom in and out on the Y axis
+
 .. image:: img/bezier_curves.webp
 
 In the right click panel of the editor, you can select the handle mode:

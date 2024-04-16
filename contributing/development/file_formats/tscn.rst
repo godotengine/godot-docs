@@ -54,7 +54,7 @@ If the file has no resources, ``load_steps`` is omitted. The engine will
 still load the file correctly if ``load_steps`` is incorrect, but this will affect
 loading bars and any other piece of code relying on that value.
 
-``uid`` is an unique string-based identifier representing the scene. This is
+``uid`` is a unique string-based identifier representing the scene. This is
 used by the engine to track files that are moved around, even while the editor
 is closed. Scripts can also load UID-based resources using the ``uid://`` path
 prefix to avoid relying on filesystem paths. This makes it possible to move
@@ -279,8 +279,8 @@ External resources
 ~~~~~~~~~~~~~~~~~~
 
 External resources are links to resources not contained within the TSCN file
-itself. An external resource consists of a path, a type, an UID (used to map its
-filesystem location to an unique identifier) and an ID (used to refer to the
+itself. An external resource consists of a path, a type, a UID (used to map its
+filesystem location to a unique identifier) and an ID (used to refer to the
 resource in the scene file).
 
 Godot always generates absolute paths relative to the resource directory and

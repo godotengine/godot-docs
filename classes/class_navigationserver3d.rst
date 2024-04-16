@@ -42,9 +42,9 @@ This server keeps tracks of any call and executes them during the sync phase. Th
 Tutorials
 ---------
 
-- `3D Navmesh Demo <https://godotengine.org/asset-library/asset/124>`__
-
 - :doc:`Using NavigationServer <../tutorials/navigation/navigation_using_navigationservers>`
+
+- `3D Navigation Demo <https://godotengine.org/asset-library/asset/2743>`__
 
 .. rst-class:: classref-reftable-group
 
@@ -336,6 +336,8 @@ Methods
    | |void|                                              | :ref:`set_active<class_NavigationServer3D_method_set_active>`\ (\ active\: :ref:`bool<class_bool>`\ )                                                                                                                                                                                                                                                                        |
    +-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                              | :ref:`set_debug_enabled<class_NavigationServer3D_method_set_debug_enabled>`\ (\ enabled\: :ref:`bool<class_bool>`\ )                                                                                                                                                                                                                                                         |
+   +-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PackedVector3Array<class_PackedVector3Array>` | :ref:`simplify_path<class_NavigationServer3D_method_simplify_path>`\ (\ path\: :ref:`PackedVector3Array<class_PackedVector3Array>`, epsilon\: :ref:`float<class_float>`\ )                                                                                                                                                                                                   |
    +-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
@@ -2196,6 +2198,20 @@ Control activation of this server.
 |void| **set_debug_enabled**\ (\ enabled\: :ref:`bool<class_bool>`\ )
 
 If ``true`` enables debug mode on the NavigationServer.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_NavigationServer3D_method_simplify_path:
+
+.. rst-class:: classref-method
+
+:ref:`PackedVector3Array<class_PackedVector3Array>` **simplify_path**\ (\ path\: :ref:`PackedVector3Array<class_PackedVector3Array>`, epsilon\: :ref:`float<class_float>`\ )
+
+Returns a simplified version of ``path`` with less critical path points removed. The simplification amount is in worlds units and controlled by ``epsilon``. The simplification uses a variant of Ramer-Douglas-Peucker algorithm for curve point decimation.
+
+Path simplification can be helpful to mitigate various path following issues that can arise with certain agent types and script behaviors. E.g. "steering" agents or avoidance in "open fields".
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

@@ -37,9 +37,9 @@ Tutorials
 
 - :doc:`Using Area2D <../tutorials/physics/using_area_2d>`
 
-- `3D Platformer Demo <https://godotengine.org/asset-library/asset/125>`__
+- `3D Platformer Demo <https://godotengine.org/asset-library/asset/2748>`__
 
-- `GUI in 3D Demo <https://godotengine.org/asset-library/asset/127>`__
+- `GUI in 3D Viewport Demo <https://godotengine.org/asset-library/asset/2807>`__
 
 .. rst-class:: classref-reftable-group
 
@@ -662,6 +662,8 @@ The degree to which this area's reverb is a uniform effect. Ranges from ``0`` to
 
 The exponential rate at which wind force decreases with distance from its origin.
 
+\ **Note:** This wind force only applies to :ref:`SoftBody3D<class_SoftBody3D>` nodes. Other physics bodies are currently not affected by wind.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -679,6 +681,8 @@ The exponential rate at which wind force decreases with distance from its origin
 
 The magnitude of area-specific wind force.
 
+\ **Note:** This wind force only applies to :ref:`SoftBody3D<class_SoftBody3D>` nodes. Other physics bodies are currently not affected by wind.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -695,6 +699,8 @@ The magnitude of area-specific wind force.
 - :ref:`NodePath<class_NodePath>` **get_wind_source_path**\ (\ )
 
 The :ref:`Node3D<class_Node3D>` which is used to specify the direction and origin of an area-specific wind force. The direction is opposite to the z-axis of the :ref:`Node3D<class_Node3D>`'s local transform, and its origin is the origin of the :ref:`Node3D<class_Node3D>`'s local transform.
+
+\ **Note:** This wind force only applies to :ref:`SoftBody3D<class_SoftBody3D>` nodes. Other physics bodies are currently not affected by wind.
 
 .. rst-class:: classref-section-separator
 

@@ -40,17 +40,17 @@ Tutorials
 
 - :doc:`Viewport and canvas transforms <../tutorials/2d/2d_transforms>`
 
-- `GUI in 3D Demo <https://godotengine.org/asset-library/asset/127>`__
+- `GUI in 3D Viewport Demo <https://godotengine.org/asset-library/asset/2807>`__
 
-- `3D in 2D Demo <https://godotengine.org/asset-library/asset/128>`__
+- `3D in 2D Viewport Demo <https://godotengine.org/asset-library/asset/2804>`__
 
-- `2D in 3D Demo <https://godotengine.org/asset-library/asset/129>`__
+- `2D in 3D Viewport Demo <https://godotengine.org/asset-library/asset/2803>`__
 
-- `Screen Capture Demo <https://godotengine.org/asset-library/asset/130>`__
+- `Screen Capture Demo <https://godotengine.org/asset-library/asset/2808>`__
 
-- `Dynamic Split Screen Demo <https://godotengine.org/asset-library/asset/541>`__
+- `Dynamic Split Screen Demo <https://godotengine.org/asset-library/asset/2806>`__
 
-- `3D Viewport Scaling Demo <https://godotengine.org/asset-library/asset/586>`__
+- `3D Resolution Scaling Demo <https://godotengine.org/asset-library/asset/2805>`__
 
 .. rst-class:: classref-reftable-group
 
@@ -514,11 +514,7 @@ enum **RenderInfoType**:
 
 :ref:`RenderInfoType<enum_Viewport_RenderInfoType>` **RENDER_INFO_TYPE_VISIBLE** = ``0``
 
-.. container:: contribute
-
-	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
-
-
+Visible render pass (excluding shadows).
 
 .. _class_Viewport_constant_RENDER_INFO_TYPE_SHADOW:
 
@@ -526,23 +522,23 @@ enum **RenderInfoType**:
 
 :ref:`RenderInfoType<enum_Viewport_RenderInfoType>` **RENDER_INFO_TYPE_SHADOW** = ``1``
 
-.. container:: contribute
+Shadow render pass. Objects will be rendered several times depending on the number of amounts of lights with shadows and the number of directional shadow splits.
 
-	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+.. _class_Viewport_constant_RENDER_INFO_TYPE_CANVAS:
 
+.. rst-class:: classref-enumeration-constant
 
+:ref:`RenderInfoType<enum_Viewport_RenderInfoType>` **RENDER_INFO_TYPE_CANVAS** = ``2``
+
+Canvas item rendering. This includes all 2D rendering.
 
 .. _class_Viewport_constant_RENDER_INFO_TYPE_MAX:
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`RenderInfoType<enum_Viewport_RenderInfoType>` **RENDER_INFO_TYPE_MAX** = ``2``
+:ref:`RenderInfoType<enum_Viewport_RenderInfoType>` **RENDER_INFO_TYPE_MAX** = ``3``
 
-.. container:: contribute
-
-	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
-
-
+Represents the size of the :ref:`RenderInfoType<enum_Viewport_RenderInfoType>` enum.
 
 .. rst-class:: classref-item-separator
 
@@ -576,11 +572,7 @@ Objects are displayed without light information.
 
 :ref:`DebugDraw<enum_Viewport_DebugDraw>` **DEBUG_DRAW_LIGHTING** = ``2``
 
-.. container:: contribute
-
-	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
-
-
+Objects are displayed without textures and only with lighting information.
 
 .. _class_Viewport_constant_DEBUG_DRAW_OVERDRAW:
 
@@ -596,7 +588,7 @@ Objects are displayed semi-transparent with additive blending so you can see whe
 
 :ref:`DebugDraw<enum_Viewport_DebugDraw>` **DEBUG_DRAW_WIREFRAME** = ``4``
 
-Objects are displayed in wireframe style.
+Objects are displayed as wireframe models.
 
 .. _class_Viewport_constant_DEBUG_DRAW_NORMAL_BUFFER:
 
@@ -604,11 +596,7 @@ Objects are displayed in wireframe style.
 
 :ref:`DebugDraw<enum_Viewport_DebugDraw>` **DEBUG_DRAW_NORMAL_BUFFER** = ``5``
 
-.. container:: contribute
-
-	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
-
-
+Objects are displayed without lighting information and their textures replaced by normal mapping.
 
 .. _class_Viewport_constant_DEBUG_DRAW_VOXEL_GI_ALBEDO:
 
@@ -656,11 +644,7 @@ Draws the shadow atlas that stores shadows from :ref:`DirectionalLight3D<class_D
 
 :ref:`DebugDraw<enum_Viewport_DebugDraw>` **DEBUG_DRAW_SCENE_LUMINANCE** = ``11``
 
-.. container:: contribute
-
-	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
-
-
+Draws the scene luminance buffer (if available) in the upper left quadrant of the **Viewport**.
 
 .. _class_Viewport_constant_DEBUG_DRAW_SSAO:
 
@@ -700,11 +684,9 @@ Draws the decal atlas used by :ref:`Decal<class_Decal>`\ s and light projector t
 
 :ref:`DebugDraw<enum_Viewport_DebugDraw>` **DEBUG_DRAW_SDFGI** = ``16``
 
-.. container:: contribute
+Draws the cascades used to render signed distance field global illumination (SDFGI).
 
-	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
-
-
+Does nothing if the current environment's :ref:`Environment.sdfgi_enabled<class_Environment_property_sdfgi_enabled>` is ``false`` or SDFGI is not supported on the platform.
 
 .. _class_Viewport_constant_DEBUG_DRAW_SDFGI_PROBES:
 
@@ -712,11 +694,9 @@ Draws the decal atlas used by :ref:`Decal<class_Decal>`\ s and light projector t
 
 :ref:`DebugDraw<enum_Viewport_DebugDraw>` **DEBUG_DRAW_SDFGI_PROBES** = ``17``
 
-.. container:: contribute
+Draws the probes used for signed distance field global illumination (SDFGI).
 
-	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
-
-
+Does nothing if the current environment's :ref:`Environment.sdfgi_enabled<class_Environment_property_sdfgi_enabled>` is ``false`` or SDFGI is not supported on the platform.
 
 .. _class_Viewport_constant_DEBUG_DRAW_GI_BUFFER:
 
@@ -724,11 +704,7 @@ Draws the decal atlas used by :ref:`Decal<class_Decal>`\ s and light projector t
 
 :ref:`DebugDraw<enum_Viewport_DebugDraw>` **DEBUG_DRAW_GI_BUFFER** = ``18``
 
-.. container:: contribute
-
-	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
-
-
+Draws the buffer used for global illumination (GI).
 
 .. _class_Viewport_constant_DEBUG_DRAW_DISABLE_LOD:
 
@@ -736,11 +712,7 @@ Draws the decal atlas used by :ref:`Decal<class_Decal>`\ s and light projector t
 
 :ref:`DebugDraw<enum_Viewport_DebugDraw>` **DEBUG_DRAW_DISABLE_LOD** = ``19``
 
-.. container:: contribute
-
-	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
-
-
+Draws all of the objects at their highest polycount, without low level of detail (LOD).
 
 .. _class_Viewport_constant_DEBUG_DRAW_CLUSTER_OMNI_LIGHTS:
 
@@ -748,11 +720,7 @@ Draws the decal atlas used by :ref:`Decal<class_Decal>`\ s and light projector t
 
 :ref:`DebugDraw<enum_Viewport_DebugDraw>` **DEBUG_DRAW_CLUSTER_OMNI_LIGHTS** = ``20``
 
-.. container:: contribute
-
-	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
-
-
+Draws the cluster used by :ref:`OmniLight3D<class_OmniLight3D>` nodes to optimize light rendering.
 
 .. _class_Viewport_constant_DEBUG_DRAW_CLUSTER_SPOT_LIGHTS:
 
@@ -760,11 +728,7 @@ Draws the decal atlas used by :ref:`Decal<class_Decal>`\ s and light projector t
 
 :ref:`DebugDraw<enum_Viewport_DebugDraw>` **DEBUG_DRAW_CLUSTER_SPOT_LIGHTS** = ``21``
 
-.. container:: contribute
-
-	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
-
-
+Draws the cluster used by :ref:`SpotLight3D<class_SpotLight3D>` nodes to optimize light rendering.
 
 .. _class_Viewport_constant_DEBUG_DRAW_CLUSTER_DECALS:
 
@@ -772,11 +736,7 @@ Draws the decal atlas used by :ref:`Decal<class_Decal>`\ s and light projector t
 
 :ref:`DebugDraw<enum_Viewport_DebugDraw>` **DEBUG_DRAW_CLUSTER_DECALS** = ``22``
 
-.. container:: contribute
-
-	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
-
-
+Draws the cluster used by :ref:`Decal<class_Decal>` nodes to optimize decal rendering.
 
 .. _class_Viewport_constant_DEBUG_DRAW_CLUSTER_REFLECTION_PROBES:
 
@@ -784,11 +744,7 @@ Draws the decal atlas used by :ref:`Decal<class_Decal>`\ s and light projector t
 
 :ref:`DebugDraw<enum_Viewport_DebugDraw>` **DEBUG_DRAW_CLUSTER_REFLECTION_PROBES** = ``23``
 
-.. container:: contribute
-
-	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
-
-
+Draws the cluster used by :ref:`ReflectionProbe<class_ReflectionProbe>` nodes to optimize decal rendering.
 
 .. _class_Viewport_constant_DEBUG_DRAW_OCCLUDERS:
 
@@ -796,11 +752,7 @@ Draws the decal atlas used by :ref:`Decal<class_Decal>`\ s and light projector t
 
 :ref:`DebugDraw<enum_Viewport_DebugDraw>` **DEBUG_DRAW_OCCLUDERS** = ``24``
 
-.. container:: contribute
-
-	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
-
-
+Draws the buffer used for occlusion culling.
 
 .. _class_Viewport_constant_DEBUG_DRAW_MOTION_VECTORS:
 
@@ -808,11 +760,7 @@ Draws the decal atlas used by :ref:`Decal<class_Decal>`\ s and light projector t
 
 :ref:`DebugDraw<enum_Viewport_DebugDraw>` **DEBUG_DRAW_MOTION_VECTORS** = ``25``
 
-.. container:: contribute
-
-	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
-
-
+Draws vector lines over the viewport to indicate the movement of pixels between frames.
 
 .. _class_Viewport_constant_DEBUG_DRAW_INTERNAL_BUFFER:
 
@@ -874,7 +822,7 @@ Use this for non-pixel art textures that may be viewed at a low scale (e.g. due 
 
 :ref:`DefaultCanvasItemTextureFilter<enum_Viewport_DefaultCanvasItemTextureFilter>` **DEFAULT_CANVAS_ITEM_TEXTURE_FILTER_MAX** = ``4``
 
-Max value for :ref:`DefaultCanvasItemTextureFilter<enum_Viewport_DefaultCanvasItemTextureFilter>` enum.
+Represents the size of the :ref:`DefaultCanvasItemTextureFilter<enum_Viewport_DefaultCanvasItemTextureFilter>` enum.
 
 .. rst-class:: classref-item-separator
 
@@ -916,7 +864,7 @@ Flip the texture when repeating so that the edge lines up instead of abruptly ch
 
 :ref:`DefaultCanvasItemTextureRepeat<enum_Viewport_DefaultCanvasItemTextureRepeat>` **DEFAULT_CANVAS_ITEM_TEXTURE_REPEAT_MAX** = ``3``
 
-Max value for :ref:`DefaultCanvasItemTextureRepeat<enum_Viewport_DefaultCanvasItemTextureRepeat>` enum.
+Represents the size of the :ref:`DefaultCanvasItemTextureRepeat<enum_Viewport_DefaultCanvasItemTextureRepeat>` enum.
 
 .. rst-class:: classref-item-separator
 
@@ -934,11 +882,7 @@ enum **SDFOversize**:
 
 :ref:`SDFOversize<enum_Viewport_SDFOversize>` **SDF_OVERSIZE_100_PERCENT** = ``0``
 
-.. container:: contribute
-
-	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
-
-
+The signed distance field only covers the viewport's own rectangle.
 
 .. _class_Viewport_constant_SDF_OVERSIZE_120_PERCENT:
 
@@ -946,11 +890,7 @@ enum **SDFOversize**:
 
 :ref:`SDFOversize<enum_Viewport_SDFOversize>` **SDF_OVERSIZE_120_PERCENT** = ``1``
 
-.. container:: contribute
-
-	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
-
-
+The signed distance field is expanded to cover 20% of the viewport's size around the borders.
 
 .. _class_Viewport_constant_SDF_OVERSIZE_150_PERCENT:
 
@@ -958,11 +898,7 @@ enum **SDFOversize**:
 
 :ref:`SDFOversize<enum_Viewport_SDFOversize>` **SDF_OVERSIZE_150_PERCENT** = ``2``
 
-.. container:: contribute
-
-	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
-
-
+The signed distance field is expanded to cover 50% of the viewport's size around the borders.
 
 .. _class_Viewport_constant_SDF_OVERSIZE_200_PERCENT:
 
@@ -970,11 +906,7 @@ enum **SDFOversize**:
 
 :ref:`SDFOversize<enum_Viewport_SDFOversize>` **SDF_OVERSIZE_200_PERCENT** = ``3``
 
-.. container:: contribute
-
-	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
-
-
+The signed distance field is expanded to cover 100% (double) of the viewport's size around the borders.
 
 .. _class_Viewport_constant_SDF_OVERSIZE_MAX:
 
@@ -982,11 +914,7 @@ enum **SDFOversize**:
 
 :ref:`SDFOversize<enum_Viewport_SDFOversize>` **SDF_OVERSIZE_MAX** = ``4``
 
-.. container:: contribute
-
-	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
-
-
+Represents the size of the :ref:`SDFOversize<enum_Viewport_SDFOversize>` enum.
 
 .. rst-class:: classref-item-separator
 
@@ -1004,11 +932,7 @@ enum **SDFScale**:
 
 :ref:`SDFScale<enum_Viewport_SDFScale>` **SDF_SCALE_100_PERCENT** = ``0``
 
-.. container:: contribute
-
-	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
-
-
+The signed distance field is rendered at full resolution.
 
 .. _class_Viewport_constant_SDF_SCALE_50_PERCENT:
 
@@ -1016,11 +940,7 @@ enum **SDFScale**:
 
 :ref:`SDFScale<enum_Viewport_SDFScale>` **SDF_SCALE_50_PERCENT** = ``1``
 
-.. container:: contribute
-
-	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
-
-
+The signed distance field is rendered at half the resolution of this viewport.
 
 .. _class_Viewport_constant_SDF_SCALE_25_PERCENT:
 
@@ -1028,11 +948,7 @@ enum **SDFScale**:
 
 :ref:`SDFScale<enum_Viewport_SDFScale>` **SDF_SCALE_25_PERCENT** = ``2``
 
-.. container:: contribute
-
-	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
-
-
+The signed distance field is rendered at a quarter the resolution of this viewport.
 
 .. _class_Viewport_constant_SDF_SCALE_MAX:
 
@@ -1040,11 +956,7 @@ enum **SDFScale**:
 
 :ref:`SDFScale<enum_Viewport_SDFScale>` **SDF_SCALE_MAX** = ``3``
 
-.. container:: contribute
-
-	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
-
-
+Represents the size of the :ref:`SDFScale<enum_Viewport_SDFScale>` enum.
 
 .. rst-class:: classref-item-separator
 
@@ -1062,7 +974,7 @@ enum **VRSMode**:
 
 :ref:`VRSMode<enum_Viewport_VRSMode>` **VRS_DISABLED** = ``0``
 
-VRS is disabled.
+Variable Rate Shading is disabled.
 
 .. _class_Viewport_constant_VRS_TEXTURE:
 
@@ -1070,7 +982,7 @@ VRS is disabled.
 
 :ref:`VRSMode<enum_Viewport_VRSMode>` **VRS_TEXTURE** = ``1``
 
-VRS uses a texture. Note, for stereoscopic use a texture atlas with a texture for each view.
+Variable Rate Shading uses a texture. Note, for stereoscopic use a texture atlas with a texture for each view.
 
 .. _class_Viewport_constant_VRS_XR:
 
@@ -1078,7 +990,7 @@ VRS uses a texture. Note, for stereoscopic use a texture atlas with a texture fo
 
 :ref:`VRSMode<enum_Viewport_VRSMode>` **VRS_XR** = ``2``
 
-VRS texture is supplied by the primary :ref:`XRInterface<class_XRInterface>`.
+Variable Rate Shading's texture is supplied by the primary :ref:`XRInterface<class_XRInterface>`.
 
 .. _class_Viewport_constant_VRS_MAX:
 
@@ -1646,9 +1558,9 @@ Sets the screen-space antialiasing method used. Screen-space antialiasing works 
 - |void| **set_sdf_oversize**\ (\ value\: :ref:`SDFOversize<enum_Viewport_SDFOversize>`\ )
 - :ref:`SDFOversize<enum_Viewport_SDFOversize>` **get_sdf_oversize**\ (\ )
 
-.. container:: contribute
+Controls how much of the original viewport's size should be covered by the 2D signed distance field. This SDF can be sampled in :ref:`CanvasItem<class_CanvasItem>` shaders and is also used for :ref:`GPUParticles2D<class_GPUParticles2D>` collision. Higher values allow portions of occluders located outside the viewport to still be taken into account in the generated signed distance field, at the cost of performance. If you notice particles falling through :ref:`LightOccluder2D<class_LightOccluder2D>`\ s as the occluders leave the viewport, increase this setting.
 
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+The percentage is added on each axis and on both sides. For example, with the default :ref:`SDF_OVERSIZE_120_PERCENT<class_Viewport_constant_SDF_OVERSIZE_120_PERCENT>`, the signed distance field will cover 20% of the viewport's size outside the viewport on each side (top, right, bottom, left).
 
 .. rst-class:: classref-item-separator
 
@@ -1665,9 +1577,7 @@ Sets the screen-space antialiasing method used. Screen-space antialiasing works 
 - |void| **set_sdf_scale**\ (\ value\: :ref:`SDFScale<enum_Viewport_SDFScale>`\ )
 - :ref:`SDFScale<enum_Viewport_SDFScale>` **get_sdf_scale**\ (\ )
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+The resolution scale to use for the 2D signed distance field. Higher values lead to a more precise and more stable signed distance field as the camera moves, at the cost of performance.
 
 .. rst-class:: classref-item-separator
 
@@ -1684,9 +1594,7 @@ Sets the screen-space antialiasing method used. Screen-space antialiasing works 
 - |void| **set_snap_2d_transforms_to_pixel**\ (\ value\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **is_snap_2d_transforms_to_pixel_enabled**\ (\ )
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+If ``true``, :ref:`CanvasItem<class_CanvasItem>` nodes will internally snap to full pixels. Their position can still be sub-pixel, but the decimals will not have effect. This can lead to a crisper appearance at the cost of less smooth movement, especially when :ref:`Camera2D<class_Camera2D>` smoothing is enabled.
 
 .. rst-class:: classref-item-separator
 
@@ -1703,9 +1611,7 @@ Sets the screen-space antialiasing method used. Screen-space antialiasing works 
 - |void| **set_snap_2d_vertices_to_pixel**\ (\ value\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **is_snap_2d_vertices_to_pixel_enabled**\ (\ )
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+If ``true``, vertices of :ref:`CanvasItem<class_CanvasItem>` nodes will snap to full pixels. Only affects the final vertex positions, not the transforms. This can lead to a crisper appearance at the cost of less smooth movement, especially when :ref:`Camera2D<class_Camera2D>` smoothing is enabled.
 
 .. rst-class:: classref-item-separator
 
@@ -1878,7 +1784,7 @@ Texture to use when :ref:`vrs_mode<class_Viewport_property_vrs_mode>` is set to 
 
 The texture *must* use a lossless compression format so that colors can be matched precisely. The following VRS densities are mapped to various colors, with brighter colors representing a lower level of shading precision:
 
-::
+.. code:: text
 
     - 1×1 = rgb(0, 0, 0)     - #000000
     - 1×2 = rgb(0, 85, 0)    - #005500

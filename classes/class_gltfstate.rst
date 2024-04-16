@@ -312,6 +312,8 @@ The file name associated with this GLTF data. If it ends with ``.gltf``, this is
 
 The binary buffer attached to a .glb file.
 
+**Note:** The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedByteArray<class_PackedByteArray>` for more details.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -400,6 +402,8 @@ The original raw JSON document corresponding to this GLTFState.
 - :ref:`PackedInt32Array<class_PackedInt32Array>` **get_root_nodes**\ (\ )
 
 The root nodes of the GLTF file. Typically, a GLTF file will only have one scene, and therefore one root node. However, a GLTF file may have multiple scenes and therefore multiple root nodes, which will be generated as siblings of each other and as children of the root node of the generated Godot scene.
+
+**Note:** The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedInt32Array<class_PackedInt32Array>` for more details.
 
 .. rst-class:: classref-item-separator
 

@@ -17,8 +17,9 @@ For compiling under Windows, the following is required:
 
 - `Visual Studio Community <https://www.visualstudio.com/vs/community/>`_,
   version 2019 or later. Visual Studio 2022 is recommended.
-  **Make sure to read "Installing Visual Studio caveats" below or you
-  will have to run/download the installer again.**
+  **Make sure to enable C++ in the list of workflows to install.**
+  If you've already installed Visual Studio without C++ support, run the installer
+  again; it should present you a **Modify** button.
 - `MinGW-w64 <https://mingw-w64.org/>`_ with GCC can be used as an alternative to
   Visual Studio. Be sure to install/configure it to use the ``posix`` thread model.
   **Important:** When using MinGW to compile the ``master`` branch, you need GCC 9 or later.
@@ -75,20 +76,6 @@ SCons version is too old. Update it to the latest version with
 ``python -m pip install --upgrade scons``.
 
 .. _doc_compiling_for_windows_install_vs:
-
-Installing Visual Studio caveats
---------------------------------
-
-If installing Visual Studio 2017 or 2019, make sure to enable **C++** in
-the list of workflows to install.
-
-If installing Visual Studio 2015, make sure to run a **Custom**
-installation instead of **Typical** and select **C++** as a language there.
-
-If you've already made the mistake of installing Visual Studio without
-C++ support, run the installer again; it should present you a **Modify** button.
-Running the installer from *Add/Remove Programs* will only give you
-a **Repair** option, which won't let you install C++ tools.
 
 Downloading Godot's source
 --------------------------

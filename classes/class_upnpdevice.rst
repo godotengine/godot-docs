@@ -106,6 +106,8 @@ Empty HTTP response.
 
 :ref:`IGDStatus<enum_UPNPDevice_IGDStatus>` **IGD_STATUS_NO_URLS** = ``3``
 
+**Deprecated:** This value is no longer used.
+
 Returned response contained no URLs.
 
 .. _class_UPNPDevice_constant_IGD_STATUS_NO_IGD:
@@ -145,6 +147,8 @@ Invalid control.
 .. rst-class:: classref-enumeration-constant
 
 :ref:`IGDStatus<enum_UPNPDevice_IGDStatus>` **IGD_STATUS_MALLOC_ERROR** = ``8``
+
+**Deprecated:** This value is no longer used.
 
 Memory allocation error.
 

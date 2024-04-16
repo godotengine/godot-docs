@@ -989,7 +989,7 @@ While all options have the same outcome (``button``'s :ref:`BaseButton.button_do
 
 The syntax to bind parameters is through :ref:`Callable.bind<class_Callable_method_bind>`, which returns a copy of the :ref:`Callable<class_Callable>` with its parameters bound.
 
-When calling :ref:`emit_signal<class_Object_method_emit_signal>`, the signal parameters can be also passed. The examples below show the relationship between these signal parameters and bound parameters.
+When calling :ref:`emit_signal<class_Object_method_emit_signal>` or :ref:`Signal.emit<class_Signal_method_emit>`, the signal parameters can be also passed. The examples below show the relationship between these signal parameters and bound parameters.
 
 
 .. tabs::
@@ -1003,7 +1003,7 @@ When calling :ref:`emit_signal<class_Object_method_emit_signal>`, the signal par
         player.hit.connect(_on_player_hit.bind("sword", 100))
     
         # Parameters added when emitting the signal are passed first.
-        player.emit_signal("hit", "Dark lord", 5)
+        player.hit.emit("Dark lord", 5)
     
     # We pass two arguments when emitting (`hit_by`, `level`),
     # and bind two more arguments when connecting (`weapon_type`, `damage`).
@@ -1745,7 +1745,7 @@ Returns a :ref:`String<class_String>` representing the object. Defaults to ``"<C
 
 :ref:`String<class_String>` **tr**\ (\ message\: :ref:`StringName<class_StringName>`, context\: :ref:`StringName<class_StringName>` = &""\ ) |const|
 
-Translates a ``message``, using the translation catalogs configured in the Project Settings. Further ``context`` can be specified to help with the translation.
+Translates a ``message``, using the translation catalogs configured in the Project Settings. Further ``context`` can be specified to help with the translation. Note that most :ref:`Control<class_Control>` nodes automatically translate their strings, so this method is mostly useful for formatted strings or custom drawn text.
 
 If :ref:`can_translate_messages<class_Object_method_can_translate_messages>` is ``false``, or no translation is available, this method returns the ``message`` without changes. See :ref:`set_message_translation<class_Object_method_set_message_translation>`.
 

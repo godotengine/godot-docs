@@ -51,7 +51,7 @@ Preparing the scene
 -------------------
 
 Create a new empty scene, add a root :ref:`Node <class_Node>` and add a script to it.
-Then add a :ref:`HTTPRequest <class_HTTPRequest>` node as a child.
+Then add an :ref:`HTTPRequest <class_HTTPRequest>` node as a child.
 
 .. image:: img/rest_api_scene.webp
 

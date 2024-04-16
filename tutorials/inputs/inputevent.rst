@@ -99,7 +99,7 @@ received input, in order:
 6. If so far no one consumed the event, the :ref:`Node._unhandled_key_input() <class_Node_private_method__unhandled_key_input>` callback
    will be called if overridden (and not disabled with
    :ref:`Node.set_process_unhandled_key_input() <class_Node_method_set_process_unhandled_key_input>`).
-   This happens only if the event is a :ref:`InputEventKey <class_InputEventKey>`.
+   This happens only if the event is an :ref:`InputEventKey <class_InputEventKey>`.
    If any function consumes the event, it can call :ref:`Viewport.set_input_as_handled() <class_Viewport_method_set_input_as_handled>`, and the
    event will not spread any more. The unhandled key input callback is ideal for key events.
 7. If so far no one consumed the event, the :ref:`Node._unhandled_input() <class_Node_private_method__unhandled_input>` callback

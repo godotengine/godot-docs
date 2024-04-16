@@ -68,6 +68,8 @@ Arrays can be concatenated using the ``+`` operator:
 
 \ **Note:** Erasing elements while iterating over arrays is **not** supported and will result in unpredictable behavior.
 
+\ **Differences between packed arrays, typed arrays, and untyped arrays:** Packed arrays are generally faster to iterate on and modify compared to a typed array of the same type (e.g. :ref:`PackedInt64Array<class_PackedInt64Array>` versus ``Array[int]``). Also, packed arrays consume less memory. As a downside, packed arrays are less flexible as they don't offer as many convenience methods such as :ref:`map<class_Array_method_map>`. Typed arrays are in turn faster to iterate on and modify than untyped arrays.
+
 .. note::
 
 	There are notable differences when using this API with C#. See :ref:`doc_c_sharp_differences` for more information.
@@ -259,7 +261,37 @@ Constructs an empty **Array**.
 
 :ref:`Array<class_Array>` **Array**\ (\ base\: :ref:`Array<class_Array>`, type\: :ref:`int<class_int>`, class_name\: :ref:`StringName<class_StringName>`, script\: :ref:`Variant<class_Variant>`\ )
 
-Creates a typed array from the ``base`` array.
+Creates a typed array from the ``base`` array. All arguments are required.
+
+- ``type`` is the built-in type as a :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` constant, for example :ref:`@GlobalScope.TYPE_INT<class_@GlobalScope_constant_TYPE_INT>`.
+
+- ``class_name`` is the **native** class name, for example :ref:`Node<class_Node>`. If ``type`` is not :ref:`@GlobalScope.TYPE_OBJECT<class_@GlobalScope_constant_TYPE_OBJECT>`, must be an empty string.
+
+- ``script`` is the associated script. Must be a :ref:`Script<class_Script>` instance or ``null``.
+
+Examples:
+
+::
+
+    class_name MyNode
+    extends Node
+    
+    class MyClass:
+        pass
+    
+    func _ready():
+        var a = Array([], TYPE_INT, &"", null) # Array[int]
+        var b = Array([], TYPE_OBJECT, &"Node", null) # Array[Node]
+        var c = Array([], TYPE_OBJECT, &"Node", MyNode) # Array[MyNode]
+        var d = Array([], TYPE_OBJECT, &"RefCounted", MyClass) # Array[MyClass]
+
+\ **Note:** This constructor can be useful if you want to create a typed array on the fly, but you are not required to use it. In GDScript you can use a temporary variable with the static type you need and then pass it:
+
+::
+
+    func _ready():
+        var a: Array[int] = []
+        some_func(a)
 
 .. rst-class:: classref-item-separator
 
@@ -673,7 +705,7 @@ Returns the first element of the array. Prints an error and returns ``null`` if 
 
 :ref:`int<class_int>` **get_typed_builtin**\ (\ ) |const|
 
-Returns the :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` constant for a typed array. If the **Array** is not typed, returns :ref:`@GlobalScope.TYPE_NIL<class_@GlobalScope_constant_TYPE_NIL>`.
+Returns the built-in type of the typed array as a :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` constant. If the array is not typed, returns :ref:`@GlobalScope.TYPE_NIL<class_@GlobalScope_constant_TYPE_NIL>`.
 
 .. rst-class:: classref-item-separator
 
@@ -685,7 +717,7 @@ Returns the :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` constant for a t
 
 :ref:`StringName<class_StringName>` **get_typed_class_name**\ (\ ) |const|
 
-Returns a class name of a typed **Array** of type :ref:`@GlobalScope.TYPE_OBJECT<class_@GlobalScope_constant_TYPE_OBJECT>`.
+Returns the **native** class name of the typed array if the built-in type is :ref:`@GlobalScope.TYPE_OBJECT<class_@GlobalScope_constant_TYPE_OBJECT>`. Otherwise, this method returns an empty string.
 
 .. rst-class:: classref-item-separator
 
@@ -697,7 +729,7 @@ Returns a class name of a typed **Array** of type :ref:`@GlobalScope.TYPE_OBJECT
 
 :ref:`Variant<class_Variant>` **get_typed_script**\ (\ ) |const|
 
-Returns the script associated with a typed array tied to a class name.
+Returns the script associated with the typed array. This method returns a :ref:`Script<class_Script>` instance or ``null``.
 
 .. rst-class:: classref-item-separator
 

@@ -109,6 +109,8 @@ For any range, the character advance and offset can be customized by appending t
 
 Make sure :ref:`character_ranges<class_ResourceImporterImageFont_property_character_ranges>` doesn't exceed the number of :ref:`columns<class_ResourceImporterImageFont_property_columns>` \* :ref:`rows<class_ResourceImporterImageFont_property_rows>` defined. Otherwise, the font will fail to import.
 
+**Note:** The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedStringArray<class_PackedStringArray>` for more details.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -182,6 +184,8 @@ Margin to cut on the sides of the entire image. This can be used to cut parts of
 Kerning pairs for the font. Kerning pair adjust the spacing between two characters.
 
 Each string consist of three space separated values: "from" string, "to" string and integer offset. Each combination form the two string for a kerning pair, e.g, ``ab cd -3`` will create kerning pairs ``ac``, ``ad``, ``bc``, and ``bd`` with offset ``-3``.
+
+**Note:** The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedStringArray<class_PackedStringArray>` for more details.
 
 .. rst-class:: classref-item-separator
 

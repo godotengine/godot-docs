@@ -36,9 +36,9 @@ If you need to override the default physics behavior, you can write a custom for
 Tutorials
 ---------
 
-- `2D Physics Platformer Demo <https://godotengine.org/asset-library/asset/119>`__
+- `2D Physics Platformer Demo <https://godotengine.org/asset-library/asset/2725>`__
 
-- `Instancing Demo <https://godotengine.org/asset-library/asset/148>`__
+- `Instancing Demo <https://godotengine.org/asset-library/asset/2716>`__
 
 .. rst-class:: classref-reftable-group
 
@@ -538,7 +538,9 @@ Continuous collision detection tries to predict where a moving body will collide
 - |void| **set_use_custom_integrator**\ (\ value\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **is_using_custom_integrator**\ (\ )
 
-If ``true``, internal force integration is disabled for this body. Aside from collision response, the body will only move as determined by the :ref:`_integrate_forces<class_RigidBody2D_private_method__integrate_forces>` function.
+If ``true``, the standard force integration (like gravity or damping) will be disabled for this body. Other than collision response, the body will only move as determined by the :ref:`_integrate_forces<class_RigidBody2D_private_method__integrate_forces>` method, if that virtual method is overridden.
+
+Setting this property will call the method :ref:`PhysicsServer2D.body_set_omit_force_integration<class_PhysicsServer2D_method_body_set_omit_force_integration>` internally.
 
 .. rst-class:: classref-item-separator
 
@@ -801,7 +803,7 @@ Method Descriptions
 
 |void| **_integrate_forces**\ (\ state\: :ref:`PhysicsDirectBodyState2D<class_PhysicsDirectBodyState2D>`\ ) |virtual|
 
-Allows you to read and safely modify the simulation state for the object. Use this instead of :ref:`Node._physics_process<class_Node_private_method__physics_process>` if you need to directly change the body's ``position`` or other physics properties. By default, it works in addition to the usual physics behavior, but :ref:`custom_integrator<class_RigidBody2D_property_custom_integrator>` allows you to disable the default behavior and write custom force integration for a body.
+Called during physics processing, allowing you to read and safely modify the simulation state for the object. By default, it is called before the standard force integration, but the :ref:`custom_integrator<class_RigidBody2D_property_custom_integrator>` property allows you to disable the standard force integration and do fully custom force integration for a body.
 
 .. rst-class:: classref-item-separator
 

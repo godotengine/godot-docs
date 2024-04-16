@@ -30,11 +30,11 @@ Tutorials
 
 - :doc:`Audio streams <../tutorials/audio/audio_streams>`
 
-- `Audio Generator Demo <https://godotengine.org/asset-library/asset/526>`__
+- `Audio Generator Demo <https://godotengine.org/asset-library/asset/2759>`__
 
-- `Audio Mic Record Demo <https://godotengine.org/asset-library/asset/527>`__
+- `Audio Microphone Record Demo <https://godotengine.org/asset-library/asset/2760>`__
 
-- `Audio Spectrum Demo <https://godotengine.org/asset-library/asset/528>`__
+- `Audio Spectrum Visualizer Demo <https://godotengine.org/asset-library/asset/2762>`__
 
 .. rst-class:: classref-reftable-group
 

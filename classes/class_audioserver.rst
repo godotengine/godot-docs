@@ -28,11 +28,11 @@ Tutorials
 
 - :doc:`Audio buses <../tutorials/audio/audio_buses>`
 
-- `Audio Device Changer Demo <https://godotengine.org/asset-library/asset/525>`__
+- `Audio Device Changer Demo <https://godotengine.org/asset-library/asset/2758>`__
 
-- `Audio Mic Record Demo <https://godotengine.org/asset-library/asset/527>`__
+- `Audio Microphone Record Demo <https://godotengine.org/asset-library/asset/2760>`__
 
-- `Audio Spectrum Demo <https://godotengine.org/asset-library/asset/528>`__
+- `Audio Spectrum Visualizer Demo <https://godotengine.org/asset-library/asset/2762>`__
 
 .. rst-class:: classref-reftable-group
 

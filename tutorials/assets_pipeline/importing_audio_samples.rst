@@ -17,7 +17,7 @@ Each format has different advantages:
   smaller file size, but require significantly more processing power to
   play back.
 - MP3 files use better compression than WAV with IMA-ADPCM, but worse than
-  Ogg Vorbis. This means that a MP3 file with roughly equal quality to
+  Ogg Vorbis. This means that an MP3 file with roughly equal quality to
   Ogg Vorbis will be significantly larger. On the bright side, MP3 requires
   less CPU usage to play back compared to Ogg Vorbis.
 
@@ -71,13 +71,13 @@ the FileSystem dock:
 
    Import options in the Import dock after selecting a WAV file in the FileSystem dock
 
-The set of options available after selecting a Ogg Vorbis or MP3 file is different:
+The set of options available after selecting an Ogg Vorbis or MP3 file is different:
 
 .. figure:: img/importing_audio_samples_import_options_mp3.webp
    :align: center
-   :alt: Import options in the Import dock after selecting a MP3 file in the FileSystem dock
+   :alt: Import options in the Import dock after selecting an MP3 file in the FileSystem dock
 
-   Import options in the Import dock after selecting a MP3 file in the
+   Import options in the Import dock after selecting an MP3 file in the
    FileSystem dock. Options are identical for Ogg Vorbis files.
 
 After importing a sound, you can play it back using the AudioStreamPlayer,
@@ -246,9 +246,9 @@ If you double-click an Ogg Vorbis or MP3 file in the FileSystem dock (or choose
 
 .. figure:: img/importing_audio_samples_advanced_import_settings.webp
    :align: center
-   :alt: Advanced dialog when double-clicking a Ogg Vorbis or MP3 file in the FileSystem dock
+   :alt: Advanced dialog when double-clicking an Ogg Vorbis or MP3 file in the FileSystem dock
 
-   Advanced dialog when double-clicking a Ogg Vorbis or MP3 file in the FileSystem dock
+   Advanced dialog when double-clicking an Ogg Vorbis or MP3 file in the FileSystem dock
 
 This dialog allows you to edit the audio's loop point with a real-time preview,
 in addition to the :abbr:`BPM (Beats Per Minute)`, beat count and bar beats.

@@ -908,6 +908,8 @@ Sets the :ref:`Color<class_Color>`\ s to modulate particles by when using :ref:`
 
 \ **Note:** :ref:`emission_colors<class_CPUParticles3D_property_emission_colors>` multiplies the particle mesh's vertex colors. To have a visible effect on a :ref:`BaseMaterial3D<class_BaseMaterial3D>`, :ref:`BaseMaterial3D.vertex_color_use_as_albedo<class_BaseMaterial3D_property_vertex_color_use_as_albedo>` *must* be ``true``. For a :ref:`ShaderMaterial<class_ShaderMaterial>`, ``ALBEDO *= COLOR.rgb;`` must be inserted in the shader's ``fragment()`` function. Otherwise, :ref:`emission_colors<class_CPUParticles3D_property_emission_colors>` will have no visible effect.
 
+**Note:** The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedColorArray<class_PackedColorArray>` for more details.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -925,6 +927,8 @@ Sets the :ref:`Color<class_Color>`\ s to modulate particles by when using :ref:`
 
 Sets the direction the particles will be emitted in when using :ref:`EMISSION_SHAPE_DIRECTED_POINTS<class_CPUParticles3D_constant_EMISSION_SHAPE_DIRECTED_POINTS>`.
 
+**Note:** The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedVector3Array<class_PackedVector3Array>` for more details.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -941,6 +945,8 @@ Sets the direction the particles will be emitted in when using :ref:`EMISSION_SH
 - :ref:`PackedVector3Array<class_PackedVector3Array>` **get_emission_points**\ (\ )
 
 Sets the initial positions to spawn particles when using :ref:`EMISSION_SHAPE_POINTS<class_CPUParticles3D_constant_EMISSION_SHAPE_POINTS>` or :ref:`EMISSION_SHAPE_DIRECTED_POINTS<class_CPUParticles3D_constant_EMISSION_SHAPE_DIRECTED_POINTS>`.
+
+**Note:** The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedVector3Array<class_PackedVector3Array>` for more details.
 
 .. rst-class:: classref-item-separator
 

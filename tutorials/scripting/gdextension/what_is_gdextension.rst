@@ -118,6 +118,6 @@ not compatible with Godot 3.x.
 
 GDExtension add-ons are also only compatible with engine builds that use the
 level of floating-point precision the extension was compiled for. This means
-that if you use a engine build with double-precision floats, the extension must
+that if you use an engine build with double-precision floats, the extension must
 also be compiled for double-precision floats. See
 :ref:`doc_large_world_coordinates` for details.

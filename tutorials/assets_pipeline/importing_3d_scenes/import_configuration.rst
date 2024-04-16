@@ -225,7 +225,7 @@ These options are only visible if some of the above options are enabled:
   use cases.
 - **Occluder > Simplification Distance:** Only visible if **Generate >
   Occluder** is set to **Mesh + Occluder** or **Occluder Only**. Higher values
-  result in a occluder mesh with fewer vertices (resulting in decreased CPU
+  result in an occluder mesh with fewer vertices (resulting in decreased CPU
   utilization), at the cost of more occlusion culling issues (such as false
   positives or false negatives). If you run into objects disappearing when they
   shouldn't when the camera is near a certain mesh, try decreasing this value.

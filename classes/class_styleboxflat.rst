@@ -25,7 +25,7 @@ Setting corner radius to high values is allowed. As soon as corners overlap, the
 
 \ **Example:**\ 
 
-::
+.. code:: text
 
     height = 30
     corner_radius_top_left = 50
@@ -33,7 +33,7 @@ Setting corner radius to high values is allowed. As soon as corners overlap, the
 
 The relative system now would take the 1:2 ratio of the two left corners to calculate the actual corner width. Both corners added will **never** be more than the height. Result:
 
-::
+.. code:: text
 
     corner_radius_top_left: 10
     corner_radius_bottom_left: 20

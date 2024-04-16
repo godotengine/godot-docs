@@ -1863,7 +1863,7 @@ Returns the value of the given state of the body. See :ref:`BodyState<enum_Physi
 
 :ref:`bool<class_bool>` **body_is_omitting_force_integration**\ (\ body\: :ref:`RID<class_RID>`\ ) |const|
 
-Returns ``true`` if the body uses a callback function to calculate its own physics (see :ref:`body_set_force_integration_callback<class_PhysicsServer2D_method_body_set_force_integration_callback>`).
+Returns ``true`` if the body is omitting the standard force integration. See :ref:`body_set_omit_force_integration<class_PhysicsServer2D_method_body_set_omit_force_integration>`.
 
 .. rst-class:: classref-item-separator
 
@@ -2001,15 +2001,17 @@ Continuous collision detection tries to predict where a moving body would collid
 
 |void| **body_set_force_integration_callback**\ (\ body\: :ref:`RID<class_RID>`, callable\: :ref:`Callable<class_Callable>`, userdata\: :ref:`Variant<class_Variant>` = null\ )
 
-Sets the function used to calculate physics for the body, if that body allows it (see :ref:`body_set_omit_force_integration<class_PhysicsServer2D_method_body_set_omit_force_integration>`).
+Sets the body's custom force integration callback function to ``callable``. Use an empty :ref:`Callable<class_Callable>` (``Callable()``) to clear the custom callback.
 
-The force integration function takes the following two parameters:
+The function ``callable`` will be called every physics tick, before the standard force integration (see :ref:`body_set_omit_force_integration<class_PhysicsServer2D_method_body_set_omit_force_integration>`). It can be used for example to update the body's linear and angular velocity based on contact with other bodies.
 
-1. a :ref:`PhysicsDirectBodyState2D<class_PhysicsDirectBodyState2D>` ``state``: used to retrieve and modify the body's state,
+If ``userdata`` is not ``null``, the function ``callable`` must take the following two parameters:
 
-2. a :ref:`Variant<class_Variant>` ``userdata``: optional user data.
+1. ``state``: a :ref:`PhysicsDirectBodyState2D<class_PhysicsDirectBodyState2D>` used to retrieve and modify the body's state,
 
-\ **Note:** This callback is currently not called in Godot Physics.
+2. ``userdata``: a :ref:`Variant<class_Variant>`; its value will be the ``userdata`` passed into this method.
+
+If ``userdata`` is ``null``, then ``callable`` must take only the ``state`` parameter.
 
 .. rst-class:: classref-item-separator
 
@@ -2045,7 +2047,9 @@ Sets the body's mode. See :ref:`BodyMode<enum_PhysicsServer2D_BodyMode>` for the
 
 |void| **body_set_omit_force_integration**\ (\ body\: :ref:`RID<class_RID>`, enable\: :ref:`bool<class_bool>`\ )
 
-Sets whether the body uses a callback function to calculate its own physics (see :ref:`body_set_force_integration_callback<class_PhysicsServer2D_method_body_set_force_integration_callback>`).
+Sets whether the body omits the standard force integration. If ``enable`` is ``true``, the body will not automatically use applied forces, torques, and damping to update the body's linear and angular velocity. In this case, :ref:`body_set_force_integration_callback<class_PhysicsServer2D_method_body_set_force_integration_callback>` can be used to manually update the linear and angular velocity instead.
+
+This method is called when the property :ref:`RigidBody2D.custom_integrator<class_RigidBody2D_property_custom_integrator>` is set.
 
 .. rst-class:: classref-item-separator
 

@@ -399,7 +399,7 @@ Emitted when a cell with the :ref:`TreeItem.CELL_MODE_CUSTOM<class_TreeItem_cons
 
 .. rst-class:: classref-signal
 
-**empty_clicked**\ (\ position\: :ref:`Vector2<class_Vector2>`, mouse_button_index\: :ref:`int<class_int>`\ )
+**empty_clicked**\ (\ click_position\: :ref:`Vector2<class_Vector2>`, mouse_button_index\: :ref:`int<class_int>`\ )
 
 Emitted when a mouse button is clicked in the empty space of the tree.
 
@@ -459,7 +459,7 @@ Emitted when an item's icon is double-clicked. For a signal that emits when any 
 
 .. rst-class:: classref-signal
 
-**item_mouse_selected**\ (\ position\: :ref:`Vector2<class_Vector2>`, mouse_button_index\: :ref:`int<class_int>`\ )
+**item_mouse_selected**\ (\ mouse_position\: :ref:`Vector2<class_Vector2>`, mouse_button_index\: :ref:`int<class_int>`\ )
 
 Emitted when an item is selected with a mouse button.
 

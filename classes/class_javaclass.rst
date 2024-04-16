@@ -12,9 +12,18 @@ JavaClass
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-.. container:: contribute
+Represents an object from the Java Native Interface.
 
-	There is currently no description for this class. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+.. rst-class:: classref-introduction-group
+
+Description
+-----------
+
+Represents an object from the Java Native Interface. It is returned from :ref:`JavaClassWrapper.wrap<class_JavaClassWrapper_method_wrap>`.
+
+\ **Note:** This class only works on Android. For any other build, this class does nothing.
+
+\ **Note:** This class is not to be confused with :ref:`JavaScriptObject<class_JavaScriptObject>`.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

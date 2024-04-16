@@ -176,6 +176,8 @@ Property Descriptions
 
 Array containing each :ref:`Color<class_Color>` used by all instances of this mesh.
 
+**Note:** The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedColorArray<class_PackedColorArray>` for more details.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -206,6 +208,8 @@ Custom AABB for this MultiMesh resource. Setting this manually prevents costly r
 **Deprecated:** Accessing this property is very slow. Use :ref:`set_instance_custom_data<class_MultiMesh_method_set_instance_custom_data>` and :ref:`get_instance_custom_data<class_MultiMesh_method_get_instance_custom_data>` instead.
 
 Array containing each custom data value used by all instances of this mesh, as a :ref:`PackedColorArray<class_PackedColorArray>`.
+
+**Note:** The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedColorArray<class_PackedColorArray>` for more details.
 
 .. rst-class:: classref-item-separator
 
@@ -259,6 +263,8 @@ The looks of the individual instances can be modified using :ref:`set_instance_c
 
 Array containing each :ref:`Transform2D<class_Transform2D>` value used by all instances of this mesh, as a :ref:`PackedVector2Array<class_PackedVector2Array>`. Each transform is divided into 3 :ref:`Vector2<class_Vector2>` values corresponding to the transforms' ``x``, ``y``, and ``origin``.
 
+**Note:** The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedVector2Array<class_PackedVector2Array>` for more details.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -272,6 +278,8 @@ Array containing each :ref:`Transform2D<class_Transform2D>` value used by all in
 **Deprecated:** Accessing this property is very slow. Use :ref:`set_instance_transform<class_MultiMesh_method_set_instance_transform>` and :ref:`get_instance_transform<class_MultiMesh_method_get_instance_transform>` instead.
 
 Array containing each :ref:`Transform3D<class_Transform3D>` value used by all instances of this mesh, as a :ref:`PackedVector3Array<class_PackedVector3Array>`. Each transform is divided into 4 :ref:`Vector3<class_Vector3>` values corresponding to the transforms' ``x``, ``y``, ``z``, and ``origin``.
+
+**Note:** The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedVector3Array<class_PackedVector3Array>` for more details.
 
 .. rst-class:: classref-item-separator
 

@@ -33,27 +33,29 @@ Properties
 .. table::
    :widths: auto
 
-   +-------------------------------+-----------------------------------------------------------------------------+-----------------------------+
-   | :ref:`Vector2<class_Vector2>` | :ref:`autoscroll<class_Parallax2D_property_autoscroll>`                     | ``Vector2(0, 0)``           |
-   +-------------------------------+-----------------------------------------------------------------------------+-----------------------------+
-   | :ref:`bool<class_bool>`       | :ref:`follow_viewport<class_Parallax2D_property_follow_viewport>`           | ``true``                    |
-   +-------------------------------+-----------------------------------------------------------------------------+-----------------------------+
-   | :ref:`bool<class_bool>`       | :ref:`ignore_camera_scroll<class_Parallax2D_property_ignore_camera_scroll>` | ``false``                   |
-   +-------------------------------+-----------------------------------------------------------------------------+-----------------------------+
-   | :ref:`Vector2<class_Vector2>` | :ref:`limit_begin<class_Parallax2D_property_limit_begin>`                   | ``Vector2(-1e+07, -1e+07)`` |
-   +-------------------------------+-----------------------------------------------------------------------------+-----------------------------+
-   | :ref:`Vector2<class_Vector2>` | :ref:`limit_end<class_Parallax2D_property_limit_end>`                       | ``Vector2(1e+07, 1e+07)``   |
-   +-------------------------------+-----------------------------------------------------------------------------+-----------------------------+
-   | :ref:`Vector2<class_Vector2>` | :ref:`repeat_size<class_Parallax2D_property_repeat_size>`                   | ``Vector2(0, 0)``           |
-   +-------------------------------+-----------------------------------------------------------------------------+-----------------------------+
-   | :ref:`int<class_int>`         | :ref:`repeat_times<class_Parallax2D_property_repeat_times>`                 | ``1``                       |
-   +-------------------------------+-----------------------------------------------------------------------------+-----------------------------+
-   | :ref:`Vector2<class_Vector2>` | :ref:`screen_offset<class_Parallax2D_property_screen_offset>`               | ``Vector2(0, 0)``           |
-   +-------------------------------+-----------------------------------------------------------------------------+-----------------------------+
-   | :ref:`Vector2<class_Vector2>` | :ref:`scroll_offset<class_Parallax2D_property_scroll_offset>`               | ``Vector2(0, 0)``           |
-   +-------------------------------+-----------------------------------------------------------------------------+-----------------------------+
-   | :ref:`Vector2<class_Vector2>` | :ref:`scroll_scale<class_Parallax2D_property_scroll_scale>`                 | ``Vector2(1, 1)``           |
-   +-------------------------------+-----------------------------------------------------------------------------+-----------------------------+
+   +---------------------------------------------------------------------+-----------------------------------------------------------------------------+-------------------------------------------------------------------------------+
+   | :ref:`Vector2<class_Vector2>`                                       | :ref:`autoscroll<class_Parallax2D_property_autoscroll>`                     | ``Vector2(0, 0)``                                                             |
+   +---------------------------------------------------------------------+-----------------------------------------------------------------------------+-------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                             | :ref:`follow_viewport<class_Parallax2D_property_follow_viewport>`           | ``true``                                                                      |
+   +---------------------------------------------------------------------+-----------------------------------------------------------------------------+-------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                             | :ref:`ignore_camera_scroll<class_Parallax2D_property_ignore_camera_scroll>` | ``false``                                                                     |
+   +---------------------------------------------------------------------+-----------------------------------------------------------------------------+-------------------------------------------------------------------------------+
+   | :ref:`Vector2<class_Vector2>`                                       | :ref:`limit_begin<class_Parallax2D_property_limit_begin>`                   | ``Vector2(-1e+07, -1e+07)``                                                   |
+   +---------------------------------------------------------------------+-----------------------------------------------------------------------------+-------------------------------------------------------------------------------+
+   | :ref:`Vector2<class_Vector2>`                                       | :ref:`limit_end<class_Parallax2D_property_limit_end>`                       | ``Vector2(1e+07, 1e+07)``                                                     |
+   +---------------------------------------------------------------------+-----------------------------------------------------------------------------+-------------------------------------------------------------------------------+
+   | :ref:`PhysicsInterpolationMode<enum_Node_PhysicsInterpolationMode>` | physics_interpolation_mode                                                  | ``2`` (overrides :ref:`Node<class_Node_property_physics_interpolation_mode>`) |
+   +---------------------------------------------------------------------+-----------------------------------------------------------------------------+-------------------------------------------------------------------------------+
+   | :ref:`Vector2<class_Vector2>`                                       | :ref:`repeat_size<class_Parallax2D_property_repeat_size>`                   | ``Vector2(0, 0)``                                                             |
+   +---------------------------------------------------------------------+-----------------------------------------------------------------------------+-------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                                               | :ref:`repeat_times<class_Parallax2D_property_repeat_times>`                 | ``1``                                                                         |
+   +---------------------------------------------------------------------+-----------------------------------------------------------------------------+-------------------------------------------------------------------------------+
+   | :ref:`Vector2<class_Vector2>`                                       | :ref:`screen_offset<class_Parallax2D_property_screen_offset>`               | ``Vector2(0, 0)``                                                             |
+   +---------------------------------------------------------------------+-----------------------------------------------------------------------------+-------------------------------------------------------------------------------+
+   | :ref:`Vector2<class_Vector2>`                                       | :ref:`scroll_offset<class_Parallax2D_property_scroll_offset>`               | ``Vector2(0, 0)``                                                             |
+   +---------------------------------------------------------------------+-----------------------------------------------------------------------------+-------------------------------------------------------------------------------+
+   | :ref:`Vector2<class_Vector2>`                                       | :ref:`scroll_scale<class_Parallax2D_property_scroll_scale>`                 | ``Vector2(1, 1)``                                                             |
+   +---------------------------------------------------------------------+-----------------------------------------------------------------------------+-------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -232,7 +234,7 @@ The **Parallax2D**'s offset. Similar to :ref:`screen_offset<class_Parallax2D_pro
 
 Multiplier to the final **Parallax2D**'s offset. Can be used to simulate distance from the camera.
 
-For example, a value of ``1`` scrolls at the same speed as the camera. A value greater than ``1`` scrolls faster, making objects appear closer. Less than ``1`` scrolls slower, making object appear closer and a value of ``0`` stops the objects completely.
+For example, a value of ``1`` scrolls at the same speed as the camera. A value greater than ``1`` scrolls faster, making objects appear closer. Less than ``1`` scrolls slower, making objects appear further, and a value of ``0`` stops the objects completely.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

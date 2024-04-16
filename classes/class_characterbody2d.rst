@@ -32,9 +32,9 @@ Tutorials
 
 - :doc:`Using CharacterBody2D <../tutorials/physics/using_character_body_2d>`
 
-- `2D Kinematic Character Demo <https://godotengine.org/asset-library/asset/113>`__
+- `2D Kinematic Character Demo <https://godotengine.org/asset-library/asset/2719>`__
 
-- `2D Platformer Demo <https://godotengine.org/asset-library/asset/120>`__
+- `2D Platformer Demo <https://godotengine.org/asset-library/asset/2727>`__
 
 .. rst-class:: classref-reftable-group
 
@@ -498,7 +498,9 @@ Returns the floor's collision angle at the last collision point according to ``u
 
 :ref:`Vector2<class_Vector2>` **get_floor_normal**\ (\ ) |const|
 
-Returns the surface normal of the floor at the last collision point. Only valid after calling :ref:`move_and_slide<class_CharacterBody2D_method_move_and_slide>` and when :ref:`is_on_floor<class_CharacterBody2D_method_is_on_floor>` returns ``true``.
+Returns the collision normal of the floor at the last collision point. Only valid after calling :ref:`move_and_slide<class_CharacterBody2D_method_move_and_slide>` and when :ref:`is_on_floor<class_CharacterBody2D_method_is_on_floor>` returns ``true``.
+
+\ **Warning:** The collision normal is not always the same as the surface normal.
 
 .. rst-class:: classref-item-separator
 
@@ -615,7 +617,9 @@ Returns the number of times the body collided and changed direction during the l
 
 :ref:`Vector2<class_Vector2>` **get_wall_normal**\ (\ ) |const|
 
-Returns the surface normal of the wall at the last collision point. Only valid after calling :ref:`move_and_slide<class_CharacterBody2D_method_move_and_slide>` and when :ref:`is_on_wall<class_CharacterBody2D_method_is_on_wall>` returns ``true``.
+Returns the collision normal of the wall at the last collision point. Only valid after calling :ref:`move_and_slide<class_CharacterBody2D_method_move_and_slide>` and when :ref:`is_on_wall<class_CharacterBody2D_method_is_on_wall>` returns ``true``.
+
+\ **Warning:** The collision normal is not always the same as the surface normal.
 
 .. rst-class:: classref-item-separator
 

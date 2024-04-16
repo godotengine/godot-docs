@@ -49,6 +49,10 @@ Properties
    +------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+----------------------+
    | :ref:`PathfindingAlgorithm<enum_NavigationPathQueryParameters3D_PathfindingAlgorithm>`         | :ref:`pathfinding_algorithm<class_NavigationPathQueryParameters3D_property_pathfinding_algorithm>` | ``0``                |
    +------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+----------------------+
+   | :ref:`float<class_float>`                                                                      | :ref:`simplify_epsilon<class_NavigationPathQueryParameters3D_property_simplify_epsilon>`           | ``0.0``              |
+   +------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+----------------------+
+   | :ref:`bool<class_bool>`                                                                        | :ref:`simplify_path<class_NavigationPathQueryParameters3D_property_simplify_path>`                 | ``false``            |
+   +------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+----------------------+
    | :ref:`Vector3<class_Vector3>`                                                                  | :ref:`start_position<class_NavigationPathQueryParameters3D_property_start_position>`               | ``Vector3(0, 0, 0)`` |
    +------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+----------------------+
    | :ref:`Vector3<class_Vector3>`                                                                  | :ref:`target_position<class_NavigationPathQueryParameters3D_property_target_position>`             | ``Vector3(0, 0, 0)`` |
@@ -242,6 +246,42 @@ The path postprocessing applied to the raw path corridor found by the :ref:`path
 - :ref:`PathfindingAlgorithm<enum_NavigationPathQueryParameters3D_PathfindingAlgorithm>` **get_pathfinding_algorithm**\ (\ )
 
 The pathfinding algorithm used in the path query.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_NavigationPathQueryParameters3D_property_simplify_epsilon:
+
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **simplify_epsilon** = ``0.0``
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_simplify_epsilon**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_simplify_epsilon**\ (\ )
+
+The path simplification amount in worlds units.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_NavigationPathQueryParameters3D_property_simplify_path:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **simplify_path** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_simplify_path**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_simplify_path**\ (\ )
+
+If ``true`` a simplified version of the path will be returned with less critical path points removed. The simplification amount is controlled by :ref:`simplify_epsilon<class_NavigationPathQueryParameters3D_property_simplify_epsilon>`. The simplification uses a variant of Ramer-Douglas-Peucker algorithm for curve point decimation.
+
+Path simplification can be helpful to mitigate various path following issues that can arise with certain agent types and script behaviors. E.g. "steering" agents or avoidance in "open fields".
 
 .. rst-class:: classref-item-separator
 

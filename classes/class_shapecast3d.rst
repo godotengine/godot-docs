@@ -371,6 +371,8 @@ The fraction from the **ShapeCast3D**'s origin to its :ref:`target_position<clas
 
 The fraction from the **ShapeCast3D**'s origin to its :ref:`target_position<class_ShapeCast3D_property_target_position>` (between 0 and 1) of how far the shape must move to trigger a collision.
 
+In ideal conditions this would be the same as :ref:`get_closest_collision_safe_fraction<class_ShapeCast3D_method_get_closest_collision_safe_fraction>`, however shape casting is calculated in discrete steps, so the precise point of collision can occur between two calculated positions.
+
 .. rst-class:: classref-item-separator
 
 ----

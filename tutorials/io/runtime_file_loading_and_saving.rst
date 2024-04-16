@@ -76,7 +76,7 @@ Image's :ref:`Image.load_from_file <class_Image_method_load_from_file>` static m
 handles everything, from format detection based on file extension to reading the
 file from disk.
 
-If you need error handling or more control (such as changing the scale a SVG is
+If you need error handling or more control (such as changing the scale an SVG is
 loaded at), use one of the following methods depending on the file format:
 
 - :ref:`Image.load_jpg_from_buffer <class_Image_method_load_jpg_from_buffer>`

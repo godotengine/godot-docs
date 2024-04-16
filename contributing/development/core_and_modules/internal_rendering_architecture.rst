@@ -72,7 +72,7 @@ pass.
 
 The first important change in the mobile renderer is that the mobile renderer
 does not use the RGBA16F texture formats that the desktop renderer does.
-Instead, it is using a R10G10B10A2 UNORM texture format. This halves the bandwidth
+Instead, it is using an R10G10B10A2 UNORM texture format. This halves the bandwidth
 required and has further improvements as mobile hardware often further optimizes
 for 32-bit formats. The tradeoff is that the mobile renderer has limited HDR
 capabilities due to the reduced precision and maximum values in the color data.
@@ -421,7 +421,7 @@ begins. Godot's 2D drawing methods such as the Line2D node or some CanvasItem
 strips and vertex colors, which don't require MSAA to work.
 
 A 2D signed distance field representing LightOccluder2D nodes in the viewport is
-automatically generated if an user shader requests it. This can be used for
+automatically generated if a user shader requests it. This can be used for
 various effects in custom shaders, such as 2D global illumination. It is also
 used to calculate particle collisions in 2D.
 

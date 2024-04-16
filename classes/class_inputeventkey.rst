@@ -123,7 +123,7 @@ For keyboard layouts with a single label on the key, it is equivalent to :ref:`k
 
 To get a human-readable representation of the **InputEventKey**, use ``OS.get_keycode_string(event.key_label)`` where ``event`` is the **InputEventKey**.
 
-::
+.. code:: text
 
         +-----+ +-----+
         | Q   | | Q   | - "Q" - keycode
@@ -149,7 +149,7 @@ Latin label printed on the key in the current keyboard layout, which corresponds
 
 To get a human-readable representation of the **InputEventKey**, use ``OS.get_keycode_string(event.keycode)`` where ``event`` is the **InputEventKey**.
 
-::
+.. code:: text
 
         +-----+ +-----+
         | Q   | | Q   | - "Q" - keycode

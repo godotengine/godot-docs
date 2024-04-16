@@ -92,6 +92,8 @@ A dictionary of named groups and its corresponding group number. Only groups tha
 
 An :ref:`Array<class_Array>` of the match and its capturing groups.
 
+**Note:** The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedStringArray<class_PackedStringArray>` for more details.
+
 .. rst-class:: classref-item-separator
 
 ----

@@ -12,7 +12,7 @@ SkeletonIK3D
 
 **Deprecated:** This class may be changed or removed in future versions.
 
-**Inherits:** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+**Inherits:** :ref:`SkeletonModifier3D<class_SkeletonModifier3D>` **<** :ref:`Node3D<class_Node3D>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
 A node used to rotate all bones of a :ref:`Skeleton3D<class_Skeleton3D>` bone chain a way that places the end bone at a desired 3D position.
 
@@ -21,7 +21,7 @@ A node used to rotate all bones of a :ref:`Skeleton3D<class_Skeleton3D>` bone ch
 Description
 -----------
 
-SkeletonIK3D is used to rotate all bones of a :ref:`Skeleton3D<class_Skeleton3D>` bone chain a way that places the end bone at a desired 3D position. A typical scenario for IK in games is to place a character's feet on the ground or a character's hands on a currently held object. SkeletonIK uses FabrikInverseKinematic internally to solve the bone chain and applies the results to the :ref:`Skeleton3D<class_Skeleton3D>` ``bones_global_pose_override`` property for all affected bones in the chain. If fully applied, this overwrites any bone transform from :ref:`Animation<class_Animation>`\ s or bone custom poses set by users. The applied amount can be controlled with the :ref:`interpolation<class_SkeletonIK3D_property_interpolation>` property.
+SkeletonIK3D is used to rotate all bones of a :ref:`Skeleton3D<class_Skeleton3D>` bone chain a way that places the end bone at a desired 3D position. A typical scenario for IK in games is to place a character's feet on the ground or a character's hands on a currently held object. SkeletonIK uses FabrikInverseKinematic internally to solve the bone chain and applies the results to the :ref:`Skeleton3D<class_Skeleton3D>` ``bones_global_pose_override`` property for all affected bones in the chain. If fully applied, this overwrites any bone transform from :ref:`Animation<class_Animation>`\ s or bone custom poses set by users. The applied amount can be controlled with the :ref:`SkeletonModifier3D.influence<class_SkeletonModifier3D_property_influence>` property.
 
 ::
 
@@ -35,20 +35,13 @@ SkeletonIK3D is used to rotate all bones of a :ref:`Skeleton3D<class_Skeleton3D>
     skeleton_ik_node.stop()
     
     # Apply full IK effect
-    skeleton_ik_node.set_interpolation(1.0)
+    skeleton_ik_node.set_influence(1.0)
     
     # Apply half IK effect
-    skeleton_ik_node.set_interpolation(0.5)
+    skeleton_ik_node.set_influence(0.5)
     
     # Apply zero IK effect (a value at or below 0.01 also removes bones_global_pose_override on Skeleton)
-    skeleton_ik_node.set_interpolation(0.0)
-
-.. rst-class:: classref-introduction-group
-
-Tutorials
----------
-
-- `3D Inverse Kinematics Demo <https://godotengine.org/asset-library/asset/523>`__
+    skeleton_ik_node.set_influence(0.0)
 
 .. rst-class:: classref-reftable-group
 
@@ -58,8 +51,6 @@ Properties
 .. table::
    :widths: auto
 
-   +---------------------------------------+---------------------------------------------------------------------------+-----------------------------------------------------+
-   | :ref:`float<class_float>`             | :ref:`interpolation<class_SkeletonIK3D_property_interpolation>`           | ``1.0``                                             |
    +---------------------------------------+---------------------------------------------------------------------------+-----------------------------------------------------+
    | :ref:`Vector3<class_Vector3>`         | :ref:`magnet<class_SkeletonIK3D_property_magnet>`                         | ``Vector3(0, 0, 0)``                                |
    +---------------------------------------+---------------------------------------------------------------------------+-----------------------------------------------------+
@@ -106,23 +97,6 @@ Methods
 
 Property Descriptions
 ---------------------
-
-.. _class_SkeletonIK3D_property_interpolation:
-
-.. rst-class:: classref-property
-
-:ref:`float<class_float>` **interpolation** = ``1.0``
-
-.. rst-class:: classref-property-setget
-
-- |void| **set_interpolation**\ (\ value\: :ref:`float<class_float>`\ )
-- :ref:`float<class_float>` **get_interpolation**\ (\ )
-
-Interpolation value for how much the IK results are applied to the current skeleton bone chain. A value of ``1.0`` will overwrite all skeleton bone transforms completely while a value of ``0.0`` will visually disable the SkeletonIK. A value at or below ``0.01`` also calls :ref:`Skeleton3D.clear_bones_global_pose_override<class_Skeleton3D_method_clear_bones_global_pose_override>`.
-
-.. rst-class:: classref-item-separator
-
-----
 
 .. _class_SkeletonIK3D_property_magnet:
 

@@ -32,11 +32,9 @@ Note that the **Camera2D** node's ``position`` doesn't represent the actual posi
 Tutorials
 ---------
 
-- `2D Platformer Demo <https://godotengine.org/asset-library/asset/120>`__
+- `2D Platformer Demo <https://godotengine.org/asset-library/asset/2727>`__
 
-- `2D Isometric Demo <https://godotengine.org/asset-library/asset/112>`__
-
-- `2D HDR Demo <https://godotengine.org/asset-library/asset/110>`__
+- `2D Isometric Demo <https://godotengine.org/asset-library/asset/2718>`__
 
 .. rst-class:: classref-reftable-group
 

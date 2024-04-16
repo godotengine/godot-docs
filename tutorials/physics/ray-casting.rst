@@ -63,7 +63,7 @@ Use the following code in 2D:
     public override void _PhysicsProcess(double delta)
     {
         var spaceRid = GetWorld2D().Space;
-        var spaceState = Physics2DServer.SpaceGetDirectState(spaceRid);
+        var spaceState = PhysicsServer2D.SpaceGetDirectState(spaceRid);
     }
 
 Or more directly:

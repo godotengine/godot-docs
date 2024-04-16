@@ -113,6 +113,8 @@ Property Descriptions
 
 The resulting path array from the navigation query. All path array positions are in global coordinates. Without customized query parameters this is the same path as returned by :ref:`NavigationServer2D.map_get_path<class_NavigationServer2D_method_map_get_path>`.
 
+**Note:** The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedVector2Array<class_PackedVector2Array>` for more details.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -129,6 +131,8 @@ The resulting path array from the navigation query. All path array positions are
 - :ref:`PackedInt64Array<class_PackedInt64Array>` **get_path_owner_ids**\ (\ )
 
 The ``ObjectID``\ s of the :ref:`Object<class_Object>`\ s which manage the regions and links each point of the path goes through.
+
+**Note:** The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedInt64Array<class_PackedInt64Array>` for more details.
 
 .. rst-class:: classref-item-separator
 
@@ -163,6 +167,8 @@ The :ref:`RID<class_RID>`\ s of the regions and links that each point of the pat
 - :ref:`PackedInt32Array<class_PackedInt32Array>` **get_path_types**\ (\ )
 
 The type of navigation primitive (region or link) that each point of the path goes through.
+
+**Note:** The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedInt32Array<class_PackedInt32Array>` for more details.
 
 .. rst-class:: classref-section-separator
 

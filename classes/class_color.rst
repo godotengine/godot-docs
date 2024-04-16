@@ -34,11 +34,11 @@ Colors can be created in various ways: By the various **Color** constructors, by
 Tutorials
 ---------
 
-- `2D GD Paint Demo <https://godotengine.org/asset-library/asset/517>`__
+- `2D GD Paint Demo <https://godotengine.org/asset-library/asset/2768>`__
 
-- `Tween Demo <https://godotengine.org/asset-library/asset/146>`__
+- `Tween Interpolation Demo <https://godotengine.org/asset-library/asset/2733>`__
 
-- `GUI Drag And Drop Demo <https://godotengine.org/asset-library/asset/133>`__
+- `GUI Drag And Drop Demo <https://godotengine.org/asset-library/asset/2767>`__
 
 .. rst-class:: classref-reftable-group
 

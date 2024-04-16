@@ -28,7 +28,7 @@ Abstract base class for all joints in 3D physics. 3D joints bind together two ph
 Tutorials
 ---------
 
-- `3D Truck Town Demo <https://godotengine.org/asset-library/asset/524>`__
+- `3D Truck Town Demo <https://godotengine.org/asset-library/asset/2752>`__
 
 .. rst-class:: classref-reftable-group
 

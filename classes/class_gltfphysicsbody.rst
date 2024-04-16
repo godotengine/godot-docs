@@ -248,7 +248,7 @@ Creates a new GLTFPhysicsBody instance by parsing the given :ref:`Dictionary<cla
 
 :ref:`GLTFPhysicsBody<class_GLTFPhysicsBody>` **from_node**\ (\ body_node\: :ref:`CollisionObject3D<class_CollisionObject3D>`\ ) |static|
 
-Create a new GLTFPhysicsBody instance from the given Godot :ref:`CollisionObject3D<class_CollisionObject3D>` node.
+Creates a new GLTFPhysicsBody instance from the given Godot :ref:`CollisionObject3D<class_CollisionObject3D>` node.
 
 .. rst-class:: classref-item-separator
 
