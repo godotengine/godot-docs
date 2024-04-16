@@ -176,13 +176,25 @@ Notifies when the caches have been cleared, either automatically, or manually vi
 
 ----
 
+.. _class_AnimationMixer_signal_mixer_applied:
+
+.. rst-class:: classref-signal
+
+**mixer_applied**\ (\ )
+
+Notifies when the blending result related have been applied to the target objects.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_AnimationMixer_signal_mixer_updated:
 
 .. rst-class:: classref-signal
 
 **mixer_updated**\ (\ )
 
-Editor only. Notifies when the property have been updated to update dummy :ref:`AnimationPlayer<class_AnimationPlayer>` in animation player editor.
+Notifies when the property related process have been updated.
 
 .. rst-class:: classref-section-separator
 
@@ -580,7 +592,7 @@ Returns the :ref:`Animation<class_Animation>` with the key ``name``. If the anim
 
 Returns the first :ref:`AnimationLibrary<class_AnimationLibrary>` with key ``name`` or ``null`` if not found.
 
-To get the :ref:`AnimationPlayer<class_AnimationPlayer>`'s global animation library, use ``get_animation_library("")``.
+To get the **AnimationMixer**'s global animation library, use ``get_animation_library("")``.
 
 .. rst-class:: classref-item-separator
 
@@ -839,7 +851,7 @@ However, if the animation loops, an unintended discrete change may occur, so thi
 
 :ref:`bool<class_bool>` **has_animation**\ (\ name\: :ref:`StringName<class_StringName>`\ ) |const|
 
-Returns ``true`` if the :ref:`AnimationPlayer<class_AnimationPlayer>` stores an :ref:`Animation<class_Animation>` with key ``name``.
+Returns ``true`` if the **AnimationMixer** stores an :ref:`Animation<class_Animation>` with key ``name``.
 
 .. rst-class:: classref-item-separator
 
@@ -851,7 +863,7 @@ Returns ``true`` if the :ref:`AnimationPlayer<class_AnimationPlayer>` stores an 
 
 :ref:`bool<class_bool>` **has_animation_library**\ (\ name\: :ref:`StringName<class_StringName>`\ ) |const|
 
-Returns ``true`` if the :ref:`AnimationPlayer<class_AnimationPlayer>` stores an :ref:`AnimationLibrary<class_AnimationLibrary>` with key ``name``.
+Returns ``true`` if the **AnimationMixer** stores an :ref:`AnimationLibrary<class_AnimationLibrary>` with key ``name``.
 
 .. rst-class:: classref-item-separator
 

@@ -28,7 +28,7 @@ A 3D sphere shape, intended for use in physics. Usually used to provide a shape 
 Tutorials
 ---------
 
-- `3D Physics Tests Demo <https://godotengine.org/asset-library/asset/675>`__
+- `3D Physics Tests Demo <https://godotengine.org/asset-library/asset/2747>`__
 
 .. rst-class:: classref-reftable-group
 

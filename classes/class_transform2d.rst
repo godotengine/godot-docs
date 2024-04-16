@@ -34,9 +34,9 @@ Tutorials
 
 - :doc:`Matrices and transforms <../tutorials/math/matrices_and_transforms>`
 
-- `Matrix Transform Demo <https://godotengine.org/asset-library/asset/584>`__
+- `Matrix Transform Demo <https://godotengine.org/asset-library/asset/2787>`__
 
-- `2.5D Demo <https://godotengine.org/asset-library/asset/583>`__
+- `2.5D Game Demo <https://godotengine.org/asset-library/asset/2783>`__
 
 .. rst-class:: classref-reftable-group
 

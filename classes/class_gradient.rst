@@ -162,9 +162,11 @@ Property Descriptions
 - |void| **set_colors**\ (\ value\: :ref:`PackedColorArray<class_PackedColorArray>`\ )
 - :ref:`PackedColorArray<class_PackedColorArray>` **get_colors**\ (\ )
 
-Gradient's colors returned as a :ref:`PackedColorArray<class_PackedColorArray>`.
+Gradient's colors as a :ref:`PackedColorArray<class_PackedColorArray>`.
 
-\ **Note:** This property returns a copy, modifying the return value does not update the gradient. To update the gradient use :ref:`set_color<class_Gradient_method_set_color>` method (for updating colors individually) or assign to this property directly (for bulk-updating all colors at once).
+\ **Note:** Setting this property updates all colors at once. To update any color individually use :ref:`set_color<class_Gradient_method_set_color>`.
+
+**Note:** The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedColorArray<class_PackedColorArray>` for more details.
 
 .. rst-class:: classref-item-separator
 
@@ -217,9 +219,11 @@ The algorithm used to interpolate between points of the gradient. See :ref:`Inte
 - |void| **set_offsets**\ (\ value\: :ref:`PackedFloat32Array<class_PackedFloat32Array>`\ )
 - :ref:`PackedFloat32Array<class_PackedFloat32Array>` **get_offsets**\ (\ )
 
-Gradient's offsets returned as a :ref:`PackedFloat32Array<class_PackedFloat32Array>`.
+Gradient's offsets as a :ref:`PackedFloat32Array<class_PackedFloat32Array>`.
 
-\ **Note:** This property returns a copy, modifying the return value does not update the gradient. To update the gradient use :ref:`set_offset<class_Gradient_method_set_offset>` method (for updating offsets individually) or assign to this property directly (for bulk-updating all offsets at once).
+\ **Note:** Setting this property updates all offsets at once. To update any offset individually use :ref:`set_offset<class_Gradient_method_set_offset>`.
+
+**Note:** The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedFloat32Array<class_PackedFloat32Array>` for more details.
 
 .. rst-class:: classref-section-separator
 

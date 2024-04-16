@@ -65,7 +65,7 @@ Global built-ins are available everywhere, including custom functions.
 | in float **TAU**  | A ``TAU`` constant (``6.283185``).                                                     |
 |                   | An equivalent of ``PI * 2`` and amount of radians in full turn.                        |
 +-------------------+----------------------------------------------------------------------------------------+
-| in float **E**    | A ``E`` constant (``2.718281``).                                                       |
+| in float **E**    | An ``E`` constant (``2.718281``).                                                      |
 |                   | Euler's number and a base of the natural logarithm.                                    |
 +-------------------+----------------------------------------------------------------------------------------+
 
@@ -214,7 +214,7 @@ words, Godot no longer draws the object again for each light.
 Use render_mode ``unshaded`` if you do not want the light processor function to
 run. Use render_mode ``light_only`` if you only want to see the impact of
 lighting on an object; this can be useful when you only want the object visible
-where it is covered by light. 
+where it is covered by light.
 
 If you define a light function it will replace the built in light function,
 even if your light function is empty.
@@ -289,7 +289,7 @@ documentation for more information.
 +-----------------------------------------------+-------------------------------------------+
 | vec2 **texture_sdf_normal** (vec2 sdf_pos)    | Calculates a normal from the SDF texture. |
 +-----------------------------------------------+-------------------------------------------+
-| vec2 **sdf_to_screen_uv** (vec2 sdf_pos)      | Converts a SDF to screen UV.              |
+| vec2 **sdf_to_screen_uv** (vec2 sdf_pos)      | Converts an SDF to screen UV.             |
 +-----------------------------------------------+-------------------------------------------+
-| vec2 **screen_uv_to_sdf** (vec2 uv)           | Converts screen UV to a SDF.              |
+| vec2 **screen_uv_to_sdf** (vec2 uv)           | Converts screen UV to an SDF.             |
 +-----------------------------------------------+-------------------------------------------+

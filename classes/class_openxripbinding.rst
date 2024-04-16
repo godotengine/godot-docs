@@ -92,6 +92,8 @@ Property Descriptions
 
 Paths that define the inputs or outputs bound on the device.
 
+**Note:** The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedStringArray<class_PackedStringArray>` for more details.
+
 .. rst-class:: classref-section-separator
 
 ----

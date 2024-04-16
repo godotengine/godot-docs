@@ -112,13 +112,19 @@ Methods
    +------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                           | :ref:`arrange_nodes<class_GraphEdit_method_arrange_nodes>`\ (\ )                                                                                                                                                                                                                             |
    +------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                           | :ref:`attach_graph_element_to_frame<class_GraphEdit_method_attach_graph_element_to_frame>`\ (\ element\: :ref:`StringName<class_StringName>`, frame\: :ref:`StringName<class_StringName>`\ )                                                                                                 |
+   +------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                           | :ref:`clear_connections<class_GraphEdit_method_clear_connections>`\ (\ )                                                                                                                                                                                                                     |
    +------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Error<enum_@GlobalScope_Error>`                            | :ref:`connect_node<class_GraphEdit_method_connect_node>`\ (\ from_node\: :ref:`StringName<class_StringName>`, from_port\: :ref:`int<class_int>`, to_node\: :ref:`StringName<class_StringName>`, to_port\: :ref:`int<class_int>`\ )                                                           |
    +------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                           | :ref:`detach_graph_element_from_frame<class_GraphEdit_method_detach_graph_element_from_frame>`\ (\ element\: :ref:`StringName<class_StringName>`\ )                                                                                                                                          |
+   +------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                           | :ref:`disconnect_node<class_GraphEdit_method_disconnect_node>`\ (\ from_node\: :ref:`StringName<class_StringName>`, from_port\: :ref:`int<class_int>`, to_node\: :ref:`StringName<class_StringName>`, to_port\: :ref:`int<class_int>`\ )                                                     |
    +------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                           | :ref:`force_connection_drag_end<class_GraphEdit_method_force_connection_drag_end>`\ (\ )                                                                                                                                                                                                     |
+   +------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Array<class_Array>`\[:ref:`StringName<class_StringName>`\] | :ref:`get_attached_nodes_of_frame<class_GraphEdit_method_get_attached_nodes_of_frame>`\ (\ frame\: :ref:`StringName<class_StringName>`\ )                                                                                                                                                    |
    +------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Dictionary<class_Dictionary>`                              | :ref:`get_closest_connection_at_point<class_GraphEdit_method_get_closest_connection_at_point>`\ (\ point\: :ref:`Vector2<class_Vector2>`, max_distance\: :ref:`float<class_float>` = 4.0\ ) |const|                                                                                          |
    +------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -127,6 +133,8 @@ Methods
    | :ref:`Array<class_Array>`\[:ref:`Dictionary<class_Dictionary>`\] | :ref:`get_connection_list<class_GraphEdit_method_get_connection_list>`\ (\ ) |const|                                                                                                                                                                                                         |
    +------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Array<class_Array>`\[:ref:`Dictionary<class_Dictionary>`\] | :ref:`get_connections_intersecting_with_rect<class_GraphEdit_method_get_connections_intersecting_with_rect>`\ (\ rect\: :ref:`Rect2<class_Rect2>`\ ) |const|                                                                                                                                 |
+   +------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`GraphFrame<class_GraphFrame>`                              | :ref:`get_element_frame<class_GraphEdit_method_get_element_frame>`\ (\ element\: :ref:`StringName<class_StringName>`\ )                                                                                                                                                                      |
    +------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`HBoxContainer<class_HBoxContainer>`                        | :ref:`get_menu_hbox<class_GraphEdit_method_get_menu_hbox>`\ (\ )                                                                                                                                                                                                                             |
    +------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -336,6 +344,32 @@ Emitted at the end of a :ref:`GraphElement<class_GraphElement>`'s movement.
 
 ----
 
+.. _class_GraphEdit_signal_frame_rect_changed:
+
+.. rst-class:: classref-signal
+
+**frame_rect_changed**\ (\ frame\: :ref:`GraphFrame<class_GraphFrame>`, new_rect\: :ref:`Vector2<class_Vector2>`\ )
+
+Emitted when the :ref:`GraphFrame<class_GraphFrame>` ``frame`` is resized to ``new_rect``.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_GraphEdit_signal_graph_elements_linked_to_frame_request:
+
+.. rst-class:: classref-signal
+
+**graph_elements_linked_to_frame_request**\ (\ elements\: :ref:`Array<class_Array>`, frame\: :ref:`StringName<class_StringName>`\ )
+
+Emitted when one or more :ref:`GraphElement<class_GraphElement>`\ s are dropped onto the :ref:`GraphFrame<class_GraphFrame>` named ``frame``, when they were not previously attached to any other one.
+
+\ ``elements`` is an array of :ref:`GraphElement<class_GraphElement>`\ s to be attached.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_GraphEdit_signal_node_deselected:
 
 .. rst-class:: classref-signal
@@ -376,9 +410,9 @@ Emitted when this **GraphEdit** captures a ``ui_paste`` action (:kbd:`Ctrl + V` 
 
 .. rst-class:: classref-signal
 
-**popup_request**\ (\ position\: :ref:`Vector2<class_Vector2>`\ )
+**popup_request**\ (\ at_position\: :ref:`Vector2<class_Vector2>`\ )
 
-Emitted when a popup is requested. Happens on right-clicking in the GraphEdit. ``position`` is the position of the mouse pointer when the signal is sent.
+Emitted when a popup is requested. Happens on right-clicking in the GraphEdit. ``at_position`` is the position of the mouse pointer when the signal is sent.
 
 .. rst-class:: classref-item-separator
 
@@ -997,6 +1031,18 @@ Rearranges selected nodes in a layout with minimum crossings between connections
 
 ----
 
+.. _class_GraphEdit_method_attach_graph_element_to_frame:
+
+.. rst-class:: classref-method
+
+|void| **attach_graph_element_to_frame**\ (\ element\: :ref:`StringName<class_StringName>`, frame\: :ref:`StringName<class_StringName>`\ )
+
+Attaches the ``element`` :ref:`GraphElement<class_GraphElement>` to the ``frame`` :ref:`GraphFrame<class_GraphFrame>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_GraphEdit_method_clear_connections:
 
 .. rst-class:: classref-method
@@ -1016,6 +1062,18 @@ Removes all connections between nodes.
 :ref:`Error<enum_@GlobalScope_Error>` **connect_node**\ (\ from_node\: :ref:`StringName<class_StringName>`, from_port\: :ref:`int<class_int>`, to_node\: :ref:`StringName<class_StringName>`, to_port\: :ref:`int<class_int>`\ )
 
 Create a connection between the ``from_port`` of the ``from_node`` :ref:`GraphNode<class_GraphNode>` and the ``to_port`` of the ``to_node`` :ref:`GraphNode<class_GraphNode>`. If the connection already exists, no connection is created.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_GraphEdit_method_detach_graph_element_from_frame:
+
+.. rst-class:: classref-method
+
+|void| **detach_graph_element_from_frame**\ (\ element\: :ref:`StringName<class_StringName>`\ )
+
+Detaches the ``element`` :ref:`GraphElement<class_GraphElement>` from the :ref:`GraphFrame<class_GraphFrame>` it is currently attached to.
 
 .. rst-class:: classref-item-separator
 
@@ -1044,6 +1102,18 @@ Ends the creation of the current connection. In other words, if you are dragging
 This is best used together with :ref:`connection_drag_started<class_GraphEdit_signal_connection_drag_started>` and :ref:`connection_drag_ended<class_GraphEdit_signal_connection_drag_ended>` to add custom behavior like node addition through shortcuts.
 
 \ **Note:** This method suppresses any other connection request signals apart from :ref:`connection_drag_ended<class_GraphEdit_signal_connection_drag_ended>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_GraphEdit_method_get_attached_nodes_of_frame:
+
+.. rst-class:: classref-method
+
+:ref:`Array<class_Array>`\[:ref:`StringName<class_StringName>`\] **get_attached_nodes_of_frame**\ (\ frame\: :ref:`StringName<class_StringName>`\ )
+
+Returns an array of node names that are attached to the :ref:`GraphFrame<class_GraphFrame>` with the given name.
 
 .. rst-class:: classref-item-separator
 
@@ -1105,6 +1175,18 @@ Returns an :ref:`Array<class_Array>` containing the list of connections. A conne
 :ref:`Array<class_Array>`\[:ref:`Dictionary<class_Dictionary>`\] **get_connections_intersecting_with_rect**\ (\ rect\: :ref:`Rect2<class_Rect2>`\ ) |const|
 
 Returns an :ref:`Array<class_Array>` containing the list of connections that intersect with the given :ref:`Rect2<class_Rect2>`. A connection consists in a structure of the form ``{ from_port: 0, from_node: "GraphNode name 0", to_port: 1, to_node: "GraphNode name 1" }``.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_GraphEdit_method_get_element_frame:
+
+.. rst-class:: classref-method
+
+:ref:`GraphFrame<class_GraphFrame>` **get_element_frame**\ (\ element\: :ref:`StringName<class_StringName>`\ )
+
+Returns the :ref:`GraphFrame<class_GraphFrame>` that contains the :ref:`GraphElement<class_GraphElement>` with the given name.
 
 .. rst-class:: classref-item-separator
 

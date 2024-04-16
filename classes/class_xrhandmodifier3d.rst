@@ -10,7 +10,7 @@
 XRHandModifier3D
 ================
 
-**Inherits:** :ref:`Node3D<class_Node3D>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+**Inherits:** :ref:`SkeletonModifier3D<class_SkeletonModifier3D>` **<** :ref:`Node3D<class_Node3D>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
 A node for driving hand meshes from :ref:`XRHandTracker<class_XRHandTracker>` data.
 
@@ -44,8 +44,6 @@ Properties
    | :ref:`BoneUpdate<enum_XRHandModifier3D_BoneUpdate>` | :ref:`bone_update<class_XRHandModifier3D_property_bone_update>`   | ``0``             |
    +-----------------------------------------------------+-------------------------------------------------------------------+-------------------+
    | :ref:`StringName<class_StringName>`                 | :ref:`hand_tracker<class_XRHandModifier3D_property_hand_tracker>` | ``&"/user/left"`` |
-   +-----------------------------------------------------+-------------------------------------------------------------------+-------------------+
-   | :ref:`NodePath<class_NodePath>`                     | :ref:`target<class_XRHandModifier3D_property_target>`             | ``NodePath("")``  |
    +-----------------------------------------------------+-------------------------------------------------------------------+-------------------+
 
 .. rst-class:: classref-section-separator
@@ -125,23 +123,6 @@ Specifies the type of updates to perform on the bones.
 - :ref:`StringName<class_StringName>` **get_hand_tracker**\ (\ )
 
 The name of the :ref:`XRHandTracker<class_XRHandTracker>` registered with :ref:`XRServer<class_XRServer>` to obtain the hand tracking data from.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_XRHandModifier3D_property_target:
-
-.. rst-class:: classref-property
-
-:ref:`NodePath<class_NodePath>` **target** = ``NodePath("")``
-
-.. rst-class:: classref-property-setget
-
-- |void| **set_target**\ (\ value\: :ref:`NodePath<class_NodePath>`\ )
-- :ref:`NodePath<class_NodePath>` **get_target**\ (\ )
-
-A :ref:`NodePath<class_NodePath>` to a :ref:`Skeleton3D<class_Skeleton3D>` to animate.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

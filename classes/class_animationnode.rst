@@ -25,6 +25,16 @@ Base resource for :ref:`AnimationTree<class_AnimationTree>` nodes. In general, i
 
 Inherit this when creating animation nodes mainly for use in :ref:`AnimationNodeBlendTree<class_AnimationNodeBlendTree>`, otherwise :ref:`AnimationRootNode<class_AnimationRootNode>` should be used instead.
 
+You can access the time information as read-only parameter which is processed and stored in the previous frame for all nodes except :ref:`AnimationNodeOutput<class_AnimationNodeOutput>`.
+
+\ **Note:** If more than two inputs exist in the **AnimationNode**, which time information takes precedence depends on the type of **AnimationNode**.
+
+::
+
+    var current_length = $AnimationTree[parameters/AnimationNodeName/current_length]
+    var current_position = $AnimationTree[parameters/AnimationNodeName/current_position]
+    var current_delta = $AnimationTree[parameters/AnimationNodeName/current_delta]
+
 .. rst-class:: classref-introduction-group
 
 Tutorials
@@ -305,11 +315,13 @@ When inheriting from :ref:`AnimationRootNode<class_AnimationRootNode>`, implemen
 
 :ref:`float<class_float>` **_process**\ (\ time\: :ref:`float<class_float>`, seek\: :ref:`bool<class_bool>`, is_external_seeking\: :ref:`bool<class_bool>`, test_only\: :ref:`bool<class_bool>`\ ) |virtual| |const|
 
+**Deprecated:** Currently this is mostly useless as there is a lack of many APIs to extend AnimationNode by GDScript. It is planned that a more flexible API using structures will be provided in the future.
+
 When inheriting from :ref:`AnimationRootNode<class_AnimationRootNode>`, implement this virtual method to run some code when this animation node is processed. The ``time`` parameter is a relative delta, unless ``seek`` is ``true``, in which case it is absolute.
 
 Here, call the :ref:`blend_input<class_AnimationNode_method_blend_input>`, :ref:`blend_node<class_AnimationNode_method_blend_node>` or :ref:`blend_animation<class_AnimationNode_method_blend_animation>` functions. You can also use :ref:`get_parameter<class_AnimationNode_method_get_parameter>` and :ref:`set_parameter<class_AnimationNode_method_set_parameter>` to modify local memory.
 
-This function should return the time left for the current animation to finish (if unsure, pass the value from the main blend being called).
+This function should return the delta.
 
 .. rst-class:: classref-item-separator
 

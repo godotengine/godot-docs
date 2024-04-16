@@ -26,11 +26,9 @@ Description
 Tutorials
 ---------
 
-- `2D Role Playing Game Demo <https://godotengine.org/asset-library/asset/520>`__
+- `2D Role Playing Game (RPG) Demo <https://godotengine.org/asset-library/asset/2729>`__
 
-- `2D Finite State Machine Demo <https://godotengine.org/asset-library/asset/516>`__
-
-- `3D Inverse Kinematics Demo <https://godotengine.org/asset-library/asset/523>`__
+- `Hierarchical Finite State Machine Demo <https://godotengine.org/asset-library/asset/2714>`__
 
 .. rst-class:: classref-reftable-group
 

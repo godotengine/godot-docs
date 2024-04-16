@@ -30,7 +30,7 @@ This physics body implements all the physics logic needed to simulate a car. It 
 Tutorials
 ---------
 
-- `3D Truck Town Demo <https://godotengine.org/asset-library/asset/524>`__
+- `3D Truck Town Demo <https://godotengine.org/asset-library/asset/2752>`__
 
 .. rst-class:: classref-reftable-group
 

@@ -90,7 +90,7 @@ residential connections use a `NAT
 high-level multiplayer API only uses UDP, so you must forward the port in UDP,
 not just TCP.
 
-After forwarding an UDP port and making sure your server uses that port, you can
+After forwarding a UDP port and making sure your server uses that port, you can
 use `this website <https://icanhazip.com/>`__ to find your public IP address.
 Then give this public IP address to any Internet clients that wish to connect to
 your server.
@@ -196,7 +196,7 @@ For a remote call to be successful, the sending and receiving node need to have 
 must have the same name. When using ``add_child()`` for nodes which are expected to use RPCs, set the argument
 ``force_readable_name`` to ``true``.
 
-.. warning:: 
+.. warning::
 
     If a function is annotated with ``@rpc`` on the client script (resp. server script),
     then this function must also be declared on the server script (resp. client script).

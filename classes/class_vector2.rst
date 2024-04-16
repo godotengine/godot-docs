@@ -38,7 +38,7 @@ Tutorials
 
 - `3Blue1Brown Essence of Linear Algebra <https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab>`__
 
-- `Matrix Transform Demo <https://godotengine.org/asset-library/asset/584>`__
+- `Matrix Transform Demo <https://godotengine.org/asset-library/asset/2787>`__
 
 - `All 2D Demos <https://github.com/godotengine/godot-demo-projects/tree/master/2d>`__
 
@@ -153,7 +153,7 @@ Methods
    +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Vector2<class_Vector2>` | :ref:`project<class_Vector2_method_project>`\ (\ b\: :ref:`Vector2<class_Vector2>`\ ) |const|                                                                                                                                                                                                                                                                    |
    +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Vector2<class_Vector2>` | :ref:`reflect<class_Vector2_method_reflect>`\ (\ n\: :ref:`Vector2<class_Vector2>`\ ) |const|                                                                                                                                                                                                                                                                    |
+   | :ref:`Vector2<class_Vector2>` | :ref:`reflect<class_Vector2_method_reflect>`\ (\ line\: :ref:`Vector2<class_Vector2>`\ ) |const|                                                                                                                                                                                                                                                                 |
    +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Vector2<class_Vector2>` | :ref:`rotated<class_Vector2_method_rotated>`\ (\ angle\: :ref:`float<class_float>`\ ) |const|                                                                                                                                                                                                                                                                    |
    +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -482,7 +482,9 @@ Returns the point at the given ``t`` on the `Bézier curve <https://en.wikipedia
 
 :ref:`Vector2<class_Vector2>` **bounce**\ (\ n\: :ref:`Vector2<class_Vector2>`\ ) |const|
 
-Returns a new vector "bounced off" from a plane defined by the given normal.
+Returns the vector "bounced off" from a line defined by the given normal ``n`` perpendicular to the line.
+
+\ **Note:** :ref:`bounce<class_Vector2_method_bounce>` performs the operation that most engines and frameworks call ``reflect()``.
 
 .. rst-class:: classref-item-separator
 
@@ -520,7 +522,7 @@ Returns a new vector with all components clamped between the components of ``min
 
 Returns the 2D analog of the cross product for this vector and ``with``.
 
-This is the signed area of the parallelogram formed by the two vectors. If the second vector is clockwise from the first vector, then the cross product is the positive area. If counter-clockwise, the cross product is the negative area.
+This is the signed area of the parallelogram formed by the two vectors. If the second vector is clockwise from the first vector, then the cross product is the positive area. If counter-clockwise, the cross product is the negative area. If the two vectors are parallel this returns zero, making it useful for testing if two vectors are parallel.
 
 \ **Note:** Cross product is not defined in 2D mathematically. This method embeds the 2D vectors in the XY plane of 3D space and uses their cross product's Z component as the analog.
 
@@ -844,9 +846,11 @@ Returns a new vector resulting from projecting this vector onto the given vector
 
 .. rst-class:: classref-method
 
-:ref:`Vector2<class_Vector2>` **reflect**\ (\ n\: :ref:`Vector2<class_Vector2>`\ ) |const|
+:ref:`Vector2<class_Vector2>` **reflect**\ (\ line\: :ref:`Vector2<class_Vector2>`\ ) |const|
 
-Returns the result of reflecting the vector from a line defined by the given direction vector ``n``.
+Returns the result of reflecting the vector from a line defined by the given direction vector ``line``.
+
+\ **Note:** :ref:`reflect<class_Vector2_method_reflect>` differs from what other engines and frameworks call ``reflect()``. In other engines, ``reflect()`` takes a normal direction which is a direction perpendicular to the line. In Godot, you specify the direction of the line directly. See also :ref:`bounce<class_Vector2_method_bounce>` which does what most engines call ``reflect()``.
 
 .. rst-class:: classref-item-separator
 

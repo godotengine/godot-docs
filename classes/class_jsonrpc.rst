@@ -66,11 +66,7 @@ enum **ErrorCode**:
 
 :ref:`ErrorCode<enum_JSONRPC_ErrorCode>` **PARSE_ERROR** = ``-32700``
 
-.. container:: contribute
-
-	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
-
-
+The request could not be parsed as it was not valid by JSON standard (:ref:`JSON.parse<class_JSON_method_parse>` failed).
 
 .. _class_JSONRPC_constant_INVALID_REQUEST:
 
@@ -78,11 +74,7 @@ enum **ErrorCode**:
 
 :ref:`ErrorCode<enum_JSONRPC_ErrorCode>` **INVALID_REQUEST** = ``-32600``
 
-.. container:: contribute
-
-	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
-
-
+A method call was requested but the request's format is not valid.
 
 .. _class_JSONRPC_constant_METHOD_NOT_FOUND:
 
@@ -98,11 +90,7 @@ A method call was requested but no function of that name existed in the JSONRPC 
 
 :ref:`ErrorCode<enum_JSONRPC_ErrorCode>` **INVALID_PARAMS** = ``-32602``
 
-.. container:: contribute
-
-	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
-
-
+A method call was requested but the given method parameters are not valid. Not used by the built-in JSONRPC.
 
 .. _class_JSONRPC_constant_INTERNAL_ERROR:
 
@@ -110,11 +98,7 @@ A method call was requested but no function of that name existed in the JSONRPC 
 
 :ref:`ErrorCode<enum_JSONRPC_ErrorCode>` **INTERNAL_ERROR** = ``-32603``
 
-.. container:: contribute
-
-	There is currently no description for this enum. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
-
-
+An internal error occurred while processing the request. Not used by the built-in JSONRPC.
 
 .. rst-class:: classref-section-separator
 

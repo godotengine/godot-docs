@@ -111,6 +111,20 @@ Informs the user queued a recenter of the player position.
 
 ----
 
+.. _class_OpenXRInterface_signal_refresh_rate_changed:
+
+.. rst-class:: classref-signal
+
+**refresh_rate_changed**\ (\ refresh_rate\: :ref:`float<class_float>`\ )
+
+Informs the user the HMD refresh rate has changed.
+
+\ **Node:** Only emitted if XR runtime supports the refresh rate extension.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_OpenXRInterface_signal_session_begun:
 
 .. rst-class:: classref-signal

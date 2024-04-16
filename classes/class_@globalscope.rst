@@ -5715,7 +5715,7 @@ Converts an angle expressed in degrees to radians.
 
 Returns an "eased" value of ``x`` based on an easing function defined with ``curve``. This easing function is based on an exponent. The ``curve`` can be any floating-point number, with specific values leading to the following behaviors:
 
-::
+.. code:: text
 
     - Lower than -1.0 (exclusive): Ease in-out
     - 1.0: Linear
@@ -5856,9 +5856,9 @@ Returns the floating-point modulus of ``x`` divided by ``y``, wrapping equally i
         var x = i * 0.5 - 1.5
         print("%4.1f           %4.1f  | %4.1f" % [x, fmod(x, 1.5), fposmod(x, 1.5)])
 
-Produces:
+Prints:
 
-::
+.. code:: text
 
      (x)  (fmod(x, 1.5))   (fposmod(x, 1.5))
     -1.5           -0.0  |  0.0
@@ -6374,9 +6374,9 @@ Returns the integer modulus of ``x`` divided by ``y`` that wraps equally in posi
     for i in range(-3, 4):
         print("%2d       %2d  | %2d" % [i, i % 3, posmod(i, 3)])
 
-Produces:
+Prints:
 
-::
+.. code:: text
 
     (i)  (i % 3)   (posmod(i, 3))
     -3        0  |  0
@@ -6522,6 +6522,8 @@ Prints one or more arguments to strings in the best way possible to standard err
 |void| **printraw**\ (\ ...\ ) |vararg|
 
 Prints one or more arguments to strings in the best way possible to the OS terminal. Unlike :ref:`print<class_@GlobalScope_method_print>`, no newline is automatically added at the end.
+
+\ **Note:** The OS terminal is *not* the same as the editor's Output dock. The output sent to the OS terminal can be seen when running Godot from a terminal. On Windows, this requires using the ``console.exe`` executable.
 
 
 .. tabs::
@@ -7396,7 +7398,7 @@ Converts a :ref:`Variant<class_Variant>` ``variable`` to a formatted :ref:`Strin
 
 Prints:
 
-::
+.. code:: text
 
     {
         "a": 1,

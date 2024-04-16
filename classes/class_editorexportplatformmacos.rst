@@ -232,7 +232,7 @@ Property Descriptions
 
 Additional data added to the root ``<dict>`` section of the `Info.plist <https://developer.apple.com/documentation/bundleresources/information_property_list>`__ file. The value should be an XML section with pairs of key-value elements, e.g.:
 
-::
+.. code:: text
 
     <key>key_name</key>
     <string>value</string>
@@ -448,6 +448,8 @@ Tool to use for code signing.
 :ref:`PackedStringArray<class_PackedStringArray>` **codesign/custom_options**
 
 Array of the additional command line arguments passed to the code signing tool.
+
+**Note:** The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedStringArray<class_PackedStringArray>` for more details.
 
 .. rst-class:: classref-item-separator
 

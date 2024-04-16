@@ -30,7 +30,7 @@ Tutorials
 
 - :doc:`Using NavigationMeshes <../tutorials/navigation/navigation_using_navigationmeshes>`
 
-- `3D Navmesh Demo <https://godotengine.org/asset-library/asset/124>`__
+- `3D Navigation Demo <https://godotengine.org/asset-library/asset/2743>`__
 
 .. rst-class:: classref-reftable-group
 

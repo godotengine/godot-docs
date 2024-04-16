@@ -42,7 +42,7 @@ Example
 -------
 
 This example demonstrates how to load a scene in the background.
-We will have a button spawn a enemy when pressed.
+We will have a button spawn an enemy when pressed.
 The enemy will be ``Enemy.tscn`` which we will load on ``_ready`` and instantiate when pressed.
 The path will be ``"Enemy.tscn"`` which is located at ``res://Enemy.tscn``.
 

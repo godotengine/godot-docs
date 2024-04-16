@@ -10,6 +10,8 @@
 AudioEffectLimiter
 ==================
 
+**Deprecated:** Use :ref:`AudioEffectHardLimiter<class_AudioEffectHardLimiter>` instead.
+
 **Inherits:** :ref:`AudioEffect<class_AudioEffect>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
 Adds a soft-clip limiter audio effect to an Audio bus.

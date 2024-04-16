@@ -454,6 +454,8 @@ Methods
    +-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                                     | :ref:`_string_to_lower<class_TextServerExtension_private_method__string_to_lower>`\ (\ string\: :ref:`String<class_String>`, language\: :ref:`String<class_String>`\ ) |virtual| |const|                                                                                                                                                                                                                              |
    +-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                                     | :ref:`_string_to_title<class_TextServerExtension_private_method__string_to_title>`\ (\ string\: :ref:`String<class_String>`, language\: :ref:`String<class_String>`\ ) |virtual| |const|                                                                                                                                                                                                                              |
+   +-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                                     | :ref:`_string_to_upper<class_TextServerExtension_private_method__string_to_upper>`\ (\ string\: :ref:`String<class_String>`, language\: :ref:`String<class_String>`\ ) |virtual| |const|                                                                                                                                                                                                                              |
    +-----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                                     | :ref:`_strip_diacritics<class_TextServerExtension_private_method__strip_diacritics>`\ (\ string\: :ref:`String<class_String>`\ ) |virtual| |const|                                                                                                                                                                                                                                                                    |
@@ -3417,6 +3419,20 @@ Returns an array of the word break boundaries. Elements in the returned array ar
 **Optional.**\ 
 
 Returns the string converted to lowercase.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_TextServerExtension_private_method__string_to_title:
+
+.. rst-class:: classref-method
+
+:ref:`String<class_String>` **_string_to_title**\ (\ string\: :ref:`String<class_String>`, language\: :ref:`String<class_String>`\ ) |virtual| |const|
+
+**Optional.**\ 
+
+Returns the string converted to title case.
 
 .. rst-class:: classref-item-separator
 

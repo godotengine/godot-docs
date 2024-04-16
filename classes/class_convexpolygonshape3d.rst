@@ -32,7 +32,7 @@ A 3D convex polyhedron shape, intended for use in physics. Usually used to provi
 Tutorials
 ---------
 
-- `3D Physics Tests Demo <https://godotengine.org/asset-library/asset/675>`__
+- `3D Physics Tests Demo <https://godotengine.org/asset-library/asset/2747>`__
 
 .. rst-class:: classref-reftable-group
 
@@ -67,6 +67,8 @@ Property Descriptions
 - :ref:`PackedVector3Array<class_PackedVector3Array>` **get_points**\ (\ )
 
 The list of 3D points forming the convex polygon shape.
+
+**Note:** The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedVector3Array<class_PackedVector3Array>` for more details.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

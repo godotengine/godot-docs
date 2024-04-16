@@ -30,9 +30,9 @@ This node draws a 2D polyline, i.e. a shape consisting of several points connect
 Tutorials
 ---------
 
-- `Matrix Transform Demo <https://godotengine.org/asset-library/asset/584>`__
+- `Matrix Transform Demo <https://godotengine.org/asset-library/asset/2787>`__
 
-- `2.5D Demo <https://godotengine.org/asset-library/asset/583>`__
+- `2.5D Game Demo <https://godotengine.org/asset-library/asset/2783>`__
 
 .. rst-class:: classref-reftable-group
 
@@ -347,6 +347,8 @@ The style of the connections between segments of the polyline. Use :ref:`LineJoi
 - :ref:`PackedVector2Array<class_PackedVector2Array>` **get_points**\ (\ )
 
 The points of the polyline, interpreted in local 2D coordinates. Segments are drawn between the adjacent points in this array.
+
+**Note:** The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedVector2Array<class_PackedVector2Array>` for more details.
 
 .. rst-class:: classref-item-separator
 

@@ -1085,9 +1085,9 @@ To create a POST request with query strings to push to the server, do:
  .. code-tab:: csharp
 
     var fields = new Godot.Collections.Dictionary { { "username", "user" }, { "password", "pass" } };
-    string queryString = new HTTPClient().QueryStringFromDict(fields);
+    string queryString = new HttpClient().QueryStringFromDict(fields);
     string[] headers = { "Content-Type: application/x-www-form-urlencoded", $"Content-Length: {queryString.Length}" };
-    var result = new HTTPClient().Request(HTTPClient.Method.Post, "index.php", headers, queryString);
+    var result = new HttpClient().Request(HttpClient.Method.Post, "index.php", headers, queryString);
 
 
 

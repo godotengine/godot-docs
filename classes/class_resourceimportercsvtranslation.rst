@@ -23,7 +23,7 @@ Comma-separated values are a plain text table storage format. The format's simpl
 
 \ **Example CSV file:**\ 
 
-::
+.. code:: text
 
     keys,en,es,ja
     GREET,"Hello, friend!","Hola, amigo!",こんにちは

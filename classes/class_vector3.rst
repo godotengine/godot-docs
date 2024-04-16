@@ -38,7 +38,7 @@ Tutorials
 
 - `3Blue1Brown Essence of Linear Algebra <https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab>`__
 
-- `Matrix Transform Demo <https://godotengine.org/asset-library/asset/584>`__
+- `Matrix Transform Demo <https://godotengine.org/asset-library/asset/2787>`__
 
 - `All 3D Demos <https://github.com/godotengine/godot-demo-projects/tree/master/3d>`__
 
@@ -153,7 +153,7 @@ Methods
    +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Vector3<class_Vector3>` | :ref:`project<class_Vector3_method_project>`\ (\ b\: :ref:`Vector3<class_Vector3>`\ ) |const|                                                                                                                                                                                                                                                                    |
    +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Vector3<class_Vector3>` | :ref:`reflect<class_Vector3_method_reflect>`\ (\ n\: :ref:`Vector3<class_Vector3>`\ ) |const|                                                                                                                                                                                                                                                                    |
+   | :ref:`Vector3<class_Vector3>` | :ref:`reflect<class_Vector3_method_reflect>`\ (\ direction\: :ref:`Vector3<class_Vector3>`\ ) |const|                                                                                                                                                                                                                                                            |
    +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Vector3<class_Vector3>` | :ref:`rotated<class_Vector3_method_rotated>`\ (\ axis\: :ref:`Vector3<class_Vector3>`, angle\: :ref:`float<class_float>`\ ) |const|                                                                                                                                                                                                                              |
    +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -524,7 +524,9 @@ Returns the point at the given ``t`` on the `Bézier curve <https://en.wikipedia
 
 :ref:`Vector3<class_Vector3>` **bounce**\ (\ n\: :ref:`Vector3<class_Vector3>`\ ) |const|
 
-Returns the vector "bounced off" from a plane defined by the given normal.
+Returns the vector "bounced off" from a plane defined by the given normal ``n``.
+
+\ **Note:** :ref:`bounce<class_Vector3_method_bounce>` performs the operation that most engines and frameworks call ``reflect()``.
 
 .. rst-class:: classref-item-separator
 
@@ -561,6 +563,8 @@ Returns a new vector with all components clamped between the components of ``min
 :ref:`Vector3<class_Vector3>` **cross**\ (\ with\: :ref:`Vector3<class_Vector3>`\ ) |const|
 
 Returns the cross product of this vector and ``with``.
+
+This returns a vector perpendicular to both this and ``with``, which would be the normal vector of the plane defined by the two vectors. As there are two such vectors, in opposite directions, this method returns the vector defined by a right-handed coordinate system. If the two vectors are parallel this returns an empty vector, making it useful for testing if two vectors are parallel.
 
 .. rst-class:: classref-item-separator
 
@@ -904,9 +908,11 @@ Returns a new vector resulting from projecting this vector onto the given vector
 
 .. rst-class:: classref-method
 
-:ref:`Vector3<class_Vector3>` **reflect**\ (\ n\: :ref:`Vector3<class_Vector3>`\ ) |const|
+:ref:`Vector3<class_Vector3>` **reflect**\ (\ direction\: :ref:`Vector3<class_Vector3>`\ ) |const|
 
-Returns the result of reflecting the vector from a plane defined by the given normal ``n``.
+Returns the result of reflecting the vector from a plane defined by the given direction vector ``direction``.
+
+\ **Note:** :ref:`reflect<class_Vector3_method_reflect>` differs from what other engines and frameworks call ``reflect()``. In other engines, ``reflect()`` takes a normal direction which is a direction perpendicular to the plane. In Godot, you specify a direction parallel to the plane. See also :ref:`bounce<class_Vector3_method_bounce>` which does what most engines call ``reflect()``.
 
 .. rst-class:: classref-item-separator
 

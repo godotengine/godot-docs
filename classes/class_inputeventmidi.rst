@@ -59,13 +59,13 @@ By default, Godot does not detect MIDI devices. You need to call :ref:`OS.open_m
     
     public override void _Input(InputEvent inputEvent)
     {
-        if (inputEvent is InputEventMIDI midiEvent)
+        if (inputEvent is InputEventMidi midiEvent)
         {
             PrintMIDIInfo(midiEvent);
         }
     }
     
-    private void PrintMIDIInfo(InputEventMIDI midiEvent)
+    private void PrintMIDIInfo(InputEventMidi midiEvent)
     {
         GD.Print(midiEvent);
         GD.Print($"Channel {midiEvent.Channel}");

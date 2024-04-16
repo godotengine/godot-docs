@@ -26,3 +26,6 @@ sphinxcontrib-htmlhelp==2.0.1
 sphinxcontrib-qthelp==1.0.3
 sphinxcontrib-serializinghtml==1.1.5
 sphinxcontrib-devhelp==1.0.2
+
+# `.. video::` directive support to embed videos in documentation pages.
+sphinxcontrib-video==0.2.1rc0

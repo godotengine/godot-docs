@@ -19,24 +19,26 @@ Provides the content of a :ref:`Viewport<class_Viewport>` as a dynamic texture.
 Description
 -----------
 
-Provides the content of a :ref:`Viewport<class_Viewport>` as a dynamic :ref:`Texture2D<class_Texture2D>`. This can be used to mix controls, 2D game objects, and 3D game objects in the same scene.
+A **ViewportTexture** provides the content of a :ref:`Viewport<class_Viewport>` as a dynamic :ref:`Texture2D<class_Texture2D>`. This can be used to combine the rendering of :ref:`Control<class_Control>`, :ref:`Node2D<class_Node2D>` and :ref:`Node3D<class_Node3D>` nodes. For example, you can use this texture to display a 3D scene inside a :ref:`TextureRect<class_TextureRect>`, or a 2D overlay in a :ref:`Sprite3D<class_Sprite3D>`.
 
-To create a **ViewportTexture** in code, use the :ref:`Viewport.get_texture<class_Viewport_method_get_texture>` method on the target viewport.
+To get a **ViewportTexture** in code, use the :ref:`Viewport.get_texture<class_Viewport_method_get_texture>` method on the target viewport.
 
 \ **Note:** A **ViewportTexture** is always local to its scene (see :ref:`Resource.resource_local_to_scene<class_Resource_property_resource_local_to_scene>`). If the scene root is not ready, it may return incorrect data (see :ref:`Node.ready<class_Node_signal_ready>`).
+
+\ **Note:** Instantiating scenes containing a high-resolution **ViewportTexture** may cause noticeable stutter.
 
 .. rst-class:: classref-introduction-group
 
 Tutorials
 ---------
 
-- `GUI in 3D Demo <https://godotengine.org/asset-library/asset/127>`__
+- `GUI in 3D Viewport Demo <https://godotengine.org/asset-library/asset/2807>`__
 
-- `3D in 2D Demo <https://godotengine.org/asset-library/asset/128>`__
+- `3D in 2D Viewport Demo <https://godotengine.org/asset-library/asset/2804>`__
 
-- `2D in 3D Demo <https://godotengine.org/asset-library/asset/129>`__
+- `2D in 3D Viewport Demo <https://godotengine.org/asset-library/asset/2803>`__
 
-- `3D Viewport Scaling Demo <https://godotengine.org/asset-library/asset/586>`__
+- `3D Resolution Scaling Demo <https://godotengine.org/asset-library/asset/2805>`__
 
 .. rst-class:: classref-reftable-group
 
@@ -70,9 +72,9 @@ Property Descriptions
 - |void| **set_viewport_path_in_scene**\ (\ value\: :ref:`NodePath<class_NodePath>`\ )
 - :ref:`NodePath<class_NodePath>` **get_viewport_path_in_scene**\ (\ )
 
-The path to the :ref:`Viewport<class_Viewport>` node to display. This is relative to the scene root, not to the node that uses the texture.
+The path to the :ref:`Viewport<class_Viewport>` node to display. This is relative to the local scene root (see :ref:`Resource.get_local_scene<class_Resource_method_get_local_scene>`), **not** to the nodes that use this texture.
 
-\ **Note:** In the editor, this path is automatically updated when the target viewport or one of its ancestors is renamed or moved. At runtime, the path may not be able to automatically update due to the inability to determine the scene root.
+\ **Note:** In the editor, this path is automatically updated when the target viewport or one of its ancestors is renamed or moved. At runtime, this path may not automatically update if the scene root cannot be found.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

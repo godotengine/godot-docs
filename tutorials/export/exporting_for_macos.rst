@@ -82,7 +82,8 @@ If you do not have an Apple Developer ID Certificate
 - Select ``Built-in (ad-hoc only)`` in the ``Code Signing > Codesign`` option.
 - Select ``Disabled`` in the ``Notarization > Notarization`` option.
 
-In this case Godot will use a ad-hoc signature, which will make running an exported app easier for the end users, see the :ref:`Running Godot apps on macOS <doc_running_on_macos>` page for more information.
+In this case Godot will use an ad-hoc signature, which will make running an exported app easier for the end users,
+see the :ref:`Running Godot apps on macOS <doc_running_on_macos>` page for more information.
 
 Signing Options
 ~~~~~~~~~~~~~~~

@@ -14,7 +14,7 @@ Godot provides the following objects and classes for 2D navigation:
     The AStar2D class is best suited for cell-based 2D gameplay that does not require actors to reach any possible position within an area but only predefined, distinct positions.
 
 - :ref:`NavigationServer2D<class_NavigationServer2D>`
-    ``NavigationServer2D`` provides a powerful server API to find the shortest path between two positions on a area defined by a navigation mesh.
+    ``NavigationServer2D`` provides a powerful server API to find the shortest path between two positions on an area defined by a navigation mesh.
 
     The NavigationServer is best suited for 2D realtime gameplay that does require actors to reach any possible position within a navigation mesh defined area.
     Mesh-based navigation scales well with large game worlds as a large area can often be defined with a single polygon when it would require many, many grid cells.

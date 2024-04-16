@@ -65,7 +65,7 @@ initialize it:
      .. code-tab:: csharp
 
        // Parent
-       GetNode("Child").Connect("SignalName", ObjectWithMethod, "MethodOnTheObject");
+       GetNode("Child").Connect("SignalName", Callable.From(ObjectWithMethod.MethodOnTheObject));
 
        // Child
        EmitSignal("SignalName"); // Triggers parent-defined behavior.

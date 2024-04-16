@@ -87,6 +87,8 @@ Property Descriptions
 
 The extra headers to use during handshake. See :ref:`WebSocketPeer.handshake_headers<class_WebSocketPeer_property_handshake_headers>` for more details.
 
+**Note:** The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedStringArray<class_PackedStringArray>` for more details.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -171,6 +173,8 @@ The outbound buffer size for connected peers. See :ref:`WebSocketPeer.outbound_b
 - :ref:`PackedStringArray<class_PackedStringArray>` **get_supported_protocols**\ (\ )
 
 The supported WebSocket sub-protocols. See :ref:`WebSocketPeer.supported_protocols<class_WebSocketPeer_property_supported_protocols>` for more details.
+
+**Note:** The returned array is *copied* and any changes to it will not update the original property value. See :ref:`PackedStringArray<class_PackedStringArray>` for more details.
 
 .. rst-class:: classref-section-separator
 

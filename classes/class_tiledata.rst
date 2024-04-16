@@ -86,6 +86,8 @@ Methods
    +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                             | :ref:`is_collision_polygon_one_way<class_TileData_method_is_collision_polygon_one_way>`\ (\ layer_id\: :ref:`int<class_int>`, polygon_index\: :ref:`int<class_int>`\ ) |const|                                                                               |
    +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                             | :ref:`is_valid_terrain_peering_bit<class_TileData_method_is_valid_terrain_peering_bit>`\ (\ peering_bit\: :ref:`CellNeighbor<enum_TileSet_CellNeighbor>`\ ) |const|                                                                                          |
+   +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                              | :ref:`remove_collision_polygon<class_TileData_method_remove_collision_polygon>`\ (\ layer_id\: :ref:`int<class_int>`, polygon_index\: :ref:`int<class_int>`\ )                                                                                               |
    +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                              | :ref:`set_collision_polygon_one_way<class_TileData_method_set_collision_polygon_one_way>`\ (\ layer_id\: :ref:`int<class_int>`, polygon_index\: :ref:`int<class_int>`, one_way\: :ref:`bool<class_bool>`\ )                                                  |
@@ -459,7 +461,7 @@ Returns the occluder polygon of the tile for the TileSet occlusion layer with in
 
 :ref:`int<class_int>` **get_terrain_peering_bit**\ (\ peering_bit\: :ref:`CellNeighbor<enum_TileSet_CellNeighbor>`\ ) |const|
 
-Returns the tile's terrain bit for the given ``peering_bit`` direction.
+Returns the tile's terrain bit for the given ``peering_bit`` direction. To check that a direction is valid, use :ref:`is_valid_terrain_peering_bit<class_TileData_method_is_valid_terrain_peering_bit>`.
 
 .. rst-class:: classref-item-separator
 
@@ -472,6 +474,18 @@ Returns the tile's terrain bit for the given ``peering_bit`` direction.
 :ref:`bool<class_bool>` **is_collision_polygon_one_way**\ (\ layer_id\: :ref:`int<class_int>`, polygon_index\: :ref:`int<class_int>`\ ) |const|
 
 Returns whether one-way collisions are enabled for the polygon at index ``polygon_index`` for TileSet physics layer with index ``layer_id``.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_TileData_method_is_valid_terrain_peering_bit:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **is_valid_terrain_peering_bit**\ (\ peering_bit\: :ref:`CellNeighbor<enum_TileSet_CellNeighbor>`\ ) |const|
+
+Returns whether the given ``peering_bit`` direction is valid for this tile.
 
 .. rst-class:: classref-item-separator
 
@@ -615,7 +629,7 @@ Sets the occluder for the TileSet occlusion layer with index ``layer_id``.
 
 |void| **set_terrain_peering_bit**\ (\ peering_bit\: :ref:`CellNeighbor<enum_TileSet_CellNeighbor>`, terrain\: :ref:`int<class_int>`\ )
 
-Sets the tile's terrain bit for the given ``peering_bit`` direction.
+Sets the tile's terrain bit for the given ``peering_bit`` direction. To check that a direction is valid, use :ref:`is_valid_terrain_peering_bit<class_TileData_method_is_valid_terrain_peering_bit>`.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

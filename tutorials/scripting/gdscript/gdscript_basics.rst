@@ -224,7 +224,9 @@ in case you want to take a look under the hood.
 Operators
 ~~~~~~~~~
 
-The following is the list of supported operators and their precedence.
+The following is the list of supported operators and their precedence. All binary operators are `left-associative <https://en.wikipedia.org/wiki/Operator_associativity>`_,
+including the ``**`` operator. This means that ``2 ** 2 ** 3`` is equal to ``(2 ** 2) ** 3``. Use parentheses to explicitly specify precedence you need, for
+example ``2 ** (2 ** 3)``. The ternary ``if/else`` operator is right-associative.
 
 +---------------------------------------+-----------------------------------------------------------------------------+
 | **Operator**                          | **Description**                                                             |
@@ -251,10 +253,6 @@ The following is the list of supported operators and their precedence.
 |                                       |                                                                             |
 |                                       | Multiplies ``x`` by itself ``y`` times, similar to calling                  |
 |                                       | :ref:`pow() <class_@GlobalScope_method_pow>` function.                      |
-|                                       |                                                                             |
-|                                       | **Note:** In GDScript, the ``**`` operator is                               |
-|                                       | `left-associative <https://en.wikipedia.org/wiki/Operator_associativity>`_. |
-|                                       | See a detailed note after the table.                                        |
 +---------------------------------------+-----------------------------------------------------------------------------+
 | ``~x``                                | Bitwise NOT                                                                 |
 +---------------------------------------+-----------------------------------------------------------------------------+
@@ -330,9 +328,7 @@ The following is the list of supported operators and their precedence.
     3. For negative values, the ``%`` operator and ``fmod()`` use `truncation <https://en.wikipedia.org/wiki/Truncation>`_ instead of rounding towards negative infinity.
        This means that the remainder has a sign. If you need the remainder in a mathematical sense, use the :ref:`posmod() <class_@GlobalScope_method_posmod>` and
        :ref:`fposmod() <class_@GlobalScope_method_fposmod>` functions instead.
-    4. The ``**`` operator is `left-associative <https://en.wikipedia.org/wiki/Operator_associativity>`_. This means that ``2 ** 2 ** 3`` is equal to ``(2 ** 2) ** 3``.
-       Use parentheses to explicitly specify precedence you need, for example ``2 ** (2 ** 3)``.
-    5. The ``==`` and ``!=`` operators sometimes allow you to compare values of different types (for example, ``1 == 1.0`` is true), but in other cases it can cause
+    4. The ``==`` and ``!=`` operators sometimes allow you to compare values of different types (for example, ``1 == 1.0`` is true), but in other cases it can cause
        a runtime error. If you're not sure about the types of the operands, you can safely use the :ref:`is_same() <class_@GlobalScope_method_is_same>` function
        (but note that it is more strict about types and references). To compare floats, use the :ref:`is_equal_approx() <class_@GlobalScope_method_is_equal_approx>`
        and :ref:`is_zero_approx() <class_@GlobalScope_method_is_zero_approx>` functions instead.
@@ -433,13 +429,21 @@ A string enclosed in quotes of one type (for example ``"``) can contain quotes o
 two consecutive quotes of the same type (unless they are adjacent to the string edges).
 
 **Raw string literals** always encode the string as it appears in the source code.
-This is especially useful for regular expressions. Raw strings do not process escape sequences,
-but you can "escape" a quote or backslash (they replace themselves).
+This is especially useful for regular expressions. A raw string literal doesn't process escape sequences,
+however it does recognize ``\\`` and ``\"`` (``\'``) and replaces them with themselves.
+Thus, a string can have a quote that matches the opening one, but only if it's preceded by a backslash.
 
 ::
 
     print("\tchar=\"\\t\"")  # Prints `    char="\t"`.
     print(r"\tchar=\"\\t\"") # Prints `\tchar=\"\\t\"`.
+
+.. note::
+
+    Some strings cannot be represented using raw string literals: you cannot have an odd number
+    of backslashes at the end of a string or have an unescaped opening quote inside the string.
+    However, in practice this doesn't matter since you can use a different quote type
+    or use concatenation with a regular string literal.
 
 GDScript also supports :ref:`format strings <doc_gdscript_printf>`.
 

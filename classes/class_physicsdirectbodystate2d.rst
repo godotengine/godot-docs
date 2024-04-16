@@ -676,7 +676,7 @@ Returns the body's velocity at the given relative position, including both trans
 
 |void| **integrate_forces**\ (\ )
 
-Calls the built-in force integration code.
+Updates the body's linear and angular velocity by applying gravity and damping for the equivalent of one physics tick.
 
 .. rst-class:: classref-item-separator
 

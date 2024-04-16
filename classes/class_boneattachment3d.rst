@@ -116,6 +116,8 @@ The name of the attached bone.
 
 Whether the BoneAttachment3D node will override the bone pose of the bone it is attached to. When set to ``true``, the BoneAttachment3D node can change the pose of the bone. When set to ``false``, the BoneAttachment3D will always be set to the bone's transform.
 
+\ **Note:** This override performs interruptively in the skeleton update process using signals due to the old design. It may cause unintended behavior when used at the same time with :ref:`SkeletonModifier3D<class_SkeletonModifier3D>`.
+
 .. rst-class:: classref-section-separator
 
 ----

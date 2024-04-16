@@ -107,7 +107,7 @@ Global built-ins are available everywhere, including custom functions.
 | in float **TAU**  | A ``TAU`` constant (``6.283185``).                                                     |
 |                   | An equivalent of ``PI * 2`` and amount of radians in full turn.                        |
 +-------------------+----------------------------------------------------------------------------------------+
-| in float **E**    | A ``E`` constant (``2.718281``). Euler's number and a base of the natural logarithm.   |
+| in float **E**    | An ``E`` constant (``2.718281``). Euler's number and a base of the natural logarithm.  |
 +-------------------+----------------------------------------------------------------------------------------+
 
 Vertex built-ins
@@ -130,7 +130,8 @@ it manually with the following code:
     void vertex() {
         VERTEX = (MODELVIEW_MATRIX * vec4(VERTEX, 1.0)).xyz;
         NORMAL = normalize((MODELVIEW_MATRIX * vec4(NORMAL, 0.0)).xyz);
-        // same as above for binormal and tangent, if normal mapping is used
+        BINORMAL = normalize((MODELVIEW_MATRIX * vec4(BINORMAL, 0.0)).xyz);
+        TANGENT = normalize((MODELVIEW_MATRIX * vec4(TANGENT, 0.0)).xyz);
     }
 
 Other built-ins, such as UV, UV2 and COLOR, are also passed through to the fragment function if not modified.

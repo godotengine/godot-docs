@@ -37,8 +37,6 @@ Tutorials
 
 - :doc:`High-level multiplayer <../tutorials/networking/high_level_multiplayer>`
 
-- `WebRTC Signaling Demo <https://godotengine.org/asset-library/asset/537>`__
-
 .. rst-class:: classref-reftable-group
 
 Properties

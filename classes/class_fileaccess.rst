@@ -71,7 +71,7 @@ Tutorials
 
 - :doc:`Runtime file loading and saving <../tutorials/io/runtime_file_loading_and_saving>`
 
-- `3D Voxel Demo <https://godotengine.org/asset-library/asset/676>`__
+- `3D Voxel Demo <https://godotengine.org/asset-library/asset/2755>`__
 
 .. rst-class:: classref-reftable-group
 
@@ -606,7 +606,7 @@ Text is interpreted as being UTF-8 encoded. Text values must be enclosed in doub
 
 For example, the following CSV lines are valid and will be properly parsed as two strings each:
 
-::
+.. code:: text
 
     Alice,"Hello, Bob!"
     Bob,Alice! What a surprise!
