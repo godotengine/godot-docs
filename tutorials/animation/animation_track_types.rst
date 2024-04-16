@@ -108,7 +108,7 @@ their expected values are as follows:
         var animation = animationPlayer.GetAnimation("idle");
         // Get or create the target method's animation track.
         var trackIndex = animation.AddTrack(Animation.TrackType.Method);
-        // Make the arguments for the target method jump().
+        // Make the arguments for the target method Jump().
         var jumpVelocity = -400.0;
         var multiplier = GD.RandRange(.8, 1.2);
         // Get or create a dictionary with the target method's name and arguments.
