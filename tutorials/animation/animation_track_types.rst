@@ -72,61 +72,61 @@ their expected values are as follows:
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    # Create a call method track
+    # Create a call method track.
     func create_method_animation_track():
-        # Get or create the animation the target method will be called from
+        # Get or create the animation the target method will be called from.
         var animation = $AnimationPlayer.get_animation("idle")
-        # Get or create the target method's animation track
+        # Get or create the target method's animation track.
         var track_index = animation.add_track(Animation.TYPE_METHOD)
-        # Make the arguments for the target method jump()
+        # Make the arguments for the target method jump().
         var jump_velocity = -400.0
         var multiplier = randf_range(.8, 1.2)
-        # Get or create a dictionary with the target method's name and arguments
+        # Get or create a dictionary with the target method's name and arguments.
         var method_dictionary = {
             "method": "jump",
             "args": [jump_velocity, multiplier],
         }
 
-        # Set scene-tree path to node with target method
+        # Set scene-tree path to node with target method.
         animation.track_set_path(track_index, ".")
-        # Add the dictionary as the animation method track's key
+        # Add the dictionary as the animation method track's key.
         animation.track_insert_key(track_index, 0.6, method_dictionary, 0)
 
 
-    # The target method that will be called from the animation
+    # The target method that will be called from the animation.
     func jump(jump_velocity, multiplier):
         velocity.y = jump_velocity * multiplier
 
  .. code-tab:: csharp
 
-    // Create a call method track
+    // Create a call method track.
     public void CreateAnimationTrack()
     {
-        // Get reference to the AnimationPlayer
-        var animationPlayer = GetNode("AnimationPlayer") as AnimationPlayer;
-        // Get or create the animation the target method will be called from
+        // Get reference to the AnimationPlayer.
+        var animationPlayer = GetNode<AnimationPlayer>("AnimationPlayer");
+        // Get or create the animation the target method will be called from.
         var animation = animationPlayer.GetAnimation("idle");
-        // Get or create the target method's animation track
+        // Get or create the target method's animation track.
         var trackIndex = animation.AddTrack(Animation.TrackType.Method);
-        // Make the arguments for the target method jump()
+        // Make the arguments for the target method jump().
         var jumpVelocity = -400.0;
         var multiplier = GD.RandRange(.8, 1.2);
-        // Get or create a dictionary with the target method's name and arguments
+        // Get or create a dictionary with the target method's name and arguments.
         var methodDictionary = new Godot.Collections.Dictionary
         {
-            { "method", "Jump" },
-            { "args", new Godot.Collections.Array{jumpVelocity, multiplier} }
+            { "method", MethodName.Jump },
+            { "args", new Godot.Collections.Array { jumpVelocity, multiplier } }
         };
 
-        // Set scene-tree path to node with target method
+        // Set scene-tree path to node with target method.
         animation.TrackSetPath(trackIndex, ".");
-        // Add the dictionary as the animation method track's key
-        animation.TrackInsertKey(trackIndex, 0.2, methodDictionary, 0);
+        // Add the dictionary as the animation method track's key.
+        animation.TrackInsertKey(trackIndex, 0.6, methodDictionary, 0);
     }
 
 
-    // The target method that will be called from the animation
-    public void Jump(float jumpVelocity, float multiplier)
+    // The target method that will be called from the animation.
+    private void Jump(float jumpVelocity, float multiplier)
     {
         Velocity = new Vector2(Velocity.X, jumpVelocity * multiplier);
     }
