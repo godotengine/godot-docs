@@ -287,6 +287,8 @@ these properties, and if you don't write to them, Godot will optimize away the c
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
 | in vec3 **CAMERA_DIRECTION_WORLD**     | Camera direction, in world space.                                                                |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
+| in int **CAMERA_VISIBLE_LAYERS**       | 	Visible layers indicator for the camera.                                                        |
++----------------------------------------+--------------------------------------------------------------------------------------------------+
 | in vec3 **VERTEX**                     | Vertex that comes from vertex function (default, in view space).                                 |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
 | in int **VIEW_INDEX**                  | The view that we are rendering.                                                                  |
