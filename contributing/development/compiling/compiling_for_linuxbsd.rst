@@ -345,10 +345,14 @@ and named like this (even for \*BSD which is seen as "Linux/X11" by Godot):
 
 ::
 
-    linux_x11_32_debug
-    linux_x11_32_release
-    linux_x11_64_debug
-    linux_x11_64_release
+    linux_debug.arm32
+    linux_debug.arm64
+    linux_debug.x86_32
+    linux_debug.x86_64
+    linux_release.arm32
+    linux_release.arm64
+    linux_release.x86_32
+    linux_release.x86_64
 
 However, if you are writing your custom modules or custom C++ code, you
 might instead want to configure your binaries as custom export templates
