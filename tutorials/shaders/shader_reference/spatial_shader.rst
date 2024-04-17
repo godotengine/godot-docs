@@ -172,6 +172,8 @@ shader, this value can be used as desired.
 +----------------------------------------+--------------------------------------------------------+
 | in vec3 **CAMERA_DIRECTION_WORLD**     | Camera world space direction.                          |
 +----------------------------------------+--------------------------------------------------------+
+| in int **CAMERA_VISIBLE_LAYERS**        | Visible layers indicator for the camera.              |
++----------------------------------------+--------------------------------------------------------+
 | in bool **OUTPUT_IS_SRGB**             | ``true`` when output is in sRGB color space            |
 |                                        | (this is ``true`` in the Compatibility renderer,       |
 |                                        | ``false`` in Forward+ and Forward Mobile).             |
