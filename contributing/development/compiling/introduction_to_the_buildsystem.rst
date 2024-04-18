@@ -422,20 +422,34 @@ platform:
 
     android_debug.apk
     android_release.apk
-    web_debug.zip
-    web_release.zip
-    linux_server_32
-    linux_server_64
-    linux_x11_32_debug
-    linux_x11_32_release
-    linux_x11_64_debug
-    linux_x11_64_release
+    android_source.zip
+    ios.zip
+    linux_debug.arm32
+    linux_debug.arm64
+    linux_debug.x86_32
+    linux_debug.x86_64
+    linux_release.arm32
+    linux_release.arm64
+    linux_release.x86_32
+    linux_release.x86_64
     macos.zip
     version.txt
-    windows_32_debug.exe
-    windows_32_release.exe
-    windows_64_debug.exe
-    windows_64_release.exe
+    web_debug.zip
+    web_dlink_debug.zip
+    web_dlink_nothreads_debug.zip
+    web_dlink_nothreads_release.zip
+    web_dlink_release.zip
+    web_nothreads_debug.zip
+    web_nothreads_release.zip
+    web_release.zip
+    windows_debug_x86_32_console.exe
+    windows_debug_x86_32.exe
+    windows_debug_x86_64_console.exe
+    windows_debug_x86_64.exe
+    windows_release_x86_32_console.exe
+    windows_release_x86_32.exe
+    windows_release_x86_64_console.exe
+    windows_release_x86_64.exe
 
 To create those yourself, follow the instructions detailed for each
 platform in this same tutorial section. Each platform explains how to
