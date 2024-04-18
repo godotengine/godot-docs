@@ -315,7 +315,7 @@ You can contribute an updated mapping to be included in the next Godot version
 by opening a pull request on the linked repository.
 
 There are many ways to create mappings. One option is to use the mapping wizard
-in the `official Joypads demo <https://godotengine.org/asset-library/asset/140>`__.
+in the `official Joypads demo <https://godotengine.org/asset-library/asset/2785>`__.
 Once you have a working mapping for your controller, you can test it by defining
 the ``SDL_GAMECONTROLLERCONFIG`` environment variable before running Godot:
 
