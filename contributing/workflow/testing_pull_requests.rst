@@ -61,7 +61,7 @@ to generate a universal download link.
 .. image:: img/testing_pull_requests_access_fork.png
 
 - Now that you are on the fork's branch page, click the ``.github`` folder at the top of the file list.
-  Then, click on the ``workflows`` folder (whicb is inside the ``.github`` folder).
+  Then, click on the ``workflows`` folder (which is inside the ``.github`` folder).
   Click the workflow file for the platform you wish to download artifacts for.
   *After* clicking on the file (which opens the file view), copy the page URL from your browser's address bar.
 
@@ -90,6 +90,9 @@ This approach may be needed for pull requests that were last updated more than
 90 days ago, or to test on platforms and configurations that are not supported
 by Godot's GitHub Actions setup.
 
+Downloading a zipped pull request branch
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 - Open the pull request page. Click the *fork*'s branch name near the top of the page:
 
 .. image:: img/testing_pull_requests_access_fork.png
@@ -101,3 +104,34 @@ by Godot's GitHub Actions setup.
 
 - Extract the ZIP archive and follow the :ref:`compiling <toc-devel-compiling>` instructions
   for your operating system.
+
+Checking out a pull request branch with git
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Alternatively, you can checkout the pull request directly with git:
+
+- Open the pull request page. Note the pull request *number* (``PR_NUMBER``), and the *branch name*
+  (``BRANCH_NAME``), but without the user name.
+
+.. image:: img/testing_pull_requests_command_line_checkout.webp
+
+- Construct the command using this pattern:
+
+::
+
+    $ git fetch upstream pull/PR_NUMBER/head:BRANCH_NAME
+
+So for the pull request above, the actual command will be:
+
+::
+
+    # Fetch PR branch locally
+    $ git fetch upstream pull/48734/head:editor_file_dialog_filter_sort
+
+- Once the pull request finishes downloading, checkout its branch:
+
+::
+
+    $ git checkout editor_file_dialog_filter_sort
+
+- And follow the :ref:`compiling <toc-devel-compiling>` instructions for your operating system.
