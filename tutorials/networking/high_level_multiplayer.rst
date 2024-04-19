@@ -38,10 +38,6 @@ In summary, you can use the low-level networking API for maximum control and imp
           (`here <https://gafferongames.com/categories/game-networking/>`__), including the comprehensive
           `introduction to networking models in games <https://gafferongames.com/post/what_every_programmer_needs_to_know_about_game_networking/>`__.
 
-          If you want to use your low-level networking library of choice instead of Godot's built-in networking,
-          see here for an example:
-          https://github.com/PerduGames/gdnet3
-
 .. warning:: Adding networking to your game comes with some responsibility.
              It can make your application vulnerable if done wrong and may lead to cheats or exploits.
              It may even allow an attacker to compromise the machines your application runs on
