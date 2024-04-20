@@ -107,7 +107,10 @@ Properties with a backing field use the default value of the backing field.
     value for ``int``, ``0``. However, when running the scene or inspecting a
     node with an attached tool script, ``_number`` will be ``2``, and
     ``NumberWithBackingField`` will return ``5``. This difference may cause
-    confusing behavior. To avoid this, don't use complex properties.
+    confusing behavior. To avoid this, don't use complex properties. Alternatively,
+    if the default value can be explicitly specified, it can be overridden with the 
+    :ref:`_PropertyCanRevert() <class_Object_private_method__property_can_revert>` and
+    :ref:`_PropertyGetRevert() <class_Object_private_method__property_get_revert>` methods.
 
 Any type of ``Resource`` or ``Node`` can be exported. The property editor shows
 a user-friendly assignment dialog for these types. This can be used instead of
