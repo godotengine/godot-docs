@@ -49,8 +49,8 @@ Ideally when an obstacle is moving the static vertices are removed and instead t
 Similar to agents the obstacles can make use of the ``avoidance_layers`` bitmask.
 All agents with a matching bit on their own avoidance mask will avoid the obstacle.
 
-Procedual obstacles
-~~~~~~~~~~~~~~~~~~~
+Procedural obstacles
+~~~~~~~~~~~~~~~~~~~~
 
 New obstacles can be created without a Node directly on the NavigationServer.
 

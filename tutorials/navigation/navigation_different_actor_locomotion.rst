@@ -14,8 +14,8 @@ or crawling actors so they can find paths through those narrow sections in your 
 When an actor changes locomotion state, e.g. stands up, starts 
 crouching or crawling, query the appropriate map for a path.
 
-If the avoidance behavior should also change with the locomotion e.g. only avoid while standing or only avoid 
-other agents in the same locomotion state, switch the actors's avoidance agent to another avoidance map with each locomotion change.
+If the avoidance behavior should also change with the locomotion e.g. only avoid while standing or only avoid
+other agents in the same locomotion state, switch the actor's avoidance agent to another avoidance map with each locomotion change.
 
 .. tabs::
  .. code-tab:: gdscript GDScript

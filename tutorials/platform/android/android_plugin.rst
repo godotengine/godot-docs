@@ -312,7 +312,7 @@ Using a v2 Android plugin as an Android library
 
 Since they are also Android libraries, Godot v2 Android plugins can be stripped from their ``EditorExportPlugin`` packaging and provided as raw ``AAR`` binaries for use as libraries alongside the :ref:`Godot Android library <doc_android_library>` by Android apps.
 
-If targetting this use-case, make sure to include additional instructions for how the ``AAR`` binaries should be included (e.g: custom additions to the Android app's manifest).
+If targeting this use-case, make sure to include additional instructions for how the ``AAR`` binaries should be included (e.g: custom additions to the Android app's manifest).
 
 Reference implementations
 -------------------------

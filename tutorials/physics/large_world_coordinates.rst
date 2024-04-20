@@ -51,7 +51,7 @@ This is the range where individual integer values can be represented in a
 floating-point number:
 
 - **Single-precision float range (represent all integers):** Between -16,777,216 and 16,777,216
-- **Double-precision float range (represent all integers):** Between -9 quadrillon and 9 quadrillon
+- **Double-precision float range (represent all integers):** Between -9 quadrillion and 9 quadrillion
 
 +----------------------+-----------------------+-----------------------+-----------------------------------------------------------------------------+
 | Range                | Single step           | Double step           | Comment                                                                     |
