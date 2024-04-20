@@ -181,25 +181,15 @@ Emitted when the bone at ``bone_idx`` is toggled with :ref:`set_bone_enabled<cla
 
 ----
 
-.. _class_Skeleton3D_signal_bone_pose_changed:
-
-.. rst-class:: classref-signal
-
-**bone_pose_changed**\ (\ bone_idx\: :ref:`int<class_int>`\ )
-
-Emitted when the bone at ``bone_idx`` changes its transform/pose. This can be used to update other nodes that rely on bone positions.
-
-.. rst-class:: classref-item-separator
-
-----
-
 .. _class_Skeleton3D_signal_pose_updated:
 
 .. rst-class:: classref-signal
 
 **pose_updated**\ (\ )
 
-Emitted when the pose is updated, after :ref:`NOTIFICATION_UPDATE_SKELETON<class_Skeleton3D_constant_NOTIFICATION_UPDATE_SKELETON>` is received.
+Emitted when the pose is updated.
+
+\ **Note:** During the update process, this signal is not fired, so modification by :ref:`SkeletonModifier3D<class_SkeletonModifier3D>` is not detected.
 
 .. rst-class:: classref-item-separator
 
@@ -212,6 +202,20 @@ Emitted when the pose is updated, after :ref:`NOTIFICATION_UPDATE_SKELETON<class
 **show_rest_only_changed**\ (\ )
 
 Emitted when the value of :ref:`show_rest_only<class_Skeleton3D_property_show_rest_only>` changes.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Skeleton3D_signal_skeleton_updated:
+
+.. rst-class:: classref-signal
+
+**skeleton_updated**\ (\ )
+
+Emitted when the final pose has been calculated will be applied to the skin in the update process.
+
+This means that all :ref:`SkeletonModifier3D<class_SkeletonModifier3D>` processing is complete. In order to detect the completion of the processing of each :ref:`SkeletonModifier3D<class_SkeletonModifier3D>`, use :ref:`SkeletonModifier3D.modification_processed<class_SkeletonModifier3D_signal_modification_processed>`.
 
 .. rst-class:: classref-section-separator
 
@@ -259,9 +263,7 @@ Constants
 
 **NOTIFICATION_UPDATE_SKELETON** = ``50``
 
-Notification received when this skeleton's pose needs to be updated.
-
-This notification is received *before* the related :ref:`pose_updated<class_Skeleton3D_signal_pose_updated>` signal.
+Notification received when this skeleton's pose needs to be updated. In that case, this is called only once per frame in a deferred process.
 
 .. rst-class:: classref-section-separator
 
@@ -782,7 +784,7 @@ Disables the pose for the bone at ``bone_idx`` if ``false``, enables the bone po
 
 Sets the global pose transform, ``pose``, for the bone at ``bone_idx``.
 
-\ **Note:** If other bone poses have been changed, this method executes an update process and will cause performance to deteriorate. If you know that multiple global poses will be applied, consider using :ref:`set_bone_pose<class_Skeleton3D_method_set_bone_pose>` with precalculation.
+\ **Note:** If other bone poses have been changed, this method executes a dirty poses recalculation and will cause performance to deteriorate. If you know that multiple global poses will be applied, consider using :ref:`set_bone_pose<class_Skeleton3D_method_set_bone_pose>` with precalculation.
 
 .. rst-class:: classref-item-separator
 

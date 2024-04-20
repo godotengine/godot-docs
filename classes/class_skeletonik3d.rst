@@ -52,6 +52,8 @@ Properties
    :widths: auto
 
    +---------------------------------------+---------------------------------------------------------------------------+-----------------------------------------------------+
+   | :ref:`float<class_float>`             | :ref:`interpolation<class_SkeletonIK3D_property_interpolation>`           |                                                     |
+   +---------------------------------------+---------------------------------------------------------------------------+-----------------------------------------------------+
    | :ref:`Vector3<class_Vector3>`         | :ref:`magnet<class_SkeletonIK3D_property_magnet>`                         | ``Vector3(0, 0, 0)``                                |
    +---------------------------------------+---------------------------------------------------------------------------+-----------------------------------------------------+
    | :ref:`int<class_int>`                 | :ref:`max_iterations<class_SkeletonIK3D_property_max_iterations>`         | ``10``                                              |
@@ -97,6 +99,25 @@ Methods
 
 Property Descriptions
 ---------------------
+
+.. _class_SkeletonIK3D_property_interpolation:
+
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **interpolation**
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_interpolation**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_interpolation**\ (\ )
+
+**Deprecated:** Use :ref:`SkeletonModifier3D.influence<class_SkeletonModifier3D_property_influence>` instead.
+
+Interpolation value for how much the IK results are applied to the current skeleton bone chain. A value of ``1.0`` will overwrite all skeleton bone transforms completely while a value of ``0.0`` will visually disable the SkeletonIK.
+
+.. rst-class:: classref-item-separator
+
+----
 
 .. _class_SkeletonIK3D_property_magnet:
 

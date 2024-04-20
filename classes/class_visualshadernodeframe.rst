@@ -12,6 +12,8 @@ VisualShaderNodeFrame
 
 **Inherits:** :ref:`VisualShaderNodeResizableBase<class_VisualShaderNodeResizableBase>` **<** :ref:`VisualShaderNode<class_VisualShaderNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
+**Inherited By:** :ref:`VisualShaderNodeComment<class_VisualShaderNodeComment>`
+
 A frame other visual shader nodes can be attached to for better organization.
 
 .. rst-class:: classref-introduction-group

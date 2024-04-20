@@ -578,6 +578,7 @@ Resources
     class_visualshadernodecolorfunc
     class_visualshadernodecolorop
     class_visualshadernodecolorparameter
+    class_visualshadernodecomment
     class_visualshadernodecompare
     class_visualshadernodeconstant
     class_visualshadernodecubemap

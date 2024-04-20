@@ -109,6 +109,8 @@ Methods
    +---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                       | :ref:`get_name<class_OS_method_get_name>`\ (\ ) |const|                                                                                                                                                                                                                                                                                                                                     |
    +---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`get_process_exit_code<class_OS_method_get_process_exit_code>`\ (\ pid\: :ref:`int<class_int>`\ ) |const|                                                                                                                                                                                                                                                                              |
+   +---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`get_process_id<class_OS_method_get_process_id>`\ (\ ) |const|                                                                                                                                                                                                                                                                                                                         |
    +---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`get_processor_count<class_OS_method_get_processor_count>`\ (\ ) |const|                                                                                                                                                                                                                                                                                                               |
@@ -1027,6 +1029,22 @@ Returns the name of the host platform.
 
 ----
 
+.. _class_OS_method_get_process_exit_code:
+
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **get_process_exit_code**\ (\ pid\: :ref:`int<class_int>`\ ) |const|
+
+Returns the exit code of a spawned process once it has finished running (see :ref:`is_process_running<class_OS_method_is_process_running>`).
+
+Returns ``-1`` if the ``pid`` is not a PID of a spawned child process, the process is still running, or the method is not implemented for the current platform.
+
+\ **Note:** This method is implemented on Android, Linux, macOS and Windows.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_OS_method_get_process_id:
 
 .. rst-class:: classref-method
@@ -1035,7 +1053,7 @@ Returns the name of the host platform.
 
 Returns the number used by the host machine to uniquely identify this application.
 
-\ **Note:** This method is implemented on Android, iOS, Linux, macOS and Windows.
+\ **Note:** This method is implemented on Android, iOS, Linux, macOS, and Windows.
 
 .. rst-class:: classref-item-separator
 
@@ -1352,7 +1370,7 @@ Returns ``true`` if the input keycode corresponds to a Unicode character. For a 
 
 Returns ``true`` if the child process ID (``pid``) is still running or ``false`` if it has terminated. ``pid`` must be a valid ID generated from :ref:`create_process<class_OS_method_create_process>`.
 
-\ **Note:** This method is implemented on Android, iOS, Linux, macOS and Windows.
+\ **Note:** This method is implemented on Android, iOS, Linux, macOS, and Windows.
 
 .. rst-class:: classref-item-separator
 

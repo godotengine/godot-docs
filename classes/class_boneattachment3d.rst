@@ -53,7 +53,7 @@ Methods
    +---------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`         | :ref:`get_use_external_skeleton<class_BoneAttachment3D_method_get_use_external_skeleton>`\ (\ ) |const|                                          |
    +---------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-   | |void|                          | :ref:`on_bone_pose_update<class_BoneAttachment3D_method_on_bone_pose_update>`\ (\ bone_index\: :ref:`int<class_int>`\ )                          |
+   | |void|                          | :ref:`on_skeleton_update<class_BoneAttachment3D_method_on_skeleton_update>`\ (\ )                                                                |
    +---------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                          | :ref:`set_external_skeleton<class_BoneAttachment3D_method_set_external_skeleton>`\ (\ external_skeleton\: :ref:`NodePath<class_NodePath>`\ )     |
    +---------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -151,13 +151,13 @@ Returns whether the BoneAttachment3D node is using an external :ref:`Skeleton3D<
 
 ----
 
-.. _class_BoneAttachment3D_method_on_bone_pose_update:
+.. _class_BoneAttachment3D_method_on_skeleton_update:
 
 .. rst-class:: classref-method
 
-|void| **on_bone_pose_update**\ (\ bone_index\: :ref:`int<class_int>`\ )
+|void| **on_skeleton_update**\ (\ )
 
-A function that is called automatically when the :ref:`Skeleton3D<class_Skeleton3D>` the BoneAttachment3D node is using has a bone that has changed its pose. This function is where the BoneAttachment3D node updates its position so it is correctly bound when it is *not* set to override the bone pose.
+A function that is called automatically when the :ref:`Skeleton3D<class_Skeleton3D>` is updated. This function is where the **BoneAttachment3D** node updates its position so it is correctly bound when it is *not* set to override the bone pose.
 
 .. rst-class:: classref-item-separator
 
