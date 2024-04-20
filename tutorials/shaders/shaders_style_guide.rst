@@ -9,9 +9,9 @@ discussions, and tutorials. Hopefully, this will also support the development of
 auto-formatting tools.
 
 Since the Godot shader language is close to C-style languages and GLSL, this
-guide is inspired by Godot's own GLSL formatting. You can view an example of a
-GLSL file in Godot's source code
-`here <https://github.com/godotengine/godot/blob/master/drivers/gles3/shaders/copy.glsl>`__.
+guide is inspired by Godot's own GLSL formatting. You can view examples of
+GLSL files in Godot's source code
+`here <https://github.com/godotengine/godot/blob/master/drivers/gles3/shaders/>`__.
 
 Style guides aren't meant as hard rulebooks. At times, you may not be able to
 apply some of the guidelines below. When that happens, use your best judgment,
