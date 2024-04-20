@@ -139,7 +139,7 @@ Write your titles like plain sentences, without capitalizing each word:
 -  **Good:** Understanding signals in Godot
 -  **Bad:** Understanding Signals In Godot
 
-Only propers nouns, projects, people, and node class names should have their
+Only proper nouns, projects, people, and node class names should have their
 first letter capitalized.
 
 Sphinx and reStructuredText syntax

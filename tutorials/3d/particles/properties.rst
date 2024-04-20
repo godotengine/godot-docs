@@ -19,7 +19,7 @@ value to spawn more particles at the cost of performance.
 The ``Amount Ratio`` property is the ratio of particles compared to the amount that will be emitted.
 If it's less than ``1.0``, the amount of particles emitted through the lifetime will be the ``Amount`` *
 ``Amount Ratio``. Changing this value while emitted doesn't affect already created particles and doesn't
-cause the particle system to restart. It's useful for making effects where the number of emitted particels
+cause the particle system to restart. It's useful for making effects where the number of emitted particles
 varies over time.
 
 You can set another particle node as a ``Sub Emitter``, which will be spawned as a child of each
