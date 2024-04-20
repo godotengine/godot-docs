@@ -12,7 +12,7 @@ OpenXRHand
 
 **Deprecated:** Use :ref:`XRHandModifier3D<class_XRHandModifier3D>` instead.
 
-**Inherits:** :ref:`SkeletonModifier3D<class_SkeletonModifier3D>` **<** :ref:`Node3D<class_Node3D>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+**Inherits:** :ref:`Node3D<class_Node3D>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
 Node supporting hand and finger tracking in OpenXR.
 
@@ -37,15 +37,17 @@ Properties
 .. table::
    :widths: auto
 
-   +-------------------------------------------------+-------------------------------------------------------------+-------+
-   | :ref:`BoneUpdate<enum_OpenXRHand_BoneUpdate>`   | :ref:`bone_update<class_OpenXRHand_property_bone_update>`   | ``0`` |
-   +-------------------------------------------------+-------------------------------------------------------------+-------+
-   | :ref:`Hands<enum_OpenXRHand_Hands>`             | :ref:`hand<class_OpenXRHand_property_hand>`                 | ``0`` |
-   +-------------------------------------------------+-------------------------------------------------------------+-------+
-   | :ref:`MotionRange<enum_OpenXRHand_MotionRange>` | :ref:`motion_range<class_OpenXRHand_property_motion_range>` | ``0`` |
-   +-------------------------------------------------+-------------------------------------------------------------+-------+
-   | :ref:`SkeletonRig<enum_OpenXRHand_SkeletonRig>` | :ref:`skeleton_rig<class_OpenXRHand_property_skeleton_rig>` | ``0`` |
-   +-------------------------------------------------+-------------------------------------------------------------+-------+
+   +-------------------------------------------------+---------------------------------------------------------------+------------------+
+   | :ref:`BoneUpdate<enum_OpenXRHand_BoneUpdate>`   | :ref:`bone_update<class_OpenXRHand_property_bone_update>`     | ``0``            |
+   +-------------------------------------------------+---------------------------------------------------------------+------------------+
+   | :ref:`Hands<enum_OpenXRHand_Hands>`             | :ref:`hand<class_OpenXRHand_property_hand>`                   | ``0``            |
+   +-------------------------------------------------+---------------------------------------------------------------+------------------+
+   | :ref:`NodePath<class_NodePath>`                 | :ref:`hand_skeleton<class_OpenXRHand_property_hand_skeleton>` | ``NodePath("")`` |
+   +-------------------------------------------------+---------------------------------------------------------------+------------------+
+   | :ref:`MotionRange<enum_OpenXRHand_MotionRange>` | :ref:`motion_range<class_OpenXRHand_property_motion_range>`   | ``0``            |
+   +-------------------------------------------------+---------------------------------------------------------------+------------------+
+   | :ref:`SkeletonRig<enum_OpenXRHand_SkeletonRig>` | :ref:`skeleton_rig<class_OpenXRHand_property_skeleton_rig>`   | ``0``            |
+   +-------------------------------------------------+---------------------------------------------------------------+------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -231,6 +233,23 @@ Specifies whether this node tracks the left or right hand of the player.
 
 ----
 
+.. _class_OpenXRHand_property_hand_skeleton:
+
+.. rst-class:: classref-property
+
+:ref:`NodePath<class_NodePath>` **hand_skeleton** = ``NodePath("")``
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_hand_skeleton**\ (\ value\: :ref:`NodePath<class_NodePath>`\ )
+- :ref:`NodePath<class_NodePath>` **get_hand_skeleton**\ (\ )
+
+Set a :ref:`Skeleton3D<class_Skeleton3D>` node for which the pose positions will be updated.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_OpenXRHand_property_motion_range:
 
 .. rst-class:: classref-property
@@ -259,7 +278,7 @@ Set the motion range (if supported) limiting the hand motion.
 - |void| **set_skeleton_rig**\ (\ value\: :ref:`SkeletonRig<enum_OpenXRHand_SkeletonRig>`\ )
 - :ref:`SkeletonRig<enum_OpenXRHand_SkeletonRig>` **get_skeleton_rig**\ (\ )
 
-Set the type of skeleton rig the parent :ref:`Skeleton3D<class_Skeleton3D>` is compliant with.
+Set the type of skeleton rig the :ref:`hand_skeleton<class_OpenXRHand_property_hand_skeleton>` is compliant with.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

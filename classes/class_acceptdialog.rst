@@ -86,6 +86,10 @@ Theme Properties
    :widths: auto
 
    +---------------------------------+---------------------------------------------------------------------------------+--------+
+   | :ref:`int<class_int>`           | :ref:`buttons_min_height<class_AcceptDialog_theme_constant_buttons_min_height>` | ``0``  |
+   +---------------------------------+---------------------------------------------------------------------------------+--------+
+   | :ref:`int<class_int>`           | :ref:`buttons_min_width<class_AcceptDialog_theme_constant_buttons_min_width>`   | ``0``  |
+   +---------------------------------+---------------------------------------------------------------------------------+--------+
    | :ref:`int<class_int>`           | :ref:`buttons_separation<class_AcceptDialog_theme_constant_buttons_separation>` | ``10`` |
    +---------------------------------+---------------------------------------------------------------------------------+--------+
    | :ref:`StyleBox<class_StyleBox>` | :ref:`panel<class_AcceptDialog_theme_style_panel>`                              |        |
@@ -319,6 +323,30 @@ Removes the ``button`` from the dialog. Does NOT free the ``button``. The ``butt
 
 Theme Property Descriptions
 ---------------------------
+
+.. _class_AcceptDialog_theme_constant_buttons_min_height:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`int<class_int>` **buttons_min_height** = ``0``
+
+The minimum height of each button in the bottom row (such as OK/Cancel) in pixels. This can be increased to make buttons with short texts easier to click/tap.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_AcceptDialog_theme_constant_buttons_min_width:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`int<class_int>` **buttons_min_width** = ``0``
+
+The minimum width of each button in the bottom row (such as OK/Cancel) in pixels. This can be increased to make buttons with short texts easier to click/tap.
+
+.. rst-class:: classref-item-separator
+
+----
 
 .. _class_AcceptDialog_theme_constant_buttons_separation:
 

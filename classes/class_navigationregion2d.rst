@@ -50,23 +50,19 @@ Properties
 .. table::
    :widths: auto
 
-   +---------------------------------------------------+-------------------------------------------------------------------------------------+-----------+
-   | :ref:`int<class_int>`                             | :ref:`avoidance_layers<class_NavigationRegion2D_property_avoidance_layers>`         | ``1``     |
-   +---------------------------------------------------+-------------------------------------------------------------------------------------+-----------+
-   | :ref:`bool<class_bool>`                           | :ref:`constrain_avoidance<class_NavigationRegion2D_property_constrain_avoidance>`   | ``false`` |
-   +---------------------------------------------------+-------------------------------------------------------------------------------------+-----------+
-   | :ref:`bool<class_bool>`                           | :ref:`enabled<class_NavigationRegion2D_property_enabled>`                           | ``true``  |
-   +---------------------------------------------------+-------------------------------------------------------------------------------------+-----------+
-   | :ref:`float<class_float>`                         | :ref:`enter_cost<class_NavigationRegion2D_property_enter_cost>`                     | ``0.0``   |
-   +---------------------------------------------------+-------------------------------------------------------------------------------------+-----------+
-   | :ref:`int<class_int>`                             | :ref:`navigation_layers<class_NavigationRegion2D_property_navigation_layers>`       | ``1``     |
-   +---------------------------------------------------+-------------------------------------------------------------------------------------+-----------+
-   | :ref:`NavigationPolygon<class_NavigationPolygon>` | :ref:`navigation_polygon<class_NavigationRegion2D_property_navigation_polygon>`     |           |
-   +---------------------------------------------------+-------------------------------------------------------------------------------------+-----------+
-   | :ref:`float<class_float>`                         | :ref:`travel_cost<class_NavigationRegion2D_property_travel_cost>`                   | ``1.0``   |
-   +---------------------------------------------------+-------------------------------------------------------------------------------------+-----------+
-   | :ref:`bool<class_bool>`                           | :ref:`use_edge_connections<class_NavigationRegion2D_property_use_edge_connections>` | ``true``  |
-   +---------------------------------------------------+-------------------------------------------------------------------------------------+-----------+
+   +---------------------------------------------------+-------------------------------------------------------------------------------------+----------+
+   | :ref:`bool<class_bool>`                           | :ref:`enabled<class_NavigationRegion2D_property_enabled>`                           | ``true`` |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------+----------+
+   | :ref:`float<class_float>`                         | :ref:`enter_cost<class_NavigationRegion2D_property_enter_cost>`                     | ``0.0``  |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------+----------+
+   | :ref:`int<class_int>`                             | :ref:`navigation_layers<class_NavigationRegion2D_property_navigation_layers>`       | ``1``    |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------+----------+
+   | :ref:`NavigationPolygon<class_NavigationPolygon>` | :ref:`navigation_polygon<class_NavigationRegion2D_property_navigation_polygon>`     |          |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------+----------+
+   | :ref:`float<class_float>`                         | :ref:`travel_cost<class_NavigationRegion2D_property_travel_cost>`                   | ``1.0``  |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------+----------+
+   | :ref:`bool<class_bool>`                           | :ref:`use_edge_connections<class_NavigationRegion2D_property_use_edge_connections>` | ``true`` |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------+----------+
 
 .. rst-class:: classref-reftable-group
 
@@ -79,8 +75,6 @@ Methods
    +-------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                  | :ref:`bake_navigation_polygon<class_NavigationRegion2D_method_bake_navigation_polygon>`\ (\ on_thread\: :ref:`bool<class_bool>` = true\ )                                  |
    +-------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>` | :ref:`get_avoidance_layer_value<class_NavigationRegion2D_method_get_avoidance_layer_value>`\ (\ layer_number\: :ref:`int<class_int>`\ ) |const|                            |
-   +-------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>` | :ref:`get_navigation_layer_value<class_NavigationRegion2D_method_get_navigation_layer_value>`\ (\ layer_number\: :ref:`int<class_int>`\ ) |const|                          |
    +-------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`RID<class_RID>`   | :ref:`get_navigation_map<class_NavigationRegion2D_method_get_navigation_map>`\ (\ ) |const|                                                                                |
@@ -90,8 +84,6 @@ Methods
    | :ref:`RID<class_RID>`   | :ref:`get_rid<class_NavigationRegion2D_method_get_rid>`\ (\ ) |const|                                                                                                      |
    +-------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>` | :ref:`is_baking<class_NavigationRegion2D_method_is_baking>`\ (\ ) |const|                                                                                                  |
-   +-------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | |void|                  | :ref:`set_avoidance_layer_value<class_NavigationRegion2D_method_set_avoidance_layer_value>`\ (\ layer_number\: :ref:`int<class_int>`, value\: :ref:`bool<class_bool>`\ )   |
    +-------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                  | :ref:`set_navigation_layer_value<class_NavigationRegion2D_method_set_navigation_layer_value>`\ (\ layer_number\: :ref:`int<class_int>`, value\: :ref:`bool<class_bool>`\ ) |
    +-------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -135,42 +127,6 @@ Emitted when the used navigation polygon is replaced or changes to the internals
 
 Property Descriptions
 ---------------------
-
-.. _class_NavigationRegion2D_property_avoidance_layers:
-
-.. rst-class:: classref-property
-
-:ref:`int<class_int>` **avoidance_layers** = ``1``
-
-.. rst-class:: classref-property-setget
-
-- |void| **set_avoidance_layers**\ (\ value\: :ref:`int<class_int>`\ )
-- :ref:`int<class_int>` **get_avoidance_layers**\ (\ )
-
-A bitfield determining all avoidance layers for the avoidance constrain.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_NavigationRegion2D_property_constrain_avoidance:
-
-.. rst-class:: classref-property
-
-:ref:`bool<class_bool>` **constrain_avoidance** = ``false``
-
-.. rst-class:: classref-property-setget
-
-- |void| **set_constrain_avoidance**\ (\ value\: :ref:`bool<class_bool>`\ )
-- :ref:`bool<class_bool>` **get_constrain_avoidance**\ (\ )
-
-**Experimental:** When enabled, agents are known to get stuck on the navigation polygon corners and edges, especially at a high frame rate. Not recommended for use in production at this stage.
-
-If ``true`` constraints avoidance agent's with an avoidance mask bit that matches with a bit of the :ref:`avoidance_layers<class_NavigationRegion2D_property_avoidance_layers>` to the navigation polygon. Due to each navigation polygon outline creating an obstacle and each polygon edge creating an avoidance line constrain keep the navigation polygon shape as simple as possible for performance.
-
-.. rst-class:: classref-item-separator
-
-----
 
 .. _class_NavigationRegion2D_property_enabled:
 
@@ -291,18 +247,6 @@ Bakes the :ref:`NavigationPolygon<class_NavigationPolygon>`. If ``on_thread`` is
 
 ----
 
-.. _class_NavigationRegion2D_method_get_avoidance_layer_value:
-
-.. rst-class:: classref-method
-
-:ref:`bool<class_bool>` **get_avoidance_layer_value**\ (\ layer_number\: :ref:`int<class_int>`\ ) |const|
-
-Returns whether or not the specified layer of the :ref:`avoidance_layers<class_NavigationRegion2D_property_avoidance_layers>` bitmask is enabled, given a ``layer_number`` between 1 and 32.
-
-.. rst-class:: classref-item-separator
-
-----
-
 .. _class_NavigationRegion2D_method_get_navigation_layer_value:
 
 .. rst-class:: classref-method
@@ -360,18 +304,6 @@ Returns the :ref:`RID<class_RID>` of this region on the :ref:`NavigationServer2D
 :ref:`bool<class_bool>` **is_baking**\ (\ ) |const|
 
 Returns ``true`` when the :ref:`NavigationPolygon<class_NavigationPolygon>` is being baked on a background thread.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_NavigationRegion2D_method_set_avoidance_layer_value:
-
-.. rst-class:: classref-method
-
-|void| **set_avoidance_layer_value**\ (\ layer_number\: :ref:`int<class_int>`, value\: :ref:`bool<class_bool>`\ )
-
-Based on ``value``, enables or disables the specified layer in the :ref:`avoidance_layers<class_NavigationRegion2D_property_avoidance_layers>` bitmask, given a ``layer_number`` between 1 and 32.
 
 .. rst-class:: classref-item-separator
 

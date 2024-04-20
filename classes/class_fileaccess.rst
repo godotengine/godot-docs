@@ -714,7 +714,7 @@ Returns the size of the file in bytes.
 
 :ref:`String<class_String>` **get_line**\ (\ ) |const|
 
-Returns the next line of the file as a :ref:`String<class_String>`.
+Returns the next line of the file as a :ref:`String<class_String>`. The returned string doesn't include newline (``\n``) or carriage return (``\r``) characters, but does include any other leading or trailing whitespace.
 
 Text is interpreted as being UTF-8 encoded.
 

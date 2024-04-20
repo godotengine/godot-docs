@@ -84,6 +84,18 @@ Emitted when a file is moved from ``old_file`` path to ``new_file`` path.
 
 ----
 
+.. _class_FileSystemDock_signal_folder_color_changed:
+
+.. rst-class:: classref-signal
+
+**folder_color_changed**\ (\ )
+
+Emitted when folders change color.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_FileSystemDock_signal_folder_moved:
 
 .. rst-class:: classref-signal

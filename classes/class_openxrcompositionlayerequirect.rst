@@ -10,6 +10,8 @@
 OpenXRCompositionLayerEquirect
 ==============================
 
+**Experimental:** This class may be changed or removed in future versions.
+
 **Inherits:** :ref:`OpenXRCompositionLayer<class_OpenXRCompositionLayer>` **<** :ref:`Node3D<class_Node3D>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
 An OpenXR composition layer that is rendered as an internal slice of a sphere.

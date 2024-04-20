@@ -301,6 +301,10 @@ Methods
    +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`PackedVector2Array<class_PackedVector2Array>` | :ref:`simplify_path<class_NavigationServer2D_method_simplify_path>`\ (\ path\: :ref:`PackedVector2Array<class_PackedVector2Array>`, epsilon\: :ref:`float<class_float>`\ )                                                                                                                                                                                                            |
    +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`RID<class_RID>`                               | :ref:`source_geometry_parser_create<class_NavigationServer2D_method_source_geometry_parser_create>`\ (\ )                                                                                                                                                                                                                                                                             |
+   +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                              | :ref:`source_geometry_parser_set_callback<class_NavigationServer2D_method_source_geometry_parser_set_callback>`\ (\ parser\: :ref:`RID<class_RID>`, callback\: :ref:`Callable<class_Callable>`\ )                                                                                                                                                                                     |
+   +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -1841,6 +1845,36 @@ If ``true`` enables debug mode on the NavigationServer.
 Returns a simplified version of ``path`` with less critical path points removed. The simplification amount is in worlds units and controlled by ``epsilon``. The simplification uses a variant of Ramer-Douglas-Peucker algorithm for curve point decimation.
 
 Path simplification can be helpful to mitigate various path following issues that can arise with certain agent types and script behaviors. E.g. "steering" agents or avoidance in "open fields".
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_NavigationServer2D_method_source_geometry_parser_create:
+
+.. rst-class:: classref-method
+
+:ref:`RID<class_RID>` **source_geometry_parser_create**\ (\ )
+
+Creates a new source geometry parser. If a :ref:`Callable<class_Callable>` is set for the parser with :ref:`source_geometry_parser_set_callback<class_NavigationServer2D_method_source_geometry_parser_set_callback>` the callback will be called for every single node that gets parsed whenever :ref:`parse_source_geometry_data<class_NavigationServer2D_method_parse_source_geometry_data>` is used.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_NavigationServer2D_method_source_geometry_parser_set_callback:
+
+.. rst-class:: classref-method
+
+|void| **source_geometry_parser_set_callback**\ (\ parser\: :ref:`RID<class_RID>`, callback\: :ref:`Callable<class_Callable>`\ )
+
+Sets the ``callback`` :ref:`Callable<class_Callable>` for the specific source geometry ``parser``. The :ref:`Callable<class_Callable>` will receive a call with the following parameters:
+
+- ``navigation_mesh`` - The :ref:`NavigationPolygon<class_NavigationPolygon>` reference used to define the parse settings. Do NOT edit or add directly to the navigation mesh.
+
+- ``source_geometry_data`` - The :ref:`NavigationMeshSourceGeometryData2D<class_NavigationMeshSourceGeometryData2D>` reference. Add custom source geometry for navigation mesh baking to this object.
+
+- ``node`` - The :ref:`Node<class_Node>` that is parsed.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

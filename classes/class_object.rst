@@ -159,6 +159,8 @@ Methods
    +------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                           | :ref:`remove_meta<class_Object_method_remove_meta>`\ (\ name\: :ref:`StringName<class_StringName>`\ )                                                                                                                                    |
    +------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                           | :ref:`remove_user_signal<class_Object_method_remove_user_signal>`\ (\ signal\: :ref:`StringName<class_StringName>`\ )                                                                                                                    |
+   +------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                           | :ref:`set<class_Object_method_set>`\ (\ property\: :ref:`StringName<class_StringName>`, value\: :ref:`Variant<class_Variant>`\ )                                                                                                         |
    +------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                           | :ref:`set_block_signals<class_Object_method_set_block_signals>`\ (\ enable\: :ref:`bool<class_bool>`\ )                                                                                                                                  |
@@ -713,7 +715,7 @@ Override this method to customize existing properties. Every property info goes 
 
 |void| **add_user_signal**\ (\ signal\: :ref:`String<class_String>`, arguments\: :ref:`Array<class_Array>` = []\ )
 
-Adds a user-defined ``signal``. Optional arguments for the signal can be added as an :ref:`Array<class_Array>` of dictionaries, each defining a ``name`` :ref:`String<class_String>` and a ``type`` :ref:`int<class_int>` (see :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>`). See also :ref:`has_user_signal<class_Object_method_has_user_signal>`.
+Adds a user-defined ``signal``. Optional arguments for the signal can be added as an :ref:`Array<class_Array>` of dictionaries, each defining a ``name`` :ref:`String<class_String>` and a ``type`` :ref:`int<class_int>` (see :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>`). See also :ref:`has_user_signal<class_Object_method_has_user_signal>` and :ref:`remove_user_signal<class_Object_method_remove_user_signal>`.
 
 
 .. tabs::
@@ -1392,7 +1394,7 @@ Returns ``true`` if the given ``signal`` name exists in the object.
 
 :ref:`bool<class_bool>` **has_user_signal**\ (\ signal\: :ref:`StringName<class_StringName>`\ ) |const|
 
-Returns ``true`` if the given user-defined ``signal`` name exists. Only signals added with :ref:`add_user_signal<class_Object_method_add_user_signal>` are included.
+Returns ``true`` if the given user-defined ``signal`` name exists. Only signals added with :ref:`add_user_signal<class_Object_method_add_user_signal>` are included. See also :ref:`remove_user_signal<class_Object_method_remove_user_signal>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1561,6 +1563,18 @@ Removes the given entry ``name`` from the object's metadata. See also :ref:`has_
 \ **Note:** A metadata's name must be a valid identifier as per :ref:`StringName.is_valid_identifier<class_StringName_method_is_valid_identifier>` method.
 
 \ **Note:** Metadata that has a name starting with an underscore (``_``) is considered editor-only. Editor-only metadata is not displayed in the Inspector and should not be edited, although it can still be found by this method.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Object_method_remove_user_signal:
+
+.. rst-class:: classref-method
+
+|void| **remove_user_signal**\ (\ signal\: :ref:`StringName<class_StringName>`\ )
+
+Removes the given user signal ``signal`` from the object. See also :ref:`add_user_signal<class_Object_method_add_user_signal>` and :ref:`has_user_signal<class_Object_method_has_user_signal>`.
 
 .. rst-class:: classref-item-separator
 

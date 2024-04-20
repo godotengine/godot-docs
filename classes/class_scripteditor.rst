@@ -40,6 +40,8 @@ Methods
    +------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Array<class_Array>`\[:ref:`Script<class_Script>`\]                     | :ref:`get_open_scripts<class_ScriptEditor_method_get_open_scripts>`\ (\ ) |const|                                                                                                       |
    +------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                                                                       | :ref:`goto_help<class_ScriptEditor_method_goto_help>`\ (\ topic\: :ref:`String<class_String>`\ )                                                                                        |
+   +------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                       | :ref:`goto_line<class_ScriptEditor_method_goto_line>`\ (\ line_number\: :ref:`int<class_int>`\ )                                                                                        |
    +------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                       | :ref:`open_script_create_dialog<class_ScriptEditor_method_open_script_create_dialog>`\ (\ base_name\: :ref:`String<class_String>`, base_path\: :ref:`String<class_String>`\ )           |
@@ -130,6 +132,43 @@ Returns an array with all :ref:`ScriptEditorBase<class_ScriptEditorBase>` object
 :ref:`Array<class_Array>`\[:ref:`Script<class_Script>`\] **get_open_scripts**\ (\ ) |const|
 
 Returns an array with all :ref:`Script<class_Script>` objects which are currently open in editor.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ScriptEditor_method_goto_help:
+
+.. rst-class:: classref-method
+
+|void| **goto_help**\ (\ topic\: :ref:`String<class_String>`\ )
+
+Opens help for the given topic. The ``topic`` is an encoded string that controls which class, method, constant, signal, annotation, property, or theme item should be focused.
+
+The supported ``topic`` formats include ``class_name:class``, ``class_method:class:method``, ``class_constant:class:constant``, ``class_signal:class:signal``, ``class_annotation:class:@annotation``, ``class_property:class:property``, and ``class_theme_item:class:item``, where ``class`` is the class name, ``method`` is the method name, ``constant`` is the constant name, ``signal`` is the signal name, ``annotation`` is the annotation name, ``property`` is the property name, and ``item`` is the theme item.
+
+\ **Examples:**\ 
+
+::
+
+    # Shows help for the Node class.
+    class_name:Node
+    # Shows help for the global min function.
+    # Global objects are accessible in the `@GlobalScope` namespace, shown here.
+    class_method:@GlobalScope:min
+    # Shows help for get_viewport in the Node class.
+    class_method:Node:get_viewport
+    # Shows help for the Input constant MOUSE_BUTTON_MIDDLE.
+    class_constant:Input:MOUSE_BUTTON_MIDDLE
+    # Shows help for the BaseButton signal pressed.
+    class_signal:BaseButton:pressed
+    # Shows help for the CanvasItem property visible.
+    class_property:CanvasItem:visible
+    # Shows help for the GDScript annotation export.
+    # Annotations should be prefixed with the `@` symbol in the descriptor, as shown here.
+    class_annotation:@GDScript:@export
+    # Shows help for the GraphNode theme item named panel_selected.
+    class_theme_item:GraphNode:panel_selected
 
 .. rst-class:: classref-item-separator
 
