@@ -165,7 +165,7 @@ use the following labels:
 -  *Discussion*: the issue is not consensual and needs further
    discussion to define what exactly should be done to address the
    topic.
--  *Enhancememnt*: new information to be added in an existing page.
+-  *Enhancement*: new information to be added in an existing page.
 -  *Good first issue*: the issue is *assumed* to be an easy one to fix, which makes
    it a great fit for new contributors who want to become familiar with
    the code base. It should be removed while an active PR is available, that

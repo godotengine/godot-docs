@@ -203,12 +203,12 @@ The XR runtime can use this for improved reprojection.
 Startup Alert
 -------------
 
-If enabled this will result in an alert message presented to the user if OpenXR fails to start.
-We don't always receive feedback from the XR system as to why starting fails. If we do we log this to the console.
+If enabled, this will result in an alert message presented to the user if OpenXR fails to start.
+We don't always receive feedback from the XR system as to why starting fails. If we do, we log this to the console.
 Common failure reasons are:
 
 - No OpenXR runtime is installed on the host system.
-- Microsofts WMR OpenXR runtime is currently active, this only supports DirectX and will fail if OpenGL or Vulkan is used.
+- Microsoft's WMR OpenXR runtime is currently active, this only supports DirectX and will fail if OpenGL or Vulkan is used.
 - SteamVR is used but no headset is connected/turned on.
 
 Disable this if you support a fallback mode in your game so it can be played in desktop mode when no VR headset is connected,

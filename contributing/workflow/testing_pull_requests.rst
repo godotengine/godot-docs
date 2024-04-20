@@ -61,7 +61,7 @@ to generate a universal download link.
 .. image:: img/testing_pull_requests_access_fork.png
 
 - Now that you are on the fork's branch page, click the ``.github`` folder at the top of the file list.
-  Then, click on the ``workflows`` folder (whicb is inside the ``.github`` folder).
+  Then, click on the ``workflows`` folder (which is inside the ``.github`` folder).
   Click the workflow file for the platform you wish to download artifacts for.
   *After* clicking on the file (which opens the file view), copy the page URL from your browser's address bar.
 

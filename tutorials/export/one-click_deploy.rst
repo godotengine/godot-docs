@@ -51,7 +51,7 @@ Supported platforms
      the project should be exported to.
 
 - **Desktop platforms:** Exports the project with debugging enabled and runs it
-  on the remove computer via SSH.
+  on the remote computer via SSH.
 
 - **Web:** Starts a local web server and runs the exported project by opening
   the default web browser. This is only accessible on ``localhost`` by default.
