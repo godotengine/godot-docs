@@ -6,7 +6,7 @@ Heads up display
 The final piece our game needs is a User Interface (UI) to display things like
 score, a "game over" message, and a restart button.
 
-Create a new scene, click the "Other Node" button and add a :ref:`CanvasLayer <class_CanvasLayer>` node named
+Create a new scene, click the "Other Node" button, and add a :ref:`CanvasLayer <class_CanvasLayer>` node named
 ``HUD``. "HUD" stands for "heads-up display", an informational display that
 appears as an overlay on top of the game view.
 
