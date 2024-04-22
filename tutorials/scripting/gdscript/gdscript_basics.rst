@@ -446,13 +446,13 @@ GDScript also supports :ref:`format strings <doc_gdscript_printf>`.
 Annotations
 ~~~~~~~~~~~
 
-There are some special tokens in GDScript that act like keywords but are not,
-they are *annotations* instead. Every annotation start with the ``@`` character
-and is specified by a name. A detailed description and example for each annotation
-can be found inside the :ref:`GDScript class reference <class_@GDScript>`.
+Annotations are special tokens in GDScript that act as modifiers to a script or
+its code and may affect how the script is treated by the Godot engine or
+editor.
 
-Annotations affect how the script is treated by external tools and usually don't
-change the behavior.
+Every annotation starts with the ``@`` character and is specified by a name. A
+detailed description and example for each annotation can be found inside the
+:ref:`GDScript class reference <class_@GDScript>`.
 
 For instance, you can use it to export a value to the editor::
 

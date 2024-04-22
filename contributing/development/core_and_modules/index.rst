@@ -23,6 +23,7 @@ This section covers the basics that you will encounter in (almost) every source 
    inheritance_class_tree
    internal_rendering_architecture
    2d_coordinate_systems
+   scripting_development
 
 Extending Godot by modifying its source code
 --------------------------------------------
