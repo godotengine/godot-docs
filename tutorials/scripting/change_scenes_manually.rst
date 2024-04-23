@@ -81,7 +81,7 @@ access and integrity.
 
         - Pro: There's no need to move any more nodes around to save data.
 
-        - Con: More data is being kept in memory which will be become a problem
+        - Con: More data is being kept in memory which will become a problem
           on memory-sensitive platforms like web or mobile.
 
     - Processing continues.
