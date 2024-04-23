@@ -8,7 +8,7 @@ Compiling with .NET
 Requirements
 ------------
 
-- `.NET SDK 6.0+ <https://dotnet.microsoft.com/download>`_
+- `.NET SDK 8.0+ <https://dotnet.microsoft.com/download>`_
 
   You can use ``dotnet --info`` to check which .NET SDK versions are installed.
 
