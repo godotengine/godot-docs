@@ -2337,7 +2337,7 @@ character's name in the binds array argument::
         var character_node = get_node('Character')
         var battle_log_node = get_node('UserInterface/BattleLog')
 
-        character_node.health_changed.connect(battle_log_node._on_Character_health_changed, [character_node.name])
+        character_node.health_changed.connect(battle_log_node._on_Character_health_changed.bind(character_node.name))
 
 Our ``BattleLog`` node receives each element in the binds array as an extra argument::
 
