@@ -209,7 +209,7 @@ Without a script, it's useless, so let's add some data and logic!
 Attach a script to it named ``bot_stats.gd`` (or just create a new script, and then drag it to it).
 
 .. note::
-    If you're using C#, you need to annoate your Resource class with the ``[GlobalClass]`` annotation for it to show up in the create resource GUI.
+    If you're using C#, you need to annotate your Resource class with the ``[GlobalClass]`` attribute for it to show up in the create resource GUI.
 
 .. tabs::
   .. code-tab:: gdscript GDScript
