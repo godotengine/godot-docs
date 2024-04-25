@@ -208,6 +208,9 @@ It should appear in your file tab with the full name ``bot_stats.tres``.
 Without a script, it's useless, so let's add some data and logic!
 Attach a script to it named ``bot_stats.gd`` (or just create a new script, and then drag it to it).
 
+.. note::
+    If you're using C#, you need to annoate your Resource class with the ``[GlobalClass]`` annotation for it to show up in the create resource GUI.
+
 .. tabs::
   .. code-tab:: gdscript GDScript
 
@@ -232,6 +235,7 @@ Attach a script to it named ``bot_stats.gd`` (or just create a new script, and t
 
         namespace ExampleProject
         {
+            [GlobalClass]
             public partial class BotStats : Resource
             {
                 [Export]
@@ -329,7 +333,7 @@ Now, select the :ref:`CharacterBody3D <class_CharacterBody3D>` node which we nam
       .. code-tab:: csharp
 
         using Godot;
-
+        [GlobalClass]
         public partial class BotStatsTable : Resource
         {
             private Godot.Dictionary<string, BotStats> _stats = new Godot.Dictionary<string, BotStats>();
@@ -384,6 +388,7 @@ Now, select the :ref:`CharacterBody3D <class_CharacterBody3D>` node which we nam
 
         public partial class MyNode : Node
         {
+            [GlobalClass]
             public partial class MyResource : Resource
             {
                 [Export]
