@@ -293,6 +293,9 @@ these properties, and if you don't write to them, Godot will optimize away the c
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
 | in vec3 **VERTEX**                     | Vertex that comes from vertex function (default, in view space).                                 |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
+| inout vec3 **LIGHT_VERTEX**            | A writable version of ``VERTEX`` that can be used to alter light and shadows. Writing to this    |
+|                                        | will not change the position of the fragment.                                                    |
++----------------------------------------+--------------------------------------------------------------------------------------------------+
 | in int **VIEW_INDEX**                  | The view that we are rendering.                                                                  |
 |                                        | ``VIEW_MONO_LEFT`` (``0``) for Mono (not multiview) or                                           |
 |                                        | left eye, ``VIEW_RIGHT`` (``1``) for right eye.                                                  |
