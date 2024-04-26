@@ -245,6 +245,147 @@ angle add a setter ``set(new_speed)`` which is executed with the input from the 
     to run in the editor too. Autoload nodes cannot be accessed in the editor at
     all.
 
+Getting notified about Resources changing
+-----------------------------------------
+On some occastions you want your tool to use a resource. However, when you change an
+attribute of that resource in the editor, the ``set()`` function of your tool will
+not get called.
+
+.. tabs::
+ .. code-tab:: gdscript GDScript
+
+    @tool
+    class_name MyTool
+    extends Node
+
+    @export var resource:MyResource:
+        set(new_resource):
+            resource = new_resource
+            _on_resource_set()
+    
+    # This will only be called, when you create, delete or paste a resource.
+    # You will not get an update when tweaking properteis of it.
+    func _on_resource_set():
+        print("My resource was set!")
+
+ .. code-tab:: csharp
+
+    using Godot;
+
+    [Tool]
+    public partial class MyTool : Node
+    {
+        private float _resource = 1;
+
+        [Export]
+        public MyResource Resource
+        {
+            get => _resource;
+            set
+            {
+                _resource = value;
+                OnResourceSet()
+            }
+        }
+    }
+
+    # This will only be called, when you create, delete or paste a resource.
+    # You will not get an update when tweaking properteis of it
+    private void OnResourceSet()
+    {
+        print("My resource was set!");
+    }
+
+To get around this problem, you first have to make your resource a tool and make it
+emit a signal, whenever a property is set:
+
+.. tabs::
+ .. code-tab:: gdscript GDScript
+    # Make Your Resource a tool.
+    @tool
+    class_name MyResource
+    extends Resource
+
+    # Declare a signal.
+    signal property_updated
+
+    @export var property = 1:
+
+        set(new_setting):
+            property = new_setting
+            # Emit a signal, when a property is changed.
+            property_updated.emit()
+
+ .. code-tab:: csharp
+
+    using Godot;
+
+    [Tool]
+    public partial class MyResource : Resource
+    {
+        private float _property = 1;
+
+        # Declare a signal.        
+        [Signal]
+        public delegate void PropertyUpdatedEventHandler();
+
+        [Export]
+        public float Property
+        {
+            get => _property;
+            set
+            {
+                _property = value;
+                #Emit a signal, when property is changed.
+                EmitSignal(SignalName.PropertyUpdated);
+            }
+        }
+    }
+
+You then want to connect the signal when a new resource is set:
+.. tabs::
+ .. code-tab:: gdscript GDScript
+
+    @tool
+    class_name MyTool
+    extends Node
+
+    @export var resource:MyResource:
+        set(new_resource):
+            resource = new_resource
+            # Connect the signal you just declared as soon as a new resource is being added.
+            resource.property_updated.connect(Callable(self, "_on_resource_updated")
+
+    func _on_resource_updated():
+        print("My resource just changed!")
+
+ .. code-tab:: csharp
+
+    using Godot;
+
+    [Tool]
+    public partial class MyTool : Node
+    {
+        private float _resource = 1;
+
+        [Export]
+        public MyResource Resource
+        {
+            get => _resource;
+            set
+            {
+                _resource = value;
+                # Connect the signal you just declared as soon as a new resource is being added.
+                _resource.PropertyUpdated += OnResourceUpdated;
+            }
+        }
+    }
+
+    private void OnResourceUpdated()
+    {
+        print("My Resource just updated!");
+    }
+
 Reporting node configuration warnings
 -------------------------------------
 
