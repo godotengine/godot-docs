@@ -377,7 +377,7 @@ You then want to connect the signal when a new resource is set:
             set
             {
                 _resource = value;
-                # Connect the signal you just declared as soon as a new resource is being added.
+                // Connect the signal you just declared as soon as a new resource is being added.
                 _resource.PropertyUpdated += OnResourceUpdated;
             }
         }
