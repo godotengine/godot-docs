@@ -290,8 +290,8 @@ not be called.
         }
     }
 
-    # This will only be called, when you create, delete or paste a resource.
-    # You will not get an update when tweaking properteis of it
+    // This will only be called when you create, delete, or paste a resource.
+    // You will not get an update when tweaking properties of it.
     private void OnResourceSet()
     {
         print("My resource was set!");
