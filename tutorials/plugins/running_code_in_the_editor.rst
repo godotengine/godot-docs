@@ -245,8 +245,9 @@ angle add a setter ``set(new_speed)`` which is executed with the input from the 
     to run in the editor too. Autoload nodes cannot be accessed in the editor at
     all.
 
-Getting notified about Resources changing
------------------------------------------
+Getting notified when resources change
+--------------------------------------
+
 On some occastions you want your tool to use a resource. However, when you change an
 attribute of that resource in the editor, the ``set()`` function of your tool will
 not get called.
