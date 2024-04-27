@@ -258,7 +258,7 @@ not get called.
     class_name MyTool
     extends Node
 
-    @export var resource:MyResource:
+    @export var resource: MyResource:
         set(new_resource):
             resource = new_resource
             _on_resource_set()
