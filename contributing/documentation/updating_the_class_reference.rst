@@ -110,3 +110,5 @@ Please only include changes that are relevant to your work on the API in your co
 You can discard changes in other XML files using ``git checkout``, but consider reporting
 if you notice unrelated files being updated. Ideally, running this command should only
 bring up the changes that you yourself have made.
+
+You will then need to add descriptions to any newly generated entries.
