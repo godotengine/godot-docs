@@ -159,7 +159,7 @@ Methods
    +---------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`TargetRayMode<enum_WebXRInterface_TargetRayMode>` | :ref:`get_input_source_target_ray_mode<class_WebXRInterface_method_get_input_source_target_ray_mode>`\ (\ input_source_id\: :ref:`int<class_int>`\ ) |const| |
    +---------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`XRPositionalTracker<class_XRPositionalTracker>`   | :ref:`get_input_source_tracker<class_WebXRInterface_method_get_input_source_tracker>`\ (\ input_source_id\: :ref:`int<class_int>`\ ) |const|                 |
+   | :ref:`XRControllerTracker<class_XRControllerTracker>`   | :ref:`get_input_source_tracker<class_WebXRInterface_method_get_input_source_tracker>`\ (\ input_source_id\: :ref:`int<class_int>`\ ) |const|                 |
    +---------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                 | :ref:`is_input_source_active<class_WebXRInterface_method_is_input_source_active>`\ (\ input_source_id\: :ref:`int<class_int>`\ ) |const|                     |
    +---------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -598,9 +598,9 @@ This can help interpret the input coming from that input source. See `XRInputSou
 
 .. rst-class:: classref-method
 
-:ref:`XRPositionalTracker<class_XRPositionalTracker>` **get_input_source_tracker**\ (\ input_source_id\: :ref:`int<class_int>`\ ) |const|
+:ref:`XRControllerTracker<class_XRControllerTracker>` **get_input_source_tracker**\ (\ input_source_id\: :ref:`int<class_int>`\ ) |const|
 
-Gets an :ref:`XRPositionalTracker<class_XRPositionalTracker>` for the given ``input_source_id``.
+Gets an :ref:`XRControllerTracker<class_XRControllerTracker>` for the given ``input_source_id``.
 
 In the context of WebXR, an input source can be an advanced VR controller like the Oculus Touch or Index controllers, or even a tap on the screen, a spoken voice command or a button press on the device itself. When a non-traditional input source is used, interpret the position and orientation of the :ref:`XRPositionalTracker<class_XRPositionalTracker>` as a ray pointing at the object the user wishes to interact with.
 

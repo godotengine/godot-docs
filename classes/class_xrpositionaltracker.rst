@@ -10,7 +10,9 @@
 XRPositionalTracker
 ===================
 
-**Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
+**Inherits:** :ref:`XRTracker<class_XRTracker>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
+
+**Inherited By:** :ref:`XRBodyTracker<class_XRBodyTracker>`, :ref:`XRControllerTracker<class_XRControllerTracker>`, :ref:`XRHandTracker<class_XRHandTracker>`
 
 A tracked object.
 
@@ -23,7 +25,7 @@ An instance of this object represents a device that is tracked, such as a contro
 
 As controllers are turned on and the :ref:`XRInterface<class_XRInterface>` detects them, instances of this object are automatically added to this list of active tracking objects accessible through the :ref:`XRServer<class_XRServer>`.
 
-The :ref:`XRController3D<class_XRController3D>` and :ref:`XRAnchor3D<class_XRAnchor3D>` both consume objects of this type and should be used in your project. The positional trackers are just under-the-hood objects that make this all work. These are mostly exposed so that GDExtension-based interfaces can interact with them.
+The :ref:`XRNode3D<class_XRNode3D>` and :ref:`XRAnchor3D<class_XRAnchor3D>` both consume objects of this type and should be used in your project. The positional trackers are just under-the-hood objects that make this all work. These are mostly exposed so that GDExtension-based interfaces can interact with them.
 
 .. rst-class:: classref-introduction-group
 
@@ -40,17 +42,11 @@ Properties
 .. table::
    :widths: auto
 
-   +----------------------------------------------------------+--------------------------------------------------------------------+----------------+
-   | :ref:`String<class_String>`                              | :ref:`description<class_XRPositionalTracker_property_description>` | ``""``         |
-   +----------------------------------------------------------+--------------------------------------------------------------------+----------------+
-   | :ref:`TrackerHand<enum_XRPositionalTracker_TrackerHand>` | :ref:`hand<class_XRPositionalTracker_property_hand>`               | ``0``          |
-   +----------------------------------------------------------+--------------------------------------------------------------------+----------------+
-   | :ref:`StringName<class_StringName>`                      | :ref:`name<class_XRPositionalTracker_property_name>`               | ``&"Unknown"`` |
-   +----------------------------------------------------------+--------------------------------------------------------------------+----------------+
-   | :ref:`String<class_String>`                              | :ref:`profile<class_XRPositionalTracker_property_profile>`         | ``""``         |
-   +----------------------------------------------------------+--------------------------------------------------------------------+----------------+
-   | :ref:`TrackerType<enum_XRServer_TrackerType>`            | :ref:`type<class_XRPositionalTracker_property_type>`               | ``128``        |
-   +----------------------------------------------------------+--------------------------------------------------------------------+----------------+
+   +----------------------------------------------------------+------------------------------------------------------------+--------+
+   | :ref:`TrackerHand<enum_XRPositionalTracker_TrackerHand>` | :ref:`hand<class_XRPositionalTracker_property_hand>`       | ``0``  |
+   +----------------------------------------------------------+------------------------------------------------------------+--------+
+   | :ref:`String<class_String>`                              | :ref:`profile<class_XRPositionalTracker_property_profile>` | ``""`` |
+   +----------------------------------------------------------+------------------------------------------------------------+--------+
 
 .. rst-class:: classref-reftable-group
 
@@ -202,6 +198,14 @@ This tracker is the left hand controller.
 
 This tracker is the right hand controller.
 
+.. _class_XRPositionalTracker_constant_TRACKER_HAND_MAX:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`TrackerHand<enum_XRPositionalTracker_TrackerHand>` **TRACKER_HAND_MAX** = ``3``
+
+Represents the size of the :ref:`TrackerHand<enum_XRPositionalTracker_TrackerHand>` enum.
+
 .. rst-class:: classref-section-separator
 
 ----
@@ -210,23 +214,6 @@ This tracker is the right hand controller.
 
 Property Descriptions
 ---------------------
-
-.. _class_XRPositionalTracker_property_description:
-
-.. rst-class:: classref-property
-
-:ref:`String<class_String>` **description** = ``""``
-
-.. rst-class:: classref-property-setget
-
-- |void| **set_tracker_desc**\ (\ value\: :ref:`String<class_String>`\ )
-- :ref:`String<class_String>` **get_tracker_desc**\ (\ )
-
-The description of this tracker.
-
-.. rst-class:: classref-item-separator
-
-----
 
 .. _class_XRPositionalTracker_property_hand:
 
@@ -245,27 +232,6 @@ Defines which hand this tracker relates to.
 
 ----
 
-.. _class_XRPositionalTracker_property_name:
-
-.. rst-class:: classref-property
-
-:ref:`StringName<class_StringName>` **name** = ``&"Unknown"``
-
-.. rst-class:: classref-property-setget
-
-- |void| **set_tracker_name**\ (\ value\: :ref:`StringName<class_StringName>`\ )
-- :ref:`StringName<class_StringName>` **get_tracker_name**\ (\ )
-
-The unique name of this tracker. The trackers that are available differ between various XR runtimes and can often be configured by the user. Godot maintains a number of reserved names that it expects the :ref:`XRInterface<class_XRInterface>` to implement if applicable:
-
-- ``left_hand`` identifies the controller held in the players left hand
-
-- ``right_hand`` identifies the controller held in the players right hand
-
-.. rst-class:: classref-item-separator
-
-----
-
 .. _class_XRPositionalTracker_property_profile:
 
 .. rst-class:: classref-property
@@ -278,23 +244,6 @@ The unique name of this tracker. The trackers that are available differ between 
 - :ref:`String<class_String>` **get_tracker_profile**\ (\ )
 
 The profile associated with this tracker, interface dependent but will indicate the type of controller being tracked.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_XRPositionalTracker_property_type:
-
-.. rst-class:: classref-property
-
-:ref:`TrackerType<enum_XRServer_TrackerType>` **type** = ``128``
-
-.. rst-class:: classref-property-setget
-
-- |void| **set_tracker_type**\ (\ value\: :ref:`TrackerType<enum_XRServer_TrackerType>`\ )
-- :ref:`TrackerType<enum_XRServer_TrackerType>` **get_tracker_type**\ (\ )
-
-The type of tracker.
 
 .. rst-class:: classref-section-separator
 
@@ -310,6 +259,8 @@ Method Descriptions
 .. rst-class:: classref-method
 
 :ref:`Variant<class_Variant>` **get_input**\ (\ name\: :ref:`StringName<class_StringName>`\ ) |const|
+
+**Deprecated:** Use through :ref:`XRControllerTracker<class_XRControllerTracker>`.
 
 Returns an input for this tracker. It can return a boolean, float or :ref:`Vector2<class_Vector2>` value depending on whether the input is a button, trigger or thumbstick/thumbpad.
 
@@ -358,6 +309,8 @@ Marks this pose as invalid, we don't clear the last reported state but it allows
 .. rst-class:: classref-method
 
 |void| **set_input**\ (\ name\: :ref:`StringName<class_StringName>`, value\: :ref:`Variant<class_Variant>`\ )
+
+**Deprecated:** Use through :ref:`XRControllerTracker<class_XRControllerTracker>`.
 
 Changes the value for the given input. This method is called by a :ref:`XRInterface<class_XRInterface>` implementation and should not be used directly.
 

@@ -14,7 +14,7 @@ AnimationNodeSync
 
 **Inherited By:** :ref:`AnimationNodeAdd2<class_AnimationNodeAdd2>`, :ref:`AnimationNodeAdd3<class_AnimationNodeAdd3>`, :ref:`AnimationNodeBlend2<class_AnimationNodeBlend2>`, :ref:`AnimationNodeBlend3<class_AnimationNodeBlend3>`, :ref:`AnimationNodeOneShot<class_AnimationNodeOneShot>`, :ref:`AnimationNodeSub2<class_AnimationNodeSub2>`, :ref:`AnimationNodeTransition<class_AnimationNodeTransition>`
 
-Base class for :ref:`AnimationNode<class_AnimationNode>`\ s with more than two input ports that must be synchronized.
+Base class for :ref:`AnimationNode<class_AnimationNode>`\ s with multiple input ports that must be synchronized.
 
 .. rst-class:: classref-introduction-group
 

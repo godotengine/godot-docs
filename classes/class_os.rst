@@ -669,27 +669,27 @@ Here's a minimal example on how to parse command-line arguments into a :ref:`Dic
     for argument in OS.get_cmdline_args():
         if argument.contains("="):
             var key_value = argument.split("=")
-            arguments[key_value[0].lstrip("--")] = key_value[1]
+            arguments[key_value[0].trim_prefix("--")] = key_value[1]
         else:
             # Options without an argument will be present in the dictionary,
             # with the value set to an empty string.
-            arguments[argument.lstrip("--")] = ""
+            arguments[argument.trim_prefix("--")] = ""
 
  .. code-tab:: csharp
 
-    var arguments = new Godot.Collections.Dictionary();
+    var arguments = new Dictionary<string, string>();
     foreach (var argument in OS.GetCmdlineArgs())
     {
         if (argument.Contains('='))
         {
             string[] keyValue = argument.Split("=");
-            arguments[keyValue[0].LStrip("--")] = keyValue[1];
+            arguments[keyValue[0].TrimPrefix("--")] = keyValue[1];
         }
         else
         {
             // Options without an argument will be present in the dictionary,
             // with the value set to an empty string.
-            arguments[keyValue[0].LStrip("--")] = "";
+            arguments[argument.TrimPrefix("--")] = "";
         }
     }
 

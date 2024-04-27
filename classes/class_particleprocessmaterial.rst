@@ -1172,6 +1172,8 @@ Minimum directional velocity value, which is multiplied by :ref:`directional_vel
 
 The box's extents if :ref:`emission_shape<class_ParticleProcessMaterial_property_emission_shape>` is set to :ref:`EMISSION_SHAPE_BOX<class_ParticleProcessMaterial_constant_EMISSION_SHAPE_BOX>`.
 
+\ **Note:** :ref:`emission_box_extents<class_ParticleProcessMaterial_property_emission_box_extents>` starts from the center point and applies the X, Y, and Z values in both directions. The size is twice the area of the extents.
+
 .. rst-class:: classref-item-separator
 
 ----

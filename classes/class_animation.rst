@@ -67,13 +67,13 @@ Properties
 .. table::
    :widths: auto
 
-   +------------------------------------------+------------------------------------------------------+---------+
-   | :ref:`float<class_float>`                | :ref:`length<class_Animation_property_length>`       | ``1.0`` |
-   +------------------------------------------+------------------------------------------------------+---------+
-   | :ref:`LoopMode<enum_Animation_LoopMode>` | :ref:`loop_mode<class_Animation_property_loop_mode>` | ``0``   |
-   +------------------------------------------+------------------------------------------------------+---------+
-   | :ref:`float<class_float>`                | :ref:`step<class_Animation_property_step>`           | ``0.1`` |
-   +------------------------------------------+------------------------------------------------------+---------+
+   +------------------------------------------+------------------------------------------------------+---------------+
+   | :ref:`float<class_float>`                | :ref:`length<class_Animation_property_length>`       | ``1.0``       |
+   +------------------------------------------+------------------------------------------------------+---------------+
+   | :ref:`LoopMode<enum_Animation_LoopMode>` | :ref:`loop_mode<class_Animation_property_loop_mode>` | ``0``         |
+   +------------------------------------------+------------------------------------------------------+---------------+
+   | :ref:`float<class_float>`                | :ref:`step<class_Animation_property_step>`           | ``0.0333333`` |
+   +------------------------------------------+------------------------------------------------------+---------------+
 
 .. rst-class:: classref-reftable-group
 
@@ -545,7 +545,7 @@ Determines the behavior of both ends of the animation timeline during animation 
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **step** = ``0.1``
+:ref:`float<class_float>` **step** = ``0.0333333``
 
 .. rst-class:: classref-property-setget
 

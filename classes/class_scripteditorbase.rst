@@ -140,6 +140,18 @@ Emitted when the user contextual goto and the item is in the same script.
 
 ----
 
+.. _class_ScriptEditorBase_signal_request_save_previous_state:
+
+.. rst-class:: classref-signal
+
+**request_save_previous_state**\ (\ line\: :ref:`int<class_int>`\ )
+
+Emitted when the user changes current script or moves caret by 10 or more columns within the same script.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_ScriptEditorBase_signal_search_in_files_requested:
 
 .. rst-class:: classref-signal

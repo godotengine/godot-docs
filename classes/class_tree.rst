@@ -1514,7 +1514,7 @@ The maximum allowed width of the icon in item's cells. This limit is applied on 
 
 :ref:`int<class_int>` **inner_item_margin_bottom** = ``0``
 
-The inner bottom margin of an item.
+The inner bottom margin of a cell.
 
 .. rst-class:: classref-item-separator
 
@@ -1526,7 +1526,7 @@ The inner bottom margin of an item.
 
 :ref:`int<class_int>` **inner_item_margin_left** = ``0``
 
-The inner left margin of an item.
+The inner left margin of a cell.
 
 .. rst-class:: classref-item-separator
 
@@ -1538,7 +1538,7 @@ The inner left margin of an item.
 
 :ref:`int<class_int>` **inner_item_margin_right** = ``0``
 
-The inner right margin of an item.
+The inner right margin of a cell.
 
 .. rst-class:: classref-item-separator
 
@@ -1550,7 +1550,7 @@ The inner right margin of an item.
 
 :ref:`int<class_int>` **inner_item_margin_top** = ``0``
 
-The inner top margin of an item.
+The inner top margin of a cell.
 
 .. rst-class:: classref-item-separator
 

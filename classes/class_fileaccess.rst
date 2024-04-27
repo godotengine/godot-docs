@@ -28,24 +28,24 @@ Here's a sample on how to write and read from a file:
 
  .. code-tab:: gdscript
 
-    func save(content):
+    func save_to_file(content):
         var file = FileAccess.open("user://save_game.dat", FileAccess.WRITE)
         file.store_string(content)
     
-    func load():
+    func load_from_file():
         var file = FileAccess.open("user://save_game.dat", FileAccess.READ)
         var content = file.get_as_text()
         return content
 
  .. code-tab:: csharp
 
-    public void Save(string content)
+    public void SaveToFile(string content)
     {
         using var file = FileAccess.Open("user://save_game.dat", FileAccess.ModeFlags.Write);
         file.StoreString(content);
     }
     
-    public string Load()
+    public string LoadFromFile()
     {
         using var file = FileAccess.Open("user://save_game.dat", FileAccess.ModeFlags.Read);
         string content = file.GetAsText();
@@ -165,6 +165,8 @@ Methods
    | :ref:`FileAccess<class_FileAccess>`                                           | :ref:`open_encrypted<class_FileAccess_method_open_encrypted>`\ (\ path\: :ref:`String<class_String>`, mode_flags\: :ref:`ModeFlags<enum_FileAccess_ModeFlags>`, key\: :ref:`PackedByteArray<class_PackedByteArray>`\ ) |static|                              |
    +-------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`FileAccess<class_FileAccess>`                                           | :ref:`open_encrypted_with_pass<class_FileAccess_method_open_encrypted_with_pass>`\ (\ path\: :ref:`String<class_String>`, mode_flags\: :ref:`ModeFlags<enum_FileAccess_ModeFlags>`, pass\: :ref:`String<class_String>`\ ) |static|                           |
+   +-------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>`                                         | :ref:`resize<class_FileAccess_method_resize>`\ (\ length\: :ref:`int<class_int>`\ )                                                                                                                                                                          |
    +-------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                        | :ref:`seek<class_FileAccess_method_seek>`\ (\ position\: :ref:`int<class_int>`\ )                                                                                                                                                                            |
    +-------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -943,6 +945,18 @@ Returns ``null`` if opening the file failed. You can use :ref:`get_open_error<cl
 Creates a new **FileAccess** object and opens an encrypted file in write or read mode. You need to pass a password to encrypt/decrypt it.
 
 Returns ``null`` if opening the file failed. You can use :ref:`get_open_error<class_FileAccess_method_get_open_error>` to check the error that occurred.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_FileAccess_method_resize:
+
+.. rst-class:: classref-method
+
+:ref:`Error<enum_@GlobalScope_Error>` **resize**\ (\ length\: :ref:`int<class_int>`\ )
+
+Resizes the file to a specified length. The file must be open in a mode that permits writing. If the file is extended, NUL characters are appended. If the file is truncated, all data from the end file to the original length of the file is lost.
 
 .. rst-class:: classref-item-separator
 

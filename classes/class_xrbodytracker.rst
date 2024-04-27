@@ -12,7 +12,7 @@ XRBodyTracker
 
 **Experimental:** This class may be changed or removed in future versions.
 
-**Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
+**Inherits:** :ref:`XRPositionalTracker<class_XRPositionalTracker>` **<** :ref:`XRTracker<class_XRTracker>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
 A tracked body in XR.
 
@@ -40,11 +40,13 @@ Properties
 .. table::
    :widths: auto
 
-   +--------------------------------------------------------------+--------------------------------------------------------------------------+-----------+
-   | |bitfield|\[:ref:`BodyFlags<enum_XRBodyTracker_BodyFlags>`\] | :ref:`body_flags<class_XRBodyTracker_property_body_flags>`               | ``0``     |
-   +--------------------------------------------------------------+--------------------------------------------------------------------------+-----------+
-   | :ref:`bool<class_bool>`                                      | :ref:`has_tracking_data<class_XRBodyTracker_property_has_tracking_data>` | ``false`` |
-   +--------------------------------------------------------------+--------------------------------------------------------------------------+-----------+
+   +--------------------------------------------------------------+--------------------------------------------------------------------------+--------------------------------------------------------------------+
+   | |bitfield|\[:ref:`BodyFlags<enum_XRBodyTracker_BodyFlags>`\] | :ref:`body_flags<class_XRBodyTracker_property_body_flags>`               | ``0``                                                              |
+   +--------------------------------------------------------------+--------------------------------------------------------------------------+--------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                      | :ref:`has_tracking_data<class_XRBodyTracker_property_has_tracking_data>` | ``false``                                                          |
+   +--------------------------------------------------------------+--------------------------------------------------------------------------+--------------------------------------------------------------------+
+   | :ref:`TrackerType<enum_XRServer_TrackerType>`                | type                                                                     | ``32`` (overrides :ref:`XRTracker<class_XRTracker_property_type>`) |
+   +--------------------------------------------------------------+--------------------------------------------------------------------------+--------------------------------------------------------------------+
 
 .. rst-class:: classref-reftable-group
 
