@@ -383,7 +383,7 @@ You then want to connect the signal when a new resource is set:
 
     private void OnResourceUpdated()
     {
-        print("My Resource just updated!");
+        GD.Print("My Resource just updated!");
     }
 
 Reporting node configuration warnings
