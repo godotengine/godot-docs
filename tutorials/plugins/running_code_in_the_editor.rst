@@ -298,7 +298,7 @@ not be called.
     }
 
 To get around this problem you first have to make your resource a tool and make it
-emit a signal whenever a property is set:
+emit the ``changed`` signal whenever a property is set:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -308,14 +308,11 @@ emit a signal whenever a property is set:
     class_name MyResource
     extends Resource
 
-    # Declare a signal.
-    signal property_updated
-
     @export var property = 1:
         set(new_setting):
             property = new_setting
             # Emit a signal when the property is changed.
-            property_updated.emit()
+            changed.emit()
 
  .. code-tab:: csharp
 
@@ -326,10 +323,6 @@ emit a signal whenever a property is set:
     {
         private float _property = 1;
 
-        // Declare a signal.
-        [Signal]
-        public delegate void PropertyUpdatedEventHandler();
-
         [Export]
         public float Property
         {
@@ -338,7 +331,7 @@ emit a signal whenever a property is set:
             {
                 _property = value;
                 // Emit a signal when the property is changed.
-                EmitSignal(SignalName.PropertyUpdated);
+                EmitSignal(SignalName.Changed);
             }
         }
     }
@@ -355,10 +348,10 @@ You then want to connect the signal when a new resource is set:
     @export var resource: MyResource:
         set(new_resource):
             resource = new_resource
-            # Connect the signal you just declared as soon as a new resource is being added.
-            resource.property_updated.connect(Callable(self, "_on_resource_updated")
+            # Connect the changed signal as soon as a new resource is being added.
+            resource.changed.connect(Callable(self, "_on_resource_changed")
 
-    func _on_resource_updated():
+    func _on_resource_changed():
         print("My resource just changed!")
 
  .. code-tab:: csharp
@@ -377,13 +370,13 @@ You then want to connect the signal when a new resource is set:
             set
             {
                 _resource = value;
-                // Connect the signal you just declared as soon as a new resource is being added.
-                _resource.PropertyUpdated += OnResourceUpdated;
+                // Connect the changed signal as soon as a new resource is being added.
+                _resource.Changed += OnResourceChanged;
             }
         }
     }
 
-    private void OnResourceUpdated()
+    private void OnResourceChanged()
     {
         GD.Print("My resource just changed!");
     }
