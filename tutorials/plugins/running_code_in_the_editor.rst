@@ -276,7 +276,7 @@ not be called.
     [Tool]
     public partial class MyTool : Node
     {
-        private float _resource = 1;
+        private MyResource _resource;
 
         [Export]
         public MyResource Resource
