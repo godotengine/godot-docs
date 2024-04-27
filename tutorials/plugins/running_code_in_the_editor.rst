@@ -310,7 +310,6 @@ emit a signal, whenever a property is set:
     signal property_updated
 
     @export var property = 1:
-
         set(new_setting):
             property = new_setting
             # Emit a signal, when a property is changed.
