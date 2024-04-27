@@ -313,7 +313,7 @@ emit a signal, whenever a property is set:
     @export var property = 1:
         set(new_setting):
             property = new_setting
-            # Emit a signal, when a property is changed.
+            # Emit a signal when the property is changed.
             property_updated.emit()
 
  .. code-tab:: csharp
