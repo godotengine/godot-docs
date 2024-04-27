@@ -368,7 +368,7 @@ You then want to connect the signal when a new resource is set:
     [Tool]
     public partial class MyTool : Node
     {
-        private float _resource = 1;
+        private MyResource _resource;
 
         [Export]
         public MyResource Resource
