@@ -325,7 +325,7 @@ emit a signal, whenever a property is set:
     {
         private float _property = 1;
 
-        # Declare a signal.        
+        // Declare a signal.
         [Signal]
         public delegate void PropertyUpdatedEventHandler();
 
