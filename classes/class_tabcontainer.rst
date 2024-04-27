@@ -87,6 +87,8 @@ Methods
    +-----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Texture2D<class_Texture2D>` | :ref:`get_tab_icon<class_TabContainer_method_get_tab_icon>`\ (\ tab_idx\: :ref:`int<class_int>`\ ) |const|                                                 |
    +-----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`             | :ref:`get_tab_icon_max_width<class_TabContainer_method_get_tab_icon_max_width>`\ (\ tab_idx\: :ref:`int<class_int>`\ ) |const|                             |
+   +-----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`             | :ref:`get_tab_idx_at_point<class_TabContainer_method_get_tab_idx_at_point>`\ (\ point\: :ref:`Vector2<class_Vector2>`\ ) |const|                           |
    +-----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`             | :ref:`get_tab_idx_from_control<class_TabContainer_method_get_tab_idx_from_control>`\ (\ control\: :ref:`Control<class_Control>`\ ) |const|                 |
@@ -94,6 +96,8 @@ Methods
    | :ref:`Variant<class_Variant>`     | :ref:`get_tab_metadata<class_TabContainer_method_get_tab_metadata>`\ (\ tab_idx\: :ref:`int<class_int>`\ ) |const|                                         |
    +-----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`       | :ref:`get_tab_title<class_TabContainer_method_get_tab_title>`\ (\ tab_idx\: :ref:`int<class_int>`\ ) |const|                                               |
+   +-----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`       | :ref:`get_tab_tooltip<class_TabContainer_method_get_tab_tooltip>`\ (\ tab_idx\: :ref:`int<class_int>`\ ) |const|                                           |
    +-----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`           | :ref:`is_tab_disabled<class_TabContainer_method_is_tab_disabled>`\ (\ tab_idx\: :ref:`int<class_int>`\ ) |const|                                           |
    +-----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -113,9 +117,13 @@ Methods
    +-----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                            | :ref:`set_tab_icon<class_TabContainer_method_set_tab_icon>`\ (\ tab_idx\: :ref:`int<class_int>`, icon\: :ref:`Texture2D<class_Texture2D>`\ )               |
    +-----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                            | :ref:`set_tab_icon_max_width<class_TabContainer_method_set_tab_icon_max_width>`\ (\ tab_idx\: :ref:`int<class_int>`, width\: :ref:`int<class_int>`\ )      |
+   +-----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                            | :ref:`set_tab_metadata<class_TabContainer_method_set_tab_metadata>`\ (\ tab_idx\: :ref:`int<class_int>`, metadata\: :ref:`Variant<class_Variant>`\ )       |
    +-----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                            | :ref:`set_tab_title<class_TabContainer_method_set_tab_title>`\ (\ tab_idx\: :ref:`int<class_int>`, title\: :ref:`String<class_String>`\ )                  |
+   +-----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | |void|                            | :ref:`set_tab_tooltip<class_TabContainer_method_set_tab_tooltip>`\ (\ tab_idx\: :ref:`int<class_int>`, tooltip\: :ref:`String<class_String>`\ )            |
    +-----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-reftable-group
@@ -615,6 +623,18 @@ Returns the :ref:`Texture2D<class_Texture2D>` for the tab at index ``tab_idx`` o
 
 ----
 
+.. _class_TabContainer_method_get_tab_icon_max_width:
+
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **get_tab_icon_max_width**\ (\ tab_idx\: :ref:`int<class_int>`\ ) |const|
+
+Returns the maximum allowed width of the icon for the tab at index ``tab_idx``.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_TabContainer_method_get_tab_idx_at_point:
 
 .. rst-class:: classref-method
@@ -658,6 +678,18 @@ Returns the metadata value set to the tab at index ``tab_idx`` using :ref:`set_t
 :ref:`String<class_String>` **get_tab_title**\ (\ tab_idx\: :ref:`int<class_int>`\ ) |const|
 
 Returns the title of the tab at index ``tab_idx``. Tab titles default to the name of the indexed child node, but this can be overridden with :ref:`set_tab_title<class_TabContainer_method_set_tab_title>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_TabContainer_method_get_tab_tooltip:
+
+.. rst-class:: classref-method
+
+:ref:`String<class_String>` **get_tab_tooltip**\ (\ tab_idx\: :ref:`int<class_int>`\ ) |const|
+
+Returns the tooltip text of the tab at index ``tab_idx``.
 
 .. rst-class:: classref-item-separator
 
@@ -771,6 +803,18 @@ Sets an icon for the tab at index ``tab_idx``.
 
 ----
 
+.. _class_TabContainer_method_set_tab_icon_max_width:
+
+.. rst-class:: classref-method
+
+|void| **set_tab_icon_max_width**\ (\ tab_idx\: :ref:`int<class_int>`, width\: :ref:`int<class_int>`\ )
+
+Sets the maximum allowed width of the icon for the tab at index ``tab_idx``. This limit is applied on top of the default size of the icon and on top of :ref:`icon_max_width<class_TabContainer_theme_constant_icon_max_width>`. The height is adjusted according to the icon's ratio.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_TabContainer_method_set_tab_metadata:
 
 .. rst-class:: classref-method
@@ -790,6 +834,20 @@ Sets the metadata value for the tab at index ``tab_idx``, which can be retrieved
 |void| **set_tab_title**\ (\ tab_idx\: :ref:`int<class_int>`, title\: :ref:`String<class_String>`\ )
 
 Sets a custom title for the tab at index ``tab_idx`` (tab titles default to the name of the indexed child node). Set it back to the child's name to make the tab default to it again.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_TabContainer_method_set_tab_tooltip:
+
+.. rst-class:: classref-method
+
+|void| **set_tab_tooltip**\ (\ tab_idx\: :ref:`int<class_int>`, tooltip\: :ref:`String<class_String>`\ )
+
+Sets a custom tooltip text for tab at index ``tab_idx``.
+
+\ **Note:** By default, if the ``tooltip`` is empty and the tab text is truncated (not all characters fit into the tab), the title will be displayed as a tooltip. To hide the tooltip, assign ``" "`` as the ``tooltip`` text.
 
 .. rst-class:: classref-section-separator
 

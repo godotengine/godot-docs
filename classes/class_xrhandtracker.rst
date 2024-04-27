@@ -10,7 +10,7 @@
 XRHandTracker
 =============
 
-**Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
+**Inherits:** :ref:`XRPositionalTracker<class_XRPositionalTracker>` **<** :ref:`XRTracker<class_XRTracker>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
 A tracked hand in XR.
 
@@ -38,13 +38,15 @@ Properties
 .. table::
    :widths: auto
 
-   +------------------------------------------------------------------+--------------------------------------------------------------------------------+-----------+
-   | :ref:`Hand<enum_XRHandTracker_Hand>`                             | :ref:`hand<class_XRHandTracker_property_hand>`                                 | ``0``     |
-   +------------------------------------------------------------------+--------------------------------------------------------------------------------+-----------+
-   | :ref:`HandTrackingSource<enum_XRHandTracker_HandTrackingSource>` | :ref:`hand_tracking_source<class_XRHandTracker_property_hand_tracking_source>` | ``0``     |
-   +------------------------------------------------------------------+--------------------------------------------------------------------------------+-----------+
-   | :ref:`bool<class_bool>`                                          | :ref:`has_tracking_data<class_XRHandTracker_property_has_tracking_data>`       | ``false`` |
-   +------------------------------------------------------------------+--------------------------------------------------------------------------------+-----------+
+   +------------------------------------------------------------------+--------------------------------------------------------------------------------+---------------------------------------------------------------------------------------+
+   | :ref:`TrackerHand<enum_XRPositionalTracker_TrackerHand>`         | hand                                                                           | ``1`` (overrides :ref:`XRPositionalTracker<class_XRPositionalTracker_property_hand>`) |
+   +------------------------------------------------------------------+--------------------------------------------------------------------------------+---------------------------------------------------------------------------------------+
+   | :ref:`HandTrackingSource<enum_XRHandTracker_HandTrackingSource>` | :ref:`hand_tracking_source<class_XRHandTracker_property_hand_tracking_source>` | ``0``                                                                                 |
+   +------------------------------------------------------------------+--------------------------------------------------------------------------------+---------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                          | :ref:`has_tracking_data<class_XRHandTracker_property_has_tracking_data>`       | ``false``                                                                             |
+   +------------------------------------------------------------------+--------------------------------------------------------------------------------+---------------------------------------------------------------------------------------+
+   | :ref:`TrackerType<enum_XRServer_TrackerType>`                    | type                                                                           | ``16`` (overrides :ref:`XRTracker<class_XRTracker_property_type>`)                    |
+   +------------------------------------------------------------------+--------------------------------------------------------------------------------+---------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-reftable-group
 
@@ -84,40 +86,6 @@ Methods
 
 Enumerations
 ------------
-
-.. _enum_XRHandTracker_Hand:
-
-.. rst-class:: classref-enumeration
-
-enum **Hand**:
-
-.. _class_XRHandTracker_constant_HAND_LEFT:
-
-.. rst-class:: classref-enumeration-constant
-
-:ref:`Hand<enum_XRHandTracker_Hand>` **HAND_LEFT** = ``0``
-
-A left hand.
-
-.. _class_XRHandTracker_constant_HAND_RIGHT:
-
-.. rst-class:: classref-enumeration-constant
-
-:ref:`Hand<enum_XRHandTracker_Hand>` **HAND_RIGHT** = ``1``
-
-A right hand.
-
-.. _class_XRHandTracker_constant_HAND_MAX:
-
-.. rst-class:: classref-enumeration-constant
-
-:ref:`Hand<enum_XRHandTracker_Hand>` **HAND_MAX** = ``2``
-
-Represents the size of the :ref:`Hand<enum_XRHandTracker_Hand>` enum.
-
-.. rst-class:: classref-item-separator
-
-----
 
 .. _enum_XRHandTracker_HandTrackingSource:
 
@@ -449,23 +417,6 @@ The hand joint's angular velocity data is valid.
 
 Property Descriptions
 ---------------------
-
-.. _class_XRHandTracker_property_hand:
-
-.. rst-class:: classref-property
-
-:ref:`Hand<enum_XRHandTracker_Hand>` **hand** = ``0``
-
-.. rst-class:: classref-property-setget
-
-- |void| **set_hand**\ (\ value\: :ref:`Hand<enum_XRHandTracker_Hand>`\ )
-- :ref:`Hand<enum_XRHandTracker_Hand>` **get_hand**\ (\ )
-
-The type of hand.
-
-.. rst-class:: classref-item-separator
-
-----
 
 .. _class_XRHandTracker_property_hand_tracking_source:
 

@@ -391,7 +391,7 @@ Properties
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`display/window/energy_saving/keep_screen_on<class_ProjectSettings_property_display/window/energy_saving/keep_screen_on>`                                                                             | ``true``                                                                                         |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                           | :ref:`display/window/energy_saving/keep_screen_on.editor<class_ProjectSettings_property_display/window/energy_saving/keep_screen_on.editor>`                                                               | ``false``                                                                                        |
+   | :ref:`bool<class_bool>`                           | :ref:`display/window/energy_saving/keep_screen_on.editor_hint<class_ProjectSettings_property_display/window/energy_saving/keep_screen_on.editor_hint>`                                                     | ``false``                                                                                        |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`display/window/handheld/orientation<class_ProjectSettings_property_display/window/handheld/orientation>`                                                                                             | ``0``                                                                                            |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
@@ -540,6 +540,8 @@ Properties
    | :ref:`float<class_float>`                         | :ref:`gui/timers/text_edit_idle_detect_sec<class_ProjectSettings_property_gui/timers/text_edit_idle_detect_sec>`                                                                                           | ``3``                                                                                            |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                         | :ref:`gui/timers/tooltip_delay_sec<class_ProjectSettings_property_gui/timers/tooltip_delay_sec>`                                                                                                           | ``0.5``                                                                                          |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`                         | :ref:`gui/timers/tooltip_delay_sec.editor_hint<class_ProjectSettings_property_gui/timers/tooltip_delay_sec.editor_hint>`                                                                                   | ``0.5``                                                                                          |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`Dictionary<class_Dictionary>`               | :ref:`input/ui_accept<class_ProjectSettings_property_input/ui_accept>`                                                                                                                                     |                                                                                                  |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
@@ -1747,6 +1749,8 @@ Path to an image used as the boot splash. If left empty, the default Godot Engin
 \ **Note:** Only effective if :ref:`application/boot_splash/show_image<class_ProjectSettings_property_application/boot_splash/show_image>` is ``true``.
 
 \ **Note:** The only supported format is PNG. Using another image format will result in an error.
+
+\ **Note:** The image will also show when opening the project in the editor. If you want to display the default splash image in the editor, add an empty override for ``editor_hint`` feature.
 
 .. rst-class:: classref-item-separator
 
@@ -3844,13 +3848,13 @@ If ``true``, keeps the screen on (even in case of inactivity), so the screensave
 
 ----
 
-.. _class_ProjectSettings_property_display/window/energy_saving/keep_screen_on.editor:
+.. _class_ProjectSettings_property_display/window/energy_saving/keep_screen_on.editor_hint:
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **display/window/energy_saving/keep_screen_on.editor** = ``false``
+:ref:`bool<class_bool>` **display/window/energy_saving/keep_screen_on.editor_hint** = ``false``
 
-Editor-only override for :ref:`display/window/energy_saving/keep_screen_on<class_ProjectSettings_property_display/window/energy_saving/keep_screen_on>`. Does not affect exported projects in debug or release mode.
+Editor-only override for :ref:`display/window/energy_saving/keep_screen_on<class_ProjectSettings_property_display/window/energy_saving/keep_screen_on>`. Does not affect running project.
 
 .. rst-class:: classref-item-separator
 
@@ -4857,6 +4861,18 @@ Timer for detecting idle in :ref:`TextEdit<class_TextEdit>` (in seconds).
 :ref:`float<class_float>` **gui/timers/tooltip_delay_sec** = ``0.5``
 
 Default delay for tooltips (in seconds).
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_gui/timers/tooltip_delay_sec.editor_hint:
+
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **gui/timers/tooltip_delay_sec.editor_hint** = ``0.5``
+
+Delay for tooltips in the editor.
 
 .. rst-class:: classref-item-separator
 

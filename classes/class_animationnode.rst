@@ -27,7 +27,7 @@ Inherit this when creating animation nodes mainly for use in :ref:`AnimationNode
 
 You can access the time information as read-only parameter which is processed and stored in the previous frame for all nodes except :ref:`AnimationNodeOutput<class_AnimationNodeOutput>`.
 
-\ **Note:** If more than two inputs exist in the **AnimationNode**, which time information takes precedence depends on the type of **AnimationNode**.
+\ **Note:** If multiple inputs exist in the **AnimationNode**, which time information takes precedence depends on the type of **AnimationNode**.
 
 ::
 

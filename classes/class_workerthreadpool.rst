@@ -120,6 +120,8 @@ The number of threads the task is distributed to is defined by ``tasks_needed``,
 
 Returns a group task ID that can be used by other methods.
 
+\ **Warning:** Every task must be waited for completion using :ref:`wait_for_task_completion<class_WorkerThreadPool_method_wait_for_task_completion>` or :ref:`wait_for_group_task_completion<class_WorkerThreadPool_method_wait_for_group_task_completion>` at some point so that any allocated resources inside the task can be cleaned up.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -133,6 +135,8 @@ Returns a group task ID that can be used by other methods.
 Adds ``action`` as a task to be executed by a worker thread. ``high_priority`` determines if the task has a high priority or a low priority (default). You can optionally provide a ``description`` to help with debugging.
 
 Returns a task ID that can be used by other methods.
+
+\ **Warning:** Every task must be waited for completion using :ref:`wait_for_task_completion<class_WorkerThreadPool_method_wait_for_task_completion>` or :ref:`wait_for_group_task_completion<class_WorkerThreadPool_method_wait_for_group_task_completion>` at some point so that any allocated resources inside the task can be cleaned up.
 
 .. rst-class:: classref-item-separator
 
@@ -160,6 +164,8 @@ Returns how many times the :ref:`Callable<class_Callable>` of the group task wit
 
 Returns ``true`` if the group task with the given ID is completed.
 
+\ **Note:** You should only call this method between adding the group task and awaiting its completion.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -171,6 +177,8 @@ Returns ``true`` if the group task with the given ID is completed.
 :ref:`bool<class_bool>` **is_task_completed**\ (\ task_id\: :ref:`int<class_int>`\ ) |const|
 
 Returns ``true`` if the task with the given ID is completed.
+
+\ **Note:** You should only call this method between adding the task and awaiting its completion.
 
 .. rst-class:: classref-item-separator
 

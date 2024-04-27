@@ -29,6 +29,8 @@ Canvas items are drawn in tree order on their canvas layer. By default, children
 
 A **CanvasItem** can be hidden, which will also hide its children. By adjusting various other properties of a **CanvasItem**, you can also modulate its color (via :ref:`modulate<class_CanvasItem_property_modulate>` or :ref:`self_modulate<class_CanvasItem_property_self_modulate>`), change its Z-index, blend mode, and more.
 
+Note that properties like transform, modulation, and visibility are only propagated to *direct* **CanvasItem** child nodes. If there is a non-**CanvasItem** node in between, like :ref:`Node<class_Node>` or :ref:`AnimationPlayer<class_AnimationPlayer>`, the **CanvasItem** nodes below will have an independent position and :ref:`modulate<class_CanvasItem_property_modulate>` chain. See also :ref:`top_level<class_CanvasItem_property_top_level>`.
+
 .. rst-class:: classref-introduction-group
 
 Tutorials

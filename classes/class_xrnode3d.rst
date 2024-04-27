@@ -38,11 +38,13 @@ Properties
 .. table::
    :widths: auto
 
-   +-------------------------------------+-------------------------------------------------+----------------+
-   | :ref:`StringName<class_StringName>` | :ref:`pose<class_XRNode3D_property_pose>`       | ``&"default"`` |
-   +-------------------------------------+-------------------------------------------------+----------------+
-   | :ref:`StringName<class_StringName>` | :ref:`tracker<class_XRNode3D_property_tracker>` | ``&""``        |
-   +-------------------------------------+-------------------------------------------------+----------------+
+   +-------------------------------------+---------------------------------------------------------------------+----------------+
+   | :ref:`StringName<class_StringName>` | :ref:`pose<class_XRNode3D_property_pose>`                           | ``&"default"`` |
+   +-------------------------------------+---------------------------------------------------------------------+----------------+
+   | :ref:`bool<class_bool>`             | :ref:`show_when_tracked<class_XRNode3D_property_show_when_tracked>` | ``false``      |
+   +-------------------------------------+---------------------------------------------------------------------+----------------+
+   | :ref:`StringName<class_StringName>` | :ref:`tracker<class_XRNode3D_property_tracker>`                     | ``&""``        |
+   +-------------------------------------+---------------------------------------------------------------------+----------------+
 
 .. rst-class:: classref-reftable-group
 
@@ -102,6 +104,23 @@ Property Descriptions
 The name of the pose we're bound to. Which poses a tracker supports is not known during design time.
 
 Godot defines number of standard pose names such as ``aim`` and ``grip`` but other may be configured within a given :ref:`XRInterface<class_XRInterface>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_XRNode3D_property_show_when_tracked:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **show_when_tracked** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- |void| **set_show_when_tracked**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **get_show_when_tracked**\ (\ )
+
+Enables showing the node when tracking starts, and hiding the node when tracking is lost.
 
 .. rst-class:: classref-item-separator
 

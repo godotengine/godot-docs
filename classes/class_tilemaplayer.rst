@@ -33,27 +33,27 @@ Properties
 .. table::
    :widths: auto
 
-   +-------------------------------------------------------------------+-------------------------------------------------------------------------------------------+-----------------------------+
-   | :ref:`bool<class_bool>`                                           | :ref:`collision_enabled<class_TileMapLayer_property_collision_enabled>`                   | ``true``                    |
-   +-------------------------------------------------------------------+-------------------------------------------------------------------------------------------+-----------------------------+
-   | :ref:`DebugVisibilityMode<enum_TileMapLayer_DebugVisibilityMode>` | :ref:`collision_visibility_mode<class_TileMapLayer_property_collision_visibility_mode>`   | ``0``                       |
-   +-------------------------------------------------------------------+-------------------------------------------------------------------------------------------+-----------------------------+
-   | :ref:`bool<class_bool>`                                           | :ref:`enabled<class_TileMapLayer_property_enabled>`                                       | ``true``                    |
-   +-------------------------------------------------------------------+-------------------------------------------------------------------------------------------+-----------------------------+
-   | :ref:`bool<class_bool>`                                           | :ref:`navigation_enabled<class_TileMapLayer_property_navigation_enabled>`                 | ``true``                    |
-   +-------------------------------------------------------------------+-------------------------------------------------------------------------------------------+-----------------------------+
-   | :ref:`DebugVisibilityMode<enum_TileMapLayer_DebugVisibilityMode>` | :ref:`navigation_visibility_mode<class_TileMapLayer_property_navigation_visibility_mode>` | ``0``                       |
-   +-------------------------------------------------------------------+-------------------------------------------------------------------------------------------+-----------------------------+
-   | :ref:`int<class_int>`                                             | :ref:`rendering_quadrant_size<class_TileMapLayer_property_rendering_quadrant_size>`       | ``16``                      |
-   +-------------------------------------------------------------------+-------------------------------------------------------------------------------------------+-----------------------------+
-   | :ref:`PackedByteArray<class_PackedByteArray>`                     | :ref:`tile_map_data<class_TileMapLayer_property_tile_map_data>`                           | ``PackedByteArray("AAA=")`` |
-   +-------------------------------------------------------------------+-------------------------------------------------------------------------------------------+-----------------------------+
-   | :ref:`TileSet<class_TileSet>`                                     | :ref:`tile_set<class_TileMapLayer_property_tile_set>`                                     |                             |
-   +-------------------------------------------------------------------+-------------------------------------------------------------------------------------------+-----------------------------+
-   | :ref:`bool<class_bool>`                                           | :ref:`use_kinematic_bodies<class_TileMapLayer_property_use_kinematic_bodies>`             | ``false``                   |
-   +-------------------------------------------------------------------+-------------------------------------------------------------------------------------------+-----------------------------+
-   | :ref:`int<class_int>`                                             | :ref:`y_sort_origin<class_TileMapLayer_property_y_sort_origin>`                           | ``0``                       |
-   +-------------------------------------------------------------------+-------------------------------------------------------------------------------------------+-----------------------------+
+   +-------------------------------------------------------------------+-------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`bool<class_bool>`                                           | :ref:`collision_enabled<class_TileMapLayer_property_collision_enabled>`                   | ``true``              |
+   +-------------------------------------------------------------------+-------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`DebugVisibilityMode<enum_TileMapLayer_DebugVisibilityMode>` | :ref:`collision_visibility_mode<class_TileMapLayer_property_collision_visibility_mode>`   | ``0``                 |
+   +-------------------------------------------------------------------+-------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`bool<class_bool>`                                           | :ref:`enabled<class_TileMapLayer_property_enabled>`                                       | ``true``              |
+   +-------------------------------------------------------------------+-------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`bool<class_bool>`                                           | :ref:`navigation_enabled<class_TileMapLayer_property_navigation_enabled>`                 | ``true``              |
+   +-------------------------------------------------------------------+-------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`DebugVisibilityMode<enum_TileMapLayer_DebugVisibilityMode>` | :ref:`navigation_visibility_mode<class_TileMapLayer_property_navigation_visibility_mode>` | ``0``                 |
+   +-------------------------------------------------------------------+-------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`int<class_int>`                                             | :ref:`rendering_quadrant_size<class_TileMapLayer_property_rendering_quadrant_size>`       | ``16``                |
+   +-------------------------------------------------------------------+-------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`PackedByteArray<class_PackedByteArray>`                     | :ref:`tile_map_data<class_TileMapLayer_property_tile_map_data>`                           | ``PackedByteArray()`` |
+   +-------------------------------------------------------------------+-------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`TileSet<class_TileSet>`                                     | :ref:`tile_set<class_TileMapLayer_property_tile_set>`                                     |                       |
+   +-------------------------------------------------------------------+-------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`bool<class_bool>`                                           | :ref:`use_kinematic_bodies<class_TileMapLayer_property_use_kinematic_bodies>`             | ``false``             |
+   +-------------------------------------------------------------------+-------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`int<class_int>`                                             | :ref:`y_sort_origin<class_TileMapLayer_property_y_sort_origin>`                           | ``0``                 |
+   +-------------------------------------------------------------------+-------------------------------------------------------------------------------------------+-----------------------+
 
 .. rst-class:: classref-reftable-group
 
@@ -298,7 +298,7 @@ The quadrant size does not apply on a Y-sorted **TileMapLayer**, as tiles are be
 
 .. rst-class:: classref-property
 
-:ref:`PackedByteArray<class_PackedByteArray>` **tile_map_data** = ``PackedByteArray("AAA=")``
+:ref:`PackedByteArray<class_PackedByteArray>` **tile_map_data** = ``PackedByteArray()``
 
 .. rst-class:: classref-property-setget
 
