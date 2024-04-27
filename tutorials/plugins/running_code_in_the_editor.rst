@@ -344,6 +344,7 @@ emit a signal, whenever a property is set:
     }
 
 You then want to connect the signal when a new resource is set:
+
 .. tabs::
  .. code-tab:: gdscript GDScript
 
