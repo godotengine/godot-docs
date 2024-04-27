@@ -350,7 +350,7 @@ You then want to connect the signal when a new resource is set:
     class_name MyTool
     extends Node
 
-    @export var resource:MyResource:
+    @export var resource: MyResource:
         set(new_resource):
             resource = new_resource
             # Connect the signal you just declared as soon as a new resource is being added.
