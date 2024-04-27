@@ -285,7 +285,7 @@ not be called.
             set
             {
                 _resource = value;
-                OnResourceSet()
+                OnResourceSet();
             }
         }
     }
