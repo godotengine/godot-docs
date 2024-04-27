@@ -381,6 +381,31 @@ You then want to connect the signal when a new resource is set:
         GD.Print("My resource just changed!");
     }
 
+Lastly, you should to disconnect the signal as the old resource being used and changed somewhere else
+would cause unneeded updates.
+.. tabs::
+ .. code-tab:: gdscript GDScript
+
+    @export var resource: MyResource:
+        set(new_resource):
+            # Disconnect the signal if the previous resource was not null.
+            if resource != null: resource.changed.disconnect(_on_resource_changed)
+            resource = new_resource
+            resource.changed.connect(_on_resource_changed)
+.. code-tab:: csharp
+    [Export]
+    public MyResource Resource
+    {
+        get => _resource;
+        set
+        {
+            // Disconnect the signal if the previous resource was not null.
+            if (_resource != null) { _resource.Changed -= OnResourceChanged; }
+            _resource = value;
+            _resource.Changed += OnResourceChanged;
+        }
+    }
+
 Reporting node configuration warnings
 -------------------------------------
 
