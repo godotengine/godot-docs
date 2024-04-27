@@ -337,7 +337,7 @@ emit a signal whenever a property is set:
             set
             {
                 _property = value;
-                #Emit a signal, when property is changed.
+                // Emit a signal when the property is changed.
                 EmitSignal(SignalName.PropertyUpdated);
             }
         }
