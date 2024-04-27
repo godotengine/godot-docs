@@ -298,7 +298,7 @@ not be called.
     }
 
 To get around this problem you first have to make your resource a tool and make it
-emit a signal, whenever a property is set:
+emit a signal whenever a property is set:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
