@@ -264,8 +264,8 @@ not be called.
             resource = new_resource
             _on_resource_set()
     
-    # This will only be called, when you create, delete or paste a resource.
-    # You will not get an update when tweaking properteis of it.
+    # This will only be called when you create, delete, or paste a resource.
+    # You will not get an update when tweaking properties of it.
     func _on_resource_set():
         print("My resource was set!")
 
