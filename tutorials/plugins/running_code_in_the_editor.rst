@@ -294,7 +294,7 @@ not be called.
     // You will not get an update when tweaking properties of it.
     private void OnResourceSet()
     {
-        print("My resource was set!");
+        GD.Print("My resource was set!");
     }
 
 To get around this problem you first have to make your resource a tool and make it
