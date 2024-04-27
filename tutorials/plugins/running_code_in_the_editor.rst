@@ -392,7 +392,9 @@ would cause unneeded updates.
             if resource != null: resource.changed.disconnect(_on_resource_changed)
             resource = new_resource
             resource.changed.connect(_on_resource_changed)
+
 .. code-tab:: csharp
+
     [Export]
     public MyResource Resource
     {
