@@ -301,6 +301,7 @@ emit a signal, whenever a property is set:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
+
     # Make Your Resource a tool.
     @tool
     class_name MyResource
