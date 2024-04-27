@@ -349,7 +349,7 @@ You then want to connect the signal when a new resource is set:
         set(new_resource):
             resource = new_resource
             # Connect the changed signal as soon as a new resource is being added.
-            resource.changed.connect(Callable(self, "_on_resource_changed")
+            resource.changed.connect(_on_resource_changed)
 
     func _on_resource_changed():
         print("My resource just changed!")
