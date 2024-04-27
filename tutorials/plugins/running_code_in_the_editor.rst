@@ -383,13 +383,15 @@ You then want to connect the signal when a new resource is set:
 
 Lastly, you should to disconnect the signal as the old resource being used and changed somewhere else
 would cause unneeded updates.
+
 .. tabs::
  .. code-tab:: gdscript GDScript
 
     @export var resource: MyResource:
         set(new_resource):
             # Disconnect the signal if the previous resource was not null.
-            if resource != null: resource.changed.disconnect(_on_resource_changed)
+            if resource != null:
+                resource.changed.disconnect(_on_resource_changed)
             resource = new_resource
             resource.changed.connect(_on_resource_changed)
 
@@ -402,7 +404,10 @@ would cause unneeded updates.
         set
         {
             // Disconnect the signal if the previous resource was not null.
-            if (_resource != null) { _resource.Changed -= OnResourceChanged; }
+            if (_resource != null)
+            {
+                _resource.Changed -= OnResourceChanged;
+            }
             _resource = value;
             _resource.Changed += OnResourceChanged;
         }
