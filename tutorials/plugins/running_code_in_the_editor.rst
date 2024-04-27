@@ -395,7 +395,7 @@ would cause unneeded updates.
             resource = new_resource
             resource.changed.connect(_on_resource_changed)
 
-.. code-tab:: csharp
+ .. code-tab:: csharp
 
     [Export]
     public MyResource Resource
