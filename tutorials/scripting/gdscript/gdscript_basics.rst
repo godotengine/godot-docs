@@ -204,7 +204,7 @@ in case you want to take a look under the hood.
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 | preload    | Preloads a class or variable. See `Classes as resources`_.                                                                                        |
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| await      | Waits for a signal or a coroutine to finish. See `Awaiting for signals or coroutines`_.                                                           |
+| await      | Waits for a signal or a coroutine to finish. See `Awaiting signals or coroutines`_.                                                               |
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 | yield      | Previously used for coroutines. Kept as keyword for transition.                                                                                   |
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -242,7 +242,7 @@ example ``2 ** (2 ** 3)``. The ternary ``if/else`` operator is right-associative
 +---------------------------------------+-----------------------------------------------------------------------------+
 | ``foo()``                             | Function call                                                               |
 +---------------------------------------+-----------------------------------------------------------------------------+
-| ``await x``                           | `Awaiting for signals or coroutines`_                                       |
+| ``await x``                           | `Awaiting signals or coroutines`_                                           |
 +---------------------------------------+-----------------------------------------------------------------------------+
 | ``x is Node``                         | Type checking                                                               |
 |                                       |                                                                             |
@@ -2351,8 +2351,8 @@ Our ``BattleLog`` node receives each element in the binds array as an extra argu
         label.text += character_name + " took " + str(damage) + " damage."
 
 
-Awaiting for signals or coroutines
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Awaiting signals or coroutines
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The ``await`` keyword can be used to create `coroutines <https://en.wikipedia.org/wiki/Coroutine>`_
 which wait until a signal is emitted before continuing execution. Using the ``await`` keyword with a signal or a
@@ -2367,7 +2367,7 @@ For example, to stop execution until the user presses a button, you can do somet
         print("User confirmed")
         return true
 
-In this case, the ``wait_confirmation`` becomes a coroutine, which means that the caller also needs to await for it::
+In this case, the ``wait_confirmation`` becomes a coroutine, which means that the caller also needs to await it::
 
     func request_confirmation():
         print("Will ask the user")
@@ -2399,7 +2399,7 @@ function won't give the control back to the caller::
     func get_five():
         return 5
 
-This also means that returning a signal from a function that isn't a coroutine will make the caller await on that signal::
+This also means that returning a signal from a function that isn't a coroutine will make the caller await that signal::
 
     func get_signal():
         return $Button.button_up
