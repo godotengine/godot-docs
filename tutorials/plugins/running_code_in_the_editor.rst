@@ -381,7 +381,7 @@ You then want to connect the signal when a new resource is set:
         GD.Print("My resource just changed!");
     }
 
-Lastly, you should to disconnect the signal as the old resource being used and changed somewhere else
+Lastly, remember to disconnect the signal as the old resource being used and changed somewhere else
 would cause unneeded updates.
 
 .. tabs::
