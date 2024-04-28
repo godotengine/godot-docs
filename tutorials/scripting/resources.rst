@@ -333,6 +333,7 @@ Now, select the :ref:`CharacterBody3D <class_CharacterBody3D>` node which we nam
       .. code-tab:: csharp
 
         using Godot;
+
         [GlobalClass]
         public partial class BotStatsTable : Resource
         {
