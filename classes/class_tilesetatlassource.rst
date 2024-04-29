@@ -200,6 +200,18 @@ Represents cell's vertical flip flag. See :ref:`TRANSFORM_FLIP_H<class_TileSetAt
 
 Represents cell's transposed flag. See :ref:`TRANSFORM_FLIP_H<class_TileSetAtlasSource_constant_TRANSFORM_FLIP_H>` for usage.
 
+
+Note: These transformations can be combined to do the equivalent of 0, 90, 180, and 270 degree rotations, as shown below
+
+::
+
+   const rotation_settings = [
+      0,
+      TileSetAtlasSource.TRANSFORM_TRANSPOSE |  TileSetAtlasSource.TRANSFORM_FLIP_H,
+      TileSetAtlasSource.TRANSFORM_FLIP_H    |  TileSetAtlasSource.TRANSFORM_FLIP_V,
+      TileSetAtlasSource.TRANSFORM_TRANSPOSE |  TileSetAtlasSource.TRANSFORM_FLIP_V
+   ]
+
 .. rst-class:: classref-section-separator
 
 ----
