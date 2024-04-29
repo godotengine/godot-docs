@@ -206,10 +206,10 @@ Note: These transformations can be combined to do the equivalent of 0, 90, 180, 
 ::
 
    const rotation_settings = [
-      0,
-      TileSetAtlasSource.TRANSFORM_TRANSPOSE |  TileSetAtlasSource.TRANSFORM_FLIP_H,
-      TileSetAtlasSource.TRANSFORM_FLIP_H    |  TileSetAtlasSource.TRANSFORM_FLIP_V,
-      TileSetAtlasSource.TRANSFORM_TRANSPOSE |  TileSetAtlasSource.TRANSFORM_FLIP_V
+      0,                                                                             #rotate   0
+      TileSetAtlasSource.TRANSFORM_TRANSPOSE |  TileSetAtlasSource.TRANSFORM_FLIP_H, #rotate  90
+      TileSetAtlasSource.TRANSFORM_FLIP_H    |  TileSetAtlasSource.TRANSFORM_FLIP_V, #rotate 180 
+      TileSetAtlasSource.TRANSFORM_TRANSPOSE |  TileSetAtlasSource.TRANSFORM_FLIP_V  #rotate 270
    ]
 
 .. rst-class:: classref-section-separator
