@@ -299,11 +299,7 @@ these properties, and if you don't write to them, Godot will optimize away the c
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
 | in vec3 **EYE_OFFSET**                 | Position offset for the eye being rendered. Only applicable for multiview rendering.             |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
-| sampler2D **SCREEN_TEXTURE**           | Removed in Godot 4. Use a ``sampler2D`` with ``hint_screen_texture`` instead.                    |
-+----------------------------------------+--------------------------------------------------------------------------------------------------+
 | in vec2 **SCREEN_UV**                  | Screen UV coordinate for current pixel.                                                          |
-+----------------------------------------+--------------------------------------------------------------------------------------------------+
-| sampler2D **DEPTH_TEXTURE**            | Removed in Godot 4. Use a ``sampler2D`` with ``hint_depth_texture`` instead.                     |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
 | out float **DEPTH**                    | Custom depth value (0..1). If ``DEPTH`` is being written to in any shader branch, then you are   |
 |                                        | responsible for setting the ``DEPTH`` for **all** other branches. Otherwise, the graphics API    |
