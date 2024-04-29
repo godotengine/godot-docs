@@ -154,7 +154,7 @@ To run and debug the project you need to create a new configuration in the ``lau
 
 The name under ``program`` depends on your build configuration,
 e.g. ``godot.linuxbsd.editor.dev.x86_64`` for 64-bit LinuxBSD platform with
-``platform=editor`` and ``dev_build=yes``.
+``target=editor`` and ``dev_build=yes``.
 
 If you run into any issues, ask for help in one of
 `Godot's community channels <https://godotengine.org/community>`__.
