@@ -218,6 +218,26 @@ Don't use multiline comment syntax if your comment can fit on a single line:
    press :kbd:`Ctrl + K`. This feature adds or removes ``//`` at the start of
    the selected lines.
 
+Documentation comments
+~~~~~~~~~~~~~~~~~~~~~~
+
+Use the following format for documentation comments above uniforms, with **two**
+leading asterisks (``/**``) and follow-up asterisks on every line:
+
+.. code-block:: glsl
+
+    /**
+     * This is a documentation comment.
+     * These lines will appear in the inspector when hovering the shader parameter
+     * named "Something".
+     * You can use [b]BBCode[/b] [i]formatting[/i] in the comment.
+     */
+    uniform int something = 1;
+
+These comments will appear when hovering a property in the inspector. If you
+don't wish the comment to be visible in the inspector, use the standard comment
+syntax instead (``// ...`` or ``/* ... */`` with only one leading asterisk).
+
 Whitespace
 ~~~~~~~~~~
 
