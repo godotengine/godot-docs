@@ -1,18 +1,13 @@
-.. _doc_introduction_to_godot:
+﻿.. _doc_external_resources:
 
-Introduction to Godot
+External Resources
 =====================
 
-This article is here to help you figure out whether Godot might be a good fit
-for you. We will introduce some broad features of the engine to give you a feel
-for what you can achieve with it and answer questions such as "what do I need to
-know to get started?".
+This article is here to help you find additional resources about Godot such as step-by-step tutorials and how-to step-by-step tutorials. These resources are not part of the Godot documentation, and are meant to supplement learning Godot.
 
-This is by no means an exhaustive overview. We will introduce many more features
-in this getting started series.
-
-What is Godot?
+Resources that are free of charge
 --------------
+
 
 Godot is a general-purpose 2D and 3D game engine designed to support all sorts
 of projects. You can use it to create games or applications you can then release
@@ -26,8 +21,10 @@ programming skills or a developer to port the game for you.
           engine you use, though, releasing games on consoles is always a lot of
           work. You can read more on that here: :ref:`doc_consoles`.
 
-What can the engine do?
+free and paid tutorials 
 -----------------------
+GDQuest https://www.gdquest.com/
+
 
 Godot was initially developed in-house by an Argentinian game studio. Its
 development started in 2001, and the engine was rewritten and improved
