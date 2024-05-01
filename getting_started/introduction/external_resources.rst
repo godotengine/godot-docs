@@ -3,7 +3,7 @@
 External Resources
 =====================
 
-This article is here to help you find additional resources about Godot such as step-by-step tutorials and how-to step-by-step tutorials. These resources are not part of the Godot documentation, and are meant to supplement learning Godot.
+This article is here to help you find additional resources about Godot such as step-by-step tutorials and how-to guides. These resources are not part of the Godot documentation, and are meant to supplement learning Godot.
 
 Resources that are free of charge
 --------------
@@ -23,7 +23,7 @@ programming skills or a developer to port the game for you.
 
 free and paid tutorials 
 -----------------------
-GDQuest https://www.gdquest.com/
+GDQuest_ https://www.gdquest.com/
 
 
 Godot was initially developed in-house by an Argentinian game studio. Its
@@ -108,6 +108,7 @@ We will provide you with more Godot-specific learning resources in
 
 In the next part, you will get an overview of the engine's essential concepts.
 
+.. _GDQuest https://www.gdquest.com/
 .. _Blender: https://www.blender.org/
 .. _VSCode: https://github.com/godotengine/godot-vscode-plugin
 .. _Emacs: https://github.com/godotengine/emacs-gdscript-mode
