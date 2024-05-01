@@ -395,6 +395,8 @@ The ``_post_import(scene: Node)`` function takes the imported scene as argument
 (the parameter is actually the root node of the scene). The scene that will
 finally be used **must** be returned (even if the scene can be entirely different).
 
+To use your script, locate the script in the import tab's "Path" option under the "Import Script" category.
+
 Using animation libraries
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
