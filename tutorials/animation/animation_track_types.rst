@@ -43,7 +43,7 @@ end of a death animation.
 
 .. note:: The events placed on the call method track are not executed when the animation is previewed in the editor for safety.
 
-To create such a track, click "Add Track -> Call Method Track." Then, a window
+To create such a track in the editor, click "Add Track -> Call Method Track." Then, a window
 opens and lets you select the node to associate with the track. To call one of
 the node's methods, right-click the timeline and select "Insert Key". A window
 opens with a list of available methods. Double-click one to finish creating the
@@ -56,6 +56,80 @@ inspector dock. There, you can change the method to call. If you expand the
 "Args" section, you will see a list of arguments you can edit.
 
 .. image:: img/node_method_args.webp
+
+To create such a track through code, pass a dictionary that contains the target method's name
+and parameters as the Variant for ``key`` in ``Animation.track_insert_key()``. The keys and
+their expected values are as follows:
+
++---------------------------------------+-----------------------------------------------------------------------------+
+| **Key**                               | **Value**                                                                   |
++=======================================+=============================================================================+
+| ``"method"``                          | The name of the method as a ``String``                                      |
++---------------------------------------+-----------------------------------------------------------------------------+
+| ``"args"``                            | The arguments to pass to the function as an ``Array``                       |
++---------------------------------------+-----------------------------------------------------------------------------+
+
+.. tabs::
+ .. code-tab:: gdscript GDScript
+
+    # Create a call method track.
+    func create_method_animation_track():
+        # Get or create the animation the target method will be called from.
+        var animation = $AnimationPlayer.get_animation("idle")
+        # Get or create the target method's animation track.
+        var track_index = animation.add_track(Animation.TYPE_METHOD)
+        # Make the arguments for the target method jump().
+        var jump_velocity = -400.0
+        var multiplier = randf_range(.8, 1.2)
+        # Get or create a dictionary with the target method's name and arguments.
+        var method_dictionary = {
+            "method": "jump",
+            "args": [jump_velocity, multiplier],
+        }
+
+        # Set scene-tree path to node with target method.
+        animation.track_set_path(track_index, ".")
+        # Add the dictionary as the animation method track's key.
+        animation.track_insert_key(track_index, 0.6, method_dictionary, 0)
+
+
+    # The target method that will be called from the animation.
+    func jump(jump_velocity, multiplier):
+        velocity.y = jump_velocity * multiplier
+
+ .. code-tab:: csharp
+
+    // Create a call method track.
+    public void CreateAnimationTrack()
+    {
+        // Get reference to the AnimationPlayer.
+        var animationPlayer = GetNode<AnimationPlayer>("AnimationPlayer");
+        // Get or create the animation the target method will be called from.
+        var animation = animationPlayer.GetAnimation("idle");
+        // Get or create the target method's animation track.
+        var trackIndex = animation.AddTrack(Animation.TrackType.Method);
+        // Make the arguments for the target method Jump().
+        var jumpVelocity = -400.0;
+        var multiplier = GD.RandRange(.8, 1.2);
+        // Get or create a dictionary with the target method's name and arguments.
+        var methodDictionary = new Godot.Collections.Dictionary
+        {
+            { "method", MethodName.Jump },
+            { "args", new Godot.Collections.Array { jumpVelocity, multiplier } }
+        };
+
+        // Set scene-tree path to node with target method.
+        animation.TrackSetPath(trackIndex, ".");
+        // Add the dictionary as the animation method track's key.
+        animation.TrackInsertKey(trackIndex, 0.6, methodDictionary, 0);
+    }
+
+
+    // The target method that will be called from the animation.
+    private void Jump(float jumpVelocity, float multiplier)
+    {
+        Velocity = new Vector2(Velocity.X, jumpVelocity * multiplier);
+    }
 
 Bezier Curve Track
 ------------------
