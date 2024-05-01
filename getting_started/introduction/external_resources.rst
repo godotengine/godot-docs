@@ -26,7 +26,7 @@ Paid Resources
 These are resources that are completely paid for.
 
 
-gamedev.tv_ is on sale. The coupon for gamedev.tv_ came from the humble its HumbleBundle_ sale. The HumbleBundle_ sale lasts until May 9, 2024.
+gamedev.tv_ is on sale. The coupon for gamedev.tv_ came from its HumbleBundle_ sale. The HumbleBundle_ sale lasts until May 9, 2024.
 
 
 
